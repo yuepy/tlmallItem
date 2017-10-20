@@ -72,13 +72,23 @@
       if (!elem) {
         return [];
       }if (elem) {
-        var data = [];var key = elem.contentWindow && elem.contentWindow.document.querySelectorAll('#td_0_2');if (key && key.length > 0) data.push(key[0].textContent);return data;
+        var data = [];var receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2');var _receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2	a');var noReceive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_3');if (receive && _receive.style.display != 'none') {
+          data.push(receive.textContent);
+        } else if (noReceive) {
+          data.push(noReceive.textContent);
+        }return data;
       }
     },
     doAction_uiControl38_eOJBRR: function (data, elem) {
       if (data.eventType == 'click') {
-        var d = data.dataCustom;var btn = elem.ownerDocument.querySelector('.mini-tools-close');console.log(btn);if (d == '领取') {
+        var d = data.dataCustom;var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (d == '领取') {
           var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");_click.click();
+        } else if (d == '取消领取') {
+          var _click = elem.contentWindow.document.querySelector('#td_0_3');if (_click) {
+            var _icon = _click.querySelector('a');var _innerHTML = _click.querySelector('span').textContent;_innerHTML == '取消领取' && _icon.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+          } else {
+            var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");var _innerHTML = _click.querySelector('span').textContent;_click.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+          }
         } else {
           var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");_click.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
         }
