@@ -1,0 +1,247 @@
+{
+  "version": "0.1",
+  "id": "login",
+  "targetURL": "http://192.168.0.189:8888/ptsoa/coframe/auth/login/login.jsp#",
+  "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json",
+    "approvalTrack": "../approvalTrack/index.json"
+  },
+  "chineseName": "登陆",
+  "description": "",
+  "controls": {
+    "control0_N7zrZx": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"warpper\"]/DIV[1]/DIV[1]/FORM[1]",
+              "descendant::DIV[@id=\"warpper\"]//FORM"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.wrap DIV.main DIV.login-box FORM"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0_N7zrZx"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context0_c5DoXV": {
+      "controls": [
+        "control0_N7zrZx"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow0_fDp7p8": {
+      "toContexts": [
+        {
+          "toContextId": "context0_c5DoXV"
+        },
+        {
+          "toContextId": "context7_6oqdXk",
+          "toModelId": "approvalTrack"
+        }
+      ]
+    },
+    "flow6_UXNqWh": {
+      "fromContextId": "context0_c5DoXV",
+      "fromAction": "doAction",
+      "fromControlId": "control0_N7zrZx",
+      "toContexts": [
+        {
+          "toContextId": "context0_c5DoXV"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0_CF1yZb": {
+      "contextId": "context0_c5DoXV",
+      "layout": [
+        {
+          "id": "uiControl0_W1BKWP",
+          "controlId": "control0_N7zrZx",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl0_W1BKWP",
+                "onGetTemplate": "getTemplate_uiControl0_W1BKWP"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0_c5DoXV": [
+          "普元-用户登录"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0_c5DoXV": [
+          "192.168.0.189:8888/ptsoa/coframe/auth/login/login.jsp"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0_c5DoXV": [
+          [
+            "error",
+            "form",
+            "original_url",
+            "password",
+            "password$text",
+            "userId",
+            "userId$text",
+            "warpper"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0_c5DoXV": [
+          [
+            "butext",
+            "error",
+            "foot",
+            "log",
+            "login-box",
+            "login-error",
+            "login-item",
+            "main",
+            "mini-error",
+            "mini-errorIcon",
+            "mini-hidden",
+            "mini-password",
+            "mini-textbox",
+            "mini-textbox-border",
+            "mini-textbox-input",
+            "wrap"
+          ],
+          [
+            "butext",
+            "error",
+            "foot",
+            "log",
+            "login-box",
+            "login-error",
+            "login-item",
+            "main",
+            "mini-buttonedit-height",
+            "mini-error",
+            "mini-errorIcon",
+            "mini-hidden",
+            "mini-password",
+            "mini-textbox",
+            "mini-textbox-border",
+            "mini-textbox-input",
+            "wrap"
+          ],
+          [
+            "butext",
+            "error",
+            "foot",
+            "log",
+            "login-box",
+            "login-error",
+            "login-item",
+            "main",
+            "mini-buttonedit-height",
+            "mini-hidden",
+            "mini-password",
+            "mini-textbox",
+            "mini-textbox-border",
+            "mini-textbox-input",
+            "wrap"
+          ],
+          [
+            "butext",
+            "error",
+            "foot",
+            "log",
+            "login-box",
+            "login-error",
+            "login-item",
+            "main",
+            "mini-buttonedit-height",
+            "mini-hidden",
+            "mini-password",
+            "mini-textbox",
+            "mini-textbox-border",
+            "mini-textbox-focus",
+            "mini-textbox-input",
+            "wrap"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0_c5DoXV": [
+          [
+            "-/-/DIV",
+            "-/-/IMG",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/P",
+            "DIV/FORM/BR",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/FORM/P",
+            "DIV/P/SPAN",
+            "FORM/DIV/BR",
+            "FORM/P/INPUT-submit",
+            "FORM/P/SPAN",
+            "P/SPAN/INPUT-hidden",
+            "P/SPAN/SPAN",
+            "SPAN/SPAN/INPUT-password",
+            "SPAN/SPAN/INPUT-text"
+          ]
+        ]
+      }
+    }
+  }
+}

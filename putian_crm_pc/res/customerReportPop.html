@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>拜访-报告</title>
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/customer-reportPop.css" />
+    <link rel="stylesheet" type="text/css" href="./js/lib/iCheck/skins/ick-red.css" />
+    <style type="text/css">
+        #CloseReportPopRoot{
+            color:#fff;
+            width:20px;
+            height: 20px;
+            position:absolute;
+            top:0;right: 0;
+            background:url('../images/关闭60.png') no-repeat center center;
+            background-size:100%;
+            margin: 30px 30px 0px 0px;
+        }
+    </style>
+</head>
+
+<body class="overhidden">
+    <div class="g-doc m-popBox">
+        <div class="header">
+            <h1 class="title" id="headCustomer"></h1>
+            <div class="infors">
+                <span>计划时间：<em id="planDate"></em></span>
+                <span>创建日期：<em id="planCreateDate"></em></span>
+            </div>
+            <div class="m-nav">
+                <ul>
+                    <li><a href="#">签到</a></li>
+                    <li><a href="#">签出</a></li>
+                    <li class="z-act"><a href="#">报告</a></li>
+                </ul>
+            </div>
+            <div id="CloseReportPopRoot"></div>
+        </div>
+        <div class="body">
+            <div class="content">
+                <div class="center">
+                    <!--报告-->
+                    <div class="m-report-infors">
+                        <div class="content">
+                            <div class="header">
+                                <div>客户名称<span id="contentCustomer"></span></div>
+                                <div>签到时间<span id="signInDateTime"></span></div>
+                            </div>
+                            <div class="body clearfix">
+                                <div class="lists-one">
+                                    <h6>华为事业部</h6>
+                                    <div><textarea id="HuaWeiDivison"></textarea></div>
+                                </div>
+                                <div class="lists-one">
+                                    <h6>三星事业部</h6>
+                                    <div><textarea id="SamsungDivison"></textarea></div>
+                                </div>
+                                <div class="lists-one">
+                                    <h6>分销事业部</h6>
+                                    <div><textarea id="FenXiaoDivison"></textarea></div>
+                                </div>
+                                <div class="lists-one">
+                                    <h6>乐视事业部</h6>
+                                    <div><textarea id="LetvDivison"></textarea></div>
+                                </div>
+                                <div class="lists-one">
+                                    <h6>客户风险</h6>
+                                    <div><textarea id="CustomerRisk"></textarea></div>
+                                </div>
+                                <div class="lists-one">
+                                    <h6>其他信息</h6>
+                                    <div><textarea id="OtherInfor"></textarea></div>
+                                </div>
+                                <div class="m-uploading">
+                                    <h6 class="title">上传照片</h6>
+                                    <div class="imagesBox">
+                                        <div class="uploadBtn" id="filePicker"></div>
+                                        <div class="images" id="fileList">
+                                            <!--.temp占位用的-->
+                                            <div class="temp"></div>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;" class="textBtn"></a>
+                                </div>
+                                <div class="lists-one">
+                                    <!--只读状态下添加类名 chatUsers-check -->
+                                    <div class="chatUsers">
+                                        <i class="tipFont" id="DisplayContact">@</i>
+
+                                        <!--可编辑状态下显示的模块-->
+                                        <div class="users" id="ContactUsers">
+                                            <!--<div class="user">
+                                                <i class="icon icon-close"></i>
+                                                <span>李燕</span>
+                                            </div>
+                                            <div class="user">
+                                                <i class="icon icon-close"></i>
+                                                <span>张海</span>
+                                            </div>
+                                            <div class="user">
+                                                <i class="icon icon-close"></i>
+                                                <span>刘佳</span>
+                                            </div>-->
+                                        </div>
+
+                                        <!--只读状态下显示的模块-->
+                                        <!--<em class="names">李燕；张海；刘佳；</em>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <div class="m-btns m-btns-rd">
+                                    <!--禁用状态，添加类名disabled-->
+                                    <a href="javascript:;" class="u-btn u-btn-success">保存草稿</a>
+                                    <a href="javascript:;" class="u-btn u-btn-primary">确认</a>
+                                    <a href="javascript:;" class="u-btn u-btn-default" id="customerReportPopBack">返回</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-contact" id="ContactAlert">
+        <div class="header clearfix">
+            <i class="icon icon-back" id="ContactClose"></i>
+            <div class="search">
+                <label for="contactSearch">请输入搜索内容</label>
+                <input type="text" name="contactSearch" id="contactSearch">
+                <i class="icon icon-search" id="icon-search"></i>
+                <div class="search-lists" id="search-lists">
+                    <!--<a href="javascript:;">王新禄1</a>
+                    <a href="javascript:;">李斌</a>-->
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="content" id="contentBody">
+                
+            </div>    
+        </div>
+        <div class="footer clearfix">
+            <div class="checkAll">
+                <input type="checkbox" class="primary" id="ContactCheckAll">
+                <label for="ContactCheckAll">全选</label>
+            </div>
+            <a href="javascript:;" class="btn" id="ContactSure">确定<em></em></a>
+        </div>
+    </div>
+
+    <script type="text/javascript " src="./js/lib/jquery-3.2.1.min.js "></script>
+    <script type="text/javascript " src="./js/lib/webuploader/webuploader.min.js"></script>
+    <!--<script type="text/javascript " src="./js/lib/iCheck/js/jquery.icheck.js"></script>-->
+    <script type="text/javascript " src="./js/reportPop.js"></script>
+    
+    <script>
+        $(function() {
+            // 输入禁用状态下去掉边框样式
+            $(".lists-one textarea:disabled").parent().css("border", 0);
+
+            // 动态计算需要滚动内容的高度
+            var popInforsH = $("body").height() -
+                parseInt($(".m-popBox>.header").height()) -
+                parseInt($(".m-popBox>.body").css("padding")) * 2 - 2;
+            $(".m-popBox>.body>.content>.center").height(popInforsH);                      
+        })
+    </script>
+</body>
+</html>

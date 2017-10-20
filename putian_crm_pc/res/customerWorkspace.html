@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>客户信息列表</title>
+    <script src="js/lib/modernizr.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/customer-workspace.css" />
+    <link rel="stylesheet" type="text/css" href="./js/lib/iCheck/skins/ick-blue.css" />
+
+</head>
+
+<body>
+    <div class="g-doc">
+        <div class="g-body">
+            <div id="menuNavigator">
+
+            </div>
+            <div class="g-main">
+                <div class="g-box clearfix">
+                    <div class="m-btns clearfix">
+                        <a href="" class="btn"><i class="icon icon-edit"></i><span>编辑</span></a>
+                    </div>
+                    <div class="m-date" id="workPlanCalendar">
+                        <div class="custom-calendar-wrap">
+                            <div id="custom-inner">
+                                <div class="c-head">
+                                    <i class="icon icon-date-l" id="custom-prev"></i>
+                                    <span class="time"><span id="custom-year"></span>年<span id="custom-month"></span>月<span id="custom-date"></span>日</span>
+                                    <i class="icon icon-date-r" id="custom-next"></i>
+                                </div>
+                                <div id="calendar" class="fc-calendar-container">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-workPlan" id="workPlanFill">
+                        <div class="content">
+                            <div class="u-head clearfix ">
+                                <h1 class="title ">工作计划</h1>
+                                <em class="z-yet " id="workPlanNoConstitute">未制定</em>
+                                <em class="z-ok " style="display:none" id="workPlanHaveConstitute">已制定</em>
+                                <button id="newPlanDeleteButton" class="u-btn u-btn-a" data-toggle="modal">删除</button>
+                                <button id="newPlanAddButton" class="u-btn u-btn-a" data-toggle="modal" data-target="#newFile">新建</button>
+                            </div>
+                            <div class="u-textarea ">
+                                <span class="placeholder " id="workPlan">今日工作计划尚未制定</span>
+                                <textarea disabled></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="g-box m-visitPlan ">
+                    <div class="u-head ">
+                        <h1 class="title ">拜访计划</h1>
+                        <div id="newTempVisitButton" class="btn " data-toggle="modal" data-target="#shortVisit"><i class="icon icon-sign "></i><span>临时拜访</span></div>
+                    </div>
+                    <div class="m-lists ">
+                        <div class="g-box ">
+                            <h5 class="title "><i class="icon icon-dot "></i><span>计划拜访</span></h5>
+                            <div class="m-lists-content " id="visitPlanList">
+
+                            </div>
+                        </div>
+                        <div class="g-box ">
+                            <h5 class="title "><i class="icon icon-dot "></i><span>临时拜访</span></h5>
+                            <div class="m-lists-content " id="tempPlanList"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 计划id -->
+    <intput id="planRowId" type="hidden"/>
+    <intput id="planEaiId" type="hidden"/>
+
+    <!-- 日历选中日期 -->
+    <intput id="currentSelectDay" type="hidden"/>
+
+    <!-- Modal：新建或编辑 -->
+    <div class="modal modal-w01" id="newFile" tabindex="-1 " role="dialog " data-labelledby="newFileLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header clearfix">
+                    <ul class="u-tab">
+                        <li class="z-act">客户列表</li>
+                        <li>门店列表</li>
+                    </ul>
+                    <div class="u-search">
+                        <i class="icon" id="newPlanListSearch"></i>
+                        <span class="placeholder">请输入搜索内容</span>
+                        <input type="text" name="search" id="newPlanListSearchText">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="table-infors" id="newPlanList"></div>
+                    <div class="oIpt">
+                        <h5 class="title">日工作计划</h5>
+                        <div class="textarea">
+                            <i class="icon"></i>
+                            <textarea id="dayPlanContent"  name="dayPlanContent" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btns">
+                        <button id="addDayPlanOkBtn" class="u-btn u-btn-ok">确认</button>
+                        <button id="addDayPlanCancleBtn"class="u-btn u-btn-close" data-dismiss="modal" aria-label="Close">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--modal：临时拜访-->
+    <div class="modal modal-w01" id="shortVisit" tabindex="-1 " role="dialog " data-labelledby="shortVisitLabel" data-backdrop="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header clearfix">
+                    <ul class="u-tab">
+                        <li class="z-act">客户列表</li>
+                        <li>门店列表</li>
+                    </ul>
+                    <div class="u-search">
+                        <i class="icon" id="newTempVisitSearch"></i>
+                        <span class="placeholder">请输入搜索内容</span>
+                        <input type="text" name="search" id="newTempVisitSearchText">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="table-infors" id="newTempVisit">
+
+                    </div>
+                    <div class="table-otherContent">
+                        <div class="ck"><input type="checkbox"></div>
+                        <h6>其他客户</h6>
+                        <input id="tempPlanOtherCustomer" type="text">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btns">
+                        <button id="addTempDayPlanOkBtn" class="u-btn u-btn-ok">确认</button>
+                        <button id="addTempDayPlanCancleBtn"class="u-btn u-btn-close" data-dismiss="modal" aria-label="Close">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript " src="./js/lib/jquery-3.2.1.min.js "></script>
+    <script type="text/javascript" src="./js/customerWorkspace.js"></script>
+    <script type="text/javascript " src="./js/lib/modal.js"></script>
+    <script type="text/javascript " src="./js/lib/transition.js"></script>
+    <script type="text/javascript " src="./js/lib/iCheck/js/jquery.icheck.js"></script>
+    <script>
+        $(".modal").on("show.bs.modal", function() {
+            $(this).css('display', 'block');
+            var $dialogH = $(this).find(".modal-dialog").height();
+            $(this).find(".modal-dialog").height($dialogH).css('marginTop', -($dialogH / 2));
+        });
+
+        $(function() {
+            // 搜索框模拟placeholder状态
+            $(".u-search input").focus(function() {
+                $(this).siblings(".placeholder").hide();
+            });
+            $(".u-search input").blur(function() {
+                if ($(this).val() == '') {
+                    $(this).siblings(".placeholder").show();
+                }
+            });
+            $(".u-search .placeholder").click(function() {
+                $(this).siblings("input").focus();
+            });
+
+            // 日工作计划
+            $(".modal textarea").focus(function() {
+                $(this).siblings(".icon").hide();
+            });
+            $(".modal textarea").blur(function() {
+                if ($(this).val() == '') {
+                    $(this).siblings(".icon").show();
+                }
+            });
+
+            $(".modal .textarea .icon").click(function() {
+                $(this).siblings("textarea").focus();
+            });
+
+        });
+    </script>
+</body>
+
+</html>

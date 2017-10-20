@@ -1,0 +1,1409 @@
+{
+  "version": "0.1",
+  "id": "saleDescription",
+  "targetURL": "http://192.168.1.174:8080/ptDataShow/commonReports/commonReportsByEncoder?reportPid=salesTask&filter_userId=ZHUCHUNYAO&encoder=WkhVQ0hVTllBTyswNi8xOC8yMDE3IDE4OjI0OjEw",
+  "jsFile": "index.js",
+  "chineseName": "销售明细",
+  "description": "",
+  "controls": {
+    "control10_s35dmL": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "开始日期"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "descendant::INPUT[@name=\"filter_day\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//INPUT[@id=\"start\"]",
+              "descendant::DIV[@id=\"filterArea\"]//INPUT[@id=\"start\"]",
+              "descendant::INPUT[@id=\"start\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.col-sm-3 DIV.col-sm-3 INPUT.form-control.layer-date"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "datepicker",
+      "roles": "element,datepicker,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control11_3hVBZO": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "结束日期"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "descendant::INPUT[@name=\"filter_day\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//INPUT[@id=\"end\"]",
+              "descendant::DIV[@id=\"filterArea\"]//INPUT[@id=\"end\"]",
+              "descendant::INPUT[@id=\"end\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.col-sm-3 DIV.col-sm-3 INPUT.form-control.layer-date"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/INPUT[2]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "datepicker",
+      "roles": "element,datepicker,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control12_N7CXgB": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "分公司"
+              ],
+              "visText": [
+                "分公司"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]/DIV[1]/DIV[2]/LABEL[1]",
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//LABEL",
+              "descendant::DIV[@id=\"filterArea\"]//LABEL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              6
+            ],
+            "value": "DIV.ibox-content DIV.form-group.col-sm-3 LABEL.control-label.pull-left"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control13_i6NaFT": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"filter_branchName\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_branchName\"]",
+              "descendant::DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_branchName\"]",
+              "descendant::INPUT[@id=\"filter_branchName\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              6
+            ],
+            "value": "DIV.form-group.col-sm-3 DIV.col-sm-8 INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control14_xacs2t": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "办事处"
+              ],
+              "visText": [
+                "办事处"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]/DIV[1]/DIV[3]/LABEL[1]",
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//LABEL",
+              "descendant::DIV[@id=\"filterArea\"]//LABEL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              6
+            ],
+            "value": "DIV.ibox-content DIV.form-group.col-sm-3 LABEL.control-label.pull-left"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[3]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control15_4NIuK9": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"filter_officeName\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_officeName\"]",
+              "descendant::DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_officeName\"]",
+              "descendant::INPUT[@id=\"filter_officeName\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              6
+            ],
+            "value": "DIV.form-group.col-sm-3 DIV.col-sm-8 INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[3]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control16_Wkda4M": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "客户名称"
+              ],
+              "visText": [
+                "客户名称"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]/DIV[1]/DIV[4]/LABEL[1]",
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//LABEL",
+              "descendant::DIV[@id=\"filterArea\"]//LABEL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              6
+            ],
+            "value": "DIV.ibox-content DIV.form-group.col-sm-3 LABEL.control-label.pull-left"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[4]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control17_54E88J": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"filter_customerName\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_customerName\"]",
+              "descendant::DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_customerName\"]",
+              "descendant::INPUT[@id=\"filter_customerName\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              6
+            ],
+            "value": "DIV.form-group.col-sm-3 DIV.col-sm-8 INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[4]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control18_amQI95": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "客户编码"
+              ],
+              "visText": [
+                "客户编码"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]/DIV[1]/DIV[5]/LABEL[1]",
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//LABEL",
+              "descendant::DIV[@id=\"filterArea\"]//LABEL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              6
+            ],
+            "value": "DIV.ibox-content DIV.form-group.col-sm-3 LABEL.control-label.pull-left"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[5]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control19_J8bd39": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"filter_userId\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_userId\"]",
+              "descendant::DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_userId\"]",
+              "descendant::INPUT[@id=\"filter_userId\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              6
+            ],
+            "value": "DIV.form-group.col-sm-3 DIV.col-sm-8 INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[5]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control20_nT6Zet": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "分类条目"
+              ],
+              "visText": [
+                "分类条目"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]/DIV[1]/DIV[6]/LABEL[1]",
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//LABEL",
+              "descendant::DIV[@id=\"filterArea\"]//LABEL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              4,
+              6
+            ],
+            "value": "DIV.ibox-content DIV.form-group.col-sm-3 LABEL.control-label.pull-left"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[6]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control21_VOugxF": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"filter_CLASSIFYCLAUSES\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_CLASSIFYCLAUSES\"]",
+              "descendant::DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_CLASSIFYCLAUSES\"]",
+              "descendant::INPUT[@id=\"filter_CLASSIFYCLAUSES\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              4,
+              6
+            ],
+            "value": "DIV.form-group.col-sm-3 DIV.col-sm-8 INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[6]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control22_S7XpPb": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "分类划分"
+              ],
+              "visText": [
+                "分类划分"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]/DIV[1]/DIV[7]/LABEL[1]",
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//LABEL",
+              "descendant::DIV[@id=\"filterArea\"]//LABEL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              5,
+              6
+            ],
+            "value": "DIV.ibox-content DIV.form-group.col-sm-3 LABEL.control-label.pull-left"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[7]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control23_CJbT2d": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"filter_CLASSIFYDIVIDE\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_CLASSIFYDIVIDE\"]",
+              "descendant::DIV[@id=\"filterArea\"]//INPUT[@id=\"filter_CLASSIFYDIVIDE\"]",
+              "descendant::INPUT[@id=\"filter_CLASSIFYDIVIDE\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              5,
+              6
+            ],
+            "value": "DIV.form-group.col-sm-3 DIV.col-sm-8 INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/DIV[7]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control24_gDKck3": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "确定"
+              ],
+              "visText": [
+                "确定"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "确定"
+              ],
+              "visText": [
+                "确定"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"filterArea\"]//A[@id=\"queryBtn\"]",
+              "descendant::DIV[@id=\"filterArea\"]//A[@id=\"queryBtn\"]",
+              "descendant::A[@id=\"queryBtn\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.row DIV.ibox-content A.btn.btn-success.btn-rounded.pull-left.select_btn"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[2]/DIV[1]/A[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control25_s905PP": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "销量明细汇总"
+              ],
+              "visText": [
+                "销量明细汇总"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 2,
+            "value": {
+              "pathname": "/ptDataShow/commonReports/commonReports",
+              "search": "reportPid=salesTask"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"u_title\"]/A[1]",
+              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"u_title\"]//A",
+              "descendant::DIV[@id=\"u_title\"]//A"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ibox-content DIV.btn-group A.btn.btn-primary"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[1]/A[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element,link",
+      "content": true,
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context4_hMTsAE": {
+      "controls": [
+        "control10_s35dmL",
+        "control11_3hVBZO",
+        "control12_N7CXgB",
+        "control13_i6NaFT",
+        "control14_xacs2t",
+        "control15_4NIuK9",
+        "control16_Wkda4M",
+        "control17_54E88J",
+        "control18_amQI95",
+        "control19_J8bd39",
+        "control20_nT6Zet",
+        "control21_VOugxF",
+        "control22_S7XpPb",
+        "control23_CJbT2d",
+        "control24_gDKck3",
+        "control25_s905PP"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow10_Kt0q59": {
+      "toContexts": [
+        {
+          "toContextId": "context4_hMTsAE"
+        }
+      ]
+    },
+    "flow11_kaW5Dh": {
+      "fromContextId": "context4_hMTsAE",
+      "fromAction": "click",
+      "fromControlId": "control24_gDKck3",
+      "toContexts": [
+        {
+          "toContextId": "context4_hMTsAE"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page4_I1OJ1O": {
+      "contextId": "context4_hMTsAE",
+      "layout": [
+        {
+          "id": "uiControl17_k54Tov",
+          "display": {
+            "title": "销售明细",
+            "type": "header",
+            "adapterId": "header",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl17_k54TovheaderLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl17_k54TovheaderRight",
+              "display": {
+                "type": "headerRight",
+                "adapterId": "headerRight",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl18_1BuTX0",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "showHeader": true,
+            "expandable": true,
+            "expandableHeight": "300px",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl18_1BuTX0header",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl34_TtuhBv",
+                  "controlId": "control25_s905PP",
+                  "display": {
+                    "adapterId": "clickable",
+                    "type": "link",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl18_1BuTX0body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl19_Q6IetV",
+                  "controlId": "control10_s35dmL",
+                  "display": {
+                    "adapterId": "datepicker",
+                    "type": "datepicker",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl20_hpDv2K",
+                  "controlId": "control11_3hVBZO",
+                  "display": {
+                    "adapterId": "datepicker",
+                    "type": "datepicker",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl21_okbht3",
+                  "controlId": "control12_N7CXgB",
+                  "display": {
+                    "adapterId": "content",
+                    "type": "content",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl22_tlu5d3",
+                  "controlId": "control13_i6NaFT",
+                  "display": {
+                    "adapterId": "textbox",
+                    "type": "textbox",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl23_XMySpZ",
+                  "controlId": "control14_xacs2t",
+                  "display": {
+                    "adapterId": "content",
+                    "type": "content",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl24_KUa8Xx",
+                  "controlId": "control15_4NIuK9",
+                  "display": {
+                    "adapterId": "textbox",
+                    "type": "textbox",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl25_58yexW",
+                  "controlId": "control16_Wkda4M",
+                  "display": {
+                    "adapterId": "content",
+                    "type": "content",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl26_V8fvTU",
+                  "controlId": "control17_54E88J",
+                  "display": {
+                    "adapterId": "textbox",
+                    "type": "textbox",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl27_B00v6K",
+                  "controlId": "control18_amQI95",
+                  "display": {
+                    "adapterId": "content",
+                    "type": "content",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl28_tC9STF",
+                  "controlId": "control19_J8bd39",
+                  "display": {
+                    "adapterId": "textbox",
+                    "type": "textbox",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl29_oKtn3E",
+                  "controlId": "control20_nT6Zet",
+                  "display": {
+                    "adapterId": "content",
+                    "type": "content",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl30_3FavFM",
+                  "controlId": "control21_VOugxF",
+                  "display": {
+                    "adapterId": "textbox",
+                    "type": "textbox",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl31_CPmckZ",
+                  "controlId": "control22_S7XpPb",
+                  "display": {
+                    "adapterId": "content",
+                    "type": "content",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl32_bhhSpD",
+                  "controlId": "control23_CJbT2d",
+                  "display": {
+                    "adapterId": "textbox",
+                    "type": "textbox",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl33_U3IfES",
+                  "controlId": "control24_gDKck3",
+                  "display": {
+                    "adapterId": "clickable",
+                    "type": "button",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl18_1BuTX0footer",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context4_hMTsAE": [
+          "报表"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context4_hMTsAE": [
+          "192.168.1.174:8080/ptDataShow/commonReports/commonReportsByEncoder?reportPid=salesTask&filter_userId=ZHUCHUNYAO&encoder=WkhVQ0hVTllBTyswNi8xOC8yMDE3IDE4OjI0OjEw"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context4_hMTsAE": [
+          [
+            "HideFrm",
+            "aggsArea",
+            "end",
+            "filterArea",
+            "filter_CLASSIFYCLAUSES",
+            "filter_CLASSIFYDIVIDE",
+            "filter_branchName",
+            "filter_customerName",
+            "filter_officeName",
+            "filter_userId",
+            "first_pager_list_",
+            "gbox_table_list_",
+            "gview_table_list_",
+            "input_pager_list_",
+            "jqGrid_wrapper",
+            "jqgh_table_list__branchName",
+            "jqgh_table_list__brand",
+            "jqgh_table_list__channelType",
+            "jqgh_table_list__city",
+            "jqgh_table_list__cityLevel",
+            "jqgh_table_list__customerName",
+            "jqgh_table_list__day",
+            "jqgh_table_list__department",
+            "jqgh_table_list__materialDesc",
+            "jqgh_table_list__materialType",
+            "jqgh_table_list__modelName",
+            "jqgh_table_list__officeName",
+            "jqgh_table_list__projectName",
+            "jqgh_table_list__province",
+            "jqgh_table_list__realSalesAmount",
+            "jqgh_table_list__realSalesCount",
+            "jqgh_table_list__salerName",
+            "jqgh_table_list__userId",
+            "last_pager_list_",
+            "load_table_list_",
+            "lui_table_list_",
+            "next_pager_list_",
+            "pager_list_",
+            "pager_list__center",
+            "pager_list__left",
+            "pager_list__right",
+            "pg_pager_list_",
+            "prev_pager_list_",
+            "queryBtn",
+            "queryForm",
+            "rs_mtable_list_",
+            "sp__pager_list_",
+            "start",
+            "table_list_",
+            "table_list__branchName",
+            "table_list__brand",
+            "table_list__channelType",
+            "table_list__city",
+            "table_list__cityLevel",
+            "table_list__customerName",
+            "table_list__day",
+            "table_list__department",
+            "table_list__materialDesc",
+            "table_list__materialType",
+            "table_list__modelName",
+            "table_list__officeName",
+            "table_list__projectName",
+            "table_list__province",
+            "table_list__realSalesAmount",
+            "table_list__realSalesCount",
+            "table_list__salerName",
+            "table_list__userId",
+            "u_title"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context4_hMTsAE": [
+          [
+            "HeaderButton",
+            "add",
+            "animated",
+            "btn",
+            "btn-group",
+            "btn-primary",
+            "btn-rounded",
+            "btn-success",
+            "col-sm-",
+            "control-label",
+            "date_selected",
+            "export",
+            "fa",
+            "fa-times-circle",
+            "fadeInRight",
+            "form-control",
+            "form-group",
+            "glyphicon",
+            "glyphicon-backward",
+            "glyphicon-circle-arrow-up",
+            "glyphicon-forward",
+            "glyphicon-step-backward",
+            "glyphicon-step-forward",
+            "glyphicon-triangle-bottom",
+            "glyphicon-triangle-top",
+            "ibox",
+            "ibox-content",
+            "jqGrid_wrapper",
+            "jqgfirstrow",
+            "jqgrid-overlay",
+            "jqgrow",
+            "l-panel",
+            "l-panel-bar",
+            "layer-date",
+            "loading",
+            "pull-left",
+            "pull-right",
+            "rem",
+            "row",
+            "s-ico",
+            "select_btn",
+            "select_condition",
+            "table",
+            "table-bordered",
+            "table-responsive",
+            "text_box",
+            "ui-common-table",
+            "ui-disabled",
+            "ui-grid-ico-sort",
+            "ui-icon-asc",
+            "ui-icon-desc",
+            "ui-jqgrid",
+            "ui-jqgrid-bdiv",
+            "ui-jqgrid-btable",
+            "ui-jqgrid-caption",
+            "ui-jqgrid-hbox",
+            "ui-jqgrid-hdiv",
+            "ui-jqgrid-headlink",
+            "ui-jqgrid-htable",
+            "ui-jqgrid-labels",
+            "ui-jqgrid-pager",
+            "ui-jqgrid-resize",
+            "ui-jqgrid-resize-ltr",
+            "ui-jqgrid-resize-mark",
+            "ui-jqgrid-sortable",
+            "ui-jqgrid-title",
+            "ui-jqgrid-titlebar",
+            "ui-jqgrid-titlebar-close",
+            "ui-jqgrid-view",
+            "ui-overlay",
+            "ui-pager-control",
+            "ui-pager-table",
+            "ui-paging-pager",
+            "ui-pg-button",
+            "ui-pg-input",
+            "ui-pg-selbox",
+            "ui-pg-table",
+            "ui-row-ltr",
+            "ui-separator",
+            "ui-sort-ltr",
+            "ui-sortable",
+            "ui-sortable-handle",
+            "ui-th-column",
+            "ui-th-ltr",
+            "wrapper",
+            "wrapper-content"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context4_hMTsAE": [
+          [
+            "-/-/DIV",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/DIV/A",
+            "-/DIV/BUTTON",
+            "-/DIV/DIV",
+            "-/DIV/FORM",
+            "-/DIV/INPUT-text",
+            "DIV/A/SPAN",
+            "DIV/BUTTON/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FORM/DIV/DIV",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/SELECT/OPTION",
+            "TD/TABLE/TBODY",
+            "TH/DIV/SPAN",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-checkbox",
+            "TR/TD/INPUT-text",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TH/DIV",
+            "TR/TH/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

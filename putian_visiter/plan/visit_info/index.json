@@ -1,0 +1,931 @@
+{
+  "version": "0.1",
+  "id": "visit_info",
+  "targetURL": "http://static.yunshipei.info/cases/putianCRM/visit_info.html",
+  "jsFile": "index.js",
+  "requires": {
+    "visited_list": "../visited_list/index.json",
+    "select_vistiter": "../select_vistiter/index.json"
+  },
+  "chineseName": "拜访信息",
+  "description": "",
+  "controls": {
+    "control10": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "拜访详情"
+              ],
+              "visText": [
+                "拜访详情"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "拜访详情"
+              ],
+              "visText": [
+                "拜访详情"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/H1[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1446,
+              "height": 38
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control10"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    },
+    "control12": {
+      "location": {
+        "data": {
+          "tagName": "TEXTAREA"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TEXTAREA[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "textarea"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 181,
+              "height": 36
+            }
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true
+    },
+    "control13": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "选择客户"
+              ],
+              "visText": [
+                "选择客户"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "选择客户"
+              ],
+              "visText": [
+                "选择客户"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              0,
+              0,
+              238
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 64,
+              "height": 17
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control13"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false
+    },
+    "control14": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "选择地图"
+              ],
+              "visText": [
+                "选择地图"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "选择地图"
+              ],
+              "visText": [
+                "选择地图"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/A[2]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              0,
+              0,
+              238
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 64,
+              "height": 17
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control14"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false
+    },
+    "control15": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "拜访详情"
+              ],
+              "visText": [
+                "拜访详情"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "拜访详情"
+              ],
+              "visText": [
+                "拜访详情"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/H1[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1446,
+              "height": 38
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "拜访详情"
+    },
+    "control16": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "Alert"
+              ],
+              "visText": [
+                "Alert"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "Alert"
+              ],
+              "visText": [
+                "Alert"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.js.cssanimations BUTTON.am-btn.am-btn-primary"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/BUTTON[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "button"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 67.546875,
+              "height": 37
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control17": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "Amaze UI Hello world！ 确定"
+              ],
+              "visText": [
+                "Amaze UI Hello world！ 确定"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "Amaze UI Hello world！ 确定"
+              ],
+              "visText": [
+                "Amaze UI Hello world！ 确定"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"my-alert\"]/DIV[1]",
+              "descendant::DIV[@id=\"my-alert\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.am-dimmer-active DIV.am-modal.am-modal-alert.am-modal-active DIV.am-modal-dialog"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 540,
+              "height": 133
+            }
+          }
+        ]
+      },
+      "intendedRole": "dialog",
+      "roles": "element,dialog",
+      "monitored": false
+    },
+    "control25": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "Amaze UI"
+              ],
+              "visText": [
+                "Amaze UI"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "Amaze UI"
+              ],
+              "visText": [
+                "Amaze UI"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"my-alert\"]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"my-alert\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.am-modal.am-modal-alert.am-modal-active DIV.am-modal-dialog DIV.am-modal-hd"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 540,
+              "height": 48
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control25"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    }
+  },
+  "contexts": {
+    "context3": {
+      "controls": [
+        "control10",
+        "control12",
+        "control13",
+        "control14",
+        "control16",
+        "control17",
+        "control25"
+      ],
+      "anchors": [
+        "control15"
+      ]
+    }
+  },
+  "flows": {
+    "flow7": {
+      "toContexts": [
+        {
+          "toContextId": "context3"
+        }
+      ]
+    },
+    "flow8": {
+      "fromContextId": "context3",
+      "fromAction": "click",
+      "fromControlId": "control10",
+      "toContexts": [
+        {
+          "toContextId": "context3"
+        }
+      ]
+    },
+    "flow9": {
+      "fromContextId": "context3",
+      "fromAction": "click",
+      "fromControlId": "control12",
+      "toContexts": [
+        {
+          "toContextId": "context3"
+        }
+      ]
+    },
+    "flow10": {
+      "fromContextId": "context3",
+      "fromAction": "click",
+      "fromControlId": "control13",
+      "toContexts": [
+        {
+          "toContextId": "context3"
+        },
+        {
+          "toContextId": "context1",
+          "toModelId": "select_vistiter"
+        }
+      ]
+    },
+    "flow11": {
+      "fromContextId": "context3",
+      "fromAction": "click",
+      "fromControlId": "control16",
+      "toContexts": [
+        {
+          "toContextId": "context3"
+        },
+        {
+          "toContextId": "context4",
+          "toModelId": "visited_list"
+        }
+      ]
+    },
+    "flow12": {
+      "fromContextId": "context3",
+      "fromAction": "click",
+      "fromControlId": "control17",
+      "toContexts": [
+        {
+          "toContextId": "context3"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page3": {
+      "contextId": "context3",
+      "layout": [
+        {
+          "id": "uiControl12",
+          "display": {
+            "title": "拜访信息",
+            "type": "header",
+            "adapterId": "header",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl12headerLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl13",
+                  "controlId": "control10",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl13",
+                        "onGetTemplate": "getTemplate_uiControl13"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl12headerRight",
+              "display": {
+                "type": "headerRight",
+                "adapterId": "headerRight",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl14",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "class": "company-card padding0 margin0 border0",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl14body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl17",
+                  "controlId": "control13",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl17",
+                        "onGetTemplate": "getTemplate_uiControl17"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl15",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "class": "date-address  padding0 margin0 border0",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl15body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl18",
+                  "controlId": "control14",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl18",
+                        "onGetTemplate": "getTemplate_uiControl18"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl16",
+          "controlId": "control12",
+          "display": {
+            "adapterId": "textbox",
+            "type": "textbox",
+            "placeholder": "拜访内容",
+            "class": "mcc-textarea",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl21",
+          "controlId": "control17",
+          "display": {
+            "adapterId": "dialog",
+            "type": "dialog",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl21body",
+              "display": {
+                "type": "dialogBody",
+                "adapterId": "dialogBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl33",
+                  "controlId": "control25",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl33",
+                        "onGetTemplate": "getTemplate_uiControl33"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl21footer",
+              "display": {
+                "type": "dialogFooter",
+                "adapterId": "dialogFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl19",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "class": "mcc-foot",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl19body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl20",
+                  "controlId": "control16",
+                  "display": {
+                    "adapterId": "clickable",
+                    "type": "button",
+                    "undefined": "secondary",
+                    "class": "submit-btn",
+                    "": true,
+                    "amStyle": "primary",
+                    "text": "提交",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context3": [
+          "Title"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context3": [
+          "static.yunshipei.info/cases/putianCRM/visit_info.html"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context3": [
+          [],
+          [
+            "my-alert"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context3": [
+          [],
+          [
+            "am-btn",
+            "am-btn-primary",
+            "am-modal",
+            "am-modal-alert",
+            "am-modal-bd",
+            "am-modal-btn",
+            "am-modal-dialog",
+            "am-modal-footer",
+            "am-modal-hd"
+          ],
+          [
+            "am-active",
+            "am-btn",
+            "am-btn-primary",
+            "am-dimmer",
+            "am-modal",
+            "am-modal-active",
+            "am-modal-alert",
+            "am-modal-bd",
+            "am-modal-btn",
+            "am-modal-dialog",
+            "am-modal-footer",
+            "am-modal-hd"
+          ],
+          [
+            "am-active",
+            "am-btn",
+            "am-btn-primary",
+            "am-dimmer",
+            "am-modal",
+            "am-modal-active",
+            "am-modal-alert",
+            "am-modal-bd",
+            "am-modal-dialog",
+            "am-modal-footer",
+            "am-modal-hd"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context3": [
+          [
+            "-/-/H1",
+            "-/-/SCRIPT"
+          ],
+          [
+            "-/-/A",
+            "-/-/H1",
+            "-/-/SCRIPT",
+            "-/-/TEXTAREA"
+          ],
+          [
+            "-/-/A",
+            "-/-/BUTTON",
+            "-/-/DIV",
+            "-/-/H1",
+            "-/-/SCRIPT",
+            "-/-/TEXTAREA",
+            "-/DIV/DIV",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN"
+          ],
+          [
+            "-/-/A",
+            "-/-/BUTTON",
+            "-/-/DIV",
+            "-/-/H1",
+            "-/-/SCRIPT",
+            "-/-/TEXTAREA",
+            "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}

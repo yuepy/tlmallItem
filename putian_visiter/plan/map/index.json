@@ -1,0 +1,392 @@
+{
+  "version": "0.1",
+  "id": "map",
+  "targetURL": "http://static.yunshipei.info/cases/putianCRM/visit_map.html",
+  "jsFile": "index.js",
+  "requires": {
+    "visit_info": "../visit_info/index.json"
+  },
+  "chineseName": "地图",
+  "description": "",
+  "controls": {
+    "control7": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "地图"
+              ],
+              "visText": [
+                "地图"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "地图"
+              ],
+              "visText": [
+                "地图"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/H1[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1446,
+              "height": 42
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control7"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    },
+    "control8": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "地图"
+              ],
+              "visText": [
+                "地图"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "地图"
+              ],
+              "visText": [
+                "地图"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/H1[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1446,
+              "height": 42
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "地图"
+    },
+    "control9": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "下一步"
+              ],
+              "visText": [
+                "下一步"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "下一步"
+              ],
+              "visText": [
+                "下一步"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              0,
+              0,
+              238
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 48,
+              "height": 21
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false
+    },
+    "control26": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "地图 下一步"
+              ],
+              "visText": [
+                "地图 下一步"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "地图 下一步"
+              ],
+              "visText": [
+                "地图 下一步"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1462,
+              "height": 951
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control26"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false
+    }
+  },
+  "contexts": {
+    "context2": {
+      "controls": [
+        "control7",
+        "control9",
+        "control26"
+      ],
+      "anchors": [
+        "control8"
+      ]
+    }
+  },
+  "flows": {
+    "flow5": {
+      "toContexts": [
+        {
+          "toContextId": "context2"
+        }
+      ]
+    },
+    "flow6": {
+      "fromContextId": "context2",
+      "fromAction": "click",
+      "fromControlId": "control9",
+      "toContexts": [
+        {
+          "toContextId": "context2"
+        },
+        {
+          "toContextId": "context3",
+          "toModelId": "visit_info"
+        }
+      ]
+    },
+    "flow17": {
+      "fromContextId": "context2",
+      "fromAction": "doAction",
+      "fromControlId": "control7",
+      "toContexts": [
+        {
+          "toContextId": "context2"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page2": {
+      "contextId": "context2",
+      "layout": [
+        {
+          "id": "uiControl9",
+          "display": {
+            "class": "navbar navbar-primary ysp-header-navbar",
+            "title": "当前位置",
+            "type": "header",
+            "adapterId": "header",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl9headerLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl10",
+                  "controlId": "control7",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl10",
+                        "onGetTemplate": "getTemplate_uiControl10"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl22",
+          "controlId": "control26",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl22",
+                "onGetTemplate": "getTemplate_uiControl22"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context2": [
+          "添加动画标注点"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context2": [
+          "static.yunshipei.info/cases/putianCRM/visit_map.html"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context2": [
+          [
+            "allmap"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context2": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context2": [
+          [
+            "-/-/A",
+            "-/-/DIV",
+            "-/-/H1",
+            "-/-/SCRIPT"
+          ]
+        ]
+      }
+    }
+  }
+}

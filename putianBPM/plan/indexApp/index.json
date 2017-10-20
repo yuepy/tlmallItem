@@ -1,0 +1,413 @@
+{
+  "version": "0.1",
+  "id": "indexApp",
+  "targetURL": "http://192.168.0.189:8888/ptsoa/bps/wfclient/task/app/appMyTask.jsp",
+  "jsFile": "index.js",
+  "requires": {
+    "PendingTask": "../PendingTask/index.json"
+  },
+  "chineseName": "App的首页",
+  "description": "",
+  "controls": {
+    "control35_dXd7Cl": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "待处理的任务"
+              ],
+              "visText": [
+                "待处理的任务"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "TABLE.mini-tabs-header TD.mini-tab SPAN.mini-tab-text"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control36_JSXxbr": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "已处理的任务"
+              ],
+              "visText": [
+                "已处理的任务"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "TABLE.mini-tabs-header TD.mini-tab SPAN.mini-tab-text"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[4]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context13_fcRQAC": {
+      "controls": [
+        "control35_dXd7Cl",
+        "control36_JSXxbr"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/appMyTask\\.jsp"
+      ]
+    }
+  },
+  "flows": {
+    "flow5_T90s7A": {
+      "toContexts": [
+        {
+          "toContextId": "context13_fcRQAC"
+        }
+      ]
+    },
+    "flow37_oqn3mO": {
+      "fromContextId": "context13_fcRQAC",
+      "fromAction": "click",
+      "fromControlId": "control35_dXd7Cl",
+      "toContexts": [
+        {
+          "toContextId": "context13_fcRQAC"
+        }
+      ]
+    },
+    "flow38_4WHKRL": {
+      "fromContextId": "context13_fcRQAC",
+      "fromAction": "click",
+      "fromControlId": "control36_JSXxbr",
+      "toContexts": [
+        {
+          "toContextId": "context13_fcRQAC"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page13_iSQVe8": {
+      "contextId": "context13_fcRQAC",
+      "layout": [
+        {
+          "id": "uiControl33_I6bXXE",
+          "controlId": "control35_dXd7Cl",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl37_cAw7XK",
+          "controlId": "control36_JSXxbr",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context13_fcRQAC": [
+          "移动端页面"
+        ],
+        "context5_7wf9RT": [
+          "普元-用户机构及权限管理系统",
+          "移动端页面"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context13_fcRQAC": [
+          "192.168.0.189:8888/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
+        ],
+        "context5_7wf9RT": [
+          "192.168.0.189:8888/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self&_t=421327&_winid=w6922",
+          "192.168.0.189:8888/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self&_t=867943&_winid=w3895",
+          "192.168.0.189:8888/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self&_t=501741&_winid=w1777",
+          "192.168.0.189:8888/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self&_t=992618&_winid=w7514",
+          "192.168.0.189:8888/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?_t=928665&_winid=w5410"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context13_fcRQAC": [
+          [
+            "mini-$",
+            "mini-$body$",
+            "tabs"
+          ]
+        ],
+        "context5_7wf9RT": [
+          [
+            "container",
+            "contextMenu",
+            "levsmenu",
+            "logos",
+            "mainTabs",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabsMenu",
+            "wrapper"
+          ],
+          [
+            "mini-$",
+            "mini-$body$",
+            "tabs"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context13_fcRQAC": [
+          [
+            "mini-disabled",
+            "mini-tab",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table"
+          ]
+        ],
+        "context5_7wf9RT": [
+          [
+            "J_tabClose",
+            "J_tabCloseAll",
+            "J_tabCloseOther",
+            "J_tabShowActive",
+            "active",
+            "b",
+            "divider",
+            "dropdown",
+            "dropdown-menu",
+            "dropdown-menu-right",
+            "fmain",
+            "inactive",
+            "last",
+            "main",
+            "menu",
+            "menu-wrap",
+            "mini-contextmenu",
+            "mini-disabled",
+            "mini-fit",
+            "mini-menu",
+            "mini-menu-border",
+            "mini-menu-bottomArrow",
+            "mini-menu-float",
+            "mini-menu-inner",
+            "mini-menu-toolbar",
+            "mini-menu-topArrow",
+            "mini-menuitem",
+            "mini-menuitem-allow",
+            "mini-menuitem-icon",
+            "mini-menuitem-inner",
+            "mini-menuitem-text",
+            "mini-separator",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "radius",
+            "sidebar",
+            "submain",
+            "tcc",
+            "wrap"
+          ],
+          [
+            "mini-disabled",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context13_fcRQAC": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ],
+        "context5_7wf9RT": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/A",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "LI/A/I",
+            "LI/UL/LI",
+            "SPAN/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN",
+            "UL/LI/A",
+            "UL/LI/UL"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

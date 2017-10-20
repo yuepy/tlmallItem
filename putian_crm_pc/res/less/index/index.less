@@ -1,0 +1,278 @@
+body {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+  overflow: hidden;
+}
+body,
+ul,
+li,
+span,
+div,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 !important;
+}
+li {
+  list-style-type: none;
+}
+.head-title,
+.head-detile {
+  clear: both;
+}
+iframe.content-main-region {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
+.main-container {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  transition: margin-left 1s;
+}
+.main-container .sidebar-container {
+    width: 15%;
+    height: 100%;
+    min-width: 180px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 11%;
+    flex: 0 1 11%;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    overflow: visible;
+    background-color: #073567;
+    -webkit-box-shadow: #083d77 1px 1px 1px;
+    box-shadow: #083d77 1px 1px 1px;
+    position: relative; 
+}
+.main-container .sidebar-container .logo {
+  text-align: center;
+  margin-top: 10px;
+}
+.main-container .sidebar-container .logo > img {
+  width: 110px;
+}
+.main-container .sidebar-container .client-portrait {
+  text-align: center;
+  margin: 30px 0;
+}
+.main-container .content-container {
+  flex: 0 1 89%;
+}
+.main-container .sidebar-container .client-portrait > div > img {
+  width: 100px;
+}
+.main-container .sidebar-container .client-portrait > div:last-child {
+  margin: 12px;
+}
+.main-container .sidebar-container .client-portrait > div:last-child > span {
+  color: #eff2f4;
+  font-size: 16px;
+}
+/*******************sidebar菜单1*********************/
+ul.nav-menu-wrapper > li.nav-menu-item {
+  text-align: center;
+}
+ul.nav-menu-wrapper > li.nav-menu-item:hover {
+  /*background: #fe5722;*/
+}
+ul.nav-menu-wrapper > li.nav-menu-item.active {
+  background: #fe5722;
+}
+ul.nav-menu-wrapper > li.nav-menu-item > a > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0 15px 24%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+ul.nav-menu-wrapper > li.nav-menu-item > a > div > img {
+  width: 23px;
+  height: 23px;
+}
+ul.nav-menu-wrapper > li.nav-menu-item > a > div > span {
+  font-size: 1.6rem;
+  color: #e4e9ee;
+  padding-left: 20px;
+  /*font-weight: 600;*/
+}
+.sidebar-container{
+    position: relative;
+    .nav-menu-switch{
+        position: absolute;
+        width: 10px;
+        height: 60px;
+        top:45%;
+        right: 0;
+        margin-right: -10px;
+        background-color:#073567;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+   
+}
+
+/*******************sidebar底部*********************/
+footer.sidebar-container-footer {
+  position: absolute;
+  bottom: 0;
+  color: #e4e9ee;
+  width: 100%;
+  padding: 20px 0;
+}
+footer.sidebar-container-footer a {
+  color: #e4e9ee;
+}
+footer.sidebar-container-footer > .sidebar-container-footer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+footer.sidebar-container-footer > .sidebar-container-footer-wrapper > div {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+footer.sidebar-container-footer > .sidebar-container-footer-wrapper > div > img {
+  width: 20px;
+  height: 20px;
+}
+footer.sidebar-container-footer > .sidebar-container-footer-wrapper > div > span {
+  padding-left: 5px;
+}
+
+iframe[name^='sencondLevelIframeContainer'] {
+  position: fixed;
+  height: 100%;
+  width: 70%;
+  top: 0;
+  left: 100%;
+  bottom: 0;
+  border: 0;
+  opacity: .98;
+  transition: left .5s,width .1s;
+}
+/*******************Header*************************/
+.m-head {
+    height: 60px;
+    background: #fff;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.m-head .u-search {
+    position: relative;
+    float: left;
+    margin-top: 16px;
+}
+
+.m-head .u-search input {
+    width: 190px;
+    height: 28px;
+    background: #eee;
+    font-size: 12px;
+    color: #989898;
+    padding-left: 40px;
+    padding-right: 18px;
+    border: 0;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.m-head .u-search .placeholder {
+    position: absolute;
+    line-height: 28px;
+    padding-left: 40px;
+    font-size: 12px;
+    color: #989898;
+    cursor: text;
+}
+
+.m-head .u-search .icon {
+    position: absolute;
+    left: 14px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 12px;
+    height: 13px;
+    background-position: -84px -2px;
+}
+
+.m-head .u-search button {
+    margin-left: 10px;
+    width: 105px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 6px;
+    text-indent: 3px;
+    border: 0;
+    background: #2c81ff;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.m-settings {
+    float: right;
+    margin-top: 24px;
+}
+
+.m-settings>a {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+.m-settings>a .icon {
+    margin-right: 10px;
+    position: relative;
+    top: -2px;
+}
+
+.m-settings>a span {
+    font-size: 12px;
+    color: #666;
+}
+
+.m-settings .u-infors .icon {
+    width: 16px;
+    height: 16px;
+    background-position: -2px -2px;
+}
+
+.m-settings .u-help .icon {
+    width: 15px;
+    height: 16px;
+    background-position: -23px -2px;
+}
+
+.m-settings .u-time .icon {
+    width: 14px;
+    height: 15px;
+    background-position: -43px -2px;
+}
+
+.m-settings .u-time span {
+    font-size: 14px;
+}

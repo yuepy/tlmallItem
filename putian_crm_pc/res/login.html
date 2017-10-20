@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            .mydiv{ 
+                width:300px;  
+                height:200px;  
+                position:absolute;  
+                left:50%;  
+                top:50%;  
+                margin:-100px 0 0 -150px 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mydiv">
+            <form id="login" name="login" method="POST">
+            <table>
+                <tr>
+                    <td>用户：</td>
+                    <td><input type="text" id="loginName" value="CRM019"></td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td><input type="password" id="password" value="12345678"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input id="loginButton" type="button"" value="登录">
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+        <script type="text/javascript" src="./js/lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="./js/login.js"></script>
+    </body>
+</html>

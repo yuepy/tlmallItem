@@ -1,0 +1,83 @@
+{
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [
+        "css"
+      ],
+      "ignore": []
+    },
+    "resource_inject": []
+  },
+  "override_urls": [],
+  "adapter_urls": [
+    {
+      "title": "index",
+      "url": "adapter://putian_visiter/plan/index/index.json",
+      "matcher": [
+        "^http:\\/\\/static\\.yunshipei\\.info\\/cases\\/putianCRM\\/"
+      ],
+      "demo": [
+        "http://static.yunshipei.info/cases/putianCRM/"
+      ]
+    },
+    {
+      "title": "map",
+      "url": "adapter://putian_visiter/plan/map/index.json",
+      "matcher": [
+        "^http:\\/\\/static\\.yunshipei\\.info\\/cases\\/putianCRM\\/visit_map\\.html"
+      ],
+      "demo": [
+        "http://static.yunshipei.info/cases/putianCRM/visit_map.html"
+      ]
+    },
+    {
+      "title": "select_vistiter",
+      "url": "adapter://putian_visiter/plan/select_vistiter/index.json",
+      "matcher": [
+        "^http:\\/\\/static\\.yunshipei\\.info\\/cases\\/putianCRM\\/visit_list\\.html#createVisit"
+      ],
+      "demo": [
+        "http://static.yunshipei.info/cases/putianCRM/visit_list.html#createVisit"
+      ]
+    },
+    {
+      "title": "visited_info",
+      "url": "adapter://putian_visiter/plan/visited_info/index.json",
+      "matcher": [
+        "^http:\\/\\/static\\.yunshipei\\.info\\/cases\\/putianCRM\\/visited_info\\.html"
+      ],
+      "demo": [
+        "http://static.yunshipei.info/cases/putianCRM/visited_info.html"
+      ]
+    },
+    {
+      "title": "visited_list",
+      "url": "adapter://putian_visiter/plan/visited_list/index.json",
+      "matcher": [
+        "^http:\\/\\/static\\.yunshipei\\.info\\/cases\\/putianCRM\\/visited_list\\.html#visitRecord"
+      ],
+      "demo": [
+        "http://static.yunshipei.info/cases/putianCRM/visited_list.html#visitRecord"
+      ]
+    },
+    {
+      "title": "visit_info",
+      "url": "adapter://putian_visiter/plan/visit_info/index.json",
+      "matcher": [
+        "^http:\\/\\/static\\.yunshipei\\.info\\/cases\\/putianCRM\\/visit_info\\.html"
+      ],
+      "demo": [
+        "http://static.yunshipei.info/cases/putianCRM/visit_info.html"
+      ]
+    }
+  ],
+  "name": "普天客户拜访",
+  "default_url": "http://static.yunshipei.info/cases/putianCRM/",
+  "runtime_version": "^2.0.0",
+  "scope": "putian_visiter",
+  "start_url": "enterplorer://putian_visiter/local/index.html"
+}

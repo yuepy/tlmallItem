@@ -1,0 +1,39 @@
+{
+  "special_models": [
+    {
+      "path": "plan/login/index.json"
+    },
+    {
+      "path": "plan/index/index.json"
+    }
+  ],
+  "common_js": [
+    {
+      "path": "lib/base.js"
+    },
+    {
+      "path": "lib/customTemplate.js"
+    },
+    {
+      "target": "face",
+      "path": "lib/ysp.ext.js"
+    },
+    {
+      "path": "lib/location.init.js",
+      "target": "face"
+    },
+    {
+      "target": "face",
+      "path": "lib/baidu.api.js"
+    },
+    {
+      "target": "face",
+      "path": "lib/echarts.min.js"
+    }
+  ],
+  "common_css": [
+    {
+      "path": "lib/base.css"
+    }
+  ]
+}

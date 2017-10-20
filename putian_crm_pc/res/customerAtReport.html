@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>@我的报告</title>
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/customer-atreport.css" />
+    <link rel="stylesheet" type="text/css" href="./css/customer-reportPop.css" />
+    <link rel="stylesheet" type="text/css" href="./js/lib/iCheck/skins/ick-red.css" />
+    <style type="text/css">
+        #CloseReportPopRoot{
+            color:#fff;
+            width:20px;
+            height: 20px;
+            position:absolute;
+            top:0;right: 0;
+            background:url('../images/关闭60.png') no-repeat center center;
+            background-size:100%;
+            margin: 30px 30px 0px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="g-doc">
+        <div class="m-head clearfix">
+            <div class="u-search">
+                <i class="icon"></i>
+                <span class="placeholder">请输入搜索内容</span>
+                <input type="text" name="search">
+                <button class="btn">搜索</button>
+            </div>
+           
+        </div>
+        <div class="g-body">
+            <div class="m-crumb">
+                <em class="icon icon-back"></em>
+                <a href="">拜访管理</a>
+                <i class="icon icon-arrow"></i>
+                <a>@我的报告</a>
+            </div>
+            <div class="g-main">
+                <div class="g-box">
+                    <div class="m-btns clearfix">
+                        <a href="" class="btn"><i class="icon icon-edit"></i><span>编辑</span></a>
+                    </div>
+                    <div class="m-report">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div id= 'module-details' style='display:none'>
+    </div>-->
+
+    <div class="m-contact" id="ContactAlert">
+                                <div class="header clearfix">
+                                    <i class="icon icon-back" id="ContactClose"></i>
+                                    <div class="search">
+                                        <label for="contactSearch">请输入搜索内容</label>
+                                        <input type="text" name="contactSearch" id="contactSearch">
+                                        <i class="icon icon-search" id="icon-search"></i>
+                                        <div class="search-lists" id="search-lists">
+                                            <!--<a href="javascript:;">王新禄1</a>
+                                            <a href="javascript:;">李斌</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="body">
+                                    <div class="content" id="contentBody">
+                                        
+                                    </div>    
+                                </div>
+                                <div class="footer clearfix">
+                                    <div class="checkAll">
+                                        <input type="checkbox" class="primary" id="ContactCheckAll">
+                                        <label for="ContactCheckAll">全选</label>
+                                    </div>
+                                    <a href="javascript:;" class="btn" id="ContactSure">确定<em></em></a>
+                                </div>
+                            </div>
+
+                            
+    <script type="text/javascript " src="./js/lib/jquery-3.2.1.min.js "></script>
+    <script type="text/javascript " src="./js/lib/webuploader/webuploader.min.js"></script>
+    <script type="text/javascript " src="./js/upload.js"></script>
+    <script type="text/javascript " src="./js/customerAtReportRoot.js"></script>
+    <script type="text/javascript " src="./js/lib/iCheck/js/jquery.icheck.js"></script>
+    <script>
+        $(function() {
+            // 初始状态内容为空
+            $("#ChatOnline .textarea .tip").html("");
+
+            // 输入禁用状态下去掉边框样式
+            $(".lists-one textarea:disabled").parent().css("border", 0);
+
+            // 留言点选某行，进行个人回复
+            $("#ChatOnline .chat-one").click(function() {
+                var $this = $(this),
+                    name;
+                $this.addClass("z-checked")
+                    .siblings(".chat-one").removeClass("z-checked");
+                name = $this.find("h6").html();
+                $this.parent().find(".tip").html("回复：" + name);
+            });
+
+            // 点击聊天输入隐藏或显示回复提示
+            $("#ChatOnline #ChatIpt").focus(function() {
+                $(this).siblings(".tip").hide();
+            }).blur(function() {
+                var $this = $(this);
+                if ($this.val() == '') {
+                    $this.siblings(".tip").show();
+                }
+            });
+
+            $("#ChatOnline .textarea .tip").click(function() {
+                $(this).siblings("textarea").focus();
+            });
+
+            // 上传功能
+            upLoadFun();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>客户签出</title>
+        <link rel="stylesheet" type="text/css" href="./css/common.css" />
+        <link rel="stylesheet" type="text/css" href="./css/customerSign.css">
+        <script type="text/javascript" src="./js/lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=UCp1wWr05ZvHmMPSVZBAKp47HkoRKFYz"></script>
+        <script type="text/javascript" src="./js/vistiSignOut.js"></script>
+    </head>
+
+    <body>
+        <div id="customersign-content">
+            <div class="customersign-map" id="allmap">
+                
+            </div>
+            <div class="customersign-mapcontent">
+                <div class="customersign-mapcontent-text">
+                    <div class="customersign-mapcontent-textdiv">
+                        <span class="customersign-mapcontent-texttopspan">签出时间</span>
+                        <span class="customersign-mapcontent-textbottomspan" name="AssignOutTime" id="signTime"></span>
+                    </div>
+                    <div class="customersign-mapcontent-textdiv">
+                        <span class="customersign-mapcontent-texttopspan">签出地址</span>
+                        <span class="customersign-mapcontent-textbottomspan" name="AssignOutAddress" id="address"></span>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="customersign-mapcontent-textdiv">
+                        <span class="customersign-mapcontent-texttopspan">签退经度</span>
+                        <span class="customersign-mapcontent-textbottomspan" name="AssignOutLongitude" id="longitude"></span>
+                    </div>
+                    <div class="customersign-mapcontent-textdiv">
+                        <span class="customersign-mapcontent-texttopspan">签退纬度</span>
+                        <span class="customersign-mapcontent-textbottomspan" name="AssignOutLatitude" id="latitude"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customersign-remark">
+                <div class="customersign-remarktext">
+                    <span>备注</span>
+                </div>
+                <div class="customersign-remarktextarea">
+                    <span class="remarktextimg"></span>
+                    <textarea id="remarktextname">
+                    </textarea>
+                </div>
+            </div>
+            <div class="customersigin-mapbutton">
+                <span class="customersign-active" style="cursor:pointer;">签出</span>
+                <span class="customersign-unactive" style="cursor:pointer;">返回</span>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        
+        var point = new BMap.Point(116.40387397,39.91488908);
+        map.centerAndZoom(point,12);
+
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r){
+            if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                var mk = new BMap.Marker(r.point);
+                map.addOverlay(mk);
+                map.panTo(r.point);
+                showPosition(r);
+                //alert('您的位置：'+r.point.lng+','+r.point.lat);
+            }else {
+                alert('failed'+this.getStatus());
+            }
+        },{enableHighAccuracy: true})
+
+        //百度地图WebAPI 坐标转地址
+        function showPosition(r) {
+            // ak = appkey 访问次数流量有限制
+            var url = 'http://api.map.baidu.com/geocoder/v2/?ak=UCp1wWr05ZvHmMPSVZBAKp47HkoRKFYz&callback=?&location=' + r.point.lat + ',' + r.point.lng + '&output=json&pois=1';
+            $.getJSON(url, function (res) {
+                //alert(res.result.pois[0].addr);
+                $("#address").html(res.result.pois[0].addr+res.result.pois[0].name);
+                $("#longitude").html(res.result.location.lng);
+                $("#latitude").html(res.result.location.lat);
+            });
+        }
+
+        $(function(){
+            //格式化时间
+            Date.prototype.format = function(fmt) { 
+                var o = { 
+                    "M+" : this.getMonth()+1,                 //月份 
+                    "d+" : this.getDate(),                    //日 
+                    "h+" : this.getHours(),                   //小时 
+                    "m+" : this.getMinutes(),                 //分 
+                    "s+" : this.getSeconds(),                 //秒 
+                    "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+                    "S"  : this.getMilliseconds()             //毫秒 
+                }; 
+                if(/(y+)/.test(fmt)) {
+                        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+                }
+                for(var k in o) {
+                    if(new RegExp("("+ k +")").test(fmt)){
+                        fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+                    }
+                }
+                return fmt; 
+            }
+            $("#signTime").html(new Date().format("yyyy-MM-dd hh:mm:ss"));
+            $(".customersign-remarktextarea textarea").focus(function() {
+                $(this).siblings(".remarktextimg").hide();
+            });
+            $("#remarktextname").blur(function() {
+                var remarktextname = $("#remarktextname").val();
+                if ($.trim(remarktextname) == '' || $.trim(remarktextname) == "") {
+                    $(this).siblings(".remarktextimg").show();
+                }
+            });
+            $(".customersign-remarktextarea .remarktextimg #remarktextname").click(function() {
+                $(this).siblings("textarea").focus();
+            });
+        })
+    </script>
+</html>    
+

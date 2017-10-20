@@ -1,0 +1,434 @@
+{
+  "version": "0.1",
+  "id": "list_tow",
+  "targetURL": "http://192.168.0.212/WMS_test/Analytics/UdfGridReportList.aspx?FunctionID=15910",
+  "jsFile": "index.js",
+  "requires": {
+    "shippingDetails": "../shippingDetails/index.json"
+  },
+  "chineseName": "报表列表",
+  "description": "",
+  "controls": {
+    "control9_WtXTiW": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "报表列表"
+              ],
+              "visText": [
+                "报表列表"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "报表列表"
+              ],
+              "visText": [
+                "报表列表"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"div_List_top\"]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "userEvents": "back",
+      "roles": "element,button,link",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control10_JPc3En": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"div_List\"]//DIV[@id=\"LeftDiv\"]//DIV[@id=\"SideLeftMenu\"]",
+              "descendant::DIV[@id=\"LeftDiv\"]//DIV[@id=\"SideLeftMenu\"]",
+              "descendant::DIV[@id=\"SideLeftMenu\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control10_JPc3En"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context2_qBa7iv": {
+      "controls": [
+        "control9_WtXTiW",
+        "control10_JPc3En"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow8_F6D2D4": {
+      "toContexts": [
+        {
+          "toContextId": "context2_qBa7iv"
+        }
+      ]
+    },
+    "flow10_zmqUI1": {
+      "fromContextId": "context2_qBa7iv",
+      "fromAction": "click",
+      "fromControlId": "control9_WtXTiW",
+      "toContexts": [
+        {
+          "toContextId": "context2_qBa7iv"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page2_Uakp5p": {
+      "contextId": "context2_qBa7iv",
+      "layout": [
+        {
+          "id": "uiControl12_Td7Q8Z",
+          "display": {
+            "type": "header",
+            "adapterId": "header",
+            "amStyle": "dark",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl12_Td7Q8ZheaderLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl13_60wtDe",
+                  "controlId": "control9_WtXTiW",
+                  "display": {
+                    "adapterId": "clickable",
+                    "type": "button",
+                    "text": " < 返回",
+                    "hollow": true,
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl12_Td7Q8ZheaderRight",
+              "display": {
+                "type": "headerRight",
+                "adapterId": "headerRight",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl14_xA0Hqw",
+          "controlId": "control10_JPc3En",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl14_xA0Hqw",
+                "onGetTemplate": "getTemplate_uiControl14_xA0Hqw"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context2_qBa7iv": [
+          "UDFGridReportList"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context2_qBa7iv": [
+          "192.168.0.212/WMS_test/Analytics/UdfGridReportList.aspx?FunctionID=15910"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context2_qBa7iv": [
+          [
+            "F",
+            "LeftDiv",
+            "PagerFooter_hdnCurrentPage",
+            "PagerFooter_hdnPageSize",
+            "PagerFooter_hdnSortDirection",
+            "PagerFooter_hdnSortField",
+            "PagerFooter_hdnTotalPages",
+            "PagerFooter_lblPageInfo",
+            "PagerFooter_lnkbtnFirstPage",
+            "PagerFooter_lnkbtnGoTo",
+            "PagerFooter_lnkbtnLastPage",
+            "PagerFooter_lnkbtnNextPage",
+            "PagerFooter_lnkbtnPrePage",
+            "PagerFooter_pagetable",
+            "PagerFooter_txtGoPage",
+            "SideLeftMenu",
+            "UDFReportCtrl_DivCtrl",
+            "UDFReportCtrl_lblmsg",
+            "WindowDiv",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__VIEWSTATE",
+            "__VIEWSTATEGENERATOR",
+            "aaa",
+            "arrow",
+            "arrtxt",
+            "btnExport",
+            "btnSearch",
+            "div_List",
+            "div_List_msg",
+            "div_List_top",
+            "div_query",
+            "hdnDataFormat",
+            "hdnDivStatus",
+            "hdnFrom",
+            "hdnIsActiveQuery",
+            "hdnReportID",
+            "hdnReportName",
+            "hdnSelectCallbackFun",
+            "hdnSelectItem",
+            "hdnStatus",
+            "hdncalendarFlag",
+            "lblMsg",
+            "lblUDFReportList",
+            "more",
+            "printA",
+            "rightDiv",
+            "up"
+          ],
+          [
+            "F",
+            "LeftDiv",
+            "PagerFooter_hdnCurrentPage",
+            "PagerFooter_hdnPageSize",
+            "PagerFooter_hdnSortDirection",
+            "PagerFooter_hdnSortField",
+            "PagerFooter_hdnTotalPages",
+            "PagerFooter_lblPageInfo",
+            "PagerFooter_lnkbtnFirstPage",
+            "PagerFooter_lnkbtnGoTo",
+            "PagerFooter_lnkbtnLastPage",
+            "PagerFooter_lnkbtnNextPage",
+            "PagerFooter_lnkbtnPrePage",
+            "PagerFooter_pagetable",
+            "PagerFooter_txtGoPage",
+            "SideLeftMenu",
+            "UDFReportCtrl_C_COMPANY",
+            "UDFReportCtrl_DO",
+            "UDFReportCtrl_DivCtrl",
+            "UDFReportCtrl_E_DATE",
+            "UDFReportCtrl_PO",
+            "UDFReportCtrl_S_DATE",
+            "UDFReportCtrl_UdfCtrl",
+            "UDFReportCtrl_lblC_COMPANY",
+            "UDFReportCtrl_lblDO",
+            "UDFReportCtrl_lblE_DATE",
+            "UDFReportCtrl_lblPO",
+            "UDFReportCtrl_lblS_DATE",
+            "UDFReportCtrl_lbllot_attr",
+            "UDFReportCtrl_lblmsg",
+            "UDFReportCtrl_lblorder_id",
+            "UDFReportCtrl_lblowner_id",
+            "UDFReportCtrl_lblsku_id",
+            "UDFReportCtrl_lbludf",
+            "UDFReportCtrl_lot_attr",
+            "UDFReportCtrl_order_id",
+            "UDFReportCtrl_owner_id",
+            "UDFReportCtrl_sku_id",
+            "UDFReportCtrl_udf",
+            "WindowDiv",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__VIEWSTATE",
+            "__VIEWSTATEGENERATOR",
+            "aaa",
+            "arrow",
+            "arrtxt",
+            "btnExport",
+            "btnSearch",
+            "div_List",
+            "div_List_msg",
+            "div_List_top",
+            "div_query",
+            "hdnDataFormat",
+            "hdnDivStatus",
+            "hdnFrom",
+            "hdnIsActiveQuery",
+            "hdnReportID",
+            "hdnReportName",
+            "hdnSelectCallbackFun",
+            "hdnSelectItem",
+            "hdnStatus",
+            "hdncalendarFlag",
+            "lblMsg",
+            "lblUDFReportList",
+            "more",
+            "printA",
+            "rightDiv",
+            "up"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context2_qBa7iv": [
+          [
+            "blank",
+            "button",
+            "div_list",
+            "label_header",
+            "label_message",
+            "pulltab"
+          ],
+          [
+            "Wdate",
+            "blank",
+            "button",
+            "div_list",
+            "label_header",
+            "label_message",
+            "pulltab",
+            "tLotAttribute",
+            "textbox"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context2_qBa7iv": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DL/DD",
+            "DIV/TABLE/TBODY",
+            "DL/DD/A",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DL",
+            "TD/DIV/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-submit",
+            "TR/TD/INPUT-text",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "-/FORM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DL/DD",
+            "DIV/TABLE/TBODY",
+            "DL/DD/A",
+            "FORM/DIV/DIV",
+            "FORM/DIV/SCRIPT",
+            "FORM/SPAN/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DL",
+            "TD/DIV/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-submit",
+            "TR/TD/INPUT-text",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

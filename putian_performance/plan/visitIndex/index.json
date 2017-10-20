@@ -1,0 +1,431 @@
+{
+  "version": "0.1",
+  "id": "visitIndex",
+  "targetURL": "http://192.168.1.174:8080/ptDataShow/customerview/toHomePage?filter_userId=ZHUCHUNYAO&encoder=WkhVQ0hVTllBTyswNi8xOC8yMDE3IDE4OjI0OjEw",
+  "jsFile": "index.js",
+  "chineseName": "拜访首页",
+  "description": "",
+  "controls": {
+    "control8_9pUqp5": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"queryForm\"]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.ibox.float-e-margins DIV.statistics DIV.col-sm-4"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "intendedRole": "fragment",
+      "roles": "element,fragment",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control5_ZeSGe0": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"queryForm\"]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "DIV.ibox.float-e-margins DIV.statistics DIV.col-sm-4"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "intendedRole": "fragment",
+      "roles": "element,fragment",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control9_GqGMlu": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"queryForm\"]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "DIV.ibox.float-e-margins DIV.statistics DIV.col-sm-4"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "intendedRole": "fragment",
+      "roles": "element,fragment",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control26_20hn17": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ibox.float-e-margins DIV.ibox-content DIV.echarts_box.col-sm-4"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/SECTION[1]/DIV[2]"
+          }
+        ]
+      },
+      "intendedRole": "fragment",
+      "roles": "element,fragment",
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context3_QUQ1HB": {
+      "controls": [
+        "control8_9pUqp5",
+        "control5_ZeSGe0",
+        "control9_GqGMlu",
+        "control26_20hn17"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow8_wkxHxu": {
+      "toContexts": [
+        {
+          "toContextId": "context3_QUQ1HB"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page3_tXLOQg": {
+      "contextId": "context3_QUQ1HB",
+      "layout": [
+        {
+          "id": "uiControl14_eOhEO1",
+          "display": {
+            "title": "拜访首页",
+            "type": "header",
+            "adapterId": "header",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl14_eOhEO1headerLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl14_eOhEO1headerRight",
+              "display": {
+                "type": "headerRight",
+                "adapterId": "headerRight",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl15_IqlwwH",
+          "controlId": "control8_9pUqp5",
+          "display": {
+            "adapterId": "fragment",
+            "type": "fragment",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl9_UmB041",
+          "controlId": "control5_ZeSGe0",
+          "display": {
+            "adapterId": "fragment",
+            "type": "fragment",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl16_8kILNU",
+          "controlId": "control9_GqGMlu",
+          "display": {
+            "adapterId": "fragment",
+            "type": "fragment",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl35_09HeEh",
+          "controlId": "control26_20hn17",
+          "display": {
+            "adapterId": "fragment",
+            "type": "fragment",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context3_QUQ1HB": [
+          "firstPage"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context3_QUQ1HB": [
+          "192.168.1.174:8080/ptDataShow/customerview/toHomePage?filter_userId=ZHUCHUNYAO&encoder=WkhVQ0hVTllBTyswNi8xOC8yMDE3IDE4OjI0OjEw"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context3_QUQ1HB": [
+          [
+            "baobiap",
+            "chart_a",
+            "chart_b",
+            "data_",
+            "mapChart",
+            "queryForm",
+            "sectionChart"
+          ],
+          [
+            "baobiap",
+            "chart_a",
+            "chart_b",
+            "data_",
+            "mapChart",
+            "mapId",
+            "queryForm",
+            "sectionChart"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context3_QUQ1HB": [
+          [
+            "border",
+            "col-sm-",
+            "col-xs-",
+            "cusVis",
+            "date",
+            "echarts",
+            "echarts_box",
+            "float-e-margins",
+            "form-control",
+            "gztj",
+            "ibox",
+            "ibox-content",
+            "ibox-title",
+            "ibox-tools",
+            "input-group",
+            "input-group-addon",
+            "lazur-bg",
+            "navy-bg",
+            "problem",
+            "pull-left",
+            "red-bg",
+            "row",
+            "statistics",
+            "storeVis",
+            "style",
+            "text",
+            "text-center",
+            "text-left",
+            "toMonth_visity",
+            "toYear_visity",
+            "today_visity",
+            "vis_left",
+            "vis_right",
+            "visiting_customers",
+            "visiting_store",
+            "visiting_time",
+            "widget",
+            "wrapper",
+            "wrapper-content",
+            "zr-element"
+          ],
+          [
+            "border",
+            "col-sm-",
+            "col-xs-",
+            "cusVis",
+            "date",
+            "echarts",
+            "echarts-tooltip",
+            "echarts_box",
+            "float-e-margins",
+            "form-control",
+            "gztj",
+            "ibox",
+            "ibox-content",
+            "ibox-title",
+            "ibox-tools",
+            "input-group",
+            "input-group-addon",
+            "lazur-bg",
+            "navy-bg",
+            "problem",
+            "pull-left",
+            "red-bg",
+            "row",
+            "statistics",
+            "storeVis",
+            "style",
+            "text",
+            "text-center",
+            "text-left",
+            "toMonth_visity",
+            "toYear_visity",
+            "today_visity",
+            "vis_left",
+            "vis_right",
+            "visiting_customers",
+            "visiting_store",
+            "visiting_time",
+            "widget",
+            "wrapper",
+            "wrapper-content",
+            "zr-element"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context3_QUQ1HB": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/FORM",
+            "DIV/DIV/CANVAS",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H2",
+            "DIV/DIV/H5",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SECTION",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/SECTION/DIV",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FORM/DIV/DIV",
+            "SECTION/DIV/DIV",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/FORM",
+            "DIV/DIV/BR",
+            "DIV/DIV/CANVAS",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H2",
+            "DIV/DIV/H5",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SECTION",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/SECTION/DIV",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FORM/DIV/DIV",
+            "SECTION/DIV/DIV",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/A"
+          ]
+        ]
+      }
+    }
+  }
+}

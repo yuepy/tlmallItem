@@ -1,0 +1,44 @@
+{
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.2.4",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [
+        "css",
+        "image"
+      ],
+      "ignore": []
+    },
+    "resource_inject": []
+  },
+  "override_urls": [],
+  "adapter_urls": [
+    {
+      "title": "login",
+      "url": "adapter://putian_performance/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.1\\.174:8080\\/ptDataShow\\/login\\/loginMenu"
+      ],
+      "demo": [
+        "http://192.168.1.174:8080/ptDataShow/login/loginMenu"
+      ]
+    },
+    {
+      "title": "firstMenu",
+      "url": "adapter://putian_performance/plan/firstMenu/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.1\\.174:8080\\/ptDataShow\\/commonReports\\/commonReportsMenu"
+      ],
+      "demo": [
+        "http://192.168.1.174:8080/ptDataShow/commonReports/commonReportsMenu"
+      ]
+    }
+  ],
+  "name": "普天CRM性能POC",
+  "default_url": "http://192.168.1.174:8080/ptDataShow/login/loginMenu",
+  "scope": "putian_performance",
+  "start_url": "enterplorer://putian_performance/local/index.html"
+}

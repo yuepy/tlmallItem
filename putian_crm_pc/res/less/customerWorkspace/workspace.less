@@ -1,0 +1,570 @@
+@charset "utf-8";
+
+/*-- 拜访管理 > 拜访 --*/
+.m-date {
+    float: left;
+    width: 49.5%;
+}
+
+.m-date .c-head {
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 0;
+    border-top: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+}
+
+.m-date .c-head .icon,
+.m-date .c-head .time {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+.m-date .c-head .icon {
+    width: 8px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.m-date .c-head .icon-date-l {
+    background-position: -24px -53px;
+}
+
+.m-date .c-head .icon-date-r {
+    background-position: -48px -53px;
+}
+
+.m-date .c-head .time {
+    margin: 0 15px;
+    font-size: 18px;
+    color: #2c81ff;
+}
+
+.m-date .table thead th {
+    height: 22px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    background: #f7f7f7;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+}
+
+.m-date .table thead th:first-child {
+    border-left: 1px solid #dedede;
+}
+
+.m-date .table thead th:last-child {
+    border-right: 1px solid #dedede;
+}
+
+.m-date .table tbody td {
+    position: relative;
+    height: 49px;
+    border: 1px solid #dedede;
+    text-align: center;
+    font-size: 12px;
+}
+
+.m-date .table tbody td a {
+    display: block;
+    width: 98%;
+    height: 98%;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+}
+
+.m-date table tbody b {
+    position: absolute;
+    top: 6px;
+    right: 1px;
+    display: block;
+    font-size: 12px;
+    color: #666;
+    padding: 1px 5px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -border-radius: 15px;
+}
+
+.m-date table tbody .z-act-all b {
+    color: #fff;
+    background: #2c81ff;
+}
+
+.m-date table tbody .z-act-now {
+    background: #fff;
+    color: #666;
+    border: 1px solid #2c81ff;
+}
+
+.m-date .table tbody td .z-done {
+    color: #bebdbd;
+}
+
+.m-date .table tbody td .z-yet {
+    color: #666;
+}
+
+.m-date .table tbody td span {
+    line-height: 50px;
+}
+
+.m-date .table tbody td a:hover,
+.m-date .table tbody td a.z-act-all {
+    border: 2px solid #2c81ff;
+}
+
+.m-date table tbody a:hover b,
+.m-date .table tbody td a.z-act-all b {
+    top: 4px;
+    right: 3px;
+}
+
+.m-date .table tbody td a:hover span,
+.m-date .table tbody td a.z-act-all span {
+    line-height: 49px;
+    position: relative;
+    left: -2px;
+    top: -1px;
+}
+
+.m-workPlan {
+    float: right;
+    width: 49%;
+    height:318px;
+}
+.m-workPlan .content{
+    height:100%;
+    border: 1px solid #dedede;
+}
+.u-head {
+    height: 58px;
+}
+
+.u-head .title {
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    border-left: 4px solid #2c81ff;
+    padding-left: 20px;
+    font-size: 18px;
+    color: #333;
+    margin-top: 12px;
+}
+
+.u-head .z-yet,
+.u-head .z-ok {
+    float: left;
+    display: block;
+    font-size: 12px;
+    color: #fff;
+    width: 54px;
+    height: 20px;
+    line-height: 19px;
+    margin-left: 10px;
+    margin-top: 20px;
+    text-align: center;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.u-head .z-yet {
+    background: #fe5722;
+}
+
+.u-head .z-ok {
+    background: #8bba43;
+}
+
+.u-btn {
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    font-size: 14px;
+}
+
+.u-head .u-btn-a {
+    background: #2c81ff;
+    color: #fff;
+}
+
+.u-head .u-btn {
+    float: right;
+    margin-top: 13px;
+    margin-right: 30px;
+}
+
+.u-textarea {
+    position: relative;
+    margin: 0 10px;
+    padding: 10px;
+    height: 78%;
+    background: #f7f7f7;
+}
+
+.u-textarea .placeholder {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #999;
+    font-size: 12px;
+    cursor: text;
+}
+
+.u-textarea textarea {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    color: #666;
+    background: #f7f7f7;
+    border: 0;
+    resize: none;
+}
+
+.g-box>.u-head {
+    margin-left: -10px;
+}
+
+.u-head .btn {
+    float: right;
+    line-height: 58px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.u-head .btn .icon-sign {
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+    background-position: -82px -21px;
+}
+
+.u-head .btn .icon {
+    position: relative;
+    top: -1px;
+}
+
+.u-head .btn span {
+    font-size: 14px;
+    color: #666;
+}
+
+.m-lists {
+    margin-bottom: -10px;
+}
+
+.m-lists>.g-box {
+    margin-bottom: 10px;
+    border: 1px solid #dedede;
+}
+
+.m-lists .g-box>.title {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #dedede;
+    background: #f7f7f7;
+}
+
+.m-lists .g-box>.title .icon-dot {
+    width: 7px;
+    height: 7px;
+    background-position: -1px -41px;
+    margin-left: 10px;
+    margin-right: 8px;
+}
+
+.m-lists .g-box>.title span {
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333;
+}
+
+.m-lists-content {
+    padding: 0 10px;
+}
+
+.m-lists-content .u-lists-one:nth-child(even) {
+    background: #fafafa;
+}
+
+.u-lists-one {
+    position: relative;
+    padding: 0 10px;
+    height: 80px;
+}
+
+.u-lists-one .title {
+    font-size: 14px;
+    color: #333;
+    padding-top: 20px;
+    margin-bottom: 14px;
+}
+
+.u-lists-one .icon-close {
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    background-position: 0 -50px;
+    width: 20px;
+    height: 20px;
+}
+
+.u-lists-one .time {
+    float: left;
+    font-size: 12px;
+    color: #999;
+}
+
+.u-lists-one .time b {
+    margin-left: 8px;
+}
+
+.u-lists-one .btns {
+    float: right;
+    margin-right: 90px;
+}
+
+.u-lists-one .btns a {
+    font-size: 12px;
+    color: #666;
+    margin-left: 54px;
+}
+
+.u-lists-one .btns a:active {
+    color: #2c81ff;
+}
+
+.modal-w01 .modal-dialog {
+    width: 900px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.modal-header {
+    padding: 24px 30px;
+}
+
+.modal-header .u-tab {
+    float: left;
+}
+
+.modal-header .u-tab li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding: 4px 11px;
+    cursor: pointer;
+}
+
+.modal-header .u-tab li.z-act {
+    border: 1px solid #2c81ff;
+    background: #2c81ff;
+    color: #fff;
+    cursor: default;
+}
+
+.modal-header .u-search {
+    position: relative;
+    float: right;
+}
+
+.modal-header .u-search .icon,
+.modal-header .u-search .placeholder {
+    position: absolute;
+}
+
+.modal-header .u-search .icon {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 12px;
+    height: 13px;
+    background-position: -84px -2px;
+    cursor: pointer;
+}
+
+.modal-header .u-search .placeholder {
+    left: 10px;
+    font-size: 14px;
+    color: #999;
+    line-height: 28px;
+    cursor: text;
+}
+
+.modal-header .u-search input {
+    width: 280px;
+    *width: 238px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    background: #efefef;
+    color: #999;
+    padding-left: 10px;
+    padding-right: 32px;
+    border: 0;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+}
+
+.modal-body {
+    padding: 0 30px;
+}
+
+.modal-body .table-infors {
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    height: 260px;
+}
+
+.modal-body .table {
+    width: 814px;
+    border: 1px solid #dfdfdf;
+    border-bottom: 0;
+}
+
+.modal-body .table td .ck,
+.modal-body .table-otherContent .ck {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-left: 20px;
+}
+
+.modal-body .table td:nth-child(1) {
+    width: 65px;
+}
+
+.modal-body .table td:nth-child(2) {
+    width: 405px;
+    padding-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.modal-body .table td:nth-child(3) {
+    width: 169px;
+}
+
+.modal-body .table td {
+    border-bottom: 1px solid #dfdfdf;
+    height: 42px;
+    font-size: 14px;
+    color: #999;
+}
+
+.modal-body .oIpt .title {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.modal-body .oIpt .textarea {
+    position: relative;
+}
+
+.modal-body .oIpt textarea {
+    width: 818px;
+    height: 78px;
+    border: 1px solid #dfdfdf;
+    padding: 10px;
+    resize: none;
+}
+
+.modal-body .oIpt .icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 16px;
+    height: 16px;
+    background-position: -62px -52px;
+    cursor: text;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal-footer .u-btn-ok {
+    color: #fff;
+    border: 1px solid #2c81ff;
+    background: #2c81ff;
+}
+
+.modal-footer .u-btn-close {
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #999;
+}
+
+.modal-footer .btns {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-right: -15px;
+}
+
+.modal-footer .btns .u-btn {
+    margin-right: 15px;
+}
+
+.modal-body .table-otherContent {
+    font-size: 0;
+}
+
+.modal-body .table-otherContent .ck,
+.modal-body .table-otherContent h6,
+.modal-body .table-otherContent input[type='text'] {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+}
+
+.modal-body .table-otherContent .ck {
+    margin-right: 30px;
+}
+
+.modal-body .table-otherContent h6 {
+    font-size: 14px;
+    color: #999;
+}
+
+.modal-body .table-otherContent input[type='text'] {
+    width: 694px;
+    *width: 684px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #999;
+    position: relative;
+    top: -3px;
+}
+

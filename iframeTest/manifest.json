@@ -1,0 +1,30 @@
+{
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.2.4",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [
+        "css",
+        "image"
+      ],
+      "ignore": []
+    },
+    "resource_inject": []
+  },
+  "override_urls": [
+    {
+      "origin_url": [
+        "http:\\/\\/localhost:3000\\/src\\/js\\/pt\\.ui\\.js"
+      ],
+      "target_url": "override/pt.ui.js"
+    }
+  ],
+  "adapter_urls": [],
+  "name": "测试两个IFRAME是否可以适配",
+  "default_url": "http://localhost:3000/src/#",
+  "scope": "iframeTest",
+  "start_url": "enterplorer://iframeTest/local/index.html"
+}

@@ -1,0 +1,41 @@
+{
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.4.0",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [],
+      "ignore": []
+    },
+    "resource_inject": []
+  },
+  "override_urls": [],
+  "adapter_urls": [
+    {
+      "title": "login",
+      "url": "adapter://Logistics/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.212\\/WMS_test\\/login\\.aspx"
+      ],
+      "demo": [
+        "http://192.168.0.212/WMS_test/login.aspx"
+      ]
+    },
+    {
+      "title": "list",
+      "url": "adapter://Logistics/plan/list/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.212\\/WMS_test\\/Frame_Main\\.aspx\\?from=Login"
+      ],
+      "demo": [
+        "http://192.168.0.212/WMS_test/Frame_Main.aspx?from=Login"
+      ]
+    }
+  ],
+  "name": "普天_物流",
+  "default_url": "http://192.168.0.212/WMS_test/login.aspx",
+  "scope": "Logistics",
+  "start_url": "enterplorer://Logistics/local/index.html"
+}
