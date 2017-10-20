@@ -54,6 +54,9 @@ div.view-wrapper {
 .ysp-star {
   color: #ff2000;
 }
+.header {
+  z-index: 199999;
+}
 div[data-ysp-modelid="PendingTask"],
 div[data-ysp-modelid="HaveProcessingTasks"],
 div[data-ysp-modelid="HaveProcessingTasksDetailedInformation"],
@@ -340,19 +343,31 @@ header {
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 199999;
 }
 .ysp-btn .ysp-btn-one {
   background: #FFA800;
   color: white;
-  width: 50%;
+  width: 48%;
   border-radius: 3px;
-  margin: 0 10px 0 0;
+  margin: 0 4% 0 0;
 }
 .ysp-btn .ysp-btn-two {
   background: #0088E9;
   color: white;
-  width: 50%;
+  width: 48%;
   border-radius: 3px;
+  margin: 0;
+}
+.ysp-btn .ysp-btn-oneBtn {
+  width: 100%;
+}
+.ysp-btn .ysp-btn-oneBtn .ysp-btn-two {
+  width: 100%;
+  background: red;
+}
+.ysp-btn .ysp-btn-twoBtn {
+  width: 100%;
   margin: 0;
 }
 /**********page组件*********/
@@ -534,6 +549,47 @@ header {
   color: #0088CD;
   text-shadow: 2px 2px 3px rgba(32, 32, 32, 0.1);
   min-height: 40px;
+}
+.ysp-ProcessedTask-main .ysp-flowName {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 0.8125rem;
+  font-size: 14px;
+}
+.ysp-ProcessedTask-main .ysp-flowName input {
+  width: 70%;
+  border: 1px solid #ddd;
+  height: 30px;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+.ysp-ProcessedTask-main .ysp-flowTime {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 0.8125rem;
+  font-size: 14px;
+}
+.ysp-ProcessedTask-main .ysp-flowTime > div {
+  margin-top: 0.8125rem;
+  padding-top: 0.8125rem;
+  border-top: 1px solid #e6e6e6;
+}
+.ysp-ProcessedTask-main .ysp-flowTime .ysp-to {
+  margin: 0 2px;
+  color: #333;
+  font-size: 12px;
+}
+.ysp-ProcessedTask-main .ysp-flowTime input {
+  margin: 0;
+  padding: 0;
+  width: 45%;
+  display: inline-block;
+  height: 30px;
+  border-radius: 3px;
+}
+.ysp-ProcessedTask-main .ysp-flowTime .ysp-startT,
+.ysp-ProcessedTask-main .ysp-flowTime .ysp-endT {
+  background: url(../local/img/down-arrow-icon.png) no-repeat;
+  background-size: 20px;
+  background-position: 95% 50%;
 }
 .ysp-index ul {
   background: #FFF;
@@ -943,7 +999,7 @@ header {
 }
 .ysp-flowsheet .ysp-flowsheet-onePart .list {
   margin: 0;
-  width: 100%;
+  width: 90%;
 }
 .ysp-flowsheet .ysp-flowsheet-onePart .ysp-radio-container {
   display: flex;
@@ -994,8 +1050,68 @@ header {
   top: 9px;
   margin-right: 20px;
 }
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-otherInput {
+  width: 90%;
+}
 .ysp-flowsheet .ysp-flowsheet-onePart .ysp-required {
   width: 90%;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-receive-time {
+  width: 90%;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-receive-type {
+  width: 90%;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-receive-type .ysp-receive-cont {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99999;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-receive-type .ysp-receive-cont .ysp-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: .3;
+  z-index: 99999;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-receive-type .ysp-receive-cont .ysp-dialog {
+  border-radius: 5px;
+  padding: 0.75rem;
+  width: 90%;
+  height: 70%;
+  background: white;
+  z-index: 199999;
+  position: fixed;
+  left: 5%;
+  top: 15%;
+  overflow: auto;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-receive-type .ysp-receive-cont .ysp-dialog div {
+  text-align: center;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-receive-type .ysp-receive-type-cont {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 0.75rem;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-receive-type .ysp-receive-type-cont i {
+  width: 0;
+  height: 0;
+  border: 6px solid;
+  border-color: #201F35 #ffffff #ffffff #ffffff;
+  position: absolute;
+  right: 10px;
+  top: 21px;
 }
 .ysp-flowsheet .ysp-flowsheet-onePart > div {
   display: flex;
@@ -1048,7 +1164,7 @@ header {
   width: 100%;
 }
 .ysp-flowsheet .ysp-flowsheet-onePart > div .ysp-other input {
-  width: 100%;
+  width: 90%;
 }
 .ysp-flowsheet .ysp-flowsheet-onePart > div .ysp-advanceBalance input {
   width: 60%;
@@ -1201,7 +1317,7 @@ header {
   font-size: 16px;
   color: #414141;
   font-weight: 500;
-  width: 70%;
+  width: 100%;
 }
 .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody .ysp-ExamineAndApprove-card .ysp-ExamineAndApprove-first > label span {
   margin-right: 5px;
@@ -1333,3 +1449,78 @@ header {
   white-space: nowrap;
   overflow-y: hidden;
 }
+/*******临时额度*********/
+.ysp-dataform2 > div .ysp-dataform2-title {
+  width: 60%	!important;
+}
+.ysp-dataform2 > div textarea {
+  width: 92%;
+}
+.ysp-dataform2 .ysp-Quota {
+  width: 90%;
+}
+.ysp-dataform2 .ysp-Quota input {
+  width: 100%	!important;
+  margin-right: 15px	!important;
+}
+div[data-ysp-modelid='approveAdvice'] .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody {
+  min-height: 260px;
+}
+div[data-ysp-modelid='approveAdvice'] .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody .ysp-ExamineAndApprove-card .ysp-ExamineAndApprove-first > label > div {
+  overflow: hidden;
+  float: left;
+}
+div[data-ysp-modelid='approveAdvice'] .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody .ysp-ExamineAndApprove-card .ysp-ExamineAndApprove-first > label > div span {
+  margin-right: 5px;
+  width: 100px;
+}
+div[data-ysp-modelid='approveAdvice'] .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody .ysp-ExamineAndApprove-card .ysp-ExamineAndApprove-first > label > div > i {
+  border-right: 4px solid #0088CD;
+  font-size: 16px;
+  margin-left: -10px;
+  margin-right: 6px;
+}
+div[data-ysp-modelid='approveAdvice'] .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody .ysp-ExamineAndApprove-card .ysp-ExamineAndApprove-first > label > span {
+  width: 70%;
+  overflow-x: scroll;
+}
+/*****************************backBrowserWeb  开始**********************************/
+.ysp_backBrowser_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.ysp_backBrowser_wrap .ysp_active {
+  width: 300px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.ysp_backBrowser_wrap .ysp_active .ysp_activeTitle {
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+  background: #e6e6e6;
+}
+.ysp_backBrowser_wrap .ysp_active .ysp_activeTip {
+  font-size: 15px;
+  padding: 5px 10px;
+}
+.ysp_backBrowser_wrap .ysp_active .ysp_activeSure {
+  font-size: 15px;
+  padding: 5px 20px;
+  background: #0e90d2;
+  color: #fff;
+  border-radius: 3px;
+}
+/*****************************backBrowserWeb  结束**********************************/

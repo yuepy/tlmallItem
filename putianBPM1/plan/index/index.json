@@ -6,7 +6,8 @@
   "requires": {
     "processedTask": "../processedTask/index.json",
     "PendingTask": "../PendingTask/index.json",
-    "delegationTask": "../delegationTask/index.json"
+    "delegationTask": "../delegationTask/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "主页",
   "description": "",
@@ -107,6 +108,17 @@
         {
           "toContextId": "context5_7wf9RT",
           "toModelId": "PendingTask"
+        }
+      ]
+    },
+    "flow29_4gAfxt": {
+      "fromContextId": "context2_Z2voN1",
+      "fromAction": "doAction",
+      "fromControlId": "control2_EIVFPc",
+      "toContexts": [
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     }

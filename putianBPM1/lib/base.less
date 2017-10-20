@@ -43,6 +43,9 @@ div.view-wrapper{
 .ysp-star{
 	color:rgb(255,32,0);
 }
+.header{
+  z-index:199999;
+}
 //背景为灰色
 div[data-ysp-modelid="PendingTask"],div[data-ysp-modelid="HaveProcessingTasks"],div[data-ysp-modelid="HaveProcessingTasksDetailedInformation"],div[data-ysp-modelid="HaveToDoWorkItemExecution"],div[data-ysp-modelid="approvalTrack"],div[data-ysp-modelid="index"],div[data-ysp-modelid="flowSheet"],div[data-ysp-modelid="processForm"],div[data-ysp-modelid="approveAdvice"],div[data-ysp-modelid="processedTask"],div[data-ysp-modelid="checkProcess"],div[data-ysp-modelid="operationLog"],.view-wrapper{
   background: #f4f4f4;
@@ -86,6 +89,22 @@ header{
   left: 0;
   z-index: 100;
 }
+// div[data-ysp-modelid="processForm"]{
+//   position: relative;
+//   overflow-x: hidden;
+//   -webkit-overflow-scrolling: initial !important;
+// 	header{
+// 	position: fixed;
+// 	top: 0;
+// 	}
+//   .ysp-flowsheet{
+//     position: absolute;
+//     top:70px;
+//     overflow-y: scroll;
+//     width: 100%;
+//     -webkit-overflow-scrolling: touch;
+//   }
+// }
 /**********************头部固定定位end*********************************/
 .ysp-blue-bottom-icon{
 	display:inline-block;
@@ -319,19 +338,31 @@ header{
   position: fixed;
   bottom:0;
   left:0;
+  z-index:199999;
   .ysp-btn-one{
     background:@btnYellow;
     color:white;
-    width:50%;
+    width:48%;
     border-radius: 3px;
-    margin:0 10px 0 0;
+    margin:0 4% 0 0;
   }
   .ysp-btn-two{
     background:@btnBlue;
     color:white;
-    width:50%;
+    width:48%;
     border-radius: 3px;
   	margin:0;
+  }
+  .ysp-btn-oneBtn{
+    width:100%;
+    .ysp-btn-two{
+      width: 100%;
+      background:red;
+    }
+  }
+  .ysp-btn-twoBtn{
+    width: 100%;
+    margin:0;
   }
 }
 /**********page组件*********/
@@ -516,6 +547,48 @@ header{
     color: @fontBlue;
     text-shadow: 2px 2px 3px rgba(32, 32, 32, 0.1);
     min-height: 40px;
+  }
+  //流程名字搜索
+  .ysp-flowName{
+    border-bottom:1px solid #e6e6e6;
+    padding:0.8125rem;
+    font-size:14px;
+    input{
+      width: 70%;
+      border: 1px solid #ddd;
+      height: 30px;
+      border-radius: 3px;
+      padding: 0 10px;
+    }
+  }
+  //搜索流程时间
+	.ysp-flowTime{
+    border-bottom:1px solid #e6e6e6;
+    padding:0.8125rem;
+    font-size:14px;
+    >div{
+      margin-top:0.8125rem;
+      padding-top:0.8125rem;
+      border-top:1px solid #e6e6e6;
+    }
+    .ysp-to{
+      margin: 0 2px;
+      color: #333;
+      font-size: 12px;
+    }
+    input{
+      margin: 0;
+      padding: 0;
+      width: 45%;
+      display: inline-block;
+      height: 30px;
+      border-radius: 3px;
+    }
+    .ysp-startT,.ysp-endT{
+      background: url(../local/img/down-arrow-icon.png) no-repeat;
+      background-size:20px;
+      background-position:95% 50%;
+    }
   }
 }
 .ysp-index{
@@ -930,7 +1003,7 @@ header{
     }
     .list{
       margin:0;
-      width:100%;
+      width:90%;
     }
     /***************end******************/
     /***************单选*****************/
@@ -985,8 +1058,68 @@ header{
         }
       }
     }
+    .ysp-otherInput{
+      width:90%;
+    }
     .ysp-required{
       width:90%;
+    }
+    .ysp-receive-time{
+      width:90%;
+    }
+    .ysp-receive-type{
+      width:90%;
+      .ysp-receive-cont{
+        position: fixed;
+    		left: 0;
+   			right: 0;
+    		top: 0;
+    		bottom: 0;
+    		z-index: 99999;
+        .ysp-mask{
+          position: absolute;
+    			left: 0;
+    			right: 0;
+    			top: 0;
+    			bottom: 0;
+    			background-color: #000;
+    			opacity: .3;
+          z-index: 99999;
+        }
+        .ysp-dialog{
+          border-radius: 5px;
+          padding:0.75rem;
+          width:90%;
+          height:70%;
+          background: white;
+          z-index: 199999;
+          position: fixed;
+    			left: 5%;
+          top:15%;
+          overflow: auto;
+          div{
+            text-align: center;
+          }
+        }
+      }
+      .ysp-receive-type-cont{
+        width:100%;
+        height:50px;
+        line-height: 50px;
+        border:1px solid #ccc;
+        margin-bottom:16px;
+        position: relative;
+        padding-left:0.75rem;
+        i{
+          width:0; 
+          height:0; 
+          border:6px solid; 
+          border-color:#201F35 #ffffff #ffffff #ffffff;
+          position: absolute;
+          right:10px;
+          top:21px;
+        }
+      }
     }
     /****************end****************/
     >div{
@@ -1038,7 +1171,7 @@ header{
         height:61px;
         width:100%;
         input{
-        	width:100%;
+        	width:90%;
         }
       }
       .ysp-advanceBalance{
@@ -1197,16 +1330,16 @@ header{
           font-size:	@fontMedium;
           color:	@fontBlack;
           font-weight: 500;
-          width:70%;
-        span{
-          margin-right: 5px;
-          width:100px
+          width:100%;  
+          span{
+            margin-right: 5px;
+            width:100px
           }
         >i{
-          	border-right: 4px solid @fontBlue;
-          	font-size:16px;
-          	margin-left: -10px;
-          	margin-right: 6px;
+            border-right: 4px solid @fontBlue;
+            font-size:16px;
+            margin-left: -10px;
+            margin-right: 6px;
           }
         }
       }
@@ -1334,3 +1467,93 @@ header{
     }
   }
 }
+/*******临时额度*********/
+.ysp-dataform2{
+  >div{
+    .ysp-dataform2-title{
+      width:60%	!important;
+    }
+    textarea{
+      width:92%;
+    }
+  }
+	.ysp-Quota{
+  	width:90%;
+    input{
+      width:100%	!important;
+      margin-right: 15px	!important;
+    }
+  }
+}
+//审批意见
+div[data-ysp-modelid='approveAdvice']{
+  .ysp-ExamineAndApprove{
+    .ysp-ExamineAndApprove-cardBody{
+      min-height: 260px;
+      .ysp-ExamineAndApprove-card{
+       .ysp-ExamineAndApprove-first{
+         >label{
+            >div{
+              overflow: hidden;
+              float: left;
+              span{
+                margin-right: 5px;
+                width:100px;
+              }
+            >i{
+                border-right: 4px solid @fontBlue;
+                font-size:16px;
+                margin-left: -10px;
+                margin-right: 6px;
+              }
+            }
+            >span{
+              width:70%;
+              overflow-x: scroll;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*****************************backBrowserWeb  开始**********************************/
+.ysp_backBrowser_wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.5);
+  .ysp_active{
+    width: 300px;
+    position: fixed;
+    transform:translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    padding-bottom: 10px;
+    .ysp_activeTitle{
+      text-align: left;
+      display: inline-block;
+      width: 100%;
+      padding:5px 10px;
+      border-bottom:1px solid #ddd;
+      background: #e6e6e6;
+    }
+    .ysp_activeTip{
+      font-size:15px;
+      padding: 5px 10px;
+    }
+    .ysp_activeSure{
+      font-size:15px;
+      padding:5px 20px;
+      background:#0e90d2;
+      color: #fff;
+      border-radius: 3px;
+    }
+  }
+}
+/*****************************backBrowserWeb  结束**********************************/

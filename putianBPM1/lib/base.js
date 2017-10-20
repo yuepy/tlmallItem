@@ -231,6 +231,13 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
+      //给页面的head里加一个标签
+      var meta=doc.createElement("meta");
+      meta.setAttribute("name","google");
+      meta.setAttribute("content","notranslate");
+      var head=doc.querySelector("head");
+      head.appendChild(meta)
+      
        //加载过滤后的页面
       if(aWin.location.href=="http://192.168.0.189:8888/ptsoa/skins/default/index.jsp"||aWin.location.href=="http://192.168.0.189:8888/ptsoa/skins/default/index.jsp#"){
         console.log("a")

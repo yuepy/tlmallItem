@@ -1,6 +1,6 @@
 var gulp = require('gulp');
     replace = require('gulp-replace');
-gulp.task('replace', function() {
+gulp.task('UAT', function() {
    gulp.src(['**/*','!./gulpfile.js','!./lib/images/**/*','!./**/*.png','!./**/css/**/*','!/**/*.ico'])
     .pipe(replace(/http:\\{2}\/\\{2}\/192\\{2}.168\\{2}.0\\{2}.189:8888/gm,'http:\\\\/\\\\/192\\\\.168\\\\.2\\\\.40:8000'))
     .pipe(replace(/http:\\{2}\/\\{2}\/192\\{2}.168\\{2}.0\\{2}.189\\{2}:8888/gm,'http:\\\\/\\\\/192\\\\.168\\\\.2\\\\.40:8000'))
@@ -8,7 +8,7 @@ gulp.task('replace', function() {
     .pipe(replace(/192\.168\.0\.189/gm,'192.168.2.40'))
     .pipe(gulp.dest("./"))
 });
-  gulp.task('UAT', function() {
+  gulp.task('SIT', function() {
    gulp.src(['**/*','!./gulpfile.js','!./lib/images/**/*','!./**/*.png','!./**/css/**/*','!/**/*.ico'])
     .pipe(replace(/http:\\{2}\/\\{2}\/192\\{2}.168\\{2}.2\\{2}.40:8000/gm,'http:\\\\/\\\\/192\\\\.168\\\\.0\\\\.189:8888'))
     .pipe(replace(/http:\\{2}\/\\{2}\/192\\{2}.168\\{2}.2\\{2}.40\\{2}:8000/gm,'http:\\\\/\\\\/192\\\\.168\\\\.0\\\\.189:8888'))
