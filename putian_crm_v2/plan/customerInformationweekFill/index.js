@@ -16,6 +16,8 @@
           history.back();
         } else if (parent.EAPI.isIOS() && pageId == "context51_PhTFP3") {
           var url = "http://192.168.1.224:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.appMain.reloadPage(url);
+        } else if (parent.EAPI.isIOS() && pageId == "context2_15cCKI") {
+          var url = "http://192.168.1.224:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
         } else {
           history.back();
         }
