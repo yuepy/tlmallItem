@@ -7,7 +7,8 @@
     "checkProcess": "../checkProcess/index.json",
     "processForm": "../processForm/index.json",
     "processedTask": "../processedTask/index.json",
-    "index": "../index/index.json"
+    "index": "../index/index.json",
+    "backBrowseWeb": "../backBrowseWeb/index.json"
   },
   "chineseName": "已处理的任务",
   "description": "",
@@ -205,28 +206,7 @@
     }
   },
   "flows": {
-    "flow26_AMI9dG": {
-      "toContexts": [
-        {
-          "toContextId": "context2_Z2voN1"
-        },
-        {
-          "toContextId": "context2_Z2voN1",
-          "toModelId": "processedTask"
-        }
-      ]
-    },
-    "flow29_aH8IeH": {
-      "fromContextId": "context2_Z2voN1",
-      "fromAction": "doAction",
-      "fromControlId": "control30_4Hn4Gb",
-      "toContexts": [
-        {
-          "toContextId": "context2_Z2voN1"
-        }
-      ]
-    },
-    "flow30_Hhq9FI": {
+    "flow3_2WriEv": {
       "fromContextId": "context2_Z2voN1",
       "fromAction": "doAction",
       "fromControlId": "control31_R1g6aJ",
@@ -243,55 +223,12 @@
           "toModelId": "processForm"
         },
         {
-          "toContextId": "context1_wzzrby",
-          "toModelId": "index"
+          "toContextId": "context16_N57w9c",
+          "toModelId": "backBrowseWeb"
         }
       ]
     },
-    "flow31_7dPPNy": {
-      "fromContextId": "context2_Z2voN1",
-      "fromAction": "doAction",
-      "fromControlId": "control32_xrbDuu",
-      "toContexts": [
-        {
-          "toContextId": "context2_Z2voN1"
-        }
-      ]
-    },
-    "flow38_M5mKVW": {
-      "fromContextId": "context11_uaf3pg",
-      "fromAction": "doAction",
-      "fromControlId": "control5_diOo4d",
-      "toContexts": [
-        {
-          "toContextId": "context2_Z2voN1",
-          "toModelId": "processedTask"
-        }
-      ]
-    },
-    "flow45_LkGpD0": {
-      "fromContextId": "context1_wzzrby",
-      "fromAction": "doAction",
-      "fromControlId": "control2_THhfhA",
-      "toContexts": [
-        {
-          "toContextId": "context2_Z2voN1",
-          "toModelId": "processedTask"
-        }
-      ]
-    },
-    "flow55_ciO7H5": {
-      "fromContextId": "context1_wzzrby",
-      "fromAction": "doAction",
-      "fromControlId": "control13_aHOPRS",
-      "toContexts": [
-        {
-          "toContextId": "context2_Z2voN1",
-          "toModelId": "processedTask"
-        }
-      ]
-    },
-    "flow3_TOfbre": {
+    "flow26_oX723I": {
       "fromContextId": "context2_Z2voN1",
       "fromAction": "doAction",
       "fromControlId": "control2_EIVFPc",
@@ -302,17 +239,6 @@
         {
           "toContextId": "context1_wzzrby",
           "toModelId": "index"
-        }
-      ]
-    },
-    "flow57_SoDwUv": {
-      "fromContextId": "context8_ddpRhS",
-      "fromAction": "doAction",
-      "fromControlId": "control36_hBTqBA",
-      "toContexts": [
-        {
-          "toContextId": "context2_Z2voN1",
-          "toModelId": "processedTask"
         }
       ]
     }
