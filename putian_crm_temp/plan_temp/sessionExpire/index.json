@@ -1,0 +1,266 @@
+{
+  "version": "0.1",
+  "id": "sessionExpire",
+  "targetURL": "http://192.168.0.208:7777/loyalty_chs/start.swe?SWECmd=Login&SWEPL=1&SRN=&SWETS=1491289211906",
+  "jsFile": "index.js",
+  "chineseName": "会话过期",
+  "description": "",
+  "controls": {
+    "control138_JGI38H": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "a/@href",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "funcName": "void"
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "BODY.ScreenBack UL LI A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/UL[1]/LI[2]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              0,
+              0,
+              238
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control138_JGI38H"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control6_e0Tgsz": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ScreenBack SPAN.AppletTitle"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/H1[1]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control6_e0Tgsz"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control137_uTo6T5": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ScreenBack H1"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/H1[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control137_uTo6T5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context34_b2JCD9": {
+      "controls": [
+        "control138_JGI38H",
+        "control6_e0Tgsz",
+        "control137_uTo6T5"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "^http:\\/\\/192\\.168\\.0\\.208:7777\\/loyalty_chs\\/start\\.swe\\?.*(action=sessionExpire)$"
+      ]
+    }
+  },
+  "flows": {
+    "flow59_dprfrV": {
+      "toContexts": [
+        {
+          "toContextId": "context34_b2JCD9"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page34_VoRQtN": {
+      "contextId": "context34_b2JCD9",
+      "layout": [
+        {
+          "id": "uiControl8_7CoOxE",
+          "controlId": "control6_e0Tgsz",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl8_7CoOxE",
+                "onGetTemplate": "getTemplate_uiControl8_7CoOxE"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl95_Mg8JrZ",
+          "controlId": "control137_uTo6T5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl95_Mg8JrZ",
+                "onGetTemplate": "getTemplate_uiControl95_Mg8JrZ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl124_Kwo47d",
+          "controlId": "control138_JGI38H",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl124_Kwo47d",
+                "onGetTemplate": "getTemplate_uiControl124_Kwo47d"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context34_b2JCD9": [
+          "普天太力客户关系管理-UAT"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context34_b2JCD9": [
+          "192.168.0.208:7777/loyalty_chs/start.swe?SWECmd=Login&SWEPL=1&SRN=&SWETS=1491289211906",
+          "192.168.0.208:7777/loyalty_chs/start.swe?SWECmd=GotoView&SWEView=LOY+Home+Page+View&SWERF=1&SWEHo=192.168.0.208&SWEBU=1",
+          "192.168.0.208:7777/loyalty_chs/start.swe?SWECmd=Login&SWEPL=1&SRN=&SWETS=1491293087999&action=sessionExpire",
+          "192.168.0.208:7777/loyalty_chs/start.swe?SWECmd=Login&SWEPL=1&SRN=&SWETS=1491293976215&action=sessionExpire",
+          "192.168.0.208:7777/loyalty_chs/start.swe?SWECmd=GotoView&SWEView=LOY+Home+Page+View&SWERF=1&SWEHo=192.168.0.208&SWEBU=1&action=sessionExpire"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context34_b2JCD9": [
+          [
+            "s_swepi_"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context34_b2JCD9": [
+          [
+            "AppletTitle",
+            "error"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context34_b2JCD9": [
+          [
+            "-/-/H1",
+            "-/-/H4",
+            "-/-/SCRIPT",
+            "-/-/UL",
+            "-/H1/SPAN",
+            "-/H4/SPAN",
+            "-/UL/LI",
+            "UL/LI/A",
+            "UL/LI/SCRIPT",
+            "UL/LI/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

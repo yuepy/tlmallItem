@@ -1,0 +1,648 @@
+{
+  "version": "0.1",
+  "id": "strideProject_noBottom",
+  "targetURL": "http://192.168.0.189:8080/ptsoa/forms/pt/DG_ALLOT_CROSS_PROJECT/dg_allot_cross_project_view.htm?_objName=DG_ALLOT_CROSS_PROJECT&_useType=view&_defId=dg_allot_cross_project%3A1%3Aebaac6bf-dd05-43f3-a5a6-fb9c93d1925d&_instId=f6af7814-7a39-4e16-844d-3a42e8d52851&_taskId=122cd108-840e-432e-be58-f4a6cd179b75&_nodeId=UserTask_3&_pk=UUID&_pkValue=342095c5264ca7bba0bc571d85dc1248",
+  "jsFile": "../../lib/base.js,index.js",
+  "cssFile": "../../lib/base.css,index.css",
+  "requires": {
+    "LOGIN": "../login/index.json",
+    "processState": "../processState/index.json"
+  },
+  "chineseName": "没有底部悬浮的跨（项目）调拨申请单",
+  "description": "",
+  "controls": {
+    "control0": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "所属机构 普天太力总部 申请单号 KXDB-20160419-31806 创建人 王柳 创建日期 2016-04-19 17:07:54 调出项目 电信事业部其他 调入项目 天翼平台 调出事业部 电信业务事业部 调入事业部 电信业务事业部 是否调整收入 否 调拨数合计 1"
+              ],
+              "visText": [
+                "所属机构 普天太力总部 申请单号 KXDB-20160419-31806 创建人 王柳 创建日期 2016-04-19 17:07:54 调出项目 电信事业部其他 调入项目 天翼平台 调出事业部 电信业务事业部 调入事业部 电信业务事业部 是否调整收入 否 调拨数合计 1"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1439,
+              "height": 125
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control3": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "序号 品牌 机型 颜色 属性 调拨数 仓库 调拨差价 备注 状态 1 三星 W899 亮金 1 总部呼和浩特仓 1 1"
+              ],
+              "visText": [
+                "序号 品牌 机型 颜色 属性 调拨数 仓库 调拨差价 备注 状态 1 三星 W899 亮金 1 总部呼和浩特仓 1 1"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::TABLE[@id=\"table_DG_ALLOT_CROSS_PROJECT_DETAIL\"]/TBODY[1]",
+              "descendant::TABLE[@id=\"table_DG_ALLOT_CROSS_PROJECT_DETAIL\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE.ui-table-Detail TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[2]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1439,
+              "height": 50
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control4": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]//SPAN",
+              "descendant::DIV[@id=\"Advance_ProcessStatus\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control5": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "调拨申请单（项目）"
+              ],
+              "visText": [
+                "调拨申请单（项目）"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "调拨申请单（项目）"
+              ],
+              "visText": [
+                "调拨申请单（项目）"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 178,
+              "height": 40
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    },
+    "control6": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "调拨申请单（项目）"
+              ],
+              "visText": [
+                "调拨申请单（项目）"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "调拨申请单（项目）"
+              ],
+              "visText": [
+                "调拨申请单（项目）"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 178,
+              "height": 36
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "调拨申请单（项目）"
+    }
+  },
+  "contexts": {
+    "context0": {
+      "controls": [
+        "control0",
+        "control3",
+        "control4",
+        "control5"
+      ],
+      "anchors": [
+        "control6"
+      ]
+    }
+  },
+  "flows": {
+    "flow0": {
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow1": {
+      "fromContextId": "context0",
+      "fromAction": "click",
+      "fromControlId": "control4",
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        },
+        {
+          "toModelId": "processState",
+          "toContextId": "context0"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0": {
+      "contextId": "context0",
+      "layout": [
+        {
+          "id": "uiControl5",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "top",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl5body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl6",
+                  "display": {
+                    "class": "navbar navbar-primary",
+                    "title": "调拨申请单",
+                    "type": "header",
+                    "adapterId": "header",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl7",
+                      "controlId": "control4",
+                      "display": {
+                        "adapterId": "clickable",
+                        "type": "button",
+                        "text": "",
+                        "class": "distribution-header-right-btn",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      }
+                    },
+                    {
+                      "id": "uiControl8",
+                      "controlId": "control5",
+                      "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                          "templateType": "react",
+                          "events": {
+                            "onDoAction": "doAction_uiControl8",
+                            "onGetTemplate": "getTemplate_uiControl8"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl0",
+          "controlId": "control0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl0",
+                "onGetTemplate": "getTemplate_uiControl0"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl1",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "class": "detail-card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl1body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl3",
+                  "display": {
+                    "presentation": "confirm",
+                    "adapterId": "dialog",
+                    "class": "hahahhha",
+                    "type": "dialog",
+                    "actionsButtonText": "明细",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl3body",
+                      "display": {
+                        "type": "dialogBody",
+                        "adapterId": "dialogBody",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": [
+                        {
+                          "id": "uiControl4",
+                          "controlId": "control3",
+                          "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                              "templateType": "react",
+                              "events": {
+                                "onDoAction": "doAction_uiControl4",
+                                "onGetTemplate": "getTemplate_uiControl4"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "id": "uiControl3footer",
+                      "display": {
+                        "type": "dialogFooter",
+                        "adapterId": "dialogFooter",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0": [
+          "192.168.0.189:8080/ptsoa/forms/pt/DG_ALLOT_CROSS_PROJECT/dg_allot_cross_project_view.htm?_objName=DG_ALLOT_CROSS_PROJECT&_useType=view&_defId=dg_allot_cross_project%3A1%3Aebaac6bf-dd05-43f3-a5a6-fb9c93d1925d&_instId=f6af7814-7a39-4e16-844d-3a42e8d52851&_taskId=122cd108-840e-432e-be58-f4a6cd179b75&_nodeId=UserTask_3&_pk=UUID&_pkValue=342095c5264ca7bba0bc571d85dc1248"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0": [
+          [
+            "Advance_ProcessStatus",
+            "LABEL_",
+            "_ATTACHMENT_DELETE_IDS_",
+            "closeTabBtn",
+            "funcName",
+            "table_DG_ALLOT_CROSS_PROJECT_DETAIL",
+            "table_DG_ALLOT_CROSS_PROJECT_DETAIL_",
+            "tool-box"
+          ],
+          [
+            "LABEL_",
+            "funcName",
+            "table_DG_ALLOT_CROSS_PROJECT_DETAIL",
+            "tool-box"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0": [
+          [
+            "-default",
+            "clo",
+            "e-menu",
+            "et",
+            "et-header",
+            "fn-clear",
+            "img-",
+            "row-",
+            "row-index",
+            "tatu",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-icon-flow",
+            "ui-table-A",
+            "ui-table-Detail",
+            "x-field"
+          ],
+          [
+            "fn-clear",
+            "img-",
+            "row-index",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-table-A",
+            "ui-table-Detail",
+            "x-fieldset",
+            "x-fieldset-header"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "-/DIV/UL",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/TFOOT",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FIELDSET/LEGEND/B",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/TFOOT",
+            "DIV/TABLE/THEAD",
+            "FIELDSET/LEGEND/B",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/KBD",
+            "TR/TD/LABEL"
+          ]
+        ]
+      }
+    }
+  }
+}

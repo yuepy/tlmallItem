@@ -1,0 +1,814 @@
+{
+  "version": "0.1",
+  "id": "downDiscount_noBottom",
+  "targetURL": "http://192.168.0.200:8080/ptsoa/forms/discount/DISCOUNT_LOWER/discount_lower_approve_rdol.htm?_objName=DISCOUNT_LOWER&_defKey=discount_lower&_defId=discount_lower%3A1%3Adbbd934c-f4e5-4bd4-8699-b1a8f96cba69&_instId=571d3ecd-262c-4353-a4d6-e88aa1c3c7cc&_taskId=775d3277-a9fe-4180-921f-df0bbabe749e&_nodeId=UserTask_12&_agent=&_pk=UUID&_pkValue=b69e039227974dc3bc2f2212522674b8&_useType=modify",
+  "jsFile": "../../lib/base.js,index.js",
+  "cssFile": "../../lib/base.css,index.css",
+  "requires": {
+    "LOGIN": "../login/index.json",
+    "processState": "../processState/index.json",
+    "downDiscountDetail": "../downDiscountDetail/index.json"
+  },
+  "chineseName": "没有底部悬浮的下游折扣",
+  "description": "",
+  "controls": {
+    "control0": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "下游折扣确认单"
+              ],
+              "visText": [
+                "下游折扣确认单"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "下游折扣确认单"
+              ],
+              "visText": [
+                "下游折扣确认单"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 142,
+              "height": 40
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "下游折扣确认单"
+    },
+    "control1": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "所属机构 PTTL_OU_02_北京分公司 通知单号 TD022161601001 部门 小米业务事业部 创建人 刘玉华 折让总金额 10000 创建时间 审批时间 备注 明细"
+              ],
+              "visText": [
+                "所属机构 PTTL_OU_02_北京分公司 通知单号 TD022161601001 部门 小米业务事业部 创建人 刘玉华 折让总金额 10000 创建时间 审批时间 备注 明细"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tabs\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"tabs\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1388,
+              "height": 131
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control2": {
+      "location": {
+        "data": {
+          "tagName": "TEXTAREA"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "<!--@FixAttributies(main-fixbody)__taskComment:{\"needSubmit\":false}@FixEnd-->"
+              ],
+              "visText": [
+                ""
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"tabs\"]//TEXTAREA[@id=\"_taskComment\"]",
+              "descendant::TEXTAREA[@id=\"_taskComment\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[2]/TBODY[1]/TR[1]/TD[2]/TEXTAREA[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "textarea"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1257,
+              "height": 38
+            }
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true
+    },
+    "control3": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "同意"
+              ],
+              "visText": [
+                "同意"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "同意"
+              ],
+              "visText": [
+                "同意"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]/DIV[1]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control4": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "不同意"
+              ],
+              "visText": [
+                "不同意"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "不同意"
+              ],
+              "visText": [
+                "不同意"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]/DIV[2]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control5": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]//SPAN",
+              "descendant::DIV[@id=\"Advance_ProcessStatus\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[3]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control6": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]//SPAN",
+              "descendant::DIV[@id=\"Advance_ProcessStatus\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[3]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    },
+    "control7": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "明细"
+              ],
+              "visText": [
+                "明细"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "明细"
+              ],
+              "visText": [
+                "明细"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"tabs\"]/TABLE[1]/TBODY[1]/TR[5]/TD[3]/SPAN[1]/BUTTON[1]",
+              "descendant::DIV[@id=\"tabs\"]//BUTTON"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new BUTTON.ui-button-detail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[1]/TBODY[1]/TR[5]/TD[3]/SPAN[1]/BUTTON[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "button"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 42,
+              "height": 21
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    }
+  },
+  "contexts": {
+    "context0": {
+      "controls": [
+        "control1",
+        "control2",
+        "control3",
+        "control4",
+        "control5",
+        "control6",
+        "control7"
+      ],
+      "anchors": [
+        "control0"
+      ]
+    }
+  },
+  "flows": {
+    "flow0": {
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow1": {
+      "fromContextId": "context0",
+      "fromAction": "click",
+      "fromControlId": "control5",
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        },
+        {
+          "toModelId": "processState",
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow2": {
+      "fromContextId": "context0",
+      "fromAction": "click",
+      "fromControlId": "control7",
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        },
+        {
+          "toModelId": "downDiscountDetail",
+          "toContextId": "context0"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0": {
+      "contextId": "context0",
+      "layout": [
+        {
+          "id": "uiControl1",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "top",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl1body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl2",
+                  "display": {
+                    "class": "navbar navbar-primary downDiscount-navbar",
+                    "title": "下游折扣确认单",
+                    "type": "header",
+                    "adapterId": "header",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl10",
+                      "controlId": "control6",
+                      "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "class": "downDiscount-header-left-btn",
+                        "adapter": {
+                          "templateType": "react",
+                          "events": {
+                            "onDoAction": "doAction_uiControl10",
+                            "onGetTemplate": "getTemplate_uiControl10"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "uiControl9",
+                      "controlId": "control5",
+                      "display": {
+                        "class": "downDiscount-header-right-btn",
+                        "text": "",
+                        "adapterId": "clickable",
+                        "type": "button",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl0",
+          "controlId": "control1",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "class": "downDiscount-container",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl0",
+                "onGetTemplate": "getTemplate_uiControl0"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl11",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "class": "downDiscount-card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl11body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl12",
+                  "controlId": "control7",
+                  "display": {
+                    "adapterId": "clickable",
+                    "type": "button",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0": [
+          "192.168.0.200:8080/ptsoa/forms/discount/DISCOUNT_LOWER/discount_lower_approve_rdol.htm?_objName=DISCOUNT_LOWER&_defKey=discount_lower&_defId=discount_lower%3A1%3Adbbd934c-f4e5-4bd4-8699-b1a8f96cba69&_instId=571d3ecd-262c-4353-a4d6-e88aa1c3c7cc&_taskId=775d3277-a9fe-4180-921f-df0bbabe749e&_nodeId=UserTask_12&_agent=&_pk=UUID&_pkValue=b69e039227974dc3bc2f2212522674b8&_useType=modify"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0": [
+          [
+            "Advance_ProcessStatus",
+            "DISCOUNT_LOWER_CREATE_ID",
+            "DISCOUNT_LOWER_DEPT_ID",
+            "DISCOUNT_LOWER_DISCOUNT_TOTAL",
+            "DISCOUNT_LOWER_DIS_NUM",
+            "DISCOUNT_LOWER_ORG_ID",
+            "DISCOUNT_LOWER_REMARK",
+            "HandleCommand_",
+            "LABEL_",
+            "OKBtn_",
+            "_ATTACHMENT_DELETE_IDS_",
+            "_taskComment",
+            "closeTabBtn",
+            "funcName",
+            "input_",
+            "tabs",
+            "tool-box"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0": [
+          [
+            "clo",
+            "e-menu",
+            "et",
+            "et-header",
+            "fn-clear",
+            "img-",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-button-detail",
+            "ui-icon-flow",
+            "ui-table-A",
+            "x-field"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "-/DIV/UL",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/INPUT-text",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/SPAN/BUTTON",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TEXTAREA",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}

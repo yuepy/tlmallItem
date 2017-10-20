@@ -1,0 +1,809 @@
+{
+  "version": "0.1",
+  "id": "distributionReturn_noBottom",
+  "targetURL": "http://192.168.0.189:8080/ptsoa/forms/pt/DG_DIS_COUNTERSIGN/dis_countersign_approve.htm?_objName=DG_DIS_COUNTERSIGN&_defKey=dg_dis_countersign&_defId=dg_dis_countersign%3A1%3A993aede5-dc3a-43d3-98f3-9768f02fdd88&_instId=e71020ca-0971-4a1f-a498-f8371b8879f3&_taskId=3c6bf0ff-77d3-4872-b89b-2d2f4423eced&_nodeId=UserTask_9&_agent=&_pk=UUID&_pkValue=572e621a933f936508df70ee5b703cba&_useType=modify",
+  "jsFile": "../../lib/base.js,index.js",
+  "cssFile": "../../lib/base.css,index.css",
+  "requires": {
+    "LOGIN": "../login/index.json",
+    "processState": "../processState/index.json"
+  },
+  "chineseName": "没有底部悬浮的铺货退货会签单",
+  "description": "",
+  "controls": {
+    "control0": {
+      "location": {
+        "data": {
+          "tagName": "TEXTAREA"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "<!--@FixAttributies(main-fixbody)_TEXTAREA_0:{needSubmit:false}@FixEnd-->"
+              ],
+              "visText": [
+                ""
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"content_baseinfo\"]//TEXTAREA[@id=\"_taskComment\"]",
+              "descendant::TEXTAREA[@id=\"_taskComment\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.ui-tab-form-content TABLE TBODY TR TD TEXTAREA"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[1]/TBODY[1]/TR[5]/TD[2]/TEXTAREA[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "textarea"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1200,
+              "height": 38
+            }
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true
+    },
+    "control1": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "同意"
+              ],
+              "visText": [
+                "同意"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "同意"
+              ],
+              "visText": [
+                "同意"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]/DIV[1]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control2": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "不同意"
+              ],
+              "visText": [
+                "不同意"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "不同意"
+              ],
+              "visText": [
+                "不同意"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]/DIV[2]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control3": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "铺货退货会签单"
+              ],
+              "visText": [
+                "铺货退货会签单"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "铺货退货会签单"
+              ],
+              "visText": [
+                "铺货退货会签单"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 142,
+              "height": 40
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "铺货退货会签单"
+    },
+    "control5": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "所属机构: 普天太力总部 铺货退货会签单号: PHTHHQ-131131 事业部: 电信业务事业部 退货客户: 河南杞县新峰 申请日期: 2016-03-14 10:29:58 申请退货后的处理措施（详述）: test 审批意见： <!--@FixAttributies(main-fixbody)_TEXTAREA_0:{needSubmit:false}@FixEnd-->"
+              ],
+              "visText": [
+                "所属机构: 普天太力总部 铺货退货会签单号: PHTHHQ-131131 事业部: 电信业务事业部 退货客户: 河南杞县新峰 申请日期: 2016-03-14 10:29:58 申请退货后的处理措施（详述）: test 审批意见："
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"content_baseinfo\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"content_baseinfo\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.ui-tab-form-content TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1372,
+              "height": 163
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control6": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "项目 品牌 机型 颜色 属性 退货数量 * 剩余库存 * 是否影响二次销售 * 退货原因 * 省分销 HTC D816d 轻盈白 1 22 否 test 电信ND摩托项目 富可视 F110 功能手机 测试蓝 2 34 否 test"
+              ],
+              "visText": [
+                "项目 品牌 机型 颜色 属性 退货数量 * 剩余库存 * 是否影响二次销售 * 退货原因 * 省分销 HTC D816d 轻盈白 1 22 否 test 电信ND摩托项目 富可视 F110 功能手机 测试蓝 2 34 否 test"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"content_baseinfo\"]//TABLE[@id=\"table_DG_DIS_COUNTERSIGN_DETAIL\"]",
+              "descendant::TABLE[@id=\"table_DG_DIS_COUNTERSIGN_DETAIL\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-new DIV.ui-tab-form-content TABLE.ui-table-Detail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[2]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1373,
+              "height": 76
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control7": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]//SPAN",
+              "descendant::DIV[@id=\"Advance_ProcessStatus\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[3]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control9": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "铺货退货会签单"
+              ],
+              "visText": [
+                "铺货退货会签单"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "铺货退货会签单"
+              ],
+              "visText": [
+                "铺货退货会签单"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 192,
+              "height": 43
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control9"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    }
+  },
+  "contexts": {
+    "context0": {
+      "controls": [
+        "control0",
+        "control1",
+        "control2",
+        "control5",
+        "control6",
+        "control7",
+        "control9"
+      ],
+      "anchors": [
+        "control3"
+      ]
+    }
+  },
+  "flows": {
+    "flow0": {
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow1": {
+      "fromContextId": "context0",
+      "fromAction": "click",
+      "fromControlId": "control7",
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        },
+        {
+          "toModelId": "processState",
+          "toContextId": "context0"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0": {
+      "contextId": "context0",
+      "layout": [
+        {
+          "id": "uiControl0",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "top",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl0body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl2",
+                  "display": {
+                    "class": "navbar navbar-primary distribution-navbar",
+                    "title": "铺货退货会签单",
+                    "type": "header",
+                    "adapterId": "header",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl13",
+                      "controlId": "control9",
+                      "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                          "templateType": "react",
+                          "events": {
+                            "onDoAction": "doAction_uiControl13",
+                            "onGetTemplate": "getTemplate_uiControl13"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "uiControl11",
+                      "controlId": "control7",
+                      "display": {
+                        "adapterId": "clickable",
+                        "type": "button",
+                        "text": "",
+                        "class": "distribution-header-right-btn",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl8",
+          "controlId": "control5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl8",
+                "onGetTemplate": "getTemplate_uiControl8"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl14",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "class": "detail-card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl14body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl9",
+                  "display": {
+                    "presentation": "confirm",
+                    "adapterId": "dialog",
+                    "type": "dialog",
+                    "class": "hahahhha",
+                    "actionsButtonText": "明细",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl9body",
+                      "display": {
+                        "type": "dialogBody",
+                        "adapterId": "dialogBody",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": [
+                        {
+                          "id": "uiControl10",
+                          "controlId": "control6",
+                          "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                              "templateType": "react",
+                              "events": {
+                                "onDoAction": "doAction_uiControl10",
+                                "onGetTemplate": "getTemplate_uiControl10"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "id": "uiControl9footer",
+                      "display": {
+                        "type": "dialogFooter",
+                        "adapterId": "dialogFooter",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0": [
+          "192.168.0.189:8080/ptsoa/forms/pt/DG_DIS_COUNTERSIGN/dis_countersign_approve.htm?_objName=DG_DIS_COUNTERSIGN&_defKey=dg_dis_countersign&_defId=dg_dis_countersign%3A1%3A993aede5-dc3a-43d3-98f3-9768f02fdd88&_instId=e71020ca-0971-4a1f-a498-f8371b8879f3&_taskId=3c6bf0ff-77d3-4872-b89b-2d2f4423eced&_nodeId=UserTask_9&_agent=&_pk=UUID&_pkValue=572e621a933f936508df70ee5b703cba&_useType=modify"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0": [
+          [
+            "Advance_ProcessStatus",
+            "DG_DIS_COUNTERSIGN_UUID",
+            "HandleCommand_",
+            "LABEL_",
+            "_ATTACHMENT_DELETE_IDS_",
+            "_taskComment",
+            "checkbox_DG_DIS_COUNTERSIGN_DETAIL",
+            "content_baseinfo",
+            "funcName",
+            "input_",
+            "table_DG_DIS_COUNTERSIGN_DETAIL",
+            "table_DG_DIS_COUNTERSIGN_DETAIL_",
+            "tool-box"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0": [
+          [
+            "-default",
+            "et",
+            "et-header",
+            "fn-clear",
+            "img-",
+            "row-",
+            "tatu",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-icon-flow",
+            "ui-tab-form-content",
+            "ui-table-A",
+            "ui-table-Detail",
+            "x-field"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/INPUT-text",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/KBD/SPAN",
+            "THEAD/TR/TD",
+            "TR/TD/INPUT-checkbox",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/TEXTAREA"
+          ]
+        ]
+      }
+    }
+  }
+}

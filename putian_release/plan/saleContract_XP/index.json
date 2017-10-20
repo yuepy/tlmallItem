@@ -1,0 +1,357 @@
+{
+  "version": "0.1",
+  "id": "saleContract_XP",
+  "targetURL": "http://192.168.0.200:8080/ptsoa/forms/SO_SALES/SO_CONTRACT_INFO/so_contract.htm?_objName=SO_CONTRACT_INFO&_defKey=so_contractn&_defId=so_contractn:1:a32aa285-4ac7-4407-94d0-106b2c4fe235&_instId=6ca2c2d8-151c-43b7-b80c-b5bb7f51350d&_taskId=4bebf2ce-81f6-4064-b201-0d9e2747bbef&_nodeId=UserTask_1&_agent=&_pk=UUID&_pkValue=419fe378cef83e97a0b0368c49dc96c8&_useType=modify",
+  "jsFile": "index.js",
+  "chineseName": "肖佩的销售合同",
+  "description": "",
+  "controls": {
+    "control28": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              12
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE.ui-table-A TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1399,
+              "height": 691
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control28"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    },
+    "control29": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "销售合同"
+              ],
+              "visText": [
+                "销售合同"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "销售合同"
+              ],
+              "visText": [
+                "销售合同"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 88,
+              "height": 36
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control29"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    }
+  },
+  "contexts": {
+    "context2": {
+      "controls": [
+        "control28",
+        "control29"
+      ],
+      "anchors": []
+    }
+  },
+  "flows": {
+    "flow10": {
+      "toContexts": [
+        {
+          "toContextId": "context2"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page2": {
+      "contextId": "context2",
+      "layout": [
+        {
+          "id": "uiControl38",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "top",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl38body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl37",
+                  "controlId": "control29",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl37",
+                        "onGetTemplate": "getTemplate_uiControl37"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl40",
+          "controlId": "control28",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl40",
+                "onGetTemplate": "getTemplate_uiControl40"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context2": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context2": [
+          "192.168.0.200:8080/ptsoa/forms/SO_SALES/SO_CONTRACT_INFO/so_contract.htm?_objName=SO_CONTRACT_INFO&_defKey=so_contractn&_defId=so_contractn:1:a32aa285-4ac7-4407-94d0-106b2c4fe235&_instId=6ca2c2d8-151c-43b7-b80c-b5bb7f51350d&_taskId=4bebf2ce-81f6-4064-b201-0d9e2747bbef&_nodeId=UserTask_1&_agent=&_pk=UUID&_pkValue=419fe378cef83e97a0b0368c49dc96c8&_useType=modify"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context2": [
+          [
+            "AD_Project_",
+            "AD_Project__input",
+            "Advance_ProcessStatus",
+            "FixDialog_",
+            "FixJSON",
+            "HTMLCheckBoxList_",
+            "HTMLRadioList_",
+            "HTMLSelect_",
+            "HTMLSelect__FixCOM",
+            "HandleCommand_",
+            "JQFileUpload_",
+            "LABEL_",
+            "MyDatePicker_",
+            "MyDatePicker__FixCOM",
+            "OKBtnAdd_",
+            "OKBtnRemove_",
+            "_ATTACHMENT_DELETE_IDS_",
+            "_A__",
+            "_B__",
+            "__",
+            "file",
+            "fileupload",
+            "funcName",
+            "input_",
+            "label_A__",
+            "label_B__",
+            "label__",
+            "table_SO_CONTRACT_INFO_DETAIL",
+            "template-download",
+            "template-upload",
+            "tool-box"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context2": [
+          [
+            "Wdate",
+            "fileinput-button",
+            "files",
+            "fileupload-buttonbar",
+            "fileupload-content",
+            "fileupload-progressbar",
+            "fn-clear",
+            "img-",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button",
+            "ui-button-FixCS",
+            "ui-button-FixCS-small",
+            "ui-button-detail",
+            "ui-button-detail-disable",
+            "ui-button-icon-primary",
+            "ui-button-text",
+            "ui-button-text-icon-primary",
+            "ui-corner-all",
+            "ui-corner-bottom",
+            "ui-corner-left",
+            "ui-corner-top",
+            "ui-icon",
+            "ui-icon-flow",
+            "ui-icon-plusthick",
+            "ui-icon-save",
+            "ui-icon-submit",
+            "ui-progressbar",
+            "ui-progressbar-value",
+            "ui-state-default",
+            "ui-table-A",
+            "ui-table-Detail",
+            "ui-table-clear",
+            "ui-widget",
+            "ui-widget-content",
+            "ui-widget-header",
+            "x-fieldset",
+            "x-fieldset-header"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context2": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/FORM/DIV",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/LABEL/INPUT-file",
+            "DIV/LABEL/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/TFOOT",
+            "DIV/TABLE/THEAD",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/INPUT-text",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/LABEL",
+            "LABEL/SPAN/SPAN",
+            "SPAN/DIV/A",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/FORM",
+            "SPAN/SELECT/OPTION",
+            "SPAN/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TABLE/TFOOT/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/A",
+            "TD/SPAN/BUTTON",
+            "TD/SPAN/DIV",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SELECT",
+            "TD/SPAN/TABLE",
+            "TD/TABLE/TBODY",
+            "TFOOT/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-checkbox",
+            "TR/TD/INPUT-radio",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE"
+          ]
+        ]
+      }
+    }
+  }
+}

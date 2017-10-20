@@ -1,0 +1,218 @@
+{
+  "version": "0.1",
+  "id": "test",
+  "targetURL": "http://192.168.0.189:8080/ptsoa/forms/pt/PO_CONTRACT_INFO/po_contract_approvekuai.htm?_objName=PO_CONTRACT_INFO&_defKey=po_contractn&_defId=po_contractn%3A1%3A1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=6d7537c6-adf1-4b9b-bf0c-dc84a3a9c86f&_taskId=d09fbd07-c50a-47b1-84f6-8360b92b8a86&_nodeId=UserTask_18&_agent=&_pk=UUID&_pkValue=82894678e3d6c350a815b8f18c000b4a&_useType=modify",
+  "jsFile": "../../lib/base.js,../../lib/customTemplate.js,index.js",
+  "cssFile": "../../lib/base.css",
+  "chineseName": "测试",
+  "description": "",
+  "controls": {
+    "control0": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"table_PO_CONTRACT_INFO_DETAIL\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE.ui-table-Detail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[2]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1423,
+              "height": 151
+            }
+          }
+        ]
+      },
+      "intendedRole": "fragment",
+      "roles": "element,fragment",
+      "monitored": false
+    }
+  },
+  "contexts": {
+    "context0": {
+      "controls": [
+        "control0"
+      ],
+      "anchors": []
+    }
+  },
+  "flows": {
+    "flow0": {
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0": {
+      "contextId": "context0",
+      "layout": [
+        {
+          "id": "uiControl1",
+          "controlId": "control0",
+          "display": {
+            "adapterId": "fragment",
+            "type": "fragment",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0": [
+          "192.168.0.189:8080/ptsoa/forms/pt/PO_CONTRACT_INFO/po_contract_approvekuai.htm?_objName=PO_CONTRACT_INFO&_defKey=po_contractn&_defId=po_contractn%3A1%3A1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=6d7537c6-adf1-4b9b-bf0c-dc84a3a9c86f&_taskId=d09fbd07-c50a-47b1-84f6-8360b92b8a86&_nodeId=UserTask_18&_agent=&_pk=UUID&_pkValue=82894678e3d6c350a815b8f18c000b4a&_useType=modify"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0": [
+          [
+            "Advance_ProcessStatus",
+            "FlowStateNew_",
+            "HandleCommand_",
+            "HtmlFileList_",
+            "LABEL_",
+            "OKBtn_",
+            "_ATTACHMENT_DELETE_IDS_",
+            "_taskComment",
+            "clz",
+            "funcName",
+            "input_",
+            "table_PO_CONTRACT_INFO_DETAIL",
+            "table_PO_CONTRACT_INFO_DETAIL_",
+            "taskDoneTb",
+            "taskNotDoneTb",
+            "tool-box"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0": [
+          [
+            "-default",
+            "bg",
+            "dataTable",
+            "et",
+            "et-header",
+            "fn-clear",
+            "img-",
+            "proce",
+            "row-",
+            "tatu",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-button-detail",
+            "ui-icon-flow",
+            "ui-table-A",
+            "ui-table-Detail",
+            "ui-table-clear",
+            "x-field"
+          ],
+          [
+            "-default",
+            "-default row-",
+            "-hover",
+            "bg",
+            "dataTable",
+            "et",
+            "et-header",
+            "fn-clear",
+            "img-",
+            "proce",
+            "row-",
+            "tatu",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-button-detail",
+            "ui-icon-flow",
+            "ui-table-A",
+            "ui-table-Detail",
+            "ui-table-clear",
+            "x-field"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H3",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/H3/SPAN",
+            "DIV/SPAN/DIV",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FIELDSET/LEGEND/B",
+            "SPAN/DIV/DIV",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/SPAN/BUTTON",
+            "TD/SPAN/LABEL",
+            "TD/TABLE/TBODY",
+            "THEAD/TR/TD",
+            "TR/TD/B",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ]
+        ]
+      }
+    }
+  }
+}

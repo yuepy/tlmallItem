@@ -660,41 +660,73 @@ div[data-ysp-modelid="PendingTask"],div[data-ysp-modelid="HaveProcessingTasks"],
 }
 .ysp-flowsheet{
   margin:0	10px;
+  .ysp-Previous-details{
+      min-height:	2.75rem; 
+  		line-height: 2.75rem;
+    	background: white;
+    	padding:0 0.75rem;
+    	border-top:	1px solid #e6e6e6;
+   	  display: flex;
+      justify-content: flex-end;
+    	button{
+     		margin:6px 0 !important;
+    	}
+    }
   .ysp-flowsheet-onePart{
     background: white;
-    display:	flex;
-    justify-content: space-between;
-    min-height:	2.75rem; 
-  	line-height: 2.75rem;
-    border-bottom:	1px solid #e6e6e6;
-    flex-wrap:	wrap;
     padding:0 0.75rem;
-    span{
+    >div{
+    	display:	flex;
+    	justify-content: space-between;
+    	min-height:	2.75rem; 
+  		line-height: 2.75rem;
+    	border-bottom:	1px solid #e6e6e6;
+    	flex-wrap:	wrap;
+      span{
   		color:rgb(255,32,0);
-  	}
-   	&:last-child{
-      border:	none;
-    	>textarea{
-        border:	none;
-        background:	#F3F3F2;
-        resize: none;
-        font-size: @fontBase;
+  		}
+      &:last-child{
+      	border:	none;
+    		>textarea{
+        	border:	none;
+        	background:	#F3F3F2;
+        	resize: none;
+        	font-size: @fontBase;
        	}	
     	}
-    	>label{
+      >label{
       	font-size: @fontBase;
       	color:@fontBlack;
       	&:first-child{
         	color:@fontGray;
       	}
     	}  
+    }
   }
   .ysp-flowsheet-twoPart{
     margin-top:10px;
+    .ysp-InformationDetail-btn{
+      background: white;
+      margin-bottom: 10px;
+      display:flex;
+      justify-content: space-between;
+      padding:5px 10px;
+      label{
+        height:44px;
+        line-height: 44px;
+        color:@fontBlack;
+      	font-size: @fontBase;
+      }
+      button{
+        margin:0;
+        height:40px;
+      }
+    }
     .ysp-flowsheet-twoPart-card{
       background: white;
       padding:0.75rem 0.75rem;
       border-radius: 3px;
+      margin-bottom: 10px;
       >div{
         display:	flex;
     		justify-content: space-between;

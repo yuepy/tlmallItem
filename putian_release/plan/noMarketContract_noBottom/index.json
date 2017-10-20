@@ -1,0 +1,664 @@
+{
+  "version": "0.1",
+  "id": "noMarketContract_noBottom",
+  "targetURL": "http://192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT2_INFO/contract_view.htm?_objName=PO_CONTRACT2_INFO&_useType=view&_defKey=po_contract2&_defId=po_contract2%3A1%3A24810f12-9cc3-4676-8ead-5e1dc0af3dca&_instId=a9a96913-3956-4593-860f-b636f549dffc&_pk=UUID&_pkValue=eaebc89cf9d0e8625ba6002ac45b8933",
+  "jsFile": "../../lib/base.js,index.js",
+  "cssFile": "../../lib/base.css,index.css",
+  "requires": {
+    "LOGIN": "../login/index.json",
+    "processState": "../processState/index.json",
+    "flow_track": "../flow_track/index.json",
+    "done_list": "../done_list/index.json"
+  },
+  "chineseName": "没有底部悬浮的非采销合同",
+  "description": "",
+  "controls": {
+    "control0": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tabs\"]//DIV[@id=\"content_baseinfo\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"tabs\"]//DIV[@id=\"content_baseinfo\"]//TBODY",
+              "descendant::DIV[@id=\"content_baseinfo\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.ui-tab-form-content TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[6]/DIV[1]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1372,
+              "height": 275
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control1": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "非采销合同"
+              ],
+              "visText": [
+                "非采销合同"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "非采销合同"
+              ],
+              "visText": [
+                "非采销合同"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 106,
+              "height": 40
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    },
+    "control2": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]/DIV[1]/A[1]",
+              "descendant::DIV[@id=\"tool-box\"]//A"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              51,
+              102,
+              153
+            ]
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 89,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false
+    },
+    "control3": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "非采销合同"
+              ],
+              "visText": [
+                "非采销合同"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "非采销合同"
+              ],
+              "visText": [
+                "非采销合同"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 106,
+              "height": 40
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "非采销合同"
+    }
+  },
+  "contexts": {
+    "context0": {
+      "controls": [
+        "control0",
+        "control1",
+        "control2"
+      ],
+      "anchors": [
+        "control3"
+      ]
+    }
+  },
+  "flows": {
+    "flow0": {
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow1": {
+      "fromContextId": "context0",
+      "fromAction": "click",
+      "fromControlId": "control2",
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        },
+        {
+          "toModelId": "processState",
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow2": {
+      "fromContextId": "context0",
+      "fromAction": "doAction",
+      "fromControlId": "control1",
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow3": {
+      "fromContextId": "context0",
+      "fromAction": "click",
+      "fromControlId": "control1",
+      "toContexts": [
+        {
+          "toContextId": "context0",
+          "toModelId": "flow_track"
+        },
+        {
+          "toContextId": "context0",
+          "toModelId": "done_list"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0": {
+      "contextId": "context0",
+      "layout": [
+        {
+          "id": "uiControl3",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "top",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl3body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl4",
+                  "display": {
+                    "class": "navbar navbar-primary",
+                    "title": "非采销合同",
+                    "type": "header",
+                    "adapterId": "header",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl2",
+                      "controlId": "control2",
+                      "display": {
+                        "adapterId": "clickable",
+                        "type": "button",
+                        "text": "",
+                        "class": "distribution-header-right-btn",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      }
+                    },
+                    {
+                      "id": "uiControl1",
+                      "controlId": "control1",
+                      "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                          "templateType": "react",
+                          "events": {
+                            "onDoAction": "doAction_uiControl1",
+                            "onGetTemplate": "getTemplate_uiControl1"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl0",
+          "controlId": "control0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl0",
+                "onGetTemplate": "getTemplate_uiControl0"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0": [
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT2_INFO/contract_view.htm?_objName=PO_CONTRACT2_INFO&_useType=view&_defKey=po_contract2&_defId=po_contract2%3A1%3A24810f12-9cc3-4676-8ead-5e1dc0af3dca&_instId=a9a96913-3956-4593-860f-b636f549dffc&_pk=UUID&_pkValue=eaebc89cf9d0e8625ba6002ac45b8933",
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT2_INFO/contract_view.htm?_objName=PO_CONTRACT2_INFO&_useType=view&_defKey=po_contract2&_defId=po_contract2:1:24810f12-9cc3-4676-8ead-5e1dc0af3dca&_instId=7b792585-6883-45c6-94c0-cb0251af7709&_pk=UUID&_pkValue=f7db4e97b2636fbc399b6c32299697b7",
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT2_INFO/contract_view.htm?_objName=PO_CONTRACT2_INFO&_useType=view&_defId=po_contract2:1:24810f12-9cc3-4676-8ead-5e1dc0af3dca&_instId=3265be26-568d-4aa4-969b-b5638d690f85&_taskId=145e1c50-3f59-4302-b209-34af0c5baac0&_nodeId=UserTask_6&_pk=UUID&_pkValue=db81e517c9102fa62492895cdaedacaf",
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT2_INFO/contract_view.htm?_objName=PO_CONTRACT2_INFO&_useType=view&_defKey=po_contract2&_defId=po_contract2:1:24810f12-9cc3-4676-8ead-5e1dc0af3dca&_instId=7b0fc6bb-323c-4d8f-9e58-ba9e01399fbc&_pk=UUID&_pkValue=bd6fd9683fabc691b461b8a53ceb6d48",
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT2_INFO/contract_view.htm?_objName=PO_CONTRACT2_INFO&_useType=view&_defId=po_contract2:1:24810f12-9cc3-4676-8ead-5e1dc0af3dca&_instId=ca9ed66a-0352-4d20-ae62-f04b8f344bed&_taskId=d8ac5307-fad1-4ecb-ac1d-1be1d0028c8a&_nodeId=UserTask_13&_pk=UUID&_pkValue=4bb22301e0f1fc64537f56210ac586bc",
+          "192.168.0.200:8080/ptsoa//theme/FixCS/FlowCenter/UniformTaskDone.html"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0": [
+          [
+            "HtmlFileList_",
+            "LABEL_",
+            "OKBtn_",
+            "UserTask_",
+            "UserTask__td",
+            "_ATTACHMENT_DELETE_IDS_",
+            "content_baseinfo",
+            "funcName",
+            "ifrA",
+            "input_",
+            "printDiv",
+            "printform",
+            "processStatus_",
+            "tabs",
+            "tool-box"
+          ],
+          [
+            "HtmlFileList_",
+            "LABEL_",
+            "OKBtn_",
+            "UserTask_",
+            "UserTask__td",
+            "content_baseinfo",
+            "funcName",
+            "ifrA",
+            "input_",
+            "printDiv",
+            "printform",
+            "tabs",
+            "tool-box"
+          ],
+          [
+            "Advance_ProcessStatus",
+            "HtmlFileList_",
+            "LABEL_",
+            "OKBtn_",
+            "UserTask_",
+            "UserTask__td",
+            "_ATTACHMENT_DELETE_IDS_",
+            "content_baseinfo",
+            "funcName",
+            "ifrA",
+            "input_",
+            "printDiv",
+            "printform",
+            "tabs",
+            "tool-box"
+          ],
+          [
+            "c_defKey",
+            "c_description",
+            "c_user",
+            "container",
+            "content",
+            "dataTable",
+            "dataTable_wrapper",
+            "detailList",
+            "endTime",
+            "gridModel",
+            "label_clear",
+            "label_current_user",
+            "label_defKey",
+            "label_description",
+            "label_finishedTime",
+            "label_myinvolved",
+            "label_mytask",
+            "label_search",
+            "label_taskdone",
+            "label_title",
+            "label_to",
+            "listModel",
+            "mainContent",
+            "menu",
+            "mylist",
+            "mytask_menu",
+            "pageTitle",
+            "pagine_panel",
+            "radio",
+            "searchPanel",
+            "sidebar",
+            "startTime",
+            "switcher",
+            "totalPage"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0": [
+          [
+            "abledStyle",
+            "di",
+            "et",
+            "et-header",
+            "fn-clear",
+            "htmlfile_float",
+            "img-",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-button-detail",
+            "ui-icon-flow",
+            "ui-tab-form-content",
+            "ui-table-A",
+            "x-field"
+          ],
+          [
+            "fn-clear",
+            "img-",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-tab-form-content",
+            "ui-table-A",
+            "x-fieldset",
+            "x-fieldset-header"
+          ],
+          [
+            "disabledStyle",
+            "fn-clear",
+            "img-",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-button-detail",
+            "ui-icon-flow",
+            "ui-tab-form-content",
+            "ui-table-A",
+            "x-fieldset",
+            "x-fieldset-header"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/TABLE",
+            "H1/SPAN/BUTTON",
+            "LEGEND/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/KBD/KBD",
+            "TD/LABEL/IMG",
+            "TD/SPAN/SPAN",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/TABLE",
+            "LEGEND/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/KBD/KBD",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/TABLE",
+            "H1/SPAN/BUTTON",
+            "LEGEND/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/KBD/KBD",
+            "TD/LABEL/IMG",
+            "TD/SPAN/LABEL",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

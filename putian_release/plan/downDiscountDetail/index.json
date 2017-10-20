@@ -1,0 +1,347 @@
+{
+  "version": "0.1",
+  "id": "downDiscountDetail",
+  "targetURL": "http://192.168.0.201:8076/WebReport/ReportServer?reportlet=BPM[4e0b][6e38][6298][6263][4fe1][606f][67e5][8be2].cpt&%E9%80%9A%E7%9F%A5%E5%8D%95%E5%8F%B7=TD022161601001",
+  "jsFile": "../../lib/base.js,index.js",
+  "cssFile": "../../lib/base.css,index.css",
+  "chineseName": "下游折扣明细",
+  "description": "",
+  "controls": {
+    "control0": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"content-container\"]//DIV[@id=\"frozen-center\"]",
+              "descendant::DIV[@id=\"frozen-center\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.page-block TABLE.frozen-table DIV.frozen-center"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 857,
+              "height": 445
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control1": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"content-container\"]//DIV[@id=\"frozen-center\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"frozen-center\"]/TABLE[1]/TBODY[1]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              27
+            ],
+            "value": "DIV.page-block TABLE.frozen-table DIV.frozen-center TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1080,
+              "height": 150
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    }
+  },
+  "contexts": {
+    "context0": {
+      "controls": [
+        "control0",
+        "control1"
+      ],
+      "anchors": []
+    }
+  },
+  "flows": {
+    "flow0": {
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0": {
+      "contextId": "context0",
+      "layout": [
+        {
+          "id": "uiControl0",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "top",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl0body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl1",
+                  "display": {
+                    "class": "navbar navbar-primary",
+                    "title": "明细",
+                    "type": "header",
+                    "adapterId": "header",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl2",
+                      "controlId": "control0",
+                      "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                          "templateType": "react",
+                          "events": {
+                            "onDoAction": "doAction_uiControl2",
+                            "onGetTemplate": "getTemplate_uiControl2"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl4",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "class": "downDiscountDetail-card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl4body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl3",
+                  "controlId": "control1",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl3",
+                        "onGetTemplate": "getTemplate_uiControl3"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0": [
+          "BPM下游折扣信息查询"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0": [
+          "192.168.0.201:8076/WebReport/ReportServer?reportlet=BPM[4e0b][6e38][6298][6263][4fe1][606f][67e5][8be2].cpt&%E9%80%9A%E7%9F%A5%E5%8D%95%E5%8F%B7=TD022161601001"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0": [
+          [
+            "A--",
+            "B--",
+            "C--",
+            "D--",
+            "E--",
+            "F--",
+            "G--",
+            "H--",
+            "I--",
+            "J--",
+            "K--",
+            "L--",
+            "M--",
+            "content-container",
+            "fr-btn-",
+            "frozen-center",
+            "frozen-corner",
+            "frozen-north",
+            "frozen-west",
+            "r--"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0": [
+          [
+            "abled",
+            "col",
+            "content-container fr-quick-border-layout ui-",
+            "ep",
+            "et-c",
+            "fh tac bw  col",
+            "fh tac bw pl b",
+            "fr-btn  fr-btn-text-icon",
+            "fr-btn ui-",
+            "fr-btn-",
+            "fr-btn-arrow",
+            "fr-btn-bc",
+            "fr-btn-bl",
+            "fr-btn-br",
+            "fr-btn-mc",
+            "fr-btn-ml",
+            "fr-btn-mr",
+            "fr-btn-tc",
+            "fr-btn-text x-emb-email",
+            "fr-btn-text x-emb-export",
+            "fr-btn-text x-emb-fir",
+            "fr-btn-text x-emb-fla",
+            "fr-btn-text x-emb-la",
+            "fr-btn-text x-emb-next",
+            "fr-btn-text x-emb-previou",
+            "fr-btn-text x-emb-print",
+            "fr-btn-tl",
+            "fr-btn-tr",
+            "fr-horizontalboxlayout ui-",
+            "fr-label",
+            "fr-texteditor",
+            "frozen-center off",
+            "frozen-corner off",
+            "frozen-north off",
+            "frozen-table",
+            "frozen-we",
+            "fx",
+            "hprint",
+            "mall fr-btn-icon-",
+            "mall-left",
+            "page-block frozen-page",
+            "pageContentDIV fr-quick-border-layout ui-",
+            "report-background",
+            "reportPane ui-",
+            "t",
+            "t off",
+            "tate-di",
+            "tate-enabled",
+            "tate-enabled fr-quick-border-layout",
+            "ui-",
+            "x-table",
+            "x-toolbar ui-"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0": [
+          [
+            "-/-/DIV",
+            "-/DIV/DIV",
+            "-/DIV/TABLE",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/COLGROUP",
+            "DIV/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/EM/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/PRE",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,735 @@
+{
+  "version": "0.1",
+  "id": "processState",
+  "targetURL": "http://192.168.0.200:8080/ptsoa/procList.html?_defKey=po_contractn&_defId=po_contractn%3A1%3A1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=ac7fb2c3-6400-4a31-97c4-7def6afb0d57",
+  "jsFile": "../../lib/base.js,index.js",
+  "cssFile": "../../lib/base.css,index.css",
+  "chineseName": "",
+  "description": "",
+  "controls": {
+    "control0": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购合同审批流程"
+              ],
+              "visText": [
+                "采购合同审批流程"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购合同审批流程"
+              ],
+              "visText": [
+                "采购合同审批流程"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::H1[@id=\"processDefinitionName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.process H1"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/H1[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1351,
+              "height": 36
+            }
+          }
+        ]
+      },
+      "intendedRole": "header",
+      "roles": "element,header",
+      "monitored": false
+    },
+    "control2": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "处理中"
+              ],
+              "visText": [
+                "处理中"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "处理中"
+              ],
+              "visText": [
+                "处理中"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::SPAN[@id=\"clz\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.process DIV.proc_bg H3 SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H3[1]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 48,
+              "height": 21
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false
+    },
+    "control3": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "已完成"
+              ],
+              "visText": [
+                "已完成"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "已完成"
+              ],
+              "visText": [
+                "已完成"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::SPAN[@id=\"ywc\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "DIV.process DIV.proc_bg H3 SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/H3[1]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 48,
+              "height": 21
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false
+    },
+    "control4": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "步骤名称当前处理到达时间产品经理审批产品经理审批(共享 用户 : 金丹丹)2016-02-29 14:10:49"
+              ],
+              "visText": [
+                "步骤名称 当前处理 到达时间 产品经理审批 产品经理审批(共享 用户 : 金丹丹) 2016-02-29 14:10:49"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"taskNotDoneTb\"]/TABLE[1]",
+              "descendant::DIV[@id=\"taskNotDoneTb\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.process DIV.proc_bg TABLE.dataTable"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1327,
+              "height": 51
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control4"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control5": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "步骤名称处理人到达时间完成时间处理结果处理意见开始管理员2016-02-29 14:10:482016-02-29 14:10:48流程开始录入合同管理员2016-02-29 14:10:482016-02-29 14:10:48提交"
+              ],
+              "visText": [
+                "步骤名称 处理人 到达时间 完成时间 处理结果 处理意见 开始 管理员 2016-02-29 14:10:48 2016-02-29 14:10:48 流程开始 录入合同 管理员 2016-02-29 14:10:48 2016-02-29 14:10:48 提交"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"taskDoneTb\"]/TABLE[1]",
+              "descendant::DIV[@id=\"taskDoneTb\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.process DIV.proc_bg TABLE.dataTable"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/TABLE[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1327,
+              "height": 75
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control4"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control6": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程图"
+              ],
+              "visText": [
+                "流程图"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程图"
+              ],
+              "visText": [
+                "流程图"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::SPAN[@id=\"lct\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "DIV.process DIV.proc_bg H3 SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/H3[1]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 48,
+              "height": 21
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "流程图"
+    },
+    "control7": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购合同审批流程"
+              ],
+              "visText": [
+                "采购合同审批流程"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购合同审批流程"
+              ],
+              "visText": [
+                "采购合同审批流程"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::H1[@id=\"processDefinitionName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.process H1"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/H1[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1351,
+              "height": 36
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control7"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom"
+    }
+  },
+  "contexts": {
+    "context0": {
+      "controls": [
+        "control0",
+        "control2",
+        "control3",
+        "control4",
+        "control5",
+        "control7"
+      ],
+      "anchors": [
+        "control6"
+      ]
+    }
+  },
+  "flows": {
+    "flow0": {
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0": {
+      "contextId": "context0",
+      "layout": [
+        {
+          "id": "uiControl7",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "top",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl7body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl1",
+                  "display": {
+                    "title": "审批流程",
+                    "adapterId": "header",
+                    "type": "header",
+                    "class": "navbar navbar-primary approval-navbar",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl0",
+                      "controlId": "control7",
+                      "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                          "templateType": "react",
+                          "events": {
+                            "onDoAction": "doAction_uiControl0",
+                            "onGetTemplate": "getTemplate_uiControl0"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl2",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "class": "process-card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl2body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl3",
+                  "controlId": "control2",
+                  "display": {
+                    "adapterId": "content",
+                    "type": "content",
+                    "class": "span-title",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl5",
+                  "controlId": "control4",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl5",
+                        "onGetTemplate": "getTemplate_uiControl5"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl4",
+                  "controlId": "control3",
+                  "display": {
+                    "adapterId": "content",
+                    "type": "content",
+                    "class": "span-title",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl6",
+                  "controlId": "control5",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl6",
+                        "onGetTemplate": "getTemplate_uiControl6"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0": [
+          "流程图"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0": [
+          "192.168.0.200:8080/ptsoa/procList.html?_defKey=po_contractn&_defId=po_contractn%3A1%3A1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=ac7fb2c3-6400-4a31-97c4-7def6afb0d57"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0": [
+          [
+            "EndEvent_",
+            "ExclusiveGateway_",
+            "Lane_",
+            "StartEvent_",
+            "UserTask_",
+            "clz",
+            "flowImg",
+            "lct",
+            "processDefinitionName",
+            "svg",
+            "taskDoneTb",
+            "taskNotDoneTb",
+            "yczt",
+            "ywc"
+          ],
+          [
+            "clz",
+            "flowImg",
+            "lct",
+            "processDefinitionName",
+            "svg",
+            "taskDoneTb",
+            "taskNotDoneTb",
+            "yczt",
+            "ywc"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0": [
+          [
+            "_ab",
+            "dataTable",
+            "img",
+            "nodecla",
+            "po",
+            "proc_bg",
+            "proce"
+          ],
+          [
+            "_ab",
+            "img",
+            "po",
+            "proc_bg",
+            "proce"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0": [
+          [
+            "-/-/DIV",
+            "-/DIV/DIV",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H3",
+            "DIV/DIV/IMG",
+            "DIV/DIV/TABLE",
+            "DIV/H3/SPAN",
+            "DIV/H3/UL",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "H3/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/SPAN",
+            "UL/LI/INPUT-checkbox"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/DIV",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H3",
+            "DIV/H3/SPAN",
+            "DIV/H3/UL",
+            "H3/UL/LI",
+            "UL/LI/INPUT-checkbox"
+          ]
+        ]
+      }
+    }
+  }
+}

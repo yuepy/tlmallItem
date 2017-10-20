@@ -1,0 +1,773 @@
+{
+  "version": "0.1",
+  "id": "purchaseContract_noBottom",
+  "targetURL": "http://192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT_INFO/po_contract_view_l.htm?_objName=PO_CONTRACT_INFO&_useType=view&_defKey=po_contractn&_defId=po_contractn%3A1%3A1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=8fe5be80-fb49-4018-9327-df114b0f7034&_pk=UUID&_pkValue=0a29d913772f75e182835a395593ba6a",
+  "jsFile": "../../lib/base.js,../../lib/customTemplate.js,index.js",
+  "cssFile": "../../lib/base.css,index.css",
+  "requires": {
+    "LOGIN": "../login/index.json",
+    "processState": "../processState/index.json",
+    "flow_track": "../flow_track/index.json",
+    "done_list": "../done_list/index.json"
+  },
+  "chineseName": "没有底部悬浮的采购合同",
+  "description": "",
+  "controls": {
+    "control0": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE.ui-table-A TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1439,
+              "height": 465
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control1": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购合同"
+              ],
+              "visText": [
+                "采购合同"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购合同"
+              ],
+              "visText": [
+                "采购合同"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 88,
+              "height": 40
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    },
+    "control2": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]/DIV[1]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-new DIV.tpl-toolbar-new DIV.ui-button-FixCS A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control3": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"table_PO_CONTRACT_INFO_DETAIL\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE.ui-table-Detail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[2]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1440,
+              "height": 151
+            }
+          }
+        ]
+      },
+      "intendedRole": "fragment",
+      "roles": "element,fragment",
+      "monitored": true
+    },
+    "control4": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购合同"
+              ],
+              "visText": [
+                "采购合同"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购合同"
+              ],
+              "visText": [
+                "采购合同"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 88,
+              "height": 36
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "采购合同"
+    }
+  },
+  "contexts": {
+    "context0": {
+      "controls": [
+        "control0",
+        "control1",
+        "control2",
+        "control3"
+      ],
+      "anchors": [
+        "control4"
+      ]
+    }
+  },
+  "flows": {
+    "flow0": {
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow1": {
+      "fromContextId": "context0",
+      "fromAction": "click",
+      "fromControlId": "control2",
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        },
+        {
+          "toModelId": "processState",
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow2": {
+      "fromContextId": "context0",
+      "fromAction": "doAction",
+      "fromControlId": "control1",
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow3": {
+      "fromContextId": "context0",
+      "fromAction": "click",
+      "fromControlId": "control1",
+      "toContexts": [
+        {
+          "toContextId": "context0",
+          "toModelId": "flow_track"
+        },
+        {
+          "toContextId": "context0",
+          "toModelId": "done_list"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0": {
+      "contextId": "context0",
+      "layout": [
+        {
+          "id": "uiControl0",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "top",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl0body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl1",
+                  "display": {
+                    "class": "navbar navbar-primary",
+                    "title": "采购合同",
+                    "type": "header",
+                    "adapterId": "header",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl4",
+                      "controlId": "control2",
+                      "display": {
+                        "adapterId": "clickable",
+                        "type": "button",
+                        "text": "",
+                        "class": "distribution-header-right-btn",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      }
+                    },
+                    {
+                      "id": "uiControl3",
+                      "controlId": "control1",
+                      "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                          "templateType": "react",
+                          "events": {
+                            "onDoAction": "doAction_uiControl3",
+                            "onGetTemplate": "getTemplate_uiControl3"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl2",
+          "controlId": "control0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl2",
+                "onGetTemplate": "getTemplate_uiControl2"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl9",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "class": "lrt-card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl9body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl5",
+                  "display": {
+                    "presentation": "confirm",
+                    "adapterId": "dialog",
+                    "type": "dialog",
+                    "class": "purchase-dialog-btn",
+                    "actionsButtonText": "产品采购类合同附经营信息",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl5body",
+                      "display": {
+                        "type": "dialogBody",
+                        "adapterId": "dialogBody",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": [
+                        {
+                          "id": "uiControl7",
+                          "display": {
+                            "type": "card",
+                            "adapterId": "card",
+                            "class": "margin0-card table-card",
+                            "adapter": {
+                              "templateType": ""
+                            }
+                          },
+                          "layout": [
+                            {
+                              "id": "uiControl7body",
+                              "display": {
+                                "type": "cardBody",
+                                "adapterId": "cardBody",
+                                "adapter": {
+                                  "templateType": ""
+                                }
+                              },
+                              "layout": [
+                                {
+                                  "id": "uiControl6",
+                                  "controlId": "control3",
+                                  "display": {
+                                    "adapterId": "fragment",
+                                    "type": "fragment",
+                                    "adapter": {
+                                      "templateType": ""
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "uiControl5footer",
+                      "display": {
+                        "type": "dialogFooter",
+                        "adapterId": "dialogFooter",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0": [
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT_INFO/po_contract_view_l.htm?_objName=PO_CONTRACT_INFO&_useType=view&_defKey=po_contractn&_defId=po_contractn%3A1%3A1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=8fe5be80-fb49-4018-9327-df114b0f7034&_pk=UUID&_pkValue=0a29d913772f75e182835a395593ba6a",
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT_INFO/po_contract_view_l.htm?_objName=PO_CONTRACT_INFO&_useType=view&_defKey=po_contractn&_defId=po_contractn:1:1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=cd1ef1b5-7bf4-45b7-a6b2-d39dad1fdcef&_pk=UUID&_pkValue=680b780616891c0d81d5485184c65a0e",
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT_INFO/po_contract_view_l.htm?_objName=PO_CONTRACT_INFO&_useType=view&_defKey=po_contractn&_defId=po_contractn:1:1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=f852e07b-4100-4ba9-a5f2-d99c89ae6a8d&_pk=UUID&_pkValue=d2f5e97a079a105db904b3d92b4a561a",
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT_INFO/po_contract_view_l.htm?_objName=PO_CONTRACT_INFO&_useType=view&_defId=po_contractn:1:1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=391b34ff-0443-4ac2-b62b-c870705b7a42&_taskId=f4ed3812-7a54-4ae2-bf61-e1ce0b20c2e4&_nodeId=UserTask_2&_pk=UUID&_pkValue=7485672ca79221f48cb1b62da05b2a1a",
+          "192.168.0.200:8080/ptsoa//theme/FixCS/FlowCenter/UniformTaskDone.html",
+          "192.168.0.200:8080/ptsoa/forms/pt/PO_CONTRACT_INFO/po_contract_view_l.htm?_objName=PO_CONTRACT_INFO&_useType=view&_defId=po_contractn:1:1103e49b-49b5-420b-a865-d23e2cc1a59f&_instId=1f7abf35-3176-43ec-8f35-0753f03dd877&_taskId=8dd7fe40-bdef-4468-a533-1540cf7d6122&_nodeId=UserTask_4&_pk=UUID&_pkValue=de23ca0651e6d2291d723c8c8606c928"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0": [
+          [
+            "HtmlFileList_",
+            "LABEL_",
+            "_ATTACHMENT_DELETE_IDS_",
+            "funcName",
+            "input_",
+            "processStatus_",
+            "table_PO_CONTRACT_INFO_DETAIL",
+            "table_PO_CONTRACT_INFO_DETAIL_",
+            "tool-box"
+          ],
+          [
+            "HtmlFileList_",
+            "LABEL_",
+            "funcName",
+            "input_",
+            "table_PO_CONTRACT_INFO_DETAIL",
+            "tool-box"
+          ],
+          [
+            "Advance_ProcessStatus",
+            "HtmlFileList_",
+            "LABEL_",
+            "_ATTACHMENT_DELETE_IDS_",
+            "funcName",
+            "input_",
+            "table_PO_CONTRACT_INFO_DETAIL",
+            "tool-box"
+          ],
+          [
+            "c_defKey",
+            "c_description",
+            "c_user",
+            "container",
+            "content",
+            "dataTable",
+            "dataTable_wrapper",
+            "detailList",
+            "endTime",
+            "gridModel",
+            "label_clear",
+            "label_current_user",
+            "label_defKey",
+            "label_description",
+            "label_finishedTime",
+            "label_myinvolved",
+            "label_mytask",
+            "label_search",
+            "label_taskdone",
+            "label_title",
+            "label_to",
+            "listModel",
+            "mainContent",
+            "menu",
+            "mylist",
+            "mytask_menu",
+            "pageTitle",
+            "pagine_panel",
+            "radio",
+            "searchPanel",
+            "sidebar",
+            "startTime",
+            "switcher",
+            "totalPage"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0": [
+          [
+            "-default",
+            "abledStyle",
+            "di",
+            "et",
+            "et-header",
+            "fn-clear",
+            "img-",
+            "row-",
+            "tatu",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-icon-flow",
+            "ui-table-A",
+            "ui-table-Detail",
+            "x-field"
+          ],
+          [
+            "fn-clear",
+            "img-",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-table-A",
+            "ui-table-Detail",
+            "x-fieldset",
+            "x-fieldset-header"
+          ],
+          [
+            "disabledStyle",
+            "fn-clear",
+            "img-",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-icon-flow",
+            "ui-table-A",
+            "ui-table-Detail",
+            "x-fieldset",
+            "x-fieldset-header"
+          ],
+          [
+            "Wdate",
+            "center",
+            "current",
+            "dataTable",
+            "dataTables_wrapper",
+            "even",
+            "first",
+            "fn-clear",
+            "fn-left",
+            "fn-right",
+            "last",
+            "naviText",
+            "next",
+            "odd",
+            "pagination",
+            "pagination_wrapper",
+            "prev",
+            "searchDialog",
+            "sorting_disabled",
+            "ui-button",
+            "ui-button-A",
+            "ui-button-text",
+            "ui-button-text-only",
+            "ui-buttonset",
+            "ui-corner-left",
+            "ui-corner-right",
+            "ui-helper-hidden-accessible",
+            "ui-icon",
+            "ui-icon-calculator",
+            "ui-icon-document",
+            "ui-input-pagesize",
+            "ui-input-search",
+            "ui-nav-item-current",
+            "ui-state-active",
+            "ui-state-default",
+            "ui-table-dataTable",
+            "ui-title",
+            "ui-title-H",
+            "ui-widget"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/INPUT-text",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/SPAN/LABEL",
+            "THEAD/TR/TD",
+            "TR/TD/B",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/INPUT-text",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/B",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

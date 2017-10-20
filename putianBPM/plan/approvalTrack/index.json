@@ -13,47 +13,6 @@
   "chineseName": "审批轨迹",
   "description": "",
   "controls": {
-    "control7_Ox5gIT": {
-      "location": {
-        "data": {
-          "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"btn\"]//TABLE[@id=\"_btns\"]/TBODY[2]/TR[1]",
-              "descendant::DIV[@id=\"btn\"]//TABLE[@id=\"_btns\"]//TR",
-              "descendant::TABLE[@id=\"_btns\"]//TR"
-            ]
-          },
-          {
-            "id": "@id/nonWord",
-            "prob": 1,
-            "disabled": true,
-            "fact": "_tr_01",
-            "value": "descendant::DIV[@id=\"btn\"]//TABLE[@id=\"_btns\"]//TR[@id=\"_tr_01\"]"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[2]/TR[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control7_Ox5gIT"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
-    },
     "control8_pOS228": {
       "location": {
         "data": {
@@ -127,14 +86,50 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
+    },
+    "control37_PsrEre": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control37_PsrEre"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context7_6oqdXk": {
       "controls": [
-        "control7_Ox5gIT",
         "control8_pOS228",
-        "control12_35Zg9R"
+        "control12_35Zg9R",
+        "control37_PsrEre"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -165,6 +160,10 @@
         {
           "toContextId": "context9_vdtoHx",
           "toModelId": "operationLog"
+        },
+        {
+          "toContextId": "context8_ddpRhS",
+          "toModelId": "processForm"
         }
       ]
     }
@@ -174,16 +173,16 @@
       "contextId": "context7_6oqdXk",
       "layout": [
         {
-          "id": "uiControl8_LJTi2W",
-          "controlId": "control7_Ox5gIT",
+          "id": "uiControl38_eOJBRR",
+          "controlId": "control37_PsrEre",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl8_LJTi2W",
-                "onGetTemplate": "getTemplate_uiControl8_LJTi2W"
+                "onDoAction": "doAction_uiControl38_eOJBRR",
+                "onGetTemplate": "getTemplate_uiControl38_eOJBRR"
               }
             }
           }
@@ -234,7 +233,9 @@
         "context7_6oqdXk": [
           "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",
           "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp?_t=656611&_winid=w9702",
-          "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp?_t=761019&_winid=w2388"
+          "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp?_t=761019&_winid=w2388",
+          "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp?_t=608102&_winid=w507",
+          "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp?_t=551154&_winid=w7093"
         ]
       }
     },

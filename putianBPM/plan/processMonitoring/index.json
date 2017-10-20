@@ -11,6 +11,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -35,49 +39,44 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
     },
-    "control34_RAIJ35": {
+    "control39_k5d4ZJ": {
       "location": {
         "data": {
-          "tagName": "TR"
+          "tagName": "IFRAME"
         },
         "locators": [
           {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"btn\"]//TABLE[@id=\"_btns\"]/TBODY[2]/TR[1]",
-              "descendant::DIV[@id=\"btn\"]//TABLE[@id=\"_btns\"]//TR",
-              "descendant::TABLE[@id=\"_btns\"]//TR"
-            ]
-          },
-          {
-            "id": "@id/nonWord",
+            "id": "@class/word",
             "prob": 1,
-            "disabled": true,
-            "fact": "_tr_01",
-            "value": "descendant::DIV[@id=\"btn\"]//TABLE[@id=\"_btns\"]//TR[@id=\"_tr_01\"]"
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[2]/TR[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control34_RAIJ35"
+        "onGetData": "getData_control39_k5d4ZJ"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context12_vlEzIS": {
       "controls": [
         "control25_zZUNBh",
-        "control34_RAIJ35"
+        "control39_k5d4ZJ"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -109,16 +108,16 @@
       "contextId": "context12_vlEzIS",
       "layout": [
         {
-          "id": "uiControl32_gNgb34",
-          "controlId": "control34_RAIJ35",
+          "id": "uiControl40_GQGtuf",
+          "controlId": "control39_k5d4ZJ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl32_gNgb34",
-                "onGetTemplate": "getTemplate_uiControl32_gNgb34"
+                "onDoAction": "doAction_uiControl40_GQGtuf",
+                "onGetTemplate": "getTemplate_uiControl40_GQGtuf"
               }
             }
           }
@@ -153,7 +152,8 @@
       "contexts": {
         "context12_vlEzIS": [
           "192.168.0.189:8888/ptsoa/bizform/processGraph.jsp?_t=879009&_winid=w811",
-          "192.168.0.189:8888/ptsoa/bizform/processGraph.jsp?_t=34004&_winid=w7188"
+          "192.168.0.189:8888/ptsoa/bizform/processGraph.jsp?_t=34004&_winid=w7188",
+          "192.168.0.189:8888/ptsoa/bizform/processGraph.jsp?_t=772644&_winid=w7093"
         ]
       }
     },

@@ -2,7 +2,7 @@
   "type": "adapter",
   "short_name": "",
   "version": "0.0.1",
-  "runtime_version": "2.3.0",
+  "runtime_version": "2.4.0-beta.6",
   "description": "",
   "options": {
     "resource_intercept": {
@@ -23,6 +23,12 @@
         "http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/plugext\\/utils\\/top\\.js"
       ],
       "target_url": "override/top.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bizform\\/js\\/bizform\\.js"
+      ],
+      "target_url": "override/bizform.js"
     }
   ],
   "adapter_urls": [

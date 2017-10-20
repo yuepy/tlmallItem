@@ -1,0 +1,1252 @@
+{
+  "version": "0.1",
+  "id": "purchaseReturn",
+  "targetURL": "http://192.168.0.189:8080/ptsoa/forms/pt/PO_PURCHASE_RETURN/purchase_return_approve.htm?_objName=PO_PURCHASE_RETURN&_defKey=po_purchase_return&_defId=po_purchase_return%3A5%3A48d6e3ca-4465-4bef-8dec-62e39e63b662&_instId=f496d9cb-f21e-49e9-b41a-b1836994f14b&_taskId=ced1a48a-f88e-40ec-93fe-16d063431753&_nodeId=UserTask_5&_agent=&_pk=UUID&_pkValue=0392f66af3e1bbc496fc825b5902e879&_useType=modify",
+  "jsFile": "../../lib/base.js,index.js",
+  "cssFile": "../../lib/base.css,index.css",
+  "requires": {
+    "LOGIN": "../login/index.json",
+    "processState": "../processState/index.json"
+  },
+  "chineseName": "采购退货",
+  "description": "",
+  "controls": {
+    "control2": {
+      "location": {
+        "data": {
+          "tagName": "TEXTAREA"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "<!--@FixAttributies(detail-table_APPROVE_INFO-APPROVE_INFO)__taskComment:{\"alias\":\"TASK_COMMENT\",\"isPK\":false,\"datatype\":\"String\",\"needSubmit\":true,\"fieldname\":\"TASK_COMMENT\"}@FixEnd-->"
+              ],
+              "visText": [
+                ""
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"tabs\"]//TEXTAREA[@id=\"_taskComment\"]",
+              "descendant::TEXTAREA[@id=\"_taskComment\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[3]/TBODY[1]/TR[1]/TD[2]/TEXTAREA[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "textarea"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1257,
+              "height": 46
+            }
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true
+    },
+    "control3": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[@id='HandleCommand_2']/A[1]/SPAN[1]"
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control4": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[@id='HandleCommand_3']/A[1]/SPAN[1]"
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control6": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tabs\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"tabs\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              5
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1388,
+              "height": 200
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control8": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "同意"
+              ],
+              "visText": [
+                "同意"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "同意"
+              ],
+              "visText": [
+                "同意"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]/DIV[1]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control9": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "不同意"
+              ],
+              "visText": [
+                "不同意"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "不同意"
+              ],
+              "visText": [
+                "不同意"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]/DIV[2]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              4
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control10": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购退货申请单"
+              ],
+              "visText": [
+                "采购退货申请单"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购退货申请单"
+              ],
+              "visText": [
+                "采购退货申请单"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 142,
+              "height": 40
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control10"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    },
+    "control11": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程状态"
+              ],
+              "visText": [
+                "流程状态"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]/A[1]/SPAN[1]",
+              "descendant::DIV[@id=\"tool-box\"]//DIV[@id=\"Advance_ProcessStatus\"]//SPAN",
+              "descendant::DIV[@id=\"Advance_ProcessStatus\"]//SPAN"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              4
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new DIV.tpl-toolbar-new A SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[4]/A[1]/SPAN[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 81,
+              "height": 24
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false
+    },
+    "control12": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tabs\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"tabs\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              5
+            ],
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1388,
+              "height": 200
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control12"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true
+    },
+    "control13": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "序号 采购单号 品牌 机型 颜色 属性 采购数量 退货数量 采购订单价格 退货价格 备注 1 10010000945 联想 Lenovo A355e 星夜黑 1500 2 1000 1000"
+              ],
+              "visText": [
+                "序号 采购单号 品牌 机型 颜色 属性 采购数量 退货数量 采购订单价格 退货价格 备注 1 10010000945 联想 Lenovo A355e 星夜黑 1500 2 1000 1000"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tabs\"]//TABLE[@id=\"table_PO_PURCHASE_RETURN_DETAIL\"]/TBODY[1]",
+              "descendant::DIV[@id=\"tabs\"]//TABLE[@id=\"table_PO_PURCHASE_RETURN_DETAIL\"]//TBODY",
+              "descendant::TABLE[@id=\"table_PO_PURCHASE_RETURN_DETAIL\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new TABLE.ui-table-Detail TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]/TABLE[2]/TBODY[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1439,
+              "height": 50
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control13"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false
+    },
+    "control14": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购退货申请单"
+              ],
+              "visText": [
+                "采购退货申请单"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "采购退货申请单"
+              ],
+              "visText": [
+                "采购退货申请单"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::LABEL[@id=\"funcName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tpl-form-border DIV.tpl-form-new H1 LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/H1[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 142,
+              "height": 36
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "采购退货申请单"
+    }
+  },
+  "contexts": {
+    "context0": {
+      "controls": [
+        "control2",
+        "control3",
+        "control4",
+        "control6",
+        "control8",
+        "control9",
+        "control10",
+        "control11",
+        "control12",
+        "control13"
+      ],
+      "anchors": [
+        "control14"
+      ]
+    }
+  },
+  "flows": {
+    "flow0": {
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        }
+      ]
+    },
+    "flow1": {
+      "fromContextId": "context0",
+      "fromAction": "click",
+      "fromControlId": "control11",
+      "toContexts": [
+        {
+          "toContextId": "context0"
+        },
+        {
+          "toModelId": "processState",
+          "toContextId": "context0"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0": {
+      "contextId": "context0",
+      "layout": [
+        {
+          "id": "uiControl0",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "top",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl0body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl2",
+                  "display": {
+                    "class": "navbar navbar-primary",
+                    "title": "采购退货",
+                    "type": "header",
+                    "adapterId": "header",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl15",
+                      "controlId": "control10",
+                      "display": {
+                        "adapterId": "custom",
+                        "class": "distribution-header-left-btn",
+                        "type": "custom",
+                        "adapter": {
+                          "templateType": "react",
+                          "events": {
+                            "onDoAction": "doAction_uiControl15",
+                            "onGetTemplate": "getTemplate_uiControl15"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "uiControl16",
+                      "controlId": "control11",
+                      "display": {
+                        "adapterId": "clickable",
+                        "class": "distribution-header-right-btn",
+                        "type": "button",
+                        "text": "",
+                        "amStyle": "warning",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl10",
+          "controlId": "control6",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl10",
+                "onGetTemplate": "getTemplate_uiControl10"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl17",
+          "controlId": "control12",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl17",
+                "onGetTemplate": "getTemplate_uiControl17"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl11",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "class": "detail-card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl11body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl3",
+                  "display": {
+                    "presentation": "confirm",
+                    "adapterId": "dialog",
+                    "type": "dialog",
+                    "class": "hahahhha",
+                    "actionsButtonText": "采购退货明细",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl3body",
+                      "display": {
+                        "type": "dialogBody",
+                        "adapterId": "dialogBody",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": [
+                        {
+                          "id": "uiControl9",
+                          "controlId": "control13",
+                          "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                              "templateType": "react",
+                              "events": {
+                                "onDoAction": "doAction_uiControl9",
+                                "onGetTemplate": "getTemplate_uiControl9"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "id": "uiControl3footer",
+                      "display": {
+                        "type": "dialogFooter",
+                        "adapterId": "dialogFooter",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl1",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "position": "bottom",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl1body",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl4",
+                  "display": {
+                    "presentation": "confirm",
+                    "adapterId": "dialog",
+                    "type": "dialog",
+                    "actionsButtonText": "审批意见",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl4body",
+                      "display": {
+                        "type": "dialogBody",
+                        "adapterId": "dialogBody",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": [
+                        {
+                          "id": "uiControl5",
+                          "controlId": "control2",
+                          "display": {
+                            "adapterId": "textbox",
+                            "type": "textbox",
+                            "adapter": {
+                              "templateType": ""
+                            }
+                          }
+                        },
+                        {
+                          "id": "uiControl12",
+                          "display": {
+                            "type": "grid",
+                            "adapterId": "grid",
+                            "adapter": {
+                              "templateType": ""
+                            }
+                          },
+                          "layout": [
+                            {
+                              "id": "uiControl12row0",
+                              "display": {
+                                "cols": 3,
+                                "type": "col",
+                                "adapterId": "col",
+                                "adapter": {
+                                  "templateType": ""
+                                }
+                              },
+                              "layout": [
+                                {
+                                  "id": "uiControl13",
+                                  "controlId": "control8",
+                                  "display": {
+                                    "adapterId": "clickable",
+                                    "type": "button",
+                                    "amStyle": "secondary",
+                                    "adapter": {
+                                      "templateType": ""
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "id": "uiControl12row1",
+                              "display": {
+                                "cols": 3,
+                                "type": "col",
+                                "adapterId": "col",
+                                "adapter": {
+                                  "templateType": ""
+                                }
+                              },
+                              "layout": [
+                                {
+                                  "id": "uiControl14",
+                                  "controlId": "control9",
+                                  "display": {
+                                    "adapterId": "clickable",
+                                    "type": "button",
+                                    "hollow": true,
+                                    "amStyle": "secondary",
+                                    "adapter": {
+                                      "templateType": ""
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "uiControl4footer",
+                      "display": {
+                        "type": "dialogFooter",
+                        "adapterId": "dialogFooter",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0": [
+          "192.168.0.189:8080/ptsoa/forms/pt/PO_PURCHASE_RETURN/purchase_return_approve.htm?_objName=PO_PURCHASE_RETURN&_defKey=po_purchase_return&_defId=po_purchase_return%3A5%3A48d6e3ca-4465-4bef-8dec-62e39e63b662&_instId=e58a3bf1-0b39-4466-ad0d-f50faaf3645b&_taskId=88757e73-ddf2-4fdd-8f86-2ff60fcd3fdb&_nodeId=UserTask_5&_agent=&_pk=UUID&_pkValue=4835ef391263a8d410046facbd9841a2&_useType=modify",
+          "192.168.0.189:8080/ptsoa/forms/pt/PO_PURCHASE_RETURN/purchase_return_approve.htm?_objName=PO_PURCHASE_RETURN&_defKey=po_purchase_return&_defId=po_purchase_return%3A5%3A48d6e3ca-4465-4bef-8dec-62e39e63b662&_instId=f496d9cb-f21e-49e9-b41a-b1836994f14b&_taskId=ced1a48a-f88e-40ec-93fe-16d063431753&_nodeId=UserTask_5&_agent=&_pk=UUID&_pkValue=0392f66af3e1bbc496fc825b5902e879&_useType=modify"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0": [
+          [
+            "Advance_ProcessStatus",
+            "FlowStateNew_",
+            "HandleCommand_",
+            "LABEL_",
+            "PO_PURCHASE_RETURN_ADDR",
+            "PO_PURCHASE_RETURN_BU_NAME",
+            "PO_PURCHASE_RETURN_CREATER_ID",
+            "PO_PURCHASE_RETURN_CREATE_TIME",
+            "PO_PURCHASE_RETURN_DELIVER_TYPE",
+            "PO_PURCHASE_RETURN_FACTORY_ID",
+            "PO_PURCHASE_RETURN_ORG_ID",
+            "PO_PURCHASE_RETURN_PROJECT_ID",
+            "PO_PURCHASE_RETURN_RECEIVE_NAME",
+            "PO_PURCHASE_RETURN_RETURN_AMOUNT",
+            "PO_PURCHASE_RETURN_RETURN_NUM",
+            "PO_PURCHASE_RETURN_RETURN_STATUS",
+            "PO_PURCHASE_RETURN_RETURN_STORE",
+            "PO_PURCHASE_RETURN_TEL",
+            "PO_PURCHASE_RETURN_THIRD_VENDOR",
+            "PO_PURCHASE_RETURN_VENDOR_ID",
+            "_ATTACHMENT_DELETE_IDS_",
+            "_taskComment",
+            "closeTabBtn",
+            "clz",
+            "funcName",
+            "input_",
+            "table_PO_PURCHASE_RETURN_DETAIL",
+            "tabs",
+            "taskDoneTb",
+            "taskNotDoneTb",
+            "tool-box"
+          ],
+          [
+            "Advance_ProcessStatus",
+            "FlowStateNew_",
+            "HandleCommand_",
+            "LABEL_",
+            "PO_PURCHASE_RETURN_ADDR",
+            "PO_PURCHASE_RETURN_BU_NAME",
+            "PO_PURCHASE_RETURN_CREATER_ID",
+            "PO_PURCHASE_RETURN_CREATE_TIME",
+            "PO_PURCHASE_RETURN_DELIVER_TYPE",
+            "PO_PURCHASE_RETURN_DETAIL_ITEM_BRAND",
+            "PO_PURCHASE_RETURN_DETAIL_ITEM_COLOR",
+            "PO_PURCHASE_RETURN_DETAIL_ITEM_CUSTOM",
+            "PO_PURCHASE_RETURN_DETAIL_ITEM_MODEL",
+            "PO_PURCHASE_RETURN_DETAIL_ORDER_ID",
+            "PO_PURCHASE_RETURN_DETAIL_ORDER_PRICE",
+            "PO_PURCHASE_RETURN_DETAIL_PURCHASE_QUANTITY",
+            "PO_PURCHASE_RETURN_DETAIL_RETURN_PRICE",
+            "PO_PURCHASE_RETURN_DETAIL_RETURN_QUANTITY",
+            "PO_PURCHASE_RETURN_FACTORY_ID",
+            "PO_PURCHASE_RETURN_ORG_ID",
+            "PO_PURCHASE_RETURN_PROJECT_ID",
+            "PO_PURCHASE_RETURN_RECEIVE_NAME",
+            "PO_PURCHASE_RETURN_RETURN_AMOUNT",
+            "PO_PURCHASE_RETURN_RETURN_NUM",
+            "PO_PURCHASE_RETURN_RETURN_STATUS",
+            "PO_PURCHASE_RETURN_RETURN_STORE",
+            "PO_PURCHASE_RETURN_TEL",
+            "PO_PURCHASE_RETURN_THIRD_VENDOR",
+            "PO_PURCHASE_RETURN_VENDOR_ID",
+            "_ATTACHMENT_DELETE_IDS_",
+            "_taskComment",
+            "closeTabBtn",
+            "clz",
+            "funcName",
+            "input_",
+            "table_PO_PURCHASE_RETURN_DETAIL",
+            "table_PO_PURCHASE_RETURN_DETAIL_",
+            "tabs",
+            "taskDoneTb",
+            "taskNotDoneTb",
+            "tool-box"
+          ],
+          [
+            "FlowStateNew_",
+            "LABEL_",
+            "PO_PURCHASE_RETURN_ADDR",
+            "PO_PURCHASE_RETURN_BU_NAME",
+            "PO_PURCHASE_RETURN_CREATER_ID",
+            "PO_PURCHASE_RETURN_CREATE_TIME",
+            "PO_PURCHASE_RETURN_DELIVER_TYPE",
+            "PO_PURCHASE_RETURN_DETAIL_ITEM_BRAND",
+            "PO_PURCHASE_RETURN_DETAIL_ITEM_COLOR",
+            "PO_PURCHASE_RETURN_DETAIL_ITEM_CUSTOM",
+            "PO_PURCHASE_RETURN_DETAIL_ITEM_MODEL",
+            "PO_PURCHASE_RETURN_DETAIL_ORDER_ID",
+            "PO_PURCHASE_RETURN_DETAIL_ORDER_PRICE",
+            "PO_PURCHASE_RETURN_DETAIL_PURCHASE_QUANTITY",
+            "PO_PURCHASE_RETURN_DETAIL_RETURN_PRICE",
+            "PO_PURCHASE_RETURN_DETAIL_RETURN_QUANTITY",
+            "PO_PURCHASE_RETURN_FACTORY_ID",
+            "PO_PURCHASE_RETURN_ORG_ID",
+            "PO_PURCHASE_RETURN_PROJECT_ID",
+            "PO_PURCHASE_RETURN_RECEIVE_NAME",
+            "PO_PURCHASE_RETURN_RETURN_AMOUNT",
+            "PO_PURCHASE_RETURN_RETURN_NUM",
+            "PO_PURCHASE_RETURN_RETURN_STATUS",
+            "PO_PURCHASE_RETURN_RETURN_STORE",
+            "PO_PURCHASE_RETURN_TEL",
+            "PO_PURCHASE_RETURN_THIRD_VENDOR",
+            "PO_PURCHASE_RETURN_VENDOR_ID",
+            "_taskComment",
+            "funcName",
+            "input_",
+            "table_PO_PURCHASE_RETURN_DETAIL",
+            "tabs",
+            "tool-box"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0": [
+          [
+            "bg",
+            "clo",
+            "dataTable",
+            "e-menu",
+            "et",
+            "et-header",
+            "fn-clear",
+            "img-",
+            "pond",
+            "proce",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-icon-flow",
+            "ui-icon-tran",
+            "ui-table-A",
+            "ui-table-Detail",
+            "x-field"
+          ],
+          [
+            "-default",
+            "bg",
+            "clo",
+            "dataTable",
+            "e-menu",
+            "et",
+            "et-header",
+            "fn-clear",
+            "img-",
+            "pond",
+            "proce",
+            "row-",
+            "row-index",
+            "tatu",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-button-FixCS",
+            "ui-icon-flow",
+            "ui-icon-tran",
+            "ui-table-A",
+            "ui-table-Detail",
+            "x-field"
+          ],
+          [
+            "fn-clear",
+            "img-",
+            "row-index",
+            "title-r",
+            "tpl-form-border",
+            "tpl-form-new",
+            "tpl-toolbar-new",
+            "ui-table-A",
+            "ui-table-Detail",
+            "x-fieldset",
+            "x-fieldset-header"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "-/DIV/UL",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H3",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/H3/SPAN",
+            "DIV/SPAN/DIV",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/TFOOT",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/INPUT-text",
+            "SPAN/DIV/DIV",
+            "TABLE/TBODY/TR",
+            "TABLE/TFOOT/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TFOOT/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TEXTAREA",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "-/DIV/UL",
+            "A/SPAN/EM",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H3",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/H3/SPAN",
+            "DIV/SPAN/DIV",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/TFOOT",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/INPUT-text",
+            "SPAN/DIV/DIV",
+            "TABLE/TBODY/TR",
+            "TABLE/TFOOT/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/SPAN/SPAN",
+            "TFOOT/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TEXTAREA",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/DIV",
+            "-/DIV/FIELDSET",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FIELDSET/LEGEND",
+            "DIV/H1/LABEL",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/TFOOT",
+            "DIV/TABLE/THEAD",
+            "FIELDSET/LEGEND/B",
+            "FIELDSET/LEGEND/INPUT-text",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/INPUT-text",
+            "TR/TD/KBD",
+            "TR/TD/LABEL",
+            "TR/TD/TEXTAREA"
+          ]
+        ]
+      }
+    }
+  }
+}

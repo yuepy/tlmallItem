@@ -9,47 +9,6 @@
   "chineseName": "操作日志",
   "description": "",
   "controls": {
-    "control14_ZKQklw": {
-      "location": {
-        "data": {
-          "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"btn\"]//TABLE[@id=\"_btns\"]/TBODY[2]/TR[1]",
-              "descendant::DIV[@id=\"btn\"]//TABLE[@id=\"_btns\"]//TR",
-              "descendant::TABLE[@id=\"_btns\"]//TR"
-            ]
-          },
-          {
-            "id": "@id/nonWord",
-            "prob": 1,
-            "disabled": true,
-            "fact": "_tr_01",
-            "value": "descendant::DIV[@id=\"btn\"]//TABLE[@id=\"_btns\"]//TR[@id=\"_tr_01\"]"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[2]/TR[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control14_ZKQklw"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
-    },
     "control18_V20gx9": {
       "location": {
         "data": {
@@ -123,14 +82,50 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
+    },
+    "control40_HdrWi4": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control40_HdrWi4"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context9_vdtoHx": {
       "controls": [
-        "control14_ZKQklw",
         "control18_V20gx9",
-        "control20_y0QdaI"
+        "control20_y0QdaI",
+        "control40_HdrWi4"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -150,16 +145,6 @@
         }
       ]
     },
-    "flow33_otfyn6": {
-      "fromContextId": "context9_vdtoHx",
-      "fromAction": "doAction",
-      "fromControlId": "control14_ZKQklw",
-      "toContexts": [
-        {
-          "toContextId": "context9_vdtoHx"
-        }
-      ]
-    },
     "flow34_fctkeC": {
       "fromContextId": "context9_vdtoHx",
       "fromAction": "doAction",
@@ -176,16 +161,16 @@
       "contextId": "context9_vdtoHx",
       "layout": [
         {
-          "id": "uiControl15_kbTzqL",
-          "controlId": "control14_ZKQklw",
+          "id": "uiControl41_AceN2k",
+          "controlId": "control40_HdrWi4",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl15_kbTzqL",
-                "onGetTemplate": "getTemplate_uiControl15_kbTzqL"
+                "onDoAction": "doAction_uiControl41_AceN2k",
+                "onGetTemplate": "getTemplate_uiControl41_AceN2k"
               }
             }
           }
@@ -237,7 +222,8 @@
           "192.168.0.189:8888/ptsoa/bizform/operationLog.jsp?_t=691125&_winid=w4219",
           "192.168.0.189:8888/ptsoa/bizform/operationLog.jsp?_t=341132&_winid=w2867",
           "192.168.0.189:8888/ptsoa/bizform/operationLog.jsp",
-          "192.168.0.189:8888/ptsoa/bizform/operationLog.jsp?_t=784433&_winid=w7094"
+          "192.168.0.189:8888/ptsoa/bizform/operationLog.jsp?_t=784433&_winid=w7094",
+          "192.168.0.189:8888/ptsoa/bizform/operationLog.jsp?_t=263168&_winid=w1141"
         ]
       }
     },

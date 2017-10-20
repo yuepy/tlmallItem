@@ -1,0 +1,55 @@
+{
+  "type": "adapter",
+  "studioVersion": "0.1",
+  "jsFile": "lib/base.js",
+  "name": "普天太力",
+  "description": "普天太力",
+  "icon": "lib/images/oa.png",
+  "defaultURL": "http://192.168.0.200:8080/ptsoa/framework.html",
+  "hosts": [
+    "192.168.0.200",
+    "192.168.0.201"
+  ],
+  "overloaded_urls": {
+    "http://192.168.0.200:8080/ptsoa/theme/FixCS/index.js": "lib/alert.js",
+    "http://192.168.0.200:8080/ptsoa/components/FixCore.js": "lib/FixCore.js"
+  },
+  "apps": {
+    "todo": {
+      "name": "待办列表",
+      "isActive": true,
+      "icon": "lib/images/oa.png",
+      "adapter": "todo_list/index.json",
+      "host": "http://192.168.0.200:8080",
+      "targetURL": "http://192.168.0.200:8080/ptsoa//theme/FixCS/FlowCenter/UniformMyAllTask.html"
+    },
+    "done_list": {
+      "name": "已办列表",
+      "isActive": true,
+      "icon": "lib/images/gsfw.png",
+      "adapter": "done_list/index.json",
+      "host": "http://192.168.0.200:8080",
+      "targetURL": "http://192.168.0.200:8080/ptsoa//theme/FixCS/FlowCenter/UniformTaskDone.html"
+    },
+    "flow_track": {
+      "name": "流程追踪",
+      "isActive": true,
+      "icon": "lib/images/yy.png",
+      "adapter": "flow_track/index.json",
+      "host": "http://192.168.0.200:8080",
+      "targetURL": "http://192.168.0.200:8080/ptsoa//theme/FixCS/FlowCenter/UniformMyInvolvedTask.html"
+    }
+  },
+  "menu": [
+    {
+      "appId": "todo"
+    },
+    {
+      "appId": "done_list"
+    },
+    {
+      "appId": "flow_track"
+    }
+  ],
+  "resourceMap": {}
+}

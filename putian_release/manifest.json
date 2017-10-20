@@ -1,0 +1,219 @@
+{
+  "name": "普天189",
+  "short_name": "普天",
+  "scope": "putian_release",
+  "version": "0.0.1",
+  "runtime_version": "2.0.3",
+  "description": "普天",
+  "start_url": "enterplorer://putian_release/local/index.html",
+  "icons": {
+    "128": "oa.png"
+  },
+  "options": {
+    "resource_intercept": {
+      "type": [
+        "css",
+        "image"
+      ],
+      "ignore": [
+        "^http:\\/\\/192\\.168\\.0\\.200:8080\\/ptsoa\\/\\/components\\/JQPagination\\/pagination\\.css"
+      ]
+    }
+  },
+  "override_urls": [
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.0\\.200:8080\\/ptsoa\\/components\\/AD_Project\\/AD_Project\\.js"
+      ],
+      "target_url": "override/AD_Project.js"
+    }
+  ],
+  "adapter_urls": [
+    {
+      "url": "adapter://putian200/plan/todo_list/index.json",
+      "title": "待办列表",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/\\/theme\\/FixCS\\/FlowCenter\\/UniformMyAllTask\\.html"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/done_list/index.json",
+      "title": "已办列表",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/\\/theme\\/FixCS\\/FlowCenter\\/UniformTaskDone\\.html"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/flow_track/index.json",
+      "title": "流程追踪",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/\\/theme\\/FixCS\\/FlowCenter\\/UniformMyInvolvedTask\\.html.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/distributionReturn/index.json",
+      "title": "铺货退货会签单",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/DG_DIS_COUNTERSIGN\\/dis_countersign_approve\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/downDiscount/index.json",
+      "title": "下游折扣",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/discount\\/DISCOUNT_LOWER\\/discount_lower_approve_rdol\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/payApply/index.json",
+      "title": "付款申请",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/PO_PAYMENT\\/payment_check\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/purchaseReturn/index.json",
+      "title": "采购退货",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/PO_PURCHASE_RETURN\\/purchase_return_approve\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/strideProject/index.json",
+      "title": "跨（项目）调拨申请单",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/DG_ALLOT_CROSS_PROJECT\\/dg_allot_cross_project_approve\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/donePayApply/index.json",
+      "title": "已办列表的付款申请",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/PO_PAYMENT\\/payment_view\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/donePayApplyDetail/index.json",
+      "title": "已办列表付款申请的明细",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/theme\\/FixCS\\/StandardUniform\\.html.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/downDiscountDetail/index.json",
+      "title": "下游折扣明细",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.201\\:8076\\/WebReport\\/ReportServer\\?reportlet=BPM.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/flow_saleContract/index.json",
+      "title": "流程审批的销售合同",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/SO_SALES\\/SO_CONTRACT_INFO\\/so_contract_view\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/flow_track_purchaseReturn/index.json",
+      "title": "流程追踪的采购退货",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/PO_PURCHASE_RETURN\\/purchase_return_view\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/login/index.json",
+      "title": "登录",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/theme\\/FixCS\\/loginform\\.html"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/donePayApplyDetail/index.json",
+      "title": "已办列表的付款申请的模态框",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/PO_PAYMENT\\/payment_view\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/noMarketContract/index.json",
+      "title": "非采销合同",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/PO_CONTRACT2_INFO\\/contract_approve\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/processState/index.json",
+      "title": "采购合同审批流程",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/procList\\.html.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/purchaseContract/index.json",
+      "title": "采购合同",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/PO_CONTRACT_INFO.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/saleContract/index.json",
+      "title": "销售合同",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/SO_SALES\\/SO_CONTRACT_INFO\\/so_contract_approvexi\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/saleCount/index.json",
+      "title": "销售数信用数",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.201\\:8076\\/WebReport\\/ReportServer\\?reportlet=.*&item_num=.*",
+        "^http:\\/\\/192\\.168\\.0\\.201\\:8076\\/WebReport\\/ReportServer\\?reportlet=.*&department_id=.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/saleOffWatch/index.json",
+      "title": "折扣明细查看",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/theme\\/FixCS\\/StandardUniform\\.html.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/saleReturnApply/index.json",
+      "title": "销售退货申请",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/SO_SALES\\/SO_SALE_RETURN_APPLY\\/so_sale_return_apply_approve\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/saleReturnOrder_noBottom_flow/index.json",
+      "title": "销售退货订单",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/SO_SALES\\/SO_SALE_RETURN_ORDER\\/so_sale_return_order_view\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/transferSlip/index.json",
+      "title": "跨仓（调拨）申请单",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/pt\\/DG_ALLOT_STORE\\/dg_store_check2\\.htm.*"
+      ]
+    },
+    {
+      "url": "adapter://putian200/plan/upDiscount/index.json",
+      "title": "上游折扣确认单",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200\\:8080\\/ptsoa\\/forms\\/discount\\/DISCOUNT_UPPER\\/discount_upper_approve\\.htm.*"
+      ]
+    },
+    {
+      "title": "费采购流程格式合同",
+      "url": "adapter://putian200/plan/noMarketContractGSHT/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.0\\.200:8080\\/ptsoa\\/forms\\/pt\\/PO_CONTRACT2_INFO\\/contract_add\\.htm\\?.*"
+      ],
+      "demo": []
+    }
+  ],
+  "default_url": "http://192.168.0.200:8080/ptsoa/theme/FixCS/loginform.html",
+  "useAppMenu": true
+}

@@ -1,0 +1,410 @@
+{
+  "version": "0.1",
+  "id": "error",
+  "targetURL": "http://192.168.0.208:7777/loyalty_chs/start.swe?SWEFo=SWEEntryForm&SWENeedContext=false&W=t&SWECmd=ExecuteLogin&SWENoHttpRedir=false&SWEUserName=CRM019&SWESPNR=&SWEH=&SWESPNH=&SWEBHWND=&SyncNodeId=&SWEC=0&SWEBID=-1&SWEW=&SRN=&SWEHo=192.168.0.208&SWETS=1488523209&SWEPassword=12345678&SWEWN=",
+  "jsFile": "index.js",
+  "chineseName": "错误页面",
+  "description": "",
+  "controls": {
+    "control11": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "返回"
+              ],
+              "visText": [
+                "返回"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::DIV[@id=\"_sweclient\"]//DIV[@id=\"_swecontent\"]//DIV[@id=\"_sweview\"]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[1]/TD[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "TD.AppletStyle1 TR.AppletButtons TD.AppletButtons"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/DIV[6]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[1]/TD[3]"
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context24": {
+      "controls": [
+        "control11"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow38": {
+      "toContexts": [
+        {
+          "toContextId": "context24"
+        }
+      ]
+    },
+    "flow39": {
+      "fromContextId": "context24",
+      "fromAction": "click",
+      "fromControlId": "control11",
+      "toContexts": [
+        {
+          "toContextId": "context24"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page24": {
+      "contextId": "context24",
+      "layout": [
+        {
+          "id": "uiControl54",
+          "display": {
+            "title": "错误页面",
+            "type": "header",
+            "adapterId": "header",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl54headerLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl54headerRight",
+              "display": {
+                "type": "headerRight",
+                "adapterId": "headerRight",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl12",
+          "controlId": "control11",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context24": [
+          "普天太力客户关系管理-UAT"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context24": [
+          "192.168.0.208:7777/loyalty_chs/start.swe?SWEFo=SWEEntryForm&SWENeedContext=false&W=t&SWECmd=ExecuteLogin&SWENoHttpRedir=false&SWEUserName=CRM019&SWESPNR=&SWEH=&SWESPNH=&SWEBHWND=&SyncNodeId=&SWEC=0&SWEBID=-1&SWEW=&SRN=&SWEHo=192.168.0.208&SWETS=1488523209&SWEPassword=12345678&SWEWN="
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context24": [
+          [
+            "CommunicationPanel",
+            "CommunicationPanelContainer",
+            "Dashboard",
+            "HTMLMessageBar",
+            "MsgBar",
+            "PDQToolbar",
+            "SS_ChatUI",
+            "SS_OpenUIReportPane",
+            "SS_SearchCenter",
+            "SS_TaskUIPane",
+            "SWEApplet",
+            "SWEBottomHidden",
+            "SWETopHidden",
+            "S_A",
+            "Siebel_APPLET_CON_STR",
+            "Siebel_APPLET_RN",
+            "Siebel_LIC",
+            "Siebel_LOV",
+            "Siebel_OT",
+            "Siebel_RN",
+            "Siebel_SCREEN_RN",
+            "Siebel_UN",
+            "Siebel_VIEW_RN",
+            "Snooze_For_Label_Label",
+            "TaskAssistant",
+            "_c_err",
+            "_svf",
+            "_swe",
+            "_sweappmenu",
+            "_sweclient",
+            "_swecontent",
+            "_swescrnbar",
+            "_swethreadbar",
+            "_sweview",
+            "_sweviewbar",
+            "a_",
+            "mask-img",
+            "maskcontent",
+            "maskoverlay",
+            "openSidebarButton",
+            "s_",
+            "s_S_A_div",
+            "s____",
+            "s_sctrl",
+            "s_srch",
+            "s_ssvctrl",
+            "s_tb",
+            "s_toolbar",
+            "sidebarCloseButton",
+            "siebui-automation-dialog-message",
+            "siebui-threadbar",
+            "siebui-toolbar-settings",
+            "siebui-toolbar-toggle-communication-panel",
+            "srch_icon",
+            "tb_",
+            "ui-id-"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context24": [
+          [
+            "AppletBack",
+            "AppletBlank",
+            "AppletBorder",
+            "AppletBottom",
+            "AppletButtons",
+            "AppletStyle",
+            "AppletTitle",
+            "GridBack",
+            "GridBorder",
+            "NotSelected",
+            "PDQToolbarContainer",
+            "PDQWidth",
+            "PageItem",
+            "PageItemLabel",
+            "TierToolbarContainer",
+            "ToolbarButton",
+            "ToolbarButtonOff",
+            "ToolbarButtonOn",
+            "addshowactivated",
+            "appletButtonDis",
+            "applicationMenu",
+            "bannerDiv",
+            "calculator-popup",
+            "error",
+            "forcehide",
+            "header-top",
+            "hidden",
+            "mceGridField",
+            "miniBtnUIC",
+            "next-item-applet",
+            "sidebarNavButton",
+            "siebui-appmenu-item",
+            "siebui-appmenu-separator",
+            "siebui-automation-dialog",
+            "siebui-banner-btn",
+            "siebui-btn-notify",
+            "siebui-button-toolbar",
+            "siebui-callout-one",
+            "siebui-callout-two",
+            "siebui-comm-panel-container",
+            "siebui-comm-panel-frame",
+            "siebui-dashboard-frame",
+            "siebui-icon-search",
+            "siebui-icon-tb-executequery",
+            "siebui-icon-tb-newquery",
+            "siebui-icon-tb-reports",
+            "siebui-icon-tb-root",
+            "siebui-icon-tb-sitemap",
+            "siebui-icon-tb-toggle_communication_panel",
+            "siebui-icon-tb-toggle_task_pane",
+            "siebui-input",
+            "siebui-logo",
+            "siebui-mask-content",
+            "siebui-mask-inner",
+            "siebui-mask-outer",
+            "siebui-mask-overlay",
+            "siebui-msgbar",
+            "siebui-msgbarbkgrnd-msgread-nomsgs",
+            "siebui-nav-hb",
+            "siebui-nav-tab",
+            "siebui-pdq",
+            "siebui-search-esearch",
+            "siebui-search-tb-btn",
+            "siebui-srch-banner-btn",
+            "siebui-task-assist-pane",
+            "siebui-toolbar",
+            "siebui-toolbar-disable",
+            "siebui-toolbar-enable",
+            "siebui-toolbar-settings",
+            "siebui-toolbar-toggle-communication-panel",
+            "siebui-value",
+            "tierBack",
+            "tr",
+            "ui-button",
+            "ui-button-icon-only",
+            "ui-button-icon-primary",
+            "ui-button-text",
+            "ui-button-text-only",
+            "ui-corner-all",
+            "ui-dialog",
+            "ui-dialog-buttonpane",
+            "ui-dialog-buttons",
+            "ui-dialog-buttonset",
+            "ui-dialog-content",
+            "ui-dialog-title",
+            "ui-dialog-titlebar",
+            "ui-dialog-titlebar-close",
+            "ui-draggable",
+            "ui-draggable-handle",
+            "ui-front",
+            "ui-helper-clearfix",
+            "ui-icon",
+            "ui-icon-carat--e",
+            "ui-icon-closethick",
+            "ui-icon-gripsmall-diagonal-se",
+            "ui-menu",
+            "ui-menu-divider",
+            "ui-menu-icon",
+            "ui-menu-item",
+            "ui-menubar",
+            "ui-menubar-item",
+            "ui-menubar-link",
+            "ui-resizable",
+            "ui-resizable-e",
+            "ui-resizable-handle",
+            "ui-resizable-n",
+            "ui-resizable-ne",
+            "ui-resizable-nw",
+            "ui-resizable-s",
+            "ui-resizable-se",
+            "ui-resizable-sw",
+            "ui-resizable-w",
+            "ui-state-default",
+            "ui-state-disabled",
+            "ui-widget",
+            "ui-widget-content",
+            "ui-widget-header"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context24": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/BUTTON/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LINK",
+            "DIV/DIV/META",
+            "DIV/DIV/P",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/TITLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-file",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/FORM/INPUT-submit",
+            "DIV/SELECT/OPTION",
+            "DIV/SPAN/LI",
+            "DIV/SPAN/UL",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/TABLE",
+            "LI/A/SPAN",
+            "LI/SPAN/IMG",
+            "LI/UL/LI",
+            "SPAN/LI/A",
+            "SPAN/LI/UL",
+            "SPAN/TABLE/TBODY",
+            "SPAN/UL/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TD/DIV/INPUT-text",
+            "TD/DIV/SELECT",
+            "TD/DIV/SPAN",
+            "TD/DIV/TEXTAREA",
+            "TD/SPAN/BR",
+            "TD/SPAN/TABLE",
+            "TD/TABLE/TBODY",
+            "TR/TD/BR",
+            "TR/TD/DIV",
+            "TR/TD/IMG",
+            "TR/TD/P",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A",
+            "UL/LI/SPAN",
+            "UL/LI/UL"
+          ]
+        ]
+      }
+    }
+  }
+}

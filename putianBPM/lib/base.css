@@ -657,42 +657,74 @@ div[data-ysp-modelid="operationLog"] {
 .ysp-flowsheet {
   margin: 0	10px;
 }
+.ysp-flowsheet .ysp-Previous-details {
+  min-height: 2.75rem;
+  line-height: 2.75rem;
+  background: white;
+  padding: 0 0.75rem;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: flex-end;
+}
+.ysp-flowsheet .ysp-Previous-details button {
+  margin: 6px 0 !important;
+}
 .ysp-flowsheet .ysp-flowsheet-onePart {
   background: white;
+  padding: 0 0.75rem;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart > div {
   display: flex;
   justify-content: space-between;
   min-height: 2.75rem;
   line-height: 2.75rem;
   border-bottom: 1px solid #e6e6e6;
   flex-wrap: wrap;
-  padding: 0 0.75rem;
 }
-.ysp-flowsheet .ysp-flowsheet-onePart span {
+.ysp-flowsheet .ysp-flowsheet-onePart > div span {
   color: #ff2000;
 }
-.ysp-flowsheet .ysp-flowsheet-onePart:last-child {
+.ysp-flowsheet .ysp-flowsheet-onePart > div:last-child {
   border: none;
 }
-.ysp-flowsheet .ysp-flowsheet-onePart:last-child > textarea {
+.ysp-flowsheet .ysp-flowsheet-onePart > div:last-child > textarea {
   border: none;
   background: #F3F3F2;
   resize: none;
   font-size: 14px;
 }
-.ysp-flowsheet .ysp-flowsheet-onePart > label {
+.ysp-flowsheet .ysp-flowsheet-onePart > div > label {
   font-size: 14px;
   color: #414141;
 }
-.ysp-flowsheet .ysp-flowsheet-onePart > label:first-child {
+.ysp-flowsheet .ysp-flowsheet-onePart > div > label:first-child {
   color: #888580;
 }
 .ysp-flowsheet .ysp-flowsheet-twoPart {
   margin-top: 10px;
 }
+.ysp-flowsheet .ysp-flowsheet-twoPart .ysp-InformationDetail-btn {
+  background: white;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.ysp-flowsheet .ysp-flowsheet-twoPart .ysp-InformationDetail-btn label {
+  height: 44px;
+  line-height: 44px;
+  color: #414141;
+  font-size: 14px;
+}
+.ysp-flowsheet .ysp-flowsheet-twoPart .ysp-InformationDetail-btn button {
+  margin: 0;
+  height: 40px;
+}
 .ysp-flowsheet .ysp-flowsheet-twoPart .ysp-flowsheet-twoPart-card {
   background: white;
   padding: 0.75rem 0.75rem;
   border-radius: 3px;
+  margin-bottom: 10px;
 }
 .ysp-flowsheet .ysp-flowsheet-twoPart .ysp-flowsheet-twoPart-card > div {
   display: flex;
