@@ -2,3 +2,49 @@
 // Less 的语法与 CSS 兼容，可以直接用 CSS 语法进行编写
 // 如需了解详情，请访问 http://www.lesscss.net/
 // 发布后，base.less 被编译成 base.css 文件
+@base-font-size:14px;
+@list-base-padding:5px;
+@list-base-border-color:#EFEFEF;
+
+li {list-style: none}
+
+/*****************索引列表头部样式 -START********************/
+.ysp-list-title {
+  text-align:center;
+  padding:10px 10px 10px 0;
+  background:#C29A2A;
+  color:#fff;
+  font-size: 16px
+}
+/*****************索引列表头部样式 -START********************/
+
+/*****************索引列表样式 -START***********************/
+.ysp-index-list-wrapper{
+  font-size: @base-font-size;
+  ul{margin: 0;padding: 0;}
+  
+  .ysp-index-list-wrapper-title{
+    padding: @list-base-padding @list-base-padding+5px;
+    font-weight: bold;
+    border-bottom: 1px solid @list-base-border-color;
+    span{
+      display: inline-block;
+      background:url(images/arrow.png) no-repeat center;
+      background-size:100% 100%;
+      width: 12px;
+      height: 7px;
+      float: right;
+  	}
+  }
+  
+  .ysp-index-list-wrapper-content{
+    padding: @list-base-padding 0 @list-base-padding @list-base-padding;
+    margin-left: 10px;
+    color: #666;
+    li{
+      padding: @list-base-padding;
+      border-bottom: 1px solid @list-base-border-color;
+    }
+  }
+}
+/*****************索引列表样式 -END***********************/
