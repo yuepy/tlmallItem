@@ -1,0 +1,366 @@
+{
+  "version": "0.1",
+  "id": "index",
+  "targetURL": "http://192.168.200.63/wui/main.jsp?templateId=1",
+  "jsFile": "index.js",
+  "chineseName": "首页列表",
+  "description": "",
+  "controls": {
+    "control2_rHoaEf": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::TABLE[@id=\"container\"]//TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]"
+          },
+          {
+            "id": "@id/nonWord",
+            "prob": 1,
+            "disabled": true,
+            "fact": "null",
+            "value": "descendant::TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]//DIV[@id=\"null\"]/DIV[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              12
+            ],
+            "value": "DIV.topMenuDiv_top DIV.menuItem DIV.menuItemIcon"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control7_AozTNp": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "待办事宜"
+              ],
+              "visText": [
+                "待办事宜"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 3,
+            "value": {
+              "pathname": "/workflow/request/RequestView.jsp",
+              "redirect": "DIV[2]"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]/UL[1]/LI[2]/A[1]/DIV[2]",
+              "descendant::DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]/UL[1]/LI[2]/A[1]/DIV[2]",
+              "descendant::DIV[@id=\"drillmenu\"]/UL[1]/LI[2]/A[1]/DIV[2]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "DIV.drillmenu A.lfMenuItem DIV.leftMenuItemCenter"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/UL[1]/LI[2]/A[1]/DIV[2]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              0,
+              98,
+              105
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context1_yeQcpw": {
+      "controls": [
+        "control2_rHoaEf",
+        "control7_AozTNp"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow5_sdkeyh": {
+      "toContexts": [
+        {
+          "toContextId": "context1_yeQcpw"
+        }
+      ]
+    },
+    "flow6_ADGlZU": {
+      "fromContextId": "context1_yeQcpw",
+      "fromAction": "click",
+      "fromControlId": "control2_rHoaEf",
+      "toContexts": [
+        {
+          "toContextId": "context1_yeQcpw"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page1_FFc4oU": {
+      "contextId": "context1_yeQcpw",
+      "layout": [
+        {
+          "id": "uiControl2_tQ9mg5",
+          "controlId": "control2_rHoaEf",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "text": "流程",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl7_hOKa56",
+          "controlId": "control7_AozTNp",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context1_yeQcpw": [
+          "金融街投资集团OA - 张济天"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context1_yeQcpw": [
+          "192.168.200.63/wui/main.jsp?templateId=1"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context1_yeQcpw": [
+          [
+            "FONTSYSTEMF",
+            "_DialogBGDiv",
+            "_DialogBGMask",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context1_yeQcpw": [
+          [
+            "center",
+            "drillmenu",
+            "dropdown",
+            "hrminfo_fontcolor",
+            "input",
+            "leftBlockHrmInfoCenter",
+            "leftBlockHrmInfoLeft",
+            "leftBlockHrmInfoRight",
+            "leftBlockTopBgLeft",
+            "leftBlockTopBgRight",
+            "leftMenuBottomLeft",
+            "leftMenuBottomNavDiv",
+            "leftMenuBottomNavTbl",
+            "leftMenuBottomRight",
+            "leftMenuItemCenter",
+            "leftMenuItemLeft",
+            "leftMenuItemNavCenter",
+            "leftMenuItemNavLeft",
+            "leftMenuItemNavRight",
+            "leftMenuItemRight",
+            "leftMenuTopNavDiv",
+            "lfMenuItem",
+            "mainMenuParentBtn",
+            "mainParentBtn",
+            "menuItem",
+            "menuItemIcon",
+            "menuNavSpan_Expand",
+            "navclass",
+            "searchBlockBgDiv",
+            "searchkeywork",
+            "selectContent",
+            "selectTile",
+            "slideItemText",
+            "smOW",
+            "styled",
+            "subMenuBtn",
+            "tbItm",
+            "toolbarSplitLine",
+            "toolbarTopRight",
+            "topBlockDateBlock",
+            "topMenuDiv",
+            "topMenuDiv_top",
+            "versiontype"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context1_yeQcpw": [
+          [
+            "-/-/DIV",
+            "-/-/IMG",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/TABLE/TBODY",
+            "DIV/A/DIV",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/IFRAME",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-text",
+            "LI/A/DIV",
+            "LI/A/IMG",
+            "LI/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TD/DIV/FORM",
+            "TD/DIV/IFRAME",
+            "TD/DIV/LINK",
+            "TD/DIV/META",
+            "TD/DIV/SCRIPT",
+            "TD/DIV/STYLE",
+            "TD/DIV/TABLE",
+            "TD/TABLE/TBODY",
+            "TD/UL/LI",
+            "TD/UL/LINK",
+            "TD/UL/STYLE",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/IFRAME",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/STYLE",
+            "TR/TD/TABLE",
+            "TR/TD/UL",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}

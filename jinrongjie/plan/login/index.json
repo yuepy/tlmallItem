@@ -11,6 +11,10 @@
         "data": {
           "tagName": "INPUT"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "label",
@@ -67,6 +71,10 @@
       "location": {
         "data": {
           "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -125,6 +133,10 @@
         "data": {
           "tagName": "INPUT"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "label",
@@ -176,6 +188,10 @@
       "location": {
         "data": {
           "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -241,6 +257,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -272,6 +292,10 @@
       "location": {
         "data": {
           "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -351,6 +375,26 @@
           "toContextId": "context0_kM8s1V"
         }
       ]
+    },
+    "flow3_2Z2Ozo": {
+      "fromContextId": "context0_kM8s1V",
+      "fromAction": "click",
+      "fromControlId": "control3_oOkdsJ",
+      "toContexts": [
+        {
+          "toContextId": "context0_kM8s1V"
+        }
+      ]
+    },
+    "flow4_sbz2eS": {
+      "fromContextId": "context0_kM8s1V",
+      "fromAction": "click",
+      "fromControlId": "control6_izEbgM",
+      "toContexts": [
+        {
+          "toContextId": "context0_kM8s1V"
+        }
+      ]
     }
   },
   "pages": {
@@ -387,17 +431,6 @@
           }
         },
         {
-          "id": "uiControl3_k6amsM",
-          "controlId": "control3_oOkdsJ",
-          "display": {
-            "adapterId": "checkbox",
-            "type": "checkbox",
-            "adapter": {
-              "templateType": ""
-            }
-          }
-        },
-        {
           "id": "uiControl1_WFFbXh",
           "controlId": "control1_lFSTRO",
           "display": {
@@ -405,6 +438,17 @@
             "type": "passwordbox",
             "class": "",
             "label": "密码:",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl3_k6amsM",
+          "controlId": "control3_oOkdsJ",
+          "display": {
+            "adapterId": "checkbox",
+            "type": "checkbox",
             "adapter": {
               "templateType": ""
             }
