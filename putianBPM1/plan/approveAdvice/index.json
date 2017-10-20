@@ -126,39 +126,34 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control44_8Dfh52": {
+    "control52_ASAZ2n": {
       "location": {
         "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "DIV"
         },
         "locators": [
           {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.index"
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]",
+              "descendant::DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
+            ]
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "ordinal": [
-              0,
-              8
-            ],
-            "value": "/HTML[1]/BODY[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control44_8Dfh52"
+        "onGetData": "getData_control52_ASAZ2n"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>"
     }
   },
   "contexts": {
@@ -167,7 +162,7 @@
         "control23_P3UvaB",
         "control24_TGcVyK",
         "control38_QOFFLs",
-        "control44_8Dfh52"
+        "control52_ASAZ2n"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -307,16 +302,16 @@
           }
         },
         {
-          "id": "uiControl43_rb1WQl",
-          "controlId": "control44_8Dfh52",
+          "id": "uiControl49_PmNJ8d",
+          "controlId": "control52_ASAZ2n",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl43_rb1WQl",
-                "onGetTemplate": "getTemplate_uiControl43_rb1WQl"
+                "onDoAction": "doAction_uiControl49_PmNJ8d",
+                "onGetTemplate": "getTemplate_uiControl49_PmNJ8d"
               }
             }
           }
@@ -345,7 +340,9 @@
           "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=255043&_winid=w7093",
           "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=217282&_winid=w3675",
           "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=992012&_winid=w2989",
-          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=33347&_winid=w4089"
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=33347&_winid=w4089",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=747101&_winid=w9319",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=973682&_winid=w475"
         ],
         "context4_d60WvN": [
           "192.168.0.189:8888/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777",
