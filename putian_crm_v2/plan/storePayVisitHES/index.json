@@ -6,7 +6,7 @@
   "chineseName": "门店拜访HES报告",
   "description": "门店拜访HES报告",
   "controls": {
-    "control246_RKuvOl": {
+    "control79_uTL32a": {
       "location": {
         "data": {
           "tagName": "BODY"
@@ -20,62 +20,40 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control246_RKuvOl"
+        "onGetData": "getData_control79_uTL32a"
       },
       "intendedRole": "custom",
       "roles": "element,link,custom",
       "monitored": true,
-      "frameXPath": "//iframe[@name='thirdLevelIframeContainer']<<IFRAME>>"
+      "frameXPath": ""
     },
-    "control248_yvswOI": {
+    "control248_C59RtQ": {
       "location": {
         "data": {
-          "tagName": "DIV"
+          "tagName": "BODY"
         },
         "locators": [
           {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::DIV[@id=\"answerMessage\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              3
-            ],
-            "value": "DIV.content"
-          },
-          {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]"
-          },
-          {
-            "id": "shield",
-            "value": {
-              "zIndex": "auto",
-              "width": 728,
-              "height": 518
-            }
+            "value": "/HTML[1]/BODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control248_yvswOI"
+        "onGetData": "getData_control248_C59RtQ"
       },
       "intendedRole": "custom",
       "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='thirdLevelIframeContainer']<<IFRAME>>"
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context66_DB5szN": {
       "controls": [
-        "control246_RKuvOl",
-        "control248_yvswOI"
+        "control79_uTL32a",
+        "control248_C59RtQ"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -95,31 +73,31 @@
       "contextId": "context66_DB5szN",
       "layout": [
         {
-          "id": "uiControl240_HNvtRC",
-          "controlId": "control246_RKuvOl",
+          "id": "uiControl242_wekRUb",
+          "controlId": "control248_C59RtQ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl240_HNvtRC",
-                "onGetTemplate": "getTemplate_uiControl240_HNvtRC"
+                "onDoAction": "doAction_uiControl242_wekRUb",
+                "onGetTemplate": "getTemplate_uiControl242_wekRUb"
               }
             }
           }
         },
         {
-          "id": "uiControl242_iaXgx1",
-          "controlId": "control248_yvswOI",
+          "id": "uiControl82_RgLMVW",
+          "controlId": "control79_uTL32a",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl242_iaXgx1",
-                "onGetTemplate": "getTemplate_uiControl242_iaXgx1"
+                "onDoAction": "doAction_uiControl82_RgLMVW",
+                "onGetTemplate": "getTemplate_uiControl82_RgLMVW"
               }
             }
           }
@@ -131,14 +109,16 @@
     "page/title": {
       "contexts": {
         "context66_DB5szN": [
-          "太力销售管理可视化系统"
+          "太力销售管理可视化系统",
+          "答题试卷"
         ]
       }
     },
     "page/urls": {
       "contexts": {
         "context66_DB5szN": [
-          "192.168.1.224:8080/pttlCrm/res/index.html"
+          "192.168.1.224:8080/pttlCrm/res/index.html",
+          "192.168.1.224:8080/pttlCrm/res/page/visitManager/report/answerList.html?source=store360&rowId=3293dd6f-e9dc-4b48-9f49-f8b5039a3566&storeCode=S1000032&eaiId=1-5OOPOX"
         ]
       }
     },
@@ -158,6 +138,12 @@
             "mod-sideBar",
             "sidebarGroove",
             "timeShow"
+          ],
+          [
+            "answerMessage",
+            "content-body",
+            "eaiId",
+            "itemRemark"
           ]
         ]
       }
@@ -206,6 +192,36 @@
             "title",
             "u-help",
             "u-time"
+          ],
+          [
+            "answer",
+            "backImage",
+            "btn",
+            "buttons-tool",
+            "content",
+            "content-body",
+            "content-panel",
+            "content-panel-part",
+            "content-panel-part_list",
+            "content-panel-title",
+            "content_head",
+            "default",
+            "fill-box",
+            "goBack",
+            "infors",
+            "leftPart",
+            "mask",
+            "mustFill",
+            "pointImage",
+            "problem",
+            "problemlong",
+            "required",
+            "sortNum",
+            "text-input",
+            "tiankong",
+            "title",
+            "title-a",
+            "title-b"
           ]
         ]
       }
@@ -247,6 +263,25 @@
             "UL/LI/A",
             "UL/LI/DIV",
             "UL/LI/UL"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/LABEL/DIV",
+            "DIV/LABEL/I",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/LABEL/SPAN",
+            "LABEL/DIV/INPUT-text",
+            "LABEL/DIV/SPAN"
           ]
         ]
       }
