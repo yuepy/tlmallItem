@@ -86,9 +86,9 @@
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc) {
      //加载过滤后的页面
-      // if(aWin.location.href==("http://192.168.2.40:8000/ptsoa/skins/default/index.jsp"||"http://192.168.2.40:8000/ptsoa/skins/default/index.jsp")){
+      // if(aWin.location.href==("http://192.168.0.189:8888/ptsoa/skins/default/index.jsp"||"http://192.168.0.189:8888/ptsoa/skins/default/index.jsp")){
       //   console.log("a")
-      //   aWin.location.href="http://192.168.2.40:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
+      //   aWin.location.href="http://192.168.0.189:8888/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
       //   console.log("xian")
       // }
       //用于作用于原网页第一次进入时的点击;
@@ -239,9 +239,9 @@
       head.appendChild(meta)
       
        //加载过滤后的页面
-      if(aWin.location.href=="http://192.168.2.40:8000/ptsoa/skins/default/index.jsp"||aWin.location.href=="http://192.168.2.40:8000/ptsoa/skins/default/index.jsp#"){
+      if(aWin.location.href=="http://192.168.0.189:8888/ptsoa/skins/default/index.jsp"||aWin.location.href=="http://192.168.0.189:8888/ptsoa/skins/default/index.jsp#"){
         console.log("a")
-        aWin.location.href="http://192.168.2.40:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
+        aWin.location.href="http://192.168.0.189:8888/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
         console.log("xian")
       }
       aWin.alert = function(msg) {
