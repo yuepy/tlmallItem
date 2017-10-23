@@ -7,7 +7,7 @@
   var topWin = null; // Window对象
   utils.extend(ysp.customHelper, {
     openWin : _openWindow,
-    tigMsg : _tipMsg,
+    // tigMsg : _tipMsg,
     forceMatchModels : _forceMatchModels,
     toPlan : _toPlan,
     openWindow : _openWindow,
@@ -63,9 +63,10 @@
       setTimeout(function(){
         window.parent.EAPI.back();
       },1000)
-    }else{
-      ysp.appMain.back();
     }
+    // else{
+    //   ysp.appMain.back();
+    // }
   }
   /* 调用场景 : 页面出现弹框时,自动点击弹框消失. */
   // function _tipMsg(elem){
