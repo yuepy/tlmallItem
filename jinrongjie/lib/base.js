@@ -13,6 +13,24 @@
     openWindow : _openWindow,
     trim : _trim,
     back : _back,
+    getTableData : _getTableData,
+    isArray(array) {
+      if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    isAllNull(array) {
+      var tag = true;
+      for (var i = 0; i < array.length; i++) {
+        var item = ysp.customHelper.trim(array[i]);
+        if (item != '') {
+          tag = false;
+        }
+      }
+      return tag;
+    },
     /* 适配中定制的公共代码放在这里 */
 		
     /*
@@ -36,6 +54,15 @@
         }
       }
     },
+    //判断array.tag是存在一个值等于item
+    isExist(item, tag, array) {
+      for (var i = 0; i < array.length; i++) {
+        if (item == array[i][tag]) {
+          return true;
+        }
+      }
+      return false;
+    },
     //登录相关接口
     //判断是否需要跳转到登录页面, 当页面匹配不上的时候会执行该方法, 若返回值为true则跳转, 否则不跳转.
     //判断是否需要跳转的思路为: 当前未登录, 系统自动跳转到了错误提示页面,
@@ -51,6 +78,90 @@
       return false;
     }
   });
+  /*调用场景：该方法用于采集表格数据*/
+  function _getTableData(elem, titleArgs) {
+    if (!elem) {
+      return;
+    }
+    //获取头部标题，存入数组，包括空标签的内容
+    if (!elem.querySelector('thead')) {
+      console.warn('_getTableData没有找到table thead');
+      return null;
+    }
+    var thead = elem.querySelector('thead');
+    if (!thead.querySelectorAll('th')) {
+      console.warn('_getTableData thead里面竟然没有th');
+      return null;
+    }
+    var titlesThs = thead.querySelectorAll('th');
+    var titles = [];
+    var titlesIndexs = [];
+    for (var i = 0; i < titlesThs.length; i++) {
+      var titleValue = _trim(titlesThs[i].textContent);
+      var someCallback = function(value, index, array) {
+        if (value == titleValue) {
+          return true;
+        }
+      }
+      var flag = titleArgs.some(someCallback);
+      if (flag) {
+        titles.push(titleValue);
+        titlesIndexs.push(i);
+      }
+    }
+    if (titlesIndexs.length == 0) {
+      // console.warn('_getTableData没有找到相对应的titles');
+      return null;
+    }
+    //获取table的body数据
+    if (!elem.querySelector('tbody')) {
+      console.warn('_getTableData没有找到table tbody');
+      return null;
+    }
+    var tbody = elem.querySelector('tbody');
+    if (!tbody.querySelectorAll('tr')) {
+      console.warn('_getTableData tbody里面竟然没有tr');
+      return null;
+    }
+    var tbodyTrs = tbody.querySelectorAll('tr');
+    var content = [];
+    for (var i = 0; i < tbodyTrs.length; i++) {
+      var item = [];
+      if (!tbodyTrs[i].querySelectorAll('td')) {
+        console.warn('_getTableData 当前tr没有td');
+        continue;
+      }
+      var tds = tbodyTrs[i].querySelectorAll('td');
+      for (var j = 0; j < tds.length; j++) {
+        var someCallback = function(value, index, array) {
+          if (value == j) {
+            return true;
+          }
+        }
+        var flag = titlesIndexs.some(someCallback);
+        if (flag) {
+          //zyt
+          if (tds[j].querySelectorAll("input[type='text']").length != 0) {
+            item.push(tds[j].querySelector("input[type='text']").value)
+          } else if (tds[j].querySelector("select")) {
+            var optionarry = [];
+            var options = tds[j].querySelector("select").querySelectorAll("option")
+            for (var v = 0; v < options.length; v++) {
+              optionarry.push(options[v].textContent)
+            }
+            item.push(optionarry)
+          } else {
+            item.push(tds[j].textContent.trim());
+          }
+        }
+      }
+      content.push(item);
+    }
+    return {
+      titles: titles,
+      content: content
+    }
+  }
   /* 调用场景 : 页面返回. */
   function _back(type){
     if (typeof type === 'string') {
