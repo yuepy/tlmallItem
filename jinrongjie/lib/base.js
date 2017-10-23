@@ -53,20 +53,19 @@
   });
   /* 调用场景 : 页面返回. */
   function _back(type){
-    if(typeof type === 'string'){
-      if(window.parent.EAPI.isAndroid() || window.parent.EAPI.isIOS()){
+    if (typeof type === 'string') {
+      if (window.parent.EAPI.isAndroid() || window.parent.EAPI.isStudio()) {
         ysp.appMain.back();
+      } else {
+        var actionEvent = '{"target":"null","data":"' + type + '"}';
+        window.parent.EAPI.postMessageToNative('dispatchNativeEventToWebview', actionEvent);
+        setTimeout(function() {
+          window.parent.EAPI.back();
+        }, 1000);
       }
-    }else{
-      var actionEvent = '{"target":"null","data":"'+type+'"}';
-      window.parent.EAPI.postMessageToNative('dispatchNativeEventToWebview',actionEvent);
-      setTimeout(function(){
-        window.parent.EAPI.back();
-      },1000)
+    } else {
+      ysp.appMain.back();
     }
-    // else{
-    //   ysp.appMain.back();
-    // }
   }
   /* 调用场景 : 页面出现弹框时,自动点击弹框消失. */
   // function _tipMsg(elem){
