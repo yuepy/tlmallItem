@@ -92,27 +92,89 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control21_3XOAcm": {
+    "control21_cC1P6Z": {
       "location": {
         "data": {
-          "tagName": "SPAN"
+          "tagName": "P"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              20
+            ],
+            "value": "P.bh"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control21_cC1P6Z"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control7_PB4Av0": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              24
+            ],
+            "value": "P.bh"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control7_PB4Av0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control25_PhAtSh": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
         },
         "locators": [
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[2]/SPAN[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control21_3XOAcm"
+        "onGetData": "getData_control25_PhAtSh"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -125,7 +187,9 @@
       "controls": [
         "control20_psTrT0",
         "control22_gQSvMW",
-        "control21_3XOAcm"
+        "control21_cC1P6Z",
+        "control7_PB4Av0",
+        "control25_PhAtSh"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -175,16 +239,46 @@
           }
         },
         {
-          "id": "uiControl21_c2lDLU",
-          "controlId": "control21_3XOAcm",
+          "id": "uiControl7_elblP7",
+          "controlId": "control7_PB4Av0",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl21_c2lDLU",
-                "onGetTemplate": "getTemplate_uiControl21_c2lDLU"
+                "onDoAction": "doAction_uiControl7_elblP7",
+                "onGetTemplate": "getTemplate_uiControl7_elblP7"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl21_ybHy8x",
+          "controlId": "control21_cC1P6Z",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl21_ybHy8x",
+                "onGetTemplate": "getTemplate_uiControl21_ybHy8x"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl25_U9iq0i",
+          "controlId": "control25_PhAtSh",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl25_U9iq0i",
+                "onGetTemplate": "getTemplate_uiControl25_U9iq0i"
               }
             }
           }
