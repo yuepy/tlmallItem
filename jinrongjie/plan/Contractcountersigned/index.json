@@ -11,6 +11,10 @@
         "data": {
           "tagName": "SPAN"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "text",
@@ -58,18 +62,65 @@
       "content": true,
       "monitored": false,
       "frameXPath": ""
+    },
+    "control20_E5aiXM": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]//DIV[@id=\"_xTable\"]/DIV[1]/DIV[2]",
+              "descendant::DIV[@id=\"_xTable\"]/DIV[1]/DIV[2]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.Shadow DIV.table"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control20_E5aiXM"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context4_ktABGz": {
       "controls": [
-        "control19_sOAfhb"
+        "control19_sOAfhb",
+        "control20_E5aiXM"
       ],
       "anchors": [],
       "urlAnchor": []
     }
   },
-  "flows": {},
+  "flows": {
+    "flow12_Qp8vOv": {
+      "toContexts": [
+        {
+          "toContextId": "context4_ktABGz"
+        }
+      ]
+    }
+  },
   "pages": {
     "page4_2lwS4t": {
       "contextId": "context4_ktABGz",
@@ -82,6 +133,21 @@
             "type": "content",
             "adapter": {
               "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl20_W3PmsR",
+          "controlId": "control20_E5aiXM",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl20_W3PmsR",
+                "onGetTemplate": "getTemplate_uiControl20_W3PmsR"
+              }
             }
           }
         }
