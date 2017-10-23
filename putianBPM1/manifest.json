@@ -8,7 +8,7 @@
     "resource_filter": [
       {
         "url_match": [
-          "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js.*"
+          "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js.*"
         ],
         "charset": "utf-8",
         "replaces": [
@@ -30,31 +30,31 @@
   "override_urls": [
     {
       "origin_url": [
-        "http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/plugext\\/utils\\/top\\.js"
+        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/plugext\\/utils\\/top\\.js"
       ],
       "target_url": "override/top.js"
     },
     {
       "origin_url": [
-        "http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bizform\\/js\\/bizform\\.js"
+        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bizform\\/js\\/bizform\\.js"
       ],
       "target_url": "override/bizform.js"
     },
     {
       "origin_url": [
-        "http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js.*"
+        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js.*"
       ],
       "target_url": "override/common.js"
     },
     {
       "origin_url": [
-        "http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/common\\/nui\\/themes\\/default\\/miniui\\.css.*"
+        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/common\\/nui\\/themes\\/default\\/miniui\\.css.*"
       ],
       "target_url": "override/miniui.css"
     },
     {
       "origin_url": [
-        "http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/common\\/nui\\/nui-min\\.js"
+        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/common\\/nui\\/nui-min\\.js"
       ],
       "target_url": "override/nui-min.js"
     }
@@ -64,135 +64,135 @@
       "title": "login",
       "url": "adapter://putianBPM1/plan/login/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/coframe\\/auth\\/login\\/login\\.jsp#"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/coframe\\/auth\\/login\\/login\\.jsp#"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/coframe/auth/login/login.jsp#"
+        "http://192.168.2.40:8000/ptsoa/coframe/auth/login/login.jsp#"
       ]
     },
     {
       "title": "approvalTrack",
       "url": "adapter://putianBPM1/plan/approvalTrack/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bizform\\/approvalTrajectory\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bizform\\/approvalTrajectory\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp?_t=398245&_winid=w1279"
+        "http://192.168.2.40:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=398245&_winid=w1279"
       ]
     },
     {
       "title": "approveAdvice",
       "url": "adapter://putianBPM1/plan/approveAdvice/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bizform\\/components\\/approval\\/approvalMsgList\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bizform\\/components\\/approval\\/approvalMsgList\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513"
+        "http://192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513"
       ]
     },
     {
       "title": "checkProcess",
       "url": "adapter://putianBPM1/plan/checkProcess/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bps\\/wfclient\\/task\\/task\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/task\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bps/wfclient/task/task.jsp?_winid=w6942&_t=1542"
+        "http://192.168.2.40:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6942&_t=1542"
       ]
     },
     {
       "title": "Fallback",
       "url": "adapter://putianBPM1/plan/Fallback/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bizform\\/components\\/back\\/backActivity\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bizform\\/components\\/back\\/backActivity\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777"
+        "http://192.168.2.40:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777"
       ]
     },
     {
       "title": "HavaToDoWorkItemExecution",
       "url": "adapter://putianBPM1/plan/HavaToDoWorkItemExecution/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=1541&newPage=1"
+        "http://192.168.2.40:8000/ptsoa/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=1541&newPage=1"
       ]
     },
     {
       "title": "HaveProcessingTasksDetailedInformation",
       "url": "adapter://putianBPM1/plan/HaveProcessingTasksDetailedInformation/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bps\\/wfclient\\/task\\/taskList\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/taskList\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bps/wfclient/task/taskList.jsp?taskType=finishedSelf&_t=257481&_winid=w227"
+        "http://192.168.2.40:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=finishedSelf&_t=257481&_winid=w227"
       ]
     },
     {
       "title": "processForm",
       "url": "adapter://putianBPM1/plan/processForm/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861"
+        "http://192.168.2.40:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861"
       ]
     },
     {
       "title": "PendingTask",
       "url": "adapter://putianBPM1/plan/PendingTask/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/pendingTask\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/pendingTask\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=858425&_winid=w2262"
+        "http://192.168.2.40:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=858425&_winid=w2262"
       ]
     },
     {
       "title": "processedTask",
       "url": "adapter://putianBPM1/plan/processedTask/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/hasBeenProcessedTask\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/hasBeenProcessedTask\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?_t=930517&_winid=w2489"
+        "http://192.168.2.40:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?_t=930517&_winid=w2489"
       ]
     },
     {
       "title": "operationLog",
       "url": "adapter://putianBPM1/plan/operationLog/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bizform\\/operationLog\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bizform\\/operationLog\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bizform/operationLog.jsp?_t=691125&_winid=w4219"
+        "http://192.168.2.40:8000/ptsoa/bizform/operationLog.jsp?_t=691125&_winid=w4219"
       ]
     },
     {
       "title": "processMonitoring",
       "url": "adapter://putianBPM1/plan/processMonitoring/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bizform\\/processGraph\\.jsp.*"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bizform\\/processGraph\\.jsp.*"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bizform/processGraph.jsp?_t=879009&_winid=w811"
+        "http://192.168.2.40:8000/ptsoa/bizform/processGraph.jsp?_t=879009&_winid=w811"
       ]
     },
     {
       "title": "index",
       "url": "adapter://putianBPM1/plan/index/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/appMyTask\\.jsp"
+        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/appMyTask\\.jsp"
       ],
       "demo": [
-        "http://192.168.0.189:8888/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
+        "http://192.168.2.40:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
       ]
     }
   ],
   "name": "普天",
-  "default_url": "http://192.168.0.189:8888/ptsoa/skins/default/index.jsp#",
+  "default_url": "http://192.168.2.40:8000/ptsoa/skins/default/index.jsp#",
   "scope": "putianBPM1",
   "start_url": "enterplorer://putianBPM1/local/index.html",
   "fixed_version": 1
