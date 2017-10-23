@@ -245,7 +245,7 @@
         console.log("xian")
       }
       aWin.alert = function(msg) {
-        if (msg.indxOf('org.gocom.bos.wfclient.task') !== -1) {
+        if (msg.indexOf('org.gocom.bos.wfclient.task') !== -1) {
           aWin.alert(msg);
         }
       }
