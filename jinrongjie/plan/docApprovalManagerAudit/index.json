@@ -1,0 +1,359 @@
+{
+  "version": "0.1",
+  "id": "docApprovalManagerAudit",
+  "targetURL": "http://192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0",
+  "jsFile": "index.js",
+  "requires": {
+    "managerAuditDetail": "../managerAuditDetail/index.json"
+  },
+  "chineseName": "公文审批-总经理审核",
+  "description": "公文审批-总经理审核",
+  "controls": {
+    "control18_0NOXrC": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "33333333333333"
+              ],
+              "visText": [
+                "33333333333333"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "33333333333333"
+              ],
+              "visText": [
+                "33333333333333"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 2,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "funcName": "openFullWindowHaveBarForWFList"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]//DIV[@id=\"_xTable\"]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]/TD[8]/A[1]",
+              "descendant::FORM[@id=\"weaver\"]//DIV[@id=\"_xTable\"]//A",
+              "descendant::DIV[@id=\"_xTable\"]//A"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.table TABLE.ListStyle TR.DataLight TD A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]/TD[8]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              18,
+              56,
+              133
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control19_kmEps0": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "TABLE.TopTitle TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control19_kmEps0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context3_cJiFnN": {
+      "controls": [
+        "control18_0NOXrC",
+        "control19_kmEps0"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow10_3aLHvK": {
+      "toContexts": [
+        {
+          "toContextId": "context3_cJiFnN"
+        }
+      ]
+    },
+    "flow11_x4L6Zb": {
+      "fromContextId": "context3_cJiFnN",
+      "fromAction": "click",
+      "fromControlId": "control18_0NOXrC",
+      "toContexts": [
+        {
+          "toContextId": "context3_cJiFnN"
+        },
+        {
+          "toContextId": "context4_wRixwF",
+          "toModelId": "managerAuditDetail"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page3_4XvOu5": {
+      "contextId": "context3_cJiFnN",
+      "layout": [
+        {
+          "id": "uiControl19_rQCEK9",
+          "controlId": "control19_kmEps0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl19_rQCEK9",
+                "onGetTemplate": "getTemplate_uiControl19_rQCEK9"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl18_hJs410",
+          "controlId": "control18_0NOXrC",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "text": "请求标题",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context3_cJiFnN": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context3_cJiFnN": [
+          "192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context3_cJiFnN": [
+          [
+            "-weaverTable--goPage",
+            "-weaverTable-_XTABLE_GOPAGE_buttom",
+            "-weaverTable-_XTABLE_GOPAGE_top",
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "SelectDate",
+            "_myDP",
+            "_xTable",
+            "btnHelp",
+            "cdepartmentidspan",
+            "closetext",
+            "dateduring",
+            "departmentid",
+            "div",
+            "divTopTitle",
+            "divshowreceivied",
+            "fromdatespan",
+            "isonline",
+            "mainsupports",
+            "message_table_Div",
+            "needShow",
+            "resourceimg",
+            "resourceimghref",
+            "resourcespan",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "subcompanyid",
+            "t.createdate,t.createtime",
+            "t.creater",
+            "t.receivedate,t.receivetime",
+            "t.requestlevel",
+            "t.requestname",
+            "t.status",
+            "t.workflowid",
+            "todatespan",
+            "value=undefined",
+            "weaver",
+            "wflist_span",
+            "workflowspan"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context3_cJiFnN": [
+          [
+            "DataDark",
+            "DataLight",
+            "HeaderForXtalbe",
+            "Line",
+            "ListStyle",
+            "STYLE",
+            "Shadow",
+            "TopTitle",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "calendar",
+            "clickRightMenu",
+            "drop-shadow",
+            "field",
+            "highslide-container",
+            "highslide-loading",
+            "input",
+            "inputstyle",
+            "lable",
+            "simplehrmhead",
+            "styled",
+            "table",
+            "text",
+            "viewform",
+            "weaverTableCurrentPageBg",
+            "weaverTableNextPageOfDisabled",
+            "weaverTablePrevPageOfDisabled",
+            "xTable_info",
+            "xTable_message"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context3_cJiFnN": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SCRIPT",
+            "-/FORM/STYLE",
+            "-/FORM/TABLE",
+            "DIV/DIV/DIV",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FORM/DIV/IFRAME",
+            "FORM/DIV/TABLE",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/IMG",
+            "TD/DIV/INPUT-text",
+            "TD/DIV/SPAN",
+            "TD/FORM/INPUT-hidden",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/IMG",
+            "TD/TABLE/COLGROUP",
+            "TD/TABLE/TBODY",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FORM",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-checkbox",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text",
+            "TR/TD/SCRIPT",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE"
+          ]
+        ]
+      }
+    }
+  }
+}
