@@ -40,6 +40,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -73,7 +77,7 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control246_DlrW7r": {
+    "control246_e7OQhN": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -83,33 +87,29 @@
             "id": "@id/word",
             "prob": 2,
             "value": [
-              "descendant::FORM[@id=\"queryForm\"]//DIV[@id=\"jqGrid_wrapper\"]/DIV[1]/DIV[5]",
-              "descendant::DIV[@id=\"jqGrid_wrapper\"]/DIV[1]/DIV[5]"
+              "descendant::DIV[@id=\"mainContainer\"]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"mainContainer\"]//DIV"
             ]
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "ordinal": [
-              0,
-              3
-            ],
-            "value": "DIV.jqGrid_wrapper DIV.ui-jqgrid DIV.ui-jqgrid-pager"
+            "value": "DIV.store-border DIV.store"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[2]/DIV[1]/DIV[2]/DIV[1]/DIV[5]"
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control246_DlrW7r"
+        "onGetData": "getData_control246_e7OQhN"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -117,7 +117,7 @@
       "controls": [
         "control242_z8l5mX",
         "control244_hHUJPp",
-        "control246_DlrW7r"
+        "control246_e7OQhN"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -179,16 +179,16 @@
           }
         },
         {
-          "id": "uiControl240_cX7Teo",
-          "controlId": "control246_DlrW7r",
+          "id": "uiControl240_uQAFwz",
+          "controlId": "control246_e7OQhN",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl240_cX7Teo",
-                "onGetTemplate": "getTemplate_uiControl240_cX7Teo"
+                "onDoAction": "doAction_uiControl240_uQAFwz",
+                "onGetTemplate": "getTemplate_uiControl240_uQAFwz"
               }
             }
           }
