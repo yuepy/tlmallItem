@@ -14,6 +14,7 @@
     trim : _trim,
     back : _back,
     getTableData : _getTableData,
+    firstMenus : _firstMenus,
     isArray(array) {
       if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
         return true;
@@ -46,6 +47,10 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
+      /* 兼容性问题 */
+      aWin.showModalDialog = function(url){
+        return aWin.open(url,'新窗口')
+      }
       /* 为topWin赋值 */
 			if (aWin.frameElement && aWin.frameElement.name == "sourcePageFrame" && aWin.frameElement.dataset.browser) {
         topWin = aWin;
@@ -211,6 +216,18 @@
       if(item.textContent == operation){
         item.click();
         _forceMatchModels(planName);
+      }
+    });
+  }
+  function _firstMenus(elem,operation){
+    if(typeof planName !== 'string'){
+      console.error('toPlan : planName参数类型不正确')
+    }
+    var aEls = elem.querySelectorAll('ul li > a');
+    [].forEach.call(aEls,function(item,index){
+      if(item.textContent == operation){
+        var href = item.getAttribute('href');
+        ysp.customHelper.openWin(href,operation);
       }
     });
   }
