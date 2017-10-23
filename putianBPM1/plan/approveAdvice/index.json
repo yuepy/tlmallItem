@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "approveAdvice",
-  "targetURL": "http://192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
+  "targetURL": "http://192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
   "jsFile": "index.js",
   "requires": {
     "approveAdvice": "../approveAdvice/index.json",
@@ -42,47 +42,6 @@
       },
       "events": {
         "onGetData": "getData_control23_P3UvaB"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": false,
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
-    },
-    "control24_TGcVyK": {
-      "location": {
-        "data": {
-          "tagName": "IFRAME"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[3]/IFRAME[1]",
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//IFRAME",
-              "descendant::DIV[@id=\"_tabs\"]//IFRAME"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[3]/IFRAME[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control24_TGcVyK"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -164,13 +123,12 @@
     "context10_Hyn4t6": {
       "controls": [
         "control23_P3UvaB",
-        "control24_TGcVyK",
         "control38_QOFFLs",
         "control52_ASAZ2n"
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bizform\\/components\\/approval\\/approvalMsgList.*"
+        "^http:\\/\\/192\\.168\\.0\\.189:8888\\/ptsoa\\/bizform\\/components\\/approval\\/approvalMsgList.*"
       ]
     }
   },
@@ -245,16 +203,6 @@
         }
       ]
     },
-    "flow43_7tGl4B": {
-      "fromContextId": "context10_Hyn4t6",
-      "fromAction": "doAction",
-      "fromControlId": "control24_TGcVyK",
-      "toContexts": [
-        {
-          "toContextId": "context10_Hyn4t6"
-        }
-      ]
-    },
     "flow30_RerZ5C": {
       "fromContextId": "context10_Hyn4t6",
       "fromAction": "doAction",
@@ -301,21 +249,6 @@
           }
         },
         {
-          "id": "uiControl31_dPgRix",
-          "controlId": "control24_TGcVyK",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl31_dPgRix",
-                "onGetTemplate": "getTemplate_uiControl31_dPgRix"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl49_PmNJ8d",
           "controlId": "control52_ASAZ2n",
           "display": {
@@ -345,28 +278,28 @@
     "page/urls": {
       "contexts": {
         "context10_Hyn4t6": [
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=995370&_winid=w9067",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=800127&_winid=w905",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=16722&_winid=w9244",
-          "192.168.2.40:8000/ptsoa/bizform/approvalTrajectory.jsp",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=255043&_winid=w7093",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=217282&_winid=w3675",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=992012&_winid=w2989",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=33347&_winid=w4089",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=747101&_winid=w9319",
-          "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=973682&_winid=w475"
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=995370&_winid=w9067",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=800127&_winid=w905",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=16722&_winid=w9244",
+          "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=255043&_winid=w7093",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=217282&_winid=w3675",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=992012&_winid=w2989",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=33347&_winid=w4089",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=747101&_winid=w9319",
+          "192.168.0.189:8888/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=973682&_winid=w475"
         ],
         "context4_d60WvN": [
-          "192.168.2.40:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777",
-          "192.168.2.40:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w4155&_t=203204",
-          "192.168.2.40:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w9171&_t=387418"
+          "192.168.0.189:8888/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777",
+          "192.168.0.189:8888/ptsoa/bizform/components/back/backActivity.jsp?_winid=w4155&_t=203204",
+          "192.168.0.189:8888/ptsoa/bizform/components/back/backActivity.jsp?_winid=w9171&_t=387418"
         ],
         "context7_az83eO": [
-          "192.168.2.40:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=522682&_winid=w2203",
-          "192.168.2.40:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=533126&_winid=w9240",
-          "192.168.2.40:8000/ptsoa/bizform/approvalTrajectory.jsp"
+          "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp?_t=522682&_winid=w2203",
+          "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp?_t=533126&_winid=w9240",
+          "192.168.0.189:8888/ptsoa/bizform/approvalTrajectory.jsp"
         ]
       }
     },

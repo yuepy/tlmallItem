@@ -166,7 +166,7 @@
         var d = data.dataCustom;if (d == 'btn ysp-btn-one') {
           var btnTwo = elem.contentWindow.document.querySelector('#td_0_1').querySelector("a");btnTwo.click();
         } else if (d == 'btn ysp-btn-two') {
-          var btnTwo = elem.contentWindow.document.querySelector('#td_0_0').querySelector("a");btnTwo.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.replaceState(json, "", "http://192.168.2.40:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self"); //     setTimeout(function () {
+          var btnTwo = elem.contentWindow.document.querySelector('#td_0_0').querySelector("a");btnTwo.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.replaceState(json, "", "http://192.168.0.189:8888/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self"); //     setTimeout(function () {
           //       var json = {
           //         time: new Date().getTime()
           //       }; // @状态对象：记录历史记录点的额外对象，可以为空
@@ -174,7 +174,7 @@
           //       // @可选的url：浏览器不会检查url是否存在，只改变url，url必须同域，不能跨域
           //     var btn = elem.ownerDocument.querySelector('.mini-tools-close');
           // 		btn.click()
-          //       ysp.appMain.getActiveWindow().history.replaceState(json, "", "http://192.168.2.40:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self");
+          //       ysp.appMain.getActiveWindow().history.replaceState(json, "", "http://192.168.0.189:8888/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self");
           //     }, 500);
         }
       };
