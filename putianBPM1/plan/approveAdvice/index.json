@@ -49,47 +49,6 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
     },
-    "control24_TGcVyK": {
-      "location": {
-        "data": {
-          "tagName": "IFRAME"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[3]/IFRAME[1]",
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//IFRAME",
-              "descendant::DIV[@id=\"_tabs\"]//IFRAME"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[3]/IFRAME[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control24_TGcVyK"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": false,
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
-    },
     "control38_QOFFLs": {
       "location": {
         "data": {
@@ -164,7 +123,6 @@
     "context10_Hyn4t6": {
       "controls": [
         "control23_P3UvaB",
-        "control24_TGcVyK",
         "control38_QOFFLs",
         "control52_ASAZ2n"
       ],
@@ -245,16 +203,6 @@
         }
       ]
     },
-    "flow43_7tGl4B": {
-      "fromContextId": "context10_Hyn4t6",
-      "fromAction": "doAction",
-      "fromControlId": "control24_TGcVyK",
-      "toContexts": [
-        {
-          "toContextId": "context10_Hyn4t6"
-        }
-      ]
-    },
     "flow30_RerZ5C": {
       "fromContextId": "context10_Hyn4t6",
       "fromAction": "doAction",
@@ -296,21 +244,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl30_972bZc",
                 "onGetTemplate": "getTemplate_uiControl30_972bZc"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl31_dPgRix",
-          "controlId": "control24_TGcVyK",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl31_dPgRix",
-                "onGetTemplate": "getTemplate_uiControl31_dPgRix"
               }
             }
           }
