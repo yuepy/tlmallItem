@@ -11,6 +11,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -55,6 +59,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -120,13 +128,79 @@
       "roles": "element,button",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control8_IpuWEE": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "a/@href",
+            "prob": 3,
+            "value": {
+              "pathname": "/workflow/request/RequestView.jsp",
+              "redirect": "DIV[2]"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]/UL[1]/LI[2]/A[1]/DIV[2]",
+              "descendant::DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]/UL[1]/LI[2]/A[1]/DIV[2]",
+              "descendant::DIV[@id=\"drillmenu\"]/UL[1]/LI[2]/A[1]/DIV[2]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "DIV.drillmenu A.lfMenuItem DIV.leftMenuItemCenter"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/UL[1]/LI[2]/A[1]/DIV[2]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              0,
+              98,
+              105
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control8_IpuWEE"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context1_yeQcpw": {
       "controls": [
         "control2_rHoaEf",
-        "control7_AozTNp"
+        "control7_AozTNp",
+        "control8_IpuWEE"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -144,6 +218,26 @@
       "fromContextId": "context1_yeQcpw",
       "fromAction": "click",
       "fromControlId": "control2_rHoaEf",
+      "toContexts": [
+        {
+          "toContextId": "context1_yeQcpw"
+        }
+      ]
+    },
+    "flow7_RArMyN": {
+      "fromContextId": "context1_yeQcpw",
+      "fromAction": "click",
+      "fromControlId": "control7_AozTNp",
+      "toContexts": [
+        {
+          "toContextId": "context1_yeQcpw"
+        }
+      ]
+    },
+    "flow8_ooIXXE": {
+      "fromContextId": "context1_yeQcpw",
+      "fromAction": "doAction",
+      "fromControlId": "control8_IpuWEE",
       "toContexts": [
         {
           "toContextId": "context1_yeQcpw"
@@ -177,6 +271,21 @@
               "templateType": ""
             }
           }
+        },
+        {
+          "id": "uiControl8_JQmua0",
+          "controlId": "control8_IpuWEE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl8_JQmua0",
+                "onGetTemplate": "getTemplate_uiControl8_JQmua0"
+              }
+            }
+          }
         }
       ]
     }
@@ -203,6 +312,77 @@
             "FONTSYSTEMF",
             "_DialogBGDiv",
             "_DialogBGMask",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
+          ],
+          [
+            "FONTSYSTEMF",
+            "Icon_undefined",
+            "Message_undefined",
+            "_ButtonCancel_",
+            "_ButtonOK_",
+            "_ButtonRow_",
+            "_Container_",
+            "_Covering_",
+            "_DialogBGDiv",
+            "_DialogBGMask",
+            "_DialogButtons_",
+            "_DialogDiv_",
+            "_DialogTable_",
+            "_Draghandle_",
+            "_MessageIcon_",
+            "_MessageRow_",
+            "_MessageTable_",
+            "_MessageTitle_",
+            "_Message_",
+            "_Title_",
+            "_forTab_",
             "container",
             "content",
             "contentUl",
@@ -352,6 +532,63 @@
             "TR/TD/A",
             "TR/TD/DIV",
             "TR/TD/IFRAME",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/STYLE",
+            "TR/TD/TABLE",
+            "TR/TD/UL",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/IMG",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/DIV/TABLE",
+            "-/TABLE/TBODY",
+            "DIV/A/DIV",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/IFRAME",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-text",
+            "LI/A/DIV",
+            "LI/A/IMG",
+            "LI/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/FORM",
+            "TD/DIV/IFRAME",
+            "TD/DIV/IMG",
+            "TD/DIV/INPUT-button",
+            "TD/DIV/LINK",
+            "TD/DIV/META",
+            "TD/DIV/SCRIPT",
+            "TD/DIV/SPAN",
+            "TD/DIV/STYLE",
+            "TD/DIV/TABLE",
+            "TD/TABLE/TBODY",
+            "TD/UL/LI",
+            "TD/UL/LINK",
+            "TD/UL/STYLE",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/DIV",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
             "TR/TD/SCRIPT",
             "TR/TD/SPAN",
             "TR/TD/STYLE",

@@ -1,0 +1,255 @@
+{
+  "version": "0.1",
+  "id": "storePayVisitHES",
+  "targetURL": "http://192.168.1.224:8080/pttlCrm/res/index.html",
+  "jsFile": "index.js",
+  "chineseName": "门店拜访HES报告",
+  "description": "门店拜访HES报告",
+  "controls": {
+    "control246_RKuvOl": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control246_RKuvOl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='thirdLevelIframeContainer']<<IFRAME>>"
+    },
+    "control248_yvswOI": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"answerMessage\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.content"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 728,
+              "height": 518
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control248_yvswOI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='thirdLevelIframeContainer']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context66_DB5szN": {
+      "controls": [
+        "control246_RKuvOl",
+        "control248_yvswOI"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow213_OwzN2F": {
+      "toContexts": [
+        {
+          "toContextId": "context66_DB5szN"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page66_35DHcd": {
+      "contextId": "context66_DB5szN",
+      "layout": [
+        {
+          "id": "uiControl240_HNvtRC",
+          "controlId": "control246_RKuvOl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl240_HNvtRC",
+                "onGetTemplate": "getTemplate_uiControl240_HNvtRC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl242_iaXgx1",
+          "controlId": "control248_yvswOI",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl242_iaXgx1",
+                "onGetTemplate": "getTemplate_uiControl242_iaXgx1"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context66_DB5szN": [
+          "太力销售管理可视化系统"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context66_DB5szN": [
+          "192.168.1.224:8080/pttlCrm/res/index.html"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context66_DB5szN": [
+          [
+            "IM-iframe",
+            "ImIframe",
+            "brandHeader",
+            "contentContainer",
+            "currentUserName",
+            "docs-pictures",
+            "iframeTextName",
+            "logout",
+            "menu",
+            "mod-sideBar",
+            "sidebarGroove",
+            "timeShow"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context66_DB5szN": [
+          [
+            "active",
+            "backImage",
+            "box",
+            "clearfix",
+            "client-portrait",
+            "content-container",
+            "content-main-region",
+            "disabled",
+            "docs-pictures",
+            "gob",
+            "halving-line",
+            "head_search",
+            "hide",
+            "ibar-adsList",
+            "ibar-code",
+            "ibar-code-content",
+            "ibar-msg",
+            "icon",
+            "icon-arrow",
+            "icon-msg",
+            "img",
+            "layui-layer-move",
+            "logo",
+            "m-head",
+            "m-settings",
+            "main-container",
+            "mask",
+            "menu-model",
+            "mod-sideBar",
+            "nav-menu-item",
+            "nav-menu-title",
+            "nav-menu-wrapper",
+            "shrink",
+            "sidebar-container",
+            "sidebar-container-footer",
+            "sidebar-container-footer-wrapper",
+            "sidebar-groove",
+            "title",
+            "u-help",
+            "u-time"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context66_DB5szN": [
+          [
+            "-/-/DIV",
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/UL",
+            "A/DIV/IMG",
+            "A/DIV/SPAN",
+            "DIV/A/DIV",
+            "DIV/A/I",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FOOTER",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/NAV",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/FOOTER/DIV",
+            "DIV/NAV/UL",
+            "DIV/SPAN/A",
+            "DIV/UL/LI",
+            "FOOTER/DIV/DIV",
+            "LI/A/DIV",
+            "LI/A/I",
+            "LI/A/SPAN",
+            "LI/DIV/DIV",
+            "LI/DIV/I",
+            "LI/UL/LI",
+            "NAV/UL/LI",
+            "UL/LI/A",
+            "UL/LI/DIV",
+            "UL/LI/UL"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -3,6 +3,9 @@
   "id": "login",
   "targetURL": "http://192.168.200.63/login/Login.jsp",
   "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json"
+  },
   "chineseName": "登录页面",
   "description": "",
   "controls": {
@@ -393,6 +396,10 @@
       "toContexts": [
         {
           "toContextId": "context0_kM8s1V"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
         }
       ]
     }
@@ -484,6 +491,10 @@
       "contexts": {
         "context0_kM8s1V": [
           "金融街集团OA办公系统"
+        ],
+        "context1_yeQcpw": [
+          "金融街投资集团OA - 张济天",
+          "金融街投资集团OA - 孟星"
         ]
       }
     },
@@ -520,6 +531,112 @@
             "tokenAuthKey",
             "trTokenAuthKey",
             "userpassword"
+          ]
+        ],
+        "context1_yeQcpw": [
+          [
+            "FONTSYSTEMF",
+            "_DialogBGDiv",
+            "_DialogBGMask",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
+          ],
+          [
+            "FONTSYSTEMF",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
           ]
         ]
       }
