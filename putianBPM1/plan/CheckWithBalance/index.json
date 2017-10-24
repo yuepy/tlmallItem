@@ -1,0 +1,152 @@
+{
+  "version": "0.1",
+  "id": "CheckWithBalance",
+  "targetURL": "http://192.168.2.40:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w9707&_t=114983",
+  "jsFile": "index.js",
+  "requires": {
+    "CheckWithBalance": "../CheckWithBalance/index.json"
+  },
+  "chineseName": "已用余额查看",
+  "description": "",
+  "controls": {},
+  "contexts": {
+    "context17_Gh8OKK": {
+      "controls": [],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/FinanceManager\\/accountManager\\/fn_payApplyOrder\\/usedAccount\\.jsp?.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow31_eeTAnd": {
+      "fromContextId": "context8_ddpRhS",
+      "fromAction": "doAction",
+      "fromControlId": "control21_GeryA0",
+      "toContexts": [
+        {
+          "toContextId": "context17_Gh8OKK",
+          "toModelId": "CheckWithBalance"
+        }
+      ]
+    },
+    "flow38_46OXB2": {
+      "toContexts": [
+        {
+          "toContextId": "context17_Gh8OKK"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page17_TQ1foJ": {
+      "contextId": "context17_Gh8OKK",
+      "layout": []
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context17_Gh8OKK": [
+          "移动端页面"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context17_Gh8OKK": [
+          "192.168.2.40:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w9707&_t=114983",
+          "192.168.2.40:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w731&_t=851427",
+          "192.168.2.40:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w8704&_t=37437"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context17_Gh8OKK": [
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context17_Gh8OKK": [
+          [
+            "mini-disabled",
+            "mini-modal",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-resizer-trigger",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context17_Gh8OKK": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}
