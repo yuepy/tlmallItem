@@ -119,42 +119,6 @@ li {
   border-bottom: 1px solid #EFEFEF;
 }
 /*****************索引列表样式 -END***********************/
-/*****************公文审批-总经理审核 -START***********************/
-.ysp-manager-audit-wrapper {
-  background: #ffffff;
-  padding-left: 15px;
-}
-.ysp-manager-audit-wrapper .left-border {
-  margin-left: -15px;
-  width: 15px;
-  border-left: 6px solid #C19936;
-  padding-right: 9px;
-}
-.ysp-manager-audit-wrapper > div {
-  padding: 15px 0;
-  border-bottom: 1px solid #e0e0e0;
-}
-.ysp-manager-audit-header-tab .left-div {
-  width: 50%;
-  float: left;
-  text-align: center;
-}
-.ysp-manager-audit-header-tab .right-div {
-  width: 50%;
-  float: left;
-  text-align: center;
-}
-.ysp-manager-audit-header-tab .border-bottom {
-  height: 5px;
-  background: #ddd;
-  clear: both;
-}
-.ysp-manager-audit-header-tab .active_tab {
-  color: #C9A651;
-  border-bottom: 3px solid #C19936;
-  display: inline-block;
-}
-/*****************公文审批-总经理审核 -END***********************/
 /*_________________________________index模版:九宫格样式_________________________________*/
 #firstMenu {
   width: 100%;
@@ -211,3 +175,72 @@ li {
   background-size: 50%;
 }
 /*_________________________________index模版:九宫格样式_________________________________*/
+/* --------------------------------------table表格01合同会签样式*/
+.table_hthq {
+  background: #F3F3F3;
+}
+.table_hthq section {
+  margin: 10px 0;
+  background: #fff;
+  padding: 10px;
+  position: relative;
+}
+.table_hthq section .hthq_n1 {
+  overflow: hidden;
+  margin-top: 20px;
+}
+.table_hthq section .hthq_n1 div:nth-child(1) {
+  width: 80%;
+  float: left;
+  color: #202020;
+  font-weight: bold;
+  font-size: 16px;
+}
+.table_hthq section .hthq_n1 div:nth-child(2) {
+  width: 20%;
+  float: right;
+  text-align: right;
+  font-size: 14px;
+  padding-right: 15px;
+  height: 40px;
+}
+.table_hthq section .hthq_n1 .zc {
+  background: url(../local/img/zhengchang.png) no-repeat center 5px;
+}
+.table_hthq section .hthq_n1 .zy {
+  background: url(../local/img/zhongyao.png) no-repeat center 5px;
+}
+.table_hthq section .hthq_n1 .jj {
+  background: url(../local/img/jinji.png) no-repeat center 5px;
+}
+.table_hthq section .ht_n2 {
+  margin-top: 15px;
+}
+.table_hthq section .ht_n2 .sjt {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 15px ;
+  bottom: 10px;
+  background: url(../local/img/shangjiantou.png) no-repeat right center;
+  background-size: 20px;
+}
+.table_hthq section .ht_n2 .xjt {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 15px ;
+  bottom: 10px;
+  background: url(../local/img/xiajiantou.png) no-repeat right center;
+  background-size: 20px;
+}
+.table_hthq section .ht_n2 span {
+  font-size: 14px;
+  color: #666666;
+}
+.table_hthq section .ht_n2 span:nth-child(2) {
+  font-size: 14px;
+  color: #414e79;
+  margin-left: 10px;
+  font-weight: bold;
+}
