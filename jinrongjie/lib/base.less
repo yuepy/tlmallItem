@@ -153,6 +153,7 @@ li {list-style: none}
 	background: #ffffff;
 	padding-left: 15px;
   font-size: @base-font-size;
+  border-bottom: 5px solid #ddd;
   .left-border{
     margin-left:-15px;
     width:15px; 
@@ -190,6 +191,19 @@ li {list-style: none}
     color: #C9A651;
   	border-bottom: 3px solid #C19936;
     display: inline-block;
+  }
+}
+.ysp-manager-audit-title{
+  font-size: @base-font-size;
+  text-align: center;
+  border-bottom: 5px solid #ddd;
+  .ysp-manager-audit-main-title{
+    font-size: @base-font-size+2px;
+    font-weight: bold;
+  }
+  .ysp-manager-audit-subtitle{
+    font-size: @base-font-size;
+    color:#999999;
   }
 }
 /*****************公文审批-总经理审核 -END***********************/
@@ -251,74 +265,3 @@ li {list-style: none}
 }
 
 /*_________________________________index模版:九宫格样式_________________________________*/
-
-
-/* --------------------------------------table表格01合同会签样式*/
-.table_hthq{
-  background: #F3F3F3;
-  section{
-    margin: 10px 0;
-    background: #fff;
-    padding: 10px;
-    position: relative;
-    .hthq_n1{
-      overflow: hidden;
-      margin-top: 20px;
-      div:nth-child(1){
-        width: 80%;
-        float: left;
-        color: rgb(32,32,32);
-        font-weight: bold;
-        font-size: 16px;
-      }
-      div:nth-child(2){
-        width:20%;
-        float: right;
-        text-align: right;
-        font-size: @base-font-size;
-        padding-right: 15px;
-        height: 40px;
-      }
-      .zc{
-        background: url(../local/img/zhengchang.png) no-repeat center 5px ;
-      }
-      .zy{
-        background: url(../local/img/zhongyao.png) no-repeat center 5px ;
-      }
-      .jj{
-        background: url(../local/img/jinji.png) no-repeat center 5px ;
-      }
-    }
-    .ht_n2{
-      margin-top: 15px;
-      .sjt{
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        right: 15px ;
-        bottom: 10px;
-        background: url(../local/img/shangjiantou.png) no-repeat right center ;
-        background-size:20px;
-      }
-      .xjt{
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        right: 15px ;
-        bottom: 10px;
-        background: url(../local/img/xiajiantou.png) no-repeat right center ;
-        background-size:20px;
-      }
-      span{
-        font-size: @base-font-size;
-        color: rgb(102,102,102)
-      }
-      span:nth-child(2){
-        font-size: @base-font-size;
-        color: rgb(65,78,121);
-        margin-left: 10px;
-        font-weight: bold;
-      }
-    }
-  }
-}

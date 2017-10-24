@@ -124,6 +124,7 @@ li {
   background: #ffffff;
   padding-left: 15px;
   font-size: 14px;
+  border-bottom: 5px solid #ddd;
 }
 .ysp-manager-audit-wrapper .left-border {
   margin-left: -15px;
@@ -160,6 +161,19 @@ li {
   color: #C9A651;
   border-bottom: 3px solid #C19936;
   display: inline-block;
+}
+.ysp-manager-audit-title {
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 5px solid #ddd;
+}
+.ysp-manager-audit-title .ysp-manager-audit-main-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.ysp-manager-audit-title .ysp-manager-audit-subtitle {
+  font-size: 14px;
+  color: #999999;
 }
 /*****************公文审批-总经理审核 -END***********************/
 /*_________________________________index模版:九宫格样式_________________________________*/
@@ -218,72 +232,3 @@ li {
   background-size: 50%;
 }
 /*_________________________________index模版:九宫格样式_________________________________*/
-/* --------------------------------------table表格01合同会签样式*/
-.table_hthq {
-  background: #F3F3F3;
-}
-.table_hthq section {
-  margin: 10px 0;
-  background: #fff;
-  padding: 10px;
-  position: relative;
-}
-.table_hthq section .hthq_n1 {
-  overflow: hidden;
-  margin-top: 20px;
-}
-.table_hthq section .hthq_n1 div:nth-child(1) {
-  width: 80%;
-  float: left;
-  color: #202020;
-  font-weight: bold;
-  font-size: 16px;
-}
-.table_hthq section .hthq_n1 div:nth-child(2) {
-  width: 20%;
-  float: right;
-  text-align: right;
-  font-size: 14px;
-  padding-right: 15px;
-  height: 40px;
-}
-.table_hthq section .hthq_n1 .zc {
-  background: url(../local/img/zhengchang.png) no-repeat center 5px;
-}
-.table_hthq section .hthq_n1 .zy {
-  background: url(../local/img/zhongyao.png) no-repeat center 5px;
-}
-.table_hthq section .hthq_n1 .jj {
-  background: url(../local/img/jinji.png) no-repeat center 5px;
-}
-.table_hthq section .ht_n2 {
-  margin-top: 15px;
-}
-.table_hthq section .ht_n2 .sjt {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: 15px ;
-  bottom: 10px;
-  background: url(../local/img/shangjiantou.png) no-repeat right center;
-  background-size: 20px;
-}
-.table_hthq section .ht_n2 .xjt {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: 15px ;
-  bottom: 10px;
-  background: url(../local/img/xiajiantou.png) no-repeat right center;
-  background-size: 20px;
-}
-.table_hthq section .ht_n2 span {
-  font-size: 14px;
-  color: #666666;
-}
-.table_hthq section .ht_n2 span:nth-child(2) {
-  font-size: 14px;
-  color: #414e79;
-  margin-left: 10px;
-  font-weight: bold;
-}
