@@ -117,6 +117,31 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
+    },
+    "control24_HKVNpA": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              7
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control24_HKVNpA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -124,7 +149,8 @@
       "controls": [
         "control23_P3UvaB",
         "control38_QOFFLs",
-        "control52_ASAZ2n"
+        "control52_ASAZ2n",
+        "control24_HKVNpA"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -262,6 +288,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl31_N4421V",
+          "controlId": "control24_HKVNpA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl31_N4421V",
+                "onGetTemplate": "getTemplate_uiControl31_N4421V"
+              }
+            }
+          }
         }
       ]
     }
@@ -339,6 +380,14 @@
             "mini-$",
             "mini-$body$",
             "tabs"
+          ],
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs",
+            "toast"
           ]
         ],
         "context4_d60WvN": [
