@@ -5321,14 +5321,16 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   overflow: hidden;
   white-space: nowrap;
   color: #4796ed;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 .ysp-custom-goodsMessages .cardlist .cardItem .itemAft {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: flex-end;
+  width: 28%;
+  text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap;
-  flex-direction: row;
-  width: 20%;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 .ysp-custom-goodsMessages .cardlist .cardItem .itemWl {
   display: -webkit-box;
