@@ -1,3 +1,4 @@
+// debugger;
 String.prototype.trim=function(){
      return this.replace(/(^\s*)|(\s*$)/g, '');
 };
@@ -39,9 +40,13 @@ tfcToast.take = tfcToast.take || function(text){//不重新定义方法，解决
     var left = window.getTop().document.body.scrollWidth - winWidth/2 - window.getTop().$("#toast").width()/2 ;
     window.getTop().$("#toast").css("left",parseInt(left) + "px");
     window.getTop().$("#toast").css("top",parseInt(top) + "px");
-    window.getTop().$("#toast").fadeIn(1000);
-	window.getTop().$("#toast").fadeTo(1500,0.8);
-	window.getTop().$("#toast").fadeOut(1500);
+		// window.getTop().$("#toast").fadeIn(100);
+		// window.getTop().$("#toast").fadeTo(200,0.1);
+		// window.getTop().$("#toast").fadeOut(200);
+  	window.getTop().$("#toast").show();
+    setTimeout(function(){
+      window.getTop().$("#toast").hide();
+    },1000)
 };
 
  
