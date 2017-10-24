@@ -49,6 +49,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -73,13 +77,40 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control26_JWxPmN": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"weaver\"]//DIV[@id=\"_xTable\"]/DIV[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control26_JWxPmN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context4_ktABGz": {
       "controls": [
         "control20_E5aiXM",
-        "control2_G3dobM"
+        "control2_G3dobM",
+        "control26_JWxPmN"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -134,6 +165,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl20_W3PmsR",
                 "onGetTemplate": "getTemplate_uiControl20_W3PmsR"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl26_JgTnii",
+          "controlId": "control26_JWxPmN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl26_JgTnii",
+                "onGetTemplate": "getTemplate_uiControl26_JgTnii"
               }
             }
           }
