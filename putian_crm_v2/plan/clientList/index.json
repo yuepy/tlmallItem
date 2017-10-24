@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "clientInfo": "../clientInfo/index.json",
-    "clientList": "../clientList/index.json"
+    "clientList": "../clientList/index.json",
+    "storeList": "../storeList/index.json"
   },
   "chineseName": "客户列表",
   "description": "客户列表页面",
@@ -165,6 +166,31 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control253_T387SK": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control253_T387SK"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -173,7 +199,8 @@
         "control5_ReXFd8",
         "control29_Mfu81p",
         "control37_5gPfm7",
-        "control97_glUzoq"
+        "control97_glUzoq",
+        "control253_T387SK"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -236,6 +263,20 @@
           "toContextId": "context3_sTqBPp"
         }
       ]
+    },
+    "flow219_9HSIJU": {
+      "fromContextId": "context3_sTqBPp",
+      "fromAction": "doAction",
+      "fromControlId": "control253_T387SK",
+      "toContexts": [
+        {
+          "toContextId": "context3_sTqBPp"
+        },
+        {
+          "toContextId": "context57_AibCE9",
+          "toModelId": "storeList"
+        }
+      ]
     }
   },
   "pages": {
@@ -253,6 +294,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl33_9KK0th",
                 "onGetTemplate": "getTemplate_uiControl33_9KK0th"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl247_DHv8u2",
+          "controlId": "control253_T387SK",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl247_DHv8u2",
+                "onGetTemplate": "getTemplate_uiControl247_DHv8u2"
               }
             }
           }
@@ -364,6 +420,15 @@
             "currentUserName",
             "logout",
             "menu"
+          ],
+          [
+            "C",
+            "Page",
+            "clientList",
+            "clientListTbody",
+            "customerList_name",
+            "customerList_search",
+            "mainContainer"
           ]
         ],
         "context0_gNLKFq": [
@@ -501,6 +566,31 @@
             "customerList_name",
             "customerList_search",
             "export-image",
+            "export-imagetitle",
+            "icon",
+            "icon-title",
+            "information-serch",
+            "leftPart",
+            "mask",
+            "pagination",
+            "skip",
+            "skip-num",
+            "skip-right-icon",
+            "skip_count",
+            "skip_right_goto",
+            "table",
+            "table-border"
+          ],
+          [
+            "active",
+            "commpnPage",
+            "content",
+            "content-body",
+            "content-bodytable",
+            "content_head",
+            "customerFontStyle",
+            "customerList_name",
+            "customerList_search",
             "export-imagetitle",
             "icon",
             "icon-title",

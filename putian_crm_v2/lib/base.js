@@ -87,6 +87,9 @@
       case 'newInformationTotle':
         ysp.customHelper.secondMenu.toPlanByMenuName('客户信息录入', null, menuId);
         break;
+      case "clientStoreCard":
+        ysp.customHelper.secondMenu.toPlanByMenuName('客户360', null, menuId);
+        break;
     }
   }
   //强制执行适配方案
@@ -299,7 +302,10 @@
         case 'achievementSecondMenu':
           task.title = "YJDCBB";
           break;
-        case 'storeListCard' :
+        case 'clientStoreCard': // 客户和门店
+          task.title = "cs_customerAndStore";
+          break;
+        case 'storeList'://门店
           task.title = "STORE360";
           break;
         default:
@@ -400,7 +406,7 @@
        realType = "customerInformationFIll";
        aWin && (aWin.location.href.indexOf('index.html') == -1) && aWin.location.reload()
     }
-    if (type === "achievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' ) {
+    if (type === "achievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard") {
       if (activeContext && activeContext.model.id == realType) {
         console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
         return;
@@ -700,7 +706,8 @@
           saleReachYear: "年度销售达成",
           customerInformationFIll: "客户信息录入",
           HESInformationFill: "门店信息录入（HES）",
-          storeListCard: "门店360视图"
+          storeList: "门店360",
+          clientList: '客户360'
         };
         for (var key in this.menuMap) {
           if (this.menuMap.hasOwnProperty(key)) {
@@ -711,7 +718,8 @@
           visitManager: ["拜访总览", "拜访查看", "@我的报告"],
           dataPanel: ["库存查询", "分货查询", "产品上下架信息查询"],
           achievement: ["业绩总览", "月度销售达成", "年度销售达成"],
-          customerIn: ["客户信息录入", "门店信息录入（HES）"]
+          customerIn: ["客户信息录入", "门店信息录入（HES）"],
+          clientStoreCard: ["客户360", "门店360"]
         }
       },
       getMenuNames: function(parentMenuType) { //parentMenuType 相当于是modelId'
@@ -818,7 +826,6 @@
             case "客户信息录入":
               parentMenuType = "customerIn";
               break;
-
           }
           var callback = function(menuInfo) {
             if (menuInfo.indexOf(menuName) != -1) {
