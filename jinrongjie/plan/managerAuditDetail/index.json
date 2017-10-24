@@ -6,46 +6,6 @@
   "chineseName": "请求标题详情页",
   "description": "请求标题详情页",
   "controls": {
-    "control20_psTrT0": {
-      "location": {
-        "data": {
-          "tagName": "P"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              24
-            ],
-            "value": "P.bt"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control20_psTrT0"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control22_gQSvMW": {
       "location": {
         "data": {
@@ -92,74 +52,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control21_cC1P6Z": {
-      "location": {
-        "data": {
-          "tagName": "P"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              20
-            ],
-            "value": "P.bh"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control21_cC1P6Z"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control7_PB4Av0": {
-      "location": {
-        "data": {
-          "tagName": "P"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              24
-            ],
-            "value": "P.bh"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control7_PB4Av0"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control25_PhAtSh": {
       "location": {
         "data": {
@@ -182,13 +74,17 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
     "control23_nAAQod": {
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -203,26 +99,135 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control24_s2hR81": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control24_s2hR81"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control26_eJVogb": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "标题"
+              ],
+              "visText": [
+                "标题"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[3]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "标题",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control27_7ULqbn": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "编号：FSIG-201710170009"
+              ],
+              "visText": [
+                "编号：FSIG-201710170009"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              24
+            ],
+            "value": "P.bh"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[2]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "编号：FSIG-201710170009",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
     "context4_wRixwF": {
       "controls": [
-        "control20_psTrT0",
         "control22_gQSvMW",
-        "control21_cC1P6Z",
-        "control7_PB4Av0",
         "control25_PhAtSh",
-        "control23_nAAQod"
+        "control23_nAAQod",
+        "control24_s2hR81"
       ],
-      "anchors": [],
+      "anchors": [
+        "control26_eJVogb",
+        "control27_7ULqbn"
+      ],
       "urlAnchor": []
     }
   },
   "flows": {
     "flow12_x3WmXK": {
+      "toContexts": [
+        {
+          "toContextId": "context4_wRixwF"
+        }
+      ]
+    },
+    "flow13_JGLLzh": {
+      "fromContextId": "context4_wRixwF",
+      "fromAction": "doAction",
+      "fromControlId": "control24_s2hR81",
       "toContexts": [
         {
           "toContextId": "context4_wRixwF"
@@ -235,6 +240,21 @@
       "contextId": "context4_wRixwF",
       "layout": [
         {
+          "id": "uiControl24_s3lOQh",
+          "controlId": "control24_s2hR81",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl24_s3lOQh",
+                "onGetTemplate": "getTemplate_uiControl24_s3lOQh"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl22_EqoDDT",
           "controlId": "control22_gQSvMW",
           "display": {
@@ -245,51 +265,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl22_EqoDDT",
                 "onGetTemplate": "getTemplate_uiControl22_EqoDDT"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl20_N9hoUn",
-          "controlId": "control20_psTrT0",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl20_N9hoUn",
-                "onGetTemplate": "getTemplate_uiControl20_N9hoUn"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl7_elblP7",
-          "controlId": "control7_PB4Av0",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl7_elblP7",
-                "onGetTemplate": "getTemplate_uiControl7_elblP7"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl21_ybHy8x",
-          "controlId": "control21_cC1P6Z",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl21_ybHy8x",
-                "onGetTemplate": "getTemplate_uiControl21_ybHy8x"
               }
             }
           }

@@ -152,15 +152,22 @@ li {list-style: none}
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
 	padding-left: 15px;
+  font-size: @base-font-size;
   .left-border{
     margin-left:-15px;
     width:15px; 
-    border-left:6px solid #C19936;
+    border-left:4px solid #C19936;
     padding-right:9px;
   }
 	>div{
 		padding: 15px 0;
     border-bottom: 1px solid #e0e0e0;
+    .title{
+      color: #D1C090;
+    }
+    .content{
+      font-size: @base-font-size+2px;
+    }
 	}
 }
 .ysp-manager-audit-header-tab{
