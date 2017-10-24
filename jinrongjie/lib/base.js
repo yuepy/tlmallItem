@@ -220,8 +220,8 @@
     });
   }
   function _firstMenus(elem,operation){
-    if(typeof planName !== 'string'){
-      console.error('toPlan : planName参数类型不正确')
+    if(typeof operation !== 'string'){
+      console.error('firstMenus : operation参数类型不正确')
     }
     var aEls = elem.querySelectorAll('ul li > a');
     [].forEach.call(aEls,function(item,index){
