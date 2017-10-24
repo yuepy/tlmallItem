@@ -165,6 +165,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -180,6 +184,27 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control23_nAAQod": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control23_nAAQod"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -189,7 +214,8 @@
         "control22_gQSvMW",
         "control21_cC1P6Z",
         "control7_PB4Av0",
-        "control25_PhAtSh"
+        "control25_PhAtSh",
+        "control23_nAAQod"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -279,6 +305,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl25_U9iq0i",
                 "onGetTemplate": "getTemplate_uiControl25_U9iq0i"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl23_PUM7iP",
+          "controlId": "control23_nAAQod",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl23_PUM7iP",
+                "onGetTemplate": "getTemplate_uiControl23_PUM7iP"
               }
             }
           }

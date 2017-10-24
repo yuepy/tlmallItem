@@ -45,6 +45,24 @@
     getTemplate_uiControl25_U9iq0i: function () {
       var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.data.customData;\n    return (\n      <div>\n        <div>\n        \t<div>{data.title}</div>\n          <div>{data.numbering}</div>\n        </div>\n      </div>\n    )\n  }\n});";
       return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    var data = this.props.data.customData;\n    return React.createElement(\n      \"div\",\n      null,\n      React.createElement(\n        \"div\",\n        null,\n        React.createElement(\n          \"div\",\n          null,\n          data.title\n        ),\n        React.createElement(\n          \"div\",\n          null,\n          data.numbering\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control23_nAAQod: function (elem) {
+      if (!elem) {
+        return null;
+      }var data = {};if (!elem.querySelector('tbody')) {
+        return null;
+      }var tbody = elem.querySelector('tbody');if (!tbody.querySelectorAll('tr')) {
+        return null;
+      }var tbodyTrs = tbody.querySelectorAll('tr')[0];var content = [];for (var i = 0; i < tbodyTrs.length; i++) {
+        var item = [];if (!tbodyTrs.querySelectorAll('td')) {
+          continue;
+        }var tds = tbodyTrs[i].querySelectorAll('td');for (var j = 0; j < tds.length; j++) {}
+      }return data;
+    },
+    doAction_uiControl23_PUM7iP: function (data, elem) {},
+    getTemplate_uiControl23_PUM7iP: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div>\n        \u6211\u662F\u81EA\u5B9A\u4E49\u7EC4\u4EF6\u541B~ \u4F46\u662F\u6211\u8FD8\u6CA1\u6709\u4EFB\u4F55\u5185\u5BB9\uFF0C\u8D76\u5FEB\u6765\u7F16\u8F91\u6211\u5427~\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      null,\n      \"\\u6211\\u662F\\u81EA\\u5B9A\\u4E49\\u7EC4\\u4EF6\\u541B~ \\u4F46\\u662F\\u6211\\u8FD8\\u6CA1\\u6709\\u4EFB\\u4F55\\u5185\\u5BB9\\uFF0C\\u8D76\\u5FEB\\u6765\\u7F16\\u8F91\\u6211\\u5427~\"\n    );\n  }\n});";
     }
   });
 })(window, ysp);

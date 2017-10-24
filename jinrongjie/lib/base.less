@@ -32,9 +32,68 @@
 
 body {
 	-webkit-overflow-scrolling: initial !important;
+  background: #fcfcfc;
 }
 li{list-style: none;}
 ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
+
+/*  公共header样式  */
+.ysp-header-wrapper{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.7rem;
+  background-color: rgb(194,154,42);
+  color: #fff;
+  font-size:18px;
+  .back{
+    margin-left: 15px;
+  	background:url('../lib/images/Back@3x.png') center center;
+    display: inline-block;
+    width: 17px;
+    height:22px;
+    background-size: 100%;
+  }
+  > span:nth-child(1){
+    flex: 0 1 20%;
+    display: flex;
+    align-items: center;
+    > span:first-child{
+      margin-left: .2rem;
+      display:flex;
+      align-items:center;
+    }
+  }
+  > span:nth-child(2){
+    flex: 0 1 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  > span:nth-child(3){
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    flex: 0 1 20%;
+    > span:first-child{
+        margin-left: .2rem;
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+    }
+    
+    > span:last-child{
+        margin-left: .3rem;
+    }
+  }
+  .ysp-header-edit{
+    display: inline-block;
+    width: 50px;
+    font-weight: normal;
+  }
+}
 
 /*
 /---------------------------------------------------------------------------------------------------------
@@ -128,3 +187,60 @@ li {list-style: none}
 }
 /*****************公文审批-总经理审核 -END***********************/
 
+/*_________________________________index模版:九宫格样式_________________________________*/
+
+#firstMenu{
+  width: 100%;
+  background: #fff;
+  ul{
+    li{
+      &:first-child,&:nth-child(2),&:nth-child(4),&:nth-child(5){
+        border-right:1px solid #eee;
+        border-bottom:1px solid #eee;
+      }
+      &:nth-child(4),&:nth-child(5){
+        border-bottom:none;
+      }
+      &:nth-child(3){
+         border-bottom:1px solid #eee;
+      }
+      width: 33.333333333333333333333%;
+      height: 134px;
+      display: inline-block;
+      padding: 25px;
+      span{
+        font-size: 16px;
+        color: #aaa;
+      }
+      
+    }
+    i{
+      display: block;
+      width: 100%;
+      height: 40px;
+      margin-bottom:15px;
+    }
+    i.ysp-icon-Newlybuild{
+      background: url('../lib/images/xinjian.png') 15px center no-repeat;
+    	background-size: 50%;
+    }
+    i.ysp-icon-Agency{
+      background: url('../lib/images/daiban.png') 15px center no-repeat;
+    	background-size: 50%;
+    }
+    i.ysp-icon-Todo{
+      background: url('../lib/images/yiban.png') 15px center no-repeat;
+    	background-size: 50%;
+    }
+    i.ysp-icon-banjie{
+      background: url('../lib/images/banjie.png') 15px center no-repeat;
+    	background-size: 50%;
+    }
+    i.ysp-icon-My{
+      background: url('../lib/images/liucheng.png') 15px center no-repeat;
+    	background-size: 50%;
+    }
+  }
+}
+
+/*_________________________________index模版:九宫格样式_________________________________*/
