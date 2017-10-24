@@ -2,6 +2,7 @@
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function (win, ysp) {
   var utils = ysp.utils;
+  var flag = true;
   ysp.customHelper = {};
   var winContainer = []; // openWinow 方法地址存入的数组
   var topWin = null; // Window对象
@@ -43,7 +44,6 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc){
-
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
