@@ -41,7 +41,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": ""
     },
     "control2_G3dobM": {
@@ -87,6 +87,16 @@
   },
   "flows": {
     "flow12_Qp8vOv": {
+      "toContexts": [
+        {
+          "toContextId": "context4_ktABGz"
+        }
+      ]
+    },
+    "flow7_TumIR8": {
+      "fromContextId": "context4_ktABGz",
+      "fromAction": "doAction",
+      "fromControlId": "control20_E5aiXM",
       "toContexts": [
         {
           "toContextId": "context4_ktABGz"

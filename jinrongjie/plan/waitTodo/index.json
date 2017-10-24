@@ -584,6 +584,32 @@
       "roles": "element,button,link",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control24_It6bP6": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.Shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control24_It6bP6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -598,7 +624,8 @@
         "control14_A3OgKe",
         "control15_3xdokX",
         "control16_XTk7W6",
-        "control17_rFxZL7"
+        "control17_rFxZL7",
+        "control24_It6bP6"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -643,6 +670,16 @@
           "toModelId": "Contractcountersigned"
         }
       ]
+    },
+    "flow7_Un8Upw": {
+      "fromContextId": "context2_owrLEy",
+      "fromAction": "doAction",
+      "fromControlId": "control9_Ks2mo3",
+      "toContexts": [
+        {
+          "toContextId": "context2_owrLEy"
+        }
+      ]
     }
   },
   "pages": {
@@ -660,6 +697,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl9_TJh8bp",
                 "onGetTemplate": "getTemplate_uiControl9_TJh8bp"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl24_E03y0k",
+          "controlId": "control24_It6bP6",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl24_E03y0k",
+                "onGetTemplate": "getTemplate_uiControl24_E03y0k"
               }
             }
           }
@@ -787,7 +839,8 @@
       "contexts": {
         "context2_owrLEy": [
           "192.168.200.63/workflow/request/RequestView.jsp?e71508480096097=",
-          "192.168.200.63/workflow/request/RequestType.jsp?needPopupNewPage=true"
+          "192.168.200.63/workflow/request/RequestType.jsp?needPopupNewPage=true",
+          "192.168.200.63/workflow/request/RequestView.jsp"
         ],
         "context4_wRixwF": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=154031&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
