@@ -100,13 +100,44 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control2_G3dobM": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "TABLE.TopTitle TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control2_G3dobM"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context4_ktABGz": {
       "controls": [
         "control19_sOAfhb",
-        "control20_E5aiXM"
+        "control20_E5aiXM",
+        "control2_G3dobM"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -125,6 +156,21 @@
     "page4_2lwS4t": {
       "contextId": "context4_ktABGz",
       "layout": [
+        {
+          "id": "uiControl2_75zqOD",
+          "controlId": "control2_G3dobM",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl2_75zqOD",
+                "onGetTemplate": "getTemplate_uiControl2_75zqOD"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl19_WiZPxr",
           "controlId": "control19_sOAfhb",
