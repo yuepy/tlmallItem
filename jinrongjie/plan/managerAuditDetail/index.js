@@ -49,15 +49,18 @@
     getData_control23_nAAQod: function (elem) {
       if (!elem) {
         return null;
-      }var data = {};if (!elem.querySelector('tbody')) {
+      }var data = {};var content = [];if (!elem.querySelector('tbody')) {
         return null;
       }var tbody = elem.querySelector('tbody');if (!tbody.querySelectorAll('tr')) {
         return null;
-      }var tbodyTrs = tbody.querySelectorAll('tr')[0];var content = [];for (var i = 0; i < tbodyTrs.length; i++) {
-        var item = [];if (!tbodyTrs.querySelectorAll('td')) {
-          continue;
-        }var tds = tbodyTrs[i].querySelectorAll('td');for (var j = 0; j < tds.length; j++) {}
-      }return data;
+      }var tbodyTrs = tbody.querySelectorAll('tr');var trlength = null; //tmp
+      trlength = tbodyTrs.length;[].forEach.call(tbodyTrs, function (trItem, trIndex) {
+        var tds = trItem.querySelectorAll('td');if (trIndex == 0) {
+          [].forEach.call(tds, function (tdItem, tdIndex) {
+            content.push(tdItem.textContent);
+          });
+        }
+      });data.content = content;return data;
     },
     doAction_uiControl23_PUM7iP: function (data, elem) {},
     getTemplate_uiControl23_PUM7iP: function () {
