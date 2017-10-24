@@ -5354,11 +5354,11 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   background-repeat: no-repeat;
   background-image: url(images/visitcalendar-pre-icon.png);
 }
-.ysp-custom-goodsMessages .cardlist .ysp-cardlist-all {
+.ysp-custom-goodsMessages .ysp-cardlist-all {
   width: 100%;
   text-align: center;
 }
-.ysp-custom-goodsMessages .cardlist .ysp-cardlist-all > div:nth-child(1) {
+.ysp-custom-goodsMessages .ysp-cardlist-all > div:nth-child(1) {
   text-align: center;
   border-radius: 5px;
   background: #e7350d;
@@ -5366,6 +5366,7 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   color: #fff;
   width: 40%;
   margin: 0 auto;
+  margin-top: 20px;
 }
 .ysp-custom-goodsMessages .searchDiv {
   display: flex;
@@ -5860,6 +5861,39 @@ div[data-ysp-modelid="clientManageInfoCollect"] div[data-componentsid="uiControl
   background: #005aa0;
   border: 1px solid #eee;
   padding: 5px 55px!important;
+  color: #fff;
+}
+.paginationFlag {
+  background: #fff!important;
+  padding: 10px;
+}
+.paginationFlag div {
+  text-align: center;
+  width: 32%;
+  display: inline-block;
+}
+.paginationFlag button {
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  white-space: nowrap;
+  border-radius: 5px;
+}
+.paginationFlag div:nth-child(1) button {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 5px 25px !important;
+}
+.paginationFlag div:nth-child(2) button {
+  background: #005aa0;
+  border: 1px solid #eee;
+  padding: 5px 25px!important;
+  color: #fff;
+}
+.paginationFlag div:nth-child(3) button {
+  background: #7ACD3E;
+  border: 1px solid #eee;
+  padding: 5px 25px!important;
   color: #fff;
 }
 .ysp-filtermodal {
