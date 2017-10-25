@@ -14,6 +14,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -44,6 +48,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -66,15 +74,50 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": ""
+    },
+    "control58_c5FBEA": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::DIV[@id=\"grid\"]/DIV[1]/DIV[2]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control58_c5FBEA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>"
     }
   },
   "contexts": {
     "context18_3haPT6": {
       "controls": [
         "control53_lq1TnH",
-        "control57_E7T748"
+        "control57_E7T748",
+        "control58_c5FBEA"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -145,6 +188,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl55_KmWklP",
+          "controlId": "control58_c5FBEA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl55_KmWklP",
+                "onGetTemplate": "getTemplate_uiControl55_KmWklP"
+              }
+            }
+          }
         }
       ]
     }
@@ -166,7 +224,16 @@
           "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w6643&_t=769337",
           "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=790189",
           "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=431468",
-          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=494500"
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=494500",
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w446&_t=925974",
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=430206",
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=125745",
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=481492",
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=91244",
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w908&_t=898222",
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w908&_t=186123",
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w908&_t=127251",
+          "192.168.2.40:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w5840&_t=360314"
         ]
       }
     },
