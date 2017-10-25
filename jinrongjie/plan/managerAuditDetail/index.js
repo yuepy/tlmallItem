@@ -178,32 +178,37 @@
     getData_control21_nsaVUJ: function (elem) {
       if (!elem) {
         return;
-      }var data = {};var title = [];var content = [];var tbody = $(elem).children('tbody');var trs = $(tbody).children('tr');if (trs.length > 1) {
+      }var data = {};var leftData = [];var rightData = [];var title = [];var content = [];var tbody = $(elem).children('tbody');var trs = $(tbody).children('tr');if (trs.length > 1) {
         for (var i = 0; i < trs.length; i++) {
           if (i == 0) {
             var ths = trs[0].querySelectorAll('th');[].forEach.call(ths, function (item, index) {
-              title.push(item.textContent.trim());
-            });data.title = title;
+              if (index !== 1) {
+                title.push(item.textContent.trim());
+              }
+            });
           } else {
-            var tds = $(trs[i]).children('td');
+            var tds = $(trs[i]).children('td');var trContent = [];[].forEach.call(tds, function (item, index) {
+              if (item.querySelector('table')) {// trContent.push(item.querySelector('p').textContent);意见
+              } else {
+                trContent.push(item.textContent.trim());
+              }
+            });content.push(trContent);
           }
         }
-      } // var theads = elem.querySelector('.HeaderForWF');
-      // if(theads){
-      //   var ths = theads.querySelectorAll('th');
-      //   for(var i=0; i<ths.length; i++){
-      //     title.push(ths[i].textContent.trim());
-      //   }
-      //   data.title=title;
-      // }
-      // data.length=trs.length;
-      // data.content = content;
-      return data;
+      }for (var i = 0; i < content.length; i++) {
+        var innerContent = content[i];var lSingleData = [];var rSingleData = [];for (var j = 0; j < title.length; j++) {
+          if (j == 0) {
+            lSingleData.push(title[j]);lSingleData.push(innerContent[j]);
+          } else {
+            rSingleData.push(title[j] + ":" + innerContent[j]);
+          }
+        }leftData.push(lSingleData);rightData.push(rSingleData);
+      }data.leftData = leftData;data.rightData = rightData;return data;
     },
     doAction_uiControl21_lPfTHW: function (data, elem) {},
     getTemplate_uiControl21_lPfTHW: function () {
-      var selfTemplate = "import {\n  Component\n} from 'react';\nimport {\n\tCustomHeader,Dialog,Alert\n} from 'ysp-custom-components';\nexport default class extends Component {\n  constructor(props){\n    super(props);\n  }\n  render(){\n    return null;\n  }\n}";
-      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n      return null;\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
+      var selfTemplate = "import {\n\tComponent\n} from 'react';\nimport {\n\tCustomHeader, Dialog, Alert\n} from 'ysp-custom-components';\nexport default class extends Component {\n\tconstructor(props) {\n\t\tsuper(props);\n\t}\n\trender() {\n\t\tvar _this = this;\n\t\tvar data = _this.props.data.customData;\n\t\tvar leftData = data.leftData;\n\t\tvar rightData = data.rightData;\n\n\t\treturn (\n\t\t\t<div style={{'padding':'15px'}}>\n\t\t\t\t{leftData ? leftData.map((litem, lindex)=>{\n          return(\n\t\t\t\t\t\t<div>\n              <div>\n                {litem.map((innerLitem)=>{\n                  return (\n                  \t<div>\n                    \t{innerLitem}\n                    </div>\n                  );\n                })}\n              </div>\n              <div>\n            \t{rightData[lindex].map((ritem, rindex)=>{\n                return(\n                  <div>{ritem}</div>\n                );\n              })}\n              </div>\n            </div>\n          );\n\t\t\t\t}) : '\u65E0\u6570\u636E'}\n\t\t\t</div>\n\t\t);\n\t}\n}";
+      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n      var _this = this;\n      var data = _this.props.data.customData;\n      var leftData = data.leftData;\n      var rightData = data.rightData;\n\n      return React.createElement(\n        'div',\n        { style: { 'padding': '15px' } },\n        leftData ? leftData.map(function (litem, lindex) {\n          return React.createElement(\n            'div',\n            null,\n            React.createElement(\n              'div',\n              null,\n              litem.map(function (innerLitem) {\n                return React.createElement(\n                  'div',\n                  null,\n                  innerLitem\n                );\n              })\n            ),\n            React.createElement(\n              'div',\n              null,\n              rightData[lindex].map(function (ritem, rindex) {\n                return React.createElement(\n                  'div',\n                  null,\n                  ritem\n                );\n              })\n            )\n          );\n        }) : '\u65E0\u6570\u636E'\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
     }
   });
 })(window, ysp);
