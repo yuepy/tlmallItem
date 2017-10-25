@@ -228,6 +228,7 @@
       if(item.textContent == operation){
         var href = item.getAttribute('href');
         ysp.customHelper.openWin(href,operation);
+        aWin.history.pushState(aWin.location.href+'woshishei')
       }
     });
   }

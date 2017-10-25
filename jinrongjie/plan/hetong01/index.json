@@ -123,19 +123,56 @@
           }
         },
         {
-          "id": "uiControl28_SgTJbB",
-          "controlId": "control29_yn6nBP",
+          "id": "uiControl29_TC3pna",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "tabs",
+            "adapterId": "tabs",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl28_SgTJbB",
-                "onGetTemplate": "getTemplate_uiControl28_SgTJbB"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl29_TC3pnaitem",
+              "display": {
+                "tabTitle": "流程表单",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl28_SgTJbB",
+                  "controlId": "control29_yn6nBP",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl28_SgTJbB",
+                        "onGetTemplate": "getTemplate_uiControl28_SgTJbB"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl30_AC7lcF",
+              "display": {
+                "tabTitle": "流转意见",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
         }
       ]
     }
