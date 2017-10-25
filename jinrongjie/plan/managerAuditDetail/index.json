@@ -171,6 +171,10 @@
         "data": {
           "tagName": "P"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "text",
@@ -203,6 +207,190 @@
       "roles": "element",
       "text": "编号：FSIG-201710170009",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control34_3xOhRN": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              3,
+              8
+            ],
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control34_3xOhRN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>//iframe[1]<<IFRAME>>"
+    },
+    "control35_eTVGlA": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "相关文档"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              48
+            ],
+            "value": "TABLE.ViewForm.maintable TD.fvalue BUTTON.Browser"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/BUTTON[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control35_eTVGlA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,button,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control36_RkLeq2": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "相关流程"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              48
+            ],
+            "value": "TABLE.ViewForm.maintable TD.fvalue BUTTON.Browser"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[3]/TD[2]/BUTTON[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control36_RkLeq2"
+      },
+      "intendedRole": "custom",
+      "roles": "element,button,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control37_OEJzmu": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control37_OEJzmu"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control38_xKEVrL": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[3]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control38_xKEVrL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control39_sTQ8TR": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[4]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control39_sTQ8TR"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -211,7 +399,13 @@
         "control22_gQSvMW",
         "control25_PhAtSh",
         "control23_nAAQod",
-        "control24_s2hR81"
+        "control24_s2hR81",
+        "control34_3xOhRN",
+        "control35_eTVGlA",
+        "control36_RkLeq2",
+        "control37_OEJzmu",
+        "control38_xKEVrL",
+        "control39_sTQ8TR"
       ],
       "anchors": [
         "control26_eJVogb",
@@ -299,6 +493,96 @@
               "events": {
                 "onDoAction": "doAction_uiControl23_PUM7iP",
                 "onGetTemplate": "getTemplate_uiControl23_PUM7iP"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl32_PTJzNp",
+          "controlId": "control34_3xOhRN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl32_PTJzNp",
+                "onGetTemplate": "getTemplate_uiControl32_PTJzNp"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl33_lqkOyA",
+          "controlId": "control35_eTVGlA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl33_lqkOyA",
+                "onGetTemplate": "getTemplate_uiControl33_lqkOyA"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl34_bTrP6U",
+          "controlId": "control36_RkLeq2",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl34_bTrP6U",
+                "onGetTemplate": "getTemplate_uiControl34_bTrP6U"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl35_4nXXfL",
+          "controlId": "control37_OEJzmu",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl35_4nXXfL",
+                "onGetTemplate": "getTemplate_uiControl35_4nXXfL"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl36_CWMuKW",
+          "controlId": "control38_xKEVrL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl36_CWMuKW",
+                "onGetTemplate": "getTemplate_uiControl36_CWMuKW"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl37_1RuKTr",
+          "controlId": "control39_sTQ8TR",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl37_1RuKTr",
+                "onGetTemplate": "getTemplate_uiControl37_1RuKTr"
               }
             }
           }
