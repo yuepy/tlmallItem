@@ -7869,7 +7869,12 @@ div[data-ysp-modelid="infomationInput"] .list_ltt .listContentput_ltt .inputWrit
   background-size: 15px;
   background-position: 5%;
 }
-div[data-ysp-modelid="infomationInput"] .save_ltt {
+div[data-ysp-modelid="infomationInput"] .ysp-dayPSI-save-ltt {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+div[data-ysp-modelid="infomationInput"] .ysp-dayPSI-save-ltt .save_ltt {
   text-align: center;
   width: 80%;
   margin: 0 auto;
@@ -7879,7 +7884,6 @@ div[data-ysp-modelid="infomationInput"] .save_ltt {
   color: #fff;
   height: 30px;
   line-height: 30px;
-  margin-left: 22px;
 }
 div[data-ysp-modelid="infomationInput"] .noContent_ltt {
   background: #fff;
@@ -8007,7 +8011,12 @@ div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listContentput_lt
   background-size: 15px;
   background-position: 5%;
 }
-div[data-ysp-modelid="customerInformationweekFill"] .save_ltt {
+div[data-ysp-modelid="customerInformationweekFill"] .ysp-weekPSI-save-ltt {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+div[data-ysp-modelid="customerInformationweekFill"] .ysp-weekPSI-save-ltt .save_ltt {
   text-align: center;
   width: 80%;
   margin: 0 auto;
@@ -8017,7 +8026,6 @@ div[data-ysp-modelid="customerInformationweekFill"] .save_ltt {
   color: #fff;
   height: 30px;
   line-height: 30px;
-  margin-left: 22px;
 }
 div[data-ysp-modelid="customerInformationweekFill"] .noContent_ltt {
   background: #fff;
@@ -8136,15 +8144,20 @@ div[data-ysp-modelid="storeDayPSI"] > div:nth-child(4) {
 .hidden {
   display: none;
 }
-.ysp_dayPSI_submitBtn {
-  width: 300px;
+.ysp_dayPSI_submit-save {
+  width: 100%;
   margin: 0 auto;
-  border-radius: 3px;
+  text-align: center;
+}
+.ysp_dayPSI_submit-save .ysp_dayPSI_submitBtn {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 1px solid #0e90d2;
   text-align: center;
   background: #0e90d2;
   color: #fff;
   padding: 5px 0;
-  margin-left: 22px;
 }
 /**************HES信息录入日别PSI录入END***************************/
 /**************HES信息录入周别PSI录入start***************************/
@@ -8277,15 +8290,20 @@ div[data-ysp-modelid="storeWeekPSI"] > div:nth-child(5) {
 .hidden {
   display: none;
 }
-.ysp_weekPSI_submitBtn {
-  width: 300px;
+.ysp_weekPSI_submit-save {
+  text-align: center;
+  width: 100%;
   margin: 0 auto;
-  border-radius: 3px;
+}
+.ysp_weekPSI_submit-save .ysp_weekPSI_submitBtn {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
   text-align: center;
   background: #0e90d2;
+  border: 1px solid #0e90d2;
   color: #fff;
   padding: 5px 0;
-  margin-left: 22px;
 }
 /**************HES信息录入周别PSI录入END***************************/
 input::-webkit-outer-spin-button,
