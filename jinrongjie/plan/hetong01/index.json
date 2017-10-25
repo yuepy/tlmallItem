@@ -6,7 +6,7 @@
   "chineseName": "01合同会签流程",
   "description": "",
   "controls": {
-    "control18_8GteCx": {
+    "control29_yn6nBP": {
       "location": {
         "data": {
           "tagName": "TD"
@@ -17,62 +17,78 @@
         },
         "locators": [
           {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "流程基本信息"
-              ],
-              "visText": [
-                "流程基本信息"
-              ]
-            }
-          },
-          {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "roles": "element",
-      "content": true,
-      "monitored": false,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control21_gJDSQv": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]"
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control21_gJDSQv"
+        "onGetData": "getData_control29_yn6nBP"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control28_IA4FdX": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "保存"
+              ],
+              "visText": [
+                "保存"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]/TD[4]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]",
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::TR[@id=\"toolbarmenu\"]//BUTTON"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TBODY.x-btn-small.x-btn-icon-small-left TD.x-btn-mc BUTTON.x-btn-text.btn_wfSave"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[4]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control28_IA4FdX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,button,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context3_FzLnbc": {
       "controls": [
-        "control18_8GteCx",
-        "control21_gJDSQv"
+        "control29_yn6nBP",
+        "control28_IA4FdX"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -92,27 +108,31 @@
       "contextId": "context3_FzLnbc",
       "layout": [
         {
-          "id": "uiControl18_wWdUs8",
-          "controlId": "control18_8GteCx",
-          "display": {
-            "adapterId": "content",
-            "type": "content",
-            "adapter": {
-              "templateType": ""
-            }
-          }
-        },
-        {
-          "id": "uiControl21_H8mT5H",
-          "controlId": "control21_gJDSQv",
+          "id": "uiControl27_cznHRC",
+          "controlId": "control28_IA4FdX",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl21_H8mT5H",
-                "onGetTemplate": "getTemplate_uiControl21_H8mT5H"
+                "onDoAction": "doAction_uiControl27_cznHRC",
+                "onGetTemplate": "getTemplate_uiControl27_cznHRC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl28_SgTJbB",
+          "controlId": "control29_yn6nBP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl28_SgTJbB",
+                "onGetTemplate": "getTemplate_uiControl28_SgTJbB"
               }
             }
           }
