@@ -5802,10 +5802,11 @@ div[data-ysp-modelid="wtiteReport"]{//8.24
       justify-content: space-between;
       border-bottom: 1px solid #dde1ea;
       padding: 10px;
-      overflow-y:scroll;
+      //overflow-y:scroll;
       height:100%;
       > div:first-child{
-        flex: auto;
+        //flex: auto;
+        width: 80%;
         h3{
         	//font-size: @normalLargeFont;
           font-size:14px;
@@ -5827,21 +5828,29 @@ div[data-ysp-modelid="wtiteReport"]{//8.24
         }
       }
       > div:last-child{
+        	width: 20%;
+        	white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          word-wrap: break-word;
+          word-break: break-all;
         span{
           font-size:12px;
           color:#333333;
         }
-      }
-      .items{
-      	margin-top:40px;
-        margin-left:-25px;
-        display: block;
-        width: 30px;
-        height: 20px;
-        background-size: 20px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url(images/detail.png);
+        .items{
+          margin-top:20px;
+          //margin-left:-25px;
+          display: block;
+          width: 30px;
+          height: 20px;
+          background-size: 20px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-image: url(images/detail.png);
+          margin-left: 8px;
+        }
       }
     }
   }

@@ -5142,11 +5142,10 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   justify-content: space-between;
   border-bottom: 1px solid #dde1ea;
   padding: 10px;
-  overflow-y: scroll;
   height: 100%;
 }
 .ysp-information-stockinquire .panelCardContainer .panelCardList > div:first-child {
-  flex: auto;
+  width: 80%;
 }
 .ysp-information-stockinquire .panelCardContainer .panelCardList > div:first-child h3 {
   font-size: 14px;
@@ -5165,13 +5164,20 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   font-size: 13px;
   color: #666666;
 }
+.ysp-information-stockinquire .panelCardContainer .panelCardList > div:last-child {
+  width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}
 .ysp-information-stockinquire .panelCardContainer .panelCardList > div:last-child span {
   font-size: 12px;
   color: #333333;
 }
-.ysp-information-stockinquire .panelCardContainer .panelCardList .items {
-  margin-top: 40px;
-  margin-left: -25px;
+.ysp-information-stockinquire .panelCardContainer .panelCardList > div:last-child .items {
+  margin-top: 20px;
   display: block;
   width: 30px;
   height: 20px;
@@ -5179,6 +5185,7 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(images/detail.png);
+  margin-left: 8px;
 }
 /**********************************************************************************************************
 *信息协同、产品上下架模块 
