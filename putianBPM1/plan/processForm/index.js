@@ -21,7 +21,7 @@
         var d = data.dataCustom;
         if (d[0] == 'ysp-tabs') {
           var _tab = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');_tab[d[1]].click();
-        }
+        }ysp.appMain.showLoading();
       }
     },
     getTemplate_uiControl20_HR4ggS: function () {

@@ -6,14 +6,11 @@
       }if (elem) {
         var data = { tabs: [], tabsNum: [], key: {} };
         var _tabs = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');[].map.call(_tabs, function (item, i) {
-          var key = item.parentElement.classList.contains('mini-tab-active');
-          var num = item.parentElement.getAttribute("index");if (item.innerHTML != '流程监控') {
+          var key = item.parentElement.classList.contains('mini-tab-active');var num = item.parentElement.getAttribute("index");if (item.innerHTML != '流程监控') {
             if (key == true) {
-              data.tabs.push(item.innerHTML);
-              data.tabsNum.push(num);data.key = i;
+              data.tabs.push(item.innerHTML);data.tabsNum.push(num);data.key = i;
             } else {
-              data.tabs.push(item.innerHTML);
-              data.tabsNum.push(num);
+              data.tabs.push(item.innerHTML);data.tabsNum.push(num);
             }
           }
         });return data;
@@ -23,7 +20,7 @@
       if (data.eventType == 'click') {
         var d = data.dataCustom;if (d[0] == 'ysp-tabs') {
           var _tab = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');_tab[d[1]].click();
-        }
+        }ysp.appMain.showLoading();
       }
     },
     getTemplate_uiControl9_qm7DZ2: function () {
