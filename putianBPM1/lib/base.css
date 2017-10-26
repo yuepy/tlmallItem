@@ -776,13 +776,16 @@ header .btn:hover {
 .ysp_waitingTask_list .ysp_list_item .ysp_item_top .ysp_top_title {
   font-size: 16px;
   display: inline-block;
-  width: 80%;
+  width: 70%;
   padding: 0 0 0 10px;
 }
 .ysp_waitingTask_list .ysp_list_item .ysp_item_top .ysp_top_status {
   font-size: 15px;
   display: inline-block;
-  width: 20%;
+  width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: #FCB720;
   text-align: center;
   position: absolute;
