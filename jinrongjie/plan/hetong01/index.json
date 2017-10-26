@@ -92,6 +92,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "text",
@@ -121,6 +125,35 @@
       "roles": "element",
       "text": "流程基本信息",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control14_IUyC9S": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "紧急程度 正常重要紧急 短信提醒"
+              ],
+              "visText": [
+                "紧急程度 正常重要紧急 短信提醒"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "\n                        紧急程度\n                        正常重要紧急\n                        短信提醒 \n                        \n                    ",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -130,7 +163,8 @@
         "control28_IA4FdX"
       ],
       "anchors": [
-        "control13_f3HXGX"
+        "control13_f3HXGX",
+        "control14_IUyC9S"
       ],
       "urlAnchor": []
     }
