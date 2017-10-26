@@ -85,54 +85,65 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control12_vQC1zM": {
+    "control12_7fU3XW": {
       "location": {
         "data": {
-          "tagName": "TD"
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "01合同会签流程"
+              ],
+              "visText": [
+                "01合同会签流程"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "01合同会签流程"
+              ],
+              "visText": [
+                "01合同会签流程"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 1,
+            "ordinal": [
+              9,
+              25
+            ],
+            "value": {
+              "pathname": "/workflow/search/WFSearchTemp.jsp",
+              "search": "method=reqeustbywfidNode&workflowid=7901&nodeids=&complete=0"
+            }
+          },
           {
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
-              0,
-              7
+              6,
+              18
             ],
-            "value": "TABLE.viewform DIV.listbox TD.t-center"
+            "value": "TABLE.viewform TABLE.viewform DIV.listbox UL LI A"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control12_vQC1zM"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control13_A4MAN5": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              7
-            ],
-            "value": "TABLE.viewform DIV.listbox TD.t-center"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
+<<<<<<< HEAD
             "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
           }
         ]
@@ -142,6 +153,28 @@
       },
       "intendedRole": "custom",
       "roles": "element,link,custom",
+=======
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[3]/UL[1]/LI[1]/DIV[1]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              18,
+              56,
+              133
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+>>>>>>> a59067c223ba0cdd57a2058ea6a9d72764566550
       "monitored": false,
       "frameXPath": ""
     }
@@ -151,8 +184,12 @@
       "controls": [
         "control9_Ks2mo3",
         "control24_It6bP6",
+<<<<<<< HEAD
         "control12_vQC1zM",
         "control13_A4MAN5"
+=======
+        "control12_7fU3XW"
+>>>>>>> a59067c223ba0cdd57a2058ea6a9d72764566550
       ],
       "anchors": [],
       "urlAnchor": []
@@ -187,6 +224,20 @@
         {
           "toContextId": "context4_wRixwF",
           "toModelId": "managerAuditDetail"
+        },
+        {
+          "toContextId": "context4_ktABGz",
+          "toModelId": "Contractcountersigned"
+        }
+      ]
+    },
+    "flow16_FrRyHG": {
+      "fromContextId": "context2_owrLEy",
+      "fromAction": "click",
+      "fromControlId": "control12_7fU3XW",
+      "toContexts": [
+        {
+          "toContextId": "context2_owrLEy"
         },
         {
           "toContextId": "context4_ktABGz",
@@ -256,6 +307,17 @@
                 "onDoAction": "doAction_uiControl24_E03y0k",
                 "onGetTemplate": "getTemplate_uiControl24_E03y0k"
               }
+            }
+          }
+        },
+        {
+          "id": "uiControl12_7BUgtG",
+          "controlId": "control12_7fU3XW",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
             }
           }
         }

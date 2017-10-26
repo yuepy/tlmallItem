@@ -18,38 +18,81 @@
         data.header.title.push($(elem).children(".bt").text().trim());
       }if ($(elem).children(".bh").length > 0) {
         data.header.number.push($(elem).children(".bh").text().trim());
-      }var elem1 = $(elem).children("table").eq(0)[0];if ($(elem1).find("tr").length > 0) {
-        $(elem1).find("tr").each(function () {
-          if ($(this).children("td").length == 1 && $(this).children("td")[0].className == 'zdm') {
-            data.base_lc_info.title.push($(this).children("td").text().trim());
-          } else {
-            var tdl = $(this).find("td").length - 1;$(this).children("td").each(function (i) {
-              if ($(this).find("input").length !== 3 && $(this)[0].className == 'zdn' && i == tdl) {
-                data.base_lc_info.content.push($(this).text());
-              } else if ($(this).find("input").length == 3) {
-                var arr1 = [];$(this).contents().each(function (i) {
-                  if ($(this)[0].tagName == 'INPUT' && $(this)[0].checked == true) {
-                    arr1.push({ text: $(this).parent().contents().eq(i + 1).text().trim(), checked: 'true' });
-                  } else if ($(this)[0].tagName == 'INPUT' && $(this)[0].checked == false) {
-                    arr1.push({ text: $(this).parent().contents().eq(i + 1).text().trim(), checked: 'false' });
+      }if ($(elem).children("table").length == 2) {
+        var elem1 = $(elem).children("table").eq(0)[0];if ($(elem1).find("tr").length > 0) {
+          $(elem1).find("tr").each(function () {
+            if ($(this).children("td").length == 1 && $(this).children("td")[0].className == 'zdm') {
+              data.base_lc_info.title.push($(this).children("td").text().trim());
+            } else {
+              var tdl = $(this).find("td").length - 1;$(this).children("td").each(function (i) {
+                if ($(this).find("input").length !== 3 && $(this)[0].className == 'zdn' && i == tdl) {
+                  data.base_lc_info.content.push($(this).text());
+                } else if ($(this).find("input").length == 3) {
+                  var arr1 = [];$(this).contents().each(function (i) {
+                    if ($(this)[0].tagName == 'INPUT' && $(this)[0].checked == true) {
+                      arr1.push({ text: $(this).parent().contents().eq(i + 1).text().trim(), checked: 'true' });
+                    } else if ($(this)[0].tagName == 'INPUT' && $(this)[0].checked == false) {
+                      arr1.push({ text: $(this).parent().contents().eq(i + 1).text().trim(), checked: 'false' });
+                    }
+                  });data.base_lc_info.degree.push(arr1);
+                }
+              });
+            }
+          });
+        }var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).children("tr").each(function () {
+          var arr1 = [];$(this).children("td").each(function () {
+            var arr2 = []; //判断标题-------------------------------------
+            if ($(this)[0].className == 'zdm') {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
+            } //判断附件-------------------------------------
+            else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
+                $(this).children("table").find("a").each(function () {
+                  var arr3 = [];arr3.push({ text: $(this).text().trim(), type: 'fujian' });arr2.push(arr3);
+                }); //判断select-------------------------------------
+              } else if ($(this).children("select").length > 0) {
+                var arr4 = [];$(this).children("select").children("option").each(function () {
+                  if ($(this).text().trim() !== '') {
+                    arr4.push($(this).text().trim());
                   }
-                });data.base_lc_info.degree.push(arr1);
-              }
-            });
-          }
+                });arr2.push({ text: arr4, type: 'selcet' });
+              } //判断input-------------------------------------
+              else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
+                  arr2.push({ text: $(this).children("input").prop('value'), type: 'input' });
+                } //判断
+            arr1.push(arr2);
+          });data.base_info.content.push(arr1);
         });
-      }var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).children("tr").each(function () {
-        var arr1 = [];$(this).children("td").each(function () {
-          var arr2 = [];if ($(this)[0].className == 'zdm') {
-            arr2.push();
-          }arr1.push(arr2);
-        });data.base_info.content.push(arr1);
-      });return data;
+      } else if ($(elem).children("table").length == 1) {
+        var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(0).children("tbody")[0];$(tbody2).children("tr").each(function () {
+          var arr1 = [];$(this).children("td").each(function () {
+            var arr2 = []; //判断标题-------------------------------------
+            if ($(this)[0].className == 'zdm') {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
+            } //判断附件-------------------------------------
+            else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
+                $(this).children("table").find("a").each(function () {
+                  var arr3 = [];arr3.push({ text: $(this).text().trim(), type: 'fujian' });arr2.push(arr3);
+                }); //判断select-------------------------------------
+              } else if ($(this).children("select").length > 0) {
+                var arr4 = [];$(this).children("select").children("option").each(function () {
+                  if ($(this).text().trim() !== '') {
+                    arr4.push($(this).text().trim());
+                  }
+                });
+                arr2.push({ text: arr4, type: 'selcet' });
+              } //判断input-------------------------------------
+              else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
+                  arr2.push({ text: $(this).children("input").prop('value'), type: 'input' });
+                } //判断
+            arr1.push(arr2);
+          });data.base_info.content.push(arr1);
+        });
+      }return data;
     },
     doAction_uiControl28_SgTJbB: function (data, elem) {},
     getTemplate_uiControl28_SgTJbB: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var _this = this ;\n    var degree = data.base_lc_info.degree[0].map(function(d,i){\n      if(d.checked == \'true\'){\n        return(<option value={d.text} selected = "selected">{d.text}</option>)\n      }\n      else{\n        return(<option value={d.text}>{d.text}</option>)\n      }\n    })\n    return (\n      <div className=\'contractCountersigned_box\'>\n        <div className=\'header_box\'>\n        \t<center>{data.header.title}</center>\n          <center>{data.header.number}</center>\n        </div>\n        <div className=\'center_box\'>\n          <div className=\'tit_yell\'>\n          \t{data.base_lc_info.title}\n          </div>\n          <div className=\'font-yell\'>\u7B49\u7EA7</div>\n          <select>{degree}</select>\n          <div className=\'font-yell\'>\u77ED\u4FE1\u63D0\u9192</div>\n          <div>{data.base_lc_info.content}</div>\n        </div>\n        <div className=\'bottom_box\'>\n          <div className=\'tit_yell\'>\u57FA\u672C\u4FE1\u606F</div>\n          \n        </div>\n        <div className=\'bottom_box\'>\n          \n        </div>\n      </div>\n    )\n  }\n});';
-      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    var degree = data.base_lc_info.degree[0].map(function (d, i) {\n      if (d.checked == \'true\') {\n        return React.createElement(\n          \'option\',\n          { value: d.text, selected: \'selected\' },\n          d.text\n        );\n      } else {\n        return React.createElement(\n          \'option\',\n          { value: d.text },\n          d.text\n        );\n      }\n    });\n    return React.createElement(\n      \'div\',\n      { className: \'contractCountersigned_box\' },\n      React.createElement(\n        \'div\',\n        { className: \'header_box\' },\n        React.createElement(\n          \'center\',\n          null,\n          data.header.title\n        ),\n        React.createElement(\n          \'center\',\n          null,\n          data.header.number\n        )\n      ),\n      React.createElement(\n        \'div\',\n        { className: \'center_box\' },\n        React.createElement(\n          \'div\',\n          { className: \'tit_yell\' },\n          data.base_lc_info.title\n        ),\n        React.createElement(\n          \'div\',\n          { className: \'font-yell\' },\n          \'\\u7B49\\u7EA7\'\n        ),\n        React.createElement(\n          \'select\',\n          null,\n          degree\n        ),\n        React.createElement(\n          \'div\',\n          { className: \'font-yell\' },\n          \'\\u77ED\\u4FE1\\u63D0\\u9192\'\n        ),\n        React.createElement(\n          \'div\',\n          null,\n          data.base_lc_info.content\n        )\n      ),\n      React.createElement(\n        \'div\',\n        { className: \'bottom_box\' },\n        React.createElement(\n          \'div\',\n          { className: \'tit_yell\' },\n          \'\\u57FA\\u672C\\u4FE1\\u606F\'\n        )\n      ),\n      React.createElement(\'div\', { className: \'bottom_box\' })\n    );\n  }\n});';
+      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var _this = this ;\n    if(data.base_lc_info.degree[0]){\n      var degree = data.base_lc_info.degree[0].map(function(d,i){\n      if(d.checked == \'true\'){\n        return(<option value={d.text} selected = "selected">{d.text}</option>)\n      }\n      else{\n        return(<option value={d.text}>{d.text}</option>)\n      }\n    })\n    }\n    return (\n      <div className=\'contractCountersigned_box\'>\n        <div className=\'header_box\'>\n        \t<center>{data.header.title}</center>\n          <center>{data.header.number}</center>\n        </div>\n        \n        {data.base_lc_info.content ? <div style={{display:\'none\'}}></div> : \n        <div className=\'center_box\'>\n          <div className=\'tit_yell\'>\n          \t{data.base_lc_info.title}\n          </div>\n          <div className=\'font-yell\'>\u7B49\u7EA7</div>\n          <select>{degree}</select>\n          <div className=\'font-yell\'>\u77ED\u4FE1\u63D0\u9192</div>\n          <div>{data.base_lc_info.content}</div>\n        </div>\n        }\n        \n        \n        <div className=\'bottom_box\'>\n          <div className=\'tit_yell\'>\u57FA\u672C\u4FE1\u606F</div>\n          \n        </div>\n        \n        \n        \n        <div className=\'bottom_box\'>\n          \n        </div>\n      </div>\n    )\n  }\n});';
+      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data.base_lc_info.degree[0]) {\n      var degree = data.base_lc_info.degree[0].map(function (d, i) {\n        if (d.checked == \'true\') {\n          return React.createElement(\n            \'option\',\n            { value: d.text, selected: \'selected\' },\n            d.text\n          );\n        } else {\n          return React.createElement(\n            \'option\',\n            { value: d.text },\n            d.text\n          );\n        }\n      });\n    }\n    return React.createElement(\n      \'div\',\n      { className: \'contractCountersigned_box\' },\n      React.createElement(\n        \'div\',\n        { className: \'header_box\' },\n        React.createElement(\n          \'center\',\n          null,\n          data.header.title\n        ),\n        React.createElement(\n          \'center\',\n          null,\n          data.header.number\n        )\n      ),\n      data.base_lc_info.content ? React.createElement(\'div\', { style: { display: \'none\' } }) : React.createElement(\n        \'div\',\n        { className: \'center_box\' },\n        React.createElement(\n          \'div\',\n          { className: \'tit_yell\' },\n          data.base_lc_info.title\n        ),\n        React.createElement(\n          \'div\',\n          { className: \'font-yell\' },\n          \'\\u7B49\\u7EA7\'\n        ),\n        React.createElement(\n          \'select\',\n          null,\n          degree\n        ),\n        React.createElement(\n          \'div\',\n          { className: \'font-yell\' },\n          \'\\u77ED\\u4FE1\\u63D0\\u9192\'\n        ),\n        React.createElement(\n          \'div\',\n          null,\n          data.base_lc_info.content\n        )\n      ),\n      React.createElement(\n        \'div\',\n        { className: \'bottom_box\' },\n        React.createElement(\n          \'div\',\n          { className: \'tit_yell\' },\n          \'\\u57FA\\u672C\\u4FE1\\u606F\'\n        )\n      ),\n      React.createElement(\'div\', { className: \'bottom_box\' })\n    );\n  }\n});';
     }
   });
 })(window, ysp);

@@ -6,52 +6,6 @@
   "chineseName": "请求标题详情页",
   "description": "请求标题详情页",
   "controls": {
-    "control22_gQSvMW": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": [
-              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
-              "descendant::DIV[@id=\"toolbarmenudiv\"]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              3
-            ],
-            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              0,
-              2
-            ],
-            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control22_gQSvMW"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control25_PhAtSh": {
       "location": {
         "data": {
@@ -385,6 +339,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -410,12 +368,46 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control2_cwTSXy": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]",
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TABLE",
+              "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TABLE",
+              "descendant::DIV[@id=\"requestlogappednDiv\"]//TABLE"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[6]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control2_cwTSXy"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
     "context4_wRixwF": {
       "controls": [
-        "control22_gQSvMW",
         "control25_PhAtSh",
         "control23_nAAQod",
         "control24_s2hR81",
@@ -425,7 +417,8 @@
         "control39_sTQ8TR",
         "control28_hPr3qu",
         "control29_tXFBoh",
-        "control21_nsaVUJ"
+        "control21_nsaVUJ",
+        "control2_cwTSXy"
       ],
       "anchors": [
         "control26_eJVogb",
@@ -493,16 +486,16 @@
           }
         },
         {
-          "id": "uiControl22_EqoDDT",
-          "controlId": "control22_gQSvMW",
+          "id": "uiControl2_Ao9p40",
+          "controlId": "control2_cwTSXy",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl22_EqoDDT",
-                "onGetTemplate": "getTemplate_uiControl22_EqoDDT"
+                "onDoAction": "doAction_uiControl2_Ao9p40",
+                "onGetTemplate": "getTemplate_uiControl2_Ao9p40"
               }
             }
           }
