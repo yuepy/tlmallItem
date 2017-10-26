@@ -46,7 +46,7 @@ h5 {
   align-items: center;
 }
 .ysp-header-wrapper > span:nth-child(2) {
-  flex: 0 1 60%;
+  flex: 0 1 70%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,6 +74,7 @@ h5 {
 }
 .editor-state [data-ysp="component"] {
   padding: 0;
+  min-height: 10px;
 }
 /*
 /---------------------------------------------------------------------------------------------------------
@@ -410,20 +411,23 @@ li {
 .ysp-search-dialog .ysp-search-dialog-cxleft {
   display: inline-block;
   float: left;
+  width: 100%;
 }
 .ysp-search-dialog .ysp-search-dialog-cxleft i {
+  position: absolute;
   display: inline-block;
   width: 30px;
-  height: 30px;
+  height: 40px;
   background: url('images/Magnifier.png') no-repeat;
   background-position-y: 12px;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .ysp-search-dialog .ysp-search-dialog-cxleft span {
   display: inline-block;
-  padding-left: 10px;
+  padding-left: 45px;
   height: 40px;
-  line-height: 40px;
+  line-height: 43px;
+  color: #C59F34;
 }
 .ysp-search-dialog .ysp-search-dialog-cxright {
   float: right;
@@ -432,6 +436,11 @@ li {
   width: 30px;
   height: 30px;
   background-position-y: 16px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  right: 0px;
+  top: 43px;
 }
 .ysp-search-dialog .ysp-search-dialog-cxright .ysp-dialog-wrapper {
   background: #fff;
@@ -439,8 +448,8 @@ li {
 .ysp-pageTurntotal {
   text-align: right;
   padding-right: 20px;
-  height: 40px;
-  line-height: 40px;
+  height: 34px;
+  line-height: 15px;
 }
 .ysp-pageTurnoperation {
   text-align: center;
