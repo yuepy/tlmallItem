@@ -8,7 +8,7 @@
         // var a = ysp.runtime.Context.activeContext.id;
         var pageId = ysp.customHelper.pageId();if (parent.EAPI.isAndroid() && pageId == "context52_Wg5qcG") {
           history.back();
-        } else if (parent.EAPI.isIOS() && pageId == "context52_Wg5qcG") {
+        } else if (parent.EAPI.isIOS() && (pageId == "context52_Wg5qcG" || pageId == "context55_T4Zowu")) {
           var url = "http://192.168.1.224:8080/pttlCrm/res/page/psi/storeInfocollection.html";ysp.appMain.reloadPage(url);
         } else if (parent.EAPI.isIOS() && pageId == "context2_15cCKI") {
           var urls = "http://192.168.1.224:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(urls);
