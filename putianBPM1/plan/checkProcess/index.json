@@ -118,7 +118,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/task\\.jsp\\??.*"
+        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/task\\.jsp.*"
       ]
     }
   },
@@ -188,6 +188,17 @@
       "fromContextId": "context5_7wf9RT",
       "fromAction": "doAction",
       "fromControlId": "control28_SZVJPk",
+      "toContexts": [
+        {
+          "toContextId": "context11_uaf3pg",
+          "toModelId": "checkProcess"
+        }
+      ]
+    },
+    "flow29_iEhnNf": {
+      "fromContextId": "context2_Z2voN1",
+      "fromAction": "doAction",
+      "fromControlId": "control31_R1g6aJ",
       "toContexts": [
         {
           "toContextId": "context11_uaf3pg",
@@ -276,7 +287,8 @@
           "192.168.2.40:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5785&_t=960306",
           "192.168.2.40:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5355&_t=173324",
           "192.168.2.40:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self",
-          "192.168.2.40:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5960&_t=949891"
+          "192.168.2.40:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5960&_t=949891",
+          "192.168.2.40:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5770&_t=922785"
         ],
         "context1_wzzrby": [
           "192.168.2.40:8000/ptsoa/skins/default/index.jsp",

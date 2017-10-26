@@ -61,9 +61,9 @@
     },
     doAction_uiControl35_aoIpOl: function (data, elem) {
       if (data.eventType == "clickBtn") {
-        debugger;var index = parseInt(data.dataCustom.index) + 2;var i = data.dataCustom.i;var num = data.dataCustom.index;elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();if (data.dataCustom.title[num][0].indexOf("B2B销售订单") == -1) {
-          ysp.customHelper.forceMatchModels("processForm");
-        }ysp.appMain.showLoading();
+        var index = parseInt(data.dataCustom.index) + 2;var i = data.dataCustom.i;var num = data.dataCustom.index;elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click(); //   ysp.customHelper.forceMatchModels("processForm");
+        // }
+        ysp.appMain.showLoading();
       }
     },
     getTemplate_uiControl35_aoIpOl: function () {
