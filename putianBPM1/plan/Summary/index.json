@@ -1,0 +1,134 @@
+{
+  "version": "0.1",
+  "id": "Summary",
+  "targetURL": "http://192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbSummary.jsp?orderNum=o11360039",
+  "jsFile": "index.js",
+  "requires": {
+    "Summary": "../Summary/index.json"
+  },
+  "chineseName": "汇总（B2B销售订单）",
+  "description": "",
+  "controls": {
+    "control44_8h1JdZ": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control44_8h1JdZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context19_9mTQlh": {
+      "controls": [
+        "control44_8h1JdZ"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/MaterialManager\\/orderManagement\\/B2BSale\\/BtbSummary\\.jsp?.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow29_ayyhy5": {
+      "fromContextId": "context8_ddpRhS",
+      "fromAction": "doAction",
+      "fromControlId": "control21_GeryA0",
+      "toContexts": [
+        {
+          "toContextId": "context19_9mTQlh",
+          "toModelId": "Summary"
+        }
+      ]
+    },
+    "flow57_R1xmdR": {
+      "toContexts": [
+        {
+          "toContextId": "context19_9mTQlh"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page19_72HcfI": {
+      "contextId": "context19_9mTQlh",
+      "layout": [
+        {
+          "id": "uiControl43_xd0XdW",
+          "controlId": "control44_8h1JdZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl43_xd0XdW",
+                "onGetTemplate": "getTemplate_uiControl43_xd0XdW"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context19_9mTQlh": [
+          "订单审核明细"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context19_9mTQlh": [
+          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbSummary.jsp?orderNum=o11360039"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context19_9mTQlh": [
+          [
+            "datagrid"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context19_9mTQlh": [
+          [
+            "form_label"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context19_9mTQlh": [
+          [
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD"
+          ]
+        ]
+      }
+    }
+  }
+}
