@@ -3,6 +3,10 @@
   "id": "managerAuditDetail",
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=154031&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+  },
   "chineseName": "请求标题详情页",
   "description": "请求标题详情页",
   "controls": {
@@ -334,10 +338,10 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control21_nsaVUJ": {
+    "control16_TqnDIo": {
       "location": {
         "data": {
-          "tagName": "TABLE"
+          "tagName": "DIV"
         },
         "userData": {
           "data": [],
@@ -346,68 +350,35 @@
         "locators": [
           {
             "id": "@id/word",
-            "prob": 2,
+            "prob": 3,
             "value": [
-              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]",
-              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TABLE",
-              "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TABLE",
-              "descendant::DIV[@id=\"requestlogappednDiv\"]//TABLE"
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]",
+              "descendant::DIV[@id=\"signid\"]"
             ]
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[6]/DIV[1]/TABLE[1]"
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[6]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control21_nsaVUJ"
+        "onGetData": "getData_control16_TqnDIo"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control2_cwTSXy": {
+    "control15_daufT7": {
       "location": {
         "data": {
-          "tagName": "TABLE"
+          "tagName": "TR"
         },
         "userData": {
-          "force": false,
-          "data": []
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]",
-              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TABLE",
-              "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TABLE",
-              "descendant::DIV[@id=\"requestlogappednDiv\"]//TABLE"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[6]/DIV[1]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control2_cwTSXy"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control15_0w4yB0": {
-      "location": {
-        "data": {
-          "tagName": "TD"
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -415,28 +386,22 @@
             "prob": 3,
             "value": {
               "text": [
-                "申请人单位"
+                "申请人单位 集团总部 申请人部门 信息技术中心 申请人 张济天"
               ],
               "visText": [
-                "申请人单位"
+                "申请人单位 集团总部 申请人部门 信息技术中心 申请人 张济天"
               ]
             }
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]"
           }
         ]
       },
       "roles": "element",
-      "text": "申请人单位",
+      "text": "\n                        申请人单位\n                        集团总部  \n                        申请人部门\n                        信息技术中心  \n                        申请人\n                        张济天  \n                    ",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
@@ -452,11 +417,10 @@
         "control39_sTQ8TR",
         "control28_hPr3qu",
         "control29_tXFBoh",
-        "control21_nsaVUJ",
-        "control2_cwTSXy"
+        "control16_TqnDIo"
       ],
       "anchors": [
-        "control15_0w4yB0"
+        "control15_daufT7"
       ],
       "urlAnchor": []
     }
@@ -486,6 +450,10 @@
       "toContexts": [
         {
           "toContextId": "context4_wRixwF"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     },
@@ -496,6 +464,10 @@
       "toContexts": [
         {
           "toContextId": "context4_wRixwF"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     },
@@ -530,16 +502,16 @@
           }
         },
         {
-          "id": "uiControl2_Ao9p40",
-          "controlId": "control2_cwTSXy",
+          "id": "uiControl14_pxz0nM",
+          "controlId": "control16_TqnDIo",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl2_Ao9p40",
-                "onGetTemplate": "getTemplate_uiControl2_Ao9p40"
+                "onDoAction": "doAction_uiControl14_pxz0nM",
+                "onGetTemplate": "getTemplate_uiControl14_pxz0nM"
               }
             }
           }
@@ -663,21 +635,6 @@
               }
             }
           }
-        },
-        {
-          "id": "uiControl21_lPfTHW",
-          "controlId": "control21_nsaVUJ",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl21_lPfTHW",
-                "onGetTemplate": "getTemplate_uiControl21_lPfTHW"
-              }
-            }
-          }
         }
       ]
     }
@@ -688,7 +645,8 @@
         "context4_wRixwF": [
           "33333333333333",
           "流程测试201712月-张济天-2017-10-23",
-          ""
+          "",
+          "云适配测试_song"
         ]
       }
     },
@@ -697,7 +655,12 @@
         "context4_wRixwF": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=154031&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=187850&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0"
+          "192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215915&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+        ],
+        "context5_46tN5g": [
+          "192.168.200.63/docs/docs/MutiDocBrowser.jsp?documentids=&splitflag=,",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids="
         ]
       }
     },
@@ -829,6 +792,46 @@
             "weaver",
             "wflist_span",
             "workflowspan"
+          ]
+        ],
+        "context5_46tN5g": [
+          [
+            "BrowseTable",
+            "FONTSYSTEMF",
+            "_myDP",
+            "btnclear",
+            "btnok",
+            "btnsub",
+            "closetext",
+            "dateduring",
+            "isonline",
+            "mainsupports",
+            "myfun",
+            "needShow",
+            "nextpage",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "searchcreater",
+            "searchcreaterBtn",
+            "searchcreaterSpan",
+            "searchdatefrom",
+            "searchdatefromspan",
+            "searchdateto",
+            "searchdatetospan",
+            "searchid",
+            "secCategoryBtn",
+            "secCategorySpan",
+            "selectdate",
+            "txtCrmId",
+            "txtCrmIdBtn",
+            "txtCrmIdSpan",
+            "weaver"
+          ],
+          [
+            "main"
           ]
         ]
       }
@@ -969,6 +972,35 @@
             "xTable_info",
             "xTable_message"
           ]
+        ],
+        "context5_46tN5g": [
+          [
+            "BroswerStyle",
+            "Browser",
+            "Calendar",
+            "DataDark",
+            "DataHeader",
+            "DataLight",
+            "InputStyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "ViewForm",
+            "browser",
+            "btn",
+            "btnReset",
+            "btnSearch",
+            "clickRightMenu",
+            "drop-shadow",
+            "field",
+            "highslide-container",
+            "highslide-loading",
+            "inputstyle",
+            "lable",
+            "simplehrmhead",
+            "styled"
+          ],
+          []
         ]
       }
     },
@@ -1069,6 +1101,59 @@
             "TR/TD/SELECT",
             "TR/TD/SPAN",
             "TR/TD/TABLE"
+          ]
+        ],
+        "context5_46tN5g": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TABLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/TABLE/COLGROUP",
+            "-/TABLE/TBODY",
+            "DIV/BUTTON/U",
+            "DIV/TABLE/COLGROUP",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/BUTTON",
+            "FORM/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/A/IMG",
+            "TD/BUTTON/U",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/DIV/TABLE",
+            "TD/FORM/DIV",
+            "TD/FORM/INPUT-hidden",
+            "TD/FORM/TABLE",
+            "TD/SELECT/OPTION",
+            "TD/TABLE/COLGROUP",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FORM",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TH/DIV"
+          ],
+          [
+            "-/-/FRAME",
+            "-/-/NOFRAMES"
           ]
         ]
       }
