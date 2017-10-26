@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0",
   "jsFile": "index.js",
   "requires": {
-    "hetong01": "../hetong01/index.json"
+    "hetong01": "../hetong01/index.json",
+    "managerAuditDetail": "../managerAuditDetail/index.json"
   },
   "chineseName": "01合同会签流程",
   "description": "",
@@ -222,6 +223,10 @@
         {
           "toContextId": "context3_FzLnbc",
           "toModelId": "hetong01"
+        },
+        {
+          "toContextId": "context4_wRixwF",
+          "toModelId": "managerAuditDetail"
         }
       ]
     },
@@ -333,6 +338,12 @@
       "contexts": {
         "context4_ktABGz": [
           ""
+        ],
+        "context4_wRixwF": [
+          "33333333333333",
+          "流程测试201712月-张济天-2017-10-23",
+          "",
+          "云适配测试_song"
         ]
       }
     },
@@ -345,6 +356,12 @@
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=7901&isagent=0&beagenter=0",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=127508&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=127506&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+        ],
+        "context4_wRixwF": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=154031&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=187850&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215915&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ]
       }
     },
