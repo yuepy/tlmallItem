@@ -1,18 +1,18 @@
 {
   "version": "0.1",
-  "id": "Summary",
-  "targetURL": "http://192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbSummary.jsp?orderNum=o11360039",
+  "id": "Address",
+  "targetURL": "http://192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11610044",
   "jsFile": "index.js",
   "requires": {
-    "Summary": "../Summary/index.json"
+    "Address": "../Address/index.json"
   },
-  "chineseName": "汇总（B2B销售订单）",
+  "chineseName": "地址（B2B销售订单）",
   "description": "",
   "controls": {
-    "control44_8h1JdZ": {
+    "control59_TdmpDC": {
       "location": {
         "data": {
-          "tagName": "HTML"
+          "tagName": "BODY"
         },
         "userData": {
           "data": [],
@@ -22,22 +22,22 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]"
+            "value": "/HTML[1]/BODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control44_8h1JdZ"
+        "onGetData": "getData_control59_TdmpDC"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
     },
-    "control56_KFRh9g": {
+    "control60_40OEw6": {
       "location": {
         "data": {
-          "tagName": "TABLE"
+          "tagName": "TBODY"
         },
         "userData": {
           "data": [],
@@ -47,12 +47,12 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]"
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control56_KFRh9g"
+        "onGetData": "getData_control60_40OEw6"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -61,77 +61,77 @@
     }
   },
   "contexts": {
-    "context19_9mTQlh": {
+    "context20_r9MHM9": {
       "controls": [
-        "control44_8h1JdZ",
-        "control56_KFRh9g"
+        "control59_TdmpDC",
+        "control60_40OEw6"
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/MaterialManager\\/orderManagement\\/B2BSale\\/BtbSummary\\.jsp?.*"
+        "http:\\/\\/192\\.168\\.2\\.40:8000\\/ptsoa\\/MaterialManager\\/orderManagement\\/B2BSale\\/BtbAddr\\.jsp.*"
       ]
     }
   },
   "flows": {
-    "flow29_ayyhy5": {
+    "flow66_zI7g6G": {
       "fromContextId": "context8_ddpRhS",
       "fromAction": "doAction",
       "fromControlId": "control21_GeryA0",
       "toContexts": [
         {
-          "toContextId": "context19_9mTQlh",
-          "toModelId": "Summary"
+          "toContextId": "context20_r9MHM9",
+          "toModelId": "Address"
         }
       ]
     },
-    "flow57_R1xmdR": {
+    "flow67_wWz7OZ": {
       "toContexts": [
         {
-          "toContextId": "context19_9mTQlh"
+          "toContextId": "context20_r9MHM9"
         }
       ]
     },
-    "flow60_BlcVaD": {
-      "fromContextId": "context19_9mTQlh",
+    "flow68_wyAnFQ": {
+      "fromContextId": "context20_r9MHM9",
       "fromAction": "doAction",
-      "fromControlId": "control44_8h1JdZ",
+      "fromControlId": "control59_TdmpDC",
       "toContexts": [
         {
-          "toContextId": "context19_9mTQlh"
+          "toContextId": "context20_r9MHM9"
         }
       ]
     }
   },
   "pages": {
-    "page19_72HcfI": {
-      "contextId": "context19_9mTQlh",
+    "page20_IxJCZn": {
+      "contextId": "context20_r9MHM9",
       "layout": [
         {
-          "id": "uiControl43_xd0XdW",
-          "controlId": "control44_8h1JdZ",
+          "id": "uiControl56_cTNTVK",
+          "controlId": "control59_TdmpDC",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl43_xd0XdW",
-                "onGetTemplate": "getTemplate_uiControl43_xd0XdW"
+                "onDoAction": "doAction_uiControl56_cTNTVK",
+                "onGetTemplate": "getTemplate_uiControl56_cTNTVK"
               }
             }
           }
         },
         {
-          "id": "uiControl52_bUyp3y",
-          "controlId": "control56_KFRh9g",
+          "id": "uiControl57_IzXfNJ",
+          "controlId": "control60_40OEw6",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl52_bUyp3y",
-                "onGetTemplate": "getTemplate_uiControl52_bUyp3y"
+                "onDoAction": "doAction_uiControl57_IzXfNJ",
+                "onGetTemplate": "getTemplate_uiControl57_IzXfNJ"
               }
             }
           }
@@ -142,25 +142,22 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context19_9mTQlh": [
-          "订单审核明细"
+        "context20_r9MHM9": [
+          "订单地址明细"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context19_9mTQlh": [
-          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbSummary.jsp?orderNum=o11360039",
-          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbSummary.jsp?orderNum=o11360029",
-          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbSummary.jsp?orderNum=o11610019",
-          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbSummary.jsp?orderNum=o11610044",
-          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbSummary.jsp?orderNum=o11610024"
+        "context20_r9MHM9": [
+          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11610044",
+          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11360029"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context19_9mTQlh": [
+        "context20_r9MHM9": [
           [
             "datagrid"
           ]
@@ -169,7 +166,7 @@
     },
     "page/classes": {
       "contexts": {
-        "context19_9mTQlh": [
+        "context20_r9MHM9": [
           [
             "form_label"
           ]
@@ -178,13 +175,14 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context19_9mTQlh": [
+        "context20_r9MHM9": [
           [
             "-/-/SCRIPT",
             "-/-/TABLE",
             "-/TABLE/TBODY",
             "TABLE/TBODY/TR",
-            "TBODY/TR/TD"
+            "TBODY/TR/TD",
+            "TR/TD/A"
           ]
         ]
       }
