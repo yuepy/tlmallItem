@@ -188,6 +188,58 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control255_x5oZAQ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"queryForm\"]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.col-sm-12 DIV.ibox.float-e-margins DIV.ibox-title.ibox-title-nobd"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control255_x5oZAQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control256_DdNnpf": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control256_DdNnpf"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -197,7 +249,9 @@
         "control148_6ilf9M",
         "control152_75cpfg",
         "control67_v1oOpi",
-        "control89_DqINPL"
+        "control89_DqINPL",
+        "control255_x5oZAQ",
+        "control256_DdNnpf"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -267,6 +321,36 @@
               "events": {
                 "onDoAction": "doAction_uiControl65_B15nnn",
                 "onGetTemplate": "getTemplate_uiControl65_B15nnn"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl249_oHJCgV",
+          "controlId": "control255_x5oZAQ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl249_oHJCgV",
+                "onGetTemplate": "getTemplate_uiControl249_oHJCgV"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl250_TU4H8l",
+          "controlId": "control256_DdNnpf",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl250_TU4H8l",
+                "onGetTemplate": "getTemplate_uiControl250_TU4H8l"
               }
             }
           }
@@ -385,7 +469,8 @@
           "192.168.1.224:8080/ptDataShow/customerview/toHomePage?&filter_userId=YUGUOJIAN&encoder=WVVHVU9KSUFOKzA2LzE3My8yMDE3IDA5OjU1OjA4",
           "192.168.1.224:8080/ptDataShow/customerview/toHomePage?a=1&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8xODQvMjAxNyAxMDoyNjoyMA==",
           "192.168.1.224:8080/pttlCrm/res/page/visitView/visitView.html",
-          "192.168.1.224:8080/ptDataShow/customerview/toHomePage?a=1&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8yMDgvMjAxNyAxNjo0ODo1Nw=="
+          "192.168.1.224:8080/ptDataShow/customerview/toHomePage?a=1&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8yMDgvMjAxNyAxNjo0ODo1Nw==",
+          "192.168.1.224:8080/ptDataShow/customerview/toHomePage?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMTAvMjk5LzIwMTcgMDk6NTA6Mzk="
         ]
       }
     },
@@ -497,6 +582,48 @@
           ],
           [
             "homeIfram"
+          ],
+          [
+            "baobiap",
+            "chart_a",
+            "chart_b",
+            "curMonthVisitActualClientCount",
+            "curMonthVisitActualClientFreq",
+            "curMonthVisitActualStoreCount",
+            "curMonthVisitActualStoreFreq",
+            "curMonthVisitClientCountRate",
+            "curMonthVisitClientFreqRate",
+            "curMonthVisitRequirementClientCount",
+            "curMonthVisitRequirementClientFreq",
+            "curMonthVisitRequirementStoreCount",
+            "curMonthVisitRequirementStoreFreq",
+            "curMonthVisitStoreCountRate",
+            "curMonthVisitStoreFreqRate",
+            "curYearVisitActualClientFreq",
+            "curYearVisitActualStoreFreq",
+            "curYearVisitClientFreqRate",
+            "curYearVisitRequirementClientFreq",
+            "curYearVisitRequirementStoreFreq",
+            "curYearVisitStoreFreqRate",
+            "data_",
+            "day",
+            "encoder",
+            "filter_userId",
+            "mapChart",
+            "mapId",
+            "month",
+            "position",
+            "queryForm",
+            "sectionChart",
+            "selDay",
+            "tbody",
+            "todayClientActualVisitNum",
+            "todayClientPlanVisitNum",
+            "todayClientVisitRate",
+            "todayStoreActualVisitNum",
+            "todayStorePlanVisitNum",
+            "todayStoreVisitRate",
+            "year"
           ]
         ]
       }
@@ -932,6 +1059,50 @@
             "wrapper",
             "wrapper-content",
             "zr-element"
+          ],
+          [
+            "border",
+            "col-sm-",
+            "col-xs-",
+            "cusVis",
+            "echarts",
+            "echarts_box",
+            "float-e-margins",
+            "form-content",
+            "form-control",
+            "gztj",
+            "header",
+            "ibox",
+            "ibox-content",
+            "ibox-title",
+            "ibox-title-nobd",
+            "ibox-tools",
+            "icon",
+            "laydate-icon",
+            "lazur-bg",
+            "mask",
+            "navy-bg",
+            "num",
+            "problem",
+            "red-bg",
+            "row",
+            "statistics",
+            "storeVis",
+            "style",
+            "text-left",
+            "text-right",
+            "tmy_block",
+            "toMonth_visity",
+            "toYear_visity",
+            "today_visity",
+            "vis_left",
+            "vis_right",
+            "visiting_customers",
+            "visiting_store",
+            "visiting_time",
+            "widget",
+            "wrapper",
+            "wrapper-content"
           ]
         ]
       }
@@ -1137,6 +1308,35 @@
             "DIV/DIV/H2",
             "DIV/DIV/H5",
             "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SECTION",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/SECTION/DIV",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FORM/DIV/DIV",
+            "SECTION/DIV/DIV",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/VAR",
+            "-/DIV/DIV",
+            "-/DIV/FORM",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H2",
+            "DIV/DIV/H5",
             "DIV/DIV/I",
             "DIV/DIV/INPUT-null",
             "DIV/DIV/SCRIPT",
