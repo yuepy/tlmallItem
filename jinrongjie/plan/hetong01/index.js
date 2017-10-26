@@ -40,14 +40,16 @@
             }
           });
         }var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).children("tr").each(function () {
-          var arr1 = [];$(this).children("td").each(function () {
+          //var arr1 = [];
+          $(this).children("td").each(function () {
             var arr2 = []; //判断标题-------------------------------------
             if ($(this)[0].className == 'zdm') {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } //判断附件-------------------------------------
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                 $(this).children("table").find("a").each(function () {
-                  var arr3 = [];arr3.push({ text: $(this).text().trim(), type: 'fujian' });arr2.push(arr3);
+                  //var arr3 = [];
+                  arr2.push({ text: $(this).text().trim(), type: 'fujian' }); //arr2.push(arr3);
                 }); //判断select-------------------------------------
               } else if ($(this).children("select").length > 0) {
                 var arr4 = [];$(this).children("select").children("option").each(function () {
@@ -58,34 +60,25 @@
               } //判断input-------------------------------------
               else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                   arr2.push({ text: $(this).children("input").prop('value'), type: 'input' });
-                } //判断
-            arr1.push(arr2);
-          });data.base_info.content.push(arr1);
-        });
-      } else if ($(elem).children("table").length == 1) {
-        var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(0).children("tbody")[0];$(tbody2).children("tr").each(function () {
-          var arr1 = [];$(this).children("td").each(function () {
-            var arr2 = []; //判断标题-------------------------------------
-            if ($(this)[0].className == 'zdm') {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
-            } //判断附件-------------------------------------
-            else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
-                $(this).children("table").find("a").each(function () {
-                  var arr3 = [];arr3.push({ text: $(this).text().trim(), type: 'fujian' });arr2.push(arr3);
-                }); //判断select-------------------------------------
-              } else if ($(this).children("select").length > 0) {
-                var arr4 = [];$(this).children("select").children("option").each(function () {
-                  if ($(this).text().trim() !== '') {
-                    arr4.push($(this).text().trim());
-                  }
-                });
-                arr2.push({ text: arr4, type: 'selcet' });
-              } //判断input-------------------------------------
-              else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
-                  arr2.push({ text: $(this).children("input").prop('value'), type: 'input' });
-                } //判断
-            arr1.push(arr2);
-          });data.base_info.content.push(arr1);
+                } //判断纯文字
+                else if ($(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
+                    arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
+                  } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden') {
+                    arr2.push({ text: $(this).children("span").text(), type: 'a' });
+                  } //判断textarea-------------------------------------
+                  else if ($(this).children("textarea").length == 1) {
+                      arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea' });
+                    } //判断button-------------------------------------
+                    else if ($(this).children("button").length > 0) {
+                        //var arr5 = [];
+                        $(this).children("button").each(function () {
+                          arr2.push({ text: $(this).attr('title'), type: 'button' });
+                        }); // arr2.push(arr5);
+                      } //判断意见-------------------------------------
+                      else if ($(this).children().length == 0) {
+                          arr2.push({ text: $(this).text(), type: 'suggest' });
+                        }data.base_info.content.push(arr2);
+          });
         });
       }return data;
     },
