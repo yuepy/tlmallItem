@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/login/Login.jsp",
   "jsFile": "index.js",
   "requires": {
-    "index": "../index/index.json"
+    "index": "../index/index.json",
+    "managerAuditDetail": "../managerAuditDetail/index.json"
   },
   "chineseName": "登录页面",
   "description": "",
@@ -356,6 +357,10 @@
       "toContexts": [
         {
           "toContextId": "context0_kM8s1V"
+        },
+        {
+          "toContextId": "context4_wRixwF",
+          "toModelId": "managerAuditDetail"
         }
       ]
     },
