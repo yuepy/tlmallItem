@@ -34,7 +34,7 @@ function Init_All(selDayStr) {
     ajaxData_1001();
     ajaxData_1002();
     if(configType!='02')
-        buildMap();   // ajaxData_1004();  deprecated
+        //buildMap();   // ajaxData_1004();  deprecated
     ajaxData_1007();
     ajaxData_1008();
     ajaxData_1009();
@@ -77,7 +77,7 @@ function Init_All_Time(selDayStr) {
     ajaxData_1001();
     ajaxData_1002();
     if(configType!='02')
-        buildMap();   // ajaxData_1004();  deprecated
+        //buildMap();   // ajaxData_1004();  deprecated
     ajaxData_1007();
     ajaxData_1008();
     ajaxData_1009();
