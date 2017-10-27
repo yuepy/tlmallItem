@@ -182,44 +182,77 @@ li {
 }
 .ysp-related-doc-content {
   font-size: 14px;
-  font-weight: bold;
-  padding: 15px;
+  justify-content: center;
 }
-.ysp-related-doc-content .ysp-related-doc-search-logo span,
-.ysp-related-doc-content .ysp-related-doc-search-logo input {
+.ysp-related-doc-content span,
+.ysp-related-doc-content input,
+.ysp-related-doc-content select {
   display: inline-block;
 }
-.ysp-related-doc-content .ysp-related-doc-search-logo span {
+.ysp-related-doc-content span {
   width: 15%;
 }
-.ysp-related-doc-content .ysp-related-doc-search-logo input {
-  padding: 0 0 0 10px;
-  width: 35%;
+.ysp-related-doc-content input {
   border: 1px solid #ddd;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 10px;
-  margin: 0;
-  background-position-y: 7px;
-  background-size: 15%;
-  background-position-x: 7px;
-}
-.ysp-related-doc-content .ysp-related-doc-search-title span,
-.ysp-related-doc-content .ysp-related-doc-search-title input {
-  display: inline-block;
-}
-.ysp-related-doc-content .ysp-related-doc-search-title input {
-  padding: 0 0 0 30px;
-  width: 35%;
-  border: 1px solid #eee;
+  border-radius: 5px;
   height: 30px;
-  line-height: 40px;
-  border-radius: 10px;
   margin: 0;
+  width: 35%;
+}
+.ysp-related-doc-content div {
+  padding: 5px 15px;
+}
+.ysp-related-doc-content .ysp-related-doc-search-logo input:nth-child(4) {
+  background: url('images/Magnifier@3x.png') no-repeat;
+  background-size: 15%;
+  background-position-y: 7px;
+  background-position-x: 90px;
+}
+.ysp-related-doc-content .ysp-related-doc-search-title i {
+  color: #ddd;
+}
+.ysp-related-doc-content .ysp-related-doc-search-title input:nth-child(4) {
+  width: 15%;
   background: url('images/calendaricon@2x.png') no-repeat;
   background-position-y: 7px;
-  background-size: 10%;
+  background-size: 20%;
   background-position-x: 7px;
+}
+.ysp-related-doc-content .ysp-related-doc-search-title input:nth-child(6) {
+  width: 15%;
+  background: url('images/calendaricon@2x.png') no-repeat;
+  background-position-y: 7px;
+  background-size: 20%;
+  background-position-x: 7px;
+}
+.ysp-related-doc-content .ysp-related-doc-search-modify span {
+  width: 20%;
+}
+.ysp-related-doc-content .ysp-related-doc-search-modify select {
+  width: 40%;
+}
+.ysp-related-doc-content .ysp-related-doc-search-modify .ysp-serch-content-search {
+  width: 30%;
+  height: 30px;
+  float: right;
+  display: inline-block;
+}
+.ysp-related-doc-search-table {
+  font-size: 14px;
+  margin-top: 20px;
+  border-top: 10px solid #ddd;
+}
+.ysp-related-doc-search-table table {
+  width: 100%;
+  text-align: center;
+  color: #7C7C7C;
+}
+.ysp-related-doc-search-table table th,
+.ysp-related-doc-search-table table tr {
+  height: 30px;
+}
+.ysp-related-doc-search-table table thead {
+  border-bottom: 1px solid #ddd;
 }
 /*****************公文审批-总经理审核 -END***********************/
 /*_________________________________index模版:九宫格样式_________________________________*/
