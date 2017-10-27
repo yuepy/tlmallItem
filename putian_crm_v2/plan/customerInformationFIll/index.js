@@ -2,10 +2,12 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control175_N2PNWg: function getData_control175_N2PNWg(elem) {},
-    doAction_uiControl172_rHIQIG: function doAction_uiControl172_rHIQIG(data, elem) {
+    getData_control175_N2PNWg: function (elem) {},
+    doAction_uiControl172_rHIQIG: function (data, elem) {
       if (data.eventType == "back") {
-        ysp.customHelper.backHome();
+        setTimeout(function () {
+          ysp.customHelper.backHome();
+        }, 50);
       }
     },
     getTemplate_uiControl172_rHIQIG: function getTemplate_uiControl172_rHIQIG() {

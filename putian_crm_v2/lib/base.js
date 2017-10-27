@@ -4,7 +4,6 @@
   function PSubscribe() {
     this.topicList = [];
   }
-  
   PSubscribe.prototype = {
     subscribe: function(topic, cb, caller) {
       if (!cb || !topic) return;
