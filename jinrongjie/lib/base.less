@@ -213,49 +213,71 @@ li {list-style: none}
 }
 .ysp-related-doc-content{
   font-size: 14px;
-  font-weight: bold;
-  padding: 15px;
-  .ysp-related-doc-search-logo{
-    span,input{
-      display: inline-block;
+  justify-content: center;
+  span,input, select {
+    display: inline-block;
+  }
+  span{
+    width: 15%;
+  }
+  input{
+    border:1px solid #ddd;
+    border-radius:5px;
+    height: 30px;
+    margin: 0;
+    width: 35%
+  }
+  div{
+    padding: 5px 15px;
+  }
+  
+  // .ysp-related-doc-search-logo{
+  //   padding: 5px 15px;
+  // }
+  
+  .ysp-related-doc-search-title{
+    // padding: 5px 15px;
+    i{
+      color: #ddd;
     }
-    span{
+    input:nth-child(4){
       width: 15%;
-    }
-    input{
-      padding:0 0 0 10px;
-      width: 35%;
-      // background: #eee;
-      border:1px solid #ddd;
-      height: 40px;
-      line-height: 40px;
-      border-radius:10px;
-      margin:0;
-      // background: url('images/calendaricon@2x.png') no-repeat;
+      background: url('images/calendaricon@2x.png') no-repeat;
       background-position-y: 7px;
-      background-size: 15%;
+      background-size: 20%;
+      background-position-x: 7px;
+    }
+    input:nth-child(6){
+      width: 15%;
+      background: url('images/calendaricon@2x.png') no-repeat;
+      background-position-y: 7px;
+      background-size: 20%;
       background-position-x: 7px;
     }
   }
-  
-  .ysp-related-doc-search-title{
-    span,input{
-      display: inline-block;
+  .ysp-related-doc-search-info{
+    
+  }
+  .ysp-related-doc-search-modify{
+    span{
+      width: 20%;
     }
-    input{
-      padding:0 0 0 30px;
-      width: 35%;
-      // background: #eee;
-      border:1px solid #eee;
+    select{
+      width: 40%;
+    }
+    .ysp-serch-content-search{
+      width: 30%;
+      // margin:0 auto;
       height: 30px;
-      line-height: 40px;
-      border-radius:10px;
-      margin:0;
-      background: url('images/calendaricon@2x.png') no-repeat;
-      background-position-y: 7px;
-      background-size: 10%;
-      background-position-x: 7px;
-    }
+      float: right;
+      // line-break: 35px;
+      // background: #C29A2A;
+      // border:1ps solid #C29A2A;
+      // border-radius:20px;
+      // text-align: center;
+      // color: #fff;
+      display: inline-block;
+		}
   }
 }
 /*****************公文审批-总经理审核 -END***********************/
