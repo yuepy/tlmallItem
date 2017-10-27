@@ -89,6 +89,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -109,13 +113,52 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control17_LknT8t": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]/TABLE[1]",
+              "descendant::FORM[@id=\"weaver\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              5
+            ],
+            "value": "TABLE.Shadow TABLE.viewform"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control17_LknT8t"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
     "context6_aweFC7": {
       "controls": [
         "control22_BzxsFT",
-        "control30_RZlQuz"
+        "control30_RZlQuz",
+        "control17_LknT8t"
       ],
       "anchors": [
         "control21_dvKTNy"
@@ -157,6 +200,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl17_NkvIbB",
                 "onGetTemplate": "getTemplate_uiControl17_NkvIbB"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl22_ZaAa4t",
+          "controlId": "control17_LknT8t",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl22_ZaAa4t",
+                "onGetTemplate": "getTemplate_uiControl22_ZaAa4t"
               }
             }
           }

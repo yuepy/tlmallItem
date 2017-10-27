@@ -11,6 +11,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "text",
@@ -57,6 +61,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -92,6 +100,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -116,13 +128,52 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control12_0yipNy": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]/TABLE[1]",
+              "descendant::FORM[@id=\"weaver\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              5
+            ],
+            "value": "TABLE.Shadow TABLE.ViewForm"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control12_0yipNy"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
     "context5_DhOsrK": {
       "controls": [
         "control32_RBmFTr",
-        "control33_gaRRTO"
+        "control33_gaRRTO",
+        "control12_0yipNy"
       ],
       "anchors": [
         "control31_XCuW0G"
@@ -154,6 +205,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl18_79vAeM",
                 "onGetTemplate": "getTemplate_uiControl18_79vAeM"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl15_IFTFa2",
+          "controlId": "control12_0yipNy",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl15_IFTFa2",
+                "onGetTemplate": "getTemplate_uiControl15_IFTFa2"
               }
             }
           }
