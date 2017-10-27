@@ -1,6 +1,12 @@
 // base.js 是对原 PC 页面进行操作的脚本文件
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function (win, ysp) {
+  var topWin;
+  topWin = win.top;
+  topWin.yspTokenUrl(url){
+    return url;
+  }
+  topWin.EAPI.postMessageToNative('getToken',null);
   var utils = ysp.utils;
   var flag = true;
   ysp.customHelper = {};
