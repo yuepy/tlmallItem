@@ -38,7 +38,7 @@
     },
     doAction_uiControl10_c5ReP0: function (data, elem) {
       if (data.eventType == 'click') {
-        ysp.customHelper.back();
+        var str = elem.textContent;window.opener.ownerDocument.defaultView.document.querySelector('.Shadow').textContent = str;ysp.customHelper.back();
       }
     },
     getTemplate_uiControl10_c5ReP0: function () {

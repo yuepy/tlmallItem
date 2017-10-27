@@ -84,13 +84,44 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control18_uCPsfD": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              13
+            ],
+            "value": "TABLE.Shadow TABLE.viewform TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control18_uCPsfD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context2_owrLEy": {
       "controls": [
         "control9_Ks2mo3",
-        "control24_It6bP6"
+        "control24_It6bP6",
+        "control18_uCPsfD"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -153,15 +184,16 @@
           }
         },
         {
-          "id": "uiControl12_ax2NUG",
+          "id": "uiControl12_DFr8z9",
+          "controlId": "control18_uCPsfD",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl12_ax2NUG",
-                "onGetTemplate": "getTemplate_uiControl12_ax2NUG"
+                "onDoAction": "doAction_uiControl12_DFr8z9",
+                "onGetTemplate": "getTemplate_uiControl12_DFr8z9"
               }
             }
           }

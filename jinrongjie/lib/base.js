@@ -251,6 +251,7 @@
   }
   /* 调用场景 : 适用于适配同一父窗口页面,在当前window打开新窗口. */
   function _openWindow(url, title) {
+    debugger
     if (typeof url !== "string") {
       return;
     }
