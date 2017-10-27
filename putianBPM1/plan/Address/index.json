@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11610044",
   "jsFile": "index.js",
   "requires": {
-    "Address": "../Address/index.json"
+    "Address": "../Address/index.json",
+    "processForm": "../processForm/index.json"
   },
   "chineseName": "地址（B2B销售订单）",
   "description": "",
@@ -98,6 +99,10 @@
       "toContexts": [
         {
           "toContextId": "context20_r9MHM9"
+        },
+        {
+          "toContextId": "context8_ddpRhS",
+          "toModelId": "processForm"
         }
       ]
     }
@@ -151,7 +156,8 @@
       "contexts": {
         "context20_r9MHM9": [
           "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11610044",
-          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11360029"
+          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11360029",
+          "192.168.2.40:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11360039"
         ]
       }
     },
