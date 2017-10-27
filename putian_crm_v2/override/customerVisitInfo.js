@@ -2017,6 +2017,7 @@
 	var load = exports.load = function load(data) {
 	    doAction(data);
 	};
+  let reportSubmit = '0';
 	function doAction(data) {
       window.writeReportStatus = 'loading';
 	    var content = "";
@@ -2043,6 +2044,10 @@
 	    delete param.fn;
 	    delete param.clickType;
 	    delete param.clickType1;
+      if(reportSubmit = '1'){
+        return ;
+      }
+    	reportSubmit = '1';
 	    ajaxUtils.sendAjax("visit/customerVisitPlan/addOrUpdateCustomerReport", param, null, function (reslult) {
 	        if (reslult.status == "true") {
             	window.writeReportStatus = 'completed';
@@ -2054,6 +2059,7 @@
 	        } else {
 	            layerUtils.error("保存失败！");
 	        }
+        reportSubmit = '0';
 	    });
 	}
 
@@ -2225,8 +2231,11 @@
 	        }        
 	    });*/
 	}
-
+  let signSubmit = '0';
 	function signIn(param, referenceParentHtmlFn, data) {
+    if(signSubmit == '1'){
+      return;
+    } signSubmit = '1';
 	    ajaxUtils.sendAjax("visit/customerVisitPlan/addCustomerSignIn", param, null, function (reslult) {
 	        if (reslult.status == "true") {
               window.signStatus = 'completed';
@@ -2236,6 +2245,7 @@
 	        } else {
 	            layerUtils.info("签到失败！");
 	        }
+        signSubmit = '0';
 	    });
 	}
 
@@ -2517,9 +2527,12 @@
 	        }        
 	    });*/
 	}
-
+  let signOutSubmit = '0';
 	function signOut(param, referenceParentHtmlFn, data) {
 	    ajaxUtils.sendAjax("visit/customerVisitPlan/addCustomerSignOut", param, null, function (reslult) {
+            if(signOutSubmit == '1'){
+              return;
+            } signOutSubmit = '1';
 	        if (reslult.status == "true") {
               window.signOutStatus = 'completed';
 	            layerUtils.success("签出成功！", { time: 1000 });
@@ -2528,6 +2541,7 @@
 	        } else {
 	            layerUtils.info("签出失败！");
 	        }
+        signOutSubmit = '0'
 	    });
 	}
 
