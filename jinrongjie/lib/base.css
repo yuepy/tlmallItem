@@ -401,6 +401,7 @@ li {
   background: #f4f4f4;
 }
 /*********************************合同会签流程*************************************/
+/*_________________________________查询Dialog:页面样式_________________________________*/
 .ysp-search-dialog {
   height: 40px;
   line-height: 40px;
@@ -445,6 +446,7 @@ li {
 .ysp-search-dialog .ysp-search-dialog-cxright .ysp-dialog-wrapper {
   background: #fff;
 }
+/*_________________________________分页:组件样式_________________________________*/
 .ysp-pageTurntotal {
   text-align: right;
   padding-right: 20px;
@@ -474,11 +476,11 @@ li {
   border: 1px solid #eee;
   border-radius: 3px;
 }
+/*_________________________________查询内页:页面样式_________________________________*/
 .ysp-serch-content .ysp-serch-content-createData,
 .ysp-serch-content .ysp-serch-content-reciveData {
   height: 60px;
   line-height: 50px;
-  border-bottom: 1px solid #ddd;
   padding: 0 0 0 10px;
 }
 .ysp-serch-content .ysp-serch-content-createData span,
@@ -510,9 +512,7 @@ li {
 .ysp-serch-content .ysp-serch-content-reviceTime {
   height: 60px;
   line-height: 50px;
-  border-bottom: 1px solid #ddd;
-  overflow: hidden;
-  padding: 0 0 0 10px;
+  padding-top: 10px;
 }
 .ysp-serch-content .ysp-serch-content-createPeople div,
 .ysp-serch-content .ysp-serch-content-reviceTime div,
@@ -555,4 +555,28 @@ li {
   border-radius: 20px;
   text-align: center;
   color: #fff;
+}
+.ysp-serch-border {
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 10px;
+}
+.ysp-serch-border button {
+  margin: 12px 10px;
+}
+.ysp-button {
+  padding-bottom: 10px;
+  margin-left: 28px;
+  border-bottom: 1px solid #d2d2d2;
+}
+.ysp-serch-content-reciveData {
+  padding-top: 10px;
+}
+.ysp-serch-content-reviceTime {
+  padding-top: 20px;
+}
+.ysp-serch-content-search {
+  margin-top: 20px;
 }
