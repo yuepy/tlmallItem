@@ -2485,14 +2485,37 @@ div.ysp-tempvisit-list-wrapper{
               color:#4796ed;
               margin: 15px 0;
             }
-            > span:nth-child(n+2){
-              font-size:@normalFont;
+            >span:nth-child(2){
+							font-size:@normalFont;
               margin: 10px 0;
               > span:first-child{
                 color:#999999;
               }
               > span:last-child{
                 color:#000000;
+              }
+            }
+            > span:nth-child(3){
+              display: flex !important;
+              justify-content: space-between;
+              align-items: center;
+              font-size:@normalFont;
+              margin: 10px 15px 10px 0px;
+              > span:first-child{
+                >span:first-child{
+                  color:#999999;
+                }
+                >span:last-child{
+                  color: #000000;
+                }
+              }
+              > span:last-child{
+                >span:first-child{
+                  color: #999999;
+                }
+                >span:last-child{
+                  color: #000000;
+                }
               }
             }
         }
