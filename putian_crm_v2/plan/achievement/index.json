@@ -9,66 +9,6 @@
   "chineseName": "业绩首页",
   "description": "",
   "controls": {
-    "control109_B62ZvW": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.m-box-datas.clearfix DIV.one.a DIV.content"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control109_B62ZvW"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control118_6aSuf6": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.m-box-datas.clearfix DIV.one.b DIV.content"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control118_6aSuf6"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control123_1NaFXs": {
       "location": {
         "data": {
@@ -310,20 +250,72 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control257_pLPdT2": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body-bg DIV.g-main"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control257_pLPdT2"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control258_htTdgO": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body-bg DIV.g-main"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control258_htTdgO"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context30_fLMQCM": {
       "controls": [
-        "control109_B62ZvW",
-        "control118_6aSuf6",
         "control123_1NaFXs",
         "control124_6f9iyR",
         "control128_5Gm11K",
         "control138_3EstT8",
         "control173_yZJTIx",
         "control122_ThVhza",
-        "control174_u04FZR"
+        "control174_u04FZR",
+        "control257_pLPdT2",
+        "control258_htTdgO"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -427,31 +419,31 @@
           }
         },
         {
-          "id": "uiControl112_FAqr7I",
-          "controlId": "control109_B62ZvW",
+          "id": "uiControl251_OuF4im",
+          "controlId": "control257_pLPdT2",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl112_FAqr7I",
-                "onGetTemplate": "getTemplate_uiControl112_FAqr7I"
+                "onDoAction": "doAction_uiControl251_OuF4im",
+                "onGetTemplate": "getTemplate_uiControl251_OuF4im"
               }
             }
           }
         },
         {
-          "id": "uiControl115_K94m2Z",
-          "controlId": "control118_6aSuf6",
+          "id": "uiControl252_ckI535",
+          "controlId": "control258_htTdgO",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl115_K94m2Z",
-                "onGetTemplate": "getTemplate_uiControl115_K94m2Z"
+                "onDoAction": "doAction_uiControl252_ckI535",
+                "onGetTemplate": "getTemplate_uiControl252_ckI535"
               }
             }
           }
@@ -525,7 +517,8 @@
           "192.168.1.224:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDgvMjMzLzIwMTcgMTM6MzQ6MjQ=",
           "192.168.1.224:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMjQ4LzIwMTcgMTg6MDk6NDU=",
           "192.168.1.224:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMjQ5LzIwMTcgMTA6MjM6MTg=",
-          "192.168.1.224:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMjQ5LzIwMTcgMTc6MDg6MDE="
+          "192.168.1.224:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMjQ5LzIwMTcgMTc6MDg6MDE=",
+          "192.168.1.224:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMTAvMzAwLzIwMTcgMTM6NDQ6MTg="
         ],
         "context37_iIDfFF": [
           "192.168.1.224:8080/ptDataShow/report/reportsByPidAndEncoder?encoder=V0FOR0RPTkcrMDQvMjUvMjAxNyAxMToyNDoyMQ%3d%3d&filter_userId=WANGDONG&reportPid=head-Company",
@@ -880,6 +873,52 @@
             "timeDimen",
             "title",
             "u-box-infors",
+            "u-selt",
+            "u-table-a",
+            "u-table-b",
+            "u-time",
+            "u-title",
+            "u-visualmap"
+          ],
+          [
+            "Up",
+            "a",
+            "activ",
+            "b",
+            "bizUnitProject",
+            "box",
+            "btn-display",
+            "businessDimen",
+            "chart",
+            "chart-bars",
+            "clearfix",
+            "content",
+            "detailDatas",
+            "g-main",
+            "header",
+            "icon",
+            "icon-line",
+            "l-chart",
+            "laydate-icon",
+            "left",
+            "m-body",
+            "m-box",
+            "m-box-datas",
+            "m-boxs",
+            "m-header",
+            "mask",
+            "max",
+            "min",
+            "one",
+            "overview",
+            "r-chart",
+            "right",
+            "sort",
+            "spaceDimen",
+            "table",
+            "tableContent",
+            "timeDimen",
+            "title",
             "u-selt",
             "u-table-a",
             "u-table-b",
@@ -1740,6 +1779,37 @@
             "THEAD/TR/TH",
             "TR/TD/A",
             "UL/LI/INPUT-null"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/TITLE",
+            "-/-/VAR",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/EM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H2",
+            "DIV/DIV/H3",
+            "DIV/DIV/H5",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/VAR",
+            "DIV/H1/A",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A"
           ]
         ],
         "context37_iIDfFF": [
