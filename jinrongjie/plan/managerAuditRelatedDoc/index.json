@@ -3,59 +3,12 @@
   "id": "managerAuditRelatedDoc",
   "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=",
   "jsFile": "index.js",
+  "requires": {
+    "auditRelatedDocChildNodes": "../auditRelatedDocChildNodes/index.json"
+  },
   "chineseName": "总经理审核流程相关文档",
   "description": "总经理审核流程相关文档",
   "controls": {
-    "control31_XCuW0G": {
-      "location": {
-        "data": {
-          "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "标识 子目录"
-              ],
-              "visText": [
-                "标识 子目录"
-              ]
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[1]",
-              "descendant::FORM[@id=\"weaver\"]//TR"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              40
-            ],
-            "value": "TABLE.Shadow TABLE.ViewForm TBODY TR"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]"
-          }
-        ]
-      },
-      "roles": "element",
-      "text": "\n标识\n\n子目录\n\n    \n\n",
-      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
-    },
     "control32_RBmFTr": {
       "location": {
         "data": {
@@ -134,6 +87,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -166,6 +123,44 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control35_qbTars": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]//BUTTON[@id=\"secCategoryBtn\"]",
+              "descendant::BUTTON[@id=\"secCategoryBtn\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "TABLE.ViewForm TD.field BUTTON.browser.Browser"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[4]/BUTTON[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control35_qbTars"
+      },
+      "intendedRole": "custom",
+      "roles": "element,button,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -173,7 +168,8 @@
       "controls": [
         "control32_RBmFTr",
         "control33_gaRRTO",
-        "control12_0yipNy"
+        "control12_0yipNy",
+        "control35_qbTars"
       ],
       "anchors": [
         "control31_XCuW0G"
@@ -186,6 +182,40 @@
       "toContexts": [
         {
           "toContextId": "context5_DhOsrK"
+        }
+      ]
+    },
+    "flow16_WXRp0O": {
+      "fromContextId": "context5_DhOsrK",
+      "fromAction": "doAction",
+      "fromControlId": "control32_RBmFTr",
+      "toContexts": [
+        {
+          "toContextId": "context5_DhOsrK"
+        }
+      ]
+    },
+    "flow18_EPVre1": {
+      "fromContextId": "context5_DhOsrK",
+      "fromAction": "doAction",
+      "fromControlId": "control12_0yipNy",
+      "toContexts": [
+        {
+          "toContextId": "context5_DhOsrK"
+        }
+      ]
+    },
+    "flow24_QLcz3U": {
+      "fromContextId": "context5_DhOsrK",
+      "fromAction": "doAction",
+      "fromControlId": "control35_qbTars",
+      "toContexts": [
+        {
+          "toContextId": "context5_DhOsrK"
+        },
+        {
+          "toContextId": "context7_XeZnke",
+          "toModelId": "auditRelatedDocChildNodes"
         }
       ]
     }
@@ -235,6 +265,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl21_S9tvqE",
                 "onGetTemplate": "getTemplate_uiControl21_S9tvqE"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl31_1QSBv1",
+          "controlId": "control35_qbTars",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl31_1QSBv1",
+                "onGetTemplate": "getTemplate_uiControl31_1QSBv1"
               }
             }
           }

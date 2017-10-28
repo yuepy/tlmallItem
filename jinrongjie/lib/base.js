@@ -3,6 +3,10 @@
 (function (win, ysp) {
   var utils = ysp.utils;
   var flag = true;
+  topWindow = win.top;
+  topWindow.yspTokenUrl = function(url){
+    return url;
+  };
   ysp.customHelper = {};
   var winContainer = []; // openWinow 方法地址存入的数组
   var topWin = null; // Window对象
@@ -44,9 +48,22 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc){
+      aWin.yspTokenUrl = function(url){
+        return url;
+      }
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
+      aWin.addEventListener('DOMContentLoaded', function() {
+        console.log('我要加载了')
+        // if (aWin.location.href.indexOf('index.html') !== -1) {
+        //   var actionEvent = '{"target":"null","data":"closePreLoading"}';
+        //   //找到时机像客户端发出信息，表示我要获取带token的targetURL
+        //   var parent = aWin.frameElement.ownerDocument.defaultView;
+        //   parent && parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
+        //   sessionStorage.setItem('closePreLoading-domcontentloaded', true);
+        // }
+      },false)
       /* 兼容性问题 */
       aWin.showModalDialog = function(url){
         return aWin.open(url,'新窗口')
@@ -234,6 +251,7 @@
   }
   /* 调用场景 : 适用于适配同一父窗口页面,在当前window打开新窗口. */
   function _openWindow(url, title) {
+    debugger
     if (typeof url !== "string") {
       return;
     }
