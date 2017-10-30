@@ -405,9 +405,21 @@
        realType = "customerInformationFIll";
        aWin && (aWin.location.href.indexOf('index.html') == -1) && aWin.location.reload()
     }
-    if (type === "achievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard") {
+    // if (type === "achievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard") {
+    //   if (activeContext && activeContext.model.id == realType) {
+    //     console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
+    //     return;
+    //   }
+    // }
+    
+
+    if (type === "achievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard" || type === "newInformationTotle1") {
       if (activeContext && activeContext.model.id == realType) {
         console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
+         return;
+      }
+      if(activeContext && activeContext.model.id == 'customerInformationFIll'){ // 信息录入页面加载无刷新
+        aWin && (aWin.location.href.indexOf('index.html') == -1) && aWin.location.reload();
         return;
       }
     }
