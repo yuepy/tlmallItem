@@ -464,33 +464,41 @@ li {
   background: #fff;
   padding: 10px 15px;
 }
+.ysp-dialog-wrapper-top .approval-node-info {
+  margin: 10px 0;
+}
 .ysp-dialog-wrapper-top .approval-node-info div {
   text-align: left;
   font-size: 13px;
   color: #646464;
 }
 .ysp-dialog-wrapper-top .approval-node-info > div {
-  display: inline;
+  display: inline-block;
   padding: 5px 0;
 }
-.ysp-dialog-wrapper-top .approval-node-info .left-div {
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-left-div {
   width: 33%;
   padding-right: 10px;
 }
-.ysp-dialog-wrapper-top .approval-node-info .left-div div {
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-left-div div {
   text-align: right;
 }
-.ysp-dialog-wrapper-top .approval-node-info .left-div > div:nth-child(2) {
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-left-div > div:nth-child(2) {
   font-weight: bold;
   color: #000;
 }
-.ysp-dialog-wrapper-top .approval-node-info .right-div {
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div {
   width: 67%;
   padding-left: 10px;
-  background: url(images/两端点.png) no-repeat;
+  background: url(images/nodepoint.png) no-repeat;
 }
-.ysp-dialog-wrapper-top .approval-node-info .right-div div {
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div div {
   text-align: left;
+}
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div > div:nth-last-child(1) > span span {
+  color: #97E5BB;
+  border-bottom: 1px solid #97E5BB;
+  cursor: pointer;
 }
 /*_________________________________Dialog组件:页面样式_________________________________*/
 /* --------------------------------------table表格01合同会签样式*/

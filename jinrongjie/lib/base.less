@@ -503,16 +503,17 @@ li {list-style: none}
   background: #fff;
   padding: 10px 15px;
   .approval-node-info{
+    margin: 10px 0;
     div{
       text-align: left;
       font-size: 13px;
       color: #646464;
     }
     >div{
-      display: inline;
+      display: inline-block;
       padding: 5px 0;
     }
-    .left-div{
+    .approval-node-info-left-div{
     	width: 33%;
       padding-right: 10px;
       
@@ -524,13 +525,22 @@ li {list-style: none}
         color: #000;
       }
     }
-    .right-div{
+    .approval-node-info-right-div{
       width: 67%;
       padding-left: 10px;
       // border-left: 1px solid #CCAB63;
-      background: url(images/两端点.png) no-repeat;
+      background: url(images/nodepoint.png) no-repeat;
       div{
       	text-align: left;  
+      }
+      >div:nth-last-child(1){
+        >span{
+          span{
+            color: #97E5BB;
+            border-bottom: 1px solid #97E5BB;
+            cursor: pointer;
+          }
+        }
       }
     }
   }
