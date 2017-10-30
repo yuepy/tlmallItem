@@ -272,9 +272,9 @@
           // case 'newInformationTotle':// case 'informationFill': //信息录入
           //    task.title = "DATA_ENTRY_MOBILE";
           //    break;
-        // case 'customerInformationFIll': //信息录入(新)
-        //   task.title = "DATA_ENTRY";
-        //   break;
+          // case 'customerInformationFIll': //信息录入(新)
+          //   task.title = "DATA_ENTRY";
+          //   break;
         case 'newInformationTotle': //信息录入(新+1)
           task.title = "ENTRY_DATA_TOTLE";
           break;
@@ -383,6 +383,7 @@
   var recoverSceneId;
   var timeStamps = [];
   cwin._yspNativeEventHandler = function(type, stop) {
+    debugger;
     cwin.sessionStorage.clear();
     cwin.sessionStorage.setItem('msg', type);
     if (ysp.customHelper && ysp.customHelper.statusManager)

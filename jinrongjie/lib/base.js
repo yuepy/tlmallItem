@@ -51,6 +51,58 @@
       aWin.yspTokenUrl = function(url){
         return url;
       }
+				
+      /* attachEvent兼容问题 */
+      var oUploadannexupload;
+      aWin.fileuploadannexupload = function () {
+        var settings = {
+        flash_url : "/js/swfupload/swfupload.swf",
+        upload_url: "/docs/docupload/MultiDocUploadByWorkflow.jsp",
+        post_params: {
+        "mainId":"3",
+        "subId":"5",
+        "secId":"106",
+        "userid":"9492",
+        "logintype":"1"
+        },
+        file_size_limit :"50 MB",
+        file_types : "*.*",
+        file_types_description : "All Files",
+        file_upload_limit : 100,
+        file_queue_limit : 0,
+        custom_settings : {
+        progressTarget : "fsUploadProgressannexupload",
+        cancelButtonId : "btnCancelannexupload",
+        uploadfiedid:"field-annexupload"
+        },
+        debug: false,
+        button_image_url : "/js/swfupload/add.png",
+        button_placeholder_id : "spanButtonPlaceHolderannexupload",
+        button_width: 100,
+        button_height: 18,
+        button_text : '<span class="button">选取多个文件</span>',
+        button_text_style : '.button { font-family: Helvetica, Arial, sans-serif; font-size: 12pt; } .buttonSmall { font-size: 10pt; }',
+        button_text_top_padding: 0,
+        button_text_left_padding: 18,
+        button_window_mode: aWin.SWFUpload.WINDOW_MODE.TRANSPARENT,
+        button_cursor: SWFUpload.CURSOR.HAND,
+        file_queued_handler : fileQueued,
+        file_queue_error_handler : fileQueueError,
+        file_dialog_complete_handler : fileDialogComplete_2,
+        upload_start_handler : uploadStart,
+        upload_progress_handler : uploadProgress,
+        upload_error_handler : uploadError,
+        upload_success_handler : uploadSuccess_1,
+        upload_complete_handler : uploadComplete_1,
+        queue_complete_handler : queueComplete
+        };
+        try {
+        aWin.oUploadannexupload=new aWin.SWFUpload(settings,true);
+        } catch(e) {
+        alert(e)
+        }
+      }
+      // aWin.attachEvent = aWin.addEventListener('load',aWin.fileuploadannexupload,false)
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
@@ -63,18 +115,30 @@
         //   parent && parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
         //   sessionStorage.setItem('closePreLoading-domcontentloaded', true);
         // }
-      },false)
+      },false);
       /* 兼容性问题 */
       aWin.showModalDialog = function(url){
         return aWin.open(url,'新窗口')
-      }
+      };
+      aWin.funcremark_log = function (){
+        aWin.FCKEditorExt.initEditor("frmmain","remark",7,aWin.FCKEditorExt.NO_IMAGE);
+        aWin.FCKEditorExt.toolbarExpand(false,"remark");
+        }
+        if(aWin.addEventListener){
+          aWin.addEventListener("load",aWin.funcremark_log,false);
+        }else if(aWin..attachEvent){
+          aWin.attachEvent("onload",aWin.funcremark_log);
+        }else{
+          aWin.onload=aWin.funcremark_log;
+        }
       /* 为topWin赋值 */
 			if (aWin.frameElement && aWin.frameElement.name == "sourcePageFrame" && aWin.frameElement.dataset.browser) {
         topWin = aWin;
         if (aWin.location.href.indexOf('login') !== -1) {
           ysp.runtime.Model.setForceMatchModels(['login']);
         }
-      }
+      };
+      // aWin.attachEvent = aWin.addEventListener('load',aWin.fileuploadannexupload(),false);
     },
     //判断array.tag是存在一个值等于item
     isExist(item, tag, array) {
@@ -245,13 +309,11 @@
       if(item.textContent == operation){
         var href = item.getAttribute('href');
         ysp.customHelper.openWin(href,operation);
-        aWin.history.pushState(aWin.location.href+'woshishei')
       }
     });
   }
   /* 调用场景 : 适用于适配同一父窗口页面,在当前window打开新窗口. */
   function _openWindow(url, title) {
-    debugger
     if (typeof url !== "string") {
       return;
     }
