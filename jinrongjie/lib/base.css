@@ -727,6 +727,36 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .bottom_tb {
   padding-left: 15px;
 }
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .bottom_tb > *:nth-child(n+11) {
+  display: none;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_less {
+  display: none;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_less span:before {
+  margin-right: 10px;
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: url(../local/img/shangjiantou.png) no-repeat 0 5px;
+  background-size: 100%;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_more span:before {
+  margin-right: 10px;
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: url(../local/img/xiajiantou.png) no-repeat 0 5px;
+  background-size: 100%;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .ysp_button_more {
+  height: 40px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+}
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .name {
   border-bottom: 1px solid #EDEDED;
   padding-bottom: 10px;
@@ -800,6 +830,7 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   float: right;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
+  min-height: 30px;
 }
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .about_box .box_con {
   width: 80%;
@@ -813,10 +844,27 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .about_box button {
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 0;
   height: 20px;
   width: 20px;
   background: url(../local/img/search.png) no-repeat 0;
   border: 0;
   background-size: 20px;
+}
+.suggest_lz_box {
+  margin: 10px;
+}
+.suggest_lz_box section {
+  margin: 10px;
+}
+.suggest_lz_box .box_li {
+  margin: 5px 0;
+}
+.suggest_lz_box .box_li span {
+  color: #000;
+  font-size: 14px;
+}
+.suggest_lz_box .box_li span:nth-child(2) {
+  margin-left: 10px;
+  color: #202020;
 }
