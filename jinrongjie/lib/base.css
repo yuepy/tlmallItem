@@ -498,14 +498,13 @@ li {
   background: #F3F3F3;
 }
 .table_hthq section {
-  margin: 10px 0;
+  margin: 5px 0;
   background: #fff;
   padding: 10px;
   position: relative;
 }
 .table_hthq section .hthq_n1 {
   overflow: hidden;
-  margin-top: 20px;
 }
 .table_hthq section .hthq_n1 div:nth-child(1) {
   width: 80%;
@@ -532,7 +531,7 @@ li {
   background: url(../local/img/jinji.png) no-repeat center 5px;
 }
 .table_hthq section .ht_n2 {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 .table_hthq section .ht_n2 .sjt {
   width: 45px;
@@ -994,15 +993,40 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
 }
 .suggest_lz_box section {
   margin: 10px;
+  overflow: hidden;
+  background: url(../local/img/shuxian.png) no-repeat 35%;
 }
-.suggest_lz_box .box_li {
-  margin: 5px 0;
+.suggest_lz_box section li {
+  height: 30px;
+  line-height: 30px;
 }
-.suggest_lz_box .box_li span {
+.suggest_lz_box section .left_box {
+  width: 35%;
+  float: left;
+  padding-right: 15px;
+}
+.suggest_lz_box section .left_box li {
+  color: #202020;
+  font-size: 14px;
+  text-align: right;
+}
+.suggest_lz_box section .left_box li:nth-child(2) {
   color: #000;
+  font-size: 16px;
+}
+.suggest_lz_box section .right_box {
+  width: 65%;
+  float: right;
+  padding-left: 15px;
+}
+.suggest_lz_box section .right_box span {
+  color: #202020;
   font-size: 14px;
 }
-.suggest_lz_box .box_li span:nth-child(2) {
+.suggest_lz_box section .right_box span:nth-child(2) {
   margin-left: 10px;
-  color: #202020;
+}
+.suggest_lz_box section .right_box li:nth-child(4) .green {
+  color: #77DCA6;
+  border-bottom: 1px solid #77DCA6;
 }
