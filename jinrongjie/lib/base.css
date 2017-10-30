@@ -161,6 +161,18 @@ li {
 .ysp-manager-audit-wrapper > div .content {
   font-size: 16px;
 }
+.ysp-manager-audit-wrapper .annex-download {
+  background: url('images/默认文档1x.png') no-repeat #EDEDED;
+  margin-right: 15px;
+  border-radius: 2px;
+  padding: 10px 10px 10px 40px ;
+  background-size: 20px;
+  background-position-x: 10px;
+  background-position-y: 50%;
+}
+.ysp-manager-audit-header-tab {
+  background: #fff;
+}
 .ysp-manager-audit-header-tab .left-div {
   width: 50%;
   float: left;
@@ -185,6 +197,7 @@ li {
   font-size: 14px;
   text-align: center;
   border-bottom: 5px solid #ddd;
+  background: #fff;
 }
 .ysp-manager-audit-title .ysp-manager-audit-main-title {
   font-size: 16px;
@@ -260,6 +273,7 @@ li {
   font-size: 14px;
   margin-top: 20px;
   border-top: 10px solid #ddd;
+  background: #fff;
 }
 .ysp-related-doc-search-table table {
   width: 100%;
@@ -272,6 +286,101 @@ li {
 }
 .ysp-related-doc-search-table table thead {
   border-bottom: 1px solid #ddd;
+}
+.ysp-manageraudit-relate-doc {
+  background: #fff;
+  width: 100%;
+}
+.ysp-manageraudit-relate-doc span {
+  display: inline-block;
+  padding: 10px 15px;
+}
+.ysp-manageraudit-relate-doc span:nth-child(1) {
+  width: 30%;
+  color: #D1C090;
+  font-size: 14px;
+}
+.ysp-manageraudit-relate-doc span:nth-child(2) {
+  width: 70%;
+  background: url('images/Magnifier.png') no-repeat;
+  background-size: 15px;
+  background-position-x: 90%;
+  background-position-y: 50%;
+}
+.ysp-manageraudit-relate-doc .border-bottom {
+  border-bottom: 1px solid #ddd;
+}
+.ysp-manager-audit-sign {
+  background: #fff;
+}
+.ysp-manager-audit-sign span {
+  border-left: 4px solid #C19936;
+  font-size: 14px;
+  padding-left: 11px;
+}
+.ysp-manager-audit-sign div {
+  padding: 10px 15px;
+}
+.ysp-manager-audit-sign div textarea {
+  border-radius: 5px;
+}
+.ysp-related-liucheng-wrapper {
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  font-size: 14px;
+}
+.ysp-related-liucheng-wrapper span,
+.ysp-related-liucheng-wrapper input,
+.ysp-related-liucheng-wrapper select {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  vertical-align: middle;
+}
+.ysp-related-liucheng-wrapper input,
+.ysp-related-liucheng-wrapper select {
+  border-radius: 5px;
+  height: 30px;
+}
+.ysp-related-liucheng-wrapper > div {
+  display: inline-block;
+  width: 50%;
+}
+.ysp-related-liucheng-wrapper > div span,
+.ysp-related-liucheng-wrapper > div input,
+.ysp-related-liucheng-wrapper > div select {
+  width: 50%;
+}
+.ysp-related-liucheng-wrapper > div .date span {
+  width: 25%;
+}
+.ysp-related-liucheng-wrapper > div .date input {
+  width: 30%;
+  background: url('images/calendaricon@2x.png') no-repeat;
+  background-size: 39%;
+  background-position-x: 5px;
+  background-position-y: 50%;
+}
+.ysp-related-liucheng-wrapper > div .date i {
+  width: 5%;
+  color: #ddd;
+}
+.ysp-related-liucheng-wrapper .left-content {
+  padding: 0 10px 0 0;
+}
+.ysp-related-liucheng-wrapper .right-content {
+  padding: 0 0 0 10px;
+}
+.ysp-related-liucheng-wrapper .search-button {
+  color: #fff;
+  width: 100%;
+  background: #C19936;
+  border-radius: 15px;
+  text-align: center;
+  margin: 10px 0;
+  padding: 5px 0;
 }
 /*****************公文审批-总经理审核 -END***********************/
 /*_________________________________index模版:九宫格样式_________________________________*/
@@ -350,9 +459,38 @@ li {
   magin-top: 60px;
   position: absolute;
   width: 100%;
-  height: 150vh;
+  height: 200vh;
   top: 76px;
   background: #fff;
+  padding: 10px 15px;
+}
+.ysp-dialog-wrapper-top .approval-node-info div {
+  text-align: left;
+  font-size: 13px;
+  color: #646464;
+}
+.ysp-dialog-wrapper-top .approval-node-info > div {
+  display: inline;
+  padding: 5px 0;
+}
+.ysp-dialog-wrapper-top .approval-node-info .left-div {
+  width: 33%;
+  padding-right: 10px;
+}
+.ysp-dialog-wrapper-top .approval-node-info .left-div div {
+  text-align: right;
+}
+.ysp-dialog-wrapper-top .approval-node-info .left-div > div:nth-child(2) {
+  font-weight: bold;
+  color: #000;
+}
+.ysp-dialog-wrapper-top .approval-node-info .right-div {
+  width: 67%;
+  padding-left: 10px;
+  border-left: 1px solid #CCAB63;
+}
+.ysp-dialog-wrapper-top .approval-node-info .right-div div {
+  text-align: left;
 }
 /*_________________________________Dialog组件:页面样式_________________________________*/
 /* --------------------------------------table表格01合同会签样式*/

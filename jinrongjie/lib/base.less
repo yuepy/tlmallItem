@@ -188,8 +188,18 @@ li {list-style: none}
       font-size: @base-font-size+2px;
     }
 	}
+  .annex-download{
+    background: url('images/默认文档1x.png') no-repeat #EDEDED;
+    margin-right: 15px;
+    border-radius: 2px;
+    padding: 10px 10px 10px 40px ;
+    background-size: 20px;
+    background-position-x: 10px;
+    background-position-y: 50%;
+  }
 }
 .ysp-manager-audit-header-tab{
+  background: #fff;
   .left-div{
     width: 50%;
     float: left;
@@ -215,6 +225,7 @@ li {list-style: none}
   font-size: @base-font-size;
   text-align: center;
   border-bottom: 5px solid #ddd;
+  background: #fff;
   .ysp-manager-audit-main-title{
     font-size: @base-font-size+2px;
     font-weight: bold;
@@ -289,15 +300,8 @@ li {list-style: none}
     }
     .ysp-serch-content-search{
       width: 30%;
-      // margin:0 auto;
       height: 30px;
       float: right;
-      // line-break: 35px;
-      // background: #C29A2A;
-      // border:1ps solid #C29A2A;
-      // border-radius:20px;
-      // text-align: center;
-      // color: #fff;
       display: inline-block;
 		}
   }
@@ -307,6 +311,7 @@ li {list-style: none}
   font-size:  14px;
   margin-top: 20px;
   border-top: 10px solid #ddd;
+  background: #fff;
   table{
     width: 100%;
     text-align: center;
@@ -319,6 +324,96 @@ li {list-style: none}
     }
   }
 }
+
+.ysp-manageraudit-relate-doc{
+  background: #fff;
+  width: 100%;
+  span{
+    display: inline-block;
+    padding: 10px 15px;
+  }
+
+  span:nth-child(1){
+    width:30%;
+    color: #D1C090;
+    font-size: 14px;
+  }
+  span:nth-child(2){
+    width:70%;
+    background: url('images/Magnifier.png') no-repeat;
+    background-size: 15px;
+    background-position-x: 90%;
+    background-position-y: 50%;
+  }
+  .border-bottom{
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.ysp-manager-audit-sign{
+  background: #fff;
+  span{
+    border-left:4px solid #C19936;font-size:14px; padding-left:11px;
+  }
+  div{
+    padding: 10px 15px;
+    textarea{
+      border-radius: 5px;
+    }
+  }
+}
+.ysp-related-liucheng-wrapper{
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  font-size: 14px;
+  span,input,select{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    vertical-align: middle;
+  }
+  input,select{
+    border-radius: 5px;
+    height: 30px;
+  }
+  >div{
+    display: inline-block;
+    width: 50%;
+    span,input,select{
+      width: 50%;
+    }
+    .date{
+      span{width: 25%;}
+      input{
+        width: 30%;
+        background: url('images/calendaricon@2x.png') no-repeat;
+        background-size: 39%;
+        background-position-x: 5px;
+        background-position-y: 50%;
+      }
+      i{width: 5%;color: #ddd;}
+    }
+  }
+  .left-content{
+    padding: 0 10px 0 0;
+  }
+  .right-content{
+    padding: 0 0 0 10px;
+  }
+  .search-button{
+    color: #fff;
+    width: 100%;
+    background: #C19936;
+    border-radius: 15px;
+    text-align: center;
+    margin: 10px 0;
+  	padding: 5px 0;
+  }
+}
+
+
 /*****************公文审批-总经理审核 -END***********************/
 
 /*_________________________________index模版:九宫格样式_________________________________*/
@@ -403,9 +498,42 @@ li {list-style: none}
   magin-top: 60px;
   position: absolute;
   width: 100%;
-  height: 150vh;
+  height: 200vh;
   top: 76px;
   background: #fff;
+  padding: 10px 15px;
+  .approval-node-info{
+    div{
+      text-align: left;
+      font-size: 13px;
+      color: #646464;
+    }
+    >div{
+      display: inline;
+      padding: 5px 0;
+    }
+    .left-div{
+    	width: 33%;
+      padding-right: 10px;
+      
+      div{
+        text-align: right;
+      }
+      >div:nth-child(2){
+        font-weight: bold;
+        color: #000;
+      }
+    }
+    .right-div{
+      width: 67%;
+      padding-left: 10px;
+      border-left: 1px solid #CCAB63;
+      div{
+      	text-align: left;  
+      }
+    }
+  }
+  
 }
 
 
