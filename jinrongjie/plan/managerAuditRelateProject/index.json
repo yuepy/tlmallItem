@@ -1,0 +1,67 @@
+{
+  "version": "0.1",
+  "id": "managerAuditRelateProject",
+  "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/proj/data/ProjectBrowser.jsp",
+  "jsFile": "index.js",
+  "chineseName": "相关流程项目详情页",
+  "description": "相关流程项目详情页",
+  "controls": {},
+  "contexts": {
+    "context8_RCoKe9": {
+      "controls": [],
+      "anchors": [
+        "control14_2uqkbR"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {},
+  "pages": {
+    "page8_CIQcv9": {
+      "contextId": "context8_RCoKe9",
+      "layout": []
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context8_RCoKe9": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context8_RCoKe9": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/proj/data/ProjectBrowser.jsp"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context8_RCoKe9": [
+          [
+            "main"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context8_RCoKe9": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context8_RCoKe9": [
+          [
+            "-/-/FRAME",
+            "-/-/NOFRAMES"
+          ]
+        ]
+      }
+    }
+  }
+}

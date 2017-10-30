@@ -3,6 +3,9 @@
   "id": "managerAuditRelateProcess",
   "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelateProject": "../managerAuditRelateProject/index.json"
+  },
   "chineseName": "总经理审批相关流程",
   "description": "总经理审批相关流程",
   "controls": {
@@ -185,6 +188,20 @@
       "toContexts": [
         {
           "toContextId": "context6_aweFC7"
+        }
+      ]
+    },
+    "flow23_zvv5Im": {
+      "fromContextId": "context6_aweFC7",
+      "fromAction": "doAction",
+      "fromControlId": "control17_LknT8t",
+      "toContexts": [
+        {
+          "toContextId": "context6_aweFC7"
+        },
+        {
+          "toContextId": "context8_RCoKe9",
+          "toModelId": "managerAuditRelateProject"
         }
       ]
     }
