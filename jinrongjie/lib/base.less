@@ -170,16 +170,17 @@ li {list-style: none}
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
 	padding-left: 15px;
-  font-size: @base-font-size;
+  font-size: @base-font-size+2px;
   border-bottom: 5px solid #ddd;
   .left-border{
     margin-left:-15px;
     width:15px; 
     border-left:4px solid #C19936;
     padding-right:9px;
+    border-radius: 0 5px 5px 0;
   }
 	>div{
-		padding: 15px 0;
+		padding: 5px 0;
     border-bottom: 1px solid #e0e0e0;
     .title{
       color: #D1C090;
@@ -189,13 +190,22 @@ li {list-style: none}
     }
 	}
   .annex-download{
-    background: url('images/默认文档1x.png') no-repeat #EDEDED;
+    background: #EDEDED url('images/默认文档1x.png') no-repeat ;
     margin-right: 15px;
     border-radius: 2px;
     padding: 10px 10px 10px 40px ;
     background-size: 20px;
     background-position-x: 10px;
     background-position-y: 50%;
+  }
+  .download-log{
+    background: url('images/download.png') no-repeat ;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-position-y: 8px;
+    position: absolute;
+    right: 15px;
   }
 }
 .ysp-manager-audit-header-tab{
@@ -554,12 +564,13 @@ li {list-style: none}
 .table_hthq{
   background: #F3F3F3;
   section{
-    margin: 5px 0;
+    margin: 10px 0;
     background: #fff;
     padding: 10px;
     position: relative;
     .hthq_n1{
       overflow: hidden;
+      margin-top: 20px;
       div:nth-child(1){
         width: 80%;
         float: left;
@@ -586,7 +597,7 @@ li {list-style: none}
       }
     }
     .ht_n2{
-      margin-top: 10px;
+      margin-top: 15px;
       .sjt{
         width: 45px;
         height: 35px;
@@ -1069,43 +1080,16 @@ div[data-ysp-modelid='hetong01']{
   margin: 10px;
   section{
     margin: 10px;
-    overflow: hidden;
-    background:  url(../local/img/shuxian.png) no-repeat 35%;
-    li{
-      height: 30px;
-      line-height: 30px;
+  }
+  .box_li{
+    margin: 5px 0;
+    span{
+      color: #000;
+      font-size: 14px;
     }
-    .left_box{
-      width: 35%;
-      float: left;
-      padding-right: 15px;
-       li{
-        color: #202020;
-        font-size: 14px;
-        text-align: right;
-         &:nth-child(2){
-           color: #000;
-           font-size: 16px;
-         }
-      }
-    }
-    .right_box{
-      width: 65%;
-      float: right;
-      padding-left: 15px;
-      span{
-        color: #202020;
-        font-size: 14px;
-        &:nth-child(2){
-          margin-left: 10px;
-        }
-      }
-      li:nth-child(4){
-        .green{
-          color: #77DCA6;
-          border-bottom: 1px solid #77DCA6;
-        }
-      }
+    span:nth-child(2){
+      margin-left: 10px;
+      color: #202020;
     }
   }
 }
