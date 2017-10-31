@@ -232,6 +232,7 @@ li {
 .ysp-related-doc-content {
   font-size: 14px;
   justify-content: center;
+  background: #fff;
 }
 .ysp-related-doc-content span,
 .ysp-related-doc-content input,
@@ -297,7 +298,7 @@ li {
   border-top: 10px solid #ddd;
   background: #fff;
   height: 400px;
-  overflow: scroll;
+  overflow: overlay;
 }
 .ysp-related-doc-search-table table {
   width: 100%;
@@ -487,6 +488,22 @@ li {
 }
 .ysp-relate-project-tabledata table thead {
   border-bottom: 1px solid #ddd;
+}
+.ysp-relate-project-selectedData {
+  background: #fff;
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+}
+.ysp-relate-project-selectedData span {
+  display: inline-block;
+  height: 30px;
+  border: 1px solid #C0983F;
+  border-radius: 15px;
+  padding: 0 5px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 30px;
+  margin: 5px;
 }
 /*****************公文审批-总经理审核 -END***********************/
 /*_________________________________index模版:九宫格样式_________________________________*/
