@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=",
   "jsFile": "index.js",
   "requires": {
-    "auditRelatedDocChildNodes": "../auditRelatedDocChildNodes/index.json"
+    "auditRelatedDocChildNodes": "../auditRelatedDocChildNodes/index.json",
+    "relatedDocChildNodes": "../relatedDocChildNodes/index.json"
   },
   "chineseName": "总经理审核流程相关文档",
   "description": "总经理审核流程相关文档",
@@ -171,6 +172,91 @@
       "roles": "element,listbox,custom",
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control31_mzGkxX": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "标识 子目录"
+              ],
+              "visText": [
+                "标识 子目录"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[1]",
+              "descendant::FORM[@id=\"weaver\"]//TR"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              40
+            ],
+            "value": "TABLE.Shadow TABLE.ViewForm TBODY TR"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "\n标识\n\n子目录\n\n    \n\n",
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control44_gK90JN": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[1]/TD[4]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              35
+            ],
+            "value": "TABLE.Shadow TABLE.ViewForm TD.field"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control44_gK90JN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -179,9 +265,12 @@
         "control32_RBmFTr",
         "control33_gaRRTO",
         "control12_0yipNy",
-        "control35_DlAtJI"
+        "control35_DlAtJI",
+        "control44_gK90JN"
       ],
-      "anchors": [],
+      "anchors": [
+        "control31_mzGkxX"
+      ],
       "urlAnchor": []
     }
   },
@@ -210,6 +299,10 @@
       "toContexts": [
         {
           "toContextId": "context5_DhOsrK"
+        },
+        {
+          "toContextId": "context9_TKWxun",
+          "toModelId": "relatedDocChildNodes"
         }
       ]
     },
@@ -284,6 +377,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl31_fyTbiy",
                 "onGetTemplate": "getTemplate_uiControl31_fyTbiy"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl42_pCUJR5",
+          "controlId": "control44_gK90JN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl42_pCUJR5",
+                "onGetTemplate": "getTemplate_uiControl42_pCUJR5"
               }
             }
           }
