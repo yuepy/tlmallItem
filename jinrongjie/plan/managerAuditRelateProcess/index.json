@@ -158,6 +158,50 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control42_uHB0Go": {
+      "location": {
+        "data": {
+          "tagName": "SELECT"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"SearchForm\"]//SELECT[@name=\"srcList\"]",
+              "descendant::SELECT[@name=\"srcList\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              15
+            ],
+            "value": "TABLE.Shadow SELECT.styled"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SELECT[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control42_uHB0Go"
+      },
+      "intendedRole": "custom",
+      "roles": "element,listbox,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -165,7 +209,8 @@
       "controls": [
         "control22_BzxsFT",
         "control30_RZlQuz",
-        "control17_LknT8t"
+        "control17_LknT8t",
+        "control42_uHB0Go"
       ],
       "anchors": [
         "control21_dvKTNy"
@@ -202,6 +247,16 @@
         {
           "toContextId": "context8_R2HN1D",
           "toModelId": "managerAuditRelateProject"
+        }
+      ]
+    },
+    "flow27_qq7B3n": {
+      "fromContextId": "context6_aweFC7",
+      "fromAction": "doAction",
+      "fromControlId": "control22_BzxsFT",
+      "toContexts": [
+        {
+          "toContextId": "context6_aweFC7"
         }
       ]
     }
@@ -251,6 +306,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl16_dUy4PC",
                 "onGetTemplate": "getTemplate_uiControl16_dUy4PC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl40_QdtfpT",
+          "controlId": "control42_uHB0Go",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl40_QdtfpT",
+                "onGetTemplate": "getTemplate_uiControl40_QdtfpT"
               }
             }
           }
