@@ -154,7 +154,7 @@ li {
 }
 .ysp-manager-audit-wrapper > div {
   padding: 5px 0;
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid #EFEFEF;
 }
 .ysp-manager-audit-wrapper > div .title {
   color: #D1C090;
@@ -298,7 +298,7 @@ li {
 .ysp-related-doc-search-table {
   font-size: 14px;
   padding: 10px 0;
-  border-top: 10px solid #ddd;
+  border-top: 5px solid #EFEFEF;
   background: #fff;
   height: 400px;
   overflow: overlay;
@@ -344,7 +344,7 @@ li {
 .ysp-manageraudit-relate-doc .border-bottom {
   display: inline-block;
   height: 45px;
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid #EFEFEF;
   width: 70%;
   background: url('images/Magnifier.png') no-repeat;
   background-size: 15px;
@@ -365,7 +365,7 @@ li {
 .ysp-manager-audit-sign div textarea {
   margin: 0;
   border-radius: 5px;
-  border: 1px solid #efefef;
+  border: 1px solid #EFEFEF;
 }
 .ysp-related-liucheng-wrapper {
   width: 100%;
@@ -373,13 +373,18 @@ li {
   padding: 15px;
   font-size: 14px;
 }
+.ysp-related-liucheng-wrapper select {
+  background: url('images/arrow.png') no-repeat;
+  background-position-x: 93%;
+  background-position-y: 50%;
+}
 .ysp-related-liucheng-wrapper span,
 .ysp-related-liucheng-wrapper input,
 .ysp-related-liucheng-wrapper select {
   display: inline-block;
   margin: 0;
   padding: 0;
-  line-height: 40px;
+  line-height: 30px;
   vertical-align: middle;
 }
 .ysp-related-liucheng-wrapper input,
@@ -413,8 +418,17 @@ li {
 .ysp-related-liucheng-wrapper .left-content {
   padding: 0 10px 0 0;
 }
+.ysp-related-liucheng-wrapper .left-content > div {
+  margin: 10px 0;
+}
+.ysp-related-liucheng-wrapper .left-content select {
+  padding-left: 5px;
+}
 .ysp-related-liucheng-wrapper .right-content {
   padding: 0 0 0 10px;
+}
+.ysp-related-liucheng-wrapper .right-content > div {
+  margin: 10px 0;
 }
 .ysp-related-liucheng-wrapper .search-button {
   color: #fff;
@@ -435,8 +449,14 @@ li {
   padding: 10px 15px;
   font-size: 14px;
 }
+.ysp-relate-project-wrapper select {
+  background: url('images/arrow.png') no-repeat;
+  background-position-x: 90%;
+  background-position-y: 50%;
+}
 .ysp-relate-project-wrapper span,
-.ysp-relate-project-wrapper input {
+.ysp-relate-project-wrapper input,
+.ysp-relate-project-wrapper select {
   display: inline-block;
   border-radius: 5px;
   height: 30px;
@@ -453,9 +473,11 @@ li {
 .ysp-relate-project-wrapper .ysp-relate-project-left-content > div span {
   width: 40%;
 }
-.ysp-relate-project-wrapper .ysp-relate-project-left-content > div input {
+.ysp-relate-project-wrapper .ysp-relate-project-left-content > div input,
+.ysp-relate-project-wrapper .ysp-relate-project-left-content > div select {
   width: 60%;
   padding-left: 5px;
+  font-size: 13px;
 }
 .ysp-relate-project-wrapper .ysp-relate-project-right-content {
   padding: 0 0 0 10px;
@@ -467,6 +489,20 @@ li {
 .ysp-relate-project-wrapper .ysp-relate-project-right-content > div input {
   width: 60%;
   padding-left: 5px;
+}
+.ysp-relate-project-wrapper .ysp-relate-project-right-content .date span {
+  width: 25%;
+}
+.ysp-relate-project-wrapper .ysp-relate-project-right-content .date input {
+  width: 30%;
+  background: url('images/calendaricon@2x.png') no-repeat;
+  background-size: 39%;
+  background-position-x: 5px;
+  background-position-y: 50%;
+}
+.ysp-relate-project-wrapper .ysp-relate-project-right-content .date i {
+  width: 5%;
+  color: #ddd;
 }
 .ysp-relate-project-wrapper .ysp-relate-project-searchbutton {
   height: 30px;

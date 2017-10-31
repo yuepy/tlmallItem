@@ -181,7 +181,7 @@ li {list-style: none}
   }
 	>div{
 		padding: 5px 0;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid @list-base-border-color;
     .title{
       color: #D1C090;
     }
@@ -337,7 +337,7 @@ li {list-style: none}
   font-size:  14px;
   // margin-top: 20px;
   padding: 10px 0;
-  border-top: 10px solid #ddd;
+  border-top: 5px solid @list-base-border-color;
   background: #fff;
   height: 400px;
   overflow: overlay;
@@ -383,7 +383,7 @@ li {list-style: none}
   .border-bottom{
     display: inline-block;
     height: 45px;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid @list-base-border-color;
     width:70%;
     background: url('images/Magnifier.png') no-repeat;
     background-size: 15px;
@@ -402,7 +402,7 @@ li {list-style: none}
     textarea{
       margin: 0;
       border-radius: 5px;
-      border: 1px solid #efefef;
+      border: 1px solid @list-base-border-color;
     }
   }
 }
@@ -411,11 +411,16 @@ li {list-style: none}
   background: #fff;
   padding: 15px;
   font-size: 14px;
+  select{
+    background: url('images/arrow.png') no-repeat;
+    background-position-x: 93%;
+    background-position-y: 50%; 
+  }
   span,input,select{
     display: inline-block;
     margin: 0;
     padding: 0;
-    line-height: 40px;
+    line-height: 30px;
     vertical-align: middle;
   }
   input,select{
@@ -442,9 +447,12 @@ li {list-style: none}
   }
   .left-content{
     padding: 0 10px 0 0;
+    >div{margin: 10px 0;}
+    select{padding-left: 5px;}
   }
   .right-content{
     padding: 0 0 0 10px;
+    >div{margin: 10px 0;}
   }
   .search-button{
     color: #fff;
@@ -466,7 +474,12 @@ li {list-style: none}
   background: #fff;
   padding: 10px 15px;
   font-size: 14px;
-  span,input{
+  select{
+    background: url('images/arrow.png') no-repeat;
+    background-position-x: 90%;
+    background-position-y: 50%; 
+  }
+  span,input,select{
     display: inline-block;
     border-radius: 5px;
     height: 30px;
@@ -481,7 +494,7 @@ li {list-style: none}
     padding: 0 10px 0 0;
     >div{
       span{width: 40%;}
-    	input{width: 60%;padding-left: 5px;}
+    	input,select{width: 60%;padding-left: 5px; font-size: 13px;}
   	}
   }
   .ysp-relate-project-right-content{
@@ -489,6 +502,17 @@ li {list-style: none}
      >div{
      	span{width: 40%;padding-right: 10px;}
     	input{width: 60%;padding-left: 5px;}
+    }
+    .date{
+      span{width: 25%;}
+      input{
+      width: 30%;
+      background: url('images/calendaricon@2x.png') no-repeat;
+      background-size: 39%;
+      background-position-x: 5px;
+      background-position-y: 50%;
+      }
+      i{width: 5%;color: #ddd;}
     }
   }
   .ysp-relate-project-searchbutton{
