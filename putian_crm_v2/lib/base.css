@@ -112,6 +112,7 @@ div.view-wrapper {
 }
 .ysp-header-wrapper > span:nth-child(3) > span:last-child {
   margin-left: .3rem;
+  background: none !important;
 }
 .ysp-header-wrapper .ysp-header-edit {
   display: inline-block;
@@ -314,6 +315,7 @@ div.view-wrapper {
   display: flex;
   border-bottom: 1px solid #ddd;
   margin-left: 10px;
+  background: none !important;
 }
 .ysp-client-list-wrapper > article:nth-child(1) {
   flex: 0 1 90%;
@@ -1433,22 +1435,27 @@ section.ysp-dialog-body-list > span:last-child > i:last-child {
 .ysp-secondmenu-wrapper > div div.ysp-secondmenu-item {
   display: inline-block;
   padding: 10px 0;
+  background: none !important;
 }
 .ysp-secondmenu-wrapper > div div.ysp-secondmenu-item div.ysp-secondmenu-item-title {
   padding: 0 20px;
   border-right: 1px solid #e1e1e1;
   font-size: 16px;
   color: black;
+  background: none !important;
 }
 .ysp-secondmenu-wrapper > div div.ysp-secondmenu-item:last-child .ysp-secondmenu-item-title {
   border-right: 0;
+  background: none !important;
 }
 .ysp-secondmenu-wrapper > div .ysp-secondmenu-item-checked {
   border-bottom: 2px solid #4796ed;
+  background: none !important;
 }
 .ysp-secondmenu-wrapper > div .ysp-secondmenu-item-checked div.ysp-secondmenu-item-title {
   color: #4796ed !important;
   font-size: 18px !important;
+  background: none !important;
 }
 /**********************************************************************************************************
 *SecondMenu end
@@ -1849,11 +1856,18 @@ section.ysp-dialog-body-list > span:last-child > i:last-child {
 }
 .ysp-visitcalendar-wrapper div.fc-row > div > span.z-done-new {
   color: #2c81ff;
+  background: none !important;
+}
+.ysp-visitcalendar-wrapper div.fc-row > div.fc-today > span {
+  background: none !important;
 }
 .ysp-visitcalendar-wrapper div.fc-row > div.fc-today > span > span:first-child {
   border: 1px solid #1f96f4;
   border-radius: 15px;
   padding: 1px 5px;
+}
+.ysp-visitcalendar-wrapper div.fc-row > div.calendar-day-checked > span {
+  background: none !important;
 }
 .ysp-visitcalendar-wrapper div.fc-row > div.calendar-day-checked > span > span:first-child {
   color: #fff;
@@ -2132,6 +2146,7 @@ div.ysp-tempvisit-list-footer > div:last-child > span {
   width: 100%;
   padding: .5rem;
   border-top: #f2f2f2 10px solid;
+  background: none !important;
 }
 .ysp-content-header-wrapper > span:first-child {
   display: flex;
@@ -2161,6 +2176,7 @@ div.ysp-tempvisit-list-footer > div:last-child > span {
   flex: 0 1 40%;
   display: flex;
   justify-content: flex-end;
+  background: none !important;
 }
 .ysp-content-header-wrapper > span:last-child > span {
   padding: .05rem .6rem;
@@ -2169,10 +2185,12 @@ div.ysp-tempvisit-list-footer > div:last-child > span {
   font-size: 14px;
   color: #4796ed;
   margin-right: .2rem;
+  background: none !important;
 }
 .ysp-content-header-wrapper > span:last-child > span.ysp-content-header-disabled {
   border: solid 1px grey;
   color: grey;
+  background: none !important;
 }
 /**********************************************************************************************************
 *content-header component end
@@ -2219,6 +2237,7 @@ div[data-ysp-modelid="visitLook"] #uiControl14_mUsxNc {
   border-bottom: 1px solid #ccc;
   color: #999;
   padding: 10px 0;
+  background: none !important;
 }
 .ysp_visitlook_ul li span:last-child {
   float: right;
@@ -2305,6 +2324,7 @@ div[data-ysp-modelid="visitLook"] #uiControl14_mUsxNc {
   bottom: 22px;
   height: 23px;
   line-height: 23px;
+  background: none !important;
 }
 .ysp_visitLook_nodata {
   padding: 10px;
@@ -2457,10 +2477,12 @@ div[data-ysp-modelid="visitlookDetail"] #uiControl36_QLnuSc {
 .ysp_visitlookDetail_cardlist .ysp_visitlookDetail_card .card_body .able {
   color: #5991f8;
   border: 1px solid #5991f8;
+  background: none !important;
 }
 .ysp_visitlookDetail_cardlist .ysp_visitlookDetail_card .card_body .disable {
   color: #ccc;
   border: 1px solid #ccc;
+  background: none !important;
 }
 .ysp-dialog-wrapper {
   position: fixed;
@@ -2472,6 +2494,7 @@ div[data-ysp-modelid="visitlookDetail"] #uiControl36_QLnuSc {
 .ysp-dialog-wrapper .ysp_visitlook_reportDetail .ysp_reportDetail_title li {
   padding: 10px 0;
   border-bottom: 1px solid #ddd;
+  background: none !important;
 }
 .ysp-dialog-wrapper .ysp_visitlook_reportDetail .ysp_reportDetail_title li span {
   color: #999;
@@ -2740,6 +2763,7 @@ __________________*/
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child {
   border-bottom: 1px solid #e9e9e9;
   padding: 10px 0px 10px 0px;
+  background: none !important;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child > span:first-child {
   color: #999999;
@@ -3525,6 +3549,7 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog .ysp-dialog-wrapper 
   border: 1px solid #eee;
   margin-right: 10px;
   font-size: 14px;
+  background: none !important;
 }
 .ysp-table-sort ul li .table_sort_icon {
   display: inline-block;
@@ -3858,6 +3883,7 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog .ysp-dialog-wrapper 
 .ysp-achievement-container .visitEChartsContent .visit-col-list {
   border-bottom: 1px solid #dde1ea;
   padding: 10px 0;
+  background: none !important;
 }
 .ysp-visitIndex-container .visitEChartsContent .visit-col-list .col-list,
 .ysp-achievement-container .visitEChartsContent .visit-col-list .col-list {
@@ -4069,6 +4095,7 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog .ysp-dialog-wrapper 
 .ysp-achievement-container .visitEChartsContent .ysp-visitIndex-grid-wrapper .ysp-visitIndex-grid-content {
   display: flex;
   position: relative;
+  background: none !important;
 }
 .ysp-visitIndex-container .visitEChartsContent .ysp-visitIndex-grid-wrapper .ysp-visitIndex-grid-content > div:first-child i,
 .ysp-achievement-container .visitEChartsContent .ysp-visitIndex-grid-wrapper .ysp-visitIndex-grid-content > div:first-child i {
@@ -4203,6 +4230,7 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog .ysp-dialog-wrapper 
 .ysp-achievement-container .visitEChartsContent .ysp-visitIndexOther-grid-wrapper .ysp-visitIndex-grid-content {
   display: flex;
   position: relative;
+  background: none !important;
 }
 .ysp-visitIndex-container .visitEChartsContent .ysp-visitIndexOther-grid-wrapper .ysp-visitIndex-grid-content > div:first-child i,
 .ysp-achievement-container .visitEChartsContent .ysp-visitIndexOther-grid-wrapper .ysp-visitIndex-grid-content > div:first-child i {
@@ -5212,6 +5240,7 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
 .ysp-product {
   padding: 15px;
   border-bottom: 1px solid #dde1ea;
+  background: none !important;
 }
 .ysp-product .search {
   display: flex;
@@ -5273,12 +5302,14 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   display: flex !important;
   justify-content: flex-start;
   border-bottom: 1px solid #dde1ea;
+  background: none !important;
 }
 .ysp-product .SKUText {
   margin-top: 7px;
   font-size: 14px;
   color: #333333;
   width: 30%;
+  background: none !important;
 }
 .ysp-product .itemName {
   display: -webkit-box;
@@ -5290,6 +5321,7 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   font-size: 14px;
   color: #4796ed;
   width: 70%;
+  background: none !important;
 }
 .ysp-product .det {
   margin-top: 10px;
@@ -5302,18 +5334,21 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   border-bottom: 1px solid #dde1ea;
   height: 30px;
   margin-left: 15px;
+  background: none !important;
 }
 .ysp-product .details {
   font-size: 13px;
   color: #666666;
   margin-top: 5px;
   width: 50%;
+  background: none !important;
 }
 .ysp-product .textDetail {
   font-size: 13px;
   color: #999999;
   width: 40%;
   margin-top: 5px;
+  background: none !important;
 }
 .ysp-product .colorItem {
   color: #666666;
@@ -5372,6 +5407,12 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.ysp-custom-goodsMessages .cardlist .ysp-cardlist-content-icon > div:nth-child(1) {
+  background: none !important;
+}
+.ysp-custom-goodsMessages .cardlist .ysp-cardlist-content-icon > div:nth-child(1) span {
+  background: none !important;
 }
 .ysp-custom-goodsMessages .cardlist .ysp-cardlist-content-icon .ysp-cardlist-icon {
   display: block;
@@ -7838,6 +7879,7 @@ div[data-ysp-modelid="infomationInput"] .list_ltt .listtop_ltt {
   line-height: 40px;
   border-bottom: 1px solid #ddd;
   overflow: hidden;
+  background: none !important;
 }
 div[data-ysp-modelid="infomationInput"] .list_ltt .listtop_ltt span:first-child {
   float: left;
@@ -7980,6 +8022,7 @@ div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listtop_ltt {
   line-height: 40px;
   border-bottom: 1px solid #ddd;
   overflow: hidden;
+  background: none !important;
 }
 div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listtop_ltt span:first-child {
   float: left;
@@ -8085,11 +8128,13 @@ div[data-ysp-modelid="storeDayPSI"] > div:nth-child(4) {
 .ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:first-child {
   border-bottom: 1px solid #ccc;
   padding: 10px 0px;
+  background: none !important;
 }
 .ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:first-child .ysp_PSI_item {
   display: inline-block;
   width: 50%;
   color: #4796ed;
+  background: none !important;
 }
 .ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:first-child .ysp_PSI_date {
   display: inline-block;
@@ -8097,6 +8142,7 @@ div[data-ysp-modelid="storeDayPSI"] > div:nth-child(4) {
   text-align: right;
   color: #999;
   padding-right: 10px;
+  background: none !important;
 }
 .ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(2) {
   padding: 10px 0px;
@@ -8230,11 +8276,13 @@ div[data-ysp-modelid="storeWeekPSI"] > div:nth-child(5) {
 .ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:first-child {
   border-bottom: 1px solid #ccc;
   padding: 10px 0px;
+  background: none !important;
 }
 .ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:first-child .ysp_PSI_item {
   display: inline-block;
   width: 50%;
   color: #4796ed;
+  background: none !important;
 }
 .ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:first-child .ysp_PSI_date {
   display: inline-block;
@@ -8242,6 +8290,7 @@ div[data-ysp-modelid="storeWeekPSI"] > div:nth-child(5) {
   text-align: right;
   color: #999;
   padding-right: 10px;
+  background: none !important;
 }
 .ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(2) {
   padding: 10px 0px;
@@ -8392,15 +8441,18 @@ input::-webkit-inner-spin-button {
   align-items: center;
   padding-bottom: 10px;
   border-bottom: 1px solid #ececec;
+  background: none !important;
 }
 .ysp-subForecast-item-list .ysp-subForecast-item > div:first-child > div:first-child {
   border-left: 4px solid #4796ed;
   padding-left: 10px;
   color: #333333;
+  background: none !important;
 }
 .ysp-subForecast-item-list .ysp-subForecast-item > div:first-child > div:last-child {
   margin-right: 10px;
   color: #999999;
+  background: none !important;
 }
 .ysp-subForecast-item-list .ysp-subForecast-item > div:first-child > div:last-child > span:last-child {
   padding-left: 10px;
@@ -8453,15 +8505,18 @@ input::-webkit-inner-spin-button {
   align-items: center;
   padding-bottom: 10px;
   border-bottom: 1px solid #ececec;
+  background: none !important;
 }
 .ysp-subForecast-item-list .ysp-subForecast-item-week > div:first-child > div:first-child {
   border-left: 4px solid #4796ed;
   padding-left: 10px;
   color: #333333;
+  background: none !important;
 }
 .ysp-subForecast-item-list .ysp-subForecast-item-week > div:first-child > div:last-child {
   margin-right: 10px;
   color: #999999;
+  background: none !important;
 }
 .ysp-subForecast-item-list .ysp-subForecast-item-week > div:first-child > div:last-child > span:last-child {
   padding-left: 10px;
