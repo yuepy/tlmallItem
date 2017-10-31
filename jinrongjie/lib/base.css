@@ -143,7 +143,7 @@ li {
   background: #ffffff;
   padding-left: 15px;
   font-size: 16px;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 5px solid #F4F4F4;
 }
 .ysp-manager-audit-wrapper .left-border {
   margin-left: -15px;
@@ -154,13 +154,16 @@ li {
 }
 .ysp-manager-audit-wrapper > div {
   padding: 5px 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #efefef;
 }
 .ysp-manager-audit-wrapper > div .title {
   color: #D1C090;
 }
 .ysp-manager-audit-wrapper > div .content {
   font-size: 16px;
+}
+.ysp-manager-audit-wrapper > div:nth-last-child(1) {
+  border-bottom: none;
 }
 .ysp-manager-audit-wrapper .annex-download {
   background: #EDEDED url('images/默认文档1x.png') no-repeat;
@@ -207,7 +210,7 @@ li {
 }
 .ysp-manager-audit-header-tab .border-bottom {
   height: 5px;
-  background: #ddd;
+  background: #F4F4F4;
   clear: both;
 }
 .ysp-manager-audit-header-tab .active_tab {
@@ -218,7 +221,7 @@ li {
 .ysp-manager-audit-title {
   font-size: 14px;
   text-align: center;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 5px solid #F4F4F4;
   background: #fff;
 }
 .ysp-manager-audit-title .ysp-manager-audit-main-title {
@@ -341,7 +344,7 @@ li {
 .ysp-manageraudit-relate-doc .border-bottom {
   display: inline-block;
   height: 45px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #efefef;
   width: 70%;
   background: url('images/Magnifier.png') no-repeat;
   background-size: 15px;
@@ -357,10 +360,12 @@ li {
   padding-left: 11px;
 }
 .ysp-manager-audit-sign div {
-  padding: 10px 15px;
+  padding: 5px 15px;
 }
 .ysp-manager-audit-sign div textarea {
+  margin: 0;
   border-radius: 5px;
+  border: 1px solid #efefef;
 }
 .ysp-related-liucheng-wrapper {
   width: 100%;

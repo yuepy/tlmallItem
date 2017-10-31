@@ -171,7 +171,7 @@ li {list-style: none}
 	background: #ffffff;
 	padding-left: 15px;
   font-size: @base-font-size+2px;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 5px solid #F4F4F4;
   .left-border{
     margin-left:-15px;
     width:15px; 
@@ -181,7 +181,7 @@ li {list-style: none}
   }
 	>div{
 		padding: 5px 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #efefef;
     .title{
       color: #D1C090;
     }
@@ -189,6 +189,9 @@ li {list-style: none}
       font-size: @base-font-size+2px;
     }
 	}
+  >div:nth-last-child(1){
+    border-bottom: none;
+  }
   .annex-download{
     background: #EDEDED url('images/默认文档1x.png') no-repeat ;
     margin-right: 15px;
@@ -234,7 +237,7 @@ li {list-style: none}
   }
   .border-bottom{
     height: 5px;
-    background: #ddd;
+    background: #F4F4F4;
     clear: both;
   }
   .active_tab{
@@ -246,7 +249,7 @@ li {list-style: none}
 .ysp-manager-audit-title{
   font-size: @base-font-size;
   text-align: center;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 5px solid #F4F4F4;
   background: #fff;
   .ysp-manager-audit-main-title{
     font-size: @base-font-size+2px;
@@ -380,7 +383,7 @@ li {list-style: none}
   .border-bottom{
     display: inline-block;
     height: 45px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #efefef;
     width:70%;
     background: url('images/Magnifier.png') no-repeat;
     background-size: 15px;
@@ -395,9 +398,11 @@ li {list-style: none}
     border-left:4px solid #C19936;font-size:14px; padding-left:11px;
   }
   div{
-    padding: 10px 15px;
+    padding: 5px 15px;
     textarea{
+      margin: 0;
       border-radius: 5px;
+      border: 1px solid #efefef;
     }
   }
 }
