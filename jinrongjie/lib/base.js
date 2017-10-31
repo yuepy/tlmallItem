@@ -138,7 +138,6 @@
           ysp.runtime.Model.setForceMatchModels(['login']);
         }
       };
-      // aWin.attachEvent = aWin.addEventListener('load',aWin.fileuploadannexupload(),false);
     },
     //判断array.tag是存在一个值等于item
     isExist(item, tag, array) {
