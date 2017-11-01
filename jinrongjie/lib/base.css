@@ -141,16 +141,17 @@ li {
 /*****************公文审批-总经理审核 -START***********************/
 .ysp-manager-audit-wrapper {
   background: #ffffff;
-  padding-left: 15px;
+  padding: 15px 0 0 15px;
   font-size: 16px;
   border-bottom: 5px solid #ddd;
 }
 .ysp-manager-audit-wrapper .left-border {
   margin-left: -15px;
   width: 15px;
-  border-left: 4px solid #C19936;
-  padding-right: 9px;
-  border-radius: 0 5px 5px 0;
+  height: 15px;
+  display: inline-block;
+  background: url(images/Title-icon.png) no-repeat;
+  background-position-y: 50%;
 }
 .ysp-manager-audit-wrapper > div {
   padding: 5px 0;
@@ -185,12 +186,14 @@ li {
   background: url(images/load_morearrow.png) no-repeat;
   background-position-x: 38%;
   background-position-y: 50%;
+  border-bottom: none;
 }
 .ysp-manager-audit-wrapper .load-up-arrow {
   text-align: center;
   background: url(images/load_uparrow.png) no-repeat;
   background-position-x: 32%;
   background-position-y: 50%;
+  border-bottom: none;
 }
 .ysp-manager-audit-header-tab {
   background: #fff;
@@ -350,17 +353,20 @@ li {
 }
 .ysp-manager-audit-sign {
   background: #fff;
+  padding-top: 10px;
 }
 .ysp-manager-audit-sign span {
-  border-left: 4px solid #C19936;
+  padding-left: 15px;
   font-size: 14px;
-  padding-left: 11px;
+  background: url(images/Title-icon.png) no-repeat;
+  background-position-y: 50%;
 }
 .ysp-manager-audit-sign div {
-  padding: 10px 15px;
+  padding: 5px 15px;
 }
 .ysp-manager-audit-sign div textarea {
   border-radius: 5px;
+  margin: 0;
 }
 .ysp-related-liucheng-wrapper {
   width: 100%;
