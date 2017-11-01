@@ -532,34 +532,85 @@ li {list-style: none}
 }
 
 .ysp-process-form-wrapper{
-  .ysp-process-form-bottom-button{f
-   	background: #fff;
+  width: 100%;
+  .ysp-process-form-bottom-button{
     width: 100%;
-    text-align: center;
+    height: 40px;
+    font-size: 14px;
+   	position: fixed;
+    bottom: 0;
+    background: #fff;
+    overflow: hidden;
     span{
       display: inline-block;
+      // padding: 5px;
+      height: 30px;
+      line-height: 30px;
+     	text-align: center;
+      margin: 0 10px;
+      float: left;
+      
     }
     span:nth-child(1){
-      width: 40%;
+      width: 140px;
       border-radius: 5px;
       border: 1px solid #CCAB63;
       color: #CCAB63;
+      position: relative;
+    	top: 5px;
     }
     span:nth-child(2){
-      width: 40%;
+      width: 140px;
       border-radius: 5px;
       background: #C29A2A;
       color: #fff;
+      position: relative;
+    	top: 5px;
     }
     span:nth-child(3){
-      height: 20px;
-      width: 20px;
+     	float: right;
+      height: 40px;
+      width: 10%;
       background: url(images/more_button.png) no-repeat;
+      background-position-x: 10px;
+    	background-position-y: 50%;
     }
   }
-  .ysp-load-more-coverlayer{
-    
+  .load-more-coverlayer{
+   	height: 100vh;
+    background: rgba(102,102,102,0.76);
+    background: rgba(102,102,102,0.66);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    .load-more-data{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      section{
+        background: #fff;
+        border-radius: 5px;
+        padding: 0 15px;
+    		margin: 0 5px;
+        div{
+          text-align: center;
+          height: 40px;
+          color: #4992F8;
+          line-height: 40px;
+          border-bottom: 1px solid @list-base-border-color;
+        }
+      }
+      >div:nth-last-child(1){
+        margin:7px 5px;
+        color: #999;
+        border-radius: 5px;
+        line-height: 40px;
+        background: #fff;
+        text-align: center;
+      }
+    }
   }
+  
 }
 /*****************公文审批-总经理审核 -END***********************/
 
