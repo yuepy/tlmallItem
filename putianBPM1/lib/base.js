@@ -231,6 +231,11 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
+      // 插入隐藏input的css
+      var testCSS = doc.createElement('style');
+      testCSS.innerHTML = '.mini-grid-editwrap input { display: none; }';
+      doc.head.appendChild(testCSS);
+
       //给页面的head里加一个标签
       var meta=doc.createElement("meta");
       meta.setAttribute("name","google");

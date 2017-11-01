@@ -464,6 +464,27 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+    },
+    "control61_S2UifR": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[2]/DIV[4]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control61_S2UifR"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
     }
   },
   "contexts": {
@@ -479,7 +500,8 @@
         "control49_PTRE8T",
         "control50_0mASyq",
         "control41_0ETlac",
-        "control48_VJf6Ek"
+        "control48_VJf6Ek",
+        "control61_S2UifR"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -683,6 +705,21 @@
           }
         },
         {
+          "id": "uiControl58_J9dV1F",
+          "controlId": "control61_S2UifR",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl58_J9dV1F",
+                "onGetTemplate": "getTemplate_uiControl58_J9dV1F"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl5_yflben",
           "controlId": "control4_TiKwZC",
           "display": {
@@ -812,7 +849,8 @@
           "192.168.2.40:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=758945&_winid=w9785",
           "192.168.2.40:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=258227&_winid=w8309",
           "192.168.2.40:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4062",
-          "192.168.2.40:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp"
+          "192.168.2.40:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp",
+          "192.168.2.40:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7768&_t=628055&_winid=w2803"
         ],
         "context10_zlXaLZ": [
           "192.168.2.40:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=867767&_winid=w6448",
