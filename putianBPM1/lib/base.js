@@ -233,7 +233,7 @@
     beforeTargetLoad: function(aWin, doc) {
       // 插入隐藏input的css
       var testCSS = doc.createElement('style');
-      testCSS.innerHTML = '.mini-grid-editwrap input { display: none; }';
+      testCSS.innerHTML = '.mini-grid-editwrap .mini-textbox-input { display: none; }';
       doc.head.appendChild(testCSS);
 
       //给页面的head里加一个标签
