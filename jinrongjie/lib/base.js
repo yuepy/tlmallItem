@@ -3,14 +3,24 @@
 (function (win, ysp) {
   var utils = ysp.utils;
   var flag = true;
-  topWindow = win.top;
-  topWindow.yspTokenUrl = function(url){
-    url = '加入我是token';
+  var topWindow = win.top;
+  var tokenUrl = null;
+  var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
+      soapData = soapData + ' <SOAP:Body>';
+      soapData = soapData + ' <GetUnreadCountByPsCode xmlns="http://schemas.fsig.com.cn/commonWebserviceWSAppServerPackage" preserveSpace="no" qAccess="0" qValues="">';
+      soapData = soapData + ' <psCode>101160</psCode>';
+      soapData = soapData + ' </GetUnreadCountByPsCode>';
+      soapData = soapData + ' </SOAP:Body>';
+      soapData = soapData + ' </SOAP:Envelope>';
+	topWindow.yspTokenUrl = function(url){
+    tokenUrl = url;
     return url;
   };
+  topWindow.num = null;
   ysp.customHelper = {};
   var winContainer = []; // openWinow 方法地址存入的数组
   var topWin = null; // Window对象
+  var token_flag = false;
   utils.extend(ysp.customHelper, {
     openWin : _openWindow,
     // tigMsg : _tipMsg,
@@ -21,6 +31,7 @@
     back : _back,
     getTableData : _getTableData,
     firstMenus : _firstMenus,
+    Dnum : _num,
     isArray(array) {
       if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
         return true;
@@ -107,17 +118,39 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
-      aWin.addEventListener('DOMContentLoaded', function() {
-        debugger
+      /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
+      // aWin.addEventListener('DOMContentLoaded', function() {
         if (aWin.location.href.indexOf('Login.jsp') !== -1) {
           console.info('向客户端发送消息,开始获取token地址');
           var actionEvent = '{"target":"null","data":"closePreLoading"}';
-          //找到时机像客户端发出信息，表示我要获取带token的targetURL
           var parent = aWin.frameElement.ownerDocument.defaultView;
           parent && parent.EAPI.postMessageToNative('getToken', null);
           sessionStorage.setItem('getTokenURl', true);
+          token_flag = true;
         }
-      },false);
+      // },false);
+      /*  获取token地址  */     
+      if(token_flag){
+        console.log(tokenUrl);
+        console.log('拿到客户端给我的token地址');
+        token_flag = false;
+      }
+      /*  获取token地址  */    
+      /* ajax请求角标数据 */
+        if(aWin.location.href.indexOf('main.jsp') !== -1){
+          var xmlhttp = new XMLHttpRequest(); 
+          xmlhttp.open("post", "http://192.168.200.121:8080/home/release/com.eibus.web.soap.Gateway.wcp", true);  
+          xmlhttp.onreadystatechange = function(){
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+              // console.log(xmlhttp.responseText);
+							var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText,'text/xml');
+              topWindow.num = xmldoc.getElementsByTagName('getUnreadCountByPsCode')[1].textContent;
+            }
+          }
+          xmlhttp.send(soapData); 
+        }
+      /* ajax请求角标数据 */
+
       /* 兼容性问题 */
       aWin.showModalDialog = function(url){
         return aWin.open(url,'新窗口')
@@ -279,6 +312,9 @@
   //   }
   // }
   /* 调用场景 : 页面返回或者进入无效,需要强制匹配方案时. */
+  function _num(){
+    return topWindow.num;
+  }
   function _forceMatchModels(args){
     if(typeof args === 'string'){
       ysp.runtime.Model.setFoceMatchModels([args])
