@@ -2044,7 +2044,7 @@
 	    delete param.fn;
 	    delete param.clickType;
 	    delete param.clickType1;
-      if(reportSubmit = '1'){
+      if(reportSubmit == '1'){
         return ;
       }
     	reportSubmit = '1';
