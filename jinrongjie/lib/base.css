@@ -336,7 +336,7 @@ li {
   width: 70%;
   display: inline-block;
   height: 45px;
-  background: url('images/Magnifier.png') no-repeat;
+  background: url('images/Magnifier-card.png') no-repeat;
   background-size: 15px;
   background-position-x: 90%;
   background-position-y: 50%;
@@ -346,7 +346,7 @@ li {
   height: 45px;
   border-bottom: 1px solid #ddd;
   width: 70%;
-  background: url('images/Magnifier.png') no-repeat;
+  background: url('images/Magnifier-card.png') no-repeat;
   background-size: 15px;
   background-position-x: 90%;
   background-position-y: 50%;
@@ -588,6 +588,31 @@ li {
   line-height: 40px;
   background: #fff;
   text-align: center;
+}
+.ysp-process-tosend {
+  width: 100%;
+  background: #fff;
+  font-size: 14px;
+}
+.ysp-process-tosend span {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+}
+.ysp-process-tosend > span:nth-child(1) {
+  width: 30%;
+}
+.ysp-process-tosend > span:nth-child(2) {
+  width: 70%;
+  border-bottom: 1px solid #ddd;
+}
+.ysp-process-tosend .receive-people {
+  background: url('images/Magnifier-card.png') no-repeat;
+  background-size: 15px;
+  background-position-x: 90%;
+  background-position-y: 50%;
+  width: 100%;
 }
 /*****************公文审批-总经理审核 -END***********************/
 /*_________________________________index模版:九宫格样式_________________________________*/

@@ -6,7 +6,8 @@
   "requires": {
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
-    "test_song": "../test_song/index.json"
+    "test_song": "../test_song/index.json",
+    "processToSend": "../processToSend/index.json"
   },
   "chineseName": "请求标题详情页",
   "description": "请求标题详情页",
@@ -427,6 +428,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -546,6 +551,10 @@
       "toContexts": [
         {
           "toContextId": "context4_wRixwF"
+        },
+        {
+          "toContextId": "context10_Tp4yhH",
+          "toModelId": "processToSend"
         }
       ]
     },
