@@ -3,6 +3,9 @@
   "id": "hetong01",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=7901&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "choosePerson": "../choosePerson/index.json"
+  },
   "chineseName": "01合同会签流程",
   "description": "",
   "controls": {
@@ -228,6 +231,20 @@
       "toContexts": [
         {
           "toContextId": "context3_FzLnbc"
+        }
+      ]
+    },
+    "flow29_GWS50c": {
+      "fromContextId": "context3_FzLnbc",
+      "fromAction": "doAction",
+      "fromControlId": "control29_yn6nBP",
+      "toContexts": [
+        {
+          "toContextId": "context3_FzLnbc"
+        },
+        {
+          "toContextId": "context10_sJa5NJ",
+          "toModelId": "choosePerson"
         }
       ]
     }

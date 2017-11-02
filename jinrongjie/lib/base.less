@@ -167,17 +167,36 @@ li {list-style: none}
 /*****************索引列表样式 -END***********************/
 
 /*****************公文审批-总经理审核 -START***********************/
+.ysp-manager-audit-title-icon{
+  background: #fff;
+  span{
+    display: inline-block;
+    padding: 10px 15px;
+    background: url(images/Title-icon.png) no-repeat;
+    background-position-y: 50%;
+  }
+  .relate-files{
+    display: inline-block;
+    padding: 10px 15px;
+    width: 40px;
+    height: 40px;
+    background: url(images/upload-files.png) no-repeat;
+    background-position-y: 50%;
+    float: right;
+  }
+}
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
-	padding-left: 15px;
+	padding: 15px 0 0 15px;
   font-size: @base-font-size+2px;
   border-bottom: 5px solid #ddd;
   .left-border{
     margin-left:-15px;
-    width:15px; 
-    border-left:4px solid #C19936;
-    padding-right:9px;
-    border-radius: 0 5px 5px 0;
+    width:15px;
+    height: 15px;
+    display: inline-block;
+    background: url(images/Title-icon.png) no-repeat;
+    background-position-y: 50%;
   }
 	>div{
 		padding: 5px 0;
@@ -212,12 +231,14 @@ li {list-style: none}
     background: url(images/load_morearrow.png) no-repeat;
     background-position-x: 38%;
     background-position-y: 50%;
+    border-bottom: none;
   }
   .load-up-arrow{
     text-align: center;
     background: url(images/load_uparrow.png) no-repeat;
     background-position-x: 32%;
     background-position-y: 50%;
+    border-bottom: none;
   }
 }
 .ysp-manager-audit-header-tab{
@@ -372,7 +393,7 @@ li {list-style: none}
     width:70%;
     display: inline-block;
     height: 45px;
-    background: url('images/Magnifier.png') no-repeat;
+    background: url('images/Magnifier-card.png') no-repeat;
     background-size: 15px;
     background-position-x: 90%;
     background-position-y: 50%;
@@ -382,7 +403,7 @@ li {list-style: none}
     height: 45px;
     border-bottom: 1px solid #ddd;
     width:70%;
-    background: url('images/Magnifier.png') no-repeat;
+    background: url('images/Magnifier-card.png') no-repeat;
     background-size: 15px;
     background-position-x: 90%;
     background-position-y: 50%;
@@ -391,13 +412,18 @@ li {list-style: none}
 
 .ysp-manager-audit-sign{
   background: #fff;
+  padding-top: 10px;
   span{
-    border-left:4px solid #C19936;font-size:14px; padding-left:11px;
-  }
+    padding-left: 15px;
+    font-size: 14px;
+    background: url(images/Title-icon.png) no-repeat;
+    background-position-y: 50%; 
+   }
   div{
-    padding: 10px 15px;
+    padding: 5px 15px;
     textarea{
       border-radius: 5px;
+      margin: 0;
     }
   }
 }
@@ -611,6 +637,36 @@ li {list-style: none}
     }
   }
   
+}
+.ysp-process-tosend{
+  width: 100%;
+  background: #fff;
+  font-size: 14px;
+  
+  span{display: inline-block;height: 40px;line-height: 40px;padding: 0 15px;}
+  >span:nth-child(1){width: 30%;}
+  >span:nth-child(2){width: 70%;border-bottom: 1px solid #ddd;}
+  .receive-people{
+    font-size: 14px;
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 15px;
+    height: 40px;
+    background: url('images/Magnifier-card.png') no-repeat;
+    background-size: 15px;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    width: 100%;
+    border-bottom: 5px solid #efefef;
+  }
+}
+.ysp-textarea-content{
+  padding: 0 15px;
+  background: #fff;
+  textarea{
+    border-radius: 5px;
+    margin: 0;
+  }
 }
 /*****************公文审批-总经理审核 -END***********************/
 
@@ -1077,6 +1133,9 @@ li {list-style: none}
 }
 //01合同会签样式
 div[data-ysp-modelid='hetong01']{
+  ._2YwloE7OzAhaMwSn1XM-Va{
+    border-bottom: 0;
+  }
   ._27gZE6m5LfD5uG_dZ8p3iP{
     margin: 0;
     ._2kVn_YrAvZeioJhwcvsdtZ{
@@ -1133,7 +1192,7 @@ div[data-ysp-modelid='hetong01']{
         .bottom_tb{
           padding-left: 15px;
           >*:nth-child(n+11){
-            display: none;
+            //display: none;
           }
         }
         .button_less{
@@ -1289,17 +1348,145 @@ div[data-ysp-modelid='hetong01']{
 .suggest_lz_box{
   margin: 10px;
   section{
-    margin: 10px;
-  }
-  .box_li{
-    margin: 5px 0;
-    span{
-      color: #000;
-      font-size: 14px;
+    li{
+      height: 30px;	
+      line-height: 30px;
     }
-    span:nth-child(2){
-      margin-left: 10px;
-      color: #202020;
+    margin: 10px;
+    overflow: hidden;
+    background: url(../local/img/shuxian.png) no-repeat 35%;
+    .left_box{
+      width:35%;
+      float: left;
+      text-align: right;
+      padding-right: 10px;
+      li:nth-child(1){
+        font-size: 14px;
+        color:#202020;
+      }
+      li:nth-child(2){
+        font-size: 16px;	
+        color:#000;
+      }
+    }
+    .right_box{
+      width: 65%;
+      float: left;
+      padding-left: 10px;
+      text-align: left;
+      li{
+        span{
+          font-size: 14px;
+          &:nth-child(2){
+            margin-left: 10px;
+          }
+        }
+        .green{
+          color: green;
+          border-bottom:1px solid green;
+        }
+      }
+    }
+  }
+  // .box_li{
+  //   margin: 5px 0;
+  //   span{
+  //     color: #000;
+  //     font-size: 14px;
+  //   }
+  //   span:nth-child(2){
+  //     margin-left: 10px;
+  //     color: #202020;
+  //   }
+  // }
+}
+.box_select{
+  .dis_status{
+    margin: 10px 0;
+    border-top: 5px solid #ccc;
+    padding: 5px 0;
+    border-bottom: 5px solid #ccc;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+  .tree_box{
+   // padding: 10px;
+    height: 200px;
+    overflow-y: scroll;
+    >div{
+      height: 30px;
+      line-height: 30px;
+      .bord{
+        border-bottom: 1px solid #ccc;
+        padding-left: 10px;
+        position: relative;
+        span{
+          font-size: 14px;
+        }
+        i{
+          position: absolute;
+          right: 20px;
+          top:5px;
+          width: 20px;
+          height: 20px;
+        }
+        .xjt{
+          background: url(../local/img/xiajiantou.png) no-repeat 0;
+          background-size: 20px;
+        }
+        .zjt{
+          background: url(../local/img/zuojiantou.png) no-repeat 0;
+          background-size: 20px;
+        }
+      }
+    }
+  }
+  .people_box{
+    padding: 0 10px;
+    max-height: 200px;
+    overflow-y: scroll;
+    .people{
+      height: 30px;
+      line-height: 30px;
+      span{
+        display: block;
+        float: left	;
+        text-align: center;
+        font-size: 14px;
+        &:nth-child(1){
+          width: 20%;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+        }
+        &:nth-child(2){
+          width: 50%;
+        }
+        &:nth-child(3){
+          width: 30%;
+        }
+      }
+    }
+  }
+  .thead{
+    overflow: hidden;
+    //smargin-top: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    span{
+      display: block;
+      float: left	;
+      text-align: center;
+      &:nth-child(1){
+        width: 20%;
+      }
+      &:nth-child(2){
+        width: 50%;
+      }
+      &:nth-child(3){
+        width: 30%;
+      }
     }
   }
 }
