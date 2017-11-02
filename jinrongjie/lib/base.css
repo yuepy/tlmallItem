@@ -139,18 +139,37 @@ li {
 }
 /*****************索引列表样式 -END***********************/
 /*****************公文审批-总经理审核 -START***********************/
+.ysp-manager-audit-title-icon {
+  background: #fff;
+}
+.ysp-manager-audit-title-icon span {
+  display: inline-block;
+  padding: 10px 15px;
+  background: url(images/Title-icon.png) no-repeat;
+  background-position-y: 50%;
+}
+.ysp-manager-audit-title-icon .relate-files {
+  display: inline-block;
+  padding: 10px 15px;
+  width: 40px;
+  height: 40px;
+  background: url(images/upload-files.png) no-repeat;
+  background-position-y: 50%;
+  float: right;
+}
 .ysp-manager-audit-wrapper {
   background: #ffffff;
-  padding-left: 15px;
+  padding: 15px 0 0 15px;
   font-size: 16px;
   border-bottom: 5px solid #ddd;
 }
 .ysp-manager-audit-wrapper .left-border {
   margin-left: -15px;
   width: 15px;
-  border-left: 4px solid #C19936;
-  padding-right: 9px;
-  border-radius: 0 5px 5px 0;
+  height: 15px;
+  display: inline-block;
+  background: url(images/Title-icon.png) no-repeat;
+  background-position-y: 50%;
 }
 .ysp-manager-audit-wrapper > div {
   padding: 5px 0;
@@ -185,12 +204,14 @@ li {
   background: url(images/load_morearrow.png) no-repeat;
   background-position-x: 38%;
   background-position-y: 50%;
+  border-bottom: none;
 }
 .ysp-manager-audit-wrapper .load-up-arrow {
   text-align: center;
   background: url(images/load_uparrow.png) no-repeat;
   background-position-x: 32%;
   background-position-y: 50%;
+  border-bottom: none;
 }
 .ysp-manager-audit-header-tab {
   background: #fff;
@@ -333,7 +354,7 @@ li {
   width: 70%;
   display: inline-block;
   height: 45px;
-  background: url('images/Magnifier.png') no-repeat;
+  background: url('images/Magnifier-card.png') no-repeat;
   background-size: 15px;
   background-position-x: 90%;
   background-position-y: 50%;
@@ -343,24 +364,27 @@ li {
   height: 45px;
   border-bottom: 1px solid #ddd;
   width: 70%;
-  background: url('images/Magnifier.png') no-repeat;
+  background: url('images/Magnifier-card.png') no-repeat;
   background-size: 15px;
   background-position-x: 90%;
   background-position-y: 50%;
 }
 .ysp-manager-audit-sign {
   background: #fff;
+  padding-top: 10px;
 }
 .ysp-manager-audit-sign span {
-  border-left: 4px solid #C19936;
+  padding-left: 15px;
   font-size: 14px;
-  padding-left: 11px;
+  background: url(images/Title-icon.png) no-repeat;
+  background-position-y: 50%;
 }
 .ysp-manager-audit-sign div {
-  padding: 10px 15px;
+  padding: 5px 15px;
 }
 .ysp-manager-audit-sign div textarea {
   border-radius: 5px;
+  margin: 0;
 }
 .ysp-related-liucheng-wrapper {
   width: 100%;
@@ -504,6 +528,123 @@ li {
   font-size: 14px;
   line-height: 30px;
   margin: 5px;
+}
+.ysp-process-form-wrapper {
+  width: 100%;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  overflow: hidden;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button span {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 10px;
+  float: left;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button span:nth-child(1) {
+  width: 140px;
+  border-radius: 5px;
+  border: 1px solid #CCAB63;
+  color: #CCAB63;
+  position: relative;
+  top: 5px;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button span:nth-child(2) {
+  width: 140px;
+  border-radius: 5px;
+  background: #C29A2A;
+  color: #fff;
+  position: relative;
+  top: 5px;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button span:nth-child(3) {
+  float: right;
+  height: 40px;
+  width: 10%;
+  background: url(images/more_button.png) no-repeat;
+  background-position-x: 10px;
+  background-position-y: 50%;
+}
+.ysp-process-form-wrapper .load-more-coverlayer {
+  height: 100vh;
+  background: rgba(102, 102, 102, 0.76);
+  background: rgba(102, 102, 102, 0.66);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.ysp-process-form-wrapper .load-more-coverlayer .load-more-data {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.ysp-process-form-wrapper .load-more-coverlayer .load-more-data section {
+  background: #fff;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin: 0 5px;
+}
+.ysp-process-form-wrapper .load-more-coverlayer .load-more-data section div {
+  text-align: center;
+  height: 40px;
+  color: #4992F8;
+  line-height: 40px;
+  border-bottom: 1px solid #EFEFEF;
+}
+.ysp-process-form-wrapper .load-more-coverlayer .load-more-data > div:nth-last-child(1) {
+  margin: 7px 5px;
+  color: #999;
+  border-radius: 5px;
+  line-height: 40px;
+  background: #fff;
+  text-align: center;
+}
+.ysp-process-tosend {
+  width: 100%;
+  background: #fff;
+  font-size: 14px;
+}
+.ysp-process-tosend span {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+}
+.ysp-process-tosend > span:nth-child(1) {
+  width: 30%;
+}
+.ysp-process-tosend > span:nth-child(2) {
+  width: 70%;
+  border-bottom: 1px solid #ddd;
+}
+.ysp-process-tosend .receive-people {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 40px;
+  padding: 0 15px;
+  height: 40px;
+  background: url('images/Magnifier-card.png') no-repeat;
+  background-size: 15px;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  width: 100%;
+  border-bottom: 5px solid #efefef;
+}
+.ysp-textarea-content {
+  padding: 0 15px;
+  background: #fff;
+}
+.ysp-textarea-content textarea {
+  border-radius: 5px;
+  margin: 0;
 }
 /*****************公文审批-总经理审核 -END***********************/
 /*_________________________________index模版:九宫格样式_________________________________*/

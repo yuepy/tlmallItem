@@ -6,7 +6,8 @@
   "requires": {
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
-    "test_song": "../test_song/index.json"
+    "test_song": "../test_song/index.json",
+    "processToSend": "../processToSend/index.json"
   },
   "chineseName": "请求标题详情页",
   "description": "请求标题详情页",
@@ -166,35 +167,6 @@
       "roles": "element",
       "text": "编号：FSIG-201710170009",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control34_3xOhRN": {
-      "location": {
-        "data": {
-          "tagName": "HTML"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              3,
-              8
-            ],
-            "value": "/HTML[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control34_3xOhRN"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>//iframe[1]<<IFRAME>>"
     },
     "control37_OEJzmu": {
       "location": {
@@ -405,10 +377,10 @@
       "text": "\n                        申请人单位\n                        集团总部  \n                        申请人部门\n                        信息技术中心  \n                        申请人\n                        张济天  \n                    ",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control32_AF8Q1T": {
+    "control45_TLCCf5": {
       "location": {
         "data": {
-          "tagName": "BUTTON"
+          "tagName": "DIV"
         },
         "userData": {
           "data": [],
@@ -416,34 +388,130 @@
         },
         "locators": [
           {
-            "id": "@title",
-            "prob": 2,
-            "value": {
-              "text": [
-                "相关文档"
-              ]
-            }
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
           },
           {
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
               0,
-              48
+              3
             ],
-            "value": "TABLE.ViewForm.maintable TD.fvalue BUTTON.Browser"
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/BUTTON[1]"
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
           }
         ]
       },
-      "intendedRole": "button",
-      "roles": "element,button",
+      "events": {
+        "onGetData": "getData_control45_TLCCf5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control31_eeZIHZ": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "所见即所得编辑器, remark, 按 ALT+0 查看帮助。"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]/IFRAME[1]",
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::TD[@id=\"cke_contents_remark\"]//IFRAME"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              22
+            ],
+            "value": "SPAN.cke_wrapper.cke_ltr TABLE.cke_editor TD.cke_contents IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control31_eeZIHZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control54_pksnGt": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"mainRequestFrame\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control54_pksnGt"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -452,14 +520,15 @@
         "control25_PhAtSh",
         "control23_nAAQod",
         "control24_s2hR81",
-        "control34_3xOhRN",
         "control37_OEJzmu",
         "control38_xKEVrL",
         "control39_sTQ8TR",
         "control28_hPr3qu",
         "control29_tXFBoh",
         "control16_TqnDIo",
-        "control32_AF8Q1T"
+        "control45_TLCCf5",
+        "control31_eeZIHZ",
+        "control54_pksnGt"
       ],
       "anchors": [
         "control15_daufT7"
@@ -523,17 +592,37 @@
         }
       ]
     },
-    "flow18_ONQ55a": {
+    "flow29_iyThum": {
       "fromContextId": "context4_wRixwF",
-      "fromAction": "click",
-      "fromControlId": "control32_AF8Q1T",
+      "fromAction": "doAction",
+      "fromControlId": "control45_TLCCf5",
       "toContexts": [
         {
           "toContextId": "context4_wRixwF"
         },
         {
-          "toContextId": "context5_Gc4xyn",
-          "toModelId": "test_song"
+          "toContextId": "context10_Tp4yhH",
+          "toModelId": "processToSend"
+        }
+      ]
+    },
+    "flow35_H7dJeE": {
+      "fromContextId": "context4_wRixwF",
+      "fromAction": "doAction",
+      "fromControlId": "control16_TqnDIo",
+      "toContexts": [
+        {
+          "toContextId": "context4_wRixwF"
+        }
+      ]
+    },
+    "flow30_Lxt7Ht": {
+      "fromContextId": "context4_wRixwF",
+      "fromAction": "doAction",
+      "fromControlId": "control31_eeZIHZ",
+      "toContexts": [
+        {
+          "toContextId": "context4_wRixwF"
         }
       ]
     }
@@ -542,6 +631,21 @@
     "page4_ONnEuJ": {
       "contextId": "context4_wRixwF",
       "layout": [
+        {
+          "id": "uiControl51_shBFZL",
+          "controlId": "control54_pksnGt",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl51_shBFZL",
+                "onGetTemplate": "getTemplate_uiControl51_shBFZL"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl24_s3lOQh",
           "controlId": "control24_s2hR81",
@@ -603,16 +707,16 @@
           }
         },
         {
-          "id": "uiControl32_PTJzNp",
-          "controlId": "control34_3xOhRN",
+          "id": "uiControl42_3fvgmQ",
+          "controlId": "control31_eeZIHZ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl32_PTJzNp",
-                "onGetTemplate": "getTemplate_uiControl32_PTJzNp"
+                "onDoAction": "doAction_uiControl42_3fvgmQ",
+                "onGetTemplate": "getTemplate_uiControl42_3fvgmQ"
               }
             }
           }
@@ -693,13 +797,17 @@
           }
         },
         {
-          "id": "uiControl21_Srrzkn",
-          "controlId": "control32_AF8Q1T",
+          "id": "uiControl43_lpdLEi",
+          "controlId": "control45_TLCCf5",
           "display": {
-            "adapterId": "clickable",
-            "type": "button",
+            "adapterId": "custom",
+            "type": "custom",
             "adapter": {
-              "templateType": ""
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl43_lpdLEi",
+                "onGetTemplate": "getTemplate_uiControl43_lpdLEi"
+              }
             }
           }
         }
@@ -713,7 +821,8 @@
           "33333333333333",
           "流程测试201712月-张济天-2017-10-23",
           "",
-          "云适配测试_song"
+          "云适配测试_song",
+          "1212212"
         ]
       }
     },
@@ -723,7 +832,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=154031&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=187850&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215915&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215915&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118465&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ],
         "context5_46tN5g": [
           "192.168.200.63/docs/docs/MutiDocBrowser.jsp?documentids=&splitflag=,",
@@ -1038,6 +1148,58 @@
             "weaverTablePrevPageOfDisabled",
             "xTable_info",
             "xTable_message"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_edit",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_subnobackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
           ]
         ],
         "context5_46tN5g": [

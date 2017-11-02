@@ -5,7 +5,7 @@
         return;
       }var data = [];var lis = elem.querySelector('#drillmenu').querySelector('ul').querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
         data.push(ysp.customHelper.trim(lis[i].querySelector('a').textContent));
-      }return data;
+      }var daiban = ysp.customHelper.Dnum();;return data;
     },
     doAction_uiControl19_TuJ8uo: function (data, elem) {
       if (data.eventType == 'click') {

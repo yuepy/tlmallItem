@@ -6,7 +6,8 @@
   "requires": {
     "hetong01": "../hetong01/index.json",
     "Contractcountersigned": "../Contractcountersigned/index.json",
-    "managerAuditDetail": "../managerAuditDetail/index.json"
+    "managerAuditDetail": "../managerAuditDetail/index.json",
+    "companyContract": "../companyContract/index.json"
   },
   "chineseName": "待办事宜",
   "description": "待办事宜",
@@ -90,6 +91,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -160,6 +165,10 @@
         {
           "toContextId": "context4_ktABGz",
           "toModelId": "Contractcountersigned"
+        },
+        {
+          "toContextId": "context10_90GdZe",
+          "toModelId": "companyContract"
         }
       ]
     }
