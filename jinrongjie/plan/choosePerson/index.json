@@ -1,0 +1,138 @@
+{
+  "version": "0.1",
+  "id": "choosePerson",
+  "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
+  "jsFile": "index.js",
+  "chineseName": "选人",
+  "description": "",
+  "controls": {
+    "control31_MQw3uc": {
+      "location": {
+        "data": {
+          "tagName": "FRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::FRAME[@id=\"main\"]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/FRAMESET[1]/FRAME[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control31_MQw3uc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context10_sJa5NJ": {
+      "controls": [
+        "control31_MQw3uc"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow30_KoeepS": {
+      "toContexts": [
+        {
+          "toContextId": "context10_sJa5NJ"
+        }
+      ]
+    },
+    "flow31_sbxS4h": {
+      "fromContextId": "context10_sJa5NJ",
+      "fromAction": "doAction",
+      "fromControlId": "control31_MQw3uc",
+      "toContexts": [
+        {
+          "toContextId": "context10_sJa5NJ"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page10_nXuDRl": {
+      "contextId": "context10_sJa5NJ",
+      "layout": [
+        {
+          "id": "uiControl42_lcGQHl",
+          "controlId": "control31_MQw3uc",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl42_lcGQHl",
+                "onGetTemplate": "getTemplate_uiControl42_lcGQHl"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context10_sJa5NJ": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context10_sJa5NJ": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context10_sJa5NJ": [
+          [
+            "main"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context10_sJa5NJ": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context10_sJa5NJ": [
+          [
+            "-/-/FRAME",
+            "-/-/NOFRAMES"
+          ]
+        ]
+      }
+    }
+  }
+}

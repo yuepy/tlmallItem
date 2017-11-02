@@ -2,8 +2,8 @@
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function(win, ysp) {
     var utils = ysp.utils;
-    var flag = true;
-    var topWindow = win.top;
+    var flag = true; // 为true说明需要取token  为false说明不需要取token
+    var topWindow = win.top; // 最外层window - top层
     var tokenUrl = null;
     var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
     soapData = soapData + ' <SOAP:Body>';
@@ -57,6 +57,7 @@
 
         }
         */
+        // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
