@@ -108,7 +108,7 @@
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
       aWin.addEventListener('DOMContentLoaded', function() {
-        debugger
+       
         if (aWin.location.href.indexOf('Login.jsp') !== -1) {
           console.info('向客户端发送消息,开始获取token地址');
           var actionEvent = '{"target":"null","data":"closePreLoading"}';

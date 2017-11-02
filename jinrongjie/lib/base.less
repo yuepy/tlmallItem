@@ -996,6 +996,9 @@ li {list-style: none}
 }
 //01合同会签样式
 div[data-ysp-modelid='hetong01']{
+  ._2YwloE7OzAhaMwSn1XM-Va{
+    border-bottom: 0;
+  }
   ._27gZE6m5LfD5uG_dZ8p3iP{
     margin: 0;
     ._2kVn_YrAvZeioJhwcvsdtZ{
@@ -1052,7 +1055,7 @@ div[data-ysp-modelid='hetong01']{
         .bottom_tb{
           padding-left: 15px;
           >*:nth-child(n+11){
-            display: none;
+            //display: none;
           }
         }
         .button_less{
@@ -1208,17 +1211,145 @@ div[data-ysp-modelid='hetong01']{
 .suggest_lz_box{
   margin: 10px;
   section{
-    margin: 10px;
-  }
-  .box_li{
-    margin: 5px 0;
-    span{
-      color: #000;
-      font-size: 14px;
+    li{
+      height: 30px;	
+      line-height: 30px;
     }
-    span:nth-child(2){
-      margin-left: 10px;
-      color: #202020;
+    margin: 10px;
+    overflow: hidden;
+    background: url(../local/img/shuxian.png) no-repeat 35%;
+    .left_box{
+      width:35%;
+      float: left;
+      text-align: right;
+      padding-right: 10px;
+      li:nth-child(1){
+        font-size: 14px;
+        color:#202020;
+      }
+      li:nth-child(2){
+        font-size: 16px;	
+        color:#000;
+      }
+    }
+    .right_box{
+      width: 65%;
+      float: left;
+      padding-left: 10px;
+      text-align: left;
+      li{
+        span{
+          font-size: 14px;
+          &:nth-child(2){
+            margin-left: 10px;
+          }
+        }
+        .green{
+          color: green;
+          border-bottom:1px solid green;
+        }
+      }
+    }
+  }
+  // .box_li{
+  //   margin: 5px 0;
+  //   span{
+  //     color: #000;
+  //     font-size: 14px;
+  //   }
+  //   span:nth-child(2){
+  //     margin-left: 10px;
+  //     color: #202020;
+  //   }
+  // }
+}
+.box_select{
+  .dis_status{
+    margin: 10px 0;
+    border-top: 5px solid #ccc;
+    padding: 5px 0;
+    border-bottom: 5px solid #ccc;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+  .tree_box{
+   // padding: 10px;
+    height: 200px;
+    overflow-y: scroll;
+    >div{
+      height: 30px;
+      line-height: 30px;
+      .bord{
+        border-bottom: 1px solid #ccc;
+        padding-left: 10px;
+        position: relative;
+        span{
+          font-size: 14px;
+        }
+        i{
+          position: absolute;
+          right: 20px;
+          top:5px;
+          width: 20px;
+          height: 20px;
+        }
+        .xjt{
+          background: url(../local/img/xiajiantou.png) no-repeat 0;
+          background-size: 20px;
+        }
+        .zjt{
+          background: url(../local/img/zuojiantou.png) no-repeat 0;
+          background-size: 20px;
+        }
+      }
+    }
+  }
+  .people_box{
+    padding: 0 10px;
+    max-height: 200px;
+    overflow-y: scroll;
+    .people{
+      height: 30px;
+      line-height: 30px;
+      span{
+        display: block;
+        float: left	;
+        text-align: center;
+        font-size: 14px;
+        &:nth-child(1){
+          width: 20%;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+        }
+        &:nth-child(2){
+          width: 50%;
+        }
+        &:nth-child(3){
+          width: 30%;
+        }
+      }
+    }
+  }
+  .thead{
+    overflow: hidden;
+    //smargin-top: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    span{
+      display: block;
+      float: left	;
+      text-align: center;
+      &:nth-child(1){
+        width: 20%;
+      }
+      &:nth-child(2){
+        width: 50%;
+      }
+      &:nth-child(3){
+        width: 30%;
+      }
     }
   }
 }
