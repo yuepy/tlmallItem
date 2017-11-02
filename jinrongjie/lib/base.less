@@ -766,7 +766,7 @@ li {list-style: none}
   background: #fff;
   padding: 10px 15px;
   .approval-node-info{
-    margin: 10px 0;
+    margin: -15px;
     div{
       text-align: left;
       font-size: 13px;
@@ -774,11 +774,13 @@ li {list-style: none}
     }
     >div{
       display: inline-block;
-      padding: 5px 0;
+      padding: 0;
     }
     .approval-node-info-left-div{
     	width: 33%;
       padding-right: 10px;
+      position: relative;
+      bottom: 60px;
       
       div{
         text-align: right;
@@ -790,12 +792,10 @@ li {list-style: none}
     }
     .approval-node-info-right-div{
       width: 67%;
-      padding-left: 10px;
-      border-left: 1px solid #CCAB63;
-      // border-left: 1px solid #CCAB63;
-      background: url(images/nodepoint.png) no-repeat;
       div{
+        padding-left: 10px;
       	text-align: left;  
+        border-left: 1px solid #CFB05F;
       }
       >div:nth-last-child(1){
         >span{
@@ -805,6 +805,21 @@ li {list-style: none}
             cursor: pointer;
           }
         }
+      }
+      &:before{
+        font-size: 12px;
+        position: relative;
+        top: 11px;
+        right: 3.5px;
+        color: #CFB05F;
+        content: '●';
+      }
+      &:after{
+        position: relative;
+        bottom: 10px;
+        right: 3.5px;
+        color: #CFB05F;
+        content: '●';
       }
     }
   }

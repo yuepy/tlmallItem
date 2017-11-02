@@ -394,6 +394,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -433,6 +437,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -453,6 +461,10 @@
       "location": {
         "data": {
           "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -480,6 +492,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -511,6 +527,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -541,6 +561,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -567,6 +591,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -598,6 +626,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -614,6 +646,37 @@
       },
       "events": {
         "onGetData": "getData_control62_7sJo6r"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control37_TGCNSA": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[5]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control37_TGCNSA"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -639,7 +702,8 @@
         "control59_JQESHT",
         "control60_pHbEeO",
         "control61_eSpTT1",
-        "control62_7sJo6r"
+        "control62_7sJo6r",
+        "control37_TGCNSA"
       ],
       "anchors": [
         "control15_daufT7"
@@ -938,16 +1002,16 @@
           }
         },
         {
-          "id": "uiControl59_yb8Jcb",
-          "controlId": "control62_7sJo6r",
+          "id": "uiControl35_NVoS8U",
+          "controlId": "control37_TGCNSA",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl59_yb8Jcb",
-                "onGetTemplate": "getTemplate_uiControl59_yb8Jcb"
+                "onDoAction": "doAction_uiControl35_NVoS8U",
+                "onGetTemplate": "getTemplate_uiControl35_NVoS8U"
               }
             }
           }
@@ -963,6 +1027,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl58_TK1I7S",
                 "onGetTemplate": "getTemplate_uiControl58_TK1I7S"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl59_yb8Jcb",
+          "controlId": "control62_7sJo6r",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl59_yb8Jcb",
+                "onGetTemplate": "getTemplate_uiControl59_yb8Jcb"
               }
             }
           }
