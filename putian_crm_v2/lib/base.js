@@ -418,7 +418,7 @@
         console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
          return;
       }
-      if(activeContext && activeContext.model.id == 'customerInformationFIll'){ // 信息录入页面加载无刷新
+      if(activeContext && activeContext.model.id == 'customerInformationFIll' && type != "achievement" && type != "dataPanel" && type != "customerIn" && type != "achievementSecondMenu" && type != "clientStoreCard"){ // 信息录入页面加载无刷新
         aWin && (aWin.location.href.indexOf('index.html') == -1) && aWin.location.reload();
         return;
       }
