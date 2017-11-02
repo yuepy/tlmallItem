@@ -115,7 +115,7 @@
         return;
       }var data = {};var tds = elem.querySelectorAll('td');[].forEach.call(tds, function (item, index) {
         if (item.querySelector('input')) {
-          data.title = item.querySelector('input').value;
+          data.title = item.querySelector('input').value || [];
         }
       });return data;
     },
