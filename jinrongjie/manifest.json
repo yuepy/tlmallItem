@@ -43,14 +43,20 @@
         "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids="
       ]
     },
-    {
-      "title": "choosePerson",
+    {      "title": "choosePerson",
       "url": "adapter://jinrongjie/plan/choosePerson/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.200\\.63\\/systeminfo\\/BrowserMain\\.jsp\\?url=\\/hrm\\/resource\\/MutiResourceBrowser\\.jsp\\?resourceids=551,1838"
       ],
       "demo": [
-        "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838"
+        "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838"],
+      "title": "waitTodo",
+      "url": "adapter://jinrongjie/plan/waitTodo/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/RequestView\\.jsp\\?e71508480096097="
+      ],
+      "demo": [
+        "http://192.168.200.63/workflow/request/RequestView.jsp?e71508480096097="
       ]
     }
   ],

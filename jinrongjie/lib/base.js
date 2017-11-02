@@ -2,8 +2,8 @@
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function(win, ysp) {
     var utils = ysp.utils;
-    var flag = true;
-    var topWindow = win.top;
+    var flag = true; // 为true说明需要取token  为false说明不需要取token
+    var topWindow = win.top; // 最外层window - top层
     var tokenUrl = null;
     var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
     soapData = soapData + ' <SOAP:Body>';
@@ -58,65 +58,65 @@
         }
         */
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
-    // 以下两个方法用于修改原页面中的错误, 但执行时机不同
-    // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
-    onTargetLoad: function(aWin, doc){
-      aWin.yspTokenUrl = function(url){
-        return url;
-      }
-				
-      /* attachEvent兼容问题 */
-      var oUploadannexupload;
-      // aWin.fileuploadannexupload = function () {
-      //   var settings = {
-      //   flash_url : "/js/swfupload/swfupload.swf",
-      //   upload_url: "/docs/docupload/MultiDocUploadByWorkflow.jsp",
-      //   post_params: {
-      //   "mainId":"3",
-      //   "subId":"5",
-      //   "secId":"106",
-      //   "userid":"9492",
-      //   "logintype":"1"
-      //   },
-      //   file_size_limit :"50 MB",
-      //   file_types : "*.*",
-      //   file_types_description : "All Files",
-      //   file_upload_limit : 100,
-      //   file_queue_limit : 0,
-      //   custom_settings : {
-      //   progressTarget : "fsUploadProgressannexupload",
-      //   cancelButtonId : "btnCancelannexupload",
-      //   uploadfiedid:"field-annexupload"
-      //   },
-      //   debug: false,
-      //   button_image_url : "/js/swfupload/add.png",
-      //   button_placeholder_id : "spanButtonPlaceHolderannexupload",
-      //   button_width: 100,
-      //   button_height: 18,
-      //   button_text : '<span class="button">选取多个文件</span>',
-      //   button_text_style : '.button { font-family: Helvetica, Arial, sans-serif; font-size: 12pt; } .buttonSmall { font-size: 10pt; }',
-      //   button_text_top_padding: 0,
-      //   button_text_left_padding: 18,
-      //   button_window_mode: aWin.SWFUpload.WINDOW_MODE.TRANSPARENT,
-      //   button_cursor: SWFUpload.CURSOR.HAND,
-      //   file_queued_handler : fileQueued,
-      //   file_queue_error_handler : fileQueueError,
-      //   file_dialog_complete_handler : fileDialogComplete_2,
-      //   upload_start_handler : uploadStart,
-      //   upload_progress_handler : uploadProgress,
-      //   upload_error_handler : uploadError,
-      //   upload_success_handler : uploadSuccess_1,
-      //   upload_complete_handler : uploadComplete_1,
-      //   queue_complete_handler : queueComplete
-      //   };
-      //   try {
-      //   aWin.oUploadannexupload=new aWin.SWFUpload(settings,true);
-      //   } catch(e) {
-      //   alert(e)
-      //   }
-      // }
-      // aWin.attachEvent = aWin.addEventListener('load',aWin.fileuploadannexupload,false)
-    },
+        // 以下两个方法用于修改原页面中的错误, 但执行时机不同
+        // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
+        onTargetLoad: function(aWin, doc) {
+            aWin.yspTokenUrl = function(url) {
+                return url;
+            }
+
+            /* attachEvent兼容问题 */
+            var oUploadannexupload;
+            // aWin.fileuploadannexupload = function () {
+            //   var settings = {
+            //   flash_url : "/js/swfupload/swfupload.swf",
+            //   upload_url: "/docs/docupload/MultiDocUploadByWorkflow.jsp",
+            //   post_params: {
+            //   "mainId":"3",
+            //   "subId":"5",
+            //   "secId":"106",
+            //   "userid":"9492",
+            //   "logintype":"1"
+            //   },
+            //   file_size_limit :"50 MB",
+            //   file_types : "*.*",
+            //   file_types_description : "All Files",
+            //   file_upload_limit : 100,
+            //   file_queue_limit : 0,
+            //   custom_settings : {
+            //   progressTarget : "fsUploadProgressannexupload",
+            //   cancelButtonId : "btnCancelannexupload",
+            //   uploadfiedid:"field-annexupload"
+            //   },
+            //   debug: false,
+            //   button_image_url : "/js/swfupload/add.png",
+            //   button_placeholder_id : "spanButtonPlaceHolderannexupload",
+            //   button_width: 100,
+            //   button_height: 18,
+            //   button_text : '<span class="button">选取多个文件</span>',
+            //   button_text_style : '.button { font-family: Helvetica, Arial, sans-serif; font-size: 12pt; } .buttonSmall { font-size: 10pt; }',
+            //   button_text_top_padding: 0,
+            //   button_text_left_padding: 18,
+            //   button_window_mode: aWin.SWFUpload.WINDOW_MODE.TRANSPARENT,
+            //   button_cursor: SWFUpload.CURSOR.HAND,
+            //   file_queued_handler : fileQueued,
+            //   file_queue_error_handler : fileQueueError,
+            //   file_dialog_complete_handler : fileDialogComplete_2,
+            //   upload_start_handler : uploadStart,
+            //   upload_progress_handler : uploadProgress,
+            //   upload_error_handler : uploadError,
+            //   upload_success_handler : uploadSuccess_1,
+            //   upload_complete_handler : uploadComplete_1,
+            //   queue_complete_handler : queueComplete
+            //   };
+            //   try {
+            //   aWin.oUploadannexupload=new aWin.SWFUpload(settings,true);
+            //   } catch(e) {
+            //   alert(e)
+            //   }
+            // }
+            // aWin.attachEvent = aWin.addEventListener('load',aWin.fileuploadannexupload,false)
+        },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
             /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
@@ -197,7 +197,6 @@
         //思路与needToLogin类似, 保证能够唯一区分该页面即可.
         isLoginSuccess: function(doc) {
             return false;
->>>>>>> 421ec9f46481682e45e1eff17d5f936770581227
         }
     });
     /*调用场景：该方法用于采集表格数据*/
