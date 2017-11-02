@@ -57,6 +57,15 @@ div.view-wrapper {
 .header {
   z-index: 199999;
 }
+.ysp-checkboxes {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(../local/img/ysp-checkboxes.png) no-repeat 0 0;
+  margin-right: 0.75rem;
+  position: relative;
+  top: 4px;
+}
 div[data-ysp-modelid="PendingTask"],
 div[data-ysp-modelid="HaveProcessingTasks"],
 div[data-ysp-modelid="HaveProcessingTasksDetailedInformation"],
@@ -558,43 +567,77 @@ header .btn:hover {
 }
 .ysp-ProcessedTask-main .ysp-flowName,
 .ysp-ProcessedTask-main .ysp-submitPerson {
-  border-bottom: 1px solid #e6e6e6;
-  padding: 0.8125rem;
+  height: 44px;
+  line-height: 44px;
+  padding-left: 0.8125rem;
+}
+.ysp-ProcessedTask-main .ysp-flowName span,
+.ysp-ProcessedTask-main .ysp-submitPerson span {
   font-size: 14px;
+  color: #666460;
+  display: inline-block;
+  width: 30%;
 }
 .ysp-ProcessedTask-main .ysp-flowName input,
 .ysp-ProcessedTask-main .ysp-submitPerson input {
   width: 70%;
-  border: 1px solid #ddd;
-  height: 30px;
+  border: none;
   border-radius: 3px;
-  padding: 0 10px;
+  border-bottom: 1px solid #e6e6e6;
+  height: 100%;
+  line-height: 43px;
+  font-size: 15px;
 }
 .ysp-ProcessedTask-main .ysp-flowTime {
-  border-bottom: 1px solid #e6e6e6;
-  padding: 0.8125rem;
+  height: 44px;
+  line-height: 44px;
+  padding-left: 0.8125rem;
+}
+.ysp-ProcessedTask-main .ysp-flowTime .ysp-flowTime-title {
   font-size: 14px;
-}
-.ysp-ProcessedTask-main .ysp-flowTime > div {
-  margin-top: 0.8125rem;
-  padding-top: 0.8125rem;
-  border-top: 1px solid #e6e6e6;
-}
-.ysp-ProcessedTask-main .ysp-flowTime .ysp-to {
-  margin: 0 2px;
-  color: #333;
-  font-size: 12px;
+  color: #666460;
+  display: inline-block;
+  width: 30%;
 }
 .ysp-ProcessedTask-main .ysp-flowTime input {
   margin: 0;
   padding: 0;
-  width: 45%;
+  width: 70%;
   display: inline-block;
-  height: 30px;
-  border-radius: 3px;
+  height: 100%;
+  line-height: 44px;
+  font-size: 15px;
+  border: none;
+  border-bottom: 1px solid #e6e6e6;
 }
-.ysp-ProcessedTask-main .ysp-flowTime .ysp-startT,
-.ysp-ProcessedTask-main .ysp-flowTime .ysp-endT {
+.ysp-ProcessedTask-main .ysp-flowTime .ysp-startT {
+  background: url(../local/img/down-arrow-icon.png) no-repeat;
+  background-size: 20px;
+  background-position: 95% 50%;
+}
+.ysp-ProcessedTask-main .ysp-toTime {
+  height: 44px;
+  line-height: 44px;
+  padding-left: 0.8125rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+.ysp-ProcessedTask-main .ysp-toTime .ysp-flowTime-title {
+  font-size: 14px;
+  color: #666460;
+  display: inline-block;
+  width: 30%;
+}
+.ysp-ProcessedTask-main .ysp-toTime input {
+  margin: 0;
+  padding: 0;
+  width: 70%;
+  display: inline-block;
+  height: 100%;
+  line-height: 44px;
+  font-size: 15px;
+  border: none;
+}
+.ysp-ProcessedTask-main .ysp-toTime .ysp-endT {
   background: url(../local/img/down-arrow-icon.png) no-repeat;
   background-size: 20px;
   background-position: 95% 50%;
@@ -979,6 +1022,8 @@ header .btn:hover {
   /***************单选*****************/
   /****************end****************/
   /**************附件下载*************/
+  /*********政策类别（良品折价销售流程）***********/
+  /*********************end*********************/
   /****************end****************/
 }
 .ysp-flowsheet .ysp-flowsheet-onePart .ysp-use-damount {
@@ -1086,6 +1131,10 @@ header .btn:hover {
   position: relative;
   top: 9px;
   margin-right: 20px;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart .ysp-policy-type > div {
+  width: 50%;
+  float: left;
 }
 .ysp-flowsheet .ysp-flowsheet-onePart .ysp-otherInput {
   width: 90%;

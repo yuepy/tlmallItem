@@ -46,6 +46,16 @@ div.view-wrapper{
 .header{
   z-index:199999;
 }
+//多选按钮样式
+.ysp-checkboxes{
+  display:inline-block;
+  width:18px;
+  height:18px;
+  background: url(../local/img/ysp-checkboxes.png) no-repeat 0 0;
+  margin-right:0.75rem;
+  position: relative;
+  top:	4px;
+}
 //背景为灰色
 div[data-ysp-modelid="PendingTask"],div[data-ysp-modelid="HaveProcessingTasks"],div[data-ysp-modelid="HaveProcessingTasksDetailedInformation"],div[data-ysp-modelid="HaveToDoWorkItemExecution"],div[data-ysp-modelid="approvalTrack"],div[data-ysp-modelid="index"],div[data-ysp-modelid="flowSheet"],div[data-ysp-modelid="processForm"],div[data-ysp-modelid="approveAdvice"],div[data-ysp-modelid="processedTask"],div[data-ysp-modelid="checkProcess"],div[data-ysp-modelid="operationLog"],.view-wrapper{
   background: #f4f4f4;
@@ -554,41 +564,75 @@ header{
   }
   //流程名字搜索
   .ysp-flowName,.ysp-submitPerson{
-    border-bottom:1px solid #e6e6e6;
-    padding:0.8125rem;
-    font-size:14px;
+    height:44px;
+    line-height:44px;
+    padding-left:0.8125rem;
+    span{
+      font-size:@fontBase;
+      color:#666460;
+      display:inline-block;
+      width:30%;
+    }
     input{
       width: 70%;
-      border: 1px solid #ddd;
-      height: 30px;
+      border: none;
       border-radius: 3px;
-      padding: 0 10px;
+      border-bottom:1px solid #e6e6e6;
+      height:100%;
+      line-height:43px;
+      font-size:@fontSmall;
     }
   }
   //搜索流程时间
 	.ysp-flowTime{
-    border-bottom:1px solid #e6e6e6;
-    padding:0.8125rem;
-    font-size:14px;
-    >div{
-      margin-top:0.8125rem;
-      padding-top:0.8125rem;
-      border-top:1px solid #e6e6e6;
-    }
-    .ysp-to{
-      margin: 0 2px;
-      color: #333;
-      font-size: 12px;
+    height:44px;
+    line-height:44px;
+    padding-left:0.8125rem;
+    .ysp-flowTime-title{
+      font-size:@fontBase;
+      color:#666460;
+      display:inline-block;
+      width:30%;
     }
     input{
       margin: 0;
       padding: 0;
-      width: 45%;
+      width: 70%;
       display: inline-block;
-      height: 30px;
-      border-radius: 3px;
+      height:100%;
+      line-height:44px;
+      font-size:@fontSmall;
+      border:none;
+      border-bottom:1px solid #e6e6e6;
     }
-    .ysp-startT,.ysp-endT{
+    .ysp-startT{
+      background: url(../local/img/down-arrow-icon.png) no-repeat;
+      background-size:20px;
+      background-position:95% 50%;
+    }
+  }
+  .ysp-toTime{
+    height:44px;
+    line-height:44px;
+    padding-left:0.8125rem;
+    border-bottom:1px solid #e6e6e6;
+    .ysp-flowTime-title{
+      font-size:@fontBase;
+      color:#666460;
+      display:inline-block;
+      width:30%;
+    }
+    input{
+      margin: 0;
+      padding: 0;
+      width: 70%;
+      display: inline-block;
+      height:100%;
+      line-height:44px;
+      font-size:@fontSmall;
+      border:none;
+    }
+    .ysp-endT{
       background: url(../local/img/down-arrow-icon.png) no-repeat;
       background-size:20px;
       background-position:95% 50%;
@@ -1091,6 +1135,14 @@ header{
         }
       }
     }
+    /*********政策类别（良品折价销售流程）***********/
+    .ysp-policy-type{
+      >div{
+        width:50%;
+        float:left;
+      }
+    }
+    /*********************end*********************/
     .ysp-otherInput{
       width:90%;
     }
