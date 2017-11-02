@@ -428,6 +428,10 @@
         "data": {
           "tagName": "IFRAME"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@title",
@@ -477,41 +481,6 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control54_pksnGt": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::DIV[@id=\"mainRequestFrame\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              0,
-              2
-            ],
-            "value": "/HTML[1]/BODY[1]/DIV[5]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control54_pksnGt"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": ""
     }
   },
   "contexts": {
@@ -527,8 +496,7 @@
         "control29_tXFBoh",
         "control16_TqnDIo",
         "control45_TLCCf5",
-        "control31_eeZIHZ",
-        "control54_pksnGt"
+        "control31_eeZIHZ"
       ],
       "anchors": [
         "control15_daufT7"
@@ -631,21 +599,6 @@
     "page4_ONnEuJ": {
       "contextId": "context4_wRixwF",
       "layout": [
-        {
-          "id": "uiControl51_shBFZL",
-          "controlId": "control54_pksnGt",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl51_shBFZL",
-                "onGetTemplate": "getTemplate_uiControl51_shBFZL"
-              }
-            }
-          }
-        },
         {
           "id": "uiControl24_s3lOQh",
           "controlId": "control24_s2hR81",
