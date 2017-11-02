@@ -152,8 +152,17 @@ li {
   display: inline-block;
   padding: 10px 15px;
   width: 40px;
-  height: 40px;
+  height: 45px;
   background: url(images/upload-files.png) no-repeat;
+  background-position-y: 50%;
+  float: right;
+}
+.ysp-manager-audit-title-icon .arrow-right {
+  display: inline-block;
+  padding: 10px 15px;
+  width: 40px;
+  height: 45px;
+  background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
   float: right;
 }
@@ -161,7 +170,7 @@ li {
   background: #ffffff;
   padding: 15px 0 0 15px;
   font-size: 16px;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 10px solid #efefef;
 }
 .ysp-manager-audit-wrapper .left-border {
   margin-left: -15px;
@@ -227,8 +236,8 @@ li {
   text-align: center;
 }
 .ysp-manager-audit-header-tab .border-bottom {
-  height: 5px;
-  background: #ddd;
+  height: 10px;
+  background: #efefef;
   clear: both;
 }
 .ysp-manager-audit-header-tab .active_tab {
@@ -239,8 +248,9 @@ li {
 .ysp-manager-audit-title {
   font-size: 14px;
   text-align: center;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 10px solid #efefef;
   background: #fff;
+  padding: 10px 0;
 }
 .ysp-manager-audit-title .ysp-manager-audit-main-title {
   font-size: 16px;
@@ -636,7 +646,6 @@ li {
   background-position-x: 95%;
   background-position-y: 50%;
   width: 100%;
-  border-bottom: 5px solid #efefef;
 }
 .ysp-textarea-content {
   padding: 0 15px;
@@ -724,12 +733,12 @@ li {
   position: absolute;
   width: 100%;
   height: 200vh;
-  top: 76px;
+  top: 80px;
   background: #fff;
   padding: 10px 15px;
 }
 .ysp-dialog-wrapper-top .approval-node-info {
-  margin: 10px 0;
+  margin: -15px;
 }
 .ysp-dialog-wrapper-top .approval-node-info div {
   text-align: left;
@@ -738,11 +747,13 @@ li {
 }
 .ysp-dialog-wrapper-top .approval-node-info > div {
   display: inline-block;
-  padding: 5px 0;
+  padding: 0;
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-left-div {
   width: 33%;
   padding-right: 10px;
+  position: relative;
+  bottom: 60px;
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-left-div div {
   text-align: right;
@@ -753,17 +764,31 @@ li {
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div {
   width: 67%;
-  padding-left: 10px;
-  border-left: 1px solid #CCAB63;
-  background: url(images/nodepoint.png) no-repeat;
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div div {
+  padding-left: 10px;
   text-align: left;
+  border-left: 1px solid #CFB05F;
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div > div:nth-last-child(1) > span span {
   color: #97E5BB;
   border-bottom: 1px solid #97E5BB;
   cursor: pointer;
+}
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div:before {
+  font-size: 12px;
+  position: relative;
+  top: 11px;
+  right: 3.5px;
+  color: #CFB05F;
+  content: '●';
+}
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div:after {
+  position: relative;
+  bottom: 10px;
+  right: 3.5px;
+  color: #CFB05F;
+  content: '●';
 }
 /*_________________________________Dialog组件:页面样式_________________________________*/
 /* --------------------------------------table表格01合同会签样式*/

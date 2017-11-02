@@ -179,8 +179,17 @@ li {list-style: none}
     display: inline-block;
     padding: 10px 15px;
     width: 40px;
-    height: 40px;
+    height: 45px;
     background: url(images/upload-files.png) no-repeat;
+    background-position-y: 50%;
+    float: right;
+  }
+  .arrow-right{
+    display: inline-block;
+    padding: 10px 15px;
+    width: 40px;
+    height: 45px;
+    background: url(images/arrow-right.png) no-repeat;
     background-position-y: 50%;
     float: right;
   }
@@ -189,7 +198,7 @@ li {list-style: none}
 	background: #ffffff;
 	padding: 15px 0 0 15px;
   font-size: @base-font-size+2px;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 10px solid #efefef;
   .left-border{
     margin-left:-15px;
     width:15px;
@@ -254,8 +263,8 @@ li {list-style: none}
     text-align: center;
   }
   .border-bottom{
-    height: 5px;
-    background: #ddd;
+    height: 10px;
+    background: #efefef;
     clear: both;
   }
   .active_tab{
@@ -267,8 +276,9 @@ li {list-style: none}
 .ysp-manager-audit-title{
   font-size: @base-font-size;
   text-align: center;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 10px solid #efefef;
   background: #fff;
+  padding: 10px 0;
   .ysp-manager-audit-main-title{
     font-size: @base-font-size+2px;
     font-weight: bold;
@@ -657,7 +667,6 @@ li {list-style: none}
     background-position-x: 95%;
     background-position-y: 50%;
     width: 100%;
-    border-bottom: 5px solid #efefef;
   }
 }
 .ysp-textarea-content{
@@ -753,11 +762,11 @@ li {list-style: none}
   position: absolute;
   width: 100%;
   height: 200vh;
-  top: 76px;
+  top: 80px;
   background: #fff;
   padding: 10px 15px;
   .approval-node-info{
-    margin: 10px 0;
+    margin: -15px;
     div{
       text-align: left;
       font-size: 13px;
@@ -765,11 +774,13 @@ li {list-style: none}
     }
     >div{
       display: inline-block;
-      padding: 5px 0;
+      padding: 0;
     }
     .approval-node-info-left-div{
     	width: 33%;
       padding-right: 10px;
+      position: relative;
+      bottom: 60px;
       
       div{
         text-align: right;
@@ -781,12 +792,10 @@ li {list-style: none}
     }
     .approval-node-info-right-div{
       width: 67%;
-      padding-left: 10px;
-      border-left: 1px solid #CCAB63;
-      // border-left: 1px solid #CCAB63;
-      background: url(images/nodepoint.png) no-repeat;
       div{
+        padding-left: 10px;
       	text-align: left;  
+        border-left: 1px solid #CFB05F;
       }
       >div:nth-last-child(1){
         >span{
@@ -796,6 +805,21 @@ li {list-style: none}
             cursor: pointer;
           }
         }
+      }
+      &:before{
+        font-size: 12px;
+        position: relative;
+        top: 11px;
+        right: 3.5px;
+        color: #CFB05F;
+        content: '●';
+      }
+      &:after{
+        position: relative;
+        bottom: 10px;
+        right: 3.5px;
+        color: #CFB05F;
+        content: '●';
       }
     }
   }
