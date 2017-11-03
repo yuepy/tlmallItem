@@ -8950,20 +8950,19 @@ div[data-ysp-modelid="customerInformationweekFill"]{
   .week_ltt{
     background: #fff;
     margin-bottom:10px;
-    
-
     span:first-child{
-      padding-left:10px;
-      &:before{
-        content:'';
-        display: inline-block;
-        width:2px;
-        height: 40px;
-        background: #4895ED;
-        position: absolute;
-        top:114px;
-        left: 0px;
-      }
+      //padding-left:10px;
+      border-left: 4px solid #4895ED;
+      // &:before{
+      //   content:'';
+      //   display: inline-block;
+      //   width:2px;
+      //   height: 20px;
+      //   background: #4895ED;
+      //   //position: absolute;
+      //   top:114px;
+      //   left: 0px;
+      // }
     }
     span,input{
       display: inline-block;
@@ -9229,17 +9228,21 @@ div[data-ysp-modelid="storeWeekPSI"]{
   overflow-y: scroll;
   height: 100vh;
   >div:nth-child(5){
-    background: #fff;
-    padding:10px 0;
+    //background: #fff;
+    //padding:10px 0;
   }
 }
 .ysp_InfomationFill_week_PSI{
   background: #fff;
-  padding: 15px;
+  padding: 10px;
   //border-bottom: 20px solid #ececec;
   border-left: 4px solid #4796ed;
   //margin-top: 43px;
 	min-height: 40px;
+  position: fixed;//9.21
+  width: 100%;
+  overflow-y: scroll;
+  z-index: 999;
   >span:nth-child(1){
     color: #666666;
     font-size: 16px;
@@ -9257,11 +9260,11 @@ div[data-ysp-modelid="storeWeekPSI"]{
 
 
 .ysp_StoreInfomationFillWeek_PSI{
-  border-top: 20px solid #ececec;
+  border-top: 40px solid #ececec;
   position: fixed;//9.21
   width: 100%;
   overflow-y: scroll;
-  height: 80vh;
+  min-height: 80vh;
   .ysp_StoreInfomationFillWeek_PSI_item{
     background: #fff;
     padding: 10px 0px 10px 10px;

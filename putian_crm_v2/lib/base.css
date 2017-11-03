@@ -8082,17 +8082,7 @@ div[data-ysp-modelid="customerInformationweekFill"] .week_ltt {
   margin-bottom: 10px;
 }
 div[data-ysp-modelid="customerInformationweekFill"] .week_ltt span:first-child {
-  padding-left: 10px;
-}
-div[data-ysp-modelid="customerInformationweekFill"] .week_ltt span:first-child:before {
-  content: '';
-  display: inline-block;
-  width: 2px;
-  height: 40px;
-  background: #4895ED;
-  position: absolute;
-  top: 114px;
-  left: 0px;
+  border-left: 4px solid #4895ED;
 }
 div[data-ysp-modelid="customerInformationweekFill"] .week_ltt span,
 div[data-ysp-modelid="customerInformationweekFill"] .week_ltt input {
@@ -8337,15 +8327,15 @@ div[data-ysp-modelid="storeWeekPSI"] {
   overflow-y: scroll;
   height: 100vh;
 }
-div[data-ysp-modelid="storeWeekPSI"] > div:nth-child(5) {
-  background: #fff;
-  padding: 10px 0;
-}
 .ysp_InfomationFill_week_PSI {
   background: #fff;
-  padding: 15px;
+  padding: 10px;
   border-left: 4px solid #4796ed;
   min-height: 40px;
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  z-index: 999;
 }
 .ysp_InfomationFill_week_PSI > span:nth-child(1) {
   color: #666666;
@@ -8361,11 +8351,11 @@ div[data-ysp-modelid="storeWeekPSI"] > div:nth-child(5) {
   font-size: 16px;
 }
 .ysp_StoreInfomationFillWeek_PSI {
-  border-top: 20px solid #ececec;
+  border-top: 40px solid #ececec;
   position: fixed;
   width: 100%;
   overflow-y: scroll;
-  height: 80vh;
+  min-height: 80vh;
 }
 .ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item {
   background: #fff;
