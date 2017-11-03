@@ -67,6 +67,11 @@ h5 {
 .ysp-header-wrapper > span:nth-child(3) > span:last-child {
   margin-left: .3rem;
 }
+.ysp-header-wrapper .ysp-header-edit {
+  display: inline-block;
+  width: 50px;
+  font-weight: normal;
+}
 .ysp-header-wrapper .ysp-header-edit-icon {
   display: inline-block;
   width: 50px;
@@ -1408,6 +1413,7 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
   line-height: 30px;
   height: 30px;
   display: inline-block;
+  color: #000;
 }
 .search_box .lst_lfj button {
   width: 100%;
@@ -1439,11 +1445,14 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
 }
 .box_select .dis_status {
   margin: 10px 0;
-  border-top: 5px solid #ccc;
+  border-top: 5px solid #f3f3f3;
   padding: 5px 0;
-  border-bottom: 5px solid #ccc;
+  border-bottom: 5px solid #f3f3f3;
   padding-left: 20px;
   font-size: 14px;
+}
+.box_select .dis_status span {
+  color: #000;
 }
 .box_select .tree_box {
   height: 200px;
