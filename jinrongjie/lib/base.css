@@ -262,7 +262,6 @@ li {
 }
 .ysp-related-doc-content {
   font-size: 14px;
-  justify-content: center;
   background: #fff;
 }
 .ysp-related-doc-content span,
@@ -272,11 +271,15 @@ li {
 }
 .ysp-related-doc-content span {
   width: 15%;
+  height: 30px;
+  line-height: 30px;
 }
-.ysp-related-doc-content input {
+.ysp-related-doc-content input,
+.ysp-related-doc-content select {
   border: 1px solid #ddd;
   border-radius: 5px;
   height: 30px;
+  line-height: 30px;
   margin: 0;
   width: 35%;
 }
@@ -296,14 +299,14 @@ li {
   width: 15%;
   background: url('images/calendaricon@2x.png') no-repeat;
   background-position-y: 7px;
-  background-size: 20%;
+  background-size: 30%;
   background-position-x: 7px;
 }
 .ysp-related-doc-content .ysp-related-doc-search-title input:nth-child(6) {
   width: 15%;
   background: url('images/calendaricon@2x.png') no-repeat;
   background-position-y: 7px;
-  background-size: 20%;
+  background-size: 30%;
   background-position-x: 7px;
 }
 .ysp-related-doc-content .ysp-related-doc-search-modify span {
@@ -326,7 +329,6 @@ li {
 .ysp-related-doc-search-table {
   font-size: 14px;
   padding: 10px 0;
-  border-top: 10px solid #ddd;
   background: #fff;
   height: 400px;
   overflow: overlay;
@@ -399,7 +401,7 @@ li {
 .ysp-related-liucheng-wrapper {
   width: 100%;
   background: #fff;
-  padding: 15px;
+  padding: 10px 15px;
   font-size: 14px;
 }
 .ysp-related-liucheng-wrapper span,
@@ -415,6 +417,8 @@ li {
 .ysp-related-liucheng-wrapper select {
   border-radius: 5px;
   height: 30px;
+  line-height: 30px;
+  padding: 0;
 }
 .ysp-related-liucheng-wrapper > div {
   display: inline-block;
@@ -457,6 +461,14 @@ li {
 .ysp-related-liucheng-wrapper .ysp-related-liucheng-selectStyle {
   font-size: 13px;
   line-height: 30px;
+  background: url(images/arrow.png) no-repeat;
+  background-position-y: 50%;
+  background-position-x: 94%;
+}
+.ysp-related-liucheng-wrapper .search-icon {
+  background: url(images/Magnifier-card.png) no-repeat;
+  background-position-y: 50%;
+  background-position-x: 90%;
 }
 .ysp-relate-project-wrapper {
   width: 100%;

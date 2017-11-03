@@ -290,18 +290,21 @@ li {list-style: none}
 }
 .ysp-related-doc-content{
   font-size: 14px;
-  justify-content: center;
+  // justify-content: center;
   background: #fff;
   span,input, select{
     display: inline-block;
   }
   span{
     width: 15%;
+    height: 30px;
+    line-height: 30px;
   }
-  input{
+  input,select{
     border:1px solid #ddd;
     border-radius:5px;
     height: 30px;
+    line-height: 30px;
     margin: 0;
     width: 35%
   }
@@ -326,14 +329,14 @@ li {list-style: none}
       width: 15%;
       background: url('images/calendaricon@2x.png') no-repeat;
       background-position-y: 7px;
-      background-size: 20%;
+      background-size: 30%;
       background-position-x: 7px;
     }
     input:nth-child(6){
       width: 15%;
       background: url('images/calendaricon@2x.png') no-repeat;
       background-position-y: 7px;
-      background-size: 20%;
+      background-size: 30%;
       background-position-x: 7px;
     }
   }
@@ -365,7 +368,7 @@ li {list-style: none}
   font-size:  14px;
   // margin-top: 20px;
   padding: 10px 0;
-  border-top: 10px solid #ddd;
+  // border-top: 10px solid #ddd;
   background: #fff;
   height: 400px;
   overflow: overlay;
@@ -440,7 +443,7 @@ li {list-style: none}
 .ysp-related-liucheng-wrapper{
   width: 100%;
   background: #fff;
-  padding: 15px;
+  padding: 10px 15px;
   font-size: 14px;
   span,input,select{
     display: inline-block;
@@ -452,6 +455,8 @@ li {list-style: none}
   input,select{
     border-radius: 5px;
     height: 30px;
+    line-height: 30px;
+    padding: 0;
   }
   >div{
     display: inline-block;
@@ -489,6 +494,14 @@ li {list-style: none}
   .ysp-related-liucheng-selectStyle{
     font-size: 13px;
     line-height: 30px;
+    background: url(images/arrow.png) no-repeat;
+    background-position-y: 50%;
+    background-position-x: 94%;
+  }
+  .search-icon{
+    background: url(images/Magnifier-card.png) no-repeat;
+    background-position-y: 50%;
+    background-position-x: 90%;
   }
 }
 

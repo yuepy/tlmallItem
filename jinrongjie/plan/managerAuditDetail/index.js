@@ -242,8 +242,7 @@
     },
     doAction_uiControl43_lpdLEi: function (data, elem) {
       var eventType = data.eventType;var btnIndex = data.dataCustom.num;if (eventType == 'click') {
-        // elem.querySelectorAll('button')[btnIndex].click();
-        ysp.customHelper.openWindow('http://192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1', 'sy');
+        elem.querySelectorAll('button')[btnIndex].click(); // ysp.customHelper.openWindow('http://192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1', 'sy');
       }
     },
     getTemplate_uiControl43_lpdLEi: function () {
