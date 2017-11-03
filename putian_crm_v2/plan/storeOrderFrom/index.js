@@ -3,7 +3,9 @@
     getData_control234_50bC3n: function (elem) {},
     doAction_uiControl228_RxKxmk: function (data, elem) {
       if (data.eventType === 'back') {
-        var doc = elem.ownerDocument;var targetEl = doc.querySelector('#clientMenu');ysp.customHelper.toPlan(targetEl, "门店详情", "storeDetails");
+        var doc = elem.ownerDocument;var targetEl = doc.querySelector('#clientMenu');setTimeout(function () {
+          ysp.customHelper.toPlan(targetEl, "门店详情", "storeDetails");
+        }, 2000);
       }
     },
     getTemplate_uiControl228_RxKxmk: function () {
