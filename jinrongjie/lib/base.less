@@ -167,36 +167,17 @@ li {list-style: none}
 /*****************索引列表样式 -END***********************/
 
 /*****************公文审批-总经理审核 -START***********************/
-.ysp-manager-audit-title-icon{
-  background: #fff;
-  span{
-    display: inline-block;
-    padding: 10px 15px;
-    background: url(images/Title-icon.png) no-repeat;
-    background-position-y: 50%;
-  }
-  .relate-files{
-    display: inline-block;
-    padding: 10px 15px;
-    width: 40px;
-    height: 40px;
-    background: url(images/upload-files.png) no-repeat;
-    background-position-y: 50%;
-    float: right;
-  }
-}
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
-	padding: 15px 0 0 15px;
+	padding-left: 15px;
   font-size: @base-font-size+2px;
   border-bottom: 5px solid #ddd;
   .left-border{
     margin-left:-15px;
-    width:15px;
-    height: 15px;
-    display: inline-block;
-    background: url(images/Title-icon.png) no-repeat;
-    background-position-y: 50%;
+    width:15px; 
+    border-left:4px solid #C19936;
+    padding-right:9px;
+    border-radius: 0 5px 5px 0;
   }
 	>div{
 		padding: 5px 0;
@@ -231,14 +212,12 @@ li {list-style: none}
     background: url(images/load_morearrow.png) no-repeat;
     background-position-x: 38%;
     background-position-y: 50%;
-    border-bottom: none;
   }
   .load-up-arrow{
     text-align: center;
     background: url(images/load_uparrow.png) no-repeat;
     background-position-x: 32%;
     background-position-y: 50%;
-    border-bottom: none;
   }
 }
 .ysp-manager-audit-header-tab{
@@ -393,7 +372,7 @@ li {list-style: none}
     width:70%;
     display: inline-block;
     height: 45px;
-    background: url('images/Magnifier-card.png') no-repeat;
+    background: url('images/Magnifier.png') no-repeat;
     background-size: 15px;
     background-position-x: 90%;
     background-position-y: 50%;
@@ -403,7 +382,7 @@ li {list-style: none}
     height: 45px;
     border-bottom: 1px solid #ddd;
     width:70%;
-    background: url('images/Magnifier-card.png') no-repeat;
+    background: url('images/Magnifier.png') no-repeat;
     background-size: 15px;
     background-position-x: 90%;
     background-position-y: 50%;
@@ -412,18 +391,13 @@ li {list-style: none}
 
 .ysp-manager-audit-sign{
   background: #fff;
-  padding-top: 10px;
   span{
-    padding-left: 15px;
-    font-size: 14px;
-    background: url(images/Title-icon.png) no-repeat;
-    background-position-y: 50%; 
-   }
+    border-left:4px solid #C19936;font-size:14px; padding-left:11px;
+  }
   div{
-    padding: 5px 15px;
+    padding: 10px 15px;
     textarea{
       border-radius: 5px;
-      margin: 0;
     }
   }
 }
@@ -557,117 +531,6 @@ li {list-style: none}
   }
 }
 
-.ysp-process-form-wrapper{
-  width: 100%;
-  .ysp-process-form-bottom-button{
-    width: 100%;
-    height: 40px;
-    font-size: 14px;
-   	position: fixed;
-    bottom: 0;
-    background: #fff;
-    overflow: hidden;
-    span{
-      display: inline-block;
-      // padding: 5px;
-      height: 30px;
-      line-height: 30px;
-     	text-align: center;
-      margin: 0 10px;
-      float: left;
-      
-    }
-    span:nth-child(1){
-      width: 140px;
-      border-radius: 5px;
-      border: 1px solid #CCAB63;
-      color: #CCAB63;
-      position: relative;
-    	top: 5px;
-    }
-    span:nth-child(2){
-      width: 140px;
-      border-radius: 5px;
-      background: #C29A2A;
-      color: #fff;
-      position: relative;
-    	top: 5px;
-    }
-    span:nth-child(3){
-     	float: right;
-      height: 40px;
-      width: 10%;
-      background: url(images/more_button.png) no-repeat;
-      background-position-x: 10px;
-    	background-position-y: 50%;
-    }
-  }
-  .load-more-coverlayer{
-   	height: 100vh;
-    background: rgba(102,102,102,0.76);
-    background: rgba(102,102,102,0.66);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    .load-more-data{
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      section{
-        background: #fff;
-        border-radius: 5px;
-        padding: 0 15px;
-    		margin: 0 5px;
-        div{
-          text-align: center;
-          height: 40px;
-          color: #4992F8;
-          line-height: 40px;
-          border-bottom: 1px solid @list-base-border-color;
-        }
-      }
-      >div:nth-last-child(1){
-        margin:7px 5px;
-        color: #999;
-        border-radius: 5px;
-        line-height: 40px;
-        background: #fff;
-        text-align: center;
-      }
-    }
-  }
-  
-}
-.ysp-process-tosend{
-  width: 100%;
-  background: #fff;
-  font-size: 14px;
-  
-  span{display: inline-block;height: 40px;line-height: 40px;padding: 0 15px;}
-  >span:nth-child(1){width: 30%;}
-  >span:nth-child(2){width: 70%;border-bottom: 1px solid #ddd;}
-  .receive-people{
-    font-size: 14px;
-    display: inline-block;
-    line-height: 40px;
-    padding: 0 15px;
-    height: 40px;
-    background: url('images/Magnifier-card.png') no-repeat;
-    background-size: 15px;
-    background-position-x: 95%;
-    background-position-y: 50%;
-    width: 100%;
-    border-bottom: 5px solid #efefef;
-  }
-}
-.ysp-textarea-content{
-  padding: 0 15px;
-  background: #fff;
-  textarea{
-    border-radius: 5px;
-    margin: 0;
-  }
-}
 /*****************公文审批-总经理审核 -END***********************/
 
 /*_________________________________index模版:九宫格样式_________________________________*/
@@ -1400,6 +1263,86 @@ div[data-ysp-modelid='hetong01']{
   //   }
   // }
 }
+//选人的样式-----------------------
+div[data-ysp-modelid='choosePerson']{
+  ._2YwloE7OzAhaMwSn1XM-Va{
+    border-bottom: 0;
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{
+    margin: 0;
+    ul{
+      background: none;
+      border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+.search_box{
+  .lst_lfj{
+    margin: 10px 0 10px 10px;
+    font-size: 14px;
+    overflow: hidden;
+    &:nth-child(2){
+      margin: 10px;
+    }
+    input{
+      width: 85%;
+      float: right;
+      border: 0;
+      border-bottom: 1px solid #F3F3F3;
+      height: 30px;
+      line-height: 30px;
+    }
+    span{
+      line-height: 30px;
+      height: 30px;
+      display: inline-block;
+    }
+    button{
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+      background: #c29a2a;
+      border-radius: 10px;
+      border: 0;
+    }
+  }
+}
+.search_nav{
+  ul{
+    overflow: hidden;
+    border-bottom: 1px solid #F3F3F3;
+    margin: 0;
+    padding: 10px 0;
+    li{
+      width: 50%;
+      float: left;
+      text-align: center;
+      font-size: 14px;
+    }
+    .on{
+      span{
+        background: none;
+        border-bottom: 3px solid #C29A2A;
+        color: #C29A2A;
+        padding: 3px;
+      }
+    }
+  }
+}
 .box_select{
   .dis_status{
     margin: 10px 0;
@@ -1446,26 +1389,42 @@ div[data-ysp-modelid='hetong01']{
     max-height: 200px;
     overflow-y: scroll;
     .people{
-      height: 30px;
-      line-height: 30px;
-      span{
-        display: block;
-        float: left	;
-        text-align: center;
-        font-size: 14px;
-        &:nth-child(1){
-          width: 20%;
-          overflow: hidden;
-          text-overflow:ellipsis;
-          white-space: nowrap;
-        }
-        &:nth-child(2){
-          width: 50%;
-        }
-        &:nth-child(3){
-          width: 30%;
-        }
-      }
+      height: 35px;
+      line-height: 35px;
+      font-size: 14px;
+      // span{
+      //   display: block;
+      //   float: left	;
+      //   text-align: center;
+      //   font-size: 14px;
+      //   &:nth-child(1){
+      //     width: 20%;
+      //     overflow: hidden;
+      //     text-overflow:ellipsis;
+      //     white-space: nowrap;
+      //   }
+      //   &:nth-child(2){
+      //     width: 50%;
+      //   }
+      //   &:nth-child(3){
+      //     width: 30%;
+      //   }
+      // }
+    }
+  }
+  .delete_box{
+    //margin: 10px;
+    .people2{
+      display: block;
+      width: 65px;
+      float: left;
+      height: 33px;
+      line-height: 38px;
+      text-align: center;
+      font-size: 14px;
+      margin: 10px;
+      background: url(../local/img/xxoo.png) no-repeat 0 center;
+      background-size: 65px;
     }
   }
   .thead{
