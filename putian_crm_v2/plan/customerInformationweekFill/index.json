@@ -189,6 +189,44 @@
       "roles": "element,link,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control109_2OvcM1": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"weekPSI\"]/DIV[2]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"weekPSI\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.collectionPSIentercontent DIV.m-time DIV"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control109_2OvcM1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -198,7 +236,8 @@
         "control204_JZvAUX",
         "control210_r9m7Sb",
         "control214_cE0FUZ",
-        "control188_WIE0yD"
+        "control188_WIE0yD",
+        "control109_2OvcM1"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -260,6 +299,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl196_bTth6n",
                 "onGetTemplate": "getTemplate_uiControl196_bTth6n"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl112_Ta6eb9",
+          "controlId": "control109_2OvcM1",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl112_Ta6eb9",
+                "onGetTemplate": "getTemplate_uiControl112_Ta6eb9"
               }
             }
           }
@@ -340,7 +394,8 @@
         "context56_sDDtAM": [
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=11994",
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=10263",
-          "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=1-5SKO7Q"
+          "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=1-5SKO7Q",
+          "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=1-2YNKN1"
         ]
       }
     },
@@ -359,6 +414,16 @@
             "weekPSI"
           ],
           [
+            "psiEnterTable",
+            "savePsiSpan",
+            "search",
+            "srarch_date",
+            "srarch_date_",
+            "tbodyContent",
+            "weekPSI"
+          ],
+          [
+            "customerName",
             "psiEnterTable",
             "savePsiSpan",
             "search",
