@@ -89,10 +89,11 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
         margin-left: .3rem;
     }
   }
-  .ysp-header-edit{
+  .ysp-header-edit-icon{
     display: inline-block;
     width: 50px;
-    font-weight: normal;
+    position: absolute;
+    right: 70px;
   }
 }
 .editor-state [data-ysp="component"]{
@@ -167,6 +168,8 @@ li {list-style: none}
 /*****************索引列表样式 -END***********************/
 
 /*****************公文审批-总经理审核 -START***********************/
+<<<<<<< HEAD
+=======
 .ysp-manager-audit-title-icon{
   background: #fff;
   span{
@@ -194,18 +197,18 @@ li {list-style: none}
     float: right;
   }
 }
+>>>>>>> 97870257a917e2780da57e428059f052ca1b1b9d
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
-	padding: 15px 0 0 15px;
+	padding-left: 15px;
   font-size: @base-font-size+2px;
   border-bottom: 10px solid #efefef;
   .left-border{
     margin-left:-15px;
-    width:15px;
-    height: 15px;
-    display: inline-block;
-    background: url(images/Title-icon.png) no-repeat;
-    background-position-y: 50%;
+    width:15px; 
+    border-left:4px solid #C19936;
+    padding-right:9px;
+    border-radius: 0 5px 5px 0;
   }
 	>div{
 		padding: 5px 0;
@@ -240,14 +243,12 @@ li {list-style: none}
     background: url(images/load_morearrow.png) no-repeat;
     background-position-x: 38%;
     background-position-y: 50%;
-    border-bottom: none;
   }
   .load-up-arrow{
     text-align: center;
     background: url(images/load_uparrow.png) no-repeat;
     background-position-x: 32%;
     background-position-y: 50%;
-    border-bottom: none;
   }
 }
 .ysp-manager-audit-header-tab{
@@ -406,7 +407,7 @@ li {list-style: none}
     width:70%;
     display: inline-block;
     height: 45px;
-    background: url('images/Magnifier-card.png') no-repeat;
+    background: url('images/Magnifier.png') no-repeat;
     background-size: 15px;
     background-position-x: 90%;
     background-position-y: 50%;
@@ -416,7 +417,7 @@ li {list-style: none}
     height: 45px;
     border-bottom: 1px solid #ddd;
     width:70%;
-    background: url('images/Magnifier-card.png') no-repeat;
+    background: url('images/Magnifier.png') no-repeat;
     background-size: 15px;
     background-position-x: 90%;
     background-position-y: 50%;
@@ -425,18 +426,13 @@ li {list-style: none}
 
 .ysp-manager-audit-sign{
   background: #fff;
-  padding-top: 10px;
   span{
-    padding-left: 15px;
-    font-size: 14px;
-    background: url(images/Title-icon.png) no-repeat;
-    background-position-y: 50%; 
-   }
+    border-left:4px solid #C19936;font-size:14px; padding-left:11px;
+  }
   div{
-    padding: 5px 15px;
+    padding: 10px 15px;
     textarea{
       border-radius: 5px;
-      margin: 0;
     }
   }
 }
@@ -580,6 +576,8 @@ li {list-style: none}
   }
 }
 
+<<<<<<< HEAD
+=======
 .ysp-process-form-wrapper{
   width: 100%;
   .ysp-process-form-bottom-button{
@@ -690,6 +688,7 @@ li {list-style: none}
     margin: 0;
   }
 }
+>>>>>>> 97870257a917e2780da57e428059f052ca1b1b9d
 /*****************公文审批-总经理审核 -END***********************/
 
 /*_________________________________index模版:九宫格样式_________________________________*/
@@ -1437,6 +1436,86 @@ div[data-ysp-modelid='hetong01']{
   //   }
   // }
 }
+//选人的样式-----------------------
+div[data-ysp-modelid='choosePerson']{
+  ._2YwloE7OzAhaMwSn1XM-Va{
+    border-bottom: 0;
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{
+    margin: 0;
+    ul{
+      background: none;
+      border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+.search_box{
+  .lst_lfj{
+    margin: 10px 0 10px 10px;
+    font-size: 14px;
+    overflow: hidden;
+    &:nth-child(2){
+      margin: 10px;
+    }
+    input{
+      width: 85%;
+      float: right;
+      border: 0;
+      border-bottom: 1px solid #F3F3F3;
+      height: 30px;
+      line-height: 30px;
+    }
+    span{
+      line-height: 30px;
+      height: 30px;
+      display: inline-block;
+    }
+    button{
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+      background: #c29a2a;
+      border-radius: 10px;
+      border: 0;
+    }
+  }
+}
+.search_nav{
+  ul{
+    overflow: hidden;
+    border-bottom: 1px solid #F3F3F3;
+    margin: 0;
+    padding: 10px 0;
+    li{
+      width: 50%;
+      float: left;
+      text-align: center;
+      font-size: 14px;
+    }
+    .on{
+      span{
+        background: none;
+        border-bottom: 3px solid #C29A2A;
+        color: #C29A2A;
+        padding: 3px;
+      }
+    }
+  }
+}
 .box_select{
   .dis_status{
     margin: 10px 0;
@@ -1483,26 +1562,42 @@ div[data-ysp-modelid='hetong01']{
     max-height: 200px;
     overflow-y: scroll;
     .people{
-      height: 30px;
-      line-height: 30px;
-      span{
-        display: block;
-        float: left	;
-        text-align: center;
-        font-size: 14px;
-        &:nth-child(1){
-          width: 20%;
-          overflow: hidden;
-          text-overflow:ellipsis;
-          white-space: nowrap;
-        }
-        &:nth-child(2){
-          width: 50%;
-        }
-        &:nth-child(3){
-          width: 30%;
-        }
-      }
+      height: 35px;
+      line-height: 35px;
+      font-size: 14px;
+      // span{
+      //   display: block;
+      //   float: left	;
+      //   text-align: center;
+      //   font-size: 14px;
+      //   &:nth-child(1){
+      //     width: 20%;
+      //     overflow: hidden;
+      //     text-overflow:ellipsis;
+      //     white-space: nowrap;
+      //   }
+      //   &:nth-child(2){
+      //     width: 50%;
+      //   }
+      //   &:nth-child(3){
+      //     width: 30%;
+      //   }
+      // }
+    }
+  }
+  .delete_box{
+    //margin: 10px;
+    .people2{
+      display: block;
+      width: 65px;
+      float: left;
+      height: 33px;
+      line-height: 38px;
+      text-align: center;
+      font-size: 14px;
+      margin: 10px;
+      background: url(../local/img/xxoo.png) no-repeat 0 center;
+      background-size: 65px;
     }
   }
   .thead{
