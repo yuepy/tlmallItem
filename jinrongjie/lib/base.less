@@ -167,11 +167,41 @@ li {list-style: none}
 /*****************索引列表样式 -END***********************/
 
 /*****************公文审批-总经理审核 -START***********************/
+<<<<<<< HEAD
+=======
+.ysp-manager-audit-title-icon{
+  background: #fff;
+  span{
+    display: inline-block;
+    padding: 10px 15px;
+    background: url(images/Title-icon.png) no-repeat;
+    background-position-y: 50%;
+  }
+  .relate-files{
+    display: inline-block;
+    padding: 10px 15px;
+    width: 40px;
+    height: 45px;
+    background: url(images/upload-files.png) no-repeat;
+    background-position-y: 50%;
+    float: right;
+  }
+  .arrow-right{
+    display: inline-block;
+    padding: 10px 15px;
+    width: 40px;
+    height: 45px;
+    background: url(images/arrow-right.png) no-repeat;
+    background-position-y: 50%;
+    float: right;
+  }
+}
+>>>>>>> 97870257a917e2780da57e428059f052ca1b1b9d
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
 	padding-left: 15px;
   font-size: @base-font-size+2px;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 10px solid #efefef;
   .left-border{
     margin-left:-15px;
     width:15px; 
@@ -233,8 +263,8 @@ li {list-style: none}
     text-align: center;
   }
   .border-bottom{
-    height: 5px;
-    background: #ddd;
+    height: 10px;
+    background: #efefef;
     clear: both;
   }
   .active_tab{
@@ -246,8 +276,9 @@ li {list-style: none}
 .ysp-manager-audit-title{
   font-size: @base-font-size;
   text-align: center;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 10px solid #efefef;
   background: #fff;
+  padding: 10px 0;
   .ysp-manager-audit-main-title{
     font-size: @base-font-size+2px;
     font-weight: bold;
@@ -531,6 +562,119 @@ li {list-style: none}
   }
 }
 
+<<<<<<< HEAD
+=======
+.ysp-process-form-wrapper{
+  width: 100%;
+  .ysp-process-form-bottom-button{
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+   	position: fixed;
+    bottom: 0;
+    background: #fff;
+    overflow: hidden;
+    span{
+      display: inline-block;
+      // padding: 5px;
+      height: 30px;
+      line-height: 30px;
+     	text-align: center;
+      margin: 0 10px;
+      float: left;
+      
+    }
+    span:nth-child(1){
+      width: 140px;
+      border-radius: 5px;
+      border: 1px solid #CCAB63;
+      color: #CCAB63;
+      position: relative;
+    	top: 5px;
+    }
+    span:nth-child(2){
+      width: 140px;
+      border-radius: 5px;
+      background: #C29A2A;
+      color: #fff;
+      position: relative;
+    	top: 5px;
+    }
+    span:nth-child(3){
+     	float: right;
+      height: 40px;
+      width: 10%;
+      background: url(images/more_button.png) no-repeat;
+      background-position-x: 10px;
+    	background-position-y: 50%;
+    }
+  }
+  .load-more-coverlayer{
+   	height: 100vh;
+    background: rgba(102,102,102,0.76);
+    background: rgba(102,102,102,0.66);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    .load-more-data{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      section{
+        background: #fff;
+        border-radius: 5px;
+        padding: 0 15px;
+    		margin: 0 5px;
+        div{
+          text-align: center;
+          height: 40px;
+          color: #4992F8;
+          line-height: 40px;
+          border-bottom: 1px solid @list-base-border-color;
+        }
+      }
+      >div:nth-last-child(1){
+        margin:7px 5px;
+        color: #999;
+        border-radius: 5px;
+        line-height: 40px;
+        background: #fff;
+        text-align: center;
+      }
+    }
+  }
+  
+}
+.ysp-process-tosend{
+  width: 100%;
+  background: #fff;
+  font-size: 14px;
+  
+  span{display: inline-block;height: 40px;line-height: 40px;padding: 0 15px;}
+  >span:nth-child(1){width: 30%;}
+  >span:nth-child(2){width: 70%;border-bottom: 1px solid #ddd;}
+  .receive-people{
+    font-size: 14px;
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 15px;
+    height: 40px;
+    background: url('images/Magnifier-card.png') no-repeat;
+    background-size: 15px;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    width: 100%;
+  }
+}
+.ysp-textarea-content{
+  padding: 0 15px;
+  background: #fff;
+  textarea{
+    border-radius: 5px;
+    margin: 0;
+  }
+}
+>>>>>>> 97870257a917e2780da57e428059f052ca1b1b9d
 /*****************公文审批-总经理审核 -END***********************/
 
 /*_________________________________index模版:九宫格样式_________________________________*/
@@ -616,11 +760,11 @@ li {list-style: none}
   position: absolute;
   width: 100%;
   height: 200vh;
-  top: 76px;
+  top: 80px;
   background: #fff;
   padding: 10px 15px;
   .approval-node-info{
-    margin: 10px 0;
+    margin: -15px;
     div{
       text-align: left;
       font-size: 13px;
@@ -628,11 +772,13 @@ li {list-style: none}
     }
     >div{
       display: inline-block;
-      padding: 5px 0;
+      padding: 0;
     }
     .approval-node-info-left-div{
     	width: 33%;
       padding-right: 10px;
+      position: relative;
+      bottom: 60px;
       
       div{
         text-align: right;
@@ -644,12 +790,10 @@ li {list-style: none}
     }
     .approval-node-info-right-div{
       width: 67%;
-      padding-left: 10px;
-      border-left: 1px solid #CCAB63;
-      // border-left: 1px solid #CCAB63;
-      background: url(images/nodepoint.png) no-repeat;
       div{
+        padding-left: 10px;
       	text-align: left;  
+        border-left: 1px solid #CFB05F;
       }
       >div:nth-last-child(1){
         >span{
@@ -659,6 +803,21 @@ li {list-style: none}
             cursor: pointer;
           }
         }
+      }
+      &:before{
+        font-size: 12px;
+        position: relative;
+        top: 11px;
+        right: 3.5px;
+        color: #CFB05F;
+        content: '●';
+      }
+      &:after{
+        position: relative;
+        bottom: 10px;
+        right: 3.5px;
+        color: #CFB05F;
+        content: '●';
       }
     }
   }
@@ -996,12 +1155,12 @@ li {list-style: none}
 }
 //01合同会签样式
 div[data-ysp-modelid='hetong01']{
-  ._2YwloE7OzAhaMwSn1XM-Va{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
   }
-  ._27gZE6m5LfD5uG_dZ8p3iP{
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
     margin: 0;
-    ._2kVn_YrAvZeioJhwcvsdtZ{
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
       background: none;
       border-bottom: 10px solid #F3F3F3;
       li{
@@ -1009,7 +1168,7 @@ div[data-ysp-modelid='hetong01']{
           width: auto;
           display: inline;
         }
-        ._2SrmNlTKE-eTC-YLPVDF-2{
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
           background: none;
           border-bottom: 3px solid #C29A2A;
           color: #C29A2A;
@@ -1018,7 +1177,7 @@ div[data-ysp-modelid='hetong01']{
       }
     }
   }
-  .OvsRcaoL1UILAcvWC8nMu{
+  .OvsRcaoL1UILAcvWC8nMu{//面板子div
     padding: 0 ;
     .contractCountersigned_box{
       select{
@@ -1445,6 +1604,101 @@ div[data-ysp-modelid='choosePerson']{
       }
       &:nth-child(3){
         width: 30%;
+      }
+    }
+  }
+}
+/******************************请假/公出申请单start*******************************************/
+div[data-ysp-modelid='askForLeave']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      background: #fff;
+      border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+  .OvsRcaoL1UILAcvWC8nMu{//面板子div
+    padding: 0 ;
+  }
+  .topTitle{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 28%;
+    background: #fff;
+    text-align: center;
+  }
+  .ysp_askForLeave_wrapper{
+    background: #fff;
+    margin: 10px 0;
+    padding:10px 0;
+    .ysp_askForLeave_title{
+      border-left: 5px solid #c29a2a;
+      font-size: 16px;
+      padding-left: 10px;
+    }
+    .ysp_askForLeave_content{
+      padding: 10px 10px 0 10px;
+      .contentTitle{
+        font-size: 14px;
+    		color: #c29a2a;
+      }
+      .ysp_emergency{
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        .emergencyCheck{
+          float: right;
+          span{
+            border: 1px solid #666;
+            color: #666;
+            border-radius: 10px;
+            display: inline-block;
+            width: 45px;
+            text-align: center;
+            font-size: 12px;
+            margin-right: 10px;
+          }
+          .egyactive{
+            border:1px solid #A1E15C;
+            color:#A1E15C;
+          }
+        }
+      }
+      .ysp_infoAlert{
+        .msgCheck{
+          padding-left: 10%;
+          padding-top: 10px;
+          span{
+            display: inline-block;
+    				width: 30%;
+            background: #f4f4f4;
+            color: #666;
+            border-radius: 5px;
+            margin-right: 10px;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 0;
+          }
+          .msgactive{
+            background: #c29a2a;
+            color: #fff;
+          }
+        }
       }
     }
   }

@@ -31,7 +31,7 @@
         back: _back,
         getTableData: _getTableData,
         firstMenus: _firstMenus,
-        Dnum: _num,
+        Dnum: _num,  // 待办列表角标值
         isArray(array) {
             if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
                 return true;

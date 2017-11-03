@@ -139,11 +139,41 @@ li {
 }
 /*****************索引列表样式 -END***********************/
 /*****************公文审批-总经理审核 -START***********************/
+<<<<<<< HEAD
+=======
+.ysp-manager-audit-title-icon {
+  background: #fff;
+}
+.ysp-manager-audit-title-icon span {
+  display: inline-block;
+  padding: 10px 15px;
+  background: url(images/Title-icon.png) no-repeat;
+  background-position-y: 50%;
+}
+.ysp-manager-audit-title-icon .relate-files {
+  display: inline-block;
+  padding: 10px 15px;
+  width: 40px;
+  height: 45px;
+  background: url(images/upload-files.png) no-repeat;
+  background-position-y: 50%;
+  float: right;
+}
+.ysp-manager-audit-title-icon .arrow-right {
+  display: inline-block;
+  padding: 10px 15px;
+  width: 40px;
+  height: 45px;
+  background: url(images/arrow-right.png) no-repeat;
+  background-position-y: 50%;
+  float: right;
+}
+>>>>>>> 97870257a917e2780da57e428059f052ca1b1b9d
 .ysp-manager-audit-wrapper {
   background: #ffffff;
   padding-left: 15px;
   font-size: 16px;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 10px solid #efefef;
 }
 .ysp-manager-audit-wrapper .left-border {
   margin-left: -15px;
@@ -206,8 +236,8 @@ li {
   text-align: center;
 }
 .ysp-manager-audit-header-tab .border-bottom {
-  height: 5px;
-  background: #ddd;
+  height: 10px;
+  background: #efefef;
   clear: both;
 }
 .ysp-manager-audit-header-tab .active_tab {
@@ -218,8 +248,9 @@ li {
 .ysp-manager-audit-title {
   font-size: 14px;
   text-align: center;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 10px solid #efefef;
   background: #fff;
+  padding: 10px 0;
 }
 .ysp-manager-audit-title .ysp-manager-audit-main-title {
   font-size: 16px;
@@ -505,6 +536,125 @@ li {
   line-height: 30px;
   margin: 5px;
 }
+<<<<<<< HEAD
+=======
+.ysp-process-form-wrapper {
+  width: 100%;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  overflow: hidden;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button span {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 10px;
+  float: left;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button span:nth-child(1) {
+  width: 140px;
+  border-radius: 5px;
+  border: 1px solid #CCAB63;
+  color: #CCAB63;
+  position: relative;
+  top: 5px;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button span:nth-child(2) {
+  width: 140px;
+  border-radius: 5px;
+  background: #C29A2A;
+  color: #fff;
+  position: relative;
+  top: 5px;
+}
+.ysp-process-form-wrapper .ysp-process-form-bottom-button span:nth-child(3) {
+  float: right;
+  height: 40px;
+  width: 10%;
+  background: url(images/more_button.png) no-repeat;
+  background-position-x: 10px;
+  background-position-y: 50%;
+}
+.ysp-process-form-wrapper .load-more-coverlayer {
+  height: 100vh;
+  background: rgba(102, 102, 102, 0.76);
+  background: rgba(102, 102, 102, 0.66);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.ysp-process-form-wrapper .load-more-coverlayer .load-more-data {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.ysp-process-form-wrapper .load-more-coverlayer .load-more-data section {
+  background: #fff;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin: 0 5px;
+}
+.ysp-process-form-wrapper .load-more-coverlayer .load-more-data section div {
+  text-align: center;
+  height: 40px;
+  color: #4992F8;
+  line-height: 40px;
+  border-bottom: 1px solid #EFEFEF;
+}
+.ysp-process-form-wrapper .load-more-coverlayer .load-more-data > div:nth-last-child(1) {
+  margin: 7px 5px;
+  color: #999;
+  border-radius: 5px;
+  line-height: 40px;
+  background: #fff;
+  text-align: center;
+}
+.ysp-process-tosend {
+  width: 100%;
+  background: #fff;
+  font-size: 14px;
+}
+.ysp-process-tosend span {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+}
+.ysp-process-tosend > span:nth-child(1) {
+  width: 30%;
+}
+.ysp-process-tosend > span:nth-child(2) {
+  width: 70%;
+  border-bottom: 1px solid #ddd;
+}
+.ysp-process-tosend .receive-people {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 40px;
+  padding: 0 15px;
+  height: 40px;
+  background: url('images/Magnifier-card.png') no-repeat;
+  background-size: 15px;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  width: 100%;
+}
+.ysp-textarea-content {
+  padding: 0 15px;
+  background: #fff;
+}
+.ysp-textarea-content textarea {
+  border-radius: 5px;
+  margin: 0;
+}
+>>>>>>> 97870257a917e2780da57e428059f052ca1b1b9d
 /*****************公文审批-总经理审核 -END***********************/
 /*_________________________________index模版:九宫格样式_________________________________*/
 #firstMenu {
@@ -583,12 +733,12 @@ li {
   position: absolute;
   width: 100%;
   height: 200vh;
-  top: 76px;
+  top: 80px;
   background: #fff;
   padding: 10px 15px;
 }
 .ysp-dialog-wrapper-top .approval-node-info {
-  margin: 10px 0;
+  margin: -15px;
 }
 .ysp-dialog-wrapper-top .approval-node-info div {
   text-align: left;
@@ -597,11 +747,13 @@ li {
 }
 .ysp-dialog-wrapper-top .approval-node-info > div {
   display: inline-block;
-  padding: 5px 0;
+  padding: 0;
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-left-div {
   width: 33%;
   padding-right: 10px;
+  position: relative;
+  bottom: 60px;
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-left-div div {
   text-align: right;
@@ -612,17 +764,31 @@ li {
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div {
   width: 67%;
-  padding-left: 10px;
-  border-left: 1px solid #CCAB63;
-  background: url(images/nodepoint.png) no-repeat;
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div div {
+  padding-left: 10px;
   text-align: left;
+  border-left: 1px solid #CFB05F;
 }
 .ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div > div:nth-last-child(1) > span span {
   color: #97E5BB;
   border-bottom: 1px solid #97E5BB;
   cursor: pointer;
+}
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div:before {
+  font-size: 12px;
+  position: relative;
+  top: 11px;
+  right: 3.5px;
+  color: #CFB05F;
+  content: '●';
+}
+.ysp-dialog-wrapper-top .approval-node-info .approval-node-info-right-div:after {
+  position: relative;
+  bottom: 10px;
+  right: 3.5px;
+  color: #CFB05F;
+  content: '●';
 }
 /*_________________________________Dialog组件:页面样式_________________________________*/
 /* --------------------------------------table表格01合同会签样式*/
@@ -1333,4 +1499,93 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
 }
 .box_select .thead span:nth-child(3) {
   width: 30%;
+}
+/******************************请假/公出申请单start*******************************************/
+div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va {
+  border-bottom: 0;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  margin: 0;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+  background: #fff;
+  border-bottom: 10px solid #F3F3F3;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+  width: auto;
+  display: inline;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+  background: none;
+  border-bottom: 3px solid #C29A2A;
+  color: #C29A2A;
+  padding: 3px 0;
+}
+div[data-ysp-modelid='askForLeave'] .OvsRcaoL1UILAcvWC8nMu {
+  padding: 0 ;
+}
+div[data-ysp-modelid='askForLeave'] .topTitle {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 28%;
+  background: #fff;
+  text-align: center;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper {
+  background: #fff;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_title {
+  border-left: 5px solid #c29a2a;
+  font-size: 16px;
+  padding-left: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
+  padding: 10px 10px 0 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle {
+  font-size: 14px;
+  color: #c29a2a;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck {
+  float: right;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span {
+  border: 1px solid #666;
+  color: #666;
+  border-radius: 10px;
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive {
+  border: 1px solid #A1E15C;
+  color: #A1E15C;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck {
+  padding-left: 10%;
+  padding-top: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span {
+  display: inline-block;
+  width: 30%;
+  background: #f4f4f4;
+  color: #666;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
+  background: #c29a2a;
+  color: #fff;
 }

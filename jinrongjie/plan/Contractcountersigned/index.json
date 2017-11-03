@@ -5,7 +5,9 @@
   "jsFile": "index.js",
   "requires": {
     "hetong01": "../hetong01/index.json",
-    "managerAuditDetail": "../managerAuditDetail/index.json"
+    "managerAuditDetail": "../managerAuditDetail/index.json",
+    "askForLeave": "../askForLeave/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "01合同会签流程",
   "description": "",
@@ -227,6 +229,14 @@
         {
           "toContextId": "context4_wRixwF",
           "toModelId": "managerAuditDetail"
+        },
+        {
+          "toContextId": "context11_ksSRDp",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
         }
       ]
     },
@@ -344,6 +354,10 @@
           "流程测试201712月-张济天-2017-10-23",
           "",
           "云适配测试_song"
+        ],
+        "context1_yeQcpw": [
+          "金融街投资集团OA - 张济天",
+          "金融街投资集团OA - 王宇成"
         ]
       }
     },

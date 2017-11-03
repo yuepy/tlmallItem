@@ -221,6 +221,10 @@
         "data": {
           "tagName": "FONT"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -264,6 +268,10 @@
       "location": {
         "data": {
           "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -315,6 +323,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -356,6 +368,10 @@
       "location": {
         "data": {
           "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -399,6 +415,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -435,6 +455,82 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control48_NQzpsQ": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "oTable1",
+              "tagName": "TABLE",
+              "prefix": "",
+              "suffix": "/TBODY[1]/TR[4]/TD[2]",
+              "ratio": 0.485
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.ViewForm TR.datalight TD.field"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[4]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control48_NQzpsQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control55_MzxyGc": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "oTable1",
+              "tagName": "TABLE",
+              "prefix": "",
+              "suffix": "/TBODY[1]/TR[4]/TD[2]",
+              "ratio": 0.485
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.ViewForm TR.datalight TD.field"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[4]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control55_MzxyGc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -448,7 +544,9 @@
         "control50_tgZ1OL",
         "control51_X0XISJ",
         "control52_kec7kF",
-        "control53_rAs9ta"
+        "control53_rAs9ta",
+        "control48_NQzpsQ",
+        "control55_MzxyGc"
       ],
       "anchors": [
         "control34_agUJCz"
@@ -488,6 +586,16 @@
       "fromContextId": "context10_Tp4yhH",
       "fromAction": "doAction",
       "fromControlId": "control51_X0XISJ",
+      "toContexts": [
+        {
+          "toContextId": "context10_Tp4yhH"
+        }
+      ]
+    },
+    "flow36_4lQpkK": {
+      "fromContextId": "context10_Tp4yhH",
+      "fromAction": "doAction",
+      "fromControlId": "control52_kec7kF",
       "toContexts": [
         {
           "toContextId": "context10_Tp4yhH"
@@ -560,6 +668,21 @@
           }
         },
         {
+          "id": "uiControl52_oXDrxJ",
+          "controlId": "control55_MzxyGc",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl52_oXDrxJ",
+                "onGetTemplate": "getTemplate_uiControl52_oXDrxJ"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl46_3gBXm5",
           "controlId": "control49_6E1Lqo",
           "display": {
@@ -615,6 +738,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl49_L3E20q",
                 "onGetTemplate": "getTemplate_uiControl49_L3E20q"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl45_L1FoST",
+          "controlId": "control48_NQzpsQ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl45_L1FoST",
+                "onGetTemplate": "getTemplate_uiControl45_L1FoST"
               }
             }
           }
