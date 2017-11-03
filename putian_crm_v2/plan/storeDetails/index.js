@@ -30,7 +30,7 @@
     getData_control224_t9VHLX: function (elem) {},
     doAction_uiControl218_vTu1Sk: function (data, elem) {
       if (data.eventType === 'click') {
-        var operation = data.dataCustom.operation;var planName = data.dataCustom.planName;ysp.customHelper.toPlan(elem, operation, planName);
+        var operation = data.dataCustom.operation;var planName = data.dataCustom.planName;ysp.customHelper.toPlan(elem, operation, planName);ysp.appMain.showLoading();
       }
     },
     getTemplate_uiControl218_vTu1Sk: function () {
