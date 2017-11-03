@@ -94,6 +94,12 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
     width: 50px;
     font-weight: normal;
   }
+  .ysp-header-edit-icon{
+    display: inline-block;
+    width: 50px;
+    position: absolute;
+    right: 70px;
+  }
 }
 .editor-state [data-ysp="component"]{
   padding: 0;
@@ -185,27 +191,27 @@ li {list-style: none}
     float: right;
   }
   .arrow-right{
+    position: absolute;
+    right: -15px;
     display: inline-block;
     padding: 10px 15px;
     width: 40px;
     height: 45px;
     background: url(images/arrow-right.png) no-repeat;
     background-position-y: 50%;
-    float: right;
   }
 }
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
-	padding: 15px 0 0 15px;
+	padding-left: 15px;
   font-size: @base-font-size+2px;
   border-bottom: 10px solid #efefef;
   .left-border{
     margin-left:-15px;
-    width:15px;
-    height: 15px;
-    display: inline-block;
-    background: url(images/Title-icon.png) no-repeat;
-    background-position-y: 50%;
+    width:15px; 
+    border-left:4px solid #C19936;
+    padding-right:9px;
+    border-radius: 0 5px 5px 0;
   }
 	>div{
 		padding: 5px 0;
@@ -240,14 +246,12 @@ li {list-style: none}
     background: url(images/load_morearrow.png) no-repeat;
     background-position-x: 38%;
     background-position-y: 50%;
-    border-bottom: none;
   }
   .load-up-arrow{
     text-align: center;
     background: url(images/load_uparrow.png) no-repeat;
     background-position-x: 32%;
     background-position-y: 50%;
-    border-bottom: none;
   }
 }
 .ysp-manager-audit-header-tab{
@@ -290,18 +294,21 @@ li {list-style: none}
 }
 .ysp-related-doc-content{
   font-size: 14px;
-  justify-content: center;
+  // justify-content: center;
   background: #fff;
   span,input, select{
     display: inline-block;
   }
   span{
     width: 15%;
+    height: 30px;
+    line-height: 30px;
   }
-  input{
+  input,select{
     border:1px solid #ddd;
     border-radius:5px;
     height: 30px;
+    line-height: 30px;
     margin: 0;
     width: 35%
   }
@@ -326,14 +333,14 @@ li {list-style: none}
       width: 15%;
       background: url('images/calendaricon@2x.png') no-repeat;
       background-position-y: 7px;
-      background-size: 20%;
+      background-size: 30%;
       background-position-x: 7px;
     }
     input:nth-child(6){
       width: 15%;
       background: url('images/calendaricon@2x.png') no-repeat;
       background-position-y: 7px;
-      background-size: 20%;
+      background-size: 30%;
       background-position-x: 7px;
     }
   }
@@ -365,7 +372,7 @@ li {list-style: none}
   font-size:  14px;
   // margin-top: 20px;
   padding: 10px 0;
-  border-top: 10px solid #ddd;
+  // border-top: 10px solid #ddd;
   background: #fff;
   height: 400px;
   overflow: overlay;
@@ -422,25 +429,20 @@ li {list-style: none}
 
 .ysp-manager-audit-sign{
   background: #fff;
-  padding-top: 10px;
   span{
-    padding-left: 15px;
-    font-size: 14px;
-    background: url(images/Title-icon.png) no-repeat;
-    background-position-y: 50%; 
-   }
+    border-left:4px solid #C19936;font-size:14px; padding-left:11px;
+  }
   div{
-    padding: 5px 15px;
+    padding: 10px 15px;
     textarea{
       border-radius: 5px;
-      margin: 0;
     }
   }
 }
 .ysp-related-liucheng-wrapper{
   width: 100%;
   background: #fff;
-  padding: 15px;
+  padding: 10px 15px;
   font-size: 14px;
   span,input,select{
     display: inline-block;
@@ -452,6 +454,8 @@ li {list-style: none}
   input,select{
     border-radius: 5px;
     height: 30px;
+    line-height: 30px;
+    padding: 0;
   }
   >div{
     display: inline-block;
@@ -489,6 +493,14 @@ li {list-style: none}
   .ysp-related-liucheng-selectStyle{
     font-size: 13px;
     line-height: 30px;
+    background: url(images/arrow.png) no-repeat;
+    background-position-y: 50%;
+    background-position-x: 94%;
+  }
+  .search-icon{
+    background: url(images/Magnifier-card.png) no-repeat;
+    background-position-y: 50%;
+    background-position-x: 90%;
   }
 }
 
@@ -564,6 +576,18 @@ li {list-style: none}
     font-size: 14px;
     line-height: 30px;
     margin: 5px
+  }
+  .right-top-icon{
+    background: url(images/chahao.png) no-repeat;
+    background-size: 70%; 
+    background-position-y: 50%; 
+    position: relative;
+    bottom: 10px;
+    left: 7px;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    
   }
 }
 
@@ -1216,7 +1240,7 @@ div[data-ysp-modelid='hetong01']{
         .bottom_tb{
           padding-left: 15px;
           >*:nth-child(n+11){
-            //display: none;
+            display: none;
           }
         }
         .button_less{
@@ -1424,14 +1448,98 @@ div[data-ysp-modelid='hetong01']{
   //   }
   // }
 }
+//选人的样式-----------------------
+div[data-ysp-modelid='choosePerson']{
+  ._2YwloE7OzAhaMwSn1XM-Va{
+    border-bottom: 0;
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{
+    margin: 0;
+    ul{
+      background: none;
+      border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+.search_box{
+  .lst_lfj{
+    margin: 10px 0 10px 10px;
+    font-size: 14px;
+    overflow: hidden;
+    &:nth-child(2){
+      margin: 10px;
+    }
+    input{
+      width: 85%;
+      float: right;
+      border: 0;
+      border-bottom: 1px solid #F3F3F3;
+      height: 30px;
+      line-height: 30px;
+    }
+    span{
+      line-height: 30px;
+      height: 30px;
+      display: inline-block;
+      color: #000;
+    }
+    button{
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+      background: #c29a2a;
+      border-radius: 10px;
+      border: 0;
+    }
+  }
+}
+.search_nav{
+  ul{
+    overflow: hidden;
+    border-bottom: 1px solid #F3F3F3;
+    margin: 0;
+    padding: 10px 0;
+    li{
+      width: 50%;
+      float: left;
+      text-align: center;
+      font-size: 14px;
+    }
+    .on{
+      span{
+        background: none;
+        border-bottom: 3px solid #C29A2A;
+        color: #C29A2A;
+        padding: 3px;
+      }
+    }
+  }
+}
 .box_select{
   .dis_status{
     margin: 10px 0;
-    border-top: 5px solid #ccc;
+    border-top: 5px solid #f3f3f3;
     padding: 5px 0;
-    border-bottom: 5px solid #ccc;
+    border-bottom: 5px solid #f3f3f3;
     padding-left: 20px;
     font-size: 14px;
+    span{
+      color: #000;
+    }
   }
   .tree_box{
    // padding: 10px;
@@ -1470,26 +1578,42 @@ div[data-ysp-modelid='hetong01']{
     max-height: 200px;
     overflow-y: scroll;
     .people{
-      height: 30px;
-      line-height: 30px;
-      span{
-        display: block;
-        float: left	;
-        text-align: center;
-        font-size: 14px;
-        &:nth-child(1){
-          width: 20%;
-          overflow: hidden;
-          text-overflow:ellipsis;
-          white-space: nowrap;
-        }
-        &:nth-child(2){
-          width: 50%;
-        }
-        &:nth-child(3){
-          width: 30%;
-        }
-      }
+      height: 35px;
+      line-height: 35px;
+      font-size: 14px;
+      // span{
+      //   display: block;
+      //   float: left	;
+      //   text-align: center;
+      //   font-size: 14px;
+      //   &:nth-child(1){
+      //     width: 20%;
+      //     overflow: hidden;
+      //     text-overflow:ellipsis;
+      //     white-space: nowrap;
+      //   }
+      //   &:nth-child(2){
+      //     width: 50%;
+      //   }
+      //   &:nth-child(3){
+      //     width: 30%;
+      //   }
+      // }
+    }
+  }
+  .delete_box{
+    //margin: 10px;
+    .people2{
+      display: block;
+      width: 65px;
+      float: left;
+      height: 33px;
+      line-height: 38px;
+      text-align: center;
+      font-size: 14px;
+      margin: 10px;
+      background: url(../local/img/xxoo.png) no-repeat 0 center;
+      background-size: 65px;
     }
   }
   .thead{

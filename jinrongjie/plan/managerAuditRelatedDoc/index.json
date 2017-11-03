@@ -129,6 +129,10 @@
         "data": {
           "tagName": "SELECT"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "elem/@name",
@@ -167,6 +171,42 @@
       "roles": "element,listbox,custom",
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control38_VzrzTB": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[7]/TD[3]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[7]/TD[3]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control38_VzrzTB"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -175,7 +215,8 @@
         "control32_RBmFTr",
         "control33_gaRRTO",
         "control12_0yipNy",
-        "control35_DlAtJI"
+        "control35_DlAtJI",
+        "control38_VzrzTB"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -218,6 +259,16 @@
           "toContextId": "context5_DhOsrK"
         }
       ]
+    },
+    "flow39_AJAW2Q": {
+      "fromContextId": "context5_DhOsrK",
+      "fromAction": "doAction",
+      "fromControlId": "control35_DlAtJI",
+      "toContexts": [
+        {
+          "toContextId": "context5_DhOsrK"
+        }
+      ]
     }
   },
   "pages": {
@@ -250,6 +301,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl15_IFTFa2",
                 "onGetTemplate": "getTemplate_uiControl15_IFTFa2"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl36_LwqiC4",
+          "controlId": "control38_VzrzTB",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl36_LwqiC4",
+                "onGetTemplate": "getTemplate_uiControl36_LwqiC4"
               }
             }
           }
