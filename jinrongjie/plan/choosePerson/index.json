@@ -48,6 +48,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -87,6 +91,16 @@
       "fromContextId": "context10_sJa5NJ",
       "fromAction": "doAction",
       "fromControlId": "control31_MQw3uc",
+      "toContexts": [
+        {
+          "toContextId": "context10_sJa5NJ"
+        }
+      ]
+    },
+    "flow40_UZP08u": {
+      "fromContextId": "context10_sJa5NJ",
+      "fromAction": "doAction",
+      "fromControlId": "control38_I5LH3P",
       "toContexts": [
         {
           "toContextId": "context10_sJa5NJ"
@@ -143,7 +157,8 @@
       "contexts": {
         "context10_sJa5NJ": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147"
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp"
         ]
       }
     },
