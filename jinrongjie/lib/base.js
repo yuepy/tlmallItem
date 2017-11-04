@@ -4,7 +4,7 @@
     var utils = ysp.utils;
     var flag = true; // 为true说明需要取token  为false说明不需要取token
     var topWindow = win.top; // 最外层window - top层
-    var tokenUrl = null;
+    topWindow.tokenUrl = null;
     var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
     soapData = soapData + ' <SOAP:Body>';
     soapData = soapData + ' <GetUnreadCountByPsCode xmlns="http://schemas.fsig.com.cn/commonWebserviceWSAppServerPackage" preserveSpace="no" qAccess="0" qValues="">';
@@ -13,7 +13,8 @@
     soapData = soapData + ' </SOAP:Body>';
     soapData = soapData + ' </SOAP:Envelope>';
     topWindow.yspTokenUrl = function(url) {
-        tokenUrl = url;
+      debugger
+        topWindow.tokenUrl = url;
         return url;
     };
     topWindow.num = null;
@@ -123,16 +124,17 @@
             // aWin.addEventListener('DOMContentLoaded', function() {
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
-                var actionEvent = '{"target":"null","data":"closePreLoading"}';
+                var actionEvent = '{"target":"null","data":"getTokenURl"}';
                 var parent = aWin.frameElement.ownerDocument.defaultView;
-                parent && parent.EAPI.postMessageToNative('getToken', null);
+                //parent && parent.EAPI.postMessageToNative('getToken', null);
+          			parent && topWindow.EAPI.postMessageToNative('getToken', null);
                 sessionStorage.setItem('getTokenURl', true);
                 token_flag = true;
             }
             // },false);
             /*  获取token地址  */
             if (token_flag) {
-                console.log(tokenUrl);
+                console.log(topWindow.tokenUrl);
                 console.log('拿到客户端给我的token地址');
                 token_flag = false;
             }
