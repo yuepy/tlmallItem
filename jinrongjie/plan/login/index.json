@@ -336,6 +336,43 @@
       "roles": "element,button",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control67_AVD1pC": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "北京金融街投资（集团）未考勤申报审批流程"
+              ],
+              "visText": [
+                "北京金融街投资（集团）未考勤申报审批流程"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "P.bt"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
