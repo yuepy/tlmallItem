@@ -1530,6 +1530,31 @@ div[data-ysp-modelid='choosePerson']{
   }
 }
 .box_select{
+  .people3{
+    margin: 10px;
+    li{
+      overflow: hidden;
+      &:nth-child(even){
+        background-color: #F5FAFA;
+      }
+      span{
+        display: block;
+        padding: 5px;
+        width: 33.33%;
+        float: left;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        &:nth-child(1){
+          padding: 0 10px;
+        }
+        &:nth-child(2),&:nth-child(3){
+          text-align: center;
+        }
+      }
+    }
+  }
   .dis_status{
     margin: 10px 0;
     border-top: 5px solid #f3f3f3;
