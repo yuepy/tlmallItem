@@ -1588,15 +1588,15 @@ div[data-ysp-modelid='askForLeave'] .topTitle {
   background: #fff;
   text-align: center;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_title {
+  border-left: 5px solid #c29a2a;
+  font-size: 16px;
+  padding-left: 10px;
+}
 div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper {
   background: #fff;
   margin: 10px 0;
   padding: 10px 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_title {
-  border-left: 5px solid #c29a2a;
-  font-size: 16px;
-  padding-left: 10px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
   padding: 10px 10px 0 10px;
@@ -1645,4 +1645,42 @@ div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_co
 div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
   background: #c29a2a;
   color: #fff;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper {
+  background: #fff;
+  padding: 20px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail {
+  padding: 0 15px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #f4f4f4;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
+  color: #c29a2a;
+  font-size: 14px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_content {
+  font-size: 14px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect {
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: #999;
+  background: #fff;
+  appearance: none;
+  font-size: 14px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime {
+  font-size: 14px;
+  overflow: hidden;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime span:first-child {
+  float: left;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime span:last-child {
+  float: right;
+  color: #35D081;
 }

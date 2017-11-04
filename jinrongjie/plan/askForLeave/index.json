@@ -3,6 +3,9 @@
   "id": "askForLeave",
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
+  "requires": {
+    "askForLeave": "../askForLeave/index.json"
+  },
   "chineseName": "请假/公出申请单",
   "description": "",
   "controls": {
@@ -29,39 +32,6 @@
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control56_lrkgl7": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "流程基本信息 紧急程度 正常重要紧急 短信提醒 不短信提醒离线短信提醒在线短信提醒"
-              ],
-              "visText": [
-                "流程基本信息 紧急程度 正常重要紧急 短信提醒 不短信提醒离线短信提醒在线短信提醒"
-              ]
-            }
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]"
-          }
-        ]
-      },
-      "roles": "element",
-      "text": "\n                \n                    \n                        \n                        流程基本信息\n                        \n                    \n                    \n                        紧急程度\n                        正常重要紧急\n                        \n                        短信提醒\n                        \n                        不短信提醒离线短信提醒在线短信提醒\n                    \n                \n            ",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
     "control48_3VFV1d": {
@@ -167,6 +137,92 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control43_lvGvIm": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程基本信息 紧急程度 正常重要紧急 短信提醒 不短信提醒离线短信提醒在线短信提醒"
+              ],
+              "visText": [
+                "流程基本信息 紧急程度 正常重要紧急 短信提醒 不短信提醒离线短信提醒在线短信提醒"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "\n                    \n                        \n                        流程基本信息\n                        \n                    \n                    \n                        紧急程度\n                        正常重要紧急\n                        \n                        短信提醒\n                        \n                        不短信提醒离线短信提醒在线短信提醒\n                    \n                ",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control65_qXS8el": {
+      "location": {
+        "data": {
+          "tagName": "FONT"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "customJS",
+              "value": "if(document.textContent.indexOf(\"请假\"))return true;"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "北京金融街投资（集团）请假/公出申请单"
+              ],
+              "visText": [
+                "北京金融街投资（集团）请假/公出申请单"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              22
+            ],
+            "value": "P.bt FONT FONT"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]/FONT[1]/FONT[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "北京金融街投资（集团）请假/公出申请单",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -177,9 +233,7 @@
         "control57_D72HzU",
         "control58_TraKH5"
       ],
-      "anchors": [
-        "control56_lrkgl7"
-      ],
+      "anchors": [],
       "urlAnchor": []
     }
   },
@@ -188,6 +242,10 @@
       "toContexts": [
         {
           "toContextId": "context11_ksSRDp"
+        },
+        {
+          "toContextId": "context11_ksSRDp",
+          "toModelId": "askForLeave"
         }
       ]
     },
@@ -288,6 +346,21 @@
                       }
                     }
                   }
+                },
+                {
+                  "id": "uiControl54_GI48cc",
+                  "controlId": "control58_TraKH5",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl54_GI48cc",
+                        "onGetTemplate": "getTemplate_uiControl54_GI48cc"
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -304,21 +377,6 @@
               "layout": []
             }
           ]
-        },
-        {
-          "id": "uiControl54_GI48cc",
-          "controlId": "control58_TraKH5",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl54_GI48cc",
-                "onGetTemplate": "getTemplate_uiControl54_GI48cc"
-              }
-            }
-          }
         }
       ]
     }
@@ -327,14 +385,16 @@
     "page/title": {
       "contexts": {
         "context11_ksSRDp": [
-          "请假/公出流程(新)-张济天-2017-10-19"
+          "请假/公出流程(新)-张济天-2017-10-19",
+          ""
         ]
       }
     },
     "page/urls": {
       "contexts": {
         "context11_ksSRDp": [
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8061&isagent=0&beagenter=0"
         ]
       }
     },
@@ -380,6 +440,45 @@
             "toolbarmenudiv",
             "triSubwfIframe",
             "wfdoc"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_beagenter",
+            "_isagent",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
           ]
         ]
       }
@@ -397,6 +496,52 @@
             "btn_forward",
             "btn_print",
             "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
             "btn_subbackName",
             "btn_wfSave",
             "clickRightMenu",
@@ -476,6 +621,46 @@
             "TD/DIV/SPAN",
             "TD/EM/BUTTON",
             "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
             "TD/TABLE/TBODY",
             "TR/TD/A",
             "TR/TD/BUTTON",
