@@ -29,14 +29,12 @@
                     secondLevelStatus.push('close');
                   }secondLevelSngle.nextLevel = secNextLevel;
                 }
-              }secondLevelSngle.levelId = firstLevel[i].querySelector('div').getAttribute('id');secondLevelSngle.currLevel = secondLevelContent;
-              secondLevelSngle.currLevelStatus = secondLevelStatus;nextLevel.push(secondLevelSngle);
+              }secondLevelSngle.levelId = firstLevel[i].querySelector('div').getAttribute('id');secondLevelSngle.currLevel = secondLevelContent;secondLevelSngle.currLevelStatus = secondLevelStatus;nextLevel.push(secondLevelSngle);
             } else {
               currLevelStatus.push('colse');
             }data.nextLevel = nextLevel;
           }
-        }
-        data.levelId = levelId;data.currLevel = currLevel;data.currLevelStatus = currLevelStatus;
+        }data.levelId = levelId;data.currLevel = currLevel;data.currLevelStatus = currLevelStatus;
       }return data;
     },
     doAction_uiControl41_VEx2r6: function (data, elem) {}, getTemplate_uiControl41_VEx2r6: function () {
