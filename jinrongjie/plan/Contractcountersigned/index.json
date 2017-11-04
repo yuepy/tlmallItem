@@ -5,7 +5,10 @@
   "jsFile": "index.js",
   "requires": {
     "hetong01": "../hetong01/index.json",
-    "managerAuditDetail": "../managerAuditDetail/index.json"
+    "managerAuditDetail": "../managerAuditDetail/index.json",
+    "askForLeave": "../askForLeave/index.json",
+    "index": "../index/index.json",
+    "choosePerson": "../choosePerson/index.json"
   },
   "chineseName": "01合同会签流程",
   "description": "",
@@ -227,6 +230,14 @@
         {
           "toContextId": "context4_wRixwF",
           "toModelId": "managerAuditDetail"
+        },
+        {
+          "toContextId": "context11_ksSRDp",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
         }
       ]
     },
@@ -247,6 +258,10 @@
       "toContexts": [
         {
           "toContextId": "context4_ktABGz"
+        },
+        {
+          "toContextId": "context10_sJa5NJ",
+          "toModelId": "choosePerson"
         }
       ]
     }
@@ -344,6 +359,10 @@
           "流程测试201712月-张济天-2017-10-23",
           "",
           "云适配测试_song"
+        ],
+        "context1_yeQcpw": [
+          "金融街投资集团OA - 张济天",
+          "金融街投资集团OA - 王宇成"
         ]
       }
     },
@@ -362,6 +381,11 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=187850&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215915&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+        ],
+        "context10_sJa5NJ": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp"
         ]
       }
     },

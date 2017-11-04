@@ -39,14 +39,41 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control38_I5LH3P": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[4]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control38_I5LH3P"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>//iframe[contains(@name,'frame')][contains(@id,'frame')]<<IFRAME>>"
     }
   },
   "contexts": {
     "context10_sJa5NJ": {
       "controls": [
-        "control31_MQw3uc"
+        "control31_MQw3uc",
+        "control38_I5LH3P"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -69,12 +96,37 @@
           "toContextId": "context10_sJa5NJ"
         }
       ]
+    },
+    "flow40_UZP08u": {
+      "fromContextId": "context10_sJa5NJ",
+      "fromAction": "doAction",
+      "fromControlId": "control38_I5LH3P",
+      "toContexts": [
+        {
+          "toContextId": "context10_sJa5NJ"
+        }
+      ]
     }
   },
   "pages": {
     "page10_nXuDRl": {
       "contextId": "context10_sJa5NJ",
       "layout": [
+        {
+          "id": "uiControl36_Ik9Qso",
+          "controlId": "control38_I5LH3P",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl36_Ik9Qso",
+                "onGetTemplate": "getTemplate_uiControl36_Ik9Qso"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl42_lcGQHl",
           "controlId": "control31_MQw3uc",
@@ -104,7 +156,9 @@
     "page/urls": {
       "contexts": {
         "context10_sJa5NJ": [
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838"
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp"
         ]
       }
     },
