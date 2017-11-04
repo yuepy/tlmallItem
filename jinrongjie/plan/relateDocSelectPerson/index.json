@@ -1,0 +1,150 @@
+{
+  "version": "0.1",
+  "id": "relateDocSelectPerson",
+  "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/category/CategoryBrowser.jsp",
+  "jsFile": "index.js",
+  "chineseName": "相关文档选人",
+  "description": "相关文档选人",
+  "controls": {
+    "control63_TDtQ9K": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control63_TDtQ9K"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control64_oWfCI1": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control64_oWfCI1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context12_eWup7a": {
+      "controls": [
+        "control63_TDtQ9K",
+        "control64_oWfCI1"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow41_OE9iWn": {
+      "toContexts": [
+        {
+          "toContextId": "context12_eWup7a"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page12_DPOdM8": {
+      "contextId": "context12_eWup7a",
+      "layout": [
+        {
+          "id": "uiControl60_JAR1Q4",
+          "controlId": "control63_TDtQ9K",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl60_JAR1Q4",
+                "onGetTemplate": "getTemplate_uiControl60_JAR1Q4"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl61_KgALSV",
+          "controlId": "control64_oWfCI1",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl61_KgALSV",
+                "onGetTemplate": "getTemplate_uiControl61_KgALSV"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context12_eWup7a": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context12_eWup7a": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/category/CategoryBrowser.jsp"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context12_eWup7a": [
+          [
+            "main"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context12_eWup7a": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context12_eWup7a": [
+          [
+            "-/-/FRAME",
+            "-/-/NOFRAMES"
+          ]
+        ]
+      }
+    }
+  }
+}
