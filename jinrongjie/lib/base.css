@@ -1649,6 +1649,7 @@ div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_co
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper {
   background: #fff;
   padding: 20px 0;
+  font-size: 14px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail {
   padding: 0 15px;
@@ -1659,10 +1660,6 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
   color: #c29a2a;
-  font-size: 14px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_content {
-  font-size: 14px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect {
   margin: 0;
@@ -1672,6 +1669,15 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
   background: #fff;
   appearance: none;
   font-size: 14px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchBtn {
+  background: url("../lib/images/Magnifier-card.png") no-repeat;
+  background-size: 14px;
+  background-position: 300px;
+  height: 22px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .none {
+  display: none;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime {
   font-size: 14px;
@@ -1683,4 +1689,30 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime s
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime span:last-child {
   float: right;
   color: #35D081;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_showMore,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .close {
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  background: url("../lib/images/load_morearrow.png") no-repeat;
+  background-size: 10px;
+  background-position: 120px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .close {
+  background: url("../lib/images/load_uparrow.png") no-repeat;
+  background-size: 10px;
+  background-position: 120px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper {
+  background: #fff;
+  padding: 20px 0;
+  font-size: 14px;
+  margin-top: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 10px;
 }
