@@ -6,7 +6,9 @@
   "requires": {
     "hetong01": "../hetong01/index.json",
     "Contractcountersigned": "../Contractcountersigned/index.json",
-    "managerAuditDetail": "../managerAuditDetail/index.json"
+    "managerAuditDetail": "../managerAuditDetail/index.json",
+    "askForLeave": "../askForLeave/index.json",
+    "Documentapproval": "../Documentapproval/index.json"
   },
   "chineseName": "待办事宜",
   "description": "待办事宜",
@@ -118,6 +120,104 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control38_vPSPuo": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "customJS",
+              "value": "if(elem.querySelector('#BacoTitle').textContent.indexOf('待办事宜') != -1){return true}"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "待办事宜: 查看 (共106项)"
+              ],
+              "visText": [
+                "待办事宜: 查看 (共106项)"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "待办事宜: 查看  (共106项)",
+      "frameXPath": ""
+    },
+    "control68_u1sxTH": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "北京金融街投资（集团）未考勤申报审批流程"
+              ],
+              "visText": [
+                "北京金融街投资（集团）未考勤申报审批流程"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "P.bt"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -164,6 +264,14 @@
         {
           "toContextId": "context4_ktABGz",
           "toModelId": "Contractcountersigned"
+        },
+        {
+          "toContextId": "context11_ksSRDp",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context13_QKvkSF",
+          "toModelId": "Documentapproval"
         }
       ]
     }
@@ -258,6 +366,11 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=154031&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=187850&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0"
+        ],
+        "context11_ksSRDp": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8061&isagent=0&beagenter=0",
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8241&isagent=0&beagenter=0"
         ]
       }
     },

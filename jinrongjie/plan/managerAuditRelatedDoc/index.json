@@ -208,6 +208,52 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control63_wrT7zp": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "标识 子目录"
+              ],
+              "visText": [
+                "标识 子目录"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[1]",
+              "descendant::FORM[@id=\"weaver\"]//TR"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              40
+            ],
+            "value": "TABLE.Shadow TABLE.ViewForm TBODY TR"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "\n标识\n\n子目录\n\n    \n\n",
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -220,7 +266,7 @@
         "control38_VzrzTB"
       ],
       "anchors": [
-        "control63_aZbT8U"
+        "control63_wrT7zp"
       ],
       "urlAnchor": []
     }
