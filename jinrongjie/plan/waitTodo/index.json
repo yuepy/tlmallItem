@@ -217,6 +217,239 @@
       },
       "roles": "element",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control15_7PTMSF": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "customJS",
+              "value": "if(elem.textContent.indexOf('待办')!= -1){return true}"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "待办事宜: 查看 (共107项)"
+              ],
+              "visText": [
+                "待办事宜: 查看 (共107项)"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": ""
+    },
+    "control73_3cKaT1": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "customJS",
+              "value": ""
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "待办事宜: 查看 (共107项)"
+              ],
+              "visText": [
+                "待办事宜: 查看 (共107项)"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('待办')>0){ return true}"
+    },
+    "control74_NThyKo": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "待办事宜: 查看 (共107项)"
+              ],
+              "visText": [
+                "待办事宜: 查看 (共107项)"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": ""
+    },
+    "control75_1gbXqc": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "customJS",
+              "value": "if(elem.textContent.indexOf('业务公司') != -1){return true}"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "物业公司招标评审表审批流程（职能部门/项目部门）"
+              ],
+              "visText": [
+                "物业公司招标评审表审批流程（职能部门/项目部门）"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 1,
+            "ordinal": [
+              17,
+              25
+            ],
+            "value": {
+              "pathname": "/workflow/search/WFSearchTemp.jsp",
+              "search": "method=reqeustbywfidNode&workflowid=9421&nodeids=&complete=0"
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              11,
+              18
+            ],
+            "value": "TABLE.viewform TABLE.viewform DIV.listbox UL LI A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[2]/UL[1]/LI[1]/A[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element,link",
+      "text": "",
+      "frameXPath": ""
     }
   },
   "contexts": {
