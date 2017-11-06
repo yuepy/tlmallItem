@@ -102,9 +102,11 @@
                           //var arr5 = [];
                           if ($(this).children("button").next("span").length > 0 && $(this).children("button").next("span").children("a").length > 0) {
                             $(this).children("button").each(function () {
-                              var arr = [];$(this).next("span").children('a').each(function () {
+                              var arr = [];
+                              $(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({
+                                text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {

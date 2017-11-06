@@ -110,6 +110,7 @@
       },
       "roles": "element",
       "content": true,
+      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
@@ -425,6 +426,57 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control79_xTNUQB": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:处理 - 01公文审批流程-总经理签核 - FSIG-201710260010"
+              ],
+              "visText": [
+                "请求:处理 - 01公文审批流程-总经理签核 - FSIG-201710260010"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('请假/公出流程') !== -1 || elem.textContent.indexOf('未考勤申报审批流程') !== -1){return true;}return false; "
     }
   },
   "contexts": {
@@ -438,7 +490,9 @@
         "control72_kANAED",
         "control63_xKq6K5"
       ],
-      "anchors": [],
+      "anchors": [
+        "control79_xTNUQB"
+      ],
       "urlAnchor": []
     }
   },
