@@ -417,7 +417,6 @@ li {
   margin: 0;
   padding: 0;
   line-height: 40px;
-  vertical-align: middle;
 }
 .ysp-related-liucheng-wrapper input,
 .ysp-related-liucheng-wrapper select {
@@ -428,11 +427,6 @@ li {
 }
 .ysp-related-liucheng-wrapper > div {
   display: inline-block;
-  width: 50%;
-}
-.ysp-related-liucheng-wrapper > div span,
-.ysp-related-liucheng-wrapper > div input,
-.ysp-related-liucheng-wrapper > div select {
   width: 50%;
 }
 .ysp-related-liucheng-wrapper > div .date span {
@@ -452,8 +446,26 @@ li {
 .ysp-related-liucheng-wrapper .left-content {
   padding: 0 10px 0 0;
 }
+.ysp-related-liucheng-wrapper .left-content .small-span {
+  width: 25%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-input {
+  width: 75%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-select {
+  width: 60%;
+}
+.ysp-related-liucheng-wrapper .left-content .large-span {
+  width: 40%;
+}
 .ysp-related-liucheng-wrapper .right-content {
   padding: 0 0 0 10px;
+}
+.ysp-related-liucheng-wrapper .right-content .small-span {
+  width: 30%;
+}
+.ysp-related-liucheng-wrapper .right-content .small-input {
+  width: 70%;
 }
 .ysp-related-liucheng-wrapper .search-button {
   color: #fff;
@@ -461,7 +473,6 @@ li {
   background: #C19936;
   border-radius: 15px;
   text-align: center;
-  margin: 10px 0;
   padding: 5px 0;
 }
 .ysp-related-liucheng-wrapper .ysp-related-liucheng-selectStyle {

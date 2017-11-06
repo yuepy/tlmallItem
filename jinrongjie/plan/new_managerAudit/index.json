@@ -1,102 +1,43 @@
 {
   "version": "0.1",
-  "id": "officeSuppliesApply",
-  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=2021&isagent=0&beagenter=0",
+  "id": "new_managerAudit",
+  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=121&isagent=0&beagenter=0",
   "jsFile": "index.js",
-  "requires": {
-    "new_managerAudit": "../new_managerAudit/index.json"
-  },
-  "chineseName": "办公用品申领审批流程",
-  "description": "",
-  "controls": {
-    "control71_KwgXqv": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control71_KwgXqv"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    }
-  },
+  "chineseName": "新建公文审批-总经理额审核",
+  "description": "新建公文审批-总经理额审核",
+  "controls": {},
   "contexts": {
-    "context12_sUIcJ2": {
-      "controls": [
-        "control71_KwgXqv"
-      ],
+    "context14_N5yDQg": {
+      "controls": [],
       "anchors": [],
       "urlAnchor": []
     }
   },
-  "flows": {
-    "flow42_QBt1hD": {
-      "toContexts": [
-        {
-          "toContextId": "context12_sUIcJ2"
-        },
-        {
-          "toContextId": "context14_N5yDQg",
-          "toModelId": "new_managerAudit"
-        }
-      ]
-    }
-  },
+  "flows": {},
   "pages": {
-    "page12_gxCTe5": {
-      "contextId": "context12_sUIcJ2",
-      "layout": [
-        {
-          "id": "uiControl61_VyRqhF",
-          "controlId": "control71_KwgXqv",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl61_VyRqhF",
-                "onGetTemplate": "getTemplate_uiControl61_VyRqhF"
-              }
-            }
-          }
-        }
-      ]
+    "page14_HokItd": {
+      "contextId": "context14_N5yDQg",
+      "layout": []
     }
   },
   "matchers": {
     "page/title": {
       "contexts": {
-        "context12_sUIcJ2": [
+        "context14_N5yDQg": [
           ""
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context12_sUIcJ2": [
-          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=2021&isagent=0&beagenter=0"
+        "context14_N5yDQg": [
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=121&isagent=0&beagenter=0"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context12_sUIcJ2": [
+        "context14_N5yDQg": [
           [
             "BacoAddFavorite",
             "BacoTitle",
@@ -104,6 +45,7 @@
             "WfBill",
             "WfLog",
             "WfPic",
+            "WfText",
             "_beagenter",
             "_isagent",
             "bodyiframe",
@@ -113,6 +55,7 @@
             "divWfBill",
             "divWfLog",
             "divWfPic",
+            "divWfText",
             "ext-gen",
             "isonline",
             "isworkflowdoc",
@@ -134,14 +77,15 @@
             "toolbarbottommenu",
             "toolbarmenu",
             "toolbarmenuCoverdiv",
-            "toolbarmenudiv"
+            "toolbarmenudiv",
+            "workflowtext"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context12_sUIcJ2": [
+        "context14_N5yDQg": [
           [
             "STYLE",
             "TopTitle",
@@ -193,7 +137,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context12_sUIcJ2": [
+        "context14_N5yDQg": [
           [
             "-/-/DIV",
             "-/-/INPUT-hidden",
