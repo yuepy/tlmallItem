@@ -6,7 +6,8 @@
   "requires": {
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
-    "processToSend": "../processToSend/index.json"
+    "processToSend": "../processToSend/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "请求标题详情页",
   "description": "请求标题详情页",
@@ -725,6 +726,10 @@
       "toContexts": [
         {
           "toContextId": "context4_wRixwF"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
         }
       ]
     },
