@@ -165,7 +165,8 @@
     },
     doAction_uiControl27_VCIGbH: function (data, elem) {
       var clickType = data.eventType;if (clickType === 'docClick') {
-        elem.querySelector('.Browser').click();
+        // elem.querySelector('.Browser').click();
+        elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());elem.querySelector('.Browser').onclick();
       }
     },
     getTemplate_uiControl27_VCIGbH: function () {
