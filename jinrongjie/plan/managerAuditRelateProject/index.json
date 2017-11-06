@@ -3,6 +3,9 @@
   "id": "managerAuditRelateProject",
   "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/proj/data/ProjectBrowser.jsp",
   "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json"
+  },
   "chineseName": " 相关流程项目详情页",
   "description": "相关流程项目详情页",
   "controls": {
@@ -79,6 +82,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -136,6 +143,10 @@
       "toContexts": [
         {
           "toContextId": "context8_R2HN1D"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
         }
       ]
     }

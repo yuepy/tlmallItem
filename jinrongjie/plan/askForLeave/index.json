@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
   "requires": {
-    "askForLeave": "../askForLeave/index.json"
+    "askForLeave": "../askForLeave/index.json",
+    "h": "../h/index.json"
   },
   "chineseName": "请假/公出申请单",
   "description": "",
@@ -322,48 +323,6 @@
       "text": "北京金融街投资（集团）未考勤申报审批流程",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control70_HKwSTZ": {
-      "location": {
-        "data": {
-          "tagName": "P"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "北京金融街投资（集团）请假/公出申请单"
-              ],
-              "visText": [
-                "北京金融街投资（集团）请假/公出申请单"
-              ]
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              22
-            ],
-            "value": "P.bt"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"
-          }
-        ]
-      },
-      "roles": "element",
-      "text": "北京金融街投资（集团）请假/公出申请单 ",
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control71_xq5Ffn": {
       "location": {
         "data": {
@@ -423,6 +382,45 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control63_xKq6K5": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TBODY",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              7
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control63_xKq6K5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -433,11 +431,10 @@
         "control57_D72HzU",
         "control58_TraKH5",
         "control71_xq5Ffn",
-        "control72_kANAED"
+        "control72_kANAED",
+        "control63_xKq6K5"
       ],
-      "anchors": [
-        "control70_HKwSTZ"
-      ],
+      "anchors": [],
       "urlAnchor": []
     }
   },
@@ -450,6 +447,10 @@
         {
           "toContextId": "context11_ksSRDp",
           "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context12_WUUK9Q",
+          "toModelId": "h"
         }
       ]
     },
@@ -497,6 +498,16 @@
       "fromContextId": "context11_ksSRDp",
       "fromAction": "doAction",
       "fromControlId": "control71_xq5Ffn",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        }
+      ]
+    },
+    "flow44_EATotu": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control72_kANAED",
       "toContexts": [
         {
           "toContextId": "context11_ksSRDp"
@@ -632,6 +643,45 @@
               ]
             }
           ]
+        },
+        {
+          "id": "uiControl64_5FfLQe",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl64_5FfLQebody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl65_ILA94I",
+                  "controlId": "control63_xKq6K5",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl65_ILA94I",
+                        "onGetTemplate": "getTemplate_uiControl65_ILA94I"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -651,7 +701,8 @@
         "context11_ksSRDp": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8061&isagent=0&beagenter=0",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118166&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118166&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118165&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ]
       }
     },

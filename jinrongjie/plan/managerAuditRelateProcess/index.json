@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
   "jsFile": "index.js",
   "requires": {
-    "managerAuditRelateProject": "../managerAuditRelateProject/index.json"
+    "managerAuditRelateProject": "../managerAuditRelateProject/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "总经理审批相关流程",
   "description": "总经理审批相关流程",
@@ -266,6 +267,10 @@
       "toContexts": [
         {
           "toContextId": "context6_aweFC7"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
         }
       ]
     },
