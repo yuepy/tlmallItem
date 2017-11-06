@@ -3,9 +3,7 @@
   "id": "officeSuppliesApply",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=2021&isagent=0&beagenter=0",
   "jsFile": "index.js",
-  "requires": {
-    "new_managerAudit": "../new_managerAudit/index.json"
-  },
+  "requires": {},
   "chineseName": "办公用品申领审批流程",
   "description": "",
   "controls": {
@@ -49,10 +47,6 @@
       "toContexts": [
         {
           "toContextId": "context12_sUIcJ2"
-        },
-        {
-          "toContextId": "context14_N5yDQg",
-          "toModelId": "new_managerAudit"
         }
       ]
     }
