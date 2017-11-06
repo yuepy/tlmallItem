@@ -255,6 +255,14 @@ li {list-style: none}
     background-position-y: 50%;
     border-bottom: none;
   }
+  .except-main-rules{
+    padding: 0;
+    border: none;
+    >div{
+      padding: 5px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
 }
 .ysp-manager-audit-header-tab{
   background: #fff;
@@ -2114,5 +2122,31 @@ div[data-ysp-modelid='askForLeave']{
         }
       }
     }
-  
-  
+
+//--------------------------------------------------------------主管领导审核 START
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+    >div:nth-child(1){padding: 0;}
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      a,ul,li{height: 35px;line-height: 35px;}
+      background: none;
+      // border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          // padding: 3px 0;
+        }
+      }
+    }
+  }
+//--------------------------------------------------------------主管领导审核 END
