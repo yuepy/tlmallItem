@@ -119,6 +119,44 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control268_1DFhSq": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"dayPSI\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.collectionPSIentercontent DIV.m-time DIV"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control268_1DFhSq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -127,7 +165,8 @@
         "control187_txSshT",
         "control189_Rkt5QS",
         "control191_T9wnrr",
-        "control194_pPJ1sv"
+        "control194_pPJ1sv",
+        "control268_1DFhSq"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -219,6 +258,21 @@
           }
         },
         {
+          "id": "uiControl262_6HTTUv",
+          "controlId": "control268_1DFhSq",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl262_6HTTUv",
+                "onGetTemplate": "getTemplate_uiControl262_6HTTUv"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl186_mcxx8X",
           "controlId": "control189_Rkt5QS",
           "display": {
@@ -264,7 +318,8 @@
         "context54_GuMlyR": [
           "192.168.1.224:8080/pttlCrm/res/page/psi/storeDayPsi.html?rowId=1-2W04RP",
           "192.168.1.224:8080/pttlCrm/res/page/psi/storeDayPsi.html?rowId=1-2W05PB",
-          "192.168.1.224:8080/pttlCrm/res/page/psi/storeDayPsi.html?rowId=1-1W4XKF"
+          "192.168.1.224:8080/pttlCrm/res/page/psi/storeDayPsi.html?rowId=1-1W4XKF",
+          "192.168.1.224:8080/pttlCrm/res/page/psi/storeDayPsi.html?rowId=1-1LAIP0"
         ]
       }
     },
@@ -288,6 +343,17 @@
             "savePsiSpan",
             "search",
             "srarch_date",
+            "tbodyContent"
+          ],
+          [
+            "coll",
+            "dayPSI",
+            "psiEnterTable",
+            "rowId",
+            "savePsiSpan",
+            "search",
+            "srarch_date",
+            "storeName",
             "tbodyContent"
           ]
         ]
@@ -314,6 +380,25 @@
             "m-time",
             "mask",
             "series",
+            "table"
+          ],
+          [
+            "btn",
+            "collectionPSI-table",
+            "collectionPSIentercontent",
+            "collectionPSIentercontentborder",
+            "collectionPSIentercontentbutton",
+            "collectionPSIentertdtext",
+            "collectionPSIentertop",
+            "collectionPSIentertop-icon",
+            "collectionPSIentertop-point",
+            "collectionPSIentertop-text",
+            "date",
+            "header",
+            "ipt-time",
+            "label-choice",
+            "m-time",
+            "mask",
             "table"
           ]
         ]
@@ -360,6 +445,26 @@
             "TBODY/TR/TD",
             "THEAD/TR/TH",
             "TR/TD/A",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/BUTTON",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
             "TR/TD/INPUT-hidden",
             "TR/TD/INPUT-text"
           ]
