@@ -4,9 +4,7 @@
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
   "requires": {
-    "askForLeave": "../askForLeave/index.json",
-    "h": "../h/index.json",
-    "mainLeaderSign": "../mainLeaderSign/index.json"
+    "askForLeave": "../askForLeave/index.json"
   },
   "chineseName": "请假/公出申请单",
   "description": "",
@@ -506,14 +504,6 @@
         {
           "toContextId": "context11_ksSRDp",
           "toModelId": "askForLeave"
-        },
-        {
-          "toContextId": "context12_WUUK9Q",
-          "toModelId": "h"
-        },
-        {
-          "toContextId": "context14_mXEdQk",
-          "toModelId": "mainLeaderSign"
         }
       ]
     },
