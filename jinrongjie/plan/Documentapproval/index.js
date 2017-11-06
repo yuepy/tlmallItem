@@ -17,7 +17,8 @@
       } // header-----------------
       if ($(elem).children(".bt").length > 0) {
         data.header.title.push($(elem).children(".bt").text().trim());
-      }if ($(elem).children(".bh").length > 0) {
+      }
+      if ($(elem).children(".bh").length > 0) {
         data.header.number.push($(elem).children(".bh").text().trim());
       }if ($(elem).children("table").length == 2) {
         var elem1 = $(elem).children("table").eq(0)[0];if ($(elem1).find("tr").length > 0) {
@@ -149,7 +150,8 @@
           }
         });
       }if (data.eventType == 'textarea') {
-        var val = data.dataCustom;if ($(elem).find('.cke_editor').length > 0) {
+        var val = data.dataCustom;
+        if ($(elem).find('.cke_editor').length > 0) {
           var body = $(elem).find('.cke_editor').find("iframe")[0].contentDocument.body;body.innerHTML = val;
         }
       }if (data.eventType == 'degree') {
@@ -160,8 +162,7 @@
         }
       }if (data.eventType == 'button1') {
         //debugger;
-        var id = data.dataCustom;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];
-        $(tbody2).find("button").each(function () {
+        var id = data.dataCustom;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("button").each(function () {
           if ($(this)[0].getAttribute('onClick').match(/field\d+/) == id) {
             $(this).click();
           }

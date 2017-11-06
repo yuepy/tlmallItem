@@ -3,9 +3,7 @@
   "id": "officeSuppliesApply",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=2021&isagent=0&beagenter=0",
   "jsFile": "index.js",
-  "requires": {
-    "new_managerAudit": "../new_managerAudit/index.json"
-  },
+  "requires": {},
   "chineseName": "办公用品申领审批流程",
   "description": "",
   "controls": {
@@ -33,6 +31,55 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control80_cnDHyn": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:创建 - 办公用品申领审批流程 - 创建"
+              ],
+              "visText": [
+                "请求:创建 - 办公用品申领审批流程 - 创建"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('办公用品申领审批') !== -1){return true}return false;"
     }
   },
   "contexts": {
@@ -40,7 +87,9 @@
       "controls": [
         "control71_KwgXqv"
       ],
-      "anchors": [],
+      "anchors": [
+        "control80_cnDHyn"
+      ],
       "urlAnchor": []
     }
   },
@@ -49,10 +98,6 @@
       "toContexts": [
         {
           "toContextId": "context12_sUIcJ2"
-        },
-        {
-          "toContextId": "context14_N5yDQg",
-          "toModelId": "new_managerAudit"
         }
       ]
     }

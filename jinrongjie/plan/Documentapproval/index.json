@@ -31,10 +31,10 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control76_7yKyl6": {
+    "control76_TURNvm": {
       "location": {
         "data": {
-          "tagName": "TD"
+          "tagName": "SPAN"
         },
         "locators": [
           {
@@ -42,17 +42,30 @@
             "prob": 3,
             "value": {
               "text": [
-                "正文"
+                "请求:创建 - 06公文审批流程-报告阅知类（同送总经理董事长） - 创建"
               ],
               "visText": [
-                "正文"
+                "请求:创建 - 06公文审批流程-报告阅知类（同送总经理董事长） - 创建"
               ]
             }
           },
           {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[6]/TD[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
           },
           {
             "id": "elderLevel",
@@ -63,8 +76,9 @@
         ]
       },
       "roles": "element",
-      "text": "正文",
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('报告阅知类') !== -1){return true;} return false;"
     }
   },
   "contexts": {
@@ -73,7 +87,7 @@
         "control66_fMMVCn"
       ],
       "anchors": [
-        "control76_7yKyl6"
+        "control76_TURNvm"
       ],
       "urlAnchor": []
     }
