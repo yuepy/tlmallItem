@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "askForLeave": "../askForLeave/index.json",
-    "h": "../h/index.json"
+    "h": "../h/index.json",
+    "mainLeaderSign": "../mainLeaderSign/index.json"
   },
   "chineseName": "请假/公出申请单",
   "description": "",
@@ -388,6 +389,10 @@
         "data": {
           "tagName": "TBODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -451,6 +456,10 @@
         {
           "toContextId": "context12_WUUK9Q",
           "toModelId": "h"
+        },
+        {
+          "toContextId": "context14_mXEdQk",
+          "toModelId": "mainLeaderSign"
         }
       ]
     },
