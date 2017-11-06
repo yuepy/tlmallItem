@@ -1758,8 +1758,36 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
   width: 90%;
   margin-top: 10px;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper {
+  background: #fff;
+  font-size: 14px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card {
+  overflow: hidden;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_left {
+  float: left;
+  width: 30%;
+  text-align: right;
+  padding-right: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_left .nodePerson {
+  font-weight: bold;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_right {
+  padding-left: 10px;
+  float: left;
+  width: 70%;
+  text-align: left;
+  background: url("../lib/images/middle@2x.png") no-repeat;
+  background-size: 4px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_right .show {
+  color: #A1E15C;
+  text-decoration: underline;
+}
 /******************************请假/公出申请单end*******************************************/
-.contractCountersigned_box select {
+.ysp_table_lfj select {
   background: none;
   border: 0;
   border-bottom: 1px solid #EDEDED;
@@ -1767,39 +1795,54 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
   color: #202020;
   font-size: 15px;
 }
-.contractCountersigned_box .header_box {
+.ysp_table_lfj .header_box {
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
-.contractCountersigned_box .header_box center:nth-child(2) {
+.ysp_table_lfj .header_box center:nth-child(2) {
   font-size: 14px;
   color: #666666;
 }
-.contractCountersigned_box .header_box center:nth-child(1) {
+.ysp_table_lfj .header_box center:nth-child(1) {
   color: #000;
   font-weight: bold;
 }
-.contractCountersigned_box .center_box {
+.ysp_table_lfj .center_box {
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
-.contractCountersigned_box .center_box .center_tb {
+.ysp_table_lfj .center_box .center_tb {
   padding-left: 15px;
 }
-.contractCountersigned_box .bottom_box {
+.ysp_table_lfj .center_box .center_tb .tip {
+  min-height: 30px;
+  border-bottom: 1px solid #EDEDED;
+  padding-bottom: 10px;
+  color: #202020;
+  font-size: 15px;
+}
+.ysp_table_lfj .center_box .center_tb select {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #EDEDED;
+  padding: 10px 0;
+  color: #202020;
+  font-size: 15px;
+}
+.ysp_table_lfj .bottom_box {
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
-.contractCountersigned_box .bottom_box .bottom_tb {
+.ysp_table_lfj .bottom_box .bottom_tb {
   padding-left: 15px;
 }
-.contractCountersigned_box .bottom_box .bottom_tb > *:nth-child(n+11) {
+.ysp_table_lfj .bottom_box .bottom_tb > *:nth-child(n+11) {
   display: none;
 }
-.contractCountersigned_box .bottom_box .button_less {
+.ysp_table_lfj .bottom_box .button_less {
   display: none;
 }
-.contractCountersigned_box .bottom_box .button_less span:before {
+.ysp_table_lfj .bottom_box .button_less span:before {
   margin-right: 10px;
   content: '';
   width: 20px;
@@ -1808,7 +1851,7 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
   background: url(../local/img/shangjiantou.png) no-repeat 0 5px;
   background-size: 100%;
 }
-.contractCountersigned_box .bottom_box .button_more span:before {
+.ysp_table_lfj .bottom_box .button_more span:before {
   margin-right: 10px;
   content: '';
   width: 20px;
@@ -1817,19 +1860,19 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
   background: url(../local/img/xiajiantou.png) no-repeat 0 5px;
   background-size: 100%;
 }
-.contractCountersigned_box .bottom_box .ysp_button_more {
+.ysp_table_lfj .bottom_box .ysp_button_more {
   height: 40px;
   line-height: 50px;
   text-align: center;
   font-size: 14px;
 }
-.contractCountersigned_box .bottom_box .name {
+.ysp_table_lfj .bottom_box .name {
   border-bottom: 1px solid #EDEDED;
   padding-bottom: 10px;
   color: #202020;
   font-size: 15px;
 }
-.contractCountersigned_box .bottom_box input {
+.ysp_table_lfj .bottom_box input {
   background: none;
   border: 0;
   border-bottom: 1px solid #EDEDED;
@@ -1839,21 +1882,21 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
   display: block;
   width: 100%;
 }
-.contractCountersigned_box .bottom_box .file_box .file {
+.ysp_table_lfj .bottom_box .file_box .file {
   position: relative;
   margin: 10px 15px 10px 0;
   border-radius: 3px;
   padding: 5px 0 5px 50px;
   background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
 }
-.contractCountersigned_box .bottom_box .file_box .file > div:nth-child(1) {
+.ysp_table_lfj .bottom_box .file_box .file > div:nth-child(1) {
   font-size: 15px;
 }
-.contractCountersigned_box .bottom_box .file_box .file > div:nth-child(2) {
+.ysp_table_lfj .bottom_box .file_box .file > div:nth-child(2) {
   font-size: 14px;
   color: #717171;
 }
-.contractCountersigned_box .bottom_box .file_box .file button {
+.ysp_table_lfj .bottom_box .file_box .file button {
   position: absolute;
   right: 20px;
   top: 18px;
@@ -1863,34 +1906,34 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
   background: url(../local/img/download.png) no-repeat 0;
   background-size: 20px;
 }
-.contractCountersigned_box .bottom_box .textArea {
+.ysp_table_lfj .bottom_box .textArea {
   min-height: 30px;
   border-bottom: 1px solid #EDEDED;
   line-height: 30px;
   padding-bottom: 10px;
   color: #202020;
 }
-.contractCountersigned_box .bottom_box .espel {
+.ysp_table_lfj .bottom_box .espel {
   margin-left: -15px;
   margin-bottom: 20px;
 }
-.contractCountersigned_box .bottom_box .textArea2 {
+.ysp_table_lfj .bottom_box .textArea2 {
   height: 100px;
   border: 1px solid #E1E1E1;
   padding: 5px;
   font-size: 14px;
   margin-right: 15px;
 }
-.contractCountersigned_box .bottom_box .textArea2 * {
+.ysp_table_lfj .bottom_box .textArea2 * {
   color: #202020;
   margin-right: 15px;
 }
-.contractCountersigned_box .bottom_box .ovh {
+.ysp_table_lfj .bottom_box .ovh {
   overflow: hidden;
   margin: 10px 0;
   padding: 10px 0;
 }
-.contractCountersigned_box .bottom_box .about_box {
+.ysp_table_lfj .bottom_box .about_box {
   position: relative;
   width: 80%;
   float: right;
@@ -1898,16 +1941,16 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
   padding-bottom: 10px;
   min-height: 30px;
 }
-.contractCountersigned_box .bottom_box .about_box .box_con {
+.ysp_table_lfj .bottom_box .about_box .box_con {
   width: 80%;
   word-break: break-all;
 }
-.contractCountersigned_box .bottom_box .about_box .box_con a {
+.ysp_table_lfj .bottom_box .about_box .box_con a {
   margin: 3px;
   color: #202020;
   font-size: 14px;
 }
-.contractCountersigned_box .bottom_box .about_box button {
+.ysp_table_lfj .bottom_box .about_box button {
   position: absolute;
   right: 10px;
   top: 0;
@@ -1917,18 +1960,18 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
   border: 0;
   background-size: 20px;
 }
-.contractCountersigned_box .bottom_box .button_box {
+.ysp_table_lfj .bottom_box .button_box {
   min-height: 30px;
   border-bottom: 1px solid #EDEDED;
   position: relative;
 }
-.contractCountersigned_box .bottom_box .button_box > div {
+.ysp_table_lfj .bottom_box .button_box > div {
   width: 90%;
 }
-.contractCountersigned_box .bottom_box .button_box > div a {
+.ysp_table_lfj .bottom_box .button_box > div a {
   margin: 5px;
 }
-.contractCountersigned_box .bottom_box .button_box button {
+.ysp_table_lfj .bottom_box .button_box button {
   position: absolute;
   right: 10px;
   top: 0px;
