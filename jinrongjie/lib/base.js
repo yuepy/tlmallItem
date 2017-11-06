@@ -13,7 +13,6 @@
     soapData = soapData + ' </SOAP:Body>';
     soapData = soapData + ' </SOAP:Envelope>';
     topWindow.yspTokenUrl = function(url) {
-      debugger
         topWindow.tokenUrl = url;
         return url;
     };
@@ -67,7 +66,6 @@
             }
             /*  showModelDialog 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
-              debugger
               aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
                 var $GetEle = aWin.$GetEle;
                 var wuiUtil = aWin.wuiUtil;
@@ -113,44 +111,72 @@
             }
             
           	if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
-              debugger
+              
               aWin.btnok_onclick = function(){
               aWin.setResourceStr();
               aWin.parent.opener._setReturnValue({id:aWin.documentids,name:aWin.documentnames});
               aWin.parent.close();
               }
           	}
-              aWin.getBrowserVersion = function() {
-              debugger;
-              var browserInfo = {browser:"", version: ""};
-              var ua = navigator.userAgent.toLowerCase(); 
-              if (aWin.ActiveXObject && ua.indexOf('IE')!=1) {
-                  browserInfo.browser = "IE";
-                  browserInfo.version = ua.match(/msie ([\d.]+)/)[1];
-              } else if (doc.getBoxObjectFor) { 
-                  browserInfo.browser = "FF";
-                  browserInfo.version = ua.match(/firefox\/([\d.]+)/)[1];
-              } else if (/chrome/i.test(ua) && /webkit/i.test(ua) && /mozilla/i.test(ua)) {  //window.MessageEvent && !document.getBoxObjectFor) {
-                  browserInfo.browser = "Chrome";
-                  browserInfo.version = ua.match(/chrome\/([\d.]+)/)[1];
-              } else if (/webkit/i.test(ua) && !(/chrome/i.test(ua) && /webkit/i.test(ua) && /mozilla/i.test(ua))) {
-                  browserInfo.browser = "Safari";
-                  browserInfo.version = ua.match(/version\/([\d.]+)/)[1];
-              } else if (window.opera) { 
-                  browserInfo.browser = "Opera";
-                  browserInfo.version = ua.match(/opera.([\d.]+)/)[1];
-              } else if (window.openDatabase) { 
-                  browserInfo.browser = "";
-                  browserInfo.version = ua.match(/version\/([\d.]+)/)[1]; 
+          // if(aWin.setResourceStr){
+          //   aWin.setResourceStr = function(){
+          //     var documentids = aWin.documentids;
+          //     var documentnames = aWin.documentnames
+          //   documentids ="";
+          //   documentnames = "";
+          //   for(var i=0;i<aWin.resourceArray.length;i++){
+          //     documentids += "," +aWin.resourceArray[i].split("~")[0];
+          //     documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
+          //   }
+          //   doc.all("documentids").value = documentids.substring(1)
+          // }
+          // }
+            if(aWin.replaceToHtml){
+              aWin.replaceToHtml = function(str){
+                var re = str;
+                var re1 = "<";
+                var re2 = ">";
+                do{
+                  re = re.replace(re1,"&lt;");
+                  re = re.replace(re2,"&gt;");
+                      re = re.replace(",","，");
+                      re = re.replace("&quot;","“");
+                }while(re.indexOf("<")!=-1 || re.indexOf(">")!=-1||re.indexOf(",")!=-1||re.indexOf("&quot;")!=-1)
+                return re;
               }
-              return browserInfo;
             }
-            
+          if(aWin.BrowseTable_onclick){
+            aWin.BrowseTable_onclick = function(e){
+              var target =  e.srcElement||e.target ;
+              try{
+              if(target.nodeName == "TD" || target.nodeName == "A"){
+                var newEntry = $($(target).parents("tr")[0].cells[0]).text()+"~"+$($(target).parents("tr")[0].cells[1]).text() ;
+                if(!aWin.isExistEntry(newEntry,aWin.resourceArray)){
+                  aWin.addObjectToSelect(doc.all("srcList"),newEntry);
+                  aWin.reloadResourceArray();
+                }
+              }
+              }catch (en) {
+                alert(en.message);
+              }
+            }
+          }
+          if(aWin.addObjectToSelect){
+            	aWin.addObjectToSelect = function(obj,str){
+                if(obj.tagName != "SELECT") return;
+                var oOption = doc.createElement("OPTION");
+                obj.options.add(oOption);
+                $(oOption).val(str.split("~")[0]);
+                $(oOption).text(str.split("~")[1]);
+                console.log(str.split("~")[1])
+                $(oOption).html(str.split("~")[1]);
+
+              }
+             }
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
            aWin.getBrowserVersion = function() {
-              debugger;
               var browserInfo = {browser:"", version: ""};
               var ua = navigator.userAgent.toLowerCase(); 
               if (aWin.ActiveXObject && ua.indexOf('IE')!=1) {
