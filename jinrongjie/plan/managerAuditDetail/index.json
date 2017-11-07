@@ -733,7 +733,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('总经理签核') !== -1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('总经理签核') !== -1&&elem.textContent.indexOf('创建') == -1){return true;}return false;"
     }
   },
   "contexts": {
