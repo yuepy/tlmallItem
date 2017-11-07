@@ -1051,7 +1051,7 @@
           var _click = elem.querySelector('#td_0_2 a');_click.click();
         }
       } else if (data.eventType == 'back') {
-        var url = 'http://192.168.2.40:8000/ptsoa/skins/default/index.jsp#';elem.ownerDocument.location.href = url;
+        var url = 'http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#';elem.ownerDocument.location.href = url;
       }
     },
 

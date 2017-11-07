@@ -130,7 +130,7 @@
         //     }
         //     window.EAPI.back();
         //   }, 50);
-        var newUrl = ysp.appMain.getActiveWindow();newUrl.location.href = "http://192.168.2.40:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp";
+        var newUrl = ysp.appMain.getActiveWindow();newUrl.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp";
       }
     },
     getTemplate_uiControl3_n5Dv7n: function () {
