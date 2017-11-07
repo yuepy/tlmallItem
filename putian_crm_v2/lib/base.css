@@ -2499,12 +2499,17 @@ div[data-ysp-modelid="visitlookDetail"] #uiControl36_QLnuSc {
   top: 25%;
   left: 73%;
   border-radius: 3px;
-  padding: 0 10px;
+  padding: 0 5px;
 }
 .ysp_visitlookDetail_cardlist .ysp_visitlookDetail_card .card_body .able {
   color: #5991f8;
   border: 1px solid #5991f8;
   background: none !important;
+}
+.ysp_visitlookDetail_cardlist .ysp_visitlookDetail_card .card_body .ables {
+  color: #e8350d;
+  border: 1px solid #e8350d;
+  background: none !imortant;
 }
 .ysp_visitlookDetail_cardlist .ysp_visitlookDetail_card .card_body .disable {
   color: #ccc;
@@ -8082,17 +8087,7 @@ div[data-ysp-modelid="customerInformationweekFill"] .week_ltt {
   margin-bottom: 10px;
 }
 div[data-ysp-modelid="customerInformationweekFill"] .week_ltt span:first-child {
-  padding-left: 10px;
-}
-div[data-ysp-modelid="customerInformationweekFill"] .week_ltt span:first-child:before {
-  content: '';
-  display: inline-block;
-  width: 2px;
-  height: 40px;
-  background: #4895ED;
-  position: absolute;
-  top: 114px;
-  left: 0px;
+  border-left: 4px solid #4895ED;
 }
 div[data-ysp-modelid="customerInformationweekFill"] .week_ltt span,
 div[data-ysp-modelid="customerInformationweekFill"] .week_ltt input {
@@ -8337,15 +8332,15 @@ div[data-ysp-modelid="storeWeekPSI"] {
   overflow-y: scroll;
   height: 100vh;
 }
-div[data-ysp-modelid="storeWeekPSI"] > div:nth-child(5) {
-  background: #fff;
-  padding: 10px 0;
-}
 .ysp_InfomationFill_week_PSI {
   background: #fff;
-  padding: 15px;
+  padding: 10px;
   border-left: 4px solid #4796ed;
   min-height: 40px;
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  z-index: 999;
 }
 .ysp_InfomationFill_week_PSI > span:nth-child(1) {
   color: #666666;
@@ -8361,11 +8356,11 @@ div[data-ysp-modelid="storeWeekPSI"] > div:nth-child(5) {
   font-size: 16px;
 }
 .ysp_StoreInfomationFillWeek_PSI {
-  border-top: 20px solid #ececec;
+  border-top: 40px solid #ececec;
   position: fixed;
   width: 100%;
   overflow-y: scroll;
-  height: 80vh;
+  min-height: 80vh;
 }
 .ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item {
   background: #fff;
@@ -8509,16 +8504,16 @@ input::-webkit-inner-spin-button {
   color: #999999;
   padding-right: 10px;
 }
-.ysp-forecast-item-list .ysp-forecast-item > div:last-child {
+.ysp-forecast-item-list .ysp-forecast-item > div:nth-child(2) {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
 }
-.ysp-forecast-item-list .ysp-forecast-item > div:last-child > span:first-child {
+.ysp-forecast-item-list .ysp-forecast-item > div:nth-child(2) > span:first-child {
   color: #4796ed;
 }
-.ysp-forecast-item-list .ysp-forecast-item > div:last-child > span:last-child {
+.ysp-forecast-item-list .ysp-forecast-item > div:nth-child(2) > span:last-child {
   padding-right: 10px;
   display: block;
   height: 20px;
@@ -8526,6 +8521,18 @@ input::-webkit-inner-spin-button {
   background-size: 10px;
   background-repeat: no-repeat;
   background-image: url(images/ysp-achievement-pre-icon.png);
+}
+.ysp-forecast-item-list .ysp-forecast-item > div:nth-child(3) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+.ysp-forecast-item-list .ysp-forecast-item > div:nth-child(3) .ysp-forecast-item-yes {
+  color: #999999;
+}
+.ysp-forecast-item-list .ysp-forecast-item > div:nth-child(3) .ysp-forecast-item-no {
+  color: #e8350d;
 }
 .ysp-subForecast-item-list {
   background: #fff;
@@ -8717,20 +8724,21 @@ input::-webkit-inner-spin-button {
 }
 .ysp-button-dialog .ysp-button-bc {
   display: inline-block;
-  border-radius: 5px;
-  padding: 10px 40px;
-  background: #66FF66;
-  color: #fff;
-  margin-left: 40px;
+  border-radius: 10px;
+  padding: 10px 50px;
+  background: #fff;
+  color: #666666;
+  margin-left: 20px;
   border: none;
+  border: 2px solid #cccccc;
 }
 .ysp-button-dialog .ysp-button-tj {
   display: inline-block;
-  border-radius: 5px;
-  padding: 10px 40px;
-  background: #e8350d;
+  border-radius: 10px;
+  padding: 10px 50px;
+  background: #4796ed;
   color: #fff;
-  margin-right: 40px;
+  margin-right: 20px;
   border: none;
 }
 /*************预测PSIend**************************/

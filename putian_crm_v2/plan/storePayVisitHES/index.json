@@ -11,6 +11,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -32,6 +36,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -47,13 +55,52 @@
       "roles": "element,link,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control262_573lcM": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"answerMessage\"]//DIV[@id=\"content-body\"]/DIV[1]",
+              "descendant::DIV[@id=\"content-body\"]/DIV[1]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              41
+            ],
+            "value": "DIV.content DIV.content-body DIV"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control262_573lcM"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context66_DB5szN": {
       "controls": [
         "control79_uTL32a",
-        "control248_C59RtQ"
+        "control248_C59RtQ",
+        "control262_573lcM"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -83,6 +130,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl242_wekRUb",
                 "onGetTemplate": "getTemplate_uiControl242_wekRUb"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl256_VBXMyU",
+          "controlId": "control262_573lcM",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl256_VBXMyU",
+                "onGetTemplate": "getTemplate_uiControl256_VBXMyU"
               }
             }
           }
@@ -118,7 +180,8 @@
       "contexts": {
         "context66_DB5szN": [
           "192.168.1.224:8080/pttlCrm/res/index.html",
-          "192.168.1.224:8080/pttlCrm/res/page/visitManager/report/answerList.html?source=store360&rowId=3293dd6f-e9dc-4b48-9f49-f8b5039a3566&storeCode=S1000032&eaiId=1-5OOPOX"
+          "192.168.1.224:8080/pttlCrm/res/page/visitManager/report/answerList.html?source=store360&rowId=3293dd6f-e9dc-4b48-9f49-f8b5039a3566&storeCode=S1000032&eaiId=1-5OOPOX",
+          "192.168.1.224:8080/pttlCrm/res/page/visitManager/report/answerList.html?source=store360&rowId=fa278d63-a146-4b47-8987-0574bd50dcef&storeCode=S1062634&eaiId=TA_171000007835"
         ]
       }
     },
@@ -143,6 +206,13 @@
             "answerMessage",
             "content-body",
             "eaiId",
+            "itemRemark"
+          ],
+          [
+            "answerMessage",
+            "content-body",
+            "eaiId",
+            "fileList",
             "itemRemark"
           ]
         ]
@@ -222,6 +292,37 @@
             "title",
             "title-a",
             "title-b"
+          ],
+          [
+            "answer",
+            "backImage",
+            "btn",
+            "buttons-tool",
+            "content",
+            "content-body",
+            "content-panel",
+            "content-panel-part",
+            "content-panel-part_list",
+            "content-panel-title",
+            "content_head",
+            "default",
+            "fill-box",
+            "goBack",
+            "infors",
+            "leftPart",
+            "mask",
+            "mustFill",
+            "pic-box",
+            "pointImage",
+            "problem",
+            "problemlong",
+            "required",
+            "sortNum",
+            "text-input",
+            "tiankong",
+            "title",
+            "title-a",
+            "title-b"
           ]
         ]
       }
@@ -272,6 +373,26 @@
             "DIV/DIV/A",
             "DIV/DIV/BUTTON",
             "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/LABEL/DIV",
+            "DIV/LABEL/I",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/LABEL/SPAN",
+            "LABEL/DIV/INPUT-text",
+            "LABEL/DIV/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IMG",
             "DIV/DIV/INPUT-hidden",
             "DIV/DIV/LABEL",
             "DIV/DIV/SPAN",

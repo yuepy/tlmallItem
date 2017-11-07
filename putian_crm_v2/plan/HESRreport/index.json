@@ -1,1 +1,321 @@
-{"version":"0.1","id":"HESRreport","targetURL":"http://192.168.1.224:8080/pttlCrm/res/page/visitManager/report/reportDemo.html?rowId=cfff9544-dcdd-400c-89cf-fa53ce48522a","jsFile":"index.js","chineseName":"HESR门店报告","description":"","controls":{"control141_hMt91z":{"location":{"data":{"tagName":"HTML"},"userData":{"data":[],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]"}]},"events":{"onGetData":"getData_control141_hMt91z"},"intendedRole":"custom","roles":"element,link,custom","monitored":true,"frameXPath":""},"control142_u7Hv9U":{"location":{"data":{"tagName":"HTML"},"userData":{"data":[],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]"}]},"events":{"onGetData":"getData_control142_u7Hv9U"},"intendedRole":"custom","roles":"element,link,custom","monitored":false,"frameXPath":""}},"contexts":{"context35_53UgWr":{"controls":["control141_hMt91z","control142_u7Hv9U"],"anchors":[],"urlAnchor":["http:\\/\\/192\\.168\\.1\\.224:8080\\/pttlCrm\\/res\\/page\\/visitManager\\/report\\/reportDemo\\.html\\?rowId.*"]}},"flows":{"flow126_k3Jinz":{"toContexts":[{"toContextId":"context35_53UgWr"}]}},"pages":{"page35_Ml2zLE":{"contextId":"context35_53UgWr","layout":[{"id":"uiControl128_dEbMc0","controlId":"control141_hMt91z","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl128_dEbMc0","onGetTemplate":"getTemplate_uiControl128_dEbMc0"}}}},{"id":"uiControl140_qy95ei","controlId":"control142_u7Hv9U","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl140_qy95ei","onGetTemplate":"getTemplate_uiControl140_qy95ei"}}}}]}},"matchers":{"page/title":{"contexts":{"context35_53UgWr":["信息录入"]}},"page/urls":{"contexts":{"context35_53UgWr":["192.168.1.224:8080/pttlCrm/res/page/visitManager/report/reportDemo.html?rowId=cfff9544-dcdd-400c-89cf-fa53ce48522a"]}},"page/ids":{"contexts":{"context35_53UgWr":[["CFFAFAECBDDA","CFFBCBACBFDC","CFFBCBFBDBA","CFFBFFC","CFFEAABEDD","CFFEFBEA","CFFF","content-body","fileList","itemRemark","reportMessage"]]}},"page/classes":{"contexts":{"context35_53UgWr":[["answer","backImage","btn","buttons-tool","content","content-body","content-panel","content-panel-part","content-panel-part_list","content-panel-title","content_head","default","fill-box","goBack","infors","leftPart","mask","mustFill","pic-box","pointImage","problem","problemlong","required","sortNum","text-input","tiankong","title","title-a","title-b","title-c","uploadFile"]]}},"page/tagTriplets":{"contexts":{"context35_53UgWr":[["-/-/DIV","-/-/SCRIPT","-/DIV/DIV","DIV/A/I","DIV/BUTTON/IMG","DIV/DIV/A","DIV/DIV/BUTTON","DIV/DIV/DIV","DIV/DIV/LABEL","DIV/DIV/SPAN","DIV/DIV/TEXTAREA","DIV/LABEL/DIV","DIV/LABEL/I","DIV/LABEL/INPUT-radio","DIV/LABEL/SPAN","LABEL/DIV/INPUT-text","LABEL/DIV/SPAN"]]}}}}
+{
+  "version": "0.1",
+  "id": "HESRreport",
+  "targetURL": "http://192.168.1.224:8080/pttlCrm/res/page/visitManager/report/reportDemo.html?rowId=cfff9544-dcdd-400c-89cf-fa53ce48522a",
+  "jsFile": "index.js",
+  "chineseName": "HESR门店报告",
+  "description": "",
+  "controls": {
+    "control141_hMt91z": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control141_hMt91z"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control142_u7Hv9U": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control142_u7Hv9U"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control261_cs6uCd": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"reportMessage\"]//DIV[@id=\"content-body\"]/DIV[1]",
+              "descendant::DIV[@id=\"reportMessage\"]//DIV[@id=\"content-body\"]//DIV",
+              "descendant::DIV[@id=\"content-body\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              10
+            ],
+            "value": "DIV.content DIV.content-body DIV"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control261_cs6uCd"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context35_53UgWr": {
+      "controls": [
+        "control141_hMt91z",
+        "control142_u7Hv9U",
+        "control261_cs6uCd"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.1\\.224:8080\\/pttlCrm\\/res\\/page\\/visitManager\\/report\\/reportDemo\\.html\\?rowId.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow126_k3Jinz": {
+      "toContexts": [
+        {
+          "toContextId": "context35_53UgWr"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page35_Ml2zLE": {
+      "contextId": "context35_53UgWr",
+      "layout": [
+        {
+          "id": "uiControl128_dEbMc0",
+          "controlId": "control141_hMt91z",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl128_dEbMc0",
+                "onGetTemplate": "getTemplate_uiControl128_dEbMc0"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl255_hCXsqn",
+          "controlId": "control261_cs6uCd",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl255_hCXsqn",
+                "onGetTemplate": "getTemplate_uiControl255_hCXsqn"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl140_qy95ei",
+          "controlId": "control142_u7Hv9U",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl140_qy95ei",
+                "onGetTemplate": "getTemplate_uiControl140_qy95ei"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context35_53UgWr": [
+          "信息录入"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context35_53UgWr": [
+          "192.168.1.224:8080/pttlCrm/res/page/visitManager/report/reportDemo.html?rowId=cfff9544-dcdd-400c-89cf-fa53ce48522a",
+          "192.168.1.224:8080/pttlCrm/res/page/visitManager/report/reportDemo.html?rowId=3293dd6f-e9dc-4b48-9f49-f8b5039a3566&%E5%8D%97%E4%BA%AC%E9%A9%B0%E4%BF%A1%E6%B1%9F%E5%AE%81%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%8D%8E%E4%B8%BA%E4%BD%93%E9%AA%8C%E5%BA%97"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context35_53UgWr": [
+          [
+            "CFFAFAECBDDA",
+            "CFFBCBACBFDC",
+            "CFFBCBFBDBA",
+            "CFFBFFC",
+            "CFFEAABEDD",
+            "CFFEFBEA",
+            "CFFF",
+            "content-body",
+            "fileList",
+            "itemRemark",
+            "reportMessage"
+          ],
+          [
+            "CADAFECCAD",
+            "content-body",
+            "fileList",
+            "reportMessage"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context35_53UgWr": [
+          [
+            "answer",
+            "backImage",
+            "btn",
+            "buttons-tool",
+            "content",
+            "content-body",
+            "content-panel",
+            "content-panel-part",
+            "content-panel-part_list",
+            "content-panel-title",
+            "content_head",
+            "default",
+            "fill-box",
+            "goBack",
+            "infors",
+            "leftPart",
+            "mask",
+            "mustFill",
+            "pic-box",
+            "pointImage",
+            "problem",
+            "problemlong",
+            "required",
+            "sortNum",
+            "text-input",
+            "tiankong",
+            "title",
+            "title-a",
+            "title-b",
+            "title-c",
+            "uploadFile"
+          ],
+          [
+            "answer",
+            "backImage",
+            "btn",
+            "buttons-tool",
+            "content",
+            "content-body",
+            "content-panel",
+            "content-panel-part",
+            "content-panel-part_list",
+            "content-panel-title",
+            "content_head",
+            "default",
+            "goBack",
+            "infors",
+            "leftPart",
+            "mask",
+            "pic-box",
+            "pointImage",
+            "problem",
+            "sortNum",
+            "title",
+            "title-a",
+            "title-b",
+            "title-c",
+            "uploadFile"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context35_53UgWr": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/BUTTON/IMG",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/LABEL/DIV",
+            "DIV/LABEL/I",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/LABEL/SPAN",
+            "LABEL/DIV/INPUT-text",
+            "LABEL/DIV/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/BUTTON/IMG",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/LABEL/I",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/LABEL/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

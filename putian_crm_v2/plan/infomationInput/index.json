@@ -172,6 +172,44 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control267_ivMG3p": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"dayPSI\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.collectionPSIentercontent DIV.m-time DIV"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control267_ivMG3p"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -180,7 +218,8 @@
         "control190_oOp3N1",
         "control212_Cymneo",
         "control213_TwrNlh",
-        "control211_RITW3S"
+        "control211_RITW3S",
+        "control267_ivMG3p"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -272,6 +311,21 @@
           }
         },
         {
+          "id": "uiControl261_cREW3E",
+          "controlId": "control267_ivMG3p",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl261_cREW3E",
+                "onGetTemplate": "getTemplate_uiControl261_cREW3E"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl208_HgPTPr",
           "controlId": "control211_RITW3S",
           "display": {
@@ -320,7 +374,8 @@
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=1-5SKO7Q",
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=1-HP70",
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=11994",
-          "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=10263"
+          "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=10263",
+          "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=11212"
         ]
       }
     },
@@ -359,6 +414,17 @@
           [
             "dayPSI",
             "psiEnterTable",
+            "savePsiSpan",
+            "search",
+            "srarch_date",
+            "tbodyContent"
+          ],
+          [
+            "coll",
+            "customerName",
+            "dayPSI",
+            "psiEnterTable",
+            "rowId",
             "savePsiSpan",
             "search",
             "srarch_date",
