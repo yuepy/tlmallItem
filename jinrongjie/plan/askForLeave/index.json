@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
   "requires": {
-    "askForLeave": "../askForLeave/index.json"
+    "askForLeave": "../askForLeave/index.json",
+    "choosePerson": "../choosePerson/index.json"
   },
   "chineseName": "请假/公出申请单",
   "description": "",
@@ -56,60 +57,6 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control57_D72HzU": {
-      "location": {
-        "data": {
-          "tagName": "FONT"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "ordinal": [
-              1,
-              2
-            ],
-            "value": {
-              "text": [
-                "北京金融街投资（集团）请假/公出申请单"
-              ],
-              "visText": [
-                "北京金融街投资（集团）请假/公出申请单"
-              ]
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              22
-            ],
-            "value": "P.bt FONT FONT"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]/FONT[1]/FONT[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "roles": "element",
-      "content": true,
-      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
@@ -323,31 +270,6 @@
       "text": "北京金融街投资（集团）未考勤申报审批流程",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control71_xq5Ffn": {
-      "location": {
-        "data": {
-          "tagName": "P"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/P[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control71_xq5Ffn"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>//iframe[1]<<IFRAME>>"
-    },
     "control72_kANAED": {
       "location": {
         "data": {
@@ -476,6 +398,89 @@
       "text": "",
       "frameXPath": "",
       "customJS": "if(elem.textContent.indexOf('请假/公出流程') !== -1 || elem.textContent.indexOf('未考勤申报审批流程') !== -1){return true;}return false; "
+    },
+    "control82_Oe1sOv": {
+      "location": {
+        "data": {
+          "tagName": "FONT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              21
+            ],
+            "value": "P.bt FONT FONT"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]/FONT[1]/FONT[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control82_Oe1sOv"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control84_nadrbI": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]/SPAN[2]/SPAN[1]/TABLE[1]",
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TABLE",
+              "descendant::SPAN[@id=\"cke_remark\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              22
+            ],
+            "value": "SPAN.cke_browser_webkit.cke_browser_quirks SPAN.cke_wrapper.cke_ltr TABLE.cke_editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[11]/TD[2]/FONT[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control84_nadrbI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -483,11 +488,11 @@
       "controls": [
         "control55_pqOP4L",
         "control48_3VFV1d",
-        "control57_D72HzU",
         "control58_TraKH5",
-        "control71_xq5Ffn",
         "control72_kANAED",
-        "control63_xKq6K5"
+        "control63_xKq6K5",
+        "control82_Oe1sOv",
+        "control84_nadrbI"
       ],
       "anchors": [
         "control79_xTNUQB"
@@ -517,16 +522,6 @@
         }
       ]
     },
-    "flow37_yAZMBx": {
-      "fromContextId": "context11_ksSRDp",
-      "fromAction": "click",
-      "fromControlId": "control57_D72HzU",
-      "toContexts": [
-        {
-          "toContextId": "context11_ksSRDp"
-        }
-      ]
-    },
     "flow38_xS8zeD": {
       "fromContextId": "context11_ksSRDp",
       "fromAction": "doAction",
@@ -544,16 +539,10 @@
       "toContexts": [
         {
           "toContextId": "context11_ksSRDp"
-        }
-      ]
-    },
-    "flow43_l1SvKD": {
-      "fromContextId": "context11_ksSRDp",
-      "fromAction": "doAction",
-      "fromControlId": "control71_xq5Ffn",
-      "toContexts": [
+        },
         {
-          "toContextId": "context11_ksSRDp"
+          "toContextId": "context10_sJa5NJ",
+          "toModelId": "choosePerson"
         }
       ]
     },
@@ -561,6 +550,16 @@
       "fromContextId": "context11_ksSRDp",
       "fromAction": "doAction",
       "fromControlId": "control72_kANAED",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        }
+      ]
+    },
+    "flow43_L409gW": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control84_nadrbI",
       "toContexts": [
         {
           "toContextId": "context11_ksSRDp"
@@ -609,14 +608,17 @@
               },
               "layout": [
                 {
-                  "id": "uiControl53_nquJ2e",
-                  "controlId": "control57_D72HzU",
+                  "id": "uiControl69_kfEJEA",
+                  "controlId": "control82_Oe1sOv",
                   "display": {
-                    "adapterId": "content",
-                    "type": "content",
-                    "class": "topTitle",
+                    "adapterId": "custom",
+                    "type": "custom",
                     "adapter": {
-                      "templateType": ""
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl69_kfEJEA",
+                        "onGetTemplate": "getTemplate_uiControl69_kfEJEA"
+                      }
                     }
                   }
                 },
@@ -651,16 +653,16 @@
                   }
                 },
                 {
-                  "id": "uiControl61_ID5cKg",
-                  "controlId": "control71_xq5Ffn",
+                  "id": "uiControl73_hrdinf",
+                  "controlId": "control84_nadrbI",
                   "display": {
                     "adapterId": "custom",
                     "type": "custom",
                     "adapter": {
                       "templateType": "react",
                       "events": {
-                        "onDoAction": "doAction_uiControl61_ID5cKg",
-                        "onGetTemplate": "getTemplate_uiControl61_ID5cKg"
+                        "onDoAction": "doAction_uiControl73_hrdinf",
+                        "onGetTemplate": "getTemplate_uiControl73_hrdinf"
                       }
                     }
                   }
@@ -745,7 +747,9 @@
         "context11_ksSRDp": [
           "请假/公出流程(新)-张济天-2017-10-19",
           "",
-          "请假/公出流程(新)-张济天-2017-04-13"
+          "请假/公出流程(新)-张济天-2017-04-13",
+          "未考勤申报审批流程（新）-张济天-2017-10-20",
+          "请假/公出流程(新)-张济天-2017-10-18"
         ]
       }
     },
@@ -755,7 +759,16 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8061&isagent=0&beagenter=0",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118166&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118165&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118165&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=180695&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162836&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162835&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+        ],
+        "context10_sJa5NJ": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids="
         ]
       }
     },
@@ -840,6 +853,48 @@
             "toolbarmenu",
             "toolbarmenuCoverdiv",
             "toolbarmenudiv"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "D",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "oc_divMenuDivision",
+            "picInnerFrameurl",
+            "requestTabButton",
+            "requestmarkSpan",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv",
+            "triSubwfIframe",
+            "wfRstPicImg",
+            "wfdoc"
           ]
         ]
       }
@@ -992,6 +1047,59 @@
             "x-tab-with-icon",
             "x-toolbar",
             "x-toolbar-left-row"
+          ],
+          [
+            "ChartCompany",
+            "MenuPopUp",
+            "MenuPopup",
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
           ]
         ]
       }
@@ -1074,6 +1182,54 @@
             "TD/EM/BUTTON",
             "TD/TABLE/TBODY",
             "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/IFRAME",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/P",
+            "DIV/DIV/STYLE",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/B",
             "TR/TD/BUTTON",
             "TR/TD/DIV",
             "TR/TD/EM",
