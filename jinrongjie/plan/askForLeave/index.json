@@ -16,8 +16,17 @@
           "tagName": "TD"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -80,6 +89,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody"
             }
           ],
           "force": true
