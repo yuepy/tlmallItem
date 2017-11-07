@@ -65,6 +65,7 @@
                 return url;
             }
             /*  showModelDialog 跨页面传值兼容  */
+            	/*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
               aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
                 var $GetEle = aWin.$GetEle;
@@ -86,11 +87,8 @@
                       resourceids = resourceids.substr(1);
                       resourcename = resourcename.substr(1);
                       $GetEle(inputname).value = resourceids;
-
                       var resourceidArray = resourceids.split(",");
                       var resourcenameArray = resourcename.split(",");
-
-
                       for (var _i=0; _i<resourceidArray.length; _i++) {
                         var curid = resourceidArray[_i];
                         var curname = resourcenameArray[_i];
@@ -110,8 +108,7 @@
               }
             }
             
-          	if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
-              
+          	if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {    
               aWin.btnok_onclick = function(){
               aWin.setResourceStr();
               aWin.parent.opener._setReturnValue({id:aWin.documentids,name:aWin.documentnames});
@@ -173,6 +170,7 @@
 
               }
              }
+          /*  showModelDialog 相关文档 跨页面传值兼容  */
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
