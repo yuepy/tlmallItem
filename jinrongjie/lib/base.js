@@ -98,7 +98,6 @@
                                         " target='_blank'>" + curname + "</a>&nbsp";
                                 }
                                 $GetEle(spanname).innerHTML = sHtml;
-
                             } else {
                                 $GetEle(spanname).innerHTML = "";
                                 $GetEle(inputname).value = "";
@@ -111,26 +110,13 @@
 
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
-                    debugger;
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
                     aWin.parent.close();
                 }
-                if(aWin.setResourceStr){
-                  aWin.setResourceStr = function(){
-                  aWin.documentids ="";
-                  aWin.documentnames = "";
-                  for(var i=0;i<aWin.resourceArray.length;i++){
-                    aWin.documentids += "," +aWin.resourceArray[i].split("~")[0];
-                    aWin.documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
-                  }
-                  doc.all("documentids").value = aWin.documentids.substring(1)
-                }
-              }
             }
           if(aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 && aWin.btnok_onclick){
               aWin.btnok_onclick = function() {
-                      debugger;
                       aWin.setResourceStr();
                       aWin.parent.opener._setReturnValue({id:aWin.resourceids,name:aWin.resourcenames});
                       aWin.parent.close();
@@ -148,6 +134,17 @@
           //       $("input[name=resourceids]").val(aWin.resourceids.substring(1));
           //     }
           // }
+          // if(aWin.setResourceStr){
+          //         aWin.setResourceStr = function(){
+          //         aWin.documentids ="";
+          //         aWin.documentnames = "";
+          //         for(var i=0;i<aWin.resourceArray.length;i++){
+          //           aWin.documentids += "," +aWin.resourceArray[i].split("~")[0];
+          //           aWin.documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
+          //         }
+          //         doc.all("documentids").value = aWin.documentids.substring(1)
+          //       }
+          //     }
             if (aWin.replaceToHtml) {
                 aWin.replaceToHtml = function(str) {
                     var re = str;
@@ -164,6 +161,7 @@
             }
             if (aWin.BrowseTable_onclick) {
                 aWin.BrowseTable_onclick = function(e) {
+                  debugger
                     var target = e.srcElement || e.target;
                     try {
                         if (target.nodeName == "TD" || target.nodeName == "A") {
@@ -201,6 +199,38 @@
                 }
             }
             /*  showModelDialog 相关流程 跨页面传值兼容  */
+          
+          /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
+          if(aWin.location.href.indexOf('CategoryBrowser.jsp') !== -1 && aWin.selectCategory){
+            console.log(ysp.runtime.Browser.activeBrowser.contentWindow.parent.opener.document.querySelector('#secCategorySpan').textContent)
+//             aWin.selectCategory = function(nodeID) {
+//               var node = aWin.tree.getNode(nodeID);
+//                 var path = node.text;
+//                 var id = node.categoryid;
+//                 var subid = -1;
+//                 var mainid = -1;
+//                 var  parth2="<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&seccategory="+id+"'>"+node.text+"</a>";  
+
+//                   while (node.parent != null) {        
+//                     path = node.parent.text + "/" + path;        
+//                     if (node.parent.categorytype == 1 && subid == -1) {
+//                         subid = node.parent.categoryid;
+//                         parth2="<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&subcategory="+subid+"'>"+node.parent.text+"</a>/"+parth2;               
+//                     }  else  if (node.parent.categorytype == 0) {
+//                         mainid = node.parent.categoryid;    
+//                         parth2="<a href='docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&maincategory="+mainid+"'>"+node.parent.text+"</a>/"+parth2;      
+//                   }  
+//                     node = node.parent;
+//                 } 
+//                 path = path.replace(/</g, "＜").replace(/>/g, "＞").replace(/&lt;/g, "＜").replace(/&gt;/g, "＞");
+
+//                 aWin.parent.returnValue = {tag:"1",id:""+id, path:""+path, mainid:""+mainid, subid:""+subid,path2:""+parth2};
+//                 aWin.parent.close();
+//             }
+          }
+          /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
+          
+          
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
