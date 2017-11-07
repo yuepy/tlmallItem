@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/wui/main.jsp?templateId=1",
   "jsFile": "index.js",
   "requires": {
-    "waitTodo": "../waitTodo/index.json"
+    "waitTodo": "../waitTodo/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "首页列表",
   "description": "",
@@ -187,9 +188,7 @@
         "control7_thluKe",
         "control20_U5haXk"
       ],
-      "anchors": [
-        "control72_hCqgHs"
-      ],
+      "anchors": [],
       "urlAnchor": []
     }
   },
@@ -198,6 +197,10 @@
       "toContexts": [
         {
           "toContextId": "context1_yeQcpw"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
         }
       ]
     },

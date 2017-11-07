@@ -238,46 +238,26 @@
       "monitored": false,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     },
-    "control95_2ATl9O": {
+    "control84_GBnWmz": {
       "location": {
         "data": {
           "tagName": "TD"
         },
         "locators": [
           {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "流程状态"
-              ],
-              "visText": [
-                "流程状态"
-              ]
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[9]/TD[1]"
-          },
-          {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[9]/TD[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
           }
         ]
       },
-      "roles": "element",
-      "text": "",
-      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
-      "customJS": "if(elem.textContent.indexOf('流程状态') !== -1){return true;}return false;"
+      "events": {
+        "onGetData": "getData_control84_GBnWmz"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -287,7 +267,8 @@
         "control30_RZlQuz",
         "control17_LknT8t",
         "control42_uHB0Go",
-        "control39_ifdZhx"
+        "control39_ifdZhx",
+        "control84_GBnWmz"
       ],
       "anchors": [
         "control95_2ATl9O"
@@ -382,6 +363,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl22_ZaAa4t",
                 "onGetTemplate": "getTemplate_uiControl22_ZaAa4t"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl67_eW2tT0",
+          "controlId": "control84_GBnWmz",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl67_eW2tT0",
+                "onGetTemplate": "getTemplate_uiControl67_eW2tT0"
               }
             }
           }

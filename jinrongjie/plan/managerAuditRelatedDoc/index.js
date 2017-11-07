@@ -26,6 +26,8 @@
     doAction_uiControl21_S9tvqE: function (data, elem) {
       var trIndex = data.dataCustom;var eventType = data.eventType;if (eventType == 'appendData') {
         elem.querySelector('#BrowseTable').querySelectorAll('tr')[trIndex].querySelector('a').click();
+      }function addObjectToSelect(obj, str) {
+        if (obj.tagName != "SELECT") return;var oOption = document.createElement("OPTION");obj.options.add(oOption);$(oOption).val(str.split("~")[0]);$(oOption).text(str.split("~")[1]);
       }
     },
     getTemplate_uiControl21_S9tvqE: function () {
@@ -103,6 +105,16 @@
     getTemplate_uiControl36_LwqiC4: function () {
       var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div className=\"background-gray\"></div>\n    )\n  }\n});";
       return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    return React.createElement(\"div\", { className: \"background-gray\" });\n  }\n});";
+    },
+    getData_control83_SwDpyP: function (elem) {},
+    doAction_uiControl66_5fUXvb: function (data, elem) {
+      if (data.eventType == 'clcik') {
+        elem.ownerDocument.defaultView.btnok_onclick();
+      }
+    },
+    getTemplate_uiControl66_5fUXvb: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div onClick = {(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:'clcik'\n            })\n          }\n        }}>\n        \u786E\u5B9A\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      'div',\n      { onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'clcik'\n            });\n          }\n        } },\n      '\\u786E\\u5B9A'\n    );\n  }\n});";
     }
   });
 })(window, ysp);
