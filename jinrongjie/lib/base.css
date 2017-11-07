@@ -228,14 +228,6 @@ li {
   background-position-y: 50%;
   border-bottom: none;
 }
-.ysp-manager-audit-wrapper .except-main-rules {
-  padding: 0;
-  border: none;
-}
-.ysp-manager-audit-wrapper .except-main-rules > div {
-  padding: 5px 0;
-  border-bottom: 1px solid #e0e0e0;
-}
 .ysp-manager-audit-header-tab {
   background: #fff;
 }
@@ -425,6 +417,7 @@ li {
   margin: 0;
   padding: 0;
   line-height: 40px;
+  vertical-align: middle;
 }
 .ysp-related-liucheng-wrapper input,
 .ysp-related-liucheng-wrapper select {
@@ -435,6 +428,11 @@ li {
 }
 .ysp-related-liucheng-wrapper > div {
   display: inline-block;
+  width: 50%;
+}
+.ysp-related-liucheng-wrapper > div span,
+.ysp-related-liucheng-wrapper > div input,
+.ysp-related-liucheng-wrapper > div select {
   width: 50%;
 }
 .ysp-related-liucheng-wrapper > div .date span {
@@ -454,41 +452,8 @@ li {
 .ysp-related-liucheng-wrapper .left-content {
   padding: 0 10px 0 0;
 }
-.ysp-related-liucheng-wrapper .left-content .small-span {
-  width: 25%;
-}
-.ysp-related-liucheng-wrapper .left-content .small-input {
-  width: 75%;
-}
-.ysp-related-liucheng-wrapper .left-content .small-select {
-  width: 60%;
-}
-.ysp-related-liucheng-wrapper .left-content .large-span1 {
-  width: 40%;
-}
-.ysp-related-liucheng-wrapper .left-content .large-span2 {
-  width: 50%;
-}
-.ysp-related-liucheng-wrapper .left-content .small-input1 {
-  width: 60%;
-}
-.ysp-related-liucheng-wrapper .left-content .small-input2 {
-  width: 50%;
-}
 .ysp-related-liucheng-wrapper .right-content {
   padding: 0 0 0 10px;
-}
-.ysp-related-liucheng-wrapper .right-content .small-span {
-  width: 30%;
-}
-.ysp-related-liucheng-wrapper .right-content .small-input {
-  width: 70%;
-}
-.ysp-related-liucheng-wrapper .right-content .large-span1 {
-  width: 40%;
-}
-.ysp-related-liucheng-wrapper .right-content .small-input1 {
-  width: 60%;
 }
 .ysp-related-liucheng-wrapper .search-button {
   color: #fff;
@@ -496,6 +461,7 @@ li {
   background: #C19936;
   border-radius: 15px;
   text-align: center;
+  margin: 10px 0;
   padding: 5px 0;
 }
 .ysp-related-liucheng-wrapper .ysp-related-liucheng-selectStyle {
@@ -1660,7 +1626,7 @@ div[data-ysp-modelid='askForLeave'] .OvsRcaoL1UILAcvWC8nMu {
 div[data-ysp-modelid='askForLeave'] .topTitle {
   font-size: 16px;
   font-weight: bold;
-  padding: 10px 26%;
+  padding: 10px 28%;
   background: #fff;
   text-align: center;
 }
@@ -1752,12 +1718,6 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
   background-position: 300px;
   height: 22px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .word {
-  background: url("../lib/images/默认文档1x.png") no-repeat;
-  background-size: 15px;
-  background-position: 0;
-  padding-left: 20px;
-}
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .none {
   display: none;
 }
@@ -1793,12 +1753,10 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper {
   font-size: 14px;
   margin-top: 10px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper div:nth-child(2) {
+div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
   margin: 0 auto;
   width: 90%;
   margin-top: 10px;
-  border: 1px solid #ddd;
-  padding: 10px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper {
   background: #fff;
@@ -1828,8 +1786,10 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   color: #A1E15C;
   text-decoration: underline;
 }
-/******************************请假/公出申请单end*******************************************/
-.ysp_table_lfj select {
+.ysp_table_lfj {
+  /******************************请假/公出申请单end*******************************************/
+}
+.ysp_table_lfj .contractCountersigned_box select {
   background: none;
   border: 0;
   border-bottom: 1px solid #EDEDED;
@@ -1837,33 +1797,33 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   color: #202020;
   font-size: 15px;
 }
-.ysp_table_lfj .header_box {
+.ysp_table_lfj .contractCountersigned_box .header_box {
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
-.ysp_table_lfj .header_box center:nth-child(2) {
+.ysp_table_lfj .contractCountersigned_box .header_box center:nth-child(2) {
   font-size: 14px;
   color: #666666;
 }
-.ysp_table_lfj .header_box center:nth-child(1) {
+.ysp_table_lfj .contractCountersigned_box .header_box center:nth-child(1) {
   color: #000;
   font-weight: bold;
 }
-.ysp_table_lfj .center_box {
+.ysp_table_lfj .contractCountersigned_box .center_box {
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
-.ysp_table_lfj .center_box .center_tb {
+.ysp_table_lfj .contractCountersigned_box .center_box .center_tb {
   padding-left: 15px;
 }
-.ysp_table_lfj .center_box .center_tb .tip {
+.ysp_table_lfj .contractCountersigned_box .center_box .center_tb .tip {
   min-height: 30px;
   border-bottom: 1px solid #EDEDED;
   padding-bottom: 10px;
   color: #202020;
   font-size: 15px;
 }
-.ysp_table_lfj .center_box .center_tb select {
+.ysp_table_lfj .contractCountersigned_box .center_box .center_tb select {
   background: none;
   border: 0;
   border-bottom: 1px solid #EDEDED;
@@ -1871,20 +1831,20 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   color: #202020;
   font-size: 15px;
 }
-.ysp_table_lfj .bottom_box {
+.ysp_table_lfj .contractCountersigned_box .bottom_box {
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
-.ysp_table_lfj .bottom_box .bottom_tb {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .bottom_tb {
   padding-left: 15px;
 }
-.ysp_table_lfj .bottom_box .bottom_tb > *:nth-child(n+11) {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .bottom_tb > *:nth-child(n+11) {
   display: none;
 }
-.ysp_table_lfj .bottom_box .button_less {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .button_less {
   display: none;
 }
-.ysp_table_lfj .bottom_box .button_less span:before {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .button_less span:before {
   margin-right: 10px;
   content: '';
   width: 20px;
@@ -1893,7 +1853,7 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   background: url(../local/img/shangjiantou.png) no-repeat 0 5px;
   background-size: 100%;
 }
-.ysp_table_lfj .bottom_box .button_more span:before {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .button_more span:before {
   margin-right: 10px;
   content: '';
   width: 20px;
@@ -1902,19 +1862,19 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   background: url(../local/img/xiajiantou.png) no-repeat 0 5px;
   background-size: 100%;
 }
-.ysp_table_lfj .bottom_box .ysp_button_more {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .ysp_button_more {
   height: 40px;
   line-height: 50px;
   text-align: center;
   font-size: 14px;
 }
-.ysp_table_lfj .bottom_box .name {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .name {
   border-bottom: 1px solid #EDEDED;
   padding-bottom: 10px;
   color: #202020;
   font-size: 15px;
 }
-.ysp_table_lfj .bottom_box input {
+.ysp_table_lfj .contractCountersigned_box .bottom_box input {
   background: none;
   border: 0;
   border-bottom: 1px solid #EDEDED;
@@ -1924,21 +1884,21 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   display: block;
   width: 100%;
 }
-.ysp_table_lfj .bottom_box .file_box .file {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .file_box .file {
   position: relative;
   margin: 10px 15px 10px 0;
   border-radius: 3px;
   padding: 5px 0 5px 50px;
   background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
 }
-.ysp_table_lfj .bottom_box .file_box .file > div:nth-child(1) {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .file_box .file > div:nth-child(1) {
   font-size: 15px;
 }
-.ysp_table_lfj .bottom_box .file_box .file > div:nth-child(2) {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .file_box .file > div:nth-child(2) {
   font-size: 14px;
   color: #717171;
 }
-.ysp_table_lfj .bottom_box .file_box .file button {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .file_box .file button {
   position: absolute;
   right: 20px;
   top: 18px;
@@ -1948,34 +1908,34 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   background: url(../local/img/download.png) no-repeat 0;
   background-size: 20px;
 }
-.ysp_table_lfj .bottom_box .textArea {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .textArea {
   min-height: 30px;
   border-bottom: 1px solid #EDEDED;
   line-height: 30px;
   padding-bottom: 10px;
   color: #202020;
 }
-.ysp_table_lfj .bottom_box .espel {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .espel {
   margin-left: -15px;
   margin-bottom: 20px;
 }
-.ysp_table_lfj .bottom_box .textArea2 {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .textArea2 {
   height: 100px;
   border: 1px solid #E1E1E1;
   padding: 5px;
   font-size: 14px;
   margin-right: 15px;
 }
-.ysp_table_lfj .bottom_box .textArea2 * {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .textArea2 * {
   color: #202020;
   margin-right: 15px;
 }
-.ysp_table_lfj .bottom_box .ovh {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .ovh {
   overflow: hidden;
   margin: 10px 0;
   padding: 10px 0;
 }
-.ysp_table_lfj .bottom_box .about_box {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .about_box {
   position: relative;
   width: 80%;
   float: right;
@@ -1983,16 +1943,16 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   padding-bottom: 10px;
   min-height: 30px;
 }
-.ysp_table_lfj .bottom_box .about_box .box_con {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .about_box .box_con {
   width: 80%;
   word-break: break-all;
 }
-.ysp_table_lfj .bottom_box .about_box .box_con a {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .about_box .box_con a {
   margin: 3px;
   color: #202020;
   font-size: 14px;
 }
-.ysp_table_lfj .bottom_box .about_box button {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .about_box button {
   position: absolute;
   right: 10px;
   top: 0;
@@ -2002,18 +1962,18 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   border: 0;
   background-size: 20px;
 }
-.ysp_table_lfj .bottom_box .button_box {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .button_box {
   min-height: 30px;
   border-bottom: 1px solid #EDEDED;
   position: relative;
 }
-.ysp_table_lfj .bottom_box .button_box > div {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .button_box > div {
   width: 90%;
 }
-.ysp_table_lfj .bottom_box .button_box > div a {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .button_box > div a {
   margin: 5px;
 }
-.ysp_table_lfj .bottom_box .button_box button {
+.ysp_table_lfj .contractCountersigned_box .bottom_box .button_box button {
   position: absolute;
   right: 10px;
   top: 0px;
@@ -2023,39 +1983,42 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   border: 0;
   background-size: 20px;
 }
-._2YwloE7OzAhaMwSn1XM-Va {
+<<<<<<< HEAD
+=======
+div[data-ysp-modelid='mainLeaderSign'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
-._2YwloE7OzAhaMwSn1XM-Va > div:nth-child(1) {
+div[data-ysp-modelid='mainLeaderSign'] ._2YwloE7OzAhaMwSn1XM-Va > div {
   padding: 0;
 }
-._27gZE6m5LfD5uG_dZ8p3iP {
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP {
   margin: 0;
 }
-._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
   background: none;
 }
-._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
-._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
-._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
   height: 35px;
   line-height: 35px;
 }
-._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
   width: auto;
   display: inline;
 }
-._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
   background: none;
   border-bottom: 3px solid #C29A2A;
   color: #C29A2A;
+  padding: 3px 0;
 }
 .ysp-main-leader-sign-wrapper {
   position: relative;
   background: #fff;
 }
 .ysp-main-leader-sign-wrapper .approval-node-info {
-  margin: -15px;
+  border-top: 10px solid #efefef;
 }
 .ysp-main-leader-sign-wrapper .approval-node-info div {
   text-align: left;
@@ -2107,3 +2070,32 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   color: #CFB05F;
   content: '●';
 }
+div[data-ysp-modelid='chairmanSign'] ._2YwloE7OzAhaMwSn1XM-Va {
+  border-bottom: 0;
+}
+div[data-ysp-modelid='chairmanSign'] ._2YwloE7OzAhaMwSn1XM-Va > div {
+  padding: 0;
+}
+div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  margin: 0;
+}
+div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+  background: #fff;
+}
+div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
+div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
+div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
+  height: 35px;
+  line-height: 35px;
+}
+div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+  width: auto;
+  display: inline;
+}
+div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+  background: none;
+  border-bottom: 3px solid #C29A2A;
+  color: #C29A2A;
+  padding: 3px 0;
+}
+>>>>>>> 6a31901fdd3e3461b5147bf553fd6be11c88fc8a

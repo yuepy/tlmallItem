@@ -255,14 +255,6 @@ li {list-style: none}
     background-position-y: 50%;
     border-bottom: none;
   }
-  .except-main-rules{
-    padding: 0;
-    border: none;
-    >div{
-      padding: 5px 0;
-      border-bottom: 1px solid #e0e0e0;
-    }
-  }
 }
 .ysp-manager-audit-header-tab{
   background: #fff;
@@ -466,6 +458,7 @@ li {list-style: none}
     margin: 0;
     padding: 0;
     line-height: 40px;
+    vertical-align: middle;
   }
   input,select{
     border-radius: 5px;
@@ -476,7 +469,9 @@ li {list-style: none}
   >div{
     display: inline-block;
     width: 50%;
-    
+    span,input,select{
+      width: 50%;
+    }
     .date{
       span{width: 25%;}
       input{
@@ -491,20 +486,9 @@ li {list-style: none}
   }
   .left-content{
     padding: 0 10px 0 0;
-    .small-span{width: 25%;}
-    .small-input{width: 75%;}
-    .small-select{width: 60%;}
-    .large-span1{width: 40%;}
-    .large-span2{width: 50%;}
-    .small-input1{width: 60%;}
-    .small-input2{width: 50%;}
   }
   .right-content{
     padding: 0 0 0 10px;
-    .small-span{width: 30%;}
-    .small-input{width: 70%;}
-    .large-span1{width: 40%;}
-    .small-input1{width: 60%;}
   }
   .search-button{
     color: #fff;
@@ -512,7 +496,7 @@ li {list-style: none}
     background: #C19936;
     border-radius: 15px;
     text-align: center;
-    // margin: 10px 0;
+    margin: 10px 0;
   	padding: 5px 0;
   }
   .ysp-related-liucheng-selectStyle{
@@ -1755,7 +1739,7 @@ div[data-ysp-modelid='askForLeave']{
   .topTitle{//大标题
     font-size: 16px;
     font-weight: bold;
-    padding: 10px 26%;
+    padding: 10px 28%;
     background: #fff;
     text-align: center;
   }
@@ -1846,12 +1830,6 @@ div[data-ysp-modelid='askForLeave']{
       		background-position: 300px;
           height: 22px;
         }
-        .word{
-          background:url("../lib/images/默认文档1x.png") no-repeat;
-          background-size: 15px;
-          background-position: 0;
-          padding-left: 20px;
-        }
       }
       .none{
         display: none;
@@ -1888,12 +1866,10 @@ div[data-ysp-modelid='askForLeave']{
     padding: 20px 0;
     font-size: 14px;
     margin-top: 10px;
-    div:nth-child(2){
+    textarea{
       margin: 0 auto;
       width: 90%;
-      margin-top: 10px;
-      border: 1px solid #ddd;
-      padding: 10px;
+      margin-top: 10px; 
     }
   }
   .ysp_advice_wrapper{
@@ -1924,12 +1900,11 @@ div[data-ysp-modelid='askForLeave']{
       }
     }
   }
-  #uiControl64_5FfLQebody{
-    
-  }
 }
-/******************************请假/公出申请单end*******************************************/
 .ysp_table_lfj{
+/******************************请假/公出申请单end*******************************************/
+
+.contractCountersigned_box{
       select{
         background: none;
         border: 0;
@@ -2130,11 +2105,16 @@ div[data-ysp-modelid='askForLeave']{
         }
       }
     }
+<<<<<<< HEAD
+  
+  }
+=======
 
 //--------------------------------------------------------------主管领导审核 START
+div[data-ysp-modelid='mainLeaderSign']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
-    >div:nth-child(1){padding: 0;}
+    >div{padding: 0;}
   }
   ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
     margin: 0;
@@ -2152,17 +2132,19 @@ div[data-ysp-modelid='askForLeave']{
           background: none;
           border-bottom: 3px solid #C29A2A;
           color: #C29A2A;
-          // padding: 3px 0;
+          padding: 3px 0;
         }
       }
     }
   }
+}
+  
 
 .ysp-main-leader-sign-wrapper{
   position: relative;
   background: #fff;
   .approval-node-info{
-    margin: -15px;
+    border-top: 10px solid #efefef;
     div{
       text-align: left;
       font-size: 13px;
@@ -2221,3 +2203,33 @@ div[data-ysp-modelid='askForLeave']{
   }
 }
 //--------------------------------------------------------------主管领导审核 END
+
+//--------------------------------------------------------------董事长审核 START
+div[data-ysp-modelid='chairmanSign']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+    >div{padding: 0;}
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      background: #fff;
+      a,ul,li{height: 35px;line-height: 35px;}
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+//--------------------------------------------------------------董事长审核 END
+>>>>>>> 6a31901fdd3e3461b5147bf553fd6be11c88fc8a
