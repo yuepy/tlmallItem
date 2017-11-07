@@ -29,11 +29,11 @@
                     secondLevelStatus.push('close');secNextLevel.push(null);
                   }secondLevelSngle.nextLevel = secNextLevel;
                 }
-              }secondLevelSngle.levelId = firstLevel[i].querySelector('div').getAttribute('id');secondLevelSngle.currLevel = secondLevelContent;
-              secondLevelSngle.currLevelStatus = secondLevelStatus;nextLevel.push(secondLevelSngle);
+              }secondLevelSngle.levelId = firstLevel[i].querySelector('div').getAttribute('id');secondLevelSngle.currLevel = secondLevelContent;secondLevelSngle.currLevelStatus = secondLevelStatus;nextLevel.push(secondLevelSngle);
             } else {
               currLevelStatus.push('colse');nextLevel.push(null);
-            }data.nextLevel = nextLevel;
+            }
+            data.nextLevel = nextLevel;
           }
         }data.levelId = levelId;data.currLevel = currLevel;data.currLevelStatus = currLevelStatus;
       }return data;
