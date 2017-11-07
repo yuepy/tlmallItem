@@ -68,11 +68,11 @@
                 /*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
                 aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
-                  debugger;
+                    debugger;
                     var $GetEle = aWin.$GetEle;
                     var wuiUtil = aWin.wuiUtil;
                     var tmpids = $GetEle(inputname).value;
-                    if (type1 = 37) {
+                    if (type1 == 37) {
                         id1 = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=" + url +
                             "?documentids=" + tmpids);
                     } else {
@@ -116,20 +116,38 @@
                     aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
                     aWin.parent.close();
                 }
+                if(aWin.setResourceStr){
+                  aWin.setResourceStr = function(){
+                  aWin.documentids ="";
+                  aWin.documentnames = "";
+                  for(var i=0;i<aWin.resourceArray.length;i++){
+                    aWin.documentids += "," +aWin.resourceArray[i].split("~")[0];
+                    aWin.documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
+                  }
+                  doc.all("documentids").value = aWin.documentids.substring(1)
+                }
+              }
             }
-            // if(aWin.setResourceStr){
-            //   aWin.setResourceStr = function(){
-            //     var documentids = aWin.documentids;
-            //     var documentnames = aWin.documentnames
-            //   documentids ="";
-            //   documentnames = "";
-            //   for(var i=0;i<aWin.resourceArray.length;i++){
-            //     documentids += "," +aWin.resourceArray[i].split("~")[0];
-            //     documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
-            //   }
-            //   doc.all("documentids").value = documentids.substring(1)
-            // }
-            // }
+          if(aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 && aWin.btnok_onclick){
+              aWin.btnok_onclick = function() {
+                      debugger;
+                      aWin.setResourceStr();
+                      aWin.parent.opener._setReturnValue({id:aWin.resourceids,name:aWin.resourcenames});
+                      aWin.parent.close();
+                  }
+              }
+          // if(aWin.setResourceStr){
+          //    aWin.setResourceStr = function(){
+          //       aWin.resourceids ="";
+          //       aWin.resourcenames = "";
+          //       for(var i=0;i<aWin.resourceArray.length;i++){
+          //         aWin.resourceids += ","+aWin.resourceArray[i].split("~")[0] ;
+          //         aWin.resourcenames += ","+aWin.resourceArray[i].split("~")[1] ;
+          //       }
+          //       //alert(resourceids+"--"+resourcenames);
+          //       $("input[name=resourceids]").val(aWin.resourceids.substring(1));
+          //     }
+          // }
             if (aWin.replaceToHtml) {
                 aWin.replaceToHtml = function(str) {
                     var re = str;
@@ -146,7 +164,6 @@
             }
             if (aWin.BrowseTable_onclick) {
                 aWin.BrowseTable_onclick = function(e) {
-                    debugger;
                     var target = e.srcElement || e.target;
                     try {
                         if (target.nodeName == "TD" || target.nodeName == "A") {
@@ -163,7 +180,6 @@
             }
             if (aWin.addObjectToSelect) {
                 aWin.addObjectToSelect = function(obj, str) {
-                    debugger;
                     if (obj.tagName != "SELECT") return;
                     var oOption = doc.createElement("OPTION");
                     obj.options.add(oOption);
@@ -175,12 +191,22 @@
                 }
             }
             /*  showModelDialog 相关文档 跨页面传值兼容  */
+
+            /*  showModelDialog 相关流程 跨页面传值兼容  */
+            if (aWin.btnsub_onclick) {
+                aWin.btnsub_onclick = function() {
+                    aWin.setResourceStr();
+                    $("#resourceids").val(aWin.resourceids);
+                    doc.SearchForm.submit();
+                }
+            }
+            /*  showModelDialog 相关流程 跨页面传值兼容  */
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
             aWin.getBrowserVersion = function() {
                     var browserInfo = { browser: "", version: "" };
-                    var ua = navigator.userAgent.toLowerCase();
+                    var ua = aWin.navigator.userAgent.toLowerCase();
                     if (aWin.ActiveXObject && ua.indexOf('IE') != 1) {
                         browserInfo.browser = "IE";
                         browserInfo.version = ua.match(/msie ([\d.]+)/)[1];
