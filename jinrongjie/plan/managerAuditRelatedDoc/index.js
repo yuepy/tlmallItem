@@ -172,17 +172,13 @@
     },
     getData_control83_SwDpyP: function (elem) {},
     doAction_uiControl66_5fUXvb: function (data, elem) {
-      var num = 0;if (data.eventType == 'clcik') {
-        debugger;elem.ownerDocument.defaultView.btnok_onclick();
-      } // if (data.eventType == 'click') {
-      //   debugger;if (num == 0) {
-      //     num += 1;elem.ownerDocument.defaultView.btnok_onclick();
-      //   }
-      // }
+      if (data.eventType == 'clcik') {
+        elem.ownerDocument.defaultView.btnok_onclick();
+      }
     },
     getTemplate_uiControl66_5fUXvb: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  componentDidUpdate : function(){\n    this.onClick();\n  },\n  onClick:function(e){\n     var handler = this.props.customHandler;\n      if(handler){\n        handler({\n          eventType:'click'\n        })\n      }\n\t},\n  render: function() {\n    return (\n      <div onClick = {(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:'clcik'\n            })\n          }\n        }}>\n        \u786E\u5B9A\n      </div>\n    )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  componentDidUpdate: function componentDidUpdate() {\n    this.onClick();\n  },\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      'div',\n      { onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'clcik'\n            });\n          }\n        } },\n      '\\u786E\\u5B9A'\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n     var handler = this.props.customHandler;\n      if(handler){\n        handler({\n          eventType:'click'\n        })\n      }\n\t},\n  render: function() {\n    return (\n      <div onClick = {(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:'clcik'\n            })\n          }\n        }}>\n        \u786E\u5B9A\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      'div',\n      { onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'clcik'\n            });\n          }\n        } },\n      '\\u786E\\u5B9A'\n    );\n  }\n});";
     }
   });
 })(window, ysp);
