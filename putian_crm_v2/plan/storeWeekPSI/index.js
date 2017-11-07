@@ -6,7 +6,7 @@
         // ysp.customHelper.backHome();
         //ysp.appMain.back(); //ysp.customHelper.back(); //history.go(-1);
         // var a = ysp.runtime.Context.activeContext.id;
-        var pageId = ysp.customHelper.pageId();if (parent.EAPI.isAndroid() && pageId == "context52_Wg5qcG") {
+        var pageId = ysp.customHelper.pageId();if (parent.EAPI.isAndroid() && (pageId == "context52_Wg5qcG" || pageId == "context55_T4Zowu")) {
           history.back();
         } else if (parent.EAPI.isIOS() && (pageId == "context52_Wg5qcG" || pageId == "context55_T4Zowu")) {
           var url = "http://192.168.1.224:8080/pttlCrm/res/page/psi/storeInfocollection.html";ysp.appMain.reloadPage(url);

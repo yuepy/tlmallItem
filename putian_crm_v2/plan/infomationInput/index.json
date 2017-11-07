@@ -135,76 +135,34 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control211_RITW3S": {
+    "control204_50rAzZ": {
       "location": {
         "data": {
           "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
             "id": "@id/word",
             "prob": 2,
             "value": [
-              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]/DIV[2]",
+              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]",
               "descendant::DIV[@id=\"dayPSI\"]//DIV"
             ]
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "value": "DIV.collectionPSIentercontent DIV.collectionPSIentercontentborder"
+            "value": "DIV.collectionPSIentercontent"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control211_RITW3S"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control267_ivMG3p": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]/DIV[1]/DIV[1]",
-              "descendant::DIV[@id=\"dayPSI\"]//DIV"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              2
-            ],
-            "value": "DIV.collectionPSIentercontent DIV.m-time DIV"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control267_ivMG3p"
+        "onGetData": "getData_control204_50rAzZ"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -218,8 +176,7 @@
         "control190_oOp3N1",
         "control212_Cymneo",
         "control213_TwrNlh",
-        "control211_RITW3S",
-        "control267_ivMG3p"
+        "control204_50rAzZ"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -264,16 +221,6 @@
           "toContextId": "context53_oR8JhD"
         }
       ]
-    },
-    "flow52_tf0oeO": {
-      "fromContextId": "context53_oR8JhD",
-      "fromAction": "doAction",
-      "fromControlId": "control211_RITW3S",
-      "toContexts": [
-        {
-          "toContextId": "context53_oR8JhD"
-        }
-      ]
     }
   },
   "pages": {
@@ -311,31 +258,16 @@
           }
         },
         {
-          "id": "uiControl261_cREW3E",
-          "controlId": "control267_ivMG3p",
+          "id": "uiControl198_cZXWTf",
+          "controlId": "control204_50rAzZ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl261_cREW3E",
-                "onGetTemplate": "getTemplate_uiControl261_cREW3E"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl208_HgPTPr",
-          "controlId": "control211_RITW3S",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl208_HgPTPr",
-                "onGetTemplate": "getTemplate_uiControl208_HgPTPr"
+                "onDoAction": "doAction_uiControl198_cZXWTf",
+                "onGetTemplate": "getTemplate_uiControl198_cZXWTf"
               }
             }
           }
@@ -375,7 +307,8 @@
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=1-HP70",
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=11994",
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=10263",
-          "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=11212"
+          "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=11212",
+          "192.168.1.224:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=10702"
         ]
       }
     },

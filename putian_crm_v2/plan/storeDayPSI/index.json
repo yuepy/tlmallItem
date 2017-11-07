@@ -82,44 +82,14 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control118_Fo67qb": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]",
-              "descendant::DIV[@id=\"dayPSI\"]//DIV"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.collectionPSIentercontent"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control118_Fo67qb"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": ""
-    },
     "control269_GG32xJ": {
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -157,7 +127,6 @@
         "control187_txSshT",
         "control191_T9wnrr",
         "control194_pPJ1sv",
-        "control118_Fo67qb",
         "control269_GG32xJ"
       ],
       "anchors": [],
@@ -250,21 +219,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl263_mya1kd",
                 "onGetTemplate": "getTemplate_uiControl263_mya1kd"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl115_7D8i8T",
-          "controlId": "control118_Fo67qb",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl115_7D8i8T",
-                "onGetTemplate": "getTemplate_uiControl115_7D8i8T"
               }
             }
           }
