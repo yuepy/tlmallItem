@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
-    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "managerAuditRelateProject": "../managerAuditRelateProject/index.json"
   },
   "chineseName": "公文审批-董事长签核",
   "description": "公文审批-董事长签核",
@@ -14,6 +15,10 @@
       "location": {
         "data": {
           "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -36,6 +41,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -57,6 +66,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -77,6 +90,10 @@
       "location": {
         "data": {
           "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -133,6 +150,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -154,6 +175,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -174,6 +199,10 @@
       "location": {
         "data": {
           "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -221,6 +250,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -317,6 +350,10 @@
         {
           "toContextId": "context6_aweFC7",
           "toModelId": "managerAuditRelateProcess"
+        },
+        {
+          "toContextId": "context8_R2HN1D",
+          "toModelId": "managerAuditRelateProject"
         }
       ]
     }
@@ -483,6 +520,10 @@
       "contexts": {
         "context15_pZfDlE": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=259937&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+        ],
+        "context8_R2HN1D": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/proj/data/ProjectBrowser.jsp",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids="
         ]
       }
     },
