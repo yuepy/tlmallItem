@@ -11,14 +11,18 @@
         // history.go(-1); 
         //history.back(); //ysp.appMain.back();
         //ysp.customHelper.forceMatchModels('newInformationTotle1');
-        if (parent.EAPI.isIOS()) {
-          var url = "http://192.168.1.224:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.appMain.reloadPage(url);
-        } else {
-          //history.back();
-          elem.ownerDocument.querySelector(".head_title").querySelector("a").click();setTimeout(function () {
-            ysp.customHelper.back();
-          }, 100);ysp.customHelper.forceMatchModels('newInformationTotle1');
-        }
+        //if (parent.EAPI.isIOS()) {
+        // var url = "http://192.168.1.224:8080/pttlCrm/res/page/psi/customerInfocollection.html";
+        //ysp.appMain.reloadPage(url);
+        //} else {
+        //elem.ownerDocument.querySelector(".head_title").querySelector("a").click();
+        //setTimeout(function () {
+        //ysp.customHelper.back();
+        //}, 100);
+
+        //ysp.customHelper.forceMatchModels('newInformationTotle1');
+        //}
+        var url = "http://192.168.1.224:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.appMain.reloadPage(url);
       }
     },
     getTemplate_uiControl81_N7zeTo: function getTemplate_uiControl81_N7zeTo() {
