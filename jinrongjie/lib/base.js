@@ -31,7 +31,7 @@
         back: _back,
         getTableData: _getTableData,
         firstMenus: _firstMenus,
-        Dnum: _num,  // 待办列表角标值
+        Dnum: _num, // 待办列表角标值
         isArray(array) {
             if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
                 return true;
@@ -62,155 +62,159 @@
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
             aWin.yspTokenUrl = function(url) {
-                return url;
-            }
-            /*  showModelDialog 跨页面传值兼容  */
-            	/*  showModelDialog 相关文档 跨页面传值兼容  */
+                    return url;
+                }
+                /*  showModelDialog 跨页面传值兼容  */
+                /*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
-              aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
-                var $GetEle = aWin.$GetEle;
-                var wuiUtil = aWin.wuiUtil;
-                var tmpids = $GetEle(inputname).value;
-                if (type1 = 37) {
-                  id1 = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=" + url
-                      + "?documentids=" + tmpids);
-                } else {
-                  id1 = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=" + url
-                      + "?resourceids=" + tmpids);
-                }
-                aWin._setReturnValue = function(id1) {
-                  if (id1) {
-                    if (wuiUtil.getJsonValueByIndex(id1, 0) != "" && wuiUtil.getJsonValueByIndex(id1, 0) != "0") {
-                      var resourceids = wuiUtil.getJsonValueByIndex(id1, 0);
-                      var resourcename = wuiUtil.getJsonValueByIndex(id1, 1);
-                      var sHtml = "";
-                      resourceids = resourceids.substr(1);
-                      resourcename = resourcename.substr(1);
-                      $GetEle(inputname).value = resourceids;
-                      var resourceidArray = resourceids.split(",");
-                      var resourcenameArray = resourcename.split(",");
-                      for (var _i=0; _i<resourceidArray.length; _i++) {
-                        var curid = resourceidArray[_i];
-                        var curname = resourcenameArray[_i];
-
-                        sHtml = sHtml + "<a href=" + linkurl + curid
-                            + " target='_blank'>" + curname + "</a>&nbsp";
-                      }
-                      $GetEle(spanname).innerHTML = sHtml;
-
+                aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
+                  debugger;
+                    var $GetEle = aWin.$GetEle;
+                    var wuiUtil = aWin.wuiUtil;
+                    var tmpids = $GetEle(inputname).value;
+                    if (type1 = 37) {
+                        id1 = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=" + url +
+                            "?documentids=" + tmpids);
                     } else {
-                      $GetEle(spanname).innerHTML = "";
-                      $GetEle(inputname).value = "";
+                        id1 = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=" + url +
+                            "?resourceids=" + tmpids);
                     }
-                  }
-                }
-                
-              }
-            }
-            
-          	if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {    
-              aWin.btnok_onclick = function(){
-              aWin.setResourceStr();
-              aWin.parent.opener._setReturnValue({id:aWin.documentids,name:aWin.documentnames});
-              aWin.parent.close();
-              }
-          	}
-          // if(aWin.setResourceStr){
-          //   aWin.setResourceStr = function(){
-          //     var documentids = aWin.documentids;
-          //     var documentnames = aWin.documentnames
-          //   documentids ="";
-          //   documentnames = "";
-          //   for(var i=0;i<aWin.resourceArray.length;i++){
-          //     documentids += "," +aWin.resourceArray[i].split("~")[0];
-          //     documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
-          //   }
-          //   doc.all("documentids").value = documentids.substring(1)
-          // }
-          // }
-            if(aWin.replaceToHtml){
-              aWin.replaceToHtml = function(str){
-                var re = str;
-                var re1 = "<";
-                var re2 = ">";
-                do{
-                  re = re.replace(re1,"&lt;");
-                  re = re.replace(re2,"&gt;");
-                      re = re.replace(",","，");
-                      re = re.replace("&quot;","“");
-                }while(re.indexOf("<")!=-1 || re.indexOf(">")!=-1||re.indexOf(",")!=-1||re.indexOf("&quot;")!=-1)
-                return re;
-              }
-            }
-          if(aWin.BrowseTable_onclick){
-            aWin.BrowseTable_onclick = function(e){
-              var target =  e.srcElement||e.target ;
-              try{
-              if(target.nodeName == "TD" || target.nodeName == "A"){
-                var newEntry = $($(target).parents("tr")[0].cells[0]).text()+"~"+$($(target).parents("tr")[0].cells[1]).text() ;
-                if(!aWin.isExistEntry(newEntry,aWin.resourceArray)){
-                  aWin.addObjectToSelect(doc.all("srcList"),newEntry);
-                  aWin.reloadResourceArray();
-                }
-              }
-              }catch (en) {
-                alert(en.message);
-              }
-            }
-          }
-          if(aWin.addObjectToSelect){
-            	aWin.addObjectToSelect = function(obj,str){
-                if(obj.tagName != "SELECT") return;
-                var oOption = doc.createElement("OPTION");
-                obj.options.add(oOption);
-                $(oOption).val(str.split("~")[0]);
-                $(oOption).text(str.split("~")[1]);
-                console.log(str.split("~")[1])
-                $(oOption).html(str.split("~")[1]);
+                    aWin._setReturnValue = function(id1) {
+                        if (id1) {
+                            if (wuiUtil.getJsonValueByIndex(id1, 0) != "" && wuiUtil.getJsonValueByIndex(id1, 0) != "0") {
+                                var resourceids = wuiUtil.getJsonValueByIndex(id1, 0);
+                                var resourcename = wuiUtil.getJsonValueByIndex(id1, 1);
+                                var sHtml = "";
+                                resourceids = resourceids.substr(1);
+                                resourcename = resourcename.substr(1);
+                                $GetEle(inputname).value = resourceids;
+                                var resourceidArray = resourceids.split(",");
+                                var resourcenameArray = resourcename.split(",");
+                                for (var _i = 0; _i < resourceidArray.length; _i++) {
+                                    var curid = resourceidArray[_i];
+                                    var curname = resourcenameArray[_i];
 
-              }
-             }
-          /*  showModelDialog 相关文档 跨页面传值兼容  */
+                                    sHtml = sHtml + "<a href=" + linkurl + curid +
+                                        " target='_blank'>" + curname + "</a>&nbsp";
+                                }
+                                $GetEle(spanname).innerHTML = sHtml;
+
+                            } else {
+                                $GetEle(spanname).innerHTML = "";
+                                $GetEle(inputname).value = "";
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
+                aWin.btnok_onclick = function() {
+                    debugger;
+                    aWin.setResourceStr();
+                    aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
+                    aWin.parent.close();
+                }
+            }
+            // if(aWin.setResourceStr){
+            //   aWin.setResourceStr = function(){
+            //     var documentids = aWin.documentids;
+            //     var documentnames = aWin.documentnames
+            //   documentids ="";
+            //   documentnames = "";
+            //   for(var i=0;i<aWin.resourceArray.length;i++){
+            //     documentids += "," +aWin.resourceArray[i].split("~")[0];
+            //     documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
+            //   }
+            //   doc.all("documentids").value = documentids.substring(1)
+            // }
+            // }
+            if (aWin.replaceToHtml) {
+                aWin.replaceToHtml = function(str) {
+                    var re = str;
+                    var re1 = "<";
+                    var re2 = ">";
+                    do {
+                        re = re.replace(re1, "&lt;");
+                        re = re.replace(re2, "&gt;");
+                        re = re.replace(",", "，");
+                        re = re.replace("&quot;", "“");
+                    } while (re.indexOf("<") != -1 || re.indexOf(">") != -1 || re.indexOf(",") != -1 || re.indexOf("&quot;") != -1)
+                    return re;
+                }
+            }
+            if (aWin.BrowseTable_onclick) {
+                aWin.BrowseTable_onclick = function(e) {
+                    debugger;
+                    var target = e.srcElement || e.target;
+                    try {
+                        if (target.nodeName == "TD" || target.nodeName == "A") {
+                            var newEntry = $($(target).parents("tr")[0].cells[0]).text() + "~" + $($(target).parents("tr")[0].cells[1]).text();
+                            if (!aWin.isExistEntry(newEntry, aWin.resourceArray)) {
+                                aWin.addObjectToSelect(doc.all("srcList"), newEntry);
+                                aWin.reloadResourceArray();
+                            }
+                        }
+                    } catch (en) {
+                        alert(en.message);
+                    }
+                }
+            }
+            if (aWin.addObjectToSelect) {
+                aWin.addObjectToSelect = function(obj, str) {
+                    debugger;
+                    if (obj.tagName != "SELECT") return;
+                    var oOption = doc.createElement("OPTION");
+                    obj.options.add(oOption);
+                    $(oOption).val(str.split("~")[0]);
+                    $(oOption).text(str.split("~")[1]);
+                    console.log(str.split("~")[1])
+                    $(oOption).html(str.split("~")[1]);
+
+                }
+            }
+            /*  showModelDialog 相关文档 跨页面传值兼容  */
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-           aWin.getBrowserVersion = function() {
-              var browserInfo = {browser:"", version: ""};
-              var ua = navigator.userAgent.toLowerCase(); 
-              if (aWin.ActiveXObject && ua.indexOf('IE')!=1) {
-                  browserInfo.browser = "IE";
-                  browserInfo.version = ua.match(/msie ([\d.]+)/)[1];
-              } else if (doc.getBoxObjectFor) { 
-                  browserInfo.browser = "FF";
-                  browserInfo.version = ua.match(/firefox\/([\d.]+)/)[1];
-              } else if (/chrome/i.test(ua) && /webkit/i.test(ua) && /mozilla/i.test(ua)) {  //window.MessageEvent && !document.getBoxObjectFor) {
-                  browserInfo.browser = "Chrome";
-                  browserInfo.version = ua.match(/chrome\/([\d.]+)/)[1];
-              } else if (/webkit/i.test(ua) && !(/chrome/i.test(ua) && /webkit/i.test(ua) && /mozilla/i.test(ua))) {
-                  browserInfo.browser = "Safari";
-                  browserInfo.version = ua.match(/version\/([\d.]+)/)[1];
-              } else if (window.opera) { 
-                  browserInfo.browser = "Opera";
-                  browserInfo.version = ua.match(/opera.([\d.]+)/)[1];
-              } else if (window.openDatabase) { 
-                  browserInfo.browser = "";
-                  browserInfo.version = ua.match(/version\/([\d.]+)/)[1]; 
-              }
-              return browserInfo;
-            }
-            /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
-            // aWin.addEventListener('DOMContentLoaded', function() {
-          
-          // aWin.alert = function() {
-          //   debugger;
-          // }
-          
+            aWin.getBrowserVersion = function() {
+                    var browserInfo = { browser: "", version: "" };
+                    var ua = navigator.userAgent.toLowerCase();
+                    if (aWin.ActiveXObject && ua.indexOf('IE') != 1) {
+                        browserInfo.browser = "IE";
+                        browserInfo.version = ua.match(/msie ([\d.]+)/)[1];
+                    } else if (doc.getBoxObjectFor) {
+                        browserInfo.browser = "FF";
+                        browserInfo.version = ua.match(/firefox\/([\d.]+)/)[1];
+                    } else if (/chrome/i.test(ua) && /webkit/i.test(ua) && /mozilla/i.test(ua)) { //window.MessageEvent && !document.getBoxObjectFor) {
+                        browserInfo.browser = "Chrome";
+                        browserInfo.version = ua.match(/chrome\/([\d.]+)/)[1];
+                    } else if (/webkit/i.test(ua) && !(/chrome/i.test(ua) && /webkit/i.test(ua) && /mozilla/i.test(ua))) {
+                        browserInfo.browser = "Safari";
+                        browserInfo.version = ua.match(/version\/([\d.]+)/)[1];
+                    } else if (window.opera) {
+                        browserInfo.browser = "Opera";
+                        browserInfo.version = ua.match(/opera.([\d.]+)/)[1];
+                    } else if (window.openDatabase) {
+                        browserInfo.browser = "";
+                        browserInfo.version = ua.match(/version\/([\d.]+)/)[1];
+                    }
+                    return browserInfo;
+                }
+                /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
+                // aWin.addEventListener('DOMContentLoaded', function() {
+
+            // aWin.alert = function() {
+            //   debugger;
+            // }
+
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
                 var actionEvent = '{"target":"null","data":"getTokenURl"}';
                 var parent = aWin.frameElement.ownerDocument.defaultView;
                 //parent && parent.EAPI.postMessageToNative('getToken', null);
-          			parent && topWindow.EAPI.postMessageToNative('getToken', null);
+                parent && topWindow.EAPI.postMessageToNative('getToken', null);
                 sessionStorage.setItem('getTokenURl', true);
                 token_flag = true;
             }
