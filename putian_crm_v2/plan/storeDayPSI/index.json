@@ -31,44 +31,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control189_Rkt5QS": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]/DIV[2]",
-              "descendant::DIV[@id=\"dayPSI\"]//DIV"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.collectionPSIentercontent DIV.collectionPSIentercontentborder"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control189_Rkt5QS"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control191_T9wnrr": {
       "location": {
         "data": {
@@ -120,7 +82,7 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control268_1DFhSq": {
+    "control118_Fo67qb": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -128,30 +90,60 @@
         "locators": [
           {
             "id": "@id/word",
-            "prob": 1,
+            "prob": 2,
             "value": [
-              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]",
               "descendant::DIV[@id=\"dayPSI\"]//DIV"
             ]
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "ordinal": [
-              0,
-              2
-            ],
-            "value": "DIV.collectionPSIentercontent DIV.m-time DIV"
+            "value": "DIV.collectionPSIentercontent"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control268_1DFhSq"
+        "onGetData": "getData_control118_Fo67qb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control269_GG32xJ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"dayPSI\"]/DIV[2]",
+              "descendant::DIV[@id=\"dayPSI\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.collectionPSIentercontent"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control269_GG32xJ"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -163,10 +155,10 @@
     "context54_GuMlyR": {
       "controls": [
         "control187_txSshT",
-        "control189_Rkt5QS",
         "control191_T9wnrr",
         "control194_pPJ1sv",
-        "control268_1DFhSq"
+        "control118_Fo67qb",
+        "control269_GG32xJ"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -186,16 +178,6 @@
       "fromContextId": "context54_GuMlyR",
       "fromAction": "doAction",
       "fromControlId": "control187_txSshT",
-      "toContexts": [
-        {
-          "toContextId": "context54_GuMlyR"
-        }
-      ]
-    },
-    "flow172_QhqrGF": {
-      "fromContextId": "context54_GuMlyR",
-      "fromAction": "doAction",
-      "fromControlId": "control189_Rkt5QS",
       "toContexts": [
         {
           "toContextId": "context54_GuMlyR"
@@ -258,31 +240,31 @@
           }
         },
         {
-          "id": "uiControl262_6HTTUv",
-          "controlId": "control268_1DFhSq",
+          "id": "uiControl263_mya1kd",
+          "controlId": "control269_GG32xJ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl262_6HTTUv",
-                "onGetTemplate": "getTemplate_uiControl262_6HTTUv"
+                "onDoAction": "doAction_uiControl263_mya1kd",
+                "onGetTemplate": "getTemplate_uiControl263_mya1kd"
               }
             }
           }
         },
         {
-          "id": "uiControl186_mcxx8X",
-          "controlId": "control189_Rkt5QS",
+          "id": "uiControl115_7D8i8T",
+          "controlId": "control118_Fo67qb",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl186_mcxx8X",
-                "onGetTemplate": "getTemplate_uiControl186_mcxx8X"
+                "onDoAction": "doAction_uiControl115_7D8i8T",
+                "onGetTemplate": "getTemplate_uiControl115_7D8i8T"
               }
             }
           }
