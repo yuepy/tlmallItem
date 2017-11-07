@@ -243,6 +243,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -258,6 +262,27 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control87_xcXeNq": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control87_xcXeNq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -268,10 +293,10 @@
         "control17_LknT8t",
         "control42_uHB0Go",
         "control39_ifdZhx",
-        "control84_GBnWmz"
+        "control84_GBnWmz",
+        "control87_xcXeNq"
       ],
       "anchors": [
-        "control95_2ATl9O"
       ],
       "urlAnchor": []
     }
@@ -331,6 +356,16 @@
           "toContextId": "context6_aweFC7"
         }
       ]
+    },
+    "flow50_KKSveu": {
+      "fromContextId": "context6_aweFC7",
+      "fromAction": "doAction",
+      "fromControlId": "control84_GBnWmz",
+      "toContexts": [
+        {
+          "toContextId": "context6_aweFC7"
+        }
+      ]
     }
   },
   "pages": {
@@ -363,6 +398,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl22_ZaAa4t",
                 "onGetTemplate": "getTemplate_uiControl22_ZaAa4t"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl75_VKZLap",
+          "controlId": "control87_xcXeNq",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl75_VKZLap",
+                "onGetTemplate": "getTemplate_uiControl75_VKZLap"
               }
             }
           }

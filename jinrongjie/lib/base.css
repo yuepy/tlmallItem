@@ -2050,3 +2050,60 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   border-bottom: 3px solid #C29A2A;
   color: #C29A2A;
 }
+.ysp-main-leader-sign-wrapper {
+  position: relative;
+  background: #fff;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info {
+  margin: -15px;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info div {
+  text-align: left;
+  font-size: 13px;
+  color: #646464;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info > div {
+  display: inline-block;
+  padding: 0;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info .approval-node-info-left-div {
+  width: 33%;
+  padding-right: 10px;
+  position: relative;
+  bottom: 60px;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info .approval-node-info-left-div div {
+  text-align: right;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info .approval-node-info-left-div > div:nth-child(2) {
+  font-weight: bold;
+  color: #000;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info .approval-node-info-right-div {
+  width: 67%;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info .approval-node-info-right-div div {
+  padding-left: 10px;
+  text-align: left;
+  border-left: 1px solid #CFB05F;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info .approval-node-info-right-div > div:nth-last-child(1) > span span {
+  color: #97E5BB;
+  border-bottom: 1px solid #97E5BB;
+  cursor: pointer;
+}
+.ysp-main-leader-sign-wrapper .approval-node-info .approval-node-info-right-div:before {
+  font-size: 12px;
+  position: relative;
+  top: 11px;
+  right: 3.5px;
+  color: #CFB05F;
+  content: '●';
+}
+.ysp-main-leader-sign-wrapper .approval-node-info .approval-node-info-right-div:after {
+  position: relative;
+  bottom: 10px;
+  right: 3.5px;
+  color: #CFB05F;
+  content: '●';
+}

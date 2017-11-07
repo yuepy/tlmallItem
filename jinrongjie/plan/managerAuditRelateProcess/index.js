@@ -97,13 +97,23 @@
     },
     getData_control84_GBnWmz: function (elem) {},
     doAction_uiControl67_eW2tT0: function (data, elem) {
-      if (data.eventType == 'clcik') {
+      if (data.eventType == 'click') {
         elem.ownerDocument.defaultView.btnok_onclick();
       }
     },
     getTemplate_uiControl67_eW2tT0: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div onClick = {(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:'clcik'\n            })\n          }\n        }}>\n        \u786E\u5B9A\n      </div>\n    )\n  }\n});\n\n";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      'div',\n      { onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'clcik'\n            });\n          }\n        } },\n      '\\u786E\\u5B9A'\n    );\n  }\n});";
+      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    return (\n      <div onClick = {(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:\'click\'\n            })\n          }\n        }}>\n        \u786E\u5B9A\n      </div>\n    )\n  }\n});\n\n';
+      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      \'div\',\n      { onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: \'click\'\n            });\n          }\n        } },\n      \'\\u786E\\u5B9A\'\n    );\n  }\n});';
+    },
+    getData_control87_xcXeNq: function (elem) {},
+    doAction_uiControl75_VKZLap: function (data, elem) {
+      if (data.eventType == 'click') {
+        debugger;elem.ownerDocument.defaultView.btnok_onclick();
+      }
+    },
+    getTemplate_uiControl75_VKZLap: function () {
+      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    return (\n      <div onClick = {(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:\'click\'\n            })\n          }\n        }}>\n        \u786E\u5B9A\n      </div>\n    )\n  }\n});\n\n';
+      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      \'div\',\n      { onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: \'click\'\n            });\n          }\n        } },\n      \'\\u786E\\u5B9A\'\n    );\n  }\n});';
     }
   });
 })(window, ysp);

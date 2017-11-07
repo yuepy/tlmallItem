@@ -2157,4 +2157,67 @@ div[data-ysp-modelid='askForLeave']{
       }
     }
   }
+
+.ysp-main-leader-sign-wrapper{
+  position: relative;
+  background: #fff;
+  .approval-node-info{
+    margin: -15px;
+    div{
+      text-align: left;
+      font-size: 13px;
+      color: #646464;
+    }
+    >div{
+      display: inline-block;
+      padding: 0;
+    }
+    .approval-node-info-left-div{
+    	width: 33%;
+      padding-right: 10px;
+      position: relative;
+      bottom: 60px;
+      
+      div{
+        text-align: right;
+      }
+      >div:nth-child(2){
+        font-weight: bold;
+        color: #000;
+      }
+    }
+    .approval-node-info-right-div{
+      width: 67%;
+      div{
+        padding-left: 10px;
+      	text-align: left;  
+        border-left: 1px solid #CFB05F;
+      }
+      >div:nth-last-child(1){
+        >span{
+          span{
+            color: #97E5BB;
+            border-bottom: 1px solid #97E5BB;
+            cursor: pointer;
+          }
+        }
+      }
+      &:before{
+        font-size: 12px;
+        position: relative;
+        top: 11px;
+        right: 3.5px;
+        color: #CFB05F;
+        content: '●';
+      }
+      &:after{
+        position: relative;
+        bottom: 10px;
+        right: 3.5px;
+        color: #CFB05F;
+        content: '●';
+      }
+    }
+  }
+}
 //--------------------------------------------------------------主管领导审核 END

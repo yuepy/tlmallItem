@@ -3,6 +3,10 @@
   "id": "mainLeaderSign",
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118641&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+  },
   "chineseName": "待办-公文审批-主管领导签核",
   "description": "待办-公文审批-主管领导签核",
   "controls": {
@@ -327,6 +331,24 @@
       "toContexts": [
         {
           "toContextId": "context14_mXEdQk"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
+        }
+      ]
+    },
+    "flow54_Lsm93k": {
+      "fromContextId": "context14_mXEdQk",
+      "fromAction": "doAction",
+      "fromControlId": "control85_iBDsJk",
+      "toContexts": [
+        {
+          "toContextId": "context14_mXEdQk"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     }
