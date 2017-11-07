@@ -13,44 +13,21 @@
     getData_control33_gaRRTO: function (elem) {
       if (!elem) {
         return;
-      }
-      var data = {};
-      var titles = ['标题', '主目录', '文档所有者'];
-      var content = [];
-      if (!elem.querySelector("#BrowseTable")) {
-        data.titles = titles;
-        data.content = content;
-        return data;
-      }
-      var doc = elem.querySelector("#BrowseTable");
-      var trs = doc.querySelectorAll('tr');
-      [].forEach.call(trs, function (trItem, trIndex) {
-        var tds = trItem.querySelectorAll('td');
-        var tdContent = [];
-        [].forEach.call(tds, function (tdItem, tdIndex) {
+      }var data = {};var titles = ['标题', '主目录', '文档所有者'];var content = [];if (!elem.querySelector("#BrowseTable")) {
+        data.titles = titles;data.content = content;return data;
+      }var doc = elem.querySelector("#BrowseTable");var trs = doc.querySelectorAll('tr');[].forEach.call(trs, function (trItem, trIndex) {
+        var tds = trItem.querySelectorAll('td');var tdContent = [];[].forEach.call(tds, function (tdItem, tdIndex) {
           if (tdIndex != 0) {
             tdContent.push(tdItem.textContent.trim());
           }
-        });
-        content.push(tdContent);
-      });
-      data.titles = titles;
-      data.content = content;
-      return data;
+        });content.push(tdContent);
+      });data.titles = titles;data.content = content;return data;
     },
     doAction_uiControl21_S9tvqE: function (data, elem) {
-      var trIndex = data.dataCustom;
-      var eventType = data.eventType;
-      if (eventType == 'appendData') {
+      var trIndex = data.dataCustom;var eventType = data.eventType;if (eventType == 'appendData') {
         elem.querySelector('#BrowseTable').querySelectorAll('tr')[trIndex].querySelector('a').click();
-      }
-
-      function addObjectToSelect(obj, str) {
-        if (obj.tagName != "SELECT") return;
-        var oOption = document.createElement("OPTION");
-        obj.options.add(oOption);
-        $(oOption).val(str.split("~")[0]);
-        $(oOption).text(str.split("~")[1]);
+      }function addObjectToSelect(obj, str) {
+        if (obj.tagName != "SELECT") return;var oOption = document.createElement("OPTION");obj.options.add(oOption);$(oOption).val(str.split("~")[0]);$(oOption).text(str.split("~")[1]);
       }
     },
     getTemplate_uiControl21_S9tvqE: function () {

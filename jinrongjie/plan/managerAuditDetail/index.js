@@ -12,124 +12,178 @@
       return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.data.customData;\n    var title = data.title || "";\n    var numbering = data.numbering;\n    return React.createElement(\n      "div",\n      null,\n      React.createElement(\n        "div",\n        { className: "ysp-manager-audit-title" },\n        React.createElement(\n          "div",\n          { className: "ysp-manager-audit-main-title" },\n          title && title\n        ),\n        React.createElement(\n          "div",\n          { className: "ysp-manager-audit-subtitle" },\n          React.createElement(\n            "span",\n            null,\n            "\\u7F16\\u53F7\\uFF1A"\n          ),\n          React.createElement(\n            "span",\n            null,\n            numbering && numbering\n          )\n        )\n      )\n    );\n  }\n});';
     },
     getData_control23_nAAQod: function (elem) {
-      if (!elem) {
-        return;
-      }var data = {};var content = [];var titles = [];var fileSize = [];if (!elem.querySelector('tbody')) {
-        return;
-      } // var tbody = elem.querySelector('tbody');
-      // if (!tbody.querySelectorAll('tr')) {
+      // if (!elem) {
       //   return;
       // }
-      // var tbodyTrs = tbody.querySelectorAll('tr');
-      var tbody = $(elem).children('tbody');var tbodyTrs = $(tbody).children('tr');if (tbodyTrs.length < 1) {
+      // var data = {};
+      // var content = [];
+      // var titles = [];
+      // var fileSize = [];
+      // if (!elem.querySelector('tbody')) {
+      //   return;
+      // } 
+      // var tbody = $(elem).children('tbody');
+      // var tbodyTrs = $(tbody).children('tr');
+      // if (tbodyTrs.length < 1) {
+      //   return;
+      // }
+      // [].forEach.call(tbodyTrs, function (trItem, trIndex) {
+      //   var tds = $(trItem).children('td'); // 	采集第一行：申请人单位
+      //   // 	申请人单位
+      //   if (trIndex == 0) {
+      //     [].forEach.call(tds, function (tdItem, tdIndex) {
+      //       if (!tdItem.querySelector('span')) {
+      //         titles.push(tdItem.textContent);
+      //       } else {
+      //         content.push(tdItem.textContent);
+      //       }
+      //     });
+      //   } // 	文件缓急
+      //   if (trIndex == 1) {
+      //     [].forEach.call(tds, function (tdItem, tdIndex) {
+      //       if (!tdItem.querySelector('select') && !tdItem.querySelector('span')) {
+      //         titles.push(tdItem.textContent);
+      //       } else {
+      //         if (tdItem.querySelector('select')) {
+      //           var optionIndex = tdItem.querySelector('select').selectedIndex;
+      //           content.push(tdItem.querySelector('select').options[optionIndex].textContent.trim());
+      //         } else {
+      //           content.push(tdItem.textContent);
+      //         }
+      //       }
+      //     });
+      //   } // 	标题
+      //   if (trIndex == 2) {
+      //     [].forEach.call(tds, function (tdItem, tdIndex) {
+      //       if (!tdItem.querySelector('input')) {
+      //         titles.push(tdItem.textContent);
+      //       } else {
+      //         content.push(tdItem.querySelector('input').value);
+      //       }
+      //     });
+      //   } // 	摘要
+      //   if (trIndex == 3) {
+      //     [].forEach.call(tds, function (tdItem, tdIndex) {
+      //       if (!tdItem.querySelector('textarea')) {
+      //         titles.push(tdItem.textContent.trim());
+      //       } else {
+      //         content.push(tdItem.querySelector('textarea').value.trim());
+      //       }
+      //     });
+      //   } // 	附件
+      //   if (trIndex == 5) {
+      //     titles.push(tds[0].textContent);
+      //     var files = tds[1].querySelectorAll('a');
+      //     var fileName = [];
+      //     if (files.length > 0) {
+      //       [].forEach.call(files, function (fileItem, fileIndex) {
+      //         if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
+      //           fileName.push(fileItem.textContent.trim());
+      //           var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();
+      //           fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('(')));
+      //         }
+      //       });
+      //     }
+
+      //     content.push(fileName);
+      //   } // 	相关流程
+      //   if (trIndex == 6) {
+      //     [].forEach.call(tds, function (tdItem, tdIndex) {
+      //       if (tdIndex == 0) {
+      //         titles.push(tdItem.textContent.trim());
+      //       } else {
+      //         content.push(tdItem.textContent.trim());
+      //       }
+      //     });
+      //   }
+      //   if (trIndex == 7 || trIndex == 8) {
+      //     [].forEach.call(tds, function (tdItem, tdIndex) {
+      //       if (tdIndex == 0) {
+      //         titles.push(tdItem.textContent.trim());
+      //       } else {
+      //         content.push(tdItem.textContent.trim());
+      //       }
+      //     });
+      //   }
+      //   if (trIndex == 9) {
+      //     [].forEach.call(tds, function (tdItem, tdIndex) {
+      //       if (tdItem.textContent.trim().indexOf('主管领导') !== -1) {
+      //         if (tdIndex == 0) {
+      //           titles.push(tdItem.textContent.replace(/\s/g).trim());
+      //         } else {
+      //           content.push(tdItem.textContent.replace(/\s/g).trim());
+      //         }
+      //       }
+      //     });
+      //   }
+      //   if (trIndex == 10) {
+
+      //     [].forEach.call(tds, function (tdItem, tdIndex) {
+      //       if (tdItem.textContent.replace(/\s/g).trim().startsWith('领导审批')) {
+      //         if (tdIndex == 0) {
+      //           titles.push(tdItem.textContent.replace(/\s/g).trim());
+      //         } else {
+      //           content.push(tdItem.textContent.replace(/\s/g).trim());
+      //         }
+      //       }
+      //     });
+      //   }
+      //   if (trIndex == 11 || trIndex == 12 || trIndex == 13) {
+      //     [].forEach.call(tds, function (tdItem, tdIndex) {
+      //       if (tdIndex == 0) {
+      //         titles.push(tdItem.textContent.trim());
+      //       } else {
+      //         content.push(tdItem.textContent.trim());
+      //       }
+      //     });
+      //   }
+      // });
+      // data.titles = titles;
+      // data.content = content;
+      // data.fileSize = fileSize.slice(fileSize.lastIndexOf('\('));
+      // return data;
+      if (!elem) {
         return;
-      }[].forEach.call(tbodyTrs, function (trItem, trIndex) {
-        var tds = $(trItem).children('td'); // 	采集第一行：申请人单位
-        // 	申请人单位
-        if (trIndex == 0) {
-          [].forEach.call(tds, function (tdItem, tdIndex) {
-            if (!tdItem.querySelector('span')) {
-              titles.push(tdItem.textContent);
-            } else {
-              content.push(tdItem.textContent);
+      }if (elem) {
+        var data = {};var content = [];var titles = [];var fileSize = [];var trs = $(elem.querySelector('tbody')).children('tr');[].forEach.call(trs, function (trItem, trIndex) {
+          var rows = [[], []];
+          $(trItem).children("td:nth-child(odd)").each(function (idx, dt) {
+            if (dt.textContent.indexOf('签字意见') == -1) {
+              titles.push(dt.textContent.replace(/\s/g, "").trim());
             }
-          });
-        } // 	文件缓急
-        if (trIndex == 1) {
-          [].forEach.call(tds, function (tdItem, tdIndex) {
-            if (!tdItem.querySelector('select') && !tdItem.querySelector('span')) {
-              titles.push(tdItem.textContent);
-            } else {
-              if (tdItem.querySelector('select')) {
-                var optionIndex = tdItem.querySelector('select').selectedIndex;content.push(tdItem.querySelector('select').options[optionIndex].textContent.trim());
-              } else {
-                content.push(tdItem.textContent);
+          });$(trItem).children("td:nth-child(even)").each(function (idx, dt) {
+            if (dt.querySelector("select")) {
+              var optionIndex = dt.querySelector('select').selectedIndex;content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
+            } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
+              if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
+                if (trIndex == 5) {
+                  var files = dt.querySelectorAll('a'); // console.log(111);
+                  var fileName = [];if (files.length > 0) {
+                    [].forEach.call(files, function (fileItem, fileIndex) {
+                      if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
+                        fileName.push(fileItem.textContent.trim());
+                        var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('(')));
+                      }
+                    });content.push(fileName);
+                  }
+                } else {
+                  content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
+                }
               }
-            }
-          });
-        } // 	标题
-        if (trIndex == 2) {
-          [].forEach.call(tds, function (tdItem, tdIndex) {
-            if (!tdItem.querySelector('input')) {
-              titles.push(tdItem.textContent);
             } else {
-              content.push(tdItem.querySelector('input').value);
+              content.push('暂无');
             }
           });
-        } // 	摘要
-        if (trIndex == 3) {
-          [].forEach.call(tds, function (tdItem, tdIndex) {
-            if (!tdItem.querySelector('textarea')) {
-              titles.push(tdItem.textContent.trim());
-            } else {
-              content.push(tdItem.querySelector('textarea').value.trim());
-            }
-          });
-        } // 	附件
-        if (trIndex == 5) {
-          titles.push(tds[0].textContent);var files = tds[1].querySelectorAll('a');var fileName = [];if (files.length > 0) {
-            [].forEach.call(files, function (fileItem, fileIndex) {
-              if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
-                fileName.push(fileItem.textContent.trim());var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('(')));
-              }
-            });
-          }content.push(fileName);
-        } // 	相关流程
-        if (trIndex == 6) {
-          [].forEach.call(tds, function (tdItem, tdIndex) {
-            if (tdIndex == 0) {
-              titles.push(tdItem.textContent.trim());
-            } else {
-              content.push(tdItem.textContent.trim());
-            }
-          });
-        }if (trIndex == 7 || trIndex == 8) {
-          [].forEach.call(tds, function (tdItem, tdIndex) {
-            if (tdIndex == 0) {
-              titles.push(tdItem.textContent.trim());
-            } else {
-              content.push(tdItem.textContent.trim());
-            }
-          });
-        }if (trIndex == 9) {
-          [].forEach.call(tds, function (tdItem, tdIndex) {
-            if (tdItem.textContent.trim().indexOf('主管领导') !== -1) {
-              if (tdIndex == 0) {
-                titles.push(tdItem.textContent.trim());
-              } else {
-                content.push(tdItem.textContent.trim());
-              }
-            }
-          });
-        }if (trIndex == 10) {
-          [].forEach.call(tds, function (tdItem, tdIndex) {
-            if (tdItem.textContent.trim().startsWith('领导审批')) {
-              if (tdIndex == 0) {
-                titles.push(tdItem.textContent.trim());
-              } else {
-                content.push(tdItem.textContent.trim());
-              }
-            }
-          });
-        }if (trIndex == 11 || trIndex == 12 || trIndex == 13) {
-          [].forEach.call(tds, function (tdItem, tdIndex) {
-            if (tdIndex == 0) {
-              titles.push(tdItem.textContent.trim());
-            } else {
-              content.push(tdItem.textContent.trim());
-            }
-          });
-        }
-      });data.titles = titles;data.content = content;data.fileSize = fileSize.slice(fileSize.lastIndexOf('\('));return data;
-    },
-    doAction_uiControl23_PUM7iP: function (data, elem) {
+        });data.titles = titles;data.content = content;data.fileSize = fileSize;return data;
+      }
+    }, doAction_uiControl23_PUM7iP: function (data, elem) {
       var clickType = data.eventType;var downLoadIndex = data.dataCustom;var buttonList = elem.querySelector('#selectDownload').querySelectorAll('button');if (clickType == 'downLoad') {
         buttonList[downLoadIndex].click();
       }
     },
     getTemplate_uiControl23_PUM7iP: function () {
-      var selfTemplate = 'import {\n\tComponent\n} from \'react\';\nimport {\n\tCustomHeader, Dialog\n} from \'ysp-custom-components\';\nexport default class extends Component {\n  constructor(props){// \u6784\u9020\u51FD\u6570-->\u521D\u59CB\u5316\n    super(props);\n    this.state={\n      displayFlg:false\n    }\n\t}\n  \n  btnClick(){//\u663E\u793A\u66F4\u591A\n    this.setState((prevState, props) => ({\n  \t\tdisplayFlg: !prevState.displayFlg\n\t\t}));\n  }\n  \n  downLoadClick(e){//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n\t\tlet handler=this.props.customHandler;\n\t\tvar target=e.target;\n\t\tif(handler){\n\t\t\thandler({\n        data: target.getAttribute(\'data-index\'),\n\t\t\t\teventType: "downLoad"\n\t\t\t})\n\t\t}\n\t}\n  \n  render (){\n    var _this = this;\n    var data = this.props.data.customData||{};\n    var titles = data.titles||[];\n    var content = data.content||[];\n    var fileSize = data.fileSize||[];\n    return (\n      <div className="ysp-manager-audit-wrapper">\n        <span className="left-border"></span><span>\u57FA\u672C\u4FE1\u606F</span>\n        {titles ? titles.map((item,index)=>{\n          if(!this.state.displayFlg && index>4){\n            return null;\n          }\n          return (\n           <div>\n            {index==8 &&\n                <div>\n                  <div className="title">{item}</div>\n                  {content[index].length>0&&\n                  \tcontent[index].map((fileItem, fileIndex)=>{\n                    \treturn (\n                      \t<div className="annex-download">\n                          {fileItem}\n                          <span className="download-log" data-index={fileIndex} onClick={_this.downLoadClick.bind(_this)}></span>\n                          <span>{fileSize[fileIndex]}</span>\n                        </div>\n                      )\n                  \t})\n                  }\n                </div>\n            }\n            {index!==8 &&\n              <div>\n                <div className="title">{item}</div>\n                <div className="content">{content[index]}</div>\n              </div>\n          \t}\n            </div>\n          );\n        }):\'\u65E0\u6570\u636E\'}\n        <div className={_this.state.displayFlg ?"load-up-arrow":"load-more-arrow"} onClick={_this.btnClick.bind(_this)}>\n          {_this.state.displayFlg ? \'\u6536\u8D77\u5168\u90E8\u5185\u5BB9\' : \'\u663E\u793A\u66F4\u591A\'}\n        </div>\n\t\t\t</div>\n    );\n  }\n\t\n}';
-      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props)); // \u6784\u9020\u51FD\u6570-->\u521D\u59CB\u5316\n\n\n    _this2.state = {\n      displayFlg: false\n    };\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'btnClick\',\n    value: function btnClick() {\n      //\u663E\u793A\u66F4\u591A\n      this.setState(function (prevState, props) {\n        return {\n          displayFlg: !prevState.displayFlg\n        };\n      });\n    }\n  }, {\n    key: \'downLoadClick\',\n    value: function downLoadClick(e) {\n      //\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          data: target.getAttribute(\'data-index\'),\n          eventType: "downLoad"\n        });\n      }\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this3 = this;\n\n      var _this = this;\n      var data = this.props.data.customData || {};\n      var titles = data.titles || [];\n      var content = data.content || [];\n      var fileSize = data.fileSize || [];\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-manager-audit-wrapper\' },\n        React.createElement(\'span\', { className: \'left-border\' }),\n        React.createElement(\n          \'span\',\n          null,\n          \'\\u57FA\\u672C\\u4FE1\\u606F\'\n        ),\n        titles ? titles.map(function (item, index) {\n          if (!_this3.state.displayFlg && index > 4) {\n            return null;\n          }\n          return React.createElement(\n            \'div\',\n            null,\n            index == 8 && React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'div\',\n                { className: \'title\' },\n                item\n              ),\n              content[index].length > 0 && content[index].map(function (fileItem, fileIndex) {\n                return React.createElement(\n                  \'div\',\n                  { className: \'annex-download\' },\n                  fileItem,\n                  React.createElement(\'span\', { className: \'download-log\', \'data-index\': fileIndex, onClick: _this.downLoadClick.bind(_this) }),\n                  React.createElement(\n                    \'span\',\n                    null,\n                    fileSize[fileIndex]\n                  )\n                );\n              })\n            ),\n            index !== 8 && React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'div\',\n                { className: \'title\' },\n                item\n              ),\n              React.createElement(\n                \'div\',\n                { className: \'content\' },\n                content[index]\n              )\n            )\n          );\n        }) : \'\u65E0\u6570\u636E\',\n        React.createElement(\n          \'div\',\n          { className: _this.state.displayFlg ? "load-up-arrow" : "load-more-arrow", onClick: _this.btnClick.bind(_this) },\n          _this.state.displayFlg ? \'\u6536\u8D77\u5168\u90E8\u5185\u5BB9\' : \'\u663E\u793A\u66F4\u591A\'\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
+      var selfTemplate = 'import {\n\tComponent\n} from \'react\';\nimport {\n\tCustomHeader, Dialog\n} from \'ysp-custom-components\';\nexport default class extends Component {\n  constructor(props){// \u6784\u9020\u51FD\u6570-->\u521D\u59CB\u5316\n    super(props);\n    this.state={\n      displayFlg:false\n    }\n\t}\n  \n  btnClick(){//\u663E\u793A\u66F4\u591A\n    this.setState((prevState, props) => ({\n  \t\tdisplayFlg: !prevState.displayFlg\n\t\t}));\n  }\n  \n  downLoadClick(e){//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n\t\tlet handler=this.props.customHandler;\n\t\tvar target=e.target;\n\t\tif(handler){\n\t\t\thandler({\n        data: target.getAttribute(\'data-index\'),\n\t\t\t\teventType: "downLoad"\n\t\t\t})\n\t\t}\n\t}\n  \n  render (){\n    var _this = this;\n    var data = this.props.data.customData||{};\n    var titles = data.titles||[];\n    var content = data.content||[];\n    var fileSize = data.fileSize||[];\n    console.log("titles:"+titles.length);\n    console.log(content.length);\n    \n    return (\n      <div className="ysp-manager-audit-wrapper">\n        <span className="left-border"></span><span>\u57FA\u672C\u4FE1\u606F</span>\n        {titles ? titles.map((item,index)=>{\n          if(!this.state.displayFlg && index>4){\n            return null;\n          }\n          if(item === \'\u6B63\u6587\'){\n            return null;\n          }\n          return (\n           <div>\n            {item ===\'\u9644\u4EF6\' &&\n                <div>\n                  <div className="title">{item}</div>\n                  {content[index].length>0&&\n                  \tcontent[index].map((fileItem, fileIndex)=>{\n                    \treturn (\n                      \t<div className="annex-download">\n                          {fileItem}\n                          <span className="download-log" data-index={fileIndex} onClick={_this.downLoadClick.bind(_this)}></span>\n                          <span>{fileSize[fileIndex]}</span>\n                        </div>\n                      )\n                  \t})\n                  }\n                </div>\n            }\n            {item!==\'\u9644\u4EF6\' &&\n              <div>\n                <div className="title">{item}</div>\n                <div className="content">{content[index]}</div>\n              </div>\n          \t}\n            </div>\n          );\n        }):\'\u65E0\u6570\u636E\'}\n        <div className={_this.state.displayFlg ?"load-up-arrow":"load-more-arrow"} onClick={_this.btnClick.bind(_this)}>\n          {_this.state.displayFlg ? \'\u6536\u8D77\u5168\u90E8\u5185\u5BB9\' : \'\u663E\u793A\u66F4\u591A\'}\n        </div>\n\t\t\t</div>\n    );\n  }\n\t\n}';
+      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props)); // \u6784\u9020\u51FD\u6570-->\u521D\u59CB\u5316\n\n\n    _this2.state = {\n      displayFlg: false\n    };\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'btnClick\',\n    value: function btnClick() {\n      //\u663E\u793A\u66F4\u591A\n      this.setState(function (prevState, props) {\n        return {\n          displayFlg: !prevState.displayFlg\n        };\n      });\n    }\n  }, {\n    key: \'downLoadClick\',\n    value: function downLoadClick(e) {\n      //\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          data: target.getAttribute(\'data-index\'),\n          eventType: "downLoad"\n        });\n      }\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this3 = this;\n\n      var _this = this;\n      var data = this.props.data.customData || {};\n      var titles = data.titles || [];\n      var content = data.content || [];\n      var fileSize = data.fileSize || [];\n      console.log("titles:" + titles.length);\n      console.log(content.length);\n\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-manager-audit-wrapper\' },\n        React.createElement(\'span\', { className: \'left-border\' }),\n        React.createElement(\n          \'span\',\n          null,\n          \'\\u57FA\\u672C\\u4FE1\\u606F\'\n        ),\n        titles ? titles.map(function (item, index) {\n          if (!_this3.state.displayFlg && index > 4) {\n            return null;\n          }\n          if (item === \'\u6B63\u6587\') {\n            return null;\n          }\n          return React.createElement(\n            \'div\',\n            null,\n            item === \'\u9644\u4EF6\' && React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'div\',\n                { className: \'title\' },\n                item\n              ),\n              content[index].length > 0 && content[index].map(function (fileItem, fileIndex) {\n                return React.createElement(\n                  \'div\',\n                  { className: \'annex-download\' },\n                  fileItem,\n                  React.createElement(\'span\', { className: \'download-log\', \'data-index\': fileIndex, onClick: _this.downLoadClick.bind(_this) }),\n                  React.createElement(\n                    \'span\',\n                    null,\n                    fileSize[fileIndex]\n                  )\n                );\n              })\n            ),\n            item !== \'\u9644\u4EF6\' && React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'div\',\n                { className: \'title\' },\n                item\n              ),\n              React.createElement(\n                \'div\',\n                { className: \'content\' },\n                content[index]\n              )\n            )\n          );\n        }) : \'\u65E0\u6570\u636E\',\n        React.createElement(\n          \'div\',\n          { className: _this.state.displayFlg ? "load-up-arrow" : "load-more-arrow", onClick: _this.btnClick.bind(_this) },\n          _this.state.displayFlg ? \'\u6536\u8D77\u5168\u90E8\u5185\u5BB9\' : \'\u663E\u793A\u66F4\u591A\'\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
     getData_control24_s2hR81: function (elem) {
       if (!elem) {
@@ -171,7 +225,7 @@
     },
     getTemplate_uiControl27_VCIGbH: function () {
       var selfTemplate = 'import {\n  Component\n} from \'react\';\nimport {\n\tCommonHeader,Dialog\n} from \'ysp-custom-components\';\nexport default class extends Component {\n  constructor(props){\n    super(props);\n  }\n  btnClick(e){//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n    let handler=this.props.customHandler;\n    var target=e.target;\n    if(handler){\n      handler({\n        eventType:"docClick"\n      })\n    }\n  }\n  render() {\n    var _this = this;\n    var data = this.props.data.customData;\n    return (\n      <div className="ysp-manageraudit-relate-doc">\n        <span>{data&&data.title}</span>\n        <div className="border-bottom"><span onClick={_this.btnClick.bind(_this)} className="ysp-search-icon"></span></div>\n      </div>\n    )\n  }\n}';
-      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: \'btnClick\',\n    value: function btnClick(e) {\n      //\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          eventType: "docClick"\n        });\n      }\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this = this;\n      var data = this.props.data.customData;\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-manageraudit-relate-doc\' },\n        React.createElement(\n          \'span\',\n          null,\n          data && data.title\n        ),\n        React.createElement(\n          \'div\',\n          { className: \'border-bottom\' },\n          React.createElement(\'span\', { onClick: _this.btnClick.bind(_this), className: \'ysp-search-icon\' })\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
+      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: 'btnClick',\n    value: function btnClick(e) {\n      //\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          eventType: \"docClick\"\n        });\n      }\n    }\n  }, {\n    key: 'render',\n    value: function render() {\n      var _this = this;\n      var data = this.props.data.customData;\n      return React.createElement(\n        'div',\n        { className: 'ysp-manageraudit-relate-doc' },\n        React.createElement(\n          'span',\n          null,\n          data && data.title\n        ),\n        React.createElement(\n          'div',\n          { className: 'border-bottom' },\n          React.createElement('span', { onClick: _this.btnClick.bind(_this), className: 'ysp-search-icon' })\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
     },
     getData_control29_tXFBoh: function (elem) {
       if (!elem) {
