@@ -37,73 +37,37 @@
     getData_control12_0yipNy: function (elem) {
       if (!elem) {
         return;
-      }
-      var data = [];
-      var content = [];
-      var values = [];
-      if (elem.querySelector('#date2during')) {
-        var options = elem.querySelector('#date2during').querySelectorAll('option');
-        for (var i = 0; i < options.length; i++) {
+      }var data = [];var content = [];var values = [];if (elem.querySelector('#date2during')) {
+        var options = elem.querySelector('#date2during').querySelectorAll('option');for (var i = 0; i < options.length; i++) {
           if (options[i].textContent.trim() !== "") {
-            content.push(options[i].textContent);
-            values.push(options[i].value);
+            content.push(options[i].textContent);values.push(options[i].value);
           }
         }
       } else if (elem.querySelector('select')) {
-        var options = elem.querySelector('#date2during').querySelectorAll('option');
-        for (var i = 0; i < options.length; i++) {
+        var options = elem.querySelector('#date2during').querySelectorAll('option');for (var i = 0; i < options.length; i++) {
           if (options[i].textContent.trim() !== "") {
-            content.push(options[i].textContent);
-            values.push(options[i].value);
+            content.push(options[i].textContent);values.push(options[i].value);
           }
         }
-      }
-      data[0] = values;
-      data[1] = content;
-      return data;
+      }data[0] = values;data[1] = content;return data;
     },
     doAction_uiControl15_IFTFa2: function (data, elem) {
       // var clickType = data.eventType;
       // if (clickType == 'childNodes') {
       //   elem.querySelector('#secCategoryBtn').click();
       // }
-      switch (data.eventType) {
-        case 'childNodes':
-          elem.querySelector('#secCategoryBtn').click();
-          break;
-        case 'dataInput':
-          upValue(data.dataCustom);
-          break;
-        case 'search':
-          doSearch(elem);
-          break;
-      }
-
-      function upValue(data) {
-        switch (data.content) {
-          case 'searchid':
-            elem.querySelector('input[name="searchid"]').value = data.value;
-            break;
-          case 'searchsubject':
-            elem.querySelector('input[name="searchsubject"]').value = data.value;
-            break;
-          case 'date2during':
-            elem.querySelector('#date2during').value = data.value;
-            break;
-          case 'searchdatefrom':
-            elem.querySelector('#searchdatefromspan').textContent = data.value;
-            elem.querySelector('input[name="searchdatefrom"]').value = data.value;
-            break;
-          case 'searchdateto':
-            elem.querySelector('#searchdatetospan').textContent = data.value;
-            elem.querySelector('input[name="searchdatefrom"]').value = data.value;
-            break;
-        }
-      }
-
-      function doSearch(elem) {
-        var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');
-        if (iframe) {
+      switch (data.eventType) {case 'childNodes':
+          elem.querySelector('#secCategoryBtn').click();break;case 'dataInput':
+          upValue(data.dataCustom);break;case 'search':
+          doSearch(elem);break;}function upValue(data) {
+        switch (data.content) {case 'searchid':
+            elem.querySelector('input[name="searchid"]').value = data.value;break;case 'searchsubject':
+            elem.querySelector('input[name="searchsubject"]').value = data.value;break;case 'date2during':
+            elem.querySelector('#date2during').value = data.value;break;case 'searchdatefrom':
+            elem.querySelector('#searchdatefromspan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;case 'searchdateto':
+            elem.querySelector('#searchdatetospan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;}
+      }function doSearch(elem) {
+        var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
           iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
         }
       }

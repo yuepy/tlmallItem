@@ -469,9 +469,9 @@ li {list-style: none}
   >div{
     display: inline-block;
     width: 50%;
-    span,input,select{
-      width: 50%;
-    }
+    // span,input,select{
+    //   width: 50%;
+    // }
     .date{
       span{width: 25%;}
       input{
@@ -486,9 +486,20 @@ li {list-style: none}
   }
   .left-content{
     padding: 0 10px 0 0;
+    .small-span{width: 25%;}
+    .small-input{width: 75%;}
+    .small-select{width: 60%;}
+    .large-span1{width: 40%;}
+    .large-span2{width: 50%;}
+    .small-input1{width: 60%;}
+    .small-input2{width: 50%;}
   }
   .right-content{
     padding: 0 0 0 10px;
+    .small-span{width: 30%;}
+    .small-input{width: 70%;}
+    .large-span1{width: 40%;}
+    .small-input1{width: 60%;}
   }
   .search-button{
     color: #fff;
@@ -2120,7 +2131,7 @@ div[data-ysp-modelid='mainLeaderSign']{
     
     ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
       a,ul,li{height: 35px;line-height: 35px;}
-      background: none;
+      background: #fff;
       // border-bottom: 10px solid #F3F3F3;
       li{
         a{
@@ -2219,6 +2230,7 @@ div[data-ysp-modelid='chairmanSign']{
         a{
           width: auto;
           display: inline;
+          background: none;
         }
         ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
           border-bottom: 3px solid #C29A2A;
