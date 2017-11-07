@@ -13,19 +13,44 @@
     getData_control33_gaRRTO: function (elem) {
       if (!elem) {
         return;
-      }var data = {};var titles = ['标题', '主目录', '文档所有者'];var content = [];if (!elem.querySelector("#BrowseTable")) {
-        data.titles = titles;data.content = content;return data;
-      }var doc = elem.querySelector("#BrowseTable");var trs = doc.querySelectorAll('tr');[].forEach.call(trs, function (trItem, trIndex) {
-        var tds = trItem.querySelectorAll('td');var tdContent = [];[].forEach.call(tds, function (tdItem, tdIndex) {
+      }
+      var data = {};
+      var titles = ['标题', '主目录', '文档所有者'];
+      var content = [];
+      if (!elem.querySelector("#BrowseTable")) {
+        data.titles = titles;
+        data.content = content;
+        return data;
+      }
+      var doc = elem.querySelector("#BrowseTable");
+      var trs = doc.querySelectorAll('tr');
+      [].forEach.call(trs, function (trItem, trIndex) {
+        var tds = trItem.querySelectorAll('td');
+        var tdContent = [];
+        [].forEach.call(tds, function (tdItem, tdIndex) {
           if (tdIndex != 0) {
             tdContent.push(tdItem.textContent.trim());
           }
-        });content.push(tdContent);
-      });data.titles = titles;data.content = content;return data;
+        });
+        content.push(tdContent);
+      });
+      data.titles = titles;
+      data.content = content;
+      return data;
     },
     doAction_uiControl21_S9tvqE: function (data, elem) {
-      var trIndex = data.dataCustom;var eventType = data.eventType;if (eventType == 'appendData') {
+      var trIndex = data.dataCustom;
+      var eventType = data.eventType;
+      if (eventType == 'appendData') {
         elem.querySelector('#BrowseTable').querySelectorAll('tr')[trIndex].querySelector('a').click();
+      }
+
+      function addObjectToSelect(obj, str) {
+        if (obj.tagName != "SELECT") return;
+        var oOption = document.createElement("OPTION");
+        obj.options.add(oOption);
+        $(oOption).val(str.split("~")[0]);
+        $(oOption).text(str.split("~")[1]);
       }
     },
     getTemplate_uiControl21_S9tvqE: function () {
@@ -35,37 +60,73 @@
     getData_control12_0yipNy: function (elem) {
       if (!elem) {
         return;
-      }var data = [];var content = [];var values = [];if (elem.querySelector('#date2during')) {
-        var options = elem.querySelector('#date2during').querySelectorAll('option');for (var i = 0; i < options.length; i++) {
+      }
+      var data = [];
+      var content = [];
+      var values = [];
+      if (elem.querySelector('#date2during')) {
+        var options = elem.querySelector('#date2during').querySelectorAll('option');
+        for (var i = 0; i < options.length; i++) {
           if (options[i].textContent.trim() !== "") {
-            content.push(options[i].textContent);values.push(options[i].value);
+            content.push(options[i].textContent);
+            values.push(options[i].value);
           }
         }
       } else if (elem.querySelector('select')) {
-        var options = elem.querySelector('#date2during').querySelectorAll('option');for (var i = 0; i < options.length; i++) {
+        var options = elem.querySelector('#date2during').querySelectorAll('option');
+        for (var i = 0; i < options.length; i++) {
           if (options[i].textContent.trim() !== "") {
-            content.push(options[i].textContent);values.push(options[i].value);
+            content.push(options[i].textContent);
+            values.push(options[i].value);
           }
         }
-      }data[0] = values;data[1] = content;return data;
+      }
+      data[0] = values;
+      data[1] = content;
+      return data;
     },
     doAction_uiControl15_IFTFa2: function (data, elem) {
       // var clickType = data.eventType;
       // if (clickType == 'childNodes') {
       //   elem.querySelector('#secCategoryBtn').click();
       // }
-      switch (data.eventType) {case 'childNodes':
-          elem.querySelector('#secCategoryBtn').click();break;case 'dataInput':
-          upValue(data.dataCustom);break;case 'search':
-          doSearch(elem);break;}function upValue(data) {
-        switch (data.content) {case 'searchid':
-            elem.querySelector('input[name="searchid"]').value = data.value;break;case 'searchsubject':
-            elem.querySelector('input[name="searchsubject"]').value = data.value;break;case 'date2during':
-            elem.querySelector('#date2during').value = data.value;break;case 'searchdatefrom':
-            elem.querySelector('#searchdatefromspan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;case 'searchdateto':
-            elem.querySelector('#searchdatetospan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;}
-      }function doSearch(elem) {
-        var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
+      switch (data.eventType) {
+        case 'childNodes':
+          elem.querySelector('#secCategoryBtn').click();
+          break;
+        case 'dataInput':
+          upValue(data.dataCustom);
+          break;
+        case 'search':
+          doSearch(elem);
+          break;
+      }
+
+      function upValue(data) {
+        switch (data.content) {
+          case 'searchid':
+            elem.querySelector('input[name="searchid"]').value = data.value;
+            break;
+          case 'searchsubject':
+            elem.querySelector('input[name="searchsubject"]').value = data.value;
+            break;
+          case 'date2during':
+            elem.querySelector('#date2during').value = data.value;
+            break;
+          case 'searchdatefrom':
+            elem.querySelector('#searchdatefromspan').textContent = data.value;
+            elem.querySelector('input[name="searchdatefrom"]').value = data.value;
+            break;
+          case 'searchdateto':
+            elem.querySelector('#searchdatetospan').textContent = data.value;
+            elem.querySelector('input[name="searchdatefrom"]').value = data.value;
+            break;
+        }
+      }
+
+      function doSearch(elem) {
+        var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');
+        if (iframe) {
           iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
         }
       }
@@ -77,20 +138,25 @@
     getData_control35_DlAtJI: function (elem) {
       if (!elem) {
         return;
-      }var data = {};var content = []; // var values = [];
-      var selectedData = elem.querySelectorAll('option');if (selectedData.length > 0) {
+      }
+      var data = {};
+      var content = []; // var values = [];
+      var selectedData = elem.querySelectorAll('option');
+      if (selectedData.length > 0) {
         [].forEach.call(selectedData, (item, index) => {
           content.push(item.innerHTML.trim()); // values.push(item.value);
         });
       } else {
         content.push('暂无选中数据');
-      }data.content = content; // data.values = values;
+      }
+      data.content = content; // data.values = values;
       return data;
     },
     doAction_uiControl31_fyTbiy: function (data, elem) {
       if (data.eventType == 'removeData') {
         if (elem.options.length > 0) {
-          elem.querySelectorAll('option')[data.dataCustom].selected = true;elem.ownerDocument.defaultView.deleteFromList();
+          elem.querySelectorAll('option')[data.dataCustom].selected = true;
+          elem.ownerDocument.defaultView.deleteFromList();
         }
       }
     },
@@ -103,6 +169,16 @@
     getTemplate_uiControl36_LwqiC4: function () {
       var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div className=\"background-gray\"></div>\n    )\n  }\n});";
       return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    return React.createElement(\"div\", { className: \"background-gray\" });\n  }\n});";
+    },
+    getData_control83_SwDpyP: function (elem) {},
+    doAction_uiControl66_5fUXvb: function (data, elem) {
+      if (data.eventType == 'clcik') {
+        elem.ownerDocument.defaultView.btnok_onclick();
+      }
+    },
+    getTemplate_uiControl66_5fUXvb: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n     var handler = this.props.customHandler;\n      if(handler){\n        handler({\n          eventType:'click'\n        })\n      }\n\t},\n  render: function() {\n    return (\n      <div onClick = {(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:'clcik'\n            })\n          }\n        }}>\n        \u786E\u5B9A\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      'div',\n      { onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'clcik'\n            });\n          }\n        } },\n      '\\u786E\\u5B9A'\n    );\n  }\n});";
     }
   });
 })(window, ysp);
