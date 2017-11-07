@@ -116,8 +116,19 @@
                     aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
                     aWin.parent.close();
                 }
+                if(aWin.setResourceStr){
+                  aWin.setResourceStr = function(){
+                  aWin.documentids ="";
+                  aWin.documentnames = "";
+                  for(var i=0;i<aWin.resourceArray.length;i++){
+                    aWin.documentids += "," +aWin.resourceArray[i].split("~")[0];
+                    aWin.documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
+                  }
+                  doc.all("documentids").value = aWin.documentids.substring(1)
+                }
+              }
             }
-          if(aWin.location.href.indexOf('MultiRequestBrowser.jsp') && aWin.btnok_onclick){
+          if(aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 && aWin.btnok_onclick){
               aWin.btnok_onclick = function() {
                       debugger;
                       aWin.setResourceStr();
@@ -137,19 +148,6 @@
           //       $("input[name=resourceids]").val(aWin.resourceids.substring(1));
           //     }
           // }
-            // if(aWin.setResourceStr){
-            //   aWin.setResourceStr = function(){
-            //     var documentids = aWin.documentids;
-            //     var documentnames = aWin.documentnames
-            //   documentids ="";
-            //   documentnames = "";
-            //   for(var i=0;i<aWin.resourceArray.length;i++){
-            //     documentids += "," +aWin.resourceArray[i].split("~")[0];
-            //     documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
-            //   }
-            //   doc.all("documentids").value = documentids.substring(1)
-            // }
-            // }
             if (aWin.replaceToHtml) {
                 aWin.replaceToHtml = function(str) {
                     var re = str;
