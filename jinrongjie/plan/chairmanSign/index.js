@@ -74,8 +74,7 @@
             } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
                 if (trIndex == 5) {
-                  var files = dt.querySelectorAll('a'); // console.log(111);
-                  var fileName = [];if (files.length > 0) {
+                  var files = dt.querySelectorAll('a');var fileName = [];if (files.length > 0) {
                     [].forEach.call(files, function (fileItem, fileIndex) {
                       if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
                         fileName.push(fileItem.textContent.trim());var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('(')));
@@ -86,6 +85,10 @@
                   content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
                 }
               }
+            } else if (dt.querySelector("input[type='text']")) {
+              content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
+            } else if (dt.querySelector("textarea")) {
+              content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
             } else {
               content.push('暂无数据');
             }
