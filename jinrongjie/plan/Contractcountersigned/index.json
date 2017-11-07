@@ -8,7 +8,9 @@
     "managerAuditDetail": "../managerAuditDetail/index.json",
     "askForLeave": "../askForLeave/index.json",
     "index": "../index/index.json",
-    "choosePerson": "../choosePerson/index.json"
+    "choosePerson": "../choosePerson/index.json",
+    "chairmanSign": "../chairmanSign/index.json",
+    "mainLeaderSign": "../mainLeaderSign/index.json"
   },
   "chineseName": "01合同会签流程",
   "description": "",
@@ -401,6 +403,42 @@
       "roles": "element",
       "text": "",
       "frameXPath": ""
+    },
+    "control82_Usqh1i": {
+      "location": {
+        "data": {
+          "tagName": "THEAD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]//DIV[@id=\"_xTable\"]/DIV[1]/DIV[2]/TABLE[1]/THEAD[1]",
+              "descendant::FORM[@id=\"weaver\"]//DIV[@id=\"_xTable\"]//THEAD",
+              "descendant::DIV[@id=\"_xTable\"]//THEAD"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.Shadow DIV.table TABLE.ListStyle THEAD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]/THEAD[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "创建日期 所属公司 创建人部门 创建人 工作流 紧急程度 请求标题 当前节点接收日期 当前状况 未操作者",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('创建日期') !== -1){return true;}return false;"
     }
   },
   "contexts": {
@@ -413,7 +451,7 @@
         "control2_o8iNLF"
       ],
       "anchors": [
-        "control78_ZhUR64"
+        "control82_Usqh1i"
       ],
       "urlAnchor": []
     }
@@ -449,6 +487,14 @@
         {
           "toContextId": "context1_yeQcpw",
           "toModelId": "index"
+        },
+        {
+          "toContextId": "context15_pZfDlE",
+          "toModelId": "chairmanSign"
+        },
+        {
+          "toContextId": "context14_mXEdQk",
+          "toModelId": "mainLeaderSign"
         }
       ]
     },
