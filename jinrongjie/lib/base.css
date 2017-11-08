@@ -345,12 +345,13 @@ li {
 }
 .ysp-related-doc-search-table {
   font-size: 14px;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   background: #fff;
   height: 400px;
   overflow: overlay;
 }
 .ysp-related-doc-search-table table {
+  table-layout: fixed;
   width: 100%;
   text-align: center;
   color: #7C7C7C;
@@ -358,9 +359,15 @@ li {
 .ysp-related-doc-search-table table th,
 .ysp-related-doc-search-table table tr {
   height: 30px;
+  line-height: 30px;
 }
 .ysp-related-doc-search-table table thead {
   border-bottom: 1px solid #ddd;
+}
+.ysp-related-doc-search-table table td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .ysp-manageraudit-relate-doc {
   background: #fff;

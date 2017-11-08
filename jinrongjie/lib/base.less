@@ -383,22 +383,23 @@ li {list-style: none}
 
 .ysp-related-doc-search-table{
   font-size:  14px;
-  // margin-top: 20px;
-  padding: 10px 0;
-  // border-top: 10px solid #ddd;
+  padding: 0 0 10px 0;
   background: #fff;
   height: 400px;
   overflow: overlay;
   table{
+    table-layout: fixed;
     width: 100%;
     text-align: center;
     color: #7C7C7C;
     th, tr{
       height: 30px;
+      line-height: 30px;
     }
     thead{
       border-bottom: 1px solid #ddd;
     }
+    td{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
   }
 }
 
