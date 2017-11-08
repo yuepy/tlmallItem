@@ -216,6 +216,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -254,6 +258,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -275,6 +283,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -290,6 +302,55 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control129_IPx8x5": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:创建 - 03公文审批流程-主管领导签核 - 创建"
+              ],
+              "visText": [
+                "请求:创建 - 03公文审批流程-主管领导签核 - 创建"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('主管领导签核') !== -1&&elem.textContent.indexOf('创建') !== -1){return true;}return false;"
     }
   },
   "contexts": {
@@ -304,7 +365,9 @@
         "control132_Mapi9E",
         "control133_ud3c3u"
       ],
-      "anchors": [],
+      "anchors": [
+        "control129_IPx8x5"
+      ],
       "urlAnchor": []
     }
   },
@@ -353,6 +416,34 @@
       "toContexts": [
         {
           "toContextId": "context20_mmput1"
+        }
+      ]
+    },
+    "flow69_1FlpOk": {
+      "fromContextId": "context20_mmput1",
+      "fromAction": "doAction",
+      "fromControlId": "control132_Mapi9E",
+      "toContexts": [
+        {
+          "toContextId": "context20_mmput1"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
+        }
+      ]
+    },
+    "flow73_1RH7Ds": {
+      "fromContextId": "context20_mmput1",
+      "fromAction": "doAction",
+      "fromControlId": "control133_ud3c3u",
+      "toContexts": [
+        {
+          "toContextId": "context20_mmput1"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     }
