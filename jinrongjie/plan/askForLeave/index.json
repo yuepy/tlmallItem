@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "askForLeave": "../askForLeave/index.json",
-    "choosePerson": "../choosePerson/index.json"
+    "choosePerson": "../choosePerson/index.json",
+    "jobStation": "../jobStation/index.json"
   },
   "chineseName": "请假/公出申请单",
   "description": "",
@@ -571,6 +572,10 @@
         {
           "toContextId": "context10_sJa5NJ",
           "toModelId": "choosePerson"
+        },
+        {
+          "toContextId": "context17_0geF6r",
+          "toModelId": "jobStation"
         }
       ]
     },
@@ -588,6 +593,16 @@
       "fromContextId": "context11_ksSRDp",
       "fromAction": "doAction",
       "fromControlId": "control84_nadrbI",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        }
+      ]
+    },
+    "flow58_RWWa1I": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control63_xKq6K5",
       "toContexts": [
         {
           "toContextId": "context11_ksSRDp"
