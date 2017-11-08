@@ -1,6 +1,8 @@
+"use strict";
+
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control108_46cZtf: function (elem) {
+    getData_control108_46cZtf: function getData_control108_46cZtf(elem) {
       var data = { header: { title: [], number: [] }, base_lc_info: { title: [], content: [], degree: [], miji: { content: [], id: [] } }, base_info: { content: [] }, related_document: [], related_process: [], file: [] }; //附件-----------
       if ($(elem).find("#field-annexupload_tab").length > 0 && $(elem).find("#field-annexupload_tab").find("a").length > 0) {
         $(elem).find("#field-annexupload_tab").find("a").each(function () {
@@ -198,7 +200,7 @@
         });
       }return data;
     },
-    doAction_uiControl93_sBQFT0: function (data, elem) {
+    doAction_uiControl93_sBQFT0: function doAction_uiControl93_sBQFT0(data, elem) {
       if (data.eventType == 'inputBlur') {
         //debugger;
         var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("input").each(function () {

@@ -1822,10 +1822,17 @@ div[data-ysp-modelid='askForLeave']{
       .ysp_detail_row{
         padding-bottom: 5px;
         border-bottom: 1px solid #f4f4f4;
-        .row_title{
+        .row_title,.unwrite{
           color: #c29a2a;
         }
-        .unSelect{
+        .unwrite{
+          background: url("../lib/images/！@2x.png") no-repeat;
+          background-size: 3px;
+          background-position: 32%;
+          display: block;
+          width: 100%;
+        }
+        .unSelect,.unchoose{
           margin: 0;
           padding: 0;
           border: none;
@@ -1852,6 +1859,25 @@ div[data-ysp-modelid='askForLeave']{
           height: 30px;
           padding: 5px;
           margin-bottom: 10px;
+        }
+        .choose{
+          padding-top: 10px;
+          overflow: hidden;
+          span{
+           	display: inline-block;
+    				width: 10%;
+            background: #EFEEEC;
+            color: #666;
+            border-radius: 5px;
+            margin-right: 10px;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 0; 
+          }
+          .check{
+            background: #c29a2a;
+            color: #fff;
+          }
         }
         .recieveInfo{
           text-align: right;
