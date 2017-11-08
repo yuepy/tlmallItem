@@ -219,9 +219,11 @@
 //          }
           /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
           
-          aWin.alert = function (){
-            console.log('又有弹框  !')
-          }
+          
+          // console.log(111,aWin.document)
+          // aWin.alert = function (){
+          //   console.log(222)
+          // }
           
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
