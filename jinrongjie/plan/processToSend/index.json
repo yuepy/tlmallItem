@@ -3,6 +3,10 @@
   "id": "processToSend",
   "targetURL": "http://192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+  },
   "chineseName": "流程送阅",
   "description": "流程送阅",
   "controls": {
@@ -46,7 +50,8 @@
       },
       "roles": "element",
       "text": "\n\t\n\t  流程送阅\n\t\n    ",
-      "frameXPath": ""
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('送阅') !== -1){return true;}return false;"
     },
     "control36_vTRl9c": {
       "location": {
@@ -539,6 +544,97 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control108_xzxsou": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:送阅 - 云适配测试_20171108_04"
+              ],
+              "visText": [
+                "请求:送阅 - 云适配测试_20171108_04"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": ""
+    },
+    "control109_ue7pbi": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "请求:送阅 - 云适配测试_20171108_04"
+              ],
+              "visText": [
+                "请求:送阅 - 云适配测试_20171108_04"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "TABLE.TopTitle TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('送阅') !== -1){return true;}return false;"
     }
   },
   "contexts": {
@@ -557,7 +653,7 @@
         "control55_MzxyGc"
       ],
       "anchors": [
-        "control34_agUJCz"
+        "control109_ue7pbi"
       ],
       "urlAnchor": []
     }
@@ -597,6 +693,10 @@
       "toContexts": [
         {
           "toContextId": "context10_Tp4yhH"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     },
@@ -607,6 +707,10 @@
       "toContexts": [
         {
           "toContextId": "context10_Tp4yhH"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     },
@@ -811,6 +915,10 @@
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },
