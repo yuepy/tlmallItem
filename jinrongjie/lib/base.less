@@ -372,22 +372,23 @@ li {list-style: none}
 
 .ysp-related-doc-search-table{
   font-size:  14px;
-  // margin-top: 20px;
-  padding: 10px 0;
-  // border-top: 10px solid #ddd;
+  padding: 0 0 10px 0;
   background: #fff;
   height: 400px;
   overflow: overlay;
   table{
+    table-layout: fixed;
     width: 100%;
     text-align: center;
     color: #7C7C7C;
     th, tr{
       height: 30px;
+      line-height: 30px;
     }
     thead{
       border-bottom: 1px solid #ddd;
     }
+    td{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
   }
 }
 
@@ -2835,4 +2836,24 @@ div[data-ysp-modelid='chairmanSign']{
       }
 
 }
+//tabs样式lfj
+ ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      background: none;
+      border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
 //--------------------------------------------------------------自由流程02 END
