@@ -424,7 +424,7 @@ li {
   border-radius: 5px;
   height: 30px;
   line-height: 30px;
-  padding: 0;
+  padding: 0 5px;
 }
 .ysp-related-liucheng-wrapper > div {
   display: inline-block;
@@ -455,6 +455,21 @@ li {
 .ysp-related-liucheng-wrapper .right-content {
   padding: 0 0 0 10px;
 }
+.ysp-related-liucheng-wrapper .right-content .small-span {
+  width: 30%;
+}
+.ysp-related-liucheng-wrapper .right-content .small-input {
+  width: 70%;
+}
+.ysp-related-liucheng-wrapper .right-content .large-span1 {
+  width: 40%;
+}
+.ysp-related-liucheng-wrapper .right-content .small-input1 {
+  width: 60%;
+}
+.ysp-related-liucheng-wrapper .right-content .small-select {
+  width: 60%;
+}
 .ysp-related-liucheng-wrapper .search-button {
   color: #fff;
   width: 100%;
@@ -472,6 +487,11 @@ li {
   background-position-x: 94%;
 }
 .ysp-related-liucheng-wrapper .search-icon {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  height: 20px;
+  width: 20px;
   background: url(images/Magnifier-card.png) no-repeat;
   background-position-y: 50%;
   background-position-x: 90%;
