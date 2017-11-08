@@ -54,41 +54,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control204_JZvAUX": {
-      "location": {
-        "data": {
-          "tagName": "INPUT"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.collectionPSIentercontent DIV.m-time INPUT.ipt-week"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/SPAN[2]/INPUT[2]"
-          },
-          {
-            "id": "input/type",
-            "verifyEnabled": true,
-            "value": "text"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control204_JZvAUX"
-      },
-      "intendedRole": "custom",
-      "roles": "element,textbox,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control210_r9m7Sb": {
       "location": {
         "data": {
@@ -190,7 +155,7 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control109_2OvcM1": {
+    "control189_aS0Skg": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -198,30 +163,26 @@
         "locators": [
           {
             "id": "@id/word",
-            "prob": 1,
+            "prob": 2,
             "value": [
-              "descendant::DIV[@id=\"weekPSI\"]/DIV[2]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"weekPSI\"]/DIV[2]/DIV[1]",
               "descendant::DIV[@id=\"weekPSI\"]//DIV"
             ]
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "ordinal": [
-              0,
-              2
-            ],
-            "value": "DIV.collectionPSIentercontent DIV.m-time DIV"
+            "value": "DIV.collectionPSIentercontent DIV.m-time"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control109_2OvcM1"
+        "onGetData": "getData_control189_aS0Skg"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -233,11 +194,10 @@
     "context56_sDDtAM": {
       "controls": [
         "control200_tnASBu",
-        "control204_JZvAUX",
         "control210_r9m7Sb",
         "control214_cE0FUZ",
         "control188_WIE0yD",
-        "control109_2OvcM1"
+        "control189_aS0Skg"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -304,31 +264,16 @@
           }
         },
         {
-          "id": "uiControl112_Ta6eb9",
-          "controlId": "control109_2OvcM1",
+          "id": "uiControl186_EAcEwJ",
+          "controlId": "control189_aS0Skg",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl112_Ta6eb9",
-                "onGetTemplate": "getTemplate_uiControl112_Ta6eb9"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl198_5ogMkS",
-          "controlId": "control204_JZvAUX",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl198_5ogMkS",
-                "onGetTemplate": "getTemplate_uiControl198_5ogMkS"
+                "onDoAction": "doAction_uiControl186_EAcEwJ",
+                "onGetTemplate": "getTemplate_uiControl186_EAcEwJ"
               }
             }
           }
@@ -395,7 +340,8 @@
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=11994",
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=10263",
           "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=1-5SKO7Q",
-          "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=1-2YNKN1"
+          "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=1-2YNKN1",
+          "192.168.1.224:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=11212"
         ]
       }
     },
@@ -425,6 +371,18 @@
           [
             "customerName",
             "psiEnterTable",
+            "savePsiSpan",
+            "search",
+            "srarch_date",
+            "srarch_date_",
+            "tbodyContent",
+            "weekPSI"
+          ],
+          [
+            "coll",
+            "customerName",
+            "psiEnterTable",
+            "rowId",
             "savePsiSpan",
             "search",
             "srarch_date",
@@ -523,6 +481,28 @@
             "TBODY/TR/TD",
             "THEAD/TR/TH",
             "TR/TD/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
           ]
         ]
       }
