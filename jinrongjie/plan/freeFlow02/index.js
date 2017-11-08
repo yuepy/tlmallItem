@@ -22,8 +22,7 @@
       }if ($(elem).children(".bh").length > 0) {
         data.header.number.push($(elem).children(".bh").text().trim());
       }if ($(elem).children("table").length == 2) {
-        var elem1 = $(elem).children("table").eq(0)[0];
-        if ($(elem1).find("tr").length > 0) {
+        var elem1 = $(elem).children("table").eq(0)[0];if ($(elem1).find("tr").length > 0) {
           $(elem1).find("tr").each(function () {
             if ($(this).children("td").length == 1 && $(this).children("td")[0].className == 'zdm') {
               data.base_lc_info.title.push($(this).children("td").text().trim());
@@ -60,9 +59,8 @@
           //var arr1 = [];
           $(this).children("td").each(function () {
             var arr2 = []; //判断标题-------------------------------------
-            if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(),
-                type: 'tit_yell' });
+            var arr5 = [];if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
@@ -82,8 +80,7 @@
                 }arr2.push({ text: arr3, size: arr4, type: 'fujian' });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0) {
-                  var arr4 = [];
-                  $(this).children("select").children("option").each(function () {
+                  var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this).text().trim() !== '' && $(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
                     }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
@@ -108,8 +105,7 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });arr2.push({
-                                text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
