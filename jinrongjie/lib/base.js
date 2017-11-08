@@ -68,7 +68,6 @@
                 /*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
                 aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
-                    debugger;
                     var $GetEle = aWin.$GetEle;
                     var wuiUtil = aWin.wuiUtil;
                     var tmpids = $GetEle(inputname).value;
@@ -93,7 +92,6 @@
                                 for (var _i = 0; _i < resourceidArray.length; _i++) {
                                     var curid = resourceidArray[_i];
                                     var curname = resourcenameArray[_i];
-
                                     sHtml = sHtml + "<a href=" + linkurl + curid +
                                         " target='_blank'>" + curname + "</a>&nbsp";
                                 }
@@ -122,29 +120,6 @@
                       aWin.parent.close();
                   }
               }
-          // if(aWin.setResourceStr){
-          //    aWin.setResourceStr = function(){
-          //       aWin.resourceids ="";
-          //       aWin.resourcenames = "";
-          //       for(var i=0;i<aWin.resourceArray.length;i++){
-          //         aWin.resourceids += ","+aWin.resourceArray[i].split("~")[0] ;
-          //         aWin.resourcenames += ","+aWin.resourceArray[i].split("~")[1] ;
-          //       }
-          //       //alert(resourceids+"--"+resourcenames);
-          //       $("input[name=resourceids]").val(aWin.resourceids.substring(1));
-          //     }
-          // }
-          // if(aWin.setResourceStr){
-          //         aWin.setResourceStr = function(){
-          //         aWin.documentids ="";
-          //         aWin.documentnames = "";
-          //         for(var i=0;i<aWin.resourceArray.length;i++){
-          //           aWin.documentids += "," +aWin.resourceArray[i].split("~")[0];
-          //           aWin.documentnames += "," +aWin.replaceToHtml(aWin.resourceArray[i].split("~")[1]);
-          //         }
-          //         doc.all("documentids").value = aWin.documentids.substring(1)
-          //       }
-          //     }
             if (aWin.replaceToHtml) {
                 aWin.replaceToHtml = function(str) {
                     var re = str;
@@ -159,7 +134,7 @@
                     return re;
                 }
             }
-            if (aWin.BrowseTable_onclick) {
+            if (aWin.BrowseTable_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') == -1) {
                 aWin.BrowseTable_onclick = function(e) {
                   debugger
                     var target = e.srcElement || e.target;
@@ -201,8 +176,22 @@
             /*  showModelDialog 相关流程 跨页面传值兼容  */
           
           /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
-          if(aWin.location.href.indexOf('CategoryBrowser.jsp') !== -1 && aWin.selectCategory){
-            console.log(ysp.runtime.Browser.activeBrowser.contentWindow.parent.opener.document.querySelector('#secCategorySpan').textContent)
+            // if (aWin.BrowseTable_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1) {
+            //     aWin.BrowseTable_onclick = function(e) {
+            //       debugger
+            //       var target = e.srcElement || e.target;
+            //         try {
+            //             if (target.nodeName == "TD" || target.nodeName == "A") {
+            //                 var newEntry = $($(target).parents("tr")[0].cells[0]).text() + "~" + $($(target).parents("tr")[0].cells[1]).text();
+            //                 if (!aWin.isExistEntry(newEntry, aWin.resourceArray)) {
+            //                     aWin.addObjectToSelect(doc.all("srcList"), newEntry);
+            //                     aWin.reloadResourceArray();
+            //                 }
+            //             }
+            //         } catch (en) {
+            //             alert(en.message);
+            //         }
+            //     }
 //             aWin.selectCategory = function(nodeID) {
 //               var node = aWin.tree.getNode(nodeID);
 //                 var path = node.text;
@@ -227,7 +216,7 @@
 //                 aWin.parent.returnValue = {tag:"1",id:""+id, path:""+path, mainid:""+mainid, subid:""+subid,path2:""+parth2};
 //                 aWin.parent.close();
 //             }
-          }
+//          }
           /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
           
           

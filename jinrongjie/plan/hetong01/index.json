@@ -4,7 +4,9 @@
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=7901&isagent=0&beagenter=0",
   "jsFile": "index.js",
   "requires": {
-    "choosePerson": "../choosePerson/index.json"
+    "choosePerson": "../choosePerson/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
   },
   "chineseName": "01合同会签流程",
   "description": "",
@@ -128,6 +130,10 @@
         "data": {
           "tagName": "SPAN"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "text",
@@ -213,6 +219,14 @@
         {
           "toContextId": "context10_sJa5NJ",
           "toModelId": "choosePerson"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     }
@@ -324,6 +338,14 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=127508&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=127507&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215923&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+        ],
+        "context5_DhOsrK": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=198965,198966,198964,198962,198961,198960,198959,198958,198957,198956"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids=215922,207188,198385,189578,189499,180773,180695,180694,171723,171644,171640,162914,162836,162835,154110,154031,154030,154029,145305,145222,136448,136368,127589,127507,118729,118651,118646,118644,118642,118641,118640,118639,118638,118637,118636,118622,118621,118620,118619,118618,118608,118607,118606,118605,118599,118591,118590,118569,118568,118540"
         ]
       }
     },
