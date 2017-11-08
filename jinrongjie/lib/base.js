@@ -219,10 +219,8 @@
 //          }
           /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
           
-          
-          // console.log(111,aWin.document)
           aWin.alert = function (){
-            console.log(222)
+            console.log('又有弹框  !')
           }
           
         },

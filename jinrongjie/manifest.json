@@ -11,7 +11,20 @@
     },
     "resource_inject": []
   },
-  "override_urls": [],
+  "override_urls": [
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.200\\.63\\/wui\\/common\\/jquery\\/plugin\\/Listener\\.js"
+      ],
+      "target_url": "override/Listener.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.200\\.63\\/js\\/swfupload\\/workflowswfupload\\.js"
+      ],
+      "target_url": "override/workflowswfupload.js"
+    }
+  ],
   "adapter_urls": [
     {
       "title": "login",
