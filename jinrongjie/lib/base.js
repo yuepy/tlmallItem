@@ -141,7 +141,7 @@
                     try {
                         if (target.nodeName == "TD" || target.nodeName == "A") {
                             var newEntry = $($(target).parents("tr")[0].cells[0]).text() + "~" + $($(target).parents("tr")[0].cells[1]).text();
-                            if (!isExistEntry(newEntry, aWin.resourceArray)) {
+                            if (!aWin.isExistEntry(newEntry, aWin.resourceArray)) {
                                 aWin.addObjectToSelect(doc.all("srcList"), newEntry);
                                 aWin.reloadResourceArray();
                             }
@@ -176,22 +176,22 @@
             /*  showModelDialog 相关流程 跨页面传值兼容  */
           
           /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
-            if (aWin.BrowseTable_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1) {
-                aWin.BrowseTable_onclick = function(e) {
-                  debugger
-                  var target = e.srcElement || e.target;
-                    try {
-                        if (target.nodeName == "TD" || target.nodeName == "A") {
-                            var newEntry = $($(target).parents("tr")[0].cells[0]).text() + "~" + $($(target).parents("tr")[0].cells[1]).text();
-                            if (!aWin.isExistEntry(newEntry, aWin.resourceArray)) {
-                                aWin.addObjectToSelect(doc.all("srcList"), newEntry);
-                                aWin.reloadResourceArray();
-                            }
-                        }
-                    } catch (en) {
-                        alert(en.message);
-                    }
-                }
+            // if (aWin.BrowseTable_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1) {
+            //     aWin.BrowseTable_onclick = function(e) {
+            //       debugger
+            //       var target = e.srcElement || e.target;
+            //         try {
+            //             if (target.nodeName == "TD" || target.nodeName == "A") {
+            //                 var newEntry = $($(target).parents("tr")[0].cells[0]).text() + "~" + $($(target).parents("tr")[0].cells[1]).text();
+            //                 if (!aWin.isExistEntry(newEntry, aWin.resourceArray)) {
+            //                     aWin.addObjectToSelect(doc.all("srcList"), newEntry);
+            //                     aWin.reloadResourceArray();
+            //                 }
+            //             }
+            //         } catch (en) {
+            //             alert(en.message);
+            //         }
+            //     }
 //             aWin.selectCategory = function(nodeID) {
 //               var node = aWin.tree.getNode(nodeID);
 //                 var path = node.text;
@@ -216,7 +216,7 @@
 //                 aWin.parent.returnValue = {tag:"1",id:""+id, path:""+path, mainid:""+mainid, subid:""+subid,path2:""+parth2};
 //                 aWin.parent.close();
 //             }
-          }
+//          }
           /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
           
           
