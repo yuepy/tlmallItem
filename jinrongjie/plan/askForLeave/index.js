@@ -60,7 +60,7 @@
               }if (detail4[i].disable) {
                 //textarea是否是禁用的
                 table[5].push("disable");
-              }if (detail4[i].nextSibling.querySelector("img")) {
+              }if (detail4[i].nextElementSibling.querySelector("img")) {
                 //是否未填写
                 table[6].push("unwrite");
               }table[4].push(detail4[i].textContent);
@@ -79,7 +79,7 @@
               //td重含有select的
               var select = [[], [], [], [], [], []];if (dt.querySelector("select").textContent.indexOf("否") != -1) {
                 select[4].push("YorN");
-              }if (dt.querySelector("select").nextSibling.querySelector("img")) {
+              }if (dt.querySelector("select").nextElementSibling.querySelector("img")) {
                 //是否未填写
                 select[5].push("unwrite");
               }$(dt).find("select").children("option").each(function (i, d) {
