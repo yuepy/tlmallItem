@@ -464,7 +464,7 @@ li {list-style: none}
     border-radius: 5px;
     height: 30px;
     line-height: 30px;
-    padding: 0;
+    padding: 0 5px;
   }
   >div{
     display: inline-block;
@@ -488,7 +488,7 @@ li {list-style: none}
     padding: 0 10px 0 0;
     .small-span{width: 25%;}
     .small-input{width: 75%;}
-    .small-select{width: 60%;}
+    // .small-select{width: 60%;}
     .large-span1{width: 40%;}
     .large-span2{width: 50%;}
     .small-input1{width: 60%;}
@@ -500,6 +500,7 @@ li {list-style: none}
     .small-input{width: 70%;}
     .large-span1{width: 40%;}
     .small-input1{width: 60%;}
+    .small-select{width: 60%;}
   }
   .search-button{
     color: #fff;
@@ -518,6 +519,11 @@ li {list-style: none}
     background-position-x: 94%;
   }
   .search-icon{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    height: 20px;
+    width: 20px;
     background: url(images/Magnifier-card.png) no-repeat;
     background-position-y: 50%;
     background-position-x: 90%;
@@ -1841,6 +1847,44 @@ div[data-ysp-modelid='askForLeave']{
       		background-position: 300px;
           height: 22px;
         }
+        .recieveInfo{
+          text-align: right;
+          color: #35D081;
+        }
+        .tableCard{
+          padding: 10px 0;
+          .tableCardDetail{
+            padding: 10px;
+            font-size: 14px;
+            background: #EEEDEB;
+            margin: 10px 0;
+            overflow: hidden;
+            color: #7B7873;
+            >div{
+              span:first-child{
+                display: inline-block;
+                width: 50%;
+                text-align: left;
+              }
+              span:last-child{
+                display: inline-block;
+                width: 50%;
+                text-align: right;
+              }
+            }
+            .num{
+              font-size:15px;
+              font-weight: bold;
+              color: #333;
+            }
+            textarea{
+              font-size: 15px;
+              margin: 0;
+              background: #EEEDEB;
+              color: #333;
+            }
+          }
+        }
       }
       .none{
         display: none;
@@ -1877,10 +1921,11 @@ div[data-ysp-modelid='askForLeave']{
     padding: 20px 0;
     font-size: 14px;
     margin-top: 10px;
-    textarea{
+    >div:last-child{
       margin: 0 auto;
       width: 90%;
       margin-top: 10px; 
+      border:1px solid #ddd;
     }
   }
   .ysp_advice_wrapper{
