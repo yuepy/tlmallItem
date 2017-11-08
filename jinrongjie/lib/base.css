@@ -1718,6 +1718,42 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
   background-position: 300px;
   height: 22px;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .recieveInfo {
+  text-align: right;
+  color: #35D081;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard {
+  padding: 10px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail {
+  padding: 10px;
+  font-size: 14px;
+  background: #EEEDEB;
+  margin: 10px 0;
+  overflow: hidden;
+  color: #7B7873;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail > div span:first-child {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail > div span:last-child {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .num {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail textarea {
+  font-size: 15px;
+  margin: 0;
+  background: #EEEDEB;
+  color: #333;
+}
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .none {
   display: none;
 }
@@ -1753,10 +1789,11 @@ div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper {
   font-size: 14px;
   margin-top: 10px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper textarea {
+div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper > div:last-child {
   margin: 0 auto;
   width: 90%;
   margin-top: 10px;
+  border: 1px solid #ddd;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper {
   background: #fff;
