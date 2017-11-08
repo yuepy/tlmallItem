@@ -57,12 +57,16 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('报告阅知类') !== -1){return true;} return false;"
+      "customJS": "if(elem.textContent.indexOf('报告阅知类') !== -1 && elem.textContent.indexOf('处理') !== -1){return true;} return false;"
     },
     "control108_46cZtf": {
       "location": {
         "data": {
           "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {

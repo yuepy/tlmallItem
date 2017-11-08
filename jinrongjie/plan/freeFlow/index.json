@@ -1,19 +1,22 @@
 {
   "version": "0.1",
-  "id": "freeFlow02",
+  "id": "freeFlow",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=43&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "freeFlow": "../freeFlow/index.json"
+  },
   "chineseName": "02自由流程",
   "description": "",
   "controls": {
-    "control106_yV1vnN": {
+    "control106_fr5uUD": {
       "location": {
         "data": {
           "tagName": "SPAN"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "force": true,
+          "data": []
         },
         "locators": [
           {
@@ -57,9 +60,9 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('02自由流程') !==-1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('02自由流程') !== -1){return true;}return false; "
     },
-    "control107_5Bad4R": {
+    "control107_lHn0HZ": {
       "location": {
         "data": {
           "tagName": "TD"
@@ -77,59 +80,53 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control107_5Bad4R"
+        "onGetData": "getData_control107_lHn0HZ"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
-    "context17_dLU4Nr": {
+    "context17_HrlwGf": {
       "controls": [
-        "control107_5Bad4R"
+        "control107_lHn0HZ"
       ],
       "anchors": [
-        "control106_yV1vnN"
+        "control106_fr5uUD"
       ],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow58_RroxK7": {
+    "flow58_iCyToK": {
       "toContexts": [
         {
-          "toContextId": "context17_dLU4Nr"
-        }
-      ]
-    },
-    "flow59_FNQmzR": {
-      "fromContextId": "context17_dLU4Nr",
-      "fromAction": "doAction",
-      "fromControlId": "control107_5Bad4R",
-      "toContexts": [
+          "toContextId": "context17_HrlwGf"
+        },
         {
-          "toContextId": "context17_dLU4Nr"
+          "toContextId": "context17_HrlwGf",
+          "toModelId": "freeFlow"
         }
       ]
     }
   },
   "pages": {
-    "page17_LWwkTx": {
-      "contextId": "context17_dLU4Nr",
+    "page17_3ObFb6": {
+      "contextId": "context17_HrlwGf",
       "layout": [
         {
-          "id": "uiControl92_sGLgMQ",
-          "controlId": "control107_5Bad4R",
+          "id": "uiControl92_kMibIi",
+          "controlId": "control107_lHn0HZ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl92_sGLgMQ",
-                "onGetTemplate": "getTemplate_uiControl92_sGLgMQ"
+                "onDoAction": "doAction_uiControl92_kMibIi",
+                "onGetTemplate": "getTemplate_uiControl92_kMibIi"
               }
             }
           }
@@ -140,21 +137,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context17_HrlwGf": [
           ""
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context17_HrlwGf": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=43&isagent=0&beagenter=0"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context17_HrlwGf": [
           [
             "BacoAddFavorite",
             "BacoTitle",
@@ -202,7 +199,7 @@
     },
     "page/classes": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context17_HrlwGf": [
           [
             "STYLE",
             "TopTitle",
@@ -255,7 +252,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context17_HrlwGf": [
           [
             "-/-/DIV",
             "-/-/INPUT-hidden",

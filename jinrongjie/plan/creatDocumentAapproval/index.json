@@ -1,19 +1,36 @@
 {
   "version": "0.1",
-  "id": "freeFlow02",
-  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=43&isagent=0&beagenter=0",
+  "id": "creatDocumentAapproval",
+  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=182&isagent=0&beagenter=0",
   "jsFile": "index.js",
-  "chineseName": "02自由流程",
+  "chineseName": "新建06公文审批流程-报告阅知类（同送总经理董事长）",
   "description": "",
   "controls": {
-    "control106_yV1vnN": {
+    "control110_XrebWI": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control110_XrebWI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control111_BiGw7m": {
       "location": {
         "data": {
           "tagName": "SPAN"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -21,10 +38,10 @@
             "prob": 3,
             "value": {
               "text": [
-                "请求:创建 - 02自由流程 - 创建"
+                "请求:创建 - 06公文审批流程-报告阅知类（同送总经理董事长） - 创建"
               ],
               "visText": [
-                "请求:创建 - 02自由流程 - 创建"
+                "请求:创建 - 06公文审批流程-报告阅知类（同送总经理董事长） - 创建"
               ]
             }
           },
@@ -57,79 +74,54 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('02自由流程') !==-1){return true;}return false;"
-    },
-    "control107_5Bad4R": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control107_5Bad4R"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+      "customJS": "if(elem.textContent.indexOf('报告阅知类') !== -1 && elem.textContent.indexOf('创建') !== -1){return true;} return false;"
     }
   },
   "contexts": {
-    "context17_dLU4Nr": {
+    "context18_IZLpIz": {
       "controls": [
-        "control107_5Bad4R"
+        "control110_XrebWI"
       ],
       "anchors": [
-        "control106_yV1vnN"
+        "control111_BiGw7m"
       ],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow58_RroxK7": {
+    "flow62_TokqCp": {
       "toContexts": [
         {
-          "toContextId": "context17_dLU4Nr"
+          "toContextId": "context18_IZLpIz"
         }
       ]
     },
-    "flow59_FNQmzR": {
-      "fromContextId": "context17_dLU4Nr",
+    "flow63_dLTTqC": {
+      "fromContextId": "context18_IZLpIz",
       "fromAction": "doAction",
-      "fromControlId": "control107_5Bad4R",
+      "fromControlId": "control110_XrebWI",
       "toContexts": [
         {
-          "toContextId": "context17_dLU4Nr"
+          "toContextId": "context18_IZLpIz"
         }
       ]
     }
   },
   "pages": {
-    "page17_LWwkTx": {
-      "contextId": "context17_dLU4Nr",
+    "page18_5Lf8dq": {
+      "contextId": "context18_IZLpIz",
       "layout": [
         {
-          "id": "uiControl92_sGLgMQ",
-          "controlId": "control107_5Bad4R",
+          "id": "uiControl63_VG18Wm",
+          "controlId": "control110_XrebWI",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl92_sGLgMQ",
-                "onGetTemplate": "getTemplate_uiControl92_sGLgMQ"
+                "onDoAction": "doAction_uiControl63_VG18Wm",
+                "onGetTemplate": "getTemplate_uiControl63_VG18Wm"
               }
             }
           }
@@ -140,21 +132,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context18_IZLpIz": [
           ""
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context17_dLU4Nr": [
-          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=43&isagent=0&beagenter=0"
+        "context18_IZLpIz": [
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=182&isagent=0&beagenter=0"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context18_IZLpIz": [
           [
             "BacoAddFavorite",
             "BacoTitle",
@@ -202,14 +194,13 @@
     },
     "page/classes": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context18_IZLpIz": [
           [
             "STYLE",
             "TopTitle",
             "btnFavorite",
             "btnHelp",
             "btn_add",
-            "btn_edit",
             "btn_subbackName",
             "btn_wfSave",
             "clickRightMenu",
@@ -255,7 +246,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context18_IZLpIz": [
           [
             "-/-/DIV",
             "-/-/INPUT-hidden",
