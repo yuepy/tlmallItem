@@ -1,69 +1,64 @@
 {
   "version": "0.1",
-  "id": "managerSignNew",
-  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=121&isagent=0&beagenter=0",
+  "id": "chairmanSignNew",
+  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=162&isagent=0&beagenter=0",
   "jsFile": "index.js",
-  "requires": {
-    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
-  },
-  "chineseName": "公文审批总经理签核-创建",
-  "description": "公文审批总经理签核-创建",
+  "chineseName": "公文审批-董事长签核",
+  "description": "公文审批-董事长签核",
   "controls": {
-    "control98_GNGTgG": {
+    "control115_EgmWcc": {
       "location": {
         "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "SPAN"
         },
         "locators": [
           {
             "id": "text",
             "prob": 3,
-            "ordinal": [
-              1,
-              2
-            ],
             "value": {
               "text": [
-                "请求:创建 - 01公文审批流程-总经理签核 - 创建"
+                "请求:创建 - 02公文审批流程-董事长签核 - 创建"
               ],
               "visText": [
-                "请求:创建 - 01公文审批流程-总经理签核 - 创建"
+                "请求:创建 - 02公文审批流程-董事长签核 - 创建"
               ]
             }
           },
           {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
             "id": "@class/word",
             "prob": 1,
-            "ordinal": [
-              1,
-              8
-            ],
-            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD"
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
           }
         ]
       },
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('总经理签核') !== -1&&elem.textContent.indexOf('创建') !== -1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('创建')!==-1&&elem.textContent.indexOf('董事长签核')!==-1){return true;}return false;"
     },
-    "control104_PuEuF8": {
+    "control116_nEGCn6": {
       "location": {
         "data": {
           "tagName": "BUTTON"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -105,21 +100,17 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control104_PuEuF8"
+        "onGetData": "getData_control116_nEGCn6"
       },
       "intendedRole": "custom",
       "roles": "element,button,custom",
       "monitored": true,
       "frameXPath": ""
     },
-    "control99_sLORzW": {
+    "control117_nv6vDK": {
       "location": {
         "data": {
           "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -135,21 +126,17 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control99_sLORzW"
+        "onGetData": "getData_control117_nv6vDK"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control105_7JX5Xl": {
+    "control118_LvVWRc": {
       "location": {
         "data": {
           "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -160,21 +147,17 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control105_7JX5Xl"
+        "onGetData": "getData_control118_LvVWRc"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control110_mHsZAV": {
+    "control119_fz5vEB": {
       "location": {
         "data": {
           "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -191,21 +174,17 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control110_mHsZAV"
+        "onGetData": "getData_control119_fz5vEB"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control111_yUR1xo": {
+    "control120_mncwqV": {
       "location": {
         "data": {
           "tagName": "IFRAME"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -250,21 +229,17 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control111_yUR1xo"
+        "onGetData": "getData_control120_mncwqV"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control112_qbRwBy": {
+    "control121_et7Xct": {
       "location": {
         "data": {
           "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -275,21 +250,17 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control112_qbRwBy"
+        "onGetData": "getData_control121_et7Xct"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control113_Hb7TgW": {
+    "control122_OVuFZZ": {
       "location": {
         "data": {
           "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -300,14 +271,14 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control113_Hb7TgW"
+        "onGetData": "getData_control122_OVuFZZ"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control114_F8zC6S": {
+    "control123_28EoqV": {
       "location": {
         "data": {
           "tagName": "BUTTON"
@@ -352,205 +323,191 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control114_F8zC6S"
+        "onGetData": "getData_control123_28EoqV"
       },
       "intendedRole": "custom",
       "roles": "element,button,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": ""
     }
   },
   "contexts": {
-    "context16_xe32nI": {
+    "context19_zoXJgw": {
       "controls": [
-        "control104_PuEuF8",
-        "control99_sLORzW",
-        "control105_7JX5Xl",
-        "control110_mHsZAV",
-        "control111_yUR1xo",
-        "control112_qbRwBy",
-        "control113_Hb7TgW",
-        "control114_F8zC6S"
+        "control116_nEGCn6",
+        "control117_nv6vDK",
+        "control118_LvVWRc",
+        "control119_fz5vEB",
+        "control120_mncwqV",
+        "control121_et7Xct",
+        "control122_OVuFZZ",
+        "control123_28EoqV"
       ],
       "anchors": [
-        "control98_GNGTgG"
+        "control115_EgmWcc"
       ],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow57_lPVDvk": {
+    "flow64_wiCCuI": {
       "toContexts": [
         {
-          "toContextId": "context16_xe32nI"
+          "toContextId": "context19_zoXJgw"
         }
       ]
     },
-    "flow61_HkElgk": {
-      "fromContextId": "context16_xe32nI",
+    "flow65_l7qaIq": {
+      "fromContextId": "context19_zoXJgw",
       "fromAction": "doAction",
-      "fromControlId": "control104_PuEuF8",
+      "fromControlId": "control116_nEGCn6",
       "toContexts": [
         {
-          "toContextId": "context16_xe32nI"
+          "toContextId": "context19_zoXJgw"
         }
       ]
     },
-    "flow60_pMfZcy": {
-      "fromContextId": "context16_xe32nI",
+    "flow67_VwQB4H": {
+      "fromContextId": "context19_zoXJgw",
       "fromAction": "doAction",
-      "fromControlId": "control111_yUR1xo",
+      "fromControlId": "control118_LvVWRc",
       "toContexts": [
         {
-          "toContextId": "context16_xe32nI"
+          "toContextId": "context19_zoXJgw"
         }
       ]
     },
-    "flow63_puuVJ9": {
-      "fromContextId": "context16_xe32nI",
+    "flow68_0pkq8g": {
+      "fromContextId": "context19_zoXJgw",
       "fromAction": "doAction",
-      "fromControlId": "control112_qbRwBy",
+      "fromControlId": "control120_mncwqV",
       "toContexts": [
         {
-          "toContextId": "context16_xe32nI"
-        },
-        {
-          "toContextId": "context5_DhOsrK",
-          "toModelId": "managerAuditRelatedDoc"
-        }
-      ]
-    },
-    "flow66_wc0yfF": {
-      "fromContextId": "context16_xe32nI",
-      "fromAction": "doAction",
-      "fromControlId": "control105_7JX5Xl",
-      "toContexts": [
-        {
-          "toContextId": "context16_xe32nI"
+          "toContextId": "context19_zoXJgw"
         }
       ]
     }
   },
   "pages": {
-    "page16_LO0Ar3": {
-      "contextId": "context16_xe32nI",
+    "page19_ugRshs": {
+      "contextId": "context19_zoXJgw",
       "layout": [
         {
-          "id": "uiControl90_IPmdwU",
-          "controlId": "control104_PuEuF8",
+          "id": "uiControl98_SBDyBy",
+          "controlId": "control116_nEGCn6",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl90_IPmdwU",
-                "onGetTemplate": "getTemplate_uiControl90_IPmdwU"
+                "onDoAction": "doAction_uiControl98_SBDyBy",
+                "onGetTemplate": "getTemplate_uiControl98_SBDyBy"
               }
             }
           }
         },
         {
-          "id": "uiControl87_xuKO3S",
-          "controlId": "control99_sLORzW",
+          "id": "uiControl99_PgTD7o",
+          "controlId": "control117_nv6vDK",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl87_xuKO3S",
-                "onGetTemplate": "getTemplate_uiControl87_xuKO3S"
+                "onDoAction": "doAction_uiControl99_PgTD7o",
+                "onGetTemplate": "getTemplate_uiControl99_PgTD7o"
               }
             }
           }
         },
         {
-          "id": "uiControl91_tQHRMw",
-          "controlId": "control105_7JX5Xl",
+          "id": "uiControl100_BW5tW6",
+          "controlId": "control118_LvVWRc",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl91_tQHRMw",
-                "onGetTemplate": "getTemplate_uiControl91_tQHRMw"
+                "onDoAction": "doAction_uiControl100_BW5tW6",
+                "onGetTemplate": "getTemplate_uiControl100_BW5tW6"
               }
             }
           }
         },
         {
-          "id": "uiControl93_MgqcKS",
-          "controlId": "control110_mHsZAV",
+          "id": "uiControl101_4Hpqgl",
+          "controlId": "control119_fz5vEB",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl93_MgqcKS",
-                "onGetTemplate": "getTemplate_uiControl93_MgqcKS"
+                "onDoAction": "doAction_uiControl101_4Hpqgl",
+                "onGetTemplate": "getTemplate_uiControl101_4Hpqgl"
               }
             }
           }
         },
         {
-          "id": "uiControl94_EApRep",
-          "controlId": "control111_yUR1xo",
+          "id": "uiControl102_3I7NwN",
+          "controlId": "control120_mncwqV",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl94_EApRep",
-                "onGetTemplate": "getTemplate_uiControl94_EApRep"
+                "onDoAction": "doAction_uiControl102_3I7NwN",
+                "onGetTemplate": "getTemplate_uiControl102_3I7NwN"
               }
             }
           }
         },
         {
-          "id": "uiControl95_V9xDDs",
-          "controlId": "control112_qbRwBy",
+          "id": "uiControl103_5iP03h",
+          "controlId": "control121_et7Xct",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl95_V9xDDs",
-                "onGetTemplate": "getTemplate_uiControl95_V9xDDs"
+                "onDoAction": "doAction_uiControl103_5iP03h",
+                "onGetTemplate": "getTemplate_uiControl103_5iP03h"
               }
             }
           }
         },
         {
-          "id": "uiControl96_rfpcXz",
-          "controlId": "control113_Hb7TgW",
+          "id": "uiControl104_qJTp3A",
+          "controlId": "control122_OVuFZZ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl96_rfpcXz",
-                "onGetTemplate": "getTemplate_uiControl96_rfpcXz"
+                "onDoAction": "doAction_uiControl104_qJTp3A",
+                "onGetTemplate": "getTemplate_uiControl104_qJTp3A"
               }
             }
           }
         },
         {
-          "id": "uiControl97_p0zJQ3",
-          "controlId": "control114_F8zC6S",
+          "id": "uiControl105_GTbUHv",
+          "controlId": "control123_28EoqV",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl97_p0zJQ3",
-                "onGetTemplate": "getTemplate_uiControl97_p0zJQ3"
+                "onDoAction": "doAction_uiControl105_GTbUHv",
+                "onGetTemplate": "getTemplate_uiControl105_GTbUHv"
               }
             }
           }
@@ -561,21 +518,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context16_xe32nI": [
+        "context19_zoXJgw": [
           ""
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context16_xe32nI": [
-          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=121&isagent=0&beagenter=0"
+        "context19_zoXJgw": [
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=162&isagent=0&beagenter=0"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context16_xe32nI": [
+        "context19_zoXJgw": [
           [
             "BacoAddFavorite",
             "BacoTitle",
@@ -623,7 +580,7 @@
     },
     "page/classes": {
       "contexts": {
-        "context16_xe32nI": [
+        "context19_zoXJgw": [
           [
             "STYLE",
             "TopTitle",
@@ -675,7 +632,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context16_xe32nI": [
+        "context19_zoXJgw": [
           [
             "-/-/DIV",
             "-/-/INPUT-hidden",
