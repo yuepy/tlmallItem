@@ -1720,10 +1720,19 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
   padding-bottom: 5px;
   border-bottom: 1px solid #f4f4f4;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
   color: #c29a2a;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect {
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
+  background: url("../lib/images/！@2x.png") no-repeat;
+  background-size: 3px;
+  background-position: 32%;
+  display: block;
+  width: 100%;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unchoose {
   margin: 0;
   padding: 0;
   border: none;
@@ -1750,6 +1759,25 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
   height: 30px;
   padding: 5px;
   margin-bottom: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose {
+  padding-top: 10px;
+  overflow: hidden;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose span {
+  display: inline-block;
+  width: 10%;
+  background: #EFEEEC;
+  color: #666;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose .check {
+  background: #c29a2a;
+  color: #fff;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .recieveInfo {
   text-align: right;
@@ -2227,7 +2255,6 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .ysp_table_office_lfj .center_box .center_tb .tip {
   min-height: 30px;
-  border-bottom: 1px solid #EDEDED;
   padding-bottom: 10px;
   color: #202020;
   font-size: 15px;
@@ -2437,6 +2464,30 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   border: 0;
   background-size: 20px;
 }
+<<<<<<< HEAD
+.edition_box_lfj .tit_yell {
+  margin: 20px 0 10px 0;
+}
+.edition_box_lfj .textArea2 {
+  border-radius: 5px;
+  margin: 10px ;
+  min-height: 100px;
+  border: 1px solid #dfdfdf;
+}
+.summit_button_lfj {
+  padding: 10px;
+  border-top: 10px solid #F3F3F3;
+}
+.summit_button_lfj button {
+  border-radius: 5px;
+  background: #C29A29;
+  color: #fff;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  border: 0;
+  text-align: center;
+=======
 .ysp_freeFlow_table_lfj select {
   background: none;
   border: 0;
@@ -2641,4 +2692,5 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   background: url(../local/img/search.png) no-repeat 0;
   border: 0;
   background-size: 20px;
+>>>>>>> 8635bdecbab5e92f3a6ea95151ff46389fb98826
 }

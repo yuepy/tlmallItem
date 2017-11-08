@@ -1822,10 +1822,17 @@ div[data-ysp-modelid='askForLeave']{
       .ysp_detail_row{
         padding-bottom: 5px;
         border-bottom: 1px solid #f4f4f4;
-        .row_title{
+        .row_title,.unwrite{
           color: #c29a2a;
         }
-        .unSelect{
+        .unwrite{
+          background: url("../lib/images/！@2x.png") no-repeat;
+          background-size: 3px;
+          background-position: 32%;
+          display: block;
+          width: 100%;
+        }
+        .unSelect,.unchoose{
           margin: 0;
           padding: 0;
           border: none;
@@ -1852,6 +1859,25 @@ div[data-ysp-modelid='askForLeave']{
           height: 30px;
           padding: 5px;
           margin-bottom: 10px;
+        }
+        .choose{
+          padding-top: 10px;
+          overflow: hidden;
+          span{
+           	display: inline-block;
+    				width: 10%;
+            background: #EFEEEC;
+            color: #666;
+            border-radius: 5px;
+            margin-right: 10px;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 0; 
+          }
+          .check{
+            background: #c29a2a;
+            color: #fff;
+          }
         }
         .recieveInfo{
           text-align: right;
@@ -2356,7 +2382,6 @@ div[data-ysp-modelid='chairmanSign']{
           padding-left: 15px;
           .tip{
               min-height: 30px;
-              border-bottom: 1px solid #EDEDED;
               padding-bottom: 10px;
               color: #202020;
               font-size: 15px;
@@ -2572,6 +2597,31 @@ div[data-ysp-modelid='chairmanSign']{
           }
         }
       }
+}
+.edition_box_lfj{
+  .tit_yell{
+    margin: 20px 0 10px 0;
+  }
+  .textArea2{
+    border-radius: 5px;
+    margin: 10px ;
+    min-height: 100px;
+    border: 1px solid #dfdfdf;
+  }
+}
+.summit_button_lfj{
+  padding: 10px;
+  border-top: 10px solid #F3F3F3;
+  button{
+    border-radius: 5px;
+    background: #C29A29;
+    color: #fff;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border: 0;
+    text-align: center;
+  }
 }
 //--------------------------------------------------------------自由流程02 发起 START
 .ysp_freeFlow_table_lfj{
