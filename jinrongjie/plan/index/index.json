@@ -1,1 +1,763 @@
-{"version":"0.1","id":"index","targetURL":"http://192.168.200.63/wui/main.jsp?templateId=1","jsFile":"index.js","requires":{"waitTodo":"../waitTodo/index.json","index":"../index/index.json"},"chineseName":"首页列表","description":"","controls":{"control19_hJzhia":{"location":{"data":{"tagName":"DIV"},"userData":{"data":[],"force":false},"locators":[{"id":"@id/word","prob":4,"value":["descendant::TD[@id=\"leftBlockTd\"]//DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]","descendant::DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]","descendant::DIV[@id=\"leftMenu\"]"]},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]"}]},"events":{"onGetData":"getData_control19_hJzhia"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":""},"control7_thluKe":{"location":{"data":{"tagName":"TD"},"userData":{"data":[],"force":false},"locators":[{"id":"@id/word","prob":2,"value":["descendant::TABLE[@id=\"container\"]//TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]/TBODY[1]/TR[1]/TD[2]","descendant::TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]/TBODY[1]/TR[1]/TD[2]","descendant::TABLE[@id=\"head\"]/TBODY[1]/TR[1]/TD[2]"]},{"id":"@class/word","prob":1,"value":"TD.center"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"}]},"events":{"onGetData":"getData_control7_thluKe"},"intendedRole":"custom","roles":"element,custom","monitored":false,"frameXPath":""},"control20_U5haXk":{"location":{"data":{"tagName":"DIV"},"userData":{"data":[],"force":false},"locators":[{"id":"@title","prob":2,"value":{"text":["流程"]}},{"id":"@id/word","prob":1,"value":"descendant::TABLE[@id=\"container\"]//TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[3]"},{"id":"@id/nonWord","prob":1,"disabled":true,"fact":"null","value":"descendant::TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]//DIV[@id=\"null\"]"},{"id":"@class/word","prob":1,"ordinal":[1,12],"value":"DIV.topMenuDiv DIV.topMenuDiv_top DIV.menuItem"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[3]"}]},"events":{"onGetData":"getData_control20_U5haXk"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":""},"control72_hCqgHs":{"location":{"data":{"tagName":"UL"},"userData":{"force":false,"data":[{"method":"customJS","value":"if(elem.querySelectorAll('li').length>6){return true}"}]},"locators":[{"id":"@id/word","prob":2,"value":["descendant::DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]/UL[1]","descendant::DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]//UL","descendant::DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]//UL","descendant::DIV[@id=\"drillmenu\"]//UL"]},{"id":"@class/word","prob":1,"value":"DIV.drillmenu UL"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/UL[1]"}]},"roles":"element","text":"","frameXPath":""}},"contexts":{"context1_yeQcpw":{"controls":["control19_hJzhia","control7_thluKe","control20_U5haXk"],"anchors":[],"urlAnchor":[]}},"flows":{"flow5_sdkeyh":{"toContexts":[{"toContextId":"context1_yeQcpw"},{"toContextId":"context1_yeQcpw","toModelId":"index"}]},"flow12_PsmPix":{"fromContextId":"context1_yeQcpw","fromAction":"doAction","fromControlId":"control19_hJzhia","toContexts":[{"toContextId":"context1_yeQcpw"},{"toContextId":"context2_owrLEy","toModelId":"waitTodo"}]},"flow6_8Zhuu1":{"fromContextId":"context1_yeQcpw","fromAction":"doAction","fromControlId":"control20_U5haXk","toContexts":[{"toContextId":"context1_yeQcpw"}]}},"pages":{"page1_FFc4oU":{"contextId":"context1_yeQcpw","layout":[{"id":"uiControl7_fXZ26L","controlId":"control7_thluKe","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl7_fXZ26L","onGetTemplate":"getTemplate_uiControl7_fXZ26L"}}}},{"id":"uiControl19_TuJ8uo","controlId":"control19_hJzhia","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl19_TuJ8uo","onGetTemplate":"getTemplate_uiControl19_TuJ8uo"}}}},{"id":"uiControl20_3ndpBV","controlId":"control20_U5haXk","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl20_3ndpBV","onGetTemplate":"getTemplate_uiControl20_3ndpBV"}}}}]}},"matchers":{"page/title":{"contexts":{"context1_yeQcpw":["金融街投资集团OA - 张济天"]}},"page/urls":{"contexts":{"context1_yeQcpw":["192.168.200.63/wui/main.jsp?templateId=1"],"context2_owrLEy":["192.168.200.63/workflow/request/RequestView.jsp?e71508480096097=","192.168.200.63/workflow/request/RequestType.jsp?needPopupNewPage=true","192.168.200.63/workflow/request/RequestView.jsp"]}},"page/ids":{"contexts":{"context1_yeQcpw":[["FONTSYSTEMF","_DialogBGDiv","_DialogBGMask","container","content","contentUl","contentcontainer","divFloatBg","divFloatLeftmenu","divShowSignInfo","downLoadReg","drillcrumb","drillmenu","favLi","footer","head","leftBlockHiddenContr","leftBlockHrmDep","leftBlockHrmInfoCenter","leftBlockTd","leftBlockTopBgCenter","leftBlock_HrmDiv","leftMenu","leftMenuBottomCenter","leftmenu-bottom","leftmenu-bottom-bottom","leftmenu-top","leftmenucontainer","leftmenucontainer-top","logo","mainFrame","mainTopBlockTr","message_Div","moreLi","navFav","navTd","null","sample","searchBlockUl","searchbt","shadown-content","shadown-corner","shadown-x","shadown-y","subMenusContainer","tblHrmToolbr","toolbarMore","toolbarMoreBlockTop","topBlockHiddenContr","topMenuContr","userIcon"],["FONTSYSTEMF","Icon_undefined","Message_undefined","_ButtonCancel_","_ButtonOK_","_ButtonRow_","_Container_","_Covering_","_DialogBGDiv","_DialogBGMask","_DialogButtons_","_DialogDiv_","_DialogTable_","_Draghandle_","_MessageIcon_","_MessageRow_","_MessageTable_","_MessageTitle_","_Message_","_Title_","_forTab_","container","content","contentUl","contentcontainer","divFloatBg","divFloatLeftmenu","divShowSignInfo","downLoadReg","drillcrumb","drillmenu","favLi","footer","head","leftBlockHiddenContr","leftBlockHrmDep","leftBlockHrmInfoCenter","leftBlockTd","leftBlockTopBgCenter","leftBlock_HrmDiv","leftMenu","leftMenuBottomCenter","leftmenu-bottom","leftmenu-bottom-bottom","leftmenu-top","leftmenucontainer","leftmenucontainer-top","logo","mainFrame","mainTopBlockTr","message_Div","moreLi","navFav","navTd","null","sample","searchBlockUl","searchbt","shadown-content","shadown-corner","shadown-x","shadown-y","subMenusContainer","tblHrmToolbr","toolbarMore","toolbarMoreBlockTop","topBlockHiddenContr","topMenuContr","userIcon"]],"context2_owrLEy":[["BacoAddFavorite","BacoTitle","FONTSYSTEMF","btnHelp","closetext","divTopTitle","isonline","mainsupports","needShow","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","beagenter","btnHelp","closetext","divTopTitle","isagent","isec","isonline","mainsupports","needPopupNewPage","needShow","needall","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","subform","workflowid"]]}},"page/classes":{"contexts":{"context1_yeQcpw":[["center","drillmenu","dropdown","hrminfo_fontcolor","input","leftBlockHrmInfoCenter","leftBlockHrmInfoLeft","leftBlockHrmInfoRight","leftBlockTopBgLeft","leftBlockTopBgRight","leftMenuBottomLeft","leftMenuBottomNavDiv","leftMenuBottomNavTbl","leftMenuBottomRight","leftMenuItemCenter","leftMenuItemLeft","leftMenuItemNavCenter","leftMenuItemNavLeft","leftMenuItemNavRight","leftMenuItemRight","leftMenuTopNavDiv","lfMenuItem","mainMenuParentBtn","mainParentBtn","menuItem","menuItemIcon","menuNavSpan_Expand","navclass","searchBlockBgDiv","searchkeywork","selectContent","selectTile","slideItemText","smOW","styled","subMenuBtn","tbItm","toolbarSplitLine","toolbarTopRight","topBlockDateBlock","topMenuDiv","topMenuDiv_top","versiontype"]],"context2_owrLEy":[["STYLE","Shadow","TopTitle","btnFavorite","btnHelp","clickRightMenu","drop-shadow","flag_","highslide-container","highslide-loading","listbox","simplehrmhead","t-center","title_","viewform"],["STYLE","Shadow","TopTitle","ViewForm","btnFavorite","btnHelp","clickRightMenu","drop-shadow","field","flag_","highslide-container","highslide-loading","listbox","listbox-item-style-","simplehrmhead","t-center","t-left","t-right","title_"]]}},"page/tagTriplets":{"contexts":{"context1_yeQcpw":[["-/-/DIV","-/-/IMG","-/-/SCRIPT","-/-/TABLE","-/DIV/DIV","-/TABLE/TBODY","DIV/A/DIV","DIV/A/SPAN","DIV/DIV/A","DIV/DIV/DIV","DIV/DIV/IMG","DIV/DIV/SCRIPT","DIV/DIV/SPAN","DIV/DIV/TABLE","DIV/DIV/UL","DIV/FORM/DIV","DIV/FORM/INPUT-hidden","DIV/TABLE/TBODY","DIV/UL/IFRAME","DIV/UL/LI","FORM/DIV/DIV","FORM/DIV/INPUT-text","LI/A/DIV","LI/A/IMG","LI/A/SPAN","TABLE/TBODY/TR","TBODY/TR/TD","TD/DIV/DIV","TD/DIV/FORM","TD/DIV/IFRAME","TD/DIV/LINK","TD/DIV/META","TD/DIV/SCRIPT","TD/DIV/STYLE","TD/DIV/TABLE","TD/TABLE/TBODY","TD/UL/LI","TD/UL/LINK","TD/UL/STYLE","TR/TD/A","TR/TD/DIV","TR/TD/IFRAME","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/STYLE","TR/TD/TABLE","TR/TD/UL","UL/LI/A"],["-/-/DIV","-/-/IMG","-/-/SCRIPT","-/-/TABLE","-/DIV/DIV","-/DIV/TABLE","-/TABLE/TBODY","DIV/A/DIV","DIV/A/SPAN","DIV/DIV/A","DIV/DIV/DIV","DIV/DIV/IMG","DIV/DIV/SCRIPT","DIV/DIV/SPAN","DIV/DIV/TABLE","DIV/DIV/UL","DIV/FORM/DIV","DIV/FORM/INPUT-hidden","DIV/TABLE/TBODY","DIV/UL/IFRAME","DIV/UL/LI","FORM/DIV/DIV","FORM/DIV/INPUT-text","LI/A/DIV","LI/A/IMG","LI/A/SPAN","TABLE/TBODY/TR","TBODY/TR/TD","TD/DIV/A","TD/DIV/DIV","TD/DIV/FORM","TD/DIV/IFRAME","TD/DIV/IMG","TD/DIV/INPUT-button","TD/DIV/LINK","TD/DIV/META","TD/DIV/SCRIPT","TD/DIV/SPAN","TD/DIV/STYLE","TD/DIV/TABLE","TD/TABLE/TBODY","TD/UL/LI","TD/UL/LINK","TD/UL/STYLE","TR/TD/A","TR/TD/BR","TR/TD/DIV","TR/TD/IFRAME","TR/TD/IMG","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/STYLE","TR/TD/TABLE","TR/TD/UL","UL/LI/A"]],"context2_owrLEy":[["-/-/DIV","-/-/FORM","-/-/LINK","-/-/SCRIPT","-/-/TABLE","-/DIV/A","-/DIV/DIV","-/DIV/TABLE","-/FORM/DIV","-/TABLE/COLGROUP","-/TABLE/TBODY","DIV/DIV/IFRAME","DIV/DIV/TABLE","DIV/TABLE/TBODY","DIV/UL/LI","FORM/DIV/DIV","FORM/DIV/INPUT-hidden","FORM/DIV/SCRIPT","FORM/DIV/STYLE","LI/DIV/A","LI/DIV/IMG","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/DIV/TABLE","TD/DIV/UL","TD/SPAN/A","TD/SPAN/B","TD/TABLE/COLGROUP","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A","UL/LI/DIV","UL/LI/IMG"],["-/-/DIV","-/-/FORM","-/-/INPUT-hidden","-/-/LINK","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/TABLE","-/FORM/INPUT-hidden","-/FORM/TABLE","DIV/TABLE/TBODY","DIV/UL/LI","FORM/TABLE/COLGROUP","FORM/TABLE/TBODY","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/DIV/TABLE","TD/DIV/UL","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A","UL/LI/LABEL"]]}}}}
+{
+  "version": "0.1",
+  "id": "index",
+  "targetURL": "http://192.168.200.63/wui/main.jsp?templateId=1",
+  "jsFile": "index.js",
+  "requires": {
+    "waitTodo": "../waitTodo/index.json",
+    "index": "../index/index.json"
+  },
+  "chineseName": "首页列表",
+  "description": "",
+  "controls": {
+    "control19_hJzhia": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::TD[@id=\"leftBlockTd\"]//DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]",
+              "descendant::DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]",
+              "descendant::DIV[@id=\"leftMenu\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control19_hJzhia"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control7_thluKe": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::TABLE[@id=\"container\"]//TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]/TBODY[1]/TR[1]/TD[2]",
+              "descendant::TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]/TBODY[1]/TR[1]/TD[2]",
+              "descendant::TABLE[@id=\"head\"]/TBODY[1]/TR[1]/TD[2]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TD.center"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control7_thluKe"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control20_U5haXk": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "流程"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::TABLE[@id=\"container\"]//TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[3]"
+          },
+          {
+            "id": "@id/nonWord",
+            "prob": 1,
+            "disabled": true,
+            "fact": "null",
+            "value": "descendant::TR[@id=\"mainTopBlockTr\"]//TABLE[@id=\"head\"]//DIV[@id=\"null\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              12
+            ],
+            "value": "DIV.topMenuDiv DIV.topMenuDiv_top DIV.menuItem"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control20_U5haXk"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control72_hCqgHs": {
+      "location": {
+        "data": {
+          "tagName": "UL"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "customJS",
+              "value": "if(elem.querySelectorAll('li').length>6){return true}"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]/UL[1]",
+              "descendant::DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]//UL",
+              "descendant::DIV[@id=\"leftMenu\"]//DIV[@id=\"drillmenu\"]//UL",
+              "descendant::DIV[@id=\"drillmenu\"]//UL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.drillmenu UL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/UL[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context1_yeQcpw": {
+      "controls": [
+        "control19_hJzhia",
+        "control7_thluKe",
+        "control20_U5haXk"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow5_sdkeyh": {
+      "toContexts": [
+        {
+          "toContextId": "context1_yeQcpw"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
+        }
+      ]
+    },
+    "flow12_PsmPix": {
+      "fromContextId": "context1_yeQcpw",
+      "fromAction": "doAction",
+      "fromControlId": "control19_hJzhia",
+      "toContexts": [
+        {
+          "toContextId": "context1_yeQcpw"
+        },
+        {
+          "toContextId": "context2_owrLEy",
+          "toModelId": "waitTodo"
+        }
+      ]
+    },
+    "flow6_8Zhuu1": {
+      "fromContextId": "context1_yeQcpw",
+      "fromAction": "doAction",
+      "fromControlId": "control20_U5haXk",
+      "toContexts": [
+        {
+          "toContextId": "context1_yeQcpw"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page1_FFc4oU": {
+      "contextId": "context1_yeQcpw",
+      "layout": [
+        {
+          "id": "uiControl7_fXZ26L",
+          "controlId": "control7_thluKe",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl7_fXZ26L",
+                "onGetTemplate": "getTemplate_uiControl7_fXZ26L"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl19_TuJ8uo",
+          "controlId": "control19_hJzhia",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl19_TuJ8uo",
+                "onGetTemplate": "getTemplate_uiControl19_TuJ8uo"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl20_3ndpBV",
+          "controlId": "control20_U5haXk",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl20_3ndpBV",
+                "onGetTemplate": "getTemplate_uiControl20_3ndpBV"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context1_yeQcpw": [
+          "金融街投资集团OA - 张济天"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context1_yeQcpw": [
+          "192.168.200.63/wui/main.jsp?templateId=1"
+        ],
+        "context2_owrLEy": [
+          "192.168.200.63/workflow/request/RequestView.jsp?e71508480096097=",
+          "192.168.200.63/workflow/request/RequestType.jsp?needPopupNewPage=true",
+          "192.168.200.63/workflow/request/RequestView.jsp"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context1_yeQcpw": [
+          [
+            "FONTSYSTEMF",
+            "_DialogBGDiv",
+            "_DialogBGMask",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
+          ],
+          [
+            "FONTSYSTEMF",
+            "Icon_undefined",
+            "Message_undefined",
+            "_ButtonCancel_",
+            "_ButtonOK_",
+            "_ButtonRow_",
+            "_Container_",
+            "_Covering_",
+            "_DialogBGDiv",
+            "_DialogBGMask",
+            "_DialogButtons_",
+            "_DialogDiv_",
+            "_DialogTable_",
+            "_Draghandle_",
+            "_MessageIcon_",
+            "_MessageRow_",
+            "_MessageTable_",
+            "_MessageTitle_",
+            "_Message_",
+            "_Title_",
+            "_forTab_",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
+          ]
+        ],
+        "context2_owrLEy": [
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "beagenter",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "isagent",
+            "isec",
+            "isonline",
+            "mainsupports",
+            "needPopupNewPage",
+            "needShow",
+            "needall",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "subform",
+            "workflowid"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context1_yeQcpw": [
+          [
+            "center",
+            "drillmenu",
+            "dropdown",
+            "hrminfo_fontcolor",
+            "input",
+            "leftBlockHrmInfoCenter",
+            "leftBlockHrmInfoLeft",
+            "leftBlockHrmInfoRight",
+            "leftBlockTopBgLeft",
+            "leftBlockTopBgRight",
+            "leftMenuBottomLeft",
+            "leftMenuBottomNavDiv",
+            "leftMenuBottomNavTbl",
+            "leftMenuBottomRight",
+            "leftMenuItemCenter",
+            "leftMenuItemLeft",
+            "leftMenuItemNavCenter",
+            "leftMenuItemNavLeft",
+            "leftMenuItemNavRight",
+            "leftMenuItemRight",
+            "leftMenuTopNavDiv",
+            "lfMenuItem",
+            "mainMenuParentBtn",
+            "mainParentBtn",
+            "menuItem",
+            "menuItemIcon",
+            "menuNavSpan_Expand",
+            "navclass",
+            "searchBlockBgDiv",
+            "searchkeywork",
+            "selectContent",
+            "selectTile",
+            "slideItemText",
+            "smOW",
+            "styled",
+            "subMenuBtn",
+            "tbItm",
+            "toolbarSplitLine",
+            "toolbarTopRight",
+            "topBlockDateBlock",
+            "topMenuDiv",
+            "topMenuDiv_top",
+            "versiontype"
+          ]
+        ],
+        "context2_owrLEy": [
+          [
+            "STYLE",
+            "Shadow",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "clickRightMenu",
+            "drop-shadow",
+            "flag_",
+            "highslide-container",
+            "highslide-loading",
+            "listbox",
+            "simplehrmhead",
+            "t-center",
+            "title_",
+            "viewform"
+          ],
+          [
+            "STYLE",
+            "Shadow",
+            "TopTitle",
+            "ViewForm",
+            "btnFavorite",
+            "btnHelp",
+            "clickRightMenu",
+            "drop-shadow",
+            "field",
+            "flag_",
+            "highslide-container",
+            "highslide-loading",
+            "listbox",
+            "listbox-item-style-",
+            "simplehrmhead",
+            "t-center",
+            "t-left",
+            "t-right",
+            "title_"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context1_yeQcpw": [
+          [
+            "-/-/DIV",
+            "-/-/IMG",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/TABLE/TBODY",
+            "DIV/A/DIV",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/IFRAME",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-text",
+            "LI/A/DIV",
+            "LI/A/IMG",
+            "LI/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TD/DIV/FORM",
+            "TD/DIV/IFRAME",
+            "TD/DIV/LINK",
+            "TD/DIV/META",
+            "TD/DIV/SCRIPT",
+            "TD/DIV/STYLE",
+            "TD/DIV/TABLE",
+            "TD/TABLE/TBODY",
+            "TD/UL/LI",
+            "TD/UL/LINK",
+            "TD/UL/STYLE",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/IFRAME",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/STYLE",
+            "TR/TD/TABLE",
+            "TR/TD/UL",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/IMG",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/DIV/TABLE",
+            "-/TABLE/TBODY",
+            "DIV/A/DIV",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/IFRAME",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-text",
+            "LI/A/DIV",
+            "LI/A/IMG",
+            "LI/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/FORM",
+            "TD/DIV/IFRAME",
+            "TD/DIV/IMG",
+            "TD/DIV/INPUT-button",
+            "TD/DIV/LINK",
+            "TD/DIV/META",
+            "TD/DIV/SCRIPT",
+            "TD/DIV/SPAN",
+            "TD/DIV/STYLE",
+            "TD/DIV/TABLE",
+            "TD/TABLE/TBODY",
+            "TD/UL/LI",
+            "TD/UL/LINK",
+            "TD/UL/STYLE",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/DIV",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/STYLE",
+            "TR/TD/TABLE",
+            "TR/TD/UL",
+            "UL/LI/A"
+          ]
+        ],
+        "context2_owrLEy": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/TABLE/COLGROUP",
+            "-/TABLE/TBODY",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/STYLE",
+            "LI/DIV/A",
+            "LI/DIV/IMG",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/DIV/TABLE",
+            "TD/DIV/UL",
+            "TD/SPAN/A",
+            "TD/SPAN/B",
+            "TD/TABLE/COLGROUP",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A",
+            "UL/LI/DIV",
+            "UL/LI/IMG"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/TABLE",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/DIV/TABLE",
+            "TD/DIV/UL",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A",
+            "UL/LI/LABEL"
+          ]
+        ]
+      }
+    }
+  }
+}
