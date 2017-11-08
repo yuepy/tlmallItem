@@ -1,0 +1,229 @@
+{
+  "version": "0.1",
+  "id": "jobStation",
+  "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.rolesmark|28481",
+  "jsFile": "index.js",
+  "requires": {
+    "jobStation": "../jobStation/index.json"
+  },
+  "chineseName": "岗位名称查询",
+  "description": "",
+  "controls": {
+    "control106_I8p5fD": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"BrowseTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "TABLE.Shadow TABLE.BroswerStyle"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control106_I8p5fD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control107_42p9xe": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "force": true,
+          "data": []
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "岗位名称"
+              ],
+              "visText": [
+                "岗位名称"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              12
+            ],
+            "value": "TABLE.Shadow TABLE.ViewForm TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
+      "customJS": "if(elem.textContent.indexOf('岗位名称') !== -1 ){return true;}return false; "
+    },
+    "control108_VAGCLN": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "岗位名称"
+              ],
+              "visText": [
+                "岗位名称"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              12
+            ],
+            "value": "TABLE.Shadow TABLE.ViewForm TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context17_0geF6r": {
+      "controls": [
+        "control106_I8p5fD"
+      ],
+      "anchors": [
+        "control108_VAGCLN"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow59_55slEu": {
+      "toContexts": [
+        {
+          "toContextId": "context17_0geF6r"
+        },
+        {
+          "toContextId": "context17_0geF6r",
+          "toModelId": "jobStation"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page17_T6WqZ3": {
+      "contextId": "context17_0geF6r",
+      "layout": [
+        {
+          "id": "uiControl92_dpWqKv",
+          "controlId": "control106_I8p5fD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl92_dpWqKv",
+                "onGetTemplate": "getTemplate_uiControl92_dpWqKv"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context17_0geF6r": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context17_0geF6r": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.rolesmark|28481"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context17_0geF6r": [
+          [
+            "main"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context17_0geF6r": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context17_0geF6r": [
+          [
+            "-/-/FRAME",
+            "-/-/NOFRAMES"
+          ]
+        ]
+      }
+    }
+  }
+}
