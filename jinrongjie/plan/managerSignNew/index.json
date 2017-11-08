@@ -6,7 +6,7 @@
   "requires": {
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
   },
-  "chineseName": "公文审批总经理签核-创建",
+  "chineseName": "创建-公文审批总经理签核",
   "description": "公文审批总经理签核-创建",
   "controls": {
     "control98_GNGTgG": {
@@ -54,7 +54,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('总经理签核') !== -1&&elem.textContent.indexOf('创建') !== -1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('总经理签核') !== -1&&elem.textContent.indexOf('创建') !== -1&&elem.textContent.indexOf('公文审批')!==-1){return true;}return false;"
     },
     "control104_PuEuF8": {
       "location": {
@@ -311,6 +311,10 @@
       "location": {
         "data": {
           "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {

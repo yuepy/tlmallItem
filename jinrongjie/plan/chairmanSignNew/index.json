@@ -3,13 +3,17 @@
   "id": "chairmanSignNew",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=162&isagent=0&beagenter=0",
   "jsFile": "index.js",
-  "chineseName": "公文审批-董事长签核",
+  "chineseName": "创建-公文审批-董事长签核",
   "description": "公文审批-董事长签核",
   "controls": {
     "control115_EgmWcc": {
       "location": {
         "data": {
           "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -53,12 +57,16 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('创建')!==-1&&elem.textContent.indexOf('董事长签核')!==-1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('创建')!==-1&&elem.textContent.indexOf('董事长签核')!==-1&&elem.textContent.indexOf('公文审批')!==-1){return true;}return false;"
     },
     "control116_nEGCn6": {
       "location": {
         "data": {
           "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -112,6 +120,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -138,6 +150,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -158,6 +174,10 @@
       "location": {
         "data": {
           "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -185,6 +205,10 @@
       "location": {
         "data": {
           "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -241,6 +265,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -262,6 +290,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -282,6 +314,10 @@
       "location": {
         "data": {
           "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {

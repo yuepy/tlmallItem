@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
-    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "mainLeaderSignNew": "../mainLeaderSignNew/index.json"
   },
   "chineseName": "新建-公文审批-主管领导签核",
   "description": "新建-公文审批-主管领导签核",
@@ -308,6 +309,10 @@
         "data": {
           "tagName": "SPAN"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "text",
@@ -350,7 +355,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('主管领导签核') !== -1&&elem.textContent.indexOf('创建') !== -1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('主管领导签核') !== -1&&elem.textContent.indexOf('创建') !== -1&&elem.textContent.indexOf('公文审批')!==-1){return true;}return false;"
     }
   },
   "contexts": {
@@ -406,6 +411,10 @@
       "toContexts": [
         {
           "toContextId": "context20_mmput1"
+        },
+        {
+          "toContextId": "context20_mmput1",
+          "toModelId": "mainLeaderSignNew"
         }
       ]
     },
