@@ -3,6 +3,9 @@
   "id": "managerSignNew",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=121&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+  },
   "chineseName": "公文审批总经理签核-创建",
   "description": "公文审批总经理签核-创建",
   "controls": {
@@ -114,6 +117,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -140,6 +147,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -155,6 +166,146 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control110_mHsZAV": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control110_mHsZAV"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control111_yUR1xo": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "所见即所得编辑器, remark, 按 ALT+0 查看帮助。"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]/IFRAME[1]",
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::TD[@id=\"cke_contents_remark\"]//IFRAME"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              16
+            ],
+            "value": "SPAN.cke_wrapper.cke_ltr TABLE.cke_editor TD.cke_contents IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control111_yUR1xo"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control112_qbRwBy": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control112_qbRwBy"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control113_Hb7TgW": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control113_Hb7TgW"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -162,7 +313,11 @@
       "controls": [
         "control104_PuEuF8",
         "control99_sLORzW",
-        "control105_7JX5Xl"
+        "control105_7JX5Xl",
+        "control110_mHsZAV",
+        "control111_yUR1xo",
+        "control112_qbRwBy",
+        "control113_Hb7TgW"
       ],
       "anchors": [
         "control98_GNGTgG"
@@ -185,6 +340,30 @@
       "toContexts": [
         {
           "toContextId": "context16_xe32nI"
+        }
+      ]
+    },
+    "flow60_pMfZcy": {
+      "fromContextId": "context16_xe32nI",
+      "fromAction": "doAction",
+      "fromControlId": "control111_yUR1xo",
+      "toContexts": [
+        {
+          "toContextId": "context16_xe32nI"
+        }
+      ]
+    },
+    "flow63_puuVJ9": {
+      "fromContextId": "context16_xe32nI",
+      "fromAction": "doAction",
+      "fromControlId": "control112_qbRwBy",
+      "toContexts": [
+        {
+          "toContextId": "context16_xe32nI"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     }
@@ -234,6 +413,66 @@
               "events": {
                 "onDoAction": "doAction_uiControl91_tQHRMw",
                 "onGetTemplate": "getTemplate_uiControl91_tQHRMw"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl93_MgqcKS",
+          "controlId": "control110_mHsZAV",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl93_MgqcKS",
+                "onGetTemplate": "getTemplate_uiControl93_MgqcKS"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl94_EApRep",
+          "controlId": "control111_yUR1xo",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl94_EApRep",
+                "onGetTemplate": "getTemplate_uiControl94_EApRep"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl95_V9xDDs",
+          "controlId": "control112_qbRwBy",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl95_V9xDDs",
+                "onGetTemplate": "getTemplate_uiControl95_V9xDDs"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl96_rfpcXz",
+          "controlId": "control113_Hb7TgW",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl96_rfpcXz",
+                "onGetTemplate": "getTemplate_uiControl96_rfpcXz"
               }
             }
           }
