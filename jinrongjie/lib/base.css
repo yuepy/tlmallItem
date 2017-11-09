@@ -770,6 +770,7 @@ li {
   background: #fff;
 }
 #firstMenu ul li {
+  position: relative;
   width: 33.333333333333333333333%;
   height: 134px;
   display: inline-block;
@@ -792,6 +793,20 @@ li {
 #firstMenu ul li span {
   font-size: 16px;
   color: #aaa;
+}
+#firstMenu ul .num {
+  font-size: 10px;
+  background: #ff1e00;
+  color: #fff;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 70%;
+  right: 30%;
 }
 #firstMenu ul i {
   display: block;
