@@ -660,6 +660,7 @@ li {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999;
 }
 .ysp-process-form-wrapper .load-more-coverlayer .load-more-data {
   position: absolute;
@@ -769,6 +770,7 @@ li {
   background: #fff;
 }
 #firstMenu ul li {
+  position: relative;
   width: 33.333333333333333333333%;
   height: 134px;
   display: inline-block;
@@ -791,6 +793,20 @@ li {
 #firstMenu ul li span {
   font-size: 16px;
   color: #aaa;
+}
+#firstMenu ul .num {
+  font-size: 10px;
+  background: #ff1e00;
+  color: #fff;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 70%;
+  right: 30%;
 }
 #firstMenu ul i {
   display: block;
@@ -2049,7 +2065,6 @@ div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_ca
   border: 1px solid #E1E1E1;
   padding: 5px;
   font-size: 14px;
-  margin-right: 15px;
 }
 .ysp_table_lfj .bottom_box .textArea2 * {
   color: #202020;
@@ -2754,4 +2769,16 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   border-bottom: 3px solid #C29A2A;
   color: #C29A2A;
   padding: 3px 0;
+}
+.ysp-custom-textarea {
+  background: #fff;
+  padding: 0 15px;
+}
+.ysp-custom-textarea .cutom-textarea {
+  border: 1px solid #efefef;
+  border-radius: 5px;
+  height: 80px;
+}
+.suggset_box_display {
+  display: block!important;
 }

@@ -7,16 +7,16 @@
     topWindow.tokenUrl = null;
     var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
     soapData = soapData + ' <SOAP:Body>';
-    soapData = soapData + ' <GetUnreadCountByPsCode xmlns="http://schemas.fsig.com.cn/commonWebserviceWSAppServerPackage" preserveSpace="no" qAccess="0" qValues="">';
+    soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://schemas.fsig.com.cn/commonWebserviceWSAppServerPackage" preserveSpace="no" qAccess="0" qValues="">';
     soapData = soapData + ' <psCode>101160</psCode>';
-    soapData = soapData + ' </GetUnreadCountByPsCode>';
+    soapData = soapData + ' </GetTodoCountInfoByPsCode>';
     soapData = soapData + ' </SOAP:Body>';
     soapData = soapData + ' </SOAP:Envelope>';
     topWindow.yspTokenUrl = function(url) {
         topWindow.tokenUrl = url;
         return url;
     };
-    topWindow.num = null;
+    topWindow.num = [];
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
     var topWin = null; // Window对象
@@ -220,9 +220,9 @@
           
           
           // console.log(111,aWin.document)
-          aWin.alert = function (){
-            console.log('又是弹框 ! ~.~');
-          }
+          // aWin.alert = function (){
+          //   console.log('DUANG ~  又是弹框 ! ~.~');
+          // } 
           
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
@@ -282,8 +282,8 @@
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         // console.log(xmlhttp.responseText);
-                        var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
-                        topWindow.num = xmldoc.getElementsByTagName('getUnreadCountByPsCode')[1].textContent;
+                        var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml'); 
+                      topWindow.num.push(xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('todoCount')[0].textContent,xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('unreadCount')[0].textContent);
                     }
                 }
                 xmlhttp.send(soapData);
