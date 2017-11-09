@@ -233,7 +233,7 @@
     },
     doAction_uiControl65_ILA94I: function (data, elem) {
       var eventType = data.eventType;var btnIndex = data.dataCustom.num;if (eventType == 'click') {
-        elem.querySelectorAll('button')[btnIndex].click();console.log(ysp.appMain.getActiveUrl());
+        elem.querySelectorAll('button')[btnIndex].click();
       }
     },
     getTemplate_uiControl65_ILA94I: function getTemplate_uiControl65_ILA94I() {
