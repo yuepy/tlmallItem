@@ -2724,122 +2724,130 @@ div[data-ysp-modelid='chairmanSign']{
 }
 //--------------------------------------------------------------自由流程02 发起 START
 .ysp_freeFlow_table_lfj{
-      select{
-        background: none;
-        border: 0;
-        border-bottom: 1px solid #EDEDED;
+  margin-bottom:72px;
+  select{
+  	background: none;
+    border: 0;
+    border-bottom: 1px solid #EDEDED;
         //margin-left: 15px;
-        padding:10px 0;
+    padding:10px 0;
+    color: #202020;
+    font-size: 15px;
+  }
+  .header_box{
+  	padding: 10px 0;
+    border-bottom: 10px solid #F3F3F3;
+    background:white;
+    center:nth-child(3){
+    	font-size: 14px;
+      color: rgb(102,102,102)
+    }
+    center:nth-child(1){
+    	color: #000;
+      font-weight: bold;
+    }
+    center:nth-child(2){
+    	color: #000;
+      font-weight: bold;
+    }
+  }
+  .center_box{
+  	background:white;
+    padding: 10px 0;
+    border-bottom: 10px solid #F3F3F3;
+    .center_tb{
+      padding-left: 15px;
+      .tip{
+      	min-height: 30px;
+        border-bottom: 1px solid #EDEDED;
+        padding-bottom: 10px;
         color: #202020;
         font-size: 15px;
       }
-      .header_box{
-        padding: 10px 0;
-        border-bottom: 10px solid #F3F3F3;
-        background:white;
-        center:nth-child(3){
-          font-size: 14px;
-          color: rgb(102,102,102)
-        }
-        center:nth-child(1){
-          color: #000;
-          font-weight: bold;
-        }
-        center:nth-child(2){
-          color: #000;
-          font-weight: bold;
-        }
+      select{
+      	background: none;
+    		border: 0;
+    		border-bottom: 1px solid #EDEDED;
+    		padding: 10px 0;
+    		color: #202020;
+    		font-size: 15px;
       }
-      .center_box{
-        background:white;
-        padding: 10px 0;
-        border-bottom: 10px solid #F3F3F3;
-        .center_tb{
-          padding-left: 15px;
-          .tip{
-              min-height: 30px;
-              border-bottom: 1px solid #EDEDED;
-              padding-bottom: 10px;
-              color: #202020;
-              font-size: 15px;
-          }
-          select{
-          	background: none;
-    				border: 0;
-    				border-bottom: 1px solid #EDEDED;
-    				padding: 10px 0;
-    				color: #202020;
-    				font-size: 15px;
-          }
-        }
+    }
+  }
+  
+  .bottom_box{
+  	background:white;
+    padding: 10px 0;
+    border-bottom: 10px solid #F3F3F3;
+    .hidden_bottom_tb{
+      div:last-child{
+        border:none;
       }
-      .bottom_box{
-        background:white;
-        padding: 10px 0;
-        border-bottom: 10px solid #F3F3F3;
-        .ysp_freeFlow_enclosure{
-          i{
-            display:inline-block;
-            width:21px;
-            height:22px;
-            float:right;
-            margin-right:15px;
-            background: url("../lib/images/upload-files.png") no-repeat;
-          }
-        }
-        .bottom_tb{
-          padding-left: 15px;
-          >*:nth-child(n+11){
-            display: none;
-          }
-        }
-        .ysp_freeFlow_btn{
-        	border: 0;
-    			border-bottom: 1px solid #EDEDED;
-    			padding: 10px 0;
-    			color: #202020;
-          height:42px;
-    			width: 100%;
-          div{
-            float:right;
-            font-size: 15px;
-            margin-right:15px;
-          }
-        }
-        .button_less{
-          display: none;
-          span:before{
-            margin-right: 10px;
-            content:'';
-            width:20px;
-            height: 20px;
-            display: inline-block;
-            background: url(../local/img/shangjiantou.png) no-repeat 0 5px ;
-            background-size: 100%;
-          }
-        }
-        .button_more{
-          margin-top:-15px;
-          span:before{
-            margin-right: 10px;
-            content:'';
-            width:20px;
-            height: 20px;
-            display: inline-block;
-            background: url(../local/img/xiajiantou.png) no-repeat 0 5px ;
-            background-size: 100%;
-          }
-        }
-        .ysp_button_more{
-            height: 40px;
-            line-height: 50px;
-            text-align: center;
-            font-size: 14px;
-        }
-        .name{
-          width:100%;
-          border-bottom: 1px solid #EDEDED;
-          padding-bottom: 10px;
+    }
+    .ysp_freeFlow_enclosure{
+    	i{
+				display:inline-block;
+        width:21px;
+        height:22px;
+        float:right;
+        margin-right:15px;
+        background: url("../lib/images/upload-files.png") no-repeat;
+      }
+    }
+    .bottom_tb,.hidden_bottom_tb{
+    	padding-left: 15px;
+      // >*:nth-child(n+11){
+      // 	display: none;
+      // }
+    }
+    .ysp_freeFlow_btn{
+      border: 0;
+    	border-bottom: 1px solid #EDEDED;
+    	padding: 10px 0;
+    	color: #202020;
+      height:42px;
+    	width: 100%;
+      div{
+      	float:right;
+        font-size: 15px;
+        margin-right:15px;
+      }
+    }
+    .button_less{
+      border-top:1px solid #ddd;
+      span:before{
+      	margin-right: 10px;
+        content:'';
+        width:20px;
+        height: 20px;
+        display: inline-block;
+        background: url(../local/img/shangjiantou.png) no-repeat 0 5px ;
+        background-size: 100%;
+      }
+    }
+    .button_more{
+      border-top:1px solid #ddd;
+    	margin-top:-15px;
+      span:before{
+      	margin-right: 10px;
+        content:'';
+        width:20px;
+        height: 20px;
+        display: inline-block;
+        background: url(../local/img/xiajiantou.png) no-repeat 0 5px ;
+        background-size: 100%;
+      }
+    }
+    .ysp_button_more{
+    	height: 40px;
+      line-height: 50px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .name{
+    	width:100%;
+      border-bottom: 1px solid #EDEDED;
+      padding-bottom: 10px;
           color: #202020;
           font-size: 15px;
         }
@@ -2961,8 +2969,89 @@ div[data-ysp-modelid='chairmanSign']{
           }
         }
       }
-
 }
+.ysp_freeflow_button_container{
+	width:100%;
+  height:72px;
+  background: white;
+  padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
+  position: fixed;
+  bottom:0;
+  left:0;
+  .ysp_freeflow_submit{
+  	color:white;
+    border:1px solid #C29A2A;
+    border-radius:3px;
+    background:#C29A2A;
+    width:85%;
+    display: inline-block;
+  }
+  .ysp_freeflow_preservation{
+    border:1px solid #C29A2A;
+    border-radius:3px;
+    background:#C29A2A;
+    color:white;
+    width:40%;
+    display: inline-block;
+  }
+  i{
+    display: inline-block;
+    width:10%;
+    height:40px;
+    background: url(../lib/images/more_button.png) no-repeat center center;
+    position: relative;
+    top:7px;
+  }
+  .ysp_freeflow_circulations{
+    z-index: 1000;
+    position: fixed;
+    width:98%;
+    bottom:0;
+    left:0; 
+    .ysp_freeflow_circulations_btn{
+      background:white;
+      width:100%;
+      margin:1%;
+      border-radius:5px;
+      padding:0 5px;
+      div{
+        width:100%;
+        height:45px;
+        line-height:45px;
+        text-align:center;
+        border-bottom:1px solid #ddd;
+        color:#3D8CF8;
+      }
+    }
+    .ysp_freeflow_return{
+      background:white;
+      width:100%;
+      margin:1%;
+      border-radius:5px;
+      padding:0 5px;
+      height:45px;
+      line-height:45px;
+      text-align:center;
+      color:#999999;
+    }
+  }
+  .ysp_freeflow_background{
+    >div:nth-child(1){
+			width:100%;
+      height:100%;
+      background:rgba(52, 52, 52, 0.5);
+      position: fixed;
+      top:0;
+      left:0;
+      right:0;
+      left:0;
+      z-index: 999;
+    }
+  }
+}
+//--------------------------------------------------------------自由流程02 END
 //tabs样式lfj
  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
     margin: 0;
@@ -2983,7 +3072,7 @@ div[data-ysp-modelid='chairmanSign']{
       }
     }
   }
-//--------------------------------------------------------------自由流程02 END
+
 .ysp-custom-textarea{
   background: #fff;
   padding: 0 15px;

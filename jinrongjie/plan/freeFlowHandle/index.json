@@ -1,70 +1,12 @@
 {
   "version": "0.1",
-  "id": "freeFlow02",
-  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=43&isagent=0&beagenter=0",
+  "id": "freeFlowHandle",
+  "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=303980&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
   "jsFile": "index.js",
-  "requires": {
-    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
-    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
-    "freeFlowHandle": "../freeFlowHandle/index.json"
-  },
-  "chineseName": "02自由流程",
+  "chineseName": "自由流程02处理",
   "description": "",
   "controls": {
-    "control106_yV1vnN": {
-      "location": {
-        "data": {
-          "tagName": "SPAN"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "请求:创建 - 02自由流程 - 创建"
-              ],
-              "visText": [
-                "请求:创建 - 02自由流程 - 创建"
-              ]
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": [
-              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
-              "descendant::SPAN[@id=\"BacoTitle\"]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "roles": "element",
-      "text": "",
-      "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('请求:创建 - 02自由流程 - 创建') !==-1){return true;}return false;"
-    },
-    "control107_5Bad4R": {
+    "control137_Tfm5qv": {
       "location": {
         "data": {
           "tagName": "TD"
@@ -77,26 +19,22 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control107_5Bad4R"
+        "onGetData": "getData_control137_Tfm5qv"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control130_UnWIqr": {
+    "control139_AWnLao": {
       "location": {
         "data": {
           "tagName": "BUTTON"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -138,51 +76,42 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control130_UnWIqr"
+        "onGetData": "getData_control139_AWnLao"
       },
       "intendedRole": "custom",
       "roles": "element,button,custom",
-      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
     },
-    "control138_ieeTsZ": {
+    "control140_J9582q": {
       "location": {
         "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "TR"
         },
         "locators": [
           {
             "id": "@id/word",
-            "prob": 2,
+            "prob": 4,
             "value": [
-              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]/TABLE[1]",
-              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TABLE",
-              "descendant::DIV[@id=\"toolbarmenudiv\"]//TABLE"
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]",
+              "descendant::TR[@id=\"toolbarmenu\"]"
             ]
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "ordinal": [
-              0,
-              5
-            ],
-            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor TABLE"
+            "value": "DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor TR.x-toolbar-left-row"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control138_ieeTsZ"
+        "onGetData": "getData_control140_J9582q"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -191,114 +120,80 @@
     }
   },
   "contexts": {
-    "context17_dLU4Nr": {
+    "context22_g0GbVq": {
       "controls": [
-        "control107_5Bad4R",
-        "control130_UnWIqr",
-        "control138_ieeTsZ"
+        "control137_Tfm5qv",
+        "control139_AWnLao",
+        "control140_J9582q"
       ],
-      "anchors": [
-        "control106_yV1vnN"
-      ],
+      "anchors": [],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow58_RroxK7": {
+    "flow79_skVz6u": {
       "toContexts": [
         {
-          "toContextId": "context17_dLU4Nr"
+          "toContextId": "context22_g0GbVq"
         }
       ]
     },
-    "flow59_FNQmzR": {
-      "fromContextId": "context17_dLU4Nr",
+    "flow80_qfWpey": {
+      "fromContextId": "context22_g0GbVq",
       "fromAction": "doAction",
-      "fromControlId": "control107_5Bad4R",
+      "fromControlId": "control137_Tfm5qv",
       "toContexts": [
         {
-          "toContextId": "context17_dLU4Nr"
-        },
-        {
-          "toContextId": "context6_aweFC7",
-          "toModelId": "managerAuditRelateProcess"
-        },
-        {
-          "toContextId": "context5_DhOsrK",
-          "toModelId": "managerAuditRelatedDoc"
-        }
-      ]
-    },
-    "flow77_gsU9FR": {
-      "fromContextId": "context17_dLU4Nr",
-      "fromAction": "doAction",
-      "fromControlId": "control130_UnWIqr",
-      "toContexts": [
-        {
-          "toContextId": "context17_dLU4Nr"
-        }
-      ]
-    },
-    "flow78_5MI9VJ": {
-      "fromContextId": "context17_dLU4Nr",
-      "fromAction": "doAction",
-      "fromControlId": "control138_ieeTsZ",
-      "toContexts": [
-        {
-          "toContextId": "context17_dLU4Nr"
-        },
-        {
-          "toContextId": "context22_g0GbVq",
-          "toModelId": "freeFlowHandle"
+          "toContextId": "context22_g0GbVq"
         }
       ]
     }
   },
   "pages": {
-    "page17_LWwkTx": {
-      "contextId": "context17_dLU4Nr",
+    "page22_MTWiB9": {
+      "contextId": "context22_g0GbVq",
       "layout": [
         {
-          "id": "uiControl86_Z7MEmg",
-          "controlId": "control130_UnWIqr",
+          "id": "uiControl118_lHb8qr",
+          "controlId": "control139_AWnLao",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl86_Z7MEmg",
-                "onGetTemplate": "getTemplate_uiControl86_Z7MEmg"
+                "onDoAction": "doAction_uiControl118_lHb8qr",
+                "onGetTemplate": "getTemplate_uiControl118_lHb8qr"
               }
             }
           }
         },
         {
-          "id": "uiControl92_sGLgMQ",
-          "controlId": "control107_5Bad4R",
+          "id": "uiControl116_FCmGGI",
+          "controlId": "control137_Tfm5qv",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl92_sGLgMQ",
-                "onGetTemplate": "getTemplate_uiControl92_sGLgMQ"
+                "onDoAction": "doAction_uiControl116_FCmGGI",
+                "onGetTemplate": "getTemplate_uiControl116_FCmGGI"
               }
             }
           }
         },
         {
-          "id": "uiControl117_FToL7B",
-          "controlId": "control138_ieeTsZ",
+          "id": "uiControl119_U8CTwt",
+          "controlId": "control140_J9582q",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl117_FToL7B",
-                "onGetTemplate": "getTemplate_uiControl117_FToL7B"
+                "onDoAction": "doAction_uiControl119_U8CTwt",
+                "onGetTemplate": "getTemplate_uiControl119_U8CTwt"
               }
             }
           }
@@ -309,25 +204,23 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context17_dLU4Nr": [
-          ""
+        "context22_g0GbVq": [
+          "123"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context17_dLU4Nr": [
-          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=43&isagent=0&beagenter=0"
-        ],
-        "context6_aweFC7": [
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
+        "context22_g0GbVq": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=303980&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=303981&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=303983&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context22_g0GbVq": [
           [
             "BacoAddFavorite",
             "BacoTitle",
@@ -336,8 +229,6 @@
             "WfLog",
             "WfPic",
             "WfText",
-            "_beagenter",
-            "_isagent",
             "bodyiframe",
             "btnHelp",
             "closetext",
@@ -357,6 +248,7 @@
             "picInnerFrameurl",
             "piciframe",
             "requestTabButton",
+            "requestmarkSpan",
             "resourceimg",
             "resourceimghref",
             "result",
@@ -368,6 +260,8 @@
             "toolbarmenu",
             "toolbarmenuCoverdiv",
             "toolbarmenudiv",
+            "triSubwfIframe",
+            "wfdoc",
             "workflowtext"
           ]
         ]
@@ -375,14 +269,18 @@
     },
     "page/classes": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context22_g0GbVq": [
           [
             "STYLE",
             "TopTitle",
             "btnFavorite",
             "btnHelp",
             "btn_add",
+            "btn_back",
+            "btn_doDelete",
             "btn_edit",
+            "btn_forward",
+            "btn_print",
             "btn_subbackName",
             "btn_wfSave",
             "clickRightMenu",
@@ -428,13 +326,16 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context17_dLU4Nr": [
+        "context22_g0GbVq": [
           [
             "-/-/DIV",
+            "-/-/IFRAME",
             "-/-/INPUT-hidden",
             "-/-/LINK",
+            "-/-/META",
             "-/-/SCRIPT",
             "-/-/STYLE",
+            "-/-/TITLE",
             "-/DIV/A",
             "-/DIV/DIV",
             "-/DIV/IFRAME",
@@ -458,6 +359,7 @@
             "TD/DIV/IMG",
             "TD/DIV/SPAN",
             "TD/EM/BUTTON",
+            "TD/SPAN/SPAN",
             "TD/TABLE/TBODY",
             "TR/TD/A",
             "TR/TD/BUTTON",
