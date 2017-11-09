@@ -148,7 +148,7 @@ li {
 .ysp-manager-audit-title-icon {
   background: #fff;
 }
-.ysp-manager-audit-title-icon span {
+.ysp-manager-audit-title-icon > span:nth-child(1) {
   display: inline-block;
   padding: 10px 15px;
   background: url(images/Title-icon.png) no-repeat;
@@ -2849,4 +2849,26 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .suggset_box_display {
   display: block!important;
+}
+.ysp-sign-tab-upload {
+  padding: 0 15px;
+  font-size: 14px;
+  width: 100%;
+  color: #999;
+}
+.ysp-sign-tab-upload span {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  width: 50%;
+}
+.ysp-sign-tab-upload .content {
+  border-bottom: 1px solid #efefef;
+}
+.ysp-sign-tab-upload .content > span:nth-child(2) {
+  text-align: right;
+  padding: 0 10px 0 0;
+}
+.ysp-sign-tab-upload .content > span:nth-child(2):hover {
+  color: #C29A2A;
 }

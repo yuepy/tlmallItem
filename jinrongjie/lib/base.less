@@ -175,7 +175,7 @@ li {list-style: none}
 /*****************公文审批-总经理审核 -START***********************/
 .ysp-manager-audit-title-icon{
   background: #fff;
-  span{
+  >span:nth-child(1){
     display: inline-block;
     padding: 10px 15px;
     background: url(images/Title-icon.png) no-repeat;
@@ -2995,4 +2995,20 @@ div[data-ysp-modelid='chairmanSign']{
 }
 .suggset_box_display{
   display: block!important;
+}
+.ysp-sign-tab-upload{
+  padding: 0 15px;
+  font-size: 14px;
+  width: 100%;
+  color: #999;
+  span{display: inline-block;height: 30px; line-height: 30px;width: 50%;}
+  
+  .content{
+    border-bottom: 1px solid #efefef;
+  	>span:nth-child(2){
+      text-align: right;
+    	padding: 0 10px 0 0;
+      &:hover{color: #C29A2A;}
+    }
+  }
 }
