@@ -711,9 +711,16 @@ li {
 .ysp-process-tosend > span:nth-child(1) {
   width: 30%;
 }
-.ysp-process-tosend > span:nth-child(2) {
+.ysp-process-tosend > div {
   width: 70%;
+  display: inline-block;
   border-bottom: 1px solid #ddd;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.ysp-process-tosend > div span {
+  width: 99%;
 }
 .ysp-process-tosend .receive-people {
   font-size: 14px;
