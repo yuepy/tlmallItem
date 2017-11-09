@@ -6,7 +6,8 @@
   "requires": {
     "askForLeave": "../askForLeave/index.json",
     "choosePerson": "../choosePerson/index.json",
-    "postName": "../postName/index.json"
+    "postName": "../postName/index.json",
+    "waitTodo": "../waitTodo/index.json"
   },
   "chineseName": "请假/公出申请单",
   "description": "",
@@ -596,6 +597,20 @@
       "toContexts": [
         {
           "toContextId": "context11_ksSRDp"
+        }
+      ]
+    },
+    "flow26_OekV5M": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control63_xKq6K5",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        },
+        {
+          "toContextId": "context2_owrLEy",
+          "toModelId": "waitTodo"
         }
       ]
     }
