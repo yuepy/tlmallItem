@@ -275,35 +275,14 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control145_d0wQgv": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[3]/TD[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control145_d0wQgv"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control147_v5Mf03": {
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -335,6 +314,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -361,6 +344,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -392,6 +379,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -416,6 +407,63 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control16_K32wfa": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabUpload\"]",
+              "descendant::DIV[@id=\"SignTabUpload\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control16_K32wfa"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control41_RmdP9a": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[4]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control41_RmdP9a"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -427,11 +475,12 @@
         "control139_KCrEat",
         "control142_bsrJu4",
         "control144_K9tuXT",
-        "control145_d0wQgv",
         "control147_v5Mf03",
         "control148_AvC1JI",
         "control149_FA7mWN",
-        "control150_ItFqSB"
+        "control150_ItFqSB",
+        "control16_K32wfa",
+        "control41_RmdP9a"
       ],
       "anchors": [
         "control76_TURNvm"
@@ -594,21 +643,6 @@
                   }
                 },
                 {
-                  "id": "uiControl124_6Xaorp",
-                  "controlId": "control145_d0wQgv",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl124_6Xaorp",
-                        "onGetTemplate": "getTemplate_uiControl124_6Xaorp"
-                      }
-                    }
-                  }
-                },
-                {
                   "id": "uiControl121_q8oPwD",
                   "controlId": "control142_bsrJu4",
                   "display": {
@@ -654,6 +688,21 @@
                   }
                 },
                 {
+                  "id": "uiControl39_yHuHLu",
+                  "controlId": "control41_RmdP9a",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl39_yHuHLu",
+                        "onGetTemplate": "getTemplate_uiControl39_yHuHLu"
+                      }
+                    }
+                  }
+                },
+                {
                   "id": "uiControl128_U2CfIM",
                   "controlId": "control149_FA7mWN",
                   "display": {
@@ -664,6 +713,21 @@
                       "events": {
                         "onDoAction": "doAction_uiControl128_U2CfIM",
                         "onGetTemplate": "getTemplate_uiControl128_U2CfIM"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl14_Jdl4Pm",
+                  "controlId": "control16_K32wfa",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl14_Jdl4Pm",
+                        "onGetTemplate": "getTemplate_uiControl14_Jdl4Pm"
                       }
                     }
                   }
