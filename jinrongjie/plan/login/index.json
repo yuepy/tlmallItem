@@ -1,1 +1,758 @@
-{"version":"0.1","id":"login","targetURL":"http://192.168.200.63/login/Login.jsp","jsFile":"index.js","requires":{"index":"../index/index.json","managerAuditDetail":"../managerAuditDetail/index.json"},"chineseName":"登录页面","description":"","controls":{"control0_OIS8BA":{"location":{"data":{"tagName":"INPUT"},"userData":{"data":[],"force":false},"locators":[{"id":"label","prob":4,"value":{"text":["用户名:"],"visText":["用户名:"]}},{"id":"elem/@name","prob":2,"value":"descendant::INPUT[@name=\"loginid\"]"},{"id":"@id/word","prob":3,"value":["descendant::TD[@id=\"lgcontenttbl\"]//INPUT[@id=\"loginid\"]","descendant::INPUT[@id=\"loginid\"]"]},{"id":"@class/word","prob":1,"ordinal":[0,2],"value":"DIV.input_out.overlabel-wrapper INPUT.input_inner"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/INPUT[1]"},{"id":"input/type","verifyEnabled":true,"value":"text"}]},"intendedRole":"textbox","roles":"element,textbox","monitored":true,"frameXPath":""},"control1_lFSTRO":{"location":{"data":{"tagName":"INPUT"},"userData":{"data":[],"force":false},"locators":[{"id":"label","prob":4,"value":{"text":["密码:"],"visText":["密码:"]}},{"id":"elem/@name","prob":2,"value":"descendant::INPUT[@name=\"userpassword\"]"},{"id":"@id/word","prob":3,"value":["descendant::TD[@id=\"lgcontenttbl\"]//INPUT[@id=\"userpassword\"]","descendant::INPUT[@id=\"userpassword\"]"]},{"id":"@class/word","prob":1,"ordinal":[1,2],"value":"DIV.input_out.overlabel-wrapper INPUT.input_inner"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[1]/INPUT[1]"},{"id":"input/type","verifyEnabled":true,"value":"password"}]},"intendedRole":"passwordbox","roles":"element,passwordbox,textbox","monitored":true,"frameXPath":""},"control3_oOkdsJ":{"location":{"data":{"tagName":"INPUT"},"userData":{"data":[],"force":false},"locators":[{"id":"label","prob":4,"value":{"text":["记住用户名和密码"],"visText":["记住用户名和密码"]}},{"id":"@id/word","prob":1,"value":"descendant::TD[@id=\"lgcontenttbl\"]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/INPUT[1]"},{"id":"@id/nonWord","prob":1,"disabled":true,"fact":"ck","value":"descendant::TD[@id=\"lgcontenttbl\"]//INPUT[@id=\"ck\"]"},{"id":"@class/word","prob":1,"value":"SPAN.s_ck INPUT.memory"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/INPUT[1]"},{"id":"input/type","verifyEnabled":true,"value":"checkbox"}]},"intendedRole":"checkbox","roles":"element,checkbox","monitored":true,"frameXPath":""},"control4_a9rKt5":{"location":{"data":{"tagName":"A"},"userData":{"data":[],"force":false},"locators":[{"id":"text","prob":3,"value":{"text":["重置密码"],"visText":["重置密码"]}},{"id":"a/@href","prob":1,"value":{"funcName":"void"}},{"id":"@id/word","prob":1,"value":["descendant::TD[@id=\"lgcontenttbl\"]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/A[1]","descendant::TD[@id=\"lgcontenttbl\"]//A"]},{"id":"@class/word","prob":1,"value":"SPAN.s_ck A"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/A[1]"},{"id":"style/color","value":[18,56,133]},{"id":"elderLevel","value":{"level":0}}]},"intendedRole":"link","roles":"element,link","monitored":false,"frameXPath":""},"control5_CNTcxJ":{"location":{"data":{"tagName":"TD"},"userData":{"data":[],"force":false},"locators":[{"id":"@id/word","prob":2,"value":"descendant::TD[@id=\"lgcontenttbl\"]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"},{"id":"elderLevel","value":{"level":0}}]},"events":{"onGetData":"getData_control5_CNTcxJ"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":""},"control6_izEbgM":{"location":{"data":{"tagName":"INPUT"},"userData":{"data":[],"force":false},"locators":[{"id":"elem/@name","prob":2,"value":"descendant::INPUT[@name=\"submit\"]"},{"id":"@id/word","prob":3,"value":["descendant::TD[@id=\"lgcontenttbl\"]//INPUT[@id=\"login\"]","descendant::INPUT[@id=\"login\"]"]},{"id":"@class/word","prob":1,"value":"INPUT.lgsm"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/INPUT[1]"},{"id":"input/type","verifyEnabled":true,"value":"submit"}]},"intendedRole":"button","roles":"element,button","monitored":false,"frameXPath":""},"control67_AVD1pC":{"location":{"data":{"tagName":"P"},"userData":{"data":[],"force":false},"locators":[{"id":"text","prob":3,"value":{"text":["北京金融街投资（集团）未考勤申报审批流程"],"visText":["北京金融街投资（集团）未考勤申报审批流程"]}},{"id":"@class/word","prob":1,"ordinal":[0,15],"value":"P.bt"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"}]},"roles":"element","frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"}},"contexts":{"context0_kM8s1V":{"controls":["control0_OIS8BA","control1_lFSTRO","control3_oOkdsJ","control4_a9rKt5","control5_CNTcxJ","control6_izEbgM"],"anchors":[],"urlAnchor":[]}},"flows":{"flow0_wW9a7d":{"toContexts":[{"toContextId":"context0_kM8s1V"},{"toContextId":"context4_wRixwF","toModelId":"managerAuditDetail"}]},"flow1_FIMvmh":{"fromContextId":"context0_kM8s1V","fromAction":"click","fromControlId":"control0_OIS8BA","toContexts":[{"toContextId":"context0_kM8s1V"}]},"flow2_3ZqmUI":{"fromContextId":"context0_kM8s1V","fromAction":"click","fromControlId":"control1_lFSTRO","toContexts":[{"toContextId":"context0_kM8s1V"}]},"flow3_2Z2Ozo":{"fromContextId":"context0_kM8s1V","fromAction":"click","fromControlId":"control3_oOkdsJ","toContexts":[{"toContextId":"context0_kM8s1V"}]},"flow4_sbz2eS":{"fromContextId":"context0_kM8s1V","fromAction":"click","fromControlId":"control6_izEbgM","toContexts":[{"toContextId":"context0_kM8s1V"},{"toContextId":"context1_yeQcpw","toModelId":"index"}]}},"pages":{"page0_R5lJg4":{"contextId":"context0_kM8s1V","layout":[{"id":"uiControl5_zOagGr","controlId":"control5_CNTcxJ","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl5_zOagGr","onGetTemplate":"getTemplate_uiControl5_zOagGr"}}}},{"id":"uiControl0_C3b6CS","controlId":"control0_OIS8BA","display":{"adapterId":"textbox","type":"textbox","placeholder":"","multiline":false,"label":"用户名:","adapter":{"templateType":""}}},{"id":"uiControl1_WFFbXh","controlId":"control1_lFSTRO","display":{"adapterId":"passwordbox","type":"passwordbox","class":"","label":"密码:","adapter":{"templateType":""}}},{"id":"uiControl3_k6amsM","controlId":"control3_oOkdsJ","display":{"adapterId":"checkbox","type":"checkbox","adapter":{"templateType":""}}},{"id":"uiControl4_amIy8c","controlId":"control4_a9rKt5","display":{"adapterId":"clickable","type":"link","adapter":{"templateType":""}}},{"id":"uiControl6_bEpdEo","controlId":"control6_izEbgM","display":{"adapterId":"clickable","type":"button","adapter":{"templateType":""}}}]}},"matchers":{"page/title":{"contexts":{"context0_kM8s1V":["金融街集团OA办公系统"],"context1_yeQcpw":["金融街投资集团OA - 张济天","金融街投资集团OA - 孟星"]}},"page/urls":{"contexts":{"context0_kM8s1V":["192.168.200.63/login/Login.jsp","192.168.200.63/wui/theme/ecology7/page/login.jsp?templateId=21&logintype=1&gopage=&message=17"]}},"page/ids":{"contexts":{"context0_kM8s1V":[["Calc","CalcTable","FONTSYSTEMF","buttonTB","ck","disimg","fontTips","ieverTips","isie","keyBoardTitle","lgcontenttbl","login","loginid","nav","sfclsid","slideDemo","slideshow","softkeyboard","tokenAuthKey","trTokenAuthKey","userpassword"]],"context1_yeQcpw":[["FONTSYSTEMF","_DialogBGDiv","_DialogBGMask","container","content","contentUl","contentcontainer","divFloatBg","divFloatLeftmenu","divShowSignInfo","downLoadReg","drillcrumb","drillmenu","favLi","footer","head","leftBlockHiddenContr","leftBlockHrmDep","leftBlockHrmInfoCenter","leftBlockTd","leftBlockTopBgCenter","leftBlock_HrmDiv","leftMenu","leftMenuBottomCenter","leftmenu-bottom","leftmenu-bottom-bottom","leftmenu-top","leftmenucontainer","leftmenucontainer-top","logo","mainFrame","mainTopBlockTr","message_Div","moreLi","navFav","navTd","null","sample","searchBlockUl","searchbt","shadown-content","shadown-corner","shadown-x","shadown-y","subMenusContainer","tblHrmToolbr","toolbarMore","toolbarMoreBlockTop","topBlockHiddenContr","topMenuContr","userIcon"],["FONTSYSTEMF","container","content","contentUl","contentcontainer","divFloatBg","divFloatLeftmenu","divShowSignInfo","downLoadReg","drillcrumb","drillmenu","favLi","footer","head","leftBlockHiddenContr","leftBlockHrmDep","leftBlockHrmInfoCenter","leftBlockTd","leftBlockTopBgCenter","leftBlock_HrmDiv","leftMenu","leftMenuBottomCenter","leftmenu-bottom","leftmenu-bottom-bottom","leftmenu-top","leftmenucontainer","leftmenucontainer-top","logo","mainFrame","mainTopBlockTr","message_Div","moreLi","navFav","navTd","null","sample","searchBlockUl","searchbt","shadown-content","shadown-corner","shadown-x","shadown-y","subMenusContainer","tblHrmToolbr","toolbarMore","toolbarMoreBlockTop","topBlockHiddenContr","topMenuContr","userIcon"]]}},"page/classes":{"contexts":{"context0_kM8s1V":[["activeSlide","hand","input_inner","input_out","lgsm","m-t-","memory","overlabel","overlabel-apply","overlabel-wrapper","s_ck","slideDiv","slideDivContinar","slidnavtitle"]]}},"page/tagTriplets":{"contexts":{"context0_kM8s1V":[["-/-/DIV","-/-/LINK","-/-/SCRIPT","-/-/STYLE","-/-/TABLE","-/DIV/OBJECT","-/DIV/TABLE","-/TABLE/TBODY","DIV/DIV/DIV","DIV/DIV/STYLE","DIV/DIV/TABLE","DIV/TABLE/FORM","DIV/TABLE/TBODY","FORM/TABLE/TBODY","TABLE/TBODY/TR","TBODY/TR/TD","TD/DIV/DIV","TD/DIV/INPUT-password","TD/DIV/INPUT-text","TD/DIV/LABEL","TD/DIV/SPAN","TD/FORM/INPUT-hidden","TD/FORM/TABLE","TD/SPAN/A","TD/SPAN/INPUT-checkbox","TD/SPAN/LABEL","TD/TABLE/TBODY","TR/TD/DIV","TR/TD/FORM","TR/TD/INPUT-button","TR/TD/INPUT-hidden","TR/TD/INPUT-submit","TR/TD/INPUT-text","TR/TD/LABEL","TR/TD/SPAN","TR/TD/STYLE","TR/TD/TABLE"]]}}}}
+{
+  "version": "0.1",
+  "id": "login",
+  "targetURL": "http://192.168.200.63/login/Login.jsp",
+  "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json",
+    "managerAuditDetail": "../managerAuditDetail/index.json"
+  },
+  "chineseName": "登录页面",
+  "description": "",
+  "controls": {
+    "control0_OIS8BA": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "label",
+            "prob": 4,
+            "value": {
+              "text": [
+                "用户名:"
+              ],
+              "visText": [
+                "用户名:"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"loginid\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::TD[@id=\"lgcontenttbl\"]//INPUT[@id=\"loginid\"]",
+              "descendant::INPUT[@id=\"loginid\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.input_out.overlabel-wrapper INPUT.input_inner"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control1_lFSTRO": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "label",
+            "prob": 4,
+            "value": {
+              "text": [
+                "密码:"
+              ],
+              "visText": [
+                "密码:"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"userpassword\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::TD[@id=\"lgcontenttbl\"]//INPUT[@id=\"userpassword\"]",
+              "descendant::INPUT[@id=\"userpassword\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.input_out.overlabel-wrapper INPUT.input_inner"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "password"
+          }
+        ]
+      },
+      "intendedRole": "passwordbox",
+      "roles": "element,passwordbox,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control3_oOkdsJ": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "label",
+            "prob": 4,
+            "value": {
+              "text": [
+                "记住用户名和密码"
+              ],
+              "visText": [
+                "记住用户名和密码"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::TD[@id=\"lgcontenttbl\"]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/INPUT[1]"
+          },
+          {
+            "id": "@id/nonWord",
+            "prob": 1,
+            "disabled": true,
+            "fact": "ck",
+            "value": "descendant::TD[@id=\"lgcontenttbl\"]//INPUT[@id=\"ck\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "SPAN.s_ck INPUT.memory"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "checkbox"
+          }
+        ]
+      },
+      "intendedRole": "checkbox",
+      "roles": "element,checkbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control4_a9rKt5": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "重置密码"
+              ],
+              "visText": [
+                "重置密码"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 1,
+            "value": {
+              "funcName": "void"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::TD[@id=\"lgcontenttbl\"]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/A[1]",
+              "descendant::TD[@id=\"lgcontenttbl\"]//A"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "SPAN.s_ck A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              18,
+              56,
+              133
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "link",
+      "roles": "element,link",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control5_CNTcxJ": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::TD[@id=\"lgcontenttbl\"]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control5_CNTcxJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control6_izEbgM": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"submit\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::TD[@id=\"lgcontenttbl\"]//INPUT[@id=\"login\"]",
+              "descendant::INPUT[@id=\"login\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "INPUT.lgsm"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "submit"
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control67_AVD1pC": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "北京金融街投资（集团）未考勤申报审批流程"
+              ],
+              "visText": [
+                "北京金融街投资（集团）未考勤申报审批流程"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "P.bt"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context0_kM8s1V": {
+      "controls": [
+        "control0_OIS8BA",
+        "control1_lFSTRO",
+        "control3_oOkdsJ",
+        "control4_a9rKt5",
+        "control5_CNTcxJ",
+        "control6_izEbgM"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow0_wW9a7d": {
+      "toContexts": [
+        {
+          "toContextId": "context0_kM8s1V"
+        },
+        {
+          "toContextId": "context4_wRixwF",
+          "toModelId": "managerAuditDetail"
+        }
+      ]
+    },
+    "flow1_FIMvmh": {
+      "fromContextId": "context0_kM8s1V",
+      "fromAction": "click",
+      "fromControlId": "control0_OIS8BA",
+      "toContexts": [
+        {
+          "toContextId": "context0_kM8s1V"
+        }
+      ]
+    },
+    "flow2_3ZqmUI": {
+      "fromContextId": "context0_kM8s1V",
+      "fromAction": "click",
+      "fromControlId": "control1_lFSTRO",
+      "toContexts": [
+        {
+          "toContextId": "context0_kM8s1V"
+        }
+      ]
+    },
+    "flow3_2Z2Ozo": {
+      "fromContextId": "context0_kM8s1V",
+      "fromAction": "click",
+      "fromControlId": "control3_oOkdsJ",
+      "toContexts": [
+        {
+          "toContextId": "context0_kM8s1V"
+        }
+      ]
+    },
+    "flow4_sbz2eS": {
+      "fromContextId": "context0_kM8s1V",
+      "fromAction": "click",
+      "fromControlId": "control6_izEbgM",
+      "toContexts": [
+        {
+          "toContextId": "context0_kM8s1V"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0_R5lJg4": {
+      "contextId": "context0_kM8s1V",
+      "layout": [
+        {
+          "id": "uiControl5_zOagGr",
+          "controlId": "control5_CNTcxJ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl5_zOagGr",
+                "onGetTemplate": "getTemplate_uiControl5_zOagGr"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl0_C3b6CS",
+          "controlId": "control0_OIS8BA",
+          "display": {
+            "adapterId": "textbox",
+            "type": "textbox",
+            "placeholder": "",
+            "multiline": false,
+            "label": "用户名:",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl1_WFFbXh",
+          "controlId": "control1_lFSTRO",
+          "display": {
+            "adapterId": "passwordbox",
+            "type": "passwordbox",
+            "class": "",
+            "label": "密码:",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl3_k6amsM",
+          "controlId": "control3_oOkdsJ",
+          "display": {
+            "adapterId": "checkbox",
+            "type": "checkbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl4_amIy8c",
+          "controlId": "control4_a9rKt5",
+          "display": {
+            "adapterId": "clickable",
+            "type": "link",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl6_bEpdEo",
+          "controlId": "control6_izEbgM",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0_kM8s1V": [
+          "金融街集团OA办公系统"
+        ],
+        "context1_yeQcpw": [
+          "金融街投资集团OA - 张济天",
+          "金融街投资集团OA - 孟星"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0_kM8s1V": [
+          "192.168.200.63/login/Login.jsp",
+          "192.168.200.63/wui/theme/ecology7/page/login.jsp?templateId=21&logintype=1&gopage=&message=17"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0_kM8s1V": [
+          [
+            "Calc",
+            "CalcTable",
+            "FONTSYSTEMF",
+            "buttonTB",
+            "ck",
+            "disimg",
+            "fontTips",
+            "ieverTips",
+            "isie",
+            "keyBoardTitle",
+            "lgcontenttbl",
+            "login",
+            "loginid",
+            "nav",
+            "sfclsid",
+            "slideDemo",
+            "slideshow",
+            "softkeyboard",
+            "tokenAuthKey",
+            "trTokenAuthKey",
+            "userpassword"
+          ]
+        ],
+        "context1_yeQcpw": [
+          [
+            "FONTSYSTEMF",
+            "_DialogBGDiv",
+            "_DialogBGMask",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
+          ],
+          [
+            "FONTSYSTEMF",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0_kM8s1V": [
+          [
+            "activeSlide",
+            "hand",
+            "input_inner",
+            "input_out",
+            "lgsm",
+            "m-t-",
+            "memory",
+            "overlabel",
+            "overlabel-apply",
+            "overlabel-wrapper",
+            "s_ck",
+            "slideDiv",
+            "slideDivContinar",
+            "slidnavtitle"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0_kM8s1V": [
+          [
+            "-/-/DIV",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TABLE",
+            "-/DIV/OBJECT",
+            "-/DIV/TABLE",
+            "-/TABLE/TBODY",
+            "DIV/DIV/DIV",
+            "DIV/DIV/STYLE",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/FORM",
+            "DIV/TABLE/TBODY",
+            "FORM/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TD/DIV/INPUT-password",
+            "TD/DIV/INPUT-text",
+            "TD/DIV/LABEL",
+            "TD/DIV/SPAN",
+            "TD/FORM/INPUT-hidden",
+            "TD/FORM/TABLE",
+            "TD/SPAN/A",
+            "TD/SPAN/INPUT-checkbox",
+            "TD/SPAN/LABEL",
+            "TD/TABLE/TBODY",
+            "TR/TD/DIV",
+            "TR/TD/FORM",
+            "TR/TD/INPUT-button",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-submit",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/STYLE",
+            "TR/TD/TABLE"
+          ]
+        ]
+      }
+    }
+  }
+}
