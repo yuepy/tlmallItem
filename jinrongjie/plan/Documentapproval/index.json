@@ -89,6 +89,10 @@
         "data": {
           "tagName": "BUTTON"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "button/text",
@@ -135,13 +139,78 @@
       "roles": "element,button,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control138_Q3UQiw": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control138_Q3UQiw"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control139_KCrEat": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control139_KCrEat"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context13_QKvkSF": {
       "controls": [
         "control108_46cZtf",
-        "control112_1msmLu"
+        "control112_1msmLu",
+        "control138_Q3UQiw",
+        "control139_KCrEat"
       ],
       "anchors": [
         "control76_TURNvm"
@@ -238,6 +307,36 @@
               "layout": []
             }
           ]
+        },
+        {
+          "id": "uiControl117_sypnNO",
+          "controlId": "control138_Q3UQiw",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl117_sypnNO",
+                "onGetTemplate": "getTemplate_uiControl117_sypnNO"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl118_x342Nu",
+          "controlId": "control139_KCrEat",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl118_x342Nu",
+                "onGetTemplate": "getTemplate_uiControl118_x342Nu"
+              }
+            }
+          }
         }
       ]
     }
