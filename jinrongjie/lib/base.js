@@ -191,38 +191,32 @@
             //             alert(en.message);
             //         }
             //     }
-//             aWin.selectCategory = function(nodeID) {
-//               var node = aWin.tree.getNode(nodeID);
-//                 var path = node.text;
-//                 var id = node.categoryid;
-//                 var subid = -1;
-//                 var mainid = -1;
-//                 var  parth2="<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&seccategory="+id+"'>"+node.text+"</a>";  
-
-//                   while (node.parent != null) {        
-//                     path = node.parent.text + "/" + path;        
-//                     if (node.parent.categorytype == 1 && subid == -1) {
-//                         subid = node.parent.categoryid;
-//                         parth2="<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&subcategory="+subid+"'>"+node.parent.text+"</a>/"+parth2;               
-//                     }  else  if (node.parent.categorytype == 0) {
-//                         mainid = node.parent.categoryid;    
-//                         parth2="<a href='docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&maincategory="+mainid+"'>"+node.parent.text+"</a>/"+parth2;      
-//                   }  
-//                     node = node.parent;
-//                 } 
-//                 path = path.replace(/</g, "＜").replace(/>/g, "＞").replace(/&lt;/g, "＜").replace(/&gt;/g, "＞");
-
-//                 aWin.parent.returnValue = {tag:"1",id:""+id, path:""+path, mainid:""+mainid, subid:""+subid,path2:""+parth2};
-//                 aWin.parent.close();
-//             }
-//          }
           /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
           
-          
-          // console.log(111,aWin.document)
-          // aWin.alert = function (){
-          //   console.log('DUANG ~  又是弹框 ! ~.~');
-          // } 
+
+          // aWin.alert = function (message, title) {
+          //   debugger;
+          //   var buttons
+          //   if (arguments.length === 0) {
+          //     message = ''
+          //   }
+          //   if (title == null) {
+          //     title = ''
+          //   }
+          //   buttons = ['OK']
+          //   message = String(message);
+          //   if(message.indexOf('SWF') !== -1){
+          //     console.log('DUANG ~  又是弹框 ! ~.~  flash' );
+          //   }else if(message.indexOf('error') !== -1){
+          //     console.log('DUANG ~  又是弹框 ! ~.~  error');
+          //   }else{
+          //     remote.dialog.showMessageBox(remote.getCurrentWindow(), {
+          //       message: message,
+          //       title: title,
+          //       buttons: buttons
+          //     })
+          //   }
+          // }
           
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
