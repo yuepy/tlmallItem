@@ -221,9 +221,9 @@
           
           
           // console.log(111,aWin.document)
-          aWin.alert = function (){
-            console.log('DUANG ~  又是弹框 ! ~.~');
-          } 
+          // aWin.alert = function (){
+          //   console.log('DUANG ~  又是弹框 ! ~.~');
+          // } 
           
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
@@ -450,7 +450,6 @@
     // }
     /* 调用场景 : 页面返回或者进入无效,需要强制匹配方案时. */
     function _num() {
-      debugger;
         return topWindow.num;
     }
 
