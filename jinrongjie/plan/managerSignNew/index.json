@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=121&isagent=0&beagenter=0",
   "jsFile": "index.js",
   "requires": {
-    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
   },
   "chineseName": "创建-公文审批总经理签核",
   "description": "公文审批总经理签核-创建",
@@ -433,6 +434,20 @@
           "toContextId": "context16_xe32nI"
         }
       ]
+    },
+    "flow76_30rsQd": {
+      "fromContextId": "context16_xe32nI",
+      "fromAction": "doAction",
+      "fromControlId": "control113_Hb7TgW",
+      "toContexts": [
+        {
+          "toContextId": "context16_xe32nI"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
+        }
+      ]
     }
   },
   "pages": {
@@ -574,6 +589,10 @@
       "contexts": {
         "context16_xe32nI": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=121&isagent=0&beagenter=0"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },
