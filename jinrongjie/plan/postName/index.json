@@ -1,0 +1,227 @@
+{
+  "version": "0.1",
+  "id": "postName",
+  "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.rolesmark|28481",
+  "jsFile": "index.js",
+  "requires": {
+    "postName": "../postName/index.json"
+  },
+  "chineseName": "岗位名称",
+  "description": "",
+  "controls": {
+    "control134_9uP3tK": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "/html/body/form/table/tbody/tr[2]/td[2]/table/tbody/tr/td/table[1]/tbody/tr[1]/td[1]"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "岗位名称"
+              ],
+              "visText": [
+                "岗位名称"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              12
+            ],
+            "value": "TABLE.Shadow TABLE.ViewForm TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
+      "customJS": "if(elem.textContent.indexOf('岗位名称') !== -1){return true;}return false;;"
+    },
+    "control135_LFUZal": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"BrowseTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "TABLE.Shadow TABLE.BroswerStyle"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control135_LFUZal"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control136_TQ0Q4H": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control136_TQ0Q4H"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context21_LgNuze": {
+      "controls": [
+        "control135_LFUZal",
+        "control136_TQ0Q4H"
+      ],
+      "anchors": [
+        "control134_9uP3tK"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow76_zRVisD": {
+      "toContexts": [
+        {
+          "toContextId": "context21_LgNuze"
+        },
+        {
+          "toContextId": "context21_LgNuze",
+          "toModelId": "postName"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page21_KSfOvc": {
+      "contextId": "context21_LgNuze",
+      "layout": [
+        {
+          "id": "uiControl112_kUeDPS",
+          "controlId": "control136_TQ0Q4H",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl112_kUeDPS",
+                "onGetTemplate": "getTemplate_uiControl112_kUeDPS"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl111_PdKFVi",
+          "controlId": "control135_LFUZal",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl111_PdKFVi",
+                "onGetTemplate": "getTemplate_uiControl111_PdKFVi"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context21_LgNuze": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context21_LgNuze": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.rolesmark|28481"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context21_LgNuze": [
+          [
+            "main"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context21_LgNuze": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context21_LgNuze": [
+          [
+            "-/-/FRAME",
+            "-/-/NOFRAMES"
+          ]
+        ]
+      }
+    }
+  }
+}
