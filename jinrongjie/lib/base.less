@@ -782,6 +782,7 @@ li {list-style: none}
   background: #fff;
   ul{
     li{
+      position: relative;
       &:first-child,&:nth-child(2),&:nth-child(4),&:nth-child(5){
         border-right:1px solid #eee;
         border-bottom:1px solid #eee;
@@ -801,6 +802,20 @@ li {list-style: none}
         color: #aaa;
       }
       
+    }
+    .num{
+      font-size: 10px;
+      background: rgb(255,30,0);
+      color: #fff;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 70%;
+      right: 30%;
     }
     i{
       display: block;
@@ -2690,6 +2705,16 @@ div[data-ysp-modelid='chairmanSign']{
         background:white;
         padding: 10px 0;
         border-bottom: 10px solid #F3F3F3;
+        .ysp_freeFlow_enclosure{
+          i{
+            display:inline-block;
+            width:21px;
+            height:22px;
+            float:right;
+            margin-right:15px;
+            background: url("../lib/images/upload-files.png") no-repeat;
+          }
+        }
         .bottom_tb{
           padding-left: 15px;
           >*:nth-child(n+11){
@@ -2757,6 +2782,12 @@ div[data-ysp-modelid='chairmanSign']{
             width: 100%;
         }
         .file_box{
+          border: 0;
+    			border-bottom: 1px solid #EDEDED;
+    			padding: 10px 0;
+    			color: #202020;
+    			min-height: 42px;
+    			width: 100%;
           .file{
             position: relative;
             margin: 10px 15px 10px 0;
@@ -2881,6 +2912,15 @@ div[data-ysp-modelid='chairmanSign']{
     }
   }
 //--------------------------------------------------------------自由流程02 END
+.ysp-custom-textarea{
+  background: #fff;
+  padding: 0 15px;
+  .cutom-textarea{
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    height: 80px;
+  }
+}
 .suggset_box_display{
   display: block!important;
 }

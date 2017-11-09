@@ -7,16 +7,16 @@
     topWindow.tokenUrl = null;
     var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
     soapData = soapData + ' <SOAP:Body>';
-    soapData = soapData + ' <GetUnreadCountByPsCode xmlns="http://schemas.fsig.com.cn/commonWebserviceWSAppServerPackage" preserveSpace="no" qAccess="0" qValues="">';
+    soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://schemas.fsig.com.cn/commonWebserviceWSAppServerPackage" preserveSpace="no" qAccess="0" qValues="">';
     soapData = soapData + ' <psCode>101160</psCode>';
-    soapData = soapData + ' </GetUnreadCountByPsCode>';
+    soapData = soapData + ' </GetTodoCountInfoByPsCode>';
     soapData = soapData + ' </SOAP:Body>';
     soapData = soapData + ' </SOAP:Envelope>';
     topWindow.yspTokenUrl = function(url) {
         topWindow.tokenUrl = url;
         return url;
     };
-    topWindow.num = null;
+    topWindow.num = [];
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
     var topWin = null; // Window对象
@@ -31,6 +31,7 @@
         back: _back,
         getTableData: _getTableData,
         firstMenus: _firstMenus,
+      	fireKeyEvent:_fireKeyEvent,
         Dnum: _num, // 待办列表角标值
         isArray(array) {
             if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
@@ -220,9 +221,9 @@
           
           
           // console.log(111,aWin.document)
-          aWin.alert = function (){
-            console.log('又是弹框 ! ~.~');
-          }
+          // aWin.alert = function (){
+          //   console.log('DUANG ~  又是弹框 ! ~.~');
+          // } 
           
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
@@ -282,8 +283,8 @@
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         // console.log(xmlhttp.responseText);
-                        var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
-                        topWindow.num = xmldoc.getElementsByTagName('getUnreadCountByPsCode')[1].textContent;
+                        var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml'); 
+                      topWindow.num.push(xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('todoCount')[0].textContent,xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('unreadCount')[0].textContent);
                     }
                 }
                 xmlhttp.send(soapData);
@@ -516,5 +517,37 @@
     /* 调用场景 : 字符串前后去空格. */
     function _trim(str) {
         return str ? str.replace(/(^\s*)|(\s*$)/g, "") : '';
+    }
+  	/* 调用场景 : 键盘事件 */
+  	function _fireKeyEvent(el, evtType, keyCode){
+      var doc = el.ownerDocument,  
+      win = doc.defaultView || doc.parentWindow,  
+      evtObj;  
+      if(doc.createEvent){  
+          if(win.KeyEvent) {  
+              evtObj = doc.createEvent('KeyEvents');  
+              evtObj.initKeyEvent( evtType, true, true, win, false, false, false, false, keyCode, 0 );  
+          }  
+          else {  
+              evtObj = doc.createEvent('UIEvents');  
+              Object.defineProperty(evtObj, 'keyCode', {  
+                  get : function() { return this.keyCodeVal; }  
+              });       
+              Object.defineProperty(evtObj, 'which', {  
+                  get : function() { return this.keyCodeVal; }  
+              });  
+              evtObj.initUIEvent( evtType, true, true, win, 1 );  
+              evtObj.keyCodeVal = keyCode;  
+              if (evtObj.keyCode !== keyCode) {  
+                  console.log("keyCode " + evtObj.keyCode + " 和 (" + evtObj.which + ") 不匹配");  
+              }  
+          }  
+          el.dispatchEvent(evtObj);  
+      }   
+      else if(doc.createEventObject){  
+          evtObj = doc.createEventObject();  
+          evtObj.keyCode = keyCode;  
+          el.fireEvent('on' + evtType, evtObj);  
+      }
     }
 })(window, ysp);

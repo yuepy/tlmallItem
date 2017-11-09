@@ -770,6 +770,7 @@ li {
   background: #fff;
 }
 #firstMenu ul li {
+  position: relative;
   width: 33.333333333333333333333%;
   height: 134px;
   display: inline-block;
@@ -792,6 +793,20 @@ li {
 #firstMenu ul li span {
   font-size: 16px;
   color: #aaa;
+}
+#firstMenu ul .num {
+  font-size: 10px;
+  background: #ff1e00;
+  color: #fff;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 70%;
+  right: 30%;
 }
 #firstMenu ul i {
   display: block;
@@ -2557,6 +2572,14 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
+.ysp_freeFlow_table_lfj .bottom_box .ysp_freeFlow_enclosure i {
+  display: inline-block;
+  width: 21px;
+  height: 22px;
+  float: right;
+  margin-right: 15px;
+  background: url("../lib/images/upload-files.png") no-repeat;
+}
 .ysp_freeFlow_table_lfj .bottom_box .bottom_tb {
   padding-left: 15px;
 }
@@ -2621,6 +2644,14 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   color: #202020;
   font-size: 15px;
   display: block;
+  width: 100%;
+}
+.ysp_freeFlow_table_lfj .bottom_box .file_box {
+  border: 0;
+  border-bottom: 1px solid #EDEDED;
+  padding: 10px 0;
+  color: #202020;
+  min-height: 42px;
   width: 100%;
 }
 .ysp_freeFlow_table_lfj .bottom_box .file_box .file {
@@ -2738,6 +2769,15 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   border-bottom: 3px solid #C29A2A;
   color: #C29A2A;
   padding: 3px 0;
+}
+.ysp-custom-textarea {
+  background: #fff;
+  padding: 0 15px;
+}
+.ysp-custom-textarea .cutom-textarea {
+  border: 1px solid #efefef;
+  border-radius: 5px;
+  height: 80px;
 }
 .suggset_box_display {
   display: block!important;
