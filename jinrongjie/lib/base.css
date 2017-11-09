@@ -2519,6 +2519,9 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   border: 0;
   text-align: center;
 }
+.ysp_freeFlow_table_lfj {
+  margin-bottom: 72px;
+}
 .ysp_freeFlow_table_lfj select {
   background: none;
   border: 0;
@@ -2572,6 +2575,9 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
+.ysp_freeFlow_table_lfj .bottom_box .hidden_bottom_tb div:last-child {
+  border: none;
+}
 .ysp_freeFlow_table_lfj .bottom_box .ysp_freeFlow_enclosure i {
   display: inline-block;
   width: 21px;
@@ -2580,11 +2586,9 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   margin-right: 15px;
   background: url("../lib/images/upload-files.png") no-repeat;
 }
-.ysp_freeFlow_table_lfj .bottom_box .bottom_tb {
+.ysp_freeFlow_table_lfj .bottom_box .bottom_tb,
+.ysp_freeFlow_table_lfj .bottom_box .hidden_bottom_tb {
   padding-left: 15px;
-}
-.ysp_freeFlow_table_lfj .bottom_box .bottom_tb > *:nth-child(n+11) {
-  display: none;
 }
 .ysp_freeFlow_table_lfj .bottom_box .ysp_freeFlow_btn {
   border: 0;
@@ -2600,7 +2604,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   margin-right: 15px;
 }
 .ysp_freeFlow_table_lfj .bottom_box .button_less {
-  display: none;
+  border-top: 1px solid #ddd;
 }
 .ysp_freeFlow_table_lfj .bottom_box .button_less span:before {
   margin-right: 10px;
@@ -2612,6 +2616,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   background-size: 100%;
 }
 .ysp_freeFlow_table_lfj .bottom_box .button_more {
+  border-top: 1px solid #ddd;
   margin-top: -15px;
 }
 .ysp_freeFlow_table_lfj .bottom_box .button_more span:before {
@@ -2752,6 +2757,84 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   background: url(../local/img/search.png) no-repeat 0;
   border: 0;
   background-size: 20px;
+}
+.ysp_freeflow_button_container {
+  width: 100%;
+  height: 72px;
+  background: white;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.ysp_freeflow_button_container .ysp_freeflow_submit {
+  color: white;
+  border: 1px solid #C29A2A;
+  border-radius: 3px;
+  background: #C29A2A;
+  width: 85%;
+  display: inline-block;
+}
+.ysp_freeflow_button_container .ysp_freeflow_preservation {
+  border: 1px solid #C29A2A;
+  border-radius: 3px;
+  background: #C29A2A;
+  color: white;
+  width: 40%;
+  display: inline-block;
+}
+.ysp_freeflow_button_container i {
+  display: inline-block;
+  width: 10%;
+  height: 40px;
+  background: url(../lib/images/more_button.png) no-repeat center center;
+  position: relative;
+  top: 7px;
+}
+.ysp_freeflow_button_container .ysp_freeflow_circulations {
+  z-index: 1000;
+  position: fixed;
+  width: 98%;
+  bottom: 0;
+  left: 0;
+}
+.ysp_freeflow_button_container .ysp_freeflow_circulations .ysp_freeflow_circulations_btn {
+  background: white;
+  width: 100%;
+  margin: 1%;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+.ysp_freeflow_button_container .ysp_freeflow_circulations .ysp_freeflow_circulations_btn div {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  color: #3D8CF8;
+}
+.ysp_freeflow_button_container .ysp_freeflow_circulations .ysp_freeflow_return {
+  background: white;
+  width: 100%;
+  margin: 1%;
+  border-radius: 5px;
+  padding: 0 5px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #999999;
+}
+.ysp_freeflow_button_container .ysp_freeflow_background > div:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 52, 52, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
 }
 ._27gZE6m5LfD5uG_dZ8p3iP {
   margin: 0;
