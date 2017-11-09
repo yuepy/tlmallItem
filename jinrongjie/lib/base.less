@@ -1858,10 +1858,12 @@ div[data-ysp-modelid='askForLeave']{
         }
         .unwrite{
           background: url("../lib/images/！@2x.png") no-repeat;
+          display: inline-block;
+          width: 3px;
           background-size: 3px;
-          background-position: 32%;
-          display: block;
-          width: 100%;
+          // background-position: 32%;
+          // display: block;
+          // width: 100%;
         }
         .unSelect,.unchoose{
           margin: 0;
@@ -2023,6 +2025,66 @@ div[data-ysp-modelid='askForLeave']{
         .show{
           color: #A1E15C;
           text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+div[data-ysp-modelid='postName']{
+  .ysp_stationName{
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    .top{
+      span{
+      	display: inline-block;
+        width: 30%;
+        text-align: center;
+        font-size: 15px;
+      }
+      input{
+        border: none;
+        border-bottom: 1px solid #f4f4f4;
+        width: 70%;
+        font-size: 15px;
+      }
+    }
+    .search{
+      color: #fff;
+      background-color: #c29a2a;
+      width: 100%;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 0;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  }
+  .ysp_jobStation_table{
+    background: #fff;
+    font-size: 15px;
+    .title,.content{
+      border-bottom: 1px solid #f4f4f4;
+      padding: 10px 0;
+      span{
+        display: inline-block;
+        text-align: center;
+        color: rgb(124,124,124)
+      }
+      span:first-child{
+        width: 70%;
+      }
+      span:last-child{
+        width: 30%;
+      }
+    }
+    .content{
+      height: 500px;
+      overflow-y: auto;
+      .rows{
+        padding:10px 0 10px 20px;
+        span:first-child{
+          text-align: left;
         }
       }
     }
