@@ -1,1 +1,683 @@
-{"version":"0.1","id":"hetong01","targetURL":"http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=7901&isagent=0&beagenter=0","jsFile":"index.js","requires":{"choosePerson":"../choosePerson/index.json","managerAuditRelatedDoc":"../managerAuditRelatedDoc/index.json","managerAuditRelateProcess":"../managerAuditRelateProcess/index.json"},"chineseName":"01合同会签流程","description":"","controls":{"control29_yn6nBP":{"location":{"data":{"tagName":"TD"},"userData":{"data":[],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"}]},"events":{"onGetData":"getData_control29_yn6nBP"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control28_IA4FdX":{"location":{"data":{"tagName":"BUTTON"},"userData":{"data":[],"force":false},"locators":[{"id":"button/text","prob":3,"ordinal":[0,2],"value":{"text":["保存"],"visText":["保存"]}},{"id":"@id/word","prob":1,"value":["descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]/TD[4]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]","descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON","descendant::DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON","descendant::TR[@id=\"toolbarmenu\"]//BUTTON"]},{"id":"@class/word","prob":1,"value":"TBODY.x-btn-small.x-btn-icon-small-left TD.x-btn-mc BUTTON.x-btn-text.btn_wfSave"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[4]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]"}]},"events":{"onGetData":"getData_control28_IA4FdX"},"intendedRole":"custom","roles":"element,button,custom","monitored":true,"frameXPath":""},"control17_dnIGpW":{"location":{"data":{"tagName":"DIV"},"userData":{"data":[],"force":false},"locators":[{"id":"@id/word","prob":3,"value":["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]","descendant::DIV[@id=\"signid\"]"]},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[6]"}]},"events":{"onGetData":"getData_control17_dnIGpW"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control81_l9atB9":{"location":{"data":{"tagName":"SPAN"},"userData":{"data":[],"force":false},"locators":[{"id":"text","prob":3,"value":{"text":["请求:处理 - 01合同会签流程 - FSIG-201710260008"],"visText":["请求:处理 - 01合同会签流程 - FSIG-201710260008"]}},{"id":"@id/word","prob":3,"value":["descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]","descendant::SPAN[@id=\"BacoTitle\"]"]},{"id":"@class/word","prob":1,"ordinal":[0,2],"value":"BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"}]},"roles":"element","text":"","frameXPath":"","customJS":"if(elem.textContent.indexOf('请求:处理 - 01合同会签流程') !== -1){return true} return false;"}},"contexts":{"context3_FzLnbc":{"controls":["control29_yn6nBP","control28_IA4FdX","control17_dnIGpW"],"anchors":["control81_l9atB9"],"urlAnchor":[]}},"flows":{"flow11_9fAATy":{"toContexts":[{"toContextId":"context3_FzLnbc"}]},"flow10_sL0sF1":{"fromContextId":"context3_FzLnbc","fromAction":"doAction","fromControlId":"control28_IA4FdX","toContexts":[{"toContextId":"context3_FzLnbc"}]},"flow29_GWS50c":{"fromContextId":"context3_FzLnbc","fromAction":"doAction","fromControlId":"control29_yn6nBP","toContexts":[{"toContextId":"context3_FzLnbc"},{"toContextId":"context10_sJa5NJ","toModelId":"choosePerson"},{"toContextId":"context5_DhOsrK","toModelId":"managerAuditRelatedDoc"},{"toContextId":"context6_aweFC7","toModelId":"managerAuditRelateProcess"}]}},"pages":{"page3_Wk0ruO":{"contextId":"context3_FzLnbc","layout":[{"id":"uiControl27_cznHRC","controlId":"control28_IA4FdX","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl27_cznHRC","onGetTemplate":"getTemplate_uiControl27_cznHRC"}}}},{"id":"uiControl29_TC3pna","display":{"type":"tabs","adapterId":"tabs","adapter":{"templateType":""}},"layout":[{"id":"uiControl29_TC3pnaitem","display":{"tabTitle":"流程表单","type":"tabItem","adapterId":"tabItem","adapter":{"templateType":""}},"layout":[{"id":"uiControl28_SgTJbB","controlId":"control29_yn6nBP","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl28_SgTJbB","onGetTemplate":"getTemplate_uiControl28_SgTJbB"}}}}]},{"id":"uiControl30_AC7lcF","display":{"tabTitle":"流转意见","type":"tabItem","adapterId":"tabItem","adapter":{"templateType":""}},"layout":[{"id":"uiControl22_rpqG74","controlId":"control17_dnIGpW","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl22_rpqG74","onGetTemplate":"getTemplate_uiControl22_rpqG74"}}}}]}]}]}},"matchers":{"page/title":{"contexts":{"context3_FzLnbc":["","01合同会签流程-张济天-2017-10-12","01合同会签流程-王宇成-2017-10-26"]}},"page/urls":{"contexts":{"context3_FzLnbc":["192.168.200.63/workflow/request/AddRequest.jsp?workflowid=7901&isagent=0&beagenter=0","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=127508&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=127507&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215923&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"],"context5_DhOsrK":["192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=","192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=198965,198966,198964,198962,198961,198960,198959,198958,198957,198956"],"context6_aweFC7":["192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=","192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids=215922,207188,198385,189578,189499,180773,180695,180694,171723,171644,171640,162914,162836,162835,154110,154031,154030,154029,145305,145222,136448,136368,127589,127507,118729,118651,118646,118644,118642,118641,118640,118639,118638,118637,118636,118622,118621,118620,118619,118618,118608,118607,118606,118605,118599,118591,118590,118569,118568,118540"]}},"page/ids":{"contexts":{"context3_FzLnbc":[["BacoAddFavorite","BacoTitle","FONTSYSTEMF","WfBill","WfLog","WfPic","_beagenter","_isagent","bodyiframe","btnHelp","closetext","divTopTitle","divWfBill","divWfLog","divWfPic","ext-gen","isonline","isworkflowdoc","loading","loading-msg","mainRequestFrame","mainsupports","needShow","picInnerFrameurl","piciframe","requestTabButton","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","statInnerFrameurl","statiframe","toolbarbottommenu","toolbarmenu","toolbarmenuCoverdiv","toolbarmenudiv"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","WfBill","WfLog","WfPic","bodyiframe","btnHelp","closetext","divTopTitle","divWfBill","divWfLog","divWfPic","ext-gen","isonline","isworkflowdoc","loading","loading-msg","mainRequestFrame","mainsupports","needShow","picInnerFrameurl","piciframe","requestTabButton","requestmarkSpan","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","statInnerFrameurl","statiframe","toolbarbottommenu","toolbarmenu","toolbarmenuCoverdiv","toolbarmenudiv","triSubwfIframe","wfdoc"]]}},"page/classes":{"contexts":{"context3_FzLnbc":[["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_edit","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_doDelete","btn_edit","btn_forward","btn_print","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_edit","btn_forward","btn_print","btn_rejectName","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"]]}},"page/tagTriplets":{"contexts":{"context3_FzLnbc":[["-/-/DIV","-/-/INPUT-hidden","-/-/LINK","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/SPAN","-/DIV/TABLE","A/EM/SPAN","DIV/DIV/DIV","DIV/DIV/IFRAME","DIV/DIV/TABLE","DIV/DIV/UL","DIV/SPAN/IMG","DIV/TABLE/TBODY","DIV/UL/LI","EM/SPAN/SPAN","LI/A/EM","SPAN/SPAN/SCRIPT","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/EM/BUTTON","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/EM","TR/TD/I","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A"],["-/-/DIV","-/-/IFRAME","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/SCRIPT","-/-/STYLE","-/-/TITLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/SPAN","-/DIV/TABLE","A/EM/SPAN","DIV/DIV/DIV","DIV/DIV/IFRAME","DIV/DIV/TABLE","DIV/DIV/UL","DIV/SPAN/IMG","DIV/TABLE/TBODY","DIV/UL/LI","EM/SPAN/SPAN","LI/A/EM","SPAN/SPAN/SCRIPT","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/EM/BUTTON","TD/SPAN/SPAN","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/EM","TR/TD/I","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A"]]}}}}
+{
+  "version": "0.1",
+  "id": "hetong01",
+  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=7901&isagent=0&beagenter=0",
+  "jsFile": "index.js",
+  "requires": {
+    "choosePerson": "../choosePerson/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+  },
+  "chineseName": "01合同会签流程",
+  "description": "",
+  "controls": {
+    "control29_yn6nBP": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control29_yn6nBP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control28_IA4FdX": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "保存"
+              ],
+              "visText": [
+                "保存"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]/TD[4]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]",
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::TR[@id=\"toolbarmenu\"]//BUTTON"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TBODY.x-btn-small.x-btn-icon-small-left TD.x-btn-mc BUTTON.x-btn-text.btn_wfSave"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[4]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control28_IA4FdX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,button,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control17_dnIGpW": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]",
+              "descendant::DIV[@id=\"signid\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[6]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control17_dnIGpW"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control81_l9atB9": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:处理 - 01合同会签流程 - FSIG-201710260008"
+              ],
+              "visText": [
+                "请求:处理 - 01合同会签流程 - FSIG-201710260008"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('请求:处理 - 01合同会签流程') !== -1){return true} return false;"
+    }
+  },
+  "contexts": {
+    "context3_FzLnbc": {
+      "controls": [
+        "control29_yn6nBP",
+        "control28_IA4FdX",
+        "control17_dnIGpW"
+      ],
+      "anchors": [
+        "control81_l9atB9"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow11_9fAATy": {
+      "toContexts": [
+        {
+          "toContextId": "context3_FzLnbc"
+        }
+      ]
+    },
+    "flow10_sL0sF1": {
+      "fromContextId": "context3_FzLnbc",
+      "fromAction": "doAction",
+      "fromControlId": "control28_IA4FdX",
+      "toContexts": [
+        {
+          "toContextId": "context3_FzLnbc"
+        }
+      ]
+    },
+    "flow29_GWS50c": {
+      "fromContextId": "context3_FzLnbc",
+      "fromAction": "doAction",
+      "fromControlId": "control29_yn6nBP",
+      "toContexts": [
+        {
+          "toContextId": "context3_FzLnbc"
+        },
+        {
+          "toContextId": "context10_sJa5NJ",
+          "toModelId": "choosePerson"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page3_Wk0ruO": {
+      "contextId": "context3_FzLnbc",
+      "layout": [
+        {
+          "id": "uiControl27_cznHRC",
+          "controlId": "control28_IA4FdX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl27_cznHRC",
+                "onGetTemplate": "getTemplate_uiControl27_cznHRC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl29_TC3pna",
+          "display": {
+            "type": "tabs",
+            "adapterId": "tabs",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl29_TC3pnaitem",
+              "display": {
+                "tabTitle": "流程表单",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl28_SgTJbB",
+                  "controlId": "control29_yn6nBP",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl28_SgTJbB",
+                        "onGetTemplate": "getTemplate_uiControl28_SgTJbB"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl30_AC7lcF",
+              "display": {
+                "tabTitle": "流转意见",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl22_rpqG74",
+                  "controlId": "control17_dnIGpW",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl22_rpqG74",
+                        "onGetTemplate": "getTemplate_uiControl22_rpqG74"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context3_FzLnbc": [
+          "",
+          "01合同会签流程-张济天-2017-10-12",
+          "01合同会签流程-王宇成-2017-10-26"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context3_FzLnbc": [
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=7901&isagent=0&beagenter=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=127508&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=127507&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215923&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+        ],
+        "context5_DhOsrK": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=198965,198966,198964,198962,198961,198960,198959,198958,198957,198956"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids=215922,207188,198385,189578,189499,180773,180695,180694,171723,171644,171640,162914,162836,162835,154110,154031,154030,154029,145305,145222,136448,136368,127589,127507,118729,118651,118646,118644,118642,118641,118640,118639,118638,118637,118636,118622,118621,118620,118619,118618,118608,118607,118606,118605,118599,118591,118590,118569,118568,118540"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context3_FzLnbc": [
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_beagenter",
+            "_isagent",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "requestmarkSpan",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv",
+            "triSubwfIframe",
+            "wfdoc"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context3_FzLnbc": [
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_edit",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_doDelete",
+            "btn_edit",
+            "btn_forward",
+            "btn_print",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_edit",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context3_FzLnbc": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/IFRAME",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}

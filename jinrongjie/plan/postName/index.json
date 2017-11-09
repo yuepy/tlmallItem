@@ -68,6 +68,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -103,6 +107,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -118,13 +126,58 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control137_2lSzZL": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"name\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "TABLE.ViewForm TD.field INPUT.InputStyle"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control137_2lSzZL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,textbox,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
     "context21_LgNuze": {
       "controls": [
         "control135_LFUZal",
-        "control136_TQ0Q4H"
+        "control136_TQ0Q4H",
+        "control137_2lSzZL"
       ],
       "anchors": [
         "control134_9uP3tK"
@@ -141,6 +194,16 @@
         {
           "toContextId": "context21_LgNuze",
           "toModelId": "postName"
+        }
+      ]
+    },
+    "flow77_UFTDzW": {
+      "fromContextId": "context21_LgNuze",
+      "fromAction": "doAction",
+      "fromControlId": "control137_2lSzZL",
+      "toContexts": [
+        {
+          "toContextId": "context21_LgNuze"
         }
       ]
     }
@@ -160,6 +223,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl112_kUeDPS",
                 "onGetTemplate": "getTemplate_uiControl112_kUeDPS"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl116_Cu7o5z",
+          "controlId": "control137_2lSzZL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl116_Cu7o5z",
+                "onGetTemplate": "getTemplate_uiControl116_Cu7o5z"
               }
             }
           }
