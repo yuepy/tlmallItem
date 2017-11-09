@@ -782,6 +782,7 @@ li {list-style: none}
   background: #fff;
   ul{
     li{
+      position: relative;
       &:first-child,&:nth-child(2),&:nth-child(4),&:nth-child(5){
         border-right:1px solid #eee;
         border-bottom:1px solid #eee;
@@ -801,6 +802,20 @@ li {list-style: none}
         color: #aaa;
       }
       
+    }
+    .num{
+      font-size: 10px;
+      background: rgb(255,30,0);
+      color: #fff;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 70%;
+      right: 30%;
     }
     i{
       display: block;
