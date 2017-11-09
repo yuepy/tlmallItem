@@ -223,8 +223,53 @@
           // console.log(111,aWin.document)
           // aWin.alert = function (){
           //   console.log('DUANG ~  又是弹框 ! ~.~');
-          // } 
-          
+          // }
+          aWin.doReview = function(){
+         // jQuery($GetEle("flowbody")).attr("onbeforeunload", "");
+            doc.getElementById('flowbody').setAttribute('onbeforeunload','')
+            aWin.doLocationHref();
+          }
+          aWin.checkfileuploadcomplet = function() {
+            if (aWin.upfilesnum > 0) {
+                setTimeout("checkfileuploadcomplet()", 1000);
+            } else {
+              if(!aWin.checkUploadeErr()) {
+                aWin.hiddenPrompt();
+                aWin.displayAllmenu();
+                return;
+              }
+                doc.frmmain.submit();
+                aWin.frmmain.target = aWin.nowtarget;
+                aWin.frmmain.action = aWin.nowaction;
+                // ysp.customHelper.openWindow(aWin.frmmain.action,'送阅');
+            }
+        }
+          aWin.doLocationHref = function(){
+            debugger;
+            var $G = aWin.$G;
+            var id = doc.getElementById('requestid').value;
+            var workflowRequestLogId=0;
+            if($G("workflowRequestLogId")!=null){
+              workflowRequestLogId=$G("workflowRequestLogId").value;
+            }
+              aWin.CkeditorExt.updateContent();
+              aWin.frmmain.target = "_blank";
+              aWin.frmmain.action = "/workflow/request/Remark.jsp?requestid="+id+"&workflowRequestLogId="+workflowRequestLogId;
+              ysp.customHelper.openWindow(aWin.frmmain.action,'送阅');
+              //附件上传
+                                  // aWin.StartUploadAll();
+                                  // aWin.checkfileuploadcomplet();
+
+          //   }catch(e){
+          //     var remark="";
+          //     try{
+          //       remark = aWin.CkeditorExt.getHtml("remark");
+          //     }catch(e){}
+          //     var forwardurl = "/workflow/request/Remark.jsp?requestid="+id+"&workflowRequestLogId="+workflowRequestLogId+"&remark="+escape(remark);
+          //     aWin.openFullWindowHaveBar(forwardurl);
+          //   }
+           }
+
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
