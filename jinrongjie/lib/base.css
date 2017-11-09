@@ -228,6 +228,20 @@ li {
   background-position-y: 50%;
   border-bottom: none;
 }
+.ysp-manager-audit-wrapper .select-style {
+  margin: 0;
+  padding: 0 5px;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  background: #fff url(images/arrow.png) no-repeat;
+  background-position-y: 50%;
+  background-position-x: 94%;
+}
+.ysp-manager-audit-wrapper .textarea-style {
+  border-radius: 5px;
+}
 .ysp-manager-audit-header-tab {
   background: #fff;
 }
@@ -334,12 +348,13 @@ li {
 }
 .ysp-related-doc-search-table {
   font-size: 14px;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   background: #fff;
   height: 400px;
   overflow: overlay;
 }
 .ysp-related-doc-search-table table {
+  table-layout: fixed;
   width: 100%;
   text-align: center;
   color: #7C7C7C;
@@ -347,9 +362,15 @@ li {
 .ysp-related-doc-search-table table th,
 .ysp-related-doc-search-table table tr {
   height: 30px;
+  line-height: 30px;
 }
 .ysp-related-doc-search-table table thead {
   border-bottom: 1px solid #ddd;
+}
+.ysp-related-doc-search-table table td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .ysp-manageraudit-relate-doc {
   background: #fff;
@@ -639,6 +660,7 @@ li {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999;
 }
 .ysp-process-form-wrapper .load-more-coverlayer .load-more-data {
   position: absolute;
@@ -2096,7 +2118,7 @@ div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP {
   margin: 0;
 }
 div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
-  background: none;
+  background: #fff;
 }
 div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
 div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
@@ -2109,7 +2131,6 @@ div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
   display: inline;
 }
 div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
-  background: none;
   border-bottom: 3px solid #C29A2A;
   color: #C29A2A;
   padding: 3px 0;
@@ -2117,9 +2138,6 @@ div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
 .ysp-main-leader-sign-wrapper {
   position: relative;
   background: #fff;
-}
-.ysp-main-leader-sign-wrapper .approval-node-info {
-  border-top: 10px solid #efefef;
 }
 .ysp-main-leader-sign-wrapper .approval-node-info div {
   text-align: left;
@@ -2544,6 +2562,19 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .ysp_freeFlow_table_lfj .bottom_box .bottom_tb > *:nth-child(n+11) {
   display: none;
+}
+.ysp_freeFlow_table_lfj .bottom_box .ysp_freeFlow_btn {
+  border: 0;
+  border-bottom: 1px solid #EDEDED;
+  padding: 10px 0;
+  color: #202020;
+  height: 42px;
+  width: 100%;
+}
+.ysp_freeFlow_table_lfj .bottom_box .ysp_freeFlow_btn div {
+  float: right;
+  font-size: 15px;
+  margin-right: 15px;
 }
 .ysp_freeFlow_table_lfj .bottom_box .button_less {
   display: none;
