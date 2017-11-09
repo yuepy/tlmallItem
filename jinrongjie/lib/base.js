@@ -136,7 +136,6 @@
             }
             if (aWin.BrowseTable_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') == -1) {
                 aWin.BrowseTable_onclick = function(e) {
-                  debugger
                     var target = e.srcElement || e.target;
                     try {
                         if (target.nodeName == "TD" || target.nodeName == "A") {
@@ -221,9 +220,9 @@
           
           
           // console.log(111,aWin.document)
-          // aWin.alert = function (){
-          //   console.log(222)
-          // }
+          aWin.alert = function (){
+            console.log('又是弹框 ! ~.~');
+          }
           
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
