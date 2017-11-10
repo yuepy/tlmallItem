@@ -175,7 +175,7 @@ li {list-style: none}
 /*****************公文审批-总经理审核 -START***********************/
 .ysp-manager-audit-title-icon{
   background: #fff;
-  border-bottom: 10px solid #f4f4f4;
+  // border-bottom: 10px solid #f4f4f4;
   >span:nth-child(1){
     display: inline-block;
     padding: 10px 15px;
@@ -200,6 +200,10 @@ li {list-style: none}
     height: 45px;
     background: url(images/arrow-right.png) no-repeat;
     background-position-y: 50%;
+  }
+  .upload-files{
+    padding: 0 15px;
+    >div{border-bottom: 1px solid #efefef;color: #999;}
   }
 }
 .ysp-manager-audit-wrapper{
@@ -485,6 +489,7 @@ li {list-style: none}
   >div{
     display: inline-block;
     width: 50%;
+    // width: 100%;
     span,input,select{
       width: 50%;
     }
@@ -499,9 +504,21 @@ li {list-style: none}
       }
       i{width: 5%;color: #ddd;}
     }
+    
+  }
+  .doc-date{
+    width: 100%;
+    span{width: 12%;}
+    input{width: 40%;font-size: 0.85rem;}
+    i{padding: 0 5px;color: #ddd;}
   }
   .left-content{
     padding: 0 10px 0 0;
+    .small-span{width: 30%;}
+    .small-input{width: 70%;}
+    .large-span1{width: 40%;}
+    .small-input1{width: 60%;}
+    .small-select{width: 60%;}
   }
   .right-content{
     padding: 0 0 0 10px;
@@ -773,6 +790,7 @@ li {list-style: none}
       font-size: 0.9rem;
     }
   .ysp-left-arrow{
+    transform: rotateY(180deg);
     background: url(images/left_arrow.png) no-repeat;
     display: inline-block;
     height: 20px;
