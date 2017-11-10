@@ -175,6 +175,7 @@ li {list-style: none}
 /*****************公文审批-总经理审核 -START***********************/
 .ysp-manager-audit-title-icon{
   background: #fff;
+  border-bottom: 10px solid #f4f4f4;
   >span:nth-child(1){
     display: inline-block;
     padding: 10px 15px;
@@ -723,7 +724,17 @@ li {list-style: none}
   
   span{display: inline-block;height: 40px;line-height: 40px;padding: 0 15px;}
   >span:nth-child(1){width: 30%;}
-  >span:nth-child(2){width: 70%;border-bottom: 1px solid #ddd;}
+  >div{
+    width: 70%;
+    display: inline-block;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    span{
+      width: 99%;
+    }
+  }
   .receive-people{
     font-size: 14px;
     display: inline-block;
@@ -3084,6 +3095,28 @@ div[data-ysp-modelid='chairmanSign']{
 }
 .suggset_box_display{
   display: block!important;
+}
+//相关文档
+.document_final_lfj,.process_final_lfj,.fujian_final_lfj{
+  padding: 0;
+  >li{
+    background: #f3f3f3;
+    padding: 10px!important;
+    margin: 10px 0!important;
+    border-radius: 5px;
+  }
+  li{
+    overflow: hidden;
+    margin: 5px 0;
+    padding: 5px 0;
+    span{
+      font-size: 14px;
+      color: #202020;
+      &:nth-child(2){
+        margin-left: 20px;
+      }
+    }
+  }
 }
 .ysp-sign-tab-upload{
   padding: 0 15px;
