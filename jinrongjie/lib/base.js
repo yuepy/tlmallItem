@@ -69,6 +69,7 @@
                 /*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
                 aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
+                  debugger;
                     var $GetEle = aWin.$GetEle;
                     var wuiUtil = aWin.wuiUtil;
                     var tmpids = $GetEle(inputname).value;
@@ -106,7 +107,13 @@
 
                 }
             }
-
+        	aWin.btnok_onclick = function(){
+        	debugger;
+        	aWin.setResourceStr();
+        	aWin.replaceStr();
+        	aWin.parent.parent.returnValue = {id:aWin.resourceids,name:aWin.resourcenames};
+        	aWin.parent.parent.close();
+        	}
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
@@ -114,8 +121,9 @@
                     aWin.parent.close();
                 }
             }
-            if (aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 && aWin.btnok_onclick) {
+            if ( (aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
+                  debugger;
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.resourceids, name: aWin.resourcenames });
                     aWin.parent.close();
