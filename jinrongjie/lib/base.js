@@ -250,7 +250,14 @@
                 //     aWin.openFullWindowHaveBar(forwardurl);
                 //   }
             }
-
+            
+            aWin.changeCurpage=function(index){
+              doc.SearchForm.curpage.value = index;
+            }
+						aWin.onPage=function(index){
+              aWin.changeCurpage(index);//TD34490 lv 修改当前页
+              doc.SearchForm.submit();
+            }
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
