@@ -201,6 +201,10 @@ li {list-style: none}
     background: url(images/arrow-right.png) no-repeat;
     background-position-y: 50%;
   }
+  .upload-files{
+    padding: 0 15px;
+    >div{border-bottom: 1px solid #efefef;color: #999;}
+  }
 }
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
@@ -485,6 +489,7 @@ li {list-style: none}
   >div{
     display: inline-block;
     width: 50%;
+    // width: 100%;
     span,input,select{
       width: 50%;
     }
@@ -499,9 +504,28 @@ li {list-style: none}
       }
       i{width: 5%;color: #ddd;}
     }
+    
+  }
+  .doc-date{
+    width: 100%;
+    span{width: 12%;}
+    input{
+      width: 40%;
+      font-size: 0.85rem;
+      background: url('images/calendaricon@2x.png') no-repeat;
+      background-size: 15%;
+    	background-position-x: 90%;
+      background-position-y: 50%;
+    }
+    i{padding: 0 5px;color: #ddd;}
   }
   .left-content{
     padding: 0 10px 0 0;
+    .small-span{width: 30%;}
+    .small-input{width: 70%;}
+    .large-span1{width: 40%;}
+    .small-input1{width: 60%;}
+    .small-select{width: 60%;}
   }
   .right-content{
     padding: 0 0 0 10px;
@@ -773,6 +797,7 @@ li {list-style: none}
       font-size: 0.9rem;
     }
   .ysp-left-arrow{
+    transform: rotateY(180deg);
     background: url(images/left_arrow.png) no-repeat;
     display: inline-block;
     height: 20px;
@@ -1932,7 +1957,6 @@ div[data-ysp-modelid='askForLeave']{
           background: #fff;
           appearance:none;
           font-size: 14px;
-          display: block;
         }
         .searchBtn{
           background:url("../lib/images/Magnifier-card.png") no-repeat;
@@ -3141,18 +3165,18 @@ div[data-ysp-modelid='chairmanSign']{
   >li{
     background: #f3f3f3;
     padding: 10px!important;
-    margin: 10px 0!important;
+    margin-bottom: 10px!important;
     border-radius: 5px;
-  }
-  li{
-    overflow: hidden;
-    margin: 5px 0;
-    padding: 5px 0;
-    span{
-      font-size: 14px;
-      color: #202020;
-      &:nth-child(2){
-        margin-left: 20px;
+    li{
+      overflow: hidden;
+      margin: 5px 0;
+      padding: 5px 0;
+      span{
+        font-size: 14px;
+        color: #202020;
+        &:nth-child(2){
+          margin-left: 20px;
+        }
       }
     }
   }

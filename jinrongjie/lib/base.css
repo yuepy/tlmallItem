@@ -174,6 +174,13 @@ li {
   background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
 }
+.ysp-manager-audit-title-icon .upload-files {
+  padding: 0 15px;
+}
+.ysp-manager-audit-title-icon .upload-files > div {
+  border-bottom: 1px solid #efefef;
+  color: #999;
+}
 .ysp-manager-audit-wrapper {
   background: #ffffff;
   padding-left: 15px;
@@ -470,8 +477,41 @@ li {
   width: 5%;
   color: #ddd;
 }
+.ysp-related-liucheng-wrapper .doc-date {
+  width: 100%;
+}
+.ysp-related-liucheng-wrapper .doc-date span {
+  width: 12%;
+}
+.ysp-related-liucheng-wrapper .doc-date input {
+  width: 40%;
+  font-size: 0.85rem;
+  background: url('images/calendaricon@2x.png') no-repeat;
+  background-size: 15%;
+  background-position-x: 90%;
+  background-position-y: 50%;
+}
+.ysp-related-liucheng-wrapper .doc-date i {
+  padding: 0 5px;
+  color: #ddd;
+}
 .ysp-related-liucheng-wrapper .left-content {
   padding: 0 10px 0 0;
+}
+.ysp-related-liucheng-wrapper .left-content .small-span {
+  width: 30%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-input {
+  width: 70%;
+}
+.ysp-related-liucheng-wrapper .left-content .large-span1 {
+  width: 40%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-input1 {
+  width: 60%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-select {
+  width: 60%;
 }
 .ysp-related-liucheng-wrapper .right-content {
   padding: 0 0 0 10px;
@@ -761,6 +801,7 @@ li {
   font-size: 0.9rem;
 }
 .ysp-relate-doc-childnode-wrapper .ysp-left-arrow {
+  transform: rotateY(180deg);
   background: url(images/left_arrow.png) no-repeat;
   display: inline-block;
   height: 20px;
@@ -1829,7 +1870,6 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
   background: #fff;
   appearance: none;
   font-size: 14px;
-  display: block;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchBtn {
   background: url("../lib/images/Magnifier-card.png") no-repeat;
@@ -2988,25 +3028,25 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 .fujian_final_lfj > li {
   background: #f3f3f3;
   padding: 10px!important;
-  margin: 10px 0!important;
+  margin-bottom: 10px!important;
   border-radius: 5px;
 }
-.document_final_lfj li,
-.process_final_lfj li,
-.fujian_final_lfj li {
+.document_final_lfj > li li,
+.process_final_lfj > li li,
+.fujian_final_lfj > li li {
   overflow: hidden;
   margin: 5px 0;
   padding: 5px 0;
 }
-.document_final_lfj li span,
-.process_final_lfj li span,
-.fujian_final_lfj li span {
+.document_final_lfj > li li span,
+.process_final_lfj > li li span,
+.fujian_final_lfj > li li span {
   font-size: 14px;
   color: #202020;
 }
-.document_final_lfj li span:nth-child(2),
-.process_final_lfj li span:nth-child(2),
-.fujian_final_lfj li span:nth-child(2) {
+.document_final_lfj > li li span:nth-child(2),
+.process_final_lfj > li li span:nth-child(2),
+.fujian_final_lfj > li li span:nth-child(2) {
   margin-left: 20px;
 }
 .ysp-sign-tab-upload {
