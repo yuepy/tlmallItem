@@ -36,6 +36,10 @@
         "data": {
           "tagName": "BUTTON"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "button/text",
@@ -88,6 +92,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -117,6 +125,62 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control16_kUkOOf": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "XPath",
+              "value": ""
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:处理 - 02自由流程 -"
+              ],
+              "visText": [
+                "请求:处理 - 02自由流程 -"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('请求:处理 - 02自由流程 - ') !==-1){return true;}return false;"
     }
   },
   "contexts": {
@@ -126,7 +190,9 @@
         "control139_AWnLao",
         "control140_J9582q"
       ],
-      "anchors": [],
+      "anchors": [
+        "control16_kUkOOf"
+      ],
       "urlAnchor": []
     }
   },
@@ -142,6 +208,16 @@
       "fromContextId": "context22_g0GbVq",
       "fromAction": "doAction",
       "fromControlId": "control137_Tfm5qv",
+      "toContexts": [
+        {
+          "toContextId": "context22_g0GbVq"
+        }
+      ]
+    },
+    "flow35_gM35Kr": {
+      "fromContextId": "context22_g0GbVq",
+      "fromAction": "doAction",
+      "fromControlId": "control139_AWnLao",
       "toContexts": [
         {
           "toContextId": "context22_g0GbVq"
