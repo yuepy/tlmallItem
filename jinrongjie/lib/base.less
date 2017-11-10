@@ -201,10 +201,6 @@ li {list-style: none}
     background: url(images/arrow-right.png) no-repeat;
     background-position-y: 50%;
   }
-  .upload-files{
-    padding: 0 15px;
-    >div{border-bottom: 1px solid #efefef;color: #999;}
-  }
 }
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
@@ -489,7 +485,6 @@ li {list-style: none}
   >div{
     display: inline-block;
     width: 50%;
-    // width: 100%;
     span,input,select{
       width: 50%;
     }
@@ -504,28 +499,9 @@ li {list-style: none}
       }
       i{width: 5%;color: #ddd;}
     }
-    
-  }
-  .doc-date{
-    width: 100%;
-    span{width: 12%;}
-    input{
-      width: 40%;
-      font-size: 0.85rem;
-      background: url('images/calendaricon@2x.png') no-repeat;
-      background-size: 15%;
-    	background-position-x: 90%;
-      background-position-y: 50%;
-    }
-    i{padding: 0 5px;color: #ddd;}
   }
   .left-content{
     padding: 0 10px 0 0;
-    .small-span{width: 30%;}
-    .small-input{width: 70%;}
-    .large-span1{width: 40%;}
-    .small-input1{width: 60%;}
-    .small-select{width: 60%;}
   }
   .right-content{
     padding: 0 0 0 10px;
@@ -797,7 +773,6 @@ li {list-style: none}
       font-size: 0.9rem;
     }
   .ysp-left-arrow{
-    transform: rotateY(180deg);
     background: url(images/left_arrow.png) no-repeat;
     display: inline-block;
     height: 20px;
@@ -1797,53 +1772,7 @@ div[data-ysp-modelid='choosePerson']{
   }
 }
 /******************************请假/公出申请单start*******************************************/
-///////////////回退//////////////////
-.ysp_returnBack_wrapper{
-  background: #fff;
-  padding: 10px;
-  .title{
-    text-align: center;
-    background: #f4f4f4;
-    padding: 5px;
-    font-size: 15px;
-  }
-  .check,.uncheck{
-    padding: 5px  0;
-    font-size: 14px;
-    border-bottom: 1px solid #f4f4f4;
-  }
-  .check{
-    background:url("../lib/images/已选@2x.png") no-repeat;
-    background-size: 15px;
-    background-position: 98%;
-  }
-}
-.sureBtn,.personSureBtn{
-  width: 90%;
-  margin: 10px auto;
-  background:#c29a2a;
-  color: #fff;
-  padding: 5px 0;
-  text-align: center;
-  border-radius: 5px;
-}
-div[data-componentsid="uiControl121_XGHaKQ"]{
-  padding-left: 5%;
-  .personSureBtn{
-    position: absolute;
-    bottom: 10%;
-  }
-}
-
 div[data-ysp-modelid='askForLeave']{
-  .ysp-header-wrapper{
-    >span:nth-child(2){
-      text-align: center;
-    }
-    >span:nth-child(3){
-      display: none;
-    }
-  }
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
   }
@@ -3073,8 +3002,8 @@ div[data-ysp-modelid='chairmanSign']{
   .ysp_freeflow_preservation{
     border:1px solid #C29A2A;
     border-radius:3px;
-    background:#C29A2A;
-    color:white;
+    background:white;
+    color:#C29A2A;
     width:40%;
     display: inline-block;
   }
@@ -3134,6 +3063,126 @@ div[data-ysp-modelid='chairmanSign']{
   }
 }
 //--------------------------------------------------------------自由流程02 END
+//--------------------------------------------------------------前插
+.ysp_forward_card_container{
+  width:100%;
+  padding: 20px 10px;
+  margin-bottom:60px;
+  span{
+    color:#CFBC87;
+    font-size: 14px;
+  }
+  input{
+    border:none;
+    border-bottom:1px solid #ddd;
+  	margin-bottom:5px;
+    height:30px;
+    font-size:14px;
+  }
+  .ysp_forward_card{
+    background:white;
+    margin-bottom:20px;
+    border-radius:8px;
+    padding:10px;
+    .ysp_forward_select{
+    	.ysp_ops_checked_cont{
+        border-bottom:1px solid #ddd;
+        margin:10px 0 5px 0;
+      	display:flex;
+      	font-size:14px;
+      	color:#666666;
+        padding-bottom:5px;
+      .ysp_ops_ckecked{
+        border:1px solid #91DC40;
+        border-radius: 300px;
+        padding:2px 12px;
+        color:#91DC40;
+        margin-right:10px;
+      }
+      .ysp_ops{
+        border:1px solid #666666;
+        border-radius: 300px;
+        padding:2px 12px;
+        color:#666666;
+        margin-right:10px;
+      	}
+    	}
+    }
+    .ysp_forward_num{
+      float:left;
+      width:30%;
+      display: flex;
+      height:32px;
+      line-height:32px;
+      span{
+        font-size:14px;
+      }
+      input{
+        margin:0;
+        width:50%;
+        margin-left:10px;
+        border-radius:5px;
+        border:1px solid #ddd;
+      }
+    }
+    .ysp_forward_check{
+      height:32px;
+      line-height: 32px;
+      width:70%;
+      float:left;
+      .ysp_forward_icon_check{
+        display:inline-block;
+        width:29px;
+        height:29px;
+        background:url(../lib/images/ysp_check1.png);
+        position: relative;
+        top:2px;
+        right:1px;
+      }
+      .ysp_forward_icon_checked{
+        display:inline-block;
+        width:26px;
+        height:26px;
+        background:url(../lib/images/ysp_checked.png);
+        position: relative;
+        top:3px;
+      }
+    }
+  }
+  .ovh{  
+  	overflow: hidden;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+  .about_box{
+  	position: relative;
+    width: 80%;
+    float: right;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    min-height: 30px;
+    .box_con{
+    	width: 80%;
+      word-break: break-all;
+      a{
+      	margin: 3px;
+        color: #202020;
+        font-size: 14px;             
+        }
+      }
+      button{
+      	position: absolute;
+        right: 10px;
+        top:0;
+        height: 20px;
+        width: 20px;
+        background: url(../local/img/search.png) no-repeat 0;
+        border: 0;
+        background-size: 20px;
+      }
+    }
+}
+//--------------------------------------------------------------前插 END
 //tabs样式lfj
  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
     margin: 0;
@@ -3173,18 +3222,18 @@ div[data-ysp-modelid='chairmanSign']{
   >li{
     background: #f3f3f3;
     padding: 10px!important;
-    margin-bottom: 10px!important;
+    margin: 10px 0!important;
     border-radius: 5px;
-    li{
-      overflow: hidden;
-      margin: 5px 0;
-      padding: 5px 0;
-      span{
-        font-size: 14px;
-        color: #202020;
-        &:nth-child(2){
-          margin-left: 20px;
-        }
+  }
+  li{
+    overflow: hidden;
+    margin: 5px 0;
+    padding: 5px 0;
+    span{
+      font-size: 14px;
+      color: #202020;
+      &:nth-child(2){
+        margin-left: 20px;
       }
     }
   }
