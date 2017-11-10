@@ -502,6 +502,11 @@ li {list-style: none}
   }
   .left-content{
     padding: 0 10px 0 0;
+    .small-span{width: 30%;}
+    .small-input{width: 70%;}
+    .large-span1{width: 40%;}
+    .small-input1{width: 60%;}
+    .small-select{width: 60%;}
   }
   .right-content{
     padding: 0 0 0 10px;
@@ -536,6 +541,37 @@ li {list-style: none}
     background: url(images/Magnifier-card.png) no-repeat;
     background-position-y: 50%;
     background-position-x: 90%;
+  }
+  
+  .doc-date{
+    width: 100%;
+    span{width: 12%;}
+    input{
+      width: 40%;
+      font-size: 0.85rem;
+      background: url('images/calendaricon@2x.png') no-repeat;
+      background-size: 15%;
+    	background-position-x: 90%;
+      background-position-y: 50%;
+    }
+    i{padding: 0 5px;color: #ddd;}
+  }
+  
+  .relate-process-modify{
+    width: 100%;
+    >div{
+      width: 50%;
+      display: inline-block;
+    }
+    >div:nth-child(1){
+      padding: 0 5px 0 0;
+      span{width: 40%;}
+      input,select{width: 60%;}
+    }
+    >div:nth-child(2){
+      padding: 0 0 0 5px;
+    	span{width: 40%;}
+      input,select{width: 60%;}}
   }
 }
 
