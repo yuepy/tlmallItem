@@ -101,13 +101,44 @@
       "text": "",
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
       "customJS": "if(elem.textContent.indexOf('按组织结构') !== -1){return true;}return false;"
+    },
+    "control143_MFhimL": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "descendant::BUTTON[@id=\"btnok\"]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[4]/TD[1]/BUTTON[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control143_MFhimL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,button,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>//iframe[contains(@name,'frame')][contains(@id,'frame')]<<IFRAME>>"
     }
   },
   "contexts": {
     "context10_sJa5NJ": {
       "controls": [
         "control31_MQw3uc",
-        "control38_I5LH3P"
+        "control38_I5LH3P",
+        "control143_MFhimL"
       ],
       "anchors": [
         "control102_LTi8xH"
@@ -177,6 +208,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl121_XGHaKQ",
+          "controlId": "control143_MFhimL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl121_XGHaKQ",
+                "onGetTemplate": "getTemplate_uiControl121_XGHaKQ"
+              }
+            }
+          }
         }
       ]
     }
@@ -194,7 +240,8 @@
         "context10_sJa5NJ": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp"
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp"
         ]
       }
     },
