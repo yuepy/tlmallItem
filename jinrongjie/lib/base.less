@@ -175,7 +175,7 @@ li {list-style: none}
 /*****************公文审批-总经理审核 -START***********************/
 .ysp-manager-audit-title-icon{
   background: #fff;
-  // border-bottom: 10px solid #f4f4f4;
+  border-bottom: 10px solid #f4f4f4;
   >span:nth-child(1){
     display: inline-block;
     padding: 10px 15px;
@@ -509,7 +509,14 @@ li {list-style: none}
   .doc-date{
     width: 100%;
     span{width: 12%;}
-    input{width: 40%;font-size: 0.85rem;}
+    input{
+      width: 40%;
+      font-size: 0.85rem;
+      background: url('images/calendaricon@2x.png') no-repeat;
+      background-size: 15%;
+    	background-position-x: 90%;
+      background-position-y: 50%;
+    }
     i{padding: 0 5px;color: #ddd;}
   }
   .left-content{
