@@ -15,7 +15,7 @@
     },
     doAction_uiControl111_PdKFVi: function (data, elem) {
       if (data.eventType == "click") {
-        var i = parseInt(data.dataCustom.i + 2);elem.querySelectorAll("tr")[i].click();elem.ownerDocument.defaultView.parent.opener.document.querySelector('#field28481span').textContent = data.dataCustom.val;
+        var i = parseInt(data.dataCustom.i) + 2;elem.querySelectorAll("tr")[i].click();elem.ownerDocument.defaultView.parent.opener.document.querySelector('#field28481span').textContent = data.dataCustom.val;
       }
     },
     getTemplate_uiControl111_PdKFVi: function () {
