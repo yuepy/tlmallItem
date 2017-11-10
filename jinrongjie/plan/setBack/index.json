@@ -85,6 +85,10 @@
         "data": {
           "tagName": "TBODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -109,13 +113,35 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control145_LNC2Mn": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control145_LNC2Mn"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
     "context8_QbFt5N": {
       "controls": [
         "control142_o35VBa",
-        "control144_LCt7s7"
+        "control144_LCt7s7",
+        "control145_LNC2Mn"
       ],
       "anchors": [
         "control16_LffJMD"
@@ -125,6 +151,16 @@
   },
   "flows": {
     "flow81_U1kBKK": {
+      "toContexts": [
+        {
+          "toContextId": "context8_QbFt5N"
+        }
+      ]
+    },
+    "flow83_KehsTi": {
+      "fromContextId": "context8_QbFt5N",
+      "fromAction": "doAction",
+      "fromControlId": "control142_o35VBa",
       "toContexts": [
         {
           "toContextId": "context8_QbFt5N"
@@ -162,6 +198,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl122_AnXnyr",
                 "onGetTemplate": "getTemplate_uiControl122_AnXnyr"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl124_m3hRrb",
+          "controlId": "control145_LNC2Mn",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl124_m3hRrb",
+                "onGetTemplate": "getTemplate_uiControl124_m3hRrb"
               }
             }
           }
