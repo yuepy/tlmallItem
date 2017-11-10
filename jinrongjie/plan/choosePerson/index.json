@@ -3,6 +3,9 @@
   "id": "choosePerson",
   "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
   "jsFile": "index.js",
+  "requires": {
+    "choosePerson": "../choosePerson/index.json"
+  },
   "chineseName": "选人",
   "description": "",
   "controls": {
@@ -107,6 +110,10 @@
         "data": {
           "tagName": "BUTTON"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -171,6 +178,20 @@
       "toContexts": [
         {
           "toContextId": "context10_sJa5NJ"
+        }
+      ]
+    },
+    "flow86_rGNPqx": {
+      "fromContextId": "context10_sJa5NJ",
+      "fromAction": "doAction",
+      "fromControlId": "control143_MFhimL",
+      "toContexts": [
+        {
+          "toContextId": "context10_sJa5NJ"
+        },
+        {
+          "toContextId": "context10_sJa5NJ",
+          "toModelId": "choosePerson"
         }
       ]
     }
@@ -241,7 +262,8 @@
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp",
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp"
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=180694&workflowRequestLogId=-1"
         ]
       }
     },
@@ -250,6 +272,56 @@
         "context10_sJa5NJ": [
           [
             "main"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "_xTable",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divTopTitle",
+            "docimages_num",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "uploadFileName_remark"
           ]
         ]
       }
@@ -257,7 +329,85 @@
     "page/classes": {
       "contexts": {
         "context10_sJa5NJ": [
-          []
+          [],
+          [
+            "Browser",
+            "Inputstyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "Title",
+            "TopTitle",
+            "ViewForm",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "cke_",
+            "cke_bottom",
+            "cke_browser_quirks",
+            "cke_browser_webkit",
+            "cke_button",
+            "cke_button_bgcolor",
+            "cke_button_bold",
+            "cke_button_customimage",
+            "cke_button_flash",
+            "cke_button_indent",
+            "cke_button_insertcrm",
+            "cke_button_insertdocs",
+            "cke_button_insertproject",
+            "cke_button_inserttask",
+            "cke_button_insertwf",
+            "cke_button_italic",
+            "cke_button_justifyblock",
+            "cke_button_justifycenter",
+            "cke_button_justifyleft",
+            "cke_button_justifyright",
+            "cke_button_link",
+            "cke_button_outdent",
+            "cke_button_redo",
+            "cke_button_source",
+            "cke_button_table",
+            "cke_button_textcolor",
+            "cke_button_underline",
+            "cke_button_undo",
+            "cke_button_unlink",
+            "cke_buttonarrow",
+            "cke_contents",
+            "cke_disabled",
+            "cke_editor",
+            "cke_editor_remark",
+            "cke_empty",
+            "cke_font",
+            "cke_fontSize",
+            "cke_icon",
+            "cke_inline_label",
+            "cke_label",
+            "cke_ltr",
+            "cke_off",
+            "cke_openbutton",
+            "cke_path",
+            "cke_rcombo",
+            "cke_separator",
+            "cke_skin_v",
+            "cke_text",
+            "cke_toolbar",
+            "cke_toolbar_end",
+            "cke_toolbar_start",
+            "cke_toolbox",
+            "cke_toolbox_collapser",
+            "cke_toolgroup",
+            "cke_top",
+            "cke_voice_label",
+            "cke_wrapper",
+            "clickRightMenu",
+            "datalight",
+            "drop-shadow",
+            "editorImgWin",
+            "field",
+            "highslide-container",
+            "highslide-loading",
+            "simplehrmhead"
+          ]
         ]
       }
     },
@@ -267,6 +417,75 @@
           [
             "-/-/FRAME",
             "-/-/NOFRAMES"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
           ]
         ]
       }
