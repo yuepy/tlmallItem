@@ -362,7 +362,7 @@
     getData_control14_FvQBRX: function (elem) {
       if (!elem) {
         return null;
-      }var data = {};var titles = [];var content = [];var doc = elem.querySelector('#SignTabUpload');var isOpen = elem.querySelector('#SignTabUpload').style.display;data.isOpen = isOpen;if (doc.querySelector('table')) {
+      }var data = {};var titles = [];var content = [];var doc = elem.querySelector('#SignTabUpload');var isOpen = elem && elem.querySelector('#SignTabUpload') && elem.querySelector('#SignTabUpload').style.display;data.isOpen = isOpen;if (doc.querySelector('table')) {
         [].forEach.call(doc.querySelectorAll('tr'), function (trItem, trIndex) {
           if (trIndex == 0) {
             [].forEach.call(trItem.querySelectorAll('th'), function (tdItem, tdIndex) {

@@ -195,29 +195,29 @@
             /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
 
 
-          // aWin.alert = function (message, title) {
-          //   debugger;
-          //   var buttons
-          //   if (arguments.length === 0) {
-          //     message = ''
-          //   }
-          //   if (title == null) {
-          //     title = ''
-          //   }
-          //   buttons = ['OK']
-          //   message = String(message);
-          //   if(message.indexOf('SWF') !== -1){
-          //     console.log('DUANG ~  又是弹框 ! ~.~  flash' );
-          //   }else if(message.indexOf('error') !== -1){
-          //     console.log('DUANG ~  又是弹框 ! ~.~  error');
-          //   }else{
-          //     remote.dialog.showMessageBox(remote.getCurrentWindow(), {
-          //       message: message,
-          //       title: title,
-          //       buttons: buttons
-          //     })
-          //   }
-          // }
+          aWin.alert = function (message, title) {
+            debugger;
+            var buttons
+            if (arguments.length === 0) {
+              message = ''
+            }
+            if (title == null) {
+              title = ''
+            }
+            buttons = ['OK']
+            message = String(message);
+            if(message.indexOf('SWF') !== -1){
+              console.log('DUANG ~  又是弹框 ! ~.~  flash' );
+            }else if(message.indexOf('error') !== -1){
+              console.log('DUANG ~  又是弹框 ! ~.~  error');
+            }else{
+              remote.dialog.showMessageBox(remote.getCurrentWindow(), {
+                message: message,
+                title: title,
+                buttons: buttons
+              })
+            }
+          }
             aWin.doReview = function() {
                 // jQuery($GetEle("flowbody")).attr("onbeforeunload", "");
                 doc.getElementById('flowbody').setAttribute('onbeforeunload', '')
@@ -239,7 +239,6 @@
                 }
             }
             aWin.doLocationHref = function() {
-                debugger;
                 var $G = aWin.$G;
                 var id = doc.getElementById('requestid').value;
                 var workflowRequestLogId = 0;
