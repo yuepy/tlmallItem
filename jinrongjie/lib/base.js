@@ -175,49 +175,37 @@
             }
             /*  showModelDialog 相关流程 跨页面传值兼容  */
 
-            /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
-            // if (aWin.BrowseTable_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1) {
-            //     aWin.BrowseTable_onclick = function(e) {
-            //       debugger
-            //       var target = e.srcElement || e.target;
-            //         try {
-            //             if (target.nodeName == "TD" || target.nodeName == "A") {
-            //                 var newEntry = $($(target).parents("tr")[0].cells[0]).text() + "~" + $($(target).parents("tr")[0].cells[1]).text();
-            //                 if (!aWin.isExistEntry(newEntry, aWin.resourceArray)) {
-            //                     aWin.addObjectToSelect(doc.all("srcList"), newEntry);
-            //                     aWin.reloadResourceArray();
-            //                 }
-            //             }
-            //         } catch (en) {
-            //             alert(en.message);
-            //         }
-            //     }
-            /*  showModelDialog 相关流程 子目录跨页面传值兼容  */
-
-
-          aWin.alert = function (message, title) {
-            debugger;
-            var buttons
-            if (arguments.length === 0) {
-              message = ''
-            }
-            if (title == null) {
-              title = ''
-            }
-            buttons = ['OK']
-            message = String(message);
-            if(message.indexOf('SWF') !== -1){
-              console.log('DUANG ~  又是弹框 ! ~.~  flash' );
-            }else if(message.indexOf('error') !== -1){
-              console.log('DUANG ~  又是弹框 ! ~.~  error');
+          // aWin.alert = function (message, title) {
+          //   var buttons
+          //   if (arguments.length === 0) {
+          //     message = ''
+          //   }
+          //   if (title == null) {
+          //     title = ''
+          //   }
+          //   buttons = ['OK']
+          //   message = String(message);
+          //   if(message.indexOf('SWF') !== -1){
+          //     console.log('DUANG ~  又是弹框 ! ~.~  flash' );
+          //   }else if(message.indexOf('error') !== -1){
+          //     console.log('DUANG ~  又是弹框 ! ~.~  error');
+          //   }else{
+          //     remote.dialog.showMessageBox(remote.getCurrentWindow(), {
+          //       message: message,
+          //       title: title,
+          //       buttons: buttons
+          //     })
+          //   }
+          // }
+          var newAlert = aWin.alert;
+          aWin.alert = function(){
+            var text = arguments[0];
+            if(text.indexOf('SWF') !== -1 || text.indexOf('error') !== -1) {
+              	 console.log('DUANG ~  又是弹框 ! ~.~  ' );
             }else{
-              remote.dialog.showMessageBox(remote.getCurrentWindow(), {
-                message: message,
-                title: title,
-                buttons: buttons
-              })
+              newAlert.apply(aWin,arguments);
             }
-          }
+        }
             aWin.doReview = function() {
                 // jQuery($GetEle("flowbody")).attr("onbeforeunload", "");
                 doc.getElementById('flowbody').setAttribute('onbeforeunload', '')
