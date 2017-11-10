@@ -147,7 +147,6 @@ li {
 /*****************公文审批-总经理审核 -START***********************/
 .ysp-manager-audit-title-icon {
   background: #fff;
-  border-bottom: 10px solid #f4f4f4;
 }
 .ysp-manager-audit-title-icon > span:nth-child(1) {
   display: inline-block;
@@ -173,6 +172,13 @@ li {
   height: 45px;
   background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
+}
+.ysp-manager-audit-title-icon .upload-files {
+  padding: 0 15px;
+}
+.ysp-manager-audit-title-icon .upload-files > div {
+  border-bottom: 1px solid #efefef;
+  color: #999;
 }
 .ysp-manager-audit-wrapper {
   background: #ffffff;
@@ -470,6 +476,19 @@ li {
   width: 5%;
   color: #ddd;
 }
+.ysp-related-liucheng-wrapper .doc-date {
+  width: 100%;
+}
+.ysp-related-liucheng-wrapper .doc-date span {
+  width: 12%;
+}
+.ysp-related-liucheng-wrapper .doc-date input {
+  width: 40%;
+  font-size: 0.85rem;
+}
+.ysp-related-liucheng-wrapper .doc-date i {
+  padding: 0 5px;
+}
 .ysp-related-liucheng-wrapper .left-content {
   padding: 0 10px 0 0;
 }
@@ -761,6 +780,7 @@ li {
   font-size: 0.9rem;
 }
 .ysp-relate-doc-childnode-wrapper .ysp-left-arrow {
+  transform: rotateY(180deg);
   background: url(images/left_arrow.png) no-repeat;
   display: inline-block;
   height: 20px;
