@@ -174,6 +174,13 @@ li {
   background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
 }
+.ysp-manager-audit-title-icon .upload-files {
+  padding: 0 15px;
+}
+.ysp-manager-audit-title-icon .upload-files > div {
+  border-bottom: 1px solid #efefef;
+  color: #999;
+}
 .ysp-manager-audit-wrapper {
   background: #ffffff;
   padding-left: 15px;
@@ -470,8 +477,41 @@ li {
   width: 5%;
   color: #ddd;
 }
+.ysp-related-liucheng-wrapper .doc-date {
+  width: 100%;
+}
+.ysp-related-liucheng-wrapper .doc-date span {
+  width: 12%;
+}
+.ysp-related-liucheng-wrapper .doc-date input {
+  width: 40%;
+  font-size: 0.85rem;
+  background: url('images/calendaricon@2x.png') no-repeat;
+  background-size: 15%;
+  background-position-x: 90%;
+  background-position-y: 50%;
+}
+.ysp-related-liucheng-wrapper .doc-date i {
+  padding: 0 5px;
+  color: #ddd;
+}
 .ysp-related-liucheng-wrapper .left-content {
   padding: 0 10px 0 0;
+}
+.ysp-related-liucheng-wrapper .left-content .small-span {
+  width: 30%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-input {
+  width: 70%;
+}
+.ysp-related-liucheng-wrapper .left-content .large-span1 {
+  width: 40%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-input1 {
+  width: 60%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-select {
+  width: 60%;
 }
 .ysp-related-liucheng-wrapper .right-content {
   padding: 0 0 0 10px;
@@ -761,6 +801,7 @@ li {
   font-size: 0.9rem;
 }
 .ysp-relate-doc-childnode-wrapper .ysp-left-arrow {
+  transform: rotateY(180deg);
   background: url(images/left_arrow.png) no-repeat;
   display: inline-block;
   height: 20px;
@@ -1674,6 +1715,50 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
   width: 30%;
 }
 /******************************请假/公出申请单start*******************************************/
+.ysp_returnBack_wrapper {
+  background: #fff;
+  padding: 10px;
+}
+.ysp_returnBack_wrapper .title {
+  text-align: center;
+  background: #f4f4f4;
+  padding: 5px;
+  font-size: 15px;
+}
+.ysp_returnBack_wrapper .check,
+.ysp_returnBack_wrapper .uncheck {
+  padding: 5px  0;
+  font-size: 14px;
+  border-bottom: 1px solid #f4f4f4;
+}
+.ysp_returnBack_wrapper .check {
+  background: url("../lib/images/已选@2x.png") no-repeat;
+  background-size: 15px;
+  background-position: 98%;
+}
+.sureBtn,
+.personSureBtn {
+  width: 90%;
+  margin: 10px auto;
+  background: #c29a2a;
+  color: #fff;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 5px;
+}
+div[data-componentsid="uiControl121_XGHaKQ"] {
+  padding-left: 5%;
+}
+div[data-componentsid="uiControl121_XGHaKQ"] .personSureBtn {
+  position: absolute;
+  bottom: 10%;
+}
+div[data-ysp-modelid='askForLeave'] .ysp-header-wrapper > span:nth-child(2) {
+  text-align: center;
+}
+div[data-ysp-modelid='askForLeave'] .ysp-header-wrapper > span:nth-child(3) {
+  display: none;
+}
 div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
@@ -2856,8 +2941,8 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 .ysp_freeflow_button_container .ysp_freeflow_preservation {
   border: 1px solid #C29A2A;
   border-radius: 3px;
-  background: white;
-  color: #C29A2A;
+  background: #C29A2A;
+  color: white;
   width: 40%;
   display: inline-block;
 }
@@ -2962,25 +3047,25 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 .fujian_final_lfj > li {
   background: #f3f3f3;
   padding: 10px!important;
-  margin: 10px 0!important;
+  margin-bottom: 10px!important;
   border-radius: 5px;
 }
-.document_final_lfj li,
-.process_final_lfj li,
-.fujian_final_lfj li {
+.document_final_lfj > li li,
+.process_final_lfj > li li,
+.fujian_final_lfj > li li {
   overflow: hidden;
   margin: 5px 0;
   padding: 5px 0;
 }
-.document_final_lfj li span,
-.process_final_lfj li span,
-.fujian_final_lfj li span {
+.document_final_lfj > li li span,
+.process_final_lfj > li li span,
+.fujian_final_lfj > li li span {
   font-size: 14px;
   color: #202020;
 }
-.document_final_lfj li span:nth-child(2),
-.process_final_lfj li span:nth-child(2),
-.fujian_final_lfj li span:nth-child(2) {
+.document_final_lfj > li li span:nth-child(2),
+.process_final_lfj > li li span:nth-child(2),
+.fujian_final_lfj > li li span:nth-child(2) {
   margin-left: 20px;
 }
 .ysp-sign-tab-upload {
