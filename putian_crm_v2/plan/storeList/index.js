@@ -1,8 +1,7 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control217_k2qBMU: function (elem) {
-      var content = ysp.customHelper.getTableData(elem, ["门店全称", "状态"]);
-      return content;
+      var content = ysp.customHelper.getTableData(elem, ["门店全称", "状态"]);return content;
     },
     doAction_uiControl203_6evPik: function (data, elem) {
       if (data.eventType === 'click') {
