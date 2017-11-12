@@ -10,9 +10,9 @@
         var pageId = window.beforePageId;if (parent.EAPI.isAndroid() && (pageId == "context52_Wg5qcG" || pageId == "context2_15cCKI")) {
           history.back();
         } else if (parent.EAPI.isIOS() && pageId == "context52_Wg5qcG") {
-          var url = "http://192.168.1.224:8080/pttlCrm/res/page/psi/storeInfocollection.html";ysp.appMain.reloadPage(url);
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/storeInfocollection.html";ysp.appMain.reloadPage(url);
         } else if (parent.EAPI.isIOS() && pageId == "context2_15cCKI") {
-          var urls = "http://192.168.1.224:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(urls);
+          var urls = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(urls);
         } else {
           history.back();
         }

@@ -173,7 +173,7 @@
     function validatePrivilege() {
       var _this = this;
       var xhr = new topWin.XMLHttpRequest();
-      xhr.open('POST', 'http://192.168.1.224:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuList', true);
+      xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuList', true);
       xhr.error = function(e) {
         console.error(e);
       }
@@ -234,7 +234,7 @@
 
   function _getThirdMenuList(parentId, callback) {
     var xhr = new topWin.XMLHttpRequest();
-    xhr.open('POST', 'http://192.168.1.224:8080/pttlCrm/sys/auth/menu/getThirdMenuList', true);
+    xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/menu/getThirdMenuList', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.onreadystatechange = function() {
@@ -470,18 +470,18 @@
       }
       //test
       // if (type == 'visitLookerTest') {
-      //   topWin.open("http://192.168.1.224:8080/pttlCrm/res/page/visitManager/visitLook/visitlook.html", type);
+      //   topWin.open("http://192.168.220.82:8080/pttlCrm/res/page/visitManager/visitLook/visitlook.html", type);
       //   executePlan('visitLookerTest');
       //   return;
       // } else if (type == 'atMyReportTest') {
-      //   topWin.open("http://192.168.1.224:8080/pttlCrm/res/page/customerAtReport/customerAtReport.html", type);
+      //   topWin.open("http://192.168.220.82:8080/pttlCrm/res/page/customerAtReport/customerAtReport.html", type);
       //   executePlan('atMyReportTest');
       //   return;
       // } else if (type == 'personVisitAchieveTest') {
       //   if (parent.EAPI.isIOS()) {
-      //     ysp.appMain.openWindow('http://192.168.1.224:8080/ptDataShow/commonReports/commonReportsByEncoder?reportPid=customerView&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8xOTIvMjAxNyAxMzo0NjoxOA==');
+      //     ysp.appMain.openWindow('http://192.168.220.82:8080/ptDataShow/commonReports/commonReportsByEncoder?reportPid=customerView&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8xOTIvMjAxNyAxMzo0NjoxOA==');
       //   } else {
-      //     topWin.open('http://192.168.1.224:8080/ptDataShow/commonReports/commonReportsByEncoder?reportPid=customerView&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8xOTIvMjAxNyAxMzo0NjoxOA==', type);
+      //     topWin.open('http://192.168.220.82:8080/ptDataShow/commonReports/commonReportsByEncoder?reportPid=customerView&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8xOTIvMjAxNyAxMzo0NjoxOA==', type);
       //     executePlan('personVisitAchieveTest');
       //   }
       // }
@@ -500,7 +500,7 @@
         if (activeWin) {
           activeWin.close();
         }
-        topWin.location.href = "http://192.168.1.224:8080/pttlCrm/res/page/login/login.html";
+        topWin.location.href = "http://192.168.220.82:8080/pttlCrm/res/page/login/login.html";
       }
       return;
     }
@@ -1676,10 +1676,10 @@
     onTargetLoad: function(aWin, doc) {
       
       if (aWin) {
-        if (aWin.location.href == 'http://192.168.1.224:8080/pttlCrm/res/index.html' ) {
+        if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html' ) {
           var _this = this;
           var xhr = new aWin.XMLHttpRequest();
-          xhr.open('GET', 'http://192.168.1.224:8080/pttlCrm/login/addMobileLoginLog', true);
+          xhr.open('GET', 'http://192.168.220.82:8080/pttlCrm/login/addMobileLoginLog', true);
           xhr.send();
         }
       }

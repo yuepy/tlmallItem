@@ -70,11 +70,11 @@
           sure(data.dataCustom);break;case "delete":
           elem.querySelectorAll(".delete")[data.dataCustom].querySelector("a").click();break;case "alertClick":
           ysp.customHelper.tipMsg.confirm();break;}function topback(data) {
-        var url = "http://192.168.1.224:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.appMain.reloadPage(url); //history.back();
+        var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.appMain.reloadPage(url); //history.back();
         //ysp.customHelper.forceMatchModels('newInformationTotle1'); // elem.ownerDocument.querySelector(".head_title").querySelector("a").click();
         //history.go(-1);
         // if (parent.EAPI.isIOS()) {
-        //   var url = "http://192.168.1.224:8080/pttlCrm/res/page/psi/customerInfocollection.html";
+        //   var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";
         //   ysp.appMain.reloadPage(url);
         // } else {
         //   //history.back();
