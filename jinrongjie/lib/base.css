@@ -16,6 +16,9 @@ h5 {
   margin: 0;
   padding: 0;
 }
+.view-item {
+  background: #f3f3f3;
+}
 /*  公共header样式  */
 .ysp-header-wrapper {
   text-align: center;
@@ -26,6 +29,10 @@ h5 {
   background-color: #c29a2a;
   color: #fff;
   font-size: 18px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 111;
 }
 .ysp-header-wrapper .back {
   margin-left: 15px;
@@ -124,7 +131,7 @@ li {
 .ysp-index-list-wrapper .ysp-index-list-wrapper-title {
   padding: 5px 10px;
   font-weight: bold;
-  border-bottom: 1px solid #EFEFEF;
+  border-bottom: 1px solid #f4f4f4;
 }
 .ysp-index-list-wrapper .ysp-index-list-wrapper-title span {
   display: inline-block;
@@ -141,21 +148,25 @@ li {
 }
 .ysp-index-list-wrapper .ysp-index-list-wrapper-content li {
   padding: 5px;
-  border-bottom: 1px solid #EFEFEF;
+  border-bottom: 1px solid #f4f4f4;
 }
 /*****************索引列表样式 -END***********************/
 /*****************公文审批-总经理审核 -START***********************/
-.ysp-manager-audit-title-icon {
+.ysp-manager-audit-title-icon,
+.ysp-manager-audit-title-icon1 {
   background: #fff;
   border-bottom: 10px solid #f4f4f4;
+  margin: 42px 0 0 0 ;
 }
-.ysp-manager-audit-title-icon > span:nth-child(1) {
+.ysp-manager-audit-title-icon > span:nth-child(1),
+.ysp-manager-audit-title-icon1 > span:nth-child(1) {
   display: inline-block;
   padding: 10px 15px;
   background: url(images/Title-icon.png) no-repeat;
   background-position-y: 50%;
 }
-.ysp-manager-audit-title-icon .relate-files {
+.ysp-manager-audit-title-icon .relate-files,
+.ysp-manager-audit-title-icon1 .relate-files {
   display: inline-block;
   padding: 10px 15px;
   width: 40px;
@@ -164,7 +175,8 @@ li {
   background-position-y: 50%;
   float: right;
 }
-.ysp-manager-audit-title-icon .arrow-right {
+.ysp-manager-audit-title-icon .arrow-right,
+.ysp-manager-audit-title-icon1 .arrow-right {
   position: absolute;
   right: -15px;
   display: inline-block;
@@ -174,11 +186,14 @@ li {
   background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
 }
+.ysp-manager-audit-title-icon1 {
+  margin: 0;
+}
 .ysp-manager-audit-wrapper {
   background: #ffffff;
   padding-left: 15px;
   font-size: 16px;
-  border-bottom: 10px solid #efefef;
+  border-bottom: 10px solid #f4f4f4;
 }
 .ysp-manager-audit-wrapper .left-border {
   margin-left: -15px;
@@ -258,7 +273,7 @@ li {
 }
 .ysp-manager-audit-header-tab .border-bottom {
   height: 10px;
-  background: #efefef;
+  background: #f4f4f4;
   clear: both;
 }
 .ysp-manager-audit-header-tab .active_tab {
@@ -269,7 +284,7 @@ li {
 .ysp-manager-audit-title {
   font-size: 14px;
   text-align: center;
-  border-bottom: 10px solid #efefef;
+  border-bottom: 10px solid #f4f4f4;
   background: #fff;
   padding: 10px 0;
 }
@@ -739,7 +754,7 @@ li {
   height: 40px;
   color: #4992F8;
   line-height: 40px;
-  border-bottom: 1px solid #EFEFEF;
+  border-bottom: 1px solid #f4f4f4;
 }
 .ysp-process-form-wrapper .load-more-coverlayer .load-more-data > div:nth-last-child(1) {
   margin: 7px 5px;
@@ -845,6 +860,7 @@ li {
 #firstMenu {
   width: 100%;
   background: #fff;
+  margin: 48px 0 0 0;
 }
 #firstMenu ul li {
   position: relative;
@@ -1104,6 +1120,10 @@ li {
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li a {
   color: #aaa;
 }
+.ysp-list-search {
+  margin: 42px 0 0 0;
+  position: relative;
+}
 .ysp-list-search input {
   margin: 0;
   height: 40px;
@@ -1121,7 +1141,7 @@ li {
   background-size: 50%;
   padding-left: 20px;
   position: absolute;
-  top: 46px;
+  top: 0px;
   right: 20px;
 }
 .background-gray {
@@ -1137,6 +1157,8 @@ li {
   margin-bottom: 10px;
   background: #fff;
   overflow: hidden;
+  margin: 42px 0 0 0 ;
+  position: relative;
 }
 .ysp-search-dialog .ysp-search-dialog-cxleft {
   display: inline-block;
@@ -1170,7 +1192,7 @@ li {
   top: 0;
   z-index: 2;
   right: 0px;
-  top: 43px;
+  top: 0px;
 }
 .ysp-search-dialog .ysp-search-dialog-cxright .ysp-dialog-wrapper {
   background: #fff;
@@ -1206,6 +1228,9 @@ li {
   border-radius: 3px;
 }
 /*_________________________________查询内页:页面样式_________________________________*/
+.ysp-serch-content {
+  margin: 45px 0 0 0 ;
+}
 .ysp-serch-content .ysp-serch-content-createData,
 .ysp-serch-content .ysp-serch-content-reciveData {
   height: 60px;
@@ -1225,7 +1250,7 @@ li {
 .ysp-serch-content .ysp-serch-content-createData input,
 .ysp-serch-content .ysp-serch-content-reciveData input {
   padding: 0 0 0 30px;
-  width: 35%;
+  width: 45%;
   background: #eee;
   border: 1px solid #eee;
   height: 40px;
@@ -1240,8 +1265,9 @@ li {
 .ysp-serch-content .ysp-serch-content-createPeople,
 .ysp-serch-content .ysp-serch-content-reviceTime {
   height: 60px;
+  overflow: hidden;
   line-height: 50px;
-  padding-top: 10px;
+  padding: 10px 0 0 10px;
 }
 .ysp-serch-content .ysp-serch-content-createPeople div,
 .ysp-serch-content .ysp-serch-content-reviceTime div,
@@ -1268,7 +1294,7 @@ li {
   background: #eee;
   border: 1px solid #eee;
   border-radius: 5px;
-  margin: 5px 10px;
+  margin: 5px;
 }
 .ysp-serch-content .ysp-serch-content-reviceTime {
   height: 100px;
@@ -1290,15 +1316,13 @@ li {
   width: 80%;
   text-align: center;
   border-bottom: 1px solid #d2d2d2;
-  padding-bottom: 10px;
-}
-.ysp-serch-border button {
-  margin: 12px 10px;
+  padding-bottom: 8px;
 }
 .ysp-button {
-  padding-bottom: 10px;
-  margin-left: 28px;
+  padding-bottom: 4px;
   border-bottom: 1px solid #d2d2d2;
+  position: relative;
+  right: -8%;
 }
 .ysp-serch-content-reciveData {
   padding-top: 10px;
@@ -1746,6 +1770,7 @@ div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwc
 div[data-ysp-modelid='fundSeal'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
   background: #fff;
   border-bottom: 10px solid #F3F3F3;
+  margin: 40px 0 0 0 ;
 }
 div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a,
 div[data-ysp-modelid='fundSeal'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
@@ -3190,7 +3215,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .ysp-custom-textarea {
   background: #fff;
-  padding: 0 15px;
+  padding: 0 15px 15px 15px;
 }
 .ysp-custom-textarea .cutom-textarea {
   border: 1px solid #efefef;
@@ -3244,7 +3269,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   width: 50%;
 }
 .ysp-sign-tab-upload .content {
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid #f4f4f4;
 }
 .ysp-sign-tab-upload .content > span:nth-child(2) {
   text-align: right;
