@@ -7,7 +7,8 @@
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
     "forward": "../forward/index.json",
-    "processToSend": "../processToSend/index.json"
+    "processToSend": "../processToSend/index.json",
+    "needToFreeFlow": "../needToFreeFlow/index.json"
   },
   "chineseName": "待办自由流程",
   "description": "",
@@ -61,7 +62,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('请求:处理 - 02自由流程 -  FSIG-') !==-1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('请求:处理 - 02自由流程 -  ') !==-1){return true;}return false;"
     },
     "control62_CLlqNt": {
       "location": {
@@ -182,6 +183,227 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control96_PO5vIQ": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[8]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control96_PO5vIQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control161_pb8X04": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control161_pb8X04"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control163_gBGSuE": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[3]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control163_gBGSuE"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control164_olio9C": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabDoc\"]/TABLE[1]",
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabDoc\"]//TABLE",
+              "descendant::DIV[@id=\"SignTabDoc\"]//TABLE"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control164_olio9C"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control165_33ZGC2": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]/TABLE[1]",
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]//TABLE",
+              "descendant::DIV[@id=\"SignTabWF\"]//TABLE"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[4]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control165_33ZGC2"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control166_g3xf5G": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control166_g3xf5G"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control162_N3huiS": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]",
+              "descendant::TR[@id=\"toolbarmenu\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor TR.x-toolbar-left-row"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control162_N3huiS"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -189,7 +411,14 @@
       "controls": [
         "control62_CLlqNt",
         "control150_seRJIt",
-        "control153_a3MMrF"
+        "control153_a3MMrF",
+        "control96_PO5vIQ",
+        "control161_pb8X04",
+        "control163_gBGSuE",
+        "control164_olio9C",
+        "control165_33ZGC2",
+        "control166_g3xf5G",
+        "control162_N3huiS"
       ],
       "anchors": [
         "control60_2BwKD8"
@@ -202,6 +431,10 @@
       "toContexts": [
         {
           "toContextId": "context24_r1vfsy"
+        },
+        {
+          "toContextId": "context24_r1vfsy",
+          "toModelId": "needToFreeFlow"
         }
       ]
     },
@@ -227,6 +460,74 @@
       "fromContextId": "context24_r1vfsy",
       "fromAction": "doAction",
       "fromControlId": "control153_a3MMrF",
+      "toContexts": [
+        {
+          "toContextId": "context24_r1vfsy"
+        },
+        {
+          "toContextId": "context23_zUAAyb",
+          "toModelId": "forward"
+        },
+        {
+          "toContextId": "context10_Tp4yhH",
+          "toModelId": "processToSend"
+        }
+      ]
+    },
+    "flow94_WRZel5": {
+      "fromContextId": "context24_r1vfsy",
+      "fromAction": "doAction",
+      "fromControlId": "control161_pb8X04",
+      "toContexts": [
+        {
+          "toContextId": "context24_r1vfsy"
+        }
+      ]
+    },
+    "flow95_2qv9HF": {
+      "fromContextId": "context24_r1vfsy",
+      "fromAction": "doAction",
+      "fromControlId": "control163_gBGSuE",
+      "toContexts": [
+        {
+          "toContextId": "context24_r1vfsy"
+        }
+      ]
+    },
+    "flow96_FoXSbS": {
+      "fromContextId": "context24_r1vfsy",
+      "fromAction": "doAction",
+      "fromControlId": "control164_olio9C",
+      "toContexts": [
+        {
+          "toContextId": "context24_r1vfsy"
+        }
+      ]
+    },
+    "flow97_pd1sV0": {
+      "fromContextId": "context24_r1vfsy",
+      "fromAction": "doAction",
+      "fromControlId": "control166_g3xf5G",
+      "toContexts": [
+        {
+          "toContextId": "context24_r1vfsy"
+        }
+      ]
+    },
+    "flow56_Bt0wFA": {
+      "fromContextId": "context24_r1vfsy",
+      "fromAction": "doAction",
+      "fromControlId": "control150_seRJIt",
+      "toContexts": [
+        {
+          "toContextId": "context24_r1vfsy"
+        }
+      ]
+    },
+    "flow98_35OC9t": {
+      "fromContextId": "context24_r1vfsy",
+      "fromAction": "doAction",
+      "fromControlId": "control162_N3huiS",
       "toContexts": [
         {
           "toContextId": "context24_r1vfsy"
@@ -277,6 +578,21 @@
           }
         },
         {
+          "id": "uiControl84_cS4c8Z",
+          "controlId": "control96_PO5vIQ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl84_cS4c8Z",
+                "onGetTemplate": "getTemplate_uiControl84_cS4c8Z"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl131_LChzm5",
           "controlId": "control153_a3MMrF",
           "display": {
@@ -287,6 +603,96 @@
               "events": {
                 "onDoAction": "doAction_uiControl131_LChzm5",
                 "onGetTemplate": "getTemplate_uiControl131_LChzm5"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl140_1aFe9v",
+          "controlId": "control161_pb8X04",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl140_1aFe9v",
+                "onGetTemplate": "getTemplate_uiControl140_1aFe9v"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl143_d2EMVD",
+          "controlId": "control164_olio9C",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl143_d2EMVD",
+                "onGetTemplate": "getTemplate_uiControl143_d2EMVD"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl142_HuyNr6",
+          "controlId": "control163_gBGSuE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl142_HuyNr6",
+                "onGetTemplate": "getTemplate_uiControl142_HuyNr6"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl144_qSCmQl",
+          "controlId": "control165_33ZGC2",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl144_qSCmQl",
+                "onGetTemplate": "getTemplate_uiControl144_qSCmQl"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl145_0z07Xi",
+          "controlId": "control166_g3xf5G",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl145_0z07Xi",
+                "onGetTemplate": "getTemplate_uiControl145_0z07Xi"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl141_y8IcTz",
+          "controlId": "control162_N3huiS",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl141_y8IcTz",
+                "onGetTemplate": "getTemplate_uiControl141_y8IcTz"
               }
             }
           }
@@ -307,7 +713,10 @@
       "contexts": {
         "context24_r1vfsy": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321618&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321621&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321621&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321620&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321625&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321627&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ],
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
@@ -317,12 +726,12 @@
           "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312802%26isqc%3D1",
           "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312804%26isqc%3D1",
           "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312805%26isqc%3D1",
-          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D321620%26isqc%3D1"
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D321625%26isqc%3D1"
         ],
         "context10_Tp4yhH": [
           "192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=162836&workflowRequestLogId=-1",
-          "192.168.200.63/workflow/request/Remark.jsp?requestid=321620&workflowRequestLogId=-1"
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=321625&workflowRequestLogId=-1"
         ]
       }
     },
