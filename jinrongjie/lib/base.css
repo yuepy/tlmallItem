@@ -473,6 +473,21 @@ li {
 .ysp-related-liucheng-wrapper .left-content {
   padding: 0 10px 0 0;
 }
+.ysp-related-liucheng-wrapper .left-content .small-span {
+  width: 30%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-input {
+  width: 70%;
+}
+.ysp-related-liucheng-wrapper .left-content .large-span1 {
+  width: 40%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-input1 {
+  width: 60%;
+}
+.ysp-related-liucheng-wrapper .left-content .small-select {
+  width: 60%;
+}
 .ysp-related-liucheng-wrapper .right-content {
   padding: 0 0 0 10px;
 }
@@ -516,6 +531,51 @@ li {
   background: url(images/Magnifier-card.png) no-repeat;
   background-position-y: 50%;
   background-position-x: 90%;
+}
+.ysp-related-liucheng-wrapper .doc-date {
+  width: 100%;
+}
+.ysp-related-liucheng-wrapper .doc-date span {
+  width: 12%;
+}
+.ysp-related-liucheng-wrapper .doc-date input {
+  width: 40%;
+  font-size: 0.85rem;
+  background: url('images/calendaricon@2x.png') no-repeat;
+  background-size: 15%;
+  background-position-x: 90%;
+  background-position-y: 50%;
+}
+.ysp-related-liucheng-wrapper .doc-date i {
+  padding: 0 5px;
+  color: #ddd;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify {
+  width: 100%;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div {
+  width: 50%;
+  display: inline-block;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(1) {
+  padding: 0 5px 0 0;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(1) span {
+  width: 40%;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(1) input,
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(1) select {
+  width: 60%;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(2) {
+  padding: 0 0 0 5px;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(2) span {
+  width: 40%;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(2) input,
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(2) select {
+  width: 60%;
 }
 .ysp-relate-project-wrapper {
   width: 100%;
@@ -1774,15 +1834,19 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
   padding-bottom: 5px;
   border-bottom: 1px solid #f4f4f4;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title,
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
   color: #c29a2a;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
   background: url("../lib/images/！@2x.png") no-repeat;
   display: inline-block;
-  width: 3px;
+  width: 12px;
+  height: 15px;
   background-size: 3px;
+  background-position: 6px;
+  background-position-x: 6px;
+  background-position-y: 50%;
+  line-height: 15px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unchoose {
