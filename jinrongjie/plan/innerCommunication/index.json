@@ -3,6 +3,9 @@
   "id": "innerCommunication",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=42&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "choosePerson": "../choosePerson/index.json"
+  },
   "chineseName": "新建-内部沟通",
   "description": "新建-内部沟通",
   "controls": {
@@ -10,6 +13,10 @@
       "location": {
         "data": {
           "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -63,6 +70,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "text",
@@ -106,6 +117,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -132,6 +147,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -147,6 +166,177 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control164_6BMlqc": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control164_6BMlqc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control165_QKsCzf": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[8]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control165_QKsCzf"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control166_y4uOn5": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "所见即所得编辑器, remark, 按 ALT+0 查看帮助。"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]/IFRAME[1]",
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::TD[@id=\"cke_contents_remark\"]//IFRAME"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "SPAN.cke_wrapper.cke_ltr TABLE.cke_editor TD.cke_contents IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[8]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control166_y4uOn5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control167_6Sgimc": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "提交"
+              ],
+              "visText": [
+                ""
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]",
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::TR[@id=\"toolbarmenu\"]//BUTTON"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TBODY.x-btn-small.x-btn-icon-small-left TD.x-btn-mc BUTTON.x-btn-text.btn_subbackName"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control167_6Sgimc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,button,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -154,7 +344,11 @@
       "controls": [
         "control96_TRP9vV",
         "control162_d0p8H0",
-        "control163_6wQd4m"
+        "control163_6wQd4m",
+        "control164_6BMlqc",
+        "control165_QKsCzf",
+        "control166_y4uOn5",
+        "control167_6Sgimc"
       ],
       "anchors": [
         "control161_AlS9mr"
@@ -174,6 +368,50 @@
       "fromContextId": "context24_9Kuow2",
       "fromAction": "doAction",
       "fromControlId": "control96_TRP9vV",
+      "toContexts": [
+        {
+          "toContextId": "context24_9Kuow2"
+        }
+      ]
+    },
+    "flow95_F1RHN5": {
+      "fromContextId": "context24_9Kuow2",
+      "fromAction": "doAction",
+      "fromControlId": "control163_6wQd4m",
+      "toContexts": [
+        {
+          "toContextId": "context24_9Kuow2"
+        }
+      ]
+    },
+    "flow96_gTzWwM": {
+      "fromContextId": "context24_9Kuow2",
+      "fromAction": "doAction",
+      "fromControlId": "control164_6BMlqc",
+      "toContexts": [
+        {
+          "toContextId": "context24_9Kuow2"
+        },
+        {
+          "toContextId": "context10_sJa5NJ",
+          "toModelId": "choosePerson"
+        }
+      ]
+    },
+    "flow97_LXqRtg": {
+      "fromContextId": "context24_9Kuow2",
+      "fromAction": "doAction",
+      "fromControlId": "control166_y4uOn5",
+      "toContexts": [
+        {
+          "toContextId": "context24_9Kuow2"
+        }
+      ]
+    },
+    "flow99_H6TlcK": {
+      "fromContextId": "context24_9Kuow2",
+      "fromAction": "doAction",
+      "fromControlId": "control167_6Sgimc",
       "toContexts": [
         {
           "toContextId": "context24_9Kuow2"
@@ -229,6 +467,66 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl142_eVSCbk",
+          "controlId": "control164_6BMlqc",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl142_eVSCbk",
+                "onGetTemplate": "getTemplate_uiControl142_eVSCbk"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl143_5nVT0T",
+          "controlId": "control165_QKsCzf",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl143_5nVT0T",
+                "onGetTemplate": "getTemplate_uiControl143_5nVT0T"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl144_qXzJbH",
+          "controlId": "control166_y4uOn5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl144_qXzJbH",
+                "onGetTemplate": "getTemplate_uiControl144_qXzJbH"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl145_CWIQB8",
+          "controlId": "control167_6Sgimc",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl145_CWIQB8",
+                "onGetTemplate": "getTemplate_uiControl145_CWIQB8"
+              }
+            }
+          }
         }
       ]
     }
@@ -245,6 +543,14 @@
       "contexts": {
         "context24_9Kuow2": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=42&isagent=0&beagenter=0"
+        ],
+        "context10_sJa5NJ": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=180694&workflowRequestLogId=-1",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids="
         ]
       }
     },
