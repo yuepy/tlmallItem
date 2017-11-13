@@ -51,7 +51,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('印章使用审批流程') !==-1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('印章使用审批流程') !==-1||elem.textContent.indexOf('资金调拨审批流程') !==-1){return true;}return false;"
     },
     "control161_DAx502": {
       "location": {
@@ -67,6 +67,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"
             }
           ],
           "force": true
@@ -136,6 +140,14 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table[1]/tbody/tr/td/table/tbody"
             }
           ]
         },
@@ -154,6 +166,84 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control171_qI7ytn": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]/TBODY[1]",
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
+              "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
+              "descendant::DIV[@id=\"requestlogappednDiv\"]//TBODY"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[6]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control171_qI7ytn"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control172_tHZDlv": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]",
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TBODY",
+              "descendant::SPAN[@id=\"cke_remark\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              21
+            ],
+            "value": "SPAN.cke_browser_webkit.cke_browser_quirks SPAN.cke_wrapper.cke_ltr TABLE.cke_editor TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control172_tHZDlv"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -161,7 +251,9 @@
       "controls": [
         "control161_DAx502",
         "control162_0w9L5M",
-        "control163_lR4Oe7"
+        "control163_lR4Oe7",
+        "control171_qI7ytn",
+        "control172_tHZDlv"
       ],
       "anchors": [
         "control96_fZKiT2"
@@ -181,6 +273,16 @@
       "fromContextId": "context24_ZWUvT7",
       "fromAction": "doAction",
       "fromControlId": "control161_DAx502",
+      "toContexts": [
+        {
+          "toContextId": "context24_ZWUvT7"
+        }
+      ]
+    },
+    "flow102_blKiTA": {
+      "fromContextId": "context24_ZWUvT7",
+      "fromAction": "doAction",
+      "fromControlId": "control171_qI7ytn",
       "toContexts": [
         {
           "toContextId": "context24_ZWUvT7"
@@ -242,6 +344,36 @@
                       }
                     }
                   }
+                },
+                {
+                  "id": "uiControl143_xuBll5",
+                  "controlId": "control163_lR4Oe7",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl143_xuBll5",
+                        "onGetTemplate": "getTemplate_uiControl143_xuBll5"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl151_5KOrM7",
+                  "controlId": "control172_tHZDlv",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl151_5KOrM7",
+                        "onGetTemplate": "getTemplate_uiControl151_5KOrM7"
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -255,24 +387,25 @@
                   "templateType": ""
                 }
               },
-              "layout": []
+              "layout": [
+                {
+                  "id": "uiControl150_8VEsT4",
+                  "controlId": "control171_qI7ytn",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl150_8VEsT4",
+                        "onGetTemplate": "getTemplate_uiControl150_8VEsT4"
+                      }
+                    }
+                  }
+                }
+              ]
             }
           ]
-        },
-        {
-          "id": "uiControl143_xuBll5",
-          "controlId": "control163_lR4Oe7",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl143_xuBll5",
-                "onGetTemplate": "getTemplate_uiControl143_xuBll5"
-              }
-            }
-          }
         }
       ]
     }
@@ -283,7 +416,8 @@
         "context24_ZWUvT7": [
           "111",
           "test003",
-          ""
+          "",
+          "test001"
         ]
       }
     },
@@ -292,7 +426,8 @@
         "context24_ZWUvT7": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215916&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321623&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=6021&isagent=0&beagenter=0"
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=6021&isagent=0&beagenter=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321619&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ]
       }
     },
