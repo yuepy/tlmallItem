@@ -53,7 +53,7 @@ h5 {
   align-items: center;
 }
 .ysp-header-wrapper > span:nth-child(2) {
-  flex: 0 1 70%;
+  flex: 0 1 71%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +63,7 @@ h5 {
   font-weight: 600;
   font-size: 16px;
   display: flex;
-  flex: 0 1 20%;
+  flex: 0 1 19%;
 }
 .ysp-header-wrapper > span:nth-child(3) > span:first-child {
   margin-left: .2rem;
@@ -152,21 +152,17 @@ li {
 }
 /*****************索引列表样式 -END***********************/
 /*****************公文审批-总经理审核 -START***********************/
-.ysp-manager-audit-title-icon,
-.ysp-manager-audit-title-icon1 {
+.ysp-manager-audit-title-icon {
   background: #fff;
   border-bottom: 10px solid #f4f4f4;
-  margin: 42px 0 0 0 ;
 }
-.ysp-manager-audit-title-icon > span:nth-child(1),
-.ysp-manager-audit-title-icon1 > span:nth-child(1) {
+.ysp-manager-audit-title-icon > span:nth-child(1) {
   display: inline-block;
   padding: 10px 15px;
   background: url(images/Title-icon.png) no-repeat;
   background-position-y: 50%;
 }
-.ysp-manager-audit-title-icon .relate-files,
-.ysp-manager-audit-title-icon1 .relate-files {
+.ysp-manager-audit-title-icon .relate-files {
   display: inline-block;
   padding: 10px 15px;
   width: 40px;
@@ -175,8 +171,7 @@ li {
   background-position-y: 50%;
   float: right;
 }
-.ysp-manager-audit-title-icon .arrow-right,
-.ysp-manager-audit-title-icon1 .arrow-right {
+.ysp-manager-audit-title-icon .arrow-right {
   position: absolute;
   right: -15px;
   display: inline-block;
@@ -186,8 +181,11 @@ li {
   background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
 }
-.ysp-manager-audit-title-icon1 {
-  margin: 0;
+.ysp-manager-audit-title-icon-top {
+  margin: 40px 0 0 0 ;
+}
+.ysp-manager-audit-title-icon-bottom {
+  margin: 0 0 40px 0;
 }
 .ysp-manager-audit-wrapper {
   background: #ffffff;
@@ -260,6 +258,7 @@ li {
 }
 .ysp-manager-audit-header-tab {
   background: #fff;
+  margin: 40px 0 0 0 ;
 }
 .ysp-manager-audit-header-tab .left-div {
   width: 50%;
@@ -375,6 +374,9 @@ li {
   text-align: center;
   color: #7C7C7C;
 }
+.ysp-related-doc-search-table table tr {
+  border-bottom: 1px solid #ddd;
+}
 .ysp-related-doc-search-table table th,
 .ysp-related-doc-search-table table tr {
   height: 30px;
@@ -445,6 +447,7 @@ li {
   background: #fff;
   padding: 10px 15px;
   font-size: 14px;
+  margin: 40px 0 0 0 ;
 }
 .ysp-related-liucheng-wrapper span,
 .ysp-related-liucheng-wrapper input,
@@ -821,6 +824,7 @@ li {
 .ysp-relate-doc-childnode-wrapper {
   background: #fff;
   font-size: 1rem;
+  margin: 40px 0 0 0;
 }
 .ysp-relate-doc-childnode-wrapper span {
   padding: 5px 10px 5px 15px;
@@ -3292,31 +3296,4 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .ysp-sign-tab-upload .content > span:nth-child(2):hover {
   color: #C29A2A;
-}
-div[data-ysp-modelid='innerCommunicationApproval'] ._2YwloE7OzAhaMwSn1XM-Va {
-  border-bottom: 0;
-}
-div[data-ysp-modelid='innerCommunicationApproval'] ._2YwloE7OzAhaMwSn1XM-Va > div {
-  padding: 0;
-}
-div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP {
-  margin: 0;
-}
-div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
-  background: #fff;
-}
-div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
-div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
-div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
-  height: 35px;
-  line-height: 35px;
-}
-div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
-  width: auto;
-  display: inline;
-}
-div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
-  border-bottom: 3px solid #C29A2A;
-  color: #C29A2A;
-  padding: 3px 0;
 }
