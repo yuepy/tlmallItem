@@ -18,10 +18,10 @@
       var selfTemplate = "import {Component} from 'react'; \nimport {CommonHeader} from 'ysp-custom-components';\nexport default class extends Component{\n  render(){\n    return (\n    \t<CommonHeader \n       data={{centerText:this.props.customData}} \n       backIsShow = {true}\n        back={(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:'click'\n            })\n          }\n        }}\n        />\n    )\t\n  }\n}";
       return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n      var _this2 = this;\n\n      return React.createElement(_yspCustomComponents.CommonHeader, {\n        data: { centerText: this.props.customData },\n        backIsShow: true,\n        back: function back(e) {\n          var handler = _this2.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'click'\n            });\n          }\n        }\n      });\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
     },
-    getData_control24_It6bP6: function getData_control24_It6bP6(elem) {
+    getData_control24_It6bP6: function (elem) {
       if (!elem) {
         return;
-      }var data = {};var title = ["日常工作", "公文管理", "合同管理", "固定资产", "人事考勤"];var listBox = '';var header = [];var content;var href, Thref;var newList = {};var contents = [];if (elem.querySelectorAll('.listbox2').length > 0) {
+      }var data = {};var title = ["日常工作", "公文管理", "合同管理", "固定资产", "人事考勤", "财务管理"];var listBox = '';var header = [];var content;var href, Thref;var newList = {};var contents = [];if (elem.querySelectorAll('.listbox2').length > 0) {
         listBox = elem.querySelectorAll('.listbox2');
       } else if (elem.querySelectorAll('.listbox').length > 0) {
         listBox = elem.querySelectorAll('.listbox');
@@ -39,7 +39,7 @@
         }
       });data.contents = contents;return data;
     },
-    doAction_uiControl24_E03y0k: function doAction_uiControl24_E03y0k(data, elem) {
+    doAction_uiControl24_E03y0k: function (data, elem) {
       if (data.eventType == 'click') {
         var num = data.dataCustom.aEls;num++;var index = data.dataCustom.divs;if (elem.querySelectorAll('.listbox2').length > 0) {
           var aEls = elem.querySelectorAll('.listbox2')[index].querySelector('ul').querySelectorAll('a');
