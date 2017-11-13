@@ -1428,16 +1428,19 @@ header{
         display:flex;
         justify-content: space-between;
        	.ysp-OperationLink{
-         width:100%;
+         width:75%;
        	}
         >label{
           font-size:	@fontMedium;
           color:	@fontBlack;
           font-weight: 500;
-          width:100%;  
+          width:100%;
+          overflow-x: auto;
+          overflow-y:hidden;
+          white-space:nowrap;
           span{
             margin-right: 5px;
-            width:100px
+            width:120px
           }
         >i{
             border-right: 4px solid @fontBlue;
