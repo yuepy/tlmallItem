@@ -1,84 +1,89 @@
 {
-  "type": "adapter",
-  "short_name": "",
-  "version": "0.0.1",
-  "runtime_version": "2.4.0",
-  "description": "",
-  "options": {
-    "resource_intercept": {
-      "type": [],
-      "ignore": []
+    "type": "adapter",
+    "short_name": "",
+    "version": "0.0.1",
+    "runtime_version": "2.4.0",
+    "description": "",
+    "options": {
+        "resource_intercept": {
+            "type": [],
+            "ignore": []
+        },
+        "resource_inject": [],
+        "user_agent": ""
     },
-    "resource_inject": []
-  },
-  "override_urls": [
-    {
-      "origin_url": [
-        "http:\\/\\/192\\.168\\.200\\.63\\/wui\\/common\\/jquery\\/plugin\\/Listener\\.js"
-      ],
-      "target_url": "override/Listener.js"
-    },
-    {
-      "origin_url": [
-        "http:\\/\\/192\\.168\\.200\\.63\\/js\\/swfupload\\/workflowswfupload\\.js"
-      ],
-      "target_url": "override/workflowswfupload.js"
-    }
-  ],
-  "adapter_urls": [
-    {
-      "title": "login",
-      "url": "adapter://jinrongjie/plan/login/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/Login\\.jsp"
-      ],
-      "demo": [
-        "http://192.168.200.63/login/Login.jsp"
-      ]
-    },
-    {
-      "title": "index",
-      "url": "adapter://jinrongjie/plan/index/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.200\\.63\\/wui\\/main\\.jsp\\?templateId=1"
-      ],
-      "demo": [
-        "http://192.168.200.63/wui/main.jsp?templateId=1"
-      ]
-    },
-    {
-      "title": "managerAuditRelatedDoc",
-      "url": "adapter://jinrongjie/plan/managerAuditRelatedDoc/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.200\\.63\\/systeminfo\\/BrowserMain\\.jsp\\?url=\\/docs\\/docs\\/MutiDocBrowser\\.jsp\\?documentids="
-      ],
-      "demo": [
-        "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids="
-      ]
-    },
-    {
-      "title": "waitTodo",
-      "url": "adapter://jinrongjie/plan/waitTodo/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/RequestView\\.jsp\\?e71508480096097="
-      ],
-      "demo": [
-        "http://192.168.200.63/workflow/request/RequestView.jsp?e71508480096097="
-      ]
-    },
-    {
-      "title": "askForLeave",
-      "url": "adapter://jinrongjie/plan/askForLeave/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ManageRequestNoForm\\.jsp\\?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
-      ],
-      "demo": [
-        "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
-      ]
-    }
-  ],
-  "name": "金融街",
-  "default_url": "http://192.168.200.63/login/Login.jsp",
-  "scope": "jinrongjie",
-  "start_url": "enterplorer://jinrongjie/local/index.html"
+    "override_urls": [{
+            "origin_url": [
+                "http:\\/\\/192\\.168\\.200\\.63\\/wui\\/common\\/jquery\\/plugin\\/Listener\\.js"
+            ],
+            "target_url": "override/Listener.js"
+        },
+        {
+            "origin_url": [
+                "http:\\/\\/192\\.168\\.200\\.63\\/js\\/swfupload\\/workflowswfupload\\.js"
+            ],
+            "target_url": "override/workflowswfupload.js"
+        },
+        {
+            "origin_url": [
+                "http:\\/\\/192\\.168\\.200\\.63\\/wui\\/common\\/jquery\\/plugin\\/jQuery\\.modalDialog\\.js"
+            ],
+            "target_url": "override/modalDialog/.js"
+        }
+    ],
+    "adapter_urls": [{
+            "title": "login",
+            "url": "adapter://jinrongjie/plan/login/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/Login\\.jsp"
+            ],
+            "demo": [
+                "http://192.168.200.63/login/Login.jsp"
+            ]
+        },
+        {
+            "title": "index",
+            "url": "adapter://jinrongjie/plan/index/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.200\\.63\\/wui\\/main\\.jsp\\?templateId=1"
+            ],
+            "demo": [
+                "http://192.168.200.63/wui/main.jsp?templateId=1"
+            ]
+        },
+        {
+            "title": "managerAuditRelatedDoc",
+            "url": "adapter://jinrongjie/plan/managerAuditRelatedDoc/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.200\\.63\\/systeminfo\\/BrowserMain\\.jsp\\?url=\\/docs\\/docs\\/MutiDocBrowser\\.jsp\\?documentids="
+            ],
+            "demo": [
+                "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids="
+            ]
+        },
+        {
+            "title": "waitTodo",
+            "url": "adapter://jinrongjie/plan/waitTodo/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/RequestView\\.jsp\\?e71508480096097="
+            ],
+            "demo": [
+                "http://192.168.200.63/workflow/request/RequestView.jsp?e71508480096097="
+            ]
+        },
+        {
+            "title": "askForLeave",
+            "url": "adapter://jinrongjie/plan/askForLeave/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ManageRequestNoForm\\.jsp\\?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+            ],
+            "demo": [
+                "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+            ]
+        }
+    ],
+    "name": "金融街",
+    "default_url": "http://192.168.200.63/login/Login.jsp",
+    "scope": "jinrongjie",
+    "start_url": "enterplorer://jinrongjie/local/index.html"
 }
