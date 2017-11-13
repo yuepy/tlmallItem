@@ -1,81 +1,90 @@
 {
   "version": "0.1",
-  "id": "agencyFreeFlow",
-  "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=303990&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+  "id": "innerCommunicationApproval",
+  "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321632&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
-  "chineseName": "代办请求处理",
-  "description": "",
+  "chineseName": "内部沟通-审批",
+  "description": "内部沟通-审批",
   "controls": {
-    "control143_KwC69P": {
+    "control168_Jlhlxy": {
       "location": {
         "data": {
-          "tagName": "SPAN"
+          "tagName": "TABLE"
         },
-        "userData": {
-          "data": [],
-          "force": false
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control168_Jlhlxy"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control169_yoMlRP": {
+      "location": {
+        "data": {
+          "tagName": "TD"
         },
         "locators": [
           {
             "id": "text",
             "prob": 3,
+            "ordinal": [
+              1,
+              2
+            ],
             "value": {
               "text": [
-                "请求:处理 - 02自由流程 - 1-2申请人判断自由流转 FSIG-201711090040"
+                "请求:处理 - 01内部沟通 - 1-2收件人确认 NBYJ2017110002"
               ],
               "visText": [
-                "请求:处理 - 02自由流程 - 1-2申请人判断自由流转 FSIG-201711090040"
+                "请求:处理 - 01内部沟通 - 1-2收件人确认 NBYJ2017110002"
               ]
             }
-          },
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": [
-              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
-              "descendant::SPAN[@id=\"BacoTitle\"]"
-            ]
           },
           {
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
-              0,
-              2
+              1,
+              8
             ],
-            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
           }
         ]
       },
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('请求:处理 - 02自由流程 - 1-2申请人判断自由流转 ') !==-1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('处理')!==-1&&elem.textContent.indexOf('内部沟通')!==-1){return true;}return false;"
     },
-    "control145_zInetX": {
+    "control170_aGfVzh": {
       "location": {
         "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "FORM"
         },
         "locators": [
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control145_zInetX"
+        "onGetData": "getData_control170_aGfVzh"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -84,35 +93,107 @@
     }
   },
   "contexts": {
-    "context8_XKqIRF": {
+    "context22_9NRRRI": {
       "controls": [
-        "control145_zInetX"
+        "control168_Jlhlxy",
+        "control170_aGfVzh"
       ],
       "anchors": [
-        "control143_KwC69P"
+        "control169_yoMlRP"
       ],
       "urlAnchor": []
     }
   },
-  "flows": {},
+  "flows": {
+    "flow100_nkSDoJ": {
+      "toContexts": [
+        {
+          "toContextId": "context22_9NRRRI"
+        }
+      ]
+    },
+    "flow101_GTGpdq": {
+      "fromContextId": "context22_9NRRRI",
+      "fromAction": "doAction",
+      "fromControlId": "control170_aGfVzh",
+      "toContexts": [
+        {
+          "toContextId": "context22_9NRRRI"
+        }
+      ]
+    }
+  },
   "pages": {
-    "page8_VXtXEH": {
-      "contextId": "context8_XKqIRF",
+    "page22_xq5T9R": {
+      "contextId": "context22_9NRRRI",
       "layout": [
         {
-          "id": "uiControl122_QKMl3S",
-          "controlId": "control145_zInetX",
+          "id": "uiControl147_Jkw7qT",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "tabs",
+            "adapterId": "tabs",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl122_QKMl3S",
-                "onGetTemplate": "getTemplate_uiControl122_QKMl3S"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl147_Jkw7qTitem",
+              "display": {
+                "tabTitle": "流程表单",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl146_kf4VnA",
+                  "controlId": "control168_Jlhlxy",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl146_kf4VnA",
+                        "onGetTemplate": "getTemplate_uiControl146_kf4VnA"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl148_ExMki9",
+              "display": {
+                "tabTitle": "流转意见",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl149_IOyRzX",
+                  "controlId": "control170_aGfVzh",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl149_IOyRzX",
+                        "onGetTemplate": "getTemplate_uiControl149_IOyRzX"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -120,21 +201,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context8_XKqIRF": [
-          "123"
+        "context22_9NRRRI": [
+          "内部沟通测试_20171113"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context8_XKqIRF": [
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=303990&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+        "context22_9NRRRI": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321632&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context8_XKqIRF": [
+        "context22_9NRRRI": [
           [
             "BacoAddFavorite",
             "BacoTitle",
@@ -142,7 +223,6 @@
             "WfBill",
             "WfLog",
             "WfPic",
-            "WfText",
             "bodyiframe",
             "btnHelp",
             "closetext",
@@ -150,7 +230,6 @@
             "divWfBill",
             "divWfLog",
             "divWfPic",
-            "divWfText",
             "ext-gen",
             "isonline",
             "isworkflowdoc",
@@ -175,15 +254,14 @@
             "toolbarmenuCoverdiv",
             "toolbarmenudiv",
             "triSubwfIframe",
-            "wfdoc",
-            "workflowtext"
+            "wfdoc"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context8_XKqIRF": [
+        "context22_9NRRRI": [
           [
             "STYLE",
             "TopTitle",
@@ -191,7 +269,6 @@
             "btnHelp",
             "btn_add",
             "btn_back",
-            "btn_edit",
             "btn_forward",
             "btn_print",
             "btn_rejectName",
@@ -240,7 +317,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context8_XKqIRF": [
+        "context22_9NRRRI": [
           [
             "-/-/DIV",
             "-/-/IFRAME",
