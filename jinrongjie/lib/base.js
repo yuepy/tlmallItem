@@ -69,6 +69,7 @@
                 /*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
                 aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
+                  debugger;
                     var $GetEle = aWin.$GetEle;
                     var wuiUtil = aWin.wuiUtil;
                     var tmpids = $GetEle(inputname).value;
@@ -106,7 +107,13 @@
 
                 }
             }
-
+        	aWin.btnok_onclick = function(){
+            debugger;
+            aWin.setResourceStr();
+            aWin.replaceStr();
+            aWin.parent.parent.returnValue = {id:aWin.resourceids,name:aWin.resourcenames};
+            aWin.parent.parent.close();
+        	}
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
@@ -114,7 +121,7 @@
                     aWin.parent.close();
                 }
             }
-            if (aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 && aWin.btnok_onclick) {
+            if ( (aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.resourceids, name: aWin.resourcenames });
@@ -174,29 +181,6 @@
                 }
             }
             /*  showModelDialog 相关流程 跨页面传值兼容  */
-
-          // aWin.alert = function (message, title) {
-          //   var buttons
-          //   if (arguments.length === 0) {
-          //     message = ''
-          //   }
-          //   if (title == null) {
-          //     title = ''
-          //   }
-          //   buttons = ['OK']
-          //   message = String(message);
-          //   if(message.indexOf('SWF') !== -1){
-          //     console.log('DUANG ~  又是弹框 ! ~.~  flash' );
-          //   }else if(message.indexOf('error') !== -1){
-          //     console.log('DUANG ~  又是弹框 ! ~.~  error');
-          //   }else{
-          //     remote.dialog.showMessageBox(remote.getCurrentWindow(), {
-          //       message: message,
-          //       title: title,
-          //       buttons: buttons
-          //     })
-          //   }
-          // }
           var newAlert = aWin.alert;
           aWin.alert = function(){
             var text = arguments[0];
@@ -250,7 +234,16 @@
                 //     aWin.openFullWindowHaveBar(forwardurl);
                 //   }
             }
-
+            
+            aWin.changeCurpage=function(index){
+              doc.SearchForm.curpage.value = index;
+            }
+						aWin.onPage=function(index){
+              aWin.changeCurpage(index);//TD34490 lv 修改当前页
+              doc.SearchForm.submit();
+            }
+            
+            // 创建人
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {

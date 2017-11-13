@@ -147,6 +147,7 @@ li {
 /*****************公文审批-总经理审核 -START***********************/
 .ysp-manager-audit-title-icon {
   background: #fff;
+  border-bottom: 10px solid #f4f4f4;
 }
 .ysp-manager-audit-title-icon > span:nth-child(1) {
   display: inline-block;
@@ -172,13 +173,6 @@ li {
   height: 45px;
   background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
-}
-.ysp-manager-audit-title-icon .upload-files {
-  padding: 0 15px;
-}
-.ysp-manager-audit-title-icon .upload-files > div {
-  border-bottom: 1px solid #efefef;
-  color: #999;
 }
 .ysp-manager-audit-wrapper {
   background: #ffffff;
@@ -476,20 +470,6 @@ li {
   width: 5%;
   color: #ddd;
 }
-.ysp-related-liucheng-wrapper .doc-date {
-  width: 100%;
-}
-.ysp-related-liucheng-wrapper .doc-date span {
-  width: 12%;
-}
-.ysp-related-liucheng-wrapper .doc-date input {
-  width: 40%;
-  font-size: 0.85rem;
-}
-.ysp-related-liucheng-wrapper .doc-date i {
-  padding: 0 5px;
-  color: #ddd;
-}
 .ysp-related-liucheng-wrapper .left-content {
   padding: 0 10px 0 0;
 }
@@ -551,6 +531,51 @@ li {
   background: url(images/Magnifier-card.png) no-repeat;
   background-position-y: 50%;
   background-position-x: 90%;
+}
+.ysp-related-liucheng-wrapper .doc-date {
+  width: 100%;
+}
+.ysp-related-liucheng-wrapper .doc-date span {
+  width: 12%;
+}
+.ysp-related-liucheng-wrapper .doc-date input {
+  width: 40%;
+  font-size: 0.85rem;
+  background: url('images/calendaricon@2x.png') no-repeat;
+  background-size: 15%;
+  background-position-x: 90%;
+  background-position-y: 50%;
+}
+.ysp-related-liucheng-wrapper .doc-date i {
+  padding: 0 5px;
+  color: #ddd;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify {
+  width: 100%;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div {
+  width: 50%;
+  display: inline-block;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(1) {
+  padding: 0 5px 0 0;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(1) span {
+  width: 40%;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(1) input,
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(1) select {
+  width: 60%;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(2) {
+  padding: 0 0 0 5px;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(2) span {
+  width: 40%;
+}
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(2) input,
+.ysp-related-liucheng-wrapper .relate-process-modify > div:nth-child(2) select {
+  width: 60%;
 }
 .ysp-relate-project-wrapper {
   width: 100%;
@@ -796,7 +821,6 @@ li {
   font-size: 0.9rem;
 }
 .ysp-relate-doc-childnode-wrapper .ysp-left-arrow {
-  transform: rotateY(180deg);
   background: url(images/left_arrow.png) no-repeat;
   display: inline-block;
   height: 20px;
@@ -1810,15 +1834,19 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
   padding-bottom: 5px;
   border-bottom: 1px solid #f4f4f4;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title,
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
   color: #c29a2a;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
   background: url("../lib/images/！@2x.png") no-repeat;
   display: inline-block;
-  width: 3px;
+  width: 12px;
+  height: 15px;
   background-size: 3px;
+  background-position: 6px;
+  background-position-x: 6px;
+  background-position-y: 50%;
+  line-height: 15px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unchoose {
@@ -2903,8 +2931,8 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 .ysp_freeflow_button_container .ysp_freeflow_preservation {
   border: 1px solid #C29A2A;
   border-radius: 3px;
-  background: #C29A2A;
-  color: white;
+  background: white;
+  color: #C29A2A;
   width: 40%;
   display: inline-block;
 }
@@ -2959,6 +2987,122 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   left: 0;
   z-index: 999;
 }
+.ysp_forward_card_container {
+  width: 100%;
+  padding: 20px 10px;
+  margin-bottom: 60px;
+}
+.ysp_forward_card_container span {
+  color: #CFBC87;
+  font-size: 14px;
+}
+.ysp_forward_card_container input {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 5px;
+  height: 30px;
+  font-size: 14px;
+}
+.ysp_forward_card_container .ysp_forward_card {
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.ysp_forward_card_container .ysp_forward_card .ysp_forward_select .ysp_ops_checked_cont {
+  border-bottom: 1px solid #ddd;
+  margin: 10px 0 5px 0;
+  display: flex;
+  font-size: 14px;
+  color: #666666;
+  padding-bottom: 5px;
+}
+.ysp_forward_card_container .ysp_forward_card .ysp_forward_select .ysp_ops_checked_cont .ysp_ops_ckecked {
+  border: 1px solid #91DC40;
+  border-radius: 300px;
+  padding: 2px 12px;
+  color: #91DC40;
+  margin-right: 10px;
+}
+.ysp_forward_card_container .ysp_forward_card .ysp_forward_select .ysp_ops_checked_cont .ysp_ops {
+  border: 1px solid #666666;
+  border-radius: 300px;
+  padding: 2px 12px;
+  color: #666666;
+  margin-right: 10px;
+}
+.ysp_forward_card_container .ysp_forward_card .ysp_forward_num {
+  float: left;
+  width: 30%;
+  display: flex;
+  height: 32px;
+  line-height: 32px;
+}
+.ysp_forward_card_container .ysp_forward_card .ysp_forward_num span {
+  font-size: 14px;
+}
+.ysp_forward_card_container .ysp_forward_card .ysp_forward_num input {
+  margin: 0;
+  width: 50%;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+.ysp_forward_card_container .ysp_forward_card .ysp_forward_check {
+  height: 32px;
+  line-height: 32px;
+  width: 70%;
+  float: left;
+}
+.ysp_forward_card_container .ysp_forward_card .ysp_forward_check .ysp_forward_icon_check {
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  background: url(../lib/images/ysp_check1.png);
+  position: relative;
+  top: 2px;
+  right: 1px;
+}
+.ysp_forward_card_container .ysp_forward_card .ysp_forward_check .ysp_forward_icon_checked {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background: url(../lib/images/ysp_checked.png);
+  position: relative;
+  top: 3px;
+}
+.ysp_forward_card_container .ovh {
+  overflow: hidden;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+.ysp_forward_card_container .about_box {
+  position: relative;
+  width: 80%;
+  float: right;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  min-height: 30px;
+}
+.ysp_forward_card_container .about_box .box_con {
+  width: 80%;
+  word-break: break-all;
+}
+.ysp_forward_card_container .about_box .box_con a {
+  margin: 3px;
+  color: #202020;
+  font-size: 14px;
+}
+.ysp_forward_card_container .about_box button {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  background: url(../local/img/search.png) no-repeat 0;
+  border: 0;
+  background-size: 20px;
+}
 ._27gZE6m5LfD5uG_dZ8p3iP {
   margin: 0;
 }
@@ -2998,25 +3142,25 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 .fujian_final_lfj > li {
   background: #f3f3f3;
   padding: 10px!important;
-  margin-bottom: 10px!important;
+  margin: 10px 0!important;
   border-radius: 5px;
 }
-.document_final_lfj > li li,
-.process_final_lfj > li li,
-.fujian_final_lfj > li li {
+.document_final_lfj li,
+.process_final_lfj li,
+.fujian_final_lfj li {
   overflow: hidden;
   margin: 5px 0;
   padding: 5px 0;
 }
-.document_final_lfj > li li span,
-.process_final_lfj > li li span,
-.fujian_final_lfj > li li span {
+.document_final_lfj li span,
+.process_final_lfj li span,
+.fujian_final_lfj li span {
   font-size: 14px;
   color: #202020;
 }
-.document_final_lfj > li li span:nth-child(2),
-.process_final_lfj > li li span:nth-child(2),
-.fujian_final_lfj > li li span:nth-child(2) {
+.document_final_lfj li span:nth-child(2),
+.process_final_lfj li span:nth-child(2),
+.fujian_final_lfj li span:nth-child(2) {
   margin-left: 20px;
 }
 .ysp-sign-tab-upload {
