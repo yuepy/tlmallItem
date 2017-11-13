@@ -1993,33 +1993,48 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal']{
     font-size: 16px;
     padding-left: 10px;
   }
-}
-div[data-ysp-modelid='askForLeave']{
-  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
-    border-bottom: 0;
-  }
-  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
-    margin: 0;
-    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
-      background: #fff;
-      border-bottom: 10px solid #F3F3F3;
-      li{
-        a{
-          width: auto;
-          display: inline;
+  .ysp_advice_wrapper{
+    background: #fff;
+    font-size: 14px;
+    .ysp_advice_card{
+      overflow: hidden;
+      .ysp_card_left{
+        float: left;
+        width: 30%;
+        text-align: right;
+        padding-right: 10px;
+        .nodePerson{
+          font-weight: bold;
         }
-        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
-          background: none;
-          border-bottom: 3px solid #C29A2A;
-          color: #C29A2A;
-          padding: 3px 0;
+      }
+      .ysp_card_right{
+        padding-left: 10px;
+        float: left;
+        width: 70%;
+        text-align: left;
+        background:url("../lib/images/middle@2x.png") no-repeat;
+        background-size: 4px;
+        .show{
+          color: #A1E15C;
+          text-decoration: underline;
         }
       }
     }
   }
-  .OvsRcaoL1UILAcvWC8nMu{//面板子div
-    padding: 0 ;
+  .ysp_sign_wrapper{
+    background:#fff;
+    padding: 20px 0;
+    font-size: 14px;
+    margin-top: 10px;
+    >div:last-child{
+      margin: 0 auto;
+      width: 90%;
+      margin-top: 10px; 
+      border:1px solid #ddd;
+    }
   }
+}
+div[data-ysp-modelid='askForLeave']{
   .topTitle{//大标题
     font-size: 16px;
     font-weight: bold;
@@ -2078,46 +2093,6 @@ div[data-ysp-modelid='askForLeave']{
             background: #c29a2a;
             color: #fff;
           }
-        }
-      }
-    }
-  }
-  .ysp_sign_wrapper{
-    background:#fff;
-    padding: 20px 0;
-    font-size: 14px;
-    margin-top: 10px;
-    >div:last-child{
-      margin: 0 auto;
-      width: 90%;
-      margin-top: 10px; 
-      border:1px solid #ddd;
-    }
-  }
-  .ysp_advice_wrapper{
-    background: #fff;
-    font-size: 14px;
-    .ysp_advice_card{
-      overflow: hidden;
-      .ysp_card_left{
-        float: left;
-        width: 30%;
-        text-align: right;
-        padding-right: 10px;
-        .nodePerson{
-          font-weight: bold;
-        }
-      }
-      .ysp_card_right{
-        padding-left: 10px;
-        float: left;
-        width: 70%;
-        text-align: left;
-        background:url("../lib/images/middle@2x.png") no-repeat;
-        background-size: 4px;
-        .show{
-          color: #A1E15C;
-          text-decoration: underline;
         }
       }
     }
