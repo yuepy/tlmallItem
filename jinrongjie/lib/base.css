@@ -16,6 +16,9 @@ h5 {
   margin: 0;
   padding: 0;
 }
+.view-item {
+  background: #f3f3f3;
+}
 /*  公共header样式  */
 .ysp-header-wrapper {
   text-align: center;
@@ -26,6 +29,10 @@ h5 {
   background-color: #c29a2a;
   color: #fff;
   font-size: 18px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 111;
 }
 .ysp-header-wrapper .back {
   margin-left: 15px;
@@ -145,17 +152,21 @@ li {
 }
 /*****************索引列表样式 -END***********************/
 /*****************公文审批-总经理审核 -START***********************/
-.ysp-manager-audit-title-icon {
+.ysp-manager-audit-title-icon,
+.ysp-manager-audit-title-icon1 {
   background: #fff;
   border-bottom: 10px solid #f4f4f4;
+  margin: 42px 0 0 0 ;
 }
-.ysp-manager-audit-title-icon > span:nth-child(1) {
+.ysp-manager-audit-title-icon > span:nth-child(1),
+.ysp-manager-audit-title-icon1 > span:nth-child(1) {
   display: inline-block;
   padding: 10px 15px;
   background: url(images/Title-icon.png) no-repeat;
   background-position-y: 50%;
 }
-.ysp-manager-audit-title-icon .relate-files {
+.ysp-manager-audit-title-icon .relate-files,
+.ysp-manager-audit-title-icon1 .relate-files {
   display: inline-block;
   padding: 10px 15px;
   width: 40px;
@@ -164,7 +175,8 @@ li {
   background-position-y: 50%;
   float: right;
 }
-.ysp-manager-audit-title-icon .arrow-right {
+.ysp-manager-audit-title-icon .arrow-right,
+.ysp-manager-audit-title-icon1 .arrow-right {
   position: absolute;
   right: -15px;
   display: inline-block;
@@ -173,6 +185,9 @@ li {
   height: 45px;
   background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
+}
+.ysp-manager-audit-title-icon1 {
+  margin: 0;
 }
 .ysp-manager-audit-wrapper {
   background: #ffffff;
@@ -845,6 +860,7 @@ li {
 #firstMenu {
   width: 100%;
   background: #fff;
+  margin: 48px 0 0 0;
 }
 #firstMenu ul li {
   position: relative;
@@ -1104,6 +1120,10 @@ li {
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li a {
   color: #aaa;
 }
+.ysp-list-search {
+  margin: 42px 0 0 0;
+  position: relative;
+}
 .ysp-list-search input {
   margin: 0;
   height: 40px;
@@ -1121,7 +1141,7 @@ li {
   background-size: 50%;
   padding-left: 20px;
   position: absolute;
-  top: 46px;
+  top: 0px;
   right: 20px;
 }
 .background-gray {
@@ -1137,6 +1157,8 @@ li {
   margin-bottom: 10px;
   background: #fff;
   overflow: hidden;
+  margin: 42px 0 0 0 ;
+  position: relative;
 }
 .ysp-search-dialog .ysp-search-dialog-cxleft {
   display: inline-block;
@@ -1170,7 +1192,7 @@ li {
   top: 0;
   z-index: 2;
   right: 0px;
-  top: 43px;
+  top: 0px;
 }
 .ysp-search-dialog .ysp-search-dialog-cxright .ysp-dialog-wrapper {
   background: #fff;
@@ -1206,6 +1228,9 @@ li {
   border-radius: 3px;
 }
 /*_________________________________查询内页:页面样式_________________________________*/
+.ysp-serch-content {
+  margin: 45px 0 0 0 ;
+}
 .ysp-serch-content .ysp-serch-content-createData,
 .ysp-serch-content .ysp-serch-content-reciveData {
   height: 60px;
@@ -1225,7 +1250,7 @@ li {
 .ysp-serch-content .ysp-serch-content-createData input,
 .ysp-serch-content .ysp-serch-content-reciveData input {
   padding: 0 0 0 30px;
-  width: 35%;
+  width: 45%;
   background: #eee;
   border: 1px solid #eee;
   height: 40px;
@@ -1240,8 +1265,9 @@ li {
 .ysp-serch-content .ysp-serch-content-createPeople,
 .ysp-serch-content .ysp-serch-content-reviceTime {
   height: 60px;
+  overflow: hidden;
   line-height: 50px;
-  padding-top: 10px;
+  padding: 10px 0 0 10px;
 }
 .ysp-serch-content .ysp-serch-content-createPeople div,
 .ysp-serch-content .ysp-serch-content-reviceTime div,
@@ -1268,7 +1294,7 @@ li {
   background: #eee;
   border: 1px solid #eee;
   border-radius: 5px;
-  margin: 5px 10px;
+  margin: 5px;
 }
 .ysp-serch-content .ysp-serch-content-reviceTime {
   height: 100px;
@@ -1290,15 +1316,13 @@ li {
   width: 80%;
   text-align: center;
   border-bottom: 1px solid #d2d2d2;
-  padding-bottom: 10px;
-}
-.ysp-serch-border button {
-  margin: 12px 10px;
+  padding-bottom: 8px;
 }
 .ysp-button {
-  padding-bottom: 10px;
-  margin-left: 28px;
+  padding-bottom: 4px;
   border-bottom: 1px solid #d2d2d2;
+  position: relative;
+  right: -8%;
 }
 .ysp-serch-content-reciveData {
   padding-top: 10px;
@@ -1734,6 +1758,223 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
   width: 30%;
 }
 /******************************请假/公出申请单start*******************************************/
+div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va,
+div[data-ysp-modelid='fundSeal'] ._2YwloE7OzAhaMwSn1XM-Va {
+  border-bottom: 0;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP,
+div[data-ysp-modelid='fundSeal'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  margin: 0;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ,
+div[data-ysp-modelid='fundSeal'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+  background: #fff;
+  border-bottom: 10px solid #F3F3F3;
+  margin: 40px 0 0 0 ;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a,
+div[data-ysp-modelid='fundSeal'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+  width: auto;
+  display: inline;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2,
+div[data-ysp-modelid='fundSeal'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+  background: none;
+  border-bottom: 3px solid #C29A2A;
+  color: #C29A2A;
+  padding: 3px 0;
+}
+div[data-ysp-modelid='askForLeave'] .OvsRcaoL1UILAcvWC8nMu,
+div[data-ysp-modelid='fundSeal'] .OvsRcaoL1UILAcvWC8nMu {
+  padding: 0 ;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper {
+  background: #fff;
+  padding: 20px 0;
+  font-size: 14px;
+  margin-top: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_none_row,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_none_row {
+  display: none;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail {
+  padding: 0 15px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #f4f4f4;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
+  color: #c29a2a;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
+  background: url("../lib/images/！@2x.png") no-repeat;
+  display: inline-block;
+  width: 12px;
+  height: 15px;
+  background-size: 3px;
+  background-position: 6px;
+  background-position-x: 6px;
+  background-position-y: 50%;
+  line-height: 15px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unchoose,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unchoose {
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: #999;
+  background: #fff;
+  appearance: none;
+  font-size: 14px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchBtn,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchBtn {
+  background: url("../lib/images/Magnifier-card.png") no-repeat;
+  background-size: 14px;
+  background-position: 300px;
+  height: 22px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .actSelect,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .actSelect {
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #f4f4f4;
+  margin: 0;
+  font-size: 14px;
+  background: url("../lib/images/arrow@2x.png") no-repeat;
+  background-size: 14px;
+  background-position: 300px;
+  height: 30px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose {
+  padding-top: 10px;
+  overflow: hidden;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose span,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose span {
+  display: inline-block;
+  width: 10%;
+  background: #EFEEEC;
+  color: #666;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose .check,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose .check {
+  background: #c29a2a;
+  color: #fff;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .recieveInfo,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .recieveInfo {
+  text-align: right;
+  color: #35D081;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .time,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .time {
+  border: none;
+  font-size: 14px;
+  background: url("../lib/images/calendaricon@2x.png") no-repeat;
+  background-size: 14px;
+  background-position: 300px;
+  margin: 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard {
+  padding: 10px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail {
+  padding: 10px;
+  font-size: 14px;
+  background: #EEEDEB;
+  margin: 10px 0;
+  overflow: hidden;
+  color: #7B7873;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail > div span:first-child,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail > div span:first-child {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail > div span:last-child,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail > div span:last-child {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .num,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .num {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail textarea,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail textarea {
+  font-size: 15px;
+  margin: 0;
+  background: #EEEDEB;
+  color: #333;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .none,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .none {
+  display: none;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .totalTime {
+  font-size: 14px;
+  overflow: hidden;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime span:first-child,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .totalTime span:first-child {
+  float: left;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime span:last-child,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .totalTime span:last-child {
+  float: right;
+  color: #35D081;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_showMore,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_showMore,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .close,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .close {
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  background: url("../lib/images/load_morearrow.png") no-repeat;
+  background-size: 10px;
+  background-position: 120px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .close,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .close {
+  background: url("../lib/images/load_uparrow.png") no-repeat;
+  background-size: 10px;
+  background-position: 120px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_title,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_title,
+div[data-ysp-modelid='askForLeave'] .ysp_fundSeal_title,
+div[data-ysp-modelid='fundSeal'] .ysp_fundSeal_title {
+  border-left: 5px solid #c29a2a;
+  font-size: 16px;
+  padding-left: 10px;
+}
 div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
@@ -1764,14 +2005,9 @@ div[data-ysp-modelid='askForLeave'] .topTitle {
   background: #fff;
   text-align: center;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_title {
-  border-left: 5px solid #c29a2a;
-  font-size: 16px;
-  padding-left: 10px;
-}
 div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper {
   background: #fff;
-  margin: 10px 0;
+  margin-top: 10px;
   padding: 10px 0;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
@@ -1821,153 +2057,6 @@ div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_co
 div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
   background: #c29a2a;
   color: #fff;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper {
-  background: #fff;
-  padding: 20px 0;
-  font-size: 14px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail {
-  padding: 0 15px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row {
-  padding-bottom: 5px;
-  border-bottom: 1px solid #f4f4f4;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
-  color: #c29a2a;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
-  background: url("../lib/images/！@2x.png") no-repeat;
-  display: inline-block;
-  width: 12px;
-  height: 15px;
-  background-size: 3px;
-  background-position: 6px;
-  background-position-x: 6px;
-  background-position-y: 50%;
-  line-height: 15px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unchoose {
-  margin: 0;
-  padding: 0;
-  border: none;
-  color: #999;
-  background: #fff;
-  appearance: none;
-  font-size: 14px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchBtn {
-  background: url("../lib/images/Magnifier-card.png") no-repeat;
-  background-size: 14px;
-  background-position: 300px;
-  height: 22px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .actSelect {
-  border-radius: 5px;
-  background: #fff;
-  border: 1px solid #f4f4f4;
-  margin: 0;
-  font-size: 14px;
-  background: url("../lib/images/arrow@2x.png") no-repeat;
-  background-size: 14px;
-  background-position: 300px;
-  height: 30px;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose {
-  padding-top: 10px;
-  overflow: hidden;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose span {
-  display: inline-block;
-  width: 10%;
-  background: #EFEEEC;
-  color: #666;
-  border-radius: 5px;
-  margin-right: 10px;
-  text-align: center;
-  font-size: 12px;
-  padding: 5px 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .choose .check {
-  background: #c29a2a;
-  color: #fff;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .recieveInfo {
-  text-align: right;
-  color: #35D081;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .time {
-  border: none;
-  font-size: 14px;
-  background: url("../lib/images/calendaricon@2x.png") no-repeat;
-  background-size: 14px;
-  background-position: 300px;
-  margin: 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard {
-  padding: 10px 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail {
-  padding: 10px;
-  font-size: 14px;
-  background: #EEEDEB;
-  margin: 10px 0;
-  overflow: hidden;
-  color: #7B7873;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail > div span:first-child {
-  display: inline-block;
-  width: 50%;
-  text-align: left;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail > div span:last-child {
-  display: inline-block;
-  width: 50%;
-  text-align: right;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .num {
-  font-size: 15px;
-  font-weight: bold;
-  color: #333;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail textarea {
-  font-size: 15px;
-  margin: 0;
-  background: #EEEDEB;
-  color: #333;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .none {
-  display: none;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime {
-  font-size: 14px;
-  overflow: hidden;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime span:first-child {
-  float: left;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .totalTime span:last-child {
-  float: right;
-  color: #35D081;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_showMore,
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .close {
-  font-size: 14px;
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  background: url("../lib/images/load_morearrow.png") no-repeat;
-  background-size: 10px;
-  background-position: 120px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .close {
-  background: url("../lib/images/load_uparrow.png") no-repeat;
-  background-size: 10px;
-  background-position: 120px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper {
   background: #fff;
@@ -2070,6 +2159,25 @@ div[data-ysp-modelid='postName'] .ysp_jobStation_table .content .rows span:first
   text-align: left;
 }
 /******************************请假/公出申请单end*******************************************/
+/********************************资金调拨和印章 start****************************/
+div[data-ysp-modelid="fundSeal"] .ysp-header-wrapper span:nth-child(3) {
+  display: none;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_title {
+  background: #fff;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_title .topTitle {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 0;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_title .num {
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+/********************************资金调拨和印章 end****************************/
 .ysp_table_lfj select {
   background: none;
   border: 0;
