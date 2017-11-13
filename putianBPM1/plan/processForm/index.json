@@ -577,6 +577,33 @@
       "roles": "element",
       "text": "\n\t\t\t\t            \t前期提货补偿\n\t\t\t\t            ",
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+    },
+    "control63_2H05ln": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control63_2H05ln"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
     }
   },
   "contexts": {
@@ -593,7 +620,8 @@
         "control50_0mASyq",
         "control41_0ETlac",
         "control48_VJf6Ek",
-        "control61_S2UifR"
+        "control61_S2UifR",
+        "control63_2H05ln"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -782,6 +810,21 @@
           }
         },
         {
+          "id": "uiControl51_kpZgK7",
+          "controlId": "control63_2H05ln",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl51_kpZgK7",
+                "onGetTemplate": "getTemplate_uiControl51_kpZgK7"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl22_QmOw34",
           "controlId": "control21_GeryA0",
           "display": {
@@ -942,7 +985,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=258227&_winid=w8309",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4062",
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7768&_t=628055&_winid=w2803"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7768&_t=628055&_winid=w2803",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=9684&_t=812889&_winid=w2469"
         ],
         "context10_zlXaLZ": [
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=867767&_winid=w6448",
