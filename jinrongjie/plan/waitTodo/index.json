@@ -18,7 +18,8 @@
     "mainLeaderSignNew": "../mainLeaderSignNew/index.json",
     "fundSeal": "../fundSeal/index.json",
     "creatContract01": "../creatContract01/index.json",
-    "innerCommunication": "../innerCommunication/index.json"
+    "innerCommunication": "../innerCommunication/index.json",
+    "ITdeviceAppply": "../ITdeviceAppply/index.json"
   },
   "chineseName": "待办事宜",
   "description": "待办事宜",
@@ -461,6 +462,53 @@
       "roles": "element,link",
       "text": "",
       "frameXPath": ""
+    },
+    "control164_sVATFB": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:创建 - IT类办公设备和固定资产申购审批流程 - 创建"
+              ],
+              "visText": [
+                "请求:创建 - IT类办公设备和固定资产申购审批流程 - 创建"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -555,6 +603,10 @@
         {
           "toContextId": "context24_9Kuow2",
           "toModelId": "innerCommunication"
+        },
+        {
+          "toContextId": "context25_w2LmZK",
+          "toModelId": "ITdeviceAppply"
         }
       ]
     }

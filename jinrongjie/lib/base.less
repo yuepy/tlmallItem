@@ -135,7 +135,7 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 }
 @base-font-size:14px;
 @list-base-padding:5px;
-@list-base-border-color:#f4f4f4;
+@list-base-border-color:#EFEFEF;
 
 li {list-style: none}
 
@@ -221,7 +221,7 @@ li {list-style: none}
 	background: #ffffff;
 	padding-left: 15px;
   font-size: @base-font-size+2px;
-  border-bottom: 10px solid #f4f4f4;
+  border-bottom: 10px solid #efefef;
   .left-border{
     margin-left:-15px;
     width:15px; 
@@ -301,7 +301,7 @@ li {list-style: none}
   }
   .border-bottom{
     height: 10px;
-    background: #f4f4f4;
+    background: #efefef;
     clear: both;
   }
   .active_tab{
@@ -313,7 +313,7 @@ li {list-style: none}
 .ysp-manager-audit-title{
   font-size: @base-font-size;
   text-align: center;
-  border-bottom: 10px solid #f4f4f4;
+  border-bottom: 10px solid #efefef;
   background: #fff;
   padding: 10px 0;
   .ysp-manager-audit-main-title{
@@ -831,6 +831,7 @@ li {list-style: none}
     }
   .ysp-left-arrow{
     background: url(images/left_arrow.png) no-repeat;
+    transform:rotate(180deg);
     display: inline-block;
     height: 20px;
     width: 20px;
@@ -2024,48 +2025,33 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal']{
     font-size: 16px;
     padding-left: 10px;
   }
-  .ysp_advice_wrapper{
-    background: #fff;
-    font-size: 14px;
-    .ysp_advice_card{
-      overflow: hidden;
-      .ysp_card_left{
-        float: left;
-        width: 30%;
-        text-align: right;
-        padding-right: 10px;
-        .nodePerson{
-          font-weight: bold;
-        }
-      }
-      .ysp_card_right{
-        padding-left: 10px;
-        float: left;
-        width: 70%;
-        text-align: left;
-        background:url("../lib/images/middle@2x.png") no-repeat;
-        background-size: 4px;
-        .show{
-          color: #A1E15C;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-  .ysp_sign_wrapper{
-    background:#fff;
-    padding: 20px 0;
-    font-size: 14px;
-    margin-top: 10px;
-    >div:last-child{
-      margin: 0 auto;
-      width: 90%;
-      margin-top: 10px; 
-      border:1px solid #ddd;
-    }
-  }
 }
 div[data-ysp-modelid='askForLeave']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      background: #fff;
+      border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+  .OvsRcaoL1UILAcvWC8nMu{//面板子div
+    padding: 0 ;
+  }
   .topTitle{//大标题
     font-size: 16px;
     font-weight: bold;
@@ -2124,6 +2110,46 @@ div[data-ysp-modelid='askForLeave']{
             background: #c29a2a;
             color: #fff;
           }
+        }
+      }
+    }
+  }
+  .ysp_sign_wrapper{
+    background:#fff;
+    padding: 20px 0;
+    font-size: 14px;
+    margin-top: 10px;
+    >div:last-child{
+      margin: 0 auto;
+      width: 90%;
+      margin-top: 10px; 
+      border:1px solid #ddd;
+    }
+  }
+  .ysp_advice_wrapper{
+    background: #fff;
+    font-size: 14px;
+    .ysp_advice_card{
+      overflow: hidden;
+      .ysp_card_left{
+        float: left;
+        width: 30%;
+        text-align: right;
+        padding-right: 10px;
+        .nodePerson{
+          font-weight: bold;
+        }
+      }
+      .ysp_card_right{
+        padding-left: 10px;
+        float: left;
+        width: 70%;
+        text-align: left;
+        background:url("../lib/images/middle@2x.png") no-repeat;
+        background-size: 4px;
+        .show{
+          color: #A1E15C;
+          text-decoration: underline;
         }
       }
     }
@@ -2451,7 +2477,7 @@ div[data-ysp-modelid='mainLeaderSign']{
   position: relative;
   background: #fff;
   .approval-node-info{
-    // border-top: 10px solid #f4f4f4;
+    // border-top: 10px solid #efefef;
     div{
       text-align: left;
       font-size: 13px;
@@ -3319,7 +3345,7 @@ div[data-ysp-modelid='chairmanSign']{
 
 .ysp-custom-textarea{
   background: #fff;
-  padding: 0 15px 15px 15px;
+  padding: 0 15px;
   .cutom-textarea{
     border: 1px solid #efefef;
     border-radius: 5px;
@@ -3359,7 +3385,7 @@ div[data-ysp-modelid='chairmanSign']{
   span{display: inline-block;height: 30px; line-height: 30px;width: 50%;}
   
   .content{
-    border-bottom: 1px solid #f4f4f4;
+    border-bottom: 1px solid #efefef;
   	>span:nth-child(2){
       text-align: right;
     	padding: 0 10px 0 0;
