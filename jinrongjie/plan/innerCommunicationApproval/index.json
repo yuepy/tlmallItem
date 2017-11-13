@@ -69,12 +69,34 @@
       "text": "",
       "frameXPath": "",
       "customJS": "if(elem.textContent.indexOf('处理')!==-1&&elem.textContent.indexOf('内部沟通')!==-1){return true;}return false;"
+    },
+    "control170_aGfVzh": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control170_aGfVzh"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
     "context22_9NRRRI": {
       "controls": [
-        "control168_Jlhlxy"
+        "control168_Jlhlxy",
+        "control170_aGfVzh"
       ],
       "anchors": [
         "control169_yoMlRP"
@@ -89,6 +111,16 @@
           "toContextId": "context22_9NRRRI"
         }
       ]
+    },
+    "flow101_GTGpdq": {
+      "fromContextId": "context22_9NRRRI",
+      "fromAction": "doAction",
+      "fromControlId": "control170_aGfVzh",
+      "toContexts": [
+        {
+          "toContextId": "context22_9NRRRI"
+        }
+      ]
     }
   },
   "pages": {
@@ -96,19 +128,72 @@
       "contextId": "context22_9NRRRI",
       "layout": [
         {
-          "id": "uiControl146_kf4VnA",
-          "controlId": "control168_Jlhlxy",
+          "id": "uiControl147_Jkw7qT",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "tabs",
+            "adapterId": "tabs",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl146_kf4VnA",
-                "onGetTemplate": "getTemplate_uiControl146_kf4VnA"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl147_Jkw7qTitem",
+              "display": {
+                "tabTitle": "流程表单",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl146_kf4VnA",
+                  "controlId": "control168_Jlhlxy",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl146_kf4VnA",
+                        "onGetTemplate": "getTemplate_uiControl146_kf4VnA"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl148_ExMki9",
+              "display": {
+                "tabTitle": "流转意见",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl149_IOyRzX",
+                  "controlId": "control170_aGfVzh",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl149_IOyRzX",
+                        "onGetTemplate": "getTemplate_uiControl149_IOyRzX"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
