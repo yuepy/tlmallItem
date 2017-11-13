@@ -3822,12 +3822,15 @@ div[data-ysp-modelid="AtReportDetail"]{
 
 
 #page{
-  text-align: center;
+  //text-align: center;
     .common-page{
-    color: #818181;
-    padding: 20px 0px;
-    text-align: center;
-    background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #818181;
+    	padding: 20px 10px;
+    	//text-align: center;
+   	  background: #fff;
     .input-serch{
       display: inline-block;
       .page-number{
@@ -3837,37 +3840,77 @@ div[data-ysp-modelid="AtReportDetail"]{
         margin: 0;
       }
     }
-    button{
-      padding: 5px 15px;
-    }
+    // button{
+    //   padding: 5px 15px;
+    // }
     .prev-icon{
-      border-radius: 5px;
-      border: 1px solid #eee;
-      background: #fff;
-      color: #818181;
-      padding-left: 25px;
-      background: url('images/prev.png') no-repeat 7px 8px;
-      background-size: 12%;
+      // border-radius: 5px;
+      // border: 1px solid #eee;
+      // background: #fff;
+      // color: #818181;
+      // padding-left: 25px;
+      // background: url('images/prev.png') no-repeat 7px 8px;
+      // background-size: 12%;
+      display: block;
+      background: url('images/ysp-atreport-more.png') no-repeat center center;
+      height: 20px;
+      width: 20px;
+      background-size: 100%;
+      transform: rotate(180deg);
+    }
+    .prev-no-icon{
+      display: block;
+			background: url('images/visitcalendar-next-icon.png') no-repeat center center;
+      height: 20px;
+      width: 20px;
+      background-size: 100%;
     }
     .next-icon{
-      border-radius: 5px;
-      border: 1px solid #eee;
-      color: #fff;
-      padding-right: 25px;
-       background:#4796ED url('images/next.png') no-repeat 88% 48%;
-      background-size: 11%;
+      // border-radius: 5px;
+      // border: 1px solid #eee;
+      // color: #fff;
+      // padding-right: 25px;
+      //  background:#4796ED url('images/next.png') no-repeat 88% 48%;
+      // background-size: 11%;
+      display: block;
+      background: url('images/ysp-atreport-more.png') no-repeat center center;
+      height: 20px;
+      width: 20px;
+      background-size: 100%;
     }
-    >span{
-      margin: 0 15px;
-      margin-right: 5px;
+    .next-no-icon{
+      display: block;
+      background: url('images/visitcalendar-pre-icon.png') no-repeat center center;
+      height: 20px;
+      width: 20px;
+      background-size: 100%;
     }
-    .input-serch{
-      margin: 0 15px;
-      margin-left: 5px;
-      .page-number{
-        margin: 0 5px;
-        vertical-align: inherit;
-        padding: 2px 5px;
+    .prev-next-center{
+      >span{
+        margin-right: 2px;
+    	}
+      .input-serch{
+      	margin: 0 15px;
+      	margin-left: 5px;
+      	.page-number{
+        	margin: 0 5px;
+        	vertical-align: inherit;
+        	padding: 2px 5px;
+      	}
+    	}
+      .goReturn{
+        border-radius: 6px;
+        background: #4796ed;
+        color: #fff;
+        padding: 5px 10px;
+        border: 1px solid #4796ed;
+      }
+      .goNoReturn{
+        border-radius: 6px;
+        background: #ececec;
+        color: #fff;
+        padding: 5px 10px;
+        border: 1px solid #ececec;
       }
     }
   }
