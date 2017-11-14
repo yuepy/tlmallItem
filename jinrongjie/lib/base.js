@@ -265,7 +265,6 @@
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
-              debugger;
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.open("post", "http://192.168.200.121:8080/home/release/com.eibus.web.soap.Gateway.wcp", true);
                 xmlhttp.onreadystatechange = function() {
