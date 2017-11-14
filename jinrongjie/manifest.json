@@ -9,8 +9,18 @@
             "type": [],
             "ignore": []
         },
+        "resource_filter": [{
+            "url_match": [
+                "^http:\\/\\/192\\.168\\.200\\.63.*"
+            ],
+            "charset": "utf-8",
+            "replaces": [{
+                "regexp": "\\btop\\b",
+                "sub_str": "_ysp_top"
+            }]
+        }],
         "resource_inject": [],
-        "user_agent": ""
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
     },
     "override_urls": [{
             "origin_url": [
@@ -28,24 +38,26 @@
             "origin_url": [
                 "http:\\/\\/192\\.168\\.200\\.63\\/wui\\/common\\/jquery\\/plugin\\/jQuery\\.modalDialog\\.js"
             ],
-            "target_url": "override/modalDialog/.js"
+            "target_url": "override/modalDialog.js"
+        },
+        {
+            "origin_url": [
+                "http:\\/\\/192\\.168\\.200\\.63\\/js\\/jquery\\/plugins\\/client\\/jquery\\.client\\.js"
+            ],
+            "target_url": "override/client.js"
+        },
+        {
+            "origin_url": [
+                "http:\\/\\/192\\.168\\.200\\.63\\/js\\/bindows\\/bindows_gauges\\.js"
+            ],
+            "target_url": "override/bindows_gauges.js"
         }
     ],
     "adapter_urls": [{
-            "title": "login",
-            "url": "adapter://jinrongjie/plan/login/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/Login\\.jsp"
-            ],
-            "demo": [
-                "http://192.168.200.63/login/Login.jsp"
-            ]
-        },
-        {
             "title": "index",
             "url": "adapter://jinrongjie/plan/index/index.json",
             "matcher": [
-                "^http:\\/\\/192\\.168\\.200\\.63\\/wui\\/main\\.jsp\\?templateId=1"
+                "^http:\\/\\/192\\.168\\.200\\.63.*"
             ],
             "demo": [
                 "http://192.168.200.63/wui/main.jsp?templateId=1"
@@ -79,6 +91,26 @@
             ],
             "demo": [
                 "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+            ]
+        },
+        {
+            "title": "login",
+            "url": "adapter://jinrongjie/plan/login/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/Login\\.jsp"
+            ],
+            "demo": [
+                "http://192.168.200.63/login/Login.jsp"
+            ]
+        },
+        {
+            "title": "login1",
+            "url": "adapter://jinrongjie/plan/login/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/VerifyLogin\\.jsp.*"
+            ],
+            "demo": [
+                "http://192.168.200.63/login/Login.jsp"
             ]
         }
     ],
