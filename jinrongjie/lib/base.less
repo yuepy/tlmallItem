@@ -1169,14 +1169,22 @@ li {list-style: none}
       }
     }
     .ysp-list-card-ul{
-      li{
+      li{        
         height: 40px;
         line-height:40px;
         border-bottom:1px solid #eee;
         margin-left:20px;
         a{
           color:#aaa;
-        }
+          font-size:14px;
+        } 
+        .ysp-list-card-content-img{
+          	display: inline-block;
+          	height: 20px;
+            background: url('images/new@2x.png') no-repeat;  
+          	width: 40px;
+    				background-position-y: 5px;
+      	}
       }
     }
   }
@@ -1748,6 +1756,7 @@ div[data-ysp-modelid='choosePerson']{
   }
 }
 .box_select{
+  margin:40px 0 0 0 ;
   .people3{
     margin: 10px;
     li{
@@ -3502,6 +3511,32 @@ div[data-ysp-modelid='innerCommunicationApproval']{
   }
 }
 div[data-ysp-modelid='docApprovalList']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+    >div{padding: 0;}
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      margin-top: 40px;
+      background: #fff;
+      a,ul,li{height: 35px;line-height: 35px;}
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+div[data-ysp-modelid='sendDocProcess']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
     >div{padding: 0;}
