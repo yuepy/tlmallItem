@@ -7,7 +7,7 @@
       if (data.eventType == 'click') {
         ysp.customHelper.back();
       }if (data.eventType == 'save1') {
-        elem.ownerDocument.defaultView.btnok_onclick();
+        debugger;elem.ownerDocument.defaultView.btnok_onclick();ysp.customHelper.back();
       }
     },
     getTemplate_uiControl18_79vAeM: function getTemplate_uiControl18_79vAeM() {
