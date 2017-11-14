@@ -108,6 +108,18 @@ h5 {
   margin-top: 10px;
   font-size: 14px;
 }
+.must_lfj {
+  position: relative;
+}
+.must_lfj:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: #ccc;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
 li {
   list-style: none;
 }
@@ -255,6 +267,25 @@ li {
 }
 .ysp-manager-audit-wrapper .textarea-style {
   border-radius: 5px;
+}
+.ysp-manager-audit-wrapper .emergency-level-div {
+  display: inline;
+  padding: 0 15px;
+  float: right;
+}
+.ysp-manager-audit-wrapper .emergency-level-div span {
+  color: #000;
+  padding: 0 10px;
+  margin: 0 3px;
+  border-radius: 15px;
+  border: 1px solid #BBBBBB;
+  height: 25px;
+  line-height: 25px;
+  display: inline-block;
+}
+.ysp-manager-audit-wrapper .emergency-level-div .activeSpan {
+  color: #A1E05E;
+  border: 1px solid #A1E05E;
 }
 .ysp-manager-audit-header-tab {
   background: #fff;
@@ -1980,6 +2011,54 @@ div[data-ysp-modelid='fundSeal'] .ysp_fundSeal_title {
   font-size: 16px;
   padding-left: 10px;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper,
+div[data-ysp-modelid='fundSeal'] .ysp_sign_wrapper {
+  background: #fff;
+  padding: 20px 0;
+  font-size: 14px;
+  margin-top: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper > div:last-child,
+div[data-ysp-modelid='fundSeal'] .ysp_sign_wrapper > div:last-child {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper,
+div[data-ysp-modelid='fundSeal'] .ysp_advice_wrapper {
+  background: #fff;
+  font-size: 14px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card,
+div[data-ysp-modelid='fundSeal'] .ysp_advice_wrapper .ysp_advice_card {
+  overflow: hidden;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_left,
+div[data-ysp-modelid='fundSeal'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_left {
+  float: left;
+  width: 30%;
+  text-align: right;
+  padding-right: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_left .nodePerson,
+div[data-ysp-modelid='fundSeal'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_left .nodePerson {
+  font-weight: bold;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_right,
+div[data-ysp-modelid='fundSeal'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_right {
+  padding-left: 10px;
+  float: left;
+  width: 70%;
+  text-align: left;
+  background: url("../lib/images/middle@2x.png") no-repeat;
+  background-size: 4px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_right .show,
+div[data-ysp-modelid='fundSeal'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_right .show {
+  color: #A1E15C;
+  text-decoration: underline;
+}
 div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
@@ -2063,46 +2142,6 @@ div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_co
   background: #c29a2a;
   color: #fff;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper {
-  background: #fff;
-  padding: 20px 0;
-  font-size: 14px;
-  margin-top: 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_sign_wrapper > div:last-child {
-  margin: 0 auto;
-  width: 90%;
-  margin-top: 10px;
-  border: 1px solid #ddd;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper {
-  background: #fff;
-  font-size: 14px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card {
-  overflow: hidden;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_left {
-  float: left;
-  width: 30%;
-  text-align: right;
-  padding-right: 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_left .nodePerson {
-  font-weight: bold;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_right {
-  padding-left: 10px;
-  float: left;
-  width: 70%;
-  text-align: left;
-  background: url("../lib/images/middle@2x.png") no-repeat;
-  background-size: 4px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_advice_wrapper .ysp_advice_card .ysp_card_right .show {
-  color: #A1E15C;
-  text-decoration: underline;
-}
 div[data-ysp-modelid='postName'] .ysp_stationName {
   background: #fff;
   padding: 10px;
@@ -2181,6 +2220,9 @@ div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_title .num {
   font-size: 16px;
   text-align: center;
   padding-bottom: 5px;
+}
+div[data-ysp-modelid="fundSeal"] .ysp-manager-audit-title-icon {
+  border-top: 10px solid #f4f4f4;
 }
 /********************************资金调拨和印章 end****************************/
 .ysp_table_lfj select {
@@ -2267,6 +2309,7 @@ div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_title .num {
   padding-bottom: 10px;
   color: #202020;
   font-size: 15px;
+  min-height: 30px;
 }
 .ysp_table_lfj .bottom_box input {
   background: none;
@@ -3235,7 +3278,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .ysp-custom-textarea {
   background: #fff;
-  padding: 0 15px;
+  padding: 0 15px 15px 15px;
 }
 .ysp-custom-textarea .cutom-textarea {
   border: 1px solid #efefef;
@@ -3297,4 +3340,60 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .ysp-sign-tab-upload .content > span:nth-child(2):hover {
   color: #C29A2A;
+}
+div[data-ysp-modelid='innerCommunicationApproval'] ._2YwloE7OzAhaMwSn1XM-Va {
+  border-bottom: 0;
+}
+div[data-ysp-modelid='innerCommunicationApproval'] ._2YwloE7OzAhaMwSn1XM-Va > div {
+  padding: 0;
+}
+div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  margin: 0;
+}
+div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+  margin-top: 40px;
+  background: #fff;
+}
+div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
+div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
+div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
+  height: 35px;
+  line-height: 35px;
+}
+div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+  width: auto;
+  display: inline;
+}
+div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+  border-bottom: 3px solid #C29A2A;
+  color: #C29A2A;
+  padding: 3px 0;
+}
+div[data-ysp-modelid='docApprovalList'] ._2YwloE7OzAhaMwSn1XM-Va {
+  border-bottom: 0;
+}
+div[data-ysp-modelid='docApprovalList'] ._2YwloE7OzAhaMwSn1XM-Va > div {
+  padding: 0;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  margin: 0;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+  margin-top: 40px;
+  background: #fff;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
+  height: 35px;
+  line-height: 35px;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+  width: auto;
+  display: inline;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+  border-bottom: 3px solid #C29A2A;
+  color: #C29A2A;
+  padding: 3px 0;
 }

@@ -14,7 +14,8 @@
     "agencyFreeFlow": "../agencyFreeFlow/index.json",
     "fundSeal": "../fundSeal/index.json",
     "needToFreeFlow": "../needToFreeFlow/index.json",
-    "innerCommunicationApproval": "../innerCommunicationApproval/index.json"
+    "innerCommunicationApproval": "../innerCommunicationApproval/index.json",
+    "docApprovalList": "../docApprovalList/index.json"
   },
   "chineseName": "01合同会签流程",
   "description": "",
@@ -516,6 +517,10 @@
         {
           "toContextId": "context22_9NRRRI",
           "toModelId": "innerCommunicationApproval"
+        },
+        {
+          "toContextId": "context26_SWrdGB",
+          "toModelId": "docApprovalList"
         }
       ]
     },
@@ -526,6 +531,10 @@
       "toContexts": [
         {
           "toContextId": "context4_ktABGz"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
         }
       ]
     },

@@ -1,90 +1,12 @@
 {
   "version": "0.1",
-  "id": "creatDocumentAapproval",
-  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=182&isagent=0&beagenter=0",
+  "id": "ITdeviceAppply",
+  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=605&isagent=0&beagenter=0",
   "jsFile": "index.js",
-  "chineseName": "新建06公文审批流程-报告阅知类（同送总经理董事长）",
+  "chineseName": "IT类办公设备创建",
   "description": "",
   "controls": {
-    "control110_XrebWI": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control110_XrebWI"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control111_BiGw7m": {
-      "location": {
-        "data": {
-          "tagName": "SPAN"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "请求:创建 - 06公文审批流程-报告阅知类（同送总经理董事长） - 创建"
-              ],
-              "visText": [
-                "请求:创建 - 06公文审批流程-报告阅知类（同送总经理董事长） - 创建"
-              ]
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": [
-              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
-              "descendant::SPAN[@id=\"BacoTitle\"]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "roles": "element",
-      "text": "",
-      "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('报告阅知类') !== -1 && elem.textContent.indexOf('创建') !== -1){return true;} return false;"
-    },
-    "control140_bXKhMF": {
+    "control165_NdPmnp": {
       "location": {
         "data": {
           "tagName": "BUTTON"
@@ -133,14 +55,64 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control140_bXKhMF"
+        "onGetData": "getData_control165_NdPmnp"
       },
       "intendedRole": "custom",
       "roles": "element,button,custom",
       "monitored": true,
       "frameXPath": ""
     },
-    "control141_DVQsTW": {
+    "control166_QnAye0": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control166_QnAye0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control167_Wi4pKJ": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[15]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control167_Wi4pKJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control168_AgTWpX": {
       "location": {
         "data": {
           "tagName": "BUTTON"
@@ -189,91 +161,160 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control141_DVQsTW"
+        "onGetData": "getData_control168_AgTWpX"
       },
       "intendedRole": "custom",
       "roles": "element,button,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control169_iabcbI": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:创建 - IT类办公设备和固定资产申购审批流程 - 创建"
+              ],
+              "visText": [
+                "请求:创建 - IT类办公设备和固定资产申购审批流程 - 创建"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('IT类办公设备和固定资产申购审批流程') !==-1 && elem.textContent.indexOf('创建') !==-1){return true;}return false;"
     }
   },
   "contexts": {
-    "context18_IZLpIz": {
+    "context25_w2LmZK": {
       "controls": [
-        "control110_XrebWI",
-        "control140_bXKhMF",
-        "control141_DVQsTW"
+        "control165_NdPmnp",
+        "control166_QnAye0",
+        "control167_Wi4pKJ",
+        "control168_AgTWpX"
       ],
       "anchors": [
-        "control111_BiGw7m"
+        "control169_iabcbI"
       ],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow62_TokqCp": {
+    "flow95_1VMDG3": {
       "toContexts": [
         {
-          "toContextId": "context18_IZLpIz"
+          "toContextId": "context25_w2LmZK"
         }
       ]
     },
-    "flow63_dLTTqC": {
-      "fromContextId": "context18_IZLpIz",
+    "flow96_k8qZW1": {
+      "fromContextId": "context25_w2LmZK",
       "fromAction": "doAction",
-      "fromControlId": "control110_XrebWI",
+      "fromControlId": "control166_QnAye0",
       "toContexts": [
         {
-          "toContextId": "context18_IZLpIz"
+          "toContextId": "context25_w2LmZK"
         }
       ]
     }
   },
   "pages": {
-    "page18_5Lf8dq": {
-      "contextId": "context18_IZLpIz",
+    "page25_xakdXQ": {
+      "contextId": "context25_w2LmZK",
       "layout": [
         {
-          "id": "uiControl119_i0hwxQ",
-          "controlId": "control140_bXKhMF",
+          "id": "uiControl142_GUkTUk",
+          "controlId": "control165_NdPmnp",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl119_i0hwxQ",
-                "onGetTemplate": "getTemplate_uiControl119_i0hwxQ"
+                "onDoAction": "doAction_uiControl142_GUkTUk",
+                "onGetTemplate": "getTemplate_uiControl142_GUkTUk"
               }
             }
           }
         },
         {
-          "id": "uiControl63_VG18Wm",
-          "controlId": "control110_XrebWI",
+          "id": "uiControl143_8mx7V2",
+          "controlId": "control166_QnAye0",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl63_VG18Wm",
-                "onGetTemplate": "getTemplate_uiControl63_VG18Wm"
+                "onDoAction": "doAction_uiControl143_8mx7V2",
+                "onGetTemplate": "getTemplate_uiControl143_8mx7V2"
               }
             }
           }
         },
         {
-          "id": "uiControl120_2GbTfo",
-          "controlId": "control141_DVQsTW",
+          "id": "uiControl144_TWZQiZ",
+          "controlId": "control167_Wi4pKJ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl120_2GbTfo",
-                "onGetTemplate": "getTemplate_uiControl120_2GbTfo"
+                "onDoAction": "doAction_uiControl144_TWZQiZ",
+                "onGetTemplate": "getTemplate_uiControl144_TWZQiZ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl145_940azM",
+          "controlId": "control168_AgTWpX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl145_940azM",
+                "onGetTemplate": "getTemplate_uiControl145_940azM"
               }
             }
           }
@@ -284,21 +325,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context18_IZLpIz": [
+        "context25_w2LmZK": [
           ""
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context18_IZLpIz": [
-          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=182&isagent=0&beagenter=0"
+        "context25_w2LmZK": [
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=605&isagent=0&beagenter=0"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context18_IZLpIz": [
+        "context25_w2LmZK": [
           [
             "BacoAddFavorite",
             "BacoTitle",
@@ -306,7 +347,6 @@
             "WfBill",
             "WfLog",
             "WfPic",
-            "WfText",
             "_beagenter",
             "_isagent",
             "bodyiframe",
@@ -316,7 +356,6 @@
             "divWfBill",
             "divWfLog",
             "divWfPic",
-            "divWfText",
             "ext-gen",
             "isonline",
             "isworkflowdoc",
@@ -338,15 +377,14 @@
             "toolbarbottommenu",
             "toolbarmenu",
             "toolbarmenuCoverdiv",
-            "toolbarmenudiv",
-            "workflowtext"
+            "toolbarmenudiv"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context18_IZLpIz": [
+        "context25_w2LmZK": [
           [
             "STYLE",
             "TopTitle",
@@ -398,7 +436,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context18_IZLpIz": [
+        "context25_w2LmZK": [
           [
             "-/-/DIV",
             "-/-/INPUT-hidden",

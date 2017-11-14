@@ -3,6 +3,10 @@
   "id": "fundSeal",
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215916&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+  },
   "chineseName": "资金调拨和印章（三个流程）",
   "description": "",
   "controls": {
@@ -244,6 +248,139 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control177_PgVsPV": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TBODY",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              9
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control177_PgVsPV"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control178_dWfvhq": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[2]/tbody/tr[4]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[2]"
+            }
+          ],
+          "force": true
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control178_dWfvhq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control179_Hxzqpt": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[2]/tbody/tr[6]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[3]"
+            }
+          ],
+          "force": true
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[6]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control179_Hxzqpt"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": false,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control180_XmtXEI": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[8]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control180_XmtXEI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -253,7 +390,11 @@
         "control162_0w9L5M",
         "control163_lR4Oe7",
         "control171_qI7ytn",
-        "control172_tHZDlv"
+        "control172_tHZDlv",
+        "control177_PgVsPV",
+        "control178_dWfvhq",
+        "control179_Hxzqpt",
+        "control180_XmtXEI"
       ],
       "anchors": [
         "control96_fZKiT2"
@@ -286,6 +427,34 @@
       "toContexts": [
         {
           "toContextId": "context24_ZWUvT7"
+        }
+      ]
+    },
+    "flow105_O9UMJT": {
+      "fromContextId": "context24_ZWUvT7",
+      "fromAction": "doAction",
+      "fromControlId": "control178_dWfvhq",
+      "toContexts": [
+        {
+          "toContextId": "context24_ZWUvT7"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
+        }
+      ]
+    },
+    "flow106_KWm6RD": {
+      "fromContextId": "context24_ZWUvT7",
+      "fromAction": "doAction",
+      "fromControlId": "control179_Hxzqpt",
+      "toContexts": [
+        {
+          "toContextId": "context24_ZWUvT7"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     }
@@ -374,6 +543,36 @@
                       }
                     }
                   }
+                },
+                {
+                  "id": "uiControl158_qfPsgO",
+                  "controlId": "control178_dWfvhq",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl158_qfPsgO",
+                        "onGetTemplate": "getTemplate_uiControl158_qfPsgO"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl159_wWuvKA",
+                  "controlId": "control179_Hxzqpt",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl159_wWuvKA",
+                        "onGetTemplate": "getTemplate_uiControl159_wWuvKA"
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -406,6 +605,60 @@
               ]
             }
           ]
+        },
+        {
+          "id": "uiControl156_y1HTUv",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl156_y1HTUvbody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl157_cyBhVF",
+                  "controlId": "control177_PgVsPV",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl157_cyBhVF",
+                        "onGetTemplate": "getTemplate_uiControl157_cyBhVF"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl160_Fmesxt",
+          "controlId": "control180_XmtXEI",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl160_Fmesxt",
+                "onGetTemplate": "getTemplate_uiControl160_Fmesxt"
+              }
+            }
+          }
         }
       ]
     }
@@ -417,7 +670,8 @@
           "111",
           "test003",
           "",
-          "test001"
+          "test001",
+          "1-资金调拨审批流程-张济天-2017-11-13"
         ]
       }
     },
@@ -427,7 +681,12 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215916&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321623&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=6021&isagent=0&beagenter=0",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321619&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321619&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321622&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },
