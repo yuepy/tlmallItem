@@ -577,33 +577,6 @@
       "roles": "element",
       "text": "\n\t\t\t\t            \t前期提货补偿\n\t\t\t\t            ",
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
-    },
-    "control63_2H05ln": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control63_2H05ln"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
     }
   },
   "contexts": {
@@ -620,8 +593,7 @@
         "control50_0mASyq",
         "control41_0ETlac",
         "control48_VJf6Ek",
-        "control61_S2UifR",
-        "control63_2H05ln"
+        "control61_S2UifR"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -805,21 +777,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl47_UACGyx",
                 "onGetTemplate": "getTemplate_uiControl47_UACGyx"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl51_kpZgK7",
-          "controlId": "control63_2H05ln",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl51_kpZgK7",
-                "onGetTemplate": "getTemplate_uiControl51_kpZgK7"
               }
             }
           }
