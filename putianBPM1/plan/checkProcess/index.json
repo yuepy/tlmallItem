@@ -107,6 +107,35 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
+    },
+    "control66_rMxRFX": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control66_rMxRFX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>"
     }
   },
   "contexts": {
@@ -114,7 +143,8 @@
       "controls": [
         "control26_dIWtPL",
         "control5_diOo4d",
-        "control1_cP5NmN"
+        "control1_cP5NmN",
+        "control66_rMxRFX"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -242,6 +272,21 @@
           }
         },
         {
+          "id": "uiControl61_15dU5A",
+          "controlId": "control66_rMxRFX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl61_15dU5A",
+                "onGetTemplate": "getTemplate_uiControl61_15dU5A"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl2_934vis",
           "controlId": "control1_cP5NmN",
           "display": {
@@ -288,7 +333,9 @@
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5355&_t=173324",
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self",
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5960&_t=949891",
-          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5770&_t=922785"
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5770&_t=922785",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w203&_t=802650",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w203&_t=632799"
         ],
         "context1_wzzrby": [
           "192.168.220.51:8000/ptsoa/skins/default/index.jsp",

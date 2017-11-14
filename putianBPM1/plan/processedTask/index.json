@@ -189,6 +189,38 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
+    },
+    "control65_1eTTBP": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.mini-tabs-table DIV.mini-tabs-bodys.mini-tabs-body-top DIV.mini-tabs-body.mini-tabs-hideOverflow IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control65_1eTTBP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -198,7 +230,8 @@
         "control31_R1g6aJ",
         "control32_xrbDuu",
         "control3_tKTeZZ",
-        "control2_EIVFPc"
+        "control2_EIVFPc",
+        "control65_1eTTBP"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -247,6 +280,13 @@
       "fromContextId": "context2_Z2voN1",
       "fromAction": "doAction",
       "fromControlId": "control32_xrbDuu",
+      "toContexts": [
+        {
+          "toContextId": "context2_Z2voN1"
+        }
+      ]
+    },
+    "flow63_KPQgXT": {
       "toContexts": [
         {
           "toContextId": "context2_Z2voN1"
@@ -319,6 +359,21 @@
           }
         },
         {
+          "id": "uiControl60_ti57fD",
+          "controlId": "control65_1eTTBP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl60_ti57fD",
+                "onGetTemplate": "getTemplate_uiControl60_ti57fD"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl4_7ooDrK",
           "controlId": "control3_tKTeZZ",
           "display": {
@@ -360,7 +415,8 @@
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/hasBeenDone.jsp?taskType=finishedSelf&_t=288570&_winid=w4274",
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?_t=137819&_winid=w7036",
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?_t=372057&_winid=w3383",
-          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp"
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?_t=388706&_winid=w1057"
         ],
         "context11_uaf3pg": [
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6942&_t=1542",

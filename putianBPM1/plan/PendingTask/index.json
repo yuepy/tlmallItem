@@ -197,6 +197,38 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control64_OUgNmD": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.mini-tabs-table DIV.mini-tabs-bodys.mini-tabs-body-top DIV.mini-tabs-body.mini-tabs-hideOverflow IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[1]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control64_OUgNmD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -206,7 +238,8 @@
         "control27_T3GAMp",
         "control28_SZVJPk",
         "control33_E8vlo8",
-        "control34_XNdpHA"
+        "control34_XNdpHA",
+        "control64_OUgNmD"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -385,6 +418,21 @@
           }
         },
         {
+          "id": "uiControl59_SdAfFA",
+          "controlId": "control64_OUgNmD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl59_SdAfFA",
+                "onGetTemplate": "getTemplate_uiControl59_SdAfFA"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl15_JSVHyX",
           "controlId": "control34_XNdpHA",
           "display": {
@@ -424,7 +472,8 @@
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self",
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self&_t=455879&_winid=w7868",
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=238760&_winid=w1781",
-          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp"
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=554444&_winid=w7763"
         ],
         "context8_ddpRhS": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861",
