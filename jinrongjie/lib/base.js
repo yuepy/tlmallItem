@@ -69,7 +69,7 @@
                 /*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
                 aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
-                  debugger;
+                    debugger;
                     var $GetEle = aWin.$GetEle;
                     var wuiUtil = aWin.wuiUtil;
                     var tmpids = $GetEle(inputname).value;
@@ -107,13 +107,6 @@
 
                 }
             }
-        	aWin.btnok_onclick = function(){
-            debugger;
-            aWin.setResourceStr();
-            aWin.replaceStr();
-            aWin.parent.parent.returnValue = {id:aWin.resourceids,name:aWin.resourcenames};
-            aWin.parent.parent.close();
-        	}
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
@@ -121,7 +114,7 @@
                     aWin.parent.close();
                 }
             }
-            if ( (aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
+            if ((aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.resourceids, name: aWin.resourcenames });
@@ -181,15 +174,15 @@
                 }
             }
             /*  showModelDialog 相关流程 跨页面传值兼容  */
-          var newAlert = aWin.alert;
-          aWin.alert = function(){
-            var text = arguments[0];
-            if(text.indexOf('SWF') !== -1 || text.indexOf('error') !== -1) {
-              	 console.log('DUANG ~  又是弹框 ! ~.~  ' );
-            }else{
-              newAlert.apply(aWin,arguments);
+            var newAlert = aWin.alert;
+            aWin.alert = function() {
+                var text = arguments[0];
+                if (text.indexOf('SWF') !== -1 || text.indexOf('error') !== -1) {
+                    console.log('DUANG ~  又是弹框 ! ~.~  ');
+                } else {
+                    newAlert.apply(aWin, arguments);
+                }
             }
-        }
             aWin.doReview = function() {
                 // jQuery($GetEle("flowbody")).attr("onbeforeunload", "");
                 doc.getElementById('flowbody').setAttribute('onbeforeunload', '')
@@ -234,46 +227,21 @@
                 //     aWin.openFullWindowHaveBar(forwardurl);
                 //   }
             }
-            
-            aWin.changeCurpage=function(index){
-              doc.SearchForm.curpage.value = index;
+
+            aWin.changeCurpage = function(index) {
+                doc.SearchForm.curpage.value = index;
             }
-						aWin.onPage=function(index){
-              aWin.changeCurpage(index);//TD34490 lv 修改当前页
-              doc.SearchForm.submit();
+            aWin.onPage = function(index) {
+                aWin.changeCurpage(index); //TD34490 lv 修改当前页
+                doc.SearchForm.submit();
             }
-            
+
             // 创建人
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-            aWin.getBrowserVersion = function() {
-                    var browserInfo = { browser: "", version: "" };
-                    var ua = aWin.navigator.userAgent.toLowerCase();
-                    if (aWin.ActiveXObject && ua.indexOf('IE') != 1) {
-                        browserInfo.browser = "IE";
-                        browserInfo.version = ua.match(/msie ([\d.]+)/)[1];
-                    } else if (doc.getBoxObjectFor) {
-                        browserInfo.browser = "FF";
-                        browserInfo.version = ua.match(/firefox\/([\d.]+)/)[1];
-                    } else if (/chrome/i.test(ua) && /webkit/i.test(ua) && /mozilla/i.test(ua)) { //window.MessageEvent && !document.getBoxObjectFor) {
-                        browserInfo.browser = "Chrome";
-                        browserInfo.version = ua.match(/chrome\/([\d.]+)/)[1];
-                    } else if (/webkit/i.test(ua) && !(/chrome/i.test(ua) && /webkit/i.test(ua) && /mozilla/i.test(ua))) {
-                        browserInfo.browser = "Safari";
-                        browserInfo.version = ua.match(/version\/([\d.]+)/)[1];
-                    } else if (window.opera) {
-                        browserInfo.browser = "Opera";
-                        browserInfo.version = ua.match(/opera.([\d.]+)/)[1];
-                    } else if (window.openDatabase) {
-                        browserInfo.browser = "";
-                        browserInfo.version = ua.match(/version\/([\d.]+)/)[1];
-                    }
-                    return browserInfo;
-                }
-                /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
-                // aWin.addEventListener('DOMContentLoaded', function() {
-
+            /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
+            // aWin.addEventListener('DOMContentLoaded', function() {
             // aWin.alert = function() {
             //   debugger;
             // }
@@ -297,6 +265,7 @@
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
+              debugger;
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.open("post", "http://192.168.200.121:8080/home/release/com.eibus.web.soap.Gateway.wcp", true);
                 xmlhttp.onreadystatechange = function() {
