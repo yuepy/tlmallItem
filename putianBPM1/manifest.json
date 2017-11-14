@@ -23,7 +23,14 @@
       "type": [],
       "ignore": []
     },
-    "resource_inject": []
+    "resource_inject": [],
+    "unadapted":{
+      "timeout":8000,
+      "rules":[{
+        "match":"*",
+        "type":"block"
+      }]
+    }
   },
   "override_urls": [
     {
