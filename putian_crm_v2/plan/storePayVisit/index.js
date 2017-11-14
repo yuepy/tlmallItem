@@ -62,7 +62,7 @@
           prevtitle(data.dataCustom);break;case 'next':
           prevtitle(data.dataCustom);break;case 'click':
           click(data.dataCustom);break;}function click(data) {
-        var input = elem.ownerDocument.querySelector('.skip-num');input.value = data;input.blur();elem.ownerDocument.querySelector('#Page').querySelector('.skip_right_goto').querySelector('.skip-right-icon').click();
+        var input = elem.ownerDocument.querySelector('.skip-num');input.value = data;input.blur();elem.ownerDocument.querySelector('#page').querySelector('.skip_right_goto').querySelector('.skip-right-icon').click();
       }function prevtitle(data) {
         var lis = elem.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
           var as = lis[i].querySelectorAll('a');for (var j = 0; j < as.length; j++) {
