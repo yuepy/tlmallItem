@@ -3,6 +3,10 @@
   "id": "fundSeal",
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215916&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+  },
   "chineseName": "资金调拨和印章（三个流程）",
   "description": "",
   "controls": {
@@ -250,6 +254,10 @@
         "data": {
           "tagName": "TBODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -289,6 +297,19 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[2]/tbody/tr[4]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[2]"
+            }
+          ],
+          "force": true
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -310,6 +331,19 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[2]/tbody/tr[6]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[3]"
+            }
+          ],
+          "force": true
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -323,7 +357,29 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": false,
       "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control180_XmtXEI": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[8]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control180_XmtXEI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
@@ -337,7 +393,8 @@
         "control172_tHZDlv",
         "control177_PgVsPV",
         "control178_dWfvhq",
-        "control179_Hxzqpt"
+        "control179_Hxzqpt",
+        "control180_XmtXEI"
       ],
       "anchors": [
         "control96_fZKiT2"
@@ -380,6 +437,24 @@
       "toContexts": [
         {
           "toContextId": "context24_ZWUvT7"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
+        }
+      ]
+    },
+    "flow106_KWm6RD": {
+      "fromContextId": "context24_ZWUvT7",
+      "fromAction": "doAction",
+      "fromControlId": "control179_Hxzqpt",
+      "toContexts": [
+        {
+          "toContextId": "context24_ZWUvT7"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     }
@@ -468,6 +543,36 @@
                       }
                     }
                   }
+                },
+                {
+                  "id": "uiControl158_qfPsgO",
+                  "controlId": "control178_dWfvhq",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl158_qfPsgO",
+                        "onGetTemplate": "getTemplate_uiControl158_qfPsgO"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl159_wWuvKA",
+                  "controlId": "control179_Hxzqpt",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl159_wWuvKA",
+                        "onGetTemplate": "getTemplate_uiControl159_wWuvKA"
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -500,21 +605,6 @@
               ]
             }
           ]
-        },
-        {
-          "id": "uiControl158_qfPsgO",
-          "controlId": "control178_dWfvhq",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl158_qfPsgO",
-                "onGetTemplate": "getTemplate_uiControl158_qfPsgO"
-              }
-            }
-          }
         },
         {
           "id": "uiControl156_y1HTUv",
@@ -556,16 +646,16 @@
           ]
         },
         {
-          "id": "uiControl159_wWuvKA",
-          "controlId": "control179_Hxzqpt",
+          "id": "uiControl160_Fmesxt",
+          "controlId": "control180_XmtXEI",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl159_wWuvKA",
-                "onGetTemplate": "getTemplate_uiControl159_wWuvKA"
+                "onDoAction": "doAction_uiControl160_Fmesxt",
+                "onGetTemplate": "getTemplate_uiControl160_Fmesxt"
               }
             }
           }
@@ -593,6 +683,10 @@
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=6021&isagent=0&beagenter=0",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321619&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321622&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },
