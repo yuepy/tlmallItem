@@ -113,7 +113,18 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
   min-height: 10px;
  
 }
-
+//带叹号的必填项样式
+.must_mark{
+  background: url("../lib/images/！@2x.png") no-repeat;
+  display: inline-block;
+  width: 12px;
+  height: 15px;
+  background-size: 3px;
+  background-position: 6px;
+  background-position-x: 6px;
+  background-position-y: 50%;
+  line-height: 15px;
+}
 /*
 /---------------------------------------------------------------------------------------------------------
 超华丽的分割线，只有通用样式才放上面。
@@ -2377,6 +2388,8 @@ div[data-ysp-modelid="fundSeal"]{
             width: 100%;
         }
         .file_box{
+          min-height: 30px;
+          border-bottom: 1px solid #EDEDED;
           .file{
             position: relative;
             margin: 10px 15px 10px 0;
@@ -3480,3 +3493,5 @@ div[data-ysp-modelid='docApprovalList']{
     }
   }
 }
+
+
