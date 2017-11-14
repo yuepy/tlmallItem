@@ -296,6 +296,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
@@ -329,6 +330,27 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control177_bBagM5": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control177_bBagM5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -341,7 +363,8 @@
         "control173_uvNRcH",
         "control174_ds2Sp5",
         "control175_1M6XhJ",
-        "control176_OTI9aN"
+        "control176_OTI9aN",
+        "control177_bBagM5"
       ],
       "anchors": [
         "control169_yoMlRP"
@@ -391,6 +414,16 @@
       "fromContextId": "context22_9NRRRI",
       "fromAction": "doAction",
       "fromControlId": "control175_1M6XhJ",
+      "toContexts": [
+        {
+          "toContextId": "context22_9NRRRI"
+        }
+      ]
+    },
+    "flow105_v7Ebkw": {
+      "fromContextId": "context22_9NRRRI",
+      "fromAction": "doAction",
+      "fromControlId": "control172_nP2WGE",
       "toContexts": [
         {
           "toContextId": "context22_9NRRRI"
@@ -449,6 +482,21 @@
                       "events": {
                         "onDoAction": "doAction_uiControl146_kf4VnA",
                         "onGetTemplate": "getTemplate_uiControl146_kf4VnA"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl156_Blgctu",
+                  "controlId": "control177_bBagM5",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl156_Blgctu",
+                        "onGetTemplate": "getTemplate_uiControl156_Blgctu"
                       }
                     }
                   }

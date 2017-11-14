@@ -285,6 +285,25 @@ li {list-style: none}
   .textarea-style{
     border-radius: 5px;
   }
+  .emergency-level-div{
+    display: inline;
+    padding: 0 15px;
+    float: right;
+    span{
+      color: #000;
+      padding: 0 10px;
+      margin: 0 3px;
+      border-radius: 15px;
+      border: 1px solid #BBBBBB;
+      height: 25px;
+    	line-height: 25px;
+    	display: inline-block;
+    }
+    .activeSpan{
+      color: #A1E05E;
+      border: 1px solid #A1E05E;
+    }
+  }
 }
 .ysp-manager-audit-header-tab{
   background: #fff;
@@ -3390,6 +3409,32 @@ div[data-ysp-modelid='chairmanSign']{
       text-align: right;
     	padding: 0 10px 0 0;
       &:hover{color: #C29A2A;}
+    }
+  }
+}
+div[data-ysp-modelid='innerCommunicationApproval']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+    >div{padding: 0;}
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      margin-top: 40px;
+      background: #fff;
+      a,ul,li{height: 35px;line-height: 35px;}
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
     }
   }
 }
