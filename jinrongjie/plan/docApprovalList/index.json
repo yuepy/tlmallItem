@@ -455,6 +455,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -470,6 +474,48 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control196_KnqAeo": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control196_KnqAeo"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -487,7 +533,8 @@
         "control191_Hag4IP",
         "control192_2Xu2fc",
         "control193_zLeXv8",
-        "control183_1yANPq"
+        "control183_1yANPq",
+        "control196_KnqAeo"
       ],
       "anchors": [
         "control180_sVkaTO"
@@ -814,6 +861,21 @@
               ]
             }
           ]
+        },
+        {
+          "id": "uiControl177_VFAZNf",
+          "controlId": "control196_KnqAeo",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl177_VFAZNf",
+                "onGetTemplate": "getTemplate_uiControl177_VFAZNf"
+              }
+            }
+          }
         }
       ]
     }
