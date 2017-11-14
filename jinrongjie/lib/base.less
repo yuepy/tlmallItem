@@ -37,7 +37,10 @@ body {
 }
 li{list-style: none;}
 ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
-
+//视图背景
+.view-item{
+  background: #f3f3f3;
+}
 /*  公共header样式  */
 .ysp-header-wrapper{
   text-align: center;
@@ -48,6 +51,10 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
   background-color: rgb(194,154,42);
   color: #fff;
   font-size:18px;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 111;
   .back{
     margin-left: 15px;
   	background:url('../lib/images/Back@3x.png') center center;
@@ -67,7 +74,7 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
     }
   }
   > span:nth-child(2){
-    flex: 0 1 70%;
+    flex: 0 1 71%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,7 +84,7 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
     font-weight: 600;
     font-size: 16px;
     display: flex;
-    flex: 0 1 20%;
+    flex: 0 1 19%;
     > span:first-child{
         margin-left: .2rem;
         display: flex;
@@ -104,8 +111,20 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 .editor-state [data-ysp="component"]{
   padding: 0;
   min-height: 10px;
+ 
 }
-
+//带叹号的必填项样式
+.must_mark{
+  background: url("../lib/images/！@2x.png") no-repeat;
+  display: inline-block;
+  width: 12px;
+  height: 15px;
+  background-size: 3px;
+  background-position: 6px;
+  background-position-x: 6px;
+  background-position-y: 50%;
+  line-height: 15px;
+}
 /*
 /---------------------------------------------------------------------------------------------------------
 超华丽的分割线，只有通用样式才放上面。
@@ -124,6 +143,18 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
   color: #CFBC87;
   margin-top: 10px;
   font-size: 14px;
+}
+.must_lfj{
+  position: relative;
+  &:before{
+    content:'';
+    width: 15px;
+    height: 15px;
+    background: #ccc;
+    position: absolute;
+    left: 0;
+    top:5px;
+  }
 }
 @base-font-size:14px;
 @list-base-padding:5px;
@@ -176,6 +207,7 @@ li {list-style: none}
 .ysp-manager-audit-title-icon{
   background: #fff;
   border-bottom: 10px solid #f4f4f4;
+  
   >span:nth-child(1){
     display: inline-block;
     padding: 10px 15px;
@@ -201,6 +233,12 @@ li {list-style: none}
     background: url(images/arrow-right.png) no-repeat;
     background-position-y: 50%;
   }
+}
+.ysp-manager-audit-title-icon-top{
+  margin:40px 0 0 0 ;
+}
+.ysp-manager-audit-title-icon-bottom{
+  margin:0 0 40px 0;
 }
 .ysp-manager-audit-wrapper{
 	background: #ffffff;
@@ -270,9 +308,30 @@ li {list-style: none}
   .textarea-style{
     border-radius: 5px;
   }
+  .emergency-level-div{
+    display: inline;
+    padding: 0 15px;
+    float: right;
+    span{
+      color: #000;
+      padding: 0 10px;
+      margin: 0 3px;
+      border-radius: 15px;
+      border: 1px solid #BBBBBB;
+      height: 25px;
+    	line-height: 25px;
+    	display: inline-block;
+      font-size: 0.85rem;
+    }
+    .activeSpan{
+      color: #A1E05E;
+      border: 1px solid #A1E05E;
+    }
+  }
 }
 .ysp-manager-audit-header-tab{
   background: #fff;
+  margin:40px 0 0 0 ;
   .left-div{
     width: 50%;
     float: left;
@@ -396,6 +455,9 @@ li {list-style: none}
     width: 100%;
     text-align: center;
     color: #7C7C7C;
+    tr{
+      border-bottom:1px solid #ddd;
+    }
     th, tr{
       height: 30px;
       line-height: 30px;
@@ -469,6 +531,7 @@ li {list-style: none}
   background: #fff;
   padding: 10px 15px;
   font-size: 14px;
+  margin:40px 0 0 0 ;
   span,input,select{
     display: inline-block;
     margin: 0;
@@ -795,6 +858,7 @@ li {list-style: none}
 .ysp-relate-doc-childnode-wrapper{
     background: #fff;
   	font-size: 1rem;
+  	margin:40px 0 0 0;
     span{
       padding: 5px 10px 5px 15px;
       border-bottom: 1px solid #ddd;
@@ -810,6 +874,7 @@ li {list-style: none}
     }
   .ysp-left-arrow{
     background: url(images/left_arrow.png) no-repeat;
+    transform:rotate(180deg);
     display: inline-block;
     height: 20px;
     width: 20px;
@@ -837,6 +902,7 @@ li {list-style: none}
 #firstMenu{
   width: 100%;
   background: #fff;
+  margin:48px 0 0 0; 
   ul{
     li{
       position: relative;
@@ -1117,7 +1183,8 @@ li {list-style: none}
 }
 
 .ysp-list-search{
- 	
+ 	margin:42px 0 0 0;
+  position: relative;
   input{
     margin: 0;
     height: 40px;
@@ -1135,7 +1202,7 @@ li {list-style: none}
     background-size: 50%;
     padding-left:20px;
     position: absolute;
-    top:46px;
+    top:0px;
     right:20px;
   }
 }
@@ -1153,6 +1220,8 @@ li {list-style: none}
   margin-bottom:10px;
   background: #fff;
   overflow: hidden;
+  margin:42px 0 0 0 ;
+  position: relative;
   .ysp-search-dialog-cxleft{
     display: inline-block;
     float: left;
@@ -1185,7 +1254,7 @@ li {list-style: none}
     top: 0;
     z-index: 2;
     right: 0px;
-    top: 43px;
+    top: 0px;
     .ysp-dialog-wrapper{
       background: #fff;
     }
@@ -1225,6 +1294,7 @@ li {list-style: none}
 }
 /*_________________________________查询内页:页面样式_________________________________*/
 .ysp-serch-content{
+  margin:45px 0 0 0 ;
   .ysp-serch-content-createData,.ysp-serch-content-reciveData{
     height: 60px;
     line-height: 50px;
@@ -1238,7 +1308,7 @@ li {list-style: none}
     }
     input{
       padding:0 0 0 30px;
-      width: 35%;
+      width: 45%;
       background: #eee;
       border:1px solid #eee;
       height: 40px;
@@ -1255,11 +1325,12 @@ li {list-style: none}
   }
   .ysp-serch-content-createPeople,.ysp-serch-content-reviceTime{
     height: 60px;
+    overflow: hidden;
     line-height: 50px;
     // border-bottom: 1px solid #ddd;
     // overflow: hidden;
-    // padding:0 0 0 10px;
-    padding-top: 10px;
+     padding:10px 0 0 10px;
+    //padding-top: 10px;
     div,button,span{
       display: inline-block;
       float: left;
@@ -1278,12 +1349,13 @@ li {list-style: none}
       background: #eee;
       border:1px solid #eee;
       border-radius:5px;
-      margin:5px 10px;
+      margin:5px;
     }
   }
   .ysp-serch-content-reviceTime{
     height: 100px;
     border:0;
+    
   }
 }
 
@@ -1304,15 +1376,17 @@ li {list-style: none}
   width: 80%;
   text-align: center;
   border-bottom: 1px solid #d2d2d2;
- padding-bottom: 10px;
-  & button{
-    margin: 12px 10px;
-  }
+  padding-bottom: 8px;  
+  //& button{
+    //margin: 12px 10px;
+  //}
 }
 .ysp-button{
-  padding-bottom: 10px;
-  margin-left: 28px;
+  padding-bottom: 4px;
+  //margin-left: 28px;
   border-bottom: 1px solid #d2d2d2;
+  position: relative;
+  right: -8%;
 }
 .ysp-serch-content-reciveData{
   padding-top: 10px;
@@ -1808,7 +1882,7 @@ div[data-ysp-modelid='choosePerson']{
   }
 }
 /******************************请假/公出申请单start*******************************************/
-div[data-ysp-modelid='askForLeave']{
+div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
   }
@@ -1817,6 +1891,7 @@ div[data-ysp-modelid='askForLeave']{
     ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
       background: #fff;
       border-bottom: 10px solid #F3F3F3;
+      margin:40px 0 0 0 ;
       li{
         a{
           width: auto;
@@ -1834,77 +1909,14 @@ div[data-ysp-modelid='askForLeave']{
   .OvsRcaoL1UILAcvWC8nMu{//面板子div
     padding: 0 ;
   }
-  .topTitle{//大标题
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 28%;
-    background: #fff;
-    text-align: center;
-  }
-  .ysp_askForLeave_title{//小标题
-      border-left: 5px solid #c29a2a;
-      font-size: 16px;
-      padding-left: 10px;
-  }
-  .ysp_askForLeave_wrapper{
-    background: #fff;
-    margin: 10px 0;
-    padding:10px 0;
-    .ysp_askForLeave_content{
-      padding: 10px 10px 0 10px;
-      .contentTitle{
-        font-size: 14px;
-    		color: #c29a2a;
-      }
-      .ysp_emergency{
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 10px;
-        margin-bottom: 5px;
-        .emergencyCheck{
-          float: right;
-          span{
-            border: 1px solid #666;
-            color: #666;
-            border-radius: 10px;
-            display: inline-block;
-            width: 45px;
-            text-align: center;
-            font-size: 12px;
-            margin-right: 10px;
-          }
-          .egyactive{
-            border:1px solid #A1E15C;
-            color:#A1E15C;
-          }
-        }
-      }
-      .ysp_infoAlert{
-        .msgCheck{
-          padding-left: 10%;
-          padding-top: 10px;
-          span{
-            display: inline-block;
-    				width: 30%;
-            background: #f4f4f4;
-            color: #666;
-            border-radius: 5px;
-            margin-right: 10px;
-            text-align: center;
-            font-size: 12px;
-            padding: 5px 0;
-          }
-          .msgactive{
-            background: #c29a2a;
-            color: #fff;
-          }
-        }
-      }
-    }
-  }
   .ysp_detail_wrapper{
     background:#fff;
     padding: 20px 0;
     font-size: 14px;
+    margin-top: 10px;
+    .ysp_none_row{
+      display: none;
+    }
     .ysp_detail{
       padding: 0 15px;
       .ysp_detail_row{
@@ -2051,6 +2063,11 @@ div[data-ysp-modelid='askForLeave']{
       background-position: 120px;
     }
   }
+  .ysp_askForLeave_title,.ysp_fundSeal_title{//小标题
+    border-left: 5px solid #c29a2a;
+    font-size: 16px;
+    padding-left: 10px;
+  }
   .ysp_sign_wrapper{
     background:#fff;
     padding: 20px 0;
@@ -2087,6 +2104,95 @@ div[data-ysp-modelid='askForLeave']{
         .show{
           color: #A1E15C;
           text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+div[data-ysp-modelid='askForLeave']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      background: #fff;
+      border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+  .OvsRcaoL1UILAcvWC8nMu{//面板子div
+    padding: 0 ;
+  }
+  .topTitle{//大标题
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 28%;
+    background: #fff;
+    text-align: center;
+  }
+  .ysp_askForLeave_wrapper{
+    background: #fff;
+    margin-top: 10px;
+    padding:10px 0;
+    .ysp_askForLeave_content{
+      padding: 10px 10px 0 10px;
+      .contentTitle{
+        font-size: 14px;
+    		color: #c29a2a;
+      }
+      .ysp_emergency{
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        .emergencyCheck{
+          float: right;
+          span{
+            border: 1px solid #666;
+            color: #666;
+            border-radius: 10px;
+            display: inline-block;
+            width: 45px;
+            text-align: center;
+            font-size: 12px;
+            margin-right: 10px;
+          }
+          .egyactive{
+            border:1px solid #A1E15C;
+            color:#A1E15C;
+          }
+        }
+      }
+      .ysp_infoAlert{
+        .msgCheck{
+          padding-left: 10%;
+          padding-top: 10px;
+          span{
+            display: inline-block;
+    				width: 30%;
+            background: #f4f4f4;
+            color: #666;
+            border-radius: 5px;
+            margin-right: 10px;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 0;
+          }
+          .msgactive{
+            background: #c29a2a;
+            color: #fff;
+          }
         }
       }
     }
@@ -2154,6 +2260,32 @@ div[data-ysp-modelid='postName']{
 }
 
 /******************************请假/公出申请单end*******************************************/
+/********************************资金调拨和印章 start****************************/
+div[data-ysp-modelid="fundSeal"]{
+  .ysp-header-wrapper {
+    span:nth-child(3){
+      display: none;
+    }
+  }
+  .ysp_fundSeal_title{
+    background: #fff;
+    .topTitle{//大标题
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      padding: 5px 0;
+    }
+    .num{
+      font-size:16px;
+      text-align: center;
+    	padding-bottom: 5px;
+    }
+  }
+  .ysp-manager-audit-title-icon{
+    border-top: 10px solid #f4f4f4;
+  }
+}
+/********************************资金调拨和印章 end****************************/
 //06
 .ysp_table_lfj{
 
@@ -2243,6 +2375,7 @@ div[data-ysp-modelid='postName']{
           padding-bottom: 10px;
           color: #202020;
           font-size: 15px;
+          min-height: 30px;
         }
         input{
             background: none;
@@ -2255,6 +2388,8 @@ div[data-ysp-modelid='postName']{
             width: 100%;
         }
         .file_box{
+          min-height: 30px;
+          border-bottom: 1px solid #EDEDED;
           .file{
             position: relative;
             margin: 10px 15px 10px 0;
@@ -3258,7 +3393,7 @@ div[data-ysp-modelid='chairmanSign']{
 
 .ysp-custom-textarea{
   background: #fff;
-  padding: 0 15px;
+  padding: 0 15px 15px 15px;
   .cutom-textarea{
     border: 1px solid #efefef;
     border-radius: 5px;
@@ -3306,3 +3441,57 @@ div[data-ysp-modelid='chairmanSign']{
     }
   }
 }
+div[data-ysp-modelid='innerCommunicationApproval']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+    >div{padding: 0;}
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      margin-top: 40px;
+      background: #fff;
+      a,ul,li{height: 35px;line-height: 35px;}
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+div[data-ysp-modelid='docApprovalList']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+    >div{padding: 0;}
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      margin-top: 40px;
+      background: #fff;
+      a,ul,li{height: 35px;line-height: 35px;}
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+
+

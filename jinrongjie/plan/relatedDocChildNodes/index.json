@@ -1,1 +1,208 @@
-{"version":"0.1","id":"relatedDocChildNodes","targetURL":"http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/category/CategoryBrowser.jsp","jsFile":"index.js","chineseName":"相关文档子目录","description":"相关文档子目录","controls":{"control64_IDGL0K":{"location":{"data":{"tagName":"TD"},"userData":{"data":[],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"}]},"events":{"onGetData":"getData_control64_IDGL0K"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//frame[@name='main'][@id='main']<<IFRAME>>"},"control43_eGh0dX":{"location":{"data":{"tagName":"TD"},"userData":{"data":[],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"},{"id":"elderLevel","value":{"level":0}}]},"events":{"onGetData":"getData_control43_eGh0dX"},"intendedRole":"custom","roles":"element,custom","monitored":false,"frameXPath":"//frame[@name='main'][@id='main']<<IFRAME>>"},"control93_1oDai4":{"location":{"data":{"tagName":"DIV"},"userData":{"data":[],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]"}]},"roles":"element","text":"","frameXPath":"//frame[@name='main'][@id='main']<<IFRAME>>","customJS":"if(elem.id == 'Tree_treeView_0'){return true;}return false;"}},"contexts":{"context9_TKWxun":{"controls":["control64_IDGL0K","control43_eGh0dX"],"anchors":["control93_1oDai4"],"urlAnchor":[]}},"flows":{"flow28_OR2TEp":{"toContexts":[{"toContextId":"context9_TKWxun"}]},"flow41_ASAnMx":{"fromContextId":"context9_TKWxun","fromAction":"doAction","fromControlId":"control64_IDGL0K","toContexts":[{"toContextId":"context9_TKWxun"}]}},"pages":{"page9_WGLzVd":{"contextId":"context9_TKWxun","layout":[{"id":"uiControl60_wpDSQE","controlId":"control43_eGh0dX","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl60_wpDSQE","onGetTemplate":"getTemplate_uiControl60_wpDSQE"}}}},{"id":"uiControl41_VEx2r6","controlId":"control64_IDGL0K","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl41_VEx2r6","onGetTemplate":"getTemplate_uiControl41_VEx2r6"}}}}]}},"matchers":{"page/title":{"contexts":{"context9_TKWxun":[""]}},"page/urls":{"contexts":{"context9_TKWxun":["192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/category/CategoryBrowser.jsp"]}},"page/ids":{"contexts":{"context9_TKWxun":[["main"]]}},"page/classes":{"contexts":{"context9_TKWxun":[[]]}},"page/tagTriplets":{"contexts":{"context9_TKWxun":[["-/-/FRAME","-/-/NOFRAMES"]]}}}}
+{
+  "version": "0.1",
+  "id": "relatedDocChildNodes",
+  "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/category/CategoryBrowser.jsp",
+  "jsFile": "index.js",
+  "chineseName": "相关文档子目录",
+  "description": "相关文档子目录",
+  "controls": {
+    "control64_IDGL0K": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control64_IDGL0K"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control43_eGh0dX": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control43_eGh0dX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control93_1oDai4": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
+      "customJS": "if(elem.id == 'Tree_treeView_0'){return true;}return false;"
+    }
+  },
+  "contexts": {
+    "context9_TKWxun": {
+      "controls": [
+        "control64_IDGL0K",
+        "control43_eGh0dX"
+      ],
+      "anchors": [
+        "control93_1oDai4"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow28_OR2TEp": {
+      "toContexts": [
+        {
+          "toContextId": "context9_TKWxun"
+        }
+      ]
+    },
+    "flow41_ASAnMx": {
+      "fromContextId": "context9_TKWxun",
+      "fromAction": "doAction",
+      "fromControlId": "control64_IDGL0K",
+      "toContexts": [
+        {
+          "toContextId": "context9_TKWxun"
+        }
+      ]
+    },
+    "flow56_avNSwa": {
+      "fromContextId": "context9_TKWxun",
+      "fromAction": "doAction",
+      "fromControlId": "control43_eGh0dX",
+      "toContexts": [
+        {
+          "toContextId": "context9_TKWxun"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page9_WGLzVd": {
+      "contextId": "context9_TKWxun",
+      "layout": [
+        {
+          "id": "uiControl60_wpDSQE",
+          "controlId": "control43_eGh0dX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl60_wpDSQE",
+                "onGetTemplate": "getTemplate_uiControl60_wpDSQE"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl41_VEx2r6",
+          "controlId": "control64_IDGL0K",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl41_VEx2r6",
+                "onGetTemplate": "getTemplate_uiControl41_VEx2r6"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context9_TKWxun": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context9_TKWxun": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/category/CategoryBrowser.jsp"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context9_TKWxun": [
+          [
+            "main"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context9_TKWxun": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context9_TKWxun": [
+          [
+            "-/-/FRAME",
+            "-/-/NOFRAMES"
+          ]
+        ]
+      }
+    }
+  }
+}
