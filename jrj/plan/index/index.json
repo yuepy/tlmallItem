@@ -1,0 +1,511 @@
+{
+  "version": "0.1",
+  "id": "index",
+  "targetURL": "http://192.168.200.61/wui/main.jsp?templateId=1",
+  "jsFile": "index.js",
+  "chineseName": "首页",
+  "description": "",
+  "shouldReturnOriginalPage": true,
+  "controls": {
+    "control151": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "图片新闻"
+              ],
+              "visText": [
+                "图片新闻"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "图片新闻"
+              ],
+              "visText": [
+                "图片新闻"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              18
+            ],
+            "value": "DIV.item DIV.header SPAN.title"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[4]/SPAN[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[1]/SPAN[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 52,
+              "height": 15
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": "//iframe[@name='mainFrame'][@id='mainFrame']<<IFRAME>>"
+    },
+    "control152": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "图片新闻"
+              ],
+              "visText": [
+                "图片新闻"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "图片新闻"
+              ],
+              "visText": [
+                "图片新闻"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              18
+            ],
+            "value": "DIV.item DIV.header SPAN.title"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[4]/SPAN[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[1]/DIV[1]/SPAN[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 52,
+              "height": 15
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "图片新闻",
+      "frameXPath": "//iframe[@name='mainFrame'][@id='mainFrame']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context5": {
+      "controls": [
+        "control151"
+      ],
+      "anchors": [
+        "control152"
+      ]
+    }
+  },
+  "flows": {
+    "flow34": {
+      "toContexts": [
+        {
+          "toContextId": "context5"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page5": {
+      "contextId": "context5",
+      "layout": [
+        {
+          "id": "uiControl225",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl225body",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl226",
+                  "controlId": "control151",
+                  "display": {
+                    "adapterId": "content",
+                    "type": "content",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context5": [
+          "金融街投资集团OA - 张济天"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context5": [
+          "192.168.200.61/wui/main.jsp?templateId=1"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context5": [
+          [
+            "FONTSYSTEMF",
+            "_DialogBGDiv",
+            "_DialogBGMask",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
+          ],
+          [
+            "FONTSYSTEMF",
+            "Icon_undefined",
+            "Message_undefined",
+            "_ButtonCancel_",
+            "_ButtonOK_",
+            "_ButtonRow_",
+            "_Container_",
+            "_Covering_",
+            "_DialogBGDiv",
+            "_DialogBGMask",
+            "_DialogButtons_",
+            "_DialogDiv_",
+            "_DialogTable_",
+            "_Draghandle_",
+            "_MessageIcon_",
+            "_MessageRow_",
+            "_MessageTable_",
+            "_MessageTitle_",
+            "_Message_",
+            "_Title_",
+            "_forTab_",
+            "container",
+            "content",
+            "contentUl",
+            "contentcontainer",
+            "divFloatBg",
+            "divFloatLeftmenu",
+            "divShowSignInfo",
+            "downLoadReg",
+            "drillcrumb",
+            "drillmenu",
+            "favLi",
+            "footer",
+            "head",
+            "leftBlockHiddenContr",
+            "leftBlockHrmDep",
+            "leftBlockHrmInfoCenter",
+            "leftBlockTd",
+            "leftBlockTopBgCenter",
+            "leftBlock_HrmDiv",
+            "leftMenu",
+            "leftMenuBottomCenter",
+            "leftmenu-bottom",
+            "leftmenu-bottom-bottom",
+            "leftmenu-top",
+            "leftmenucontainer",
+            "leftmenucontainer-top",
+            "logo",
+            "mainFrame",
+            "mainTopBlockTr",
+            "message_Div",
+            "moreLi",
+            "navFav",
+            "navTd",
+            "null",
+            "sample",
+            "searchBlockUl",
+            "searchbt",
+            "shadown-content",
+            "shadown-corner",
+            "shadown-x",
+            "shadown-y",
+            "subMenusContainer",
+            "tblHrmToolbr",
+            "toolbarMore",
+            "toolbarMoreBlockTop",
+            "topBlockHiddenContr",
+            "topMenuContr",
+            "userIcon"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context5": [
+          [
+            "center",
+            "drillmenu",
+            "dropdown",
+            "hrminfo_fontcolor",
+            "input",
+            "leftBlockHrmInfoCenter",
+            "leftBlockHrmInfoLeft",
+            "leftBlockHrmInfoRight",
+            "leftBlockTopBgLeft",
+            "leftBlockTopBgRight",
+            "leftMenuBottomLeft",
+            "leftMenuBottomNavDiv",
+            "leftMenuBottomNavTbl",
+            "leftMenuBottomRight",
+            "leftMenuItemCenter",
+            "leftMenuItemLeft",
+            "leftMenuItemNavCenter",
+            "leftMenuItemNavLeft",
+            "leftMenuItemNavRight",
+            "leftMenuItemRight",
+            "leftMenuTopNavDiv",
+            "lfMenuItem",
+            "mainMenuParentBtn",
+            "mainParentBtn",
+            "menuItem",
+            "menuItemIcon",
+            "menuNavSpan_Expand",
+            "navclass",
+            "searchBlockBgDiv",
+            "searchkeywork",
+            "selectContent",
+            "selectTile",
+            "slideItemText",
+            "smOW",
+            "styled",
+            "subMenuBtn",
+            "tbItm",
+            "toolbarSplitLine",
+            "toolbarTopRight",
+            "topBlockDateBlock",
+            "topMenuDiv",
+            "topMenuDiv_top",
+            "versiontype"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context5": [
+          [
+            "-/-/DIV",
+            "-/-/IMG",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/TABLE/TBODY",
+            "DIV/A/DIV",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/IFRAME",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-text",
+            "LI/A/DIV",
+            "LI/A/IMG",
+            "LI/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TD/DIV/FORM",
+            "TD/DIV/IFRAME",
+            "TD/DIV/LINK",
+            "TD/DIV/META",
+            "TD/DIV/SCRIPT",
+            "TD/DIV/STYLE",
+            "TD/DIV/TABLE",
+            "TD/TABLE/TBODY",
+            "TD/UL/LI",
+            "TD/UL/LINK",
+            "TD/UL/STYLE",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/IFRAME",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/STYLE",
+            "TR/TD/TABLE",
+            "TR/TD/UL",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/IMG",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/DIV/TABLE",
+            "-/TABLE/TBODY",
+            "DIV/A/DIV",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/IFRAME",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-text",
+            "LI/A/DIV",
+            "LI/A/IMG",
+            "LI/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/FORM",
+            "TD/DIV/IFRAME",
+            "TD/DIV/IMG",
+            "TD/DIV/INPUT-button",
+            "TD/DIV/LINK",
+            "TD/DIV/META",
+            "TD/DIV/SCRIPT",
+            "TD/DIV/SPAN",
+            "TD/DIV/STYLE",
+            "TD/DIV/TABLE",
+            "TD/TABLE/TBODY",
+            "TD/UL/LI",
+            "TD/UL/LINK",
+            "TD/UL/STYLE",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/DIV",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/STYLE",
+            "TR/TD/TABLE",
+            "TR/TD/UL",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -3,6 +3,9 @@
   "id": "docApprovalList",
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330435&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+  },
   "chineseName": "审批-金融街集团所属公司公文审批单",
   "description": "金融街集团所属公司公文审批单",
   "controls": {
@@ -136,31 +139,6 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control183_v1BGGH": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control183_v1BGGH"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control184_Z0I8G2": {
       "location": {
         "data": {
@@ -281,6 +259,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -302,6 +284,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -317,6 +303,219 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control189_z2JfzJ": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//TABLE[@id=\"field-annexupload_tab\"]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]",
+              "descendant::BODY[@id=\"flowbody\"]//TABLE[@id=\"field-annexupload_tab\"]//TD",
+              "descendant::TABLE[@id=\"field-annexupload_tab\"]//TD"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              44
+            ],
+            "value": "TABLE.ViewForm.maintable TD.fvalue TABLE.ViewForm.maintable TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[4]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control189_z2JfzJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control190_Iy2JAf": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control190_Iy2JAf"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control191_Hag4IP": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control191_Hag4IP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control192_2Xu2fc": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control192_2Xu2fc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control193_zLeXv8": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control193_zLeXv8"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control183_1yANPq": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control183_1yANPq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control196_KnqAeo": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control196_KnqAeo"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -324,12 +523,18 @@
       "controls": [
         "control181_Te79o8",
         "control182_zLqMWx",
-        "control183_v1BGGH",
         "control184_Z0I8G2",
         "control185_gpMdht",
         "control186_0cNZSV",
         "control187_rtZ3NM",
-        "control188_Hv3PUk"
+        "control188_Hv3PUk",
+        "control189_z2JfzJ",
+        "control190_Iy2JAf",
+        "control191_Hag4IP",
+        "control192_2Xu2fc",
+        "control193_zLeXv8",
+        "control183_1yANPq",
+        "control196_KnqAeo"
       ],
       "anchors": [
         "control180_sVkaTO"
@@ -359,6 +564,60 @@
       "fromContextId": "context26_SWrdGB",
       "fromAction": "doAction",
       "fromControlId": "control185_gpMdht",
+      "toContexts": [
+        {
+          "toContextId": "context26_SWrdGB"
+        }
+      ]
+    },
+    "flow109_KmCrT1": {
+      "fromContextId": "context26_SWrdGB",
+      "fromAction": "doAction",
+      "fromControlId": "control187_rtZ3NM",
+      "toContexts": [
+        {
+          "toContextId": "context26_SWrdGB"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
+        }
+      ]
+    },
+    "flow110_UlrocC": {
+      "fromContextId": "context26_SWrdGB",
+      "fromAction": "doAction",
+      "fromControlId": "control186_0cNZSV",
+      "toContexts": [
+        {
+          "toContextId": "context26_SWrdGB"
+        }
+      ]
+    },
+    "flow111_3N9wpT": {
+      "fromContextId": "context26_SWrdGB",
+      "fromAction": "doAction",
+      "fromControlId": "control191_Hag4IP",
+      "toContexts": [
+        {
+          "toContextId": "context26_SWrdGB"
+        }
+      ]
+    },
+    "flow112_DQ0HOo": {
+      "fromContextId": "context26_SWrdGB",
+      "fromAction": "doAction",
+      "fromControlId": "control192_2Xu2fc",
+      "toContexts": [
+        {
+          "toContextId": "context26_SWrdGB"
+        }
+      ]
+    },
+    "flow113_tR1Odm": {
+      "fromContextId": "context26_SWrdGB",
+      "fromAction": "doAction",
+      "fromControlId": "control193_zLeXv8",
       "toContexts": [
         {
           "toContextId": "context26_SWrdGB"
@@ -422,16 +681,16 @@
                   }
                 },
                 {
-                  "id": "uiControl164_JIwq1X",
-                  "controlId": "control183_v1BGGH",
+                  "id": "uiControl164_kMcn0l",
+                  "controlId": "control183_1yANPq",
                   "display": {
                     "adapterId": "custom",
                     "type": "custom",
                     "adapter": {
                       "templateType": "react",
                       "events": {
-                        "onDoAction": "doAction_uiControl164_JIwq1X",
-                        "onGetTemplate": "getTemplate_uiControl164_JIwq1X"
+                        "onDoAction": "doAction_uiControl164_kMcn0l",
+                        "onGetTemplate": "getTemplate_uiControl164_kMcn0l"
                       }
                     }
                   }
@@ -495,6 +754,81 @@
                       }
                     }
                   }
+                },
+                {
+                  "id": "uiControl170_hi1aMT",
+                  "controlId": "control189_z2JfzJ",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl170_hi1aMT",
+                        "onGetTemplate": "getTemplate_uiControl170_hi1aMT"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl171_aHac8I",
+                  "controlId": "control190_Iy2JAf",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl171_aHac8I",
+                        "onGetTemplate": "getTemplate_uiControl171_aHac8I"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl174_WReO8I",
+                  "controlId": "control193_zLeXv8",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl174_WReO8I",
+                        "onGetTemplate": "getTemplate_uiControl174_WReO8I"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl173_Oqv6CD",
+                  "controlId": "control192_2Xu2fc",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl173_Oqv6CD",
+                        "onGetTemplate": "getTemplate_uiControl173_Oqv6CD"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl172_pRSfln",
+                  "controlId": "control191_Hag4IP",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl172_pRSfln",
+                        "onGetTemplate": "getTemplate_uiControl172_pRSfln"
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -527,6 +861,21 @@
               ]
             }
           ]
+        },
+        {
+          "id": "uiControl177_VFAZNf",
+          "controlId": "control196_KnqAeo",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl177_VFAZNf",
+                "onGetTemplate": "getTemplate_uiControl177_VFAZNf"
+              }
+            }
+          }
         }
       ]
     }

@@ -61,7 +61,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
-      "customJS": "if(elem.textContent.indexOf('岗位名称') !== -1){return true;}return false;;"
+      "customJS": "if(elem.textContent.indexOf('岗位名称') !== -1 || elem.textContent.indexOf('物品名称') !== -1){return true;}return false;;"
     },
     "control135_LFUZal": {
       "location": {
