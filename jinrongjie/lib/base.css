@@ -108,6 +108,18 @@ h5 {
   margin-top: 10px;
   font-size: 14px;
 }
+.must_lfj {
+  position: relative;
+}
+.must_lfj:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: #ccc;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
 li {
   list-style: none;
 }
@@ -2297,6 +2309,7 @@ div[data-ysp-modelid="fundSeal"] .ysp-manager-audit-title-icon {
   padding-bottom: 10px;
   color: #202020;
   font-size: 15px;
+  min-height: 30px;
 }
 .ysp_table_lfj .bottom_box input {
   background: none;
@@ -3265,7 +3278,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .ysp-custom-textarea {
   background: #fff;
-  padding: 0 15px;
+  padding: 0 15px 15px 15px;
 }
 .ysp-custom-textarea .cutom-textarea {
   border: 1px solid #efefef;
@@ -3352,6 +3365,34 @@ div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2k
   display: inline;
 }
 div[data-ysp-modelid='innerCommunicationApproval'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+  border-bottom: 3px solid #C29A2A;
+  color: #C29A2A;
+  padding: 3px 0;
+}
+div[data-ysp-modelid='docApprovalList'] ._2YwloE7OzAhaMwSn1XM-Va {
+  border-bottom: 0;
+}
+div[data-ysp-modelid='docApprovalList'] ._2YwloE7OzAhaMwSn1XM-Va > div {
+  padding: 0;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  margin: 0;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+  margin-top: 40px;
+  background: #fff;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
+  height: 35px;
+  line-height: 35px;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+  width: auto;
+  display: inline;
+}
+div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
   border-bottom: 3px solid #C29A2A;
   color: #C29A2A;
   padding: 3px 0;

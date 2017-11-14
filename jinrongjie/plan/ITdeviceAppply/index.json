@@ -11,6 +11,10 @@
         "data": {
           "tagName": "BUTTON"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "button/text",
@@ -63,6 +67,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -84,6 +92,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -104,6 +116,10 @@
       "location": {
         "data": {
           "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -151,6 +167,59 @@
       "roles": "element,button,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control169_iabcbI": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:创建 - IT类办公设备和固定资产申购审批流程 - 创建"
+              ],
+              "visText": [
+                "请求:创建 - IT类办公设备和固定资产申购审批流程 - 创建"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('IT类办公设备和固定资产申购审批流程') !==-1 && elem.textContent.indexOf('创建') !==-1){return true;}return false;"
     }
   },
   "contexts": {
@@ -161,7 +230,9 @@
         "control167_Wi4pKJ",
         "control168_AgTWpX"
       ],
-      "anchors": [],
+      "anchors": [
+        "control169_iabcbI"
+      ],
       "urlAnchor": []
     }
   },

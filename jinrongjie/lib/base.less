@@ -133,6 +133,18 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
   margin-top: 10px;
   font-size: 14px;
 }
+.must_lfj{
+  position: relative;
+  &:before{
+    content:'';
+    width: 15px;
+    height: 15px;
+    background: #ccc;
+    position: absolute;
+    left: 0;
+    top:5px;
+  }
+}
 @base-font-size:14px;
 @list-base-padding:5px;
 @list-base-border-color:#EFEFEF;
@@ -2351,6 +2363,7 @@ div[data-ysp-modelid="fundSeal"]{
           padding-bottom: 10px;
           color: #202020;
           font-size: 15px;
+          min-height: 30px;
         }
         input{
             background: none;
@@ -3366,7 +3379,7 @@ div[data-ysp-modelid='chairmanSign']{
 
 .ysp-custom-textarea{
   background: #fff;
-  padding: 0 15px;
+  padding: 0 15px 15px 15px;
   .cutom-textarea{
     border: 1px solid #efefef;
     border-radius: 5px;
@@ -3415,6 +3428,32 @@ div[data-ysp-modelid='chairmanSign']{
   }
 }
 div[data-ysp-modelid='innerCommunicationApproval']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+    >div{padding: 0;}
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      margin-top: 40px;
+      background: #fff;
+      a,ul,li{height: 35px;line-height: 35px;}
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+div[data-ysp-modelid='docApprovalList']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
     >div{padding: 0;}
