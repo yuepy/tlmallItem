@@ -1,0 +1,729 @@
+.card {
+  box-shadow: none;
+}
+.card .card-body {
+  padding: 0;
+}
+.content_head {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+}
+.content_head .card-body #uiControl8 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.content_head .card-body #uiControl9 select,
+.content_head .card-body #uiControl12 select {
+  padding: 5px 10px;
+}
+.content_body {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+}
+.content_body .card-body #uiControl16 {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.content_body .card-body #uiControl17,
+.content_body .card-body #uiControl21,
+.content_body .card-body #uiControl22,
+.content_body .card-body #uiControl23 {
+  border-bottom: 1px solid #e1e1e1;
+}
+.content_body .card-body #uiControl17 > div span,
+.content_body .card-body #uiControl21 > div span,
+.content_body .card-body #uiControl22 > div span,
+.content_body .card-body #uiControl23 > div span {
+  height: 40px;
+  line-height: 40px;
+}
+.content_body .card-body #uiControl17 > div a,
+.content_body .card-body #uiControl21 > div a,
+.content_body .card-body #uiControl22 > div a,
+.content_body .card-body #uiControl23 > div a {
+  border: none;
+  background-color: #fff;
+  color: #123885;
+  text-align: right;
+  padding: 10px;
+}
+.content_body .card-body #uiControl17 > div:nth-child(1),
+.content_body .card-body #uiControl21 > div:nth-child(1),
+.content_body .card-body #uiControl22 > div:nth-child(1),
+.content_body .card-body #uiControl23 > div:nth-child(1) {
+  max-width: 32%;
+}
+.content_body .card-body #uiControl17 > div:nth-child(2),
+.content_body .card-body #uiControl21 > div:nth-child(2),
+.content_body .card-body #uiControl22 > div:nth-child(2),
+.content_body .card-body #uiControl23 > div:nth-child(2) {
+  max-width: 68%;
+  flex: 0 0 68%;
+}
+.content_body .card-body #uiControl24 {
+  border-bottom: 1px solid #e1e1e1;
+}
+.content_body .card-body #uiControl24 > div:nth-child(1) {
+  max-width: 32%;
+}
+.content_body .card-body #uiControl24 > div:nth-child(1) span {
+  height: 40px;
+  line-height: 40px;
+}
+.content_body .card-body #uiControl24 > div:nth-child(2) {
+  max-width: 68%;
+  flex: 0 0 68%;
+}
+.content_body .card-body #uiControl24 > div:nth-child(2) span {
+  text-align: right;
+  padding: 10px;
+}
+.content_body .card-body #uiControl41,
+.content_body .card-body #uiControl46,
+.content_body .card-body #uiControl54,
+.content_body .card-body #uiControl66,
+.content_body .card-body #uiControl42,
+.content_body .card-body #uiControl50,
+.content_body .card-body #uiControl59,
+.content_body .card-body #uiControl62,
+.content_body .card-body #uiControl98,
+.content_body .card-body #uiControl231 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+  background: url('../local/img/BacoError.gif') no-repeat right center;
+}
+.content_body .card-body #uiControl41 .card-body,
+.content_body .card-body #uiControl46 .card-body,
+.content_body .card-body #uiControl54 .card-body,
+.content_body .card-body #uiControl66 .card-body,
+.content_body .card-body #uiControl42 .card-body,
+.content_body .card-body #uiControl50 .card-body,
+.content_body .card-body #uiControl59 .card-body,
+.content_body .card-body #uiControl62 .card-body,
+.content_body .card-body #uiControl98 .card-body,
+.content_body .card-body #uiControl231 .card-body {
+  overflow: hidden;
+}
+.content_body .card-body #uiControl41 .card-body span,
+.content_body .card-body #uiControl46 .card-body span,
+.content_body .card-body #uiControl54 .card-body span,
+.content_body .card-body #uiControl66 .card-body span,
+.content_body .card-body #uiControl42 .card-body span,
+.content_body .card-body #uiControl50 .card-body span,
+.content_body .card-body #uiControl59 .card-body span,
+.content_body .card-body #uiControl62 .card-body span,
+.content_body .card-body #uiControl98 .card-body span,
+.content_body .card-body #uiControl231 .card-body span {
+  display: block;
+  float: left;
+  width: 50%;
+}
+.content_body .card-body #uiControl41 .card-body select,
+.content_body .card-body #uiControl46 .card-body select,
+.content_body .card-body #uiControl54 .card-body select,
+.content_body .card-body #uiControl66 .card-body select,
+.content_body .card-body #uiControl42 .card-body select,
+.content_body .card-body #uiControl50 .card-body select,
+.content_body .card-body #uiControl59 .card-body select,
+.content_body .card-body #uiControl62 .card-body select,
+.content_body .card-body #uiControl98 .card-body select,
+.content_body .card-body #uiControl231 .card-body select,
+.content_body .card-body #uiControl41 .card-body button,
+.content_body .card-body #uiControl46 .card-body button,
+.content_body .card-body #uiControl54 .card-body button,
+.content_body .card-body #uiControl66 .card-body button,
+.content_body .card-body #uiControl42 .card-body button,
+.content_body .card-body #uiControl50 .card-body button,
+.content_body .card-body #uiControl59 .card-body button,
+.content_body .card-body #uiControl62 .card-body button,
+.content_body .card-body #uiControl98 .card-body button,
+.content_body .card-body #uiControl231 .card-body button {
+  float: left;
+  display: block;
+  width: 45%;
+  margin: 0;
+  padding: 5px 10px;
+}
+.content_body .card-body #uiControl41 .card-body img,
+.content_body .card-body #uiControl46 .card-body img,
+.content_body .card-body #uiControl54 .card-body img,
+.content_body .card-body #uiControl66 .card-body img,
+.content_body .card-body #uiControl42 .card-body img,
+.content_body .card-body #uiControl50 .card-body img,
+.content_body .card-body #uiControl59 .card-body img,
+.content_body .card-body #uiControl62 .card-body img,
+.content_body .card-body #uiControl98 .card-body img,
+.content_body .card-body #uiControl231 .card-body img {
+  float: right;
+  display: block;
+  display: none;
+  height: 12px;
+  margin: 9px 0;
+}
+.content_body .card-body #uiControl42 {
+  display: none;
+}
+.content_body .card-body #uiControl50 .card-body > div,
+.content_body .card-body #uiControl62 .card-body > div,
+.content_body .card-body #uiControl231 .card-body > div {
+  float: left;
+  width: 45%;
+}
+.content_body .card-body #uiControl50 .card-body > div .field-group,
+.content_body .card-body #uiControl62 .card-body > div .field-group,
+.content_body .card-body #uiControl231 .card-body > div .field-group {
+  margin: 0;
+}
+.content_body .card-body #uiControl50 .card-body > div .field-group span,
+.content_body .card-body #uiControl62 .card-body > div .field-group span,
+.content_body .card-body #uiControl231 .card-body > div .field-group span {
+  display: none;
+}
+.content_body .card-body #uiControl50 .card-body > div .field-group input,
+.content_body .card-body #uiControl62 .card-body > div .field-group input,
+.content_body .card-body #uiControl231 .card-body > div .field-group input {
+  padding: 5px 10px;
+}
+.content_body .card-body #uiControl50 .card-body > div .datepicker-date .datepicker-day,
+.content_body .card-body #uiControl62 .card-body > div .datepicker-date .datepicker-day,
+.content_body .card-body #uiControl231 .card-body > div .datepicker-date .datepicker-day {
+  text-align: center;
+}
+.content_body .card-body #uiControl70 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.content_body .card-body #uiControl70 .card-body {
+  overflow: hidden;
+}
+.content_body .card-body #uiControl70 .card-body span:nth-child(1) {
+  display: block;
+  float: left;
+  width: 40%;
+}
+.content_body .card-body #uiControl70 .card-body span:nth-child(2) {
+  width: 23%;
+  float: left;
+  text-align: right;
+}
+.content_body .card-body #uiControl70 .card-body button {
+  margin: 0;
+  display: block;
+  float: left;
+  width: 32%;
+  padding: 5px;
+}
+.content_body .card-body #uiControl20 > div:nth-child(2),
+.content_body .card-body #uiControl59 > div:nth-child(2) {
+  max-width: 45%;
+}
+.content_body .card-body #uiControl20 > div:nth-child(2) button,
+.content_body .card-body #uiControl59 > div:nth-child(2) button,
+.content_body .card-body #uiControl20 > div:nth-child(2) select,
+.content_body .card-body #uiControl59 > div:nth-child(2) select {
+  margin: 0;
+  padding: 5px 10px;
+}
+.content_body .card-body #uiControl74,
+.content_body .card-body #uiControl77,
+.content_body .card-body #uiControl80,
+.content_body .card-body #uiControl81,
+.content_body .card-body #uiControl84,
+.content_body .card-body #uiControl85,
+.content_body .card-body #uiControl92,
+.content_body .card-body #uiControl93 {
+  padding-bottom: 10px;
+  margin: 10px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+.content_body .card-body #uiControl74 div span,
+.content_body .card-body #uiControl77 div span,
+.content_body .card-body #uiControl80 div span,
+.content_body .card-body #uiControl81 div span,
+.content_body .card-body #uiControl84 div span,
+.content_body .card-body #uiControl85 div span,
+.content_body .card-body #uiControl92 div span,
+.content_body .card-body #uiControl93 div span {
+  height: 30px;
+  line-height: 30px;
+}
+.content_body .card-body #uiControl74 > div:nth-child(1),
+.content_body .card-body #uiControl77 > div:nth-child(1),
+.content_body .card-body #uiControl80 > div:nth-child(1),
+.content_body .card-body #uiControl81 > div:nth-child(1),
+.content_body .card-body #uiControl84 > div:nth-child(1),
+.content_body .card-body #uiControl85 > div:nth-child(1),
+.content_body .card-body #uiControl92 > div:nth-child(1),
+.content_body .card-body #uiControl93 > div:nth-child(1) {
+  max-width: 80%;
+  flex: 0 0 80%;
+}
+.content_body .card-body #uiControl74 > div:nth-child(2),
+.content_body .card-body #uiControl77 > div:nth-child(2),
+.content_body .card-body #uiControl80 > div:nth-child(2),
+.content_body .card-body #uiControl81 > div:nth-child(2),
+.content_body .card-body #uiControl84 > div:nth-child(2),
+.content_body .card-body #uiControl85 > div:nth-child(2),
+.content_body .card-body #uiControl92 > div:nth-child(2),
+.content_body .card-body #uiControl93 > div:nth-child(2) {
+  max-width: 20%;
+  flex: 0 0 20%;
+}
+.content_body .card-body #uiControl74 > div:nth-child(2) span,
+.content_body .card-body #uiControl77 > div:nth-child(2) span,
+.content_body .card-body #uiControl80 > div:nth-child(2) span,
+.content_body .card-body #uiControl81 > div:nth-child(2) span,
+.content_body .card-body #uiControl84 > div:nth-child(2) span,
+.content_body .card-body #uiControl85 > div:nth-child(2) span,
+.content_body .card-body #uiControl92 > div:nth-child(2) span,
+.content_body .card-body #uiControl93 > div:nth-child(2) span {
+  text-align: right;
+}
+.content_body .card-body #uiControl102 {
+  margin: 0 0 10px 0;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  background: url('../local/img/BacoError.gif') no-repeat right center;
+}
+.content_body .card-body #uiControl102 .card-body {
+  overflow: hidden;
+}
+.content_body .card-body #uiControl102 .card-body label {
+  float: left;
+  width: 95%;
+  margin: 0;
+}
+.content_body .card-body #uiControl102 .card-body label textarea {
+  margin-bottom: 0;
+}
+.content_body .card-body #uiControl102 .card-body img {
+  display: none;
+  float: right;
+  height: 12px;
+  margin-top: 75px;
+}
+.content_body .card-body #uiControl106 {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+}
+.content_body .card-body #uiControl106 #uiControl117 {
+  margin: 0;
+}
+.content_body .card-body #uiControl106 #uiControl117 .clear {
+  display: none;
+}
+.content_body .card-body #uiControl106 #uiControl117 #uiControl119 {
+  font-size: 14px;
+  color: #999;
+}
+.content_body .card-body #uiControl108 {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+}
+.content_body .card-body #uiControl37 {
+  border: 1px solid #25b4e9;
+  background-color: #25b4e9;
+}
+.content_body .card-body #uiControl58 {
+  border: 1px solid #f8b83e;
+  background-color: #f8b83e;
+}
+#uiControl111 {
+  margin: 0;
+}
+.approve_head {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+}
+.approve_head .card-body #uiControl113 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.approve_head .card-body #uiControl114 select,
+.approve_head .card-body #uiControl115 select {
+  padding: 5px 10px;
+}
+.approve_body {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+}
+.approve_body .card-body #uiControl197 {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.approve_body .card-body #uiControl122,
+.approve_body .card-body #uiControl123,
+.approve_body .card-body #uiControl124,
+.approve_body .card-body #uiControl126 {
+  border-bottom: 1px solid #e1e1e1;
+}
+.approve_body .card-body #uiControl122 > div span,
+.approve_body .card-body #uiControl123 > div span,
+.approve_body .card-body #uiControl124 > div span,
+.approve_body .card-body #uiControl126 > div span {
+  height: 40px;
+  line-height: 40px;
+}
+.approve_body .card-body #uiControl122 > div a,
+.approve_body .card-body #uiControl123 > div a,
+.approve_body .card-body #uiControl124 > div a,
+.approve_body .card-body #uiControl126 > div a {
+  border: none;
+  background-color: #fff;
+  color: #123885;
+  text-align: right;
+  padding: 10px;
+}
+.approve_body .card-body #uiControl122 > div:nth-child(1),
+.approve_body .card-body #uiControl123 > div:nth-child(1),
+.approve_body .card-body #uiControl124 > div:nth-child(1),
+.approve_body .card-body #uiControl126 > div:nth-child(1) {
+  max-width: 32%;
+}
+.approve_body .card-body #uiControl122 > div:nth-child(2),
+.approve_body .card-body #uiControl123 > div:nth-child(2),
+.approve_body .card-body #uiControl124 > div:nth-child(2),
+.approve_body .card-body #uiControl126 > div:nth-child(2) {
+  max-width: 68%;
+  flex: 0 0 68%;
+}
+.approve_body .card-body #uiControl125 {
+  border-bottom: 1px solid #e1e1e1;
+}
+.approve_body .card-body #uiControl125 > div:nth-child(1) {
+  max-width: 32%;
+}
+.approve_body .card-body #uiControl125 > div:nth-child(1) span {
+  height: 40px;
+  line-height: 40px;
+}
+.approve_body .card-body #uiControl125 > div:nth-child(2) {
+  max-width: 68%;
+  flex: 0 0 68%;
+}
+.approve_body .card-body #uiControl125 > div:nth-child(2) span {
+  text-align: right;
+  padding: 10px;
+}
+.approve_body .card-body #uiControl137,
+.approve_body .card-body #uiControl138,
+.approve_body .card-body #uiControl142,
+.approve_body .card-body #uiControl143,
+.approve_body .card-body #uiControl144,
+.approve_body .card-body #uiControl145,
+.approve_body .card-body #uiControl155,
+.approve_body .card-body #uiControl156,
+.approve_body .card-body #uiControl157,
+.approve_body .card-body #uiControl192 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.approve_body .card-body #uiControl137 div span,
+.approve_body .card-body #uiControl138 div span,
+.approve_body .card-body #uiControl142 div span,
+.approve_body .card-body #uiControl143 div span,
+.approve_body .card-body #uiControl144 div span,
+.approve_body .card-body #uiControl145 div span,
+.approve_body .card-body #uiControl155 div span,
+.approve_body .card-body #uiControl156 div span,
+.approve_body .card-body #uiControl157 div span,
+.approve_body .card-body #uiControl192 div span {
+  display: block;
+}
+.approve_body .card-body #uiControl137 div select,
+.approve_body .card-body #uiControl138 div select,
+.approve_body .card-body #uiControl142 div select,
+.approve_body .card-body #uiControl143 div select,
+.approve_body .card-body #uiControl144 div select,
+.approve_body .card-body #uiControl145 div select,
+.approve_body .card-body #uiControl155 div select,
+.approve_body .card-body #uiControl156 div select,
+.approve_body .card-body #uiControl157 div select,
+.approve_body .card-body #uiControl192 div select {
+  display: block;
+  margin: 0;
+  padding: 5px 10px;
+}
+.approve_body .card-body #uiControl142 {
+  display: none;
+}
+.approve_body .card-body #uiControl159,
+.approve_body .card-body #uiControl169,
+.approve_body .card-body #uiControl170,
+.approve_body .card-body #uiControl171,
+.approve_body .card-body #uiControl180,
+.approve_body .card-body #uiControl181,
+.approve_body .card-body #uiControl182,
+.approve_body .card-body #uiControl183 {
+  padding-bottom: 10px;
+  margin: 10px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+.approve_body .card-body #uiControl159 div span,
+.approve_body .card-body #uiControl169 div span,
+.approve_body .card-body #uiControl170 div span,
+.approve_body .card-body #uiControl171 div span,
+.approve_body .card-body #uiControl180 div span,
+.approve_body .card-body #uiControl181 div span,
+.approve_body .card-body #uiControl182 div span,
+.approve_body .card-body #uiControl183 div span {
+  height: 30px;
+  line-height: 30px;
+}
+.approve_body .card-body #uiControl159 > div:nth-child(1),
+.approve_body .card-body #uiControl169 > div:nth-child(1),
+.approve_body .card-body #uiControl170 > div:nth-child(1),
+.approve_body .card-body #uiControl171 > div:nth-child(1),
+.approve_body .card-body #uiControl180 > div:nth-child(1),
+.approve_body .card-body #uiControl181 > div:nth-child(1),
+.approve_body .card-body #uiControl182 > div:nth-child(1),
+.approve_body .card-body #uiControl183 > div:nth-child(1) {
+  max-width: 80%;
+  flex: 0 0 80%;
+}
+.approve_body .card-body #uiControl159 > div:nth-child(2),
+.approve_body .card-body #uiControl169 > div:nth-child(2),
+.approve_body .card-body #uiControl170 > div:nth-child(2),
+.approve_body .card-body #uiControl171 > div:nth-child(2),
+.approve_body .card-body #uiControl180 > div:nth-child(2),
+.approve_body .card-body #uiControl181 > div:nth-child(2),
+.approve_body .card-body #uiControl182 > div:nth-child(2),
+.approve_body .card-body #uiControl183 > div:nth-child(2) {
+  max-width: 20%;
+  flex: 0 0 20%;
+}
+.approve_body .card-body #uiControl159 > div:nth-child(2) span,
+.approve_body .card-body #uiControl169 > div:nth-child(2) span,
+.approve_body .card-body #uiControl170 > div:nth-child(2) span,
+.approve_body .card-body #uiControl171 > div:nth-child(2) span,
+.approve_body .card-body #uiControl180 > div:nth-child(2) span,
+.approve_body .card-body #uiControl181 > div:nth-child(2) span,
+.approve_body .card-body #uiControl182 > div:nth-child(2) span,
+.approve_body .card-body #uiControl183 > div:nth-child(2) span {
+  text-align: right;
+}
+.approve_body .card-body #uiControl158 {
+  padding-bottom: 10px;
+  margin: 10px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+.approve_body .card-body #uiControl158 div:nth-child(2) {
+  overflow: hidden;
+}
+.approve_body .card-body #uiControl158 div:nth-child(2) span {
+  float: left;
+}
+.approve_body .card-body #uiControl158 div:nth-child(2) button {
+  float: left;
+  margin: 0;
+  padding: 5px 10px;
+  width: 70%;
+}
+.approve_body .card-body #uiControl200,
+.approve_body .card-body #uiControl203,
+.approve_body .card-body #uiControl206 {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.approve_body .card-body #uiControl203 #uiControl224 {
+  margin: 0;
+  display: block;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+  overflow: scroll;
+  background: #fff;
+  color: #3f3f3f;
+  border: none;
+}
+.approve_body .card-body #uiControl205 {
+  display: none;
+}
+.approve_body .card-body #uiControl206 {
+  background: url('../local/img/BacoError.gif') no-repeat right center;
+}
+.approve_body .card-body #uiControl206 .card-body {
+  overflow: hidden;
+}
+.approve_body .card-body #uiControl206 .card-body textarea {
+  margin-bottom: 0;
+  margin: 0;
+  width: 95%;
+  float: left;
+}
+.approve_body .card-body #uiControl206 .card-body img {
+  display: none;
+  float: right;
+  margin-top: 75px;
+}
+.approve_body .card-body #uiControl245 {
+  border: 1px solid #25b4e9;
+  background-color: #25b4e9;
+  color: #fff;
+}
+.approve_body .card-body #uiControl246 {
+  border: 1px solid #f8b83e;
+  background-color: #f8b83e;
+  color: #fff;
+}
+.list_head {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+}
+.list_head #uiControl234,
+.list_head #uiControl238 {
+  margin: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.list_head #uiControl234 .card-body > div,
+.list_head #uiControl238 .card-body > div {
+  margin-bottom: 10px;
+}
+.list_head #uiControl234 .card-body > div .field-group,
+.list_head #uiControl238 .card-body > div .field-group {
+  margin: 0;
+}
+.list_head #uiControl234 .card-body > div .field-group span,
+.list_head #uiControl238 .card-body > div .field-group span {
+  display: none;
+}
+.list_head #uiControl234 .card-body > div .field-group input,
+.list_head #uiControl238 .card-body > div .field-group input {
+  padding: 5px 10px;
+}
+.list_head #uiControl234 .card-body > div .datepicker-date .datepicker-day,
+.list_head #uiControl238 .card-body > div .datepicker-date .datepicker-day {
+  text-align: center;
+}
+.list_head #uiControl209,
+.list_head #uiControl210,
+.list_head #uiControl211,
+.list_head #uiControl213,
+.list_head #uiControl34 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.list_head #uiControl209 div span,
+.list_head #uiControl210 div span,
+.list_head #uiControl211 div span,
+.list_head #uiControl213 div span,
+.list_head #uiControl34 div span {
+  display: block;
+}
+.list_head #uiControl209 div select,
+.list_head #uiControl210 div select,
+.list_head #uiControl211 div select,
+.list_head #uiControl213 div select,
+.list_head #uiControl34 div select {
+  display: block;
+  margin: 0;
+  padding: 5px 10px;
+}
+.list_head #uiControl209 div:nth-child(1),
+.list_head #uiControl210 div:nth-child(1),
+.list_head #uiControl211 div:nth-child(1),
+.list_head #uiControl213 div:nth-child(1),
+.list_head #uiControl34 div:nth-child(1) {
+  max-width: 40%;
+  flex: 0 0 40%;
+}
+.list_head #uiControl209 div:nth-child(2),
+.list_head #uiControl210 div:nth-child(2),
+.list_head #uiControl211 div:nth-child(2),
+.list_head #uiControl213 div:nth-child(2),
+.list_head #uiControl34 div:nth-child(2) {
+  max-width: 60%;
+  flex: 0 0 60%;
+}
+.list_head #uiControl212 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.list_head #uiControl212 div label {
+  margin: 0;
+}
+.list_head #uiControl212 div label input {
+  margin: 0;
+  padding: 5px 10px;
+}
+.list_head #uiControl212 div:nth-child(1) {
+  max-width: 40%;
+  flex: 0 0 40%;
+}
+.list_head #uiControl212 div:nth-child(2) {
+  max-width: 60%;
+  flex: 0 0 60%;
+}
+.list_body .card-body div ul {
+  list-style: none;
+  padding-left: 0;
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  margin-bottom: 10px;
+  /*         li{
+          overflow: hidden;
+          span{
+          	float: left;
+            display: block;
+          }
+          span:nth-child(1){
+          	width: 40%;
+          }
+          span:nth-child(2){
+          	text-align: right;
+            width: 60%;
+          }
+        } */
+}
+.list_body .card-body div ul li {
+  padding: 5px 10px;
+}
+.list_body .card-body div ul li div span {
+  color: #3f3f3f;
+  font-size: 14px;
+}
+.list_body .card-body div ul .line1 {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+.list_body .card-body div ul .line1 div {
+  float: left;
+  width: 50%;
+}
+.list_body .card-body div ul .line1 div:nth-child(1) span:nth-child(2) {
+  color: #3297ff;
+}
+.list_body .card-body div ul .line1 div:nth-child(2) {
+  text-align: right;
+}
+.list_body .card-body div ul .line7 {
+  border-top: 1px solid #e1e1e1;
+}
+.list_body .card-body div ul .line7 div span {
+  color: #999;
+}
+.list_body .card-body div ul .line8 div span {
+  color: #999;
+}
+.list_body .card-body div ul .line6 div span:nth-child(2) {
+  color: #00c546;
+}
+.success_body {
+  text-align: center;
+  padding: 45px 0;
+}

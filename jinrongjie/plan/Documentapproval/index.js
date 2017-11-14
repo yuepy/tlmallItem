@@ -111,8 +111,7 @@
                             });
                           } else {
                             $(this).children("button").each(function () {
-                              arr2.push({ text: '', type: 'button',
-                                id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              arr2.push({ text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           }
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
@@ -129,7 +128,8 @@
           });
         });
       } else if ($(elem).children("table").length == 1) {
-        var elem2 = $(elem).children("table").eq(0)[0];var tbody2 = $(elem).children("table").eq(0).children("tbody")[0];$(tbody2).children("tr").each(function () {
+        var elem2 = $(elem).children("table").eq(0)[0];
+        var tbody2 = $(elem).children("table").eq(0).children("tbody")[0];$(tbody2).children("tr").each(function () {
           //var arr1 = [];
           $(this).children("td").each(function () {
             var arr2 = []; //判断标题-------------------------------------
@@ -163,8 +163,7 @@
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id") });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
-                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input',
-                      id: $(this).children("input").prop('id') });
+                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                   } //判断纯文字
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
@@ -189,8 +188,7 @@
                           }
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
                           //console.log(43534534523)
-                          arr2.push({ text: $(this).find("button").text(), type: 'button2', id: $(this).children('span').eq(0).children("button").attr('id')
-                          });
+                          arr2.push({ text: $(this).find("button").text(), type: 'button2', id: $(this).children('span').eq(0).children("button").attr('id') });
                         } //判断意见-------------------------------------
                         else if ($(this)[0].className == 'zdn' && ($(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR')) {
                             arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });

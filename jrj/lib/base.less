@@ -1,0 +1,647 @@
+//通用
+.card {
+		box-shadow: none;
+  .card-body {
+  		padding: 0;
+  }
+}
+//content页面
+//head部分
+.content_head {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  .card-body {
+  	  #uiControl8 {
+    			text-align: center;
+        	margin-bottom: 10px;
+    }
+    	#uiControl9,#uiControl12 {
+        select {
+        		padding: 5px 10px;
+        }
+    }
+  }
+}
+
+//body部分
+.content_body {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  .card-body {
+    #uiControl16 {
+    		text-align: center;
+        //margin-bottom: 10px;
+      	padding-bottom: 10px;
+      	border-bottom: 1px solid #e1e1e1;
+    }
+    #uiControl17,
+    #uiControl21,
+    #uiControl22,
+    #uiControl23 {
+      border-bottom: 1px solid #e1e1e1;
+      	>div{
+          span{
+          	height: 40px;
+            line-height: 40px;
+          }
+          a{
+            border: none;
+          	background-color: #fff;
+            color: #123885;
+            text-align: right;
+            padding: 10px;
+          }
+      	}
+      >div:nth-child(1) {
+      	max-width: 32%;
+      }
+      >div:nth-child(2) {
+      	max-width: 68%;
+        flex: 0 0 68%;
+      }
+    }
+    #uiControl24 {
+      border-bottom: 1px solid #e1e1e1;
+    		>div:nth-child(1) {
+      		max-width: 32%;
+          span{
+          	height: 40px;
+            line-height: 40px;
+          }
+        }
+        >div:nth-child(2) {
+          max-width: 68%;
+          flex: 0 0 68%;
+          span{
+          		text-align: right;
+            	padding: 10px;
+          }
+        }
+    }
+    #uiControl41,
+    #uiControl46,
+    #uiControl54,
+    #uiControl66,
+    #uiControl42,
+    #uiControl50,
+    #uiControl59,
+    //#uiControl20,
+    #uiControl62,
+    #uiControl98,
+    #uiControl231 {
+      margin: 10px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e1e1e1;
+      background:url('../local/img/BacoError.gif') no-repeat right center;
+      .card-body{
+      		overflow: hidden;
+        	span{
+            	display: block;
+						  float: left;
+            	width: 50%;
+        	}
+        	select,button{
+        			float: left;
+            	display: block;
+            	width: 45%;
+            	margin: 0;
+            	padding: 5px 10px;
+        	}
+        	img{
+        			float: right;
+            	display: block;
+            	//width: 3%;
+            	display: none;
+            	height: 12px;
+            	margin: 9px 0;
+        	}
+      }
+    }
+    //隐藏
+    #uiControl42{
+			display: none;
+    }
+    #uiControl50,
+    #uiControl62,
+    #uiControl231 {
+      .card-body{
+      		>div{
+      				float: left;
+              width: 45%;
+            	.field-group{
+                margin: 0;
+                span{
+                  display: none;
+                }
+                input{
+                    padding: 5px 10px;
+                }
+              }
+            .datepicker-date{
+              .datepicker-day {
+              	text-align: center;
+              }
+            }
+      		}
+      }
+    }
+    #uiControl70 {
+      margin: 10px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e1e1e1;
+      .card-body{
+      		overflow: hidden;
+          span:nth-child(1){
+              display: block;
+              float: left;
+              width: 40%;
+          }
+          span:nth-child(2){
+							width: 23%;
+            	float: left;
+            	text-align: right;
+          }
+          button{
+            margin: 0;
+            display: block;
+            float: left;
+            width: 32%;
+            padding: 5px;
+          }
+      }
+    }
+    #uiControl20,
+    #uiControl59 {
+      >div:nth-child(2){
+        max-width: 45%;
+      	button,select{
+          margin: 0;
+          padding: 5px 10px;
+        }
+      }
+    }
+    #uiControl74,
+    #uiControl77,
+    #uiControl80,
+    #uiControl81,
+    #uiControl84,
+    #uiControl85,
+    #uiControl92,
+    #uiControl93{
+      padding-bottom: 10px;
+      margin: 10px 0;
+      border-bottom: 1px solid #e1e1e1;
+      div{
+        span{
+        	height: 30px;
+          line-height: 30px;
+          //font-size: 14px;
+        }
+      }
+      >div:nth-child(1) {
+      		max-width: 80%;
+          flex: 0 0 80%;
+      }
+      >div:nth-child(2) {
+      		max-width: 20%;
+          flex: 0 0 20%;
+        	span{
+          		text-align: right;
+          }
+      }
+    }
+    #uiControl102 {
+      margin: 0 0 10px 0;
+      padding: 10px;
+      border: 1px solid #e1e1e1;
+      background:url('../local/img/BacoError.gif') no-repeat right center;
+      .card-body{
+      	overflow: hidden;
+        label{
+        	float: left;
+          width: 95%;
+          margin: 0;
+          textarea{
+          	margin-bottom: 0;
+          }
+        }
+        img{
+          	display: none;
+            float: right;
+            //display: block;
+            //width: 3%;
+            height: 12px;
+            margin-top: 75px;
+        }
+      }
+    }
+    #uiControl106{
+    	margin: 0;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #e1e1e1;
+      #uiControl117{
+        margin: 0;
+        .clear{//清除上传文件
+        	display: none;
+        }
+        #uiControl119{
+        	font-size: 14px;
+          color: #999;
+        }
+      }
+    }
+    #uiControl108{
+    	margin: 0;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #e1e1e1;
+    }
+    #uiControl37 {
+    		border: 1px solid #25b4e9;
+      	background-color: #25b4e9;
+    }
+    #uiControl58 {
+    		border: 1px solid #f8b83e;
+      	background-color: #f8b83e;
+    }
+  }
+}
+
+//approve页面
+#uiControl111{
+	margin: 0;
+}
+.approve_head{
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  .card-body {
+      #uiControl113 {
+          text-align: center;
+          margin-bottom: 10px;
+    }
+      #uiControl114,#uiControl115 {
+        select {
+            padding: 5px 10px;
+        }
+    }
+  }
+}
+
+.approve_body{
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  .card-body {
+    #uiControl197 {
+    		text-align: center;
+      	padding-bottom: 10px;
+      	border-bottom: 1px solid #e1e1e1;
+    }
+    #uiControl122,
+    #uiControl123,
+    #uiControl124,
+    #uiControl126{
+    	border-bottom: 1px solid #e1e1e1;
+      >div{
+          span{
+          	height: 40px;
+            line-height: 40px;
+          }
+          a{
+            border: none;
+          	background-color: #fff;
+            color: #123885;
+            text-align: right;
+            padding: 10px;
+          }
+      	}
+      >div:nth-child(1) {
+      	max-width: 32%;
+      }
+      >div:nth-child(2) {
+      	max-width: 68%;
+        flex: 0 0 68%;
+      }
+    }
+    #uiControl125{
+    	border-bottom: 1px solid #e1e1e1;
+    		>div:nth-child(1) {
+      		max-width: 32%;
+          span{
+          	height: 40px;
+            line-height: 40px;
+          }
+        }
+        >div:nth-child(2) {
+          max-width: 68%;
+          flex: 0 0 68%;
+          span{
+          		text-align: right;
+            	padding: 10px;
+          }
+        }
+    }
+    #uiControl137,
+    #uiControl138,
+    #uiControl142,
+    #uiControl143,
+    #uiControl144,
+    #uiControl145,
+    #uiControl155,
+    #uiControl156,
+    #uiControl157,
+    #uiControl192 {
+    	margin: 10px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e1e1e1;
+      div{
+        	span{
+            	display: block;
+        	}
+        	select{
+            	display: block;
+            	margin: 0;
+            	padding: 5px 10px;
+        	}
+      }
+    }
+    //隐藏
+    #uiControl142{
+    	display: none;
+    }
+    #uiControl159,
+    #uiControl169,
+    #uiControl170,
+    #uiControl171,
+    #uiControl180,
+    #uiControl181,
+    #uiControl182,
+    #uiControl183 {
+    	padding-bottom: 10px;
+      margin: 10px 0;
+      border-bottom: 1px solid #e1e1e1;
+      div{
+        span{
+        	height: 30px;
+          line-height: 30px;
+          //font-size: 14px;
+        }
+      }
+      >div:nth-child(1) {
+      		max-width: 80%;
+          flex: 0 0 80%;
+      }
+      >div:nth-child(2) {
+      		max-width: 20%;
+          flex: 0 0 20%;
+        	span{
+          		text-align: right;
+          }
+      }
+    }
+    #uiControl158 {
+      padding-bottom: 10px;
+      margin: 10px 0;
+      border-bottom: 1px solid #e1e1e1;
+      div:nth-child(2){
+      	overflow: hidden;
+        span{
+        	float: left;
+        }
+        button{
+        	float: left;
+          margin: 0;
+          padding: 5px 10px;
+          width: 70%;
+        }
+      }
+    }
+    #uiControl200,
+    #uiControl203,
+    #uiControl206{
+    	border: 1px solid #e1e1e1;
+      padding: 10px;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    #uiControl203{
+      #uiControl224{
+      	margin: 0;
+        display: block;
+        text-align: left;
+        padding: 0;
+        width: 100%;
+        overflow: scroll;
+        background: #fff;
+        color: #3f3f3f;
+        border: none;
+      }
+    }
+    #uiControl205{
+			display: none;
+    }
+    #uiControl206{
+      background:url('../local/img/BacoError.gif') no-repeat right center;
+      .card-body{
+        overflow: hidden;
+          textarea{
+          	margin-bottom: 0;
+            margin: 0;
+            width: 95%;
+            float: left;
+          }
+        img{
+          display: none;
+        	float: right;
+          margin-top: 75px;
+        }
+      }
+    }
+    #uiControl245 {
+    		border: 1px solid #25b4e9;
+      	background-color: #25b4e9;
+      	color: #fff;
+    }
+    #uiControl246 {
+    		border: 1px solid #f8b83e;
+      	background-color: #f8b83e;
+      	color: #fff;
+    }
+  }
+}
+
+//list页面
+.list_head{
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+	#uiControl234,
+  #uiControl238{
+    margin: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e1e1e1;
+      .card-body{
+      		>div{
+            margin-bottom: 10px;
+            	.field-group{
+                margin: 0;
+                span{
+                  display: none;
+                }
+                input{
+                    padding: 5px 10px;
+                }
+              }
+            .datepicker-date{
+              .datepicker-day {
+              	text-align: center;
+              }
+            }
+      		}
+      }
+    }
+  #uiControl209,
+  #uiControl210,
+  #uiControl211,
+  #uiControl213,
+  #uiControl34 {
+  		margin: 10px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e1e1e1;
+      div{
+        	span{
+            	display: block;
+        	}
+        	select{
+            	display: block;
+            	margin: 0;
+            	padding: 5px 10px;
+        	}
+      }
+    	div:nth-child(1){
+        max-width: 40%;
+        flex: 0 0 40%;
+      }
+      div:nth-child(2){
+        max-width: 60%;
+        flex: 0 0 60%;
+      }
+  }
+  #uiControl212{
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e1e1e1;
+    div{
+      label{
+      	margin: 0;
+        input{
+        	margin: 0;
+          padding: 5px 10px;
+        }
+      }
+    }
+    div:nth-child(1){
+      max-width: 40%;
+      flex: 0 0 40%;
+    }
+    div:nth-child(2){
+      max-width: 60%;
+      flex: 0 0 60%;
+    }
+  }
+}
+.list_body{
+  .card-body{
+    div{
+      ul{
+      	list-style: none;
+        padding-left: 0;
+        border: 1px solid #e1e1e1;
+        padding: 10px;
+        margin-bottom: 10px;
+/*         li{
+          overflow: hidden;
+          span{
+          	float: left;
+            display: block;
+          }
+          span:nth-child(1){
+          	width: 40%;
+          }
+          span:nth-child(2){
+          	text-align: right;
+            width: 60%;
+          }
+        } */
+        	li{
+            padding: 5px 10px;
+            div{
+            	span{
+                	color: #3f3f3f;
+                	font-size: 14px;
+              }
+            }
+        	}
+        	.line1{
+        			border-bottom: 1px solid #e1e1e1;
+            	padding: 5px 10px;
+            	overflow: hidden;
+            	div{
+            		float: left;
+                width: 50%;
+            	}
+            	div:nth-child(1){
+                span:nth-child(2){
+                	color: #3297ff;
+                }
+            	}
+            	div:nth-child(2){
+            		text-align: right;
+            	}
+        	}
+          .line7{
+            border-top: 1px solid #e1e1e1;
+            div{
+              span{
+                color: #999;
+              }
+            }
+          }
+          .line8{
+            div{
+              span{
+                color: #999;
+              }
+            }
+          }
+          .line6{
+            div{
+              span:nth-child(2){
+                color: #00c546;
+              }
+            }
+          }
+      }
+    }
+  }
+}
+
+//success
+.success_body{
+	text-align: center;
+  padding: 45px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

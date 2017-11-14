@@ -41,10 +41,11 @@
     },
     doAction_uiControl116_Cu7o5z: function (data, elem) {
       if (data.eventType == "click") {
-        //elem.value = data.dataCustom; // elem.ownerDocument.defaultView.changeCurpage(1);
+        elem.value = data.dataCustom; // elem.ownerDocument.defaultView.changeCurpage(1);
         // ysp.customHelper.fireKeyEvent(elem, "keydown", "13");
         // ysp.customHelper.fireKeyEvent(elem, "keyup", "13");
-        debugger;if (elem.ownerDocument.getElementById('rightMenuIframe')) {
+        //debugger;
+        if (elem.ownerDocument.getElementById('rightMenuIframe')) {
           var iframeBody = elem.ownerDocument.getElementById('rightMenuIframe').contentDocument.body;if ($(iframeBody).find("button").length > 0) {
             $(iframeBody).find("button").eq(0)[0].click();console.log($(iframeBody).find("button").eq(0).text());
           }

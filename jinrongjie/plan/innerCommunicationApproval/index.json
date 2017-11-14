@@ -330,6 +330,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -350,6 +354,10 @@
       "location": {
         "data": {
           "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -372,6 +380,44 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control176_5P4c5r": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control176_5P4c5r"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -386,7 +432,8 @@
         "control175_1M6XhJ",
         "control177_bBagM5",
         "control194_5odUNo",
-        "control195_PfHTUb"
+        "control195_PfHTUb",
+        "control176_5P4c5r"
       ],
       "anchors": [
         "control169_yoMlRP"
@@ -654,6 +701,21 @@
               ]
             }
           ]
+        },
+        {
+          "id": "uiControl155_4SZZPW",
+          "controlId": "control176_5P4c5r",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl155_4SZZPW",
+                "onGetTemplate": "getTemplate_uiControl155_4SZZPW"
+              }
+            }
+          }
         }
       ]
     }
