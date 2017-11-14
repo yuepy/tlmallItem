@@ -16,7 +16,7 @@
     "needToFreeFlow": "../needToFreeFlow/index.json",
     "innerCommunicationApproval": "../innerCommunicationApproval/index.json",
     "docApprovalList": "../docApprovalList/index.json",
-    "ITdevice": "../ITdevice/index.json"
+    "sendDocProcess": "../sendDocProcess/index.json"
   },
   "chineseName": "01合同会签流程",
   "description": "",
@@ -524,8 +524,8 @@
           "toModelId": "docApprovalList"
         },
         {
-          "toContextId": "context27_9Sl7Af",
-          "toModelId": "ITdevice"
+          "toContextId": "context27_OsmsHc",
+          "toModelId": "sendDocProcess"
         }
       ]
     },
@@ -536,6 +536,10 @@
       "toContexts": [
         {
           "toContextId": "context4_ktABGz"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
         }
       ]
     },
