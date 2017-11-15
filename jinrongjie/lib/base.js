@@ -109,9 +109,11 @@
             }
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
+                  debugger;
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
                     aWin.parent.close();
+                    aWin.close();
                 }
             }
             if ((aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
@@ -153,13 +155,19 @@
             }
             if (aWin.addObjectToSelect) {
                 aWin.addObjectToSelect = function(obj, str) {
+                  debugger;
                     if (obj.tagName != "SELECT") return;
                     var oOption = doc.createElement("OPTION");
-                    obj.options.add(oOption);
-                    $(oOption).val(str.split("~")[0]);
-                    $(oOption).text(str.split("~")[1]);
-                    console.log(str.split("~")[1])
-                    $(oOption).html(str.split("~")[1]);
+                  	var value = doc.createTextNode(str.split('~')[0]);
+                  	var text = doc.createTextNode(str.split('~')[1]);
+                  	oOption.appendChild(text);
+                  	oOption.value = str.split('~')[0];
+                  	obj.appendChild(oOption);
+                    // obj.options.add(oOption);
+                    // $(oOption).val(str.split("~")[0]);
+                    // $(oOption).createTextNode(str.split("~")[1]);
+                    // console.log(str.split("~")[1])
+                    // $(oOption).html(str.split("~")[1]);
 
                 }
             }
@@ -246,6 +254,15 @@
             //   debugger;
             // }
 
+          // 测试
+          
+          // aWin.returnValue
+          
+          
+          // 测试结束
+          
+          
+          
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
                 var actionEvent = '{"target":"null","data":"getTokenURl"}';
@@ -409,6 +426,9 @@
     /* 调用场景 : 页面返回. */
     function _back(type) {
         if (typeof type === 'string') {
+          	if(typeof type === 'string' && type == 'frameClose'){
+              window.parent.EAPI.back();
+            }
             if (window.parent.EAPI.isAndroid() || window.parent.EAPI.isStudio()) {
                 ysp.appMain.back();
             } else {
