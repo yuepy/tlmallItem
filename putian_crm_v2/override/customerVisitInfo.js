@@ -2294,6 +2294,9 @@
             $('.customersign-unactive').unbind().on('click', function() {
                 iframeUtils.hideSecondIframe();
             });
+          	$("#csLongitude").val(data.longitude);
+            $("#csLatitude").val(data.latitude);
+            $("#csAddress").val(data.address);
             if (data.clickType[0] == "false") {
                 //签到不可用
                 $(".customersign-active").remove();
@@ -2311,9 +2314,9 @@
                 //签到可用
                 inintPageHtmlFn();
                 initMap();
-                $("#csLongitude").val(data.longitude);
-                $("#csLatitude").val(data.latitude);
-                $("#csAddress").val(data.address);
+                // $("#csLongitude").val(data.longitude);
+                // $("#csLatitude").val(data.latitude);
+                // $("#csAddress").val(data.address);
                 //签到
                 $(".customersign-active").unbind('click').on('click', function() {
                     if ($("#address").html() == "") {
