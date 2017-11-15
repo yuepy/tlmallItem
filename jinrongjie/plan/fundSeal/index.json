@@ -55,7 +55,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('印章使用审批流程') !==-1||elem.textContent.indexOf('资金调拨审批流程') !==-1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('印章使用审批流程') !==-1||elem.textContent.indexOf('资金调拨审批流程') !==-1||elem.textContent.indexOf('机关工会支出审批流程') !==-1){return true;}return false;"
     },
     "control161_DAx502": {
       "location": {
@@ -312,6 +312,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[10]/td[2]/table/tbody/tr[2]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[2]"
             }
           ],
           "force": true
@@ -350,6 +354,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[10]/td[2]/table/tbody/tr[3]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[3]"
             }
           ],
           "force": true
@@ -385,6 +393,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[10]/td[2]/table/tbody/tr[4]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[4]"
             }
           ],
           "force": false
@@ -1039,7 +1051,8 @@
           "test001",
           "1-资金调拨审批流程-张济天-2017-11-13",
           "test006",
-          "1-资金调拨审批流程-张济天-2017-11-14"
+          "1-资金调拨审批流程-张济天-2017-11-14",
+          "test008"
         ]
       }
     },
@@ -1052,7 +1065,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321619&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321622&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330438&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330436&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330436&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339247&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
