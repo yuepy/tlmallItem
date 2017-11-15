@@ -116,6 +116,49 @@
                     aWin.close();
                 }
             }
+//           if(aWin.location.href.indexOf('MutiResourceBrowser.jsp') !== -1){
+//             aWin.templateOperation = function(datas,e){
+//               valFiled=$(e.srcElement||e.target).next();
+//               if (datas&&datas.id!=""&&datas.id!=0){
+//                 var resourceids = datas.id;
+//                 var sHtml = "";
+//                 ids=resourceids.split(",");
+//                 var tags=new Array();
+//                 for(var tag in datas){
+//                   tags.push(tag);
+//                 }
+//                 for(var i=0;i<ids.length;i++){
+//                   if(ids[i]=="") continue;
+//                   curHtml=opts._displayTemplate;
+//                   for(var j=0;j<tags.length;j++){
+//                     curHtml=curHtml.replace(new RegExp("(#b{"+tags[j]+"})","g"),datas[tags[j]].split(",")[i]);
+//                   }
+//                   sHtml += " "+curHtml;
+//                 }
+//                 $(valFiled).next().html(sHtml);
+
+//                 if(resourceids!=""&&resourceids.charAt(0)==","){
+//                    resourceids=resourceids.substr(1);
+//                 }
+//                 valFiled.val(resourceids);
+//               }
+//               else if(datas){	
+
+//                 valFiled.val("");
+//                 if(opts._required=="yes"){
+//                   $(valFiled).next().html("<img align='absMiddle' src='/images/BacoError.gif'/>");
+//                 }else{
+//                   $(valFiled).next().html("");
+//                 }
+//               };
+//             };
+//             aWin.btnok_onclick = function(){
+//                aWin.setResourceStr();
+//                aWin.replaceStr();
+//                aWin.parent.parent.templateOperation = {id:aWin.resourceids,name:aWin.resourcenames};
+//                aWin.parent.parent.close();
+//             }
+//           }
             if ((aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
