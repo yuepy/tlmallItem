@@ -271,6 +271,16 @@
     getTemplate_uiControl73_hrdinf: function getTemplate_uiControl73_hrdinf() {
       var selfTemplate = 'module.exports = React.createClass({\n  textarea:function(e){\n    console.log(this.props.customData)\n    var _this=this;\n    var handler=_this.props.customHandler;\n    if(handler){\n      handler({\n        data:e.target.innerHTML,\n        eventType:"change"\n      })\n    }\n  },\n  render: function() {\n    var _this=this;\n    return (\n       <div className="ysp_sign_wrapper">\n          <div className="ysp_askForLeave_title">\u7B7E\u5B57\u610F\u89C1</div>\n          <div contentEditable=\'true\' dangerouslySetInnerHTML = {{__html: _this.props.customData}} onBlur = {_this.textarea} style={{height:"100px"}}></div>\n      </div>\n\n    )\n  }\n});\n';
       return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  textarea: function textarea(e) {\n    console.log(this.props.customData);\n    var _this = this;\n    var handler = _this.props.customHandler;\n    if (handler) {\n      handler({\n        data: e.target.innerHTML,\n        eventType: "change"\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n    return React.createElement(\n      "div",\n      { className: "ysp_sign_wrapper" },\n      React.createElement(\n        "div",\n        { className: "ysp_askForLeave_title" },\n        "\\u7B7E\\u5B57\\u610F\\u89C1"\n      ),\n      React.createElement("div", { contentEditable: "true", dangerouslySetInnerHTML: { __html: _this.props.customData }, onBlur: _this.textarea, style: { height: "100px" } })\n    );\n  }\n});';
+    },
+    getData_control19_fbrWKF: function (elem) {
+      if (!elem) {
+        return;
+      }
+    },
+    doAction_uiControl19_nBNtHt: function (data, elem) {},
+    getTemplate_uiControl19_nBNtHt: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div>\n        \u81EA\u5B9A\u4E49\u7EC4\u4EF6\u7528\u6765\u9002\u914D\u57FA\u672C\u7EC4\u4EF6\u65E0\u6CD5\u9002\u914D\u7684\u9875\u9762\u5143\u7D20\uFF0C\u60A8\u53EF\u4EE5\u901A\u8FC7\u53F3\u952E\u6253\u5F00\u8BE5\u81EA\u5B9A\u4E49\u7EC4\u4EF6\u7F16\u8F91\u5668\u8FDB\u884C\u7F16\u8F91\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      null,\n      \"\\u81EA\\u5B9A\\u4E49\\u7EC4\\u4EF6\\u7528\\u6765\\u9002\\u914D\\u57FA\\u672C\\u7EC4\\u4EF6\\u65E0\\u6CD5\\u9002\\u914D\\u7684\\u9875\\u9762\\u5143\\u7D20\\uFF0C\\u60A8\\u53EF\\u4EE5\\u901A\\u8FC7\\u53F3\\u952E\\u6253\\u5F00\\u8BE5\\u81EA\\u5B9A\\u4E49\\u7EC4\\u4EF6\\u7F16\\u8F91\\u5668\\u8FDB\\u884C\\u7F16\\u8F91\"\n    );\n  }\n});";
     }
   });
 })(window, ysp);

@@ -521,6 +521,36 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control19_fbrWKF": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              21
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control19_fbrWKF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -532,7 +562,8 @@
         "control72_kANAED",
         "control63_xKq6K5",
         "control82_Oe1sOv",
-        "control84_nadrbI"
+        "control84_nadrbI",
+        "control19_fbrWKF"
       ],
       "anchors": [
         "control79_xTNUQB"
@@ -766,6 +797,21 @@
           ]
         },
         {
+          "id": "uiControl19_nBNtHt",
+          "controlId": "control19_fbrWKF",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl19_nBNtHt",
+                "onGetTemplate": "getTemplate_uiControl19_nBNtHt"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl64_5FfLQe",
           "display": {
             "type": "sticky",
@@ -815,7 +861,8 @@
           "",
           "请假/公出流程(新)-张济天-2017-04-13",
           "未考勤申报审批流程（新）-张济天-2017-10-20",
-          "请假/公出流程(新)-张济天-2017-10-18"
+          "请假/公出流程(新)-张济天-2017-10-18",
+          "请假/公出流程(新)-张济天-2017-11-10"
         ]
       }
     },
@@ -828,7 +875,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118165&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=180695&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162836&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162835&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162835&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312801&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context10_sJa5NJ": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
