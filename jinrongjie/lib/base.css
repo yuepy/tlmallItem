@@ -204,6 +204,9 @@ li {
   background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
 }
+.ysp-manager-audit-title-icon .full-space-span {
+  width: 100%;
+}
 .ysp-manager-audit-title-icon-top {
   margin: 40px 0 0 0 ;
 }
@@ -1871,6 +1874,15 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
   color: #c29a2a;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title > span,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title > span {
+  width: 16px;
+  height: 16px;
+  float: right;
+  margin-top: 5px;
+  background: url("../lib/images/upload-files.png") no-repeat;
+  background-size: 15px;
+}
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
   background: url("../lib/images/！@2x.png") no-repeat;
@@ -2243,6 +2255,24 @@ div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_title .num {
   font-size: 16px;
   text-align: center;
   padding-bottom: 5px;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .select_disable {
+  color: #ddd;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .fileDown .word {
+  overflow: hidden;
+  margin-bottom: 5px;
+  padding: 5px 0 5px 20px;
+  background: #EDEDED url("../lib/images/默认文档1x.png") no-repeat;
+  background-size: 15px;
+  background-position: 2px 8px;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .fileDown .word .delete {
+  background: url("../lib/images/删除.png") no-repeat;
+  float: right;
+  width: 15px;
+  height: 15px;
+  margin-top: 5px;
 }
 div[data-ysp-modelid="fundSeal"] .ysp-manager-audit-title-icon {
   border-top: 10px solid #f4f4f4;
@@ -3420,6 +3450,34 @@ div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeio
   display: inline;
 }
 div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+  border-bottom: 3px solid #C29A2A;
+  color: #C29A2A;
+  padding: 3px 0;
+}
+div[data-ysp-modelid='sendDocProcess'] ._2YwloE7OzAhaMwSn1XM-Va {
+  border-bottom: 0;
+}
+div[data-ysp-modelid='sendDocProcess'] ._2YwloE7OzAhaMwSn1XM-Va > div {
+  padding: 0;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  margin: 0;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+  margin-top: 40px;
+  background: #fff;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
+  height: 35px;
+  line-height: 35px;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+  width: auto;
+  display: inline;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
   border-bottom: 3px solid #C29A2A;
   color: #C29A2A;
   padding: 3px 0;
