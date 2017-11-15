@@ -2,7 +2,7 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control31_MQw3uc: function getData_control31_MQw3uc(elem) {
+    getData_control31_MQw3uc: function (elem) {
       var data = { search: { inputValue: [] }, status: [], title: [], content1: [], content2: [], content3: [], thead: ['姓名', '岗位', "部门"], display_status: [] }; //style={{color:'rgb(194,154,42)'}}
       if (elem.contentDocument.getElementById("oTable1")) {
         var elem1 = elem.contentDocument.getElementById("oTable1");if (/bgdark/.test($(elem1).find("#oTDtype_0").attr('background'))) {
@@ -36,8 +36,7 @@
             var search = $(elem2).find("#SearchForm").children(".ViewForm")[0];data.search.inputValue.push($(search).find("input[name='lastname']")[0].value);
           }
         }if ($(elem1).find("#frame2").length > 0) {
-          var elem3 = $(elem1).find("#frame2")[0].contentDocument.body;
-          if ($(elem3).find("table").length > 0) {
+          var elem3 = $(elem1).find("#frame2")[0].contentDocument.body;if ($(elem3).find("table").length > 0) {
             var Tbody = $(elem3).find("table").children("tbody")[0]; //显示无账号人员
             if ($(Tbody).children(".DataHeader").length == 0) {
               var tr0 = $(Tbody).children("tr").eq(0)[0];var tr1 = $(Tbody).children("tr").eq(1)[0];var tr3 = $(Tbody).children("tr").eq(3)[0]; //人员表格
@@ -49,8 +48,7 @@
                 }
               }if ($(tr1).children("td").eq(0).find('option').length > 0) {
                 $(tr1).children("td").eq(0).find('option').each(function () {
-                  var arr1 = [];
-                  if ($(this)[0].selected == true) {
+                  var arr1 = [];if ($(this)[0].selected == true) {
                     arr1.push({ text: $(this).text(), selected: 'true' });
                   } else if ($(this)[0].selected == false) {
                     arr1.push({ text: $(this).text(), selected: 'false' });
@@ -73,7 +71,7 @@
           }
         }
       }return data;
-    }, doAction_uiControl42_lcGQHl: function doAction_uiControl42_lcGQHl(data, elem) {
+    }, doAction_uiControl42_lcGQHl: function (data, elem) {
       if (data.eventType == 'selectPerson') {
         //debugger;
         var id = data.dataCustom;if (elem.contentDocument.getElementById("oTable1")) {
@@ -148,8 +146,7 @@
       }if (data.eventType == 'name') {
         var val = data.dataCustom;if (elem.contentDocument.getElementById("oTable1")) {
           var elem1 = elem.contentDocument.getElementById("oTable1");if ($(elem1).find("#frame1").length > 0) {
-            var elem2 = $(elem1).find("#frame1")[0].contentDocument.body;
-            if ($(elem2).find("#SearchForm").length > 0 && $(elem2).find("#SearchForm").children(".ViewForm").length > 0) {
+            var elem2 = $(elem1).find("#frame1")[0].contentDocument.body;if ($(elem2).find("#SearchForm").length > 0 && $(elem2).find("#SearchForm").children(".ViewForm").length > 0) {
               var search = $(elem2).find("#SearchForm").children(".ViewForm")[0];if ($(search).find("input[name='lastname']").length > 0) {
                 $(search).find("input[name='lastname']").prop("value", val);
               }

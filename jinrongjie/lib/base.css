@@ -204,6 +204,9 @@ li {
   background: url(images/arrow-right.png) no-repeat;
   background-position-y: 50%;
 }
+.ysp-manager-audit-title-icon .full-space-span {
+  width: 100%;
+}
 .ysp-manager-audit-title-icon-top {
   margin: 40px 0 0 0 ;
 }
@@ -1167,6 +1170,14 @@ li {
 }
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li a {
   color: #aaa;
+  font-size: 14px;
+}
+.ysp-list-content .ysp-list-card .ysp-list-card-ul li .ysp-list-card-content-img {
+  display: inline-block;
+  height: 20px;
+  background: url('images/new@2x.png') no-repeat;
+  width: 40px;
+  background-position-y: 5px;
 }
 .ysp-list-search {
   margin: 42px 0 0 0;
@@ -1695,6 +1706,9 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
   color: #C29A2A;
   padding: 3px;
 }
+.box_select {
+  margin: 40px 0 0 0 ;
+}
 .box_select .people3 {
   margin: 10px;
 }
@@ -1762,6 +1776,7 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
 .box_select .tree_box > div .bord .zjt {
   background: url(../local/img/zuojiantou.png) no-repeat 0;
   background-size: 20px;
+  transform: rotate(180deg);
 }
 .box_select .people_box {
   padding: 0 10px;
@@ -1859,6 +1874,15 @@ div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
   color: #c29a2a;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title > span,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title > span {
+  width: 16px;
+  height: 16px;
+  float: right;
+  margin-top: 5px;
+  background: url("../lib/images/upload-files.png") no-repeat;
+  background-size: 15px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unwrite {
@@ -2219,19 +2243,37 @@ div[data-ysp-modelid='postName'] .ysp_jobStation_table .content .rows span:first
 div[data-ysp-modelid="fundSeal"] .ysp-header-wrapper span:nth-child(3) {
   display: none;
 }
-div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_title {
+div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_topTitle {
   background: #fff;
 }
-div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_title .topTitle {
+div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_topTitle .topTitle {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   padding: 5px 0;
 }
-div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_title .num {
+div[data-ysp-modelid="fundSeal"] .ysp_fundSeal_topTitle .num {
   font-size: 16px;
   text-align: center;
   padding-bottom: 5px;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .select_disable {
+  color: #ddd;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .fileDown .word {
+  overflow: hidden;
+  margin-bottom: 5px;
+  padding: 5px 0 5px 20px;
+  background: #EDEDED url("../lib/images/默认文档1x.png") no-repeat;
+  background-size: 15px;
+  background-position: 2px 8px;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .fileDown .word .delete {
+  background: url("../lib/images/删除.png") no-repeat;
+  float: right;
+  width: 15px;
+  height: 15px;
+  margin-top: 5px;
 }
 div[data-ysp-modelid="fundSeal"] .ysp-manager-audit-title-icon {
   border-top: 10px solid #f4f4f4;
@@ -3431,6 +3473,7 @@ div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeio
   color: #C29A2A;
   padding: 3px 0;
 }
+<<<<<<< HEAD
 .ysp_table_office_lfj2 .office_apply_box ul {
   margin: 10px 15px 10px 0;
   background: #EDEDED;
@@ -3728,4 +3771,33 @@ div[data-ysp-modelid='docApprovalList'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeio
   background: url(../local/img/search.png) no-repeat 0;
   border: 0;
   background-size: 20px;
+=======
+div[data-ysp-modelid='sendDocProcess'] ._2YwloE7OzAhaMwSn1XM-Va {
+  border-bottom: 0;
+}
+div[data-ysp-modelid='sendDocProcess'] ._2YwloE7OzAhaMwSn1XM-Va > div {
+  padding: 0;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  margin: 0;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+  margin-top: 40px;
+  background: #fff;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
+  height: 35px;
+  line-height: 35px;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+  width: auto;
+  display: inline;
+}
+div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+  border-bottom: 3px solid #C29A2A;
+  color: #C29A2A;
+  padding: 3px 0;
+>>>>>>> 0ab77a0053283eb79a1374fb80e576144881cb5e
 }

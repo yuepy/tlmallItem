@@ -233,6 +233,7 @@ li {list-style: none}
     background: url(images/arrow-right.png) no-repeat;
     background-position-y: 50%;
   }
+  .full-space-span{width: 100%;}
 }
 .ysp-manager-audit-title-icon-top{
   margin:40px 0 0 0 ;
@@ -1169,14 +1170,22 @@ li {list-style: none}
       }
     }
     .ysp-list-card-ul{
-      li{
+      li{        
         height: 40px;
         line-height:40px;
         border-bottom:1px solid #eee;
         margin-left:20px;
         a{
           color:#aaa;
-        }
+          font-size:14px;
+        } 
+        .ysp-list-card-content-img{
+          	display: inline-block;
+          	height: 20px;
+            background: url('images/new@2x.png') no-repeat;  
+          	width: 40px;
+    				background-position-y: 5px;
+      	}
       }
     }
   }
@@ -1748,6 +1757,7 @@ div[data-ysp-modelid='choosePerson']{
   }
 }
 .box_select{
+  margin:40px 0 0 0 ;
   .people3{
     margin: 10px;
     li{
@@ -1812,6 +1822,7 @@ div[data-ysp-modelid='choosePerson']{
         .zjt{
           background: url(../local/img/zuojiantou.png) no-repeat 0;
           background-size: 20px;
+          transform: rotate(180deg);
         }
       }
     }
@@ -1924,6 +1935,14 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal']{
         border-bottom: 1px solid #f4f4f4;
         .row_title{
           color: #c29a2a;
+          >span{
+            width: 16px;
+            height: 16px;
+            float: right;
+            margin-top: 5px;
+            background: url("../lib/images/upload-files.png") no-repeat;
+            background-size:15px; 
+          }
         }
         .unwrite{
             background: url("../lib/images/！@2x.png") no-repeat;
@@ -2267,7 +2286,7 @@ div[data-ysp-modelid="fundSeal"]{
       display: none;
     }
   }
-  .ysp_fundSeal_title{
+  .ysp_fundSeal_topTitle{
     background: #fff;
     .topTitle{//大标题
       font-size: 18px;
@@ -2279,6 +2298,32 @@ div[data-ysp-modelid="fundSeal"]{
       font-size:16px;
       text-align: center;
     	padding-bottom: 5px;
+    }
+  }
+  .ysp_detail_wrapper{
+    .ysp_detail{
+      .ysp_detail_row{
+        .select_disable{
+          color:#ddd;
+        }
+        .fileDown{
+          .word{
+            overflow: hidden;
+            margin-bottom: 5px;
+            padding: 5px 0 5px 20px;
+            background: #EDEDED url("../lib/images/默认文档1x.png") no-repeat;
+            background-size: 15px;
+            background-position: 2px 8px;
+            .delete{
+              background:url("../lib/images/删除.png") no-repeat;
+              float: right;
+              width: 15px;
+              height:15px;
+              margin-top: 5px;
+            }
+          }
+        }
+      }  
     }
   }
   .ysp-manager-audit-title-icon{
@@ -3488,6 +3533,32 @@ div[data-ysp-modelid='innerCommunicationApproval']{
   }
 }
 div[data-ysp-modelid='docApprovalList']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+    >div{padding: 0;}
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      margin-top: 40px;
+      background: #fff;
+      a,ul,li{height: 35px;line-height: 35px;}
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+div[data-ysp-modelid='sendDocProcess']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
     >div{padding: 0;}

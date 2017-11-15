@@ -109,11 +109,56 @@
             }
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
+                  debugger;
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
                     aWin.parent.close();
+                    aWin.close();
                 }
             }
+//           if(aWin.location.href.indexOf('MutiResourceBrowser.jsp') !== -1){
+//             aWin.templateOperation = function(datas,e){
+//               valFiled=$(e.srcElement||e.target).next();
+//               if (datas&&datas.id!=""&&datas.id!=0){
+//                 var resourceids = datas.id;
+//                 var sHtml = "";
+//                 ids=resourceids.split(",");
+//                 var tags=new Array();
+//                 for(var tag in datas){
+//                   tags.push(tag);
+//                 }
+//                 for(var i=0;i<ids.length;i++){
+//                   if(ids[i]=="") continue;
+//                   curHtml=opts._displayTemplate;
+//                   for(var j=0;j<tags.length;j++){
+//                     curHtml=curHtml.replace(new RegExp("(#b{"+tags[j]+"})","g"),datas[tags[j]].split(",")[i]);
+//                   }
+//                   sHtml += " "+curHtml;
+//                 }
+//                 $(valFiled).next().html(sHtml);
+
+//                 if(resourceids!=""&&resourceids.charAt(0)==","){
+//                    resourceids=resourceids.substr(1);
+//                 }
+//                 valFiled.val(resourceids);
+//               }
+//               else if(datas){	
+
+//                 valFiled.val("");
+//                 if(opts._required=="yes"){
+//                   $(valFiled).next().html("<img align='absMiddle' src='/images/BacoError.gif'/>");
+//                 }else{
+//                   $(valFiled).next().html("");
+//                 }
+//               };
+//             };
+//             aWin.btnok_onclick = function(){
+//                aWin.setResourceStr();
+//                aWin.replaceStr();
+//                aWin.parent.parent.templateOperation = {id:aWin.resourceids,name:aWin.resourcenames};
+//                aWin.parent.parent.close();
+//             }
+//           }
             if ((aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
@@ -153,13 +198,19 @@
             }
             if (aWin.addObjectToSelect) {
                 aWin.addObjectToSelect = function(obj, str) {
+                  debugger;
                     if (obj.tagName != "SELECT") return;
                     var oOption = doc.createElement("OPTION");
-                    obj.options.add(oOption);
-                    $(oOption).val(str.split("~")[0]);
-                    $(oOption).text(str.split("~")[1]);
-                    console.log(str.split("~")[1])
-                    $(oOption).html(str.split("~")[1]);
+                  	var value = doc.createTextNode(str.split('~')[0]);
+                  	var text = doc.createTextNode(str.split('~')[1]);
+                  	oOption.appendChild(text);
+                  	oOption.value = str.split('~')[0];
+                  	obj.appendChild(oOption);
+                    // obj.options.add(oOption);
+                    // $(oOption).val(str.split("~")[0]);
+                    // $(oOption).createTextNode(str.split("~")[1]);
+                    // console.log(str.split("~")[1])
+                    // $(oOption).html(str.split("~")[1]);
 
                 }
             }
@@ -246,6 +297,15 @@
             //   debugger;
             // }
 
+          // 测试
+          
+          // aWin.returnValue
+          
+          
+          // 测试结束
+          
+          
+          
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
                 var actionEvent = '{"target":"null","data":"getTokenURl"}';
@@ -265,7 +325,6 @@
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
-              debugger;
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.open("post", "http://192.168.200.121:8080/home/release/com.eibus.web.soap.Gateway.wcp", true);
                 xmlhttp.onreadystatechange = function() {
@@ -410,6 +469,9 @@
     /* 调用场景 : 页面返回. */
     function _back(type) {
         if (typeof type === 'string') {
+          	if(typeof type === 'string' && type == 'frameClose'){
+              window.parent.EAPI.back();
+            }
             if (window.parent.EAPI.isAndroid() || window.parent.EAPI.isStudio()) {
                 ysp.appMain.back();
             } else {
