@@ -87,7 +87,7 @@
         ysp.customHelper.secondMenu.toPlanByMenuName('客户信息录入', null, menuId);
         break;
       case "clientStoreCard":
-        ysp.customHelper.secondMenu.toPlanByMenuName('客户360', null, menuId);
+        ysp.customHelper.secondMenu.toPlanByMenuName('客户信息', null, menuId);
         break;
     }
   }
@@ -717,8 +717,8 @@
           saleReachYear: "年度销售达成",
           customerInformationFIll: "客户信息录入",
           HESInformationFill: "门店信息录入（HES）",
-          storeList: "门店360",
-          clientList: '客户360'
+          storeList: "门店信息",
+          clientList: '客户信息'
         };
         for (var key in this.menuMap) {
           if (this.menuMap.hasOwnProperty(key)) {
@@ -730,7 +730,7 @@
           dataPanel: ["库存查询", "分货查询", "产品上下架信息查询"],
           achievement: ["业绩总览", "月度销售达成", "年度销售达成"],
           customerIn: ["客户信息录入", "门店信息录入（HES）"],
-          clientStoreCard: ["客户360", "门店360"]
+          clientStoreCard: ["客户信息", "门店信息"]
         }
       },
       getMenuNames: function(parentMenuType) { //parentMenuType 相当于是modelId'
