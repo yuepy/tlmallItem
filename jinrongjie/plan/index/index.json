@@ -10,41 +10,6 @@
   "chineseName": "首页列表",
   "description": "",
   "controls": {
-    "control19_hJzhia": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 4,
-            "value": [
-              "descendant::TD[@id=\"leftBlockTd\"]//DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]",
-              "descendant::DIV[@id=\"leftmenucontainer\"]//DIV[@id=\"leftMenu\"]",
-              "descendant::DIV[@id=\"leftMenu\"]"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control19_hJzhia"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control7_thluKe": {
       "location": {
         "data": {
@@ -130,6 +95,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -159,7 +128,6 @@
   "contexts": {
     "context1_yeQcpw": {
       "controls": [
-        "control19_hJzhia",
         "control7_thluKe",
         "control202_Gigr6R"
       ],
@@ -176,20 +144,6 @@
         {
           "toContextId": "context1_yeQcpw",
           "toModelId": "index"
-        }
-      ]
-    },
-    "flow12_PsmPix": {
-      "fromContextId": "context1_yeQcpw",
-      "fromAction": "doAction",
-      "fromControlId": "control19_hJzhia",
-      "toContexts": [
-        {
-          "toContextId": "context1_yeQcpw"
-        },
-        {
-          "toContextId": "context2_owrLEy",
-          "toModelId": "waitTodo"
         }
       ]
     },
@@ -223,21 +177,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl7_fXZ26L",
                 "onGetTemplate": "getTemplate_uiControl7_fXZ26L"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl19_TuJ8uo",
-          "controlId": "control19_hJzhia",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl19_TuJ8uo",
-                "onGetTemplate": "getTemplate_uiControl19_TuJ8uo"
               }
             }
           }

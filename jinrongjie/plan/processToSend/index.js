@@ -122,6 +122,16 @@
     getTemplate_uiControl52_oXDrxJ: function getTemplate_uiControl52_oXDrxJ() {
       var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div className=\"background-gray\"></div>\n    )\n  }\n});";
       return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    return React.createElement(\"div\", { className: \"background-gray\" });\n  }\n});";
+    },
+    getData_control207_sku89v: function (elem) {},
+    doAction_uiControl189_wN5iH2: function (data, elem) {
+      if (data.eventType == 'click') {
+        ysp.customHelper.openWin();
+      }
+    },
+    getTemplate_uiControl189_wN5iH2: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div onClick={(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:'click'\n            })\n          }\n        }}>\n        \u6D4B\u8BD5opener - \u4F20\u503C\u662F\u5426\u6210\u529F\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      'div',\n      { onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'click'\n            });\n          }\n        } },\n      '\\u6D4B\\u8BD5opener - \\u4F20\\u503C\\u662F\\u5426\\u6210\\u529F'\n    );\n  }\n});";
     }
   });
 })(window, ysp);
