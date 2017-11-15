@@ -3,6 +3,10 @@
   "id": "sendDocProcess",
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215924&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+  },
   "chineseName": "集团党口发文流程-审批",
   "description": "集团党口发文流程-审批",
   "controls": {
@@ -291,6 +295,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -311,6 +319,10 @@
       "location": {
         "data": {
           "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -333,6 +345,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -354,6 +370,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -374,6 +394,10 @@
       "location": {
         "data": {
           "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -439,6 +463,34 @@
       "toContexts": [
         {
           "toContextId": "context27_OsmsHc"
+        }
+      ]
+    },
+    "flow120_iSKdKW": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control206_3XTiqD",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
+        }
+      ]
+    },
+    "flow121_vLhOUc": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control205_Ke8Bum",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     }
@@ -667,6 +719,10 @@
         "context27_OsmsHc": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215924&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215920&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },
