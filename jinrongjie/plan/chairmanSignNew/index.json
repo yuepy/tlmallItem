@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=162&isagent=0&beagenter=0",
   "jsFile": "index.js",
   "requires": {
-    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
   },
   "chineseName": "创建-公文审批-董事长签核",
   "description": "公文审批-董事长签核",
@@ -413,6 +414,10 @@
       "toContexts": [
         {
           "toContextId": "context19_zoXJgw"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     },

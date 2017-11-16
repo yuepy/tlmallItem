@@ -234,7 +234,7 @@ li {
   color: #D1C090;
 }
 .ysp-manager-audit-wrapper > div .content {
-  font-size: 16px;
+  font-size: 0.92rem;
 }
 .ysp-manager-audit-wrapper .annex-download {
   background: #EDEDED url(../local/img/txt.png) no-repeat;
@@ -301,6 +301,16 @@ li {
 .ysp-manager-audit-wrapper .emergency-level-div .activeSpan {
   color: #A1E05E;
   border: 1px solid #A1E05E;
+}
+.ysp-manager-audit-wrapper .search-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url('images/Magnifier-card.png') no-repeat;
+  background-size: 15px;
+  background-position-x: 90%;
+  background-position-y: 50%;
+  float: right;
 }
 .ysp-manager-audit-header-tab {
   background: #fff;
@@ -1415,13 +1425,40 @@ div[data-ysp-modelid='hetong01'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsd
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu {
   padding: 0!important;
 }
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency .emergencyCheck {
+  float: right;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency .emergencyCheck span {
+  border: 1px solid #666;
+  color: #666;
+  border-radius: 10px;
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency .emergencyCheck .egyactive {
+  border: 1px solid #A1E15C;
+  color: #A1E15C;
+}
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box select {
   background: none;
   border: 0;
-  border-bottom: 1px solid #EDEDED;
+  border: 1px solid #E0E0E0;
   padding: 10px 0;
+  padding-left: 10px;
   color: #202020;
   font-size: 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: url(../local/img/xiajiantou.png) no-repeat 98% center;
+  background-size: 18px;
 }
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .header_box {
   padding: 10px 0;
@@ -2295,13 +2332,45 @@ div[data-ysp-modelid="fundSeal"] .ysp-manager-audit-title-icon {
   border-top: 10px solid #f4f4f4;
 }
 /********************************资金调拨和印章 end****************************/
+.ysp_table_lfj .ysp_emergency {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+.ysp_table_lfj .ysp_emergency .contentTitle {
+  color: #CFBC87;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.ysp_table_lfj .ysp_emergency .emergencyCheck {
+  float: right;
+}
+.ysp_table_lfj .ysp_emergency .emergencyCheck span {
+  border: 1px solid #666;
+  color: #666;
+  border-radius: 10px;
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.ysp_table_lfj .ysp_emergency .emergencyCheck .egyactive {
+  border: 1px solid #A1E15C;
+  color: #A1E15C;
+}
 .ysp_table_lfj select {
   background: none;
   border: 0;
-  border-bottom: 1px solid #EDEDED;
+  border: 1px solid #E0E0E0;
   padding: 10px 0;
+  padding-left: 10px;
   color: #202020;
   font-size: 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: url(../local/img/xiajiantou.png) no-repeat 98% center;
+  background-size: 18px;
 }
 .ysp_table_lfj .header_box {
   padding: 10px 0;
@@ -2585,6 +2654,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP {
 }
 div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
   background: #fff;
+  margin-top: 40px;
 }
 div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
 div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
