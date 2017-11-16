@@ -140,10 +140,12 @@ BiObject.prototype.setId = function(v) { this._id = v; };
 BiObject.prototype.getUserData = function() { return this._userData; };
 BiObject.prototype.setUserData = function(v) { this._userData = v; };
 _p.toHashCode = function() { return BiObject.toHashCode(this); };
-_p.dispose = function() { this._disposed = true;
+_p.dispose = function() {
+    this._disposed = true;
     delete this._userData;
     delete this._id;
-    this.dispose = Function.EMPTY; };
+    this.dispose = Function.EMPTY;
+};
 _p.disposeFields = function(fieldNames) {
     var fields = fieldNames instanceof Array ? fieldNames : arguments;
     var n, o, p;
@@ -261,8 +263,10 @@ _p.setHref = function(s) {
     else s = s.substring(this._scheme.length + 1);
     if (this._generic || this._scheme == "mailto" || this._scheme == "news") {
         ok = BiUri.regExps.user.test(s);
-        if (ok) { this._userInfo = RegExp.$1;
-            s = s.substring(this._userInfo.length + 1); }
+        if (ok) {
+            this._userInfo = RegExp.$1;
+            s = s.substring(this._userInfo.length + 1);
+        }
         if (this._scheme != "file" || s.charAt(0) != "/") {
             ok = BiUri.regExps.host.test(s);
             if (!ok)
@@ -271,8 +275,10 @@ _p.setHref = function(s) {
             s = s.substring(this._host.length);
         }
         ok = BiUri.regExps.port.test(s);
-        if (ok) { this._port = Number(RegExp.$1);
-            s = s.substring(RegExp.$1.length + 1); }
+        if (ok) {
+            this._port = Number(RegExp.$1);
+            s = s.substring(RegExp.$1.length + 1);
+        }
     }
     this._parsePathAndRest(s);
 };
@@ -307,9 +313,11 @@ _p._parsePathAndRest = function(s) {
         this._dirPath = RegExp.$1;
     }
     ok = BiUri.regExps.fragment.test(s);
-    if (ok) { this._fragment = RegExp.$1;
+    if (ok) {
+        this._fragment = RegExp.$1;
         s = s.substring(0, s.length - this._fragment.length - 1);
-        this._fragment = "#" + this._fragment.replace("#", "%23"); }
+        this._fragment = "#" + this._fragment.replace("#", "%23");
+    }
     this._query = s;
     s = s.substring(1);
     if (this._query != "") {
@@ -352,8 +360,10 @@ _p.getParam = function(sName) {
     return undefined;
 };
 _p.setParam = function(sName, sValue) { this._hrefCache = null; return this._params[sName] = [String(sValue)]; };
-_p.removeParam = function(sName) { this._hrefCache = null;
-    delete this._params[sName]; };
+_p.removeParam = function(sName) {
+    this._hrefCache = null;
+    delete this._params[sName];
+};
 _p.hasParam = function(sName) { return sName in this._params; };
 _p.getParams = function(sName) {
     if (sName in this._params)
@@ -377,17 +387,21 @@ _p.getQuery = function() {
             v = this._params[name][i];
             if (v == null)
                 sb2.push(encodeURIComponent(name));
-            else { sb3.push(encodeURIComponent(name), "=", encodeURIComponent(v));
-                sb2.push(sb3.join("")); }
+            else {
+                sb3.push(encodeURIComponent(name), "=", encodeURIComponent(v));
+                sb2.push(sb3.join(""));
+            }
         }
         sb.push(sb2.join("&"));
     }
     return (sb.length > 0 ? "?" + sb.join("&") : "");
 };
 
-function BiEvent(sType) { if (_biInPrototype) return;
+function BiEvent(sType) {
+    if (_biInPrototype) return;
     BiObject.call(this);
-    this._type = sType; }
+    this._type = sType;
+}
 _p = _biExtend(BiEvent, BiObject, "BiEvent");
 _p._bubbles = false;
 _p._propagationStopped = true;
@@ -400,22 +414,26 @@ _p.stopPropagation = function() { this._propagationStopped = true; };
 BiEvent.prototype.getPropagationStopped = function() { return this._propagationStopped; };
 _p.preventDefault = function() { this._defaultPrevented = true; };
 BiEvent.prototype.getDefaultPrevented = function() { return this._defaultPrevented; };
-_p.dispose = function() { BiObject.prototype.dispose.call(this);
+_p.dispose = function() {
+    BiObject.prototype.dispose.call(this);
     delete this._target;
     delete this._currentTarget;
     delete this._bubbles;
     delete this._propagationStopped;
-    delete this._defaultPrevented; };
+    delete this._defaultPrevented;
+};
 _p.getDefaultPrevented = function() { return this._defaultPrevented; };
 
 function BiMouseEvent() {};
 
 function BiKeyboardEvent() {};
 
-function BiEventTarget() { if (_biInPrototype) return;
+function BiEventTarget() {
+    if (_biInPrototype) return;
     BiObject.call(this);
     this._listeners = {};
-    this._listenersCount = 0; }
+    this._listenersCount = 0;
+}
 _p = _biExtend(BiEventTarget, BiObject, "BiEventTarget");
 _p.addEventListener = function(sType, fHandler, oObject) {
     if (typeof fHandler != BiObject.TYPE_FUNCTION)
@@ -448,16 +466,20 @@ _p._dispatchEvent = function(e) {
     if (this._listenersCount > 0 && (!(e instanceof BiMouseEvent) && !(e instanceof BiKeyboardEvent) || this.getIsEnabled())) {
         var fs = this._listeners[e.getType()];
         if (fs) {
-            for (var hc in fs) { var ho = fs[hc];
-                ho.handler.call(ho.object, e); }
+            for (var hc in fs) {
+                var ho = fs[hc];
+                ho.handler.call(ho.object, e);
+            }
         }
     }
     if (e._bubbles && !e._propagationStopped && this._parent && !this._parent._disposed) { this._parent._dispatchEvent(e); }
     delete e._currentTarget;
 };
 _p.setAttribute = function(sName, sValue, oParser) {
-    if (sName.substring(0, 2) == "on") { var type = sName.substring(2);
-        this.addEventListener(type, new Function("event", sValue), oParser); } else BiObject.prototype.setAttribute.call(this, sName, sValue, oParser);
+    if (sName.substring(0, 2) == "on") {
+        var type = sName.substring(2);
+        this.addEventListener(type, new Function("event", sValue), oParser);
+    } else BiObject.prototype.setAttribute.call(this, sName, sValue, oParser);
 };
 _p.dispose = function() {
     if (this._disposed) return;
@@ -479,9 +501,12 @@ BiXmlHttp.create = function() { return new BiXmlHttp(); };
 
 function BiXmlDocument() {
     if (_biInPrototype) return;
-    if (document.implementation && document.implementation.createDocument) { var doc = document.implementation.createDocument("", "", null);
+    if (document.implementation && document.implementation.createDocument) {
+        var doc = document.implementation.createDocument("", "", null);
         doc.addEventListener("load", function(e) { this.readyState = 4; }, false);
-        doc.readyState = 4; return doc; } else if (window.ActiveXObject) { return new ActiveXObject(BiXmlDocument._getActiveXName()); }
+        doc.readyState = 4;
+        return doc;
+    } else if (window.ActiveXObject) { return new ActiveXObject(BiXmlDocument._getActiveXName()); }
     throw new Error("Your browser does not support creating DOM documents at runtime");
 }
 BiXmlDocument.prototype = new Object;
@@ -489,10 +514,14 @@ BiXmlDocument.create = function() { return new BiXmlDocument(); };
 BiXmlDocument.getNamespaces = function(oNode) {
     if (oNode.nodeType != 9) { oNode = oNode.ownerDocument; }
     var res = {};
-    if (BiBrowserCheck.ie) { var s = oNode.getProperty("SelectionNamespaces");
-        s.replace(/(^|\s+)xmlns\:([^=]+)=(\"[^\"]*\")|(\'[^\']*\')($|\s+)/g, function(a0, a1, a2, a3, a4) { var urn = a3 || a4;
+    if (BiBrowserCheck.ie) {
+        var s = oNode.getProperty("SelectionNamespaces");
+        s.replace(/(^|\s+)xmlns\:([^=]+)=(\"[^\"]*\")|(\'[^\']*\')($|\s+)/g, function(a0, a1, a2, a3, a4) {
+            var urn = a3 || a4;
             urn = urn.substring(1, urn.length - 1);
-            res[a2] = urn; }); }
+            res[a2] = urn;
+        });
+    }
     return res;
 };
 BiXmlDocument.setNamespaces = function(oNode, oNamespaces) {
@@ -519,10 +548,16 @@ BiXmlDocument.removeNamespaces = function(oNode, oNamespaces) {
         for (var i = 0; i < prefix.length; i++) { for (var j = 0; j < suffix.length; j++) { try { o = new ActiveXObject(prefix[i] + type + suffix[j]); return prefix[i] + type + suffix[j]; } catch (ex) {}; } }
         throw new Error("Could not find an installed XML parser");
     };
-    BiXmlDocument._getActiveXName = function() { var s = f("DOMDocument");
-        this._getActiveXName = function() { return s; }; return s; };
-    BiXmlHttp._getActiveXName = function() { var s = f("XMLHTTP");
-        this._getActiveXName = function() { return s; }; return s; };
+    BiXmlDocument._getActiveXName = function() {
+        var s = f("DOMDocument");
+        this._getActiveXName = function() { return s; };
+        return s;
+    };
+    BiXmlHttp._getActiveXName = function() {
+        var s = f("XMLHTTP");
+        this._getActiveXName = function() { return s; };
+        return s;
+    };
 })();
 if (typeof ActiveXObject == "undefined" && typeof XMLHttpRequest != "undefined" && !XMLHttpRequest.____ALREADY_LOADED____) {
     (function() {
@@ -545,8 +580,10 @@ if (typeof ActiveXObject == "undefined" && typeof XMLHttpRequest != "undefined" 
             }
         };
         _p.__realLoad = _xmlDocPrototype.load;
-        _p.load = function(sUri) { this.readyState = 0;
-            this.__realLoad(sUri); };
+        _p.load = function(sUri) {
+            this.readyState = 0;
+            this.__realLoad(sUri);
+        };
         _p.loadXML = function(s) {
             var doc2 = (new DOMParser).parseFromString(s, "text/xml");
             while (this.hasChildNodes())
@@ -556,8 +593,17 @@ if (typeof ActiveXObject == "undefined" && typeof XMLHttpRequest != "undefined" 
             for (var i = 0; i < l; i++)
                 this.appendChild(this.importNode(cs[i], true));
         };
-        _p.setProperty = function(sName, sValue) { if (sName == "SelectionNamespaces") { this._selectionNamespaces = {}; var parts = sValue.split(/\s+/); var re = /^xmlns\:([^=]+)\=((\"([^\"]*)\")|(\'([^\']*)\'))$/; for (var i = 0; i < parts.length; i++) { re.test(parts[i]);
-                    this._selectionNamespaces[RegExp.$1] = RegExp.$4 || RegExp.$6; } } };
+        _p.setProperty = function(sName, sValue) {
+            if (sName == "SelectionNamespaces") {
+                this._selectionNamespaces = {};
+                var parts = sValue.split(/\s+/);
+                var re = /^xmlns\:([^=]+)\=((\"([^\"]*)\")|(\'([^\']*)\'))$/;
+                for (var i = 0; i < parts.length; i++) {
+                    re.test(parts[i]);
+                    this._selectionNamespaces[RegExp.$1] = RegExp.$4 || RegExp.$6;
+                }
+            }
+        };
         _p.__defineSetter__("onreadystatechange", function(f) {
             if (this._onreadystatechange)
                 this.removeEventListener("load", this._onreadystatechange, false);
@@ -573,13 +619,19 @@ if (typeof ActiveXObject == "undefined" && typeof XMLHttpRequest != "undefined" 
             var res = { errorCode: 0, filepos: 0, line: 0, linepos: 0, reason: "", srcText: "", url: "" };
             if (hasError) {
                 res.errorCode = -1;
-                try { res.srcText = this.getElementsByTagName("sourcetext")[0].firstChild.data;
-                    res.srcText = res.srcText.replace(/\n\-\^$/, ""); } catch (ex) { res.srcText = ""; }
-                try { var s = this.documentElement.firstChild.data; var re = /XML Parsing Error\:(.+)\nLocation\:(.+)\nLine Number(\d+)\,Column(\d+)/; var a = re.exec(s);
+                try {
+                    res.srcText = this.getElementsByTagName("sourcetext")[0].firstChild.data;
+                    res.srcText = res.srcText.replace(/\n\-\^$/, "");
+                } catch (ex) { res.srcText = ""; }
+                try {
+                    var s = this.documentElement.firstChild.data;
+                    var re = /XML Parsing Error\:(.+)\nLocation\:(.+)\nLine Number(\d+)\,Column(\d+)/;
+                    var a = re.exec(s);
                     res.reason = a[1];
                     res.url = a[2];
                     res.line = a[3];
-                    res.linepos = a[4]; } catch (ex) { res.reason = "Unknown"; }
+                    res.linepos = a[4];
+                } catch (ex) { res.reason = "Unknown"; }
             }
             return res;
         });
@@ -629,8 +681,13 @@ if (typeof ActiveXObject == "undefined" && typeof XMLHttpRequest != "undefined" 
             var xpRes = doc.evaluate(sExpr, this, nsRes2, 9, null);
             return xpRes.singleNodeValue;
         };
-        _p.transformNode = function(oXsltNode) { var doc = this.nodeType == 9 ? this : this.ownerDocument; var processor = new XSLTProcessor();
-            processor.importStylesheet(oXsltNode); var df = processor.transformToFragment(this, doc); return df.xml; };
+        _p.transformNode = function(oXsltNode) {
+            var doc = this.nodeType == 9 ? this : this.ownerDocument;
+            var processor = new XSLTProcessor();
+            processor.importStylesheet(oXsltNode);
+            var df = processor.transformToFragment(this, doc);
+            return df.xml;
+        };
         _p.transformNodeToObject = function(oXsltNode, oOutputDocument) {
             var doc = this.nodeType == 9 ? this : this.ownerDocument;
             var outDoc = oOutputDocument.nodeType == 9 ? oOutputDocument : oOutputDocument.ownerDocument;
@@ -655,13 +712,22 @@ if (typeof ActiveXObject == "undefined" && typeof XMLHttpRequest != "undefined" 
     })();
 }
 if (typeof ActiveXObject != "undefined") {
-    if (window.XMLHttpRequest) {} else { XMLHttpRequest = function() { return new ActiveXObject(BiXmlHttp._getActiveXName()); };
-        XMLHttpRequest.____ALREADY_LOADED____ = true; }
-    if (!window.DOMParser) { DOMParser = function() {};
-        DOMParser.prototype.parseFromString = function(s, mime) { var doc = new BiXmlDocument;
-            doc.loadXML(s); return doc; }; }
-    if (!window.XMLSerializer) { XMLSerializer = function() {};
-        XMLSerializer.prototype.serializeToString = function(n) { return n.xml; }; }
+    if (window.XMLHttpRequest) {} else {
+        XMLHttpRequest = function() { return new ActiveXObject(BiXmlHttp._getActiveXName()); };
+        XMLHttpRequest.____ALREADY_LOADED____ = true;
+    }
+    if (!window.DOMParser) {
+        DOMParser = function() {};
+        DOMParser.prototype.parseFromString = function(s, mime) {
+            var doc = new BiXmlDocument;
+            doc.loadXML(s);
+            return doc;
+        };
+    }
+    if (!window.XMLSerializer) {
+        XMLSerializer = function() {};
+        XMLSerializer.prototype.serializeToString = function(n) { return n.xml; };
+    }
 }
 
 function BiLauncher(sRootPath) {
@@ -701,8 +767,10 @@ _p.setAdfPath = function(s) {
     if (s == null || s == "") { this._errorMessage = BiLauncher.MISSING_ADF_ARGUMENT; return; }
     s = String(s);
     var re = /([\w]+)(?:\.[\w]+)?(?:$|\?)/;
-    if (re.test(s)) { this._adfName = RegExp.$1;
-        this._adfPath = s; } else { this._errorMessage = BiLauncher.ADF_ARGUMENT_PARSE_ERROR; }
+    if (re.test(s)) {
+        this._adfName = RegExp.$1;
+        this._adfPath = s;
+    } else { this._errorMessage = BiLauncher.ADF_ARGUMENT_PARSE_ERROR; }
 };
 _p.getAdfName = function() { return this._adfName; };
 _p.setAdfName = function(s) { this._adfName = s; };
@@ -754,17 +822,22 @@ _p.launch = function(sAdfPath, oArgs) {
     }
     adfName = this.getAdfName();
     args = this.getArguments();
-    if (/(^http\:)|(^https\:)|(^file\:)|(^\/)/.test(sAdfRelPath)) { adfPath = sAdfRelPath; } else { var curPath = document.location.href; var slashIndex = curPath.lastIndexOf("/");
+    if (/(^http\:)|(^https\:)|(^file\:)|(^\/)/.test(sAdfRelPath)) { adfPath = sAdfRelPath; } else {
+        var curPath = document.location.href;
+        var slashIndex = curPath.lastIndexOf("/");
         curPath = curPath.substring(0, slashIndex);
-        adfPath = curPath + "/" + sAdfRelPath; }
+        adfPath = curPath + "/" + sAdfRelPath;
+    }
     var uri = sRootPath + "bimain.html?Adf=" + encodeURIComponent(adfPath) + ";AdfName=" + adfName + (this._accessibilityMode ? ";accessibilityMode=true" : "") + ";Params=" + args.length;
     for (i = 0; i < args.length; i++) { uri += ";Param" + i + "=" + encodeURIComponent(args[i]); }
     var xmlHttp = new BiXmlHttp;
     xmlHttp.open("GET", adfPath, false);
     try { xmlHttp.send(null); } catch (ex) { this._errorMessage = BiLauncher.FILE_NOT_FOUND; return false; }
     var fs = /^file\:/.test(adfPath);
-    if (fs) { var s = String(xmlHttp.responseText).replace(/<\?xml[^\?]*\?>/, "");
-        xmlHttp.responseXML.loadXML(s); } else if (xmlHttp.status != 200) { this._errorMessage = xmlHttp.status + ": " + xmlHttp.statusText; return false; }
+    if (fs) {
+        var s = String(xmlHttp.responseText).replace(/<\?xml[^\?]*\?>/, "");
+        xmlHttp.responseXML.loadXML(s);
+    } else if (xmlHttp.status != 200) { this._errorMessage = xmlHttp.status + ": " + xmlHttp.statusText; return false; }
     if (xmlHttp.responseXML.parseError.errorCode != 0) { this._errorMessage = xmlHttp.responseXML.parseError.reason; return false; }
     var doc = xmlHttp.responseXML;
     var n = doc.selectSingleNode("/application/window | /Application/Window");
@@ -838,20 +911,33 @@ function biExec(sRootPath, sAdfRelPath, bUseCurrentWindow) {
     return ok;
 }
 
-function BiHashTable() { if (_biInPrototype) return;
+function BiHashTable() {
+    if (_biInPrototype) return;
     BiObject.call(this);
     this._hash = {};
     this._count = 0;
-    this._addCount = 0; }
+    this._addCount = 0;
+}
 _p = _biExtend(BiHashTable, BiObject, "BiHashTable");
-_p.add = function(key, val) { if (!this.hasKey(key)) { this._hash[key] = val;
+_p.add = function(key, val) {
+    if (!this.hasKey(key)) {
+        this._hash[key] = val;
         this._count++;
-        this._addCount++; } };
-_p.remove = function(key) { if (this.hasKey(key)) { delete this._hash[key];
-        this._count--; if (BiBrowserCheck.ie && this._addCount > this._count * 4) { this._recreate(); } } };
-_p.clear = function() { this._hash = {};
+        this._addCount++;
+    }
+};
+_p.remove = function(key) {
+    if (this.hasKey(key)) {
+        delete this._hash[key];
+        this._count--;
+        if (BiBrowserCheck.ie && this._addCount > this._count * 4) { this._recreate(); }
+    }
+};
+_p.clear = function() {
+    this._hash = {};
     this._count = 0;
-    this._addCount = 0; };
+    this._addCount = 0;
+};
 _p.item = function(key) {
     if (this.hasKey(key)) { return this._hash[key]; }
     return undefined;
@@ -875,13 +961,17 @@ _p._recreate = function() {
     this._addCount = this._count;
 };
 BiHashTable.prototype.getCount = function() { return this._count; };
-_p.dispose = function() { if (this._disposed) return;
+_p.dispose = function() {
+    if (this._disposed) return;
     BiObject.prototype.dispose.call(this);
-    delete this._hash; };
+    delete this._hash;
+};
 
-function BiXmlResourceParser() { if (_biInPrototype) return;
+function BiXmlResourceParser() {
+    if (_biInPrototype) return;
     BiXmlLoader.call(this);
-    this._componentsById = new BiHashTable; }
+    this._componentsById = new BiHashTable;
+}
 _p = _biExtend(BiXmlResourceParser, BiXmlLoader, "BiXmlResourceParser");
 _p._disposed = false;
 _p._autoNameMapping = false;
@@ -912,15 +1002,19 @@ BiXmlResourceParser.getClassFromNode = function(oNode) {
         newConstr.prototype = p;
         p.dispose();
         p._disposed = false;
-        p.dispose = function() { if (this.getDisposed()) return;
+        p.dispose = function() {
+            if (this.getDisposed()) return;
             constr.prototype.dispose.call(this);
             this._xmlResourceParser.dispose();
-            delete this._xmlResourceParser; };
+            delete this._xmlResourceParser;
+        };
         p.getComponentById = function(sId) { return this._xmlResourceParser.getComponentById(sId); };
         p.getXmlResourceParser = function() { return this._xmlResourceParser; };
         p.initialize = p.initialize || Function.EMPTY;
-        application.addEventListener("dispose", function() { newConstr = null;
-            oNode = null; });
+        application.addEventListener("dispose", function() {
+            newConstr = null;
+            oNode = null;
+        });
         return newConstr;
     }
     throw new Error("BiXmlResourceParser getClassFromNode. Cannot create object from \"" + oNode.tagName + "\"");
@@ -942,21 +1036,30 @@ _p.fromNode = function(oNode) {
     var tagName = oNode.localName || oNode.baseName;
     var o;
     var constr = window["Bi" + tagName] || window[tagName];
-    if (typeof constr == "function") { o = new constr;
+    if (typeof constr == "function") {
+        o = new constr;
         this.processAttributes(o, oNode);
-        this.processChildNodes(o, oNode); return o; }
+        this.processChildNodes(o, oNode);
+        return o;
+    }
     throw new Error("BiXmlResourceParser fromNode. Cannot create object from \"" + oNode.tagName + "\"");
 };
-_p._removeObject = function(o) { var id = o.getId();
-    this._componentsById.remove(id); if (this._autoNameMapping) { try { delete window[id]; } catch (ex) { window[id] = null; } } };
+_p._removeObject = function(o) {
+    var id = o.getId();
+    this._componentsById.remove(id);
+    if (this._autoNameMapping) { try { delete window[id]; } catch (ex) { window[id] = null; } }
+};
 _p._addObject = function(o, id) {
     this._componentsById.add(id, o);
     if (this._autoNameMapping) { window[id] = o; }
     var orgDispose = o.dispose;
     var oResParser = this;
-    o.dispose = function() { if (oResParser) oResParser._removeObject(this); if (orgDispose) orgDispose.call(this);
+    o.dispose = function() {
+        if (oResParser) oResParser._removeObject(this);
+        if (orgDispose) orgDispose.call(this);
         orgDispose = null;
-        oResParser = null; };
+        oResParser = null;
+    };
 };
 _p.processAttributes = function(o, oNode) {
     var attrs = oNode.attributes;
@@ -1033,8 +1136,10 @@ _p.dispose = function() {
     delete this._rootNode;
 };
 
-function BiSet() { if (_biInPrototype) return;
-    this._items = new BiHashTable; }
+function BiSet() {
+    if (_biInPrototype) return;
+    this._items = new BiHashTable;
+}
 _p = _biExtend(BiSet, BiObject, "BiSet");
 _p.add = function(o) { this._items.add(BiObject.toHashCode(o), o); };
 _p.remove = function(o) { this._items.remove(BiObject.toHashCode(o)); };
@@ -1042,10 +1147,12 @@ _p.contains = function(o) { return o && this._items.hasKey(BiObject.toHashCode(o
 _p.clear = function() { this._items.clear(); };
 _p.toArray = function() { return this._items.getValues(); };
 _p.getValues = function() { return this._items.getValues(); };
-_p.dispose = function() { if (this._disposed) return;
+_p.dispose = function() {
+    if (this._disposed) return;
     BiObject.prototype.dispose.call(this);
     this._items.dispose();
-    delete this._items; };
+    delete this._items;
+};
 
 function BiTimerManager() {
     if (_biInPrototype) return;
@@ -1103,33 +1210,44 @@ _p.start = function() {
     this._enabled = true;
     this._intervalHandle = window.setInterval(this.__ontick, this._interval);
 };
-_p.stop = function() { this._enabled = false;
+_p.stop = function() {
+    this._enabled = false;
     window.clearInterval(this._intervalHandle);
-    delete this._intervalHandle; };
+    delete this._intervalHandle;
+};
 _p._ontick = function() {
-    if (this._enabled) { var e = new BiEvent("tick");
+    if (this._enabled) {
+        var e = new BiEvent("tick");
         this.dispatchEvent(e);
         e.dispose();
-        application.flushLayoutQueue(); }
+        application.flushLayoutQueue();
+    }
 };
 _p.getIsStarted = function() {
     if (this._intervalHandle == null)
         return false;
     else return true;
 }
-_p.dispose = function() { if (this._disposed) return;
+_p.dispose = function() {
+    if (this._disposed) return;
     BiEventTarget.prototype.dispose.call(this);
     this.stop();
     (new BiTimerManager).remove(this);
     this.__ontick();
     delete this.__ontick;
-    delete this._interval; };
-BiTimer.callOnce = function(fun, time, obj) { var t = new BiTimer(time != null ? time : 1);
-    t.addEventListener("tick", function(e) { t.dispose();
+    delete this._interval;
+};
+BiTimer.callOnce = function(fun, time, obj) {
+    var t = new BiTimer(time != null ? time : 1);
+    t.addEventListener("tick", function(e) {
+        t.dispose();
         t = null;
         fun.call(obj, e);
-        obj = fun = null; }, obj);
-    t.start(); return t; };
+        obj = fun = null;
+    }, obj);
+    t.start();
+    return t;
+};
 
 function BiApplication() {
     if (_biInPrototype) return;
@@ -1192,9 +1310,11 @@ BiApplication.prototype.getAccessibilityMode = function() { return this._accessi
 BiApplication.prototype.setAccessibilityMode = function(v) { this._accessibilityMode = v; };
 _p.setAccessibilityMode = function(b) {
     var doneStartup = Boolean(this._window);
-    if (b && doneStartup && !this._accessibilityMode) { this._accessibilityMode = true;
+    if (b && doneStartup && !this._accessibilityMode) {
+        this._accessibilityMode = true;
         this._addAccessibilityPackage();
-        BiTimer.callOnce(function() { this._initAccessibilityForAll(this._window); }, 0, this); } else this._accessibilityMode = b || this._accessibilityMode && doneStartup;
+        BiTimer.callOnce(function() { this._initAccessibilityForAll(this._window); }, 0, this);
+    } else this._accessibilityMode = b || this._accessibilityMode && doneStartup;
 }
 _p._accessibilityDescription = null;
 _p._initAccessibilityForAll = function(c) {
@@ -1208,8 +1328,10 @@ BiApplication.prototype.setAccessibilityDescription = function(v) { this._access
 _p._autoNameMapping = false;
 BiApplication.prototype.getAutoNameMapping = function() { return this._autoNameMapping; };
 _p.setAutoNameMapping = function(b) {
-    if (this._autoNameMapping != b) { this._autoNameMapping = b;
-        this._adf.setAutoNameMapping(b); }
+    if (this._autoNameMapping != b) {
+        this._autoNameMapping = b;
+        this._adf.setAutoNameMapping(b);
+    }
 };
 _p._focusOnLoad = true;
 _p.getFocusOnLoad = function() { return this._focusOnLoad; };
@@ -1291,8 +1413,10 @@ _p._addAccessibilityPackage = function() {
 _p._onprogressstatus = function(e) {
     if (!this._resourceLoader || this._resourceLoader.getCount() == 0)
         this._loadStatus.setValue(5);
-    else { this._loadStatus.setValue(Math.max(5, Math.min(95, this._resourceLoader.getLoadedCount() / this._resourceLoader.getCount() * 100)));
-        this._progressStatus = this._getString("ApplicationLoadingResources", this._resourceLoader.getLoadedCount(), this._resourceLoader.getCount()); }
+    else {
+        this._loadStatus.setValue(Math.max(5, Math.min(95, this._resourceLoader.getLoadedCount() / this._resourceLoader.getCount() * 100)));
+        this._progressStatus = this._getString("ApplicationLoadingResources", this._resourceLoader.getLoadedCount(), this._resourceLoader.getCount());
+    }
     this._loadStatus.setText(this.getProgressStatus());
 };
 _p._onResourcesLoaded = function(e) {
@@ -1310,8 +1434,10 @@ _p._onResourcesLoaded2 = function() {
 };
 _p._onResourcesLoaded3 = function() {
     this.flushLayoutQueue();
-    if (application._loadStatus) { application._loadStatus.dispose();
-        delete application._loadStatus; }
+    if (application._loadStatus) {
+        application._loadStatus.dispose();
+        delete application._loadStatus;
+    }
     if (this._focusOnLoad) {
         try { window.focus(); } catch (ex) {}
     }
@@ -1324,8 +1450,10 @@ _p._onResourcesLoaded4 = function() {
     var argv = new Array(argc);
     for (var i = 0; i < argc; i++)
         argv[i] = uri.getParam("Param" + i);
-    if (window[appClassName] && typeof window[appClassName].main == "function") { window[appClassName].main.apply(window[appClassName], argv);
-        this.flushLayoutQueue(); }
+    if (window[appClassName] && typeof window[appClassName].main == "function") {
+        window[appClassName].main.apply(window[appClassName], argv);
+        this.flushLayoutQueue();
+    }
     this.dispatchEvent("load");
     this.flushLayoutQueue();
 };
@@ -1347,9 +1475,11 @@ _p.dispose = function() {
 _p.setAttribute = function(sName, sValue, oParser) {
     switch (sName) {
         case "defaultPackages":
-            this.setProperty(sName, sValue.split(/\s*,\s*/)); break;
+            this.setProperty(sName, sValue.split(/\s*,\s*/));
+            break;
         default:
-            BiEventTarget.prototype.setAttribute.apply(this, arguments); }
+            BiEventTarget.prototype.setAttribute.apply(this, arguments);
+    }
 };
 _p.flushLayoutQueue = function() {
     if (typeof BiComponent == BiObject.TYPE_FUNCTION) { BiComponent.flushLayoutQueue(); }
@@ -1364,9 +1494,13 @@ BiApplication.prototype.setInactivityTimeout = function(n) {
     n = Number(n) || 0;
     if (this._inactivityTimeout != n) {
         this._inactivityTimeout = n;
-        if (!this._inactivityTimer) { this._inactivityTimer = new BiTimer;
-            this._inactivityTimer.addEventListener("tick", function(e) { this._inactivityTimer.stop();
-                this.dispatchEvent("inactive"); }, this); }
+        if (!this._inactivityTimer) {
+            this._inactivityTimer = new BiTimer;
+            this._inactivityTimer.addEventListener("tick", function(e) {
+                this._inactivityTimer.stop();
+                this.dispatchEvent("inactive");
+            }, this);
+        }
         this._inactivityTimer.setInterval(60000 * n);
         if (n > 0)
             this._inactivityTimer.start();
@@ -1398,12 +1532,16 @@ application._packages_ie = { Launcher: ["js/BiXml.js", "js/BiBrowserCheck.js", "
 application._packages_moz = { Launcher: ["js/BiXml.js", "js/BiBrowserCheck.js", "js/BiCore.js"], Core: ["js/BiStringBuffer.js", "js/BiMouseEvent.js", "js/BiKeyboardEvent.js", "js/BiFocusEvent.js", "js/BiEventManager.js", "js/BiBorder.js", "js/BiComponent.js", "js/BiSort.js", "js/BiSvgComponent.js", "js/BiInlineComponent.js", "js/BiApplicationWindow.js", "js/BiFocusElementWrapper.js", "js/BiFocusManager.js", "js/BiFont.js", "js/BiImagePreloader.js", "js/BiImage.js", "js/BiLabel.js", "js/BiDragEvent.js", "js/BiDragAndDropManager.js", "js/BiPopupManager.js", "js/BiPopup.js", "js/BiToolTipManager.js", "js/BiToolTip.js", "js/BiJson.js", "js/BiTextParser.js", "js/BiL10nString.js"], Loaders: ["js/loaders/BiSerializedLoader.js", "js/loaders/BiObjectLoader.js", "js/loaders/BiJsonLoader.js", "js/loaders/BiResources.js", "js/loaders/BiScript.js", "js/loaders/BiScriptLoader.js", "js/loaders/BiCssLoader.js", "js/loaders/BiImageLoader.js", "js/loaders/BiStyle.js"], OlapGrid: ["js/olapgrid/BiOlapGridCellInfo.js", "js/olapgrid/BiOlapGridDropMarker.js", "js/olapgrid/BiOlapGridDragEvent.js", "js/BiAttachedComponentModel.js", "js/BiInlineEditModel.js", "js/olapgrid/BiOlapGrid.js", "js/olapgrid/BiOlapGridDataModel.js", "js/olapgrid/BiOlapGridResizeOutline.js", "js/olapgrid/BiArea.js", "js/olapgrid/BiOlapGridSelectionModel.js", "js/olapgrid/BiOlapGridStateManager.js", "js/olapgrid/BiOrderedIterator.js", "js/olapgrid/BiOlapGridViewManager.js"], Charting: ["js/chartingbase/BiGraphBase.js", "js/chartingbase/BiChartCategory.js", "js/chartingbase/BiChartSeries.js", "js/chartingbase/BiGridChart.js", "js/chartingbase/BiChartLegend.js", "js/chartingbase/BiChartPoint.js", "js/chartingbase/BiChartPresentation.js", "js/chartingbase/BiChartMouseEvent.js", "js/chartingbase/BiAbstractChartBase.js", "js/chartingbase/BiAbstractChartSectionBase.js", "js/chartingbase/BiChartValueAxisBase.js", "js/chartingbase/BiChartCategoryAxisBase.js", "js/chartingbase/BiChartAreaBase.js", "js/chartingbase/BiChartGridLinesBase.js", "js/chartingbase_svg/BiChartComponent.js", "js/chartingbase_svg/BiSvgGraphBase.js", "js/chartingbase_svg/BiSvgAbstractChartBase.js", "js/chartingbase_svg/BiSvgAbstractChartSectionBase.js", "js/chartingbase_svg/BiSvgChartValueAxisBase.js", "js/chartingbase_svg/BiSvgChartCategoryAxisBase.js", "js/chartingbase_svg/BiSvgChartAreaBase.js", "js/chartingbase_svg/BiSvgChartGridLinesBase.js", "js/charting2/BiChartArea2.js", "js/charting2/BiAbstractChart2.js", "js/charting2/BiAbstractChartSection2.js", "js/charting2/BiChartCategoryAxis2.js", "js/charting2/BiChartValueAxis2.js", "js/charting2/BiColumnChart2.js", "js/charting2/BiChartGridLines2.js", "js/charting2/BiGraph2.js", "js/charting_svg/BiSvgGraph.js", "js/charting_svg/BiSvgGraphContentArea.js", "js/charting_svg/BiSvgChartArea.js", "js/charting_svg/BiSvgChartValueAxis.js", "js/charting_svg/BiSvgChartCategoryAxis.js", "js/charting_svg/BiSvgChartGridLines.js", "js/charting_svg/BiSvgAbstractChart.js", "js/charting_svg/BiSvgAbstractChartSection.js", "js/charting_svg/BiSvgLineChart.js", "js/charting_svg/BiSvgColumnChart.js", "js/charting_svg/BiSvgPieChart.js", "js/charting_svg/BiSvgFill.js"], WebService2: ["js/webservice2/BiXmlDefinitionsDocument.js", "js/webservice2/BiWsdlDefinitionDictionary.js", "js/webservice2/BiSchemaError.js", "js/webservice2/BiSchemaType.js", "js/webservice2/BiSchemaSimpleContentType.js", "js/webservice2/BiSchemaPrimitiveTypes.js", "js/webservice2/BiSchemaWildcard.js", "js/webservice2/BiSchemaParticle.js", "js/webservice2/BiSchemaModelGroup.js", "js/webservice2/BiSchemaAllModelGroup.js", "js/webservice2/BiSchemaChoiceModelGroup.js", "js/webservice2/BiSchemaSequenceModelGroup.js", "js/webservice2/BiSchemaGroupDef.js", "js/webservice2/BiSchemaAttributeBag.js", "js/webservice2/BiSchemaAttrUse.js", "js/webservice2/BiSchemaSimpleType.js", "js/webservice2/BiSchemaComplexType.js", "js/webservice2/BiSchemaAttr.js", "js/webservice2/BiSchemaElement.js", "js/webservice2/BiSchemaGroupDef.js", "js/webservice2/BiSchemaAttrGroupDef.js", "js/webservice2/BiSchema.js", "js/webservice2/BiWebServiceError.js", "js/webservice2/BiWsdlProtocolInfoFactory.js", "js/webservice2/BiWsdlUtils.js", "js/webservice2/BiWsdlBinding.js", "js/webservice2/BiWsdlServicePort.js", "js/webservice2/BiWsdlService.js", "js/webservice2/BiWsdlPortType.js", "js/webservice2/BiWsdlBindingOperation.js", "js/webservice2/BiWsdlPortOperation.js", "js/webservice2/BiWsdlMessage.js", "js/webservice2/BiWsdlMessagePart.js", "js/webservice2/BiWsdl.js", "js/webservice2/BiWsdlSoapPortProtocolInfo.js", "js/webservice2/BiWsdlBindingOpSoapInfo.js", "js/webservice2/BiWsdlBindingSoapInfo.js", "js/webservice2/BiWsOpHandler.js", "js/webservice2/BiWsCallCompleteEvent.js", "js/webservice2/BiWebService2.js", "js/webservice2/BiWebServiceFaultError.js", "js/webservice2/BiWsSoapSerializerNsManager.js", "js/webservice2/BiWsSoapSerializer.js", "js/webservice2/BiWsSoapSchemaBasedSerializer.js", "js/webservice2/BiWsSoapLiteralSerializer.js", "js/webservice2/BiWsSoapEncodedSerializer.js", "js/webservice2/BiWsSoapDeserializer.js", "js/webservice2/BiWsSoapSchemaBasedDeserializer.js", "js/webservice2/BiWsSoapLiteralDeserializer.js", "js/webservice2/BiWsSoapEncodedDeserializer.js", "js/webservice2/BiWsSoapBodyProcessor.js", "js/webservice2/BiWsSoapOpHandler.js", "js/webservice2/BiWsSoapDocumentBodyProcessor.js", "js/webservice2/BiWsSoapRpcBodyProcessor.js"], TreeView: ["js/treeview/BiTreeViewStateManager.js", "js/treeview/BiTreeViewSelectionModel.js", "js/treeview/BiTreeViewViewManager.js", "js/treeview/BiTreeViewResizeOutline.js", "js/treeview/BiTreeViewDragHeader.js", "js/treeview/BiTreeViewDragHeaderMarker.js", "js/treeview/BiTreeViewCellInfo.js", "js/BiAttachedComponentModel.js", "js/BiInlineEditModel.js", "js/treeview/BiTreeView.js", "js/treeview/BiTreeViewDataModel.js", "js/treeview/BiTreeViewDataModelEvent.js", "js/treeview/BiGridDataModel.js", "js/treeview/BiTreeNode2.js", "js/treeview/BiTreeDataModel.js", "js/treeview/BiGrid2.js", "js/treeview/BiGrid2DataModel.js", "js/treeview/BiGrid2ViewManager.js", "js/treeview/BiTree2.js", "js/treeview/BiTree2DataModel.js", "js/treeview/BiTree2ViewManager.js", "js/treeview/BiDataSetDataModel.js", "js/treeview/BiSingleTree.js", "js/treeview/BiSingleTreeDataModel.js", "js/treeview/BiSingleTreeViewManager.js"], DateTime: ["js/datetime/BiDateFormatSymbols.js", "js/datetime/BiDateFormat.js", "js/datetime/BiCalendar.js", "js/datetime/BiDatePicker.js", "js/datetime/BiTimePicker.js", "js/datetime/de.js", "js/datetime/en.js", "js/datetime/es.js", "js/datetime/fr.js", "js/datetime/he.js", "js/datetime/ja.js", "js/datetime/ko.js", "js/datetime/pt.js", "js/datetime/ru.js", "js/datetime/sv.js", "js/datetime/tr.js", "js/datetime/zh-CN.js", "js/datetime/zh-TW.js"], Layout: ["js/layout/BiGridPanel.js", "js/layout/BiDockPanel.js", "js/layout/BiBox.js", "js/layout/BiFlowPanel.js", "js/layout/BiGridPanel2.js"], XmlRpc: ["js/BiBase64.js", "js/BiXmlRpcInt.js", "js/BiXmlRpcDouble.js", "js/BiXmlRpc.js", "js/BiXmlRpcError.js", "js/BiXmlRpcCallCompleteEvent.js"], Grid: ["js/BiGridHeaders.js", "js/BiAbstractGrid.js", "js/BiTree.js", "js/BiGrid.js"], Gui: ["js/BiCommand.js", "js/BiButton.js", "js/BiRepeatButton.js", "js/BiCheckBox.js", "js/BiRadioButton.js", "js/BiRadioGroup.js", "js/BiTextField.js", "js/BiIpField.js", "js/BiPasswordField.js", "js/BiTextArea.js", "js/BiGroupBox.js", "js/BiGroupBoxTitle.js", "js/BiRangeModel.js", "js/BiProgressBar.js", "js/BiSlider.js", "js/BiSpinner.js", "js/BiScrollBar.js", "js/BiSelectionModel.js", "js/BiList.js", "js/BiListItem.js", "js/BiListSelectionModel.js", "js/BiComboBox.js", "js/BiSplitPane.js", "js/BiSvgGauge.js", "js/BiStatusBar.js", "js/BiToolBar.js", "js/BiToolBarSplitMenuButton.js", "js/BiToolBarSplitToggleMenuButton.js", "js/BiTab.js", "js/BiIframe.js", "js/BiRichEdit.js", "js/BiPrintFrame.js", "js/BiMenu.moz.js", "js/BiMoveEvent.js", "js/BiResizeEvent.js", "js/BiMoveHandle.js", "js/BiResizeHandle.js", "js/BiWindow.js", "js/BiWindowManager.js", "js/BiDesktopPane.js", "js/BiOptionPane.js", "js/BiDialog.js", "js/BiColorPicker.js", "js/BiWizardPane.js", "js/BiWizard.js", "js/BiDataSet.js", "js/BiXsTypeConverter.js", "js/BiXmlDataSet.js", "js/BiDataBinding.js", "js/BiAccordionPane.js", "js/BiTreeViewBase.js", "js/BiImageMap.js"], Gauge2: ["js/gauge2/BiGauge2.moz.js", "js/gauge2/BiGauge2Group.moz.js", "js/gauge2/BiGauge2Component.moz.js", "js/gauge2/BiAbstractGauge2Border.moz.js", "js/gauge2/BiGauge2CircularBorder.moz.js", "js/gauge2/BiGauge2RectangularBorder.moz.js", "js/gauge2/BiGauge2ImageBorder.moz.js", "js/gauge2/BiAbstractGauge2Filler.js", "js/gauge2/BiGauge2PlainColorFiller.moz.js", "js/gauge2/BiAbstractGauge2GradientFiller.moz.js", "js/gauge2/BiGauge2RadialGradientFiller.moz.js", "js/gauge2/BiGauge2RingGradientFiller.moz.js", "js/gauge2/BiGauge2LinearGradientFiller.moz.js", "js/gauge2/BiAbstractGauge2Range.moz.js", "js/gauge2/BiGauge2RadialRange.moz.js", "js/gauge2/BiGauge2LinearRange.moz.js", "js/gauge2/BiAbstractGauge2Ticks.moz.js", "js/gauge2/BiGauge2RadialTicks.moz.js", "js/gauge2/BiGauge2LinearTicks.moz.js", "js/gauge2/BiAbstractGauge2Scale.moz.js", "js/gauge2/BiGauge2RadialScale.moz.js", "js/gauge2/BiGauge2LinearScale.moz.js", "js/gauge2/BiAbstractGauge2Cap.js", "js/gauge2/BiGauge2BasicCap.moz.js", "js/gauge2/BiAbstractGauge2ValueMarker.moz.js", "js/gauge2/BiGauge2RadialNeedle.moz.js", "js/gauge2/BiGauge2LinearNeedle.moz.js", "js/gauge2/BiAbstractGauge2ScaleSection.moz.js", "js/gauge2/BiGauge2RadialScaleSection.moz.js", "js/gauge2/BiGauge2Label.moz.js"], Animation: ["js/animation/BiMath.js", "js/animation/BiLine.js", "js/animation/BiFrameProgressionEvent.js", "js/animation/BiFpsGenerator.js", "js/animation/BiComponentAnimation.js", "js/animation/BiOpacityAnimator.js", "js/animation/BiLocationAnimator.js", "js/animation/BiSizeAnimator.js", "js/animation/BiAnimationRange.js"], Accessibility: [] };
 application._packages = BiBrowserCheck.ie ? application._packages_ie : application._packages_moz;
 
-function BiComponent(sName) { if (_biInPrototype) return;
-    BiEventTarget.call(this); if (sName) this._name = sName;
+function BiComponent(sName) {
+    if (_biInPrototype) return;
+    BiEventTarget.call(this);
+    if (sName) this._name = sName;
     this._children = [];
     this._style = {};
     this._htmlProperties = { id: this._className + (BiComponent.STRING_DASH + (++BiComponent._componentCount)), className: this._cssClassName, unselectable: "on" };
-    this._htmlAttributes = {}; if (application._accessibilityMode) { this.initAccessibility(); } }
+    this._htmlAttributes = {};
+    if (application._accessibilityMode) { this.initAccessibility(); }
+}
 _p = _biExtend(BiComponent, BiEventTarget, "BiComponent");
 BiComponent._componentCount = 0;
 _p._enabled = true;
@@ -1427,14 +1565,18 @@ BiComponent.STRING_DASH = "-";
 BiComponent.STRING_MOVE = "move";
 BiComponent.STRING_RESIZE = "resize";
 BiComponent.STRING_SIZE = "size";
-if (BiBrowserCheck.ie) { BiComponent.STRING_LEFT = "pixelLeft";
+if (BiBrowserCheck.ie) {
+    BiComponent.STRING_LEFT = "pixelLeft";
     BiComponent.STRING_TOP = "pixelTop";
     BiComponent.STRING_WIDTH = "pixelWidth";
-    BiComponent.STRING_HEIGHT = "pixelHeight"; } else { BiComponent.STRING_LEFT = "left";
+    BiComponent.STRING_HEIGHT = "pixelHeight";
+} else {
+    BiComponent.STRING_LEFT = "left";
     BiComponent.STRING_TOP = "top";
     BiComponent.STRING_WIDTH = "width";
     BiComponent.STRING_HEIGHT = "height";
-    BiComponent.STRING_PX = "px"; }
+    BiComponent.STRING_PX = "px";
+}
 _p.add = function(oChild, oBefore, bAnonymous) {
     var p = oChild._parent;
     if (oBefore == null) {
@@ -1539,8 +1681,10 @@ _p._removeHtmlAttribute = function(sName) {
     if (this._created)
         this._element.removeAttribute(sName);
 };
-_p.setId = function(sId) { BiEventTarget.prototype.setId.call(this, sId);
-    this.setHtmlProperty("id", sId); };
+_p.setId = function(sId) {
+    BiEventTarget.prototype.setId.call(this, sId);
+    this.setHtmlProperty("id", sId);
+};
 _p.setForeColor = function(sForeColor) { this.setStyleProperty("color", sForeColor); };
 _p.getForeColor = function() { return this.getStyleProperty("color"); };
 _p.setBackColor = function(sBackColor) { this.setStyleProperty("backgroundColor", sBackColor); };
@@ -1586,24 +1730,56 @@ _p._getIeFilter = function() {
     if (this._opacity == 1) { return String.EMPTY; }
     return "Alpha(Opacity=" + Math.round(this._opacity * 100) + ")";
 };
-_p.setLeft = function(nLeft) { if (this._left != nLeft) { this._left = nLeft;
-        this.invalidateParentLayout(BiComponent.STRING_SIZE); } };
-_p.setRight = function(nRight) { if (this._right != nRight) { this._right = nRight;
-        this.invalidateParentLayout(BiComponent.STRING_SIZE); } };
-_p.setTop = function(nTop) { if (this._top != nTop) { this._top = nTop;
-        this.invalidateParentLayout(BiComponent.STRING_SIZE); } };
-_p.setBottom = function(nBottom) { if (this._bottom != nBottom) { this._bottom = nBottom;
-        this.invalidateParentLayout(BiComponent.STRING_SIZE); } };
-_p.setWidth = function(nWidth) { if (this._width != nWidth) { this._width = nWidth;
-        this.invalidateParentLayout(BiComponent.STRING_SIZE); } };
-_p.setHeight = function(nHeight) { if (this._height != nHeight) { this._height = nHeight;
-        this.invalidateParentLayout(BiComponent.STRING_SIZE); } };
-_p.setSize = function(nWidth, nHeight) { if (this._width != nWidth || this._height != nHeight) { this._width = nWidth;
-        this._height = nHeight;
-        this.invalidateParentLayout(BiComponent.STRING_SIZE); } };
-_p.setLocation = function(nLeft, nTop) { if (this._left != nLeft || this._top != nTop) { this._left = nLeft;
+_p.setLeft = function(nLeft) {
+    if (this._left != nLeft) {
+        this._left = nLeft;
+        this.invalidateParentLayout(BiComponent.STRING_SIZE);
+    }
+};
+_p.setRight = function(nRight) {
+    if (this._right != nRight) {
+        this._right = nRight;
+        this.invalidateParentLayout(BiComponent.STRING_SIZE);
+    }
+};
+_p.setTop = function(nTop) {
+    if (this._top != nTop) {
         this._top = nTop;
-        this.invalidateParentLayout(BiComponent.STRING_SIZE); } };
+        this.invalidateParentLayout(BiComponent.STRING_SIZE);
+    }
+};
+_p.setBottom = function(nBottom) {
+    if (this._bottom != nBottom) {
+        this._bottom = nBottom;
+        this.invalidateParentLayout(BiComponent.STRING_SIZE);
+    }
+};
+_p.setWidth = function(nWidth) {
+    if (this._width != nWidth) {
+        this._width = nWidth;
+        this.invalidateParentLayout(BiComponent.STRING_SIZE);
+    }
+};
+_p.setHeight = function(nHeight) {
+    if (this._height != nHeight) {
+        this._height = nHeight;
+        this.invalidateParentLayout(BiComponent.STRING_SIZE);
+    }
+};
+_p.setSize = function(nWidth, nHeight) {
+    if (this._width != nWidth || this._height != nHeight) {
+        this._width = nWidth;
+        this._height = nHeight;
+        this.invalidateParentLayout(BiComponent.STRING_SIZE);
+    }
+};
+_p.setLocation = function(nLeft, nTop) {
+    if (this._left != nLeft || this._top != nTop) {
+        this._left = nLeft;
+        this._top = nTop;
+        this.invalidateParentLayout(BiComponent.STRING_SIZE);
+    }
+};
 _p.invalidateParentLayout = function(sHint) {
     this._invalidBoundaries = true;
     var p = this._parent;
@@ -1620,8 +1796,10 @@ _p.invalidateChild = function(oChild, sHint) {
         this._invalidateChild(oChild, sHint);
 };
 _p._invalidateChild = function(oChild, sHint) {
-    if (!oChild._invalidBoundaries) { oChild._invalidBoundaries = true;
-        oChild.invalidateParentLayout(sHint); }
+    if (!oChild._invalidBoundaries) {
+        oChild._invalidBoundaries = true;
+        oChild.invalidateParentLayout(sHint);
+    }
     oChild._invalidBoundaries = true;
     if (oChild._created)
         BiComponent.enqueueLayout(oChild);
@@ -1639,9 +1817,14 @@ BiComponent.flushLayoutQueue = function() {
         return;
     this._inFlushLayoutQueue = true;
     var ks, vs;
-    while (!this._layoutQueue.isEmpty()) { ks = this._layoutQueue.getKeys();
-        vs = this._layoutQueue.getValues(); for (var i = 0; i < ks.length; i++) { this.flushLayoutComponent(vs[i]);
-            this._layoutQueue.remove(ks[i]); } }
+    while (!this._layoutQueue.isEmpty()) {
+        ks = this._layoutQueue.getKeys();
+        vs = this._layoutQueue.getValues();
+        for (var i = 0; i < ks.length; i++) {
+            this.flushLayoutComponent(vs[i]);
+            this._layoutQueue.remove(ks[i]);
+        }
+    }
     this._inFlushLayoutQueue = false;
 };
 BiComponent.flushLayoutComponent = function(c) {
@@ -1680,8 +1863,13 @@ _p.layoutAllChildren = function() {
 _p._layoutChild = function(oChild) {
     var x, y, w, h;
     var cw, ch;
-    if (oChild._left != null) { x = oChild._left; if (oChild._right != null) { cw = this.getClientWidth();
-            w = cw - oChild._left - oChild._right; } else if (oChild._width != null) { w = oChild._width; } } else if (oChild._right != null) {
+    if (oChild._left != null) {
+        x = oChild._left;
+        if (oChild._right != null) {
+            cw = this.getClientWidth();
+            w = cw - oChild._left - oChild._right;
+        } else if (oChild._width != null) { w = oChild._width; }
+    } else if (oChild._right != null) {
         if (oChild._width != null)
             w = oChild._width;
         else {
@@ -1694,8 +1882,10 @@ _p._layoutChild = function(oChild) {
     } else if (oChild._width != null) { w = oChild._width; }
     if (oChild._top != null) {
         y = oChild._top;
-        if (oChild._bottom != null) { ch = this.getClientHeight();
-            h = ch - oChild._top - oChild._bottom; } else if (oChild._height != null) { h = oChild._height; }
+        if (oChild._bottom != null) {
+            ch = this.getClientHeight();
+            h = ch - oChild._top - oChild._bottom;
+        } else if (oChild._height != null) { h = oChild._height; }
     } else if (oChild._bottom != null) {
         if (oChild._height != null)
             h = oChild._height;
@@ -1717,10 +1907,14 @@ _p._layoutChild2 = function(c, x, y, w, h, bInvalidate) {
     c._clientLeft = x;
     c._clientTop = y;
     c._invalidBoundaries = false;
-    if (w != null) { wChanged = w != c._measuredWidth;
-        c._measuredWidth = w; }
-    if (h != null) { hChanged = h != c._measuredHeight;
-        c._measuredHeight = h; }
+    if (w != null) {
+        wChanged = w != c._measuredWidth;
+        c._measuredWidth = w;
+    }
+    if (h != null) {
+        hChanged = h != c._measuredHeight;
+        c._measuredHeight = h;
+    }
     if (BiBrowserCheck.ie) {
         if (x != null) c.setStyleProperty(BiComponent.STRING_LEFT, x);
         if (y != null) c.setStyleProperty(BiComponent.STRING_TOP, y);
@@ -1757,10 +1951,16 @@ _p.getWidth = function() {
     if (this._created) {
         BiComponent.flushLayoutComponent(this);
         if (BiBrowserCheck.moz) {
-            if (this._element.style.width == String.EMPTY) { var ps = this._element.parentNode.style; var w = ps.width; var h = ps.height;
-                ps.width = ps.height = "9999999px"; var res = this._element.offsetWidth;
+            if (this._element.style.width == String.EMPTY) {
+                var ps = this._element.parentNode.style;
+                var w = ps.width;
+                var h = ps.height;
+                ps.width = ps.height = "9999999px";
+                var res = this._element.offsetWidth;
                 ps.width = w;
-                ps.height = h; return res; }
+                ps.height = h;
+                return res;
+            }
             return this._element.offsetWidth;
         } else { return this._element.offsetWidth; }
     }
@@ -1770,10 +1970,16 @@ _p.getHeight = function() {
     if (this._created) {
         BiComponent.flushLayoutComponent(this);
         if (BiBrowserCheck.moz) {
-            if (this._element.style.height == String.EMPTY) { var ps = this._element.parentNode.style; var w = ps.width; var h = ps.height;
-                ps.width = ps.height = "9999999px"; var res = this._element.offsetHeight;
+            if (this._element.style.height == String.EMPTY) {
+                var ps = this._element.parentNode.style;
+                var w = ps.width;
+                var h = ps.height;
+                ps.width = ps.height = "9999999px";
+                var res = this._element.offsetHeight;
                 ps.width = w;
-                ps.height = h; return res; }
+                ps.height = h;
+                return res;
+            }
             return this._element.offsetHeight;
         } else { return this._element.offsetHeight; }
     }
@@ -1813,8 +2019,10 @@ _p._create = function(oDocument) {
     el._biComponent = this;
     this._setHtmlProperties();
     this._setCssProperties();
-    if (BiBrowserCheck.ie) { el.onscroll = BiComponent.__oninlineevent; } else { this._setHtmlAttributes();
-        el.onscroll = el.onfocus = BiComponent.__oninlineevent; }
+    if (BiBrowserCheck.ie) { el.onscroll = BiComponent.__oninlineevent; } else {
+        this._setHtmlAttributes();
+        el.onscroll = el.onfocus = BiComponent.__oninlineevent;
+    }
 };
 _p._createChildren = function() { var cs = this._children; var l = cs.length; for (var i = 0; i < l; i++) { cs[i]._addHtmlElementToParent(this, null); } };
 _p._setCssProperties = function() { var es = this._element.style; var sp = this._style; for (var p in sp) { es[p] = sp[p]; } };
@@ -1878,16 +2086,20 @@ BiComponent.invalidateAll = function() {
     var i;
     for (i = 0; i < l; i++) { var el = els[i]; if (el._biComponent && el._biComponent instanceof BiComponent && !el._biComponent.getDisposed()) { cs.push(el._biComponent); } }
     l = cs.length;
-    for (i = 0; i < l; i++) { cs[i]._invalidLayout = true;
+    for (i = 0; i < l; i++) {
+        cs[i]._invalidLayout = true;
         cs[i]._invalidBoundaries = true;
-        BiComponent.enqueueLayout(cs[i]); }
+        BiComponent.enqueueLayout(cs[i]);
+    }
 };
 BiComponent.__oninlineevent = _p.setRightToLeft = _p.setCssClassName = _p.getContainsFocus = Function.EMPTY;
 
-function BiInlineComponent(sId) { if (_biInPrototype) return;
+function BiInlineComponent(sId) {
+    if (_biInPrototype) return;
     BiComponent.call(this);
     this._inlineId = sId;
-    this.setCssClassName("bi-inline-component"); }
+    this.setCssClassName("bi-inline-component");
+}
 _p = _biExtend(BiInlineComponent, BiComponent, "BiInlineComponent");
 _p._create = function(oDocument) {
     this._document = oDocument || document;
@@ -1899,8 +2111,10 @@ _p._create = function(oDocument) {
     this._setCssProperties();
     if (BiBrowserCheck.ie)
         el.onscroll = el.onresize = BiComponent.__oninlineevent;
-    else { this._setHtmlAttributes();
-        el.onscroll = el.onfocus = BiComponent.__oninlineevent; }
+    else {
+        this._setHtmlAttributes();
+        el.onscroll = el.onfocus = BiComponent.__oninlineevent;
+    }
 };
 _p._addHtmlElementToParent = function(oParent, oBefore, bLayout) {
     if (bLayout == null)
@@ -1915,10 +2129,13 @@ _p._addHtmlElementToParent = function(oParent, oBefore, bLayout) {
 _p._removeHtmlElementFromParent = function(oParent) {};
 BiInlineComponent.prototype.getInlineId = function() { return this._inlineId; };
 BiInlineComponent.prototype.setInlineId = function(v) { this._inlineId = v; };
-_p.layoutComponent = function() { BiComponent.prototype.layoutComponent.call(this);
-    this.layoutAllChildren(); };
+_p.layoutComponent = function() {
+    BiComponent.prototype.layoutComponent.call(this);
+    this.layoutAllChildren();
+};
 
-function BiApplicationWindow() { if (_biInPrototype) return;
+function BiApplicationWindow() {
+    if (_biInPrototype) return;
     BiComponent.call(this);
     this.removeHtmlProperty("className");
     this.removeHtmlProperty("id");
@@ -1934,7 +2151,9 @@ function BiApplicationWindow() { if (_biInPrototype) return;
     this._glassPane.setBottom(0);
     this.addEventListener("keydown", this._ondefaultbuttonkeydown);
     this.addEventListener("keydown", this._onkeyevent);
-    this.addEventListener("keypress", this._onkeyevent); if (BiBrowserCheck.moz) { this._canSelect = true; } };
+    this.addEventListener("keypress", this._onkeyevent);
+    if (BiBrowserCheck.moz) { this._canSelect = true; }
+};
 _p = _biExtend(BiApplicationWindow, BiComponent, "BiApplicationWindow");
 _p._diff = null;
 _p._insets = null;
@@ -2026,8 +2245,10 @@ _p.addCommand = function(c) {
     this._commands[c.toHashCode()] = c;
     c._ownerWindow = this;
 };
-_p.removeCommand = function(c) { delete this._commands[c.toHashCode()];
-    c._ownerWindow = null; };
+_p.removeCommand = function(c) {
+    delete this._commands[c.toHashCode()];
+    c._ownerWindow = null;
+};
 _p.remove = function(c) {
     if (c instanceof BiDialog && c.getIsVisible())
         c.setVisible(false);
@@ -2041,9 +2262,11 @@ _p.updateGlassPane = function(oDialog, bVisible) {
         if (BiBrowserCheck.moz) { oDialog.setZIndex(oDialog.getZIndex() + 1); }
         this._shownDialogs.push(oDialog);
     } else {
-        if (this._shownDialogs.length == 0) { this.remove(this._glassPane); var c = this.getActiveComponent(); if (c && c.getCanFocus()) { c.setFocused(true); } } else { var d = this._shownDialogs[this._shownDialogs.length - 1];
+        if (this._shownDialogs.length == 0) { this.remove(this._glassPane); var c = this.getActiveComponent(); if (c && c.getCanFocus()) { c.setFocused(true); } } else {
+            var d = this._shownDialogs[this._shownDialogs.length - 1];
             this._glassPane.setZIndex(d.getZIndex());
-            d.setActive(true); }
+            d.setActive(true);
+        }
     }
 };
 _p.setGlassPaneVisible = function(b) {
@@ -2059,16 +2282,28 @@ _p.setGlassPaneVisible = function(b) {
         gp.getFocusRoot = function() { return this; };
         gp.isFocusRoot = function() { return true; };
         gp.setFocused(true);
-    } else { if (this._shownDialogs.length == 0) { if (gp._parent == this) { this.remove(gp);
+    } else {
+        if (this._shownDialogs.length == 0) {
+            if (gp._parent == this) {
+                this.remove(gp);
                 gp.setZIndex(0);
                 gp.setTabIndex(-1);
                 gp.getFocusRoot = function() { return this._parent; };
-                gp.isFocusRoot = function() { return false; }; } } }
+                gp.isFocusRoot = function() { return false; };
+            }
+        }
+    }
 };
 _p.getGlassPaneVisible = function() { return this._glassPane.getVisible(); };
 BiApplicationWindow.prototype.getGlobalCursor = function() { return this._globalCursor; };
-_p.setGlobalCursor = function(sCursor) { this._globalCursor = sCursor; var tm = application.getThemeManager(); if (sCursor == null || sCursor == "") { tm.removeCssRule("*");
-        tm.removeCssRule(""); } else { tm.addCssRule("*", "cursor:" + sCursor + " !important"); } };
+_p.setGlobalCursor = function(sCursor) {
+    this._globalCursor = sCursor;
+    var tm = application.getThemeManager();
+    if (sCursor == null || sCursor == "") {
+        tm.removeCssRule("*");
+        tm.removeCssRule("");
+    } else { tm.addCssRule("*", "cursor:" + sCursor + " !important"); }
+};
 _p.getAllowBrowserContextMenu = function() { return this._eventManager.getAllowBrowserContextMenu(); };
 _p.setAllowBrowserContextMenu = function(b) { return this._eventManager.setAllowBrowserContextMenu(b); };
 _p._create = function(oWindow) {
@@ -2083,8 +2318,10 @@ _p._create = function(oWindow) {
     this._setCssProperties();
     if (BiBrowserCheck.ie)
         el.onscroll = BiComponent.__oninlineevent;
-    else { this._setHtmlAttributes();
-        el.onscroll = el.onfocus = BiComponent.__oninlineevent; }
+    else {
+        this._setHtmlAttributes();
+        el.onscroll = el.onfocus = BiComponent.__oninlineevent;
+    }
     this._created = true;
     var cs = this._children;
     var l = cs.length;
@@ -2093,9 +2330,11 @@ _p._create = function(oWindow) {
 _p.dispose = function() {
     if (this.getDisposed()) return;
     BiComponent.prototype.dispose.call(this);
-    if (this._cursorStyleEl) { this._cursorStyleEl.disabled = true;
+    if (this._cursorStyleEl) {
+        this._cursorStyleEl.disabled = true;
         this._cursorStyleEl.cssText = "";
-        delete this._cursorStyleEl; }
+        delete this._cursorStyleEl;
+    }
     this._focusManager.dispose();
     delete this._focusManager;
     this._eventManager.dispose();
@@ -2117,11 +2356,13 @@ _p._onresize = function(e) {
     var b = this._window.document.body;
     var newW = b.offsetWidth;
     var newH = b.offsetHeight;
-    if (this._lastResizeW != newW || this._lastResizeH != newH) { this._lastResizeW = newW;
+    if (this._lastResizeW != newW || this._lastResizeH != newH) {
+        this._lastResizeW = newW;
         this._lastResizeH = newH;
         (new BiPopupManager).hideAutoHiding();
         this.invalidateLayout();
-        this.dispatchEvent("resize"); }
+        this.dispatchEvent("resize");
+    }
 };
 _p._onkeyevent = function(e) { this._focusManager.processKeyEvent(this, e); };
 _p._ondefaultbuttonkeydown = function(e) {
@@ -2176,8 +2417,12 @@ _p._getInsets = function() {
     } else { var bo = this._document.getBoxObjectFor(this._document.documentElement); return { left: bo.screenX - this._window.screenX, top: bo.screenY - this._window.screenY }; }
 };
 
-function BiFont(nSize, sName) { if (_biInPrototype) return;
-    BiObject.call(this); if (nSize != null) this._size = nSize; if (sName != null) this._name = sName; }
+function BiFont(nSize, sName) {
+    if (_biInPrototype) return;
+    BiObject.call(this);
+    if (nSize != null) this._size = nSize;
+    if (sName != null) this._name = sName;
+}
 _p = _biExtend(BiFont, BiObject, "BiFont");
 BiFont.prototype.getSize = function() { return this._size; };
 BiFont.prototype.setSize = function(v) { this._size = v; };
@@ -2207,11 +2452,13 @@ _p.paintFont = function(oComponent) {
     if (td != null)
         oComponent.setStyleProperty("textDecoration", td);
 };
-_p.removeFont = function(oComponent) { oComponent.removeStyleProperty("fontFamily");
+_p.removeFont = function(oComponent) {
+    oComponent.removeStyleProperty("fontFamily");
     oComponent.removeStyleProperty("fontSize");
     oComponent.removeStyleProperty("fontWeight");
     oComponent.removeStyleProperty("fontStyle");
-    oComponent.removeStyleProperty("textDecoration"); };
+    oComponent.removeStyleProperty("textDecoration");
+};
 BiFont.fromString = function(s) {
     var f = new BiFont;
     var parts = s.split(/\s+/);
@@ -2248,10 +2495,12 @@ bindows = {
     loadGaugeIntoDiv: function(sUri, divId) {
         if (!BiBrowserCheck.ie && !BiBrowserCheck.moz)
             return null;
-        if (!application._window) { application._adfPath = new BiUri(application._uri, "./");
+        if (!application._window) {
+            application._adfPath = new BiUri(application._uri, "./");
             application._window = new BiApplicationWindow;
             application._window._onkeyevent = Function.EMPTY;
-            application._window._create(); }
+            application._window._create();
+        }
         var xmlHttp = this._syncRequest(sUri);
         var s = xmlHttp.responseText.replace(/<\?xml[^\?]*\?>/, "");
         var doc = xmlHttp.responseXML;
@@ -2269,10 +2518,13 @@ bindows = {
             g[ids[i]] = gauge.getComponentById(ids[i]);
         return g;
     },
-    _syncRequest: function(sUri) { var xmlHttp = new BiXmlHttp;
+    _syncRequest: function(sUri) {
+        var xmlHttp = new BiXmlHttp;
         xmlHttp.open('GET', sUri, false);
         xmlHttp.setRequestHeader("Accept-Encoding", "gzip, deflate");
-        xmlHttp.send(null); return xmlHttp; }
+        xmlHttp.send(null);
+        return xmlHttp;
+    }
 };
 (function() {
     var packagedName = "bindows_gauges.js";
@@ -2287,5 +2539,7 @@ bindows = {
     if (window.execScript) window.execScript(js);
     else window.eval(js);
 })();
-if (BiBrowserCheck.ie) { var ss = document.createStyleSheet();
-    ss.addRule("v\\:*", "behavior:	url(#default#VML);"); }
+if (BiBrowserCheck.ie) {
+    var ss = document.createStyleSheet();
+    ss.addRule("v\\:*", "behavior:	url(#default#VML);");
+}
