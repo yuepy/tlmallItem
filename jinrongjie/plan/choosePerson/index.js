@@ -189,12 +189,18 @@
     getData_control143_MFhimL: function (elem) {},
     doAction_uiControl121_XGHaKQ: function (data, elem) {
       if (data.eventType == 'clcik') {
-        elem.ownerDocument.defaultView.btnok_onclick();
+        elem.ownerDocument.defaultView.btnok_onclick(); //   if (elem.ownerDocument.getElementById('rightMenuIframe')) {
+        //     var iframeBody = elem.ownerDocument.getElementById('rightMenuIframe').contentDocument.body;
+        //     if ($(iframeBody).find("button").length > 0) {
+        //       $(iframeBody).find("button").eq(0)[0].click();
+        //       console.log($(iframeBody).find("button").eq(0).text());
+        //     }
+        //   }
       }
     },
     getTemplate_uiControl121_XGHaKQ: function () {
       var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n     var handler = this.props.customHandler;\n      if(handler){\n        handler({\n          eventType:'click'\n        })\n      }\n\t},\n  render: function() {\n    return (\n      <div className=\"personSureBtn\" onClick = {(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:'clcik'\n            })\n          }\n        }}>\n        \u786E\u5B9A\n      </div>\n    )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      'div',\n      { className: 'personSureBtn', onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'clcik'\n            });\n          }\n        } },\n      '\\u786E\\u5B9A'\n    );\n  }\n});";
+      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \'click\'\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      \'div\',\n      { className: \'personSureBtn\', onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: \'clcik\'\n            });\n          }\n        } },\n      \'\\u786E\\u5B9A\'\n    );\n  }\n});';
     }
   });
 })(window, ysp);
