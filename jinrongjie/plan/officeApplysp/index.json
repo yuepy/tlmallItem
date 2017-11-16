@@ -1,41 +1,12 @@
 {
   "version": "0.1",
-  "id": "officeSuppliesApply",
-  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=2021&isagent=0&beagenter=0",
+  "id": "officeApplysp",
+  "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330443&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
-  "requires": {
-    "postName": "../postName/index.json"
-  },
-  "chineseName": "办公用品申领审批流程发起",
+  "chineseName": "办公用品申领审批流程待办",
   "description": "",
   "controls": {
-    "control71_KwgXqv": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control71_KwgXqv"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": false,
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control80_cnDHyn": {
+    "control202_a7OZ4x": {
       "location": {
         "data": {
           "tagName": "SPAN"
@@ -50,10 +21,10 @@
             "prob": 3,
             "value": {
               "text": [
-                "请求:创建 - 办公用品申领审批流程 - 创建"
+                "请求:处理 - 办公用品申领审批流程 - 1-2提交 JRJ-201711140441"
               ],
               "visText": [
-                "请求:创建 - 办公用品申领审批流程 - 创建"
+                "请求:处理 - 办公用品申领审批流程 - 1-2提交 JRJ-201711140441"
               ]
             }
           },
@@ -68,117 +39,25 @@
           {
             "id": "@class/word",
             "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
             "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
             "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
           }
         ]
       },
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('办公用品申领审批') !== -1 && elem.textContent.indexOf('创建') !== -1){return true}return false;"
+      "customJS": "if(elem.textContent.indexOf('办公用品申领审批流程') !==-1 && elem.textContent.indexOf('处理') !==-1){return true;}return false;"
     },
-    "control95_iOJI8l": {
-      "location": {
-        "data": {
-          "tagName": "TBODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              30
-            ],
-            "value": "TABLE.ViewForm TBODY"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[2]/TBODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control95_iOJI8l"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control100_TOs6Ev": {
-      "location": {
-        "data": {
-          "tagName": "BUTTON"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "button/text",
-            "prob": 3,
-            "ordinal": [
-              0,
-              2
-            ],
-            "value": {
-              "text": [
-                "提交"
-              ],
-              "visText": [
-                ""
-              ]
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]",
-              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
-              "descendant::DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
-              "descendant::TR[@id=\"toolbarmenu\"]//BUTTON"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "TBODY.x-btn-small.x-btn-icon-small-left TD.x-btn-mc BUTTON.x-btn-text.btn_subbackName"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control100_TOs6Ev"
-      },
-      "intendedRole": "custom",
-      "roles": "element,button,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control101_BtLdvd": {
+    "control203_m75kFw": {
       "location": {
         "data": {
           "tagName": "BUTTON"
@@ -227,122 +106,178 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control101_BtLdvd"
+        "onGetData": "getData_control203_m75kFw"
       },
       "intendedRole": "custom",
       "roles": "element,button,custom",
-      "ignoreVisibility": false,
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control204_agziTa": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control204_agziTa"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control205_Hrb8Bi": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control205_Hrb8Bi"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
     }
   },
   "contexts": {
-    "context12_sUIcJ2": {
+    "context28_E8HugB": {
       "controls": [
-        "control71_KwgXqv",
-        "control95_iOJI8l",
-        "control100_TOs6Ev",
-        "control101_BtLdvd"
+        "control203_m75kFw",
+        "control204_agziTa",
+        "control205_Hrb8Bi"
       ],
       "anchors": [
-        "control80_cnDHyn"
+        "control202_a7OZ4x"
       ],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow42_QBt1hD": {
+    "flow120_5dBR5K": {
       "toContexts": [
         {
-          "toContextId": "context12_sUIcJ2"
+          "toContextId": "context28_E8HugB"
         }
       ]
     },
-    "flow109_4bLOoN": {
-      "fromContextId": "context12_sUIcJ2",
+    "flow119_JAgXOL": {
+      "fromContextId": "context28_E8HugB",
       "fromAction": "doAction",
-      "fromControlId": "control71_KwgXqv",
+      "fromControlId": "control203_m75kFw",
       "toContexts": [
         {
-          "toContextId": "context12_sUIcJ2"
-        },
-        {
-          "toContextId": "context21_LgNuze",
-          "toModelId": "postName"
+          "toContextId": "context28_E8HugB"
         }
       ]
     },
-    "flow111_9Si5FZ": {
-      "fromContextId": "context12_sUIcJ2",
+    "flow121_scO76U": {
+      "fromContextId": "context28_E8HugB",
       "fromAction": "doAction",
-      "fromControlId": "control101_BtLdvd",
+      "fromControlId": "control204_agziTa",
       "toContexts": [
         {
-          "toContextId": "context12_sUIcJ2"
+          "toContextId": "context28_E8HugB"
+        }
+      ]
+    },
+    "flow122_04yPlH": {
+      "fromContextId": "context28_E8HugB",
+      "fromAction": "doAction",
+      "fromControlId": "control205_Hrb8Bi",
+      "toContexts": [
+        {
+          "toContextId": "context28_E8HugB"
         }
       ]
     }
   },
   "pages": {
-    "page12_gxCTe5": {
-      "contextId": "context12_sUIcJ2",
+    "page28_Vwly6Z": {
+      "contextId": "context28_E8HugB",
       "layout": [
         {
-          "id": "uiControl89_AAi0kp",
-          "controlId": "control101_BtLdvd",
+          "id": "uiControl184_J9qVwz",
+          "controlId": "control203_m75kFw",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl89_AAi0kp",
-                "onGetTemplate": "getTemplate_uiControl89_AAi0kp"
+                "onDoAction": "doAction_uiControl184_J9qVwz",
+                "onGetTemplate": "getTemplate_uiControl184_J9qVwz"
               }
             }
           }
         },
         {
-          "id": "uiControl61_VyRqhF",
-          "controlId": "control71_KwgXqv",
+          "id": "uiControl185_fyUiQ0",
+          "controlId": "control204_agziTa",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl61_VyRqhF",
-                "onGetTemplate": "getTemplate_uiControl61_VyRqhF"
+                "onDoAction": "doAction_uiControl185_fyUiQ0",
+                "onGetTemplate": "getTemplate_uiControl185_fyUiQ0"
               }
             }
           }
         },
         {
-          "id": "uiControl85_D8fJnW",
-          "controlId": "control95_iOJI8l",
+          "id": "uiControl186_OeaZ6J",
+          "controlId": "control205_Hrb8Bi",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl85_D8fJnW",
-                "onGetTemplate": "getTemplate_uiControl85_D8fJnW"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl88_bzSt0V",
-          "controlId": "control100_TOs6Ev",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl88_bzSt0V",
-                "onGetTemplate": "getTemplate_uiControl88_bzSt0V"
+                "onDoAction": "doAction_uiControl186_OeaZ6J",
+                "onGetTemplate": "getTemplate_uiControl186_OeaZ6J"
               }
             }
           }
@@ -353,25 +288,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context12_sUIcJ2": [
-          ""
+        "context28_E8HugB": [
+          "办公用品申领审批流程-张济天-2017-11-14"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context12_sUIcJ2": [
-          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=2021&isagent=0&beagenter=0"
-        ],
-        "context21_LgNuze": [
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.rolesmark|28481",
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.ckwp|15218_0"
+        "context28_E8HugB": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330443&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context12_sUIcJ2": [
+        "context28_E8HugB": [
           [
             "BacoAddFavorite",
             "BacoTitle",
@@ -379,8 +310,6 @@
             "WfBill",
             "WfLog",
             "WfPic",
-            "_beagenter",
-            "_isagent",
             "bodyiframe",
             "btnHelp",
             "closetext",
@@ -399,6 +328,7 @@
             "picInnerFrameurl",
             "piciframe",
             "requestTabButton",
+            "requestmarkSpan",
             "resourceimg",
             "resourceimghref",
             "result",
@@ -409,20 +339,26 @@
             "toolbarbottommenu",
             "toolbarmenu",
             "toolbarmenuCoverdiv",
-            "toolbarmenudiv"
+            "toolbarmenudiv",
+            "triSubwfIframe",
+            "wfdoc"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context12_sUIcJ2": [
+        "context28_E8HugB": [
           [
             "STYLE",
             "TopTitle",
             "btnFavorite",
             "btnHelp",
             "btn_add",
+            "btn_back",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
             "btn_subbackName",
             "btn_wfSave",
             "clickRightMenu",
@@ -468,13 +404,16 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context12_sUIcJ2": [
+        "context28_E8HugB": [
           [
             "-/-/DIV",
+            "-/-/IFRAME",
             "-/-/INPUT-hidden",
             "-/-/LINK",
+            "-/-/META",
             "-/-/SCRIPT",
             "-/-/STYLE",
+            "-/-/TITLE",
             "-/DIV/A",
             "-/DIV/DIV",
             "-/DIV/IFRAME",
@@ -498,6 +437,7 @@
             "TD/DIV/IMG",
             "TD/DIV/SPAN",
             "TD/EM/BUTTON",
+            "TD/SPAN/SPAN",
             "TD/TABLE/TBODY",
             "TR/TD/A",
             "TR/TD/BUTTON",
