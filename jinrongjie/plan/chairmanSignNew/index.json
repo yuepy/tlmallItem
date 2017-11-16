@@ -3,6 +3,9 @@
   "id": "chairmanSignNew",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=162&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+  },
   "chineseName": "创建-公文审批-董事长签核",
   "description": "公文审批-董事长签核",
   "controls": {
@@ -420,6 +423,20 @@
       "toContexts": [
         {
           "toContextId": "context19_zoXJgw"
+        }
+      ]
+    },
+    "flow120_J4cENi": {
+      "fromContextId": "context19_zoXJgw",
+      "fromAction": "doAction",
+      "fromControlId": "control121_et7Xct",
+      "toContexts": [
+        {
+          "toContextId": "context19_zoXJgw"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     }
