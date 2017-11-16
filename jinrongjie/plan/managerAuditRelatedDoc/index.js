@@ -5,9 +5,9 @@
     getData_control32_RBmFTr: function (elem) {},
     doAction_uiControl18_79vAeM: function (data, elem) {
       if (data.eventType == 'click') {
-        window.EAPI.back();
+        ysp.customHelper.back();
       };if (data.eventType == 'save1') {
-        elem.ownerDocument.defaultView.btnok_onclick();ysp.customHelper.back();
+        elem.ownerDocument.defaultView.btnok_onclick();
       }
     },
     getTemplate_uiControl18_79vAeM: function getTemplate_uiControl18_79vAeM() {

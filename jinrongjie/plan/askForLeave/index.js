@@ -151,8 +151,7 @@
           $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input").click();
         } else if (classname == "word") {
           //文档下载
-          // $(elem).children("tr").eq(row).children(".zdn").eq(column).find("a").click();
-          elem.ownerDocument.defaultView.addDocReadTag('198960');elem.ownerDocument.defaultView.top.location = '/weaver/weaver.file.FileDownload?fileid=191993&download=1&requestid=180694';
+          $(elem).children("tr").eq(row).children(".zdn").eq(column).find("a").click();
         } else if (classname == "delete") {
           var input = $($(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card))[0];$(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card).click();if (input.checked) {
             $(elem).find("#div0button").find("button").click();

@@ -32,8 +32,8 @@
             var browserInfo = { browser: "", version: "" };
             var ua = navigator.userAgent.toLowerCase();
             if (window.ActiveXObject) {
-                browserInfo.browser = "IE";
-                browserInfo.version = ua.match(/msie ([\d.]+)/)[1];
+                browserInfo.browser = "Chrome";
+                browserInfo.version = ua.match(/chrome\/[\d.]+/)[0];
             } else if (document.getBoxObjectFor) {
                 browserInfo.browser = "FF";
                 browserInfo.version = ua.match(/firefox\/([\d.]+)/)[1];

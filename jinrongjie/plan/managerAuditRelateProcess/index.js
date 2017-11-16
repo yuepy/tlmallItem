@@ -28,7 +28,7 @@
     getData_control30_RZlQuz: function (elem) {},
     doAction_uiControl17_NkvIbB: function (data, elem) {
       if (data.eventType == 'click') {
-        elem.parent.close();
+        ysp.customHelper.back();
       }if (data.eventType == 'save1') {
         elem.ownerDocument.defaultView.btnok_onclick();
       }

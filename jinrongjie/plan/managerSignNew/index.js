@@ -145,7 +145,7 @@
     },
     doAction_uiControl95_V9xDDs: function (data, elem) {
       var clickType = data.eventType;if (clickType === 'docClick') {
-        elem.querySelector('.Browser').click();
+        elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());elem.querySelector('.Browser').onclick();
       }
     },
     getTemplate_uiControl95_V9xDDs: function () {
@@ -159,7 +159,7 @@
     },
     doAction_uiControl96_rfpcXz: function (data, elem) {
       var clickType = data.eventType;if (clickType === 'docClick') {
-        elem.querySelector('.Browser').click();
+        elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());elem.querySelector('.Browser').onclick();
       }
     },
     getTemplate_uiControl96_rfpcXz: function () {

@@ -9,7 +9,7 @@
     },
     doAction_uiControl7_fXZ26L: function (data, elem) {
       if (data.eventType == 'click') {
-        window.EAPI.back();
+        history.back();
       }
     },
     getTemplate_uiControl7_fXZ26L: function getTemplate_uiControl7_fXZ26L() {
