@@ -3,6 +3,9 @@
   "id": "creatContract01",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=7901&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "choosePerson": "../choosePerson/index.json"
+  },
   "chineseName": "01合同会签发起",
   "description": "",
   "controls": {
@@ -170,6 +173,10 @@
         "data": {
           "tagName": "BUTTON"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "button/text",
@@ -257,6 +264,10 @@
       "toContexts": [
         {
           "toContextId": "context24_rsuxEa"
+        },
+        {
+          "toContextId": "context10_sJa5NJ",
+          "toModelId": "choosePerson"
         }
       ]
     }
@@ -340,6 +351,14 @@
       "contexts": {
         "context24_rsuxEa": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=7901&isagent=0&beagenter=0"
+        ],
+        "context10_sJa5NJ": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=180694&workflowRequestLogId=-1",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids="
         ]
       }
     },
