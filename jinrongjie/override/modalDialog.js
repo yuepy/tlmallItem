@@ -86,7 +86,10 @@
 				//eval(opts._callBack);
 			}
 			datas=window.showModalDialog(opts._url,opts._dialogArguments,"addressbar=no;status=0;scroll="+opts._scroll+";dialogHeight="+opts._dheight+";dialogWidth="+opts._dwidth+";dialogLeft="+opts.left+";dialogTop="+opts.top+";resizable=0;center=1;");
-			templateOperation(datas,e);
+      var _wdsrds = e;
+      _setReturnValue = function(datas) {
+				templateOperation(datas, _wdsrds);
+      }
 			try{
 				eval(opts._callBack)(datas,e);
 			}catch (e) {

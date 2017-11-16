@@ -15,7 +15,7 @@
     },
     doAction_uiControl111_PdKFVi: function (data, elem) {
       if (data.eventType == "click") {
-        var i = parseInt(data.dataCustom.i) + 2;elem.querySelectorAll("tr")[i].click();elem.ownerDocument.defaultView.parent.opener.document.querySelector('#field28481span').textContent = data.dataCustom.val;
+        var i = parseInt(data.dataCustom.i) + 2;elem.ownerDocument.defaultView.parent.opener._setReturnValue({ id: elem.querySelectorAll('tr')[i].querySelector('td').innerText, name: elem.querySelectorAll('tr')[i].querySelectorAll('td')[1].innerText, desc: elem.querySelectorAll('tr')[i].querySelectorAll('td')[2].innerText, href: '' });elem.querySelectorAll("tr")[i].click();
       }
     },
     getTemplate_uiControl111_PdKFVi: function () {

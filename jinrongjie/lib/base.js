@@ -65,11 +65,215 @@
             aWin.yspTokenUrl = function(url) {
                     return url;
                 }
+            if(aWin.onShowBrowser2){	 
+              aWin.onShowBrowser2 = function(id,url,linkurl,type1,ismand, funFlag) {
+              var id1 = null;
+              if (type1 == 9  && "0" == "1" ) {
+                  if (aWin.wuiUtil.isNotNull(funFlag) && funFlag == 3) {
+                    url = "/systeminfo/BrowserMain.jsp?url=/docs/docs/DocBrowser.jsp"
+                  } else {
+                  url = "/systeminfo/BrowserMain.jsp?url=/docs/docs/DocBrowserWord.jsp";
+                  }
+              }
+
+              if (type1 == 23) {
+              url += "?billid=-224";
+              }
+
+              if (type1 == 2 || type1 == 19 ) {
+                aWin.spanname = "field" + id + "span";
+                aWin.inputname = "field" + id;
+
+              if (type1 == 2) {
+                aWin.onFlownoShowDate(aWin.spanname,aWin.inputname,ismand);
+              } else {
+                aWin.onWorkFlowShowTime(aWin.spanname, aWin.inputname, ismand);
+              }
+              } else {
+                if (type1 != 162 && type1 != 171 && type1 != 152 && type1 != 142 && type1 != 135 && type1 != 17 && type1 != 18 && type1!=27 && type1!=37 && type1!=56 && type1!=57 && type1!=65 && type1!=165 && type1!=166 && type1!=167 && type1!=168 && type1!=4 && type1!=167 && type1!=164 && type1!=169 && type1!=170) {
+                  if (aWin.wuiUtil.isNotNull(funFlag) && funFlag == 3) {
+                    id1 = aWin.showModalDialog(url, "", "dialogWidth=550px;dialogHeight=550px");
+                  } else {
+                    if (type1 == 161||type1 == 224||type1 == 225||type1 == 226||type1 == 227) {
+                      id1 = aWin.showModalDialog(url + "|" + id, aWin, "dialogWidth=550px;dialogHeight=550px");
+                  } else {
+                    id1 = aWin.showModalDialog(url, aWin, "dialogWidth=550px;dialogHeight=550px");
+                  }
+                  }
+              } else {
+                    if (type1 == 135) {
+                  aWin.tmpids = aWin.$GetEle("field"+id).value;
+                  id1 = aWin.showModalDialog(url + "?projectids=" + aWin.tmpids, "", "dialogWidth=550px;dialogHeight=550px");
+                    //} else if (type1 == 4 || type1 == 167 || type1 == 164 || type1 == 169 || type1 == 170) {
+                    //type1 = 167 是:分权单部门-分部 不应该包含在这里面 ypc 2012-09-06 修改
+                    } else if (type1 == 4 || type1 == 164 || type1 == 169 || type1 == 170) {
+                      aWin.tmpids = aWin.$GetEle("field"+id).value;
+                  id1 = aWin.showModalDialog(url + "?selectedids=" + aWin.tmpids, "", "dialogWidth=550px;dialogHeight=550px");
+                    } else if (type1 == 37) {
+                      aWin.tmpids = aWin.$GetEle("field"+id).value;
+                  id1 = aWin.showModalDialog(url + "?documentids=" + aWin.tmpids, "", "dialogWidth=550px;dialogHeight=550px");
+                    } else if (type1 == 142 ) {
+                      aWin.tmpids = aWin.$GetEle("field"+id).value;
+                  id1 = aWin.showModalDialog(url + "?receiveUnitIds=" + aWin.tmpids, "", "dialogWidth=550px;dialogHeight=550px");
+                } else if (type1 == 162 ) {
+                  aWin.tmpids = aWin.$GetEle("field"+id).value;
+
+                  if (aWin.wuiUtil.isNotNull(funFlag) && funFlag == 3) {
+                    url = url + "&beanids=" + aWin.tmpids;
+                    url = url.substring(0, url.indexOf("url=") + 4) + aWin.escape(url.substr(url.indexOf("url=") + 4));
+                    id1 = aWin.showModalDialog(url, "", "dialogWidth=550px;dialogHeight=550px");
+                  } else {
+                    url = url + "|" + id + "&beanids=" + aWin.tmpids;
+                    url = url.substring(0, url.indexOf("url=") + 4) + aWin.escape(url.substr(url.indexOf("url=") + 4));
+                    id1 = aWin.showModalDialog(url, aWin, "dialogWidth=550px;dialogHeight=550px");
+                  }
+                } else if (type1 == 165 || type1 == 166 || type1 == 167 || type1 == 168 ) {
+                      aWin.index = (id + "").indexOf("_");
+                      if (index != -1) {
+                        aWin.tmpids=aWin.uescape("?isdetail=1&isbill=1&fieldid=" + id.substring(0, aWin) + "&resourceids=" + aWin.$GetEle("field"+id).value+"&selectedids="+aWin.$GetEle("field"+id).value);
+                        id1 = aWin.showModalDialog(url + aWin.tmpids, "", "dialogWidth=550px;dialogHeight=550px");
+                      } else {
+                        aWin.tmpids = aWin.uescape("?fieldid=" + id + "&isbill=1&resourceids=" + aWin.$GetEle("field" + id).value+"&selectedids="+aWin.$GetEle("field"+id).value);
+                        id1 = aWin.showModalDialog(url + aWin.tmpids, "", "dialogWidth=550px;dialogHeight=550px");
+                      }
+                } else {
+                      aWin.tmpids = aWin.$GetEle("field" + id).value;
+                  id1 = aWin.showModalDialog(url + "?resourceids=" + aWin.tmpids, "", "dialogWidth=550px;dialogHeight=550px");
+                }
+              }
+              aWin._setReturnValue = function(id1) {
+                if (id1 != undefined && id1 != null) {
+                  if (type1 == 171 || type1 == 152 || type1 == 142 || type1 == 135 || type1 == 17 || type1 == 18 || type1==27 || type1==37 || type1==56 || type1==57 || type1==65 || type1==166 || type1==168 || type1==170) {
+                    if (aWin.wuiUtil.getJsonValueByIndex(id1, 0) != "" && aWin.wuiUtil.getJsonValueByIndex(id1, 0) != "0" ) {
+                      var resourceids = aWin.wuiUtil.getJsonValueByIndex(id1, 0);
+                      var resourcename = aWin.wuiUtil.getJsonValueByIndex(id1, 1);
+                      var sHtml = ""
+
+                      resourceids = resourceids.substr(1);
+                      resourcename = resourcename.substr(1);
+
+                      var resourceIdArray = resourceids.split(",");
+                      var resourceNameArray = resourcename.split(",");
+                      for (var _i=0; _i<resourceIdArray.length; _i++) {
+                        var curid = resourceIdArray[_i];
+                        var curname = resourceNameArray[_i];
+                        if (linkurl == "/hrm/resource/HrmResource.jsp?id=") {
+                          sHtml += "<a href=javaScript:openhrm(" + curid + "); onclick='pointerXY(event);'>" + curname + "</a>&nbsp";
+                        } else {
+                          sHtml += "<a href=" + linkurl + curid + " target=_blank>" + curname + "</a>&nbsp";
+                        }
+                      }
+                      aWin.$GetEle("field" + id + "span").innerHTML = sHtml;
+                      aWin.$GetEle("field" + id).value= resourceids;
+                    } else {
+                      if (ismand == 0) {
+                        aWin.$GetEle("field"+id+"span").innerHTML = "";
+                      } else {
+                        aWin.$GetEle("field"+id+"span").innerHTML = "<img src='/images/BacoError.gif' align=absmiddle>";
+                      }
+                      aWin.$GetEle("field"+id).value = "";
+                    }
+
+                  } else {
+                    //zzl
+                    var id0lflag = true;
+                    if(aWin.wuiUtil.getJsonValueByIndex(id1, 1) != ""){
+                      id0lflag = true;
+                    }else{
+                      if(aWin.wuiUtil.getJsonValueByIndex(id1, 0) != "0"){
+                        id0lflag = true;
+                      }else{
+                        id0lflag = false;
+                      }
+                    }
+                    //zzl
+                     if (aWin.wuiUtil.getJsonValueByIndex(id1, 0) != "" && id0lflag ) {
+                             if (type1 == 162) {
+                          var ids = aWin.wuiUtil.getJsonValueByIndex(id1, 0);
+                        var names = aWin.wuiUtil.getJsonValueByIndex(id1, 1);
+                        var descs = aWin.wuiUtil.getJsonValueByIndex(id1, 2);
+                        var href = aWin.wuiUtil.getJsonValueByIndex(id1, 3);
+                        sHtml = ""
+                        ids = ids.substr(1);
+                        aWin.$GetEle("field"+id).value= ids;
+
+                        names = names.substr(1);
+                        descs = descs.substr(1);
+                        var idArray = ids.split(",");
+                        var nameArray = names.split(",");
+                        var descArray = descs.split(",");
+                        for (var _i=0; _i<idArray.length; _i++) {
+                          var curid = idArray[_i];
+                          var curname = nameArray[_i];
+                          var curdesc = descArray[_i];
+                          if(href==''){
+                            sHtml += "<a title='" + curdesc + "' >" + curname + "</a>&nbsp";
+                          }else{
+                            sHtml += "<a title='" + curdesc + "' href='" + href + curid + "' target='_blank'>" + curname + "</a>&nbsp";
+                          }
+                        }
+
+                        aWin.$GetEle("field" + id + "span").innerHTML = sHtml;
+                        return;
+                             }
+                       if (type1 == 161) {
+                          var ids = aWin.wuiUtil.getJsonValueByIndex(id1, 0);
+                          var names = aWin.wuiUtil.getJsonValueByIndex(id1, 1);
+                        var descs = aWin.wuiUtil.getJsonValueByIndex(id1, 2);
+                        var href = aWin.wuiUtil.getJsonValueByIndex(id1, 3);
+                        aWin.$GetEle("field"+id).value = ids;
+                        if(href==''){
+                          sHtml = "<a title='" + descs + "'>" + names + "</a>&nbsp";
+                        }else{
+                          sHtml = "<a title='" + descs + "' href='" + href + ids + "' target='_blank'>" + names + "</a>&nbsp";
+                        }
+                        aWin.$GetEle("field" + id + "span").innerHTML = sHtml
+                        return ;
+                       }
+                             if (type1 == 9 && "0" == "1" && (funFlag == undefined || funFlag != 3)) {
+                                aWin.tempid = aWin.wuiUtil.getJsonValueByIndex(id1, 0);
+                                aWin.$GetEle("field" + id + "span").innerHTML = "<a href='#' onclick='createDoc(" + id + ", " + aWin.tempid + ", 1)'>" + aWin.wuiUtil.getJsonValueByIndex(id1, 1) + "</a><button type=button id='createdoc' style='display:none' class=AddDocFlow onclick=createDoc(" + id + ", " + aWin.tempid + ",1)></button>";
+                             } else {
+                                if (linkurl == "") {
+                              aWin.$GetEle("field" + id + "span").innerHTML = aWin.wuiUtil.getJsonValueByIndex(id1, 1);
+                            } else {
+                          if (linkurl == "/hrm/resource/HrmResource.jsp?id=") {
+                            aWin.$GetEle("field"+id+"span").innerHTML = "<a href=javaScript:openhrm("+ aWin.wuiUtil.getJsonValueByIndex(id1, 0) + "); onclick='pointerXY(event);'>" + aWin.wuiUtil.getJsonValueByIndex(id1, 1) + "</a>&nbsp";
+                          } else {
+                            aWin.$GetEle("field"+id+"span").innerHTML = "<a href=" + linkurl + aWin.wuiUtil.getJsonValueByIndex(id1, 0) + " target='_new'>"+ aWin.wuiUtil.getJsonValueByIndex(id1, 1) + "</a>";
+                          }
+                            }
+                             }
+                             aWin.$GetEle("field"+id).value = aWin.wuiUtil.getJsonValueByIndex(id1, 0);
+                              if (type1 == 9 && "0" == "1" && (funFlag == undefined || funFlag != 3)) {
+                                var evt = aWin.getEvent();
+                                var targetElement = evt.srcElement ? evt.srcElement : evt.target;
+                                aWin.jQuery(targetElement).next("span[id=createNewDoc]").html("");
+                              }
+                     } else {
+                      if (ismand == 0) {
+                        aWin.$GetEle("field"+id+"span").innerHTML = "";
+                      } else {
+                        aWin.$GetEle("field"+id+"span").innerHTML ="<img src='/images/BacoError.gif' align=absmiddle>"
+                      }
+                      aWin.$GetEle("field"+id).value="";
+                      if (type1 == 9 && "0" == "1" && (funFlag == undefined || funFlag != 3)) {
+                        var evt = aWin.getEvent();
+                                var targetElement = evt.srcElement ? evt.srcElement : evt.target;
+                                aWin.jQuery(targetElement).next("span[id=createNewDoc]").html("<button type=button id='createdoc' class=AddDocFlow onclick=createDoc(" + id + ",'','1') title='新建'>新建</button>");
+                      }
+                     }
+                  }
+                }
+              }
+              }
+              }
+          
+            }
                 /*  showModelDialog 跨页面传值兼容  */
                 /*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
                 aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
-                    debugger;
                     var $GetEle = aWin.$GetEle;
                     var wuiUtil = aWin.wuiUtil;
                     var tmpids = $GetEle(inputname).value;
@@ -116,49 +320,6 @@
                     aWin.close();
                 }
             }
-//           if(aWin.location.href.indexOf('MutiResourceBrowser.jsp') !== -1){
-//             aWin.templateOperation = function(datas,e){
-//               valFiled=$(e.srcElement||e.target).next();
-//               if (datas&&datas.id!=""&&datas.id!=0){
-//                 var resourceids = datas.id;
-//                 var sHtml = "";
-//                 ids=resourceids.split(",");
-//                 var tags=new Array();
-//                 for(var tag in datas){
-//                   tags.push(tag);
-//                 }
-//                 for(var i=0;i<ids.length;i++){
-//                   if(ids[i]=="") continue;
-//                   curHtml=opts._displayTemplate;
-//                   for(var j=0;j<tags.length;j++){
-//                     curHtml=curHtml.replace(new RegExp("(#b{"+tags[j]+"})","g"),datas[tags[j]].split(",")[i]);
-//                   }
-//                   sHtml += " "+curHtml;
-//                 }
-//                 $(valFiled).next().html(sHtml);
-
-//                 if(resourceids!=""&&resourceids.charAt(0)==","){
-//                    resourceids=resourceids.substr(1);
-//                 }
-//                 valFiled.val(resourceids);
-//               }
-//               else if(datas){	
-
-//                 valFiled.val("");
-//                 if(opts._required=="yes"){
-//                   $(valFiled).next().html("<img align='absMiddle' src='/images/BacoError.gif'/>");
-//                 }else{
-//                   $(valFiled).next().html("");
-//                 }
-//               };
-//             };
-//             aWin.btnok_onclick = function(){
-//                aWin.setResourceStr();
-//                aWin.replaceStr();
-//                aWin.parent.parent.templateOperation = {id:aWin.resourceids,name:aWin.resourcenames};
-//                aWin.parent.parent.close();
-//             }
-//           }
             if ((aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
@@ -180,7 +341,7 @@
                     return re;
                 }
             }
-            if (aWin.BrowseTable_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') == -1) {
+            if (aWin.BrowseTable_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1  && aWin.BrowseTable_onclick && aWin.location.href.indexOf('BrowserMain.jsp') !== -1) {
                 aWin.BrowseTable_onclick = function(e) {
                     var target = e.srcElement || e.target;
                     try {
@@ -468,10 +629,7 @@
     }
     /* 调用场景 : 页面返回. */
     function _back(type) {
-        if (typeof type === 'string') {
-          	if(typeof type === 'string' && type == 'frameClose'){
-              window.parent.EAPI.back();
-            }
+      if(typeof type == 'string'){
             if (window.parent.EAPI.isAndroid() || window.parent.EAPI.isStudio()) {
                 ysp.appMain.back();
             } else {
