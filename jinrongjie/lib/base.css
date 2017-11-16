@@ -1907,6 +1907,7 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row {
   padding-bottom: 5px;
   border-bottom: 1px solid #f4f4f4;
+  position: relative;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title {
@@ -2039,6 +2040,21 @@ div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row
   margin: 0;
   background: #EEEDEB;
   color: #333;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon {
+  border: none;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon .relate-files,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon .relate-files {
+  position: absolute;
+  float: none;
+  background-size: 15px;
+  right: 0;
+  top: 4px;
+  background-position: none;
+  width: 15px;
+  height: 15px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .none,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .none {
@@ -2305,8 +2321,8 @@ div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row
   background-size: 15px;
   background-position: 2px 8px;
 }
-div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .fileDown .word .delete {
-  background: url("../lib/images/删除.png") no-repeat;
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .fileDown .word .download {
+  background: url("../lib/images/download.png") no-repeat;
   float: right;
   width: 15px;
   height: 15px;
