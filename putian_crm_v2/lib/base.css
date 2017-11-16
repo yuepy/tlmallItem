@@ -8896,35 +8896,67 @@ section.ysp-store-details > footer > div:nth-child(2) {
   justify-content: center;
   align-items: center;
 }
-section.ysp-store-details > footer > div:nth-child(1) > ul,
-section.ysp-store-details > footer > div:nth-child(2) > ul {
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(1),
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(1) {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   list-style: none;
-  width: 50%;
+  width: 45%;
   overflow: hidden;
   padding: 0px 0px 10px 0px;
 }
-section.ysp-store-details > footer > div:nth-child(1) > ul > li,
-section.ysp-store-details > footer > div:nth-child(2) > ul > li {
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(1) > li,
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(1) > li {
   float: left;
   font-size: 12px;
 }
-section.ysp-store-details > footer > div:nth-child(1) > ul > li:first-child,
-section.ysp-store-details > footer > div:nth-child(2) > ul > li:first-child {
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(1) > li:first-child,
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(1) > li:first-child {
   flex-wrap: nowrap;
   overflow: hidden;
   color: #999999;
   padding: 0px 5px 0px 0px;
   width: 55px;
 }
-section.ysp-store-details > footer > div:nth-child(1) > ul > li:nth-child(2),
-section.ysp-store-details > footer > div:nth-child(2) > ul > li:nth-child(2) {
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(1) > li:nth-child(2),
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(1) > li:nth-child(2) {
   color: #999999;
 }
-section.ysp-store-details > footer > div:nth-child(1) > ul > li:last-child,
-section.ysp-store-details > footer > div:nth-child(2) > ul > li:last-child {
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(1) > li:last-child,
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(1) > li:last-child {
+  color: #333;
+  padding: 0px 0px 0px 5px;
+}
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(2),
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(2) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  width: 55%;
+  overflow: hidden;
+  padding: 0px 0px 10px 0px;
+}
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(2) > li,
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(2) > li {
+  float: left;
+  font-size: 12px;
+}
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(2) > li:first-child,
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(2) > li:first-child {
+  flex-wrap: nowrap;
+  overflow: hidden;
+  color: #999999;
+  padding: 0px 5px 0px 0px;
+  width: 55px;
+}
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(2) > li:nth-child(2),
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(2) > li:nth-child(2) {
+  color: #999999;
+}
+section.ysp-store-details > footer > div:nth-child(1) > ul:nth-child(2) > li:last-child,
+section.ysp-store-details > footer > div:nth-child(2) > ul:nth-child(2) > li:last-child {
   color: #333;
   padding: 0px 0px 0px 5px;
 }

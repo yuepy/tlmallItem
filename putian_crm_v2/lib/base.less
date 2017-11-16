@@ -9867,14 +9867,44 @@ section.ysp-store-details{
     	display: flex;
       justify-content: center;
       align-items: center;
-      >ul{
+      >ul:nth-child(1){
         display: flex;
         justify-content: flex-start;
         align-items: center;
         list-style: none;
         //padding:0;
         //margin:0;
-        width:50%;
+        width:45%;
+        overflow: hidden;
+        padding: 0px 0px 10px 0px;
+        >li{
+          float:left;
+          font-size: 12px;
+        }
+        >li:first-child{
+          //white-space : normal nowrap;
+          flex-wrap: nowrap;
+          overflow: hidden;
+          color:#999999;
+          padding: 0px 5px 0px 0px;
+          width: 55px;
+        }
+        >li:nth-child(2){
+          color: #999999;
+        }
+        >li:last-child{
+          color:#333;
+          padding: 0px 0px 0px 5px;
+        }
+      }
+      >ul:nth-child(2){
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        list-style: none;
+        //padding:0;
+        //margin:0;
+        width:55%;
         overflow: hidden;
         padding: 0px 0px 10px 0px;
         >li{
