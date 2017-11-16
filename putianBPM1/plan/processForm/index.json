@@ -409,62 +409,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control48_VJf6Ek": {
-      "location": {
-        "data": {
-          "tagName": "A"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "a/@href",
-            "prob": 2,
-            "value": {
-              "pathname": "/ptsoa/uploads/2017/10/17/ff8080815f13fe1b015f28f2e1b91d19.txt",
-              "search": "fileName=%E6%B3%A8%E5%86%8C%E7%A0%81.txt"
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"Filelist\"]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/A[1]",
-              "descendant::DIV[@id=\"Filelist\"]//A"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[12]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/A[1]"
-          },
-          {
-            "id": "style/color",
-            "value": [
-              0,
-              0,
-              238
-            ]
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control48_VJf6Ek"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
-    },
     "control61_S2UifR": {
       "location": {
         "data": {
@@ -644,7 +588,6 @@
         "control49_PTRE8T",
         "control50_0mASyq",
         "control41_0ETlac",
-        "control48_VJf6Ek",
         "control61_S2UifR",
         "control63_Pt9BN8",
         "control67_28ok7e"
@@ -774,16 +717,6 @@
           "toContextId": "context8_ddpRhS"
         }
       ]
-    },
-    "flow69_oHnnTQ": {
-      "fromContextId": "context8_ddpRhS",
-      "fromAction": "doAction",
-      "fromControlId": "control48_VJf6Ek",
-      "toContexts": [
-        {
-          "toContextId": "context8_ddpRhS"
-        }
-      ]
     }
   },
   "pages": {
@@ -816,21 +749,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl20_HR4ggS",
                 "onGetTemplate": "getTemplate_uiControl20_HR4ggS"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl47_UACGyx",
-          "controlId": "control48_VJf6Ek",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl47_UACGyx",
-                "onGetTemplate": "getTemplate_uiControl47_UACGyx"
               }
             }
           }
