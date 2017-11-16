@@ -182,6 +182,7 @@
           }
       }
       aWin.doOperate = function(rowIndex, isShowDetail, newPage) {
+        debugger;
         // var row = aWin.taskListDataGridObj.getRow(rowIndex);
         // var url = aWin.contextPath + "/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=" + row.workItemID + "&newPage=" + newPage;
         // if (isShowDetail) {

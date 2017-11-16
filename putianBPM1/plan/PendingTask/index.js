@@ -26,33 +26,17 @@
       }
     },
     getTemplate_uiControl21_n99o77: function () {
-      var selfTemplate = "import {\n  Header,\n  HeaderLeft,\n  HeaderRight\n} from 'ysp-interior-components';\n\nexport default class extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    let _this = this;\n    var data=this.props.customData || [];\n    if(data){\n    \treturn (\n      \t<Header amStyle=\"primary\" title=\"\u5F85\u5904\u7406\u7684\u4EFB\u52A1\" >\n        \t<HeaderLeft>\n          \t<AMUI.Button amStyle=\"primary\" style={{ margin: 0 }} onClick={()=>{\n              const handler = _this.props.customHandler;\n            \tif (handler) {\n              \thandler({\n                eventType: 'back'\n              \t});\n             \t}\n           \t}}>\n            \t<span className='icon icon-left-nav'></span>\n          \t</AMUI.Button>\n        \t</HeaderLeft>\n        \t<HeaderRight>\n          \t<AMUI.Button amStyle=\"primary\" style={{ margin: 0 ,display:'none'}}></AMUI.Button>\n        \t</HeaderRight>\n      \t</Header>\n    \t);\n    }\n  }\n}";
+      var selfTemplate = "import {\n  Header,\n  HeaderLeft,\n  HeaderRight\n} from 'ysp-interior-components';\n\nexport default class extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    let _this = this;\n    var data=this.props.customData || [];\n    if(data){\n    \treturn (\n      \t<Header amStyle=\"primary\" title=\"\u5F85\u5904\u7406\u7684\u4EFB\u52A1\">\n        \t<HeaderLeft>\n          \t<AMUI.Button amStyle=\"primary\" style={{ margin: 0 }} onClick={()=>{\n              const handler = _this.props.customHandler;\n            \tif (handler) {\n              \thandler({\n                eventType: 'back'\n              \t});\n             \t}\n           \t}}>\n            \t<span className='icon icon-left-nav'></span>\n          \t</AMUI.Button>\n        \t</HeaderLeft>\n        \t<HeaderRight>\n          \t<AMUI.Button amStyle=\"primary\" style={{ margin: 0 ,display:'none'}}></AMUI.Button>\n        \t</HeaderRight>\n      \t</Header>\n    \t);\n    }\n  }\n}";
       return "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _yspInteriorComponents = require(\"ysp-interior-components\");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: \"render\",\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData || [];\n      if (data) {\n        return React.createElement(\n          _yspInteriorComponents.Header,\n          { amStyle: \"primary\", title: \"\\u5F85\\u5904\\u7406\\u7684\\u4EFB\\u52A1\" },\n          React.createElement(\n            _yspInteriorComponents.HeaderLeft,\n            null,\n            React.createElement(\n              AMUI.Button,\n              { amStyle: \"primary\", style: { margin: 0 }, onClick: function onClick() {\n                  var handler = _this.props.customHandler;\n                  if (handler) {\n                    handler({\n                      eventType: 'back'\n                    });\n                  }\n                } },\n              React.createElement(\"span\", { className: \"icon icon-left-nav\" })\n            )\n          ),\n          React.createElement(\n            _yspInteriorComponents.HeaderRight,\n            null,\n            React.createElement(AMUI.Button, { amStyle: \"primary\", style: { margin: 0, display: 'none' } })\n          )\n        );\n      }\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;";
     },
     getData_control27_T3GAMp: function (elem) {
-      if (elem) {
-        var data = { allSelect: [], flowName: "", time: [] }; // $(elem).children('tr').each(function (idx, item) {
-        //   var child = {
-        //     content: []
-        //   };
-        //   var str = $(item).children('td').eq(0).text();
-        //   var s = str.replace(/：/g, "");
-        //   child.title = s;
-        //   $(item).children('td').eq(1).find('div table tbody tr td div').eq(0).children('div').each(function (i, v) {
-        //     var children = {
-        //       cont: []
-        //     };
-        //     children.title = v.textContent;
-        //     children.cont = $(v).children('input')[0].checked;
-        //     child.content.push(children);
-        //   });
-        // });
-        data.flowName = $(elem).find("#likeSearch").find("#likeQ").find("input").eq(0).val();data.time.push($(elem).find("#startT").find("input").eq(0).val());data.time.push($(elem).find("#endT").find("input").eq(0).val());return data;
+      console.log(elem);if (elem) {
+        var data = { allSelect: [], flowName: "", time: [] };data.flowName = $(elem).find("#likeSearch").find("#likeQ").find("input").eq(0).val();data.time.push($(elem).find("#startT").find("input").eq(0).val());data.time.push($(elem).find("#endT").find("input").eq(0).val());return data;
       }return '';
     },
     doAction_uiControl24_ELar9V: function (data, elem) {
       if (data.eventType == "click") {
-        var d = data.dataCustom;let q = $(elem).children('tr');q.eq(d[0]).children('td').eq(1).find('div table tbody tr td div').eq(0).children('div').eq(d[1]).find('input').click();
+        var d = data.dataCustom;var q = $(elem).children('tr');q.eq(d[0]).children('td').eq(1).find('div table tbody tr td div').eq(0).children('div').eq(d[1]).find('input').click();
       } else if (data.eventType == 'blur') {
         $(elem).children('tr').children('td').eq(2).find('a').click();
       } else if (data.eventType == "showLoading") {
@@ -85,7 +69,7 @@
     },
     doAction_uiControl26_6hpfrU: function (data, elem) {
       if (data.eventType == "clickBtn") {
-        var index = parseInt(data.dataCustom.index) + 2;var i = data.dataCustom.i;elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();ysp.appMain.showLoading();
+        var index = parseInt(data.dataCustom.index) + 2;var i = data.dataCustom.i;elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click(); //ysp.appMain.showLoading();
       }
     },
     getTemplate_uiControl26_6hpfrU: function () {

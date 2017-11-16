@@ -52,12 +52,7 @@
           "tagName": "TBODY"
         },
         "userData": {
-          "data": [
-            {
-              "method": "XPath",
-              "value": ""
-            }
-          ],
+          "data": [],
           "force": false
         },
         "locators": [
@@ -99,8 +94,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "customJS",
+              "value": "return doc.body.querySelector('iframe').contentWindow.document.querySelector('#taskListId .mini-grid-rows-view .mini-grid-rowstable')"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -470,7 +470,8 @@
     "page/urls": {
       "contexts": {
         "context5_7wf9RT": [
-          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=868611&_winid=w6911"
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=868611&_winid=w6911",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=921399&_winid=w4113"
         ],
         "context8_ddpRhS": [],
         "context11_uaf3pg": [],
