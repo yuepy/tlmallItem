@@ -23,11 +23,47 @@
       return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.data.customData || {};\n    var title = data.title || "";\n    var numbering = data.numbering || "";\n    return React.createElement(\n      "div",\n      { style: { \'margin-top\': \'40px\' } },\n      React.createElement(\n        "div",\n        { className: "ysp-manager-audit-title" },\n        React.createElement(\n          "div",\n          { className: "ysp-manager-audit-main-title" },\n          title\n        ),\n        React.createElement("div", { className: "ysp-manager-audit-subtitle" })\n      )\n    );\n  }\n});';
     },
     getData_control126_wXC0yb: function (elem) {
+      // if (!elem) {
+      //   return;
+      // }
+      // if (elem) {
+      //   var data = {};
+      //   var content = [];
+      //   var titles = [];
+      //   var trs = $(elem.querySelector('tbody')).children('tr');
+      //   [].forEach.call(trs, function (trItem, trIndex) {
+      //     var rows = [[], []];
+      //     $(trItem).children("td:nth-child(odd)").each(function (idx, dt) {
+      //       if (dt.textContent.indexOf('签字意见') == -1) {
+      //         titles.push(dt.textContent.replace(/\s/g, "").trim());
+      //       }
+      //     });
+      //     $(trItem).children("td:nth-child(even)").each(function (idx, dt) {
+      //       if (dt.querySelector("select")) {
+      //         var optionIndex = dt.querySelector('select').selectedIndex;
+      //         content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
+      //       } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
+      //         if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
+      //           if (trIndex == 5) {} else {
+      //             content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
+      //           }
+      //         }
+      //       } else if (dt.querySelector("input[type='text']")) {
+      //         content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
+      //       } else if (dt.querySelector("textarea")) {
+      //         content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
+      //       }
+      //     });
+      //   });
+      //   data.titles = titles;
+      //   data.content = content;
+      //   return data;
+      // }
       if (!elem) {
         return;
       }if (elem) {
-        var data = {};var content = [];var titles = [];var trs = $(elem.querySelector('tbody')).children('tr');[].forEach.call(trs, function (trItem, trIndex) {
-          var rows = [[], []];$(trItem).children("td:nth-child(odd)").each(function (idx, dt) {
+        var data = {};var content = [];var titles = [];var fileSize = [];var trs = $(elem.querySelector('tbody')).children('tr');[].forEach.call(trs, function (trItem, trIndex) {
+          $(trItem).children("td:nth-child(odd)").each(function (idx, dt) {
             if (dt.textContent.indexOf('签字意见') == -1) {
               titles.push(dt.textContent.replace(/\s/g, "").trim());
             }
@@ -36,7 +72,18 @@
               var optionIndex = dt.querySelector('select').selectedIndex;content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
             } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
-                if (trIndex == 5) {} else {
+                // if (trIndex == 5) {
+                if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
+                  var files = dt.querySelectorAll('a');var fileName = [];if (files.length > 0) {
+                    [].forEach.call(files, function (fileItem, fileIndex) {
+                      if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
+                        fileName.push(fileItem.textContent.trim());var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('(')));
+                      }
+                    });content.push(fileName);
+                  } else {
+                    content.push([]);
+                  }
+                } else {
                   content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
                 }
               }
@@ -44,9 +91,17 @@
               content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
             } else if (dt.querySelector("textarea")) {
               content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
+            } else if (trItem.querySelector('td').textContent.indexOf("部门经理") !== -1) {
+              content.push(dt.textContent.replace(/\s/g, ""));
+            } else if (trItem.querySelector('td').textContent.indexOf("主管领导") !== -1) {
+              content.push(dt.textContent.replace(/\s/g, ""));
+            } else if (trItem.querySelector('td').textContent.replace(/\s/g, "").trim() == "领导审批意见") {
+              content.push(dt.textContent.replace(/\s/g, ""));
+            } else {
+              content.push('');
             }
           });
-        });data.titles = titles;data.content = content;return data;
+        });data.titles = titles;data.content = content;data.fileSize = fileSize;return data;
       }
     },
     doAction_uiControl108_qW0tI3: function (data, elem) {
@@ -111,8 +166,8 @@
       }
     },
     getTemplate_uiControl114_MHtJfd: function () {
-      var selfTemplate = "import {\n  Component\n} from 'react';\nimport {\n\tCommonHeader,Dialog\n} from 'ysp-custom-components';\nexport default class extends Component {\n  constructor(props){\n    super(props);\n  }\n  \n  btnClick(e){\n    let handler=this.props.customHandler;\n    var target=e.target;\n    if(handler){\n      handler({\n        eventType:\"docClick\"\n      })\n    }\n  }\n  render() {\n    var _this = this;\n    var data = this.props.customData;\n    return (\n      <div className=\"ysp-manageraudit-relate-doc\">\n        <span style={{'color':'#000'}}>{data||'\u76F8\u5173\u6587\u6863'}</span>\n        <div className=\"border-bottom\"><span onClick={_this.btnClick.bind(_this)} className=\"ysp-search-icon\"></span></div>\n      </div>\n    )\n  }\n}";
-      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: \'btnClick\',\n    value: function btnClick(e) {\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          eventType: "docClick"\n        });\n      }\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData;\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-manageraudit-relate-doc\' },\n        React.createElement(\n          \'span\',\n          { style: { \'color\': \'#000\' } },\n          data || \'\u76F8\u5173\u6587\u6863\'\n        ),\n        React.createElement(\n          \'div\',\n          { className: \'border-bottom\' },\n          React.createElement(\'span\', { onClick: _this.btnClick.bind(_this), className: \'ysp-search-icon\' })\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
+      var selfTemplate = 'import {\n  Component\n} from \'react\';\nimport {\n\tCommonHeader,Dialog\n} from \'ysp-custom-components\';\nexport default class extends Component {\n  constructor(props){\n    super(props);\n  }\n  \n  btnClick(e){\n    let handler=this.props.customHandler;\n    var target=e.target;\n    if(handler){\n      handler({\n        eventType:"docClick"\n      })\n    }\n  }\n  render() {\n    var _this = this;\n    var data = this.props.customData;\n    if(data==null){\n      return null;\n    }\n    return (\n      <div className="ysp-manageraudit-relate-doc">\n        <span>{data||\'\u76F8\u5173\u6587\u6863\'}</span>\n        <div className="border-bottom"><span onClick={_this.btnClick.bind(_this)} className="ysp-search-icon"></span></div>\n      </div>\n    )\n  }\n}';
+      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: \'btnClick\',\n    value: function btnClick(e) {\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          eventType: "docClick"\n        });\n      }\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData;\n      if (data == null) {\n        return null;\n      }\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-manageraudit-relate-doc\' },\n        React.createElement(\n          \'span\',\n          null,\n          data || \'\u76F8\u5173\u6587\u6863\'\n        ),\n        React.createElement(\n          \'div\',\n          { className: \'border-bottom\' },\n          React.createElement(\'span\', { onClick: _this.btnClick.bind(_this), className: \'ysp-search-icon\' })\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
     getData_control133_ud3c3u: function (elem) {
       if (!elem) {
@@ -125,8 +180,8 @@
       }
     },
     getTemplate_uiControl115_y0SPer: function () {
-      var selfTemplate = 'import {\n  Component\n} from \'react\';\nimport {\n\tCustomHeader,Dialog,Alert\n} from \'ysp-custom-components\';\nexport default class extends Component {\n  constructor(props){\n    super(props);\n  }\n  btnClick(e){//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n    let handler=this.props.customHandler;\n    var target=e.target;\n    if(handler){\n      handler({\n        eventType:"docClick"\n      })\n    }\n  }\n  render() {\n    var _this = this;\n    var data = this.props.customData;\n    return (\n      <div className="ysp-manageraudit-relate-doc">\n        <span style={{\'color\':\'#000\'}}>{data||\'\u76F8\u5173\u6D41\u7A0B\'}</span>\n        <span><span onClick={_this.btnClick.bind(_this)} className="ysp-search-icon"></span></span>\n      </div>\n    )\n  }\n}\n';
-      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: \'btnClick\',\n    value: function btnClick(e) {\n      //\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          eventType: "docClick"\n        });\n      }\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData;\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-manageraudit-relate-doc\' },\n        React.createElement(\n          \'span\',\n          { style: { \'color\': \'#000\' } },\n          data || \'\u76F8\u5173\u6D41\u7A0B\'\n        ),\n        React.createElement(\n          \'span\',\n          null,\n          React.createElement(\'span\', { onClick: _this.btnClick.bind(_this), className: \'ysp-search-icon\' })\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
+      var selfTemplate = 'import {\n  Component\n} from \'react\';\nimport {\n\tCustomHeader,Dialog,Alert\n} from \'ysp-custom-components\';\nexport default class extends Component {\n  constructor(props){\n    super(props);\n  }\n  btnClick(e){//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n    let handler=this.props.customHandler;\n    var target=e.target;\n    if(handler){\n      handler({\n        eventType:"docClick"\n      })\n    }\n  }\n  render() {\n    var _this = this;\n    var data = this.props.customData;\n    if(data==null){\n      return null;\n    }\n    return (\n      <div className="ysp-manageraudit-relate-doc">\n        <span>{data||\'\u76F8\u5173\u6D41\u7A0B\'}</span>\n        <span><span onClick={_this.btnClick.bind(_this)} className="ysp-search-icon"></span></span>\n      </div>\n    )\n  }\n}\n';
+      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: \'btnClick\',\n    value: function btnClick(e) {\n      //\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          eventType: "docClick"\n        });\n      }\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData;\n      if (data == null) {\n        return null;\n      }\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-manageraudit-relate-doc\' },\n        React.createElement(\n          \'span\',\n          null,\n          data || \'\u76F8\u5173\u6D41\u7A0B\'\n        ),\n        React.createElement(\n          \'span\',\n          null,\n          React.createElement(\'span\', { onClick: _this.btnClick.bind(_this), className: \'ysp-search-icon\' })\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     }
   });
 })(window, ysp);

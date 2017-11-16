@@ -23,11 +23,47 @@
       return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.data.customData || {};\n    var title = data.title || "";\n    var numbering = data.numbering || "";\n    return React.createElement(\n      "div",\n      { style: { \'margin-top\': \'40px\' } },\n      React.createElement(\n        "div",\n        { className: "ysp-manager-audit-title" },\n        React.createElement(\n          "div",\n          { className: "ysp-manager-audit-main-title" },\n          title\n        ),\n        React.createElement("div", { className: "ysp-manager-audit-subtitle" })\n      )\n    );\n  }\n});';
     },
     getData_control105_7JX5Xl: function (elem) {
+      // if (!elem) {
+      //   return;
+      // }
+      // if (elem) {
+      //   var data = {};
+      //   var content = [];
+      //   var titles = [];
+      //   var trs = $(elem.querySelector('tbody')).children('tr');
+      //   [].forEach.call(trs, function (trItem, trIndex) {
+      //     var rows = [[], []];
+      //     $(trItem).children("td:nth-child(odd)").each(function (idx, dt) {
+      //       if (dt.textContent.indexOf('签字意见') == -1) {
+      //         titles.push(dt.textContent.replace(/\s/g, "").trim());
+      //       }
+      //     });
+      //     $(trItem).children("td:nth-child(even)").each(function (idx, dt) {
+      //       if (dt.querySelector("select")) {
+      //         var optionIndex = dt.querySelector('select').selectedIndex;
+      //         content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
+      //       } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
+      //         if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
+      //           if (trIndex == 5) {} else {
+      //             content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
+      //           }
+      //         }
+      //       } else if (dt.querySelector("input[type='text']")) {
+      //         content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
+      //       } else if (dt.querySelector("textarea")) {
+      //         content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
+      //       }
+      //     });
+      //   });
+      //   data.titles = titles;
+      //   data.content = content;
+      //   return data;
+      // }
       if (!elem) {
         return;
       }if (elem) {
-        var data = {};var content = [];var titles = [];var trs = $(elem.querySelector('tbody')).children('tr');[].forEach.call(trs, function (trItem, trIndex) {
-          var rows = [[], []];$(trItem).children("td:nth-child(odd)").each(function (idx, dt) {
+        var data = {};var content = [];var titles = [];var fileSize = [];var trs = $(elem.querySelector('tbody')).children('tr');[].forEach.call(trs, function (trItem, trIndex) {
+          $(trItem).children("td:nth-child(odd)").each(function (idx, dt) {
             if (dt.textContent.indexOf('签字意见') == -1) {
               titles.push(dt.textContent.replace(/\s/g, "").trim());
             }
@@ -36,7 +72,18 @@
               var optionIndex = dt.querySelector('select').selectedIndex;content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
             } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
-                if (trIndex == 5) {} else {
+                // if (trIndex == 5) {
+                if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
+                  var files = dt.querySelectorAll('a');var fileName = [];if (files.length > 0) {
+                    [].forEach.call(files, function (fileItem, fileIndex) {
+                      if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
+                        fileName.push(fileItem.textContent.trim());var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('(')));
+                      }
+                    });content.push(fileName);
+                  } else {
+                    content.push([]);
+                  }
+                } else {
                   content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
                 }
               }
@@ -44,9 +91,17 @@
               content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
             } else if (dt.querySelector("textarea")) {
               content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
+            } else if (trItem.querySelector('td').textContent.indexOf("部门经理") !== -1) {
+              content.push(dt.textContent.replace(/\s/g, ""));
+            } else if (trItem.querySelector('td').textContent.indexOf("主管领导") !== -1) {
+              content.push(dt.textContent.replace(/\s/g, ""));
+            } else if (trItem.querySelector('td').textContent.replace(/\s/g, "").trim() == "领导审批意见") {
+              content.push(dt.textContent.replace(/\s/g, ""));
+            } else {
+              content.push('');
             }
           });
-        });data.titles = titles;data.content = content;return data;
+        });data.titles = titles;data.content = content;data.fileSize = fileSize;return data;
       }
     },
     doAction_uiControl91_tQHRMw: function (data, elem) {

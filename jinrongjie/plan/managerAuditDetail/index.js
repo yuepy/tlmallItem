@@ -29,7 +29,6 @@
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
                 // if (trIndex == 5) {
                 if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
-                  // console.log(9999);
                   var files = dt.querySelectorAll('a');var fileName = [];if (files.length > 0) {
                     [].forEach.call(files, function (fileItem, fileIndex) {
                       if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
@@ -51,14 +50,14 @@
               content.push(dt.textContent.replace(/\s/g, ""));
             } else if (trItem.querySelector('td').textContent.indexOf("主管领导") !== -1) {
               content.push(dt.textContent.replace(/\s/g, ""));
-            } else if (trItem.querySelector('td').textContent.indexOf("领导审批意见") !== -1) {
+            } else if (trItem.querySelector('td').textContent.replace(/\s/g, "").trim() == "领导审批意见") {
               content.push(dt.textContent.replace(/\s/g, ""));
             } else {
               content.push('');
             }
           });
-        });
-        data.titles = titles;data.content = content;data.fileSize = fileSize;return data;
+        });data.titles = titles;
+        data.content = content;data.fileSize = fileSize;return data;
       }
     }, doAction_uiControl23_PUM7iP: function (data, elem) {
       var clickType = data.eventType;if (clickType == 'downLoad') {
