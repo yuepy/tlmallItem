@@ -444,6 +444,20 @@
           "toModelId": "managerAuditRelatedDoc"
         }
       ]
+    },
+    "flow130_4V1ttH": {
+      "fromContextId": "context19_zoXJgw",
+      "fromAction": "doAction",
+      "fromControlId": "control122_OVuFZZ",
+      "toContexts": [
+        {
+          "toContextId": "context19_zoXJgw"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
+        }
+      ]
     }
   },
   "pages": {
@@ -585,6 +599,10 @@
       "contexts": {
         "context19_zoXJgw": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=162&isagent=0&beagenter=0"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },

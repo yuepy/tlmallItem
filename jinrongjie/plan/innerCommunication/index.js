@@ -148,10 +148,10 @@
       var eventType = data.eventType;if (eventType == "changeValue") {
         var description = data.dataCustom.value;elem.querySelector("textarea[temptitle='内容描述']").textContent = description;
       }if (eventType == 'click') {
-        console.log(elem.querySelectorAll("button[title='选择']"));switch (data.dataCustom) {case 'receive':
-            elem.querySelectorAll("button[title='选择']")[0].click();break;case 'process':
-            elem.querySelectorAll("button[title='选择']")[1].click();break;case 'relateDoc':
-            elem.querySelectorAll("button.AddDocFlow")[0].click();break;}
+        switch (data.dataCustom) {case 'receive':
+            elem.ownerDocument.defaultView.eval(elem.querySelectorAll("button[title='选择']")[0].onclick());break;case 'process':
+            elem.ownerDocument.defaultView.eval(elem.querySelectorAll("button[title='选择']")[1].onclick());break;case 'relateDoc':
+            elem.ownerDocument.defaultView.eval(elem.querySelectorAll("button.AddDocFlow")[0].onclick());break;}
       }
     },
     getTemplate_uiControl142_eVSCbk: function () {
