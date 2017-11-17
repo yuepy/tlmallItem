@@ -859,6 +859,15 @@ li {list-style: none}
     width: 100%;
   }
 }
+.ysp-process-tosend-submit,.personSureBtn{
+  width: 90%;
+  padding: 5px;
+  margin: 0 auto;
+  background:#c29a2a;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
 .ysp-textarea-content{
   padding: 0 15px;
   background: #fff;
@@ -1893,6 +1902,7 @@ div[data-ysp-modelid='choosePerson']{
     }
   }
   .delete_box{
+    overflow: hidden;
     //margin: 10px;
     .people2{
       display: block;
@@ -2274,6 +2284,7 @@ div[data-ysp-modelid='postName']{
     background: #fff;
     padding: 10px;
     margin-bottom: 10px;
+    margin-top: 40px;
     .top{
       span{
       	display: inline-block;
@@ -2329,7 +2340,59 @@ div[data-ysp-modelid='postName']{
     }
   }
 }
-
+div[data-ysp-modelid="setBack"]{
+  .ysp_returnBack_wrapper{
+    margin-top: 40px;
+    padding: 0 10px 10px 10px;
+    >div{
+      background: #fff;
+      margin-bottom: 10px;
+    }
+    .title{
+      text-align: center;
+      background: #ddd;
+    }
+    .check,.uncheck{
+      padding: 5px;
+      border-bottom: 1px solid #f4f4f4;
+    }
+    .ysp_top{
+      .check{
+        background:url("../lib/images/已选@2x.png") no-repeat;
+        background-size: 18px;
+    		background-position: 95%;
+      }
+      .uncheck{
+        background:url("../lib/images/未选@2x.png") no-repeat;
+        background-size: 18px;
+    		background-position: 95%;
+      }
+    }
+    .ysp_bottom{
+      .check{
+        background:url("../lib/images/ysp_checked.png") no-repeat;
+        background-size: 18px;
+    		background-position: 95%;
+      }
+      .uncheck{
+        background:url("../lib/images/ysp_check1.png") no-repeat;
+        background-size: 18px;
+    		background-position: 95%;
+      }
+    }
+    
+  }
+  .sureBtn{
+    background: #c29a2a;
+    text-align: center;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+  }
+}
 /******************************请假/公出申请单end*******************************************/
 /********************************资金调拨和印章 start****************************/
 div[data-ysp-modelid="fundSeal"]{
@@ -2380,6 +2443,12 @@ div[data-ysp-modelid="fundSeal"]{
   }
   .ysp-manager-audit-title-icon{
     border-top: 10px solid #f4f4f4;
+  }
+}
+div[data-ysp-modelid="setBackFlowStep"]{
+  .ysp_flowStep_wrapper{
+    margin-top: 40px;
+    background: #fff;
   }
 }
 /********************************资金调拨和印章 end****************************/
