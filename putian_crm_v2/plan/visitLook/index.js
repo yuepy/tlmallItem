@@ -129,7 +129,7 @@
           var active = liss[k].className;if (active == 'active') {
             data.currentPage = liss[k].querySelector('a').textContent;
           }
-        }data.page = elem.ownerDocument.querySelector('#page').textContent != '' ? true : false;return data;
+        }data.page = elem.ownerDocument.querySelector('#VisitLooKTbody').querySelectorAll('tr').length != 0 ? true : false;return data;
       }
     },
     doAction_uiControl135_ZgJgV7: function (data, elem) {
