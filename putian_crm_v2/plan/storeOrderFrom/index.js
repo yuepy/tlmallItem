@@ -47,7 +47,7 @@
         var active = liss[k].className;if (active == 'active') {
           data.currentPage = liss[k].querySelector('a').textContent;
         }
-      }data.page = elem.ownerDocument.querySelector('#tbodyContent').textContent != '' ? true : false;return data;
+      }data.page = elem.ownerDocument.querySelector('#tbodyContent').querySelectorAll('tr').length != 0 ? true : false;return data;
     },
     doAction_uiControl235_Lg9baB: function (data, elem) {
       switch (data.eventType) {case 'prev':
