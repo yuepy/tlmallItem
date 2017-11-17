@@ -1969,6 +1969,23 @@ div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row
   background-position-y: 50%;
   line-height: 15px;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word {
+  overflow: hidden;
+  margin-bottom: 5px;
+  padding: 5px 0 5px 20px;
+  background: #EDEDED url("../lib/images/默认文档1x.png") no-repeat;
+  background-size: 15px;
+  background-position: 2px 8px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .download,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .download {
+  background: url("../lib/images/download.png") no-repeat;
+  float: right;
+  width: 15px;
+  height: 15px;
+  margin-top: 5px;
+}
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unchoose,
