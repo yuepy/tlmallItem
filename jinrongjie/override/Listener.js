@@ -1,23 +1,23 @@
 /**
  * Listener.js
- * �������ڽ�����ie�£�ͨ��js�ı�input��ֵʱ��
- * �޷��������¼������⣨�磺onpropertychange, oninput, onchange��
- * Sample: ���ײ�
+ * 此类用于解决非ie下，通过js改变input的值时，
+ * 无法触发其事件的问题（如：onpropertychange, oninput, onchange）
+ * Sample: 见底部
  * clyt v0.1 2012/10/22
  */
 function Listener() {
-    //��ʱ��
+    //定时器
     var interval_l = null;
-    //key:name,value:value.  �����ж�Ԫ��value�Ƿ�����
+    //key:name,value:value.  用于判断元素value是否变更
     var objValMap = new Map();
-    //��ʱɨ����Ԫ�ؼ�
+    //定时扫描的元素集
     var targetObjects = null;
-    //���鵱ǰ�������Ƿ���ie
+    //检查当前浏览器是否是ie
     var isIe = function() {
         return jQuery.browser.msie;
     };
 
-    //���鵱ǰ���������Ƿ��а󶨼�������
+    //检查当前监听器中是否有绑定监听对象
     var isEmpty = function() {
         if (targetObjects == null || targetObjects.length == 0) {
             return true;
@@ -25,19 +25,19 @@ function Listener() {
         return false;
     };
 
-    //��ʱִ�е�����
+    //定时执行的内容
     var execute = function(exeattr) {
         if (isIe() && !isEmpty()) {
             return;
         }
         if (isEmpty()) { return; }
-        //����Ԫ�ؼ���
+        //迭代元素集合
         jQuery.each(targetObjects, function(i, n) {
-            var oldVal = objValMap.get(n.name);
-            var _element = jQuery("input[name=" + n.name + "]")[0];
+            var oldVal = objValMap.get(n.name || n.id);
+            var _element = n.name ? jQuery("input[name=" + n.name + "]")[0] : jQuery("input[id=" + n.id + "]")[0];
             var newVal = _element.value;
             if (oldVal != newVal) {
-                objValMap.put(n.name, n.value);
+                objValMap.put(n.name || n.id, n.value);
                 var _callbak = jQuery(_element).attr(exeattr);
                 try {
                     eval(_callbak);
@@ -45,7 +45,7 @@ function Listener() {
             }
         });
     };
-    //��ʼִ��
+    //开始执行
     var start = function(seed, exeattr) {
             if (isIe() && !isEmpty()) {
                 return;
@@ -58,13 +58,13 @@ function Listener() {
             }
             interval_l = window.setInterval(function() { execute(exeattr); }, seed);
         }
-        //ֹͣ������
+        //停止监听器
     var stop = function() {
         if (interval_l) {
             window.clearInterval(interval_l);
         }
     };
-    //�󶨼�������
+    //绑定监听对象
     var load = function(selector) {
         if (isIe()) {
             return;
@@ -84,7 +84,7 @@ function Listener() {
 }
 
 /**
- * ��ֵ�ԣ�ͬJava Map
+ * 键值对，同Java Map
  */
 function Map() {
     var struct = function(key, value) {
@@ -141,9 +141,9 @@ function Map() {
 var l = null;
 jQuery(document).ready(function(){
 	l = new Listener();
-	l.load("input[onpropertychange!='']"); //��������ʱ��Ĭ�ϲ���Ϊ��"input[type=hidden][_listener!='']";
-	l.start(500, "onpropertychange");      //��������ʱ��Ĭ�ϲ���Ϊ��500, "_listener"
+	l.load("input[onpropertychange!='']"); //不传参数时，默认参数为："input[type=hidden][_listener!='']";
+	l.start(500, "onpropertychange");      //不传参数时，默认参数为：500, "_listener"
 });
-//ֹͣ����ʱ����:
+//停止监听时调用:
 l.stop();
 */
