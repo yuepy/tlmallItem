@@ -59,7 +59,7 @@
         }for (var i = 0, k = 0; i < aEls.length; i++) {
           var string = ysp.customHelper.trim(aEls[i].textContent);if (string.length > 3) {
             k++;if (k == num) {
-              aEls[i].click();
+              aEls[i].click();ysp.appMain.showLoading();
             }
           }
         }
