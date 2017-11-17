@@ -6,7 +6,8 @@
   "requires": {
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
-    "processToSend": "../processToSend/index.json"
+    "processToSend": "../processToSend/index.json",
+    "setBackFlowStep": "../setBackFlowStep/index.json"
   },
   "chineseName": "资金调拨和印章（三个流程）",
   "description": "",
@@ -56,7 +57,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('印章使用审批流程') !==-1||elem.textContent.indexOf('资金调拨审批流程') !==-1||elem.textContent.indexOf('机关工会支出审批流程') !==-1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('印章使用审批流程') !==-1||elem.textContent.indexOf('资金调拨审批流程') !==-1||elem.textContent.indexOf('机关工会支出审批流程') !==-1||elem.textContent.indexOf('资金支出审批流程') !==-1){return true;}return false;"
     },
     "control161_DAx502": {
       "location": {
@@ -317,6 +318,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[2]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[14]/td[2]/table/tbody/tr[2]"
             }
           ],
           "force": true
@@ -359,6 +364,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[3]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[14]/td[2]/table/tbody/tr[3]"
             }
           ],
           "force": true
@@ -398,6 +407,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[4]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[14]/td[2]/table/tbody/tr[4]"
             }
           ],
           "force": false
@@ -758,6 +771,10 @@
         {
           "toContextId": "context10_Tp4yhH",
           "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context29_qI7TyT",
+          "toModelId": "setBackFlowStep"
         }
       ]
     }
