@@ -137,6 +137,20 @@
     getTemplate_uiControl189_wN5iH2: function () {
       var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div onClick={(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:'click'\n            })\n          }\n        }}>\n        \u6D4B\u8BD5opener - \u4F20\u503C\u662F\u5426\u6210\u529F\n      </div>\n    )\n  }\n});";
       return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var _this = this;\n\n    return React.createElement(\n      'div',\n      { onClick: function onClick(e) {\n          var handler = _this.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'click'\n            });\n          }\n        } },\n      '\\u6D4B\\u8BD5opener - \\u4F20\\u503C\\u662F\\u5426\\u6210\\u529F'\n    );\n  }\n});";
+    },
+    getData_control214_gktHg0: function (elem) {},
+    doAction_uiControl196_avlwS1: function (data, elem) {
+      if (data.eventType == "click") {
+        if (elem.ownerDocument.getElementById('rightMenuIframe')) {
+          var iframeBody = elem.ownerDocument.getElementById('rightMenuIframe').contentDocument.body;if ($(iframeBody).find("button").length > 0) {
+            $(iframeBody).find("button").eq(0)[0].click();console.log($(iframeBody).find("button").eq(0).text());
+          }
+        }
+      }
+    },
+    getTemplate_uiControl196_avlwS1: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  click:function(e){\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"click\"\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div onClick={this.click.bind(this)} className=\"ysp-process-tosend-submit\">\n        \u63D0\u4EA4\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  click: function click(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \"click\"\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      { onClick: this.click.bind(this), className: \"ysp-process-tosend-submit\" },\n      \"\\u63D0\\u4EA4\"\n    );\n  }\n});";
     }
   });
 })(window, ysp);
