@@ -9,7 +9,7 @@
     },
     doAction_uiControl7_fXZ26L: function (data, elem) {
       if (data.eventType == 'click') {
-        history.back();
+        ysp.customHelper.returnHome();
       }
     },
     getTemplate_uiControl7_fXZ26L: function getTemplate_uiControl7_fXZ26L() {
