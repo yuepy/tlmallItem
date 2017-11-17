@@ -80,7 +80,7 @@
           var active = liss[k].className;if (active == 'active') {
             data.currentPage = liss[k].querySelector('a').textContent;
           }
-        }data.page = elem.ownerDocument.querySelector('#Page').textContent != '' ? true : false;
+        }data.page = elem.ownerDocument.querySelector('#tbodyContent').querySelectorAll('tr').length != 0 ? true : false;
       } catch (e) {
         console.log(e.message);
       }return data;
