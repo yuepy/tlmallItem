@@ -9,7 +9,7 @@
     },
     doAction_uiControl7_fXZ26L: function (data, elem) {
       if (data.eventType == 'click') {
-        window.EAPI.back();
+        ysp.customHelper.returnHome();
       }
     },
     getTemplate_uiControl7_fXZ26L: function getTemplate_uiControl7_fXZ26L() {
@@ -20,9 +20,7 @@
     getData_control202_Gigr6R: function (elem) {
       if (!elem) {
         return;
-      }
-      var daiban = ysp.customHelper.Dnum();
-      return daiban;
+      }var daiban = ysp.customHelper.Dnum();return daiban;
     },
     doAction_uiControl184_cZLuFC: function (data, elem) {
       if (data.eventType == 'click') {
@@ -33,10 +31,7 @@
         //   } else {
         //     console.error('operation参数未找到:流程未适配');
         //   }
-        var src = data.dataCustom.href;
-        var title = data.dataCustom.title;
-        var href = "http://192.168.200.63" + src;
-        ysp.customHelper.openWin(href, title);
+        var src = data.dataCustom.href;var title = data.dataCustom.title;var href = "http://192.168.200.63" + src;ysp.customHelper.openWin(href, title);
       }
     },
     getTemplate_uiControl184_cZLuFC: function () {

@@ -33,6 +33,7 @@
         firstMenus: _firstMenus,
         fireKeyEvent: _fireKeyEvent,
         Dnum: _num, // 待办列表角标值
+      	returnHome:_returnHome,
         isArray(array) {
             if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
                 return true;
@@ -313,11 +314,9 @@
             }
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
-                  debugger;
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
                     aWin.parent.close();
-                    aWin.close();
                 }
             }
             if ((aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
@@ -359,7 +358,6 @@
             }
             if (aWin.addObjectToSelect) {
                 aWin.addObjectToSelect = function(obj, str) {
-                  debugger;
                     if (obj.tagName != "SELECT") return;
                     var oOption = doc.createElement("OPTION");
                   	var value = doc.createTextNode(str.split('~')[0]);
@@ -453,7 +451,9 @@
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
             /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
-            // aWin.addEventListener('DOMContentLoaded', function() {
+//             aWin.addEventListener('DOMContentLoaded', function() {
+              
+//             })
             // aWin.alert = function() {
             //   debugger;
             // }
@@ -469,9 +469,9 @@
           
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
-                var actionEvent = '{"target":"null","data":"getTokenURl"}';
+                var actionEvent = '{"target":"null","data":"getNumber"}';
                 var parent = aWin.frameElement.ownerDocument.defaultView;
-                //parent && parent.EAPI.postMessageToNative('getToken', null);
+                parent && parent.EAPI.postMessageToNative('getNum', actionEvent);
                 parent && topWindow.EAPI.postMessageToNative('getToken', null);
                 sessionStorage.setItem('getTokenURl', true);
                 token_flag = true;
@@ -543,6 +543,16 @@
             return false;
         }
     });
+    /*调用场景：该方法用于返回客户OA*/
+  	function _returnHome(){
+      if(parent.EAPI.isIOS() || parent.EAPI.isAndroid()){
+        parent.EAPI.back();
+      }else{
+        ysp.appMain.back();
+      }
+    }
+    /*调用场景：该方法用于返回客户OA*/
+  
     /*调用场景：该方法用于采集表格数据*/
     function _getTableData(elem, titleArgs) {
         if (!elem) {
