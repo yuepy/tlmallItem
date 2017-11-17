@@ -61,8 +61,8 @@
               content.push(dt.textContent.replace(/\s/g, ""));
             } else if (trItem.querySelector('td').textContent.replace(/\s/g, "").trim() == "领导审批意见") {
               content.push(dt.textContent.replace(/\s/g, ""));
-            } else {
-              content.push('');
+            } else if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
+              content.push([]);
             }
           });
         });data.titles = titles;data.content = content;data.fileSize = fileSize;return data;

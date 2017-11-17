@@ -64,41 +64,6 @@
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n\tvalue: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n\t_inherits(_class, _Component);\n\n\tfunction _class() {\n\t\t_classCallCheck(this, _class);\n\n\t\treturn _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n\t}\n\n\t_createClass(_class, [{\n\t\tkey: \'btnClick\',\n\t\tvalue: function btnClick(e) {\n\t\t\tvar handler = this.props.customHandler;\n\t\t\tif (handler) {\n\t\t\t\thandler({\n\t\t\t\t\tdata: e.target.getAttribute(\'data-index\'),\n\t\t\t\t\teventType: \'click\'\n\t\t\t\t});\n\t\t\t}\n\t\t}\n\t}, {\n\t\tkey: \'dataChange\',\n\t\tvalue: function dataChange(e) {\n\t\t\tvar handler = this.props.customHandler;\n\t\t\tif (handler) {\n\t\t\t\thandler({\n\t\t\t\t\tdata: e.target.textContent,\n\t\t\t\t\teventType: \'dataChange\'\n\t\t\t\t});\n\t\t\t}\n\t\t}\n\t}, {\n\t\tkey: \'render\',\n\t\tvalue: function render() {\n\t\t\tvar _this = this;\n\t\t\tvar data = this.props.customData || {};\n\t\t\tvar titles = data.titles || [];\n\t\t\tvar content = data.content || [];\n\t\t\treturn React.createElement(\n\t\t\t\t\'div\',\n\t\t\t\tnull,\n\t\t\t\tReact.createElement(\n\t\t\t\t\t\'div\',\n\t\t\t\t\t{ className: \'ysp-manager-audit-title-icon\', style: { \'border-bottom\': \'none\' } },\n\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\'span\',\n\t\t\t\t\t\tnull,\n\t\t\t\t\t\ttitles[0]\n\t\t\t\t\t)\n\t\t\t\t),\n\t\t\t\tReact.createElement(\n\t\t\t\t\t\'div\',\n\t\t\t\t\t{ className: \'ysp-manager-audit-wrapper\' },\n\t\t\t\t\ttitles.map(function (item, index) {\n\t\t\t\t\t\tif (index == 0) {\n\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (item == \'\u6807\u9898\') {\n\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\t\t\t{ className: \'ysp-custom-textarea\', style: { \'padding\': \'0\' } },\n\t\t\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\t\t\t\t{ className: \'title\' },\n\t\t\t\t\t\t\t\t\t\t\titem,\n\t\t\t\t\t\t\t\t\t\t\tReact.createElement(\'i\', { className: \'must_mark\' })\n\t\t\t\t\t\t\t\t\t\t),\n\t\t\t\t\t\t\t\t\t\tReact.createElement(\'div\', { contentEditable: \'true\', className: \'cutom-textarea\', \'data-type\': \'title\', dangerouslySetInnerHTML: { __html: content[index] }, onBlur: _this.dataChange.bind(_this), style: { \'height\': \'30px\' } })\n\t\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (item == \'\u7D27\u6025\u7A0B\u5EA6\') {\n\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\t\t\t{ className: \'title\' },\n\t\t\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\t\t\'span\',\n\t\t\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\t\t\titem\n\t\t\t\t\t\t\t\t\t\t),\n\t\t\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\t\t\t\t{ className: \'emergency-level-div\' },\n\t\t\t\t\t\t\t\t\t\t\tcontent[index][1] instanceof Array && content[index][1].map(function (innerItem, innerIdx) {\n\t\t\t\t\t\t\t\t\t\t\t\tif (content[index][0][innerIdx].indexOf(\'checked\') !== -1) {\n\t\t\t\t\t\t\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\'span\',\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t{ onClick: _this.btnClick.bind(_this), \'data-index\': innerIdx, className: \'activeSpan\' },\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tinnerItem\n\t\t\t\t\t\t\t\t\t\t\t\t\t);\n\t\t\t\t\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\'span\',\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t{ onClick: _this.btnClick.bind(_this), \'data-index\': innerIdx },\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tinnerItem\n\t\t\t\t\t\t\t\t\t\t\t\t\t);\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t})\n\t\t\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (item == \'\u77ED\u4FE1\u63D0\u9192\') {\n\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\t{ style: { \'border\': \'none\' } },\n\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t\t\t\t{ className: \'title\' },\n\t\t\t\t\t\t\t\t\t\titem\n\t\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t);\n\t\t\t\t\t\t}\n\t\t\t\t\t})\n\t\t\t\t)\n\t\t\t);\n\t\t}\n\t}]);\n\n\treturn _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
     getData_control164_6BMlqc: function (elem) {
-      // if (!elem) {
-      //   return;
-      // }
-      // if (elem) {
-      //   var data = {};
-      //   var content = [];
-      //   var titles = [];
-      //   var trs = $(elem.querySelector('tbody')).children('tr');
-      //   [].forEach.call(trs, function (trItem, trIndex) {
-      //     $(trItem).children("td:nth-child(odd)").each(function (idx, dt) {
-      //       if (dt.textContent.indexOf('签字意见') == -1) {
-      //         titles.push(dt.textContent.replace(/\s/g, "").trim());
-      //       }
-      //     });
-      //     $(trItem).children("td:nth-child(even)").each(function (idx, dt) {
-      //       if (dt.querySelector("select")) {
-      //         var optionIndex = dt.querySelector('select').selectedIndex;
-      //         content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
-      //       } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
-      //         if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
-      //           if (trIndex == 5) {} else {
-      //             content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
-      //           }
-      //         }
-      //       } else if (dt.querySelector("input[type='text']")) {
-      //         content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
-      //       } else if (dt.querySelector("textarea")) {
-      //         content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
-      //       }
-      //     });
-      //   });
-      //   data.titles = titles;
-      //   data.content = content;
-      //   return data;
-      // }
       if (!elem) {
         return;
       }if (elem) {
@@ -137,8 +102,8 @@
               content.push(dt.textContent.replace(/\s/g, ""));
             } else if (trItem.querySelector('td').textContent.replace(/\s/g, "").trim() == "领导审批意见") {
               content.push(dt.textContent.replace(/\s/g, ""));
-            } else {
-              content.push('');
+            } else if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
+              content.push([]);
             }
           });
         });data.titles = titles;data.content = content;data.fileSize = fileSize;return data;

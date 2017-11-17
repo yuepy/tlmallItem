@@ -180,9 +180,7 @@
               titles.push(dt.textContent.replace(/\s/g, "").trim());
             }
           });$(trItem).children("td:nth-child(even)").each(function (idx, dt) {
-            if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
-              content.push("");
-            }if (dt.querySelector("select")) {
+            if (dt.querySelector("select")) {
               var optionIndex = dt.querySelector('select').selectedIndex;content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
             } else if (dt.querySelector("input[type='text']")) {
               content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
@@ -208,6 +206,8 @@
                   content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
                 }
               }
+            } else if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
+              content.push([]);
             }
           });
         });data.titles = titles;data.content = content;data.fileSize = fileSize;return data;
