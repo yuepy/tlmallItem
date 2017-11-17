@@ -254,56 +254,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control132_Mapi9E": {
-      "location": {
-        "data": {
-          "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control132_Mapi9E"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control133_ud3c3u": {
-      "location": {
-        "data": {
-          "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[3]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control133_ud3c3u"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control129_IPx8x5": {
       "location": {
         "data": {
@@ -356,6 +306,48 @@
       "text": "",
       "frameXPath": "",
       "customJS": "if(elem.textContent.indexOf('主管领导签核') !== -1&&elem.textContent.indexOf('创建') !== -1&&elem.textContent.indexOf('公文审批')!==-1){return true;}return false;"
+    },
+    "control19_D8kpkq": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control19_D8kpkq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control132_KyXLl1": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control132_KyXLl1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -367,8 +359,8 @@
         "control127_HiS6q8",
         "control128_Z2rqRV",
         "control131_L4LzV6",
-        "control132_Mapi9E",
-        "control133_ud3c3u"
+        "control19_D8kpkq",
+        "control132_KyXLl1"
       ],
       "anchors": [
         "control129_IPx8x5"
@@ -432,10 +424,10 @@
         }
       ]
     },
-    "flow69_1FlpOk": {
+    "flow131_1dbTJn": {
       "fromContextId": "context20_mmput1",
       "fromAction": "doAction",
-      "fromControlId": "control132_Mapi9E",
+      "fromControlId": "control19_D8kpkq",
       "toContexts": [
         {
           "toContextId": "context20_mmput1"
@@ -446,10 +438,10 @@
         }
       ]
     },
-    "flow73_1RH7Ds": {
+    "flow132_y3aPHG": {
       "fromContextId": "context20_mmput1",
       "fromAction": "doAction",
-      "fromControlId": "control133_ud3c3u",
+      "fromControlId": "control132_KyXLl1",
       "toContexts": [
         {
           "toContextId": "context20_mmput1"
@@ -541,31 +533,31 @@
           }
         },
         {
-          "id": "uiControl114_MHtJfd",
-          "controlId": "control132_Mapi9E",
+          "id": "uiControl19_5U2CAD",
+          "controlId": "control19_D8kpkq",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl114_MHtJfd",
-                "onGetTemplate": "getTemplate_uiControl114_MHtJfd"
+                "onDoAction": "doAction_uiControl19_5U2CAD",
+                "onGetTemplate": "getTemplate_uiControl19_5U2CAD"
               }
             }
           }
         },
         {
-          "id": "uiControl115_y0SPer",
-          "controlId": "control133_ud3c3u",
+          "id": "uiControl114_iqaeka",
+          "controlId": "control132_KyXLl1",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl115_y0SPer",
-                "onGetTemplate": "getTemplate_uiControl115_y0SPer"
+                "onDoAction": "doAction_uiControl114_iqaeka",
+                "onGetTemplate": "getTemplate_uiControl114_iqaeka"
               }
             }
           }
