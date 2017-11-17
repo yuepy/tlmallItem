@@ -33,6 +33,7 @@
         firstMenus: _firstMenus,
         fireKeyEvent: _fireKeyEvent,
         Dnum: _num, // 待办列表角标值
+      	returnHome:_returnHome,
         isArray(array) {
             if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
                 return true;
@@ -313,11 +314,9 @@
             }
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
-                  debugger;
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
                     aWin.parent.close();
-                    aWin.close();
                 }
             }
             if ((aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
@@ -359,7 +358,6 @@
             }
             if (aWin.addObjectToSelect) {
                 aWin.addObjectToSelect = function(obj, str) {
-                  debugger;
                     if (obj.tagName != "SELECT") return;
                     var oOption = doc.createElement("OPTION");
                   	var value = doc.createTextNode(str.split('~')[0]);
@@ -453,7 +451,9 @@
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
             /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
-            // aWin.addEventListener('DOMContentLoaded', function() {
+//             aWin.addEventListener('DOMContentLoaded', function() {
+              
+//             })
             // aWin.alert = function() {
             //   debugger;
             // }
@@ -543,6 +543,16 @@
             return false;
         }
     });
+    /*调用场景：该方法用于返回客户OA*/
+  	function _returnHome(){
+      if(parent.EAPI.isIOS() || parent.EAPI.isAndroid()){
+        parent.EAPI.back();
+      }else{
+        ysp.appMain.back();
+      }
+    }
+    /*调用场景：该方法用于返回客户OA*/
+  
     /*调用场景：该方法用于采集表格数据*/
     function _getTableData(elem, titleArgs) {
         if (!elem) {
