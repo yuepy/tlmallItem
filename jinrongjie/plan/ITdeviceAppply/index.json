@@ -3,6 +3,9 @@
   "id": "ITdeviceAppply",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=605&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+  },
   "chineseName": "IT类办公设备创建",
   "description": "",
   "controls": {
@@ -251,6 +254,10 @@
       "toContexts": [
         {
           "toContextId": "context25_w2LmZK"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     }

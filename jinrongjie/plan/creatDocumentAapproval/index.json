@@ -3,6 +3,10 @@
   "id": "creatDocumentAapproval",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=182&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+  },
   "chineseName": "新建06公文审批流程-报告阅知类（同送总经理董事长）",
   "description": "",
   "controls": {
@@ -225,6 +229,14 @@
       "toContexts": [
         {
           "toContextId": "context18_IZLpIz"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     }
@@ -293,6 +305,10 @@
       "contexts": {
         "context18_IZLpIz": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=182&isagent=0&beagenter=0"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },
