@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=605&isagent=0&beagenter=0",
   "jsFile": "index.js",
   "requires": {
-    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "postName": "../postName/index.json"
   },
   "chineseName": "IT类办公设备创建",
   "description": "",
@@ -258,6 +259,30 @@
         {
           "toContextId": "context6_aweFC7",
           "toModelId": "managerAuditRelateProcess"
+        },
+        {
+          "toContextId": "context21_LgNuze",
+          "toModelId": "postName"
+        }
+      ]
+    },
+    "flow133_w1PIPo": {
+      "fromContextId": "context25_w2LmZK",
+      "fromAction": "doAction",
+      "fromControlId": "control168_AgTWpX",
+      "toContexts": [
+        {
+          "toContextId": "context25_w2LmZK"
+        }
+      ]
+    },
+    "flow134_xAwaKB": {
+      "fromContextId": "context25_w2LmZK",
+      "fromAction": "doAction",
+      "fromControlId": "control165_NdPmnp",
+      "toContexts": [
+        {
+          "toContextId": "context25_w2LmZK"
         }
       ]
     }
@@ -341,6 +366,10 @@
       "contexts": {
         "context25_w2LmZK": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=605&isagent=0&beagenter=0"
+        ],
+        "context21_LgNuze": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.rolesmark|28481",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.zcfl|15187"
         ]
       }
     },

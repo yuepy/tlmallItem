@@ -53,13 +53,12 @@
                     var arrn = [];arrn.push($(this).text().trim());data.base_lc_info.degree.push(arrn);
                   } else if ($(this).children("select").length > 0) {
                     data.base_lc_info.miji.id.push($(this).children("select")[0].id);$(this).children("select").children("option").each(function () {
-                      if ($(this).text().trim() !== '') {
-                        var arr = [];if ($(this)[0].selected == true) {
-                          arr.push({ text: $(this).text().trim(), selected: true });
-                        } else {
-                          arr.push({ text: $(this).text().trim(), selected: "" });
-                        }data.base_lc_info.miji.content.push(arr);
-                      }
+                      //if ($(this).text().trim() !== '') {
+                      var arr = [];if ($(this)[0].selected == true) {
+                        arr.push({ text: $(this).text().trim(), selected: true });
+                      } else {
+                        arr.push({ text: $(this).text().trim(), selected: "" });
+                      }data.base_lc_info.miji.content.push(arr); //}
                     });
                   }
               });
@@ -74,8 +73,7 @@
                 } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
                   arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title', mark: '1' });
                 } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
-                  arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1',
-                    mark: '1' });
+                  arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1', mark: '1' });
                 } else if ($(this)[0].className == 'zdn' && $(this)[0].previousElementSibling.textContent.trim() == '') {
                   arr2.push('111');
                 } //判断附件-------------------------------------
@@ -94,20 +92,22 @@
                   } //判断select-------------------------------------
                   else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                       var arr4 = [];$(this).children("select").children("option").each(function () {
-                        if ($(this).text().trim() !== '' && $(this)[0].selected == true) {
+                        if ($(this)[0].selected == true) {
                           arr4.push({ text: $(this).text().trim(), select: 'selected' });
-                        }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
+                        }if ($(this)[0].selected == false) {
                           arr4.push({ text: $(this).text().trim(), select: '' });
                         }
                       });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
                     } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
                       var arr4 = [];$(this).children("select").children("option").each(function () {
-                        if ($(this).text().trim() !== '' && $(this)[0].selected == true) {
-                          arr4.push({ text: $(this).text().trim(), select: 'selected' });
-                        }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
+                        if ($(this)[0].selected == true) {
+                          arr4.push({ text: $(this).text().trim(), select: 'selected'
+                          });
+                        } else if ($(this)[0].selected == false) {
                           arr4.push({ text: $(this).text().trim(), select: '' });
                         }
-                      });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                      });
+                      arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
                     } //判断input-------------------------------------
                     else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                         arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id'), mark: '1' });
@@ -167,17 +167,17 @@
                   } //判断select-------------------------------------
                   else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                       var arr4 = [];$(this).children("select").children("option").each(function () {
-                        if ($(this).text().trim() !== '' && $(this)[0].selected == true) {
+                        if ($(this)[0].selected == true) {
                           arr4.push({ text: $(this).text().trim(), select: 'selected' });
-                        }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
+                        }if ($(this)[0].selected == false) {
                           arr4.push({ text: $(this).text().trim(), select: '' });
                         }
                       });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), disabled: 'false' });
                     } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
                       var arr4 = [];$(this).children("select").children("option").each(function () {
-                        if ($(this).text().trim() !== '' && $(this)[0].selected == true) {
+                        if ($(this)[0].selected == true) {
                           arr4.push({ text: $(this).text().trim(), select: 'selected' });
-                        }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
+                        }if ($(this)[0].selected == false) {
                           arr4.push({ text: $(this).text().trim(), select: '' });
                         }
                       });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), disabled: 'true' });
@@ -188,7 +188,8 @@
                       else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                           arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                         } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children("button").length == 0) {
-                          arr2.push({ text: $(this).children("span").text(), type: 'a' });
+                          arr2.push({ text: $(this).children("span").text(),
+                            type: 'a' });
                         } //判断textarea-------------------------------------
                         else if ($(this).children("textarea").length == 1) {
                             arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id });

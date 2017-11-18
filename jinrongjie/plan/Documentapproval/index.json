@@ -4,7 +4,9 @@
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=182&isagent=0&beagenter=0",
   "jsFile": "index.js",
   "requires": {
-    "processToSend": "../processToSend/index.json"
+    "processToSend": "../processToSend/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
   },
   "chineseName": "06公文审批流程-报告阅知类（同送总经理董事长）",
   "description": "",
@@ -507,6 +509,14 @@
       "toContexts": [
         {
           "toContextId": "context13_QKvkSF"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     },
@@ -804,6 +814,10 @@
           "192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=162836&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=118642&workflowRequestLogId=-1"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },

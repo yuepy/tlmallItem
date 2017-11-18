@@ -340,6 +340,17 @@ li {list-style: none}
     background-position-y: 50%;
     float: right;
   }
+  .upload-files-icon{
+    display: inline-block;
+    padding: 10px 15px;
+    width: 40px;
+    height: 30px;
+    background: url(images/upload-files.png) no-repeat;
+    background-position-x: 30%;
+    background-position-y: 50%;
+    float: right;
+    background-size: 45%;
+  }
 }
 .ysp-manager-audit-header-tab{
   background: #fff;
@@ -523,6 +534,19 @@ li {list-style: none}
     // background-size: 15px;
     // background-position-x: 90%;
     // background-position-y: 50%;
+  }
+  .relate-doc-process{
+    padding: 0 15px;
+    margin-top: -10px;
+    font-size: 0.9rem;
+    .single-doc-process{
+      display: inline-block;
+      padding: 0 5px 0 5px;
+      border-bottom: 1px solid #999;
+      margin: 0 5px;
+    }
+    // height: 30px;
+    // line-height: 30px;
   }
 }
 
@@ -858,6 +882,15 @@ li {list-style: none}
     background-position-y: 50%;
     width: 100%;
   }
+}
+.ysp-process-tosend-submit,.personSureBtn{
+  width: 90%;
+  padding: 5px;
+  margin: 0 auto;
+  background:#c29a2a;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
 }
 .ysp-textarea-content{
   padding: 0 15px;
@@ -1893,6 +1926,7 @@ div[data-ysp-modelid='choosePerson']{
     }
   }
   .delete_box{
+    overflow: hidden;
     //margin: 10px;
     .people2{
       display: block;
@@ -1996,7 +2030,23 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal']{
             // width: 100%;
           }
         }
-       
+       	.upLoading{
+          .word{
+            overflow: hidden;
+            margin-bottom: 5px;
+            padding: 5px 0 5px 20px;
+            background: #EDEDED url("../lib/images/默认文档1x.png") no-repeat;
+            background-size: 15px;
+            background-position: 2px 8px;
+            .download{
+              background:url("../lib/images/download.png") no-repeat;
+              float: right;
+              width: 15px;
+              height:15px;
+              margin-top: 5px;
+            }
+          }
+        }
         .unSelect,.unchoose{
           margin: 0;
           padding: 0;
@@ -2274,6 +2324,7 @@ div[data-ysp-modelid='postName']{
     background: #fff;
     padding: 10px;
     margin-bottom: 10px;
+    margin-top: 40px;
     .top{
       span{
       	display: inline-block;
@@ -2329,7 +2380,59 @@ div[data-ysp-modelid='postName']{
     }
   }
 }
-
+div[data-ysp-modelid="setBack"]{
+  .ysp_returnBack_wrapper{
+    margin-top: 40px;
+    padding: 0 10px 10px 10px;
+    >div{
+      background: #fff;
+      margin-bottom: 10px;
+    }
+    .title{
+      text-align: center;
+      background: #ddd;
+    }
+    .check,.uncheck{
+      padding: 5px;
+      border-bottom: 1px solid #f4f4f4;
+    }
+    .ysp_top{
+      .check{
+        background:url("../lib/images/已选@2x.png") no-repeat;
+        background-size: 18px;
+    		background-position: 95%;
+      }
+      .uncheck{
+        background:url("../lib/images/未选@2x.png") no-repeat;
+        background-size: 18px;
+    		background-position: 95%;
+      }
+    }
+    .ysp_bottom{
+      .check{
+        background:url("../lib/images/ysp_checked.png") no-repeat;
+        background-size: 18px;
+    		background-position: 95%;
+      }
+      .uncheck{
+        background:url("../lib/images/ysp_check1.png") no-repeat;
+        background-size: 18px;
+    		background-position: 95%;
+      }
+    }
+    
+  }
+  .sureBtn{
+    background: #c29a2a;
+    text-align: center;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+  }
+}
 /******************************请假/公出申请单end*******************************************/
 /********************************资金调拨和印章 start****************************/
 div[data-ysp-modelid="fundSeal"]{
