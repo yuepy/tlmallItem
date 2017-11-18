@@ -363,6 +363,27 @@
       "roles": "element,button,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control133_BUddgl": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control133_BUddgl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -375,7 +396,8 @@
         "control111_yUR1xo",
         "control112_qbRwBy",
         "control113_Hb7TgW",
-        "control114_F8zC6S"
+        "control114_F8zC6S",
+        "control133_BUddgl"
       ],
       "anchors": [
         "control98_GNGTgG"
@@ -559,6 +581,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl96_rfpcXz",
                 "onGetTemplate": "getTemplate_uiControl96_rfpcXz"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl115_Hv5I2W",
+          "controlId": "control133_BUddgl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl115_Hv5I2W",
+                "onGetTemplate": "getTemplate_uiControl115_Hv5I2W"
               }
             }
           }

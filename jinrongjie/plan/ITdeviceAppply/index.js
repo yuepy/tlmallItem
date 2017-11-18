@@ -283,7 +283,7 @@
           }
         });
       }if (data.eventType == 'about1') {
-        elem.ownerDocument.defaultView.eval(elem.querySelectorAll('.Browser')[0].onclick());elem.querySelectorAll('.Browser')[0].onclick(); // var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];
+        elem.ownerDocument.defaultView.eval(elem.querySelectorAll('.Browser')[2].onclick());elem.querySelectorAll('.Browser')[2].onclick(); // var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];
         // $(elem).find("button").each(function () {
         //   if ($(this).attr("title") == '相关文档') {
         //     $(this).click();
