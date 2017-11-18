@@ -158,12 +158,16 @@
         } else if (classname == "word") {
           //文档下载   
           // $(elem).children("tr").eq(row).children(".zdn").eq(column).find("a").click();
-          var text = $(elem).children("tr").eq(row).children(".zdn").eq(column).find("a").textContent;var cookie = elem.ownerDocument.cookie;var option = { "downloadUrl": "http://192.168.200.63/docs/docs/DocDspExt.jsp?id=198960&imagefileId=191993&isFromAccessory=true&isrequest=1&requestid=180694&isAppendTypeField=1 ", //下载的url
-            "docName": '000.docx', //文档名称
-            "docType": ".doc", //文件类型
-            "downloadHttpHeaders": { //cookie
-              "cookie": cookie }, "downloadType": "POST" //请求类型
-          };ysp.appMain.openDocument(option);
+          if (window.EAPI.isIOS()) {
+            window.EPAI.openDocument('http://192.168.200.63/docs/docs/DocDspExt.jsp?id=198960&imagefileId=191993&isFromAccessory=true&isrequest=1&requestid=180694&isAppendTypeField=1&_ysp_filepreview=1');
+          } else if (window.EAPI.isAndroid()) {
+            var text = $(elem).children("tr").eq(row).children(".zdn").eq(column).find("a").textContent;var cookie = elem.ownerDocument.cookie;var option = { "downloadUrl": "http://192.168.200.63/docs/docs/DocDspExt.jsp?id=198960&imagefileId=191993&isFromAccessory=true&isrequest=1&requestid=180694&isAppendTypeField=1 ", //下载的url
+              "docName": '000.docx', //文档名称
+              "docType": ".doc", //文件类型
+              "downloadHttpHeaders": { //cookie
+                "cookie": cookie }, "downloadType": "POST" //请求类型
+            };ysp.appMain.openDocument(option);
+          }
         } else if (classname == "delete") {
           var input = $($(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card))[0];$(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card).click();if (input.checked) {
             $(elem).find("#div0button").find("button").click();
