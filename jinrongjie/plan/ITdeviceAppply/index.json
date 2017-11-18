@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
-    "postName": "../postName/index.json"
+    "postName": "../postName/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
   },
   "chineseName": "IT类办公设备创建",
   "description": "",
@@ -263,6 +264,10 @@
         {
           "toContextId": "context21_LgNuze",
           "toModelId": "postName"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     },
