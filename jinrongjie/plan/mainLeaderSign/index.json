@@ -501,6 +501,27 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control219_zf6Wbw": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control219_zf6Wbw"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -519,7 +540,8 @@
         "control62_ALHHAs",
         "control86_GKBi8i",
         "control156_MMHyPQ",
-        "control157_oLLZV6"
+        "control157_oLLZV6",
+        "control219_zf6Wbw"
       ],
       "anchors": [
         "control82_9C4XRB"
@@ -765,6 +787,21 @@
                   }
                 },
                 {
+                  "id": "uiControl201_7IUa8b",
+                  "controlId": "control219_zf6Wbw",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl201_7IUa8b",
+                        "onGetTemplate": "getTemplate_uiControl201_7IUa8b"
+                      }
+                    }
+                  }
+                },
+                {
                   "id": "uiControl59_CAgATS",
                   "controlId": "control60_XPxA5x",
                   "display": {
@@ -894,7 +931,8 @@
       "contexts": {
         "context14_mXEdQk": [
           "43243",
-          "晚间测试1"
+          "晚间测试1",
+          "集团邮件系统迁移升级商务谈判过程汇报"
         ]
       }
     },
@@ -902,7 +940,8 @@
       "contexts": {
         "context14_mXEdQk": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118641&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=295164&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=295164&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=111781&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ]
       }
     },

@@ -312,6 +312,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -333,6 +337,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -348,6 +356,27 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control213_x0xDlA": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control213_x0xDlA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -360,7 +389,8 @@
         "control128_Z2rqRV",
         "control131_L4LzV6",
         "control19_D8kpkq",
-        "control132_KyXLl1"
+        "control132_KyXLl1",
+        "control213_x0xDlA"
       ],
       "anchors": [
         "control129_IPx8x5"
@@ -558,6 +588,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl114_iqaeka",
                 "onGetTemplate": "getTemplate_uiControl114_iqaeka"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl195_0kWO8L",
+          "controlId": "control213_x0xDlA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl195_0kWO8L",
+                "onGetTemplate": "getTemplate_uiControl195_0kWO8L"
               }
             }
           }
