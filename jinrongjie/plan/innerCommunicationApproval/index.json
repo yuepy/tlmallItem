@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321632&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
   "requires": {
-    "choosePerson": "../choosePerson/index.json"
+    "choosePerson": "../choosePerson/index.json",
+    "processToSend": "../processToSend/index.json"
   },
   "chineseName": "内部沟通-审批",
   "description": "内部沟通-审批",
@@ -527,6 +528,10 @@
       "toContexts": [
         {
           "toContextId": "context22_9NRRRI"
+        },
+        {
+          "toContextId": "context10_Tp4yhH",
+          "toModelId": "processToSend"
         }
       ]
     }
@@ -766,7 +771,10 @@
           "192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=162836&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=118374&workflowRequestLogId=-1",
-          "192.168.200.63/workflow/request/Remark.jsp?requestid=233529&workflowRequestLogId=-1"
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=312801&workflowRequestLogId=-1",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=111781&workflowRequestLogId=-1",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=380983&workflowRequestLogId=-1",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=380940&workflowRequestLogId=-1"
         ]
       }
     },
@@ -1039,6 +1047,67 @@
             "result",
             "rightMenu",
             "rightMenuIframe",
+            "uploadFileName_remark"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "_xTable",
+            "btnCancelannexupload",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divStatusannexupload",
+            "divTopTitle",
+            "docimages_num",
+            "field-annexupload",
+            "field-annexupload_tab",
+            "field-annexuploadspan",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "fsUploadProgressannexupload",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "signdocids",
+            "signdocspan",
+            "signworkflowids",
+            "signworkflowspan",
+            "spanButtonPlaceHolderannexupload",
             "uploadFileName_remark"
           ],
           [
