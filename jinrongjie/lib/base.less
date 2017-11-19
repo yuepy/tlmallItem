@@ -77,10 +77,14 @@ div[contenteditable='true']{
     }
   }
   > span:nth-child(2){
-    flex: 0 1 71%;
+    flex: 0 1 65%;
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   > span:nth-child(3){
     width: 100%;
@@ -1240,6 +1244,10 @@ li {list-style: none}
         a{
           color:#aaa;
           font-size:14px;
+          width: 84%;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
         } 
         .ysp-list-card-content-img{
           	display: inline-block;
