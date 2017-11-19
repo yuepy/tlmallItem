@@ -135,6 +135,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
@@ -179,6 +180,40 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control221_JV6uWI": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]",
+              "descendant::DIV[@id=\"signid\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control221_JV6uWI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -186,7 +221,8 @@
       "controls": [
         "control203_m75kFw",
         "control204_agziTa",
-        "control205_Hrb8Bi"
+        "control205_Hrb8Bi",
+        "control221_JV6uWI"
       ],
       "anchors": [
         "control202_a7OZ4x"
@@ -253,19 +289,72 @@
           }
         },
         {
-          "id": "uiControl185_fyUiQ0",
-          "controlId": "control204_agziTa",
+          "id": "uiControl203_kMIN3F",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "tabs",
+            "adapterId": "tabs",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl185_fyUiQ0",
-                "onGetTemplate": "getTemplate_uiControl185_fyUiQ0"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl203_kMIN3Fitem",
+              "display": {
+                "tabTitle": "流程表单",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl185_fyUiQ0",
+                  "controlId": "control204_agziTa",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl185_fyUiQ0",
+                        "onGetTemplate": "getTemplate_uiControl185_fyUiQ0"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl204_kCSnbC",
+              "display": {
+                "tabTitle": "流转意见",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl205_7Qvqtq",
+                  "controlId": "control221_JV6uWI",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl205_7Qvqtq",
+                        "onGetTemplate": "getTemplate_uiControl205_7Qvqtq"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "uiControl186_OeaZ6J",
@@ -289,14 +378,16 @@
     "page/title": {
       "contexts": {
         "context28_E8HugB": [
-          "办公用品申领审批流程-张济天-2017-11-14"
+          "办公用品申领审批流程-张济天-2017-11-14",
+          "办公用品申领审批流程-张济天-2017-11-19"
         ]
       }
     },
     "page/urls": {
       "contexts": {
         "context28_E8HugB": [
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330443&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330443&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=380987&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ]
       }
     },

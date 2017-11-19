@@ -3,6 +3,9 @@
   "id": "setBack",
   "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D312801%26workflowid%3D8061%26nodeid%3D121110%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D",
   "jsFile": "index.js",
+  "requires": {
+    "setBack": "../setBack/index.json"
+  },
   "chineseName": "退回",
   "description": "",
   "controls": {
@@ -53,7 +56,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
-      "customJS": "if(elem.textContent.indexOf(\"可退回节点\")!=-1){return true}return false;"
+      "customJS": "if(elem.textContent.indexOf(\"可退回节点\")!=-1 || elem.textContent.indexOf(\"退回时提醒节点\")!=-1){return true}return false;"
     },
     "control142_o35VBa": {
       "location": {
@@ -119,6 +122,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -154,6 +161,10 @@
       "toContexts": [
         {
           "toContextId": "context8_QbFt5N"
+        },
+        {
+          "toContextId": "context8_QbFt5N",
+          "toModelId": "setBack"
         }
       ]
     },
@@ -231,7 +242,8 @@
     "page/urls": {
       "contexts": {
         "context8_QbFt5N": [
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D312801%26workflowid%3D8061%26nodeid%3D121110%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D"
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D312801%26workflowid%3D8061%26nodeid%3D121110%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D380989%26workflowid%3D605%26nodeid%3D3285%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D%26isFreeNode%3D"
         ]
       }
     },
