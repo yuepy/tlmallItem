@@ -14,7 +14,8 @@
     "infomationInput": "../infomationInput/index.json",
     "customerInformationweekFill": "../customerInformationweekFill/index.json",
     "storeWeekPSI": "../storeWeekPSI/index.json",
-    "storeDayPSI": "../storeDayPSI/index.json"
+    "storeDayPSI": "../storeDayPSI/index.json",
+    "dayPSI": "../dayPSI/index.json"
   },
   "chineseName": "拜访工作台",
   "description": "拜访工作台页面",
@@ -555,6 +556,10 @@
         {
           "toContextId": "context13_Es5f23",
           "toModelId": "visitSignOut"
+        },
+        {
+          "toContextId": "context27_kfF6HB",
+          "toModelId": "dayPSI"
         }
       ]
     },
@@ -884,6 +889,15 @@
         "context55_T4Zowu": [
           "192.168.220.82:8080/pttlCrm/res/page/psi/storeWeekPsi.html?rowId=1-1VQY1R",
           "192.168.220.82:8080/pttlCrm/res/page/psi/storeWeekPsi.html?rowId=1-3XQET1"
+        ],
+        "context27_kfF6HB": [
+          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/dayPsi.html?rowId=10291",
+          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/dayPsi.html?rowId=11991",
+          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/dayPsi.html?rowId=10734",
+          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/weekPsi.html?rowId=10734",
+          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/weekPsi.html?rowId=11991",
+          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/weekPsi.html?rowId=11043",
+          "192.168.220.82:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=1-2YNKN1"
         ]
       }
     },
@@ -2140,6 +2154,15 @@
         ],
         "context27_kfF6HB": [
           [
+            "dayPSI",
+            "psiEnterTable",
+            "rowId",
+            "savePsiSpan",
+            "srarch_date",
+            "stock",
+            "tbodyContent"
+          ],
+          [
             "psiEnterTable",
             "rowId",
             "savePsiSpan",
@@ -2148,6 +2171,17 @@
             "stock",
             "tbodyContent",
             "weekPSI"
+          ],
+          [
+            "coll",
+            "customerName",
+            "dayPSI",
+            "psiEnterTable",
+            "rowId",
+            "savePsiSpan",
+            "search",
+            "srarch_date",
+            "tbodyContent"
           ]
         ],
         "context31_fogIBT": [
@@ -4216,11 +4250,16 @@
             "DIV/DIV/DIV",
             "DIV/DIV/SPAN",
             "DIV/DIV/TABLE",
+            "DIV/SPAN/BUTTON",
             "DIV/SPAN/INPUT-text",
             "DIV/TABLE/TBODY",
             "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
             "TABLE/THEAD/TR",
-            "THEAD/TR/TH"
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
           ]
         ],
         "context31_fogIBT": [
