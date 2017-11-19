@@ -484,6 +484,10 @@
         "data": {
           "tagName": "IFRAME"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@title",
@@ -534,6 +538,27 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control225_VeqaFK": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control225_VeqaFK"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -545,7 +570,8 @@
         "control72_kANAED",
         "control63_xKq6K5",
         "control82_Oe1sOv",
-        "control224_tZ4T9N"
+        "control224_tZ4T9N",
+        "control225_VeqaFK"
       ],
       "anchors": [
         "control79_xTNUQB"
@@ -661,6 +687,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl45_w9wCSy",
                 "onGetTemplate": "getTemplate_uiControl45_w9wCSy"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl209_x9LtNq",
+          "controlId": "control225_VeqaFK",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl209_x9LtNq",
+                "onGetTemplate": "getTemplate_uiControl209_x9LtNq"
               }
             }
           }
