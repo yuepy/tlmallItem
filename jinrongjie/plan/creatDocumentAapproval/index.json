@@ -199,6 +199,27 @@
       "roles": "element,button,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control212_Mv9Gc5": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[12]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control212_Mv9Gc5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -206,7 +227,8 @@
       "controls": [
         "control110_XrebWI",
         "control140_bXKhMF",
-        "control141_DVQsTW"
+        "control141_DVQsTW",
+        "control212_Mv9Gc5"
       ],
       "anchors": [
         "control111_BiGw7m"
@@ -237,6 +259,16 @@
         {
           "toContextId": "context5_DhOsrK",
           "toModelId": "managerAuditRelatedDoc"
+        }
+      ]
+    },
+    "flow137_8tEVik": {
+      "fromContextId": "context18_IZLpIz",
+      "fromAction": "doAction",
+      "fromControlId": "control140_bXKhMF",
+      "toContexts": [
+        {
+          "toContextId": "context18_IZLpIz"
         }
       ]
     }
@@ -271,6 +303,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl63_VG18Wm",
                 "onGetTemplate": "getTemplate_uiControl63_VG18Wm"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl194_h2bz95",
+          "controlId": "control212_Mv9Gc5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl194_h2bz95",
+                "onGetTemplate": "getTemplate_uiControl194_h2bz95"
               }
             }
           }

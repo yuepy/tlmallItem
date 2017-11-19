@@ -482,7 +482,7 @@ li {list-style: none}
   font-size:  14px;
   padding: 0 0 10px 0;
   background: #fff;
-  height: 320px;
+  height: 300px;
   overflow: overlay;
   table{
     table-layout: fixed;
@@ -809,7 +809,8 @@ li {list-style: none}
     	top: 5px;
     }
     span:nth-child(3){
-     	float: right;
+      position: absolute;
+      right: 0;
       height: 40px;
       width: 10%;
       background: url(images/more_button.png) no-repeat;
@@ -3176,6 +3177,7 @@ div[data-ysp-modelid='chairmanSign']{
 .summit_button_lfj{
   padding: 10px;
   border-top: 10px solid #F3F3F3;
+  margin-top: -80px;
   button{
     border-radius: 5px;
     background: #C29A29;
@@ -3200,6 +3202,7 @@ div[data-ysp-modelid='chairmanSign']{
     font-size: 15px;
   }
   .header_box{
+    margin-top: 40px;
   	padding: 10px 0;
     border-bottom: 10px solid #F3F3F3;
     background:white;
@@ -3516,6 +3519,34 @@ div[data-ysp-modelid='chairmanSign']{
     }
   }
 }
+
+//-------------审批流程tab页样式 -Add By SongNing 2017/11/19 ---START
+div[data-ysp-modelid='needToFreeFlow']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+    >div{padding: 0;}
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    margin: 0;
+    
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      background: #fff;
+      a,ul,li{height: 35px;line-height: 35px;}
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
+//-------------审批流程tab页样式 -Add By SongNing 2017/11/19 ---END
 //--------------------------------------------------------------自由流程02 END
 //--------------------------------------------------------------前插
 .ysp_forward_card_container{
@@ -3641,6 +3672,7 @@ div[data-ysp-modelid='chairmanSign']{
  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
     margin: 0;
     ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      margin-top: 40px;
       background: none;
       border-bottom: 10px solid #F3F3F3;
       li{

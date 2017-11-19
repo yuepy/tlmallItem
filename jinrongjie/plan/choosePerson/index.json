@@ -104,48 +104,13 @@
       "text": "",
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
       "customJS": "if(elem.textContent.indexOf('按组织结构') !== -1){return true;}return false;"
-    },
-    "control143_MFhimL": {
-      "location": {
-        "data": {
-          "tagName": "BUTTON"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "ordinal": [
-              1,
-              2
-            ],
-            "value": "descendant::BUTTON[@id=\"btnok\"]"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[4]/TD[1]/BUTTON[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control143_MFhimL"
-      },
-      "intendedRole": "custom",
-      "roles": "element,button,custom",
-      "monitored": true,
-      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>//iframe[contains(@name,'frame')][contains(@id,'frame')]<<IFRAME>>"
     }
   },
   "contexts": {
     "context10_sJa5NJ": {
       "controls": [
         "control31_MQw3uc",
-        "control38_I5LH3P",
-        "control143_MFhimL"
+        "control38_I5LH3P"
       ],
       "anchors": [
         "control102_LTi8xH"
@@ -180,20 +145,6 @@
           "toContextId": "context10_sJa5NJ"
         }
       ]
-    },
-    "flow86_rGNPqx": {
-      "fromContextId": "context10_sJa5NJ",
-      "fromAction": "doAction",
-      "fromControlId": "control143_MFhimL",
-      "toContexts": [
-        {
-          "toContextId": "context10_sJa5NJ"
-        },
-        {
-          "toContextId": "context10_sJa5NJ",
-          "toModelId": "choosePerson"
-        }
-      ]
     }
   },
   "pages": {
@@ -226,21 +177,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl42_lcGQHl",
                 "onGetTemplate": "getTemplate_uiControl42_lcGQHl"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl121_XGHaKQ",
-          "controlId": "control143_MFhimL",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl121_XGHaKQ",
-                "onGetTemplate": "getTemplate_uiControl121_XGHaKQ"
               }
             }
           }

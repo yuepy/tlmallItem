@@ -139,37 +139,6 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control184_Z0I8G2": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control184_Z0I8G2"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control185_gpMdht": {
       "location": {
         "data": {
@@ -527,7 +496,6 @@
       "controls": [
         "control181_Te79o8",
         "control182_zLqMWx",
-        "control184_Z0I8G2",
         "control185_gpMdht",
         "control186_0cNZSV",
         "control187_rtZ3NM",
@@ -695,21 +663,6 @@
                       "events": {
                         "onDoAction": "doAction_uiControl164_kMcn0l",
                         "onGetTemplate": "getTemplate_uiControl164_kMcn0l"
-                      }
-                    }
-                  }
-                },
-                {
-                  "id": "uiControl165_XsIOHr",
-                  "controlId": "control184_Z0I8G2",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl165_XsIOHr",
-                        "onGetTemplate": "getTemplate_uiControl165_XsIOHr"
                       }
                     }
                   }
