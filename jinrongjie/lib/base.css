@@ -56,10 +56,14 @@ div[contenteditable='true'] {
   align-items: center;
 }
 .ysp-header-wrapper > span:nth-child(2) {
-  flex: 0 1 71%;
+  flex: 0 1 65%;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .ysp-header-wrapper > span:nth-child(3) {
   width: 100%;
@@ -1228,6 +1232,10 @@ li {
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li a {
   color: #aaa;
   font-size: 14px;
+  width: 84%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li .ysp-list-card-content-img {
   display: inline-block;
