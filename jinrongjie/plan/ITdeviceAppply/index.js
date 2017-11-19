@@ -78,15 +78,40 @@
                   arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1', mark: '1' });
                 } else if ($(this)[0].className == 'zdn' && $(this)[0].previousElementSibling.textContent.trim() == '') {
                   arr2.push('111');
-                } //判断附件-------------------------------------
+                } //           else if ($(this).find("#uploadspan").length > 0 && $(this).find(".ViewForm").length > 0) {
+                //             var elem = $(this).find("tr").eq(0)[0];
+                //             var check_form = elem.ownerDocument.defaultView.check_form.toString();
+                //             var user = {};
+                //             user.workflowid = elem.ownerDocument.querySelector('input[name="workflowid"]').value;
+                //             if (check_form) {
+                //               var useridReg = /userid=[0-9]{1,}/;
+                //               var userid = check_form.match(useridReg)[0] && check_form.match(useridReg)[0].split("=")[1];
+                //               var subId = elem.querySelector('#annexsubId').value;
+                //               var secId = elem.querySelector('#annexsecId').value;
+                //               var mainId = elem.querySelector('#annexmainId').value;
+                //               user.userid = userid;
+                //               user.subId = subId;
+                //               user.secId = secId;
+                //               user.mainId = mainId;
+                //             }
+                //             var fileuploadannexupload = elem.ownerDocument.defaultView.fileuploadannexupload.toString();
+                //             if (fileuploadannexupload) {
+                //               var logintype = fileuploadannexupload.match(/"logintype":"[0-9]{1,}"/)[0].split(':')[1].replace(/"/g, '');
+                //               user.logintype = logintype || '';
+                //             }
+                //             return {
+                //               name: elem.querySelector('td').textContent.trim(),
+                //               user
+                //             };
+                //           }
+                //判断附件-------------------------------------
                 else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                     var arr3 = [];if ($(this).children("table").find("a").length > 0) {
                       $(this).children("table").find("a").each(function (i) {
                         arr3.push($(this).text().trim());
                       });
                     }if ($(this).children("table").find(".btnFlowd").length > 0) {
-                      var arr4 = [];
-                      $(this).children("table").find(".btnFlowd").each(function (i) {
+                      var arr4 = [];$(this).children("table").find(".btnFlowd").each(function (i) {
                         if (!/全部下载/.test($(this).text())) {
                           arr4.push($(this).text().trim().match(/\(.*\)/));
                         }
@@ -100,7 +125,8 @@
                         }if ($(this)[0].selected == false) {
                           arr4.push({ text: $(this).text().trim(), select: '' });
                         }
-                      });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
+                      });
+                      arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
                     } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
                       var arr4 = [];$(this).children("select").children("option").each(function () {
                         if ($(this)[0].selected == true) {
@@ -108,7 +134,8 @@
                         } else if ($(this)[0].selected == false) {
                           arr4.push({ text: $(this).text().trim(), select: '' });
                         }
-                      });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                      });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1',
+                        disabled: 'true' });
                     } //判断input-------------------------------------
                     else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                         arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id'), mark: '1' });
@@ -152,6 +179,15 @@
                   arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
                 } else if ($(this)[0].className == 'zdn' && $(this)[0].previousElementSibling.textContent.trim() == '') {
                   arr2.push('111');
+                } else if ($(this).find("#uploadspan").length > 0 && $(this).find(".ViewForm").length > 0) {
+                  var elem = $(this).find("tr").eq(0)[0];var check_form = elem.ownerDocument.defaultView.check_form.toString();var user = {};user.workflowid = elem.ownerDocument.querySelector('input[name="workflowid"]').value;if (check_form) {
+                    var useridReg = /userid=[0-9]{1,}/;var userid = check_form.match(useridReg)[0] && check_form.match(useridReg)[0].split("=")[1];var subId = elem.querySelector('#subId').value;var secId = elem.querySelector('#secId').value;var mainId = elem.querySelector('#mainId').value;user.userid = userid;user.subId = subId;user.secId = secId;user.mainId = mainId;
+                  }var fileuploadannexupload = elem.ownerDocument.defaultView.fileuploadannexupload.toString();if (fileuploadannexupload) {
+                    var logintype = fileuploadannexupload.match(/"logintype":"[0-9]{1,}"/)[0].split(':')[1].replace(/"/g, '');user.logintype = logintype || '';
+                  }arr2.push({ type: 'fujian222', name: '相关附件', user }); // return {
+                  //   name: elem.querySelector('td').textContent.trim(),
+                  //   user
+                  // };
                 } //判断附件-------------------------------------
                 else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                     var arr3 = [];if ($(this).children("table").find("a").length > 0) {
@@ -164,8 +200,7 @@
                           arr4.push($(this).text().trim().match(/\(.*\)/));
                         }
                       });
-                    }arr2.push({ text: arr3, size: arr4,
-                      type: 'fujian' });
+                    }arr2.push({ text: arr3, size: arr4, type: 'fujian' });
                   } //判断select-------------------------------------
                   else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                       var arr4 = [];$(this).children("select").children("option").each(function () {
