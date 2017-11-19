@@ -460,7 +460,49 @@
 
           // 测试
           
-          // aWin.returnValue
+          
+          if (doc.location.href.indexOf('swfupload') !== -1) {
+            var fakeFormId;
+            (function () {
+              var addFileInput = function addFileInput(originId, id, target) {
+                var placeHolder = doc.getElementById(originId);
+                if (placeHolder) {
+                  var file = doc.createElement('input');
+                  file.type = 'file';
+                  file.id = id;
+                  file.name = id;
+                  file.onchange = function () {
+                    fileName.value = this.files[0].name;
+                    var cb = target.setting.file_dialog_complete_handler;
+                    cb && cb.call(target);
+                  };
+                  var fileName = doc.createElement('input');
+                  var upload = doc.createElement('input');
+                  fileName.name = 'Filename';
+                  upload.name = 'Upload';
+                  upload.value = 'Submit Query';
+                  var form = doc.createElement('form');
+                  form.id = fakeFormId;
+                  form.appendChild(file);
+                  form.appendChild(fileName);
+                  form.appendChild(upload);
+                  placeHolder.parentNode.appendChild(form);
+                  placeHolder.parentNode.removeChild(placeHolder);
+                }
+              };
+              fakeFormId = 'ysp_fake_form';
+              aWin.SWFUpload = function (setting) {
+                this.setting = setting;
+                var elemId = this.setting.button_placeholder_id;
+                if (elemId) {
+                  addFileInput(elemId, 'Filedata', this);
+                }
+                this.fakeFormId = fakeFormId;
+                aWin.swfUploadLoaded && aWin.swfUploadLoaded();
+                console.log('upload overrided!');
+              };
+            })();
+          }
           
           
           // 测试结束
