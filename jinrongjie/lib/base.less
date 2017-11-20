@@ -51,11 +51,13 @@ div[contenteditable='true']{
   -webkit-user-select:text;
 }
 .ysp-header-wrapper{
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.7rem;
+  //text-align: center;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //height: 2.7rem;
+  height: 45px;
+  line-height: 45px;
   background-color: rgb(194,154,42);
   color: #fff;
   font-size:18px;
@@ -64,39 +66,53 @@ div[contenteditable='true']{
   width: 100%;
   z-index: 111;
   .back{
-    margin-left: 15px;
+    //margin-left: 15px;
   	background:url('../lib/images/Back@3x.png') center center;
     display: inline-block;
     width: 17px;
     height:22px;
     background-size: 100%;
+    position: relative;
+    top:4px;
   }
   > span:nth-child(1){
-    flex: 0 1 20%;
-    display: flex;
-    align-items: center;
+    //flex: 0 1 20%;
+    //display: flex;
+    //align-items: center;
+    display: inline-block;
+    width:20%;        
+    position: relative;
+    top: -15px;
+    height: 45px;
+    line-height: 45px;
+    left: 5px;
     > span:first-child{
-      margin-left: .2rem;
-      display:flex;
-      align-items:center;
+      //margin-left: .2rem;
+      //display:flex;
+      //align-items:center;
     }
   }
   > span:nth-child(2){
-    flex: 0 1 62%;
-    display: flex;
-    align-items: center;
+    //flex: 0 1 62%;
+    //display: flex;
+    //align-items: center;
     text-align: center;
-    justify-content: center;
+    //justify-content: center;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    display: inline-block;
+    width: 65%;
   }
   > span:nth-child(3){
-    width: 100%;
+    //width: 100%;
     font-weight: 600;
     font-size: 18px;
-    display: flex;
-    flex: 0 1 16%;
+    //display: flex;
+    //flex: 0 1 16%;
+    display: inline-block;
+    width: 15%;
+    height: 45px;
     > span:last-child{
         margin-left: .5rem;
     }
@@ -1250,12 +1266,13 @@ li {list-style: none}
         } 
         .ysp-list-card-content-img{
           	display: inline-block;
-          	height: 20px;
+          	//height: 20px;
+          	height:40px; 
             background: url('images/new@2x.png') no-repeat;  
           	width: 15%;
-    				background-position-y: 5px;
+    				//background-position-y: 5px;
           	position: relative;
-          	top:-12px;
+          	top:10px;
           
       	}
       }
