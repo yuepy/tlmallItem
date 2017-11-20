@@ -19,16 +19,17 @@ h5 {
 .view-item {
   background: #f3f3f3;
 }
+#uiControl55_TbO50eitem {
+  height: 733px;
+  overflow: auto;
+}
 /*  公共header样式  */
 div[contenteditable='true'] {
   -webkit-user-select: text;
 }
 .ysp-header-wrapper {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.7rem;
+  height: 45px;
+  line-height: 45px;
   background-color: #c29a2a;
   color: #fff;
   font-size: 18px;
@@ -38,39 +39,37 @@ div[contenteditable='true'] {
   z-index: 111;
 }
 .ysp-header-wrapper .back {
-  margin-left: 15px;
   background: url('../lib/images/Back@3x.png') center center;
   display: inline-block;
   width: 17px;
   height: 22px;
   background-size: 100%;
+  position: relative;
+  top: 4px;
 }
 .ysp-header-wrapper > span:nth-child(1) {
-  flex: 0 1 20%;
-  display: flex;
-  align-items: center;
-}
-.ysp-header-wrapper > span:nth-child(1) > span:first-child {
-  margin-left: .2rem;
-  display: flex;
-  align-items: center;
+  display: inline-block;
+  width: 20%;
+  position: relative;
+  top: -15px;
+  height: 45px;
+  line-height: 45px;
+  left: 5px;
 }
 .ysp-header-wrapper > span:nth-child(2) {
-  flex: 0 1 62%;
-  display: flex;
-  align-items: center;
   text-align: center;
-  justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: inline-block;
+  width: 65%;
 }
 .ysp-header-wrapper > span:nth-child(3) {
-  width: 100%;
   font-weight: 600;
   font-size: 18px;
-  display: flex;
-  flex: 0 1 16%;
+  display: inline-block;
+  width: 15%;
+  height: 45px;
 }
 .ysp-header-wrapper > span:nth-child(3) > span:last-child {
   margin-left: .5rem;
@@ -1234,12 +1233,11 @@ li {
 }
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li .ysp-list-card-content-img {
   display: inline-block;
-  height: 20px;
+  height: 40px;
   background: url('images/new@2x.png') no-repeat;
   width: 15%;
-  background-position-y: 5px;
   position: relative;
-  top: -12px;
+  top: 10px;
 }
 .ysp-list-search {
   margin: 42px 0 0 0;
