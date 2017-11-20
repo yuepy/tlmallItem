@@ -1,15 +1,15 @@
 {
   "version": "0.1",
-  "id": "PreviousDetails",
-  "targetURL": "http://192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4045&_t=373009",
+  "id": "PaymentRequisitionCheck",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w3878&_t=366274",
   "jsFile": "index.js",
   "requires": {
-    "PreviousDetails": "../PreviousDetails/index.json"
+    "PaymentRequisitionCheck": "../PaymentRequisitionCheck/index.json"
   },
-  "chineseName": "查看前次明细(采购订单)",
+  "chineseName": "付款申请单查看",
   "description": "",
   "controls": {
-    "control53_lq1TnH": {
+    "control68_yplTXL": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -24,60 +24,79 @@
             "prob": 1,
             "ordinal": [
               1,
-              2
+              5
             ],
-            "value": "DIV.mini-panel.mini-window.mini-window-drag DIV.mini-panel-border DIV.mini-panel-header"
+            "value": "DIV.mini-panel-header DIV.mini-panel-header-inner DIV.mini-panel-title"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control53_lq1TnH"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": ""
-    },
-    "control57_E7T748": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              1,
-              2
-            ],
-            "value": "DIV.mini-panel.mini-window.mini-window-drag DIV.mini-panel-border"
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
           },
           {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]"
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control57_E7T748"
+        "onGetData": "getData_control68_yplTXL"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
     },
-    "control58_c5FBEA": {
+    "control70_s7UXmF": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/nonWord",
+            "prob": 1,
+            "disabled": true,
+            "fact": "3",
+            "value": "descendant::SPAN[@id=\"3\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              7
+            ],
+            "value": "DIV.mini-panel-header-inner DIV.mini-tools SPAN.mini-tools-close"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[6]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/SPAN[4]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control70_s7UXmF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control71_KOVyLy": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -89,8 +108,12 @@
         "locators": [
           {
             "id": "@id/word",
-            "prob": 2,
-            "value": "descendant::DIV[@id=\"grid\"]/DIV[1]/DIV[2]"
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "descendant::DIV[@id=\"datagridsub\"]/DIV[1]/DIV[2]"
           },
           {
             "id": "path/ordinal",
@@ -104,7 +127,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control58_c5FBEA"
+        "onGetData": "getData_control71_KOVyLy"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -113,97 +136,97 @@
     }
   },
   "contexts": {
-    "context18_3haPT6": {
+    "context16_paqFtd": {
       "controls": [
-        "control53_lq1TnH",
-        "control57_E7T748",
-        "control58_c5FBEA"
+        "control68_yplTXL",
+        "control70_s7UXmF",
+        "control71_KOVyLy"
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/GoodsManager\\/purchaseingManager\\/fn_order\\/queryBeforeDetail\\.jsp?.*"
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/FinanceManager\\/accountManager\\/fn_payApplyOrder.*"
       ]
     }
   },
   "flows": {
-    "flow43_3prT8h": {
+    "flow64_U4iPgs": {
       "fromContextId": "context8_ddpRhS",
       "fromAction": "doAction",
       "fromControlId": "control21_GeryA0",
       "toContexts": [
         {
-          "toContextId": "context18_3haPT6",
-          "toModelId": "PreviousDetails"
+          "toContextId": "context16_paqFtd",
+          "toModelId": "PaymentRequisitionCheck"
         }
       ]
     },
-    "flow45_l4WV5F": {
+    "flow38_VLyLVu": {
       "toContexts": [
         {
-          "toContextId": "context18_3haPT6"
+          "toContextId": "context16_paqFtd"
         },
         {
-          "toContextId": "context18_3haPT6",
-          "toModelId": "PreviousDetails"
+          "toContextId": "context16_paqFtd",
+          "toModelId": "PaymentRequisitionCheck"
         }
       ]
     },
-    "flow55_TCa4ZH": {
-      "fromContextId": "context18_3haPT6",
+    "flow65_JDfAny": {
+      "fromContextId": "context16_paqFtd",
       "fromAction": "doAction",
-      "fromControlId": "control53_lq1TnH",
+      "fromControlId": "control70_s7UXmF",
       "toContexts": [
         {
-          "toContextId": "context18_3haPT6"
+          "toContextId": "context16_paqFtd"
         }
       ]
     }
   },
   "pages": {
-    "page18_vEx1tF": {
-      "contextId": "context18_3haPT6",
+    "page16_0RKqPp": {
+      "contextId": "context16_paqFtd",
       "layout": [
         {
-          "id": "uiControl50_vFTqdd",
-          "controlId": "control53_lq1TnH",
+          "id": "uiControl64_hfR7LW",
+          "controlId": "control70_s7UXmF",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl50_vFTqdd",
-                "onGetTemplate": "getTemplate_uiControl50_vFTqdd"
+                "onDoAction": "doAction_uiControl64_hfR7LW",
+                "onGetTemplate": "getTemplate_uiControl64_hfR7LW"
               }
             }
           }
         },
         {
-          "id": "uiControl54_JVQfOT",
-          "controlId": "control57_E7T748",
+          "id": "uiControl62_LrIZUo",
+          "controlId": "control68_yplTXL",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl54_JVQfOT",
-                "onGetTemplate": "getTemplate_uiControl54_JVQfOT"
+                "onDoAction": "doAction_uiControl62_LrIZUo",
+                "onGetTemplate": "getTemplate_uiControl62_LrIZUo"
               }
             }
           }
         },
         {
-          "id": "uiControl55_KmWklP",
-          "controlId": "control58_c5FBEA",
+          "id": "uiControl65_XyGDEK",
+          "controlId": "control71_KOVyLy",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl55_KmWklP",
-                "onGetTemplate": "getTemplate_uiControl55_KmWklP"
+                "onDoAction": "doAction_uiControl65_XyGDEK",
+                "onGetTemplate": "getTemplate_uiControl65_XyGDEK"
               }
             }
           }
@@ -214,40 +237,31 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context18_3haPT6": [
+        "context16_paqFtd": [
           "移动端页面"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context18_3haPT6": [
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4045&_t=373009",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7095&_t=707156",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w2848&_t=941660",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w6643&_t=769337",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=790189",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=431468",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=494500",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w446&_t=925974",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=430206",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=125745",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=481492",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=91244",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w908&_t=898222",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w908&_t=186123",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w908&_t=127251",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w5840&_t=360314",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w5739&_t=211390",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w5739&_t=990586",
-          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w5739&_t=819087",
-          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w6584&_t=171241"
+        "context16_paqFtd": [
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w3878&_t=366274",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w2128&_t=52444",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w482&_t=969944",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w1293&_t=373251",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w4405&_t=517478",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w4405&_t=203058",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w6400&_t=996940",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w6400&_t=929981",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w557&_t=565229",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedDisAccount.jsp?_winid=w735&_t=292072",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w5271&_t=621843"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context18_3haPT6": [
+        "context16_paqFtd": [
           [
             "__modalmini-",
             "mini-",
@@ -260,7 +274,7 @@
     },
     "page/classes": {
       "contexts": {
-        "context18_3haPT6": [
+        "context16_paqFtd": [
           [
             "mini-disabled",
             "mini-modal",
@@ -310,7 +324,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context18_3haPT6": [
+        "context16_paqFtd": [
           [
             "-/-/DIV",
             "-/-/SCRIPT",
