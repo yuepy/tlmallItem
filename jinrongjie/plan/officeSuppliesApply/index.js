@@ -232,7 +232,9 @@
         var id = data.dataCustom;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("button").each(function () {
           if ($(this)[0].getAttribute('onClick').match(/field\d+_\d+/) == id) {
             //  console.log($(this).parent());
-            $(this).parent().find("input").eq(0)[0].checked = true;$(tbody2).find("button[name='delbutton0']").click();
+            $(this).parent().find("input").eq(0)[0].checked = true;setTimeout(function () {
+              $(tbody2).find("button[name='delbutton0']").click();
+            }, 300);
           }
         });
       }
