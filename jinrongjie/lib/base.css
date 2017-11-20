@@ -38,8 +38,9 @@ div[contenteditable='true'] {
   background-color: #c29a2a;
   color: #fff;
   font-size: 18px;
-  position: fixed;
+  position: absolute;
   top: 0;
+  bottom: 0;
   width: 100%;
   z-index: 111;
   overflow: hidden;
@@ -1735,9 +1736,6 @@ div[data-ysp-modelid='choosePerson'] ._2YwloE7OzAhaMwSn1XM-Va {
 }
 div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP {
   margin: 0;
-  position: absolute;
-  top: 45px;
-  overflow: scroll;
 }
 div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul {
   background: none;
@@ -2233,6 +2231,10 @@ div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
 div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  top: 45px;
   margin: 0;
 }
 div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
@@ -3121,14 +3123,8 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   border: 0;
   background-size: 20px;
 }
-.edition_box_lfj {
-  background: #fff;
-  padding-top: 5px;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
 .edition_box_lfj .tit_yell {
-  margin: 10px 0 10px 0;
+  margin: 20px 0 10px 0;
 }
 .edition_box_lfj .textArea2 {
   border-radius: 5px;
@@ -3138,8 +3134,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .summit_button_lfj {
   padding: 10px;
-  margin-bottom: 10px;
-  background: #fff;
+  border-top: 10px solid #F3F3F3;
 }
 .summit_button_lfj button {
   border-radius: 5px;

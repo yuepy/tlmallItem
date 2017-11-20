@@ -70,11 +70,15 @@ div[contenteditable='true']{
   background-color: rgb(194,154,42);
   color: #fff;
   font-size:18px;
-  position: fixed;
+  //position: fixed;
+  position: absolute;
   top:0;
+  bottom:0;
+  //2017/11/20结束
   width: 100%;
   z-index: 111;
   overflow: hidden;
+  
   .back{
     //margin-left: 15px;
   	background:url('../lib/images/Back@3x.png') center center;
@@ -1814,10 +1818,7 @@ div[data-ysp-modelid='choosePerson']{
   }
   ._27gZE6m5LfD5uG_dZ8p3iP{
     margin: 0;
-    //2017//11//20
-    position: absolute;
-    top: 45px;
-    overflow: scroll;
+    
     ul{
       background: none;
       border-bottom: 10px solid #F3F3F3;
@@ -2302,7 +2303,13 @@ div[data-ysp-modelid='askForLeave']{
     border-bottom: 0;
   }
   ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    //2017//11//20
+    position: absolute;
+    height: 300px;
+    width: 100%;
+     top:45px;
     margin: 0;
+   
     ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
       background: #fff;
       border-bottom: 10px solid #F3F3F3;
@@ -3239,12 +3246,8 @@ div[data-ysp-modelid='chairmanSign']{
       }
 }
 .edition_box_lfj{
-    background: #fff;
-    padding-top: 5px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
   .tit_yell{
-    margin: 10px 0 10px 0;
+    margin: 20px 0 10px 0;
   }
   .textArea2{
     border-radius: 5px;
@@ -3255,8 +3258,7 @@ div[data-ysp-modelid='chairmanSign']{
 }
 .summit_button_lfj{
   padding: 10px;
-  margin-bottom: 10px;
-  background: #fff;
+  border-top: 10px solid #F3F3F3;
   button{
     border-radius: 5px;
     background: #C29A29;
