@@ -188,74 +188,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control4_a9rKt5": {
-      "location": {
-        "data": {
-          "tagName": "A"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "重置密码"
-              ],
-              "visText": [
-                "重置密码"
-              ]
-            }
-          },
-          {
-            "id": "a/@href",
-            "prob": 1,
-            "value": {
-              "funcName": "void"
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::TD[@id=\"lgcontenttbl\"]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/A[1]",
-              "descendant::TD[@id=\"lgcontenttbl\"]//A"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "SPAN.s_ck A"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]/DIV[2]/DIV[2]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/SPAN[1]/A[1]"
-          },
-          {
-            "id": "style/color",
-            "value": [
-              18,
-              56,
-              133
-            ]
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "intendedRole": "link",
-      "roles": "element,link",
-      "monitored": false,
-      "frameXPath": ""
-    },
     "control5_CNTcxJ": {
       "location": {
         "data": {
@@ -385,7 +317,6 @@
         "control0_OIS8BA",
         "control1_lFSTRO",
         "control3_oOkdsJ",
-        "control4_a9rKt5",
         "control5_CNTcxJ",
         "control6_izEbgM"
       ],
@@ -508,22 +439,13 @@
           }
         },
         {
-          "id": "uiControl4_amIy8c",
-          "controlId": "control4_a9rKt5",
-          "display": {
-            "adapterId": "clickable",
-            "type": "link",
-            "adapter": {
-              "templateType": ""
-            }
-          }
-        },
-        {
           "id": "uiControl6_bEpdEo",
           "controlId": "control6_izEbgM",
           "display": {
             "adapterId": "clickable",
             "type": "button",
+            "amStyle": "primary",
+            "text": "登录",
             "adapter": {
               "templateType": ""
             }

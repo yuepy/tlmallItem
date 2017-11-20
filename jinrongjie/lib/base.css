@@ -56,26 +56,24 @@ div[contenteditable='true'] {
   align-items: center;
 }
 .ysp-header-wrapper > span:nth-child(2) {
-  flex: 0 1 71%;
+  flex: 0 1 62%;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .ysp-header-wrapper > span:nth-child(3) {
   width: 100%;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
-  flex: 0 1 19%;
-}
-.ysp-header-wrapper > span:nth-child(3) > span:first-child {
-  margin-left: .2rem;
-  display: flex;
-  align-items: center;
-  font-size: 13px;
+  flex: 0 1 16%;
 }
 .ysp-header-wrapper > span:nth-child(3) > span:last-child {
-  margin-left: .3rem;
+  margin-left: .5rem;
 }
 .ysp-header-wrapper .ysp-header-edit {
   display: inline-block;
@@ -1228,13 +1226,20 @@ li {
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li a {
   color: #aaa;
   font-size: 14px;
+  width: 80%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
 }
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li .ysp-list-card-content-img {
   display: inline-block;
   height: 20px;
   background: url('images/new@2x.png') no-repeat;
-  width: 40px;
+  width: 15%;
   background-position-y: 5px;
+  position: relative;
+  top: -12px;
 }
 .ysp-list-search {
   margin: 42px 0 0 0;
@@ -1946,6 +1951,7 @@ div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper {
   padding: 20px 0;
   font-size: 14px;
   margin-top: 10px;
+  border-bottom: 10px solid #f4f4f4;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_none_row,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_none_row {
@@ -2246,11 +2252,13 @@ div[data-ysp-modelid='askForLeave'] .topTitle {
   padding: 10px 28%;
   background: #fff;
   text-align: center;
+  border-bottom: 10px solid #f4f4f4;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper {
   background: #fff;
   margin-top: 10px;
   padding: 10px 0;
+  border-bottom: 10px solid #f4f4f4;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
   padding: 10px 10px 0 10px;
