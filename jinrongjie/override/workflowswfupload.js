@@ -155,10 +155,10 @@ function showmustinput(uploadobj) {
     }
 }
 function StartUploadAll() {
-    for (var j = 0; j < SWFUpload.movieCount; j++) {
-        eval("SWFUpload.instances.SWFUpload_" + j + ".startUpload()");
-        eval("upfilesnum+=SWFUpload.instances.SWFUpload_" + j + ".getStats().files_queued");
-    }
+    // for (var j = 0; j < SWFUpload.movieCount; j++) {
+    //     eval("SWFUpload.instances.SWFUpload_" + j + ".startUpload()");
+    //     eval("upfilesnum+=SWFUpload.instances.SWFUpload_" + j + ".getStats().files_queued");
+    // }
 }
 function hiddenPrompt(){
 	var showTableDiv = document.getElementById('_xTable');
