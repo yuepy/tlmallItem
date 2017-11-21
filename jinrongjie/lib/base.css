@@ -29,11 +29,8 @@ div[contenteditable='true'] {
   -webkit-user-select: text;
 }
 .ysp-header-wrapper {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.7rem;
+  height: 45px;
+  line-height: 45px;
   background-color: #c29a2a;
   color: #fff;
   font-size: 18px;
@@ -44,12 +41,13 @@ div[contenteditable='true'] {
   overflow: hidden;
 }
 .ysp-header-wrapper .back {
-  margin-left: 15px;
   background: url('../lib/images/Back@3x.png') center center;
   display: inline-block;
   width: 17px;
   height: 22px;
   background-size: 100%;
+  position: relative;
+  top: 4px;
 }
 .ysp-header-wrapper > span:nth-child(1) {
   width: 20%;
@@ -73,7 +71,6 @@ div[contenteditable='true'] {
   float: left;
 }
 .ysp-header-wrapper > span:nth-child(3) {
-  width: 100%;
   font-weight: 600;
   font-size: 18px;
   float: right;
@@ -81,7 +78,7 @@ div[contenteditable='true'] {
   height: 45px;
 }
 .ysp-header-wrapper > span:nth-child(3) > span:last-child {
-  margin-left: .3rem;
+  margin-left: .5rem;
 }
 .ysp-header-wrapper .ysp-header-edit {
   display: inline-block;
