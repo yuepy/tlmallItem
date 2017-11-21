@@ -61,8 +61,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "customJS",
+              "value": "return doc.body.querySelector('iframe').contentWindow.document.querySelector('#taskListId .mini-grid-rows-view .mini-grid-rowstable')"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {

@@ -85,82 +85,7 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc) {
-      if(aWin.initData){
-         aWin.initData = function (e){
-           debugger;
-		    //隐藏不属于审批的按钮，显示审批的按钮
-		    //处理页面权限
-		    // 当前审批节点ID
-		    aWin.activityDefID=e.workItem.activityDefID;
-			 //审批组件
-			var param = {
-				__type : "sdo:org.gocom.components.bpff.business.approval.approval.Approval"
-			};
-			aWin.approvalForm.setData({
-				approval : param
-			});
-			//主表初始化
-			var data = {
-				processInstID: e.processInstID,
-				__type: "sdo:com.pttl.bps.AdministrationManager.simple_saleorder.simple_saleorder.PoSimpleContractInfo"
-			};
-            aWin.bpff.components.core.loadEntity({
-            data: data,
-            success: function(ret){
-                if(ret){
-                  	var nui = aWin.nui;
-                  	var form = aWin.form;
-                    var entity = ret;
-                    var emp=aWin.getEmp(entity.createrId);
-                    if(emp!=null){
-                    	entity.createrName=emp.empname;
-                    }
-                    form.setData(entity);
-                    nui.get("simpleContractNum").setValue(entity.simpleContractNum);
-                    nui.get("simpleContractNum").setText(entity.simpleContractNum);
-                    form.setEnabled(false);
-                    if(aWin.activityDefID=="manualActivity7"||aWin.activityDefID=="manualActivity8"){
-							$("#shoe1").css("display","table-row");
-							nui.get("files").setValue("否");
-							nui.get("seal").setValue("是");
-							nui.get("contractSealStatus").setEnabled(true);
-							nui.get("contractSealStatus").setRequired(true);
-							if(entity.contractSealStatus==null){
-								nui.get("contractSealStatus").setValue(1);
-							}
-							aWin.click1();
-					}
-					if(aWin.activityDefID=="manualActivity10"){
-            var $ = aWin.$;
-							$("#shoe1").css("display","table-row");
-							$("#shoe2").css("display","table-row");
-							nui.get("files").setValue("是");
-							nui.get("seal").setValue("是");
-							//nui.get("contractSealStatus").setRequired(true);
-							//nui.get("contractSealDate").setRequired(true);
-							nui.get("backDate").setRequired(true);
-							nui.get("contractSealStatus").setRequired(true);
-							//nui.get("contractSealStatus").setEnabled(true);
-							//nui.get("contractSealDate").setEnabled(true);
-							nui.get("backDate").setEnabled(true);
-							nui.get("contractManager").setValue("5734");
-							nui.get("contractManagerName").setValue("胡军");
-					}
-                    //获取文件列表
-			        aWin.getFileList(entity.attachmentName,"Filelist",false);
-			        if(e.workItem.currentState==12){
-				        form.setEnabled(false);
-				     }
-                }else{
-                    form.setData(data);
-                }
-                },
-                error:function(err){
-                    aWin.bpff.components.core.showMessage(err);
-                }
-                });
-		}
-         }
+      
      //加载过滤后的页面
       // if(aWin.location.href==("http://192.168.220.51:8000/ptsoa/skins/default/index.jsp"||"http://192.168.220.51:8000/ptsoa/skins/default/index.jsp")){
       //   console.log("a")
@@ -258,7 +183,7 @@
           }
       }
       aWin.doOperate = function(rowIndex, isShowDetail, newPage) {
-        debugger;
+       // debugger;
         // var row = aWin.taskListDataGridObj.getRow(rowIndex);
         // var url = aWin.contextPath + "/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=" + row.workItemID + "&newPage=" + newPage;
         // if (isShowDetail) {
