@@ -571,6 +571,21 @@
           }
         }
       }
+    },
+    getLoading: function() {
+      if (topWin) {
+        var doc = topWin.document;
+        var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and contains(@id,"layui-layer")]', doc)[0];
+        if (layerTipEl) {
+          var contentEl = layerTipEl.classList.contains("layui-layer-loading")
+          return contentEl;
+          // var contentEl = layerTipEl.querySelector('div.layui-layer-loading');
+          // return contentEl;
+          // if (contentEl) {
+          //   return contentEl.textContent;
+          // }
+        }
+      }
     }
   }
   //通过标记法来优化销售达成
