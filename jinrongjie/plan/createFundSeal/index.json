@@ -1,0 +1,229 @@
+{
+  "version": "0.1",
+  "id": "createFundSeal",
+  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=6901&isagent=0&beagenter=0",
+  "jsFile": "index.js",
+  "chineseName": " 资金调拨和印章（创建）",
+  "description": "",
+  "controls": {
+    "control4_uDFBQc": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "请求:创建 - 资金支出审批流程 - 创建"
+              ],
+              "visText": [
+                "请求:创建 - 资金支出审批流程 - 创建"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('请求:创建 - 集团人力资源部印章使用审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 1-资金调拨审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 机关工会支出审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 资金支出审批流程') !==-1){return true;}return false;"
+    }
+  },
+  "contexts": {
+    "context31_RccVS6": {
+      "controls": [],
+      "anchors": [
+        "control4_uDFBQc"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {},
+  "pages": {
+    "page31_rr9zpU": {
+      "contextId": "context31_RccVS6",
+      "layout": []
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context31_RccVS6": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context31_RccVS6": [
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=6901&isagent=0&beagenter=0"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context31_RccVS6": [
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_beagenter",
+            "_isagent",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context31_RccVS6": [
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_edit",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context31_RccVS6": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}
