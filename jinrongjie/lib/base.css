@@ -19,8 +19,6 @@ h5 {
 .view-item {
   background: #f3f3f3;
 }
-<<<<<<< HEAD
-=======
 #uiControl55_TbO50eitem {
   height: 600px;
   overflow: auto;
@@ -33,7 +31,6 @@ div[data-componentsid="uiControl55_TbO50e"] {
   left: 0;
   color: red;
 }
->>>>>>> 4d4a035a511283c72b698de36116d26cf79afbfe
 /*  公共header样式  */
 div[contenteditable='true'] {
   -webkit-user-select: text;
@@ -62,27 +59,16 @@ div[contenteditable='true'] {
   background-size: 100%;
 }
 .ysp-header-wrapper > span:nth-child(1) {
-<<<<<<< HEAD
-  flex: 0 1 20%;
-  display: flex;
-  align-items: center;
-}
-.ysp-header-wrapper > span:nth-child(1) > span:first-child {
-  margin-left: .2rem;
-  display: flex;
-  align-items: center;
-}
-.ysp-header-wrapper > span:nth-child(2) {
-  flex: 0 1 71%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-=======
   width: 20%;
   height: 45px;
   line-height: 45px;
   float: left;
   padding-left: 5px;
+}
+.ysp-header-wrapper > span:nth-child(1) > span:first-child {
+  margin-left: .2rem;
+  display: flex;
+  align-items: center;
 }
 .ysp-header-wrapper > span:nth-child(2) {
   display: block;
@@ -92,27 +78,14 @@ div[contenteditable='true'] {
   white-space: nowrap;
   width: 65%;
   float: left;
->>>>>>> 4d4a035a511283c72b698de36116d26cf79afbfe
 }
 .ysp-header-wrapper > span:nth-child(3) {
   width: 100%;
   font-weight: 600;
-<<<<<<< HEAD
-  font-size: 16px;
-  display: flex;
-  flex: 0 1 19%;
-}
-.ysp-header-wrapper > span:nth-child(3) > span:first-child {
-  margin-left: .2rem;
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-=======
   font-size: 18px;
   float: right;
   width: 15%;
   height: 45px;
->>>>>>> 4d4a035a511283c72b698de36116d26cf79afbfe
 }
 .ysp-header-wrapper > span:nth-child(3) > span:last-child {
   margin-left: .3rem;
@@ -3661,7 +3634,7 @@ div[data-ysp-modelid='needToFreeFlow'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
 .ysp-custom-textarea .cutom-textarea {
   border: 1px solid #efefef;
   border-radius: 5px;
-  height: 80px;
+  min-height: 80px;
 }
 .suggset_box_display {
   display: block!important;
