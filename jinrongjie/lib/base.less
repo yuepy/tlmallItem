@@ -41,6 +41,28 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 .view-item{
   background: #f3f3f3;
 }
+#uiControl55_TbO50eitem{
+  height: 600px;
+  overflow:auto;
+    
+}
+div[data-componentsid="uiControl55_TbO50e"]{
+  position: fixed;
+  top: 50px;
+  bottom: 50px;
+  right: 0;
+  left: 0;
+  color: red;
+}
+//修改ios   position:fixed失效的问题
+//div.view-item{
+  //position: relative;
+  //width: 100%;
+ // height:100vh;
+//}
+
+
+
 /*  公共header样式  */
 div[contenteditable='true']{
   -webkit-user-select:text;
@@ -55,9 +77,14 @@ div[contenteditable='true']{
   color: #fff;
   font-size:18px;
   position: fixed;
+  //position: absolute;
   top:0;
+  //bottom:0;
+  //2017/11/20结束
   width: 100%;
   z-index: 111;
+  overflow: hidden;
+  
   .back{
     margin-left: 15px;
   	background:url('../lib/images/Back@3x.png') center center;
@@ -67,9 +94,18 @@ div[contenteditable='true']{
     background-size: 100%;
   }
   > span:nth-child(1){
-    flex: 0 1 20%;
-    display: flex;
-    align-items: center;
+    //flex: 0 1 20%;
+    //display: flex;
+    //align-items: center;
+    //display: inline-block;
+    width:20%;        
+    //position: relative;
+    //top: -15px;
+    height: 45px;
+    line-height: 45px;
+    //left: 5px;
+    float:left;
+    padding-left:5px;
     > span:first-child{
       margin-left: .2rem;
       display:flex;
@@ -77,24 +113,29 @@ div[contenteditable='true']{
     }
   }
   > span:nth-child(2){
-    flex: 0 1 71%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    //flex: 0 1 62%;
+    //display: flex;
+    //align-items: center;
+    display: block;
+    text-align: center;
+    //justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    //display: inline-block;
+    width: 65%;
+    float:left;
   }
   > span:nth-child(3){
     width: 100%;
     font-weight: 600;
-    font-size: 16px;
-    display: flex;
-    flex: 0 1 19%;
-    > span:first-child{
-        margin-left: .2rem;
-        display: flex;
-        align-items: center;
-        font-size: 13px;
-    }
-    
+    font-size: 18px;
+    //display: flex;
+    //flex: 0 1 16%;
+    //display: inline-block;
+    float: right;
+    width: 15%;
+    height: 45px;
     > span:last-child{
         margin-left: .3rem;
     }
@@ -1773,6 +1814,7 @@ div[data-ysp-modelid='choosePerson']{
   }
   ._27gZE6m5LfD5uG_dZ8p3iP{
     margin: 0;
+    
     ul{
       background: none;
       border-bottom: 10px solid #F3F3F3;
@@ -2256,7 +2298,14 @@ div[data-ysp-modelid='askForLeave']{
     border-bottom: 0;
   }
   ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    //2017//11//20
+    //position: absolute;
+    //height: 300px;
+   // width: 100%;
+     //top:45px;
+    //overflow-y:scroll; 
     margin: 0;
+   
     ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
       background: #fff;
       border-bottom: 10px solid #F3F3F3;

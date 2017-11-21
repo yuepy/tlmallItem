@@ -19,6 +19,21 @@ h5 {
 .view-item {
   background: #f3f3f3;
 }
+<<<<<<< HEAD
+=======
+#uiControl55_TbO50eitem {
+  height: 600px;
+  overflow: auto;
+}
+div[data-componentsid="uiControl55_TbO50e"] {
+  position: fixed;
+  top: 50px;
+  bottom: 50px;
+  right: 0;
+  left: 0;
+  color: red;
+}
+>>>>>>> 4d4a035a511283c72b698de36116d26cf79afbfe
 /*  公共header样式  */
 div[contenteditable='true'] {
   -webkit-user-select: text;
@@ -36,6 +51,7 @@ div[contenteditable='true'] {
   top: 0;
   width: 100%;
   z-index: 111;
+  overflow: hidden;
 }
 .ysp-header-wrapper .back {
   margin-left: 15px;
@@ -46,6 +62,7 @@ div[contenteditable='true'] {
   background-size: 100%;
 }
 .ysp-header-wrapper > span:nth-child(1) {
+<<<<<<< HEAD
   flex: 0 1 20%;
   display: flex;
   align-items: center;
@@ -60,10 +77,27 @@ div[contenteditable='true'] {
   display: flex;
   align-items: center;
   justify-content: center;
+=======
+  width: 20%;
+  height: 45px;
+  line-height: 45px;
+  float: left;
+  padding-left: 5px;
+}
+.ysp-header-wrapper > span:nth-child(2) {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 65%;
+  float: left;
+>>>>>>> 4d4a035a511283c72b698de36116d26cf79afbfe
 }
 .ysp-header-wrapper > span:nth-child(3) {
   width: 100%;
   font-weight: 600;
+<<<<<<< HEAD
   font-size: 16px;
   display: flex;
   flex: 0 1 19%;
@@ -73,6 +107,12 @@ div[contenteditable='true'] {
   display: flex;
   align-items: center;
   font-size: 13px;
+=======
+  font-size: 18px;
+  float: right;
+  width: 15%;
+  height: 45px;
+>>>>>>> 4d4a035a511283c72b698de36116d26cf79afbfe
 }
 .ysp-header-wrapper > span:nth-child(3) > span:last-child {
   margin-left: .3rem;
