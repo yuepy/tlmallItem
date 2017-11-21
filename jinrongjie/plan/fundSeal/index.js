@@ -56,9 +56,11 @@
                 }
               });
             } else if (dd.querySelector("table")) {
-              var fieldTrs = dd.querySelector("table").querySelectorAll("tr");obj.content[0].push("下载");$(fieldTrs).each(function (i1, d1) {
-                obj.content[3].push($(d1).find("a").text());
-              });
+              var fieldTrs = dd.querySelector("table").querySelectorAll("tr");obj.content[0].push("下载");if (dd.querySelector("table").querySelectorAll("a").length > 0) {
+                $(fieldTrs).each(function (i1, d1) {
+                  obj.content[3].push($(d1).find("a").text());
+                });
+              }
             } else {
               obj.content[2].push($(dd).text().trim());
             } // obj.content.push(tdArr);
