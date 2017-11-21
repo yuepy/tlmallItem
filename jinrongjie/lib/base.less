@@ -318,13 +318,23 @@ li {list-style: none}
     .content{
       // font-size: @base-font-size+2px;
       font-size: 0.92rem;
+      .ysp-receive-person{
+        display: inline-block;
+        font-size: 0.8rem;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 10px;
+      }
     }
 	}
   .annex-download{
+    
+    font-size: 0.9rem;
+    position: relative;
     background: #EDEDED url(../local/img/txt.png) no-repeat ;
     margin: 0 15px 5px 0;
     border-radius: 2px;
-    padding: 10px 10px 10px 40px ;
+    padding: 10px 10px 10px 45px ;
     background-size: auto;
     background-position-x: 10px;
     background-position-y: 50%;
@@ -334,9 +344,12 @@ li {list-style: none}
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-position-y: 8px;
     position: absolute;
     right: 15px;
+    top: 50%;
+    margin-top: -10px;
+    background-position-y: 50%;
+    background-position-x: 50%;
   }
   .load-more-arrow{
     text-align: center;
@@ -3788,7 +3801,7 @@ div[data-ysp-modelid='needToFreeFlow']{
   .cutom-textarea{
     border: 1px solid #efefef;
     border-radius: 5px;
-    height: 80px;
+    min-height: 80px;
   }
 }
 .suggset_box_display{
