@@ -69,13 +69,11 @@ div[contenteditable='true']{
   -webkit-user-select:text;
 }
 .ysp-header-wrapper{
-  //text-align: center;
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
-  //height: 2.7rem;
-  height: 45px;
-  line-height: 45px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.7rem;
   background-color: rgb(194,154,42);
   color: #fff;
   font-size:18px;
@@ -89,14 +87,12 @@ div[contenteditable='true']{
   overflow: hidden;
   
   .back{
-    //margin-left: 15px;
+    margin-left: 15px;
   	background:url('../lib/images/Back@3x.png') center center;
     display: inline-block;
     width: 17px;
     height:22px;
     background-size: 100%;
-    position: relative;
-    top:4px;
   }
   > span:nth-child(1){
     //flex: 0 1 20%;
@@ -112,9 +108,9 @@ div[contenteditable='true']{
     float:left;
     padding-left:5px;
     > span:first-child{
-      //margin-left: .2rem;
-      //display:flex;
-      //align-items:center;
+      margin-left: .2rem;
+      display:flex;
+      align-items:center;
     }
   }
   > span:nth-child(2){
@@ -132,7 +128,7 @@ div[contenteditable='true']{
     float:left;
   }
   > span:nth-child(3){
-    //width: 100%;
+    width: 100%;
     font-weight: 600;
     font-size: 18px;
     //display: flex;
@@ -142,7 +138,7 @@ div[contenteditable='true']{
     width: 15%;
     height: 45px;
     > span:last-child{
-        margin-left: .5rem;
+        margin-left: .3rem;
     }
   }
   .ysp-header-edit{
@@ -1286,22 +1282,13 @@ li {list-style: none}
         a{
           color:#aaa;
           font-size:14px;
-          width: 80%;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          display: inline-block;
         } 
         .ysp-list-card-content-img{
           	display: inline-block;
-          	//height: 20px;
-          	height:40px; 
+          	height: 20px;
             background: url('images/new@2x.png') no-repeat;  
-          	width: 15%;
-    				//background-position-y: 5px;
-          	position: relative;
-          	top:10px;
-          
+          	width: 40px;
+    				background-position-y: 5px;
       	}
       }
     }
@@ -1705,6 +1692,7 @@ div[data-ysp-modelid='hetong01']{
           *{
             color: #202020;
             margin-right: 15px;
+            margin: 0;
           }
         }
         .ovh{  
@@ -2072,7 +2060,6 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal']{
     padding: 20px 0;
     font-size: 14px;
     margin-top: 10px;
-    border-bottom: 10px solid #f4f4f4;
     .ysp_none_row{
       display: none;
     }
@@ -2346,13 +2333,11 @@ div[data-ysp-modelid='askForLeave']{
     padding: 10px 28%;
     background: #fff;
     text-align: center;
-    border-bottom: 10px solid #f4f4f4;
   }
   .ysp_askForLeave_wrapper{
     background: #fff;
     margin-top: 10px;
     padding:10px 0;
-    border-bottom: 10px solid #f4f4f4;
     .ysp_askForLeave_content{
       padding: 10px 10px 0 10px;
       .contentTitle{
@@ -2770,6 +2755,8 @@ div[data-ysp-modelid="setBackFlowStep"]{
           *{
             color: #202020;
             margin-right: 15px;
+            margin: 0;
+            
           }
         }
         .ovh{  
@@ -3198,6 +3185,7 @@ div[data-ysp-modelid='chairmanSign']{
           *{
             color: #202020;
             margin-right: 15px;
+            margin: 0;
           }
         }
         .ovh{  
@@ -3264,6 +3252,7 @@ div[data-ysp-modelid='chairmanSign']{
     margin: 10px ;
     min-height: 100px;
     border: 1px solid #dfdfdf;
+    
   }
 }
 .summit_button_lfj{
@@ -3473,6 +3462,7 @@ div[data-ysp-modelid='chairmanSign']{
           *{
             color: #202020;
             margin-right: 15px;
+            margin: 0;
           }
         }
         .ovh{  
@@ -4164,6 +4154,7 @@ div[data-ysp-modelid='sendDocProcess']{
           *{
             color: #202020;
             margin-right: 15px;
+            margin: 0;
           }
         }
         .ovh{  
