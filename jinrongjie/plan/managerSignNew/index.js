@@ -38,23 +38,19 @@
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
                 // if (trIndex == 5) {
                 if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
-                  var files = dt.querySelectorAll('a');var fileName = []; //             var z = dt.ownerDocument.defaultView.check_form.toString(); // console.log(z);
-                  //             if (z) {
-                  //               var reg = /userid=[0-9]{1,}/;
-                  //               var value = z.match(reg)[0] && z.match(reg)[0].split("=")[1];
-                  //             }
-                  //             upload.push(value || "");
-                  var z = dt.ownerDocument.defaultView.check_form.toString();var user = {};user.workflowid = dt.ownerDocument.querySelector('input[name="workflowid"]').value;if (z) {
-                    var useridReg = /userid=[0-9]{1,}/;var userid = z.match(useridReg)[0] && z.match(useridReg)[0].split("=")[1];if (dt.querySelector('#annexsubId')) {
-                      user.subId = dt.querySelector('#annexsubId').value;
-                    }if (dt.querySelector('#annexsecId')) {
-                      user.subId = dt.querySelector('#annexsecId').value;
-                    }if (dt.querySelector('#annexmainId')) {
-                      user.subId = dt.querySelector('#annexmainId').value;
-                    }user.userid = userid;
-                  }var fileuploadannexupload = dt.ownerDocument.defaultView.fileuploadannexupload.toString();if (fileuploadannexupload) {
-                    var logintype = fileuploadannexupload.match(/"logintype":"[0-9]{1,}"/)[0].split(':')[1].replace(/"/g, '');user.logintype = logintype || '';
-                  }upload.push(user);if (files.length > 0) {
+                  var files = dt.querySelectorAll('a');var fileName = [];if (dt.ownerDocument.defaultView) {
+                    var z = dt.ownerDocument.defaultView.check_form.toString();var user = {};user.workflowid = dt.ownerDocument.querySelector('input[name="workflowid"]').value;if (z) {
+                      var useridReg = /userid=[0-9]{1,}/;var userid = z.match(useridReg)[0] && z.match(useridReg)[0].split("=")[1];if (dt.querySelector('#annexsubId')) {
+                        user.subId = dt.querySelector('#annexsubId').value;
+                      }if (dt.querySelector('#annexsecId')) {
+                        user.subId = dt.querySelector('#annexsecId').value;
+                      }if (dt.querySelector('#annexmainId')) {
+                        user.subId = dt.querySelector('#annexmainId').value;
+                      }user.userid = userid;
+                    }var fileuploadannexupload = dt.ownerDocument.defaultView.fileuploadannexupload.toString();if (fileuploadannexupload) {
+                      var logintype = fileuploadannexupload.match(/"logintype":"[0-9]{1,}"/)[0].split(':')[1].replace(/"/g, '');user.logintype = logintype || '';
+                    }upload.push(user);
+                  }if (files.length > 0) {
                     [].forEach.call(files, function (fileItem, fileIndex) {
                       if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
                         fileName.push(fileItem.textContent.trim());var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('(')));
