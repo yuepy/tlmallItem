@@ -208,11 +208,11 @@
         var number = data.dataCustom.number; //文件类型
         var type = data.dataCustom.type; //现在的文件名称
         var text = data.dataCustom.text; //拼接下载地址
-        var _urldown = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1'; //在线预览实现
-        if (ysp.appMain.isAndroid()) {
-          yspUser.openDocument(JSON.stringify({ "downloadUrl": _urldown, "docName": text, "docType": type, "downloadHttpHeaders": { "cookie": elem.ownerDocument.cookie }, "downloadType": "GET" }));
-        } else {
-          top.EAPI.openWindow(_urldown + '&_ysp_filepreview=1');
+        var _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1'; //在线预览实现 
+        if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
+        } else if (ysp.appMain.isAndroid()) {
+          top.location.href = _url;
         }
       }
     },
