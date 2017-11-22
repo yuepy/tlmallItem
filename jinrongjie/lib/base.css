@@ -1805,7 +1805,8 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
   padding: 3px;
 }
 .box_select {
-  margin: 40px 0 0 0 ;
+  margin: 30px 0 0 0;
+  background: #fff;
 }
 .box_select .people3 {
   margin: 10px;
@@ -1840,41 +1841,65 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
   border-bottom: 5px solid #f3f3f3;
   padding-left: 20px;
   font-size: 14px;
+  position: relative;
 }
 .box_select .dis_status span {
   color: #000;
+}
+.box_select .dis_status .open {
+  background: url('../lib/images/selected.png') no-repeat 0 center;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 6px;
+}
+.box_select .dis_status .down {
+  background: url('../lib/images/unselected.png') no-repeat 0 center;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 6px;
 }
 .box_select .tree_box {
   height: 200px;
   overflow-y: scroll;
 }
 .box_select .tree_box > div {
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 35px;
 }
 .box_select .tree_box > div .bord {
   border-bottom: 1px solid #ccc;
   padding-left: 10px;
   position: relative;
+  overflow: hidden;
 }
 .box_select .tree_box > div .bord span {
   font-size: 14px;
+  display: block;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .box_select .tree_box > div .bord i {
   position: absolute;
-  right: 20px;
-  top: 5px;
-  width: 20px;
-  height: 20px;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 35px;
 }
 .box_select .tree_box > div .bord .xjt {
-  background: url(../local/img/xiajiantou.png) no-repeat 0;
+  background: url(../lib/images/xxxjt.png) no-repeat 95%;
   background-size: 20px;
 }
 .box_select .tree_box > div .bord .zjt {
-  background: url(../local/img/zuojiantou.png) no-repeat 0;
+  background: url(../lib/images/yyyjt.png) no-repeat 95%;
   background-size: 20px;
-  transform: rotate(180deg);
 }
 .box_select .people_box {
   padding: 0 10px;
