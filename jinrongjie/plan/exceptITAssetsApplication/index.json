@@ -1,0 +1,452 @@
+{
+  "version": "0.1",
+  "id": "exceptITAssetsApplication",
+  "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=621&isagent=0&beagenter=0",
+  "jsFile": "index.js",
+  "chineseName": "除IT类固定资产申领(新建)",
+  "description": "除IT类固定资产申领(新建)",
+  "controls": {
+    "control173_bFuWdq": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "保存"
+              ],
+              "visText": [
+                ""
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]/TD[2]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]",
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::TR[@id=\"toolbarmenu\"]//BUTTON"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TBODY.x-btn-small.x-btn-icon-small-left TD.x-btn-mc BUTTON.x-btn-text.btn_wfSave"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control173_bFuWdq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,button,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control184_6G219P": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "请求:创建 - 除IT类固定资产申购审批流程 - 创建"
+              ],
+              "visText": [
+                "请求:创建 - 除IT类固定资产申购审批流程 - 创建"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "请求:创建 - 除IT类固定资产申购审批流程 - 创建",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('除IT类固定资产申购审批流程')!==-1&&elem.textContent.indexOf('创建')!==-1){return true;}return false;"
+    },
+    "control256_t5LqXJ": {
+      "location": {
+        "data": {
+          "tagName": "STRONG"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "P.bt FONT STRONG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]/FONT[1]/STRONG[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control256_t5LqXJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control257_2rC7Lf": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control257_2rC7Lf"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control258_SNd53w": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control258_SNd53w"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context32_TWuuUu": {
+      "controls": [
+        "control173_bFuWdq",
+        "control256_t5LqXJ",
+        "control257_2rC7Lf",
+        "control258_SNd53w"
+      ],
+      "anchors": [
+        "control184_6G219P"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow98_TifPbN": {
+      "toContexts": [
+        {
+          "toContextId": "context32_TWuuUu"
+        }
+      ]
+    },
+    "flow143_ETtVFm": {
+      "fromContextId": "context32_TWuuUu",
+      "fromAction": "doAction",
+      "fromControlId": "control173_bFuWdq",
+      "toContexts": [
+        {
+          "toContextId": "context32_TWuuUu"
+        }
+      ]
+    },
+    "flow144_WOHHz2": {
+      "fromContextId": "context32_TWuuUu",
+      "fromAction": "doAction",
+      "fromControlId": "control257_2rC7Lf",
+      "toContexts": [
+        {
+          "toContextId": "context32_TWuuUu"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page32_UWQ5Tc": {
+      "contextId": "context32_TWuuUu",
+      "layout": [
+        {
+          "id": "uiControl4_uVGmCb",
+          "controlId": "control173_bFuWdq",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl4_uVGmCb",
+                "onGetTemplate": "getTemplate_uiControl4_uVGmCb"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl152_7pT5rX",
+          "controlId": "control256_t5LqXJ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl152_7pT5rX",
+                "onGetTemplate": "getTemplate_uiControl152_7pT5rX"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl165_4bLvVu",
+          "controlId": "control257_2rC7Lf",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl165_4bLvVu",
+                "onGetTemplate": "getTemplate_uiControl165_4bLvVu"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl243_Bm2xT8",
+          "controlId": "control258_SNd53w",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl243_Bm2xT8",
+                "onGetTemplate": "getTemplate_uiControl243_Bm2xT8"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context32_TWuuUu": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context32_TWuuUu": [
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=621&isagent=0&beagenter=0"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context32_TWuuUu": [
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_beagenter",
+            "_isagent",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context32_TWuuUu": [
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context32_TWuuUu": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}
