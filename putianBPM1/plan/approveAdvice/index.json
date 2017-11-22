@@ -45,7 +45,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": false,
+      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
     },
@@ -115,6 +115,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
     },
@@ -122,6 +123,10 @@
       "location": {
         "data": {
           "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
