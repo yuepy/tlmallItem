@@ -15,7 +15,8 @@
     "upFileScan": "../upFileScan/index.json",
     "processedTask": "../processedTask/index.json",
     "Summary": "../Summary/index.json",
-    "Address": "../Address/index.json"
+    "Address": "../Address/index.json",
+    "Addr":"../Addr/index.json"
   },
   "chineseName": "流程单",
   "description": "",
@@ -50,7 +51,6 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
     },
@@ -667,6 +667,10 @@
       "fromAction": "doAction",
       "fromControlId": "control21_GeryA0",
       "toContexts": [
+        {
+          "toContextId": "context17_obNoFE",
+          "toModelId": "Addr"
+        },
         {
           "toContextId": "context8_ddpRhS"
         },
