@@ -55,7 +55,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('请求:创建 - 集团人力资源部印章使用审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 1-资金调拨审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 机关工会支出审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 资金支出审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 内部资金调拨审批流程') !==-1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('请求:创建 - 集团人力资源部印章使用审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 1-资金调拨审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 机关工会支出审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 资金支出审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 内部资金调拨审批流程') !==-1||elem.textContent.indexOf('请求:创建 - 金融街集团发薪审批单') !==-1){return true;}return false;"
     },
     "control173_C2vIq1": {
       "location": {
@@ -202,6 +202,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[2]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody/tr[11]/td[2]/table/tbody/tr[2]"
             }
           ],
           "force": false
@@ -286,6 +290,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[3]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody/tr[11]/td[2]/table/tbody/tr[3]"
             }
           ],
           "force": false
@@ -329,6 +337,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[4]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody/tr[11]/td[2]/table/tbody/tr[4]"
             }
           ]
         },
@@ -348,6 +360,31 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control262_RoqGCv": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control262_RoqGCv"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -360,7 +397,8 @@
         "control259_nKBWpK",
         "control260_UET9bV",
         "control261_oaLTaQ",
-        "control256_bmROpq"
+        "control256_bmROpq",
+        "control262_RoqGCv"
       ],
       "anchors": [
         "control4_uDFBQc"
@@ -423,6 +461,26 @@
           "toModelId": "managerAuditRelatedDoc"
         }
       ]
+    },
+    "flow147_WxlDUb": {
+      "fromContextId": "context31_RccVS6",
+      "fromAction": "doAction",
+      "fromControlId": "control257_NfCv4I",
+      "toContexts": [
+        {
+          "toContextId": "context31_RccVS6"
+        }
+      ]
+    },
+    "flow148_apOqbQ": {
+      "fromContextId": "context31_RccVS6",
+      "fromAction": "doAction",
+      "fromControlId": "control262_RoqGCv",
+      "toContexts": [
+        {
+          "toContextId": "context31_RccVS6"
+        }
+      ]
     }
   },
   "pages": {
@@ -476,6 +534,21 @@
                       "events": {
                         "onDoAction": "doAction_uiControl243_ek06SH",
                         "onGetTemplate": "getTemplate_uiControl243_ek06SH"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl248_gALfK1",
+                  "controlId": "control262_RoqGCv",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl248_gALfK1",
+                        "onGetTemplate": "getTemplate_uiControl248_gALfK1"
                       }
                     }
                   }
@@ -648,7 +721,8 @@
       "contexts": {
         "context31_RccVS6": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=6901&isagent=0&beagenter=0",
-          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=9481&isagent=0&beagenter=0"
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=9481&isagent=0&beagenter=0",
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=1901&isagent=0&beagenter=0"
         ],
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
@@ -711,6 +785,52 @@
             "btnHelp",
             "btn_add",
             "btn_edit",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
             "btn_subbackName",
             "btn_wfSave",
             "clickRightMenu",

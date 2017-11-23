@@ -1805,7 +1805,8 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
   padding: 3px;
 }
 .box_select {
-  margin: 40px 0 0 0 ;
+  margin: 30px 0 0 0;
+  background: #fff;
 }
 .box_select .people3 {
   margin: 10px;
@@ -1840,41 +1841,65 @@ div[data-ysp-modelid='choosePerson'] ._27gZE6m5LfD5uG_dZ8p3iP ul li ._2SrmNlTKE-
   border-bottom: 5px solid #f3f3f3;
   padding-left: 20px;
   font-size: 14px;
+  position: relative;
 }
 .box_select .dis_status span {
   color: #000;
+}
+.box_select .dis_status .open {
+  background: url('../lib/images/selected.png') no-repeat 0 center;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 6px;
+}
+.box_select .dis_status .down {
+  background: url('../lib/images/unselected.png') no-repeat 0 center;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 6px;
 }
 .box_select .tree_box {
   height: 200px;
   overflow-y: scroll;
 }
 .box_select .tree_box > div {
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 35px;
 }
 .box_select .tree_box > div .bord {
   border-bottom: 1px solid #ccc;
   padding-left: 10px;
   position: relative;
+  overflow: hidden;
 }
 .box_select .tree_box > div .bord span {
   font-size: 14px;
+  display: block;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .box_select .tree_box > div .bord i {
   position: absolute;
-  right: 20px;
-  top: 5px;
-  width: 20px;
-  height: 20px;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 35px;
 }
 .box_select .tree_box > div .bord .xjt {
-  background: url(../local/img/xiajiantou.png) no-repeat 0;
+  background: url(../lib/images/xxxjt.png) no-repeat 95%;
   background-size: 20px;
 }
 .box_select .tree_box > div .bord .zjt {
-  background: url(../local/img/zuojiantou.png) no-repeat 0;
+  background: url(../lib/images/yyyjt.png) no-repeat 95%;
   background-size: 20px;
-  transform: rotate(180deg);
 }
 .box_select .people_box {
   padding: 0 10px;
@@ -2277,6 +2302,79 @@ div[data-ysp-modelid='createFundSeal'] .ysp_advice_wrapper .ysp_advice_card .ysp
   color: #A1E15C;
   text-decoration: underline;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper {
+  background: #fff;
+  border-bottom: 10px solid #f4f4f4;
+  padding: 10px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
+  padding: 10px 10px 0 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle {
+  font-size: 14px;
+  color: #c29a2a;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck {
+  float: right;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span {
+  border: 1px solid #666;
+  color: #666;
+  border-radius: 10px;
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive {
+  border: 1px solid #A1E15C;
+  color: #A1E15C;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck {
+  padding-left: 10%;
+  padding-top: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span {
+  display: inline-block;
+  width: 30%;
+  background: #f4f4f4;
+  color: #666;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
+  background: #c29a2a;
+  color: #fff;
+}
 div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
@@ -2307,59 +2405,6 @@ div[data-ysp-modelid='askForLeave'] .topTitle {
   background: #fff;
   text-align: center;
   border-bottom: 10px solid #f4f4f4;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper {
-  background: #fff;
-  border-bottom: 10px solid #f4f4f4;
-  padding: 10px 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
-  padding: 10px 10px 0 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle {
-  font-size: 14px;
-  color: #c29a2a;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 5px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck {
-  float: right;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span {
-  border: 1px solid #666;
-  color: #666;
-  border-radius: 10px;
-  display: inline-block;
-  width: 45px;
-  text-align: center;
-  font-size: 12px;
-  margin-right: 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive {
-  border: 1px solid #A1E15C;
-  color: #A1E15C;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck {
-  padding-left: 10%;
-  padding-top: 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span {
-  display: inline-block;
-  width: 30%;
-  background: #f4f4f4;
-  color: #666;
-  border-radius: 5px;
-  margin-right: 10px;
-  text-align: center;
-  font-size: 12px;
-  padding: 5px 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
-  background: #c29a2a;
-  color: #fff;
 }
 div[data-ysp-modelid='postName'] .ysp_stationName {
   background: #fff;
@@ -2493,6 +2538,10 @@ div[data-ysp-modelid='createFundSeal'] .ysp_fundSeal_topTitle .num {
   text-align: center;
   padding-bottom: 5px;
 }
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row {
+  overflow: hidden;
+}
 div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .select_disable,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .select_disable {
   color: #ddd;
@@ -2514,6 +2563,28 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   height: 15px;
   margin-top: 5px;
 }
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp_input,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp_input {
+  border: none;
+  width: 100%;
+  height: 30px;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .radios span,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .radios span {
+  border: 1px solid #666;
+  color: #666;
+  border-radius: 10px;
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+}
+div[data-ysp-modelid="fundSeal"] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .radios .checked,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .radios .checked {
+  border: 1px solid #A1E15C;
+  color: #A1E15C;
+}
 div[data-ysp-modelid="fundSeal"] .ysp-manager-audit-title-icon,
 div[data-ysp-modelid='createFundSeal'] .ysp-manager-audit-title-icon {
   border-top: 10px solid #f4f4f4;
@@ -2527,7 +2598,7 @@ div#uiControl249_85nnFq {
 }
 /********************************资金调拨和印章 end****************************/
 .ysp_table_lfj {
-  margin-top: 40px;
+  margin-top: 10px;
   background: #fff;
 }
 .ysp_table_lfj .upload-files-icon {
@@ -2608,12 +2679,15 @@ div#uiControl249_85nnFq {
   font-size: 15px;
 }
 .ysp_table_lfj .center_box .center_tb select {
-  background: none;
-  border: 0;
-  border-bottom: 1px solid #EDEDED;
+  border: 1px solid #E0E0E0;
   padding: 10px 0;
+  padding-left: 10px;
   color: #202020;
   font-size: 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: url(../local/img/xiajiantou.png) no-repeat 98% center;
+  background-size: 18px;
 }
 .ysp_table_lfj .bottom_box {
   padding: 10px 0;
@@ -2965,12 +3039,15 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   font-size: 15px;
 }
 .ysp_table_office_lfj .center_box .center_tb select {
-  background: none;
-  border: 0;
-  border-bottom: 1px solid #EDEDED;
+  border: 1px solid #E0E0E0;
   padding: 10px 0;
+  padding-left: 10px;
   color: #202020;
   font-size: 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: url(../local/img/xiajiantou.png) no-repeat 98% center;
+  background-size: 18px;
 }
 .ysp_table_office_lfj .bottom_box {
   padding: 10px 0;
@@ -3182,8 +3259,12 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   border: 0;
   background-size: 20px;
 }
+.edition_box_lfj {
+  background: #fff;
+  padding: 10px 0;
+}
 .edition_box_lfj .tit_yell {
-  margin: 20px 0 10px 0;
+  margin: 10px 0 10px 0;
 }
 .edition_box_lfj .textArea2 {
   border-radius: 5px;
@@ -3192,8 +3273,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   border: 1px solid #dfdfdf;
 }
 .summit_button_lfj {
-  padding: 10px;
-  border-top: 10px solid #F3F3F3;
+  padding: 0 10px;
 }
 .summit_button_lfj button {
   border-radius: 5px;
@@ -3250,12 +3330,15 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   font-size: 15px;
 }
 .ysp_freeFlow_table_lfj .center_box .center_tb select {
-  background: none;
-  border: 0;
-  border-bottom: 1px solid #EDEDED;
+  border: 1px solid #E0E0E0;
   padding: 10px 0;
+  padding-left: 10px;
   color: #202020;
   font-size: 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: url(../local/img/xiajiantou.png) no-repeat 98% center;
+  background-size: 18px;
 }
 .ysp_freeFlow_table_lfj .bottom_box {
   background: white;
@@ -3915,12 +3998,15 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
   font-size: 15px;
 }
 .ysp_table_office_lfj2 .center_box .center_tb select {
-  background: none;
-  border: 0;
-  border-bottom: 1px solid #EDEDED;
+  border: 1px solid #E0E0E0;
   padding: 10px 0;
+  padding-left: 10px;
   color: #202020;
   font-size: 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: url(../local/img/xiajiantou.png) no-repeat 98% center;
+  background-size: 18px;
 }
 .ysp_table_office_lfj2 .bottom_box {
   padding: 10px 0;
@@ -4135,4 +4221,13 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
   background: url(../local/img/search.png) no-repeat 0;
   border: 0;
   background-size: 20px;
+}
+div[data-ysp-modelid='sanhuiAppreove'] ._3-688g_U1WkhPY4YisYih4 {
+  padding: 0!important;
+}
+div[data-ysp-modelid='sanhuiAppreove'] .bottom_box2 .bottom_tb {
+  padding: 0!important;
+}
+div[data-ysp-modelid='sanhuiAppreove'] .bottom_box2 .bottom_tb .detail2_box {
+  padding-left: 15px;
 }
