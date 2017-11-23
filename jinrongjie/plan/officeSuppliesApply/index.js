@@ -97,8 +97,7 @@
                 else if ($(this).children("select").length > 0) {
                     var arr4 = [];$(this).children("select").children("option").each(function () {
                       if ($(this).text().trim() !== '' && $(this)[0].selected == true) {
-                        arr4.push({
-                          text: $(this).text().trim(), select: 'selected' });
+                        arr4.push({ text: $(this).text().trim(), select: 'selected' });
                       }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
                         arr4.push({ text: $(this).text().trim(), select: '' });
                       }
@@ -107,8 +106,7 @@
                   else if ($(this).children("div").length == 1 && $(this).children("div").children("button").length == 2) {
                       var arr3 = [];$(this).children("div").children("button").each(function () {
                         arr3.push($(this).text());
-                      });arr2.push({ text: arr3,
-                        type: 'dbutton' });
+                      });arr2.push({ text: arr3, type: 'dbutton' });
                     } //判断input-------------------------------------
                     else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                         arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
@@ -119,8 +117,7 @@
                           arr2.push({ text: $(this).children("span").text(), type: 'a' });
                         } //判断textarea-------------------------------------
                         else if ($(this).children("textarea").length == 1) {
-                            arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea',
-                              id: $(this).children("textarea")[0].id });
+                            arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id });
                           } //判断button-------------------------------------
                           else if ($(this).children("button").length > 0) {
                               //var arr5 = [];
