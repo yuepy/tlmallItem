@@ -26,7 +26,7 @@
       if (!elem) {
         return;
       }if (elem) {
-        var data = {};var content = [];var titles = [];var fileSize = [];var upload = [];var contentOpen = "close";var trs = $(elem.querySelector('tbody')).children('tr');[].forEach.call(trs, function (trItem, trIndex) {
+        var data = {};var content = [];var titles = [];var fileSize = [];var contentOpen = "close";var trs = $(elem.querySelector('tbody')).children('tr');[].forEach.call(trs, function (trItem, trIndex) {
           $(trItem).children("td:nth-child(odd)").each(function (idx, dt) {
             if (dt.textContent.indexOf('签字意见') == -1) {
               if (dt.textContent.indexOf('标题') !== -1) {
@@ -46,19 +46,7 @@
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
                 // if (trIndex == 5) {
                 if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
-                  var files = dt.querySelectorAll('a');var fileName = [];if (dt.ownerDocument.defaultView) {
-                    var z = dt.ownerDocument.defaultView.check_form.toString();var user = {};user.workflowid = dt.ownerDocument.querySelector('input[name="workflowid"]').value;if (z) {
-                      var useridReg = /userid=[0-9]{1,}/;var userid = z.match(useridReg)[0] && z.match(useridReg)[0].split("=")[1];if (dt.querySelector('#annexsubId')) {
-                        user.subId = dt.querySelector('#annexsubId').value;
-                      }if (dt.querySelector('#annexsecId')) {
-                        user.subId = dt.querySelector('#annexsecId').value;
-                      }if (dt.querySelector('#annexmainId')) {
-                        user.subId = dt.querySelector('#annexmainId').value;
-                      }user.userid = userid;
-                    }var fileuploadannexupload = dt.ownerDocument.defaultView.fileuploadannexupload.toString();if (fileuploadannexupload) {
-                      var logintype = fileuploadannexupload.match(/"logintype":"[0-9]{1,}"/)[0].split(':')[1].replace(/"/g, '');user.logintype = logintype || '';
-                    }upload.push(user);
-                  }if (files.length > 0) {
+                  var files = dt.querySelectorAll('a');var fileName = [];if (files.length > 0) {
                     [].forEach.call(files, function (fileItem, fileIndex) {
                       if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
                         fileName.push(fileItem.textContent.trim());var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('(')));
@@ -89,7 +77,7 @@
               content.push([]);
             }
           });
-        });data.titles = titles;data.content = content;data.fileSize = fileSize;data.upload = upload;data.contentOpen = contentOpen;return data;
+        });data.titles = titles;data.content = content;data.fileSize = fileSize;data.contentOpen = contentOpen;return data;
       }
     },
     doAction_uiControl91_tQHRMw: function (data, elem) {

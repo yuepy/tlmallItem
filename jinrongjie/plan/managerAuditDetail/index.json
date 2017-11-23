@@ -552,7 +552,12 @@
           "tagName": "FORM"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -602,7 +607,12 @@
           "tagName": "TD"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"oTDtype_1\"]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -633,7 +643,12 @@
           "tagName": "TD"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"oTDtype_2\"]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -655,7 +670,8 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "ignoreVisibility": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
