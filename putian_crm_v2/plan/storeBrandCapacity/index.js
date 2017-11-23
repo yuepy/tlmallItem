@@ -13,7 +13,11 @@
     getData_control228_6H9Jpo: function (elem) {
       if (!elem) {
         return [];
-      }var data = ysp.customHelper.getTableData(elem, ['销量年月', '品牌', '专区', '促销员数量', "月度销量", "创建人", "创建日期"]);return data;
+      }var content = ysp.customHelper.getTableData(elem, ['销量年月', '品牌', '专区', '促销员数量', "月度销量", "创建人", "创建日期"]); //elem.parentElement.parentElement.parentNode.documentElement.parentElement;
+      //window.top.document.getElementById("contentContainer");
+      //window.frameElement;
+      //elem.ownerDocument.defaultview.frameElement
+      return content;
     },
     doAction_uiControl222_EWTZfg: function (data, elem) {},
     getTemplate_uiControl222_EWTZfg: function () {

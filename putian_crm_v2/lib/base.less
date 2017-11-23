@@ -1777,9 +1777,21 @@ section.ysp-dialog-body-list{
               color:black;
             	background: none !important;
           }
+        	div.ysp-secondmenu-item-titles{
+              padding: 0 50px;
+              border-right: 1px solid #e1e1e1;
+              font-size: 16px;
+              //font-weight: 600;
+              color:black;
+            	background: none !important;
+          }
       }
       div.ysp-secondmenu-item:last-child{
           .ysp-secondmenu-item-title {
+              border-right: 0;
+            	background: none !important;
+          }
+        	.ysp-secondmenu-item-titles {
               border-right: 0;
             	background: none !important;
           }
@@ -1788,6 +1800,11 @@ section.ysp-dialog-body-list{
         border-bottom: 2px solid #4796ed;
        	background: none !important;
         div.ysp-secondmenu-item-title{
+         color: #4796ed !important;
+         font-size: 18px !important;
+         background: none !important;
+       }
+       div.ysp-secondmenu-item-titles{
          color: #4796ed !important;
          font-size: 18px !important;
          background: none !important;
@@ -3822,12 +3839,15 @@ div[data-ysp-modelid="AtReportDetail"]{
 
 
 #page{
-  text-align: center;
+  //text-align: center;
     .common-page{
-    color: #818181;
-    padding: 20px 0px;
-    text-align: center;
-    background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #818181;
+    	padding: 20px;
+    	//text-align: center;
+   	  background: #fff;
     .input-serch{
       display: inline-block;
       .page-number{
@@ -3837,37 +3857,80 @@ div[data-ysp-modelid="AtReportDetail"]{
         margin: 0;
       }
     }
-    button{
-      padding: 5px 15px;
-    }
+    // button{
+    //   padding: 5px 15px;
+    // }
     .prev-icon{
-      border-radius: 5px;
-      border: 1px solid #eee;
-      background: #fff;
-      color: #818181;
-      padding-left: 25px;
-      background: url('images/prev.png') no-repeat 7px 8px;
-      background-size: 12%;
+      // border-radius: 5px;
+      // border: 1px solid #eee;
+      // background: #fff;
+      // color: #818181;
+      // padding-left: 25px;
+      // background: url('images/prev.png') no-repeat 7px 8px;
+      // background-size: 12%;
+      display: block;
+      background: url('images/ysp-atreport-more.png') no-repeat center center;
+      height: 20px;
+      width: 20px;
+      background-size: 100%;
+      transform: rotate(180deg);
+    }
+    .prev-no-icon{
+      display: block;
+			background: url('images/visitcalendar-next-icon.png') no-repeat center center;
+      height: 20px;
+      width: 20px;
+      background-size: 100%;
     }
     .next-icon{
-      border-radius: 5px;
-      border: 1px solid #eee;
-      color: #fff;
-      padding-right: 25px;
-       background:#4796ED url('images/next.png') no-repeat 88% 48%;
-      background-size: 11%;
+      // border-radius: 5px;
+      // border: 1px solid #eee;
+      // color: #fff;
+      // padding-right: 25px;
+      //  background:#4796ED url('images/next.png') no-repeat 88% 48%;
+      // background-size: 11%;
+      display: block;
+      background: url('images/ysp-atreport-more.png') no-repeat center center;
+      height: 20px;
+      width: 20px;
+      background-size: 100%;
     }
-    >span{
-      margin: 0 15px;
-      margin-right: 5px;
+    .next-no-icon{
+      display: block;
+      background: url('images/visitcalendar-pre-icon.png') no-repeat center center;
+      height: 20px;
+      width: 20px;
+      background-size: 100%;
     }
-    .input-serch{
-      margin: 0 15px;
-      margin-left: 5px;
-      .page-number{
-        margin: 0 5px;
-        vertical-align: inherit;
-        padding: 2px 5px;
+    .prev-next-center{
+      >span{
+        margin-right: 2px;
+    	}
+      >span:nth-child(3){
+        background: none !important;
+      }
+      .input-serch{
+      	margin: 0 15px;
+      	margin-left: 5px;
+      	.page-number{
+        	margin: 0 5px;
+        	vertical-align: inherit;
+        	padding: 2px 5px;
+      	}
+    	}
+      .goReturn{
+        border-radius: 6px;
+        background: #4796ed;
+        color: #fff;
+        padding: 5px 10px;
+        border: 1px solid #4796ed;
+      }
+      .goNoReturn{
+        border-radius: 6px;
+        background: #ececec;
+        color: #fff;
+        padding: 5px 10px;
+        border: 1px solid #ececec;
       }
     }
   }
@@ -9804,14 +9867,44 @@ section.ysp-store-details{
     	display: flex;
       justify-content: center;
       align-items: center;
-      >ul{
+      >ul:nth-child(1){
         display: flex;
         justify-content: flex-start;
         align-items: center;
         list-style: none;
         //padding:0;
         //margin:0;
-        width:50%;
+        width:45%;
+        overflow: hidden;
+        padding: 0px 0px 10px 0px;
+        >li{
+          float:left;
+          font-size: 12px;
+        }
+        >li:first-child{
+          //white-space : normal nowrap;
+          flex-wrap: nowrap;
+          overflow: hidden;
+          color:#999999;
+          padding: 0px 5px 0px 0px;
+          width: 55px;
+        }
+        >li:nth-child(2){
+          color: #999999;
+        }
+        >li:last-child{
+          color:#333;
+          padding: 0px 0px 0px 5px;
+        }
+      }
+      >ul:nth-child(2){
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        list-style: none;
+        //padding:0;
+        //margin:0;
+        width:55%;
         overflow: hidden;
         padding: 0px 0px 10px 0px;
         >li{
