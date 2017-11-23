@@ -298,7 +298,7 @@ li {list-style: none}
 .ysp-manager-audit-title-icon-bottom{
   margin:0 0 40px 0;
 }
-.ysp-manager-audit-wrapper{
+.ysp-manager-audit-wrapper,.ysp-asstes-section-wrapper{
 	background: #ffffff;
 	padding-left: 15px;
   font-size: @base-font-size+2px;
@@ -431,6 +431,42 @@ li {list-style: none}
     }
     // height: 30px;
     // line-height: 30px;
+  }
+  .ysp-asstes-add-button{
+    height: 30px;
+    line-height: 30px;
+    border-radius: 20px;
+  }
+  .ysp-asstes-add-area{
+    border-bottom: none;
+    padding-bottom: 0;
+    position: relative;
+    .asstes-add-button{
+      color: #000;
+      width: 3rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      border: 1px solid #999;
+      display: inline-block;
+      text-align: center;
+      border-radius: 15px;
+      position: absolute;
+      right: 15px;
+    }
+    .ysp-asstes-card{
+      input,span{display: inline-block;margin: 5px 0;}
+      input{
+        padding: 5px;
+        width: 60%;
+        height: 25px;
+        line-height: 25px;
+      }
+      background: #eee;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px 15px 0 0;
+      
+    }
   }
 }
 .ysp-manager-audit-header-tab{
@@ -1912,8 +1948,7 @@ div[data-ysp-modelid='choosePerson']{
   }
 }
 .box_select{
-  	margin: 30px 0 0 0;
-    background: #fff;
+  margin:40px 0 0 0 ;
   .people3{
     margin: 10px;
     li{
@@ -1946,27 +1981,8 @@ div[data-ysp-modelid='choosePerson']{
     border-bottom: 5px solid #f3f3f3;
     padding-left: 20px;
     font-size: 14px;
-    position: relative;
     span{
       color: #000;
-    }
-    .open{
-      background: url('../lib/images/selected.png') no-repeat 0 center;
-      width:20px;
-      height: 20px;
-      background-size: 20px;
-    	position: absolute;
-      right: 20px;
-      top: 6px;
-    }
-    .down{
-      background: url('../lib/images/unselected.png') no-repeat 0 center;
-      width:20px;
-      height: 20px;
-      background-size: 20px;
-      position: absolute;
-      right: 20px;
-      top: 6px;
     }
   }
   .tree_box{
@@ -1974,35 +1990,30 @@ div[data-ysp-modelid='choosePerson']{
     height: 200px;
     overflow-y: scroll;
     >div{
-      height: 35px;
-      line-height: 35px;
+      height: 30px;
+      line-height: 30px;
       .bord{
         border-bottom: 1px solid #ccc;
         padding-left: 10px;
         position: relative;
-        overflow: hidden;
         span{
           font-size: 14px;
-          display: block;
-          width:70%;
-          overflow: hidden;
-          text-overflow:ellipsis;
-          white-space: nowrap;
         }
         i{
           position: absolute;
-          right: 0;
-          top:0;
-          width: 30%;
-          height: 35px;
+          right: 20px;
+          top:5px;
+          width: 20px;
+          height: 20px;
         }
         .xjt{
-          background: url(../lib/images/xxxjt.png) no-repeat 95%;
+          background: url(../local/img/xiajiantou.png) no-repeat 0;
           background-size: 20px;
         }
         .zjt{
-          background: url(../lib/images/yyyjt.png) no-repeat 95%;
+          background: url(../local/img/zuojiantou.png) no-repeat 0;
           background-size: 20px;
+          transform: rotate(180deg);
         }
       }
     }
@@ -2340,6 +2351,48 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
       }
     }
   }
+}
+div[data-ysp-modelid='askForLeave']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    //2017//11//20
+    //position: absolute;
+    //height: 300px;
+   // width: 100%;
+     //top:45px;
+    //overflow-y:scroll; 
+    margin: 0;
+   
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      background: #fff;
+      border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+  .OvsRcaoL1UILAcvWC8nMu{//面板子div
+    padding: 0!important;
+  }
+  .topTitle{//大标题
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 28%;
+    background: #fff;
+    text-align: center;
+    border-bottom: 10px solid #f4f4f4;
+  }
   .ysp_askForLeave_wrapper{
     background: #fff;
     //margin-top: 10px;
@@ -2396,49 +2449,6 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
       }
     }
   }
-}
-div[data-ysp-modelid='askForLeave']{
-  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
-    border-bottom: 0;
-  }
-  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
-    //2017//11//20
-    //position: absolute;
-    //height: 300px;
-   // width: 100%;
-     //top:45px;
-    //overflow-y:scroll; 
-    margin: 0;
-   
-    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
-      background: #fff;
-      border-bottom: 10px solid #F3F3F3;
-      li{
-        a{
-          width: auto;
-          display: inline;
-        }
-        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
-          background: none;
-          border-bottom: 3px solid #C29A2A;
-          color: #C29A2A;
-          padding: 3px 0;
-        }
-      }
-    }
-  }
-  .OvsRcaoL1UILAcvWC8nMu{//面板子div
-    padding: 0!important;
-  }
-  .topTitle{//大标题
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 28%;
-    background: #fff;
-    text-align: center;
-    border-bottom: 10px solid #f4f4f4;
-  }
-  
 }
 div[data-ysp-modelid='postName']{
   .ysp_stationName{
@@ -2580,7 +2590,6 @@ div[data-ysp-modelid="fundSeal"],div[data-ysp-modelid='createFundSeal']{
   .ysp_detail_wrapper{
     .ysp_detail{
       .ysp_detail_row{
-        overflow: hidden;
         .select_disable{
           color:#ddd;
         }
@@ -2601,28 +2610,6 @@ div[data-ysp-modelid="fundSeal"],div[data-ysp-modelid='createFundSeal']{
             }
           }
         }
-        .ysp_input{
-          border:none;
-          width: 100%;
-          height: 30px;
-        }
-        .radios{
-          
-          span{
-            border: 1px solid #666;
-            color: #666;
-            border-radius: 10px;
-            display: inline-block;
-            width: 45px;
-            text-align: center;
-            font-size: 12px;
-            margin-right: 10px;
-          }
-          .checked{
-            border:1px solid #A1E15C;
-            color:#A1E15C;
-          }
-        }
       }  
     }
   }
@@ -2641,10 +2628,9 @@ div#uiControl249_85nnFq{
   display: none;
 }
 /********************************资金调拨和印章 end****************************/
-
 //06
 .ysp_table_lfj{
-  margin-top: 10px;
+  margin-top: 40px;
   background: #fff;
   .upload-files-icon{
     display: inline-block;
@@ -2722,21 +2708,12 @@ div#uiControl249_85nnFq{
             font-size: 15px;
           }
           select{
-    				// background: none;
-    				// border: 0;
-    				// border-bottom: 1px solid #EDEDED;
-    				// padding: 10px 0;
-    				// color: #202020;
-    				// font-size: 15px;
-            border: 1px solid #E0E0E0;
-            padding: 10px 0;
-            padding-left: 10px;
-            color: #202020;
-            font-size: 15px;
-            margin: 5px 0;
-            border-radius: 5px;
-            background: url(../local/img/xiajiantou.png) no-repeat 98% center;
-            background-size: 18px;
+          	background: none;
+    				border: 0;
+    				border-bottom: 1px solid #EDEDED;
+   					padding: 10px 0;
+    				color: #202020;
+    				font-size: 15px;
           }
         }
       }
@@ -3107,21 +3084,12 @@ div[data-ysp-modelid='chairmanSign']{
               font-size: 15px;
           }
           select{
-            // background: none;
-            // border: 0;
-            // border-bottom: 1px solid #EDEDED;
-            // padding: 10px 0;
-            // color: #202020;
-            // font-size: 15px;
-            border: 1px solid #E0E0E0;
+            background: none;
+            border: 0;
+            border-bottom: 1px solid #EDEDED;
             padding: 10px 0;
-            padding-left: 10px;
             color: #202020;
             font-size: 15px;
-            margin: 5px 0;
-            border-radius: 5px;
-            background: url(../local/img/xiajiantou.png) no-repeat 98% center;
-            background-size: 18px;
           }
         }
       }
@@ -3341,10 +3309,8 @@ div[data-ysp-modelid='chairmanSign']{
       }
 }
 .edition_box_lfj{
-  background: #fff;
-  padding: 10px 0;
   .tit_yell{
-    margin: 10px 0 10px 0;
+    margin: 20px 0 10px 0;
   }
   .textArea2{
     border-radius: 5px;
@@ -3355,9 +3321,8 @@ div[data-ysp-modelid='chairmanSign']{
   }
 }
 .summit_button_lfj{
-  padding: 0 10px;
-  // border-top: 10px solid #F3F3F3;
-  // background: #fff;
+  padding: 10px;
+  border-top: 10px solid #F3F3F3;
   button{
     border-radius: 5px;
     background: #C29A29;
@@ -3413,21 +3378,12 @@ div[data-ysp-modelid='chairmanSign']{
         font-size: 15px;
       }
       select{
-    		// background: none;
-    		// border: 0;
-    		// border-bottom: 1px solid #EDEDED;
-    		// padding: 10px 0;
-    		// color: #202020;
-    		// font-size: 15px;
-        border: 1px solid #E0E0E0;
-        padding: 10px 0;
-        padding-left: 10px;
-        color: #202020;
-        font-size: 15px;
-        margin: 5px 0;
-        border-radius: 5px;
-        background: url(../local/img/xiajiantou.png) no-repeat 98% center;
-        background-size: 18px;
+      	background: none;
+    		border: 0;
+    		border-bottom: 1px solid #EDEDED;
+    		padding: 10px 0;
+    		color: #202020;
+    		font-size: 15px;
       }
     }
   }
@@ -4093,21 +4049,12 @@ div[data-ysp-modelid='sendDocProcess']{
               font-size: 15px;
           }
           select{
-            // background: none;
-            // border: 0;
-            // border-bottom: 1px solid #EDEDED;
-            // padding: 10px 0;
-            // color: #202020;
-            // font-size: 15px;
-            border: 1px solid #E0E0E0;
+            background: none;
+            border: 0;
+            border-bottom: 1px solid #EDEDED;
             padding: 10px 0;
-            padding-left: 10px;
             color: #202020;
             font-size: 15px;
-            margin: 5px 0;
-            border-radius: 5px;
-            background: url(../local/img/xiajiantou.png) no-repeat 98% center;
-            background-size: 18px;
           }
         }
       }
@@ -4330,18 +4277,4 @@ div[data-ysp-modelid='sendDocProcess']{
           }
         }
       }
-}
-//都别动。。。。。。。。。。。。三会审批自己样式---------------------
-div[data-ysp-modelid='sanhuiAppreove']{
-  ._3-688g_U1WkhPY4YisYih4{
-    padding: 0!important;
-  }
-  .bottom_box2{
-    .bottom_tb{
-      padding: 0!important;
-      .detail2_box{
-        padding-left: 15px;
-      }
-    }
-  }
 }
