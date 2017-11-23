@@ -450,56 +450,6 @@
             }
 
             // 创建人
-
-
-
-
-            var oUploadannexupload;
-
-            function fileuploadannexupload() {
-                var settings = {
-                    flash_url: "/js/swfupload/swfupload.swf",
-                    upload_url: "/docs/docupload/MultiDocUploadByWorkflow.jsp",
-                    post_params: {
-                        "mainId": "3",
-                        "subId": "5",
-                        "secId": "106",
-                        "userid": "201",
-                        "logintype": "1"
-                    },
-                    file_size_limit: "50 MB",
-                    file_types: "*.*",
-                    file_types_description: "All Files",
-                    file_upload_limit: 100,
-                    file_queue_limit: 0,
-                    custom_settings: {
-                        progressTarget: "fsUploadProgressannexupload",
-                        cancelButtonId: "btnCancelannexupload",
-                        uploadfiedid: "field-annexupload"
-                    },
-                    debug: false,
-                    button_image_url: "/js/swfupload/add.png",
-                    button_placeholder_id: "spanButtonPlaceHolderannexupload",
-                    button_width: 100,
-                    button_height: 18,
-                    button_text: '<span class="button">选取多个文件</span>',
-                    button_text_style: '.button { font-family: Helvetica, Arial, sans-serif; font-size: 12pt; } .buttonSmall { font-size: 10pt; }',
-                    button_text_top_padding: 0,
-                    button_text_left_padding: 18,
-                    button_window_mode: aWin.SWFUpload.WINDOW_MODE.TRANSPARENT,
-                    button_cursor: aWin.SWFUpload.CURSOR.HAND,
-                    file_queued_handler: aWin.fileQueued,
-                    file_queue_error_handler: aWin.fileQueueError,
-                    file_dialog_complete_handler: aWin.fileDialogComplete_2,
-                    upload_start_handler: aWin.uploadStart,
-                    upload_progress_handler: aWin.uploadProgress,
-                    upload_error_handler: aWin.uploadError,
-                    upload_success_handler: aWin.uploadSuccess_1,
-                    upload_complete_handler: aWin.uploadComplete_1,
-                    queue_complete_handler: aWin.queueComplete
-                };
-                aWin.oUploadannexupload = new aWin.SWFUpload(settings);
-            }
           if(aWin.__flash__argumentsToXML){
            aWin.__flash__argumentsToXML = function (obj,index) {
               var s = "<arguments>";
@@ -524,10 +474,9 @@
 
             // 测试
             var fakeFormId;
-          	var fileId,uploadId;
+          	var uploadId;
             (function() {
-                var addFileInput = function addFileInput(originId, id, target,html,fileId) {
-                    debugger;
+                var addFileInput = function addFileInput(originId, id, target,html) {
                     var placeHolder = doc.getElementById(originId);
                     if (placeHolder) {
                       var tempParent , Object;
@@ -538,7 +487,6 @@
                         file.onchange = function() {
                           var cb = target.setting.file_dialog_complete_handler;
                           var up = target.setting.upload_success_handler; 
-                          fileName.value = this.files[0].name;
                           var div = doc.createElement('div');
                           div.className = 'progressWrapper';
                           var div1 = doc.createElement('div');
@@ -562,16 +510,32 @@
                           div1.appendChild(div2);
                           div1.appendChild(div3);
                           div1.appendChild(div4);
-                          this.ownerDocument.querySelector('.fieldset').appendChild(div)
-                          // div.id = target.setting
-                          if(topWindow.file !== ''){
-                            up.call(target,target,topWindow.file);
+                          this.ownerDocument.querySelector('.fieldset').appendChild(div);
+                          var xhr = new XMLHttpRequest();
+                          var form = file && file.parentElement;//找到对应的form
+                          var fileName = form.Filename;//找到input name=filename的元素，
+                          fileName.value = this.files[0].name; //将这个元素的value设为刚刚上传的文件名
+                          var xhr = new XMLHttpRequest();//创建ajax对象
+                          xhr.open('post', 'http://192.168.200.63/docs/docupload/MultiDocUploadByWorkflow.jsp');//发送请求
+                          this.formData = new FormData(form);//格式化form的数据
+                          xhr.send(this.formData);//发送数据
+                          var responseT = "";
+                          xhr.onreadystatechange = function() {
+                            if (xhr.readyState == 4 && xhr.status == 200) {
+                              responseT = xhr.responseText;
+                              up.call(target,target,responseT);
+                            }
                           }
-                          
-                          cb && cb.call(target);
+                          // cb && cb.call(target);
                         };
                         var fileName = doc.createElement('input');
                         var upload = doc.createElement('input');
+                      	var subId = doc.createElement('input');
+                        // var logintype = doc.createElement('input');
+                        // var secId = doc.createElement('input');
+                        // var userid = doc.createElement('input');
+                        // var mainId = doc.createElement('input');
+                      	subId.type = "hidden";
                         fileName.name = 'Filename';
                         upload.name = 'Upload';
                         upload.value = 'Submit Query';
@@ -586,11 +550,10 @@
                 };
                  fakeFormId = 'ysp_fake_form';
                 aWin.SWFUpload = function(setting) {
-                    fileId = this.getMovieElement();
                     this.setting = setting;
                     var elemId = this.setting.button_placeholder_id;
                     if (elemId) {
-                        addFileInput(elemId, 'Filedata', this,this.fileId);
+                        addFileInput(elemId, 'Filedata', this);
                     }
                   	this.fakeFormId = fakeFormId;
                     this.initSWFUpload(this.setting);
