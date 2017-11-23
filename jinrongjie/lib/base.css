@@ -2302,6 +2302,79 @@ div[data-ysp-modelid='createFundSeal'] .ysp_advice_wrapper .ysp_advice_card .ysp
   color: #A1E15C;
   text-decoration: underline;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper {
+  background: #fff;
+  border-bottom: 10px solid #f4f4f4;
+  padding: 10px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
+  padding: 10px 10px 0 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle {
+  font-size: 14px;
+  color: #c29a2a;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck {
+  float: right;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span {
+  border: 1px solid #666;
+  color: #666;
+  border-radius: 10px;
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive {
+  border: 1px solid #A1E15C;
+  color: #A1E15C;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck {
+  padding-left: 10%;
+  padding-top: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span {
+  display: inline-block;
+  width: 30%;
+  background: #f4f4f4;
+  color: #666;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
+  background: #c29a2a;
+  color: #fff;
+}
 div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
@@ -2332,59 +2405,6 @@ div[data-ysp-modelid='askForLeave'] .topTitle {
   background: #fff;
   text-align: center;
   border-bottom: 10px solid #f4f4f4;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper {
-  background: #fff;
-  border-bottom: 10px solid #f4f4f4;
-  padding: 10px 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
-  padding: 10px 10px 0 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle {
-  font-size: 14px;
-  color: #c29a2a;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 5px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck {
-  float: right;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span {
-  border: 1px solid #666;
-  color: #666;
-  border-radius: 10px;
-  display: inline-block;
-  width: 45px;
-  text-align: center;
-  font-size: 12px;
-  margin-right: 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive {
-  border: 1px solid #A1E15C;
-  color: #A1E15C;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck {
-  padding-left: 10%;
-  padding-top: 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span {
-  display: inline-block;
-  width: 30%;
-  background: #f4f4f4;
-  color: #666;
-  border-radius: 5px;
-  margin-right: 10px;
-  text-align: center;
-  font-size: 12px;
-  padding: 5px 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
-  background: #c29a2a;
-  color: #fff;
 }
 div[data-ysp-modelid='postName'] .ysp_stationName {
   background: #fff;
