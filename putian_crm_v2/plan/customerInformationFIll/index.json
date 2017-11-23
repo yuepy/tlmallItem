@@ -1,587 +1,570 @@
 {
-  "version": "0.1",
-  "id": "customerInformationFIll",
-  "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html",
-  "jsFile": "index.js",
-  "requires": {
-    "customerInformationFIll": "../customerInformationFIll/index.json",
-    "infomationInput": "../infomationInput/index.json",
-    "forecastPSI": "../forecastPSI/index.json",
-    "clientInfoCollectDetail": "../clientInfoCollectDetail/index.json",
-    "clientManageINfoCollect": "../clientmanageInfoCollect/index.json",
-    "customerInformationweekFill": "../customerInformationweekFill/index.json",
-    "newInformationTotle": "../newInformationTotle/index.json"
-  },
-  "chineseName": "客户信息录入",
-  "description": "",
-  "controls": {
-    "control175_N2PNWg": {
-      "location": {
-        "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control175_N2PNWg"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
+    "version": "0.1",
+    "id": "customerInformationFIll",
+    "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html",
+    "jsFile": "index.js",
+    "requires": {
+        "customerInformationFIll": "../customerInformationFIll/index.json",
+        "infomationInput": "../infomationInput/index.json",
+        "forecastPSI": "../forecastPSI/index.json",
+        "clientInfoCollectDetail": "../clientInfoCollectDetail/index.json",
+        "clientManageINfoCollect": "../clientManageInfoCollect/index.json",
+        "customerInformationweekFill": "../customerInformationweekFill/index.json",
+        "newInformationTotle": "../newInformationTotle/index.json"
     },
-    "control176_SZ1KRK": {
-      "location": {
-        "data": {
-          "tagName": "BODY"
+    "chineseName": "客户信息录入",
+    "description": "",
+    "controls": {
+        "control175_N2PNWg": {
+            "location": {
+                "data": {
+                    "tagName": "BODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control175_N2PNWg"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": ""
         },
-        "userData": {
-          "data": [],
-          "force": false
+        "control176_SZ1KRK": {
+            "location": {
+                "data": {
+                    "tagName": "BODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control176_SZ1KRK"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": ""
         },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control176_SZ1KRK"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
+        "control179_zxz2Sq": {
+            "location": {
+                "data": {
+                    "tagName": "BODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control179_zxz2Sq"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": ""
+        },
+        "control180_iteyGr": {
+            "location": {
+                "data": {
+                    "tagName": "DIV"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/word",
+                        "prob": 2,
+                        "value": [
+                            "descendant::DIV[@id=\"messagePSI\"]/DIV[1]/DIV[2]",
+                            "descendant::DIV[@id=\"messagePSI\"]//DIV"
+                        ]
+                    },
+                    {
+                        "id": "@class/word",
+                        "prob": 1,
+                        "value": "DIV.collectionPSIentertop DIV.information-serch"
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]"
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control180_iteyGr"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": ""
+        },
+        "control181_T9ux95": {
+            "location": {
+                "data": {
+                    "tagName": "BODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control181_T9ux95"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": ""
+        }
     },
-    "control179_zxz2Sq": {
-      "location": {
-        "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control179_zxz2Sq"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control180_iteyGr": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"messagePSI\"]/DIV[1]/DIV[2]",
-              "descendant::DIV[@id=\"messagePSI\"]//DIV"
+    "contexts": {
+        "context51_PhTFP3": {
+            "controls": [
+                "control175_N2PNWg",
+                "control176_SZ1KRK",
+                "control179_zxz2Sq",
+                "control180_iteyGr",
+                "control181_T9ux95"
+            ],
+            "anchors": [],
+            "urlAnchor": [
+                "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"
             ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.collectionPSIentertop DIV.information-serch"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control180_iteyGr"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control181_T9ux95": {
-      "location": {
-        "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control181_T9ux95"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    }
-  },
-  "contexts": {
-    "context51_PhTFP3": {
-      "controls": [
-        "control175_N2PNWg",
-        "control176_SZ1KRK",
-        "control179_zxz2Sq",
-        "control180_iteyGr",
-        "control181_T9ux95"
-      ],
-      "anchors": [],
-      "urlAnchor": [
-        "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"
-      ]
-    }
-  },
-  "flows": {
-    "flow161_ugTsTB": {
-      "toContexts": [
-        {
-          "toContextId": "context51_PhTFP3"
-        },
-        {
-          "toContextId": "context51_PhTFP3",
-          "toModelId": "customerInformationFIll"
         }
-      ]
     },
-    "flow162_Imgdpw": {
-      "fromContextId": "context51_PhTFP3",
-      "fromAction": "doAction",
-      "fromControlId": "control175_N2PNWg",
-      "toContexts": [
-        {
-          "toContextId": "context51_PhTFP3"
+    "flows": {
+        "flow161_ugTsTB": {
+            "toContexts": [{
+                    "toContextId": "context51_PhTFP3"
+                },
+                {
+                    "toContextId": "context51_PhTFP3",
+                    "toModelId": "customerInformationFIll"
+                }
+            ]
         },
-        {
-          "toContextId": "context50_VkOplu",
-          "toModelId": "newInformationTotle"
+        "flow162_Imgdpw": {
+            "fromContextId": "context51_PhTFP3",
+            "fromAction": "doAction",
+            "fromControlId": "control175_N2PNWg",
+            "toContexts": [{
+                    "toContextId": "context51_PhTFP3"
+                },
+                {
+                    "toContextId": "context50_VkOplu",
+                    "toModelId": "newInformationTotle"
+                }
+            ]
+        },
+        "flow164_koxi0b": {
+            "fromContextId": "context51_PhTFP3",
+            "fromAction": "doAction",
+            "fromControlId": "control179_zxz2Sq",
+            "toContexts": [{
+                    "toContextId": "context51_PhTFP3"
+                },
+                {
+                    "toContextId": "context53_oR8JhD",
+                    "toModelId": "infomationInput"
+                },
+                {
+                    "toContextId": "context22_Epm35T",
+                    "toModelId": "clientInfoCollectDetail"
+                },
+                {
+                    "toContextId": "context56_sDDtAM",
+                    "toModelId": "customerInformationweekFill"
+                },
+                {
+                    "toContextId": "context56_VUl6Pd",
+                    "toModelId": "forecastPSI"
+                }
+            ]
+        },
+        "flow187_TygcIp": {
+            "fromContextId": "context51_PhTFP3",
+            "fromAction": "doAction",
+            "fromControlId": "control180_iteyGr",
+            "toContexts": [{
+                "toContextId": "context51_PhTFP3"
+            }]
+        },
+        "flow70_5vt903": {
+            "fromContextId": "context51_PhTFP3",
+            "fromAction": "doAction",
+            "fromControlId": "control176_SZ1KRK",
+            "toContexts": [{
+                "toContextId": "context51_PhTFP3"
+            }]
         }
-      ]
     },
-    "flow164_koxi0b": {
-      "fromContextId": "context51_PhTFP3",
-      "fromAction": "doAction",
-      "fromControlId": "control179_zxz2Sq",
-      "toContexts": [
-        {
-          "toContextId": "context51_PhTFP3"
-        },
-        {
-          "toContextId": "context53_oR8JhD",
-          "toModelId": "infomationInput"
-        },
-        {
-          "toContextId": "context22_Epm35T",
-          "toModelId": "clientInfoCollectDetail"
-        },
-        {
-          "toContextId": "context56_sDDtAM",
-          "toModelId": "customerInformationweekFill"
-        },
-        {
-          "toContextId": "context56_VUl6Pd",
-          "toModelId": "forecastPSI"
+    "pages": {
+        "page51_3s0ICq": {
+            "contextId": "context51_PhTFP3",
+            "layout": [{
+                    "id": "uiControl172_rHIQIG",
+                    "controlId": "control175_N2PNWg",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl172_rHIQIG",
+                                "onGetTemplate": "getTemplate_uiControl172_rHIQIG"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl173_uCWh6y",
+                    "controlId": "control176_SZ1KRK",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl173_uCWh6y",
+                                "onGetTemplate": "getTemplate_uiControl173_uCWh6y"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl177_TZ3hHT",
+                    "controlId": "control180_iteyGr",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl177_TZ3hHT",
+                                "onGetTemplate": "getTemplate_uiControl177_TZ3hHT"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl176_cUGqtJ",
+                    "controlId": "control179_zxz2Sq",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl176_cUGqtJ",
+                                "onGetTemplate": "getTemplate_uiControl176_cUGqtJ"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl178_kK1DGU",
+                    "controlId": "control181_T9ux95",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl178_kK1DGU",
+                                "onGetTemplate": "getTemplate_uiControl178_kK1DGU"
+                            }
+                        }
+                    }
+                }
+            ]
         }
-      ]
     },
-    "flow187_TygcIp": {
-      "fromContextId": "context51_PhTFP3",
-      "fromAction": "doAction",
-      "fromControlId": "control180_iteyGr",
-      "toContexts": [
-        {
-          "toContextId": "context51_PhTFP3"
-        }
-      ]
-    },
-    "flow70_5vt903": {
-      "fromContextId": "context51_PhTFP3",
-      "fromAction": "doAction",
-      "fromControlId": "control176_SZ1KRK",
-      "toContexts": [
-        {
-          "toContextId": "context51_PhTFP3"
-        }
-      ]
-    }
-  },
-  "pages": {
-    "page51_3s0ICq": {
-      "contextId": "context51_PhTFP3",
-      "layout": [
-        {
-          "id": "uiControl172_rHIQIG",
-          "controlId": "control175_N2PNWg",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl172_rHIQIG",
-                "onGetTemplate": "getTemplate_uiControl172_rHIQIG"
-              }
+    "matchers": {
+        "page/title": {
+            "contexts": {
+                "context51_PhTFP3": [
+                    "客户PSI采集"
+                ]
             }
-          }
         },
-        {
-          "id": "uiControl173_uCWh6y",
-          "controlId": "control176_SZ1KRK",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl173_uCWh6y",
-                "onGetTemplate": "getTemplate_uiControl173_uCWh6y"
-              }
+        "page/urls": {
+            "contexts": {
+                "context51_PhTFP3": [
+                    "192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"
+                ],
+                "context22_Epm35T": [
+                    "192.168.220.82:8080/pttlCrm/res/customerInfoEntry.html?rowId=1-100DGK",
+                    "192.168.220.82:8080/pttlCrm/res/page/customerInfomation/customerInfoEntry.html?rowId=1-100DGK",
+                    "192.168.220.82:8080/pttlCrm/res/page/customerInfomation/customerInfoEntry.html?rowId=10251",
+                    "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/customerInfoEntry.html?rowId=10255",
+                    "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/customerInfoEntry.html?rowId=10262",
+                    "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/customerInfoEntry.html?rowId=10325",
+                    "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/customerInfoEntry.html?rowId=10263"
+                ],
+                "context56_VUl6Pd": [
+                    "192.168.220.82:8080/pttlCrm/res/page/customerInfomation/customerPSIpre.html?userId=11994",
+                    "192.168.220.82:8080/pttlCrm/res/page/customerInfomation/customerPSIpre.html?userId=1-HP70"
+                ]
             }
-          }
         },
-        {
-          "id": "uiControl177_TZ3hHT",
-          "controlId": "control180_iteyGr",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl177_TZ3hHT",
-                "onGetTemplate": "getTemplate_uiControl177_TZ3hHT"
-              }
+        "page/ids": {
+            "contexts": {
+                "context51_PhTFP3": [
+                    [
+                        "Page",
+                        "customerName_search",
+                        "importExcel",
+                        "messagePSI",
+                        "psiEnterTable",
+                        "search",
+                        "tbodyContent"
+                    ],
+                    [
+                        "Page",
+                        "aback",
+                        "customerName_search",
+                        "importExcel",
+                        "messagePSI",
+                        "psiEnterTable",
+                        "search",
+                        "tbodyContent"
+                    ],
+                    [
+                        "Page",
+                        "aback",
+                        "customerName_search",
+                        "day_th",
+                        "forest_th",
+                        "importExcel",
+                        "messagePSI",
+                        "other_th",
+                        "psiEnterTable",
+                        "search",
+                        "tbodyContent",
+                        "week_th"
+                    ]
+                ],
+                "context56_VUl6Pd": [
+                    [
+                        "dI_-SIU",
+                        "dSO_-SIU",
+                        "dST_-SIU",
+                        "dwos_-SIU",
+                        "realI_-SIU",
+                        "realSO_-SIU",
+                        "realST_-SIU",
+                        "realwos_-SIU",
+                        "startTime",
+                        "userName",
+                        "wI_-SIU",
+                        "wSO_-SIU",
+                        "wST_-SIU",
+                        "wwos_-SIU"
+                    ],
+                    [
+                        "d_EBCCABEFACAC",
+                        "d_EBCCBBEFACAC",
+                        "d_EBCCBEFACAC",
+                        "d_EBCCCBEFACAC",
+                        "d_EBCCDBEFACAC",
+                        "d_EBCCEBEFACAC",
+                        "d_EBCCFBEFACAC",
+                        "d_EBCDBEFACAC",
+                        "real_EBCCABEFACAC",
+                        "real_EBCCBBEFACAC",
+                        "real_EBCCBEFACAC",
+                        "real_EBCCCBEFACAC",
+                        "real_EBCCDBEFACAC",
+                        "real_EBCCEBEFACAC",
+                        "real_EBCCFBEFACAC",
+                        "real_EBCDBEFACAC",
+                        "startTime",
+                        "userName",
+                        "w_EBCCABEFACAC",
+                        "w_EBCCBBEFACAC",
+                        "w_EBCCBEFACAC",
+                        "w_EBCCCBEFACAC",
+                        "w_EBCCDBEFACAC",
+                        "w_EBCCEBEFACAC",
+                        "w_EBCCFBEFACAC",
+                        "w_EBCDBEFACAC"
+                    ]
+                ]
             }
-          }
         },
-        {
-          "id": "uiControl176_cUGqtJ",
-          "controlId": "control179_zxz2Sq",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl176_cUGqtJ",
-                "onGetTemplate": "getTemplate_uiControl176_cUGqtJ"
-              }
+        "page/classes": {
+            "contexts": {
+                "context51_PhTFP3": [
+                    [
+                        "PSIpre",
+                        "active",
+                        "btn",
+                        "collectionPSI-table",
+                        "collectionPSIentercontent",
+                        "collectionPSIentercontentborder",
+                        "collectionPSIentertdtext",
+                        "collectionPSIentertop",
+                        "collectionPSIentertop-icon",
+                        "collectionPSIentertop-text",
+                        "commpnPage",
+                        "customerList_name",
+                        "customerList_search",
+                        "header",
+                        "import-imagetitle",
+                        "information-serch",
+                        "mask",
+                        "pagination",
+                        "skip",
+                        "skip-num",
+                        "skip-right-icon",
+                        "skip_count",
+                        "skip_right_goto",
+                        "table"
+                    ],
+                    [
+                        "PSIpre",
+                        "active",
+                        "btn",
+                        "click_th",
+                        "collectionPSI-table",
+                        "collectionPSIentercontent",
+                        "collectionPSIentercontentborder",
+                        "collectionPSIentertdtext",
+                        "collectionPSIentertop",
+                        "collectionPSIentertop-icon",
+                        "collectionPSIentertop-text",
+                        "commpnPage",
+                        "customerList_name",
+                        "customerList_search",
+                        "header",
+                        "import-imagetitle",
+                        "information-serch",
+                        "mask",
+                        "pagination",
+                        "skip",
+                        "skip-num",
+                        "skip-right-icon",
+                        "skip_count",
+                        "skip_right_goto",
+                        "table"
+                    ]
+                ],
+                "context56_VUl6Pd": [
+                    [
+                        "backImage",
+                        "btn",
+                        "btnno",
+                        "btnok",
+                        "button",
+                        "content",
+                        "content-body",
+                        "content_head",
+                        "h",
+                        "main",
+                        "main-body",
+                        "main-header",
+                        "pointImage",
+                        "table-bordered",
+                        "tbody",
+                        "time"
+                    ],
+                    [
+                        "I_-LWI",
+                        "I_-PBZ",
+                        "I_-QKT",
+                        "I_-QO",
+                        "SO_-LWI",
+                        "SO_-PBZ",
+                        "SO_-QKT",
+                        "SO_-QO",
+                        "ST_-LWI",
+                        "ST_-PBZ",
+                        "ST_-QKT",
+                        "ST_-QO",
+                        "WOS_-LWI",
+                        "WOS_-PBZ",
+                        "WOS_-QKT",
+                        "WOS_-QO",
+                        "backImage",
+                        "btn",
+                        "btnno",
+                        "btnok",
+                        "button",
+                        "content",
+                        "content-body",
+                        "content_head",
+                        "d",
+                        "h",
+                        "main",
+                        "main-body",
+                        "main-header",
+                        "pointImage",
+                        "real",
+                        "table-bordered",
+                        "tbody",
+                        "time",
+                        "w"
+                    ]
+                ]
             }
-          }
         },
-        {
-          "id": "uiControl178_kK1DGU",
-          "controlId": "control181_T9ux95",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl178_kK1DGU",
-                "onGetTemplate": "getTemplate_uiControl178_kK1DGU"
-              }
+        "page/tagTriplets": {
+            "contexts": {
+                "context51_PhTFP3": [
+                    [
+                        "-/-/DIV",
+                        "-/-/SCRIPT",
+                        "-/DIV/DIV",
+                        "DIV/A/I",
+                        "DIV/DIV/A",
+                        "DIV/DIV/DIV",
+                        "DIV/DIV/INPUT-button",
+                        "DIV/DIV/INPUT-text",
+                        "DIV/DIV/SPAN",
+                        "DIV/DIV/TABLE",
+                        "DIV/DIV/UL",
+                        "DIV/TABLE/TBODY",
+                        "DIV/TABLE/THEAD",
+                        "DIV/UL/LI",
+                        "TABLE/TBODY/TR",
+                        "TABLE/THEAD/TR",
+                        "TBODY/TR/TD",
+                        "THEAD/TR/TH",
+                        "TR/TD/A",
+                        "UL/LI/A",
+                        "UL/LI/INPUT-number",
+                        "UL/LI/SPAN"
+                    ]
+                ]
             }
-          }
         }
-      ]
     }
-  },
-  "matchers": {
-    "page/title": {
-      "contexts": {
-        "context51_PhTFP3": [
-          "客户PSI采集"
-        ]
-      }
-    },
-    "page/urls": {
-      "contexts": {
-        "context51_PhTFP3": [
-          "192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"
-        ],
-        "context22_Epm35T": [
-          "192.168.220.82:8080/pttlCrm/res/customerInfoEntry.html?rowId=1-100DGK",
-          "192.168.220.82:8080/pttlCrm/res/page/customerInfomation/customerInfoEntry.html?rowId=1-100DGK",
-          "192.168.220.82:8080/pttlCrm/res/page/customerInfomation/customerInfoEntry.html?rowId=10251",
-          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/customerInfoEntry.html?rowId=10255",
-          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/customerInfoEntry.html?rowId=10262",
-          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/customerInfoEntry.html?rowId=10325",
-          "192.168.220.82:8080/pttlCrm/res/page/customerInfomationWeb/customerInfoEntry.html?rowId=10263"
-        ],
-        "context56_VUl6Pd": [
-          "192.168.220.82:8080/pttlCrm/res/page/customerInfomation/customerPSIpre.html?userId=11994",
-          "192.168.220.82:8080/pttlCrm/res/page/customerInfomation/customerPSIpre.html?userId=1-HP70"
-        ]
-      }
-    },
-    "page/ids": {
-      "contexts": {
-        "context51_PhTFP3": [
-          [
-            "Page",
-            "customerName_search",
-            "importExcel",
-            "messagePSI",
-            "psiEnterTable",
-            "search",
-            "tbodyContent"
-          ],
-          [
-            "Page",
-            "aback",
-            "customerName_search",
-            "importExcel",
-            "messagePSI",
-            "psiEnterTable",
-            "search",
-            "tbodyContent"
-          ],
-          [
-            "Page",
-            "aback",
-            "customerName_search",
-            "day_th",
-            "forest_th",
-            "importExcel",
-            "messagePSI",
-            "other_th",
-            "psiEnterTable",
-            "search",
-            "tbodyContent",
-            "week_th"
-          ]
-        ],
-        "context56_VUl6Pd": [
-          [
-            "dI_-SIU",
-            "dSO_-SIU",
-            "dST_-SIU",
-            "dwos_-SIU",
-            "realI_-SIU",
-            "realSO_-SIU",
-            "realST_-SIU",
-            "realwos_-SIU",
-            "startTime",
-            "userName",
-            "wI_-SIU",
-            "wSO_-SIU",
-            "wST_-SIU",
-            "wwos_-SIU"
-          ],
-          [
-            "d_EBCCABEFACAC",
-            "d_EBCCBBEFACAC",
-            "d_EBCCBEFACAC",
-            "d_EBCCCBEFACAC",
-            "d_EBCCDBEFACAC",
-            "d_EBCCEBEFACAC",
-            "d_EBCCFBEFACAC",
-            "d_EBCDBEFACAC",
-            "real_EBCCABEFACAC",
-            "real_EBCCBBEFACAC",
-            "real_EBCCBEFACAC",
-            "real_EBCCCBEFACAC",
-            "real_EBCCDBEFACAC",
-            "real_EBCCEBEFACAC",
-            "real_EBCCFBEFACAC",
-            "real_EBCDBEFACAC",
-            "startTime",
-            "userName",
-            "w_EBCCABEFACAC",
-            "w_EBCCBBEFACAC",
-            "w_EBCCBEFACAC",
-            "w_EBCCCBEFACAC",
-            "w_EBCCDBEFACAC",
-            "w_EBCCEBEFACAC",
-            "w_EBCCFBEFACAC",
-            "w_EBCDBEFACAC"
-          ]
-        ]
-      }
-    },
-    "page/classes": {
-      "contexts": {
-        "context51_PhTFP3": [
-          [
-            "PSIpre",
-            "active",
-            "btn",
-            "collectionPSI-table",
-            "collectionPSIentercontent",
-            "collectionPSIentercontentborder",
-            "collectionPSIentertdtext",
-            "collectionPSIentertop",
-            "collectionPSIentertop-icon",
-            "collectionPSIentertop-text",
-            "commpnPage",
-            "customerList_name",
-            "customerList_search",
-            "header",
-            "import-imagetitle",
-            "information-serch",
-            "mask",
-            "pagination",
-            "skip",
-            "skip-num",
-            "skip-right-icon",
-            "skip_count",
-            "skip_right_goto",
-            "table"
-          ],
-          [
-            "PSIpre",
-            "active",
-            "btn",
-            "click_th",
-            "collectionPSI-table",
-            "collectionPSIentercontent",
-            "collectionPSIentercontentborder",
-            "collectionPSIentertdtext",
-            "collectionPSIentertop",
-            "collectionPSIentertop-icon",
-            "collectionPSIentertop-text",
-            "commpnPage",
-            "customerList_name",
-            "customerList_search",
-            "header",
-            "import-imagetitle",
-            "information-serch",
-            "mask",
-            "pagination",
-            "skip",
-            "skip-num",
-            "skip-right-icon",
-            "skip_count",
-            "skip_right_goto",
-            "table"
-          ]
-        ],
-        "context56_VUl6Pd": [
-          [
-            "backImage",
-            "btn",
-            "btnno",
-            "btnok",
-            "button",
-            "content",
-            "content-body",
-            "content_head",
-            "h",
-            "main",
-            "main-body",
-            "main-header",
-            "pointImage",
-            "table-bordered",
-            "tbody",
-            "time"
-          ],
-          [
-            "I_-LWI",
-            "I_-PBZ",
-            "I_-QKT",
-            "I_-QO",
-            "SO_-LWI",
-            "SO_-PBZ",
-            "SO_-QKT",
-            "SO_-QO",
-            "ST_-LWI",
-            "ST_-PBZ",
-            "ST_-QKT",
-            "ST_-QO",
-            "WOS_-LWI",
-            "WOS_-PBZ",
-            "WOS_-QKT",
-            "WOS_-QO",
-            "backImage",
-            "btn",
-            "btnno",
-            "btnok",
-            "button",
-            "content",
-            "content-body",
-            "content_head",
-            "d",
-            "h",
-            "main",
-            "main-body",
-            "main-header",
-            "pointImage",
-            "real",
-            "table-bordered",
-            "tbody",
-            "time",
-            "w"
-          ]
-        ]
-      }
-    },
-    "page/tagTriplets": {
-      "contexts": {
-        "context51_PhTFP3": [
-          [
-            "-/-/DIV",
-            "-/-/SCRIPT",
-            "-/DIV/DIV",
-            "DIV/A/I",
-            "DIV/DIV/A",
-            "DIV/DIV/DIV",
-            "DIV/DIV/INPUT-button",
-            "DIV/DIV/INPUT-text",
-            "DIV/DIV/SPAN",
-            "DIV/DIV/TABLE",
-            "DIV/DIV/UL",
-            "DIV/TABLE/TBODY",
-            "DIV/TABLE/THEAD",
-            "DIV/UL/LI",
-            "TABLE/TBODY/TR",
-            "TABLE/THEAD/TR",
-            "TBODY/TR/TD",
-            "THEAD/TR/TH",
-            "TR/TD/A",
-            "UL/LI/A",
-            "UL/LI/INPUT-number",
-            "UL/LI/SPAN"
-          ]
-        ]
-      }
-    }
-  }
 }
