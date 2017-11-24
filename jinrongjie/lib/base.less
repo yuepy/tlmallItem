@@ -2178,17 +2178,39 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
        	.upLoading{
           .word{
             overflow: hidden;
-            margin-bottom: 5px;
-            padding: 5px 0 5px 20px;
-            background: #EDEDED url("../lib/images/默认文档1x.png") no-repeat;
-            background-size: 15px;
-            background-position: 2px 8px;
-            .download{
+          	.download{
               background:url("../lib/images/download.png") no-repeat;
               float: right;
               width: 15px;
               height:15px;
               margin-top: 5px;
+            }
+            .txt,.doc,.xls,.pdf,.ppt{
+              float: left;
+              background: url("../local/img/txt.png") no-repeat;
+              background-size: 20px;
+              height: 20px;
+              width: 20px;
+            }
+            .doc{
+              background: url("../lib/images/word1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .xls{
+              background: url("../lib/images/excel1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .pdf{
+              background: url("../lib/images/pdf1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .ppt{
+              background: url("../lib/images/ppt1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .else{
+              background: url("../lib/images/默认文档1x.png") no-repeat;
+              background-size: 20px;
             }
           }
         }
@@ -2196,7 +2218,7 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
           .loadIcon{
             position: absolute;
             top: 0;
-            right: 15px;
+            right: 5px;
             width: 16px;
             height: 16px;
             float: right;
@@ -2208,12 +2230,32 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
             background: #f4f4f4;
             border-bottom: 10px solid #fff;
             padding: 5px 0;
-            .txt{
+            .txt,.doc,.xls,.pdf,.ppt,.else{
               float: left;
               background: url("../local/img/txt.png") no-repeat;
               background-size: 20px;
               height: 20px;
               width: 20px;
+            }
+            .doc{
+              background: url("../lib/images/word1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .xls{
+              background: url("../lib/images/excel1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .pdf{
+              background: url("../lib/images/pdf1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .ppt{
+              background: url("../lib/images/ppt1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .else{
+              background: url("../lib/images/默认文档1x.png") no-repeat;
+              background-size: 20px;
             }
             .delete{
               float: right;
@@ -2344,6 +2386,9 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
           float: right;
           color: #35D081;
         }
+      }
+      .ysp_input{
+        border:none;
       }
     }
     .ysp_showMore,.close{
