@@ -977,6 +977,9 @@ li {
   padding: 5px 0;
   border-radius: 5px;
 }
+.ysp-process-form-wrapper .ysp_none {
+  display: none;
+}
 .ysp-process-tosend {
   width: 100%;
   background: #fff;
@@ -2073,6 +2076,7 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail {
   padding: 0 15px;
+  position: relative;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row,
@@ -2127,6 +2131,44 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   width: 15px;
   height: 15px;
   margin-top: 5px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading .loadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading .loadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading .loadIcon {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 16px;
+  height: 16px;
+  float: right;
+  margin-top: 5px;
+  background: url("../lib/images/upload-files.png") no-repeat;
+  background-size: 15px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div {
+  background: #f4f4f4;
+  border-bottom: 10px solid #fff;
+  padding: 5px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .txt,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .txt,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .txt {
+  float: left;
+  background: url("../local/img/txt.png") no-repeat;
+  background-size: 20px;
+  height: 20px;
+  width: 20px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete {
+  float: right;
+  background: url("../lib/images/删除@2x.png") no-repeat;
+  background-size: 10px;
+  height: 15px;
+  width: 15px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
