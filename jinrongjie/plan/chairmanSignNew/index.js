@@ -68,11 +68,11 @@
           });
         });data.titles = titles;data.content = content;data.fileSize = fileSize;if (content[titles.indexOf('标题')] !== "") {
           contentOpen = "open";
-        };if (content[titles.indexOf('摘要')] !== "") {
+        } else if (content[titles.indexOf('摘要')] !== "") {
           contentOpen = "open";
-        };if (content[titles.indexOf('相关流程')].length > 0) {
+        } else if (content[titles.indexOf('相关流程')].length > 0) {
           contentOpen = "open";
-        };data.contentOpen = contentOpen;return data;
+        }data.contentOpen = contentOpen;return data;
       }
     },
     doAction_uiControl100_BW5tW6: function (data, elem) {
