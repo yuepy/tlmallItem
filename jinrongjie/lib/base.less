@@ -377,6 +377,17 @@ li {list-style: none}
     background-position-y: 50%;
     background-position-x: 50%;
   }
+  .delete-log{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -10px;
+    background-position-y: 50%;
+    background-position-x: 50%;
+  }
   .load-more-arrow{
     text-align: center;
     background: url(images/load_morearrow.png) no-repeat;
@@ -467,18 +478,24 @@ li {list-style: none}
     padding-bottom: 0;
     position: relative;
     .asstes-add-button{
-      color: #000;
+      color: #fff;
       width: 3rem;
       height: 1.5rem;
       line-height: 1.5rem;
-      border: 1px solid #999;
+      border: 1px solid #fff;
       display: inline-block;
       text-align: center;
       border-radius: 15px;
+      background: #C29A2A;
       position: absolute;
       right: 15px;
     }
     .ysp-asstes-card{
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px 15px 0 0;
       input,span{display: inline-block;margin: 5px 0;}
       input{
         padding: 5px;
@@ -486,10 +503,22 @@ li {list-style: none}
         height: 25px;
         line-height: 25px;
       }
-      background: #eee;
-      border-radius: 5px;
-      padding: 10px;
-      margin: 10px 15px 0 0;
+      .num{
+        position: relative;
+      .delete{
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: inline-block;
+        height: 1.5rem;
+        width: 1.5rem;
+        background: #F96363;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1rem;
+        color: #fff;
+      }
+      }
       
     }
   }
@@ -697,7 +726,7 @@ li {list-style: none}
     border-left:4px solid #C19936;font-size:14px; padding-left:11px;
   }
   div{
-    padding: 10px 15px;
+    padding: 10px 0 10px 15px;
     textarea{
       border-radius: 5px;
     }
@@ -993,6 +1022,9 @@ li {list-style: none}
     padding: 5px 0;
     border-radius: 5px;
   }
+  .ysp_none{
+    display: none;
+  }
 }
 .ysp-process-tosend{
   width: 100%;
@@ -1179,6 +1211,7 @@ li {list-style: none}
   display:none;
 }
 .ysp-dialog-wrapper-top{
+  z-index: 999;
   magin-top: 60px;
   position: absolute;
   width: 100%;
@@ -2190,6 +2223,7 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
     }
     .ysp_detail{
       padding: 0 15px;
+      position: relative;
       .ysp_detail_row{
         padding-bottom: 5px;
         border-bottom: 1px solid #f4f4f4;
@@ -2204,7 +2238,7 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
             background: url("../lib/images/upload-files.png") no-repeat;
             background-size:15px; 
           }
-           .unwrite{
+          .unwrite{
               background: url("../lib/images/！@2x.png") no-repeat;
               display: inline-block;
               width: 12px;
@@ -2233,6 +2267,38 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
               width: 15px;
               height:15px;
               margin-top: 5px;
+            }
+          }
+        }
+        .Loading{
+          .loadIcon{
+            position: absolute;
+            top: 0;
+            right: 15px;
+            width: 16px;
+            height: 16px;
+            float: right;
+            margin-top: 5px;
+            background: url("../lib/images/upload-files.png") no-repeat;
+            background-size:15px;
+          }
+          >div{
+            background: #f4f4f4;
+            border-bottom: 10px solid #fff;
+            padding: 5px 0;
+            .txt{
+              float: left;
+              background: url("../local/img/txt.png") no-repeat;
+              background-size: 20px;
+              height: 20px;
+              width: 20px;
+            }
+            .delete{
+              float: right;
+              background: url("../lib/images/删除@2x.png") no-repeat;
+              background-size: 10px;
+              height: 15px;
+              width: 15px;
             }
           }
         }
