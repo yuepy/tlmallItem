@@ -52,45 +52,6 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control48_3VFV1d": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "XPath",
-              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td"
-            },
-            {
-              "method": "XPath",
-              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"
-            },
-            {
-              "method": "XPath",
-              "value": "/html/body/table/tbody/tr/td/form/table/tbody"
-            }
-          ],
-          "force": true
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control48_3VFV1d"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": false,
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control58_TraKH5": {
       "location": {
         "data": {
@@ -105,6 +66,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table/tbody/tr/td/table[2]/tbody"
             }
           ],
           "force": true
@@ -319,7 +284,7 @@
           "data": [
             {
               "method": "XPath",
-              "value": ""
+              "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody"
             }
           ],
           "force": false
@@ -490,7 +455,16 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table/tbody/tr/td/table[2]/tbody/tr[11]/td[2]"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table/tbody/tr/td/table[2]/tbody/tr[6]/td[2]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -526,18 +500,48 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control253_CceTIQ": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[1]/tbody"
+            }
+          ],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control253_CceTIQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
     "context11_ksSRDp": {
       "controls": [
         "control55_pqOP4L",
-        "control48_3VFV1d",
         "control58_TraKH5",
         "control72_kANAED",
         "control63_xKq6K5",
         "control82_Oe1sOv",
-        "control84_nadrbI"
+        "control84_nadrbI",
+        "control253_CceTIQ"
       ],
       "anchors": [
         "control79_xTNUQB"
@@ -561,16 +565,6 @@
       "fromContextId": "context11_ksSRDp",
       "fromAction": "doAction",
       "fromControlId": "control55_pqOP4L",
-      "toContexts": [
-        {
-          "toContextId": "context11_ksSRDp"
-        }
-      ]
-    },
-    "flow38_xS8zeD": {
-      "fromContextId": "context11_ksSRDp",
-      "fromAction": "doAction",
-      "fromControlId": "control48_3VFV1d",
       "toContexts": [
         {
           "toContextId": "context11_ksSRDp"
@@ -694,16 +688,16 @@
                   }
                 },
                 {
-                  "id": "uiControl52_Ptss66",
-                  "controlId": "control48_3VFV1d",
+                  "id": "uiControl238_znz6Fh",
+                  "controlId": "control253_CceTIQ",
                   "display": {
                     "adapterId": "custom",
                     "type": "custom",
                     "adapter": {
                       "templateType": "react",
                       "events": {
-                        "onDoAction": "doAction_uiControl52_Ptss66",
-                        "onGetTemplate": "getTemplate_uiControl52_Ptss66"
+                        "onDoAction": "doAction_uiControl238_znz6Fh",
+                        "onGetTemplate": "getTemplate_uiControl238_znz6Fh"
                       }
                     }
                   }
@@ -821,7 +815,8 @@
           "请假/公出流程(新)-张济天-2017-04-13",
           "未考勤申报审批流程（新）-张济天-2017-10-20",
           "请假/公出流程(新)-张济天-2017-10-18",
-          "请假/公出流程(新)-张济天-2017-11-10"
+          "请假/公出流程(新)-张济天-2017-11-10",
+          "请假/公出流程(新)-张济天-2017-11-23"
         ]
       }
     },
@@ -835,7 +830,9 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=180695&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162836&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162835&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312801&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312801&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=425647&isovertime=0",
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8241&isagent=0&beagenter=0"
         ],
         "context10_sJa5NJ": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
@@ -972,6 +969,41 @@
             "triSubwfIframe",
             "wfRstPicImg",
             "wfdoc"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_xTable",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
           ]
         ],
         "context10_Tp4yhH": [
@@ -1316,6 +1348,52 @@
             "btn_rejectName",
             "btn_subbackName",
             "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_forward",
+            "btn_print",
             "clickRightMenu",
             "drop-shadow",
             "highslide-container",
@@ -1728,6 +1806,49 @@
             "TD/TABLE/TBODY",
             "TR/TD/A",
             "TR/TD/B",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TABLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "-/TABLE/TBODY",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
             "TR/TD/BUTTON",
             "TR/TD/DIV",
             "TR/TD/EM",

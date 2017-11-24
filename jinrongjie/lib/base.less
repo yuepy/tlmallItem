@@ -968,6 +968,9 @@ li {list-style: none}
     padding: 5px 0;
     border-radius: 5px;
   }
+  .ysp_none{
+    display: none;
+  }
 }
 .ysp-process-tosend{
   width: 100%;
@@ -2123,6 +2126,7 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
     }
     .ysp_detail{
       padding: 0 15px;
+      position: relative;
       .ysp_detail_row{
         padding-bottom: 5px;
         border-bottom: 1px solid #f4f4f4;
@@ -2137,7 +2141,7 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
             background: url("../lib/images/upload-files.png") no-repeat;
             background-size:15px; 
           }
-           .unwrite{
+          .unwrite{
               background: url("../lib/images/！@2x.png") no-repeat;
               display: inline-block;
               width: 12px;
@@ -2166,6 +2170,38 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
               width: 15px;
               height:15px;
               margin-top: 5px;
+            }
+          }
+        }
+        .Loading{
+          .loadIcon{
+            position: absolute;
+            top: 0;
+            right: 15px;
+            width: 16px;
+            height: 16px;
+            float: right;
+            margin-top: 5px;
+            background: url("../lib/images/upload-files.png") no-repeat;
+            background-size:15px;
+          }
+          >div{
+            background: #f4f4f4;
+            border-bottom: 10px solid #fff;
+            padding: 5px 0;
+            .txt{
+              float: left;
+              background: url("../local/img/txt.png") no-repeat;
+              background-size: 20px;
+              height: 20px;
+              width: 20px;
+            }
+            .delete{
+              float: right;
+              background: url("../lib/images/删除@2x.png") no-repeat;
+              background-size: 10px;
+              height: 15px;
+              width: 15px;
             }
           }
         }
