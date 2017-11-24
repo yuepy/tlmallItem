@@ -67,6 +67,31 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 
 
 /*  公共header样式  */
+//下边的文件上传
+.file2{
+    position: relative;
+    margin: 10px 15px 10px 0;
+    border-radius: 3px;
+    padding: 5px 0 5px 50px;
+    background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
+    >div:nth-child(1){
+      font-size: 15px; 
+    }
+    >div:nth-child(2){
+      font-size: 14px; 
+      color: #717171;
+    }
+    button{
+      position: absolute;
+      right: 20px;
+      top: 18px;
+      width: 20px;
+      height: 20px;
+      border: 0;
+      background: url(../lib/images/删除@2x.png) no-repeat 0;
+      background-size: 15px; 
+    }
+}
 div[contenteditable='true']{
   -webkit-user-select:text;
 }
@@ -332,11 +357,11 @@ li {list-style: none}
     
     font-size: 0.9rem;
     position: relative;
-    background: #EDEDED url(../local/img/txt.png) no-repeat ;
+    background: #EDEDED url(images/txt1x.png) no-repeat ;
     margin: 0 15px 5px 0;
     border-radius: 2px;
     padding: 10px 10px 10px 45px ;
-    background-size: auto;
+    background-size: 9%;
     background-position-x: 10px;
     background-position-y: 50%;
   }
@@ -351,6 +376,51 @@ li {list-style: none}
     margin-top: -10px;
     background-position-y: 50%;
     background-position-x: 50%;
+  }
+  .logo-common-css{
+    font-size: 0.9rem;
+    position: relative;
+    margin: 0 15px 5px 0;
+    border-radius: 2px;
+    padding: 10px 10px 10px 45px ;
+    
+  }
+  .doc-log{
+    background: #EDEDED url(images/word1x.png) no-repeat ;
+    background-size: 9%;
+    background-position-x: 10px;
+    background-position-y: 50%;
+  }
+  .excel-log{
+    background: #EDEDED url(images/excel1x.png) no-repeat ;
+    background-size: 9%;
+    background-position-x: 10px;
+    background-position-y: 50%;
+  }
+  .pdf-log{
+    background: #EDEDED url(images/pdf1x.png) no-repeat ;
+    background-size: 9%;
+    background-position-x: 10px;
+    background-position-y: 50%;
+  }
+  .mov-log{
+    background: #EDEDED url(images/txt.png) no-repeat ;
+    background-size: 9%;
+    background-position-x: 10px;
+    background-position-y: 50%;
+  }
+  .delete-log{
+    text-align: center;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -10px;
+    background-position-y: 50%;
+    background-position-x: 50%;
+    font-size: 0.85rem;
   }
   .load-more-arrow{
     text-align: center;
@@ -487,6 +557,7 @@ li {list-style: none}
     }
   }
 }
+.ysp-manager-audit-wrapper-noborder{border-bottom: none;}
 .ysp-manager-audit-header-tab{
   background: #fff;
   margin:40px 0 0 0 ;
@@ -690,7 +761,7 @@ li {list-style: none}
     border-left:4px solid #C19936;font-size:14px; padding-left:11px;
   }
   div{
-    padding: 10px 15px;
+    padding: 10px 0 10px 15px;
     textarea{
       border-radius: 5px;
     }
@@ -1172,6 +1243,7 @@ li {list-style: none}
   display:none;
 }
 .ysp-dialog-wrapper-top{
+  z-index: 999;
   magin-top: 60px;
   position: absolute;
   width: 100%;
@@ -1612,6 +1684,24 @@ div[data-ysp-modelid='hetong01']{
   .OvsRcaoL1UILAcvWC8nMu{//面板子div
     padding: 0!important;
     .contractCountersigned_box{
+      .push_file_box{
+        overflow: hidden;
+        div{
+          display: inline-block;
+        }
+        button{
+          display: inline-block;
+          float: right;
+          height: 30px;
+          line-height: 30px;
+          border: 0;
+          margin-top: 10px;
+          margin-right: 20px;
+          background: #C29A2A;
+          border-radius: 4px;
+          color: #fff;
+        }
+      }
       .ysp_emergency{
         border-bottom: 1px solid #ddd;
         padding-bottom: 10px;
@@ -1743,6 +1833,30 @@ div[data-ysp-modelid='hetong01']{
               border: 0;
               background: url(../local/img/download.png) no-repeat 0;
               background-size: 20px; 
+            }
+          }
+          .file2{
+            position: relative;
+            margin: 10px 15px 10px 0;
+            border-radius: 3px;
+            padding: 5px 0 5px 50px;
+            background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
+            >div:nth-child(1){
+              font-size: 15px; 
+            }
+            >div:nth-child(2){
+              font-size: 14px; 
+              color: #717171;
+            }
+            button{
+              position: absolute;
+              right: 20px;
+              top: 18px;
+              width: 20px;
+              height: 20px;
+              border: 0;
+              background: url(../lib/images/删除@2x.png) no-repeat 0;
+              background-size: 15px; 
             }
           }
         }
@@ -2173,17 +2287,91 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
        	.upLoading{
           .word{
             overflow: hidden;
-            margin-bottom: 5px;
-            padding: 5px 0 5px 20px;
-            background: #EDEDED url("../lib/images/默认文档1x.png") no-repeat;
-            background-size: 15px;
-            background-position: 2px 8px;
-            .download{
+          	.download{
               background:url("../lib/images/download.png") no-repeat;
               float: right;
               width: 15px;
               height:15px;
               margin-top: 5px;
+            }
+            .txt,.doc,.xls,.pdf,.ppt{
+              float: left;
+              background: url("../local/img/txt.png") no-repeat;
+              background-size: 20px;
+              height: 20px;
+              width: 20px;
+            }
+            .doc{
+              background: url("../lib/images/word1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .xls{
+              background: url("../lib/images/excel1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .pdf{
+              background: url("../lib/images/pdf1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .ppt{
+              background: url("../lib/images/ppt1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .else{
+              background: url("../lib/images/默认文档1x.png") no-repeat;
+              background-size: 20px;
+            }
+          }
+        }
+        .Loading{
+          .loadIcon{
+            position: absolute;
+            top: 0;
+            right: 5px;
+            width: 16px;
+            height: 16px;
+            float: right;
+            margin-top: 5px;
+            background: url("../lib/images/upload-files.png") no-repeat;
+            background-size:15px;
+          }
+          >div{
+            background: #f4f4f4;
+            border-bottom: 10px solid #fff;
+            padding: 5px 0;
+            .txt,.doc,.xls,.pdf,.ppt,.else{
+              float: left;
+              background: url("../local/img/txt.png") no-repeat;
+              background-size: 20px;
+              height: 20px;
+              width: 20px;
+            }
+            .doc{
+              background: url("../lib/images/word1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .xls{
+              background: url("../lib/images/excel1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .pdf{
+              background: url("../lib/images/pdf1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .ppt{
+              background: url("../lib/images/ppt1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .else{
+              background: url("../lib/images/默认文档1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .delete{
+              float: right;
+              background: url("../lib/images/删除@2x.png") no-repeat;
+              background-size: 10px;
+              height: 15px;
+              width: 15px;
             }
           }
         }
@@ -2307,6 +2495,9 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
           float: right;
           color: #35D081;
         }
+      }
+      .ysp_input{
+        border:none;
       }
     }
     .ysp_showMore,.close{
@@ -4117,7 +4308,7 @@ div[data-ysp-modelid='needToFreeFlow']{
 .ysp-custom-textarea{
   background: #fff;
   padding: 0 15px 15px 15px;
-  margin-right: 15px;
+  // margin-right: 15px;
   .cutom-textarea{
     border: 1px solid #efefef;
     border-radius: 5px;

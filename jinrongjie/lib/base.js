@@ -17,7 +17,7 @@
         return url;
     };
     topWindow.num = [];
-  	topWindow.file = '';
+  	topWindow.file = [];
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
     var topWin = null; // Window对象
@@ -524,6 +524,7 @@
                             if (xhr.readyState == 4 && xhr.status == 200) {
                               responseT = xhr.responseText;
                               up.call(target,target,responseT);
+                              topWindow.file.push(ysp.customHelper.trim(responseT));
                             }
                           }
                           // cb && cb.call(target);
