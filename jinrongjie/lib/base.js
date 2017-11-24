@@ -531,10 +531,7 @@
                         var fileName = doc.createElement('input');
                         var upload = doc.createElement('input');
                       	var subId = doc.createElement('input');
-                        // var logintype = doc.createElement('input');
-                        // var secId = doc.createElement('input');
-                        // var userid = doc.createElement('input');
-                        // var mainId = doc.createElement('input');
+
                       	subId.type = "hidden";
                         fileName.name = 'Filename';
                         upload.name = 'Upload';
