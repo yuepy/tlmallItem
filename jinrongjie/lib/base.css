@@ -1539,7 +1539,7 @@ li {
 }
 .ysp-serch-content .ysp-serch-content-createData input,
 .ysp-serch-content .ysp-serch-content-reciveData input {
-  padding: 0 0 0 30px;
+  padding: 0 0 0 26px;
   width: 45%;
   background: #eee;
   border: 1px solid #eee;
@@ -1548,9 +1548,14 @@ li {
   border-radius: 5px;
   margin: 0;
   background: url('images/calendaricon@2x.png') no-repeat;
-  background-position-y: 7px;
+  background-position-y: 8px;
   background-size: 15%;
-  background-position-x: 7px;
+  background-position-x: 5px;
+  font-size: 13px;
+}
+.ysp-serch-content .ysp-serch-content-createData input[type=date]::-webkit-inner-spin-button,
+.ysp-serch-content .ysp-serch-content-reciveData input[type=date]::-webkit-inner-spin-button {
+  display: none;
 }
 .ysp-serch-content .ysp-serch-content-createPeople,
 .ysp-serch-content .ysp-serch-content-reviceTime {
@@ -2230,7 +2235,6 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   height: 15px;
   margin-top: 5px;
 }
-<<<<<<< HEAD
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .txt,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .txt,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .txt,
@@ -2365,8 +2369,6 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   height: 15px;
   width: 15px;
 }
-=======
->>>>>>> 850bb06eba267f6670052016eca035d03d949fbd
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
