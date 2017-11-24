@@ -26,6 +26,30 @@ h5 {
   background: #f4f4f4;
 }
 /*  公共header样式  */
+.file2 {
+  position: relative;
+  margin: 10px 15px 10px 0;
+  border-radius: 3px;
+  padding: 5px 0 5px 50px;
+  background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
+}
+.file2 > div:nth-child(1) {
+  font-size: 15px;
+}
+.file2 > div:nth-child(2) {
+  font-size: 14px;
+  color: #717171;
+}
+.file2 button {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  background: url(../lib/images/删除@2x.png) no-repeat 0;
+  background-size: 15px;
+}
 div[contenteditable='true'] {
   -webkit-user-select: text;
 }
@@ -1619,6 +1643,24 @@ div[data-ysp-modelid='hetong01'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsd
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu {
   padding: 0!important;
 }
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .push_file_box {
+  overflow: hidden;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .push_file_box div {
+  display: inline-block;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .push_file_box button {
+  display: inline-block;
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  border: 0;
+  margin-top: 10px;
+  margin-right: 20px;
+  background: #C29A2A;
+  border-radius: 4px;
+  color: #fff;
+}
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
@@ -1749,6 +1791,30 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   border: 0;
   background: url(../local/img/download.png) no-repeat 0;
   background-size: 20px;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file2 {
+  position: relative;
+  margin: 10px 15px 10px 0;
+  border-radius: 3px;
+  padding: 5px 0 5px 50px;
+  background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file2 > div:nth-child(1) {
+  font-size: 15px;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file2 > div:nth-child(2) {
+  font-size: 14px;
+  color: #717171;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file2 button {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  background: url(../lib/images/删除@2x.png) no-repeat 0;
+  background-size: 15px;
 }
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .textArea {
   min-height: 30px;
