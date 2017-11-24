@@ -33,7 +33,21 @@
     },
     doAction_uiControl57_IzXfNJ: function (data, elem) {
       if (data.eventType == 'click') {
-        var d = data.dataCustom;var line = parseInt(d[1]) + 1;var column = parseInt(d[2]);var _btn = elem.querySelectorAll('tr')[line].querySelectorAll('td')[column].querySelector('a');_btn.click();
+        var d = data.dataCustom;var line = parseInt(d[1]) + 1;var column = parseInt(d[2]);var _btn = elem.querySelectorAll('tr')[line].querySelectorAll('td')[column].querySelector('a');var url = _btn.href;if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(url + '&_ysp_filepreview=1');
+        } else {
+          top.location.href = url; // var cookie = elem.ownerDocument.cookie;
+          // var option = {
+          //   "downloadUrl": url,
+          //   "docName": 'FX-LMY-20171018-0027.pdf',
+          //   "docType": 'pdf',
+          //   "downloadHttpHeaders": {
+          //     "cookie": cookie
+          //   },
+          //   "downloadType": "POST"
+          // };
+          // ysp.appMain.openDocument(option);
+        }
       }
     },
     getTemplate_uiControl57_IzXfNJ: function () {
