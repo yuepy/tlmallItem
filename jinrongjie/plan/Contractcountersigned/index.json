@@ -448,7 +448,7 @@
       "roles": "element",
       "text": "创建日期 所属公司 创建人部门 创建人 工作流 紧急程度 请求标题 当前节点接收日期 当前状况 未操作者",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('创建日期') !== -1){return true;}return false;"
+      "customJS": "if(elem.textContent.indexOf('创建日期') !== -1 || elem.textContent.indexOf('所属公司') !== -1){return true;}return false;"
     }
   },
   "contexts": {
@@ -685,6 +685,10 @@
           "111111111111111",
           "添加测试",
           "213123123213"
+        ],
+        "context8_XKqIRF": [
+          "123",
+          "跳转资金"
         ]
       }
     },
@@ -723,6 +727,10 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215920&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339246&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339255&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+        ],
+        "context8_XKqIRF": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=303990&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434482&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ]
       }
     },
@@ -817,6 +825,91 @@
           ]
         ],
         "context26_SWrdGB": [
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "WfText",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "divWfText",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "requestmarkSpan",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv",
+            "triSubwfIframe",
+            "wfdoc",
+            "workflowtext"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "requestmarkSpan",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv",
+            "triSubwfIframe",
+            "wfdoc"
+          ]
+        ],
+        "context8_XKqIRF": [
           [
             "BacoAddFavorite",
             "BacoTitle",
