@@ -47,7 +47,7 @@ h5 {
   width: 20px;
   height: 20px;
   border: 0;
-  background: url(../lib/images/删除@2x.png) no-repeat 0;
+  background: url(../lib/images/deleteM.png) no-repeat 0;
   background-size: 15px;
 }
 div[contenteditable='true'] {
@@ -120,7 +120,7 @@ div[contenteditable='true'] {
   background: #fff;
 }
 .must_mark {
-  background: url("../lib/images/！@2x.png") no-repeat;
+  background: url("../lib/images/bangM.png") no-repeat;
   display: inline-block;
   width: 12px;
   height: 15px;
@@ -1819,7 +1819,7 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   width: 20px;
   height: 20px;
   border: 0;
-  background: url(../lib/images/删除@2x.png) no-repeat 0;
+  background: url(../lib/images/deleteM.png) no-repeat 0;
   background-size: 15px;
 }
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .textArea {
@@ -2209,7 +2209,7 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title .unwrite,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title .unwrite,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_title .unwrite {
-  background: url("../lib/images/！@2x.png") no-repeat;
+  background: url("../lib/images/bangM.png") no-repeat;
   display: inline-block;
   width: 12px;
   height: 15px;
@@ -2284,7 +2284,7 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .else,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .else,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .else {
-  background: url("../lib/images/默认文档1x.png") no-repeat;
+  background: url("../lib/images/defaultDocument.png") no-repeat;
   background-size: 20px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading .loadIcon,
@@ -2358,14 +2358,14 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .else,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .else,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .else {
-  background: url("../lib/images/默认文档1x.png") no-repeat;
+  background: url("../lib/images/defaultDocument.png") no-repeat;
   background-size: 20px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete {
   float: right;
-  background: url("../lib/images/删除@2x.png") no-repeat;
+  background: url("../lib/images/deleteM.png") no-repeat;
   background-size: 10px;
   height: 15px;
   width: 15px;
@@ -2384,13 +2384,32 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   appearance: none;
   font-size: 14px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchBtn,
-div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchBtn,
-div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchBtn {
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow {
+  position: relative;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow .searchBtn,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow .searchBtn,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow .searchBtn {
+  position: absolute;
   background: url("../lib/images/Magnifier-card.png") no-repeat;
   background-size: 14px;
-  background-position: 300px;
   height: 22px;
+  display: inline-block;
+  width: 10%;
+  top: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow .nameleft,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow .nameleft,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow .nameleft {
+  width: 90%;
+  display: inline-block;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow .nameleft .name,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow .nameleft .name,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .searchRow .nameleft .name {
+  padding-right: 5px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .actSelect,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .actSelect,
@@ -2491,6 +2510,23 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   margin: 0;
   background: #EEEDEB;
   color: #333;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .delete,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .delete,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .delete {
+  float: right;
+  background: url("../lib/images/deleteM.png") no-repeat;
+  background-size: 10px;
+  background-position: 142px;
+  height: 15px;
+  width: 15px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .unwrite,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .unwrite,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .unwrite {
+  background: url("../lib/images/bangM.png") no-repeat;
+  background-size: 3px;
+  background-position: 60px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon,
@@ -2785,12 +2821,12 @@ div[data-ysp-modelid="setBack"] .ysp_returnBack_wrapper .uncheck {
   border-bottom: 1px solid #f4f4f4;
 }
 div[data-ysp-modelid="setBack"] .ysp_returnBack_wrapper .ysp_top .check {
-  background: url("../lib/images/已选@2x.png") no-repeat;
+  background: url("../lib/images/select.png") no-repeat;
   background-size: 18px;
   background-position: 95%;
 }
 div[data-ysp-modelid="setBack"] .ysp_returnBack_wrapper .ysp_top .uncheck {
-  background: url("../lib/images/未选@2x.png") no-repeat;
+  background: url("../lib/images/unselect.png") no-repeat;
   background-size: 18px;
   background-position: 95%;
 }
@@ -2847,7 +2883,7 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   overflow: hidden;
   margin-bottom: 5px;
   padding: 5px 0 5px 20px;
-  background: #EDEDED url("../lib/images/默认文档1x.png") no-repeat;
+  background: #EDEDED url("../lib/images/defaultDocument.png") no-repeat;
   background-size: 15px;
   background-position: 2px 8px;
 }
@@ -3607,7 +3643,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   width: 15px;
   height: 15px;
   float: right;
-  background: url(../lib/images/删除@2x.png) no-repeat 0;
+  background: url(../lib/images/deleteM.png) no-repeat 0;
   border: 0;
   background-size: 15px;
 }
@@ -4559,7 +4595,7 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
   width: 15px;
   height: 15px;
   float: right;
-  background: url(../lib/images/删除@2x.png) no-repeat 0;
+  background: url(../lib/images/deleteM.png) no-repeat 0;
   border: 0;
   background-size: 15px;
 }
