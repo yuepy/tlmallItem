@@ -68,6 +68,24 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 
 /*  公共header样式  */
 //下边的文件上传
+.push_file_box{
+  overflow: hidden;
+  div{
+    display: inline-block;
+  }
+  button{
+    display: inline-block;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+    background: #C29A2A;
+    border-radius: 4px;
+    color: #fff;
+  }
+}
 .file2{
     position: relative;
     margin: 10px 15px 10px 0;
@@ -1658,6 +1676,13 @@ li {list-style: none}
 .ysp-serch-content-search{
   margin-top: 20px;
 }
+//三会
+
+div[data-ysp-modelid='sanhuiAppreove']{
+  .bottom_tb{
+    padding-left: 0!important;
+  }
+}
 //01合同会签样式
 div[data-ysp-modelid='hetong01']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
@@ -1685,24 +1710,7 @@ div[data-ysp-modelid='hetong01']{
   .OvsRcaoL1UILAcvWC8nMu{//面板子div
     padding: 0!important;
     .contractCountersigned_box{
-      .push_file_box{
-        overflow: hidden;
-        div{
-          display: inline-block;
-        }
-        button{
-          display: inline-block;
-          float: right;
-          height: 30px;
-          line-height: 30px;
-          border: 0;
-          margin-top: 10px;
-          margin-right: 20px;
-          background: #C29A2A;
-          border-radius: 4px;
-          color: #fff;
-        }
-      }
+      
       .ysp_emergency{
         border-bottom: 1px solid #ddd;
         padding-bottom: 10px;
@@ -3778,8 +3786,10 @@ div[data-ysp-modelid='chairmanSign']{
       }
 }
 .edition_box_lfj{
+  background: #fff;
+  padding-top: 10px;
   .tit_yell{
-    margin: 20px 0 10px 0;
+    margin: 10px 0 10px 0;
   }
   .textArea2{
     border-radius: 5px;
@@ -3791,7 +3801,7 @@ div[data-ysp-modelid='chairmanSign']{
 }
 .summit_button_lfj{
   padding: 10px;
-  border-top: 10px solid #F3F3F3;
+  background: #fff;
   button{
     border-radius: 5px;
     background: #C29A29;
