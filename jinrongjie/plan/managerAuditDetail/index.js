@@ -312,13 +312,16 @@
         for (var i = 0; i < trs.length; i++) {
           if (i == 0) {
             var ths = trs[0].querySelectorAll('th');[].forEach.call(ths, function (item, index) {
-              if (index !== 1) {
-                title.push(item.textContent.trim());
-              }
+              title.push(item.textContent.trim());
             });
           } else {
             var tds = $(trs[i]).children('td');var trContent = [];[].forEach.call(tds, function (item, index) {
-              if (item.querySelector('table')) {// trContent.push(item.querySelector('p').textContent);意见
+              if (item.querySelector('table')) {
+                var suggest = item.querySelector('iframe').contentDocument.querySelector('table.ViewForm').textContent.replace(/\s/g, "").trim();if (suggest == "") {
+                  trContent.push('无');
+                } else {
+                  trContent.push(suggest);
+                }
               } else {
                 if (item.querySelector('script')) {
                   trContent.push(item.childNodes[2].textContent.replace(/\s/g, ""));

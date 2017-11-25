@@ -106,18 +106,18 @@
       } else if (data.eventType == "blur") {
         if (classname == "ysp_input") {
           if ($(elem).children("tr").eq(row).children(".zdn").length == 0) {
-            $(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']").val(val);$(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']").dispatchEvent(new Event("change"));
+            var _input = $(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']");$(_input)[0].dispatchEvent(new Event("focus"));_input.val(val);$(_input)[0].dispatchEvent(new Event("change"));$(_input)[0].dispatchEvent(new Event("blur"));
           } else {
-            $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']").val(val);$(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']").dispatchEvent(new Event("change"));
+            var _input = $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']");$(_input)[0].dispatchEvent(new Event("focus"));_input.val(val);$(_input)[0].dispatchEvent(new Event("change"));$(_input)[0].dispatchEvent(new Event("blur"));
           }
         } else if (classname == "ysp_textarea") {
           $(elem).children("tr").eq(row).children(".zdn").eq(column).find("textarea").val(val);$(elem).children("tr").eq(row).children(".zdn").eq(column).find("textarea").dispatchEvent(new Event("change"));
         }
       } else if (data.eventType == "select") {
         if ($(elem).children("tr").eq(row).children(".zdn").length == 0) {
-          $(elem).children("tr").eq(row).children("td").eq(column).find("select").children("option").eq(i).prop('selected', true);
+          $(elem).children("tr").eq(row).children("td").eq(column).find("select").children("option").eq(i).prop('selected', true);$(elem).children("tr").eq(row).children("td").eq(column).find("select").blur();
         } else {
-          $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);
+          $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);$(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").blur();
         }
       }
     },
