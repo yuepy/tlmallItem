@@ -95,8 +95,7 @@
                 }
               } else {
                 button[3].push("search"); //查询人员、部门
-              } //button[2].push(dt.textContent.replace(/\s/g, "").trim());
-              rows[1].push(button);
+              }button[2].push(dt.textContent.replace(/\s/g, "").trim());rows[1].push(button);
             } else if (dt.querySelectorAll("form").length > 0) {
               var upload = [[], [], [], [], []];upload[3].push("upload");upload[0].push("附件");if (dt.querySelector(".fieldset")) {
                 var progressName = dt.querySelector(".fieldset").querySelectorAll(".progressName");for (var i = 0; i < progressName.length; i++) {
