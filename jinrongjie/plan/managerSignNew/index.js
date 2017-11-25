@@ -48,7 +48,9 @@
                 if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
                   var files = dt.querySelectorAll('.progressWrapper');var fileName = [];if (files.length > 0) {
                     [].forEach.call(files, function (fileItem, fileIndex) {
-                      fileName.push(fileItem.querySelector('.progressName').textContent.replace(/\s/g, ""));
+                      if (fileItem.style.display !== 'none') {
+                        fileName.push(fileItem.querySelector('.progressName').textContent.replace(/\s/g, ""));
+                      }
                     });content.push(fileName);
                   } else {
                     content.push([]);
@@ -91,7 +93,9 @@
           elem.querySelector('input[id="requestname"]').value = data.value;break;case 'zhaiyao':
           elem.querySelector('textarea[temptitle="摘要"]').value = data.value;break;case 'process':
           elem.ownerDocument.defaultView.eval(elem.querySelector("button[title='选择']").onclick());break;case 'deleteFile':
-          elem.querySelectorAll('.progressWrapper')[data.index].style.display = "none";var inputValue = 0;break;case 'upclick':
+          elem.querySelectorAll('.progressWrapper')[data.index].style.display = "none";var initDOM = elem.querySelector("#uploadspan").parentElement.parentElement;if (initDOM.querySelector("input[temptitle='附件']")) {
+            var initValue = initDOM.querySelector("input[temptitle='附件']").value;console.log(data.index);var array = initValue.split(',');array.splice(data.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();
+          }break;case 'upclick':
           doUpload(elem);break;} // 触发上传
       function doUpload(elem) {
         if (elem.querySelector("input[id='Filedata'][name='Filedata'][type='file']")) {
