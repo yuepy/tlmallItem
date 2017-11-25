@@ -26,24 +26,6 @@ h5 {
   background: #f4f4f4;
 }
 /*  公共header样式  */
-.push_file_box {
-  overflow: hidden;
-}
-.push_file_box div {
-  display: inline-block;
-}
-.push_file_box button {
-  display: inline-block;
-  float: right;
-  height: 30px;
-  line-height: 30px;
-  border: 0;
-  margin-top: 10px;
-  margin-right: 20px;
-  background: #C29A2A;
-  border-radius: 4px;
-  color: #fff;
-}
 .file2 {
   position: relative;
   margin: 10px 15px 10px 0;
@@ -1644,9 +1626,6 @@ li {
 .ysp-serch-content-search {
   margin-top: 20px;
 }
-div[data-ysp-modelid='sanhuiAppreove'] .bottom_tb {
-  padding-left: 0!important;
-}
 div[data-ysp-modelid='hetong01'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
@@ -1669,6 +1648,24 @@ div[data-ysp-modelid='hetong01'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsd
 }
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu {
   padding: 0!important;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .push_file_box {
+  overflow: hidden;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .push_file_box div {
+  display: inline-block;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .push_file_box button {
+  display: inline-block;
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  border: 0;
+  margin-top: 10px;
+  margin-right: 20px;
+  background: #C29A2A;
+  border-radius: 4px;
+  color: #fff;
 }
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency {
   border-bottom: 1px solid #ddd;
@@ -2494,23 +2491,6 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   margin: 0;
   background: #EEEDEB;
   color: #333;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .delete,
-div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .delete,
-div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .delete {
-  float: right;
-  background: url("../lib/images/删除@2x.png") no-repeat;
-  background-size: 10px;
-  background-position: 142px;
-  height: 15px;
-  width: 15px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .unwrite,
-div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .unwrite,
-div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .unwrite {
-  background: url("../lib/images/！@2x.png") no-repeat;
-  background-size: 3px;
-  background-position: 60px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon,
@@ -3388,29 +3368,38 @@ div#uiControl249_85nnFq {
   border: 0;
   background-size: 20px;
 }
-div[data-ysp-modelid='mainLeaderSign'] ._2YwloE7OzAhaMwSn1XM-Va {
+div[data-ysp-modelid='mainLeaderSign'] ._2YwloE7OzAhaMwSn1XM-Va,
+div[data-ysp-modelid='chuITgudingzichan'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
-div[data-ysp-modelid='mainLeaderSign'] ._2YwloE7OzAhaMwSn1XM-Va > div {
+div[data-ysp-modelid='mainLeaderSign'] ._2YwloE7OzAhaMwSn1XM-Va > div,
+div[data-ysp-modelid='chuITgudingzichan'] ._2YwloE7OzAhaMwSn1XM-Va > div {
   padding: 0;
 }
-div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP {
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP,
+div[data-ysp-modelid='chuITgudingzichan'] ._27gZE6m5LfD5uG_dZ8p3iP {
   margin: 0;
 }
-div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ,
+div[data-ysp-modelid='chuITgudingzichan'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
   background: #fff;
 }
 div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
+div[data-ysp-modelid='chuITgudingzichan'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ a,
 div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
-div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
+div[data-ysp-modelid='chuITgudingzichan'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ ul,
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li,
+div[data-ysp-modelid='chuITgudingzichan'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li {
   height: 35px;
   line-height: 35px;
 }
-div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a,
+div[data-ysp-modelid='chuITgudingzichan'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
   width: auto;
   display: inline;
 }
-div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+div[data-ysp-modelid='mainLeaderSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2,
+div[data-ysp-modelid='chuITgudingzichan'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
   border-bottom: 3px solid #C29A2A;
   color: #C29A2A;
   padding: 3px 0;
@@ -3797,12 +3786,8 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   border: 0;
   background-size: 20px;
 }
-.edition_box_lfj {
-  background: #fff;
-  padding-top: 10px;
-}
 .edition_box_lfj .tit_yell {
-  margin: 10px 0 10px 0;
+  margin: 20px 0 10px 0;
 }
 .edition_box_lfj .textArea2 {
   border-radius: 5px;
@@ -3812,7 +3797,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
 }
 .summit_button_lfj {
   padding: 10px;
-  background: #fff;
+  border-top: 10px solid #F3F3F3;
 }
 .summit_button_lfj button {
   border-radius: 5px;
@@ -4757,17 +4742,4 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
 /* ... .... ...列表搜索 -- Dialog... ..... ...*/
 .ysp-dialog-wrapper-top-serch {
   padding: 0px;
-}
-.list-serch-ul {
-  padding: 10px 0;
-}
-.ysp-list-serch-card {
-  padding: 5px 10px;
-  border-bottom: 1px solid #eee;
-}
-.ysp-list-serch-card a {
-  color: #333;
-}
-.ysp-dialog-wrapper-top-serch {
-  top: 40px;
 }
