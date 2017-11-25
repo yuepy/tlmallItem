@@ -2497,6 +2497,23 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   background: #EEEDEB;
   color: #333;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .delete,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .delete,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .delete {
+  float: right;
+  background: url("../lib/images/删除@2x.png") no-repeat;
+  background-size: 10px;
+  background-position: 142px;
+  height: 15px;
+  width: 15px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .unwrite,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .unwrite,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .tableCard .tableCardDetail .unwrite {
+  background: url("../lib/images/！@2x.png") no-repeat;
+  background-size: 3px;
+  background-position: 60px;
+}
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .ysp-manager-audit-title-icon {
