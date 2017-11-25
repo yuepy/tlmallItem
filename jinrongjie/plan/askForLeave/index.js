@@ -41,7 +41,7 @@
               }if (detail4[i].disable) {
                 //textarea是否是禁用的
                 table[5].push("disable");
-              }if (detail4[i].nextElementSibling.querySelector("img")) {
+              }if (detail4[i].nextElementSibling && detail4[i].nextElementSibling.querySelector("img")) {
                 //是否未填写
                 table[6].push("unwrite");
               } else {
