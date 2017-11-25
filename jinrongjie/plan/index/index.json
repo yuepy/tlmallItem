@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "waitTodo": "../waitTodo/index.json",
-    "index": "../index/index.json"
+    "index": "../index/index.json",
+    "sendDocProcess": "../sendDocProcess/index.json"
   },
   "chineseName": "首页列表",
   "description": "",
@@ -158,6 +159,10 @@
         {
           "toContextId": "context2_owrLEy",
           "toModelId": "waitTodo"
+        },
+        {
+          "toContextId": "context27_OsmsHc",
+          "toModelId": "sendDocProcess"
         }
       ]
     },
@@ -215,6 +220,13 @@
         "context1_yeQcpw": [
           "金融街投资集团OA - 张济天",
           "金融街投资集团OA - 王宇成"
+        ],
+        "context27_OsmsHc": [
+          "00000",
+          "111111111111111",
+          "添加测试",
+          "213123123213",
+          "今天星期八"
         ]
       }
     },
@@ -227,6 +239,13 @@
           "192.168.200.63/workflow/request/RequestView.jsp?e71508480096097=",
           "192.168.200.63/workflow/request/RequestType.jsp?needPopupNewPage=true",
           "192.168.200.63/workflow/request/RequestView.jsp"
+        ],
+        "context27_OsmsHc": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215924&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215920&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339246&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339255&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434501&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ]
       }
     },
