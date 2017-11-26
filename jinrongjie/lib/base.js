@@ -18,6 +18,7 @@
     };
     topWindow.num = [];
   	topWindow.file = [];
+  	topWindow.file_two = [];
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
     var topWin = null; // Window对象
@@ -524,7 +525,11 @@
                             if (xhr.readyState == 4 && xhr.status == 200) {
                               responseT = xhr.responseText;
                               up.call(target,target,responseT);
-                              topWindow.file.push(ysp.customHelper.trim(responseT));
+                              if(e.target.parentElement.getAttribute('file-num') == '1'){
+                                topWindow.file.push(ysp.customHelper.trim(responseT));
+                              }else if(e.target.parentElement.getAttribute('file-num') == '2'){
+                                topWindow.file_two.push(ysp.customHelper.trim(responseT));
+                              }
                             }
                           }
                           // cb && cb.call(target);
