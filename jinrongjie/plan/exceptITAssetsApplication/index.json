@@ -4,7 +4,9 @@
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=621&isagent=0&beagenter=0",
   "jsFile": "index.js",
   "requires": {
-    "postName": "../postName/index.json"
+    "postName": "../postName/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
   },
   "chineseName": "除IT类固定资产申领(新建)",
   "description": "除IT类固定资产申领(新建)",
@@ -201,6 +203,162 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control143_wmCQ9T": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "所见即所得编辑器, remark, 按 ALT+0 查看帮助。"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]/IFRAME[1]",
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::TD[@id=\"cke_contents_remark\"]//IFRAME"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "SPAN.cke_wrapper.cke_ltr TABLE.cke_editor TD.cke_contents IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[16]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control143_wmCQ9T"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control282_faDDm3": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[16]/TD[2]/TABLE[1]/TBODY[1]/TR[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control282_faDDm3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control283_vdQUfN": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[16]/TD[2]/TABLE[1]/TBODY[1]/TR[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control283_vdQUfN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control284_Cfx2sn": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control284_Cfx2sn"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control285_8AvsMl": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[16]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control285_8AvsMl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -209,7 +367,12 @@
         "control173_bFuWdq",
         "control256_t5LqXJ",
         "control257_2rC7Lf",
-        "control258_SNd53w"
+        "control258_SNd53w",
+        "control143_wmCQ9T",
+        "control282_faDDm3",
+        "control283_vdQUfN",
+        "control284_Cfx2sn",
+        "control285_8AvsMl"
       ],
       "anchors": [
         "control184_6G219P"
@@ -256,6 +419,64 @@
         {
           "toContextId": "context21_LgNuze",
           "toModelId": "postName"
+        }
+      ]
+    },
+    "flow173_o6Ka4K": {
+      "fromContextId": "context32_TWuuUu",
+      "fromAction": "doAction",
+      "fromControlId": "control143_wmCQ9T",
+      "toContexts": [
+        {
+          "toContextId": "context32_TWuuUu"
+        }
+      ]
+    },
+    "flow174_GK3Qm5": {
+      "fromContextId": "context32_TWuuUu",
+      "fromAction": "doAction",
+      "fromControlId": "control282_faDDm3",
+      "toContexts": [
+        {
+          "toContextId": "context32_TWuuUu"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
+        }
+      ]
+    },
+    "flow175_kdqpsD": {
+      "fromContextId": "context32_TWuuUu",
+      "fromAction": "doAction",
+      "fromControlId": "control283_vdQUfN",
+      "toContexts": [
+        {
+          "toContextId": "context32_TWuuUu"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
+        }
+      ]
+    },
+    "flow176_i2vx9N": {
+      "fromContextId": "context32_TWuuUu",
+      "fromAction": "doAction",
+      "fromControlId": "control284_Cfx2sn",
+      "toContexts": [
+        {
+          "toContextId": "context32_TWuuUu"
+        }
+      ]
+    },
+    "flow177_2QNcEK": {
+      "fromContextId": "context32_TWuuUu",
+      "fromAction": "doAction",
+      "fromControlId": "control285_8AvsMl",
+      "toContexts": [
+        {
+          "toContextId": "context32_TWuuUu"
         }
       ]
     }
@@ -323,6 +544,81 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl268_iVybsp",
+          "controlId": "control143_wmCQ9T",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl268_iVybsp",
+                "onGetTemplate": "getTemplate_uiControl268_iVybsp"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl269_2VczSH",
+          "controlId": "control282_faDDm3",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl269_2VczSH",
+                "onGetTemplate": "getTemplate_uiControl269_2VczSH"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl270_5TaK9F",
+          "controlId": "control283_vdQUfN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl270_5TaK9F",
+                "onGetTemplate": "getTemplate_uiControl270_5TaK9F"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl272_TNJrI2",
+          "controlId": "control285_8AvsMl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl272_TNJrI2",
+                "onGetTemplate": "getTemplate_uiControl272_TNJrI2"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl271_z9RRR2",
+          "controlId": "control284_Cfx2sn",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl271_z9RRR2",
+                "onGetTemplate": "getTemplate_uiControl271_z9RRR2"
+              }
+            }
+          }
         }
       ]
     }
@@ -343,7 +639,12 @@
         "context21_LgNuze": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.rolesmark|28481",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.zcfl|15187",
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.zjfs|15188"
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.zcfl|15201_0",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.jldw|15202_0"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },
