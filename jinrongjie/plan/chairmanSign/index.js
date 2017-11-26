@@ -91,6 +91,8 @@
     getData_control90_KWZghe: function (elem) {
       if (!elem) {
         return;
+      }if (!elem.contentDocument.querySelector('body')) {
+        return;
       }return elem.contentDocument.querySelector('body').innerHTML;
     },
     doAction_uiControl81_TmtuSV: function (data, elem) {

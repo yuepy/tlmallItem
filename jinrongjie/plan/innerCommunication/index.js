@@ -132,7 +132,7 @@
         }
       }if (eventType == 'deleteFile') {
         elem.querySelectorAll('.progressWrapper')[data.dataCustom].style.display = "none";var initDOM = elem.querySelector("#uploadspan").parentElement.parentElement;if (initDOM.querySelector("input[temptitle='相关附件']")) {
-          var initValue = initDOM.querySelector("input[temptitle='相关附件']").value;console.log(initValue);var array = initValue.split(',');array.splice(data.dataCustom, 1);console.log(array);initDOM.querySelector("input[temptitle='相关附件']").value = array.toString();
+          var initValue = initDOM.querySelector("input[temptitle='相关附件']").value;var array = initValue.split(',');array.splice(data.dataCustom, 1);initDOM.querySelector("input[temptitle='相关附件']").value = array.toString();
         }
       }
     },
