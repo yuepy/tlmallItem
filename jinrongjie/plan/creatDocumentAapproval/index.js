@@ -65,10 +65,10 @@
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text())) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_ye' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
-            } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(),
-                type: 'title1' });
+                type: 'title' });
+            } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
             } //判断附件-------------------------------------
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                 var arr3 = [];if ($(this).children("table").find("a").length > 0) {
@@ -101,8 +101,7 @@
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
-                        arr3.push({
-                          name: $(this).next().text().trim(), stl: 'png', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
@@ -110,7 +109,8 @@
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                       } else {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'unknown',
+                          no: 'push' });
                       }
                     }
                   });
@@ -120,7 +120,8 @@
                       arr4.push($(this).text().trim().match(/\(.*\)/));
                     }
                   });
-                }arr2.push({ text: arr3, size: arr4, type: 'fujian' });
+                }arr2.push({ text: arr3, size: arr4,
+                  type: 'fujian' });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
@@ -179,8 +180,14 @@
     }, doAction_uiControl63_VG18Wm: function (data, elem) {
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
-          if ($(this).attr('temptitle') && $(this).attr('temptitle').indexOf('发文附件') !== -1) {
-            var value = $(this)[0].value;var arr = $(this)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(this)[0].value = valuet;
+          if ($(this).attr('temptitle') && $(this).attr('temptitle').indexOf('附件') !== -1) {
+            var value = $(this)[0].value;var arr = $(this)[0].value.split(',');console.log(arr.length);
+            if (arr.length !== 1) {
+              arr.splice(idx, 1);var valuet = arr.toString(); //console.log(valuet);
+              $(this)[0].value = valuet;
+            } else {
+              $(this)[0].value = '';
+            }
           }
         });
       }if (data.eventType == 'selectFile') {
@@ -194,7 +201,8 @@
         });
       }if (data.eventType == 'textarea1') {
         //debugger;
-        var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("textarea").each(function () {
+        var id = data.dataCustom.id;var val = data.dataCustom.value;
+        var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("textarea").each(function () {
           if ($(this)[0].id == id) {
             $(this)[0].textContent = val;
           }
@@ -215,8 +223,7 @@
           var body = $(elem).find('.cke_editor').find("iframe")[0].contentDocument.body;body.innerHTML = val;
         }
       }if (data.eventType == 'degree') {
-        var val = data.dataCustom;
-        var elem = $(elem).children("table").eq(0)[0];var lth = $(elem).find("tr").eq(1).children("td").eq(1).contents().length;for (var i = 0; i < lth; i++) {
+        var val = data.dataCustom;var elem = $(elem).children("table").eq(0)[0];var lth = $(elem).find("tr").eq(1).children("td").eq(1).contents().length;for (var i = 0; i < lth; i++) {
           if ($(elem).find("tr").eq(1).children("td").eq(1).contents().eq(i).text() == val) {
             $(elem).find("tr").eq(1).children("td").eq(1).contents().eq(i - 1)[0].checked = 'true';
           }
@@ -240,13 +247,13 @@
           }
         });
       }if (data.eventType == 'button2') {
-        debugger;var id = data.dataCustom;
-        var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("button").each(function () {
+        debugger;var id = data.dataCustom;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("button").each(function () {
           if ($(this)[0].id == id) {
             $(this).click();
           }
         });
-      }if (data.eventType == 'about1') {
+      }
+      if (data.eventType == 'about1') {
         // elem.ownerDocument.defaultView.eval(elem.querySelectorAll('.Browser')[0].onclick());
         // elem.querySelectorAll('.Browser')[0].onclick(); 
         elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());

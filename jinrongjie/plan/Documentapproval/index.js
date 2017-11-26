@@ -365,14 +365,16 @@
         });
       }if ($(elem).children(".datalight").length > 0 && $(elem).children(".datalight").children("td").length > 0) {
         //console.log(11111111111111);
-        $(elem).children(".datalight").each(function () {
-          var arr = [];$(elem).children(".datalight").children("td").each(function (i) {
-            if (i == 1) {
-              arr.push($(this).find('iframe')[0].contentDocument.body.querySelectorAll('td')[0].textContent.trim().replace(/\s+/ig, "").replace(/fun.*\}/ig, ""));
-            } else {
-              arr.push($(this).text().trim().replace(/\s+/ig, "").replace(/fun.*\}/ig, ""));
-            }
-          });data.content.push(arr);
+        $(elem).children("tr").each(function (i) {
+          if (i > 0) {
+            var arr = [];$(this).children("td").each(function (j) {
+              if (j == 1) {
+                arr.push($(this).find('iframe')[0].contentDocument.body.querySelectorAll('td')[0].textContent.trim().replace(/\s+/ig, "").replace(/fun.*\}/ig, ""));
+              } else {
+                arr.push($(this).text().trim().replace(/\s+/ig, "").replace(/fun.*\}/ig, ""));
+              }
+            });data.content.push(arr);
+          }
         });
       }return data;
     },
