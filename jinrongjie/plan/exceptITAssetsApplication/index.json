@@ -3,6 +3,9 @@
   "id": "exceptITAssetsApplication",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=621&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "postName": "../postName/index.json"
+  },
   "chineseName": "除IT类固定资产申领(新建)",
   "description": "除IT类固定资产申领(新建)",
   "controls": {
@@ -249,6 +252,10 @@
       "toContexts": [
         {
           "toContextId": "context32_TWuuUu"
+        },
+        {
+          "toContextId": "context21_LgNuze",
+          "toModelId": "postName"
         }
       ]
     }
@@ -332,6 +339,11 @@
       "contexts": {
         "context32_TWuuUu": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=621&isagent=0&beagenter=0"
+        ],
+        "context21_LgNuze": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.rolesmark|28481",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.zcfl|15187",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.zjfs|15188"
         ]
       }
     },
