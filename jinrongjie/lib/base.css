@@ -19,7 +19,6 @@ h5 {
 .view-item {
   background: #f3f3f3;
 }
-.ysp_table_lfj,
 #uiControl240_lcFRXVbody,
 #uiControl241_LVqr6ibody,
 #uiControl242_Gr2ZsBbody,
@@ -36,6 +35,11 @@ div[data-type="tabs:content"] > div:first-child {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background: #f4f4f4;
+}
+div[data-ysp-modelid="ITdeviceAppply"] .ysp_table_lfj {
+  height: 75vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 div[data-ysp-modelid="managerSignNew"] .card,
 div[data-ysp-modelid="chairmanSignNew"] .card,
@@ -545,6 +549,10 @@ li {
   border-radius: 50%;
   text-align: center;
   font-size: 1rem;
+}
+.ysp-manager-audit-wrapper .ysp-select-color-gray,
+.ysp-asstes-section-wrapper .ysp-select-color-gray {
+  color: #ddd;
 }
 .ysp-manager-audit-wrapper-noborder {
   border-bottom: none;
