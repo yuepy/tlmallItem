@@ -508,7 +508,7 @@
               } else if (dt.querySelector("textarea[temptitle='具体资产描述']")) {
                 content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
               } else if (dt.querySelector("select")) {
-                var selectContent = { values: [], options: [], selected: [] };selectContent.options.push(dt.querySelector("select").value);[].forEach.call(dt.querySelector("select").querySelectorAll('option'), function (opItem, opIndex) {
+                var selectContent = { values: [], options: [] };[].forEach.call(dt.querySelector("select").querySelectorAll('option'), function (opItem, opIndex) {
                   if (opItem.textContent !== "") {
                     selectContent.values.push(opItem.value);selectContent.options.push(opItem.textContent);
                   }
