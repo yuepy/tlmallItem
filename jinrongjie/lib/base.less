@@ -42,8 +42,8 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 .view-item{
   background: #f3f3f3;
 }
-//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动，按顺序依次creatContract01/managerSignNew/mainLeaderSignNew/innerCommunication
-.ysp_table_lfj,#uiControl240_lcFRXVbody,#uiControl241_LVqr6ibody,#uiControl242_Gr2ZsBbody,#uiControl254_pZRQ8nbody,.ysp_table_office_lfj{
+//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动，按顺序依次managerSignNew/mainLeaderSignNew/innerCommunication
+#uiControl240_lcFRXVbody,#uiControl241_LVqr6ibody,#uiControl242_Gr2ZsBbody,#uiControl254_pZRQ8nbody,.ysp_table_office_lfj{
   height: 75vh;
   overflow-y:auto;
   -webkit-overflow-scrolling: touch;
@@ -56,6 +56,13 @@ div[data-type="tabs:content"]{
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     background: #f4f4f4;
+  }
+}
+div[data-ysp-modelid="ITdeviceAppply"]{
+  .ysp_table_lfj{
+    height: 75vh;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],div[data-ysp-modelid="mainLeaderSignNew"],div[data-ysp-modelid="innerCommunication"]{
