@@ -109,22 +109,21 @@
                       }
                     }
                   });
-                }if ($(this).children("table").find(".btnFlowd").length > 0) {
+                }
+                if ($(this).children("table").find(".btnFlowd").length > 0) {
                   var arr4 = [];$(this).children("table").find(".btnFlowd").each(function (i) {
                     if (!/全部下载/.test($(this).text())) {
                       arr4.push($(this).text().trim().match(/\(.*\)/));
                     }
                   });
-                }
-                arr2.push({ text: arr3, size: arr4, type: 'fujian' });
+                }arr2.push({ text: arr3, size: arr4, type: 'fujian' });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
                     }if ($(this)[0].selected == false) {
-                      arr4.push({ text: $(this).text().trim(),
-                        select: '' });
+                      arr4.push({ text: $(this).text().trim(), select: '' });
                     }
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
                 } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
@@ -153,8 +152,7 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });
-                              arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -166,7 +164,8 @@
                           arr2.push({ text: $(this).find("button").text(), type: 'button22', id: $(this).children('span').eq(0).children("button").attr('id') });
                         } //判断意见-------------------------------------
                         else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
-                            arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
+                            arr2.push({
+                              text: $(this)[0].innerHTML, type: 'suggest' });
                           } else if ($(this).find(".cke_editor").length > 0) {
                             arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
                           }data.base_info.content.push(arr2);
@@ -177,7 +176,12 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
           if ($(this).attr('temptitle') && $(this).attr('temptitle').indexOf('发文附件') !== -1) {
-            var value = $(this)[0].value;var arr = $(this)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(this)[0].value = valuet;
+            var value = $(this)[0].value;var arr = $(this)[0].value.split(',');console.log(arr.length);if (arr.length !== 1) {
+              arr.splice(idx, 1);var valuet = arr.toString(); //console.log(valuet);
+              $(this)[0].value = valuet;
+            } else {
+              $(this)[0].value = '';
+            }
           }
         });
       }if (data.eventType == 'inputBlur') {
@@ -189,7 +193,8 @@
         });
       }if (data.eventType == 'textarea1') {
         //debugger;
-        var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("textarea").each(function () {
+        var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];
+        var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("textarea").each(function () {
           if ($(this)[0].id == id) {
             $(this)[0].textContent = val;
           }
