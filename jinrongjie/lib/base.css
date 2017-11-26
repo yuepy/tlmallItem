@@ -19,16 +19,21 @@ h5 {
 .view-item {
   background: #f3f3f3;
 }
-#uiControl55_TbO50eitem,
 .ysp_table_lfj,
-#uiControl152_mVSeK1item,
 #uiControl240_lcFRXVbody,
 #uiControl241_LVqr6ibody,
 #uiControl242_Gr2ZsBbody,
 #uiControl254_pZRQ8nbody,
 .ysp_table_office_lfj {
   height: 75vh;
-  overflow: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #f4f4f4;
+}
+div[data-type="tabs:content"] > div:first-child {
+  height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background: #f4f4f4;
 }
@@ -1686,6 +1691,9 @@ div[data-ysp-modelid='hetong01'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsd
 }
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu {
   padding: 0!important;
+}
+div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box {
+  background: #fff;
 }
 div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency {
   border-bottom: 1px solid #ddd;
