@@ -42,12 +42,30 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 .view-item{
   background: #f3f3f3;
 }
-//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动
-#uiControl55_TbO50eitem{
+//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动，按顺序依次creatContract01/managerSignNew/mainLeaderSignNew/innerCommunication
+.ysp_table_lfj,#uiControl240_lcFRXVbody,#uiControl241_LVqr6ibody,#uiControl242_Gr2ZsBbody,#uiControl254_pZRQ8nbody,.ysp_table_office_lfj{
   height: 75vh;
-  overflow:auto;
+  overflow-y:auto;
   -webkit-overflow-scrolling: touch;
   background: #f4f4f4;
+}
+div[data-type="tabs:content"]{
+  >div:first-child{
+    height: 75vh;
+    overflow-y:auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    background: #f4f4f4;
+  }
+}
+div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],div[data-ysp-modelid="mainLeaderSignNew"],div[data-ysp-modelid="innerCommunication"]{
+  .card{
+    margin: none;
+    border-radius: none;
+    box-shadow: none;
+    background: #fff;
+    color: #333;
+  }
 }
 // div[data-componentsid="uiControl55_TbO50e"]{
 //   position: fixed;
@@ -68,6 +86,24 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 
 /*  公共header样式  */
 //下边的文件上传
+.push_file_box{
+  overflow: hidden;
+  div{
+    display: inline-block;
+  }
+  button{
+    display: inline-block;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+    background: #C29A2A;
+    border-radius: 4px;
+    color: #fff;
+  }
+}
 .file2{
     position: relative;
     margin: 10px 15px 10px 0;
@@ -1658,6 +1694,13 @@ li {list-style: none}
 .ysp-serch-content-search{
   margin-top: 20px;
 }
+//三会
+
+div[data-ysp-modelid='sanhuiAppreove']{
+  .bottom_tb{
+    padding-left: 0!important;
+  }
+}
 //01合同会签样式
 div[data-ysp-modelid='hetong01']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
@@ -1685,24 +1728,7 @@ div[data-ysp-modelid='hetong01']{
   .OvsRcaoL1UILAcvWC8nMu{//面板子div
     padding: 0!important;
     .contractCountersigned_box{
-      .push_file_box{
-        overflow: hidden;
-        div{
-          display: inline-block;
-        }
-        button{
-          display: inline-block;
-          float: right;
-          height: 30px;
-          line-height: 30px;
-          border: 0;
-          margin-top: 10px;
-          margin-right: 20px;
-          background: #C29A2A;
-          border-radius: 4px;
-          color: #fff;
-        }
-      }
+      background: #fff;
       .ysp_emergency{
         border-bottom: 1px solid #ddd;
         padding-bottom: 10px;
@@ -3378,7 +3404,7 @@ div#uiControl249_85nnFq{
 //办公用品
 
 //--------------------------------------------------------------主管领导审核 START
-div[data-ysp-modelid='mainLeaderSign'], div[data-ysp-modelid='chuITgudingzichan']{
+div[data-ysp-modelid='mainLeaderSign']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
     >div{padding: 0;}
@@ -3805,8 +3831,10 @@ div[data-ysp-modelid='chairmanSign']{
       }
 }
 .edition_box_lfj{
+  background: #fff;
+  padding-top: 10px;
   .tit_yell{
-    margin: 20px 0 10px 0;
+    margin: 10px 0 10px 0;
   }
   .textArea2{
     border-radius: 5px;
@@ -3818,7 +3846,7 @@ div[data-ysp-modelid='chairmanSign']{
 }
 .summit_button_lfj{
   padding: 10px;
-  border-top: 10px solid #F3F3F3;
+  background: #fff;
   button{
     border-radius: 5px;
     background: #C29A29;
@@ -4779,4 +4807,17 @@ div[data-ysp-modelid='sendDocProcess']{
 /* ... .... ...列表搜索 -- Dialog... ..... ...*/
 .ysp-dialog-wrapper-top-serch{
   padding: 0px;
+}
+.list-serch-ul{
+  padding: 10px 0;
+}
+.ysp-list-serch-card{
+  padding: 5px 10px;
+  border-bottom: 1px solid #eee;
+  a{
+    color:#333;
+  }
+}
+.ysp-dialog-wrapper-top-serch{
+  top: 40px;
 }
