@@ -1,0 +1,536 @@
+{
+  "version": "0.1",
+  "id": "managerAuditRelateProcess",
+  "targetURL": "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+  "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelateProject": "../managerAuditRelateProject/index.json",
+    "index": "../index/index.json",
+    "choosePerson": "../choosePerson/index.json"
+  },
+  "chineseName": "总经理审批相关流程",
+  "description": "总经理审批相关流程",
+  "controls": {
+    "control21_dvKTNy": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求标题"
+              ],
+              "visText": [
+                "请求标题"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "请求标题",
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control22_BzxsFT": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              5
+            ],
+            "value": "TABLE.Shadow TABLE.BroswerStyle"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control22_BzxsFT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control30_RZlQuz": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control30_RZlQuz"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control17_LknT8t": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]/TABLE[1]",
+              "descendant::FORM[@id=\"weaver\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              5
+            ],
+            "value": "TABLE.Shadow TABLE.viewform"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control17_LknT8t"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control42_uHB0Go": {
+      "location": {
+        "data": {
+          "tagName": "SELECT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"SearchForm\"]//SELECT[@name=\"srcList\"]",
+              "descendant::SELECT[@name=\"srcList\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              15
+            ],
+            "value": "TABLE.Shadow SELECT.styled"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SELECT[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control42_uHB0Go"
+      },
+      "intendedRole": "custom",
+      "roles": "element,listbox,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control39_ifdZhx": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[9]/TD[2]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[9]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control39_ifdZhx"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control87_xcXeNq": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control87_xcXeNq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control103_8b5h3r": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求标题 创建人"
+              ],
+              "visText": [
+                "请求标题 创建人"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"weaver\"]/TABLE[1]/TBODY[1]/TR[1]",
+              "descendant::FORM[@id=\"weaver\"]//TR"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "\n      请求标题\n      \n        \n      \n      ",
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
+      "customJS": "if(elem.textContent.indexOf('创建人') !== -1){return true;}return false;"
+    }
+  },
+  "contexts": {
+    "context6_aweFC7": {
+      "controls": [
+        "control22_BzxsFT",
+        "control30_RZlQuz",
+        "control17_LknT8t",
+        "control42_uHB0Go",
+        "control39_ifdZhx",
+        "control87_xcXeNq"
+      ],
+      "anchors": [
+        "control103_8b5h3r"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow19_s54hkp": {
+      "toContexts": [
+        {
+          "toContextId": "context6_aweFC7"
+        }
+      ]
+    },
+    "flow20_z5iwHK": {
+      "fromContextId": "context6_aweFC7",
+      "fromAction": "doAction",
+      "fromControlId": "control30_RZlQuz",
+      "toContexts": [
+        {
+          "toContextId": "context6_aweFC7"
+        },
+        {
+          "toContextId": "context1_yeQcpw",
+          "toModelId": "index"
+        }
+      ]
+    },
+    "flow23_zvv5Im": {
+      "fromContextId": "context6_aweFC7",
+      "fromAction": "doAction",
+      "fromControlId": "control17_LknT8t",
+      "toContexts": [
+        {
+          "toContextId": "context6_aweFC7"
+        },
+        {
+          "toContextId": "context8_R2HN1D",
+          "toModelId": "managerAuditRelateProject"
+        },
+        {
+          "toContextId": "context10_sJa5NJ",
+          "toModelId": "choosePerson"
+        }
+      ]
+    },
+    "flow27_qq7B3n": {
+      "fromContextId": "context6_aweFC7",
+      "fromAction": "doAction",
+      "fromControlId": "control22_BzxsFT",
+      "toContexts": [
+        {
+          "toContextId": "context6_aweFC7"
+        }
+      ]
+    },
+    "flow45_xMsRU9": {
+      "fromContextId": "context6_aweFC7",
+      "fromAction": "doAction",
+      "fromControlId": "control42_uHB0Go",
+      "toContexts": [
+        {
+          "toContextId": "context6_aweFC7"
+        }
+      ]
+    },
+    "flow37_eNG2tu": {
+      "fromContextId": "context6_aweFC7",
+      "fromAction": "doAction",
+      "fromControlId": "control87_xcXeNq",
+      "toContexts": [
+        {
+          "toContextId": "context6_aweFC7"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page6_ggzZd9": {
+      "contextId": "context6_aweFC7",
+      "layout": [
+        {
+          "id": "uiControl17_NkvIbB",
+          "controlId": "control30_RZlQuz",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl17_NkvIbB",
+                "onGetTemplate": "getTemplate_uiControl17_NkvIbB"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl22_ZaAa4t",
+          "controlId": "control17_LknT8t",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl22_ZaAa4t",
+                "onGetTemplate": "getTemplate_uiControl22_ZaAa4t"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl37_Ke0JzK",
+          "controlId": "control39_ifdZhx",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl37_Ke0JzK",
+                "onGetTemplate": "getTemplate_uiControl37_Ke0JzK"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl16_dUy4PC",
+          "controlId": "control22_BzxsFT",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl16_dUy4PC",
+                "onGetTemplate": "getTemplate_uiControl16_dUy4PC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl40_QdtfpT",
+          "controlId": "control42_uHB0Go",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl40_QdtfpT",
+                "onGetTemplate": "getTemplate_uiControl40_QdtfpT"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl75_VKZLap",
+          "controlId": "control87_xcXeNq",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl75_VKZLap",
+                "onGetTemplate": "getTemplate_uiControl75_VKZLap"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context6_aweFC7": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids="
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context6_aweFC7": [
+          [
+            "main"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context6_aweFC7": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context6_aweFC7": [
+          [
+            "-/-/FRAME",
+            "-/-/NOFRAMES"
+          ]
+        ]
+      }
+    }
+  }
+}

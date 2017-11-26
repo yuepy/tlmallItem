@@ -1,0 +1,2243 @@
+{
+  "version": "0.1",
+  "id": "sendDocProcess",
+  "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215924&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+  "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "processToSend": "../processToSend/index.json",
+    "forward": "../forward/index.json"
+  },
+  "chineseName": "集团党口发文流程-审批",
+  "description": "集团党口发文流程-审批",
+  "controls": {
+    "control197_FbC7GU": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "请求:处理 - 集团党口发文流程（最新） - JRJ201710260006"
+              ],
+              "visText": [
+                "请求:处理 - 集团党口发文流程（最新） - JRJ201710260006"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('处理')!==-1&&elem.textContent.indexOf('集团党口发文流程')!==-1){return true;}return false;"
+    },
+    "control199_3o679b": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control199_3o679b"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control201_ouNyBO": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control201_ouNyBO"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control202_bfz1Gc": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control202_bfz1Gc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control204_Tuy5SW": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "所见即所得编辑器, remark, 按 ALT+0 查看帮助。"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]/IFRAME[1]",
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::SPAN[@id=\"cke_remark\"]//TD[@id=\"cke_contents_remark\"]//IFRAME",
+              "descendant::TD[@id=\"cke_contents_remark\"]//IFRAME"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              21
+            ],
+            "value": "SPAN.cke_wrapper.cke_ltr TABLE.cke_editor TD.cke_contents IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[2]/TD[2]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control204_Tuy5SW"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control211_oVCbkb": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control211_oVCbkb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control203_lSZUch": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control203_lSZUch"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control205_4SZlcl": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[3]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control205_4SZlcl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control206_3EQPGh": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control206_3EQPGh"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control208_V2mDZ4": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control208_V2mDZ4"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control209_bg4ECm": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabDoc\"]",
+              "descendant::DIV[@id=\"SignTabDoc\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control209_bg4ECm"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control210_G4H198": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[3]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control210_G4H198"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control214_ezrlGD": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]",
+              "descendant::DIV[@id=\"SignTabWF\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control214_ezrlGD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control215_EadhTn": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control215_EadhTn"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control216_8KeBlL": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control216_8KeBlL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control217_6L11zU": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control217_6L11zU"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context27_OsmsHc": {
+      "controls": [
+        "control199_3o679b",
+        "control201_ouNyBO",
+        "control202_bfz1Gc",
+        "control204_Tuy5SW",
+        "control211_oVCbkb",
+        "control203_lSZUch",
+        "control205_4SZlcl",
+        "control206_3EQPGh",
+        "control208_V2mDZ4",
+        "control209_bg4ECm",
+        "control210_G4H198",
+        "control214_ezrlGD",
+        "control215_EadhTn",
+        "control216_8KeBlL",
+        "control217_6L11zU"
+      ],
+      "anchors": [
+        "control197_FbC7GU"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow115_pHPVLx": {
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        }
+      ]
+    },
+    "flow119_srpKQQ": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control204_Tuy5SW",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        }
+      ]
+    },
+    "flow124_V2gW7N": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control211_oVCbkb",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        }
+      ]
+    },
+    "flow125_Dc2gVp": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control199_3o679b",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        }
+      ]
+    },
+    "flow126_rM365z": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control202_bfz1Gc",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        }
+      ]
+    },
+    "flow69_lCqzTz": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control205_4SZlcl",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        }
+      ]
+    },
+    "flow73_0mgIch": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control206_3EQPGh",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        },
+        {
+          "toContextId": "context10_Tp4yhH",
+          "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context23_zUAAyb",
+          "toModelId": "forward"
+        }
+      ]
+    },
+    "flow123_JTIdgi": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control208_V2mDZ4",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        }
+      ]
+    },
+    "flow133_vHOnZZ": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control210_G4H198",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        }
+      ]
+    },
+    "flow134_MNkAO1": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control215_EadhTn",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
+        }
+      ]
+    },
+    "flow135_oWpVzE": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control216_8KeBlL",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page27_Su75gM": {
+      "contextId": "context27_OsmsHc",
+      "layout": [
+        {
+          "id": "uiControl187_HnpzDu",
+          "controlId": "control205_4SZlcl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl187_HnpzDu",
+                "onGetTemplate": "getTemplate_uiControl187_HnpzDu"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl179_VOcNGV",
+          "display": {
+            "type": "tabs",
+            "adapterId": "tabs",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl179_VOcNGVitem",
+              "display": {
+                "tabTitle": "流程表单",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl183_MUGw1r",
+                  "controlId": "control201_ouNyBO",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl183_MUGw1r",
+                        "onGetTemplate": "getTemplate_uiControl183_MUGw1r"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl184_TH2ZZ2",
+                  "controlId": "control202_bfz1Gc",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl184_TH2ZZ2",
+                        "onGetTemplate": "getTemplate_uiControl184_TH2ZZ2"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl185_6vEXqX",
+                  "controlId": "control203_lSZUch",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl185_6vEXqX",
+                        "onGetTemplate": "getTemplate_uiControl185_6vEXqX"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl186_bOauWD",
+                  "controlId": "control204_Tuy5SW",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl186_bOauWD",
+                        "onGetTemplate": "getTemplate_uiControl186_bOauWD"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl197_4Xk7EC",
+                  "controlId": "control215_EadhTn",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl197_4Xk7EC",
+                        "onGetTemplate": "getTemplate_uiControl197_4Xk7EC"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl198_n3kFn0",
+                  "controlId": "control216_8KeBlL",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl198_n3kFn0",
+                        "onGetTemplate": "getTemplate_uiControl198_n3kFn0"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl199_H86Dp4",
+                  "controlId": "control217_6L11zU",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl199_H86Dp4",
+                        "onGetTemplate": "getTemplate_uiControl199_H86Dp4"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl190_dRC3MI",
+                  "controlId": "control208_V2mDZ4",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl190_dRC3MI",
+                        "onGetTemplate": "getTemplate_uiControl190_dRC3MI"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl191_xTc8JD",
+                  "controlId": "control209_bg4ECm",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl191_xTc8JD",
+                        "onGetTemplate": "getTemplate_uiControl191_xTc8JD"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl192_QaD0xU",
+                  "controlId": "control210_G4H198",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl192_QaD0xU",
+                        "onGetTemplate": "getTemplate_uiControl192_QaD0xU"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl196_NB990i",
+                  "controlId": "control214_ezrlGD",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl196_NB990i",
+                        "onGetTemplate": "getTemplate_uiControl196_NB990i"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl193_o5vSuf",
+                  "controlId": "control211_oVCbkb",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl193_o5vSuf",
+                        "onGetTemplate": "getTemplate_uiControl193_o5vSuf"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl180_T0rAvf",
+              "display": {
+                "tabTitle": "流转意见",
+                "type": "tabItem",
+                "adapterId": "tabItem",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl181_2ERHxW",
+                  "controlId": "control199_3o679b",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl181_2ERHxW",
+                        "onGetTemplate": "getTemplate_uiControl181_2ERHxW"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl188_TDVaog",
+          "controlId": "control206_3EQPGh",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl188_TDVaog",
+                "onGetTemplate": "getTemplate_uiControl188_TDVaog"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context27_OsmsHc": [
+          "00000",
+          "111111111111111",
+          "添加测试",
+          "213123123213"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context27_OsmsHc": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215924&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215920&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339246&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339255&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
+        ],
+        "context10_Tp4yhH": [
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=162836&workflowRequestLogId=-1",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=118374&workflowRequestLogId=-1",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=339254&workflowRequestLogId=-1"
+        ],
+        "context23_zUAAyb": [
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312802%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312804%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312805%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D339254%26isqc%3D1"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context27_OsmsHc": [
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "WfText",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "divWfText",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "requestmarkSpan",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv",
+            "triSubwfIframe",
+            "wfdoc",
+            "workflowtext"
+          ]
+        ],
+        "context10_Tp4yhH": [
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "SWFUpload_",
+            "_xTable",
+            "btnCancelannexupload",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divStatusannexupload",
+            "divTopTitle",
+            "docimages_num",
+            "field-annexupload",
+            "field-annexupload_tab",
+            "field-annexuploadspan",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "fsUploadProgressannexupload",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "signdocids",
+            "signdocspan",
+            "signworkflowids",
+            "signworkflowspan",
+            "uploadFileName_remark"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "SWFUpload_",
+            "_xTable",
+            "btnCancelannexupload",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_elementspath__",
+            "cke_elementspath___label",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divStatusannexupload",
+            "divTopTitle",
+            "docimages_num",
+            "field-annexupload",
+            "field-annexupload_tab",
+            "field-annexuploadspan",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "fsUploadProgressannexupload",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "signdocids",
+            "signdocspan",
+            "signworkflowids",
+            "signworkflowspan",
+            "uploadFileName_remark"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "_xTable",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divTopTitle",
+            "docimages_num",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "uploadFileName_remark"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "_xTable",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_elementspath__",
+            "cke_elementspath___label",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divTopTitle",
+            "docimages_num",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "uploadFileName_remark"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "_xTable",
+            "btnCancelannexupload",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divStatusannexupload",
+            "divTopTitle",
+            "docimages_num",
+            "field-annexupload",
+            "field-annexupload_tab",
+            "field-annexuploadspan",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "fsUploadProgressannexupload",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "signdocids",
+            "signdocspan",
+            "signworkflowids",
+            "signworkflowspan",
+            "spanButtonPlaceHolderannexupload",
+            "uploadFileName_remark"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context27_OsmsHc": [
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_doDelete",
+            "btn_edit",
+            "btn_forward",
+            "btn_print",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_edit",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ]
+        ],
+        "context10_Tp4yhH": [
+          [
+            "Browser",
+            "InputStyle",
+            "Inputstyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "Title",
+            "TopTitle",
+            "ViewForm",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "cke_",
+            "cke_bottom",
+            "cke_browser_quirks",
+            "cke_browser_webkit",
+            "cke_button",
+            "cke_button_bgcolor",
+            "cke_button_bold",
+            "cke_button_customimage",
+            "cke_button_flash",
+            "cke_button_indent",
+            "cke_button_insertcrm",
+            "cke_button_insertdocs",
+            "cke_button_insertproject",
+            "cke_button_inserttask",
+            "cke_button_insertwf",
+            "cke_button_italic",
+            "cke_button_justifyblock",
+            "cke_button_justifycenter",
+            "cke_button_justifyleft",
+            "cke_button_justifyright",
+            "cke_button_link",
+            "cke_button_outdent",
+            "cke_button_redo",
+            "cke_button_source",
+            "cke_button_table",
+            "cke_button_textcolor",
+            "cke_button_underline",
+            "cke_button_undo",
+            "cke_button_unlink",
+            "cke_buttonarrow",
+            "cke_contents",
+            "cke_disabled",
+            "cke_editor",
+            "cke_editor_remark",
+            "cke_empty",
+            "cke_font",
+            "cke_fontSize",
+            "cke_icon",
+            "cke_inline_label",
+            "cke_label",
+            "cke_ltr",
+            "cke_off",
+            "cke_openbutton",
+            "cke_path",
+            "cke_rcombo",
+            "cke_separator",
+            "cke_skin_v",
+            "cke_text",
+            "cke_toolbar",
+            "cke_toolbar_end",
+            "cke_toolbar_start",
+            "cke_toolbox",
+            "cke_toolbox_collapser",
+            "cke_toolgroup",
+            "cke_top",
+            "cke_voice_label",
+            "cke_wrapper",
+            "clickRightMenu",
+            "datalight",
+            "drop-shadow",
+            "editorImgWin",
+            "field",
+            "fieldset",
+            "flash",
+            "highslide-container",
+            "highslide-loading",
+            "simplehrmhead",
+            "swfupload"
+          ],
+          [
+            "Browser",
+            "InputStyle",
+            "Inputstyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "Title",
+            "TopTitle",
+            "ViewForm",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "cke_",
+            "cke_bottom",
+            "cke_browser_quirks",
+            "cke_browser_webkit",
+            "cke_button",
+            "cke_button_bgcolor",
+            "cke_button_bold",
+            "cke_button_customimage",
+            "cke_button_flash",
+            "cke_button_indent",
+            "cke_button_insertcrm",
+            "cke_button_insertdocs",
+            "cke_button_insertproject",
+            "cke_button_inserttask",
+            "cke_button_insertwf",
+            "cke_button_italic",
+            "cke_button_justifyblock",
+            "cke_button_justifycenter",
+            "cke_button_justifyleft",
+            "cke_button_justifyright",
+            "cke_button_link",
+            "cke_button_outdent",
+            "cke_button_redo",
+            "cke_button_source",
+            "cke_button_table",
+            "cke_button_textcolor",
+            "cke_button_underline",
+            "cke_button_undo",
+            "cke_button_unlink",
+            "cke_buttonarrow",
+            "cke_contents",
+            "cke_disabled",
+            "cke_editor",
+            "cke_editor_remark",
+            "cke_empty",
+            "cke_font",
+            "cke_fontSize",
+            "cke_icon",
+            "cke_inline_label",
+            "cke_label",
+            "cke_ltr",
+            "cke_off",
+            "cke_on",
+            "cke_openbutton",
+            "cke_path",
+            "cke_rcombo",
+            "cke_separator",
+            "cke_skin_v",
+            "cke_text",
+            "cke_toolbar",
+            "cke_toolbar_end",
+            "cke_toolbar_start",
+            "cke_toolbox",
+            "cke_toolbox_collapser",
+            "cke_toolgroup",
+            "cke_top",
+            "cke_voice_label",
+            "cke_wrapper",
+            "clickRightMenu",
+            "datalight",
+            "drop-shadow",
+            "editorImgWin",
+            "field",
+            "fieldset",
+            "flash",
+            "highslide-container",
+            "highslide-loading",
+            "simplehrmhead",
+            "swfupload"
+          ],
+          [
+            "Browser",
+            "Inputstyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "Title",
+            "TopTitle",
+            "ViewForm",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "cke_",
+            "cke_bottom",
+            "cke_browser_quirks",
+            "cke_browser_webkit",
+            "cke_button",
+            "cke_button_bgcolor",
+            "cke_button_bold",
+            "cke_button_customimage",
+            "cke_button_flash",
+            "cke_button_indent",
+            "cke_button_insertcrm",
+            "cke_button_insertdocs",
+            "cke_button_insertproject",
+            "cke_button_inserttask",
+            "cke_button_insertwf",
+            "cke_button_italic",
+            "cke_button_justifyblock",
+            "cke_button_justifycenter",
+            "cke_button_justifyleft",
+            "cke_button_justifyright",
+            "cke_button_link",
+            "cke_button_outdent",
+            "cke_button_redo",
+            "cke_button_source",
+            "cke_button_table",
+            "cke_button_textcolor",
+            "cke_button_underline",
+            "cke_button_undo",
+            "cke_button_unlink",
+            "cke_buttonarrow",
+            "cke_contents",
+            "cke_disabled",
+            "cke_editor",
+            "cke_editor_remark",
+            "cke_empty",
+            "cke_font",
+            "cke_fontSize",
+            "cke_icon",
+            "cke_inline_label",
+            "cke_label",
+            "cke_ltr",
+            "cke_off",
+            "cke_openbutton",
+            "cke_path",
+            "cke_rcombo",
+            "cke_separator",
+            "cke_skin_v",
+            "cke_text",
+            "cke_toolbar",
+            "cke_toolbar_end",
+            "cke_toolbar_start",
+            "cke_toolbox",
+            "cke_toolbox_collapser",
+            "cke_toolgroup",
+            "cke_top",
+            "cke_voice_label",
+            "cke_wrapper",
+            "clickRightMenu",
+            "datalight",
+            "drop-shadow",
+            "editorImgWin",
+            "field",
+            "highslide-container",
+            "highslide-loading",
+            "simplehrmhead"
+          ],
+          [
+            "Browser",
+            "Inputstyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "Title",
+            "TopTitle",
+            "ViewForm",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "cke_",
+            "cke_bottom",
+            "cke_browser_quirks",
+            "cke_browser_webkit",
+            "cke_button",
+            "cke_button_bgcolor",
+            "cke_button_bold",
+            "cke_button_customimage",
+            "cke_button_flash",
+            "cke_button_indent",
+            "cke_button_insertcrm",
+            "cke_button_insertdocs",
+            "cke_button_insertproject",
+            "cke_button_inserttask",
+            "cke_button_insertwf",
+            "cke_button_italic",
+            "cke_button_justifyblock",
+            "cke_button_justifycenter",
+            "cke_button_justifyleft",
+            "cke_button_justifyright",
+            "cke_button_link",
+            "cke_button_outdent",
+            "cke_button_redo",
+            "cke_button_source",
+            "cke_button_table",
+            "cke_button_textcolor",
+            "cke_button_underline",
+            "cke_button_undo",
+            "cke_button_unlink",
+            "cke_buttonarrow",
+            "cke_contents",
+            "cke_disabled",
+            "cke_editor",
+            "cke_editor_remark",
+            "cke_empty",
+            "cke_font",
+            "cke_fontSize",
+            "cke_icon",
+            "cke_inline_label",
+            "cke_label",
+            "cke_ltr",
+            "cke_off",
+            "cke_on",
+            "cke_openbutton",
+            "cke_path",
+            "cke_rcombo",
+            "cke_separator",
+            "cke_skin_v",
+            "cke_text",
+            "cke_toolbar",
+            "cke_toolbar_end",
+            "cke_toolbar_start",
+            "cke_toolbox",
+            "cke_toolbox_collapser",
+            "cke_toolgroup",
+            "cke_top",
+            "cke_voice_label",
+            "cke_wrapper",
+            "clickRightMenu",
+            "datalight",
+            "drop-shadow",
+            "editorImgWin",
+            "field",
+            "highslide-container",
+            "highslide-loading",
+            "simplehrmhead"
+          ],
+          [
+            "Browser",
+            "InputStyle",
+            "Inputstyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "Title",
+            "TopTitle",
+            "ViewForm",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "cke_",
+            "cke_bottom",
+            "cke_browser_quirks",
+            "cke_browser_webkit",
+            "cke_button",
+            "cke_button_bgcolor",
+            "cke_button_bold",
+            "cke_button_customimage",
+            "cke_button_flash",
+            "cke_button_indent",
+            "cke_button_insertcrm",
+            "cke_button_insertdocs",
+            "cke_button_insertproject",
+            "cke_button_inserttask",
+            "cke_button_insertwf",
+            "cke_button_italic",
+            "cke_button_justifyblock",
+            "cke_button_justifycenter",
+            "cke_button_justifyleft",
+            "cke_button_justifyright",
+            "cke_button_link",
+            "cke_button_outdent",
+            "cke_button_redo",
+            "cke_button_source",
+            "cke_button_table",
+            "cke_button_textcolor",
+            "cke_button_underline",
+            "cke_button_undo",
+            "cke_button_unlink",
+            "cke_buttonarrow",
+            "cke_contents",
+            "cke_disabled",
+            "cke_editor",
+            "cke_editor_remark",
+            "cke_empty",
+            "cke_font",
+            "cke_fontSize",
+            "cke_icon",
+            "cke_inline_label",
+            "cke_label",
+            "cke_ltr",
+            "cke_off",
+            "cke_openbutton",
+            "cke_path",
+            "cke_rcombo",
+            "cke_separator",
+            "cke_skin_v",
+            "cke_text",
+            "cke_toolbar",
+            "cke_toolbar_end",
+            "cke_toolbar_start",
+            "cke_toolbox",
+            "cke_toolbox_collapser",
+            "cke_toolgroup",
+            "cke_top",
+            "cke_voice_label",
+            "cke_wrapper",
+            "clickRightMenu",
+            "datalight",
+            "drop-shadow",
+            "editorImgWin",
+            "field",
+            "fieldset",
+            "flash",
+            "highslide-container",
+            "highslide-loading",
+            "simplehrmhead"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context27_OsmsHc": [
+          [
+            "-/-/DIV",
+            "-/-/IFRAME",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ]
+        ],
+        "context10_Tp4yhH": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/OBJECT",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/OBJECT/PARAM",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/FONT",
+            "SPAN/SPAN/IMG",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/COLGROUP",
+            "TD/TABLE/INPUT-hidden",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/A/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/OBJECT",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/OBJECT/PARAM",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/FONT",
+            "SPAN/SPAN/IMG",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/COLGROUP",
+            "TD/TABLE/INPUT-hidden",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/A/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/FONT",
+            "SPAN/SPAN/IMG",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/COLGROUP",
+            "TD/TABLE/INPUT-hidden",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ]
+        ]
+      }
+    }
+  }
+}
