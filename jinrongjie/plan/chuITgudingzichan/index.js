@@ -573,9 +573,7 @@
       // }
       switch (data.eventType) {case 'downLoad':
           var buttonList = elem.querySelectorAll('#selectDownload');var downLoadIndex = data.dataCustom;break;case 'changePrice':
-          changePrice(data.dataCustom);break;case '':
-          break;case '':
-          break;}function changePrice(data) {
+          changePrice(data.dataCustom);break;}function changePrice(data) {
         switch (data.type) {case 'changePrice':
             // alert(data.index);
             elem.querySelectorAll('table[id*="detailFieldTable"][class="ListStyle"]')[2].querySelectorAll('input')[data.index].value = data.value;console.log(elem.querySelectorAll('table[id*="detailFieldTable"][class="ListStyle"]'));console;break;}
