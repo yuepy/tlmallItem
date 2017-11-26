@@ -33,8 +33,8 @@
           var rows = [[[], []], []]; //获取所有tr里奇数行的title
           if ($(d).children("td").length == 1) {
             //里面含有table的
-            var table = [[], [], [], [], [], [], []];table[3].push("reciewInfo");var detailtableTD = $(d).children("td").find("table[id*='table'] tbody tr").eq(2).find(".detailtableTD");var detail1 = detailtableTD.eq(0).find("span[name='detailIndexSpan0']");var detail2 = detailtableTD.eq(1).find("span");var detail3 = detailtableTD.eq(2).find("select");var detail4 = detailtableTD.eq(3).find("textarea");for (var i = 0; i < detail1.length; i++) {
-              table[0].push(detail1[i].textContent);table[1].push(detail2[i].textContent);var options = detail3[i].querySelectorAll("option");for (var n = 0; n < options.length; n++) {
+            var table = [[], [], [], [], [], [], []];table[3].push("reciewInfo");var detailtableTD = $(d).children("td").find("table[id*='table'] tbody tr").eq(2).find(".detailtableTD");var detail1 = detailtableTD.eq(0).find("span[name='detailIndexSpan0']");var detail2 = detailtableTD.eq(1).find("input[temptitle='未打卡日期']");var detail3 = detailtableTD.eq(2).find("select");var detail4 = detailtableTD.eq(3).find("textarea");for (var i = 0; i < detail1.length; i++) {
+              table[0].push(detail1[i].textContent);table[1].push(detail2[i].value);var options = detail3[i].querySelectorAll("option");for (var n = 0; n < options.length; n++) {
                 if (options[n].selected) {
                   table[2].push(options[n].textContent);
                 }
@@ -118,7 +118,8 @@
               rows[1].push(dt.textContent.replace(/\s/g, "").trim());
             }
           });obj.data.push(rows);
-        });obj.data.pop();if (elem.querySelector('input[temptitle="申请人岗位"]')) {
+        });obj.data.pop();
+        if (elem.querySelector('input[temptitle="申请人岗位"]')) {
           obj.currentVal = elem.querySelector('input[temptitle="申请人岗位"]').value;
         }if (elem.querySelector('input[temptitle="工作交接人"]')) {
           obj.workVal = obj && elem.querySelector('input[temptitle="工作交接人"]').value;
