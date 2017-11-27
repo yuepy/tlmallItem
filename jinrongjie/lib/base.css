@@ -36,6 +36,7 @@ div[data-type="tabs:content"] > div:first-child {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background: #f4f4f4;
+  padding: 0;
 }
 div[data-ysp-modelid="ITdeviceAppply"] .ysp_table_lfj {
   height: 75vh;
@@ -52,6 +53,14 @@ div[data-ysp-modelid="exceptITAssetsApplication"] .card {
   box-shadow: none;
   background: #fff;
   color: #333;
+}
+div[data-ysp-modelid="managerSignNew"] .card-body,
+div[data-ysp-modelid="chairmanSignNew"] .card-body,
+div[data-ysp-modelid="mainLeaderSignNew"] .card-body,
+div[data-ysp-modelid="innerCommunication"] .card-body,
+div[data-ysp-modelid="exceptITAssetsApplication"] .card-body {
+  padding: 0;
+  margin: 0;
 }
 /*  公共header样式  */
 .push_file_box {
