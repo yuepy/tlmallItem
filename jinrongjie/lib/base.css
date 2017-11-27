@@ -23,7 +23,8 @@ h5 {
 #uiControl241_LVqr6ibody,
 #uiControl242_Gr2ZsBbody,
 #uiControl254_pZRQ8nbody,
-.ysp_table_office_lfj {
+.ysp_table_office_lfj,
+#uiControl273_ndTGVFbody {
   height: 75vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -35,6 +36,7 @@ div[data-type="tabs:content"] > div:first-child {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background: #f4f4f4;
+  padding: 0;
 }
 div[data-ysp-modelid="ITdeviceAppply"] .ysp_table_lfj {
   height: 75vh;
@@ -44,12 +46,21 @@ div[data-ysp-modelid="ITdeviceAppply"] .ysp_table_lfj {
 div[data-ysp-modelid="managerSignNew"] .card,
 div[data-ysp-modelid="chairmanSignNew"] .card,
 div[data-ysp-modelid="mainLeaderSignNew"] .card,
-div[data-ysp-modelid="innerCommunication"] .card {
-  margin: none;
+div[data-ysp-modelid="innerCommunication"] .card,
+div[data-ysp-modelid="exceptITAssetsApplication"] .card {
+  margin: 0;
   border-radius: none;
   box-shadow: none;
   background: #fff;
   color: #333;
+}
+div[data-ysp-modelid="managerSignNew"] .card-body,
+div[data-ysp-modelid="chairmanSignNew"] .card-body,
+div[data-ysp-modelid="mainLeaderSignNew"] .card-body,
+div[data-ysp-modelid="innerCommunication"] .card-body,
+div[data-ysp-modelid="exceptITAssetsApplication"] .card-body {
+  padding: 0;
+  margin: 0;
 }
 /*  公共header样式  */
 .push_file_box {
@@ -4823,6 +4834,7 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
 .ysp-dialog-wrapper-top-serch {
   top: 40px;
 }
-div[data-ysp-modelid='ITdevice'] .ysp_table_lfj {
+div[data-ysp-modelid='ITdevice'] .ysp_table_lfj,
+div[data-ysp-modelid='02freeshenpi'] .ysp_table_lfj {
   margin-top: 0!important;
 }
