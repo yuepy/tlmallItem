@@ -370,7 +370,7 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
       }if (data.eventType == 'click') {
-        console.log(elem);elem.querySelector("#Filedata").click();
+        console.log(elem);elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');elem.querySelector("#Filedata").click();
       }
     },
     getTemplate_uiControl202_Ue4GaG: function () {
