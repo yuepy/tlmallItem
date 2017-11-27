@@ -12,9 +12,21 @@
         var d = data.dataCustom;var signFour = elem.querySelectorAll('.mini-textbox-input')[0];signFour.value = d;
       } else if (data.eventType == 'click') {
         var d = data.dataCustom;if (d == 'btn ysp-sure') {
-          var signOne = elem.ownerDocument.querySelectorAll('#save')[0];signOne.click();var json = { time: new Date().getTime() }; // @可选的url：浏览器不会检查url是否存在，只改变url，url必须同域，不能跨域
-          var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
-            ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+          // var signOne = elem.ownerDocument.querySelectorAll('#cancel')[0];
+          //   signOne.click();
+          var signOne = elem.ownerDocument.querySelectorAll('#save')[0];signOne.click();console.log(_fk);var _fk = elem.ownerDocument.defaultView.parent.document.querySelector('.mini-window-drag').querySelector('iframe').contentWindow.document.querySelector('iframe').contentWindow.document.querySelector('.mini-tips-danger');if (_fk) {
+            var json = { time: new Date().getTime() }; // @状态对象：记录历史记录点的额外对象，可以为空
+            // @页面标题：目前所有浏览器都不支持
+
+            // @可选的url：浏览器不会检查url是否存在，只改变url，url必须同域，不能跨域
+            var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
+              history.go(-1);
+            }
+          } else {
+            var json = { time: new Date().getTime() }; // @可选的url：浏览器不会检查url是否存在，只改变url，url必须同域，不能跨域
+            var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
+              ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+            }
           }
         } else if (d == 'btn ysp-miss') {
           var signOne = elem.ownerDocument.querySelectorAll('#cancel')[0];signOne.click();var json = { time: new Date().getTime() }; // @状态对象：记录历史记录点的额外对象，可以为空

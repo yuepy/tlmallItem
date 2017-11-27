@@ -1309,7 +1309,7 @@
       //   return elem.querySelector("#toast").textContent;
       // }
       if (elem) {
-        console.log(elem);var data = { button: [], tip: "" };var windowDrag = elem.querySelector(".mini-window-drag");if (windowDrag) {
+        var data = { button: [], tip: "" };var windowDrag = elem.querySelector(".mini-window-drag");if (windowDrag) {
           var iframeOuter = elem.querySelector(".mini-window-drag").querySelector("iframe");if (iframeOuter) {
             var btns = iframeOuter.contentDocument.querySelector("#btn");var agreeBtn = iframeOuter.contentDocument.querySelector('#td_0_0');var disagreeBtn = iframeOuter.contentDocument.querySelector('#td_0_1');if (btns && btns.style.display != "none" && agreeBtn) {
               data.button.push(agreeBtn.textContent);
@@ -1330,15 +1330,14 @@
     doAction_uiControl33_sIcNwa: function (data, elem) {
       if (data.eventType == 'click') {
         var d = data.dataCustom.classNames;if (d == 'btn ysp-btn-one') {
-          var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");var tip = elem.querySelector("#toast");if (tip) {
-            _btnTwo.click();var json = { time: new Date().getTime() };setTimeout(function () {
-              ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
-            }, 10);
-          } else {
-            setTimeout(function () {
-              _btnTwo.click();
-            }, 10);
-          }
+          var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");_btnTwo.click();setTimeout(function () {
+            var tip = elem.querySelectorAll(".mini-window-drag");if (tip.length == 1) {
+              //_btnTwo.click(); 
+              var json = { time: new Date().getTime() };setTimeout(function () {
+                ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+              }, 20);
+            }
+          }, 10);
         } else if (d == 'btn ysp-btn-two') {
           var btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_0')[0].querySelector("a");if (data.dataCustom.text == "执行") {
             btnTwo.click();
