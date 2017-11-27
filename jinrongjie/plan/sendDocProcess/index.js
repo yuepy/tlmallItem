@@ -121,14 +121,6 @@
           });$(trItem).children("td:nth-child(even)").each(function (idx, dt) {
             if (dt.querySelector("select")) {
               var optionIndex = dt.querySelector('select').selectedIndex;content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
-            } else if (dt.querySelector("input[type='text']")) {
-              content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
-            } else if (trItem.querySelector('td').textContent.indexOf('党办主任') !== -1) {
-              content.push(dt.textContent.replace(/\s/g, "").trim());
-            } else if (trItem.querySelector('td').textContent.indexOf('人力总监') !== -1) {
-              content.push(dt.textContent.replace(/\s/g, "").trim());
-            } else if (trItem.querySelector('td').textContent.indexOf('党委书记') !== -1) {
-              content.push(dt.textContent.replace(/\s/g, "").trim());
             } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
                 if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
@@ -141,10 +133,22 @@
                   } else {
                     content.push([]);
                   }
-                } else {
+                } else if (dt.querySelector("span")) {
                   content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
+                } else {
+                  content.push(dt.textContent.replace(/\s/g, "").trim());
                 }
               }
+            } else if (dt.querySelector("input[type='text']")) {
+              content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
+            } else if (dt.querySelector("textarea")) {
+              content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
+            } else if (trItem.querySelector('td').textContent.indexOf('党办主任') !== -1) {
+              content.push(dt.textContent.replace(/\s/g, "").trim());
+            } else if (trItem.querySelector('td').textContent.indexOf('人力总监') !== -1) {
+              content.push(dt.textContent.replace(/\s/g, "").trim());
+            } else if (trItem.querySelector('td').textContent.indexOf('党委书记') !== -1) {
+              content.push(dt.textContent.replace(/\s/g, "").trim());
             } else if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
               content.push([]);
             }
@@ -171,7 +175,7 @@
     doAction_uiControl185_6vEXqX: function (data, elem) {},
     getTemplate_uiControl185_6vEXqX: function () {
       var selfTemplate = 'import { Component } from \'react\';\nimport { CustomHeader } from \'ysp-custom-components\';\n\nexport default class extends Component {\n  \n  render(){\n      var data = this.props.customData||"";\n      return <div style={{\'border\':\'none\'}} className="ysp-manager-audit-title-icon"><span>{data}</span></div>;\n  }\n}';
-      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: \'render\',\n    value: function render() {\n      var data = this.props.customData || "";\n      return React.createElement(\n        \'div\',\n        { style: { \'border\': \'none\' }, className: \'ysp-manager-audit-title-icon\' },\n        React.createElement(\n          \'span\',\n          null,\n          data\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
+      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n      var data = this.props.customData || \"\";\n      return React.createElement(\n        'div',\n        { style: { 'border': 'none' }, className: 'ysp-manager-audit-title-icon' },\n        React.createElement(\n          'span',\n          null,\n          data\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
     },
     getData_control205_4SZlcl: function (elem) {
       if (!elem) {

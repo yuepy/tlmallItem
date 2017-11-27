@@ -28,7 +28,8 @@ h5 {
 #uiControl242_Gr2ZsBbody,
 #uiControl254_pZRQ8nbody,
 .ysp_table_office_lfj,
-#uiControl273_ndTGVFbody {
+#uiControl273_ndTGVFbody,
+#uiControl300_TAg1T9body {
   height: 75vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -42,8 +43,7 @@ div[data-type="tabs:content"] > div:first-child {
   background: #f4f4f4;
   padding: 0;
 }
-div[data-ysp-modelid="ITdeviceAppply"] .ysp_table_lfj,
-div[data-ysp-modelid="02reeCreate"] .ysp_table_lfj {
+div[data-ysp-modelid="ITdeviceAppply"] .ysp_table_lfj {
   height: 75vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -52,7 +52,8 @@ div[data-ysp-modelid="managerSignNew"] .card,
 div[data-ysp-modelid="chairmanSignNew"] .card,
 div[data-ysp-modelid="mainLeaderSignNew"] .card,
 div[data-ysp-modelid="innerCommunication"] .card,
-div[data-ysp-modelid="exceptITAssetsApplication"] .card {
+div[data-ysp-modelid="exceptITAssetsApplication"] .card,
+div[data-ysp-modelid="sendDocProcessNew"] .card {
   margin: 0;
   border-radius: none;
   box-shadow: none;
@@ -63,11 +64,24 @@ div[data-ysp-modelid="managerSignNew"] .card-body,
 div[data-ysp-modelid="chairmanSignNew"] .card-body,
 div[data-ysp-modelid="mainLeaderSignNew"] .card-body,
 div[data-ysp-modelid="innerCommunication"] .card-body,
-div[data-ysp-modelid="exceptITAssetsApplication"] .card-body {
+div[data-ysp-modelid="exceptITAssetsApplication"] .card-body,
+div[data-ysp-modelid="sendDocProcessNew"] .card-body {
   padding: 0;
   margin: 0;
 }
 /*  公共header样式  */
+#open_div_lfj .bottom_box .bottom_tb {
+  padding-left: 15px;
+}
+#open_div_lfj .bottom_box .bottom_tb > *:nth-child(n+11) {
+  display: block;
+}
+#open_div_lfj .button_more {
+  display: none;
+}
+#open_div_lfj .button_less {
+  display: block;
+}
 .push_file_box {
   overflow: hidden;
 }
@@ -1460,6 +1474,7 @@ li {
   background-size: 40%;
 }
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li {
+  height: 40px;
   line-height: 40px;
   border-bottom: 1px solid #eee;
   margin-left: 20px;
@@ -2278,7 +2293,6 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word {
   overflow: hidden;
-  padding: 5px 0;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .download,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .download,
@@ -2417,9 +2431,9 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   background: url("../lib/images/defaultDocument.png") no-repeat;
   background-size: 20px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .deleteFile,
-div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .deleteFile,
-div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .deleteFile {
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete {
   float: right;
   background: url("../lib/images/deleteM.png") no-repeat;
   background-size: 10px;
