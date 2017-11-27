@@ -328,10 +328,10 @@
         });
       }data.title.push('创建时间', '文档名称', '文档所有者');return data;
     },
-    doAction_uiControl171_81uFLX: function (data, elem) {
-      if (data.eventType == 'click') {
-        var idx = parseInt(data.dataCustom) + 1;$(elem).find('tr').eq(idx).find("a").eq(0).click();
-      }
+    doAction_uiControl171_81uFLX: function (data, elem) {// if (data.eventType == 'click') {
+      //   var idx = parseInt(data.dataCustom) + 1;
+      //   $(elem).find('tr').eq(idx).find("a").eq(0).click();
+      // }
     },
     getTemplate_uiControl171_81uFLX: function () {
       var selfTemplate = "module.exports = React.createClass({\n  click:function(e){\n    if(e.target.className == 'section_box'){\n      var _target = e.target;\n    }\n    else if(e.target.tagName == 'LI'){\n      var _target = e.target.parentElement;\n    }\n    else if(e.target.tagName == 'SPAN'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click',\n        data: _target.getAttribute('data-index')\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData||[];\n    var _this = this;\n    if(data&&data.text&&data.text.length > 0){\n          var item = data.text.map(function(d1,i1){\n        return(<li className='section_box' onClick={_this.click} data-index = {i1}>\n          {\n            d1.map(function(d2,i2){\n          return(<li><span>{data.title[i2]}</span><span>{d2}</span></li>)\n        })\n            }\n          </li>)\n      })\n    }\n    if(data&&data.text&&data.text.length > 0){\n       return(<ul className='document_final_lfj'>\n        {item}\n      </ul>)\n    }\n    else{\n       return(<ul className='document_final_lfj' style ={{margin:'10px',display:'none'}}>\u6CA1\u6709\u76F8\u5173\u6587\u6863</ul>)\n    }\n  }\n});";
@@ -363,10 +363,10 @@
         data.title.push($(this).text().trim());
       });return data;
     },
-    doAction_uiControl173_O7qHKR: function (data, elem) {
-      if (data.eventType == 'click') {
-        var idx = parseInt(data.dataCustom) + 1;$(elem).find('tr').eq(idx).find("a").eq(1).click();
-      }
+    doAction_uiControl173_O7qHKR: function (data, elem) {// if (data.eventType == 'click') {
+      //   var idx = parseInt(data.dataCustom) + 1;
+      //   $(elem).find('tr').eq(idx).find("a").eq(1).click();
+      // }
     },
     getTemplate_uiControl173_O7qHKR: function () {
       var selfTemplate = "module.exports = React.createClass({\n    click:function(e){\n    if(e.target.className == 'section_box'){\n      var _target = e.target;\n    }\n    else if(e.target.tagName == 'LI'){\n      var _target = e.target.parentElement;\n    }\n    else if(e.target.tagName == 'SPAN'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click',\n        data: _target.getAttribute('data-index')\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData||[];\n    var _this = this;\n    if(data&&data.text&&data.text.length > 0){\n          var item = data.text.map(function(d1,i1){\n        return(<li className='section_box' onClick={_this.click} data-index = {i1}>\n          {\n            d1.map(function(d2,i2){\n          return(<li><span>{data.title[i2]}</span><span>{d2}</span></li>)\n        })\n            }\n          </li>)\n      })\n    }\n    if(data&&data.text&&data.text.length > 0){\n       return(<ul style ={{display:'none'}} className='process_final_lfj'>\n        {item}\n      </ul>)\n    }\n    else{\n        return(<ul className='process_final_lfj' style ={{margin:'10px',display:'none'}}>\u6CA1\u6709\u76F8\u5173\u6D41\u7A0B</ul>)\n    }\n  }\n});";
