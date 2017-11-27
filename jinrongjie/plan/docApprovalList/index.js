@@ -208,24 +208,30 @@
               var optionIndex = dt.querySelector('select').selectedIndex;content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
             } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
-                if (dt.querySelector('#selectDownload')) {
+                if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
                   var files = dt.querySelectorAll('a');var fileName = [];if (files.length > 0) {
                     [].forEach.call(files, function (fileItem, fileIndex) {
                       if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
                         fileName.push(fileItem.textContent.trim());var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('(')));
                       }
                     });content.push(fileName);
+                  } else {
+                    content.push([]);
                   }
-                } else {
+                } else if (dt.querySelector("span")) {
                   content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
+                } else {
+                  content.push(dt.textContent.replace(/\s/g, ""));
                 }
               }
             } else if (dt.querySelector("input[type='text']")) {
               content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
             } else if (dt.querySelector("textarea")) {
               content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
-            } else {
-              content.push('');
+            } else if (trItem.querySelector('td').textContent == '本公司内部签批意见') {
+              content.push(dt.textContent.trim());
+            } else if (trItem.querySelector('td').textContent == '报送集团相关领导') {
+              content.push(dt.textContent.trim());
             }
           });
         });data.titles = titles;data.content = content;data.fileSize = fileSize;return data;

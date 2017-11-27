@@ -56,8 +56,10 @@
                   } else {
                     content.push([]);
                   }
-                } else {
+                } else if (dt.querySelector("span")) {
                   content.push(dt.querySelector("span").textContent.replace(/\s/g, "").trim());
+                } else {
+                  content.push(dt.textContent.replace(/\s/g, "").trim());
                 }
               }
             } else if (dt.querySelector("input[type='text']")) {
