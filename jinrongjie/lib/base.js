@@ -511,6 +511,7 @@
                           div1.appendChild(div2);
                           div1.appendChild(div3);
                           div1.appendChild(div4);
+                          this.parentElement.getAttribute('file-num');
                           this.ownerDocument.querySelector('.fieldset').appendChild(div);
                           var xhr = new XMLHttpRequest();
                           var form = file && file.parentElement;//找到对应的form
@@ -525,11 +526,7 @@
                             if (xhr.readyState == 4 && xhr.status == 200) {
                               responseT = xhr.responseText;
                               up.call(target,target,responseT);
-                              if(e.target.parentElement.getAttribute('file-num') == '1'){
-                                topWindow.file.push(ysp.customHelper.trim(responseT));
-                              }else if(e.target.parentElement.getAttribute('file-num') == '2'){
-                                topWindow.file_two.push(ysp.customHelper.trim(responseT));
-                              }
+                              topWindow.file.push(ysp.customHelper.trim(responseT));
                             }
                           }
                           // cb && cb.call(target);
