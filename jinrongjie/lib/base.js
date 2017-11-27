@@ -512,7 +512,9 @@
                           div1.appendChild(div3);
                           div1.appendChild(div4);
                           this.parentElement.getAttribute('file-num');
+                          //附件上传 文件放置DIV
                           this.ownerDocument.querySelector('.fieldset').appendChild(div);
+                          //附件上传 文件放置DIV
                           var xhr = new XMLHttpRequest();
                           var form = file && file.parentElement;//找到对应的form
                           var fileName = form.Filename;//找到input name=filename的元素，
@@ -568,10 +570,12 @@
 
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
-                var actionEvent = '{"target":"null","data":"getNumber"}';
-                var parent = aWin.frameElement.ownerDocument.defaultView;
-                parent && parent.EAPI.postMessageToNative('getNum', actionEvent);
-                parent && topWindow.EAPI.postMessageToNative('getToken', null);
+              	var parent = aWin.frameElement.ownerDocument.defaultView;
+              	if(parent.EAPI.isIOS()){
+                  var actionEvent = '{"target":"null","data":"getNumber"}';
+                  parent && parent.EAPI.postMessageToNative('getNum', actionEvent);
+                	parent && topWindow.EAPI.postMessageToNative('getToken', null);
+                }
                 sessionStorage.setItem('getTokenURl', true);
                 token_flag = true;
             }

@@ -191,7 +191,7 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
       }if (data.eventType == 'click') {
-        $(elem).find("#Filedata").click();
+        elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');$(elem).find("#Filedata").click();
       }
     },
     getTemplate_uiControl200_8eVc09: function () {

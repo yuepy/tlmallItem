@@ -42,8 +42,8 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 .view-item{
   background: #f3f3f3;
 }
-//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动，按顺序依次managerSignNew/mainLeaderSignNew/innerCommunication/exceptITAssetsApplication
-#uiControl240_lcFRXVbody,#uiControl241_LVqr6ibody,#uiControl242_Gr2ZsBbody,#uiControl254_pZRQ8nbody,.ysp_table_office_lfj,#uiControl273_ndTGVFbody{
+//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动，按顺序依次managerSignNew/mainLeaderSignNew/innerCommunication/exceptITAssetsApplication/sendDocProcessNew
+#uiControl240_lcFRXVbody,#uiControl241_LVqr6ibody,#uiControl242_Gr2ZsBbody,#uiControl254_pZRQ8nbody,.ysp_table_office_lfj,#uiControl273_ndTGVFbody,#uiControl300_TAg1T9body{
   height: 75vh;
   overflow-y:auto;
   -webkit-overflow-scrolling: touch;
@@ -66,7 +66,7 @@ div[data-ysp-modelid="ITdeviceAppply"]{
     -webkit-overflow-scrolling: touch;
   }
 }
-div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],div[data-ysp-modelid="mainLeaderSignNew"],div[data-ysp-modelid="innerCommunication"],div[data-ysp-modelid="exceptITAssetsApplication"]{
+div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],div[data-ysp-modelid="mainLeaderSignNew"],div[data-ysp-modelid="innerCommunication"],div[data-ysp-modelid="exceptITAssetsApplication"],div[data-ysp-modelid="sendDocProcessNew"]{
   .card{
     margin: 0;
     border-radius: none;
@@ -594,12 +594,15 @@ li {list-style: none}
       border-radius: 5px;
       padding: 10px;
       margin: 10px 15px 0 0;
-      input,span{display: inline-block;margin: 5px 0;}
+      input,span{display: inline-block; line-height: 25px; margin: 0.2rem 0;}
       input{
-        padding: 5px;
         width: 60%;
         height: 25px;
-        line-height: 25px;
+        margin: 0;
+        padding: 0 5px;
+        background: #fff;
+        border: 1px solid #fff;
+        border-radius: 2px;
       }
       .num{
         position: relative;
