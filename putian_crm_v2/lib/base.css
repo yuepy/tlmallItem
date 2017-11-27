@@ -10381,6 +10381,7 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   color: #999999;
 }
 /**************门店、客户添加名称end*****************/
+/***************暂无数据样式*******************/
 .ysp-no-data {
   background: #f2f2f2;
   height: 92vh;
@@ -10397,6 +10398,26 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   margin-top: 60px;
 }
 .ysp-no-data > div:last-child {
+  text-align: center;
+  color: #999999;
+  font-size: 20px;
+}
+.ysp-no-datas {
+  background: #f2f2f2;
+  height: 72vh;
+}
+.ysp-no-datas > div:first-child {
+  display: inline-block;
+  height: 250px;
+  width: 100%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-image: url(images/ysp-no-data.png);
+  background-position-x: 32px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.ysp-no-datas > div:last-child {
   text-align: center;
   color: #999999;
   font-size: 20px;
