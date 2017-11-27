@@ -22,6 +22,7 @@
     forceMatchModels: _forceMatchModels,
     back: _back,
     toPlan: _toPlan,
+    
     openWindow: function(url, title) {
       if (typeof url !== "string") {
         return;
@@ -488,4 +489,5 @@
       }
     });
   }
+	
 })(window, ysp);
