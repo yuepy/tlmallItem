@@ -7936,21 +7936,79 @@ div[data-ysp-modelid="dayPSI"]{
 /****责任团队视图start***/
 .ysp-blame-team-wrapper{
   .ysp-blame-team-content-wrapper{
-    padding: 10px 0px 10px 10px;
+    padding: 10px;
     border-bottom: 1px solid #ececec;
     background: none !important;
     >div:first-child{
-      color: #333333;
-      //font-size: 18px;
-      font-weight: bold;
-      background: none !important;
-    }
-    >div:last-child{
-      color: #999999;
-      background: none !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       >span:first-child{
-        margin-right: 10px;
+        color: #333333;
+      	font-weight: bold;
+      	background: none !important;
+      }
+      >span:last-child{
+        color: #4796ed;
         background: none !important;
+      }
+      
+    }
+    >div:nth-child(2){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0px 0px 0px;
+      >div:nth-child(1){
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        >span:nth-child(1){
+           display: block;
+           width: 20px;
+           height: 20px;
+           background: transparent url('images/email-icon.png') no-repeat center center;
+           background-size: 100%;
+           margin-right: 10px;
+        }
+        >span:nth-child(2){
+          color: #999999;
+        }
+      }
+      >div:nth-child(2){
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: #333;
+      }
+    }
+    
+    >div:nth-child(3){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0px 0px 0px;
+      >div:nth-child(1){
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        >span:nth-child(1){
+           display: block;
+           width: 20px;
+           height: 20px;
+           background: transparent url('images/ysp-phone-icon.png') no-repeat center center;
+           background-size: 100%;
+           margin-right: 10px;
+        }
+        >span:nth-child(2){
+          color: #999999;
+        }
+      }
+      >div:nth-child(2){
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: #333;
       }
     }
   }
@@ -11403,3 +11461,20 @@ section.ysp-store-details{
 }
 
 /**************门店、客户添加名称end*****************/
+
+.ysp-no-data{
+  font-size: 20px;
+  >div:first-child{
+    display: block;
+    height: 200px;
+    width: 200px;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-image: url(./images/ysp-no-data.png);
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+  >div:last-child{
+    text-align: center;
+  }
+}
