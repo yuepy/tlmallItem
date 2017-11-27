@@ -56,13 +56,14 @@ div[data-type="tabs:content"]{
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     background: #f4f4f4;
+    padding: 0;
   }
 }
 div[data-ysp-modelid="ITdeviceAppply"]{
   .ysp_table_lfj{
     height: 75vh;
     overflow-y:auto;
-    -webkit-overflow-scrolling: touch;//
+    -webkit-overflow-scrolling: touch;
   }
 }
 div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],div[data-ysp-modelid="mainLeaderSignNew"],div[data-ysp-modelid="innerCommunication"],div[data-ysp-modelid="exceptITAssetsApplication"]{
@@ -72,6 +73,10 @@ div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],d
     box-shadow: none;
     background: #fff;
     color: #333;
+  }
+  .card-body{
+    padding: 0;
+    margin: 0;
   }
 }
 // div[data-componentsid="uiControl55_TbO50e"]{
@@ -4833,7 +4838,7 @@ div[data-ysp-modelid='sendDocProcess']{
   top: 40px;
 }
 //IT类
-div[data-ysp-modelid='ITdevice']{
+div[data-ysp-modelid='ITdevice'],div[data-ysp-modelid='02freeshenpi']{
   .ysp_table_lfj{
     margin-top: 0!important;
   }

@@ -3,21 +3,327 @@
   "id": "02reeCreate",
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=43&isagent=0&beagenter=0",
   "jsFile": "index.js",
+  "requires": {
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "02freeshenpi": "../02freeshenpi/index.json"
+  },
   "chineseName": "02自由流程新建",
   "description": "",
-  "controls": {},
+  "controls": {
+    "control106_T4PTGE": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:创建 - 02自由流程 - 创建"
+              ],
+              "visText": [
+                "请求:创建 - 02自由流程 - 创建"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('02自由流程') !== -1 && elem.textContent.indexOf('创建') !== -1){return true;}return false; "
+    },
+    "control107_hcDcDs": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "保存"
+              ],
+              "visText": [
+                ""
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]/TD[4]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]",
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TR[@id=\"toolbarmenu\"]//BUTTON",
+              "descendant::TR[@id=\"toolbarmenu\"]//BUTTON"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TBODY.x-btn-small.x-btn-icon-small-left TD.x-btn-mc BUTTON.x-btn-text.btn_wfSave"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[4]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/EM[1]/BUTTON[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control107_hcDcDs"
+      },
+      "intendedRole": "custom",
+      "roles": "element,button,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control222_bEGuqJ": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control222_bEGuqJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control286_NnBFB4": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[8]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control286_NnBFB4"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control287_imfHhl": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control287_imfHhl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
   "contexts": {
     "context17_VfGRJd": {
-      "controls": [],
-      "anchors": [],
+      "controls": [
+        "control107_hcDcDs",
+        "control222_bEGuqJ",
+        "control286_NnBFB4",
+        "control287_imfHhl"
+      ],
+      "anchors": [
+        "control106_T4PTGE"
+      ],
       "urlAnchor": []
     }
   },
-  "flows": {},
+  "flows": {
+    "flow58_gSsIPD": {
+      "toContexts": [
+        {
+          "toContextId": "context17_VfGRJd"
+        },
+        {
+          "toContextId": "context35_96CB1E",
+          "toModelId": "02freeshenpi"
+        }
+      ]
+    },
+    "flow59_zRqlDO": {
+      "fromContextId": "context17_VfGRJd",
+      "fromAction": "doAction",
+      "fromControlId": "control222_bEGuqJ",
+      "toContexts": [
+        {
+          "toContextId": "context17_VfGRJd"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
+        }
+      ]
+    },
+    "flow178_bmS4Jf": {
+      "fromContextId": "context17_VfGRJd",
+      "fromAction": "doAction",
+      "fromControlId": "control107_hcDcDs",
+      "toContexts": [
+        {
+          "toContextId": "context17_VfGRJd"
+        }
+      ]
+    }
+  },
   "pages": {
     "page17_6ZEymB": {
       "contextId": "context17_VfGRJd",
-      "layout": []
+      "layout": [
+        {
+          "id": "uiControl92_agONR6",
+          "controlId": "control107_hcDcDs",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl92_agONR6",
+                "onGetTemplate": "getTemplate_uiControl92_agONR6"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl273_TdCDGP",
+          "controlId": "control222_bEGuqJ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl273_TdCDGP",
+                "onGetTemplate": "getTemplate_uiControl273_TdCDGP"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl274_Zr6Vn0",
+          "controlId": "control286_NnBFB4",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl274_Zr6Vn0",
+                "onGetTemplate": "getTemplate_uiControl274_Zr6Vn0"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl275_h4JoXl",
+          "controlId": "control287_imfHhl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl275_h4JoXl",
+                "onGetTemplate": "getTemplate_uiControl275_h4JoXl"
+              }
+            }
+          }
+        }
+      ]
     }
   },
   "matchers": {
@@ -32,6 +338,10 @@
       "contexts": {
         "context17_VfGRJd": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=43&isagent=0&beagenter=0"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },
