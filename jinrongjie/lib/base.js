@@ -512,7 +512,9 @@
                           div1.appendChild(div3);
                           div1.appendChild(div4);
                           this.parentElement.getAttribute('file-num');
+                          //附件上传 文件放置DIV
                           this.ownerDocument.querySelector('.fieldset').appendChild(div);
+                          //附件上传 文件放置DIV
                           var xhr = new XMLHttpRequest();
                           var form = file && file.parentElement;//找到对应的form
                           var fileName = form.Filename;//找到input name=filename的元素，
