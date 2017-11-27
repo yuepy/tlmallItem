@@ -244,7 +244,7 @@
           top.location.href = _url;
         }
       }if (data.eventType == 'selectFile') {
-        $(elem).find('#Filedata').eq(0).click();
+        $(elem).find('#Filedata').eq(0).click();$(elem).find('#Filedata').eq(0)[0].parentElement.setAttribute('file-num', '1');
       }
     },
     getTemplate_uiControl28_SgTJbB: function getTemplate_uiControl28_SgTJbB() {
@@ -318,7 +318,7 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
       }if (data.eventType == 'click') {
-        $(elem).find("#Filedata").click();
+        $(elem).find("#Filedata").click();$(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
       }
     },
     getTemplate_uiControl35_WnaNKy: function () {
