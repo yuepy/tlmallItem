@@ -572,7 +572,7 @@
                 console.info('向客户端发送消息,开始获取token地址');
               	var parent = aWin.frameElement.ownerDocument.defaultView;
               	if(parent.EAPI.isIOS()){
-                  var actionEvent = '{\\\"target\\\":\\\"null\\\",\\\"data\\\":\\\"getNumber\\\"}';
+                  var actionEvent = '{"target":"null","data":"getNumber"}';
                   parent && parent.EAPI.postMessageToNative('getNum', actionEvent);
                 	parent && topWindow.EAPI.postMessageToNative('getToken', null);
                 }
