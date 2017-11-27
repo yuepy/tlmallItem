@@ -38,7 +38,8 @@ div[data-type="tabs:content"] > div:first-child {
   background: #f4f4f4;
   padding: 0;
 }
-div[data-ysp-modelid="ITdeviceAppply"] .ysp_table_lfj {
+div[data-ysp-modelid="ITdeviceAppply"] .ysp_table_lfj,
+div[data-ysp-modelid="02reeCreate"] .ysp_table_lfj {
   height: 75vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -1455,7 +1456,6 @@ li {
   background-size: 40%;
 }
 .ysp-list-content .ysp-list-card .ysp-list-card-ul li {
-  height: 40px;
   line-height: 40px;
   border-bottom: 1px solid #eee;
   margin-left: 20px;
@@ -2274,6 +2274,7 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word {
   overflow: hidden;
+  padding: 5px 0;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .download,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .download,
@@ -2412,9 +2413,9 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   background: url("../lib/images/defaultDocument.png") no-repeat;
   background-size: 20px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
-div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
-div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete {
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .deleteFile,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .deleteFile,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .deleteFile {
   float: right;
   background: url("../lib/images/deleteM.png") no-repeat;
   background-size: 10px;

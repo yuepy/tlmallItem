@@ -570,10 +570,12 @@
 
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
-                var actionEvent = '{"target":"null","data":"getNumber"}';
-                var parent = aWin.frameElement.ownerDocument.defaultView;
-                parent && parent.EAPI.postMessageToNative('getNum', actionEvent);
-                parent && topWindow.EAPI.postMessageToNative('getToken', null);
+              	var parent = aWin.frameElement.ownerDocument.defaultView;
+              	if(parent.EAPI.isIOS()){
+                  var actionEvent = '{"target":"null","data":"getNumber"}';
+                  parent && parent.EAPI.postMessageToNative('getNum', actionEvent);
+                	parent && topWindow.EAPI.postMessageToNative('getToken', null);
+                }
                 sessionStorage.setItem('getTokenURl', true);
                 token_flag = true;
             }
