@@ -478,6 +478,7 @@
           	var uploadId;
             (function() {
                 var addFileInput = function addFileInput(originId, id, target,html) {
+                  debugger;
                     var placeHolder = doc.getElementById(originId);
                     if (placeHolder) {
                       var tempParent , Object;
@@ -511,9 +512,17 @@
                           div1.appendChild(div2);
                           div1.appendChild(div3);
                           div1.appendChild(div4);
-                          this.parentElement.getAttribute('file-num');
+                          var fileNum=this.parentElement.getAttribute('file-num');
                           //附件上传 文件放置DIV
-                          this.ownerDocument.querySelector('.fieldset').appendChild(div);
+                          
+                          if(fileNum=="1"){
+                            this.ownerDocument.querySelectorAll('.fieldset')[0].appendChild(div);
+                          }else if(fileNum=="2"){
+                            this.ownerDocument.querySelectorAll('.fieldset')[1].appendChild(div);
+                          }else{
+                            this.ownerDocument.querySelector('.fieldset').appendChild(div);
+                          }
+                          
                           //附件上传 文件放置DIV
                           var xhr = new XMLHttpRequest();
                           var form = file && file.parentElement;//找到对应的form
