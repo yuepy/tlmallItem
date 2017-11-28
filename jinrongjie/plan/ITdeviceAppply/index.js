@@ -239,14 +239,15 @@
                           if ($(this).next().text().indexOf('txt') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                           } else if ($(this).next().text().indexOf('doc') !== -1) {
-                            arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push'
-                            });
+                            arr3.push({ name: $(this).next().text().trim(), stl: 'doc',
+                              no: 'push' });
                           } else if ($(this).next().text().indexOf('pdf') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                           } else if ($(this).next().text().indexOf('xls') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                           } else if ($(this).next().text().indexOf('png') !== -1) {
-                            arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
+                            arr3.push({ name: $(this).next().text().trim(),
+                              stl: 'png', no: 'push' });
                           } else if ($(this).next().text().indexOf('jpg') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                           } else if ($(this).next().text().indexOf('gif') !== -1) {
@@ -287,8 +288,7 @@
                         arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                       } //判断纯文字
                       else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                          arr2.push({ text: $(this).children("span").children("a").text(),
-                            type: 'a' });
+                          arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                         } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children("button").length == 0) {
                           arr2.push({ text: $(this).children("span").text(), type: 'a' });
                         } //判断textarea-------------------------------------
@@ -336,7 +336,7 @@
           }
         });
       }if (data.eventType == 'selectFile') {
-        $(elem).find('#Filedata').eq(0).click();
+        $(elem).find('#Filedata').eq(0).click();$(elem).find('#Filedata').eq(0)[0].parentElement.setAttribute('file-num', '1');
       }if (data.eventType == 'inputBlur') {
         //debugger;
         var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("input").each(function () {
@@ -438,7 +438,7 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
       }if (data.eventType == 'click') {
-        $(elem).find("#Filedata").click();
+        $(elem).find("#Filedata").click();$(elem).find('#Filedata').eq(0)[0].parentElement.setAttribute('file-num', '2');
       }
     },
     getTemplate_uiControl144_TWZQiZ: function () {
