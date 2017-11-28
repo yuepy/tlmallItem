@@ -209,6 +209,10 @@
         "data": {
           "tagName": "IFRAME"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@title",
@@ -264,6 +268,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -285,6 +293,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -305,6 +317,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -343,6 +359,10 @@
       "location": {
         "data": {
           "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -653,19 +673,43 @@
           ]
         },
         {
-          "id": "uiControl271_z9RRR2",
-          "controlId": "control284_Cfx2sn",
+          "id": "uiControl318_Bon9Uy",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "sticky",
+            "adapterId": "sticky",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl271_z9RRR2",
-                "onGetTemplate": "getTemplate_uiControl271_z9RRR2"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl318_Bon9Uybody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl271_z9RRR2",
+                  "controlId": "control284_Cfx2sn",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl271_z9RRR2",
+                        "onGetTemplate": "getTemplate_uiControl271_z9RRR2"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }

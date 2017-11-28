@@ -379,7 +379,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
@@ -483,6 +483,16 @@
         {
           "toContextId": "context6_aweFC7",
           "toModelId": "managerAuditRelateProcess"
+        }
+      ]
+    },
+    "flow204_pEb8nK": {
+      "fromContextId": "context20_mmput1",
+      "fromAction": "doAction",
+      "fromControlId": "control213_x0xDlA",
+      "toContexts": [
+        {
+          "toContextId": "context20_mmput1"
         }
       ]
     }
@@ -659,19 +669,43 @@
           ]
         },
         {
-          "id": "uiControl113_p44BQk",
-          "controlId": "control131_L4LzV6",
+          "id": "uiControl315_770KuR",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "sticky",
+            "adapterId": "sticky",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl113_p44BQk",
-                "onGetTemplate": "getTemplate_uiControl113_p44BQk"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl315_770KuRbody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl113_p44BQk",
+                  "controlId": "control131_L4LzV6",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl113_p44BQk",
+                        "onGetTemplate": "getTemplate_uiControl113_p44BQk"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
