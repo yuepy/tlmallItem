@@ -64,8 +64,7 @@
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(),
-                type: 'title1' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
             } //判断附件-------------------------------------
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                 var arr3 = [];if ($(this).children("table").find("a").length > 0) {
@@ -80,10 +79,10 @@
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({
+                          name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1]
-                        });
+                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
@@ -93,7 +92,7 @@
                       if ($(this).next().text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', tno: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
@@ -122,7 +121,8 @@
                     if ($(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
                     }if ($(this)[0].selected == false) {
-                      arr4.push({ text: $(this).text().trim(), select: '' });
+                      arr4.push({ text: $(this).text().trim(),
+                        select: '' });
                     }
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
                 } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
@@ -160,11 +160,11 @@
                           }
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
                           //console.log(43534534523)
-                          arr2.push({ text: $(this).find("button").text(),
-                            type: 'button22', id: $(this).children('span').eq(0).children("button").attr('id') });
+                          arr2.push({ text: $(this).find("button").text(), type: 'button22', id: $(this).children('span').eq(0).children("button").attr('id') });
                         } //判断意见-------------------------------------
                         else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
-                            arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
+                            arr2.push({ text: $(this)[0].innerHTML,
+                              type: 'suggest' });
                           } else if ($(this).find(".cke_editor").length > 0) {
                             arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
                           }data.base_info.content.push(arr2);
@@ -297,7 +297,7 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
       }if (data.eventType == 'click') {
-        $(elem).find("#Filedata").click();
+        $(elem).find("#Filedata").click();$(elem).find('#Filedata').eq(0)[0].parentElement.setAttribute('file-num', '2');
       }
     },
     getTemplate_uiControl256_JgcB7i: function () {
