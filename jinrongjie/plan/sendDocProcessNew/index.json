@@ -183,6 +183,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -209,6 +213,10 @@
       "location": {
         "data": {
           "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -265,6 +273,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -286,6 +298,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -306,6 +322,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -339,6 +359,27 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control317_SV9z8c": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control317_SV9z8c"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -351,7 +392,8 @@
         "control309_Nd8vLZ",
         "control310_W7iUlR",
         "control311_g9ZqhT",
-        "control312_6XW6lL"
+        "control312_6XW6lL",
+        "control317_SV9z8c"
       ],
       "anchors": [
         "control304_JUf38H"
@@ -563,6 +605,21 @@
                       "events": {
                         "onDoAction": "doAction_uiControl299_qdIxlH",
                         "onGetTemplate": "getTemplate_uiControl299_qdIxlH"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl306_MIkRBx",
+                  "controlId": "control317_SV9z8c",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl306_MIkRBx",
+                        "onGetTemplate": "getTemplate_uiControl306_MIkRBx"
                       }
                     }
                   }
