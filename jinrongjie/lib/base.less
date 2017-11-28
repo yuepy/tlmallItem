@@ -48,7 +48,7 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
 }
 //头部滑动的问题，设置中间有表单元素所在的组件高度和滚动，按顺序依次managerSignNew/mainLeaderSignNew/innerCommunication/exceptITAssetsApplication/sendDocProcessNew/docApprovalListNew
 #uiControl240_lcFRXVbody,#uiControl241_LVqr6ibody,#uiControl242_Gr2ZsBbody,#uiControl254_pZRQ8nbody,.ysp_table_office_lfj,#uiControl273_ndTGVFbody,#uiControl300_TAg1T9body,#uiControl305_bta9oebody{
-  height: 75vh;
+  height: 90vh;
   overflow-y:auto;
   -webkit-overflow-scrolling: touch;
   background: #f4f4f4;
@@ -2349,6 +2349,35 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
             // display: block;
             // width: 100%;
           }
+        }
+        .downLoadFile,.upLoadFile{
+          .txt,.doc,.xls,.pdf,.ppt,.else{
+              float: left;
+              background: url("../local/img/txt.png") no-repeat;
+              background-size: 20px;
+              height: 20px;
+              width: 20px;
+            }
+            .doc{
+              background: url("../lib/images/word1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .xls{
+              background: url("../lib/images/excel1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .pdf{
+              background: url("../lib/images/pdf1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .ppt{
+              background: url("../lib/images/ppt1x.png") no-repeat;
+              background-size: 20px;
+            }
+            .else{
+              background: url("../lib/images/defaultDocument.png") no-repeat;
+              background-size: 20px;
+            }
         }
        	.upLoading{
           .word{
