@@ -128,7 +128,7 @@
             elem.ownerDocument.defaultView.eval(elem.querySelectorAll("button.AddDocFlow")[0].onclick());break;}
       }if (eventType == 'upClick') {
         if (elem.querySelector("input[id='Filedata'][name='Filedata'][type='file']")) {
-          elem.querySelectorAll("input[id='Filedata'][name='Filedata'][type='file']")[0].click();
+          elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '1');elem.querySelectorAll("input[id='Filedata'][name='Filedata'][type='file']")[0].click();
         }
       }if (eventType == 'deleteFile') {
         elem.querySelectorAll('.progressWrapper')[data.dataCustom].style.display = "none";var initDOM = elem.querySelector("#uploadspan").parentElement.parentElement;if (initDOM.querySelector("input[temptitle='相关附件']")) {

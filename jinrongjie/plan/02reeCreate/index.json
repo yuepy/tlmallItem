@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
-    "02freeshenpi": "../02freeshenpi/index.json"
+    "02freeshenpi": "../02freeshenpi/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
   },
   "chineseName": "02自由流程新建",
   "description": "",
@@ -174,6 +175,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -245,6 +250,10 @@
         {
           "toContextId": "context6_aweFC7",
           "toModelId": "managerAuditRelateProcess"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     },

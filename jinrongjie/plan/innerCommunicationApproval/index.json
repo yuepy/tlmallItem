@@ -298,31 +298,6 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control194_5odUNo": {
-      "location": {
-        "data": {
-          "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[8]/TD[2]/TABLE[1]/TBODY[1]/TR[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control194_5odUNo"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control195_PfHTUb": {
       "location": {
         "data": {
@@ -395,6 +370,27 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control323_pfSxCF": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[8]/TD[2]/TABLE[1]/TBODY[1]/TR[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control323_pfSxCF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -407,9 +403,9 @@
         "control174_ds2Sp5",
         "control175_1M6XhJ",
         "control177_bBagM5",
-        "control194_5odUNo",
         "control195_PfHTUb",
-        "control176_5P4c5r"
+        "control176_5P4c5r",
+        "control323_pfSxCF"
       ],
       "anchors": [
         "control169_yoMlRP"
@@ -620,16 +616,16 @@
                   }
                 },
                 {
-                  "id": "uiControl175_iN5TPD",
-                  "controlId": "control194_5odUNo",
+                  "id": "uiControl312_TGuyVI",
+                  "controlId": "control323_pfSxCF",
                   "display": {
                     "adapterId": "custom",
                     "type": "custom",
                     "adapter": {
                       "templateType": "react",
                       "events": {
-                        "onDoAction": "doAction_uiControl175_iN5TPD",
-                        "onGetTemplate": "getTemplate_uiControl175_iN5TPD"
+                        "onDoAction": "doAction_uiControl312_TGuyVI",
+                        "onGetTemplate": "getTemplate_uiControl312_TGuyVI"
                       }
                     }
                   }
@@ -703,14 +699,16 @@
     "page/title": {
       "contexts": {
         "context22_9NRRRI": [
-          "内部沟通测试_20171113"
+          "内部沟通测试_20171113",
+          "两个附件上传"
         ]
       }
     },
     "page/urls": {
       "contexts": {
         "context22_9NRRRI": [
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321632&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321632&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434508&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context10_sJa5NJ": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
