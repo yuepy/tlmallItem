@@ -488,6 +488,16 @@
           "toContextId": "context16_xe32nI"
         }
       ]
+    },
+    "flow202_AZUTdZ": {
+      "fromContextId": "context16_xe32nI",
+      "fromAction": "doAction",
+      "fromControlId": "control133_BUddgl",
+      "toContexts": [
+        {
+          "toContextId": "context16_xe32nI"
+        }
+      ]
     }
   },
   "pages": {
@@ -662,19 +672,43 @@
           ]
         },
         {
-          "id": "uiControl97_p0zJQ3",
-          "controlId": "control114_F8zC6S",
+          "id": "uiControl313_opTsHb",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "sticky",
+            "adapterId": "sticky",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl97_p0zJQ3",
-                "onGetTemplate": "getTemplate_uiControl97_p0zJQ3"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl313_opTsHbbody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl97_p0zJQ3",
+                  "controlId": "control114_F8zC6S",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl97_p0zJQ3",
+                        "onGetTemplate": "getTemplate_uiControl97_p0zJQ3"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
