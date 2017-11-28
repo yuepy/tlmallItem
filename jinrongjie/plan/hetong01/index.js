@@ -172,7 +172,7 @@
       }return data;
     },
     doAction_uiControl28_SgTJbB: function (data, elem) {
-      if (data.eventType == 'deleteFile') {
+      debugger;if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
           if ($(this).attr('temptitle') && $(this).attr('temptitle').indexOf('合同/协议正文') !== -1) {
             var value = $(this)[0].value;var arr = $(this)[0].value.split(',');console.log(arr.length);if (arr.length !== 1) {
@@ -238,7 +238,8 @@
         //   }
         elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关流程"]').onclick());elem.querySelector('button[title="相关流程"]').onclick();
       }if (data.eventType == 'preview') {
-        debugger; //每个文件的onclick中的第二个number
+        // debugger;
+        //每个文件的onclick中的第二个number
         var number = data.dataCustom.number; //文件类型
         var type = data.dataCustom.type; //现在的文件名称
         var text = data.dataCustom.text; //拼接下载地址
