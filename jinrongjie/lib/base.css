@@ -1710,9 +1710,6 @@ li {
 .ysp-serch-content-search {
   margin-top: 20px;
 }
-div[data-ysp-modelid='sanhuiAppreove'] .bottom_tb {
-  padding-left: 0!important;
-}
 div[data-ysp-modelid='hetong01'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
@@ -2433,9 +2430,9 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   background: url("../lib/images/defaultDocument.png") no-repeat;
   background-size: 20px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .deleteFile,
-div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .deleteFile,
-div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .deleteFile {
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .delete {
   float: right;
   background: url("../lib/images/deleteM.png") no-repeat;
   background-size: 10px;
@@ -2735,39 +2732,58 @@ div[data-ysp-modelid='createFundSeal'] .ysp_advice_wrapper .ysp_advice_card .ysp
   color: #A1E15C;
   text-decoration: underline;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper {
+div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va {
+  border-bottom: 0;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP {
+  margin: 0;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+  background: #fff;
+  border-bottom: 10px solid #F3F3F3;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+  width: auto;
+  display: inline;
+}
+div[data-ysp-modelid='askForLeave'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+  background: none;
+  border-bottom: 3px solid #C29A2A;
+  color: #C29A2A;
+  padding: 3px 0;
+}
+div[data-ysp-modelid='askForLeave'] .OvsRcaoL1UILAcvWC8nMu {
+  padding: 0!important;
+}
+div[data-ysp-modelid='askForLeave'] .topTitle {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 28%;
+  background: #fff;
+  text-align: center;
+  border-bottom: 10px solid #f4f4f4;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper {
   background: #fff;
   border-bottom: 10px solid #f4f4f4;
   padding: 10px 0;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
   padding: 10px 10px 0 10px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle {
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle {
   font-size: 14px;
   color: #c29a2a;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency {
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
   margin-bottom: 5px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck {
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck {
   float: right;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span {
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span {
   border: 1px solid #666;
   color: #666;
   border-radius: 10px;
@@ -2777,21 +2793,15 @@ div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave
   font-size: 12px;
   margin-right: 10px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive {
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive {
   border: 1px solid #A1E15C;
   color: #A1E15C;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck {
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck {
   padding-left: 10%;
   padding-top: 10px;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span {
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span {
   display: inline-block;
   width: 30%;
   background: #f4f4f4;
@@ -2802,19 +2812,9 @@ div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave
   font-size: 12px;
   padding: 5px 0;
 }
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive,
-div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive,
-div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
   background: #c29a2a;
   color: #fff;
-}
-div[data-ysp-modelid='askForLeave'] .topTitle {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 28%;
-  background: #fff;
-  text-align: center;
-  border-bottom: 10px solid #f4f4f4;
 }
 div[data-ysp-modelid='postName'] .ysp_stationName {
   background: #fff;
