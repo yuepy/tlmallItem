@@ -91,7 +91,7 @@
         }
       }function doUpload(elem) {
         if (elem.querySelector("input[id='Filedata'][name='Filedata'][type='file']")) {
-          elem.querySelectorAll("input[id='Filedata'][name='Filedata'][type='file']")[0].click();
+          elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '1');elem.querySelectorAll("input[id='Filedata'][name='Filedata'][type='file']")[0].click();
         }
       }
     },
