@@ -139,6 +139,16 @@
         });buttonList[downLoadIndex].click();
       } else if (clickType == 'receivePerson') {
         elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="选择"]').onclick());
+      }if (data.eventType == 'preview') {
+        debugger; //每个文件的onclick中的第二个number
+        var number = data.dataCustom.number; //第几个文件
+        // var type = data.dataCustom.type; //现在的文件名称
+        var text = data.dataCustom.text; //拼接下载地址
+        var _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
+        } else if (ysp.appMain.isAndroid()) {
+          top.location.href = _url;
+        }
       }
     },
     getTemplate_uiControl151_aaqEVU: function () {
