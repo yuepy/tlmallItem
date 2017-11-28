@@ -484,6 +484,16 @@
           "toModelId": "managerAuditRelateProcess"
         }
       ]
+    },
+    "flow203_WNQDTn": {
+      "fromContextId": "context19_zoXJgw",
+      "fromAction": "doAction",
+      "fromControlId": "control212_sxpKU9",
+      "toContexts": [
+        {
+          "toContextId": "context19_zoXJgw"
+        }
+      ]
     }
   },
   "pages": {
@@ -658,19 +668,43 @@
           ]
         },
         {
-          "id": "uiControl105_GTbUHv",
-          "controlId": "control123_28EoqV",
+          "id": "uiControl314_OCuuSH",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "sticky",
+            "adapterId": "sticky",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl105_GTbUHv",
-                "onGetTemplate": "getTemplate_uiControl105_GTbUHv"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl314_OCuuSHbody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl105_GTbUHv",
+                  "controlId": "control123_28EoqV",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl105_GTbUHv",
+                        "onGetTemplate": "getTemplate_uiControl105_GTbUHv"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }

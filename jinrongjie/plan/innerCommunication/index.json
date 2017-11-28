@@ -453,6 +453,16 @@
           "toContextId": "context24_9Kuow2"
         }
       ]
+    },
+    "flow206_P8errV": {
+      "fromContextId": "context24_9Kuow2",
+      "fromAction": "doAction",
+      "fromControlId": "control218_rg78mi",
+      "toContexts": [
+        {
+          "toContextId": "context24_9Kuow2"
+        }
+      ]
     }
   },
   "pages": {
@@ -612,19 +622,43 @@
           ]
         },
         {
-          "id": "uiControl145_CWIQB8",
-          "controlId": "control167_6Sgimc",
+          "id": "uiControl317_MGGrsn",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "sticky",
+            "adapterId": "sticky",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl145_CWIQB8",
-                "onGetTemplate": "getTemplate_uiControl145_CWIQB8"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl317_MGGrsnbody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl145_CWIQB8",
+                  "controlId": "control167_6Sgimc",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl145_CWIQB8",
+                        "onGetTemplate": "getTemplate_uiControl145_CWIQB8"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
