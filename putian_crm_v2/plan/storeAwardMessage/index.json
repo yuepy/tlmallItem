@@ -11,6 +11,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -26,12 +30,47 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control118_52d0F8": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"mainContainer\"]/DIV[1]",
+              "descendant::DIV[@id=\"mainContainer\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.store-border"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control118_52d0F8"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context68_KTZ2fk": {
       "controls": [
-        "control239_raN8C4"
+        "control239_raN8C4",
+        "control118_52d0F8"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -73,6 +112,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl233_u6mByb",
                 "onGetTemplate": "getTemplate_uiControl233_u6mByb"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl115_J6htvF",
+          "controlId": "control118_52d0F8",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl115_J6htvF",
+                "onGetTemplate": "getTemplate_uiControl115_J6htvF"
               }
             }
           }
