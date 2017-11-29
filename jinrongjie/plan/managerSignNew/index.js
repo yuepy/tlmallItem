@@ -93,8 +93,8 @@
           elem.querySelector('input[id="requestname"]').value = data.value;break;case 'zhaiyao':
           elem.querySelector('textarea[temptitle="摘要"]').value = data.value;break;case 'process':
           elem.ownerDocument.defaultView.eval(elem.querySelector("button[title='选择']").onclick());break;case 'deleteFile':
-          $(elem.querySelectorAll('.progressWrapper')[data.index]).remove();var initDOM = elem.querySelector("#uploadspan").parentElement.parentElement;if (initDOM.querySelector("input[temptitle='附件']")) {
-            var initValue = initDOM.querySelector("input[temptitle='附件']").value;var array = initValue.split(',');array.splice(data.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();
+          var initDOM = elem.querySelector("#uploadspan").parentElement.parentElement;if (initDOM.querySelector("input[temptitle='附件']")) {
+            var initValue = initDOM.querySelector("input[temptitle='附件']").value;var array = initValue.split(',');array.splice(data.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();$(elem.querySelectorAll('.progressWrapper')[data.index]).remove();
           }break;case 'upclick':
           doUpload(elem);break;} // 触发上传
       function doUpload(elem) {
