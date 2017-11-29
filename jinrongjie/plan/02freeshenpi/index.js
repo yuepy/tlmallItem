@@ -27,8 +27,7 @@
             if ($(this).children("td").length == 1 && $(this).children("td")[0].className == 'zdm') {
               data.base_lc_info.title.push($(this).children("td").text().trim());
             } else {
-              var tdl = $(this).find("td").length - 2;
-              $(this).children("td").each(function (i) {
+              var tdl = $(this).find("td").length - 2;$(this).children("td").each(function (i) {
                 if ($(this).find("input").length !== 3 && $(this)[0].className == 'zdn' && i == tdl) {
                   data.base_lc_info.content.push($(this).text());
                 } //判断radio
@@ -48,8 +47,7 @@
                         arr.push({ text: $(this).text().trim(), selected: true });
                       } else {
                         arr.push({ text: $(this).text().trim(), selected: "" });
-                      }
-                      data.base_lc_info.miji.content.push(arr);
+                      }data.base_lc_info.miji.content.push(arr);
                     });
                   }
               });
@@ -81,8 +79,7 @@
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(),
-                          stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
@@ -107,6 +104,8 @@
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
+                      } else if ($(this).next().text().indexOf('ppt') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                       } else {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
@@ -135,14 +134,15 @@
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1',
+                    disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
-                  } //判断纯文字
+                  }
+                  //判断纯文字
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({
-                        text: $(this).children("span").children("a").text(), type: 'a' });
+                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children("button").length == 0) {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } //判断textarea-------------------------------------
@@ -159,7 +159,8 @@
                             });
                           } else {
                             $(this).children("button").each(function () {
-                              arr2.push({ text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              arr2.push({
+                                text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           }
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
@@ -179,7 +180,8 @@
           $(this).children("td").each(function () {
             var arr2 = []; //判断标题-------------------------------------
             if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(),
+                type: 'tit_yell2' });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text())) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_ye' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
@@ -200,8 +202,7 @@
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'png',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
@@ -211,7 +212,8 @@
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(),
+                          stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
@@ -254,8 +256,8 @@
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"),
-                    mark: '1', disabled: 'true' });
+                  });arr2.push({
+                    text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
@@ -274,7 +276,8 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });
+                              arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -288,7 +291,8 @@
                         else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
                             arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
                           } else if ($(this).find(".cke_editor").length > 0) {
-                            arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
+                            arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML,
+                              type: 'suggest_final' });
                           }data.base_info.content.push(arr2);
           });
         });
@@ -309,7 +313,8 @@
         $(elem).find('#Filedata').eq(0).click();$(elem).find('#Filedata').eq(0)[0].parentElement.setAttribute('file-num', '1');
       }if (data.eventType == 'inputBlur') {
         //debugger;
-        var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("input").each(function () {
+        var id = data.dataCustom.id;var val = data.dataCustom.value;
+        var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("input").each(function () {
           if ($(this)[0].id == id) {
             $(this)[0].value = val;
           }
@@ -323,8 +328,7 @@
         });
       }if (data.eventType == 'select') {
         //debugger;
-        var id = data.dataCustom.id;
-        var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("select").each(function () {
+        var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("select").each(function () {
           if ($(this)[0].id == id) {
             $(this).children("option").each(function () {
               if ($(this).text() == val) {
@@ -377,8 +381,7 @@
         debugger; //每个文件的onclick中的第二个number
         var number = data.dataCustom.number; //文件类型
         var type = data.dataCustom.type; //现在的文件名称
-        var text = data.dataCustom.text;
-        //拼接下载地址
+        var text = data.dataCustom.text; //拼接下载地址
         var _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
@@ -393,21 +396,25 @@
     getData_control290_eLH7bU: function (elem) {
       if (!elem) {
         return;
-      }var data = [];$(elem).find("#ysp_fake_form").each(function () {
-        var arr = [];if ($(this).find("#Filedata").attr('value').indexOf('txt') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'text' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('doc') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'doc' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('pdf') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'pdf' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('jpg') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'jpg' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('xls') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'xls' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('png') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'png' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('unknown') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'unknown' });
+      }var data = [];$(elem).find(".progressWrapper").each(function () {
+        var arr = [];if ($(this).find(".progressName").text().indexOf('txt') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'text' });
+        } else if ($(this).find(".progressName").text().indexOf('doc') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'doc' });
+        } else if ($(this).find(".progressName").text().indexOf('pdf') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'pdf' });
+        } else if ($(this).find(".progressName").text().indexOf('jpg') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'jpg' });
+        } else if ($(this).find(".progressName").text().indexOf('xls') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'xls' });
+        } else if ($(this).find(".progressName").text().indexOf('png') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'png' });
+        } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'zip' });
+        } else if ($(this).find(".progressName").text().indexOf('ppt') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'ppt' });
+        } else {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'unknown' });
         }data.push(arr);
       });return data;
     },
@@ -415,12 +422,14 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
       }if (data.eventType == 'click') {
-        $(elem).find("#Filedata").click();$(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
+        $(elem).find("#Filedata").click();if (elem.ownerDocument.querySelectorAll('#ysp_fake_form').length == 2) {
+          $(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
+        }
       }
     },
     getTemplate_uiControl277_U4k2sJ: function () {
-      var selfTemplate = "module.exports = React.createClass({\n   deleteFile:function(e){\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display='none'\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"deleteFile\",\n      \tdata:e.target.getAttribute('data-index')\n      })\n    }\n  },\n  click:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(data && data[0][0]){\n      var item = data.map(function(d,i){\n      return(\n        \n        \n        \n      <div className='file2' data-no={i} data-type={d[0].stl}><div>{d[0].text}</div><div>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20...</div><button data-index={i} onClick={_this.deleteFile}></button></div>\n      \n      \n      \n      )\n    })\n    }\n    \n   return (\n     <div>\n      <div className=\"ysp-manager-audit-title-icon\">\n        <span>\u9644\u4EF6</span>\n        <i className=\"relate-files\" onClick={_this.click}></i>\n        \n      </div>\n       <div className = 'file_box2'>{item}</div>\n       </div>\n      )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  deleteFile: function deleteFile(e) {\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display = 'none';\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \"deleteFile\",\n        data: e.target.getAttribute('data-index')\n      });\n    }\n  },\n  click: function click(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data && data[0][0]) {\n      var item = data.map(function (d, i) {\n        return React.createElement(\n          'div',\n          { className: 'file2', 'data-no': i, 'data-type': d[0].stl },\n          React.createElement(\n            'div',\n            null,\n            d[0].text\n          ),\n          React.createElement(\n            'div',\n            null,\n            '\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20...'\n          ),\n          React.createElement('button', { 'data-index': i, onClick: _this.deleteFile })\n        );\n      });\n    }\n\n    return React.createElement(\n      'div',\n      null,\n      React.createElement(\n        'div',\n        { className: 'ysp-manager-audit-title-icon' },\n        React.createElement(\n          'span',\n          null,\n          '\\u9644\\u4EF6'\n        ),\n        React.createElement('i', { className: 'relate-files', onClick: _this.click })\n      ),\n      React.createElement(\n        'div',\n        { className: 'file_box2' },\n        item\n      )\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n   deleteFile:function(e){\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display='none'\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"deleteFile\",\n      \tdata:e.target.getAttribute('data-index')\n      })\n    }\n  },\n  click:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(data && data.length > 0 && data[0].length > 0){\n      var item = data.map(function(d,i){\n      return(\n      <div className='file2' data-no={i} data-type={d[0].stl}><div>{d[0].text}</div><div>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20...</div><button data-index={i} onClick={_this.deleteFile}></button></div>\n      \n      \n      \n      )\n    })\n    }\n    \n   return (\n     <div>\n      <div className=\"ysp-manager-audit-title-icon\">\n        <span>\u9644\u4EF6</span>\n        <i className=\"relate-files\" onClick={_this.click}></i>\n        \n      </div>\n       <div className = 'file_box2'>{item}</div>\n       </div>\n      )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  deleteFile: function deleteFile(e) {\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display = 'none';\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \"deleteFile\",\n        data: e.target.getAttribute('data-index')\n      });\n    }\n  },\n  click: function click(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data && data.length > 0 && data[0].length > 0) {\n      var item = data.map(function (d, i) {\n        return React.createElement(\n          'div',\n          { className: 'file2', 'data-no': i, 'data-type': d[0].stl },\n          React.createElement(\n            'div',\n            null,\n            d[0].text\n          ),\n          React.createElement(\n            'div',\n            null,\n            '\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20...'\n          ),\n          React.createElement('button', { 'data-index': i, onClick: _this.deleteFile })\n        );\n      });\n    }\n\n    return React.createElement(\n      'div',\n      null,\n      React.createElement(\n        'div',\n        { className: 'ysp-manager-audit-title-icon' },\n        React.createElement(\n          'span',\n          null,\n          '\\u9644\\u4EF6'\n        ),\n        React.createElement('i', { className: 'relate-files', onClick: _this.click })\n      ),\n      React.createElement(\n        'div',\n        { className: 'file_box2' },\n        item\n      )\n    );\n  }\n});";
     },
     getData_control291_PbOFz1: function (elem) {
       var data = ['02自由流程'];return data;
@@ -613,6 +622,26 @@
     getTemplate_uiControl288_iNTQmh: function () {
       var selfTemplate = "import { Component } from 'react';\nimport { CustomHeader } from 'ysp-custom-components';\n\nexport default class extends Component {\n  constructor(props){\n    super(props);\n    this.state={\n      isMoreOpen: false,\n      isShowBottom: true\n    }\n  }\n  \n  btnClick=(e)=>{\n    debugger;\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        data:{num:e.target.dataset.num},\n        eventType:'click'\n      })\n    }\n    var evt = new Event('ysp-file-upload-mainleadersign-audit');\n    evt.value = '\u4E0A\u4F20\u6587\u4EF6';\n    window.dispatchEvent(evt);\n  }\n  \n  showMoreButton=(e)=>{\n    this.setState((prevState) => {\n  \t\treturn {\n        isMoreOpen: !prevState.isMoreOpen,\n      \tisShowBottom: !prevState.isShowBottom\n      };\n\t\t});\n  }\n  \n  render(){\n    var _this = this;\n    var data = this.props.customData||[];\n    if(data == null || data == undefined){\n      return null;\n    }\n    return (\n      <div className=\"ysp-process-form-wrapper\">\n        {_this.state.isShowBottom&&\n      \t<div className=\"ysp-process-form-bottom-button\">\n          <div>\n            {data.map((item, index)=>{\n              if(item.indexOf('\u6279\u51C6')!==-1){\n                return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n              }\n              if(item.indexOf('\u9001\u9605')!==-1){\n                return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n              }\n              if(item.indexOf('\u63D0\u4EA4')!==-1){\n                return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n              }\n            })}\n            <span onClick={_this.showMoreButton.bind(_this)}></span>\n          </div>\n          \n        </div>\n        }\n        {_this.state.isMoreOpen &&\n          <div className=\"load-more-coverlayer\">\n          \t<div className=\"load-more-data\">\n              <section>\n                {data.length>0&&\n                \tdata.map((item,index)=>{\n                  if(item==\"\u6253\u5370\"||item==\"\u4FDD\u5B58\"||item==\"\u63D0\u4EA4\"||item==\"\u8FD4\u56DE\"||item==\"\u9001\u9605\"||item==\"\u6279\u51C6\"){\n                    return null;\n                  }\n                  return <div data-num={index} onClick={_this.btnClick.bind(_this)}>{item}</div>\n                })\n                }\n              </section>\n              <div onClick={_this.showMoreButton.bind(_this)}>\u8FD4\u56DE</div>\n            </div>\n          </div>\n        }\n      </div>\n      \n    );\n  }\n}";
       return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.btnClick = function (e) {\n      debugger;\n      var handler = _this2.props.customHandler;\n      if (handler) {\n        handler({\n          data: { num: e.target.dataset.num },\n          eventType: 'click'\n        });\n      }\n      var evt = new Event('ysp-file-upload-mainleadersign-audit');\n      evt.value = '\u4E0A\u4F20\u6587\u4EF6';\n      window.dispatchEvent(evt);\n    };\n\n    _this2.showMoreButton = function (e) {\n      _this2.setState(function (prevState) {\n        return {\n          isMoreOpen: !prevState.isMoreOpen,\n          isShowBottom: !prevState.isShowBottom\n        };\n      });\n    };\n\n    _this2.state = {\n      isMoreOpen: false,\n      isShowBottom: true\n    };\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData || [];\n      if (data == null || data == undefined) {\n        return null;\n      }\n      return React.createElement(\n        'div',\n        { className: 'ysp-process-form-wrapper' },\n        _this.state.isShowBottom && React.createElement(\n          'div',\n          { className: 'ysp-process-form-bottom-button' },\n          React.createElement(\n            'div',\n            null,\n            data.map(function (item, index) {\n              if (item.indexOf('\u6279\u51C6') !== -1) {\n                return React.createElement(\n                  'span',\n                  { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                  data[index]\n                );\n              }\n              if (item.indexOf('\u9001\u9605') !== -1) {\n                return React.createElement(\n                  'span',\n                  { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                  data[index]\n                );\n              }\n              if (item.indexOf('\u63D0\u4EA4') !== -1) {\n                return React.createElement(\n                  'span',\n                  { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                  data[index]\n                );\n              }\n            }),\n            React.createElement('span', { onClick: _this.showMoreButton.bind(_this) })\n          )\n        ),\n        _this.state.isMoreOpen && React.createElement(\n          'div',\n          { className: 'load-more-coverlayer' },\n          React.createElement(\n            'div',\n            { className: 'load-more-data' },\n            React.createElement(\n              'section',\n              null,\n              data.length > 0 && data.map(function (item, index) {\n                if (item == \"\u6253\u5370\" || item == \"\u4FDD\u5B58\" || item == \"\u63D0\u4EA4\" || item == \"\u8FD4\u56DE\" || item == \"\u9001\u9605\" || item == \"\u6279\u51C6\") {\n                  return null;\n                }\n                return React.createElement(\n                  'div',\n                  { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                  item\n                );\n              })\n            ),\n            React.createElement(\n              'div',\n              { onClick: _this.showMoreButton.bind(_this) },\n              '\\u8FD4\\u56DE'\n            )\n          )\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
+    },
+    getData_control290_ATpyiy: function (elem) {
+      if (!elem) {
+        return;
+      }var files = elem.querySelectorAll('.progressWrapper');var fileData = [];if (files.length > 0) {
+        [].forEach.call(files, function (fileItem, fileIndex) {
+          fileData.push(fileItem.querySelector('.progressName').textContent.replace(/\s/g, ""));
+        });
+      }return fileData;
+    },
+    doAction_uiControl277_n5afSQ: function (data, elem) {
+      if (data.eventType == 'deleteFile') {
+        var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;$(elem.querySelector('#fsUploadProgressannexupload').querySelectorAll('div.progressWrapper')[idx]).remove();
+      }if (data.eventType == 'click') {
+        elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');$(elem).find("#Filedata").click();
+      }
+    },
+    getTemplate_uiControl277_n5afSQ: function () {
+      var selfTemplate = "module.exports = React.createClass({\n\tdeleteFile: function (e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \"deleteFile\",\n\t\t\t\tdata: e.target.getAttribute('data-index')\n\t\t\t})\n\t\t}\n\t},\n\tclick: function (e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: 'click'\n\t\t\t})\n\t\t}\n\t},\n\trender: function () {\n\t\tvar data = this.props.customData||[];\n\t\tvar _this = this;\n    if(logObject==undefined){\n      var logObject = {'doc':'doc-log','docx':'doc-log','xls':'excel-log','xlsx':'excel-log','txt':'annex-download','pdf':'pdf-log'};\n    }\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<div className=\"ysp-manager-audit-title-icon ysp-manager-audit-wrapper-noborder\">\n\t\t\t\t\t<span>\u9644\u4EF6</span>\n\t\t\t\t\t<i className=\"relate-files\" onClick={_this.click}></i>\n\t\t\t\t</div>\n        <div className='ysp-manager-audit-wrapper'>\n            {data instanceof Array&&data.length > 0 ?\n            data.map((fileItem, fileIndex) => {\n              var extentdName = fileItem.slice(fileItem.lastIndexOf('.')+1);\n              if(logObject[extentdName]==undefined){\n                var className = 'annex-download';\n              }else{\n                var className = logObject[extentdName] + \" \" + 'logo-common-css';\n              }\n              return (\n                <div className={className} style={{'border-bottom':'none'}}>\n                  {fileItem}\n                  <div style={{'font-size':'0.7rem'}}>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20\u2026\u2026</div>\n                  <span className=\"delete-log\" data-type=\"deleteFile\" onClick={_this.deleteFile.bind(_this)} data-index={fileIndex}>\uFF38</span>\n                </div>\n              )\n            })\n          :''}\n        </div>\n\t\t\t</div>\n\t\t)\n\t}\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n\tdisplayName: 'exports',\n\n\tdeleteFile: function deleteFile(e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \"deleteFile\",\n\t\t\t\tdata: e.target.getAttribute('data-index')\n\t\t\t});\n\t\t}\n\t},\n\tclick: function click(e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: 'click'\n\t\t\t});\n\t\t}\n\t},\n\trender: function render() {\n\t\tvar data = this.props.customData || [];\n\t\tvar _this = this;\n\t\tif (logObject == undefined) {\n\t\t\tvar logObject = { 'doc': 'doc-log', 'docx': 'doc-log', 'xls': 'excel-log', 'xlsx': 'excel-log', 'txt': 'annex-download', 'pdf': 'pdf-log' };\n\t\t}\n\t\treturn React.createElement(\n\t\t\t'div',\n\t\t\tnull,\n\t\t\tReact.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'ysp-manager-audit-title-icon ysp-manager-audit-wrapper-noborder' },\n\t\t\t\tReact.createElement(\n\t\t\t\t\t'span',\n\t\t\t\t\tnull,\n\t\t\t\t\t'\\u9644\\u4EF6'\n\t\t\t\t),\n\t\t\t\tReact.createElement('i', { className: 'relate-files', onClick: _this.click })\n\t\t\t),\n\t\t\tReact.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'ysp-manager-audit-wrapper' },\n\t\t\t\tdata instanceof Array && data.length > 0 ? data.map(function (fileItem, fileIndex) {\n\t\t\t\t\tvar extentdName = fileItem.slice(fileItem.lastIndexOf('.') + 1);\n\t\t\t\t\tif (logObject[extentdName] == undefined) {\n\t\t\t\t\t\tvar className = 'annex-download';\n\t\t\t\t\t} else {\n\t\t\t\t\t\tvar className = logObject[extentdName] + \" \" + 'logo-common-css';\n\t\t\t\t\t}\n\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t'div',\n\t\t\t\t\t\t{ className: className, style: { 'border-bottom': 'none' } },\n\t\t\t\t\t\tfileItem,\n\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t'div',\n\t\t\t\t\t\t\t{ style: { 'font-size': '0.7rem' } },\n\t\t\t\t\t\t\t'\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20\\u2026\\u2026'\n\t\t\t\t\t\t),\n\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t'span',\n\t\t\t\t\t\t\t{ className: 'delete-log', 'data-type': 'deleteFile', onClick: _this.deleteFile.bind(_this), 'data-index': fileIndex },\n\t\t\t\t\t\t\t'\\uFF38'\n\t\t\t\t\t\t)\n\t\t\t\t\t);\n\t\t\t\t}) : ''\n\t\t\t)\n\t\t);\n\t}\n});";
     }
   });
 })(window, ysp);
