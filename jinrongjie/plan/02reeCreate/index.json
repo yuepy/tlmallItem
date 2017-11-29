@@ -288,34 +288,81 @@
           }
         },
         {
-          "id": "uiControl273_TdCDGP",
-          "controlId": "control222_bEGuqJ",
+          "id": "uiControl319_MdUWLT",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl273_TdCDGP",
-                "onGetTemplate": "getTemplate_uiControl273_TdCDGP"
-              }
+              "templateType": ""
             }
-          }
-        },
-        {
-          "id": "uiControl274_Zr6Vn0",
-          "controlId": "control286_NnBFB4",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl274_Zr6Vn0",
-                "onGetTemplate": "getTemplate_uiControl274_Zr6Vn0"
-              }
+          },
+          "layout": [
+            {
+              "id": "uiControl319_MdUWLTheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl319_MdUWLTbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl273_TdCDGP",
+                  "controlId": "control222_bEGuqJ",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl273_TdCDGP",
+                        "onGetTemplate": "getTemplate_uiControl273_TdCDGP"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl274_Zr6Vn0",
+                  "controlId": "control286_NnBFB4",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl274_Zr6Vn0",
+                        "onGetTemplate": "getTemplate_uiControl274_Zr6Vn0"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl319_MdUWLTfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
             }
-          }
+          ]
         },
         {
           "id": "uiControl275_h4JoXl",
