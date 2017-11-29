@@ -528,7 +528,8 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "ignoreVisibility": true,
+      "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
@@ -628,6 +629,16 @@
         {
           "toContextId": "context8_QbFt5N",
           "toModelId": "setBack"
+        }
+      ]
+    },
+    "flow205_Q6gGHQ": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control253_CceTIQ",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
         }
       ]
     }

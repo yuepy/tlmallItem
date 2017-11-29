@@ -673,7 +673,13 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;$(elem.querySelector('#fsUploadProgressannexupload').querySelectorAll('div.progressWrapper')[idx]).remove();
       }if (data.eventType == 'click') {
-        elem.querySelector("#Filedata").click();
+        if (elem.querySelector("input[id='Filedata'][name='Filedata']")) {
+          if (elem.ownerDocument.defaultView.document.querySelectorAll("input[id='Filedata'][name='Filedata']").length > 1) {
+            elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');elem.querySelector("input[id='Filedata'][name='Filedata']").click();
+          } else {
+            elem.querySelectorAll("input[id='Filedata'][name='Filedata']")[0].click();
+          }
+        }
       }
     },
     getTemplate_uiControl260_QdSDxv: function () {
