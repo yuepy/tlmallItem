@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312800&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
   "jsFile": "index.js",
   "requires": {
-    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
   },
   "chineseName": "02自由流程审批",
   "description": "",
@@ -506,6 +507,10 @@
         {
           "toContextId": "context6_aweFC7",
           "toModelId": "managerAuditRelateProcess"
+        },
+        {
+          "toContextId": "context5_DhOsrK",
+          "toModelId": "managerAuditRelatedDoc"
         }
       ]
     },

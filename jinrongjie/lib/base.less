@@ -118,6 +118,10 @@ div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],d
     display: block;
   }
 }
+.file_box2{
+    background: #fff;
+    padding: 1px 0;
+}
 .push_file_box{
   overflow: hidden;
   div{
@@ -138,10 +142,9 @@ div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],d
 }
 .file2{
     position: relative;
-    margin: 10px 15px 10px 0;
+    margin: 10px;
     border-radius: 3px;
     padding: 5px 0 5px 50px;
-    background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
     >div:nth-child(1){
       font-size: 15px; 
     }
@@ -159,6 +162,34 @@ div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],d
       background: url(../lib/images/deleteM.png) no-repeat 0;
       background-size: 15px; 
     }
+}
+div[data-type='doc']{
+  background: url(../lib/images/word1x.png) no-repeat 10px 50%!important;
+  background-size: 25px!important;
+}
+div[data-type='png']{
+  background: url(../lib/images/picture1x.png) no-repeat 10px 50%!important;
+  background-size: 25px!important;
+}
+div[data-type='pdf']{
+  background: url(../lib/images/pdf1x.png) no-repeat 10px 50%!important;
+  background-size: 25px!important;
+}
+div[data-type='jpg']{
+  background: url(../lib/images/picture1x.png) no-repeat 10px 50%!important;
+  background-size: 25px!important;
+}
+div[data-type='xls']{
+  background: url(../lib/images/excel1x.png) no-repeat 10px 50%!important;
+  background-size: 25px!important;
+}
+div[data-type='zip']{
+  background: url(../lib/images/zip1x.png) no-repeat 10px 50%!important;
+  background-size: 25px!important;
+}
+div[data-type='unknown']{
+  background: url(../lib/images/defaultDocument.png) no-repeat 10px 50%!important;
+  background-size: 25px!important;
 }
 div[contenteditable='true']{
   -webkit-user-select:text;

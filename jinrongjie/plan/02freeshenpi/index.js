@@ -27,8 +27,7 @@
             if ($(this).children("td").length == 1 && $(this).children("td")[0].className == 'zdm') {
               data.base_lc_info.title.push($(this).children("td").text().trim());
             } else {
-              var tdl = $(this).find("td").length - 2;
-              $(this).children("td").each(function (i) {
+              var tdl = $(this).find("td").length - 2;$(this).children("td").each(function (i) {
                 if ($(this).find("input").length !== 3 && $(this)[0].className == 'zdn' && i == tdl) {
                   data.base_lc_info.content.push($(this).text());
                 } //判断radio
@@ -43,13 +42,13 @@
                   } else if ($(this).find("input").length == 1 && $(this).find("input")[0].type == 'hidden' && $(this).children("").length == 1) {
                     var arrn = [];arrn.push($(this).text().trim());data.base_lc_info.degree.push(arrn);
                   } else if ($(this).children("select").length > 0) {
-                    data.base_lc_info.miji.id.push($(this).children("select")[0].id);$(this).children("select").children("option").each(function () {
+                    data.base_lc_info.miji.id.push($(this).children("select")[0].id);
+                    $(this).children("select").children("option").each(function () {
                       var arr = [];if ($(this)[0].selected == true) {
                         arr.push({ text: $(this).text().trim(), selected: true });
                       } else {
                         arr.push({ text: $(this).text().trim(), selected: "" });
-                      }
-                      data.base_lc_info.miji.content.push(arr);
+                      }data.base_lc_info.miji.content.push(arr);
                     });
                   }
               });
@@ -81,8 +80,7 @@
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(),
-                          stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
@@ -141,8 +139,7 @@
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                   } //判断纯文字
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({
-                        text: $(this).children("span").children("a").text(), type: 'a' });
+                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children("button").length == 0) {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } //判断textarea-------------------------------------
@@ -200,14 +197,14 @@
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'png',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
-                        arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1]
+                        });
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
@@ -243,10 +240,12 @@
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
-                    }if ($(this)[0].selected == false) {
+                    }
+                    if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false'
+                  });
                 } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
@@ -254,8 +253,7 @@
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"),
-                    mark: '1', disabled: 'true' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
@@ -288,7 +286,8 @@
                         else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
                             arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
                           } else if ($(this).find(".cke_editor").length > 0) {
-                            arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
+                            arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML,
+                              type: 'suggest_final' });
                           }data.base_info.content.push(arr2);
           });
         });
@@ -321,10 +320,10 @@
             $(this)[0].textContent = val;
           }
         });
-      }if (data.eventType == 'select') {
+      }
+      if (data.eventType == 'select') {
         //debugger;
-        var id = data.dataCustom.id;
-        var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("select").each(function () {
+        var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("select").each(function () {
           if ($(this)[0].id == id) {
             $(this).children("option").each(function () {
               if ($(this).text() == val) {
@@ -377,8 +376,7 @@
         debugger; //每个文件的onclick中的第二个number
         var number = data.dataCustom.number; //文件类型
         var type = data.dataCustom.type; //现在的文件名称
-        var text = data.dataCustom.text;
-        //拼接下载地址
+        var text = data.dataCustom.text; //拼接下载地址
         var _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
@@ -393,21 +391,23 @@
     getData_control290_eLH7bU: function (elem) {
       if (!elem) {
         return;
-      }var data = [];$(elem).find("#ysp_fake_form").each(function () {
-        var arr = [];if ($(this).find("#Filedata").attr('value').indexOf('txt') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'text' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('doc') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'doc' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('pdf') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'pdf' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('jpg') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'jpg' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('xls') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'xls' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('png') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'png' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('unknown') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'unknown' });
+      }var data = [];$(elem).find(".progressWrapper").each(function () {
+        var arr = [];if ($(this).find(".progressName").text().indexOf('txt') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'text' });
+        } else if ($(this).find(".progressName").text().indexOf('doc') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'doc' });
+        } else if ($(this).find(".progressName").text().indexOf('pdf') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'pdf' });
+        } else if ($(this).find(".progressName").text().indexOf('jpg') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'jpg' });
+        } else if ($(this).find(".progressName").text().indexOf('xls') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'xls' });
+        } else if ($(this).find(".progressName").text().indexOf('png') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'png' });
+        } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'zip' });
+        } else {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'unknown' });
         }data.push(arr);
       });return data;
     },
@@ -415,12 +415,14 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
       }if (data.eventType == 'click') {
-        $(elem).find("#Filedata").click();$(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
+        $(elem).find("#Filedata").click();if (elem.ownerDocument.querySelectorAll('#ysp_fake_form').length == 2) {
+          $(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
+        }
       }
     },
     getTemplate_uiControl277_U4k2sJ: function () {
-      var selfTemplate = "module.exports = React.createClass({\n   deleteFile:function(e){\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display='none'\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"deleteFile\",\n      \tdata:e.target.getAttribute('data-index')\n      })\n    }\n  },\n  click:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(data && data[0][0]){\n      var item = data.map(function(d,i){\n      return(\n        \n        \n        \n      <div className='file2' data-no={i} data-type={d[0].stl}><div>{d[0].text}</div><div>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20...</div><button data-index={i} onClick={_this.deleteFile}></button></div>\n      \n      \n      \n      )\n    })\n    }\n    \n   return (\n     <div>\n      <div className=\"ysp-manager-audit-title-icon\">\n        <span>\u9644\u4EF6</span>\n        <i className=\"relate-files\" onClick={_this.click}></i>\n        \n      </div>\n       <div className = 'file_box2'>{item}</div>\n       </div>\n      )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  deleteFile: function deleteFile(e) {\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display = 'none';\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \"deleteFile\",\n        data: e.target.getAttribute('data-index')\n      });\n    }\n  },\n  click: function click(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data && data[0][0]) {\n      var item = data.map(function (d, i) {\n        return React.createElement(\n          'div',\n          { className: 'file2', 'data-no': i, 'data-type': d[0].stl },\n          React.createElement(\n            'div',\n            null,\n            d[0].text\n          ),\n          React.createElement(\n            'div',\n            null,\n            '\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20...'\n          ),\n          React.createElement('button', { 'data-index': i, onClick: _this.deleteFile })\n        );\n      });\n    }\n\n    return React.createElement(\n      'div',\n      null,\n      React.createElement(\n        'div',\n        { className: 'ysp-manager-audit-title-icon' },\n        React.createElement(\n          'span',\n          null,\n          '\\u9644\\u4EF6'\n        ),\n        React.createElement('i', { className: 'relate-files', onClick: _this.click })\n      ),\n      React.createElement(\n        'div',\n        { className: 'file_box2' },\n        item\n      )\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n   deleteFile:function(e){\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display='none'\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"deleteFile\",\n      \tdata:e.target.getAttribute('data-index')\n      })\n    }\n  },\n  click:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(data && data.length > 0 && data[0].length > 0){\n      var item = data.map(function(d,i){\n      return(\n      <div className='file2' data-no={i} data-type={d[0].stl}><div>{d[0].text}</div><div>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20...</div><button data-index={i} onClick={_this.deleteFile}></button></div>\n      \n      \n      \n      )\n    })\n    }\n    \n   return (\n     <div>\n      <div className=\"ysp-manager-audit-title-icon\">\n        <span>\u9644\u4EF6</span>\n        <i className=\"relate-files\" onClick={_this.click}></i>\n        \n      </div>\n       <div className = 'file_box2'>{item}</div>\n       </div>\n      )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  deleteFile: function deleteFile(e) {\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display = 'none';\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \"deleteFile\",\n        data: e.target.getAttribute('data-index')\n      });\n    }\n  },\n  click: function click(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data && data.length > 0 && data[0].length > 0) {\n      var item = data.map(function (d, i) {\n        return React.createElement(\n          'div',\n          { className: 'file2', 'data-no': i, 'data-type': d[0].stl },\n          React.createElement(\n            'div',\n            null,\n            d[0].text\n          ),\n          React.createElement(\n            'div',\n            null,\n            '\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20...'\n          ),\n          React.createElement('button', { 'data-index': i, onClick: _this.deleteFile })\n        );\n      });\n    }\n\n    return React.createElement(\n      'div',\n      null,\n      React.createElement(\n        'div',\n        { className: 'ysp-manager-audit-title-icon' },\n        React.createElement(\n          'span',\n          null,\n          '\\u9644\\u4EF6'\n        ),\n        React.createElement('i', { className: 'relate-files', onClick: _this.click })\n      ),\n      React.createElement(\n        'div',\n        { className: 'file_box2' },\n        item\n      )\n    );\n  }\n});";
     },
     getData_control291_PbOFz1: function (elem) {
       var data = ['02自由流程'];return data;
