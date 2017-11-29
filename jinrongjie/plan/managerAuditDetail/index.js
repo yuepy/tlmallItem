@@ -221,9 +221,9 @@
       }if (data.eventType == 'click') {
         if (elem.querySelector("input[id='Filedata'][name='Filedata']")) {
           if (elem.querySelectorAll("input[id='Filedata'][name='Filedata']").length > 1) {
-            elem.querySelectorAll("input[id='Filedata'][name='Filedata']")[1].click();
+            elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');elem.querySelectorAll("input[id='Filedata'][name='Filedata']")[1].click();
           } else {
-            elem.querySelectorAll("input[id='Filedata'][name='Filedata']")[0].click();
+            elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');elem.querySelectorAll("input[id='Filedata'][name='Filedata']")[0].click();
           }
         }
       }
