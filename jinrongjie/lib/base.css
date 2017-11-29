@@ -85,6 +85,10 @@ div[data-ysp-modelid="docApprovalListNew"] .card-body {
 #open_div_lfj .button_less {
   display: block;
 }
+.file_box2 {
+  background: #fff;
+  padding: 1px 0;
+}
 .push_file_box {
   overflow: hidden;
 }
@@ -105,10 +109,9 @@ div[data-ysp-modelid="docApprovalListNew"] .card-body {
 }
 .file2 {
   position: relative;
-  margin: 10px 15px 10px 0;
+  margin: 10px;
   border-radius: 3px;
   padding: 5px 0 5px 50px;
-  background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
 }
 .file2 > div:nth-child(1) {
   font-size: 15px;
@@ -126,6 +129,34 @@ div[data-ysp-modelid="docApprovalListNew"] .card-body {
   border: 0;
   background: url(../lib/images/deleteM.png) no-repeat 0;
   background-size: 15px;
+}
+div[data-type='doc'] {
+  background: url(../lib/images/word1x.png) no-repeat 10px 50% !important;
+  background-size: 25px!important;
+}
+div[data-type='png'] {
+  background: url(../lib/images/picture1x.png) no-repeat 10px 50% !important;
+  background-size: 25px!important;
+}
+div[data-type='pdf'] {
+  background: url(../lib/images/pdf1x.png) no-repeat 10px 50% !important;
+  background-size: 25px!important;
+}
+div[data-type='jpg'] {
+  background: url(../lib/images/picture1x.png) no-repeat 10px 50% !important;
+  background-size: 25px!important;
+}
+div[data-type='xls'] {
+  background: url(../lib/images/excel1x.png) no-repeat 10px 50% !important;
+  background-size: 25px!important;
+}
+div[data-type='zip'] {
+  background: url(../lib/images/zip1x.png) no-repeat 10px 50% !important;
+  background-size: 25px!important;
+}
+div[data-type='unknown'] {
+  background: url(../lib/images/defaultDocument.png) no-repeat 10px 50% !important;
+  background-size: 25px!important;
 }
 div[contenteditable='true'] {
   -webkit-user-select: text;
@@ -2288,6 +2319,16 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   background-position-y: 50%;
   line-height: 15px;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile {
+  background: #f4f4f4;
+  padding: 5px 0;
+  border-bottom: 5px solid #fff;
+}
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .fileIcon,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .fileIcon,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .fileIcon,
@@ -2390,6 +2431,33 @@ div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .else {
   background: url("../lib/images/defaultDocument.png") no-repeat;
   background-size: 20px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .uploadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .uploadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .uploadIcon,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .downloadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .downloadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .downloadIcon,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .downloadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .downloadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .downloadIcon {
+  float: right;
+  background: url("../lib/images/download.png") no-repeat;
+  background-size: 10px;
+  height: 15px;
+  width: 15px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .uploadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .uploadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .uploadIcon,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon {
+  background: url("../lib/images/deleteM.png") no-repeat;
+  background-size: 10px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word,
@@ -2835,6 +2903,79 @@ div[data-ysp-modelid='createFundSeal'] .ysp_advice_wrapper .ysp_advice_card .ysp
   color: #A1E15C;
   text-decoration: underline;
 }
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper {
+  background: #fff;
+  border-bottom: 10px solid #f4f4f4;
+  padding: 10px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
+  padding: 10px 10px 0 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle {
+  font-size: 14px;
+  color: #c29a2a;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck {
+  float: right;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span {
+  border: 1px solid #666;
+  color: #666;
+  border-radius: 10px;
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive {
+  border: 1px solid #A1E15C;
+  color: #A1E15C;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck {
+  padding-left: 10%;
+  padding-top: 10px;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span {
+  display: inline-block;
+  width: 30%;
+  background: #f4f4f4;
+  color: #666;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 0;
+}
+div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive,
+div[data-ysp-modelid='fundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive,
+div[data-ysp-modelid='createFundSeal'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
+  background: #c29a2a;
+  color: #fff;
+}
 div[data-ysp-modelid='askForLeave'] ._2YwloE7OzAhaMwSn1XM-Va {
   border-bottom: 0;
 }
@@ -2865,59 +3006,6 @@ div[data-ysp-modelid='askForLeave'] .topTitle {
   background: #fff;
   text-align: center;
   border-bottom: 10px solid #f4f4f4;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper {
-  background: #fff;
-  border-bottom: 10px solid #f4f4f4;
-  padding: 10px 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content {
-  padding: 10px 10px 0 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .contentTitle {
-  font-size: 14px;
-  color: #c29a2a;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 5px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck {
-  float: right;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck span {
-  border: 1px solid #666;
-  color: #666;
-  border-radius: 10px;
-  display: inline-block;
-  width: 45px;
-  text-align: center;
-  font-size: 12px;
-  margin-right: 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_emergency .emergencyCheck .egyactive {
-  border: 1px solid #A1E15C;
-  color: #A1E15C;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck {
-  padding-left: 10%;
-  padding-top: 10px;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck span {
-  display: inline-block;
-  width: 30%;
-  background: #f4f4f4;
-  color: #666;
-  border-radius: 5px;
-  margin-right: 10px;
-  text-align: center;
-  font-size: 12px;
-  padding: 5px 0;
-}
-div[data-ysp-modelid='askForLeave'] .ysp_askForLeave_wrapper .ysp_askForLeave_content .ysp_infoAlert .msgCheck .msgactive {
-  background: #c29a2a;
-  color: #fff;
 }
 div[data-ysp-modelid='postName'] .ysp_stationName {
   background: #fff;

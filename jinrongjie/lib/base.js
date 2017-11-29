@@ -478,7 +478,7 @@
           	var uploadId;
             (function() {
                 var addFileInput = function addFileInput(originId, id, target,html) {
-                  debugger;
+                  
                     var placeHolder = doc.getElementById(originId);
                     if (placeHolder) {
                       var tempParent , Object;
