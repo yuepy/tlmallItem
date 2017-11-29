@@ -599,12 +599,15 @@
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("post", "http://192.168.200.121:8080/home/release/com.eibus.web.soap.Gateway.wcp", true);
+              	//xmlhttp.open("post", "http://192.168.200.121:8080/home/release/com.eibus.web.soap.Gateway.wcp", true);
+              	xmlhttp.open("post", "http://esb.fsig.com.cn/home/system/com.eibus.web.soap.Gateway.wcp", true);
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         // console.log(xmlhttp.responseText);
                         var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
                         topWindow.num.push(xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('todoCount')[0].textContent, xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('unreadCount')[0].textContent);
+                    }else if(xmlhttp.status == 400){
+                      topWindow.num.push('请求失败!')
                     }
                 }
                 xmlhttp.send(soapData);
