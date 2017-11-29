@@ -2351,6 +2351,9 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
           }
         }
         .downLoadFile,.upLoadFile{
+          background: #f4f4f4;
+          padding: 5px 0;
+          border-bottom: 5px solid #fff;
           .fileIcon{
             position: absolute;
             top: 0;
@@ -2369,26 +2372,37 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
               height: 20px;
               width: 20px;
             }
-            .doc{
-              background: url("../lib/images/word1x.png") no-repeat;
-              background-size: 20px;
-            }
-            .xls{
-              background: url("../lib/images/excel1x.png") no-repeat;
-              background-size: 20px;
-            }
-            .pdf{
-              background: url("../lib/images/pdf1x.png") no-repeat;
-              background-size: 20px;
-            }
-            .ppt{
-              background: url("../lib/images/ppt1x.png") no-repeat;
-              background-size: 20px;
-            }
-            .else{
-              background: url("../lib/images/defaultDocument.png") no-repeat;
-              background-size: 20px;
-            }
+          .doc{
+            background: url("../lib/images/word1x.png") no-repeat;
+            background-size: 20px;
+          }
+          .xls{
+            background: url("../lib/images/excel1x.png") no-repeat;
+            background-size: 20px;
+          }
+          .pdf{
+            background: url("../lib/images/pdf1x.png") no-repeat;
+            background-size: 20px;
+          }
+          .ppt{
+            background: url("../lib/images/ppt1x.png") no-repeat;
+            background-size: 20px;
+          }
+          .else{
+            background: url("../lib/images/defaultDocument.png") no-repeat;
+            background-size: 20px;
+          }
+          .uploadIcon,.downloadIcon{
+            float: right;
+            background: url("../lib/images/download.png") no-repeat;
+            background-size: 10px;
+            height: 15px;
+            width: 15px;
+          }
+          .uploadIcon{
+            background: url("../lib/images/deleteM.png") no-repeat;
+            background-size: 10px;
+          }
         }
        	.upLoading{
           .word{
@@ -2696,48 +2710,6 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
       }
     }
   }
-}
-div[data-ysp-modelid='askForLeave']{
-  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
-    border-bottom: 0;
-  }
-  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
-    //2017//11//20
-    //position: absolute;
-    //height: 300px;
-   // width: 100%;
-     //top:45px;
-    //overflow-y:scroll; 
-    margin: 0;
-   
-    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
-      background: #fff;
-      border-bottom: 10px solid #F3F3F3;
-      li{
-        a{
-          width: auto;
-          display: inline;
-        }
-        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
-          background: none;
-          border-bottom: 3px solid #C29A2A;
-          color: #C29A2A;
-          padding: 3px 0;
-        }
-      }
-    }
-  }
-  .OvsRcaoL1UILAcvWC8nMu{//面板子div
-    padding: 0!important;
-  }
-  .topTitle{//大标题
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 28%;
-    background: #fff;
-    text-align: center;
-    border-bottom: 10px solid #f4f4f4;
-  }
   .ysp_askForLeave_wrapper{
     background: #fff;
     //margin-top: 10px;
@@ -2794,6 +2766,49 @@ div[data-ysp-modelid='askForLeave']{
       }
     }
   }
+}
+div[data-ysp-modelid='askForLeave']{
+  ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
+    border-bottom: 0;
+  }
+  ._27gZE6m5LfD5uG_dZ8p3iP{//data-type="tabs"
+    //2017//11//20
+    //position: absolute;
+    //height: 300px;
+   // width: 100%;
+     //top:45px;
+    //overflow-y:scroll; 
+    margin: 0;
+   
+    ._2kVn_YrAvZeioJhwcvsdtZ{//data-type="tabs:nav"
+      background: #fff;
+      border-bottom: 10px solid #F3F3F3;
+      li{
+        a{
+          width: auto;
+          display: inline;
+        }
+        ._2SrmNlTKE-eTC-YLPVDF-2{//active的a标签
+          background: none;
+          border-bottom: 3px solid #C29A2A;
+          color: #C29A2A;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+  .OvsRcaoL1UILAcvWC8nMu{//面板子div
+    padding: 0!important;
+  }
+  .topTitle{//大标题
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 28%;
+    background: #fff;
+    text-align: center;
+    border-bottom: 10px solid #f4f4f4;
+  }
+
 }
 div[data-ysp-modelid='postName']{
   .ysp_stationName{
