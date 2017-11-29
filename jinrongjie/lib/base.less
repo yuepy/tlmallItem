@@ -34,7 +34,7 @@ body {
   font-family: "Microsoft YaHei","FreeSans,Arimo","Droid Sans","wenquanyi micro hei",sans-serif;
 	-webkit-overflow-scrolling: initial !important;
   background: #f4f4f4;
- 
+ 	-webkit-user-select:text;
 }
 li{list-style: none;}
 ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
@@ -46,8 +46,8 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
     height: 100vh;
     overflow: auto;
 }
-//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动，按顺序依次managerSignNew/mainLeaderSignNew/innerCommunication/exceptITAssetsApplication/sendDocProcessNew/docApprovalListNew
-#uiControl240_lcFRXVbody,#uiControl241_LVqr6ibody,#uiControl242_Gr2ZsBbody,#uiControl254_pZRQ8nbody,.ysp_table_office_lfj,#uiControl273_ndTGVFbody,#uiControl300_TAg1T9body,#uiControl305_bta9oebody{
+//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动，按顺序依次managerSignNew/mainLeaderSignNew/innerCommunication/exceptITAssetsApplication/sendDocProcessNew/docApprovalListNew/02reeCreate
+#uiControl240_lcFRXVbody,#uiControl241_LVqr6ibody,#uiControl242_Gr2ZsBbody,#uiControl254_pZRQ8nbody,.ysp_table_office_lfj,#uiControl273_ndTGVFbody,#uiControl300_TAg1T9body,#uiControl305_bta9oebody,#uiControl319_MdUWLTbody{
   height: 90vh;
   overflow-y:auto;
   -webkit-overflow-scrolling: touch;
@@ -63,14 +63,14 @@ div[data-type="tabs:content"]{
     padding: 0;
   }
 }
-div[data-ysp-modelid="ITdeviceAppply"],div[data-ysp-modelid="02reeCreate"]{
+div[data-ysp-modelid="ITdeviceAppply"]{
   .ysp_table_lfj{
-    height: 85vh;
+    height: 75vh;
     overflow-y:auto;
     -webkit-overflow-scrolling: touch;
   }
 }
-div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],div[data-ysp-modelid="mainLeaderSignNew"],div[data-ysp-modelid="innerCommunication"],div[data-ysp-modelid="exceptITAssetsApplication"],div[data-ysp-modelid="sendDocProcessNew"],div[data-ysp-modelid="docApprovalListNew"]{
+div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],div[data-ysp-modelid="mainLeaderSignNew"],div[data-ysp-modelid="innerCommunication"],div[data-ysp-modelid="exceptITAssetsApplication"],div[data-ysp-modelid="sendDocProcessNew"],div[data-ysp-modelid="docApprovalListNew"],div[data-ysp-modelid="02reeCreate"]{
   .card{
     margin: 0;
     border-radius: none;
@@ -162,6 +162,10 @@ div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],d
       background: url(../lib/images/deleteM.png) no-repeat 0;
       background-size: 15px; 
     }
+}
+div[data-type='txt']{
+  background: url(../lib/images/txt1x.png) no-repeat 10px 50%!important;
+  background-size: 25px!important;
 }
 div[data-type='doc']{
   background: url(../lib/images/word1x.png) no-repeat 10px 50%!important;
@@ -2177,6 +2181,7 @@ div[data-ysp-modelid='choosePerson']{
   }
 }
 .box_select{
+  background: #fff;
   margin:40px 0 0 0 ;
   .people3{
     margin: 10px;
@@ -2210,6 +2215,25 @@ div[data-ysp-modelid='choosePerson']{
     border-bottom: 5px solid #f3f3f3;
     padding-left: 20px;
     font-size: 14px;
+    position: relative;
+    .down{
+      width:20px;
+      height: 20px;
+      position: absolute;
+      right: 30px;
+      top:5px;
+      background: url(../lib/images/unselected.png) no-repeat 0;
+      background-size:20px;
+    }
+     .open{
+      width:20px;
+      height: 20px;
+      position: absolute;
+      right: 30px;
+      top:5px;
+      background: url(../lib/images/selected.png) no-repeat 0;
+       background-size:20px;
+    }
     span{
       color: #000;
     }
@@ -2381,11 +2405,7 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
             // width: 100%;
           }
         }
-        .downLoadFile,.upLoadFile{
-          background: #f4f4f4;
-          padding: 5px 0;
-          border-bottom: 5px solid #fff;
-          .fileIcon{
+        .fileIcon{
             position: absolute;
             top: 0;
             right: 5px;
@@ -2396,6 +2416,11 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
             background: url("../lib/images/upload-files.png") no-repeat;
             background-size:15px;
           }
+        .downLoadFile,.upLoadFile{
+          background: #f4f4f4;
+          padding: 5px 0;
+          border-bottom: 5px solid #fff;
+          
           .txt,.doc,.xls,.pdf,.ppt,.else,.pic,.zip,.rar{
               float: left;
               background: url("../local/img/txt.png") no-repeat;

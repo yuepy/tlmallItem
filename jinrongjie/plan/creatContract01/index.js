@@ -97,17 +97,17 @@
                         } else if ($(this).text().indexOf('doc') !== -1) {
                           arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
                         } else if ($(this).text().indexOf('pdf') !== -1) {
-                          arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1]
-                          });
+                          arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                         } else if ($(this).text().indexOf('xls') !== -1) {
                           arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                         } else if ($(this).text().indexOf('png') !== -1) {
                           arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                         } else if ($(this).text().indexOf('jpg') !== -1) {
-                          arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                          arr3.push({
+                            name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                         } else if ($(this).text().indexOf('gif') !== -1) {
-                          arr3.push({ name: $(this).text().trim(), stl: 'gif',
-                            no: $(this).attr('onClick').match(/\d+/g)[1] });
+                          arr3.push({
+                            name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                         } else if ($(this).text().indexOf('zip') !== -1) {
                           arr3.push({ name: $(this).text().trim(), stl: 'zip', no: $(this).attr('onClick').match(/\d+/g)[1] });
                         } else if ($(this).text().indexOf('ppt') !== -1) {
@@ -141,7 +141,8 @@
                         arr4.push($(this).text().trim().match(/\(.*\)/));
                       }
                     });
-                  }arr2.push({ text: arr3, size: arr4, type: 'fujian' });
+                  }arr2.push({ text: arr3,
+                    size: arr4, type: 'fujian' });
                 } //判断select-------------------------------------
                 else if ($(this).children("select").length > 0) {
                     var arr4 = [];$(this).children("select").children("option").each(function () {
@@ -161,7 +162,8 @@
                         arr2.push({ text: $(this).children("span").text(), type: 'a' });
                       } //判断textarea-------------------------------------
                       else if ($(this).children("textarea").length == 1) {
-                          arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id });
+                          arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea',
+                            id: $(this).children("textarea")[0].id });
                         } //判断button-------------------------------------
                         else if ($(this).children("button").length > 0) {
                             //var arr5 = [];
@@ -169,7 +171,8 @@
                               $(this).children("button").each(function () {
                                 var arr = [];$(this).next("span").children('a').each(function () {
                                   arr.push($(this).text());
-                                });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                                });
+                                arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                               });
                             } else {
                               $(this).children("button").each(function () {
@@ -184,7 +187,8 @@
                               arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
                             } else if ($(this).find(".cke_editor").length > 0) {
                               arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
-                            }data.base_info.content.push(arr2);
+                            }
+              data.base_info.content.push(arr2);
             });
           }
         });
@@ -263,7 +267,7 @@
           }
         });
       }if (data.eventType == 'about1') {
-        elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关文档"]').onclick());elem.querySelector('button[title="相关文档"]').onclick(); // var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];
+        elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关文档"]').onclick()); // var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];
         // $(elem).find("button").each(function () {
         //   if ($(this).attr("title") == '相关文档') {
         //     $(this).click();
@@ -273,7 +277,7 @@
         // var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];
         // $(elem).find("button").each(function () {
         //   if ($(this).attr("title") == '相关流程') {
-        elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关流程"]').onclick());elem.querySelector('button[title="相关流程"]').onclick();
+        elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关流程"]').onclick());
       }
     },
     getTemplate_uiControl139_GxHQcK: function () {
