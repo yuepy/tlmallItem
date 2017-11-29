@@ -64,7 +64,8 @@
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(),
+                type: 'title1' });
             } //判断附件-------------------------------------
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                 var arr3 = [];if ($(this).children("table").find("a").length > 0) {
@@ -79,12 +80,13 @@
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({
-                          name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'jpg',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
                         arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       }
@@ -103,6 +105,10 @@
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
+                      } else if ($(this).next().text().indexOf('ppt') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
+                      } else if ($(this).next().text().indexOf('zip') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                       } else {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
@@ -121,8 +127,7 @@
                     if ($(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
                     }if ($(this)[0].selected == false) {
-                      arr4.push({ text: $(this).text().trim(),
-                        select: '' });
+                      arr4.push({ text: $(this).text().trim(), select: '' });
                     }
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
                 } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
@@ -133,7 +138,8 @@
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
-                } //判断input-------------------------------------
+                }
+                //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                   } //判断纯文字
@@ -163,14 +169,14 @@
                           arr2.push({ text: $(this).find("button").text(), type: 'button22', id: $(this).children('span').eq(0).children("button").attr('id') });
                         } //判断意见-------------------------------------
                         else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
-                            arr2.push({ text: $(this)[0].innerHTML,
-                              type: 'suggest' });
+                            arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
                           } else if ($(this).find(".cke_editor").length > 0) {
                             arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
                           }data.base_info.content.push(arr2);
           });
         });
-      }return data;
+      }
+      return data;
     }, doAction_uiControl253_4RR9p0: function (data, elem) {
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
@@ -290,6 +296,8 @@
           arr.push({ text: $(this).find(".progressName").text(), stl: 'png' });
         } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
           arr.push({ text: $(this).find(".progressName").text(), stl: 'zip' });
+        } else if ($(this).find(".progressName").text().indexOf('ppt') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'ppt' });
         } else {
           arr.push({ text: $(this).find(".progressName").text(), stl: 'unknown' });
         }data.push(arr);

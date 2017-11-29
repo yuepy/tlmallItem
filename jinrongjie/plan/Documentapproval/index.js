@@ -89,8 +89,7 @@
                     }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });
-                  arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id") });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id") });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
@@ -115,7 +114,8 @@
                             });
                           } else {
                             $(this).children("button").each(function () {
-                              arr2.push({ text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              arr2.push({ text: '',
+                                type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           }
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
@@ -172,7 +172,8 @@
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'doc', tno: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
+                        arr3.push({
+                          name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
@@ -181,14 +182,18 @@
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
+                      } else if ($(this).next().text().indexOf('zip') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
+                      } else if ($(this).next().text().indexOf('ppt') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                       } else {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
                     }
                   });
-                }
-                if ($(this).children("table").find(".btnFlowd").length > 0) {
-                  var arr4 = [];$(this).children("table").find(".btnFlowd").each(function (i) {
+                }if ($(this).children("table").find(".btnFlowd").length > 0) {
+                  var arr4 = [];
+                  $(this).children("table").find(".btnFlowd").each(function (i) {
                     if (!/全部下载/.test($(this).text())) {
                       arr4.push($(this).text().trim().match(/\(.*\)/));
                     }
@@ -545,6 +550,8 @@
           arr.push({ text: $(this).find(".progressName").text(), stl: 'png' });
         } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
           arr.push({ text: $(this).find(".progressName").text(), stl: 'zip' });
+        } else if ($(this).find(".progressName").text().indexOf('ppt') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'ppt' });
         } else {
           arr.push({ text: $(this).find(".progressName").text(), stl: 'unknown' });
         }data.push(arr);

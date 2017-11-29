@@ -96,6 +96,10 @@
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('ppt') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'ppt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('zip') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'zip', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
                         arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       }
@@ -131,8 +135,7 @@
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
-                    }
-                    if ($(this)[0].selected == false) {
+                    }if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id") });
@@ -158,7 +161,8 @@
                             });
                           } else {
                             $(this).children("button").each(function () {
-                              arr2.push({ text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              arr2.push({ text: '', type: 'button',
+                                id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           }
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
@@ -216,15 +220,14 @@
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(),
-                          stl: 'pdf', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'png',
-                          no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'jpg',
+                          no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else {
@@ -232,8 +235,7 @@
                       }
                     }
                   });
-                }
-                if ($(this).children("table").find(".btnFlowd").length > 0) {
+                }if ($(this).children("table").find(".btnFlowd").length > 0) {
                   var arr4 = [];$(this).children("table").find(".btnFlowd").each(function (i) {
                     if (!/全部下载/.test($(this).text())) {
                       arr4.push($(this).text().trim().match(/\(.*\)/));
@@ -406,6 +408,8 @@
           arr.push({ text: $(this).find(".progressName").text(), stl: 'png' });
         } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
           arr.push({ text: $(this).find(".progressName").text(), stl: 'zip' });
+        } else if ($(this).find(".progressName").text().indexOf('ppt') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'ppt' });
         } else {
           arr.push({ text: $(this).find(".progressName").text(), stl: 'unknown' });
         }data.push(arr);

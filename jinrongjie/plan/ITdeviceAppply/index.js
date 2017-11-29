@@ -254,6 +254,8 @@
                             arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                           } else if ($(this).next().text().indexOf('zip') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
+                          } else if ($(this).next().text().indexOf('ppt') !== -1) {
+                            arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                           } else {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                           }
@@ -431,6 +433,8 @@
           arr.push({ text: $(this).find(".progressName").text(), stl: 'png' });
         } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
           arr.push({ text: $(this).find(".progressName").text(), stl: 'zip' });
+        } else if ($(this).find(".progressName").text().indexOf('ppt') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'ppt' });
         } else {
           arr.push({ text: $(this).find(".progressName").text(), stl: 'unknown' });
         }data.push(arr);

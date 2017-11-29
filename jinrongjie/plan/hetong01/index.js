@@ -310,6 +310,10 @@
           arr.push({ text: $(this).find('.progressName').text(), stl: 'pdf' });
         } else if ($(this).find(".progressName").text().indexOf('gif') !== -1) {
           arr.push({ text: $(this).find('.progressName').text(), stl: 'gif' });
+        } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
+          arr.push({ text: $(this).find('.progressName').text(), stl: 'zip' });
+        } else if ($(this).find(".progressName").text().indexOf('ppt') !== -1) {
+          arr.push({ text: $(this).find('.progressName').text(), stl: 'ppt' });
         } else {
           arr.push({ text: $(this).find('.progressName').text(), stl: 'unknown' });
         }data.push(arr);
