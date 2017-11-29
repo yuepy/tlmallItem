@@ -78,7 +78,7 @@
             } else if (dd.querySelectorAll(".btnFlowd").length > 0 && dd.querySelectorAll(".ViewForm").length > 0) {
               obj.content[0].push("上传下载");$(dd).children("table").children("tbody").eq(1).children("tr:not(:last-child)").each(function (i, d) {
                 obj.content[1].push($(d).children("td").eq(0).find("a").text()); //下载文件名
-                obj.content[2].push($($(d).children("td").eq(2).find("button"))[0].getAttribute("onclick").match(/(\d.*)/g)); //下载地址
+                obj.content[2].push($($(d).children("td").eq(2).find("button"))[0].getAttribute("onclick").match(/\d+/g)); //下载地址
               });if (dd.querySelector(".ViewForm").querySelectorAll("a").length > 0) {
                 var progressName = dd.querySelector(".ViewForm").querySelectorAll(".progressName");var aArr = [];$(progressName).each(function (i1, d1) {
                   aArr.push($(d1).text());
