@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=151&isagent=0&beagenter=0",
   "jsFile": "index.js",
   "requires": {
-    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
   },
   "chineseName": "金融街集团所属公司公文审批单-发起",
   "description": "金融街集团所属公司公文审批单-发起",
@@ -182,6 +183,10 @@
         "data": {
           "tagName": "IFRAME"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@title",
@@ -237,6 +242,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -257,6 +266,10 @@
       "location": {
         "data": {
           "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -279,6 +292,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -299,6 +316,10 @@
       "location": {
         "data": {
           "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -425,6 +446,20 @@
       "toContexts": [
         {
           "toContextId": "context37_oT4qR5"
+        }
+      ]
+    },
+    "flow201_Lk4qSh": {
+      "fromContextId": "context37_oT4qR5",
+      "fromAction": "doAction",
+      "fromControlId": "control320_my25T2",
+      "toContexts": [
+        {
+          "toContextId": "context37_oT4qR5"
+        },
+        {
+          "toContextId": "context6_aweFC7",
+          "toModelId": "managerAuditRelateProcess"
         }
       ]
     }
@@ -615,6 +650,10 @@
       "contexts": {
         "context37_oT4qR5": [
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=151&isagent=0&beagenter=0"
+        ],
+        "context6_aweFC7": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
         ]
       }
     },
