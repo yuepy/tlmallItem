@@ -221,9 +221,9 @@
       }if (data.eventType == 'click') {
         if (elem.querySelector("input[id='Filedata'][name='Filedata']")) {
           if (elem.ownerDocument.defaultView.document.querySelectorAll("input[id='Filedata'][name='Filedata']").length > 1) {
-            alert(2);elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');elem.querySelector("input[id='Filedata'][name='Filedata']").click();
+            elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');elem.querySelector("input[id='Filedata'][name='Filedata']").click();
           } else {
-            alert(1);elem.querySelectorAll("input[id='Filedata'][name='Filedata']")[0].click();
+            elem.querySelectorAll("input[id='Filedata'][name='Filedata']")[0].click();
           }
         }
       }
