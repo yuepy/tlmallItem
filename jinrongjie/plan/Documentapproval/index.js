@@ -89,8 +89,7 @@
                     }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });
-                  arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id") });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id") });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
@@ -115,7 +114,8 @@
                             });
                           } else {
                             $(this).children("button").each(function () {
-                              arr2.push({ text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              arr2.push({ text: '',
+                                type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           }
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
@@ -172,7 +172,8 @@
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'doc', tno: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
+                        arr3.push({
+                          name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
@@ -181,14 +182,18 @@
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
+                      } else if ($(this).next().text().indexOf('zip') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
+                      } else if ($(this).next().text().indexOf('ppt') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                       } else {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
                     }
                   });
-                }
-                if ($(this).children("table").find(".btnFlowd").length > 0) {
-                  var arr4 = [];$(this).children("table").find(".btnFlowd").each(function (i) {
+                }if ($(this).children("table").find(".btnFlowd").length > 0) {
+                  var arr4 = [];
+                  $(this).children("table").find(".btnFlowd").each(function (i) {
                     if (!/全部下载/.test($(this).text())) {
                       arr4.push($(this).text().trim().match(/\(.*\)/));
                     }
@@ -530,21 +535,25 @@
     getData_control138_5sq6Uh: function (elem) {
       if (!elem) {
         return;
-      }var data = [];$(elem).find("#ysp_fake_form").each(function () {
-        var arr = [];if ($(this).find("#Filedata").attr('value').indexOf('txt') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'text' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('doc') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'doc' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('pdf') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'pdf' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('jpg') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'jpg' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('xls') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'xls' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('png') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'png' });
-        } else if ($(this).find("#Filedata").attr('value').indexOf('unknown') !== -1) {
-          arr.push({ text: $(this).find("#Filedata").attr('value'), stl: 'unknown' });
+      }var data = [];$(elem).find(".progressWrapper").each(function () {
+        var arr = [];if ($(this).find(".progressName").text().indexOf('txt') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'text' });
+        } else if ($(this).find(".progressName").text().indexOf('doc') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'doc' });
+        } else if ($(this).find(".progressName").text().indexOf('pdf') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'pdf' });
+        } else if ($(this).find(".progressName").text().indexOf('jpg') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'jpg' });
+        } else if ($(this).find(".progressName").text().indexOf('xls') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'xls' });
+        } else if ($(this).find(".progressName").text().indexOf('png') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'png' });
+        } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'zip' });
+        } else if ($(this).find(".progressName").text().indexOf('ppt') !== -1) {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'ppt' });
+        } else {
+          arr.push({ text: $(this).find(".progressName").text(), stl: 'unknown' });
         }data.push(arr);
       });return data;
     },
@@ -552,12 +561,12 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
       }if (data.eventType == 'click') {
-        $(elem).find("#Filedata").click();$(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
+        $(elem).find("#Filedata").click(); // $(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
       }
     },
     getTemplate_uiControl117_4CC1vU: function () {
-      var selfTemplate = "module.exports = React.createClass({\n   deleteFile:function(e){\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display='none'\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"deleteFile\",\n      \tdata:e.target.getAttribute('data-index')\n      })\n    }\n  },\n  click:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(data.length > 0 && data[0][0]){\n      var item = data.map(function(d,i){\n      return(\n        \n        \n        \n      <div className='file2' data-no={i} data-type={d[0].stl}><div>{d[0].text}</div><div>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20...</div><button data-index={i} onClick={_this.deleteFile}></button></div>\n      \n      \n      \n      )\n    })\n    }\n    \n   return (\n     <div>\n      <div className=\"ysp-manager-audit-title-icon\">\n        <span>\u9644\u4EF6</span>\n        <i className=\"relate-files\" onClick={_this.click}></i>\n        \n      </div>\n       <div className = 'file_box2'>{item}</div>\n       </div>\n      )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  deleteFile: function deleteFile(e) {\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display = 'none';\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \"deleteFile\",\n        data: e.target.getAttribute('data-index')\n      });\n    }\n  },\n  click: function click(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data.length > 0 && data[0][0]) {\n      var item = data.map(function (d, i) {\n        return React.createElement(\n          'div',\n          { className: 'file2', 'data-no': i, 'data-type': d[0].stl },\n          React.createElement(\n            'div',\n            null,\n            d[0].text\n          ),\n          React.createElement(\n            'div',\n            null,\n            '\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20...'\n          ),\n          React.createElement('button', { 'data-index': i, onClick: _this.deleteFile })\n        );\n      });\n    }\n\n    return React.createElement(\n      'div',\n      null,\n      React.createElement(\n        'div',\n        { className: 'ysp-manager-audit-title-icon' },\n        React.createElement(\n          'span',\n          null,\n          '\\u9644\\u4EF6'\n        ),\n        React.createElement('i', { className: 'relate-files', onClick: _this.click })\n      ),\n      React.createElement(\n        'div',\n        { className: 'file_box2' },\n        item\n      )\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n   deleteFile:function(e){\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display='none'\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"deleteFile\",\n      \tdata:e.target.getAttribute('data-index')\n      })\n    }\n  },\n  click:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(data && data.length > 0 && data[0].length > 0){\n      var item = data.map(function(d,i){\n      return(\n      <div className='file2' data-no={i} data-type={d[0].stl}><div>{d[0].text}</div><div>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20...</div><button data-index={i} onClick={_this.deleteFile}></button></div>\n      \n      \n      \n      )\n    })\n    }\n    \n   return (\n     <div>\n      <div className=\"ysp-manager-audit-title-icon\">\n        <span>\u9644\u4EF6</span>\n        <i className=\"relate-files\" onClick={_this.click}></i>\n        \n      </div>\n       <div className = 'file_box2'>{item}</div>\n       </div>\n      )\n  }\n});\n";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  deleteFile: function deleteFile(e) {\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display = 'none';\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \"deleteFile\",\n        data: e.target.getAttribute('data-index')\n      });\n    }\n  },\n  click: function click(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data && data.length > 0 && data[0].length > 0) {\n      var item = data.map(function (d, i) {\n        return React.createElement(\n          'div',\n          { className: 'file2', 'data-no': i, 'data-type': d[0].stl },\n          React.createElement(\n            'div',\n            null,\n            d[0].text\n          ),\n          React.createElement(\n            'div',\n            null,\n            '\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20...'\n          ),\n          React.createElement('button', { 'data-index': i, onClick: _this.deleteFile })\n        );\n      });\n    }\n\n    return React.createElement(\n      'div',\n      null,\n      React.createElement(\n        'div',\n        { className: 'ysp-manager-audit-title-icon' },\n        React.createElement(\n          'span',\n          null,\n          '\\u9644\\u4EF6'\n        ),\n        React.createElement('i', { className: 'relate-files', onClick: _this.click })\n      ),\n      React.createElement(\n        'div',\n        { className: 'file_box2' },\n        item\n      )\n    );\n  }\n});";
     }
   });
 })(window, ysp);
