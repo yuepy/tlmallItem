@@ -12,7 +12,7 @@ gulp.task('release', function() {
 gulp.task('dev', function() {
     gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
         //VRCM 192.168.1.224:8080 环境转移 192.168.1.227 环境
-        .pipe(replace(/http:\\{2}\/\\{2}\/oa\\{2}.fsig\\{2}.cn\\{2}.63/gm, 'http:\\\\/\\\\/192\\\\.168\\\\.200\\\\.63'))
+        .pipe(replace(/http:\\{2}\/\\{2}\/oa\\{2}.fsig\\{2}.com\\{2}.cn/gm, 'http:\\\\/\\\\/192\\\\.168\\\\.200\\\\.63'))
         .pipe(replace(/oa\.fsig\.com\.cn/gm, '192.168.200.63'))
         .pipe(replace(/oa\.fsig\.com\.cn/gm, '192.168.200.63'))
         .pipe(gulp.dest('./'));
