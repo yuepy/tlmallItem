@@ -181,6 +181,10 @@
         if (xhr.readyState === topWin.XMLHttpRequest.DONE) {
           if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
             var menuInfo = xhr.responseText;
+            console.log(menuInfo)
+            if(menuInfo == '{"isHaveSession":"no"}'){
+              win.reload();
+            }
             if (menuInfo.indexOf(operation) == -1) {
               //flag = true; //如果没有权限的话，监控马上终止
               menuInfo = JSON.parse(menuInfo);
