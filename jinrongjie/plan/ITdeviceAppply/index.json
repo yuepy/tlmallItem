@@ -312,49 +312,120 @@
           }
         },
         {
-          "id": "uiControl143_8mx7V2",
-          "controlId": "control166_QnAye0",
+          "id": "uiControl320_Lllnfy",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl143_8mx7V2",
-                "onGetTemplate": "getTemplate_uiControl143_8mx7V2"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl320_Lllnfyheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl320_Lllnfybody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl143_8mx7V2",
+                  "controlId": "control166_QnAye0",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl143_8mx7V2",
+                        "onGetTemplate": "getTemplate_uiControl143_8mx7V2"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl144_TWZQiZ",
+                  "controlId": "control167_Wi4pKJ",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl144_TWZQiZ",
+                        "onGetTemplate": "getTemplate_uiControl144_TWZQiZ"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl320_Lllnfyfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
         },
         {
-          "id": "uiControl144_TWZQiZ",
-          "controlId": "control167_Wi4pKJ",
+          "id": "uiControl321_PNNdIV",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "sticky",
+            "adapterId": "sticky",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl144_TWZQiZ",
-                "onGetTemplate": "getTemplate_uiControl144_TWZQiZ"
-              }
+              "templateType": ""
             }
-          }
-        },
-        {
-          "id": "uiControl145_940azM",
-          "controlId": "control168_AgTWpX",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl145_940azM",
-                "onGetTemplate": "getTemplate_uiControl145_940azM"
-              }
+          },
+          "layout": [
+            {
+              "id": "uiControl321_PNNdIVbody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl145_940azM",
+                  "controlId": "control168_AgTWpX",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl145_940azM",
+                        "onGetTemplate": "getTemplate_uiControl145_940azM"
+                      }
+                    }
+                  }
+                }
+              ]
             }
-          }
+          ]
         }
       ]
     }

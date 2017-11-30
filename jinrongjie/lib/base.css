@@ -32,7 +32,8 @@ h5 {
 #uiControl273_ndTGVFbody,
 #uiControl300_TAg1T9body,
 #uiControl305_bta9oebody,
-#uiControl319_MdUWLTbody {
+#uiControl319_MdUWLTbody,
+#uiControl320_Lllnfybody {
   height: 90vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -46,11 +47,6 @@ div[data-type="tabs:content"] > div:first-child {
   background: #f4f4f4;
   padding: 0;
 }
-div[data-ysp-modelid="ITdeviceAppply"] .ysp_table_lfj {
-  height: 75vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
 div[data-ysp-modelid="managerSignNew"] .card,
 div[data-ysp-modelid="chairmanSignNew"] .card,
 div[data-ysp-modelid="mainLeaderSignNew"] .card,
@@ -58,7 +54,8 @@ div[data-ysp-modelid="innerCommunication"] .card,
 div[data-ysp-modelid="exceptITAssetsApplication"] .card,
 div[data-ysp-modelid="sendDocProcessNew"] .card,
 div[data-ysp-modelid="docApprovalListNew"] .card,
-div[data-ysp-modelid="02reeCreate"] .card {
+div[data-ysp-modelid="02reeCreate"] .card,
+div[data-ysp-modelid="ITdeviceAppply"] .card {
   margin: 0;
   border-radius: none;
   box-shadow: none;
@@ -72,7 +69,8 @@ div[data-ysp-modelid="innerCommunication"] .card-body,
 div[data-ysp-modelid="exceptITAssetsApplication"] .card-body,
 div[data-ysp-modelid="sendDocProcessNew"] .card-body,
 div[data-ysp-modelid="docApprovalListNew"] .card-body,
-div[data-ysp-modelid="02reeCreate"] .card-body {
+div[data-ysp-modelid="02reeCreate"] .card-body,
+div[data-ysp-modelid="ITdeviceAppply"] .card-body {
   padding: 0;
   margin: 0;
 }
@@ -2912,7 +2910,7 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_content,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_content,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .row_content {
-  word-break: break-word;
+  word-break: break-all;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .none,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .none,
@@ -2940,6 +2938,9 @@ div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_input,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_input,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_input {
   border: none;
+  width: 100%;
+  min-height: 25px;
+  word-break: break-word;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_showMore,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_showMore,
