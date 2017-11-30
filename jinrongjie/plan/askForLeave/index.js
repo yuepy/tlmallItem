@@ -130,7 +130,11 @@
               textarea[1].push(dt.textContent.replace(/\s/g, "").trim()); //textarea内容
               rows[1].push(textarea);
             } else {
-              rows[1].push(dt.textContent.replace(/\s/g, "").trim());
+              if (dt.querySelector("input")) {
+                rows[1].push(dt.querySelector("input").value + dt.textContent.replace(/\s/g, "").trim());
+              } else {
+                rows[1].push(dt.textContent.replace(/\s/g, "").trim());
+              }
             }
           });obj.data.push(rows);
         });obj.data.pop();if (elem.querySelector('input[temptitle="申请人岗位"]')) {
