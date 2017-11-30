@@ -30,54 +30,34 @@
     getData_control58_TraKH5: function (elem) {
       if (!elem) {
         return;
-      }
-      if (elem) {
-        var obj = { data: [], currentVal: '', workVal: '' };
-        var trs = $(elem).children("tr");
-        trs.each(function (i, d) {
+      }if (elem) {
+        var obj = { data: [], currentVal: '', workVal: '' };var trs = $(elem).children("tr");trs.each(function (i, d) {
           var rows = [[[], []], []]; //获取所有tr里奇数行的title
           if ($(d).children("td").length == 1) {
             //里面含有table的
-            var table = [[], [], [], [], [], [], []];
-            table[3].push("reciewInfo");
-            var detailtableTD = $(d).children("td").find("table[id*='table'] tbody tr").eq(2).find(".detailtableTD");
-            var detail1 = detailtableTD.eq(0).find("span[name='detailIndexSpan0']");
-            var detail2 = detailtableTD.eq(1).find("input[temptitle='未打卡日期']");
-            var detail3 = detailtableTD.eq(2).find("select");
-            var detail4 = detailtableTD.eq(3).find("textarea");
-            for (var i = 0; i < detail1.length; i++) {
-              table[0].push(detail1[i].textContent);
-              table[1].push(detail2[i].value);
-              var options = detail3[i].querySelectorAll("option");
-              for (var n = 0; n < options.length; n++) {
+            var table = [[], [], [], [], [], [], []];table[3].push("reciewInfo");var detailtableTD = $(d).children("td").find("table[id*='table'] tbody tr").eq(2).find(".detailtableTD");var detail1 = detailtableTD.eq(0).find("span[name='detailIndexSpan0']");var detail2 = detailtableTD.eq(1).find("input[temptitle='未打卡日期']");var detail3 = detailtableTD.eq(2).find("select");var detail4 = detailtableTD.eq(3).find("textarea");for (var i = 0; i < detail1.length; i++) {
+              table[0].push(detail1[i].textContent);table[1].push(detail2[i].value);var options = detail3[i].querySelectorAll("option");for (var n = 0; n < options.length; n++) {
                 if (options[n].selected) {
                   table[2].push(options[n].textContent);
                 }
-              }
-              if (detail4[i].disable) {
+              }if (detail4[i].disable) {
                 //textarea是否是禁用的
                 table[5].push("disable");
               } else if (detail4[i].style.display == "none") {
                 table[5].push("cannot");
               } else {
                 table[5].push("able");
-              }
-              if (detail4[i].nextElementSibling && detail4[i].nextElementSibling.querySelector("img")) {
+              }if (detail4[i].nextElementSibling && detail4[i].nextElementSibling.querySelector("img")) {
                 //是否未填写
                 table[6].push("unwrite");
               } else {
                 table[6].push("write");
-              }
-              table[4].push(detail4[i].value);
-            }
-            rows[1].push(table);
-          }
-          $(d).children("td:nth-child(odd)").each(function (idx, dt) {
-            rows[0][0].push(dt.textContent.trim());
-            if (dt.querySelector("table[id*='table']")) {
+              }table[4].push(detail4[i].value);
+            }rows[1].push(table);
+          }$(d).children("td:nth-child(odd)").each(function (idx, dt) {
+            rows[0][0].push(dt.textContent.trim());if (dt.querySelector("table[id*='table']")) {
               rows[0][0] = [""];
-            }
-            if ($(dt).next().find('img').length > 0 && dt.textContent != "附件") {
+            }if ($(dt).next().find('img').length > 0 && dt.textContent != "附件") {
               rows[0][1].push("unwrite");
             } else {
               rows[0][1].push("");
@@ -86,160 +66,105 @@
           $(d).children("td:nth-child(even)").each(function (idx, dt) {
             if (dt.querySelectorAll("select").length > 0) {
               //td重含有select的
-              var select = [[], [], [], [], [], []];
-              if (dt.querySelector("select").textContent.indexOf("否") != -1) {
+              var select = [[], [], [], [], [], []];if (dt.querySelector("select").textContent.indexOf("否") != -1) {
                 select[4].push("YorN");
-              }
-              if (dt.querySelector("select").nextElementSibling.querySelector("img")) {
+              }if (dt.querySelector("select").nextElementSibling.querySelector("img")) {
                 //是否未填写
                 select[5].push("unwrite");
-              }
-              $(dt).find("select").children("option").each(function (i, d) {
+              }$(dt).find("select").children("option").each(function (i, d) {
                 select[0].push(d.textContent); //选项
                 if (d.selected) {
                   select[1].push(d.textContent); //选中项
                 }
-              });
-              if (dt.querySelectorAll("select")[0].disabled) {
+              });if (dt.querySelectorAll("select")[0].disabled) {
                 select[2].push("disabled"); //select是否为disabled
-              }
-              select[3].push("select");
-              rows[1].push(select);
+              }select[3].push("select");rows[1].push(select);
             } else if (dt.querySelectorAll("input[type='button']").length > 0) {
               //td中含有计算时长
-              var days = [];
-              if (dt.textContent == "") {
+              var days = [];if (dt.textContent == "") {
                 days.push(dt.querySelector("input[type='hidden']").value);
               } else {
                 days.push(dt.textContent);
-              }
-              days.push(dt.querySelectorAll("input[type='button']")[0].value);
-              rows[1].push(days);
+              }days.push(dt.querySelectorAll("input[type='button']")[0].value);rows[1].push(days);
             } else if (dt.querySelectorAll("button").length > 0) {
               //td中含有button
-              var button = [[], [], [], [], []];
-              button[1].push("button"); //有button的标识
+              var button = [[], [], [], [], []];button[1].push("button"); //有button的标识
               if (dt.querySelector("input[temptitle*='日期']")) {
                 button[3].push("date"); //有日期的标识 
                 if (dt.querySelector("button").nextElementSibling.querySelector("img")) {
                   button[4].push("unwrite");
-                }
-                button[2].push(dt.textContent.replace(/\s/g, "").trim());
+                }button[2].push(dt.textContent.replace(/\s/g, "").trim());
               } else if (dt.querySelectorAll(".btnFlowd").length > 0) {
                 button[3].push("download"); //附件下载
-                var a = dt.querySelectorAll("a");
-                var url = dt.querySelectorAll(".btnFlowd");
-                for (var i = 0; i < a.length; i++) {
-                  button[4].push(url[i].getAttribute("onclick").match(/\/.*[0-9]/g));
-                  button[0].push(a[i].textContent);
-                }
-                button[2].push(dt.textContent.replace(/\s/g, "").trim());
+                var a = dt.querySelectorAll("a");var url = dt.querySelectorAll(".btnFlowd");for (var i = 0; i < a.length; i++) {
+                  button[4].push(url[i].getAttribute("onclick").match(/\/.*[0-9]/g));button[0].push(a[i].textContent);
+                }button[2].push(dt.textContent.replace(/\s/g, "").trim());
               } else {
                 button[3].push("search"); //查询人员、部门
-                var aArr = dt.querySelectorAll("a");
-                for (var i = 0; i < aArr.length; i++) {
+                var aArr = dt.querySelectorAll("a");for (var i = 0; i < aArr.length; i++) {
                   button[2].push(aArr[i].textContent);
                 }
-              }
-              rows[1].push(button);
+              }rows[1].push(button);
             } else if (dt.querySelectorAll("form").length > 0) {
-              var upload = [[], [], [], [], []];
-              upload[3].push("upload");
-              upload[0].push("附件");
-              if (dt.querySelector(".fieldset")) {
-                var progressName = dt.querySelector(".fieldset").querySelectorAll(".progressName");
-                for (var i = 0; i < progressName.length; i++) {
+              var upload = [[], [], [], [], []];upload[3].push("upload");upload[0].push("上传");if (dt.querySelector(".fieldset")) {
+                var progressName = dt.querySelector(".fieldset").querySelectorAll(".progressName");for (var i = 0; i < progressName.length; i++) {
                   upload[2].push(progressName[i].textContent);
                 }
-              }
-              rows[1].push(upload);
+              }rows[1].push(upload);
             } else if (dt.querySelectorAll("textarea").length > 0) {
               //td中含有textarea
-              var textarea = [[], [], [], [], []];
-              textarea[3].push("textarea"); //有textarea的标识
+              var textarea = [[], [], [], [], []];textarea[3].push("textarea"); //有textarea的标识
               textarea[1].push(dt.textContent.replace(/\s/g, "").trim()); //textarea内容
               rows[1].push(textarea);
             } else {
               rows[1].push(dt.textContent.replace(/\s/g, "").trim());
             }
-          });
-          obj.data.push(rows);
-        });
-        obj.data.pop();
-        if (elem.querySelector('input[temptitle="申请人岗位"]')) {
+          });obj.data.push(rows);
+        });obj.data.pop();if (elem.querySelector('input[temptitle="申请人岗位"]')) {
           obj.currentVal = elem.querySelector('input[temptitle="申请人岗位"]').value;
-        }
-        if (elem.querySelector('input[temptitle="工作交接人"]')) {
+        }if (elem.querySelector('input[temptitle="工作交接人"]')) {
           obj.workVal = obj && elem.querySelector('input[temptitle="工作交接人"]').value;
-        }
-        return obj;
+        }return obj;
       }
     },
     doAction_uiControl54_GI48cc: function (data, elem) {
-      var d = data.dataCustom;
-      var row = d.row;
-      var column = d.column;
-      var classname = d.classname;
-      var i = d.i;
-      var url = d.url;
-      var card = d.card;
-      var check = d.check;
-      var val = d.val;
-      if (data.eventType == "click") {
+      var d = data.dataCustom;var row = d.row;var column = d.column;var classname = d.classname;var i = d.i;var url = d.url;var card = d.card;var check = d.check;var val = d.val;if (data.eventType == "click") {
         if (classname == "caculate") {
           $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='button']").click();
         } else if (classname == "searchBtn") {
-          debugger;
-          $(elem).children("tr").eq(row).children(".zdn").eq(column).find("button").click();
+          debugger;$(elem).children("tr").eq(row).children(".zdn").eq(column).find("button").click();
         } else if (classname == "recieveInfo") {
           $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input").click();
         } else if (classname == "word") {
           console.log(d); //文档下载   
           // $(elem).children("tr").eq(row).children(".zdn").eq(column).find("a").click();
-          var _url = 'http://192.168.200.63' + url;
-          if (ysp.appMain.isIOS()) {
+          var _url = 'http://192.168.200.63' + url;if (ysp.appMain.isIOS()) {
             top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
           } else if (ysp.appMain.isAndroid()) {
             top.location.href = _url;
           }
         } else if (classname == "delete") {
-          var input = $($(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card))[0];
-          $(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card).click();
-          if (input.checked) {
+          var input = $($(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card))[0];$(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card).click();if (input.checked) {
             $(elem).find("#div0button").find("button").click();
           }
         } else if (classname == "loadIcon") {
           $(elem).children("tr").eq(row).children("td").eq(1).find("#Filedata").click();
         } else if (classname.indexOf("YorN")) {
-          $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);
-          $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").blur();
+          $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);$(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").blur();
         } else if (classname == "deleteFile") {
           console.log("12131313");
         }
       } else if (data.eventType == "select") {
-        $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);
-        $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").blur();
+        $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);$(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").blur();
       } else if (data.eventType == "change") {
-        var textarea = $(elem).children("tr").eq(row).children(".zdn").eq(column).find("textarea");
-        textarea.val(d.val);
-        $(textarea)[0].dispatchEvent(new Event("change"));
-        textarea.blur();
+        var textarea = $(elem).children("tr").eq(row).children(".zdn").eq(column).find("textarea");textarea.val(d.val);$(textarea)[0].dispatchEvent(new Event("change"));textarea.blur();
       } else if (data.eventType == "changeTime") {
-        var time = $(elem).children("tr").eq(row).children(".zdn").eq(column).find("span");
-        time.html(d.val);
-        $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input").val(d.val);
+        var time = $(elem).children("tr").eq(row).children(".zdn").eq(column).find("span");time.html(d.val);$(elem).children("tr").eq(row).children(".zdn").eq(column).find("input").val(d.val);
       } else if (data.eventType == "blur") {
-        var card = $(elem).children("tr").eq(row).children("td").eq(column).find(".form").children("tbody").children("tr").children("td").eq(3).find("textarea").eq(card);
-        card.val(val);
-        $(card)[0].dispatchEvent(new Event("change"));
-        card.blur();
+        var card = $(elem).children("tr").eq(row).children("td").eq(column).find(".form").children("tbody").children("tr").children("td").eq(3).find("textarea").eq(card);card.val(val);$(card)[0].dispatchEvent(new Event("change"));card.blur();
       } else if (data.eventType == "deleteFile") {
-        var input1 = elem.querySelectorAll("input[temptitle='附件']")[0];
-        var arr = input1.value.split(',');
-        if (arr.length !== 1) {
-          arr.splice(i, 1);
-          var v = parseInt(arr);
-          input1.value = v;
+        var input1 = elem.querySelectorAll("input[temptitle='附件']")[0];var arr = input1.value.split(',');if (arr.length !== 1) {
+          arr.splice(i, 1);var v = parseInt(arr);input1.value = v;
         } else {
           input1.value = "";
         }
