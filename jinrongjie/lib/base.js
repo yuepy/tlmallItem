@@ -17,7 +17,7 @@
         return url;
     };
     topWindow.num = [];
-  	topWindow.file = [];
+  	topWindow.file = []; 
   	topWindow.file_two = [];
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
@@ -80,11 +80,9 @@
                             url = "/systeminfo/BrowserMain.jsp?url=/docs/docs/DocBrowserWord.jsp";
                         }
                     }
-
                     if (type1 == 23) {
                         url += "?billid=-224";
                     }
-
                     if (type1 == 2 || type1 == 19) {
                         aWin.spanname = "field" + id + "span";
                         aWin.inputname = "field" + id;
@@ -461,6 +459,69 @@
             }
           }
 
+          /* 退回流程 */
+          // aWin.doReject_New = function(){
+          //   debugger;
+          //   aWin.getRemarkText_log();
+          //   aWin.doReject();
+          // }
+          
+          aWin.onSetRejectNode = function(){
+            var $G = aWin.$G;
+         var url=aWin.escape("/workflow/request/RejectNodeSet.jsp?requestid=407439&workflowid=8061&nodeid=121109&isrejectremind=1&ischangrejectnode=1&isselectrejectnode=1&isFreeNode=");
+            var result = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url="+url);
+            aWin.setReturnValue = function (result){
+                if (result != null) {
+                   // $G("RejectNodes").value=result;
+                var val=result.split("|");
+                  if($G("RejectNodes")) $G("RejectNodes").value=val[0];
+                  if($G("RejectToNodeid")) $G("RejectToNodeid").value=val[1]; 
+                 return true;
+              }else{
+                  return false;
+              }
+            }
+        }
+          
+          aWin.onsave = function(){
+            var nodeids="";
+            var $G = aWin.$G;
+            if($G("checkall").checked){ 
+             nodeids="-1";
+            }else{ 
+
+                if($G("nodeid_121108").checked){
+                    if(nodeids.length>0){
+                        nodeids+=","+$G("nodeid_121108").value;
+                    }else{
+                        nodeids=$G("nodeid_121108").value;
+                    }
+                }
+
+                if($G("nodeid_121109").checked){
+                    if(nodeids.length>0){
+                        nodeids+=","+$G("nodeid_121109").value;
+                    }else{
+                        nodeids=$G("nodeid_121109").value;
+                    }
+                }
+
+                //alert(nodeids);
+                   }
+            var rejectnodeid="";
+            rejectnodeid=aWin.getRadioValue("rejectnodeid");
+            if(rejectnodeid==""){
+                alert("请选择退回节点");
+                return false;
+            }
+            aWin.parent.opener.setReturnValue(nodeids+"|"+rejectnodeid);
+            if(aWin.parent.opener.setReturnValue(nodeids+"|"+rejectnodeid)){
+               aWin.parent.opener.showtipsinfo(380971,8061,121109,1,1,3151,"","reject","2","divFavContent18980","正在退回流程，请稍等....")
+               }
+            aWin.parent.close();
+        }
+          
+          
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
@@ -576,7 +637,6 @@
             // 测试结束
 
 
-
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
               	var parent = aWin.frameElement.ownerDocument.defaultView;
@@ -584,6 +644,7 @@
                   var actionEvent = '{"target":"null","data":"getNumber"}';
                   parent && parent.EAPI.postMessageToNative('getNum', actionEvent);
                 	parent && topWindow.EAPI.postMessageToNative('getToken', null);
+              		parent && parent.EAPI.postMessageToNative("postTitle", null) ; 
                 }
                 sessionStorage.setItem('getTokenURl', true);
                 token_flag = true;
@@ -599,18 +660,19 @@
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
                 var xmlhttp = new XMLHttpRequest();
-              	//xmlhttp.open("post", "http://192.168.200.121:8080/home/release/com.eibus.web.soap.Gateway.wcp", true);
-              	xmlhttp.open("post", "http://esb.fsig.com.cn/home/system/com.eibus.web.soap.Gateway.wcp", true);
+              	xmlhttp.open("post", "http://192.168.200.121:8080/home/release/com.eibus.web.soap.Gateway.wcp", true);
+              	//xmlhttp.open("post", "http://esb.fsig.com.cn/home/system/com.eibus.web.soap.Gateway.wcp", true);
+              	xmlhttp.send(soapData);
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         // console.log(xmlhttp.responseText);
                         var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
+                      	console.log(xmldoc,xmlhttp.responseText)
                         topWindow.num.push(xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('todoCount')[0].textContent, xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('unreadCount')[0].textContent);
                     }else if(xmlhttp.status == 400){
                       topWindow.num.push('请求失败!')
                     }
                 }
-                xmlhttp.send(soapData);
             }
             /* ajax请求角标数据 */
 
