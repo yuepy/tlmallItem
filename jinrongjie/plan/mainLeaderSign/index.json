@@ -7,7 +7,8 @@
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "forward": "../forward/index.json",
-    "processToSend": "../processToSend/index.json"
+    "processToSend": "../processToSend/index.json",
+    "setBack": "../setBack/index.json"
   },
   "chineseName": "审批-公文审批-主管领导签核",
   "description": "待办-公文审批-主管领导签核",
@@ -686,6 +687,10 @@
         {
           "toContextId": "context10_Tp4yhH",
           "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context8_QbFt5N",
+          "toModelId": "setBack"
         }
       ]
     }
@@ -989,6 +994,11 @@
           "192.168.200.63/workflow/request/Remark.jsp?requestid=118374&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=312801&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=111781&workflowRequestLogId=-1"
+        ],
+        "context8_QbFt5N": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D312801%26workflowid%3D8061%26nodeid%3D121110%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D380989%26workflowid%3D605%26nodeid%3D3285%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D%26isFreeNode%3D",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D425660%26workflowid%3D149%26nodeid%3D407%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D%26isFreeNode%3D"
         ]
       }
     },
