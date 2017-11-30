@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "choosePerson": "../choosePerson/index.json",
-    "processToSend": "../processToSend/index.json"
+    "processToSend": "../processToSend/index.json",
+    "setBack": "../setBack/index.json"
   },
   "chineseName": "内部沟通-审批",
   "description": "内部沟通-审批",
@@ -376,6 +377,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -496,6 +501,10 @@
         {
           "toContextId": "context10_Tp4yhH",
           "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context8_QbFt5N",
+          "toModelId": "setBack"
         }
       ]
     }
@@ -726,6 +735,11 @@
           "192.168.200.63/workflow/request/Remark.jsp?requestid=111781&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=380983&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=380940&workflowRequestLogId=-1"
+        ],
+        "context8_QbFt5N": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D312801%26workflowid%3D8061%26nodeid%3D121110%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D380989%26workflowid%3D605%26nodeid%3D3285%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D%26isFreeNode%3D",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D407439%26workflowid%3D8061%26nodeid%3D121109%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D"
         ]
       }
     },
