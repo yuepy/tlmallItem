@@ -17,7 +17,7 @@
         return url;
     };
     topWindow.num = [];
-  	topWindow.file = [];
+  	topWindow.file = []; 
   	topWindow.file_two = [];
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
@@ -459,6 +459,69 @@
             }
           }
 
+          /* 退回流程 */
+          // aWin.doReject_New = function(){
+          //   debugger;
+          //   aWin.getRemarkText_log();
+          //   aWin.doReject();
+          // }
+          
+          aWin.onSetRejectNode = function(){
+            var $G = aWin.$G;
+         var url=aWin.escape("/workflow/request/RejectNodeSet.jsp?requestid=407439&workflowid=8061&nodeid=121109&isrejectremind=1&ischangrejectnode=1&isselectrejectnode=1&isFreeNode=");
+            var result = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url="+url);
+            aWin.setReturnValue = function (result){
+                if (result != null) {
+                   // $G("RejectNodes").value=result;
+                var val=result.split("|");
+                  if($G("RejectNodes")) $G("RejectNodes").value=val[0];
+                  if($G("RejectToNodeid")) $G("RejectToNodeid").value=val[1]; 
+                 return true;
+              }else{
+                  return false;
+              }
+            }
+        }
+          
+          aWin.onsave = function(){
+            var nodeids="";
+            var $G = aWin.$G;
+            if($G("checkall").checked){ 
+             nodeids="-1";
+            }else{ 
+
+                if($G("nodeid_121108").checked){
+                    if(nodeids.length>0){
+                        nodeids+=","+$G("nodeid_121108").value;
+                    }else{
+                        nodeids=$G("nodeid_121108").value;
+                    }
+                }
+
+                if($G("nodeid_121109").checked){
+                    if(nodeids.length>0){
+                        nodeids+=","+$G("nodeid_121109").value;
+                    }else{
+                        nodeids=$G("nodeid_121109").value;
+                    }
+                }
+
+                //alert(nodeids);
+                   }
+            var rejectnodeid="";
+            rejectnodeid=aWin.getRadioValue("rejectnodeid");
+            if(rejectnodeid==""){
+                alert("请选择退回节点");
+                return false;
+            }
+            aWin.parent.opener.setReturnValue(nodeids+"|"+rejectnodeid);
+            if(aWin.parent.opener.setReturnValue(nodeids+"|"+rejectnodeid)){
+               aWin.parent.opener.showtipsinfo(380971,8061,121109,1,1,3151,"","reject","2","divFavContent18980","正在退回流程，请稍等....")
+               }
+            aWin.parent.close();
+        }
+          
+          
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
@@ -574,7 +637,6 @@
             // 测试结束
 
 
-
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
               	var parent = aWin.frameElement.ownerDocument.defaultView;
@@ -582,6 +644,7 @@
                   var actionEvent = '{"target":"null","data":"getNumber"}';
                   parent && parent.EAPI.postMessageToNative('getNum', actionEvent);
                 	parent && topWindow.EAPI.postMessageToNative('getToken', null);
+              		parent && parent.EAPI.postMessageToNative("postTitle", null) ; 
                 }
                 sessionStorage.setItem('getTokenURl', true);
                 token_flag = true;
