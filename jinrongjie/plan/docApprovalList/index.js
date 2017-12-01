@@ -88,8 +88,15 @@
       }data['leftData'] = leftData;data['rightData'] = rightData;return data;
     },
     doAction_uiControl167_TE9K0F: function (data, elem) {
-      var eventType = data.eventType;var index = parseInt(data.dataCustom.index) + 1;var tbody = elem.querySelector('#requestlogappednDiv').querySelector('table').querySelector('tbody');if (eventType == 'showReceiver') {
-        var tr = $(tbody).children('tr')[index];$(tr).children('td').eq(5).find('span').click();
+      // var eventType = data.eventType;
+      // var index = parseInt(data.dataCustom.index) + 1;
+      // var tbody = elem.querySelector('#requestlogappednDiv').querySelector('table').querySelector('tbody');
+      // if (eventType == 'showReceiver') {
+      //   var tr = $(tbody).children('tr')[index];
+      //   $(tr).children('td').eq(5).find('span').click();
+      // }
+      var eventType = data.eventType;var index = parseInt(data.dataCustom.index) + 1;var tableContent = $(elem.querySelector('#requestlogappednDiv')).children('table');var tbodyContent = $(tableContent).children('tbody');if (eventType == 'showReceiver') {
+        var tr = $(tbodyContent).children('tr')[index];console.log(tbodyContent);$(tr).children('td').eq(5).find('span').click();
       }
     },
     getTemplate_uiControl167_TE9K0F: function () {
