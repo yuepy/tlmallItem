@@ -460,28 +460,33 @@
           }
 
           /* 退回流程 */
-          // aWin.doReject_New = function(){
-          //   debugger;
-          //   aWin.getRemarkText_log();
-          //   aWin.doReject();
-          // }
+          aWin.doReject_New = function(){
+            aWin.getRemarkText_log();
+            aWin.doReject();
+          }
           
-          aWin.onSetRejectNode = function(){
-            var $G = aWin.$G;
-         var url=aWin.escape("/workflow/request/RejectNodeSet.jsp?requestid=407439&workflowid=8061&nodeid=121109&isrejectremind=1&ischangrejectnode=1&isselectrejectnode=1&isFreeNode=");
-            var result = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url="+url);
-            aWin.setReturnValue = function (result){
-                if (result != null) {
-                   // $G("RejectNodes").value=result;
-                var val=result.split("|");
-                  if($G("RejectNodes")) $G("RejectNodes").value=val[0];
-                  if($G("RejectToNodeid")) $G("RejectToNodeid").value=val[1]; 
-                 return true;
-              }else{
-                  return false;
-              }
+          if(aWin.onSetRejectNode){
+            aWin.onSetRejectNode = function(){
+            	var $G = aWin.$G;
+              var requestidId = doc.getElementById('requestid').value;
+              var workflowId = doc.getElementById('workflowid').value;
+              var nodeId = doc.querySelector('input[name="nodeid"]').value;
+             	var url=aWin.escape("/workflow/request/RejectNodeSet.jsp?requestid="+requestidId+"&workflowid="+workflowId+"&nodeid="+nodeId+"&isrejectremind=1&ischangrejectnode=1&isselectrejectnode=1&isFreeNode=");
+                var result = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url="+url);
+                aWin.setReturnValue = function (result){
+                    if (result != null) {
+                       // $G("RejectNodes").value=result;
+                    var val=result.split("|");
+                      if($G("RejectNodes")) $G("RejectNodes").value=val[0];
+                      if($G("RejectToNodeid")) $G("RejectToNodeid").value=val[1]; 
+                     return true;
+                  }else{
+                      return false;
+                  }
+                }
             }
-        }
+          }
+          
           
           aWin.onsave = function(){
             var nodeids="";
@@ -535,6 +540,9 @@
             // }
 
             // 测试
+          if(aWin.onSetRejectNode){
+             console.log(aWin.onSetRejectNode.toString())
+             }
             var fakeFormId;
           	var uploadId;
             (function() {
