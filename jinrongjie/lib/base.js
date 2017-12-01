@@ -860,14 +860,15 @@
       return topWindow.file;
     } 
     function _forceMatchModels(args) {
-        if (typeof args === 'string') {
-            ysp.runtime.Model.setFoceMatchModels([args])
-        } else if (typeof args instanceof Array) {
-            ysp.runtime.Model.setForceMatchModels(args);
-        } else {
-            console.error('forceMatchModel 参数类型不正确');
-        }
+      if (typeof args === 'string') {
+        ysp.runtime.Model.setForceMatchModels([args]);
+      } else if (args instanceof Array) {
+        ysp.runtime.Model.setForceMatchModels(args);
+      } else {
+        console.error('forceMatchModels 参数类型不正确');
+      }
     }
+
     /* 调用场景 : 适用于'结构为[ul li a]类型Menu强制匹配页面. */
     function _toPlan(elem, operation, planName) {
         if (typeof planName !== 'string') {
