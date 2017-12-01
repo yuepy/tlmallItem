@@ -15,7 +15,8 @@
         return;
       }var data = {};var leftData = [];var rightData = [];var title = [];var content = [];if (!elem.querySelector('#requestlogappednDiv')) {
         data.leftData = leftData;data.rightData = rightData;return data;
-      }var divData = elem.querySelector('#requestlogappednDiv');var tableData = $(divData).children('table');var tbody = $(tableData).children('tbody');var trs = $(tbody).children('tr');if (trs.length > 1) {
+      }var divData = elem.querySelector('#requestlogappednDiv');var tableData = $(divData).children('table');var tbody = $(tableData).children('tbody');var trs = $(tbody).children('tr'); // console.log(trs);
+      if (trs.length > 1) {
         for (var i = 0; i < trs.length; i++) {
           if (i == 0) {
             var ths = trs[0].querySelectorAll('th');[].forEach.call(ths, function (item, index) {
@@ -54,9 +55,15 @@
       }data['leftData'] = leftData;data['rightData'] = rightData;return data;
     },
     doAction_uiControl149_IOyRzX: function (data, elem) {
-      var eventType = data.eventType;var index = parseInt(data.dataCustom.index) + 1;var tbody = elem.querySelector('#requestlogappednDiv').querySelector('table').querySelector('tbody');if (eventType == 'showReceiver') {
-        // var tr = $(tbody).children('tr')[index];
-        var tr = $(elem.querySelector('#requestlogappednDiv')).children('tr')[index];console.log(tr);$(tr).children('td').eq(5).find('span').click();
+      // var eventType = data.eventType;
+      // var index = parseInt(data.dataCustom.index) + 1;
+      // var tbody = elem.querySelector('#requestlogappednDiv').querySelector('table').querySelector('tbody');
+      // if (eventType == 'showReceiver') {
+      //   var tr = $(tbody).children('tr')[index];
+      //   $(tr).children('td').eq(5).find('span').click();
+      // }
+      var eventType = data.eventType;var index = parseInt(data.dataCustom.index) + 1;var tableContent = $(elem.querySelector('#requestlogappednDiv')).children('table');var tbodyContent = $(tableContent).children('tbody');if (eventType == 'showReceiver') {
+        var tr = $(tbodyContent).children('tr')[index];console.log(tbodyContent);$(tr).children('td').eq(5).find('span').click();
       }
     },
     getTemplate_uiControl149_IOyRzX: function () {
