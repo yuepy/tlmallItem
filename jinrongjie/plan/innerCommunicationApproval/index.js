@@ -55,7 +55,8 @@
     },
     doAction_uiControl149_IOyRzX: function (data, elem) {
       var eventType = data.eventType;var index = parseInt(data.dataCustom.index) + 1;var tbody = elem.querySelector('#requestlogappednDiv').querySelector('table').querySelector('tbody');if (eventType == 'showReceiver') {
-        var tr = $(tbody).children('tr')[index];$(tr).children('td').eq(5).find('span').click();
+        // var tr = $(tbody).children('tr')[index];
+        var tr = $(elem.querySelector('#requestlogappednDiv')).children('tr')[index];console.log(tr);$(tr).children('td').eq(5).find('span').click();
       }
     },
     getTemplate_uiControl149_IOyRzX: function () {
