@@ -303,49 +303,120 @@
           }
         },
         {
-          "id": "uiControl61_VyRqhF",
-          "controlId": "control71_KwgXqv",
+          "id": "uiControl323_ep3oTO",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl61_VyRqhF",
-                "onGetTemplate": "getTemplate_uiControl61_VyRqhF"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl323_ep3oTOheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl323_ep3oTObody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl61_VyRqhF",
+                  "controlId": "control71_KwgXqv",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl61_VyRqhF",
+                        "onGetTemplate": "getTemplate_uiControl61_VyRqhF"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl85_D8fJnW",
+                  "controlId": "control95_iOJI8l",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl85_D8fJnW",
+                        "onGetTemplate": "getTemplate_uiControl85_D8fJnW"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl323_ep3oTOfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
         },
         {
-          "id": "uiControl85_D8fJnW",
-          "controlId": "control95_iOJI8l",
+          "id": "uiControl322_6TOwzU",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "sticky",
+            "adapterId": "sticky",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl85_D8fJnW",
-                "onGetTemplate": "getTemplate_uiControl85_D8fJnW"
-              }
+              "templateType": ""
             }
-          }
-        },
-        {
-          "id": "uiControl88_bzSt0V",
-          "controlId": "control100_TOs6Ev",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl88_bzSt0V",
-                "onGetTemplate": "getTemplate_uiControl88_bzSt0V"
-              }
+          },
+          "layout": [
+            {
+              "id": "uiControl322_6TOwzUbody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl88_bzSt0V",
+                  "controlId": "control100_TOs6Ev",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl88_bzSt0V",
+                        "onGetTemplate": "getTemplate_uiControl88_bzSt0V"
+                      }
+                    }
+                  }
+                }
+              ]
             }
-          }
+          ]
         }
       ]
     }
