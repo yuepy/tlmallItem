@@ -53,16 +53,15 @@
           }
         }
       }data[0] = values;data[1] = content;if (elem.querySelector('#secCategorySpan')) {
-        data[2] = elem.querySelector('#secCategorySpan').textContent.replace(/\s/g, "");if (data[2] == "") {// elem.querySelector("input[name='secCategory']").value;
+        data[2] = elem.querySelector('#secCategorySpan').textContent.replace(/\s/g, "");if (data[2] == "") {
+          elem.querySelector("input[name='secCategory']").value;
         }
       }if (elem.querySelector('#searchcreaterSpan')) {
         data[3] = elem.querySelector('#searchcreaterSpan').textContent.replace(/\s/g, "");
       }data[4] = selected; //修改期间
       if (elem.querySelector('#searchid')) {
         data[5] = elem.querySelector("input[name='searchsubject']").value;
-      }data[6] = [[], []];if (elem.querySelector('#searchdatefrom')) {
-        data[6][0] = elem.querySelector('#searchdatefrom').value;data[6][1] = elem.querySelector('#searchdateto').value;
-      }return data;
+      }data[6] = [[], []];data[6][0] = elem.querySelector('#searchdatefromspan').textContent;data[6][1] = elem.querySelector('#searchdatetospan').textContent;return data;
     },
     doAction_uiControl15_IFTFa2: function (data, elem) {
       // var clickType = data.eventType;
@@ -79,7 +78,7 @@
             elem.querySelector('input[name="searchsubject"]').value = data.value;break;case 'date2during':
             elem.querySelector('#date2during').value = data.value;break;case 'searchdatefrom':
             elem.querySelector('#searchdatefromspan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;case 'searchdateto':
-            elem.querySelector('#searchdatetospan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;}
+            elem.querySelector('#searchdatetospan').textContent = data.value;elem.querySelector('input[name="searchdateto"]').value = data.value;break;}
       }function doSearch(elem) {
         var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
           iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
