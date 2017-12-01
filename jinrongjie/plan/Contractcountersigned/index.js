@@ -57,7 +57,8 @@
       if (data.eventType == 'click') {
         // var str = elem.textContent;
         // window.opener.ownerDocument.defaultView.document.querySelector('.Shadow').textContent = str;
-        ysp.customHelper.back();
+        //ysp.customHelper.back();
+        history.go(-1); //ysp.customHelper.forceMatchModels("index");
       }
     },
     getTemplate_uiControl10_c5ReP0: function getTemplate_uiControl10_c5ReP0() {
