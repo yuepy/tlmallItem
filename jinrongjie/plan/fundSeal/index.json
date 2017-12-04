@@ -7,7 +7,8 @@
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "processToSend": "../processToSend/index.json",
-    "forward": "../forward/index.json"
+    "forward": "../forward/index.json",
+    "waitTodo": "../waitTodo/index.json"
   },
   "chineseName": "资金调拨和印章（三个流程）",
   "description": "",
@@ -787,6 +788,10 @@
         {
           "toContextId": "context23_zUAAyb",
           "toModelId": "forward"
+        },
+        {
+          "toContextId": "context2_owrLEy",
+          "toModelId": "waitTodo"
         }
       ]
     },

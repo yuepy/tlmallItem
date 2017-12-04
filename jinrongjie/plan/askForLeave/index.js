@@ -116,8 +116,7 @@
                   var progressName = dt.querySelector(".fieldset").querySelectorAll(".progressName");for (var i = 0; i < progressName.length; i++) {
                     button[2].push(progressName[i].textContent);
                   }
-                }
-                // button[2].push(dt.textContent.replace(/\s/g, "").trim());
+                } // button[2].push(dt.textContent.replace(/\s/g, "").trim());
               } else {
                 button[3].push("search"); //查询人员、部门
                 var aArr = dt.querySelectorAll("a");for (var i = 0; i < aArr.length; i++) {
@@ -162,12 +161,12 @@
         } else if (classname == "word") {
           //文档下载   
           if (isNaN(parseInt(url))) {
-            var _url = url;
+            var _url = "http://192.168.200.63" + url;
           } else {
-            var _url = "/weaver/weaver.file.FileDownload?fileid=" + url + "&download=1";
+            var _url = "http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=" + url + "&download=1";
           } //var _url = 'http://192.168.200.63' + url;
           if (ysp.appMain.isIOS()) {
-            top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
+            top.EAPI.openWindow(_url + "&_ysp_filepreview=1");alert(_url + "&_ysp_filepreview=1");
           } else if (ysp.appMain.isAndroid()) {
             top.location.href = _url;
           }
