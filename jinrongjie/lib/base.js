@@ -834,13 +834,13 @@
     /* 调用场景 : 页面返回. */
     function _back(type) {
         if (typeof type == 'string') {
-            if (window.parent.EAPI.isAndroid() || window.parent.EAPI.isStudio()) {
+            if (topWindow.EAPI.isAndroid() || topWindow.parent.EAPI.isStudio()) {
                 ysp.appMain.back();
             } else {
                 var actionEvent = '{"target":"null","data":"' + type + '"}';
-                window.parent.EAPI.postMessageToNative('dispatchNativeEventToWebview', actionEvent);
+                topWindow.parent.EAPI.postMessageToNative('dispatchNativeEventToWebview', actionEvent);
                 setTimeout(function() {
-                    window.parent.EAPI.back();
+                    topWindow.EAPI.back();
                 }, 1000);
             }
         } else {
