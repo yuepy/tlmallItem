@@ -87,8 +87,10 @@
         var title = item.querySelector('h5.title') && item.querySelector('h5.title').textContent;var deleteAEl = item.querySelector('a.icon-close');var time = item.querySelector('div.time > b') && item.querySelector('div.time > b').textContent;var content = item.querySelector(".btns") && item.querySelector(".btns").querySelectorAll("a");var a = [];[].forEach.call(content, function (d) {
           if (d.getAttribute("style") == "color:#666;" || d.getAttribute("style") == "color:#666;;") {
             var tips = "grey";var buttonText = d.textContent;
-          } else {
+          } else if (d.getAttribute("style") == "color:blue;" || d.getAttribute("style") == "color:blue;;") {
             var tips = "blue";var buttonText = d.textContent;
+          } else {
+            var tips = "orange";var buttonText = d.textContent;
           }a.push({ tips: tips, buttonText: buttonText });
         });titles.push({ title: title, time: time, isDeleteExist: !!deleteAEl, content: a });
       });return titles;
