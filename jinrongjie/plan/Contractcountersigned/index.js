@@ -57,7 +57,15 @@
       if (data.eventType == 'click') {
         //ysp.customHelper.back(); 
         //history.go(-1); // ysp.customHelper.forceMatchModels("waitTodo"); //ysp.appMain.back();
-        ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestView.jsp?");
+        var _url = elem.ownerDocument.defaultView.location.href;if (_url.indexOf("viewType=0") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestView.jsp?");
+        } else if (_url.indexOf("viewType=2") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestHandled.jsp");
+        } else if (_url.indexOf("viewType=3") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestComplete.jsp");
+        } else if (_url.indexOf("viewType=4") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/MyRequestView.jsp");
+        }
       }
     },
     getTemplate_uiControl10_c5ReP0: function getTemplate_uiControl10_c5ReP0() {
