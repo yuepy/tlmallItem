@@ -403,7 +403,12 @@
             }
             aWin.doReview = function() {
                 // jQuery($GetEle("flowbody")).attr("onbeforeunload", "");
+              if(doc.getElementById('flowbody')){
                 doc.getElementById('flowbody').setAttribute('onbeforeunload', '')
+              }else if(doc.getElementById('bodyiframe')){
+                doc.getElementById('bodyiframe').setAttribute('onbeforeunload', '')
+              }
+                
                 aWin.doLocationHref();
             }
             aWin.checkfileuploadcomplet = function() {
