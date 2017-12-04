@@ -69,6 +69,7 @@
       //   elem.querySelector('#secCategoryBtn').click();
       // }
       switch (data.eventType) {case 'childNodes':
+          // elem.defaultView.eval(elem.querySelector('#secCategoryBtn').onclick());
           elem.querySelector('#secCategoryBtn').click();break;case 'dataInput':
           upValue(data.dataCustom);break;case 'search':
           doSearch(elem);break;case 'employerNodes':

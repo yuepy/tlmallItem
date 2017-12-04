@@ -286,7 +286,12 @@
     },
     doAction_uiControl164_kMcn0l: function (data, elem) {
       var clickType = data.eventType;var fileIndex = data.dataCustom;if (clickType == 'downLoad') {
-        var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick');var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));reviewFiles(selfUrl);
+        var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick'); // var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
+        if (clickContent.indexOf('top.location') !== -1) {
+          var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
+        } else {
+          var indexGroup = clickContent.match(/download.*/)[0];var selfUrl = '/weaver/weaver.file.FileDownload?fileid=' + indexGroup.match(/\d+/)[0] + '&download=1';
+        }reviewFiles(selfUrl);
       }if (clickType == 'upClick') {
         if (elem.querySelector("input[id='Filedata'][name='Filedata'][type='file']")) {
           elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '1');elem.querySelectorAll("input[id='Filedata'][name='Filedata'][type='file']")[0].click();

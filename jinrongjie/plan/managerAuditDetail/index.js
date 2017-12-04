@@ -89,7 +89,12 @@
       }
     }, doAction_uiControl23_PUM7iP: function (data, elem) {
       var clickType = data.eventType;var fileIndex = data.dataCustom;if (clickType == 'downLoad') {
-        var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick');var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));reviewFiles(selfUrl);
+        var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick'); // var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
+        if (clickContent.indexOf('top.location') !== -1) {
+          var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
+        } else {
+          var indexGroup = clickContent.match(/download.*/)[0];var selfUrl = '/weaver/weaver.file.FileDownload?fileid=' + indexGroup.match(/\d+/)[0] + '&download=1';
+        }reviewFiles(selfUrl);
       }if (clickType == 'optionValue') {
         if (elem.querySelector("select[temptitle='是否董事长审批']")) {
           elem.querySelector("select[temptitle='是否董事长审批']").value = data.dataCustom;
