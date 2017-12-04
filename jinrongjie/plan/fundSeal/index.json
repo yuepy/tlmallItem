@@ -78,6 +78,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td"
             }
           ],
           "force": true
@@ -113,6 +117,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td"
             }
           ]
         },
@@ -155,6 +163,14 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table[1]/tbody/tr/td/table/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody"
             }
           ]
         },
@@ -181,7 +197,12 @@
           "tagName": "TBODY"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -327,6 +348,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table[2]/tbody/tr[4]"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]"
             }
           ],
           "force": true
@@ -344,6 +369,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
@@ -377,6 +403,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table[2]/tbody/tr[6]"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]"
             }
           ],
           "force": true
@@ -424,6 +454,22 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"flowbody\"]/form/table[2]/tbody/tr[8]"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[10]/td[2]"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[8]/td[2]"
             }
           ],
           "force": false
@@ -451,7 +497,12 @@
           "tagName": "TD"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"oTDtype_1\"]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -484,7 +535,12 @@
         },
         "userData": {
           "force": false,
-          "data": []
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"SignTabDoc\"]/table/tbody"
+            }
+          ]
         },
         "locators": [
           {
@@ -518,7 +574,12 @@
           "tagName": "TD"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"oTDtype_2\"]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -550,7 +611,12 @@
           "tagName": "TBODY"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"SignTabWF\"]/table/tbody"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -585,7 +651,12 @@
           "tagName": "TD"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"oTDtype_3\"]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -1121,7 +1192,8 @@
           "1-资金调拨审批流程-张济天-2017-11-13",
           "test006",
           "1-资金调拨审批流程-张济天-2017-11-14",
-          "test008"
+          "test008",
+          "金融街集团发薪审批单-张济天-2017-11-28"
         ]
       }
     },
@@ -1135,7 +1207,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321622&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330438&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330436&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339247&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339247&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=452187&isovertime=0"
         ],
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
@@ -1231,6 +1304,41 @@
             "rightMenu",
             "rightMenuIframe",
             "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_xTable",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
             "statiframe",
             "toolbarbottommenu",
             "toolbarmenu",
@@ -1643,6 +1751,52 @@
             "btn_edit",
             "btn_subbackName",
             "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_forward",
+            "btn_print",
             "clickRightMenu",
             "drop-shadow",
             "highslide-container",
@@ -2147,6 +2301,49 @@
             "-/DIV/IFRAME",
             "-/DIV/SPAN",
             "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TABLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "-/TABLE/TBODY",
             "A/EM/SPAN",
             "DIV/DIV/DIV",
             "DIV/DIV/IFRAME",
