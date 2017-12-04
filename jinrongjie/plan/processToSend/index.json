@@ -222,54 +222,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control49_6E1Lqo": {
-      "location": {
-        "data": {
-          "tagName": "FONT"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "oTable1",
-              "tagName": "TABLE",
-              "prefix": "",
-              "suffix": "/TBODY[1]/TR[6]/TD[1]/FONT[1]",
-              "ratio": 0.485
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "TABLE.Shadow TABLE.ViewForm TR.Title TD FONT"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/FONT[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control49_6E1Lqo"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control50_tgZ1OL": {
       "location": {
         "data": {
@@ -721,7 +673,6 @@
         "control44_9fouJd",
         "control46_D2yhGn",
         "control47_1IOAA9",
-        "control49_6E1Lqo",
         "control50_tgZ1OL",
         "control51_X0XISJ",
         "control52_kec7kF",
@@ -898,21 +849,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl52_oXDrxJ",
                 "onGetTemplate": "getTemplate_uiControl52_oXDrxJ"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl46_3gBXm5",
-          "controlId": "control49_6E1Lqo",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl46_3gBXm5",
-                "onGetTemplate": "getTemplate_uiControl46_3gBXm5"
               }
             }
           }
