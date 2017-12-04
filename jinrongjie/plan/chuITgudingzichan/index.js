@@ -593,7 +593,11 @@
     },
     doAction_uiControl242_ZpBB8K: function (data, elem) {
       switch (data.eventType) {case 'downLoad':
-          var fileIndex = data.dataCustom;var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick');var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));reviewFiles(selfUrl);break;case 'changePrice':
+          var fileIndex = data.dataCustom;var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick');if (clickContent.indexOf('top.location') !== -1) {
+            var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
+          } else {
+            var indexGroup = clickContent.match(/download.*/)[0];var selfUrl = '/weaver/weaver.file.FileDownload?fileid=' + indexGroup.match(/\d+/)[0] + '&download=1';
+          }reviewFiles(selfUrl);break;case 'changePrice':
           changePrice(data.dataCustom);break;case 'select_application':
           selectOption(data.dataCustom);break;case 'change':
           if (data.dataCustom.type == 'contentDescription') {
