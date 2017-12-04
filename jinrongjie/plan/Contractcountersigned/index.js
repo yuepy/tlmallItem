@@ -55,15 +55,9 @@
     },
     doAction_uiControl10_c5ReP0: function (data, elem) {
       if (data.eventType == 'click') {
-        // var str = elem.textContent;
-        // window.opener.ownerDocument.defaultView.document.querySelector('.Shadow').textContent = str;
         //ysp.customHelper.back(); 
-        history.go(-1); // ysp.customHelper.forceMatchModels("waitTodo"); //ysp.appMain.back();
-        //http://192.168.200.63/workflow/request/RequestView.jsp?
-        // var json = {
-        //   time: new Date().getTime()
-        // };
-        // ysp.appMain.getActiveWindow().history.pushState(json, "", "http://192.168.200.63/workflow/request/RequestView.jsp?");
+        //history.go(-1); // ysp.customHelper.forceMatchModels("waitTodo"); //ysp.appMain.back();
+        ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestView.jsp?");
       }
     },
     getTemplate_uiControl10_c5ReP0: function getTemplate_uiControl10_c5ReP0() {
