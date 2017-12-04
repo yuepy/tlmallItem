@@ -14,7 +14,13 @@
     soapData = soapData + ' </SOAP:Envelope>';
     topWindow.yspTokenUrl = function(url) {
         topWindow.tokenUrl = url;
+      	console.log(url);
         return url;
+    };
+  	topWindow.setSsoToken = function(url){
+      topWindow.tokenUrl = url;
+      console.log(url);
+      return topWindow.tokenUrl;
     };
     topWindow.num = [];
   	topWindow.file = []; 
@@ -648,14 +654,12 @@
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
                 console.info('向客户端发送消息,开始获取token地址');
               	var parent = aWin.frameElement.ownerDocument.defaultView;
-              	if(parent.EAPI.isIOS()){
-                  var actionEvent = '{"target":"null","data":"getNumber"}';
-                  parent && parent.EAPI.postMessageToNative('getNum', actionEvent);
-                	parent && topWindow.EAPI.postMessageToNative('getToken', null);
-              		parent && parent.EAPI.postMessageToNative("postTitle", null) ; 
-                }
-                sessionStorage.setItem('getTokenURl', true);
+              	aWin.addEventListener('DOMContentLoaded', function() {
+                // var actionEvent = '{"target":"null","data":"getNumber"}';
+                topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
+                sessionStorage.setItem('getToken', true);
                 token_flag = true;
+              },false);
             }
             // },false);
             /*  获取token地址  */

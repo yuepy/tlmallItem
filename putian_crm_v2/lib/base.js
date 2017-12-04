@@ -1715,7 +1715,6 @@
           parent && parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
           sessionStorage.setItem('closePreLoading-domcontentloaded', true);
         }
-
         aWin.createIframe = function createIframe(name, targetUrl, mount, data) {
           // if (parent.EAPI.isIOS() && targetUrl.indexOf("192.168.1.174") != -1) {
           //   var topWin = aWin.getTopWin(aWin);
