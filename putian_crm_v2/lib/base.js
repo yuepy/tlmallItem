@@ -181,7 +181,6 @@
         if (xhr.readyState === topWin.XMLHttpRequest.DONE) {
           if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
             var menuInfo = xhr.responseText;
-            console.log(menuInfo)
             if(menuInfo == '{"isHaveSession":"no"}'){
               win.reload();
             }

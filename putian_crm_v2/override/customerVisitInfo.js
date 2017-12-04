@@ -113,6 +113,7 @@
             };
 
             function loadPage(data) {
+              debugger;
                 header.load(data);
                 var typeName = data.typeName;
                 var eleMenus = $("#header a").bind("click", function(event) {
@@ -2367,6 +2368,7 @@
          * @param {*} data 
          */
         function doAction(data) {
+          debugger;
             window.signStatus = 'loading';
             $("#customersign-content .customersign-mapcontent-textbottomspan").each(function() {
                 data[$(this).attr("name")] = $(this).html();

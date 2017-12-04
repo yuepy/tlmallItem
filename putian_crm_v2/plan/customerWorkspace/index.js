@@ -97,7 +97,7 @@
     },
     doAction_uiControl44_9CIEcB: function (data, elem) {
       var doc = elem.ownerDocument;if (data.eventType === 'click') {
-        var operation = data.dataCustom.operation;var index = data.dataCustom.index + 1;var xpath = "";ysp.customHelper.pageId();if (operation == "delete") {
+        debugger;var operation = data.dataCustom.operation;var index = data.dataCustom.index + 1;var xpath = "";ysp.customHelper.pageId();if (operation == "delete") {
           operation = "";xpath = '//div[@id="visitPlanList"]/div[' + parseInt(index) + ']//a[contains(@class,"icon-close")]';
         } else {
           xpath = '//div[@id="visitPlanList"]/div[' + parseInt(index) + ']//div[contains(@class,"btns")]/a[text()="' + operation + '"]';
@@ -304,8 +304,10 @@
         var title = item.querySelector('h5.title') && item.querySelector('h5.title').textContent;var time = item.querySelector('div.time > b') && item.querySelector('div.time > b').textContent;var content = item.querySelector(".btns") && item.querySelector(".btns").querySelectorAll("a");var a = [];[].forEach.call(content, function (d) {
           if (d.getAttribute("style") == "color:#666;" || d.getAttribute("style") == "color:#666;;") {
             var tips = "grey";var buttonText = d.textContent;
-          } else {
+          } else if (d.getAttribute("style") == "color:blue;" || d.getAttribute("style") == "color:blue;;") {
             var tips = "blue";var buttonText = d.textContent;
+          } else {
+            var tips = "orange";var buttonText = d.textContent;
           }a.push({ tips: tips, buttonText: buttonText });
         });titles.push({ title: title, time: time, content: a });
       });return titles;
