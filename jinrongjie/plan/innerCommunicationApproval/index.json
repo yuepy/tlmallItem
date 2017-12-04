@@ -248,32 +248,6 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control175_1M6XhJ": {
-      "location": {
-        "data": {
-          "tagName": "FORM"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control175_1M6XhJ"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control177_bBagM5": {
       "location": {
         "data": {
@@ -407,7 +381,6 @@
         "control171_hhaxpK",
         "control172_nP2WGE",
         "control174_ds2Sp5",
-        "control175_1M6XhJ",
         "control177_bBagM5",
         "control195_PfHTUb",
         "control176_5P4c5r",
@@ -451,16 +424,6 @@
       "fromContextId": "context22_9NRRRI",
       "fromAction": "doAction",
       "fromControlId": "control174_ds2Sp5",
-      "toContexts": [
-        {
-          "toContextId": "context22_9NRRRI"
-        }
-      ]
-    },
-    "flow104_3WxOgp": {
-      "fromContextId": "context22_9NRRRI",
-      "fromAction": "doAction",
-      "fromControlId": "control175_1M6XhJ",
       "toContexts": [
         {
           "toContextId": "context22_9NRRRI"
@@ -639,21 +602,6 @@
                       }
                     }
                   }
-                },
-                {
-                  "id": "uiControl154_gyeKTA",
-                  "controlId": "control175_1M6XhJ",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl154_gyeKTA",
-                        "onGetTemplate": "getTemplate_uiControl154_gyeKTA"
-                      }
-                    }
-                  }
                 }
               ]
             },
@@ -718,7 +666,8 @@
       "contexts": {
         "context22_9NRRRI": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321632&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434508&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434508&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=434508&isovertime=0"
         ],
         "context10_sJa5NJ": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
@@ -786,6 +735,41 @@
             "toolbarmenudiv",
             "triSubwfIframe",
             "wfdoc"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_xTable",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
           ]
         ],
         "context10_Tp4yhH": [
@@ -1151,6 +1135,52 @@
             "btn_rejectName",
             "btn_subbackName",
             "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_forward",
+            "btn_print",
             "clickRightMenu",
             "drop-shadow",
             "highslide-container",
@@ -1633,6 +1663,49 @@
             "TD/DIV/SPAN",
             "TD/EM/BUTTON",
             "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TABLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "-/TABLE/TBODY",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
             "TD/TABLE/TBODY",
             "TR/TD/A",
             "TR/TD/BUTTON",

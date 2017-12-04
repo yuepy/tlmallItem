@@ -247,9 +247,11 @@
     getData_control205_4SZlcl: function (elem) {
       if (!elem) {
         return;
-      }if (elem.textContent.replace(/\s/g, "") !== "") {
-        return elem.textContent.replace(/\s/g, "");
-      }return elem.querySelector("input[temptitle='标题']").value;
+      }var data = { editIsShow: 'true' };if (elem) {
+        if (!elem.ownerDocument.defaultView.parent.document.querySelector('#toolbarmenudiv').querySelector('.btn_wfSave')) {
+          data.editIsShow = "false";
+        }data.title = elem.textContent.trim();
+      }return data;
     },
     doAction_uiControl187_HnpzDu: function (data, elem) {
       if (data.eventType == 'click') {
@@ -259,8 +261,8 @@
       }
     },
     getTemplate_uiControl187_HnpzDu: function () {
-      var selfTemplate = 'import {Component} from \'react\'; \nimport {CommonHeader} from \'ysp-custom-components\';\nexport default class extends Component{\n  render(){\n    var data = this.props.customData;//\u515A\u53E3\u53D1\u6587\u5BA1\u6279\u5355\n     var data = \'\u96C6\u56E2\u515A\u53E3\u53D1\u6587\u5BA1\u6279\u5355\';//\n    return (\n    \t<CommonHeader \n       data={{centerText:data}} \n       backIsShow = {true}\n        editIsShow={true}\n        rightText = \'\u4FDD\u5B58\'\n        save={(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:\'save1\'\n            })\n          }\n        }}\n        back={(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:\'click\'\n            })\n          }\n        }}\n        />\n    )\t\n  }\n}';
-      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: \'render\',\n    value: function render() {\n      var _this2 = this;\n\n      var data = this.props.customData; //\u515A\u53E3\u53D1\u6587\u5BA1\u6279\u5355\n      var data = \'\u96C6\u56E2\u515A\u53E3\u53D1\u6587\u5BA1\u6279\u5355\'; //\n      return React.createElement(_yspCustomComponents.CommonHeader, {\n        data: { centerText: data },\n        backIsShow: true,\n        editIsShow: true,\n        rightText: \'\\u4FDD\\u5B58\',\n        save: function save(e) {\n          var handler = _this2.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: \'save1\'\n            });\n          }\n        },\n        back: function back(e) {\n          var handler = _this2.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: \'click\'\n            });\n          }\n        }\n      });\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
+      var selfTemplate = 'import {Component} from \'react\'; \nimport {CommonHeader} from \'ysp-custom-components\';\nexport default class extends Component{\n  render(){\n    var data = this.props.customData||{};\n    var editIsShow = true;\n    if(data.editIsShow=="false"){\n      editIsShow = false;\n    }\n   \tvar title = \'\u96C6\u56E2\u515A\u53E3\u53D1\u6587\u5BA1\u6279\u5355\';//\n    return (\n    \t<CommonHeader \n       data={{centerText:title}} \n       backIsShow = {true}\n        editIsShow={editIsShow}\n        rightText = \'\u4FDD\u5B58\'\n        save={(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:\'save1\'\n            })\n          }\n        }}\n        back={(e)=>{\n          var handler = this.props.customHandler;\n          if(handler){\n            handler({\n              eventType:\'click\'\n            })\n          }\n        }}\n        />\n    )\t\n  }\n}';
+      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: \'render\',\n    value: function render() {\n      var _this2 = this;\n\n      var data = this.props.customData || {};\n      var editIsShow = true;\n      if (data.editIsShow == "false") {\n        editIsShow = false;\n      }\n      var title = \'\u96C6\u56E2\u515A\u53E3\u53D1\u6587\u5BA1\u6279\u5355\'; //\n      return React.createElement(_yspCustomComponents.CommonHeader, {\n        data: { centerText: title },\n        backIsShow: true,\n        editIsShow: editIsShow,\n        rightText: \'\\u4FDD\\u5B58\',\n        save: function save(e) {\n          var handler = _this2.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: \'save1\'\n            });\n          }\n        },\n        back: function back(e) {\n          var handler = _this2.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: \'click\'\n            });\n          }\n        }\n      });\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
     getData_control206_3EQPGh: function (elem) {
       if (!elem) {
@@ -303,7 +305,7 @@
     getData_control209_bg4ECm: function (elem) {
       if (!elem) {
         return;
-      }var elem = $(elem).find("tbody")[0];var data = { text: [], title: [] };if ($(elem).children("tr").length > 1) {
+      }var elem = $(elem.parentElement).find("tbody")[0];var data = { text: [], title: [] };if ($(elem).children("tr").length > 1) {
         $(elem).children("tr").each(function (i) {
           if (i > 0) {
             var arr = [];$($(this).children("td").each(function () {
@@ -311,16 +313,17 @@
             }));data.text.push(arr);
           }
         });
-      }data.title.push('创建时间', '文档名称', '文档所有者');return data;
+      } // console.log(elem)
+      data.title.push('创建时间', '文档名称', '文档所有者');return data;
     },
     doAction_uiControl191_xTc8JD: function (data, elem) {
-      if (data.eventType == 'click') {
-        var idx = parseInt(data.dataCustom) + 1;$(elem).find('tr').eq(idx).find("a").eq(0).click();
+      if (data.eventType == 'click') {// var idx = parseInt(data.dataCustom) + 1;
+        // $(elem).find('tr').eq(idx).find("a").eq(0).click();
       }
     },
     getTemplate_uiControl191_xTc8JD: function () {
       var selfTemplate = 'module.exports = React.createClass({\n\tclick: function (e) {\n\t\tif (e.target.className == \'section_box\') {\n\t\t\tvar _target = e.target;\n\t\t}\n\t\telse if (e.target.tagName == \'LI\') {\n\t\t\tvar _target = e.target.parentElement;\n\t\t}\n\t\telse if (e.target.tagName == \'SPAN\') {\n\t\t\tvar _target = e.target.parentElement.parentElement;\n\t\t}\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \'click\',\n\t\t\t\tdata: _target.getAttribute(\'data-index\')\n\t\t\t})\n\t\t}\n\t},\n\trender: function () {\n\t\tvar data = this.props.customData || {};\n\t\tvar text = data.text || [];\n\t\tvar _this = this;\n\t\tif (text.length > 0) {\n\t\t\tvar item = data.text.map(function (d1, i1) {\n\t\t\t\tif (d1 instanceof Array && d1.length > 0) {\n\t\t\t\t\treturn (<li className=\'section_box\' style={{ \'background\': \'#fff\' }} onClick={_this.click} data-index={i1}>\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\td1.map(function (d2, i2) {\n\t\t\t\t\t\t\t\treturn (<li><span>{data.title[i2]}</span><span>{d2}</span></li>)\n\t\t\t\t\t\t\t})\n\t\t\t\t\t\t}\n\t\t\t\t\t</li>)\n\t\t\t\t}\n\n\t\t\t})\n\t\t}\n\t\tif (text.length > 0) {\n\t\t\treturn (<ul className=\'document_final_lfj\' style={{ \'display\': \'none\' }}>\n\t\t\t\t{item}\n\t\t\t</ul>)\n\t\t}\n\t\telse {\n\t\t\treturn (<ul className=\'document_final_lfj\' style={{ margin: \'10px\', display: \'none\' }}>\u6CA1\u6709\u76F8\u5173\u6587\u6863</ul>)\n\t\t}\n\t}\n});';
-      return '\'use strict\';\n\nmodule.exports = React.createClass({\n\tdisplayName: \'exports\',\n\n\tclick: function click(e) {\n\t\tif (e.target.className == \'section_box\') {\n\t\t\tvar _target = e.target;\n\t\t} else if (e.target.tagName == \'LI\') {\n\t\t\tvar _target = e.target.parentElement;\n\t\t} else if (e.target.tagName == \'SPAN\') {\n\t\t\tvar _target = e.target.parentElement.parentElement;\n\t\t}\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \'click\',\n\t\t\t\tdata: _target.getAttribute(\'data-index\')\n\t\t\t});\n\t\t}\n\t},\n\trender: function render() {\n\t\tvar data = this.props.customData || {};\n\t\tvar text = data.text || [];\n\t\tvar _this = this;\n\t\tif (text.length > 0) {\n\t\t\tvar item = data.text.map(function (d1, i1) {\n\t\t\t\tif (d1 instanceof Array && d1.length > 0) {\n\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\'li\',\n\t\t\t\t\t\t{ className: \'section_box\', style: { \'background\': \'#fff\' }, onClick: _this.click, \'data-index\': i1 },\n\t\t\t\t\t\td1.map(function (d2, i2) {\n\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t\'li\',\n\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\'span\',\n\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\tdata.title[i2]\n\t\t\t\t\t\t\t\t),\n\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\'span\',\n\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\td2\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t);\n\t\t\t\t\t\t})\n\t\t\t\t\t);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t\tif (text.length > 0) {\n\t\t\treturn React.createElement(\n\t\t\t\t\'ul\',\n\t\t\t\t{ className: \'document_final_lfj\', style: { \'display\': \'none\' } },\n\t\t\t\titem\n\t\t\t);\n\t\t} else {\n\t\t\treturn React.createElement(\n\t\t\t\t\'ul\',\n\t\t\t\t{ className: \'document_final_lfj\', style: { margin: \'10px\', display: \'none\' } },\n\t\t\t\t\'\\u6CA1\\u6709\\u76F8\\u5173\\u6587\\u6863\'\n\t\t\t);\n\t\t}\n\t}\n});';
+      return "'use strict';\n\nmodule.exports = React.createClass({\n\tdisplayName: 'exports',\n\n\tclick: function click(e) {\n\t\tif (e.target.className == 'section_box') {\n\t\t\tvar _target = e.target;\n\t\t} else if (e.target.tagName == 'LI') {\n\t\t\tvar _target = e.target.parentElement;\n\t\t} else if (e.target.tagName == 'SPAN') {\n\t\t\tvar _target = e.target.parentElement.parentElement;\n\t\t}\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: 'click',\n\t\t\t\tdata: _target.getAttribute('data-index')\n\t\t\t});\n\t\t}\n\t},\n\trender: function render() {\n\t\tvar data = this.props.customData || {};\n\t\tvar text = data.text || [];\n\t\tvar _this = this;\n\t\tif (text.length > 0) {\n\t\t\tvar item = data.text.map(function (d1, i1) {\n\t\t\t\tif (d1 instanceof Array && d1.length > 0) {\n\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t'li',\n\t\t\t\t\t\t{ className: 'section_box', style: { 'background': '#fff' }, onClick: _this.click, 'data-index': i1 },\n\t\t\t\t\t\td1.map(function (d2, i2) {\n\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t'li',\n\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t'span',\n\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\tdata.title[i2]\n\t\t\t\t\t\t\t\t),\n\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t'span',\n\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\td2\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t);\n\t\t\t\t\t\t})\n\t\t\t\t\t);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t\tif (text.length > 0) {\n\t\t\treturn React.createElement(\n\t\t\t\t'ul',\n\t\t\t\t{ className: 'document_final_lfj', style: { 'display': 'none' } },\n\t\t\t\titem\n\t\t\t);\n\t\t} else {\n\t\t\treturn React.createElement(\n\t\t\t\t'ul',\n\t\t\t\t{ className: 'document_final_lfj', style: { margin: '10px', display: 'none' } },\n\t\t\t\t'\\u6CA1\\u6709\\u76F8\\u5173\\u6587\\u6863'\n\t\t\t);\n\t\t}\n\t}\n});";
     },
     getData_control210_G4H198: function (elem) {
       if (!elem) {
@@ -345,7 +348,8 @@
     getData_control214_ezrlGD: function (elem) {
       if (!elem) {
         return;
-      }var elem = $(elem).find("tbody")[0];var data = { text: [], title: [] };if ($(elem).children("tr").length > 1 && $(elem).find("td").length > 1) {
+      } // console.log(elem)
+      var elem = $(elem.parentElement).find("tbody")[0];var data = { text: [], title: [] };if ($(elem).children("tr").length > 1 && $(elem).find("td").length > 1) {
         $(elem).children("tr").each(function (i) {
           if (i > 0) {
             var arr = [];$($(this).children("td").each(function () {
@@ -353,13 +357,14 @@
             }));data.text.push(arr);
           }
         });
-      }$(elem).find("th").each(function () {
+      } // console.log(elem)
+      $(elem).find("th").each(function () {
         data.title.push($(this).text().trim());
       });return data;
     },
     doAction_uiControl196_NB990i: function (data, elem) {
-      if (data.eventType == 'click') {
-        var idx = parseInt(data.dataCustom) + 1;$(elem).find('tr').eq(idx).find("a").eq(1).click();
+      if (data.eventType == 'click') {// var idx = parseInt(data.dataCustom) + 1;
+        // $(elem).find('tr').eq(idx).find("a").eq(1).click();
       }
     },
     getTemplate_uiControl196_NB990i: function () {
