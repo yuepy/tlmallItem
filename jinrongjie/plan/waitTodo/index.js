@@ -2,14 +2,14 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control9_Ks2mo3: function getData_control9_Ks2mo3(elem) {
+    getData_control9_Ks2mo3: function (elem) {
       if (!elem) {
         return;
       }if (elem) {
         return elem.textContent;
       }
     },
-    doAction_uiControl9_TJh8bp: function doAction_uiControl9_TJh8bp(data, elem) {
+    doAction_uiControl9_TJh8bp: function (data, elem) {
       if (data.eventType == 'click') {
         ysp.customHelper.back();
       }
