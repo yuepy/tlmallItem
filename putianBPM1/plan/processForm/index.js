@@ -1330,14 +1330,19 @@
     doAction_uiControl33_sIcNwa: function (data, elem) {
       if (data.eventType == 'click') {
         var d = data.dataCustom.classNames;if (d == 'btn ysp-btn-one') {
-          var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");_btnTwo.click();setTimeout(function () {
-            var tip = elem.querySelectorAll(".mini-window-drag");if (tip.length == 1) {
-              //_btnTwo.click(); 
-              var json = { time: new Date().getTime() };setTimeout(function () {
-                ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
-              }, 20);
-            }
-          }, 10);
+          var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");console.log(elem);_btnTwo.click(); // console.log(elem); 
+          //     setTimeout(function () {
+          //       var tip = elem.querySelectorAll(".mini-window-drag");
+          //       if (tip.length == 1) {
+          //         //_btnTwo.click(); 
+          //         var json = {
+          //           time: new Date().getTime()
+          //         };
+          //         setTimeout(function () {
+          //           ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+          //         }, 20);
+          //       }
+          //     }, 10);
         } else if (d == 'btn ysp-btn-two') {
           var btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_0')[0].querySelector("a");if (data.dataCustom.text == "执行") {
             btnTwo.click();
