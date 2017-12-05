@@ -216,7 +216,8 @@
       }if (shortVisitEl && win.getComputedStyle(shortVisitEl).display != "none") {
         elem = shortVisitEl;isTempSign = true;
       } //这一步意义很大，相当于locator作用 end
-      var doc = elem.ownerDocument;var trs = elem.querySelectorAll('table  tr');var content = [];[].forEach.call(trs, function (tr, index) {
+      //var doc = elem.ownerDocument;
+      var trs = elem.querySelectorAll('table  tr');var content = [];[].forEach.call(trs, function (tr, index) {
         var trData = [];var tds = tr.querySelectorAll('td');[].forEach.call(tds, function (td, subIndex) {
           var input = td.querySelector('input');if (input) {
             trData.push(input.checked);
