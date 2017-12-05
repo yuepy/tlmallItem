@@ -81,7 +81,7 @@
             elem.querySelector('#searchdatefromspan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;case 'searchdateto':
             elem.querySelector('#searchdatetospan').textContent = data.value;elem.querySelector('input[name="searchdateto"]').value = data.value;break;}
       }function doSearch(elem) {
-        var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
+        debugger;var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
           iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
         } // ysp.appMain.showLoading();
       }
