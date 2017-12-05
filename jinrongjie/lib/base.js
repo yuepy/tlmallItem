@@ -536,8 +536,74 @@
                }
             aWin.parent.close();
         }
-          
-          
+    		
+          /* 相关文档 子目录传值兼容性问题 */
+          if(aWin.doSearch){
+            aWin.doSearch = function(){
+              aWin.setResourceStr();
+              doc.all("documentids").value = aWin.documentids.substring(1) ;
+              doc.SearchForm.submit();
+            }
+          }
+         //  if(aWin.Tree_clickNode){
+         //  aWin.Tree_clickNode = function(nodeID){
+         //    var document = doc;
+         //    var node=aWin.Tree_node_array[nodeID];
+         //    if(node==null||node.parent==null)return;//root
+         //    var tree=node.getTreeView();	
+         //    var div=document.getElementById("Tree_expand_"+nodeID);
+         //    var img=document.getElementById("Tree_img_"+nodeID);
+         //    var td=document.getElementById("Tree_td_"+nodeID);
+         //    //---------
+         //    if(!node.expanded && node.childCount>0 &&tree.flag==false)
+         //      if(tree.callback_expanding(nodeID)==false)//cancel expand
+         //        return;
+         //    if(node.expanded && node.childCount>0 &&tree.flag==false) 
+         //      if(tree.callback_collapsing(nodeID)==false)//cancel collapse
+         //        return;
+         //    node.expanded=!node.expanded && node.childCount>0;
+         //    if(tree.flag==false)aWin.Tree_selectNode(nodeID);
+         //    if(node.childCount>0)//folder
+         //    {
+         //      if(div)div.style.display=node.expanded?"block":"none";
+         //      if(img)	img.src=aWin.Tree_imgSrc(node);
+         //      var line=document.getElementById("Tree_line_"+nodeID);
+         //      if(line)line.src=aWin.Tree_GetLineImg(node);	
+         //    }
+         //    if(tree.callback_click(nodeID)==true &&tree.flag==false)//do action
+         //      aWin.Tree_on_action(node.action);
+         //    //------
+         //    if(node.expanded && node.childCount>0 &&tree.flag==false)
+         //      tree.callback_expanded(nodeID);
+         //    if(!node.expanded && node.childCount>0 &&tree.flag==false) 
+         //      tree.callback_collapsed(nodeID);
+         //  }
+         // }
+          if(aWin.selectCategory){
+             aWin.selectCategory = function(nodeID) {
+                var node = aWin.tree.getNode(nodeID);
+                var path = node.text;
+                var id = node.categoryid;
+                var subid = -1;
+                var mainid = -1;
+                var  parth2="<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&seccategory="+id+"'>"+node.text+"</a>";  
+                while (node.parent != null) {        
+                    path = node.parent.text + "/" + path;        
+                    if (node.parent.categorytype == 1 && subid == -1) {
+                        subid = node.parent.categoryid;
+                        parth2="<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&subcategory="+subid+"'>"+node.parent.text+"</a>/"+parth2;               
+                    }  else  if (node.parent.categorytype == 0) {
+                        mainid = node.parent.categoryid;    
+                        parth2="<a href='docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&maincategory="+mainid+"'>"+node.parent.text+"</a>/"+parth2;      
+                  }  
+                    node = node.parent;
+                }  
+                path = path.replace(/</g, "＜").replace(/>/g, "＞").replace(/&lt;/g, "＜").replace(/&gt;/g, "＞");
+               	aWin.parent.opener.returnValue = {tag:"1",id:""+id, path:""+path, mainid:""+mainid, subid:""+subid,path2:""+parth2};
+								aWin.parent.opener._setReturnValue({tag:"1",id:""+id, path:""+path, mainid:""+mainid, subid:""+subid,path2:""+parth2})
+                aWin.parent.close();
+              }
+           }
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象

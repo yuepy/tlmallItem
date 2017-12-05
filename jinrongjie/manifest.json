@@ -1,154 +1,162 @@
 {
-    "type": "adapter",
-    "short_name": "",
-    "version": "0.0.1",
-    "runtime_version": "2.4.0",
-    "description": "",
-    "options": {
-        "resource_intercept": {
-            "type": [],
-            "ignore": []
-        },
-        "unadapted": {
-            "timeout": 25000,
-            "rules": [{
-                "match": "*",
-                "type": "block"
-            }]
-        },
-        "resource_filter": [{
-            "url_match": [
-                "^http:\\/\\/192\\.168\\.200\\.63.*"
-            ],
-            "charset": "utf-8",
-            "replaces": [{
-                "regexp": "\\btop\\b",
-                "sub_str": "_ysp_top"
-            }]
-        }],
-        "resource_inject": [],
-        "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.4.0",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [],
+      "ignore": []
     },
-    "override_urls": [{
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.200\\.63\\/wui\\/common\\/jquery\\/plugin\\/Listener\\.js"
-            ],
-            "target_url": "override/Listener.js"
-        },
+    "unadapted": {
+      "timeout": 25000,
+      "rules": [
         {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.200\\.63\\/js\\/swfupload\\/workflowswfupload\\.js"
-            ],
-            "target_url": "override/workflowswfupload.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.200\\.63\\/wui\\/common\\/jquery\\/plugin\\/jQuery\\.modalDialog\\.js"
-            ],
-            "target_url": "override/modalDialog.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.200\\.63\\/js\\/jquery\\/plugins\\/client\\/jquery\\.client\\.js"
-            ],
-            "target_url": "override/client.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.200\\.63\\/js\\/bindows\\/bindows_gauges\\.js"
-            ],
-            "target_url": "override/bindows_gauges.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.200\\.63\\/js\\/swfupload\\/swfupload\\.js"
-            ],
-            "target_url": "override/swfupload.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.200\\.63\\/js\\/swfupload\\/swfupload\\.queue\\.js"
-            ],
-            "target_url": "override/queue.js"
+          "match": "*",
+          "type": "block"
         }
+      ]
+    },
+    "resource_filter": [
+      {
+        "url_match": [
+          "^http:\\/\\/192\\.168\\.200\\.63.*"
+        ],
+        "charset": "utf-8",
+        "replaces": [
+          {
+            "regexp": "\\btop\\b",
+            "sub_str": "_ysp_top"
+          }
+        ]
+      }
     ],
-    "adapter_urls": [{
-            "title": "index",
-            "url": "adapter://jinrongjie/plan/index/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.200\\.63.*"
-            ],
-            "demo": [
-                "http://192.168.200.63/wui/main.jsp?templateId=1"
-            ]
-        },
-        {
-            "title": "managerAuditRelatedDoc",
-            "url": "adapter://jinrongjie/plan/managerAuditRelatedDoc/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.200\\.63\\/systeminfo\\/BrowserMain\\.jsp\\?url=\\/docs\\/docs\\/MutiDocBrowser\\.jsp\\?documentids="
-            ],
-            "demo": [
-                "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids="
-            ]
-        },
-        {
-            "title": "waitTodo",
-            "url": "adapter://jinrongjie/plan/waitTodo/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/RequestView\\.jsp\\?e71508480096097="
-            ],
-            "demo": [
-                "http://192.168.200.63/workflow/request/RequestView.jsp?e71508480096097="
-            ]
-        },
-        {
-            "title": "askForLeave",
-            "url": "adapter://jinrongjie/plan/askForLeave/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ManageRequestNoForm\\.jsp\\?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
-            ],
-            "demo": [
-                "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
-            ]
-        },
-        {
-            "title": "login",
-            "url": "adapter://jinrongjie/plan/login/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/Login\\.jsp",
-                "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/VerifyLogin\\.jsp.*",
-                "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/Vpn-sso.*",
-                "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/oa_sso.*"
-            ],
-            "demo": [
-                "http://192.168.200.63/login/Login.jsp",
-                "/login/oa_sso.jsp?tokenStr=&pscode=&requestType=login&oaTodoCount=&oaReadCount="
-            ]
-        },
-        {
-            "title": "login1",
-            "url": "adapter://jinrongjie/plan/login/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/VerifyLogin\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.200.63/login/Login.jsp"
-            ]
-        },
-        {
-            "title": "Contractcountersigned",
-            "url": "adapter://jinrongjie/plan/Contractcountersigned/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/search\\/WFSearchResult\\.jsp\\?start=1&iswaitdo=1&date2during=0&viewType=0"
-            ],
-            "demo": [
-                "http://192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0"
-            ]
-        }
-    ],
-    "name": "金融街",
-    "default_url": "http://192.168.200.63/login/Login.jsp",
-    "scope": "jinrongjie",
-    "start_url": "enterplorer://jinrongjie/local/index.html"
+    "resource_inject": [],
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+  },
+  "override_urls": [
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.200\\.63\\/wui\\/common\\/jquery\\/plugin\\/Listener\\.js"
+      ],
+      "target_url": "override/Listener.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.200\\.63\\/js\\/swfupload\\/workflowswfupload\\.js"
+      ],
+      "target_url": "override/workflowswfupload.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.200\\.63\\/wui\\/common\\/jquery\\/plugin\\/jQuery\\.modalDialog\\.js"
+      ],
+      "target_url": "override/modalDialog.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.200\\.63\\/js\\/jquery\\/plugins\\/client\\/jquery\\.client\\.js"
+      ],
+      "target_url": "override/client.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.200\\.63\\/js\\/bindows\\/bindows_gauges\\.js"
+      ],
+      "target_url": "override/bindows_gauges.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.200\\.63\\/js\\/swfupload\\/swfupload\\.js"
+      ],
+      "target_url": "override/swfupload.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.200\\.63\\/js\\/swfupload\\/swfupload\\.queue\\.js"
+      ],
+      "target_url": "override/queue.js"
+    }
+  ],
+  "adapter_urls": [
+    {
+      "title": "index",
+      "url": "adapter://jinrongjie/plan/index/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63.*"
+      ],
+      "demo": [
+        "http://192.168.200.63/wui/main.jsp?templateId=1"
+      ]
+    },
+    {
+      "title": "managerAuditRelatedDoc",
+      "url": "adapter://jinrongjie/plan/managerAuditRelatedDoc/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/systeminfo\\/BrowserMain\\.jsp\\?url=\\/docs\\/docs\\/MutiDocBrowser\\.jsp\\?documentids="
+      ],
+      "demo": [
+        "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids="
+      ]
+    },
+    {
+      "title": "waitTodo",
+      "url": "adapter://jinrongjie/plan/waitTodo/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/RequestView\\.jsp\\?e71508480096097="
+      ],
+      "demo": [
+        "http://192.168.200.63/workflow/request/RequestView.jsp?e71508480096097="
+      ]
+    },
+    {
+      "title": "askForLeave",
+      "url": "adapter://jinrongjie/plan/askForLeave/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ManageRequestNoForm\\.jsp\\?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+      ],
+      "demo": [
+        "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+      ]
+    },
+    {
+      "title": "login",
+      "url": "adapter://jinrongjie/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/Login\\.jsp",
+        "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/VerifyLogin\\.jsp.*",
+        "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/Vpn-sso.*",
+        "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/oa_sso.*"
+      ],
+      "demo": [
+        "http://192.168.200.63/login/Login.jsp",
+        "/login/oa_sso.jsp?tokenStr=&pscode=&requestType=login&oaTodoCount=&oaReadCount="
+      ]
+    },
+    {
+      "title": "login1",
+      "url": "adapter://jinrongjie/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/VerifyLogin\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.200.63/login/Login.jsp"
+      ]
+    },
+    {
+      "title": "Contractcountersigned",
+      "url": "adapter://jinrongjie/plan/Contractcountersigned/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/search\\/WFSearchResult\\.jsp\\?start=1&iswaitdo=1&date2during=0&viewType=0"
+      ],
+      "demo": [
+        "http://192.168.200.63/workflow/search/WFSearchResult.jsp?start=1&iswaitdo=1&date2during=0&viewType=0"
+      ]
+    }
+  ],
+  "name": "金融街",
+  "default_url": "http://192.168.200.63/login/Login.jsp",
+  "scope": "jinrongjie",
+  "start_url": "enterplorer://jinrongjie/local/index.html"
 }
