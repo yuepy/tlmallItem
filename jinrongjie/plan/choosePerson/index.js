@@ -49,7 +49,8 @@
               }if ($(tr1).children("td").eq(0).find('option').length > 0) {
                 $(tr1).children("td").eq(0).find('option').each(function () {
                   var arr1 = [];if ($(this)[0].selected == true) {
-                    arr1.push({ text: $(this).text(), selected: 'true' });
+                    arr1.push({
+                      text: $(this).text(), selected: 'true' });
                   } else if ($(this)[0].selected == false) {
                     arr1.push({ text: $(this).text(), selected: 'false' });
                   }data.content1.push(arr1);
@@ -178,7 +179,7 @@
           // var e = e || elem.ownerDocument.defaultView.event;
           // var target = e.srcElement || e.target;
           // if (target.nodeName == "TD" || target.nodeName == "A") {
-          var curTr = elem.ownerDocument.querySelectorAll('frame')[1].contentDocument.querySelectorAll('iframe')[1].contentDocument.querySelector('tbody tbody').querySelectorAll('tr')[data.dataCustom];elem.ownerDocument.defaultView.opener._setReturnValue({ id: elem.ownerDocument.defaultView.jQuery(curTr.cells[0]).text(), name: elem.ownerDocument.defaultView.jQuery(curTr.cells[1]).text(), a1: elem.ownerDocument.defaultView.jQuery(curTr.cells[3]).text(), a2: elem.ownerDocument.defaultView.jQuery(curTr.cells[4]).text() });elem.ownerDocument.defaultView.parent.parent.close(); // }
+          var curTr = elem.ownerDocument.querySelectorAll('frame')[1].contentDocument.querySelectorAll('iframe')[1].contentDocument.querySelector('tbody tbody').querySelectorAll('tr')[data.dataCustom];elem.ownerDocument.defaultView.opener._setReturnValue({ id: elem.ownerDocument.defaultView.jQuery(curTr.cells[0]).text(), name: elem.ownerDocument.defaultView.jQuery(curTr.cells[1]).text(), a1: elem.ownerDocument.defaultView.jQuery(curTr.cells[3]).text(), a2: elem.ownerDocument.defaultView.jQuery(curTr.cells[4]).text() });elem.ownerDocument.defaultView.parent.parent.opener.searchcreaterSpan.textContent = curTr.cells[1].textContent;elem.ownerDocument.defaultView.parent.parent.close(); // }
         };elem.ownerDocument.defaultView.BrowseTable_onclick(); // 结束
       }if (data.eventType == 'open') {
         var elem1 = elem.contentDocument.getElementById("oTable1");var elem3 = $(elem1).find("#frame2")[0].contentDocument.body;var Tbody = $(elem3).find("table").children("tbody")[0];var tr0 = $(Tbody).children("tr").eq(0)[0];if ($(tr0).children("td").length > 0 && $(tr0).find("input").length > 0) {

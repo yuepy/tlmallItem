@@ -166,7 +166,7 @@
             var _url = "http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=" + url + "&download=1";
           } //var _url = 'http://192.168.200.63' + url;
           if (ysp.appMain.isIOS()) {
-            top.EAPI.openWindow(_url + "&_ysp_filepreview=1");alert(_url + "&_ysp_filepreview=1");
+            top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
           } else if (ysp.appMain.isAndroid()) {
             top.location.href = _url;
           }
