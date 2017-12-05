@@ -556,36 +556,6 @@
       "frameXPath": "",
       "customJS": "if (elem.textContent.indexOf('处理') !== -1 && elem.textContent.indexOf('公文审批流程') !== -1&&elem.textContent.indexOf('总经理签核') !== -1 ) { return true; } return false;"
     },
-    "control14_FvQBRX": {
-      "location": {
-        "data": {
-          "tagName": "FORM"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "XPath",
-              "value": "/html/body/table/tbody/tr/td/form"
-            }
-          ],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control14_FvQBRX"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control40_98Awiv": {
       "location": {
         "data": {
@@ -683,6 +653,83 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control324_vm5MDJ": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"oTDtype_3\"]"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[4]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control324_vm5MDJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control325_bDzDi8": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"SignTabWF\"]/table/tbody"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]/TABLE[1]/TBODY[1]",
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]//TBODY",
+              "descendant::DIV[@id=\"SignTabWF\"]//TBODY"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[4]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control325_bDzDi8"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -699,10 +746,11 @@
         "control56_BTf16A",
         "control58_T9FLu4",
         "control59_JQESHT",
-        "control14_FvQBRX",
         "control40_98Awiv",
         "control37_ESkqnX",
-        "control57_TvAQr2"
+        "control57_TvAQr2",
+        "control324_vm5MDJ",
+        "control325_bDzDi8"
       ],
       "anchors": [
         "control13_AqKmiE"
@@ -804,16 +852,6 @@
         }
       ]
     },
-    "flow26_LzONTw": {
-      "fromContextId": "context4_wRixwF",
-      "fromAction": "doAction",
-      "fromControlId": "control14_FvQBRX",
-      "toContexts": [
-        {
-          "toContextId": "context4_wRixwF"
-        }
-      ]
-    },
     "flow86_wxEhwP": {
       "fromContextId": "context4_wRixwF",
       "fromAction": "doAction",
@@ -848,6 +886,16 @@
       "fromContextId": "context4_wRixwF",
       "fromAction": "doAction",
       "fromControlId": "control58_T9FLu4",
+      "toContexts": [
+        {
+          "toContextId": "context4_wRixwF"
+        }
+      ]
+    },
+    "flow208_3bSqA7": {
+      "fromContextId": "context4_wRixwF",
+      "fromAction": "doAction",
+      "fromControlId": "control324_vm5MDJ",
       "toContexts": [
         {
           "toContextId": "context4_wRixwF"
@@ -1055,16 +1103,31 @@
           }
         },
         {
-          "id": "uiControl34_Z2l1T9",
-          "controlId": "control14_FvQBRX",
+          "id": "uiControl324_78MLwB",
+          "controlId": "control324_vm5MDJ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl34_Z2l1T9",
-                "onGetTemplate": "getTemplate_uiControl34_Z2l1T9"
+                "onDoAction": "doAction_uiControl324_78MLwB",
+                "onGetTemplate": "getTemplate_uiControl324_78MLwB"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl325_QpJEF6",
+          "controlId": "control325_bDzDi8",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl325_QpJEF6",
+                "onGetTemplate": "getTemplate_uiControl325_QpJEF6"
               }
             }
           }
@@ -1097,7 +1160,8 @@
           "云适配测试_song",
           "1212212",
           "云适配测试_20171108_02",
-          "测试201711007"
+          "测试201711007",
+          "KKK"
         ]
       }
     },
@@ -1110,7 +1174,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215915&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118465&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=295154&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=286344&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=286344&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=483866&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ],
         "context5_46tN5g": [
           "192.168.200.63/docs/docs/MutiDocBrowser.jsp?documentids=&splitflag=,",

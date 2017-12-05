@@ -371,6 +371,83 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control49_e6X819": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"oTDtype_3\"]"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control49_e6X819"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control175_3Flzur": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"SignTabUpload\"]/table/tbody"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabUpload\"]/TABLE[1]/TBODY[1]",
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabUpload\"]//TBODY",
+              "descendant::DIV[@id=\"SignTabUpload\"]//TBODY"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control175_3Flzur"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -384,7 +461,9 @@
         "control177_bBagM5",
         "control195_PfHTUb",
         "control176_5P4c5r",
-        "control323_pfSxCF"
+        "control323_pfSxCF",
+        "control49_e6X819",
+        "control175_3Flzur"
       ],
       "anchors": [
         "control169_yoMlRP"
@@ -469,6 +548,16 @@
         {
           "toContextId": "context8_QbFt5N",
           "toModelId": "setBack"
+        }
+      ]
+    },
+    "flow104_zUgOZ2": {
+      "fromContextId": "context22_9NRRRI",
+      "fromAction": "doAction",
+      "fromControlId": "control49_e6X819",
+      "toContexts": [
+        {
+          "toContextId": "context22_9NRRRI"
         }
       ]
     }
@@ -602,6 +691,21 @@
                       }
                     }
                   }
+                },
+                {
+                  "id": "uiControl46_A15JeO",
+                  "controlId": "control49_e6X819",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl46_A15JeO",
+                        "onGetTemplate": "getTemplate_uiControl46_A15JeO"
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -634,6 +738,21 @@
               ]
             }
           ]
+        },
+        {
+          "id": "uiControl154_lFHbBP",
+          "controlId": "control175_3Flzur",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl154_lFHbBP",
+                "onGetTemplate": "getTemplate_uiControl154_lFHbBP"
+              }
+            }
+          }
         },
         {
           "id": "uiControl155_4SZZPW",
