@@ -55,15 +55,17 @@
     },
     doAction_uiControl10_c5ReP0: function (data, elem) {
       if (data.eventType == 'click') {
-        // var str = elem.textContent;
-        // window.opener.ownerDocument.defaultView.document.querySelector('.Shadow').textContent = str;
         //ysp.customHelper.back(); 
-        history.go(-1); // ysp.customHelper.forceMatchModels("waitTodo"); //ysp.appMain.back();
-        //http://192.168.200.63/workflow/request/RequestView.jsp?
-        // var json = {
-        //   time: new Date().getTime()
-        // };
-        // ysp.appMain.getActiveWindow().history.pushState(json, "", "http://192.168.200.63/workflow/request/RequestView.jsp?");
+        //history.go(-1); // ysp.customHelper.forceMatchModels("waitTodo"); //ysp.appMain.back();
+        var _url = elem.ownerDocument.defaultView.location.href;if (_url.indexOf("viewType=0") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestView.jsp?");
+        } else if (_url.indexOf("viewType=2") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestHandled.jsp");
+        } else if (_url.indexOf("viewType=3") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestComplete.jsp");
+        } else if (_url.indexOf("viewType=4") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/MyRequestView.jsp");
+        }
       }
     },
     getTemplate_uiControl10_c5ReP0: function getTemplate_uiControl10_c5ReP0() {
