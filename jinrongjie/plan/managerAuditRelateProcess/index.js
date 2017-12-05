@@ -69,7 +69,7 @@
             elem.querySelector('#createdatestartspan').textContent = data.value;elem.querySelector('input[id="createdatestart"]').value = data.value;break;case 'searchdateto':
             elem.querySelector('#createdateendspan').textContent = data.value;elem.querySelector('input[id="createdateend"]').value = data.value;break;}
       }function doSearch(elem) {
-        var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');console.log(iframe);if (iframe) {
+        var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
           iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
         }
       }

@@ -384,7 +384,7 @@
             /*  showModelDialog 相关文档 跨页面传值兼容  */
 
             /*  showModelDialog 相关流程 跨页面传值兼容  */
-            if (aWin.btnsub_onclick) {
+            if (aWin.btnsub_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1  && aWin.location.href.indexOf('BrowserMain.jsp') == -1) {
                 aWin.btnsub_onclick = function() {
                     aWin.setResourceStr();
                     $("#resourceids").val(aWin.resourceids);
@@ -682,9 +682,7 @@
               	xmlhttp.send(soapData);
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        // console.log(xmlhttp.responseText);
                         var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
-                      	console.log(xmldoc,xmlhttp.responseText)
                         topWindow.num.push(xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('todoCount')[0].textContent, xmldoc.getElementsByTagName('TodoCountInformation')[0].getElementsByTagName('unreadCount')[0].textContent);
                     }else if(xmlhttp.status == 400){
                       topWindow.num.push('请求失败!')
