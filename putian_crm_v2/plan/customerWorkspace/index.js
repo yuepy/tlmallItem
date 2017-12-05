@@ -97,7 +97,7 @@
     },
     doAction_uiControl44_9CIEcB: function (data, elem) {
       var doc = elem.ownerDocument;if (data.eventType === 'click') {
-        debugger;var operation = data.dataCustom.operation;var index = data.dataCustom.index + 1;var xpath = "";ysp.customHelper.pageId();if (operation == "delete") {
+        var operation = data.dataCustom.operation;var index = data.dataCustom.index + 1;var xpath = "";ysp.customHelper.pageId();if (operation == "delete") {
           operation = "";xpath = '//div[@id="visitPlanList"]/div[' + parseInt(index) + ']//a[contains(@class,"icon-close")]';
         } else {
           xpath = '//div[@id="visitPlanList"]/div[' + parseInt(index) + ']//div[contains(@class,"btns")]/a[text()="' + operation + '"]';
