@@ -2,10 +2,11 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control8_lxNlWI: function getData_control8_lxNlWI(elem) {},
-    doAction_uiControl7_7ZETAx: function doAction_uiControl7_7ZETAx(data, elem) {
+    getData_control8_lxNlWI: function (elem) {},
+    doAction_uiControl7_7ZETAx: function (data, elem) {
       if (data.eventType == 'back') {
-        ysp.customHelper.back();
+        //ysp.customHelper.back();
+        var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
       }
     },
     getTemplate_uiControl7_7ZETAx: function getTemplate_uiControl7_7ZETAx() {
