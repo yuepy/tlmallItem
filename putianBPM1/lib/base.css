@@ -1355,10 +1355,12 @@ header .btn:hover {
 }
 .ysp-flowsheet .ysp-flowsheet-onePart > div .ysp-other {
   height: 61px;
-  width: 90%;
 }
 .ysp-flowsheet .ysp-flowsheet-onePart > div .ysp-other input {
   width: 90%;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart > div .ysp-advanceBalance {
+  width: 100%;
 }
 .ysp-flowsheet .ysp-flowsheet-onePart > div .ysp-advanceBalance input {
   width: 60%;
@@ -1681,10 +1683,14 @@ header .btn:hover {
 }
 .ysp-dataform2 .ysp-Quota {
   width: 90%;
+  height: 60px;
+  line-height: 60px;
 }
 .ysp-dataform2 .ysp-Quota input {
-  width: 100%	!important;
-  margin-right: 15px	!important;
+  width: 85%	!important;
+  float: left;
+  margin-right: 5	!important;
+  margin-bottom: 8px;
 }
 div[data-ysp-modelid='approveAdvice'] .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody {
   min-height: 260px;
