@@ -540,6 +540,7 @@
     		
           /* 相关文档 子目录传值兼容性问题 */
           if(aWin.doSearch){
+            debugger;
             aWin.doSearch = function(){
               aWin.setResourceStr();
               doc.all("documentids").value = aWin.documentids.substring(1) ;
