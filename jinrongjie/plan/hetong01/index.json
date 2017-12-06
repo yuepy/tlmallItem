@@ -8,7 +8,8 @@
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "processToSend": "../processToSend/index.json",
-    "forward": "../forward/index.json"
+    "forward": "../forward/index.json",
+    "Contractcountersigned": "../Contractcountersigned/index.json"
   },
   "chineseName": "01合同会签流程",
   "description": "",
@@ -139,7 +140,12 @@
           "tagName": "SPAN"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"BacoTitle\"]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -182,7 +188,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('01合同会签流程')!==-1 && elem.textContent.indexOf('处理')!==-1){return true;} return false;"
+      "customJS": "if(elem.textContent.indexOf('合同会签流程') !== -1 && elem.textContent.indexOf('处理') !== -1){return true;}return false; "
     },
     "control37_XbDZTO": {
       "location": {
@@ -486,6 +492,10 @@
       "toContexts": [
         {
           "toContextId": "context3_FzLnbc"
+        },
+        {
+          "toContextId": "context4_ktABGz",
+          "toModelId": "Contractcountersigned"
         }
       ]
     },
@@ -777,7 +787,8 @@
           "",
           "01合同会签流程-张济天-2017-10-12",
           "01合同会签流程-王宇成-2017-10-26",
-          "01合同会签流程-王宇成-2017-09-05"
+          "01合同会签流程-王宇成-2017-09-05",
+          "01合同会签流程-张济天-2017-11-29"
         ]
       }
     },
@@ -789,7 +800,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=127507&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215923&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118498&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215922&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215922&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=466228&isovertime=0"
         ],
         "context5_DhOsrK": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=",
@@ -895,6 +907,41 @@
             "toolbarmenudiv",
             "triSubwfIframe",
             "wfdoc"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_xTable",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
           ]
         ],
         "context10_Tp4yhH": [
@@ -1302,6 +1349,53 @@
             "btn_rejectName",
             "btn_subbackName",
             "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_doRetract",
+            "btn_forward",
+            "btn_print",
             "clickRightMenu",
             "drop-shadow",
             "highslide-container",
@@ -1824,6 +1918,49 @@
             "TD/DIV/SPAN",
             "TD/EM/BUTTON",
             "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TABLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "-/TABLE/TBODY",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
             "TD/TABLE/TBODY",
             "TR/TD/A",
             "TR/TD/BUTTON",
