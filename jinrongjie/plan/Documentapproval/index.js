@@ -525,7 +525,11 @@
     },
     doAction_uiControl14_Jdl4Pm: function (data, elem) {
       if (data.eventType == 'click') {
-        var idx = parseInt(data.dataCustom) + 1;$(elem).find('tr').eq(idx).find("a").eq(1).click();
+        var idx = parseInt(data.dataCustom) + 1;var _url = "http://192.168.200.63" + $(elem).find('tr').eq(idx).find("a").eq(1).attr("onclick").match(/\/.*[0-9]/g)[0];if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
+        } else if (ysp.appMain.isAndroid()) {
+          top.location.href = _url;
+        }
       }
     },
     getTemplate_uiControl14_Jdl4Pm: function () {
