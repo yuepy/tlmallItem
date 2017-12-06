@@ -61,7 +61,8 @@
                  
                  	以下为@人员中展示数据
                  
-                 _______________________*/data.user = { users: [], val: [], val1: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
+                 _______________________*/data.user = { users: [],
+        val: [], val1: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
         data.user.users.push(users[i].querySelector('span').textContent);data.user.val.push(users[i].querySelector('span').getAttribute('val'));data.user.val1.push(users[i].querySelector('span').getAttribute('val1'));
       } //判断状态
       var buttonLength = elem.querySelector('.footer').querySelector('.m-btns').querySelectorAll('a').length;data.button = buttonLength; //获取搜索后的分公司
@@ -96,17 +97,19 @@
         elem.ownerDocument.querySelector('#ContactUsers').querySelectorAll('.user')[data].querySelector('i').click();
       }function save(data) {
         var HuaWeiFD = data.HuaWeiFD;var HuaweiRonghe = data.HuaweiRonghe;var SamSung = data.SamSung;var Distribution = data.Distribution;var GoodsInformation = data.GoodsInformation;var FinancialInformation = data.FinancialInformation;var BusinessInformation = data.BusinessInformation;var Client = data.Client;var OtherInfor = data.OtherInfor;elem.ownerDocument.querySelector('.footer').querySelector('#customerReportPopBtnSuccess').click();if (HuaWeiFD != "" || HuaweiRonghe != "" || SamSung != "" || Distribution != "" || GoodsInformation != "" || FinancialInformation != "" || BusinessInformation != "" || Client != "" || OtherInfor != "") {
-          ysp.customHelper.back();
-        }function callback() {
-          var targetWin = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');if (targetWin) {
-            targetWin.location.reload();
-          }
-        }ysp.customHelper.refreshWinAfterWinName('sencondLevelIframeContainer', callback);
+          //ysp.customHelper.back();
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+        } //   function callback() {
+        //     var targetWin = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');
+        //     if (targetWin) {
+        //       targetWin.location.reload();
+        //     }
+        //   }
+        //   ysp.customHelper.refreshWinAfterWinName('sencondLevelIframeContainer', callback);
       }function commitReport(data) {
         //   var HuaWeiFD = data.HuaWeiFD;
         //   var HuaweiRonghe = data.HuaweiRonghe;
         //   var SamSung = data.SamSung;
-        //   var Distribution = data.Distribution;
         //   var GoodsInformation = data.GoodsInformation;
         //   var FinancialInformation = data.FinancialInformation;
         //   var BusinessInformation = data.BusinessInformation;
@@ -125,7 +128,10 @@
         var cwin = elem.ownerDocument.defaultView;function execute() {
           var flag = false;if (cwin.writeReportStatus == "completed") {
             //ysp.appMain.back(); 
-            cwin && cwin.close();flag = true;cwin.writeReportStatus = undefined;
+            cwin && cwin.close();flag = true;cwin.writeReportStatus = undefined;var targetWin = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');if (targetWin) {
+              //targetWin.location.reload();
+              var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+            }
           }if (!cwin.writeReportStatus || !elem) {
             flag = true;
           }if (!flag) {

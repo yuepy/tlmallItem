@@ -65,7 +65,12 @@
           var execute = function execute() {
             var flag = false;if (cwin.signStatus == "completed") {
               //ysp.appMain.back(); 
-              cwin && cwin.close();flag = true;cwin.signStatus = undefined;
+              cwin && cwin.close();flag = true;cwin.signStatus = undefined;setTimeout(function () {
+                var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url); //           var targetWin = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');
+                //           if (targetWin) {
+                //             targetWin.location.reload();
+                //           }
+              }, 1000);
             }if (!cwin.signStatus || !elem) {
               flag = true;
             }if (!flag) {
