@@ -611,7 +611,7 @@
     },
     doAction_uiControl287_sin1NV: function (data, elem) {
       if (data.eventType == 'click') {
-        var idx = parseInt(data.dataCustom) + 1;$(elem).find('tr').eq(idx).find("a").eq(1).click();
+        var idx = parseInt(data.dataCustom) + 1;var url = $(elem).find('tr').eq(idx).find("a").eq(1).attr('onclick').match(/\'\/.*\'/);console.log(url[0]).replace(/'/ig, "");
       }
     },
     getTemplate_uiControl287_sin1NV: function () {
