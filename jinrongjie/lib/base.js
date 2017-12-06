@@ -386,6 +386,7 @@
             /*  showModelDialog 相关流程 跨页面传值兼容  */
             if (aWin.btnsub_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1  && aWin.location.href.indexOf('BrowserMain.jsp') == -1) {
                 aWin.btnsub_onclick = function() {
+                  debugger;
                     aWin.setResourceStr();
                     $("#resourceids").val(aWin.resourceids);
                     doc.SearchForm.submit();
