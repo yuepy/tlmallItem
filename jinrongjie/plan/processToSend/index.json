@@ -374,7 +374,12 @@
           "tagName": "TR"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"oTable1\"]/tbody/tr[9]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -411,6 +416,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": ""
     },
@@ -755,6 +761,16 @@
         {
           "toContextId": "context10_sJa5NJ",
           "toModelId": "choosePerson"
+        }
+      ]
+    },
+    "flow124_9knQtm": {
+      "fromContextId": "context10_Tp4yhH",
+      "fromAction": "doAction",
+      "fromControlId": "control53_rAs9ta",
+      "toContexts": [
+        {
+          "toContextId": "context10_Tp4yhH"
         }
       ]
     }
