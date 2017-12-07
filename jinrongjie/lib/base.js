@@ -5,6 +5,8 @@
     var flag = true; // 为true说明需要取token  为false说明不需要取token
     var topWindow = win.top; // 最外层window - top层
     topWindow.tokenUrl = null;
+  	topWindow.overdeu = null;
+  	topWindow.tokenNum = 0;
     var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
     soapData = soapData + ' <SOAP:Body>';
     soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://schemas.fsig.com.cn/commonWebserviceWSAppServerPackage" preserveSpace="no" qAccess="0" qValues="">';
@@ -748,7 +750,12 @@
               	var parent = aWin.frameElement.ownerDocument.defaultView;
               	aWin.addEventListener('DOMContentLoaded', function() {
                 // var actionEvent = '{"target":"null","data":"getNumber"}';
+                topWindow.tokenNum++;
                 topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
+                  if(topWindow.tokenNum>1){
+                    //当token过期时像客户端请求新的token
+                		topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
+                  }
                 sessionStorage.setItem('getToken', true);
                 token_flag = true;
               },false);
@@ -759,6 +766,11 @@
                 console.log(topWindow.tokenUrl);
                 console.log('拿到客户端给我的token地址');
                 token_flag = false;
+              // 	var oldHref = aWin.location.href;
+              // if(oldHref){
+              //   aWin.location.href = "http://192.168.200.63/login/Login.jsp"+topWindow.tokenUrl;
+              //   aWin.open(oldHref,'');
+              // }
             }
             /*  获取token地址  */
             /* ajax请求角标数据 */
