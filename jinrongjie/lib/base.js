@@ -546,6 +546,51 @@
               aWin.doSearch();
             }
           }
+          // if(aWin.doSearch){
+          //   aWin.doSearch = function(){
+          //     aWin.setResourceStr();
+          //     if(doc.all("documentids")){
+          //       doc.all("documentids").value = aWin.documentids.substring(1) ;
+          //     }else if(doc.all("resourceids")){
+          //       doc.all("resourceids").value =aWin.resourceids.substring(1) ;
+          //     }
+          //     doc.SearchForm.submit();
+          //   }
+          // }
+         //  if(aWin.Tree_clickNode){
+         //  aWin.Tree_clickNode = function(nodeID){
+         //    var document = doc;
+         //    var node=aWin.Tree_node_array[nodeID];
+         //    if(node==null||node.parent==null)return;//root
+         //    var tree=node.getTreeView();	
+         //    var div=document.getElementById("Tree_expand_"+nodeID);
+         //    var img=document.getElementById("Tree_img_"+nodeID);
+         //    var td=document.getElementById("Tree_td_"+nodeID);
+         //    //---------
+         //    if(!node.expanded && node.childCount>0 &&tree.flag==false)
+         //      if(tree.callback_expanding(nodeID)==false)//cancel expand
+         //        return;
+         //    if(node.expanded && node.childCount>0 &&tree.flag==false) 
+         //      if(tree.callback_collapsing(nodeID)==false)//cancel collapse
+         //        return;
+         //    node.expanded=!node.expanded && node.childCount>0;
+         //    if(tree.flag==false)aWin.Tree_selectNode(nodeID);
+         //    if(node.childCount>0)//folder
+         //    {
+         //      if(div)div.style.display=node.expanded?"block":"none";
+         //      if(img)	img.src=aWin.Tree_imgSrc(node);
+         //      var line=document.getElementById("Tree_line_"+nodeID);
+         //      if(line)line.src=aWin.Tree_GetLineImg(node);	
+         //    }
+         //    if(tree.callback_click(nodeID)==true &&tree.flag==false)//do action
+         //      aWin.Tree_on_action(node.action);
+         //    //------
+         //    if(node.expanded && node.childCount>0 &&tree.flag==false)
+         //      tree.callback_expanded(nodeID);
+         //    if(!node.expanded && node.childCount>0 &&tree.flag==false) 
+         //      tree.callback_collapsed(nodeID);
+         //  }
+         // }
           if(aWin.selectCategory){
              aWin.selectCategory = function(nodeID) {
                 var node = aWin.tree.getNode(nodeID);
