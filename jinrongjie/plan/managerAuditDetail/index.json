@@ -729,6 +729,36 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control334_4cy0Wx": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              21
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control334_4cy0Wx"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -749,7 +779,8 @@
         "control37_ESkqnX",
         "control57_TvAQr2",
         "control211_1B3Xin",
-        "control278_a3QDSD"
+        "control278_a3QDSD",
+        "control334_4cy0Wx"
       ],
       "anchors": [
         "control13_AqKmiE"
@@ -1132,6 +1163,21 @@
           }
         },
         {
+          "id": "uiControl334_yzOT28",
+          "controlId": "control334_4cy0Wx",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl334_yzOT28",
+                "onGetTemplate": "getTemplate_uiControl334_yzOT28"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl43_lpdLEi",
           "controlId": "control45_TLCCf5",
           "display": {
@@ -1161,7 +1207,8 @@
           "云适配测试_20171108_02",
           "测试201711007",
           "KKK",
-          "测试回退"
+          "测试回退",
+          "88"
         ]
       }
     },
@@ -1176,7 +1223,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=295154&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=286344&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=483866&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
-          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=466230&isovertime=0"
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=466230&isovertime=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=501519&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ],
         "context5_46tN5g": [
           "192.168.200.63/docs/docs/MutiDocBrowser.jsp?documentids=&splitflag=,",
