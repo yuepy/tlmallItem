@@ -2,13 +2,12 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control22_BzxsFT: function getData_control22_BzxsFT(elem) {
+    getData_control22_BzxsFT: function (elem) {
       if (!elem) {
         return;
       }var data = {};var titles = ['请求', '创建者', '创建时间'];var content = [];if (!elem.querySelector("#BrowseTable")) {
         data.titles = titles;data.content = content;return data;
-      }var doc = elem.querySelector("#BrowseTable");var trs = doc.querySelectorAll('tr');
-      [].forEach.call(trs, function (trItem, trIndex) {
+      }var doc = elem.querySelector("#BrowseTable");var trs = doc.querySelectorAll('tr');[].forEach.call(trs, function (trItem, trIndex) {
         var tds = trItem.querySelectorAll('td');var tdContent = [];[].forEach.call(tds, function (tdItem, tdIndex) {
           if (tdIndex > 1) {
             tdContent.push(tdItem.textContent.trim());
@@ -16,7 +15,7 @@
         });content.push(tdContent);
       });data.titles = titles;data.content = content;return data;
     },
-    doAction_uiControl16_dUy4PC: function doAction_uiControl16_dUy4PC(data, elem) {
+    doAction_uiControl16_dUy4PC: function (data, elem) {
       var trIndex = data.dataCustom;var eventType = data.eventType;if (eventType == 'selectedData') {
         elem.querySelector('#BrowseTable').querySelectorAll('tr')[trIndex].querySelector('a').click();
       }
@@ -69,9 +68,12 @@
             elem.querySelector('#createdatestartspan').textContent = data.value;elem.querySelector('input[id="createdatestart"]').value = data.value;break;case 'searchdateto':
             elem.querySelector('#createdateendspan').textContent = data.value;elem.querySelector('input[id="createdateend"]').value = data.value;break;}
       }function doSearch(elem) {
-        var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
-          debugger;iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
-        }
+        //   var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');
+        //   if (iframe) {
+        //     debugger;
+        //     iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
+        //   }
+        elem.ownerDocument.defaultView.doSearch();
       }
     },
     getTemplate_uiControl22_ZaAa4t: function getTemplate_uiControl22_ZaAa4t() {

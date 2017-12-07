@@ -85,6 +85,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     },
@@ -304,27 +305,6 @@
       "text": "\n      请求标题\n      \n        \n      \n      ",
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
       "customJS": "if(elem.textContent.indexOf('创建人') !== -1){return true;}return false;"
-    },
-    "control350_UDJuTO": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control350_UDJuTO"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -335,8 +315,7 @@
         "control17_LknT8t",
         "control42_uHB0Go",
         "control39_ifdZhx",
-        "control87_xcXeNq",
-        "control350_UDJuTO"
+        "control87_xcXeNq"
       ],
       "anchors": [
         "control103_8b5h3r"
@@ -504,21 +483,6 @@
               }
             }
           }
-        },
-        {
-          "id": "uiControl351_HL6pJL",
-          "controlId": "control350_UDJuTO",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl351_HL6pJL",
-                "onGetTemplate": "getTemplate_uiControl351_HL6pJL"
-              }
-            }
-          }
         }
       ]
     }
@@ -534,8 +498,7 @@
     "page/urls": {
       "contexts": {
         "context6_aweFC7": [
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
-          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids="
         ]
       }
     },
