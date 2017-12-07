@@ -337,6 +337,27 @@
       "text": "",
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
       "customJS": "if(elem.textContent.indexOf('子目录') !== -1){return true;}return false;"
+    },
+    "control349_wmeVIP": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control349_wmeVIP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -347,7 +368,8 @@
         "control12_0yipNy",
         "control35_DlAtJI",
         "control38_VzrzTB",
-        "control83_SwDpyP"
+        "control83_SwDpyP",
+        "control349_wmeVIP"
       ],
       "anchors": [
         "control95_RrT6QB"
@@ -512,6 +534,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl66_5fUXvb",
                 "onGetTemplate": "getTemplate_uiControl66_5fUXvb"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl350_zqc1GC",
+          "controlId": "control349_wmeVIP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl350_zqc1GC",
+                "onGetTemplate": "getTemplate_uiControl350_zqc1GC"
               }
             }
           }
