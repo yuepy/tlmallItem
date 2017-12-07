@@ -124,13 +124,40 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control347_ozrWcB": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::TABLE[@id=\"content\"]//TD[@id=\"leftBlockTd\"]//DIV[@id=\"leftmenucontainer\"]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control347_ozrWcB"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context1_yeQcpw": {
       "controls": [
         "control7_thluKe",
-        "control202_Gigr6R"
+        "control202_Gigr6R",
+        "control347_ozrWcB"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -207,6 +234,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl184_cZLuFC",
                 "onGetTemplate": "getTemplate_uiControl184_cZLuFC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl348_Nnywfu",
+          "controlId": "control347_ozrWcB",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl348_Nnywfu",
+                "onGetTemplate": "getTemplate_uiControl348_Nnywfu"
               }
             }
           }
