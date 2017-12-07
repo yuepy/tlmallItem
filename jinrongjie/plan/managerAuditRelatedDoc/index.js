@@ -83,10 +83,9 @@
       }function doSearch(elem) {
         setTimeout(function () {
           ysp.appMain.hideLoading(); // elem.ownerDocument.defaultView.location.reload();
-        }, 2000);var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
-          // elem.ownerDocument.defaultView.document.SearchForm.btnsub.onclick();
-          // iframe.ownerDocument.defaultView.document.SearchForm.btnsub.onclick();
-          iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
+        }, 2000);var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');console.log(iframe);if (iframe) {
+          // elem.ownerDocument.defaultView.document.SearchForm.btnsub.click();
+          iframe.ownerDocument.SearchForm.btnsub.click(); // iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
         }
       }
     },
