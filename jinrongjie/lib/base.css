@@ -1,3 +1,35 @@
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.ysp_roatLoading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 100000;
+}
+.ysp_roatLoading .roatImg {
+  background: url(../lib/images/icon-loading.png) no-repeat;
+  background-size: 50px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: rotate(360deg);
+  animation: rotation 3s linear infinite;
+  -moz-animation: rotation 3s linear infinite;
+  -webkit-animation: rotation 3s linear infinite;
+  -o-animation: rotation 3s linear infinite;
+}
 body {
   font-family: "Microsoft YaHei", "FreeSans,Arimo", "Droid Sans", "wenquanyi micro hei", sans-serif;
   -webkit-overflow-scrolling: initial !important;

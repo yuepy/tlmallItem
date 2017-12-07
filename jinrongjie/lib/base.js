@@ -544,17 +544,17 @@
               aWin.doSearch();
             }
           }
-          aWin.setResourceStr=function(){
+//           aWin.setResourceStr=function(){
 	
-            doc.resourceids ="";
-            doc.resourcenames = "";
-            for(var i=0;i<doc.resourceArray.length;i++){
-              doc.resourceids += ","+doc.resourceArray[i].split("~")[0] ;
-              doc.resourcenames += ","+doc.resourceArray[i].split("~")[1] ;
-            }
-            //alert(resourceids+"--"+resourcenames);
-            $("input[name=resourceids]").val(doc.resourceids.substring(1));
-          }
+//             doc.resourceids ="";
+//             doc.resourcenames = "";
+//             for(var i=0;i<doc.resourceArray.length;i++){
+//               doc.resourceids += ","+doc.resourceArray[i].split("~")[0] ;
+//               doc.resourcenames += ","+doc.resourceArray[i].split("~")[1] ;
+//             }
+//             //alert(resourceids+"--"+resourcenames);
+//             $("input[name=resourceids]").val(doc.resourceids.substring(1));
+//           }
           if(aWin.doSearch){
             aWin.doSearch = function(){
               aWin.setResourceStr();
