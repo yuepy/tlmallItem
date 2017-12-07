@@ -225,6 +225,36 @@
       "text": "",
       "frameXPath": "",
       "customJS": "if(elem.textContent.indexOf('IT类办公设备和固定资产申购审批流程') !==-1 && elem.textContent.indexOf('创建') !==-1){return true;}return false;"
+    },
+    "control335_HM34pl": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control335_HM34pl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -233,7 +263,8 @@
         "control165_NdPmnp",
         "control166_QnAye0",
         "control167_Wi4pKJ",
-        "control168_AgTWpX"
+        "control168_AgTWpX",
+        "control335_HM34pl"
       ],
       "anchors": [
         "control169_iabcbI"
@@ -343,6 +374,21 @@
                 }
               },
               "layout": [
+                {
+                  "id": "uiControl335_0Upmhz",
+                  "controlId": "control335_HM34pl",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl335_0Upmhz",
+                        "onGetTemplate": "getTemplate_uiControl335_0Upmhz"
+                      }
+                    }
+                  }
+                },
                 {
                   "id": "uiControl143_8mx7V2",
                   "controlId": "control166_QnAye0",

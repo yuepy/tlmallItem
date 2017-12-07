@@ -485,6 +485,36 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control341_OeKEaP": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              22
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control341_OeKEaP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -500,7 +530,8 @@
         "control198_4hWffT",
         "control199_T1rTRP",
         "control200_357dLT",
-        "control201_fwKgUQ"
+        "control201_fwKgUQ",
+        "control341_OeKEaP"
       ],
       "anchors": [
         "control190_k2D8Zn"
@@ -632,6 +663,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl171_6AaT12",
                 "onGetTemplate": "getTemplate_uiControl171_6AaT12"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl341_ElqCq5",
+          "controlId": "control341_OeKEaP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl341_ElqCq5",
+                "onGetTemplate": "getTemplate_uiControl341_ElqCq5"
               }
             }
           }
@@ -832,7 +878,8 @@
       "contexts": {
         "context27_9Sl7Af": [
           "IT类办公设备和固定资产申购审批流程-王宇成-2017-09-18",
-          "IT类办公设备和固定资产申购审批流程-张济天-2017-11-14"
+          "IT类办公设备和固定资产申购审批流程-张济天-2017-11-14",
+          "IT类办公设备和固定资产申购审批流程-张济天-2017-11-28"
         ]
       }
     },
@@ -840,7 +887,8 @@
       "contexts": {
         "context27_9Sl7Af": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118531&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330441&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330441&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=452177&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
