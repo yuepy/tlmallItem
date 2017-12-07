@@ -391,6 +391,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -660,21 +664,6 @@
                   }
                 },
                 {
-                  "id": "uiControl324_QVxWWf",
-                  "controlId": "control324_nKBr0D",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl324_QVxWWf",
-                        "onGetTemplate": "getTemplate_uiControl324_QVxWWf"
-                      }
-                    }
-                  }
-                },
-                {
                   "id": "uiControl249_85nnFq",
                   "display": {
                     "type": "sticky",
@@ -712,6 +701,21 @@
               "layout": []
             }
           ]
+        },
+        {
+          "id": "uiControl324_QVxWWf",
+          "controlId": "control324_nKBr0D",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl324_QVxWWf",
+                "onGetTemplate": "getTemplate_uiControl324_QVxWWf"
+              }
+            }
+          }
         },
         {
           "id": "uiControl251_1P7LBQ",
