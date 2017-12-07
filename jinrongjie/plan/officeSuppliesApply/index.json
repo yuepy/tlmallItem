@@ -234,6 +234,36 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control336_5Fn4cc": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control336_5Fn4cc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -242,7 +272,8 @@
         "control71_KwgXqv",
         "control95_iOJI8l",
         "control100_TOs6Ev",
-        "control101_BtLdvd"
+        "control101_BtLdvd",
+        "control336_5Fn4cc"
       ],
       "anchors": [
         "control80_cnDHyn"
@@ -334,6 +365,21 @@
                 }
               },
               "layout": [
+                {
+                  "id": "uiControl336_aVDpkZ",
+                  "controlId": "control336_5Fn4cc",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl336_aVDpkZ",
+                        "onGetTemplate": "getTemplate_uiControl336_aVDpkZ"
+                      }
+                    }
+                  }
+                },
                 {
                   "id": "uiControl61_VyRqhF",
                   "controlId": "control71_KwgXqv",

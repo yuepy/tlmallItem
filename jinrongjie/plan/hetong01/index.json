@@ -479,6 +479,36 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control340_V2rKXH": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              28
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control340_V2rKXH"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -494,7 +524,8 @@
         "control155_nOnQPF",
         "control156_2h7OiW",
         "control157_VftVZF",
-        "control158_FEZtlJ"
+        "control158_FEZtlJ",
+        "control340_V2rKXH"
       ],
       "anchors": [
         "control81_l9atB9"
@@ -610,6 +641,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl27_cznHRC",
                 "onGetTemplate": "getTemplate_uiControl27_cznHRC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl340_M33aDn",
+          "controlId": "control340_V2rKXH",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl340_M33aDn",
+                "onGetTemplate": "getTemplate_uiControl340_M33aDn"
               }
             }
           }
@@ -813,7 +859,8 @@
           "01合同会签流程-张济天-2017-10-12",
           "01合同会签流程-王宇成-2017-10-26",
           "01合同会签流程-王宇成-2017-09-05",
-          "01合同会签流程-张济天-2017-11-29"
+          "01合同会签流程-张济天-2017-11-29",
+          "01合同会签流程-王陶陶-2017-09-05"
         ]
       }
     },
@@ -826,7 +873,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215923&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118498&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215922&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=466228&isovertime=0"
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=466228&isovertime=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118497&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context5_DhOsrK": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids=",
