@@ -751,11 +751,11 @@
               	aWin.addEventListener('DOMContentLoaded', function() {
                 // var actionEvent = '{"target":"null","data":"getNumber"}';
                 topWindow.tokenNum++;
-                topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
-                  if(topWindow.tokenNum>1){
-                    //当token过期时像客户端请求新的token
-                		topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
-                  }
+               	topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
+                 if(topWindow.tokenNum>1){
+                  //当token过期时像客户端请求新的token
+                  topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
+                }
                 sessionStorage.setItem('getToken', true);
                 token_flag = true;
               },false);

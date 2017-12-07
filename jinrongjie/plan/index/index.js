@@ -31,7 +31,7 @@
         //   } else {
         //     console.error('operation参数未找到:流程未适配');
         //   }
-        var src = data.dataCustom.href;var title = data.dataCustom.title;var href = "http://192.168.200.63" + src;ysp.customHelper.openWin(href, title);ysp.appMain.showLoading();
+        var src = data.dataCustom.href;var title = data.dataCustom.title;var href = "http://192.168.200.63" + src;ysp.customHelper.openWin(href, title); // ysp.appMain.showLoading();
       }
     },
     getTemplate_uiControl184_cZLuFC: function () {
