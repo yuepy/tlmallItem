@@ -82,9 +82,11 @@
             elem.querySelector('#searchdatetospan').textContent = data.value;elem.querySelector('input[name="searchdateto"]').value = data.value;break;}
       }function doSearch(elem) {
         setTimeout(function () {
-          ysp.appMain.hideLoading();elem.ownerDocument.defaultView.location.reload();
-        }, 1000);var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
-          elem.ownerDocument.defaultView.document.SearchForm.btnsub.onclick(); //iframe.ownerDocument.defaultView.document.SearchForm.btnsub.onclick(); // iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click()
+          ysp.appMain.hideLoading(); // elem.ownerDocument.defaultView.location.reload();
+        }, 2000);var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
+          // elem.ownerDocument.defaultView.document.SearchForm.btnsub.onclick();
+          // iframe.ownerDocument.defaultView.document.SearchForm.btnsub.onclick();
+          iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
         }
       }
     },

@@ -70,7 +70,7 @@
             elem.querySelector('#createdateendspan').textContent = data.value;elem.querySelector('input[id="createdateend"]').value = data.value;break;}
       }function doSearch(elem) {
         var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
-          iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
+          debugger;iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
         }
       }
     },

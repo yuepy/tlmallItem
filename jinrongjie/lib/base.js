@@ -386,7 +386,6 @@
             /*  showModelDialog 相关流程 跨页面传值兼容  */
             if (aWin.btnsub_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1  && aWin.location.href.indexOf('BrowserMain.jsp') == -1) {
                 aWin.btnsub_onclick = function() {
-                  debugger;
                     aWin.setResourceStr();
                     $("#resourceids").val(aWin.resourceids);
                     doc.SearchForm.submit();
@@ -539,11 +538,31 @@
         }
     		
           /* 相关文档 子目录传值兼容性问题 */
+          
+          if(aWin.location.href.indexOf("/docs/docs/MutiDocBrowser.jsp?documentids=")!==-1){
+            aWin.btnsub_onclick=function(){
+              aWin.doSearch();
+            }
+          }
+          aWin.setResourceStr=function(){
+	
+            doc.resourceids ="";
+            doc.resourcenames = "";
+            for(var i=0;i<doc.resourceArray.length;i++){
+              doc.resourceids += ","+doc.resourceArray[i].split("~")[0] ;
+              doc.resourcenames += ","+doc.resourceArray[i].split("~")[1] ;
+            }
+            //alert(resourceids+"--"+resourcenames);
+            $("input[name=resourceids]").val(doc.resourceids.substring(1));
+          }
           if(aWin.doSearch){
-            debugger;
             aWin.doSearch = function(){
               aWin.setResourceStr();
-              doc.all("documentids").value = aWin.documentids.substring(1) ;
+              if(doc.all("documentids")){
+                doc.all("documentids").value = aWin.documentids.substring(1) ;
+              }else if(doc.all("resourceids")){
+                doc.all("resourceids").value =aWin.resourceids.substring(1) ;
+              }
               doc.SearchForm.submit();
             }
           }
