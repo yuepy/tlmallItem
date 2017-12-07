@@ -654,6 +654,36 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control337_OGOrLG": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              20
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control337_OGOrLG"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -675,7 +705,8 @@
         "control280_cE8shM",
         "control281_7JLfNK",
         "control332_vA6wVa",
-        "control333_bwkKEJ"
+        "control333_bwkKEJ",
+        "control337_OGOrLG"
       ],
       "anchors": [
         "control255_lEHzUp"
@@ -1114,6 +1145,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl337_NJWM8b",
+          "controlId": "control337_OGOrLG",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl337_NJWM8b",
+                "onGetTemplate": "getTemplate_uiControl337_NJWM8b"
+              }
+            }
+          }
         }
       ]
     }
@@ -1124,7 +1170,8 @@
         "context34_I0CToo": [
           "除IT类固定资产申购审批流程-张济天-2017-11-24",
           "除IT类固定资产申购审批流程-张济天-2017-11-16",
-          "除IT类固定资产申购审批流程-张济天-2017-11-27"
+          "除IT类固定资产申购审批流程-张济天-2017-11-27",
+          "除IT类固定资产申购审批流程-张济天-2017-12-05"
         ]
       }
     },
@@ -1133,7 +1180,8 @@
         "context34_I0CToo": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434497&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=354728&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=443351&isovertime=0"
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=443351&isovertime=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=501515&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
@@ -1589,6 +1637,56 @@
             "btn_doRetract",
             "btn_forward",
             "btn_print",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_doDelete",
+            "btn_forward",
+            "btn_print",
+            "btn_subbackName",
+            "btn_wfSave",
             "clickRightMenu",
             "drop-shadow",
             "highslide-container",
