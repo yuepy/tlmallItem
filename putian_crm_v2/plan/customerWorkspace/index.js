@@ -114,9 +114,9 @@
       if (!elem) {
         return;
       } //这一步意义很大，相当于locator作用 start
-      var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = false;var newFileEl = doc.getElementById('newFile');var shortVisitEl = doc.getElementById('shortVisit');if (newFileEl && win.getComputedStyle(newFileEl).display != "none") {
+      var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = false;var newFileEl = doc.getElementById('newFile');var shortVisitEl = doc.getElementById('shortVisit');if (newFileEl && newFileEl.getAttribute("style") != null && (newFileEl.getAttribute("style") != "display: none;" || newFileEl.getAttribute("style") != "display: none;;")) {
         elem = newFileEl;isShow = true;
-      }if (shortVisitEl && win.getComputedStyle(shortVisitEl).display != "none") {
+      }if (shortVisitEl && shortVisitEl.getAttribute("style") != null && (shortVisitEl.getAttribute("style") != "display: none;" || shortVisitEl.getAttribute("style") != "display: none;;")) {
         elem = shortVisitEl;isShow = true;
       } //这一步意义很大，相当于locator作用 end
       var isStoreList = false;var tempVisitStoreListBtn = elem.querySelector('#tempVisitStoreListBtn');if (tempVisitStoreListBtn && tempVisitStoreListBtn.classList.contains('z-act')) {
@@ -168,9 +168,9 @@
     },
     doAction_uiControl47_U0LVB2: function doAction_uiControl47_U0LVB2(data, elem) {
       //这一步意义很大，相当于locator作用 start
-      var doc = elem.ownerDocument;var win = doc.defaultView;var newFileEl = doc.getElementById('newFile');var shortVisitEl = doc.getElementById('shortVisit');if (newFileEl && win.getComputedStyle(newFileEl).display != "none") {
+      var doc = elem.ownerDocument;var win = doc.defaultView;var newFileEl = doc.getElementById('newFile');var shortVisitEl = doc.getElementById('shortVisit');if (newFileEl && newFileEl.getAttribute("style") != null && (newFileEl.getAttribute("style") != "display: none;" || newFileEl.getAttribute("style") != "display: none;;")) {
         elem = newFileEl;
-      }if (shortVisitEl && win.getComputedStyle(shortVisitEl).display != "none") {
+      }if (shortVisitEl && shortVisitEl.getAttribute("style") != null && (shortVisitEl.getAttribute("style") != "display: none;" || shortVisitEl.getAttribute("style") != "display: none;;")) {
         elem = shortVisitEl;
       } //这一步意义很大，相当于locator作用 end
       if (data.eventType === 'click') {

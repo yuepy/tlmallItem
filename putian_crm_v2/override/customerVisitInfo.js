@@ -1310,8 +1310,11 @@
                 });
                 report.load(data, true);
             } else {
-                $("#ContactAlert").html(getTreeHtml()); //加载树形
-                initFn(data); //初始化数据
+              if (data.statusR && data.dateR && data.statusR != "草稿" && data.dateR != "") {
+              	$("#customerReportPopBtnSuccess").remove(); //移除草稿
+            	}
+              $("#ContactAlert").html(getTreeHtml()); //加载树形
+              initFn(data); //初始化数据
             }
         };
 
