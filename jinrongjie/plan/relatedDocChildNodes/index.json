@@ -89,6 +89,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -104,6 +108,27 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
+    },
+    "control348_x3QChS": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control348_x3QChS"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -111,7 +136,8 @@
       "controls": [
         "control64_IDGL0K",
         "control43_eGh0dX",
-        "control49_6l5Xdl"
+        "control49_6l5Xdl",
+        "control348_x3QChS"
       ],
       "anchors": [
         "control93_1oDai4"
@@ -203,6 +229,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl41_VEx2r6",
                 "onGetTemplate": "getTemplate_uiControl41_VEx2r6"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl349_meHXlz",
+          "controlId": "control348_x3QChS",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl349_meHXlz",
+                "onGetTemplate": "getTemplate_uiControl349_meHXlz"
               }
             }
           }
