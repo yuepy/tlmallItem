@@ -337,6 +337,27 @@
       "text": "",
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
       "customJS": "if(elem.textContent.indexOf('子目录') !== -1){return true;}return false;"
+    },
+    "control347_JCh8yg": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control347_JCh8yg"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -347,7 +368,8 @@
         "control12_0yipNy",
         "control35_DlAtJI",
         "control38_VzrzTB",
-        "control83_SwDpyP"
+        "control83_SwDpyP",
+        "control347_JCh8yg"
       ],
       "anchors": [
         "control95_RrT6QB"
@@ -512,6 +534,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl66_5fUXvb",
                 "onGetTemplate": "getTemplate_uiControl66_5fUXvb"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl348_SiWRN2",
+          "controlId": "control347_JCh8yg",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl348_SiWRN2",
+                "onGetTemplate": "getTemplate_uiControl348_SiWRN2"
               }
             }
           }
