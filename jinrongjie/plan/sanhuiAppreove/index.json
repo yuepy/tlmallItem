@@ -474,6 +474,36 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control342_SLPmWC": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              21
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control342_SLPmWC"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -489,7 +519,8 @@
         "control250_K7wRbV",
         "control251_Knv3Dp",
         "control252_rDy3h7",
-        "control254_T6B9QE"
+        "control254_T6B9QE",
+        "control342_SLPmWC"
       ],
       "anchors": [
         "control224_NTmEEQ"
@@ -617,6 +648,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl217_OJCT1f",
                 "onGetTemplate": "getTemplate_uiControl217_OJCT1f"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl342_DniZao",
+          "controlId": "control342_SLPmWC",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl342_DniZao",
+                "onGetTemplate": "getTemplate_uiControl342_DniZao"
               }
             }
           }

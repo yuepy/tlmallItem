@@ -490,6 +490,36 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control338_n4trKg": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              22
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control338_n4trKg"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -505,7 +535,8 @@
         "control297_AS5kiQ",
         "control298_slKGtB",
         "control299_TNJBBM",
-        "control290_ATpyiy"
+        "control290_ATpyiy",
+        "control338_n4trKg"
       ],
       "anchors": [
         "control288_UyahxM"
@@ -615,6 +646,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl280_Rb8qCX",
                 "onGetTemplate": "getTemplate_uiControl280_Rb8qCX"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl338_PEpqJb",
+          "controlId": "control338_n4trKg",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl338_PEpqJb",
+                "onGetTemplate": "getTemplate_uiControl338_PEpqJb"
               }
             }
           }
@@ -815,7 +861,8 @@
       "contexts": {
         "context35_96CB1E": [
           "123",
-          "测试1"
+          "测试1",
+          "兔兔"
         ]
       }
     },
@@ -824,7 +871,8 @@
         "context35_96CB1E": [
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312800&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321631&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
-          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=380961&isovertime=0"
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=380961&isovertime=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=483869&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ]
       }
     },
