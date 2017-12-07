@@ -604,6 +604,36 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control335_AaTg1C": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              21
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control335_AaTg1C"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -624,7 +654,8 @@
         "control160_kSwt9m",
         "control220_PT5PSx",
         "control330_y71eBG",
-        "control331_TsJvsi"
+        "control331_TsJvsi",
+        "control335_AaTg1C"
       ],
       "anchors": [
         "control94_X53r2g"
@@ -1040,6 +1071,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl335_G2qql7",
+          "controlId": "control335_AaTg1C",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl335_G2qql7",
+                "onGetTemplate": "getTemplate_uiControl335_G2qql7"
+              }
+            }
+          }
         }
       ]
     }
@@ -1051,7 +1097,8 @@
           "test001",
           "wanjianceshi2",
           "adsfadsfasdfas",
-          "空军建军节"
+          "空军建军节",
+          "333"
         ]
       }
     },
@@ -1061,7 +1108,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=259937&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=295166&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=354731&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434513&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434513&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=501518&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ],
         "context8_R2HN1D": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/proj/data/ProjectBrowser.jsp",

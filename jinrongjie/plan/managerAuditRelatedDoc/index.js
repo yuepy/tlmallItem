@@ -81,11 +81,12 @@
             elem.querySelector('#searchdatefromspan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;case 'searchdateto':
             elem.querySelector('#searchdatetospan').textContent = data.value;elem.querySelector('input[name="searchdateto"]').value = data.value;break;}
       }function doSearch(elem) {
-        setTimeout(function () {
-          ysp.appMain.hideLoading();elem.ownerDocument.defaultView.location.reload();
-        }, 1000);var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
-          elem.ownerDocument.defaultView.document.SearchForm.btnsub.onclick(); //iframe.ownerDocument.defaultView.document.SearchForm.btnsub.onclick(); // iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click()
-        }
+        var iframe = elem.ownerDocument.querySelector('#rightMenuIframe'); // elem.ownerDocument.defaultView.location.reload();
+        if (iframe) {
+          iframe.ownerDocument.SearchForm.btnsub.click(); // iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
+        }setTimeout(function () {
+          ysp.appMain.hideLoading(); // elem.ownerDocument.defaultView.document.SearchForm.btnsub.click();
+        }, 1000);
       }
     },
     getTemplate_uiControl15_IFTFa2: function getTemplate_uiControl15_IFTFa2() {

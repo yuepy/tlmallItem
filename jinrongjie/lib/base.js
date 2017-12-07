@@ -5,6 +5,8 @@
     var flag = true; // 为true说明需要取token  为false说明不需要取token
     var topWindow = win.top; // 最外层window - top层
     topWindow.tokenUrl = null;
+  	topWindow.overdeu = null;
+  	topWindow.tokenNum = 0;
     var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
     soapData = soapData + ' <SOAP:Body>';
     soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://schemas.fsig.com.cn/commonWebserviceWSAppServerPackage" preserveSpace="no" qAccess="0" qValues="">';
@@ -386,7 +388,6 @@
             /*  showModelDialog 相关流程 跨页面传值兼容  */
             if (aWin.btnsub_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1  && aWin.location.href.indexOf('BrowserMain.jsp') == -1) {
                 aWin.btnsub_onclick = function() {
-                  debugger;
                     aWin.setResourceStr();
                     $("#resourceids").val(aWin.resourceids);
                     doc.SearchForm.submit();
@@ -539,11 +540,31 @@
         }
     		
           /* 相关文档 子目录传值兼容性问题 */
+          
+          if(aWin.location.href.indexOf("/docs/docs/MutiDocBrowser.jsp?documentids=")!==-1){
+            aWin.btnsub_onclick=function(){
+              aWin.doSearch();
+            }
+          }
+//           aWin.setResourceStr=function(){
+	
+//             doc.resourceids ="";
+//             doc.resourcenames = "";
+//             for(var i=0;i<doc.resourceArray.length;i++){
+//               doc.resourceids += ","+doc.resourceArray[i].split("~")[0] ;
+//               doc.resourcenames += ","+doc.resourceArray[i].split("~")[1] ;
+//             }
+//             //alert(resourceids+"--"+resourcenames);
+//             $("input[name=resourceids]").val(doc.resourceids.substring(1));
+//           }
           if(aWin.doSearch){
-            debugger;
             aWin.doSearch = function(){
               aWin.setResourceStr();
-              doc.all("documentids").value = aWin.documentids.substring(1) ;
+              if(doc.all("documentids")){
+                doc.all("documentids").value = aWin.documentids.substring(1) ;
+              }else if(doc.all("resourceids")){
+                doc.all("resourceids").value =aWin.resourceids.substring(1) ;
+              }
               doc.SearchForm.submit();
             }
           }
@@ -729,7 +750,12 @@
               	var parent = aWin.frameElement.ownerDocument.defaultView;
               	aWin.addEventListener('DOMContentLoaded', function() {
                 // var actionEvent = '{"target":"null","data":"getNumber"}';
-                topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
+                topWindow.tokenNum++;
+               	topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
+                 if(topWindow.tokenNum>1){
+                  //当token过期时像客户端请求新的token
+                  topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
+                }
                 sessionStorage.setItem('getToken', true);
                 token_flag = true;
               },false);
@@ -740,6 +766,11 @@
                 console.log(topWindow.tokenUrl);
                 console.log('拿到客户端给我的token地址');
                 token_flag = false;
+              // 	var oldHref = aWin.location.href;
+              // if(oldHref){
+              //   aWin.location.href = "http://192.168.200.63/login/Login.jsp"+topWindow.tokenUrl;
+              //   aWin.open(oldHref,'');
+              // }
             }
             /*  获取token地址  */
             /* ajax请求角标数据 */

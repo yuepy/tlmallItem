@@ -531,6 +531,36 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control325_ShT5Sw": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control325_ShT5Sw"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -542,7 +572,8 @@
         "control63_xKq6K5",
         "control82_Oe1sOv",
         "control84_nadrbI",
-        "control253_CceTIQ"
+        "control253_CceTIQ",
+        "control325_ShT5Sw"
       ],
       "anchors": [
         "control79_xTNUQB"
@@ -774,6 +805,21 @@
               ]
             }
           ]
+        },
+        {
+          "id": "uiControl325_ikzimA",
+          "controlId": "control325_ShT5Sw",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl325_ikzimA",
+                "onGetTemplate": "getTemplate_uiControl325_ikzimA"
+              }
+            }
+          }
         },
         {
           "id": "uiControl64_5FfLQe",
