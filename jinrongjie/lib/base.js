@@ -9,7 +9,7 @@
   	topWindow.tokenNum = 0;
     var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
     soapData = soapData + ' <SOAP:Body>';
-    soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://schemas.fsig.com.cn/commonWebserviceWSAppServerPackage" preserveSpace="no" qAccess="0" qValues="">';
+    soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://pub.fsig.com.cn/">';
     soapData = soapData + ' <psCode>101160</psCode>';
     soapData = soapData + ' </GetTodoCountInfoByPsCode>';
     soapData = soapData + ' </SOAP:Body>';
