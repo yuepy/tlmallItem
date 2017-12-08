@@ -86,7 +86,7 @@
             elem.querySelector('#searchdatefromspan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;case 'searchdateto':
             elem.querySelector('#searchdatetospan').textContent = data.value;elem.querySelector('input[name="searchdateto"]').value = data.value;break;}
       }function doSearch(elem) {
-        if (ysp.appMain.isIOS()) {
+        ysp.appMain.showLoading();if (ysp.appMain.isIOS()) {
           elem.ownerDocument.defaultView.doSearch();
         } else {
           elem.ownerDocument.defaultView.doSearch();var count = 0; // var timer = setInterval(function () {
