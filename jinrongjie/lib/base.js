@@ -734,6 +734,12 @@
                     console.log('upload overrided!');
                 };
             })();
+          //loading
+          aWin.addEventListener("DOMContentLoaded",function(){
+    				var load = doc.createElement('div');
+    				load.className = 'ysp_load_haha';
+            doc.body.appendChild(load)
+          },false)
 
             // 测试结束
 
