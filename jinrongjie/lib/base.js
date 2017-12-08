@@ -624,6 +624,12 @@
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
+          //空白页关闭
+          var _href = aWin.location.href;
+          if(/workflow\/request\/ViewRequest\.jsp\?requestid=\d+&message=/.test(_href)||/about:blank/.test(_href)){
+            aWin.close();
+          }
+          
             /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
             //             aWin.addEventListener('DOMContentLoaded', function() {
 
