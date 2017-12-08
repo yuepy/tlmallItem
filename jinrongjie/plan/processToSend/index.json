@@ -670,6 +670,36 @@
       "roles": "element,custom",
       "monitored": false,
       "frameXPath": ""
+    },
+    "control352_mxRKMS": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              21
+            ],
+            "value": "TABLE.Shadow TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control352_mxRKMS"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -686,7 +716,8 @@
         "control48_NQzpsQ",
         "control55_MzxyGc",
         "control207_sku89v",
-        "control214_gktHg0"
+        "control214_gktHg0",
+        "control352_mxRKMS"
       ],
       "anchors": [
         "control109_ue7pbi"
@@ -958,6 +989,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl353_fC56OU",
+          "controlId": "control352_mxRKMS",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl353_fC56OU",
+                "onGetTemplate": "getTemplate_uiControl353_fC56OU"
+              }
+            }
+          }
         }
       ]
     }
@@ -976,7 +1022,8 @@
           "192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=162836&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=118374&workflowRequestLogId=-1",
-          "192.168.200.63/workflow/request/Remark.jsp?requestid=312801&workflowRequestLogId=-1"
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=312801&workflowRequestLogId=-1",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=434508&workflowRequestLogId=0"
         ],
         "context10_sJa5NJ": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
@@ -1218,6 +1265,65 @@
             "rightMenu",
             "rightMenuIframe",
             "uploadFileName_remark"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "Filedata",
+            "SWFUpload_",
+            "_xTable",
+            "btnCancelannexupload",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divStatusannexupload",
+            "divTopTitle",
+            "docimages_num",
+            "field-annexupload",
+            "field-annexupload_tab",
+            "field-annexuploadspan",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "fsUploadProgressannexupload",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "uploadFileName_remark",
+            "ysp_fake_form"
           ]
         ]
       }
@@ -1898,6 +2004,84 @@
             "TD/SPAN/A",
             "TD/SPAN/IMG",
             "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/FORM",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/OBJECT",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/FORM/INPUT-file",
+            "SPAN/FORM/INPUT-null",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/OBJECT/PARAM",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/FONT",
+            "SPAN/SPAN/IMG",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/COLGROUP",
+            "TD/TABLE/INPUT-hidden",
             "TD/TABLE/TBODY",
             "TR/TD/A",
             "TR/TD/BR",
