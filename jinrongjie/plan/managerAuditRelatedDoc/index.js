@@ -81,10 +81,26 @@
             elem.querySelector('#searchdatefromspan').textContent = data.value;elem.querySelector('input[name="searchdatefrom"]').value = data.value;break;case 'searchdateto':
             elem.querySelector('#searchdatetospan').textContent = data.value;elem.querySelector('input[name="searchdateto"]').value = data.value;break;}
       }function doSearch(elem) {
-        //   var iframe = elem.ownerDocument.querySelector('#rightMenuIframe'); // elem.ownerDocument.defaultView.location.reload();
-        //   if (iframe) {
-        //     iframe.ownerDocument.SearchForm.btnsub.click(); // iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
-        elem.ownerDocument.defaultView.doSearch();setTimeout(function () {
+        if (ysp.appMain.isIOS()) {
+          elem.ownerDocument.defaultView.doSearch();
+        } else {
+          elem.ownerDocument.defaultView.doSearch();var count = 0; // var timer = setInterval(function () {
+          //   if (count <= 1) {
+          //     elem.ownerDocument.defaultView.doSearch();
+          //     elem.querySelector('#secCategoryBtn').click();
+          //     ysp.customHelper.back();
+          //   } else {
+          //     clearInterval(timer);
+          //   }
+          //   count++;
+          // }, 100); // this.doSearch(elem); //     var iframe = elem.ownerDocument.querySelector('#rightMenuIframe'); // elem.ownerDocument.defaultView.location.reload();
+          //     if (iframe) {
+          //       iframe.contentDocument.defaultView.parent.btnsub_onclick(); // iframe.ownerDocument.SearchForm.btnsub.click(); // iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
+          //     }
+          setTimeout(function () {
+            elem.querySelector('#secCategoryBtn').click();ysp.customHelper.back();
+          }, 200);
+        }setTimeout(function () {
           ysp.appMain.hideLoading(); // elem.ownerDocument.defaultView.document.SearchForm.btnsub.click();
         }, 1000);
       }
