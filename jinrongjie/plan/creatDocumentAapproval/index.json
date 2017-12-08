@@ -230,6 +230,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -252,7 +256,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": ""
     }
   },
@@ -313,21 +317,6 @@
       "contextId": "context18_IZLpIz",
       "layout": [
         {
-          "id": "uiControl119_i0hwxQ",
-          "controlId": "control140_bXKhMF",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl119_i0hwxQ",
-                "onGetTemplate": "getTemplate_uiControl119_i0hwxQ"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl325_xwoqDC",
           "controlId": "control325_GT6RW4",
           "display": {
@@ -338,6 +327,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl325_xwoqDC",
                 "onGetTemplate": "getTemplate_uiControl325_xwoqDC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl119_i0hwxQ",
+          "controlId": "control140_bXKhMF",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl119_i0hwxQ",
+                "onGetTemplate": "getTemplate_uiControl119_i0hwxQ"
               }
             }
           }
