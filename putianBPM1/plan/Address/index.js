@@ -33,21 +33,17 @@
     },
     doAction_uiControl57_IzXfNJ: function (data, elem) {
       if (data.eventType == 'click') {
-        var d = data.dataCustom;var line = parseInt(d[1]) + 1;var column = parseInt(d[2]);var _btn = elem.querySelectorAll('tr')[line].querySelectorAll('td')[column].querySelector('a');var url = _btn.href;if (ysp.appMain.isIOS()) {
-          top.EAPI.openWindow(url + '&_ysp_filepreview=1');
-        } else {
-          top.location.href = url; // var cookie = elem.ownerDocument.cookie;
-          // var option = {
-          //   "downloadUrl": url,
-          //   "docName": 'FX-LMY-20171018-0027.pdf',
-          //   "docType": 'pdf',
-          //   "downloadHttpHeaders": {
-          //     "cookie": cookie
-          //   },
-          //   "downloadType": "POST"
-          // };
-          // ysp.appMain.openDocument(option);
-        }
+        var d = data.dataCustom;var line = parseInt(d[1]) + 1;var column = parseInt(d[2]);var _btn = elem.querySelectorAll('tr')[line].querySelectorAll('td')[column].querySelector('a');var url = _btn.href;var xhr = new XMLHttpRequest();xhr.open('GET', url, false);xhr.onreadystatechange = function () {
+          if (xhr.status == 200 && xhr.readyState == 4) {
+            if (ysp.appMain.isIOS()) {
+              top.EAPI.openWindow(url + '&_ysp_filepreview=1');
+            } else if (ysp.appMain.isAndroid()) {
+              top.location.href = url;
+            }
+          } else {
+            elem.ownerDocument.defaultView.open(url, '404 - found');
+          }
+        };xhr.send();
       }
     },
     getTemplate_uiControl57_IzXfNJ: function () {

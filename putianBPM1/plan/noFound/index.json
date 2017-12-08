@@ -35,56 +35,14 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control79_roP02n": {
-      "location": {
-        "data": {
-          "tagName": "H1"
-        },
-        "userData": {
-          "force": false,
-          "data": [
-            {
-              "method": "XPath",
-              "value": "/html/body/h1"
-            }
-          ]
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "404 Not Found"
-              ],
-              "visText": [
-                "404 Not Found"
-              ]
-            }
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/H1[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "roles": "element",
-      "text": "404 Not Found",
-      "ignoreVisibility": true,
-      "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('404') !== -1 ){return true;}return false;"
-    },
     "control80_c6UOwl": {
       "location": {
         "data": {
           "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -99,7 +57,8 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "ignoreVisibility": true,
+      "monitored": true,
       "frameXPath": ""
     }
   },
@@ -109,9 +68,7 @@
         "control78_ddDLZM",
         "control80_c6UOwl"
       ],
-      "anchors": [
-        "control79_roP02n"
-      ],
+      "anchors": [],
       "urlAnchor": []
     }
   },
@@ -141,6 +98,17 @@
       "toContexts": [
         {
           "toContextId": "context23_OydA9m"
+        }
+      ]
+    },
+    "flow82_6i9sH3": {
+      "fromContextId": "context20_r9MHM9",
+      "fromAction": "doAction",
+      "fromControlId": "control60_40OEw6",
+      "toContexts": [
+        {
+          "toContextId": "context23_OydA9m",
+          "toModelId": "noFound"
         }
       ]
     }
@@ -193,7 +161,8 @@
     "page/urls": {
       "contexts": {
         "context23_OydA9m": [
-          "img.tlmall.com/remit/1510798802420/20171116102002-1510798802420.jpg"
+          "img.tlmall.com/remit/1510798802420/20171116102002-1510798802420.jpg",
+          "img.tlmall.com/file/upload/245553-1506754525809.jpg"
         ]
       }
     },
