@@ -541,22 +541,26 @@
     		
           /* 相关文档 子目录传值兼容性问题 */
           
-          if(aWin.location.href.indexOf("/docs/docs/MutiDocBrowser.jsp?documentids=")!==-1){
-            aWin.btnsub_onclick=function(){
-              aWin.doSearch();
-            }
-          }
-          // if(aWin.doSearch){
-          //   aWin.doSearch = function(){
-          //     aWin.setResourceStr();
-          //     if(doc.all("documentids")){
-          //       doc.all("documentids").value = aWin.documentids.substring(1) ;
-          //     }else if(doc.all("resourceids")){
-          //       doc.all("resourceids").value =aWin.resourceids.substring(1) ;
-          //     }
-          //     doc.SearchForm.submit();
-          //   }
+          // if(aWin.location.href.indexOf("BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp")!==-1 || aWin.location.href.indexOf("docs/docs/MutiDocBrowser.jsp")!==-1){
+          //   // aWin.btnsub_onclick=function(){
+          //   //   debugger;
+          //   //   doSearch();
+          //   // }
+          //       debugger ;
+          //       if(aWin.doSearch){
+          //         debugger;
+          //           aWin.doSearch = function(){
+          //             aWin.setResourceStr();
+          //             if(doc.all("documentids")){
+          //               doc.all("documentids").value = aWin.documentids.substring(1);
+          //             }else if(doc.all("resourceids")){
+          //               doc.all("resourceids").value = aWin.resourceids.substring(1) ;
+          //             }
+          //           doc.SearchForm.submit();
+          //         }
+          //       }
           // }
+
          //  if(aWin.Tree_clickNode){
          //  aWin.Tree_clickNode = function(nodeID){
          //    var document = doc;
@@ -736,6 +740,12 @@
                     console.log('upload overrided!');
                 };
             })();
+          //loading
+          aWin.addEventListener("DOMContentLoaded",function(){
+    				var load = doc.createElement('div');
+    				load.className = 'ysp_load_haha';
+            doc.body.appendChild(load)
+          },false)
 
             // 测试结束
 

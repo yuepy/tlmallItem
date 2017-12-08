@@ -68,12 +68,17 @@
             elem.querySelector('#createdatestartspan').textContent = data.value;elem.querySelector('input[id="createdatestart"]').value = data.value;break;case 'searchdateto':
             elem.querySelector('#createdateendspan').textContent = data.value;elem.querySelector('input[id="createdateend"]').value = data.value;break;}
       }function doSearch(elem) {
-        //   var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');
-        //   if (iframe) {
-        //     debugger;
-        //     iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
-        //   }
-        elem.ownerDocument.defaultView.doSearch();
+        debugger;if (ysp.appMain.isIOS()) {
+          elem.ownerDocument.defaultView.doSearch();
+        } else {
+          var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
+            iframe.contentDocument.querySelectorAll('div')[0].ownerDocument.defaultView.parent.doSearch();var count = 0;setTimeout(function () {
+              elem.querySelector('#createrBtn').click();ysp.customHelper.back();
+            }, 200);
+          } //     var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');
+          //     if (iframe) {
+          //       iframe.contentDocument.querySelectorAll('div')[0].ownerDocument.defaultView.parent.doSearch(); // iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
+        }
       }
     },
     getTemplate_uiControl22_ZaAa4t: function getTemplate_uiControl22_ZaAa4t() {
