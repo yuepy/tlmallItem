@@ -127,7 +127,7 @@
     getData_control53_rAs9ta: function (elem) {
       if (!elem) {
         return;
-      }var data = {};if (elem.querySelector('#Filedata')) {
+      };var data = {};if (elem.querySelector('#Filedata')) {
         var files = elem.querySelectorAll('.progressWrapper');data.show = 'true';
       } else {
         if (elem.ownerDocument.querySelector('#field-annexupload_tab')) {
@@ -135,7 +135,7 @@
         } else {
           data.show = 'false';
         }
-      }var fileData = [];if (files.length > 0) {
+      }var fileData = [];if (files != undefined && files.length > 0) {
         [].forEach.call(files, function (fileItem, fileIndex) {
           fileData.push(fileItem.querySelector('.progressName').textContent.replace(/\s/g, ""));
         });
