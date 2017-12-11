@@ -690,6 +690,7 @@
                           var form = file && file.parentElement;//找到对应的form
                           var fileName = form.Filename;//找到input name=filename的元素，
                           fileName.value = this.files[0].name; //将这个元素的value设为刚刚上传的文件名
+      
                           var xhr = new XMLHttpRequest();//创建ajax对象
                           xhr.open('post', 'http://192.168.200.63/docs/docupload/MultiDocUploadByWorkflow.jsp');//发送请求
                           this.formData = new FormData(form);//格式化form的数据
