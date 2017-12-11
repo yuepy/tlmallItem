@@ -1007,8 +1007,11 @@
       }
       for (var i = 0; i < array.length; i++) {
         var arrayItem = array[i].trim();
-        if (arrayItem.indexOf(tag) != -1) {
-          return i;
+        // if (arrayItem.indexOf(tag) != -1) {
+        //   return i;
+        // }
+        if(arrayItem == tag){
+           return i;
         }
       }
     },
@@ -1118,7 +1121,8 @@
       }
       var tbodyTrs = tbody.querySelectorAll('tr');
       var content = [];
-      var headerTitle = null;
+      var headerTitles = [];
+      var headerTitle = []
       for (var i = 0; i < tbodyTrs.length; i++) {
         var item = [];
         if (!tbodyTrs[i].querySelectorAll('td')) {
@@ -1149,102 +1153,108 @@
             content: tds[j].textContent,
             isDrilled: isDrilled
           });
-          if (!headerTitle && isDrilled) {
-            headerTitle = titles[j];
+          if (!(headerTitles.length != 0) && isDrilled) {
+            //headerTitle = titles[j];
+            headerTitles.push(titles[j]);
             if (head) {
               var zou = true;
             }
           } else if (!head && isDrilled && index != null) {
-            headerTitle = weights[index];
+            //headerTitle = weights[index];
+            headerTitles.push(weights[index]);
           }
         }
+        var ht = headerTitles[headerTitles.length-1];//获取最后一个title名称
+        headerTitle.push(ht);
         content.push(item);
         if (!tbodyTrs[i].querySelector('a') && !tbodyTrs[i].querySelector('span') && tds.length > 7) {
           var Wu = true;
         }
       }
-      if (!zou && !headerTitle && !Wu) {
+      for(var k = 1 ;k <= headerTitle.length; k++){
+      
+        if (!zou && !headerTitle[k] && !Wu) {
 
-        if (!headerTitle) {
-          headerTitle = '销售人员';
-        }
-
-        function isAllNull(array) {
-          var tag = true;
-          for (var i = 0; i < array.length; i++) {
-            var item = ysp.customHelper.trim(array[i].content);
-            if (item != '') {
-              tag = false;
-            }
+          if (!headerTitle[k]) {
+            headerTitle[k] = '销售人员';
           }
-          return tag;
-        }
-        //根据传入的tags的字段，挑选出相应的值，最后返回
-        var data = [];
-        var exportTitles = [];
-        if (headerTitle && headerConfig) {
-          headerConfig.title = headerTitle;
-        }
-        if (headerConfig.title) {
-          tags.unshift(headerConfig);
-        }
-        var filterTitles = [];
-        for (var i = 0; i < content.length; i++) {
-          var item = [];
-          for (var j = 0; j < tags.length; j++) {
-            //根据相应字段从titles中获取相应的下标，然后取出content的该下标的值，即为需要的值
-            var tag = tags[j];
-            if (tag !== undefined && tag !== null) {
-              var title = tag.title;
-              title = title.trim();
-              var index = ysp.customHelper.getDataIndex(titles, title);
-              if (content[i][index] && content[i][index]['content'].trim() == '' && index == 9) {
-                // index = ysp.customHelper.getDataIndex(titles, '销售达成率')
-                index = 9;
-                if (content[i][index] && content[i][index]['content'].trim() == '' && index != 9) {
-                  index = ysp.customHelper.getDataIndex(titles, '销售人员');
+
+          function isAllNull(array) {
+            var tag = true;
+            for (var i = 0; i < array.length; i++) {
+              var item = ysp.customHelper.trim(array[i].content);
+              if (item != '') {
+                tag = false;
+              }
+            }
+            return tag;
+          }
+          //根据传入的tags的字段，挑选出相应的值，最后返回
+          var data = [];
+          var exportTitles = [];
+          if (headerTitle[k] && headerConfig) {
+            headerConfig.title = headerTitle[k];
+          }
+          if (headerConfig.title) {
+            tags.unshift(headerConfig);
+          }
+          var filterTitles = [];
+          for (var i = 0; i < content.length; i++) {
+            var item = [];
+            for (var j = 0; j < tags.length; j++) {
+              //根据相应字段从titles中获取相应的下标，然后取出content的该下标的值，即为需要的值
+              var tag = tags[j];
+              if (tag !== undefined && tag !== null) {
+                var title = tag.title;
+                title = title.trim();
+                var index = ysp.customHelper.getDataIndex(titles, title);
+                if (content[i][index] && content[i][index]['content'].trim() == '' && index == 9) {
+                  // index = ysp.customHelper.getDataIndex(titles, '销售达成率')
+                  index = 9;
+                  if (content[i][index] && content[i][index]['content'].trim() == '' && index != 9) {
+                    index = ysp.customHelper.getDataIndex(titles, '销售人员');
+                  }
                 }
+                filterTitles.push(titlesSort[index]);
+                if (index != undefined) {
+                  item.push({
+                    label: tag.label,
+                    content: content[i][index] && content[i][index]['content'],
+                    isDrilled: content[i][index] && content[i][index]['isDrilled'],
+                    title: title,
+                    data: tag.data
+                  });
+                }
+              } else {
+                console.log('tag is null');
+                continue;
               }
-              filterTitles.push(titlesSort[index]);
-              if (index != undefined) {
-                item.push({
-                  label: tag.label,
-                  content: content[i][index] && content[i][index]['content'],
-                  isDrilled: content[i][index] && content[i][index]['isDrilled'],
-                  title: title,
-                  data: tag.data
+            }
+            if (!isAllNull(item)) {
+              if (exportTitles.length != item.length) {
+                item.forEach(function(value, index) {
+                  exportTitles.push({
+                    label: value.label ? value.label : value.title,
+                    title: value.title,
+                    sort: (filterTitles && filterTitles[index]) || null
+                  });
                 });
               }
-            } else {
-              console.log('tag is null');
-              continue;
+              data.push(item);
             }
           }
-          if (!isAllNull(item)) {
-            if (exportTitles.length != item.length) {
-              item.forEach(function(value, index) {
-                exportTitles.push({
-                  label: value.label ? value.label : value.title,
-                  title: value.title,
-                  sort: (filterTitles && filterTitles[index]) || null
-                });
-              });
-            }
-            data.push(item);
-          }
+          //去重
+          exportTitles = this.unique(exportTitles);
+          return {
+            content: data,
+            titles: exportTitles
+          };
         }
-        //去重
-        exportTitles = this.unique(exportTitles);
-        return {
-          content: data,
-          titles: exportTitles
-        };
-      }
 
-      if (!zou && headerTitle) {
+      	if (!zou && headerTitle[k]) {
 
-        if (!headerTitle) {
-          headerTitle = '分公司';
+        if (!headerTitle[k]) {
+          headerTitle[k] = '分公司';
         }
 
         function isAllNull(array) {
@@ -1260,8 +1270,8 @@
         //根据传入的tags的字段，挑选出相应的值，最后返回
         var data = [];
         var exportTitles = [];
-        if (headerTitle && headerConfig) {
-          headerConfig.title = headerTitle;
+        if (headerTitle[k] && headerConfig) {
+          headerConfig.title = headerTitle[k];
         }
         if (headerConfig.title) {
           tags.unshift(headerConfig);
@@ -1353,104 +1363,105 @@
           titles: exportTitles
         };
       }
-      if (zou || Wu) {
-
-        if (!headerTitle && zou == undefined) {
-          headerTitle = '项目';
-        }
-        if (!headerTitle) {
-          headerTitle = '分公司';
-        }
-
-        function isAllNull(array) {
-          var tag = true;
-          for (var i = 0; i < array.length; i++) {
-            var item = ysp.customHelper.trim(array[i].content);
-            if (item != '') {
-              tag = false;
-            }
+      	if (zou || Wu) {
+          if (!headerTitle[k] && zou == undefined) {
+            headerTitle[k] = '项目';
           }
-          return tag;
-        }
-        //根据传入的tags的字段，挑选出相应的值，最后返回
-        var data = [];
-        var exportTitles = [];
-        var tit = false;
-        if (headerTitle == '项目' && Wu && ysp.customHelper.getDataIndex(titles, '项目')) {
-          headerTitle = '项目';
-        } else if (headerTitle == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && !ysp.customHelper.getDataIndex(titles, '客户名称') && !ysp.customHelper.getDataIndex(titles, '销售人员')) {
-          headerTitle = '分公司';
-        } else if (headerTitle == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && ysp.customHelper.getDataIndex(titles, '客户名称')) {
-          headerTitle = '客户名称';
-        } else if (headerTitle == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && ysp.customHelper.getDataIndex(titles, '门店名称')) {
-          headerTitle = '门店名称';
-        } else if (headerTitle == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && ysp.customHelper.getDataIndex(titles, '销售人员')) {
-          headerTitle = '销售人员';
-        } else {
-          headerTitle = headerTitle;
-        }
-        if (headerTitle && headerConfig) {
-          headerConfig.title = headerTitle;
-        }
-        if (headerConfig.title) {
-          tags.unshift(headerConfig);
-        }
-        var filterTitles = [];
-        for (var i = 0; i < content.length; i++) {
-          var item = [];
-          for (var j = 0; j < tags.length; j++) {
-            //根据相应字段从titles中获取相应的下标，然后取出content的该下标的值，即为需要的值
-            var tag = tags[j];
-            if (tag !== undefined && tag !== null) {
-              var title = tag.title;
-              title = title.trim();
-              var index = ysp.customHelper.getDataIndex(titles, title);
-              if (title == '客户名称') {
-                index += content[i][index]['content'].trim() == '' ? 1 : 0;
-              }
-              if (content[i][index] && content[i][index]['content'].trim() == '' && index == 9) {
-                // index = ysp.customHelper.getDataIndex(titles, '销售达成率')
-                index = 9;
+          if (!headerTitle[k]) {
+            headerTitle[k] = '分公司';
+          }
 
+          function isAllNull(array) {
+            var tag = true;
+            for (var i = 0; i < array.length; i++) {
+              var item = ysp.customHelper.trim(array[i].content);
+              if (item != '') {
+                tag = false;
               }
-              if (content[i][index] && content[i][index]['content'].trim() == '' && index == 12) {
-                // index = ysp.customHelper.getDataIndex(titles, '销售达成率')
-                index = 12;
+            }
+            return tag;
+          }
+          //根据传入的tags的字段，挑选出相应的值，最后返回
+          var data = [];
+          var exportTitles = [];
+          var tit = false;
+          if (headerTitle[k] == '项目' && Wu && ysp.customHelper.getDataIndex(titles, '项目')) {
+            headerTitle[k] = '项目';
+          } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && !ysp.customHelper.getDataIndex(titles, '客户名称') && !ysp.customHelper.getDataIndex(titles, '销售人员')) {
+            headerTitle[k] = '分公司';
+          } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && ysp.customHelper.getDataIndex(titles, '客户名称')) {
+            headerTitle[k] = '客户名称';
+          } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && ysp.customHelper.getDataIndex(titles, '门店名称')) {
+            headerTitle[k] = '门店名称';
+          } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && ysp.customHelper.getDataIndex(titles, '销售人员')) {
+            headerTitle[k] = '销售人员';
+          } else {
+            headerTitle[k] = headerTitle[k];
+          }
+          if (headerTitle[k] && headerConfig) {
+            headerConfig.title = headerTitle[k];
+          }
+          if (headerConfig.title) {
+            tags.unshift(headerConfig);
+          }
+          var filterTitles = [];
+          for (var i = 0; i < content.length; i++) {
+            var item = [];
+            for (var j = 0; j < tags.length; j++) {
+              //根据相应字段从titles中获取相应的下标，然后取出content的该下标的值，即为需要的值
+              var tag = tags[j];
+              if (tag !== undefined && tag !== null) {
+                var title = tag.title;
+                title = title.trim();
+                var index = ysp.customHelper.getDataIndex(titles, title);
+                if (title == '客户名称') {
+                  index += content[i][index]['content'].trim() == '' ? 1 : 0;
+                }
+                if (content[i][index] && content[i][index]['content'].trim() == '' && index == 9) {
+                  // index = ysp.customHelper.getDataIndex(titles, '销售达成率')
+                  index = 9;
+
+                }
+                if (content[i][index] && content[i][index]['content'].trim() == '' && index == 12) {
+                  // index = ysp.customHelper.getDataIndex(titles, '销售达成率')
+                  index = 12;
+                }
+                filterTitles.push(titlesSort[index]);
+                if (index != undefined) {
+                  item.push({
+                    label: tag.label,
+                    content: content[i][index] && content[i][index]['content'],
+                    isDrilled: content[i][index] && content[i][index]['isDrilled'],
+                    title: title,
+                    data: tag.data
+                  });
+                }
+              } else {
+                console.log('tag is null');
+                continue;
               }
-              filterTitles.push(titlesSort[index]);
-              if (index != undefined) {
-                item.push({
-                  label: tag.label,
-                  content: content[i][index] && content[i][index]['content'],
-                  isDrilled: content[i][index] && content[i][index]['isDrilled'],
-                  title: title,
-                  data: tag.data
+            }
+            if (!isAllNull(item)) {
+              if (exportTitles.length != item.length) {
+                item.forEach(function(value, index) {
+                  exportTitles.push({
+                    label: value.label ? value.label : value.title,
+                    title: value.title,
+                    sort: (filterTitles && filterTitles[index]) || null
+                  });
                 });
               }
-            } else {
-              console.log('tag is null');
-              continue;
+              data.push(item);
             }
           }
-          if (!isAllNull(item)) {
-            if (exportTitles.length != item.length) {
-              item.forEach(function(value, index) {
-                exportTitles.push({
-                  label: value.label ? value.label : value.title,
-                  title: value.title,
-                  sort: (filterTitles && filterTitles[index]) || null
-                });
-              });
-            }
-            data.push(item);
-          }
+          //去重
+          exportTitles = this.unique(exportTitles);
+          return {
+            content: data,
+            titles: exportTitles
+          };
         }
-        //去重
-        exportTitles = this.unique(exportTitles);
-        return {
-          content: data,
-          titles: exportTitles
-        };
+        
       }
     },
     getTemplateData: function(elem, tags) {
