@@ -367,7 +367,7 @@
       "roles": "element",
       "text": "",
       "frameXPath": "",
-      "customJS": "if(elem.textContent.indexOf('请假/公出流程') !== -1 || elem.textContent.indexOf('未考勤申报审批流程') !== -1){return true;}return false; "
+      "customJS": "if(elem.textContent.indexOf('处理 - 请假/公出流程') !== -1 || elem.textContent.indexOf('处理 - 未考勤申报审批流程') !== -1){return true;}return false; "
     },
     "control82_Oe1sOv": {
       "location": {
@@ -526,19 +526,23 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control353_NCEe9F": {
+    "control221_93vAJg": {
       "location": {
         "data": {
           "tagName": "TBODY"
         },
         "userData": {
+          "force": false,
           "data": [
             {
               "method": "XPath",
-              "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody\n"
+              "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"mainWFHead\"]/tbody"
             }
-          ],
-          "force": false
+          ]
         },
         "locators": [
           {
@@ -559,47 +563,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control353_NCEe9F"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control354_z9TzXd": {
-      "location": {
-        "data": {
-          "tagName": "TBODY"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "XPath",
-              "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody\n"
-            }
-          ],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]/TBODY[1]",
-              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
-              "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
-              "descendant::DIV[@id=\"requestlogappednDiv\"]//TBODY"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control354_z9TzXd"
+        "onGetData": "getData_control221_93vAJg"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -617,8 +581,7 @@
         "control84_nadrbI",
         "control253_CceTIQ",
         "control325_ShT5Sw",
-        "control353_NCEe9F",
-        "control354_z9TzXd"
+        "control221_93vAJg"
       ],
       "anchors": [
         "control79_xTNUQB"
@@ -707,37 +670,12 @@
           "toContextId": "context11_ksSRDp"
         }
       ]
-    },
-    "flow215_QDfrqi": {
-      "fromContextId": "context11_ksSRDp",
-      "fromAction": "doAction",
-      "fromControlId": "control353_NCEe9F",
-      "toContexts": [
-        {
-          "toContextId": "context11_ksSRDp"
-        }
-      ]
     }
   },
   "pages": {
     "page11_MgxyAp": {
       "contextId": "context11_ksSRDp",
       "layout": [
-        {
-          "id": "uiControl355_5U8pzk",
-          "controlId": "control353_NCEe9F",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl355_5U8pzk",
-                "onGetTemplate": "getTemplate_uiControl355_5U8pzk"
-              }
-            }
-          }
-        },
         {
           "id": "uiControl45_w9wCSy",
           "controlId": "control55_pqOP4L",
@@ -786,16 +724,16 @@
               },
               "layout": [
                 {
-                  "id": "uiControl62_Vo60es",
-                  "controlId": "control354_z9TzXd",
+                  "id": "uiControl29_L1qw2v",
+                  "controlId": "control221_93vAJg",
                   "display": {
                     "adapterId": "custom",
                     "type": "custom",
                     "adapter": {
                       "templateType": "react",
                       "events": {
-                        "onDoAction": "doAction_uiControl62_Vo60es",
-                        "onGetTemplate": "getTemplate_uiControl62_Vo60es"
+                        "onDoAction": "doAction_uiControl29_L1qw2v",
+                        "onGetTemplate": "getTemplate_uiControl29_L1qw2v"
                       }
                     }
                   }
@@ -943,7 +881,8 @@
           "请假/公出流程(新)-张济天-2017-10-18",
           "请假/公出流程(新)-张济天-2017-11-10",
           "请假/公出流程(新)-张济天-2017-11-23",
-          "请假/公出流程(新)-张济天-2017-12-08"
+          "请假/公出流程(新)-张济天-2017-12-08",
+          "请假/公出流程(新)-张济天-2017-12-05"
         ]
       }
     },
@@ -960,7 +899,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312801&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=425647&isovertime=0",
           "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8241&isagent=0&beagenter=0",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=527987&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=527987&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=501522&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context10_sJa5NJ": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
