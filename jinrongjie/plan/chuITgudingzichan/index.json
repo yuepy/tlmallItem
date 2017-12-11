@@ -329,37 +329,6 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control275_EnUEkU": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[13]/TD[2]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control275_EnUEkU"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control276_LNlNGp": {
       "location": {
         "data": {
@@ -635,6 +604,10 @@
         "data": {
           "tagName": "FORM"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -663,7 +636,6 @@
         "control272_4fi3BT",
         "control273_NXduOd",
         "control274_ZmxIHh",
-        "control275_EnUEkU",
         "control276_LNlNGp",
         "control277_wKnNeI",
         "control279_5xN5UC",
@@ -966,21 +938,6 @@
                       "events": {
                         "onDoAction": "doAction_uiControl259_bAH8Fh",
                         "onGetTemplate": "getTemplate_uiControl259_bAH8Fh"
-                      }
-                    }
-                  }
-                },
-                {
-                  "id": "uiControl261_fRfTfE",
-                  "controlId": "control275_EnUEkU",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl261_fRfTfE",
-                        "onGetTemplate": "getTemplate_uiControl261_fRfTfE"
                       }
                     }
                   }
