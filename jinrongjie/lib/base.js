@@ -660,12 +660,13 @@
                     console.log('upload overrided!');
                 };
             })();
+          
           //loading
-          aWin.addEventListener("DOMContentLoaded",function(){
-    				var load = doc.createElement('div');
-    				load.className = 'ysp_load_haha';
-            doc.body.appendChild(load)
-          },false)
+    				// aWin.addEventListener("DOMContentLoaded",function(){
+    				// var load = doc.createElement('div');
+    				// load.className = 'ysp_load_haha';
+    				// doc.body.appendChild(load)
+    				// },false)
 
             // 测试结束
 
@@ -701,11 +702,16 @@
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
                 var xmlhttp = new XMLHttpRequest();
-              	xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
+              if(topWindow.EAPI.isIOS()){
+                	xmlhttp.open("post",'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
+              }else{
+                  xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
               	//xmlhttp.open("post", "http://esb.fsig.com.cn/home/system/com.eibus.web.soap.Gateway.wcp", true);
+              }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
+                      console.log(xmldoc);
                         topWindow.num.push(xmldoc.getElementsByTagName('return')[0].getElementsByTagName('todoCount')[0].textContent, xmldoc.getElementsByTagName('return')[0].getElementsByTagName('unreadCount')[0].textContent);
                     }else if(xmlhttp.status == 400){
                       topWindow.num.push('请求失败!')

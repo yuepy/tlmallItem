@@ -55,7 +55,7 @@
       }data[3] = elem.querySelector("input[name='requestname']").value;data[4] = [];data[4][0] = elem.querySelector('#createdatestartspan').textContent.replace(/\s/g, "");data[4][1] = elem.querySelector('#createdateendspan').textContent.replace(/\s/g, "");return data;
     },
     doAction_uiControl22_ZaAa4t: function (data, elem) {
-      switch (data.eventType) {case 'search':
+      var flag = false;switch (data.eventType) {case 'search':
           doSearch(elem);break;case 'dataInput':
           upValue(data.dataCustom);break;case 'employerNodes':
           elem.querySelector('#createrBtn').click();break;case 'employerNodesInput':
@@ -73,16 +73,14 @@
         if (ysp.appMain.isIOS()) {
           elem.ownerDocument.defaultView.doSearch();
         } else {
-          var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
+          elem.ownerDocument.defaultView.doSearch();var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
             iframe.contentDocument.querySelectorAll('div')[0].ownerDocument.defaultView.parent.doSearch();var count = 0;setTimeout(function () {
-              elem.querySelector('#createrBtn').click();ysp.customHelper.back();
+              elem.querySelector('#createrBtn').click();ysp.appMain.back();
             }, 200);
-          } //     var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');
-          //     if (iframe) {
-          //       iframe.contentDocument.querySelectorAll('div')[0].ownerDocument.defaultView.parent.doSearch(); // iframe.contentDocument.querySelector('#menuTable').querySelectorAll('button')[0].click();
-        }setTimeout(function () {
-          ysp.appMain.hideLoading(); // elem.ownerDocument.defaultView.document.SearchForm.btnsub.click();
-        }, 1000);
+          }
+        } // setTimeout(function () {
+        //   ysp.appMain.hideLoading(); // elem.ownerDocument.defaultView.document.SearchForm.btnsub.click();
+        // }, 1000);
       }
     },
     getTemplate_uiControl22_ZaAa4t: function getTemplate_uiControl22_ZaAa4t() {
