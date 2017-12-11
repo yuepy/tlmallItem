@@ -382,13 +382,24 @@
             /*  showModelDialog 相关文档 跨页面传值兼容  */
 
             /*  showModelDialog 相关流程 跨页面传值兼容  */
-            if (aWin.btnsub_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1  && aWin.location.href.indexOf('BrowserMain.jsp') == -1) {
+            if (aWin.btnsub_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1  && aWin.location.href.indexOf('BrowserMain.jsp') == -1 ) {
                 aWin.btnsub_onclick = function() {
                     aWin.setResourceStr();
                     $("#resourceids").val(aWin.resourceids);
                     doc.SearchForm.submit();
                 }
             }
+          
+          if(aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=&splitflag=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 ){
+            if(aWin.doSearch){
+              aWin.doSearch = function(){
+                debugger;
+                aWin.setResourceStr();
+                  doc.all("resourceids").value = aWin.resourceids.substring(1) ;
+                  aWin.document.SearchForm.submit();
+              }
+            }
+          }
             /*  showModelDialog 相关流程 跨页面传值兼容  */
             var newAlert = aWin.alert;
             aWin.alert = function() {
