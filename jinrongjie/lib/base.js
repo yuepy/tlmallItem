@@ -4,9 +4,11 @@
     var utils = ysp.utils;
     var flag = true; // 为true说明需要取token  为false说明不需要取token
     var topWindow = win.top; // 最外层window - top层
+  //全局变量 : token地址
     topWindow.tokenUrl = null;
-  	topWindow.overdeu = null;
+  //数据接口 : 代办\办结角标数量
   	topWindow.tokenNum = 0;
+  //接口请求格式 : 
     var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
     soapData = soapData + ' <SOAP:Body>';
     soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://pub.fsig.com.cn/">';
@@ -14,18 +16,22 @@
     soapData = soapData + ' </GetTodoCountInfoByPsCode>';
     soapData = soapData + ' </SOAP:Body>';
     soapData = soapData + ' </SOAP:Envelope>';
+  //安卓客户端调用 : 获取token链接
     topWindow.yspTokenUrl = function(url) {
         topWindow.tokenUrl = url;
       	console.log(url);
         return url;
     };
+  //IOS客户端调用 : 获取token链接
   	topWindow.setSsoToken = function(url){
       topWindow.tokenUrl = url;
       console.log(url);
       return topWindow.tokenUrl;
     };
     topWindow.num = [];
+  //全局变量 : 储存页面第一个文件上传功能的参数,用于文件删除
   	topWindow.file = []; 
+  //全局变量 : 储存页面第二个文件上传功能的参数,用于文件删除
   	topWindow.file_two = [];
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
@@ -73,11 +79,6 @@
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
-
-					
-            aWin.yspTokenUrl = function(url) {
-                return url;
-            }
             if (aWin.onShowBrowser2) {
                 aWin.onShowBrowser2 = function(id, url, linkurl, type1, ismand, funFlag) {
                     var id1 = null;
@@ -375,11 +376,6 @@
                     oOption.appendChild(text);
                     oOption.value = str.split('~')[0];
                     obj.appendChild(oOption);
-                    // obj.options.add(oOption);
-                    // $(oOption).val(str.split("~")[0]);
-                    // $(oOption).createTextNode(str.split("~")[1]);
-                    // console.log(str.split("~")[1])
-                    // $(oOption).html(str.split("~")[1]);
 
                 }
             }
@@ -404,7 +400,6 @@
                 }
             }
             aWin.doReview = function() {
-                // jQuery($GetEle("flowbody")).attr("onbeforeunload", "");
               if(doc.getElementById('flowbody')){
                 doc.getElementById('flowbody').setAttribute('onbeforeunload', '')
               }else if(doc.getElementById('bodyiframe')){
@@ -439,18 +434,6 @@
                 aWin.frmmain.target = "_blank";
                 aWin.frmmain.action = "/workflow/request/Remark.jsp?requestid=" + id + "&workflowRequestLogId=" + workflowRequestLogId;
                 ysp.customHelper.openWindow(aWin.frmmain.action, '送阅');
-                //附件上传
-                // aWin.StartUploadAll();
-                // aWin.checkfileuploadcomplet();
-
-                //   }catch(e){
-                //     var remark="";
-                //     try{
-                //       remark = aWin.CkeditorExt.getHtml("remark");
-                //     }catch(e){}
-                //     var forwardurl = "/workflow/request/Remark.jsp?requestid="+id+"&workflowRequestLogId="+workflowRequestLogId+"&remark="+escape(remark);
-                //     aWin.openFullWindowHaveBar(forwardurl);
-                //   }
             }
 
             aWin.changeCurpage = function(index) {
@@ -540,61 +523,6 @@
         }
     		
           /* 相关文档 子目录传值兼容性问题 */
-          
-          // if(aWin.location.href.indexOf("BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp")!==-1 || aWin.location.href.indexOf("docs/docs/MutiDocBrowser.jsp")!==-1){
-          //   // aWin.btnsub_onclick=function(){
-          //   //   debugger;
-          //   //   doSearch();
-          //   // }
-          //       debugger ;
-          //       if(aWin.doSearch){
-          //         debugger;
-          //           aWin.doSearch = function(){
-          //             aWin.setResourceStr();
-          //             if(doc.all("documentids")){
-          //               doc.all("documentids").value = aWin.documentids.substring(1);
-          //             }else if(doc.all("resourceids")){
-          //               doc.all("resourceids").value = aWin.resourceids.substring(1) ;
-          //             }
-          //           doc.SearchForm.submit();
-          //         }
-          //       }
-          // }
-
-         //  if(aWin.Tree_clickNode){
-         //  aWin.Tree_clickNode = function(nodeID){
-         //    var document = doc;
-         //    var node=aWin.Tree_node_array[nodeID];
-         //    if(node==null||node.parent==null)return;//root
-         //    var tree=node.getTreeView();	
-         //    var div=document.getElementById("Tree_expand_"+nodeID);
-         //    var img=document.getElementById("Tree_img_"+nodeID);
-         //    var td=document.getElementById("Tree_td_"+nodeID);
-         //    //---------
-         //    if(!node.expanded && node.childCount>0 &&tree.flag==false)
-         //      if(tree.callback_expanding(nodeID)==false)//cancel expand
-         //        return;
-         //    if(node.expanded && node.childCount>0 &&tree.flag==false) 
-         //      if(tree.callback_collapsing(nodeID)==false)//cancel collapse
-         //        return;
-         //    node.expanded=!node.expanded && node.childCount>0;
-         //    if(tree.flag==false)aWin.Tree_selectNode(nodeID);
-         //    if(node.childCount>0)//folder
-         //    {
-         //      if(div)div.style.display=node.expanded?"block":"none";
-         //      if(img)	img.src=aWin.Tree_imgSrc(node);
-         //      var line=document.getElementById("Tree_line_"+nodeID);
-         //      if(line)line.src=aWin.Tree_GetLineImg(node);	
-         //    }
-         //    if(tree.callback_click(nodeID)==true &&tree.flag==false)//do action
-         //      aWin.Tree_on_action(node.action);
-         //    //------
-         //    if(node.expanded && node.childCount>0 &&tree.flag==false)
-         //      tree.callback_expanded(nodeID);
-         //    if(!node.expanded && node.childCount>0 &&tree.flag==false) 
-         //      tree.callback_collapsed(nodeID);
-         //  }
-         // }
           if(aWin.selectCategory){
              aWin.selectCategory = function(nodeID) {
                 var node = aWin.tree.getNode(nodeID);
@@ -629,15 +557,6 @@
           if(/workflow\/request\/ViewRequest\.jsp\?requestid=\d+&message=/.test(_href)||/about:blank/.test(_href)){
             aWin.close();
           }
-          
-            /*  找到时机像客户端发出信息，表示我要获取带token的targetURL  */
-            //             aWin.addEventListener('DOMContentLoaded', function() {
-
-            //             })
-            // aWin.alert = function() {
-            //   debugger;
-            // }
-
             // 测试
           if(aWin.onSetRejectNode){
              console.log(aWin.onSetRejectNode.toString())
@@ -696,6 +615,7 @@
                           var form = file && file.parentElement;//找到对应的form
                           var fileName = form.Filename;//找到input name=filename的元素，
                           fileName.value = this.files[0].name; //将这个元素的value设为刚刚上传的文件名
+      
                           var xhr = new XMLHttpRequest();//创建ajax对象
                           xhr.open('post', 'http://192.168.200.63/docs/docupload/MultiDocUploadByWorkflow.jsp');//发送请求
                           this.formData = new FormData(form);//格式化form的数据
