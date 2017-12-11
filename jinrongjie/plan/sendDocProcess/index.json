@@ -59,31 +59,6 @@
       "frameXPath": "",
       "customJS": "if(elem.textContent.indexOf('处理')!==-1&&elem.textContent.indexOf('集团党口发文流程')!==-1){return true;}return false;"
     },
-    "control199_3o679b": {
-      "location": {
-        "data": {
-          "tagName": "FORM"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control199_3o679b"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control201_ouNyBO": {
       "location": {
         "data": {
@@ -598,41 +573,31 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control336_hFHJIF": {
+    "control355_t5DAGc": {
       "location": {
         "data": {
-          "tagName": "BODY"
+          "tagName": "FORM"
         },
         "locators": [
           {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.ext-ie"
-          },
-          {
             "id": "path/ordinal",
             "prob": 1,
-            "ordinal": [
-              0,
-              21
-            ],
-            "value": "/HTML[1]/BODY[1]"
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control336_hFHJIF"
+        "onGetData": "getData_control355_t5DAGc"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
-      "frameXPath": ""
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
     "context27_OsmsHc": {
       "controls": [
-        "control199_3o679b",
         "control201_ouNyBO",
         "control202_bfz1Gc",
         "control204_Tuy5SW",
@@ -648,7 +613,7 @@
         "control217_6L11zU",
         "control14_ShuDms",
         "control61_KxmBUG",
-        "control336_hFHJIF"
+        "control355_t5DAGc"
       ],
       "anchors": [
         "control197_FbC7GU"
@@ -668,16 +633,6 @@
       "fromContextId": "context27_OsmsHc",
       "fromAction": "doAction",
       "fromControlId": "control204_Tuy5SW",
-      "toContexts": [
-        {
-          "toContextId": "context27_OsmsHc"
-        }
-      ]
-    },
-    "flow125_Dc2gVp": {
-      "fromContextId": "context27_OsmsHc",
-      "fromAction": "doAction",
-      "fromControlId": "control199_3o679b",
       "toContexts": [
         {
           "toContextId": "context27_OsmsHc"
@@ -779,6 +734,16 @@
           "toContextId": "context27_OsmsHc"
         }
       ]
+    },
+    "flow35_zILFUO": {
+      "fromContextId": "context27_OsmsHc",
+      "fromAction": "doAction",
+      "fromControlId": "control355_t5DAGc",
+      "toContexts": [
+        {
+          "toContextId": "context27_OsmsHc"
+        }
+      ]
     }
   },
   "pages": {
@@ -801,26 +766,52 @@
           }
         },
         {
-          "id": "uiControl179_VOcNGV",
+          "id": "uiControl71_sA47vn",
           "display": {
-            "type": "tabs",
-            "adapterId": "tabs",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
               "templateType": ""
             }
           },
           "layout": [
             {
-              "id": "uiControl179_VOcNGVitem",
+              "id": "uiControl71_sA47vnheader",
               "display": {
-                "tabTitle": "流程表单",
-                "type": "tabItem",
-                "adapterId": "tabItem",
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl71_sA47vnbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
                 "adapter": {
                   "templateType": ""
                 }
               },
               "layout": [
+                {
+                  "id": "uiControl78_nv3TSc",
+                  "controlId": "control355_t5DAGc",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl78_nv3TSc",
+                        "onGetTemplate": "getTemplate_uiControl78_nv3TSc"
+                      }
+                    }
+                  }
+                },
                 {
                   "id": "uiControl183_MUGw1r",
                   "controlId": "control201_ouNyBO",
@@ -1000,53 +991,36 @@
                       }
                     }
                   }
-                }
-              ]
-            },
-            {
-              "id": "uiControl180_T0rAvf",
-              "display": {
-                "tabTitle": "流转意见",
-                "type": "tabItem",
-                "adapterId": "tabItem",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": [
+                },
                 {
-                  "id": "uiControl181_2ERHxW",
-                  "controlId": "control199_3o679b",
+                  "id": "uiControl58_fu1eWx",
+                  "controlId": "control61_KxmBUG",
                   "display": {
                     "adapterId": "custom",
                     "type": "custom",
                     "adapter": {
                       "templateType": "react",
                       "events": {
-                        "onDoAction": "doAction_uiControl181_2ERHxW",
-                        "onGetTemplate": "getTemplate_uiControl181_2ERHxW"
+                        "onDoAction": "doAction_uiControl58_fu1eWx",
+                        "onGetTemplate": "getTemplate_uiControl58_fu1eWx"
                       }
                     }
                   }
                 }
               ]
+            },
+            {
+              "id": "uiControl71_sA47vnfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
             }
           ]
-        },
-        {
-          "id": "uiControl58_fu1eWx",
-          "controlId": "control61_KxmBUG",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl58_fu1eWx",
-                "onGetTemplate": "getTemplate_uiControl58_fu1eWx"
-              }
-            }
-          }
         },
         {
           "id": "uiControl188_TDVaog",
@@ -1059,21 +1033,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl188_TDVaog",
                 "onGetTemplate": "getTemplate_uiControl188_TDVaog"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl336_SOglEo",
-          "controlId": "control336_hFHJIF",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl336_SOglEo",
-                "onGetTemplate": "getTemplate_uiControl336_SOglEo"
               }
             }
           }
@@ -1564,6 +1523,58 @@
             "x-tab-with-icon",
             "x-toolbar",
             "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_edit",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row",
+            "ysp_load_haha"
           ]
         ],
         "context10_Tp4yhH": [

@@ -145,31 +145,6 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control265_dze1n2": {
-      "location": {
-        "data": {
-          "tagName": "FORM"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control265_dze1n2"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control269_voMBD7": {
       "location": {
         "data": {
@@ -655,35 +630,26 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control337_OGOrLG": {
+    "control356_uEaDrl": {
       "location": {
         "data": {
-          "tagName": "BODY"
+          "tagName": "FORM"
         },
         "locators": [
           {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.ext-ie"
-          },
-          {
             "id": "path/ordinal",
             "prob": 1,
-            "ordinal": [
-              0,
-              20
-            ],
-            "value": "/HTML[1]/BODY[1]"
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control337_OGOrLG"
+        "onGetData": "getData_control356_uEaDrl"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
-      "frameXPath": ""
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -691,7 +657,6 @@
       "controls": [
         "control233_tTvwDb",
         "control235_IeEr1W",
-        "control265_dze1n2",
         "control269_voMBD7",
         "control270_kns0g5",
         "control271_iyvdLK",
@@ -706,7 +671,7 @@
         "control281_7JLfNK",
         "control332_vA6wVa",
         "control333_bwkKEJ",
-        "control337_OGOrLG"
+        "control356_uEaDrl"
       ],
       "anchors": [
         "control255_lEHzUp"
@@ -726,16 +691,6 @@
       "fromContextId": "context34_I0CToo",
       "fromAction": "doAction",
       "fromControlId": "control233_tTvwDb",
-      "toContexts": [
-        {
-          "toContextId": "context34_I0CToo"
-        }
-      ]
-    },
-    "flow161_b78KWX": {
-      "fromContextId": "context34_I0CToo",
-      "fromAction": "doAction",
-      "fromControlId": "control265_dze1n2",
       "toContexts": [
         {
           "toContextId": "context34_I0CToo"
@@ -847,6 +802,16 @@
           "toContextId": "context34_I0CToo"
         }
       ]
+    },
+    "flow125_9xqd5q": {
+      "fromContextId": "context34_I0CToo",
+      "fromAction": "doAction",
+      "fromControlId": "control356_uEaDrl",
+      "toContexts": [
+        {
+          "toContextId": "context34_I0CToo"
+        }
+      ]
     }
   },
   "pages": {
@@ -869,26 +834,52 @@
           }
         },
         {
-          "id": "uiControl213_fu3n9J",
+          "id": "uiControl79_Ep3obN",
           "display": {
-            "type": "tabs",
-            "adapterId": "tabs",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
               "templateType": ""
             }
           },
           "layout": [
             {
-              "id": "uiControl213_fu3n9Jitem",
+              "id": "uiControl79_Ep3obNheader",
               "display": {
-                "tabTitle": "流程表单",
-                "type": "tabItem",
-                "adapterId": "tabItem",
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl79_Ep3obNbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
                 "adapter": {
                   "templateType": ""
                 }
               },
               "layout": [
+                {
+                  "id": "uiControl167_gNHJxS",
+                  "controlId": "control356_uEaDrl",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl167_gNHJxS",
+                        "onGetTemplate": "getTemplate_uiControl167_gNHJxS"
+                      }
+                    }
+                  }
+                },
                 {
                   "id": "uiControl241_ATJntx",
                   "controlId": "control269_voMBD7",
@@ -1102,32 +1093,15 @@
               ]
             },
             {
-              "id": "uiControl214_4I1wix",
+              "id": "uiControl79_Ep3obNfooter",
               "display": {
-                "tabTitle": "流转意见",
-                "type": "tabItem",
-                "adapterId": "tabItem",
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
                 "adapter": {
                   "templateType": ""
                 }
               },
-              "layout": [
-                {
-                  "id": "uiControl240_40mmnr",
-                  "controlId": "control265_dze1n2",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl240_40mmnr",
-                        "onGetTemplate": "getTemplate_uiControl240_40mmnr"
-                      }
-                    }
-                  }
-                }
-              ]
+              "layout": []
             }
           ]
         },
@@ -1142,21 +1116,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl267_RBOOyC",
                 "onGetTemplate": "getTemplate_uiControl267_RBOOyC"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl337_NJWM8b",
-          "controlId": "control337_OGOrLG",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl337_NJWM8b",
-                "onGetTemplate": "getTemplate_uiControl337_NJWM8b"
               }
             }
           }
@@ -1181,7 +1140,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434497&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=354728&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=443351&isovertime=0",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=501515&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=501515&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=443351&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
@@ -1724,6 +1684,57 @@
             "x-tab-with-icon",
             "x-toolbar",
             "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row",
+            "ysp_load_haha"
           ]
         ]
       }

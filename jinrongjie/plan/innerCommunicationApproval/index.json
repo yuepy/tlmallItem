@@ -83,31 +83,6 @@
       "frameXPath": "",
       "customJS": "if(elem.textContent.indexOf('处理')!==-1&&elem.textContent.indexOf('内部沟通')!==-1){return true;}return false;"
     },
-    "control170_aGfVzh": {
-      "location": {
-        "data": {
-          "tagName": "FORM"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control170_aGfVzh"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control171_hhaxpK": {
       "location": {
         "data": {
@@ -454,6 +429,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -478,13 +457,33 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control353_Urs6p4": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control353_Urs6p4"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
     "context22_9NRRRI": {
       "controls": [
         "control168_Jlhlxy",
-        "control170_aGfVzh",
         "control171_hhaxpK",
         "control172_nP2WGE",
         "control174_ds2Sp5",
@@ -494,7 +493,8 @@
         "control323_pfSxCF",
         "control49_e6X819",
         "control175_3Flzur",
-        "control324_9L6FC8"
+        "control324_9L6FC8",
+        "control353_Urs6p4"
       ],
       "anchors": [
         "control169_yoMlRP"
@@ -504,16 +504,6 @@
   },
   "flows": {
     "flow100_nkSDoJ": {
-      "toContexts": [
-        {
-          "toContextId": "context22_9NRRRI"
-        }
-      ]
-    },
-    "flow101_GTGpdq": {
-      "fromContextId": "context22_9NRRRI",
-      "fromAction": "doAction",
-      "fromControlId": "control170_aGfVzh",
       "toContexts": [
         {
           "toContextId": "context22_9NRRRI"
@@ -591,6 +581,26 @@
           "toContextId": "context22_9NRRRI"
         }
       ]
+    },
+    "flow215_kEEv3e": {
+      "fromContextId": "context22_9NRRRI",
+      "fromAction": "doAction",
+      "fromControlId": "control175_3Flzur",
+      "toContexts": [
+        {
+          "toContextId": "context22_9NRRRI"
+        }
+      ]
+    },
+    "flow217_bxhJw2": {
+      "fromContextId": "context22_9NRRRI",
+      "fromAction": "doAction",
+      "fromControlId": "control353_Urs6p4",
+      "toContexts": [
+        {
+          "toContextId": "context22_9NRRRI"
+        }
+      ]
     }
   },
   "pages": {
@@ -613,26 +623,67 @@
           }
         },
         {
-          "id": "uiControl147_Jkw7qT",
+          "id": "uiControl176_ZboROH",
+          "controlId": "control195_PfHTUb",
           "display": {
-            "type": "tabs",
-            "adapterId": "tabs",
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl176_ZboROH",
+                "onGetTemplate": "getTemplate_uiControl176_ZboROH"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl354_9NaPVr",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
               "templateType": ""
             }
           },
           "layout": [
             {
-              "id": "uiControl147_Jkw7qTitem",
+              "id": "uiControl354_9NaPVrheader",
               "display": {
-                "tabTitle": "流程表单",
-                "type": "tabItem",
-                "adapterId": "tabItem",
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl354_9NaPVrbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
                 "adapter": {
                   "templateType": ""
                 }
               },
               "layout": [
+                {
+                  "id": "uiControl355_yegMhJ",
+                  "controlId": "control353_Urs6p4",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl355_yegMhJ",
+                        "onGetTemplate": "getTemplate_uiControl355_yegMhJ"
+                      }
+                    }
+                  }
+                },
                 {
                   "id": "uiControl146_kf4VnA",
                   "controlId": "control168_Jlhlxy",
@@ -694,21 +745,6 @@
                   }
                 },
                 {
-                  "id": "uiControl176_ZboROH",
-                  "controlId": "control195_PfHTUb",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl176_ZboROH",
-                        "onGetTemplate": "getTemplate_uiControl176_ZboROH"
-                      }
-                    }
-                  }
-                },
-                {
                   "id": "uiControl312_TGuyVI",
                   "controlId": "control323_pfSxCF",
                   "display": {
@@ -737,36 +773,34 @@
                       }
                     }
                   }
-                }
-              ]
-            },
-            {
-              "id": "uiControl148_ExMki9",
-              "display": {
-                "tabTitle": "流转意见",
-                "type": "tabItem",
-                "adapterId": "tabItem",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": [
+                },
                 {
-                  "id": "uiControl149_IOyRzX",
-                  "controlId": "control170_aGfVzh",
+                  "id": "uiControl154_lFHbBP",
+                  "controlId": "control175_3Flzur",
                   "display": {
                     "adapterId": "custom",
                     "type": "custom",
                     "adapter": {
                       "templateType": "react",
                       "events": {
-                        "onDoAction": "doAction_uiControl149_IOyRzX",
-                        "onGetTemplate": "getTemplate_uiControl149_IOyRzX"
+                        "onDoAction": "doAction_uiControl154_lFHbBP",
+                        "onGetTemplate": "getTemplate_uiControl154_lFHbBP"
                       }
                     }
                   }
                 }
               ]
+            },
+            {
+              "id": "uiControl354_9NaPVrfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
             }
           ]
         },
@@ -781,21 +815,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl324_IvHgTL",
                 "onGetTemplate": "getTemplate_uiControl324_IvHgTL"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl154_lFHbBP",
-          "controlId": "control175_3Flzur",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl154_lFHbBP",
-                "onGetTemplate": "getTemplate_uiControl154_lFHbBP"
               }
             }
           }
@@ -1436,6 +1455,57 @@
             "x-tab-with-icon",
             "x-toolbar",
             "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row",
+            "ysp_load_haha"
           ]
         ],
         "context10_Tp4yhH": [
