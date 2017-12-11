@@ -73,10 +73,13 @@
         if (ysp.appMain.isIOS()) {
           elem.ownerDocument.defaultView.doSearch();
         } else {
-          elem.ownerDocument.defaultView.doSearch();var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
-            iframe.contentDocument.querySelectorAll('div')[0].ownerDocument.defaultView.parent.doSearch();var count = 0;setTimeout(function () {
-              elem.querySelector('#createrBtn').click();ysp.appMain.back();
-            }, 200);
+          var iframe = elem.ownerDocument.querySelector('#rightMenuIframe');if (iframe) {
+            debugger;elem.ownerDocument.defaultView.doSearch(); // iframe.contentDocument.querySelectorAll('div')[0].ownerDocument.defaultView.parent.doSearch();
+            // var count = 0;
+            // setTimeout(function () {
+            //   elem.querySelector('#createrBtn').click();
+            //   ysp.appMain.back();
+            // }, 200);
           }
         } // setTimeout(function () {
         //   ysp.appMain.hideLoading(); // elem.ownerDocument.defaultView.document.SearchForm.btnsub.click();
