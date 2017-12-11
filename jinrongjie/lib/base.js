@@ -395,10 +395,34 @@
               aWin.doSearch = function(){
                 debugger;
                 aWin.setResourceStr();
-                  doc.all("resourceids").value = aWin.resourceids.substring(1) ;
-                  aWin.document.SearchForm.submit();
+                doc.all("resourceids").value = aWin.resourceids.substring(1) ;
+                doc.SearchForm.submit();
               }
             }
+            if(aWin.reloadResourceArray){
+                 aWin.reloadResourceArray = function(){
+              aWin.resourceArray = new Array();
+                var destList = $("select[name=srcList]")[0];
+                for(var i=0;i<destList.options.length;i++){
+                  aWin.resourceArray[i] = destList.options[i].value+"~"+destList.options[i].text ;
+                }
+                //alert(resourceArray.length);
+              }
+            }
+         	if(aWin.setResourceStr){
+            aWin.setResourceStr = function(){
+
+                aWin.resourceids ="";
+                aWin.resourcenames = "";
+                for(var i=0;i<aWin.resourceArray.length;i++){
+                  aWin.resourceids += ","+aWin.resourceArray[i].split("~")[0] ;
+                  aWin.resourcenames += ","+aWin.resourceArray[i].split("~")[1] ;
+                }
+                //alert(resourceids+"--"+resourcenames);
+                $("input[name=resourceids]").val(aWin.resourceids.substring(1));
+              }
+          }
+              
           }
             /*  showModelDialog 相关流程 跨页面传值兼容  */
             var newAlert = aWin.alert;
