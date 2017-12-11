@@ -56,20 +56,13 @@ h5 {
   height: 100vh;
   overflow: auto;
 }
-#uiControl240_lcFRXVbody,
-#uiControl241_LVqr6ibody,
-#uiControl242_Gr2ZsBbody,
-#uiControl254_pZRQ8nbody,
-#uiControl273_ndTGVFbody,
-#uiControl300_TAg1T9body,
-#uiControl305_bta9oebody,
-#uiControl319_MdUWLTbody,
-#uiControl320_Lllnfybody,
-#uiControl323_ep3oTObody {
+div[data-type="cardBody"] {
   height: 85vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background: #f4f4f4;
+  width: 100%;
+  overflow-x: hidden;
 }
 div[data-type="tabs:content"] > div:first-child {
   height: 70vh;
@@ -79,32 +72,14 @@ div[data-type="tabs:content"] > div:first-child {
   background: #f4f4f4;
   padding: 0;
 }
-div[data-ysp-modelid="managerSignNew"] .card,
-div[data-ysp-modelid="chairmanSignNew"] .card,
-div[data-ysp-modelid="mainLeaderSignNew"] .card,
-div[data-ysp-modelid="innerCommunication"] .card,
-div[data-ysp-modelid="exceptITAssetsApplication"] .card,
-div[data-ysp-modelid="sendDocProcessNew"] .card,
-div[data-ysp-modelid="docApprovalListNew"] .card,
-div[data-ysp-modelid="02reeCreate"] .card,
-div[data-ysp-modelid="ITdeviceAppply"] .card,
-div[data-ysp-modelid="officeSuppliesApply"] .card {
+.card {
   margin: 0;
   border-radius: none;
   box-shadow: none;
   background: #fff;
   color: #333;
 }
-div[data-ysp-modelid="managerSignNew"] .card-body,
-div[data-ysp-modelid="chairmanSignNew"] .card-body,
-div[data-ysp-modelid="mainLeaderSignNew"] .card-body,
-div[data-ysp-modelid="innerCommunication"] .card-body,
-div[data-ysp-modelid="exceptITAssetsApplication"] .card-body,
-div[data-ysp-modelid="sendDocProcessNew"] .card-body,
-div[data-ysp-modelid="docApprovalListNew"] .card-body,
-div[data-ysp-modelid="02reeCreate"] .card-body,
-div[data-ysp-modelid="ITdeviceAppply"] .card-body,
-div[data-ysp-modelid="officeSuppliesApply"] .card-body {
+.card-body {
   padding: 0;
   margin: 0;
 }
@@ -3426,6 +3401,9 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
 div[data-ysp-modelid="fundSeal"] .ysp-manager-audit-title-icon,
 div[data-ysp-modelid='createFundSeal'] .ysp-manager-audit-title-icon {
   border-top: 10px solid #f4f4f4;
+}
+div[data-ysp-modelid='createFundSeal'] .ysp_fundSeal_topTitle {
+  margin-top: 40px;
 }
 div[data-ysp-modelid="setBackFlowStep"] .ysp_flowStep_wrapper {
   margin-top: 40px;

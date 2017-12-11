@@ -80,12 +80,14 @@ ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
     height: 100vh;
     overflow: auto;
 }
-//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动，按顺序依次managerSignNew/mainLeaderSignNew/innerCommunication/exceptITAssetsApplication/sendDocProcessNew/docApprovalListNew/02reeCreate/ITdeviceAppply/officeSuppliesApply
-#uiControl240_lcFRXVbody,#uiControl241_LVqr6ibody,#uiControl242_Gr2ZsBbody,#uiControl254_pZRQ8nbody,#uiControl273_ndTGVFbody,#uiControl300_TAg1T9body,#uiControl305_bta9oebody,#uiControl319_MdUWLTbody,#uiControl320_Lllnfybody,#uiControl323_ep3oTObody{
+//头部滑动的问题，设置中间有表单元素所在的组件高度和滚动
+div[data-type="cardBody"]{
   height: 85vh;
   overflow-y:auto;
   -webkit-overflow-scrolling: touch;
   background: #f4f4f4;
+  width: 100%;
+  overflow-x:hidden;
 }
 div[data-type="tabs:content"]{
   >div:first-child{
@@ -97,19 +99,18 @@ div[data-type="tabs:content"]{
     padding: 0;
   }
 }
-div[data-ysp-modelid="managerSignNew"],div[data-ysp-modelid="chairmanSignNew"],div[data-ysp-modelid="mainLeaderSignNew"],div[data-ysp-modelid="innerCommunication"],div[data-ysp-modelid="exceptITAssetsApplication"],div[data-ysp-modelid="sendDocProcessNew"],div[data-ysp-modelid="docApprovalListNew"],div[data-ysp-modelid="02reeCreate"],div[data-ysp-modelid="ITdeviceAppply"],div[data-ysp-modelid="officeSuppliesApply"]{
-  .card{
-    margin: 0;
-    border-radius: none;
-    box-shadow: none;
-    background: #fff;
-    color: #333;
-  }
-  .card-body{
-    padding: 0;
-    margin: 0;
-  }
+.card{
+  margin: 0;
+  border-radius: none;
+  box-shadow: none;
+  background: #fff;
+  color: #333;
 }
+.card-body{
+  padding: 0;
+  margin: 0;
+}
+
 //底部过低的样式问题
 .ysp-process-form-wrapper,.ysp-process-form-bottom-button,.load-more-data{
   margin-bottom: 35px;
@@ -3141,6 +3142,11 @@ div[data-ysp-modelid="fundSeal"],div[data-ysp-modelid='createFundSeal']{
   }
   .ysp-manager-audit-title-icon{
     border-top: 10px solid #f4f4f4;
+  }
+}
+div[data-ysp-modelid='createFundSeal']{
+  .ysp_fundSeal_topTitle{
+    margin-top: 40px;
   }
 }
 div[data-ysp-modelid="setBackFlowStep"]{
