@@ -201,32 +201,6 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control186_0cNZSV": {
-      "location": {
-        "data": {
-          "tagName": "FORM"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control186_0cNZSV"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control187_rtZ3NM": {
       "location": {
         "data": {
@@ -679,6 +653,27 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control62_PTJuy0": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control62_PTJuy0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -687,7 +682,6 @@
         "control181_Te79o8",
         "control182_zLqMWx",
         "control185_gpMdht",
-        "control186_0cNZSV",
         "control187_rtZ3NM",
         "control188_Hv3PUk",
         "control189_z2JfzJ",
@@ -700,7 +694,8 @@
         "control303_Pk9utU",
         "control328_i5EWKh",
         "control329_I37BO3",
-        "control339_QVZvtW"
+        "control339_QVZvtW",
+        "control62_PTJuy0"
       ],
       "anchors": [
         "control180_sVkaTO"
@@ -747,16 +742,6 @@
         {
           "toContextId": "context5_DhOsrK",
           "toModelId": "managerAuditRelatedDoc"
-        }
-      ]
-    },
-    "flow110_UlrocC": {
-      "fromContextId": "context26_SWrdGB",
-      "fromAction": "doAction",
-      "fromControlId": "control186_0cNZSV",
-      "toContexts": [
-        {
-          "toContextId": "context26_SWrdGB"
         }
       ]
     },
@@ -831,6 +816,16 @@
           "toContextId": "context26_SWrdGB"
         }
       ]
+    },
+    "flow219_DBG9UU": {
+      "fromContextId": "context26_SWrdGB",
+      "fromAction": "doAction",
+      "fromControlId": "control62_PTJuy0",
+      "toContexts": [
+        {
+          "toContextId": "context26_SWrdGB"
+        }
+      ]
     }
   },
   "pages": {
@@ -853,26 +848,52 @@
           }
         },
         {
-          "id": "uiControl161_PBTQh5",
+          "id": "uiControl72_AGOSRR",
           "display": {
-            "type": "tabs",
-            "adapterId": "tabs",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
               "templateType": ""
             }
           },
           "layout": [
             {
-              "id": "uiControl161_PBTQh5item",
+              "id": "uiControl72_AGOSRRheader",
               "display": {
-                "tabTitle": "流程表单",
-                "type": "tabItem",
-                "adapterId": "tabItem",
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl72_AGOSRRbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
                 "adapter": {
                   "templateType": ""
                 }
               },
               "layout": [
+                {
+                  "id": "uiControl74_yJynI0",
+                  "controlId": "control62_PTJuy0",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl74_yJynI0",
+                        "onGetTemplate": "getTemplate_uiControl74_yJynI0"
+                      }
+                    }
+                  }
+                },
                 {
                   "id": "uiControl163_guMTBX",
                   "controlId": "control182_zLqMWx",
@@ -1024,21 +1045,6 @@
                   }
                 },
                 {
-                  "id": "uiControl292_ACuQ09",
-                  "controlId": "control303_Pk9utU",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl292_ACuQ09",
-                        "onGetTemplate": "getTemplate_uiControl292_ACuQ09"
-                      }
-                    }
-                  }
-                },
-                {
                   "id": "uiControl328_AFvhFg",
                   "controlId": "control328_i5EWKh",
                   "display": {
@@ -1049,6 +1055,21 @@
                       "events": {
                         "onDoAction": "doAction_uiControl328_AFvhFg",
                         "onGetTemplate": "getTemplate_uiControl328_AFvhFg"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl292_ACuQ09",
+                  "controlId": "control303_Pk9utU",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl292_ACuQ09",
+                        "onGetTemplate": "getTemplate_uiControl292_ACuQ09"
                       }
                     }
                   }
@@ -1071,32 +1092,15 @@
               ]
             },
             {
-              "id": "uiControl162_zmQvLr",
+              "id": "uiControl72_AGOSRRfooter",
               "display": {
-                "tabTitle": "流转意见",
-                "type": "tabItem",
-                "adapterId": "tabItem",
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
                 "adapter": {
                   "templateType": ""
                 }
               },
-              "layout": [
-                {
-                  "id": "uiControl167_TE9K0F",
-                  "controlId": "control186_0cNZSV",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl167_TE9K0F",
-                        "onGetTemplate": "getTemplate_uiControl167_TE9K0F"
-                      }
-                    }
-                  }
-                }
-              ]
+              "layout": []
             }
           ]
         },
@@ -1614,6 +1618,58 @@
             "x-tab-with-icon",
             "x-toolbar",
             "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_edit",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row",
+            "ysp_load_haha"
           ]
         ]
       }

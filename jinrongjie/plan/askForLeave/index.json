@@ -275,46 +275,6 @@
       "text": "北京金融街投资（集团）未考勤申报审批流程",
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     },
-    "control72_kANAED": {
-      "location": {
-        "data": {
-          "tagName": "TBODY"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "XPath",
-              "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody"
-            }
-          ],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]/TBODY[1]",
-              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
-              "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
-              "descendant::DIV[@id=\"requestlogappednDiv\"]//TBODY"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control72_kANAED"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control63_xKq6K5": {
       "location": {
         "data": {
@@ -537,6 +497,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -561,6 +525,86 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control353_NCEe9F": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody\n"
+            }
+          ],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]/TBODY[1]",
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
+              "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
+              "descendant::DIV[@id=\"requestlogappednDiv\"]//TBODY"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control353_NCEe9F"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control354_z9TzXd": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody\n"
+            }
+          ],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]/TBODY[1]",
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
+              "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
+              "descendant::DIV[@id=\"requestlogappednDiv\"]//TBODY"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control354_z9TzXd"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -568,12 +612,13 @@
       "controls": [
         "control55_pqOP4L",
         "control58_TraKH5",
-        "control72_kANAED",
         "control63_xKq6K5",
         "control82_Oe1sOv",
         "control84_nadrbI",
         "control253_CceTIQ",
-        "control325_ShT5Sw"
+        "control325_ShT5Sw",
+        "control353_NCEe9F",
+        "control354_z9TzXd"
       ],
       "anchors": [
         "control79_xTNUQB"
@@ -621,16 +666,6 @@
         }
       ]
     },
-    "flow44_EATotu": {
-      "fromContextId": "context11_ksSRDp",
-      "fromAction": "doAction",
-      "fromControlId": "control72_kANAED",
-      "toContexts": [
-        {
-          "toContextId": "context11_ksSRDp"
-        }
-      ]
-    },
     "flow43_L409gW": {
       "fromContextId": "context11_ksSRDp",
       "fromAction": "doAction",
@@ -672,6 +707,16 @@
           "toContextId": "context11_ksSRDp"
         }
       ]
+    },
+    "flow215_QDfrqi": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control353_NCEe9F",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        }
+      ]
     }
   },
   "pages": {
@@ -694,26 +739,67 @@
           }
         },
         {
-          "id": "uiControl55_TbO50e",
+          "id": "uiControl354_e497Tn",
           "display": {
-            "type": "tabs",
-            "adapterId": "tabs",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
               "templateType": ""
             }
           },
           "layout": [
             {
-              "id": "uiControl55_TbO50eitem",
+              "id": "uiControl354_e497Tnheader",
               "display": {
-                "tabTitle": "流程表单",
-                "type": "tabItem",
-                "adapterId": "tabItem",
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl354_e497Tnbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
                 "adapter": {
                   "templateType": ""
                 }
               },
               "layout": [
+                {
+                  "id": "uiControl355_5U8pzk",
+                  "controlId": "control353_NCEe9F",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl355_5U8pzk",
+                        "onGetTemplate": "getTemplate_uiControl355_5U8pzk"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl62_Vo60es",
+                  "controlId": "control354_z9TzXd",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl62_Vo60es",
+                        "onGetTemplate": "getTemplate_uiControl62_Vo60es"
+                      }
+                    }
+                  }
+                },
                 {
                   "id": "uiControl69_kfEJEA",
                   "controlId": "control82_Oe1sOv",
@@ -777,32 +863,15 @@
               ]
             },
             {
-              "id": "uiControl56_B9F7Gv",
+              "id": "uiControl354_e497Tnfooter",
               "display": {
-                "tabTitle": "流转意见",
-                "type": "tabItem",
-                "adapterId": "tabItem",
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
                 "adapter": {
                   "templateType": ""
                 }
               },
-              "layout": [
-                {
-                  "id": "uiControl62_0AZpsK",
-                  "controlId": "control72_kANAED",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl62_0AZpsK",
-                        "onGetTemplate": "getTemplate_uiControl62_0AZpsK"
-                      }
-                    }
-                  }
-                }
-              ]
+              "layout": []
             }
           ]
         },
@@ -873,7 +942,8 @@
           "未考勤申报审批流程（新）-张济天-2017-10-20",
           "请假/公出流程(新)-张济天-2017-10-18",
           "请假/公出流程(新)-张济天-2017-11-10",
-          "请假/公出流程(新)-张济天-2017-11-23"
+          "请假/公出流程(新)-张济天-2017-11-23",
+          "请假/公出流程(新)-张济天-2017-12-08"
         ]
       }
     },
@@ -889,7 +959,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162835&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312801&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=425647&isovertime=0",
-          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8241&isagent=0&beagenter=0"
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8241&isagent=0&beagenter=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=527987&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context10_sJa5NJ": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
@@ -1488,6 +1559,57 @@
             "x-tab-with-icon",
             "x-toolbar",
             "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row",
+            "ysp_load_haha"
           ]
         ],
         "context10_Tp4yhH": [

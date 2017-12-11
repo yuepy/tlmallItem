@@ -56,20 +56,13 @@ h5 {
   height: 100vh;
   overflow: auto;
 }
-#uiControl240_lcFRXVbody,
-#uiControl241_LVqr6ibody,
-#uiControl242_Gr2ZsBbody,
-#uiControl254_pZRQ8nbody,
-#uiControl273_ndTGVFbody,
-#uiControl300_TAg1T9body,
-#uiControl305_bta9oebody,
-#uiControl319_MdUWLTbody,
-#uiControl320_Lllnfybody,
-#uiControl323_ep3oTObody {
+div[data-type="cardBody"] {
   height: 85vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background: #f4f4f4;
+  width: 100%;
+  overflow-x: hidden;
 }
 div[data-type="tabs:content"] > div:first-child {
   height: 70vh;
@@ -79,32 +72,14 @@ div[data-type="tabs:content"] > div:first-child {
   background: #f4f4f4;
   padding: 0;
 }
-div[data-ysp-modelid="managerSignNew"] .card,
-div[data-ysp-modelid="chairmanSignNew"] .card,
-div[data-ysp-modelid="mainLeaderSignNew"] .card,
-div[data-ysp-modelid="innerCommunication"] .card,
-div[data-ysp-modelid="exceptITAssetsApplication"] .card,
-div[data-ysp-modelid="sendDocProcessNew"] .card,
-div[data-ysp-modelid="docApprovalListNew"] .card,
-div[data-ysp-modelid="02reeCreate"] .card,
-div[data-ysp-modelid="ITdeviceAppply"] .card,
-div[data-ysp-modelid="officeSuppliesApply"] .card {
+.card {
   margin: 0;
   border-radius: none;
   box-shadow: none;
   background: #fff;
   color: #333;
 }
-div[data-ysp-modelid="managerSignNew"] .card-body,
-div[data-ysp-modelid="chairmanSignNew"] .card-body,
-div[data-ysp-modelid="mainLeaderSignNew"] .card-body,
-div[data-ysp-modelid="innerCommunication"] .card-body,
-div[data-ysp-modelid="exceptITAssetsApplication"] .card-body,
-div[data-ysp-modelid="sendDocProcessNew"] .card-body,
-div[data-ysp-modelid="docApprovalListNew"] .card-body,
-div[data-ysp-modelid="02reeCreate"] .card-body,
-div[data-ysp-modelid="ITdeviceAppply"] .card-body,
-div[data-ysp-modelid="officeSuppliesApply"] .card-body {
+.card-body {
   padding: 0;
   margin: 0;
 }
@@ -1816,41 +1791,36 @@ li {
 .ysp-serch-content-search {
   margin-top: 20px;
 }
-div[data-ysp-modelid='hetong01'] ._2YwloE7OzAhaMwSn1XM-Va {
-  border-bottom: 0;
-}
-div[data-ysp-modelid='hetong01'] ._27gZE6m5LfD5uG_dZ8p3iP {
+div[data-ysp-modelid='hetong01'] {
   margin: 0;
+  padding: 0!important;
 }
-div[data-ysp-modelid='hetong01'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ {
+div[data-ysp-modelid='hetong01'] ._2kVn_YrAvZeioJhwcvsdtZ {
   background: none;
   border-bottom: 10px solid #F3F3F3;
 }
-div[data-ysp-modelid='hetong01'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li a {
+div[data-ysp-modelid='hetong01'] ._2kVn_YrAvZeioJhwcvsdtZ li a {
   width: auto;
   display: inline;
 }
-div[data-ysp-modelid='hetong01'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
+div[data-ysp-modelid='hetong01'] ._2kVn_YrAvZeioJhwcvsdtZ li ._2SrmNlTKE-eTC-YLPVDF-2 {
   background: none;
   border-bottom: 3px solid #C29A2A;
   color: #C29A2A;
   padding: 3px 0;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu {
-  padding: 0!important;
-}
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box {
   background: #fff;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .ysp_emergency {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
   margin-bottom: 5px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency .emergencyCheck {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .ysp_emergency .emergencyCheck {
   float: right;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency .emergencyCheck span {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .ysp_emergency .emergencyCheck span {
   border: 1px solid #666;
   color: #666;
   border-radius: 10px;
@@ -1860,11 +1830,11 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   font-size: 12px;
   margin-right: 10px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .ysp_emergency .emergencyCheck .egyactive {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .ysp_emergency .emergencyCheck .egyactive {
   border: 1px solid #A1E15C;
   color: #A1E15C;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box select {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box select {
   background: none;
   border: 0;
   border: 1px solid #E0E0E0;
@@ -1877,39 +1847,39 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   background: url(../local/img/xiajiantou.png) no-repeat 98% center;
   background-size: 18px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .header_box {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .header_box {
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .header_box center:nth-child(2) {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .header_box center:nth-child(2) {
   font-size: 14px;
   color: #666666;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .header_box center:nth-child(1) {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .header_box center:nth-child(1) {
   color: #000;
   font-weight: bold;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .center_box {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .center_box {
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .center_box .center_tb {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .center_box .center_tb {
   padding-left: 15px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box {
   padding: 10px 0;
   border-bottom: 10px solid #F3F3F3;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .bottom_tb {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .bottom_tb {
   padding-left: 15px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .bottom_tb > *:nth-child(n+11) {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .bottom_tb > *:nth-child(n+11) {
   display: none;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_less {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .button_less {
   display: none;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_less span:before {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .button_less span:before {
   margin-right: 10px;
   content: '';
   width: 20px;
@@ -1918,7 +1888,7 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   background: url(../local/img/shangjiantou.png) no-repeat 0 5px;
   background-size: 100%;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_more span:before {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .button_more span:before {
   margin-right: 10px;
   content: '';
   width: 20px;
@@ -1927,19 +1897,19 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   background: url(../local/img/xiajiantou.png) no-repeat 0 5px;
   background-size: 100%;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .ysp_button_more {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .ysp_button_more {
   height: 40px;
   line-height: 50px;
   text-align: center;
   font-size: 14px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .name {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .name {
   border-bottom: 1px solid #EDEDED;
   padding-bottom: 10px;
   color: #202020;
   font-size: 15px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box input {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box input {
   background: none;
   border: 0;
   border-bottom: 1px solid #EDEDED;
@@ -1949,21 +1919,21 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   display: block;
   width: 100%;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .file_box .file {
   position: relative;
   margin: 10px 15px 10px 0;
   border-radius: 3px;
   padding: 5px 0 5px 50px;
   background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file > div:nth-child(1) {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .file_box .file > div:nth-child(1) {
   font-size: 15px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file > div:nth-child(2) {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .file_box .file > div:nth-child(2) {
   font-size: 14px;
   color: #717171;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file button {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .file_box .file button {
   position: absolute;
   right: 20px;
   top: 18px;
@@ -1973,21 +1943,21 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   background: url(../local/img/download.png) no-repeat 0;
   background-size: 20px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file2 {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .file_box .file2 {
   position: relative;
   margin: 10px 15px 10px 0;
   border-radius: 3px;
   padding: 5px 0 5px 50px;
   background: #EDEDED url(../local/img/txt.png) no-repeat 10px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file2 > div:nth-child(1) {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .file_box .file2 > div:nth-child(1) {
   font-size: 15px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file2 > div:nth-child(2) {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .file_box .file2 > div:nth-child(2) {
   font-size: 14px;
   color: #717171;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .file_box .file2 button {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .file_box .file2 button {
   position: absolute;
   right: 20px;
   top: 18px;
@@ -1997,7 +1967,7 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   background: url(../lib/images/deleteM.png) no-repeat 0;
   background-size: 15px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .textArea {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .textArea {
   min-height: 30px;
   border-bottom: 1px solid #EDEDED;
   line-height: 30px;
@@ -2005,28 +1975,28 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   color: #202020;
   font-size: 15px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .espel {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .espel {
   margin-left: -15px;
   margin-bottom: 20px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .textArea2 {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .textArea2 {
   height: 100px;
   border: 1px solid #E1E1E1;
   padding: 5px;
   font-size: 14px;
   margin-right: 15px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .textArea2 * {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .textArea2 * {
   color: #202020;
   margin-right: 15px;
   margin: 0;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .ovh {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .ovh {
   overflow: hidden;
   margin: 10px 0;
   padding: 10px 0;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .about_box {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .about_box {
   position: relative;
   width: 80%;
   float: right;
@@ -2034,16 +2004,16 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   padding-bottom: 10px;
   min-height: 30px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .about_box .box_con {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .about_box .box_con {
   width: 80%;
   word-break: break-all;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .about_box .box_con a {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .about_box .box_con a {
   margin: 3px;
   color: #202020;
   font-size: 14px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .about_box button {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .about_box button {
   position: absolute;
   right: 10px;
   top: 0;
@@ -2053,18 +2023,18 @@ div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_b
   border: 0;
   background-size: 20px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_box {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .button_box {
   min-height: 30px;
   border-bottom: 1px solid #EDEDED;
   position: relative;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_box > div {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .button_box > div {
   width: 90%;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_box > div a {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .button_box > div a {
   margin: 5px;
 }
-div[data-ysp-modelid='hetong01'] .OvsRcaoL1UILAcvWC8nMu .contractCountersigned_box .bottom_box .button_box button {
+div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .button_box button {
   position: absolute;
   right: 10px;
   top: 0px;
@@ -3426,6 +3396,9 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
 div[data-ysp-modelid="fundSeal"] .ysp-manager-audit-title-icon,
 div[data-ysp-modelid='createFundSeal'] .ysp-manager-audit-title-icon {
   border-top: 10px solid #f4f4f4;
+}
+div[data-ysp-modelid='createFundSeal'] .ysp_fundSeal_topTitle {
+  margin-top: 40px;
 }
 div[data-ysp-modelid="setBackFlowStep"] .ysp_flowStep_wrapper {
   margin-top: 40px;
