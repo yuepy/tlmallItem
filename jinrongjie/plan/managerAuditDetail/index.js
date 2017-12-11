@@ -328,7 +328,7 @@
     getData_control40_98Awiv: function (elem) {
       if (!elem) {
         return;
-      }var data = {};var leftData = [];var rightData = [];var title = [];var content = [];if (!elem.querySelector('#requestlogappednDiv')) {
+      }console.log(elem);var data = {};var leftData = [];var rightData = [];var title = [];var content = [];if (!elem.querySelector('#requestlogappednDiv')) {
         data.leftData = leftData;data.rightData = rightData;return data;
       }var divData = elem.querySelector('#requestlogappednDiv');var tableData = $(divData).children('table');var tbody = $(tableData).children('tbody');var trs = $(tbody).children('tr');if (trs.length > 1) {
         for (var i = 0; i < trs.length; i++) {
