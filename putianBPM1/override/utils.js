@@ -472,7 +472,7 @@ function getSaveFormByFormId(id,key,entity){
 	             var returnJson = nui.decode(text);
 	             if(returnJson.exception == null){
 	            	 var indexval=returnJson.indexval;
-	            	 data=year+"-"+(indexval+1);
+	            	 data=year+"-"+(indexval);
 	              }
 	         }
 	     });
