@@ -1419,7 +1419,8 @@ li {list-style: none}
   height: 100vh;
   top: 45px;
   background: #fff;
-  padding: 10px 15px;
+  // padding: 10px 15px;
+  padding: 10px 0px;
   .approval-node-info{
     margin: -15px;
     div{
@@ -2409,7 +2410,7 @@ div[data-ysp-modelid='choosePerson']{
   }
 }
 /******************************请假/公出申请单start*******************************************/
-div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ysp-modelid='createFundSeal']{
+div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='createAskForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ysp-modelid='createFundSeal']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
   }
@@ -2933,7 +2934,12 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='fundSeal'],div[data-ys
     }
   }
 }
-div[data-ysp-modelid='askForLeave']{
+div[data-ysp-modelid='createAskForLeave']{
+  .topTitle{//大标题
+    margin-top: 40px;
+  }
+}
+div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='createAskForLeave']{
   ._2YwloE7OzAhaMwSn1XM-Va{//tabs:content
     border-bottom: 0;
   }
