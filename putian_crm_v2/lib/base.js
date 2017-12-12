@@ -468,7 +468,25 @@
       if (activeBrowser) {
         var activeBrowserId = activeBrowser.id;
         if (activeBrowserId != "firstLevelIframeContainer" && activeBrowserId != "mainFrame") {
-          activeBrowser.contentWindow && activeBrowser.contentWindow.close();
+          //activeBrowser.contentWindow && activeBrowser.contentWindow.close();
+          var acWindow = activeBrowser.contentWindow;
+          var count = 0;
+          if(acWindow){
+             while(acWindow){
+               var acIframe = acWindow.frameElement;
+               count++;
+               if(count > 8){
+                 count = 0;
+                 break;
+               }
+               if(acIframe.name == 'firstLevelIframeContainer' || acIframe.name == 'mainFrame'){
+                  break;
+               }else{           
+                 acWindow.close();
+                 acWindow = acWindow.opener;
+               }
+             }
+          }
         }
       }
       //test
@@ -1287,17 +1305,17 @@
               var title = tag.title;
               title = title.trim();
               var index = ysp.customHelper.getDataIndex(titles, title);
-              if (index == 6 && titles[6].trim() == "机型编码") {
-                index += 1;
-              }
-              if (index == 7 && titles[7].trim() == "机型编码") {
-                index += 1;
-              }
-              if (title == '物料描述' || title == '机型' || title == '产品系列') {
-                if (title == '物料描述') {
-                  index = content[i][index]['content'].trim() == "" ? (content[i][index - 2]['content'].trim() == "" ? (content[i][index - 4]['content'].trim() == "" ? (content[i][index - 6]['content'].trim() == "" ? (index - 7) : index - 6) : index - 4) : index - 2) : index;
-                  index = index == 3 ? index - 1 : index;
-                }
+              // if (index == 6 && titles[6].trim() == "机型编码") {
+              //   index += 1;
+              // }
+              // if (index == 7 && titles[7].trim() == "机型编码") {
+              //   index += 1;
+              // }
+              if (title == '机型名称' || title == '机型' || title == '产品系列') {
+                // if (title == '物料描述') {
+                //   index = content[i][index]['content'].trim() == "" ? (content[i][index - 2]['content'].trim() == "" ? (content[i][index - 4]['content'].trim() == "" ? (content[i][index - 6]['content'].trim() == "" ? (index - 7) : index - 6) : index - 4) : index - 2) : index;
+                //   index = index == 3 ? index - 1 : index;
+                // }
                 if (title == '产品系列' && !ysp.customHelper.getDataIndex(titles, '客户名称')) {
                   index = content[i][index]['content'].trim() == "" ? (content[i][index + 2]['content'].trim() == "" ? (content[i][index + 4]['content'].trim() == "" ? (content[i][index - 2]['content'].trim() == "" ? index - 3 : index - 2) : index + 4) : index + 2) : index;
                 }
@@ -1313,7 +1331,7 @@
                   }
 
                 }
-                if (title == '机型') {
+                if (title == '机型' || title == '机型名称') {
                   index = content[i][index]['content'].trim() == "" ? (content[i][index + 2]['content'].trim() == "" ? (content[i][index - 2]['content'].trim() == "" ? (content[i][index - 4]['content'].trim() == "" ? 2 : index - 4) : index - 2) : index + 2) : index;
                 }
               }
