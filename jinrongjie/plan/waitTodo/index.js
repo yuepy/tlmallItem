@@ -6,7 +6,11 @@
       if (!elem) {
         return;
       }if (elem) {
-        return elem.textContent;
+        var bracket = elem.textContent.match(/\(/g);if (bracket.length == 1) {
+          return elem.textContent;
+        } else {
+          return;
+        }
       }
     },
     doAction_uiControl9_TJh8bp: function (data, elem) {
