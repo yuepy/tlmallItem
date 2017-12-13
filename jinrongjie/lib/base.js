@@ -744,10 +744,6 @@
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
-               if(topWindow.EAPI.isAndroid()){
-                    console.log('调用安卓客户端');
-                    topWindow.redcore.getUserTokenUrl();
-                  }
                   var usercookie = doc.cookie.split(';')
                   	for(var i =0;i<usercookie.length;i++){
                     if(usercookie[i].indexOf('loginid') !== -1){
