@@ -715,7 +715,7 @@
                   //当token过期时像客户端请求新的token
                    if(topWindow.EAPI.isIOS()){
                      topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
-                   }else if{
+                   }else if(topWindow.EAPI.isAndroid()){
                      topWindow.redcore.getNewToken();
                    }
                    token_flag = true;
