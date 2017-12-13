@@ -249,7 +249,9 @@
     },
     doAction_uiControl177_VFAZNf: function (data, elem) {
       var eventType = data.eventType;var btnIndex = data.dataCustom.num;if (eventType == 'click') {
-        elem.querySelectorAll('button')[btnIndex].click();
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);elem.querySelectorAll('button')[btnIndex].click();
       }
     },
     getTemplate_uiControl177_VFAZNf: function () {
