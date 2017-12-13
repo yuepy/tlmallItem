@@ -328,7 +328,9 @@
     },
     doAction_uiControl257_dCsl0B: function (data, elem) {
       var eventType = data.eventType;if (eventType == 'click') {
-        elem.click();
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);elem.click();
       }
     },
     getTemplate_uiControl257_dCsl0B: function () {
