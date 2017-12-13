@@ -713,6 +713,10 @@
                 // var actionEvent = '{"target":"null","data":"getNumber"}';
                 topWindow.tokenNum++;
                	topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
+                  if(topWindow.EAPI.isAndroid()){
+                    console.log('调用安卓客户端')
+                    topWindow.redcore.getUserTokenUrl();
+                  }
                  if(topWindow.tokenNum>1){
                   //当token过期时像客户端请求新的token
                   topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
