@@ -188,7 +188,9 @@
     },
     doAction_uiControl311_dR2t7t: function (data, elem) {
       var eventType = data.eventType;if (eventType == 'submit') {
-        elem.click();
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);elem.click();
       }
     },
     getTemplate_uiControl311_dR2t7t: function () {

@@ -615,7 +615,9 @@
     },
     doAction_uiControl254_xuvr5z: function (data, elem) {
       var clickType = data.eventType;if (clickType === 'docClick') {
-        elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());
       }
     },
     getTemplate_uiControl254_xuvr5z: function () {
@@ -639,7 +641,9 @@
     },
     doAction_uiControl259_bAH8Fh: function (data, elem) {
       var clickType = data.eventType;if (clickType === 'docClick') {
-        elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());
       }
     },
     getTemplate_uiControl259_bAH8Fh: function () {

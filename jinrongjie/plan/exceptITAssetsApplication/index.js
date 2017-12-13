@@ -248,7 +248,9 @@
     },
     doAction_uiControl271_z9RRR2: function (data, elem) {
       if (data.eventType == 'submit') {
-        elem.querySelectorAll('button')[0].click();
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);elem.querySelectorAll('button')[0].click();
       }
     },
     getTemplate_uiControl271_z9RRR2: function () {
