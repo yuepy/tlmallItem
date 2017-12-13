@@ -76,9 +76,11 @@
           elem.ownerDocument.defaultView.doSearch();var iframe = elem.ownerDocument.querySelector('#rightMenuIframe'); // if (iframe) {
           //   // elem.ownerDocument.defaultView.doSearch(); 
           //   iframe.contentDocument.querySelectorAll('div')[0].ownerDocument.defaultView.parent.doSearch();
-          var count = 0;setTimeout(function () {
-            elem.querySelector('#createrBtn').click();ysp.appMain.back();
-          }, 200);
+          // var count = 0;
+          // setTimeout(function () {
+          //   elem.querySelector('#createrBtn').click();
+          //   ysp.appMain.back();
+          // }, 200);
         } // } 
         // setTimeout(function () {
         //   ysp.appMain.hideLoading();
