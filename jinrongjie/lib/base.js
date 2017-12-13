@@ -9,13 +9,7 @@
   //数据接口 : 代办\办结角标数量
   	topWindow.tokenNum = 0;
   //接口请求格式 : 
-    var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
-    soapData = soapData + ' <SOAP:Body>';
-    soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://pub.fsig.com.cn/">';
-    soapData = soapData + ' <psCode>101160</psCode>';
-    soapData = soapData + ' </GetTodoCountInfoByPsCode>';
-    soapData = soapData + ' </SOAP:Body>';
-    soapData = soapData + ' </SOAP:Envelope>';
+  	topWindow.userid = ''
   //安卓客户端调用 : 获取token链接
     topWindow.yspTokenUrl = function(url) {
         topWindow.tokenUrl = url;
@@ -712,10 +706,11 @@
               	aWin.addEventListener('DOMContentLoaded', function() {
                 // var actionEvent = '{"target":"null","data":"getNumber"}';
                 topWindow.tokenNum++;
-               	topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
                   if(topWindow.EAPI.isAndroid()){
-                    console.log('调用安卓客户端')
+                    console.log('调用安卓客户端');
                     topWindow.redcore.getUserTokenUrl();
+                  }else if(topWindow.EAPI.isIOS()){
+                    topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
                   }
                  if(topWindow.tokenNum>1){
                   //当token过期时像客户端请求新的token
@@ -740,6 +735,20 @@
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
+                  var usercookie = doc.cookie.split(';')
+                  	for(var i =0;i<usercookie.length;i++){
+                    if(usercookie[i].indexOf('loginid') !== -1){
+                      topWindow.userid= usercookie[i].split('=')[1];
+                      // console.log(topWindow.userid)
+                    }
+                }
+                  var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
+                      soapData = soapData + ' <SOAP:Body>';
+                      soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://pub.fsig.com.cn/">';
+                      soapData = soapData + ' <psCode>'+topWindow.userid+'</psCode>';
+                      soapData = soapData + ' </GetTodoCountInfoByPsCode>';
+                      soapData = soapData + ' </SOAP:Body>';
+                      soapData = soapData + ' </SOAP:Envelope>';
                 var xmlhttp = new XMLHttpRequest();
               if(topWindow.EAPI.isIOS()){
                 	xmlhttp.open("post",'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
@@ -750,10 +759,9 @@
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
-                      console.log(xmldoc);
                         topWindow.num.push(xmldoc.getElementsByTagName('return')[0].getElementsByTagName('todoCount')[0].textContent, xmldoc.getElementsByTagName('return')[0].getElementsByTagName('unreadCount')[0].textContent);
                     }else if(xmlhttp.status == 400){
-                      topWindow.num.push('请求失败!')
+                      topWindow.num.push('请求失败!');
                     }
                 }
                 xmlhttp.send(soapData);
