@@ -707,30 +707,39 @@
                 // var actionEvent = '{"target":"null","data":"getNumber"}';
                 topWindow.tokenNum++;
                   if(topWindow.EAPI.isAndroid()){
-                    console.log('调用安卓客户端');
-                    topWindow.redcore.getUserTokenUrl();
+                    topWindow.AndroidTokenurl = topWindow.redcore.getUserTokenUrl();
                   }else if(topWindow.EAPI.isIOS()){
                     topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
                   }
                  if(topWindow.tokenNum>1){
                   //当token过期时像客户端请求新的token
-                  topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
+                   if(topWindow.EAPI.isIOS()){
+                     topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
+                   }else if{
+                     topWindow.redcore.getNewToken();
+                   }
+                   token_flag = true;
                 }
                 sessionStorage.setItem('getToken', true);
-                token_flag = true;
               },false);
             }
             // },false);
             /*  获取token地址  */
             if (token_flag) {
-                console.log(topWindow.tokenUrl);
-                console.log('拿到客户端给我的token地址');
+              if(topWindow.EAPI.isIOS()){
+                 console.log('拿到客户端给我的token地址'+topWindow.tokenUrl);
+              }else if(topWindow.EAPI.isAndroid()){
+                console.log('拿到客户端给我的token地址'+topWindow.AndroidTokenurl);
+              }
                 token_flag = false;
-              // 	var oldHref = aWin.location.href;
-              // if(oldHref){
-              //   aWin.location.href = "http://192.168.200.63/login/Login.jsp"+topWindow.tokenUrl;
-              //   aWin.open(oldHref,'');
-              // }
+              	var oldHref = aWin.location.href;
+              if(oldHref && topWindow.EAPI.isIOS()){
+                aWin.location.href = "http://192.168.200.63/login/Login.jsp"+topWindow.tokenUrl;
+                // aWin.open(oldHref,'');
+              }else if(oldHref && topWindow.EAPI.isAndroid()){
+                console.log(topWindow.AndroidTokenurl);
+                aWin.location.href = topWindow.AndroidTokenurl;
+              }
             }
             /*  获取token地址  */
             /* ajax请求角标数据 */
