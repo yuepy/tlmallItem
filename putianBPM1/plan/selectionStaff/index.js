@@ -55,7 +55,7 @@
     },
     doAction_uiControl76_8GSLBG: function (data, elem) {
       if (data.eventType == "click") {
-        var d = data.dataCustom;var num = parseInt(d) + 2;var _input = elem.querySelectorAll("tr")[num].querySelector("input");window._input = _input;window._input.focus();window._input.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.click();console.log('1');
+        var d = data.dataCustom;var num = parseInt(d) + 2;var _input = elem.querySelectorAll("tr")[num].querySelector("input");window._input = _input;window._input.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.click();
       }
     },
     getTemplate_uiControl76_8GSLBG: function () {
