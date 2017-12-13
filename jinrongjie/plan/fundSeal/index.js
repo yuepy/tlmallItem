@@ -192,7 +192,9 @@
     },
     doAction_uiControl157_cyBhVF: function (data, elem) {
       var eventType = data.eventType;var btnIndex = data.dataCustom.num;if (eventType == 'click') {
-        elem.querySelectorAll('button')[btnIndex].click();console.log(elem.querySelectorAll('button')[btnIndex]);
+        elem.querySelectorAll('button')[btnIndex].click();setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);
       }
     },
     getTemplate_uiControl157_cyBhVF: function () {
