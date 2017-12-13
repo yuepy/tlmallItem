@@ -173,7 +173,9 @@
     },
     doAction_uiControl70_cTSkQ7: function (data, elem) {
       var clickType = data.eventType;if (clickType === 'docClick') {
-        elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());
       }
     },
     getTemplate_uiControl70_cTSkQ7: function getTemplate_uiControl70_cTSkQ7() {
@@ -197,7 +199,9 @@
     },
     doAction_uiControl73_3XmTyc: function (data, elem) {
       var clickType = data.eventType;if (clickType === 'docClick') {
-        elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());
       }
     },
     getTemplate_uiControl73_3XmTyc: function getTemplate_uiControl73_3XmTyc() {
