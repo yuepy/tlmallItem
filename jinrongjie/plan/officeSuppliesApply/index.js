@@ -276,11 +276,17 @@
     getData_control101_BtLdvd: function (elem) {},
     doAction_uiControl89_AAi0kp: function (data, elem) {
       if (data.eventType == 'click') {
-        ysp.customHelper.back();
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);ysp.customHelper.back();
       }if (data.eventType == 'save1') {
-        $(elem).click();
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);$(elem).click();
       }if (data.eventType == 'edit') {
-        $(elem).children('button').eq(3).click();
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);$(elem).children('button').eq(3).click();
       }
     },
     getTemplate_uiControl89_AAi0kp: function getTemplate_uiControl89_AAi0kp() {
