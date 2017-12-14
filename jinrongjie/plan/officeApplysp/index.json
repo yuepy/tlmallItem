@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330443&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
   "jsFile": "index.js",
   "requires": {
-    "processToSend": "../processToSend/index.json"
+    "processToSend": "../processToSend/index.json",
+    "setBack": "../setBack/index.json"
   },
   "chineseName": "办公用品申领审批流程待办",
   "description": "",
@@ -299,6 +300,10 @@
         {
           "toContextId": "context10_Tp4yhH",
           "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context8_QbFt5N",
+          "toModelId": "setBack"
         }
       ]
     },
@@ -468,6 +473,11 @@
           "192.168.200.63/workflow/request/Remark.jsp?requestid=312801&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=434508&workflowRequestLogId=0",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=425655&workflowRequestLogId=0"
+        ],
+        "context8_QbFt5N": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D312801%26workflowid%3D8061%26nodeid%3D121110%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D380989%26workflowid%3D605%26nodeid%3D3285%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D%26isFreeNode%3D",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D425655%26workflowid%3D2021%26nodeid%3D17337%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D"
         ]
       }
     },
