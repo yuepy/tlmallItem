@@ -31,7 +31,7 @@
       if (!elem) {
         return;
       }var data = {};var title = ["日常工作", "公文管理", "合同管理", "固定资产", "人事考勤", "财务管理", '人力资源费用管理', "三会文件"];var listBox = '';var header = [];var content, imgFlag;var href, Thref;var newList = {};var contents = [];var titleData = []; //存储已完成未完成数据
-      if (elem.querySelectorAll('.listbox2').length > 0) {
+      var firstTitle;if (elem.querySelectorAll('.listbox2').length > 0) {
         listBox = elem.querySelectorAll('.listbox2');
       } else if (elem.querySelectorAll('.listbox').length > 0) {
         listBox = elem.querySelectorAll('.listbox');
@@ -60,9 +60,11 @@
                 }
               }newList.imgFlag = imgFlag;
             }contents.push({ title: newList.title, titleHref: Thref, content: newList.context, href: newList.href, index: newList.index, //new图片标识
-              imgpicture: newList.imgFlag });if (newList.title.indexOf('日常工作') !== -1) {
-              var titleDoc = elem.ownerDocument.defaultView.document.querySelectorAll('.title');for (var title_index = 0; title_index < titleDoc.length; title_index++) {
-                var single_title = {};single_title.index = newList.index;single_title.title = titleDoc[titleData.length].textContent.replace(/\s/g, '');titleData.push(single_title);break;
+              imgpicture: newList.imgFlag });firstTitle = contents[0].title.replace(/\s/g, '');if (newList.title.indexOf(firstTitle.slice(0, firstTitle.indexOf('('))) !== -1) {
+              var titleDoc = elem.ownerDocument.defaultView.document.querySelectorAll('.title');if (titleDoc) {
+                for (var title_index = 0; title_index < titleDoc.length; title_index++) {
+                  var single_title = {};single_title.index = newList.index;single_title.title = titleDoc[titleData.length].textContent.replace(/\s/g, '');titleData.push(single_title);break;
+                }
               }
             }break;
           }
