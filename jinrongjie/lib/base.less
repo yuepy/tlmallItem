@@ -2505,16 +2505,17 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='createAskForLeave'],di
           }
         .downLoadFile,.upLoadFile{
           background: #f4f4f4;
-          padding: 5px 0;
+          padding: 10px 5px;
           border-bottom: 5px solid #fff;
           
           .txt,.doc,.xls,.pdf,.ppt,.else,.pic,.zip,.rar{
-              float: left;
-              background: url("../local/img/txt.png") no-repeat;
-              background-size: 20px;
-              height: 20px;
-              width: 20px;
-            }
+            float: left;
+            background: url("../local/img/txt.png") no-repeat;
+            background-size: 20px;
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
+          }
           .doc{
             background: url("../lib/images/word1x.png") no-repeat;
             background-size: 20px;
@@ -2547,16 +2548,20 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='createAskForLeave'],di
             background: url("../lib/images/defaultDocument.png") no-repeat;
             background-size: 20px;
           }
-          .uploadIcon,.downloadIcon{
+          .uploadIcon,.downloadIcon,.upDownUploadIcon{
             float: right;
             background: url("../lib/images/download.png") no-repeat;
-            background-size: 10px;
             height: 15px;
             width: 15px;
+            margin-top: 5px;
           }
-          .uploadIcon{
+          .uploadIcon,.upDownUploadIcon{
             background: url("../lib/images/deleteM.png") no-repeat;
             background-size: 10px;
+            background-position: 2px 5px;
+            width: 20px;
+            margin-left: 30px;
+            margin-top: 0;
           }
         }
        	.upLoading,.Loading{
@@ -2575,6 +2580,7 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='createAskForLeave'],di
               background-size: 20px;
               height: 20px;
               width: 20px;
+              margin-right: 5px;
             }
             .doc{
               background: url("../lib/images/word1x.png") no-repeat;
@@ -2625,13 +2631,14 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='createAskForLeave'],di
           >div{
             background: #f4f4f4;
             border-bottom: 10px solid #fff;
-            padding: 5px 0;
+            padding: 10px 5px;
             .txt,.doc,.xls,.pdf,.ppt,.else,.zip,.rar,.pic{
               float: left;
               background: url("../local/img/txt.png") no-repeat;
               background-size: 20px;
               height: 20px;
               width: 20px;
+              margin-right: 5px;
             }
             .doc{
               background: url("../lib/images/word1x.png") no-repeat;
@@ -2670,7 +2677,9 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='createAskForLeave'],di
               background: url("../lib/images/deleteM.png") no-repeat;
               background-size: 10px;
               height: 15px;
-              width: 15px;
+              background-position: 2px 5px;
+              width: 20px;
+              margin-left: 30px;
             }
           }
         }
