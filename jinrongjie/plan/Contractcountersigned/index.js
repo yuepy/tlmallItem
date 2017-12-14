@@ -35,35 +35,76 @@
       }
     },
     getTemplate_uiControl20_W3PmsR: function getTemplate_uiControl20_W3PmsR() {
-      var selfTemplate = 'module.exports = React.createClass({\n  componentDidMount:function(){\n    var outer=this.refs.list.ownerDocument.querySelector(\'.view-wrapper\');\n    setTimeout(function(){\n      outer.scrollTop=0\n    },50)\n  },\n  componentDidUpdate:function(){\n    YSP.appRenderer.hideLoading();\n  },\n  click:function(e){\n    YSP.appRenderer.showLoading();\n    var handler = this.props.customHandler;\n    if(e.target.tagName == \'SECTION\'){\n      var _target = e.target;\n    }\n    else if(e.target.className==\'hthq_n1\'){\n      var _target = e.target.parentElement;\n    }\n    else if(e.target.className==\'ht_n2\'){\n      var _target = e.target.parentElement;\n      if(_target.className == \'hidd\'){\n        _target = _target.parentElement;\n      }\n    }\n    else if(e.target.className==\'hidd\'){\n      var _target = e.target.parentElement;\n    }\n     else if(e.target.parentElement.tagName==\'hthq_n1\'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    else if(e.target.parentElement.tagName==\'ht_n2\' && e.target.className !==\'xjt\' && e.target.className !==\'sjt\'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    else if(e.target.tagName == \'SPAN\' && e.target.className !==\'xjt\' && e.target.className !==\'sjt\'){\n      var _target = e.target.parentElement.parentElement;\n      if(_target.className == \'hidd\'){\n        var _target = _target.parentElement;\n      }\n    }\n    else if(e.target.tagName == \'DIV\' && e.target.parentElement.className ==\'hthq_n1\'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    if(handler){\n      handler({\n        eventType:\'click\',\n        data:_target.getAttribute(\'data-index\')\n      })\n    }\n  },\n  xjt:function(e){\n    var lth = e.target.getAttribute(\'data-index\')\n    var elem = e.target.ownerDocument.getElementsByClassName(\'hidd\')[lth];\n       if(elem.style.display == \'none\'){\n        elem.style.display = \'block\';\n        e.target.className=\'sjt\';\n      }else{\n        elem.style.display = \'none\';\n        e.target.className=\'xjt\';\n      } \n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this =this;\n    if(data){\n      var item = data.contents.content.map(function(d,i){\n      return (<section data-index = {i} onClick={_this.click} ref="list">\n          <div className=\'hthq_n1\'>\n            <div>{data.contents.titles[6] == \'\u8BF7\u6C42\u6807\u9898\'?d[6]:d[4]}{data.img[i]==""? "":<span className={data.img[i]=="redImg"? "redImg":"godImg"}></span>}</div>\n            {d[5] ==\'\u6B63\u5E38\' ? <div className=\'zc\'></div> : (d[5] == \'\u91CD\u8981\' ? <div className=\'zy\'></div>: <div className=\'jj\'></div>)}\n          </div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[3]}</span><span>{d[3]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[0]}</span><span>{d[0]}</span><span data-index={i} onClick= {_this.xjt} className=\'xjt\'></span></div>\n          <div className=\'hidd\' style={{display:\'none\'}}>\n          <div className=\'ht_n2\'><span>{data.contents.titles[7]}</span><span>{d[7]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[4]}</span><span>{d[4]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[8]}</span><span>{d[8]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[2]}</span><span>{d[2]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[1]}</span><span>{d[1]}</span></div>\n            </div>\n        </section>)\n    })\n    return(<div className=\'table_hthq\'>{item}</div>)\n    }\n    else{\n      return(<div style={{display:\'none\'}}>\u65E0\u6570\u636E</div>)\n    }\n  }\n});';
-      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  componentDidMount: function componentDidMount() {\n    var outer = this.refs.list.ownerDocument.querySelector(\'.view-wrapper\');\n    setTimeout(function () {\n      outer.scrollTop = 0;\n    }, 50);\n  },\n  componentDidUpdate: function componentDidUpdate() {\n    YSP.appRenderer.hideLoading();\n  },\n  click: function click(e) {\n    YSP.appRenderer.showLoading();\n    var handler = this.props.customHandler;\n    if (e.target.tagName == \'SECTION\') {\n      var _target = e.target;\n    } else if (e.target.className == \'hthq_n1\') {\n      var _target = e.target.parentElement;\n    } else if (e.target.className == \'ht_n2\') {\n      var _target = e.target.parentElement;\n      if (_target.className == \'hidd\') {\n        _target = _target.parentElement;\n      }\n    } else if (e.target.className == \'hidd\') {\n      var _target = e.target.parentElement;\n    } else if (e.target.parentElement.tagName == \'hthq_n1\') {\n      var _target = e.target.parentElement.parentElement;\n    } else if (e.target.parentElement.tagName == \'ht_n2\' && e.target.className !== \'xjt\' && e.target.className !== \'sjt\') {\n      var _target = e.target.parentElement.parentElement;\n    } else if (e.target.tagName == \'SPAN\' && e.target.className !== \'xjt\' && e.target.className !== \'sjt\') {\n      var _target = e.target.parentElement.parentElement;\n      if (_target.className == \'hidd\') {\n        var _target = _target.parentElement;\n      }\n    } else if (e.target.tagName == \'DIV\' && e.target.parentElement.className == \'hthq_n1\') {\n      var _target = e.target.parentElement.parentElement;\n    }\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: _target.getAttribute(\'data-index\')\n      });\n    }\n  },\n  xjt: function xjt(e) {\n    var lth = e.target.getAttribute(\'data-index\');\n    var elem = e.target.ownerDocument.getElementsByClassName(\'hidd\')[lth];\n    if (elem.style.display == \'none\') {\n      elem.style.display = \'block\';\n      e.target.className = \'sjt\';\n    } else {\n      elem.style.display = \'none\';\n      e.target.className = \'xjt\';\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data) {\n      var item = data.contents.content.map(function (d, i) {\n        return React.createElement(\n          \'section\',\n          { \'data-index\': i, onClick: _this.click, ref: \'list\' },\n          React.createElement(\n            \'div\',\n            { className: \'hthq_n1\' },\n            React.createElement(\n              \'div\',\n              null,\n              data.contents.titles[6] == \'\u8BF7\u6C42\u6807\u9898\' ? d[6] : d[4],\n              data.img[i] == "" ? "" : React.createElement(\'span\', { className: data.img[i] == "redImg" ? "redImg" : "godImg" })\n            ),\n            d[5] == \'\u6B63\u5E38\' ? React.createElement(\'div\', { className: \'zc\' }) : d[5] == \'\u91CD\u8981\' ? React.createElement(\'div\', { className: \'zy\' }) : React.createElement(\'div\', { className: \'jj\' })\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ht_n2\' },\n            React.createElement(\n              \'span\',\n              null,\n              data.contents.titles[3]\n            ),\n            React.createElement(\n              \'span\',\n              null,\n              d[3]\n            )\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ht_n2\' },\n            React.createElement(\n              \'span\',\n              null,\n              data.contents.titles[0]\n            ),\n            React.createElement(\n              \'span\',\n              null,\n              d[0]\n            ),\n            React.createElement(\'span\', { \'data-index\': i, onClick: _this.xjt, className: \'xjt\' })\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'hidd\', style: { display: \'none\' } },\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[7]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[7]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[4]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[4]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[8]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[8]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[2]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[2]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[1]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[1]\n              )\n            )\n          )\n        );\n      });\n      return React.createElement(\n        \'div\',\n        { className: \'table_hthq\' },\n        item\n      );\n    } else {\n      return React.createElement(\n        \'div\',\n        { style: { display: \'none\' } },\n        \'\\u65E0\\u6570\\u636E\'\n      );\n    }\n  }\n});';
+      var selfTemplate = 'module.exports = React.createClass({\n  componentDidMount:function(){\n    var outer=this.refs.list.ownerDocument.querySelector(\'.view-wrapper\');\n    setTimeout(function(){\n      outer.scrollTop=0\n    },50)\n  },\n  componentDidUpdate:function(){\n    YSP.appRenderer.hideLoading();\n  },\n  click:function(e){\n    YSP.appRenderer.showLoading();\n    var handler = this.props.customHandler;\n    if(e.target.tagName == \'SECTION\'){\n      var _target = e.target;\n    }\n    else if(e.target.className==\'hthq_n1\'){\n      var _target = e.target.parentElement;\n    }\n    else if(e.target.className==\'ht_n2\'){\n      var _target = e.target.parentElement;\n      if(_target.className == \'hidd\'){\n        _target = _target.parentElement;\n      }\n    }\n    else if(e.target.className==\'hidd\'){\n      var _target = e.target.parentElement;\n    }\n     else if(e.target.parentElement.tagName==\'hthq_n1\'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    else if(e.target.parentElement.tagName==\'ht_n2\' && e.target.className !==\'xjt\' && e.target.className !==\'sjt\'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    else if(e.target.tagName == \'SPAN\' && e.target.className !==\'xjt\' && e.target.className !==\'sjt\'){\n      var _target = e.target.parentElement.parentElement;\n      if(_target.className == \'hidd\'){\n        var _target = _target.parentElement;\n      }\n    }\n    else if(e.target.tagName == \'DIV\' && e.target.parentElement.className ==\'hthq_n1\'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    if(handler){\n      handler({\n        eventType:\'click\',\n        data:_target.getAttribute(\'data-index\')\n      })\n    }\n  },\n  xjt:function(e){\n    var lth = e.target.getAttribute(\'data-index\')\n    var elem = document.getElementsByClassName(\'hidd\')[lth];\n       if(elem.style.display == \'none\'){\n        elem.style.display = \'block\';\n        e.target.className=\'sjt\';\n      }else{\n        elem.style.display = \'none\';\n        e.target.className=\'xjt\';\n      } \n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this =this;\n    if(data){\n      var item = data.contents.content.map(function(d,i){\n      return (<section data-index = {i} onClick={_this.click} ref="list">\n          <div className=\'hthq_n1\'>\n            <div>{data.contents.titles[6] == \'\u8BF7\u6C42\u6807\u9898\'?d[6]:d[4]}{data.img[i]==""? "":<span className={data.img[i]=="redImg"? "redImg":"godImg"}></span>}</div>\n            {d[5] ==\'\u6B63\u5E38\' ? <div className=\'zc\'></div> : (d[5] == \'\u91CD\u8981\' ? <div className=\'zy\'></div>: <div className=\'jj\'></div>)}\n          </div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[3]}</span><span>{d[3]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[0]}</span><span>{d[0]}</span><span data-index={i} onClick= {_this.xjt} className=\'xjt\'></span></div>\n          <div className=\'hidd\' style={{display:\'none\'}}>\n          <div className=\'ht_n2\'><span>{data.contents.titles[7]}</span><span>{d[7]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[4]}</span><span>{d[4]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[8]}</span><span>{d[8]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[2]}</span><span>{d[2]}</span></div>\n          <div className=\'ht_n2\'><span>{data.contents.titles[1]}</span><span>{d[1]}</span></div>\n            </div>\n        </section>)\n    })\n    return(<div className=\'table_hthq\'>{item}</div>)\n    }\n    else{\n      return(<div style={{display:\'none\'}}>\u65E0\u6570\u636E</div>)\n    }\n  }\n});';
+      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  componentDidMount: function componentDidMount() {\n    var outer = this.refs.list.ownerDocument.querySelector(\'.view-wrapper\');\n    setTimeout(function () {\n      outer.scrollTop = 0;\n    }, 50);\n  },\n  componentDidUpdate: function componentDidUpdate() {\n    YSP.appRenderer.hideLoading();\n  },\n  click: function click(e) {\n    YSP.appRenderer.showLoading();\n    var handler = this.props.customHandler;\n    if (e.target.tagName == \'SECTION\') {\n      var _target = e.target;\n    } else if (e.target.className == \'hthq_n1\') {\n      var _target = e.target.parentElement;\n    } else if (e.target.className == \'ht_n2\') {\n      var _target = e.target.parentElement;\n      if (_target.className == \'hidd\') {\n        _target = _target.parentElement;\n      }\n    } else if (e.target.className == \'hidd\') {\n      var _target = e.target.parentElement;\n    } else if (e.target.parentElement.tagName == \'hthq_n1\') {\n      var _target = e.target.parentElement.parentElement;\n    } else if (e.target.parentElement.tagName == \'ht_n2\' && e.target.className !== \'xjt\' && e.target.className !== \'sjt\') {\n      var _target = e.target.parentElement.parentElement;\n    } else if (e.target.tagName == \'SPAN\' && e.target.className !== \'xjt\' && e.target.className !== \'sjt\') {\n      var _target = e.target.parentElement.parentElement;\n      if (_target.className == \'hidd\') {\n        var _target = _target.parentElement;\n      }\n    } else if (e.target.tagName == \'DIV\' && e.target.parentElement.className == \'hthq_n1\') {\n      var _target = e.target.parentElement.parentElement;\n    }\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: _target.getAttribute(\'data-index\')\n      });\n    }\n  },\n  xjt: function xjt(e) {\n    var lth = e.target.getAttribute(\'data-index\');\n    var elem = document.getElementsByClassName(\'hidd\')[lth];\n    if (elem.style.display == \'none\') {\n      elem.style.display = \'block\';\n      e.target.className = \'sjt\';\n    } else {\n      elem.style.display = \'none\';\n      e.target.className = \'xjt\';\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data) {\n      var item = data.contents.content.map(function (d, i) {\n        return React.createElement(\n          \'section\',\n          { \'data-index\': i, onClick: _this.click, ref: \'list\' },\n          React.createElement(\n            \'div\',\n            { className: \'hthq_n1\' },\n            React.createElement(\n              \'div\',\n              null,\n              data.contents.titles[6] == \'\u8BF7\u6C42\u6807\u9898\' ? d[6] : d[4],\n              data.img[i] == "" ? "" : React.createElement(\'span\', { className: data.img[i] == "redImg" ? "redImg" : "godImg" })\n            ),\n            d[5] == \'\u6B63\u5E38\' ? React.createElement(\'div\', { className: \'zc\' }) : d[5] == \'\u91CD\u8981\' ? React.createElement(\'div\', { className: \'zy\' }) : React.createElement(\'div\', { className: \'jj\' })\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ht_n2\' },\n            React.createElement(\n              \'span\',\n              null,\n              data.contents.titles[3]\n            ),\n            React.createElement(\n              \'span\',\n              null,\n              d[3]\n            )\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ht_n2\' },\n            React.createElement(\n              \'span\',\n              null,\n              data.contents.titles[0]\n            ),\n            React.createElement(\n              \'span\',\n              null,\n              d[0]\n            ),\n            React.createElement(\'span\', { \'data-index\': i, onClick: _this.xjt, className: \'xjt\' })\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'hidd\', style: { display: \'none\' } },\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[7]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[7]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[4]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[4]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[8]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[8]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[2]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[2]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'ht_n2\' },\n              React.createElement(\n                \'span\',\n                null,\n                data.contents.titles[1]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d[1]\n              )\n            )\n          )\n        );\n      });\n      return React.createElement(\n        \'div\',\n        { className: \'table_hthq\' },\n        item\n      );\n    } else {\n      return React.createElement(\n        \'div\',\n        { style: { display: \'none\' } },\n        \'\\u65E0\\u6570\\u636E\'\n      );\n    }\n  }\n});';
     },
 
     getData_control8_h2nUto: function (elem) {
       if (!elem) {
         return;
-      }var data = [];return data;
+      }
+      var data = [];
+      return data;
     },
     doAction_uiControl8_rOwR1h: function (data, elem) {
-      switch (data.eventType) {case 'change':
-          upValue(data.dataCustom);break;case 'selectPerson':
-          upValue2(data.dataCustom);break;case 'serch':
-          serch();case 'select':
-          select(data.dataCustom);}function select(data) {
-        data = parseInt(data);var select = elem.ownerDocument.querySelector('#date2during').querySelectorAll('option');for (var i = 0; i < select.length; i++) {
+      switch (data.eventType) {
+        case 'change':
+          upValue(data.dataCustom);
+          break;
+        case 'selectPerson':
+          upValue2(data.dataCustom);
+          break;
+        case 'serch':
+          serch();
+        case 'select':
+          select(data.dataCustom);
+      }
+
+      function select(data) {
+        data = parseInt(data);
+        var select = elem.ownerDocument.querySelector('#date2during').querySelectorAll('option');
+        for (var i = 0; i < select.length; i++) {
           select[i].removeAttribute('selected');
-        }select[data].setAttribute('selected', true);
-      }function serch() {
-        var btn = elem.ownerDocument.querySelector('#rightMenuIframe').contentWindow.document.querySelector('nobr[unselectable="on"]').querySelector('button');btn.click();
-      }function upValue(data) {
-        switch (data.num) {case '1':
-            elem.querySelector('#fromdatespan').focus();elem.querySelector('#fromdatespan').textContent = data.value;elem.querySelector('input[name="fromdate"]').focus();elem.querySelector('input[name="fromdate"]').value = data.value;break;case '2':
-            elem.querySelector('#todatespan').focus();elem.querySelector('#todatespan').textContent = data.value;elem.querySelector('input[name="todate"]').focus();elem.querySelector('input[name="todate"]').value = data.value;break;case '3':
-            elem.querySelector('#fromdatespan2').focus();elem.querySelector('#fromdatespan2').textContent = data.value;elem.querySelector('input[name="fromdate2"]').focus();elem.querySelector('input[name="fromdate2"]').value = data.value;break;case '4':
-            elem.querySelector('#todatespan2').focus();elem.querySelector('#todatespan2').textContent = data.value;elem.querySelector('input[name="todate2"]').focus();elem.querySelector('input[name="todate2"]').value = data.value;break;}
-      }function upValue2(data) {
-        //debugger;
-        $(elem).children("td").eq(4).find("button").click();
+        }
+        select[data].setAttribute('selected', true);
+      }
+
+      function serch() {
+        var btn = elem.ownerDocument.querySelector('#rightMenuIframe').contentWindow.document.querySelector('nobr[unselectable="on"]').querySelector('button');
+        btn.click();
+      }
+
+      function upValue(data) {
+        switch (data.num) {
+          case '1':
+            elem.querySelector('#fromdatespan').focus();
+            elem.querySelector('#fromdatespan').textContent = data.value;
+            elem.querySelector('input[name="fromdate"]').focus();
+            elem.querySelector('input[name="fromdate"]').value = data.value;
+            break;
+          case '2':
+            elem.querySelector('#todatespan').focus();
+            elem.querySelector('#todatespan').textContent = data.value;
+            elem.querySelector('input[name="todate"]').focus();
+            elem.querySelector('input[name="todate"]').value = data.value;
+            break;
+          case '3':
+            elem.querySelector('#fromdatespan2').focus();
+            elem.querySelector('#fromdatespan2').textContent = data.value;
+            elem.querySelector('input[name="fromdate2"]').focus();
+            elem.querySelector('input[name="fromdate2"]').value = data.value;
+            break;
+          case '4':
+            elem.querySelector('#todatespan2').focus();
+            elem.querySelector('#todatespan2').textContent = data.value;
+            elem.querySelector('input[name="todate2"]').focus();
+            elem.querySelector('input[name="todate2"]').value = data.value;
+            break;
+        }
+      }
+
+      function upValue2(data) {
+        eval('elem.ownerDocument.defaultView.onShowResource()');
       }
     },
     getTemplate_uiControl8_rOwR1h: function getTemplate_uiControl8_rOwR1h() {
@@ -73,13 +114,15 @@
     getData_control10_Lb6dd5: function (elem) {
       if (!elem) {
         return;
-      }return ysp.customHelper.trim(elem.textContent);
+      }
+      return ysp.customHelper.trim(elem.textContent);
     },
     doAction_uiControl10_c5ReP0: function (data, elem) {
       if (data.eventType == 'click') {
         //ysp.customHelper.back(); 
         //history.go(-1); // ysp.customHelper.forceMatchModels("waitTodo"); //ysp.appMain.back();
-        var _url = elem.ownerDocument.defaultView.location.href;if (_url.indexOf("viewType=0") != -1) {
+        var _url = elem.ownerDocument.defaultView.location.href;
+        if (_url.indexOf("viewType=0") != -1) {
           ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestView.jsp?needPopupNewPage=true");
         } else if (_url.indexOf("viewType=2") != -1) {
           ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestHandled.jsp?needPopupNewPage=true");
@@ -97,7 +140,10 @@
     getData_control11_qc8BLJ: function (elem) {
       if (!elem) {
         return;
-      }var data = elem.querySelectorAll('span')[0].textContent;data = data.substring(2);return data;
+      }
+      var data = elem.querySelectorAll('span')[0].textContent;
+      data = data.substring(2);
+      return data;
     },
     doAction_uiControl11_pFO066: function (data, elem) {},
     getTemplate_uiControl11_pFO066: function getTemplate_uiControl11_pFO066() {
@@ -107,12 +153,19 @@
     getData_control2_o8iNLF: function (elem) {
       if (!elem) {
         return;
-      }var data = ysp.customHelper.trim(elem.querySelector('.weaverTableCurrentPageBg').textContent) || '';return data;
+      }
+      var data = ysp.customHelper.trim(elem.querySelector('.weaverTableCurrentPageBg') && elem.querySelector('.weaverTableCurrentPageBg').textContent) || '';
+      return data;
     },
     doAction_uiControl2_4A5vOm: function (data, elem) {
-      switch (data.eventType) {case 'prev':
-          elem.querySelector('.weaverTablePrevPage') && elem.querySelector('.weaverTablePrevPage').click();break;case 'next':
-          elem.querySelector('.weaverTableNextPage') && elem.querySelector('.weaverTableNextPage').click();break;}
+      switch (data.eventType) {
+        case 'prev':
+          elem.querySelector('.weaverTablePrevPage') && elem.querySelector('.weaverTablePrevPage').click();
+          break;
+        case 'next':
+          elem.querySelector('.weaverTableNextPage') && elem.querySelector('.weaverTableNextPage').click();
+          break;
+      }
     },
     getTemplate_uiControl2_4A5vOm: function getTemplate_uiControl2_4A5vOm() {
       var selfTemplate = 'import {Component} from \'react\';\nexport default class extends Component{\n  render(){\n    return(\n    \t<div className=\'ysp-pageTurnoperation\'>\n        <button onClick={(e)=>{\n            YSP.appRenderer.showLoading();\n            var handler = this.props.customHandler;\n            if(handler){\n              handler({\n                eventType:\'prev\'\n              })\n            }\n          }}>\u524D\u4E00\u9875</button>\n        <span>{this.props.customData}</span>\n        <button onClick={(e)=>{\n            YSP.appRenderer.showLoading();\n            var handler = this.props.customHandler;\n            if(handler){\n              handler({\n                eventType:\'next\'\n              })\n            }\n          }}>\u540E\u4E00\u9875</button>\n      </div>\n    )\n  }\n}';
