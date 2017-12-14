@@ -6,11 +6,12 @@
       if (!elem) {
         return;
       }if (elem) {
-        var data = { title: "", save: "" };if (elem.textContent.indexOf("未考勤申报审批流程") != -1) {
+        var data = { title: "", save: "" };
+        if (elem.textContent.indexOf("未考勤申报审批流程") != -1) {
           data.title = "未考勤申报审批流程(新)";
         } else {
           data.title = "请假/公出流程（新）";
-        }if (elem.ownerDocument.defaultView.frameElement.parentElement.ownerDocument.querySelector(".save")) {
+        }if (elem.ownerDocument.defaultView.frameElement.parentElement.parentElement.querySelector(".btn_wfSave")) {
           data.save = true;
         } else {
           data.save = false;

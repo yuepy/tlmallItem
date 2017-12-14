@@ -144,6 +144,38 @@ div[data-type="tabs:content"]{
 
 /*  公共header样式  */
 //下边的文件上传
+
+.file_box{
+  .file{
+    >div:nth-child(1){
+      width: 70%;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
+    a{
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 18px;
+      width: 20px;
+      height: 20px;
+      border: 0;
+      background: url(../lib/images/deleteM.png) no-repeat 0;
+      background-size: 15px;
+    }
+    button{
+        position: absolute;
+        right: 45px!important;
+        top: 18px;
+        width: 20px;
+        height: 20px;
+        border: 0;
+        background: url(../local/img/download.png) no-repeat 0;
+        background-size: 20px;
+    }
+  }
+}
 .bottom_box2{
   padding: 0!important;
   border-bottom: 0!important;
