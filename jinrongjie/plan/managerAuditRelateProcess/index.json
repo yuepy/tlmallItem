@@ -192,31 +192,6 @@
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
     },
-    "control87_xcXeNq": {
-      "location": {
-        "data": {
-          "tagName": "TBODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control87_xcXeNq"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>"
-    },
     "control103_8b5h3r": {
       "location": {
         "data": {
@@ -263,6 +238,10 @@
       "location": {
         "data": {
           "tagName": "SELECT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -311,7 +290,6 @@
         "control30_RZlQuz",
         "control17_LknT8t",
         "control39_ifdZhx",
-        "control87_xcXeNq",
         "control42_rhZTFy"
       ],
       "anchors": [
@@ -360,16 +338,6 @@
       "fromContextId": "context6_aweFC7",
       "fromAction": "doAction",
       "fromControlId": "control22_BzxsFT",
-      "toContexts": [
-        {
-          "toContextId": "context6_aweFC7"
-        }
-      ]
-    },
-    "flow37_eNG2tu": {
-      "fromContextId": "context6_aweFC7",
-      "fromAction": "doAction",
-      "fromControlId": "control87_xcXeNq",
       "toContexts": [
         {
           "toContextId": "context6_aweFC7"
@@ -452,21 +420,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl40_FLcALC",
                 "onGetTemplate": "getTemplate_uiControl40_FLcALC"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl75_VKZLap",
-          "controlId": "control87_xcXeNq",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl75_VKZLap",
-                "onGetTemplate": "getTemplate_uiControl75_VKZLap"
               }
             }
           }

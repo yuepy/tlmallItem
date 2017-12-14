@@ -716,7 +716,7 @@
                    if(topWindow.EAPI.isIOS()){
                      topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
                    }else if(topWindow.EAPI.isAndroid()){
-                     topWindow.redcore.getNewToken();
+                     topWindow.AndroidTokenurl = topWindow.redcore.getNewToken();
                    }
                    token_flag = true;
                 }
@@ -744,6 +744,10 @@
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
+              // if(topWindow.EAPI.isAndroid()){
+              //        topWindow.AndroidTokenurl = topWindow.redcore.getNewToken();
+              //   console.log(topWindow.AndroidTokenurl)
+              //      }
                   var usercookie = doc.cookie.split(';')
                   	for(var i =0;i<usercookie.length;i++){
                     if(usercookie[i].indexOf('loginid') !== -1){
@@ -760,10 +764,15 @@
                       soapData = soapData + ' </SOAP:Envelope>';
                 var xmlhttp = new XMLHttpRequest();
               if(topWindow.EAPI.isIOS()){
-                	xmlhttp.open("post",'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
+                //测试环境 - IOS角标
+                	//xmlhttp.open("post",'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
+                //正式环境 - IOS角标
+                	xmlhttp.open("post",'http://192.168.1.120:8090/FsigPubServiceProject/webService/OAService?wsdl ',true);
               }else{
-                  xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
-              	//xmlhttp.open("post", "http://esb.fsig.com.cn/home/system/com.eibus.web.soap.Gateway.wcp", true);
+                //测试环境 - Andriod角标
+                  //xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
+                //正式环境 - Andriod角标
+              	xmlhttp.open("post", "http://esb.fsig.com.cn/home/system/com.eibus.web.soap.Gateway.wcp", true);
               }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

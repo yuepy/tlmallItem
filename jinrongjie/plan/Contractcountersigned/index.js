@@ -111,8 +111,8 @@
     },
     doAction_uiControl2_4A5vOm: function (data, elem) {
       switch (data.eventType) {case 'prev':
-          elem.querySelector('.weaverTablePrevPageOfDisabled').click();break;case 'next':
-          elem.querySelector('.weaverTableNextPageOfDisabled').click();break;}
+          elem.querySelector('.weaverTablePrevPage') && elem.querySelector('.weaverTablePrevPage').click();break;case 'next':
+          elem.querySelector('.weaverTableNextPage') && elem.querySelector('.weaverTableNextPage').click();break;}
     },
     getTemplate_uiControl2_4A5vOm: function getTemplate_uiControl2_4A5vOm() {
       var selfTemplate = 'import {Component} from \'react\';\nexport default class extends Component{\n  render(){\n    return(\n    \t<div className=\'ysp-pageTurnoperation\'>\n        <button onClick={(e)=>{\n            var handler = this.props.customHandler;\n            if(handler){\n              handler({\n                eventType:\'prev\'\n              })\n            }\n          }}>\u524D\u4E00\u9875</button>\n        <span>{this.props.customData}</span>\n        <button onClick={(e)=>{\n            var handler = this.props.customHandler;\n            if(handler){\n              handler({\n                eventType:\'next\'\n              })\n            }\n          }}>\u540E\u4E00\u9875</button>\n      </div>\n    )\n  }\n}';
