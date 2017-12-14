@@ -6,7 +6,8 @@
   "requires": {
     "processToSend": "../processToSend/index.json",
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
-    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json"
+    "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+    "setBack": "../setBack/index.json"
   },
   "chineseName": "06公文审批流程-报告阅知类（同送总经理董事长）",
   "description": "",
@@ -435,7 +436,7 @@
           "data": [
             {
               "method": "XPath",
-              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[11]/td[2]/table/tbody/tr[4]"
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[12]/td[2]/table/tbody/tr[4]"
             }
           ]
         },
@@ -566,6 +567,10 @@
         {
           "toContextId": "context10_Tp4yhH",
           "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context8_QbFt5N",
+          "toModelId": "setBack"
         }
       ]
     },
@@ -652,6 +657,21 @@
     "page13_EOqJJx": {
       "contextId": "context13_QKvkSF",
       "layout": [
+        {
+          "id": "uiControl118_x342Nu",
+          "controlId": "control139_KCrEat",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl118_x342Nu",
+                "onGetTemplate": "getTemplate_uiControl118_x342Nu"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl96_ogZVFb",
           "controlId": "control112_1msmLu",
@@ -848,21 +868,6 @@
                       }
                     }
                   }
-                },
-                {
-                  "id": "uiControl118_x342Nu",
-                  "controlId": "control139_KCrEat",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl118_x342Nu",
-                        "onGetTemplate": "getTemplate_uiControl118_x342Nu"
-                      }
-                    }
-                  }
                 }
               ]
             },
@@ -913,6 +918,11 @@
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
+        ],
+        "context8_QbFt5N": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D312801%26workflowid%3D8061%26nodeid%3D121110%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D380989%26workflowid%3D605%26nodeid%3D3285%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D%26isFreeNode%3D",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D380991%26workflowid%3D182%26nodeid%3D509%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D"
         ]
       }
     },
