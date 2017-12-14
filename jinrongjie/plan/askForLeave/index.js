@@ -10,7 +10,7 @@
           data.title = "未考勤申报审批流程(新)";
         } else {
           data.title = "请假/公出流程（新）";
-        }if (elem.ownerDocument.querySelector(".x-btn-text btn_wfSave")) {
+        }if (elem.ownerDocument.defaultView.frameElement.parentElement.ownerDocument.querySelector(".save")) {
           data.save = true;
         } else {
           data.save = false;
