@@ -277,6 +277,31 @@
 
             }
             /*  showModelDialog 跨页面传值兼容  */
+          /*  showModelDialog 查询内部人员  */
+        if(aWin.location.href.indexOf('search/WFSearchResult.jsp') !== -1){
+          aWin.onShowResource = function() {
+              var tmpval = aWin.$GetEle("creatertype").value;
+              var id = null;
+              if (tmpval == "0") {
+                id = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp", "", "dialogWidth:550px;dialogHeight:550px;");
+              }else {
+                id = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=/CRM/data/CustomerBrowser.jsp", "", "dialogWidth:550px;dialogHeight:550px;");
+              }
+              aWin._setReturnValue = function(id){
+                if(id){
+                  if (aWin.wuiUtil.getJsonValueByIndex(id, 0) != "" && aWin.wuiUtil.getJsonValueByIndex(id, 0) != "0") {
+                  aWin.resourcespan.innerHTML = aWin.wuiUtil.getJsonValueByIndex(id, 1);
+                  aWin.$GetEle("createrid").value=aWin.wuiUtil.getJsonValueByIndex(id, 0);
+                    } else {
+                  aWin.resourcespan.innerHTML = "";
+                  aWin.$GetEle("createrid").value="";
+                    }
+                }
+                    
+              }
+
+            }
+        }
             /*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
                 aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
