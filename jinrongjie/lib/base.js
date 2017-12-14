@@ -9,13 +9,7 @@
   //数据接口 : 代办\办结角标数量
   	topWindow.tokenNum = 0;
   //接口请求格式 : 
-    var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
-    soapData = soapData + ' <SOAP:Body>';
-    soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://pub.fsig.com.cn/">';
-    soapData = soapData + ' <psCode>101160</psCode>';
-    soapData = soapData + ' </GetTodoCountInfoByPsCode>';
-    soapData = soapData + ' </SOAP:Body>';
-    soapData = soapData + ' </SOAP:Envelope>';
+  	topWindow.userid = ''
   //安卓客户端调用 : 获取token链接
     topWindow.yspTokenUrl = function(url) {
         topWindow.tokenUrl = url;
@@ -712,54 +706,85 @@
               	aWin.addEventListener('DOMContentLoaded', function() {
                 // var actionEvent = '{"target":"null","data":"getNumber"}';
                 topWindow.tokenNum++;
-               	topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
                   if(topWindow.EAPI.isAndroid()){
-                    console.log('调用安卓客户端')
-                    topWindow.redcore.getUserTokenUrl();
+                    topWindow.AndroidTokenurl = topWindow.redcore.getUserTokenUrl();
+                  }else if(topWindow.EAPI.isIOS()){
+                    topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
                   }
                  if(topWindow.tokenNum>1){
                   //当token过期时像客户端请求新的token
-                  topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
+                   if(topWindow.EAPI.isIOS()){
+                     topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
+                   }else if(topWindow.EAPI.isAndroid()){
+                     topWindow.AndroidTokenurl = topWindow.redcore.getNewToken();
+                   }
+                   token_flag = true;
                 }
                 sessionStorage.setItem('getToken', true);
-                token_flag = true;
               },false);
             }
             // },false);
             /*  获取token地址  */
             if (token_flag) {
-                console.log(topWindow.tokenUrl);
-                console.log('拿到客户端给我的token地址');
+              if(topWindow.EAPI.isIOS()){
+                 console.log('拿到客户端给我的token地址'+topWindow.tokenUrl);
+              }else if(topWindow.EAPI.isAndroid()){
+                console.log('拿到客户端给我的token地址'+topWindow.AndroidTokenurl);
+              }
                 token_flag = false;
-              // 	var oldHref = aWin.location.href;
-              // if(oldHref){
-              //   aWin.location.href = "http://192.168.200.63/login/Login.jsp"+topWindow.tokenUrl;
-              //   aWin.open(oldHref,'');
-              // }
+              	var oldHref = aWin.location.href;
+              if(oldHref && topWindow.EAPI.isIOS()){
+                aWin.location.href = "http://192.168.200.63/login/Login.jsp"+topWindow.tokenUrl;
+                // aWin.open(oldHref,'');
+              }else if(oldHref && topWindow.EAPI.isAndroid()){
+                console.log(topWindow.AndroidTokenurl);
+                aWin.location.href = topWindow.AndroidTokenurl;
+              }
             }
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
+              // if(topWindow.EAPI.isAndroid()){
+              //        topWindow.AndroidTokenurl = topWindow.redcore.getNewToken();
+              //   console.log(topWindow.AndroidTokenurl)
+              //      }
+                  var usercookie = doc.cookie.split(';')
+                  	for(var i =0;i<usercookie.length;i++){
+                    if(usercookie[i].indexOf('loginid') !== -1){
+                      topWindow.userid= usercookie[i].split('=')[1];
+                      // console.log(topWindow.userid)
+                    }
+                }
+                  var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
+                      soapData = soapData + ' <SOAP:Body>';
+                      soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://pub.fsig.com.cn/">';
+                      soapData = soapData + ' <psCode>'+topWindow.userid+'</psCode>';
+                      soapData = soapData + ' </GetTodoCountInfoByPsCode>';
+                      soapData = soapData + ' </SOAP:Body>';
+                      soapData = soapData + ' </SOAP:Envelope>';
                 var xmlhttp = new XMLHttpRequest();
               if(topWindow.EAPI.isIOS()){
+                //测试环境 - IOS角标
                 	xmlhttp.open("post",'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
+                //正式环境 - IOS角标
+                	//xmlhttp.open("post",'http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
               }else{
+                //测试环境 - Andriod角标
                   xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
-              	//xmlhttp.open("post", "http://esb.fsig.com.cn/home/system/com.eibus.web.soap.Gateway.wcp", true);
+                //正式环境 - Andriod角标
+              	//xmlhttp.open("post", "http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl", true);
               }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
-                      console.log(xmldoc);
                         topWindow.num.push(xmldoc.getElementsByTagName('return')[0].getElementsByTagName('todoCount')[0].textContent, xmldoc.getElementsByTagName('return')[0].getElementsByTagName('unreadCount')[0].textContent);
                     }else if(xmlhttp.status == 400){
-                      topWindow.num.push('请求失败!')
+                      topWindow.num.push('请求失败!');
                     }
                 }
                 xmlhttp.send(soapData);
             }
             /* ajax请求角标数据 */
-
             /* 兼容性问题 */
             // aWin.showModalDialog = function(url) {
             //     return aWin.open(url, '新窗口')

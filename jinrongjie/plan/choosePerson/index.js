@@ -49,8 +49,7 @@
               }if ($(tr1).children("td").eq(0).find('option').length > 0) {
                 $(tr1).children("td").eq(0).find('option').each(function () {
                   var arr1 = [];if ($(this)[0].selected == true) {
-                    arr1.push({
-                      text: $(this).text(), selected: 'true' });
+                    arr1.push({ text: $(this).text(), selected: 'true' });
                   } else if ($(this)[0].selected == false) {
                     arr1.push({ text: $(this).text(), selected: 'false' });
                   }data.content1.push(arr1);
@@ -105,7 +104,9 @@
           }
         }
       }if (data.eventType == 'checkOption') {
-        var val = data.dataCustom;if (elem.contentDocument.getElementById("oTable1")) {
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);var val = data.dataCustom;if (elem.contentDocument.getElementById("oTable1")) {
           var elem1 = elem.contentDocument.getElementById("oTable1");if ($(elem1).find("#frame2").length > 0) {
             var elem3 = $(elem1).find("#frame2")[0].contentDocument.body;if ($(elem3).find("table").length > 0) {
               var Tbody = $(elem3).find("table").children("tbody")[0]; //显示无账号人员
@@ -127,8 +128,7 @@
           var elem1 = elem.contentDocument.getElementById("oTable1");if ($(elem1).find("#frame2").length > 0) {
             var elem3 = $(elem1).find("#frame2")[0].contentDocument.body;if ($(elem3).find("table").length > 0) {
               var Tbody = $(elem3).find("table").children("tbody")[0]; //显示无账号人员
-              var tr0 = $(Tbody).children("tr").eq(0)[0];var tr1 = $(Tbody).children("tr").eq(1)[0];
-              var tr3 = $(Tbody).children("tr").eq(3)[0]; //人员表格
+              var tr0 = $(Tbody).children("tr").eq(0)[0];var tr1 = $(Tbody).children("tr").eq(1)[0];var tr3 = $(Tbody).children("tr").eq(3)[0]; //人员表格
               if ($(tr1).children("td").eq(2).find('option').length > 0) {
                 $(tr1).children("td").eq(2).find('option').eq(val)[0].selected = true;$(tr1).children("td").eq(2).find("select")[0].dispatchEvent(new MouseEvent("dblclick"));
               }
@@ -191,8 +191,7 @@
         var elem1 = elem.contentDocument.getElementById("oTable1");var elem3 = $(elem1).find("#frame2")[0].contentDocument.body;var Tbody = $(elem3).find("table").children("tbody")[0];var tr0 = $(Tbody).children("tr").eq(0)[0];if ($(tr0).children("td").length > 0 && $(tr0).find("input").length > 0) {
           $(tr0).find("input")[0].checked = false;
         }
-      }
-      if (data.eventType == 'down') {
+      }if (data.eventType == 'down') {
         //debugger;
         var elem1 = elem.contentDocument.getElementById("oTable1");var elem3 = $(elem1).find("#frame2")[0].contentDocument.body;var Tbody = $(elem3).find("table").children("tbody")[0];var tr0 = $(Tbody).children("tr").eq(0)[0]; // console.log($(tr0).find("input"));
         if ($(tr0).children("td").length > 0 && $(tr0).find("input").length > 0) {

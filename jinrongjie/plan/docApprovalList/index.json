@@ -63,45 +63,6 @@
       "frameXPath": "",
       "customJS": "if(elem.textContent.indexOf('金融街集团所属公司公文审批单')!==-1&&elem.textContent.indexOf('处理')!==-1){return true;}return false;"
     },
-    "control181_Te79o8": {
-      "location": {
-        "data": {
-          "tagName": "SPAN"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": [
-              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"requestnamespan\"]",
-              "descendant::SPAN[@id=\"requestnamespan\"]"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[4]/TD[2]/SPAN[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control181_Te79o8"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
     "control182_zLqMWx": {
       "location": {
         "data": {
@@ -678,12 +639,53 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control346_pcRFrR": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control346_pcRFrR"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context26_SWrdGB": {
       "controls": [
-        "control181_Te79o8",
         "control182_zLqMWx",
         "control185_gpMdht",
         "control187_rtZ3NM",
@@ -699,7 +701,8 @@
         "control328_i5EWKh",
         "control329_I37BO3",
         "control339_QVZvtW",
-        "control62_PTJuy0"
+        "control62_PTJuy0",
+        "control346_pcRFrR"
       ],
       "anchors": [
         "control180_sVkaTO"
@@ -709,16 +712,6 @@
   },
   "flows": {
     "flow106_xJR7OR": {
-      "toContexts": [
-        {
-          "toContextId": "context26_SWrdGB"
-        }
-      ]
-    },
-    "flow107_PpVWxM": {
-      "fromContextId": "context26_SWrdGB",
-      "fromAction": "doAction",
-      "fromControlId": "control181_Te79o8",
       "toContexts": [
         {
           "toContextId": "context26_SWrdGB"
@@ -837,21 +830,6 @@
       "contextId": "context26_SWrdGB",
       "layout": [
         {
-          "id": "uiControl160_mbKfvW",
-          "controlId": "control181_Te79o8",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl160_mbKfvW",
-                "onGetTemplate": "getTemplate_uiControl160_mbKfvW"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl72_AGOSRR",
           "display": {
             "type": "card",
@@ -883,6 +861,21 @@
                 }
               },
               "layout": [
+                {
+                  "id": "uiControl220_5eG7KP",
+                  "controlId": "control346_pcRFrR",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl220_5eG7KP",
+                        "onGetTemplate": "getTemplate_uiControl220_5eG7KP"
+                      }
+                    }
+                  }
+                },
                 {
                   "id": "uiControl74_yJynI0",
                   "controlId": "control62_PTJuy0",
@@ -1674,6 +1667,57 @@
             "x-toolbar",
             "x-toolbar-left-row",
             "ysp_load_haha"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_doDelete",
+            "btn_edit",
+            "btn_forward",
+            "btn_print",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
           ]
         ]
       }

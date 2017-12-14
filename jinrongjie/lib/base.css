@@ -1,3 +1,6 @@
+* {
+  transition: none!important;
+}
 @-webkit-keyframes rotation {
   from {
     -webkit-transform: rotate(0deg);
@@ -86,7 +89,7 @@ div[data-type="tabs:content"] > div:first-child {
 .ysp-process-form-wrapper,
 .ysp-process-form-bottom-button,
 .load-more-data {
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 .ysp-process-form-wrapper .ysp_none,
 .ysp-process-form-bottom-button .ysp_none,
@@ -400,7 +403,6 @@ li {
 }
 .ysp-manager-audit-title-icon .arrow-right {
   position: absolute;
-  right: -15px;
   display: inline-block;
   padding: 10px 15px;
   width: 40px;
@@ -2476,7 +2478,7 @@ div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_d
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile {
   background: #f4f4f4;
-  padding: 5px 0;
+  padding: 10px 5px;
   border-bottom: 5px solid #fff;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .txt,
@@ -2556,6 +2558,7 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   background-size: 20px;
   height: 20px;
   width: 20px;
+  margin-right: 5px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .doc,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .doc,
@@ -2660,12 +2663,20 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .downloadIcon,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .downloadIcon,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .downloadIcon,
-div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .downloadIcon {
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .downloadIcon,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .upDownUploadIcon {
   float: right;
   background: url("../lib/images/download.png") no-repeat;
-  background-size: 10px;
   height: 15px;
   width: 15px;
+  margin-top: 5px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .uploadIcon,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .uploadIcon,
@@ -2674,9 +2685,21 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon,
 div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon,
-div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon {
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .uploadIcon,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .downLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .upDownUploadIcon,
+div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoadFile .upDownUploadIcon {
   background: url("../lib/images/deleteM.png") no-repeat;
   background-size: 10px;
+  background-position: 2px 5px;
+  width: 20px;
+  margin-left: 30px;
+  margin-top: 0;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word,
@@ -2779,6 +2802,7 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   background-size: 20px;
   height: 20px;
   width: 20px;
+  margin-right: 5px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .doc,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .upLoading .word .doc,
@@ -2888,7 +2912,7 @@ div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div {
   background: #f4f4f4;
   border-bottom: 10px solid #fff;
-  padding: 5px 0;
+  padding: 10px 5px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .txt,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .txt,
@@ -2931,6 +2955,7 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   background-size: 20px;
   height: 20px;
   width: 20px;
+  margin-right: 5px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .doc,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .Loading > div .doc,
@@ -2996,7 +3021,9 @@ div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .ysp_detail .ysp_deta
   background: url("../lib/images/deleteM.png") no-repeat;
   background-size: 10px;
   height: 15px;
-  width: 15px;
+  background-position: 2px 5px;
+  width: 20px;
+  margin-left: 30px;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_detail .ysp_detail_row .unSelect,
@@ -5512,4 +5539,120 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
 div[data-ysp-modelid='ITdevice'] .ysp_table_lfj,
 div[data-ysp-modelid='02freeshenpi'] .ysp_table_lfj {
   margin-top: 0!important;
+}
+#mobileMainContent .view-wrapper .view-item {
+  margin-bottom: 35px;
+  position: relative;
+}
+@media screen and (min-width: 373px) and (max-width: 377px) and (min-height: 725px) and (max-height: 730px) {
+  #mobileMainContent .view-wrapper .view-item {
+    margin-bottom: 9vh!important;
+    position: relative;
+  }
+  .summit_button_lfj button {
+    margin-bottom: 30px!important;
+  }
+  .ysp-process-form-wrapper {
+    margin-bottom: 42px;
+  }
+  .ysp-process-form-wrapper {
+    width: 100%;
+  }
+  .ysp-process-form-wrapper .ysp-process-form-bottom-button {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    position: fixed;
+    bottom: 1.5vh;
+    background: #fff;
+    overflow: hidden;
+    z-index: 9999;
+  }
+  .ysp-process-form-wrapper .ysp-process-form-bottom-button span {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 10px;
+    float: left;
+  }
+  .ysp-process-form-wrapper .ysp-process-form-bottom-button span:nth-child(1) {
+    width: 140px;
+    border-radius: 5px;
+    border: 1px solid #CCAB63;
+    color: #CCAB63;
+    position: relative;
+    top: 5px;
+  }
+  .ysp-process-form-wrapper .ysp-process-form-bottom-button span:nth-child(2) {
+    width: 140px;
+    border-radius: 5px;
+    background: #C29A2A;
+    color: #fff;
+    position: relative;
+    top: 5px;
+  }
+  .ysp-process-form-wrapper .ysp-process-form-bottom-button span:nth-child(3) {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 10%;
+    background: url(images/more_button.png) no-repeat;
+    background-position-x: 10px;
+    background-position-y: 50%;
+  }
+  .ysp-process-form-wrapper .load-more-coverlayer {
+    height: 100vh;
+    background: rgba(102, 102, 102, 0.76);
+    background: rgba(102, 102, 102, 0.66);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  .ysp-process-form-wrapper .load-more-coverlayer .load-more-data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .ysp-process-form-wrapper .load-more-coverlayer .load-more-data section {
+    background: #fff;
+    border-radius: 5px;
+    padding: 0 15px;
+    margin: 0 5px;
+  }
+  .ysp-process-form-wrapper .load-more-coverlayer .load-more-data section div {
+    text-align: center;
+    height: 40px;
+    color: #4992F8;
+    line-height: 40px;
+    border-bottom: 1px solid #EFEFEF;
+  }
+  .ysp-process-form-wrapper .load-more-coverlayer .load-more-data > div:nth-last-child(1) {
+    margin: 7px 5px;
+    color: #999;
+    border-radius: 5px;
+    line-height: 40px;
+    background: #fff;
+    text-align: center;
+  }
+  .ysp-process-form-wrapper .ysp_submit {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background: #c29a2a;
+    color: #fff;
+    padding: 5px 0;
+    border-radius: 5px;
+  }
+  .ysp-process-form-wrapper,
+  .ysp-process-form-bottom-button,
+  .load-more-data {
+    margin-bottom: 35px;
+  }
+  .ysp-process-form-wrapper .ysp_none,
+  .ysp-process-form-bottom-button .ysp_none,
+  .load-more-data .ysp_none {
+    display: none;
+  }
 }
