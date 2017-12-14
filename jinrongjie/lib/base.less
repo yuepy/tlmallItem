@@ -5119,6 +5119,7 @@ div[data-ysp-modelid='ITdevice'],div[data-ysp-modelid='02freeshenpi']{
   }
 }
 #mobileMainContent .view-wrapper .view-item{
+  margin-bottom: 35px;
   position: relative;
 }
 @media screen and (min-width: 373px) and(max-width:377px) and(min-height:725px) and(max-height:730px)  {
@@ -5132,4 +5133,96 @@ div[data-ysp-modelid='ITdevice'],div[data-ysp-modelid='02freeshenpi']{
   .ysp-process-form-wrapper{
     margin-bottom: 42px;
   }
+  .ysp-process-form-wrapper{
+  width: 100%;
+  .ysp-process-form-bottom-button{
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+   	position: fixed;
+    bottom: 1.5vh;
+    background: #fff;
+    overflow: hidden;
+    z-index: 9999;
+    span{
+      display: inline-block;
+      // padding: 5px;
+      height: 30px;
+      line-height: 30px;
+     	text-align: center;
+      margin: 0 10px;
+      float: left;
+      
+    }
+    span:nth-child(1){
+      width: 140px;
+      border-radius: 5px;
+      border: 1px solid #CCAB63;
+      color: #CCAB63;
+      position: relative;
+    	top: 5px;
+    }
+    span:nth-child(2){
+      width: 140px;
+      border-radius: 5px;
+      background: #C29A2A;
+      color: #fff;
+      position: relative;
+    	top: 5px;
+    }
+    span:nth-child(3){
+      position: absolute;
+      right: 0;
+      height: 40px;
+      width: 10%;
+      background: url(images/more_button.png) no-repeat;
+      background-position-x: 10px;
+    	background-position-y: 50%;
+    }
+  }
+  .load-more-coverlayer{
+   	height: 100vh;
+    background: rgba(102,102,102,0.76);
+    background: rgba(102,102,102,0.66);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    .load-more-data{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      section{
+        background: #fff;
+        border-radius: 5px;
+        padding: 0 15px;
+    		margin: 0 5px;
+        div{
+          text-align: center;
+          height: 40px;
+          color: #4992F8;
+          line-height: 40px;
+          border-bottom: 1px solid @list-base-border-color;
+        }
+      }
+      >div:nth-last-child(1){
+        margin:7px 5px;
+        color: #999;
+        border-radius: 5px;
+        line-height: 40px;
+        background: #fff;
+        text-align: center;
+      }
+    }
+  }
+  .ysp_submit{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background:#c29a2a;
+    color: #fff;
+    padding: 5px 0;
+    border-radius: 5px;
+  }
+}
 }
