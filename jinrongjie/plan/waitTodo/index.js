@@ -19,8 +19,7 @@
     },
     doAction_uiControl9_TJh8bp: function (data, elem) {
       if (data.eventType == 'click') {
-        // ysp.customHelper.back();
-        ysp.appMain.reloadPage("http://192.168.200.63/wui/main.jsp?templateId=1");
+        ysp.customHelper.back(); // ysp.appMain.reloadPage("http://192.168.200.63/wui/main.jsp?templateId=1");
       }
     },
     getTemplate_uiControl9_TJh8bp: function getTemplate_uiControl9_TJh8bp() {
