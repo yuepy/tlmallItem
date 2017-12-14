@@ -100,6 +100,33 @@ div[data-type="tabs:content"] > div:first-child {
   margin-bottom: 20px;
 }
 /*  公共header样式  */
+.file_box .file > div:nth-child(1) {
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.file_box .file a {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 18px;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  background: url(../lib/images/deleteM.png) no-repeat 0;
+  background-size: 15px;
+}
+.file_box .file button {
+  position: absolute;
+  right: 45px!important;
+  top: 18px;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  background: url(../local/img/download.png) no-repeat 0;
+  background-size: 20px;
+}
 .bottom_box2 {
   padding: 0!important;
   border-bottom: 0!important;
