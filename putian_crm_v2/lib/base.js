@@ -394,10 +394,10 @@
   cwin._yspNativeEventHandler = function(type, stop) {
     console.info('_yspNativeEventHandler is type = '+ type);
     cwin.sessionStorage.clear();
-    cwin.sessionStorage.setItem('msg', type);
+    cwin.sessionStorage.setItem('msg', type + '||currentHref:'+ (topWin && topWin.location.href));
     if (ysp.customHelper && ysp.customHelper.statusManager)
       ysp.customHelper.statusManager.currentStatus = "LOADING";
-    timeStamps.push(Date.now());
+    	timeStamps.push(Date.now());
     if (timeStamps.length >= 3) {
       timeStamps.splice(0, timeStamps.length - 2);
     }
