@@ -172,6 +172,10 @@
     //关键点，在此处需要设置一个权限验证，如果查询菜单查询超过5s钟，就提示没有权限
     function validatePrivilege() {
       var _this = this;
+      if(!topWin){
+        setTimeout(validatePrivilege.bind(_this), 3000);//如果topWin无值的话，请睡三秒
+        return;
+      }
       var xhr = new topWin.XMLHttpRequest();
       xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuList', true);
       xhr.error = function(e) {
@@ -182,7 +186,8 @@
           if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
             var menuInfo = xhr.responseText;
             if(menuInfo == '{"isHaveSession":"no"}'){
-              win.reload();
+              //win.reload();
+              setTimeout(validatePrivilege.bind(_this), 3000);
             }
             if (menuInfo.indexOf(operation) == -1) {
               //flag = true; //如果没有权限的话，监控马上终止
