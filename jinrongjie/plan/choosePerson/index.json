@@ -71,40 +71,6 @@
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>//iframe[contains(@name,'frame')][contains(@id,'frame')]<<IFRAME>>"
     },
-    "control102_LTi8xH": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "按组织结构"
-              ],
-              "visText": [
-                "按组织结构"
-              ]
-            }
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
-          }
-        ]
-      },
-      "roles": "element",
-      "text": "",
-      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
-      "customJS": "if(elem.textContent.indexOf('按组织结构') !== -1){return true;}return false;"
-    },
     "control349_AqGXp4": {
       "location": {
         "data": {
@@ -133,6 +99,36 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>//iframe[contains(@name,'frame')][contains(@id,'frame')]<<IFRAME>>"
+    },
+    "control102_GF3yLC": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "按组织结构"
+              ],
+              "visText": [
+                "按组织结构"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "//frame[@name='main'][@id='main']<<IFRAME>>",
+      "customJS": "if(elem.textContent.indexOf('按组织结构') !== -1){return true;}return false;"
     }
   },
   "contexts": {
@@ -143,7 +139,7 @@
         "control349_AqGXp4"
       ],
       "anchors": [
-        "control102_LTi8xH"
+        "control102_GF3yLC"
       ],
       "urlAnchor": []
     }
