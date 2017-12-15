@@ -1189,14 +1189,13 @@
           var Wu = true;
         }
       }
+      
       for(var k = 1 ;k <= headerTitle.length; k++){
       
         if (!zou && !headerTitle[k] && !Wu) {
-
           if (!headerTitle[k]) {
             headerTitle[k] = '销售人员';
           }
-
           function isAllNull(array) {
             var tag = true;
             for (var i = 0; i < array.length; i++) {
@@ -1210,14 +1209,17 @@
           //根据传入的tags的字段，挑选出相应的值，最后返回
           var data = [];
           var exportTitles = [];
-          if (headerTitle[k] && headerConfig) {
-            headerConfig.title = headerTitle[k];
-          }
-          if (headerConfig.title) {
-            tags.unshift(headerConfig);
-          }
           var filterTitles = [];
-          for (var i = 0; i < content.length; i++) {
+          //for (var i = 0; i < content.length; i++) {
+          for (var i = 1; i < headerTitle.length; i++) {
+            if (headerTitle[i] && headerConfig) {
+            	headerConfig.title = headerTitle[i];
+          	}
+          	if (headerConfig.title) {
+              if(tags.indexOf(headerConfig) == -1){
+                tags.unshift(headerConfig);
+              }
+          	}
             var item = [];
             for (var j = 0; j < tags.length; j++) {
               //根据相应字段从titles中获取相应的下标，然后取出content的该下标的值，即为需要的值
@@ -1268,35 +1270,34 @@
             titles: exportTitles
           };
         }
-
       	if (!zou && headerTitle[k]) {
-
-        if (!headerTitle[k]) {
-          headerTitle[k] = '分公司';
-        }
-
-        function isAllNull(array) {
-          var tag = true;
-          for (var i = 0; i < array.length; i++) {
-            var item = ysp.customHelper.trim(array[i].content);
-            if (item != '') {
-              tag = false;
-            }
+          if (!headerTitle[k]) {
+            headerTitle[k] = '分公司';
           }
-          return tag;
-        }
-        //根据传入的tags的字段，挑选出相应的值，最后返回
-        var data = [];
-        var exportTitles = [];
-        if (headerTitle[k] && headerConfig) {
-          headerConfig.title = headerTitle[k];
-        }
-        if (headerConfig.title) {
-          tags.unshift(headerConfig);
-        }
-        var filterTitles = [];
-
-        for (var i = 0; i < content.length; i++) {
+          function isAllNull(array) {
+            var tag = true;
+            for (var i = 0; i < array.length; i++) {
+              var item = ysp.customHelper.trim(array[i].content);
+              if (item != '') {
+                tag = false;
+              }
+            }
+            return tag;
+          }
+          //根据传入的tags的字段，挑选出相应的值，最后返回
+          var data = [];
+          var exportTitles = [];
+          var filterTitles = [];
+        //for (var i = 0; i < content.length; i++) {
+          for (var i = 1; i < headerTitle.length; i++) {
+            if (headerTitle[i] && headerConfig) {
+              headerConfig.title = headerTitle[i];
+            }
+            if (headerConfig.title) {
+              if(tags.indexOf(headerConfig) == -1){
+                tags.unshift(headerConfig);
+              }
+            }
           var item = [];
           for (var j = 0; j < tags.length; j++) {
             //根据相应字段从titles中获取相应的下标，然后取出content的该下标的值，即为需要的值
@@ -1416,14 +1417,18 @@
           } else {
             headerTitle[k] = headerTitle[k];
           }
-          if (headerTitle[k] && headerConfig) {
-            headerConfig.title = headerTitle[k];
-          }
-          if (headerConfig.title) {
-            tags.unshift(headerConfig);
-          }
+          
           var filterTitles = [];
-          for (var i = 0; i < content.length; i++) {
+          //for (var i = 0; i < content.length; i++) {
+          for (var i = 1; i < headerTitle.length; i++) {
+            if (headerTitle[i] && headerConfig) {
+              headerConfig.title = headerTitle[i];
+            }
+            if (headerConfig.title) {
+              if(tags.indexOf(headerConfig) == -1){
+                tags.unshift(headerConfig);
+              }
+            }
             var item = [];
             for (var j = 0; j < tags.length; j++) {
               //根据相应字段从titles中获取相应的下标，然后取出content的该下标的值，即为需要的值
@@ -1479,7 +1484,6 @@
             titles: exportTitles
           };
         }
-        
       }
     },
     getTemplateData: function(elem, tags) {
