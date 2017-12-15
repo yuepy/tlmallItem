@@ -658,7 +658,7 @@
           fileData.push(fileItem.querySelector('.progressName').textContent.replace(/\s/g, ""));
         });
       }data.fileData = fileData;if (elem.querySelector('#selectDownload')) {
-        var fileSize = [];var fileName = [];var downloadFiles = dt.querySelectorAll('a');if (downloadFiles.length > 0) {
+        var fileSize = [];var fileName = [];var downloadFiles = elem.querySelectorAll('a');if (downloadFiles.length > 0) {
           [].forEach.call(downloadFiles, function (fileItem, fileIndex) {
             if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
               fileName.push(fileItem.textContent.trim());var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('('), tmpSizeData.lastIndexOf(')') + 1));
