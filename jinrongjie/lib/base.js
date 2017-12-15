@@ -758,21 +758,16 @@
               }
                 token_flag = false;
               	var oldHref = aWin.location.href;
+              /* 拼接token 重新登录 */
               if(oldHref && topWindow.EAPI.isIOS()){
-                aWin.location.href = "http://192.168.200.63/login/Login.jsp"+topWindow.tokenUrl;
-                // aWin.open(oldHref,'');
+                ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.tokenUrl);
               }else if(oldHref && topWindow.EAPI.isAndroid()){
-                console.log(topWindow.AndroidTokenurl);
-                aWin.location.href = topWindow.AndroidTokenurl;
+                ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.AndroidTokenurl);
               }
             }
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
-              // if(topWindow.EAPI.isAndroid()){
-              //        topWindow.AndroidTokenurl = topWindow.redcore.getNewToken();
-              //   console.log(topWindow.AndroidTokenurl)
-              //      }
                   var usercookie = doc.cookie.split(';')
                   	for(var i =0;i<usercookie.length;i++){
                     if(usercookie[i].indexOf('loginid') !== -1){
