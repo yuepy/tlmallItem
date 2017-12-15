@@ -27,6 +27,7 @@
   	topWindow.file = []; 
   //全局变量 : 储存页面第二个文件上传功能的参数,用于文件删除
   	topWindow.file_two = [];
+  	topWindow.activepageid = '';
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
     var topWin = null; // Window对象
@@ -45,6 +46,7 @@
         Dnum: _num, // 待办列表角标值
         returnHome: _returnHome,
       	files:_file,
+      	pageid:_pageid,
         isArray(array) {
             if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
                 return true;
@@ -1041,6 +1043,9 @@
             }
             return contentWin.open(url, title);
         }
+    }
+  	function _pageid(){
+      topWindow.activepageid = ysp.runtime.Context.activeContext.id;
     }
     /* 调用场景 : 字符串前后去空格. */
     function _trim(str) {
