@@ -392,6 +392,7 @@
   var recoverSceneId;
   var timeStamps = [];
   cwin._yspNativeEventHandler = function(type, stop) {
+    console.info('_yspNativeEventHandler is type = '+ type);
     cwin.sessionStorage.clear();
     cwin.sessionStorage.setItem('msg', type);
     if (ysp.customHelper && ysp.customHelper.statusManager)
