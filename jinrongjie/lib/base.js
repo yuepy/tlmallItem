@@ -345,6 +345,24 @@
                 }
             }
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
+              if(aWin.loadToList){
+                     aWin.loadToList = function(){
+                      var selectObj = doc.all("srcList");   
+                       selectObj.innerHTML = '';
+                      for(var i=0;i<aWin.resourceArray.length;i++){
+                        // aWin.addObjectToSelect(selectObj,aWin.resourceArray[i]);
+                    if (selectObj.tagName != "SELECT" || !doc.createTextNode(aWin.resourceArray[i].split('~')[1])) return;
+                    var oOption = doc.createElement("OPTION");
+                    var value = doc.createTextNode(aWin.resourceArray[i].split('~')[0]);
+                    var text = doc.createTextNode(aWin.resourceArray[i].split('~')[1]);
+                    oOption.appendChild(text);
+                    oOption.value = aWin.resourceArray[i].split('~')[0];
+                    selectObj.appendChild(oOption);
+                      }
+
+                    }
+                 }
+               	aWin.loadToList();
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
