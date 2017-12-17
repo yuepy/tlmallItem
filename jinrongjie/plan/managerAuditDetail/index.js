@@ -277,7 +277,7 @@
     doAction_uiControl53_WgB6r3: function (data, elem) {
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;if (elem.querySelector('a')) {
-          if (elem.querySelectorAll('a').length > 0) {
+          debugger;if (elem.querySelectorAll('a').length > 0) {
             elem.querySelectorAll('a')[idx].style.display = 'none';$(elem.querySelectorAll('a')[idx].parentElement.parentElement).remove();
           }
         } else {
