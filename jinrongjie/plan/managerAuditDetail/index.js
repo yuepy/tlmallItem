@@ -258,11 +258,7 @@
     getData_control56_BTf16A: function (elem) {
       if (!elem) {
         return;
-      }var data = {};var files = elem.querySelectorAll('.progressWrapper');var fileData = [];if (files.length > 0) {
-        [].forEach.call(files, function (fileItem, fileIndex) {
-          fileData.push(fileItem.querySelector('.progressName').textContent.replace(/\s/g, ""));
-        });
-      }if (elem.querySelector('#selectDownload')) {
+      }var data = {};var files = elem.querySelectorAll('.progressWrapper');var fileData = [];if (elem.querySelector('#selectDownload')) {
         var downloadFiles = elem.querySelectorAll('a');if (downloadFiles.length > 0) {
           [].forEach.call(downloadFiles, function (fileItem, fileIndex) {
             if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
@@ -272,6 +268,10 @@
             }
           });
         }
+      }if (files.length > 0) {
+        [].forEach.call(files, function (fileItem, fileIndex) {
+          fileData.push(fileItem.querySelector('.progressName').textContent.replace(/\s/g, ""));
+        });
       }data.fileData = fileData;return data;
     },
     doAction_uiControl53_WgB6r3: function (data, elem) {
