@@ -102,9 +102,7 @@ div[data-type="tabs:content"] > div:first-child {
 /*  公共header样式  */
 .file_box .file > div:nth-child(1) {
   width: 70%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  word-break: break-all;
 }
 .file_box .file a {
   display: block;
