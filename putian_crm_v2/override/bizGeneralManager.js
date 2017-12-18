@@ -324,7 +324,7 @@ window.addEventListener('DOMContentLoaded', function() {
             if ($("#" + id).find("tbody tr").length <= len) {
                 $("#" + id).parent().height('auto');
                 $("#" + id).parent().next(".btn-display").hide();
-              	$("#" + id).parent().next(".btn-display").removeClass('Up');
+                $("#" + id).parent().next(".btn-display").removeClass('Up');
                 $("#" + id).parent().next(".btn-display").removeClass('Down');
             } else {
                 $("#" + id).parent().height(table_minHeight).css("overflow", "hidden");
@@ -363,13 +363,13 @@ window.addEventListener('DOMContentLoaded', function() {
                 success: function (response) {
                     console.log(response);
                     // 刷新头部的汇总数据
-                    $("#totalTargetQty").html(response.totalTargetQty);
-                    $("#totalAuditQty").html(response.totalAuditQty);
-                    $("#totalReachQty").html(response.totalReachQty);
+                    $("#totalTargetQty").html(toThousands(response.totalTargetQty));
+                    $("#totalAuditQty").html(toThousands(response.totalAuditQty));
+                    $("#totalReachQty").html(toThousands(response.totalReachQty));
                     $("#totalReachQtyRate").html(response.totalReachQtyRate);
-                    $("#totalTargetAmt").html(response.totalTargetAmt);
-                    $("#totalAuditAmt").html(response.totalAuditAmt);
-                    $("#totalReachAmt").html(response.totalReachAmt);
+                    $("#totalTargetAmt").html(toThousands(response.totalTargetAmt));
+                    $("#totalAuditAmt").html(toThousands(response.totalAuditAmt));
+                    $("#totalReachAmt").html(toThousands(response.totalReachAmt));
                     $("#totalReachAmtRate").html(response.totalReachAmtRate);
 
                     if (configType != '02') {
@@ -402,9 +402,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.projectName) {
                             for(var i =0; i< response.projectName.length ;i++) {
                                 var project = response.projectName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(project.name) + '&bizUnitName=' + encodeURIComponent(bizUnitName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
-                                var html = '<tr><td><a href="'+ link +'" title="' + project.name + '">' + project.name + '</a></td><td>' + project.targetQty + '</td><td>' + project.reachQty + '</td><td>' + project.reachQtyRate + '%</td><td>'
-                                + project.targetAmt + '</td><td>' + project.reachAmt + '</td><td>' + project.reachAmtRate + '%</td></tr>';
+                                var link = '#';
+                                if(isYear!='1') {
+                                    link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(project.name) + '&bizUnitName=' + encodeURIComponent(bizUnitName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
+                                }
+                                var html = '<tr><td><a href="'+ link +'" title="' + project.name + '">' + project.name + '</a></td><td>' + toThousands(project.targetQty) + '</td><td>' + toThousands(project.reachQty) + '</td><td>' + project.reachQtyRate + '%</td><td>'
+                                + toThousands(project.targetAmt) + '</td><td>' + toThousands(project.reachAmt) + '</td><td>' + project.reachAmtRate + '%</td></tr>';
                                 $("#projectTable").append(html);
                             }
                         }
@@ -415,8 +418,8 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                                var html = '<tr><td><a href="#" title="' + model.name + '">' + model.name + '</a></td><td>' + model.targetQty + '</td><td>' + model.reachQty + '</td><td>' + model.reachQtyRate + '%</td><td>'
-                                    + model.targetAmt + '</td><td>' + model.reachAmt + '</td><td>' + model.reachAmtRate + '%</td></tr>';
+                                var html = '<tr><td><a href="#" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
+                                    + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
                             }
                         }
@@ -428,9 +431,12 @@ window.addEventListener('DOMContentLoaded', function() {
                             for(var i =0; i< response.branchName.length ;i++) {
                                 var branch = response.branchName[i];
                                 var branchName = branch.name.substring(11);
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=04&bizUnitName='+ encodeURIComponent(bizUnitName) + '&branchName=' + encodeURIComponent(branch.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
-                                var html = '<tr><td><a href="'+ link+'" title="' + branchName + '">' + branchName + '</a></td><td>' + branch.targetQty + '</td><td>' + branch.reachQty + '</td><td>' + branch.reachQtyRate + '%</td><td>'
-                                    + branch.targetAmt + '</td><td>' + branch.reachAmt + '</td><td>' + branch.reachAmtRate + '%</td></tr>';
+                                var link = '#';
+                                if(isYear!='1') {
+                                    link = '/ptDataShow/salesPlan/salesOverview?type=04&bizUnitName='+ encodeURIComponent(bizUnitName) + '&branchName=' + encodeURIComponent(branch.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
+                                }
+                                var html = '<tr><td><a href="'+ link+'" title="' + branchName + '">' + branchName + '</a></td><td>' + toThousands(branch.targetQty) + '</td><td>' + toThousands(branch.reachQty) + '</td><td>' + branch.reachQtyRate + '%</td><td>'
+                                    + toThousands(branch.targetAmt) + '</td><td>' + toThousands(branch.reachAmt) + '</td><td>' + branch.reachAmtRate + '%</td></tr>';
                                 $("#branchTable").append(html);
                             }
                         }
@@ -514,7 +520,6 @@ window.addEventListener('DOMContentLoaded', function() {
            // getBars(hw_barsDatas, '华为业务群', 'barsHW');
         }
       
-      
       	window.timeInit = function() {
 
             // 年计划或月计划
@@ -546,13 +551,13 @@ window.addEventListener('DOMContentLoaded', function() {
                 success: function (response) {
                     console.log(response);
                     // 刷新头部的汇总数据
-                    $("#totalTargetQty").html(response.totalTargetQty);
-                    $("#totalAuditQty").html(response.totalAuditQty);
-                    $("#totalReachQty").html(response.totalReachQty);
+                    $("#totalTargetQty").html(toThousands(response.totalTargetQty));
+                    $("#totalAuditQty").html(toThousands(response.totalAuditQty));
+                    $("#totalReachQty").html(toThousands(response.totalReachQty));
                     $("#totalReachQtyRate").html(response.totalReachQtyRate);
-                    $("#totalTargetAmt").html(response.totalTargetAmt);
-                    $("#totalAuditAmt").html(response.totalAuditAmt);
-                    $("#totalReachAmt").html(response.totalReachAmt);
+                    $("#totalTargetAmt").html(toThousands(response.totalTargetAmt));
+                    $("#totalAuditAmt").html(toThousands(response.totalAuditAmt));
+                    $("#totalReachAmt").html(toThousands(response.totalReachAmt));
                     $("#totalReachAmtRate").html(response.totalReachAmtRate);
 
                     if (configType != '02') {
@@ -585,9 +590,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.projectName) {
                             for(var i =0; i< response.projectName.length ;i++) {
                                 var project = response.projectName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(project.name) + '&bizUnitName=' + encodeURIComponent(bizUnitName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
-                                var html = '<tr><td><a href="'+ link +'" title="' + project.name + '">' + project.name + '</a></td><td>' + project.targetQty + '</td><td>' + project.reachQty + '</td><td>' + project.reachQtyRate + '%</td><td>'
-                                + project.targetAmt + '</td><td>' + project.reachAmt + '</td><td>' + project.reachAmtRate + '%</td></tr>';
+                                var link = '#';
+                                if(isYear!='1') {
+                                    link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(project.name) + '&bizUnitName=' + encodeURIComponent(bizUnitName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
+                                }
+                                var html = '<tr><td><a href="'+ link +'" title="' + project.name + '">' + project.name + '</a></td><td>' + toThousands(project.targetQty) + '</td><td>' + toThousands(project.reachQty) + '</td><td>' + project.reachQtyRate + '%</td><td>'
+                                + toThousands(project.targetAmt) + '</td><td>' + toThousands(project.reachAmt) + '</td><td>' + project.reachAmtRate + '%</td></tr>';
                                 $("#projectTable").append(html);
                             }
                         }
@@ -598,8 +606,8 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                                var html = '<tr><td><a href="#" title="' + model.name + '">' + model.name + '</a></td><td>' + model.targetQty + '</td><td>' + model.reachQty + '</td><td>' + model.reachQtyRate + '%</td><td>'
-                                    + model.targetAmt + '</td><td>' + model.reachAmt + '</td><td>' + model.reachAmtRate + '%</td></tr>';
+                                var html = '<tr><td><a href="#" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
+                                    + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
                             }
                         }
@@ -611,9 +619,12 @@ window.addEventListener('DOMContentLoaded', function() {
                             for(var i =0; i< response.branchName.length ;i++) {
                                 var branch = response.branchName[i];
                                 var branchName = branch.name.substring(11);
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=04&bizUnitName='+ encodeURIComponent(bizUnitName) + '&branchName=' + encodeURIComponent(branch.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
-                                var html = '<tr><td><a href="'+ link+'" title="' + branchName + '">' + branchName + '</a></td><td>' + branch.targetQty + '</td><td>' + branch.reachQty + '</td><td>' + branch.reachQtyRate + '%</td><td>'
-                                    + branch.targetAmt + '</td><td>' + branch.reachAmt + '</td><td>' + branch.reachAmtRate + '%</td></tr>';
+                                var link = '#';
+                                if(isYear!='1') {
+                                    link = '/ptDataShow/salesPlan/salesOverview?type=04&bizUnitName='+ encodeURIComponent(bizUnitName) + '&branchName=' + encodeURIComponent(branch.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
+                                }
+                                var html = '<tr><td><a href="'+ link+'" title="' + branchName + '">' + branchName + '</a></td><td>' + toThousands(branch.targetQty) + '</td><td>' + toThousands(branch.reachQty) + '</td><td>' + branch.reachQtyRate + '%</td><td>'
+                                    + toThousands(branch.targetAmt) + '</td><td>' + toThousands(branch.reachAmt) + '</td><td>' + branch.reachAmtRate + '%</td></tr>';
                                 $("#branchTable").append(html);
                             }
                         }
@@ -795,10 +806,18 @@ window.addEventListener('DOMContentLoaded', function() {
                 if(params.name == '' || '台湾省' == params.name){
                     return;
                 }
+                var isYear = '0';
+                if ($("#planTypeSelect").val() == 'month') {
+                    isYear = '0';
+                } else if ($("#planTypeSelect").val() == 'year') {
+                    isYear = '1';
+                }
                 var loginName = $("#loginName").text();
                 var encoder = $("#encoder").text();
                 var link = "/ptDataShow/salesPlan/salesOverview?type=04&branchName=" + encodeURIComponent(params.name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").html()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
-                window.location.href = link;
+                if(isYear != '1') {
+                    window.location.href = link;
+                }
             });
         }
 
@@ -842,9 +861,43 @@ window.addEventListener('DOMContentLoaded', function() {
                     trigger: 'axis',
                     formatter: function formatter(params) {
                         // console.log(params);
+                        if (!params) {
+                            return;
+                        }
                         var tipTime = params[0].name;
-                        var content = tipTime + "<br/>" + "<span class='tipCr0'></span>" + params[0].seriesName + "：" + params[0].value + "<br/>" + "<span class='tipCr1'></span>" + params[1].seriesName + "：" + params[1].value + "<br/>" + "<span class='tipCr2'></span>" + params[2].seriesName + "：" + params[2].value + "%<br/>" + "<span class='tipCr3'></span>" + params[3].seriesName + "：" + params[3].value + "%<br/>";
-
+                        var t1Name = "";
+                        if (params[0] && params[0].seriesName) {
+                            t1Name = params[0].seriesName;
+                        }
+                        var t1Value = "";
+                        if (params[0] && params[0].value) {
+                            t1Value = params[0].value;
+                        }
+                        var t2Name = "";
+                        if (params[1] && params[1].seriesName) {
+                            t2Name = params[1].seriesName;
+                        }
+                        var t2Value = "";
+                        if (params[1] && params[1].value) {
+                            t2Value = params[1].value;
+                        }
+                        var t3Name = "";
+                        if(params[2] && params[2].seriesName){
+                            t3Name = params[2].seriesName;
+                        }
+                        var t3Value = "";
+                        if(params[2] && params[2].value){
+                            t3Value = params[2].value;
+                        }
+                        var t4Name = "";
+                        if(params[3] && params[3].seriesName){
+                            t4Name = params[3].seriesName;
+                        }
+                        var t4Value = "";
+                        if (params[3] && params[3].value) {
+                            t4Value = params[3].value;
+                        }
+                        var content = tipTime + "<br/>" + "<span class='tipCr0'></span>" + t1Name + "：" + t1Value + "<br/>" + "<span class='tipCr1'></span>" + t2Name + "：" + t2Value + "<br/>" + "<span class='tipCr2'></span>" + t3Name + "：" + t3Value + "%<br/>" + "<span class='tipCr3'></span>" + t4Name + "：" + t4Value + "%<br/>";
                         return content;
                     }
                 },
@@ -1135,6 +1188,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // 配置：多柱状图
         function getBars(datas, titleText, Id) {
+
+            var isYear = '0';
+            if ($("#planTypeSelect").val() == 'month') {
+                isYear = '0';
+            } else if ($("#planTypeSelect").val() == 'year') {
+                isYear = '1';
+            }
+
             var chart = echarts.init(document.getElementById(Id));
             window.onresize = chart.resize;
 
@@ -1150,6 +1211,9 @@ window.addEventListener('DOMContentLoaded', function() {
             // 当月天数
             var day = new Date(year, month, 0);
             var days = day.getDate();
+            if(isYear == '1') { // 年计划不显示时间轴
+                days = 0;
+            }
 
             var option = {
                 color: ["#43caff", '#2c81ff', '#ed9429', '#ed694f', '#ed694f'],
@@ -1275,7 +1339,9 @@ window.addEventListener('DOMContentLoaded', function() {
                             },
                             offset: [0, -2],
                             position: 'inside',
-                            formatter: '{c}'
+                            formatter: function(params){
+                                return toThousands(params.value);
+                            }
                         }
                     },
                     data: [datas[0].value]
@@ -1293,7 +1359,9 @@ window.addEventListener('DOMContentLoaded', function() {
                             },
                             offset: [0, -2],
                             position: 'inside',
-                            formatter: '{c}'
+                            formatter: function(params){
+                                return toThousands(params.value);
+                            }
                         }
                     },
                     markPoint: {
@@ -1338,7 +1406,9 @@ window.addEventListener('DOMContentLoaded', function() {
                             },
                             offset: [0, -2],
                             position: 'inside',
-                            formatter: '{c}'
+                            formatter: function(params){
+                                return toThousands(params.value);
+                            }
                         }
                     },
                     data: [datas[2].value]
@@ -1356,7 +1426,9 @@ window.addEventListener('DOMContentLoaded', function() {
                             },
                             offset: [0, -2],
                             position: 'inside',
-                            formatter: '{c}'
+                            formatter: function(params){
+                                return toThousands(params.value);
+                            }
                         }
                     },
                     markPoint: {
@@ -1411,6 +1483,9 @@ window.addEventListener('DOMContentLoaded', function() {
                             normal: {
                                 position: 'end',
                                 formatter: function formatter(params) {
+                                    if(isYear == '1') {
+                                        return 0;
+                                    }
                                     return (params.value / days * 100).toFixed(2) + "%";
                                 }
                             }
