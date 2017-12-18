@@ -207,9 +207,11 @@
     getData_control38_I5LH3P: function (elem) {},
     doAction_uiControl36_Ik9Qso: function (data, elem) {
       if (data.eventType == 'click') {
-        ysp.customHelper.pageid();ysp.customHelper.back();
+        //ysp.customHelper.pageid();
+        ysp.customHelper.back();
       }if (data.eventType == 'save1') {
-        ysp.customHelper.pageid();elem.ownerDocument.defaultView.setResourceStr();elem.ownerDocument.defaultView.replaceStr();elem.ownerDocument.defaultView.parent.parent.opener._setReturnValue({ id: elem.ownerDocument.defaultView.resourceids, name: elem.ownerDocument.defaultView.resourcenames });elem.ownerDocument.defaultView.parent.parent.close();
+        //ysp.customHelper.pageid();
+        elem.ownerDocument.defaultView.setResourceStr();elem.ownerDocument.defaultView.replaceStr();elem.ownerDocument.defaultView.parent.parent.opener._setReturnValue({ id: elem.ownerDocument.defaultView.resourceids, name: elem.ownerDocument.defaultView.resourcenames });elem.ownerDocument.defaultView.parent.parent.close();
       }if (data.eventType == 'edit') {
         elem.ownerDocument.defaultView.parent.parent.opener._setReturnValue({ id: '', name: '' });elem.ownerDocument.defaultView.parent.parent.close();
       }
