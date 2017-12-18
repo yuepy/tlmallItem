@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
-    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json"
+    "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+    "docApprovalList": "../docApprovalList/index.json"
   },
   "chineseName": "金融街集团所属公司公文审批单-发起",
   "description": "金融街集团所属公司公文审批单-发起",
@@ -462,6 +463,20 @@
           "toModelId": "managerAuditRelateProcess"
         }
       ]
+    },
+    "flow185_acS38L": {
+      "fromContextId": "context37_oT4qR5",
+      "fromAction": "doAction",
+      "fromControlId": "control322_5VvoRC",
+      "toContexts": [
+        {
+          "toContextId": "context37_oT4qR5"
+        },
+        {
+          "toContextId": "context26_SWrdGB",
+          "toModelId": "docApprovalList"
+        }
+      ]
     }
   },
   "pages": {
@@ -667,6 +682,11 @@
       "contexts": {
         "context37_oT4qR5": [
           ""
+        ],
+        "context26_SWrdGB": [
+          "测试测试",
+          "测试1111111111111",
+          "第三方"
         ]
       }
     },
@@ -678,6 +698,11 @@
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="
+        ],
+        "context26_SWrdGB": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330435&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=434494&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=597506&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ]
       }
     },
