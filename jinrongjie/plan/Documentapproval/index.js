@@ -190,8 +190,7 @@
           });
         });
       } else if ($(elem).children("table").length == 1) {
-        var elem2 = $(elem).children("table").eq(0)[0];
-        var tbody2 = $(elem).children("table").eq(0).children("tbody")[0];$(tbody2).children("tr").each(function () {
+        var elem2 = $(elem).children("table").eq(0)[0];var tbody2 = $(elem).children("table").eq(0).children("tbody")[0];$(tbody2).children("tr").each(function () {
           //var arr1 = [];
           $(this).children("td").each(function () {
             var arr2 = []; //判断标题-------------------------------------
@@ -209,22 +208,24 @@
                   $(this).children("table").find("a").each(function (i) {
                     if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
                       if ($(this).text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('JPG') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'xls',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
-                        arr3.push({
-                          name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
                         arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       }
@@ -261,8 +262,7 @@
                 }arr2.push({ text: arr3, size: arr4, type: 'fujian' });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0) {
-                  var arr4 = [];
-                  $(this).children("select").children("option").each(function () {
+                  var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this).text().trim() !== '' && $(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
                     }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
@@ -271,7 +271,8 @@
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id") });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
-                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
+                    arr2.push({ text: $(this).children("input").prop('value'),
+                      type: 'input', id: $(this).children("input").prop('id') });
                   } //判断纯文字
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
@@ -279,8 +280,7 @@
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } //判断textarea-------------------------------------
                     else if ($(this).children("textarea").length == 1) {
-                        arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id
-                        });
+                        arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id });
                       } //判断button-------------------------------------
                       else if ($(this).children("button").length > 0) {
                           //var arr5 = [];
@@ -288,8 +288,7 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });
-                              arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -299,8 +298,7 @@
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
                           //console.log(43534534523)
                           arr2.push({ text: $(this).find("button").text(), type: 'button2', id: $(this).children('span').eq(0).children("button").attr('id') });
-                        }
-                        //判断意见-------------------------------------
+                        } //判断意见-------------------------------------
                         else if ($(this)[0].className == 'zdn' && ($(this).children().length == 0 || $(this)[0].children.length > 0 && $(this)[0].children[0].tagName == 'BR')) {
                             if ($(this)[0].innerHTML.replace(/&nbsp;/, "").replace(/\<br\>/ig, "").replace(/\s+/, "") == '') {
                               arr2.push({ text: '', type: 'suggest' });
@@ -309,7 +307,8 @@
                             }
                           } else if ($(this).find(".cke_editor").length > 0) {
                             arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
-                          }data.base_info.content.push(arr2);
+                          }
+            data.base_info.content.push(arr2);
           });
         });
       }return data;
@@ -385,7 +384,7 @@
         //     $(this).click();
         //   }
         // });
-        elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关流程"]').onclick());elem.querySelector('button[title="相关流程"]').onclick();
+        elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关流程"]').onclick()); // elem.querySelector('button[title="相关流程"]').onclick();
       }if (data.eventType == 'preview') {
         debugger; //每个文件的onclick中的第二个number
         var number = data.dataCustom.number; //文件类型
