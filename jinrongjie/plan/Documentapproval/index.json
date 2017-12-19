@@ -7,7 +7,8 @@
     "processToSend": "../processToSend/index.json",
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
-    "setBack": "../setBack/index.json"
+    "setBack": "../setBack/index.json",
+    "forward": "../forward/index.json"
   },
   "chineseName": "06公文审批流程-报告阅知类（同送总经理董事长）",
   "description": "",
@@ -646,6 +647,10 @@
         {
           "toContextId": "context10_Tp4yhH",
           "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context23_zUAAyb",
+          "toModelId": "forward"
         }
       ]
     }
@@ -926,6 +931,13 @@
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D312801%26workflowid%3D8061%26nodeid%3D121110%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D380989%26workflowid%3D605%26nodeid%3D3285%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D%26isFreeNode%3D",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/RejectNodeSet.jsp%3Frequestid%3D380991%26workflowid%3D182%26nodeid%3D509%26isrejectremind%3D1%26ischangrejectnode%3D1%26isselectrejectnode%3D1%26isFreeNode%3D"
+        ],
+        "context23_zUAAyb": [
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312802%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312804%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312805%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D615188%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp?requestid=597527"
         ]
       }
     },
