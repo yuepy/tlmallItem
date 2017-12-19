@@ -644,6 +644,134 @@
                 aWin.parent.close();
               }
            }
+          //正文预览
+          aWin.check_form=function(thiswins,items){
+            /* added by cyril on 2008-08-14 for td:8521 */
+            var isconn = false;
+            try {
+              var xmlhttp;
+                if (window.XMLHttpRequest) {
+                  xmlhttp = new XMLHttpRequest();
+                }  
+                else if (window.ActiveXObject) {
+                  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");  
+                }
+                var URL = "/systeminfo/CheckConn.jsp?userid=201&time="+new Date();
+                xmlhttp.open("GET",URL, false);
+                xmlhttp.send(null);
+                var result = xmlhttp.status;
+                if(result==200) {
+                  isconn = true;
+                  var response_flag = xmlhttp.responseText;
+                  if(response_flag!='0') {
+                    var flag_msg = '';
+                    if(response_flag=='1') {
+                      // var diag = new Dialog();
+                      // diag.Width = 300;
+                      // diag.Height = 180;
+                      // diag.ShowCloseButton=false;
+                      // diag.Title = "网页超时提醒";
+                      // //diag.InvokeElementId="pageOverlay"
+                      // diag.URL = "/wui/theme/ecology7/page/loginSmall.jsp?username=ychwang";
+                      // diag.show();
+                      // return false;
+                    }
+                    else if(response_flag=='2') {
+                      flag_msg = '网络故障或其它原因导致您连接不上服务器，请复制下重要信息稍候再提交！';
+                    }
+                    //主从帐户特殊处理 by alan for TD10156
+                    if(response_flag=='3') {
+                      flag_msg = '提交信息失败,该页面非当前帐号打开,请刷新页面后再提交!';
+
+                      return false;
+                    }
+                    flag_msg += '\r\n\r\n按【确定】继续,按【取消】停留在本页!';
+                      //alert(xmlhttp.responseText);
+                      return confirm(flag_msg);
+                    }
+                }
+                xmlhttp = null;
+
+                //检查多行文本框 oracle下检查HTML不能超过4000个字符
+
+                try {
+                  var lenck = true;
+                  var tempfieldvlaue = document.getElementById("htmlfieldids").value;
+                  while(true) {
+                    var tempfield = tempfieldvlaue.substring(0, tempfieldvlaue.indexOf(","));
+                    tempfieldvlaue = tempfieldvlaue.substring(tempfieldvlaue.indexOf(",")+1);
+                    var fieldid = tempfield.substring(0, tempfield.indexOf(";"));
+                    var fieldname = tempfield.substring(tempfield.indexOf(";")+1);
+                    if(fieldname=='') break;
+                    if(!checkLengthOnly(fieldid,'4000',fieldname,'当前文本长度','文本长度不能超过','1个中文字符等于2个长度')) {
+                      lenck = false;
+                      break;
+                    }
+                  }
+                  if(lenck==false) return false;
+                }
+                catch(e) {}
+
+            }
+            catch(e) {
+              return check_conn();
+            }
+            if(!isconn)
+              return check_conn();
+              /* end by cyril on 2008-08-14 for td:8521 */
+
+            thiswin = thiswins
+            items = ","+items + ",";
+
+            var tempfieldvlaue1 = "";
+            try{
+              tempfieldvlaue1 = document.getElementById("htmlfieldids").value;
+            }catch (e) {
+            }
+
+            for(i=1;i<=thiswin.length;i++){
+              tmpname = thiswin.elements[i-1].name;
+              tmpvalue = thiswin.elements[i-1].value;
+                if(tmpvalue==null){
+                    continue;
+                }
+
+              if(tmpname!="" && items.indexOf(","+tmpname+",")!=-1){
+                if(tempfieldvlaue1.indexOf(tmpname+";") == -1){
+                  while(tmpvalue.indexOf(" ") >= 0){
+                    tmpvalue = tmpvalue.replace(" ", "");
+                  }
+                  while(tmpvalue.indexOf("\r\n") >= 0){
+                    tmpvalue = tmpvalue.replace("\r\n", "");
+                  }
+
+                  if(tmpvalue == ""){
+                    if(thiswin.elements[i-1].getAttribute("temptitle")!=null){
+                      alert("\""+thiswin.elements[i-1].getAttribute("temptitle")+"\""+"未填写！");
+                      return false;
+                    }else{
+                      alert("必要信息不完整！");
+                      return false;
+                    }
+                  }
+                } else {
+                  var divttt=document.createElement("div");
+                  divttt.innerHTML = tmpvalue;
+                  var tmpvaluettt = jQuery.trim(jQuery(divttt).text());
+                  if(tmpvaluettt == ""){
+                    if(thiswin.elements[i-1].getAttribute("temptitle")!=null){
+                      alert("\""+thiswin.elements[i-1].getAttribute("temptitle")+"\""+"未填写！");
+                      return false;
+                    }else{
+                      alert("必要信息不完整！");
+                      return false;
+                    }
+                  }
+                }
+              }
+            }
+            return true;
+          }
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
