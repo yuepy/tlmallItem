@@ -94,7 +94,8 @@
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({
+                          name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
@@ -231,7 +232,8 @@
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'doc',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
@@ -348,21 +350,21 @@
     }, doAction_uiControl276_1rRBbI: function (data, elem) {
       // {data.base_lc_info.miji.content[0].length > 0 ? <div><div className="font-yell">密级</div><select onChange={_this.optionChange}>{option2}</select></div> : <div></div>}
       if (data.eventType == 'zhengwen') {
-        // debugger;
-        if (elem.ownerDocument.getElementById('requestid')) {
+        debugger;if (elem.ownerDocument.getElementById('requestid')) {
           var requestid = elem.ownerDocument.getElementById('requestid').value;
         }if (elem.ownerDocument.getElementById('rand')) {
           var rand = elem.ownerDocument.getElementById('rand').value;
         }
         var xmlhttp;xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function (data) {
           if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var _url = 'http://192.168.200.63' + xmlhttp.responseText.trim();console.log(_url);if (ysp.appMain.isIOS()) {
+            // var _url = 'http://192.168.200.63' + xmlhttp.responseText;
+            console.log(xmlhttp.responseText);if (ysp.appMain.isIOS()) {
               top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
             } else if (ysp.appMain.isAndroid()) {
               top.location.href = _url;
             }
           }
-        };var url = 'http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid=' + requestid + '&rand=' + rand;xmlhttp.open("POST", url, true);xmlhttp.send();
+        };
       }if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
           if ($(this).attr('temptitle') && $(this).attr('temptitle').indexOf('附件') !== -1) {
@@ -413,7 +415,8 @@
         });
       }if (data.eventType == 'optionChange') {
         //debugger;
-        var val = data.dataCustom;var elem = $(elem).children("table").eq(0)[0];console.log($(elem).find("select").length);$(elem).find("select").children("option").each(function () {
+        var val = data.dataCustom;var elem = $(elem).children("table").eq(0)[0];
+        console.log($(elem).find("select").length);$(elem).find("select").children("option").each(function () {
           if ($(this)[0].innerText == val) {
             $(this)[0].selected = 'true';
           }
