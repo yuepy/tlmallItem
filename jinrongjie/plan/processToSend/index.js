@@ -127,7 +127,23 @@
     getData_control53_rAs9ta: function (elem) {
       if (!elem) {
         return;
-      };var data = {};if (elem.querySelector('#Filedata')) {
+      };var data = {};var fileData = [];var oldFileLength = 0; // 采集以保存附件
+      if (elem.ownerDocument.querySelector('#selectDownload')) {
+        var tbody = elem.parentElement;var trs = $(tbody).children('tr');[].forEach.call(trs, function (trItem, trIndex) {
+          if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
+            var downloadFiles = trItem.querySelectorAll('a');if (downloadFiles.length > 0) {
+              [].forEach.call(downloadFiles, function (fileItem, fileIndex) {
+                if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
+                  if (fileItem.style.display !== 'none') {
+                    fileData.push(fileItem.textContent.trim());oldFileLength++;
+                  }
+                }
+              });
+            }
+          }
+        });
+      } // 判断是否可以上传附件
+      if (elem.querySelector('#Filedata')) {
         var files = elem.querySelectorAll('.progressWrapper');data.show = 'true';
       } else {
         if (elem.ownerDocument.querySelector('#field-annexupload_tab')) {
@@ -135,36 +151,56 @@
         } else {
           data.show = 'false';
         }
-      }var fileData = [];if (files != undefined && files.length > 0) {
+      } // 采集新上传附件
+      if (files != undefined && files.length > 0) {
         [].forEach.call(files, function (fileItem, fileIndex) {
           fileData.push(fileItem.querySelector('.progressName').textContent.replace(/\s/g, ""));
         });
-      }data.fileData = fileData;return data;
+      }data.oldFileLength = oldFileLength;data.fileData = fileData;return data;
     },
     doAction_uiControl50_sXUbSz: function (data, elem) {
-      if (data.eventType == 'deleteFile') {
-        if (elem.querySelector("#Filedata")) {
-          deleteFile(elem);
-        } else {
-          var doc = elem.ownerDocument.querySelector('#field-annexupload_tab');deleteFile(doc);
-        }
-      }if (data.eventType == 'click') {
-        if (elem.querySelector("#Filedata")) {
-          if (elem.ownerDocument.defaultView.document.querySelectorAll("input[id='Filedata'][name='Filedata']").length > 1) {
-            elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');elem.querySelector("input[id='Filedata'][name='Filedata']").click();
-          } else {
-            elem.querySelectorAll("input[id='Filedata'][name='Filedata']")[0].click();
+      var customElem = null;var tbody = elem.parentElement;var trs = $(tbody).children('tr');if (elem.ownerDocument.querySelector('#Filedata')) {
+        [].forEach.call(trs, function (trItem, trIndex) {
+          if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
+            customElem = trItem;
+          }
+        });
+      }if (data.eventType == 'deleteFile') {
+        var idx = data.dataCustom;var input = $(customElem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;if (customElem.querySelector('a')) {
+          if (customElem.querySelectorAll('a').length > 0) {
+            customElem.querySelectorAll('a')[idx].style.display = 'none';$(customElem.querySelectorAll('a')[idx].parentElement.parentElement).remove();
           }
         } else {
-          elem.ownerDocument.querySelector('#field-annexupload_tab').querySelector('#Filedata').click();
+          $(customElem.querySelector('#fsUploadProgressannexupload').querySelectorAll('div.progressWrapper')[idx]).remove();
         }
-      }function deleteFile(elem) {
-        debugger;var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;$(elem.querySelector('#fsUploadProgressannexupload').querySelectorAll('div.progressWrapper')[idx]).remove();
+      }if (data.eventType == 'click') {
+        if (customElem.querySelector("input[id='Filedata'][name='Filedata']")) {
+          if (customElem.ownerDocument.defaultView.document.querySelectorAll("input[id='Filedata'][name='Filedata']").length > 1) {
+            customElem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');customElem.querySelector("input[id='Filedata'][name='Filedata']").click();
+          } else {
+            customElem.querySelectorAll("input[id='Filedata'][name='Filedata']")[0].click();
+          }
+        }
+      }if (data.eventType == 'downLoad') {
+        var fileIndex = data.dataCustom;var buttonList = customElem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick');if (clickContent.indexOf('top.location') !== -1) {
+          var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
+        } else {
+          var indexGroup = clickContent.match(/download.*/)[0];var selfUrl = '/weaver/weaver.file.FileDownload?fileid=' + indexGroup.match(/\d+/)[0] + '&download=1';
+        }reviewFiles(selfUrl);
+      } /**
+          文件预览通用方法
+          number 文件唯一编号
+        */function reviewFiles(jumpUrl) {
+        var _url = 'http://192.168.200.63' + jumpUrl;console.log(_url);if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
+        } else if (ysp.appMain.isAndroid()) {
+          top.location.href = _url;
+        }
       }
     },
     getTemplate_uiControl50_sXUbSz: function getTemplate_uiControl50_sXUbSz() {
-      var selfTemplate = "module.exports = React.createClass({\n\tdeleteFile: function (e) {\n\t\tvar elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \"deleteFile\",\n\t\t\t\tdata: e.target.getAttribute('data-index')\n\t\t\t})\n\t\t}\n\t},\n  \n\tclick: function (e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: 'click'\n\t\t\t})\n\t\t}\n\t}, \n\trender: function () {\n\t\tvar refdata = this.props.customData||{};\n    if(refdata.show=='false'){\n      return null\n    }\n    var data = refdata.fileData;\n\t\tvar _this = this;\n    if(logObject==undefined){\n      var logObject = {'doc':'doc-log','docx':'doc-log','xls':'excel-log','xlsx':'excel-log','txt':'annex-download','pdf':'pdf-log'};\n    }\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<div className=\"ysp-manager-audit-title-icon ysp-manager-audit-wrapper-noborder\">\n\t\t\t\t\t<span>\u9644\u4EF6</span>\n\t\t\t\t\t<i className=\"relate-files\" onClick={_this.click.bind(_this)}></i>\n\t\t\t\t</div>\n        <div className='ysp-manager-audit-wrapper'>\n            {data instanceof Array&&data.length > 0 ?\n            data.map((fileItem, fileIndex) => {\n              var extentdName = fileItem.slice(fileItem.lastIndexOf('.')+1);\n              if(logObject[extentdName]==undefined){\n                var className = 'annex-download';\n              }else{\n                var className = logObject[extentdName] + \" \" + 'logo-common-css';\n              }\n              return (\n                <div className={className} style={{'border-bottom':'none'}}>\n                  {fileItem}\n                  <div style={{'font-size':'0.7rem'}}>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20\u2026\u2026</div>\n                  <span className=\"delete-log\" data-type=\"deleteFile\" onClick={_this.deleteFile.bind(_this)} data-index={fileIndex}>X</span>\n                </div>\n              )\n            })\n          :''}\n        </div>\n\t\t\t</div>\n\t\t)\n\t}\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n\tdisplayName: 'exports',\n\n\tdeleteFile: function deleteFile(e) {\n\t\tvar elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \"deleteFile\",\n\t\t\t\tdata: e.target.getAttribute('data-index')\n\t\t\t});\n\t\t}\n\t},\n\n\tclick: function click(e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: 'click'\n\t\t\t});\n\t\t}\n\t},\n\trender: function render() {\n\t\tvar refdata = this.props.customData || {};\n\t\tif (refdata.show == 'false') {\n\t\t\treturn null;\n\t\t}\n\t\tvar data = refdata.fileData;\n\t\tvar _this = this;\n\t\tif (logObject == undefined) {\n\t\t\tvar logObject = { 'doc': 'doc-log', 'docx': 'doc-log', 'xls': 'excel-log', 'xlsx': 'excel-log', 'txt': 'annex-download', 'pdf': 'pdf-log' };\n\t\t}\n\t\treturn React.createElement(\n\t\t\t'div',\n\t\t\tnull,\n\t\t\tReact.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'ysp-manager-audit-title-icon ysp-manager-audit-wrapper-noborder' },\n\t\t\t\tReact.createElement(\n\t\t\t\t\t'span',\n\t\t\t\t\tnull,\n\t\t\t\t\t'\\u9644\\u4EF6'\n\t\t\t\t),\n\t\t\t\tReact.createElement('i', { className: 'relate-files', onClick: _this.click.bind(_this) })\n\t\t\t),\n\t\t\tReact.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'ysp-manager-audit-wrapper' },\n\t\t\t\tdata instanceof Array && data.length > 0 ? data.map(function (fileItem, fileIndex) {\n\t\t\t\t\tvar extentdName = fileItem.slice(fileItem.lastIndexOf('.') + 1);\n\t\t\t\t\tif (logObject[extentdName] == undefined) {\n\t\t\t\t\t\tvar className = 'annex-download';\n\t\t\t\t\t} else {\n\t\t\t\t\t\tvar className = logObject[extentdName] + \" \" + 'logo-common-css';\n\t\t\t\t\t}\n\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t'div',\n\t\t\t\t\t\t{ className: className, style: { 'border-bottom': 'none' } },\n\t\t\t\t\t\tfileItem,\n\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t'div',\n\t\t\t\t\t\t\t{ style: { 'font-size': '0.7rem' } },\n\t\t\t\t\t\t\t'\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20\\u2026\\u2026'\n\t\t\t\t\t\t),\n\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t'span',\n\t\t\t\t\t\t\t{ className: 'delete-log', 'data-type': 'deleteFile', onClick: _this.deleteFile.bind(_this), 'data-index': fileIndex },\n\t\t\t\t\t\t\t'X'\n\t\t\t\t\t\t)\n\t\t\t\t\t);\n\t\t\t\t}) : ''\n\t\t\t)\n\t\t);\n\t}\n});";
+      var selfTemplate = "module.exports = React.createClass({\n\tdeleteFile: function (e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \"deleteFile\",\n\t\t\t\tdata: e.target.getAttribute('data-index')\n\t\t\t})\n\t\t}\n\t},\n\tclick: function (e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: 'click'\n\t\t\t})\n\t\t}\n\t},\n\tdownLoadClick: function (e) {\n\t\tvar handler = this.props.customHandler;\n    if(e.target.tagName=='I'){\n      var _target = e.target.parentElement;\n    }else{\n      var _target = e.target;\n    }\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\tdata: _target.getAttribute('data-index'),\n\t\t\t\teventType: \"downLoad\"\n\t\t\t})\n\t\t}\n\t},\n\trender: function () {\n\t\tvar data = this.props.customData;\n\t\tif (data.show=='false') {\n\t\t\treturn null\n\t\t}\n\t\tvar fileData = data.fileData||[];\n\t\tvar _this = this;\n    var oldFileLength = data.oldFileLength;\n\t\tif (logObject == undefined) {\n\t\t\tvar logObject = { 'doc': 'doc-log', 'docx': 'doc-log', 'xls': 'excel-log', 'xlsx': 'excel-log', 'txt': 'annex-download', 'pdf': 'pdf-log' };\n\t\t}\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<div className=\"ysp-manager-audit-title-icon ysp-manager-audit-wrapper-noborder\">\n\t\t\t\t\t<span>\u9644\u4EF6</span>\n\t\t\t\t\t<i className=\"relate-files\" onClick={_this.click}></i>\n\t\t\t\t</div>\n\t\t\t\t<div className='ysp-manager-audit-wrapper'>\n          {oldFileLength>0 ? <div style={{'font-size':'0.9rem','border-bottom':'none'}}>\u5F85\u9884\u89C8\u9644\u4EF6</div> : \"\"}\n          {fileData instanceof Array && fileData.length > 0 ?\n\t\t\t\t\t\tfileData.map((fileItem, fileIndex) => {\n            \tif(fileIndex>=oldFileLength){\n                return null\n              }\n\t\t\t\t\t\t\tvar extentdName = fileItem.slice(fileItem.lastIndexOf('.') + 1);\n\t\t\t\t\t\t\tif (logObject[extentdName] == undefined) {\n\t\t\t\t\t\t\t\tvar className = 'annex-download';\n\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\tvar className = logObject[extentdName] + \" \" + 'logo-common-css';\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn (\n\t\t\t\t\t\t\t\t<div className={className} style={{ 'border-bottom': 'none' }} onClick={_this.downLoadClick.bind(_this)} data-index={fileIndex}>\n\t\t\t\t\t\t\t\t\t{fileItem}\n                  <i className=\"download-log\" style={{'right':'50px'}}></i>\n\t\t\t\t\t\t\t\t\t<span className=\"delete-log\" data-type=\"deleteFile\" onClick={_this.deleteFile.bind(_this)} data-index={fileIndex}>X</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t)\n\t\t\t\t\t\t})\n          : ''}\n          {fileData.length>oldFileLength ? <div style={{'font-size':'0.9rem','border-bottom':'none'}}>\u5F85\u4E0A\u4F20\u9644\u4EF6</div> : \"\"}\n\t\t\t\t\t{fileData instanceof Array && fileData.length > 0 ?\n\t\t\t\t\t\tfileData.map((fileItem, fileIndex) => {\n            \tif(fileIndex<oldFileLength){\n                return null\n              }\n\t\t\t\t\t\t\tvar extentdName = fileItem.slice(fileItem.lastIndexOf('.') + 1);\n\t\t\t\t\t\t\tif (logObject[extentdName] == undefined) {\n\t\t\t\t\t\t\t\tvar className = 'annex-download';\n\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\tvar className = logObject[extentdName] + \" \" + 'logo-common-css';\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn (\n\t\t\t\t\t\t\t\t<div className={className} style={{ 'border-bottom': 'none' }}>\n\t\t\t\t\t\t\t\t\t{fileItem}\n\t\t\t\t\t\t\t\t\t<div style={{ 'font-size': '0.7rem' }}>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20\u2026\u2026</div>\n\t\t\t\t\t\t\t\t\t<span className=\"delete-log\" data-type=\"deleteFile\" onClick={_this.deleteFile.bind(_this)} data-index={fileIndex}>X</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t)\n\t\t\t\t\t\t})\n\t\t\t\t\t\t: ''}\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t)\n\t}\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n\tdisplayName: 'exports',\n\n\tdeleteFile: function deleteFile(e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \"deleteFile\",\n\t\t\t\tdata: e.target.getAttribute('data-index')\n\t\t\t});\n\t\t}\n\t},\n\tclick: function click(e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: 'click'\n\t\t\t});\n\t\t}\n\t},\n\tdownLoadClick: function downLoadClick(e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (e.target.tagName == 'I') {\n\t\t\tvar _target = e.target.parentElement;\n\t\t} else {\n\t\t\tvar _target = e.target;\n\t\t}\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\tdata: _target.getAttribute('data-index'),\n\t\t\t\teventType: \"downLoad\"\n\t\t\t});\n\t\t}\n\t},\n\trender: function render() {\n\t\tvar data = this.props.customData;\n\t\tif (data.show == 'false') {\n\t\t\treturn null;\n\t\t}\n\t\tvar fileData = data.fileData || [];\n\t\tvar _this = this;\n\t\tvar oldFileLength = data.oldFileLength;\n\t\tif (logObject == undefined) {\n\t\t\tvar logObject = { 'doc': 'doc-log', 'docx': 'doc-log', 'xls': 'excel-log', 'xlsx': 'excel-log', 'txt': 'annex-download', 'pdf': 'pdf-log' };\n\t\t}\n\t\treturn React.createElement(\n\t\t\t'div',\n\t\t\tnull,\n\t\t\tReact.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'ysp-manager-audit-title-icon ysp-manager-audit-wrapper-noborder' },\n\t\t\t\tReact.createElement(\n\t\t\t\t\t'span',\n\t\t\t\t\tnull,\n\t\t\t\t\t'\\u9644\\u4EF6'\n\t\t\t\t),\n\t\t\t\tReact.createElement('i', { className: 'relate-files', onClick: _this.click })\n\t\t\t),\n\t\t\tReact.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'ysp-manager-audit-wrapper' },\n\t\t\t\toldFileLength > 0 ? React.createElement(\n\t\t\t\t\t'div',\n\t\t\t\t\t{ style: { 'font-size': '0.9rem', 'border-bottom': 'none' } },\n\t\t\t\t\t'\\u5F85\\u9884\\u89C8\\u9644\\u4EF6'\n\t\t\t\t) : \"\",\n\t\t\t\tfileData instanceof Array && fileData.length > 0 ? fileData.map(function (fileItem, fileIndex) {\n\t\t\t\t\tif (fileIndex >= oldFileLength) {\n\t\t\t\t\t\treturn null;\n\t\t\t\t\t}\n\t\t\t\t\tvar extentdName = fileItem.slice(fileItem.lastIndexOf('.') + 1);\n\t\t\t\t\tif (logObject[extentdName] == undefined) {\n\t\t\t\t\t\tvar className = 'annex-download';\n\t\t\t\t\t} else {\n\t\t\t\t\t\tvar className = logObject[extentdName] + \" \" + 'logo-common-css';\n\t\t\t\t\t}\n\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t'div',\n\t\t\t\t\t\t{ className: className, style: { 'border-bottom': 'none' }, onClick: _this.downLoadClick.bind(_this), 'data-index': fileIndex },\n\t\t\t\t\t\tfileItem,\n\t\t\t\t\t\tReact.createElement('i', { className: 'download-log', style: { 'right': '50px' } }),\n\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t'span',\n\t\t\t\t\t\t\t{ className: 'delete-log', 'data-type': 'deleteFile', onClick: _this.deleteFile.bind(_this), 'data-index': fileIndex },\n\t\t\t\t\t\t\t'X'\n\t\t\t\t\t\t)\n\t\t\t\t\t);\n\t\t\t\t}) : '',\n\t\t\t\tfileData.length > oldFileLength ? React.createElement(\n\t\t\t\t\t'div',\n\t\t\t\t\t{ style: { 'font-size': '0.9rem', 'border-bottom': 'none' } },\n\t\t\t\t\t'\\u5F85\\u4E0A\\u4F20\\u9644\\u4EF6'\n\t\t\t\t) : \"\",\n\t\t\t\tfileData instanceof Array && fileData.length > 0 ? fileData.map(function (fileItem, fileIndex) {\n\t\t\t\t\tif (fileIndex < oldFileLength) {\n\t\t\t\t\t\treturn null;\n\t\t\t\t\t}\n\t\t\t\t\tvar extentdName = fileItem.slice(fileItem.lastIndexOf('.') + 1);\n\t\t\t\t\tif (logObject[extentdName] == undefined) {\n\t\t\t\t\t\tvar className = 'annex-download';\n\t\t\t\t\t} else {\n\t\t\t\t\t\tvar className = logObject[extentdName] + \" \" + 'logo-common-css';\n\t\t\t\t\t}\n\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t'div',\n\t\t\t\t\t\t{ className: className, style: { 'border-bottom': 'none' } },\n\t\t\t\t\t\tfileItem,\n\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t'div',\n\t\t\t\t\t\t\t{ style: { 'font-size': '0.7rem' } },\n\t\t\t\t\t\t\t'\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20\\u2026\\u2026'\n\t\t\t\t\t\t),\n\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t'span',\n\t\t\t\t\t\t\t{ className: 'delete-log', 'data-type': 'deleteFile', onClick: _this.deleteFile.bind(_this), 'data-index': fileIndex },\n\t\t\t\t\t\t\t'X'\n\t\t\t\t\t\t)\n\t\t\t\t\t);\n\t\t\t\t}) : ''\n\t\t\t)\n\t\t);\n\t}\n});";
     },
     getData_control48_NQzpsQ: function getData_control48_NQzpsQ(elem) {},
     doAction_uiControl45_L1FoST: function doAction_uiControl45_L1FoST(data, elem) {},
