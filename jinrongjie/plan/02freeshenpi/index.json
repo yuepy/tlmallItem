@@ -512,6 +512,48 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control352_eU2fHM": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "a/@href",
+            "prob": 2,
+            "value": {
+              "funcName": "createDoc"
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[5]/TD[2]/SPAN[2]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              18,
+              56,
+              133
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control352_eU2fHM"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -528,7 +570,8 @@
         "control299_TNJBBM",
         "control290_ATpyiy",
         "control338_n4trKg",
-        "control357_5Ts0S3"
+        "control357_5Ts0S3",
+        "control352_eU2fHM"
       ],
       "anchors": [
         "control288_UyahxM"
@@ -867,6 +910,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl249_wBw9GP",
+          "controlId": "control352_eU2fHM",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl249_wBw9GP",
+                "onGetTemplate": "getTemplate_uiControl249_wBw9GP"
+              }
+            }
+          }
         }
       ]
     }
@@ -877,7 +935,8 @@
         "context35_96CB1E": [
           "123",
           "测试1",
-          "兔兔"
+          "兔兔",
+          "云适配专用测试流程2"
         ]
       }
     },
@@ -887,7 +946,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312800&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321631&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
           "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=380961&isovertime=0",
-          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=483869&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=483869&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=615190&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
         ],
         "context10_Tp4yhH": [
           "192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1",

@@ -12,7 +12,8 @@
         $(elem).find("#field-annexupload_tab").find("a").each(function () {
           data.file.push($(this).text().trim());
         });
-      }if ($(elem).find("#signdocspan").length > 0 && $(elem).find("#signdocspan").children("a").length > 0) {
+      }
+      if ($(elem).find("#signdocspan").length > 0 && $(elem).find("#signdocspan").children("a").length > 0) {
         $(elem).find("#signdocspan").children("a").each(function () {
           data.related_document.push($(this).text().trim());
         });
@@ -87,8 +88,155 @@
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'doc',
+                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1]
+                        });
+                      } else if ($(this).text().indexOf('pdf') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'pdf',
                           no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('xls') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('png') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('jpg') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('gif') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else {
+                        arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      }
+                    }if ($(this)[0].className == 'progressCancel') {
+                      if ($(this).next().text().indexOf('txt') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
+                      } else if ($(this).next().text().indexOf('doc') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
+                      } else if ($(this).next().text().indexOf('pdf') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
+                      } else if ($(this).next().text().indexOf('xls') !== -1) {
+                        arr3.push({
+                          name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
+                      } else if ($(this).next().text().indexOf('png') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
+                      } else if ($(this).next().text().indexOf('jpg') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
+                      } else if ($(this).next().text().indexOf('gif') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
+                      } else if ($(this).next().text().indexOf('zip') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
+                      } else if ($(this).next().text().indexOf('ppt') !== -1) {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
+                      } else {
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
+                      }
+                    }
+                  });
+                }
+                if ($(this).children("table").find(".btnFlowd").length > 0) {
+                  var arr4 = [];$(this).children("table").find(".btnFlowd").each(function (i) {
+                    if (!/全部下载/.test($(this).text())) {
+                      arr4.push($(this).text().trim().match(/\(.*\)/));
+                    }
+                  });
+                }if ($(this).children("table").find(".btnFlow").length > 0) {
+                  var arr6 = [];
+                  $(this).children("table").find(".btnFlow").each(function (i) {
+                    if ($(this).attr('onclick') && $(this).attr('onclick').indexOf('onChangeSharetype') !== -1) {
+                      arr6.push("111");
+                    }
+                  });
+                }if ($(this).text().indexOf('最大只能') !== -1) {
+                  var arr5 = 'yes';
+                } else {
+                  var arr5 = 'no';
+                }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5, delete: arr6 });
+              } //判断select-------------------------------------
+              else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
+                  var arr4 = [];$(this).children("select").children("option").each(function () {
+                    if ($(this)[0].selected == true) {
+                      arr4.push({ text: $(this).text().trim(), select: 'selected' });
+                    }if ($(this)[0].selected == false) {
+                      arr4.push({ text: $(this).text().trim(), select: '' });
+                    }
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
+                } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
+                  var arr4 = [];$(this).children("select").children("option").each(function () {
+                    if ($(this)[0].selected == true) {
+                      arr4.push({ text: $(this).text().trim(), select: 'selected' });
+                    } else if ($(this)[0].selected == false) {
+                      arr4.push({ text: $(this).text().trim(), select: '' });
+                    }
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                } //判断input-------------------------------------
+                else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
+                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
+                  } //判断纯文字
+                  else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
+                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
+                    } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
+                      arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
+                    } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children("button").length == 0) {
+                      arr2.push({ text: $(this).children("span").text(), type: 'a' });
+                    } else if ($(this).children("span").length == 1 && $(this).children("input").length == 0 && $(this).children().length == 1) {
+                      arr2.push({ text: $(this).children("span").text(), type: 'a' });
+                    } //判断textarea-------------------------------------
+                    else if ($(this).children("textarea").length == 1) {
+                        arr2.push({ text: $(this).children("textarea").prop('value'),
+                          type: 'textarea', id: $(this).children("textarea")[0].id });
+                      } //判断button-------------------------------------
+                      else if ($(this).children("button").length > 0) {
+                          //var arr5 = [];
+                          if ($(this).children("button").next("span").length > 0 && $(this).children("button").next("span").children("a").length > 0) {
+                            $(this).children("button").each(function () {
+                              var arr = [];$(this).next("span").children('a').each(function () {
+                                arr.push($(this).text());
+                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                            });
+                          } else {
+                            $(this).children("button").each(function () {
+                              arr2.push({ text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                            });
+                          }
+                        } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
+                          //console.log(43534534523)
+                          arr2.push({ text: $(this).find("button").text(), type: 'button22', id: $(this).children('span').eq(0).children("button").attr('id') });
+                        } //判断意见-------------------------------------
+                        else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
+                            arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
+                          } else if ($(this).find(".cke_editor").length > 0) {
+                            arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
+                          }data.base_info.content.push(arr2);
+          });
+        });
+      }if ($(elem).children("table").length == 1) {
+        var elem2 = $(elem).children("table").eq(0)[0];var tbody2 = $(elem).children("table").eq(0).children("tbody")[0];
+        $(tbody2).children("tr").each(function () {
+          //var arr1 = [];
+          $(this).children("td").each(function () {
+            var arr2 = []; //判断标题-------------------------------------
+            if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text()) && $(this).next()[0].className == 'zdn' && ($(this).next().children().length == 0 || $(this).next()[0].children.length > 0 && $(this).next()[0].children[0].tagName == 'BR')) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
+            } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().find("a").length > 0) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
+            } else if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
+            } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().children().length == 2 && $(this).next().children("span").length == 1 && $(this).next().children("input").length == 1) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
+            } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text())) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_ye' });
+            } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
+            } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
+            } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().children().length == 2 && $(this).next().children("span").length == 1 && $(this).next().children("input").length == 1) {
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
+            } //判断附件-------------------------------------
+            else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
+                var arr3 = [];if ($(this).children("table").find("a").length > 0) {
+                  $(this).children("table").find("a").each(function (i) {
+                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
+                      if ($(this).text().indexOf('txt') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('doc') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
@@ -120,9 +268,6 @@
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
-                      } else if ($(this).next().text().indexOf('ppt') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push'
-                        });
                       } else {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
@@ -165,150 +310,9 @@
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
-                  }
-                  //判断纯文字
-                  else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
-                    } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
-                    } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children("button").length == 0) {
-                      arr2.push({ text: $(this).children("span").text(), type: 'a' });
-                    } else if ($(this).children("span").length == 1 && $(this).children("input").length == 0 && $(this).children().length == 1) {
-                      arr2.push({ text: $(this).children("span").text(), type: 'a' });
-                    } //判断textarea-------------------------------------
-                    else if ($(this).children("textarea").length == 1) {
-                        arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id });
-                      } //判断button-------------------------------------
-                      else if ($(this).children("button").length > 0) {
-                          //var arr5 = [];
-                          if ($(this).children("button").next("span").length > 0 && $(this).children("button").next("span").children("a").length > 0) {
-                            $(this).children("button").each(function () {
-                              var arr = [];$(this).next("span").children('a').each(function () {
-                                arr.push($(this).text());
-                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
-                            });
-                          } else {
-                            $(this).children("button").each(function () {
-                              arr2.push({ text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
-                            });
-                          }
-                        } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
-                          //console.log(43534534523)
-                          arr2.push({ text: $(this).find("button").text(), type: 'button22', id: $(this).children('span').eq(0).children("button").attr('id') });
-                        } //判断意见-------------------------------------
-                        else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
-                            arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
-                          } else if ($(this).find(".cke_editor").length > 0) {
-                            arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
-                          }data.base_info.content.push(arr2);
-          });
-        });
-      }if ($(elem).children("table").length == 1) {
-        var elem2 = $(elem).children("table").eq(0)[0];var tbody2 = $(elem).children("table").eq(0).children("tbody")[0];$(tbody2).children("tr").each(function () {
-          //var arr1 = [];
-          $(this).children("td").each(function () {
-            var arr2 = []; //判断标题-------------------------------------
-            if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text()) && $(this).next()[0].className == 'zdn' && ($(this).next().children().length == 0 || $(this).next()[0].children.length > 0 && $(this).next()[0].children[0].tagName == 'BR')) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
-            } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().find("a").length > 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
-            } else if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
-            } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().children().length == 2 && $(this).next().children("span").length == 1 && $(this).next().children("input").length == 1) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
-            } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text())) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_ye' });
-            } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
-            } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
-            } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().children().length == 2 && $(this).next().children("span").length == 1 && $(this).next().children("input").length == 1) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
-            } //判断附件-------------------------------------
-            else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
-                var arr3 = [];if ($(this).children("table").find("a").length > 0) {
-                  $(this).children("table").find("a").each(function (i) {
-                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
-                      if ($(this).text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
-                      } else if ($(this).text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
-                      } else if ($(this).text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
-                      } else if ($(this).text().indexOf('xls') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
-                      } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(),
-                          stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
-                      } else if ($(this).text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
-                      } else if ($(this).text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
-                      } else {
-                        arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
-                      }
-                    }if ($(this)[0].className == 'progressCancel') {
-                      if ($(this).next().text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
-                      } else if ($(this).next().text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
-                      } else if ($(this).next().text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
-                      } else if ($(this).next().text().indexOf('xls') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
-                      } else if ($(this).next().text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
-                      } else if ($(this).next().text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
-                      } else if ($(this).next().text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
-                      } else if ($(this).next().text().indexOf('zip') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
-                      } else {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
-                      }
-                    }
-                  });
-                }if ($(this).children("table").find(".btnFlowd").length > 0) {
-                  var arr4 = [];$(this).children("table").find(".btnFlowd").each(function (i) {
-                    if (!/全部下载/.test($(this).text())) {
-                      arr4.push($(this).text().trim().match(/\(.*\)/));
-                    }
-                  });
-                }if ($(this).children("table").find(".btnFlow").length > 0) {
-                  var arr6 = [];$(this).children("table").find(".btnFlow").each(function (i) {
-                    if ($(this).attr('onclick') && $(this).attr('onclick').indexOf('onChangeSharetype') !== -1) {
-                      arr6.push("111");
-                    }
-                  });
-                }if ($(this).text().indexOf('最大只能') !== -1) {
-                  var arr5 = 'yes';
-                } else {
-                  var arr5 = 'no';
-                }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5, delete: arr6 });
-              } //判断select-------------------------------------
-              else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
-                  var arr4 = [];$(this).children("select").children("option").each(function () {
-                    if ($(this)[0].selected == true) {
-                      arr4.push({ text: $(this).text().trim(), select: 'selected' });
-                    }if ($(this)[0].selected == false) {
-                      arr4.push({ text: $(this).text().trim(), select: '' });
-                    }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
-                } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
-                  var arr4 = [];$(this).children("select").children("option").each(function () {
-                    if ($(this)[0].selected == true) {
-                      arr4.push({ text: $(this).text().trim(), select: 'selected' });
-                    } else if ($(this)[0].selected == false) {
-                      arr4.push({ text: $(this).text().trim(), select: '' });
-                    }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"),
-                    mark: '1', disabled: 'true' });
-                } //判断input-------------------------------------
-                else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
-                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                   } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                    arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
+                    arr2.push({ text: $(this).find("a").text(),
+                      type: 'aaa' });
                   } //判断纯文字
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
@@ -348,17 +352,30 @@
     }, doAction_uiControl276_1rRBbI: function (data, elem) {
       // {data.base_lc_info.miji.content[0].length > 0 ? <div><div className="font-yell">密级</div><select onChange={_this.optionChange}>{option2}</select></div> : <div></div>}
       if (data.eventType == 'zhengwen') {
-        debugger;if (elem.ownerDocument.getElementById('requestid')) {
-          var requestid = elem.ownerDocument.getElementById('requestid').value;
-        }if (elem.ownerDocument.getElementById('rand')) {
-          var rand = elem.ownerDocument.getElementById('rand').value;
-        }var xmlhttp;xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function (data) {
-          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var url = xmlhttp.responseText;console.log(xmlhttp);
-          }
-        };xmlhttp.open("POST", "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid=615190&rand=" + rand, true);xmlhttp.send();
+        //   if (elem.ownerDocument.getElementById('requestid')) {
+        //     var requestid = elem.ownerDocument.getElementById('requestid').value;
+        //   }
+        //   if (elem.ownerDocument.getElementById('rand')) {
+        //     var rand = elem.ownerDocument.getElementById('rand').value;
+        //   }
+        //   var xmlhttp;
+        //   xmlhttp = new XMLHttpRequest();
+        //   xmlhttp.onreadystatechange = function (data) {
+        //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        //       var url = xmlhttp.responseText;
+        //       console.log(xmlhttp);
+        //     }
+        //   };
+        //   xmlhttp.open("POST", "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid=615190&rand=" + rand, true);
+        //   xmlhttp.send();
+        var url = "http://192.168.200.63" + elem.ownerDocument.querySelector('input[name="wfdoc"]').value;console.log(url);if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
+        } else if (ysp.appMain.isAndroid()) {
+          top.location.href = _url;
+        }
       }if (data.eventType == 'deleteFile') {
-        var idx = data.dataCustom;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
+        var idx = data.dataCustom;
+        var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
           if ($(this).attr('temptitle') && $(this).attr('temptitle').indexOf('附件') !== -1) {
             var value = $(this)[0].value;var arr = $(this)[0].value.split(',');console.log(arr.length);if (arr.length !== 1) {
               arr.splice(idx, 1);var valuet = arr.toString(); //console.log(valuet);
@@ -849,6 +866,12 @@
     getTemplate_uiControl363_3PQ7Ah: function () {
       var selfTemplate = "import {\n\tComponent\n} from 'react';\nimport {\n\tCommonHeader, ADialog\n} from 'ysp-custom-components';\nexport default class extends Component {\n\n\tconstructor(props) {// \u6784\u9020\u51FD\u6570-->\u521D\u59CB\u5316\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\tactiveTab: 0,\n\t\t\topen: false\n\t\t}\n\t}\n\n\tbtnClick(e) {//\u6D41\u8F6C\u610F\u89C1\u5207\u6362\n\t\tvar target = e.target;\n\t\tvar index = target.getAttribute(\"data-index\");\n\t\tthis.setState(\n\t\t\tfunction (prevState) {\n\t\t\t\tif (prevState.activeTab == 0 && index == 1) {\n\t\t\t\t\treturn {\n\t\t\t\t\t\tactiveTab: 1,\n            open: true\n\t\t\t\t\t}\n\t\t\t\t} else if (prevState.activeTab == 1 && index == 0) {\n\t\t\t\t\treturn {\n\t\t\t\t\t\tactiveTab: 0,\n            open: false\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t);\n    if(this.state.open==true && index ==0){   \ttarget.ownerDocument.querySelector(\".ysp_table_lfj\").style.display=\"block\";\n    }else{\n      \ttarget.ownerDocument.querySelector(\".ysp_table_lfj\").style.display=\"none\";\n    }\n\t}\n  \n  aboutTabClick(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType: 'changeTab'\n      })\n    }\n  }\n\n\tshowReceiver(e) {\n\t\tvar handler = this.props.customHandler;\n\t\tvar dataIndex = e.target.getAttribute('data-index');\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\tdata: { index: dataIndex },\n\t\t\t\teventType: \"showReceiver\"\n\t\t\t})\n\t\t}\n\t}\n\n\t// render\u65B9\u6CD5-->\u6E32\u67D3\n\trender() {\n\t\tvar _this = this;\n\t\tvar data = _this.props.customData||[];\n\t\tvar leftData = data.leftData||[];\n\t\tvar rightData = data.rightData||[];\n\t\treturn (\n\t\t\t<div className=\"ysp-manager-audit-header-tab\">\n\t\t\t\t<div className=\"left-div\" data-index=\"0\" onClick={_this.btnClick.bind(_this)}><i data-index=\"0\"></i><span data-index=\"0\" className={_this.state.activeTab == 0 ? \"active_tab\" : \"\"} >\u6D41\u7A0B\u8868\u5355</span></div>\n\t\t\t\t<div className=\"left-div\" data-index=\"1\" onClick={_this.btnClick.bind(_this)}><i data-index=\"1\"></i><span data-index=\"1\" className={_this.state.activeTab == 1 ? \"active_tab\" : \"\"} onClick={_this.aboutTabClick.bind(_this)}>\u6D41\u8F6C\u610F\u89C1</span></div>\n\t\t\t\t<div className=\"border-bottom\"></div>\n\t\t\t\t{this.state.open && <ADialog>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t{leftData ? leftData.map((litem, lindex) => {\n\t\t\t\t\t\t\treturn (\n\t\t\t\t\t\t\t\t<div className=\"approval-node-info\">\n\t\t\t\t\t\t\t\t\t<div className=\"approval-node-info-left-div\">\n\t\t\t\t\t\t\t\t\t\t{litem.map((innerLitem) => {\n\t\t\t\t\t\t\t\t\t\t\treturn (\n\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t{innerLitem}\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t);\n\t\t\t\t\t\t\t\t\t\t})}\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div className=\"approval-node-info-right-div\">\n\t\t\t\t\t\t\t\t\t\t{rightData[lindex].map((ritem, rindex) => {\n\t\t\t\t\t\t\t\t\t\t\treturn (\n\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t{rightData[lindex].length == (parseInt(rindex )+1) ? <span>\u63A5\u6536\u4EBA:<span data-index={lindex} onClick={_this.showReceiver.bind(_this)}>{ritem.indexOf('\u663E\u793A') >= 0 ? '\u663E\u793A' : ritem}</span></span> : ritem}\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t);\n\t\t\t\t\t\t\t\t\t\t})}\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t);\n\t\t\t\t\t\t}) : <div></div>}\n\t\t\t\t\t</div>\n\t\t\t\t</ADialog>}\n\t\t\t\t<p className=\"bottom\"></p>\n\t\t\t</div>\n\t\t)\n\t}\n}";
       return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n\t_inherits(_class, _Component);\n\n\tfunction _class(props) {\n\t\t_classCallCheck(this, _class);\n\n\t\tvar _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props)); // \u6784\u9020\u51FD\u6570-->\u521D\u59CB\u5316\n\n\n\t\t_this2.state = {\n\t\t\tactiveTab: 0,\n\t\t\topen: false\n\t\t};\n\t\treturn _this2;\n\t}\n\n\t_createClass(_class, [{\n\t\tkey: 'btnClick',\n\t\tvalue: function btnClick(e) {\n\t\t\t//\u6D41\u8F6C\u610F\u89C1\u5207\u6362\n\t\t\tvar target = e.target;\n\t\t\tvar index = target.getAttribute(\"data-index\");\n\t\t\tthis.setState(function (prevState) {\n\t\t\t\tif (prevState.activeTab == 0 && index == 1) {\n\t\t\t\t\treturn {\n\t\t\t\t\t\tactiveTab: 1,\n\t\t\t\t\t\topen: true\n\t\t\t\t\t};\n\t\t\t\t} else if (prevState.activeTab == 1 && index == 0) {\n\t\t\t\t\treturn {\n\t\t\t\t\t\tactiveTab: 0,\n\t\t\t\t\t\topen: false\n\t\t\t\t\t};\n\t\t\t\t}\n\t\t\t});\n\t\t\tif (this.state.open == true && index == 0) {\n\t\t\t\ttarget.ownerDocument.querySelector(\".ysp_table_lfj\").style.display = \"block\";\n\t\t\t} else {\n\t\t\t\ttarget.ownerDocument.querySelector(\".ysp_table_lfj\").style.display = \"none\";\n\t\t\t}\n\t\t}\n\t}, {\n\t\tkey: 'aboutTabClick',\n\t\tvalue: function aboutTabClick(e) {\n\t\t\tvar handler = this.props.customHandler;\n\t\t\tif (handler) {\n\t\t\t\thandler({\n\t\t\t\t\teventType: 'changeTab'\n\t\t\t\t});\n\t\t\t}\n\t\t}\n\t}, {\n\t\tkey: 'showReceiver',\n\t\tvalue: function showReceiver(e) {\n\t\t\tvar handler = this.props.customHandler;\n\t\t\tvar dataIndex = e.target.getAttribute('data-index');\n\t\t\tif (handler) {\n\t\t\t\thandler({\n\t\t\t\t\tdata: { index: dataIndex },\n\t\t\t\t\teventType: \"showReceiver\"\n\t\t\t\t});\n\t\t\t}\n\t\t}\n\n\t\t// render\u65B9\u6CD5-->\u6E32\u67D3\n\n\t}, {\n\t\tkey: 'render',\n\t\tvalue: function render() {\n\t\t\tvar _this = this;\n\t\t\tvar data = _this.props.customData || [];\n\t\t\tvar leftData = data.leftData || [];\n\t\t\tvar rightData = data.rightData || [];\n\t\t\treturn React.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'ysp-manager-audit-header-tab' },\n\t\t\t\tReact.createElement(\n\t\t\t\t\t'div',\n\t\t\t\t\t{ className: 'left-div', 'data-index': '0', onClick: _this.btnClick.bind(_this) },\n\t\t\t\t\tReact.createElement('i', { 'data-index': '0' }),\n\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t'span',\n\t\t\t\t\t\t{ 'data-index': '0', className: _this.state.activeTab == 0 ? \"active_tab\" : \"\" },\n\t\t\t\t\t\t'\\u6D41\\u7A0B\\u8868\\u5355'\n\t\t\t\t\t)\n\t\t\t\t),\n\t\t\t\tReact.createElement(\n\t\t\t\t\t'div',\n\t\t\t\t\t{ className: 'left-div', 'data-index': '1', onClick: _this.btnClick.bind(_this) },\n\t\t\t\t\tReact.createElement('i', { 'data-index': '1' }),\n\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t'span',\n\t\t\t\t\t\t{ 'data-index': '1', className: _this.state.activeTab == 1 ? \"active_tab\" : \"\", onClick: _this.aboutTabClick.bind(_this) },\n\t\t\t\t\t\t'\\u6D41\\u8F6C\\u610F\\u89C1'\n\t\t\t\t\t)\n\t\t\t\t),\n\t\t\t\tReact.createElement('div', { className: 'border-bottom' }),\n\t\t\t\tthis.state.open && React.createElement(\n\t\t\t\t\t_yspCustomComponents.ADialog,\n\t\t\t\t\tnull,\n\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t'div',\n\t\t\t\t\t\tnull,\n\t\t\t\t\t\tleftData ? leftData.map(function (litem, lindex) {\n\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t'div',\n\t\t\t\t\t\t\t\t{ className: 'approval-node-info' },\n\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t'div',\n\t\t\t\t\t\t\t\t\t{ className: 'approval-node-info-left-div' },\n\t\t\t\t\t\t\t\t\tlitem.map(function (innerLitem) {\n\t\t\t\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t\t\t\t'div',\n\t\t\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\t\t\tinnerLitem\n\t\t\t\t\t\t\t\t\t\t);\n\t\t\t\t\t\t\t\t\t})\n\t\t\t\t\t\t\t\t),\n\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t'div',\n\t\t\t\t\t\t\t\t\t{ className: 'approval-node-info-right-div' },\n\t\t\t\t\t\t\t\t\trightData[lindex].map(function (ritem, rindex) {\n\t\t\t\t\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\t\t\t\t'div',\n\t\t\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\t\t\trightData[lindex].length == parseInt(rindex) + 1 ? React.createElement(\n\t\t\t\t\t\t\t\t\t\t\t\t'span',\n\t\t\t\t\t\t\t\t\t\t\t\tnull,\n\t\t\t\t\t\t\t\t\t\t\t\t'\\u63A5\\u6536\\u4EBA:',\n\t\t\t\t\t\t\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t\t\t\t\t\t\t'span',\n\t\t\t\t\t\t\t\t\t\t\t\t\t{ 'data-index': lindex, onClick: _this.showReceiver.bind(_this) },\n\t\t\t\t\t\t\t\t\t\t\t\t\tritem.indexOf('\u663E\u793A') >= 0 ? '\u663E\u793A' : ritem\n\t\t\t\t\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\t\t\t\t) : ritem\n\t\t\t\t\t\t\t\t\t\t);\n\t\t\t\t\t\t\t\t\t})\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t);\n\t\t\t\t\t\t}) : React.createElement('div', null)\n\t\t\t\t\t)\n\t\t\t\t),\n\t\t\t\tReact.createElement('p', { className: 'bottom' })\n\t\t\t);\n\t\t}\n\t}]);\n\n\treturn _class;\n}(_react.Component);\n\nexports.default = _class;";
+    },
+    getData_control352_eU2fHM: function (elem) {},
+    doAction_uiControl249_wBw9GP: function (data, elem) {},
+    getTemplate_uiControl249_wBw9GP: function () {
+      var selfTemplate = 'import {Component} from "react";\nexport default class extends Component{\n  componentDidMount(){\n    this.refs.zhengwen.click()\n  }\n  render(){\n    return(\n    \t<div ref="zhengwen" onClick={(e)=>{\n          var handler=this.props.customHandler;\n          if(handler){\n            handler({\n              data:"click"\n            })\n          }\n        }}></div>\n    )\n  }\n}';
+      return '"use strict";\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require("react");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: "componentDidMount",\n    value: function componentDidMount() {\n      this.refs.zhengwen.click();\n    }\n  }, {\n    key: "render",\n    value: function render() {\n      var _this2 = this;\n\n      return React.createElement("div", { ref: "zhengwen", onClick: function onClick(e) {\n          var handler = _this2.props.customHandler;\n          if (handler) {\n            handler({\n              data: "click"\n            });\n          }\n        } });\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     }
   });
 })(window, ysp);
