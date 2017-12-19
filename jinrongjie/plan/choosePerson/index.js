@@ -4,6 +4,7 @@
   ysp.runtime.Model.extendLoadingModel({
     getData_control31_MQw3uc: function (elem) {
       var data = { search: { inputValue: [] }, status: [], title: [], content1: [], content2: [], content3: [], thead: ['姓名', '岗位', "部门"], display_status: [] }; //style={{color:'rgb(194,154,42)'}}
+      // console.log("start---->>>"+new Date())
       if (elem.contentDocument.getElementById("oTable1")) {
         var elem1 = elem.contentDocument.getElementById("oTable1");if (/bgdark/.test($(elem1).find("#oTDtype_0").attr('background'))) {
           data.status.push("2");
@@ -49,7 +50,8 @@
               }if ($(tr1).children("td").eq(0).find('option').length > 0) {
                 $(tr1).children("td").eq(0).find('option').each(function () {
                   var arr1 = [];if ($(this)[0].selected == true) {
-                    arr1.push({ text: $(this).text(), selected: 'true' });
+                    arr1.push({ text: $(this).text(),
+                      selected: 'true' });
                   } else if ($(this)[0].selected == false) {
                     arr1.push({ text: $(this).text(), selected: 'false' });
                   }data.content1.push(arr1);
@@ -70,13 +72,15 @@
             }
           }
         }
-      }return data;
+      } // console.log("end---->>>"+new Date())
+      return data;
     }, doAction_uiControl42_lcGQHl: function (data, elem) {
       if (data.eventType == 'selectPerson') {
         //debugger;
         var id = data.dataCustom;if (elem.contentDocument.getElementById("oTable1")) {
           var elem1 = elem.contentDocument.getElementById("oTable1");if ($(elem1).find("#frame1").length > 0) {
-            var elem2 = $(elem1).find("#frame1")[0].contentDocument.body;if ($(elem2).find("#deeptree").length > 0) {
+            var elem2 = $(elem1).find("#frame1")[0].contentDocument.body;
+            if ($(elem2).find("#deeptree").length > 0) {
               var tree = $(elem2).find("#deeptree")[0];$(tree).find(".webfx-tree-item").each(function () {
                 //debugger;
                 if ($(this).find("a")[0].id == id) {
@@ -193,7 +197,8 @@
         var elem1 = elem.contentDocument.getElementById("oTable1");var elem3 = $(elem1).find("#frame2")[0].contentDocument.body;var Tbody = $(elem3).find("table").children("tbody")[0];var tr0 = $(Tbody).children("tr").eq(0)[0];if ($(tr0).children("td").length > 0 && $(tr0).find("input").length > 0) {
           $(tr0).find("input")[0].checked = false;
         }
-      }if (data.eventType == 'down') {
+      }
+      if (data.eventType == 'down') {
         //debugger;
         var elem1 = elem.contentDocument.getElementById("oTable1");var elem3 = $(elem1).find("#frame2")[0].contentDocument.body;var Tbody = $(elem3).find("table").children("tbody")[0];var tr0 = $(Tbody).children("tr").eq(0)[0]; // console.log($(tr0).find("input"));
         if ($(tr0).children("td").length > 0 && $(tr0).find("input").length > 0) {
