@@ -330,6 +330,7 @@
     this.tasks = [];
     this._status = 'idle';
     this.currentTask = null;
+    this.lastTimer;
   }
   TasksManager.prototype.addTask = function(task) {
     this.tasks.push(task);
@@ -344,12 +345,13 @@
         type: task
       }
     }
-    setTimeout(function() { //确保用户在意外情况，强制让其进入闲置状态
+    this.lastTimer && clearTimeout(this.lastTimer);
+    this.lastTimer = setTimeout(function() { //确保用户在意外情况，强制让其进入闲置状态
       if (_this.status == 'busy') {
         _this.status = 'idle';
         _this.executeFinalTask();
       }
-    }, 3000);
+    }, 4000);
     if (this.status == 'idle') {
       //ysp.appMain.showLoading();
       this.status = 'busy';
