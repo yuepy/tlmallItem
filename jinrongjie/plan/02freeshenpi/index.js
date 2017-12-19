@@ -12,8 +12,7 @@
         $(elem).find("#field-annexupload_tab").find("a").each(function () {
           data.file.push($(this).text().trim());
         });
-      }
-      if ($(elem).find("#signdocspan").length > 0 && $(elem).find("#signdocspan").children("a").length > 0) {
+      }if ($(elem).find("#signdocspan").length > 0 && $(elem).find("#signdocspan").children("a").length > 0) {
         $(elem).find("#signdocspan").children("a").each(function () {
           data.related_document.push($(this).text().trim());
         });
@@ -88,16 +87,17 @@
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'doc',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({
-                          name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({
+                          name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
@@ -107,8 +107,7 @@
                       if ($(this).next().text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(),
-                          stl: 'doc', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
@@ -129,8 +128,7 @@
                     }
                   });
                 }if ($(this).children("table").find(".btnFlowd").length > 0) {
-                  var arr4 = [];
-                  $(this).children("table").find(".btnFlowd").each(function (i) {
+                  var arr4 = [];$(this).children("table").find(".btnFlowd").each(function (i) {
                     if (!/全部下载/.test($(this).text())) {
                       arr4.push($(this).text().trim().match(/\(.*\)/));
                     }
@@ -170,8 +168,7 @@
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                     } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).find("a").text(),
-                        type: 'aaa' });
+                      arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children("button").length == 0) {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 0 && $(this).children().length == 1) {
@@ -218,12 +215,12 @@
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().children().length == 2 && $(this).next().children("span").length == 1 && $(this).next().children("input").length == 1) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text())) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_ye' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(),
+                type: 'tit_ye' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(),
-                type: 'title1' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().children().length == 2 && $(this).next().children("span").length == 1 && $(this).next().children("input").length == 1) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
             } //判断附件-------------------------------------
@@ -238,7 +235,8 @@
                       } else if ($(this).text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'xls',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
@@ -250,12 +248,12 @@
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push'
-                        });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf',
+                          no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
@@ -263,10 +261,10 @@
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'gif',
+                          no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(),
-                          stl: 'zip', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                       } else {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
@@ -288,17 +286,18 @@
                   var arr5 = 'yes';
                 } else {
                   var arr5 = 'no';
-                }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5, delete: arr6 });
+                }arr2.push({ text: arr3, size: arr4,
+                  type: 'fujian', yes: arr5, delete: arr6 });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
-                    }if ($(this)[0].selected == false) {
+                    }
+                    if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({
-                    text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
                 } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
@@ -309,7 +308,9 @@
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
-                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
+                    arr2.push({ text: $(this).children("input").prop('value'),
+                      type: 'input',
+                      id: $(this).children("input").prop('id') });
                   } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
                     arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                   } //判断纯文字
@@ -327,13 +328,15 @@
                           //var arr5 = [];
                           if ($(this).children("button").next("span").length > 0 && $(this).children("button").next("span").children("a").length > 0) {
                             $(this).children("button").each(function () {
-                              var arr = [];$(this).next("span").children('a').each(function () {
+                              var arr = [];
+                              $(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
                               });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
-                              arr2.push({ text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              arr2.push({ text: '', type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/)
+                              });
                             });
                           }
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
@@ -352,7 +355,11 @@
       // {data.base_lc_info.miji.content[0].length > 0 ? <div><div className="font-yell">密级</div><select onChange={_this.optionChange}>{option2}</select></div> : <div></div>}
       if (data.eventType == 'zhengwen') {
         debugger;if (elem.ownerDocument.getElementById('picInnerFrameurl')) {
-          var url = 'http://192.168.200.63' + elem.ownerDocument.getElementById('picInnerFrameurl').value;
+          var _url = 'http://192.168.200.63' + elem.ownerDocument.getElementById('picInnerFrameurl').value;if (ysp.appMain.isIOS()) {
+            top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
+          } else if (ysp.appMain.isAndroid()) {
+            top.location.href = _url;
+          }
         }
       }if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
