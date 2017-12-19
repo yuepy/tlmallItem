@@ -6,7 +6,8 @@
   "requires": {
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
-    "processToSend": "../processToSend/index.json"
+    "processToSend": "../processToSend/index.json",
+    "forward": "../forward/index.json"
   },
   "chineseName": "02自由流程审批",
   "description": "",
@@ -623,6 +624,10 @@
         {
           "toContextId": "context10_Tp4yhH",
           "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context23_zUAAyb",
+          "toModelId": "forward"
         }
       ]
     },
@@ -896,6 +901,12 @@
           "192.168.200.63/workflow/request/Remark.jsp?requestid=312801&workflowRequestLogId=-1",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=434508&workflowRequestLogId=0",
           "192.168.200.63/workflow/request/Remark.jsp?requestid=452179&workflowRequestLogId=0"
+        ],
+        "context23_zUAAyb": [
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312802%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312804%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312805%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D615188%26isqc%3D1"
         ]
       }
     },
