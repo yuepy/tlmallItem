@@ -237,7 +237,7 @@
     doAction_uiControl158_qfPsgO: function (data, elem) {
       var clickType = data.eventType;if (clickType === 'docClick') {
         // elem.querySelector('.Browser').click();
-        elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick());elem.querySelector('.Browser').onclick();
+        elem.ownerDocument.defaultView.eval(elem.querySelector('.Browser').onclick()); //elem.querySelector('.Browser').onclick();
       }
     },
     getTemplate_uiControl158_qfPsgO: function () {
@@ -261,7 +261,7 @@
     },
     doAction_uiControl159_wWuvKA: function (data, elem) {
       var clickType = data.eventType;if (clickType === 'docClick') {
-        elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关流程"]').onclick());elem.querySelector('button[title="相关流程"]').onclick();
+        elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关流程"]').onclick()); //elem.querySelector('button[title="相关流程"]').onclick();
       }
     },
     getTemplate_uiControl159_wWuvKA: function () {
