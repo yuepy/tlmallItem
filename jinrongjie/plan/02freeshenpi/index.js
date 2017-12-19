@@ -84,7 +84,7 @@
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                 var arr3 = [];if ($(this).children("table").find("a").length > 0) {
                   $(this).children("table").find("a").each(function (i) {
-                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1 || $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
+                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
@@ -156,7 +156,8 @@
                 } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
-                      arr4.push({ text: $(this).text().trim(), select: 'selected' });
+                      arr4.push({ text: $(this).text().trim(),
+                        select: 'selected' });
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
@@ -195,8 +196,7 @@
                           arr2.push({ text: $(this).find("button").text(), type: 'button22', id: $(this).children('span').eq(0).children("button").attr('id') });
                         } //判断意见-------------------------------------
                         else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
-                            arr2.push({
-                              text: $(this)[0].innerHTML, type: 'suggest' });
+                            arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
                           } else if ($(this).find(".cke_editor").length > 0) {
                             arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
                           }data.base_info.content.push(arr2);
@@ -225,12 +225,12 @@
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
             } //判断附件-------------------------------------
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
-                var arr3 = [];if ($(this).children("table").find("a").length > 0) {
+                var arr3 = [];
+                if ($(this).children("table").find("a").length > 0) {
                   $(this).children("table").find("a").each(function (i) {
-                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1 || $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
+                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
                       if ($(this).text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).text().trim(),
-                          stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'doc',
                           no: $(this).attr('onClick').match(/\d+/g)[1] });
@@ -243,8 +243,7 @@
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1]
-                        });
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
                         arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       }
@@ -254,8 +253,7 @@
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push'
-                        });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
@@ -265,7 +263,8 @@
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip',
+                          no: 'push' });
                       } else {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
@@ -312,7 +311,8 @@
                     arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                   } //判断纯文字
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
+                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a'
+                      });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children("button").length == 0) {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 0 && $(this).children().length == 1) {
@@ -327,7 +327,8 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr,
+                                type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -341,8 +342,7 @@
                         else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
                             arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
                           } else if ($(this).find(".cke_editor").length > 0) {
-                            arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML,
-                              type: 'suggest_final' });
+                            arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
                           }data.base_info.content.push(arr2);
           });
         });
