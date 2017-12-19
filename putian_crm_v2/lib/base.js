@@ -1687,9 +1687,9 @@
           if (tag !== undefined && tag !== null) {
             tag = tag.trim();
             var index = ysp.customHelper.getDataIndex(titles, tag);
-            if (tag == '客户') {
-              index += 1;
-            }
+            // if (tag == '客户') {
+            //   index += 1;
+            // }
             item.push(content[i][index]);
           } else {
             console.log('tag is null');
