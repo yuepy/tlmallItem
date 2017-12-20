@@ -812,10 +812,13 @@
         planName = planName === "saleReachMonth" || planName === "saleReachYear" ? "saleReach" : planName;
         var activeModel = ysp.runtime.Model.getActiveModel();
         var flag = false;
-
         function findSecondMenu() {
           var secondMenuIframe = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');
           var doc = secondMenuIframe && secondMenuIframe.document;
+          if(doc.readyState != "complete"){
+            setTimeout(findSecondMenu.bind(this),200);
+            return;
+          }
           var menu = doc && doc.getElementById('menu');
           var as = (menu && menu.querySelectorAll('a')) || [];
           var activeWin = ysp.runtime.Browser.activeBrowser.contentWindow;
