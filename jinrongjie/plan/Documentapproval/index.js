@@ -531,30 +531,21 @@
     getData_control16_K32wfa: function (elem) {
       if (!elem) {
         return;
-      }
-      var elem = $(elem).find("tbody")[0];
-      var data = { text: [], title: [] };
-      if ($(elem).children("tr").length > 1 && $(elem).find("td").length > 1) {
+      }var elem = $(elem).find("tbody")[0];var data = { text: [], title: [] };if ($(elem).children("tr").length > 1 && $(elem).find("td").length > 1) {
         $(elem).children("tr").each(function (i) {
           if (i > 0) {
-            var arr = [];
-            $($(this).children("td").each(function () {
+            var arr = [];$($(this).children("td").each(function () {
               arr.push($(this).text().trim());
-            }));
-            data.text.push(arr);
+            }));data.text.push(arr);
           }
         });
-      }
-      $(elem).find("th").each(function () {
+      }$(elem).find("th").each(function () {
         data.title.push($(this).text().trim());
-      });
-      return data;
+      });return data;
     },
     doAction_uiControl14_Jdl4Pm: function (data, elem) {
       if (data.eventType == 'click') {
-        var idx = parseInt(data.dataCustom) + 1;
-        var _url = "http://192.168.200.63" + $(elem).find('tr').eq(idx).find("a").eq(1).attr("onclick").match(/\/.*[0-9]/g)[0];
-        if (ysp.appMain.isIOS()) {
+        var idx = parseInt(data.dataCustom) + 1;var _url = "http://192.168.200.63" + $(elem).find('tr').eq(idx).find("a").eq(1).attr("onclick").match(/\/.*[0-9]/g)[0];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url;
@@ -562,8 +553,8 @@
       }
     },
     getTemplate_uiControl14_Jdl4Pm: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  click:function(e){\n    if(e.target.className == 'section_box'){\n      var _target = e.target;\n    }\n    else if(e.target.tagName == 'LI'){\n      var _target = e.target.parentElement;\n    }\n    else if(e.target.tagName == 'SPAN'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click',\n        data: _target.getAttribute('data-index')\n      })\n    }\n  },\n  render: function() {\n    var _this = this;\n    var data = this.props.customData;\n    if(data){\n      if(data.text.length > 0){\n          var item = data.text.map(function(d1,i1){\n        return(<li className='section_box' onClick={_this.click} data-index = {i1}>\n          {\n            d1.map(function(d2,i2){\n              if(i2>0){\n               \treturn(<li><span>{data.title[i2]}</span><span>{d2}</span></li>) \n              }\n        })\n            }\n          </li>)\n      })\n    }\n    if(data.text.length > 0){\n       return(<ul style ={{display:'none'}} className='fujian_final_lfj'>\n        {item}\n      </ul>)\n    }\n    else{\n       return(<ul style ={{margin:'10px',display:'none'}} className='fujian_final_lfj'>\u6CA1\u6709\u76F8\u5173\u9644\u4EF6</ul>)\n    }\n    }\n    else{\n      return(<div></div>)\n    }\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  click: function click(e) {\n    if (e.target.className == 'section_box') {\n      var _target = e.target;\n    } else if (e.target.tagName == 'LI') {\n      var _target = e.target.parentElement;\n    } else if (e.target.tagName == 'SPAN') {\n      var _target = e.target.parentElement.parentElement;\n    }\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: _target.getAttribute('data-index')\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n    var data = this.props.customData;\n    if (data) {\n      if (data.text.length > 0) {\n        var item = data.text.map(function (d1, i1) {\n          return React.createElement(\n            'li',\n            { className: 'section_box', onClick: _this.click, 'data-index': i1 },\n            d1.map(function (d2, i2) {\n              if (i2 > 0) {\n                return React.createElement(\n                  'li',\n                  null,\n                  React.createElement(\n                    'span',\n                    null,\n                    data.title[i2]\n                  ),\n                  React.createElement(\n                    'span',\n                    null,\n                    d2\n                  )\n                );\n              }\n            })\n          );\n        });\n      }\n      if (data.text.length > 0) {\n        return React.createElement(\n          'ul',\n          { style: { display: 'none' }, className: 'fujian_final_lfj' },\n          item\n        );\n      } else {\n        return React.createElement(\n          'ul',\n          { style: { margin: '10px', display: 'none' }, className: 'fujian_final_lfj' },\n          '\\u6CA1\\u6709\\u76F8\\u5173\\u9644\\u4EF6'\n        );\n      }\n    } else {\n      return React.createElement('div', null);\n    }\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  click:function(e){\n     YSP.appRenderer.showLoading();\n    if(e.target.className == 'section_box'){\n      var _target = e.target;\n    }\n    else if(e.target.tagName == 'LI'){\n      var _target = e.target.parentElement;\n    }\n    else if(e.target.tagName == 'SPAN'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click',\n        data: _target.getAttribute('data-index')\n      })\n    }\n  },\n  render: function() {\n    var _this = this;\n    var data = this.props.customData;\n    if(data){\n      if(data.text.length > 0){\n          var item = data.text.map(function(d1,i1){\n        return(<li className='section_box' onClick={_this.click} data-index = {i1}>\n          {\n            d1.map(function(d2,i2){\n              if(i2>0){\n               \treturn(<li><span>{data.title[i2]}</span><span>{d2}</span></li>) \n              }\n        })\n            }\n          </li>)\n      })\n    }\n    if(data.text.length > 0){\n       return(<ul style ={{display:'none'}} className='fujian_final_lfj'>\n        {item}\n      </ul>)\n    }\n    else{\n       return(<ul style ={{margin:'10px',display:'none'}} className='fujian_final_lfj'>\u6CA1\u6709\u76F8\u5173\u9644\u4EF6</ul>)\n    }\n    }\n    else{\n      return(<div></div>)\n    }\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  click: function click(e) {\n    YSP.appRenderer.showLoading();\n    if (e.target.className == 'section_box') {\n      var _target = e.target;\n    } else if (e.target.tagName == 'LI') {\n      var _target = e.target.parentElement;\n    } else if (e.target.tagName == 'SPAN') {\n      var _target = e.target.parentElement.parentElement;\n    }\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: _target.getAttribute('data-index')\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n    var data = this.props.customData;\n    if (data) {\n      if (data.text.length > 0) {\n        var item = data.text.map(function (d1, i1) {\n          return React.createElement(\n            'li',\n            { className: 'section_box', onClick: _this.click, 'data-index': i1 },\n            d1.map(function (d2, i2) {\n              if (i2 > 0) {\n                return React.createElement(\n                  'li',\n                  null,\n                  React.createElement(\n                    'span',\n                    null,\n                    data.title[i2]\n                  ),\n                  React.createElement(\n                    'span',\n                    null,\n                    d2\n                  )\n                );\n              }\n            })\n          );\n        });\n      }\n      if (data.text.length > 0) {\n        return React.createElement(\n          'ul',\n          { style: { display: 'none' }, className: 'fujian_final_lfj' },\n          item\n        );\n      } else {\n        return React.createElement(\n          'ul',\n          { style: { margin: '10px', display: 'none' }, className: 'fujian_final_lfj' },\n          '\\u6CA1\\u6709\\u76F8\\u5173\\u9644\\u4EF6'\n        );\n      }\n    } else {\n      return React.createElement('div', null);\n    }\n  }\n});";
     },
     getData_control41_RmdP9a: function (elem) {},
     doAction_uiControl39_yHuHLu: function (data, elem) {
