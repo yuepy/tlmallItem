@@ -5,8 +5,7 @@
     getData_control108_46cZtf: function (elem) {
       if (!elem) {
         return;
-      }var data = { header: { title: [], number: [] }, base_lc_info: { title: [],
-          content: [], degree: [], miji: { content: [], id: [] }, jjcd: [] }, base_info: { content: [] }, related_document: [], related_process: [], file: [] }; //附件-----------
+      }var data = { header: { title: [], number: [] }, base_lc_info: { title: [], content: [], degree: [], miji: { content: [], id: [] }, jjcd: [] }, base_info: { content: [] }, related_document: [], related_process: [], file: [] }; //附件-----------
       if ($(elem).find("#field-annexupload_tab").length > 0 && $(elem).find("#field-annexupload_tab").find("a").length > 0) {
         $(elem).find("#field-annexupload_tab").find("a").each(function () {
           data.file.push($(this).text().trim());
@@ -49,8 +48,7 @@
                   } else if ($(this).children("select").length > 0) {
                     data.base_lc_info.miji.id.push($(this).children("select")[0].id);$(this).children("select").children("option").each(function () {
                       if ($(this).text().trim() !== '') {
-                        var arr = [];
-                        if ($(this)[0].selected == true) {
+                        var arr = [];if ($(this)[0].selected == true) {
                           arr.push({ text: $(this).text().trim(), selected: true });
                         } else {
                           arr.push({ text: $(this).text().trim(), selected: "" });
@@ -81,7 +79,8 @@
                   $(this).children("table").find("a").each(function (i) {
                     if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
                       if ($(this).text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1]
+                        });
                       } else if ($(this).text().indexOf('JPG') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
@@ -93,8 +92,7 @@
                       } else if ($(this).text().indexOf('png') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1]
-                        });
+                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
@@ -118,8 +116,7 @@
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                       } else if ($(this).next().text().indexOf('ppt') !== -1) {
-                        arr3.push({
-                          name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                       } else {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
@@ -208,18 +205,15 @@
                   $(this).children("table").find("a").each(function (i) {
                     if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
                       if ($(this).text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'txt',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('JPG') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'txt',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'xls',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
@@ -227,7 +221,8 @@
                       } else if ($(this).text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
-                        arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'unknown',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
@@ -249,7 +244,8 @@
                       } else if ($(this).next().text().indexOf('ppt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                       } else {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(),
+                          stl: 'unknown', no: 'push' });
                       }
                     }
                   });
@@ -271,8 +267,7 @@
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id") });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
-                    arr2.push({ text: $(this).children("input").prop('value'),
-                      type: 'input', id: $(this).children("input").prop('id') });
+                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                   } //判断纯文字
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
@@ -288,7 +283,8 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr, type: 'button',
+                                id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -307,8 +303,7 @@
                             }
                           } else if ($(this).find(".cke_editor").length > 0) {
                             arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
-                          }
-            data.base_info.content.push(arr2);
+                          }data.base_info.content.push(arr2);
           });
         });
       }return data;
@@ -316,13 +311,18 @@
     doAction_uiControl93_sBQFT0: function (data, elem) {
       if (data.eventType == 'inputBlur') {
         //debugger;
-        var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("input").each(function () {
+        var id = data.dataCustom.id;var val = data.dataCustom.value;
+        var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("input").each(function () {
           if ($(this)[0].id == id) {
             $(this)[0].value = val;
           }
         });
       }if (data.eventType == 'delete_button') {
-        var idx = parseInt(data.dataCustom);var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('.btnFlow').eq(idx).click();
+        var idx = parseInt(data.dataCustom);if ($(elem).children("table").length == 2) {
+          var elem1 = $(elem).children("table").eq(1)[0];
+        } else if ($(elem).children("table").length == 1) {
+          var elem1 = $(elem).children("table").eq(0)[0];
+        }$(elem1).find('.btnFlow').eq(idx).click();
       }if (data.eventType == 'textarea1') {
         //debugger;
         var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("textarea").each(function () {

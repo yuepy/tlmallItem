@@ -115,7 +115,8 @@
                       } else if ($(this).text().indexOf('zip') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'zip', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
-                        arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'unknown',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
@@ -172,16 +173,14 @@
                     } //判断textarea-------------------------------------
                     else if ($(this).children("textarea").length == 1) {
                         arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id });
-                      }
-                      //判断button-------------------------------------
+                      } //判断button-------------------------------------
                       else if ($(this).children("button").length > 0) {
                           //var arr5 = [];
                           if ($(this).children("button").next("span").length > 0 && $(this).children("button").next("span").children("a").length > 0) {
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });arr2.push({ text: arr, type: 'button',
-                                id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -211,8 +210,7 @@
             if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(),
-                type: 'title' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
             } //判断附件111-------------------------------------
@@ -221,12 +219,12 @@
                   $(this).children("table").find("a").each(function (i) {
                     if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
                       if ($(this).text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1]
+                        });
                       } else if ($(this).text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'pdf',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
@@ -234,17 +232,16 @@
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'gif',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
                         arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
-                        arr3.push({
-                          name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
+                        arr3.push({
+                          name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
@@ -326,7 +323,11 @@
     },
     doAction_uiControl221_vvZQgQ: function (data, elem) {
       if (data.eventType == 'delete_button') {
-        var idx = parseInt(data.dataCustom);var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('.btnFlow').eq(idx).click();
+        var idx = parseInt(data.dataCustom);if ($(elem).children("table").length == 2) {
+          var elem1 = $(elem).children("table").eq(1)[0];
+        } else if ($(elem).children("table").length == 1) {
+          var elem1 = $(elem).children("table").eq(0)[0];
+        }$(elem1).find('.btnFlow').eq(idx).click();
       }if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find(".progressWrapper").eq(idx).remove();$(elem1).find('input').each(function () {
           if ($(this).attr('temptitle') && $(this).attr('temptitle').indexOf('发文附件') !== -1) {
