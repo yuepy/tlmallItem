@@ -102,7 +102,11 @@
         return;
       }if (!elem.contentDocument.querySelector('body')) {
         return;
-      }return elem.contentDocument.querySelector('body').innerHTML;
+      }if (elem.contentDocument.querySelector('body').querySelector('p')) {
+        return elem.contentDocument.querySelector('body').querySelector('p').innerHTML;
+      } else {
+        return "";
+      }
     },
     doAction_uiControl307_M6TTea: function (data, elem) {
       var eventType = data.eventType;if (eventType == 'dataChange') {
