@@ -113,12 +113,12 @@
                           } else if ($(this).text().indexOf('pdf') !== -1) {
                             arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else if ($(this).text().indexOf('xls') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1]
-                            });
+                            arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else if ($(this).text().indexOf('png') !== -1) {
                             arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else if ($(this).text().indexOf('jpg') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            arr3.push({ name: $(this).text().trim(), stl: 'jpg',
+                              no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else if ($(this).text().indexOf('gif') !== -1) {
                             arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else {
@@ -132,9 +132,11 @@
                           } else if ($(this).text().indexOf('pdf') !== -1) {
                             arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else if ($(this).text().indexOf('xls') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1]
+                            });
                           } else if ($(this).text().indexOf('png') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            arr3.push({ name: $(this).text().trim(),
+                              stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else if ($(this).text().indexOf('jpg') !== -1) {
                             arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else if ($(this).text().indexOf('gif') !== -1) {
@@ -154,11 +156,13 @@
                           } else if ($(this).next().text().indexOf('png') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
                           } else if ($(this).next().text().indexOf('jpg') !== -1) {
-                            arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
+                            arr3.push({ name: $(this).next().text().trim(), stl: 'jpg',
+                              no: 'push' });
                           } else if ($(this).next().text().indexOf('gif') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                           } else if ($(this).next().text().indexOf('zip') !== -1) {
-                            arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
+                            arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push'
+                            });
                           } else if ($(this).next().text().indexOf('ppt') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                           } else {
@@ -182,15 +186,15 @@
                       var arr5 = [];arr5.push('yes');
                     } else {
                       var arr5 = [];arr5.push('no');
-                    }arr2.push({ text: arr3,
-                      size: arr4, type: 'fujian', yes: arr5, delete: arr6 });
+                    }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5, delete: arr6 });
                   } //判断select-------------------------------------
                   else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                       var arr4 = [];$(this).children("select").children("option").each(function () {
                         if ($(this)[0].selected == true) {
                           arr4.push({ text: $(this).text().trim(), select: 'selected' });
                         }if ($(this)[0].selected == false) {
-                          arr4.push({ text: $(this).text().trim(), select: '' });
+                          arr4.push({ text: $(this).text().trim(),
+                            select: '' });
                         }
                       });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), disabled: 'false' });
                     } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
@@ -206,15 +210,15 @@
                         arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                       } //判断纯文字
                       else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                          arr2.push({ text: $(this).children("span").children("a").text(), type: 'a'
-                          });
+                          arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                         } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children(".Browser").length == 0) {
                           arr2.push({ text: $(this).children("span").text(), type: 'a' });
                         } else if ($(this).children('span').length == 1 && $(this).children().length == 1) {
                           arr2.push({ text: $(this).children("span").text(), type: 'a' });
                         } //判断textarea-------------------------------------
                         else if ($(this).children("textarea").length == 1) {
-                            arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id });
+                            arr2.push({ text: $(this).children("textarea").prop('value'),
+                              type: 'textarea', id: $(this).children("textarea")[0].id });
                           } //判断button-------------------------------------
                           else if ($(this).children("button").length > 0) {
                               //var arr5 = [];
@@ -264,7 +268,11 @@
       }if (data.eventType == 'selectFile') {
         $(elem).find('#Filedata').eq(0).click();$(elem).find('#Filedata').eq(0)[0].parentElement.setAttribute('file-num', '1');
       }if (data.eventType == 'delete_button') {
-        var idx = parseInt(data.dataCustom);var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('.btnFlow').eq(idx).click();
+        var idx = parseInt(data.dataCustom);if ($(elem).children("table").length == 2) {
+          var elem1 = $(elem).children("table").eq(1)[0];
+        } else if ($(elem).children("table").length == 1) {
+          var elem1 = $(elem).children("table").eq(0)[0];
+        }$(elem1).find('.btnFlow').eq(idx).click();
       }if (data.eventType == 'inputBlur') {
         //debugger;
         var id = data.dataCustom.id;var val = data.dataCustom.value;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("input").each(function () {
