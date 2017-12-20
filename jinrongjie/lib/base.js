@@ -13,13 +13,13 @@
   //安卓客户端调用 : 获取token链接
     topWindow.yspTokenUrl = function(url) {
         topWindow.tokenUrl = url;
-      	console.log(url);
+      	//console.log(url);
         return url;
     };
   //IOS客户端调用 : 获取token链接
   	topWindow.setSsoToken = function(url){
       topWindow.tokenUrl = url;
-      console.log(url);
+      //console.log(url);
       return topWindow.tokenUrl;
     };
     topWindow.num = [];
@@ -646,6 +646,9 @@
            }
           //正文预览
           aWin.check_form=function(thiswins,items){
+            debugger
+            var window = aWin;
+            var document = doc;
             /* added by cyril on 2008-08-14 for td:8521 */
             var isconn = false;
             try {
@@ -703,7 +706,7 @@
                     var fieldid = tempfield.substring(0, tempfield.indexOf(";"));
                     var fieldname = tempfield.substring(tempfield.indexOf(";")+1);
                     if(fieldname=='') break;
-                    if(!checkLengthOnly(fieldid,'4000',fieldname,'当前文本长度','文本长度不能超过','1个中文字符等于2个长度')) {
+                    if(!aWIn.checkLengthOnly(fieldid,'4000',fieldname,'当前文本长度','文本长度不能超过','1个中文字符等于2个长度')) {
                       lenck = false;
                       break;
                     }
@@ -714,10 +717,10 @@
 
             }
             catch(e) {
-              return check_conn();
+              return aWin.check_conn();
             }
             if(!isconn)
-              return check_conn();
+              return aWin.check_conn();
               /* end by cyril on 2008-08-14 for td:8521 */
 
             thiswin = thiswins
@@ -728,7 +731,9 @@
               tempfieldvlaue1 = document.getElementById("htmlfieldids").value;
             }catch (e) {
             }
-
+						var thiswin = aWin.thiswin;
+            var tmpname = aWin.tmpname;
+            var tmpvalue = aWin.tmpvalue;
             for(i=1;i<=thiswin.length;i++){
               tmpname = thiswin.elements[i-1].name;
               tmpvalue = thiswin.elements[i-1].value;
@@ -881,7 +886,7 @@
                   	this.fakeFormId = fakeFormId;
                     this.initSWFUpload(this.setting);
                     this.movieElement = this.getMovieElement();
-                    console.log('upload overrided!');
+                    //console.log('upload overrided!');
                 };
             })();
           
@@ -896,7 +901,7 @@
 
 
             if (aWin.location.href.indexOf('Login.jsp') !== -1) {
-                console.info('向客户端发送消息,开始获取token地址');
+                //console.info('向客户端发送消息,开始获取token地址');
               	var parent = aWin.frameElement.ownerDocument.defaultView;
               	aWin.addEventListener('DOMContentLoaded', function() {
                 // var actionEvent = '{"target":"null","data":"getNumber"}';
@@ -922,9 +927,9 @@
             /*  获取token地址  */
             if (token_flag) {
               if(topWindow.EAPI.isIOS()){
-                 console.log('拿到客户端给我的token地址'+topWindow.tokenUrl);
+                 //console.log('拿到客户端给我的token地址'+topWindow.tokenUrl);
               }else if(topWindow.EAPI.isAndroid()){
-                console.log('拿到客户端给我的token地址'+topWindow.AndroidTokenurl);
+                //console.log('拿到客户端给我的token地址'+topWindow.AndroidTokenurl);
               }
                 token_flag = false;
               	var oldHref = aWin.location.href;
