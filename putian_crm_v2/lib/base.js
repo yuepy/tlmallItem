@@ -105,7 +105,7 @@
         var taskPool = getSingletonTask();
         taskPool.status = "idle";
         taskPool.executeFinalTask();
-      }, 100);
+      }, 2000);
     }
   }
   //分发消息策略
@@ -806,12 +806,15 @@
       _getMenuNamesByMenuType: function(menuType) {
         return this.menuNames && this.menuNames[menuType];
       },
+      _insureSecondMenuTimer:null,
       _toPlanByMenuName: function(menuName) {
         var planName = this.getPlanNameByMenuName(menuName);
         this.currentMenuId = planName;
         planName = planName === "saleReachMonth" || planName === "saleReachYear" ? "saleReach" : planName;
         var activeModel = ysp.runtime.Model.getActiveModel();
         var flag = false;
+        //清除确定器
+        clearTimeout(ysp.customHelper._insureSecondMenuTimer); 
         function findSecondMenu() {
           var secondMenuIframe = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');
           var doc = secondMenuIframe && secondMenuIframe.document;
@@ -849,6 +852,10 @@
                   } else {
                     win.open(item.href, planName);
                     ysp.runtime.Model.setForceMatchModels([planName]);
+                    //确保打开二级菜单有效
+                    ysp.customHelper._insureSecondMenuTimer = setTimeout(function(){
+                      if(!!!ysp.customHelper.getWinFromRTByName(planName)) findSecondMenu();
+                    },2000);
                   }
                 }
 
