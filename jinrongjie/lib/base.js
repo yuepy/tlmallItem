@@ -687,6 +687,13 @@
             debugger
             var window = aWin;
             var document = doc;
+          //    var usercookie = doc.cookie.split(';')
+          //     for(var i =0;i<usercookie.length;i++){
+          //     if(usercookie[i].indexOf('loginid') !== -1){
+          //       topWindow.userid= usercookie[i].split('=')[1];
+          //       // console.log(topWindow.userid)
+          //     }
+          // }
             /* added by cyril on 2008-08-14 for td:8521 */
             var isconn = false;
             try {
@@ -697,8 +704,8 @@
                 else if (window.ActiveXObject) {
                   xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");  
                 }
-
-                var URL = "http://192.168.200.63/systeminfo/CheckConn.jsp?userid=201&time="+new Date();
+						
+                var URL = "http://192.168.200.63/systeminfo/CheckConn.jsp?userid="+topWindow.userid+"&time="+new Date();
                 xmlhttp.open("GET",URL, false);
                 xmlhttp.send(null);
                 var result = xmlhttp.status;
