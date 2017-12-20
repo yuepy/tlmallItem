@@ -165,7 +165,13 @@
     getData_control166_y4uOn5: function (elem) {
       if (!elem) {
         return;
-      }return elem.contentDocument.querySelector('body').innerHTML;
+      }if (!elem.contentDocument.querySelector('body')) {
+        return;
+      }if (elem.contentDocument.querySelector('body').querySelector('p')) {
+        return elem.contentDocument.querySelector('body').querySelector('p').innerHTML;
+      } else {
+        return "";
+      }
     },
     doAction_uiControl144_qXzJbH: function (data, elem) {
       var eventType = data.eventType;if (eventType == 'dataChange') {
