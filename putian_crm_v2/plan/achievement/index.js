@@ -235,7 +235,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart0.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart0.getAttribute('datas')), titleText: bizUnitChart0.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit0' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart0.getAttribute('datas')), titleText: bizUnitChart0.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart1) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit1"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -245,7 +245,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart1.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart1.getAttribute('datas')), titleText: bizUnitChart1.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit1' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart1.getAttribute('datas')), titleText: bizUnitChart1.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart2) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit2"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -255,7 +255,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart2.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart2.getAttribute('datas')), titleText: bizUnitChart2.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit2' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart2.getAttribute('datas')), titleText: bizUnitChart2.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart3) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit3"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -265,7 +265,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart3.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart3.getAttribute('datas')), titleText: bizUnitChart3.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit3' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart3.getAttribute('datas')), titleText: bizUnitChart3.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart4) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit4"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -275,7 +275,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart4.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart4.getAttribute('datas')), titleText: bizUnitChart4.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit4' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart4.getAttribute('datas')), titleText: bizUnitChart4.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart5) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit5"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -285,7 +285,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart5.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart5.getAttribute('datas')), titleText: bizUnitChart5.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit5' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart5.getAttribute('datas')), titleText: bizUnitChart5.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart6) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit6"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -295,7 +295,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart6.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart6.getAttribute('datas')), titleText: bizUnitChart6.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit6' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart6.getAttribute('datas')), titleText: bizUnitChart6.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart7) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit7"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -305,7 +305,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart7.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart7.getAttribute('datas')), titleText: bizUnitChart7.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit7' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart7.getAttribute('datas')), titleText: bizUnitChart7.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart8) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit8"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -315,7 +315,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart8.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart8.getAttribute('datas')), titleText: bizUnitChart8.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit8' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart8.getAttribute('datas')), titleText: bizUnitChart8.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart9) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit9"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -325,7 +325,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart9.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart9.getAttribute('datas')), titleText: bizUnitChart9.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit9' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart9.getAttribute('datas')), titleText: bizUnitChart9.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart10) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit10"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -335,7 +335,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart10.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart10.getAttribute('datas')), titleText: bizUnitChart10.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit10' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart10.getAttribute('datas')), titleText: bizUnitChart10.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart11) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit11"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -345,7 +345,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart11.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart11.getAttribute('datas')), titleText: bizUnitChart11.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart11.getAttribute('datas')), titleText: bizUnitChart11.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart12) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit12"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -355,7 +355,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart12.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart12.getAttribute('datas')), titleText: bizUnitChart12.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart12.getAttribute('datas')), titleText: bizUnitChart12.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart13) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit13"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -365,7 +365,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart13.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart13.getAttribute('datas')), titleText: bizUnitChart13.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart13.getAttribute('datas')), titleText: bizUnitChart13.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart14) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit14"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -375,7 +375,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart14.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart14.getAttribute('datas')), titleText: bizUnitChart14.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart14.getAttribute('datas')), titleText: bizUnitChart14.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart15) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit15"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -385,7 +385,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart15.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart15.getAttribute('datas')), titleText: bizUnitChart15.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart15.getAttribute('datas')), titleText: bizUnitChart15.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart16) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit16"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -395,7 +395,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart16.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart16.getAttribute('datas')), titleText: bizUnitChart16.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart16.getAttribute('datas')), titleText: bizUnitChart16.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart17) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit17"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -405,7 +405,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart17.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart17.getAttribute('datas')), titleText: bizUnitChart17.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart17.getAttribute('datas')), titleText: bizUnitChart17.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart18) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit18"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -415,7 +415,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart18.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart18.getAttribute('datas')), titleText: bizUnitChart18.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart18.getAttribute('datas')), titleText: bizUnitChart18.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart19) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit19"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -425,7 +425,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart19.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart19.getAttribute('datas')), titleText: bizUnitChart19.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart19.getAttribute('datas')), titleText: bizUnitChart19.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart20) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit20"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -435,7 +435,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: bizUnitChart20.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart20.getAttribute('datas')), titleText: bizUnitChart20.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: '' };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart20.getAttribute('datas')), titleText: bizUnitChart20.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnit0) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit0"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
