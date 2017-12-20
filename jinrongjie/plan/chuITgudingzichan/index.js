@@ -643,7 +643,11 @@
         return;
       }if (!elem.contentDocument.querySelector('body')) {
         return;
-      }return elem.contentDocument.querySelector('body').innerHTML;
+      }if (elem.contentDocument.querySelector('body').querySelector('p')) {
+        return elem.contentDocument.querySelector('body').querySelector('p').innerHTML;
+      } else {
+        return "";
+      }
     },
     doAction_uiControl258_LUzPWv: function (data, elem) {
       var eventType = data.eventType;if (eventType == 'dataChange') {

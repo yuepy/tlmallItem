@@ -238,12 +238,23 @@
     },
 
     getData_control31_eeZIHZ: function (elem) {
+      // if (!elem) {
+      //   return;
+      // }
+      // if (!elem.contentDocument.querySelector('body')) {
+      //   return;
+      // }
+      // var targetElem = elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement; // console.log(elem.contentDocument.querySelector('body'));
+      // return elem.contentDocument.querySelector('body').innerHTML;
       if (!elem) {
         return;
       }if (!elem.contentDocument.querySelector('body')) {
         return;
-      }var targetElem = elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement; // console.log(elem.contentDocument.querySelector('body'));
-      return elem.contentDocument.querySelector('body').innerHTML;
+      }if (elem.contentDocument.querySelector('body').querySelector('p')) {
+        return elem.contentDocument.querySelector('body').querySelector('p').innerHTML;
+      } else {
+        return "";
+      }
     },
     doAction_uiControl42_3fvgmQ: function (data, elem) {
       var eventType = data.eventType;if (eventType == 'dataChange') {
