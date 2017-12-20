@@ -450,6 +450,44 @@
                     doc.SearchForm.submit();
                 }
             }
+          	/* 前插 - 后插 选人跨页面传值 */
+          if(aWin.location.href.match(/workflow\/request\/FreeWorkflowSet\.jsp/)){
+            if(aWin.ShowMultiResource){
+              aWin.ShowMultiResource = function(spanname,hiddenidname,i) {
+                var window = aWin;
+                var document = doc;
+                var $G = aWin.$G;
+                var id = window.showModalDialog("/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=" + $G(hiddenidname).value);
+                aWin._setReturnValue = function(id){
+                  if (id) {
+                    var rid = aWin.wuiUtil.getJsonValueByIndex(id, 0);
+                    var rname = aWin.wuiUtil.getJsonValueByIndex(id, 1);
+                    if (rid != "" && rid != "0") {
+                            $G(spanname).innerHTML = rname.substr(1);
+                            $G(hiddenidname).value= rid.substr(1);
+                      var j=spanname.substr(14);
+                      //2013-12-24 xyhao 当选择人数超过三人时，步骤名称更改为‘多人审批’，否则设置为选择的人
+                      var v_allname = rname.substr(1);
+                      var splitname = v_allname.split(",");
+                      if(splitname.length > 3){
+                        document.getElementById("nodename_"+j).value='多人审批';
+                      }else{
+                        document.getElementById("nodename_"+j).value=rname.substr(1);
+                      }
+                      } else {
+                            $G(spanname).innerHTML = "<IMG src='/images/BacoError.gif' align=absMiddle>";
+                            $G(hiddenidname).value="";
+                      //document.getElementById("nodename_"+j).value="";
+                        }
+                  }
+                }
+              }
+            }
+          }
+          
+          	/* 前插 - 后插 选人跨页面传值 */
+          
+          
           
 //           if(aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=&splitflag=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 ){
 //             if(aWin.doSearch){
@@ -659,7 +697,8 @@
                 else if (window.ActiveXObject) {
                   xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");  
                 }
-                var URL = "/systeminfo/CheckConn.jsp?userid=201&time="+new Date();
+
+                var URL = "http://192.168.200.63/systeminfo/CheckConn.jsp?userid=201&time="+new Date();
                 xmlhttp.open("GET",URL, false);
                 xmlhttp.send(null);
                 var result = xmlhttp.status;
@@ -723,7 +762,7 @@
               return aWin.check_conn();
               /* end by cyril on 2008-08-14 for td:8521 */
 
-            thiswin = thiswins
+            aWin.thiswin = thiswins;
             items = ","+items + ",";
 
             var tempfieldvlaue1 = "";
