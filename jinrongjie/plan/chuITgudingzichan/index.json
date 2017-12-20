@@ -7,7 +7,8 @@
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "forward": "../forward/index.json",
-    "processToSend": "../processToSend/index.json"
+    "processToSend": "../processToSend/index.json",
+    "postName": "../postName/index.json"
   },
   "chineseName": "除IT类固定资产审批审核流程(审核)",
   "description": "除IT类固定资产审批审核流程(审核)",
@@ -644,6 +645,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -713,6 +718,10 @@
       "toContexts": [
         {
           "toContextId": "context34_I0CToo"
+        },
+        {
+          "toContextId": "context21_LgNuze",
+          "toModelId": "postName"
         }
       ]
     },
