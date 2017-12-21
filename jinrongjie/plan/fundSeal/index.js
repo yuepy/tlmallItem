@@ -87,8 +87,12 @@
                 obj.content[3].push([""]);
               }
             } else if (dd.querySelectorAll(".btnFlowd").length > 0) {
-              obj.content[0].push("下载");var a = dd.querySelectorAll("a");var url = dd.querySelectorAll(".btnFlowd");for (var i = 0; i < a.length; i++) {
-                obj.content[1].push(url[i].getAttribute("onclick").match(/\/.*[0-9]/g));obj.content[2].push(a[i].textContent);
+              obj.content[0].push("下载");var a = dd.querySelectorAll("a");var b = dd.querySelectorAll("button.btnFlowd");for (var i = 0; i < a.length; i++) {
+                obj.content[2].push(a[i].textContent);
+              }for (var i = 0; i < b.length; i++) {
+                if (b[i].textContent.indexOf("全部下载") == -1) {
+                  obj.content[1].push(b[i].getAttribute("onclick").match(/\/.*[0-9]/g));
+                }
               }obj.content[3].push([""]);
             } else if (dd.querySelectorAll(".btnFlowd").length == 0 && dd.querySelectorAll(".ViewForm").length > 0) {
               obj.content[0].push("上传");if (dd.querySelector(".ViewForm").querySelectorAll("a").length > 0) {
