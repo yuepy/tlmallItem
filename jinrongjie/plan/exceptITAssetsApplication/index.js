@@ -144,7 +144,7 @@
           }break;case "upclick":
           doUpload(elem);break;case "deletefile":
           debugger;$(elem.querySelectorAll('.progressWrapper')[data.dataCustom.index]).remove();var initDOM = elem.querySelector("#uploadspan").parentElement.parentElement;if (initDOM.querySelector("input[temptitle='附件']")) {
-            var initValue = initDOM.querySelector("input[temptitle='附件']").value;var array = initValue.split(',');array.splice(data.dataCustom.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();
+            var initValue = initDOM.querySelector("input[temptitle='附件']").value;var array = initValue.split(',');array.splice(data.dataCustom.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();elem.querySelector('#ysp_fake_form').querySelector("#Filedata").value = "";elem.querySelector('#ysp_fake_form').querySelector("input[name='Filename']").value = "";
           }break;case 'changeContent':
           changeContent(data.dataCustom);break;case 'changeNumber':
           changeNumber(data.dataCustom);break;}function doUpload(elem) {
@@ -272,7 +272,7 @@
     },
     doAction_uiControl272_TNJrI2: function (data, elem) {
       if (data.eventType == 'deleteFile') {
-        var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;$(elem.querySelector('#fsUploadProgressannexupload').querySelectorAll('div.progressWrapper')[idx]).remove();
+        var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;$(elem.querySelector('#fsUploadProgressannexupload').querySelectorAll('div.progressWrapper')[idx]).remove();elem.querySelector('#ysp_fake_form').querySelector("#Filedata").value = "";elem.querySelector('#ysp_fake_form').querySelector("input[name='Filename']").value = "";
       }if (data.eventType == 'click') {
         elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');$(elem).find("#Filedata").click();
       }
