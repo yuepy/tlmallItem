@@ -117,7 +117,9 @@
                 文件预览通用方法
                 number 文件唯一编号
                 */function reviewFiles(jumpUrl) {
-        var _url = 'http://192.168.200.63' + jumpUrl;if (ysp.appMain.isIOS()) {
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url;
@@ -321,7 +323,9 @@
           文件预览通用方法
           number 文件唯一编号
         */function reviewFiles(jumpUrl) {
-        var _url = 'http://192.168.200.63' + jumpUrl; // console.log(_url);
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl; // console.log(_url);
         // console.log(_url);
         if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
@@ -514,7 +518,9 @@
     },
     doAction_uiControl264_xW3iKa: function (data, elem) {
       if (data.eventType == 'click') {
-        var idx = parseInt(data.dataCustom) + 1; // $(elem).find('tr').eq(idx).find("a").eq(1).click();
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);var idx = parseInt(data.dataCustom) + 1; // $(elem).find('tr').eq(idx).find("a").eq(1).click();
         var _url = "http://192.168.200.63" + $(elem).find('tr').eq(idx).find("a").eq(1).attr("onclick").match(/\/.*[0-9]/g)[0];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
