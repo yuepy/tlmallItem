@@ -104,7 +104,7 @@
           elem.querySelector('textarea[temptitle="摘要"]').value = data.value;elem.querySelector('textarea[temptitle="摘要"]').dispatchEvent(new Event('blur'));elem.querySelector('textarea[temptitle="摘要"]').dispatchEvent(new Event('change'));break;case 'process':
           elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="选择"]').onclick());break;case 'deleteFile':
           $(elem.querySelectorAll('.progressWrapper')[data.index]).remove();var initDOM = elem.querySelector("#uploadspan").parentElement.parentElement;if (initDOM.querySelector("input[temptitle='附件']")) {
-            var initValue = initDOM.querySelector("input[temptitle='附件']").value;console.log(data.index);var array = initValue.split(',');array.splice(data.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();
+            var initValue = initDOM.querySelector("input[temptitle='附件']").value;console.log(data.index);var array = initValue.split(',');array.splice(data.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();elem.querySelector('#ysp_fake_form').querySelector("#Filedata").value = "";elem.querySelector('#ysp_fake_form').querySelector("input[name='Filename']").value = "";
           }break;case 'upclick':
           doUpload(elem);break;}function doUpload(elem) {
         if (elem.querySelector("input[id='Filedata'][name='Filedata'][type='file']")) {
@@ -225,7 +225,7 @@
     },
     doAction_uiControl194_5fy0l6: function (data, elem) {
       if (data.eventType == 'deleteFile') {
-        var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;$(elem.querySelector('#fsUploadProgressannexupload').querySelectorAll('div.progressWrapper')[idx]).remove();
+        var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;$(elem.querySelector('#fsUploadProgressannexupload').querySelectorAll('div.progressWrapper')[idx]).remove();elem.querySelector('#ysp_fake_form').querySelector("#Filedata").value = "";elem.querySelector('#ysp_fake_form').querySelector("input[name='Filename']").value = "";
       }if (data.eventType == 'click') {
         elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');$(elem).find("#Filedata").click();
       }
