@@ -128,11 +128,10 @@
             top.location.href = _url;
           }
         } else if (classname == "fileIcon") {
-          $(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '1');$(elem).children("tr").eq(row).children("td").eq(1).find("#Filedata").click(); // $(elem).children("tr").eq(row).children("td").eq(1).find("#Filedata").val("");
-          // $(elem).children("tr").eq(row).children("td").eq(1).find("input[name='Filename']").val("");
+          $(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '1');$(elem).children("tr").eq(row).children("td").eq(1).find("#Filedata").click();
         } else if (classname == 'uploadIcon') {
           // var downloadlength = $(elem).children("tr").eq(row).children("td").eq(1).find(".btnFlowd").length;
-          var input1 = elem.querySelectorAll("input[temptitle='附件']")[0] || elem.querySelectorAll("input[temptitle='工资表']")[0];console.log(input1);var arr = input1.value.split(',');var ind = parseInt(i);$(elem).children("tr").eq(row).children("td").eq(1).find(".progressWrapper").eq(i).remove();arr.splice(ind, 1);var v = arr.toString();input1.value = v;
+          var input1 = elem.querySelectorAll("input[temptitle='附件']")[0] || elem.querySelectorAll("input[temptitle='工资表']")[0];console.log(input1);var arr = input1.value.split(',');var ind = parseInt(i);$(elem).children("tr").eq(row).children("td").eq(1).find(".progressWrapper").eq(i).remove();arr.splice(ind, 1);var v = arr.toString();input1.value = v;$(elem).children("tr").eq(row).children("td").eq(1).find("#Filedata").val("");$(elem).children("tr").eq(row).children("td").eq(1).find("input[name='Filename']").val("");
         }
       } else if (data.eventType == "blur") {
         if (classname == "ysp_input") {
@@ -276,7 +275,7 @@
     },
     doAction_uiControl244_7Ext9x: function (data, elem) {
       if (data.eventType == 'deleteFile') {
-        var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
+        var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;$(elem).find("#Filedata").val("");$(elem).find("input[name='Filename']").val("");
       }if (data.eventType == 'click') {
         $(elem).find("#Filedata").click();$(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
       }
