@@ -88,15 +88,14 @@
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1]
-                        });
+                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'pdf',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({
+                          name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
@@ -108,7 +107,8 @@
                       if ($(this).next().text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(),
+                          stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
@@ -120,11 +120,15 @@
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip',
+                          no: 'push' });
                       } else if ($(this).next().text().indexOf('ppt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
-                      } else {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
+                      } else {// arr3.push({
+                        //   name: $(this).next().text().trim(),
+                        //   stl: 'unknown',
+                        //   no: 'push'
+                        // });
                       }
                     }
                   });
@@ -144,7 +148,8 @@
                   var arr5 = 'yes';
                 } else {
                   var arr5 = 'no';
-                }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5, delete: arr6 });
+                }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5,
+                  delete: arr6 });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
@@ -161,7 +166,8 @@
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                  });arr2.push({ text: arr4,
+                    type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
@@ -212,7 +218,8 @@
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().find("a").length > 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2'
+              });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().children().length == 2 && $(this).next().children("span").length == 1 && $(this).next().children("input").length == 1) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text())) {
@@ -227,7 +234,8 @@
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                 var arr3 = [];if ($(this).children("table").find("a").length > 0) {
                   $(this).children("table").find("a").each(function (i) {
-                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
+                    // if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
+                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openDocExt') !== -1) {
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[3] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
@@ -241,17 +249,44 @@
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[3] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'gif',
-                          no: $(this).attr('onClick').match(/\d+/g)[3] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                      } else if ($(this).text().indexOf('PNG') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[3] });
                       } else {
-                        arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                        if ($(this).attr('onClick').match(/\d+/g).length === 4) {
+                          arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                        } else {
+                          arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        }
+                      }
+                    } else if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
+                      if ($(this).text().indexOf('txt') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('doc') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('pdf') !== -1) {
+                        arr3.push({ name: $(this).text().trim(),
+                          stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('xls') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('png') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('jpg') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('gif') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else {
+                        if ($(this).attr('onClick').match(/\d+/g).length === 4) {
+                          arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                        } else {
+                          arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        }
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push'
-                        });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
@@ -285,7 +320,8 @@
                   var arr5 = 'yes';
                 } else {
                   var arr5 = 'no';
-                }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5, delete: arr6 });
+                }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5,
+                  delete: arr6 });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
@@ -296,20 +332,16 @@
                     }
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
                 } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
-                  var arr4 = [];
-                  $(this).children("select").children("option").each(function () {
+                  var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet',
-                    id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
-                    arr2.push({
-                      text: $(this).children("input").prop('value'),
-                      type: 'input', id: $(this).children("input").prop('id') });
+                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                   } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
                     arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                   } //判断纯文字
@@ -338,7 +370,8 @@
                           }
                         } else if ($(this).children('span').eq(0).children("button").length > 0 && $(this).children('span').eq(0).children("button").attr('id').length > 0) {
                           //console.log(43534534523)
-                          arr2.push({ text: $(this).find("button").text(), type: 'button22', id: $(this).children('span').eq(0).children("button").attr('id') });
+                          arr2.push({ text: $(this).find("button").text(), type: 'button22', id: $(this).children('span').eq(0).children("button").attr('id')
+                          });
                         } //判断意见-------------------------------------
                         else if ($(this)[0].className == 'zdn' && $(this).children().length == 0 || $(this)[0].children.length == 1 && $(this)[0].children[0].tagName == 'BR') {
                             arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });

@@ -105,26 +105,134 @@
                 else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                     var arr3 = [];if ($(this).children("table").find("a").length > 0) {
                       $(this).children("table").find("a").each(function (i) {
-                        if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
+                        // if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
+                        //   if ($(this).text().indexOf('txt') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'txt',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('doc') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'doc',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('pdf') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'pdf',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('xls') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'xls',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('png') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'png',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('jpg') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'jpg',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('gif') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'gif',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'unknown',
+
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   }
+                        // } else if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
+                        //   if ($(this).text().indexOf('txt') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'txt',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('doc') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'doc',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('pdf') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'pdf',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('xls') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'xls',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('png') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'png',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('jpg') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'jpg',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else if ($(this).text().indexOf('gif') !== -1) {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'gif',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   } else {
+                        //     arr3.push({
+                        //       name: $(this).text().trim(),
+                        //       stl: 'unknown',
+                        //       no: $(this).attr('onClick').match(/\d+/g)[1]
+                        //     });
+                        //   }
+                        // } 
+                        if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openDocExt') !== -1) {
                           if ($(this).text().indexOf('txt') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[3] });
                           } else if ($(this).text().indexOf('doc') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[3] });
                           } else if ($(this).text().indexOf('pdf') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[3] });
                           } else if ($(this).text().indexOf('xls') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1]
-                            });
+                            arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[3] });
                           } else if ($(this).text().indexOf('png') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[3] });
                           } else if ($(this).text().indexOf('jpg') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[3] });
                           } else if ($(this).text().indexOf('gif') !== -1) {
-                            arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                          } else if ($(this).text().indexOf('PNG') !== -1) {
+                            arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[3] });
                           } else {
-                            arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            if ($(this).attr('onClick').match(/\d+/g).length === 4) {
+                              arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                            } else {
+                              arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1]
+                              });
+                            }
                           }
-                        } else if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
+                        } else if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
                           if ($(this).text().indexOf('txt') !== -1) {
                             arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else if ($(this).text().indexOf('doc') !== -1) {
@@ -140,7 +248,11 @@
                           } else if ($(this).text().indexOf('gif') !== -1) {
                             arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                           } else {
-                            arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            if ($(this).attr('onClick').match(/\d+/g).length === 4) {
+                              arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                            } else {
+                              arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                            }
                           }
                         } else if ($(this)[0].className == 'progressCancel') {
                           if ($(this).next().text().indexOf('txt') !== -1) {
@@ -158,8 +270,7 @@
                           } else if ($(this).next().text().indexOf('gif') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                           } else if ($(this).next().text().indexOf('zip') !== -1) {
-                            arr3.push({ name: $(this).next().text().trim(), stl: 'zip',
-                              no: 'push' });
+                            arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                           } else if ($(this).next().text().indexOf('ppt') !== -1) {
                             arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                           } else {
@@ -183,8 +294,7 @@
                       var arr5 = [];arr5.push('yes');
                     } else {
                       var arr5 = [];arr5.push('no');
-                    }arr2.push({ text: arr3, size: arr4,
-                      type: 'fujian', yes: arr5, delete: arr6 });
+                    }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5, delete: arr6 });
                   } //判断select-------------------------------------
                   else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
                       var arr4 = [];$(this).children("select").children("option").each(function () {
@@ -211,8 +321,7 @@
                         } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children(".Browser").length == 0) {
                           arr2.push({ text: $(this).children("span").text(), type: 'a' });
                         } else if ($(this).children('span').length == 1 && $(this).children().length == 1) {
-                          arr2.push({
-                            text: $(this).children("span").text(), type: 'a' });
+                          arr2.push({ text: $(this).children("span").text(), type: 'a' });
                         } //判断textarea-------------------------------------
                         else if ($(this).children("textarea").length == 1) {
                             arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id });
@@ -350,7 +459,7 @@
         }, 1000);var number = data.dataCustom.number; //文件类型
         var type = data.dataCustom.type; //现在的文件名称
         var text = data.dataCustom.text; //拼接下载地址
-        var _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';if (ysp.appMain.isIOS()) {
+        var _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';console.log(_url);if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url;
