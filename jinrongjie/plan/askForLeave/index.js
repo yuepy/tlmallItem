@@ -106,7 +106,11 @@
                 //只有下载
                 button[3].push("download"); //附件下载
                 var a = dt.querySelectorAll("a");var url = dt.querySelectorAll(".btnFlowd");for (var i = 0; i < a.length; i++) {
-                  button[4].push(url[i].getAttribute("onclick").match(/\/.*[0-9]/g));button[0].push(a[i].textContent);
+                  button[0].push(a[i].textContent);
+                }for (var i = 0; i < url.length; i++) {
+                  if (url[i].textContent.indexOf("全部下载") == -1) {
+                    button[4].push(url[i].getAttribute("onclick").match(/\/.*[0-9]/g));
+                  }
                 }button[2].push(dt.textContent.replace(/\s/g, "").trim());
               } else if (dt.querySelectorAll(".btnFlowd").length > 0 && dt.querySelectorAll(".ViewForm").length > 0) {
                 //上传和下载
