@@ -88,21 +88,24 @@
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1]
-                        });
+                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'pdf',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({
+                          name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'jpg',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
-                      } else {
-                        arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else {// arr3.push({
+                        //   name: $(this).text().trim(),
+                        //   stl: 'unknown',
+                        //   no: $(this).attr('onClick').match(/\d+/g)[1]
+                        // });
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
@@ -123,8 +126,11 @@
                         arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                       } else if ($(this).next().text().indexOf('ppt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
-                      } else {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
+                      } else {// arr3.push({
+                        //   name: $(this).next().text().trim(),
+                        //   stl: 'unknown',
+                        //   no: 'push'
+                        // });
                       }
                     }
                   });
@@ -153,7 +159,8 @@
                     }if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
+                  });
+                  arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
                 } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
@@ -206,7 +213,8 @@
         var elem2 = $(elem).children("table").eq(0)[0];var tbody2 = $(elem).children("table").eq(0).children("tbody")[0];$(tbody2).children("tr").each(function () {
           //var arr1 = [];
           $(this).children("td").each(function () {
-            var arr2 = []; //判断标题-------------------------------------
+            var arr2 = [];
+            //判断标题-------------------------------------
             if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text()) && $(this).next()[0].className == 'zdn' && ($(this).next().children().length == 0 || $(this).next()[0].children.length > 0 && $(this).next()[0].children[0].tagName == 'BR')) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().find("a").length > 0) {
@@ -227,7 +235,8 @@
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                 var arr3 = [];if ($(this).children("table").find("a").length > 0) {
                   $(this).children("table").find("a").each(function (i) {
-                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
+                    // if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
+                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openDocExt') !== -1) {
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[3] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
@@ -241,17 +250,45 @@
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[3] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'gif',
-                          no: $(this).attr('onClick').match(/\d+/g)[3] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                      } else if ($(this).text().indexOf('PNG') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[3] });
                       } else {
-                        arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                        if ($(this).attr('onClick').match(/\d+/g).length === 4) {
+                          arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                        } else {
+                          arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        }
+                      }
+                    } else if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
+                      if ($(this).text().indexOf('txt') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('doc') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('pdf') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('xls') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('png') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'png',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else if ($(this).text().indexOf('jpg') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1]
+                        });
+                      } else if ($(this).text().indexOf('gif') !== -1) {
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                      } else {
+                        if ($(this).attr('onClick').match(/\d+/g).length === 4) {
+                          arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
+                        } else {
+                          arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        }
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push'
-                        });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
@@ -303,13 +340,10 @@
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet',
-                    id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
-                    arr2.push({
-                      text: $(this).children("input").prop('value'),
-                      type: 'input', id: $(this).children("input").prop('id') });
+                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                   } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
                     arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                   } //判断纯文字
