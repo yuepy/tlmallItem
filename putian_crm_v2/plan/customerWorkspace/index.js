@@ -110,15 +110,29 @@
       var selfTemplate = "import {\n  Component\n} from 'react';\nimport {\n  WorkspaceList\n} from 'ysp-custom-components';\nexport default class extends Component {\n  render() {\n    let _this = this;\n    let titles = this.props.data.customData;\n    return (\n      <div>\n         <WorkspaceList \n           title=\"\u8BA1\u5212\u62DC\u8BBF\"\n           data={titles}\n           callback={(e,index)=>{\n              let target = e.target;\n              let handler = this.props.customHandler;\n              if (handler) {\n                let operation = target.targetValue || target.textContent;\n                handler({\n                  eventType: 'click',\n                  data:{\n                    operation:operation,\n                    index:index\n                  }\n                });\n              }\n          }}\n           />\n       </div>\n    );\n  }\n}";
       return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n      var _this3 = this;\n\n      var _this = this;\n      var titles = this.props.data.customData;\n      return React.createElement(\n        'div',\n        null,\n        React.createElement(_yspCustomComponents.WorkspaceList, {\n          title: '\\u8BA1\\u5212\\u62DC\\u8BBF',\n          data: titles,\n          callback: function callback(e, index) {\n            var target = e.target;\n            var handler = _this3.props.customHandler;\n            if (handler) {\n              var operation = target.targetValue || target.textContent;\n              handler({\n                eventType: 'click',\n                data: {\n                  operation: operation,\n                  index: index\n                }\n              });\n            }\n          }\n        })\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
     },
-    getData_control43_fLHAKd: function getData_control43_fLHAKd(elem) {
+    getData_control43_fLHAKd: function (elem) {
       if (!elem) {
         return;
       } //这一步意义很大，相当于locator作用 start
-      var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = false;var newFileEl = doc.getElementById('newFile');var shortVisitEl = doc.getElementById('shortVisit');if (newFileEl && newFileEl.getAttribute("style") != null && (newFileEl.getAttribute("style") != "display: none;" || newFileEl.getAttribute("style") != "display: none;;")) {
-        elem = newFileEl;isShow = true;
-      }if (shortVisitEl && shortVisitEl.getAttribute("style") != null && (shortVisitEl.getAttribute("style") != "display: none;" || shortVisitEl.getAttribute("style") != "display: none;;")) {
-        elem = shortVisitEl;isShow = true;
-      } //这一步意义很大，相当于locator作用 end
+      var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = true;var newFileEl = doc.getElementById('newFile');var shortVisitEl = doc.getElementById('shortVisit');if (newFileEl && win.getComputedStyle(newFileEl).display == "none" && shortVisitEl && win.getComputedStyle(shortVisitEl).display == "none") {
+        isShow = false;
+      } else {
+        if (newFileEl && win.getComputedStyle(newFileEl).display == "block") {
+          elem = newFileEl;isShow = true;
+        } else {
+          if (shortVisitEl && win.getComputedStyle(shortVisitEl).display == "block") {
+            elem = shortVisitEl;isShow = true;
+          }
+        }
+      } // if (newFileEl && newFileEl.getAttribute("style") != null && (newFileEl.getAttribute("style") != "display: none;" || newFileEl.getAttribute("style") != "display: none;;")) {
+      //   elem = newFileEl;
+      //   isShow = true;
+      // }
+      // if (shortVisitEl && shortVisitEl.getAttribute("style") != null && (shortVisitEl.getAttribute("style") != "display: none;" || shortVisitEl.getAttribute("style") != "display: none;;")) {
+      //   elem = shortVisitEl;
+      //   isShow = true;
+      // } 
+      //这一步意义很大，相当于locator作用 end
       var isStoreList = false;var tempVisitStoreListBtn = elem.querySelector('#tempVisitStoreListBtn');if (tempVisitStoreListBtn && tempVisitStoreListBtn.classList.contains('z-act')) {
         isStoreList = true;
       }var storeList = [];var clientList = [];var doc = elem.ownerDocument;var inputs = elem.querySelectorAll('table  tr td input'); // [].forEach.call(trs, function (tr, index) {
@@ -166,7 +180,7 @@
         }
       }return { checkedIsNotNull: checkedIsNotNull, tempPlanOtherCustomer: tempPlanOtherCustomer, dayPlanContent: dayPlanContent, isTempPlan: isTempPlan, readOnly: readOnly, isShow: isShow, selectedCount: selectedCount, preClientSelectedCount: preClientSelectedCount, preStoreSelectedCount: preStoreSelectedCount, isCustomer: isCustomer, isStore: isStore, customer: customer || 0, store: store || 0 };
     },
-    doAction_uiControl47_U0LVB2: function doAction_uiControl47_U0LVB2(data, elem) {
+    doAction_uiControl47_U0LVB2: function (data, elem) {
       //这一步意义很大，相当于locator作用 start
       var doc = elem.ownerDocument;var win = doc.defaultView;var newFileEl = doc.getElementById('newFile');var shortVisitEl = doc.getElementById('shortVisit');if (newFileEl && newFileEl.getAttribute("style") != null && (newFileEl.getAttribute("style") != "display: none;" || newFileEl.getAttribute("style") != "display: none;;")) {
         elem = newFileEl;
