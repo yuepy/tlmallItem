@@ -49,9 +49,9 @@
                   } else if ($(this).children("select").length > 0) {
                     data.base_lc_info.miji.id.push($(this).children("select")[0].id);$(this).children("select").children("option").each(function () {
                       if ($(this).text().trim() !== '') {
-                        var arr = [];
-                        if ($(this)[0].selected == true) {
-                          arr.push({ text: $(this).text().trim(), selected: true });
+                        var arr = [];if ($(this)[0].selected == true) {
+                          arr.push({
+                            text: $(this).text().trim(), selected: true });
                         } else {
                           arr.push({ text: $(this).text().trim(), selected: "" });
                         }data.base_lc_info.miji.content.push(arr);
@@ -79,7 +79,7 @@
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                 var arr3 = [];if ($(this).children("table").find("a").length > 0) {
                   $(this).children("table").find("a").each(function (i) {
-                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
+                    if ($(this).attr('onclick') !== undefined && ($(this).attr('onclick').indexOf('openAccessory') !== -1 || $(this).attr('onclick').indexOf('addDocReadTag') !== -1)) {
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('JPG') !== -1) {
@@ -89,8 +89,7 @@
                       } else if ($(this).text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
-                        arr3.push({
-                          name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
@@ -116,8 +115,7 @@
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(),
-                          stl: 'zip', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                       } else if ($(this).next().text().indexOf('ppt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                       } else {
@@ -186,8 +184,7 @@
                             }
                           } else if ($(this).find(".cke_editor").length > 0) {
                             arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
-                          }
-            data.base_info.content.push(arr2);
+                          }data.base_info.content.push(arr2);
           });
         });
       } else if ($(elem).children("table").length == 1) {
@@ -200,19 +197,20 @@
             } else if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title'
+              });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
-              arr2.push({
-                text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
             } //判断附件-------------------------------------
             else if ($(this).children("table").length > 0 && $(this).children("table")[0].id.length > 0) {
                 var arr3 = [];if ($(this).children("table").find("a").length > 0) {
                   $(this).children("table").find("a").each(function (i) {
-                    if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openAccessory') !== -1) {
+                    if ($(this).attr('onclick') !== undefined && ($(this).attr('onclick').indexOf('openAccessory') !== -1 || $(this).attr('onclick').indexOf('addDocReadTag') !== -1)) {
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('JPG') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({
+                          name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
@@ -242,8 +240,7 @@
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'gif',
-                          no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                       } else if ($(this).next().text().indexOf('ppt') !== -1) {
@@ -287,8 +284,7 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });arr2.push({
-                                text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -356,8 +352,8 @@
         }
       }if (data.eventType == 'button1') {
         //debugger;
-        var id = data.dataCustom;var elem2 = $(elem).children("table").eq(1)[0];var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];
-        $(tbody2).find("button").each(function () {
+        var id = data.dataCustom;var elem2 = $(elem).children("table").eq(1)[0];
+        var tbody2 = $(elem).children("table").eq(1).children("tbody")[0];$(tbody2).find("button").each(function () {
           if ($(this)[0].getAttribute('onClick').match(/field\d+/) == id) {
             $(this).click();
           }
@@ -392,13 +388,11 @@
       }if (data.eventType == 'preview') {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);
-        debugger; //每个文件的onclick中的第二个number
+        }, 1000);debugger; //每个文件的onclick中的第二个number
         var number = data.dataCustom.number; //文件类型
         var type = data.dataCustom.type; //现在的文件名称
         var text = data.dataCustom.text; //拼接下载地址
-        var _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';
-        if (ysp.appMain.isIOS()) {
+        var _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url;
