@@ -28,6 +28,8 @@
   //全局变量 : 储存页面第二个文件上传功能的参数,用于文件删除
   	topWindow.file_two = [];
   	topWindow.activepageid = '';
+  //附件上传：当uploadAjax为true的时候上传
+    topWindow.uploadAjax=false;
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
     var topWin = null; // Window对象
@@ -684,7 +686,7 @@
            }
           //正文预览
           aWin.check_form=function(thiswins,items){
-            debugger
+           
             var window = aWin;
             var document = doc;
           //    var usercookie = doc.cookie.split(';')
@@ -840,7 +842,7 @@
           	var uploadId;
             (function() {
                 var addFileInput = function addFileInput(originId, id, target,html) {
-                  
+                 
                     var placeHolder = doc.getElementById(originId);
                     if (placeHolder) {
                       var tempParent , Object;
@@ -876,7 +878,7 @@
                           div1.appendChild(div4);
                           var fileNum=this.parentElement.getAttribute('file-num');
                           //附件上传 文件放置DIV
-                          
+                         
                           if(fileNum=="1"){
                             this.ownerDocument.querySelectorAll('.fieldset')[0].appendChild(div);
                           }else if(fileNum=="2"){
@@ -886,30 +888,33 @@
                           }
                           
                           //附件上传 文件放置DIV
-                          var xhr = new XMLHttpRequest();
-                          var form = file && file.parentElement;//找到对应的form
-                          var fileName = form.Filename;//找到input name=filename的元素，
-                          fileName.value = this.files[0].name; //将这个元素的value设为刚刚上传的文件名
-      
-                          var xhr = new XMLHttpRequest();//创建ajax对象
-                          xhr.open('post', 'http://192.168.200.63/docs/docupload/MultiDocUploadByWorkflow.jsp');//发送请求
-                          this.formData = new FormData(form);//格式化form的数据
-                          xhr.send(this.formData);//发送数据
-                          var responseT = "";
-                          xhr.onreadystatechange = function() {
-                            if (xhr.readyState == 4 && xhr.status == 200) {
-                              responseT = xhr.responseText;
-                              up.call(target,target,responseT);
-                              topWindow.file.push(ysp.customHelper.trim(responseT));
+                          
+                            // var xhr = new XMLHttpRequest();
+                            var form = file && file.parentElement;//找到对应的form
+                            var fileName = form.Filename;//找到input name=filename的元素，
+                            fileName.value = this.files[0].name; //将这个元素的value设为刚刚上传的文件名
+														//if(topWindow.uploadAjax){
+                            var xhr = new XMLHttpRequest();//创建ajax对象
+                            xhr.open('post', 'http://192.168.200.63/docs/docupload/MultiDocUploadByWorkflow.jsp');//发送请求
+                            this.formData = new FormData(form);//格式化form的数据
+                            xhr.send(this.formData);//发送数据
+                            var responseT = "";
+                            xhr.onreadystatechange = function() {
+                              if (xhr.readyState == 4 && xhr.status == 200) {
+                                responseT = xhr.responseText;
+                                up.call(target,target,responseT);
+                                topWindow.file.push(ysp.customHelper.trim(responseT));
+                              }
                             }
-                          }
+                            
+                          //}
                           // cb && cb.call(target);
                         };
                         var fileName = doc.createElement('input');
                         var upload = doc.createElement('input');
-                      	var subId = doc.createElement('input');
+                        var subId = doc.createElement('input');
 
-                      	subId.type = "hidden";
+                        subId.type = "hidden";
                         fileName.name = 'Filename';
                         upload.name = 'Upload';
                         upload.value = 'Submit Query';

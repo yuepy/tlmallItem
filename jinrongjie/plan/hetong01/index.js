@@ -166,8 +166,7 @@
                       } else if ($(this).next().text().indexOf('png') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'jpg',
-                          no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
@@ -191,7 +190,8 @@
                       arr6.push("111");
                     }
                   });
-                }if ($(this).text().indexOf('选择文件') !== -1) {
+                }
+                if ($(this).text().indexOf('选择文件') !== -1) {
                   var arr5 = [];arr5.push('yes');
                 } else {
                   var arr5 = [];arr5.push('no');
@@ -212,7 +212,8 @@
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).children("span").text(), type: 'a' });
+                      arr2.push({
+                        text: $(this).children("span").text(), type: 'a' });
                     } else if ($(this).children('span').length == 1 && $(this).children().length == 1) {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } //判断textarea-------------------------------------
@@ -225,8 +226,7 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });arr2.push({
-                                text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -238,7 +238,8 @@
                             if ($(this)[0].innerHTML.replace(/&nbsp;/, "").replace(/\<br\>/ig, "").replace(/\s+/, "") == '') {
                               arr2.push({ text: '', type: 'suggest' });
                             } else {
-                              arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
+                              arr2.push({
+                                text: $(this)[0].innerHTML, type: 'suggest' });
                             }
                           } else if ($(this).find(".cke_editor").length > 0) {
                             arr2.push({ text: $(this).find(".cke_editor").find('iframe')[0].contentDocument.body.innerHTML, type: 'suggest_final' });
@@ -312,7 +313,9 @@
       }if (data.eventType == 'about2') {
         elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关流程"]').onclick());
       }if (data.eventType == 'preview') {
-        // debugger; //每个文件的onclick中的第二个number
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000); // debugger; //每个文件的onclick中的第二个number
         var number = data.dataCustom.number; //文件类型
         var type = data.dataCustom.type; //现在的文件名称
         var text = data.dataCustom.text; //拼接下载地址
