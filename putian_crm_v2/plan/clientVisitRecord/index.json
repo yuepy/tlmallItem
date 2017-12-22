@@ -14,6 +14,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -34,6 +38,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -70,6 +78,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -93,6 +105,41 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control270_zmxasa": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"mainContainer\"]//DIV[@id=\"resTeam-border\"]/DIV[2]",
+              "descendant::DIV[@id=\"mainContainer\"]//DIV[@id=\"resTeam-border\"]//DIV",
+              "descendant::DIV[@id=\"resTeam-border\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.team.content"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control270_zmxasa"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -100,7 +147,8 @@
       "controls": [
         "control211_P393dz",
         "control267_3Wo5xA",
-        "control268_WJKAT9"
+        "control268_WJKAT9",
+        "control270_zmxasa"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -176,6 +224,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl262_ryJkxX",
                 "onGetTemplate": "getTemplate_uiControl262_ryJkxX"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl264_WGqxzX",
+          "controlId": "control270_zmxasa",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl264_WGqxzX",
+                "onGetTemplate": "getTemplate_uiControl264_WGqxzX"
               }
             }
           }
