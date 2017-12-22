@@ -7,7 +7,8 @@
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
     "processToSend": "../processToSend/index.json",
-    "index": "../index/index.json"
+    "index": "../index/index.json",
+    "forward": "../forward/index.json"
   },
   "chineseName": "审批-公文审批-总经理签核",
   "description": "请求标题详情页",
@@ -406,7 +407,16 @@
           "tagName": "TR"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[11]/td[2]/table/tbody/tr[4]"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[12]/td[2]/table/tbody/tr[4]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -863,6 +873,10 @@
         {
           "toContextId": "context10_Tp4yhH",
           "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context23_zUAAyb",
+          "toModelId": "forward"
         }
       ]
     },
@@ -1243,6 +1257,13 @@
         "context5_46tN5g": [
           "192.168.200.63/docs/docs/MutiDocBrowser.jsp?documentids=&splitflag=,",
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/docs/docs/MutiDocBrowser.jsp?documentids="
+        ],
+        "context23_zUAAyb": [
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312802%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312804%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312805%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D615188%26isqc%3D1",
+          "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D425651%26isqc%3D1"
         ]
       }
     },
