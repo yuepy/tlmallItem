@@ -851,6 +851,7 @@
                         file.id = id;
                         file.name = id;
                         file.onchange = function() {
+                          
                           var cb = target.setting.file_dialog_complete_handler;
                           var up = target.setting.upload_success_handler; 
                           var div = doc.createElement('div');
@@ -906,7 +907,8 @@
                                 topWindow.file.push(ysp.customHelper.trim(responseT));
                               }
                             }
-                            
+                            fileName.value = "";
+                          	fileName.previousElementSibling.value="";
                           //}
                           // cb && cb.call(target);
                         };
