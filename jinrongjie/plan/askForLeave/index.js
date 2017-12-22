@@ -209,7 +209,7 @@
           arr.splice(i, 1);var v = arr.toString();input1.value = v;
         } else {
           input1.value = input1.value;
-        }
+        }$(elem).querySelector("#Filedata").val("");$(elem).querySelector("input[name='Filename']").val("");
       }
     },
     getTemplate_uiControl54_GI48cc: function getTemplate_uiControl54_GI48cc() {
