@@ -131,7 +131,7 @@
           $(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '1');$(elem).children("tr").eq(row).children("td").eq(1).find("#Filedata").click();
         } else if (classname == 'uploadIcon') {
           // var downloadlength = $(elem).children("tr").eq(row).children("td").eq(1).find(".btnFlowd").length;
-          var input1 = elem.querySelectorAll("input[temptitle='附件']")[0] || elem.querySelectorAll("input[temptitle='工资表']")[0];console.log(input1);var arr = input1.value.split(',');var ind = parseInt(i);$(elem).children("tr").eq(row).children("td").eq(1).find(".progressWrapper").eq(i).remove();arr.splice(ind, 1);var v = arr.toString();input1.value = v;$(elem).children("tr").eq(row).children("td").eq(1).find("#Filedata").val("");$(elem).children("tr").eq(row).children("td").eq(1).find("input[name='Filename']").val("");
+          var input1 = elem.querySelectorAll("input[temptitle*='附件']")[0] || elem.querySelectorAll("input[temptitle='工资表']")[0];console.log(input1);var arr = input1.value.split(',');var ind = parseInt(i);$(elem).children("tr").eq(row).children("td").eq(1).find(".progressWrapper").eq(i).remove();arr.splice(ind, 1);var v = arr.toString();input1.value = v;$(elem).children("tr").eq(row).children("td").eq(1).find("#Filedata").val("");$(elem).children("tr").eq(row).children("td").eq(1).find("input[name='Filename']").val("");
         }
       } else if (data.eventType == "blur") {
         if (classname == "ysp_input") {
