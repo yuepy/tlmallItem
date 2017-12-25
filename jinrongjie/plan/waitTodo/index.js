@@ -118,7 +118,7 @@
         var title = elem.ownerDocument.querySelector("#BacoTitle").textContent;if (title.indexOf("新建") !== -1) {
           var href = data.dataCustom.href;var index = data.dataCustom.index;elem.querySelector('a[href="' + href + '"]').click();
         } else {
-          var href = data.dataCustom.href;elem.querySelector('a[href="' + href + '"]').click();
+          var href = data.dataCustom.href;href = href.split('/')[href.split('/').length - 1];elem.querySelector('a[href*="' + href + '"]').click();
         }
       }
     },
