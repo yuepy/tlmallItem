@@ -15,11 +15,9 @@
             //data.status.push("1");
             var tree = $(elem2).find("#deeptree")[0];$(tree).find(".webfx-tree-item").each(function () {
               if ($(this).text().trim() !== '' && $(this)[0].style.display !== 'none' && $(this).parent()[0].style.display !== 'none' && $(this).parent().parent()[0].style.display !== 'none' && $(this).parent().parent().parent()[0].style.display !== 'none' && $(this).parent().parent().parent().parent()[0].style.display !== 'none' && $(this).parent().parent().parent().parent().parent()[0].style.display !== 'none' && $(this).parent().parent().parent().parent().parent().parent()[0].style.display !== 'none') {
-                var arr = [];var imgth = $(this).find("img").length;var imgEle = $(this)[0].querySelectorAll("img");
-                for (var i = 0; i < imgth; i++) {
+                var arr = [];var imgth = $(this).find("img").length;var imgEle = $(this)[0].querySelectorAll("img");for (var i = 0; i < imgth; i++) {
                   if (/plus/.test(imgEle[i].src) && /global/.test(imgEle[i + 1].src)) {
-                    arr.push({ status: 'closehome', text: $(this).find("a").text(),
-                      id: $(this).find("a")[0].id, length: $(this).find("img").length, imgId: $(this).find("img").eq(i)[0].id });data.title.push(arr);break;
+                    arr.push({ status: 'closehome', text: $(this).find("a").text(), id: $(this).find("a")[0].id, length: $(this).find("img").length, imgId: $(this).find("img").eq(i)[0].id });data.title.push(arr);break;
                   } else if (/minus/.test(imgEle[i].src) && /global/.test(imgEle[i + 1].src)) {
                     arr.push({ status: 'openhome', text: $(this).find("a").text(), id: $(this).find("a")[0].id, length: $(this).find("img").length, imgId: $(this).find("img").eq(i)[0].id });data.title.push(arr);break;
                   } else if (/plus/.test(imgEle[i].src)) {
@@ -77,8 +75,9 @@
       return data;
     }, doAction_uiControl42_lcGQHl: function (data, elem) {
       if (data.eventType == 'selectPerson') {
-        //debugger;
-        var id = data.dataCustom;if (elem.contentDocument.getElementById("oTable1")) {
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);var id = data.dataCustom;if (elem.contentDocument.getElementById("oTable1")) {
           var elem1 = elem.contentDocument.getElementById("oTable1");if ($(elem1).find("#frame1").length > 0) {
             var elem2 = $(elem1).find("#frame1")[0].contentDocument.body;if ($(elem2).find("#deeptree").length > 0) {
               var tree = $(elem2).find("#deeptree")[0];$(tree).find(".webfx-tree-item").each(function () {
@@ -150,8 +149,7 @@
             if ($(elem2).find(".ViewForm").length > 0) {
               if ($(elem2).find("#rightMenuIframe").length > 0) {
                 var iframeBody = $(elem2).find("#rightMenuIframe")[0].contentDocument.body;if ($(iframeBody).find("button").length > 0) {
-                  console.log($(iframeBody).find("button").eq(0).text());
-                  $(iframeBody).find("button").eq(0)[0].click();
+                  console.log($(iframeBody).find("button").eq(0).text());$(iframeBody).find("button").eq(0)[0].click();
                 }
               }
             }
