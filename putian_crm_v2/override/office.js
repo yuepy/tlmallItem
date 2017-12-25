@@ -823,6 +823,8 @@ window.addEventListener('DOMContentLoaded', function() {
         function getBDMap(mapName, datas, Id) {
             console.log(mapName);
             console.log(datas);
+          	document.getElementById("map").setAttribute('option',JSON.stringify(datas));
+            document.getElementById("map").setAttribute('optionName',mapName);
 
             var BDmap = new BMap.Map(Id, {
                 enableMapClick: false
