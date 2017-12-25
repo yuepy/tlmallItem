@@ -25,7 +25,7 @@
     getData_control5_CNTcxJ: function (elem) {
       if (!elem) {
         return;
-      }
+      }elem.ownerDocument.defaultView.isie.value = true;
     },
     doAction_uiControl5_zOagGr: function (data, elem) {},
     getTemplate_uiControl5_zOagGr: function () {
