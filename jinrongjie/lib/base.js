@@ -684,6 +684,8 @@
                 aWin.parent.close();
               }
            }
+   
+
           //正文预览
 //           aWin.check_form=function(thiswins,items){
            
