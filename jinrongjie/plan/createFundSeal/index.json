@@ -360,40 +360,6 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control324_nKBr0D": {
-      "location": {
-        "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.ext-ie"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              0,
-              15
-            ],
-            "value": "/HTML[1]/BODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control324_nKBr0D"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
     }
   },
   "contexts": {
@@ -406,8 +372,7 @@
         "control259_nKBWpK",
         "control260_UET9bV",
         "control261_oaLTaQ",
-        "control256_bmROpq",
-        "control324_nKBr0D"
+        "control256_bmROpq"
       ],
       "anchors": [
         "control4_uDFBQc"
@@ -475,6 +440,16 @@
       "fromContextId": "context31_RccVS6",
       "fromAction": "doAction",
       "fromControlId": "control257_NfCv4I",
+      "toContexts": [
+        {
+          "toContextId": "context31_RccVS6"
+        }
+      ]
+    },
+    "flow224_5G9Wfa": {
+      "fromContextId": "context31_RccVS6",
+      "fromAction": "doAction",
+      "fromControlId": "control260_UET9bV",
       "toContexts": [
         {
           "toContextId": "context31_RccVS6"
@@ -637,21 +612,6 @@
               "layout": []
             }
           ]
-        },
-        {
-          "id": "uiControl324_QVxWWf",
-          "controlId": "control324_nKBr0D",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl324_QVxWWf",
-                "onGetTemplate": "getTemplate_uiControl324_QVxWWf"
-              }
-            }
-          }
         },
         {
           "id": "uiControl251_1P7LBQ",
