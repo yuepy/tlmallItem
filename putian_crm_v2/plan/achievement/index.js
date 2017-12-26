@@ -193,7 +193,7 @@
     },
     doAction_uiControl138_x4P4MJ: function (data, elem) {
       if ("dbClick" == data.eventType) {
-        debugger;var table = elem.querySelector('table[id^="branch-table"]');var table0 = elem.querySelector('table[id^="bsPersonnel-table"]');var table1 = elem.querySelector('table[id^="salesman-table"]');var table2 = elem.querySelector('table[id^="client-table"]');var table3 = elem.querySelector('table[id^="store-table"]');var table4 = elem.querySelector('table[id^="salesMan-table"]');var table5 = elem.querySelector('table[id^="office-table"]');var table6 = elem.querySelector('table[id^="saleman-table"]');var table7 = elem.querySelector('table[id^="brandFirm-table"]');var index = data.customData.index;var text = data.customData.text;if (table && "分公司销量达成" == text) {
+        var table = elem.querySelector('table[id^="branch-table"]');var table0 = elem.querySelector('table[id^="bsPersonnel-table"]');var table1 = elem.querySelector('table[id^="salesman-table"]');var table2 = elem.querySelector('table[id^="client-table"]');var table3 = elem.querySelector('table[id^="store-table"]');var table4 = elem.querySelector('table[id^="salesMan-table"]');var table5 = elem.querySelector('table[id^="office-table"]');var table6 = elem.querySelector('table[id^="saleman-table"]');var table7 = elem.querySelector('table[id^="brandFirm-table"]');var index = data.customData.index;var text = data.customData.text;if (table && "分公司销量达成" == text) {
           var trs = table.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();return;
         }if (table0 && "办事处销售达成" == text) {
           var trs = table0.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();return;
@@ -617,7 +617,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: barsHW.getAttribute('titleText') };var echartItem = { echartData: { datas: JSON.parse(barsHW.getAttribute('datas')), titleText: barsHW.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'barsHW' };var echartItem = { echartData: { datas: JSON.parse(barsHW.getAttribute('datas')), titleText: barsHW.getAttribute('titleText'), selectId: selectId }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (typeSalseTable) {
         var businessData = [];var trs = typeSalseTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -637,7 +637,7 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = modelTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = modelTable.parentElement.previousElementSibling.textContent;businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: textName, businessTitle: '' };var echartItem = { echartData: { datas: '', titleText: '' }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = modelTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = modelTable.parentElement.previousElementSibling.textContent;businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: textName, businessTitle: 'modelTable' };var echartItem = { echartData: { datas: '', titleText: '' }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (typeSalesTable) {
         var businessData = [];var trs = typeSalesTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -647,12 +647,12 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = typeSalesTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = typeSalesTable.parentElement.previousElementSibling.textContent;businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: textName, businessTitle: '' };var echartItem = { echartData: { datas: '', titleText: '' }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        });var flag = typeSalesTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = typeSalesTable.parentElement.previousElementSibling.textContent;businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: textName, businessTitle: 'typeSalesTable' };var echartItem = { echartData: { datas: '', titleText: '' }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }return echartDatas;
     },
     doAction_uiControl170_pTz0rB: function (data, elem) {
       if ('dbClick' == data.eventType) {
-        var title = data.customData.title;var index = data.customData.index;var table0 = elem.querySelector('table[id^="bizUnit0"]');var table1 = elem.querySelector('table[id^="bizUnit1"]');var table2 = elem.querySelector('table[id^="bizUnit2"]');var table3 = elem.querySelector('table[id^="bizUnit3"]');var table4 = elem.querySelector('table[id^="bizUnit4"]');var table5 = elem.querySelector('table[id^="bizUnit5"]');var table6 = elem.querySelector('table[id^="bizUnit6"]');var table7 = elem.querySelector('table[id^="bizUnit7"]');var table8 = elem.querySelector('table[id^="bizUnit8"]');var table9 = elem.querySelector('table[id^="bizUnit9"]');var table10 = elem.querySelector('table[id^="bizUnit10"]');var table11 = elem.querySelector('table[id^="model-table"]');var table12 = elem.querySelector('table[id^="typeSales-table"]');var table13 = elem.querySelector('div[id^="barsHW"]'); // if (table && "华为业务群" == title || "分销业务事业部" == title || "三星业务事业部" == title || "大客户业务部" == title) {
+        var title = data.customData.title;var index = data.customData.index;var table0 = elem.querySelector('table[id^="bizUnit0"]');var table1 = elem.querySelector('table[id^="bizUnit1"]');var table2 = elem.querySelector('table[id^="bizUnit2"]');var table3 = elem.querySelector('table[id^="bizUnit3"]');var table4 = elem.querySelector('table[id^="bizUnit4"]');var table5 = elem.querySelector('table[id^="bizUnit5"]');var table6 = elem.querySelector('table[id^="bizUnit6"]');var table7 = elem.querySelector('table[id^="bizUnit7"]');var table8 = elem.querySelector('table[id^="bizUnit8"]');var table9 = elem.querySelector('table[id^="bizUnit9"]');var table10 = elem.querySelector('table[id^="bizUnit10"]');var table11 = elem.querySelector('table[id^="model-table"]');var table12 = elem.querySelector('table[id^="typeSales-table"]');var table13 = elem.querySelector('div[id^="barsHW"]');var table14 = elem.querySelector('table[id^="HW-table"]'); // if (table && "华为业务群" == title || "分销业务事业部" == title || "三星业务事业部" == title || "大客户业务部" == title) {
         //   var trs = table.querySelectorAll("tr");
         //   var td = trs[index].firstChild;
         //   var a = td.querySelector("a");
@@ -681,12 +681,12 @@
           var trs = table9.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();return;
         }if (table10 && 'bizUnit10' == title) {
           var trs = table10.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();return;
-        }if (table11 && "产品销售达成" == title) {
+        }if (table11 && "modelTable" == title) {
           var trs = table11.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();return;
-        }if (table12 && "产品销售达成" == title) {
+        }if (table12 && "typeSalesTable" == title) {
           var trs = table12.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();return;
-        }if (table13 && "分销业务事业部" == title) {
-          var trs = table13.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();return;
+        }if (table14 && "barsHW" == title) {
+          var trs = table14.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();return;
         }
       }
     },
