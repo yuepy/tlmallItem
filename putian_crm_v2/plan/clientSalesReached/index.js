@@ -13,18 +13,16 @@
     getData_control273_rfcp0P: function (elem) {
       if (!elem) {
         return [];
-      }var data = { subContent: [], dataLoading: [], dataTipMsg: [] };var iframe = elem.ownerDocument.querySelectorAll("iframe");var iframes = iframe && iframe[0];var forms = iframes && iframes.contentDocument && iframes.contentDocument.querySelector("#queryForm");if (forms) {
-        var jqGrid = forms.querySelector("#jqGrid_wrapper").querySelector("#table_list_1").querySelector("tbody");var trs = jqGrid && jqGrid.querySelectorAll("tr");if (trs) {
-          for (var i = 1; i < trs.length; i++) {
-            var aa = [];var month = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[0].textContent);var fgs = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[1].textContent);var xm = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[2].textContent);var cpxl = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[4].textContent);var jx = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[5].textContent);var ys = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[6].textContent);var mbxl = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[7].textContent);var mbxse = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[8].textContent);var sjxl = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[9].textContent);var sjxse = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[10].textContent);var xldc = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[11].textContent);var xsedc = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[12].textContent);aa.push(month);aa.push(fgs);aa.push(xm);aa.push(cpxl);aa.push(jx);aa.push(ys);aa.push(mbxl);aa.push(sjxl);aa.push(mbxse);aa.push(sjxse);aa.push(xldc);aa.push(xsedc);data.subContent.push(aa);
+      }var data = { subContent: [], dataLoading: [], dataTipMsg: [] };var iframe = elem.ownerDocument.querySelectorAll("iframe");var iframes = iframe && iframe[0];if (iframes) {
+        var contentDoc = iframes.contentDocument;if (contentDoc) {
+          var queryFo = contentDoc.querySelector("#queryForm");if (queryFo) {
+            var jqGrid = queryFo.querySelector("#jqGrid_wrapper").querySelector("#table_list_1").querySelector("tbody");var trs = jqGrid && jqGrid.querySelectorAll("tr");if (trs) {
+              for (var i = 1; i < trs.length; i++) {
+                var aa = [];var month = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[0].textContent);var fgs = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[1].textContent);var xm = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[2].textContent);var cpxl = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[4].textContent);var jx = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[5].textContent);var ys = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[6].textContent);var mbxl = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[7].textContent);var mbxse = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[8].textContent);var sjxl = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[9].textContent);var sjxse = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[10].textContent);var xldc = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[11].textContent);var xsedc = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[12].textContent);aa.push(month);aa.push(fgs);aa.push(xm);aa.push(cpxl);aa.push(jx);aa.push(ys);aa.push(mbxl);aa.push(sjxl);aa.push(mbxse);aa.push(sjxse);aa.push(xldc);aa.push(xsedc);data.subContent.push(aa);
+              }
+            }
           }
-        } //   if (jqGrid) {
-        //     var data = ysp.customHelper.getTableData(jqGrid, ['产品系列', "机型", "目标销量", "实际销量", "目标销售额", "实际销售额", "销量达成", "销售额达成"]); //var data = content.Shift();
-        //     if (data) {
-        //       var content = data.content.slice(1);
-        //     }
-        //     return content;
-        //   }
+        }
       }var loading = elem.ownerDocument.querySelectorAll("iframe") && elem.ownerDocument.querySelectorAll("iframe")[0].contentDocument.querySelector(".loading-box");var loadingStyle = loading && loading.style.display;if (loadingStyle === 'none') {
         data.dataLoading.push(false);
       } else {
