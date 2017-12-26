@@ -91,7 +91,7 @@
           ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/MyRequestView.jsp?needPopupNewPage=true");
         }
       }if (_url.match(/WFSearchResult\.jsp$/)) {
-        history.go(-2);
+        elem.ownerDocument.defaultView.location.href = elem.ownerDocument.defaultView.localStorage.testURL;
       }
     },
     getTemplate_uiControl10_c5ReP0: function getTemplate_uiControl10_c5ReP0() {
