@@ -57,14 +57,14 @@
             }
         },
         isAllNull(array) {
-            var tag = true;
-            for (var i = 0; i < array.length; i++) {
-                var item = ysp.customHelper.trim(array[i]);
-                if (item != '') {
-                    tag = false;
-                }
-            }
-            return tag;
+          var tag = true;
+          for (var i = 0; i < array.length; i++) {
+              var item = ysp.customHelper.trim(array[i]);
+              if (item != '') {
+                  tag = false;
+              }
+          }
+          return tag;
         },
         /* 适配中定制的公共代码放在这里 */
         /*
