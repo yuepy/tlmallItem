@@ -105,7 +105,7 @@
         switch (data.type) {case 'author':
             elem.querySelector('input[temptitle="拟稿人"]').value = data.value;elem.querySelector('input[temptitle="拟稿人"]').dispatchEvent(new Event('blur'));elem.querySelector('input[temptitle="拟稿人"]').dispatchEvent(new Event('change'));break;case 'author_department':
             elem.querySelector('input[temptitle="拟稿人部门"]').value = data.value;elem.querySelector('input[temptitle="拟稿人部门"]').dispatchEvent(new Event('blur'));elem.querySelector('input[temptitle="拟稿人部门"]').dispatchEvent(new Event('change'));break;case 'author_phone':
-            elem.querySelector('input[temptitle="拟稿人联系方式"]').value = data.value;elem.querySelector('input[temptitle="拟稿人联系方式"]').dispatchEvent(new Event('blur'));elem.querySelector('input[temptitle="拟稿人联系方式"]').dispatchEvent(new Event('blur'));break;case 'title':
+            elem.querySelector('input[temptitle="拟稿人联系方式"]').value = data.value;elem.querySelector('input[temptitle="拟稿人联系方式"]').dispatchEvent(new Event('blur'));elem.querySelector('input[temptitle="拟稿人联系方式"]').dispatchEvent(new Event('change'));break;case 'title':
             elem.querySelector('input[temptitle="标题"]').value = data.value;elem.querySelector('input[temptitle="标题"]').dispatchEvent(new Event('blur'));elem.querySelector('input[temptitle="标题"]').dispatchEvent(new Event('change'));break;case 'zhaiyao':
             elem.querySelector('textarea[temptitle="摘要"]').value = data.value;elem.querySelector('textarea[temptitle="摘要"]').dispatchEvent(new Event('blur'));elem.querySelector('textarea[temptitle="摘要"]').dispatchEvent(new Event('change'));break;case 'inner_idea':
             elem.querySelector('textarea[temptitle="本公司内部签批意见"]').value = data.value;break;case 'sendto_leader':
