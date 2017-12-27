@@ -137,25 +137,25 @@
         if (classname == "ysp_input") {
           var v = val.replace(/[^0-9]/g, "");if ($(elem).children("tr").eq(row).children(".zdn").length == 0) {
             if ($($(elem).children("tr").eq(row).children("td").eq(column).find("input[datatype='float']"))[0] && $($(elem).children("tr").eq(row).children("td").eq(column).find("input[datatype='float']"))[0].getAttribute("onblur").indexOf("checknumber1") !== -1) {
-              $(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']").val(v);
+              $(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']").val(v);$($(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']"))[0].dispatchEvent(new Event("blur"));
             } else {
-              $(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']").val(val);
-            }$($(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']"))[0].dispatchEvent(new Event("change"));
+              $(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']").val(val);$($(elem).children("tr").eq(row).children("td").eq(column).find("input[type='text']"))[0].dispatchEvent(new Event("change"));
+            }
           } else {
             if ($($(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[datatype='float']"))[0] && $($(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[datatype='float']"))[0].getAttribute("onblur").indexOf("checknumber1") !== -1) {
-              $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']").val(v);
+              $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']").val(v);$($(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']"))[0].dispatchEvent(new Event("blur"));
             } else {
-              $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']").val(val);
-            }$($(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']"))[0].dispatchEvent(new Event("change"));
+              $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']").val(val);$($(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='text']"))[0].dispatchEvent(new Event("change"));
+            }
           }
         } else if (classname == "ysp_textarea") {
           $(elem).children("tr").eq(row).children(".zdn").eq(column).find("textarea").val(val);$($(elem).children("tr").eq(row).children(".zdn").eq(column).find("textarea"))[0].dispatchEvent(new Event("change"));
         }
       } else if (data.eventType == "select") {
         if ($(elem).children("tr").eq(row).children(".zdn").length == 0) {
-          $(elem).children("tr").eq(row).children("td").eq(column).find("select").children("option").eq(i).prop('selected', true);
+          $(elem).children("tr").eq(row).children("td").eq(column).find("select").children("option").eq(i).prop('selected', true);$($(elem).children("tr").eq(row).children("td").eq(column).find("select"))[0].dispatchEvent(new Event("blur"));
         } else {
-          $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);
+          $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);$($(elem).children("tr").eq(row).children(".zdn").eq(column).find("select"))[0].dispatchEvent(new Event("blur"));
         }
       }
     },
