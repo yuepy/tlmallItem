@@ -13,20 +13,26 @@
     getData_control273_rfcp0P: function (elem) {
       if (!elem) {
         return [];
-      }var data = { subContent: [], dataLoading: [], dataTipMsg: [] };var iframe = elem.ownerDocument.querySelectorAll("iframe");var iframes = iframe && iframe[0];if (iframes) {
-        var contentDoc = iframes.contentDocument;if (contentDoc) {
-          var queryFo = contentDoc.querySelector("#queryForm");if (queryFo) {
-            var jqGrid = queryFo.querySelector("#jqGrid_wrapper").querySelector("#table_list_1").querySelector("tbody");var trs = jqGrid && jqGrid.querySelectorAll("tr");if (trs) {
+      }var data = { subContent: [], dataLoading: [], dataTipMsg: [] };var iframe = elem.querySelectorAll("iframe");var iframes = iframe && iframe[0];if (iframes) {
+        //var contentDoc = iframes.contentDocument;
+        var contentDoc = $(iframes).contents();if (contentDoc) {
+          //var queryFo = contentDoc.querySelector("#queryForm");
+          var queryFo = contentDoc.find("#queryForm");if (queryFo) {
+            // var jqGrid = queryFo.querySelector("#jqGrid_wrapper").querySelector("#table_list_1").querySelector("tbody");
+            // var trs = jqGrid && jqGrid.querySelectorAll("tr");
+            var jqGrid = queryFo.find("#jqGrid_wrapper").find("#table_list_1").find("tbody");var trs = jqGrid && jqGrid.find("tr");if (trs) {
               for (var i = 1; i < trs.length; i++) {
                 var aa = [];var month = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[0].textContent);var fgs = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[1].textContent);var xm = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[2].textContent);var cpxl = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[4].textContent);var jx = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[5].textContent);var ys = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[6].textContent);var mbxl = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[7].textContent);var mbxse = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[8].textContent);var sjxl = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[9].textContent);var sjxse = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[10].textContent);var xldc = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[11].textContent);var xsedc = ysp.customHelper.trim(trs[i].querySelectorAll("td") && trs[i].querySelectorAll("td")[12].textContent);aa.push(month);aa.push(fgs);aa.push(xm);aa.push(cpxl);aa.push(jx);aa.push(ys);aa.push(mbxl);aa.push(sjxl);aa.push(mbxse);aa.push(sjxse);aa.push(xldc);aa.push(xsedc);data.subContent.push(aa);
               }
             }
           }
         }
-      }var loading = elem.ownerDocument.querySelectorAll("iframe") && elem.ownerDocument.querySelectorAll("iframe")[0].contentDocument.querySelector(".loading-box");var loadingStyle = loading && loading.style.display;if (loadingStyle === 'none') {
-        data.dataLoading.push(false);
-      } else {
-        data.dataLoading.push(true);
+      }var loadings = elem.ownerDocument.querySelectorAll("iframe") && elem.ownerDocument.querySelectorAll("iframe")[0];if (loadings) {
+        var loading = $(loadings).contents().find(".loading-box");var loadingStyle = loading && loading.selector[0].style.display;if (loadingStyle == "none") {
+          data.dataLoading.push(false);
+        } else {
+          data.dataLoading.push(true);
+        }
       }var loadingTipMsg = ysp.customHelper.tipMsg.getLoading();data.dataTipMsg.push(loadingTipMsg);return data;
     },
     doAction_uiControl267_bcuM4l: function (data, elem) {},
@@ -38,15 +44,16 @@
     getData_control276_iPv6Rh: function (elem) {
       if (!elem) {
         return [];
-      }var forms = elem.ownerDocument.querySelectorAll("iframe") && elem.ownerDocument.querySelectorAll("iframe")[0].contentDocument.querySelector("#queryForm");if (forms) {
-        var prev = forms.querySelector('#prev_pager_list_1') && forms.querySelector('#prev_pager_list_1').classList.contains('ui-disabled');var next = forms.querySelector('#next_pager_list_1') && forms.querySelector('#next_pager_list_1').classList.contains('ui-disabled');var trs = forms.querySelector('#table_list_1') && forms.querySelector('#table_list_1').querySelector('tbody') && forms.querySelector('#table_list_1').querySelector('tbody').textContent;var loading = elem.ownerDocument.querySelectorAll("iframe") && elem.ownerDocument.querySelectorAll("iframe")[0].contentDocument.querySelector(".loading-box");var loadingStyle = loading && loading.style.display;if (loadingStyle === 'none') {
-          var dataLoading = false; //data.dataLoading.push(false);
-        } else {
-          var dataLoading = true; //data.dataLoading.push(true);
-        } //var loadingTipMsg = ysp.customHelper.tipMsg.getLoading();
-        //data.dataTipMsg.push(loadingTipMsg);
-        return { prev: prev, next: next, trs: trs, dataLoading: dataLoading //loadingTipMsg: loadingTipMsg
-        };
+      }var formss = elem.ownerDocument.querySelectorAll("iframe") && elem.ownerDocument.querySelectorAll("iframe")[0];if (formss) {
+        var forms = $(formss).contents().find("#queryForm");if (forms) {
+          var prev = forms.find('#prev_pager_list_1') && forms.find('#prev_pager_list_1').hasClass('ui-disabled');var next = forms.find('#next_pager_list_1') && forms.find('#next_pager_list_1').hasClass('ui-disabled');var trs = forms.find('#table_list_1') && forms.find('#table_list_1').find('tbody') && forms.find('#table_list_1').find('tbody').textContent;var dataLoading;var loadings = elem.ownerDocument.querySelectorAll("iframe") && elem.ownerDocument.querySelectorAll("iframe")[0];if (loadings) {
+            var loading = $(loadings).contents().find(".loading-box");var loadingStyle = loading && loading.selector[0].style.display;if (loadingStyle === 'none') {
+              dataLoading = false;
+            } else {
+              dataLoading = true;
+            }
+          }return { prev: prev, next: next, trs: trs, dataLoading: dataLoading };
+        }
       }
     },
     doAction_uiControl270_dcMuGX: function (data, elem) {
