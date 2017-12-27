@@ -1,3 +1,5 @@
+// 该JS中的地图相关的代码全部废弃.
+
 var myPosition = $("#position").val();
 var branchname = $("#branchname").val();
 var configType = $("#configType").val();
@@ -24,7 +26,8 @@ var capitals = {
 	'昆明分公司' : '云南',
 	'兰州分公司' : '甘肃',
 	'武汉分公司' : '湖北',
-	'上海普天' : '上海',
+	//'上海普天' : '上海',
+    '上海分公司' : '上海',
 	'石家庄分公司' : '河北',
 	'新疆分公司' : '新疆',
 	'南京分公司' : '江苏',
@@ -60,7 +63,8 @@ var provinceToBranchName = {
 	"西藏自治区" : "成都分公司",
 	"甘肃省" : "兰州分公司",
 	"湖北省" : "武汉分公司",
-	"上海市" : "上海普天",
+	//"上海市" : "上海普天",
+    "上海市" : "上海分公司",
 	"河北省" : "石家庄分公司",
 	"新疆维吾尔自治区" : "新疆分公司",
 	"江苏省" : "南京分公司",
@@ -90,7 +94,8 @@ var provinceToBranchName = {
 	"云南" : "昆明分公司",
 	"甘肃" : "兰州分公司",
 	"湖北" : "武汉分公司",
-	"上海" : "上海普天",
+	//"上海" : "上海普天",
+    "上海" : "上海分公司",
 	"河北" : "石家庄分公司",
 	"新疆" : "新疆分公司",
 	"江苏" : "南京分公司",
@@ -170,7 +175,7 @@ function ajaxData_cc(customerByBranch) {
 
 }
 
-//获取地图数据最大值
+//获取地图数据最大值 deprecated
 function getMaxValue(data) {
 	console.log(data);
 	var vals = [], MaxValue = 0;
@@ -186,6 +191,7 @@ function getMaxValue(data) {
 	return MaxValue;
 }
 
+// deprecated
 function numToShow(num) {
 	var visualMaxUnit = '', oMax = 0, arr = [];
 	var numStr = num.toString();
@@ -397,7 +403,7 @@ function echartsMap(customerByBranch, stroeByBranch) {
 	$("#mapChart").parent().append('<div class="u-visualmap"><div class="max">'+visual[1]+'</div>' +
 	'<div class="min">0</div><h6>拜访客户数量</h6></div>');
 	
-	var t = echarts.init(document.getElementById("mapChart")),n = {
+	var t = echarts.init(document.getElementById("mapChart")), n = {
 		tooltip : {
 			trigger : 'item',
 			padding: 0,
@@ -610,7 +616,7 @@ function areaMap(rows) {
 			data : mydata
 		} ]
 	};
-	//a.setOption(option_a), $(window).resize(a.resize);
+	a.setOption(option_a), $(window).resize(a.resize);
 }
 
 // 月度门店拜访趋势图
@@ -715,7 +721,7 @@ function storeMap(rows) {
 			data : mydata
 		} ]
 	};
-	//b.setOption(option_b), $(window).resize(b.resize);
+	b.setOption(option_b), $(window).resize(b.resize);
 }
 
 // 客户拜访总览--总部
@@ -727,7 +733,7 @@ var cusSignNum = [];
 var storeSignNum = [];
 
 
-// 拜访首页 拜访明细
+// 拜访首页底部的表格
 function ajaxDate_visit_list() {
 
 	if (myPosition == position.LEADER || myPosition == position.BIZ_GENERAL_MANAGER|| myPosition == position.PRODUCT_MANAGER) {
@@ -1019,7 +1025,40 @@ function buildVisitList(interfaces, clientReq, clientActual, storeReq, storeActu
             if(key.indexOf('_')>0) {
                 key2 = key.substring(11);
             }
-            var html = '<tr><td><a href=\"#\">' + key2 + "</a></td><td>" + clientReqNum + "</td><td>" + clientActualNum + "</td><td>" + parseInt(clientRateNum*100) +
+
+            // 生成下钻地址
+			var link = '#';
+            if(interfaces[0] == 1031) { // 钻取到分公司
+                var branchName = key;  // key 是带上PTTL_的， key2是不带PTTL_
+                var filter_userId = $("#filter_userId").text();
+                var encoder = $("#encoder").text();
+                var day = $("#day").val();
+                link = "/ptDataShow/customerview/toHomePage?branchName=" + encodeURIComponent(branchName) + "&filter_userId=" + filter_userId + '&encoder=' + encoder
+                    + '&position=' + encodeURIComponent('分公司分总') + '&day=' + day;
+			} else if(interfaces[0] == 1033) {  // 钻取到办事处
+                var branchName = $("#branchname").val();
+                var officename = key2;
+                var filter_userId = $("#filter_userId").text();
+                var encoder = $("#encoder").text();
+                var day = $("#day").val();
+                link = "/ptDataShow/customerview/toHomePage?branchName=" + encodeURIComponent(branchName) + "&filter_userId=" + filter_userId + '&encoder=' + encoder
+                    + '&position=' + encodeURIComponent('办事处主任') + '&officeName=' + encodeURIComponent(officename) + '&day=' + day;
+			} else if(interfaces[0] == 1035) { // 钻取到业务人员
+                var encoder = $("#encoder").text();
+                var branchName = $("#branchname").val();
+                var day = $("#day").val();
+				var saleManId = key2;
+                for(var k =0; k < outRows.length; k++) {
+                	var row = outRows[k];
+                	if(row.name == key2) {
+                        saleManId = row.id;
+                        break;
+					}
+				}
+                link = "/ptDataShow/customerview/toHomePage?branchName=" + encodeURIComponent(branchName) + "&filter_userId=" + filter_userId + '&encoder=' + encoder +
+                    '&position=' + encodeURIComponent('销售代表') + '&salesmanid=' + encodeURIComponent(saleManId) + '&day=' + day;
+			}
+            var html = '<tr><td><a href=\"'+ link +'\">' + key2 + "</a></td><td>" + clientReqNum + "</td><td>" + clientActualNum + "</td><td>" + parseInt(clientRateNum*100) +
                 "%</td><td>" + storeReqNum + "</td><td>" + storeActualNum +"</td><td>" + parseInt(storeRateNum*100) + "%</td></tr>";
             $("#tbody1").append(html);
         }

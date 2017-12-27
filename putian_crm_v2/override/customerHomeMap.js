@@ -1,4 +1,6 @@
-// 拜访总览地图 以及钻取
+// 拜访总览地图部分的JS 以及钻取 (author kevin)
+
+var outRows = [];
 
 function buildMap() {
 
@@ -17,15 +19,16 @@ function buildMap() {
         cache: false,
         success: function(data) {
             var array = data.rows;
+            outRows = data.rows;
             // 总部全国视图
             if('总部领导' == position || '事业部总经理' == position || '产品经理' == position || '大客户业务部总经理' == position) {
-                //getChinaMap(array, 'mapChart');
+                getChinaMap(array, 'mapChart');
             } else if ('分公司分总' == position || '品牌经理' == position) {
-                //getProvinceMap(array, data.province, 'mapChart');
+                getProvinceMap(array, data.province, 'mapChart');
             } else if ('办事处主任' == position) {
-                //getBDMapForOfficeView(data.province, array, 'mapChart');
+                getBDMapForOfficeView(data.province, array, 'mapChart');
             } else if('销售代表' == position || '总部客户经理' == position){
-                //getBDMapForSaler(data.province, array, 'mapChart');
+                getBDMapForSaler(data.province, array, 'mapChart');
             }
 
         },
@@ -147,7 +150,8 @@ function getProvinceMap(datas, provinceName, Id) {
         chart.setOption(option);
 
         chart.on('click', function(params) {
-            if(params.data && params.data.value) {
+            // params.data && params.data.value
+            if(params.data) {
                 var branchName = $("#branchname").val();
                 var officename = params.data.officename;
                 var filter_userId = $("#filter_userId").text();
@@ -445,7 +449,8 @@ function inforContent(datas, index) {
 
     if(datas[index].times) {
         for(var i in datas[index].times) {
-            timesLists += '<tr><td class="time">' + datas[index].times[i].time + '</td><td class="alink"><a href="#">查看</a></td></tr>';
+            // timesLists += '<tr><td class="time">' + datas[index].times[i].time + '</td><td class="alink"><a href="#">查看</a></td></tr>';
+            timesLists += '<tr><td class="time">' + datas[index].times[i].time + '</td><td class="alink"></td></tr>';
         }
     }else{
         timesLists = '<tr><td class="yet">暂无拜访记录</td></tr>';
