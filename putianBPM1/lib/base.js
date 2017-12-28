@@ -314,6 +314,13 @@
         }
         //观察页面是否等待状态,选择合适的showLoading和hideLoading
         if (aWin.location.href.indexOf('index.html') !== -1) {
+          if(parent.EAPI.isIOS){
+            debugger;
+            var iosCard = parent.EAPI.showDetailBPMCard();
+            if(iosCard.name == 'fuckBPMCard'){
+              aWin.location.href = iosCard.url;
+            }
+          }
           try {
             var MutationObserver = aWin.MutationObserver ||
               aWin.WebKitMutationObserver ||
