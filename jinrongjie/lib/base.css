@@ -188,6 +188,7 @@ div[data-type="tabs:content"] > div:first-child {
 }
 .file2 > div:nth-child(1) {
   font-size: 15px;
+  word-break: break-all;
 }
 .file2 > div:nth-child(2) {
   font-size: 14px;
@@ -204,6 +205,10 @@ div[data-type="tabs:content"] > div:first-child {
   background-size: 15px;
 }
 div[data-type='txt'] {
+  background: url(../lib/images/txt1x.png) no-repeat 10px 50% !important;
+  background-size: 25px!important;
+}
+div[data-type='text'] {
   background: url(../lib/images/txt1x.png) no-repeat 10px 50% !important;
   background-size: 25px!important;
 }
