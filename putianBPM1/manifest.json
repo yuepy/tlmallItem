@@ -274,6 +274,16 @@
       "demo": [
         "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
       ]
+    },
+    {
+      "title": "clientFlowForm",
+      "url": "adapter://putianBPM1/plan/clientFlowForm/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?_ysp_action.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548"
+      ]
     }
   ],
   "name": "普天",
