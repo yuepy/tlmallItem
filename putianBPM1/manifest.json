@@ -279,7 +279,8 @@
       "title": "clientFlowForm",
       "url": "adapter://putianBPM1/plan/clientFlowForm/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?_ysp_action.*"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?_ysp_action.*",
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp\\?_ysp_action_type.*"
       ],
       "demo": [
         "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548"
