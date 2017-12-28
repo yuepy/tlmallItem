@@ -205,16 +205,6 @@
       ]
     },
     {
-      "title": "HavaToDoWorkItemExecution",
-      "url": "adapter://putianBPM1/plan/HavaToDoWorkItemExecution/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp.*"
-      ],
-      "demo": [
-        "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=1541&newPage=1"
-      ]
-    },
-    {
       "title": "HaveProcessingTasksDetailedInformation",
       "url": "adapter://putianBPM1/plan/HaveProcessingTasksDetailedInformation/index.json",
       "matcher": [
@@ -290,5 +280,6 @@
   "default_url": "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#",
   "scope": "putianBPM1",
   "start_url": "enterplorer://putianBPM1/local/index.html",
-  "fixed_version": 1
+  "fixed_version": 1,
+  "update_time": 1514442992373
 }

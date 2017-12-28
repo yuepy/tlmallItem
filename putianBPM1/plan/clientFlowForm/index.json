@@ -1,0 +1,371 @@
+{
+  "version": "0.1",
+  "id": "clientFlowForm",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548",
+  "jsFile": "index.js",
+  "requires": {
+    "clientFlowForm": "../clientFlowForm/index.json"
+  },
+  "chineseName": "客户端需要的流程单",
+  "description": "",
+  "controls": {
+    "control85_ccXWu4": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-fit"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 873,
+              "height": 477
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control85_ccXWu4"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control86_5wEIcL": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]",
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//TR",
+              "descendant::DIV[@id=\"_tabs\"]//TR"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-tabs-scrollCt DIV.mini-tabs-headers.mini-tabs-header-top TABLE.mini-tabs-header TBODY TR"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control86_5wEIcL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control87_0sn4D7": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[1]/IFRAME[1]",
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//IFRAME",
+              "descendant::DIV[@id=\"_tabs\"]//IFRAME"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.mini-tabs-table DIV.mini-tabs-bodys.mini-tabs-body-top DIV.mini-tabs-body.mini-tabs-hideOverflow IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[1]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control87_0sn4D7"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control88_OCpRik": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-fit"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 873,
+              "height": 477
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control88_OCpRik"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context25_ber6DF": {
+      "controls": [
+        "control85_ccXWu4",
+        "control86_5wEIcL",
+        "control87_0sn4D7",
+        "control88_OCpRik"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow87_W4PwUW": {
+      "toContexts": [
+        {
+          "toContextId": "context25_ber6DF",
+          "toModelId": "clientFlowForm"
+        },
+        {
+          "toContextId": "context25_ber6DF"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page25_zbEDQo": {
+      "contextId": "context25_ber6DF",
+      "layout": [
+        {
+          "id": "uiControl79_xgze47",
+          "controlId": "control85_ccXWu4",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl79_xgze47",
+                "onGetTemplate": "getTemplate_uiControl79_xgze47"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl80_71VlP1",
+          "controlId": "control86_5wEIcL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl80_71VlP1",
+                "onGetTemplate": "getTemplate_uiControl80_71VlP1"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl81_NrT1fn",
+          "controlId": "control87_0sn4D7",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl81_NrT1fn",
+                "onGetTemplate": "getTemplate_uiControl81_NrT1fn"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl82_KvN1IL",
+          "controlId": "control88_OCpRik",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl82_KvN1IL",
+                "onGetTemplate": "getTemplate_uiControl82_KvN1IL"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context25_ber6DF": [
+          "表单框架"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context25_ber6DF": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=314738&_winid=w1370"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context25_ber6DF": [
+          [
+            "_btns",
+            "_tabs",
+            "_tr_",
+            "backActivity",
+            "btn",
+            "get",
+            "mini-$",
+            "mini-$body$",
+            "submit",
+            "tab",
+            "td__"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context25_ber6DF": [
+          [
+            "icon-ok",
+            "icon-undo",
+            "icon-user",
+            "mini-button",
+            "mini-button-icon",
+            "mini-button-text",
+            "mini-disabled",
+            "mini-fit",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-toolbar"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context25_ber6DF": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/DIV",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}
