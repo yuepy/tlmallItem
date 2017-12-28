@@ -797,7 +797,7 @@
           number 文件唯一编号
         */function reviewFiles(jumpUrl) {
         setTimeout(function () {
-          ysp.appMain.hideLoading;
+          ysp.appMain.hideLoading();
         }, 1000);var _url = 'http://192.168.200.63' + jumpUrl; // console.log(_url);
         if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");

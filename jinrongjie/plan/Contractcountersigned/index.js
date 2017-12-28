@@ -16,9 +16,18 @@
       //   })
       // });
       $(trs).each(function (i, d) {
-        var tds7 = d.querySelectorAll("td")[7];$(tds7).each(function (ii, dd) {
+        var tds7 = d.querySelectorAll("td")[7];var tds5 = d.querySelectorAll("td")[5]; // console.log(tds7);
+        // console.log(tds5)
+        $(tds7).each(function (ii, dd) {
+          // console.log(dd);
           if (dd.querySelector("img")) {
             if (dd.querySelector("img").getAttribute("src").indexOf("/images/BDNew.gif")) {
+              data.img.push("godImg");
+            } else {
+              data.img.push("redImg");
+            }
+          } else if (tds5 && tds5.querySelector('img')) {
+            if (tds5.querySelector("img").getAttribute("src").indexOf("/images/BDNew.gif")) {
               data.img.push("godImg");
             } else {
               data.img.push("redImg");
