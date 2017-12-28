@@ -320,6 +320,12 @@
             if(iosCard.name == 'fuckBPMCard'){
               aWin.location.href = iosCard.url;
             }
+          }else if(parent.EAPI.isAndroid){
+            	var androidCard = parent.yspCheckIn.showDetailBPMCard();
+            androidCard = JSON.parse(androidCard);
+            if(androidCard.name == 'fuckBPMCard'){
+              aWin.location.href = androidCard.url;
+            }
           }
           try {
             var MutationObserver = aWin.MutationObserver ||
