@@ -50,7 +50,7 @@
         var data = [];var rows = $(elem).children("tr");rows.each(function (i, d) {
           var obj = { title: [[], []], content: [[], [], [], []] //content[0]是类型，content[1]是状态，content[2]是选中项或者是文本，content[3]是选项
           };var tdOdd = $(d).children("td.zdm");tdOdd.each(function (ii, dd) {
-            obj.title[0].push($(dd).text().trim().replace(/\s/g, ""));if ($(dd).next().find('img').length > 0 && dd.textContent != "附件" && dd.textContent.indexOf("工资表") == -1) {
+            obj.title[0].push($(dd).text().trim().replace(/\s/g, ""));if ($(dd).next().find('img').length > 0 && dd.textContent.indexOf("附件") == -1 && dd.textContent.indexOf("工资表") == -1 && dd.textContent.indexOf("发文附件") == -1) {
               obj.title[1].push("unwrite");
             } else {
               obj.title[1].push("");
