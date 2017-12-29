@@ -71,6 +71,50 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control15_XNF9ZC": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "待处理的任务"
+              ],
+              "visText": [
+                "待处理的任务"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "TABLE.mini-tabs-header TD.mini-tab SPAN.mini-tab-text"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "待处理的任务",
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -79,7 +123,9 @@
         "control13_aHOPRS",
         "control29_iNwtnh"
       ],
-      "anchors": [],
+      "anchors": [
+        "control15_XNF9ZC"
+      ],
       "urlAnchor": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/appMyTask\\.jsp.*",
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/skins\\/default\\/index\\.jsp"
