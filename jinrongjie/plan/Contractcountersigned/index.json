@@ -451,6 +451,36 @@
       "text": "创建日期 所属公司 创建人部门 创建人 工作流 紧急程度 请求标题 当前节点接收日期 当前状况 未操作者",
       "frameXPath": "",
       "customJS": "if(elem.textContent.indexOf('创建日期') !== -1 || elem.textContent.indexOf('所属公司') !== -1){return true;}return false;"
+    },
+    "control351_Tg62Gm": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              9
+            ],
+            "value": "TABLE.Shadow TABLE.viewform TD.field"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control351_Tg62Gm"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -460,7 +490,8 @@
         "control8_h2nUto",
         "control10_Lb6dd5",
         "control11_qc8BLJ",
-        "control2_o8iNLF"
+        "control2_o8iNLF",
+        "control351_Tg62Gm"
       ],
       "anchors": [
         "control82_Usqh1i"
@@ -603,6 +634,7 @@
       "layout": [
         {
           "id": "uiControl10_c5ReP0",
+          "isBackBtn":true,
           "controlId": "control10_Lb6dd5",
           "display": {
             "adapterId": "custom",
@@ -672,6 +704,22 @@
               "events": {
                 "onDoAction": "doAction_uiControl2_4A5vOm",
                 "onGetTemplate": "getTemplate_uiControl2_4A5vOm"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl249_TSgyIu",
+          "isBackBtn":true,
+          "controlId": "control351_Tg62Gm",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl249_TSgyIu",
+                "onGetTemplate": "getTemplate_uiControl249_TSgyIu"
               }
             }
           }
@@ -902,6 +950,50 @@
             "closetext",
             "dateduring",
             "departmentid",
+            "divTopTitle",
+            "divshowreceivied",
+            "fromdatespan",
+            "isonline",
+            "mainsupports",
+            "message_table_Div",
+            "needShow",
+            "resourceimg",
+            "resourceimghref",
+            "resourcespan",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "subcompanyid",
+            "t.createdate,t.createtime",
+            "t.creater",
+            "t.receivedate,t.receivetime",
+            "t.requestlevel",
+            "t.requestname",
+            "t.status",
+            "t.workflowid",
+            "todatespan",
+            "value=undefined",
+            "weaver",
+            "wflist_span",
+            "workflowspan"
+          ],
+          [
+            "-weaverTable--goPage",
+            "-weaverTable--next",
+            "-weaverTable-_XTABLE_GOPAGE_buttom",
+            "-weaverTable-_XTABLE_GOPAGE_top",
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "SelectDate",
+            "_myDP",
+            "_xTable",
+            "btnHelp",
+            "cdepartmentidspan",
+            "closetext",
+            "dateduring",
+            "departmentid",
+            "div",
             "divTopTitle",
             "divshowreceivied",
             "fromdatespan",
@@ -1902,6 +1994,38 @@
             "Line",
             "ListStyle",
             "STYLE",
+            "Shadow",
+            "TopTitle",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "calendar",
+            "clickRightMenu",
+            "drop-shadow",
+            "field",
+            "highslide-container",
+            "highslide-loading",
+            "input",
+            "inputstyle",
+            "lable",
+            "simplehrmhead",
+            "styled",
+            "table",
+            "text",
+            "viewform",
+            "weaverTableCurrentPageBg",
+            "weaverTableNextPageOfDisabled",
+            "weaverTablePrevPageOfDisabled",
+            "xTable_info",
+            "xTable_message"
+          ],
+          [
+            "DataDark",
+            "HeaderForXtalbe",
+            "Line",
+            "ListStyle",
+            "STYLE",
+            "Selected",
             "Shadow",
             "TopTitle",
             "browser",
