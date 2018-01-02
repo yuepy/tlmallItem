@@ -5,6 +5,7 @@
   var loginWin = null;
   var forEach = Array.prototype.forEach;
   var topWindow = window.top;
+  topWindow.AndriodCardList = '';
   topWindow.num = 0;
   topWindow.IOSBPMCard = function(u,n){
     topWindow.BPMURL = {
@@ -109,13 +110,23 @@
           X.click();
         }
       }
-      if(aWin.location.href.indexOf('/task/app/appMyTask.jsp') !== -1){
+      if(topWindow.EAPI.isIOS()){
+              if(aWin.location.href.indexOf('/task/app/appMyTask.jsp') !== -1){
             if(topWindow.BPMURL && topWindow.BPMURL.no == 'fuckBPMCard'){
               ysp.runtime.Browser.activeBrowser.contentWindow.location.href = topWindow.BPMURL.url;
               ysp.runtime.Model.setForceMatchModels(['clientFlowForm']);
-              //ysp.runtime.Browser.activeBrowser.contentWindow.open("http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=230649&_winid=w9735",'')
             }
           }
+      }
+      if(topWindow.EAPI.isAndroid()){
+       if(aWin.location.href.indexOf('/task/app/appMyTask.jsp') !== -1){
+          if(topWindow.AndriodCardList && topWindow.AndriodCardList.name == 'fuckBPMCard'){
+            ysp.runtime.Browser.activeBrowser.contentWindow.location.href = topWindow.AndriodCardList.url;
+            ysp.runtime.Model.setForceMatchModels(['clientFlowForm']);
+          }
+        }
+      }
+
       
       
       // if(aWin.location.href.indexOf('mytasks.jsp')!==-1){
@@ -248,7 +259,6 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
-             
       // 插入隐藏input的css
       var testCSS = doc.createElement('style');
       testCSS.innerHTML = '.mini-grid-editwrap .mini-textbox-input { display: none; }';
@@ -263,9 +273,7 @@
       
        //加载过滤后的页面
       if(aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp"||aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#"){
-        console.log("a")
         aWin.location.href="http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
-        //aWin.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=230649&_winid=w9735"
         console.log("xian")
       }
       aWin.alert = function(msg) {
@@ -275,23 +283,26 @@
       }
   
       
-      
       aWin.addEventListener('DOMContentLoaded', function() {
-        if(aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp"||aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#"){
+        if(topWindow.EAPI.isIOS()){
+          if(aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp"||aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#"){
            topWindow.EAPI.postMessageToNative('showDetailBPMCard', null);
+            sessionStorage.setItem('showDetailBPMCard',true);
+        	}
+          if(aWin.location.href.indexOf('index.html') !== -1){
+            var actionEvent = '{"target":"null","data":"closePreLoading"}';
+            //关闭主webview的loading状态
+            var parent = aWin.frameElement.ownerDocument.defaultView;
+            parent && parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
+            sessionStorage.setItem('closePreLoading-domcontentloaded',true);
+          }
         }
-       
-        sessionStorage.setItem('showDetailBPMCard',true);
-  	if(aWin.location.href.indexOf('index.html') !== -1){
-  	  var actionEvent = '{"target":"null","data":"closePreLoading"}';
-      //关闭主webview的loading状态
-      var parent = aWin.frameElement.ownerDocument.defaultView;
-      parent && parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
-      sessionStorage.setItem('closePreLoading-domcontentloaded',true);
-          
-
-    }
-        
+				if(topWindow.EAPI.isAndroid()){
+         if(aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp"||aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#"){
+             topWindow.AndriodCardList = topWindow.yspCheckIn.showDetailBPMCard();
+           	 topWindow.AndriodCardList = JSON.parse(topWindow.AndriodCardList);
+        	}
+       }
     	aWin.createIframe = function createIframe(name, targetUrl, mount, data) {
           // if (parent.EAPI.isIOS() && targetUrl.indexOf("192.168.1.174") != -1) {
           //   var topWin = aWin.getTopWin(aWin);

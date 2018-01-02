@@ -158,7 +158,8 @@
       "title": "login",
       "url": "adapter://putianBPM1/plan/login/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/coframe\\/auth\\/login\\/login\\.jsp#"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/coframe\\/auth\\/login\\/login\\.jsp#",
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/coframe.*"
       ],
       "demo": [
         "http://192.168.220.51:8000/ptsoa/coframe/auth/login/login.jsp#"
@@ -281,7 +282,8 @@
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?_ysp_action.*",
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp\\?_ysp_action_type.*",
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute.jsp\\?_Android.*"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute.jsp\\?ysp_bpm_cardList.*",
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp\\?ysp_bpm.*"
       ],
       "demo": [
         "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548"
