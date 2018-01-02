@@ -1209,7 +1209,6 @@
       }
       
       for(var k = 1 ;k <= headerTitle.length; k++){
-      
         if (!zou && !headerTitle[k] && !Wu) {
           if (!headerTitle[k]) {
             headerTitle[k] = '销售人员';
