@@ -449,7 +449,7 @@ function ajaxData_1011() {
     var month = $("#month").val();
     var monthInt = parseInt(month.substring(5, 7));
     var num = monthInt;
-    if(year = 2017 || year == '2017') {
+    if(year == 2017 || year == '2017') {
         num = monthInt - 4;
     }
 
@@ -510,7 +510,7 @@ function ajaxData_1012(){
     var month = $("#month").val();
     var monthInt = parseInt(month.substring(5, 7));
     var num = monthInt;
-    if(year = 2017 || year == '2017') {
+    if(year == 2017 || year == '2017') {
         num = monthInt - 4;
     }
 
