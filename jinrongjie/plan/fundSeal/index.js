@@ -279,6 +279,7 @@
       if (!elem) {
         return;
       } // if (elem.querySelectorAll("#ysp_fake_form").lenght > 1) {
+      // console.log(elem);
       var elem = elem.querySelector("#field-annexupload_tab"); // }else{
       // }
       if (elem) {
