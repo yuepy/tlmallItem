@@ -711,7 +711,7 @@
           content.push(btnItem.textContent.trim());
         });
       } // 剔除表单日志，返回，打印
-      if (content.length > 3) {
+      if (content.length >= 3) {
         //   第一个按钮
         if (content.indexOf('提交') !== -1) {
           var _index0 = content.indexOf('提交');showIndex.push(_index0);showData.push({ 'index': _index0, 'button': '提交' });
