@@ -90,16 +90,15 @@
       if (data.eventType == 'click') {
         //ysp.customHelper.back(); 
         //history.go(-1); // ysp.customHelper.forceMatchModels("waitTodo"); //ysp.appMain.back();
-        var _url = elem.ownerDocument.defaultView.location.href; // if (_url.indexOf("viewType=0") != -1) {
-        //   ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestView.jsp?needPopupNewPage=true");
-        // } else if (_url.indexOf("viewType=2") != -1) {
-        //   ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestHandled.jsp?needPopupNewPage=true");
-        // } else if (_url.indexOf("viewType=3") != -1) {
-        //   ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestComplete.jsp?needPopupNewPage=true");
-        // } else if (_url.indexOf("viewType=4") != -1) {
-        //   ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/MyRequestView.jsp?needPopupNewPage=true");
-        // }
-        ysp.customHelper.back();
+        var _url = elem.ownerDocument.defaultView.location.href;if (_url.indexOf("viewType=0") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestView.jsp?needPopupNewPage=true");
+        } else if (_url.indexOf("viewType=2") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestHandled.jsp?needPopupNewPage=true");
+        } else if (_url.indexOf("viewType=3") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestComplete.jsp?needPopupNewPage=true");
+        } else if (_url.indexOf("viewType=4") != -1) {
+          ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/MyRequestView.jsp?needPopupNewPage=true");
+        }
       }if (_url.match(/WFSearchResult\.jsp$/)) {
         elem.ownerDocument.defaultView.location.href = elem.ownerDocument.defaultView.localStorage.testURL;
       }
