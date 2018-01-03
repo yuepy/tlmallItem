@@ -140,7 +140,11 @@
           } else {
             data.dataLabel.push([a_s[i].textContent]);
           }
-        }var hre = a_s[0].getAttribute('href').indexOf("head-Company") != -1;data.flag.push(hre);var hr = a_s[0].getAttribute('href').indexOf("brandManager") != -1;data.flags.push(hr);return data;
+        }if (a_s[0].textContent == '年度事业部达成') {
+          data.flag.push(false);
+        } else {
+          var hre = a_s[0].getAttribute('href').indexOf("head-Company") != -1;data.flag.push(hre);
+        }var hr = a_s[0].getAttribute('href').indexOf("brandManager") != -1;data.flags.push(hr);return data;
       }return [];
     },
     doAction_uiControl200_kgWKa9: function (data, elem) {
