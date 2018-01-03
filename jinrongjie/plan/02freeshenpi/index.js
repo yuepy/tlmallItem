@@ -690,7 +690,9 @@
     },
     doAction_uiControl287_sin1NV: function (data, elem) {
       if (data.eventType == 'click') {
-        var idx = parseInt(data.dataCustom) + 1;debugger;var _url = "http://192.168.200.63" + $(elem).find('tr').eq(idx).find("a").eq(1).attr("onclick").match(/\/.*[0-9]/g)[0];if (ysp.appMain.isIOS()) {
+        var idx = parseInt(data.dataCustom) + 1;setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 1000);var _url = "http://192.168.200.63" + $(elem).find('tr').eq(idx).find("a").eq(1).attr("onclick").match(/\/.*[0-9]/g)[0];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url;
