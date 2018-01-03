@@ -138,13 +138,20 @@
       return;
     },
     doAction_uiControl249_TSgyIu: function (data, elem) {
-      if (data.eventType == "click") {
-        debugger;alert("返回");console.log("返回");ysp.appMain.closeWindow();
+      debugger; //ysp.appMain.closeWindow(); // ysp.appMain.back();
+      var _url = elem.ownerDocument.defaultView.location.href;if (_url.indexOf("viewType=0") != -1) {
+        ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestView.jsp?needPopupNewPage=true");
+      } else if (_url.indexOf("viewType=2") != -1) {
+        ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestHandled.jsp?needPopupNewPage=true");
+      } else if (_url.indexOf("viewType=3") != -1) {
+        ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/RequestComplete.jsp?needPopupNewPage=true");
+      } else if (_url.indexOf("viewType=4") != -1) {
+        ysp.appMain.reloadPage("http://192.168.200.63/workflow/request/MyRequestView.jsp?needPopupNewPage=true");
       }
     },
     getTemplate_uiControl249_TSgyIu: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  click:function(e){\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"click\"\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div onClick={this.click.bind(this)}>\n       \n      </div>\n    )\n  }\n});";
-      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  click: function click(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \"click\"\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\"div\", { onClick: this.click.bind(this) });\n  }\n});";
+      var selfTemplate = 'module.exports = React.createClass({\n  // click:function(e){\n  //   var handler=this.props.customHandler;\n  //   if(handler){\n  //     handler({\n  //       eventType:"click"\n  //     })\n  //   }\n  // },\n  render: function() {\n    return (\n      <div >\n       \n      </div>\n    )\n  }\n});';
+      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  // click:function(e){\n  //   var handler=this.props.customHandler;\n  //   if(handler){\n  //     handler({\n  //       eventType:"click"\n  //     })\n  //   }\n  // },\n  render: function render() {\n    return React.createElement("div", null);\n  }\n});';
     }
   });
 })(window, ysp);

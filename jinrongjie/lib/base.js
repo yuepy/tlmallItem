@@ -1015,14 +1015,14 @@
                 var xmlhttp = new XMLHttpRequest();
               if(topWindow.EAPI.isIOS()){
                 //测试环境 - IOS角标
-                	xmlhttp.open("post",'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
+                	//xmlhttp.open("post",'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
                 //正式环境 - IOS角标
-                	//xmlhttp.open("post",'http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
+                	xmlhttp.open("post",'http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
               }else{
                 //测试环境 - Andriod角标
-                  xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
+                  //xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
                 //正式环境 - Andriod角标
-              	//xmlhttp.open("post", "http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl", true);
+              	xmlhttp.open("post", "http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl", true);
               }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
