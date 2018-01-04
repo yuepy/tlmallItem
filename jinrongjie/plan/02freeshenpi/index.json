@@ -520,7 +520,12 @@
           "tagName": "TD"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"field6216span\"]/a"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -865,21 +870,6 @@
                   }
                 },
                 {
-                  "id": "uiControl278_Hrw7sw",
-                  "controlId": "control359_EDMwPm",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl278_Hrw7sw",
-                        "onGetTemplate": "getTemplate_uiControl278_Hrw7sw"
-                      }
-                    }
-                  }
-                },
-                {
                   "id": "uiControl287_sin1NV",
                   "controlId": "control298_slKGtB",
                   "display": {
@@ -890,6 +880,21 @@
                       "events": {
                         "onDoAction": "doAction_uiControl287_sin1NV",
                         "onGetTemplate": "getTemplate_uiControl287_sin1NV"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl278_Hrw7sw",
+                  "controlId": "control359_EDMwPm",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl278_Hrw7sw",
+                        "onGetTemplate": "getTemplate_uiControl278_Hrw7sw"
                       }
                     }
                   }
