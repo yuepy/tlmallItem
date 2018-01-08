@@ -19,9 +19,7 @@
       }return "";
     }, doAction_uiControl0_W1BKWP: function (data, elem) {
       if (data.eventType == 'change') {
-        if (top.EAPI.isIOS() || top.EAPI.isAndroid()) {
-          ysp.appMain.showLoading();
-        }var data = data.dataCustom;if (data[0] == 'ysp-login-card-loginUserName') {
+        var data = data.dataCustom;if (data[0] == 'ysp-login-card-loginUserName') {
           $(elem).find('.mini-textbox-input').eq(0).val(data[1]);$(elem).find('.mini-textbox-input').eq(0).trigger("change");
         } else if (data[0] == 'ysp-login-card-loginPassWord') {
           $(elem).find('.mini-textbox-input').eq(1).val(data[1]);
