@@ -52,6 +52,9 @@ h5 {
   margin: 0;
   padding: 0;
 }
+a {
+  color: #333;
+}
 .view-item {
   background: #f3f3f3;
 }
@@ -1990,6 +1993,7 @@ div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .ysp_but
   line-height: 50px;
   text-align: center;
   font-size: 14px;
+  font-weight: bold;
 }
 div[data-ysp-modelid='hetong01'] .contractCountersigned_box .bottom_box .name {
   border-bottom: 1px solid #EDEDED;
@@ -2452,6 +2456,7 @@ div[data-ysp-modelid='fundSeal'] .ysp_detail_wrapper .fileName,
 div[data-ysp-modelid='createFundSeal'] .ysp_detail_wrapper .fileName {
   display: inline-block;
   width: 68%;
+  word-break: break-all;
 }
 div[data-ysp-modelid='askForLeave'] .ysp_detail_wrapper .ysp_none_row,
 div[data-ysp-modelid='createAskForLeave'] .ysp_detail_wrapper .ysp_none_row,
@@ -3577,6 +3582,7 @@ div[data-ysp-modelid='postName'] .ysp_jobStation_table .title,
 div[data-ysp-modelid='postName'] .ysp_jobStation_table .content {
   border-bottom: 1px solid #f4f4f4;
   padding: 10px 0;
+  padding-left: 30px;
 }
 div[data-ysp-modelid='postName'] .ysp_jobStation_table .title span,
 div[data-ysp-modelid='postName'] .ysp_jobStation_table .content span {
@@ -3587,6 +3593,7 @@ div[data-ysp-modelid='postName'] .ysp_jobStation_table .content span {
 div[data-ysp-modelid='postName'] .ysp_jobStation_table .title span:first-child,
 div[data-ysp-modelid='postName'] .ysp_jobStation_table .content span:first-child {
   width: 70%;
+  text-align: left!important;
 }
 div[data-ysp-modelid='postName'] .ysp_jobStation_table .title span:last-child,
 div[data-ysp-modelid='postName'] .ysp_jobStation_table .content span:last-child {
@@ -3600,7 +3607,7 @@ div[data-ysp-modelid='postName'] .ysp_jobStation_table .content .rows {
   padding: 10px 0 10px 0;
 }
 div[data-ysp-modelid='postName'] .ysp_jobStation_table .content .rows span:first-child {
-  text-align: center;
+  text-align: left;
 }
 div[data-ysp-modelid="setBack"] .ysp_returnBack_wrapper {
   margin-top: 40px;
@@ -3833,11 +3840,11 @@ div#uiControl249_85nnFq {
   background-size: 100%;
 }
 .ysp_table_lfj .bottom_box .ysp_button_more {
-  font-weight: bold;
   height: 40px;
   line-height: 50px;
   text-align: center;
   font-size: 14px;
+  font-weight: bold;
 }
 .ysp_table_lfj .bottom_box .name {
   border-bottom: 1px solid #EDEDED;
@@ -4085,6 +4092,7 @@ div#uiControl249_85nnFq {
   line-height: 50px;
   text-align: center;
   font-size: 14px;
+  font-weight: bold;
 }
 .ysp_table_lfj2 .bottom_box .name {
   border-bottom: 1px solid #EDEDED;
@@ -4138,6 +4146,8 @@ div#uiControl249_85nnFq {
   padding-bottom: 10px;
   color: #202020;
   font-size: 15px;
+  word-break: break-all;
+  width: 95%;
 }
 .ysp_table_lfj2 .bottom_box .espel {
   margin-left: -15px;
@@ -4501,6 +4511,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   line-height: 50px;
   text-align: center;
   font-size: 14px;
+  font-weight: bold;
 }
 .ysp_table_office_lfj .bottom_box .name {
   border-bottom: 1px solid #EDEDED;
@@ -4761,6 +4772,7 @@ div[data-ysp-modelid='chairmanSign'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJhw
   line-height: 50px;
   text-align: center;
   font-size: 14px;
+  font-weight: bold;
 }
 .ysp_freeFlow_table_lfj .bottom_box .name {
   width: 100%;
@@ -5377,7 +5389,7 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
 .ysp_table_office_lfj2 .bottom_box .bottom_tb {
   padding-left: 15px;
 }
-.ysp_table_office_lfj2 .bottom_box .bottom_tb > *:nth-child(n+9) {
+.ysp_table_office_lfj2 .bottom_box .bottom_tb > *:nth-child(n+10) {
   display: none;
 }
 .ysp_table_office_lfj2 .bottom_box .bottom_tb .dbutton_div {
@@ -5442,9 +5454,6 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
   overflow: hidden;
   border-bottom: 1px solid #E8E8E8;
 }
-.ysp_table_office_lfj2 .bottom_box .button_less {
-  display: none;
-}
 .ysp_table_office_lfj2 .bottom_box .button_less span:before {
   margin-right: 10px;
   content: '';
@@ -5453,6 +5462,9 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
   display: inline-block;
   background: url(../local/img/shangjiantou.png) no-repeat 0 5px;
   background-size: 100%;
+}
+.ysp_table_office_lfj2 .bottom_box .button_more {
+  display: none;
 }
 .ysp_table_office_lfj2 .bottom_box .button_more span:before {
   margin-right: 10px;
@@ -5468,6 +5480,7 @@ div[data-ysp-modelid='sendDocProcess'] ._27gZE6m5LfD5uG_dZ8p3iP ._2kVn_YrAvZeioJ
   line-height: 50px;
   text-align: center;
   font-size: 14px;
+  font-weight: bold;
 }
 .ysp_table_office_lfj2 .bottom_box .name {
   border-bottom: 1px solid #EDEDED;

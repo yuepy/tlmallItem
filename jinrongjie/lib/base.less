@@ -76,6 +76,7 @@ body {
 }
 li{list-style: none;}
 ul,input,h1,h2,h3,h4,h5{margin: 0;padding: 0}
+a{color:#333;}
 //视图背景
 .view-item{
   background: #f3f3f3;
@@ -2047,6 +2048,7 @@ div[data-ysp-modelid='hetong01']{
             line-height: 50px;
             text-align: center;
             font-size: 14px;
+          font-weight: bold;
         }
         .name{
           border-bottom: 1px solid #EDEDED;
@@ -2541,6 +2543,7 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='createAskForLeave'],di
     .fileName{
       display: inline-block;
       width: 68%;
+      word-break: break-all;
     }
     .ysp_none_row{
       display: none;
@@ -3133,6 +3136,7 @@ div[data-ysp-modelid='postName']{
     .title,.content{
       border-bottom: 1px solid #f4f4f4;
       padding: 10px 0;
+      padding-left: 30px;
       span{
         display: inline-block;
         text-align: center;
@@ -3140,6 +3144,7 @@ div[data-ysp-modelid='postName']{
       }
       span:first-child{
         width: 70%;
+        text-align: left!important;
       }
       span:last-child{
         width: 30%;
@@ -3151,8 +3156,8 @@ div[data-ysp-modelid='postName']{
       .rows{
         padding:10px 0 10px 0;
         span:first-child{
-          // text-align: left;
-          text-align: center;
+          text-align: left;
+          // text-align: center;
         }
       }
     }
@@ -3416,6 +3421,7 @@ div#uiControl249_85nnFq{
             line-height: 50px;
             text-align: center;
             font-size: 14px;
+          font-weight: bold;
         }
         .name{
           border-bottom: 1px solid #EDEDED;
@@ -3666,6 +3672,7 @@ div#uiControl249_85nnFq{
             line-height: 50px;
             text-align: center;
             font-size: 14px;
+          	font-weight: bold;
         }
         .name{
           border-bottom: 1px solid #EDEDED;
@@ -3719,6 +3726,8 @@ div#uiControl249_85nnFq{
           padding-bottom: 10px;
           color: #202020;
           font-size: 15px;
+          word-break: break-all;
+          width: 95%;
         }
         .espel{
           margin-left: -15px;
@@ -4101,6 +4110,7 @@ div[data-ysp-modelid='chairmanSign']{
             line-height: 50px;
             text-align: center;
             font-size: 14px;
+          font-weight: bold;
         }
         .name{
           border-bottom: 1px solid #EDEDED;
@@ -4373,6 +4383,7 @@ div[data-ysp-modelid='chairmanSign']{
       line-height: 50px;
       text-align: center;
       font-size: 14px;
+      font-weight: bold;
     }
     .name{
     	width:100%;
@@ -4983,7 +4994,8 @@ div[data-ysp-modelid='sendDocProcess']{
        		border-bottom: 10px solid #F3F3F3;
         .bottom_tb{
           padding-left: 15px;
-          >*:nth-child(n+9){
+          // >*:nth-child(n+9){
+          >*:nth-child(n+10){
             display: none;
           }
           .dbutton_div{
@@ -5050,7 +5062,7 @@ div[data-ysp-modelid='sendDocProcess']{
           }
         }
         .button_less{
-          display: none;
+          // display: none;
           span:before{
             margin-right: 10px;
             content:'';
@@ -5062,6 +5074,7 @@ div[data-ysp-modelid='sendDocProcess']{
           }
         }
         .button_more{
+          display:none;
           span:before{
             margin-right: 10px;
             content:'';
@@ -5071,12 +5084,14 @@ div[data-ysp-modelid='sendDocProcess']{
             background: url(../local/img/xiajiantou.png) no-repeat 0 5px ;
             background-size: 100%;
           }
+          
         }
         .ysp_button_more{
             height: 40px;
             line-height: 50px;
             text-align: center;
             font-size: 14px;
+          font-weight: bold;
         }
         .name{
           border-bottom: 1px solid #EDEDED;
