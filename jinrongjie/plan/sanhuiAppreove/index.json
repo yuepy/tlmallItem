@@ -822,28 +822,6 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control360_NDDnxQ": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control360_NDDnxQ"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -860,8 +838,7 @@
         "control251_Knv3Dp",
         "control254_T6B9QE",
         "control342_SLPmWC",
-        "control356_TfppMF",
-        "control360_NDDnxQ"
+        "control356_TfppMF"
       ],
       "anchors": [
         "control224_NTmEEQ"
@@ -1061,21 +1038,6 @@
                       "events": {
                         "onDoAction": "doAction_uiControl361_tvye80",
                         "onGetTemplate": "getTemplate_uiControl361_tvye80"
-                      }
-                    }
-                  }
-                },
-                {
-                  "id": "uiControl279_UwVqLU",
-                  "controlId": "control360_NDDnxQ",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl279_UwVqLU",
-                        "onGetTemplate": "getTemplate_uiControl279_UwVqLU"
                       }
                     }
                   }
