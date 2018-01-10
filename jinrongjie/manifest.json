@@ -2,7 +2,7 @@
   "type": "adapter",
   "short_name": "",
   "version": "0.0.1",
-  "runtime_version": "2.6.2-beta.1",
+  "runtime_version": "2.6.2",
   "description": "",
   "options": {
     "resource_intercept": {
@@ -90,7 +90,8 @@
       "title": "index",
       "url": "adapter://jinrongjie/plan/index/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.200\\.63.*"
+        "^http:\\/\\/192\\.168\\.200\\.63\\/login.*",
+        "^http:\\/\\/192\\.168\\.200\\.63\\/login\\/VerifyLogin\\.jsp.*"
       ],
       "demo": [
         "http://192.168.200.63/wui/main.jsp?templateId=1"
@@ -120,7 +121,8 @@
       "title": "askForLeave",
       "url": "adapter://jinrongjie/plan/askForLeave/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ManageRequestNoForm\\.jsp\\?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ManageRequestNoForm\\.jsp\\?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+        "http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ViewRequest\\.jsp\\?requestid.*"
       ],
       "demo": [
         "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
