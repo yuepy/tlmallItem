@@ -3,12 +3,12 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
 
-    getData_control25_PhAtSh: function getData_control25_PhAtSh(elem) {
+    getData_control25_PhAtSh: function (elem) {
       if (!elem) {
         return;
       }var doc = elem.ownerDocument;var data = {};var title = doc.querySelector('p.bt').textContent;var numbering = doc.querySelector('p.bh span').textContent;data.title = title;data.numbering = numbering;var ddddsadf = 0;return data;
     },
-    doAction_uiControl25_U9iq0i: function doAction_uiControl25_U9iq0i(data, elem) {},
+    doAction_uiControl25_U9iq0i: function (data, elem) {},
     getTemplate_uiControl25_U9iq0i: function getTemplate_uiControl25_U9iq0i() {
       var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.data.customData||{};\n    var title = data.title||"";\n    var numbering = data.numbering||"";\n    return (\n      <div>\n        <div className="ysp-manager-audit-title">\n        \t<div className="ysp-manager-audit-main-title">{title}</div>\n          <div className="ysp-manager-audit-subtitle">\n            <span>\u7F16\u53F7\uFF1A</span>\n            <span>{numbering}</span>\n          </div>\n        </div>\n      </div>\n    )\n  }\n});';
       return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.data.customData || {};\n    var title = data.title || "";\n    var numbering = data.numbering || "";\n    return React.createElement(\n      "div",\n      null,\n      React.createElement(\n        "div",\n        { className: "ysp-manager-audit-title" },\n        React.createElement(\n          "div",\n          { className: "ysp-manager-audit-main-title" },\n          title\n        ),\n        React.createElement(\n          "div",\n          { className: "ysp-manager-audit-subtitle" },\n          React.createElement(\n            "span",\n            null,\n            "\\u7F16\\u53F7\\uFF1A"\n          ),\n          React.createElement(\n            "span",\n            null,\n            numbering\n          )\n        )\n      )\n    );\n  }\n});';
