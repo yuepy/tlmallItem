@@ -966,7 +966,7 @@
                   }else if(topWindow.EAPI.isIOS()){
                     topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
                   }
-                 if(topWindow.tokenNum>1){
+                 if(topWindow.tokenNum>=1){
                   //当token过期时像客户端请求新的token
                    if(topWindow.EAPI.isIOS()){
                      topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
