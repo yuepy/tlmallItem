@@ -132,6 +132,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
     },
@@ -206,6 +207,16 @@
       "fromContextId": "context25_ber6DF",
       "fromAction": "doAction",
       "fromControlId": "control85_ccXWu4",
+      "toContexts": [
+        {
+          "toContextId": "context25_ber6DF"
+        }
+      ]
+    },
+    "flow14_62NmR2": {
+      "fromContextId": "context25_ber6DF",
+      "fromAction": "doAction",
+      "fromControlId": "control86_5wEIcL",
       "toContexts": [
         {
           "toContextId": "context25_ber6DF"
@@ -295,7 +306,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=314738&_winid=w1370",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=901861&_t=516559&_winid=w241",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=594515&_winid=w672",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=902205&_t=364992&_winid=w2280"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=902205&_t=364992&_winid=w2280",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=902203&_t=408512&_winid=w4759"
         ]
       }
     },
@@ -314,6 +326,19 @@
             "submit",
             "tab",
             "td__"
+          ],
+          [
+            "_btns",
+            "_tabs",
+            "_tr_",
+            "backActivity",
+            "btn",
+            "cancelGet",
+            "mini-$",
+            "mini-$body$",
+            "submit",
+            "tab",
+            "td__"
           ]
         ]
       }
@@ -325,6 +350,39 @@
             "icon-ok",
             "icon-undo",
             "icon-user",
+            "mini-button",
+            "mini-button-icon",
+            "mini-button-text",
+            "mini-disabled",
+            "mini-fit",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-toolbar"
+          ],
+          [
+            "icon-cancel",
+            "icon-ok",
+            "icon-undo",
             "mini-button",
             "mini-button-icon",
             "mini-button-text",

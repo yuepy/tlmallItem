@@ -7,7 +7,8 @@
     "processForm": "../processForm/index.json",
     "checkProcess": "../checkProcess/index.json",
     "index": "../index/index.json",
-    "PendingTask": "../PendingTask/index.json"
+    "PendingTask": "../PendingTask/index.json",
+    "clientFlowForm": "../clientFlowForm/index.json"
   },
   "chineseName": "代办列表",
   "description": "",
@@ -269,6 +270,10 @@
         {
           "toContextId": "context1_wzzrby",
           "toModelId": "index"
+        },
+        {
+          "toContextId": "context25_ber6DF",
+          "toModelId": "clientFlowForm"
         }
       ]
     },
@@ -475,7 +480,15 @@
         ],
         "context8_ddpRhS": [],
         "context11_uaf3pg": [],
-        "context1_wzzrby": []
+        "context1_wzzrby": [],
+        "context25_ber6DF": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=314738&_winid=w1370",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=901861&_t=516559&_winid=w241",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=594515&_winid=w672",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=902205&_t=364992&_winid=w2280",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=902203&_t=408512&_winid=w4759"
+        ]
       }
     },
     "page/ids": {
@@ -487,7 +500,35 @@
             "tabs"
           ]
         ],
-        "context1_wzzrby": []
+        "context1_wzzrby": [],
+        "context25_ber6DF": [
+          [
+            "_btns",
+            "_tabs",
+            "_tr_",
+            "backActivity",
+            "btn",
+            "get",
+            "mini-$",
+            "mini-$body$",
+            "submit",
+            "tab",
+            "td__"
+          ],
+          [
+            "_btns",
+            "_tabs",
+            "_tr_",
+            "backActivity",
+            "btn",
+            "cancelGet",
+            "mini-$",
+            "mini-$body$",
+            "submit",
+            "tab",
+            "td__"
+          ]
+        ]
       }
     },
     "page/classes": {
@@ -517,6 +558,74 @@
             "mini-tabs-scrollCt",
             "mini-tabs-space",
             "mini-tabs-table"
+          ]
+        ],
+        "context25_ber6DF": [
+          [
+            "icon-ok",
+            "icon-undo",
+            "icon-user",
+            "mini-button",
+            "mini-button-icon",
+            "mini-button-text",
+            "mini-disabled",
+            "mini-fit",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-toolbar"
+          ],
+          [
+            "icon-cancel",
+            "icon-ok",
+            "icon-undo",
+            "mini-button",
+            "mini-button-icon",
+            "mini-button-text",
+            "mini-disabled",
+            "mini-fit",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-toolbar"
           ]
         ]
       }
