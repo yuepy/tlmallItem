@@ -5472,9 +5472,12 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   align-items: center;
 }
 .ysp-custom-goodsMessages .cardlist .cardItem .itemBef {
-  width: 70%;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: flex;
+  width: 65%;
+  justify-content: space-between;
+}
+.ysp-custom-goodsMessages .cardlist .cardItem .itemBef > span:nth-child(1) {
+  width: 80%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
