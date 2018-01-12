@@ -1284,7 +1284,8 @@
             var tip = elem.querySelector("#toast");if (tip) {
               data.tip = tip.textContent;
             } //**如果流程iframe存在就留在当页，如果不存在就点击同意后回到待办里***//
-            btnTwo.click();var timer = setInterval(function () {
+            btnTwo.click(); // ysp.appMain.reloadPage("http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+            var timer = setInterval(function () {
               var redTip = elem.querySelector(".mini-window-drag"); //.querySelectorAll("iframe")[0].contentDocument.querySelector("#tab").querySelectorAll("iframe")[0].contentDocument.querySelector(".mini-tips-danger");
               if (!redTip) {
                 var json = { time: new Date().getTime() };setTimeout(function () {

@@ -273,8 +273,9 @@
       
        //加载过滤后的页面
       if(aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp"||aWin.location.href=="http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#"){
+        //top.location.reload();
         aWin.location.href="http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
-        console.log("xian")
+        
       }
       aWin.alert = function(msg) {
         if (msg.indexOf('org.gocom.bos.wfclient.task') !== -1) {
@@ -293,8 +294,8 @@
             var actionEvent = '{"target":"null","data":"closePreLoading"}';
             //关闭主webview的loading状态
             var parent = aWin.frameElement.ownerDocument.defaultView;
-            parent && parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
-            sessionStorage.setItem('closePreLoading-domcontentloaded',true);
+            //parent && parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
+            //sessionStorage.setItem('closePreLoading-domcontentloaded',true);
           }
         }
 				if(topWindow.EAPI.isAndroid()){
