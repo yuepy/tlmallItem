@@ -1207,7 +1207,6 @@
           var Wu = true;
         }
       }
-      
       for(var k = 1 ;k <= headerTitle.length; k++){
         if (!zou && !headerTitle[k] && !Wu) {
           if (!headerTitle[k]) {
@@ -1423,7 +1422,9 @@
           var tit = false;
           if (headerTitle[k] == '项目' && Wu && ysp.customHelper.getDataIndex(titles, '项目')) {
             headerTitle[k] = '项目';
-          } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && !ysp.customHelper.getDataIndex(titles, '客户名称') && !ysp.customHelper.getDataIndex(titles, '销售人员')) {
+          } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && !ysp.customHelper.getDataIndex(titles, '客户名称') && !ysp.customHelper.getDataIndex(titles, '销售人员') && ysp.customHelper.getDataIndex(titles,'事业部')) {
+            headerTitle[k] = '事业部';
+          } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && !ysp.customHelper.getDataIndex(titles, '客户名称') && !ysp.customHelper.getDataIndex(titles, '销售人员') && !ysp.customHelper.getDataIndex(titles,'事业部')) {
             headerTitle[k] = '分公司';
           } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && ysp.customHelper.getDataIndex(titles, '客户名称')) {
             headerTitle[k] = '客户名称';
