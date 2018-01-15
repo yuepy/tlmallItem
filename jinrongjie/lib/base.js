@@ -13,13 +13,17 @@
   //安卓客户端调用 : 获取token链接
     topWindow.yspTokenUrl = function(url) {
         topWindow.tokenUrl = url;
+      	
       	//console.log(url);
         return url;
     };
   //IOS客户端调用 : 获取token链接
   	topWindow.setSsoToken = function(url){
+      console.log(url)
       topWindow.tokenUrl = url;
+      
       //console.log(url);
+      // win.location.href = "http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.tokenUrl;
       return topWindow.tokenUrl;
     };
     topWindow.num = [];
@@ -48,6 +52,7 @@
         Dnum: _num, // 待办列表角标值
         returnHome: _returnHome,
       	files:_file,
+      	login:_login,
       	pageid:_pageid,
         isArray(array) {
             if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
@@ -77,6 +82,14 @@
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
+          if(aWin.location.href.indexOf('Login.jsp') != -1){
+            debugger;
+             if(topWindow.tokenUrl){
+              aWin.location.href = "http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.tokenUrl;
+               ysp.customHelper.login(topWindow.tokenUrl);
+            }
+          }
+
             if (aWin.onShowBrowser2) {
                 aWin.onShowBrowser2 = function(id, url, linkurl, type1, ismand, funFlag) {
                     var id1 = null;
@@ -966,35 +979,37 @@
                   }else if(topWindow.EAPI.isIOS()){
                     topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
                   }
-                 if(topWindow.tokenNum>=1){
-                  //当token过期时像客户端请求新的token
-                   if(topWindow.EAPI.isIOS()){
-                     topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
-                   }else if(topWindow.EAPI.isAndroid()){
-                     topWindow.AndroidTokenurl = topWindow.redcore.getNewToken();
-                   }
-                   token_flag = true;
+                    if(topWindow.tokenNum>=1){
+                      //当token过期时像客户端请求新的token
+                       if(topWindow.EAPI.isIOS()){
+                         //topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
+                         console.log('有可能token失效，问题待处理')
+                       }else if(topWindow.EAPI.isAndroid()){
+                         topWindow.AndroidTokenurl = topWindow.redcore.getNewToken();
+                       }
+                       token_flag = true;
+                    }
+                  if (token_flag) {
+                if(topWindow.EAPI.isIOS()){
+                   console.log('拿到客户端给我的token地址'+topWindow.tokenUrl);
+                }else if(topWindow.EAPI.isAndroid()){
+                  //console.log('拿到客户端给我的token地址'+topWindow.AndroidTokenurl);
                 }
+                  token_flag = false;
+                  var oldHref = aWin.location.href;
+                /* 拼接token 重新登录 */
+                if(oldHref && topWindow.EAPI.isIOS() && topWindow.tokenUrl){
+                  ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.tokenUrl);
+                }else if(oldHref && topWindow.EAPI.isAndroid() && topWindow.tokenUrl){
+                  ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.AndroidTokenurl);
+                }
+              }
                 sessionStorage.setItem('getToken', true);
               },false);
             }
             // },false);
             /*  获取token地址  */
-            if (token_flag) {
-              if(topWindow.EAPI.isIOS()){
-                 //console.log('拿到客户端给我的token地址'+topWindow.tokenUrl);
-              }else if(topWindow.EAPI.isAndroid()){
-                //console.log('拿到客户端给我的token地址'+topWindow.AndroidTokenurl);
-              }
-                token_flag = false;
-              	var oldHref = aWin.location.href;
-              /* 拼接token 重新登录 */
-              if(oldHref && topWindow.EAPI.isIOS()){
-                ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.tokenUrl);
-              }else if(oldHref && topWindow.EAPI.isAndroid()){
-                ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.AndroidTokenurl);
-              }
-            }
+            
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
@@ -1173,6 +1188,14 @@
             content: content
         }
     }
+  /* 调用场景 : 点击消息时 ，页面跳转进入登录页面。需要重定向. */
+  	 function _login(url){
+       debugger;
+       if(url !== ''){
+          ysp.runtime.Browser.activeBrowser.contentWindow.location.href = "http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+url;
+       }
+     }
+  
     /* 调用场景 : 页面返回. */
     function _back(type) {
         if (typeof type == 'string') {
