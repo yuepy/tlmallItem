@@ -88,17 +88,17 @@
             //     //     top.location.reload();
             //     // }
             // 
-            var Modelid = ysp.runtime.Model.modelsStack.map(function(d,i){
-              if(i == 0){
-              	return d.model.id
-              }
+            var Modelid = ysp.runtime.Model.modelsStack.map(function(d, i) {
+                if (i == 0) {
+                    return d.model.id
+                }
             })
             Modelid = Modelid.toString();
-          	var Modelflag = Modelid.indexOf('index') !== -1? true : false;
-            if (aWin.location.href.indexOf('VerifyLogin') != -1 && topWindow.EAPI.isIOS()  && !Modelflag) {
+            var Modelflag = Modelid.indexOf('index') !== -1 ? true : false;
+            if (aWin.location.href.indexOf('VerifyLogin') != -1 && topWindow.EAPI.isIOS() && !Modelflag) {
                 top.location.reload();
             }
-            
+
             if (aWin.onShowBrowser2) {
                 aWin.onShowBrowser2 = function(id, url, linkurl, type1, ismand, funFlag) {
                     var id1 = null;
@@ -977,7 +977,7 @@
             // 测试结束
 
 
-            if (aWin.location.href.indexOf('Login.jsp') !== -1) {
+            if (aWin.location.href.indexOf('Login.jsp') !== -1 && topWindow.tokenNum < 4) {
                 //console.info('向客户端发送消息,开始获取token地址');
                 var parent = aWin.frameElement.ownerDocument.defaultView;
                 aWin.addEventListener('DOMContentLoaded', function() {
