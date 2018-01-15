@@ -1000,7 +1000,7 @@
                 /* 拼接token 重新登录 */
                 if(oldHref && topWindow.EAPI.isIOS() && topWindow.tokenUrl){
                   ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.tokenUrl);
-                }else if(oldHref && topWindow.EAPI.isAndroid() && topWindow.tokenUrl){
+                }else if(oldHref && topWindow.EAPI.isAndroid() && topWindow.AndroidTokenurl){
                   ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.AndroidTokenurl);
                 }
               }
