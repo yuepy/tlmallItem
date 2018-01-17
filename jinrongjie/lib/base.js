@@ -4,32 +4,36 @@
     var utils = ysp.utils;
     var flag = true; // 为true说明需要取token  为false说明不需要取token
     var topWindow = win.top; // 最外层window - top层
-  //全局变量 : token地址
+    //全局变量 : token地址
     topWindow.tokenUrl = null;
-  //数据接口 : 代办\办结角标数量
-  	topWindow.tokenNum = 0;
-  //接口请求格式 : 
-  	topWindow.userid = ''
-  //安卓客户端调用 : 获取token链接
+    //数据接口 : 代办\办结角标数量
+    topWindow.tokenNum = 0;
+    //接口请求格式 : 
+    topWindow.userid = ''
+        //安卓客户端调用 : 获取token链接
     topWindow.yspTokenUrl = function(url) {
         topWindow.tokenUrl = url;
-      	//console.log(url);
+
+        //console.log(url);
         return url;
     };
-  //IOS客户端调用 : 获取token链接
-  	topWindow.setSsoToken = function(url){
-      topWindow.tokenUrl = url;
-      //console.log(url);
-      return topWindow.tokenUrl;
+    //IOS客户端调用 : 获取token链接
+    topWindow.setSsoToken = function(url) {
+        console.log(url)
+        topWindow.tokenUrl = url;
+
+        //console.log(url);
+        // win.location.href = "http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.tokenUrl;
+        return topWindow.tokenUrl;
     };
     topWindow.num = [];
-  //全局变量 : 储存页面第一个文件上传功能的参数,用于文件删除
-  	topWindow.file = []; 
-  //全局变量 : 储存页面第二个文件上传功能的参数,用于文件删除
-  	topWindow.file_two = [];
-  	topWindow.activepageid = '';
-  //附件上传：当uploadAjax为true的时候上传
-    topWindow.uploadAjax=false;
+    //全局变量 : 储存页面第一个文件上传功能的参数,用于文件删除
+    topWindow.file = [];
+    //全局变量 : 储存页面第二个文件上传功能的参数,用于文件删除
+    topWindow.file_two = [];
+    topWindow.activepageid = '';
+    //附件上传：当uploadAjax为true的时候上传
+    topWindow.uploadAjax = false;
     ysp.customHelper = {};
     var winContainer = []; // openWinow 方法地址存入的数组
     var topWin = null; // Window对象
@@ -47,8 +51,9 @@
         fireKeyEvent: _fireKeyEvent,
         Dnum: _num, // 待办列表角标值
         returnHome: _returnHome,
-      	files:_file,
-      	pageid:_pageid,
+        files: _file,
+        login: _login,
+        pageid: _pageid,
         isArray(array) {
             if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
                 return true;
@@ -57,14 +62,14 @@
             }
         },
         isAllNull(array) {
-          var tag = true;
-          for (var i = 0; i < array.length; i++) {
-              var item = ysp.customHelper.trim(array[i]);
-              if (item != '') {
-                  tag = false;
-              }
-          }
-          return tag;
+            var tag = true;
+            for (var i = 0; i < array.length; i++) {
+                var item = ysp.customHelper.trim(array[i]);
+                if (item != '') {
+                    tag = false;
+                }
+            }
+            return tag;
         },
         /* 适配中定制的公共代码放在这里 */
         /*
@@ -77,6 +82,23 @@
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
+            // if (aWin.location.href.indexOf('Login.jsp') != -1 && (topWindow.tokenUrl <= 3 && topWindow.tokenNum !== null)) {
+            //     // debugger;
+            //     // if (topWindow.EAPI.isIOS() && topWindow.tokenUrl) {
+            //     //     top.location.reload();
+            //     // }
+            // 
+            var Modelid = ysp.runtime.Model.modelsStack.map(function(d, i) {
+                if (i == 0) {
+                    return d.model.id
+                }
+            })
+            Modelid = Modelid.toString();
+            var Modelflag = Modelid.indexOf('index') !== -1 ? true : false;
+            if (aWin.location.href.indexOf('VerifyLogin') != -1 && topWindow.EAPI.isIOS() && !Modelflag) {
+                top.location.reload();
+            }
+
             if (aWin.onShowBrowser2) {
                 aWin.onShowBrowser2 = function(id, url, linkurl, type1, ismand, funFlag) {
                     var id1 = null;
@@ -281,31 +303,31 @@
 
             }
             /*  showModelDialog 跨页面传值兼容  */
-          /*  showModelDialog 查询内部人员  */
-        if(aWin.location.href.indexOf('search/WFSearchResult.jsp') !== -1){
-          aWin.onShowResource = function() {
-              var tmpval = aWin.$GetEle("creatertype").value;
-              var id = null;
-              if (tmpval == "0") {
-                id = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp", "", "dialogWidth:550px;dialogHeight:550px;");
-              }else {
-                id = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=/CRM/data/CustomerBrowser.jsp", "", "dialogWidth:550px;dialogHeight:550px;");
-              }
-              aWin._setReturnValue = function(id){
-                if(id){
-                  if (aWin.wuiUtil.getJsonValueByIndex(id, 0) != "" && aWin.wuiUtil.getJsonValueByIndex(id, 0) != "0") {
-                  aWin.resourcespan.innerHTML = aWin.wuiUtil.getJsonValueByIndex(id, 1);
-                  aWin.$GetEle("createrid").value=aWin.wuiUtil.getJsonValueByIndex(id, 0);
+            /*  showModelDialog 查询内部人员  */
+            if (aWin.location.href.indexOf('search/WFSearchResult.jsp') !== -1) {
+                aWin.onShowResource = function() {
+                    var tmpval = aWin.$GetEle("creatertype").value;
+                    var id = null;
+                    if (tmpval == "0") {
+                        id = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp", "", "dialogWidth:550px;dialogHeight:550px;");
                     } else {
-                  aWin.resourcespan.innerHTML = "";
-                  aWin.$GetEle("createrid").value="";
+                        id = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=/CRM/data/CustomerBrowser.jsp", "", "dialogWidth:550px;dialogHeight:550px;");
                     }
-                }
-                    
-              }
+                    aWin._setReturnValue = function(id) {
+                        if (id) {
+                            if (aWin.wuiUtil.getJsonValueByIndex(id, 0) != "" && aWin.wuiUtil.getJsonValueByIndex(id, 0) != "0") {
+                                aWin.resourcespan.innerHTML = aWin.wuiUtil.getJsonValueByIndex(id, 1);
+                                aWin.$GetEle("createrid").value = aWin.wuiUtil.getJsonValueByIndex(id, 0);
+                            } else {
+                                aWin.resourcespan.innerHTML = "";
+                                aWin.$GetEle("createrid").value = "";
+                            }
+                        }
 
+                    }
+
+                }
             }
-        }
             /*  showModelDialog 相关文档 跨页面传值兼容  */
             if (aWin.onShowSignBrowser) {
                 aWin.onShowSignBrowser = function(url, linkurl, inputname, spanname, type1) {
@@ -346,53 +368,53 @@
 
                 }
             }
-          /* 相关文档跨页面传值 */
+            /* 相关文档跨页面传值 */
             if (aWin.location.href.indexOf('MutiDocBrowser.jsp') !== -1 && aWin.btnok_onclick) {
-              if(aWin.loadToList){
-                     aWin.loadToList = function(){
-                      var selectObj = doc.all("srcList");   
-                       selectObj.innerHTML = '';
-                      for(var i=0;i<aWin.resourceArray.length;i++){
-                        // aWin.addObjectToSelect(selectObj,aWin.resourceArray[i]);
-                    if (selectObj.tagName != "SELECT" || !doc.createTextNode(aWin.resourceArray[i].split('~')[1])) return;
-                    var oOption = doc.createElement("OPTION");
-                    var value = doc.createTextNode(aWin.resourceArray[i].split('~')[0]);
-                    var text = doc.createTextNode(aWin.resourceArray[i].split('~')[1]);
-                    oOption.appendChild(text);
-                    oOption.value = aWin.resourceArray[i].split('~')[0];
-                    selectObj.appendChild(oOption);
-                      }
+                if (aWin.loadToList) {
+                    aWin.loadToList = function() {
+                        var selectObj = doc.all("srcList");
+                        selectObj.innerHTML = '';
+                        for (var i = 0; i < aWin.resourceArray.length; i++) {
+                            // aWin.addObjectToSelect(selectObj,aWin.resourceArray[i]);
+                            if (selectObj.tagName != "SELECT" || !doc.createTextNode(aWin.resourceArray[i].split('~')[1])) return;
+                            var oOption = doc.createElement("OPTION");
+                            var value = doc.createTextNode(aWin.resourceArray[i].split('~')[0]);
+                            var text = doc.createTextNode(aWin.resourceArray[i].split('~')[1]);
+                            oOption.appendChild(text);
+                            oOption.value = aWin.resourceArray[i].split('~')[0];
+                            selectObj.appendChild(oOption);
+                        }
 
                     }
-                 }
-               	aWin.loadToList();
+                }
+                aWin.loadToList();
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
                     aWin.parent.opener._setReturnValue({ id: aWin.documentids, name: aWin.documentnames });
                     aWin.parent.close();
                 }
             }
-          /* 相关流程跨页面传值 */
-          if(aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1){
-            if(aWin.loadToList){
-                     aWin.loadToList = function(){
-                      var selectObj = doc.all("srcList");   
-                       selectObj.innerHTML = '';
-                      for(var i=0;i<aWin.resourceArray.length;i++){
-                        // aWin.addObjectToSelect(selectObj,aWin.resourceArray[i]);
-                    if (selectObj.tagName != "SELECT" || !doc.createTextNode(aWin.resourceArray[i].split('~')[1])) return;
-                    var oOption = doc.createElement("OPTION");
-                    var value = doc.createTextNode(aWin.resourceArray[i].split('~')[0]);
-                    var text = doc.createTextNode(aWin.resourceArray[i].split('~')[1]);
-                    oOption.appendChild(text);
-                    oOption.value = aWin.resourceArray[i].split('~')[0];
-                    selectObj.appendChild(oOption);
-                      }
+            /* 相关流程跨页面传值 */
+            if (aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1) {
+                if (aWin.loadToList) {
+                    aWin.loadToList = function() {
+                        var selectObj = doc.all("srcList");
+                        selectObj.innerHTML = '';
+                        for (var i = 0; i < aWin.resourceArray.length; i++) {
+                            // aWin.addObjectToSelect(selectObj,aWin.resourceArray[i]);
+                            if (selectObj.tagName != "SELECT" || !doc.createTextNode(aWin.resourceArray[i].split('~')[1])) return;
+                            var oOption = doc.createElement("OPTION");
+                            var value = doc.createTextNode(aWin.resourceArray[i].split('~')[0]);
+                            var text = doc.createTextNode(aWin.resourceArray[i].split('~')[1]);
+                            oOption.appendChild(text);
+                            oOption.value = aWin.resourceArray[i].split('~')[0];
+                            selectObj.appendChild(oOption);
+                        }
 
                     }
-                 }
-               	aWin.loadToList();
-          }
+                }
+                aWin.loadToList();
+            }
             if ((aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 || aWin.location.href.indexOf('BrowserMain.jsp') !== -1) && aWin.btnok_onclick) {
                 aWin.btnok_onclick = function() {
                     aWin.setResourceStr();
@@ -445,86 +467,86 @@
             /*  showModelDialog 相关文档 跨页面传值兼容  */
 
             /*  showModelDialog 相关流程 跨页面传值兼容  */
-            if (aWin.btnsub_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1  && aWin.location.href.indexOf('BrowserMain.jsp') == -1 ) {
+            if (aWin.btnsub_onclick && aWin.location.href.indexOf('ResourceBrowser.jsp') !== -1 && aWin.location.href.indexOf('BrowserMain.jsp') == -1) {
                 aWin.btnsub_onclick = function() {
                     aWin.setResourceStr();
                     $("#resourceids").val(aWin.resourceids);
                     doc.SearchForm.submit();
                 }
             }
-          	/* 前插 - 后插 选人跨页面传值 */
-          if(aWin.location.href.match(/workflow\/request\/FreeWorkflowSet\.jsp/)){
-            if(aWin.ShowMultiResource){
-              aWin.ShowMultiResource = function(spanname,hiddenidname,i) {
-                var window = aWin;
-                var document = doc;
-                var $G = aWin.$G;
-                var id = window.showModalDialog("/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=" + $G(hiddenidname).value);
-                aWin._setReturnValue = function(id){
-                  if (id) {
-                    var rid = aWin.wuiUtil.getJsonValueByIndex(id, 0);
-                    var rname = aWin.wuiUtil.getJsonValueByIndex(id, 1);
-                    if (rid != "" && rid != "0") {
-                            $G(spanname).innerHTML = rname.substr(1);
-                            $G(hiddenidname).value= rid.substr(1);
-                      var j=spanname.substr(14);
-                      //2013-12-24 xyhao 当选择人数超过三人时，步骤名称更改为‘多人审批’，否则设置为选择的人
-                      var v_allname = rname.substr(1);
-                      var splitname = v_allname.split(",");
-                      if(splitname.length > 3){
-                        document.getElementById("nodename_"+j).value='多人审批';
-                      }else{
-                        document.getElementById("nodename_"+j).value=rname.substr(1);
-                      }
-                      } else {
-                            $G(spanname).innerHTML = "<IMG src='/images/BacoError.gif' align=absMiddle>";
-                            $G(hiddenidname).value="";
-                      //document.getElementById("nodename_"+j).value="";
+            /* 前插 - 后插 选人跨页面传值 */
+            if (aWin.location.href.match(/workflow\/request\/FreeWorkflowSet\.jsp/)) {
+                if (aWin.ShowMultiResource) {
+                    aWin.ShowMultiResource = function(spanname, hiddenidname, i) {
+                        var window = aWin;
+                        var document = doc;
+                        var $G = aWin.$G;
+                        var id = window.showModalDialog("/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=" + $G(hiddenidname).value);
+                        aWin._setReturnValue = function(id) {
+                            if (id) {
+                                var rid = aWin.wuiUtil.getJsonValueByIndex(id, 0);
+                                var rname = aWin.wuiUtil.getJsonValueByIndex(id, 1);
+                                if (rid != "" && rid != "0") {
+                                    $G(spanname).innerHTML = rname.substr(1);
+                                    $G(hiddenidname).value = rid.substr(1);
+                                    var j = spanname.substr(14);
+                                    //2013-12-24 xyhao 当选择人数超过三人时，步骤名称更改为‘多人审批’，否则设置为选择的人
+                                    var v_allname = rname.substr(1);
+                                    var splitname = v_allname.split(",");
+                                    if (splitname.length > 3) {
+                                        document.getElementById("nodename_" + j).value = '多人审批';
+                                    } else {
+                                        document.getElementById("nodename_" + j).value = rname.substr(1);
+                                    }
+                                } else {
+                                    $G(spanname).innerHTML = "<IMG src='/images/BacoError.gif' align=absMiddle>";
+                                    $G(hiddenidname).value = "";
+                                    //document.getElementById("nodename_"+j).value="";
+                                }
+                            }
                         }
-                  }
+                    }
                 }
-              }
             }
-          }
-          
-          	/* 前插 - 后插 选人跨页面传值 */
-          
-          
-          
-//           if(aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=&splitflag=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 ){
-//             if(aWin.doSearch){
-//               aWin.doSearch = function(){
-//                 debugger;
-//                 aWin.setResourceStr();
-//                 doc.all("resourceids").value = aWin.resourceids.substring(1) ;
-//                 doc.SearchForm.submit();
-//               }
-//             }
-//             if(aWin.reloadResourceArray){
-//                  aWin.reloadResourceArray = function(){
-//               aWin.resourceArray = new Array();
-//                 var destList = $("select[name=srcList]")[0];
-//                 for(var i=0;i<destList.options.length;i++){
-//                   aWin.resourceArray[i] = destList.options[i].value+"~"+destList.options[i].text ;
-//                 }
-//                 //alert(resourceArray.length);
-//               }
-//             }
-//          	if(aWin.setResourceStr){
-//             aWin.setResourceStr = function(){
 
-//                 aWin.resourceids ="";
-//                 aWin.resourcenames = "";
-//                 for(var i=0;i<aWin.resourceArray.length;i++){
-//                   aWin.resourceids += ","+aWin.resourceArray[i].split("~")[0] ;
-//                   aWin.resourcenames += ","+aWin.resourceArray[i].split("~")[1] ;
-//                 }
-//                 //alert(resourceids+"--"+resourcenames);
-//                 $("input[name=resourceids]").val(aWin.resourceids.substring(1));
-//               }
-//           }
-              
-//           }
+            /* 前插 - 后插 选人跨页面传值 */
+
+
+
+            //           if(aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=&splitflag=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 ){
+            //             if(aWin.doSearch){
+            //               aWin.doSearch = function(){
+            //                 debugger;
+            //                 aWin.setResourceStr();
+            //                 doc.all("resourceids").value = aWin.resourceids.substring(1) ;
+            //                 doc.SearchForm.submit();
+            //               }
+            //             }
+            //             if(aWin.reloadResourceArray){
+            //                  aWin.reloadResourceArray = function(){
+            //               aWin.resourceArray = new Array();
+            //                 var destList = $("select[name=srcList]")[0];
+            //                 for(var i=0;i<destList.options.length;i++){
+            //                   aWin.resourceArray[i] = destList.options[i].value+"~"+destList.options[i].text ;
+            //                 }
+            //                 //alert(resourceArray.length);
+            //               }
+            //             }
+            //          	if(aWin.setResourceStr){
+            //             aWin.setResourceStr = function(){
+
+            //                 aWin.resourceids ="";
+            //                 aWin.resourcenames = "";
+            //                 for(var i=0;i<aWin.resourceArray.length;i++){
+            //                   aWin.resourceids += ","+aWin.resourceArray[i].split("~")[0] ;
+            //                   aWin.resourcenames += ","+aWin.resourceArray[i].split("~")[1] ;
+            //                 }
+            //                 //alert(resourceids+"--"+resourcenames);
+            //                 $("input[name=resourceids]").val(aWin.resourceids.substring(1));
+            //               }
+            //           }
+
+            //           }
             /*  showModelDialog 相关流程 跨页面传值兼容  */
             var newAlert = aWin.alert;
             aWin.alert = function() {
@@ -536,12 +558,12 @@
                 }
             }
             aWin.doReview = function() {
-              if(doc.getElementById('flowbody')){
-                doc.getElementById('flowbody').setAttribute('onbeforeunload', '')
-              }else if(doc.getElementById('bodyiframe')){
-                doc.getElementById('bodyiframe').setAttribute('onbeforeunload', '')
-              }
-                
+                if (doc.getElementById('flowbody')) {
+                    doc.getElementById('flowbody').setAttribute('onbeforeunload', '')
+                } else if (doc.getElementById('bodyiframe')) {
+                    doc.getElementById('bodyiframe').setAttribute('onbeforeunload', '')
+                }
+
                 aWin.doLocationHref();
             }
             aWin.checkfileuploadcomplet = function() {
@@ -581,338 +603,338 @@
             }
 
             // 创建人
-          if(aWin.__flash__argumentsToXML){
-           aWin.__flash__argumentsToXML = function (obj,index) {
-              var s = "<arguments>";
-              for (var i=index; i<obj.length; i++) {
-                s +=aWin.__flash__toXML(obj[i]);
-              }
-              return s+"</arguments>";
-            }
-          }
-
-          /* 退回流程 */
-          aWin.doReject_New = function(){
-            aWin.getRemarkText_log();
-            aWin.doReject();
-          }
-          
-          if(aWin.onSetRejectNode){
-            aWin.onSetRejectNode = function(){
-            	var $G = aWin.$G;
-              var requestidId = doc.getElementById('requestid').value;
-              var workflowId = doc.getElementById('workflowid').value;
-              var nodeId = doc.querySelector('input[name="nodeid"]').value;
-             	var url=aWin.escape("/workflow/request/RejectNodeSet.jsp?requestid="+requestidId+"&workflowid="+workflowId+"&nodeid="+nodeId+"&isrejectremind=1&ischangrejectnode=1&isselectrejectnode=1&isFreeNode=");
-                var result = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url="+url);
-                aWin.setReturnValue = function (result){
-                    if (result != null) {
-                       // $G("RejectNodes").value=result;
-                    var val=result.split("|");
-                      if($G("RejectNodes")) $G("RejectNodes").value=val[0];
-                      if($G("RejectToNodeid")) $G("RejectToNodeid").value=val[1]; 
-                     return true;
-                  }else{
-                      return false;
-                  }
+            if (aWin.__flash__argumentsToXML) {
+                aWin.__flash__argumentsToXML = function(obj, index) {
+                    var s = "<arguments>";
+                    for (var i = index; i < obj.length; i++) {
+                        s += aWin.__flash__toXML(obj[i]);
+                    }
+                    return s + "</arguments>";
                 }
             }
-          }
-          
-          
-          aWin.onsave = function(){
-            var nodeids="";
-            var $G = aWin.$G;
-            if($G("checkall").checked){ 
-             nodeids="-1";
-            }else{ 
 
-                if($G("nodeid_121108").checked){
-                    if(nodeids.length>0){
-                        nodeids+=","+$G("nodeid_121108").value;
-                    }else{
-                        nodeids=$G("nodeid_121108").value;
+            /* 退回流程 */
+            aWin.doReject_New = function() {
+                aWin.getRemarkText_log();
+                aWin.doReject();
+            }
+
+            if (aWin.onSetRejectNode) {
+                aWin.onSetRejectNode = function() {
+                    var $G = aWin.$G;
+                    var requestidId = doc.getElementById('requestid').value;
+                    var workflowId = doc.getElementById('workflowid').value;
+                    var nodeId = doc.querySelector('input[name="nodeid"]').value;
+                    var url = aWin.escape("/workflow/request/RejectNodeSet.jsp?requestid=" + requestidId + "&workflowid=" + workflowId + "&nodeid=" + nodeId + "&isrejectremind=1&ischangrejectnode=1&isselectrejectnode=1&isFreeNode=");
+                    var result = aWin.showModalDialog("/systeminfo/BrowserMain.jsp?url=" + url);
+                    aWin.setReturnValue = function(result) {
+                        if (result != null) {
+                            // $G("RejectNodes").value=result;
+                            var val = result.split("|");
+                            if ($G("RejectNodes")) $G("RejectNodes").value = val[0];
+                            if ($G("RejectToNodeid")) $G("RejectToNodeid").value = val[1];
+                            return true;
+                        } else {
+                            return false;
+                        }
                     }
                 }
-
-                if($G("nodeid_121109").checked){
-                    if(nodeids.length>0){
-                        nodeids+=","+$G("nodeid_121109").value;
-                    }else{
-                        nodeids=$G("nodeid_121109").value;
-                    }
-                }
-
-                //alert(nodeids);
-                   }
-            var rejectnodeid="";
-            rejectnodeid=aWin.getRadioValue("rejectnodeid");
-            if(rejectnodeid==""){
-                alert("请选择退回节点");
-                return false;
             }
-            aWin.parent.opener.setReturnValue(nodeids+"|"+rejectnodeid);
-            if(aWin.parent.opener.setReturnValue(nodeids+"|"+rejectnodeid)){
-               aWin.parent.opener.showtipsinfo(380971,8061,121109,1,1,3151,"","reject","2","divFavContent18980","正在退回流程，请稍等....")
-               }
-            aWin.parent.close();
-        }
-    		
-          /* 相关文档 子目录传值兼容性问题 */
-          if(aWin.selectCategory){
-             aWin.selectCategory = function(nodeID) {
-                var node = aWin.tree.getNode(nodeID);
-                var path = node.text;
-                var id = node.categoryid;
-                var subid = -1;
-                var mainid = -1;
-                var  parth2="<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&seccategory="+id+"'>"+node.text+"</a>";  
-                while (node.parent != null) {        
-                    path = node.parent.text + "/" + path;        
-                    if (node.parent.categorytype == 1 && subid == -1) {
-                        subid = node.parent.categoryid;
-                        parth2="<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&subcategory="+subid+"'>"+node.parent.text+"</a>/"+parth2;               
-                    }  else  if (node.parent.categorytype == 0) {
-                        mainid = node.parent.categoryid;    
-                        parth2="<a href='docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&maincategory="+mainid+"'>"+node.parent.text+"</a>/"+parth2;      
-                  }  
-                    node = node.parent;
-                }  
-                path = path.replace(/</g, "＜").replace(/>/g, "＞").replace(/&lt;/g, "＜").replace(/&gt;/g, "＞");
-               	aWin.parent.opener.returnValue = {tag:"1",id:""+id, path:""+path, mainid:""+mainid, subid:""+subid,path2:""+parth2};
-								aWin.parent.opener._setReturnValue({tag:"1",id:""+id, path:""+path, mainid:""+mainid, subid:""+subid,path2:""+parth2})
+
+
+            aWin.onsave = function() {
+                var nodeids = "";
+                var $G = aWin.$G;
+                if ($G("checkall").checked) {
+                    nodeids = "-1";
+                } else {
+
+                    if ($G("nodeid_121108").checked) {
+                        if (nodeids.length > 0) {
+                            nodeids += "," + $G("nodeid_121108").value;
+                        } else {
+                            nodeids = $G("nodeid_121108").value;
+                        }
+                    }
+
+                    if ($G("nodeid_121109").checked) {
+                        if (nodeids.length > 0) {
+                            nodeids += "," + $G("nodeid_121109").value;
+                        } else {
+                            nodeids = $G("nodeid_121109").value;
+                        }
+                    }
+
+                    //alert(nodeids);
+                }
+                var rejectnodeid = "";
+                rejectnodeid = aWin.getRadioValue("rejectnodeid");
+                if (rejectnodeid == "") {
+                    alert("请选择退回节点");
+                    return false;
+                }
+                aWin.parent.opener.setReturnValue(nodeids + "|" + rejectnodeid);
+                if (aWin.parent.opener.setReturnValue(nodeids + "|" + rejectnodeid)) {
+                    aWin.parent.opener.showtipsinfo(380971, 8061, 121109, 1, 1, 3151, "", "reject", "2", "divFavContent18980", "正在退回流程，请稍等....")
+                }
                 aWin.parent.close();
-              }
-           }
-   
+            }
 
-          //正文预览
-//           aWin.check_form=function(thiswins,items){
-           
-//             var window = aWin;
-//             var document = doc;
-//           //    var usercookie = doc.cookie.split(';')
-//           //     for(var i =0;i<usercookie.length;i++){
-//           //     if(usercookie[i].indexOf('loginid') !== -1){
-//           //       topWindow.userid= usercookie[i].split('=')[1];
-//           //       // console.log(topWindow.userid)
-//           //     }
-//           // }
-//             /* added by cyril on 2008-08-14 for td:8521 */
-//             var isconn = false;
-//             try {
-//               var xmlhttp;
-//                 if (window.XMLHttpRequest) {
-//                   xmlhttp = new XMLHttpRequest();
-//                 }  
-//                 else if (window.ActiveXObject) {
-//                   xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");  
-//                 }
-						
-//                 var URL = "http://192.168.200.63/systeminfo/CheckConn.jsp?userid="+topWindow.userid+"&time="+new Date();
-//                 xmlhttp.open("GET",URL, false);
-//                 xmlhttp.send(null);
-//                 var result = xmlhttp.status;
-//                 if(result==200) {
-//                   isconn = true;
-//                   var response_flag = xmlhttp.responseText;
-//                   if(response_flag!='0') {
-//                     var flag_msg = '';
-//                     if(response_flag=='1') {
-//                       // var diag = new Dialog();
-//                       // diag.Width = 300;
-//                       // diag.Height = 180;
-//                       // diag.ShowCloseButton=false;
-//                       // diag.Title = "网页超时提醒";
-//                       // //diag.InvokeElementId="pageOverlay"
-//                       // diag.URL = "/wui/theme/ecology7/page/loginSmall.jsp?username=ychwang";
-//                       // diag.show();
-//                       // return false;
-//                     }
-//                     else if(response_flag=='2') {
-//                       flag_msg = '网络故障或其它原因导致您连接不上服务器，请复制下重要信息稍候再提交！';
-//                     }
-//                     //主从帐户特殊处理 by alan for TD10156
-//                     if(response_flag=='3') {
-//                       flag_msg = '提交信息失败,该页面非当前帐号打开,请刷新页面后再提交!';
+            /* 相关文档 子目录传值兼容性问题 */
+            if (aWin.selectCategory) {
+                aWin.selectCategory = function(nodeID) {
+                    var node = aWin.tree.getNode(nodeID);
+                    var path = node.text;
+                    var id = node.categoryid;
+                    var subid = -1;
+                    var mainid = -1;
+                    var parth2 = "<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&seccategory=" + id + "'>" + node.text + "</a>";
+                    while (node.parent != null) {
+                        path = node.parent.text + "/" + path;
+                        if (node.parent.categorytype == 1 && subid == -1) {
+                            subid = node.parent.categoryid;
+                            parth2 = "<a href='/docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&subcategory=" + subid + "'>" + node.parent.text + "</a>/" + parth2;
+                        } else if (node.parent.categorytype == 0) {
+                            mainid = node.parent.categoryid;
+                            parth2 = "<a href='docs/search/DocSummaryList.jsp?showtype=0&displayUsage=0&maincategory=" + mainid + "'>" + node.parent.text + "</a>/" + parth2;
+                        }
+                        node = node.parent;
+                    }
+                    path = path.replace(/</g, "＜").replace(/>/g, "＞").replace(/&lt;/g, "＜").replace(/&gt;/g, "＞");
+                    aWin.parent.opener.returnValue = { tag: "1", id: "" + id, path: "" + path, mainid: "" + mainid, subid: "" + subid, path2: "" + parth2 };
+                    aWin.parent.opener._setReturnValue({ tag: "1", id: "" + id, path: "" + path, mainid: "" + mainid, subid: "" + subid, path2: "" + parth2 })
+                    aWin.parent.close();
+                }
+            }
 
-//                       return false;
-//                     }
-//                     flag_msg += '\r\n\r\n按【确定】继续,按【取消】停留在本页!';
-//                       //alert(xmlhttp.responseText);
-//                       return confirm(flag_msg);
-//                     }
-//                 }
-//                 xmlhttp = null;
 
-//                 //检查多行文本框 oracle下检查HTML不能超过4000个字符
+            //正文预览
+            //           aWin.check_form=function(thiswins,items){
 
-//                 try {
-//                   var lenck = true;
-//                   var tempfieldvlaue = document.getElementById("htmlfieldids").value;
-//                   while(true) {
-//                     var tempfield = tempfieldvlaue.substring(0, tempfieldvlaue.indexOf(","));
-//                     tempfieldvlaue = tempfieldvlaue.substring(tempfieldvlaue.indexOf(",")+1);
-//                     var fieldid = tempfield.substring(0, tempfield.indexOf(";"));
-//                     var fieldname = tempfield.substring(tempfield.indexOf(";")+1);
-//                     if(fieldname=='') break;
-//                     if(!aWIn.checkLengthOnly(fieldid,'4000',fieldname,'当前文本长度','文本长度不能超过','1个中文字符等于2个长度')) {
-//                       lenck = false;
-//                       break;
-//                     }
-//                   }
-//                   if(lenck==false) return false;
-//                 }
-//                 catch(e) {}
+            //             var window = aWin;
+            //             var document = doc;
+            //           //    var usercookie = doc.cookie.split(';')
+            //           //     for(var i =0;i<usercookie.length;i++){
+            //           //     if(usercookie[i].indexOf('loginid') !== -1){
+            //           //       topWindow.userid= usercookie[i].split('=')[1];
+            //           //       // console.log(topWindow.userid)
+            //           //     }
+            //           // }
+            //             /* added by cyril on 2008-08-14 for td:8521 */
+            //             var isconn = false;
+            //             try {
+            //               var xmlhttp;
+            //                 if (window.XMLHttpRequest) {
+            //                   xmlhttp = new XMLHttpRequest();
+            //                 }  
+            //                 else if (window.ActiveXObject) {
+            //                   xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");  
+            //                 }
 
-//             }
-//             catch(e) {
-//               return aWin.check_conn();
-//             }
-//             if(!isconn)
-//               return aWin.check_conn();
-//               /* end by cyril on 2008-08-14 for td:8521 */
+            //                 var URL = "http://192.168.200.63/systeminfo/CheckConn.jsp?userid="+topWindow.userid+"&time="+new Date();
+            //                 xmlhttp.open("GET",URL, false);
+            //                 xmlhttp.send(null);
+            //                 var result = xmlhttp.status;
+            //                 if(result==200) {
+            //                   isconn = true;
+            //                   var response_flag = xmlhttp.responseText;
+            //                   if(response_flag!='0') {
+            //                     var flag_msg = '';
+            //                     if(response_flag=='1') {
+            //                       // var diag = new Dialog();
+            //                       // diag.Width = 300;
+            //                       // diag.Height = 180;
+            //                       // diag.ShowCloseButton=false;
+            //                       // diag.Title = "网页超时提醒";
+            //                       // //diag.InvokeElementId="pageOverlay"
+            //                       // diag.URL = "/wui/theme/ecology7/page/loginSmall.jsp?username=ychwang";
+            //                       // diag.show();
+            //                       // return false;
+            //                     }
+            //                     else if(response_flag=='2') {
+            //                       flag_msg = '网络故障或其它原因导致您连接不上服务器，请复制下重要信息稍候再提交！';
+            //                     }
+            //                     //主从帐户特殊处理 by alan for TD10156
+            //                     if(response_flag=='3') {
+            //                       flag_msg = '提交信息失败,该页面非当前帐号打开,请刷新页面后再提交!';
 
-//             aWin.thiswin = thiswins;
-//             items = ","+items + ",";
+            //                       return false;
+            //                     }
+            //                     flag_msg += '\r\n\r\n按【确定】继续,按【取消】停留在本页!';
+            //                       //alert(xmlhttp.responseText);
+            //                       return confirm(flag_msg);
+            //                     }
+            //                 }
+            //                 xmlhttp = null;
 
-//             var tempfieldvlaue1 = "";
-//             try{
-//               tempfieldvlaue1 = document.getElementById("htmlfieldids").value;
-//             }catch (e) {
-//             }
-// 						var thiswin = aWin.thiswin;
-//             var tmpname = aWin.tmpname;
-//             var tmpvalue = aWin.tmpvalue;
-//             for(i=1;i<=thiswin.length;i++){
-//               tmpname = thiswin.elements[i-1].name;
-//               tmpvalue = thiswin.elements[i-1].value;
-//                 if(tmpvalue==null){
-//                     continue;
-//                 }
+            //                 //检查多行文本框 oracle下检查HTML不能超过4000个字符
 
-//               if(tmpname!="" && items.indexOf(","+tmpname+",")!=-1){
-//                 if(tempfieldvlaue1.indexOf(tmpname+";") == -1){
-//                   while(tmpvalue.indexOf(" ") >= 0){
-//                     tmpvalue = tmpvalue.replace(" ", "");
-//                   }
-//                   while(tmpvalue.indexOf("\r\n") >= 0){
-//                     tmpvalue = tmpvalue.replace("\r\n", "");
-//                   }
+            //                 try {
+            //                   var lenck = true;
+            //                   var tempfieldvlaue = document.getElementById("htmlfieldids").value;
+            //                   while(true) {
+            //                     var tempfield = tempfieldvlaue.substring(0, tempfieldvlaue.indexOf(","));
+            //                     tempfieldvlaue = tempfieldvlaue.substring(tempfieldvlaue.indexOf(",")+1);
+            //                     var fieldid = tempfield.substring(0, tempfield.indexOf(";"));
+            //                     var fieldname = tempfield.substring(tempfield.indexOf(";")+1);
+            //                     if(fieldname=='') break;
+            //                     if(!aWIn.checkLengthOnly(fieldid,'4000',fieldname,'当前文本长度','文本长度不能超过','1个中文字符等于2个长度')) {
+            //                       lenck = false;
+            //                       break;
+            //                     }
+            //                   }
+            //                   if(lenck==false) return false;
+            //                 }
+            //                 catch(e) {}
 
-//                   if(tmpvalue == ""){
-//                     if(thiswin.elements[i-1].getAttribute("temptitle")!=null){
-//                       alert("\""+thiswin.elements[i-1].getAttribute("temptitle")+"\""+"未填写！");
-//                       return false;
-//                     }else{
-//                       alert("必要信息不完整！");
-//                       return false;
-//                     }
-//                   }
-//                 } else {
-//                   var divttt=document.createElement("div");
-//                   divttt.innerHTML = tmpvalue;
-//                   var tmpvaluettt = jQuery.trim(jQuery(divttt).text());
-//                   if(tmpvaluettt == ""){
-//                     if(thiswin.elements[i-1].getAttribute("temptitle")!=null){
-//                       alert("\""+thiswin.elements[i-1].getAttribute("temptitle")+"\""+"未填写！");
-//                       return false;
-//                     }else{
-//                       alert("必要信息不完整！");
-//                       return false;
-//                     }
-//                   }
-//                 }
-//               }
-//             }
-//             return true;
-//           }
+            //             }
+            //             catch(e) {
+            //               return aWin.check_conn();
+            //             }
+            //             if(!isconn)
+            //               return aWin.check_conn();
+            //               /* end by cyril on 2008-08-14 for td:8521 */
+
+            //             aWin.thiswin = thiswins;
+            //             items = ","+items + ",";
+
+            //             var tempfieldvlaue1 = "";
+            //             try{
+            //               tempfieldvlaue1 = document.getElementById("htmlfieldids").value;
+            //             }catch (e) {
+            //             }
+            // 						var thiswin = aWin.thiswin;
+            //             var tmpname = aWin.tmpname;
+            //             var tmpvalue = aWin.tmpvalue;
+            //             for(i=1;i<=thiswin.length;i++){
+            //               tmpname = thiswin.elements[i-1].name;
+            //               tmpvalue = thiswin.elements[i-1].value;
+            //                 if(tmpvalue==null){
+            //                     continue;
+            //                 }
+
+            //               if(tmpname!="" && items.indexOf(","+tmpname+",")!=-1){
+            //                 if(tempfieldvlaue1.indexOf(tmpname+";") == -1){
+            //                   while(tmpvalue.indexOf(" ") >= 0){
+            //                     tmpvalue = tmpvalue.replace(" ", "");
+            //                   }
+            //                   while(tmpvalue.indexOf("\r\n") >= 0){
+            //                     tmpvalue = tmpvalue.replace("\r\n", "");
+            //                   }
+
+            //                   if(tmpvalue == ""){
+            //                     if(thiswin.elements[i-1].getAttribute("temptitle")!=null){
+            //                       alert("\""+thiswin.elements[i-1].getAttribute("temptitle")+"\""+"未填写！");
+            //                       return false;
+            //                     }else{
+            //                       alert("必要信息不完整！");
+            //                       return false;
+            //                     }
+            //                   }
+            //                 } else {
+            //                   var divttt=document.createElement("div");
+            //                   divttt.innerHTML = tmpvalue;
+            //                   var tmpvaluettt = jQuery.trim(jQuery(divttt).text());
+            //                   if(tmpvaluettt == ""){
+            //                     if(thiswin.elements[i-1].getAttribute("temptitle")!=null){
+            //                       alert("\""+thiswin.elements[i-1].getAttribute("temptitle")+"\""+"未填写！");
+            //                       return false;
+            //                     }else{
+            //                       alert("必要信息不完整！");
+            //                       return false;
+            //                     }
+            //                   }
+            //                 }
+            //               }
+            //             }
+            //             return true;
+            //           }
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-          //空白页关闭
-          var _href = aWin.location.href;
-          if(/workflow\/request\/ViewRequest\.jsp\?requestid=\d+&message=/.test(_href)||/about:blank/.test(_href)){
-            aWin.close();
-          }
+            //空白页关闭
+            var _href = aWin.location.href;
+            if (/workflow\/request\/ViewRequest\.jsp\?requestid=\d+&message=/.test(_href) || /about:blank/.test(_href)) {
+                aWin.close();
+            }
             // 测试
-          if(aWin.onSetRejectNode){
-             console.log(aWin.onSetRejectNode.toString())
-             }
+            if (aWin.onSetRejectNode) {
+                console.log(aWin.onSetRejectNode.toString())
+            }
             var fakeFormId;
-          	var uploadId;
+            var uploadId;
             (function() {
-                var addFileInput = function addFileInput(originId, id, target,html) {
-                 
+                var addFileInput = function addFileInput(originId, id, target, html) {
+
                     var placeHolder = doc.getElementById(originId);
                     if (placeHolder) {
-                      var tempParent , Object;
+                        var tempParent, Object;
                         var file = doc.createElement('input');
                         file.type = 'file';
                         file.id = id;
                         file.name = id;
                         file.onchange = function() {
-                          
-                          var cb = target.setting.file_dialog_complete_handler;
-                          var up = target.setting.upload_success_handler; 
-                          var div = doc.createElement('div');
-                          div.className = 'progressWrapper';
-                          var div1 = doc.createElement('div');
-                          div1.className = 'progressContainer';
-                          div.id = target.movieName;
-                          div.appendChild(div1);
-                          var a = doc.createElement('a');
-                          a.setAttribute('href','#');
-                          a.className = 'progressCancel'
-                          var aText = doc.createTextNode(this.files[0].name);
-                          var div2 = doc.createElement('div');
-                          div2.className = 'progressName';
-                          div2.appendChild(aText);
-                          var div3 = doc.createElement('div');
-                          div3.className = 'progressBarStatus';
-                        	var divText = doc.createTextNode('上传准备中，提交后开始上传......');
-                          div3.appendChild(divText);
-                          var div4 = doc.createElement('div');
-                          div4.className = 'progressBarInProgress';
-                          div1.appendChild(a);
-                          div1.appendChild(div2);
-                          div1.appendChild(div3);
-                          div1.appendChild(div4);
-                          var fileNum=this.parentElement.getAttribute('file-num');
-                          //附件上传 文件放置DIV
-                         
-                          if(fileNum=="1"){
-                            this.ownerDocument.querySelectorAll('.fieldset')[0].appendChild(div);
-                          }else if(fileNum=="2"){
-                            this.ownerDocument.querySelectorAll('.fieldset')[1].appendChild(div);
-                          }else{
-                            this.ownerDocument.querySelector('.fieldset').appendChild(div);
-                          }
-                          
-                          //附件上传 文件放置DIV
-                          
+
+                            var cb = target.setting.file_dialog_complete_handler;
+                            var up = target.setting.upload_success_handler;
+                            var div = doc.createElement('div');
+                            div.className = 'progressWrapper';
+                            var div1 = doc.createElement('div');
+                            div1.className = 'progressContainer';
+                            div.id = target.movieName;
+                            div.appendChild(div1);
+                            var a = doc.createElement('a');
+                            a.setAttribute('href', '#');
+                            a.className = 'progressCancel'
+                            var aText = doc.createTextNode(this.files[0].name);
+                            var div2 = doc.createElement('div');
+                            div2.className = 'progressName';
+                            div2.appendChild(aText);
+                            var div3 = doc.createElement('div');
+                            div3.className = 'progressBarStatus';
+                            var divText = doc.createTextNode('上传准备中，提交后开始上传......');
+                            div3.appendChild(divText);
+                            var div4 = doc.createElement('div');
+                            div4.className = 'progressBarInProgress';
+                            div1.appendChild(a);
+                            div1.appendChild(div2);
+                            div1.appendChild(div3);
+                            div1.appendChild(div4);
+                            var fileNum = this.parentElement.getAttribute('file-num');
+                            //附件上传 文件放置DIV
+
+                            if (fileNum == "1") {
+                                this.ownerDocument.querySelectorAll('.fieldset')[0].appendChild(div);
+                            } else if (fileNum == "2") {
+                                this.ownerDocument.querySelectorAll('.fieldset')[1].appendChild(div);
+                            } else {
+                                this.ownerDocument.querySelector('.fieldset').appendChild(div);
+                            }
+
+                            //附件上传 文件放置DIV
+
                             // var xhr = new XMLHttpRequest();
-                            var form = file && file.parentElement;//找到对应的form
-                            var fileName = form.Filename;//找到input name=filename的元素，
+                            var form = file && file.parentElement; //找到对应的form
+                            var fileName = form.Filename; //找到input name=filename的元素，
                             fileName.value = this.files[0].name; //将这个元素的value设为刚刚上传的文件名
-														//if(topWindow.uploadAjax){
-                            var xhr = new XMLHttpRequest();//创建ajax对象
-                            xhr.open('post', 'http://192.168.200.63/docs/docupload/MultiDocUploadByWorkflow.jsp');//发送请求
-                            this.formData = new FormData(form);//格式化form的数据
-                            xhr.send(this.formData);//发送数据
+                            //if(topWindow.uploadAjax){
+                            var xhr = new XMLHttpRequest(); //创建ajax对象
+                            xhr.open('post', 'http://192.168.200.63/docs/docupload/MultiDocUploadByWorkflow.jsp'); //发送请求
+                            this.formData = new FormData(form); //格式化form的数据
+                            xhr.send(this.formData); //发送数据
                             var responseT = "";
                             xhr.onreadystatechange = function() {
-                              if (xhr.readyState == 4 && xhr.status == 200) {
-                                responseT = xhr.responseText;
-                                up.call(target,target,responseT);
-                                topWindow.file.push(ysp.customHelper.trim(responseT));
-                              }
+                                if (xhr.readyState == 4 && xhr.status == 200) {
+                                    responseT = xhr.responseText;
+                                    up.call(target, target, responseT);
+                                    topWindow.file.push(ysp.customHelper.trim(responseT));
+                                }
                             }
                             fileName.value = "";
-                          	fileName.previousElementSibling.value="";
-                          //}
-                          // cb && cb.call(target);
+                            fileName.previousElementSibling.value = "";
+                            //}
+                            // cb && cb.call(target);
                         };
                         var fileName = doc.createElement('input');
                         var upload = doc.createElement('input');
@@ -931,105 +953,116 @@
                         // placeHolder.parentNode.removeChild(placeHolder);
                     }
                 };
-                 fakeFormId = 'ysp_fake_form';
+                fakeFormId = 'ysp_fake_form';
                 aWin.SWFUpload = function(setting) {
                     this.setting = setting;
                     var elemId = this.setting.button_placeholder_id;
                     if (elemId) {
                         addFileInput(elemId, 'Filedata', this);
                     }
-                  	this.fakeFormId = fakeFormId;
+                    this.fakeFormId = fakeFormId;
                     this.initSWFUpload(this.setting);
                     this.movieElement = this.getMovieElement();
                     //console.log('upload overrided!');
                 };
             })();
-          
-          //loading
-    				// aWin.addEventListener("DOMContentLoaded",function(){
-    				// var load = doc.createElement('div');
-    				// load.className = 'ysp_load_haha';
-    				// doc.body.appendChild(load)
-    				// },false)
+
+            //loading
+            // aWin.addEventListener("DOMContentLoaded",function(){
+            // var load = doc.createElement('div');
+            // load.className = 'ysp_load_haha';
+            // doc.body.appendChild(load)
+            // },false)
 
             // 测试结束
 
 
-            if (aWin.location.href.indexOf('Login.jsp') !== -1) {
+            if (aWin.location.href.indexOf('Login.jsp') !== -1 && topWindow.tokenNum < 4) {
                 //console.info('向客户端发送消息,开始获取token地址');
-              	var parent = aWin.frameElement.ownerDocument.defaultView;
-              	aWin.addEventListener('DOMContentLoaded', function() {
-                // var actionEvent = '{"target":"null","data":"getNumber"}';
-                topWindow.tokenNum++;
-                  if(topWindow.EAPI.isAndroid()){
-                    topWindow.AndroidTokenurl = topWindow.redcore.getUserTokenUrl();
-                  }else if(topWindow.EAPI.isIOS()){
-                    topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
-                  }
-                 if(topWindow.tokenNum>=1){
-                  //当token过期时像客户端请求新的token
-                   if(topWindow.EAPI.isIOS()){
-                     topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
-                   }else if(topWindow.EAPI.isAndroid()){
-                     topWindow.AndroidTokenurl = topWindow.redcore.getNewToken();
-                   }
-                   token_flag = true;
-                }
-                sessionStorage.setItem('getToken', true);
-              },false);
+                var parent = aWin.frameElement.ownerDocument.defaultView;
+                aWin.addEventListener('DOMContentLoaded', function() {
+                    // var actionEvent = '{"target":"null","data":"getNumber"}';
+                    topWindow.tokenNum++;
+                    if (topWindow.EAPI.isAndroid()) {
+                        topWindow.AndroidTokenurl = topWindow.redcore.getUserTokenUrl();
+                    } else if (topWindow.EAPI.isIOS()) {
+                        topWindow && topWindow.EAPI.postMessageToNative('getToken', null);
+                    }
+                    if (topWindow.tokenNum >= 1) {
+                        //当token过期时像客户端请求新的token
+                        if (topWindow.EAPI.isIOS()) {
+                            //topWindow && topWindow.EAPI.postMessageToNative('overdueGetToken', null);
+                            console.log('有可能token失效，问题待处理')
+                        } else if (topWindow.EAPI.isAndroid()) {
+                            topWindow.AndroidTokenurl = topWindow.redcore.getNewToken();
+                        }
+                        token_flag = true;
+                    }
+                    if (token_flag) {
+                        if (topWindow.EAPI.isIOS()) {
+                            console.log('拿到客户端给我的token地址' + topWindow.tokenUrl);
+                        } else if (topWindow.EAPI.isAndroid()) {
+                            //console.log('拿到客户端给我的token地址'+topWindow.AndroidTokenurl);
+                        }
+                        token_flag = false;
+                        var oldHref = aWin.location.href;
+                        /* 拼接token 重新登录 */
+                        if (oldHref && topWindow.EAPI.isIOS() && topWindow.tokenUrl) {
+                            aWin.location.href = "http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=" + topWindow.tokenUrl;
+                        } else if (oldHref && topWindow.EAPI.isAndroid() && topWindow.AndroidTokenurl) {
+                            ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=" + topWindow.AndroidTokenurl);
+                            if (topWindow.tokenNum > 2) {
+                                top.location.reload();
+                            }
+                            if (topWindow.EAPI.isIOS() && !topWindow.tokenUrl) { top.location.reload(); }
+                        }
+                    }
+                    sessionStorage.setItem('getToken', true);
+                }, false);
             }
+            // if (aWin.location.href.indexOf('Vpn-sso.jsp') !== -1 || !topWindow.tokenUrl) {
+            //     if (token_flag && topWindow.tokenNum >= 1 && topWindow.tokenNum <= 3) {
+            //         if (topWindow.EAPI.isIOS() && !topWindow.tokenUrl) { location.reload(); }
+            //     }
+            // }
             // },false);
             /*  获取token地址  */
-            if (token_flag) {
-              if(topWindow.EAPI.isIOS()){
-                 //console.log('拿到客户端给我的token地址'+topWindow.tokenUrl);
-              }else if(topWindow.EAPI.isAndroid()){
-                //console.log('拿到客户端给我的token地址'+topWindow.AndroidTokenurl);
-              }
-                token_flag = false;
-              	var oldHref = aWin.location.href;
-              /* 拼接token 重新登录 */
-              if(oldHref && topWindow.EAPI.isIOS()){
-                ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.tokenUrl);
-              }else if(oldHref && topWindow.EAPI.isAndroid()){
-                ysp.appMain.reloadPage("http://192.168.200.63/login/Vpn-sso.jsp?tokenStr="+topWindow.AndroidTokenurl);
-              }
-            }
+
             /*  获取token地址  */
             /* ajax请求角标数据 */
             if (aWin.location.href.indexOf('main.jsp') !== -1) {
-                  var usercookie = doc.cookie.split(';')
-                  	for(var i =0;i<usercookie.length;i++){
-                    if(usercookie[i].indexOf('loginid') !== -1){
-                      topWindow.userid= usercookie[i].split('=')[1];
-                      // console.log(topWindow.userid)
+                var usercookie = doc.cookie.split(';')
+                for (var i = 0; i < usercookie.length; i++) {
+                    if (usercookie[i].indexOf('loginid') !== -1) {
+                        topWindow.userid = usercookie[i].split('=')[1];
+                        // console.log(topWindow.userid)
                     }
                 }
-                  var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
-                      soapData = soapData + ' <SOAP:Body>';
-                      soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://pub.fsig.com.cn/">';
-                      soapData = soapData + ' <psCode>'+topWindow.userid+'</psCode>';
-                      soapData = soapData + ' </GetTodoCountInfoByPsCode>';
-                      soapData = soapData + ' </SOAP:Body>';
-                      soapData = soapData + ' </SOAP:Envelope>';
+                var soapData = ' <SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">';
+                soapData = soapData + ' <SOAP:Body>';
+                soapData = soapData + ' <GetTodoCountInfoByPsCode xmlns="http://pub.fsig.com.cn/">';
+                soapData = soapData + ' <psCode>' + topWindow.userid + '</psCode>';
+                soapData = soapData + ' </GetTodoCountInfoByPsCode>';
+                soapData = soapData + ' </SOAP:Body>';
+                soapData = soapData + ' </SOAP:Envelope>';
                 var xmlhttp = new XMLHttpRequest();
-              if(topWindow.EAPI.isIOS()){
-                //测试环境 - IOS角标
-                	xmlhttp.open("post",'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
-                //正式环境 - IOS角标
-                	//xmlhttp.open("post",'http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
-              }else{
-                //测试环境 - Andriod角标
-                  xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
-                //正式环境 - Andriod角标
-              	//xmlhttp.open("post", "http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl", true);
-              }
+                if (topWindow.EAPI.isIOS()) {
+                    //测试环境 - IOS角标
+                    xmlhttp.open("post", 'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl', true);
+                    //正式环境 - IOS角标
+                    //xmlhttp.open("post",'http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
+                } else {
+                    //测试环境 - Andriod角标
+                    xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
+                    //正式环境 - Andriod角标
+                    //xmlhttp.open("post", "http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl", true);
+                }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         var xmldoc = (new DOMParser()).parseFromString(xmlhttp.responseText, 'text/xml');
                         topWindow.num.push(xmldoc.getElementsByTagName('return')[0].getElementsByTagName('todoCount')[0].textContent, xmldoc.getElementsByTagName('return')[0].getElementsByTagName('unreadCount')[0].textContent);
-                    }else if(xmlhttp.status == 400){
-                      topWindow.num.push('请求失败!');
+                    } else if (xmlhttp.status == 400) {
+                        topWindow.num.push('请求失败!');
                     }
                 }
                 xmlhttp.send(soapData);
@@ -1173,6 +1206,14 @@
             content: content
         }
     }
+    /* 调用场景 : 点击消息时 ，页面跳转进入登录页面。需要重定向. */
+    function _login(url) {
+        top.location.reload();
+        if (url !== '') {
+            ysp.runtime.Browser.activeBrowser.contentWindow.location.href = "http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=" + url;
+        }
+    }
+
     /* 调用场景 : 页面返回. */
     function _back(type) {
         if (typeof type == 'string') {
@@ -1206,18 +1247,20 @@
     function _num() {
         return topWindow.num;
     }
-		function _file(num){
-      topWindow.file = num;
-      return topWindow.file;
-    } 
+
+    function _file(num) {
+        topWindow.file = num;
+        return topWindow.file;
+    }
+
     function _forceMatchModels(args) {
-      if (typeof args === 'string') {
-        ysp.runtime.Model.setForceMatchModels([args]);
-      } else if (args instanceof Array) {
-        ysp.runtime.Model.setForceMatchModels(args);
-      } else {
-        console.error('forceMatchModels 参数类型不正确');
-      }
+        if (typeof args === 'string') {
+            ysp.runtime.Model.setForceMatchModels([args]);
+        } else if (args instanceof Array) {
+            ysp.runtime.Model.setForceMatchModels(args);
+        } else {
+            console.error('forceMatchModels 参数类型不正确');
+        }
     }
 
     /* 调用场景 : 适用于'结构为[ul li a]类型Menu强制匹配页面. */
@@ -1272,8 +1315,9 @@
             return contentWin.open(url, title);
         }
     }
-  	function _pageid(){
-      topWindow.activepageid = ysp.runtime.Context.activeContext.id;
+
+    function _pageid() {
+        topWindow.activepageid = ysp.runtime.Context.activeContext.id;
     }
     /* 调用场景 : 字符串前后去空格. */
     function _trim(str) {
