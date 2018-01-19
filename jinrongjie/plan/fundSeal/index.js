@@ -185,9 +185,16 @@
     getData_control172_tHZDlv: function (elem) {
       if (!elem) {
         return;
+      }var data = {};var content = "";var signMustMark = ""; //签字意见必填标示
+      if (elem.querySelector("#remarkSpan")) {
+        var signMustMarkDoc = elem.querySelector("#remarkSpan").querySelector("img");if (signMustMarkDoc) {
+          signMustMark = "true";
+        } else {
+          signMustMark = "false";
+        }
       }if (elem) {
-        return elem.querySelector("iframe").contentDocument.body.innerHTML;
-      }
+        content = elem.querySelector("iframe").contentDocument.body.innerHTML;
+      }data.content = content;data.signMustMark = signMustMark;return data;
     },
     doAction_uiControl151_5KOrM7: function (data, elem) {
       if (data.eventType == "change") {
@@ -195,8 +202,8 @@
       }
     },
     getTemplate_uiControl151_5KOrM7: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  textarea:function(e){\n    console.log(this.props.customData)\n    var _this=this;\n    var handler=_this.props.customHandler;\n    if(handler){\n      handler({\n        data:e.target.innerHTML,\n        eventType:\"change\"\n      })\n    }\n  },\n  render: function() {\n    var _this=this;\n    return (\n       <div className=\"ysp_sign_wrapper\">\n          <div className=\"ysp_askForLeave_title\">\u7B7E\u5B57\u610F\u89C1</div>\n          <div contentEditable='true' dangerouslySetInnerHTML = {{__html: _this.props.customData}} onBlur = {_this.textarea} style={{height:\"100px\"}}></div>\n      </div>\n\n    )\n  }\n});";
-      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  textarea: function textarea(e) {\n    console.log(this.props.customData);\n    var _this = this;\n    var handler = _this.props.customHandler;\n    if (handler) {\n      handler({\n        data: e.target.innerHTML,\n        eventType: \"change\"\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n    return React.createElement(\n      \"div\",\n      { className: \"ysp_sign_wrapper\" },\n      React.createElement(\n        \"div\",\n        { className: \"ysp_askForLeave_title\" },\n        \"\\u7B7E\\u5B57\\u610F\\u89C1\"\n      ),\n      React.createElement(\"div\", { contentEditable: \"true\", dangerouslySetInnerHTML: { __html: _this.props.customData }, onBlur: _this.textarea, style: { height: \"100px\" } })\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  getInitialState: function(){\n    return {\n      signMustMark: true\n    };\n  },  \n  textarea:function(e){\n    // console.log(this.props.customData)\n    var _this=this;\n    if(e.target.textContent.replace(/\\s/g, \"\")!==\"\"){\n      this.setState({signMustMark: false});\n    }else{\n     \tthis.setState({signMustMark: true});\n    } \n    var handler=_this.props.customHandler;\n    if(handler){\n      handler({\n        data:e.target.innerHTML,\n        eventType:\"change\"\n      })\n    }\n  },\n  render: function() {\n    var _this=this;\n    var data = _this.props.customData||{};\n    return (\n       <div className=\"ysp_sign_wrapper\">\n          <div className=\"ysp_askForLeave_title\">\u7B7E\u5B57\u610F\u89C1<i className={data.signMustMark==\"true\"&&_this.state.signMustMark ? \"must_mark\" : \"\"}></i></div>\n          <div contentEditable='true' dangerouslySetInnerHTML = {{__html: data.content}} onBlur = {_this.textarea} style={{height:\"100px\"}}></div>\n      </div>\n\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  getInitialState: function getInitialState() {\n    return {\n      signMustMark: true\n    };\n  },\n  textarea: function textarea(e) {\n    // console.log(this.props.customData)\n    var _this = this;\n    if (e.target.textContent.replace(/\\s/g, \"\") !== \"\") {\n      this.setState({ signMustMark: false });\n    } else {\n      this.setState({ signMustMark: true });\n    }\n    var handler = _this.props.customHandler;\n    if (handler) {\n      handler({\n        data: e.target.innerHTML,\n        eventType: \"change\"\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n    var data = _this.props.customData || {};\n    return React.createElement(\n      \"div\",\n      { className: \"ysp_sign_wrapper\" },\n      React.createElement(\n        \"div\",\n        { className: \"ysp_askForLeave_title\" },\n        \"\\u7B7E\\u5B57\\u610F\\u89C1\",\n        React.createElement(\"i\", { className: data.signMustMark == \"true\" && _this.state.signMustMark ? \"must_mark\" : \"\" })\n      ),\n      React.createElement(\"div\", { contentEditable: \"true\", dangerouslySetInnerHTML: { __html: data.content }, onBlur: _this.textarea, style: { height: \"100px\" } })\n    );\n  }\n});";
     },
     getData_control177_PgVsPV: function (elem) {
       if (!elem) {
