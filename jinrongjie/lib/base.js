@@ -711,6 +711,7 @@
            
           //获取文档预览 - 文档地址
           if(aWin.createDoc){
+            debugger
             aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
             
               var frmmain = aWin.frmmain;
@@ -725,10 +726,21 @@
               frmmain.method.value = "crenew_" + fieldbodyid;
               frmmain.target = "delzw";
               aWin.parent.delsave();
+                if(aWin.check_form(doc.frmmain,'requestname')){
+                if($G("needoutprint")) $G("needoutprint").value = "1";//标识点正文
+                doc.frmmain.src.value='save';
+                doc.frmmain.isremark.value='0';
+            //保存签章数据
+
+                        //附件上传
+                     aWin.StartUploadAll();
+                     aWin.checkuploadcompletBydoc();
+
+              }
   //             var requestid = doc.querySelector("#requestid").value;
   //             var rand = doc.querySelector("#requestid").nextElementSibling.value;
   //             var xhr0 = new XMLHttpRequest();
-  //             var paramURL = "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid="+requestid+"&rand=" + rand;
+  //             var paramURL = "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid= "+requestid+"&rand=" + rand;
   //             xhr0.open('POST', paramURL, true);
 
   //             xhr0.onreadystatechange = function () {
@@ -739,11 +751,23 @@
   //                 }
   //               }
   //             };
-
   //             xhr0.send();
-
             }; //把Unicode转成Ansi和把Ansi转换成Unicode
+            
           }
+          if(aWin.checkuploadcompletBydoc){
+             aWin.checkuploadcompletBydoc = function() {
+								debugger;
+                doc.frmmain.submit();
+                aWin.frmmain.target = aWin.nowtarget;
+                aWin.frmmain.action = aWin.nowaction;
+                if (doc.getElementById("iscreate")) doc.getElementById("iscreate").value = "0";
+                aWin.jQuery(aWin.$GetEle("flowbody")).attr("onbeforeunload", "");
+                //aWin.parent.clicktext();
+                if (doc.getElementById("needoutprint")) doc.getElementById("needoutprint").value = "";
+             }
+          }
+
 //           else if(aWin.createDoc&&topWindow.EAPI.isIOS()){
 //             aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
 //               var frmmain = aWin.frmmain;
