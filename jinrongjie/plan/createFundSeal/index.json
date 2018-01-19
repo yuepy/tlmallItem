@@ -360,6 +360,37 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control360_fTKDwo": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[1]/tbody"
+            }
+          ],
+          "force": true
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control360_fTKDwo"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -372,7 +403,8 @@
         "control259_nKBWpK",
         "control260_UET9bV",
         "control261_oaLTaQ",
-        "control256_bmROpq"
+        "control256_bmROpq",
+        "control360_fTKDwo"
       ],
       "anchors": [
         "control4_uDFBQc"
@@ -465,6 +497,16 @@
           "toContextId": "context31_RccVS6"
         }
       ]
+    },
+    "flow228_zih2tV": {
+      "fromContextId": "context31_RccVS6",
+      "fromAction": "doAction",
+      "fromControlId": "control360_fTKDwo",
+      "toContexts": [
+        {
+          "toContextId": "context31_RccVS6"
+        }
+      ]
     }
   },
   "pages": {
@@ -529,6 +571,21 @@
                       "events": {
                         "onDoAction": "doAction_uiControl243_ek06SH",
                         "onGetTemplate": "getTemplate_uiControl243_ek06SH"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl279_MrWbwk",
+                  "controlId": "control360_fTKDwo",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl279_MrWbwk",
+                        "onGetTemplate": "getTemplate_uiControl279_MrWbwk"
                       }
                     }
                   }

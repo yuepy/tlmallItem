@@ -696,6 +696,36 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control361_3GhTnD": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[1]/tbody"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control361_3GhTnD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -715,7 +745,8 @@
         "control192_GaNmBF",
         "control193_erPNu7",
         "control194_ECDCX3",
-        "control355_2iGaTc"
+        "control355_2iGaTc",
+        "control361_3GhTnD"
       ],
       "anchors": [
         "control96_fZKiT2"
@@ -939,6 +970,21 @@
                       "events": {
                         "onDoAction": "doAction_uiControl142_i6attl",
                         "onGetTemplate": "getTemplate_uiControl142_i6attl"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl281_ikkeVB",
+                  "controlId": "control361_3GhTnD",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl281_ikkeVB",
+                        "onGetTemplate": "getTemplate_uiControl281_ikkeVB"
                       }
                     }
                   }
@@ -1177,7 +1223,8 @@
           "test006",
           "1-资金调拨审批流程-张济天-2017-11-14",
           "test008",
-          "金融街集团发薪审批单-张济天-2017-11-28"
+          "金融街集团发薪审批单-张济天-2017-11-28",
+          "金融街集团发薪审批单-张济天-2018-01-19"
         ]
       }
     },
@@ -1192,7 +1239,8 @@
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330438&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330436&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
           "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339247&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=452187&isovertime=0"
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=452187&isovertime=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=1086363&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
         ],
         "context6_aweFC7": [
           "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=",
@@ -1870,6 +1918,56 @@
             "x-toolbar",
             "x-toolbar-left-row",
             "ysp_load_haha"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_doDelete",
+            "btn_forward",
+            "btn_print",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
           ]
         ],
         "context10_Tp4yhH": [

@@ -88,15 +88,14 @@
                       if ($(this).text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1]
-                        });
+                        arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'pdf',
-                          no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({
+                          name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
@@ -112,11 +111,9 @@
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
-                        arr3.push({
-                          name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'png',
-                          no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
@@ -124,8 +121,7 @@
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                       } else if ($(this).next().text().indexOf('ppt') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'ppt',
-                          no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                       } else {// arr3.push({
                         //   name: $(this).next().text().trim(),
                         //   stl: 'unknown',
@@ -150,10 +146,13 @@
                   var arr5 = 'yes';
                 } else {
                   var arr5 = 'no';
-                }arr2.push({ text: arr3, size: arr4, type: 'fujian', yes: arr5, delete: arr6 });
+                }arr2.push({ text: arr3, size: arr4,
+                  type: 'fujian', yes: arr5, delete: arr6
+                });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == false) {
-                  var arr4 = [];$(this).children("select").children("option").each(function () {
+                  var arr4 = [];
+                  $(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
                     }if ($(this)[0].selected == false) {
@@ -167,8 +166,7 @@
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4,
-                    type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
@@ -219,8 +217,7 @@
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().find("a").length > 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2'
-              });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().children().length == 2 && $(this).next().children("span").length == 1 && $(this).next().children("input").length == 1) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text())) {
@@ -238,8 +235,7 @@
                     // if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('addDocReadTag') !== -1) {
                     if ($(this).attr('onclick') !== undefined && $(this).attr('onclick').indexOf('openDocExt') !== -1) {
                       if ($(this).text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'txt',
-                          no: $(this).attr('onClick').match(/\d+/g)[3] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'txt', no: $(this).attr('onClick').match(/\d+/g)[3] });
                       } else if ($(this).text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'doc', no: $(this).attr('onClick').match(/\d+/g)[3] });
                       } else if ($(this).text().indexOf('pdf') !== -1) {
@@ -271,12 +267,12 @@
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'png',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
-                        arr3.push({
-                          name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
                         if ($(this).attr('onClick').match(/\d+/g).length === 4) {
                           arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
@@ -284,14 +280,14 @@
                           arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
                         }
                       }
-                    }if ($(this)[0].className == 'progressCancel') {
+                    }
+                    if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf',
-                          no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
@@ -314,8 +310,7 @@
                     }
                   });
                 }if ($(this).children("table").find(".btnFlow").length > 0) {
-                  var arr6 = [];
-                  $(this).children("table").find(".btnFlow").each(function (i) {
+                  var arr6 = [];$(this).children("table").find(".btnFlow").each(function (i) {
                     if ($(this).attr('onclick') && $(this).attr('onclick').indexOf('onChangeSharetype') !== -1) {
                       arr6.push("111");
                     }
@@ -333,7 +328,8 @@
                     }if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'false' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"),
+                    mark: '1', disabled: 'false' });
                 } else if ($(this).children("select").length > 0 && $(this).children("select")[0].disabled == true) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
@@ -341,7 +337,8 @@
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"),
+                    mark: '1', disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
@@ -445,7 +442,7 @@
           };xhr.send();
         }debugger;var requestid = elem.ownerDocument.querySelector("#requestid").value;var rand = elem.ownerDocument.querySelector("#requestid").nextElementSibling.value;var xhr0 = new XMLHttpRequest();var paramURL = "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid=" + requestid + "&rand=" + rand;xhr0.open('POST', paramURL, true);xhr0.onreadystatechange = function () {
           if (xhr0.readyState == 4 && xhr0.status == 200) {
-            getUrl = xhr0.responseText;getUrl = ysp.customHelper.trim(getUrl);console.log(xhr0.response);xxx();
+            getUrl = xhr0.responseText;getUrl = ysp.customHelper.trim(getUrl);console.log(xhr0);xxx();
           }
         };xhr0.send();function resolveResponse(response) {
           response = response.toString();var resp = response.replace(" ", "");resp = resp.replace("\r\n", "");var url = "http://192.168.200.63" + getValue(resp, /document.getElementById\("WebOffice"\).WebUrl="(.*)";/, true);var recodeID = getValue(resp, /document.getElementById\("WebOffice"\).RecordID="(.*)";/);var fileName = getValue(resp, /document.getElementById\("WebOffice"\).FileName="(.*)";/);var fileType = getValue(resp, /document.getElementById\("WebOffice"\).FileType="(.*)";/);var FILETYPE = getValue(resp, /document.getElementById\("WebOffice"\).FileType="(.*)";/, true);var userID = getValue(resp, /document.getElementById\("WebOffice"\).WebSetMsgByName\("USERID","(.*)"\);/);var userName = getValue(resp, /document.getElementById\("WebOffice"\).UserName="(.*)";/);var template = getValue(resp, /document.getElementById\("WebOffice"\).Template="(.*)";/);var countLength = 91 + recodeID.length + fileName.length + fileType.length + userName.length + userID.length;var options = { extInfo: "JINGE", type: "document", downloadType: "post", docName: "test", docType: FILETYPE, downloadUrl: url, downloadHttpHeaders: { cookie: elem.ownerDocument.cookie }, downloadHttpParams: [{ key: "DBSTEP!@#$V3.0!@#$!@#$!@#$!@#$!@#$" + countLength.toString() + "!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$0!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$0!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$!@#$DBSTEP", value: "Ggt7=g=8" }, { key: "OPTION", value: "7glxGgIt7g6w" }, { key: "RECORDID", value: recodeID }, { key: "FILENAME", value: fileName }, { key: "FILETYPE", value: fileType }, { key: "USERNAME", value: userName }, { key: "USERID", value: userID }] };if (ysp.appMain.isAndroid()) {
