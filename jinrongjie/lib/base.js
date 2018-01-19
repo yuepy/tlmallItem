@@ -708,147 +708,66 @@
             }
 
 
-            //正文预览
-            //           aWin.check_form=function(thiswins,items){
+           
+          //获取文档预览 - 文档地址
+          if(aWin.createDoc&&topWindow.EAPI.isAndroid()){
+            aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
+            
+              var frmmain = aWin.frmmain;
+              var $G = aWin.$G;
 
-            //             var window = aWin;
-            //             var document = doc;
-            //           //    var usercookie = doc.cookie.split(';')
-            //           //     for(var i =0;i<usercookie.length;i++){
-            //           //     if(usercookie[i].indexOf('loginid') !== -1){
-            //           //       topWindow.userid= usercookie[i].split('=')[1];
-            //           //       // console.log(topWindow.userid)
-            //           //     }
-            //           // }
-            //             /* added by cyril on 2008-08-14 for td:8521 */
-            //             var isconn = false;
-            //             try {
-            //               var xmlhttp;
-            //                 if (window.XMLHttpRequest) {
-            //                   xmlhttp = new XMLHttpRequest();
-            //                 }  
-            //                 else if (window.ActiveXObject) {
-            //                   xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");  
-            //                 }
+              if ("0" == "9" || "0" == "1") {
+                frmmain.action = "RequestDocView.jsp?requestid=740245&docValue=" + docVlaue;
+              } else {
+                frmmain.action = "RequestOperation.jsp?docView=" + isedit + "&docValue=" + docVlaue + "&isFromEditDocument=true";
+              }
 
-            //                 var URL = "http://192.168.200.63/systeminfo/CheckConn.jsp?userid="+topWindow.userid+"&time="+new Date();
-            //                 xmlhttp.open("GET",URL, false);
-            //                 xmlhttp.send(null);
-            //                 var result = xmlhttp.status;
-            //                 if(result==200) {
-            //                   isconn = true;
-            //                   var response_flag = xmlhttp.responseText;
-            //                   if(response_flag!='0') {
-            //                     var flag_msg = '';
-            //                     if(response_flag=='1') {
-            //                       // var diag = new Dialog();
-            //                       // diag.Width = 300;
-            //                       // diag.Height = 180;
-            //                       // diag.ShowCloseButton=false;
-            //                       // diag.Title = "网页超时提醒";
-            //                       // //diag.InvokeElementId="pageOverlay"
-            //                       // diag.URL = "/wui/theme/ecology7/page/loginSmall.jsp?username=ychwang";
-            //                       // diag.show();
-            //                       // return false;
-            //                     }
-            //                     else if(response_flag=='2') {
-            //                       flag_msg = '网络故障或其它原因导致您连接不上服务器，请复制下重要信息稍候再提交！';
-            //                     }
-            //                     //主从帐户特殊处理 by alan for TD10156
-            //                     if(response_flag=='3') {
-            //                       flag_msg = '提交信息失败,该页面非当前帐号打开,请刷新页面后再提交!';
+              frmmain.method.value = "crenew_" + fieldbodyid;
+              frmmain.target = "delzw";
+              aWin.parent.delsave();
+  //             var requestid = doc.querySelector("#requestid").value;
+  //             var rand = doc.querySelector("#requestid").nextElementSibling.value;
+  //             var xhr0 = new XMLHttpRequest();
+  //             var paramURL = "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid="+requestid+"&rand=" + rand;
+  //             xhr0.open('POST', paramURL, true);
 
-            //                       return false;
-            //                     }
-            //                     flag_msg += '\r\n\r\n按【确定】继续,按【取消】停留在本页!';
-            //                       //alert(xmlhttp.responseText);
-            //                       return confirm(flag_msg);
-            //                     }
-            //                 }
-            //                 xmlhttp = null;
+  //             xhr0.onreadystatechange = function () {
+  //               if (xhr0.readyState == 4 && xhr0.status == 200) {
+  //                 topWindow.getUrl = xhr0.responseText.trim();
+  //                 if(topWindow.getUrl !== ''){
+  //                   topWindow.docFlag = true;
+  //                 }
+  //               }
+  //             };
 
-            //                 //检查多行文本框 oracle下检查HTML不能超过4000个字符
+  //             xhr0.send();
 
-            //                 try {
-            //                   var lenck = true;
-            //                   var tempfieldvlaue = document.getElementById("htmlfieldids").value;
-            //                   while(true) {
-            //                     var tempfield = tempfieldvlaue.substring(0, tempfieldvlaue.indexOf(","));
-            //                     tempfieldvlaue = tempfieldvlaue.substring(tempfieldvlaue.indexOf(",")+1);
-            //                     var fieldid = tempfield.substring(0, tempfield.indexOf(";"));
-            //                     var fieldname = tempfield.substring(tempfield.indexOf(";")+1);
-            //                     if(fieldname=='') break;
-            //                     if(!aWIn.checkLengthOnly(fieldid,'4000',fieldname,'当前文本长度','文本长度不能超过','1个中文字符等于2个长度')) {
-            //                       lenck = false;
-            //                       break;
-            //                     }
-            //                   }
-            //                   if(lenck==false) return false;
-            //                 }
-            //                 catch(e) {}
+            }; //把Unicode转成Ansi和把Ansi转换成Unicode
+          }else{
+            aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
+              var frmmain = aWin.frmmain;
+              var $G = aWin.$G;
+              if("0"=="9"||"0"=="1"){
+                  frmmain.action = "RequestDocView.jsp?requestid=784621&docValue="+docVlaue;
+                }else{
+                frmmain.action = "RequestOperation.jsp?docView="+isedit+"&docValue="+docVlaue+"&isFromEditDocument=true";
+                }
+              frmmain.method.value = "crenew_"+fieldbodyid ;
+              frmmain.target="delzw";
+              aWin.parent.delsave();
+              if(aWin.check_form(doc.frmmain,'requestname')){
+                if($G("needoutprint")) $G("needoutprint").value = "1";//标识点正文
+                doc.frmmain.src.value='save';
+                doc.frmmain.isremark.value='0';
+            //保存签章数据
 
-            //             }
-            //             catch(e) {
-            //               return aWin.check_conn();
-            //             }
-            //             if(!isconn)
-            //               return aWin.check_conn();
-            //               /* end by cyril on 2008-08-14 for td:8521 */
+                        //附件上传
+                    // StartUploadAll();
+                    // checkuploadcompletBydoc();
 
-            //             aWin.thiswin = thiswins;
-            //             items = ","+items + ",";
-
-            //             var tempfieldvlaue1 = "";
-            //             try{
-            //               tempfieldvlaue1 = document.getElementById("htmlfieldids").value;
-            //             }catch (e) {
-            //             }
-            // 						var thiswin = aWin.thiswin;
-            //             var tmpname = aWin.tmpname;
-            //             var tmpvalue = aWin.tmpvalue;
-            //             for(i=1;i<=thiswin.length;i++){
-            //               tmpname = thiswin.elements[i-1].name;
-            //               tmpvalue = thiswin.elements[i-1].value;
-            //                 if(tmpvalue==null){
-            //                     continue;
-            //                 }
-
-            //               if(tmpname!="" && items.indexOf(","+tmpname+",")!=-1){
-            //                 if(tempfieldvlaue1.indexOf(tmpname+";") == -1){
-            //                   while(tmpvalue.indexOf(" ") >= 0){
-            //                     tmpvalue = tmpvalue.replace(" ", "");
-            //                   }
-            //                   while(tmpvalue.indexOf("\r\n") >= 0){
-            //                     tmpvalue = tmpvalue.replace("\r\n", "");
-            //                   }
-
-            //                   if(tmpvalue == ""){
-            //                     if(thiswin.elements[i-1].getAttribute("temptitle")!=null){
-            //                       alert("\""+thiswin.elements[i-1].getAttribute("temptitle")+"\""+"未填写！");
-            //                       return false;
-            //                     }else{
-            //                       alert("必要信息不完整！");
-            //                       return false;
-            //                     }
-            //                   }
-            //                 } else {
-            //                   var divttt=document.createElement("div");
-            //                   divttt.innerHTML = tmpvalue;
-            //                   var tmpvaluettt = jQuery.trim(jQuery(divttt).text());
-            //                   if(tmpvaluettt == ""){
-            //                     if(thiswin.elements[i-1].getAttribute("temptitle")!=null){
-            //                       alert("\""+thiswin.elements[i-1].getAttribute("temptitle")+"\""+"未填写！");
-            //                       return false;
-            //                     }else{
-            //                       alert("必要信息不完整！");
-            //                       return false;
-            //                     }
-            //                   }
-            //                 }
-            //               }
-            //             }
-            //             return true;
-            //           }
+              }
+            }
+          }
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象

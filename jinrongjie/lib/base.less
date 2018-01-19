@@ -35,7 +35,9 @@
 *{
  transition: none!important; 
 }
-
+div[data-componentsid="uiControl278_Hrw7sw"]{
+  display: none;
+}
 //loading图标
 @-webkit-keyframes rotation{
   from {-webkit-transform: rotate(0deg);}
@@ -2579,6 +2581,17 @@ div[data-ysp-modelid='askForLeave'],div[data-ysp-modelid='createAskForLeave'],di
             // width: 100%;
           }
         }
+        .checked,.unchecked{
+          border: 1px solid #A1E15C;
+          border-radius: 10px;
+          padding: 0 5px;
+          margin-right: 10px;
+          color:#A1E15C;
+        }
+        .unchecked{
+          border: 1px solid #999;
+          color:#999;
+        }
         .fileIcon{
             position: absolute;
             top: 0;
@@ -3245,6 +3258,7 @@ div[data-ysp-modelid="fundSeal"],div[data-ysp-modelid='createFundSeal']{
         .select_disable{
           color:#ddd;
         }
+        
         .fileDown{
           .word{
             overflow: hidden;
