@@ -185,16 +185,18 @@
     getData_control172_tHZDlv: function (elem) {
       if (!elem) {
         return;
-      }var data = {};var content = "";var signMustMark = ""; //签字意见必填标示
+      }var data = {};var signMustMark = ""; //签字意见必填标示
       if (elem.querySelector("#remarkSpan")) {
         var signMustMarkDoc = elem.querySelector("#remarkSpan").querySelector("img");if (signMustMarkDoc) {
           signMustMark = "true";
         } else {
           signMustMark = "false";
         }
-      }if (elem) {
-        content = elem.querySelector("iframe").contentDocument.body.innerHTML;
-      }data.content = content;data.signMustMark = signMustMark;return data;
+      }if (elem && elem.querySelector("iframe")) {
+        var content = elem.querySelector("iframe").contentDocument.body.innerHTML;data.content = content;
+      } else {
+        var content = "空td";data.content = content;
+      }data.signMustMark = signMustMark;return data;
     },
     doAction_uiControl151_5KOrM7: function (data, elem) {
       if (data.eventType == "change") {
@@ -202,8 +204,8 @@
       }
     },
     getTemplate_uiControl151_5KOrM7: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  getInitialState: function(){\n    return {\n      signMustMark: true\n    };\n  },  \n  textarea:function(e){\n    // console.log(this.props.customData)\n    var _this=this;\n    if(e.target.textContent.replace(/\\s/g, \"\")!==\"\"){\n      this.setState({signMustMark: false});\n    }else{\n     \tthis.setState({signMustMark: true});\n    } \n    var handler=_this.props.customHandler;\n    if(handler){\n      handler({\n        data:e.target.innerHTML,\n        eventType:\"change\"\n      })\n    }\n  },\n  render: function() {\n    var _this=this;\n    var data = _this.props.customData||{};\n    return (\n       <div className=\"ysp_sign_wrapper\">\n          <div className=\"ysp_askForLeave_title\">\u7B7E\u5B57\u610F\u89C1<i className={data.signMustMark==\"true\"&&_this.state.signMustMark ? \"must_mark\" : \"\"}></i></div>\n          <div contentEditable='true' dangerouslySetInnerHTML = {{__html: data.content}} onBlur = {_this.textarea} style={{height:\"100px\"}}></div>\n      </div>\n\n    )\n  }\n});";
-      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  getInitialState: function getInitialState() {\n    return {\n      signMustMark: true\n    };\n  },\n  textarea: function textarea(e) {\n    // console.log(this.props.customData)\n    var _this = this;\n    if (e.target.textContent.replace(/\\s/g, \"\") !== \"\") {\n      this.setState({ signMustMark: false });\n    } else {\n      this.setState({ signMustMark: true });\n    }\n    var handler = _this.props.customHandler;\n    if (handler) {\n      handler({\n        data: e.target.innerHTML,\n        eventType: \"change\"\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n    var data = _this.props.customData || {};\n    return React.createElement(\n      \"div\",\n      { className: \"ysp_sign_wrapper\" },\n      React.createElement(\n        \"div\",\n        { className: \"ysp_askForLeave_title\" },\n        \"\\u7B7E\\u5B57\\u610F\\u89C1\",\n        React.createElement(\"i\", { className: data.signMustMark == \"true\" && _this.state.signMustMark ? \"must_mark\" : \"\" })\n      ),\n      React.createElement(\"div\", { contentEditable: \"true\", dangerouslySetInnerHTML: { __html: data.content }, onBlur: _this.textarea, style: { height: \"100px\" } })\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  getInitialState: function(){\n    return {\n      signMustMark: true\n    };\n  },\n  textarea:function(e){\n    // console.log(this.props.customData)\n    var _this=this;\n    if(e.target.textContent.replace(/\\s/g, \"\")!==\"\"){\n      this.setState({signMustMark: false});\n    }else{\n     \tthis.setState({signMustMark: true});\n    } \n    var handler=_this.props.customHandler;\n    if(handler){\n      handler({\n        data:e.target.innerHTML,\n        eventType:\"change\"\n      })\n    }\n  },\n  render: function() {\n    var _this=this;\n    var data = _this.props.customData || {};\n    return (\n       <div className=\"ysp_sign_wrapper\">\n          <div className=\"ysp_askForLeave_title\">\u7B7E\u5B57\u610F\u89C1<i className={data.signMustMark==\"true\"&&_this.state.signMustMark ? \"must_mark\" : \"\"}></i></div>\n          {this.props.customData==\"\u7A7Atd\"? <div style={{border:\"none\"}}><textarea disabled></textarea></div>:<div contentEditable='true' dangerouslySetInnerHTML = {{__html: data.content}} onBlur = {_this.textarea} style={{height:\"100px\"}}></div>}\n      </div>\n\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  getInitialState: function getInitialState() {\n    return {\n      signMustMark: true\n    };\n  },\n  textarea: function textarea(e) {\n    // console.log(this.props.customData)\n    var _this = this;\n    if (e.target.textContent.replace(/\\s/g, \"\") !== \"\") {\n      this.setState({ signMustMark: false });\n    } else {\n      this.setState({ signMustMark: true });\n    }\n    var handler = _this.props.customHandler;\n    if (handler) {\n      handler({\n        data: e.target.innerHTML,\n        eventType: \"change\"\n      });\n    }\n  },\n  render: function render() {\n    var _this = this;\n    var data = _this.props.customData || {};\n    return React.createElement(\n      \"div\",\n      { className: \"ysp_sign_wrapper\" },\n      React.createElement(\n        \"div\",\n        { className: \"ysp_askForLeave_title\" },\n        \"\\u7B7E\\u5B57\\u610F\\u89C1\",\n        React.createElement(\"i\", { className: data.signMustMark == \"true\" && _this.state.signMustMark ? \"must_mark\" : \"\" })\n      ),\n      this.props.customData == \"\u7A7Atd\" ? React.createElement(\n        \"div\",\n        { style: { border: \"none\" } },\n        React.createElement(\"textarea\", { disabled: true })\n      ) : React.createElement(\"div\", { contentEditable: \"true\", dangerouslySetInnerHTML: { __html: data.content }, onBlur: _this.textarea, style: { height: \"100px\" } })\n    );\n  }\n});";
     },
     getData_control177_PgVsPV: function (elem) {
       if (!elem) {
@@ -512,15 +514,16 @@
         return;
       }var data = { basicInfo: { actEmergency: "", actMsgAlert: "" }, content: '' };if (elem && elem.textContent.indexOf("流程基本信息") !== -1) {
         /************************流程基本信息***********************/ //选中的紧急程度
-        var egyArrInput = elem.querySelectorAll("tr")[1].querySelectorAll("td")[1].querySelectorAll("input");if (egyArrInput.length > 0) {
+        var egyArrInput = elem.querySelectorAll("tr")[1].querySelectorAll("td")[1].querySelectorAll("input:not([type='hidden'])");if (egyArrInput.length > 0) {
           for (var n = 0; n < egyArrInput.length; n++) {
             if (egyArrInput[n].checked) {
               data.basicInfo.actEmergency = n + 2;
             }
-          } //选中的短信提醒
+          }
         } else {
           data.content = elem.querySelectorAll("tr")[1].querySelectorAll("td")[1].textContent.trim();
-        }var msgArrInput = elem.querySelectorAll("tr")[1].querySelectorAll("td")[3].querySelectorAll("input");for (var n = 0; n < msgArrInput.length; n++) {
+        } //选中的短信提醒
+        var msgArrInput = elem.querySelectorAll("tr")[1].querySelectorAll("td")[3].querySelectorAll("input");for (var n = 0; n < msgArrInput.length; n++) {
           if (msgArrInput[n].checked) {
             data.basicInfo.actMsgAlert = n + 2;
           }
