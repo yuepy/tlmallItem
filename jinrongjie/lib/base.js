@@ -82,12 +82,6 @@
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
-            // if (aWin.location.href.indexOf('Login.jsp') != -1 && (topWindow.tokenUrl <= 3 && topWindow.tokenNum !== null)) {
-            //     // debugger;
-            //     // if (topWindow.EAPI.isIOS() && topWindow.tokenUrl) {
-            //     //     top.location.reload();
-            //     // }
-            // 
             var Modelid = ysp.runtime.Model.modelsStack.map(function(d, i) {
                 if (i == 0) {
                     return d.model.id
@@ -510,43 +504,6 @@
             }
 
             /* 前插 - 后插 选人跨页面传值 */
-
-
-
-            //           if(aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=&splitflag=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp?resourceids=') !== -1 || aWin.location.href.indexOf('MultiRequestBrowser.jsp') !== -1 ){
-            //             if(aWin.doSearch){
-            //               aWin.doSearch = function(){
-            //                 debugger;
-            //                 aWin.setResourceStr();
-            //                 doc.all("resourceids").value = aWin.resourceids.substring(1) ;
-            //                 doc.SearchForm.submit();
-            //               }
-            //             }
-            //             if(aWin.reloadResourceArray){
-            //                  aWin.reloadResourceArray = function(){
-            //               aWin.resourceArray = new Array();
-            //                 var destList = $("select[name=srcList]")[0];
-            //                 for(var i=0;i<destList.options.length;i++){
-            //                   aWin.resourceArray[i] = destList.options[i].value+"~"+destList.options[i].text ;
-            //                 }
-            //                 //alert(resourceArray.length);
-            //               }
-            //             }
-            //          	if(aWin.setResourceStr){
-            //             aWin.setResourceStr = function(){
-
-            //                 aWin.resourceids ="";
-            //                 aWin.resourcenames = "";
-            //                 for(var i=0;i<aWin.resourceArray.length;i++){
-            //                   aWin.resourceids += ","+aWin.resourceArray[i].split("~")[0] ;
-            //                   aWin.resourcenames += ","+aWin.resourceArray[i].split("~")[1] ;
-            //                 }
-            //                 //alert(resourceids+"--"+resourcenames);
-            //                 $("input[name=resourceids]").val(aWin.resourceids.substring(1));
-            //               }
-            //           }
-
-            //           }
             /*  showModelDialog 相关流程 跨页面传值兼容  */
             var newAlert = aWin.alert;
             aWin.alert = function() {
@@ -711,7 +668,6 @@
            
           //获取文档预览 - 文档地址
           if(aWin.createDoc){
-            debugger
             aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
             
               var frmmain = aWin.frmmain;
@@ -737,27 +693,11 @@
                      aWin.checkuploadcompletBydoc();
 
               }
-  //             var requestid = doc.querySelector("#requestid").value;
-  //             var rand = doc.querySelector("#requestid").nextElementSibling.value;
-  //             var xhr0 = new XMLHttpRequest();
-  //             var paramURL = "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid= "+requestid+"&rand=" + rand;
-  //             xhr0.open('POST', paramURL, true);
-
-  //             xhr0.onreadystatechange = function () {
-  //               if (xhr0.readyState == 4 && xhr0.status == 200) {
-  //                 topWindow.getUrl = xhr0.responseText.trim();
-  //                 if(topWindow.getUrl !== ''){
-  //                   topWindow.docFlag = true;
-  //                 }
-  //               }
-  //             };
-  //             xhr0.send();
             }; //把Unicode转成Ansi和把Ansi转换成Unicode
             
           }
           if(aWin.checkuploadcompletBydoc){
              aWin.checkuploadcompletBydoc = function() {
-								debugger;
                 doc.frmmain.submit();
                 aWin.frmmain.target = aWin.nowtarget;
                 aWin.frmmain.action = aWin.nowaction;
@@ -768,31 +708,6 @@
              }
           }
 
-//           else if(aWin.createDoc&&topWindow.EAPI.isIOS()){
-//             aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
-//               var frmmain = aWin.frmmain;
-//               var $G = aWin.$G;
-//               if("0"=="9"||"0"=="1"){
-//                   frmmain.action = "RequestDocView.jsp?requestid=784621&docValue="+docVlaue;
-//                 }else{
-//                 frmmain.action = "RequestOperation.jsp?docView="+isedit+"&docValue="+docVlaue+"&isFromEditDocument=true";
-//                 }
-//               frmmain.method.value = "crenew_"+fieldbodyid ;
-//               frmmain.target="delzw";
-//               aWin.parent.delsave();
-//               if(aWin.check_form(doc.frmmain,'requestname')){
-//                 if($G("needoutprint")) $G("needoutprint").value = "1";//标识点正文
-//                 doc.frmmain.src.value='save';
-//                 doc.frmmain.isremark.value='0';
-//             //保存签章数据
-
-//                         //附件上传
-//                     // StartUploadAll();
-//                     // checkuploadcompletBydoc();
-
-//               }
-//             }
-//           }
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象

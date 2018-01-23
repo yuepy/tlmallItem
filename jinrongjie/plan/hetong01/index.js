@@ -311,20 +311,20 @@
       }if (data.eventType == 'about2') {
         elem.ownerDocument.defaultView.eval(elem.querySelector('button[title="相关流程"]').onclick());
       }if (data.eventType == 'preview') {
-        setTimeout(function () {
+        debugger;setTimeout(function () {
           ysp.appMain.hideLoading();
         }, 1000); // debugger; //每个文件的onclick中的第二个number
         var number = data.dataCustom.number;var index = data.dataCustom.index;var row = data.dataCustom.row; //文件类型
-        var targetTd = $(elem).children("table").eq(1).children("tbody").children("tr").children("td").eq(row);var file = $(targetTd).find("tbody").eq(1).children("tr").eq(index).find("#selectDownload").find("button");var type = data.dataCustom.type; //现在的文件名称
-        var text = data.dataCustom.text; //拼接下载地址
-        var _url = "";if ($(file)[0].getAttribute("onclick").indexOf("top.location")) {
+        var targetTd = $(elem).children("table").eq(1).children("tbody").children("tr").children("td").eq(row);var file = $(targetTd).find("tbody").eq(1).children("tr").eq(index).find("#selectDownload").find("button"); //现在的文件名称
+        var type = data.dataCustom.type;var text = data.dataCustom.text; //拼接下载地址
+        text = text.replace(/\(.*/, '');var _url = "";if ($(file)[0].getAttribute("onclick").indexOf("top.location")) {
           var str = $(file)[0].getAttribute("onclick").match(/\/.*[0-9]/g);_url = 'http://192.168.200.63' + str;
         } else {
           _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';
-        }if (ysp.appMain.isIOS()) {
+        }console.log(_url + "&_ysp_attachment_fileName=" + text);if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url;console.log(top.loaction.href);
+          top.location.href = _url + "&_ysp_attachment_fileName=" + text;console.log(top.loaction.href);
         }
       }if (data.eventType == 'selectFile') {
         $(elem).find('#Filedata').eq(0).click();$(elem).find('#Filedata').eq(0)[0].parentElement.setAttribute('file-num', '1');
