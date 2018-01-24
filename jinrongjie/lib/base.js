@@ -2,6 +2,7 @@
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function(win, ysp) {
     function wdlssrds() {
+      debugger;
         var 我低射 = document.querySelector('iframe[src*="&token="]');
         var 我低了个射 = document.querySelector('iframe[src*="main.jsp"]');
         if (我低射 && !sessionStorage.isLogin) {
