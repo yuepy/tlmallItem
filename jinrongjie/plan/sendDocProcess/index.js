@@ -35,7 +35,7 @@
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n\tvalue: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n\t_inherits(_class, _Component);\n\n\tfunction _class() {\n\t\t_classCallCheck(this, _class);\n\n\t\tvar _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this));\n\n\t\t_this2.onChange = function (e) {\n\t\t\tvar handler = _this2.props.customHandler;\n\t\t\tif (handler) {\n\t\t\t\thandler({\n\t\t\t\t\tdata: e.target.textContent,\n\t\t\t\t\teventType: \'dataChange\'\n\t\t\t\t});\n\t\t\t}\n\t\t};\n\n\t\treturn _this2;\n\t}\n\n\t_createClass(_class, [{\n\t\tkey: \'render\',\n\t\tvalue: function render() {\n\t\t\tvar _this = this;\n\t\t\tvar data = this.props.customData;\n\t\t\tif (data == null || data == undefined) {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\treturn React.createElement(\n\t\t\t\t\'div\',\n\t\t\t\t{ className: \'ysp-custom-textarea\' },\n\t\t\t\tReact.createElement(\'div\', { contentEditable: \'true\', className: \'cutom-textarea\', dangerouslySetInnerHTML: { __html: data }, onBlur: _this.onChange.bind(_this) })\n\t\t\t);\n\t\t}\n\t}]);\n\n\treturn _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
 
-    getData_control202_bfz1Gc: function getData_control202_bfz1Gc(elem) {
+    getData_control202_bfz1Gc: function (elem) {
       if (!elem) {
         return;
       }if (elem) {
@@ -114,7 +114,7 @@
         });data.titles = titles;data.content = content;data.fileSize = fileSize;data.editData = editData;data.multiply = multiply;data.enableDeleteFile = enableDeleteFile;return data;
       }
     },
-    doAction_uiControl184_TH2ZZ2: function doAction_uiControl184_TH2ZZ2(data, elem) {
+    doAction_uiControl184_TH2ZZ2: function (data, elem) {
       var clickType = data.eventType;var fileIndex = data.dataCustom;if (clickType == 'downLoad') {
         var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick'); // var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
         if (clickContent.indexOf('top.location') !== -1) {
@@ -141,10 +141,10 @@
         setTimeout(function () {
           ysp.appMain.hideLoading();
         }, 1000);var _url = 'http://192.168.200.63' + jumpUrl; // console.log(_url);
-        if (ysp.appMain.isIOS()) {
+        var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url;
+          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
         }
       }switch (fileIndex.type) {case 'title':
           elem.querySelector('input[temptitle="标题"]').value = fileIndex.value;break;case 'zhaiyao':
@@ -348,7 +348,7 @@
       var selfTemplate = 'import {\n  Component\n} from \'react\';\nimport {\n\tCustomHeader,Dialog,Alert\n} from \'ysp-custom-components\';\nexport default class extends Component {\n  constructor(props){\n    super(props);\n  }\n  btnClick(e){//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n    let handler=this.props.customHandler;\n    var target=e.target;\n    if(handler){\n      handler({\n        eventType:"docClick"\n      })\n    }\n  }\n  jumpDetail(e){//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n    var handler=this.props.customHandler;\n    var target=e.target;\n    if(handler){\n      handler({\n        data: target.getAttribute(\'data-index\'),\n        eventType:"jumpDetail"\n      })\n    }\n  }\n  render() {\n    var _this = this;\n    var data = this.props.customData;\n    if(data==null){\n      return null;\n    }\n    var docData = data.docData||[];\n    return (\n      <div className="ysp-manageraudit-relate-doc" style={{\'border-bottom\':\'10px solid #f4f4f4\'}}>\n        <span>{data&&data.title}</span>\n        <span><span onClick={_this.btnClick.bind(_this)} className="ysp-search-icon"></span></span>\n        <div className="relate-doc-process">\n        {docData.length>0&&\n          docData.map((fileName, fileIndex)=>{\n            return <div className="single-doc-process" data-index={fileIndex} onClick={_this.jumpDetail.bind(_this)}>{fileName}</div>\n          })\n        }\n        </div>\n      </div>\n    )\n  }\n}';
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n  }\n\n  _createClass(_class, [{\n    key: \'btnClick\',\n    value: function btnClick(e) {\n      //\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          eventType: "docClick"\n        });\n      }\n    }\n  }, {\n    key: \'jumpDetail\',\n    value: function jumpDetail(e) {\n      //\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n      var handler = this.props.customHandler;\n      var target = e.target;\n      if (handler) {\n        handler({\n          data: target.getAttribute(\'data-index\'),\n          eventType: "jumpDetail"\n        });\n      }\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData;\n      if (data == null) {\n        return null;\n      }\n      var docData = data.docData || [];\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-manageraudit-relate-doc\', style: { \'border-bottom\': \'10px solid #f4f4f4\' } },\n        React.createElement(\n          \'span\',\n          null,\n          data && data.title\n        ),\n        React.createElement(\n          \'span\',\n          null,\n          React.createElement(\'span\', { onClick: _this.btnClick.bind(_this), className: \'ysp-search-icon\' })\n        ),\n        React.createElement(\n          \'div\',\n          { className: \'relate-doc-process\' },\n          docData.length > 0 && docData.map(function (fileName, fileIndex) {\n            return React.createElement(\n              \'div\',\n              { className: \'single-doc-process\', \'data-index\': fileIndex, onClick: _this.jumpDetail.bind(_this) },\n              fileName\n            );\n          })\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
-    getData_control217_6L11zU: function getData_control217_6L11zU(elem) {
+    getData_control217_6L11zU: function (elem) {
       if (!elem) {
         return;
       }var data = {};var files = elem.querySelectorAll('.progressWrapper');var fileData = [];var oldFileLength = 0;if (elem.querySelector('#selectDownload')) {
@@ -367,7 +367,7 @@
         });
       }data.fileData = fileData;data.oldFileLength = oldFileLength;return data;
     },
-    doAction_uiControl199_H86Dp4: function doAction_uiControl199_H86Dp4(data, elem) {
+    doAction_uiControl199_H86Dp4: function (data, elem) {
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;if (elem.querySelector('a')) {
           if (elem.querySelectorAll('a').length > 0) {
@@ -396,10 +396,10 @@
         */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;console.log(_url);if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url;
+          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
         }
       }
     },

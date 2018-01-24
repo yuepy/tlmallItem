@@ -32,7 +32,7 @@
       var selfTemplate = '// \u6807\u9898\nmodule.exports = React.createClass({\n\trender: function () {\n\t\tvar data = this.props.customData || [];\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<div className="ysp-manager-audit-title">\n\t\t\t\t\t<div className="ysp-manager-audit-main-title">{data instanceof Array && data[0]}</div>\n\t\t\t\t\t<div className="ysp-manager-audit-subtitle">\n\t\t\t\t\t\t<span>\u7F16\u53F7\uFF1A</span>\n\t\t\t\t\t\t<span>{data instanceof Array && data[1]}</span>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t)\n\t}\n});';
       return '"use strict";\n\n// \u6807\u9898\nmodule.exports = React.createClass({\n\tdisplayName: "exports",\n\n\trender: function render() {\n\t\tvar data = this.props.customData || [];\n\t\treturn React.createElement(\n\t\t\t"div",\n\t\t\tnull,\n\t\t\tReact.createElement(\n\t\t\t\t"div",\n\t\t\t\t{ className: "ysp-manager-audit-title" },\n\t\t\t\tReact.createElement(\n\t\t\t\t\t"div",\n\t\t\t\t\t{ className: "ysp-manager-audit-main-title" },\n\t\t\t\t\tdata instanceof Array && data[0]\n\t\t\t\t),\n\t\t\t\tReact.createElement(\n\t\t\t\t\t"div",\n\t\t\t\t\t{ className: "ysp-manager-audit-subtitle" },\n\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t"span",\n\t\t\t\t\t\tnull,\n\t\t\t\t\t\t"\\u7F16\\u53F7\\uFF1A"\n\t\t\t\t\t),\n\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t"span",\n\t\t\t\t\t\tnull,\n\t\t\t\t\t\tdata instanceof Array && data[1]\n\t\t\t\t\t)\n\t\t\t\t)\n\t\t\t)\n\t\t);\n\t}\n});';
     },
-    getData_control89_Tk1vTe: function getData_control89_Tk1vTe(elem) {
+    getData_control89_Tk1vTe: function (elem) {
       if (!elem) {
         return;
       }if (elem) {
@@ -110,7 +110,7 @@
         });data.titles = titles;data.content = content;data.fileSize = fileSize;data.multiply = multiply;data.editData = editData;data.enableDeleteFile = enableDeleteFile;return data;
       }
     },
-    doAction_uiControl80_gKCmKt: function doAction_uiControl80_gKCmKt(data, elem) {
+    doAction_uiControl80_gKCmKt: function (data, elem) {
       var clickType = data.eventType;var fileIndex = data.dataCustom;if (clickType == 'downLoad') {
         var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick'); // var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
         if (clickContent.indexOf('top.location') !== -1) {
@@ -136,7 +136,7 @@
               */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelector("#selectDownload").parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url + "&_ysp_attachment_fileName=" + text;
@@ -352,7 +352,7 @@
       return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  click: function click(e) {\n    if (e.target.className == \'section_box\') {\n      var _target = e.target;\n    } else if (e.target.tagName == \'LI\') {\n      var _target = e.target.parentElement;\n    } else if (e.target.tagName == \'SPAN\') {\n      var _target = e.target.parentElement.parentElement;\n    }\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: _target.getAttribute(\'data-index\')\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData || {};\n    var _this = this;\n    if (data.text instanceof Array && data.text.length > 0) {\n      var item = data.text.map(function (d1, i1) {\n        return React.createElement(\n          \'li\',\n          { className: \'section_box\', onClick: _this.click, \'data-index\': i1 },\n          d1.map(function (d2, i2) {\n            return React.createElement(\n              \'li\',\n              null,\n              React.createElement(\n                \'span\',\n                null,\n                data.title[i2]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d2\n              )\n            );\n          })\n        );\n      });\n    }\n    if (data.text instanceof Array && data.text.length > 0) {\n      return React.createElement(\n        \'ul\',\n        { className: \'document_final_lfj\', style: { display: \'none\' } },\n        item\n      );\n    } else {\n      return React.createElement(\n        \'ul\',\n        { className: \'document_final_lfj\', style: { margin: \'10px\', display: \'none\' } },\n        \'\\u6CA1\\u6709\\u76F8\\u5173\\u6587\\u6863\'\n      );\n    }\n  }\n});';
     },
 
-    getData_control220_PT5PSx: function getData_control220_PT5PSx(elem) {
+    getData_control220_PT5PSx: function (elem) {
       if (!elem) {
         return;
       }var data = {};var files = elem.querySelectorAll('.progressWrapper');var fileData = [];var oldFileLength = 0;if (elem.querySelector('#selectDownload')) {
@@ -376,7 +376,7 @@
                                                                                 oldFileLength: 保存的可删除的附件
                                                                                 ********************************************/
     },
-    doAction_uiControl202_Ue4GaG: function doAction_uiControl202_Ue4GaG(data, elem) {
+    doAction_uiControl202_Ue4GaG: function (data, elem) {
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;if (elem.querySelector('a')) {
           if (elem.querySelectorAll('a').length > 0) {
@@ -405,7 +405,7 @@
         */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelector("#selectDownload").parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url + "&_ysp_attachment_fileName=" + text;

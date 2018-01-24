@@ -32,7 +32,7 @@
       var selfTemplate = 'module.exports = React.createClass({\n    render: function () {\n        var data = this.props.customData||[];\n        return (\n            <div>\n                <div className="ysp-manager-audit-title">\n                    <div className="ysp-manager-audit-main-title">{data instanceof Array && data[0]}</div>\n                    <div className="ysp-manager-audit-subtitle">\n                        <span>\u7F16\u53F7\uFF1A</span>\n                        <span>{data instanceof Array && data[1]}</span>\n                    </div>\n                </div>\n            </div>\n        )\n    }\n});';
       return '"use strict";\n\nmodule.exports = React.createClass({\n    displayName: "exports",\n\n    render: function render() {\n        var data = this.props.customData || [];\n        return React.createElement(\n            "div",\n            null,\n            React.createElement(\n                "div",\n                { className: "ysp-manager-audit-title" },\n                React.createElement(\n                    "div",\n                    { className: "ysp-manager-audit-main-title" },\n                    data instanceof Array && data[0]\n                ),\n                React.createElement(\n                    "div",\n                    { className: "ysp-manager-audit-subtitle" },\n                    React.createElement(\n                        "span",\n                        null,\n                        "\\u7F16\\u53F7\\uFF1A"\n                    ),\n                    React.createElement(\n                        "span",\n                        null,\n                        data instanceof Array && data[1]\n                    )\n                )\n            )\n        );\n    }\n});';
     },
-    getData_control74_U4mcfD: function getData_control74_U4mcfD(elem) {
+    getData_control74_U4mcfD: function (elem) {
       if (!elem) {
         return;
       }if (elem) {
@@ -109,7 +109,7 @@
         });data.titles = titles;data.content = content;data.fileSize = fileSize;data.multiply = multiply;data.editData = editData;data.enableDeleteFile = enableDeleteFile;return data;
       }
     },
-    doAction_uiControl68_2Fx8KL: function doAction_uiControl68_2Fx8KL(data, elem) {
+    doAction_uiControl68_2Fx8KL: function (data, elem) {
       var clickType = data.eventType;var fileIndex = data.dataCustom;if (clickType == 'downLoad') {
         var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick'); // var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
         if (clickContent.indexOf('top.location') !== -1) {
@@ -135,7 +135,7 @@
               */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelector("#selectDownload").parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url + "&_ysp_attachment_fileName=" + text;
@@ -345,7 +345,7 @@
       var selfTemplate = 'module.exports = React.createClass({\n    click:function(e){\n    if(e.target.className == \'section_box\'){\n      var _target = e.target;\n    }\n    else if(e.target.tagName == \'LI\'){\n      var _target = e.target.parentElement;\n    }\n    else if(e.target.tagName == \'SPAN\'){\n      var _target = e.target.parentElement.parentElement;\n    }\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\'click\',\n        data: _target.getAttribute(\'data-index\')\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData||{};\n    var text = data.text||[];\n    var _this = this;\n    if(text.length > 0){\n          var item = data.text.map(function(d1,i1){\n        return(<li className=\'section_box\' style={{\'margin\':\'0\', \'background\':\'#fff\'}} onClick={_this.click} data-index = {i1}>\n          {\n            d1.map(function(d2,i2){\n          return(<li><span>{data.title[i2]}</span><span>{d2}</span></li>)\n        })\n            }\n          </li>)\n      })\n    }\n    if(text.length > 0){\n       return(<ul style ={{display:\'none\'}} className=\'process_final_lfj\'>\n        {item}\n      </ul>)\n    }\n    else{\n        return(<ul className=\'process_final_lfj\' style ={{margin:\'10px\',display:\'none\'}}>\u6CA1\u6709\u76F8\u5173\u6D41\u7A0B</ul>)\n    }\n  }\n});';
       return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  click: function click(e) {\n    if (e.target.className == \'section_box\') {\n      var _target = e.target;\n    } else if (e.target.tagName == \'LI\') {\n      var _target = e.target.parentElement;\n    } else if (e.target.tagName == \'SPAN\') {\n      var _target = e.target.parentElement.parentElement;\n    }\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: _target.getAttribute(\'data-index\')\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData || {};\n    var text = data.text || [];\n    var _this = this;\n    if (text.length > 0) {\n      var item = data.text.map(function (d1, i1) {\n        return React.createElement(\n          \'li\',\n          { className: \'section_box\', style: { \'margin\': \'0\', \'background\': \'#fff\' }, onClick: _this.click, \'data-index\': i1 },\n          d1.map(function (d2, i2) {\n            return React.createElement(\n              \'li\',\n              null,\n              React.createElement(\n                \'span\',\n                null,\n                data.title[i2]\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                d2\n              )\n            );\n          })\n        );\n      });\n    }\n    if (text.length > 0) {\n      return React.createElement(\n        \'ul\',\n        { style: { display: \'none\' }, className: \'process_final_lfj\' },\n        item\n      );\n    } else {\n      return React.createElement(\n        \'ul\',\n        { className: \'process_final_lfj\', style: { margin: \'10px\', display: \'none\' } },\n        \'\\u6CA1\\u6709\\u76F8\\u5173\\u6D41\\u7A0B\'\n      );\n    }\n  }\n});';
     },
-    getData_control219_zf6Wbw: function getData_control219_zf6Wbw(elem) {
+    getData_control219_zf6Wbw: function (elem) {
       if (!elem) {
         return;
       }var data = {};var files = elem.querySelectorAll('.progressWrapper');var fileData = [];var oldFileLength = 0;if (elem.querySelector('#selectDownload')) {
@@ -364,7 +364,7 @@
         });
       }data.fileData = fileData;data.oldFileLength = oldFileLength;return data;
     },
-    doAction_uiControl201_7IUa8b: function doAction_uiControl201_7IUa8b(data, elem) {
+    doAction_uiControl201_7IUa8b: function (data, elem) {
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;if (elem.querySelector('a')) {
           if (elem.querySelectorAll('a').length > 0) {
@@ -394,7 +394,7 @@
         setTimeout(function () {
           ysp.appMain.hideLoading();
         }, 1000);var _url = 'http://192.168.200.63' + jumpUrl; // console.log(_url);
-        var text = elem.querySelector("#selectDownload").parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
+        var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url + "&_ysp_attachment_fileName=" + text;
