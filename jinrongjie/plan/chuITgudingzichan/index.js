@@ -451,7 +451,7 @@
       var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.data.customData||{};\n    var title = data.title||"";\n    var numbering = data.numbering||"";\n    return (\n      <div>\n        <div className="ysp-manager-audit-title">\n        \t<div className="ysp-manager-audit-main-title">{title}</div>\n          <div className="ysp-manager-audit-subtitle">\n            <span>\u7F16\u53F7\uFF1A</span>\n            <span>{numbering}</span>\n          </div>\n        </div>\n      </div>\n    )\n  }\n});';
       return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.data.customData || {};\n    var title = data.title || "";\n    var numbering = data.numbering || "";\n    return React.createElement(\n      "div",\n      null,\n      React.createElement(\n        "div",\n        { className: "ysp-manager-audit-title" },\n        React.createElement(\n          "div",\n          { className: "ysp-manager-audit-main-title" },\n          title\n        ),\n        React.createElement(\n          "div",\n          { className: "ysp-manager-audit-subtitle" },\n          React.createElement(\n            "span",\n            null,\n            "\\u7F16\\u53F7\\uFF1A"\n          ),\n          React.createElement(\n            "span",\n            null,\n            numbering\n          )\n        )\n      )\n    );\n  }\n});';
     },
-    getData_control270_kns0g5: function getData_control270_kns0g5(elem) {
+    getData_control270_kns0g5: function (elem) {
       if (!elem) {
         return;
       }var endIndex = -1;var startIndex = -1;if (elem) {
@@ -583,7 +583,7 @@
         }data.titles = titles;data.content = content;data.assetsData = assetsData;data.fileSize = fileSize;data.editData = editData;data.enableDeleteFile = enableDeleteFile;data.multiply = multiply;data.contentOpen = contentOpen;return data;
       }
     },
-    doAction_uiControl242_ZpBB8K: function doAction_uiControl242_ZpBB8K(data, elem) {
+    doAction_uiControl242_ZpBB8K: function (data, elem) {
       switch (data.eventType) {case 'downLoad':
           var fileIndex = data.dataCustom;var buttonList = elem.querySelectorAll('#selectDownload');var btnattr = buttonList[fileIndex].querySelector('button');var clickContent = btnattr.getAttribute('onclick');if (clickContent.indexOf('top.location') !== -1) {
             var selfUrl = clickContent.slice(clickContent.indexOf('\/'), clickContent.indexOf('&requestid'));
@@ -627,10 +627,10 @@
           */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;console.log(_url);if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url;
+          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
         }
       }function changeContent(data) {
         switch (data.type) {case 'category':
@@ -714,7 +714,7 @@
       var selfTemplate = 'import {\n\tComponent\n} from \'react\';\nimport {\n\tCustomHeader, Dialog, Alert\n} from \'ysp-custom-components\';\nexport default class extends Component {\n\tconstructor(props) {\n\t\tsuper(props);\n\t}\n\tbtnClick(e) {//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n\t\tlet handler = this.props.customHandler;\n\t\tvar target = e.target;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: "docClick"\n\t\t\t})\n\t\t}\n\t}\n  \n  jumpDetail(e){//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n    let handler=this.props.customHandler;\n    var target=e.target;\n    if(handler){\n      handler({\n        data: target.getAttribute(\'data-index\'),\n        eventType:"jumpDetail"\n      })\n    }\n  }\n  \n\trender() {\n\t\tvar _this = this;\n\t\tvar data = this.props.customData||"";\n    if(data==""){return null}\n    var docData = data.docData||[];\n\t\treturn (\n\t\t\t<div className="ysp-manageraudit-relate-doc">\n\t\t\t\t<span>{data && data.title}</span>\n\t\t\t\t<span><span onClick={_this.btnClick.bind(_this)} className="ysp-search-icon"></span></span>\n        <div className="relate-doc-process">\n          {docData.length > 0 &&\n              docData.map((fileName, fileIndex) => {\n                  return <div className="single-doc-process" data-index={fileIndex} onClick={_this.jumpDetail.bind(_this)}>{fileName}</div>\n              })\n          }\n        </div>\n\t\t\t</div>\n\t\t)\n\t}\n}';
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n\tvalue: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n\t_inherits(_class, _Component);\n\n\tfunction _class(props) {\n\t\t_classCallCheck(this, _class);\n\n\t\treturn _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\t}\n\n\t_createClass(_class, [{\n\t\tkey: \'btnClick\',\n\t\tvalue: function btnClick(e) {\n\t\t\t//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n\t\t\tvar handler = this.props.customHandler;\n\t\t\tvar target = e.target;\n\t\t\tif (handler) {\n\t\t\t\thandler({\n\t\t\t\t\teventType: "docClick"\n\t\t\t\t});\n\t\t\t}\n\t\t}\n\t}, {\n\t\tkey: \'jumpDetail\',\n\t\tvalue: function jumpDetail(e) {\n\t\t\t//\u5BA2\u6237\u4FE1\u606F\u548C\u5BA2\u6237\u7ECF\u8425\u4FE1\u606F\u5207\u6362\n\t\t\tvar handler = this.props.customHandler;\n\t\t\tvar target = e.target;\n\t\t\tif (handler) {\n\t\t\t\thandler({\n\t\t\t\t\tdata: target.getAttribute(\'data-index\'),\n\t\t\t\t\teventType: "jumpDetail"\n\t\t\t\t});\n\t\t\t}\n\t\t}\n\t}, {\n\t\tkey: \'render\',\n\t\tvalue: function render() {\n\t\t\tvar _this = this;\n\t\t\tvar data = this.props.customData || "";\n\t\t\tif (data == "") {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\tvar docData = data.docData || [];\n\t\t\treturn React.createElement(\n\t\t\t\t\'div\',\n\t\t\t\t{ className: \'ysp-manageraudit-relate-doc\' },\n\t\t\t\tReact.createElement(\n\t\t\t\t\t\'span\',\n\t\t\t\t\tnull,\n\t\t\t\t\tdata && data.title\n\t\t\t\t),\n\t\t\t\tReact.createElement(\n\t\t\t\t\t\'span\',\n\t\t\t\t\tnull,\n\t\t\t\t\tReact.createElement(\'span\', { onClick: _this.btnClick.bind(_this), className: \'ysp-search-icon\' })\n\t\t\t\t),\n\t\t\t\tReact.createElement(\n\t\t\t\t\t\'div\',\n\t\t\t\t\t{ className: \'relate-doc-process\' },\n\t\t\t\t\tdocData.length > 0 && docData.map(function (fileName, fileIndex) {\n\t\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t\t\'div\',\n\t\t\t\t\t\t\t{ className: \'single-doc-process\', \'data-index\': fileIndex, onClick: _this.jumpDetail.bind(_this) },\n\t\t\t\t\t\t\tfileName\n\t\t\t\t\t\t);\n\t\t\t\t\t})\n\t\t\t\t)\n\t\t\t);\n\t\t}\n\t}]);\n\n\treturn _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
-    getData_control274_ZmxIHh: function getData_control274_ZmxIHh(elem) {
+    getData_control274_ZmxIHh: function (elem) {
       if (!elem) {
         return;
       }var data = {};var files = elem.querySelectorAll('.progressWrapper');var fileData = [];var oldFileLength = 0;if (elem.querySelector('#selectDownload')) {
@@ -733,7 +733,7 @@
         });
       }data.fileData = fileData;data.oldFileLength = oldFileLength;return data;
     },
-    doAction_uiControl260_QdSDxv: function doAction_uiControl260_QdSDxv(data, elem) {
+    doAction_uiControl260_QdSDxv: function (data, elem) {
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;if (elem.querySelector('a')) {
           if (elem.querySelectorAll('a').length > 0) {
@@ -762,10 +762,10 @@
         */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;console.log(_url);if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url;
+          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
         }
       }
     },
