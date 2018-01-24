@@ -172,10 +172,10 @@
           var _url = "http://192.168.200.63" + url;
         } else {
           var _url = "http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=" + url + "&download=1";
-        }var download = $(elem).children("tr").eq(row).children("td").eq(1).find(".btnFlowd").eq(i);var text = $(elem).children("tr").eq(row).children("td").eq(1).find("a").eq(i).text();if (ysp.appMain.isIOS()) {
+        }var download = $(elem).children("tr").eq(row).children("td").eq(1).find(".btnFlowd").eq(i);var text = $(elem).children("tr").eq(row).children("td").eq(1).find("a").eq(i).text();console.log(_url + "&_ysp_attachment_fileName=" + text);if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url;
+          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
         }
       }
     },

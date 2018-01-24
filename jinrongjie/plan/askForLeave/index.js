@@ -29,7 +29,7 @@
       return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n      var _this2 = this;\n\n      return React.createElement(_yspCustomComponents.CommonHeader, {\n        data: { centerText: this.props.customData && this.props.customData.title },\n        backIsShow: true,\n        editIsShow: true,\n        rightText: '',\n        save: function save(e) {\n          var handler = _this2.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'save1'\n            });\n          }\n        },\n        back: function back(e) {\n          YSP.appRenderer.showLoading();\n          var handler = _this2.props.customHandler;\n          if (handler) {\n            handler({\n              eventType: 'click'\n            });\n          }\n        }\n      });\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
     },
 
-    getData_control58_TraKH5: function getData_control58_TraKH5(elem) {
+    getData_control58_TraKH5: function (elem) {
       if (!elem) {
         return;
       }if (elem) {
@@ -131,8 +131,8 @@
               }rows[1].push(button);
             } else if (dt.querySelectorAll("form").length > 0) {
               //只有上传
-              var upload = [[], [], [], [], []];
-              upload[3].push("upload");upload[0].push("上传");if (dt.querySelector(".fieldset")) {
+              var upload = [[], [], [], [], []];upload[3].push("upload");
+              upload[0].push("上传");if (dt.querySelector(".fieldset")) {
                 var progressName = dt.querySelector(".fieldset").querySelectorAll(".progressName");for (var i = 0; i < progressName.length; i++) {
                   upload[2].push(progressName[i].textContent);
                 }
@@ -157,9 +157,9 @@
         }return obj;
       }
     },
-    doAction_uiControl54_GI48cc: function doAction_uiControl54_GI48cc(data, elem) {
+    doAction_uiControl54_GI48cc: function (data, elem) {
       var d = data.dataCustom;var row = d.row;var column = d.column;var classname = d.classname;var i = d.i;var url = d.url;var card = d.card;var check = d.check;var val = d.val;if (data.eventType == "click") {
-        console.log(d);if (classname == "caculate") {
+        if (classname == "caculate") {
           $(elem).children("tr").eq(row).children(".zdn").eq(column).find("input[type='button']").click();
         } else if (classname == "searchBtn") {
           $(elem).children("tr").eq(row).children(".zdn").eq(column).find("button").click();
@@ -173,11 +173,10 @@
             var _url = "http://192.168.200.63" + url;
           } else {
             var _url = "http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=" + url + "&download=1";
-          } //var _url = 'http://192.168.200.63' + url;
-          console.log(_url);if (ysp.appMain.isIOS()) {
+          }var download = $(elem).children("tr").eq(row).children("td").eq(1).find(".btnFlowd").eq(i);var text = $(elem).children("tr").eq(row).children("td").eq(1).find("a").eq(i).text();if (ysp.appMain.isIOS()) {
             top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
           } else if (ysp.appMain.isAndroid()) {
-            top.location.href = _url;
+            top.location.href = _url + "&_ysp_attachment_fileName=" + text;
           }
         } else if (classname == "delete") {
           var input = $($(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card))[0];$(elem).children("tr").eq(row).children("td").eq(column).find("input[type='checkbox']").eq(card).click();if (input.checked) {
@@ -187,8 +186,6 @@
           $(elem).children("tr").eq(row).children("td").eq(1).find("#Filedata").click();
         } else if (classname.indexOf("YorN")) {
           $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);$(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").blur();
-        } else if (classname == "deleteFile") {
-          console.log("12131313");
         }
       } else if (data.eventType == "select") {
         $(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").children("option").eq(i).prop('selected', true);$(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").change();$(elem).children("tr").eq(row).children(".zdn").eq(column).find("select").blur();
