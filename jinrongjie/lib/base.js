@@ -2,23 +2,29 @@
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function(win, ysp) {
     function wdlssrds() {
-        var 我低射 = document.querySelector('iframe[src*="&token="]');
-        var 我低了个射 = document.querySelector('iframe[src*="main.jsp"]');
-        if (我低射 && !sessionStorage.isLogin) {
+        debugger;
+        var tokenDizhi = document.querySelector('iframe[src*="&token="]');
+        var indexUrl = document.querySelector('iframe[src*="main.jsp"]');
+      	var loginUrl = document.querySelector('iframe[src*="request/ViewRequest.jsp"]');
+        if (tokenDizhi && !sessionStorage.isLogin) {
             var iframe = document.querySelector('iframe');
             // 有可能会影响首页OA那个逻辑，先不管了。我低射
-            var url1 = 我低射.src.match(/(.*)&token=/)[1];	// 登录成功后跳转的地址
-            var url2 = 我低射.src.match(/&token=(.*)/)[1];	// 登录需要的token
-            iframe.src = 'http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=' + url2 + '&requestType=login';
+            var url1 = tokenDizhi.src.match(/(.*)&token=/)[1]; // 登录成功后跳转的地址
+            var url2 = tokenDizhi.src.match(/&token=(.*)/)[1]; // 登录需要的token
+            iframe.src = 'http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=' + url2 + '&requestType=login';  
+            alert(iframe.src);
+            debugger;
             // 暂存一下地址
             sessionStorage.isLogin = 1;
             localStorage.testUrl = url1;
         }
-        if (我低了个射 && localStorage.testUrl) {
+        if (indexUrl && localStorage.testUrl && ysp.appMain.isIOS()) {
+          alert('IOS');
+          debugger;
             iframe.src = localStorage.testUrl;
             delete localStorage.testUrl;
         }
-        requestAnimationFrame(wdlssrds)
+        requestAnimationFrame(wdlssrds);
     }
     wdlssrds();
     var utils = ysp.utils;
@@ -685,95 +691,96 @@
             }
 
 
-           
-          //获取文档预览 - 文档地址
-          if(aWin.createDoc){
-            aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
-            
-              var frmmain = aWin.frmmain;
-              var $G = aWin.$G;
 
-              if ("0" == "9" || "0" == "1") {
-                frmmain.action = "RequestDocView.jsp?requestid=740245&docValue=" + docVlaue;
-              } else {
-                frmmain.action = "RequestOperation.jsp?docView=" + isedit + "&docValue=" + docVlaue + "&isFromEditDocument=true";
-              }
+            //获取文档预览 - 文档地址
+            if (aWin.createDoc) {
+                aWin.createDoc = function(fieldbodyid, docVlaue, isedit) {
 
-              frmmain.method.value = "crenew_" + fieldbodyid;
-              frmmain.target = "delzw";
-              aWin.parent.delsave();
-                if(aWin.check_form(doc.frmmain,'requestname')){
-                if($G("needoutprint")) $G("needoutprint").value = "1";//标识点正文
-                doc.frmmain.src.value='save';
-                doc.frmmain.isremark.value='0';
-            //保存签章数据
+                    var frmmain = aWin.frmmain;
+                    var $G = aWin.$G;
+
+                    if ("0" == "9" || "0" == "1") {
+                        frmmain.action = "RequestDocView.jsp?requestid=740245&docValue=" + docVlaue;
+                    } else {
+                        frmmain.action = "RequestOperation.jsp?docView=" + isedit + "&docValue=" + docVlaue + "&isFromEditDocument=true";
+                    }
+
+                    frmmain.method.value = "crenew_" + fieldbodyid;
+                    frmmain.target = "delzw";
+                    aWin.parent.delsave();
+                    if (aWin.check_form(doc.frmmain, 'requestname')) {
+                        if ($G("needoutprint")) $G("needoutprint").value = "1"; //标识点正文
+                        doc.frmmain.src.value = 'save';
+                        doc.frmmain.isremark.value = '0';
+                        //保存签章数据
 
                         //附件上传
-                     aWin.StartUploadAll();
-                     aWin.checkuploadcompletBydoc();
+                        aWin.StartUploadAll();
+                        aWin.checkuploadcompletBydoc();
 
-              }
-  //             var requestid = doc.querySelector("#requestid").value;
-  //             var rand = doc.querySelector("#requestid").nextElementSibling.value;
-  //             var xhr0 = new XMLHttpRequest();
-  //             var paramURL = "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid= "+requestid+"&rand=" + rand;
-  //             xhr0.open('POST', paramURL, true);
+                    }
+                    //             var requestid = doc.querySelector("#requestid").value;
+                    //             var rand = doc.querySelector("#requestid").nextElementSibling.value;
+                    //             var xhr0 = new XMLHttpRequest();
+                    //             var paramURL = "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid= "+requestid+"&rand=" + rand;
+                    //             xhr0.open('POST', paramURL, true);
 
-  //             xhr0.onreadystatechange = function () {
-  //               if (xhr0.readyState == 4 && xhr0.status == 200) {
-  //                 topWindow.getUrl = xhr0.responseText.trim();
-  //                 if(topWindow.getUrl !== ''){
-  //                   topWindow.docFlag = true;
-  //                 }
-  //               }
-  //             };
-  //             xhr0.send();
-            }; //把Unicode转成Ansi和把Ansi转换成Unicode
-            
-          }
-          if(aWin.checkuploadcompletBydoc){
-             aWin.checkuploadcompletBydoc = function() {
-                doc.frmmain.submit();
-                aWin.frmmain.target = aWin.nowtarget;
-                aWin.frmmain.action = aWin.nowaction;
-                if (doc.getElementById("iscreate")) doc.getElementById("iscreate").value = "0";
-                aWin.jQuery(aWin.$GetEle("flowbody")).attr("onbeforeunload", "");
-                //aWin.parent.clicktext();
-                if (doc.getElementById("needoutprint")) doc.getElementById("needoutprint").value = "";
-             }
-          }
+                    //             xhr0.onreadystatechange = function () {
+                    //               if (xhr0.readyState == 4 && xhr0.status == 200) {
+                    //                 topWindow.getUrl = xhr0.responseText.trim();
+                    //                 if(topWindow.getUrl !== ''){
+                    //                   topWindow.docFlag = true;
+                    //                 }
+                    //               }
+                    //             };
+                    //             xhr0.send();
+                }; //把Unicode转成Ansi和把Ansi转换成Unicode
 
-//           else if(aWin.createDoc&&topWindow.EAPI.isIOS()){
-//             aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
-//               var frmmain = aWin.frmmain;
-//               var $G = aWin.$G;
-//               if("0"=="9"||"0"=="1"){
-//                   frmmain.action = "RequestDocView.jsp?requestid=784621&docValue="+docVlaue;
-//                 }else{
-//                 frmmain.action = "RequestOperation.jsp?docView="+isedit+"&docValue="+docVlaue+"&isFromEditDocument=true";
-//                 }
-//               frmmain.method.value = "crenew_"+fieldbodyid ;
-//               frmmain.target="delzw";
-//               aWin.parent.delsave();
-//               if(aWin.check_form(doc.frmmain,'requestname')){
-//                 if($G("needoutprint")) $G("needoutprint").value = "1";//标识点正文
-//                 doc.frmmain.src.value='save';
-//                 doc.frmmain.isremark.value='0';
-//             //保存签章数据
+            }
+            if (aWin.checkuploadcompletBydoc) {
+                aWin.checkuploadcompletBydoc = function() {
+                    doc.frmmain.submit();
+                    aWin.frmmain.target = aWin.nowtarget;
+                    aWin.frmmain.action = aWin.nowaction;
+                    if (doc.getElementById("iscreate")) doc.getElementById("iscreate").value = "0";
+                    aWin.jQuery(aWin.$GetEle("flowbody")).attr("onbeforeunload", "");
+                    //aWin.parent.clicktext();
+                    if (doc.getElementById("needoutprint")) doc.getElementById("needoutprint").value = "";
+                }
+            }
 
-//                         //附件上传
-//                     // StartUploadAll();
-//                     // checkuploadcompletBydoc();
+            //           else if(aWin.createDoc&&topWindow.EAPI.isIOS()){
+            //             aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
+            //               var frmmain = aWin.frmmain;
+            //               var $G = aWin.$G;
+            //               if("0"=="9"||"0"=="1"){
+            //                   frmmain.action = "RequestDocView.jsp?requestid=784621&docValue="+docVlaue;
+            //                 }else{
+            //                 frmmain.action = "RequestOperation.jsp?docView="+isedit+"&docValue="+docVlaue+"&isFromEditDocument=true";
+            //                 }
+            //               frmmain.method.value = "crenew_"+fieldbodyid ;
+            //               frmmain.target="delzw";
+            //               aWin.parent.delsave();
+            //               if(aWin.check_form(doc.frmmain,'requestname')){
+            //                 if($G("needoutprint")) $G("needoutprint").value = "1";//标识点正文
+            //                 doc.frmmain.src.value='save';
+            //                 doc.frmmain.isremark.value='0';
+            //             //保存签章数据
 
-//               }
-//             }
-//           }
+            //                         //附件上传
+            //                     // StartUploadAll();
+            //                     // checkuploadcompletBydoc();
+
+            //               }
+            //             }
+            //           }
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
             // 判断地址，为首页地址时判断localStorage.testUrl，如果存在值，则直接跳转该地址
-            // if (~aWin.location.href.indexOf('main.jsp') && aWin.localStorage.testUrl) {
+            // if (aWin.location.href.indexOf('main.jsp') && aWin.localStorage.testUrl) {
+            //   debugger;
             //     alert('ok2');
             //   aWin.location.href = aWin.localStorage.testUrl;
             //   delete aWin.localStorage.testUrl;
