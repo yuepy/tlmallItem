@@ -2,7 +2,7 @@
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function(win, ysp) {
     function wdlssrds() {
-        debugger;
+    
         var tokenDizhi = document.querySelector('iframe[src*="&token="]');
         var indexUrl = document.querySelector('iframe[src*="main.jsp"]');
       	var loginUrl = document.querySelector('iframe[src*="request/ViewRequest.jsp"]');
