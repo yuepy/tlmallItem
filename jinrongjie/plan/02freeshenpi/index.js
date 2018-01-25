@@ -164,7 +164,8 @@
                     } else if ($(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
-                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), mark: '1', disabled: 'true' });
+                  });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"),
+                    mark: '1', disabled: 'true' });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
@@ -172,8 +173,7 @@
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                     } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).find("a").text(),
-                        type: 'aaa' });
+                      arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).children("button").length == 0) {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 0 && $(this).children().length == 1) {
@@ -188,8 +188,7 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });arr2.push({
-                                text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -217,8 +216,7 @@
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().find("a").length > 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(),
-                type: 'tit_yell2' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text()) && $(this).next().children().length == 2 && $(this).next().children("span").length == 1 && $(this).next().children("input").length == 1) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title2' });
             } else if ($(this)[0].className == 'zdm' && /正文/.test($(this).text())) {
@@ -268,8 +266,7 @@
                       } else if ($(this).text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).text().trim(),
-                          stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
@@ -278,8 +275,7 @@
                         if ($(this).attr('onClick').match(/\d+/g).length === 4) {
                           arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[3] });
                         } else {
-                          arr3.push({
-                            name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                          arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
                         }
                       }
                     }if ($(this)[0].className == 'progressCancel') {
@@ -288,7 +284,8 @@
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'doc', no: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(),
+                          stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
@@ -463,7 +460,7 @@
         //下面为正确文档地址，固定地址用于文档预览测试
         //http://192.168.200.63/docs/docs/DocEditExt.jsp?fromFlowDoc=1&topage=/workflow/request/ViewRequest.jsp?requestid=740245&docfileid=6216&fromFlowDoc=1&topage=&urger=0&isintervenor=&mainid=22&secid=82&subid=65&id=203577&requestid=740245&isintervenor=
         // var pageUrl = "http://192.168.200.63/docs/docs/DocEditExt.jsp?fromFlowDoc=1&topage=%2Fworkflow%2Frequest%2FViewRequest.jsp%3Frequestid%3D740245%26docfileid%3D6216%26fromFlowDoc%3D1%26topage%3D%26urger%3D0%26isintervenor%3D&mainid=22&secid=82&subid=65&id=203577&requestid=740245&isintervenor="; 
-        elem.querySelector("a").click();debugger;xhrUrl();
+        elem.querySelector("a").click();xhrUrl();
       }if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;debugger;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
           if ($(this).attr('temptitle') && $(this).attr('temptitle').indexOf('附件') !== -1) {
