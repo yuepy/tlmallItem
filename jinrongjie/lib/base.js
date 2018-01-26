@@ -16,12 +16,10 @@
         }
         if (indexUrl && localStorage.testUrl && sessionStorage.isLogin) {
             iframe.src = localStorage.testUrl;
-            alert(iframe.src)
             delete localStorage.testUrl;
         }
-        if (!sessionStorage.isLogin) {
-            requestAnimationFrame(wdlssrds);
-        }
+        requestAnimationFrame(wdlssrds);
+
 
     }
     if (ysp.appMain.isIOS()) {
