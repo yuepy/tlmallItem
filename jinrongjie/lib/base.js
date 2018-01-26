@@ -2,18 +2,16 @@
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function(win, ysp) {
     function wdlssrds() {
-      
-    debugger;
         var tokenDizhi = document.querySelector('iframe[src*="&token="]');
         var indexUrl = document.querySelector('iframe[src*="main.jsp"]');
         if (tokenDizhi && !sessionStorage.isLogin) {
-           alert("123");
-          debugger;
+            alert("123");
+            debugger;
             var iframe = document.querySelector('iframe');
             // 有可能会影响首页OA那个逻辑，先不管了。我低射
             var url1 = tokenDizhi.src.match(/(.*)&token=/)[1]; // 登录成功后跳转的地址
             var url2 = tokenDizhi.src.match(/&token=(.*)/)[1]; // 登录需要的token
-            iframe.src = 'http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=' + url2 + '&requestType=login';  
+            iframe.src = 'http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=' + url2 + '&requestType=login';
             // 暂存一下地址
             sessionStorage.isLogin = 1;
             localStorage.testUrl = url1;
@@ -26,10 +24,10 @@
       
        
     }
-  if(ysp.appMain.isIOS()){
-     wdlssrds();
-  }
-    
+    if (ysp.appMain.isIOS()) {
+        wdlssrds();
+    }
+
     var utils = ysp.utils;
     var flag = true; // 为true说明需要取token  为false说明不需要取token
     var topWindow = win.top; // 最外层window - top层
