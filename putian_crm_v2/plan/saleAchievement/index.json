@@ -1,0 +1,267 @@
+{
+  "version": "0.1",
+  "id": "saleAchievement",
+  "targetURL": "http://192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDEvMjYvMjAxOCAxNTo0Mjo0MQ==",
+  "jsFile": "index.js",
+  "chineseName": "销售总览业绩",
+  "description": "销售总览业绩",
+  "controls": {
+    "control274_87SuoT": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body-bg"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control274_87SuoT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control275_Vm4ciI": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control275_Vm4ciI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context76_9rFC8S": {
+      "controls": [
+        "control274_87SuoT",
+        "control275_Vm4ciI"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow228_qEhMTr": {
+      "toContexts": [
+        {
+          "toContextId": "context76_9rFC8S"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page76_6bJihs": {
+      "contextId": "context76_9rFC8S",
+      "layout": [
+        {
+          "id": "uiControl268_dLVTD8",
+          "controlId": "control274_87SuoT",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl268_dLVTD8",
+                "onGetTemplate": "getTemplate_uiControl268_dLVTD8"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl269_bgVPgo",
+          "controlId": "control275_Vm4ciI",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl269_bgVPgo",
+                "onGetTemplate": "getTemplate_uiControl269_bgVPgo"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context76_9rFC8S": [
+          "销售业绩总览-总部领导"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context76_9rFC8S": [
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDEvMjYvMjAxOCAxNTo0Mjo0MQ=="
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context76_9rFC8S": [
+          [
+            "bizUnit-table",
+            "bizUnitName",
+            "bizUnitTable",
+            "branchName",
+            "branchTable",
+            "configType",
+            "cycleType",
+            "cycleType_hidden",
+            "data_",
+            "date",
+            "dayAmt",
+            "dayQty",
+            "departmentId",
+            "encoder",
+            "lines",
+            "loginName",
+            "map",
+            "materialColor",
+            "modelId",
+            "monthAmt",
+            "monthQty",
+            "officeName",
+            "orderLogic",
+            "orderLogic_hidden",
+            "projectId",
+            "projectName",
+            "sale-table",
+            "salerName",
+            "selDay",
+            "tren",
+            "type",
+            "weekAmt",
+            "weekQty",
+            "yearAmt",
+            "yearQty"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context76_9rFC8S": [
+          [
+            "a",
+            "activ",
+            "b",
+            "box",
+            "branch-sales",
+            "breadcrumb",
+            "btn-display",
+            "businessDimen",
+            "chart",
+            "clear-btn",
+            "clearfix",
+            "content",
+            "g-main",
+            "header",
+            "icon",
+            "icon-line",
+            "laydate-icon",
+            "left",
+            "lefth",
+            "m-body",
+            "m-box",
+            "m-box-datas",
+            "m-box-sales",
+            "m-boxs",
+            "m-header",
+            "mask",
+            "max",
+            "min",
+            "one",
+            "overview",
+            "right",
+            "righth",
+            "sel",
+            "sel-box",
+            "spaceDimen",
+            "table",
+            "table-content",
+            "time-sel-box",
+            "timeDimen",
+            "title",
+            "trend",
+            "u-selt",
+            "u-table-b",
+            "u-time",
+            "u-title",
+            "u-visualmap"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context76_9rFC8S": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/VAR",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/CANVAS",
+            "DIV/DIV/DIV",
+            "DIV/DIV/EM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H2",
+            "DIV/DIV/H5",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/H1/A",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TH/FONT",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}
