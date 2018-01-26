@@ -597,52 +597,6 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
-    },
-    "control223_qogbUt": {
-      "location": {
-        "data": {
-          "tagName": "A"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "a/@href",
-            "prob": 2,
-            "value": {
-              "funcName": "createDoc"
-            }
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[5]/TD[2]/SPAN[2]/A[1]"
-          },
-          {
-            "id": "style/color",
-            "value": [
-              255,
-              0,
-              0
-            ]
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control223_qogbUt"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
     }
   },
   "contexts": {
@@ -663,8 +617,7 @@
         "control217_6L11zU",
         "control14_ShuDms",
         "control61_KxmBUG",
-        "control355_t5DAGc",
-        "control223_qogbUt"
+        "control355_t5DAGc"
       ],
       "anchors": [
         "control197_FbC7GU"
@@ -1054,21 +1007,6 @@
                       "events": {
                         "onDoAction": "doAction_uiControl58_fu1eWx",
                         "onGetTemplate": "getTemplate_uiControl58_fu1eWx"
-                      }
-                    }
-                  }
-                },
-                {
-                  "id": "uiControl204_shw7U8",
-                  "controlId": "control223_qogbUt",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl204_shw7U8",
-                        "onGetTemplate": "getTemplate_uiControl204_shw7U8"
                       }
                     }
                   }
