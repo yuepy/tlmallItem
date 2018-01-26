@@ -18,15 +18,12 @@
             sessionStorage.isLogin = 1;
             localStorage.testUrl = url1;
         }
-        if (indexUrl&& localStorage.testUrl && sessionStorage.isLogin) {
-          debugger;
+        if (indexUrl && localStorage.testUrl) {
             iframe.src = localStorage.testUrl;
-          alert(iframe.src)
             delete localStorage.testUrl;
         }
-      if(!sessionStorage.isLogin){
         requestAnimationFrame(wdlssrds);
-      }
+      
        
     }
   if(ysp.appMain.isIOS()){
