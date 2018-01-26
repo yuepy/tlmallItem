@@ -5,8 +5,6 @@
         var tokenDizhi = document.querySelector('iframe[src*="&token="]');
         var indexUrl = document.querySelector('iframe[src*="main.jsp"]');
         if (tokenDizhi && !sessionStorage.isLogin) {
-            alert("123");
-            debugger;
             var iframe = document.querySelector('iframe');
             // 有可能会影响首页OA那个逻辑，先不管了。我低射
             var url1 = tokenDizhi.src.match(/(.*)&token=/)[1]; // 登录成功后跳转的地址
@@ -17,7 +15,6 @@
             localStorage.testUrl = url1;
         }
         if (indexUrl && localStorage.testUrl && sessionStorage.isLogin) {
-            debugger;
             iframe.src = localStorage.testUrl;
             alert(iframe.src)
             delete localStorage.testUrl;
@@ -30,7 +27,6 @@
     if (ysp.appMain.isIOS()) {
         wdlssrds();
     }
-
     var utils = ysp.utils;
     var flag = true; // 为true说明需要取token  为false说明不需要取token
     var topWindow = win.top; // 最外层window - top层
