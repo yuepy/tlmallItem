@@ -251,7 +251,7 @@
       if (data.eventType == 'deleteFile') {
         var idx = data.dataCustom;var elem1 = $(elem).children("table").eq(1)[0];$(elem1).find('input').each(function () {
           if ($(this).attr('temptitle') && $(this).attr('temptitle').indexOf('合同/协议正文') !== -1) {
-            var value = $(this)[0].value;var arr = $(this)[0].value.split(',');console.log(arr.length);if (arr.length !== 1) {
+            var value = $(this)[0].value;var arr = $(this)[0].value.split(',');if (arr.length !== 1) {
               arr.splice(idx, 1);var valuet = arr.toString(); //console.log(valuet);
               $(this)[0].value = valuet;
             } else {
@@ -318,14 +318,15 @@
         var number = data.dataCustom.number;var index = data.dataCustom.index;var row = data.dataCustom.row; //文件类型
         var file = elem.querySelectorAll("#selectDownload")[index].querySelectorAll("button")[0]; //现在的文件名称
         var type = data.dataCustom.type;var text = data.dataCustom.text; //拼接下载地址
-        text = text.replace(/\(.*/, '');var _url = "";console.log(index, row);if (file.getAttribute("onclick").indexOf("top.location") !== -1) {
+        text = text.replace(/\(.*/, '');var _url = "";var arr = text.split("."); //var arr = text.match(/\..*/g);
+        var style = arr[arr.length - 1];if (file.getAttribute("onclick").indexOf("top.location") !== -1) {
           var str = $(file)[0].getAttribute("onclick").match(/\/.*[0-9]/g);_url = 'http://192.168.200.63' + str;
         } else {
           _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';
-        }console.log(_url + "&_ysp_attachment_fileName=" + text);if (ysp.appMain.isIOS()) {
+        }if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;console.log(top.loaction.href);
+          top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }if (data.eventType == 'selectFile') {
         $(elem).find('#Filedata').eq(0).click();$(elem).find('#Filedata').eq(0)[0].parentElement.setAttribute('file-num', '1');
@@ -382,10 +383,11 @@
           文件预览通用方法
           number 文件唯一编号
         */function reviewFiles(jumpUrl) {
-        var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
+        var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;var arr = text.split(".");
+        var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
+         top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }
     },

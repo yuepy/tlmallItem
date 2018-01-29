@@ -468,14 +468,15 @@
         }, 1000);var number = data.dataCustom.number;var index = data.dataCustom.index;var row = data.dataCustom.row; //文件类型
         var file = elem.querySelectorAll("#selectDownload")[index].querySelectorAll("button")[0]; //现在的文件名称
         var type = data.dataCustom.type;var text = data.dataCustom.text; //拼接下载地址
-        text = text.replace(/\(.*/, '');var _url = "";console.log(index, row);if (file.getAttribute("onclick").indexOf("top.location") !== -1) {
+        text = text.replace(/\(.*/, '');var _url = "";var arr = text.split(".");
+        var style = arr[arr.length - 1];if (file.getAttribute("onclick").indexOf("top.location") !== -1) {
           var str = $(file)[0].getAttribute("onclick").match(/\/.*[0-9]/g);_url = 'http://192.168.200.63' + str;
         } else {
           _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';
         }if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;console.log(top.loaction.href);
+         top.location.href = _url + "&_ysp_attachment_fileName=document." + style;console.log(top.loaction.href);
         }
       }
     },
@@ -531,10 +532,11 @@
         */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;console.log(_url + "&_ysp_attachment_fileName=" + text);if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;var arr = text.split(".");
+        var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
+         top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }
     },

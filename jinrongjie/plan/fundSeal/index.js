@@ -172,10 +172,10 @@
           var _url = "http://192.168.200.63" + url;
         } else {
           var _url = "http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=" + url + "&download=1";
-        }var download = $(elem).children("tr").eq(row).children("td").eq(1).find(".btnFlowd").eq(i);var text = $(elem).children("tr").eq(row).children("td").eq(1).find("a").eq(i).text();console.log(_url + "&_ysp_attachment_fileName=" + text);if (ysp.appMain.isIOS()) {
+        }var download = $(elem).children("tr").eq(row).children("td").eq(1).find(".btnFlowd").eq(i);var text = $(elem).children("tr").eq(row).children("td").eq(1).find("a").eq(i).text();var arr = text.split(".");var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
+          top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }
     },
@@ -342,10 +342,11 @@
           文件预览通用方法
           number 文件唯一编号
         */function reviewFiles(jumpUrl) {
-        var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;console.log(_url + "&_ysp_attachment_fileName=" + text);if (ysp.appMain.isIOS()) {
+        var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;var arr = text.split(".");
+        var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
+          top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }
     },

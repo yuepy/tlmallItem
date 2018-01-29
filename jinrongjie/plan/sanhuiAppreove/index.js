@@ -166,11 +166,13 @@
                 }arr2.push({ text: arr3, size: arr4, type: 'fujian', delete: arr6 });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0) {
-                  var arr4 = [];var disabled = this.querySelector("select").disabled;$(this).children("select").children("option").each(function () {
+                  var arr4 = [];var disabled = this.querySelector("select").disabled;
+                  $(this).children("select").children("option").each(function () {
                     if ($(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
                     }if ($(this)[0].selected == false) {
-                      arr4.push({ text: $(this).text().trim(), select: '' });
+                      arr4.push({ text: $(this).text().trim(), select: ''
+                      });
                     }
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id"), disabled: disabled });
                 } //判断input-------------------------------------
@@ -195,8 +197,7 @@
                             $(this).children("button").each(function () {
                               var arr = [];$(this).next("span").children('a').each(function () {
                                 arr.push($(this).text());
-                              });
-                              arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                              });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                             });
                           } else {
                             $(this).children("button").each(function () {
@@ -209,8 +210,7 @@
                         } //判断意见-------------------------------------
                         else if ($(this)[0].className == 'zdn' && ($(this).children().length == 0 || $(this)[0].children.length > 0 && $(this)[0].children[0].tagName == 'BR')) {
                             if ($(this)[0].innerHTML.replace(/&nbsp;/, "").replace(/\<br\>/ig, "").replace(/\s+/, "") == '') {
-                              arr2.push({ text: '',
-                                type: 'suggest' });
+                              arr2.push({ text: '', type: 'suggest' });
                             } else {
                               arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
                             }
@@ -227,7 +227,8 @@
             if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
+              arr2.push({
+                text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
             } //判断附件111-------------------------------------
@@ -246,7 +247,8 @@
                       } else if ($(this).text().indexOf('png') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(),
+                          stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
@@ -266,8 +268,7 @@
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push'
-                        });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
@@ -285,7 +286,8 @@
                       arr6.push("111");
                     }
                   });
-                }arr2.push({ text: arr3, size: arr4, type: 'fujian', delete: arr6 });
+                }arr2.push({ text: arr3,
+                  size: arr4, type: 'fujian', delete: arr6 });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
@@ -511,14 +513,14 @@
         }, 1000);var number = data.dataCustom.number;var index = data.dataCustom.index; //文件类型
         var file = elem.querySelectorAll("#selectDownload")[index].querySelectorAll("button")[0]; //现在的文件名称
         var type = data.dataCustom.type;var text = data.dataCustom.text; //拼接下载地址
-        text = text.replace(/\(.*/, '');var _url = "";if (file.getAttribute("onclick").indexOf("top.location") !== -1) {
+        text = text.replace(/\(.*/, '');var _url = "";var arr = text.split(".");var style = arr[arr.length - 1];if (file.getAttribute("onclick").indexOf("top.location") !== -1) {
           var str = $(file)[0].getAttribute("onclick").match(/\/.*[0-9]/g);_url = 'http://192.168.200.63' + str;
         } else {
           _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';
         }if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;console.log(top.loaction.href);
+          top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }
     },
@@ -572,10 +574,10 @@
           文件预览通用方法
           number 文件唯一编号
         */function reviewFiles(jumpUrl) {
-        var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;console.log(_url + "&_ysp_attachment_fileName=" + text);if (ysp.appMain.isIOS()) {
+        var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;var arr = text.split(".");var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
+          top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }
     },

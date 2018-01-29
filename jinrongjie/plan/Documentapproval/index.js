@@ -105,11 +105,9 @@
                       }
                     }if ($(this)[0].className == 'progressCancel') {
                       if ($(this).next().text().indexOf('txt') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(),
-                          stl: 'txt', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'txt', no: 'push' });
                       } else if ($(this).next().text().indexOf('doc') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc',
-                          tno: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'doc', tno: 'push' });
                       } else if ($(this).next().text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'pdf', no: 'push' });
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
@@ -119,8 +117,7 @@
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(),
-                          stl: 'gif', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'zip', no: 'push' });
                       } else if ($(this).next().text().indexOf('ppt') !== -1) {
@@ -154,12 +151,14 @@
                   });arr2.push({ text: arr4, type: 'selcet', id: $(this).children("select").prop("id") });
                 } //判断input-------------------------------------
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
-                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
+                    arr2.push({ text: $(this).children("input").prop('value'), type: 'input',
+                      id: $(this).children("input").prop('id') });
                   } //判断纯文字
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                     } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
+                      arr2.push({ text: $(this).find("a").text(),
+                        type: 'aaa' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 0 && $(this).children("input").length == 0) {
@@ -202,8 +201,7 @@
           $(this).children("td").each(function () {
             var arr2 = []; //判断标题-------------------------------------
             if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text()) && $(this).next()[0].className == 'zdn' && ($(this).next().children().length == 0 || $(this).next()[0].children.length > 0 && $(this).next()[0].children[0].tagName == 'BR')) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title'
-              });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
             } else if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
@@ -230,7 +228,8 @@
                       } else if ($(this).text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'jpg', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('gif') !== -1) {
-                        arr3.push({ name: $(this).text().trim(), stl: 'gif', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'gif',
+                          no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else {
                         arr3.push({ name: $(this).text().trim(), stl: 'unknown', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       }
@@ -244,7 +243,8 @@
                       } else if ($(this).next().text().indexOf('xls') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'xls', no: 'push' });
                       } else if ($(this).next().text().indexOf('png') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(),
+                          stl: 'png', no: 'push' });
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
@@ -281,7 +281,8 @@
                     arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                   } //判断纯文字
                   else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
+                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a'
+                      });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } //判断textarea-------------------------------------
@@ -481,14 +482,14 @@
         }, 1000);var number = data.dataCustom.number;var index = data.dataCustom.index;var row = data.dataCustom.row; //文件类型
         var file = elem.querySelectorAll("#selectDownload")[index].querySelectorAll("button")[0]; //现在的文件名称
         var type = data.dataCustom.type;var text = data.dataCustom.text; //拼接下载地址
-        text = text.replace(/\(.*/, '');var _url = "";console.log(index, row);if (file.getAttribute("onclick").indexOf("top.location") !== -1) {
+        text = text.replace(/\(.*/, '');var _url = "";var arr = text.split(".");var style = arr[arr.length - 1];if (file.getAttribute("onclick").indexOf("top.location") !== -1) {
           var str = $(file)[0].getAttribute("onclick").match(/\/.*[0-9]/g);_url = 'http://192.168.200.63' + str;
         } else {
           _url = 'http://192.168.200.63/weaver/weaver.file.FileDownload?fileid=' + number + '&download=1';
-        }console.log(_url + "&_ysp_attachment_fileName=" + text);if (ysp.appMain.isIOS()) {
+        }if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;console.log(top.loaction.href);
+          top.location.href = _url + "&_ysp_attachment_fileName=document." + style;console.log(top.loaction.href);
         }
       }
     },
@@ -759,7 +760,7 @@
       var selfTemplate = "import { Component } from 'react';\nimport { CustomHeader } from 'ysp-custom-components';\n\nexport default class extends Component {\n  constructor(props){\n    super(props);\n    this.state={\n      isMoreOpen: false,\n      isShowBottom: true\n    }\n  }\n  \n  btnClick=(e)=>{\n    YSP.appRenderer.showLoading();\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        data:{num:e.target.dataset.num},\n        eventType:'click'\n      })\n    }\n    var evt = new Event('ysp-file-upload');\n    evt.value = '\u4E0A\u4F20\u6587\u4EF6';\n    window.dispatchEvent(evt);\n  }\n  \n  showMoreButton=(e)=>{\n    this.setState((prevState) => {\n  \t\treturn {\n        isMoreOpen: !prevState.isMoreOpen,\n      \tisShowBottom: !prevState.isShowBottom\n      };\n\t\t});\n  }\n  \n  render(){\n    var _this = this;\n    var data = this.props.customData||[];\n    if(data == null || data == undefined){\n      return null;\n    }\n    if(data.length>3){\n    return (\n    \t<div className=\"ysp-process-form-wrapper\">\n        {_this.state.isShowBottom&&\n      \t<div className=\"ysp-process-form-bottom-button\">\n          <div>\n            {data.map((item, index)=>{\n              \n              //\u7B2C\u4E00\u4E2A\u6309\u94AE\n              if(data.indexOf('\u63D0\u4EA4')!==-1){\n                if(item == '\u63D0\u4EA4'){\n                  return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n                }\n              }else if(data.indexOf('\u6279\u51C6')!==-1){\n                if(item == '\u6279\u51C6'){\n                  return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n                }\n              }else if(data.indexOf('\u524D\u63D2')!==-1){\n                if(item == '\u524D\u63D2'){\n                  return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n                }\n              }else if(data.indexOf('\u5F3A\u5236\u6536\u56DE')!==-1){\n                if(item == '\u5F3A\u5236\u6536\u56DE'){\n                  return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n                }\n              }\n              \n              //\u7B2C\u4E8C\u4E2A\u6309\u94AE\n              if(data.indexOf('\u4FDD\u5B58')!==-1){\n                if(item.indexOf('\u4FDD\u5B58')!==-1){\n                  return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n                }\n              }else if(data.indexOf('\u540E\u63D2')!==-1){\n                if(item == '\u540E\u63D2'){\n                  return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n                }\n              }else if(data.indexOf('\u8FD4\u56DE')!==-1){\n                if(item == '\u8FD4\u56DE'){\n                  return <span data-num={index} onClick={_this.btnClick.bind(_this)}>{data[index]}</span>\n                }\n              }else if(data.indexOf('\u9001\u9605')!==-1){\n                if(item == '\u9001\u9605'){\n                  return <span onClick={_this.showMoreButton.bind(_this)}>\u8FD4\u56DE</span>\n                }\n              }\n              \n            })}\n            <span onClick={_this.showMoreButton.bind(_this)}></span>\n          </div>\n          \n        </div>\n        }\n        {_this.state.isMoreOpen &&\n          <div className=\"load-more-coverlayer\">\n          \t<div className=\"load-more-data\">\n              <section>\n                {data.length>0&&\n                \tdata.map((item,index)=>{\n                  if(item==\"\u6253\u5370\"||item==\"\u4FDD\u5B58\"||item==\"\u63D0\u4EA4\"||item==\"\u8FD4\u56DE\"){\n                    return null;\n                  }\n                  return <div data-num={index} onClick={_this.btnClick.bind(_this)}>{item}</div>\n                })\n                }\n              </section>\n              <div onClick={_this.showMoreButton.bind(_this)}>\u8FD4\u56DE</div>\n            </div>\n          </div>\n        }\n      </div>\n    );\n    }else if(data.length==3){\n      return (\n        <div className=\"ysp-process-form-wrapper\">\n          <div className=\"ysp-process-form-bottom-button\">\n              <div>\n                  <span data-num={0} onClick={_this.btnClick.bind(_this)}>{data[0]}</span>\n                  <span data-num={1} onClick={_this.btnClick.bind(_this)}>{data[1]}</span>\n              </div>\n          </div>\n        </div>\n      )\n    }else{\n      return (\n        <div className='summit_button_lfj'>\n        \t<button style={{'font-size':'16px'}} data-num={0} onClick={_this.btnClick.bind(_this)}>{data[0]}</button>\n        </div>\n      )\n    }\n  }\n}";
       return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.btnClick = function (e) {\n      YSP.appRenderer.showLoading();\n      var handler = _this2.props.customHandler;\n      if (handler) {\n        handler({\n          data: { num: e.target.dataset.num },\n          eventType: 'click'\n        });\n      }\n      var evt = new Event('ysp-file-upload');\n      evt.value = '\u4E0A\u4F20\u6587\u4EF6';\n      window.dispatchEvent(evt);\n    };\n\n    _this2.showMoreButton = function (e) {\n      _this2.setState(function (prevState) {\n        return {\n          isMoreOpen: !prevState.isMoreOpen,\n          isShowBottom: !prevState.isShowBottom\n        };\n      });\n    };\n\n    _this2.state = {\n      isMoreOpen: false,\n      isShowBottom: true\n    };\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData || [];\n      if (data == null || data == undefined) {\n        return null;\n      }\n      if (data.length > 3) {\n        return React.createElement(\n          'div',\n          { className: 'ysp-process-form-wrapper' },\n          _this.state.isShowBottom && React.createElement(\n            'div',\n            { className: 'ysp-process-form-bottom-button' },\n            React.createElement(\n              'div',\n              null,\n              data.map(function (item, index) {\n\n                //\u7B2C\u4E00\u4E2A\u6309\u94AE\n                if (data.indexOf('\u63D0\u4EA4') !== -1) {\n                  if (item == '\u63D0\u4EA4') {\n                    return React.createElement(\n                      'span',\n                      { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                      data[index]\n                    );\n                  }\n                } else if (data.indexOf('\u6279\u51C6') !== -1) {\n                  if (item == '\u6279\u51C6') {\n                    return React.createElement(\n                      'span',\n                      { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                      data[index]\n                    );\n                  }\n                } else if (data.indexOf('\u524D\u63D2') !== -1) {\n                  if (item == '\u524D\u63D2') {\n                    return React.createElement(\n                      'span',\n                      { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                      data[index]\n                    );\n                  }\n                } else if (data.indexOf('\u5F3A\u5236\u6536\u56DE') !== -1) {\n                  if (item == '\u5F3A\u5236\u6536\u56DE') {\n                    return React.createElement(\n                      'span',\n                      { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                      data[index]\n                    );\n                  }\n                }\n\n                //\u7B2C\u4E8C\u4E2A\u6309\u94AE\n                if (data.indexOf('\u4FDD\u5B58') !== -1) {\n                  if (item.indexOf('\u4FDD\u5B58') !== -1) {\n                    return React.createElement(\n                      'span',\n                      { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                      data[index]\n                    );\n                  }\n                } else if (data.indexOf('\u540E\u63D2') !== -1) {\n                  if (item == '\u540E\u63D2') {\n                    return React.createElement(\n                      'span',\n                      { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                      data[index]\n                    );\n                  }\n                } else if (data.indexOf('\u8FD4\u56DE') !== -1) {\n                  if (item == '\u8FD4\u56DE') {\n                    return React.createElement(\n                      'span',\n                      { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                      data[index]\n                    );\n                  }\n                } else if (data.indexOf('\u9001\u9605') !== -1) {\n                  if (item == '\u9001\u9605') {\n                    return React.createElement(\n                      'span',\n                      { onClick: _this.showMoreButton.bind(_this) },\n                      '\\u8FD4\\u56DE'\n                    );\n                  }\n                }\n              }),\n              React.createElement('span', { onClick: _this.showMoreButton.bind(_this) })\n            )\n          ),\n          _this.state.isMoreOpen && React.createElement(\n            'div',\n            { className: 'load-more-coverlayer' },\n            React.createElement(\n              'div',\n              { className: 'load-more-data' },\n              React.createElement(\n                'section',\n                null,\n                data.length > 0 && data.map(function (item, index) {\n                  if (item == \"\u6253\u5370\" || item == \"\u4FDD\u5B58\" || item == \"\u63D0\u4EA4\" || item == \"\u8FD4\u56DE\") {\n                    return null;\n                  }\n                  return React.createElement(\n                    'div',\n                    { 'data-num': index, onClick: _this.btnClick.bind(_this) },\n                    item\n                  );\n                })\n              ),\n              React.createElement(\n                'div',\n                { onClick: _this.showMoreButton.bind(_this) },\n                '\\u8FD4\\u56DE'\n              )\n            )\n          )\n        );\n      } else if (data.length == 3) {\n        return React.createElement(\n          'div',\n          { className: 'ysp-process-form-wrapper' },\n          React.createElement(\n            'div',\n            { className: 'ysp-process-form-bottom-button' },\n            React.createElement(\n              'div',\n              null,\n              React.createElement(\n                'span',\n                { 'data-num': 0, onClick: _this.btnClick.bind(_this) },\n                data[0]\n              ),\n              React.createElement(\n                'span',\n                { 'data-num': 1, onClick: _this.btnClick.bind(_this) },\n                data[1]\n              )\n            )\n          )\n        );\n      } else {\n        return React.createElement(\n          'div',\n          { className: 'summit_button_lfj' },\n          React.createElement(\n            'button',\n            { style: { 'font-size': '16px' }, 'data-num': 0, onClick: _this.btnClick.bind(_this) },\n            data[0]\n          )\n        );\n      }\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
     },
-    getData_control138_KWpxdM: function getData_control138_KWpxdM(elem) {
+    getData_control138_KWpxdM: function (elem) {
       if (!elem) {
         return;
       } // if (elem.querySelectorAll("#ysp_fake_form").lenght > 1) {
@@ -783,7 +784,7 @@
         }data.fileData = fileData;data.oldFileLength = oldFileLength;
       }return data;
     },
-    doAction_uiControl117_f9V96k: function doAction_uiControl117_f9V96k(data, elem) {
+    doAction_uiControl117_f9V96k: function (data, elem) {
       if (data.eventType == 'deleteFile') {
         var elem = elem.querySelector("#field-annexupload_tab");var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();$(input)[0].value = valuet;if (elem.querySelector('a')) {
           if (elem.querySelectorAll('a').length > 0) {
@@ -812,10 +813,10 @@
           文件预览通用方法
           number 文件唯一编号
         */function reviewFiles(jumpUrl) {
-        var _url = 'http://192.168.200.63' + jumpUrl;console.log(_url);if (ysp.appMain.isIOS()) {
+        var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;var arr = text.split(".");var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url;
+          top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }
     },

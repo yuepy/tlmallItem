@@ -146,10 +146,10 @@
         */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;var arr = text.split(".");var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
+          top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }
     },
@@ -345,10 +345,10 @@
               */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;var arr = text.split(".");var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url + "&_ysp_attachment_fileName=" + text;
+          top.location.href = _url + "&_ysp_attachment_fileName=document." + style;
         }
       }switch (fileIndex.type) {case 'title':
           elem.querySelector('input[temptitle="标题"]').value = fileIndex.value;break;case 'zhaiyao':
