@@ -315,6 +315,9 @@
         case 'storeList'://门店
           task.title = "STORE360";
           break;
+        case 'atMyReport'://at我的报告 一级菜单
+          task.title = "myReport"
+          break;
         default:
           msgType = "no"
           break;

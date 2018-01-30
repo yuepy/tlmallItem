@@ -1,0 +1,334 @@
+{
+  "version": "0.1",
+  "id": "atMyReport",
+  "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/customerAtReport/customerAtReport.html",
+  "jsFile": "index.js",
+  "requires": {
+    "atMyReportDetail": "../atMyReportDetail/index.json"
+  },
+  "chineseName": "@我的报告 一级菜单",
+  "description": "@我的报告 一级菜单",
+  "controls": {
+    "control277_0d3wVv": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.g-doc"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control277_0d3wVv"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control278_uon3UO": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.g-body DIV.content_head2 DIV.u-search.u-searches"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control278_uon3UO"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control279_8glIiX": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.g-doc DIV.g-body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control279_8glIiX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control280_gbx3rD": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control280_gbx3rD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context77_XsUu8L": {
+      "controls": [
+        "control277_0d3wVv",
+        "control278_uon3UO",
+        "control279_8glIiX",
+        "control280_gbx3rD"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow229_PRKGzI": {
+      "toContexts": [
+        {
+          "toContextId": "context77_XsUu8L"
+        }
+      ]
+    },
+    "flow230_rWalwe": {
+      "fromContextId": "context77_XsUu8L",
+      "fromAction": "doAction",
+      "fromControlId": "control280_gbx3rD",
+      "toContexts": [
+        {
+          "toContextId": "context77_XsUu8L"
+        }
+      ]
+    },
+    "flow231_DtSNlz": {
+      "fromContextId": "context77_XsUu8L",
+      "fromAction": "doAction",
+      "fromControlId": "control279_8glIiX",
+      "toContexts": [
+        {
+          "toContextId": "context77_XsUu8L"
+        },
+        {
+          "toContextId": "context78_OINktR",
+          "toModelId": "atMyReportDetail"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page77_SfrhIu": {
+      "contextId": "context77_XsUu8L",
+      "layout": [
+        {
+          "id": "uiControl271_6qSRpn",
+          "controlId": "control277_0d3wVv",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl271_6qSRpn",
+                "onGetTemplate": "getTemplate_uiControl271_6qSRpn"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl272_at0gSa",
+          "controlId": "control278_uon3UO",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl272_at0gSa",
+                "onGetTemplate": "getTemplate_uiControl272_at0gSa"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl273_yCC9UV",
+          "controlId": "control279_8glIiX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl273_yCC9UV",
+                "onGetTemplate": "getTemplate_uiControl273_yCC9UV"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl274_QxgEyF",
+          "controlId": "control280_gbx3rD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl274_QxgEyF",
+                "onGetTemplate": "getTemplate_uiControl274_QxgEyF"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context77_XsUu8L": [
+          "@我的报告"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context77_XsUu8L": [
+          "192.168.220.82:8080/pttlCrm/res/page/customerAtReport/customerAtReport.html"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context77_XsUu8L": [
+          [
+            "icon_-DVUYL",
+            "icon_-FKHBF",
+            "icon_-HOJTZ",
+            "icon_-HQB",
+            "icon_-IH",
+            "icon_-JMSU",
+            "icon_-KQN",
+            "icon_-LED",
+            "icon_-QYA",
+            "icon_-XF",
+            "module-details",
+            "page",
+            "searchCustName"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context77_XsUu8L": [
+          [
+            "a",
+            "active",
+            "b",
+            "backImage",
+            "btn",
+            "btn-check",
+            "btn-search",
+            "c",
+            "commpnPage",
+            "content_head",
+            "d",
+            "footer",
+            "g-body",
+            "g-box",
+            "g-doc",
+            "g-main",
+            "header",
+            "icon",
+            "icon-eye",
+            "infors",
+            "leftPart",
+            "lists-one",
+            "m-list",
+            "m-report",
+            "mask",
+            "pagination",
+            "placeholder",
+            "pointImage",
+            "skip",
+            "skip-num",
+            "skip-right-icon",
+            "skip_count",
+            "skip_right_goto",
+            "title",
+            "title-a",
+            "title-b",
+            "u-search",
+            "u-searches",
+            "z-act"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context77_XsUu8L": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/EM",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H5",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/UL",
+            "DIV/UL/LI",
+            "UL/LI/A",
+            "UL/LI/INPUT-number",
+            "UL/LI/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}
