@@ -16,6 +16,7 @@
         }
         if (indexUrl && localStorage.testUrl && sessionStorage.isLogin) {
             iframe.src = localStorage.testUrl;
+          //alert("suibian")
             delete localStorage.testUrl;
         }
         requestAnimationFrame(wdlssrds);
@@ -707,6 +708,7 @@
                     frmmain.target = "delzw";
                     aWin.parent.delsave();
                     if (aWin.check_form(doc.frmmain, 'requestname')) {
+                      debugger;
                         if ($G("needoutprint")) $G("needoutprint").value = "1"; //标识点正文
                         doc.frmmain.src.value = 'save';
                         doc.frmmain.isremark.value = '0';
