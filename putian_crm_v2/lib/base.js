@@ -81,7 +81,7 @@
         ysp.customHelper.secondMenu.toPlanByMenuName('库存查询', null, menuId);
         break;
       case 'achievementSecondMenu':
-        ysp.customHelper.secondMenu.toPlanByMenuName('销售业绩总览', null, menuId);
+        ysp.customHelper.secondMenu.toPlanByMenuName('计划达成总览', null, menuId);
         break;
       case 'newInformationTotle':
         ysp.customHelper.secondMenu.toPlanByMenuName('客户信息录入', null, menuId);
@@ -424,12 +424,12 @@
     // }
     
 
-    if (type === "saleAchievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard" || type === "newInformationTotle1") {
+    if (type === "achievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard" || type === "newInformationTotle1") {
       if (activeContext && activeContext.model.id == realType) {
         console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
          return;
       }
-      if(activeContext && activeContext.model.id == 'customerInformationFIll' && type != "saleAchievement" && type != "dataPanel" && type != "customerIn" && type != "achievementSecondMenu" && type != "clientStoreCard"){ // 信息录入页面加载无刷新
+      if(activeContext && activeContext.model.id == 'customerInformationFIll' && type != "achievement" && type != "dataPanel" && type != "customerIn" && type != "achievementSecondMenu" && type != "clientStoreCard"){ // 信息录入页面加载无刷新
         aWin && (aWin.location.href.indexOf('index.html') == -1) && aWin.location.reload();
         return;
       }
@@ -756,7 +756,6 @@
           goodsMessages: "分货查询",
           stockInquire: "库存查询",
           visitIndex: "拜访总览",
-          saleAchievement: "销售业绩总览",
           achievement: "计划达成总览",
           saleReachMonth: "月度销售达成",
           saleReachYear: "年度销售达成",
@@ -773,7 +772,7 @@
         this.menuNames = {
           visitManager: ["拜访总览", "拜访查看", "@我的报告"],
           dataPanel: ["库存查询", "分货查询", "产品上下架信息查询"],
-          saleAchievement: ["销售业绩总览","计划达成总览", "月度销售达成", "年度销售达成"],
+          achievement: ["计划达成总览", "月度销售达成", "年度销售达成"],
           customerIn: ["客户信息录入", "门店信息录入（HES）"],
           clientStoreCard: ["客户信息", "门店信息"]
         }
@@ -886,8 +885,8 @@
             case "拜访总览":
               parentMenuType = "visitManager";
               break;
-            case "销售业绩总览":
-              parentMenuType = "saleAchievement";
+            case "计划达成总览":
+              parentMenuType = "achievement";
               break;
             case "客户信息录入":
               parentMenuType = "customerIn";
