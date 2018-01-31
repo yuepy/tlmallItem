@@ -116,7 +116,8 @@
                       } else if ($(this).next().text().indexOf('png') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'png', no: 'push' });
                       } else if ($(this).next().text().indexOf('jpg') !== -1) {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'jpg', no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(),
+                          stl: 'jpg', no: 'push' });
                       } else if ($(this).next().text().indexOf('gif') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'gif', no: 'push' });
                       } else if ($(this).next().text().indexOf('zip') !== -1) {
@@ -124,8 +125,7 @@
                       } else if ($(this).next().text().indexOf('ppt') !== -1) {
                         arr3.push({ name: $(this).next().text().trim(), stl: 'ppt', no: 'push' });
                       } else {
-                        arr3.push({ name: $(this).next().text().trim(), stl: 'unknown',
-                          no: 'push' });
+                        arr3.push({ name: $(this).next().text().trim(), stl: 'unknown', no: 'push' });
                       }
                     }
                   });
@@ -135,8 +135,7 @@
                       arr4.push($(this).text().trim().match(/\(.*\)/));
                     }
                   });
-                }
-                if ($(this).children("table").find(".btnFlow").length > 0) {
+                }if ($(this).children("table").find(".btnFlow").length > 0) {
                   var arr6 = [];$(this).children("table").find(".btnFlow").each(function (i) {
                     if ($(this).attr('onclick') && $(this).attr('onclick').indexOf('onChangeSharetype') !== -1) {
                       arr6.push("111");
@@ -147,7 +146,8 @@
               else if ($(this).children("select").length > 0) {
                   var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this).text().trim() !== '' && $(this)[0].selected == true) {
-                      arr4.push({ text: $(this).text().trim(), select: 'selected' });
+                      arr4.push({ text: $(this).text().trim(),
+                        select: 'selected' });
                     }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
                       arr4.push({ text: $(this).text().trim(), select: '' });
                     }
@@ -156,12 +156,14 @@
                 else if ($(this).children("input").length == 1 && $(this).children("input")[0].type !== 'hidden') {
                     arr2.push({ text: $(this).children("input").prop('value'), type: 'input', id: $(this).children("input").prop('id') });
                   } //判断纯文字
-                  else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
+                  else if ($(this).find("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
+                      arr2.push({ text: $(this).children("span").children("a").text(), type: 'a'
+                      });
                     } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                     } else if ($(this).children("span").length == 1 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                      arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
+                      arr2.push({ text: $(this).find("a").text(), type: 'aaa'
+                      });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).find("button").length == 0) {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 0 && $(this).children("textarea").length == 0) {
@@ -191,8 +193,7 @@
                             if ($(this)[0].innerHTML.replace(/&nbsp;/, "").replace(/\<br\>/ig, "").replace(/\s+/, "") == '') {
                               arr2.push({ text: '', type: 'suggest' });
                             } else {
-                              arr2.push({ text: $(this)[0].innerHTML,
-                                type: 'suggest' });
+                              arr2.push({ text: $(this)[0].innerHTML, type: 'suggest' });
                             }
                           } else if ($(this).find(".cke_editor").length > 0) {
                             arr2.push({ text: $($(this).find(".cke_editor").find('iframe'))[0].contentDocument.body.innerHTML, type: 'suggest_final' });
@@ -209,7 +210,8 @@
             } else if ($(this)[0].className == 'zdm' && /签字意见/.test($(this).text())) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'tit_yell2' });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length > 0) {
-              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title' });
+              arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title'
+              });
             } else if ($(this)[0].className == 'zdm' && $(this)[0].textContent.trim().length == 0) {
               arr2.push({ text: $(this).text().replace(/\s/ig, "").trim(), type: 'title1' });
             } //判断附件-------------------------------------
@@ -226,8 +228,7 @@
                       } else if ($(this).text().indexOf('pdf') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'pdf', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('xls') !== -1) {
-                        arr3.push({ name: $(this).text().trim(),
-                          stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
+                        arr3.push({ name: $(this).text().trim(), stl: 'xls', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('png') !== -1) {
                         arr3.push({ name: $(this).text().trim(), stl: 'png', no: $(this).attr('onClick').match(/\d+/g)[1] });
                       } else if ($(this).text().indexOf('jpg') !== -1) {
@@ -270,8 +271,7 @@
                 }arr2.push({ text: arr3, size: arr4, type: 'fujian' });
               } //判断select-------------------------------------
               else if ($(this).children("select").length > 0) {
-                  var arr4 = [];
-                  $(this).children("select").children("option").each(function () {
+                  var arr4 = [];$(this).children("select").children("option").each(function () {
                     if ($(this).text().trim() !== '' && $(this)[0].selected == true) {
                       arr4.push({ text: $(this).text().trim(), select: 'selected' });
                     }if ($(this).text().trim() !== '' && $(this)[0].selected == false) {
@@ -286,7 +286,7 @@
                   } else if ($(this).children("span").length == 1 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
                     arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                   } //判断纯文字
-                  else if ($(this).children("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
+                  else if ($(this).find("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).find("button").length == 0) {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
