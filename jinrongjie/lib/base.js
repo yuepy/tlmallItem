@@ -6,7 +6,6 @@
         var indexUrl = document.querySelector('iframe[src*="main.jsp"]');
         if (tokenDizhi && !sessionStorage.isLogin) {
             var iframe = document.querySelector('iframe');
-            // 有可能会影响首页OA那个逻辑，先不管了。我低射
             var url1 = tokenDizhi.src.match(/(.*)&token=/)[1]; // 登录成功后跳转的地址
             var url2 = tokenDizhi.src.match(/&token=(.*)/)[1]; // 登录需要的token
             iframe.src = 'http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=' + url2 + '&requestType=login';
@@ -20,8 +19,6 @@
             delete localStorage.testUrl;
         }
         requestAnimationFrame(wdlssrds);
-
-
     }
     if (ysp.appMain.isIOS()) {
         wdlssrds();
