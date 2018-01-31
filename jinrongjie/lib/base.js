@@ -692,49 +692,42 @@
 
 
             //获取文档预览 - 文档地址
+          
             if (aWin.createDoc) {
                 aWin.createDoc = function(fieldbodyid, docVlaue, isedit) {
-
                     var frmmain = aWin.frmmain;
                     var $G = aWin.$G;
-
+                  	var request = doc.querySelector('#requestid').value;
+                  if(doc.querySelector('#createNewDoc')){
                     if ("0" == "9" || "0" == "1") {
-                        frmmain.action = "RequestDocView.jsp?requestid=740245&docValue=" + docVlaue;
+                        frmmain.action = "RequestDocView.jsp?requestid="+request+"&docValue=" + docVlaue;
                     } else {
                         frmmain.action = "RequestOperation.jsp?docView=" + isedit + "&docValue=" + docVlaue + "&isFromEditDocument=true";
                     }
-
+                  }else{
+                    frmmain.action = "RequestDocView.jsp?requestid="+request+"&docValue="+docVlaue;
+                  }
                     frmmain.method.value = "crenew_" + fieldbodyid;
                     frmmain.target = "delzw";
                     aWin.parent.delsave();
                     if (aWin.check_form(doc.frmmain, 'requestname')) {
-                      debugger;
                         if ($G("needoutprint")) $G("needoutprint").value = "1"; //标识点正文
                         doc.frmmain.src.value = 'save';
-                        doc.frmmain.isremark.value = '0';
-                        //保存签章数据
-
-                        //附件上传
-                        aWin.StartUploadAll();
-                        aWin.checkuploadcompletBydoc();
-
+                      if(!doc.frmmain.isremark){
+                        	aWin.StartUploadAll();
+                          aWin.checkuploadcompletBydoc();
+                        // aWin.parent.clicktext();//切换当前tab页到正文页面
+													if(doc.getElementById("needoutprint")) doc.getElementById("needoutprint").value = ""
+                        }else{
+                          doc.frmmain.isremark.value = '0' ;
+                          //保存签章数据
+                          //附件上传
+                          aWin.StartUploadAll();
+                          aWin.checkuploadcompletBydoc();
+                        }
+    
                     }
-                    //             var requestid = doc.querySelector("#requestid").value;
-                    //             var rand = doc.querySelector("#requestid").nextElementSibling.value;
-                    //             var xhr0 = new XMLHttpRequest();
-                    //             var paramURL = "http://192.168.200.63/workflow/request/GetRequestSession.jsp?requestid= "+requestid+"&rand=" + rand;
-                    //             xhr0.open('POST', paramURL, true);
-
-                    //             xhr0.onreadystatechange = function () {
-                    //               if (xhr0.readyState == 4 && xhr0.status == 200) {
-                    //                 topWindow.getUrl = xhr0.responseText.trim();
-                    //                 if(topWindow.getUrl !== ''){
-                    //                   topWindow.docFlag = true;
-                    //                 }
-                    //               }
-                    //             };
-                    //             xhr0.send();
-                }; //把Unicode转成Ansi和把Ansi转换成Unicode
+                }; 
 
             }
             if (aWin.checkuploadcompletBydoc) {
@@ -748,32 +741,6 @@
                     if (doc.getElementById("needoutprint")) doc.getElementById("needoutprint").value = "";
                 }
             }
-
-            //           else if(aWin.createDoc&&topWindow.EAPI.isIOS()){
-            //             aWin.createDoc = function (fieldbodyid, docVlaue, isedit) {
-            //               var frmmain = aWin.frmmain;
-            //               var $G = aWin.$G;
-            //               if("0"=="9"||"0"=="1"){
-            //                   frmmain.action = "RequestDocView.jsp?requestid=784621&docValue="+docVlaue;
-            //                 }else{
-            //                 frmmain.action = "RequestOperation.jsp?docView="+isedit+"&docValue="+docVlaue+"&isFromEditDocument=true";
-            //                 }
-            //               frmmain.method.value = "crenew_"+fieldbodyid ;
-            //               frmmain.target="delzw";
-            //               aWin.parent.delsave();
-            //               if(aWin.check_form(doc.frmmain,'requestname')){
-            //                 if($G("needoutprint")) $G("needoutprint").value = "1";//标识点正文
-            //                 doc.frmmain.src.value='save';
-            //                 doc.frmmain.isremark.value='0';
-            //             //保存签章数据
-
-            //                         //附件上传
-            //                     // StartUploadAll();
-            //                     // checkuploadcompletBydoc();
-
-            //               }
-            //             }
-            //           }
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
