@@ -2369,6 +2369,7 @@
          * 签到
          * @param {*} data 
          */
+        var signInOutScope = '0';  
         function doAction(data) {
             window.signStatus = 'loading';
             $("#customersign-content .customersign-mapcontent-textbottomspan").each(function() {
@@ -2390,6 +2391,7 @@
                     if (reslult.status == "true") {
                         signIn(param, referenceParentHtmlFn, data);
                     } else {
+                      	signInOutScope = '1';
                         layerUtils.info("当前签到位置与客户地址距离超过500米,请填写备注信息！");
                         return;
                     }
@@ -2423,6 +2425,7 @@
                 return;
             }
             signSubmit = '1';
+          	param.signInOutScope = signInOutScope;
             ajaxUtils.sendAjax("visit/customerVisitPlan/addCustomerSignIn", param, null, function(reslult) {
                 if (reslult.status == "true") {
                     window.signStatus = 'completed';
@@ -2678,6 +2681,7 @@
          * 签退
          * @param {*} data 
          */
+        var signOutOutScope = '0';  
         function doAction(data) {
             window.signOutStatus = 'loading';
             $("#customersign-content .customersign-mapcontent-textbottomspan").each(function() {
@@ -2699,6 +2703,7 @@
                     if (reslult.status == "true") {
                         signOut(param, referenceParentHtmlFn, data);
                     } else {
+                      	signOutOutScope = '1';
                         layerUtils.info("当前签出位置与签到地址距离超过500米,请填写备注信息！");
                         return;
                     }
@@ -2733,6 +2738,7 @@
                     return;
                 }
                 signOutSubmit = '1';
+              	param.signOutOutScope = signOutOutScope;
                 if (reslult.status == "true") {
                     window.signOutStatus = 'completed';
                     layerUtils.success("签出成功！", { time: 1000 });

@@ -14,6 +14,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -39,6 +43,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -66,6 +74,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -87,21 +99,30 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control280_gbx3rD": {
+    "control283_ZNBMEH": {
       "location": {
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.g-doc DIV.g-body"
+          },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control280_gbx3rD"
+        "onGetData": "getData_control283_ZNBMEH"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -115,31 +136,14 @@
         "control277_0d3wVv",
         "control278_uon3UO",
         "control279_8glIiX",
-        "control280_gbx3rD"
+        "control283_ZNBMEH"
       ],
       "anchors": [],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow229_PRKGzI": {
-      "toContexts": [
-        {
-          "toContextId": "context77_XsUu8L"
-        }
-      ]
-    },
-    "flow230_rWalwe": {
-      "fromContextId": "context77_XsUu8L",
-      "fromAction": "doAction",
-      "fromControlId": "control280_gbx3rD",
-      "toContexts": [
-        {
-          "toContextId": "context77_XsUu8L"
-        }
-      ]
-    },
-    "flow231_DtSNlz": {
+    "flow229_H5lCkw": {
       "fromContextId": "context77_XsUu8L",
       "fromAction": "doAction",
       "fromControlId": "control279_8glIiX",
@@ -204,16 +208,16 @@
           }
         },
         {
-          "id": "uiControl274_QxgEyF",
-          "controlId": "control280_gbx3rD",
+          "id": "uiControl277_l0vOfX",
+          "controlId": "control283_ZNBMEH",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl274_QxgEyF",
-                "onGetTemplate": "getTemplate_uiControl274_QxgEyF"
+                "onDoAction": "doAction_uiControl277_l0vOfX",
+                "onGetTemplate": "getTemplate_uiControl277_l0vOfX"
               }
             }
           }
@@ -250,6 +254,11 @@
             "icon_-LED",
             "icon_-QYA",
             "icon_-XF",
+            "module-details",
+            "page",
+            "searchCustName"
+          ],
+          [
             "module-details",
             "page",
             "searchCustName"
@@ -300,6 +309,27 @@
             "u-search",
             "u-searches",
             "z-act"
+          ],
+          [
+            "backImage",
+            "btn",
+            "btn-search",
+            "commpnPage",
+            "content_head",
+            "g-body",
+            "g-box",
+            "g-doc",
+            "g-main",
+            "leftPart",
+            "m-report",
+            "mask",
+            "placeholder",
+            "pointImage",
+            "title",
+            "title-a",
+            "title-b",
+            "u-search",
+            "u-searches"
           ]
         ]
       }
@@ -326,6 +356,18 @@
             "UL/LI/A",
             "UL/LI/INPUT-number",
             "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/EM",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN"
           ]
         ]
       }
