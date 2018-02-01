@@ -691,7 +691,9 @@
             //获取文档预览 - 文档地址
           
             if (aWin.createDoc) {
+              
                 aWin.createDoc = function(fieldbodyid, docVlaue, isedit) {
+                  debugger;
                     var frmmain = aWin.frmmain;
                     var $G = aWin.$G;
                   	var request = doc.querySelector('#requestid').value;
