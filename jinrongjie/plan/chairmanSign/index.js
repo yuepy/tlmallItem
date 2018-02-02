@@ -89,7 +89,7 @@
               content.push(dt.innerHTML);
             } else if (trItem.querySelector('td').textContent.indexOf('主管领导') !== -1) {
               content.push(dt.innerHTML);
-            } else if (trItem.querySelector('td').textContent.replace(/\s/g, "").trim() == '领导审批意见' !== -1) {
+            } else if (trItem.querySelector('td').textContent.replace(/\s/g, "").trim() == '领导审批意见') {
               content.push(dt.innerHTML);
             } else if (trItem.querySelector('td').textContent == "标题") {
               content.push(dt.textContent.replace(/\s/g, ""));
@@ -97,7 +97,7 @@
               if (dt.querySelectorAll("textarea").length > 0) {
                 content.push(dt.textContent);
               } else {
-                content.push(dt.innerHTML);
+                content.push(dt.innerHTML.replace(/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+/g, "&nbsp;&nbsp;&nbsp;"));
               }
             }if (trItem.querySelector('td').textContent == "标题") {
               if (dt.querySelector("input[type='text']")) {

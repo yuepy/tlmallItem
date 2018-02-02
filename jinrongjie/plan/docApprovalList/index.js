@@ -208,7 +208,7 @@
               }
             } else if (dt.querySelector("input[type='text']")) {
               content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
-            } else if (dt.querySelector("textarea")) {
+            } else if (dt.querySelector("textarea") && trItem.querySelector('td').textContent.replace(/\s/g, "") !== '摘要') {
               content.push(dt.querySelector("textarea").value.replace(/\s/g, "").trim());
             } else if (trItem.querySelector('td').textContent.replace(/\s/g, "") == '本公司内部签批意见') {
               content.push(dt.innerHTML);
@@ -220,7 +220,7 @@
               if (dt.querySelectorAll("textarea").length > 0) {
                 content.push(dt.textContent);
               } else {
-                content.push(dt.innerHTML);
+                content.push(dt.innerHTML.replace(/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+/g, "&nbsp;&nbsp;&nbsp;"));
               }
             } else if (trItem.querySelector('td').textContent.replace(/\s/g, "") == '附件') {
               content.push([]);

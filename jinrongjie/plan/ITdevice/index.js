@@ -328,20 +328,19 @@
                       else if ($(this).find("button").length == 0 && $(this).children("span").length == 1 && $(this).children("span").children("a").length == 1 && $(this).children("input").length > 0 && $(this).children("input")[0].type == 'hidden') {
                           arr2.push({ text: $(this).children("span").children("a").text(), type: 'a' });
                         } else if ($(this).children("span").length == 2 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
-                          arr2.push({ text: $(this).find("a").text(),
-                            type: 'aaa' });
+                          arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                         } else if ($(this).children("span").length == 1 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
                           arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
-                        } else if ($(this).children("span[style*='word-break']").length == 1 && $(this).children("input").length == 0 && $(this).children().length == 1) {
-                          arr2.push({ text: $(this).html(), type: 'dangerous' });
+                        } else if ($(this).prev().text() == "具体资产描述" && $(this).find("textarea").length == 0) {
+                          arr2.push({ text: $($(this))[0].innerHTML.replace(/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+/g, "&nbsp;&nbsp;&nbsp;"), type: 'dangerous' });
                         } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).find("button").length == 0) {
-                          arr2.push({ text: $(this).children("span").text(), type: 'a' });
+                          arr2.push({ text: $(this).children("span").text(), type: 'a'
+                          });
                         } else if ($(this).children("span").length == 1 && $(this).children("input").length == 0 && $(this).children("textarea").length == 0) {
                           arr2.push({ text: $(this).text(), type: 'a' });
                         } //判断textarea-------------------------------------
                         else if ($(this).children("textarea").length == 1) {
-                            arr2.push({ text: $(this).children("textarea").prop('value'),
-                              type: 'textarea', id: $(this).children("textarea")[0].id });
+                            arr2.push({ text: $(this).children("textarea").prop('value'), type: 'textarea', id: $(this).children("textarea")[0].id });
                           } //判断button-------------------------------------
                           else if ($(this).children("button").length > 0) {
                               //var arr5 = [];
@@ -349,8 +348,7 @@
                                 $(this).children("button").each(function () {
                                   var arr = [];$(this).next("span").children('a').each(function () {
                                     arr.push($(this).text());
-                                  });arr2.push({ text: arr,
-                                    type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
+                                  });arr2.push({ text: arr, type: 'button', id: $(this)[0].getAttribute('onClick').match(/field\d+/) });
                                 });
                               } else {
                                 $(this).children("button").each(function () {

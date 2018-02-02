@@ -96,7 +96,7 @@
               if (dt.querySelectorAll("textarea").length > 0) {
                 content.push(dt.textContent);
               } else {
-                content.push(dt.innerHTML);
+                content.push(dt.innerHTML.replace(/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+/g, "&nbsp;&nbsp;&nbsp;"));
               }
             }if (trItem.querySelector('td').textContent == "标题") {
               if (dt.querySelector("input[type='text']")) {

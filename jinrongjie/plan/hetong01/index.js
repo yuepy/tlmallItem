@@ -216,8 +216,8 @@
                       arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
                     } else if ($(this).children("span").length == 1 && $(this).find("a").length == 1 && $(this).find("button").length > 0 && $(this).children("input")[0].type == 'hidden') {
                       arr2.push({ text: $(this).find("a").text(), type: 'aaa' });
-                    } else if ($(this).children("span[style*='word-break']").length == 1 && $(this).children("input").length == 0 && $(this).children().length == 1) {
-                      arr2.push({ text: $(this).html(), type: 'dangerous' });
+                    } else if ($(this).prev().text() == "摘要说明" && $(this).find("textarea").length == 0) {
+                      arr2.push({ text: $($(this))[0].innerHTML.replace(/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+/g, "&nbsp;&nbsp;&nbsp;"), type: 'dangerous' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 1 && $(this).children("input")[0].type == 'hidden' && $(this).find("button").length == 0) {
                       arr2.push({ text: $(this).children("span").text(), type: 'a' });
                     } else if ($(this).children("span").length == 1 && $(this).children("input").length == 0 && $(this).children("textarea").length == 0) {

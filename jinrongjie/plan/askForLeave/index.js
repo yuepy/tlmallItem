@@ -137,13 +137,18 @@
                   upload[2].push(progressName[i].textContent);
                 }
               }rows[1].push(upload);
-            } else if (dt.querySelectorAll("textarea").length > 0) {
+            } else if (dt.querySelectorAll("textarea").length > 0 && dt.previousElementSibling.textContent !== "请假说明") {
               //td中含有textarea
               var textarea = [[], [], [], [], []];textarea[3].push("textarea"); //有textarea的标识
               textarea[1].push(dt.textContent.replace(/\s/g, "").trim()); //textarea内容
               rows[1].push(textarea);
+            } else if (dt.querySelectorAll("textarea").length > 0 && dt.previousElementSibling.textContent == "请假说明") {
+              //td中含有textarea
+              var textarea = [[], [], [], [], []];textarea[3].push("textarea"); //有textarea的标识
+              textarea[1].push(dt.textContent); //textarea内容
+              rows[1].push(textarea);
             } else if (dt.querySelectorAll("span[style*='word-break']").length == 1 && dt.querySelectorAll("input").length == 0 && $(dt).children().length == 1) {
-              var zhaiyao = [[], []];zhaiyao[0].push(dt.innerHTML);zhaiyao[1].push("dangerous");rows[1].push(zhaiyao);
+              var zhaiyao = [[], []];zhaiyao[0].push(dt.innerHTML.replace(/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+/g, "&nbsp;&nbsp;&nbsp;"));zhaiyao[1].push("dangerous");rows[1].push(zhaiyao);
             } else {
               if (dt.querySelector("input") && dt.querySelector("span").textContent == "") {
                 rows[1].push(dt.querySelector("input").value + dt.textContent.replace(/\s/g, "").trim());
@@ -156,7 +161,8 @@
           obj.currentVal = elem.querySelector('input[temptitle="申请人岗位"]').value;
         }if (elem.querySelector('input[temptitle="工作交接人"]')) {
           obj.workVal = obj && elem.querySelector('input[temptitle="工作交接人"]').value;
-        }return obj;
+        }
+        return obj;
       }
     },
     doAction_uiControl54_GI48cc: function (data, elem) {
