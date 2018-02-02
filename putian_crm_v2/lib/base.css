@@ -5739,7 +5739,7 @@ div[data-ysp-modelid="clientInfoCollectDetail"] div.ysp-dialog-wrapper {
 }
 .ysp_submit {
   text-align: center;
-  margin: 20px 0;
+  margin: 30px 0;
   background: none !important;
 }
 .ysp_submit button {
@@ -5749,6 +5749,7 @@ div[data-ysp-modelid="clientInfoCollectDetail"] div.ysp-dialog-wrapper {
   background: #2980F9;
   color: #fff;
   border-radius: 5px;
+  margin-bottom: 30px;
 }
 .ysp_delete {
   text-align: center;
@@ -5968,41 +5969,73 @@ div[data-ysp-modelid="clientManageInfoCollect"] div[data-componentsid="uiControl
 .ysp_brand_scale {
   margin: 0 0 10px 0;
 }
+.ysp_brand_scale > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
+  padding: 0px 15px 10px 0px;
+}
+.ysp_brand_scale > div:nth-child(1) > div:nth-child(1) {
+  border-left: 2px solid #4796ed;
+  padding-left: 13px;
+  font-weight: bold;
+}
+.ysp_brand_scale > div:nth-child(1) > div:nth-child(2) {
+  font-size: 12px;
+  color: #999999;
+}
 .ysp_brand_scale .ysp_detail_content {
-  padding: 0 15px 10px 15px;
+  padding: 0 15px 0px 15px;
   font-size: 12px;
   background: none !important;
 }
-.ysp_brand_scale .ysp_detail_content > div:first-child {
-  padding: 0 0 10px 0;
+.ysp_brand_scale .ysp_detail_content > div:nth-child(1) {
+  padding-top: 10px;
 }
-.ysp_brand_scale .ysp_detail_content > div:first-child > div {
-  width: 100%;
+.ysp_brand_scale .ysp_detail_content div:nth-child(2) {
+  padding-bottom: 3px;
+}
+.ysp_brand_scale .ysp_detail_content div:nth-child(2),
+.ysp_brand_scale .ysp_detail_content div:nth-child(3) {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.ysp_brand_scale .ysp_detail_content > div:first-child > div span {
-  width: 30%;
-}
-.ysp_brand_scale .ysp_detail_content > div:first-child > div span:not(:first-child) {
-  text-align: right;
-}
-.ysp_brand_scale .ysp_detail_content > div:not(:first-child) {
-  padding: 0 0 10px 0;
+.ysp_brand_scale .ysp_detail_content div:nth-child(2) div:nth-child(1),
+.ysp_brand_scale .ysp_detail_content div:nth-child(3) div:nth-child(1) {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
 }
-.ysp_brand_scale .ysp_detail_content > div:not(:first-child) span,
-.ysp_brand_scale .ysp_detail_content > div:not(:first-child) input {
+.ysp_brand_scale .ysp_detail_content div:nth-child(2) div:nth-child(1) span:nth-child(1),
+.ysp_brand_scale .ysp_detail_content div:nth-child(3) div:nth-child(1) span:nth-child(1) {
   width: 30%;
-  background: none !important;
+  color: #999;
 }
-.ysp_brand_scale .ysp_detail_content > div:not(:first-child) input {
+.ysp_brand_scale .ysp_detail_content div:nth-child(2) div:nth-child(2),
+.ysp_brand_scale .ysp_detail_content div:nth-child(3) div:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+.ysp_brand_scale .ysp_detail_content div:nth-child(2) div:nth-child(2) span:nth-child(1),
+.ysp_brand_scale .ysp_detail_content div:nth-child(3) div:nth-child(2) span:nth-child(1) {
+  width: 30%;
+  color: #999;
+}
+.ysp_brand_scale .ysp_detail_content div:nth-child(3) div:nth-child(1) span:nth-child(1) {
+  width: 40%;
+}
+.ysp_brand_scale .ysp_detail_content input {
   border: 1px solid #ccc;
-  width: 30%;
-  padding: 2px 2px 2px 10px;
+  width: 50%;
+  padding: 4px 4px 2px 10px;
   border-radius: 5px;
   font-size: 12px;
+  margin-left: 5px;
   background: none !important;
 }
 .ysp-search-custom div {

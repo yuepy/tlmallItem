@@ -520,6 +520,41 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control280_5JgvcQ": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "品牌 零售容量（台/月） + 分销容量（台/月） = 品牌总容量（台/月） 品牌收入（元） 填写时间"
+              ],
+              "visText": [
+                "品牌 零售容量（台/月） + 分销容量（台/月） = 品牌总容量（台/月） 品牌收入（元） 填写时间"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content_middle DIV.brand_scale DIV.card_table TABLE THEAD TR"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[4]/DIV[1]/DIV[2]/DIV[2]/TABLE[1]/THEAD[1]/TR[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "品牌\n                        零售容量（台/月）\n                        +\n                        分销容量（台/月）\n                        =\n                        品牌总容量（台/月）\n                        品牌收入（元）\n                        填写时间\n                    ",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('品牌')!=-1){return true} return false"
     }
   },
   "contexts": {
@@ -538,11 +573,9 @@
         "control260_yxX1zT"
       ],
       "anchors": [
-        "control145_Ft1N9v"
+        "control280_5JgvcQ"
       ],
-      "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/page\\/customerInfomationWeb\\/customerInfoEntry\\.html.*"
-      ]
+      "urlAnchor": []
     }
   },
   "flows": {
@@ -590,10 +623,15 @@
         }
       ]
     },
-    "flow216_222WiW": {
+    "flow216_GgVLMo": {
       "toContexts": [
         {
-          "toContextId": "context18_cmJ7oo"
+          "toContextId": "context18_cmJ7oo",
+          "toModelId": "clientManageInfoCollect"
+        },
+        {
+          "toContextId": "context22_Epm35T",
+          "toModelId": "clientInfoCollectDetail"
         }
       ]
     }
@@ -930,6 +968,79 @@
             "customerName_span",
             "mainContainer",
             "save_customerInfo"
+          ],
+          [
+            "accountPayment_select",
+            "accountType_select",
+            "addContactPerson",
+            "addContactPersonForm",
+            "addconect_birthDt",
+            "addconect_comments",
+            "addconect_division",
+            "addconect_email",
+            "addconect_lastName",
+            "addconect_mobilephone",
+            "addconect_officefax",
+            "addconect_position",
+            "addconect_sex",
+            "addconect_telephone",
+            "addconect_usertype",
+            "csn_switchs",
+            "customerName_span",
+            "information-dialog",
+            "mainContainer",
+            "pttlAct_select",
+            "save_btn_switch"
+          ],
+          [
+            "brandDistributionQty_-KXD",
+            "brandDistributionQty_-KXDA",
+            "brandDistributionQty_-KXDB",
+            "brandDistributionQty_-KXDC",
+            "brandDistributionQty_-KXDD",
+            "brandDistributionQty_-KXDE",
+            "brandDistributionQty_-KXDF",
+            "brandDistributionQty_-KXDG",
+            "brandDistributionQty_-KXDH",
+            "brandDistributionQty_-KXDI",
+            "brandDistributionQty_-KXDJ",
+            "brandIncome_-KXD",
+            "brandIncome_-KXDA",
+            "brandIncome_-KXDB",
+            "brandIncome_-KXDC",
+            "brandIncome_-KXDD",
+            "brandIncome_-KXDE",
+            "brandIncome_-KXDF",
+            "brandIncome_-KXDG",
+            "brandIncome_-KXDH",
+            "brandIncome_-KXDI",
+            "brandIncome_-KXDJ",
+            "brandQty_-KXD",
+            "brandQty_-KXDA",
+            "brandQty_-KXDB",
+            "brandQty_-KXDC",
+            "brandQty_-KXDD",
+            "brandQty_-KXDE",
+            "brandQty_-KXDF",
+            "brandQty_-KXDG",
+            "brandQty_-KXDH",
+            "brandQty_-KXDI",
+            "brandQty_-KXDJ",
+            "brandTotal_-KXD",
+            "brandTotal_-KXDA",
+            "brandTotal_-KXDB",
+            "brandTotal_-KXDC",
+            "brandTotal_-KXDD",
+            "brandTotal_-KXDE",
+            "brandTotal_-KXDF",
+            "brandTotal_-KXDG",
+            "brandTotal_-KXDH",
+            "brandTotal_-KXDI",
+            "brandTotal_-KXDJ",
+            "csn_information",
+            "customerName_span",
+            "mainContainer",
+            "save_customerInfo"
           ]
         ],
         "context0_1ekenN": [
@@ -992,6 +1103,85 @@
             "psiEnterTable",
             "search",
             "tbodyContent"
+          ]
+        ],
+        "context22_Epm35T": [
+          [
+            "addContactPerson",
+            "addContactPersonForm",
+            "customerList_name",
+            "customerList_search",
+            "information-dialog",
+            "mainContainer"
+          ],
+          [
+            "accountPayment_select",
+            "accountType_select",
+            "addContactPerson",
+            "addContactPersonForm",
+            "addconect_birthDt",
+            "addconect_comments",
+            "addconect_division",
+            "addconect_email",
+            "addconect_lastName",
+            "addconect_mobilephone",
+            "addconect_officefax",
+            "addconect_position",
+            "addconect_sex",
+            "addconect_telephone",
+            "addconect_usertype",
+            "csn_switchs",
+            "customerList_name",
+            "customerList_search",
+            "information-dialog",
+            "mainContainer",
+            "pttlAct_select",
+            "save_btn_switch"
+          ],
+          [
+            "accountPayment_select",
+            "accountType_select",
+            "addContactPerson",
+            "addContactPersonForm",
+            "addconect_birthDt",
+            "addconect_comments",
+            "addconect_division",
+            "addconect_email",
+            "addconect_lastName",
+            "addconect_mobilephone",
+            "addconect_officefax",
+            "addconect_position",
+            "addconect_sex",
+            "addconect_telephone",
+            "addconect_usertype",
+            "csn_switchs",
+            "information-dialog",
+            "mainContainer",
+            "pttlAct_select",
+            "save_btn_switch"
+          ],
+          [
+            "accountPayment_select",
+            "accountType_select",
+            "addContactPerson",
+            "addContactPersonForm",
+            "addconect_birthDt",
+            "addconect_comments",
+            "addconect_division",
+            "addconect_email",
+            "addconect_lastName",
+            "addconect_mobilephone",
+            "addconect_officefax",
+            "addconect_position",
+            "addconect_sex",
+            "addconect_telephone",
+            "addconect_usertype",
+            "csn_switchs",
+            "customerName_span",
+            "information-dialog",
+            "mainContainer",
+            "pttlAct_select",
+            "save_btn_switch"
           ]
         ]
       }
@@ -1156,6 +1346,35 @@
             "title",
             "title-a",
             "title-b"
+          ],
+          [
+            "active_btn",
+            "addconect",
+            "backImage",
+            "btn",
+            "card_table",
+            "card_title",
+            "card_top",
+            "commit_btn",
+            "connect_manager",
+            "content",
+            "content_body",
+            "content_bottom",
+            "content_head",
+            "content_middle",
+            "content_top",
+            "dialog_content",
+            "dialog_detail",
+            "dialog_title",
+            "head_title",
+            "mask",
+            "pointImage",
+            "save",
+            "title",
+            "title-a",
+            "title-b",
+            "title_right",
+            "total"
           ]
         ],
         "context0_1ekenN": [
@@ -1443,6 +1662,35 @@
             "title-b",
             "title_right",
             "total"
+          ],
+          [
+            "active_btn",
+            "addconect",
+            "backImage",
+            "btn",
+            "card_table",
+            "card_title",
+            "card_top",
+            "commit_btn",
+            "connect_manager",
+            "content",
+            "content_body",
+            "content_bottom",
+            "content_head",
+            "content_middle",
+            "content_top",
+            "dialog_content",
+            "dialog_detail",
+            "dialog_title",
+            "head_title",
+            "mask",
+            "pointImage",
+            "save",
+            "title",
+            "title-a",
+            "title-b",
+            "title_right",
+            "total"
           ]
         ]
       }
@@ -1593,6 +1841,57 @@
             "TR/TD/A",
             "TR/TD/INPUT-hidden",
             "TR/TD/SELECT"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/I",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/DIV",
+            "DIV/LABEL/INPUT-hidden",
+            "DIV/LABEL/INPUT-text",
+            "DIV/LABEL/SELECT",
+            "DIV/LABEL/SPAN",
+            "DIV/LABEL/TEXTAREA",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FORM/DIV/DIV",
+            "LABEL/SELECT/OPTION",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/SELECT/OPTION",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/SELECT"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
           ]
         ],
         "context0_1ekenN": [

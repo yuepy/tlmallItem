@@ -29,7 +29,8 @@
           var connect_manager = elem.querySelector(".connect_manager");data.connect_manager.title = connect_manager.querySelector(".card_title").textContent;data.connect_manager.tableContent = ysp.customHelper.getTableData(connect_manager.querySelector("table"), ["联系人", "性别", "生日", "职位", "用户类型", "移动电话", "办公电话", "办公传真", "电子邮件", "注释"]);
         } //客户经营信息采集-联系人-添加联系人
         if (elem.querySelector("#addContactPersonForm")) {
-          data.addContactPerson = {};var personInfo = elem.querySelector("#addContactPersonForm").querySelectorAll("span");data.addContactPerson.personInfo = [];for (var i = 0; i < personInfo.length; i++) {
+          data.addContactPerson = {};var personInfo = elem.querySelector("#addContactPersonForm").querySelectorAll("span");data.addContactPerson.personInfo = [];
+          for (var i = 0; i < personInfo.length; i++) {
             //       if (i == "4" && personInfo[i].nextSibling.nextSibling.value.indexOf("/") != -1) {
             //         var birth = personInfo[i].nextSibling.nextSibling.value.split("/");
             //         var arry = [];
@@ -84,9 +85,10 @@
         //   ysp.customHelper.forceMatchModels('newInformationTotle1');
         // }
       }function changeClick(data) {
-        elem.querySelectorAll(".content_top")[1].querySelectorAll(".btn")[data].click(); //ysp.customHelper.forceMatchModels('clientManageInfoCollect');
+        elem.querySelectorAll(".content_top")[1].querySelectorAll(".btn")[data].click();ysp.customHelper.forceMatchModels('clientManageInfoCollect');
       }function selectChange(data) {
-        var ind = parseInt(data.ind);var i = parseInt(data.i);var t = setTimeout(a(), 50);function a() {
+        var ind = parseInt(data.ind);var i = parseInt(data.i);var t = setTimeout(a(), 50);
+        function a() {
           elem.querySelector(".total").querySelectorAll("select")[ind].querySelectorAll("option")[i].selected = true;$(elem).find("select").eq(ind).change();
         }
       }function editChange(data) {

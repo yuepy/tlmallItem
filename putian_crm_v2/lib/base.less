@@ -6456,7 +6456,7 @@ div[data-ysp-modelid="clientInfoCollectDetail"]{
 }
 .ysp_submit{//提交按钮
   text-align: center;
-  margin: 20px 0;
+  margin: 30px 0;
   background: none !important;
   button{
     border: none;
@@ -6465,6 +6465,7 @@ div[data-ysp-modelid="clientInfoCollectDetail"]{
     background: #2980F9;
     color: #fff;
     border-radius: 5px;
+    margin-bottom: 30px;
   }
 }
 .ysp_delete{//删除按钮
@@ -6648,42 +6649,107 @@ div[data-ysp-modelid="clientManageInfoCollect"]{
 }
 .ysp_brand_scale{
   margin: 0 0 10px 0;
+  >div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+    padding:0px 15px 10px 0px;
+    >div:nth-child(1){
+      border-left: 2px solid #4796ed;
+      padding-left: 13px;
+      //color: #000;
+      font-weight: bold;
+    }
+    >div:nth-child(2){
+      font-size: 12px;
+      color: #999999;
+    }
+  }
   .ysp_detail_content{
-    padding: 0 15px 10px 15px;
+    padding: 0 15px 0px 15px;
     font-size: 12px;
     background: none !important;
-    >div:first-child{
-      padding: 0 0 10px 0;
-      >div{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        span{
-          width:30%;
-        }
-        span:not(:first-child){
-          text-align: right;
-        }
-      }
-      
+    >div:nth-child(1){
+      padding-top: 10px;
     }
-    >div:not(:first-child){
-      padding: 0 0 10px 0;
+    div:nth-child(2){
+      padding-bottom: 3px;
+    }
+    div:nth-child(2),div:nth-child(3){
       display: flex;
       justify-content: space-between;
-      span,input{
-        width:30%;
-        background: none !important;
+      align-items: center;
+      div:nth-child(1){
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 50%;
+        span:nth-child(1){
+          width: 30%;
+          color: #999;
+        }
+        
       }
-      input{
-        border: 1px solid #ccc;
-        width: 30%;
-        padding: 2px 2px 2px 10px;
-        border-radius: 5px;
-        font-size:12px;
-        background: none !important;
+      div:nth-child(2){
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 50%;
+        span:nth-child(1){
+          width: 30%;
+          color: #999;
+        }
       }
     }
+    div:nth-child(3){
+        div:nth-child(1){
+          span:nth-child(1){
+            width: 40%;
+          }
+        }
+      }
+    input{
+        border: 1px solid #ccc;
+        width: 50%;
+        padding: 4px 4px 2px 10px;
+        border-radius: 5px;
+        font-size:12px;
+      	margin-left: 5px;
+        background: none !important;
+      }
+//     >div:first-child{
+//       padding: 0 0 10px 0;
+//       >div{
+//         width: 100%;
+//         display: flex;
+//         justify-content: space-between;
+//         span{
+//           width:30%;
+//         }
+//         span:not(:first-child){
+//           text-align: right;
+//         }
+//       }
+      
+//     }
+//     >div:not(:first-child){
+//       padding: 0 0 10px 0;
+//       display: flex;
+//       justify-content: space-between;
+//       span,input{
+//         width:30%;
+//         background: none !important;
+//       }
+//       input{
+//         border: 1px solid #ccc;
+//         width: 30%;
+//         padding: 2px 2px 2px 10px;
+//         border-radius: 5px;
+//         font-size:12px;
+//         background: none !important;
+//       }
+//     }
   }
 }
 //老框架搜索样式
