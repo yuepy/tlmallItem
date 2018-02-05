@@ -46,10 +46,13 @@
                         }
                       });data.uploadFile = uploadFileName;
                     }
-                  }var files = dt.querySelectorAll('a');var fileName = [];if (files.length > 0) {
+                  }var files = dt.querySelectorAll('a');
+                  var fileName = [];if (files.length > 0) {
                     [].forEach.call(files, function (fileItem, fileIndex) {
                       if (fileItem.parentElement.parentElement.querySelector('#selectDownload')) {
-                        fileName.push(fileItem.textContent.trim());var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('('), tmpSizeData.lastIndexOf(')') + 1));
+                        fileName.push(fileItem.textContent.trim());
+                        var tmpSizeData = fileItem.parentElement.parentElement.querySelector('#selectDownload').textContent.trim();
+                        fileSize.push(tmpSizeData.slice(tmpSizeData.lastIndexOf('('), tmpSizeData.lastIndexOf(')') + 1));
                       }if (fileItem.parentElement.parentElement.querySelector('button.btnFlow')) {
                         enableDeleteFile++;
                       }
@@ -65,6 +68,8 @@
                   content.push(dt.textContent.replace(/\s/g, "").trim());
                 }
               }
+            } else if (trItem.querySelector('td').textContent.indexOf('附件') !== -1 && dt.textContent.trim() == "") {
+              content.push([]);
             } else if (dt.querySelector("input[type='text']")) {
               content.push(dt.querySelector("input").value.replace(/\s/g, "").trim());
             } else if (dt.querySelector("textarea")) {
@@ -101,8 +106,7 @@
               }
             }
           });
-        });data.titles = titles;data.content = content;data.fileSize = fileSize;data.multiply = multiply;data.editData = editData;data.enableDeleteFile = enableDeleteFile;data.showMustMark = showMustMark;
-        return data;
+        });data.titles = titles;data.content = content;data.fileSize = fileSize;data.multiply = multiply;data.editData = editData;data.enableDeleteFile = enableDeleteFile;data.showMustMark = showMustMark;return data;
       }
     }, doAction_uiControl23_PUM7iP: function (data, elem) {
       var clickType = data.eventType;var fileIndex = data.dataCustom;if (clickType == 'zhengwenYuLan') {
@@ -201,14 +205,13 @@
           elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '1');elem.querySelectorAll("input[id='Filedata'][name='Filedata'][type='file']")[0].click();
         }
       }if (clickType == 'deleteFile') {
-        var initDOM = elem.querySelector("#uploadspan").parentElement.parentElement;
-        if (initDOM.querySelector("input[temptitle='附件']")) {
-          var initValue = initDOM.querySelector("input[temptitle='附件']").value;var array = initValue.split(',');array.splice(fileIndex.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();$(elem.querySelectorAll('.progressWrapper')[fileIndex.uploadIndex]).remove();
-          elem.querySelector('#ysp_fake_form').querySelector("#Filedata").value = "";elem.querySelector('#ysp_fake_form').querySelector("input[name='Filename']").value = "";
+        var initDOM = elem.querySelector("#uploadspan").parentElement.parentElement;if (initDOM.querySelector("input[temptitle='附件']")) {
+          var initValue = initDOM.querySelector("input[temptitle='附件']").value;var array = initValue.split(',');array.splice(fileIndex.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();$(elem.querySelectorAll('.progressWrapper')[fileIndex.uploadIndex]).remove();elem.querySelector('#ysp_fake_form').querySelector("#Filedata").value = "";elem.querySelector('#ysp_fake_form').querySelector("input[name='Filename']").value = "";
         }
       }if (clickType == 'deleteOldFile') {
         var initDOM = elem.querySelector('#selectDownload').parentElement.parentElement.parentElement;if (initDOM.querySelector("input[temptitle='附件']")) {
-          var initValue = initDOM.querySelector("input[temptitle='附件']").value;var array = initValue.split(',');array.splice(fileIndex.index, 1);initDOM.querySelector("input[temptitle='附件']").value = array.toString();$(initDOM.querySelectorAll('button.btnFlow')[fileIndex.index].parentElement.parentElement).remove();
+          var initValue = initDOM.querySelector("input[temptitle='附件']").value;var array = initValue.split(',');array.splice(fileIndex.index, 1);
+          initDOM.querySelector("input[temptitle='附件']").value = array.toString();$(initDOM.querySelectorAll('button.btnFlow')[fileIndex.index].parentElement.parentElement).remove();
         }
       } /**
                 文件预览通用方法
@@ -216,8 +219,7 @@
                 */function reviewFiles(jumpUrl) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;
-        var arr = text.split(".");var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
+        }, 1000);var _url = 'http://192.168.200.63' + jumpUrl;var text = elem.querySelectorAll("#selectDownload")[fileIndex].parentElement.parentElement.querySelectorAll("td")[0].querySelector("a").textContent;var arr = text.split(".");var style = arr[arr.length - 1];if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url + "&_ysp_attachment_fileName=document." + style;

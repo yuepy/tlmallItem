@@ -20,9 +20,10 @@
         }
         requestAnimationFrame(wdlssrds);
     }
-    if (ysp.appMain.isIOS()) {
-        wdlssrds();
-    }
+    // if (ysp.appMain.isIOS()) {
+    //     wdlssrds();
+    // }
+   // wdlssrds();
     var utils = ysp.utils;
     var flag = true; // 为true说明需要取token  为false说明不需要取token
     var topWindow = win.top; // 最外层window - top层
@@ -744,6 +745,28 @@
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
+          	var href = aWin.location.href;
+          	var src = aWin.frameElement.src;
+            if (src.indexOf('token=') !== -1 && !sessionStorage.isLogin) {
+                var url1 = src.match(/(.*)&token=/)[1]; // 登录成功后跳转的地址
+                var url2 = src.match(/&token=(.*)/)[1]; // 登录需要的token
+                aWin.location.href = 'http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=' + url2 + '&requestType=login';
+                // 暂存一下地址
+                sessionStorage.isLogin = 1;
+                localStorage.testUrl = url1;
+              	return;
+            }
+            if ((href.indexOf('main.jsp') !== -1 || href.indexOf('index.jsp') !== -1 ||
+                href.toLowerCase().indexOf('homepage.jsp') !== -1) && 
+                localStorage.testUrl && sessionStorage.isLogin) {
+                aWin.location.href = localStorage.testUrl;
+              //alert("suibian")
+                delete localStorage.testUrl;
+              	return;
+            }
+          
+          
+          
             // 判断地址，为首页地址时判断localStorage.testUrl，如果存在值，则直接跳转该地址
             // if (aWin.location.href.indexOf('main.jsp') && aWin.localStorage.testUrl) {
             //   debugger;
@@ -964,7 +987,7 @@
                     //测试环境 - IOS角标
                     xmlhttp.open("post", 'http://192.168.1.12:8090/FsigPubServiceProject/webService/OAService?wsdl', true);
                     //正式环境 - IOS角标
-//xmlhttp.open("post",'http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
+										//xmlhttp.open("post",'http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl',true);
                 } else {
                     //测试环境 - Andriod角标
                     xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
