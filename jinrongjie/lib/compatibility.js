@@ -199,69 +199,73 @@ ysp.appMain.resolveCompatibility('activeX', function(win) {
         enumerable: true,
         configurable: true
     });
+    try {
+        win.Object.defineProperty(win.Node.prototype, 'firstChild', {
+            get: function() {
+                return this.firstElementChild;
+            },
+            enumerable: true,
+            configurable: true
+        });
 
-    win.Object.defineProperty(win.Node.prototype, 'firstChild', {
-        get: function() {
-            return this.firstElementChild;
-        },
-        enumerable: true,
-        configurable: true
-    });
-
-    win.Object.defineProperty(win.Node.prototype, 'nextSibling', {
-        get: function() {
-            var nextSibling = this.nextElementSibling;
-            if (nextSibling == null && this.parentNode.children.length === 1) {
-                var nextSiblings = this.parentNode.childNodes;
-                for (var i = 0; i < nextSiblings.length; i++) {
-                    if (this == nextSiblings[i] && nextSiblings[i + 1]) {
-                        nextSibling = nextSiblings[i + 1];
-                        break;
+        win.Object.defineProperty(win.Node.prototype, 'nextSibling', {
+            get: function() {
+                var nextSibling = this.nextElementSibling;
+                if (nextSibling == null && this.parentNode.children.length === 1) {
+                    var nextSiblings = this.parentNode.childNodes;
+                    for (var i = 0; i < nextSiblings.length; i++) {
+                        if (this == nextSiblings[i] && nextSiblings[i + 1]) {
+                            nextSibling = nextSiblings[i + 1];
+                            break;
+                        }
                     }
+                };
+                return nextSibling;
+            },
+            enumerable: true,
+            configurable: true
+        });
+
+        win.Object.defineProperty(win.Node.prototype, 'preSibling', {
+            get: function() {
+                return this.preElementSibling;
+            },
+            enumerable: true,
+            configurable: true
+        });
+
+        win.Object.defineProperty(win.Node.prototype, 'uniqueID', {
+            get: function() {
+                var ret;
+                if (this._uniqueID) {
+                    return this._uniqueID;
                 }
-            };
-            return nextSibling;
-        },
-        enumerable: true,
-        configurable: true
-    });
+                if (win.yspUniqueIDCount) {
+                    ret = 'ysp_uniqueID' + win.yspUniqueIDCount++;
+                } else {
+                    ret = 'ysp_uniqueID0';
+                    win.yspUniqueIDCount = 1;
+                }
+                this._uniqueID = ret;
+                win.yspUniqueIDMap = win.yspUniqueIDMap || {};
+                win.yspUniqueIDMap[ret] = this;
+                return ret;
+            },
+            enumerable: true,
+            configurable: true
+        });
 
-    win.Object.defineProperty(win.Node.prototype, 'preSibling', {
-        get: function() {
-            return this.preElementSibling;
-        },
-        enumerable: true,
-        configurable: true
-    });
+        win.Object.defineProperty(win.Document.prototype, 'parentWindow', {
+            get: function() {
+                return this.defaultView.parent;
+            },
+            enumerable: true,
+            configurable: true
+        });
+    } catch (e) {
+        console.log('报错啦');
+    }
 
-    win.Object.defineProperty(win.Node.prototype, 'uniqueID', {
-        get: function() {
-            var ret;
-            if (this._uniqueID) {
-                return this._uniqueID;
-            }
-            if (win.yspUniqueIDCount) {
-                ret = 'ysp_uniqueID' + win.yspUniqueIDCount++;
-            } else {
-                ret = 'ysp_uniqueID0';
-                win.yspUniqueIDCount = 1;
-            }
-            this._uniqueID = ret;
-            win.yspUniqueIDMap = win.yspUniqueIDMap || {};
-            win.yspUniqueIDMap[ret] = this;
-            return ret;
-        },
-        enumerable: true,
-        configurable: true
-    });
-
-    win.Object.defineProperty(win.Document.prototype, 'parentWindow', {
-        get: function() {
-            return this.defaultView.parent;
-        },
-        enumerable: true,
-        configurable: true
-    });
 
     // win.Object.defineProperty(win.Node.prototype, 'currentStyle', {
     //     get: function() {

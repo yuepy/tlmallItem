@@ -281,43 +281,94 @@
       var selfTemplate = "import { Component } from 'react';\nimport { CommonHeader } from 'ysp-custom-components';\nexport default class extends Component {\n  componentDidMount(){\n    var outer=this.refs.outerWrapper.ownerDocument.querySelector('.view-wrapper') \n    setTimeout(function(){\n      outer.scrollTop=0\n    },500)\n  }\n\n\trender() {\n\t\tvar title = \"\u4E09\u4F1A\u6587\u4EF6\u5BA1\u6279\u6D41\u7A0B\";\n\t\treturn (\n      <div ref = 'outerWrapper'>\n\t\t\t<CommonHeader\n\t\t\t\tdata={{ centerText: title && title }}\n\t\t\t\tbackIsShow={true}\n\t\t\t\teditIsShow={true}\n\t\t\t\trightText='\u4FDD\u5B58'\n\t\t\t\tsave={(e) => {\n            YSP.appRenderer.showLoading();\n\t\t\t\t\tvar handler = this.props.customHandler;\n\t\t\t\t\tif (handler) {\n\t\t\t\t\t\thandler({\n\t\t\t\t\t\t\teventType: 'save1'\n\t\t\t\t\t\t})\n\t\t\t\t\t}\n\t\t\t\t}}\n\t\t\t\tback={(e) => {\n            YSP.appRenderer.showLoading();\n\t\t\t\t\tvar handler = this.props.customHandler;\n\t\t\t\t\tif (handler) {\n\t\t\t\t\t\thandler({\n\t\t\t\t\t\t\teventType: 'click'\n\t\t\t\t\t\t})\n\t\t\t\t\t}\n\t\t\t\t}}\n\t\t\t/>\n        </div>\n\t\t)\n\t}\n}";
       return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n\t_inherits(_class, _Component);\n\n\tfunction _class() {\n\t\t_classCallCheck(this, _class);\n\n\t\treturn _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n\t}\n\n\t_createClass(_class, [{\n\t\tkey: 'componentDidMount',\n\t\tvalue: function componentDidMount() {\n\t\t\tvar outer = this.refs.outerWrapper.ownerDocument.querySelector('.view-wrapper');\n\t\t\tsetTimeout(function () {\n\t\t\t\touter.scrollTop = 0;\n\t\t\t}, 500);\n\t\t}\n\t}, {\n\t\tkey: 'render',\n\t\tvalue: function render() {\n\t\t\tvar _this2 = this;\n\n\t\t\tvar title = \"\u4E09\u4F1A\u6587\u4EF6\u5BA1\u6279\u6D41\u7A0B\";\n\t\t\treturn React.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ ref: 'outerWrapper' },\n\t\t\t\tReact.createElement(_yspCustomComponents.CommonHeader, {\n\t\t\t\t\tdata: { centerText: title && title },\n\t\t\t\t\tbackIsShow: true,\n\t\t\t\t\teditIsShow: true,\n\t\t\t\t\trightText: '\\u4FDD\\u5B58',\n\t\t\t\t\tsave: function save(e) {\n\t\t\t\t\t\tYSP.appRenderer.showLoading();\n\t\t\t\t\t\tvar handler = _this2.props.customHandler;\n\t\t\t\t\t\tif (handler) {\n\t\t\t\t\t\t\thandler({\n\t\t\t\t\t\t\t\teventType: 'save1'\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\tback: function back(e) {\n\t\t\t\t\t\tYSP.appRenderer.showLoading();\n\t\t\t\t\t\tvar handler = _this2.props.customHandler;\n\t\t\t\t\t\tif (handler) {\n\t\t\t\t\t\t\thandler({\n\t\t\t\t\t\t\t\teventType: 'click'\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t})\n\t\t\t);\n\t\t}\n\t}]);\n\n\treturn _class;\n}(_react.Component);\n\nexports.default = _class;";
     },
-    getData_control267_pQkkTG: function getData_control267_pQkkTG(elem) {
+    getData_control267_pQkkTG: function (elem) {
+      // if (!elem) {
+      //   return;
+      // }
+      // var data = [];
+      // $(elem).find(".progressWrapper").each(function () {
+      //   var arr = [];
+      //   if ($(this).find(".progressName").text().indexOf('txt') !== -1) {
+      //     arr.push({
+      //       text: $(this).find(".progressName").text(),
+      //       stl: 'text'
+      //     });
+      //   } else if ($(this).find(".progressName").text().indexOf('doc') !== -1) {
+      //     arr.push({
+      //       text: $(this).find(".progressName").text(),
+      //       stl: 'doc'
+      //     });
+      //   } else if ($(this).find(".progressName").text().indexOf('pdf') !== -1) {
+      //     arr.push({
+      //       text: $(this).find(".progressName").text(),
+      //       stl: 'pdf'
+      //     });
+      //   } else if ($(this).find(".progressName").text().indexOf('jpg') !== -1) {
+      //     arr.push({
+      //       text: $(this).find(".progressName").text(),
+      //       stl: 'jpg'
+      //     });
+      //   } else if ($(this).find(".progressName").text().indexOf('xls') !== -1) {
+      //     arr.push({
+      //       text: $(this).find(".progressName").text(),
+      //       stl: 'xls'
+      //     });
+      //   } else if ($(this).find(".progressName").text().indexOf('png') !== -1) {
+      //     arr.push({
+      //       text: $(this).find(".progressName").text(),
+      //       stl: 'png'
+      //     });
+      //   } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
+      //     arr.push({
+      //       text: $(this).find(".progressName").text(),
+      //       stl: 'zip'
+      //     });
+      //   } else if ($(this).find(".progressName").text().indexOf('ppt') !== -1) {
+      //     arr.push({
+      //       text: $(this).find(".progressName").text(),
+      //       stl: 'ppt'
+      //     });
+      //   } else {
+      //     arr.push({
+      //       text: $(this).find(".progressName").text(),
+      //       stl: 'unknown'
+      //     });
+      //   }
+      //   data.push(arr);
+      // });
+      // return data;
       if (!elem) {
         return;
-      }var data = [];$(elem).find(".progressWrapper").each(function () {
-        var arr = [];if ($(this).find(".progressName").text().indexOf('txt') !== -1) {
-          arr.push({ text: $(this).find(".progressName").text(), stl: 'text' });
-        } else if ($(this).find(".progressName").text().indexOf('doc') !== -1) {
-          arr.push({ text: $(this).find(".progressName").text(), stl: 'doc' });
-        } else if ($(this).find(".progressName").text().indexOf('pdf') !== -1) {
-          arr.push({ text: $(this).find(".progressName").text(), stl: 'pdf' });
-        } else if ($(this).find(".progressName").text().indexOf('jpg') !== -1) {
-          arr.push({ text: $(this).find(".progressName").text(), stl: 'jpg' });
-        } else if ($(this).find(".progressName").text().indexOf('xls') !== -1) {
-          arr.push({ text: $(this).find(".progressName").text(), stl: 'xls' });
-        } else if ($(this).find(".progressName").text().indexOf('png') !== -1) {
-          arr.push({ text: $(this).find(".progressName").text(), stl: 'png' });
-        } else if ($(this).find(".progressName").text().indexOf('zip') !== -1) {
-          arr.push({ text: $(this).find(".progressName").text(), stl: 'zip' });
-        } else if ($(this).find(".progressName").text().indexOf('ppt') !== -1) {
-          arr.push({ text: $(this).find(".progressName").text(), stl: 'ppt' });
-        } else {
-          arr.push({ text: $(this).find(".progressName").text(), stl: 'unknown' });
-        }data.push(arr);
-      });return data;
+      }var files = elem.querySelectorAll('.progressWrapper');var fileData = [];if (files.length > 0) {
+        [].forEach.call(files, function (fileItem, fileIndex) {
+          fileData.push(fileItem.querySelector('.progressName').textContent.replace(/\s/g, ""));
+        });
+      }return fileData;
     },
-    doAction_uiControl256_JgcB7i: function doAction_uiControl256_JgcB7i(data, elem) {
+    doAction_uiControl256_JgcB7i: function (data, elem) {
+      // if (data.eventType == 'deleteFile') {
+      //   var idx = data.dataCustom;
+      //   var input = $(elem).find('#field-annexupload')[0];
+      //   var value = $(input)[0].value;
+      //   var arr = $(input)[0].value.split(',');
+      //   var valuet = arr.toString();
+      //   console.log(valuet);
+      // }
+      // if (data.eventType == 'click') {
+      //   $(elem).find("#Filedata").click();
+      //   if (elem.ownerDocument.querySelectorAll('#ysp_fake_form').length == 2) {
+      //     $(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
+      //   }
+      // }
       if (data.eventType == 'deleteFile') {
-        var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;
+        var idx = data.dataCustom;var input = $(elem).find('#field-annexupload')[0];var value = $(input)[0].value;var arr = $(input)[0].value.split(',');arr.splice(idx, 1);var valuet = arr.toString();console.log(valuet);$(input)[0].value = valuet;$(elem.querySelector('#fsUploadProgressannexupload').querySelectorAll('div.progressWrapper')[idx]).remove();elem.querySelector('#ysp_fake_form').querySelector("#Filedata").value = "";elem.querySelector('#ysp_fake_form').querySelector("input[name='Filename']").value = "";
       }if (data.eventType == 'click') {
-        $(elem).find("#Filedata").click();if (elem.ownerDocument.querySelectorAll('#ysp_fake_form').length == 2) {
-          $(elem).find("#Filedata")[0].parentElement.setAttribute('file-num', '2');
-        }
+        elem.querySelector("#Filedata").parentElement.setAttribute('file-num', '2');$(elem).find("#Filedata").click();
       }
     },
     getTemplate_uiControl256_JgcB7i: function getTemplate_uiControl256_JgcB7i() {
-      var selfTemplate = "module.exports = React.createClass({\n   deleteFile:function(e){\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display='none'\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"deleteFile\",\n      \tdata:e.target.getAttribute('data-index')\n      })\n    }\n  },\n  click:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(data && data.length > 0 && data[0].length > 0){\n      var item = data.map(function(d,i){\n      return(\n      <div className='file2' data-no={i} data-type={d[0].stl}><div style={{'padding-right':'50px'}}>{d[0].text}</div><div>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20...</div><button data-index={i} onClick={_this.deleteFile}></button></div>\n      \n      \n      \n      )\n    })\n    }\n    \n   return (\n     <div>\n      <div className=\"ysp-manager-audit-title-icon\">\n        <span>\u9644\u4EF6</span>\n        <i className=\"relate-files\" onClick={_this.click}></i>\n        \n      </div>\n       <div className = 'file_box2'>{item}</div>\n       </div>\n      )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  deleteFile: function deleteFile(e) {\n    var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n    var idx = e.target.getAttribute('data-index');\n    elem.children[idx].style.display = 'none';\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \"deleteFile\",\n        data: e.target.getAttribute('data-index')\n      });\n    }\n  },\n  click: function click(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (data && data.length > 0 && data[0].length > 0) {\n      var item = data.map(function (d, i) {\n        return React.createElement(\n          'div',\n          { className: 'file2', 'data-no': i, 'data-type': d[0].stl },\n          React.createElement(\n            'div',\n            { style: { 'padding-right': '50px' } },\n            d[0].text\n          ),\n          React.createElement(\n            'div',\n            null,\n            '\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20...'\n          ),\n          React.createElement('button', { 'data-index': i, onClick: _this.deleteFile })\n        );\n      });\n    }\n\n    return React.createElement(\n      'div',\n      null,\n      React.createElement(\n        'div',\n        { className: 'ysp-manager-audit-title-icon' },\n        React.createElement(\n          'span',\n          null,\n          '\\u9644\\u4EF6'\n        ),\n        React.createElement('i', { className: 'relate-files', onClick: _this.click })\n      ),\n      React.createElement(\n        'div',\n        { className: 'file_box2' },\n        item\n      )\n    );\n  }\n});";
+      var selfTemplate = "// module.exports = React.createClass({\n//    deleteFile:function(e){\n//     var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n//     var idx = e.target.getAttribute('data-index');\n//     elem.children[idx].style.display='none'\n//     var handler = this.props.customHandler;\n//     if(handler){\n//       handler({\n//         eventType:\"deleteFile\",\n//       \tdata:e.target.getAttribute('data-index')\n//       })\n//     }\n//   },\n//   click:function(e){\n//     var handler = this.props.customHandler;\n//     if(handler){\n//       handler({\n//         eventType:'click'\n//       })\n//     }\n//   },\n//   render: function() {\n//     var data = this.props.customData;\n//     var _this = this;\n//     if(data && data.length > 0 && data[0].length > 0){\n//       var item = data.map(function(d,i){\n//       return(\n//       <div className='file2' data-no={i} data-type={d[0].stl}><div style={{'padding-right':'50px'}}>{d[0].text}</div><div>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20...</div><button data-index={i} onClick={_this.deleteFile}></button></div>\n      \n      \n      \n//       )\n//     })\n//     }\n    \n//    return (\n//      <div>\n//       <div className=\"ysp-manager-audit-title-icon\">\n//         <span>\u9644\u4EF6</span>\n//         <i className=\"relate-files\" onClick={_this.click}></i>\n        \n//       </div>\n//        <div className = 'file_box2'>{item}</div>\n//        </div>\n//       )\n//   }\n// });\nmodule.exports = React.createClass({\n\tdeleteFile: function (e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \"deleteFile\",\n\t\t\t\tdata: e.target.getAttribute('data-index')\n\t\t\t})\n\t\t}\n\t},\n\tclick: function (e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: 'click'\n\t\t\t})\n\t\t}\n\t},\n\trender: function () {\n\t\tvar data = this.props.customData||[];\n\t\tvar _this = this;\n    if(logObject==undefined){\n      var logObject = {'doc':'doc-log','docx':'doc-log','xls':'excel-log','xlsx':'excel-log','txt':'annex-download','pdf':'pdf-log'};\n    }\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<div className=\"ysp-manager-audit-title-icon ysp-manager-audit-wrapper-noborder\">\n\t\t\t\t\t<span>\u9644\u4EF6</span>\n\t\t\t\t\t<i className=\"relate-files\" onClick={_this.click}></i>\n\t\t\t\t</div>\n        <div className='ysp-manager-audit-wrapper'>\n            {data instanceof Array&&data.length > 0 ?\n            data.map((fileItem, fileIndex) => {\n              var extentdName = fileItem.slice(fileItem.lastIndexOf('.')+1);\n              if(logObject[extentdName]==undefined){\n                var className = 'annex-download';\n              }else{\n                var className = logObject[extentdName] + \" \" + 'logo-common-css';\n              }\n              return (\n                <div className={className} style={{'border-bottom':'none'}}>\n                  {fileItem}\n                  <div style={{'font-size':'0.7rem'}}>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20\u2026\u2026</div>\n                  <span className=\"delete-log\" data-type=\"deleteFile\" onClick={_this.deleteFile.bind(_this)} data-index={fileIndex}>X</span>\n                </div>\n              )\n            })\n          :''}\n        </div>\n\t\t\t</div>\n\t\t)\n\t}\n});";
+      return "'use strict';\n\n// module.exports = React.createClass({\n//    deleteFile:function(e){\n//     var elem = e.target.ownerDocument.getElementsByClassName('file_box2')[0];\n//     var idx = e.target.getAttribute('data-index');\n//     elem.children[idx].style.display='none'\n//     var handler = this.props.customHandler;\n//     if(handler){\n//       handler({\n//         eventType:\"deleteFile\",\n//       \tdata:e.target.getAttribute('data-index')\n//       })\n//     }\n//   },\n//   click:function(e){\n//     var handler = this.props.customHandler;\n//     if(handler){\n//       handler({\n//         eventType:'click'\n//       })\n//     }\n//   },\n//   render: function() {\n//     var data = this.props.customData;\n//     var _this = this;\n//     if(data && data.length > 0 && data[0].length > 0){\n//       var item = data.map(function(d,i){\n//       return(\n//       <div className='file2' data-no={i} data-type={d[0].stl}><div style={{'padding-right':'50px'}}>{d[0].text}</div><div>\u4E0A\u4F20\u51C6\u5907\u4E2D\uFF0C\u63D0\u4EA4\u540E\u5F00\u59CB\u4E0A\u4F20...</div><button data-index={i} onClick={_this.deleteFile}></button></div>\n\n\n//       )\n//     })\n//     }\n\n//    return (\n//      <div>\n//       <div className=\"ysp-manager-audit-title-icon\">\n//         <span>\u9644\u4EF6</span>\n//         <i className=\"relate-files\" onClick={_this.click}></i>\n\n//       </div>\n//        <div className = 'file_box2'>{item}</div>\n//        </div>\n//       )\n//   }\n// });\nmodule.exports = React.createClass({\n\tdisplayName: 'exports',\n\n\tdeleteFile: function deleteFile(e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: \"deleteFile\",\n\t\t\t\tdata: e.target.getAttribute('data-index')\n\t\t\t});\n\t\t}\n\t},\n\tclick: function click(e) {\n\t\tvar handler = this.props.customHandler;\n\t\tif (handler) {\n\t\t\thandler({\n\t\t\t\teventType: 'click'\n\t\t\t});\n\t\t}\n\t},\n\trender: function render() {\n\t\tvar data = this.props.customData || [];\n\t\tvar _this = this;\n\t\tif (logObject == undefined) {\n\t\t\tvar logObject = { 'doc': 'doc-log', 'docx': 'doc-log', 'xls': 'excel-log', 'xlsx': 'excel-log', 'txt': 'annex-download', 'pdf': 'pdf-log' };\n\t\t}\n\t\treturn React.createElement(\n\t\t\t'div',\n\t\t\tnull,\n\t\t\tReact.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'ysp-manager-audit-title-icon ysp-manager-audit-wrapper-noborder' },\n\t\t\t\tReact.createElement(\n\t\t\t\t\t'span',\n\t\t\t\t\tnull,\n\t\t\t\t\t'\\u9644\\u4EF6'\n\t\t\t\t),\n\t\t\t\tReact.createElement('i', { className: 'relate-files', onClick: _this.click })\n\t\t\t),\n\t\t\tReact.createElement(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'ysp-manager-audit-wrapper' },\n\t\t\t\tdata instanceof Array && data.length > 0 ? data.map(function (fileItem, fileIndex) {\n\t\t\t\t\tvar extentdName = fileItem.slice(fileItem.lastIndexOf('.') + 1);\n\t\t\t\t\tif (logObject[extentdName] == undefined) {\n\t\t\t\t\t\tvar className = 'annex-download';\n\t\t\t\t\t} else {\n\t\t\t\t\t\tvar className = logObject[extentdName] + \" \" + 'logo-common-css';\n\t\t\t\t\t}\n\t\t\t\t\treturn React.createElement(\n\t\t\t\t\t\t'div',\n\t\t\t\t\t\t{ className: className, style: { 'border-bottom': 'none' } },\n\t\t\t\t\t\tfileItem,\n\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t'div',\n\t\t\t\t\t\t\t{ style: { 'font-size': '0.7rem' } },\n\t\t\t\t\t\t\t'\\u4E0A\\u4F20\\u51C6\\u5907\\u4E2D\\uFF0C\\u63D0\\u4EA4\\u540E\\u5F00\\u59CB\\u4E0A\\u4F20\\u2026\\u2026'\n\t\t\t\t\t\t),\n\t\t\t\t\t\tReact.createElement(\n\t\t\t\t\t\t\t'span',\n\t\t\t\t\t\t\t{ className: 'delete-log', 'data-type': 'deleteFile', onClick: _this.deleteFile.bind(_this), 'data-index': fileIndex },\n\t\t\t\t\t\t\t'X'\n\t\t\t\t\t\t)\n\t\t\t\t\t);\n\t\t\t\t}) : ''\n\t\t\t)\n\t\t);\n\t}\n});";
     },
     getData_control268_GVuZDF: function getData_control268_GVuZDF(elem) {
       if (!elem) {

@@ -50,7 +50,7 @@
               }selectContent.value = dt.querySelector("select").value;[].forEach.call(dt.querySelector("select").querySelectorAll('option'), function (opItem, opIndex) {
                 selectContent.values.push(opItem.value);selectContent.options.push(opItem.textContent);
               });content.push(selectContent);
-            } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
+            } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']") && trItem.querySelector('td').textContent !== "摘要") {
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
                 if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
                   if (dt.querySelector('#Filedata')) {

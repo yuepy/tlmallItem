@@ -49,7 +49,7 @@
           });$(trItem).children("td:nth-child(even)").each(function (idx, dt) {
             if (dt.querySelector("select")) {
               var optionIndex = dt.querySelector('select').selectedIndex;content.push(dt.querySelector("select").querySelectorAll('option')[optionIndex].textContent.replace(/\s/g, "").trim());
-            } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']")) {
+            } else if (dt.querySelector("span") && dt.querySelector("input[type='hidden']") && trItem.querySelector('td').textContent !== "内容描述") {
               if (dt.querySelector("span").textContent.indexOf('编辑器工具') == -1) {
                 // if (trIndex == 5) {
                 if (trItem.querySelector('td').textContent.indexOf('附件') !== -1) {
