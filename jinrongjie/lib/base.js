@@ -991,7 +991,7 @@
                 } else {
                     //测试环境 - Andriod角标
                     xmlhttp.open("post", "http://192.168.200.122:8080/home/system/com.eibus.web.soap.Gateway.wcp", true);
-                   // 正式环境 - Andriod角标
+                   	// 正式环境 - Andriod角标
                     //xmlhttp.open("post", "http://bi.fsig.com.cn:8090/FsigPubServiceProject/webService/OAService?wsdl", true);
                 }
                 xmlhttp.onreadystatechange = function() {
