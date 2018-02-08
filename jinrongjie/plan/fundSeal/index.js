@@ -521,7 +521,7 @@
       }data['leftData'] = leftData;data['rightData'] = rightData;return data;
     },
     doAction_uiControl356_zvfq0u: function (data, elem) {
-      var eventType = data.eventType;if (eventType == 'showReceiver') {
+      var eventType = data.eventType;var elem = elem.ownerDocument;if (eventType == 'showReceiver') {
         var index = parseInt(data.dataCustom.index) + 1;var tbody = elem.querySelector('#requestlogappednDiv').querySelector('table').querySelector('tbody');var tr = $(tbody).children('tr')[index];$(tr).children('td').eq(5).find('span').click();
       } else if (eventType == 'showReceiver') {
         elem.ownerDocument.defaultView.parent.document.querySelector("td[id='oTDtype_0']").click();;
