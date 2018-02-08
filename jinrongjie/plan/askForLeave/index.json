@@ -1,1 +1,2216 @@
-{"version":"0.1","id":"askForLeave","targetURL":"http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","jsFile":"index.js","requires":{"askForLeave":"../askForLeave/index.json","choosePerson":"../choosePerson/index.json","postName":"../postName/index.json","waitTodo":"../waitTodo/index.json","processToSend":"../processToSend/index.json","setBack":"../setBack/index.json"},"chineseName":"请假/公出申请单","description":"","controls":{"control55_pqOP4L":{"location":{"data":{"tagName":"TD"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/form/table/tbody/tr/td"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"},{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table/tbody"}],"force":true},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"}]},"events":{"onGetData":"getData_control55_pqOP4L"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control58_TraKH5":{"location":{"data":{"tagName":"TBODY"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody"},{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table/tbody/tr/td/table[2]/tbody"}],"force":true},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]"}]},"events":{"onGetData":"getData_control58_TraKH5"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control43_lvGvIm":{"location":{"data":{"tagName":"TBODY"},"userData":{"data":[],"force":false},"locators":[{"id":"text","prob":3,"value":{"text":["流程基本信息 紧急程度 正常重要紧急 短信提醒 不短信提醒离线短信提醒在线短信提醒"],"visText":["流程基本信息 紧急程度 正常重要紧急 短信提醒 不短信提醒离线短信提醒在线短信提醒"]}},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"}]},"roles":"element","text":"\n                    \n                        \n                        流程基本信息\n                        \n                    \n                    \n                        紧急程度\n                        正常重要紧急\n                        \n                        短信提醒\n                        \n                        不短信提醒离线短信提醒在线短信提醒\n                    \n                ","frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control65_qXS8el":{"location":{"data":{"tagName":"FONT"},"userData":{"force":true,"data":[{"method":"customJS","value":"if(document.textContent.indexOf(\"请假\"))return true;"}]},"locators":[{"id":"text","prob":3,"ordinal":[1,2],"value":{"text":["北京金融街投资（集团）请假/公出申请单"],"visText":["北京金融街投资（集团）请假/公出申请单"]}},{"id":"@class/word","prob":1,"ordinal":[0,22],"value":"P.bt FONT FONT"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]/FONT[1]/FONT[1]"},{"id":"elderLevel","value":{"level":0}}]},"roles":"element","text":"北京金融街投资（集团）请假/公出申请单","frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control66_Eb1v0M":{"location":{"data":{"tagName":"P"},"userData":{"force":false,"data":[{"method":"customJS","value":""}]},"locators":[{"id":"text","prob":3,"value":{"text":["北京金融街投资（集团）请假/公出申请单"],"visText":["北京金融街投资（集团）请假/公出申请单"]}},{"id":"@class/word","prob":1,"ordinal":[0,22],"value":"P.bt"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"}]},"roles":"element","text":"北京金融街投资（集团）请假/公出申请单 ","frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control69_I649GH":{"location":{"data":{"tagName":"P"},"userData":{"force":false,"data":[{"method":"customJS","value":"if(elem.textContent.indexOf('请假')!=-1 || elem.textContent.indexOf('未考勤')!=-1){return true}"}]},"locators":[{"id":"text","prob":3,"value":{"text":["北京金融街投资（集团）未考勤申报审批流程"],"visText":["北京金融街投资（集团）未考勤申报审批流程"]}},{"id":"@class/word","prob":1,"ordinal":[0,15],"value":"P.bt"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"}]},"roles":"element","text":"北京金融街投资（集团）未考勤申报审批流程","frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control63_xKq6K5":{"location":{"data":{"tagName":"TBODY"},"userData":{"data":[],"force":false},"locators":[{"id":"@id/word","prob":2,"value":["descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]/TABLE[1]/TBODY[1]","descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TBODY","descendant::DIV[@id=\"toolbarmenudiv\"]//TBODY"]},{"id":"@class/word","prob":1,"ordinal":[0,7],"value":"BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor TABLE TBODY"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control63_xKq6K5"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":""},"control79_xTNUQB":{"location":{"data":{"tagName":"SPAN"},"userData":{"data":[],"force":false},"locators":[{"id":"text","prob":3,"value":{"text":["请求:处理 - 01公文审批流程-总经理签核 - FSIG-201710260010"],"visText":["请求:处理 - 01公文审批流程-总经理签核 - FSIG-201710260010"]}},{"id":"@id/word","prob":3,"value":["descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]","descendant::SPAN[@id=\"BacoTitle\"]"]},{"id":"@class/word","prob":1,"ordinal":[0,2],"value":"BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"}]},"roles":"element","text":"","frameXPath":"","customJS":"if(elem.textContent.indexOf('处理 - 请假/公出流程') !== -1 || elem.textContent.indexOf('处理 - 未考勤申报审批流程') !== -1){return true;}return false; "},"control82_Oe1sOv":{"location":{"data":{"tagName":"FONT"},"userData":{"data":[],"force":false},"locators":[{"id":"@class/word","prob":1,"ordinal":[0,21],"value":"P.bt FONT FONT"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]/FONT[1]/FONT[1]"},{"id":"elderLevel","value":{"level":0}}]},"events":{"onGetData":"getData_control82_Oe1sOv"},"intendedRole":"custom","roles":"element,custom","monitored":false,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control84_nadrbI":{"location":{"data":{"tagName":"TABLE"},"userData":{"data":[{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table/tbody/tr/td/table[2]/tbody/tr[11]/td[2]"},{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table/tbody/tr/td/table[2]/tbody/tr[6]/td[2]"}],"force":false},"locators":[{"id":"@id/word","prob":2,"value":["descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]/SPAN[2]/SPAN[1]/TABLE[1]","descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TABLE","descendant::SPAN[@id=\"cke_remark\"]//TABLE"]},{"id":"@class/word","prob":1,"ordinal":[0,22],"value":"SPAN.cke_browser_webkit.cke_browser_quirks SPAN.cke_wrapper.cke_ltr TABLE.cke_editor"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[11]/TD[2]/FONT[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]"}]},"events":{"onGetData":"getData_control84_nadrbI"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control253_CceTIQ":{"location":{"data":{"tagName":"TBODY"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[1]/tbody"}],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control253_CceTIQ"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":false,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control325_ShT5Sw":{"location":{"data":{"tagName":"BODY"},"userData":{"data":[],"force":false},"locators":[{"id":"@class/word","prob":1,"value":"BODY.ext-ie"},{"id":"path/ordinal","prob":1,"ordinal":[0,15],"value":"/HTML[1]/BODY[1]"}]},"events":{"onGetData":"getData_control325_ShT5Sw"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":""},"control221_93vAJg":{"location":{"data":{"tagName":"TBODY"},"userData":{"force":false,"data":[{"method":"XPath","value":"//*[@id=\"requestlogappednDiv\"]/table/tbody"},{"method":"XPath","value":"//*[@id=\"mainWFHead\"]/tbody"}]},"locators":[{"id":"@id/word","prob":2,"value":["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]/TBODY[1]","descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY","descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY","descendant::DIV[@id=\"requestlogappednDiv\"]//TBODY"]},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control221_93vAJg"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"}},"contexts":{"context11_ksSRDp":{"controls":["control55_pqOP4L","control58_TraKH5","control63_xKq6K5","control82_Oe1sOv","control84_nadrbI","control253_CceTIQ","control325_ShT5Sw","control221_93vAJg"],"anchors":["control79_xTNUQB"],"urlAnchor":[]}},"flows":{"flow32_EWyi63":{"toContexts":[{"toContextId":"context11_ksSRDp"},{"toContextId":"context11_ksSRDp","toModelId":"askForLeave"}]},"flow36_8vrkpF":{"fromContextId":"context11_ksSRDp","fromAction":"doAction","fromControlId":"control55_pqOP4L","toContexts":[{"toContextId":"context11_ksSRDp"}]},"flow42_iDGuZF":{"fromContextId":"context11_ksSRDp","fromAction":"doAction","fromControlId":"control58_TraKH5","toContexts":[{"toContextId":"context11_ksSRDp"},{"toContextId":"context10_sJa5NJ","toModelId":"choosePerson"},{"toContextId":"context21_LgNuze","toModelId":"postName"}]},"flow43_L409gW":{"fromContextId":"context11_ksSRDp","fromAction":"doAction","fromControlId":"control84_nadrbI","toContexts":[{"toContextId":"context11_ksSRDp"}]},"flow26_OekV5M":{"fromContextId":"context11_ksSRDp","fromAction":"doAction","fromControlId":"control63_xKq6K5","toContexts":[{"toContextId":"context11_ksSRDp"},{"toContextId":"context2_owrLEy","toModelId":"waitTodo"},{"toContextId":"context10_Tp4yhH","toModelId":"processToSend"},{"toContextId":"context8_QbFt5N","toModelId":"setBack"}]},"flow205_Q6gGHQ":{"fromContextId":"context11_ksSRDp","fromAction":"doAction","fromControlId":"control253_CceTIQ","toContexts":[{"toContextId":"context11_ksSRDp"}]}},"pages":{"page11_MgxyAp":{"contextId":"context11_ksSRDp","layout":[{"id":"uiControl45_w9wCSy","controlId":"control55_pqOP4L","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl45_w9wCSy","onGetTemplate":"getTemplate_uiControl45_w9wCSy"}}}},{"id":"uiControl354_e497Tn","display":{"type":"card","adapterId":"card","adapter":{"templateType":""}},"layout":[{"id":"uiControl354_e497Tnheader","display":{"type":"cardHeader","text":"","adapterId":"cardHeader","adapter":{"templateType":""}},"layout":[]},{"id":"uiControl354_e497Tnbody","display":{"type":"cardBody","adapterId":"cardBody","adapter":{"templateType":""}},"layout":[{"id":"uiControl29_L1qw2v","controlId":"control221_93vAJg","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl29_L1qw2v","onGetTemplate":"getTemplate_uiControl29_L1qw2v"}}}},{"id":"uiControl69_kfEJEA","controlId":"control82_Oe1sOv","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl69_kfEJEA","onGetTemplate":"getTemplate_uiControl69_kfEJEA"}}}},{"id":"uiControl238_znz6Fh","controlId":"control253_CceTIQ","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl238_znz6Fh","onGetTemplate":"getTemplate_uiControl238_znz6Fh"}}}},{"id":"uiControl54_GI48cc","controlId":"control58_TraKH5","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl54_GI48cc","onGetTemplate":"getTemplate_uiControl54_GI48cc"}}}},{"id":"uiControl73_hrdinf","controlId":"control84_nadrbI","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl73_hrdinf","onGetTemplate":"getTemplate_uiControl73_hrdinf"}}}}]},{"id":"uiControl354_e497Tnfooter","display":{"type":"cardFooter","adapterId":"cardFooter","adapter":{"templateType":""}},"layout":[]}]},{"id":"uiControl325_ikzimA","controlId":"control325_ShT5Sw","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl325_ikzimA","onGetTemplate":"getTemplate_uiControl325_ikzimA"}}}},{"id":"uiControl64_5FfLQe","display":{"type":"sticky","adapterId":"sticky","adapter":{"templateType":""}},"layout":[{"id":"uiControl64_5FfLQebody","display":{"type":"stickyBody","adapterId":"stickyBody","adapter":{"templateType":""}},"layout":[{"id":"uiControl65_ILA94I","controlId":"control63_xKq6K5","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl65_ILA94I","onGetTemplate":"getTemplate_uiControl65_ILA94I"}}}}]}]}]}},"matchers":{"page/title":{"contexts":{"context11_ksSRDp":["请假/公出流程(新)-张济天-2017-10-19","","请假/公出流程(新)-张济天-2017-04-13","未考勤申报审批流程（新）-张济天-2017-10-20","请假/公出流程(新)-张济天-2017-10-18","请假/公出流程(新)-张济天-2017-11-10","请假/公出流程(新)-张济天-2017-11-23","请假/公出流程(新)-张济天-2017-12-08","请假/公出流程(新)-张济天-2017-12-05"]}},"page/urls":{"contexts":{"context11_ksSRDp":["192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8061&isagent=0&beagenter=0","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118166&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118165&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=180695&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162836&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162835&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312801&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ViewRequest.jsp?requestid=425647&isovertime=0","192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8241&isagent=0&beagenter=0","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=527987&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=501522&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"],"context10_sJa5NJ":["192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838","192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147","192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp","192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids="],"context10_Tp4yhH":["192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1","192.168.200.63/workflow/request/Remark.jsp?requestid=162836&workflowRequestLogId=-1"]}},"page/ids":{"contexts":{"context11_ksSRDp":[["BacoAddFavorite","BacoTitle","FONTSYSTEMF","WfBill","WfLog","WfPic","bodyiframe","btnHelp","closetext","divTopTitle","divWfBill","divWfLog","divWfPic","ext-gen","isonline","isworkflowdoc","loading","loading-msg","mainRequestFrame","mainsupports","needShow","picInnerFrameurl","piciframe","requestTabButton","requestmarkSpan","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","statInnerFrameurl","statiframe","toolbarbottommenu","toolbarmenu","toolbarmenuCoverdiv","toolbarmenudiv","triSubwfIframe","wfdoc"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","WfBill","WfLog","WfPic","_beagenter","_isagent","bodyiframe","btnHelp","closetext","divTopTitle","divWfBill","divWfLog","divWfPic","ext-gen","isonline","isworkflowdoc","loading","loading-msg","mainRequestFrame","mainsupports","needShow","picInnerFrameurl","piciframe","requestTabButton","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","statInnerFrameurl","statiframe","toolbarbottommenu","toolbarmenu","toolbarmenuCoverdiv","toolbarmenudiv"],["BacoAddFavorite","BacoTitle","D","FONTSYSTEMF","WfBill","WfLog","WfPic","bodyiframe","btnHelp","closetext","divTopTitle","divWfBill","divWfLog","divWfPic","ext-gen","isonline","isworkflowdoc","loading","loading-msg","mainRequestFrame","mainsupports","needShow","oc_divMenuDivision","picInnerFrameurl","requestTabButton","requestmarkSpan","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","statInnerFrameurl","statiframe","toolbarbottommenu","toolbarmenu","toolbarmenuCoverdiv","toolbarmenudiv","triSubwfIframe","wfRstPicImg","wfdoc"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","WfBill","WfLog","WfPic","_xTable","bodyiframe","btnHelp","closetext","divTopTitle","divWfBill","divWfLog","divWfPic","ext-gen","isonline","loading","loading-msg","mainRequestFrame","mainsupports","needShow","piciframe","requestTabButton","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","statiframe","toolbarbottommenu","toolbarmenu","toolbarmenuCoverdiv","toolbarmenudiv"]],"context10_Tp4yhH":[["BacoAddFavorite","BacoTitle","FONTSYSTEMF","SWFUpload_","_xTable","btnCancelannexupload","btnHelp","cke_","cke__label","cke__text","cke_bottom_remark","cke_contents_remark","cke_path_remark","cke_path_remark_label","cke_remark","cke_remark_arialbl","cke_top_remark","closetext","divStatusannexupload","divTopTitle","docimages_num","field-annexupload","field-annexupload_tab","field-annexuploadspan","fieldspan","fieldspanBtn","fieldspanSpan","flashUrl","fsUploadProgressannexupload","imgFileSpanTemp_remark","imgFileSpan_remark","imgFile_remark","imgTypeFile_remark","imgTypeUrl_remark","imgUrl","imgUrlSpan_remark","insertObjectContainer_Flash_remark","insertObjectContainer_Image_remark","insertObjectContainer_remark","isFlashVideoUrl","isonline","mainsupports","needShow","oFile","oTable","okBtn","remark","remarkSpan","remarkText","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","signdocids","signdocspan","signworkflowids","signworkflowspan","uploadFileName_remark"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","SWFUpload_","_xTable","btnCancelannexupload","btnHelp","cke_","cke__label","cke__text","cke_bottom_remark","cke_contents_remark","cke_elementspath__","cke_elementspath___label","cke_path_remark","cke_path_remark_label","cke_remark","cke_remark_arialbl","cke_top_remark","closetext","divStatusannexupload","divTopTitle","docimages_num","field-annexupload","field-annexupload_tab","field-annexuploadspan","fieldspan","fieldspanBtn","fieldspanSpan","flashUrl","fsUploadProgressannexupload","imgFileSpanTemp_remark","imgFileSpan_remark","imgFile_remark","imgTypeFile_remark","imgTypeUrl_remark","imgUrl","imgUrlSpan_remark","insertObjectContainer_Flash_remark","insertObjectContainer_Image_remark","insertObjectContainer_remark","isFlashVideoUrl","isonline","mainsupports","needShow","oFile","oTable","okBtn","remark","remarkSpan","remarkText","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","signdocids","signdocspan","signworkflowids","signworkflowspan","uploadFileName_remark"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","_xTable","btnHelp","cke_","cke__label","cke__text","cke_bottom_remark","cke_contents_remark","cke_path_remark","cke_path_remark_label","cke_remark","cke_remark_arialbl","cke_top_remark","closetext","divTopTitle","docimages_num","fieldspan","fieldspanBtn","fieldspanSpan","flashUrl","imgFileSpanTemp_remark","imgFileSpan_remark","imgFile_remark","imgTypeFile_remark","imgTypeUrl_remark","imgUrl","imgUrlSpan_remark","insertObjectContainer_Flash_remark","insertObjectContainer_Image_remark","insertObjectContainer_remark","isFlashVideoUrl","isonline","mainsupports","needShow","oFile","oTable","okBtn","remark","remarkSpan","remarkText","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","uploadFileName_remark"]]}},"page/classes":{"contexts":{"context11_ksSRDp":[["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_forward","btn_print","btn_rejectName","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_doDelete","btn_forward","btn_print","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["ChartCompany","MenuPopUp","MenuPopup","STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_forward","btn_print","btn_rejectName","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_forward","btn_print","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_forward","btn_print","btn_rejectName","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row","ysp_load_haha"]],"context10_Tp4yhH":[["Browser","InputStyle","Inputstyle","Line","STYLE","Shadow","Title","TopTitle","ViewForm","browser","btnFavorite","btnHelp","cke_","cke_bottom","cke_browser_quirks","cke_browser_webkit","cke_button","cke_button_bgcolor","cke_button_bold","cke_button_customimage","cke_button_flash","cke_button_indent","cke_button_insertcrm","cke_button_insertdocs","cke_button_insertproject","cke_button_inserttask","cke_button_insertwf","cke_button_italic","cke_button_justifyblock","cke_button_justifycenter","cke_button_justifyleft","cke_button_justifyright","cke_button_link","cke_button_outdent","cke_button_redo","cke_button_source","cke_button_table","cke_button_textcolor","cke_button_underline","cke_button_undo","cke_button_unlink","cke_buttonarrow","cke_contents","cke_disabled","cke_editor","cke_editor_remark","cke_empty","cke_font","cke_fontSize","cke_icon","cke_inline_label","cke_label","cke_ltr","cke_off","cke_openbutton","cke_path","cke_rcombo","cke_separator","cke_skin_v","cke_text","cke_toolbar","cke_toolbar_end","cke_toolbar_start","cke_toolbox","cke_toolbox_collapser","cke_toolgroup","cke_top","cke_voice_label","cke_wrapper","clickRightMenu","datalight","drop-shadow","editorImgWin","field","fieldset","flash","highslide-container","highslide-loading","simplehrmhead","swfupload"],["Browser","InputStyle","Inputstyle","Line","STYLE","Shadow","Title","TopTitle","ViewForm","browser","btnFavorite","btnHelp","cke_","cke_bottom","cke_browser_quirks","cke_browser_webkit","cke_button","cke_button_bgcolor","cke_button_bold","cke_button_customimage","cke_button_flash","cke_button_indent","cke_button_insertcrm","cke_button_insertdocs","cke_button_insertproject","cke_button_inserttask","cke_button_insertwf","cke_button_italic","cke_button_justifyblock","cke_button_justifycenter","cke_button_justifyleft","cke_button_justifyright","cke_button_link","cke_button_outdent","cke_button_redo","cke_button_source","cke_button_table","cke_button_textcolor","cke_button_underline","cke_button_undo","cke_button_unlink","cke_buttonarrow","cke_contents","cke_disabled","cke_editor","cke_editor_remark","cke_empty","cke_font","cke_fontSize","cke_icon","cke_inline_label","cke_label","cke_ltr","cke_off","cke_on","cke_openbutton","cke_path","cke_rcombo","cke_separator","cke_skin_v","cke_text","cke_toolbar","cke_toolbar_end","cke_toolbar_start","cke_toolbox","cke_toolbox_collapser","cke_toolgroup","cke_top","cke_voice_label","cke_wrapper","clickRightMenu","datalight","drop-shadow","editorImgWin","field","fieldset","flash","highslide-container","highslide-loading","simplehrmhead","swfupload"],["Browser","Inputstyle","Line","STYLE","Shadow","Title","TopTitle","ViewForm","browser","btnFavorite","btnHelp","cke_","cke_bottom","cke_browser_quirks","cke_browser_webkit","cke_button","cke_button_bgcolor","cke_button_bold","cke_button_customimage","cke_button_flash","cke_button_indent","cke_button_insertcrm","cke_button_insertdocs","cke_button_insertproject","cke_button_inserttask","cke_button_insertwf","cke_button_italic","cke_button_justifyblock","cke_button_justifycenter","cke_button_justifyleft","cke_button_justifyright","cke_button_link","cke_button_outdent","cke_button_redo","cke_button_source","cke_button_table","cke_button_textcolor","cke_button_underline","cke_button_undo","cke_button_unlink","cke_buttonarrow","cke_contents","cke_disabled","cke_editor","cke_editor_remark","cke_empty","cke_font","cke_fontSize","cke_icon","cke_inline_label","cke_label","cke_ltr","cke_off","cke_openbutton","cke_path","cke_rcombo","cke_separator","cke_skin_v","cke_text","cke_toolbar","cke_toolbar_end","cke_toolbar_start","cke_toolbox","cke_toolbox_collapser","cke_toolgroup","cke_top","cke_voice_label","cke_wrapper","clickRightMenu","datalight","drop-shadow","editorImgWin","field","highslide-container","highslide-loading","simplehrmhead"]]}},"page/tagTriplets":{"contexts":{"context11_ksSRDp":[["-/-/DIV","-/-/IFRAME","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/SCRIPT","-/-/STYLE","-/-/TITLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/SPAN","-/DIV/TABLE","A/EM/SPAN","DIV/DIV/DIV","DIV/DIV/IFRAME","DIV/DIV/TABLE","DIV/DIV/UL","DIV/SPAN/IMG","DIV/TABLE/TBODY","DIV/UL/LI","EM/SPAN/SPAN","LI/A/EM","SPAN/SPAN/SCRIPT","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/EM/BUTTON","TD/SPAN/SPAN","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/EM","TR/TD/I","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A"],["-/-/DIV","-/-/INPUT-hidden","-/-/LINK","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/SPAN","-/DIV/TABLE","A/EM/SPAN","DIV/DIV/DIV","DIV/DIV/IFRAME","DIV/DIV/TABLE","DIV/DIV/UL","DIV/SPAN/IMG","DIV/TABLE/TBODY","DIV/UL/LI","EM/SPAN/SPAN","LI/A/EM","SPAN/SPAN/SCRIPT","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/EM/BUTTON","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/EM","TR/TD/I","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A"],["-/-/DIV","-/-/IFRAME","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/SCRIPT","-/-/STYLE","-/-/TITLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/SPAN","-/DIV/TABLE","A/EM/SPAN","DIV/DIV/DIV","DIV/DIV/IFRAME","DIV/DIV/IMG","DIV/DIV/P","DIV/DIV/STYLE","DIV/DIV/TABLE","DIV/DIV/UL","DIV/SPAN/IMG","DIV/TABLE/TBODY","DIV/UL/LI","EM/SPAN/SPAN","LI/A/EM","SPAN/SPAN/SCRIPT","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/EM/BUTTON","TD/SPAN/SPAN","TD/TABLE/TBODY","TR/TD/A","TR/TD/B","TR/TD/BUTTON","TR/TD/DIV","TR/TD/EM","TR/TD/I","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A"],["-/-/DIV","-/-/INPUT-hidden","-/-/LINK","-/-/SCRIPT","-/-/STYLE","-/-/TABLE","-/-/TITLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/SPAN","-/DIV/TABLE","-/TABLE/TBODY","A/EM/SPAN","DIV/DIV/DIV","DIV/DIV/IFRAME","DIV/DIV/TABLE","DIV/DIV/UL","DIV/SPAN/IMG","DIV/TABLE/TBODY","DIV/UL/LI","EM/SPAN/SPAN","LI/A/EM","SPAN/SPAN/SCRIPT","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/EM/BUTTON","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/EM","TR/TD/I","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A"]],"context10_Tp4yhH":[["-/-/DIV","-/-/FORM","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/OBJECT","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/TABLE","-/FORM/DIV","-/FORM/INPUT-hidden","-/FORM/SPAN","-/FORM/TABLE","A/SPAN/SPAN","DIV/BUTTON/U","DIV/DIV/BUTTON","DIV/LABEL/INPUT-radio","DIV/SPAN/BR","DIV/SPAN/DIV","DIV/SPAN/INPUT-button","DIV/SPAN/INPUT-hidden","DIV/SPAN/INPUT-null","DIV/SPAN/LABEL","DIV/SPAN/OBJECT","DIV/SPAN/SPAN","DIV/TABLE/TBODY","FORM/SPAN/DIV","FORM/TABLE/COLGROUP","FORM/TABLE/TBODY","SPAN/A/SPAN","SPAN/DIV/BR","SPAN/DIV/DIV","SPAN/DIV/LABEL","SPAN/DIV/SPAN","SPAN/LABEL/INPUT-checkbox","SPAN/OBJECT/PARAM","SPAN/SPAN/A","SPAN/SPAN/FONT","SPAN/SPAN/IMG","SPAN/SPAN/SPAN","SPAN/SPAN/STYLE","SPAN/SPAN/TABLE","SPAN/TABLE/TBODY","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/A/SPAN","TD/DIV/A","TD/DIV/FONT","TD/DIV/IMG","TD/DIV/SPAN","TD/SPAN/IMG","TD/SPAN/SPAN","TD/TABLE/COLGROUP","TD/TABLE/INPUT-hidden","TD/TABLE/TBODY","TR/TD/A","TR/TD/BR","TR/TD/BUTTON","TR/TD/DIV","TR/TD/FONT","TR/TD/IFRAME","TR/TD/IMG","TR/TD/INPUT-hidden","TR/TD/INPUT-null","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/TABLE","TR/TD/TEXTAREA"],["-/-/DIV","-/-/FORM","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/OBJECT","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/TABLE","-/FORM/DIV","-/FORM/INPUT-hidden","-/FORM/SPAN","-/FORM/TABLE","A/SPAN/SPAN","DIV/A/SPAN","DIV/BUTTON/U","DIV/DIV/BUTTON","DIV/LABEL/INPUT-radio","DIV/SPAN/BR","DIV/SPAN/DIV","DIV/SPAN/INPUT-button","DIV/SPAN/INPUT-hidden","DIV/SPAN/INPUT-null","DIV/SPAN/LABEL","DIV/SPAN/OBJECT","DIV/SPAN/SPAN","DIV/TABLE/TBODY","FORM/SPAN/DIV","FORM/TABLE/COLGROUP","FORM/TABLE/TBODY","SPAN/A/SPAN","SPAN/DIV/BR","SPAN/DIV/DIV","SPAN/DIV/LABEL","SPAN/DIV/SPAN","SPAN/LABEL/INPUT-checkbox","SPAN/OBJECT/PARAM","SPAN/SPAN/A","SPAN/SPAN/FONT","SPAN/SPAN/IMG","SPAN/SPAN/SPAN","SPAN/SPAN/STYLE","SPAN/SPAN/TABLE","SPAN/TABLE/TBODY","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/A/SPAN","TD/DIV/A","TD/DIV/FONT","TD/DIV/IMG","TD/DIV/SPAN","TD/SPAN/IMG","TD/SPAN/SPAN","TD/TABLE/COLGROUP","TD/TABLE/INPUT-hidden","TD/TABLE/TBODY","TR/TD/A","TR/TD/BR","TR/TD/BUTTON","TR/TD/DIV","TR/TD/FONT","TR/TD/IFRAME","TR/TD/IMG","TR/TD/INPUT-hidden","TR/TD/INPUT-null","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/TABLE","TR/TD/TEXTAREA"],["-/-/DIV","-/-/FORM","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/OBJECT","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/TABLE","-/FORM/DIV","-/FORM/INPUT-hidden","-/FORM/SPAN","-/FORM/TABLE","A/SPAN/SPAN","DIV/BUTTON/U","DIV/DIV/BUTTON","DIV/LABEL/INPUT-radio","DIV/SPAN/BR","DIV/SPAN/DIV","DIV/SPAN/INPUT-button","DIV/SPAN/INPUT-hidden","DIV/SPAN/INPUT-null","DIV/SPAN/LABEL","DIV/SPAN/SPAN","DIV/TABLE/TBODY","FORM/SPAN/DIV","FORM/TABLE/COLGROUP","FORM/TABLE/TBODY","SPAN/A/SPAN","SPAN/DIV/BR","SPAN/DIV/DIV","SPAN/DIV/LABEL","SPAN/DIV/SPAN","SPAN/LABEL/INPUT-checkbox","SPAN/SPAN/A","SPAN/SPAN/SPAN","SPAN/SPAN/STYLE","SPAN/SPAN/TABLE","SPAN/TABLE/TBODY","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/A/SPAN","TD/DIV/A","TD/DIV/FONT","TD/DIV/IMG","TD/DIV/SPAN","TD/SPAN/IMG","TD/SPAN/SPAN","TD/TABLE/TBODY","TR/TD/A","TR/TD/BR","TR/TD/BUTTON","TR/TD/DIV","TR/TD/FONT","TR/TD/IFRAME","TR/TD/IMG","TR/TD/INPUT-hidden","TR/TD/INPUT-null","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/TABLE","TR/TD/TEXTAREA"]]}}}}
+{
+  "version": "0.1",
+  "id": "askForLeave",
+  "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+  "jsFile": "index.js",
+  "requires": {
+    "askForLeave": "../askForLeave/index.json",
+    "choosePerson": "../choosePerson/index.json",
+    "postName": "../postName/index.json",
+    "waitTodo": "../waitTodo/index.json",
+    "processToSend": "../processToSend/index.json",
+    "setBack": "../setBack/index.json"
+  },
+  "chineseName": "请假/公出申请单",
+  "description": "",
+  "controls": {
+    "control55_pqOP4L": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table/tbody"
+            }
+          ],
+          "force": true
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control55_pqOP4L"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control58_TraKH5": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table/tbody/tr/td/table[2]/tbody"
+            }
+          ],
+          "force": true
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control58_TraKH5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control43_lvGvIm": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "流程基本信息 紧急程度 正常重要紧急 短信提醒 不短信提醒离线短信提醒在线短信提醒"
+              ],
+              "visText": [
+                "流程基本信息 紧急程度 正常重要紧急 短信提醒 不短信提醒离线短信提醒在线短信提醒"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "\n                    \n                        \n                        流程基本信息\n                        \n                    \n                    \n                        紧急程度\n                        正常重要紧急\n                        \n                        短信提醒\n                        \n                        不短信提醒离线短信提醒在线短信提醒\n                    \n                ",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control65_qXS8el": {
+      "location": {
+        "data": {
+          "tagName": "FONT"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "customJS",
+              "value": "if(document.textContent.indexOf(\"请假\"))return true;"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "北京金融街投资（集团）请假/公出申请单"
+              ],
+              "visText": [
+                "北京金融街投资（集团）请假/公出申请单"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              22
+            ],
+            "value": "P.bt FONT FONT"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]/FONT[1]/FONT[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "北京金融街投资（集团）请假/公出申请单",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control66_Eb1v0M": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "customJS",
+              "value": ""
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "北京金融街投资（集团）请假/公出申请单"
+              ],
+              "visText": [
+                "北京金融街投资（集团）请假/公出申请单"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              22
+            ],
+            "value": "P.bt"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "北京金融街投资（集团）请假/公出申请单 ",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control69_I649GH": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "customJS",
+              "value": "if(elem.textContent.indexOf('请假')!=-1 || elem.textContent.indexOf('未考勤')!=-1){return true}"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "北京金融街投资（集团）未考勤申报审批流程"
+              ],
+              "visText": [
+                "北京金融街投资（集团）未考勤申报审批流程"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "P.bt"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "北京金融街投资（集团）未考勤申报审批流程",
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control63_xKq6K5": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TBODY",
+              "descendant::DIV[@id=\"toolbarmenudiv\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              7
+            ],
+            "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control63_xKq6K5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control79_xTNUQB": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请求:处理 - 01公文审批流程-总经理签核 - FSIG-201710260010"
+              ],
+              "visText": [
+                "请求:处理 - 01公文审批流程-总经理签核 - FSIG-201710260010"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"divTopTitle\"]//SPAN[@id=\"BacoTitle\"]",
+              "descendant::SPAN[@id=\"BacoTitle\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": "",
+      "customJS": "if(elem.textContent.indexOf('处理 - 请假/公出流程') !== -1 || elem.textContent.indexOf('处理 - 未考勤申报审批流程') !== -1){return true;}return false; "
+    },
+    "control82_Oe1sOv": {
+      "location": {
+        "data": {
+          "tagName": "FONT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              21
+            ],
+            "value": "P.bt FONT FONT"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/P[1]/FONT[1]/FONT[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control82_Oe1sOv"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control84_nadrbI": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table/tbody/tr/td/table[2]/tbody/tr[11]/td[2]"
+            },
+            {
+              "method": "XPath",
+              "value": "/html/body/table/tbody/tr/td/form/table/tbody/tr/td/table[2]/tbody/tr[6]/td[2]"
+            }
+          ],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]/SPAN[2]/SPAN[1]/TABLE[1]",
+              "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TABLE",
+              "descendant::SPAN[@id=\"cke_remark\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              22
+            ],
+            "value": "SPAN.cke_browser_webkit.cke_browser_quirks SPAN.cke_wrapper.cke_ltr TABLE.cke_editor"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]/TR[11]/TD[2]/FONT[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control84_nadrbI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control253_CceTIQ": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[1]/tbody"
+            }
+          ],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control253_CceTIQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": false,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    },
+    "control325_ShT5Sw": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.ext-ie"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              15
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control325_ShT5Sw"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control221_93vAJg": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"mainWFHead\"]/tbody"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]/TBODY[1]",
+              "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
+              "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY",
+              "descendant::DIV[@id=\"requestlogappednDiv\"]//TBODY"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control221_93vAJg"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context11_ksSRDp": {
+      "controls": [
+        "control55_pqOP4L",
+        "control58_TraKH5",
+        "control63_xKq6K5",
+        "control82_Oe1sOv",
+        "control84_nadrbI",
+        "control253_CceTIQ",
+        "control325_ShT5Sw",
+        "control221_93vAJg"
+      ],
+      "anchors": [
+        "control79_xTNUQB"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow32_EWyi63": {
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        },
+        {
+          "toContextId": "context11_ksSRDp",
+          "toModelId": "askForLeave"
+        }
+      ]
+    },
+    "flow36_8vrkpF": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control55_pqOP4L",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        }
+      ]
+    },
+    "flow42_iDGuZF": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control58_TraKH5",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        },
+        {
+          "toContextId": "context10_sJa5NJ",
+          "toModelId": "choosePerson"
+        },
+        {
+          "toContextId": "context21_LgNuze",
+          "toModelId": "postName"
+        }
+      ]
+    },
+    "flow43_L409gW": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control84_nadrbI",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        }
+      ]
+    },
+    "flow26_OekV5M": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control63_xKq6K5",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        },
+        {
+          "toContextId": "context2_owrLEy",
+          "toModelId": "waitTodo"
+        },
+        {
+          "toContextId": "context10_Tp4yhH",
+          "toModelId": "processToSend"
+        },
+        {
+          "toContextId": "context8_QbFt5N",
+          "toModelId": "setBack"
+        }
+      ]
+    },
+    "flow205_Q6gGHQ": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control253_CceTIQ",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        }
+      ]
+    },
+    "flow229_F4dASB": {
+      "fromContextId": "context11_ksSRDp",
+      "fromAction": "doAction",
+      "fromControlId": "control221_93vAJg",
+      "toContexts": [
+        {
+          "toContextId": "context11_ksSRDp"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page11_MgxyAp": {
+      "contextId": "context11_ksSRDp",
+      "layout": [
+        {
+          "id": "uiControl45_w9wCSy",
+          "controlId": "control55_pqOP4L",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl45_w9wCSy",
+                "onGetTemplate": "getTemplate_uiControl45_w9wCSy"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl354_e497Tn",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl354_e497Tnheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl354_e497Tnbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl29_L1qw2v",
+                  "controlId": "control221_93vAJg",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl29_L1qw2v",
+                        "onGetTemplate": "getTemplate_uiControl29_L1qw2v"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl69_kfEJEA",
+                  "controlId": "control82_Oe1sOv",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl69_kfEJEA",
+                        "onGetTemplate": "getTemplate_uiControl69_kfEJEA"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl238_znz6Fh",
+                  "controlId": "control253_CceTIQ",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl238_znz6Fh",
+                        "onGetTemplate": "getTemplate_uiControl238_znz6Fh"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl54_GI48cc",
+                  "controlId": "control58_TraKH5",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl54_GI48cc",
+                        "onGetTemplate": "getTemplate_uiControl54_GI48cc"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl73_hrdinf",
+                  "controlId": "control84_nadrbI",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl73_hrdinf",
+                        "onGetTemplate": "getTemplate_uiControl73_hrdinf"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl354_e497Tnfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl325_ikzimA",
+          "controlId": "control325_ShT5Sw",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl325_ikzimA",
+                "onGetTemplate": "getTemplate_uiControl325_ikzimA"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl64_5FfLQe",
+          "display": {
+            "type": "sticky",
+            "adapterId": "sticky",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl64_5FfLQebody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl65_ILA94I",
+                  "controlId": "control63_xKq6K5",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl65_ILA94I",
+                        "onGetTemplate": "getTemplate_uiControl65_ILA94I"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context11_ksSRDp": [
+          "请假/公出流程(新)-张济天-2017-10-19",
+          "",
+          "请假/公出流程(新)-张济天-2017-04-13",
+          "未考勤申报审批流程（新）-张济天-2017-10-20",
+          "请假/公出流程(新)-张济天-2017-10-18",
+          "请假/公出流程(新)-张济天-2017-11-10",
+          "请假/公出流程(新)-张济天-2017-11-23",
+          "请假/公出流程(新)-张济天-2017-12-08",
+          "请假/公出流程(新)-张济天-2017-12-05"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context11_ksSRDp": [
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8061&isagent=0&beagenter=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118166&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=118165&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=180695&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162836&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=162835&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=312801&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=425647&isovertime=0",
+          "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=8241&isagent=0&beagenter=0",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=527987&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+          "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=501522&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+        ],
+        "context10_sJa5NJ": [
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=551,1838",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids=10887,12147",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp",
+          "192.168.200.63/systeminfo/BrowserMain.jsp?url=/hrm/resource/MutiResourceBrowser.jsp?resourceids="
+        ],
+        "context10_Tp4yhH": [
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1",
+          "192.168.200.63/workflow/request/Remark.jsp?requestid=162836&workflowRequestLogId=-1"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context11_ksSRDp": [
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "requestmarkSpan",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv",
+            "triSubwfIframe",
+            "wfdoc"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_beagenter",
+            "_isagent",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "picInnerFrameurl",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "D",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "isworkflowdoc",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "oc_divMenuDivision",
+            "picInnerFrameurl",
+            "requestTabButton",
+            "requestmarkSpan",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statInnerFrameurl",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv",
+            "triSubwfIframe",
+            "wfRstPicImg",
+            "wfdoc"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "WfBill",
+            "WfLog",
+            "WfPic",
+            "_xTable",
+            "bodyiframe",
+            "btnHelp",
+            "closetext",
+            "divTopTitle",
+            "divWfBill",
+            "divWfLog",
+            "divWfPic",
+            "ext-gen",
+            "isonline",
+            "loading",
+            "loading-msg",
+            "mainRequestFrame",
+            "mainsupports",
+            "needShow",
+            "piciframe",
+            "requestTabButton",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "statiframe",
+            "toolbarbottommenu",
+            "toolbarmenu",
+            "toolbarmenuCoverdiv",
+            "toolbarmenudiv"
+          ]
+        ],
+        "context10_Tp4yhH": [
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "SWFUpload_",
+            "_xTable",
+            "btnCancelannexupload",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divStatusannexupload",
+            "divTopTitle",
+            "docimages_num",
+            "field-annexupload",
+            "field-annexupload_tab",
+            "field-annexuploadspan",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "fsUploadProgressannexupload",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "signdocids",
+            "signdocspan",
+            "signworkflowids",
+            "signworkflowspan",
+            "uploadFileName_remark"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "SWFUpload_",
+            "_xTable",
+            "btnCancelannexupload",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_elementspath__",
+            "cke_elementspath___label",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divStatusannexupload",
+            "divTopTitle",
+            "docimages_num",
+            "field-annexupload",
+            "field-annexupload_tab",
+            "field-annexuploadspan",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "fsUploadProgressannexupload",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "signdocids",
+            "signdocspan",
+            "signworkflowids",
+            "signworkflowspan",
+            "uploadFileName_remark"
+          ],
+          [
+            "BacoAddFavorite",
+            "BacoTitle",
+            "FONTSYSTEMF",
+            "_xTable",
+            "btnHelp",
+            "cke_",
+            "cke__label",
+            "cke__text",
+            "cke_bottom_remark",
+            "cke_contents_remark",
+            "cke_path_remark",
+            "cke_path_remark_label",
+            "cke_remark",
+            "cke_remark_arialbl",
+            "cke_top_remark",
+            "closetext",
+            "divTopTitle",
+            "docimages_num",
+            "fieldspan",
+            "fieldspanBtn",
+            "fieldspanSpan",
+            "flashUrl",
+            "imgFileSpanTemp_remark",
+            "imgFileSpan_remark",
+            "imgFile_remark",
+            "imgTypeFile_remark",
+            "imgTypeUrl_remark",
+            "imgUrl",
+            "imgUrlSpan_remark",
+            "insertObjectContainer_Flash_remark",
+            "insertObjectContainer_Image_remark",
+            "insertObjectContainer_remark",
+            "isFlashVideoUrl",
+            "isonline",
+            "mainsupports",
+            "needShow",
+            "oFile",
+            "oTable",
+            "okBtn",
+            "remark",
+            "remarkSpan",
+            "remarkText",
+            "resourceimg",
+            "resourceimghref",
+            "result",
+            "rightMenu",
+            "rightMenuIframe",
+            "uploadFileName_remark"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context11_ksSRDp": [
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_doDelete",
+            "btn_forward",
+            "btn_print",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "ChartCompany",
+            "MenuPopUp",
+            "MenuPopup",
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_forward",
+            "btn_print",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row"
+          ],
+          [
+            "STYLE",
+            "TopTitle",
+            "btnFavorite",
+            "btnHelp",
+            "btn_add",
+            "btn_back",
+            "btn_forward",
+            "btn_print",
+            "btn_rejectName",
+            "btn_subbackName",
+            "btn_wfSave",
+            "clickRightMenu",
+            "drop-shadow",
+            "highslide-container",
+            "highslide-loading",
+            "requestContentBody",
+            "simplehrmhead",
+            "x-btn",
+            "x-btn-bc",
+            "x-btn-bl",
+            "x-btn-br",
+            "x-btn-icon-small-left",
+            "x-btn-mc",
+            "x-btn-ml",
+            "x-btn-mr",
+            "x-btn-small",
+            "x-btn-tc",
+            "x-btn-text",
+            "x-btn-text-icon",
+            "x-btn-tl",
+            "x-btn-tr",
+            "x-panel-body",
+            "x-panel-body-noheader",
+            "x-small-editor",
+            "x-tab-edge",
+            "x-tab-left",
+            "x-tab-panel-footer",
+            "x-tab-right",
+            "x-tab-strip",
+            "x-tab-strip-active",
+            "x-tab-strip-bottom",
+            "x-tab-strip-close",
+            "x-tab-strip-inner",
+            "x-tab-strip-text",
+            "x-tab-strip-wrap",
+            "x-tab-with-icon",
+            "x-toolbar",
+            "x-toolbar-left-row",
+            "ysp_load_haha"
+          ]
+        ],
+        "context10_Tp4yhH": [
+          [
+            "Browser",
+            "InputStyle",
+            "Inputstyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "Title",
+            "TopTitle",
+            "ViewForm",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "cke_",
+            "cke_bottom",
+            "cke_browser_quirks",
+            "cke_browser_webkit",
+            "cke_button",
+            "cke_button_bgcolor",
+            "cke_button_bold",
+            "cke_button_customimage",
+            "cke_button_flash",
+            "cke_button_indent",
+            "cke_button_insertcrm",
+            "cke_button_insertdocs",
+            "cke_button_insertproject",
+            "cke_button_inserttask",
+            "cke_button_insertwf",
+            "cke_button_italic",
+            "cke_button_justifyblock",
+            "cke_button_justifycenter",
+            "cke_button_justifyleft",
+            "cke_button_justifyright",
+            "cke_button_link",
+            "cke_button_outdent",
+            "cke_button_redo",
+            "cke_button_source",
+            "cke_button_table",
+            "cke_button_textcolor",
+            "cke_button_underline",
+            "cke_button_undo",
+            "cke_button_unlink",
+            "cke_buttonarrow",
+            "cke_contents",
+            "cke_disabled",
+            "cke_editor",
+            "cke_editor_remark",
+            "cke_empty",
+            "cke_font",
+            "cke_fontSize",
+            "cke_icon",
+            "cke_inline_label",
+            "cke_label",
+            "cke_ltr",
+            "cke_off",
+            "cke_openbutton",
+            "cke_path",
+            "cke_rcombo",
+            "cke_separator",
+            "cke_skin_v",
+            "cke_text",
+            "cke_toolbar",
+            "cke_toolbar_end",
+            "cke_toolbar_start",
+            "cke_toolbox",
+            "cke_toolbox_collapser",
+            "cke_toolgroup",
+            "cke_top",
+            "cke_voice_label",
+            "cke_wrapper",
+            "clickRightMenu",
+            "datalight",
+            "drop-shadow",
+            "editorImgWin",
+            "field",
+            "fieldset",
+            "flash",
+            "highslide-container",
+            "highslide-loading",
+            "simplehrmhead",
+            "swfupload"
+          ],
+          [
+            "Browser",
+            "InputStyle",
+            "Inputstyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "Title",
+            "TopTitle",
+            "ViewForm",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "cke_",
+            "cke_bottom",
+            "cke_browser_quirks",
+            "cke_browser_webkit",
+            "cke_button",
+            "cke_button_bgcolor",
+            "cke_button_bold",
+            "cke_button_customimage",
+            "cke_button_flash",
+            "cke_button_indent",
+            "cke_button_insertcrm",
+            "cke_button_insertdocs",
+            "cke_button_insertproject",
+            "cke_button_inserttask",
+            "cke_button_insertwf",
+            "cke_button_italic",
+            "cke_button_justifyblock",
+            "cke_button_justifycenter",
+            "cke_button_justifyleft",
+            "cke_button_justifyright",
+            "cke_button_link",
+            "cke_button_outdent",
+            "cke_button_redo",
+            "cke_button_source",
+            "cke_button_table",
+            "cke_button_textcolor",
+            "cke_button_underline",
+            "cke_button_undo",
+            "cke_button_unlink",
+            "cke_buttonarrow",
+            "cke_contents",
+            "cke_disabled",
+            "cke_editor",
+            "cke_editor_remark",
+            "cke_empty",
+            "cke_font",
+            "cke_fontSize",
+            "cke_icon",
+            "cke_inline_label",
+            "cke_label",
+            "cke_ltr",
+            "cke_off",
+            "cke_on",
+            "cke_openbutton",
+            "cke_path",
+            "cke_rcombo",
+            "cke_separator",
+            "cke_skin_v",
+            "cke_text",
+            "cke_toolbar",
+            "cke_toolbar_end",
+            "cke_toolbar_start",
+            "cke_toolbox",
+            "cke_toolbox_collapser",
+            "cke_toolgroup",
+            "cke_top",
+            "cke_voice_label",
+            "cke_wrapper",
+            "clickRightMenu",
+            "datalight",
+            "drop-shadow",
+            "editorImgWin",
+            "field",
+            "fieldset",
+            "flash",
+            "highslide-container",
+            "highslide-loading",
+            "simplehrmhead",
+            "swfupload"
+          ],
+          [
+            "Browser",
+            "Inputstyle",
+            "Line",
+            "STYLE",
+            "Shadow",
+            "Title",
+            "TopTitle",
+            "ViewForm",
+            "browser",
+            "btnFavorite",
+            "btnHelp",
+            "cke_",
+            "cke_bottom",
+            "cke_browser_quirks",
+            "cke_browser_webkit",
+            "cke_button",
+            "cke_button_bgcolor",
+            "cke_button_bold",
+            "cke_button_customimage",
+            "cke_button_flash",
+            "cke_button_indent",
+            "cke_button_insertcrm",
+            "cke_button_insertdocs",
+            "cke_button_insertproject",
+            "cke_button_inserttask",
+            "cke_button_insertwf",
+            "cke_button_italic",
+            "cke_button_justifyblock",
+            "cke_button_justifycenter",
+            "cke_button_justifyleft",
+            "cke_button_justifyright",
+            "cke_button_link",
+            "cke_button_outdent",
+            "cke_button_redo",
+            "cke_button_source",
+            "cke_button_table",
+            "cke_button_textcolor",
+            "cke_button_underline",
+            "cke_button_undo",
+            "cke_button_unlink",
+            "cke_buttonarrow",
+            "cke_contents",
+            "cke_disabled",
+            "cke_editor",
+            "cke_editor_remark",
+            "cke_empty",
+            "cke_font",
+            "cke_fontSize",
+            "cke_icon",
+            "cke_inline_label",
+            "cke_label",
+            "cke_ltr",
+            "cke_off",
+            "cke_openbutton",
+            "cke_path",
+            "cke_rcombo",
+            "cke_separator",
+            "cke_skin_v",
+            "cke_text",
+            "cke_toolbar",
+            "cke_toolbar_end",
+            "cke_toolbar_start",
+            "cke_toolbox",
+            "cke_toolbox_collapser",
+            "cke_toolgroup",
+            "cke_top",
+            "cke_voice_label",
+            "cke_wrapper",
+            "clickRightMenu",
+            "datalight",
+            "drop-shadow",
+            "editorImgWin",
+            "field",
+            "highslide-container",
+            "highslide-loading",
+            "simplehrmhead"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context11_ksSRDp": [
+          [
+            "-/-/DIV",
+            "-/-/IFRAME",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/IFRAME",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/P",
+            "DIV/DIV/STYLE",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/B",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/-/TABLE",
+            "-/-/TITLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "-/DIV/TABLE",
+            "-/TABLE/TBODY",
+            "A/EM/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/IMG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "EM/SPAN/SPAN",
+            "LI/A/EM",
+            "SPAN/SPAN/SCRIPT",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/EM/BUTTON",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/EM",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ]
+        ],
+        "context10_Tp4yhH": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/OBJECT",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/OBJECT/PARAM",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/FONT",
+            "SPAN/SPAN/IMG",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/COLGROUP",
+            "TD/TABLE/INPUT-hidden",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/A/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/OBJECT",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/OBJECT/PARAM",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/FONT",
+            "SPAN/SPAN/IMG",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/COLGROUP",
+            "TD/TABLE/INPUT-hidden",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/OBJECT",
+            "-/-/SCRIPT",
+            "-/-/STYLE",
+            "-/DIV/A",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SPAN",
+            "-/FORM/TABLE",
+            "A/SPAN/SPAN",
+            "DIV/BUTTON/U",
+            "DIV/DIV/BUTTON",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/INPUT-button",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-null",
+            "DIV/SPAN/LABEL",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/SPAN/DIV",
+            "FORM/TABLE/COLGROUP",
+            "FORM/TABLE/TBODY",
+            "SPAN/A/SPAN",
+            "SPAN/DIV/BR",
+            "SPAN/DIV/DIV",
+            "SPAN/DIV/LABEL",
+            "SPAN/DIV/SPAN",
+            "SPAN/LABEL/INPUT-checkbox",
+            "SPAN/SPAN/A",
+            "SPAN/SPAN/SPAN",
+            "SPAN/SPAN/STYLE",
+            "SPAN/SPAN/TABLE",
+            "SPAN/TABLE/TBODY",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/IMG",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/FONT",
+            "TD/DIV/IMG",
+            "TD/DIV/SPAN",
+            "TD/SPAN/IMG",
+            "TD/SPAN/SPAN",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/FONT",
+            "TR/TD/IFRAME",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/SCRIPT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA"
+          ]
+        ]
+      }
+    }
+  }
+}
