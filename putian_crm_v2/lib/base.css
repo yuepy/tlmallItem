@@ -52,7 +52,8 @@ input::-webkit-inner-spin-button{
 input::-webkit-clear-button{
 }
 */
-div[data-ysp-modelid^="achievement"] {
+div[data-ysp-modelid^="achievement"],
+div[data-ysp-modelid^="saleAchievement"] {
   background: #f0eff5;
   overflow: hidden;
 }
@@ -10823,5 +10824,296 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   background-repeat: no-repeat;
   background-image: url(images/ysp-achievement-pre-icon.png);
   margin-top: 4px;
+}
+.ysp-saleAchievementIndex {
+  margin: 5px 5px;
+  padding-top: 10px;
+  background: #fff !important;
+  border-radius: 10px;
+  padding: 10px 10px 4px 10px;
+}
+.ysp-saleAchievementIndex .header {
+  height: 35px;
+  position: relative;
+}
+.ysp-saleAchievementIndex .header span {
+  display: inline-block;
+  color: #fff;
+  background-color: #e7350d;
+  border-radius: 0px 25px 25px 0px;
+  margin-left: -10px;
+  padding: 2px;
+  font-size: 12px;
+  width: 72px;
+}
+.ysp-saleAchievementIndex .header i {
+  display: inline-block;
+  font-style: normal;
+  color: #fff;
+  background-color: #4796ed;
+  border-radius: 0px 25px 25px 0px;
+  margin-left: -10px;
+  padding: 2px;
+  font-size: 12px;
+  width: 72px;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales {
+  display: flex;
+  justify-content: space-between;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales .listItem {
+  flex: 1;
+  font-size: 14px;
+  text-align: center;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales .listItem h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 5px 0;
+  padding: 0;
+  color: #2c81ff;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales .listItem .itemColor {
+  color: #e7350d !important;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales .listItem span {
+  color: #999;
+  font-size: 10px;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales .listItem div:first-child {
+  margin-bottom: 20px;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales .listItem .listItemDay {
+  border-radius: 10px;
+  background: #4796ed;
+  padding: 5px 15px;
+  color: #fff;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales .listItem .listItemWeek {
+  border-radius: 10px;
+  background: #e7350d;
+  padding: 5px 15px;
+  color: #fff;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales .listItem .listItemMonth {
+  border-radius: 10px;
+  background: #ffbe00;
+  padding: 5px 15px;
+  color: #fff;
+}
+.ysp-saleAchievementIndex .ysp-achievement-sales .listItem .listItemYear {
+  border-radius: 10px;
+  background: #4796ed;
+  padding: 5px 15px;
+  color: #fff;
+}
+.ysp-saleAchievementIndex .headerBusiness {
+  height: 30px;
+  position: relative;
+  padding-left: 20px;
+}
+.ysp-saleAchievementIndex .headerBusiness i {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease-in-out;
+}
+.ysp-saleAchievementIndex .headerBusiness i:first-child {
+  left: -4px;
+  top: 3px;
+  background-image: url(images/ysp-achievementBusiness.png);
+}
+.ysp-saleAchievementIndex .headerBusiness i:last-child {
+  right: 10px;
+  top: 3px;
+  background-image: url(images/up-arrow-icon.png);
+}
+.ysp-saleAchievementIndex .headerBusiness .active {
+  transform: rotate(180deg);
+}
+.ysp-saleAchievementIndex .headerDate {
+  height: 30px;
+  position: relative;
+  padding-left: 20px;
+}
+.ysp-saleAchievementIndex .headerDate i {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease-in-out;
+}
+.ysp-saleAchievementIndex .headerDate i:first-child {
+  left: -4px;
+  top: 3px;
+  background-image: url(images/ysp-achievementDate.png);
+}
+.ysp-saleAchievementIndex .headerDate i:last-child {
+  right: 10px;
+  top: 3px;
+  background-image: url(images/up-arrow-icon.png);
+}
+.ysp-saleAchievementIndex .headerDate .active {
+  transform: rotate(180deg);
+}
+.ysp-saleAchievementIndex .headerSpace {
+  height: 30px;
+  position: relative;
+  padding-left: 20px;
+}
+.ysp-saleAchievementIndex .headerSpace i {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease-in-out;
+}
+.ysp-saleAchievementIndex .headerSpace i:first-child {
+  left: -4px;
+  top: 3px;
+  background-image: url(images/ysp-achievementSpace.png);
+}
+.ysp-saleAchievementIndex .headerSpace i:last-child {
+  right: 10px;
+  top: 3px;
+  background-image: url(images/up-arrow-icon.png);
+}
+.ysp-saleAchievementIndex .headerSpace .active {
+  transform: rotate(180deg);
+}
+.ysp-saleAchievementIndex .lines {
+  border-bottom: 1px solid #ececec;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.ysp-saleAchievementIndex .visitEChartsContent {
+  font-size: 14px;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .visitCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #dde1ea;
+  border-radius: 5px;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .visitCard > div:first-child {
+  flex: 1;
+  color: #4996EE;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .visitCard > div:last-child {
+  flex: 5;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .visitCard > div:last-child > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .visitCard > div:last-child > div .list-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .visitCard > div:last-child > div .list-item span {
+  color: #999;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .visitCard > div:last-child > div .list-item span:first-child {
+  color: #000;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .visitCard:last-child {
+  border-bottom: 0;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .map .map-legend {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 100px;
+  border: 1px solid  #dde4e8;
+  color: #333;
+  z-index: 9999;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .map .map-legend > div:first-child {
+  text-align: center;
+  background: #ececec;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .map .map-legend > div:nth-child(2) {
+  padding: 5px;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .map .map-legend > div:nth-child(2) > span:last-child {
+  color: #2c81ff !important;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .map .map-legend > div:nth-child(3) {
+  padding: 5px;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .map .map-legend > div:nth-child(3) > span:last-child {
+  color: #ed694f !important;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .clientTable {
+  overflow: hidden;
+  position: relative;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .clientTable .head-tab {
+  background: #ececec;
+  text-align: center;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .clientTable .head-tab .left-arrow {
+  position: absolute;
+  left: 0px;
+  display: block;
+  width: 20px;
+  height: 52px;
+  background: #ececec url(images/arrow-blue-right.png) no-repeat center center;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  background-size: 75%;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .clientTable .head-tab .right-arrow {
+  position: absolute;
+  right: 0px;
+  display: block;
+  width: 20px;
+  height: 52px;
+  background: #ececec url(images/arrow-blue-right.png) no-repeat center center;
+  background-size: 75%;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .clientTable .head-tab .clientInfoTable {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .clientTable .head-tab .clientInfoTable li {
+  padding: 0;
+  display: inline-block;
+  margin: 0 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-align: center;
+  min-width: 56px;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .table-content {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ysp-saleAchievementIndex .visitEChartsContent .table-content li {
+  padding: 0;
+  display: inline-block;
+  margin: 0 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-align: center;
+  min-width: 56px;
 }
 /****************销售业绩总览***************/

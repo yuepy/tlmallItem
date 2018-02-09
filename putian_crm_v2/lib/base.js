@@ -427,12 +427,12 @@
     // }
     
 
-    if (type === "achievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard" || type === "newInformationTotle1") {
+    if (type === "saleAchievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard" || type === "newInformationTotle1") {
       if (activeContext && activeContext.model.id == realType) {
         console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
          return;
       }
-      if(activeContext && activeContext.model.id == 'customerInformationFIll' && type != "achievement" && type != "dataPanel" && type != "customerIn" && type != "achievementSecondMenu" && type != "clientStoreCard"){ // 信息录入页面加载无刷新
+      if(activeContext && activeContext.model.id == 'customerInformationFIll' && type != "saleAchievement" && type != "dataPanel" && type != "customerIn" && type != "achievementSecondMenu" && type != "clientStoreCard"){ // 信息录入页面加载无刷新
         aWin && (aWin.location.href.indexOf('index.html') == -1) && aWin.location.reload();
         return;
       }
@@ -466,7 +466,7 @@
       case "dataPanel":
         type = "SalesReached";
         break;
-      case "saleAchievement":
+      case "achievement":
         type = "achievementSecondMenu";
         break;
       case "newInformationTotle1":
@@ -890,7 +890,7 @@
               parentMenuType = "visitManager";
               break;
             case "销售业绩总览":
-              parentMenuType = "saleAchievement";
+              parentMenuType = "achievement";
               break;
             case "客户信息录入":
               parentMenuType = "customerIn";

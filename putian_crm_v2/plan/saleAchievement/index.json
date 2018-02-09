@@ -66,6 +66,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -92,6 +96,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -112,6 +120,92 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control288_fFLi4R": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.g-main DIV.m-body DIV.m-box-datas.m-box-sales.clearfix"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control288_fFLi4R"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control289_v6gpoF": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-boxs.clearfix DIV.left.lefth DIV.spaceDimen"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control289_v6gpoF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control290_UsZ1zJ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-boxs.clearfix DIV.left.lefth DIV.timeDimen"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control290_UsZ1zJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -120,7 +214,10 @@
         "control274_87SuoT",
         "control275_Vm4ciI",
         "control286_xVOThl",
-        "control287_GUn0CG"
+        "control287_GUn0CG",
+        "control288_fFLi4R",
+        "control289_v6gpoF",
+        "control290_UsZ1zJ"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -148,6 +245,16 @@
       "fromContextId": "context76_9rFC8S",
       "fromAction": "doAction",
       "fromControlId": "control286_xVOThl",
+      "toContexts": [
+        {
+          "toContextId": "context76_9rFC8S"
+        }
+      ]
+    },
+    "flow233_VvaksC": {
+      "fromContextId": "context76_9rFC8S",
+      "fromAction": "doAction",
+      "fromControlId": "control287_GUn0CG",
       "toContexts": [
         {
           "toContextId": "context76_9rFC8S"
@@ -218,6 +325,51 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl279_OeJEyD",
+          "controlId": "control288_fFLi4R",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl279_OeJEyD",
+                "onGetTemplate": "getTemplate_uiControl279_OeJEyD"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl281_qTQB3k",
+          "controlId": "control290_UsZ1zJ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl281_qTQB3k",
+                "onGetTemplate": "getTemplate_uiControl281_qTQB3k"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl280_HmOuTv",
+          "controlId": "control289_v6gpoF",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl280_HmOuTv",
+                "onGetTemplate": "getTemplate_uiControl280_HmOuTv"
+              }
+            }
+          }
         }
       ]
     }
@@ -234,7 +386,10 @@
       "contexts": {
         "context76_9rFC8S": [
           "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDEvMjYvMjAxOCAxNTo0Mjo0MQ==",
-          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDIvNDAvMjAxOCAxMDozMzoxMg=="
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDIvNDAvMjAxOCAxMDozMzoxMg==",
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDIvNDAvMjAxOCAxNDo1OToyMA==",
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDIvNDAvMjAxOCAxNjoyMjozMg==",
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDIvNDAvMjAxOCAxNzo1MzowMw=="
         ]
       }
     },
@@ -314,6 +469,44 @@
             "weekQty",
             "yearAmt",
             "yearQty"
+          ],
+          [
+            "bizUnit-table",
+            "bizUnitName",
+            "bizUnitTable",
+            "branchName",
+            "branchTable",
+            "configType",
+            "cycleType",
+            "cycleType_hidden",
+            "data_",
+            "date",
+            "dayAmt",
+            "dayQty",
+            "departmentId",
+            "drill",
+            "encoder",
+            "lines",
+            "loginName",
+            "map",
+            "materialColor",
+            "modelId",
+            "monthAmt",
+            "monthQty",
+            "officeName",
+            "orderLogic",
+            "orderLogic_hidden",
+            "projectId",
+            "projectName",
+            "sale-table",
+            "salerName",
+            "selDay",
+            "tren",
+            "type",
+            "weekAmt",
+            "weekQty",
+            "yearAmt",
+            "yearQty"
           ]
         ]
       }
@@ -363,6 +556,55 @@
             "timeDimen",
             "title",
             "trend",
+            "u-selt",
+            "u-table-b",
+            "u-time",
+            "u-title",
+            "u-visualmap"
+          ],
+          [
+            "a",
+            "activ",
+            "b",
+            "box",
+            "branch-sales",
+            "breadcrumb",
+            "btn-display",
+            "businessDimen",
+            "chart",
+            "clear-btn",
+            "clearfix",
+            "content",
+            "g-main",
+            "header",
+            "icon",
+            "icon-line",
+            "laydate-icon",
+            "left",
+            "lefth",
+            "m-body",
+            "m-box",
+            "m-box-datas",
+            "m-box-sales",
+            "m-boxs",
+            "m-header",
+            "mask",
+            "max",
+            "min",
+            "one",
+            "overview",
+            "right",
+            "righth",
+            "sel",
+            "sel-box",
+            "spaceDimen",
+            "table",
+            "table-content",
+            "time-sel-box",
+            "timeDimen",
+            "title",
+            "trend",
+            "u-box-infors",
             "u-selt",
             "u-table-b",
             "u-time",
@@ -439,6 +681,42 @@
             "DIV/UL/LI",
             "TABLE/THEAD/TR",
             "THEAD/TR/TH",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/VAR",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/CANVAS",
+            "DIV/DIV/DIV",
+            "DIV/DIV/EM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H2",
+            "DIV/DIV/H5",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/H1/A",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TH/FONT",
             "UL/LI/A"
           ]
         ]
