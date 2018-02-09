@@ -11,6 +11,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -37,6 +41,10 @@
         "data": {
           "tagName": "HTML"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -52,13 +60,67 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control286_xVOThl": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body-bg DIV.g-main DIV.m-header"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control286_xVOThl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control287_GUn0CG": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body-bg DIV.g-main"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control287_GUn0CG"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
     "context76_9rFC8S": {
       "controls": [
         "control274_87SuoT",
-        "control275_Vm4ciI"
+        "control275_Vm4ciI",
+        "control286_xVOThl",
+        "control287_GUn0CG"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -66,6 +128,26 @@
   },
   "flows": {
     "flow228_qEhMTr": {
+      "toContexts": [
+        {
+          "toContextId": "context76_9rFC8S"
+        }
+      ]
+    },
+    "flow230_oRs28P": {
+      "fromContextId": "context76_9rFC8S",
+      "fromAction": "doAction",
+      "fromControlId": "control275_Vm4ciI",
+      "toContexts": [
+        {
+          "toContextId": "context76_9rFC8S"
+        }
+      ]
+    },
+    "flow231_R9GoXz": {
+      "fromContextId": "context76_9rFC8S",
+      "fromAction": "doAction",
+      "fromControlId": "control286_xVOThl",
       "toContexts": [
         {
           "toContextId": "context76_9rFC8S"
@@ -106,6 +188,36 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl274_OHNOll",
+          "controlId": "control286_xVOThl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl274_OHNOll",
+                "onGetTemplate": "getTemplate_uiControl274_OHNOll"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl278_2krAyF",
+          "controlId": "control287_GUn0CG",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl278_2krAyF",
+                "onGetTemplate": "getTemplate_uiControl278_2krAyF"
+              }
+            }
+          }
         }
       ]
     }
@@ -121,7 +233,8 @@
     "page/urls": {
       "contexts": {
         "context76_9rFC8S": [
-          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDEvMjYvMjAxOCAxNTo0Mjo0MQ=="
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDEvMjYvMjAxOCAxNTo0Mjo0MQ==",
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDIvNDAvMjAxOCAxMDozMzoxMg=="
         ]
       }
     },
@@ -156,6 +269,43 @@
             "projectId",
             "projectName",
             "sale-table",
+            "salerName",
+            "selDay",
+            "tren",
+            "type",
+            "weekAmt",
+            "weekQty",
+            "yearAmt",
+            "yearQty"
+          ],
+          [
+            "bizUnit-table",
+            "bizUnitName",
+            "bizUnitTable",
+            "branchName",
+            "branchTable",
+            "configType",
+            "cycleType",
+            "cycleType_hidden",
+            "data_",
+            "date",
+            "dayAmt",
+            "dayQty",
+            "departmentId",
+            "drill",
+            "encoder",
+            "lines",
+            "loginName",
+            "map",
+            "materialColor",
+            "modelId",
+            "monthAmt",
+            "monthQty",
+            "officeName",
+            "orderLogic",
+            "orderLogic_hidden",
+            "projectId",
+            "projectName",
             "salerName",
             "selDay",
             "tren",
@@ -258,6 +408,37 @@
             "THEAD/TR/TH",
             "TR/TD/A",
             "TR/TH/FONT",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/VAR",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/CANVAS",
+            "DIV/DIV/DIV",
+            "DIV/DIV/EM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H2",
+            "DIV/DIV/H5",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/H1/A",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/THEAD/TR",
+            "THEAD/TR/TH",
             "UL/LI/A"
           ]
         ]

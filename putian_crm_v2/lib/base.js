@@ -81,7 +81,7 @@
         ysp.customHelper.secondMenu.toPlanByMenuName('库存查询', null, menuId);
         break;
       case 'achievementSecondMenu':
-        ysp.customHelper.secondMenu.toPlanByMenuName('计划达成总览', null, menuId);
+        ysp.customHelper.secondMenu.toPlanByMenuName('销售业绩总览', null, menuId);
         break;
       case 'newInformationTotle':
         ysp.customHelper.secondMenu.toPlanByMenuName('客户信息录入', null, menuId);
@@ -466,7 +466,7 @@
       case "dataPanel":
         type = "SalesReached";
         break;
-      case "achievement":
+      case "saleAchievement":
         type = "achievementSecondMenu";
         break;
       case "newInformationTotle1":
@@ -759,6 +759,7 @@
           goodsMessages: "分货查询",
           stockInquire: "库存查询",
           visitIndex: "拜访总览",
+          saleAchievement: "销售业绩总览",
           achievement: "计划达成总览",
           saleReachMonth: "月度销售达成",
           saleReachYear: "年度销售达成",
@@ -775,7 +776,7 @@
         this.menuNames = {
           visitManager: ["拜访总览", "拜访查看", "@我的报告"],
           dataPanel: ["库存查询", "分货查询", "产品上下架信息查询"],
-          achievement: ["计划达成总览", "月度销售达成", "年度销售达成"],
+          saleAchievement: ["销售业绩总览","计划达成总览", "月度销售达成", "年度销售达成"],
           customerIn: ["客户信息录入", "门店信息录入（HES）"],
           clientStoreCard: ["客户信息", "门店信息"]
         }
@@ -888,8 +889,8 @@
             case "拜访总览":
               parentMenuType = "visitManager";
               break;
-            case "计划达成总览":
-              parentMenuType = "achievement";
+            case "销售业绩总览":
+              parentMenuType = "saleAchievement";
               break;
             case "客户信息录入":
               parentMenuType = "customerIn";

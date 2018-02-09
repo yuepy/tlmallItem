@@ -67,7 +67,7 @@
     getData_control124_6f9iyR: function (elem) {
       if (!elem) {
         return;
-      }return { checkedTitle: ysp.customHelper.secondMenu.getCurrentMenuName(), titles: ysp.customHelper.secondMenu.getMenuNames('achievement') };
+      }return { checkedTitle: ysp.customHelper.secondMenu.getCurrentMenuName(), titles: ysp.customHelper.secondMenu.getMenuNames('saleAchievement') };
     },
     doAction_uiControl122_InFkss: function (data, elem) {
       if (data.eventType === 'click') {
