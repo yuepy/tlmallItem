@@ -12040,41 +12040,13 @@ section.ysp-store-details{
   }
 }
 
-
-
+//销售业绩总览数据（今日、本周等）样式展示
 .ysp-saleAchievementIndex{
   margin: 5px 5px;
   padding-top: 10px;
   background: #fff !important;
   border-radius: 10px;
   padding: 10px 10px 4px 10px;
-  .header{
-  	height:35px; //40px;
-    position: relative;
-    span{
-      display: inline-block;
-      color: #fff;
-      background-color: #e7350d;
-      border-radius: 0px 25px 25px 0px;
-      //padding: 2px 20px;
-      margin-left: -10px;
-      padding: 2px;//zyt8.9
-    	font-size: 12px;//zyt8.9
-      width:72px;//zyt8.9
-    }
-    i{
-      display: inline-block;
-      font-style:normal;
-      color: #fff;
-      background-color: #4796ed;
-      border-radius: 0px 25px 25px 0px;
-      // padding: 2px 26px;
-      margin-left: -10px;
-      padding: 2px;//zyt8.9
-    	font-size: 12px;//zyt8.9
-      width:72px;//zyt8.9
-    }
-  }
 	.ysp-achievement-sales{
     display: flex;
     justify-content: space-between;
@@ -12126,10 +12098,19 @@ section.ysp-store-details{
       }
     }
   }
-  .headerBusiness{
+}
+
+//销售业绩总览折线图和地图样式
+.ysp-sale-achievement-header-wrapper{
+   background: white;
+   border-radius: 10px;
+   padding-top: 5px;
+   margin-top: 5px;
+  .ysp-sale-achievement-header-container{
     height: 30px;
     position: relative;
     padding-left: 20px;
+    margin: 0px 5px 5px 15px;
     i{
     	display: block;
       position: absolute;
@@ -12145,63 +12126,15 @@ section.ysp-store-details{
     	top: 3px;
     	background-image: url(./images/ysp-achievementBusiness.png);
     }
-    i:last-child{
-      right: 10px;
-    	top: 3px;
-    	background-image: url(./images/up-arrow-icon.png);
-    }
-    .active{
-    	transform: rotate(180deg);
-    }
-  }
-  
-  .headerDate{
-    height: 30px;
-    position: relative;
-    padding-left: 20px;
-    i{
-    	display: block;
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-size: 20px;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: all .4s ease-in-out;
-    }
-    i:first-child{
+    i.date{
       left: -4px;
     	top: 3px;
     	background-image: url(./images/ysp-achievementDate.png);
     }
-    i:last-child{
-      right: 10px;
-    	top: 3px;
-    	background-image: url(./images/up-arrow-icon.png);
-    }
-    .active{
-    	transform: rotate(180deg);
-    }
-  }
-
-  .headerSpace{
-    height: 30px;
-    position: relative;
-    padding-left: 20px;
-    i{
-    	display: block;
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-size: 20px;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: all .4s ease-in-out;
-    }
-    i:first-child{
+    i.space{
       left: -4px;
     	top: 3px;
-    	background-image: url(./images/ysp-achievementSpace.png);
+    	background-image: url(./images/ysp-sale-country.png);
     }
     i:last-child{
       right: 10px;
@@ -12209,147 +12142,13 @@ section.ysp-store-details{
     	background-image: url(./images/up-arrow-icon.png);
     }
     .active{
-    	transform: rotate(180deg);
+    	//transform: rotate(180deg);
+      right: 10px !important;
+    	top: 3px !important;
+    	background-image: url(./images/down-arrow.png) !important;
     }
-  }
-  .lines{
-    border-bottom: 1px solid #ececec;
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
-  .visitEChartsContent{
-    font-size: @fontBase;
-    .visitCard{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #dde1ea;
-      border-radius: 5px;
-      > div:first-child{
-      	flex: 1;
-        color:#4996EE;
-      }
-      > div:last-child{
-        flex: 5;
-        > div{
-        	display: flex;
-          justify-content: space-between;
-          align-items: center;
-          .list-item{
-          	display: flex;
-            flex: 1;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-right: 5px;
-            span{
-            	color: #999;
-              font-size: @fontBase;
-              white-space: nowrap;
-            }
-            span:first-child{
-            	color: #000;
-            }
-          }
-        }
-      }
-    }
-    .visitCard:last-child{
-    	border-bottom: 0;
-    }
-    
-    .map{
-      .map-legend{
-        position: absolute;
-        margin-top: 25px;
-        margin-left: 100px;
-        border: 1px solid  #dde4e8;
-        color: #333;
-        z-index: 9999;
-        >div:first-child{
-          text-align: center;
-          background: #ececec;
-        }
-        >div:nth-child(2){
-          padding: 5px;
-          >span:last-child{
-            color: #2c81ff !important;
-          }
-        }
-        >div:nth-child(3){
-          padding: 5px;
-          >span:last-child{
-            color: #ed694f !important;
-          }
-        }
-      }
-  	}
-    
-    ///滑动表格
-    .clientTable{
-      overflow: hidden;
-    	position: relative;
-      
-      .head-tab{
-        background: #ececec;
-    		text-align: center;
-        
-        .left-arrow{
-          position: absolute;
-          left: 0px;
-          display: block;
-          width: 20px;
-          height: 52px;
-          background: #ececec url(./images/arrow-blue-right.png) no-repeat center center;
-          -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-          background-size: 75%;
-        }
-        .right-arrow{
-          position: absolute;
-          right: 0px;
-          display: block;
-          width: 20px;
-          height: 52px;
-          background: #ececec url(./images/arrow-blue-right.png) no-repeat center center;
-          background-size: 75%;
-        }
-        
-        .clientInfoTable{
-          overflow: hidden;
-          white-space: nowrap;
-          li{
-              padding: 0;
-              display: inline-block;
-              margin: 0 10px;
-              padding-top: 15px;
-              padding-bottom: 10px;
-              text-align: center;
-              min-width: 56px;
-          }
-        }
-        
-      }
-    }
-    
-    .table-content{
-        overflow: hidden;
-        white-space: nowrap;
-        li{
-            padding: 0;
-            display: inline-block;
-            margin: 0 10px;
-            padding-top: 15px;
-            padding-bottom: 10px;
-            text-align: center;
-            min-width: 56px;
-        }
-      } 
   }
 }
-
-
 
 
 
