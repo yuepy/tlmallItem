@@ -676,6 +676,8 @@
     },
     pageId: _pageId,
     yearId: _yearId,
+    saleTimeId: _saleTimeId,
+    saleOrderId: _saleOrderId,
     /**
      * @description 登录状态管理器
      * @param currentStatus LOADING 数据加载中 NO_PRIVILEGE 无此权限  LOGINING 登录中  NETWORK_ERROR 网络异常
@@ -2143,5 +2145,15 @@
   function _yearId(id){
     win.selectId = id;
     return win.selectId;
+  }
+  //销售业绩总览时间下拉选项传值。
+  function _saleTimeId(id){
+    win.timeId = id;
+    return win.timeId;
+  }
+  //销售业绩总览订单逻辑下拉选项传值。
+  function _saleOrderId(id){
+    win.orderId = id;
+    return win.orderId;
   }
 })(window, ysp);
