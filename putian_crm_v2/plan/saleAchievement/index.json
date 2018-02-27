@@ -531,6 +531,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -561,6 +565,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -593,6 +601,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -623,6 +635,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -655,6 +671,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -685,6 +705,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -717,6 +741,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -747,6 +775,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -779,6 +811,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -799,6 +835,37 @@
       },
       "events": {
         "onGetData": "getData_control308_zMrTNa"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control309_l1dl7U": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"bizUnitTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-body DIV.m-boxs.clearfix DIV.right.righth"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control309_l1dl7U"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -833,7 +900,8 @@
         "control305_Szxh2c",
         "control306_mmxX0Q",
         "control307_KGyTVW",
-        "control308_zMrTNa"
+        "control308_zMrTNa",
+        "control309_l1dl7U"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -1168,6 +1236,21 @@
           }
         },
         {
+          "id": "uiControl300_Oac3Ox",
+          "controlId": "control309_l1dl7U",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl300_Oac3Ox",
+                "onGetTemplate": "getTemplate_uiControl300_Oac3Ox"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl284_A3eeCr",
           "controlId": "control293_eT4uNX",
           "display": {
@@ -1268,7 +1351,8 @@
           "销售业绩总览-办事处主任",
           "销售业绩总览-业务人员",
           "销售业绩总览-品牌总经理",
-          "销售业绩总览-产品经理"
+          "销售业绩总览-产品经理",
+          "销售业绩总览-事业部总经理"
         ]
       }
     },
@@ -1285,7 +1369,8 @@
           "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDIvNTMvMjAxOCAxNzoyNDo0MQ==",
           "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=SUNWANXIN&encoder=U1VOV0FOWElOKzAyLzUzLzIwMTggMTc6NTg6NTA=",
           "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=YUGUOJIAN&encoder=WVVHVU9KSUFOKzAyLzUzLzIwMTggMTg6MDc6MTY=",
-          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=LIQING&encoder=TElRSU5HKzAyLzU0LzIwMTggMTA6MjA6MDA="
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=LIQING&encoder=TElRSU5HKzAyLzU0LzIwMTggMTA6MjA6MDA=",
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=ZENGJIAFU&encoder=WkVOR0pJQUZVKzAyLzU4LzIwMTggMTY6MDY6MTY="
         ]
       }
     },
@@ -1589,6 +1674,46 @@
             "projectId",
             "projectName",
             "projectTable",
+            "sale-table",
+            "salerName",
+            "selDay",
+            "tren",
+            "type",
+            "weekAmt",
+            "weekQty",
+            "yearAmt",
+            "yearQty"
+          ],
+          [
+            "bizUnitName",
+            "bizUnitTable",
+            "branch-table",
+            "branchName",
+            "branchTable",
+            "configType",
+            "cycleType",
+            "cycleType_hidden",
+            "data_",
+            "date",
+            "dayAmt",
+            "dayQty",
+            "departmentId",
+            "drill",
+            "encoder",
+            "lines",
+            "loginName",
+            "map",
+            "materialColor",
+            "model-table",
+            "modelId",
+            "modelTable",
+            "monthAmt",
+            "monthQty",
+            "officeName",
+            "orderLogic",
+            "orderLogic_hidden",
+            "projectId",
+            "projectName",
             "sale-table",
             "salerName",
             "selDay",
