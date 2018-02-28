@@ -226,10 +226,10 @@ debugger;
             }
             
         	// 当前的月份
-            if($("#date").text())
-            	$("#selDay").val($("#date").text());
-            else
-            	$("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
+            // if($("#date").text())
+            // 	$("#selDay").val($("#date").text());
+            // else
+            // 	$("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
             
             //面包屑导航
         	breadcrumb("全国","leader");
