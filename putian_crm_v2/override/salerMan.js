@@ -225,10 +225,20 @@
             }
             
         	// 当前的月份
-            if($("#date").text())
-            	$("#selDay").val($("#date").text());
-            else
-            	$("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
+            // if($("#date").text())
+            // 	$("#selDay").val($("#date").text());
+            // else
+            // 	$("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
+          
+          //后添加的逻辑，修改时间显示问题
+          	var selDate = $("#selDay")[0].value;
+            var newDate = date.getFullYear() + '-' + month + '-' + strDate;
+          	if(selDate == ""){
+              $("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
+            }
+            if(selDate != "" && selDate != newDate){
+              $("#selDay").val(selDate);
+            }
             
             //面包屑导航
         	breadcrumb("业务人员","saler");
