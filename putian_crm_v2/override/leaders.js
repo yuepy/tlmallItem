@@ -230,7 +230,23 @@ debugger;
             // 	$("#selDay").val($("#date").text());
             // else
             // 	$("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
-            
+          
+          //后加功能，修改时间显示问题
+          	var selDate = $("#selDay")[0].value;
+            var newDate = date.getFullYear() + '-' + month + '-' + strDate;
+          	var oldDate = $("#date").text();
+          	if(selDate == "" && oldDate == ""){
+              $("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
+            }
+            if(selDate == "" && oldDate !=""){
+              $("#selDay").val(oldDate);
+            }
+          	if(selDate == newDate && oldDate != ""){
+              $("#selDay").val(oldDate);
+            }
+            if(selDate != "" && selDate != newDate){
+              $("#selDay").val(selDate);
+            }
             //面包屑导航
         	breadcrumb("全国","leader");
             

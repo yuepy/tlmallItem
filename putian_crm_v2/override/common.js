@@ -1,3 +1,8 @@
+//首次加载该js 清除sessionStorage
+if(getParam("a")=="1" || getParam("firstFlag")=="true"){
+	sessionStorage.clear();
+}
+
 function initTags(clickButten){
 	
 	var parms = {};

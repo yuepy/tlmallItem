@@ -204,7 +204,6 @@
         });
 
         function init() {
-        	
         	//订单取数逻辑
         	if($("#orderLogic_hidden").text())
         		$("#orderLogic").val($("#orderLogic_hidden").text());
@@ -233,8 +232,12 @@
           //后添加的逻辑，修改时间显示问题
           	var selDate = $("#selDay")[0].value;
             var newDate = date.getFullYear() + '-' + month + '-' + strDate;
-          	if(selDate == ""){
+          	var oldDate = $("#date").text();
+          	if(selDate == "" && oldDate == ""){
               $("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
+            }
+            if(selDate == "" && oldDate !=""){
+              $("#selDay").val(oldDate);
             }
             if(selDate != "" && selDate != newDate){
               $("#selDay").val(selDate);
