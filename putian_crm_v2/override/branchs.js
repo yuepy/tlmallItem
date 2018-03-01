@@ -823,7 +823,7 @@
             // 省份地图初始化
             $.get('/ptDataShow/js/echarts/province/' + provinceName + '/' + provinceName + '.json', function (data) {
                 echarts.registerMap('mapProvince', data);
-                chart.setOption(option);
+                //chart.setOption(option);
               	document.getElementById("map").setAttribute('option',JSON.stringify(option));//2018/02/11
                 document.getElementById("map").setAttribute('mapProvince',JSON.stringify(data));
                 chart.on('click', function(params) {
@@ -1081,7 +1081,7 @@
                 }]
             };
 
-            chart.setOption(option);
+            //chart.setOption(option);
           	document.getElementById("lines").setAttribute('option',JSON.stringify(option));//2018/01/11
         }
 

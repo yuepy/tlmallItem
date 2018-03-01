@@ -697,7 +697,7 @@ debugger;
             };
 
             // 载入配置显示地图
-            chart.setOption(option);
+            //chart.setOption(option);
             document.getElementById("map").setAttribute('option',JSON.stringify(option));//2018/02/11
             chart.on('click', function(params) {
                 //console.log(params.name);
@@ -869,7 +869,7 @@ debugger;
                 }]
             };
 
-            chart.setOption(option);
+            //chart.setOption(option);
           	document.getElementById("lines").setAttribute('option',JSON.stringify(option));//2018/02/11
         }
 

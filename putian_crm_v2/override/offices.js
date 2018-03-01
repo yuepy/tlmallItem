@@ -1061,7 +1061,7 @@
                 }]
             };
 
-            chart.setOption(option);
+            //chart.setOption(option);
           	document.getElementById("lines").setAttribute('option',JSON.stringify(option));//2018/02/11
         }
 
