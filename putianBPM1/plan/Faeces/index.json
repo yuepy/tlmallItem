@@ -3,6 +3,9 @@
   "id": "Faeces",
   "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=277989&_t=269650&_winid=w7643",
   "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json"
+  },
   "chineseName": "测试强制跳转",
   "description": "",
   "controls": {
@@ -192,6 +195,10 @@
       "toContexts": [
         {
           "toContextId": "context6_pn3pJe"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     }
