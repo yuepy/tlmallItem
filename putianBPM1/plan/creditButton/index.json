@@ -14,6 +14,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -48,6 +52,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -90,6 +98,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -126,7 +138,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/AdministrationManager\\/contractManager\\/fn_sell\\/credit_lookup\\.jsp?.*"
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/AdministrationManager\\/(contractManager||branchContractManager)\\/(fn_sell||fn_mainBusiness)\\/(credit_lookup||hightCredit_lookup)\\.jsp?.*"
       ]
     }
   },

@@ -259,6 +259,7 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
+      //aWin.alert=topWin.alert.bind(aWin);
       // 插入隐藏input的css
       var testCSS = doc.createElement('style');
       testCSS.innerHTML = '.mini-grid-editwrap .mini-textbox-input { display: none; }';
@@ -277,11 +278,12 @@
         aWin.location.href="http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
         
       }
-      aWin.alert = function(msg) {
-        if (msg.indexOf('org.gocom.bos.wfclient.task') !== -1) {
-          aWin.alert(msg);
-        }
-      }
+       aWin.alert = function(msg) {
+        
+         if (msg.indexOf('org.gocom.bos.wfclient.task') !== -1 || msg.indexOf('是否') !== -1) {
+           alert(msg);
+         }
+       }
   
       
       aWin.addEventListener('DOMContentLoaded', function() {
