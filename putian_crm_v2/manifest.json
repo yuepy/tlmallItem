@@ -2,7 +2,7 @@
   "type": "adapter",
   "short_name": "",
   "version": "0.0.1",
-  "runtime_version": "2.3.3-beta.0",
+  "runtime_version": "2.3.3-putian.1",
   "description": "",
   "options": {
     "resource_intercept": {
@@ -533,11 +533,31 @@
       "demo": [
         "http://192.168.220.82:8080/pttlCrm/res/page/home/commonMenu.html#"
       ]
+    },
+    {
+      "title": "achievement",
+      "url": "adapter://putian_crm_v2/plan/achievement/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/salesPlan\\/salesOverview\\?a=1&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8yMDgvMjAxNyAxODoyNDo1OQ=="
+      ],
+      "demo": [
+        "http://192.168.220.82:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8yMDgvMjAxNyAxODoyNDo1OQ=="
+      ]
+    },
+    {
+      "title": "saleAchievement",
+      "url": "adapter://putian_crm_v2/plan/saleAchievement/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/salesAll\\/salesOverview\\?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDEvMjYvMjAxOCAxNTo0Mjo0MQ=="
+      ],
+      "demo": [
+        "http://192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDEvMjYvMjAxOCAxNTo0Mjo0MQ=="
+      ]
     }
   ],
   "name": "普天CRM_v2",
   "default_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
   "scope": "putian_crm_v2",
   "start_url": "enterplorer://putian_crm_v2/local/index.html",
-  "update_time": 1519958450701
+  "update_time": 1520215144506
 }
