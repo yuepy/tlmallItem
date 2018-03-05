@@ -314,10 +314,10 @@
 
                     // 月度趋势图
                     var LineDatas = [{
-                        name: '销量',
+                        name: '销量(台)',
                         data: response.trenQtys
                     }, {
-                        name: '销售额',
+                        name: '销售额(万元)',
                         data: response.trenAmts
                     }];
                     getLines(LineDatas, "lines");
@@ -653,10 +653,10 @@
 
                     // 月度趋势图
                     var LineDatas = [{
-                        name: '销量',
+                        name: '销量(台)',
                         data: response.trenQtys
                     }, {
-                        name: '销售额',
+                        name: '销售额(万元)',
                         data: response.trenAmts
                     }];
                     getLines(LineDatas, "lines");
@@ -971,9 +971,9 @@
             }
             if(datas[0].data){
 	            for (var j = 0; j < datas[0].data.length; j++) {
-	                timeDatas.push(datas[0].data[j].time);
+	                timeDatas.push((datas[0].data[j].time).substring(5));
 	                salesValReach.push(datas[0].data[j].value);
-	                sumValReach.push(datas[1].data[j].value);
+	                sumValReach.push((datas[1].data[j].value)/10000);
 	            }
             }
 
@@ -994,8 +994,8 @@
                     itemGap: 40, //图例每项之间的间隔
                     itemWidth: 18,
                     itemHeight: 5,
-                    top: 10,
-                    right: 20,
+                    top: 20,
+                    right: 90,
                     data: legendDatas
                 },
                 xAxis: [{

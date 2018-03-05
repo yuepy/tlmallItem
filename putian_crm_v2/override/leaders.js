@@ -315,10 +315,10 @@ debugger;
 
                     // 趋势图
                     var LineDatas = [{
-                        name: '销量',
+                        name: '销量(台)',
                         data: response.trenQtys
                     }, {
-                        name: '销售额',
+                        name: '销售额(万元)',
                         data: response.trenAmts
                     }];
                     getLines(LineDatas, "lines");
@@ -588,10 +588,10 @@ debugger;
 
                     // 趋势图
                     var LineDatas = [{
-                        name: '销量',
+                        name: '销量(台)',
                         data: response.trenQtys
                     }, {
-                        name: '销售额',
+                        name: '销售额(万元)',
                         data: response.trenAmts
                     }];
                     getLines(LineDatas, "lines");
