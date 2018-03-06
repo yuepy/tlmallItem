@@ -256,6 +256,24 @@
         });
       }
       //#############################################override pc function end##################################
+      
+      
+      /*________________login - 登录__________________*/
+      //PC增加了验证码之后的逻辑
+      if(aWin.login){
+         aWin.login = function(){
+          var form = new aWin.nui.Form("#form1");
+            form.validate();
+						//一下两行是原PC的逻辑，将其注释
+            //if (form.isValid() == false) 
+              //return false;
+
+            aWin.nui.get("password").setValue(aWin.encryptByDES(aWin.nui.get("password").getValue(),aWin.keyStr));
+            doc.loginForm.submit();
+         }
+      }
+     
+      /*________________login - 登录__________________*/
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
@@ -280,7 +298,7 @@
       }
        aWin.alert = function(msg) {
         
-         if (msg.indexOf('org.gocom.bos.wfclient.task') !== -1 || msg.indexOf('是否') !== -1) {
+         if (msg.indexOf('org.gocom.bos.wfclient.task') !== -1 || msg.indexOf('是否') !== -1|| msg.indexOf("不能为空") !== -1) {
            alert(msg);
          }
        }
