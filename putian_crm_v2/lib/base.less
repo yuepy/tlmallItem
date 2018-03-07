@@ -12207,6 +12207,7 @@ section.ysp-store-details{
 //销售业绩总览表格数据样式
 .ysp-sale-achievement-grid-wrapper{
   //margin-top:-20px;
+  padding-bottom: 5px;
   .ysp-sale-achievement-grid-head{
     text-align: center;
     margin-bottom: 10px;
@@ -12299,11 +12300,13 @@ section.ysp-store-details{
     align-items: center;
     justify-content: center;
     .ysp-sale-achievement-grid-expand-icon{
-        height: .7rem;
-        width: 1.2rem;
-        background-image: url("images/ysp-atreport-moredown.png");
-        background-size: 100% 100%;
-      	transform: rotate(180deg);
+      height: .7rem;
+      width: 1.2rem;
+      background-image: url("images/ysp-atreport-moredown.png");
+      background-size: 100% 100%;
+      transform: rotate(180deg);
+      position: relative;
+      bottom: 5px;
     }
   }
 }
@@ -12314,6 +12317,7 @@ section.ysp-store-details{
    height: 245px;
    overflow-y: hidden;
    position: relative;
+   padding-bottom: 5px;
    //width: 100% !important;
   .ysp-sale-achievement-grid-head{
     text-align: center;
@@ -12412,7 +12416,7 @@ section.ysp-store-details{
         background-image: url("images/ysp-atreport-moredown.png");
         background-size: 100% 100%;
         position: absolute;
-        bottom: 0;
+        bottom: 5px;
     }
   }
 }
@@ -12537,6 +12541,9 @@ div[data-componentsid="uiControl281_qTQB3k"]{
     opacity: .4;
     font-size: 14px;
   }
+div[data-tiptool="true"]{
+  position: absolute;
+}
 
 /****************销售业绩总览***************/
 

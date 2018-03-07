@@ -10979,6 +10979,9 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   top: 3px !important;
   background-image: url(images/down-arrow.png) !important;
 }
+.ysp-sale-achievement-grid-wrapper {
+  padding-bottom: 5px;
+}
 .ysp-sale-achievement-grid-wrapper .ysp-sale-achievement-grid-head {
   text-align: center;
   margin-bottom: 10px;
@@ -11065,11 +11068,14 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   background-image: url("images/ysp-atreport-moredown.png");
   background-size: 100% 100%;
   transform: rotate(180deg);
+  position: relative;
+  bottom: 5px;
 }
 .ysp-sale-achievement-grid-pullDown-wrapper {
   height: 245px;
   overflow-y: hidden;
   position: relative;
+  padding-bottom: 5px;
 }
 .ysp-sale-achievement-grid-pullDown-wrapper .ysp-sale-achievement-grid-head {
   text-align: center;
@@ -11157,7 +11163,7 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   background-image: url("images/ysp-atreport-moredown.png");
   background-size: 100% 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
 }
 .ysp-sale-achievement-sum {
   display: flex;
@@ -11261,5 +11267,8 @@ div[data-componentsid="uiControl281_qTQB3k"] .ysp-dialog-wrapper .ysp_sale-line_
   border-radius: 3px;
   opacity: .4;
   font-size: 14px;
+}
+div[data-tiptool="true"] {
+  position: absolute;
 }
 /****************销售业绩总览***************/

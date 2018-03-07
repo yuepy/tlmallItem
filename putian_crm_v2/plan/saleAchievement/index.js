@@ -208,7 +208,9 @@
     doAction_uiControl283_gRSgcF: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var modelTable = elem.querySelector('table[id^="model-table"]');if (modelTable && 'modelTable' == title) {
-          var trs = modelTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = modelTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -239,7 +241,9 @@
     doAction_uiControl284_A3eeCr: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var salerManTable = elem.querySelector('table[id^="salerMan-table"]');if (salerManTable && 'salerManTable' == title) {
-          var trs = salerManTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = salerManTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -269,13 +273,15 @@
     doAction_uiControl285_XJezgi: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable0 = elem.querySelector('table[id^="sale-table0"]');if (saleTable0 && 'saleTable0' == title) {
-          var trs = saleTable0.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable0.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
     getTemplate_uiControl285_XJezgi: function () {
       var selfTemplate = "export default class extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n    \tactive: true,\n    }\n  }\n  handlerClick(){\n    this.setState({active: !this.state.active})\n  }\n\n  render() {\n    var datas = this.props.customData || [];\n    var handler = this.props.customHandler;\n    return (\n      <div ref=\"root\" style={{padding:'0 5px'}}>\n        {\n          datas.length != 0\n            ? \n          <div className='ysp-sale-achievement-header-wrapper'>\n            <div className='ysp-sale-achievement-header-container' onClick={this.handlerClick.bind(this)}>\n                <i className=\"bouquet\"></i>\n                <span>{datas.length !=0 ? datas[0].businessData.textName : \"\"}</span>\n                <i className={this.state.active ? 'active' : ''}></i>\n            </div>\n            <div style = {{display : this.state.active ? 'block' : 'none' }}>\n              <div className=\"ysp-sale-achievement-sum\">\n                <span>{datas[0].businessData.table0Text0}</span>\n                <span>{datas[0].businessData.table0Text1}</span>\n              </div>\n              <div className=\"ysp-sale-achievement-sum-text\">\n                <span>\u9500\u91CF(\u53F0)</span>\n                <span>\u9500\u552E\u989D(\u4E07)</span>\n              </div>\n                {\n                  datas && datas.map((item)=>{\n                     return (\n                       <div>\n                         <DataGrid\n                           customData = {item.businessData}\n                           customHandler = {handler}                              \n                           />\n                       </div>\n                     )\n                  })\n                }\n           </div>\n        \t</div>\n            :  \n          <div>\n            <DataGrids/>\n          </div>\n        }\n        \n      </div>\n    );\n  }\n  componentDidMount(){\n    this.tooltip = new ToolTip(this.refs.root);\n  }\n  componentWillUnmount(){\n    this.tooltip.unregister();\n  }\n}\n\nclass DataGrids extends React.Component{\n  constructor(props){\n    super(props);\n  }\n  render(){\n    return(\n    \t<div></div>\n    );\n  }\n}\nclass DataGrid extends React.Component{\n  constructor(props){\n    super(props);\n    this.state = {open:false}\n  }\n  switch(){\n    this.setState({open:!this.state.open})\n  }\n  dbClick = (e) =>{\n    var index = e.currentTarget.dataset.index;\n    var title = e.currentTarget.dataset.title;\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        data: {\n          index:index,\n          title:title\n        },\n        eventType: 'dbClick' \n      })\n    }\n  }\n  render(){\n    var businessData = this.props.customData || [];\n    return(\n       <div>\n        {\n          businessData.flagUp == false && businessData.flagDown == false ? \n          <div className=\"ysp-sale-achievement-grid-wrapper\" style={{width: '98%'}}>\n            <div className=\"ysp-sale-achievement-grid-overlay\" style={{width:'inherit'}}>\n              <div></div>\n            </div>\n            <div className=\"ysp-sale-achievement-grid-content\">\n               <div>{businessData && businessData.titles && businessData.titles.map((item,index)=><span className= {businessData.clickFlag == \"\" || businessData.clickFlag == 0 ? 'ysp-sale-achievement-text-color' : ''}><span data-item-tiptool={true} onClick={this.dbClick.bind(this)} data-index = {index}  data-title = {businessData.businessTitle != '' ? businessData.businessTitle : businessData.textName}>{item}</span></span>)}</div>\n            <div>\n               <table>\n                 {businessData && businessData.content && businessData.content.map((item,index)=>\n                   <tr>{item.map((subItem)=>{return index == 0 ? (<th>{subItem}</th>) : (<td>{subItem}</td>)})}</tr>\n                 )}\n               </table>\n            </div>\n           </div>\n          \t<div className=\"ysp-sale-achievement-grid-expand\">\n           </div> \n        \t</div>\n            : \n        \t<div className={!this.state.open ? \"ysp-sale-achievement-grid-pullDown-wrapper\" : \"ysp-sale-achievement-grid-wrapper\"} style={{width: '98%'}}>\n          \t<div className=\"ysp-sale-achievement-grid-overlay\" style={{width:'inherit'}}>\n            <div></div>\n          </div>\n          \t<div className=\"ysp-sale-achievement-grid-content\">\n             <div>\n               {businessData && businessData.titles && businessData.titles.map((item,index)=><span className= {businessData.clickFlag == \"\" || businessData.clickFlag == 0 ? 'ysp-sale-achievement-text-color' : ''}><span data-item-tiptool={true} onClick={this.dbClick.bind(this)} data-index = {index}  data-title = {businessData.businessTitle != '' ? businessData.businessTitle : businessData.textName}>{item}</span></span>)}</div>\n             <div>\n                 <table>\n                 {businessData && businessData.content && businessData.content.map((item,index)=>\n                   <tr>{item.map((subItem)=>{return index == 0 ? (<th>{subItem}</th>) : (<td>{subItem}</td>)})}</tr>\n                 )}\n               </table>\n             </div>\n           </div>\n        \t  <div className=\"ysp-sale-achievement-grid-expand\" onClick = {this.switch.bind(this)}>\n          \t<span className=\"ysp-sale-achievement-grid-expand-icon\"></span>\n           </div>   \n        \t</div>  \n        }\n       </div>\n    );\n  }\n}";
-      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this.state = {\n      active: true\n    };\n    return _this;\n  }\n\n  _createClass(_class, [{\n    key: 'handlerClick',\n    value: function handlerClick() {\n      this.setState({ active: !this.state.active });\n    }\n  }, {\n    key: 'render',\n    value: function render() {\n      var datas = this.props.customData || [];\n      var handler = this.props.customHandler;\n      return React.createElement(\n        'div',\n        { ref: 'root', style: { padding: '0 5px' } },\n        datas.length != 0 ? React.createElement(\n          'div',\n          { className: 'ysp-sale-achievement-header-wrapper' },\n          React.createElement(\n            'div',\n            { className: 'ysp-sale-achievement-header-container', onClick: this.handlerClick.bind(this) },\n            React.createElement('i', { className: 'bouquet' }),\n            React.createElement(\n              'span',\n              null,\n              datas.length != 0 ? datas[0].businessData.textName : \"\"\n            ),\n            React.createElement('i', { className: this.state.active ? 'active' : '' })\n          ),\n          React.createElement(\n            'div',\n            { style: { display: this.state.active ? 'block' : 'none' } },\n            React.createElement(\n              'div',\n              { className: 'ysp-sale-achievement-sum' },\n              React.createElement(\n                'span',\n                null,\n                datas[0].businessData.table0Text0\n              ),\n              React.createElement(\n                'span',\n                null,\n                datas[0].businessData.table0Text1\n              )\n            ),\n            React.createElement(\n              'div',\n              { className: 'ysp-sale-achievement-sum-text' },\n              React.createElement(\n                'span',\n                null,\n                '\\u9500\\u91CF(\\u53F0)'\n              ),\n              React.createElement(\n                'span',\n                null,\n                '\\u9500\\u552E\\u989D(\\u4E07)'\n              )\n            ),\n            datas && datas.map(function (item) {\n              return React.createElement(\n                'div',\n                null,\n                React.createElement(DataGrid, {\n                  customData: item.businessData,\n                  customHandler: handler\n                })\n              );\n            })\n          )\n        ) : React.createElement(\n          'div',\n          null,\n          React.createElement(DataGrids, null)\n        )\n      );\n    }\n  }, {\n    key: 'componentDidMount',\n    value: function componentDidMount() {\n      this.tooltip = new ToolTip(this.refs.root);\n    }\n  }, {\n    key: 'componentWillUnmount',\n    value: function componentWillUnmount() {\n      this.tooltip.unregister();\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n\nvar DataGrids = function (_React$Component2) {\n  _inherits(DataGrids, _React$Component2);\n\n  function DataGrids(props) {\n    _classCallCheck(this, DataGrids);\n\n    return _possibleConstructorReturn(this, (DataGrids.__proto__ || Object.getPrototypeOf(DataGrids)).call(this, props));\n  }\n\n  _createClass(DataGrids, [{\n    key: 'render',\n    value: function render() {\n      return React.createElement('div', null);\n    }\n  }]);\n\n  return DataGrids;\n}(React.Component);\n\nvar DataGrid = function (_React$Component3) {\n  _inherits(DataGrid, _React$Component3);\n\n  function DataGrid(props) {\n    _classCallCheck(this, DataGrid);\n\n    var _this3 = _possibleConstructorReturn(this, (DataGrid.__proto__ || Object.getPrototypeOf(DataGrid)).call(this, props));\n\n    _this3.dbClick = function (e) {\n      var index = e.currentTarget.dataset.index;\n      var title = e.currentTarget.dataset.title;\n      var handler = _this3.props.customHandler;\n      if (handler) {\n        handler({\n          data: {\n            index: index,\n            title: title\n          },\n          eventType: 'dbClick'\n        });\n      }\n    };\n\n    _this3.state = { open: false };\n    return _this3;\n  }\n\n  _createClass(DataGrid, [{\n    key: 'switch',\n    value: function _switch() {\n      this.setState({ open: !this.state.open });\n    }\n  }, {\n    key: 'render',\n    value: function render() {\n      var _this4 = this;\n\n      var businessData = this.props.customData || [];\n      return React.createElement(\n        'div',\n        null,\n        businessData.flagUp == false && businessData.flagDown == false ? React.createElement(\n          'div',\n          { className: 'ysp-sale-achievement-grid-wrapper', style: { width: '98%' } },\n          React.createElement(\n            'div',\n            { className: 'ysp-sale-achievement-grid-overlay', style: { width: 'inherit' } },\n            React.createElement('div', null)\n          ),\n          React.createElement(\n            'div',\n            { className: 'ysp-sale-achievement-grid-content' },\n            React.createElement(\n              'div',\n              null,\n              businessData && businessData.titles && businessData.titles.map(function (item, index) {\n                return React.createElement(\n                  'span',\n                  { className: businessData.clickFlag == \"\" || businessData.clickFlag == 0 ? 'ysp-sale-achievement-text-color' : '' },\n                  React.createElement(\n                    'span',\n                    { 'data-item-tiptool': true, onClick: _this4.dbClick.bind(_this4), 'data-index': index, 'data-title': businessData.businessTitle != '' ? businessData.businessTitle : businessData.textName },\n                    item\n                  )\n                );\n              })\n            ),\n            React.createElement(\n              'div',\n              null,\n              React.createElement(\n                'table',\n                null,\n                businessData && businessData.content && businessData.content.map(function (item, index) {\n                  return React.createElement(\n                    'tr',\n                    null,\n                    item.map(function (subItem) {\n                      return index == 0 ? React.createElement(\n                        'th',\n                        null,\n                        subItem\n                      ) : React.createElement(\n                        'td',\n                        null,\n                        subItem\n                      );\n                    })\n                  );\n                })\n              )\n            )\n          ),\n          React.createElement('div', { className: 'ysp-sale-achievement-grid-expand' })\n        ) : React.createElement(\n          'div',\n          { className: !this.state.open ? \"ysp-sale-achievement-grid-pullDown-wrapper\" : \"ysp-sale-achievement-grid-wrapper\", style: { width: '98%' } },\n          React.createElement(\n            'div',\n            { className: 'ysp-sale-achievement-grid-overlay', style: { width: 'inherit' } },\n            React.createElement('div', null)\n          ),\n          React.createElement(\n            'div',\n            { className: 'ysp-sale-achievement-grid-content' },\n            React.createElement(\n              'div',\n              null,\n              businessData && businessData.titles && businessData.titles.map(function (item, index) {\n                return React.createElement(\n                  'span',\n                  { className: businessData.clickFlag == \"\" || businessData.clickFlag == 0 ? 'ysp-sale-achievement-text-color' : '' },\n                  React.createElement(\n                    'span',\n                    { 'data-item-tiptool': true, onClick: _this4.dbClick.bind(_this4), 'data-index': index, 'data-title': businessData.businessTitle != '' ? businessData.businessTitle : businessData.textName },\n                    item\n                  )\n                );\n              })\n            ),\n            React.createElement(\n              'div',\n              null,\n              React.createElement(\n                'table',\n                null,\n                businessData && businessData.content && businessData.content.map(function (item, index) {\n                  return React.createElement(\n                    'tr',\n                    null,\n                    item.map(function (subItem) {\n                      return index == 0 ? React.createElement(\n                        'th',\n                        null,\n                        subItem\n                      ) : React.createElement(\n                        'td',\n                        null,\n                        subItem\n                      );\n                    })\n                  );\n                })\n              )\n            )\n          ),\n          React.createElement(\n            'div',\n            { className: 'ysp-sale-achievement-grid-expand', onClick: this.switch.bind(this) },\n            React.createElement('span', { className: 'ysp-sale-achievement-grid-expand-icon' })\n          )\n        )\n      );\n    }\n  }]);\n\n  return DataGrid;\n}(React.Component);";
+      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this.state = {\n      active: true\n    };\n    return _this;\n  }\n\n  _createClass(_class, [{\n    key: \'handlerClick\',\n    value: function handlerClick() {\n      this.setState({ active: !this.state.active });\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var datas = this.props.customData || [];\n      var handler = this.props.customHandler;\n      return React.createElement(\n        \'div\',\n        { ref: \'root\', style: { padding: \'0 5px\' } },\n        datas.length != 0 ? React.createElement(\n          \'div\',\n          { className: \'ysp-sale-achievement-header-wrapper\' },\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-header-container\', onClick: this.handlerClick.bind(this) },\n            React.createElement(\'i\', { className: \'bouquet\' }),\n            React.createElement(\n              \'span\',\n              null,\n              datas.length != 0 ? datas[0].businessData.textName : ""\n            ),\n            React.createElement(\'i\', { className: this.state.active ? \'active\' : \'\' })\n          ),\n          React.createElement(\n            \'div\',\n            { style: { display: this.state.active ? \'block\' : \'none\' } },\n            React.createElement(\n              \'div\',\n              { className: \'ysp-sale-achievement-sum\' },\n              React.createElement(\n                \'span\',\n                null,\n                datas[0].businessData.table0Text0\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                datas[0].businessData.table0Text1\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'ysp-sale-achievement-sum-text\' },\n              React.createElement(\n                \'span\',\n                null,\n                \'\\u9500\\u91CF(\\u53F0)\'\n              ),\n              React.createElement(\n                \'span\',\n                null,\n                \'\\u9500\\u552E\\u989D(\\u4E07)\'\n              )\n            ),\n            datas && datas.map(function (item) {\n              return React.createElement(\n                \'div\',\n                null,\n                React.createElement(DataGrid, {\n                  customData: item.businessData,\n                  customHandler: handler\n                })\n              );\n            })\n          )\n        ) : React.createElement(\n          \'div\',\n          null,\n          React.createElement(DataGrids, null)\n        )\n      );\n    }\n  }, {\n    key: \'componentDidMount\',\n    value: function componentDidMount() {\n      this.tooltip = new ToolTip(this.refs.root);\n    }\n  }, {\n    key: \'componentWillUnmount\',\n    value: function componentWillUnmount() {\n      this.tooltip.unregister();\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n\nvar DataGrids = function (_React$Component2) {\n  _inherits(DataGrids, _React$Component2);\n\n  function DataGrids(props) {\n    _classCallCheck(this, DataGrids);\n\n    return _possibleConstructorReturn(this, (DataGrids.__proto__ || Object.getPrototypeOf(DataGrids)).call(this, props));\n  }\n\n  _createClass(DataGrids, [{\n    key: \'render\',\n    value: function render() {\n      return React.createElement(\'div\', null);\n    }\n  }]);\n\n  return DataGrids;\n}(React.Component);\n\nvar DataGrid = function (_React$Component3) {\n  _inherits(DataGrid, _React$Component3);\n\n  function DataGrid(props) {\n    _classCallCheck(this, DataGrid);\n\n    var _this3 = _possibleConstructorReturn(this, (DataGrid.__proto__ || Object.getPrototypeOf(DataGrid)).call(this, props));\n\n    _this3.dbClick = function (e) {\n      var index = e.currentTarget.dataset.index;\n      var title = e.currentTarget.dataset.title;\n      var handler = _this3.props.customHandler;\n      if (handler) {\n        handler({\n          data: {\n            index: index,\n            title: title\n          },\n          eventType: \'dbClick\'\n        });\n      }\n    };\n\n    _this3.state = { open: false };\n    return _this3;\n  }\n\n  _createClass(DataGrid, [{\n    key: \'switch\',\n    value: function _switch() {\n      this.setState({ open: !this.state.open });\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this4 = this;\n\n      var businessData = this.props.customData || [];\n      return React.createElement(\n        \'div\',\n        null,\n        businessData.flagUp == false && businessData.flagDown == false ? React.createElement(\n          \'div\',\n          { className: \'ysp-sale-achievement-grid-wrapper\', style: { width: \'98%\' } },\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-overlay\', style: { width: \'inherit\' } },\n            React.createElement(\'div\', null)\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-content\' },\n            React.createElement(\n              \'div\',\n              null,\n              businessData && businessData.titles && businessData.titles.map(function (item, index) {\n                return React.createElement(\n                  \'span\',\n                  { className: businessData.clickFlag == "" || businessData.clickFlag == 0 ? \'ysp-sale-achievement-text-color\' : \'\' },\n                  React.createElement(\n                    \'span\',\n                    { \'data-item-tiptool\': true, onClick: _this4.dbClick.bind(_this4), \'data-index\': index, \'data-title\': businessData.businessTitle != \'\' ? businessData.businessTitle : businessData.textName },\n                    item\n                  )\n                );\n              })\n            ),\n            React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'table\',\n                null,\n                businessData && businessData.content && businessData.content.map(function (item, index) {\n                  return React.createElement(\n                    \'tr\',\n                    null,\n                    item.map(function (subItem) {\n                      return index == 0 ? React.createElement(\n                        \'th\',\n                        null,\n                        subItem\n                      ) : React.createElement(\n                        \'td\',\n                        null,\n                        subItem\n                      );\n                    })\n                  );\n                })\n              )\n            )\n          ),\n          React.createElement(\'div\', { className: \'ysp-sale-achievement-grid-expand\' })\n        ) : React.createElement(\n          \'div\',\n          { className: !this.state.open ? "ysp-sale-achievement-grid-pullDown-wrapper" : "ysp-sale-achievement-grid-wrapper", style: { width: \'98%\' } },\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-overlay\', style: { width: \'inherit\' } },\n            React.createElement(\'div\', null)\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-content\' },\n            React.createElement(\n              \'div\',\n              null,\n              businessData && businessData.titles && businessData.titles.map(function (item, index) {\n                return React.createElement(\n                  \'span\',\n                  { className: businessData.clickFlag == "" || businessData.clickFlag == 0 ? \'ysp-sale-achievement-text-color\' : \'\' },\n                  React.createElement(\n                    \'span\',\n                    { \'data-item-tiptool\': true, onClick: _this4.dbClick.bind(_this4), \'data-index\': index, \'data-title\': businessData.businessTitle != \'\' ? businessData.businessTitle : businessData.textName },\n                    item\n                  )\n                );\n              })\n            ),\n            React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'table\',\n                null,\n                businessData && businessData.content && businessData.content.map(function (item, index) {\n                  return React.createElement(\n                    \'tr\',\n                    null,\n                    item.map(function (subItem) {\n                      return index == 0 ? React.createElement(\n                        \'th\',\n                        null,\n                        subItem\n                      ) : React.createElement(\n                        \'td\',\n                        null,\n                        subItem\n                      );\n                    })\n                  );\n                })\n              )\n            )\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-expand\', onClick: this.switch.bind(this) },\n            React.createElement(\'span\', { className: \'ysp-sale-achievement-grid-expand-icon\' })\n          )\n        )\n      );\n    }\n  }]);\n\n  return DataGrid;\n}(React.Component);';
     },
     getData_control295_5r4na7: function (elem) {
       if (!elem) {
@@ -299,7 +305,9 @@
     doAction_uiControl286_3ulbUN: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable1 = elem.querySelector('table[id^="sale-table1"]');if (saleTable1 && 'saleTable1' == title) {
-          var trs = saleTable1.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable1.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -330,7 +338,9 @@
     doAction_uiControl287_uZ8k6E: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable2 = elem.querySelector('table[id^="sale-table2"]');if (saleTable2 && 'saleTable2' == title) {
-          var trs = saleTable2.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable2.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -362,7 +372,9 @@
     doAction_uiControl282_fBrGyT: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable3 = elem.querySelector('table[id^="sale-table3"]');if (saleTable3 && 'saleTable3' == title) {
-          var trs = saleTable3.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable3.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -393,7 +405,9 @@
     doAction_uiControl288_bxQQop: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var bizUnitTable = elem.querySelector('table[id^="bizUnit-table"]');if (bizUnitTable && 'bizUnitTable' == title) {
-          var trs = bizUnitTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = bizUnitTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -424,7 +438,9 @@
     doAction_uiControl289_izkz87: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var custTable = elem.querySelector('table[id^="cust-table"]');if (custTable && 'custTable' == title) {
-          var trs = custTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = custTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -455,7 +471,9 @@
     doAction_uiControl290_nSh4gF: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var officeTable = elem.querySelector('table[id^="office-table"]');if (officeTable && 'officeTable' == title) {
-          var trs = officeTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = officeTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -486,7 +504,9 @@
     doAction_uiControl291_RaewTZ: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var projectTable = elem.querySelector('table[id^="project-table"]');if (projectTable && 'projectTable' == title) {
-          var trs = projectTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = projectTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -518,7 +538,9 @@
     doAction_uiControl292_slttkZ: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable4 = elem.querySelector('table[id^="sale-table4"]');if (saleTable4 && 'saleTable4' == title) {
-          var trs = saleTable4.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable4.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -550,7 +572,9 @@
     doAction_uiControl293_kyeDPS: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable5 = elem.querySelector('table[id^="sale-table5"]');if (saleTable5 && 'saleTable5' == title) {
-          var trs = saleTable5.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable5.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -582,7 +606,9 @@
     doAction_uiControl294_iNouQQ: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable6 = elem.querySelector('table[id^="sale-table6"]');if (saleTable6 && 'saleTable6' == title) {
-          var trs = saleTable6.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable6.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -614,7 +640,9 @@
     doAction_uiControl295_gOVmcq: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable7 = elem.querySelector('table[id^="sale-table7"]');if (saleTable7 && 'saleTable7' == title) {
-          var trs = saleTable7.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable7.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -646,7 +674,9 @@
     doAction_uiControl296_FeClUy: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable8 = elem.querySelector('table[id^="sale-table8"]');if (saleTable8 && 'saleTable8' == title) {
-          var trs = saleTable8.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable8.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -678,7 +708,9 @@
     doAction_uiControl297_ToZ84m: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable9 = elem.querySelector('table[id^="sale-table9"]');if (saleTable9 && 'saleTable9' == title) {
-          var trs = saleTable9.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable9.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -710,7 +742,9 @@
     doAction_uiControl298_W0QHtT: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable10 = elem.querySelector('table[id^="sale-table10"]');if (saleTable10 && 'saleTable10' == title) {
-          var trs = saleTable10.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable10.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -742,7 +776,9 @@
     doAction_uiControl299_K26ukz: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var saleTable11 = elem.querySelector('table[id^="sale-table11"]');if (saleTable11 && 'saleTable11' == title) {
-          var trs = saleTable11.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = saleTable11.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
@@ -773,7 +809,9 @@
     doAction_uiControl300_Oac3Ox: function (data, elem) {
       if ('dbClick' == data.eventType) {
         var title = data.customData.title;var index = data.customData.index;var branchTable = elem.querySelector('table[id^="branch-table"]');if (branchTable && 'branchTable' == title) {
-          var trs = branchTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");a.click();
+          var trs = branchTable.querySelectorAll("tr");var td = trs[index].firstChild;var a = td.querySelector("a");if (a != null) {
+            a.click();ysp.appMain.showLoading();
+          }
         }
       }
     },
