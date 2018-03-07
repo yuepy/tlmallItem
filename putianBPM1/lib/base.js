@@ -298,7 +298,7 @@
       }
        aWin.alert = function(msg) {
         
-         if (msg.indexOf('org.gocom.bos.wfclient.task') !== -1 || msg.indexOf('是否') !== -1|| msg.indexOf("不能为空") !== -1) {
+         if (msg.indexOf('org.gocom.bos.wfclient.task') !== -1 || msg.indexOf('是否') !== -1|| msg.indexOf("不能为空") !== -1|| msg.indexOf("归还日期不能小于当前日期") !== -1) {
            alert(msg);
          }
        }
