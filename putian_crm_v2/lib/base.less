@@ -2706,6 +2706,8 @@ div.ysp-tempvisit-list-footer{
         border-radius: 3px;
         font-size: 14px;
         color: white;
+      	height: 0px;
+      	width: 0px;
     }
     .ysp-tooltip-overlay{
         position: absolute;
@@ -12046,19 +12048,22 @@ section.ysp-store-details{
   padding-top: 10px;
   background: #fff !important;
   border-radius: 10px;
+  overflow-x: auto;
   //padding: 10px 10px 4px 10px;
 	.ysp-achievement-sales{
     display: flex;
     justify-content: space-between;
     .listItem{
-      flex: 1;
+      //flex: 1;
+      display: flex;
       font-size: @fontBase;
       text-align: center;
+      width: 15px;
       h2{
         //font-size: @fontBase;
         font-size:18px;
         font-weight: 400;
-        margin: 0 0 5px 0;
+        margin: 0 0 5px 5px;
         padding: 0;
         color: #2c81ff;
       }
@@ -12066,8 +12071,11 @@ section.ysp-store-details{
         color: #e7350d !important;
       }
       span{
+        display: flex;
+        width: 80px;
         color: #999;
         font-size: 10px;
+        padding-left: 16px;
       }
       div:first-child{
         margin-bottom: 20px;
@@ -12075,26 +12083,35 @@ section.ysp-store-details{
       .listItemDay{
         border-radius: 10px;
         background: #4796ed;
-        padding: 5px 15px;
+        padding: 5px 15px 3px 15px;
         color: #fff;
+        display: flex;
+        width: 70px;
+        margin-left: 5px;
       }
       .listItemWeek{
         border-radius: 10px;
         background: #e7350d;
-        padding: 5px 15px;
+        padding: 5px 15px 3px 15px;
         color: #fff;
+        display: flex;
+        width: 70px;
       }
       .listItemMonth{
         border-radius: 10px;
         background: #ffbe00;
-        padding: 5px 15px;
+        padding: 5px 15px 3px 15px;
         color: #fff;
+        display: flex;
+        width: 70px;
       }
       .listItemYear{
         border-radius: 10px;
         background: #4796ed;
-        padding: 5px 15px;
+        padding: 5px 15px 3px 15px;
         color: #fff;
+        display: flex;
+        width: 70px;
       }
     }
   }
@@ -12276,7 +12293,7 @@ section.ysp-store-details{
       }
   }
   .ysp-sale-achievement-grid-expand{
-    height: 40px;
+    //height: 40px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -12294,7 +12311,7 @@ section.ysp-store-details{
 //销售业绩总览表格有下拉箭头样式
 .ysp-sale-achievement-grid-pullDown-wrapper{
   //margin-top:-20px;
-   height: 230px;
+   height: 245px;
    overflow-y: hidden;
    position: relative;
    //width: 100% !important;
@@ -12384,7 +12401,7 @@ section.ysp-store-details{
       }
   }
   .ysp-sale-achievement-grid-expand{
-    height: 40px;
+    //height: 40px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -12500,6 +12517,26 @@ div[data-componentsid="uiControl281_qTQB3k"]{
   color: #999;
   width: 70%;
 }
+
+//业绩中点击显示数据出现两条数据样式。
+.ysp-tooltip-content{
+    position: absolute;
+    white-space: nowrap;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: white;
+  }
+.ysp-tooltip-overlay{
+    position: absolute;
+    color: transparent;
+    white-space: nowrap;
+    background-color: black;
+    padding: 2px 6px;
+    border-radius: 3px;
+    opacity: .4;
+    font-size: 14px;
+  }
 
 /****************销售业绩总览***************/
 

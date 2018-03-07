@@ -2264,6 +2264,8 @@ div.ysp-tempvisit-list-footer > div:last-child > span {
   border-radius: 3px;
   font-size: 14px;
   color: white;
+  height: 0px;
+  width: 0px;
 }
 .ysp-tooltip-wrapper .ysp-tooltip-overlay {
   position: absolute;
@@ -10830,20 +10832,22 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   padding-top: 10px;
   background: #fff !important;
   border-radius: 10px;
+  overflow-x: auto;
 }
 .ysp-saleAchievementIndex .ysp-achievement-sales {
   display: flex;
   justify-content: space-between;
 }
 .ysp-saleAchievementIndex .ysp-achievement-sales .listItem {
-  flex: 1;
+  display: flex;
   font-size: 14px;
   text-align: center;
+  width: 15px;
 }
 .ysp-saleAchievementIndex .ysp-achievement-sales .listItem h2 {
   font-size: 18px;
   font-weight: 400;
-  margin: 0 0 5px 0;
+  margin: 0 0 5px 5px;
   padding: 0;
   color: #2c81ff;
 }
@@ -10851,8 +10855,11 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   color: #e7350d !important;
 }
 .ysp-saleAchievementIndex .ysp-achievement-sales .listItem span {
+  display: flex;
+  width: 80px;
   color: #999;
   font-size: 10px;
+  padding-left: 16px;
 }
 .ysp-saleAchievementIndex .ysp-achievement-sales .listItem div:first-child {
   margin-bottom: 20px;
@@ -10860,26 +10867,35 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
 .ysp-saleAchievementIndex .ysp-achievement-sales .listItem .listItemDay {
   border-radius: 10px;
   background: #4796ed;
-  padding: 5px 15px;
+  padding: 5px 15px 3px 15px;
   color: #fff;
+  display: flex;
+  width: 70px;
+  margin-left: 5px;
 }
 .ysp-saleAchievementIndex .ysp-achievement-sales .listItem .listItemWeek {
   border-radius: 10px;
   background: #e7350d;
-  padding: 5px 15px;
+  padding: 5px 15px 3px 15px;
   color: #fff;
+  display: flex;
+  width: 70px;
 }
 .ysp-saleAchievementIndex .ysp-achievement-sales .listItem .listItemMonth {
   border-radius: 10px;
   background: #ffbe00;
-  padding: 5px 15px;
+  padding: 5px 15px 3px 15px;
   color: #fff;
+  display: flex;
+  width: 70px;
 }
 .ysp-saleAchievementIndex .ysp-achievement-sales .listItem .listItemYear {
   border-radius: 10px;
   background: #4796ed;
-  padding: 5px 15px;
+  padding: 5px 15px 3px 15px;
   color: #fff;
+  display: flex;
+  width: 70px;
 }
 .ysp-sale-achievement-header-wrapper {
   background: white;
@@ -11038,7 +11054,6 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   color: #e7350d;
 }
 .ysp-sale-achievement-grid-wrapper .ysp-sale-achievement-grid-expand {
-  height: 40px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -11052,7 +11067,7 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   transform: rotate(180deg);
 }
 .ysp-sale-achievement-grid-pullDown-wrapper {
-  height: 230px;
+  height: 245px;
   overflow-y: hidden;
   position: relative;
 }
@@ -11131,7 +11146,6 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   color: #e7350d;
 }
 .ysp-sale-achievement-grid-pullDown-wrapper .ysp-sale-achievement-grid-expand {
-  height: 40px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -11229,5 +11243,23 @@ div[data-componentsid="uiControl281_qTQB3k"] .ysp-dialog-wrapper .ysp_sale-line_
   align-items: center;
   color: #999;
   width: 70%;
+}
+.ysp-tooltip-content {
+  position: absolute;
+  white-space: nowrap;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 14px;
+  color: white;
+}
+.ysp-tooltip-overlay {
+  position: absolute;
+  color: transparent;
+  white-space: nowrap;
+  background-color: black;
+  padding: 2px 6px;
+  border-radius: 3px;
+  opacity: .4;
+  font-size: 14px;
 }
 /****************销售业绩总览***************/
