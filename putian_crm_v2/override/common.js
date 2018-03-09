@@ -376,8 +376,8 @@ function getLines(datas, Id) {
             show: true,
             containLabel: true,
             top: 60,
-            left: 30,
-            right: 30,
+            left: 10,
+            right: 10,
             bottom: 30
         },
         // legend: {
@@ -393,7 +393,10 @@ function getLines(datas, Id) {
             itemWidth: 18,
             itemHeight: 5,
             top: 20,
-            right: 90,
+            //right: 90,
+          	display: 'block',
+            margin: "0 auto",
+            width: '70%',
             data: legendDatas
         },
        /* toolbox: {

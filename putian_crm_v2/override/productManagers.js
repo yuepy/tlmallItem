@@ -745,8 +745,8 @@ debugger;
                     show: true,
                     containLabel: true,
                     top: 60,
-                    left: 30,
-                    right: 30,
+                    left: 10,
+                    right: 10,
                     bottom: 30
                 },
                 legend: {
@@ -754,7 +754,10 @@ debugger;
                     itemWidth: 18,
                     itemHeight: 5,
                     top: 20,
-                    right: 90,
+                    //right: 90,
+                  	display: 'block',
+                    margin: "0 auto",
+                  	width: '70%',
                     data: legendDatas
                 },
                 xAxis: [{
