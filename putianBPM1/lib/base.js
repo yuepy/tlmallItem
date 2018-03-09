@@ -259,7 +259,7 @@
       
       
       /*________________login - 登录__________________*/
-      //PC增加了验证码之后的逻辑
+      //PC增加了验证码之后的逻辑3.8
       if(aWin.login){
          aWin.login = function(){
           var form = new aWin.nui.Form("#form1");
