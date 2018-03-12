@@ -654,6 +654,10 @@
         {
           "toContextId": "context2_Z2voN1",
           "toModelId": "processedTask"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     },
@@ -769,6 +773,10 @@
         {
           "toContextId": "context6_pn3pJe",
           "toModelId": "Faeces"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     }
@@ -793,21 +801,6 @@
           }
         },
         {
-          "id": "uiControl20_HR4ggS",
-          "controlId": "control19_s257i7",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl20_HR4ggS",
-                "onGetTemplate": "getTemplate_uiControl20_HR4ggS"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl37_FOWagD",
           "controlId": "control36_hBTqBA",
           "display": {
@@ -818,6 +811,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl37_FOWagD",
                 "onGetTemplate": "getTemplate_uiControl37_FOWagD"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl20_HR4ggS",
+          "controlId": "control19_s257i7",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl20_HR4ggS",
+                "onGetTemplate": "getTemplate_uiControl20_HR4ggS"
               }
             }
           }
