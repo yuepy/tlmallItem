@@ -6095,7 +6095,16 @@ function __BindIFrames() {
     var c = g[b];
     try {
       if (c.contentWindow && c.contentWindow.document && !c.contentWindow.__mousedownbinded) {
+        //lyh
         c.contentWindow.__mousedownbinded = true;
+        if(top.test&&c.src.indexOf("forwardByWorkItem")!=-1){
+          var src=c.src;
+          var index=src.indexOf("?");
+          index=index+1;
+          index="(.{"+index+"})";
+          c.src=src.replace(eval("/"+index+"/"),"$1"+top.test);
+          top.test="";
+        }
         var f = c.contentWindow.document
       }
     } catch (d) {}

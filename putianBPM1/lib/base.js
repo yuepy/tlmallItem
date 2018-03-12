@@ -242,6 +242,11 @@
           showMaxButton: true,
           onload: function() {
             var iframe = this.getIFrameEl();
+            if(top.pendTitle&&top.pendTitle=="总部转正"){
+              topWin.test="Headquarters&";
+            }else{
+              topWin.test="test&"
+            }
             if (iframe.contentWindow.initData) {
               iframe.contentWindow.initData(row, aWin.taskType, isShowDetail);
             }
