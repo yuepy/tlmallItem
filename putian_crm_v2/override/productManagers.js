@@ -1,4 +1,166 @@
+/*
+干掉原网页的.wrapper(body下包裹整个显示内容的div);
+然后创建一个自定义DOM结构，添加到body上；
+分别需要添加的DOM id : 
+销量与销售额：
+todayQty\todayAmt\monthQty\monthAmt\yearQty\yearAmt\
+*/
 debugger;
+window.addEventListener('DOMContentLoaded', function() {
+  var wrapperOrigin = document.querySelector('.g-main');
+  var wrapper = document.createElement('div');
+  if (wrapper) {
+    wrapper.style.background = '#F7F7F7';
+    wrapper.style.height = '100vh';
+    wrapper.style.padding = '0';
+    var href = wrapper.ownerDocument.defaultView.document.location.href;
+    //如果匹配的地址正确，则将.wrapper里面的html清空
+    if (href && href.indexOf('configType') != -1) {
+      wrapperOrigin.style.display = "none";
+      /*
+      // 创建style
+      */
+      var style = document.createElement('style');
+      style.setAttribute("type", "text/css");
+      var cssString = ".fakeWrapper{background: #fff; border-radius: 8px; padding: 5px 0 10px 0;}" +
+        ".fakeWrapper:last-child{margin-top: 10px; border-radius: 8px;}" +
+        ".headerSum{display: flex; width: 30%; margin: 0 auto;padding: 10px}"+
+        ".fakeWrapper:first-child .headerSum i{display: block;height: 20px;width: 20px;background-size: 19px;background-repeat: no-repeat;padding-right: 5px;background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABKVBMVEUAAABHlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu1Hlu0AAACFQYDnAAAAYnRSTlMAAhw+V2p3fXx2aFU7GgEPRHOAcEEMCk17RwgtJgNMf0YFW1RaUkIkenEGXQ5eeXIwaXgiMhE9G04XUGAzVmNnDWEELEMdGUUebikrJTcYPy80fnQUZTxiEgsJSRA6LihIa5XHcxwAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAB6ElEQVQ4y42VeVfaQBTFHyoJVAzkuoBYmgarBpWmQaG41K1utBX3LXb9/l+ik5AZkpiJ3r/mnPmdN3l33twQhZUZGR3LKmou/2a8MKGRTMWSjpAmp6YTsZmyipgqs9Xn3FweCdLfxrDaOyTLeB/5VLMOqeZroXofkKKFYc0yUrUo+kjnYCwFviT2C0vxZbBlY9kHJQ2vmP5uQxy+qkpObJoC/OgZX5J+20qGgygQabaMUz+JinCIRmIdilVrjbR1MwDRpk6Ea3zu8tUG1TaxZQbgNn0JcztssDp+0d09qjZhYz/wrkvZ8GUdEOv0aw6oL1Mxi/E1sbVPQ7eNjkYT9qFGR/lyho51nGinYrNHwkXrG9H3CpuWA5oh+mHhjGgI6gK0+6SdG9bFFnYYd3kFFKNgcPT1NJnzUDe8kevdlDybImCPN+PQ3i3zjjl8B1whexcD77k9zrENhYNqszoXA7vc8JZldEoc7NcoDm6LK2RNC3AwzBHwgQ9Fq09poCPGbLCSggUxuOmgP7iDpzD56LqbqDy020/AT9f9BZy6Ln92i2mPKzx8g8dFv1/g+HN9MQAOh5FST+NCkfLqkGI1ZafHYs8zTkni9D+viubc34Ro9sL+JBL2DUnY+7+Po9Gxf4qqKs6z38d/wClxQWUiY5EAAAAASUVORK5CYII=);}"+   
+        ".fakeWrapper:first-child .headerSum span{font-size: 18px;font-weight:500;color: #000000}"+
+         
+        ".header{display: flex;justify-content: space-around;align-items: center;padding: 10px 0px 20px 0px}" +
+        ".fakeWrapper .header >span:first-child{font-size: 12px;color:#fff;border-radius:10px ;padding:4px 10px;display:flex;flex-direction: column;text-align: center;background: #4796ed}" +
+        ".fakeWrapper .header >span:nth-child(2){font-size: 12px;color:#fff;border-radius:10px ;padding:4px 10px;display:flex;flex-direction: column;text-align: center;background: #e7350d}" +
+         ".fakeWrapper .header >span:last-child{font-size: 12px;color:#fff;border-radius:10px ;padding:4px 10px;display:flex;flex-direction: column;text-align: center;background: #ffbe00}" + 
+        ".content > div{display: flex; justify-content: flex-start; align-items: center; padding-bottom: 20px}" +
+        ".content-item{display: flex; flex-direction: column; align-items: center; width: 33%}" +
+  
+        ".fakeWrapper:last-child .content-item:first-child h2{font-size: 18px; text-align: center; font-weight: 400;padding-bottom:10px;color:#4796ed;}" +
+        ".fakeWrapper:last-child .content-item:nth-child(2) h2{font-size: 18px; text-align: center; font-weight: 400;padding-bottom:10px;color:#e7350d;}" +
+        ".fakeWrapper:last-child .content-item:last-child h2{font-size: 18px; text-align: center; font-weight: 400;padding-bottom:10px;color:#33333;}" +  
+        ".content-item span{font-size: 10px; color: #999; display: block; text-align: center}" +
+        "#cardIframe1{-webkit-border-radius:none;border-radius:none;-webkit-box-shadow:none;box-shadow:none;}";
+      var cssText = document.createTextNode(cssString);
+      style.appendChild(cssText);
+      document.head.appendChild(style);
+      //创建销量和销售额内容块
+      var fakeWrapper_sales = document.createElement('div');
+      fakeWrapper_sales.className = 'fakeWrapper';
+      wrapper.appendChild(fakeWrapper_sales);
+      //创建"销量汇总"部分DOM
+      var headerSum = document.createElement('div');
+      headerSum.className = 'headerSum'
+      var headerSum_i = document.createElement('i');
+      var headerSum_span = document.createElement('span');
+      var headerSum_text = document.createTextNode('销量汇总');
+      headerSum_span.appendChild(headerSum_text);
+      headerSum.appendChild(headerSum_i);
+      headerSum.appendChild(headerSum_span);
+      fakeWrapper_sales.appendChild(headerSum);
+      //创建标题部分DOM
+      var header = document.createElement('div');
+      header.className = 'header';
+      var header_span = document.createElement('span');
+      var header_span1 = document.createElement('span');
+      var header_span2 = document.createElement('span');
+      var header_text = document.createTextNode('今日销量');
+      var header_text1 = document.createTextNode('本周销量');
+      var header_text2 = document.createTextNode('本月销量');
+      //将标题文本挂到span中
+      header_span.appendChild(header_text);
+      header_span1.appendChild(header_text1);
+      header_span2.appendChild(header_text2);
+      header.appendChild(header_span);
+      header.appendChild(header_span1);
+      header.appendChild(header_span2);
+      //把标题部分DOM挂载到fakeWrapper_sales
+      fakeWrapper_sales.appendChild(header);
+      //创建内容部分
+      var content = document.createElement('div');
+      content.className = 'content';
+      //分别创建两个div，挂到content上，数据呈两行展示
+      var content_row_0 = document.createElement('div');
+      content.appendChild(content_row_0);
+      //创建3个div，3个一组挂在content_row_0上
+      //本日销量
+      var div0 = document.createElement('div');
+      div0.className = 'content-item';
+      var h20 = document.createElement('h2');
+      h20.id = 'dayQty';
+      var span0 = document.createElement('span');
+      var span_text = document.createTextNode('销量(台)');
+      span0.appendChild(span_text);
+      div0.appendChild(h20);
+      div0.appendChild(span0);
+      //本周销量
+      var div1 = document.createElement('div');
+      div1.className = 'content-item';
+      var h21 = document.createElement('h2');
+      h21.id = 'weekQty';
+      var span1 = document.createElement('span');
+      var span_text = document.createTextNode('销量(台)');
+      span1.appendChild(span_text);
+      div1.appendChild(h21);
+      div1.appendChild(span1);
+      //本月销量
+      var div2 = document.createElement('div');
+      div2.className = 'content-item';
+      var h22 = document.createElement('h2');
+      h22.id = 'monthQty';
+      var span2 = document.createElement('span');
+      var span_text = document.createTextNode('销量(台)');
+      span2.appendChild(span_text);
+      div2.appendChild(h22);
+      div2.appendChild(span2);
+      content_row_0.appendChild(div0);
+      content_row_0.appendChild(div1);
+      content_row_0.appendChild(div2);
+      
+      //分别创建两个div，挂到content上，数据呈两行展示
+      var content_row_1 = document.createElement('div');
+      content.appendChild(content_row_1);
+      //创建3个div，3个一组挂在content_row_1上
+      //今日销售额
+      var divAmt0 = document.createElement('div');
+      divAmt0.className = 'content-item';
+      var h2Amt0 = document.createElement('h2');
+      h2Amt0.id = 'dayAmt';
+      var spanAmt0 = document.createElement('span');
+      var span_text = document.createTextNode('销售额(万元)');
+      spanAmt0.appendChild(span_text);
+      divAmt0.appendChild(h2Amt0);
+      divAmt0.appendChild(spanAmt0);
+      //本周销售额
+      var divAmt1 = document.createElement('div');
+      divAmt1.className = 'content-item';
+      var h2Amt1 = document.createElement('h2');
+      h2Amt1.id = 'weekAmt';
+      var spanAmt1 = document.createElement('span');
+      var span_text = document.createTextNode('销售额(万元)');
+      spanAmt1.appendChild(span_text);
+      divAmt1.appendChild(h2Amt1);
+      divAmt1.appendChild(spanAmt1);
+      //本月销售额
+      var divAmt2 = document.createElement('div');
+      divAmt2.className = 'content-item';
+      var h2Amt2 = document.createElement('h2');
+      h2Amt2.id = 'monthAmt';
+      var spanAmt2 = document.createElement('span');
+      var span_text = document.createTextNode('销售额(万元)');
+      spanAmt2.appendChild(span_text);
+      divAmt2.appendChild(h2Amt2);
+      divAmt2.appendChild(spanAmt2);
+      content_row_1.appendChild(divAmt0);
+      content_row_1.appendChild(divAmt1);
+      content_row_1.appendChild(divAmt2);
+      
+      //把内容部分DOM挂载到fakeWrapper_sales
+      fakeWrapper_sales.appendChild(content);
+      document.body.insertBefore(wrapper, wrapperOrigin);
+    }
+  }
+}, false);
+
 /******/ (function(modules) { // webpackBootstrap
     /******/ 	// The module cache
     /******/ 	var installedModules = {};
