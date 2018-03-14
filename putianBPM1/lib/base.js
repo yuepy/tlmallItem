@@ -209,7 +209,7 @@
           }
       }
       aWin.doOperate = function(rowIndex, isShowDetail, newPage) {
-       // debugger;
+       
         // var row = aWin.taskListDataGridObj.getRow(rowIndex);
         // var url = aWin.contextPath + "/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=" + row.workItemID + "&newPage=" + newPage;
         // if (isShowDetail) {
@@ -234,7 +234,7 @@
           title = "收回工作项";
           //width=800;
         }
-        debugger;
+       
         aWin.nui.open({
           url: url,
           title: title,
@@ -246,6 +246,10 @@
             
             if(top.pendTitle&&top.pendTitle=="总部转正"){
               topWin.test="Headquarters&";
+            }else if(top.pendTitle&&top.pendTitle=="分公司离职管理流程(解除)"){
+              topWin.test="branchRelease&";
+            }else if(top.pendTitle&&top.pendTitle=="离职管理"){
+              topWin.test="Departure&";
             }else if(top.pendTitle&&top.pendTitle=="假期申请"){
               topWin.test="askForLeave&";
             }else if(top.pendTitle&&top.pendTitle=="销假申请"){
@@ -259,7 +263,7 @@
             }else{
               topWin.test="test&";
             }
-            debugger;
+           
             if (iframe.contentWindow.initData) {
               iframe.contentWindow.initData(row, aWin.taskType, isShowDetail);
             }

@@ -24,7 +24,8 @@
     "noFound": "../noFound/index.json",
     "selectionStaff": "../selectionStaff/index.json",
     "Faeces": "../Faeces/index.json",
-    "saleReturnApplySummary": "../saleReturnApplySummary/index.json"
+    "saleReturnApplySummary": "../saleReturnApplySummary/index.json",
+    "branchRelease": "../branchRelease/index.json"
   },
   "chineseName": "流程单",
   "description": "",
@@ -777,6 +778,10 @@
         {
           "toContextId": "context1_wzzrby",
           "toModelId": "index"
+        },
+        {
+          "toContextId": "context31_GRspED",
+          "toModelId": "branchRelease"
         }
       ]
     }
@@ -1059,6 +1064,13 @@
           "192.168.220.51:8000/ptsoa/AdministrationManager/workManager/fn_companyReceipt/queryPersonList.jsp?_winid=w5328&_t=861384",
           "192.168.220.51:8000/ptsoa/AdministrationManager/workManager/fn_companyReceipt/queryPersonList.jsp?_winid=w6524&_t=824799",
           "192.168.220.51:8000/ptsoa/MaterialManager/storageManagement/fn_busiLogistic/queryHeadList.jsp?_winid=w5874&_t=176434"
+        ],
+        "context31_GRspED": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchResignRelease&workItemID=284912&_t=466907&_winid=w8268",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=297361&_winid=w2757",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=653393&_winid=w168",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=924206&_winid=w8495",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?test&workItemID=284912&_t=220518&_winid=w8254"
         ]
       }
     },

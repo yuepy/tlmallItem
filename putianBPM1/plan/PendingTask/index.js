@@ -72,6 +72,10 @@
       if (data.eventType == "clickBtn") {
         var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;if (title && title.indexOf("总部转正") !== -1) {
           top.pendTitle = "总部转正";
+        } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
+          top.pendTitle = "分公司离职管理流程(解除)";
+        } else if (title.indexOf("离职管理") !== -1) {
+          top.pendTitle = "离职管理";
         } else if (title.indexOf("假期申请") !== -1) {
           top.pendTitle = "假期申请";
         } else if (title.indexOf("销假申请") !== -1) {
