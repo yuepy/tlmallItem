@@ -72,6 +72,16 @@
       if (data.eventType == "clickBtn") {
         var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;if (title && title.indexOf("总部转正") !== -1) {
           top.pendTitle = "总部转正";
+        } else if (title.indexOf("假期申请") !== -1) {
+          top.pendTitle = "假期申请";
+        } else if (title.indexOf("销假申请") !== -1) {
+          top.pendTitle = "销假申请";
+        } else if (title.indexOf("忘打卡") !== -1) {
+          top.pendTitle = "忘打卡";
+        } else if (title.indexOf("加班申请") !== -1) {
+          top.pendTitle = "加班申请";
+        } else if (title.indexOf("外派探亲资格") !== -1) {
+          top.pendTitle = "外派探亲资格";
         } else {
           top.pendTitle = "第一期38个流程";
         }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();ysp.appMain.showLoading();
