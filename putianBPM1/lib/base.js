@@ -250,6 +250,8 @@
               topWin.test="branchRelease&";
             }else if(top.pendTitle&&top.pendTitle=="离职管理"){
               topWin.test="Departure&";
+            }else if(top.pendTitle&&top.pendTitle=="员工职位变动"){
+              topWin.test="positionChange&";
             }else if(top.pendTitle&&top.pendTitle=="假期申请"){
               topWin.test="askForLeave&";
             }else if(top.pendTitle&&top.pendTitle=="销假申请"){

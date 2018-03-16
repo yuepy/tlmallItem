@@ -76,6 +76,8 @@
           top.pendTitle = "分公司离职管理流程(解除)";
         } else if (title.indexOf("离职管理") !== -1) {
           top.pendTitle = "离职管理";
+        } else if (title.indexOf("员工职位变动") !== -1) {
+          top.pendTitle = "员工职位变动";
         } else if (title.indexOf("假期申请") !== -1) {
           top.pendTitle = "假期申请";
         } else if (title.indexOf("销假申请") !== -1) {
