@@ -2174,7 +2174,7 @@ div[data-ysp-modelid="addWork"]{
     line-height: 2.75rem;
     border-bottom: 1px solid #e6e6e6;
     flex-wrap: wrap;
-      span{
+      span.li-l,span.li-r{
         width: 50%;
         font-size: @fontBase;
         color:#000;
@@ -2184,6 +2184,9 @@ div[data-ysp-modelid="addWork"]{
         &:last-child{
         color: #414141;
         }
+      }
+      &:last-child{
+        border:none;
       }
     }
   }
@@ -2208,23 +2211,42 @@ div[data-ysp-modelid="addWork"]{
 
 /***********************************总部转正管理流程 end*******************************************/
 
-/***********************************离职管理（辞职） start*******************************************/
+/***********************************分公司离职管理（解除） start*******************************************/
 .ysp-turn-wrap{
   .ysp-turn-box{
     .ysp-txt-tip{
       color:red;
     }
-    ul li{
-     .ysp-area-tit{
+    ul{
+     .ysp-txt-tit{
       font-size: @fontBase;
       color:#000;
+      border:none;
     }
-      .ysp-area{
+    li.ysp-txt-con{
+      font-size: @fontBase;
+      color:#000;
+      line-height: 22px;
+      padding:10px 0;
+    }
+     .ysp-area{
         background-color:#fff;
         cursor:text;
+       color:#666;
       }
-    }
+    } 
     
+  }
+}
+
+/***********************************分公司离职管理（解除） end*******************************************/
+
+/***********************************离职管理（辞职） start*******************************************/
+.ysp-turn-wrap{
+  .ysp-turn-box{
+    .ysp-txt-tip{
+      color:red;
+    }    
   }
 }
 

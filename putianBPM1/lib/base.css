@@ -2120,7 +2120,8 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
   border-bottom: 1px solid #e6e6e6;
   flex-wrap: wrap;
 }
-.ysp-turn-wrap .ysp-turn-box ul li span {
+.ysp-turn-wrap .ysp-turn-box ul li span.li-l,
+.ysp-turn-wrap .ysp-turn-box ul li span.li-r {
   width: 50%;
   font-size: 14px;
   color: #000;
@@ -2128,8 +2129,12 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
   overflow-x: auto;
   white-space: nowrap;
 }
-.ysp-turn-wrap .ysp-turn-box ul li span:last-child {
+.ysp-turn-wrap .ysp-turn-box ul li span.li-l:last-child,
+.ysp-turn-wrap .ysp-turn-box ul li span.li-r:last-child {
   color: #414141;
+}
+.ysp-turn-wrap .ysp-turn-box ul li:last-child {
+  border: none;
 }
 .ysp-turn-wrap .ysp-turn-box p {
   font-size: 14px;
@@ -2147,16 +2152,29 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
   right: 10px;
 }
 /***********************************总部转正管理流程 end*******************************************/
-/***********************************离职管理（辞职） start*******************************************/
+/***********************************分公司离职管理（解除） start*******************************************/
 .ysp-turn-wrap .ysp-turn-box .ysp-txt-tip {
   color: red;
 }
-.ysp-turn-wrap .ysp-turn-box ul li .ysp-area-tit {
+.ysp-turn-wrap .ysp-turn-box ul .ysp-txt-tit {
   font-size: 14px;
   color: #000;
+  border: none;
 }
-.ysp-turn-wrap .ysp-turn-box ul li .ysp-area {
+.ysp-turn-wrap .ysp-turn-box ul li.ysp-txt-con {
+  font-size: 14px;
+  color: #000;
+  line-height: 22px;
+  padding: 10px 0;
+}
+.ysp-turn-wrap .ysp-turn-box ul .ysp-area {
   background-color: #fff;
   cursor: text;
+  color: #666;
+}
+/***********************************分公司离职管理（解除） end*******************************************/
+/***********************************离职管理（辞职） start*******************************************/
+.ysp-turn-wrap .ysp-turn-box .ysp-txt-tip {
+  color: red;
 }
 /***********************************离职管理（辞职） end*******************************************/
