@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "index": "../index/index.json",
-    "approvalTrack": "../approvalTrack/index.json"
+    "approvalTrack": "../approvalTrack/index.json",
+    "processForm": "../processForm/index.json"
   },
   "chineseName": "登陆",
   "description": "",
@@ -76,6 +77,10 @@
         {
           "toContextId": "context1_wzzrby",
           "toModelId": "index"
+        },
+        {
+          "toContextId": "context8_ddpRhS",
+          "toModelId": "processForm"
         }
       ]
     },

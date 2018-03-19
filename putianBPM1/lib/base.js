@@ -1,4 +1,5 @@
 (function(win, ysp) {
+
   var utils = ysp.utils;
   ysp.customHelper = {};
   var topWin = null;
@@ -209,7 +210,7 @@
           }
       }
       aWin.doOperate = function(rowIndex, isShowDetail, newPage) {
-       // debugger;
+       
         // var row = aWin.taskListDataGridObj.getRow(rowIndex);
         // var url = aWin.contextPath + "/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=" + row.workItemID + "&newPage=" + newPage;
         // if (isShowDetail) {
@@ -234,7 +235,7 @@
           title = "收回工作项";
           //width=800;
         }
-        debugger;
+       
         aWin.nui.open({
           url: url,
           title: title,
@@ -259,7 +260,7 @@
             }else{
               topWin.test="test&";
             }
-            debugger;
+           
             if (iframe.contentWindow.initData) {
               iframe.contentWindow.initData(row, aWin.taskType, isShowDetail);
             }
@@ -273,6 +274,8 @@
           }
         });
       }
+      /////////////////////////////////////
+      
       //#############################################override pc function end##################################
       
       

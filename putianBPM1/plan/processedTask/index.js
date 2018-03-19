@@ -65,7 +65,7 @@
       if (data.eventType == "clickBtn") {
         var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;if (title && title.indexOf("总部转正") !== -1) {
           top.pendTitle = "总部转正";
-        } else if (title.indexOf("假期申请") !== -1) {
+        } else if (title.indexOf("假期申请") !== -1 || title.indexOf("公出差申请") !== -1) {
           top.pendTitle = "假期申请";
         } else if (title.indexOf("销假申请") !== -1) {
           top.pendTitle = "销假申请";

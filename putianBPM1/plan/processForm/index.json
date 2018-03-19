@@ -23,11 +23,13 @@
     "PreviousDetails": "../PreviousDetails/index.json",
     "noFound": "../noFound/index.json",
     "selectionStaff": "../selectionStaff/index.json",
-    "Faeces": "../Faeces/index.json",
-    "saleReturnApplySummary": "../saleReturnApplySummary/index.json"
+    "saleReturnApplySummary": "../saleReturnApplySummary/index.json",
+    "forgetCard": "../forgetCard/index.json",
+    "askForLeave": "../askForLeave/index.json"
   },
   "chineseName": "流程单",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control19_s257i7": {
       "location": {
@@ -604,7 +606,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem.jsp\\?test&.*"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?test.*"
       ]
     }
   },
@@ -771,12 +773,16 @@
           "toContextId": "context8_ddpRhS"
         },
         {
-          "toContextId": "context6_pn3pJe",
-          "toModelId": "Faeces"
-        },
-        {
           "toContextId": "context1_wzzrby",
           "toModelId": "index"
+        },
+        {
+          "toContextId": "context28_MTJvP1",
+          "toModelId": "forgetCard"
+        },
+        {
+          "toContextId": "context31_NhG3EK",
+          "toModelId": "askForLeave"
         }
       ]
     }
@@ -1003,7 +1009,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=851963&_winid=w6196",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=623221&_winid=w674",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=288546&_winid=w5981",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=858941&_winid=w4257"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=858941&_winid=w4257",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=261676"
         ],
         "context10_zlXaLZ": [
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=867767&_winid=w6448",
