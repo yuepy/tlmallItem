@@ -29,6 +29,7 @@
 
     }
     */
+    
     getTableData: _getTableData,
     trim: _trim,
     forceMatchModels: _forceMatchModels,
@@ -36,6 +37,7 @@
     toPlan: _toPlan,
     
     openWindow: function(url, title) {
+ 
       if (typeof url !== "string") {
         return;
       }
@@ -86,6 +88,7 @@
       }
     },
     updateHistoryStateByTabId: function(tabId) {
+
       if(typeof tabId !== "string") return;
       var activeWin = ysp.runtime.Browser.activeBrowser && ysp.runtime.Browser.activeBrowser.contentWindow();
       var acitiveTab = activeWin.mini && activeWin.mini.get(tabId) && activeWin.mini.get(tabId).getActiveTab();
@@ -98,6 +101,7 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc) {
+    
      //加载过滤后的页面
       // if(aWin.location.href==("http://192.168.220.51:8000/ptsoa/skins/default/index.jsp"||"http://192.168.220.51:8000/ptsoa/skins/default/index.jsp")){
       //   console.log("a")
@@ -263,6 +267,8 @@
               topWin.test="addWork&";
             }else if (top.pendTitle&&top.pendTitle=="外派探亲资格") {
               topWin.test="visitRelative&";
+            }else if (top.pendTitle&&top.pendTitle=="员工录用") {
+              topWin.test="employeeHire&";
             }else{
               topWin.test="test&";
             }
@@ -304,6 +310,7 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
+   
       //aWin.alert=topWin.alert.bind(aWin);
       // 插入隐藏input的css
       var testCSS = doc.createElement('style');

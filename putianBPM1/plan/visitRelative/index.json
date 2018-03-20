@@ -3,6 +3,9 @@
   "id": "visitRelative",
   "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?visitRelative&workItemID=284828&_t=961345&_winid=w964",
   "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json"
+  },
   "chineseName": "外派探亲申请",
   "description": "",
   "controls": {
@@ -10,6 +13,10 @@
       "location": {
         "data": {
           "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -56,6 +63,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -87,6 +98,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -112,6 +127,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -147,6 +166,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -180,6 +203,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -201,6 +228,39 @@
       "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+    },
+    "control140_WT4rHc": {
+      "location": {
+        "data": {
+          "tagName": "TEXTAREA"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::TEXTAREA[@name=\"approval.content\"]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]/SPAN[1]/TEXTAREA[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control140_WT4rHc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,textbox,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -211,7 +271,8 @@
         "control112_O6qcS7",
         "control113_cchiCU",
         "control114_OlCFKb",
-        "control115_9ZIkTM"
+        "control115_9ZIkTM",
+        "control140_WT4rHc"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -224,6 +285,10 @@
       "toContexts": [
         {
           "toContextId": "context30_kSkk8F"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     }
@@ -308,6 +373,21 @@
           }
         },
         {
+          "id": "uiControl133_cHGd64",
+          "controlId": "control140_WT4rHc",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl133_cHGd64",
+                "onGetTemplate": "getTemplate_uiControl133_cHGd64"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl105_y3udSf",
           "controlId": "control112_O6qcS7",
           "display": {
@@ -337,7 +417,8 @@
       "contexts": {
         "context30_kSkk8F": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?visitRelative&workItemID=284828&_t=961345&_winid=w964",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?visitRelative&workItemID=284828&_t=362316&_winid=w9095"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?visitRelative&workItemID=284828&_t=362316&_winid=w9095",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?visitRelative&workItemID=284828&_t=532751&_winid=w9328"
         ]
       }
     },

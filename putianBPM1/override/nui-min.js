@@ -18304,6 +18304,7 @@ mini.extend(mini.Tabs, mini.Control, {
     }
     //overide 首页跳转处理zyt
     //this.setActiveIndex(0);
+    
     this.endUpdate()
   },
   getTabs: function() {

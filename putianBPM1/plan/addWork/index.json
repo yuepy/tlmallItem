@@ -233,6 +233,39 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+    },
+    "control139_n5Fi1T": {
+      "location": {
+        "data": {
+          "tagName": "TEXTAREA"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::TEXTAREA[@name=\"approval.content\"]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]/SPAN[1]/TEXTAREA[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control139_n5Fi1T"
+      },
+      "intendedRole": "custom",
+      "roles": "element,textbox,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -243,7 +276,8 @@
         "control106_p3Z6WF",
         "control107_2l9Rn0",
         "control108_VXyCSg",
-        "control109_QTeUHS"
+        "control109_QTeUHS",
+        "control139_n5Fi1T"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -350,6 +384,21 @@
           }
         },
         {
+          "id": "uiControl132_JNCXDg",
+          "controlId": "control139_n5Fi1T",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl132_JNCXDg",
+                "onGetTemplate": "getTemplate_uiControl132_JNCXDg"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl99_c90oEq",
           "controlId": "control106_p3Z6WF",
           "display": {
@@ -380,7 +429,8 @@
         "context29_qsgQH3": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=968891&_winid=w3766",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=724826&_winid=w9800",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=904753&_winid=w2845"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=904753&_winid=w2845",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284350&_t=549931&_winid=w6211"
         ]
       }
     },

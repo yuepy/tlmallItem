@@ -115,6 +115,8 @@
           top.pendTitle = "加班申请";
         } else if (title.indexOf("外派探亲资格") !== -1) {
           top.pendTitle = "外派探亲资格";
+        } else if (title.indexOf("员工录用") !== -1) {
+          top.pendTitle = "员工录用";
         } else {
           top.pendTitle = "第一期38个流程";
         }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();ysp.appMain.showLoading();

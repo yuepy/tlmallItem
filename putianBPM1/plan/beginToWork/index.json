@@ -231,6 +231,39 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+    },
+    "control141_TUMALw": {
+      "location": {
+        "data": {
+          "tagName": "TEXTAREA"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::TEXTAREA[@name=\"approval.content\"]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]/SPAN[1]/TEXTAREA[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control141_TUMALw"
+      },
+      "intendedRole": "custom",
+      "roles": "element,textbox,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -241,7 +274,8 @@
         "control95_Fs8F16",
         "control96_dSMcNW",
         "control97_pdThem",
-        "control98_mgKI7U"
+        "control98_mgKI7U",
+        "control141_TUMALw"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -384,6 +418,21 @@
           }
         },
         {
+          "id": "uiControl134_pT94RH",
+          "controlId": "control141_TUMALw",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl134_pT94RH",
+                "onGetTemplate": "getTemplate_uiControl134_pT94RH"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl88_mNZnsl",
           "controlId": "control95_Fs8F16",
           "display": {
@@ -420,7 +469,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284983",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=677503&_winid=w3638",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=514128&_winid=w9146",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=120692&_winid=w4572"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=120692&_winid=w4572",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284811&_t=239779&_winid=w2978"
         ],
         "context10_Hyn4t6": [
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
