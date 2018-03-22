@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "branchRelease": "../branchRelease/index.json",
-    "approvalTrack": "../approvalTrack/index.json"
+    "approvalTrack": "../approvalTrack/index.json",
+    "approveAdvice": "../approveAdvice/index.json"
   },
   "chineseName": "分公司离职（解除）",
   "description": "",
@@ -110,6 +111,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -168,6 +173,10 @@
         {
           "toContextId": "context7_6oqdXk",
           "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context10_Hyn4t6",
+          "toModelId": "approveAdvice"
         }
       ]
     },
@@ -292,7 +301,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=723880&_winid=w1901",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=775742&_winid=w6034",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=253541&_winid=w8810",
-          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp"
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=293720&_t=378266&_winid=w7942"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",
