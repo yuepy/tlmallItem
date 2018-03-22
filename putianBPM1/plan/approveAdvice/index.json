@@ -1,633 +1,620 @@
 {
-  "version": "0.1",
-  "id": "approveAdvice",
-  "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
-  "jsFile": "index.js",
-  "requires": {
-    "approveAdvice": "../approveAdvice/index.json",
-    "processForm": "../processForm/index.json",
-    "approvalTrack": "../approvalTrack/index.json",
-    "operationLog": "../operationLog/index.json",
-    "index": "../index/index.json",
-    "processMonitoring": "../processMonitoring/index.json",
-    "beginToWork": "../beginToWork/index.json",
-    "askForLeave": "../askForLeave/index.json"
-  },
-  "chineseName": "已办查看表单-审批意见",
-  "description": "",
-  "controls": {
-    "control23_P3UvaB": {
-      "location": {
-        "data": {
-          "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]",
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//TR",
-              "descendant::DIV[@id=\"_tabs\"]//TR"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control23_P3UvaB"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
+    "version": "0.1",
+    "id": "approveAdvice",
+    "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
+    "jsFile": "index.js",
+    "requires": {
+        "approveAdvice": "../approveAdvice/index.json",
+        "processForm": "../processForm/index.json",
+        "approvalTrack": "../approvalTrack/index.json",
+        "operationLog": "../operationLog/index.json",
+        "index": "../index/index.json",
+        "processMonitoring": "../processMonitoring/index.json",
+        "beginToWork": "../beginToWork/index.json",
+        "askForLeave": "../askForLeave/index.json"
     },
-    "control38_QOFFLs": {
-      "location": {
-        "data": {
-          "tagName": "IFRAME"
+    "chineseName": "已办查看表单-审批意见",
+    "description": "",
+    "controls": {
+        "control23_P3UvaB": {
+            "location": {
+                "data": {
+                    "tagName": "TR"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/word",
+                        "prob": 1,
+                        "value": [
+                            "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]",
+                            "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//TR",
+                            "descendant::DIV[@id=\"_tabs\"]//TR"
+                        ]
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]"
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control23_P3UvaB"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>"
         },
-        "userData": {
-          "data": [],
-          "force": false
+        "control38_QOFFLs": {
+            "location": {
+                "data": {
+                    "tagName": "IFRAME"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@class/word",
+                        "prob": 1,
+                        "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+                    },
+                    {
+                        "id": "elderLevel",
+                        "value": {
+                            "level": 0
+                        }
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control38_QOFFLs"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": ""
         },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control38_QOFFLs"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
+        "control52_ASAZ2n": {
+            "location": {
+                "data": {
+                    "tagName": "DIV"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/word",
+                        "prob": 2,
+                        "value": [
+                            "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]",
+                            "descendant::DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
+                        ]
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control52_ASAZ2n"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>"
+        },
+        "control24_HKVNpA": {
+            "location": {
+                "data": {
+                    "tagName": "BODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "ordinal": [
+                        0,
+                        7
+                    ],
+                    "value": "/HTML[1]/BODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control24_HKVNpA"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": ""
+        }
     },
-    "control52_ASAZ2n": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]",
-              "descendant::DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control52_ASAZ2n"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
-    },
-    "control24_HKVNpA": {
-      "location": {
-        "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              0,
-              7
+    "contexts": {
+        "context10_Hyn4t6": {
+            "controls": [
+                "control23_P3UvaB",
+                "control38_QOFFLs",
+                "control52_ASAZ2n",
+                "control24_HKVNpA"
             ],
-            "value": "/HTML[1]/BODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control24_HKVNpA"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    }
-  },
-  "contexts": {
-    "context10_Hyn4t6": {
-      "controls": [
-        "control23_P3UvaB",
-        "control38_QOFFLs",
-        "control52_ASAZ2n",
-        "control24_HKVNpA"
-      ],
-      "anchors": [],
-      "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/approval\\/approvalMsgList.*"
-      ]
-    }
-  },
-  "flows": {
-    "flow23_oNfNb6": {
-      "toContexts": [
-        {
-          "toContextId": "context10_Hyn4t6"
-        },
-        {
-          "toContextId": "context1_wzzrby",
-          "toModelId": "index"
+            "anchors": [],
+            "urlAnchor": [
+                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/approval\\/approvalMsgList.*"
+            ]
         }
-      ]
     },
-    "flow24_6Povfh": {
-      "fromContextId": "context10_Hyn4t6",
-      "fromAction": "doAction",
-      "fromControlId": "control23_P3UvaB",
-      "toContexts": [
-        {
-          "toContextId": "context10_Hyn4t6"
+    "flows": {
+        "flow23_oNfNb6": {
+            "toContexts": [{
+                    "toContextId": "context10_Hyn4t6"
+                },
+                {
+                    "toContextId": "context1_wzzrby",
+                    "toModelId": "index"
+                }
+            ]
         },
-        {
-          "toContextId": "context8_ddpRhS",
-          "toModelId": "processForm"
+        "flow24_6Povfh": {
+            "fromContextId": "context10_Hyn4t6",
+            "fromAction": "doAction",
+            "fromControlId": "control23_P3UvaB",
+            "toContexts": [{
+                    "toContextId": "context10_Hyn4t6"
+                },
+                {
+                    "toContextId": "context8_ddpRhS",
+                    "toModelId": "processForm"
+                },
+                {
+                    "toContextId": "context10_Hyn4t6",
+                    "toModelId": "approveAdvice"
+                },
+                {
+                    "toContextId": "context7_6oqdXk",
+                    "toModelId": "approvalTrack"
+                },
+                {
+                    "toContextId": "context9_vdtoHx",
+                    "toModelId": "operationLog"
+                },
+                {
+                    "toContextId": "context12_vlEzIS",
+                    "toModelId": "processMonitoring"
+                },
+                {
+                    "toContextId": "context27_OgI7Vc",
+                    "toModelId": "beginToWork"
+                },
+                {
+                    "toContextId": "context31_NhG3EK",
+                    "toModelId": "askForLeave"
+                }
+            ]
         },
-        {
-          "toContextId": "context10_Hyn4t6",
-          "toModelId": "approveAdvice"
+        "flow39_rLyIWP": {
+            "fromContextId": "context10_Hyn4t6",
+            "fromAction": "doAction",
+            "fromControlId": "control38_QOFFLs",
+            "toContexts": [{
+                    "toContextId": "context10_Hyn4t6"
+                },
+                {
+                    "toContextId": "context5_7wf9RT",
+                    "toModelId": "PendingTask"
+                },
+                {
+                    "toContextId": "context2_Z2voN1",
+                    "toModelId": "processedTask"
+                }
+            ]
         },
-        {
-          "toContextId": "context7_6oqdXk",
-          "toModelId": "approvalTrack"
+        "flow56_3FUmao": {
+            "fromContextId": "context7_6oqdXk",
+            "fromAction": "doAction",
+            "fromControlId": "control8_pOS228",
+            "toContexts": [{
+                "toContextId": "context10_Hyn4t6",
+                "toModelId": "approveAdvice"
+            }]
         },
-        {
-          "toContextId": "context9_vdtoHx",
-          "toModelId": "operationLog"
-        },
-        {
-          "toContextId": "context12_vlEzIS",
-          "toModelId": "processMonitoring"
-        },
-        {
-          "toContextId": "context27_OgI7Vc",
-          "toModelId": "beginToWork"
-        },
-        {
-          "toContextId": "context31_NhG3EK",
-          "toModelId": "askForLeave"
+        "flow30_RerZ5C": {
+            "fromContextId": "context10_Hyn4t6",
+            "fromAction": "doAction",
+            "fromControlId": "control52_ASAZ2n",
+            "toContexts": [{
+                "toContextId": "context10_Hyn4t6"
+            }]
         }
-      ]
     },
-    "flow39_rLyIWP": {
-      "fromContextId": "context10_Hyn4t6",
-      "fromAction": "doAction",
-      "fromControlId": "control38_QOFFLs",
-      "toContexts": [
-        {
-          "toContextId": "context10_Hyn4t6"
-        },
-        {
-          "toContextId": "context5_7wf9RT",
-          "toModelId": "PendingTask"
-        },
-        {
-          "toContextId": "context2_Z2voN1",
-          "toModelId": "processedTask"
+    "pages": {
+        "page10_TwD6TG": {
+            "contextId": "context10_Hyn4t6",
+            "layout": [{
+                    "id": "uiControl39_epB6aH",
+                    "controlId": "control38_QOFFLs",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl39_epB6aH",
+                                "onGetTemplate": "getTemplate_uiControl39_epB6aH"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl30_972bZc",
+                    "controlId": "control23_P3UvaB",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl30_972bZc",
+                                "onGetTemplate": "getTemplate_uiControl30_972bZc"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl49_PmNJ8d",
+                    "controlId": "control52_ASAZ2n",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl49_PmNJ8d",
+                                "onGetTemplate": "getTemplate_uiControl49_PmNJ8d"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl31_N4421V",
+                    "controlId": "control24_HKVNpA",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl31_N4421V",
+                                "onGetTemplate": "getTemplate_uiControl31_N4421V"
+                            }
+                        }
+                    }
+                }
+            ]
         }
-      ]
     },
-    "flow56_3FUmao": {
-      "fromContextId": "context7_6oqdXk",
-      "fromAction": "doAction",
-      "fromControlId": "control8_pOS228",
-      "toContexts": [
-        {
-          "toContextId": "context10_Hyn4t6",
-          "toModelId": "approveAdvice"
-        }
-      ]
-    },
-    "flow30_RerZ5C": {
-      "fromContextId": "context10_Hyn4t6",
-      "fromAction": "doAction",
-      "fromControlId": "control52_ASAZ2n",
-      "toContexts": [
-        {
-          "toContextId": "context10_Hyn4t6"
-        }
-      ]
-    }
-  },
-  "pages": {
-    "page10_TwD6TG": {
-      "contextId": "context10_Hyn4t6",
-      "layout": [
-        {
-          "id": "uiControl39_epB6aH",
-          "controlId": "control38_QOFFLs",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl39_epB6aH",
-                "onGetTemplate": "getTemplate_uiControl39_epB6aH"
-              }
+    "matchers": {
+        "page/title": {
+            "contexts": {
+                "context10_Hyn4t6": [
+                    "普元-用户机构及权限管理系统",
+                    "移动端页面"
+                ]
             }
-          }
         },
-        {
-          "id": "uiControl30_972bZc",
-          "controlId": "control23_P3UvaB",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl30_972bZc",
-                "onGetTemplate": "getTemplate_uiControl30_972bZc"
-              }
+        "page/urls": {
+            "contexts": {
+                "context10_Hyn4t6": [
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=995370&_winid=w9067",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=800127&_winid=w905",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=16722&_winid=w9244",
+                    "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=255043&_winid=w7093",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=217282&_winid=w3675",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=992012&_winid=w2989",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=33347&_winid=w4089",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=747101&_winid=w9319",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=973682&_winid=w475",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=592756&_winid=w5149",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=268824&_winid=w6369",
+                    "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&employeeHire"
+                ],
+                "context4_d60WvN": [
+                    "192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777",
+                    "192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w4155&_t=203204",
+                    "192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w9171&_t=387418"
+                ],
+                "context7_az83eO": [
+                    "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=522682&_winid=w2203",
+                    "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=533126&_winid=w9240",
+                    "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp"
+                ],
+                "context27_OgI7Vc": [
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=153633&_winid=w4752",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=377349&_winid=w8409",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=803887&_winid=w24",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=163367&_winid=w3219",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=771606&_winid=w5149",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284983"
+                ]
             }
-          }
         },
-        {
-          "id": "uiControl49_PmNJ8d",
-          "controlId": "control52_ASAZ2n",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl49_PmNJ8d",
-                "onGetTemplate": "getTemplate_uiControl49_PmNJ8d"
-              }
+        "page/ids": {
+            "contexts": {
+                "context10_Hyn4t6": [
+                    [
+                        "__modalmini-",
+                        "container",
+                        "contextMenu",
+                        "levsmenu",
+                        "logos",
+                        "mainTabs",
+                        "mini-",
+                        "mini-$",
+                        "mini-$body$",
+                        "tabsMenu",
+                        "wrapper"
+                    ],
+                    [
+                        "__modalmini-",
+                        "container",
+                        "contextMenu",
+                        "levsmenu",
+                        "logos",
+                        "mainTabs",
+                        "mini-",
+                        "mini-$",
+                        "mini-$body$",
+                        "tabsMenu",
+                        "toast",
+                        "wrapper"
+                    ],
+                    [
+                        "__modalmini-",
+                        "mini-",
+                        "mini-$",
+                        "mini-$body$",
+                        "tabs"
+                    ],
+                    [
+                        "__modalmini-",
+                        "mini-",
+                        "mini-$",
+                        "mini-$body$",
+                        "tabs",
+                        "toast"
+                    ]
+                ],
+                "context4_d60WvN": [
+                    [
+                        "__modalmini-",
+                        "container",
+                        "contextMenu",
+                        "levsmenu",
+                        "logos",
+                        "mainTabs",
+                        "mini-",
+                        "mini-$",
+                        "mini-$body$",
+                        "tabsMenu",
+                        "wrapper"
+                    ],
+                    [
+                        "__modalmini-",
+                        "container",
+                        "contextMenu",
+                        "levsmenu",
+                        "logos",
+                        "mainTabs",
+                        "mini-",
+                        "mini-$",
+                        "mini-$body$",
+                        "tabsMenu",
+                        "toast",
+                        "wrapper"
+                    ]
+                ]
             }
-          }
         },
-        {
-          "id": "uiControl31_N4421V",
-          "controlId": "control24_HKVNpA",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl31_N4421V",
-                "onGetTemplate": "getTemplate_uiControl31_N4421V"
-              }
+        "page/classes": {
+            "contexts": {
+                "context10_Hyn4t6": [
+                    [
+                        "J_tabClose",
+                        "J_tabCloseAll",
+                        "J_tabCloseOther",
+                        "J_tabShowActive",
+                        "active",
+                        "b",
+                        "divider",
+                        "dropdown",
+                        "dropdown-menu",
+                        "dropdown-menu-right",
+                        "fmain",
+                        "inactive",
+                        "last",
+                        "main",
+                        "menu",
+                        "menu-wrap",
+                        "mini-contextmenu",
+                        "mini-disabled",
+                        "mini-fit",
+                        "mini-menu",
+                        "mini-menu-border",
+                        "mini-menu-bottomArrow",
+                        "mini-menu-float",
+                        "mini-menu-inner",
+                        "mini-menu-toolbar",
+                        "mini-menu-topArrow",
+                        "mini-menuitem",
+                        "mini-menuitem-allow",
+                        "mini-menuitem-icon",
+                        "mini-menuitem-inner",
+                        "mini-menuitem-text",
+                        "mini-modal",
+                        "mini-panel",
+                        "mini-panel-body",
+                        "mini-panel-border",
+                        "mini-panel-footer",
+                        "mini-panel-header",
+                        "mini-panel-header-inner",
+                        "mini-panel-icon",
+                        "mini-panel-title",
+                        "mini-panel-toolbar",
+                        "mini-panel-viewport",
+                        "mini-resizer-trigger",
+                        "mini-separator",
+                        "mini-tab",
+                        "mini-tab-active",
+                        "mini-tab-text",
+                        "mini-tabs",
+                        "mini-tabs-body",
+                        "mini-tabs-body-top",
+                        "mini-tabs-bodys",
+                        "mini-tabs-buttons",
+                        "mini-tabs-firstSpace",
+                        "mini-tabs-header",
+                        "mini-tabs-header-top",
+                        "mini-tabs-headers",
+                        "mini-tabs-hideOverflow",
+                        "mini-tabs-lastSpace",
+                        "mini-tabs-leftButton",
+                        "mini-tabs-nav",
+                        "mini-tabs-plain",
+                        "mini-tabs-position-top",
+                        "mini-tabs-rightButton",
+                        "mini-tabs-scrollCt",
+                        "mini-tabs-space",
+                        "mini-tabs-table",
+                        "mini-tools",
+                        "mini-tools-close",
+                        "mini-tools-collapse",
+                        "mini-tools-max",
+                        "mini-tools-min",
+                        "mini-window",
+                        "mini-window-drag",
+                        "radius",
+                        "sidebar",
+                        "submain",
+                        "tcc",
+                        "wrap"
+                    ],
+                    [
+                        "mini-disabled",
+                        "mini-modal",
+                        "mini-panel",
+                        "mini-panel-body",
+                        "mini-panel-border",
+                        "mini-panel-footer",
+                        "mini-panel-header",
+                        "mini-panel-header-inner",
+                        "mini-panel-icon",
+                        "mini-panel-title",
+                        "mini-panel-toolbar",
+                        "mini-panel-viewport",
+                        "mini-resizer-trigger",
+                        "mini-tab",
+                        "mini-tab-active",
+                        "mini-tab-text",
+                        "mini-tabs",
+                        "mini-tabs-body",
+                        "mini-tabs-body-top",
+                        "mini-tabs-bodys",
+                        "mini-tabs-buttons",
+                        "mini-tabs-firstSpace",
+                        "mini-tabs-header",
+                        "mini-tabs-header-top",
+                        "mini-tabs-headers",
+                        "mini-tabs-hideOverflow",
+                        "mini-tabs-lastSpace",
+                        "mini-tabs-leftButton",
+                        "mini-tabs-nav",
+                        "mini-tabs-plain",
+                        "mini-tabs-position-top",
+                        "mini-tabs-rightButton",
+                        "mini-tabs-scrollCt",
+                        "mini-tabs-space",
+                        "mini-tabs-table",
+                        "mini-tools",
+                        "mini-tools-close",
+                        "mini-tools-collapse",
+                        "mini-tools-max",
+                        "mini-tools-min",
+                        "mini-window",
+                        "mini-window-drag"
+                    ]
+                ]
             }
-          }
+        },
+        "page/tagTriplets": {
+            "contexts": {
+                "context10_Hyn4t6": [
+                    [
+                        "-/-/DIV",
+                        "-/-/SCRIPT",
+                        "-/DIV/DIV",
+                        "-/DIV/IFRAME",
+                        "DIV/DIV/A",
+                        "DIV/DIV/B",
+                        "DIV/DIV/BR",
+                        "DIV/DIV/DIV",
+                        "DIV/DIV/IFRAME",
+                        "DIV/DIV/IMG",
+                        "DIV/DIV/SPAN",
+                        "DIV/DIV/TABLE",
+                        "DIV/DIV/UL",
+                        "DIV/SPAN/A",
+                        "DIV/TABLE/TBODY",
+                        "DIV/UL/LI",
+                        "LI/A/I",
+                        "LI/UL/LI",
+                        "SPAN/A/SPAN",
+                        "TABLE/TBODY/TR",
+                        "TBODY/TR/TD",
+                        "TD/DIV/DIV",
+                        "TR/TD/DIV",
+                        "TR/TD/SPAN",
+                        "UL/LI/A",
+                        "UL/LI/UL"
+                    ],
+                    [
+                        "-/-/DIV",
+                        "-/-/SCRIPT",
+                        "-/DIV/DIV",
+                        "-/DIV/IFRAME",
+                        "-/DIV/TABLE",
+                        "DIV/DIV/A",
+                        "DIV/DIV/DIV",
+                        "DIV/DIV/IFRAME",
+                        "DIV/DIV/SPAN",
+                        "DIV/DIV/TABLE",
+                        "DIV/TABLE/TBODY",
+                        "TABLE/TBODY/TR",
+                        "TBODY/TR/TD",
+                        "TD/DIV/DIV",
+                        "TR/TD/DIV",
+                        "TR/TD/SPAN"
+                    ]
+                ]
+            }
         }
-      ]
     }
-  },
-  "matchers": {
-    "page/title": {
-      "contexts": {
-        "context10_Hyn4t6": [
-          "普元-用户机构及权限管理系统",
-          "移动端页面"
-        ]
-      }
-    },
-    "page/urls": {
-      "contexts": {
-        "context10_Hyn4t6": [
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=995370&_winid=w9067",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=800127&_winid=w905",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=16722&_winid=w9244",
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=255043&_winid=w7093",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=217282&_winid=w3675",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=992012&_winid=w2989",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=33347&_winid=w4089",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=747101&_winid=w9319",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=973682&_winid=w475",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=592756&_winid=w5149",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=268824&_winid=w6369",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&employeeHire"
-        ],
-        "context4_d60WvN": [
-          "192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777",
-          "192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w4155&_t=203204",
-          "192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w9171&_t=387418"
-        ],
-        "context7_az83eO": [
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=522682&_winid=w2203",
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=533126&_winid=w9240",
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp"
-        ],
-        "context27_OgI7Vc": [
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=153633&_winid=w4752",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=377349&_winid=w8409",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=803887&_winid=w24",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=163367&_winid=w3219",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=771606&_winid=w5149",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284983"
-        ]
-      }
-    },
-    "page/ids": {
-      "contexts": {
-        "context10_Hyn4t6": [
-          [
-            "__modalmini-",
-            "container",
-            "contextMenu",
-            "levsmenu",
-            "logos",
-            "mainTabs",
-            "mini-",
-            "mini-$",
-            "mini-$body$",
-            "tabsMenu",
-            "wrapper"
-          ],
-          [
-            "__modalmini-",
-            "container",
-            "contextMenu",
-            "levsmenu",
-            "logos",
-            "mainTabs",
-            "mini-",
-            "mini-$",
-            "mini-$body$",
-            "tabsMenu",
-            "toast",
-            "wrapper"
-          ],
-          [
-            "__modalmini-",
-            "mini-",
-            "mini-$",
-            "mini-$body$",
-            "tabs"
-          ],
-          [
-            "__modalmini-",
-            "mini-",
-            "mini-$",
-            "mini-$body$",
-            "tabs",
-            "toast"
-          ]
-        ],
-        "context4_d60WvN": [
-          [
-            "__modalmini-",
-            "container",
-            "contextMenu",
-            "levsmenu",
-            "logos",
-            "mainTabs",
-            "mini-",
-            "mini-$",
-            "mini-$body$",
-            "tabsMenu",
-            "wrapper"
-          ],
-          [
-            "__modalmini-",
-            "container",
-            "contextMenu",
-            "levsmenu",
-            "logos",
-            "mainTabs",
-            "mini-",
-            "mini-$",
-            "mini-$body$",
-            "tabsMenu",
-            "toast",
-            "wrapper"
-          ]
-        ]
-      }
-    },
-    "page/classes": {
-      "contexts": {
-        "context10_Hyn4t6": [
-          [
-            "J_tabClose",
-            "J_tabCloseAll",
-            "J_tabCloseOther",
-            "J_tabShowActive",
-            "active",
-            "b",
-            "divider",
-            "dropdown",
-            "dropdown-menu",
-            "dropdown-menu-right",
-            "fmain",
-            "inactive",
-            "last",
-            "main",
-            "menu",
-            "menu-wrap",
-            "mini-contextmenu",
-            "mini-disabled",
-            "mini-fit",
-            "mini-menu",
-            "mini-menu-border",
-            "mini-menu-bottomArrow",
-            "mini-menu-float",
-            "mini-menu-inner",
-            "mini-menu-toolbar",
-            "mini-menu-topArrow",
-            "mini-menuitem",
-            "mini-menuitem-allow",
-            "mini-menuitem-icon",
-            "mini-menuitem-inner",
-            "mini-menuitem-text",
-            "mini-modal",
-            "mini-panel",
-            "mini-panel-body",
-            "mini-panel-border",
-            "mini-panel-footer",
-            "mini-panel-header",
-            "mini-panel-header-inner",
-            "mini-panel-icon",
-            "mini-panel-title",
-            "mini-panel-toolbar",
-            "mini-panel-viewport",
-            "mini-resizer-trigger",
-            "mini-separator",
-            "mini-tab",
-            "mini-tab-active",
-            "mini-tab-text",
-            "mini-tabs",
-            "mini-tabs-body",
-            "mini-tabs-body-top",
-            "mini-tabs-bodys",
-            "mini-tabs-buttons",
-            "mini-tabs-firstSpace",
-            "mini-tabs-header",
-            "mini-tabs-header-top",
-            "mini-tabs-headers",
-            "mini-tabs-hideOverflow",
-            "mini-tabs-lastSpace",
-            "mini-tabs-leftButton",
-            "mini-tabs-nav",
-            "mini-tabs-plain",
-            "mini-tabs-position-top",
-            "mini-tabs-rightButton",
-            "mini-tabs-scrollCt",
-            "mini-tabs-space",
-            "mini-tabs-table",
-            "mini-tools",
-            "mini-tools-close",
-            "mini-tools-collapse",
-            "mini-tools-max",
-            "mini-tools-min",
-            "mini-window",
-            "mini-window-drag",
-            "radius",
-            "sidebar",
-            "submain",
-            "tcc",
-            "wrap"
-          ],
-          [
-            "mini-disabled",
-            "mini-modal",
-            "mini-panel",
-            "mini-panel-body",
-            "mini-panel-border",
-            "mini-panel-footer",
-            "mini-panel-header",
-            "mini-panel-header-inner",
-            "mini-panel-icon",
-            "mini-panel-title",
-            "mini-panel-toolbar",
-            "mini-panel-viewport",
-            "mini-resizer-trigger",
-            "mini-tab",
-            "mini-tab-active",
-            "mini-tab-text",
-            "mini-tabs",
-            "mini-tabs-body",
-            "mini-tabs-body-top",
-            "mini-tabs-bodys",
-            "mini-tabs-buttons",
-            "mini-tabs-firstSpace",
-            "mini-tabs-header",
-            "mini-tabs-header-top",
-            "mini-tabs-headers",
-            "mini-tabs-hideOverflow",
-            "mini-tabs-lastSpace",
-            "mini-tabs-leftButton",
-            "mini-tabs-nav",
-            "mini-tabs-plain",
-            "mini-tabs-position-top",
-            "mini-tabs-rightButton",
-            "mini-tabs-scrollCt",
-            "mini-tabs-space",
-            "mini-tabs-table",
-            "mini-tools",
-            "mini-tools-close",
-            "mini-tools-collapse",
-            "mini-tools-max",
-            "mini-tools-min",
-            "mini-window",
-            "mini-window-drag"
-          ]
-        ]
-      }
-    },
-    "page/tagTriplets": {
-      "contexts": {
-        "context10_Hyn4t6": [
-          [
-            "-/-/DIV",
-            "-/-/SCRIPT",
-            "-/DIV/DIV",
-            "-/DIV/IFRAME",
-            "DIV/DIV/A",
-            "DIV/DIV/B",
-            "DIV/DIV/BR",
-            "DIV/DIV/DIV",
-            "DIV/DIV/IFRAME",
-            "DIV/DIV/IMG",
-            "DIV/DIV/SPAN",
-            "DIV/DIV/TABLE",
-            "DIV/DIV/UL",
-            "DIV/SPAN/A",
-            "DIV/TABLE/TBODY",
-            "DIV/UL/LI",
-            "LI/A/I",
-            "LI/UL/LI",
-            "SPAN/A/SPAN",
-            "TABLE/TBODY/TR",
-            "TBODY/TR/TD",
-            "TD/DIV/DIV",
-            "TR/TD/DIV",
-            "TR/TD/SPAN",
-            "UL/LI/A",
-            "UL/LI/UL"
-          ],
-          [
-            "-/-/DIV",
-            "-/-/SCRIPT",
-            "-/DIV/DIV",
-            "-/DIV/IFRAME",
-            "-/DIV/TABLE",
-            "DIV/DIV/A",
-            "DIV/DIV/DIV",
-            "DIV/DIV/IFRAME",
-            "DIV/DIV/SPAN",
-            "DIV/DIV/TABLE",
-            "DIV/TABLE/TBODY",
-            "TABLE/TBODY/TR",
-            "TBODY/TR/TD",
-            "TD/DIV/DIV",
-            "TR/TD/DIV",
-            "TR/TD/SPAN"
-          ]
-        ]
-      }
-    }
-  }
 }

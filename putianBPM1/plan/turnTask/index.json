@@ -6,7 +6,10 @@
   "requires": {
     "index": "../index/index.json",
     "turnTask": "../turnTask/index.json",
-    "approvalTrack": "../approvalTrack/index.json"
+    "approvalTrack": "../approvalTrack/index.json",
+    "approveAdvice": "../approveAdvice/index.json",
+    "operationLog": "../operationLog/index.json",
+    "PendingTask": "../PendingTask/index.json"
   },
   "chineseName": "总部转正管理",
   "description": "",
@@ -256,10 +259,10 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
     },
-    "control100_uqm5Ry": {
+    "control134_I0PEHI": {
       "location": {
         "data": {
-          "tagName": "IFRAME"
+          "tagName": "BODY"
         },
         "userData": {
           "data": [],
@@ -267,78 +270,20 @@
         },
         "locators": [
           {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "mini-2",
-              "tagName": "DIV",
-              "prefix": "",
-              "suffix": "/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]",
-              "ratio": 0.172
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
-          },
-          {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
+            "value": "/HTML[1]/BODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control100_uqm5Ry"
+        "onGetData": "getData_control134_I0PEHI"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control117_nXihKg": {
-      "location": {
-        "data": {
-          "tagName": "IFRAME"
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[1]/IFRAME[1]",
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//IFRAME",
-              "descendant::DIV[@id=\"_tabs\"]//IFRAME"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[1]/IFRAME[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control117_nXihKg"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -351,8 +296,7 @@
         "control97_9STenR",
         "control98_FveLSP",
         "control99_f09kdS",
-        "control100_uqm5Ry",
-        "control117_nXihKg"
+        "control134_I0PEHI"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -383,6 +327,10 @@
       "toContexts": [
         {
           "toContextId": "context27_AJKd80"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
         }
       ]
     },
@@ -425,6 +373,14 @@
         {
           "toContextId": "context7_6oqdXk",
           "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context10_Hyn4t6",
+          "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
         }
       ]
     }
@@ -479,16 +435,16 @@
           }
         },
         {
-          "id": "uiControl110_CLwUsn",
-          "controlId": "control117_nXihKg",
+          "id": "uiControl127_pu5O2E",
+          "controlId": "control134_I0PEHI",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl110_CLwUsn",
-                "onGetTemplate": "getTemplate_uiControl110_CLwUsn"
+                "onDoAction": "doAction_uiControl127_pu5O2E",
+                "onGetTemplate": "getTemplate_uiControl127_pu5O2E"
               }
             }
           }
@@ -504,21 +460,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl89_sfTUqQ",
                 "onGetTemplate": "getTemplate_uiControl89_sfTUqQ"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl93_8oSbAK",
-          "controlId": "control100_uqm5Ry",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl93_8oSbAK",
-                "onGetTemplate": "getTemplate_uiControl93_8oSbAK"
               }
             }
           }
@@ -598,7 +539,9 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=114806&_winid=w9011",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=834575&_winid=w5619",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=614333&_winid=w5987",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=279600&_t=279874&_winid=w3048"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=279600&_t=279874&_winid=w3048",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=843510&_winid=w7592",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=295321&_t=922300&_winid=w8784"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",

@@ -4,7 +4,9 @@
   "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=282432&_t=752400&_winid=w267",
   "jsFile": "index.js",
   "requires": {
-    "approvalTrack": "../approvalTrack/index.json"
+    "approvalTrack": "../approvalTrack/index.json",
+    "index": "../index/index.json",
+    "approveAdvice": "../approveAdvice/index.json"
   },
   "chineseName": "离职管理",
   "description": "",
@@ -150,6 +152,10 @@
         "data": {
           "tagName": "IFRAME"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -194,6 +200,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -219,6 +229,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -243,6 +257,10 @@
       "location": {
         "data": {
           "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -288,6 +306,10 @@
       "toContexts": [
         {
           "toContextId": "context32_FGBsnV"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     },
@@ -302,6 +324,10 @@
         {
           "toContextId": "context7_6oqdXk",
           "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context10_Hyn4t6",
+          "toModelId": "approveAdvice"
         }
       ]
     },
@@ -309,6 +335,16 @@
       "fromContextId": "context32_FGBsnV",
       "fromAction": "doAction",
       "fromControlId": "control124_4JK5eW",
+      "toContexts": [
+        {
+          "toContextId": "context32_FGBsnV"
+        }
+      ]
+    },
+    "flow117_kFT1MI": {
+      "fromContextId": "context32_FGBsnV",
+      "fromAction": "doAction",
+      "fromControlId": "control125_G6ySPX",
       "toContexts": [
         {
           "toContextId": "context32_FGBsnV"
@@ -457,7 +493,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=282432&_t=752400&_winid=w267",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=282432&_t=279766&_winid=w1382",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=282432&_t=64749&_winid=w387",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=282432&_t=877013&_winid=w680"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=282432&_t=877013&_winid=w680",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=293758&_t=556291&_winid=w7900"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",

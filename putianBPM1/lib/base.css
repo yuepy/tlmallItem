@@ -1593,12 +1593,14 @@ header .btn:hover {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+  vertical-align: top;
 }
 .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody .ysp-ExamineAndApprove-card .ysp-ExamineAndApprove-first > label > i {
   border-right: 4px solid #0088CD;
   font-size: 16px;
   margin-left: -10px;
   margin-right: 6px;
+  vertical-align: top;
 }
 .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody .ysp-ExamineAndApprove-card div {
   margin-bottom: 5px;
@@ -2176,8 +2178,17 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
   font-size: 14px;
   line-height: 22px;
 }
+.ysp-turn-wrap .ysp-turn-box .ysp-annex span {
+  color: blue;
+  text-decoration: underline;
+  padding-right: 20px;
+}
 .ysp-turn-wrap .ysp-turn-box .ysp-area-box {
   position: relative;
+}
+.ysp-turn-wrap .ysp-turn-box .ysp-area-box textarea {
+  background: #fff;
+  cursor: text;
 }
 .ysp-turn-wrap .ysp-turn-box .ysp_user_errorIcon {
   background: url(../local/img/error.png) no-repeat 0 0;
@@ -2212,5 +2223,9 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
 /***********************************离职管理（辞职） start*******************************************/
 .ysp-turn-wrap .ysp-turn-box .ysp-txt-tip {
   color: red;
+}
+.ysp-turn-wrap .ysp-turn-box textarea {
+  background: #fff;
+  cursor: text;
 }
 /***********************************离职管理（辞职） end*******************************************/
