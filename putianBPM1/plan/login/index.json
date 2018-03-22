@@ -4,9 +4,7 @@
   "targetURL": "http://192.168.220.51:8000/ptsoa/coframe/auth/login/login.jsp#",
   "jsFile": "index.js",
   "requires": {
-    "index": "../index/index.json",
-    "approvalTrack": "../approvalTrack/index.json",
-    "processForm": "../processForm/index.json"
+    "index": "../index/index.json"
   },
   "chineseName": "登陆",
   "description": "",
@@ -71,16 +69,8 @@
           "toContextId": "context0_c5DoXV"
         },
         {
-          "toContextId": "context7_6oqdXk",
-          "toModelId": "approvalTrack"
-        },
-        {
           "toContextId": "context1_wzzrby",
           "toModelId": "index"
-        },
-        {
-          "toContextId": "context8_ddpRhS",
-          "toModelId": "processForm"
         }
       ]
     },
@@ -227,6 +217,17 @@
             "validationCode$text",
             "validationCode_img",
             "warpper"
+          ],
+          [
+            "error",
+            "form",
+            "isValidationcode",
+            "original_url",
+            "password",
+            "userId",
+            "validationCode",
+            "validationCode_img",
+            "warpper"
           ]
         ]
       }
@@ -305,6 +306,20 @@
             "mini-textbox-focus",
             "mini-textbox-input",
             "wrap"
+          ],
+          [
+            "butext",
+            "error",
+            "foot",
+            "log",
+            "login-box",
+            "login-error",
+            "login-item",
+            "main",
+            "nui-hidden",
+            "nui-password",
+            "nui-textbox",
+            "wrap"
           ]
         ]
       }
@@ -355,6 +370,25 @@
             "P/SPAN/SPAN",
             "SPAN/SPAN/INPUT-password",
             "SPAN/SPAN/INPUT-text"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/IMG",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/P",
+            "DIV/FORM/BR",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-null",
+            "DIV/FORM/P",
+            "DIV/P/SPAN",
+            "FORM/DIV/BR",
+            "FORM/P/A",
+            "FORM/P/IMG",
+            "FORM/P/INPUT-null",
+            "FORM/P/INPUT-submit"
           ]
         ]
       }

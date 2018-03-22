@@ -11,7 +11,8 @@
     "processMonitoring": "../processMonitoring/index.json",
     "index": "../index/index.json",
     "beginToWork": "../beginToWork/index.json",
-    "askForLeave": "../askForLeave/index.json"
+    "askForLeave": "../askForLeave/index.json",
+    "employeeHire": "../employeeHire/index.json"
   },
   "chineseName": "审批轨迹",
   "description": "",
@@ -266,6 +267,10 @@
         {
           "toContextId": "context31_NhG3EK",
           "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context34_zEaLZG",
+          "toModelId": "employeeHire"
         }
       ]
     },
@@ -396,7 +401,8 @@
       "contexts": {
         "context7_6oqdXk": [
           "普元-用户机构及权限管理系统",
-          "移动端页面"
+          "移动端页面",
+          ""
         ]
       }
     },
@@ -414,7 +420,8 @@
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=309461&_winid=w4270",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=543146&_winid=w5333",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=704982&_winid=w9690",
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=566705&_winid=w4478"
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=566705&_winid=w4478",
+          ""
         ],
         "context8_ddpRhS": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861",
@@ -528,6 +535,9 @@
             "mini-$",
             "mini-$body$",
             "tabs"
+          ],
+          [
+            "mini-$body$"
           ]
         ]
       }
@@ -658,6 +668,10 @@
             "mini-tools-min",
             "mini-window",
             "mini-window-drag"
+          ],
+          [
+            "mini-tabs-body",
+            "mini-tabs-hideOverflow"
           ]
         ]
       }
@@ -710,6 +724,10 @@
             "TD/DIV/DIV",
             "TR/TD/DIV",
             "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/IFRAME"
           ]
         ]
       }

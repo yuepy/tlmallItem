@@ -5,10 +5,12 @@
   "jsFile": "index.js",
   "requires": {
     "index": "../index/index.json",
-    "approvalTrack": "../approvalTrack/index.json"
+    "approvalTrack": "../approvalTrack/index.json",
+    "approveAdvice": "../approveAdvice/index.json"
   },
   "chineseName": "员工录用",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control142_PgVaZf": {
       "location": {
@@ -301,6 +303,37 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control151_WNqb4b": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]",
+              "descendant::DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
+          }
+        ]
+      },
+      "intendedRole": "section",
+      "roles": "element,section",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "section"
     }
   },
   "contexts": {
@@ -313,11 +346,12 @@
         "control146_Cnw5RJ",
         "control147_6v85oq",
         "control148_3IHRTw",
-        "control149_N2i8LO"
+        "control149_N2i8LO",
+        "control151_WNqb4b"
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem.jsp\\?employeeHire&.*"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem.jsp\\?.*&employeeHire"
       ]
     }
   },
@@ -326,6 +360,10 @@
       "toContexts": [
         {
           "toContextId": "context34_zEaLZG"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     },
@@ -345,11 +383,38 @@
       "fromControlId": "control143_Osya0e",
       "toContexts": [
         {
-          "toContextId": "context34_zEaLZG"
+          "toContextId": "context34_zEaLZG",
+          "toModelId": "employeeHire"
         },
         {
           "toContextId": "context7_6oqdXk",
           "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context34_zEaLZG"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context10_Hyn4t6",
+          "toModelId": "approveAdvice"
+        }
+      ]
+    },
+    "flow115_vhn6XO": {
+      "fromContextId": "context34_zEaLZG",
+      "fromAction": "section",
+      "fromControlId": "control143_Osya0e",
+      "toContexts": [
+        {
+          "toContextId": "context7_6oqdXk",
+          "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     }
@@ -387,6 +452,18 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl144_SsGiNa",
+          "controlId": "control151_WNqb4b",
+          "display": {
+            "adapterId": "section",
+            "type": "section",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": []
         },
         {
           "id": "uiControl138_qXwcU2",
@@ -485,7 +562,8 @@
     "page/title": {
       "contexts": {
         "context34_zEaLZG": [
-          "移动端页面"
+          "移动端页面",
+          ""
         ]
       }
     },
@@ -494,7 +572,9 @@
         "context34_zEaLZG": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=836303&_winid=w784",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=796565&_winid=w6636",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=85&_winid=w4944"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=85&_winid=w4944",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=463124&_winid=w8269",
+          ""
         ]
       }
     },
@@ -507,6 +587,37 @@
             "mini-$",
             "mini-$body$",
             "tabs"
+          ],
+          [
+            "birthDay",
+            "birthDay$text",
+            "contactInfo",
+            "contactInfo$text",
+            "dtaffCode",
+            "dtaffCode$text",
+            "dtaffName",
+            "dtaffName$text",
+            "eduHigh",
+            "eduHigh$text",
+            "eduhighMajor",
+            "eduhighMajor$text",
+            "eduhighSchool",
+            "eduhighSchool$text",
+            "estimatedTime",
+            "estimatedTime$text",
+            "form",
+            "gender",
+            "gender$text",
+            "householdType",
+            "householdType$text",
+            "isshenpi",
+            "mini-$check",
+            "table",
+            "workingLife",
+            "workingLife$text"
+          ],
+          [
+            "mini-$body$"
           ]
         ]
       }
@@ -557,6 +668,34 @@
             "mini-tools-min",
             "mini-window",
             "mini-window-drag"
+          ],
+          [
+            "form_label",
+            "mini-checkbox",
+            "mini-checkbox-check",
+            "mini-disabled",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-resizer-trigger",
+            "mini-textbox",
+            "mini-textbox-border",
+            "mini-textbox-input",
+            "mini-textbox-readOnly",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "table"
+          ],
+          [
+            "mini-tabs-body",
+            "mini-tabs-hideOverflow"
           ]
         ]
       }
@@ -581,6 +720,26 @@
             "TD/DIV/DIV",
             "TR/TD/DIV",
             "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/DIV",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "SPAN/SPAN/INPUT-text",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/SPAN/INPUT-checkbox",
+            "TD/SPAN/INPUT-hidden",
+            "TD/SPAN/LABEL",
+            "TD/SPAN/SPAN",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/IFRAME"
           ]
         ]
       }

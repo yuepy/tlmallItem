@@ -3,7 +3,7 @@ bps = window['bps'] || {};
 /**
  * 基础能力
  */
-debugger;
+
 bps.apply= function(o,c){
 	
     if(!o||!c||typeof(c)!='object'){

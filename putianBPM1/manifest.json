@@ -2,7 +2,7 @@
   "type": "adapter",
   "short_name": "",
   "version": "0.0.1",
-  "runtime_version": "2.7.0-beta.12",
+  "runtime_version": "2.7.0",
   "description": "",
   "options": {
     "resource_filter": [
@@ -42,115 +42,134 @@
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/top\\.js"
       ],
-      "target_url": "override/top.js"
+      "target_url": "override/top.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/top.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/js\\/bizform\\.js"
       ],
-      "target_url": "override/bizform.js"
+      "target_url": "override/bizform.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/bizform/js/bizform.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js.*"
       ],
-      "target_url": "override/common.js"
+      "target_url": "override/common.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/bps/wfclient/common/js/common.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/themes\\/default\\/miniui\\.css.*"
       ],
-      "target_url": "override/miniui.css"
+      "target_url": "override/miniui.css",
+      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/themes/default/miniui.css.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/nui-min\\.js"
       ],
-      "target_url": "override/nui-min.js"
+      "target_url": "override/nui-min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/nui-min.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/jquery\\/jquery-1\\.6\\.2\\.min\\.js"
       ],
-      "target_url": "override/min.js"
+      "target_url": "override/min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/jquery/jquery-1.6.2.min.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/js\\/componentsCore\\.js"
       ],
-      "target_url": "override/componentsCore.js"
+      "target_url": "override/componentsCore.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/bizform/components/js/componentsCore.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/extend\\/js\\/componentsRecover\\.js"
       ],
-      "target_url": "override/comonentsRecover.js"
+      "target_url": "override/comonentsRecover.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/extend/js/componentsRecover.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/utils\\.js"
       ],
-      "target_url": "override/utils.js"
+      "target_url": "override/utils.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/utils.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/jSignature\\/js\\/jSignature\\.min\\.js"
       ],
-      "target_url": "override/jSignature.min.js"
+      "target_url": "override/jSignature.min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/jSignature/js/jSignature.min.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/jSignature\\/js\\/flashcanvas\\.min\\.js"
       ],
-      "target_url": "override/flashcanvas.min.js"
+      "target_url": "override/flashcanvas.min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/jSignature/js/flashcanvas.min.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/jqprint\\/jquery\\.jqprint-0\\.3\\.js"
       ],
-      "target_url": "override/jqprint-0.3.js"
+      "target_url": "override/jqprint-0.3.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/jqprint/jquery.jqprint-0.3.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/pingying\\.js"
       ],
-      "target_url": "override/pingying.js"
+      "target_url": "override/pingying.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/pingying.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/ajaxupload\\/ajaxfileupload\\.js"
       ],
-      "target_url": "override/ajaxfileupload.js"
+      "target_url": "override/ajaxfileupload.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/ajaxupload/ajaxfileupload.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/tools\\.min\\.js"
       ],
-      "target_url": "override/tools.min.js"
+      "target_url": "override/tools.min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/tools.min.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/uuid\\.js"
       ],
-      "target_url": "override/uuid.js"
+      "target_url": "override/uuid.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/uuid.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/loadAllUtils\\.js"
       ],
-      "target_url": "override/loadAllUtils.js"
+      "target_url": "override/loadAllUtils.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/loadAllUtils.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/fixheight\\.js"
       ],
-      "target_url": "override/fixheight.js"
+      "target_url": "override/fixheight.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/fixheight.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/echart\\/dist\\/echarts\\.js"
       ],
-      "target_url": "override/echarts.js"
+      "target_url": "override/echarts.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/echart/dist/echarts.js"
     }
   ],
   "adapter_urls": [
@@ -295,5 +314,5 @@
   "scope": "putianBPM1",
   "start_url": "enterplorer://putianBPM1/local/index.html",
   "fixed_version": 1,
-  "update_time": 1521508686878
+  "update_time": 1521682968279
 }

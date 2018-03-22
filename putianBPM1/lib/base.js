@@ -95,19 +95,12 @@
       if (acitiveTab) {
         var url = acitiveTab.url;
         var topWin = ysp.customHelper.getTop(activeWin);
-        topWin.history.pushState(url, null, url);
+        //topWin.history.pushState(url, null, url);
       }
     },
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc) {
-    
-     //加载过滤后的页面
-      // if(aWin.location.href==("http://192.168.220.51:8000/ptsoa/skins/default/index.jsp"||"http://192.168.220.51:8000/ptsoa/skins/default/index.jsp")){
-      //   console.log("a")
-      //   aWin.location.href="http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
-      //   console.log("xian")
-      // }
       //用于作用于原网页第一次进入时的点击;
       if(aWin && doc){
         if(doc.querySelector('#workItemTabs')){
@@ -160,12 +153,20 @@
 			
       /*****************************************/
       var topWin = ysp.customHelper.getTop(aWin);
-      topWin.history.pushState(aWin.location.href, null, aWin.location.href);
+      var url = ysp.runtime.Browser.activeBrowser && ysp.runtime.Browser.activeBrowser.contentWindow.location.href;
+      //var tab = aWin.mini && (aWin.mini.get('_tabs') || aWin.mini.get('tabs'));
+      //if(tab && tab.getActiveTab()){
+         //if(top.pendTitle=="员工录用"){
+         	//	tab.getActiveTab().url += '&employeeHire';    
+         //}else {
+            //tab.getActiveTab().url += "&test";
+         //}
+         //topWin.history.pushState(tab.getActiveTab().url || aWin.location.href, null, tab.getActiveTab().url || aWin.location.href);
+      //}
+      //if(aWin.location.href.indexOf('pendingTask') !== -1)
+       // topWin.history.pushState(url,null,url);
+      
       //#############################################override pc function start##################################
-      // aWin.mini && (aWin.mini._createIframe_ = aWin.mini.createIFrame);
-      // aWin.mini.createIFrame = function(d, k, b){
-      //   aWin.mini._createIframe_(d, k, b);
-      // }
       if(aWin.mini && aWin.mini.Tabs && aWin.mini.Tabs.prototype.__OnClick){
           aWin.mini.Tabs.prototype.__OnClick = function(c) {
               var a = this._getTabByEvent(c);
@@ -186,7 +187,7 @@
                           b._tryActiveTab(a);
                           //如果地址已经加载过，也需要存储到state中 @todo override
                           var topWin = ysp.customHelper.getTop(aWin);
-                          topWin.history.pushState(a.url, null, a.url);
+                         //topWin.history.pushState(a.url, null, a.url);
                           if (a.refreshOnClick && a.url == e) {  
                               b.reloadTab(a)
                           }
@@ -249,29 +250,29 @@
           onload: function() {
             var iframe = this.getIFrameEl();
             
-            if(top.pendTitle&&top.pendTitle=="总部转正"){
-              topWin.test="Headquarters&";
-            }else if(top.pendTitle&&top.pendTitle=="分公司离职管理流程(解除)"){
-              topWin.test="branchRelease&";
-            }else if(top.pendTitle&&top.pendTitle=="离职管理"){
-              topWin.test="Departure&";
-            }else if(top.pendTitle&&top.pendTitle=="员工职位变动"){
-              topWin.test="positionChange&";
-            }else if(top.pendTitle&&top.pendTitle=="假期申请"){
-              topWin.test="askForLeave&";
-            }else if(top.pendTitle&&top.pendTitle=="销假申请"){
-              topWin.test="beginToWork&";
-            }else if(top.pendTitle&&top.pendTitle=="忘打卡"){
-              topWin.test="forgetCard&";
-            }else if (top.pendTitle&&top.pendTitle=="加班申请") {
-              topWin.test="addWork&";
-            }else if (top.pendTitle&&top.pendTitle=="外派探亲资格") {
-              topWin.test="visitRelative&";
-            }else if (top.pendTitle&&top.pendTitle=="员工录用") {
-              topWin.test="employeeHire&";
-            }else{
-              topWin.test="test&";
-            }
+            // if(top.pendTitle&&top.pendTitle=="总部转正"){
+            //   topWin.test="Headquarters&";
+            // }else if(top.pendTitle&&top.pendTitle=="分公司离职管理流程(解除)"){
+            // topWin.test="branchRelease&";
+            // }else if(top.pendTitle&&top.pendTitle=="离职管理"){
+            // topWin.test="Departure&";
+            // }else if(top.pendTitle&&top.pendTitle=="员工职位变动"){
+            // topWin.test="positionChange&";
+            // }else if(top.pendTitle&&top.pendTitle=="假期申请"){
+            // topWin.test="askForLeave&";
+            // }else if(top.pendTitle&&top.pendTitle=="销假申请"){
+            //   topWin.test="beginToWork&";
+            // }else if(top.pendTitle&&top.pendTitle=="忘打卡"){
+            //   topWin.test="forgetCard&";
+            // }else if (top.pendTitle&&top.pendTitle=="加班申请") {
+            //   topWin.test="addWork&";
+            // }else if (top.pendTitle&&top.pendTitle=="外派探亲资格") {
+            //   topWin.test="visitRelative&";
+            // }else if (top.pendTitle&&top.pendTitle=="员工录用") {
+            //   topWin.test="employeeHire&";
+            // }else{
+            //   topWin.test="test&";
+            // }
            
             if (iframe.contentWindow.initData) {
               iframe.contentWindow.initData(row, aWin.taskType, isShowDetail);
@@ -423,7 +424,7 @@
                   }
                 }
               });
-            };
+           };
             var mo = new MutationObserver(callback);
             var option = {
               'attributes': true,
