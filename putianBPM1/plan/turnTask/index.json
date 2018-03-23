@@ -9,7 +9,8 @@
     "approvalTrack": "../approvalTrack/index.json",
     "approveAdvice": "../approveAdvice/index.json",
     "operationLog": "../operationLog/index.json",
-    "PendingTask": "../PendingTask/index.json"
+    "PendingTask": "../PendingTask/index.json",
+    "processedTask": "../processedTask/index.json"
   },
   "chineseName": "总部转正管理",
   "description": "",
@@ -300,7 +301,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem.jsp\\?Headquarters&.*"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem.jsp\\?.*&turnTask"
       ]
     }
   },
@@ -331,6 +332,10 @@
         {
           "toContextId": "context5_7wf9RT",
           "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
         }
       ]
     },
@@ -541,7 +546,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=614333&_winid=w5987",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=279600&_t=279874&_winid=w3048",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=843510&_winid=w7592",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=295321&_t=922300&_winid=w8784"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=295321&_t=922300&_winid=w8784",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278652&turnTask"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",
