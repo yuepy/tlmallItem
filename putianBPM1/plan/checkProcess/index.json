@@ -6,7 +6,9 @@
   "requires": {
     "checkProcess": "../checkProcess/index.json",
     "index": "../index/index.json",
-    "processedTask": "../processedTask/index.json"
+    "processedTask": "../processedTask/index.json",
+    "turnTask": "../turnTask/index.json",
+    "departure": "../departure/index.json"
   },
   "chineseName": "已办查看流程图",
   "description": "",
@@ -211,6 +213,14 @@
       "toContexts": [
         {
           "toContextId": "context11_uaf3pg"
+        },
+        {
+          "toContextId": "context27_AJKd80",
+          "toModelId": "turnTask"
+        },
+        {
+          "toContextId": "context32_FGBsnV",
+          "toModelId": "departure"
         }
       ]
     },

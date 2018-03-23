@@ -200,7 +200,14 @@ div[data-componentsid="uiControl33_kvqWF9"],
 div[data-componentsid="uiControl29_BmXPdq"],
 div[data-componentsid="uiControl3_n5Dv7n"],
 div[data-componentsid="uiControl43_xd0XdW"],
-div[data-componentsid="uiControl56_cTNTVK"] {
+div[data-componentsid="uiControl56_cTNTVK"],
+div[data-componentsid="uiControl86_0ApXni"],
+div[data-componentsid="uiControl92_MEbWbI"],
+div[data-componentsid="uiControl111_Xynd2K"],
+div[data-componentsid="uiControl16_881IBP"],
+div[data-componentsid="uiControl97_e12FE4"],
+div[data-componentsid="uiControl103_Wr3QFw"],
+div[data-componentsid="uiControl135_fa0qxg"] {
   height: 44px;
 }
 header {
@@ -281,6 +288,14 @@ header .btn:hover {
   font-size: 14px;
   color: #888580;
   width: 30%;
+}
+.ysp-fallbackStrategy .ysp-fallbackStrategy-cont div .yesOrno {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  height: 145px;
+  line-height: 145px;
+  color: #000;
 }
 .ysp-fallbackStrategy .ysp-fallbackStrategy-cont div label {
   font-size: 14px;
@@ -1578,12 +1593,14 @@ header .btn:hover {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+  vertical-align: top;
 }
 .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody .ysp-ExamineAndApprove-card .ysp-ExamineAndApprove-first > label > i {
   border-right: 4px solid #0088CD;
   font-size: 16px;
   margin-left: -10px;
   margin-right: 6px;
+  vertical-align: top;
 }
 .ysp-ExamineAndApprove .ysp-ExamineAndApprove-cardBody .ysp-ExamineAndApprove-card div {
   margin-bottom: 5px;
@@ -2004,3 +2021,211 @@ div[data-ysp-modelid='approveAdvice'] .ysp-ExamineAndApprove .ysp-ExamineAndAppr
 div[data-ysp-modelid="saleReturnApplySummary"] .ysp-flowsheet {
   margin-top: 25px;
 }
+/*--------------------忘打卡------------------------*/
+div[data-ysp-modelid="forgetCard"] .ysp-Approval-opinions,
+div[data-ysp-modelid="askForLeave"] .ysp-Approval-opinions,
+div[data-ysp-modelid="addWork"] .ysp-Approval-opinions,
+div[data-ysp-modelid="visitRelative"] .ysp-Approval-opinions,
+div[data-ysp-modelid="beginToWork"] .ysp-Approval-opinions,
+div[data-ysp-modelid="employeeHire"] .ysp-Approval-opinions {
+  margin: 10px;
+}
+.ysp_hrDownload {
+  width: 100%;
+  color: #458ACF;
+  font-size: 14px;
+}
+/*--------------------员工录用------------------------*/
+.remark {
+  border: 1px solid #ddd;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 5px;
+  resize: none;
+}
+/*--------------------销假申请------------------------*/
+div[data-ysp-modelid="beginToWork"] .ysp-total {
+  margin: 10px;
+}
+.ysp_hrDetailInfo_title {
+  border-left: 4px solid #0e90d2;
+  padding-left: 5px;
+}
+.ysp_hrDetailInfo {
+  background: #fff;
+  margin: 0	10px;
+}
+.ysp_hrDetailInfo .ysp_hrDetailInfo_content {
+  padding: 0.75rem 0.75rem;
+}
+.ysp_hrDetailInfo .ysp_hrDetailInfo_content .ysp_border {
+  display: flex;
+  justify-content: space-between;
+  min-height: 2.75rem;
+  line-height: 2.75rem;
+  border-bottom: 1px solid #e6e6e6;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.ysp_hrDetailInfo .ysp_hrDetailInfo_content .ysp_title {
+  width: 50%;
+  font-size: 14px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.ysp_hrDetailInfo .ysp_hrDetailInfo_content .ysp_content {
+  font-size: 14px;
+  color: #414141;
+  text-align: right;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+/*--------------------加班申请------------------------*/
+div[data-ysp-modelid="addWork"] .ysp-flowsheet,
+div[data-ysp-modelid="askForLeave"] .ysp-flowsheet,
+div[data-ysp-modelid="beginToWork"] .ysp-flowsheet {
+  margin-bottom: 10px;
+  background: #fff;
+}
+div[data-ysp-modelid="addWork"] .ysp-flowsheet {
+  margin-bottom: 10px;
+  background: #fff;
+}
+div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp-flowsheet-twoPart-card {
+  margin: 10px;
+  margin-top: 0;
+}
+div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_border {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  min-height: 2.75rem;
+  line-height: 2.75rem;
+  border-bottom: 1px solid #e6e6e6;
+  flex-wrap: wrap;
+  width: 100%;
+}
+div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_title {
+  width: 50%;
+  font-size: 14px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
+  font-size: 14px;
+  color: #414141;
+  text-align: right;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+/***********************************总部转正管理流程 start*******************************************/
+.ysp-turn-wrap {
+  background: #f4f4f4;
+}
+.ysp-turn-wrap .ysp-turn-box {
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  background: #fff;
+}
+.ysp-turn-wrap .ysp-turn-box h2 {
+  font-size: 16px;
+  font-weight: normal;
+  min-height: 2.75rem;
+  line-height: 2.75rem;
+  position: relative;
+}
+.ysp-turn-wrap .ysp-turn-box h2 em {
+  color: red;
+}
+.ysp-turn-wrap .ysp-turn-box h2 i.ysp-tit-bar {
+  display: inline-block;
+  background: #0088E9;
+  width: 5px;
+  height: 20px;
+  position: absolute;
+  top: 11px;
+  left: -12px;
+}
+.ysp-turn-wrap .ysp-turn-box ul li {
+  display: flex;
+  justify-content: space-between;
+  min-height: 2.75rem;
+  line-height: 2.75rem;
+  border-bottom: 1px solid #e6e6e6;
+  flex-wrap: wrap;
+}
+.ysp-turn-wrap .ysp-turn-box ul li span.li-l,
+.ysp-turn-wrap .ysp-turn-box ul li span.li-r {
+  width: 50%;
+  font-size: 14px;
+  color: #000;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.ysp-turn-wrap .ysp-turn-box ul li span.li-l:last-child,
+.ysp-turn-wrap .ysp-turn-box ul li span.li-r:last-child {
+  color: #414141;
+}
+.ysp-turn-wrap .ysp-turn-box ul li:last-child {
+  border: none;
+}
+.ysp-turn-wrap .ysp-turn-box p {
+  font-size: 14px;
+  line-height: 22px;
+}
+.ysp-turn-wrap .ysp-turn-box .ysp-annex span {
+  color: blue;
+  text-decoration: underline;
+  padding-right: 20px;
+}
+.ysp-turn-wrap .ysp-turn-box .ysp-area-box {
+  position: relative;
+}
+.ysp-turn-wrap .ysp-turn-box .ysp-area-box textarea {
+  background: #fff;
+  cursor: text;
+}
+.ysp-turn-wrap .ysp-turn-box .ysp_user_errorIcon {
+  background: url(../local/img/error.png) no-repeat 0 0;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+/***********************************总部转正管理流程 end*******************************************/
+/***********************************分公司离职管理（解除） start*******************************************/
+.ysp-turn-wrap .ysp-turn-box .ysp-txt-tip {
+  color: red;
+}
+.ysp-turn-wrap .ysp-turn-box ul .ysp-txt-tit {
+  font-size: 14px;
+  color: #000;
+  border: none;
+}
+.ysp-turn-wrap .ysp-turn-box ul li.ysp-txt-con {
+  font-size: 14px;
+  color: #000;
+  line-height: 22px;
+  padding: 10px 0;
+}
+.ysp-turn-wrap .ysp-turn-box ul .ysp-area {
+  background-color: #fff;
+  cursor: text;
+  color: #666;
+}
+/***********************************分公司离职管理（解除） end*******************************************/
+/***********************************离职管理（辞职） start*******************************************/
+.ysp-turn-wrap .ysp-turn-box .ysp-txt-tip {
+  color: red;
+}
+.ysp-turn-wrap .ysp-turn-box textarea {
+  background: #fff;
+  cursor: text;
+}
+/***********************************离职管理（辞职） end*******************************************/

@@ -9,7 +9,10 @@
     "processForm": "../processForm/index.json",
     "operationLog": "../operationLog/index.json",
     "processMonitoring": "../processMonitoring/index.json",
-    "index": "../index/index.json"
+    "index": "../index/index.json",
+    "beginToWork": "../beginToWork/index.json",
+    "askForLeave": "../askForLeave/index.json",
+    "employeeHire": "../employeeHire/index.json"
   },
   "chineseName": "审批轨迹",
   "description": "",
@@ -222,6 +225,10 @@
         {
           "toContextId": "context1_wzzrby",
           "toModelId": "index"
+        },
+        {
+          "toContextId": "context7_6oqdXk",
+          "toModelId": "approvalTrack"
         }
       ]
     },
@@ -252,6 +259,22 @@
         {
           "toContextId": "context12_vlEzIS",
           "toModelId": "processMonitoring"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context27_OgI7Vc",
+          "toModelId": "beginToWork"
+        },
+        {
+          "toContextId": "context31_NhG3EK",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context34_zEaLZG",
+          "toModelId": "employeeHire"
         }
       ]
     },
@@ -382,7 +405,8 @@
       "contexts": {
         "context7_6oqdXk": [
           "普元-用户机构及权限管理系统",
-          "移动端页面"
+          "移动端页面",
+          ""
         ]
       }
     },
@@ -396,7 +420,87 @@
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=551154&_winid=w7093",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=814826&_winid=w6192",
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=218360&_winid=w4089"
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=218360&_winid=w4089",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=309461&_winid=w4270",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=543146&_winid=w5333",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=704982&_winid=w9690",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=566705&_winid=w4478",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=455375&_winid=w9097",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&monthChange"
+        ],
+        "context8_ddpRhS": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=477900&_winid=w9935",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=1541&_t=522235&_winid=w8657",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=202877&_winid=w5256",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=723336&_winid=w4279",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=1541&_t=908731&_winid=w1877",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=1541&_t=863827&_winid=w766",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4206&_t=405075&_winid=w1000",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4206&_t=589498&_winid=w6747",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4206&_t=558516&_winid=w9244",
+          "192.168.220.51:8000/ptsoa/widget/orgUser/user_select.jsp?_winid=w713&_t=575767",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4038",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5293&_t=260700&_winid=w328",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10607&_t=189335&_winid=w6376",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10607&_t=214522&_winid=w6563",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10607",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5392&_t=416284&_winid=w1554",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5392&_t=574536&_winid=w5910",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=2550&_t=159766&_winid=w507",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5553&_t=983208&_winid=w7093",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5360&_t=456793&_winid=w5637",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=6172",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=6477&_t=124085&_winid=w9181",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7183&_t=998668&_winid=w523",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=6674&_t=954885&_winid=w9417",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=8216&_t=900167&_winid=w4860",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=8621&_t=347788&_winid=w9524",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10016&_t=243221&_winid=w463",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=13253&_t=616111&_winid=w153",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=11919&_t=236544&_winid=w2199",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=14231&_t=209163&_winid=w4183",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=16554&_t=788777&_winid=w415",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=17369&_t=748670&_winid=w6036",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=39018&_winid=w7569",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=61327&_winid=w1669",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=806504&_winid=w9498",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=758945&_winid=w9785",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=258227&_winid=w8309",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4062",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7768&_t=628055&_winid=w2803",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=9684&_t=812889&_winid=w2469",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=9987&_t=96064&_winid=w2680",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=12270&_t=720560&_winid=w8194",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=329870&_winid=w9275",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=851963&_winid=w6196",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=623221&_winid=w674",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=288546&_winid=w5981",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=858941&_winid=w4257",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=261676"
+        ],
+        "context27_OgI7Vc": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=153633&_winid=w4752",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=377349&_winid=w8409",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=803887&_winid=w24",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=163367&_winid=w3219",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=771606&_winid=w5149",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284983",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=677503&_winid=w3638",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=514128&_winid=w9146",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=120692&_winid=w4572",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=288721"
+        ],
+        "context31_NhG3EK": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=288721&_t=9630&_winid=w55",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=288721&_t=709052&_winid=w3259",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=288721&_t=405534&_winid=w9562",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=288721&_t=252974&_winid=w1501",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=288721",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=290706&_t=187115&_winid=w1403",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=293803"
         ]
       }
     },
@@ -436,6 +540,9 @@
             "mini-$",
             "mini-$body$",
             "tabs"
+          ],
+          [
+            "mini-$body$"
           ]
         ]
       }
@@ -566,6 +673,10 @@
             "mini-tools-min",
             "mini-window",
             "mini-window-drag"
+          ],
+          [
+            "mini-tabs-body",
+            "mini-tabs-hideOverflow"
           ]
         ]
       }
@@ -618,6 +729,10 @@
             "TD/DIV/DIV",
             "TR/TD/DIV",
             "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/IFRAME"
           ]
         ]
       }

@@ -171,7 +171,7 @@ html,body{
 }
 ///***********************提示信息样式end*******************************////
 /**********************头部固定定位start*********************************/
-div[data-componentsid="uiControl1_zxy4y7"],div[data-componentsid="uiControl21_n99o77"],div[data-componentsid="uiControl37_FOWagD"],div[data-componentsid="uiControl38_eOJBRR"],div[data-componentsid="uiControl39_epB6aH"],div[data-componentsid="uiControl40_GQGtuf"],div[data-componentsid="uiControl41_AceN2k"],div[data-componentsid="uiControl19_KXCuJA"],div[data-componentsid="uiControl29_Ob6rJe"],div[data-componentsid="uiControl33_kvqWF9"],div[data-componentsid="uiControl29_BmXPdq"],div[data-componentsid="uiControl3_n5Dv7n"],div[data-componentsid="uiControl43_xd0XdW"],div[data-componentsid="uiControl56_cTNTVK"]{
+div[data-componentsid="uiControl1_zxy4y7"],div[data-componentsid="uiControl21_n99o77"],div[data-componentsid="uiControl37_FOWagD"],div[data-componentsid="uiControl38_eOJBRR"],div[data-componentsid="uiControl39_epB6aH"],div[data-componentsid="uiControl40_GQGtuf"],div[data-componentsid="uiControl41_AceN2k"],div[data-componentsid="uiControl19_KXCuJA"],div[data-componentsid="uiControl29_Ob6rJe"],div[data-componentsid="uiControl33_kvqWF9"],div[data-componentsid="uiControl29_BmXPdq"],div[data-componentsid="uiControl3_n5Dv7n"],div[data-componentsid="uiControl43_xd0XdW"],div[data-componentsid="uiControl56_cTNTVK"],div[data-componentsid="uiControl86_0ApXni"],div[data-componentsid="uiControl92_MEbWbI"],div[data-componentsid="uiControl111_Xynd2K"],div[data-componentsid="uiControl16_881IBP"],div[data-componentsid="uiControl97_e12FE4"],div[data-componentsid="uiControl103_Wr3QFw"],div[data-componentsid="uiControl135_fa0qxg"]{
   height: 44px;
 }
 header{
@@ -272,6 +272,14 @@ header{
         font-size:@fontBase;
         color:@fontGray;
         width:30%;
+      }
+      .yesOrno{
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        height:145px;
+    		line-height: 145px;
+        color:#000;
       }
       label{
         font-size:@fontBase;
@@ -1593,12 +1601,14 @@ header{
             overflow-x:auto;
             overflow-y:hidden;
             white-space:nowrap;
+            vertical-align:top;
           }
         >i{
             border-right: 4px solid @fontBlue;
             font-size:16px;
             margin-left: -10px;
             margin-right: 6px;
+          	vertical-align:top;
           }
         }
       }
@@ -2056,3 +2066,233 @@ div[data-ysp-modelid="saleReturnApplySummary"]{
     margin-top: 25px;
   }
 }
+/*--------------------忘打卡------------------------*/
+div[data-ysp-modelid="forgetCard"],div[data-ysp-modelid="askForLeave"],div[data-ysp-modelid="addWork"],div[data-ysp-modelid="visitRelative"],div[data-ysp-modelid="beginToWork"],div[data-ysp-modelid="employeeHire"]{
+  .ysp-Approval-opinions{
+    margin:10px;
+  }
+}
+.ysp_hrDownload{
+  width: 100%;
+  color: #458ACF;
+  font-size:14px;
+}
+/*--------------------员工录用------------------------*/
+.remark{
+  border:1px solid #ddd;
+  width:90%;
+  margin: 0 auto;
+  border-radius: 5px;
+  resize:none
+}
+/*--------------------销假申请------------------------*/
+div[data-ysp-modelid="beginToWork"]{
+  .ysp-total{
+    margin: 10px;
+  }
+}
+.ysp_hrDetailInfo_title{
+    border-left:4px solid #0e90d2;
+    padding-left: 5px;
+}
+.ysp_hrDetailInfo{
+  background: #fff;
+  margin: 0	10px;
+  
+  .ysp_hrDetailInfo_content{
+    padding: 0.75rem 0.75rem;
+    .ysp_border{
+      display:flex;
+      justify-content:space-between;
+      min-height:2.75rem;
+      line-height:2.75rem;
+      border-bottom:1px solid #e6e6e6;
+      flex-wrap:wrap;
+      width:100%;
+    }
+    .ysp_title{
+      width:50%;
+      font-size:14px;
+      overflow-y:hidden;
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+    .ysp_content{
+      font-size:14px;
+      color:#414141;
+      text-align:right;
+      overflow-y:hidden;
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+  }
+}
+/*--------------------加班申请------------------------*/
+div[data-ysp-modelid="addWork"],div[data-ysp-modelid="askForLeave"],div[data-ysp-modelid="beginToWork"]{
+  .ysp-flowsheet{
+    margin-bottom: 10px;
+    background:#fff;
+  }
+}
+div[data-ysp-modelid="addWork"]{
+  .ysp-flowsheet{
+    margin-bottom: 10px;
+    background:#fff;
+    .ysp-flowsheet-twoPart-card{
+      margin:10px;
+      margin-top: 0;
+    }
+    .ysp_border{
+      padding: 0 10px;
+      display:flex;
+      justify-content:space-between;
+      min-height:2.75rem;
+      line-height:2.75rem;
+      border-bottom:1px solid #e6e6e6;
+      flex-wrap:wrap;
+      width:100%;
+    }
+    .ysp_title{
+      width:50%;
+      font-size:14px;
+      overflow-y:hidden;
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+    .ysp_content{
+      font-size:14px;
+      color:#414141;
+      text-align:right;
+      overflow-y:hidden;
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+  }
+}
+
+
+/***********************************总部转正管理流程 start*******************************************/
+.ysp-turn-wrap{
+    background: #f4f4f4;
+  .ysp-turn-box{
+   padding: 0.75rem;
+  margin-bottom:0.75rem;
+   background:#fff;
+  
+  h2{
+    font-size: @fontMedium;
+    font-weight: normal;
+    min-height: 2.75rem;
+    line-height: 2.75rem;
+    position: relative;
+    em{
+      color:red;
+    }
+    i.ysp-tit-bar{
+      display: inline-block;
+      background:@btnBlue;
+      width:5px;
+          height: 20px;
+    position: absolute;
+    top: 11px;
+    left: -12px;
+    }
+  }
+  ul{
+    li{
+    display: flex;
+    justify-content: space-between;
+    min-height: 2.75rem;
+    line-height: 2.75rem;
+    border-bottom: 1px solid #e6e6e6;
+    flex-wrap: wrap;
+      span.li-l,span.li-r{
+        width: 50%;
+        font-size: @fontBase;
+        color:#000;
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+        &:last-child{
+        color: #414141;
+        }
+      }
+      &:last-child{
+        border:none;
+      }
+    }
+  }
+  p{
+    font-size:@fontBase;
+    line-height: 22px;
+  }
+    .ysp-annex span{
+      color:blue;
+      text-decoration: underline;
+      padding-right:20px;
+    }
+    .ysp-area-box{
+      position:relative;
+      textarea{
+        background:#fff;
+        cursor:text;
+      }
+    }
+    .ysp_user_errorIcon{
+      	background: url(../local/img/error.png) no-repeat 0 0;
+      	width: 16px;
+      	height: 16px;
+      	position: absolute;
+        top:10px;
+      right:10px;
+    	}
+    }
+  
+}
+
+/***********************************总部转正管理流程 end*******************************************/
+
+/***********************************分公司离职管理（解除） start*******************************************/
+.ysp-turn-wrap{
+  .ysp-turn-box{
+    .ysp-txt-tip{
+      color:red;
+    }
+    ul{
+     .ysp-txt-tit{
+      font-size: @fontBase;
+      color:#000;
+      border:none;
+    }
+    li.ysp-txt-con{
+      font-size: @fontBase;
+      color:#000;
+      line-height: 22px;
+      padding:10px 0;
+    }
+     .ysp-area{
+        background-color:#fff;
+        cursor:text;
+       color:#666;
+      }
+    } 
+    
+  }
+}
+
+/***********************************分公司离职管理（解除） end*******************************************/
+
+/***********************************离职管理（辞职） start*******************************************/
+.ysp-turn-wrap{
+  .ysp-turn-box{
+    .ysp-txt-tip{
+      color:red;
+    }
+    textarea{
+      background: #fff;
+      cursor: text;
+    }
+  }
+}
+
+/***********************************离职管理（辞职） end*******************************************/

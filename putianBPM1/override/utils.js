@@ -11,7 +11,43 @@ function formatNumber(num) {
   
   return ("" + num).replace(/(\d{1,3})(?=(\d{3})+(?:$|\.))/g, "$1,");  
 } 
-
+//人力附件
+function getEnclosure(enclosure){
+	if(enclosure==null || enclosure=="")return "";
+	var s=enclosure.split(";");
+	var s_enclosure="";
+	var str="";
+	for(var i=0;i<s.length;i++){
+		if(s[i]=="")continue;
+		str=s[i].split(",");
+		s_enclosure+="<a href='"+str[1]+"' target='_blank'>"+str[0]+"</a><br>";
+	}
+	return s_enclosure;
+}
+//错误提示
+function getMsg(message){
+	var str=message.split("ErrCode");
+	var msg="";
+	for(var i=1;i<str.length;i++){
+		var t="";
+		var s=str[i].substring(str[i].indexOf("Message"));	
+		if(s.indexOf(")")!=-1){
+			s=s.split(")");
+			for(var j=0;j<s.length;j++){
+				if(s[j].indexOf("(")!=-1){
+					t+=s[j]+")"+"<br>";	
+				}else{
+					t+=s[j]+"<br>";	
+				}
+			}
+		}else{
+			t=s+"<br>";
+		}	                    		
+		msg+=t;
+	}
+	msg=msg.replace(/Message/g,"错误信息");
+ 	return msg;
+}
 //翻译userid usercode
 function getEmp(userid,userCode){
 	var data =null;
@@ -133,6 +169,54 @@ function getSign(processInstID){
 				
                }
 				$('#'+p.activityDefID).append(p.approveMsg);
+				//else if(p.sPath != null && p.sPath != ""){
+               		//上传的
+               	//	$('#'+p. activityDefID)[0].innerHTML="";
+				//	var img = new Image();
+				//	img.src = p.sPath;
+				//	img.width=200;
+				//	img.height=50;
+				//	$(img).appendTo($('#'+p.activityDefID));
+               //}
+			}
+		},
+		error:function(e){
+			nui.ajax("电子签名查询错误，请联系管理员","提示");
+		}
+	});
+}
+//查询电子签章带时间
+function getSignAndTime(processInstID){
+	nui.ajax({
+		url:"com.pttl.bps.SellManager.sellExecute.discountLower.discountLower.queryPtSignature.biz.ext",
+		type:'POST',
+		contetnType:'text/json',
+		data:{processInstID:processInstID},
+		async:false,
+		cache:false,
+		success:function(text){
+			var data=nui.decode(text);
+			var params=data.userid;
+			var p;
+			for(var i=0;i<params.length;i++){
+				p=params[i];
+				if($('#'+p.activityDefID)[0]==null){
+					continue;
+				}
+				if(p.sContent != null && p.sPath != "" ){
+               	 	/*显示签章*/
+                   $('#'+p.activityDefID)[0].innerHTML="";
+					var img = new Image();
+					img.src = p.sContent;
+					img.width=200;
+					img.height=50;
+					$(img).appendTo($('#'+p.activityDefID));
+				
+               }
+				if(p.approveMsg==null)continue;
+				$('#'+p.activityDefID).append(p.approveMsg);
+				var approveTime=nui.formatDate(p.approveTime,"yyyy-MM-dd");
+				$('#'+p.activityDefID).append("&nbsp;&nbsp;"+(approveTime==""?p.approveTime:approveTime));
 				//else if(p.sPath != null && p.sPath != ""){
                		//上传的
                	//	$('#'+p. activityDefID)[0].innerHTML="";
@@ -368,7 +452,7 @@ function getFileList(fileToken,divID,isShowDelete){
             		 FileTable+="<tr>";
             		 FileTable+="<td style=' width: 80%;word-break: break-word;'>";
             		 var name=window.encodeURIComponent(text.data[i].clientFileName);
-            		 FileTable+="<a href='"+getRootPath()+text.data[i].clientPath+"?fileName="+name+"' target='_blank' download>"+text.data[i].clientFileName+"</a>";
+            		 FileTable+="<a href='"+getRootPath()+text.data[i].clientPath+"?fileName="+name+"' target='_blank' download='"+text.data[i].clientFileName+"'>"+text.data[i].clientFileName+"</a>";
             		 FileTable+="</td>";
             		 FileTable+="<td style=' width: 1%;'>";
             		 FileTable+=utils.tmFile.tm_countFileSize(text.data[i].size);
@@ -507,7 +591,7 @@ function getSaveFormByFormId(id,key,entity){
 		nui.ajax({
 			url:"com.primeton.plugext.contract.updateIndexval.biz.ext",
 			type:'POST',
-			data:{year:year,indexval:indexval,tableName:"PO_CONTRACT2"},
+			data:{year:year,indexval:indexval,tableName:tableName},
 			contentType:'text/json',
 			cache:false,
 			async:false
@@ -977,3 +1061,13 @@ function getSaveFormByFormId(id,key,entity){
 			     return defer.promise();
 			}
   
+	       
+	       function logPrint(printStr){
+	    	   nui.ajax({
+	            	url:"com.pttl.bps.HRManager.holidayMgr.holidayMgr.logPrint.biz.ext",
+	            	type:'POST',
+	            	contentType:'text/json',
+	            	async: false,
+	            	data:{str:printStr}
+	            });
+	       }
