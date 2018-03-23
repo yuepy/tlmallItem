@@ -10,7 +10,8 @@
     "index": "../index/index.json",
     "PendingTask": "../PendingTask/index.json",
     "approveAdvice": "../approveAdvice/index.json",
-    "operationLog": "../operationLog/index.json"
+    "operationLog": "../operationLog/index.json",
+    "processedTask": "../processedTask/index.json"
   },
   "chineseName": "请假申请",
   "description": "",
@@ -302,7 +303,7 @@
         "control124_PrLxBf"
       ],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&askForLeave.*"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&askForLeave"
       ]
     }
   },
@@ -333,6 +334,10 @@
         {
           "toContextId": "context5_7wf9RT",
           "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
         }
       ]
     },
@@ -504,7 +509,9 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=290706&_t=187115&_winid=w1403",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=293803",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=293311&_t=874157&_winid=w7943",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=284739&_t=381016&_winid=w9008"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=284739&_t=381016&_winid=w9008",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283976&askForLeave",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=281639&employeeHire"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",

@@ -4,7 +4,11 @@
   "targetURL": "http://192.168.220.51:8000/ptsoa/coframe/auth/login/login.jsp#",
   "jsFile": "index.js",
   "requires": {
-    "index": "../index/index.json"
+    "index": "../index/index.json",
+    "beginToWork": "../beginToWork/index.json",
+    "visitRelative": "../visitRelative/index.json",
+    "askForLeave": "../askForLeave/index.json",
+    "employeeHire": "../employeeHire/index.json"
   },
   "chineseName": "登陆",
   "description": "",
@@ -71,6 +75,22 @@
         {
           "toContextId": "context1_wzzrby",
           "toModelId": "index"
+        },
+        {
+          "toContextId": "context27_OgI7Vc",
+          "toModelId": "beginToWork"
+        },
+        {
+          "toContextId": "context30_kSkk8F",
+          "toModelId": "visitRelative"
+        },
+        {
+          "toContextId": "context31_NhG3EK",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context34_zEaLZG",
+          "toModelId": "employeeHire"
         }
       ]
     },

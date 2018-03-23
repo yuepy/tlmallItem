@@ -6,7 +6,9 @@
   "requires": {
     "index": "../index/index.json",
     "approvalTrack": "../approvalTrack/index.json",
-    "approveAdvice": "../approveAdvice/index.json"
+    "approveAdvice": "../approveAdvice/index.json",
+    "operationLog": "../operationLog/index.json",
+    "processedTask": "../processedTask/index.json"
   },
   "chineseName": "员工录用",
   "description": "",
@@ -303,37 +305,6 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
-    },
-    "control151_WNqb4b": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]",
-              "descendant::DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
-          }
-        ]
-      },
-      "intendedRole": "section",
-      "roles": "element,section",
-      "monitored": false,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
-      "componentType": "section"
     }
   },
   "contexts": {
@@ -346,8 +317,7 @@
         "control146_Cnw5RJ",
         "control147_6v85oq",
         "control148_3IHRTw",
-        "control149_N2i8LO",
-        "control151_WNqb4b"
+        "control149_N2i8LO"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -374,6 +344,10 @@
       "toContexts": [
         {
           "toContextId": "context34_zEaLZG"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
         }
       ]
     },
@@ -400,6 +374,10 @@
         {
           "toContextId": "context10_Hyn4t6",
           "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
         }
       ]
     },
@@ -452,18 +430,6 @@
               }
             }
           }
-        },
-        {
-          "id": "uiControl144_SsGiNa",
-          "controlId": "control151_WNqb4b",
-          "display": {
-            "adapterId": "section",
-            "type": "section",
-            "adapter": {
-              "templateType": ""
-            }
-          },
-          "layout": []
         },
         {
           "id": "uiControl138_qXwcU2",
@@ -574,7 +540,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=796565&_winid=w6636",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=85&_winid=w4944",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=463124&_winid=w8269",
-          ""
+          "",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=281639&employeeHire"
         ]
       }
     },

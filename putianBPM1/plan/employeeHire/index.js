@@ -250,19 +250,23 @@
       if (!elem) {
         return;
       }if (elem) {
-        var data = [];var form1 = elem.querySelector("#form1");if (form1) {
-          var table1 = form1.querySelector("#table1");if (table1) {
-            var title = table1.querySelectorAll("td.form_label");for (var i = 0; i < title.length; i++) {
-              var obj = { title: "", content: "" };obj.title = title[i].textContent.trim();obj.content = title[i].nextElementSibling.querySelectorAll("input")[0].value;data.push(obj);
+        var data = [];var enclosure = elem.querySelector("#enclosure");if (enclosure) {
+          var enclosureList = enclosure.querySelectorAll("a");if (enclosureList.length > 0) {
+            for (var i = 0; i < enclosureList.length; i++) {
+              data.push(enclosureList[i].textContent.trim());
             }
           }
         }return data;
       }
     },
-    doAction_uiControl140_nSP35Q: function (data, elem) {},
+    doAction_uiControl140_nSP35Q: function (data, elem) {
+      if (data.eventType == "enclosure") {
+        var i = data.dataCustom;elem.querySelectorAll("a")[i].click();
+      }
+    },
     getTemplate_uiControl140_nSP35Q: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData||[];\n    return (\n      <div className="ysp_hrDetailInfo" style={{marginTop:"10px"}}>\n       \t<div className="ysp_hrDetailInfo_title">\u9644\u4EF6\u4FE1\u606F</div>\n        <div className="ysp_hrDetailInfo_content">\n        {data&&data.length>0&&data.map(function(item,index){\n          return(\n          \t<div className="ysp_border">\n            \t<span className="ysp_title">{item.title}\uFF1A</span>\n              <label className="ysp_content">{item.content}</label>\n            </div>\n          )\n        })}  \n        </div>\n      </div>\n    )\n  }\n});\n\n\n\n';
-      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData || [];\n    return React.createElement(\n      "div",\n      { className: "ysp_hrDetailInfo", style: { marginTop: "10px" } },\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_title" },\n        "\\u9644\\u4EF6\\u4FE1\\u606F"\n      ),\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_content" },\n        data && data.length > 0 && data.map(function (item, index) {\n          return React.createElement(\n            "div",\n            { className: "ysp_border" },\n            React.createElement(\n              "span",\n              { className: "ysp_title" },\n              item.title,\n              "\\uFF1A"\n            ),\n            React.createElement(\n              "label",\n              { className: "ysp_content" },\n              item.content\n            )\n          );\n        })\n      )\n    );\n  }\n});';
+      var selfTemplate = 'module.exports = React.createClass({\n  enclosure:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        data:target.dataset.i,\n        eventType:"enclosure"\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData||[];\n \xA0 \xA0var _this=this;\n \xA0  return (\n      <div className="ysp_hrDetailInfo" style={{marginTop:"10px"}}>\n       \t<div className="ysp_hrDetailInfo_title">\u9644\u4EF6\u4FE1\u606F</div>\n        <div className="ysp_hrDetailInfo_content">\n        {data&&data.length>0&&data.map(function(item,index){\n          return(\n \xA0 \xA0 \xA0 \xA0  \t<div className="ysp_hrDownload" onClick={_this.enclosure.bind(_this)} data-i={index}>{item}</div>\n          )\n        })}  \n        </div>\n      </div>\n    )\n  }\n});\n\n\n\n';
+      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  enclosure: function enclosure(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        data: target.dataset.i,\n        eventType: "enclosure"\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData || [];\n    var _this = this;\n    return React.createElement(\n      "div",\n      { className: "ysp_hrDetailInfo", style: { marginTop: "10px" } },\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_title" },\n        "\\u9644\\u4EF6\\u4FE1\\u606F"\n      ),\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_content" },\n        data && data.length > 0 && data.map(function (item, index) {\n          return React.createElement(\n            "div",\n            { className: "ysp_hrDownload", onClick: _this.enclosure.bind(_this), "data-i": index },\n            item\n          );\n        })\n      )\n    );\n  }\n});';
     }
   }, "employeeHire");
 })(window, ysp);

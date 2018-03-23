@@ -3,8 +3,16 @@
   "id": "addWork",
   "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=968891&_winid=w3766",
   "jsFile": "index.js",
+  "requires": {
+    "approvalTrack": "../approvalTrack/index.json",
+    "approveAdvice": "../approveAdvice/index.json",
+    "operationLog": "../operationLog/index.json",
+    "PendingTask": "../PendingTask/index.json",
+    "processedTask": "../processedTask/index.json"
+  },
   "chineseName": "加班申请",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control104_u929qe": {
       "location": {
@@ -285,7 +293,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&addWork.*"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&addWork"
       ]
     }
   },
@@ -304,6 +312,36 @@
       "toContexts": [
         {
           "toContextId": "context29_qsgQH3"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
+        }
+      ]
+    },
+    "flow120_eVceLq": {
+      "fromContextId": "context29_qsgQH3",
+      "fromAction": "doAction",
+      "fromControlId": "control105_587L4U",
+      "toContexts": [
+        {
+          "toContextId": "context29_qsgQH3"
+        },
+        {
+          "toContextId": "context7_6oqdXk",
+          "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context10_Hyn4t6",
+          "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
         }
       ]
     }
@@ -434,7 +472,10 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=968891&_winid=w3766",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=724826&_winid=w9800",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=904753&_winid=w2845",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284350&_t=549931&_winid=w6211"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284350&_t=549931&_winid=w6211",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284350&addWork",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283277&addWork",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284983&beginToWork"
         ]
       }
     },

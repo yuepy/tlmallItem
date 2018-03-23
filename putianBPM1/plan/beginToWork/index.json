@@ -6,7 +6,10 @@
   "requires": {
     "index": "../index/index.json",
     "approveAdvice": "../approveAdvice/index.json",
-    "beginToWork": "../beginToWork/index.json"
+    "beginToWork": "../beginToWork/index.json",
+    "approvalTrack": "../approvalTrack/index.json",
+    "operationLog": "../operationLog/index.json",
+    "processedTask": "../processedTask/index.json"
   },
   "chineseName": "销假申请",
   "description": "",
@@ -237,6 +240,10 @@
         "data": {
           "tagName": "TEXTAREA"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "elem/@name",
@@ -279,7 +286,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?beginToWork.*"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&beginToWork"
       ]
     }
   },
@@ -306,6 +313,10 @@
       "toContexts": [
         {
           "toContextId": "context27_OgI7Vc"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
         }
       ]
     },
@@ -324,6 +335,14 @@
         {
           "toContextId": "context10_Hyn4t6",
           "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context7_6oqdXk",
+          "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
         }
       ]
     },
@@ -470,7 +489,9 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=677503&_winid=w3638",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=514128&_winid=w9146",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=120692&_winid=w4572",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284811&_t=239779&_winid=w2978"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284811&_t=239779&_winid=w2978",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284983&beginToWork",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283792&visitRelative"
         ],
         "context10_Hyn4t6": [
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",

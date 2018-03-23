@@ -12,7 +12,10 @@
     "index": "../index/index.json",
     "PendingTask": "../PendingTask/index.json",
     "processMonitoring": "../processMonitoring/index.json",
-    "turnTask": "../turnTask/index.json"
+    "turnTask": "../turnTask/index.json",
+    "forgetCard": "../forgetCard/index.json",
+    "addWork": "../addWork/index.json",
+    "visitRelative": "../visitRelative/index.json"
   },
   "chineseName": "操作日志",
   "description": "",
@@ -224,6 +227,22 @@
         {
           "toContextId": "context27_AJKd80",
           "toModelId": "turnTask"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context28_MTJvP1",
+          "toModelId": "forgetCard"
+        },
+        {
+          "toContextId": "context29_qsgQH3",
+          "toModelId": "addWork"
+        },
+        {
+          "toContextId": "context30_kSkk8F",
+          "toModelId": "visitRelative"
         }
       ]
     },
@@ -345,7 +364,12 @@
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp?_t=751448&_winid=w9752",
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp?_t=765036&_winid=w4014",
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp?_t=775298&_winid=w3265",
-          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp?_t=180645&_winid=w1311"
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp?_t=180645&_winid=w1311",
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&forgetCard",
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&addWork",
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&visitRelative",
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&beginToWork",
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&employeeHire"
         ],
         "context27_AJKd80": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=133877&_winid=w6689",

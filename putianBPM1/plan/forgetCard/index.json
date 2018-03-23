@@ -5,7 +5,11 @@
   "jsFile": "index.js",
   "requires": {
     "approvalTrack": "../approvalTrack/index.json",
-    "index": "../index/index.json"
+    "index": "../index/index.json",
+    "approveAdvice": "../approveAdvice/index.json",
+    "operationLog": "../operationLog/index.json",
+    "PendingTask": "../PendingTask/index.json",
+    "processedTask": "../processedTask/index.json"
   },
   "chineseName": "忘打卡管理",
   "description": "",
@@ -333,7 +337,7 @@
         "control125_1lma3o"
       ],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&forgetCard.*"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&forgetCard"
       ]
     }
   },
@@ -356,6 +360,14 @@
       "toContexts": [
         {
           "toContextId": "context28_MTJvP1"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
         }
       ]
     },
@@ -370,6 +382,14 @@
         {
           "toContextId": "context7_6oqdXk",
           "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context10_Hyn4t6",
+          "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
         }
       ]
     },
@@ -522,7 +542,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?forgetCard&workItemID=283738&_t=818275&_winid=w7927",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?forgetCard&workItemID=284606&_t=15566&_winid=w4262",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?forgetCard&workItemID=284531&_t=620269&_winid=w2655",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?forgetCard&workItemID=284359&_t=756247&_winid=w2375"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?forgetCard&workItemID=284359&_t=756247&_winid=w2375",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284359&forgetCard"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",
