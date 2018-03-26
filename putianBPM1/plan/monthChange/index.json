@@ -6,54 +6,28 @@
   "requires": {
     "approvalTrack": "../approvalTrack/index.json",
     "approveAdvice": "../approveAdvice/index.json",
-    "index": "../index/index.json"
+    "index": "../index/index.json",
+    "operationLog": "../operationLog/index.json"
   },
   "chineseName": "总部月度编制变动",
   "description": "",
   "firstPaintEnable": false,
   "controls": {
-    "control150_JKDDGv": {
+    "control150_WH5y6a": {
       "location": {
         "data": {
-          "tagName": "IFRAME"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "BODY"
         },
         "locators": [
           {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "mini-2",
-              "tagName": "DIV",
-              "prefix": "",
-              "suffix": "/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]",
-              "ratio": 0.162
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
-          },
-          {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
+            "value": "/HTML[1]/BODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control150_JKDDGv"
+        "onGetData": "getData_control150_WH5y6a"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -61,34 +35,30 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control156_tQwCsw": {
+    "control151_kT44yX": {
       "location": {
         "data": {
-          "tagName": "TR"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "TBODY"
         },
         "locators": [
           {
             "id": "@id/word",
             "prob": 1,
             "value": [
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]",
-              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//TR",
-              "descendant::DIV[@id=\"_tabs\"]//TR"
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//TBODY",
+              "descendant::DIV[@id=\"_tabs\"]//TBODY"
             ]
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control156_tQwCsw"
+        "onGetData": "getData_control151_kT44yX"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -96,14 +66,10 @@
       "frameXPath": "//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
-    "control157_L2Qeiv": {
+    "control154_UqN5eJ": {
       "location": {
         "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "DIV"
         },
         "locators": [
           {
@@ -113,182 +79,26 @@
               0,
               4
             ],
-            "value": "/HTML[1]/BODY[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control157_L2Qeiv"
+        "onGetData": "getData_control154_UqN5eJ"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
-    },
-    "control160_OIq2IM": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              1,
-              2
-            ],
-            "value": "/HTML[1]/BODY[1]/DIV[1]"
-          },
-          {
-            "id": "shield",
-            "value": {
-              "zIndex": "auto",
-              "width": 1198,
-              "height": 622
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control160_OIq2IM"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
-    },
-    "control161_K4iZBP": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              1,
-              2
-            ],
-            "value": "/HTML[1]/BODY[1]/DIV[1]"
-          },
-          {
-            "id": "shield",
-            "value": {
-              "zIndex": "auto",
-              "width": 1198,
-              "height": 622
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control161_K4iZBP"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
-    },
-    "control162_uBZxGJ": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              1,
-              2
-            ],
-            "value": "/HTML[1]/BODY[1]/DIV[1]"
-          },
-          {
-            "id": "shield",
-            "value": {
-              "zIndex": "auto",
-              "width": 1198,
-              "height": 622
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control162_uBZxGJ"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
-    },
-    "control163_teCeUl": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              1,
-              2
-            ],
-            "value": "/HTML[1]/BODY[1]/DIV[1]"
-          },
-          {
-            "id": "shield",
-            "value": {
-              "zIndex": "auto",
-              "width": 1198,
-              "height": 622
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control163_teCeUl"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
     }
   },
   "contexts": {
     "context36_6C2hoz": {
       "controls": [
-        "control150_JKDDGv",
-        "control156_tQwCsw",
-        "control157_L2Qeiv",
-        "control160_OIq2IM",
-        "control161_K4iZBP",
-        "control162_uBZxGJ",
-        "control163_teCeUl"
+        "control150_WH5y6a",
+        "control151_kT44yX",
+        "control154_UqN5eJ"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -308,20 +118,20 @@
         }
       ]
     },
-    "flow121_GLAGr3": {
+    "flow124_rVvAXw": {
       "fromContextId": "context36_6C2hoz",
       "fromAction": "doAction",
-      "fromControlId": "control150_JKDDGv",
+      "fromControlId": "control150_WH5y6a",
       "toContexts": [
         {
           "toContextId": "context36_6C2hoz"
         }
       ]
     },
-    "flow122_38Kvqb": {
+    "flow126_eEZRBz": {
       "fromContextId": "context36_6C2hoz",
       "fromAction": "doAction",
-      "fromControlId": "control156_tQwCsw",
+      "fromControlId": "control151_kT44yX",
       "toContexts": [
         {
           "toContextId": "context36_6C2hoz"
@@ -333,6 +143,20 @@
         {
           "toContextId": "context10_Hyn4t6",
           "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
+        }
+      ]
+    },
+    "flow127_hXlscJ": {
+      "fromContextId": "context36_6C2hoz",
+      "fromAction": "doAction",
+      "fromControlId": "control154_UqN5eJ",
+      "toContexts": [
+        {
+          "toContextId": "context36_6C2hoz"
         }
       ]
     }
@@ -342,106 +166,46 @@
       "contextId": "context36_6C2hoz",
       "layout": [
         {
-          "id": "uiControl143_ZtPOhn",
-          "controlId": "control150_JKDDGv",
+          "id": "uiControl143_xz6Mf2",
+          "controlId": "control150_WH5y6a",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl143_ZtPOhn",
-                "onGetTemplate": "getTemplate_uiControl143_ZtPOhn"
+                "onDoAction": "doAction_uiControl143_xz6Mf2",
+                "onGetTemplate": "getTemplate_uiControl143_xz6Mf2"
               }
             }
           }
         },
         {
-          "id": "uiControl149_qIxIuf",
-          "controlId": "control156_tQwCsw",
+          "id": "uiControl144_XdsqoT",
+          "controlId": "control151_kT44yX",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl149_qIxIuf",
-                "onGetTemplate": "getTemplate_uiControl149_qIxIuf"
+                "onDoAction": "doAction_uiControl144_XdsqoT",
+                "onGetTemplate": "getTemplate_uiControl144_XdsqoT"
               }
             }
           }
         },
         {
-          "id": "uiControl150_6nWgl4",
-          "controlId": "control157_L2Qeiv",
+          "id": "uiControl145_w0WV0T",
+          "controlId": "control154_UqN5eJ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl150_6nWgl4",
-                "onGetTemplate": "getTemplate_uiControl150_6nWgl4"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl153_eu9WaL",
-          "controlId": "control160_OIq2IM",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl153_eu9WaL",
-                "onGetTemplate": "getTemplate_uiControl153_eu9WaL"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl154_Vz34uE",
-          "controlId": "control161_K4iZBP",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl154_Vz34uE",
-                "onGetTemplate": "getTemplate_uiControl154_Vz34uE"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl155_aVJ6fy",
-          "controlId": "control162_uBZxGJ",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl155_aVJ6fy",
-                "onGetTemplate": "getTemplate_uiControl155_aVJ6fy"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl156_X67WbK",
-          "controlId": "control163_teCeUl",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl156_X67WbK",
-                "onGetTemplate": "getTemplate_uiControl156_X67WbK"
+                "onDoAction": "doAction_uiControl145_w0WV0T",
+                "onGetTemplate": "getTemplate_uiControl145_w0WV0T"
               }
             }
           }
@@ -460,7 +224,9 @@
     "page/urls": {
       "contexts": {
         "context36_6C2hoz": [
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294193&monthChange"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294193&monthChange",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=303087&monthChange",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294223&monthChange"
         ]
       }
     },

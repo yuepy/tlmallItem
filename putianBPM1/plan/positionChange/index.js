@@ -75,7 +75,8 @@
               btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
             }
           } else {
-            var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
+            var json = { time: new Date().getTime() };
+            var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
               btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             }
           }
