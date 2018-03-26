@@ -60,6 +60,49 @@ function Init_All(selDayStr) {
 
 }
 
+window.Init_All_Time = function(selDayStr) {
+    var selDate;
+    if(selDayStr == undefined || selDayStr == null) {
+        selDate = new Date();
+    } else {
+        selDate = new Date(selDayStr);
+    }
+    $("#year").val(getYear(selDate));
+    $("#month").val(getMonth(selDate));
+    $("#day").val(getDay(selDate));
+    $("#selDay").val(getDay(selDate));
+    selDate.setDate(selDate.getDate() - 13);
+    $("#day14").val(getDay(selDate));
+
+    ajaxData_1001();
+    ajaxData_1002();
+    if(configType!='02')
+        buildMap();   // ajaxData_1004();  deprecated
+    ajaxData_1007();
+    ajaxData_1008();
+    ajaxData_1009();
+    ajaxData_1010();
+    ajaxData_1011();
+    ajaxData_1012();
+    if(configType!='02')
+        ajaxData_1013();
+    if(configType!='02')
+        ajaxData_1014();
+
+    // 拜访明细
+    // deprecated ajaxData_n();
+    ajaxDate_visit_list();
+
+    ajaxData_1025();
+    ajaxData_1026();
+    ajaxData_1027();
+    ajaxData_1028();
+
+    ajaxData_1003();
+    ajaxData_1039();
+
+}
+
 function getYear(date) {
     return date.getFullYear();
 }
