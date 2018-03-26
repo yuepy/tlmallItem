@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "approvalTrack": "../approvalTrack/index.json",
-    "approveAdvice": "../approveAdvice/index.json"
+    "approveAdvice": "../approveAdvice/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "总部月度编制变动",
   "description": "",
@@ -15,6 +16,10 @@
       "location": {
         "data": {
           "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -61,6 +66,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -92,6 +101,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -117,6 +130,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -152,6 +169,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -186,6 +207,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -219,6 +244,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -272,6 +301,10 @@
       "toContexts": [
         {
           "toContextId": "context36_6C2hoz"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     },
