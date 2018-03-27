@@ -6,7 +6,8 @@
   "requires": {
     "branchRelease": "../branchRelease/index.json",
     "approvalTrack": "../approvalTrack/index.json",
-    "approveAdvice": "../approveAdvice/index.json"
+    "approveAdvice": "../approveAdvice/index.json",
+    "operationLog": "../operationLog/index.json"
   },
   "chineseName": "分公司离职（解除）",
   "description": "",
@@ -177,6 +178,10 @@
         {
           "toContextId": "context10_Hyn4t6",
           "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
         }
       ]
     },

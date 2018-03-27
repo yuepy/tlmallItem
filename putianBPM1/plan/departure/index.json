@@ -6,7 +6,8 @@
   "requires": {
     "approvalTrack": "../approvalTrack/index.json",
     "index": "../index/index.json",
-    "approveAdvice": "../approveAdvice/index.json"
+    "approveAdvice": "../approveAdvice/index.json",
+    "operationLog": "../operationLog/index.json"
   },
   "chineseName": "离职管理",
   "description": "",
@@ -328,6 +329,10 @@
         {
           "toContextId": "context10_Hyn4t6",
           "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
         }
       ]
     },
