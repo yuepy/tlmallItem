@@ -12551,4 +12551,355 @@ div[data-tiptool="true"]{
 
 /****************销售业绩总览***************/
 
+/*************新工作台样式****************/
+div[data-ysp-modelid="workPlanCustomStore"]{
+  background: #f0eff5;
+}
 
+//工作总结
+.ysp-workSummary-style{
+  //background: #fff;
+  //padding: 10px;
+  .timeSearch{
+  	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    >div:nth-child(1){
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      >span:nth-child(1){
+        color: #999;
+        padding-right: 10px;
+      }
+      >span:nth-child(2){
+        select{
+          flex: 1;
+          margin: 0;
+          padding: 0;
+          border-radius: 6px;
+          background: #fff;
+          padding: 0px 30px 0px 10px;
+          font-size:12px;
+          display: block;
+          height: 30px;
+          background-size: 20px;
+          background-position: 40px;
+          background-repeat: no-repeat;
+          background-image: url(./images/down-arrow-icon.png);
+      	}
+      }
+    }
+    >div:nth-child(2){
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      >i:first-child{
+        display: block;
+        height: 20px;
+        width: 20px;
+        background-size: 15px;
+        background-repeat: no-repeat;
+        background-image: url(./images/ysp-achievement-date-icon.png);
+        margin-top: 2px;
+      }
+      >span:nth-child(2){
+        color: #999999;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      >i:nth-child(3){
+        display: block;
+        height: 20px;
+        width: 20px;
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-image: url(./images/ysp-achievement-pre-icon.png);
+        margin-top: 4px;
+      } 
+    }
+  }
+  .ysp-workSummary-text{
+    textarea{
+      margin-bottom: 0rem;
+      resize: none;
+    }
+    >div:nth-child(1){
+      background: #ececec;
+      height: 40px;
+      >span:nth-child(1){
+        display: inline-block;
+        padding: 10px 10px;
+				color: #999;
+      }
+    }
+  }
+  .ysp-workSummary-choseText{
+    textarea{
+      margin-bottom: 0rem;
+      resize: none;
+    }
+    >div:nth-child(1){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ececec;
+      height: 40px;
+      >span:nth-child(1){
+        color: #999;
+        padding: 0px 10px;
+      }
+      >span:nth-child(2){
+        display: block;
+        height: 20px;
+        width: 20px;
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-image: url(./images/ysp-achievement-pre-icon.png);
+        margin-top: 4px;
+      }
+    }
+  }
+  .ysp-workSummary-lable{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap:wrap;
+    margin-top: 10px;
+    .ysp-workSummary-uncheck{
+      display: block;
+      width: 30%;
+      border-radius: 5px;
+      padding: 5px;
+      border: 1px solid #4796ed;
+      margin: 5px;
+      text-align: center;
+    }
+    .ysp-workSummary-check{
+      background: #4796ed;
+    }
+  }
+  
+  .ysp-atreport-picture{
+        background-color: #fff;
+        margin-top: 14px;
+        >div:first-child{
+          border-bottom: 1px solid #e9e9e9;
+          display: flex;
+          justify-content: flex-start;
+          //align-items: center;
+          .ysp-atreport-picturesrc{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap:wrap;
+            width: 100%;
+            	
+          .ysp-atreport-picturesrcshow{
+              width: 25%;
+              >span:first-child{
+                display: inline-block;
+                margin-left: 10px;
+                margin-top: 10px;
+                img{
+                  display: block;
+                  width: 80px;
+                  height: 80px;
+                  z-index: 9999;
+                }
+              }
+              >span:last-child{
+                display: inline-block;
+                padding:2px;
+                width: 100%;
+                text-align: center;
+                margin-left: 5px;
+              } 
+            }
+          }
+          .ysp-atreport-picturepoint{
+            display: flex;
+            justify-content:flex-end;
+            width: 10%;
+            span{
+              display: inline-block;
+              vertical-align: middle;
+              width: 20px;
+              height: 20px;
+              background: url(./images/ysp-atreport-more.png);
+              background-repeat: no-repeat;
+              background-size: 12px;
+              margin: 18px 10px 0px 0px;
+            }
+          }
+          
+          .ysp-atreport-picturepointdown{
+            display: flex;
+            justify-content:flex-end;
+            width: 10%;
+            span{
+              display: inline-block;
+              vertical-align: middle;
+              width: 20px;
+              height: 20px;
+              background: url(./images/ysp-atreport-moredown.png);
+              background-repeat: no-repeat;
+              background-size: 12px;
+              margin: 18px 10px 0px 0px;
+            }
+          }
+        }
+        >div:last-child{
+          min-height: 50px;
+          padding:14px;
+          color: #4789e0;
+          font-size: 16px;
+          text-overflow:ellipsis; 
+          white-space:nowrap; 
+          overflow:hidden;
+        }
+    }
+  
+  .images-report{
+    .upload{
+      display: inherit!important;
+      overflow:hidden;
+      padding:24px 20px;
+      >div:nth-child(1){
+        //padding: 10px 0;
+      }
+  	  .updata-image{
+        float: left;
+        width:100px;
+        height: 100px;
+        background: url('./images/update.png') no-repeat center center;
+        background-size: 100%;
+        padding-top: 110px;
+    		text-align: center;
+        margin-right: 5px;
+    	}
+      .file-images-row{
+        float: left;
+        width: 100px;
+        overflow: hidden;
+        height: 100px;
+        position: relative;
+        margin-right: 6px;
+        span{
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          white-space: nowrap;
+          font-size: 15px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin-bottom: 5px;
+        }
+        i{
+          position: absolute;
+          right: 0;
+          top: 0;
+          display: block;
+          width: 20px;
+          height: 20px;
+          background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
+          background-size: 100%;
+          border-radius: 50%;
+          padding: 10px;
+          margin: 3px;
+        }
+      }
+      
+      .file-images-rows{
+        float: left;
+        width: 100px;
+        overflow: hidden;
+        height: 138px;
+        position: relative;
+        margin-right: 6px;
+        span{
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          white-space: nowrap;
+          font-size: 15px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin-bottom: 5px;
+        }
+        i{
+          position: absolute;
+          right: 0;
+          top: 0;
+          display: block;
+          width: 20px;
+          height: 20px;
+          background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
+          background-size: 100%;
+          border-radius: 50%;
+          padding: 10px;
+          margin: 3px;
+        }
+      }
+    }
+	}
+  
+  .personnel{
+    >div:nth-child(1){
+      overflow: hidden;
+      padding: 10px;
+      >div:nth-child(1){
+        float: left;
+        span{
+          color: #aaa;
+        }
+      }
+      .add{
+        background: url('./images/plusRed.png') no-repeat center center;
+        background-size: 100%;
+        width: 20px;
+        height: 20px;
+        float: right;
+      }
+    }
+    >div:nth-child(2){
+      overflow: hidden;
+    }
+    .report{
+      width: 27%;
+      text-align: center;
+      border: 1px solid #5692E2;
+      color: #5692E2;
+      border-radius: 5px;
+      float: left;
+      margin: 10px;
+      position: relative;
+    }
+  }
+  
+  .update-commit{
+    text-align: center;
+    button{
+      width: 47%;
+      padding: 7px;
+      border-radius: 5px;
+      margin: 5px;
+    }
+    button:nth-child(1){
+      border: 1px solid #aaa;
+      color: #666;
+    }
+    button:nth-child(2){
+      border: 1px solid #4595EC;
+      background: #4595EC;
+      color: #fff;
+    }
+    .reportCommit{
+      border: 1px solid #4595EC;
+      background: #4595EC;
+      color: #fff !important;
+    }
+  }
+}
+
+/*************新工作台样式****************/

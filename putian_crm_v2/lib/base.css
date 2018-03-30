@@ -11276,3 +11276,327 @@ div[data-tiptool="true"] {
   position: absolute;
 }
 /****************销售业绩总览***************/
+/*************新工作台样式****************/
+div[data-ysp-modelid="workPlanCustomStore"] {
+  background: #f0eff5;
+}
+.ysp-workSummary-style .timeSearch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.ysp-workSummary-style .timeSearch > div:nth-child(1) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ysp-workSummary-style .timeSearch > div:nth-child(1) > span:nth-child(1) {
+  color: #999;
+  padding-right: 10px;
+}
+.ysp-workSummary-style .timeSearch > div:nth-child(1) > span:nth-child(2) select {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+  background: #fff;
+  padding: 0px 30px 0px 10px;
+  font-size: 12px;
+  display: block;
+  height: 30px;
+  background-size: 20px;
+  background-position: 40px;
+  background-repeat: no-repeat;
+  background-image: url(images/down-arrow-icon.png);
+}
+.ysp-workSummary-style .timeSearch > div:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.ysp-workSummary-style .timeSearch > div:nth-child(2) > i:first-child {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-image: url(images/ysp-achievement-date-icon.png);
+  margin-top: 2px;
+}
+.ysp-workSummary-style .timeSearch > div:nth-child(2) > span:nth-child(2) {
+  color: #999999;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.ysp-workSummary-style .timeSearch > div:nth-child(2) > i:nth-child(3) {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-image: url(images/ysp-achievement-pre-icon.png);
+  margin-top: 4px;
+}
+.ysp-workSummary-style .ysp-workSummary-text textarea {
+  margin-bottom: 0rem;
+  resize: none;
+}
+.ysp-workSummary-style .ysp-workSummary-text > div:nth-child(1) {
+  background: #ececec;
+  height: 40px;
+}
+.ysp-workSummary-style .ysp-workSummary-text > div:nth-child(1) > span:nth-child(1) {
+  display: inline-block;
+  padding: 10px 10px;
+  color: #999;
+}
+.ysp-workSummary-style .ysp-workSummary-choseText textarea {
+  margin-bottom: 0rem;
+  resize: none;
+}
+.ysp-workSummary-style .ysp-workSummary-choseText > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ececec;
+  height: 40px;
+}
+.ysp-workSummary-style .ysp-workSummary-choseText > div:nth-child(1) > span:nth-child(1) {
+  color: #999;
+  padding: 0px 10px;
+}
+.ysp-workSummary-style .ysp-workSummary-choseText > div:nth-child(1) > span:nth-child(2) {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-image: url(images/ysp-achievement-pre-icon.png);
+  margin-top: 4px;
+}
+.ysp-workSummary-style .ysp-workSummary-lable {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.ysp-workSummary-style .ysp-workSummary-lable .ysp-workSummary-uncheck {
+  display: block;
+  width: 30%;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #4796ed;
+  margin: 5px;
+  text-align: center;
+}
+.ysp-workSummary-style .ysp-workSummary-lable .ysp-workSummary-check {
+  background: #4796ed;
+}
+.ysp-workSummary-style .ysp-atreport-picture {
+  background-color: #fff;
+  margin-top: 14px;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child {
+  border-bottom: 1px solid #e9e9e9;
+  display: flex;
+  justify-content: flex-start;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child .ysp-atreport-picturesrc {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child .ysp-atreport-picturesrc .ysp-atreport-picturesrcshow {
+  width: 25%;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child .ysp-atreport-picturesrc .ysp-atreport-picturesrcshow > span:first-child {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child .ysp-atreport-picturesrc .ysp-atreport-picturesrcshow > span:first-child img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  z-index: 9999;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child .ysp-atreport-picturesrc .ysp-atreport-picturesrcshow > span:last-child {
+  display: inline-block;
+  padding: 2px;
+  width: 100%;
+  text-align: center;
+  margin-left: 5px;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child .ysp-atreport-picturepoint {
+  display: flex;
+  justify-content: flex-end;
+  width: 10%;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child .ysp-atreport-picturepoint span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url(images/ysp-atreport-more.png);
+  background-repeat: no-repeat;
+  background-size: 12px;
+  margin: 18px 10px 0px 0px;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child .ysp-atreport-picturepointdown {
+  display: flex;
+  justify-content: flex-end;
+  width: 10%;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:first-child .ysp-atreport-picturepointdown span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url(images/ysp-atreport-moredown.png);
+  background-repeat: no-repeat;
+  background-size: 12px;
+  margin: 18px 10px 0px 0px;
+}
+.ysp-workSummary-style .ysp-atreport-picture > div:last-child {
+  min-height: 50px;
+  padding: 14px;
+  color: #4789e0;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ysp-workSummary-style .images-report .upload {
+  display: inherit!important;
+  overflow: hidden;
+  padding: 24px 20px;
+}
+.ysp-workSummary-style .images-report .upload .updata-image {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: url('images/update.png') no-repeat center center;
+  background-size: 100%;
+  padding-top: 110px;
+  text-align: center;
+  margin-right: 5px;
+}
+.ysp-workSummary-style .images-report .upload .file-images-row {
+  float: left;
+  width: 100px;
+  overflow: hidden;
+  height: 100px;
+  position: relative;
+  margin-right: 6px;
+}
+.ysp-workSummary-style .images-report .upload .file-images-row span {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  white-space: nowrap;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.ysp-workSummary-style .images-report .upload .file-images-row i {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
+  background-size: 100%;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 3px;
+}
+.ysp-workSummary-style .images-report .upload .file-images-rows {
+  float: left;
+  width: 100px;
+  overflow: hidden;
+  height: 138px;
+  position: relative;
+  margin-right: 6px;
+}
+.ysp-workSummary-style .images-report .upload .file-images-rows span {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  white-space: nowrap;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.ysp-workSummary-style .images-report .upload .file-images-rows i {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
+  background-size: 100%;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 3px;
+}
+.ysp-workSummary-style .personnel > div:nth-child(1) {
+  overflow: hidden;
+  padding: 10px;
+}
+.ysp-workSummary-style .personnel > div:nth-child(1) > div:nth-child(1) {
+  float: left;
+}
+.ysp-workSummary-style .personnel > div:nth-child(1) > div:nth-child(1) span {
+  color: #aaa;
+}
+.ysp-workSummary-style .personnel > div:nth-child(1) .add {
+  background: url('images/plusRed.png') no-repeat center center;
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+  float: right;
+}
+.ysp-workSummary-style .personnel > div:nth-child(2) {
+  overflow: hidden;
+}
+.ysp-workSummary-style .personnel .report {
+  width: 27%;
+  text-align: center;
+  border: 1px solid #5692E2;
+  color: #5692E2;
+  border-radius: 5px;
+  float: left;
+  margin: 10px;
+  position: relative;
+}
+.ysp-workSummary-style .update-commit {
+  text-align: center;
+}
+.ysp-workSummary-style .update-commit button {
+  width: 47%;
+  padding: 7px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.ysp-workSummary-style .update-commit button:nth-child(1) {
+  border: 1px solid #aaa;
+  color: #666;
+}
+.ysp-workSummary-style .update-commit button:nth-child(2) {
+  border: 1px solid #4595EC;
+  background: #4595EC;
+  color: #fff;
+}
+.ysp-workSummary-style .update-commit .reportCommit {
+  border: 1px solid #4595EC;
+  background: #4595EC;
+  color: #fff !important;
+}
+/*************新工作台样式****************/

@@ -14,7 +14,9 @@
     "infomationInput": "../infomationInput/index.json",
     "customerInformationweekFill": "../customerInformationweekFill/index.json",
     "storeWeekPSI": "../storeWeekPSI/index.json",
-    "storeDayPSI": "../storeDayPSI/index.json"
+    "storeDayPSI": "../storeDayPSI/index.json",
+    "workPlanCustomStore": "../workPlanCustomStore/index.json",
+    "workSummary": "../workSummary/index.json"
   },
   "chineseName": "拜访工作台",
   "description": "拜访工作台页面",
@@ -62,41 +64,6 @@
       "monitored": false,
       "frameXPath": ""
     },
-    "control26_rl75IZ": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::DIV[@id=\"workPlanCalendar\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.g-main DIV.g-box.clearfix DIV.m-date"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control26_rl75IZ"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control35_7n8VvC": {
       "location": {
         "data": {
@@ -132,7 +99,7 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control36_wp9MVU": {
+    "control310_rtFkBQ": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -142,46 +109,6 @@
           "force": false
         },
         "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::DIV[@id=\"workPlanFill\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.g-main DIV.g-box.clearfix DIV.m-workPlan"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[3]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control36_wp9MVU"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control42_Ixoyp0": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::DIV[@id=\"visitPlanList\"]"
-          },
           {
             "id": "@class/word",
             "prob": 1,
@@ -189,131 +116,24 @@
               0,
               2
             ],
-            "value": "DIV.m-lists DIV.g-box DIV.m-lists-content"
+            "value": "DIV.bench-wrap.clearfix DIV.bench-l DIV.bench-box"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control42_Ixoyp0"
+        "onGetData": "getData_control310_rtFkBQ"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": ""
     },
-    "control43_fLHAKd": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "selector",
-              "value": "html"
-            }
-          ],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 4,
-            "value": [
-              "descendant::INTPUT[@id=\"planEaiId\"]//INTPUT[@id=\"currentSelectDay\"]//DIV[@id=\"shortVisit\" or @id=\"newFile\"]",
-              "descendant::INTPUT[@id=\"currentSelectDay\"]//DIV[@id=\"shortVisit\"]",
-              "descendant::DIV[@id=\"shortVisit\"]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "HTML.js.no-touch.csstransitions BODY.modal-open DIV.modal.modal-w01.in"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/INTPUT[1]/INTPUT[1]/INTPUT[1]/DIV[2]"
-          },
-          {
-            "id": "shield",
-            "value": {
-              "zIndex": "1050",
-              "width": 1414,
-              "height": 869
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control43_fLHAKd"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control45_1FKKVa": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "selector",
-              "value": "html"
-            }
-          ],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 4,
-            "value": [
-              "descendant::INTPUT[@id=\"planEaiId\"]//INTPUT[@id=\"currentSelectDay\"]//DIV[@id=\"shortVisit\" or @id=\"newFile\"]",
-              "descendant::INTPUT[@id=\"currentSelectDay\"]//DIV[@id=\"shortVisit\"]",
-              "descendant::DIV[@id=\"shortVisit\"]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "HTML.js.no-touch.csstransitions BODY.modal-open DIV.modal.modal-w01.in"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/INTPUT[1]/INTPUT[1]/INTPUT[1]/DIV[2]"
-          },
-          {
-            "id": "shield",
-            "value": {
-              "zIndex": "1050",
-              "width": 1414,
-              "height": 869
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control45_1FKKVa"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control46_q2RKLT": {
+    "control311_Nv8Czt": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -324,10 +144,39 @@
         },
         "locators": [
           {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::DIV[@id=\"tempPlanList\"]"
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.bench-l DIV.bench-box DIV.plan"
           },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control311_Nv8Czt"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control312_mwBi0M": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
           {
             "id": "@class/word",
             "prob": 1,
@@ -335,24 +184,24 @@
               1,
               2
             ],
-            "value": "DIV.m-lists DIV.g-box DIV.m-lists-content"
+            "value": "DIV.bench-l DIV.bench-box DIV.plan"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[2]/DIV[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]/DIV[3]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control46_q2RKLT"
+        "onGetData": "getData_control312_mwBi0M"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
     },
-    "control52_1CDkhm": {
+    "control26_kba3Qe": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -363,37 +212,33 @@
         },
         "locators": [
           {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"workPlanFill\"]/DIV[1]/DIV[2]",
-              "descendant::DIV[@id=\"workPlanFill\"]//DIV"
-            ]
-          },
-          {
             "id": "@class/word",
             "prob": 1,
-            "value": "DIV.m-workPlan DIV.content DIV.u-textarea"
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "DIV.bench-wrap.clearfix DIV.bench-r DIV.bench-box.bench-box-r"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[3]/DIV[1]/DIV[2]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control52_1CDkhm"
+        "onGetData": "getData_control26_kba3Qe"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
     },
-    "control57_d6EkJJ": {
+    "control43_nXZbyJ": {
       "location": {
         "data": {
-          "tagName": "DIV"
+          "tagName": "BODY"
         },
         "userData": {
           "data": [],
@@ -401,31 +246,52 @@
         },
         "locators": [
           {
-            "id": "@id/word",
-            "prob": 4,
-            "value": [
-              "descendant::DIV[@id=\"workPlanCalendar\"]//DIV[@id=\"custom-inner\"]//DIV[@id=\"calendar\"]",
-              "descendant::DIV[@id=\"custom-inner\"]//DIV[@id=\"calendar\"]",
-              "descendant::DIV[@id=\"calendar\"]"
-            ]
-          },
-          {
             "id": "@class/word",
             "prob": 1,
-            "value": "DIV.m-date DIV.custom-calendar-wrap DIV.fc-calendar-container"
+            "value": "HTML.js.no-touch.csstransitions BODY"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]"
+            "value": "/HTML[1]/BODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control57_d6EkJJ"
+        "onGetData": "getData_control43_nXZbyJ"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control45_Fr7laA": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              4
+            ],
+            "value": "DIV.bench-wrap.clearfix DIV.bench-r DIV.bench-box.bench-box-r"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control45_Fr7laA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
       "monitored": true,
       "frameXPath": ""
     }
@@ -434,15 +300,13 @@
     "context2_15cCKI": {
       "controls": [
         "control3_t1ElOC",
-        "control26_rl75IZ",
         "control35_7n8VvC",
-        "control36_wp9MVU",
-        "control42_Ixoyp0",
-        "control43_fLHAKd",
-        "control45_1FKKVa",
-        "control46_q2RKLT",
-        "control52_1CDkhm",
-        "control57_d6EkJJ"
+        "control310_rtFkBQ",
+        "control311_Nv8Czt",
+        "control312_mwBi0M",
+        "control26_kba3Qe",
+        "control43_nXZbyJ",
+        "control45_Fr7laA"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -460,66 +324,6 @@
         }
       ]
     },
-    "flow26_b4tOFh": {
-      "fromContextId": "context2_15cCKI",
-      "fromAction": "doAction",
-      "fromControlId": "control26_rl75IZ",
-      "toContexts": [
-        {
-          "toContextId": "context2_15cCKI"
-        }
-      ]
-    },
-    "flow33_26sqR1": {
-      "fromContextId": "context2_15cCKI",
-      "fromAction": "doAction",
-      "fromControlId": "control42_Ixoyp0",
-      "toContexts": [
-        {
-          "toContextId": "context2_15cCKI"
-        },
-        {
-          "toContextId": "context15_CG5hRM",
-          "toModelId": "wtiteReport"
-        },
-        {
-          "toContextId": "context12_6KpKeA",
-          "toModelId": "vistiSign"
-        },
-        {
-          "toContextId": "context13_Es5f23",
-          "toModelId": "visitSignOut"
-        },
-        {
-          "toContextId": "context20_XoqQEa",
-          "toModelId": "materialCollection"
-        },
-        {
-          "toContextId": "context31_fogIBT",
-          "toModelId": "HESReport"
-        },
-        {
-          "toContextId": "context35_53UgWr",
-          "toModelId": "HESRreport"
-        },
-        {
-          "toContextId": "context53_oR8JhD",
-          "toModelId": "infomationInput"
-        },
-        {
-          "toContextId": "context56_sDDtAM",
-          "toModelId": "customerInformationweekFill"
-        },
-        {
-          "toContextId": "context55_T4Zowu",
-          "toModelId": "storeWeekPSI"
-        },
-        {
-          "toContextId": "context54_GuMlyR",
-          "toModelId": "storeDayPSI"
-        }
-      ]
-    },
     "flow34_wuWBUX": {
       "fromContextId": "context2_15cCKI",
       "fromAction": "doAction",
@@ -527,106 +331,10 @@
       "toContexts": [
         {
           "toContextId": "context2_15cCKI"
-        }
-      ]
-    },
-    "flow36_QlLMRx": {
-      "fromContextId": "context2_15cCKI",
-      "fromAction": "doAction",
-      "fromControlId": "control43_fLHAKd",
-      "toContexts": [
-        {
-          "toContextId": "context2_15cCKI"
         },
         {
-          "toContextId": "context12_6KpKeA",
-          "toModelId": "vistiSign"
-        }
-      ]
-    },
-    "flow37_MU8nOP": {
-      "fromContextId": "context2_15cCKI",
-      "fromAction": "doAction",
-      "fromControlId": "control45_1FKKVa",
-      "toContexts": [
-        {
-          "toContextId": "context2_15cCKI"
-        },
-        {
-          "toContextId": "context13_Es5f23",
-          "toModelId": "visitSignOut"
-        },
-        {
-          "toContextId": "context53_oR8JhD",
-          "toModelId": "infomationInput"
-        },
-        {
-          "toContextId": "context56_sDDtAM",
-          "toModelId": "customerInformationweekFill"
-        },
-        {
-          "toContextId": "context12_6KpKeA",
-          "toModelId": "vistiSign"
-        }
-      ]
-    },
-    "flow41_ea7gbu": {
-      "fromContextId": "context2_15cCKI",
-      "fromAction": "doAction",
-      "fromControlId": "control46_q2RKLT",
-      "toContexts": [
-        {
-          "toContextId": "context2_15cCKI"
-        },
-        {
-          "toContextId": "context12_6KpKeA",
-          "toModelId": "vistiSign"
-        },
-        {
-          "toContextId": "context15_CG5hRM",
-          "toModelId": "wtiteReport"
-        },
-        {
-          "toContextId": "context13_Es5f23",
-          "toModelId": "visitSignOut"
-        },
-        {
-          "toContextId": "context20_XoqQEa",
-          "toModelId": "materialCollection"
-        },
-        {
-          "toContextId": "context31_fogIBT",
-          "toModelId": "HESReport"
-        },
-        {
-          "toContextId": "context35_53UgWr",
-          "toModelId": "HESRreport"
-        },
-        {
-          "toContextId": "context56_sDDtAM",
-          "toModelId": "customerInformationweekFill"
-        },
-        {
-          "toContextId": "context53_oR8JhD",
-          "toModelId": "infomationInput"
-        },
-        {
-          "toContextId": "context54_GuMlyR",
-          "toModelId": "storeDayPSI"
-        },
-        {
-          "toContextId": "context55_T4Zowu",
-          "toModelId": "storeWeekPSI"
-        }
-      ]
-    },
-    "flow47_urOv7S": {
-      "fromContextId": "context2_15cCKI",
-      "fromAction": "doAction",
-      "fromControlId": "control36_wp9MVU",
-      "toContexts": [
-        {
-          "toContextId": "context2_15cCKI"
+          "toContextId": "context81_TxM4IR",
+          "toModelId": "workPlanCustomStore"
         }
       ]
     },
@@ -640,13 +348,101 @@
         }
       ]
     },
-    "flow87_7dW1eu": {
+    "flow234_MAQpkr": {
       "fromContextId": "context2_15cCKI",
       "fromAction": "doAction",
-      "fromControlId": "control57_d6EkJJ",
+      "fromControlId": "control310_rtFkBQ",
       "toContexts": [
         {
           "toContextId": "context2_15cCKI"
+        }
+      ]
+    },
+    "flow235_qO0EzC": {
+      "fromContextId": "context2_15cCKI",
+      "fromAction": "doAction",
+      "fromControlId": "control312_mwBi0M",
+      "toContexts": [
+        {
+          "toContextId": "context2_15cCKI"
+        },
+        {
+          "toContextId": "context56_sDDtAM",
+          "toModelId": "customerInformationweekFill"
+        },
+        {
+          "toContextId": "context12_6KpKeA",
+          "toModelId": "vistiSign"
+        },
+        {
+          "toContextId": "context53_oR8JhD",
+          "toModelId": "infomationInput"
+        },
+        {
+          "toContextId": "context15_CG5hRM",
+          "toModelId": "wtiteReport"
+        },
+        {
+          "toContextId": "context13_Es5f23",
+          "toModelId": "visitSignOut"
+        }
+      ]
+    },
+    "flow236_ztLNEi": {
+      "fromContextId": "context2_15cCKI",
+      "fromAction": "doAction",
+      "fromControlId": "control311_Nv8Czt",
+      "toContexts": [
+        {
+          "toContextId": "context2_15cCKI"
+        },
+        {
+          "toContextId": "context12_6KpKeA",
+          "toModelId": "vistiSign"
+        },
+        {
+          "toContextId": "context13_Es5f23",
+          "toModelId": "visitSignOut"
+        },
+        {
+          "toContextId": "context53_oR8JhD",
+          "toModelId": "infomationInput"
+        },
+        {
+          "toContextId": "context56_sDDtAM",
+          "toModelId": "customerInformationweekFill"
+        },
+        {
+          "toContextId": "context15_CG5hRM",
+          "toModelId": "wtiteReport"
+        }
+      ]
+    },
+    "flow47_Duhke5": {
+      "fromContextId": "context2_15cCKI",
+      "fromAction": "doAction",
+      "fromControlId": "control26_kba3Qe",
+      "toContexts": [
+        {
+          "toContextId": "context2_15cCKI"
+        },
+        {
+          "toContextId": "context81_TxM4IR",
+          "toModelId": "workPlanCustomStore"
+        }
+      ]
+    },
+    "flow87_riCF1C": {
+      "fromContextId": "context2_15cCKI",
+      "fromAction": "doAction",
+      "fromControlId": "control45_Fr7laA",
+      "toContexts": [
+        {
+          "toContextId": "context2_15cCKI"
+        },
+        {
+          "toContextId": "context82_qcPd2X",
+          "toModelId": "workSummary"
         }
       ]
     }
@@ -655,21 +451,6 @@
     "page2_PFEH1A": {
       "contextId": "context2_15cCKI",
       "layout": [
-        {
-          "id": "uiControl47_U0LVB2",
-          "controlId": "control43_fLHAKd",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl47_U0LVB2",
-                "onGetTemplate": "getTemplate_uiControl47_U0LVB2"
-              }
-            }
-          }
-        },
         {
           "id": "uiControl5_hecK9N",
           "controlId": "control3_t1ElOC",
@@ -686,16 +467,16 @@
           }
         },
         {
-          "id": "uiControl6_2okAzV",
-          "controlId": "control26_rl75IZ",
+          "id": "uiControl301_Dt839P",
+          "controlId": "control310_rtFkBQ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl6_2okAzV",
-                "onGetTemplate": "getTemplate_uiControl6_2okAzV"
+                "onDoAction": "doAction_uiControl301_Dt839P",
+                "onGetTemplate": "getTemplate_uiControl301_Dt839P"
               }
             }
           }
@@ -716,91 +497,76 @@
           }
         },
         {
-          "id": "uiControl44_9CIEcB",
-          "controlId": "control42_Ixoyp0",
+          "id": "uiControl302_BlcByv",
+          "controlId": "control311_Nv8Czt",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl44_9CIEcB",
-                "onGetTemplate": "getTemplate_uiControl44_9CIEcB"
+                "onDoAction": "doAction_uiControl302_BlcByv",
+                "onGetTemplate": "getTemplate_uiControl302_BlcByv"
               }
             }
           }
         },
         {
-          "id": "uiControl50_PkfnWB",
-          "controlId": "control46_q2RKLT",
+          "id": "uiControl303_qrmwcK",
+          "controlId": "control312_mwBi0M",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl50_PkfnWB",
-                "onGetTemplate": "getTemplate_uiControl50_PkfnWB"
+                "onDoAction": "doAction_uiControl303_qrmwcK",
+                "onGetTemplate": "getTemplate_uiControl303_qrmwcK"
               }
             }
           }
         },
         {
-          "id": "uiControl39_vT2fni",
-          "controlId": "control36_wp9MVU",
+          "id": "uiControl6_JDIiap",
+          "controlId": "control26_kba3Qe",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl39_vT2fni",
-                "onGetTemplate": "getTemplate_uiControl39_vT2fni"
+                "onDoAction": "doAction_uiControl6_JDIiap",
+                "onGetTemplate": "getTemplate_uiControl6_JDIiap"
               }
             }
           }
         },
         {
-          "id": "uiControl56_TfKql4",
-          "controlId": "control52_1CDkhm",
+          "id": "uiControl46_aqS265",
+          "controlId": "control45_Fr7laA",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl56_TfKql4",
-                "onGetTemplate": "getTemplate_uiControl56_TfKql4"
+                "onDoAction": "doAction_uiControl46_aqS265",
+                "onGetTemplate": "getTemplate_uiControl46_aqS265"
               }
             }
           }
         },
         {
-          "id": "uiControl49_f3PtCH",
-          "controlId": "control45_1FKKVa",
+          "id": "uiControl47_iW5ald",
+          "controlId": "control43_nXZbyJ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl49_f3PtCH",
-                "onGetTemplate": "getTemplate_uiControl49_f3PtCH"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl46_oAxXpJ",
-          "controlId": "control57_d6EkJJ",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl46_oAxXpJ",
-                "onGetTemplate": "getTemplate_uiControl46_oAxXpJ"
+                "onDoAction": "doAction_uiControl47_iW5ald",
+                "onGetTemplate": "getTemplate_uiControl47_iW5ald"
               }
             }
           }
@@ -845,7 +611,9 @@
         "context12_6KpKeA": [
           "192.168.220.82:8080/pttlCrm/res/customerSign.html",
           "192.168.220.82:8080/pttlCrm/res/customerReportPop.html",
-          "192.168.220.82:8080/pttlCrm/visit/customerVisitPlan/addCustomerSignIn"
+          "192.168.220.82:8080/pttlCrm/visit/customerVisitPlan/addCustomerSignIn",
+          "192.168.220.82:8080/pttlCrm/res/page/visitManager/visitLook/customerSign.html",
+          "192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerReportPop.html"
         ],
         "context13_Es5f23": [
           "192.168.220.82:8080/pttlCrm/res/vistiSignOut.html",
@@ -879,7 +647,9 @@
           "192.168.220.82:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=1-HP70",
           "192.168.220.82:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=11994",
           "192.168.220.82:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=10263",
-          "192.168.220.82:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=1-10UD93"
+          "192.168.220.82:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=11212",
+          "192.168.220.82:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=10702",
+          "192.168.220.82:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=134291"
         ],
         "context56_sDDtAM": [
           "192.168.220.82:8080/pttlCrm/res/page/psi/customerWeekPsi.html?rowId=11994",
@@ -1785,6 +1555,186 @@
             "workPlanFill",
             "workPlanHaveConstitute",
             "workPlanNoConstitute"
+          ],
+          [
+            "calendar",
+            "chooseCustomerCodes",
+            "chooseStoreCodes",
+            "chooseVisitInfo",
+            "currentSelectDay",
+            "custom-date",
+            "custom-month",
+            "custom-next",
+            "custom-prev",
+            "custom-year",
+            "myAppUl",
+            "myDataUl",
+            "newPlanAddButton",
+            "newPlanDeleteButton",
+            "newTempVisitButton",
+            "planEaiId",
+            "planRowId",
+            "tempPlanList",
+            "viewAtMyReport",
+            "viewWorkAtme",
+            "visitPlanList",
+            "workPlan",
+            "workPlanHaveConstitute",
+            "workPlanNoConstitute",
+            "workSummaryAddBtn"
+          ],
+          [
+            "baogao-AUU",
+            "baogao-AV",
+            "baogaonull",
+            "calendar",
+            "chooseCustomerCodes",
+            "chooseStoreCodes",
+            "chooseVisitInfo",
+            "currentSelectDay",
+            "custom-date",
+            "custom-month",
+            "custom-next",
+            "custom-prev",
+            "custom-year",
+            "myAppUl",
+            "myDataUl",
+            "newPlanAddButton",
+            "newPlanDeleteButton",
+            "newTempVisitButton",
+            "planEaiId",
+            "planRowId",
+            "qiantui-AUU",
+            "qiantui-AV",
+            "qiantuinull",
+            "qidandao-AUU",
+            "qidandao-AV",
+            "qidandaonull",
+            "tempPlanList",
+            "viewAtMyReport",
+            "viewWorkAtme",
+            "visitPlanList",
+            "workPlan",
+            "workPlanHaveConstitute",
+            "workPlanNoConstitute",
+            "workSummaryAddBtn"
+          ],
+          [
+            "baogao-ONCY",
+            "calendar",
+            "chooseCustomerCodes",
+            "chooseStoreCodes",
+            "chooseVisitInfo",
+            "currentSelectDay",
+            "custom-date",
+            "custom-month",
+            "custom-next",
+            "custom-prev",
+            "custom-year",
+            "myAppUl",
+            "myDataUl",
+            "newPlanAddButton",
+            "newPlanDeleteButton",
+            "newTempVisitButton",
+            "planEaiId",
+            "planRowId",
+            "qiantui-ONCY",
+            "qidandao-ONCY",
+            "tempPlanList",
+            "viewAtMyReport",
+            "viewWorkAtme",
+            "visitPlanList",
+            "workPlan",
+            "workPlanHaveConstitute",
+            "workPlanNoConstitute",
+            "workSummaryAddBtn"
+          ],
+          [
+            "baogao-P",
+            "baogao-PNG",
+            "baogao-PNI",
+            "baogao-PNK",
+            "baogao-PNM",
+            "baogao-PNT",
+            "calendar",
+            "chooseCustomerCodes",
+            "chooseStoreCodes",
+            "chooseVisitInfo",
+            "currentSelectDay",
+            "custom-date",
+            "custom-month",
+            "custom-next",
+            "custom-prev",
+            "custom-year",
+            "myAppUl",
+            "myDataUl",
+            "newPlanAddButton",
+            "newPlanDeleteButton",
+            "newTempVisitButton",
+            "planEaiId",
+            "planRowId",
+            "qiantui-P",
+            "qiantui-PNG",
+            "qiantui-PNI",
+            "qiantui-PNK",
+            "qiantui-PNM",
+            "qiantui-PNT",
+            "qidandao-P",
+            "qidandao-PNG",
+            "qidandao-PNI",
+            "qidandao-PNK",
+            "qidandao-PNM",
+            "qidandao-PNT",
+            "tempPlanList",
+            "viewAtMyReport",
+            "viewWorkAtme",
+            "visitPlanList",
+            "workPlan",
+            "workPlanHaveConstitute",
+            "workPlanNoConstitute",
+            "workSummaryAddBtn"
+          ],
+          [
+            "baogao-PELG",
+            "baogao-PELI",
+            "baogao-PEUU",
+            "baogao-PEUW",
+            "baogao-PHMZ",
+            "calendar",
+            "chooseCustomerCodes",
+            "chooseStoreCodes",
+            "chooseVisitInfo",
+            "currentSelectDay",
+            "custom-date",
+            "custom-month",
+            "custom-next",
+            "custom-prev",
+            "custom-year",
+            "myAppUl",
+            "myDataUl",
+            "newPlanAddButton",
+            "newPlanDeleteButton",
+            "newTempVisitButton",
+            "planEaiId",
+            "planRowId",
+            "qiantui-PELG",
+            "qiantui-PELI",
+            "qiantui-PEUU",
+            "qiantui-PEUW",
+            "qiantui-PHMZ",
+            "qidandao-PELG",
+            "qidandao-PELI",
+            "qidandao-PEUU",
+            "qidandao-PEUW",
+            "qidandao-PHMZ",
+            "tempPlanList",
+            "viewAtMyReport",
+            "viewWorkAtme",
+            "visitPlanList",
+            "workPlan",
+            "workPlanHaveConstitute",
+            "workPlanNoConstitute",
+            "workSummaryAddBtn"
           ]
         ],
         "context0_1ekenN": [
@@ -1845,6 +1795,34 @@
           ],
           [
             "CloseReportPopRoot",
+            "ContactAlert",
+            "ContactUsers",
+            "CustomerRisk",
+            "DisplayContact",
+            "FenXiaoDivison",
+            "OtherInfor",
+            "SamsungDivison",
+            "body",
+            "businessInformation",
+            "contentCustomer",
+            "customerReportPopBack",
+            "customerReportPopBtnPrimary",
+            "customerReportPopBtnSuccess",
+            "fileList",
+            "filePicker",
+            "financialInformation",
+            "goodsInformation",
+            "headCustomer",
+            "header",
+            "huaweiFD",
+            "huaweiPJ",
+            "planCreateDate",
+            "planDate",
+            "reportImportContent",
+            "signInDateTime"
+          ],
+          [
+            "CloseReportPopRoot",
             "address",
             "allmap",
             "body",
@@ -1901,6 +1879,39 @@
             "remarktextname",
             "signTime",
             "zoomer"
+          ],
+          [
+            "CloseReportPopRoot",
+            "address",
+            "allmap",
+            "close",
+            "customersign-content",
+            "headCustomer",
+            "latitude",
+            "longitude",
+            "planCreateDate",
+            "planDate",
+            "remarktextname",
+            "signTime",
+            "zoomer"
+          ],
+          [
+            "CloseReportPopRoot",
+            "address",
+            "allmap",
+            "body",
+            "csAddress",
+            "csLatitude",
+            "csLongitude",
+            "customersign-content",
+            "headCustomer",
+            "header",
+            "latitude",
+            "longitude",
+            "planCreateDate",
+            "planDate",
+            "remarktextname",
+            "signTime"
           ]
         ],
         "context15_CG5hRM": [
@@ -2080,11 +2091,10 @@
             "CustomerRisk",
             "DisplayContact",
             "FenXiaoDivison",
-            "HuaWeiDivison",
-            "LetvDivison",
             "OtherInfor",
             "SamsungDivison",
             "body",
+            "businessInformation",
             "contactSearch",
             "contentBody",
             "contentCustomer",
@@ -2093,14 +2103,114 @@
             "customerReportPopBtnSuccess",
             "fileList",
             "filePicker",
+            "financialInformation",
+            "goodsInformation",
             "headCustomer",
             "header",
+            "huaweiFD",
+            "huaweiPJ",
             "icon-search",
             "planCreateDate",
             "planDate",
             "reportImportContent",
-            "rt_rt_bjhlbfgqblpggemm",
+            "rt_rt_bnviqgpojdvirfeggec",
             "search-lists",
+            "signInDateTime"
+          ],
+          [
+            "CloseReportPopRoot",
+            "ContactAlert",
+            "ContactClose",
+            "ContactSure",
+            "ContactUsers",
+            "CustomerRisk",
+            "DisplayContact",
+            "FenXiaoDivison",
+            "OtherInfor",
+            "SamsungDivison",
+            "body",
+            "businessInformation",
+            "contactSearch",
+            "contentBody",
+            "contentCustomer",
+            "customerReportPopBack",
+            "customerReportPopBtnPrimary",
+            "customerReportPopBtnSuccess",
+            "fileList",
+            "filePicker",
+            "financialInformation",
+            "goodsInformation",
+            "headCustomer",
+            "header",
+            "huaweiFD",
+            "huaweiPJ",
+            "icon-search",
+            "planCreateDate",
+            "planDate",
+            "reportImportContent",
+            "rt_rt_bnasrtgltblektqur",
+            "search-lists",
+            "signInDateTime"
+          ],
+          [
+            "CloseReportPopRoot",
+            "ContactAlert",
+            "ContactClose",
+            "ContactSure",
+            "ContactUsers",
+            "CustomerRisk",
+            "DisplayContact",
+            "FenXiaoDivison",
+            "OtherInfor",
+            "SamsungDivison",
+            "body",
+            "businessInformation",
+            "contactSearch",
+            "contentBody",
+            "contentCustomer",
+            "customerReportPopBack",
+            "customerReportPopBtnPrimary",
+            "customerReportPopBtnSuccess",
+            "fileList",
+            "filePicker",
+            "financialInformation",
+            "goodsInformation",
+            "headCustomer",
+            "header",
+            "huaweiFD",
+            "huaweiPJ",
+            "icon-search",
+            "planCreateDate",
+            "planDate",
+            "reportImportContent",
+            "rt_rt_bolnfhnhgvvmoasiomsk",
+            "search-lists",
+            "signInDateTime"
+          ],
+          [
+            "CloseReportPopRoot",
+            "ContactAlert",
+            "ContactUsers",
+            "CustomerRisk",
+            "DisplayContact",
+            "FenXiaoDivison",
+            "OtherInfor",
+            "SamsungDivison",
+            "body",
+            "businessInformation",
+            "contentCustomer",
+            "customerReportPopBack",
+            "fileList",
+            "filePicker",
+            "financialInformation",
+            "goodsInformation",
+            "headCustomer",
+            "header",
+            "huaweiFD",
+            "huaweiPJ",
+            "planCreateDate",
+            "planDate",
+            "reportImportContent",
             "signInDateTime"
           ]
         ],
@@ -2253,6 +2363,76 @@
             "rt_rt_bocgsqsequvieora",
             "rt_rt_bocgsuoqjnscebrd",
             "saveQuestion"
+          ]
+        ],
+        "context81_TxM4IR": [
+          [
+            "addDayPlanCancleBtn",
+            "addDayPlanOkBtn",
+            "addTempDayPlanCancleBtn",
+            "addTempDayPlanOkBtn",
+            "chooseCustomerCodes",
+            "chooseStoreCodes",
+            "chooseVisitInfo",
+            "currentSelectDay",
+            "customerOrStorePopClose",
+            "customerOrStorePopList",
+            "dayPlanContent",
+            "listType",
+            "newPlanList",
+            "newPlanListSearch",
+            "newPlanListSearchText",
+            "newPlanTempListContent",
+            "newTempVisit",
+            "newTempVisitSearch",
+            "newTempVisitSearchText",
+            "planCustomerPage",
+            "planEaiId",
+            "planRowId",
+            "planTempCustomerPage",
+            "tcList_C",
+            "tcList_FB",
+            "tempCustomerOrStorePopClose",
+            "tempCustomerOrStorePopList",
+            "tempPlanOtherCustomer",
+            "tempVisitCustomerListBtn",
+            "tempVisitStoreListBtn",
+            "visitCustomerListBtn",
+            "visitStoreListBtn"
+          ],
+          [
+            "addDayPlanCancleBtn",
+            "addDayPlanOkBtn",
+            "addTempDayPlanCancleBtn",
+            "addTempDayPlanOkBtn",
+            "cList_C",
+            "cList_FB",
+            "chooseCustomerCodes",
+            "chooseStoreCodes",
+            "chooseVisitInfo",
+            "currentSelectDay",
+            "customerOrStorePopClose",
+            "customerOrStorePopList",
+            "dayPlanContent",
+            "listType",
+            "newPlanList",
+            "newPlanListContent",
+            "newPlanListSearch",
+            "newPlanListSearchText",
+            "newTempVisit",
+            "newTempVisitSearch",
+            "newTempVisitSearchText",
+            "planCustomerPage",
+            "planEaiId",
+            "planRowId",
+            "planTempCustomerPage",
+            "tempCustomerOrStorePopClose",
+            "tempCustomerOrStorePopList",
+            "tempPlanOtherCustomer",
+            "tempVisitCustomerListBtn",
+            "tempVisitStoreListBtn",
+            "visitCustomerListBtn",
+            "visitStoreListBtn"
           ]
         ]
       }
@@ -3068,6 +3248,213 @@
             "z-done-new",
             "z-ok",
             "z-yet"
+          ],
+          [
+            "bench-box",
+            "bench-box-r",
+            "bench-l",
+            "bench-r",
+            "bench-tit",
+            "bench-wrap",
+            "calendar",
+            "calendar-cell",
+            "clearfix",
+            "date-tit",
+            "did",
+            "fc-body",
+            "fc-calendar",
+            "fc-five-rows",
+            "fc-head",
+            "fc-row",
+            "fc-today",
+            "i-left",
+            "i-right",
+            "i-sign",
+            "icon",
+            "icon-title",
+            "list",
+            "look",
+            "m-crumb",
+            "mask",
+            "num",
+            "plan",
+            "self",
+            "temporary",
+            "time",
+            "workbench",
+            "z-done",
+            "z-yet"
+          ],
+          [
+            "bench-box",
+            "bench-box-r",
+            "bench-l",
+            "bench-r",
+            "bench-tit",
+            "bench-wrap",
+            "calendar",
+            "calendar-cell",
+            "calendar-day-checked",
+            "clearfix",
+            "date-tit",
+            "did",
+            "fc-body",
+            "fc-calendar",
+            "fc-five-rows",
+            "fc-head",
+            "fc-row",
+            "fc-today",
+            "i-left",
+            "i-right",
+            "i-sign",
+            "icon",
+            "icon-title",
+            "iconGray",
+            "list",
+            "look",
+            "m-crumb",
+            "mask",
+            "num",
+            "p-name",
+            "plan",
+            "report",
+            "self",
+            "temporary",
+            "time",
+            "workbench",
+            "z-done",
+            "z-yet"
+          ],
+          [
+            "bench-box",
+            "bench-box-r",
+            "bench-l",
+            "bench-r",
+            "bench-tit",
+            "bench-wrap",
+            "calendar",
+            "calendar-cell",
+            "clearfix",
+            "close-btn",
+            "date-tit",
+            "did",
+            "fc-body",
+            "fc-calendar",
+            "fc-five-rows",
+            "fc-head",
+            "fc-row",
+            "fc-today",
+            "i-left",
+            "i-right",
+            "i-sign",
+            "icon",
+            "icon-title",
+            "list",
+            "look",
+            "m-crumb",
+            "mask",
+            "num",
+            "p-name",
+            "plan",
+            "report",
+            "self",
+            "temporary",
+            "time",
+            "workBanchOperate_visitCustomerCode",
+            "workbench",
+            "z-done",
+            "z-done-new",
+            "z-yet"
+          ],
+          [
+            "bench-box",
+            "bench-box-r",
+            "bench-l",
+            "bench-r",
+            "bench-tit",
+            "bench-wrap",
+            "calendar",
+            "calendar-cell",
+            "clearfix",
+            "close-btn",
+            "date-tit",
+            "did",
+            "fc-body",
+            "fc-calendar",
+            "fc-five-rows",
+            "fc-head",
+            "fc-row",
+            "fc-today",
+            "i-left",
+            "i-right",
+            "i-sign",
+            "icon",
+            "icon-title",
+            "list",
+            "look",
+            "m-crumb",
+            "mask",
+            "num",
+            "p-name",
+            "plan",
+            "report",
+            "self",
+            "temporary",
+            "time",
+            "workBanchOperate_tempCustomerCode",
+            "workBanchOperate_visitCustomerCode",
+            "workbench",
+            "z-done",
+            "z-done-new",
+            "z-yet"
+          ],
+          [
+            "bench-box",
+            "bench-box-r",
+            "bench-l",
+            "bench-r",
+            "bench-tit",
+            "bench-wrap",
+            "calendar",
+            "calendar-cell",
+            "clearfix",
+            "close-btn",
+            "date-tit",
+            "did",
+            "fc-body",
+            "fc-calendar",
+            "fc-five-rows",
+            "fc-head",
+            "fc-row",
+            "fc-today",
+            "i-left",
+            "i-right",
+            "i-sign",
+            "icon",
+            "icon-title",
+            "list",
+            "look",
+            "m-crumb",
+            "mask",
+            "menu-item-icon",
+            "num",
+            "p-name",
+            "plan",
+            "report",
+            "self",
+            "selfcheck",
+            "selfresolve",
+            "store",
+            "temporary",
+            "time",
+            "visitinfo",
+            "visitlook",
+            "workBanchOperate_tempCustomerCode",
+            "workBanchOperate_visitCustomerCode",
+            "workbench",
+            "z-done",
+            "z-done-new",
+            "z-yet"
           ]
         ],
         "context13_Es5f23": [
@@ -3125,6 +3512,76 @@
             "pano_close",
             "pano_pc_indoor_exit",
             "remarktextimg",
+            "sign",
+            "title",
+            "z-act"
+          ],
+          [
+            "BMapLabel",
+            "BMap_Marker",
+            "BMap_cpyCtrl",
+            "BMap_mask",
+            "BMap_noprint",
+            "BMap_zoomer",
+            "anchorBL",
+            "body",
+            "content",
+            "customersigin-mapbutton",
+            "customersign-map",
+            "customersign-mapcontent",
+            "customersign-mapcontent-text",
+            "customersign-mapcontent-textbottomspan",
+            "customersign-mapcontent-textdiv",
+            "customersign-mapcontent-texttopspan",
+            "customersign-remark",
+            "customersign-remarktext",
+            "customersign-remarktextarea",
+            "customersign-unactive",
+            "g-doc",
+            "header",
+            "infors",
+            "m-nav",
+            "m-popBox",
+            "pano_close",
+            "pano_pc_indoor_exit",
+            "sign",
+            "title",
+            "z-act"
+          ],
+          [
+            "BMapLabel",
+            "BMap_Marker",
+            "BMap_cpyCtrl",
+            "BMap_mask",
+            "BMap_noprint",
+            "anchorBL",
+            "body",
+            "content",
+            "customersigin-mapbutton",
+            "customersign-map",
+            "customersign-mapcontent",
+            "customersign-mapcontent-text",
+            "customersign-mapcontent-textbottomspan",
+            "customersign-mapcontent-textdiv",
+            "customersign-mapcontent-texttopspan",
+            "customersign-remark",
+            "customersign-remarktext",
+            "customersign-remarktextarea",
+            "customersign-unactive",
+            "g-doc",
+            "header",
+            "infors",
+            "iw",
+            "iw_bg",
+            "iw_c",
+            "iw_cc",
+            "iw_l",
+            "iw_r",
+            "iw_s",
+            "m-nav",
+            "m-popBox",
+            "pano_close",
+            "pano_pc_indoor_exit",
             "sign",
             "title",
             "z-act"
@@ -3223,6 +3680,38 @@
             "z-act"
           ],
           [
+            "body",
+            "center",
+            "chatUsers",
+            "clearfix",
+            "content",
+            "footer",
+            "g-doc",
+            "header",
+            "images",
+            "imagesBox",
+            "infors",
+            "lists-one",
+            "m-btns",
+            "m-btns-rd",
+            "m-contact",
+            "m-nav",
+            "m-popBox",
+            "m-report-infors",
+            "m-uploading",
+            "sign",
+            "temp",
+            "textBtn",
+            "tipFont",
+            "title",
+            "u-btn",
+            "u-btn-default",
+            "u-btn-primary",
+            "u-btn-success",
+            "uploadBtn",
+            "users"
+          ],
+          [
             "BMapLabel",
             "BMap_Marker",
             "BMap_cpyCtrl",
@@ -3232,7 +3721,6 @@
             "body",
             "content",
             "customersigin-mapbutton",
-            "customersign-active",
             "customersign-map",
             "customersign-mapcontent",
             "customersign-mapcontent-text",
@@ -3257,7 +3745,6 @@
             "m-popBox",
             "pano_close",
             "pano_pc_indoor_exit",
-            "remarktextimg",
             "sign",
             "title",
             "z-act"
@@ -3392,6 +3879,52 @@
           [
             "body",
             "btn",
+            "cancel",
+            "center",
+            "chatUsers",
+            "clearfix",
+            "content",
+            "file-item",
+            "file-panel",
+            "footer",
+            "g-doc",
+            "header",
+            "icon",
+            "icon-back",
+            "icon-search",
+            "images",
+            "imagesBox",
+            "info",
+            "infors",
+            "lists-one",
+            "m-btns",
+            "m-btns-rd",
+            "m-contact",
+            "m-nav",
+            "m-popBox",
+            "m-report-infors",
+            "m-uploading",
+            "search",
+            "search-lists",
+            "sign",
+            "temp",
+            "textBtn",
+            "tipFont",
+            "title",
+            "u-btn",
+            "u-btn-default",
+            "u-btn-primary",
+            "u-btn-success",
+            "uploadBtn",
+            "users",
+            "webuploader-container",
+            "webuploader-element-invisible",
+            "webuploader-pick",
+            "z-act"
+          ],
+          [
+            "body",
+            "btn",
             "center",
             "chatUsers",
             "clearfix",
@@ -3429,6 +3962,37 @@
             "webuploader-container",
             "webuploader-element-invisible",
             "webuploader-pick",
+            "z-act"
+          ],
+          [
+            "body",
+            "center",
+            "chatUsers",
+            "clearfix",
+            "content",
+            "footer",
+            "g-doc",
+            "header",
+            "images",
+            "imagesBox",
+            "infors",
+            "lists-one",
+            "m-btns",
+            "m-btns-rd",
+            "m-contact",
+            "m-nav",
+            "m-popBox",
+            "m-report-infors",
+            "m-uploading",
+            "sign",
+            "temp",
+            "textBtn",
+            "tipFont",
+            "title",
+            "u-btn",
+            "u-btn-default",
+            "uploadBtn",
+            "users",
             "z-act"
           ]
         ],
@@ -4050,6 +4614,95 @@
             "INTPUT/INTPUT/DIV",
             "INTPUT/INTPUT/INTPUT",
             "INTPUT/INTPUT/SCRIPT"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/UL",
+            "DIV/H4/I",
+            "DIV/SPAN/B",
+            "DIV/SPAN/SPAN",
+            "DIV/UL/LI"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/UL",
+            "DIV/H4/I",
+            "DIV/SPAN/B",
+            "DIV/SPAN/SPAN",
+            "DIV/UL/LI",
+            "LI/DIV/SPAN",
+            "UL/LI/A",
+            "UL/LI/DIV",
+            "UL/LI/INPUT-hidden"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/UL",
+            "DIV/H4/I",
+            "DIV/SPAN/B",
+            "DIV/SPAN/SPAN",
+            "DIV/UL/LI",
+            "LI/A/I",
+            "LI/DIV/A",
+            "LI/DIV/SPAN",
+            "UL/LI/A",
+            "UL/LI/DIV",
+            "UL/LI/INPUT-hidden"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/UL",
+            "DIV/H4/I",
+            "DIV/SPAN/B",
+            "DIV/SPAN/SPAN",
+            "DIV/UL/LI",
+            "LI/A/I",
+            "LI/A/SPAN",
+            "LI/DIV/A",
+            "LI/DIV/SPAN",
+            "UL/LI/A",
+            "UL/LI/DIV",
+            "UL/LI/INPUT-hidden"
           ]
         ],
         "context12_6KpKeA": [
@@ -4117,6 +4770,23 @@
             "-/-/DIV",
             "-/-/SCRIPT",
             "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/DIV/UL",
+            "DIV/H6/FONT",
+            "DIV/SPAN/EM",
+            "DIV/UL/LI",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
             "DIV/A/DIV",
             "DIV/A/IMG",
             "DIV/A/SPAN",
@@ -4170,6 +4840,51 @@
             "DIV/SPAN/DIV",
             "DIV/SPAN/EM",
             "DIV/SPAN/SPAN",
+            "DIV/UL/LI",
+            "SPAN/DIV/IMG",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/A",
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/A/SPAN",
+            "-/DIV/DIV",
+            "DIV/A/IMG",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/DIV/UL",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/EM",
+            "DIV/SPAN/SPAN",
+            "DIV/UL/LI",
+            "SPAN/DIV/IMG",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/DIV",
+            "DIV/A/IMG",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/DIV/UL",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/EM",
             "DIV/UL/LI",
             "SPAN/DIV/IMG",
             "UL/LI/A"
@@ -4230,12 +4945,52 @@
             "DIV/DIV/H1",
             "DIV/DIV/H6",
             "DIV/DIV/I",
+            "DIV/DIV/IMG",
             "DIV/DIV/INPUT-file",
             "DIV/DIV/INPUT-text",
             "DIV/DIV/LABEL",
             "DIV/DIV/SPAN",
             "DIV/DIV/TEXTAREA",
             "DIV/DIV/UL",
+            "DIV/H6/FONT",
+            "DIV/SPAN/EM",
+            "DIV/UL/LI",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/EM",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-file",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/DIV/UL",
+            "DIV/H6/FONT",
+            "DIV/SPAN/EM",
+            "DIV/UL/LI",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/DIV/UL",
+            "DIV/H6/FONT",
             "DIV/SPAN/EM",
             "DIV/UL/LI",
             "UL/LI/A"
@@ -4619,8 +5374,244 @@
             "DIV/SPAN/INPUT-text",
             "DIV/TABLE/TBODY",
             "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH"
+          ]
+        ],
+        "context53_oR8JhD": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/SPAN",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/BUTTON",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/BUTTON",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/BUTTON",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
             "TABLE/THEAD/TR",
             "THEAD/TR/TH"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/BUTTON",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ]
+        ],
+        "context81_TxM4IR": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/H2",
+            "-/DIV/UL",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H3",
+            "DIV/DIV/H6",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/TEXTAREA",
+            "DIV/DIV/UL",
+            "DIV/H2/SPAN",
+            "DIV/LABEL/I",
+            "DIV/LABEL/INPUT-checkbox",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/LABEL/I",
+            "TD/LABEL/INPUT-radio",
+            "THEAD/TR/TH",
+            "TR/TD/B",
+            "TR/TD/LABEL",
+            "UL/LI/A",
+            "UL/LI/INPUT-number",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/H2",
+            "-/DIV/UL",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H3",
+            "DIV/DIV/H6",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/TEXTAREA",
+            "DIV/DIV/UL",
+            "DIV/H2/SPAN",
+            "DIV/LABEL/I",
+            "DIV/LABEL/INPUT-checkbox",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/LABEL/I",
+            "TD/LABEL/INPUT-checkbox",
+            "THEAD/TR/TH",
+            "TR/TD/B",
+            "TR/TD/LABEL",
+            "UL/LI/A",
+            "UL/LI/INPUT-number",
+            "UL/LI/SPAN"
           ]
         ]
       }
