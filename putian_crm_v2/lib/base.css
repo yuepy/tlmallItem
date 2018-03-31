@@ -11380,7 +11380,8 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 10px;
+  padding: 10px 0px;
+  background: #ececec;
 }
 .ysp-workSummary-style .ysp-workSummary-lable .ysp-workSummary-uncheck {
   display: block;
@@ -11393,6 +11394,9 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 }
 .ysp-workSummary-style .ysp-workSummary-lable .ysp-workSummary-check {
   background: #4796ed;
+}
+.ysp-workSummary-style .ysp-workSummary-lable .ysp-workSummary-hidden {
+  display: none;
 }
 .ysp-workSummary-style .ysp-atreport-picture {
   background-color: #fff;
@@ -11474,6 +11478,9 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   overflow: hidden;
   padding: 24px 20px;
 }
+.ysp-workSummary-style .images-report .upload > div:nth-child(1) {
+  padding: 0px 0px 10px 0px;
+}
 .ysp-workSummary-style .images-report .upload .updata-image {
   float: left;
   width: 100px;
@@ -11523,6 +11530,9 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   position: relative;
   margin-right: 6px;
 }
+.ysp-workSummary-style .images-report .upload .file-images-rows img {
+  height: 100px;
+}
 .ysp-workSummary-style .images-report .upload .file-images-rows span {
   position: absolute;
   bottom: 0px;
@@ -11545,6 +11555,15 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   border-radius: 50%;
   padding: 10px;
   margin: 3px;
+}
+.ysp-workSummary-style .ysp-worksum {
+  background: #ececec;
+  height: 40px;
+}
+.ysp-workSummary-style .ysp-worksum > span:nth-child(1) {
+  display: inline-block;
+  padding: 10px 10px;
+  color: #999;
 }
 .ysp-workSummary-style .personnel > div:nth-child(1) {
   overflow: hidden;
@@ -11578,6 +11597,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 }
 .ysp-workSummary-style .update-commit {
   text-align: center;
+  background: #ececec;
 }
 .ysp-workSummary-style .update-commit button {
   width: 47%;
@@ -11598,5 +11618,47 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   border: 1px solid #4595EC;
   background: #4595EC;
   color: #fff !important;
+}
+.choseClock {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-image: url(images/ysp-achievement-pre-icon.png);
+}
+.ysp-workSummary-business {
+  background: #fff;
+  padding: 10px 0px 10px 20px;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ysp-workSummary-business > span:nth-child(1) {
+  display: block;
+  border-radius: 5px;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #ececec;
+  margin-right: 10px;
+}
+.ysp-workSummary-yes {
+  background: #fff;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.ysp-workSummary-yes span {
+  display: block;
+  border-radius: 5px;
+  background: #4796ed;
+  margin: 0 auto;
+  padding: 5px;
+  width: 20%;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
 }
 /*************新工作台样式****************/

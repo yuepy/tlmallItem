@@ -47,667 +47,61 @@
 
 	'use strict';
 
-	var _constant = __webpack_require__(3);
+	var _loadHtml = __webpack_require__(147);
 
-	var Constant = _interopRequireWildcard(_constant);
-
-	var _iframeUtils = __webpack_require__(9);
-
-	var iframeUtils = _interopRequireWildcard(_iframeUtils);
-
-	var _ajaxUtils = __webpack_require__(4);
-
-	var ajaxUtils = _interopRequireWildcard(_ajaxUtils);
+	var loadHtml = _interopRequireWildcard(_loadHtml);
 
 	var _StringUtils = __webpack_require__(7);
 
 	var StringUtils = _interopRequireWildcard(_StringUtils);
 
-	var _layerUtils = __webpack_require__(1);
+	var _dataUtils = __webpack_require__(10);
 
-	var layerUtils = _interopRequireWildcard(_layerUtils);
+	var dataUtils = _interopRequireWildcard(_dataUtils);
 
-	var _objectUtil = __webpack_require__(5);
+	var _constant = __webpack_require__(3);
 
-	var objectUtil = _interopRequireWildcard(_objectUtil);
-
-	var _backfill = __webpack_require__(65);
-
-	var backfill = _interopRequireWildcard(_backfill);
-
-	var _dateUtils = __webpack_require__(24);
-
-	var dateUtils = _interopRequireWildcard(_dateUtils);
+	var constant = _interopRequireWildcard(_constant);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-	$(document).ready(function () {
-		//window.receiveMsg = function (data) {
-			$("body").animate({ scrollTop: '0px' }, 100); //滚动到顶部
-			iframeUtils.showSecondIframe();
-			//先初始化数据
-			getDepartmentHtml();
-			$("#ContactAlert").html(getTreeHtml()); //加载树形
-			treeClick();
-			doAction();
-		//};
+	$(function () {
 
-		//日期
-		$("#workSummaryPlanTime").unbind().click(function (e) {
-			dateUtils.timeClick("workSummaryPlanTime", "dd", function () {
-				changeInput();
-			}, { isShowWeek: true, firstDayOfWeek: 1 });
-		});
+	    $(".atme-main .header2").hide();
+	    var user = dataUtils.getTopWindowData(constant.USERNAMEANDENCODER);
+	    if (user && StringUtils.getValue(user.position) != "") {
+	        if (user.position == "总部领导" || user.position == "分公司分总" || user.position == "事业部总经理" || user.position == "产品经理") {
+	            $(".atme-main .header2").show();
+	        } else {
+	            $(".atme-main .header2").remove();
+	        }
+	    }
 
-		$("#workSummaryPlanType").on("change", function () {
-			changeInput();
-		});
-
-		//关闭
-		$('#close,#closeIfram').on('click', function () {
-			iframeUtils.hideSecondIframe();
-		});
-
-		//业务部门总结-点击弹窗
-		$(".work-con .work-tit a").click(function () {
-			getDepartmentHtml();
-			$(".pop-box").show();
-		});
-		//弹窗取消
-		$(".pop-box .qx").click(function () {
-			$(".pop-box").hide();
-		});
-
-		//业务部门总结 确定
-		$("#confirmOperatingDepartment").click(function () {
-			var businessD = [];
-			$("#businessDepartment input[type='checkbox']:checked").each(function () {
-				var m = new Object();
-				//m.huaweiFD=华为FD
-				m.code = $(this).attr("code");
-				m.name = $(this).attr("val");
-				businessD.push(m);
-			});
-			getTextareaHtml(businessD);
-			$(".pop-box").hide(); //隐藏弹窗
-		});
-
-		//保存
-		$("#save,#draft").click(function () {
-			saveWorkTask($(this).attr("status"));
-		});
-
-		//图片上传
-		$("#formUploadify").attr("action", Constant.SERVER_ROOT + '/pttlCrm/store/uploadFile');
-		$("#importFile").on("change", function (e) {
-			if (StringUtils.getValue($("#importFile").val()) != "") {
-				formSubmit();
-			}
-		});
+	    //默认根据参数选择加载哪个table页面
+	    var requestParam = StringUtils.getRequestParam();
+	    if (requestParam && StringUtils.getValue(requestParam.reportId) == "workReport") {
+	        $(".atme-main .header2").addClass("header1");
+	        $(".atme-main .header2").siblings().removeClass("header1");
+	        loadHtml.getWorkReportHtml();
+	    } else {
+	        //workAtme
+	        $(".atme-main .header2").siblings().addClass("header1");
+	        $(".atme-main .header2").removeClass("header1");
+	        loadHtml.getWorkAtmeHtml();
+	    }
+	    //点击表头事件
+	    $(".atme-main .header").click(function () {
+	        $(this).addClass("header1");
+	        $(this).siblings().removeClass("header1");
+	        if ($(this).hasClass("header2")) {
+	            //总结报表
+	            loadHtml.getWorkReportHtml();
+	        } else {
+	            //汇报给我的总结
+	            loadHtml.getWorkAtmeHtml();
+	        }
+	    });
 	});
-
-	window.workTime = function() {
-		var body = {};
-		body.planType = StringUtils.getValue($("#workSummaryPlanType").val());
-		body.planTime = StringUtils.getValue($("#workSummaryPlanTime").val());
-		ajaxUtils.sendAjax("crm/workSummary/getWorkTime", body, null, function (data) {
-			if (StringUtils.getValue(data.data) != "") {
-				$("#workSummaryPlanTime").attr("planTime", data.data);
-				$("#workSummaryPlanTimeLable span").html(data.data);
-				if (!isNotEditOrSave()) {
-					$("#save,#draft").hide();
-				} else {
-					$("#save,#draft").show();
-				}
-				doAction();
-			} else {
-				$("#save,#draft").hide();
-				clearWorkSummaryHtml();
-				layerUtils.info($("#workSummaryPlanType").val() + "下，该日期不可选择！");
-			}
-		});
-	}
-  
-  function changeInput() {
-		var body = {};
-		body.planType = StringUtils.getValue($("#workSummaryPlanType").val());
-		body.planTime = StringUtils.getValue($("#workSummaryPlanTime").val());
-		ajaxUtils.sendAjax("crm/workSummary/getWorkTime", body, null, function (data) {
-			if (StringUtils.getValue(data.data) != "") {
-				$("#workSummaryPlanTime").attr("planTime", data.data);
-				$("#workSummaryPlanTimeLable span").html(data.data);
-				if (!isNotEditOrSave()) {
-					$("#save,#draft").hide();
-				} else {
-					$("#save,#draft").show();
-				}
-				doAction();
-			} else {
-				$("#save,#draft").hide();
-				clearWorkSummaryHtml();
-				layerUtils.info($("#workSummaryPlanType").val() + "下，该日期不可选择！");
-			}
-		});
-	}
-
-	/**
-	 * 分业务部门总结
-	 * @param {*} textareaList 
-	 */
-	function getTextareaHtml(textareaList) {
-		var html = "";
-		for (var i = 0; i < textareaList.length; i++) {
-			var item = textareaList[i];
-			if ($("#textareaDivs div." + item.code + "").length > 0) {
-				var context = $("#textareaDivs div." + item.code + " textarea").val();
-				html += '<div class="con-box ' + item.code + '"><span>' + item.name + '</span><textarea name="' + item.code + '" val="' + item.name + '">' + context + '</textarea>\n\t\t\t<a href="javascript:;">\u5220\u9664</a></div>';
-				//html += $("#textareaDivs div."+item.code+"").clone(true)[0].outerHTML;
-			} else {
-				html += '<div class="con-box ' + item.code + '"><span>' + item.name + '</span><textarea name="' + item.code + '" val="' + item.name + '"></textarea>\n\t\t\t<a href="javascript:;">\u5220\u9664</a></div>';
-			}
-		}
-		$("#textareaDivs").html(html);
-		$("#textareaDivs div a").unbind().click(function () {
-			$(this).parent().remove();
-		});
-	}
-
-	/**
-	 * 初始化页面数据
-	 */
-	var timeListMap; //计划时间
-	function doAction() {
-
-		var cWidth = $("#ContactAlert").css("width");
-		$("#ContactAlert").animate({
-			right: "-" + cWidth
-		});
-
-		var body = {};
-		body.planType = StringUtils.getValue($("#workSummaryPlanType").val());
-		body.planTime = StringUtils.getValue($("#workSummaryPlanTime").attr("planTime"));
-		ajaxUtils.sendAjax("crm/workSummary/getWorkSummary", body, null, function (data) {
-			if (null != data) {
-				//初始化时间 筛选条件
-				if (data.time) {
-					$("#workSummaryPlanTime").val(data.today);
-					timeListMap = data.time;
-					//let typeOption = "";
-					//let timeOption = "";
-					for (var key in data.time) {
-						//typeOption += "<option value='"+key+"'>"+key+"</option>";
-						if (key == "日报") {
-							var times = data.time[key];
-							if (times && null != times) {
-								for (var i = 0; i < times.length; i++) {
-									if (i == 0) {
-										$("#workSummaryPlanTime").attr("planTime", times[i]);
-										$("#workSummaryPlanTimeLable span").html(times[i]);
-									}
-									//timeOption += "<option value='"+times[i]+"'>"+times[i]+"</option>";
-								}
-							}
-						}
-					}
-					/* $("#workSummaryPlanType").html(typeOption);
-	    $("#workSummaryPlanTime").html(timeOption); */
-
-					/* $("#workSummaryPlanType").on("change",function(){//#workSummaryPlanTime
-	    	 if($(this).attr("name")=="planType"){
-	    		let timeOption = "";
-	    		let times = timeListMap[$(this).val()];
-	    		if(times && null != times){
-	    			for(let i=0;i<times.length;i++){
-	    				timeOption += "<option value='"+times[i]+"'>"+times[i]+"</option>";
-	    			}
-	    		}
-	    		$("#workSummaryPlanTime").html(timeOption);
-	    	}
-	    	//是否显示保存按钮
-	    	if(isNotEditOrSave()){
-	    		$("#save").show();
-	    	}else{
-	    		$("#save").hide();
-	    	}
-	    	doAction();
-	    }) */
-				}
-
-				//初始化textarea
-				if (data.workSummary && data.workSummary.length > 0) {
-					var workSummaryBean = data.workSummary[0];
-
-					//草稿并且满足规则
-					if (StringUtils.getValue(workSummaryBean.status) == "草稿" && isNotEditOrSave()) {
-						$("#draft").show();
-					} else {
-						$("#draft").hide();
-					}
-
-					$("#workSummaryId").val(StringUtils.getValue(workSummaryBean.id));
-					$("textarea[name='summary']").val(StringUtils.globReplace(workSummaryBean.summary)); //总结内容
-					$("textarea[name='question']").val(StringUtils.globReplace(workSummaryBean.question)); //问题及所需资源
-					getInitWorkSummaryHtml(workSummaryBean);
-				} else {
-					if (isNotEditOrSave()) {
-						$("#save,#draft").show();
-					} else {
-						$("#save,#draft").hide();
-					}
-					clearWorkSummaryHtml();
-				}
-
-				//lable 标签
-				if (data.lable) {
-					getInitLableHtml(data.lable, data.workSummary);
-				}
-			} else {
-				clearWorkSummaryHtml();
-			}
-			//console.info(data);
-		});
-	}
-	/**
-	 * 清空所有
-	 */
-	function clearWorkSummaryHtml() {
-		$("#workSummaryId").val("");
-		$("textarea").val("");
-		$("#textareaDivs").html("");
-		$("#imgsDiv").html("");
-		$("#ContactUsers").html("");
-	}
-
-	/**
-	 * @param {*初始化textarea} workSummary 
-	 */
-	function getInitWorkSummaryHtml(workTask) {
-		var html = "";
-		var name = "";
-		for (var code in workTask) {
-			if (code == "huaweiFD") {
-				name = "华为FD";
-				html += getInitTextareaHtml_child(code, name, workTask[code]);
-			}
-			if (code == "huaweiPJ") {
-				name = "华为配件与融合";
-				html += getInitTextareaHtml_child(code, name, workTask[code]);
-			}
-			if (code == "huaweiStore") {
-				name = "华为体验店";
-				html += getInitTextareaHtml_child(code, name, workTask[code]);
-			}
-			if (code == "huaweiSB") {
-				name = "华为省包";
-				html += getInitTextareaHtml_child(code, name, workTask[code]);
-			}
-			if (code == "samsung") {
-				name = "三星业务事业部";
-				html += getInitTextareaHtml_child(code, name, workTask[code]);
-			}
-			if (code == "distribution") {
-				name = "分销业务事业部";
-				html += getInitTextareaHtml_child(code, name, workTask[code]);
-			}
-			if (code == "others") {
-				name = "其他";
-				html += getInitTextareaHtml_child(code, name, workTask[code]);
-			}
-
-			//图片
-			if (code == "imgList") {
-				var imgHtml = "";
-				var imgList = workTask.imgList;
-				if (imgList && imgList.length > 0) {
-					for (var i = 0; i < imgList.length; i++) {
-						var item = imgList[i];
-						var fileNme = StringUtils.getSplitStr(item.imgName, '/');
-						fileNme = StringUtils.getSplitStr(item.imgUrl, '\\');
-						imgHtml += '<div class="img" imgName="' + item.imgName + '" imgUrl="' + item.imgUrl + '">\n\t\t\t\t\t<img src="' + Constant.SERVER_ROOT + '/pttlCrm/sys/file/showImag?path=' + encodeURI(encodeURI(item.imgUrl)) + '" />\n\t\t\t\t\t<span>' + item.imgName + '</span><a class="del" fileName="' + fileNme + '" href="javascript:;"></a></div>';
-					}
-				}
-				$("#imgsDiv").html(imgHtml);
-				//删除图片
-				$("#imgsDiv .img a.del").unbind().click(function () {
-					$(this).parent().remove();
-					//这里暂时先不删除      
-					//ajaxUtils.sendAjax("store/deleteFile",{fileName:$(this).attr("fileName")});
-				});
-			}
-
-			if (code == "contactList") {
-				var atNameList = workTask.contactList;
-				$("#ContactUsers").html(getAtName(atNameList)); //@人
-				$("#ContactUsers .user i.icon-close").on("click", function () {
-					$(this).parent().remove();
-				});
-			}
-		}
-		$("#textareaDivs").html(html);
-		$("#textareaDivs div a").unbind().click(function () {
-			$(this).parent().remove();
-		});
-	}
-	function getInitTextareaHtml_child(code, name, value) {
-		if (StringUtils.getValue(value) == "") {
-			$("#businessDepartment input[type='checkbox'][code='" + code + "']").prop("checked", false);
-			return "";
-		} else {
-			$("#businessDepartment input[type='checkbox'][code='" + code + "']").prop("checked", true);
-			var temp = '<div class="con-box ' + code + '"><span>' + name + '</span>\n\t\t<textarea name="' + code + '" val="' + name + '">' + StringUtils.globReplace(value) + '</textarea>\n\t\t<a href="javascript:;">\u5220\u9664</a></div>';
-			return temp;
-		}
-	}
-	/**
-	 * 
-	 * @param {*初始化lable} lableList 
-	 */
-	function getInitLableHtml(lableList, workSummaryList) {
-		var lableHtml = "";
-		var workLableList = [];
-		if (null != workSummaryList && workSummaryList.length > 0) {
-			workLableList = workSummaryList[0].lableList;
-		}
-		if (null != lableList && lableList.length > 0) {
-			outer: for (var i = 0; i < lableList.length; i++) {
-				var lable = lableList[i];
-
-				var flag = false; //默认不选中 有属性unchecked
-				inter: for (var j = 0; j < workLableList.length; j++) {
-					var workLable = workLableList[j];
-					var workLableName = workLable.lableName;
-					if (lable.LABLENAME == workLableName) {
-						flag = true;
-						break inter;
-					}
-				}
-				if (flag) {
-					lableHtml += "<span>" + lable.LABLENAME + "</span>";
-				} else {
-					lableHtml += "<span class='unchecked'>" + lable.LABLENAME + "</span>";
-				}
-			}
-		}
-		$("#lableTabs").html(lableHtml + '<a href="javascript:;" class="more">更多</a>');
-		moreLable();
-		$("#lableTabs span").unbind().click(function () {
-			$(this).toggleClass("unchecked");
-		});
-	}
-
-	/**
-	 * 保存
-	 */
-	function saveWorkTask(status) {
-		var body = { status: status };
-		body.planType = $("#workSummaryPlanType").val(); //计划类型	
-		body.planTime = $("#workSummaryPlanTime").attr("planTime"); //计划时间
-		var flag = true;
-		$("textarea").each(function () {
-			var val = StringUtils.wrongCharacter($(this).val());
-			if (val.length > 1000) {
-				flag = false;
-				layerUtils.info($(this).attr("val") + ",超过1000字符，不可保存！");
-				return false;
-			} else {
-				body[$(this).attr("name")] = val;
-			}
-		});
-		if (flag) {
-
-			//分业务部门总结
-			var businessList = [];
-			$("#textareaDivs textarea").each(function () {
-				var val = StringUtils.wrongCharacter($(this).val());
-				if (val != "") {
-					var m = {};
-					m.name = $(this).attr("val"); //名称
-					m.code = $(this).attr("name"); //编码
-					m.remark = val; //备注
-					businessList.push(m);
-				}
-			});
-			body.businessList = businessList;
-
-			//标签list
-			var lableList = [];
-			$("#lableTabs span:not(.unchecked)").each(function () {
-				var m = {};
-				m.lableName = StringUtils.getValue($(this).html());
-				lableList.push(m);
-			});
-			body.lableList = lableList;
-
-			//图片list
-			var imgList = [];
-			$("#imgsDiv .img").each(function () {
-				var m = {};
-				m.imgName = StringUtils.getValue($(this).attr("imgName"));
-				m.imgUrl = StringUtils.getValue($(this).attr("imgUrl"));
-				imgList.push(m);
-			});
-			body.imgList = imgList;
-
-			//@人
-			var contactList = []; //contactList;
-			$("#ContactUsers span").each(function () {
-				var m = {};
-				m.salesmanId = $(this).attr("val");
-				contactList.push(m);
-			});
-			body.contactList = contactList;
-
-			if (status == "提交" && contactList.length == 0) {
-				layerUtils.info("请选择汇报对象！");
-				return;
-			}
-
-			var service = "crm/workSummary/addWorkSummary";
-			if ($("#workSummaryId").val() != "") {
-				body.id = $("#workSummaryId").val();
-				service = "crm/workSummary/updateWorkSummary";
-			}
-			ajaxUtils.sendAjax(service, { "workSummary": body }, null, function (data) {
-				if (null != data) {
-					if (data.result == "true") {
-						layerUtils.info("保存成功！", { time: 1000 });
-						iframeUtils.hideSecondIframe(); //关闭页面
-					} else {
-						layerUtils.info("保存失败！");
-					}
-				}
-			});
-		}
-	}
-
-	//图片上传
-	function formSubmit() {
-		var name = $("#importFile").val();
-		if (StringUtils.getValue(name) != "" && name.lastIndexOf(".") > -1) {
-			name = name.substring(name.lastIndexOf(".") + 1, name.length);
-			if (name.toUpperCase() == "PNG" || name.toUpperCase() == "JPG" || name.toUpperCase() == "JPEG" || name.toUpperCase() == "GIF") {
-				$("#formUploadify").submit();
-				getExcelSessionResult();
-			} else {
-				layerUtils.info("请选择图片文件");
-			}
-		}
-	}
-	var iframeLoadFlag; //防止load方法重复加载的标识
-	function getExcelSessionResult() {
-		iframeLoadFlag = true;
-		$("#formTargertIframe").load(function () {
-			$("#importFile").val("");
-			if (iframeLoadFlag) {
-				iframeLoadFlag = false;
-				var c = $("iframe[name='formTargertIframe']").contents();
-				var result = JSON.parse($(c[0]).find("pre").html());
-				if (null != result) {
-					var html = '<div class="img" imgName="' + result.name + '" imgUrl="' + result.url + '">\n\t\t\t\t<img src="' + Constant.SERVER_ROOT + '/pttlCrm/sys/file/showImag?path=' + encodeURI(encodeURI(result.url)) + '" />\n\t\t\t\t<span>' + result.name + '</span><a class="del" fileName="' + result.fileName + '" href="javascript:;"></a></div>';
-					$("#imgsDiv").append(html);
-					//删除图片
-					$("#imgsDiv .img a.del").unbind().click(function () {
-						$(this).parent().remove();
-						ajaxUtils.sendAjax("store/deleteFile", { fileName: $(this).attr("fileName") });
-					});
-				}
-				/* $.ajax({
-	       type: 'POST',
-	       url: `${Constant.SERVER_ROOT}/pttlCrm/homepage/getExcelResutl`,
-	       data: { sessionKey: "importExcelKey" },
-	       dataType: 'json',
-	       success: function(result) {
-	           if(null == result){
-	               let c = $("iframe[name='formTargertIframe']").contents();
-	               result = JSON.parse($(c[0]).find("pre").html());
-	           }
-	           successCallback(result, null);
-	       }
-	   }); */
-			}
-		});
-	}
-
-	/**
-	 * 工作汇总
-	 */
-	function getWorkSummaryObj() {
-		var map = {};
-		map.id = ""; //主键
-		map.planType = ""; //计划类型
-		map.planTime = ""; //计划时间	
-		map.summary = ""; //总结内容
-		map.huaweiFD = ""; //华为FD	
-		map.huaweiPJ = ""; //华为配件与融合	
-		map.huaweiStore = ""; //华为体验店
-		map.huaweiSB = ""; //华为省包	
-		map.samsung = ""; //三星业务事业部
-		map.distribution = ""; //分销业务事业部	
-		map.others = ""; //其他	
-		map.question = ""; //问题及所需资源总结	
-		map.creater = ""; //创建人	
-		map.createTime = ""; //创建时间
-		map.updateBy = ""; //修改人	
-		map.updateTime = ""; //修改时间
-		return map;
-	}
-
-	//被@人
-	function getAtName(list) {
-		var temp = '\n        ' + (list == null ? "" : list.map(function (item) {
-			return '\n               <div class="user">\n                    <i class="icon icon-close" val="' + item.salesmanId + '"></i>\n                    <span val="' + item.salesmanId + '" val1="' + item.atName + '" val2="">' + item.atName + '</span>\n                </div>\n            ';
-		}).join('')) + '\n    ';
-		return temp;
-	}
-
-	//@人的点击事件
-	function treeClick() {
-		var cWidth = $("#ContactAlert").css("width");
-		$("#ContactAlert").animate({
-			right: "-" + cWidth
-		});
-		$("#DisplayContact").unbind().click(function () {
-			$("#search-lists").hide();
-			$("#contactSearch").val("");
-			backfill.load();
-			/* if(!$("#DisplayContact").hasClass("initFlag")){
-	      $("#DisplayContact").addClass("initFlag");
-	      backfill.load();
-	  } */
-			var flag = $("#ContactAlert").css("right") == 0 ? false : true;
-			if (flag) {
-				$("#ContactAlert").animate({
-					right: "0px"
-				});
-			} else {
-				return flase;
-			}
-		});
-		/* 8、搜索框：
-	 * （1）focus:隐藏提示文字
-	 * （2）blur:如果有用户输入的内容就隐藏提示问题，否则显示提示文字
-	 * （3）搜索内容列表：点击之后隐藏，跳转到相应用户行,添加提示搜索到名称的效果
-	 */
-		// 8-(1)(2)
-		$("#ContactAlert .search label").unbind("click").click(function () {
-			$("#ContactAlert .search input").focus();
-		});
-		$("#contactSearch").unbind().focus(function () {
-			$(this).siblings("label").hide();
-		}).blur(function () {
-			var flag = $(this).val() == "" ? true : false;
-			if (flag) {
-				$(this).siblings("label").show();
-				$("#search-lists").html("");
-			}
-		});
-		//点击搜索
-		$("#icon-search").unbind().on("click", function () {
-			backfill.searchNameList('contactSearch', 'search-lists');
-		});
-	}
-
-	function getTreeHtml() {
-		var temp = '\n        <div class="header clearfix">\n            <i class="icon icon-back" id="ContactClose"></i>\n            <div class="search">\n                <label for="contactSearch">\u8BF7\u8F93\u5165\u641C\u7D22\u5185\u5BB9</label>\n                <input type="text" name="contactSearch" id="contactSearch">\n                <i class="icon icon-search" id="icon-search"></i>\n                <div class="search-lists" id="search-lists">\n                </div>\n            </div>\n        </div>\n        <div class="body">\n            <div class="content" id="contentBody"></div>\n        </div>\n        <div class="footer clearfix">\n            <a href="javascript:;" class="btn" id="ContactSure">\u786E\u5B9A<em></em></a>\n        </div>\n    ';
-		return temp;
-	}
-
-	/**
-	 * 加载分业务部门总结
-	 */
-	function getDepartmentHtml() {
-		var temp = '\n\t\t<li><label><input type="checkbox" code="huaweiFD" val="\u534E\u4E3AFD"/><i></i>\u534E\u4E3AFD</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiPJ" val="\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408"/><i></i>\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiStore" val="\u534E\u4E3A\u4F53\u9A8C\u5E97"/><i></i>\u534E\u4E3A\u4F53\u9A8C\u5E97</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiSB" val="\u534E\u4E3A\u7701\u5305"/><i></i>\u534E\u4E3A\u7701\u5305</label></li>\n\t\t<li><label><input type="checkbox" code="samsung" val="\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8"/><i></i>\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="distribution" val="\u5206\u9500\u4E1A\u52A1\u4E8B\u4E1A\u90E8"/><i></i>\u5206\u9500\u4E1A\u52A1\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="others" val="\u5176\u4ED6"/><i></i>\u5176\u4ED6</label></li>\n\t';
-		$("#businessDepartment").html(temp);
-		$("#textareaDivs textarea").each(function () {
-			var name = $(this).attr("name");
-			$("#businessDepartment input[type='checkbox'][code='" + name + "']").prop("checked", true);
-		});
-	}
-
-	/**
-	 * 是否可编辑
-	 */
-	function isNotEditOrSave() {
-		var str = StringUtils.getValue($("#workSummaryPlanTime").attr("planTime"));
-		if (timeListMap && str) {
-			for (var key in timeListMap) {
-				var times = timeListMap[key];
-				if (times && null != times) {
-					for (var i = 0; i < times.length; i++) {
-						if (times[i] == str) {
-							return true;
-						}
-					}
-				}
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * //标签更多
-	 */
-	function moreLable() {
-		var tabSpan = $("#lableTabs span");
-		for (var i = 0; i < tabSpan.length; i++) {
-			if (tabSpan.eq(i).position().top > 90) {
-				tabSpan.eq(i).hide().addClass("moretags");
-				tabSpan.eq(i - 1).hide().addClass("moretags");
-				$("#lableTabs .more").css("display", "inline-block");
-			} else {
-				$("#lableTabs .more").hide();
-			}
-		}
-		$("#lableTabs").unbind().on("click", ".more", function () {
-			if ($(this).html() == "更多") {
-				$("#lableTabs .moretags").show();
-				$(this).html("收起");
-			} else {
-				$("#lableTabs .moretags").hide();
-				$(this).html("更多");
-			}
-		});
-	}
 
 /***/ }),
 
@@ -1628,6 +1022,97 @@
 
 /***/ }),
 
+/***/ 10:
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.clearIframe = exports.clearAllData = exports.getTopWindowData = exports.clearTopWindowData = exports.setTopWindowData = exports.topWindow = undefined;
+
+	var _CommonUtils = __webpack_require__(2);
+
+	var commonUtils = _interopRequireWildcard(_CommonUtils);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * 跨页面存取值
+	 */
+	var topWindow = exports.topWindow = commonUtils.getTopWin().document;
+
+	var $parent = commonUtils.getTopWin().$;
+
+	/**
+	 * 存值
+	 * @param {*} key 
+	 * @param {*} obj 
+	 */
+	var setTopWindowData = exports.setTopWindowData = function setTopWindowData(key, obj) {
+	    if ($parent) {
+	        if (key && obj) {
+	            $parent(topWindow).find("#contentContainer").data(key, obj);
+	        }
+	    }
+	};
+
+	/**
+	 * 清空
+	 * @param {*} key 
+	 */
+	var clearTopWindowData = exports.clearTopWindowData = function clearTopWindowData(key) {
+	    if ($parent) {
+	        if (key) {
+	            $parent(topWindow).find("#contentContainer").data(key, "");
+	        }
+	    }
+	};
+
+	/**
+	 * 取值
+	 * @param {*} key 
+	 */
+	var getTopWindowData = exports.getTopWindowData = function getTopWindowData(key) {
+	    if ($parent) {
+	        if (key) {
+	            return $parent(topWindow).find("#contentContainer").data(key);
+	        }
+	    } else {
+	        return "";
+	    }
+	};
+
+	/**
+	 * 清除所有
+	 */
+	var clearAllData = exports.clearAllData = function clearAllData() {
+	    if ($parent) {
+	        var userInfoEncoder = getTopWindowData("USERNAMEANDENCODER");
+	        $parent(topWindow).find("#contentContainer").removeData();
+	        setTopWindowData("USERNAMEANDENCODER", userInfoEncoder);
+	    }
+	};
+
+	/**
+	 * 
+	 * @param {*清理iframe} id 
+	 */
+	var clearIframe = exports.clearIframe = function clearIframe(id) {
+	    var jId = "sencondLevelIframeContainer"; //
+	    if (id && typeof id == 'string') {
+	        jId = id;
+	    }
+	    doClearIframe(jId);
+	};
+	function doClearIframe(id) {
+	    $parent(topWindow).find("iframe[name='" + id + "']").attr("src", "about:blank");
+	    $parent(topWindow).find("iframe[name='" + id + "']").remove();
+	}
+
+/***/ }),
+
 /***/ 24:
 /***/ (function(module, exports) {
 
@@ -1886,7 +1371,7 @@
 
 /***/ }),
 
-/***/ 65:
+/***/ 147:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1894,365 +1379,541 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.searchNameList = exports.load = undefined;
+	exports.getWorkReportHtml = exports.getWorkAtmeHtml = undefined;
+
+	var _dateUtils = __webpack_require__(24);
+
+	var dateUtils = _interopRequireWildcard(_dateUtils);
+
+	var _atMeSearch = __webpack_require__(148);
+
+	var atMeSearch = _interopRequireWildcard(_atMeSearch);
+
+	var _reportSearch = __webpack_require__(149);
+
+	var reportSearch = _interopRequireWildcard(_reportSearch);
+
+	var _iframeUtils = __webpack_require__(9);
+
+	var iframeUtils = _interopRequireWildcard(_iframeUtils);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * 汇报给我的总结
+	 */
+	var getWorkAtmeHtml = exports.getWorkAtmeHtml = function getWorkAtmeHtml() {
+	    var temp = '\n        <div class="head-center" id="searchHead">\n            <div class="outstore out">\n                <span>\u4E0A\u62A5\u65F6\u95F4\uFF1A</span> <i class="icon"></i> \n                <input type="text" class="form-control date start" id="startTime" name="startTime" readonly="readonly"> \n                <span class="crossbar">\u2014</span> <i class="icon"></i> \n                <input type="text" class="form-control date end" id="endTime" name="endTime" readonly="readonly">\n            </div>\n            <select class="select" id="selectSearch">\n                <option value="salesmanName">\u4E0A\u62A5\u4EBA</option>\n                <option value="position">\u4EBA\u5458\u89D2\u8272</option>\n            </select>\n            <input type="text" class="search" value="" placeholder="\u8BF7\u8F93\u5165\u641C\u7D22\u5185\u5BB9" id="searchInput">\n            <input type="button" id="queryBtnSearch" class="search-btn" value="\u641C\u7D22">\n            <div class="outstore"></div>\n            <a href="javascript:;" id="exportExcel" class="export"><i class="icon"></i>\u5BFC\u51FA</a>\n        </div>\n    \n        <div class="head-bottom">\n            <div class="option-box" id="muilSelectOption">\n                <div class="option-con">\n                    <div class="option-list clearfix none"><div class="option-l no-under"><span>\u4E0A\u62A5\u65F6\u95F4</span></div>\n                        <div class="option-r">\n                            <div class="option-r-c" name="time">\n                                <span class="all act"></span>\n                                <span class="" val="three">\u8FD1\u4E09\u5929</span>\n                                <span class="" val="week">\u8FD1\u4E00\u5468</span>\n                                <span class="" val="month">\u8FD1\u4E00\u6708</span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class="option-list clearfix none">\n                        <div class="option-l "><span>\u603B\u7ED3\u7C7B\u578B</span></div>\n                        <div class="option-r">\n                            <div class="option-r-c" name="planType">\n                                <span class="all act">\u5168\u90E8</span>\n                                <span class="" val="\u65E5\u62A5">\u65E5\u62A5</span>\n                                <span class="" val="\u5468\u62A5">\u5468\u62A5</span>\n                                <span class="" val="\u6708\u62A5">\u6708\u62A5</span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class="option-list clearfix none">\n                        <div class="option-l "><span>\u67E5\u9605\u72B6\u6001</span></div>\n                        <div class="option-r">\n                            <div class="option-r-c" name="readFlag">\n                                <span class="all act" val="\u5168\u90E8">\u5168\u90E8</span>\n                                <span class="" val="\u5DF2\u8BFB">\u5DF2\u8BFB</span>\n                                <span class="" val="\u672A\u8BFB">\u672A\u8BFB</span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class="option-list clearfix none">\n                        <div class="option-l "><span>\u5F52\u5C5E\u7EC4\u7EC7</span></div>\n                        <div class="option-r">\n                            <div class="option-r-c" name="branchName">\n                                <span class="all act">\u5168\u90E8</span>\n                            </div>\n                        </div>\n                        <div class="option-btn">\n                            <div class="bt">\u66F4\u591A&nbsp;&nbsp;&gt;</div>\n                        </div>\n                    </div>\n                        <div class="option-list clearfix none">\n                        <div class="option-l "><span>\u4EBA\u5458\u89D2\u8272</span></div>\n                        <div class="option-r">\n                            <div class="option-r-c" name="position">\n                                <span class="all act">\u5168\u90E8</span>\n                            </div>\n                        </div>\n                        <div class="option-btn">\n                            <div class="bt">\u66F4\u591A&nbsp;&nbsp;&gt;</div>\n                        </div>\n                    </div>\n                    <div class="option-list clearfix none">\n                        <div class="option-l "><span>\u4E0A\u62A5\u4EBA</span></div>\n                        <div class="option-r">\n                            <div class="option-r-c" name="salesmanId">\n                                <span class="all act">\u5168\u90E8</span>\n                            </div>\n                        </div>\n                        <div class="option-btn">\n                            <div class="bt">\u66F4\u591A&nbsp;&nbsp;&gt;</div>\n                        </div>\n                    </div>\n                </div>\n                <div class="btn-box"> <input type="button" value="\u786E\u5B9A" class="sure-btn" id="searchBtn2">\n                 <input type="button" value="\u6E05\u7A7A\u7B5B\u9009" class="clear-btn" id="clearBtn2"></div>\n            </div>\n            <div class="more">\n                <a href="javascript:;" id="zhanKai" class=""><i class="icon"></i></a>\n                <!--\u5F53\u7BAD\u5934\u5411\u4E0B\u65F6\u6DFB\u52A0\u7C7B\u540Darrow-bottom\uFF0C\u7BAD\u5934\u5411\u4E0A\u65F6\u53BB\u6389\u7C7B\u540Darrow-bottom-->\n            </div>\n        </div>\t\n    \n        <div class="m-body">\n            <div class="content">\n                <table class="con-table tags-table">\n                    <thead id="thead">\n                        <tr>\n                            <td name="a.plantype">\u603B\u7ED3\u7C7B\u578B</td>\n                            <td name="b.readflag">\u67E5\u8BE2\u72B6\u6001</td>\n                            <td name="c.branch_name">\u5F52\u5C5E\u7EC4\u7EC7</td>\n                            <td name="c.salesman_name">\u4E0A\u62A5\u4EBA</td>\n                            <td name="c.position">\u4EBA\u5458\u89D2\u8272</td>\n                            <td name="a.createTime">\u4E0A\u62A5\u65F6\u95F4</td>\n                            <td>\u64CD\u4F5C</td>\n                        </tr>\n                    </thead>\n                    <tbody id="tbody"></tbody>\n                </table>\n            </div>\n            <div id="page"></div>\n        </div>\n        ';
+	    $("#changeTab").html(temp);
+	    tbHeight();
+	    atMeSearch.doAction();
+	};
+
+	/**
+	 * 初始化基础的点击事件
+	 */
+	function initBaseClick() {
+
+	    //初始化时间
+	    $("#searchHead input.date").unbind().click(function (e) {
+	        dateUtils.timeClick($(this).attr("id"), "dd", function () {});
+	    });
+
+	    //筛选点击展开收缩箭头
+	    $('#zhanKai').unbind().click(function () {
+	        $(this).toggleClass('arrow-bottom');
+	        if ($(this).hasClass("arrow-bottom")) {
+	            $("#muilSelectOption").hide();
+	            tbHeight();
+	        } else {
+	            $("#muilSelectOption").show();
+	            tbHeight();
+	        }
+	    });
+	}
+
+	/**
+	 * 总结报表
+	 */
+	var getWorkReportHtml = exports.getWorkReportHtml = function getWorkReportHtml() {
+	    var temp = '\n    <div class="head-center" id="searchHead">\n        <div class="outstore out">\n            <span>\u4E0A\u62A5\u65F6\u95F4\uFF1A</span> <i class="icon"></i> \n            <input type="text" class="form-control date start" id="startTime" name="startTime" readonly="readonly"> \n            <span class="crossbar">\u2014</span> <i class="icon"></i> \n            <input type="text" class="form-control date end" id="endTime" name="endTime" readonly="readonly">\n        </div>\n\n        <select class="select" id="selectSearch">\n            <option value="salesmanName">\u4E0A\u62A5\u4EBA</option>\n            <option value="atmeName">\u6C47\u62A5\u5BF9\u8C61</option>\n            <option value="position">\u4EBA\u5458\u89D2\u8272</option>\n        </select>\n        <input type="text" class="search" value="" placeholder="\u8BF7\u8F93\u5165\u641C\u7D22\u5185\u5BB9" id="searchInput">\n        <input type="button" id="queryBtnSearch" class="search-btn" value="\u641C\u7D22">\n        <div class="outstore"></div>\n        <a href="javascript:;" id="exportExcel" class="export"><i class="icon"></i>\u5BFC\u51FA</a>\n    </div>\n\n    <div class="head-bottom">\n        <div class="option-box" id="muilSelectOption">\n            <div class="option-con">\n                <div class="option-list clearfix none">\n                    <div class="option-l no-under"><span>\u4E0A\u62A5\u65F6\u95F4</span></div>\n                    <div class="option-r">\n                        <div class="option-r-c" name="time">\n                            <span class="all act"></span>\n                            <span class="" val="three">\u8FD1\u4E09\u5929</span>\n                            <span class="" val="week">\u8FD1\u4E00\u5468</span>\n                            <span class="" val="month">\u8FD1\u4E00\u6708</span>\n                        </div>\n                    </div>\n                </div>\n                <div class="option-list clearfix none">\n                    <div class="option-l "><span>\u603B\u7ED3\u7C7B\u578B</span></div>\n                    <div class="option-r">\n                        <div class="option-r-c" name="planType">\n                            <span class="all act">\u5168\u90E8</span>\n                            <span class="" val="\u65E5\u62A5">\u65E5\u62A5</span>\n                            <span class="" val="\u5468\u62A5">\u5468\u62A5</span>\n                            <span class="" val="\u6708\u62A5">\u6708\u62A5</span>\n                        </div>\n                    </div>\n                </div>\n                \n                <div class="option-list clearfix none">\n                    <div class="option-l "><span>\u5F52\u5C5E\u7EC4\u7EC7</span></div>\n                    <div class="option-r">\n                        <div class="option-r-c" name="branchName">\n                            <span class="all act">\u5168\u90E8</span>\n                        </div>\n                    </div>\n                    <div class="option-btn">\n                        <div class="bt">\u66F4\u591A&nbsp;&nbsp;&gt;</div>\n                    </div>\n                </div>\n                    <div class="option-list clearfix none">\n                    <div class="option-l "><span>\u4EBA\u5458\u89D2\u8272</span></div>\n                    <div class="option-r">\n                        <div class="option-r-c" name="position">\n                            <span class="all act">\u5168\u90E8</span>\n                        </div>\n                    </div>\n                    <div class="option-btn">\n                        <div class="bt">\u66F4\u591A&nbsp;&nbsp;&gt;</div>\n                    </div>\n                </div>\n                <div class="option-list clearfix none">\n                    <div class="option-l "><span>\u4E0A\u62A5\u4EBA</span></div>\n                    <div class="option-r">\n                        <div class="option-r-c" name="salesmanId">\n                            <span class="all act">\u5168\u90E8</span>\n                        </div>\n                    </div>\n                    <div class="option-btn">\n                        <div class="bt">\u66F4\u591A&nbsp;&nbsp;&gt;</div>\n                    </div>\n                </div>\n                <div class="option-list clearfix none">\n                    <div class="option-l "><span>\u95EE\u9898\u6807\u7B7E</span></div>\n                    <div class="option-r">\n                        <div class="option-r-c" name="lableName">\n                            <span class="all act">\u5168\u90E8</span>\n                        </div>\n                    </div>\n                </div>\n                <div class="option-list clearfix none">\n                    <div class="option-l "><span>\u4E1A\u52A1\u90E8\u95E8</span></div>\n                    <div class="option-r">\n                        <div class="option-r-c" name="business">\n                            <span class="all act" val="\u5168\u90E8">\u5168\u90E8</span>\n                            <span class="" val="huaweiFD" name="\u534E\u4E3AFD">\u534E\u4E3AFD</span>\n                            <span class="" val="huaweiPJ" name="\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408">\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408</span>\n                            <span class="" val="huaweiStore" name="\u534E\u4E3A\u4F53\u9A8C\u5E97">\u534E\u4E3A\u4F53\u9A8C\u5E97</span>\n                            <span class="" val="huaweiSB" name="\u534E\u4E3A\u7701\u5305">\u534E\u4E3A\u7701\u5305</span>\n                            <span class="" val="samsung" name="\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8">\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8</span>\n                            <span class="" val="distribution" name="\u5206\u9500\u4E1A\u52A1\u4E8B\u4E1A\u90E8">\u5206\u9500\u4E1A\u52A1\u4E8B\u4E1A\u90E8</span>\n                            <span class="" val="others" name="\u5176\u4ED6">\u5176\u4ED6</span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class="btn-box"> <input type="button" value="\u786E\u5B9A" class="sure-btn" id="searchBtn2"> \n            <input type="button" value="\u6E05\u7A7A\u7B5B\u9009" class="clear-btn" id="clearBtn2"></div>\n        </div>\n        <div class="more">\n            <a href="javascript:;" id="zhanKai" class=""><i class="icon"></i></a>\n            <!--\u5F53\u7BAD\u5934\u5411\u4E0B\u65F6\u6DFB\u52A0\u7C7B\u540Darrow-bottom\uFF0C\u7BAD\u5934\u5411\u4E0A\u65F6\u53BB\u6389\u7C7B\u540Darrow-bottom-->\n        </div>\n    </div>\n\n    <div class="m-body">\n        <div class="content">\n            <table class="con-table tags-table">\n                <thead id="thead">\n                    <tr>\n                        <td name="a.plantype">\u603B\u7ED3\u7C7B\u578B</td>\n                        <td name="c.branch_name">\u5F52\u5C5E\u7EC4\u7EC7</td>\n                        <td name="b.name">\u4E1A\u52A1\u90E8\u95E8</td>\n                        <td name="b.remark">\u603B\u7ED3\u5185\u5BB9</td>\n                        <td name="a.question">\u95EE\u9898\u53CA\u6240\u9700\u8D44\u6E90</td>\n                        <td class="no">\u95EE\u9898\u6807\u7B7E</td>\n                        <td name="c.salesman_name">\u4E0A\u62A5\u4EBA</td>\n                        <td name="c.position">\u4EBA\u5458\u89D2\u8272</td>\n                        <td class="no">\u6C47\u62A5\u5BF9\u8C61</td>\n                        <td name="a.updatetime">\u4E0A\u62A5\u65F6\u95F4</td>\n                    </tr>\n                </thead>\n                <tbody id="tbody"></tbody>\n            </table>\n        </div>\n        <div id="page"></div>\n    </div>\n    ';
+	    $("#changeTab").html(temp);
+	    tbHeight();
+	    reportSearch.doAction();
+	};
+
+	//汇报给我的总结
+	function tbHeight() {
+	    $(".atme-main").height(parseInt(parseInt($("body").height()) - 70));
+	    var tHeight = $(".atme-main").height() - $(".atme-main .head-center").height() - $(".atme-main .head-bottom").height() - 40;
+	    $(".atme-main .content .tags-table tbody").css("max-height", tHeight - 65);
+	    initBaseClick();
+	    //隐藏弹出层
+	    $("body").click(function (e) {
+	        if (!$(this).hasClass("view")) {
+	            iframeUtils.hideSecondIframe();
+	        }
+	    });
+	}
+
+/***/ }),
+
+/***/ 148:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.doAction = undefined;
+
+	var _StringUtils = __webpack_require__(7);
+
+	var StringUtils = _interopRequireWildcard(_StringUtils);
+
+	var _ajaxUtils = __webpack_require__(4);
+
+	var ajaxUtils = _interopRequireWildcard(_ajaxUtils);
+
+	var _iframeUtils = __webpack_require__(9);
+
+	var iframeUtils = _interopRequireWildcard(_iframeUtils);
 
 	var _constant = __webpack_require__(3);
 
 	var Constant = _interopRequireWildcard(_constant);
 
-	var _layerUtils = __webpack_require__(1);
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-	var layerUtils = _interopRequireWildcard(_layerUtils);
+	var orderBySql = "";
+	var doAction = exports.doAction = function doAction() {
+
+		//搜索
+		$("#searchBtn2,#queryBtnSearch").click(function () {
+			if (!$('#zhanKai').hasClass("arrow-bottom")) {
+				$('#zhanKai').click();
+			}
+			//加载表格
+			inintTable(10, 1);
+		});
+		//清空
+		$("#clearBtn2").click(function () {
+			clearGlobal();
+			//加载表格
+			inintTable(10, 1);
+		});
+
+		//导出
+		$("#exportExcel").click(function () {
+			var param = getSearchParam();
+			param.exportExcel = "true";
+			ajaxUtils.submitExcleGlobal("crm/workSummary/exportExcelAtme", param);
+		});
+
+		//点击表头排序
+		$("#thead td:not(.no)").click(function () {
+			$(this).toggleClass("desc");
+			var name = $(this).attr("name");
+			var desc = $(this).hasClass("desc") ? "desc" : "";
+			orderBySql = name + " " + desc;
+			inintTable(10, 1);
+		});
+
+		inintData();
+	};
+	/**
+	 * 初始化数据
+	 */
+	function inintData() {
+		var body = getSearchParam();
+		body.reportId = "workAtme";
+		ajaxUtils.sendAjax("crm/workSummary/getBranchList", body, null, function (data) {
+			if (null != data) {
+				getSearchSpanHtml(data.branchList, "branchName", "BRANCH_NAME", "BRANCH_ID"); //归属组织
+				getSearchSpanHtml(data.positionList, "position", "POSITION", "POSITION_ID"); //人员角色
+				getSearchSpanHtml(data.salesmanList, "salesmanId", "SALESMAN_NAME", "SALESMAN_ID"); //上报人
+			}
+			clickSpan();
+		});
+		//加载表格
+		inintTable(10, 1);
+	}
+	//初始化搜索条件
+	function getSearchSpanHtml(list, name, showName, val) {
+		var temp = '<span class="all act">全部</span>';
+		if (null != list) {
+			for (var i = 0; i < list.length; i++) {
+				var item = list[i];
+				var textName = showName == "BRANCH_NAME" ? StringUtils.getSplitStr(item[showName], '_') : StringUtils.getValue(item[showName]);
+				temp += "<span class='' val='" + item[val] + "'>" + textName + "</span>";
+			}
+		}
+		$(".option-r-c[name='" + name + "']").html(temp);
+	}
+	//点击事件  联动刷新
+	function clickSpan() {
+		$(".head-bottom .option-con .option-r-c span").unbind().click(function () {
+
+			if ($(this).parent().attr("name") == "time") {
+				//单选 上报时间
+				$(this).toggleClass("act");
+				$(this).siblings().removeClass("act");
+			} else {
+				if ($(this).siblings().hasClass("act")) {
+					$(this).siblings(".all").removeClass("act");
+				} else {
+					$(this).siblings(".all").addClass("act");
+				}
+				if ($(this).hasClass("all")) {
+					$(this).siblings().removeClass("act");
+					$(this).attr("class", "all act");
+				} else {
+					$(this).toggleClass("act");
+				}
+			}
+
+			if ($(this).parent().attr("name") == "branchName") {
+				//归属组织
+				var body = getSearchParam();
+				body.type = "branchName";
+				body.reportId = "workAtme";
+				ajaxUtils.sendAjax("crm/workSummary/getBranchList", body, null, function (data) {
+					if (null != data) {
+						getSearchSpanHtml(data.positionList, "position", "POSITION", "POSITION_ID"); //人员角色
+						getSearchSpanHtml(data.salesmanList, "salesmanId", "SALESMAN_NAME", "SALESMAN_ID"); //上报人
+					}
+					clickSpan();
+				});
+			} else if ($(this).parent().attr("name") == "position") {
+				//人员角色
+				var _body = getSearchParam();
+				_body.type = "position";
+				_body.reportId = "workAtme";
+				ajaxUtils.sendAjax("crm/workSummary/getBranchList", _body, null, function (data) {
+					if (null != data) {
+						getSearchSpanHtml(data.salesmanList, "salesmanId", "SALESMAN_NAME", "SALESMAN_ID"); //上报人
+					}
+					clickSpan();
+				});
+			}
+		});
+
+		//更多
+		$(".option-btn .bt").unbind().click(function () {
+			if ($(this).hasClass("m")) {
+				$(this).removeClass("m");
+				$(this).html("更多&nbsp;&nbsp;>");
+				$(this).parent().prev().css("height", "40px");
+			} else {
+				$(this).addClass("m");
+				$(this).html("收起&nbsp;&nbsp;∨");
+				$(this).parent().prev().css("height", "auto");
+			}
+		});
+	}
+
+	//加载表格
+	function inintTable(pageSize, pageNum) {
+		var body = getSearchParam();
+		body.pageSize = pageSize;
+		body.pageNum = pageNum;
+		body.orderBySql = orderBySql;
+		ajaxUtils.sendAjax("crm/workSummary/getWorkAtmeList", body, "page", function (data) {
+			$("#tbody").html(render(data.data));
+			$("#tbody a.view").unbind().click(function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				$(this).parent().siblings(".read").html("已读");
+				var param = { "viewId": $(this).attr("val") };
+				iframeUtils.createIframe('' + Constant.SECOND_LEVEL_IFRAME_NAME, e.target.href, '#contentContainer', param);
+			});
+		}, inintTable);
+	}
+	function render(list) {
+		var temp = '    \n    ' + (list == null ? "" : list.map(function (item) {
+			return '\n            <tr>\n\t\t\t\t<td>' + item.PLANTYPE + '</td>\n\t\t\t\t<td class="read">' + item.READFLAG + '</td>\n\t\t\t\t<td>' + StringUtils.getSplitStr(item.BRANCH_NAME, '_') + '</td>\n\t\t\t\t<td>' + item.SALESMAN_NAME + '</td>\n\t\t\t\t<td>' + item.POSITION + '</td>\n\t\t\t\t<td>' + item.CREATETIME + '</td>\n\t\t\t\t<td><a val="' + item.ID + '" class="view" href="./workAtmeView.html">\u67E5\u770B\u660E\u7EC6</a></td>\n\t\t\t</tr>\n            ';
+		}).join('')) + '\n    ';
+		return temp;
+	}
+
+	/**
+	 * 
+	 * @param {*获取参数} divId 
+	 * @param {*} flag 
+	 */
+	function getSearchParam() {
+		var param = {};
+		//多选
+		param.startTime = StringUtils.getValue($("#startTime").val()); //上报时间
+		param.endTime = StringUtils.getValue($("#endTime").val()); //上报时间
+		param[$("#selectSearch").val()] = StringUtils.getValue($("#searchInput").val());
+		$(".option-r-c").each(function (i, ob) {
+			var arrayList = [];
+			if ($(this).attr("name") == "time") {
+				if ($(ob).find("span.act:not(.all)").length > 0) {
+					param[$(ob).attr("name")] = $(ob).find("span.act:not(.all)").attr("val");
+				}
+			} else {
+				if ($(ob).find("span.act:not(.all)").length > 0) {
+					$(ob).find("span.act:not(.all)").each(function (j, obj) {
+						arrayList.push($(obj).attr("val")); //$(obj).html()
+					});
+					param[$(ob).attr("name") + "_in"] = arrayList; //.join(",");
+				}
+			}
+		});
+		if (StringUtils.getValue(param.startTime) != "" || StringUtils.getValue(param.endTime) != "") {
+			delete param.time;
+		}
+		return $.extend({}, param, StringUtils.getRequestParam());
+	}
+
+	/**
+	 * 清空
+	 */
+	function clearGlobal(divId) {
+		if (divId) {
+			$("#" + divId).find("input[type='text']").each(function (i, o) {
+				//select
+				$(o).val("");
+			});
+		}
+		$("span.act:not(.all)").removeClass("act");
+		$("span.all").addClass("act");
+		orderBySql = "";
+	}
+
+/***/ }),
+
+/***/ 149:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.doAction = undefined;
+
+	var _StringUtils = __webpack_require__(7);
+
+	var StringUtils = _interopRequireWildcard(_StringUtils);
+
+	var _ajaxUtils = __webpack_require__(4);
+
+	var ajaxUtils = _interopRequireWildcard(_ajaxUtils);
+
+	var _iframeUtils = __webpack_require__(9);
+
+	var iframeUtils = _interopRequireWildcard(_iframeUtils);
+
+	var _constant = __webpack_require__(3);
+
+	var Constant = _interopRequireWildcard(_constant);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-	/**
-	 * 回填数据
-	 * @param {*} data 
-	 */
-	var load = exports.load = function load() {
-	    doAction();
+	var orderBySql = "";
+	var doAction = exports.doAction = function doAction() {
+
+		//搜索
+		$("#searchBtn2,#queryBtnSearch").click(function () {
+			if (!$('#zhanKai').hasClass("arrow-bottom")) {
+				$('#zhanKai').click();
+			}
+			//加载表格
+			inintTable(10, 1);
+		});
+		//清空
+		$("#clearBtn2").click(function () {
+			clearGlobal();
+			//加载表格
+			inintTable(10, 1);
+		});
+
+		//导出
+		$("#exportExcel").click(function () {
+			var param = getSearchParam();
+			param.exportExcel = "true";
+			ajaxUtils.submitExcleGlobal("crm/workSummary/exportExcelReport", param);
+		});
+
+		//点击表头排序
+		$("#thead td:not(.no)").click(function () {
+			$(this).toggleClass("desc");
+			var name = $(this).attr("name");
+			var desc = $(this).hasClass("desc") ? "desc" : "";
+			orderBySql = name + " " + desc;
+			inintTable(10, 1);
+		});
+
+		inintData();
 	};
 	/**
-	 * 搜索
-	 * @param {*} id 
-	 * @param {*} id2 
+	 * 初始化数据
 	 */
-	var searchNameList = exports.searchNameList = function searchNameList(id, id2) {
-	    searchName(id, id2);
-	};
-	//填写数据
-	function doAction() {
-	    $.ajax({
-	        url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerPositonView/getBranch',
-	        data: {},
-	        dataType: 'json',
-	        type: 'post',
-	        success: function success(data) {
-	            $("#contentBody").html(render(data));
-	            $("#ContactClose").unbind("click").click(function () {
-	                var cWidth = $("#ContactAlert").css("width");
-	                $("#ContactAlert").animate({
-	                    right: "-" + cWidth
-	                });
-	            });
-	            // 3
-	            var mainH = $("#ContactAlert").outerHeight();
-	            var headerH = $("#ContactAlert .header").outerHeight();
-	            var footerH = $("#ContactAlert .footer").outerHeight();
-	            var bodyMtop = parseInt($("#ContactAlert .body").css("margin-top"));
-	            var bodyH = mainH - headerH - footerH - bodyMtop;
-	            $("#ContactAlert .body").height(bodyH); //outerHeight
-	            $("#ContactAlert .body").css("padding", "0");
-	            showSalesMen();
-	        },
-	        error: function error(e) {
-	            console.error(e);
-	        }
-	    });
+	function inintData() {
+		var body = getSearchParam();
+		body.reportId = "workReport";
+		ajaxUtils.sendAjax("crm/workSummary/getBranchList", body, null, function (data) {
+			if (null != data) {
+				getSearchSpanHtml(data.branchList, "branchName", "BRANCH_NAME", "BRANCH_ID"); //归属组织
+				getSearchSpanHtml(data.positionList, "position", "POSITION", "POSITION_ID"); //人员角色
+				getSearchSpanHtml(data.salesmanList, "salesmanId", "SALESMAN_NAME", "SALESMAN_ID"); //上报人
+				getSearchSpanHtml(data.lableList, "lableName", "LABLENAME", "LABLENAME"); //上报人
+			}
+			clickSpan();
+		});
+		//加载表格
+		inintTable(10, 1);
+	}
+	//初始化搜索条件
+	function getSearchSpanHtml(list, name, showName, val) {
+		var temp = '<span class="all act">全部</span>';
+		if (null != list) {
+			for (var i = 0; i < list.length; i++) {
+				var item = list[i];
+				var textName = showName == "BRANCH_NAME" ? StringUtils.getSplitStr(item[showName], '_') : StringUtils.getValue(item[showName]);
+				temp += "<span class='' val='" + item[val] + "'>" + textName + "</span>";
+			}
+		}
+		$(".option-r-c[name='" + name + "']").html(temp);
+	}
+	//点击事件  联动刷新
+	function clickSpan() {
+		$(".head-bottom .option-con .option-r-c span").unbind().click(function () {
+
+			if ($(this).parent().attr("name") == "time") {
+				//单选 上报时间
+				$(this).toggleClass("act");
+				$(this).siblings().removeClass("act");
+			} else {
+				if ($(this).siblings().hasClass("act")) {
+					$(this).siblings(".all").removeClass("act");
+				} else {
+					$(this).siblings(".all").addClass("act");
+				}
+				if ($(this).hasClass("all")) {
+					$(this).siblings().removeClass("act");
+					$(this).attr("class", "all act");
+				} else {
+					$(this).toggleClass("act");
+				}
+			}
+
+			if ($(this).parent().attr("name") == "branchName") {
+				//归属组织
+				var body = getSearchParam();
+				body.type = "branchName";
+				body.reportId = "workReport";
+				ajaxUtils.sendAjax("crm/workSummary/getBranchList", body, null, function (data) {
+					if (null != data) {
+						getSearchSpanHtml(data.positionList, "position", "POSITION", "POSITION_ID"); //人员角色
+						getSearchSpanHtml(data.salesmanList, "salesmanId", "SALESMAN_NAME", "SALESMAN_ID"); //上报人
+					}
+					clickSpan();
+				});
+			} else if ($(this).parent().attr("name") == "position") {
+				//人员角色
+				var _body = getSearchParam();
+				_body.type = "position";
+				_body.reportId = "workReport";
+				ajaxUtils.sendAjax("crm/workSummary/getBranchList", _body, null, function (data) {
+					if (null != data) {
+						getSearchSpanHtml(data.salesmanList, "salesmanId", "SALESMAN_NAME", "SALESMAN_ID"); //上报人
+					}
+					clickSpan();
+				});
+			}
+		});
+
+		//更多
+		$(".option-btn .bt").unbind().click(function () {
+			if ($(this).hasClass("m")) {
+				$(this).removeClass("m");
+				$(this).html("更多&nbsp;&nbsp;>");
+				$(this).parent().prev().css("height", "40px");
+			} else {
+				$(this).addClass("m");
+				$(this).html("收起&nbsp;&nbsp;∨");
+				$(this).parent().prev().css("height", "auto");
+			}
+		});
+	}
+
+	//加载表格
+	function inintTable(pageSize, pageNum) {
+		var body = getSearchParam();
+		body.pageSize = pageSize;
+		body.pageNum = pageNum;
+		body.orderBySql = orderBySql;
+		ajaxUtils.sendAjax("crm/workSummary/getWorkReportList", body, "page", function (data) {
+			$("#tbody").html(render(data.data));
+			$("#tbody a.view").unbind().click(function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				var param = { "viewId": $(this).attr("val") };
+				iframeUtils.createIframe('' + Constant.SECOND_LEVEL_IFRAME_NAME, e.target.href, '#contentContainer', param);
+			});
+		}, inintTable);
 	}
 	function render(list) {
-	    var temp = '\n        ' + (list == null ? "" : list.map(function (item) {
-	        return '\n            <div class="box" id="box_' + item.BRANCHID + '">\n                <div class="title clearfix">\n                    <i class="icon icon-displayArrow"></i>\n                    <i class="img-folder" id="' + item.BRANCHID + '"></i>\n                    <span class="area-name">' + getCustomerName(item.BRANCHNAME) + '</span>\n                </div>\n                <div class="lists">\n                                      \n                </div>\n            </div>\n        ';
-	    }).join('')) + '\n    ';
-	    return temp;
-	}
-	function getCustomerName(str) {
-	    if (str != null && str != "" && typeof str != "undefined") {
-	        return str.substring(str.lastIndexOf("_") + 1, str.length);
-	    } else {
-	        return "";
-	    }
+		/*总结类型  归属组织  业务部门  总结内容  问题及所需资源  问题标签  上报人  人员角色  汇报对象  上报时间*/
+		var temp = '    \n    ' + (list == null ? "" : list.map(function (item) {
+			return '\n            <tr>\n\t\t\t\t<td>' + item.PLANTYPE + '</td>\n                <td>' + StringUtils.getSplitStr(item.BRANCH_NAME, '_') + '</td>\n                <td>' + StringUtils.getValue(item.BUSINESSNAME) + '</td>\n                <td>' + StringUtils.globReplace(item.REMARK) + '</td>\n                <td>' + StringUtils.globReplace(item.QUESTION) + '</td>\n                <td>' + StringUtils.getValue(item.LABLENAMES) + '</td>\n\t\t\t\t<td>' + item.SALESMAN_NAME + '</td>\n                <td>' + item.POSITION + '</td>\n                <td>' + item.ATMENAMES + '</td>\n\t\t\t\t<td>' + item.CREATETIME + '</td>\n\t\t\t</tr>\n            ';
+		}).join('')) + '\n    ';
+		return temp;
 	}
 
-	function showSalesMen() {
-	    var empIds = [];
-	    $("#ContactUsers span").each(function () {
-	        empIds.push($(this).attr("val")); //$(this).attr("val2")+":"+
-	    });
-	    $("#ContactAlert .box>.title").click(function () {
-	        var branchId = $(this).find(".img-folder").attr("id");
-	        var $this = $(this);
-	        var flag = $this.siblings(".lists").css("display") == "none" ? true : false;
-	        if (flag) {
-	            $this.parent().addClass("z-act");
-	            $this.siblings(".lists").slideDown(400);
-	        } else {
-	            $this.parent().removeClass("z-act");
-	            $this.siblings(".lists").slideUp(400);
-	            //$("#box_"+branchId).find(".lists").html("");
-	            return;
-	        }
-	        if ($(this).parent().find("div.lists .lists-one").length > 0) {
-	            return;
-	        }
-	        $.ajax({
-	            url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerPositonView/getSaleMan',
-	            data: { "branchId": branchId },
-	            dataType: 'json',
-	            type: 'get',
-	            success: function success(data) {
-	                $("#box_" + branchId).find(".lists").html(renderName(data[0].salesManList));
-	                var urlIcheck = Constant.SERVER_ROOT + '/pttlCrm/res/js/lib/iCheck/js/jquery.icheck.js';
-	                if ('' + Constant.LOCAL_SERVER_ROOT == "http://localhost:3000") {
-	                    urlIcheck = Constant.LOCAL_SERVER_ROOT + '/js/lib/iCheck/js/jquery.icheck.js';
-	                }
-	                $.getScript(urlIcheck, function () {
-	                    //动态加载js,成功后，并执行回调函数  
-	                    setTimeout(function () {
-	                        initAlertClick();
-	                        for (var i = 0; i < empIds.length; i++) {
-	                            var id = empIds[i];
-	                            var $checkboxs = $("#box_" + branchId + " input[type='checkbox'][id='id" + id + "']");
-	                            if ($checkboxs.length > 0) {
-	                                $checkboxs.iCheck('check');
-	                            }
-	                        }
-	                    }, 10);
-	                });
-	            },
-	            error: function error(e) {
-	                console.error(e);
-	            }
-	        });
-	    });
-	    $("#ContactAlert .box>.title")[0].click(); //点击第一个
+	/**
+	 * 
+	 * @param {*获取参数} divId 
+	 * @param {*} flag 
+	 */
+	function getSearchParam() {
+		var param = {};
+		//多选
+		param.startTime = StringUtils.getValue($("#startTime").val()); //上报时间
+		param.endTime = StringUtils.getValue($("#endTime").val()); //上报时间
+		param[$("#selectSearch").val()] = StringUtils.getValue($("#searchInput").val());
+		$(".option-r-c").each(function (i, ob) {
+			var arrayList = [];
+			if ($(this).attr("name") == "time") {
+				if ($(ob).find("span.act:not(.all)").length > 0) {
+					param[$(ob).attr("name")] = $(ob).find("span.act:not(.all)").attr("val");
+				}
+			} else {
+				if ($(ob).find("span.act:not(.all)").length > 0) {
+					$(ob).find("span.act:not(.all)").each(function (j, obj) {
+						arrayList.push($(obj).attr("val")); //$(obj).html()
+					});
+					param[$(ob).attr("name") + "_in"] = arrayList; //.join(",");
+				}
+			}
+		});
+		if (StringUtils.getValue(param.startTime) != "" || StringUtils.getValue(param.endTime) != "") {
+			delete param.time;
+		}
+		return $.extend({}, param, StringUtils.getRequestParam());
 	}
 
-	function renderName(list) {
-	    var temp = '\n        ' + (list == null ? "" : list.map(function (item) {
-	        return '\n            <div class="lists-one">\n                <input type="checkbox" class="primary" id="id' + item.SALESMANID + '" val="' + item.SALESMANID + '" val1="' + item.SALESMANNAME + '">\n                <label for="id' + item.SALESMANID + '"><i class="img-user"></i><span>' + item.SALESMANNAME + '</span></label>\n            </div>\n         ';
-	    }).join('')) + '\n    ';
-	    return temp;
-	}
-	//点击确定函数选中的
-	function backFillHtml() {
-	    var name = [];
-	    var id = [];
-	    $("#contentBody input[type='checkbox']:checked").each(function (i, obj) {
-	        var m = {};
-	        m.name = $(obj).attr("val1");
-	        m.id = $(obj).attr("val");
-	        name.push(m);
-	    });
-	    $("#ContactUsers").html(backDiv(name));
-	    delChecked();
-	}
-	//删除选中的元素
-	function delChecked() {
-	    var contactSum1 = $("#ContactAlert .body input[type='checkbox']:checked").length;
-	    $("#ContactUsers .user i.icon-close").unbind("click").on("click", function () {
-	        var val = $(this).attr("val");
-	        $(this).parent().remove();
-	        var $checkboxs = $("#ContactAlert .body input[type='checkbox'][id='id" + val + "']");
-	        $checkboxs.iCheck('uncheck');
-	        contactSum1--;
-	        if (contactSum1 <= 0) {
-	            $("#ContactSure em").html("");
-	        } else {
-	            $("#ContactSure em").html("(" + contactSum1 + ")");
-	        }
-	    });
-	}
-	function backDiv(list) {
-	    var temp = '\n    ' + (list == null ? "" : list.map(function (item) {
-	        return '\n               <div class="user">\n                    <i class="icon icon-close" val="' + item.id + '"></i>\n                    <span val="' + item.id + '" val1="' + item.name + '" val2="">' + item.name + '</span>\n                </div>\n            ';
-	    }).join('')) + '         \n    ';
-	    return temp;
-	}
-	//初始化弹出层函数
-	function initAlertClick() {
-	    /*
-	       * 联系人 浮层弹出框
-	       * 
-	       * (注：checkbox用了iCheck插件，相关点击和判断事件请参考http://www.bootcss.com/p/icheck/)
-	       * 
-	       * 功能效果：
-	       * 1、点击@弹出框联系人弹出框
-	       * 2、返回按钮：点击隐藏弹出框
-	       * 3、判断body需要的高度
-	       * 4、点击各组（包括展开和闭合），显示该组的所有联系人，超出部分body显示滚动条，去除搜索提示的效果
-	       * 5、点击各组联系人，确认按钮显示已选中的个数
-	       * 6、全选：（包括全部选择和取消）全选指当前的展开项，兼并功能5
-	       * 7、确定按钮：点击之后将所有选中的联系人添加到相应模块中
-	       * 8、搜索框：
-	       * （1）focus:隐藏提示文字
-	       * （2）blur:如果有用户输入的内容就隐藏提示问题，否则显示提示文字
-	       * （3）搜索内容列表：点击之后隐藏，跳转到相应用户行,添加提示搜索到名称的效果
-	       */
-
-	    // 1
-	    // 2
-
-
-	    // 4
-	    /*$("#ContactAlert .box>.title").click(function() {
-	        let $this = $(this);
-	        let flag = $this.siblings(".lists").css("display") == "none" ? true : false;
-	        if (flag) {
-	            $this.parent().addClass("z-act");
-	            $this.siblings(".lists").slideDown(400);
-	        } else {
-	            $this.parent().removeClass("z-act");
-	            $this.siblings(".lists").slideUp(400);
-	        }
-	    });*/
-
-	    // 5
-	    // 记录确定按钮显示已选中的联系人的个数
-	    var contactSum = $("#ContactAlert .body input[type='checkbox']:checked").length;
-	    $("#ContactAlert .body input[type='checkbox']").on('ifChanged', function (event) {
-	        var $btnCount = $("#ContactSure em");
-	        $(this).parents(".lists-one").removeClass("z-tipAct");
-
-	        if ($(this).is(':checked')) {
-	            contactSum++;
-	        } else {
-	            contactSum--;
-	        }
-
-	        if (contactSum <= 0) {
-	            $btnCount.html("");
-	        } else {
-	            $btnCount.html("(" + contactSum + ")");
-	        }
-	    });
-
-	    // 6
-	    /* $("#ContactCheckAll").on('ifChanged', function(event) {
-	         let $checkboxs = $("#ContactAlert .body input[type='checkbox']");
-	         if ($(this).is(':checked')) {
-	             $checkboxs.iCheck('check');
-	         } else {
-	             $checkboxs.iCheck('uncheck');
-	         }
-	       });*/
-
-	    // 7(1)确定之后，将已选中的人员按顺序填写到相应框中；如果没有选中任何人，填写为空；
-	    $("#ContactSure").click(function () {
-	        /*var $this = $(this);
-	        var count = $this.find("em").html();
-	        if (count == "") {
-	            $("#ContactClose").click();
-	        } else {
-	          }*/
-	        $("#ContactClose").click();
-	        backFillHtml();
-	    });
-	}
-
-	//搜索
-	function searchName(id, id2) {
-	    $("#" + id2).show();
-	    var name = $("#" + id).val();
-	    if (typeof name != "undefined" && name != null && name != "") {
-	        if (name.length < 2) {
-	            //alert("请至少输入两个字进行查询！");
-	            layerUtils.info("请至少输入两个字进行查询！");
-	            return;
-	        }
-	        $.ajax({
-	            url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerPositonView/getSaleMan',
-	            data: { name: name },
-	            dataType: 'json',
-	            type: 'post',
-	            success: function success(data) {
-	                if (null != data && data.length > 0) {
-	                    $("#" + id2).html(renderSearch(data[0].salesManList));
-	                    clickSearchA();
-	                }
-	            },
-	            error: function error(e) {
-	                console.error(e);
-	            }
-	        });
-	    }
-	}
-	function renderSearch(list) {
-	    var temp = '\n     ' + (list == null ? "" : list.map(function (item) {
-	        return '\n            <a href="javascript:;" val="' + item.SALESMANID + '" val1="' + item.SALESMANNAME + '" val2="' + item.BRANCHID + '">' + item.SALESMANNAME + '</a>\n        ';
-	    }).join('')) + '\n    ';
-	    return temp;
-	}
-	function clickSearchA() {
-	    // 8-(3)
-	    $("#search-lists a").click(function () {
-	        clickSearchBox(this);
-	    });
-	}
-
-	function clickSearchBox(obj) {
-	    var branchId = $(obj).attr("val2");
-	    var empIds = [];
-	    $("#ContactUsers span").each(function () {
-	        empIds.push($(this).attr("val")); //$(this).attr("val2")+":"+
-	    });
-	    var $this = $("#box_" + branchId + " div.title");
-	    var flag = false;
-	    if ($this.siblings(".lists").css("display") == "none" || $this.siblings(".lists").css("display") == "undefined") {
-	        flag = true;
-	    }
-	    if (flag) {
-	        $this.parent().addClass("z-act");
-	        $this.siblings(".lists").slideDown(400);
-
-	        if ($this.parent().find("div.lists .lists-one").length > 0) {
-	            clickSearchA1(obj);
-	            return;
-	        }
-
-	        $.ajax({
-	            url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerPositonView/getSaleMan',
-	            data: { "branchId": branchId },
-	            dataType: 'json',
-	            type: 'get',
-	            success: function success(data) {
-	                $("#box_" + branchId).find(".lists").html(renderName(data[0].salesManList));
-	                var urlIcheck = Constant.SERVER_ROOT + '/pttlCrm/res/js/lib/iCheck/js/jquery.icheck.js';
-	                if ('' + Constant.LOCAL_SERVER_ROOT == "http://localhost:3000") {
-	                    urlIcheck = Constant.LOCAL_SERVER_ROOT + '/js/lib/iCheck/js/jquery.icheck.js';
-	                }
-	                $.getScript(urlIcheck, function () {
-	                    //动态加载js,成功后，并执行回调函数  
-	                    setTimeout(function () {
-	                        initAlertClick();
-	                        for (var i = 0; i < empIds.length; i++) {
-	                            var id = empIds[i];
-	                            var $checkboxs = $("#box_" + branchId + " input[type='checkbox'][id='id" + id + "']");
-	                            if ($checkboxs.length > 0) {
-	                                $checkboxs.iCheck('check');
-	                            }
-	                        }
-	                        clickSearchA1(obj);
-	                    }, 10);
-	                });
-	            },
-	            error: function error(e) {
-	                console.error(e);
-	            }
-	        });
-	    } else {
-	        clickSearchA1(obj);
-	    }
-	}
-	function clickSearchA1(obj) {
-	    var branchId = $(obj).attr("val2");
-	    var username = $(obj).attr("val");
-	    var namesLen = $("#box_" + branchId + " .lists-one").length;
-	    $(obj).parent().hide();
-	    $("#ContactAlert .search input").val($(obj).attr("val1")).siblings("label").hide();
-	    for (var i = 0; i < namesLen; i++) {
-	        if ($("#box_" + branchId + " .lists-one").eq(i).find("input[val='" + username + "']").attr("val") == username) {
-	            var itop = $("#id" + username).parent().parent().position().top;
-	            $("#ContactAlert .body").scrollTo("#id" + username, 400); //引用scrollTo插件
-	            $("#box_" + branchId + " .lists-one").eq(i).addClass("z-tipAct");
-	            $("#box_" + branchId + " .lists-one").eq(i).iCheck('check');
-	            return;
-	        }
-	    }
+	/**
+	 * 清空
+	 */
+	function clearGlobal(divId) {
+		if (divId) {
+			$("#" + divId).find("input[type='text']").each(function (i, o) {
+				//select
+				$(o).val("");
+			});
+		}
+		$("span.act:not(.all)").removeClass("act");
+		$("span.all").addClass("act");
+		orderBySql = "";
 	}
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=workSummary.map
+//# sourceMappingURL=workAtme.map

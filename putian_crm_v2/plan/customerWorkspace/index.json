@@ -270,6 +270,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -294,6 +298,36 @@
       "roles": "element,link,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control315_ciDnzA": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              4
+            ],
+            "value": "DIV.bench-wrap.clearfix DIV.bench-r DIV.bench-box.bench-box-r"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control315_ciDnzA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -306,7 +340,8 @@
         "control312_mwBi0M",
         "control26_kba3Qe",
         "control43_nXZbyJ",
-        "control45_Fr7laA"
+        "control45_Fr7laA",
+        "control315_ciDnzA"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -552,6 +587,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl46_aqS265",
                 "onGetTemplate": "getTemplate_uiControl46_aqS265"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl306_byXzt6",
+          "controlId": "control315_ciDnzA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl306_byXzt6",
+                "onGetTemplate": "getTemplate_uiControl306_byXzt6"
               }
             }
           }
@@ -3455,6 +3505,57 @@
             "z-done",
             "z-done-new",
             "z-yet"
+          ],
+          [
+            "bench-box",
+            "bench-box-r",
+            "bench-l",
+            "bench-r",
+            "bench-tit",
+            "bench-wrap",
+            "calendar",
+            "calendar-cell",
+            "clearfix",
+            "customer",
+            "date-tit",
+            "did",
+            "fc-body",
+            "fc-calendar",
+            "fc-five-rows",
+            "fc-head",
+            "fc-row",
+            "fc-today",
+            "i-left",
+            "i-right",
+            "i-sign",
+            "icon",
+            "icon-title",
+            "list",
+            "look",
+            "m-crumb",
+            "mask",
+            "menu-item-icon",
+            "monthplan",
+            "num",
+            "plan",
+            "psiSummary-day",
+            "reportPid",
+            "saler",
+            "salesPlanDetail",
+            "salesTask",
+            "self",
+            "selfreach",
+            "statistics",
+            "store",
+            "temporary",
+            "time",
+            "visitDistanceDetail",
+            "visitDistanceTotal",
+            "visitinfo",
+            "visitlook",
+            "workbench",
+            "z-done",
+            "z-yet"
           ]
         ],
         "context13_Es5f23": [
@@ -4703,6 +4804,27 @@
             "UL/LI/A",
             "UL/LI/DIV",
             "UL/LI/INPUT-hidden"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "A/SPAN/IMG",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/UL",
+            "DIV/H4/I",
+            "DIV/SPAN/B",
+            "DIV/SPAN/SPAN",
+            "DIV/UL/LI",
+            "LI/A/SPAN",
+            "UL/LI/A"
           ]
         ],
         "context12_6KpKeA": [
