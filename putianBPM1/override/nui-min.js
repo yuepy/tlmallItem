@@ -19122,7 +19122,7 @@ mini.extend(mini.Tabs, mini.Control, {
             var g = this._headerEl.scrollLeft;
             var t = this.getTab(this.activeIndex);
            //新禄，tab页切换，改变面板里iframe地址
-            t && _ysp_top.history.pushState(t.url + '&' + _ysp_top.tenderType, null, t.url + '&' + _ysp_top.tenderType);
+           t && _ysp_top.history.pushState(t.url + '&' + _ysp_top.tenderType, null, t.url + '&' + _ysp_top.tenderType);
             var n = t ? !t._layouted : false;
             var q = this.isAutoHeight();
             if (q || n) {
@@ -19141,6 +19141,7 @@ mini.extend(mini.Tabs, mini.Control, {
                 if (c) {
                     mini.removeClass(c, this._tabHoverCls)
                 }
+              
             }
         }
         var o = this;
@@ -19191,7 +19192,7 @@ mini.extend(mini.Tabs, mini.Control, {
     },
     activeTab: function(a) {
       //新禄，tab页切换，改变面板里iframe地址
-        _ysp_top.history.pushState(a.url + "&" + _ysp_top.tenderType, null, a.url + '&' + _ysp_top.tenderType);
+       _ysp_top.history.pushState(a.url + "&" + _ysp_top.tenderType, null, a.url + '&' + _ysp_top.tenderType);
         this.setActiveIndex(a)
     },
     getActiveTab: function() {

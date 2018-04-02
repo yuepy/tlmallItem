@@ -35,19 +35,12 @@
     },
     getData_control27_T3GAMp: function (elem) {
       if (elem) {
-        var data = { allSelect: [], flowName: "", time: [] };
-        data.flowName = $(elem).find("#likeSearch").find("#likeQ").find("input").eq(0).val();
-        data.time.push($(elem).find("#startT").find("input").eq(0).val());
-        data.time.push($(elem).find("#endT").find("input").eq(0).val());
-        return data;
-      }
-      return '';
+        var data = { allSelect: [], flowName: "", time: [] };data.flowName = $(elem).find("#likeSearch").find("#likeQ").find("input").eq(0).val();data.time.push($(elem).find("#startT").find("input").eq(0).val());data.time.push($(elem).find("#endT").find("input").eq(0).val());return data;
+      }return '';
     },
     doAction_uiControl24_ELar9V: function (data, elem) {
       if (data.eventType == "click") {
-        var d = data.dataCustom;
-        var q = $(elem).children('tr');
-        q.eq(d[0]).children('td').eq(1).find('div table tbody tr td div').eq(0).children('div').eq(d[1]).find('input').click();
+        var d = data.dataCustom;var q = $(elem).children('tr');q.eq(d[0]).children('td').eq(1).find('div table tbody tr td div').eq(0).children('div').eq(d[1]).find('input').click();
       } else if (data.eventType == 'blur') {
         $(elem).children('tr').children('td').eq(2).find('a').click();
       } else if (data.eventType == "showLoading") {
@@ -55,26 +48,11 @@
       } else if (data.eventType == "hideLoading") {
         ysp.appMain.hideLoading();
       } else if (data.eventType == "inputBlur") {
-        console.log(elem);
-        var flowName = elem.querySelector("#likeSearch").querySelector("#likeQ").querySelectorAll("input")[0];
-        flowName.dispatchEvent(new Event("focus"));
-        flowName.dispatchEvent(new Event("mousedown"));
-        flowName.value = data.dataCustom;
-        flowName.dispatchEvent(new Event("change"));
+        var flowName = elem.querySelector("#likeSearch").querySelector("#likeQ").querySelectorAll("input")[0];flowName.dispatchEvent(new Event("focus"));flowName.dispatchEvent(new Event("mousedown"));flowName.value = data.dataCustom;flowName.dispatchEvent(new Event("change"));
       } else if (data.eventType == "startTChange") {
-        var startT = elem.querySelector("#startT").querySelectorAll("input")[0];
-        startT.dispatchEvent(new Event("focus"));
-        startT.dispatchEvent(new Event("mousedown"));
-        startT.value = data.dataCustom;
-        startT.dispatchEvent(new Event("change"));
-        startT.dispatchEvent(new Event("mouseout"));
+        var startT = elem.querySelector("#startT").querySelectorAll("input")[0];startT.dispatchEvent(new Event("focus"));startT.dispatchEvent(new Event("mousedown"));startT.value = data.dataCustom;startT.dispatchEvent(new Event("change"));startT.dispatchEvent(new Event("mouseout"));
       } else if (data.eventType == "endTChange") {
-        var endT = elem.querySelector("#endT").querySelectorAll("input")[0];
-        endT.dispatchEvent(new Event("focus"));
-        endT.dispatchEvent(new Event("mousedown"));
-        endT.value = data.dataCustom;
-        endT.dispatchEvent(new Event("change"));
-        endT.dispatchEvent(new Event("mouseout"));
+        var endT = elem.querySelector("#endT").querySelectorAll("input")[0];endT.dispatchEvent(new Event("focus"));endT.dispatchEvent(new Event("mousedown"));endT.value = data.dataCustom;endT.dispatchEvent(new Event("change"));endT.dispatchEvent(new Event("mouseout"));
       }
     },
     getTemplate_uiControl24_ELar9V: function () {
@@ -95,31 +73,35 @@
     },
     doAction_uiControl26_6hpfrU: function (data, elem) {
       if (data.eventType == "clickBtn") {
-        var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
-          top.pendTitle = "总部转正";win._ysp_top.tenderType = "turnTask";
-        } else if (title.indexOf("假期申请") !== -1 || title.indexOf("公出差申请") !== -1) {
-          top.pendTitle = "假期申请";win._ysp_top.tenderType = "askForLeave";
-        } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
-          top.pendTitle = "分公司离职管理流程(解除)";win._ysp_top.tenderType = "branchRelease";
-        } else if (title.indexOf("离职管理") !== -1) {
-          top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
-        } else if (title.indexOf("员工职位变动") !== -1) {
-          top.pendTitle = "员工职位变动";win._ysp_top.tenderType = "positionChange";
-        } else if (title.indexOf("总部月度编制变动") !== -1) {
-          top.pendTitle = "总部月度编制变动";win._ysp_top.tenderType = "monthChange";
-        } else if (title.indexOf("销假申请") !== -1) {
-          top.pendTitle = "销假申请";win._ysp_top.tenderType = "beginToWork";
-        } else if (title.indexOf("忘打卡") !== -1) {
-          top.pendTitle = "忘打卡";win._ysp_top.tenderType = "forgetCard";
-        } else if (title.indexOf("加班申请") !== -1) {
-          top.pendTitle = "加班申请";win._ysp_top.tenderType = "addWork";
-        } else if (title.indexOf("外派探亲资格") !== -1) {
-          top.pendTitle = "外派探亲资格";win._ysp_top.tenderType = "visitRelative";
-        } else if (title.indexOf("员工录用") !== -1) {
-          top.pendTitle = "员工录用";win._ysp_top.tenderType = "employeeHire";
+        var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (i == 0) {
+          if (title && title.indexOf("总部转正") !== -1) {
+            top.pendTitle = "总部转正";win._ysp_top.tenderType = "turnTask";
+          } else if (title.indexOf("假期申请") !== -1 || title.indexOf("公出差申请") !== -1) {
+            top.pendTitle = "假期申请";win._ysp_top.tenderType = "askForLeave";
+          } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
+            top.pendTitle = "分公司离职管理流程(解除)";win._ysp_top.tenderType = "branchRelease";
+          } else if (title.indexOf("离职管理") !== -1) {
+            top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
+          } else if (title.indexOf("员工职位变动") !== -1) {
+            top.pendTitle = "员工职位变动";win._ysp_top.tenderType = "positionChange";
+          } else if (title.indexOf("总部月度编制变动") !== -1) {
+            top.pendTitle = "总部月度编制变动";win._ysp_top.tenderType = "monthChange";
+          } else if (title.indexOf("销假申请") !== -1) {
+            top.pendTitle = "销假申请";win._ysp_top.tenderType = "beginToWork";
+          } else if (title.indexOf("忘打卡") !== -1) {
+            top.pendTitle = "忘打卡";win._ysp_top.tenderType = "forgetCard";
+          } else if (title.indexOf("加班申请") !== -1) {
+            top.pendTitle = "加班申请";win._ysp_top.tenderType = "addWork";
+          } else if (title.indexOf("外派探亲资格") !== -1) {
+            top.pendTitle = "外派探亲资格";win._ysp_top.tenderType = "visitRelative";
+          } else if (title.indexOf("员工录用") !== -1) {
+            top.pendTitle = "员工录用";win._ysp_top.tenderType = "employeeHire";
+          } else {
+            top.pendTitle = "第一期38个流程";win._ysp_top.tenderType = "processForm";
+          }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();
         } else {
-          top.pendTitle = "第一期38个流程";win._ysp_top.tenderType = "processForm";
-        }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();ysp.appMain.showLoading();
+          elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();
+        }ysp.appMain.showLoading();
       }
     },
     getTemplate_uiControl26_6hpfrU: function () {
@@ -129,49 +111,23 @@
     getData_control33_E8vlo8: function (elem) {
       if (!elem) {
         return;
-      }
-      if (elem) {
-        var data = {};
-        var _PagesMessage = elem.querySelector('.mini-pager-right').textContent;
-        data.PagesMessage = _PagesMessage;
-        var _PageNumber = elem.querySelector('.mini-pager-num').value;
-        data.PageNumber = _PageNumber;
-        var _PageCount = elem.querySelector('.mini-pager-pages').textContent;
-        data.PageCount = _PageCount;
-        return data;
+      }if (elem) {
+        var data = {};var _PagesMessage = elem.querySelector('.mini-pager-right').textContent;data.PagesMessage = _PagesMessage;var _PageNumber = elem.querySelector('.mini-pager-num').value;data.PageNumber = _PageNumber;var _PageCount = elem.querySelector('.mini-pager-pages').textContent;data.PageCount = _PageCount;return data;
       }
     },
     doAction_uiControl28_EQwAIV: function (data, elem) {
       if (data.eventType == "click") {
-        var d = data.dataCustom;
-        switch (d) {
-          case 'ysp-PagesMessage-leftBM-icon':
-            var btnId = elem.querySelector('.mini-pager-first').parentNode;
-            console.log(btnId);
-            btnId.click();
-            break;
-          case 'ysp-PagesMessage-left-icon':
-            var btnId = elem.querySelector('.mini-pager-prev').parentNode;
-            btnId.click();
-            break;
-          case 'ysp-PagesMessage-right-icon':
-            var btnId = elem.querySelector('.mini-pager-next').parentNode;
-            btnId.click();
-            break;
-          case 'ysp-PagesMessage-rightBM-icon':
-            var btnId = elem.querySelector('.mini-pager-last').parentNode;
-            btnId.click();
-            break;
-        }
+        var d = data.dataCustom;switch (d) {case 'ysp-PagesMessage-leftBM-icon':
+            var btnId = elem.querySelector('.mini-pager-first').parentNode;btnId.click();break;case 'ysp-PagesMessage-left-icon':
+            var btnId = elem.querySelector('.mini-pager-prev').parentNode;btnId.click();break;case 'ysp-PagesMessage-right-icon':
+            var btnId = elem.querySelector('.mini-pager-next').parentNode;btnId.click();break;case 'ysp-PagesMessage-rightBM-icon':
+            var btnId = elem.querySelector('.mini-pager-last').parentNode;btnId.click();break;}
       } else if (data.eventType == "selectChange") {
-        elem.querySelector(".mini-buttonedit-input").focus();
-        elem.querySelector(".mini-buttonedit-input").click();
-        setTimeout(function () {
+        elem.querySelector(".mini-buttonedit-input").focus();elem.querySelector(".mini-buttonedit-input").click();setTimeout(function () {
           elem.ownerDocument.querySelector(".mini-listbox-items").querySelectorAll("tr")[data.dataCustom.ind].click();
         }, 50);
       } else if (data.eventType == "inputChange") {
-        elem.querySelector(".mini-pager-num").value = data.dataCustom;
-        elem.querySelector(".mini-pager-num").dispatchEvent(new Event('change'));
+        elem.querySelector(".mini-pager-num").value = data.dataCustom;elem.querySelector(".mini-pager-num").dispatchEvent(new Event('change'));
       }
     },
     getTemplate_uiControl28_EQwAIV: function () {
@@ -195,13 +151,9 @@
       //loading 加载。
       if (!elem) {
         return;
-      }
-      if (elem && elem.contentWindow && elem.contentWindow.document) {
-        var loading = elem.contentWindow.document.querySelector('.mini-mask');
-        if (loading) {
-          var _loading = loading.querySelector('.mini-mask-loading');
-          if (_loading && _loading.style.display == 'block' && _loading.textContent.trim() == '加载中...') {
-            console.log('1');
+      }if (elem && elem.contentWindow && elem.contentWindow.document) {
+        var loading = elem.contentWindow.document.querySelector('.mini-mask');if (loading) {
+          var _loading = loading.querySelector('.mini-mask-loading');if (_loading && _loading.style.display == 'block' && _loading.textContent.trim() == '加载中...') {
             return [true];
           } else {
             return;

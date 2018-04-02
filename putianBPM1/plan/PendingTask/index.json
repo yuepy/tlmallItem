@@ -1,1199 +1,1220 @@
 {
-    "version": "0.1",
-    "id": "PendingTask",
-    "targetURL": "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=858425&_winid=w2262",
-    "jsFile": "index.js",
-    "requires": {
-        "processForm": "../processForm/index.json",
-        "checkProcess": "../checkProcess/index.json",
-        "index": "../index/index.json",
-        "PendingTask": "../PendingTask/index.json",
-        "clientFlowForm": "../clientFlowForm/index.json",
-        "beginToWork": "../beginToWork/index.json",
-        "forgetCard": "../forgetCard/index.json",
-        "addWork": "../addWork/index.json",
-        "visitRelative": "../visitRelative/index.json",
-        "turnTask": "../turnTask/index.json",
-        "askForLeave": "../askForLeave/index.json",
-        "branchRelease": "../branchRelease/index.json",
-        "departure": "../departure/index.json",
-        "positionChange": "../positionChange/index.json",
-        "employeeHire": "../employeeHire/index.json",
-        "monthChange": "../monthChange/index.json"
-    },
-    "chineseName": "代办列表",
-    "description": "",
-    "controls": {
-        "control22_7UfmP8": {
-            "location": {
-                "data": {
-                    "tagName": "BODY"
-                },
-                "userData": {
-                    "data": [],
-                    "force": false
-                },
-                "locators": [{
-                        "id": "@class/word",
-                        "prob": 1,
-                        "ordinal": [
-                            0,
-                            3
-                        ],
-                        "value": "BODY.body-font"
-                    },
-                    {
-                        "id": "path/ordinal",
-                        "prob": 1,
-                        "value": "/HTML[1]/BODY[1]"
-                    }
-                ]
-            },
-            "events": {
-                "onGetData": "getData_control22_7UfmP8"
-            },
-            "intendedRole": "custom",
-            "roles": "element,custom",
-            "monitored": true,
-            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+  "version": "0.1",
+  "id": "PendingTask",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=858425&_winid=w2262",
+  "jsFile": "index.js",
+  "requires": {
+    "processForm": "../processForm/index.json",
+    "checkProcess": "../checkProcess/index.json",
+    "index": "../index/index.json",
+    "PendingTask": "../PendingTask/index.json",
+    "clientFlowForm": "../clientFlowForm/index.json",
+    "beginToWork": "../beginToWork/index.json",
+    "forgetCard": "../forgetCard/index.json",
+    "addWork": "../addWork/index.json",
+    "visitRelative": "../visitRelative/index.json",
+    "turnTask": "../turnTask/index.json",
+    "askForLeave": "../askForLeave/index.json",
+    "branchRelease": "../branchRelease/index.json",
+    "departure": "../departure/index.json",
+    "positionChange": "../positionChange/index.json",
+    "employeeHire": "../employeeHire/index.json",
+    "monthChange": "../monthChange/index.json"
+  },
+  "chineseName": "代办列表",
+  "description": "",
+  "controls": {
+    "control22_7UfmP8": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
         },
-        "control27_T3GAMp": {
-            "location": {
-                "data": {
-                    "tagName": "TBODY"
-                },
-                "userData": {
-                    "data": [],
-                    "force": false
-                },
-                "locators": [{
-                        "id": "@id/word",
-                        "prob": 2,
-                        "value": [
-                            "descendant::TABLE[@id=\"tableSearch\"]/TBODY[1]",
-                            "descendant::TABLE[@id=\"tableSearch\"]//TBODY"
-                        ]
-                    },
-                    {
-                        "id": "@class/word",
-                        "prob": 1,
-                        "ordinal": [
-                            0,
-                            36
-                        ],
-                        "value": "BODY.body-font TABLE TBODY"
-                    },
-                    {
-                        "id": "path/ordinal",
-                        "prob": 1,
-                        "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]"
-                    }
-                ]
-            },
-            "events": {
-                "onGetData": "getData_control27_T3GAMp"
-            },
-            "intendedRole": "custom",
-            "roles": "element,link,custom",
-            "monitored": true,
-            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+        "userData": {
+          "data": [],
+          "force": false
         },
-        "control28_SZVJPk": {
-            "location": {
-                "data": {
-                    "tagName": "TABLE"
-                },
-                "userData": {
-                    "data": [{
-                        "method": "customJS",
-                        "value": "return doc.body.querySelector('iframe').contentWindow.document.querySelector('#taskListId .mini-grid-rows-view .mini-grid-rowstable')"
-                    }],
-                    "force": true
-                },
-                "locators": [{
-                        "id": "@class/word",
-                        "prob": 1,
-                        "ordinal": [
-                            0,
-                            3
-                        ],
-                        "value": "DIV.mini-grid-rows-view DIV.mini-grid-rows-content TABLE.mini-grid-table.mini-grid-rowstable"
-                    },
-                    {
-                        "id": "path/ordinal",
-                        "prob": 1,
-                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]/DIV[1]/TABLE[1]"
-                    }
-                ]
-            },
-            "events": {
-                "onGetData": "getData_control28_SZVJPk"
-            },
-            "intendedRole": "custom",
-            "roles": "element,custom",
-            "ignoreVisibility": true,
-            "monitored": true,
-            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
-        },
-        "control33_E8vlo8": {
-            "location": {
-                "data": {
-                    "tagName": "DIV"
-                },
-                "userData": {
-                    "data": [],
-                    "force": false
-                },
-                "locators": [{
-                        "id": "@id/word",
-                        "prob": 1,
-                        "value": "descendant::DIV[@id=\"taskListId\"]/DIV[1]/DIV[2]/DIV[6]/DIV[1]"
-                    },
-                    {
-                        "id": "@class/word",
-                        "prob": 1,
-                        "ordinal": [
-                            0,
-                            3
-                        ],
-                        "value": "DIV.mini-panel-viewport.mini-grid-viewport DIV.mini-grid-pager DIV.mini-pager"
-                    },
-                    {
-                        "id": "path/ordinal",
-                        "prob": 1,
-                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[6]/DIV[1]"
-                    }
-                ]
-            },
-            "events": {
-                "onGetData": "getData_control33_E8vlo8"
-            },
-            "intendedRole": "custom",
-            "roles": "element,custom",
-            "ignoreVisibility": true,
-            "monitored": true,
-            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
-        },
-        "control34_XNdpHA": {
-            "location": {
-                "data": {
-                    "tagName": "BODY"
-                },
-                "userData": {
-                    "data": [],
-                    "force": false
-                },
-                "locators": [{
-                        "id": "@class/word",
-                        "prob": 1,
-                        "value": "BODY.index"
-                    },
-                    {
-                        "id": "path/ordinal",
-                        "prob": 1,
-                        "ordinal": [
-                            0,
-                            3
-                        ],
-                        "value": "/HTML[1]/BODY[1]"
-                    }
-                ]
-            },
-            "events": {
-                "onGetData": "getData_control34_XNdpHA"
-            },
-            "intendedRole": "custom",
-            "roles": "element,custom",
-            "ignoreVisibility": false,
-            "monitored": true,
-            "frameXPath": ""
-        },
-        "control64_OUgNmD": {
-            "location": {
-                "data": {
-                    "tagName": "IFRAME"
-                },
-                "userData": {
-                    "data": [],
-                    "force": false
-                },
-                "locators": [{
-                        "id": "@class/word",
-                        "prob": 1,
-                        "value": "TABLE.mini-tabs-table DIV.mini-tabs-bodys.mini-tabs-body-top DIV.mini-tabs-body.mini-tabs-hideOverflow IFRAME"
-                    },
-                    {
-                        "id": "path/ordinal",
-                        "prob": 1,
-                        "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[1]/IFRAME[1]"
-                    },
-                    {
-                        "id": "elderLevel",
-                        "value": {
-                            "level": 0
-                        }
-                    }
-                ]
-            },
-            "events": {
-                "onGetData": "getData_control64_OUgNmD"
-            },
-            "intendedRole": "custom",
-            "roles": "element,custom",
-            "monitored": true,
-            "frameXPath": ""
-        }
-    },
-    "contexts": {
-        "context5_7wf9RT": {
-            "controls": [
-                "control22_7UfmP8",
-                "control27_T3GAMp",
-                "control28_SZVJPk",
-                "control33_E8vlo8",
-                "control34_XNdpHA",
-                "control64_OUgNmD"
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
             ],
-            "anchors": [],
-            "urlAnchor": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/pendingTask\\.jsp.*"
-            ]
-        }
+            "value": "BODY.body-font"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control22_7UfmP8"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
     },
-    "flows": {
-        "flow10_t8PDgz": {
-            "toContexts": [{
-                    "toContextId": "context5_7wf9RT"
-                },
-                {
-                    "toContextId": "context5_7wf9RT",
-                    "toModelId": "PendingTask"
-                },
-                {
-                    "toContextId": "context1_wzzrby",
-                    "toModelId": "index"
-                },
-                {
-                    "toContextId": "context25_ber6DF",
-                    "toModelId": "clientFlowForm"
-                }
+    "control27_T3GAMp": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::TABLE[@id=\"tableSearch\"]/TBODY[1]",
+              "descendant::TABLE[@id=\"tableSearch\"]//TBODY"
             ]
-        },
-        "flow12_xTQyX6": {
-            "fromContextId": "context5_7wf9RT",
-            "fromAction": "doAction",
-            "fromControlId": "control22_7UfmP8",
-            "toContexts": [{
-                    "toContextId": "context5_7wf9RT"
-                },
-                {
-                    "toContextId": "context1_wzzrby",
-                    "toModelId": "index"
-                }
-            ]
-        },
-        "flow15_knCE3B": {
-            "fromContextId": "context5_7wf9RT",
-            "fromAction": "doAction",
-            "fromControlId": "control33_E8vlo8",
-            "toContexts": [{
-                    "toContextId": "context5_7wf9RT"
-                },
-                {
-                    "toContextId": "context1_wzzrby",
-                    "toModelId": "index"
-                }
-            ]
-        },
-        "flow17_y6TWTL": {
-            "fromContextId": "context5_7wf9RT",
-            "fromAction": "doAction",
-            "fromControlId": "control28_SZVJPk",
-            "toContexts": [{
-                    "toContextId": "context5_7wf9RT"
-                },
-                {
-                    "toContextId": "context8_ddpRhS",
-                    "toModelId": "processForm"
-                },
-                {
-                    "toContextId": "context11_uaf3pg",
-                    "toModelId": "checkProcess"
-                },
-                {
-                    "toContextId": "context27_OgI7Vc",
-                    "toModelId": "beginToWork"
-                },
-                {
-                    "toContextId": "context28_MTJvP1",
-                    "toModelId": "forgetCard"
-                },
-                {
-                    "toContextId": "context29_qsgQH3",
-                    "toModelId": "addWork"
-                },
-                {
-                    "toContextId": "context30_kSkk8F",
-                    "toModelId": "visitRelative"
-                },
-                {
-                    "toContextId": "context27_AJKd80",
-                    "toModelId": "turnTask"
-                },
-                {
-                    "toContextId": "context31_NhG3EK",
-                    "toModelId": "askForLeave"
-                },
-                {
-                    "toContextId": "context28_MTJvP1",
-                    "toModelId": "forgetCard"
-                },
-                {
-                    "toContextId": "context29_qsgQH3",
-                    "toModelId": "addWork"
-                },
-                {
-                    "toContextId": "context30_kSkk8F",
-                    "toModelId": "visitRelative"
-                },
-                {
-                    "toContextId": "context27_AJKd80",
-                    "toModelId": "turnTask"
-                },
-                {
-                    "toContextId": "context1_wzzrby",
-                    "toModelId": "index"
-                },
-                {
-                    "toContextId": "context31_GRspED",
-                    "toModelId": "branchRelease"
-                },
-                {
-                    "toContextId": "context32_FGBsnV",
-                    "toModelId": "departure"
-                },
-                {
-                    "toContextId": "context33_dgaTsL",
-                    "toModelId": "positionChange"
-                },
-                {
-                    "toContextId": "context34_zEaLZG",
-                    "toModelId": "employeeHire"
-                },
-                {
-                    "toContextId": "context36_6C2hoz",
-                    "toModelId": "monthChange"
-                }
-            ]
-        },
-        "flow37_EhRT0C": {
-            "fromContextId": "context8_ddpRhS",
-            "fromAction": "click",
-            "fromControlId": "control11_LPxJXK",
-            "toContexts": [{
-                "toContextId": "context5_7wf9RT",
-                "toModelId": "PendingTask"
-            }]
-        },
-        "flow48_Xp2xlW": {
-            "fromContextId": "context5_7wf9RT",
-            "fromAction": "doAction",
-            "fromControlId": "control27_T3GAMp",
-            "toContexts": [{
-                "toContextId": "context5_7wf9RT"
-            }]
-        },
-        "flow54_FCWqNF": {
-            "fromContextId": "context1_wzzrby",
-            "fromAction": "doAction",
-            "fromControlId": "control13_aHOPRS",
-            "toContexts": [{
-                "toContextId": "context5_7wf9RT",
-                "toModelId": "PendingTask"
-            }]
-        },
-        "flow19_xMIAwX": {
-            "fromContextId": "context8_ddpRhS",
-            "fromAction": "doAction",
-            "fromControlId": "control36_hBTqBA",
-            "toContexts": [{
-                "toContextId": "context5_7wf9RT",
-                "toModelId": "PendingTask"
-            }]
-        }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              36
+            ],
+            "value": "BODY.body-font TABLE TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control27_T3GAMp"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
     },
-    "pages": {
-        "page5_f1lOz5": {
-            "contextId": "context5_7wf9RT",
-            "layout": [{
-                    "id": "uiControl21_n99o77",
-                    "controlId": "control22_7UfmP8",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl21_n99o77",
-                                "onGetTemplate": "getTemplate_uiControl21_n99o77"
-                            }
-                        }
-                    }
-                },
-                {
-                    "id": "uiControl24_ELar9V",
-                    "controlId": "control27_T3GAMp",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl24_ELar9V",
-                                "onGetTemplate": "getTemplate_uiControl24_ELar9V"
-                            }
-                        }
-                    }
-                },
-                {
-                    "id": "uiControl26_6hpfrU",
-                    "controlId": "control28_SZVJPk",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl26_6hpfrU",
-                                "onGetTemplate": "getTemplate_uiControl26_6hpfrU"
-                            }
-                        }
-                    }
-                },
-                {
-                    "id": "uiControl28_EQwAIV",
-                    "controlId": "control33_E8vlo8",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl28_EQwAIV",
-                                "onGetTemplate": "getTemplate_uiControl28_EQwAIV"
-                            }
-                        }
-                    }
-                },
-                {
-                    "id": "uiControl59_SdAfFA",
-                    "controlId": "control64_OUgNmD",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl59_SdAfFA",
-                                "onGetTemplate": "getTemplate_uiControl59_SdAfFA"
-                            }
-                        }
-                    }
-                },
-                {
-                    "id": "uiControl15_JSVHyX",
-                    "controlId": "control34_XNdpHA",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl15_JSVHyX",
-                                "onGetTemplate": "getTemplate_uiControl15_JSVHyX"
-                            }
-                        }
-                    }
-                }
-            ]
-        }
+    "control28_SZVJPk": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "customJS",
+              "value": "return doc.body.querySelector('iframe').contentWindow.document.querySelector('#taskListId .mini-grid-rows-view .mini-grid-rowstable')"
+            }
+          ],
+          "force": true
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.mini-grid-rows-view DIV.mini-grid-rows-content TABLE.mini-grid-table.mini-grid-rowstable"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control28_SZVJPk"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
     },
-    "matchers": {
-        "page/title": {
-            "contexts": {
-                "context5_7wf9RT": [
-                    "移动端页面"
-                ]
-            }
+    "control33_E8vlo8": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
         },
-        "page/urls": {
-            "contexts": {
-                "context5_7wf9RT": [
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=868611&_winid=w6911",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=921399&_winid=w4113",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=726631&_winid=w5044",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp"
-                ],
-                "context8_ddpRhS": [
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=477900&_winid=w9935",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=1541&_t=522235&_winid=w8657",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=202877&_winid=w5256",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=723336&_winid=w4279",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=1541&_t=908731&_winid=w1877",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=1541&_t=863827&_winid=w766",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4206&_t=405075&_winid=w1000",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4206&_t=589498&_winid=w6747",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4206&_t=558516&_winid=w9244",
-                    "192.168.220.51:8000/ptsoa/widget/orgUser/user_select.jsp?_winid=w713&_t=575767",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4038",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5293&_t=260700&_winid=w328",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10607&_t=189335&_winid=w6376",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10607&_t=214522&_winid=w6563",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10607",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5392&_t=416284&_winid=w1554",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5392&_t=574536&_winid=w5910",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=2550&_t=159766&_winid=w507",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5553&_t=983208&_winid=w7093",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5360&_t=456793&_winid=w5637",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=6172",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=6477&_t=124085&_winid=w9181",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7183&_t=998668&_winid=w523",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=6674&_t=954885&_winid=w9417",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=8216&_t=900167&_winid=w4860",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=8621&_t=347788&_winid=w9524",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10016&_t=243221&_winid=w463",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=13253&_t=616111&_winid=w153",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=11919&_t=236544&_winid=w2199",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=14231&_t=209163&_winid=w4183",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=16554&_t=788777&_winid=w415",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=17369&_t=748670&_winid=w6036",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=39018&_winid=w7569",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=61327&_winid=w1669",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=806504&_winid=w9498",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=758945&_winid=w9785",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=258227&_winid=w8309",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4062",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7768&_t=628055&_winid=w2803",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=9684&_t=812889&_winid=w2469",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=9987&_t=96064&_winid=w2680",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=12270&_t=720560&_winid=w8194",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=329870&_winid=w9275",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=851963&_winid=w6196",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=623221&_winid=w674",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=288546&_winid=w5981",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=858941&_winid=w4257",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=284256&_t=189496&_winid=w3117"
-                ],
-                "context11_uaf3pg": [],
-                "context1_wzzrby": [
-                    "192.168.220.51:8000/ptsoa/skins/default/index.jsp",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=finishedSelf&_t=206629&_winid=w7901",
-                    "192.168.220.51:8000/ptsoa/skins/default/index.jsp",
-                    "",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=256745&_winid=w5716",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=673858&_winid=w3372",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=803579&_winid=w2597",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=207664&_winid=w3106",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=891739&_winid=w542",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=491847&_winid=w5907",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=47473&_winid=w3787",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=726156&_winid=w4654",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=990881&_winid=w4737",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp",
-                    "192.168.220.51:8000/ptsoa/widget/user_select.jsp?_winid=w6406&_t=292443",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284256&_t=163726&_winid=w5128"
-                ],
-                "context25_ber6DF": [
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=314738&_winid=w1370",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=901861&_t=516559&_winid=w241",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=594515&_winid=w672",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=902205&_t=364992&_winid=w2280",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=902203&_t=408512&_winid=w4759"
-                ],
-                "context31_GRspED": [
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchResignRelease&workItemID=284912&_t=466907&_winid=w8268",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=297361&_winid=w2757",
-                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=653393&_winid=w168"
-                ]
-            }
+        "userData": {
+          "data": [],
+          "force": false
         },
-        "page/ids": {
-            "contexts": {
-                "context5_7wf9RT": [
-                    [
-                        "mini-$",
-                        "mini-$body$",
-                        "tabs"
-                    ],
-                    [
-                        "mini-$",
-                        "mini-$body$",
-                        "tabs",
-                        "toast"
-                    ]
-                ],
-                "context1_wzzrby": [
-                    [
-                        "container",
-                        "contextMenu",
-                        "levsmenu",
-                        "logos",
-                        "mainTabs",
-                        "mini-",
-                        "mini-$",
-                        "mini-$body$",
-                        "tabsMenu",
-                        "wrapper"
-                    ],
-                    [
-                        "$cell$",
-                        "mini-",
-                        "mini-$",
-                        "mini-$ck$",
-                        "mini-$emptytext",
-                        "mini-$filter$",
-                        "mini-$headerCell$",
-                        "mini-$row$",
-                        "mini-$summary$",
-                        "tableSearch",
-                        "taskFromList",
-                        "taskFromList$value",
-                        "taskListId"
-                    ],
-                    [
-                        "$cell$",
-                        "mini-",
-                        "mini-$",
-                        "mini-$ck$",
-                        "mini-$emptytext",
-                        "mini-$filter$",
-                        "mini-$headerCell$",
-                        "mini-$row$",
-                        "mini-$summary$",
-                        "permissionList",
-                        "permissionList$value",
-                        "tableSearch",
-                        "taskFromList",
-                        "taskFromList$value",
-                        "taskListId"
-                    ],
-                    [
-                        "mini-$",
-                        "mini-$body$",
-                        "tabs"
-                    ],
-                    [
-                        "__modalmini-",
-                        "mini-",
-                        "mini-$",
-                        "mini-$body$",
-                        "tabs"
-                    ]
-                ],
-                "context25_ber6DF": [
-                    [
-                        "_btns",
-                        "_tabs",
-                        "_tr_",
-                        "backActivity",
-                        "btn",
-                        "get",
-                        "mini-$",
-                        "mini-$body$",
-                        "submit",
-                        "tab",
-                        "td__"
-                    ],
-                    [
-                        "_btns",
-                        "_tabs",
-                        "_tr_",
-                        "backActivity",
-                        "btn",
-                        "cancelGet",
-                        "mini-$",
-                        "mini-$body$",
-                        "submit",
-                        "tab",
-                        "td__"
-                    ]
-                ]
-            }
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::DIV[@id=\"taskListId\"]/DIV[1]/DIV[2]/DIV[6]/DIV[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.mini-panel-viewport.mini-grid-viewport DIV.mini-grid-pager DIV.mini-pager"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[6]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control33_E8vlo8"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+    },
+    "control34_XNdpHA": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
         },
-        "page/classes": {
-            "contexts": {
-                "context5_7wf9RT": [
-                    [
-                        "mini-disabled",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table"
-                    ]
-                ],
-                "context25_ber6DF": [
-                    [
-                        "icon-ok",
-                        "icon-undo",
-                        "icon-user",
-                        "mini-button",
-                        "mini-button-icon",
-                        "mini-button-text",
-                        "mini-disabled",
-                        "mini-fit",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table",
-                        "mini-toolbar"
-                    ],
-                    [
-                        "icon-cancel",
-                        "icon-ok",
-                        "icon-undo",
-                        "mini-button",
-                        "mini-button-icon",
-                        "mini-button-text",
-                        "mini-disabled",
-                        "mini-fit",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table",
-                        "mini-toolbar"
-                    ]
-                ],
-                "context1_wzzrby": [
-                    [
-                        "J_tabClose",
-                        "J_tabCloseAll",
-                        "J_tabCloseOther",
-                        "J_tabShowActive",
-                        "active",
-                        "b",
-                        "divider",
-                        "dropdown",
-                        "dropdown-menu",
-                        "dropdown-menu-right",
-                        "fmain",
-                        "inactive",
-                        "last",
-                        "main",
-                        "menu",
-                        "menu-wrap",
-                        "mini-contextmenu",
-                        "mini-disabled",
-                        "mini-fit",
-                        "mini-menu",
-                        "mini-menu-border",
-                        "mini-menu-bottomArrow",
-                        "mini-menu-float",
-                        "mini-menu-inner",
-                        "mini-menu-toolbar",
-                        "mini-menu-topArrow",
-                        "mini-menuitem",
-                        "mini-menuitem-allow",
-                        "mini-menuitem-icon",
-                        "mini-menuitem-inner",
-                        "mini-menuitem-text",
-                        "mini-separator",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table",
-                        "radius",
-                        "sidebar",
-                        "submain",
-                        "tcc",
-                        "wrap"
-                    ],
-                    [
-                        "bpsDatagrid",
-                        "dgBtn",
-                        "grayBtn",
-                        "mini-button",
-                        "mini-button-disabled",
-                        "mini-button-iconOnly",
-                        "mini-button-plain",
-                        "mini-button-text",
-                        "mini-buttonedit",
-                        "mini-buttonedit-border",
-                        "mini-buttonedit-button",
-                        "mini-buttonedit-buttons",
-                        "mini-buttonedit-close",
-                        "mini-buttonedit-icon",
-                        "mini-buttonedit-input",
-                        "mini-checkboxlist",
-                        "mini-checkboxlist-item",
-                        "mini-checkboxlist-item-selected",
-                        "mini-combobox",
-                        "mini-datagrid",
-                        "mini-errorIcon",
-                        "mini-grid",
-                        "mini-grid-border",
-                        "mini-grid-bottomCell",
-                        "mini-grid-cell",
-                        "mini-grid-cell-inner",
-                        "mini-grid-cell-nowrap",
-                        "mini-grid-column-splitter",
-                        "mini-grid-columns",
-                        "mini-grid-columns-lock",
-                        "mini-grid-columns-view",
-                        "mini-grid-emptyText",
-                        "mini-grid-filterCell",
-                        "mini-grid-filterRow",
-                        "mini-grid-filterRow-lock",
-                        "mini-grid-filterRow-view",
-                        "mini-grid-focus",
-                        "mini-grid-headerCell",
-                        "mini-grid-headerCell-inner",
-                        "mini-grid-headerCell-nowrap",
-                        "mini-grid-headerCell-outer",
-                        "mini-grid-pager",
-                        "mini-grid-rightCell",
-                        "mini-grid-row",
-                        "mini-grid-row-alt",
-                        "mini-grid-rows",
-                        "mini-grid-rows-content",
-                        "mini-grid-rows-lock",
-                        "mini-grid-rows-view",
-                        "mini-grid-rowstable",
-                        "mini-grid-scrollHeaderCell",
-                        "mini-grid-summaryCell",
-                        "mini-grid-summaryRow",
-                        "mini-grid-summaryRow-lock",
-                        "mini-grid-summaryRow-view",
-                        "mini-grid-table",
-                        "mini-grid-topRightCell",
-                        "mini-grid-viewport",
-                        "mini-grid-vscroll",
-                        "mini-grid-vscroll-content",
-                        "mini-list-inner",
-                        "mini-page-buttons",
-                        "mini-pager",
-                        "mini-pager-first",
-                        "mini-pager-index",
-                        "mini-pager-last",
-                        "mini-pager-left",
-                        "mini-pager-next",
-                        "mini-pager-num",
-                        "mini-pager-pages",
-                        "mini-pager-prev",
-                        "mini-pager-reload",
-                        "mini-pager-right",
-                        "mini-pager-size",
-                        "mini-pager-sizetext",
-                        "mini-panel",
-                        "mini-panel-body",
-                        "mini-panel-border",
-                        "mini-panel-footer",
-                        "mini-panel-header",
-                        "mini-panel-header-inner",
-                        "mini-panel-icon",
-                        "mini-panel-title",
-                        "mini-panel-toolbar",
-                        "mini-panel-viewport",
-                        "mini-popupedit",
-                        "mini-resizer-trigger",
-                        "mini-tools",
-                        "mini-tools-close",
-                        "mini-tools-collapse",
-                        "separator",
-                        "textof_clip"
-                    ],
-                    [
-                        "mini-disabled",
-                        "mini-tab",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table"
-                    ],
-                    [
-                        "mini-disabled",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table"
-                    ],
-                    [
-                        "mini-disabled",
-                        "mini-modal",
-                        "mini-panel",
-                        "mini-panel-body",
-                        "mini-panel-border",
-                        "mini-panel-footer",
-                        "mini-panel-header",
-                        "mini-panel-header-inner",
-                        "mini-panel-icon",
-                        "mini-panel-title",
-                        "mini-panel-toolbar",
-                        "mini-panel-viewport",
-                        "mini-resizer-trigger",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table",
-                        "mini-tools",
-                        "mini-tools-close",
-                        "mini-tools-collapse",
-                        "mini-tools-max",
-                        "mini-tools-min",
-                        "mini-window",
-                        "mini-window-drag"
-                    ]
-                ]
-            }
+        "userData": {
+          "data": [],
+          "force": false
         },
-        "page/tagTriplets": {
-            "contexts": {
-                "context5_7wf9RT": [
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/DIV/TABLE",
-                        "DIV/DIV/A",
-                        "DIV/DIV/IFRAME",
-                        "DIV/DIV/TABLE",
-                        "DIV/TABLE/TBODY",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/DIV/DIV",
-                        "TR/TD/DIV",
-                        "TR/TD/SPAN"
-                    ]
-                ],
-                "context1_wzzrby": [
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/DIV/DIV",
-                        "DIV/DIV/A",
-                        "DIV/DIV/B",
-                        "DIV/DIV/BR",
-                        "DIV/DIV/DIV",
-                        "DIV/DIV/IFRAME",
-                        "DIV/DIV/IMG",
-                        "DIV/DIV/SPAN",
-                        "DIV/DIV/TABLE",
-                        "DIV/DIV/UL",
-                        "DIV/SPAN/A",
-                        "DIV/TABLE/TBODY",
-                        "DIV/UL/LI",
-                        "LI/A/I",
-                        "LI/UL/LI",
-                        "SPAN/A/SPAN",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/DIV/DIV",
-                        "TR/TD/DIV",
-                        "TR/TD/SPAN",
-                        "UL/LI/A",
-                        "UL/LI/UL"
-                    ],
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/-/TABLE",
-                        "-/DIV/DIV",
-                        "-/TABLE/TBODY",
-                        "DIV/DIV/A",
-                        "DIV/DIV/DIV",
-                        "DIV/DIV/INPUT-checkbox",
-                        "DIV/DIV/LABEL",
-                        "DIV/DIV/SPAN",
-                        "DIV/DIV/TABLE",
-                        "DIV/TABLE/TBODY",
-                        "SPAN/SPAN/INPUT-hidden",
-                        "SPAN/SPAN/INPUT-text",
-                        "SPAN/SPAN/SPAN",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/A/SPAN",
-                        "TD/DIV/A",
-                        "TD/DIV/DIV",
-                        "TD/DIV/TABLE",
-                        "TD/SPAN/INPUT-text",
-                        "TD/SPAN/SPAN",
-                        "TR/TD/A",
-                        "TR/TD/DIV",
-                        "TR/TD/INPUT-hidden",
-                        "TR/TD/SPAN"
-                    ],
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/DIV/TABLE",
-                        "DIV/DIV/A",
-                        "DIV/DIV/TABLE",
-                        "DIV/TABLE/TBODY",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/DIV/DIV",
-                        "TR/TD/DIV",
-                        "TR/TD/SPAN"
-                    ],
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/DIV/TABLE",
-                        "DIV/DIV/A",
-                        "DIV/DIV/IFRAME",
-                        "DIV/DIV/TABLE",
-                        "DIV/TABLE/TBODY",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/DIV/DIV",
-                        "TR/TD/DIV",
-                        "TR/TD/SPAN"
-                    ],
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/DIV/DIV",
-                        "-/DIV/IFRAME",
-                        "-/DIV/TABLE",
-                        "DIV/DIV/A",
-                        "DIV/DIV/DIV",
-                        "DIV/DIV/IFRAME",
-                        "DIV/DIV/SPAN",
-                        "DIV/DIV/TABLE",
-                        "DIV/TABLE/TBODY",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/DIV/DIV",
-                        "TR/TD/DIV",
-                        "TR/TD/SPAN"
-                    ]
-                ]
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.index"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control34_XNdpHA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": false,
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control64_OUgNmD": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.mini-tabs-table DIV.mini-tabs-bodys.mini-tabs-body-top DIV.mini-tabs-body.mini-tabs-hideOverflow IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[1]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
             }
-        }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control64_OUgNmD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     }
+  },
+  "contexts": {
+    "context5_7wf9RT": {
+      "controls": [
+        "control22_7UfmP8",
+        "control27_T3GAMp",
+        "control28_SZVJPk",
+        "control33_E8vlo8",
+        "control34_XNdpHA",
+        "control64_OUgNmD"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/pendingTask\\.jsp.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow10_t8PDgz": {
+      "toContexts": [
+        {
+          "toContextId": "context5_7wf9RT"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context25_ber6DF",
+          "toModelId": "clientFlowForm"
+        }
+      ]
+    },
+    "flow12_xTQyX6": {
+      "fromContextId": "context5_7wf9RT",
+      "fromAction": "doAction",
+      "fromControlId": "control22_7UfmP8",
+      "toContexts": [
+        {
+          "toContextId": "context5_7wf9RT"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        }
+      ]
+    },
+    "flow15_knCE3B": {
+      "fromContextId": "context5_7wf9RT",
+      "fromAction": "doAction",
+      "fromControlId": "control33_E8vlo8",
+      "toContexts": [
+        {
+          "toContextId": "context5_7wf9RT"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        }
+      ]
+    },
+    "flow17_y6TWTL": {
+      "fromContextId": "context5_7wf9RT",
+      "fromAction": "doAction",
+      "fromControlId": "control28_SZVJPk",
+      "toContexts": [
+        {
+          "toContextId": "context5_7wf9RT"
+        },
+        {
+          "toContextId": "context8_ddpRhS",
+          "toModelId": "processForm"
+        },
+        {
+          "toContextId": "context11_uaf3pg",
+          "toModelId": "checkProcess"
+        },
+        {
+          "toContextId": "context27_OgI7Vc",
+          "toModelId": "beginToWork"
+        },
+        {
+          "toContextId": "context28_MTJvP1",
+          "toModelId": "forgetCard"
+        },
+        {
+          "toContextId": "context29_qsgQH3",
+          "toModelId": "addWork"
+        },
+        {
+          "toContextId": "context30_kSkk8F",
+          "toModelId": "visitRelative"
+        },
+        {
+          "toContextId": "context27_AJKd80",
+          "toModelId": "turnTask"
+        },
+        {
+          "toContextId": "context31_NhG3EK",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context28_MTJvP1",
+          "toModelId": "forgetCard"
+        },
+        {
+          "toContextId": "context29_qsgQH3",
+          "toModelId": "addWork"
+        },
+        {
+          "toContextId": "context30_kSkk8F",
+          "toModelId": "visitRelative"
+        },
+        {
+          "toContextId": "context27_AJKd80",
+          "toModelId": "turnTask"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context31_GRspED",
+          "toModelId": "branchRelease"
+        },
+        {
+          "toContextId": "context32_FGBsnV",
+          "toModelId": "departure"
+        },
+        {
+          "toContextId": "context33_dgaTsL",
+          "toModelId": "positionChange"
+        },
+        {
+          "toContextId": "context34_zEaLZG",
+          "toModelId": "employeeHire"
+        },
+        {
+          "toContextId": "context36_6C2hoz",
+          "toModelId": "monthChange"
+        }
+      ]
+    },
+    "flow37_EhRT0C": {
+      "fromContextId": "context8_ddpRhS",
+      "fromAction": "click",
+      "fromControlId": "control11_LPxJXK",
+      "toContexts": [
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
+    },
+    "flow48_Xp2xlW": {
+      "fromContextId": "context5_7wf9RT",
+      "fromAction": "doAction",
+      "fromControlId": "control27_T3GAMp",
+      "toContexts": [
+        {
+          "toContextId": "context5_7wf9RT"
+        }
+      ]
+    },
+    "flow54_FCWqNF": {
+      "fromContextId": "context1_wzzrby",
+      "fromAction": "doAction",
+      "fromControlId": "control13_aHOPRS",
+      "toContexts": [
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
+    },
+    "flow19_xMIAwX": {
+      "fromContextId": "context8_ddpRhS",
+      "fromAction": "doAction",
+      "fromControlId": "control36_hBTqBA",
+      "toContexts": [
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page5_f1lOz5": {
+      "contextId": "context5_7wf9RT",
+      "layout": [
+        {
+          "id": "uiControl21_n99o77",
+          "controlId": "control22_7UfmP8",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl21_n99o77",
+                "onGetTemplate": "getTemplate_uiControl21_n99o77"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl24_ELar9V",
+          "controlId": "control27_T3GAMp",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl24_ELar9V",
+                "onGetTemplate": "getTemplate_uiControl24_ELar9V"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl26_6hpfrU",
+          "controlId": "control28_SZVJPk",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl26_6hpfrU",
+                "onGetTemplate": "getTemplate_uiControl26_6hpfrU"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl28_EQwAIV",
+          "controlId": "control33_E8vlo8",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl28_EQwAIV",
+                "onGetTemplate": "getTemplate_uiControl28_EQwAIV"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl59_SdAfFA",
+          "controlId": "control64_OUgNmD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl59_SdAfFA",
+                "onGetTemplate": "getTemplate_uiControl59_SdAfFA"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl15_JSVHyX",
+          "controlId": "control34_XNdpHA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl15_JSVHyX",
+                "onGetTemplate": "getTemplate_uiControl15_JSVHyX"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context5_7wf9RT": [
+          "移动端页面"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context5_7wf9RT": [
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=868611&_winid=w6911",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=921399&_winid=w4113",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=726631&_winid=w5044",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp"
+        ],
+        "context8_ddpRhS": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=477900&_winid=w9935",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=1541&_t=522235&_winid=w8657",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=202877&_winid=w5256",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=723336&_winid=w4279",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=1541&_t=908731&_winid=w1877",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=1541&_t=863827&_winid=w766",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4206&_t=405075&_winid=w1000",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4206&_t=589498&_winid=w6747",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4206&_t=558516&_winid=w9244",
+          "192.168.220.51:8000/ptsoa/widget/orgUser/user_select.jsp?_winid=w713&_t=575767",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4038",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5293&_t=260700&_winid=w328",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10607&_t=189335&_winid=w6376",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10607&_t=214522&_winid=w6563",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10607",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5392&_t=416284&_winid=w1554",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5392&_t=574536&_winid=w5910",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=2550&_t=159766&_winid=w507",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5553&_t=983208&_winid=w7093",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=5360&_t=456793&_winid=w5637",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=6172",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=6477&_t=124085&_winid=w9181",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7183&_t=998668&_winid=w523",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=6674&_t=954885&_winid=w9417",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=8216&_t=900167&_winid=w4860",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=8621&_t=347788&_winid=w9524",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=10016&_t=243221&_winid=w463",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=13253&_t=616111&_winid=w153",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=11919&_t=236544&_winid=w2199",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=14231&_t=209163&_winid=w4183",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=16554&_t=788777&_winid=w415",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=17369&_t=748670&_winid=w6036",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=39018&_winid=w7569",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=61327&_winid=w1669",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=806504&_winid=w9498",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=758945&_winid=w9785",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=18287&_t=258227&_winid=w8309",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=4062",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7768&_t=628055&_winid=w2803",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=9684&_t=812889&_winid=w2469",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=9987&_t=96064&_winid=w2680",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=12270&_t=720560&_winid=w8194",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=329870&_winid=w9275",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=851963&_winid=w6196",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278471&_t=623221&_winid=w674",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=288546&_winid=w5981",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=858941&_winid=w4257",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=284256&_t=189496&_winid=w3117"
+        ],
+        "context11_uaf3pg": [],
+        "context1_wzzrby": [
+          "192.168.220.51:8000/ptsoa/skins/default/index.jsp",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=finishedSelf&_t=206629&_winid=w7901",
+          "192.168.220.51:8000/ptsoa/skins/default/index.jsp",
+          "",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=256745&_winid=w5716",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=673858&_winid=w3372",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=803579&_winid=w2597",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=207664&_winid=w3106",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=891739&_winid=w542",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=491847&_winid=w5907",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=47473&_winid=w3787",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=726156&_winid=w4654",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=990881&_winid=w4737",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp",
+          "192.168.220.51:8000/ptsoa/widget/user_select.jsp?_winid=w6406&_t=292443",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284256&_t=163726&_winid=w5128"
+        ],
+        "context25_ber6DF": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=314738&_winid=w1370",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=901861&_t=516559&_winid=w241",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=594515&_winid=w672",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=902205&_t=364992&_winid=w2280",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=902203&_t=408512&_winid=w4759"
+        ],
+        "context31_GRspED": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchResignRelease&workItemID=284912&_t=466907&_winid=w8268",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=297361&_winid=w2757",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?branchRelease&workItemID=284912&_t=653393&_winid=w168"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context5_7wf9RT": [
+          [
+            "mini-$",
+            "mini-$body$",
+            "tabs"
+          ],
+          [
+            "mini-$",
+            "mini-$body$",
+            "tabs",
+            "toast"
+          ]
+        ],
+        "context1_wzzrby": [
+          [
+            "container",
+            "contextMenu",
+            "levsmenu",
+            "logos",
+            "mainTabs",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabsMenu",
+            "wrapper"
+          ],
+          [
+            "$cell$",
+            "mini-",
+            "mini-$",
+            "mini-$ck$",
+            "mini-$emptytext",
+            "mini-$filter$",
+            "mini-$headerCell$",
+            "mini-$row$",
+            "mini-$summary$",
+            "tableSearch",
+            "taskFromList",
+            "taskFromList$value",
+            "taskListId"
+          ],
+          [
+            "$cell$",
+            "mini-",
+            "mini-$",
+            "mini-$ck$",
+            "mini-$emptytext",
+            "mini-$filter$",
+            "mini-$headerCell$",
+            "mini-$row$",
+            "mini-$summary$",
+            "permissionList",
+            "permissionList$value",
+            "tableSearch",
+            "taskFromList",
+            "taskFromList$value",
+            "taskListId"
+          ],
+          [
+            "mini-$",
+            "mini-$body$",
+            "tabs"
+          ],
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs"
+          ]
+        ],
+        "context25_ber6DF": [
+          [
+            "_btns",
+            "_tabs",
+            "_tr_",
+            "backActivity",
+            "btn",
+            "get",
+            "mini-$",
+            "mini-$body$",
+            "submit",
+            "tab",
+            "td__"
+          ],
+          [
+            "_btns",
+            "_tabs",
+            "_tr_",
+            "backActivity",
+            "btn",
+            "cancelGet",
+            "mini-$",
+            "mini-$body$",
+            "submit",
+            "tab",
+            "td__"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context5_7wf9RT": [
+          [
+            "mini-disabled",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table"
+          ]
+        ],
+        "context25_ber6DF": [
+          [
+            "icon-ok",
+            "icon-undo",
+            "icon-user",
+            "mini-button",
+            "mini-button-icon",
+            "mini-button-text",
+            "mini-disabled",
+            "mini-fit",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-toolbar"
+          ],
+          [
+            "icon-cancel",
+            "icon-ok",
+            "icon-undo",
+            "mini-button",
+            "mini-button-icon",
+            "mini-button-text",
+            "mini-disabled",
+            "mini-fit",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-toolbar"
+          ]
+        ],
+        "context1_wzzrby": [
+          [
+            "J_tabClose",
+            "J_tabCloseAll",
+            "J_tabCloseOther",
+            "J_tabShowActive",
+            "active",
+            "b",
+            "divider",
+            "dropdown",
+            "dropdown-menu",
+            "dropdown-menu-right",
+            "fmain",
+            "inactive",
+            "last",
+            "main",
+            "menu",
+            "menu-wrap",
+            "mini-contextmenu",
+            "mini-disabled",
+            "mini-fit",
+            "mini-menu",
+            "mini-menu-border",
+            "mini-menu-bottomArrow",
+            "mini-menu-float",
+            "mini-menu-inner",
+            "mini-menu-toolbar",
+            "mini-menu-topArrow",
+            "mini-menuitem",
+            "mini-menuitem-allow",
+            "mini-menuitem-icon",
+            "mini-menuitem-inner",
+            "mini-menuitem-text",
+            "mini-separator",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "radius",
+            "sidebar",
+            "submain",
+            "tcc",
+            "wrap"
+          ],
+          [
+            "bpsDatagrid",
+            "dgBtn",
+            "grayBtn",
+            "mini-button",
+            "mini-button-disabled",
+            "mini-button-iconOnly",
+            "mini-button-plain",
+            "mini-button-text",
+            "mini-buttonedit",
+            "mini-buttonedit-border",
+            "mini-buttonedit-button",
+            "mini-buttonedit-buttons",
+            "mini-buttonedit-close",
+            "mini-buttonedit-icon",
+            "mini-buttonedit-input",
+            "mini-checkboxlist",
+            "mini-checkboxlist-item",
+            "mini-checkboxlist-item-selected",
+            "mini-combobox",
+            "mini-datagrid",
+            "mini-errorIcon",
+            "mini-grid",
+            "mini-grid-border",
+            "mini-grid-bottomCell",
+            "mini-grid-cell",
+            "mini-grid-cell-inner",
+            "mini-grid-cell-nowrap",
+            "mini-grid-column-splitter",
+            "mini-grid-columns",
+            "mini-grid-columns-lock",
+            "mini-grid-columns-view",
+            "mini-grid-emptyText",
+            "mini-grid-filterCell",
+            "mini-grid-filterRow",
+            "mini-grid-filterRow-lock",
+            "mini-grid-filterRow-view",
+            "mini-grid-focus",
+            "mini-grid-headerCell",
+            "mini-grid-headerCell-inner",
+            "mini-grid-headerCell-nowrap",
+            "mini-grid-headerCell-outer",
+            "mini-grid-pager",
+            "mini-grid-rightCell",
+            "mini-grid-row",
+            "mini-grid-row-alt",
+            "mini-grid-rows",
+            "mini-grid-rows-content",
+            "mini-grid-rows-lock",
+            "mini-grid-rows-view",
+            "mini-grid-rowstable",
+            "mini-grid-scrollHeaderCell",
+            "mini-grid-summaryCell",
+            "mini-grid-summaryRow",
+            "mini-grid-summaryRow-lock",
+            "mini-grid-summaryRow-view",
+            "mini-grid-table",
+            "mini-grid-topRightCell",
+            "mini-grid-viewport",
+            "mini-grid-vscroll",
+            "mini-grid-vscroll-content",
+            "mini-list-inner",
+            "mini-page-buttons",
+            "mini-pager",
+            "mini-pager-first",
+            "mini-pager-index",
+            "mini-pager-last",
+            "mini-pager-left",
+            "mini-pager-next",
+            "mini-pager-num",
+            "mini-pager-pages",
+            "mini-pager-prev",
+            "mini-pager-reload",
+            "mini-pager-right",
+            "mini-pager-size",
+            "mini-pager-sizetext",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-popupedit",
+            "mini-resizer-trigger",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "separator",
+            "textof_clip"
+          ],
+          [
+            "mini-disabled",
+            "mini-tab",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table"
+          ],
+          [
+            "mini-disabled",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table"
+          ],
+          [
+            "mini-disabled",
+            "mini-modal",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-resizer-trigger",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context5_7wf9RT": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ],
+        "context1_wzzrby": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/A",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "LI/A/I",
+            "LI/UL/LI",
+            "SPAN/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN",
+            "UL/LI/A",
+            "UL/LI/UL"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/TABLE/TBODY",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-checkbox",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "SPAN/SPAN/INPUT-hidden",
+            "SPAN/SPAN/INPUT-text",
+            "SPAN/SPAN/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
 }

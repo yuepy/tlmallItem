@@ -184,7 +184,12 @@
           "tagName": "DIV"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "/html/body/div[4]/div/div/div/div"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -200,6 +205,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
     },
@@ -239,53 +245,27 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
     },
-    "control124_PrLxBf": {
+    "control155_SF9UmQ": {
       "location": {
         "data": {
           "tagName": "DIV"
         },
-        "userData": {
-          "data": [],
-          "force": false
-        },
         "locators": [
-          {
-            "id": "text",
-            "prob": 2,
-            "ordinal": [
-              2,
-              5
-            ],
-            "value": {
-              "text": [
-                "请假原因"
-              ],
-              "visText": [
-                "请假原因"
-              ]
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": "descendant::DIV[@id=\"details\"]/DIV[4]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
-          },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]/DIV[4]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
           }
         ]
       },
-      "roles": "element",
-      "text": "请假原因",
-      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+      "events": {
+        "onGetData": "getData_control155_SF9UmQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -297,11 +277,10 @@
         "control121_VyhO7K",
         "control122_2TWumE",
         "control123_vwIGHi",
-        "control16_1GsVZ1"
+        "control16_1GsVZ1",
+        "control155_SF9UmQ"
       ],
-      "anchors": [
-        "control124_PrLxBf"
-      ],
+      "anchors": [],
       "urlAnchor": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&askForLeave"
       ]
@@ -316,6 +295,10 @@
         {
           "toContextId": "context31_NhG3EK",
           "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     },
@@ -458,6 +441,21 @@
           }
         },
         {
+          "id": "uiControl148_JqyqFc",
+          "controlId": "control155_SF9UmQ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl148_JqyqFc",
+                "onGetTemplate": "getTemplate_uiControl148_JqyqFc"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl10_KCTxvG",
           "controlId": "control16_1GsVZ1",
           "display": {
@@ -511,7 +509,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=293311&_t=874157&_winid=w7943",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?askForLeave&workItemID=284739&_t=381016&_winid=w9008",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283976&askForLeave",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=281639&employeeHire"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=281639&employeeHire",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=307418&askForLeave"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",
