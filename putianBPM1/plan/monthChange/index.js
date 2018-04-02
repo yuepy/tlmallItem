@@ -123,13 +123,19 @@
         return;
       }const data = { base: { bigtit: "", tit: [], con: [] }, table: [], total: [], reason: [], annex: [], surggest: [], errorTip: {} }; //基础信息
       const baseBigtit = elem.querySelectorAll(".mini-panel")[0].querySelector(".mini-panel-title");data.base.bigtit = baseBigtit.textContent;const basetit = elem.querySelectorAll(".mini-panel")[0].querySelector(".nui-form-table").querySelectorAll("tbody tr");[].map.call(basetit, (item, index) => {
-        const a = item.querySelectorAll("td.form_label");const b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, (d, i) => {
-          data.base.tit.push(d.textContent.replace(/\s+/g, ""));
-        });[].map.call(b, (m, n) => {
-          if (m.querySelector("input")) {
-            data.base.con.push(m.querySelector("input").value);
-          }
-        });
+        const a = item.querySelectorAll("td.form_label");const b = item.querySelectorAll("td:nth-child(even)");if (index == basetit.length - 1) {
+          [].map.call(a, (d, i) => {
+            data.base.tit.push(d.textContent.replace(/\s+/g, ""));
+          });data.base.con.push(item.querySelector("td:nth-child(2)").querySelector("input").value);data.base.con.push(item.querySelector("td:nth-child(4)").querySelector("input:last-child").value);
+        } else {
+          [].map.call(a, (d, i) => {
+            data.base.tit.push(d.textContent.replace(/\s+/g, ""));
+          });[].map.call(b, (m, n) => {
+            if (m.querySelector("input")) {
+              data.base.con.push(m.querySelector("input").value);
+            }
+          });
+        }
       }); //表格
       const thead = elem.querySelector("#apply").querySelector(".mini-grid-columns-view").querySelector("tbody tr:nth-child(2)").querySelectorAll("td");const th = [];[].map.call(thead, (item, index) => {
         th.push(item.textContent);
@@ -157,7 +163,7 @@
       if (data.eventType == 'change') {
         var data = data.dataCustom;elem.querySelectorAll(".mini-panel")[6].querySelector(".mini-panel-body textarea").value = data;
       } else if (data.eventType == 'change1') {
-        var data = data.dataCustom;elem.querySelector("#approval").querySelector(".nui-form-table tr td textarea").value = data;
+        var data = data.dataCustom;elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)").querySelector("textarea").value = data;
       } else if (data.eventType == "enclosure") {
         var i = data.dataCustom;elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a")[i].click();
       }
