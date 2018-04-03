@@ -1427,12 +1427,25 @@ header .btn:hover {
   width: 100%;
   text-align: left;
 }
-.ysp-flowsheet .ysp-flowsheet-onePart > div .ysp_user_errorIcon {
+.ysp-flowsheet .ysp-flowsheet-onePart > div .ysp_user_errorIcon,
+.ysp-flowsheet .ysp-flowsheet-onePart > div .ysp_zyt_errorIcon {
   background: url(../local/img/error.png) no-repeat 0 0;
   width: 16px;
   height: 16px;
   position: relative;
   top: 15px;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart > div .ysp_zyt_errorIcon {
+  display: inline-block;
+  top: 4px;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart > div .companyIpt {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  height: 25px;
+}
+.ysp-flowsheet .ysp-flowsheet-onePart > div .companyTxt {
+  resize: none;
 }
 .ysp-flowsheet .ysp-flowsheet-twoPart {
   margin-top: 10px;
