@@ -16,31 +16,6 @@
   "chineseName": "总部转正管理",
   "description": "",
   "controls": {
-    "control95_h1V7Wk": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control95_h1V7Wk"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
-    },
     "control93_7tTBHb": {
       "location": {
         "data": {
@@ -286,19 +261,41 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control135_MEA5FQ": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control135_MEA5FQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context27_AJKd80": {
       "controls": [
-        "control95_h1V7Wk",
         "control93_7tTBHb",
         "control94_hf5FAd",
         "control96_Ldfl3J",
         "control97_9STenR",
         "control98_FveLSP",
         "control99_f09kdS",
-        "control134_I0PEHI"
+        "control134_I0PEHI",
+        "control135_MEA5FQ"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -354,20 +351,6 @@
         }
       ]
     },
-    "flow94_yEGiaw": {
-      "fromContextId": "context27_AJKd80",
-      "fromAction": "doAction",
-      "fromControlId": "control95_h1V7Wk",
-      "toContexts": [
-        {
-          "toContextId": "context27_AJKd80"
-        },
-        {
-          "toContextId": "context6_hXzXLP",
-          "toModelId": "enclosure"
-        }
-      ]
-    },
     "flow96_htPS8m": {
       "fromContextId": "context27_AJKd80",
       "fromAction": "doAction",
@@ -391,6 +374,20 @@
         {
           "toContextId": "context9_vdtoHx",
           "toModelId": "operationLog"
+        }
+      ]
+    },
+    "flow128_pomru2": {
+      "fromContextId": "context27_AJKd80",
+      "fromAction": "doAction",
+      "fromControlId": "control135_MEA5FQ",
+      "toContexts": [
+        {
+          "toContextId": "context27_AJKd80"
+        },
+        {
+          "toContextId": "context6_hXzXLP",
+          "toModelId": "enclosure"
         }
       ]
     }
@@ -430,16 +427,16 @@
           }
         },
         {
-          "id": "uiControl88_eCGDEH",
-          "controlId": "control95_h1V7Wk",
+          "id": "uiControl128_etQXUR",
+          "controlId": "control135_MEA5FQ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl88_eCGDEH",
-                "onGetTemplate": "getTemplate_uiControl88_eCGDEH"
+                "onDoAction": "doAction_uiControl128_etQXUR",
+                "onGetTemplate": "getTemplate_uiControl128_etQXUR"
               }
             }
           }
@@ -553,7 +550,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=843510&_winid=w7592",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=295321&_t=922300&_winid=w8784",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278652&turnTask",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=295321&turnTask"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=295321&turnTask",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=295777&turnTask"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",
