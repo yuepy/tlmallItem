@@ -259,9 +259,13 @@
         } else if (index == 3) {
           [].map.call(tr, (d, i) => {
             const a = d.querySelectorAll("td.form_label");const b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, (m, n) => {
-              data.method.tit.push(m.textContent.replace(/\s+/g, ""));
+              if (m.style.display != "none") {
+                data.method.tit.push(m.textContent.replace(/\s+/g, ""));
+              }
             });[].map.call(b, (m, n) => {
-              data.method.con.push(m.querySelector("input").value);
+              if (m.style.display != "none") {
+                data.method.con.push(m.querySelector("input").value);
+              }
             });
           }); //薪酬信息
         } else if (index == 4) {
