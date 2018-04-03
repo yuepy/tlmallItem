@@ -281,6 +281,11 @@
         data.total.push("true");
       } else {
         data.total.push("");
+      } //总结框错误提示
+      const errIcon = elem.querySelectorAll(".mini-panel")[4].querySelector("tbody tr td .mini-errorIcon");if (errIcon) {
+        data.errorTip = "true";
+      } else {
+        data.errorTip = "false";
       } //审批意见
       const sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");data.surggest.push(sugg.querySelector("textarea").value);if (sugg.querySelector(".mini-textbox-readOnly")) {
         data.surggest.push("true");
