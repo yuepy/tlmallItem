@@ -298,36 +298,6 @@
       "roles": "element,link,custom",
       "monitored": true,
       "frameXPath": ""
-    },
-    "control315_ciDnzA": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              2,
-              4
-            ],
-            "value": "DIV.bench-wrap.clearfix DIV.bench-r DIV.bench-box.bench-box-r"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/DIV[3]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control315_ciDnzA"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": ""
     }
   },
   "contexts": {
@@ -340,8 +310,7 @@
         "control312_mwBi0M",
         "control26_kba3Qe",
         "control43_nXZbyJ",
-        "control45_Fr7laA",
-        "control315_ciDnzA"
+        "control45_Fr7laA"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -587,21 +556,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl46_aqS265",
                 "onGetTemplate": "getTemplate_uiControl46_aqS265"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl306_byXzt6",
-          "controlId": "control315_ciDnzA",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl306_byXzt6",
-                "onGetTemplate": "getTemplate_uiControl306_byXzt6"
               }
             }
           }

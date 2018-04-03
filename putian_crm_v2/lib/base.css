@@ -11370,33 +11370,84 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   display: block;
   height: 20px;
   width: 20px;
-  background-size: 10px;
+  background-size: 20px;
   background-repeat: no-repeat;
-  background-image: url(images/ysp-achievement-pre-icon.png);
-  margin-top: 4px;
+  background-image: url(images/ysp-workSummary-delete.png);
+  margin-right: 10px;
 }
 .ysp-workSummary-style .ysp-workSummary-lable {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 10px 0px;
-  background: #ececec;
+  padding: 10px 0px 10px 10px;
+  background: #f2f2f2;
+  position: relative;
+  height: 108px;
+  overflow: hidden;
 }
 .ysp-workSummary-style .ysp-workSummary-lable .ysp-workSummary-uncheck {
-  display: block;
-  width: 30%;
+  float: left;
   border-radius: 5px;
   padding: 5px;
   border: 1px solid #4796ed;
   margin: 5px;
+  color: #4796ed;
   text-align: center;
 }
 .ysp-workSummary-style .ysp-workSummary-lable .ysp-workSummary-check {
   background: #4796ed;
+  color: #fff !important;
 }
-.ysp-workSummary-style .ysp-workSummary-lable .ysp-workSummary-hidden {
-  display: none;
+.ysp-workSummary-style .ysp-workSummary-lable-gd {
+  padding: 10px 0px 10px 10px;
+  background: #f2f2f2;
+  position: relative;
+  height: 108px;
+  overflow: hidden;
+}
+.ysp-workSummary-style .ysp-workSummary-lable-gd .ysp-workSummary-uncheck {
+  float: left;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #4796ed;
+  margin: 5px;
+  color: #4796ed;
+  text-align: center;
+}
+.ysp-workSummary-style .ysp-workSummary-lable-gd .ysp-workSummary-check {
+  background: #4796ed;
+  color: #fff !important;
+}
+.ysp-workSummary-style .ysp-workSummary-gd {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #f2f2f2;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+.ysp-workSummary-style .ysp-workSummary-lable-sq {
+  padding: 10px 0px 10px 10px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+.ysp-workSummary-style .ysp-workSummary-lable-sq .ysp-workSummary-uncheck {
+  float: left;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #4796ed;
+  margin: 5px;
+  color: #4796ed;
+  text-align: center;
+}
+.ysp-workSummary-style .ysp-workSummary-lable-sq .ysp-workSummary-check {
+  background: #4796ed;
+  color: #fff !important;
+}
+.ysp-workSummary-style .ysp-workSummary-sq {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #f2f2f2;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 .ysp-workSummary-style .ysp-atreport-picture {
   background-color: #fff;
@@ -11476,20 +11527,21 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 .ysp-workSummary-style .images-report .upload {
   display: inherit!important;
   overflow: hidden;
-  padding: 24px 20px;
+  padding: 0px 20px 10px 20px;
 }
 .ysp-workSummary-style .images-report .upload > div:nth-child(1) {
-  padding: 0px 0px 10px 0px;
+  padding: 0px 0px 0px 10px;
 }
 .ysp-workSummary-style .images-report .upload .updata-image {
   float: left;
   width: 100px;
-  height: 100px;
   background: url('images/update.png') no-repeat center center;
-  background-size: 100%;
-  padding-top: 110px;
+  background-size: 50%;
+  padding-top: 100px;
   text-align: center;
   margin-right: 5px;
+  border: 1px solid #ececec;
+  color: #999;
 }
 .ysp-workSummary-style .images-report .upload .file-images-row {
   float: left;
@@ -11623,9 +11675,10 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   display: block;
   height: 20px;
   width: 20px;
-  background-size: 10px;
+  background-size: 20px;
   background-repeat: no-repeat;
-  background-image: url(images/ysp-achievement-pre-icon.png);
+  margin-right: 20px;
+  background-image: url(images/ysp-workSummary-add.png);
 }
 .ysp-workSummary-business {
   background: #fff;
@@ -11637,10 +11690,22 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 }
 .ysp-workSummary-business > span:nth-child(1) {
   display: block;
-  border-radius: 5px;
   height: 20px;
   width: 20px;
-  border: 1px solid #ececec;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+  background-image: url(images/ysp-workSummary-unChecked.png);
+  margin-right: 10px;
+}
+.ysp-workSummary-business .ysp-workSummary-checked {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+  background-image: url(images/ysp-workSummary-checked.png) !important;
   margin-right: 10px;
 }
 .ysp-workSummary-yes {
@@ -11660,5 +11725,12 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   color: #fff;
   text-align: center;
   margin-top: 20px;
+}
+div[data-ysp-modelid="workSummary"] {
+  top: 0;
+}
+.view-wrapper {
+  height: 100vh;
+  overflow: auto;
 }
 /*************新工作台样式****************/

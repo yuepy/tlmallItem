@@ -12654,37 +12654,92 @@ div[data-ysp-modelid="workPlanCustomStore"]{
         display: block;
         height: 20px;
         width: 20px;
-        background-size: 10px;
+        background-size: 20px;
         background-repeat: no-repeat;
-        background-image: url(./images/ysp-achievement-pre-icon.png);
-        margin-top: 4px;
+        background-image: url(./images/ysp-workSummary-delete.png);
+        margin-right: 10px;
       }
     }
   }
   .ysp-workSummary-lable{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap:wrap;
-    padding: 10px 0px;
-    background: #ececec;
+    padding: 10px 0px 10px 10px;
+    background: rgb(242,242,242);
+    position: relative;
+    overflow: hidden;
+    height: 108px;
+    overflow: hidden;
     .ysp-workSummary-uncheck{
-      display: block;
-      width: 30%;
+      float: left;
       border-radius: 5px;
       padding: 5px;
       border: 1px solid #4796ed;
       margin: 5px;
+      color: #4796ed;
       text-align: center;
     }
     .ysp-workSummary-check{
       background: #4796ed;
-    }
-    .ysp-workSummary-hidden{
-      display: none;
+      color: #fff !important;
     }
   }
   
+  .ysp-workSummary-lable-gd{
+    padding: 10px 0px 10px 10px;
+    background: rgb(242,242,242);
+    position: relative;
+    overflow: hidden;
+    height: 108px;
+    overflow: hidden;
+    .ysp-workSummary-uncheck{
+      float: left;
+      border-radius: 5px;
+      padding: 5px;
+      border: 1px solid #4796ed;
+      margin: 5px;
+      color: #4796ed;
+      text-align: center;
+    }
+    .ysp-workSummary-check{
+      background: #4796ed;
+      color: #fff !important;
+    }
+  }
+  .ysp-workSummary-gd{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgb(242,242,242);
+    padding-right: 10px;
+    padding-bottom: 5px;
+  }
+
+  .ysp-workSummary-lable-sq{
+    padding: 10px 0px 10px 10px;
+    background: rgb(242,242,242);
+    overflow: hidden;
+    .ysp-workSummary-uncheck{
+      float: left;
+      border-radius: 5px;
+      padding: 5px;
+      border: 1px solid #4796ed;
+      margin: 5px;
+      color: #4796ed;
+      text-align: center;
+    }
+    .ysp-workSummary-check{
+      background: #4796ed;
+      color: #fff !important;
+    }
+  }
+  .ysp-workSummary-sq{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgb(242,242,242);
+    padding-right: 10px;
+    padding-bottom: 5px;
+  }
+
 .ysp-atreport-picture{
   background-color: #fff;
   margin-top: 14px;
@@ -12768,19 +12823,21 @@ div[data-ysp-modelid="workPlanCustomStore"]{
     .upload{
       display: inherit!important;
       overflow:hidden;
-      padding:24px 20px;
+      padding:0px 20px 10px 20px;
       >div:nth-child(1){
-        padding: 0px 0px 10px 0px;
+        padding: 0px 0px 0px 10px;
       }
   	  .updata-image{
         float: left;
         width:100px;
-        height: 100px;
+        //height: 100px;
         background: url('./images/update.png') no-repeat center center;
-        background-size: 100%;
-        padding-top: 110px;
+        background-size: 50%;
+        padding-top: 100px;
     		text-align: center;
         margin-right: 5px;
+        border: 1px solid #ececec;
+        color: #999;
     	}
       .file-images-row{
         float: left;
@@ -12922,9 +12979,10 @@ div[data-ysp-modelid="workPlanCustomStore"]{
   display: block;
   height: 20px;
   width: 20px;
-  background-size: 10px;
+  background-size: 20px;
   background-repeat: no-repeat;
-  background-image: url(./images/ysp-achievement-pre-icon.png);
+  margin-right: 20px;
+  background-image: url(./images/ysp-workSummary-add.png);
 }
 
 
@@ -12936,15 +12994,33 @@ div[data-ysp-modelid="workPlanCustomStore"]{
   justify-content: flex-start;
   align-items: center;
   >span:nth-child(1){
+    // display: block;
+    // border-radius: 5px;
+    // height: 20px;
+    // width: 20px;
+    // border: 1px solid #ececec;
+    
     display: block;
-    border-radius: 5px;
     height: 20px;
     width: 20px;
-    border: 1px solid #ececec;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+    background-image: url(./images/ysp-workSummary-unChecked.png);
     margin-right: 10px;
   }
   >span:nth-child(2){
     
+  }
+  .ysp-workSummary-checked{
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+    background-image: url(./images/ysp-workSummary-checked.png) !important;
+    margin-right: 10px;
   }
 }
 
@@ -12966,4 +13042,14 @@ div[data-ysp-modelid="workPlanCustomStore"]{
     margin-top: 20px;
   }
 }
+
+div[data-ysp-modelid="workSummary"]{
+  //padding-top: 0
+  top: 0;
+}
+.view-wrapper{
+  height:100vh;
+  overflow: auto;
+}
+
 /*************新工作台样式****************/

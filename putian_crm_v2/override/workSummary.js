@@ -540,8 +540,10 @@
 			$("#importFile").val("");
 			if (iframeLoadFlag) {
 				iframeLoadFlag = false;
-				var c = $("iframe[name='formTargertIframe']").contents();
-				var result = JSON.parse($(c[0]).find("pre").html());
+				//var c = $("iframe[name='formTargertIframe']").contents();
+        var c = $("iframe[name='formTargertIframe']")[0].contentDocument;
+				//var result = JSON.parse($(c[0]).find("pre").html());
+        var result = JSON.parse(c.querySelector("pre").textContent);
 				if (null != result) {
 					var html = '<div class="img" imgName="' + result.name + '" imgUrl="' + result.url + '">\n\t\t\t\t<img src="' + Constant.SERVER_ROOT + '/pttlCrm/sys/file/showImag?path=' + encodeURI(encodeURI(result.url)) + '" />\n\t\t\t\t<span>' + result.name + '</span><a class="del" fileName="' + result.fileName + '" href="javascript:;"></a></div>';
 					$("#imgsDiv").append(html);
