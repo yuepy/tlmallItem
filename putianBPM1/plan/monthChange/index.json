@@ -8,7 +8,8 @@
     "approveAdvice": "../approveAdvice/index.json",
     "index": "../index/index.json",
     "operationLog": "../operationLog/index.json",
-    "PendingTask": "../PendingTask/index.json"
+    "PendingTask": "../PendingTask/index.json",
+    "processedTask": "../processedTask/index.json"
   },
   "chineseName": "总部月度编制变动",
   "description": "",
@@ -205,7 +206,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -332,6 +333,14 @@
         {
           "toContextId": "context5_7wf9RT",
           "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     }
@@ -476,7 +485,9 @@
         "context36_6C2hoz": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294193&monthChange",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=303087&monthChange",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294223&monthChange"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294223&monthChange",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284807&monthChange",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=314832&monthChange"
         ]
       }
     },

@@ -7,7 +7,9 @@
     "approvalTrack": "../approvalTrack/index.json",
     "index": "../index/index.json",
     "approveAdvice": "../approveAdvice/index.json",
-    "operationLog": "../operationLog/index.json"
+    "operationLog": "../operationLog/index.json",
+    "PendingTask": "../PendingTask/index.json",
+    "processedTask": "../processedTask/index.json"
   },
   "chineseName": "离职管理",
   "description": "",
@@ -355,6 +357,24 @@
           "toContextId": "context32_FGBsnV"
         }
       ]
+    },
+    "flow129_UCc7X5": {
+      "fromContextId": "context32_FGBsnV",
+      "fromAction": "doAction",
+      "fromControlId": "control122_EdaUrz",
+      "toContexts": [
+        {
+          "toContextId": "context32_FGBsnV"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
+        }
+      ]
     }
   },
   "pages": {
@@ -499,7 +519,9 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=282432&_t=279766&_winid=w1382",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=282432&_t=64749&_winid=w387",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=282432&_t=877013&_winid=w680",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=293758&_t=556291&_winid=w7900"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Departure&workItemID=293758&_t=556291&_winid=w7900",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317767&departure",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=295473&departure"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",
@@ -525,6 +547,14 @@
             "mini-$",
             "mini-$body$",
             "tabs"
+          ],
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs",
+            "toast"
           ]
         ]
       }

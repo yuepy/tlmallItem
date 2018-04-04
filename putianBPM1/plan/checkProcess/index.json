@@ -1,927 +1,976 @@
 {
-    "version": "0.1",
-    "id": "checkProcess",
-    "targetURL": "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6942&_t=1542",
-    "jsFile": "index.js",
-    "requires": {
-        "checkProcess": "../checkProcess/index.json",
-        "index": "../index/index.json",
-        "processedTask": "../processedTask/index.json",
-        "turnTask": "../turnTask/index.json",
-        "departure": "../departure/index.json",
-        "askForLeave": "../askForLeave/index.json",
-        "forgetCard": "../forgetCard/index.json"
+  "version": "0.1",
+  "id": "checkProcess",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6942&_t=1542",
+  "jsFile": "index.js",
+  "requires": {
+    "checkProcess": "../checkProcess/index.json",
+    "index": "../index/index.json",
+    "processedTask": "../processedTask/index.json",
+    "turnTask": "../turnTask/index.json",
+    "departure": "../departure/index.json",
+    "askForLeave": "../askForLeave/index.json",
+    "forgetCard": "../forgetCard/index.json",
+    "branchRelease": "../branchRelease/index.json",
+    "positionChange": "../positionChange/index.json",
+    "monthChange": "../monthChange/index.json"
+  },
+  "chineseName": "已办查看流程图",
+  "description": "",
+  "controls": {
+    "control26_dIWtPL": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control26_dIWtPL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     },
-    "chineseName": "已办查看流程图",
-    "description": "",
-    "controls": {
-        "control26_dIWtPL": {
-            "location": {
-                "data": {
-                    "tagName": "IFRAME"
-                },
-                "userData": {
-                    "data": [],
-                    "force": false
-                },
-                "locators": [{
-                        "id": "@class/word",
-                        "prob": 1,
-                        "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
-                    },
-                    {
-                        "id": "path/ordinal",
-                        "prob": 1,
-                        "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
-                    },
-                    {
-                        "id": "elderLevel",
-                        "value": {
-                            "level": 0
-                        }
-                    }
-                ]
-            },
-            "events": {
-                "onGetData": "getData_control26_dIWtPL"
-            },
-            "intendedRole": "custom",
-            "roles": "element,custom",
-            "monitored": true,
-            "frameXPath": ""
+    "control5_diOo4d": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
         },
-        "control5_diOo4d": {
-            "location": {
-                "data": {
-                    "tagName": "DIV"
-                },
-                "userData": {
-                    "data": [],
-                    "force": false
-                },
-                "locators": [{
-                        "id": "@class/word",
-                        "prob": 1,
-                        "value": "DIV.mini-panel.mini-window.mini-window-drag DIV.mini-panel-border DIV.mini-panel-header"
-                    },
-                    {
-                        "id": "path/ordinal",
-                        "prob": 1,
-                        "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]"
-                    }
-                ]
-            },
-            "events": {
-                "onGetData": "getData_control5_diOo4d"
-            },
-            "intendedRole": "custom",
-            "roles": "element,custom",
-            "monitored": true,
-            "frameXPath": ""
+        "userData": {
+          "data": [],
+          "force": false
         },
-        "control1_cP5NmN": {
-            "location": {
-                "data": {
-                    "tagName": "DIV"
-                },
-                "userData": {
-                    "data": [{
-                        "method": "XPath",
-                        "value": "/html/body/div[2]"
-                    }],
-                    "force": true
-                },
-                "locators": [{
-                    "id": "path/ordinal",
-                    "prob": 1,
-                    "value": "/HTML[1]/BODY[1]/DIV[2]"
-                }]
-            },
-            "events": {
-                "onGetData": "getData_control1_cP5NmN"
-            },
-            "intendedRole": "custom",
-            "roles": "element,custom",
-            "ignoreVisibility": true,
-            "monitored": true,
-            "frameXPath": "//iframe[1]<<IFRAME>>"
-        },
-        "control66_rMxRFX": {
-            "location": {
-                "data": {
-                    "tagName": "HTML"
-                },
-                "userData": {
-                    "data": [],
-                    "force": false
-                },
-                "locators": [{
-                    "id": "path/ordinal",
-                    "prob": 1,
-                    "ordinal": [
-                        1,
-                        3
-                    ],
-                    "value": "/HTML[1]"
-                }]
-            },
-            "events": {
-                "onGetData": "getData_control66_rMxRFX"
-            },
-            "intendedRole": "custom",
-            "roles": "element,custom",
-            "monitored": true,
-            "frameXPath": "//iframe[1]<<IFRAME>>"
-        }
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel.mini-window.mini-window-drag DIV.mini-panel-border DIV.mini-panel-header"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control5_diOo4d"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
     },
-    "contexts": {
-        "context11_uaf3pg": {
-            "controls": [
-                "control26_dIWtPL",
-                "control5_diOo4d",
-                "control1_cP5NmN",
-                "control66_rMxRFX"
+    "control1_cP5NmN": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "/html/body/div[2]"
+            }
+          ],
+          "force": true
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control1_cP5NmN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>"
+    },
+    "control66_rMxRFX": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
             ],
-            "anchors": [],
-            "urlAnchor": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task.*"
-            ]
-        }
-    },
-    "flows": {
-        "flow28_OOBteI": {
-            "toContexts": [{
-                    "toContextId": "context11_uaf3pg"
-                },
-                {
-                    "toContextId": "context11_uaf3pg",
-                    "toModelId": "checkProcess"
-                },
-                {
-                    "toContextId": "context2_Z2voN1",
-                    "toModelId": "processedTask"
-                },
-                {
-                    "toContextId": "context5_7wf9RT",
-                    "toModelId": "PendingTask"
-                },
-                {
-                    "toContextId": "context1_wzzrby",
-                    "toModelId": "index"
-                },
-                {
-                    "toContextId": "context31_NhG3EK",
-                    "toModelId": "askForLeave"
-                },
-                {
-                    "toContextId": "context28_MTJvP1",
-                    "toModelId": "forgetCard"
-                },
-                {
-                    "toContextId": "context27_AJKd80",
-                    "toModelId": "turnTask"
-                }
-            ]
-        },
-        "flow25_ctsRN2": {
-            "fromContextId": "context11_uaf3pg",
-            "fromAction": "doAction",
-            "fromControlId": "control26_dIWtPL",
-            "toContexts": [{
-                "toContextId": "context11_uaf3pg"
-            }]
-        },
-        "flow22_isTrxq": {
-            "fromContextId": "context11_uaf3pg",
-            "fromAction": "doAction",
-            "fromControlId": "control5_diOo4d",
-            "toContexts": [{
-                    "toContextId": "context11_uaf3pg"
-                },
-                {
-                    "toContextId": "context2_Z2voN1",
-                    "toModelId": "processedTask"
-                },
-                {
-                    "toContextId": "context11_uaf3pg",
-                    "toModelId": "checkProcess"
-                },
-                {
-                    "toContextId": "context5_7wf9RT",
-                    "toModelId": "PendingTask"
-                }
-            ]
-        },
-        "flow47_pB9P9x": {
-            "fromContextId": "context11_uaf3pg",
-            "fromAction": "doAction",
-            "fromControlId": "control1_cP5NmN",
-            "toContexts": [{
-                    "toContextId": "context11_uaf3pg"
-                },
-                {
-                    "toContextId": "context27_AJKd80",
-                    "toModelId": "turnTask"
-                },
-                {
-                    "toContextId": "context32_FGBsnV",
-                    "toModelId": "departure"
-                },
-                {
-                    "toContextId": "context28_MTJvP1",
-                    "toModelId": "forgetCard"
-                },
-                {
-                    "toContextId": "context1_wzzrby",
-                    "toModelId": "index"
-                },
-                {
-                    "toContextId": "context31_NhG3EK",
-                    "toModelId": "askForLeave"
-                }
-            ]
-        },
-        "flow59_OWdAmX": {
-            "fromContextId": "context5_7wf9RT",
-            "fromAction": "doAction",
-            "fromControlId": "control28_SZVJPk",
-            "toContexts": [{
-                "toContextId": "context11_uaf3pg",
-                "toModelId": "checkProcess"
-            }]
-        },
-        "flow29_iEhnNf": {
-            "fromContextId": "context2_Z2voN1",
-            "fromAction": "doAction",
-            "fromControlId": "control31_R1g6aJ",
-            "toContexts": [{
-                "toContextId": "context11_uaf3pg",
-                "toModelId": "checkProcess"
-            }]
-        }
-    },
-    "pages": {
-        "page11_PucS7l": {
-            "contextId": "context11_uaf3pg",
-            "layout": [{
-                    "id": "uiControl19_KXCuJA",
-                    "controlId": "control5_diOo4d",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl19_KXCuJA",
-                                "onGetTemplate": "getTemplate_uiControl19_KXCuJA"
-                            }
-                        }
-                    }
-                },
-                {
-                    "id": "uiControl25_h5n78M",
-                    "controlId": "control26_dIWtPL",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl25_h5n78M",
-                                "onGetTemplate": "getTemplate_uiControl25_h5n78M"
-                            }
-                        }
-                    }
-                },
-                {
-                    "id": "uiControl61_15dU5A",
-                    "controlId": "control66_rMxRFX",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl61_15dU5A",
-                                "onGetTemplate": "getTemplate_uiControl61_15dU5A"
-                            }
-                        }
-                    }
-                },
-                {
-                    "id": "uiControl2_934vis",
-                    "controlId": "control1_cP5NmN",
-                    "display": {
-                        "adapterId": "custom",
-                        "type": "custom",
-                        "adapter": {
-                            "templateType": "react",
-                            "events": {
-                                "onDoAction": "doAction_uiControl2_934vis",
-                                "onGetTemplate": "getTemplate_uiControl2_934vis"
-                            }
-                        }
-                    }
-                }
-            ]
-        }
-    },
-    "matchers": {
-        "page/title": {
-            "contexts": {
-                "context11_uaf3pg": [
-                    "普元-用户机构及权限管理系统",
-                    "移动端页面"
-                ],
-                "context2_Z2voN1": [
-                    "普元-用户机构及权限管理系统",
-                    "任务列表"
-                ]
-            }
-        },
-        "page/urls": {
-            "contexts": {
-                "context11_uaf3pg": [
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6942&_t=1542",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w3962&_t=672186",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w9555&_t=608617",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w3961&_t=894941",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w9158&_t=253010",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w3758&_t=56912",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6574&_t=316507",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w7206&_t=937127",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w1735&_t=644978",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5785&_t=960306",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5355&_t=173324",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5960&_t=949891",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5770&_t=922785",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w203&_t=802650",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w203&_t=632799"
-                ],
-                "context1_wzzrby": [
-                    "192.168.220.51:8000/ptsoa/skins/default/index.jsp",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=finishedSelf&_t=206629&_winid=w7901",
-                    "192.168.220.51:8000/ptsoa/skins/default/index.jsp",
-                    "",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=256745&_winid=w5716",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=673858&_winid=w3372",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=975960&_winid=w5039",
-                    "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=335614&_winid=w9166"
-                ]
-            }
-        },
-        "page/ids": {
-            "contexts": {
-                "context11_uaf3pg": [
-                    [
-                        "__modalmini-",
-                        "container",
-                        "contextMenu",
-                        "levsmenu",
-                        "logos",
-                        "mainTabs",
-                        "mini-",
-                        "mini-$",
-                        "mini-$body$",
-                        "tabsMenu",
-                        "wrapper"
-                    ],
-                    [
-                        "container",
-                        "contextMenu",
-                        "levsmenu",
-                        "logos",
-                        "mainTabs",
-                        "mini-",
-                        "mini-$",
-                        "mini-$body$",
-                        "tabsMenu",
-                        "wrapper"
-                    ],
-                    [
-                        "__modalmini-",
-                        "mini-",
-                        "mini-$",
-                        "mini-$body$",
-                        "tabs"
-                    ]
-                ],
-                "context2_Z2voN1": [
-                    [
-                        "container",
-                        "contextMenu",
-                        "levsmenu",
-                        "logos",
-                        "mainTabs",
-                        "mini-",
-                        "mini-$",
-                        "mini-$body$",
-                        "tabsMenu",
-                        "wrapper"
-                    ],
-                    [
-                        "$cell$",
-                        "mini-",
-                        "mini-$",
-                        "mini-$ck$",
-                        "mini-$emptytext",
-                        "mini-$filter$",
-                        "mini-$headerCell$",
-                        "mini-$row$",
-                        "mini-$summary$",
-                        "tableSearch",
-                        "taskFromList",
-                        "taskFromList$value",
-                        "taskListId"
-                    ]
-                ]
-            }
-        },
-        "page/classes": {
-            "contexts": {
-                "context11_uaf3pg": [
-                    [
-                        "J_tabClose",
-                        "J_tabCloseAll",
-                        "J_tabCloseOther",
-                        "J_tabShowActive",
-                        "active",
-                        "b",
-                        "divider",
-                        "dropdown",
-                        "dropdown-menu",
-                        "dropdown-menu-right",
-                        "fmain",
-                        "inactive",
-                        "last",
-                        "main",
-                        "menu",
-                        "menu-wrap",
-                        "mini-contextmenu",
-                        "mini-disabled",
-                        "mini-fit",
-                        "mini-menu",
-                        "mini-menu-border",
-                        "mini-menu-bottomArrow",
-                        "mini-menu-float",
-                        "mini-menu-inner",
-                        "mini-menu-toolbar",
-                        "mini-menu-topArrow",
-                        "mini-menuitem",
-                        "mini-menuitem-allow",
-                        "mini-menuitem-icon",
-                        "mini-menuitem-inner",
-                        "mini-menuitem-text",
-                        "mini-modal",
-                        "mini-panel",
-                        "mini-panel-body",
-                        "mini-panel-border",
-                        "mini-panel-footer",
-                        "mini-panel-header",
-                        "mini-panel-header-inner",
-                        "mini-panel-icon",
-                        "mini-panel-title",
-                        "mini-panel-toolbar",
-                        "mini-panel-viewport",
-                        "mini-resizer-trigger",
-                        "mini-separator",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table",
-                        "mini-tools",
-                        "mini-tools-close",
-                        "mini-tools-collapse",
-                        "mini-tools-max",
-                        "mini-tools-min",
-                        "mini-window",
-                        "mini-window-drag",
-                        "radius",
-                        "sidebar",
-                        "submain",
-                        "tcc",
-                        "wrap"
-                    ],
-                    [
-                        "J_tabClose",
-                        "J_tabCloseAll",
-                        "J_tabCloseOther",
-                        "J_tabShowActive",
-                        "active",
-                        "b",
-                        "divider",
-                        "dropdown",
-                        "dropdown-menu",
-                        "dropdown-menu-right",
-                        "fmain",
-                        "inactive",
-                        "last",
-                        "main",
-                        "menu",
-                        "menu-wrap",
-                        "mini-contextmenu",
-                        "mini-disabled",
-                        "mini-fit",
-                        "mini-menu",
-                        "mini-menu-border",
-                        "mini-menu-bottomArrow",
-                        "mini-menu-float",
-                        "mini-menu-inner",
-                        "mini-menu-toolbar",
-                        "mini-menu-topArrow",
-                        "mini-menuitem",
-                        "mini-menuitem-allow",
-                        "mini-menuitem-icon",
-                        "mini-menuitem-inner",
-                        "mini-menuitem-text",
-                        "mini-separator",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table",
-                        "radius",
-                        "sidebar",
-                        "submain",
-                        "tcc",
-                        "wrap"
-                    ],
-                    [
-                        "mini-disabled",
-                        "mini-modal",
-                        "mini-panel",
-                        "mini-panel-body",
-                        "mini-panel-border",
-                        "mini-panel-footer",
-                        "mini-panel-header",
-                        "mini-panel-header-inner",
-                        "mini-panel-icon",
-                        "mini-panel-title",
-                        "mini-panel-toolbar",
-                        "mini-panel-viewport",
-                        "mini-resizer-trigger",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table",
-                        "mini-tools",
-                        "mini-tools-close",
-                        "mini-tools-collapse",
-                        "mini-tools-max",
-                        "mini-tools-min",
-                        "mini-window",
-                        "mini-window-drag"
-                    ]
-                ],
-                "context2_Z2voN1": [
-                    [
-                        "J_tabClose",
-                        "J_tabCloseAll",
-                        "J_tabCloseOther",
-                        "J_tabShowActive",
-                        "active",
-                        "b",
-                        "divider",
-                        "dropdown",
-                        "dropdown-menu",
-                        "dropdown-menu-right",
-                        "fmain",
-                        "inactive",
-                        "last",
-                        "main",
-                        "menu",
-                        "menu-wrap",
-                        "mini-contextmenu",
-                        "mini-disabled",
-                        "mini-fit",
-                        "mini-menu",
-                        "mini-menu-border",
-                        "mini-menu-bottomArrow",
-                        "mini-menu-float",
-                        "mini-menu-inner",
-                        "mini-menu-toolbar",
-                        "mini-menu-topArrow",
-                        "mini-menuitem",
-                        "mini-menuitem-allow",
-                        "mini-menuitem-icon",
-                        "mini-menuitem-inner",
-                        "mini-menuitem-text",
-                        "mini-separator",
-                        "mini-tab",
-                        "mini-tab-active",
-                        "mini-tab-text",
-                        "mini-tabs",
-                        "mini-tabs-body",
-                        "mini-tabs-body-top",
-                        "mini-tabs-bodys",
-                        "mini-tabs-buttons",
-                        "mini-tabs-firstSpace",
-                        "mini-tabs-header",
-                        "mini-tabs-header-top",
-                        "mini-tabs-headers",
-                        "mini-tabs-hideOverflow",
-                        "mini-tabs-lastSpace",
-                        "mini-tabs-leftButton",
-                        "mini-tabs-nav",
-                        "mini-tabs-plain",
-                        "mini-tabs-position-top",
-                        "mini-tabs-rightButton",
-                        "mini-tabs-scrollCt",
-                        "mini-tabs-space",
-                        "mini-tabs-table",
-                        "radius",
-                        "sidebar",
-                        "submain",
-                        "tcc",
-                        "wrap"
-                    ],
-                    [
-                        "bpsDatagrid",
-                        "dgBtn",
-                        "grayBtn",
-                        "mini-button",
-                        "mini-button-disabled",
-                        "mini-button-iconOnly",
-                        "mini-button-plain",
-                        "mini-button-text",
-                        "mini-buttonedit",
-                        "mini-buttonedit-border",
-                        "mini-buttonedit-button",
-                        "mini-buttonedit-buttons",
-                        "mini-buttonedit-close",
-                        "mini-buttonedit-icon",
-                        "mini-buttonedit-input",
-                        "mini-checkboxlist",
-                        "mini-checkboxlist-item",
-                        "mini-checkboxlist-item-selected",
-                        "mini-combobox",
-                        "mini-datagrid",
-                        "mini-errorIcon",
-                        "mini-grid",
-                        "mini-grid-border",
-                        "mini-grid-bottomCell",
-                        "mini-grid-cell",
-                        "mini-grid-cell-inner",
-                        "mini-grid-cell-nowrap",
-                        "mini-grid-column-splitter",
-                        "mini-grid-columns",
-                        "mini-grid-columns-lock",
-                        "mini-grid-columns-view",
-                        "mini-grid-emptyText",
-                        "mini-grid-filterCell",
-                        "mini-grid-filterRow",
-                        "mini-grid-filterRow-lock",
-                        "mini-grid-filterRow-view",
-                        "mini-grid-focus",
-                        "mini-grid-headerCell",
-                        "mini-grid-headerCell-inner",
-                        "mini-grid-headerCell-nowrap",
-                        "mini-grid-headerCell-outer",
-                        "mini-grid-pager",
-                        "mini-grid-rightCell",
-                        "mini-grid-row",
-                        "mini-grid-row-alt",
-                        "mini-grid-rows",
-                        "mini-grid-rows-content",
-                        "mini-grid-rows-lock",
-                        "mini-grid-rows-view",
-                        "mini-grid-rowstable",
-                        "mini-grid-scrollHeaderCell",
-                        "mini-grid-summaryCell",
-                        "mini-grid-summaryRow",
-                        "mini-grid-summaryRow-lock",
-                        "mini-grid-summaryRow-view",
-                        "mini-grid-table",
-                        "mini-grid-topRightCell",
-                        "mini-grid-viewport",
-                        "mini-grid-vscroll",
-                        "mini-grid-vscroll-content",
-                        "mini-list-inner",
-                        "mini-page-buttons",
-                        "mini-pager",
-                        "mini-pager-first",
-                        "mini-pager-index",
-                        "mini-pager-last",
-                        "mini-pager-left",
-                        "mini-pager-next",
-                        "mini-pager-num",
-                        "mini-pager-pages",
-                        "mini-pager-prev",
-                        "mini-pager-reload",
-                        "mini-pager-right",
-                        "mini-pager-size",
-                        "mini-pager-sizetext",
-                        "mini-panel",
-                        "mini-panel-body",
-                        "mini-panel-border",
-                        "mini-panel-footer",
-                        "mini-panel-header",
-                        "mini-panel-header-inner",
-                        "mini-panel-icon",
-                        "mini-panel-title",
-                        "mini-panel-toolbar",
-                        "mini-panel-viewport",
-                        "mini-popupedit",
-                        "mini-resizer-trigger",
-                        "mini-tools",
-                        "mini-tools-close",
-                        "mini-tools-collapse",
-                        "separator",
-                        "textof_clip"
-                    ]
-                ]
-            }
-        },
-        "page/tagTriplets": {
-            "contexts": {
-                "context11_uaf3pg": [
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/DIV/DIV",
-                        "-/DIV/IFRAME",
-                        "DIV/DIV/A",
-                        "DIV/DIV/B",
-                        "DIV/DIV/BR",
-                        "DIV/DIV/DIV",
-                        "DIV/DIV/IFRAME",
-                        "DIV/DIV/IMG",
-                        "DIV/DIV/SPAN",
-                        "DIV/DIV/TABLE",
-                        "DIV/DIV/UL",
-                        "DIV/SPAN/A",
-                        "DIV/TABLE/TBODY",
-                        "DIV/UL/LI",
-                        "LI/A/I",
-                        "LI/UL/LI",
-                        "SPAN/A/SPAN",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/DIV/DIV",
-                        "TR/TD/DIV",
-                        "TR/TD/SPAN",
-                        "UL/LI/A",
-                        "UL/LI/UL"
-                    ],
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/DIV/DIV",
-                        "DIV/DIV/A",
-                        "DIV/DIV/B",
-                        "DIV/DIV/BR",
-                        "DIV/DIV/DIV",
-                        "DIV/DIV/IFRAME",
-                        "DIV/DIV/IMG",
-                        "DIV/DIV/SPAN",
-                        "DIV/DIV/TABLE",
-                        "DIV/DIV/UL",
-                        "DIV/SPAN/A",
-                        "DIV/TABLE/TBODY",
-                        "DIV/UL/LI",
-                        "LI/A/I",
-                        "LI/UL/LI",
-                        "SPAN/A/SPAN",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/DIV/DIV",
-                        "TR/TD/DIV",
-                        "TR/TD/SPAN",
-                        "UL/LI/A",
-                        "UL/LI/UL"
-                    ],
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/DIV/DIV",
-                        "-/DIV/IFRAME",
-                        "-/DIV/TABLE",
-                        "DIV/DIV/A",
-                        "DIV/DIV/DIV",
-                        "DIV/DIV/IFRAME",
-                        "DIV/DIV/SPAN",
-                        "DIV/DIV/TABLE",
-                        "DIV/TABLE/TBODY",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/DIV/DIV",
-                        "TR/TD/DIV",
-                        "TR/TD/SPAN"
-                    ]
-                ],
-                "context2_Z2voN1": [
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/DIV/DIV",
-                        "DIV/DIV/A",
-                        "DIV/DIV/B",
-                        "DIV/DIV/BR",
-                        "DIV/DIV/DIV",
-                        "DIV/DIV/IFRAME",
-                        "DIV/DIV/IMG",
-                        "DIV/DIV/SPAN",
-                        "DIV/DIV/TABLE",
-                        "DIV/DIV/UL",
-                        "DIV/SPAN/A",
-                        "DIV/TABLE/TBODY",
-                        "DIV/UL/LI",
-                        "LI/A/I",
-                        "LI/UL/LI",
-                        "SPAN/A/SPAN",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/DIV/DIV",
-                        "TR/TD/DIV",
-                        "TR/TD/SPAN",
-                        "UL/LI/A",
-                        "UL/LI/UL"
-                    ],
-                    [
-                        "-/-/DIV",
-                        "-/-/SCRIPT",
-                        "-/-/TABLE",
-                        "-/DIV/DIV",
-                        "-/TABLE/TBODY",
-                        "DIV/DIV/A",
-                        "DIV/DIV/DIV",
-                        "DIV/DIV/INPUT-checkbox",
-                        "DIV/DIV/LABEL",
-                        "DIV/DIV/SPAN",
-                        "DIV/DIV/TABLE",
-                        "DIV/TABLE/TBODY",
-                        "SPAN/SPAN/INPUT-hidden",
-                        "SPAN/SPAN/INPUT-text",
-                        "SPAN/SPAN/SPAN",
-                        "TABLE/TBODY/TR",
-                        "TBODY/TR/TD",
-                        "TD/A/SPAN",
-                        "TD/DIV/A",
-                        "TD/DIV/DIV",
-                        "TD/DIV/TABLE",
-                        "TD/SPAN/INPUT-text",
-                        "TD/SPAN/SPAN",
-                        "TR/TD/A",
-                        "TR/TD/DIV",
-                        "TR/TD/INPUT-hidden",
-                        "TR/TD/SPAN"
-                    ]
-                ]
-            }
-        }
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control66_rMxRFX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>"
     }
+  },
+  "contexts": {
+    "context11_uaf3pg": {
+      "controls": [
+        "control26_dIWtPL",
+        "control5_diOo4d",
+        "control1_cP5NmN",
+        "control66_rMxRFX"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow28_OOBteI": {
+      "toContexts": [
+        {
+          "toContextId": "context11_uaf3pg"
+        },
+        {
+          "toContextId": "context11_uaf3pg",
+          "toModelId": "checkProcess"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context31_NhG3EK",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context28_MTJvP1",
+          "toModelId": "forgetCard"
+        },
+        {
+          "toContextId": "context27_AJKd80",
+          "toModelId": "turnTask"
+        },
+        {
+          "toContextId": "context31_GRspED",
+          "toModelId": "branchRelease"
+        },
+        {
+          "toContextId": "context32_FGBsnV",
+          "toModelId": "departure"
+        },
+        {
+          "toContextId": "context33_dgaTsL",
+          "toModelId": "positionChange"
+        },
+        {
+          "toContextId": "context36_6C2hoz",
+          "toModelId": "monthChange"
+        }
+      ]
+    },
+    "flow25_ctsRN2": {
+      "fromContextId": "context11_uaf3pg",
+      "fromAction": "doAction",
+      "fromControlId": "control26_dIWtPL",
+      "toContexts": [
+        {
+          "toContextId": "context11_uaf3pg"
+        }
+      ]
+    },
+    "flow22_isTrxq": {
+      "fromContextId": "context11_uaf3pg",
+      "fromAction": "doAction",
+      "fromControlId": "control5_diOo4d",
+      "toContexts": [
+        {
+          "toContextId": "context11_uaf3pg"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
+        },
+        {
+          "toContextId": "context11_uaf3pg",
+          "toModelId": "checkProcess"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
+    },
+    "flow47_pB9P9x": {
+      "fromContextId": "context11_uaf3pg",
+      "fromAction": "doAction",
+      "fromControlId": "control1_cP5NmN",
+      "toContexts": [
+        {
+          "toContextId": "context11_uaf3pg"
+        },
+        {
+          "toContextId": "context27_AJKd80",
+          "toModelId": "turnTask"
+        },
+        {
+          "toContextId": "context32_FGBsnV",
+          "toModelId": "departure"
+        },
+        {
+          "toContextId": "context28_MTJvP1",
+          "toModelId": "forgetCard"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context31_NhG3EK",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context31_GRspED",
+          "toModelId": "branchRelease"
+        },
+        {
+          "toContextId": "context33_dgaTsL",
+          "toModelId": "positionChange"
+        },
+        {
+          "toContextId": "context36_6C2hoz",
+          "toModelId": "monthChange"
+        }
+      ]
+    },
+    "flow59_OWdAmX": {
+      "fromContextId": "context5_7wf9RT",
+      "fromAction": "doAction",
+      "fromControlId": "control28_SZVJPk",
+      "toContexts": [
+        {
+          "toContextId": "context11_uaf3pg",
+          "toModelId": "checkProcess"
+        }
+      ]
+    },
+    "flow29_iEhnNf": {
+      "fromContextId": "context2_Z2voN1",
+      "fromAction": "doAction",
+      "fromControlId": "control31_R1g6aJ",
+      "toContexts": [
+        {
+          "toContextId": "context11_uaf3pg",
+          "toModelId": "checkProcess"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page11_PucS7l": {
+      "contextId": "context11_uaf3pg",
+      "layout": [
+        {
+          "id": "uiControl19_KXCuJA",
+          "controlId": "control5_diOo4d",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl19_KXCuJA",
+                "onGetTemplate": "getTemplate_uiControl19_KXCuJA"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl25_h5n78M",
+          "controlId": "control26_dIWtPL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl25_h5n78M",
+                "onGetTemplate": "getTemplate_uiControl25_h5n78M"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl61_15dU5A",
+          "controlId": "control66_rMxRFX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl61_15dU5A",
+                "onGetTemplate": "getTemplate_uiControl61_15dU5A"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl2_934vis",
+          "controlId": "control1_cP5NmN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl2_934vis",
+                "onGetTemplate": "getTemplate_uiControl2_934vis"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context11_uaf3pg": [
+          "普元-用户机构及权限管理系统",
+          "移动端页面"
+        ],
+        "context2_Z2voN1": [
+          "普元-用户机构及权限管理系统",
+          "任务列表"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context11_uaf3pg": [
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6942&_t=1542",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w3962&_t=672186",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w9555&_t=608617",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w3961&_t=894941",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w9158&_t=253010",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w3758&_t=56912",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6574&_t=316507",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w7206&_t=937127",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w1735&_t=644978",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5785&_t=960306",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5355&_t=173324",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5960&_t=949891",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w5770&_t=922785",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w203&_t=802650",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w203&_t=632799"
+        ],
+        "context1_wzzrby": [
+          "192.168.220.51:8000/ptsoa/skins/default/index.jsp",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=finishedSelf&_t=206629&_winid=w7901",
+          "192.168.220.51:8000/ptsoa/skins/default/index.jsp",
+          "",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=256745&_winid=w5716",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=673858&_winid=w3372",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=975960&_winid=w5039",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/common/mytasks.jsp?_t=335614&_winid=w9166"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context11_uaf3pg": [
+          [
+            "__modalmini-",
+            "container",
+            "contextMenu",
+            "levsmenu",
+            "logos",
+            "mainTabs",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabsMenu",
+            "wrapper"
+          ],
+          [
+            "container",
+            "contextMenu",
+            "levsmenu",
+            "logos",
+            "mainTabs",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabsMenu",
+            "wrapper"
+          ],
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs"
+          ]
+        ],
+        "context2_Z2voN1": [
+          [
+            "container",
+            "contextMenu",
+            "levsmenu",
+            "logos",
+            "mainTabs",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabsMenu",
+            "wrapper"
+          ],
+          [
+            "$cell$",
+            "mini-",
+            "mini-$",
+            "mini-$ck$",
+            "mini-$emptytext",
+            "mini-$filter$",
+            "mini-$headerCell$",
+            "mini-$row$",
+            "mini-$summary$",
+            "tableSearch",
+            "taskFromList",
+            "taskFromList$value",
+            "taskListId"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context11_uaf3pg": [
+          [
+            "J_tabClose",
+            "J_tabCloseAll",
+            "J_tabCloseOther",
+            "J_tabShowActive",
+            "active",
+            "b",
+            "divider",
+            "dropdown",
+            "dropdown-menu",
+            "dropdown-menu-right",
+            "fmain",
+            "inactive",
+            "last",
+            "main",
+            "menu",
+            "menu-wrap",
+            "mini-contextmenu",
+            "mini-disabled",
+            "mini-fit",
+            "mini-menu",
+            "mini-menu-border",
+            "mini-menu-bottomArrow",
+            "mini-menu-float",
+            "mini-menu-inner",
+            "mini-menu-toolbar",
+            "mini-menu-topArrow",
+            "mini-menuitem",
+            "mini-menuitem-allow",
+            "mini-menuitem-icon",
+            "mini-menuitem-inner",
+            "mini-menuitem-text",
+            "mini-modal",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-resizer-trigger",
+            "mini-separator",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag",
+            "radius",
+            "sidebar",
+            "submain",
+            "tcc",
+            "wrap"
+          ],
+          [
+            "J_tabClose",
+            "J_tabCloseAll",
+            "J_tabCloseOther",
+            "J_tabShowActive",
+            "active",
+            "b",
+            "divider",
+            "dropdown",
+            "dropdown-menu",
+            "dropdown-menu-right",
+            "fmain",
+            "inactive",
+            "last",
+            "main",
+            "menu",
+            "menu-wrap",
+            "mini-contextmenu",
+            "mini-disabled",
+            "mini-fit",
+            "mini-menu",
+            "mini-menu-border",
+            "mini-menu-bottomArrow",
+            "mini-menu-float",
+            "mini-menu-inner",
+            "mini-menu-toolbar",
+            "mini-menu-topArrow",
+            "mini-menuitem",
+            "mini-menuitem-allow",
+            "mini-menuitem-icon",
+            "mini-menuitem-inner",
+            "mini-menuitem-text",
+            "mini-separator",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "radius",
+            "sidebar",
+            "submain",
+            "tcc",
+            "wrap"
+          ],
+          [
+            "mini-disabled",
+            "mini-modal",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-resizer-trigger",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag"
+          ]
+        ],
+        "context2_Z2voN1": [
+          [
+            "J_tabClose",
+            "J_tabCloseAll",
+            "J_tabCloseOther",
+            "J_tabShowActive",
+            "active",
+            "b",
+            "divider",
+            "dropdown",
+            "dropdown-menu",
+            "dropdown-menu-right",
+            "fmain",
+            "inactive",
+            "last",
+            "main",
+            "menu",
+            "menu-wrap",
+            "mini-contextmenu",
+            "mini-disabled",
+            "mini-fit",
+            "mini-menu",
+            "mini-menu-border",
+            "mini-menu-bottomArrow",
+            "mini-menu-float",
+            "mini-menu-inner",
+            "mini-menu-toolbar",
+            "mini-menu-topArrow",
+            "mini-menuitem",
+            "mini-menuitem-allow",
+            "mini-menuitem-icon",
+            "mini-menuitem-inner",
+            "mini-menuitem-text",
+            "mini-separator",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "radius",
+            "sidebar",
+            "submain",
+            "tcc",
+            "wrap"
+          ],
+          [
+            "bpsDatagrid",
+            "dgBtn",
+            "grayBtn",
+            "mini-button",
+            "mini-button-disabled",
+            "mini-button-iconOnly",
+            "mini-button-plain",
+            "mini-button-text",
+            "mini-buttonedit",
+            "mini-buttonedit-border",
+            "mini-buttonedit-button",
+            "mini-buttonedit-buttons",
+            "mini-buttonedit-close",
+            "mini-buttonedit-icon",
+            "mini-buttonedit-input",
+            "mini-checkboxlist",
+            "mini-checkboxlist-item",
+            "mini-checkboxlist-item-selected",
+            "mini-combobox",
+            "mini-datagrid",
+            "mini-errorIcon",
+            "mini-grid",
+            "mini-grid-border",
+            "mini-grid-bottomCell",
+            "mini-grid-cell",
+            "mini-grid-cell-inner",
+            "mini-grid-cell-nowrap",
+            "mini-grid-column-splitter",
+            "mini-grid-columns",
+            "mini-grid-columns-lock",
+            "mini-grid-columns-view",
+            "mini-grid-emptyText",
+            "mini-grid-filterCell",
+            "mini-grid-filterRow",
+            "mini-grid-filterRow-lock",
+            "mini-grid-filterRow-view",
+            "mini-grid-focus",
+            "mini-grid-headerCell",
+            "mini-grid-headerCell-inner",
+            "mini-grid-headerCell-nowrap",
+            "mini-grid-headerCell-outer",
+            "mini-grid-pager",
+            "mini-grid-rightCell",
+            "mini-grid-row",
+            "mini-grid-row-alt",
+            "mini-grid-rows",
+            "mini-grid-rows-content",
+            "mini-grid-rows-lock",
+            "mini-grid-rows-view",
+            "mini-grid-rowstable",
+            "mini-grid-scrollHeaderCell",
+            "mini-grid-summaryCell",
+            "mini-grid-summaryRow",
+            "mini-grid-summaryRow-lock",
+            "mini-grid-summaryRow-view",
+            "mini-grid-table",
+            "mini-grid-topRightCell",
+            "mini-grid-viewport",
+            "mini-grid-vscroll",
+            "mini-grid-vscroll-content",
+            "mini-list-inner",
+            "mini-page-buttons",
+            "mini-pager",
+            "mini-pager-first",
+            "mini-pager-index",
+            "mini-pager-last",
+            "mini-pager-left",
+            "mini-pager-next",
+            "mini-pager-num",
+            "mini-pager-pages",
+            "mini-pager-prev",
+            "mini-pager-reload",
+            "mini-pager-right",
+            "mini-pager-size",
+            "mini-pager-sizetext",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-popupedit",
+            "mini-resizer-trigger",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "separator",
+            "textof_clip"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context11_uaf3pg": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/A",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "LI/A/I",
+            "LI/UL/LI",
+            "SPAN/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN",
+            "UL/LI/A",
+            "UL/LI/UL"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/A",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "LI/A/I",
+            "LI/UL/LI",
+            "SPAN/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN",
+            "UL/LI/A",
+            "UL/LI/UL"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ],
+        "context2_Z2voN1": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/A",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "LI/A/I",
+            "LI/UL/LI",
+            "SPAN/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN",
+            "UL/LI/A",
+            "UL/LI/UL"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/TABLE/TBODY",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-checkbox",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "SPAN/SPAN/INPUT-hidden",
+            "SPAN/SPAN/INPUT-text",
+            "SPAN/SPAN/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
 }

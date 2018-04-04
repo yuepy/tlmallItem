@@ -6,7 +6,9 @@
   "requires": {
     "approveAdvice": "../approveAdvice/index.json",
     "approvalTrack": "../approvalTrack/index.json",
-    "operationLog": "../operationLog/index.json"
+    "operationLog": "../operationLog/index.json",
+    "PendingTask": "../PendingTask/index.json",
+    "processedTask": "../processedTask/index.json"
   },
   "chineseName": "员工职位变动",
   "description": "",
@@ -268,7 +270,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -306,6 +308,14 @@
       "toContexts": [
         {
           "toContextId": "context33_dgaTsL"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
         }
       ]
     },
@@ -496,7 +506,9 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?positionChange&workItemID=294099&_t=569452&_winid=w6382",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?positionChange&workItemID=294104&_t=294273&_winid=w5203",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?positionChange&workItemID=294104&_t=640358&_winid=w5002",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=304026&positionChange"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=304026&positionChange",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=304028&positionChange",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294104&positionChange"
         ]
       }
     },
