@@ -4,6 +4,7 @@
   "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=154031&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false",
   "jsFile": "index.js",
   "requires": {
+    "askForLeave": "../askForLeave/index.json",
     "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
     "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
     "processToSend": "../processToSend/index.json",
@@ -817,6 +818,10 @@
       "toContexts": [
         {
           "toContextId": "context4_wRixwF"
+        },
+        {
+          "toContextId": "context11_ksSRDp",
+          "toModelId": "askForLeave"
         }
       ]
     },

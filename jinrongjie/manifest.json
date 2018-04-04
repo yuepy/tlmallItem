@@ -2,7 +2,7 @@
   "type": "adapter",
   "short_name": "",
   "version": "0.0.1",
-  "runtime_version": "2.6.2-beta.1",
+  "runtime_version": "2.7.0",
   "description": "",
   "options": {
     "resource_intercept": {
@@ -118,17 +118,6 @@
       ]
     },
     {
-      "title": "askForLeave",
-      "url": "adapter://jinrongjie/plan/askForLeave/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ManageRequestNoForm\\.jsp\\?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
-        "http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ViewRequest\\.jsp\\?requestid.*"
-      ],
-      "demo": [
-        "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
-      ]
-    },
-    {
       "title": "login",
       "url": "adapter://jinrongjie/plan/login/index.json",
       "matcher": [
@@ -171,11 +160,72 @@
       "demo": [
         "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=407430&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
       ]
+    },
+    {
+      "title": "managerAuditDetail",
+      "url": "adapter://jinrongjie/plan/managerAuditDetail/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ManageRequestNoForm\\.jsp\\?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+        "http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ViewRequest\\.jsp\\?requestid.*"
+      ],
+      "demo": [
+        "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=171640&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"
+      ]
+    },
+    {
+      "title": "managerAuditRelateProcess",
+      "url": "adapter://jinrongjie/plan/managerAuditRelateProcess/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/systeminfo\\/BrowserMain\\.jsp\\?url=\\/workflow\\/request\\/MultiRequestBrowser\\.jsp\\?documentids="
+      ],
+      "demo": [
+        "http://192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids="
+      ]
+    },
+    {
+      "title": "chairmanSign",
+      "url": "adapter://jinrongjie/plan/chairmanSign/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/ManageRequestNoForm\\.jsp\\?fromFlowDoc=&requestid=259937&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+      ],
+      "demo": [
+        "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=259937&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=1&isfromtab=false"
+      ]
+    },
+    {
+      "title": "chairmanSignNew",
+      "url": "adapter://jinrongjie/plan/chairmanSignNew/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/AddRequest\\.jsp\\?workflowid=162&isagent=0&beagenter=0"
+      ],
+      "demo": [
+        "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=162&isagent=0&beagenter=0"
+      ]
+    },
+    {
+      "title": "Documentapproval",
+      "url": "adapter://jinrongjie/plan/Documentapproval/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/AddRequest\\.jsp\\?workflowid=182&isagent=0&beagenter=0"
+      ],
+      "demo": [
+        "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=182&isagent=0&beagenter=0"
+      ]
+    },
+    {
+      "title": "creatSanhui",
+      "url": "adapter://jinrongjie/plan/creatSanhui/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.200\\.63\\/workflow\\/request\\/AddRequest\\.jsp\\?workflowid=1141&isagent=0&beagenter=0"
+      ],
+      "demo": [
+        "http://192.168.200.63/workflow/request/AddRequest.jsp?workflowid=1141&isagent=0&beagenter=0"
+      ]
     }
   ],
   "name": "金融街",
   "default_url": "http://192.168.200.63/login/Login.jsp",
   "scope": "jinrongjie",
   "start_url": "enterplorer://jinrongjie/local/index.html",
-  "update_time": 1516242179128
+  "update_time": 1522830328050
 }
