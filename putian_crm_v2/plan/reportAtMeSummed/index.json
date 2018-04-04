@@ -1,0 +1,227 @@
+{
+  "version": "0.1",
+  "id": "reportAtMeSummed",
+  "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html",
+  "jsFile": "index.js",
+  "chineseName": "汇报给我的总结",
+  "description": "汇报给我的总结",
+  "controls": {
+    "control315_PFxRaT": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control315_PFxRaT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control316_KtnTwT": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control316_KtnTwT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context83_KNsMqG": {
+      "controls": [
+        "control315_PFxRaT",
+        "control316_KtnTwT"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow240_h4sDar": {
+      "toContexts": [
+        {
+          "toContextId": "context83_KNsMqG"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page83_eIneWm": {
+      "contextId": "context83_KNsMqG",
+      "layout": [
+        {
+          "id": "uiControl306_RfQZGl",
+          "controlId": "control315_PFxRaT",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl306_RfQZGl",
+                "onGetTemplate": "getTemplate_uiControl306_RfQZGl"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl307_nLA7k8",
+          "controlId": "control316_KtnTwT",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl307_nLA7k8",
+                "onGetTemplate": "getTemplate_uiControl307_nLA7k8"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context83_KNsMqG": [
+          "汇报给我的总结"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context83_KNsMqG": [
+          "192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context83_KNsMqG": [
+          [
+            "changeTab",
+            "clearBtn",
+            "endTime",
+            "exportExcel",
+            "muilSelectOption",
+            "page",
+            "queryBtnSearch",
+            "searchBtn",
+            "searchHead",
+            "searchInput",
+            "selectSearch",
+            "startTime",
+            "tbody",
+            "thead",
+            "zhanKai"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context83_KNsMqG": [
+          [
+            "act",
+            "all",
+            "atme-main",
+            "bt",
+            "btn-box",
+            "clear-btn",
+            "clearfix",
+            "commpnPage",
+            "con-table",
+            "content",
+            "crossbar",
+            "date",
+            "end",
+            "export",
+            "form-control",
+            "head-bottom",
+            "head-center",
+            "header",
+            "icon",
+            "m-body",
+            "main",
+            "mask",
+            "more",
+            "no-under",
+            "none",
+            "option-box",
+            "option-btn",
+            "option-con",
+            "option-l",
+            "option-list",
+            "option-r",
+            "option-r-c",
+            "out",
+            "outstore",
+            "search",
+            "search-btn",
+            "select",
+            "start",
+            "sure-btn",
+            "tags-table"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context83_KNsMqG": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/SECTION",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SECTION/DIV",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "SECTION/DIV/A",
+            "SECTION/DIV/DIV",
+            "SECTION/DIV/INPUT-button",
+            "SECTION/DIV/INPUT-text",
+            "SECTION/DIV/SELECT",
+            "TABLE/THEAD/TR",
+            "THEAD/TR/TD"
+          ]
+        ]
+      }
+    }
+  }
+}

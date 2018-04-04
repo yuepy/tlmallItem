@@ -318,6 +318,9 @@
         case 'atMyReport'://at我的报告 一级菜单
           task.title = "myReport"
           break;
+        case 'workSummed':
+          task.title = "GZZJYD"
+          break;
         default:
           msgType = "no"
           break;
