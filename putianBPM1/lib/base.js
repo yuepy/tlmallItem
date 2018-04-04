@@ -127,7 +127,6 @@
 
       //当网址含有ftp的时候去掉前面的域名
       if(aWin.location.href.indexOf("ftp")!==-1){
-        debugger;
         var url=aWin.location.href.replace(/http:\/\/192\.168\.220\.51:8000\/ptsoa\/bizform\//g,"")
         aWin.location.href=url;
       }

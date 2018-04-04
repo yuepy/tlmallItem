@@ -3479,7 +3479,7 @@ mini.createTopSingle = function(b) {
         return
     }
     var a = b.prototype.type;
-    //新禄，tab页切换，改变面板里iframe地址
+    //wxl，tab页切换，改变面板里iframe地址
     if (_ysp_top && _ysp_top != window && _ysp_top.mini && _ysp_top.mini.getClass(a)) {
         return _ysp_top.mini.createSingle(a)
     } else {
@@ -6102,14 +6102,14 @@ function __BindIFrames() {
             if (c.contentWindow && c.contentWindow.document && !c.contentWindow.__mousedownbinded) {
                 //lyh
                 c.contentWindow.__mousedownbinded = true;
-                if (top.test && c.src.indexOf("forwardByWorkItem") != -1) {
-                    var src = c.src;
-                    var index = src.indexOf("?");
-                    index = index + 1;
-                    index = "(.{" + index + "})";
-                    c.src = src.replace(eval("/" + index + "/"), "$1" + top.test);
-                    top.test = "";
-                }
+                // if (top.test && c.src.indexOf("forwardByWorkItem") != -1) {
+                //     var src = c.src;
+                //     var index = src.indexOf("?");
+                //     index = index + 1;
+                //     index = "(.{" + index + "})";
+                //     c.src = src.replace(eval("/" + index + "/"), "$1" + top.test);
+                //     top.test = "";
+                // }
                 var f = c.contentWindow.document
             }
         } catch (d) {}
@@ -19121,7 +19121,7 @@ mini.extend(mini.Tabs, mini.Control, {
             }
             var g = this._headerEl.scrollLeft;
             var t = this.getTab(this.activeIndex);
-           //新禄，tab页切换，改变面板里iframe地址
+           //wxl，tab页切换，改变面板里iframe地址
            t && _ysp_top.history.pushState(t.url + '&' + _ysp_top.tenderType, null, t.url + '&' + _ysp_top.tenderType);
             var n = t ? !t._layouted : false;
             var q = this.isAutoHeight();
@@ -19191,7 +19191,7 @@ mini.extend(mini.Tabs, mini.Control, {
         return this.activeIndex
     },
     activeTab: function(a) {
-      //新禄，tab页切换，改变面板里iframe地址
+      //wxl，tab页切换，改变面板里iframe地址
        _ysp_top.history.pushState(a.url + "&" + _ysp_top.tenderType, null, a.url + '&' + _ysp_top.tenderType);
         this.setActiveIndex(a)
     },
