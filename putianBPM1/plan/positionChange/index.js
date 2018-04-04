@@ -311,13 +311,16 @@
       }const ann = elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a");[].map.call(ann, (item, index) => {
         data.annex.push(item.textContent);
       }); //审批意见
-      const sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");data.surggest.push(sugg.querySelector("textarea").value);if (sugg.querySelector(".mini-textbox-readOnly")) {
-        data.surggest.push("true");
-      } else {
-        data.surggest.push("");
-      }if (elem.querySelector("#approval").style.display == "none") {
-        data.surggest = [];
-      }return data;
+      //const sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)"); //data.surggest.push(sugg.querySelector("textarea").value);
+      // if (sugg.querySelector(".mini-textbox-readOnly")) {
+      //   data.surggest.push("true");
+      // } else {
+      //   data.surggest.push("");
+      // }
+      // if (elem.querySelector("#approval").style.display == "none") {
+      //   data.surggest = [];
+      // }
+      return data;
     },
     doAction_uiControl125_5ZOR9A: function (data, elem) {
       if (data.eventType == 'change') {
