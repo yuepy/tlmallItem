@@ -8,7 +8,9 @@
     "index": "../index/index.json",
     "processedTask": "../processedTask/index.json",
     "turnTask": "../turnTask/index.json",
-    "departure": "../departure/index.json"
+    "departure": "../departure/index.json",
+    "askForLeave": "../askForLeave/index.json",
+    "forgetCard": "../forgetCard/index.json"
   },
   "chineseName": "已办查看流程图",
   "description": "",
@@ -150,7 +152,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/task\\.jsp.*"
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task.*"
       ]
     }
   },
@@ -171,6 +173,18 @@
         {
           "toContextId": "context5_7wf9RT",
           "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context31_NhG3EK",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context28_MTJvP1",
+          "toModelId": "forgetCard"
         }
       ]
     },
@@ -221,6 +235,10 @@
         {
           "toContextId": "context32_FGBsnV",
           "toModelId": "departure"
+        },
+        {
+          "toContextId": "context28_MTJvP1",
+          "toModelId": "forgetCard"
         }
       ]
     },
