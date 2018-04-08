@@ -2305,11 +2305,29 @@ div[data-ysp-modelid="addWork"]{
 /***********************************离职管理（辞职） start*******************************************/
 .ysp-turn-wrap{
   .ysp-turn-box{
+    position: relative;
+    li{
+      position: relative;
+      i.ysp-arrow-down{
+      display: inline-block;
+      float:right;
+      width:16px;
+      height: 16px;
+        margin-top:15px;
+      background:url(../local/img/icon2.gif) no-repeat 3px 1px;
+      
+    	}
+      i.ysp_mini_errorIcon{
+        display: inline-block;
+        float:right;
+        width: 16px;
+        height: 16px;
+        margin-top:15px;
+        background: url("../local/img/error.png") 0px 0px no-repeat;
+      }
+    }
     .ysp-txt-tip{
       color:red;
-    }
-    .ysp-arrow-down{
-      background:url(../local/img/icon2.gif) no-repeat right 13px;
     }
       textarea{
       background: #fff;
@@ -2317,20 +2335,42 @@ div[data-ysp-modelid="addWork"]{
     }
     .ysp-sel-box{
      position: absolute;
-      top:0;
+      z-index: 99;
       left:0;
-      bottom: 0;
-      right:0;
+      width:100%;
+      max-height:160px;
       background:#fff;
-      width:80%;
-      max-height: 300px;
       overflow-y: scroll;
-      
       border:1px solid #dcdcdc;
       span{
         display: block;
+        height:22px;
+        line-height: 22px;
+        font-size:14px;
+        color:#666;
         text-align: center;
+        &:active{
+          background:#efefef;
+        }
+        }
       }
+    #mpop1{
+      top:280px;
+    }
+    #mpop2{
+      top:324px;
+    }
+    #mpop3{
+      top:368px;
+    }
+    #mpop4{
+      top:412px;
+    }
+  	#mpop5{
+      top:468px;
+    }
+    #ppop1{
+      top:198px;
     }
   }
 }
