@@ -2171,6 +2171,9 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
   top: 11px;
   left: -12px;
 }
+.ysp-turn-wrap .ysp-turn-box ul {
+  position: relative;
+}
 .ysp-turn-wrap .ysp-turn-box ul li {
   display: flex;
   justify-content: space-between;
@@ -2250,16 +2253,27 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
   color: red;
 }
 .ysp-turn-wrap .ysp-turn-box .ysp-arrow-down {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  float: right;
-  margin-top: 15px;
-  background: url(../local/img/icon2.gif) no-repeat 3px 3px;
+  background: url(../local/img/icon2.gif) no-repeat right 13px;
 }
 .ysp-turn-wrap .ysp-turn-box textarea {
   background: #fff;
   cursor: text;
+}
+.ysp-turn-wrap .ysp-turn-box .ysp-sel-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  width: 80%;
+  max-height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #dcdcdc;
+}
+.ysp-turn-wrap .ysp-turn-box .ysp-sel-box span {
+  display: block;
+  text-align: center;
 }
 /***********************************离职管理（辞职） end*******************************************/
 /***********************************总部月度编制变动 start*******************************************/

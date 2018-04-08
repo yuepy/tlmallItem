@@ -2214,6 +2214,7 @@ div[data-ysp-modelid="addWork"]{
     }
   }
   ul{
+    position: relative;
     li{
     display: flex;
     justify-content: space-between;
@@ -2308,16 +2309,28 @@ div[data-ysp-modelid="addWork"]{
       color:red;
     }
     .ysp-arrow-down{
-      display: inline-block;
-      width:15px;
-      height:15px;
-      float:right;
-      margin-top:15px;
-      background:url(../local/img/icon2.gif) no-repeat 3px 3px;
+      background:url(../local/img/icon2.gif) no-repeat right 13px;
     }
-    textarea{
+      textarea{
       background: #fff;
       cursor: text;
+    }
+    .ysp-sel-box{
+     position: absolute;
+      top:0;
+      left:0;
+      bottom: 0;
+      right:0;
+      background:#fff;
+      width:80%;
+      max-height: 300px;
+      overflow-y: scroll;
+      
+      border:1px solid #dcdcdc;
+      span{
+        display: block;
+        text-align: center;
+      }
     }
   }
 }
