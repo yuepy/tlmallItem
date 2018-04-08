@@ -238,7 +238,25 @@
     },
     doAction_uiControl102_eHme9F: function (data, elem) {
       if (data.eventType == "enclosure") {
-        var i = data.dataCustom;elem.querySelectorAll("a")[i].click();
+        var i = data.dataCustom;var _btn = elem.querySelector("#enclosure").querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(url + '&_ysp_filepreview=1');
+        } else if (ysp.appMain.isAndroid()) {
+          // top.location.href = url;
+          yspUser.openDocument("{'url': '" + url + "','fileName':'1" + type + "'}");
+        } // $.ajax({
+        //   url: 'http://139.217.22.35:8080/dcs.web/ftpOnlinefile',
+        //   type: "POST",
+        //   data: JSON.stringify({
+        //     'ftpDownloadUrl': url,
+        //     'converType': 0
+        //   }),
+        //   success: function (result) {
+        //     console.log(result);
+        //   },
+        //   error: function (msg) {
+        //     console.log("请求失败");
+        //   }
+        // });
       }
     },
     getTemplate_uiControl102_eHme9F: function () {

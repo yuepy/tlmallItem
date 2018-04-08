@@ -227,8 +227,8 @@
     },
     doAction_uiControl141_yXJ31c: function (data, elem) {},
     getTemplate_uiControl141_yXJ31c: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData;\n    return (\n      <div className="ysp_hrDetailInfo" style={{marginTop:"10px",paddingBottom:"10px"}}>\n       \t<div className="ysp_hrDetailInfo_title">\u5BA1\u6279\u610F\u89C1/\u5907\u6CE8</div>\n        <ATextarea className="remark" disabled>{data}</ATextarea>\n      </div>\n    )\n  }\n});';
-      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      "div",\n      { className: "ysp_hrDetailInfo", style: { marginTop: "10px", paddingBottom: "10px" } },\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_title" },\n        "\\u5BA1\\u6279\\u610F\\u89C1/\\u5907\\u6CE8"\n      ),\n      React.createElement(\n        ATextarea,\n        { className: "remark", disabled: true },\n        data\n      )\n    );\n  }\n});';
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData;\n    return (\n      <div className=\"ysp_hrDetailInfo\" style={{marginTop:\"10px\",paddingBottom:\"10px\"}}>\n       \t<div className=\"ysp_hrDetailInfo_title\">\u5BA1\u6279\u610F\u89C1/\u5907\u6CE8</div>\n        <ATextarea className=\"remark\" disabled value={data}></ATextarea>\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      \"div\",\n      { className: \"ysp_hrDetailInfo\", style: { marginTop: \"10px\", paddingBottom: \"10px\" } },\n      React.createElement(\n        \"div\",\n        { className: \"ysp_hrDetailInfo_title\" },\n        \"\\u5BA1\\u6279\\u610F\\u89C1/\\u5907\\u6CE8\"\n      ),\n      React.createElement(ATextarea, { className: \"remark\", disabled: true, value: data })\n    );\n  }\n});";
     },
     getData_control149_N2i8LO: function (elem) {
       if (!elem) {
@@ -261,7 +261,25 @@
     },
     doAction_uiControl140_nSP35Q: function (data, elem) {
       if (data.eventType == "enclosure") {
-        var i = data.dataCustom;elem.querySelectorAll("a")[i].click();
+        var i = data.dataCustom;var _btn = elem.querySelector("#enclosure").querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);debugger;if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(url + '&_ysp_filepreview=1');
+        } else if (ysp.appMain.isAndroid()) {
+          // top.location.href = url;
+          yspUser.openDocument("{'url': '" + url + "','fileName':'1" + type + "'}");
+        } // $.ajax({
+        //   url: 'http://139.217.22.35:8080/dcs.web/ftpOnlinefile',
+        //   type: "POST",
+        //   data: JSON.stringify({
+        //     'ftpDownloadUrl': url,
+        //     'converType': 0
+        //   }),
+        //   success: function (result) {
+        //     console.log(result);
+        //   },
+        //   error: function (msg) {
+        //     console.log("请求失败");
+        //   }
+        // });
       }
     },
     getTemplate_uiControl140_nSP35Q: function () {

@@ -9,7 +9,8 @@
     "beginToWork": "../beginToWork/index.json",
     "approvalTrack": "../approvalTrack/index.json",
     "operationLog": "../operationLog/index.json",
-    "processedTask": "../processedTask/index.json"
+    "processedTask": "../processedTask/index.json",
+    "PendingTask": "../PendingTask/index.json"
   },
   "chineseName": "销假申请",
   "description": "",
@@ -317,6 +318,10 @@
         {
           "toContextId": "context2_Z2voN1",
           "toModelId": "processedTask"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
         }
       ]
     },
@@ -491,7 +496,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284983&_t=120692&_winid=w4572",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284811&_t=239779&_winid=w2978",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284983&beginToWork",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283792&visitRelative"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283792&visitRelative",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284979&beginToWork"
         ],
         "context10_Hyn4t6": [
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",

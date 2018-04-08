@@ -63,9 +63,9 @@
         //     var json = {
         //       time: new Date().getTime()
         //     };
-
         //     var btn = elem.ownerDocument.querySelector('.mini-tools-close');
         //     if (btn) {
+
         //       btn.click();
         //       ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
         //     }
@@ -76,14 +76,14 @@
               btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
             }
           } else {
-            var json = {
-              time: new Date().getTime() };var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
+            var json = { time: new Date().getTime() };
+            var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
               btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             }
           }
         } else {
-          var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelector('.mini-tools-close');
-          if (btn) {
+          var json = {
+            time: new Date().getTime() };var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
             btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
           }
         }
@@ -232,7 +232,25 @@
     },
     doAction_uiControl108_GHNux3: function (data, elem) {
       if (data.eventType == "enclosure") {
-        var i = data.dataCustom;elem.querySelectorAll("a")[i].click();
+        var i = data.dataCustom;var _btn = elem.querySelector("#enclosure").querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(url + '&_ysp_filepreview=1');
+        } else if (ysp.appMain.isAndroid()) {
+          // top.location.href = url;
+          yspUser.openDocument("{'url': '" + url + "','fileName':'1" + type + "'}");
+        } // $.ajax({
+        //   url: 'http://139.217.22.35:8080/dcs.web/ftpOnlinefile',
+        //   type: "POST",
+        //   data: JSON.stringify({
+        //     'ftpDownloadUrl': url,
+        //     'converType': 0
+        //   }),
+        //   success: function (result) {
+        //     console.log(result);
+        //   },
+        //   error: function (msg) {
+        //     console.log("请求失败");
+        //   }
+        // });
       }
     },
     getTemplate_uiControl108_GHNux3: function () {

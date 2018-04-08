@@ -9,7 +9,8 @@
     "approveAdvice": "../approveAdvice/index.json",
     "operationLog": "../operationLog/index.json",
     "processedTask": "../processedTask/index.json",
-    "enclosure": "../enclosure/index.json"
+    "enclosure": "../enclosure/index.json",
+    "PendingTask": "../PendingTask/index.json"
   },
   "chineseName": "外派探亲申请",
   "description": "",
@@ -344,6 +345,10 @@
         {
           "toContextId": "context2_Z2voN1",
           "toModelId": "processedTask"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
         }
       ]
     },
@@ -489,7 +494,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?visitRelative&workItemID=284828&_t=362316&_winid=w9095",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?visitRelative&workItemID=284828&_t=532751&_winid=w9328",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283792&visitRelative",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283976&askForLeave"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283976&askForLeave",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317867&visitRelative"
         ]
       }
     },

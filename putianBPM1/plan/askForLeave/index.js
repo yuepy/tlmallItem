@@ -188,7 +188,7 @@
       }if (elem) {
         var data = [];var title = elem.querySelectorAll("td.form_label");for (var i = 0; i < title.length; i++) {
           var obj = { title: "", content: "" };if (title[i].textContent.trim() !== "") {
-            obj.title = title[i].textContent.trim();obj.content = title[i].nextElementSibling.querySelectorAll("input")[0].value;data.push(obj);
+            obj.title = title[i].textContent.trim();obj.content = title[i].nextElementSibling.querySelectorAll("input.mini-textbox-input")[0].value;data.push(obj);
           }
         }return data;
       }
@@ -196,7 +196,7 @@
     doAction_uiControl114_U3H1TU: function (data, elem) {},
     getTemplate_uiControl114_U3H1TU: function () {
       var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData||[];\n    return (\n      <div className="ysp_hrDetailInfo">\n        <div className="ysp_hrDetailInfo_content">\n        {data&&data.length>0&&data.map(function(item,index){\n          return(\n          \t<div className="ysp_border">\n            \t<span className="ysp_title">{item.title}\uFF1A</span>\n              <label className="ysp_content">{item.content}</label>\n            </div>\n          )\n        })}  \n        </div>\n      </div>\n    )\n  }\n});\n\n';
-      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    var data = this.props.customData || [];\n    return React.createElement(\n      \"div\",\n      { className: \"ysp_hrDetailInfo\" },\n      React.createElement(\n        \"div\",\n        { className: \"ysp_hrDetailInfo_content\" },\n        data && data.length > 0 && data.map(function (item, index) {\n          return React.createElement(\n            \"div\",\n            { className: \"ysp_border\" },\n            React.createElement(\n              \"span\",\n              { className: \"ysp_title\" },\n              item.title,\n              \"\\uFF1A\"\n            ),\n            React.createElement(\n              \"label\",\n              { className: \"ysp_content\" },\n              item.content\n            )\n          );\n        })\n      )\n    );\n  }\n});";
+      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData || [];\n    return React.createElement(\n      "div",\n      { className: "ysp_hrDetailInfo" },\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_content" },\n        data && data.length > 0 && data.map(function (item, index) {\n          return React.createElement(\n            "div",\n            { className: "ysp_border" },\n            React.createElement(\n              "span",\n              { className: "ysp_title" },\n              item.title,\n              "\\uFF1A"\n            ),\n            React.createElement(\n              "label",\n              { className: "ysp_content" },\n              item.content\n            )\n          );\n        })\n      )\n    );\n  }\n});';
     },
     getData_control122_2TWumE: function (elem) {
       if (!elem) {

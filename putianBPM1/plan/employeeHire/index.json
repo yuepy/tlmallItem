@@ -8,7 +8,8 @@
     "approvalTrack": "../approvalTrack/index.json",
     "approveAdvice": "../approveAdvice/index.json",
     "operationLog": "../operationLog/index.json",
-    "processedTask": "../processedTask/index.json"
+    "processedTask": "../processedTask/index.json",
+    "PendingTask": "../PendingTask/index.json"
   },
   "chineseName": "员工录用",
   "description": "",
@@ -348,6 +349,10 @@
         {
           "toContextId": "context2_Z2voN1",
           "toModelId": "processedTask"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
         }
       ]
     },
@@ -541,7 +546,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=85&_winid=w4944",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?employeeHire&workItemID=279170&_t=463124&_winid=w8269",
           "",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=281639&employeeHire"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=281639&employeeHire",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317914&employeeHire"
         ]
       }
     },
