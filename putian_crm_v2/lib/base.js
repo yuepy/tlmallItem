@@ -1947,7 +1947,7 @@
       console.warn('_getTableData thead里面竟然没有th');
       return null;
     }
-    var titlesThs = thead.querySelectorAll('th');
+    var titlesThs = thead.querySelectorAll('th') && thead.querySelectorAll("td");
     var titles = [];
     var titlesIndexs = [];
     for (var i = 0; i < titlesThs.length; i++) {

@@ -11680,6 +11680,17 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   margin-right: 20px;
   background-image: url(images/ysp-workSummary-add.png);
 }
+.screenClock {
+  display: block;
+  height: 20px;
+  width: 22px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-image: url(images/ysp-workSummend-screen.png);
+}
+.screenText {
+  width: 50px;
+}
 .ysp-workSummary-business {
   background: #fff;
   padding: 10px 0px 10px 20px;
@@ -11736,8 +11747,9 @@ div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper {
   height: 100vh;
   overflow: auto;
 }
+/****************汇报给我的总结start*********************/
 .ysp-workSummed-chose {
-  width: 100%;
+  width: 90%;
   height: 92%;
   left: 50px;
   top: 0;
@@ -11749,8 +11761,184 @@ div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper {
   overflow: auto;
   margin-top: 45px;
 }
+.ysp-workSummed-chose > div:nth-child(1) {
+  padding: 10px;
+  border-bottom: 1px solid #ececec;
+}
+.ysp-workSummed-chose > div:nth-child(2),
+.ysp-workSummed-chose > div:nth-child(3),
+.ysp-workSummed-chose > div:nth-child(4),
+.ysp-workSummed-chose > div:nth-child(5),
+.ysp-workSummed-chose > div:nth-child(6),
+.ysp-workSummed-chose > div:nth-child(7) {
+  padding: 10px;
+  border-bottom: 1px solid #ececec;
+}
+.ysp-workSummed-chose > div:nth-child(2) > div:nth-child(1),
+.ysp-workSummed-chose > div:nth-child(3) > div:nth-child(1),
+.ysp-workSummed-chose > div:nth-child(4) > div:nth-child(1),
+.ysp-workSummed-chose > div:nth-child(5) > div:nth-child(1),
+.ysp-workSummed-chose > div:nth-child(6) > div:nth-child(1),
+.ysp-workSummed-chose > div:nth-child(7) > div:nth-child(1) {
+  color: #000;
+}
+.ysp-workSummed-chose > div:nth-child(2) > div:nth-child(2),
+.ysp-workSummed-chose > div:nth-child(3) > div:nth-child(2),
+.ysp-workSummed-chose > div:nth-child(4) > div:nth-child(2),
+.ysp-workSummed-chose > div:nth-child(5) > div:nth-child(2),
+.ysp-workSummed-chose > div:nth-child(6) > div:nth-child(2),
+.ysp-workSummed-chose > div:nth-child(7) > div:nth-child(2) {
+  overflow: hidden;
+}
+.ysp-workSummed-chose > div:nth-child(2) > div:nth-child(2) .ysp-workSummed-chose-color,
+.ysp-workSummed-chose > div:nth-child(3) > div:nth-child(2) .ysp-workSummed-chose-color,
+.ysp-workSummed-chose > div:nth-child(4) > div:nth-child(2) .ysp-workSummed-chose-color,
+.ysp-workSummed-chose > div:nth-child(5) > div:nth-child(2) .ysp-workSummed-chose-color,
+.ysp-workSummed-chose > div:nth-child(6) > div:nth-child(2) .ysp-workSummed-chose-color,
+.ysp-workSummed-chose > div:nth-child(7) > div:nth-child(2) .ysp-workSummed-chose-color {
+  float: left;
+  border-radius: 5px;
+  padding: 2px 20px;
+  border: 1px solid red;
+  color: red;
+  background: #fff;
+  margin: 5px;
+  text-align: center;
+}
+.ysp-workSummed-chose > div:nth-child(2) > div:nth-child(2) .ysp-workSummed-chose-text,
+.ysp-workSummed-chose > div:nth-child(3) > div:nth-child(2) .ysp-workSummed-chose-text,
+.ysp-workSummed-chose > div:nth-child(4) > div:nth-child(2) .ysp-workSummed-chose-text,
+.ysp-workSummed-chose > div:nth-child(5) > div:nth-child(2) .ysp-workSummed-chose-text,
+.ysp-workSummed-chose > div:nth-child(6) > div:nth-child(2) .ysp-workSummed-chose-text,
+.ysp-workSummed-chose > div:nth-child(7) > div:nth-child(2) .ysp-workSummed-chose-text {
+  float: left;
+  border-radius: 5px;
+  padding: 2px 20px;
+  border: 1px solid #ececec;
+  background: #ececec;
+  margin: 5px;
+  text-align: center;
+}
+.ysp-workSummed-chose .ysp-workSummed-chose-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+}
+.ysp-workSummed-chose .ysp-workSummed-chose-button > span:nth-child(1) {
+  display: block;
+  margin: auto 0;
+  height: 100%;
+  width: 50%;
+  color: #000;
+  background: #ececec;
+  text-align: center;
+  padding-top: 10%;
+}
+.ysp-workSummed-chose .ysp-workSummed-chose-button > span:nth-child(2) {
+  display: block;
+  margin: auto 0;
+  height: 100%;
+  width: 50%;
+  color: #fff;
+  background: #4796ed;
+  text-align: center;
+  padding-top: 10%;
+}
 .ysp-workSummedContentShow {
   background: #ececec;
   height: 100vh;
 }
+.ysp-workSummedContentShow .ysp-workSummendContent-overflow {
+  overflow: hidden;
+  border-bottom: 1px solid #ececec;
+  padding: 10px;
+}
+.ysp-workSummedContentShow .ysp-workSummendContentLeft {
+  float: left;
+  width: 80%;
+}
+.ysp-workSummedContentShow .ysp-workSummendContentLeft div:nth-child(1) {
+  margin-bottom: 5px;
+}
+.ysp-workSummedContentShow .ysp-workSummendContentLeft div:nth-child(1) > span:nth-child(1) {
+  color: #000;
+  font-size: 18px;
+  padding-right: 10px;
+}
+.ysp-workSummedContentShow .ysp-workSummendContentLeft div:nth-child(1) > span:nth-child(2) {
+  color: #999;
+}
+.ysp-workSummedContentShow .ysp-workSummendContentLeft div:nth-child(2),
+.ysp-workSummedContentShow .ysp-workSummendContentLeft div:nth-child(3),
+.ysp-workSummedContentShow .ysp-workSummendContentLeft div:nth-child(4) {
+  color: #999;
+}
+.ysp-workSummedContentShow .ysp-workSummendContentLeft div:nth-child(2) > span:nth-child(1),
+.ysp-workSummedContentShow .ysp-workSummendContentLeft div:nth-child(3) > span:nth-child(1),
+.ysp-workSummedContentShow .ysp-workSummendContentLeft div:nth-child(4) > span:nth-child(1) {
+  padding-right: 10px;
+}
+.ysp-workSummedContentShow .ysp-workSummendContentLeft .ysp-workSummend-color {
+  color: red !important;
+}
+.ysp-workSummedContentShow .ysp-workSummendContentRight {
+  float: left;
+  width: 15%;
+  margin-top: 12%;
+}
+.ysp-workSummedContentShow .ysp-workSummendContentRight > span {
+  border: 1px solid #4796ed;
+  color: #4796ed;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.ysp-workSummedContent {
+  background: #fff;
+}
+.ysp-workSummedContent .ysp-workSummendContent-overflow {
+  overflow: hidden;
+  border-bottom: 1px solid #ececec;
+  padding: 10px;
+}
+.ysp-workSummedContent .ysp-workSummendContentLeft {
+  float: left;
+  width: 80%;
+}
+.ysp-workSummedContent .ysp-workSummendContentLeft div:nth-child(1) {
+  margin-bottom: 5px;
+}
+.ysp-workSummedContent .ysp-workSummendContentLeft div:nth-child(1) > span:nth-child(1) {
+  color: #000;
+  font-size: 18px;
+  padding-right: 10px;
+}
+.ysp-workSummedContent .ysp-workSummendContentLeft div:nth-child(1) > span:nth-child(2) {
+  color: #999;
+}
+.ysp-workSummedContent .ysp-workSummendContentLeft div:nth-child(2),
+.ysp-workSummedContent .ysp-workSummendContentLeft div:nth-child(3),
+.ysp-workSummedContent .ysp-workSummendContentLeft div:nth-child(4) {
+  color: #999;
+}
+.ysp-workSummedContent .ysp-workSummendContentLeft div:nth-child(2) > span:nth-child(1),
+.ysp-workSummedContent .ysp-workSummendContentLeft div:nth-child(3) > span:nth-child(1),
+.ysp-workSummedContent .ysp-workSummendContentLeft div:nth-child(4) > span:nth-child(1) {
+  padding-right: 10px;
+}
+.ysp-workSummedContent .ysp-workSummendContentLeft .ysp-workSummend-color {
+  color: red !important;
+}
+.ysp-workSummedContent .ysp-workSummendContentRight {
+  float: left;
+  width: 15%;
+  margin-top: 12%;
+}
+.ysp-workSummedContent .ysp-workSummendContentRight > span {
+  border: 1px solid #4796ed;
+  color: #4796ed;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+/****************汇报给我的总结end*********************/
 /*************新工作台样式****************/
