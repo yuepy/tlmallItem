@@ -220,36 +220,36 @@
           data.time.con.push(m.querySelector("input").value);
         });
       }); //大标题
-      var box = elem.querySelectorAll(".mini-panel");[].map.call(box, (item, index) => {
-        var boxtit = item.querySelectorAll(".mini-panel-title");var tr = item.querySelectorAll(".mini-panel-body tbody tr");[].map.call(boxtit, (item, index) => {
+      var box = elem.querySelectorAll(".mini-panel");[].map.call(box, function (item, index) {
+        var boxtit = item.querySelectorAll(".mini-panel-title");var tr = item.querySelectorAll(".mini-panel-body tbody tr");[].map.call(boxtit, function (item, index) {
           data.boxTit.push(item.textContent);
         });var aftertip = elem.querySelectorAll(".mini-panel")[2].querySelector("tr:last-child").textContent;data.after.tip = aftertip.replace(/\s+/g, ""); //基础信息
         if (index == 0) {
-          [].map.call(tr, (d, i) => {
-            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, (m, n) => {
+          [].map.call(tr, function (d, i) {
+            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (m, n) {
               data.base.tit.push(m.textContent.replace(/\s+/g, ""));
-            });[].map.call(b, (m, n) => {
+            });[].map.call(b, function (m, n) {
               if (m.querySelector("input")) {
                 data.base.con.push(m.querySelector("input").value);
               }
             });
           }); //变动前职位信息
         } else if (index == 1) {
-          [].map.call(tr, (d, i) => {
-            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, (m, n) => {
+          [].map.call(tr, function (d, i) {
+            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (m, n) {
               data.before.tit.push(m.textContent.replace(/\s+/g, ""));
-            });[].map.call(b, (m, n) => {
+            });[].map.call(b, function (m, n) {
               data.before.con.push(m.querySelector("input").value);
             });
           }); //变动后职位信息
         } else if (index == 2) {
-          [].map.call(tr, (d, i) => {
+          [].map.call(tr, function (d, i) {
             if (i != tr.length - 1) {
-              var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, (m, n) => {
+              var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (m, n) {
                 if (m.style.display != "none") {
                   data.after.tit.push(m.textContent.replace(/\s+/g, ""));
                 }
-              });[].map.call(b, (m, n) => {
+              });[].map.call(b, function (m, n) {
                 if (m.style.display != "none") {
                   data.after.con.push(m.querySelector("input").value);
                 }
@@ -257,22 +257,22 @@
             }
           }); //变动方式
         } else if (index == 3) {
-          [].map.call(tr, (d, i) => {
-            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, (m, n) => {
+          [].map.call(tr, function (d, i) {
+            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (m, n) {
               if (m.style.display != "none") {
                 data.method.tit.push(m.textContent.replace(/\s+/g, ""));
               }
-            });[].map.call(b, (m, n) => {
+            });[].map.call(b, function (m, n) {
               if (m.style.display != "none") {
                 data.method.con.push(m.querySelector("input").value);
               }
             });
           }); //薪酬信息
         } else if (index == 4) {
-          [].map.call(tr, (d, i) => {
-            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, (m, n) => {
+          [].map.call(tr, function (d, i) {
+            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (m, n) {
               data.money.tit.push(m.textContent.replace(/\s+/g, ""));
-            });[].map.call(b, (m, n) => {
+            });[].map.call(b, function (m, n) {
               data.money.con.push(m.querySelector("input").value);var readonly = m.querySelector(".mini-buttonedit-readOnly");var minierror = m.querySelector(".mini-error");if (!readonly && m.querySelector(".mini-buttonedit-icon")) {
                 data.money.icon.push("true");
               } else {
@@ -285,10 +285,10 @@
             });
           }); //绩效信息
         } else if (index == 5) {
-          [].map.call(tr, (d, i) => {
-            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, (m, n) => {
+          [].map.call(tr, function (d, i) {
+            var a = d.querySelectorAll("td.form_label");var b = d.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (m, n) {
               data.performed.tit.push(m.textContent.replace(/\s+/g, ""));
-            });[].map.call(b, (m, n) => {
+            });[].map.call(b, function (m, n) {
               if (m.querySelector("input")) {
                 data.performed.con.push(m.querySelector("input").value);var readonly = m.querySelector(".mini-buttonedit-readOnly");var minierror = m.querySelector(".mini-error");if (!readonly && m.querySelector(".mini-buttonedit-icon")) {
                   data.performed.icon.push("true");
@@ -334,7 +334,7 @@
         data.reason.push("true");
       } else {
         data.reason.push("");
-      }var ann = elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a");[].map.call(ann, (item, index) => {
+      }var ann = elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a");[].map.call(ann, function (item, index) {
         data.annex.push(item.textContent);
       }); //审批意见
       var sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");data.surggest.push(sugg.querySelector("textarea").value);if (sugg && sugg.querySelector(".mini-textbox-readOnly")) {
