@@ -239,61 +239,63 @@
     getData_control135_MEA5FQ: function (elem) {
       if (!elem) {
         return;
-      }const data = { processTit: [], time: { tit: [], con: [] }, base: { tit: [], con: [] }, turn: { tit: [], con: [] }, remark: {}, annex: [], total: [], surggest: [], errorTip: {} }; //各项title
-      const processtit = elem.querySelectorAll(".mini-panel .mini-panel-title");[].map.call(processtit, function (item, i) {
-        data.processTit.push(item.textContent);
-      }); //提交日期
-      const timetit = elem.querySelectorAll(".table")[0].querySelectorAll("tbody tr");[].map.call(timetit, function (item, index) {
-        const a = item.querySelectorAll("td:nth-child(2n+1)");const b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
-          data.time.tit.push(d.textContent.replace(/\s+/g, ""));
-        });[].map.call(b, function (m, n) {
-          data.time.con.push(m.querySelector("input").value);
-        });
-      }); //基础信息表格
-      const basetit = elem.querySelectorAll(".table")[1].querySelectorAll("tbody tr");[].map.call(basetit, function (item, index) {
-        const a = item.querySelectorAll(".form_label");const b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
-          data.base.tit.push(d.textContent.replace(/\s+/g, ""));
-        });[].map.call(b, function (m, n) {
-          data.base.con.push(m.querySelector("input").value);
-        });
-      }); //转正表格信息
-      const turntit = elem.querySelectorAll(".table")[2].querySelectorAll("tbody tr");[].map.call(turntit, function (item, index) {
-        const a = item.querySelectorAll(".form_label");const b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
-          data.turn.tit.push(d.textContent.replace(/\s+/g, ""));
-        });[].map.call(b, function (m, n) {
-          data.turn.con.push(m.querySelector("input").value);
-        });
-      }); //备注
-      const mark = elem.querySelectorAll(".table")[3].querySelector("tbody tr td textarea");if (mark) {
-        data.remark = mark.value;
-      } //附件信息
-      const ann = elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a");if (ann) {
-        if (elem.querySelectorAll(".mini-panel")[3] && elem.querySelectorAll(".mini-panel")[3].style.display == "none") {
-          data.annex = "none";
-        }[].map.call(ann, (item, index) => {
-          data.annex.push(item.textContent);
-        });
-      } //总结
-      const total = elem.querySelectorAll(".mini-panel")[4].querySelector("tbody tr td textarea");if (total) {
-        data.total.push(total.placeholder);data.total.push(total.value);
-      } //总结文本框是否可写
-      const totalspan = elem.querySelectorAll(".table")[5].querySelector("tbody tr td .mini-textbox-readOnly");if (totalspan) {
-        data.total.push("true");
       } else {
-        data.total.push("");
-      } //总结框错误提示
-      const errIcon = elem.querySelectorAll(".mini-panel")[4].querySelector("tbody tr td .mini-errorIcon");if (errIcon) {
-        data.errorTip = "true";
-      } else {
-        data.errorTip = "false";
-      } //审批意见
-      const sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");data.surggest.push(sugg.querySelector("textarea").value);if (sugg.querySelector(".mini-textbox-readOnly")) {
-        data.surggest.push("true");
-      } else {
-        data.surggest.push("");
-      }if (elem.querySelector("#approval") && elem.querySelector("#approval").style.display == "none") {
-        data.surggest = [];
-      }return data;
+        var data = { processTit: [], time: { tit: [], con: [] }, base: { tit: [], con: [] }, turn: { tit: [], con: [] }, remark: {}, annex: [], total: [], surggest: [], errorTip: {} }; //各项title
+        var processtit = elem.querySelectorAll(".mini-panel .mini-panel-title");[].map.call(processtit, function (item, i) {
+          data.processTit.push(item.textContent);
+        }); //提交日期
+        var timetit = elem.querySelectorAll(".table")[0].querySelectorAll("tbody tr");[].map.call(timetit, function (item, index) {
+          var a = item.querySelectorAll("td:nth-child(2n+1)");var b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
+            data.time.tit.push(d.textContent.replace(/\s+/g, ""));
+          });[].map.call(b, function (m, n) {
+            data.time.con.push(m.querySelector("input").value);
+          });
+        }); //基础信息表格
+        var basetit = elem.querySelectorAll(".table")[1].querySelectorAll("tbody tr");[].map.call(basetit, function (item, index) {
+          var a = item.querySelectorAll(".form_label");var b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
+            data.base.tit.push(d.textContent.replace(/\s+/g, ""));
+          });[].map.call(b, function (m, n) {
+            data.base.con.push(m.querySelector("input").value);
+          });
+        }); //转正表格信息
+        var turntit = elem.querySelectorAll(".table")[2].querySelectorAll("tbody tr");[].map.call(turntit, function (item, index) {
+          var a = item.querySelectorAll(".form_label");var b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
+            data.turn.tit.push(d.textContent.replace(/\s+/g, ""));
+          });[].map.call(b, function (m, n) {
+            data.turn.con.push(m.querySelector("input").value);
+          });
+        }); //备注
+        var mark = elem.querySelectorAll(".table")[3].querySelector("tbody tr td textarea");if (mark) {
+          data.remark = mark.value;
+        } //附件信息
+        var ann = elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a");if (ann) {
+          if (elem.querySelectorAll(".mini-panel")[3] && elem.querySelectorAll(".mini-panel")[3].style.display == "none") {
+            data.annex = "none";
+          }[].map.call(ann, function (item, index) {
+            data.annex.push(item.textContent);
+          });
+        } //总结
+        var total = elem.querySelectorAll(".mini-panel")[4].querySelector("tbody tr td textarea");if (total) {
+          data.total.push(total.placeholder);data.total.push(total.value);
+        } //总结文本框是否可写
+        var totalspan = elem.querySelectorAll(".table")[5].querySelector("tbody tr td .mini-textbox-readOnly");if (totalspan) {
+          data.total.push("true");
+        } else {
+          data.total.push("");
+        } //总结框错误提示
+        var errIcon = elem.querySelectorAll(".mini-panel")[4].querySelector("tbody tr td .mini-errorIcon");if (errIcon) {
+          data.errorTip = "true";
+        } else {
+          data.errorTip = "false";
+        } //审批意见
+        var sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");data.surggest.push(sugg.querySelector("textarea").value);if (sugg && sugg.querySelector(".mini-textbox-readOnly")) {
+          data.surggest.push("true");
+        } else {
+          data.surggest.push("");
+        }if (elem.querySelector("#approval") && elem.querySelector("#approval").style.display == "none") {
+          data.surggest = [];
+        }return data;
+      }
     },
     doAction_uiControl128_etQXUR: function (data, elem) {
       if (data.eventType == 'change') {
