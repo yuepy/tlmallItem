@@ -127,36 +127,36 @@
     getData_control120_G7MVnc: function (elem) {
       if (!elem) {
         return;
-      }const data = { processTit: [], time: { tit: [], con: [] }, base: { tit: [], con: [] }, contract: { tit: [], con: [] }, applicate: { tit: [], con: [] }, surggest: [], errorTip: {} }; /*各项title*/const processtit = elem.querySelectorAll(".mini-panel .mini-panel-title");[].map.call(processtit, function (item, i) {
+      }var data = { processTit: [], time: { tit: [], con: [] }, base: { tit: [], con: [] }, contract: { tit: [], con: [] }, applicate: { tit: [], con: [] }, surggest: [], errorTip: {} }; /*各项title*/var processtit = elem.querySelectorAll(".mini-panel .mini-panel-title");[].map.call(processtit, function (item, i) {
         data.processTit.push(item.textContent);
       }); //提交日期
-      const timetit = elem.querySelectorAll(".table")[0].querySelectorAll("tbody tr");[].map.call(timetit, function (item, index) {
-        const a = item.querySelectorAll("td:nth-child(2n+1)");const b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
+      var timetit = elem.querySelectorAll(".table")[0].querySelectorAll("tbody tr");[].map.call(timetit, function (item, index) {
+        var a = item.querySelectorAll("td:nth-child(2n+1)");var b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
           data.time.tit.push(d.textContent.replace(/\s+/g, ""));
         });[].map.call(b, function (m, n) {
           data.time.con.push(m.querySelector("input").value);
         });
-      }); /*基础信息表格*/const basetit = elem.querySelectorAll(".mini-panel")[0].querySelectorAll(".mini-panel-body .nui-form-table tr");[].map.call(basetit, function (item, index) {
-        const a = item.querySelectorAll(".form_label");const b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
+      }); /*基础信息表格*/var basetit = elem.querySelectorAll(".mini-panel")[0].querySelectorAll(".mini-panel-body .nui-form-table tr");[].map.call(basetit, function (item, index) {
+        var a = item.querySelectorAll(".form_label");var b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
           data.base.tit.push(d.textContent);
         });[].map.call(b, function (m, n) {
           data.base.con.push(m.querySelector("input").value);
         });
-      }); /*合同信息表格*/const contracttit = elem.querySelectorAll(".mini-panel")[1].querySelectorAll(".mini-panel-body .nui-form-table tr");[].map.call(contracttit, function (item, index) {
-        const a = item.querySelectorAll("td:nth-child(2n+1)");const b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
+      }); /*合同信息表格*/var contracttit = elem.querySelectorAll(".mini-panel")[1].querySelectorAll(".mini-panel-body .nui-form-table tr");[].map.call(contracttit, function (item, index) {
+        var a = item.querySelectorAll("td:nth-child(2n+1)");var b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
           data.contract.tit.push(d.textContent);
         });[].map.call(b, function (m, n) {
           data.contract.con.push(m.querySelector("input").value);
         });
-      }); /* 申请信息*/const applicatetit = elem.querySelectorAll(".mini-panel")[2].querySelectorAll(".mini-panel-body .nui-form-table tr");[].map.call(applicatetit, function (item, index) {
-        const a = item.querySelectorAll("td:nth-child(2n+1)");[].map.call(a, function (d, i) {
+      }); /* 申请信息*/var applicatetit = elem.querySelectorAll(".mini-panel")[2].querySelectorAll(".mini-panel-body .nui-form-table tr");[].map.call(applicatetit, function (item, index) {
+        var a = item.querySelectorAll("td:nth-child(2n+1)");[].map.call(a, function (d, i) {
           data.applicate.tit.push(d.textContent);
         });
-      });const applicatetr1 = elem.querySelectorAll(".mini-panel")[2].querySelector(".mini-panel-body .nui-form-table tr:first-child").querySelectorAll("td:nth-child(2n)");[].map.call(applicatetr1, function (item, index) {
-        const a = item.querySelector("input");data.applicate.con.push(a.value);
-      });const applicatetr2 = elem.querySelectorAll(".mini-panel")[2].querySelector(".mini-panel-body .nui-form-table tr:nth-child(2)").querySelectorAll("td:nth-child(2n)");[].map.call(applicatetr2, function (item, index) {
-        const a = item.querySelector("input");data.applicate.con.push(a.value);
-      });const applicatetr3 = elem.querySelectorAll(".mini-panel")[2].querySelector(".mini-panel-body .nui-form-table tr:nth-child(3)").querySelector("td:nth-child(2n)");data.applicate.con.push(applicatetr3.textContent);const applicatetr4 = elem.querySelectorAll(".mini-panel")[2].querySelector(".mini-panel-body .nui-form-table tr:nth-child(4)").querySelector("textarea");data.applicate.con.push(applicatetr4.value); /*审批意见*/const sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");if (sugg) {
+      });var applicatetr1 = elem.querySelectorAll(".mini-panel")[2].querySelector(".mini-panel-body .nui-form-table tr:first-child").querySelectorAll("td:nth-child(2n)");[].map.call(applicatetr1, function (item, index) {
+        var a = item.querySelector("input");data.applicate.con.push(a.value);
+      });var applicatetr2 = elem.querySelectorAll(".mini-panel")[2].querySelector(".mini-panel-body .nui-form-table tr:nth-child(2)").querySelectorAll("td:nth-child(2n)");[].map.call(applicatetr2, function (item, index) {
+        var a = item.querySelector("input");data.applicate.con.push(a.value);
+      });var applicatetr3 = elem.querySelectorAll(".mini-panel")[2].querySelector(".mini-panel-body .nui-form-table tr:nth-child(3)").querySelector("td:nth-child(2n)");data.applicate.con.push(applicatetr3.textContent);var applicatetr4 = elem.querySelectorAll(".mini-panel")[2].querySelector(".mini-panel-body .nui-form-table tr:nth-child(4)").querySelector("textarea");data.applicate.con.push(applicatetr4.value); /*审批意见*/var sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");if (sugg) {
         data.surggest.push(sugg.querySelector("textarea").value);if (sugg.querySelector(".mini-textbox-readOnly")) {
           data.surggest.push("true");
         } else {

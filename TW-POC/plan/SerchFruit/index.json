@@ -1,0 +1,395 @@
+{
+  "version": "0.1",
+  "id": "SerchFruit",
+  "targetURL": "http://192.168.220.27/WMS/Inventory/InventoryQuery.aspx?FunctionID=5010",
+  "jsFile": "index.js",
+  "requires": {
+    "SupplyDetail": "../SupplyDetail/index.json"
+  },
+  "chineseName": "查询结果",
+  "description": "",
+  "controls": {
+    "control13_EMDTsB": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"div_List_top\"]//SPAN[@id=\"lblReceiptInquiryList\"]",
+              "descendant::SPAN[@id=\"lblReceiptInquiryList\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "SPAN.label_header"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              7,
+              103,
+              154
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "header",
+      "roles": "element,header",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control14_ue2AmT": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "input/button/@value",
+            "prob": 3,
+            "value": {
+              "text": [
+                "返回"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"btnGoBack\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"div_List_top\"]//INPUT[@id=\"btnGoBack\"]",
+              "descendant::INPUT[@id=\"btnGoBack\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "INPUT.button"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "submit"
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "userEvents": "back",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control15_oi54a6": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": [
+              "descendant::DIV[@id=\"div_List\"]//DIV[@id=\"gvInventory_box\"]//TABLE[@id=\"gvInventory\"]/TBODY[1]",
+              "descendant::DIV[@id=\"div_List\"]//DIV[@id=\"gvInventory_box\"]//TABLE[@id=\"gvInventory\"]//TBODY",
+              "descendant::DIV[@id=\"gvInventory_box\"]//TABLE[@id=\"gvInventory\"]//TBODY",
+              "descendant::TABLE[@id=\"gvInventory\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.sBase DIV.sData TABLE.gridview.sDefault.sDefault-Main TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control15_oi54a6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context3_EDHiC9": {
+      "controls": [
+        "control13_EMDTsB",
+        "control14_ue2AmT",
+        "control15_oi54a6"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow12_xCp89U": {
+      "toContexts": [
+        {
+          "toContextId": "context3_EDHiC9"
+        }
+      ]
+    },
+    "flow13_H88Sam": {
+      "fromContextId": "context3_EDHiC9",
+      "fromAction": "click",
+      "fromControlId": "control14_ue2AmT",
+      "toContexts": [
+        {
+          "toContextId": "context3_EDHiC9"
+        }
+      ]
+    },
+    "flow14_p8RI1b": {
+      "fromContextId": "context3_EDHiC9",
+      "fromAction": "doAction",
+      "fromControlId": "control15_oi54a6",
+      "toContexts": [
+        {
+          "toContextId": "context3_EDHiC9"
+        },
+        {
+          "toContextId": "context4_TfxbRF",
+          "toModelId": "SupplyDetail"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page3_dJesal": {
+      "contextId": "context3_EDHiC9",
+      "layout": [
+        {
+          "id": "uiControl13_sOFhXW",
+          "controlId": "control13_EMDTsB",
+          "display": {
+            "adapterId": "header",
+            "type": "header",
+            "title": "SerchFruit",
+            "amStyle": "dark",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl13_sOFhXWheaderLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl14_DQTo5o",
+                  "controlId": "control14_ue2AmT",
+                  "display": {
+                    "adapterId": "clickable",
+                    "type": "button",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl13_sOFhXWheaderRight",
+              "display": {
+                "type": "headerRight",
+                "adapterId": "headerRight",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl15_Vy4ytp",
+          "controlId": "control15_oi54a6",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl15_Vy4ytp",
+                "onGetTemplate": "getTemplate_uiControl15_Vy4ytp"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context3_EDHiC9": [
+          "InventoryList Page"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context3_EDHiC9": [
+          "192.168.220.27/WMS/Inventory/InventoryQuery.aspx?FunctionID=5010",
+          "192.168.220.27/WMS/Inventory/InventoryQuery.aspx?from=listre&FunctionID=81.2654876192446",
+          "192.168.220.27/WMS/Inventory/InventoryQuery.aspx?from=listre&FunctionID=31.036912685462646"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context3_EDHiC9": [
+          [
+            "F",
+            "OrderDiv",
+            "PagerFooter_hdnCurrentPage",
+            "PagerFooter_hdnPageSize",
+            "PagerFooter_hdnSortDirection",
+            "PagerFooter_hdnSortField",
+            "PagerFooter_hdnTotalPages",
+            "PagerFooter_lblPageInfo",
+            "PagerFooter_lnkbtnFirstPage",
+            "PagerFooter_lnkbtnGoTo",
+            "PagerFooter_lnkbtnLastPage",
+            "PagerFooter_lnkbtnNextPage",
+            "PagerFooter_lnkbtnPrePage",
+            "PagerFooter_pagetable",
+            "PagerFooter_txtGoPage",
+            "WindowDiv",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__VIEWSTATE",
+            "__VIEWSTATEGENERATOR",
+            "btnExport",
+            "btnGoBack",
+            "btnRefresh",
+            "div_List",
+            "div_List_top",
+            "div_pager",
+            "gvInventory",
+            "gvInventory_box",
+            "gvInventory_ctl",
+            "gvInventory_ctl_CheckBox",
+            "gvInventory_ctl_chbSelect",
+            "gvInventory_ctl_ctl",
+            "hdnActionID",
+            "hdnFrom",
+            "hdnSelectCallbackFun",
+            "lblMsg",
+            "lblReceiptInquiryList",
+            "more",
+            "up"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context3_EDHiC9": [
+          [
+            "GridViewAlternatingRowStyle",
+            "GridViewHeaderStyle",
+            "GridViewRowStyle",
+            "GridViewRowWidth_",
+            "blank",
+            "button",
+            "div_list",
+            "gridview",
+            "label_header",
+            "label_message",
+            "linklabel",
+            "sBase",
+            "sData",
+            "sDefault",
+            "sDefault-Headers",
+            "sDefault-Main",
+            "sHeader",
+            "sHeaderInner"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context3_EDHiC9": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/COLGROUP",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "TABLE/COLGROUP/COL",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-checkbox",
+            "TR/TD/INPUT-submit",
+            "TR/TD/INPUT-text",
+            "TR/TD/SPAN",
+            "TR/TH/INPUT-checkbox"
+          ]
+        ]
+      }
+    }
+  }
+}

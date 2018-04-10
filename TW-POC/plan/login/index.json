@@ -1,0 +1,578 @@
+{
+  "version": "0.1",
+  "id": "login",
+  "targetURL": "http://192.168.220.27/WMS/login.aspx",
+  "jsFile": "index.js",
+  "requires": {
+    "MenuList": "../MenuList/index.json"
+  },
+  "chineseName": "登陆",
+  "description": "",
+  "controls": {
+    "control0_KRZCaJ": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "img/@src",
+            "prob": 2,
+            "value": {
+              "pathname": "/WMS/Images/lg-logo.png"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"login_head\"]//IMG[@id=\"imgLogin\"]",
+              "descendant::IMG[@id=\"imgLogin\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.width IMG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/IMG[1]"
+          }
+        ]
+      },
+      "intendedRole": "header",
+      "roles": "element,image,button,header",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control1_5MKGrQ": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "value": {
+              "text": [
+                "用户名"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"txtUserName\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"div_login_pop\"]//INPUT[@id=\"txtUserName\"]",
+              "descendant::INPUT[@id=\"txtUserName\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.login-mod DIV.login-mod INPUT.login-un"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[6]/DIV[1]/DIV[2]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control2_DUx3f4": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "value": {
+              "text": [
+                "密码"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"txtPassword\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"div_login_pop\"]//INPUT[@id=\"txtPassword\"]",
+              "descendant::INPUT[@id=\"txtPassword\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.login-mod DIV.login-mod INPUT.login-pwd"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[6]/DIV[1]/DIV[2]/INPUT[2]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "password"
+          }
+        ]
+      },
+      "intendedRole": "passwordbox",
+      "roles": "element,passwordbox,textbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control3_Ktdl0G": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"chbAutoLogin\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"div_login_pop\"]//INPUT[@id=\"chbAutoLogin\"]",
+              "descendant::INPUT[@id=\"chbAutoLogin\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.login-mod DIV.login-rd INPUT.inputcheckbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[6]/DIV[1]/DIV[3]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "checkbox"
+          }
+        ]
+      },
+      "intendedRole": "checkbox",
+      "roles": "element,checkbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control4_I3H5lb": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"chbSavePwd\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"div_login_pop\"]//INPUT[@id=\"chbSavePwd\"]",
+              "descendant::INPUT[@id=\"chbSavePwd\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.login-mod DIV.login-rd INPUT.inputcheckbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[6]/DIV[1]/DIV[3]/INPUT[2]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "checkbox"
+          }
+        ]
+      },
+      "intendedRole": "checkbox",
+      "roles": "element,checkbox",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control5_FaIm1n": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "input/button/@value",
+            "prob": 3,
+            "value": {
+              "text": [
+                "登录"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"btnLogin\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"div_login_pop\"]//INPUT[@id=\"btnLogin\"]",
+              "descendant::INPUT[@id=\"btnLogin\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.login-mod DIV.login-btn-panel INPUT.login-btn"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[6]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "submit"
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context0_IoQ6Cr": {
+      "controls": [
+        "control0_KRZCaJ",
+        "control1_5MKGrQ",
+        "control2_DUx3f4",
+        "control3_Ktdl0G",
+        "control4_I3H5lb",
+        "control5_FaIm1n"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow0_7yiCTs": {
+      "toContexts": [
+        {
+          "toContextId": "context0_IoQ6Cr"
+        }
+      ]
+    },
+    "flow1_rLPIWs": {
+      "fromContextId": "context0_IoQ6Cr",
+      "fromAction": "click",
+      "fromControlId": "control3_Ktdl0G",
+      "toContexts": [
+        {
+          "toContextId": "context0_IoQ6Cr"
+        }
+      ]
+    },
+    "flow2_811tuk": {
+      "fromContextId": "context0_IoQ6Cr",
+      "fromAction": "click",
+      "fromControlId": "control1_5MKGrQ",
+      "toContexts": [
+        {
+          "toContextId": "context0_IoQ6Cr"
+        }
+      ]
+    },
+    "flow3_cWAoya": {
+      "fromContextId": "context0_IoQ6Cr",
+      "fromAction": "click",
+      "fromControlId": "control4_I3H5lb",
+      "toContexts": [
+        {
+          "toContextId": "context0_IoQ6Cr"
+        }
+      ]
+    },
+    "flow4_B3qsXO": {
+      "fromContextId": "context0_IoQ6Cr",
+      "fromAction": "click",
+      "fromControlId": "control5_FaIm1n",
+      "toContexts": [
+        {
+          "toContextId": "context0_IoQ6Cr"
+        },
+        {
+          "toContextId": "context1_1vmgkt",
+          "toModelId": "MenuList"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0_NTolIU": {
+      "contextId": "context0_IoQ6Cr",
+      "layout": [
+        {
+          "id": "uiControl0_Cz0TMV",
+          "controlId": "control0_KRZCaJ",
+          "display": {
+            "adapterId": "header",
+            "type": "header",
+            "amStyle": "dark",
+            "title": "Login",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl0_Cz0TMVheaderLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl0_Cz0TMVheaderRight",
+              "display": {
+                "type": "headerRight",
+                "adapterId": "headerRight",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl1_l4VFvp",
+          "controlId": "control1_5MKGrQ",
+          "display": {
+            "adapterId": "textbox",
+            "type": "textbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl2_M3Gpia",
+          "controlId": "control2_DUx3f4",
+          "display": {
+            "adapterId": "passwordbox",
+            "type": "passwordbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl3_VnHm56",
+          "controlId": "control3_Ktdl0G",
+          "display": {
+            "adapterId": "checkbox",
+            "type": "checkbox",
+            "text": "自动登陆                    ",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl4_FpRwZt",
+          "controlId": "control4_I3H5lb",
+          "display": {
+            "adapterId": "checkbox",
+            "type": "checkbox",
+            "text": "保存密码",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl5_kBE5nB",
+          "controlId": "control5_FaIm1n",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0_IoQ6Cr": [
+          "PowerWMS6"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0_IoQ6Cr": [
+          "192.168.220.27/WMS/login.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0_IoQ6Cr": [
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "__VIEWSTATEGENERATOR",
+            "bk",
+            "btnLogin",
+            "chbAutoLogin",
+            "chbSavePwd",
+            "div_login_pop",
+            "footer",
+            "form",
+            "imgLogin",
+            "imgValidateCode",
+            "lblAutoLogin",
+            "lblMsg",
+            "lblPhone",
+            "lblQQCustomService",
+            "lblRememberMe",
+            "lblSupport",
+            "lblUserLogin",
+            "lblValidateCode",
+            "login_head",
+            "now",
+            "tdValidateCode",
+            "trValidateCode",
+            "txtPassword",
+            "txtUserName",
+            "validateCode"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0_IoQ6Cr": [
+          [
+            "bIn",
+            "bNav",
+            "banner",
+            "bk",
+            "footer",
+            "inputcheckbox",
+            "login-btn",
+            "login-btn-panel",
+            "login-mod",
+            "login-pwd",
+            "login-rd",
+            "login-un",
+            "phone",
+            "point",
+            "qq",
+            "title",
+            "width",
+            "zd"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0_IoQ6Cr": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DD/A/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-checkbox",
+            "DIV/DIV/INPUT-password",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/DL/DD",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "DL/DD/A",
+            "DL/DD/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/DL",
+            "FORM/DIV/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/IMG",
+            "TD/DIV/INPUT-null",
+            "TD/DIV/SPAN",
+            "TR/TD/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -2249,11 +2249,30 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
 }
 /***********************************分公司离职管理（解除） end*******************************************/
 /***********************************离职管理（辞职） start*******************************************/
+.ysp-turn-wrap .ysp-turn-box {
+  position: relative;
+}
+.ysp-turn-wrap .ysp-turn-box li {
+  position: relative;
+}
+.ysp-turn-wrap .ysp-turn-box li i.ysp-arrow-down {
+  display: inline-block;
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-top: 15px;
+  background: url(../local/img/icon2.gif) no-repeat 3px 1px;
+}
+.ysp-turn-wrap .ysp-turn-box li i.ysp_mini_errorIcon {
+  display: inline-block;
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-top: 15px;
+  background: url("../local/img/error.png") 0px 0px no-repeat;
+}
 .ysp-turn-wrap .ysp-turn-box .ysp-txt-tip {
   color: red;
-}
-.ysp-turn-wrap .ysp-turn-box .ysp-arrow-down {
-  background: url(../local/img/icon2.gif) no-repeat right 13px;
 }
 .ysp-turn-wrap .ysp-turn-box textarea {
   background: #fff;
@@ -2261,19 +2280,42 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_content {
 }
 .ysp-turn-wrap .ysp-turn-box .ysp-sel-box {
   position: absolute;
-  top: 0;
+  z-index: 99;
   left: 0;
-  bottom: 0;
-  right: 0;
+  width: 100%;
+  max-height: 160px;
   background: #fff;
-  width: 80%;
-  max-height: 300px;
   overflow-y: scroll;
   border: 1px solid #dcdcdc;
 }
 .ysp-turn-wrap .ysp-turn-box .ysp-sel-box span {
   display: block;
+  height: 22px;
+  line-height: 22px;
+  font-size: 14px;
+  color: #666;
   text-align: center;
+}
+.ysp-turn-wrap .ysp-turn-box .ysp-sel-box span:active {
+  background: #efefef;
+}
+.ysp-turn-wrap .ysp-turn-box #mpop1 {
+  top: 280px;
+}
+.ysp-turn-wrap .ysp-turn-box #mpop2 {
+  top: 324px;
+}
+.ysp-turn-wrap .ysp-turn-box #mpop3 {
+  top: 368px;
+}
+.ysp-turn-wrap .ysp-turn-box #mpop4 {
+  top: 412px;
+}
+.ysp-turn-wrap .ysp-turn-box #mpop5 {
+  top: 468px;
+}
+.ysp-turn-wrap .ysp-turn-box #ppop1 {
+  top: 198px;
 }
 /***********************************离职管理（辞职） end*******************************************/
 /***********************************总部月度编制变动 start*******************************************/
