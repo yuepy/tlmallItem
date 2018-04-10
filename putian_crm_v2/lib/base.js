@@ -318,7 +318,7 @@
         case 'atMyReport'://at我的报告 一级菜单
           task.title = "myReport"
           break;
-        case 'workSummed'://汇报给我的报告 一级菜单
+        case 'reportAtMeSummed'://汇报给我的报告 一级菜单
           task.title = "GZZJYD"
           break;
         default:
