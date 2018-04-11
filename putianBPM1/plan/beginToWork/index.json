@@ -272,6 +272,28 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control169_1DJsHs": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control169_1DJsHs"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -283,11 +305,12 @@
         "control96_dSMcNW",
         "control97_pdThem",
         "control98_mgKI7U",
-        "control141_TUMALw"
+        "control141_TUMALw",
+        "control169_1DJsHs"
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&beginToWork"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*&beginToWork"
       ]
     }
   },
@@ -470,6 +493,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl162_QmRF5r",
+          "controlId": "control169_1DJsHs",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl162_QmRF5r",
+                "onGetTemplate": "getTemplate_uiControl162_QmRF5r"
+              }
+            }
+          }
         }
       ]
     }
@@ -525,6 +563,14 @@
             "mini-$",
             "mini-$body$",
             "tabs"
+          ],
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs",
+            "toast"
           ]
         ]
       }

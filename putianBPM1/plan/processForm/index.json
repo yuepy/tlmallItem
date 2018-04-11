@@ -586,6 +586,28 @@
       },
       "roles": "",
       "monitored": false
+    },
+    "control168_3Cu2Vn": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control168_3Cu2Vn"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -603,11 +625,12 @@
         "control41_0ETlac",
         "control61_S2UifR",
         "control63_Pt9BN8",
-        "control67_28ok7e"
+        "control67_28ok7e",
+        "control168_3Cu2Vn"
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem.jsp\\?.*&processForm"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*&processForm"
       ]
     }
   },
@@ -936,6 +959,21 @@
           }
         },
         {
+          "id": "uiControl161_GJsvcQ",
+          "controlId": "control168_3Cu2Vn",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl161_GJsvcQ",
+                "onGetTemplate": "getTemplate_uiControl161_GJsvcQ"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl32_XxUHn7",
           "controlId": "control35_gNPFoX",
           "display": {
@@ -1021,7 +1059,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=274787&_t=858941&_winid=w4257",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=261676",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294850&processForm",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317748&processForm"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317748&processForm",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=269975&processForm"
         ],
         "context10_zlXaLZ": [
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=867767&_winid=w6448",

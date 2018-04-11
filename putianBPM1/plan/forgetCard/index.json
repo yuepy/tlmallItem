@@ -320,6 +320,28 @@
       "text": "\n                                                                         忘打卡日期\n                        ",
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "customJS": "if(elem.textContent.indexOf(\"忘打卡日期\")!==-1){return true;}else{return false;}"
+    },
+    "control170_vh304t": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control170_vh304t"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -331,13 +353,14 @@
         "control102_zdSDBC",
         "control103_ghem1D",
         "control116_UrzIqW",
-        "control117_OKznTP"
+        "control117_OKznTP",
+        "control170_vh304t"
       ],
       "anchors": [
         "control125_1lma3o"
       ],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?.*&forgetCard"
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*&forgetCard"
       ]
     }
   },
@@ -494,6 +517,21 @@
           }
         },
         {
+          "id": "uiControl163_ZTzpPT",
+          "controlId": "control170_vh304t",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl163_ZTzpPT",
+                "onGetTemplate": "getTemplate_uiControl163_ZTzpPT"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl109_ZlPv82",
           "controlId": "control116_UrzIqW",
           "display": {
@@ -544,7 +582,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?forgetCard&workItemID=284531&_t=620269&_winid=w2655",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?forgetCard&workItemID=284359&_t=756247&_winid=w2375",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284359&forgetCard",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284668&forgetCard"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284668&forgetCard",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=303988&forgetCard"
         ],
         "context7_6oqdXk": [
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=682806&_winid=w3389",

@@ -186,8 +186,10 @@
       if (!elem) {
         return;
       }if (elem) {
-        var data = [];var table1 = elem.querySelector(".nui-form-table");if (table1) {
-          var title = table1.querySelectorAll("td.form_label");for (var i = 0; i < title.length; i++) {
+        var data = [];var table1 = elem.querySelector(".nui-form-table");var time = elem.ownerDocument.querySelector("input[name='createTime']");if (table1) {
+          var title = table1.querySelectorAll("td.form_label");if (time) {
+            data.push({ title: "提交日期", content: time.value });
+          }for (var i = 0; i < title.length; i++) {
             var obj = { title: "", content: "" };obj.title = title[i].textContent.trim();if (title[i].nextElementSibling.querySelectorAll("input[type='text']").length == 1) {
               obj.content = title[i].nextElementSibling.querySelectorAll("input")[0].value;
             } else {
