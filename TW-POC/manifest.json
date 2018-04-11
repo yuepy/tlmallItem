@@ -1,0 +1,72 @@
+{
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.6.0",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [],
+      "ignore": []
+    },
+    "resource_inject": []
+  },
+  "override_urls": [],
+  "adapter_urls": [
+    {
+      "title": "login",
+      "url": "adapter://TW-POC/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.27\\/WMS\\/login\\.aspx"
+      ],
+      "demo": [
+        "http://192.168.220.27/WMS/login.aspx"
+      ]
+    },
+    {
+      "title": "SerchFruit",
+      "url": "adapter://TW-POC/plan/SerchFruit/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.27\\/WMS\\/Inventory\\/InventoryQuery\\.aspx\\?FunctionID=5010"
+      ],
+      "demo": [
+        "http://192.168.220.27/WMS/Inventory/InventoryQuery.aspx?FunctionID=5010"
+      ]
+    },
+    {
+      "title": "MenuList",
+      "url": "adapter://TW-POC/plan/MenuList/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.27\\/WMS\\/Frame_Main\\.aspx\\?from=Login"
+      ],
+      "demo": [
+        "http://192.168.220.27/WMS/Frame_Main.aspx?from=Login"
+      ]
+    },
+    {
+      "title": "SupplyDetail",
+      "url": "adapter://TW-POC/plan/SupplyDetail/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.27\\/WMS\\/Configuration\\/Sku\\.aspx\\?from=list&ispopup=Y&ID=%e4%bb%a3%e4%bf%9d%e7%ae%a1&ID2=1001901585047010&lang=%3C%%20=Lang4UI%20%%3E&style=%3C%%20=Style4UI%20%%3E&ckb=1"
+      ],
+      "demo": [
+        "http://192.168.220.27/WMS/Configuration/Sku.aspx?from=list&ispopup=Y&ID=%e4%bb%a3%e4%bf%9d%e7%ae%a1&ID2=1001901585047010&lang=%3C%%20=Lang4UI%20%%3E&style=%3C%%20=Style4UI%20%%3E&ckb=1"
+      ]
+    },
+    {
+      "title": "StockSerch",
+      "url": "adapter://TW-POC/plan/StockSerch/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.27\\/WMS\\/Inventory\\/InventoryQuery\\.aspx\\?FunctionID=5010"
+      ],
+      "demo": [
+        "http://192.168.220.27/WMS/Inventory/InventoryQuery.aspx?FunctionID=5010"
+      ]
+    }
+  ],
+  "name": "物流POC-SIT",
+  "default_url": "http://192.168.220.27/WMS/login.aspx",
+  "scope": "TW-POC",
+  "start_url": "enterplorer://TW-POC/local/index.html",
+  "update_time": 1523323756911
+}

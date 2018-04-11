@@ -1,0 +1,372 @@
+{
+  "version": "0.1",
+  "id": "MenuList",
+  "targetURL": "http://192.168.220.27/WMS/Frame_Main.aspx?from=Login",
+  "jsFile": "index.js",
+  "requires": {
+    "StockSerch": "../StockSerch/index.json"
+  },
+  "chineseName": "菜单列表",
+  "description": "",
+  "controls": {
+    "control6_Nzi2yQ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"header\"]/DIV[2]/DIV[1]",
+              "descendant::DIV[@id=\"header\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              9
+            ],
+            "value": "DIV.head-mid DIV.strmenu"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/DIV[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "intendedRole": "header",
+      "roles": "element,header",
+      "monitored": true,
+      "frameXPath": "//frame[@name='banner']<<IFRAME>>"
+    },
+    "control7_nkmrsC": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "库存管理"
+              ],
+              "visText": [
+                "库存管理"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "库存管理"
+              ],
+              "visText": [
+                "库存管理"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"FormMenu\"]//DIV[@id=\"MenuDiv\"]/TABLE[1]/TBODY[1]/TR[7]/TD[2]/A[1]",
+              "descendant::DIV[@id=\"MenuDiv\"]/TABLE[1]/TBODY[1]/TR[7]/TD[2]/A[1]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[7]/TD[2]/A[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": true,
+      "frameXPath": "//frame[@name='contents']<<IFRAME>>"
+    },
+    "control9_T1yJLX": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"FormMenu\"]//DIV[@id=\"MenuDiv\"]/TABLE[1]/TBODY[1]/TR[8]/TD[2]",
+              "descendant::DIV[@id=\"MenuDiv\"]/TABLE[1]/TBODY[1]/TR[8]/TD[2]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[8]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control9_T1yJLX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//frame[@name='contents']<<IFRAME>>"
+    },
+    "control19_2Z2TvW": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"FormMenu\"]//DIV[@id=\"MenuDiv\"]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"MenuDiv\"]/TABLE[1]/TBODY[1]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control19_2Z2TvW"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//frame[@name='contents']<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context1_1vmgkt": {
+      "controls": [
+        "control6_Nzi2yQ",
+        "control7_nkmrsC",
+        "control9_T1yJLX",
+        "control19_2Z2TvW"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow5_tJ1Atm": {
+      "toContexts": [
+        {
+          "toContextId": "context1_1vmgkt"
+        }
+      ]
+    },
+    "flow6_psAx2b": {
+      "fromContextId": "context1_1vmgkt",
+      "fromAction": "click",
+      "fromControlId": "control7_nkmrsC",
+      "toContexts": [
+        {
+          "toContextId": "context1_1vmgkt"
+        }
+      ]
+    },
+    "flow9_ADEXBk": {
+      "fromContextId": "context1_1vmgkt",
+      "fromAction": "doAction",
+      "fromControlId": "control9_T1yJLX",
+      "toContexts": [
+        {
+          "toContextId": "context1_1vmgkt"
+        },
+        {
+          "toContextId": "context2_5UoNmf",
+          "toModelId": "StockSerch"
+        }
+      ]
+    },
+    "flow16_2KP1Cv": {
+      "fromContextId": "context1_1vmgkt",
+      "fromAction": "doAction",
+      "fromControlId": "control19_2Z2TvW",
+      "toContexts": [
+        {
+          "toContextId": "context1_1vmgkt"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page1_oaPX5a": {
+      "contextId": "context1_1vmgkt",
+      "layout": [
+        {
+          "id": "uiControl6_cUbiQT",
+          "controlId": "control6_Nzi2yQ",
+          "display": {
+            "adapterId": "header",
+            "type": "header",
+            "amStyle": "dark",
+            "title": " MenuList",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl6_cUbiQTheaderLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl6_cUbiQTheaderRight",
+              "display": {
+                "type": "headerRight",
+                "adapterId": "headerRight",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl19_x5dIMr",
+          "controlId": "control19_2Z2TvW",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl19_x5dIMr",
+                "onGetTemplate": "getTemplate_uiControl19_x5dIMr"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl7_nTNB87",
+          "controlId": "control7_nkmrsC",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "amStyle": "alert",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl9_l3lMyz",
+          "controlId": "control9_T1yJLX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl9_l3lMyz",
+                "onGetTemplate": "getTemplate_uiControl9_l3lMyz"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context1_1vmgkt": [
+          "PowerWMS6"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context1_1vmgkt": [
+          "192.168.220.27/WMS/Frame_Main.aspx?from=Login"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context1_1vmgkt": [
+          []
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context1_1vmgkt": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context1_1vmgkt": [
+          [
+            "-/-/FRAME",
+            "-/-/FRAMESET",
+            "-/FRAMESET/FRAME",
+            "-/FRAMESET/FRAMESET",
+            "FRAMESET/FRAMESET/FRAME",
+            "FRAMESET/FRAMESET/FRAMESET",
+            "FRAMESET/FRAMESET/NOFRAMES"
+          ]
+        ]
+      }
+    }
+  }
+}
