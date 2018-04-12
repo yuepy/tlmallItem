@@ -1370,6 +1370,8 @@ header{
     	}
       >label{
       	font-size: @fontBase;
+        font-family: YaHei;
+        font-weight:500;//zyt2018.4.11
       	color:@fontBlack;
         text-align: right;
         overflow-y: hidden;
@@ -1531,11 +1533,13 @@ header{
           overflow-y: hidden;
     			overflow-x: auto;
     			white-space: nowrap;
+          font-weight:500;
         }
         label{
           color:@fontBlack;
           font-size: @fontBase;
           width:60%;
+          font-weight:500;
         }
       }
     }
@@ -2084,7 +2088,7 @@ div[data-ysp-modelid="saleReturnApplySummary"]{
 /*--------------------忘打卡------------------------*/
 div[data-ysp-modelid="forgetCard"],div[data-ysp-modelid="askForLeave"],div[data-ysp-modelid="addWork"],div[data-ysp-modelid="visitRelative"],div[data-ysp-modelid="beginToWork"],div[data-ysp-modelid="employeeHire"]{
   .ysp-Approval-opinions{
-    margin:10px;
+    margin:10px 10px 80px 10px;
   }
 }
 .ysp_hrDownload{
@@ -2139,6 +2143,7 @@ div[data-ysp-modelid="beginToWork"]{
       overflow-y:hidden;
       overflow-x:auto;
       white-space:nowrap;
+      font-weight:500;
     }
   }
 }
@@ -2156,6 +2161,11 @@ div[data-ysp-modelid="addWork"]{
     .ysp-flowsheet-twoPart-card{
       margin:10px;
       margin-top: 0;
+      >div{
+        label{
+          font-weight:500;
+        }
+      }
     }
     .ysp_border{
       padding: 0 10px;

@@ -1375,6 +1375,8 @@ header .btn:hover {
 }
 .ysp-flowsheet .ysp-flowsheet-onePart > div > label {
   font-size: 14px;
+  font-family: YaHei;
+  font-weight: 500;
   color: #414141;
   text-align: right;
   overflow-y: hidden;
@@ -1535,11 +1537,13 @@ header .btn:hover {
   overflow-y: hidden;
   overflow-x: auto;
   white-space: nowrap;
+  font-weight: 500;
 }
 .ysp-flowsheet .ysp-flowsheet-twoPart .ysp-flowsheet-twoPart-card > div label {
   color: #414141;
   font-size: 14px;
   width: 60%;
+  font-weight: 500;
 }
 .ysp-rejectsStatus {
   background: white;
@@ -2049,7 +2053,7 @@ div[data-ysp-modelid="addWork"] .ysp-Approval-opinions,
 div[data-ysp-modelid="visitRelative"] .ysp-Approval-opinions,
 div[data-ysp-modelid="beginToWork"] .ysp-Approval-opinions,
 div[data-ysp-modelid="employeeHire"] .ysp-Approval-opinions {
-  margin: 10px;
+  margin: 10px 10px 80px 10px;
 }
 .ysp_hrDownload {
   width: 100%;
@@ -2102,6 +2106,7 @@ div[data-ysp-modelid="beginToWork"] .ysp-total {
   overflow-y: hidden;
   overflow-x: auto;
   white-space: nowrap;
+  font-weight: 500;
 }
 /*--------------------加班申请------------------------*/
 div[data-ysp-modelid="addWork"] .ysp-flowsheet,
@@ -2117,6 +2122,9 @@ div[data-ysp-modelid="addWork"] .ysp-flowsheet {
 div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp-flowsheet-twoPart-card {
   margin: 10px;
   margin-top: 0;
+}
+div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp-flowsheet-twoPart-card > div label {
+  font-weight: 500;
 }
 div[data-ysp-modelid="addWork"] .ysp-flowsheet .ysp_border {
   padding: 0 10px;
