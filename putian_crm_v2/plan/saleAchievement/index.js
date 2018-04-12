@@ -191,10 +191,26 @@
       }var modelTable = elem.querySelector('table[id^="model-table"]');var echartDatas = [];if (modelTable) {
         var businessData = [];var trs = modelTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = modelTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(modelTable.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -224,10 +240,26 @@
       }var salerManTable = elem.querySelector('table[id^="salerMan-table"]');var echartDatas = [];if (salerManTable) {
         var businessData = [];var trs = salerManTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = salerManTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(salerManTable.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -257,10 +289,26 @@
       }var saleTable0 = elem.querySelector('table[id^="sale-table0"]');var echartDatas = [];if (saleTable0) {
         var businessData = [];var table0 = saleTable0.parentElement.parentElement.parentElement;var table0Ths = table0.querySelectorAll("tr")[0].querySelectorAll("th");var table0Text0 = table0Ths[0].textContent;var table0Text1 = table0Ths[1].textContent;var trs = saleTable0.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable0.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable0.parentElement.parentElement.previousElementSibling.textContent);var clickFlag;if (trs.length >= 2) {
@@ -289,10 +337,21 @@
       }var saleTable1 = elem.querySelector('table[id^="sale-table1"]');var echartDatas = [];if (saleTable1) {
         var businessData = [];var table1 = saleTable1.parentElement.parentElement.parentElement;var table1Ths = table1.querySelectorAll("tr")[0].querySelectorAll("th");var table1Text0 = table1Ths[0].textContent;var table1Text1 = table1Ths[1].textContent;var trs = saleTable1.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable1.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable1.parentElement.parentElement.previousElementSibling.textContent);var clickFlag;if (trs.length >= 2) {
@@ -322,10 +381,21 @@
         var businessData = []; //销量和销售额总和
         var table2 = saleTable2.parentElement.parentElement.parentElement;var table2Ths = table2.querySelectorAll("tr")[0].querySelectorAll("th");var table2Text0 = table2Ths[0].textContent;var table2Text1 = table2Ths[1].textContent;var trs = saleTable2.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable2.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable2.parentElement.parentElement.previousElementSibling.textContent);var clickFlag;if (trs.length >= 2) {
@@ -355,10 +425,21 @@
         var businessData = []; //销量和销售额总和
         var table3 = saleTable3.parentElement.parentElement.parentElement;var table3Ths = table3.querySelectorAll("tr")[0].querySelectorAll("th");var table3Text0 = table3Ths[0].textContent;var table3Text1 = table3Ths[1].textContent;var trs = saleTable3.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable3.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable3.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -388,10 +469,26 @@
       }var bizUnitTable = elem.querySelector('table[id^="bizUnit-table"]');var echartDatas = [];if (bizUnitTable) {
         var businessData = [];var trs = bizUnitTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = bizUnitTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(bizUnitTable.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -421,10 +518,26 @@
       }var custTable = elem.querySelector('table[id^="cust-table"]');var echartDatas = [];if (custTable) {
         var businessData = [];var trs = custTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = custTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(custTable.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -454,10 +567,26 @@
       }var officeTable = elem.querySelector('table[id^="office-table"]');var echartDatas = [];if (officeTable) {
         var businessData = [];var trs = officeTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = officeTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(officeTable.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -487,10 +616,26 @@
       }var projectTable = elem.querySelector('table[id^="project-table"]');var echartDatas = [];if (projectTable) {
         var businessData = [];var trs = projectTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = projectTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(projectTable.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -521,10 +666,26 @@
         var businessData = []; //销量和销售额总和
         var table4 = saleTable4.parentElement.parentElement.parentElement;var table4Ths = table4.querySelectorAll("tr")[0].querySelectorAll("th");var table4Text0 = table4Ths[0].textContent;var table4Text1 = table4Ths[1].textContent;var trs = saleTable4.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable4.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable4.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -555,10 +716,26 @@
         var businessData = []; //销量和销售额总和
         var table5 = saleTable5.parentElement.parentElement.parentElement;var table5Ths = table5.querySelectorAll("tr")[0].querySelectorAll("th");var table5Text0 = table5Ths[0].textContent;var table5Text1 = table5Ths[1].textContent;var trs = saleTable5.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable5.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable5.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -589,10 +766,26 @@
         var businessData = []; //销量和销售额总和
         var table6 = saleTable6.parentElement.parentElement.parentElement;var table6Ths = table6.querySelectorAll("tr")[0].querySelectorAll("th");var table6Text0 = table6Ths[0].textContent;var table6Text1 = table6Ths[1].textContent;var trs = saleTable6.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable6.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable6.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -623,10 +816,26 @@
         var businessData = []; //销量和销售额总和
         var table7 = saleTable7.parentElement.parentElement.parentElement;var table7Ths = table7.querySelectorAll("tr")[0].querySelectorAll("th");var table7Text0 = table7Ths[0].textContent;var table7Text1 = table7Ths[1].textContent;var trs = saleTable7.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable7.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable7.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -657,10 +866,26 @@
         var businessData = []; //销量和销售额总和
         var table8 = saleTable8.parentElement.parentElement.parentElement;var table8Ths = table8.querySelectorAll("tr")[0].querySelectorAll("th");var table8Text0 = table8Ths[0].textContent;var table8Text1 = table8Ths[1].textContent;var trs = saleTable8.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable8.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable8.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -691,10 +916,26 @@
         var businessData = []; //销量和销售额总和
         var table9 = saleTable9.parentElement.parentElement.parentElement;var table9Ths = table9.querySelectorAll("tr")[0].querySelectorAll("th");var table9Text0 = table9Ths[0].textContent;var table9Text1 = table9Ths[1].textContent;var trs = saleTable9.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable9.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable9.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -725,10 +966,26 @@
         var businessData = []; //销量和销售额总和
         var table10 = saleTable10.parentElement.parentElement.parentElement;var table10Ths = table10.querySelectorAll("tr")[0].querySelectorAll("th");var table10Text0 = table10Ths[0].textContent;var table10Text1 = table10Ths[1].textContent;var trs = saleTable10.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable10.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable10.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -759,10 +1016,26 @@
         var businessData = []; //销量和销售额总和
         var table11 = saleTable11.parentElement.parentElement.parentElement;var table11Ths = table11.querySelectorAll("tr")[0].querySelectorAll("th");var table11Text0 = table11Ths[0].textContent;var table11Text1 = table11Ths[1].textContent;var trs = saleTable11.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = saleTable11.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(saleTable11.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -792,10 +1065,26 @@
       }var branchTable = elem.querySelector('table[id^="branch-table"]');var echartDatas = [];if (branchTable) {
         var businessData = [];var trs = branchTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
+            // if (subIndex == 0) {
+            //   titles.push(ysp.customHelper.trim(subItem.textContent));
+            // } else {
+            //   item.push(ysp.customHelper.trim(subItem.textContent));
+            // }
+            //判断有“HUAWEI”字样的去掉此文字
+            if (subItem.tagName.toLocaleLowerCase() == "th") {
+              if (subIndex == 0) {
+                titles.push(ysp.customHelper.trim(subItem.textContent));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
+              if (subIndex == 0) {
+                var subString = subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
+                  subString = subString.split("HUAWEI")[1];
+                }titles.push(ysp.customHelper.trim(subString));
+              } else {
+                item.push(ysp.customHelper.trim(subItem.textContent));
+              }
             }
           });content.push(item);
         });var flag = branchTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = ysp.customHelper.trim(branchTable.parentElement.parentElement.previousElementSibling.textContent); //是否可以钻取标识
@@ -819,5 +1108,5 @@
       var selfTemplate = 'export default class extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n    \tactive: true,\n    }\n  }\n  handlerClick(){\n    this.setState({active: !this.state.active})\n  }\n\n  render() {\n    var datas = this.props.customData || [];\n    var handler = this.props.customHandler;\n    return (\n      <div ref="root" style={{padding:\'0 5px\'}}>\n        {\n          datas.length != 0\n            ? \n          <div className=\'ysp-sale-achievement-header-wrapper\'>\n            <div className=\'ysp-sale-achievement-header-container\' onClick={this.handlerClick.bind(this)}>\n                <i className="branch"></i>\n                <span>{datas.length !=0 ? datas[0].businessData.textName : ""}</span>\n                <i className={this.state.active ? \'active\' : \'\'}></i>\n            </div>\n            <div style = {{display : this.state.active ? \'block\' : \'none\' }}>\n                {\n                  datas && datas.map((item)=>{\n                     return (\n                       <div>\n                         {\n                           <DataGrid\n                           customData = {item.businessData}\n                           customHandler = {handler}                              \n                           />\n                         }\n                       </div>\n                     )\n                  })\n                }\n           </div>\n        \t</div>\n            :\n          <div></div>  \n        }\n        \n      </div>\n    );\n  }\n  componentDidMount(){\n    this.tooltip = new ToolTip(this.refs.root);\n  }\n  componentWillUnmount(){\n    this.tooltip.unregister();\n  }\n}\n\nclass DataGrid extends React.Component{\n  constructor(props){\n    super(props);\n    this.state = {open:false}\n  }\n  switch(){\n    this.setState({open:!this.state.open})\n  }\n  dbClick = (e) =>{\n    var index = e.currentTarget.dataset.index;\n    var title = e.currentTarget.dataset.title;\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        data: {\n          index:index,\n          title:title\n        },\n        eventType: \'dbClick\' \n      })\n    }\n  }\n  render(){\n    var businessData = this.props.customData || [];\n    return(\n       <div>\n        {\n          businessData.flagUp == false && businessData.flagDown == false ? \n          <div className="ysp-sale-achievement-grid-wrapper" style={{width: \'98%\'}}>\n            <div className="ysp-sale-achievement-grid-overlay" style={{width:\'inherit\'}}>\n              <div></div>\n            </div>\n            <div className="ysp-sale-achievement-grid-content">\n               <div>{businessData && businessData.titles && businessData.titles.map((item,index)=><span className= {businessData.clickFlag == "" || businessData.clickFlag == 0 ? \'ysp-sale-achievement-text-color\' : \'\'}><span data-item-tiptool={true}  onClick={this.dbClick.bind(this)} data-index = {index}  data-title = {businessData.businessTitle != \'\' ? businessData.businessTitle : businessData.textName}>{item}</span></span>)}</div>\n            <div>\n               <table>\n                 {businessData && businessData.content && businessData.content.map((item,index)=>\n                   <tr>{item.map((subItem)=>{return index == 0 ? (<th>{subItem}</th>) : (<td>{subItem}</td>)})}</tr>\n                 )}\n               </table>\n            </div>\n           </div>\n          \t<div className="ysp-sale-achievement-grid-expand">\n           </div> \n        \t</div>\n            : \n        \t<div className={!this.state.open ? "ysp-sale-achievement-grid-pullDown-wrapper" : "ysp-sale-achievement-grid-wrapper"} style={{width: \'98%\'}}>\n          \t<div className="ysp-sale-achievement-grid-overlay" style={{width:\'inherit\'}}>\n            <div></div>\n          </div>\n          \t<div className="ysp-sale-achievement-grid-content">\n             <div>\n               {businessData && businessData.titles && businessData.titles.map((item,index)=><span className= {businessData.clickFlag == "" || businessData.clickFlag == 0 ? \'ysp-sale-achievement-text-color\' : \'\'}><span data-item-tiptool={true}  onClick={this.dbClick.bind(this)} data-index = {index}  data-title = {businessData.businessTitle != \'\' ? businessData.businessTitle : businessData.textName}>{item}</span></span>)}</div>\n             <div>\n                 <table>\n                 {businessData && businessData.content && businessData.content.map((item,index)=>\n                   <tr>{item.map((subItem)=>{return index == 0 ? (<th>{subItem}</th>) : (<td>{subItem}</td>)})}</tr>\n                 )}\n               </table>\n             </div>\n           </div>\n        \t  <div className="ysp-sale-achievement-grid-expand" onClick = {this.switch.bind(this)}>\n          \t<span className="ysp-sale-achievement-grid-expand-icon"></span>\n           </div>   \n        \t</div>  \n        }\n       </div>\n    );\n  }\n}';
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this.state = {\n      active: true\n    };\n    return _this;\n  }\n\n  _createClass(_class, [{\n    key: \'handlerClick\',\n    value: function handlerClick() {\n      this.setState({ active: !this.state.active });\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var datas = this.props.customData || [];\n      var handler = this.props.customHandler;\n      return React.createElement(\n        \'div\',\n        { ref: \'root\', style: { padding: \'0 5px\' } },\n        datas.length != 0 ? React.createElement(\n          \'div\',\n          { className: \'ysp-sale-achievement-header-wrapper\' },\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-header-container\', onClick: this.handlerClick.bind(this) },\n            React.createElement(\'i\', { className: \'branch\' }),\n            React.createElement(\n              \'span\',\n              null,\n              datas.length != 0 ? datas[0].businessData.textName : ""\n            ),\n            React.createElement(\'i\', { className: this.state.active ? \'active\' : \'\' })\n          ),\n          React.createElement(\n            \'div\',\n            { style: { display: this.state.active ? \'block\' : \'none\' } },\n            datas && datas.map(function (item) {\n              return React.createElement(\n                \'div\',\n                null,\n                React.createElement(DataGrid, {\n                  customData: item.businessData,\n                  customHandler: handler\n                })\n              );\n            })\n          )\n        ) : React.createElement(\'div\', null)\n      );\n    }\n  }, {\n    key: \'componentDidMount\',\n    value: function componentDidMount() {\n      this.tooltip = new ToolTip(this.refs.root);\n    }\n  }, {\n    key: \'componentWillUnmount\',\n    value: function componentWillUnmount() {\n      this.tooltip.unregister();\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n\nvar DataGrid = function (_React$Component2) {\n  _inherits(DataGrid, _React$Component2);\n\n  function DataGrid(props) {\n    _classCallCheck(this, DataGrid);\n\n    var _this2 = _possibleConstructorReturn(this, (DataGrid.__proto__ || Object.getPrototypeOf(DataGrid)).call(this, props));\n\n    _this2.dbClick = function (e) {\n      var index = e.currentTarget.dataset.index;\n      var title = e.currentTarget.dataset.title;\n      var handler = _this2.props.customHandler;\n      if (handler) {\n        handler({\n          data: {\n            index: index,\n            title: title\n          },\n          eventType: \'dbClick\'\n        });\n      }\n    };\n\n    _this2.state = { open: false };\n    return _this2;\n  }\n\n  _createClass(DataGrid, [{\n    key: \'switch\',\n    value: function _switch() {\n      this.setState({ open: !this.state.open });\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this3 = this;\n\n      var businessData = this.props.customData || [];\n      return React.createElement(\n        \'div\',\n        null,\n        businessData.flagUp == false && businessData.flagDown == false ? React.createElement(\n          \'div\',\n          { className: \'ysp-sale-achievement-grid-wrapper\', style: { width: \'98%\' } },\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-overlay\', style: { width: \'inherit\' } },\n            React.createElement(\'div\', null)\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-content\' },\n            React.createElement(\n              \'div\',\n              null,\n              businessData && businessData.titles && businessData.titles.map(function (item, index) {\n                return React.createElement(\n                  \'span\',\n                  { className: businessData.clickFlag == "" || businessData.clickFlag == 0 ? \'ysp-sale-achievement-text-color\' : \'\' },\n                  React.createElement(\n                    \'span\',\n                    { \'data-item-tiptool\': true, onClick: _this3.dbClick.bind(_this3), \'data-index\': index, \'data-title\': businessData.businessTitle != \'\' ? businessData.businessTitle : businessData.textName },\n                    item\n                  )\n                );\n              })\n            ),\n            React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'table\',\n                null,\n                businessData && businessData.content && businessData.content.map(function (item, index) {\n                  return React.createElement(\n                    \'tr\',\n                    null,\n                    item.map(function (subItem) {\n                      return index == 0 ? React.createElement(\n                        \'th\',\n                        null,\n                        subItem\n                      ) : React.createElement(\n                        \'td\',\n                        null,\n                        subItem\n                      );\n                    })\n                  );\n                })\n              )\n            )\n          ),\n          React.createElement(\'div\', { className: \'ysp-sale-achievement-grid-expand\' })\n        ) : React.createElement(\n          \'div\',\n          { className: !this.state.open ? "ysp-sale-achievement-grid-pullDown-wrapper" : "ysp-sale-achievement-grid-wrapper", style: { width: \'98%\' } },\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-overlay\', style: { width: \'inherit\' } },\n            React.createElement(\'div\', null)\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-content\' },\n            React.createElement(\n              \'div\',\n              null,\n              businessData && businessData.titles && businessData.titles.map(function (item, index) {\n                return React.createElement(\n                  \'span\',\n                  { className: businessData.clickFlag == "" || businessData.clickFlag == 0 ? \'ysp-sale-achievement-text-color\' : \'\' },\n                  React.createElement(\n                    \'span\',\n                    { \'data-item-tiptool\': true, onClick: _this3.dbClick.bind(_this3), \'data-index\': index, \'data-title\': businessData.businessTitle != \'\' ? businessData.businessTitle : businessData.textName },\n                    item\n                  )\n                );\n              })\n            ),\n            React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'table\',\n                null,\n                businessData && businessData.content && businessData.content.map(function (item, index) {\n                  return React.createElement(\n                    \'tr\',\n                    null,\n                    item.map(function (subItem) {\n                      return index == 0 ? React.createElement(\n                        \'th\',\n                        null,\n                        subItem\n                      ) : React.createElement(\n                        \'td\',\n                        null,\n                        subItem\n                      );\n                    })\n                  );\n                })\n              )\n            )\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'ysp-sale-achievement-grid-expand\', onClick: this.switch.bind(this) },\n            React.createElement(\'span\', { className: \'ysp-sale-achievement-grid-expand-icon\' })\n          )\n        )\n      );\n    }\n  }]);\n\n  return DataGrid;\n}(React.Component);';
     }
-  },'saleAchievement');
+  }, 'saleAchievement');
 })(window, ysp);
