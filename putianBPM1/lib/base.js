@@ -302,9 +302,9 @@
           aWin.login = function(){
            var form = new aWin.nui.Form("#form1");
              form.validate();
-						//一下两行是原PC的逻辑，将其注释
-             //if (form.isValid() == false) 
-               //return false;
+						//以下两行是原PC的逻辑，将其注释
+             // if (form.isValid() == false) 
+             // return false;
 
              aWin.nui.get("password").setValue(aWin.encryptByDES(aWin.nui.get("password").getValue(),aWin.keyStr));
              doc.loginForm.submit();
