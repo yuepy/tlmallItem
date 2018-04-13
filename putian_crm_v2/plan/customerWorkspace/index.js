@@ -131,7 +131,7 @@
     },
     doAction_uiControl6_JDIiap: function (data, elem) {
       var doc = elem.ownerDocument;if (data.eventType === 'click') {
-        var operation = data.dataCustom.operation;if (operation == "编辑" || operation == "+新建") {
+        var operation = data.dataCustom.operation;if (operation == "编辑" || operation == "+新建" || operation == "查看") {
           var editAndNewBtn = doc.getElementById('newPlanAddButton');editAndNewBtn.click();
         } else if (operation == "删除") {
           var deleteBtn = doc.getElementById('newPlanDeleteButton');deleteBtn.click();
