@@ -3420,6 +3420,81 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog .ysp-dialog-wrapper 
   padding: 5px 10px;
   border: 1px solid #ececec;
 }
+#page .commonShow-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #818181;
+  padding: 20px;
+  background: #ececec;
+}
+#page .commonShow-page .input-serch {
+  display: inline-block;
+}
+#page .commonShow-page .input-serch .page-number {
+  width: 32px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+#page .commonShow-page .prev-icon {
+  display: block;
+  background: url('images/ysp-atreport-more.png') no-repeat center center;
+  height: 20px;
+  width: 20px;
+  background-size: 100%;
+  transform: rotate(180deg);
+}
+#page .commonShow-page .prev-no-icon {
+  display: block;
+  background: url('images/visitcalendar-next-icon.png') no-repeat center center;
+  height: 20px;
+  width: 20px;
+  background-size: 100%;
+}
+#page .commonShow-page .next-icon {
+  display: block;
+  background: url('images/ysp-atreport-more.png') no-repeat center center;
+  height: 20px;
+  width: 20px;
+  background-size: 100%;
+}
+#page .commonShow-page .next-no-icon {
+  display: block;
+  background: url('images/visitcalendar-pre-icon.png') no-repeat center center;
+  height: 20px;
+  width: 20px;
+  background-size: 100%;
+}
+#page .commonShow-page .prev-next-center > span {
+  margin-right: 2px;
+}
+#page .commonShow-page .prev-next-center > span:nth-child(3) {
+  background: none !important;
+}
+#page .commonShow-page .prev-next-center .input-serch {
+  margin: 0 15px;
+  margin-left: 5px;
+}
+#page .commonShow-page .prev-next-center .input-serch .page-number {
+  margin: 0 5px;
+  vertical-align: inherit;
+  padding: 2px 5px;
+}
+#page .commonShow-page .prev-next-center .goReturn {
+  border-radius: 6px;
+  background: #4796ed;
+  color: #fff;
+  padding: 5px 10px;
+  border: 1px solid #4796ed;
+}
+#page .commonShow-page .prev-next-center .goNoReturn {
+  border-radius: 6px;
+  background: #ececec;
+  color: #fff;
+  padding: 5px 10px;
+  border: 1px solid #ececec;
+}
 /*搜索组件样式*/
 #customSerch .serch-btn {
   margin-left: 12px;
@@ -11874,14 +11949,11 @@ div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper {
   text-align: center;
   padding-top: 5%;
 }
-.ysp-workSummedContentShow {
-  background: #ececec;
-  height: 100vh;
-}
 .ysp-workSummedContentShow .ysp-workSummendContent-overflow {
   overflow: hidden;
   border-bottom: 1px solid #ececec;
   padding: 10px;
+  background: #ececec;
 }
 .ysp-workSummedContentShow .ysp-workSummendContentLeft {
   float: left;
