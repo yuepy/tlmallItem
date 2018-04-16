@@ -24,8 +24,8 @@
             var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
           }_click.click();
         } else if (d == '取消领取') {
-          debugger;var _click = elem.contentWindow.document.querySelector('#td_0_3'); //红色提示
-          var newRow = elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];var reg = /\s/;if (reg.test(newRow.textContent)) {
+          var _click = elem.contentWindow.document.querySelector('#td_0_3'); //红色提示
+          var newRow = elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];var reg = /\s/;if (newRow && reg.test(newRow.textContent)) {
             if (_click) {
               var _icon = _click.querySelector('a');_icon.click();
             } else {
@@ -35,8 +35,8 @@
             if (_click) {
               var _icon = _click.querySelector('a');var _innerHTML = _click.querySelector('span').textContent;_innerHTML == '取消领取' && _icon.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             } else {
-              var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");if (_click) {
-                var _innerHTML = _click.querySelector('span').textContent;_click.click();
+              var _click = elem.contentWindow.document.querySelector('#td_0_2');if (_click) {
+                var _innerHTML = _click.querySelector('span').textContent;_click.querySelector("a").click();
               } else {
                 var _click = elem.contentWindow.document.querySelector('#td_0_1').querySelector("a");_click.click();
               }var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
@@ -86,7 +86,8 @@
             }
           }
         } else {
-          var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
+          var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelector('.mini-tools-close');
+          if (btn) {
             btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
           }
         }
