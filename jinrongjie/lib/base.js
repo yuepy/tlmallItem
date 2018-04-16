@@ -4,7 +4,9 @@
     function wdlssrds() {
         var tokenDizhi = document.querySelector('iframe[src*="&token="]');
         var indexUrl = document.querySelector('iframe[src*="main.jsp"]');
+      	console.log(tokenDizhi);
         if (tokenDizhi && !sessionStorage.isLogin) {
+          alert('BOOM!');
             var iframe = document.querySelector('iframe');
             var url1 = tokenDizhi.src.match(/(.*)&token=/)[1]; // 登录成功后跳转的地址
             var url2 = tokenDizhi.src.match(/&token=(.*)/)[1]; // 登录需要的token
@@ -23,7 +25,7 @@
     // if (ysp.appMain.isIOS()) {
     //     wdlssrds();
     // }
-   // wdlssrds();
+    //wdlssrds();
     var utils = ysp.utils;
     var flag = true; // 为true说明需要取token  为false说明不需要取token
     var topWindow = win.top; // 最外层window - top层
@@ -694,7 +696,6 @@
             if (aWin.createDoc) {
               
                 aWin.createDoc = function(fieldbodyid, docVlaue, isedit) {
-                  debugger;
                     var frmmain = aWin.frmmain;
                     var $G = aWin.$G;
                   	var request = doc.querySelector('#requestid').value;
@@ -747,7 +748,9 @@
         beforeTargetLoad: function(aWin, doc) {
           	var href = aWin.location.href;
           	var src = aWin.frameElement.src;
+          console.log('token地址:'+src)
             if (src.indexOf('token=') !== -1 && !sessionStorage.isLogin) {
+              	console.log(src,src.indexOf('token=') !== -1)
                 var url1 = src.match(/(.*)&token=/)[1]; // 登录成功后跳转的地址
                 var url2 = src.match(/&token=(.*)/)[1]; // 登录需要的token
                 aWin.location.href = 'http://192.168.200.63/login/Vpn-sso.jsp?tokenStr=' + url2 + '&requestType=login';
