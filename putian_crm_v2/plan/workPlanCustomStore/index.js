@@ -40,7 +40,8 @@
       }
       //客户和门店所选择的总数
       var customer = 0;
-      var store = 0;if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
+      var store = 0; //工作计划的门店和客户的所选数量
+      if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
         if (elem.ownerDocument.querySelector('#visitCustomerListBtn')) {
           if (elem.ownerDocument.querySelector('#visitCustomerListBtn').getAttribute('num')) {
             customer = parseInt(elem.ownerDocument.querySelector('#visitCustomerListBtn').getAttribute('num'));
@@ -50,7 +51,20 @@
             store = parseInt(elem.ownerDocument.querySelector('#visitStoreListBtn').getAttribute('num'));
           }
         }
-      } //日工作计划
+      } //临时拜访的门店和客户的所选数量
+      // if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
+      //   if (elem.ownerDocument.querySelector('#tempVisitCustomerListBtn')) {
+      //     if (elem.ownerDocument.querySelector('#tempVisitCustomerListBtn').getAttribute('num')) {
+      //       customer = parseInt(elem.ownerDocument.querySelector('#tempVisitCustomerListBtn').getAttribute('num'));
+      //     }
+      //   }
+      //   if (elem.ownerDocument.querySelector('#tempVisitStoreListBtn')) {
+      //     if (elem.ownerDocument.querySelector('#tempVisitStoreListBtn').getAttribute('num')) {
+      //       store = parseInt(elem.ownerDocument.querySelector('#tempVisitStoreListBtn').getAttribute('num'));
+      //     }
+      //   }
+      // }
+      //日工作计划
       var textArea = "";if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
         var text = elem.querySelector("#dayPlanContent").value;textArea = text;
       } //分页
@@ -70,7 +84,8 @@
       // var pageLoading = [];
       // var loading = ysp.customHelper.tipMsg.getLoading;
       // pageLoading.push(loading);
-      var tables = elem.querySelector(".plan-con").firstChild;if (tables) {
+      var tables = elem.querySelector(".plan-con").firstChild;
+      if (tables) {
         var flag = true;
       } else {
         var flag = false;
@@ -79,7 +94,8 @@
         var addButtonStyle = customerOrStoreEl.querySelector("#addDayPlanOkBtn").getAttribute("style");if ("display:none;" == addButtonStyle) {
           buttonNum = 1;
         }
-      }return { isShow: isShow, content: content, tempPlanOtherCustomer: tempPlanOtherCustomer, dayPlanContent: dayPlanContent, selectedCount: selectedCount, tempAreaText: tempAreaText, customer: customer || 0, store: store || 0, textArea: textArea, pageData: { "prev": pageData.prev, "next": pageData.next, "numberTaotal": pageData.numberTaotal, "page": pageData.page, "currentPage": pageData.currentPage, "flag": flag //pageLoading: pageLoading
+      }return { isShow: isShow, content: content, tempPlanOtherCustomer: tempPlanOtherCustomer, dayPlanContent: dayPlanContent, selectedCount: selectedCount,
+        tempAreaText: tempAreaText, customer: customer || 0, store: store || 0, textArea: textArea, pageData: { "prev": pageData.prev, "next": pageData.next, "numberTaotal": pageData.numberTaotal, "page": pageData.page, "currentPage": pageData.currentPage, "flag": flag //pageLoading: pageLoading
         }, buttonNum: buttonNum };
     }, doAction_uiControl44_fBiQg5: function (data, elem) {
       //返回按钮方法，返回工作台页面
@@ -131,8 +147,8 @@
         } //计划拜访
         if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
           if (textArea != "") {
-            var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
-            ysp.appMain.showLoading();setTimeout(function () {
+            var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);ysp.appMain.showLoading();
+            setTimeout(function () {
               ysp.appMain.hideLoading();
             }, 100);
           }
@@ -158,8 +174,7 @@
         }); // elem.querySelector('.u-search').querySelector("input").value = data.dataCustom;
       }switch (data.eventType) {case 'prev':
           //上一页
-          prevtitle(data.dataCustom);break;
-        case 'next':
+          prevtitle(data.dataCustom);break;case 'next':
           //下一页
           prevtitle(data.dataCustom);break;case 'GO':
           //跳转指定页数
@@ -175,8 +190,7 @@
             }
           }
         }
-      } // if (data.eventType == 'back') {
-      //   elem.querySelector('.u-search').querySelector('input').value = ""; //var lis = elem.querySelector('.u-tab').querySelectorAll('li'); //lis[0].click();
+      } //   elem.querySelector('.u-search').querySelector('input').value = ""; //var lis = elem.querySelector('.u-tab').querySelectorAll('li'); //lis[0].click();
       //   ysp.appMain.showLoading();
       // }
     },
