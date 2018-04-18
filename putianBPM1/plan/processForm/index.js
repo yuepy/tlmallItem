@@ -1382,67 +1382,41 @@
     getData_control36_hBTqBA: function (elem) {
       if (!elem) {
         return [];
-      }
-      if (elem) {
-        var data = [];
-        var receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2');
-        var _receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2	a');
-        var noReceive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_3');
-        var td_0_1 = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_1');
-        if (receive && _receive.style.display != 'none') {
+      }if (elem) {
+        var data = [];var receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2');var _receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2	a');var noReceive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_3');var td_0_1 = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_1');if (receive && _receive.style.display != 'none') {
           data.push(receive.textContent);
         } else if (noReceive) {
           data.push(noReceive.textContent);
         } else if (td_0_1 && td_0_1.textContent.trim() == '领取') {
           data.push(td_0_1.textContent.trim());
-        }
-        return data;
+        }return data;
       }
     },
     doAction_uiControl37_FOWagD: function (data, elem) {
       if (data.eventType == 'click') {
-        var d = data.dataCustom;
-        var btn = elem.ownerDocument.querySelector('.mini-tools-close');
-        if (d == '领取') {
-          var td_0_1 = elem.contentWindow.document.querySelector('#td_0_1');
-          if (td_0_1.textContent.trim() == '领取') {
+        var d = data.dataCustom;var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (d == '领取') {
+          var td_0_1 = elem.contentWindow.document.querySelector('#td_0_1');if (td_0_1.textContent.trim() == '领取') {
             var _click = elem.contentWindow.document.querySelector('#td_0_1').querySelector("a");
           } else {
             var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
-          }
-          _click.click();
+          }_click.click();
         } else if (d == '取消领取') {
           var _click = elem.contentWindow.document.querySelector('#td_0_3'); //红色提示
-          var newRow = elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];
-          var reg = /\s/;
-          if (newRow && reg.test(newRow.textContent)) {
+          var newRow = elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];var reg = /\s/;if (newRow && reg.test(newRow.textContent)) {
             if (_click) {
-              var _icon = _click.querySelector('a');
-              _icon.click();
+              var _icon = _click.querySelector('a');_icon.click();
             } else {
-              var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
-              _click.click();
+              var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");_click.click();
             }
           } else {
             if (_click) {
-              var _icon = _click.querySelector('a');
-              var _innerHTML = _click.querySelector('span').textContent;
-              _innerHTML == '取消领取' && _icon.click();
-              var json = { time: new Date().getTime() };
-              ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+              var _icon = _click.querySelector('a');var _innerHTML = _click.querySelector('span').textContent;_innerHTML == '取消领取' && _icon.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             } else {
-              var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
-              var _innerHTML = _click.querySelector('span').textContent;
-              _click.click();
-              var json = { time: new Date().getTime() };
-              ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+              var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");var _innerHTML = _click.querySelector('span').textContent;_click.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             }
           }
         } else {
-          var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
-          _click.click();
-          var json = { time: new Date().getTime() };
-          ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+          var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");_click.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
         }
       } else if (data.eventType == 'back') {
         //待办里面#dataForm1里面的第一个input的class里没有mini-disabled
@@ -1474,29 +1448,19 @@
         //       ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
         //     }
         //   }
-        var btns = elem.contentDocument.querySelector("#btn");
-        if (btns && btns.style.display != "none") {
+        var btns = elem.contentDocument.querySelector("#btn");if (btns && btns.style.display != "none") {
           if (btns.querySelector("#recover") && btns.querySelector("#recover").textContent == "追回") {
-            var json = { time: new Date().getTime() };
-            var btn = elem.ownerDocument.querySelector('.mini-tools-close');
-            if (btn) {
-              btn.click();
-              ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+            var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
+              btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
             }
           } else {
-            var json = { time: new Date().getTime() };
-            var btn = elem.ownerDocument.querySelector('.mini-tools-close');
-            if (btn) {
-              btn.click();
-              ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+            var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
+              btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             }
           }
         } else {
-          var json = { time: new Date().getTime() };
-          var btn = elem.ownerDocument.querySelector('.mini-tools-close');
-          if (btn) {
-            btn.click();
-            ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+          var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
+            btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
           }
         }
       }
