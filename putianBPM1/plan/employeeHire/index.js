@@ -241,7 +241,7 @@
     },
     doAction_uiControl142_RnA8fc: function (data, elem) {
       if (data.eventType == "blur") {
-        elem.value = data.dataCustom;elem.blur();
+        elem.value = data.dataCustom;elem.dispatchEvent(new Event("change"));
       }
     },
     getTemplate_uiControl142_RnA8fc: function () {
@@ -263,11 +263,11 @@
     },
     doAction_uiControl140_nSP35Q: function (data, elem) {
       if (data.eventType == "enclosure") {
-        var i = data.dataCustom;var _btn = elem.querySelector("#enclosure").querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);debugger;if (ysp.appMain.isIOS()) {
-          top.EAPI.openWindow(url + '&_ysp_filepreview=1');
+        var i = data.dataCustom;var _btn = elem.querySelector("#enclosure").querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);var string = encodeURIComponent(_btn.textContent.trim());debugger;console.log("ftp://hr-sit:123456@ftp.putiantaili.com//" + string);if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(url + '?_ysp_filepreview=1&_ysp_ftpEncoding=gbk');
         } else if (ysp.appMain.isAndroid()) {
           // top.location.href = url;
-          yspUser.openDocument("{'url': '" + url + "','fileName':'1" + type + "'}");
+          var _url = "ftp://hr-sit:123456@ftp.putiantaili.com//" + string;yspUser.openDocument("{'url': '" + _url + "','fileName':'1" + type + "'}");
         } // $.ajax({
         //   url: 'http://139.217.22.35:8080/dcs.web/ftpOnlinefile',
         //   type: "POST",
