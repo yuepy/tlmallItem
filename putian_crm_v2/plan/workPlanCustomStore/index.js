@@ -131,10 +131,14 @@
         }
       } //点击确认按钮方法
       if ('ascertain' == data.eventType) {
-        var textArea = data.dataCustom.textArea;var tempAreaText = data.dataCustom.tempAreaText;var selectedCount = data.dataCustom.selectedCount;var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn') || elem.querySelector('#addDayPlanOkBtn');if (addTempDayPlanOkBtn) {
-          addTempDayPlanOkBtn.click();
-        } //临时拜访
-        if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
+        var textArea = data.dataCustom.textArea;var tempAreaText = data.dataCustom.tempAreaText;var selectedCount = data.dataCustom.selectedCount;var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn') || elem.querySelector('#addDayPlanOkBtn');var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn');
+        var addDayPlanOkBtn = elem.querySelector('#addDayPlanOkBtn');if (addTempDayPlanOkBtn) {} //addTempDayPlanOkBtn.click();
+        //临时拜访
+        var cwin = elem.ownerDocument.defaultView;if (addTempDayPlanOkBtn) {
+          cwin.tempShow();
+        }if (addDayPlanOkBtn) {
+          cwin.Show();
+        }if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
           if (tempAreaText != "" || selectedCount != "") {
             var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);ysp.appMain.showLoading();setTimeout(function () {
               ysp.appMain.hideLoading();
@@ -143,8 +147,7 @@
         } //计划拜访
         if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
           if (textArea != "") {
-            var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);ysp.appMain.showLoading();
-            setTimeout(function () {
+            var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);ysp.appMain.showLoading();setTimeout(function () {
               ysp.appMain.hideLoading();
             }, 100);
           }
@@ -188,6 +191,7 @@
         }
       } //   elem.querySelector('.u-search').querySelector('input').value = ""; //var lis = elem.querySelector('.u-tab').querySelectorAll('li'); //lis[0].click();
       //   ysp.appMain.showLoading();
+
       // }
     },
     getTemplate_uiControl44_fBiQg5: function () {

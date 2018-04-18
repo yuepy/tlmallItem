@@ -95,6 +95,19 @@
 
 			visitPlanList = data.visitPlanList;
 
+			/** 查看计划不允许保存 */
+			if (data.buttonName == '查看') {
+				$('#addDayPlanOkBtn').attr("style", "display:none;");
+				$('#addDayPlanCancleBtn').html("返回");
+			} else {
+				$('#addDayPlanOkBtn').attr("style", "");
+				$('#addDayPlanCancleBtn').html("取消");
+			}
+
+			if (data.workPlan != undefined && data.workPlan != '') {
+				$("#dayPlanContent").css("background", "none");
+			}
+
 			if (data.isTemp == '1') {
 				$('#customerOrStorePopList').attr('style', 'display:none;');
 				$('#tempCustomerOrStorePopList').attr('style', '');
@@ -118,7 +131,6 @@
 
 		//返回
 		$('#addDayPlanCancleBtn,#addTempDayPlanCancleBtn,#customerOrStorePopClose,#tempCustomerOrStorePopClose').unbind().on('click', function () {
-      debugger;
 			$("#visitCustomerListBtn").attr("class", "active");
 			$("#visitStoreListBtn").attr("class", "");
 			iframeUtils.hideSecondIframe();
@@ -133,7 +145,6 @@
 
 		/** 加载制定拜访计划客户列表 #newPlanAddButton */
 		$('#visitCustomerListBtn').click(function (e) {
-			$("#dayPlanContent").val(StringUtils.globReplace($("#workPlan").html(), "&amp;", "&"));
 			if ($("#planEaiId").val() == '') {
 				$("#chooseVisitInfo").val("");
 				$("#visitCustomerListBtn").attr("num", 0); //选中的数量 
@@ -192,9 +203,13 @@
 		/** 加载临时拜访计划客户列表 */
 		$('#tempVisitCustomerListBtn').click(function () {
 			//清空搜索内容
-			$("#tempVisitCustomerListBtn").attr("class", "active");
+			$(this).attr("class", "active");
 			$("#tempVisitStoreListBtn").attr("class", "");
 			$("#newTempVisitSearchText").val("");
+
+			//选中数量清零
+			$("#tempVisitCustomerListBtn").attr("num", 0);
+			$("#tempVisitStoreListBtn").attr("num", 0);
 
 			//设置客户与门店切换按钮样式
 			$("#tempVisitStoreListBtn").attr("class", "");
@@ -211,6 +226,10 @@
 			//设置客户与门店切换按钮样式
 			$(this).attr("class", "active");
 			$("#tempVisitCustomerListBtn").attr("class", "");
+
+			//选中数量清零
+			$("#tempVisitCustomerListBtn").attr("num", 0);
+			$("#tempVisitStoreListBtn").attr("num", 0);
 
 			//清空搜索内容
 			$("#newTempVisitSearchText").val("");
@@ -266,11 +285,10 @@
 				data: { planComment: planComment, cusInfo: cusInfo, planEaiId: planEaiId, planRowId: planRowId, planDate: planDate, listType: listType },
 				dataType: "json",
 				success: function success(data) {
-          debugger;
 					if (data.status == 'true') {
-            debugger;
-						//visitPlanList.referenceHtml(); //刷新页面
+						visitPlanList.referenceHtml(); //刷新页面
 						//inintWorkPlan(planDate);
+            window.show = "true";
 						$("#addDayPlanCancleBtn").click();
 						$('#newPlanList').html("");
 						$("#dayPlanContent").val("");
@@ -278,14 +296,13 @@
 						$("#chooseCustomerCodes").val("");
 						$("#chooseStoreCodes").val("");
 
-						//zhuge.track('新增拜访计划');
+						zhuge.track('新增拜访计划');
 					} else if (data.message != '') {
 						layerUtils.error(data.message);
 					} else {
 						layerUtils.error("添加失败!");
 					}
 					layerUtils.waitingClose(); //关闭加载层
-          visitPlanList.referenceHtml(); //刷新页面
 					editPlanTag = '0';
 				},
 				error: function error(e) {
@@ -295,6 +312,58 @@
 				}
 			});
 		});
+    
+    //工作计划提交
+    window.Show = function () {
+			if (editPlanTag == '1') {
+				return;
+			}
+			editPlanTag = '1';
+			var planRowId = $("#planRowId").val();
+			var planEaiId = $("#planEaiId").val();
+			var planDate = $("#currentSelectDay").val();
+			var planComment = StringUtils.wrongCharacter($("#dayPlanContent").val());
+			var listType = $("#listType").val();
+			var cusInfo = $("#chooseVisitInfo").val();
+			if (planComment == '') {
+				layerUtils.error("请输入计划内容!");
+				editPlanTag = '0';
+				return;
+			}
+
+			layerUtils.waitingOpen(); //打开加载层
+			$.ajax({
+				type: "POST",
+				url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addCustomerVisitPlan',
+				data: { planComment: planComment, cusInfo: cusInfo, planEaiId: planEaiId, planRowId: planRowId, planDate: planDate, listType: listType },
+				dataType: "json",
+				success: function success(data) {
+					if (data.status == 'true') {
+						//visitPlanList.referenceHtml(); //刷新页面
+						//inintWorkPlan(planDate);
+						$("#addDayPlanCancleBtn").click();
+						$('#newPlanList').html("");
+						$("#dayPlanContent").val("");
+						$("#chooseVisitInfo").val("");
+						$("#chooseCustomerCodes").val("");
+						$("#chooseStoreCodes").val("");
+
+						zhuge.track('新增拜访计划');
+					} else if (data.message != '') {
+						layerUtils.error(data.message);
+					} else {
+						layerUtils.error("添加失败!");
+					}
+					layerUtils.waitingClose(); //关闭加载层
+					editPlanTag = '0';
+				},
+				error: function error(e) {
+					console.error(e);
+					layerUtils.waitingClose(); //关闭加载层
+					editPlanTag = '0';
+				}
+			});
+		};
 
 		var clickCountTemp = 0;
 		/** 新增临时拜访计划 */
@@ -353,6 +422,62 @@
 				});
 			}
 		});
+    
+    //临时拜访提交
+    window.tempShow = function (e) {
+			clickCountTemp++;
+			//e.preventDefault();
+			if (clickCountTemp > 1) {
+				return;
+			} else {
+				var actionDate = $("#currentSelectDay").val();
+				var listType = $("#listType").val();
+				var cusInfo = "";
+				$("#newTempVisit input[name='newTempPlanChk']:checked").each(function () {
+					cusInfo += $(this).val() + ",";
+				});
+				var otherCustomer = $("#tempPlanOtherCustomer").val();
+				if (cusInfo == "" && otherCustomer == "") {
+					layerUtils.info("请选择！");
+					clickCountTemp = 0;
+					return;
+				}
+				if (cusInfo != "" && otherCustomer != "") {
+					otherCustomer = "";
+					//$("#tempPlanOtherCustomer").val("");
+					layerUtils.info("已经选择，不支持手填！");
+					clickCountTemp = 0;
+					return;
+				}
+				layerUtils.waitingOpen(); //打开加载层
+				var obj_a = $(this);
+				$.ajax({
+					type: "POST",
+					url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addTempCustomerVisitPlan',
+					data: { cusInfo: cusInfo, actionDate: actionDate, listType: listType, otherCustomer: otherCustomer },
+					dataType: "json",
+					success: function success(data) {
+						clickCountTemp = 0;
+						layerUtils.waitingClose(); //关闭加载层
+						if (data.status == 'true') {
+							//visitPlanList.referenceHtml(); //刷新页面
+							$("#addTempDayPlanCancleBtn").click();
+							$('#newTempVisit').html("");
+							$("#tempPlanOtherCustomer").val("");
+							$("#chooseCustomerCodes").val("");
+							$("#chooseStoreCodes").val("");
+							zhuge.track('新增临时拜访计划');
+						} else {
+							layerUtils.error("添加失败!");
+						}
+					},
+					error: function error(e) {
+						clickCountTemp = 0;
+						layerUtils.waitingClose(); //关闭加载层
+					}
+				});
+			}
+		}
 	});
 
 /***/ }),
@@ -609,8 +734,8 @@
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.224:8080/ptDataShow';
 
 	//生产 nginx
-	//export const SERVER_ROOT = 'http://192.168.220.82:8080'; //服务端根路径
-	//export const LOCAL_SERVER_ROOT = 'http://192.168.220.82:8080'; //本地服务端根路径
+	//export const SERVER_ROOT = 'http://192.168.1.227'; //服务端根路径
+	//export const LOCAL_SERVER_ROOT = 'http://192.168.1.227'; //本地服务端根路径
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.202/ptDataShow';
 
 	//生产 228
@@ -1404,6 +1529,8 @@
 	            $("#tempOtherCustomerCheckBox").prop("checked", "");
 	            $("#tempPlanOtherCustomer").val("");
 	            $("#tempPlanOtherCustomer").prop("readonly", "readonly");
+
+	            $("#tempVisitCustomerListBtn").attr("num", "1"); //选中的数量 
 	        });
 
 	        //选中临时拜访文本框，取消临时列表单选
@@ -1413,6 +1540,7 @@
 	            $("#newTempVisit input[name='newTempPlanChk']:checked").each(function () {
 	                $(this).prop("checked", "");
 	            });
+	            $("#tempVisitCustomerListBtn").attr("num", "0");
 	        });
 	    }, doAction);
 	}
@@ -1566,6 +1694,8 @@
 	            $("#tempOtherCustomerCheckBox").prop("checked", "");
 	            $("#tempPlanOtherCustomer").val("");
 	            $("#tempPlanOtherCustomer").prop("readonly", "readonly");
+
+	            $("#tempVisitStoreListBtn").attr("num", "1"); //选中的数量 
 	        });
 
 	        //选中临时拜访文本框，取消临时列表单选
@@ -1575,6 +1705,7 @@
 	            $("#newTempVisit input[name='newTempPlanChk']:checked").each(function () {
 	                $(this).prop("checked", "");
 	            });
+	            $("#tempVisitStoreListBtn").attr("num", "0"); //选中的数量 
 	        });
 	    }, doAction);
 	}
