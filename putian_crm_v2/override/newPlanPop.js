@@ -338,6 +338,8 @@
 				data: { planComment: planComment, cusInfo: cusInfo, planEaiId: planEaiId, planRowId: planRowId, planDate: planDate, listType: listType },
 				dataType: "json",
 				success: function success(data) {
+          layerUtils.waitingClose(); //关闭加载层
+          editPlanTag = '0';
 					if (data.status == 'true') {
 						//visitPlanList.referenceHtml(); //刷新页面
 						//inintWorkPlan(planDate);
@@ -354,8 +356,8 @@
 					} else {
 						layerUtils.error("添加失败!");
 					}
-					layerUtils.waitingClose(); //关闭加载层
-					editPlanTag = '0';
+					//layerUtils.waitingClose(); //关闭加载层
+					//editPlanTag = '0';
 				},
 				error: function error(e) {
 					console.error(e);
