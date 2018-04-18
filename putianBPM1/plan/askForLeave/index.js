@@ -264,27 +264,12 @@
     },
     doAction_uiControl116_UnmeiG: function (data, elem) {
       if (data.eventType == "enclosure") {
-        var i = data.dataCustom[0];var index = data.dataCustom[1];var _btn = elem.querySelectorAll("#enclosure")[index].querySelectorAll("a")[i];var url = _btn.href; // _btn.click();
-        //elem.ownerDocument.defaultView.open(url);
-        console.log(_btn);var num = url.lastIndexOf(".");var type = url.slice(num);if (ysp.appMain.isIOS()) {
+        var i = data.dataCustom[0];var index = data.dataCustom[1];var _btn = elem.querySelectorAll("#enclosure")[index].querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);var string = encodeURIComponent(_btn.textContent.trim());if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(url + '?_ysp_filepreview=1&_ysp_ftpEncoding=gbk');
         } else if (ysp.appMain.isAndroid()) {
           // top.location.href = url;
-          debugger;yspUser.openDocument("{'url': '" + url + "','fileName':'1" + type + "'}");
-        } // $.ajax({
-        //   url: 'http://139.217.22.35:8080/dcs.web/ftpOnlinefile',
-        //   type: "POST",
-        //   data: JSON.stringify({
-        //     'ftpDownloadUrl': url,
-        //     'converType': 0
-        //   }),
-        //   success: function (result) {
-        //     console.log(result);
-        //   },
-        //   error: function (msg) {
-        //     console.log("请求失败");
-        //   }
-        // });
+          var _url = "ftp://hr-sit:123456@ftp.putiantaili.com//" + string;yspUser.openDocument("{'ftpDownloadUrl': '" + url + "','fileName':'1" + type + "','ftpEncoding':'GBK'}");
+        }
       }
     },
     getTemplate_uiControl116_UnmeiG: function () {
