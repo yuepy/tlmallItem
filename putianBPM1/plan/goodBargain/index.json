@@ -4,43 +4,13 @@
   "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=307826&goodBargain",
   "jsFile": "index.js",
   "requires": {
-    "index": "../index/index.json"
+    "index": "../index/index.json",
+    "PendingTask": "../PendingTask/index.json"
   },
   "chineseName": "良品特价审批",
   "description": "",
   "firstPaintEnable": false,
   "controls": {
-    "control172_2rke9q": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.mini-panel.mini-window.mini-window-drag DIV.mini-panel-border DIV.mini-panel-header"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control172_2rke9q"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control173_E2n8TE": {
       "location": {
         "data": {
@@ -72,7 +42,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
@@ -110,33 +80,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
-    },
-    "control175_nBTL4G": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control175_nBTL4G"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
@@ -174,7 +118,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
@@ -208,55 +152,160 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
-    "control178_nk0Ptu": {
+    "control180_qbH13x": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control180_qbH13x"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control172_EeoCIM": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control172_EeoCIM"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control172_Tk1SWX": {
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
             "id": "@id/word",
             "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"btn\"]/DIV[1]",
-              "descendant::DIV[@id=\"btn\"]//DIV"
-            ]
+            "value": "descendant::DIV[@id=\"datagridsubfen\"]/DIV[1]/DIV[2]"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "ordinal": [
-              1,
-              2
-            ],
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control178_nk0Ptu"
+        "onGetData": "getData_control172_Tk1SWX"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control172_7wFt5N": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "div1",
+              "tagName": "DIV",
+              "prefix": "",
+              "suffix": "/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]",
+              "ratio": 0.246
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control172_7wFt5N"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     }
   },
   "contexts": {
     "context37_43dcvf": {
       "controls": [
-        "control172_2rke9q",
         "control173_E2n8TE",
         "control174_CI434U",
-        "control175_nBTL4G",
         "control176_GRJUNr",
         "control177_d2DXkd",
-        "control178_nk0Ptu"
+        "control180_qbH13x",
+        "control172_EeoCIM",
+        "control172_Tk1SWX",
+        "control172_7wFt5N"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -275,6 +324,20 @@
           "toContextId": "context37_43dcvf"
         }
       ]
+    },
+    "flow134_VC1CI1": {
+      "fromContextId": "context37_43dcvf",
+      "fromAction": "doAction",
+      "fromControlId": "control172_EeoCIM",
+      "toContexts": [
+        {
+          "toContextId": "context37_43dcvf"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
     }
   },
   "pages": {
@@ -282,16 +345,16 @@
       "contextId": "context37_43dcvf",
       "layout": [
         {
-          "id": "uiControl165_FsJlK9",
-          "controlId": "control172_2rke9q",
+          "id": "uiControl165_X9OuO6",
+          "controlId": "control172_EeoCIM",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl165_FsJlK9",
-                "onGetTemplate": "getTemplate_uiControl165_FsJlK9"
+                "onDoAction": "doAction_uiControl165_X9OuO6",
+                "onGetTemplate": "getTemplate_uiControl165_X9OuO6"
               }
             }
           }
@@ -327,16 +390,31 @@
           }
         },
         {
-          "id": "uiControl168_mW0fpx",
-          "controlId": "control175_nBTL4G",
+          "id": "uiControl165_AMXN11",
+          "controlId": "control172_7wFt5N",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl168_mW0fpx",
-                "onGetTemplate": "getTemplate_uiControl168_mW0fpx"
+                "onDoAction": "doAction_uiControl165_AMXN11",
+                "onGetTemplate": "getTemplate_uiControl165_AMXN11"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl165_tWUoT9",
+          "controlId": "control172_Tk1SWX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl165_tWUoT9",
+                "onGetTemplate": "getTemplate_uiControl165_tWUoT9"
               }
             }
           }
@@ -372,16 +450,16 @@
           }
         },
         {
-          "id": "uiControl171_IukKiq",
-          "controlId": "control178_nk0Ptu",
+          "id": "uiControl173_cIDdi1",
+          "controlId": "control180_qbH13x",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl171_IukKiq",
-                "onGetTemplate": "getTemplate_uiControl171_IukKiq"
+                "onDoAction": "doAction_uiControl173_cIDdi1",
+                "onGetTemplate": "getTemplate_uiControl173_cIDdi1"
               }
             }
           }
