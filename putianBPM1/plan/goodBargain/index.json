@@ -5,7 +5,11 @@
   "jsFile": "index.js",
   "requires": {
     "index": "../index/index.json",
-    "PendingTask": "../PendingTask/index.json"
+    "PendingTask": "../PendingTask/index.json",
+    "approvalTrack": "../approvalTrack/index.json",
+    "approveAdvice": "../approveAdvice/index.json",
+    "operationLog": "../operationLog/index.json",
+    "processedTask": "../processedTask/index.json"
   },
   "chineseName": "良品特价审批",
   "description": "",
@@ -293,6 +297,76 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control185_Qg9CED": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "DIV",
+              "prefix": "",
+              "suffix": "/DIV[1]/DIV[4]",
+              "ratio": 0.92
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control185_Qg9CED"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control189_H9oQSP": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control189_H9oQSP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -305,7 +379,9 @@
         "control180_qbH13x",
         "control172_EeoCIM",
         "control172_Tk1SWX",
-        "control172_7wFt5N"
+        "control172_7wFt5N",
+        "control185_Qg9CED",
+        "control189_H9oQSP"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -336,6 +412,10 @@
         {
           "toContextId": "context5_7wf9RT",
           "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context2_Z2voN1",
+          "toModelId": "processedTask"
         }
       ]
     },
@@ -346,6 +426,42 @@
       "toContexts": [
         {
           "toContextId": "context37_43dcvf"
+        }
+      ]
+    },
+    "flow142_uy9Tok": {
+      "fromContextId": "context37_43dcvf",
+      "fromAction": "doAction",
+      "fromControlId": "control173_E2n8TE",
+      "toContexts": [
+        {
+          "toContextId": "context37_43dcvf"
+        },
+        {
+          "toContextId": "context7_6oqdXk",
+          "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context10_Hyn4t6",
+          "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
+        }
+      ]
+    },
+    "flow145_RTC2KQ": {
+      "fromContextId": "context37_43dcvf",
+      "fromAction": "doAction",
+      "fromControlId": "control180_qbH13x",
+      "toContexts": [
+        {
+          "toContextId": "context37_43dcvf"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
         }
       ]
     }
@@ -473,6 +589,36 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl182_gP4EzM",
+          "controlId": "control189_H9oQSP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl182_gP4EzM",
+                "onGetTemplate": "getTemplate_uiControl182_gP4EzM"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl178_BoEGdc",
+          "controlId": "control185_Qg9CED",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl178_BoEGdc",
+                "onGetTemplate": "getTemplate_uiControl178_BoEGdc"
+              }
+            }
+          }
         }
       ]
     }
@@ -489,7 +635,10 @@
       "contexts": {
         "context37_43dcvf": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=307826&goodBargain",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327121&goodBargain"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327121&goodBargain",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327316&goodBargain",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294392&goodBargain",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294390&goodBargain"
         ]
       }
     },
