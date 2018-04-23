@@ -1,1 +1,1072 @@
-{"version":"0.1","id":"fundSeal","targetURL":"http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215916&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","jsFile":"index.js","requires":{"managerAuditRelatedDoc":"../managerAuditRelatedDoc/index.json","managerAuditRelateProcess":"../managerAuditRelateProcess/index.json","processToSend":"../processToSend/index.json","forward":"../forward/index.json","waitTodo":"../waitTodo/index.json"},"chineseName":"资金调拨和印章（三个流程）","description":"","controls":{"control96_fZKiT2":{"location":{"data":{"tagName":"TD"},"userData":{"data":[],"force":false},"locators":[{"id":"text","prob":3,"ordinal":[1,2],"value":{"text":["请求:处理 - 集团人力资源部印章使用审批流程 - FSIG-201710260001"],"visText":["请求:处理 - 集团人力资源部印章使用审批流程 - FSIG-201710260001"]}},{"id":"@class/word","prob":1,"ordinal":[1,8],"value":"BODY.ext-ie TABLE.TopTitle TBODY TR TD"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"}]},"roles":"element","text":"","frameXPath":"","customJS":"if(elem.textContent.indexOf('请求:处理 - 集团人力资源部印章使用审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 1-资金调拨审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 机关工会支出审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 资金支出审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 内部资金调拨审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 金融街集团发薪审批单') !==-1){return true;}return false;"},"control161_DAx502":{"location":{"data":{"tagName":"TABLE"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/form/table/tbody/tr/td"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"},{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td"}],"force":true},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]"}]},"events":{"onGetData":"getData_control161_DAx502"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control162_0w9L5M":{"location":{"data":{"tagName":"TD"},"userData":{"force":true,"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/form/table/tbody/tr/td"},{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td"}]},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"}]},"events":{"onGetData":"getData_control162_0w9L5M"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control163_lR4Oe7":{"location":{"data":{"tagName":"TBODY"},"userData":{"force":true,"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/form/table[1]/tbody/tr/td/table/tbody"},{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody"},{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody"}]},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]"}]},"events":{"onGetData":"getData_control163_lR4Oe7"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":false,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control172_tHZDlv":{"location":{"data":{"tagName":"TBODY"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[10]/td[2]/table"}],"force":false},"locators":[{"id":"@id/word","prob":2,"value":["descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]","descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TBODY","descendant::SPAN[@id=\"cke_remark\"]//TBODY"]},{"id":"@class/word","prob":1,"ordinal":[0,21],"value":"SPAN.cke_browser_webkit.cke_browser_quirks SPAN.cke_wrapper.cke_ltr TABLE.cke_editor TBODY"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control172_tHZDlv"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control177_PgVsPV":{"location":{"data":{"tagName":"TBODY"},"userData":{"data":[],"force":false},"locators":[{"id":"@id/word","prob":2,"value":["descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]/TABLE[1]/TBODY[1]","descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TBODY","descendant::DIV[@id=\"toolbarmenudiv\"]//TBODY"]},{"id":"@class/word","prob":1,"ordinal":[0,9],"value":"BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor TABLE TBODY"},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control177_PgVsPV"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":""},"control178_dWfvhq":{"location":{"data":{"tagName":"TR"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[2]/tbody/tr[4]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[2]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[10]/td[2]/table/tbody/tr[2]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[2]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[14]/td[2]/table/tbody/tr[2]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/form/table[2]/tbody/tr[4]"},{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]"}],"force":true},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[4]"}]},"events":{"onGetData":"getData_control178_dWfvhq"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":false,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control179_Hxzqpt":{"location":{"data":{"tagName":"TR"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[2]/tbody/tr[6]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[3]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[10]/td[2]/table/tbody/tr[3]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[3]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[14]/td[2]/table/tbody/tr[3]"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/form/table[2]/tbody/tr[6]"},{"method":"XPath","value":"/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]"}],"force":true},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[6]"}]},"events":{"onGetData":"getData_control179_Hxzqpt"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":false,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control180_XmtXEI":{"location":{"data":{"tagName":"TR"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]"},{"method":"XPath","value":"//*[@id=\"frmmain\"]"}],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[8]"}]},"events":{"onGetData":"getData_control180_XmtXEI"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control189_KTtSss":{"location":{"data":{"tagName":"TD"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"oTDtype_1\"]"}],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[2]"},{"id":"elderLevel","value":{"level":0}}]},"events":{"onGetData":"getData_control189_KTtSss"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control190_T4HONH":{"location":{"data":{"tagName":"TBODY"},"userData":{"force":false,"data":[{"method":"XPath","value":"//*[@id=\"SignTabDoc\"]/table/tbody"}]},"locators":[{"id":"@id/word","prob":2,"value":["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabDoc\"]/TABLE[1]/TBODY[1]","descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabDoc\"]//TBODY","descendant::DIV[@id=\"SignTabDoc\"]//TBODY"]},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control190_T4HONH"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control191_2Fzm8p":{"location":{"data":{"tagName":"TD"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"oTDtype_2\"]"}],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[3]"},{"id":"elderLevel","value":{"level":0}}]},"events":{"onGetData":"getData_control191_2Fzm8p"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control192_GaNmBF":{"location":{"data":{"tagName":"TBODY"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"SignTabWF\"]/table/tbody"}],"force":false},"locators":[{"id":"@id/word","prob":2,"value":["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]/TABLE[1]/TBODY[1]","descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]//TBODY","descendant::DIV[@id=\"SignTabWF\"]//TBODY"]},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[4]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control192_GaNmBF"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control193_erPNu7":{"location":{"data":{"tagName":"TD"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"oTDtype_3\"]"}],"force":false},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[4]"},{"id":"elderLevel","value":{"level":0}}]},"events":{"onGetData":"getData_control193_erPNu7"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control194_ECDCX3":{"location":{"data":{"tagName":"TBODY"},"userData":{"data":[{"method":"XPath","value":"//*[@id=\"SignTabUpload\"]/table/tbody"}],"force":true},"locators":[{"id":"@id/word","prob":2,"value":["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]/TABLE[1]/TBODY[1]","descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]//TBODY","descendant::DIV[@id=\"SignTabWF\"]//TBODY"]},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[4]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control194_ECDCX3"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control355_2iGaTc":{"location":{"data":{"tagName":"TBODY"},"userData":{"force":false,"data":[{"method":"XPath","value":"//*[@id=\"requestlogappednDiv\"]/table/tbody"},{"method":"XPath","value":"//*[@id=\"mainWFHead\"]/tbody"}]},"locators":[{"id":"@id/word","prob":2,"value":["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]/TBODY[1]","descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY","descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY","descendant::DIV[@id=\"requestlogappednDiv\"]//TBODY"]},{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[6]/DIV[1]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control355_2iGaTc"},"intendedRole":"custom","roles":"element,custom","monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"},"control361_3GhTnD":{"location":{"data":{"tagName":"TBODY"},"userData":{"force":true,"data":[{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[1]/tbody"},{"method":"XPath","value":"//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[1]/tbody"}]},"locators":[{"id":"path/ordinal","prob":1,"value":"/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"}]},"events":{"onGetData":"getData_control361_3GhTnD"},"intendedRole":"custom","roles":"element,custom","ignoreVisibility":true,"monitored":true,"frameXPath":"//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"}},"contexts":{"context24_ZWUvT7":{"controls":["control161_DAx502","control162_0w9L5M","control163_lR4Oe7","control172_tHZDlv","control177_PgVsPV","control178_dWfvhq","control179_Hxzqpt","control180_XmtXEI","control189_KTtSss","control190_T4HONH","control191_2Fzm8p","control192_GaNmBF","control193_erPNu7","control194_ECDCX3","control355_2iGaTc","control361_3GhTnD"],"anchors":["control96_fZKiT2"],"urlAnchor":[]}},"flows":{"flow56_wpfTEI":{"toContexts":[{"toContextId":"context24_ZWUvT7"}]},"flow94_8IO0GD":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control161_DAx502","toContexts":[{"toContextId":"context24_ZWUvT7"}]},"flow105_O9UMJT":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control178_dWfvhq","toContexts":[{"toContextId":"context24_ZWUvT7"},{"toContextId":"context5_DhOsrK","toModelId":"managerAuditRelatedDoc"}]},"flow106_KWm6RD":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control179_Hxzqpt","toContexts":[{"toContextId":"context24_ZWUvT7"},{"toContextId":"context6_aweFC7","toModelId":"managerAuditRelateProcess"}]},"flow109_Nca9Hd":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control189_KTtSss","toContexts":[{"toContextId":"context24_ZWUvT7"}]},"flow110_TuHOud":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control190_T4HONH","toContexts":[{"toContextId":"context24_ZWUvT7"}]},"flow111_0yk7Vq":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control191_2Fzm8p","toContexts":[{"toContextId":"context24_ZWUvT7"}]},"flow112_PobnAS":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control193_erPNu7","toContexts":[{"toContextId":"context24_ZWUvT7"}]},"flow130_dNSSqy":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control177_PgVsPV","toContexts":[{"toContextId":"context24_ZWUvT7"},{"toContextId":"context10_Tp4yhH","toModelId":"processToSend"},{"toContextId":"context23_zUAAyb","toModelId":"forward"},{"toContextId":"context2_owrLEy","toModelId":"waitTodo"}]},"flow38_auivB6":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control163_lR4Oe7","toContexts":[{"toContextId":"context24_ZWUvT7"}]},"flow201_VoAbuk":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control180_XmtXEI","toContexts":[{"toContextId":"context24_ZWUvT7"}]},"flow217_MBQPsg":{"fromContextId":"context24_ZWUvT7","fromAction":"doAction","fromControlId":"control355_2iGaTc","toContexts":[{"toContextId":"context24_ZWUvT7"}]}},"pages":{"page24_FHet2U":{"contextId":"context24_ZWUvT7","layout":[{"id":"uiControl84_HrkszS","controlId":"control161_DAx502","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl84_HrkszS","onGetTemplate":"getTemplate_uiControl84_HrkszS"}}}},{"id":"uiControl357_ah3ZAZ","display":{"type":"card","adapterId":"card","adapter":{"templateType":""}},"layout":[{"id":"uiControl357_ah3ZAZheader","display":{"type":"cardHeader","text":"","adapterId":"cardHeader","adapter":{"templateType":""}},"layout":[]},{"id":"uiControl357_ah3ZAZbody","display":{"type":"cardBody","adapterId":"cardBody","adapter":{"templateType":""}},"layout":[{"id":"uiControl356_zvfq0u","controlId":"control355_2iGaTc","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl356_zvfq0u","onGetTemplate":"getTemplate_uiControl356_zvfq0u"}}}},{"id":"uiControl142_i6attl","controlId":"control162_0w9L5M","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl142_i6attl","onGetTemplate":"getTemplate_uiControl142_i6attl"}}}},{"id":"uiControl281_ikkeVB","controlId":"control361_3GhTnD","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl281_ikkeVB","onGetTemplate":"getTemplate_uiControl281_ikkeVB"}}}},{"id":"uiControl143_xuBll5","controlId":"control163_lR4Oe7","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl143_xuBll5","onGetTemplate":"getTemplate_uiControl143_xuBll5"}}}},{"id":"uiControl151_5KOrM7","controlId":"control172_tHZDlv","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl151_5KOrM7","onGetTemplate":"getTemplate_uiControl151_5KOrM7"}}}},{"id":"uiControl158_qfPsgO","controlId":"control178_dWfvhq","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl158_qfPsgO","onGetTemplate":"getTemplate_uiControl158_qfPsgO"}}}},{"id":"uiControl159_wWuvKA","controlId":"control179_Hxzqpt","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl159_wWuvKA","onGetTemplate":"getTemplate_uiControl159_wWuvKA"}}}},{"id":"uiControl160_Fmesxt","controlId":"control180_XmtXEI","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl160_Fmesxt","onGetTemplate":"getTemplate_uiControl160_Fmesxt"}}}},{"id":"uiControl170_dXn0lF","controlId":"control189_KTtSss","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl170_dXn0lF","onGetTemplate":"getTemplate_uiControl170_dXn0lF"}}}},{"id":"uiControl171_81uFLX","controlId":"control190_T4HONH","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl171_81uFLX","onGetTemplate":"getTemplate_uiControl171_81uFLX"}}}},{"id":"uiControl172_61UTiT","controlId":"control191_2Fzm8p","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl172_61UTiT","onGetTemplate":"getTemplate_uiControl172_61UTiT"}}}},{"id":"uiControl173_O7qHKR","controlId":"control192_GaNmBF","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl173_O7qHKR","onGetTemplate":"getTemplate_uiControl173_O7qHKR"}}}},{"id":"uiControl174_VWKeG5","controlId":"control193_erPNu7","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl174_VWKeG5","onGetTemplate":"getTemplate_uiControl174_VWKeG5"}}}},{"id":"uiControl175_EUVTSB","controlId":"control194_ECDCX3","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl175_EUVTSB","onGetTemplate":"getTemplate_uiControl175_EUVTSB"}}}}]},{"id":"uiControl357_ah3ZAZfooter","display":{"type":"cardFooter","adapterId":"cardFooter","adapter":{"templateType":""}},"layout":[]}]},{"id":"uiControl156_y1HTUv","display":{"type":"sticky","adapterId":"sticky","adapter":{"templateType":""}},"layout":[{"id":"uiControl156_y1HTUvbody","display":{"type":"stickyBody","adapterId":"stickyBody","adapter":{"templateType":""}},"layout":[{"id":"uiControl157_cyBhVF","controlId":"control177_PgVsPV","display":{"adapterId":"custom","type":"custom","adapter":{"templateType":"react","events":{"onDoAction":"doAction_uiControl157_cyBhVF","onGetTemplate":"getTemplate_uiControl157_cyBhVF"}}}}]}]}]}},"matchers":{"page/title":{"contexts":{"context24_ZWUvT7":["111","test003","","test001","1-资金调拨审批流程-张济天-2017-11-13","test006","1-资金调拨审批流程-张济天-2017-11-14","test008","金融街集团发薪审批单-张济天-2017-11-28","金融街集团发薪审批单-张济天-2018-01-19"]}},"page/urls":{"contexts":{"context24_ZWUvT7":["192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215916&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321623&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/AddRequest.jsp?workflowid=6021&isagent=0&beagenter=0","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321619&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321622&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330438&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330436&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339247&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false","192.168.200.63/workflow/request/ViewRequest.jsp?requestid=452187&isovertime=0","192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=1086363&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"],"context6_aweFC7":["192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=","192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="],"context10_Tp4yhH":["192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1","192.168.200.63/workflow/request/Remark.jsp?requestid=162836&workflowRequestLogId=-1","192.168.200.63/workflow/request/Remark.jsp?requestid=118374&workflowRequestLogId=-1","192.168.200.63/workflow/request/Remark.jsp?requestid=339247&workflowRequestLogId=-1"],"context23_zUAAyb":["192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312802%26isqc%3D1","192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312804%26isqc%3D1","192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312805%26isqc%3D1","192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D339247%26isqc%3D1"]}},"page/ids":{"contexts":{"context24_ZWUvT7":[["BacoAddFavorite","BacoTitle","FONTSYSTEMF","WfBill","WfLog","WfPic","bodyiframe","btnHelp","closetext","divTopTitle","divWfBill","divWfLog","divWfPic","ext-gen","isonline","isworkflowdoc","loading","loading-msg","mainRequestFrame","mainsupports","needShow","picInnerFrameurl","piciframe","requestTabButton","requestmarkSpan","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","statInnerFrameurl","statiframe","toolbarbottommenu","toolbarmenu","toolbarmenuCoverdiv","toolbarmenudiv","triSubwfIframe","wfdoc"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","WfBill","WfLog","WfPic","_beagenter","_isagent","bodyiframe","btnHelp","closetext","divTopTitle","divWfBill","divWfLog","divWfPic","ext-gen","isonline","isworkflowdoc","loading","loading-msg","mainRequestFrame","mainsupports","needShow","picInnerFrameurl","piciframe","requestTabButton","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","statInnerFrameurl","statiframe","toolbarbottommenu","toolbarmenu","toolbarmenuCoverdiv","toolbarmenudiv"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","WfBill","WfLog","WfPic","_xTable","bodyiframe","btnHelp","closetext","divTopTitle","divWfBill","divWfLog","divWfPic","ext-gen","isonline","loading","loading-msg","mainRequestFrame","mainsupports","needShow","piciframe","requestTabButton","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","statiframe","toolbarbottommenu","toolbarmenu","toolbarmenuCoverdiv","toolbarmenudiv"]],"context10_Tp4yhH":[["BacoAddFavorite","BacoTitle","FONTSYSTEMF","SWFUpload_","_xTable","btnCancelannexupload","btnHelp","cke_","cke__label","cke__text","cke_bottom_remark","cke_contents_remark","cke_path_remark","cke_path_remark_label","cke_remark","cke_remark_arialbl","cke_top_remark","closetext","divStatusannexupload","divTopTitle","docimages_num","field-annexupload","field-annexupload_tab","field-annexuploadspan","fieldspan","fieldspanBtn","fieldspanSpan","flashUrl","fsUploadProgressannexupload","imgFileSpanTemp_remark","imgFileSpan_remark","imgFile_remark","imgTypeFile_remark","imgTypeUrl_remark","imgUrl","imgUrlSpan_remark","insertObjectContainer_Flash_remark","insertObjectContainer_Image_remark","insertObjectContainer_remark","isFlashVideoUrl","isonline","mainsupports","needShow","oFile","oTable","okBtn","remark","remarkSpan","remarkText","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","signdocids","signdocspan","signworkflowids","signworkflowspan","uploadFileName_remark"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","SWFUpload_","_xTable","btnCancelannexupload","btnHelp","cke_","cke__label","cke__text","cke_bottom_remark","cke_contents_remark","cke_elementspath__","cke_elementspath___label","cke_path_remark","cke_path_remark_label","cke_remark","cke_remark_arialbl","cke_top_remark","closetext","divStatusannexupload","divTopTitle","docimages_num","field-annexupload","field-annexupload_tab","field-annexuploadspan","fieldspan","fieldspanBtn","fieldspanSpan","flashUrl","fsUploadProgressannexupload","imgFileSpanTemp_remark","imgFileSpan_remark","imgFile_remark","imgTypeFile_remark","imgTypeUrl_remark","imgUrl","imgUrlSpan_remark","insertObjectContainer_Flash_remark","insertObjectContainer_Image_remark","insertObjectContainer_remark","isFlashVideoUrl","isonline","mainsupports","needShow","oFile","oTable","okBtn","remark","remarkSpan","remarkText","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","signdocids","signdocspan","signworkflowids","signworkflowspan","uploadFileName_remark"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","_xTable","btnHelp","cke_","cke__label","cke__text","cke_bottom_remark","cke_contents_remark","cke_path_remark","cke_path_remark_label","cke_remark","cke_remark_arialbl","cke_top_remark","closetext","divTopTitle","docimages_num","fieldspan","fieldspanBtn","fieldspanSpan","flashUrl","imgFileSpanTemp_remark","imgFileSpan_remark","imgFile_remark","imgTypeFile_remark","imgTypeUrl_remark","imgUrl","imgUrlSpan_remark","insertObjectContainer_Flash_remark","insertObjectContainer_Image_remark","insertObjectContainer_remark","isFlashVideoUrl","isonline","mainsupports","needShow","oFile","oTable","okBtn","remark","remarkSpan","remarkText","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","uploadFileName_remark"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","_xTable","btnHelp","cke_","cke__label","cke__text","cke_bottom_remark","cke_contents_remark","cke_elementspath__","cke_elementspath___label","cke_path_remark","cke_path_remark_label","cke_remark","cke_remark_arialbl","cke_top_remark","closetext","divTopTitle","docimages_num","fieldspan","fieldspanBtn","fieldspanSpan","flashUrl","imgFileSpanTemp_remark","imgFileSpan_remark","imgFile_remark","imgTypeFile_remark","imgTypeUrl_remark","imgUrl","imgUrlSpan_remark","insertObjectContainer_Flash_remark","insertObjectContainer_Image_remark","insertObjectContainer_remark","isFlashVideoUrl","isonline","mainsupports","needShow","oFile","oTable","okBtn","remark","remarkSpan","remarkText","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","uploadFileName_remark"],["BacoAddFavorite","BacoTitle","FONTSYSTEMF","_xTable","btnCancelannexupload","btnHelp","cke_","cke__label","cke__text","cke_bottom_remark","cke_contents_remark","cke_path_remark","cke_path_remark_label","cke_remark","cke_remark_arialbl","cke_top_remark","closetext","divStatusannexupload","divTopTitle","docimages_num","field-annexupload","field-annexupload_tab","field-annexuploadspan","fieldspan","fieldspanBtn","fieldspanSpan","flashUrl","fsUploadProgressannexupload","imgFileSpanTemp_remark","imgFileSpan_remark","imgFile_remark","imgTypeFile_remark","imgTypeUrl_remark","imgUrl","imgUrlSpan_remark","insertObjectContainer_Flash_remark","insertObjectContainer_Image_remark","insertObjectContainer_remark","isFlashVideoUrl","isonline","mainsupports","needShow","oFile","oTable","okBtn","remark","remarkSpan","remarkText","resourceimg","resourceimghref","result","rightMenu","rightMenuIframe","signdocids","signdocspan","signworkflowids","signworkflowspan","spanButtonPlaceHolderannexupload","uploadFileName_remark"]]}},"page/classes":{"contexts":{"context24_ZWUvT7":[["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_doDelete","btn_edit","btn_forward","btn_print","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_edit","btn_forward","btn_print","btn_rejectName","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_edit","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_forward","btn_print","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_edit","btn_forward","btn_print","btn_rejectName","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row","ysp_load_haha"],["STYLE","TopTitle","btnFavorite","btnHelp","btn_add","btn_back","btn_doDelete","btn_forward","btn_print","btn_subbackName","btn_wfSave","clickRightMenu","drop-shadow","highslide-container","highslide-loading","requestContentBody","simplehrmhead","x-btn","x-btn-bc","x-btn-bl","x-btn-br","x-btn-icon-small-left","x-btn-mc","x-btn-ml","x-btn-mr","x-btn-small","x-btn-tc","x-btn-text","x-btn-text-icon","x-btn-tl","x-btn-tr","x-panel-body","x-panel-body-noheader","x-small-editor","x-tab-edge","x-tab-left","x-tab-panel-footer","x-tab-right","x-tab-strip","x-tab-strip-active","x-tab-strip-bottom","x-tab-strip-close","x-tab-strip-inner","x-tab-strip-text","x-tab-strip-wrap","x-tab-with-icon","x-toolbar","x-toolbar-left-row"]],"context10_Tp4yhH":[["Browser","InputStyle","Inputstyle","Line","STYLE","Shadow","Title","TopTitle","ViewForm","browser","btnFavorite","btnHelp","cke_","cke_bottom","cke_browser_quirks","cke_browser_webkit","cke_button","cke_button_bgcolor","cke_button_bold","cke_button_customimage","cke_button_flash","cke_button_indent","cke_button_insertcrm","cke_button_insertdocs","cke_button_insertproject","cke_button_inserttask","cke_button_insertwf","cke_button_italic","cke_button_justifyblock","cke_button_justifycenter","cke_button_justifyleft","cke_button_justifyright","cke_button_link","cke_button_outdent","cke_button_redo","cke_button_source","cke_button_table","cke_button_textcolor","cke_button_underline","cke_button_undo","cke_button_unlink","cke_buttonarrow","cke_contents","cke_disabled","cke_editor","cke_editor_remark","cke_empty","cke_font","cke_fontSize","cke_icon","cke_inline_label","cke_label","cke_ltr","cke_off","cke_openbutton","cke_path","cke_rcombo","cke_separator","cke_skin_v","cke_text","cke_toolbar","cke_toolbar_end","cke_toolbar_start","cke_toolbox","cke_toolbox_collapser","cke_toolgroup","cke_top","cke_voice_label","cke_wrapper","clickRightMenu","datalight","drop-shadow","editorImgWin","field","fieldset","flash","highslide-container","highslide-loading","simplehrmhead","swfupload"],["Browser","InputStyle","Inputstyle","Line","STYLE","Shadow","Title","TopTitle","ViewForm","browser","btnFavorite","btnHelp","cke_","cke_bottom","cke_browser_quirks","cke_browser_webkit","cke_button","cke_button_bgcolor","cke_button_bold","cke_button_customimage","cke_button_flash","cke_button_indent","cke_button_insertcrm","cke_button_insertdocs","cke_button_insertproject","cke_button_inserttask","cke_button_insertwf","cke_button_italic","cke_button_justifyblock","cke_button_justifycenter","cke_button_justifyleft","cke_button_justifyright","cke_button_link","cke_button_outdent","cke_button_redo","cke_button_source","cke_button_table","cke_button_textcolor","cke_button_underline","cke_button_undo","cke_button_unlink","cke_buttonarrow","cke_contents","cke_disabled","cke_editor","cke_editor_remark","cke_empty","cke_font","cke_fontSize","cke_icon","cke_inline_label","cke_label","cke_ltr","cke_off","cke_on","cke_openbutton","cke_path","cke_rcombo","cke_separator","cke_skin_v","cke_text","cke_toolbar","cke_toolbar_end","cke_toolbar_start","cke_toolbox","cke_toolbox_collapser","cke_toolgroup","cke_top","cke_voice_label","cke_wrapper","clickRightMenu","datalight","drop-shadow","editorImgWin","field","fieldset","flash","highslide-container","highslide-loading","simplehrmhead","swfupload"],["Browser","Inputstyle","Line","STYLE","Shadow","Title","TopTitle","ViewForm","browser","btnFavorite","btnHelp","cke_","cke_bottom","cke_browser_quirks","cke_browser_webkit","cke_button","cke_button_bgcolor","cke_button_bold","cke_button_customimage","cke_button_flash","cke_button_indent","cke_button_insertcrm","cke_button_insertdocs","cke_button_insertproject","cke_button_inserttask","cke_button_insertwf","cke_button_italic","cke_button_justifyblock","cke_button_justifycenter","cke_button_justifyleft","cke_button_justifyright","cke_button_link","cke_button_outdent","cke_button_redo","cke_button_source","cke_button_table","cke_button_textcolor","cke_button_underline","cke_button_undo","cke_button_unlink","cke_buttonarrow","cke_contents","cke_disabled","cke_editor","cke_editor_remark","cke_empty","cke_font","cke_fontSize","cke_icon","cke_inline_label","cke_label","cke_ltr","cke_off","cke_openbutton","cke_path","cke_rcombo","cke_separator","cke_skin_v","cke_text","cke_toolbar","cke_toolbar_end","cke_toolbar_start","cke_toolbox","cke_toolbox_collapser","cke_toolgroup","cke_top","cke_voice_label","cke_wrapper","clickRightMenu","datalight","drop-shadow","editorImgWin","field","highslide-container","highslide-loading","simplehrmhead"],["Browser","Inputstyle","Line","STYLE","Shadow","Title","TopTitle","ViewForm","browser","btnFavorite","btnHelp","cke_","cke_bottom","cke_browser_quirks","cke_browser_webkit","cke_button","cke_button_bgcolor","cke_button_bold","cke_button_customimage","cke_button_flash","cke_button_indent","cke_button_insertcrm","cke_button_insertdocs","cke_button_insertproject","cke_button_inserttask","cke_button_insertwf","cke_button_italic","cke_button_justifyblock","cke_button_justifycenter","cke_button_justifyleft","cke_button_justifyright","cke_button_link","cke_button_outdent","cke_button_redo","cke_button_source","cke_button_table","cke_button_textcolor","cke_button_underline","cke_button_undo","cke_button_unlink","cke_buttonarrow","cke_contents","cke_disabled","cke_editor","cke_editor_remark","cke_empty","cke_font","cke_fontSize","cke_icon","cke_inline_label","cke_label","cke_ltr","cke_off","cke_on","cke_openbutton","cke_path","cke_rcombo","cke_separator","cke_skin_v","cke_text","cke_toolbar","cke_toolbar_end","cke_toolbar_start","cke_toolbox","cke_toolbox_collapser","cke_toolgroup","cke_top","cke_voice_label","cke_wrapper","clickRightMenu","datalight","drop-shadow","editorImgWin","field","highslide-container","highslide-loading","simplehrmhead"],["Browser","InputStyle","Inputstyle","Line","STYLE","Shadow","Title","TopTitle","ViewForm","browser","btnFavorite","btnHelp","cke_","cke_bottom","cke_browser_quirks","cke_browser_webkit","cke_button","cke_button_bgcolor","cke_button_bold","cke_button_customimage","cke_button_flash","cke_button_indent","cke_button_insertcrm","cke_button_insertdocs","cke_button_insertproject","cke_button_inserttask","cke_button_insertwf","cke_button_italic","cke_button_justifyblock","cke_button_justifycenter","cke_button_justifyleft","cke_button_justifyright","cke_button_link","cke_button_outdent","cke_button_redo","cke_button_source","cke_button_table","cke_button_textcolor","cke_button_underline","cke_button_undo","cke_button_unlink","cke_buttonarrow","cke_contents","cke_disabled","cke_editor","cke_editor_remark","cke_empty","cke_font","cke_fontSize","cke_icon","cke_inline_label","cke_label","cke_ltr","cke_off","cke_openbutton","cke_path","cke_rcombo","cke_separator","cke_skin_v","cke_text","cke_toolbar","cke_toolbar_end","cke_toolbar_start","cke_toolbox","cke_toolbox_collapser","cke_toolgroup","cke_top","cke_voice_label","cke_wrapper","clickRightMenu","datalight","drop-shadow","editorImgWin","field","fieldset","flash","highslide-container","highslide-loading","simplehrmhead"]]}},"page/tagTriplets":{"contexts":{"context24_ZWUvT7":[["-/-/DIV","-/-/IFRAME","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/SCRIPT","-/-/STYLE","-/-/TITLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/SPAN","-/DIV/TABLE","A/EM/SPAN","DIV/DIV/DIV","DIV/DIV/IFRAME","DIV/DIV/TABLE","DIV/DIV/UL","DIV/SPAN/IMG","DIV/TABLE/TBODY","DIV/UL/LI","EM/SPAN/SPAN","LI/A/EM","SPAN/SPAN/SCRIPT","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/EM/BUTTON","TD/SPAN/SPAN","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/EM","TR/TD/I","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A"],["-/-/DIV","-/-/INPUT-hidden","-/-/LINK","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/SPAN","-/DIV/TABLE","A/EM/SPAN","DIV/DIV/DIV","DIV/DIV/IFRAME","DIV/DIV/TABLE","DIV/DIV/UL","DIV/SPAN/IMG","DIV/TABLE/TBODY","DIV/UL/LI","EM/SPAN/SPAN","LI/A/EM","SPAN/SPAN/SCRIPT","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/EM/BUTTON","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/EM","TR/TD/I","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A"],["-/-/DIV","-/-/INPUT-hidden","-/-/LINK","-/-/SCRIPT","-/-/STYLE","-/-/TABLE","-/-/TITLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/SPAN","-/DIV/TABLE","-/TABLE/TBODY","A/EM/SPAN","DIV/DIV/DIV","DIV/DIV/IFRAME","DIV/DIV/TABLE","DIV/DIV/UL","DIV/SPAN/IMG","DIV/TABLE/TBODY","DIV/UL/LI","EM/SPAN/SPAN","LI/A/EM","SPAN/SPAN/SCRIPT","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/DIV/A","TD/DIV/IMG","TD/DIV/SPAN","TD/EM/BUTTON","TD/TABLE/TBODY","TR/TD/A","TR/TD/BUTTON","TR/TD/DIV","TR/TD/EM","TR/TD/I","TR/TD/IMG","TR/TD/SPAN","TR/TD/TABLE","UL/LI/A"]],"context10_Tp4yhH":[["-/-/DIV","-/-/FORM","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/OBJECT","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/TABLE","-/FORM/DIV","-/FORM/INPUT-hidden","-/FORM/SPAN","-/FORM/TABLE","A/SPAN/SPAN","DIV/BUTTON/U","DIV/DIV/BUTTON","DIV/LABEL/INPUT-radio","DIV/SPAN/BR","DIV/SPAN/DIV","DIV/SPAN/INPUT-button","DIV/SPAN/INPUT-hidden","DIV/SPAN/INPUT-null","DIV/SPAN/LABEL","DIV/SPAN/OBJECT","DIV/SPAN/SPAN","DIV/TABLE/TBODY","FORM/SPAN/DIV","FORM/TABLE/COLGROUP","FORM/TABLE/TBODY","SPAN/A/SPAN","SPAN/DIV/BR","SPAN/DIV/DIV","SPAN/DIV/LABEL","SPAN/DIV/SPAN","SPAN/LABEL/INPUT-checkbox","SPAN/OBJECT/PARAM","SPAN/SPAN/A","SPAN/SPAN/FONT","SPAN/SPAN/IMG","SPAN/SPAN/SPAN","SPAN/SPAN/STYLE","SPAN/SPAN/TABLE","SPAN/TABLE/TBODY","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/A/SPAN","TD/DIV/A","TD/DIV/FONT","TD/DIV/IMG","TD/DIV/SPAN","TD/SPAN/IMG","TD/SPAN/SPAN","TD/TABLE/COLGROUP","TD/TABLE/INPUT-hidden","TD/TABLE/TBODY","TR/TD/A","TR/TD/BR","TR/TD/BUTTON","TR/TD/DIV","TR/TD/FONT","TR/TD/IFRAME","TR/TD/IMG","TR/TD/INPUT-hidden","TR/TD/INPUT-null","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/TABLE","TR/TD/TEXTAREA"],["-/-/DIV","-/-/FORM","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/OBJECT","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/TABLE","-/FORM/DIV","-/FORM/INPUT-hidden","-/FORM/SPAN","-/FORM/TABLE","A/SPAN/SPAN","DIV/A/SPAN","DIV/BUTTON/U","DIV/DIV/BUTTON","DIV/LABEL/INPUT-radio","DIV/SPAN/BR","DIV/SPAN/DIV","DIV/SPAN/INPUT-button","DIV/SPAN/INPUT-hidden","DIV/SPAN/INPUT-null","DIV/SPAN/LABEL","DIV/SPAN/OBJECT","DIV/SPAN/SPAN","DIV/TABLE/TBODY","FORM/SPAN/DIV","FORM/TABLE/COLGROUP","FORM/TABLE/TBODY","SPAN/A/SPAN","SPAN/DIV/BR","SPAN/DIV/DIV","SPAN/DIV/LABEL","SPAN/DIV/SPAN","SPAN/LABEL/INPUT-checkbox","SPAN/OBJECT/PARAM","SPAN/SPAN/A","SPAN/SPAN/FONT","SPAN/SPAN/IMG","SPAN/SPAN/SPAN","SPAN/SPAN/STYLE","SPAN/SPAN/TABLE","SPAN/TABLE/TBODY","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/A/SPAN","TD/DIV/A","TD/DIV/FONT","TD/DIV/IMG","TD/DIV/SPAN","TD/SPAN/IMG","TD/SPAN/SPAN","TD/TABLE/COLGROUP","TD/TABLE/INPUT-hidden","TD/TABLE/TBODY","TR/TD/A","TR/TD/BR","TR/TD/BUTTON","TR/TD/DIV","TR/TD/FONT","TR/TD/IFRAME","TR/TD/IMG","TR/TD/INPUT-hidden","TR/TD/INPUT-null","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/TABLE","TR/TD/TEXTAREA"],["-/-/DIV","-/-/FORM","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/OBJECT","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/TABLE","-/FORM/DIV","-/FORM/INPUT-hidden","-/FORM/SPAN","-/FORM/TABLE","A/SPAN/SPAN","DIV/BUTTON/U","DIV/DIV/BUTTON","DIV/LABEL/INPUT-radio","DIV/SPAN/BR","DIV/SPAN/DIV","DIV/SPAN/INPUT-button","DIV/SPAN/INPUT-hidden","DIV/SPAN/INPUT-null","DIV/SPAN/LABEL","DIV/SPAN/SPAN","DIV/TABLE/TBODY","FORM/SPAN/DIV","FORM/TABLE/COLGROUP","FORM/TABLE/TBODY","SPAN/A/SPAN","SPAN/DIV/BR","SPAN/DIV/DIV","SPAN/DIV/LABEL","SPAN/DIV/SPAN","SPAN/LABEL/INPUT-checkbox","SPAN/SPAN/A","SPAN/SPAN/SPAN","SPAN/SPAN/STYLE","SPAN/SPAN/TABLE","SPAN/TABLE/TBODY","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/A/SPAN","TD/DIV/A","TD/DIV/FONT","TD/DIV/IMG","TD/DIV/SPAN","TD/SPAN/IMG","TD/SPAN/SPAN","TD/TABLE/TBODY","TR/TD/A","TR/TD/BR","TR/TD/BUTTON","TR/TD/DIV","TR/TD/FONT","TR/TD/IFRAME","TR/TD/IMG","TR/TD/INPUT-hidden","TR/TD/INPUT-null","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/TABLE","TR/TD/TEXTAREA"],["-/-/DIV","-/-/FORM","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/OBJECT","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/TABLE","-/FORM/DIV","-/FORM/INPUT-hidden","-/FORM/SPAN","-/FORM/TABLE","A/SPAN/SPAN","DIV/A/SPAN","DIV/BUTTON/U","DIV/DIV/BUTTON","DIV/LABEL/INPUT-radio","DIV/SPAN/BR","DIV/SPAN/DIV","DIV/SPAN/INPUT-button","DIV/SPAN/INPUT-hidden","DIV/SPAN/INPUT-null","DIV/SPAN/LABEL","DIV/SPAN/SPAN","DIV/TABLE/TBODY","FORM/SPAN/DIV","FORM/TABLE/COLGROUP","FORM/TABLE/TBODY","SPAN/A/SPAN","SPAN/DIV/BR","SPAN/DIV/DIV","SPAN/DIV/LABEL","SPAN/DIV/SPAN","SPAN/LABEL/INPUT-checkbox","SPAN/SPAN/A","SPAN/SPAN/SPAN","SPAN/SPAN/STYLE","SPAN/SPAN/TABLE","SPAN/TABLE/TBODY","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/A/SPAN","TD/DIV/A","TD/DIV/FONT","TD/DIV/IMG","TD/DIV/SPAN","TD/SPAN/IMG","TD/SPAN/SPAN","TD/TABLE/TBODY","TR/TD/A","TR/TD/BR","TR/TD/BUTTON","TR/TD/DIV","TR/TD/FONT","TR/TD/IFRAME","TR/TD/IMG","TR/TD/INPUT-hidden","TR/TD/INPUT-null","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/TABLE","TR/TD/TEXTAREA"],["-/-/DIV","-/-/FORM","-/-/INPUT-hidden","-/-/LINK","-/-/META","-/-/OBJECT","-/-/SCRIPT","-/-/STYLE","-/DIV/A","-/DIV/DIV","-/DIV/IFRAME","-/DIV/TABLE","-/FORM/DIV","-/FORM/INPUT-hidden","-/FORM/SPAN","-/FORM/TABLE","A/SPAN/SPAN","DIV/BUTTON/U","DIV/DIV/BUTTON","DIV/LABEL/INPUT-radio","DIV/SPAN/BR","DIV/SPAN/DIV","DIV/SPAN/INPUT-button","DIV/SPAN/INPUT-hidden","DIV/SPAN/INPUT-null","DIV/SPAN/LABEL","DIV/SPAN/SPAN","DIV/TABLE/TBODY","FORM/SPAN/DIV","FORM/TABLE/COLGROUP","FORM/TABLE/TBODY","SPAN/A/SPAN","SPAN/DIV/BR","SPAN/DIV/DIV","SPAN/DIV/LABEL","SPAN/DIV/SPAN","SPAN/LABEL/INPUT-checkbox","SPAN/SPAN/A","SPAN/SPAN/FONT","SPAN/SPAN/IMG","SPAN/SPAN/SPAN","SPAN/SPAN/STYLE","SPAN/SPAN/TABLE","SPAN/TABLE/TBODY","TABLE/COLGROUP/COL","TABLE/TBODY/TR","TBODY/TR/TD","TD/A/IMG","TD/A/SPAN","TD/DIV/A","TD/DIV/FONT","TD/DIV/IMG","TD/DIV/SPAN","TD/SPAN/IMG","TD/SPAN/SPAN","TD/TABLE/COLGROUP","TD/TABLE/INPUT-hidden","TD/TABLE/TBODY","TR/TD/A","TR/TD/BR","TR/TD/BUTTON","TR/TD/DIV","TR/TD/FONT","TR/TD/IFRAME","TR/TD/IMG","TR/TD/INPUT-hidden","TR/TD/INPUT-null","TR/TD/SCRIPT","TR/TD/SPAN","TR/TD/TABLE","TR/TD/TEXTAREA"]]}}}}
+{
+    "version": "0.1",
+    "id": "fundSeal",
+    "targetURL": "http://192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215916&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false",
+    "jsFile": "index.js",
+    "requires": {
+        "managerAuditRelatedDoc": "../managerAuditRelatedDoc/index.json",
+        "managerAuditRelateProcess": "../managerAuditRelateProcess/index.json",
+        "processToSend": "../processToSend/index.json",
+        "forward": "../forward/index.json",
+        "waitTodo": "../waitTodo/index.json"
+    },
+    "chineseName": "资金调拨和印章（三个流程）",
+    "description": "",
+    "controls": {
+        "control96_fZKiT2": {
+            "location": {
+                "data": {
+                    "tagName": "TD"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "text",
+                    "prob": 3,
+                    "ordinal": [1, 2],
+                    "value": {
+                        "text": ["请求:处理 - 集团人力资源部印章使用审批流程 - FSIG-201710260001"],
+                        "visText": ["请求:处理 - 集团人力资源部印章使用审批流程 - FSIG-201710260001"]
+                    }
+                }, {
+                    "id": "@class/word",
+                    "prob": 1,
+                    "ordinal": [1, 8],
+                    "value": "BODY.ext-ie TABLE.TopTitle TBODY TR TD"
+                }, {
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+                }]
+            },
+            "roles": "element",
+            "text": "",
+            "frameXPath": "",
+            "customJS": "if(elem.textContent.indexOf('请求:处理 - 集团人力资源部印章使用审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 1-资金调拨审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 机关工会支出审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 资金支出审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 内部资金调拨审批流程') !==-1||elem.textContent.indexOf('请求:处理 - 金融街集团发薪审批单') !==-1){return true;}return false;"
+        },
+        "control161_DAx502": {
+            "location": {
+                "data": {
+                    "tagName": "TABLE"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"
+                    }, {
+                        "method": "XPath",
+                        "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td"
+                    }],
+                    "force": true
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control161_DAx502"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control162_0w9L5M": {
+            "location": {
+                "data": {
+                    "tagName": "TD"
+                },
+                "userData": {
+                    "force": true,
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td"
+                    }, {
+                        "method": "XPath",
+                        "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td"
+                    }]
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control162_0w9L5M"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control163_lR4Oe7": {
+            "location": {
+                "data": {
+                    "tagName": "TBODY"
+                },
+                "userData": {
+                    "force": true,
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/form/table/tbody/tr/td/table[2]/tbody"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/form/table[1]/tbody/tr/td/table/tbody"
+                    }, {
+                        "method": "XPath",
+                        "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody"
+                    }, {
+                        "method": "XPath",
+                        "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody"
+                    }]
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[2]/TBODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control163_lR4Oe7"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": false,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control172_tHZDlv": {
+            "location": {
+                "data": {
+                    "tagName": "TBODY"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[10]/td[2]/table"
+                    }],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "@id/word",
+                    "prob": 2,
+                    "value": ["descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]", "descendant::BODY[@id=\"flowbody\"]//SPAN[@id=\"cke_remark\"]//TBODY", "descendant::SPAN[@id=\"cke_remark\"]//TBODY"]
+                }, {
+                    "id": "@class/word",
+                    "prob": 1,
+                    "ordinal": [0, 21],
+                    "value": "SPAN.cke_browser_webkit.cke_browser_quirks SPAN.cke_wrapper.cke_ltr TABLE.cke_editor TBODY"
+                }, {
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/SPAN[1]/SPAN[2]/SPAN[1]/TABLE[1]/TBODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control172_tHZDlv"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control177_PgVsPV": {
+            "location": {
+                "data": {
+                    "tagName": "TBODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "@id/word",
+                    "prob": 2,
+                    "value": ["descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]/TABLE[1]/TBODY[1]", "descendant::DIV[@id=\"mainRequestFrame\"]//DIV[@id=\"toolbarmenudiv\"]//TBODY", "descendant::DIV[@id=\"toolbarmenudiv\"]//TBODY"]
+                }, {
+                    "id": "@class/word",
+                    "prob": 1,
+                    "ordinal": [0, 9],
+                    "value": "BODY.ext-ie DIV.x-panel-body.x-panel-body-noheader DIV.x-toolbar.x-small-editor TABLE TBODY"
+                }, {
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/TABLE[1]/TBODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control177_PgVsPV"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": ""
+        },
+        "control178_dWfvhq": {
+            "location": {
+                "data": {
+                    "tagName": "TR"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[2]/tbody/tr[4]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[2]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[10]/td[2]/table/tbody/tr[2]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[2]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[14]/td[2]/table/tbody/tr[2]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/form/table[2]/tbody/tr[4]"
+                    }, {
+                        "method": "XPath",
+                        "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]"
+                    }],
+                    "force": true
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[4]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control178_dWfvhq"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": false,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control179_Hxzqpt": {
+            "location": {
+                "data": {
+                    "tagName": "TR"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[2]/tbody/tr[6]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]/table/tbody/tr[3]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[10]/td[2]/table/tbody/tr[3]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[9]/td[2]/table/tbody/tr[3]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table/tbody/tr[14]/td[2]/table/tbody/tr[3]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/form/table[2]/tbody/tr[6]"
+                    }, {
+                        "method": "XPath",
+                        "value": "/html/body/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[2]/tbody/tr[8]/td[2]"
+                    }],
+                    "force": true
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[6]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control179_Hxzqpt"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": false,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control180_XmtXEI": {
+            "location": {
+                "data": {
+                    "tagName": "TR"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"frmmain\"]"
+                    }],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[2]/TBODY[1]/TR[8]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control180_XmtXEI"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control189_KTtSss": {
+            "location": {
+                "data": {
+                    "tagName": "TD"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"oTDtype_1\"]"
+                    }],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[2]"
+                }, {
+                    "id": "elderLevel",
+                    "value": {
+                        "level": 0
+                    }
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control189_KTtSss"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control190_T4HONH": {
+            "location": {
+                "data": {
+                    "tagName": "TBODY"
+                },
+                "userData": {
+                    "force": false,
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"SignTabDoc\"]/table/tbody"
+                    }]
+                },
+                "locators": [{
+                    "id": "@id/word",
+                    "prob": 2,
+                    "value": ["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabDoc\"]/TABLE[1]/TBODY[1]", "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabDoc\"]//TBODY", "descendant::DIV[@id=\"SignTabDoc\"]//TBODY"]
+                }, {
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[3]/TABLE[1]/TBODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control190_T4HONH"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control191_2Fzm8p": {
+            "location": {
+                "data": {
+                    "tagName": "TD"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"oTDtype_2\"]"
+                    }],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[3]"
+                }, {
+                    "id": "elderLevel",
+                    "value": {
+                        "level": 0
+                    }
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control191_2Fzm8p"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control192_GaNmBF": {
+            "location": {
+                "data": {
+                    "tagName": "TBODY"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"SignTabWF\"]/table/tbody"
+                    }],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "@id/word",
+                    "prob": 2,
+                    "value": ["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]/TABLE[1]/TBODY[1]", "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]//TBODY", "descendant::DIV[@id=\"SignTabWF\"]//TBODY"]
+                }, {
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[4]/TABLE[1]/TBODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control192_GaNmBF"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control193_erPNu7": {
+            "location": {
+                "data": {
+                    "tagName": "TD"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"oTDtype_3\"]"
+                    }],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[3]/TBODY[1]/TR[1]/TD[4]"
+                }, {
+                    "id": "elderLevel",
+                    "value": {
+                        "level": 0
+                    }
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control193_erPNu7"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control194_ECDCX3": {
+            "location": {
+                "data": {
+                    "tagName": "TBODY"
+                },
+                "userData": {
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"SignTabUpload\"]/table/tbody"
+                    }],
+                    "force": true
+                },
+                "locators": [{
+                    "id": "@id/word",
+                    "prob": 2,
+                    "value": ["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]/TABLE[1]/TBODY[1]", "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"SignTabWF\"]//TBODY", "descendant::DIV[@id=\"SignTabWF\"]//TBODY"]
+                }, {
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[4]/TABLE[1]/TBODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control194_ECDCX3"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control355_2iGaTc": {
+            "location": {
+                "data": {
+                    "tagName": "TBODY"
+                },
+                "userData": {
+                    "force": false,
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"requestlogappednDiv\"]/table/tbody"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"mainWFHead\"]/tbody"
+                    }]
+                },
+                "locators": [{
+                    "id": "@id/word",
+                    "prob": 2,
+                    "value": ["descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]/TABLE[1]/TBODY[1]", "descendant::BODY[@id=\"flowbody\"]//DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY", "descendant::DIV[@id=\"signid\"]//DIV[@id=\"requestlogappednDiv\"]//TBODY", "descendant::DIV[@id=\"requestlogappednDiv\"]//TBODY"]
+                }, {
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/DIV[6]/DIV[1]/TABLE[1]/TBODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control355_2iGaTc"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        },
+        "control361_3GhTnD": {
+            "location": {
+                "data": {
+                    "tagName": "TBODY"
+                },
+                "userData": {
+                    "force": true,
+                    "data": [{
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[1]/tbody"
+                    }, {
+                        "method": "XPath",
+                        "value": "//*[@id=\"flowbody\"]/table/tbody/tr/td/form/table[1]/tbody/tr/td/table[1]/tbody"
+                    }]
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control361_3GhTnD"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[@name='bodyiframe'][@id='bodyiframe']<<IFRAME>>"
+        }
+    },
+    "contexts": {
+        "context24_ZWUvT7": {
+            "controls": ["control161_DAx502", "control162_0w9L5M", "control163_lR4Oe7", "control172_tHZDlv", "control177_PgVsPV", "control178_dWfvhq", "control179_Hxzqpt", "control180_XmtXEI", "control189_KTtSss", "control190_T4HONH", "control191_2Fzm8p", "control192_GaNmBF", "control193_erPNu7", "control194_ECDCX3", "control355_2iGaTc", "control361_3GhTnD"],
+            "anchors": ["control96_fZKiT2"],
+            "urlAnchor": []
+        }
+    },
+    "flows": {
+        "flow56_wpfTEI": {
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }]
+        },
+        "flow94_8IO0GD": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control161_DAx502",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }]
+        },
+        "flow105_O9UMJT": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control178_dWfvhq",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }, {
+                "toContextId": "context5_DhOsrK",
+                "toModelId": "managerAuditRelatedDoc"
+            }]
+        },
+        "flow106_KWm6RD": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control179_Hxzqpt",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }, {
+                "toContextId": "context6_aweFC7",
+                "toModelId": "managerAuditRelateProcess"
+            }]
+        },
+        "flow109_Nca9Hd": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control189_KTtSss",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }]
+        },
+        "flow110_TuHOud": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control190_T4HONH",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }]
+        },
+        "flow111_0yk7Vq": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control191_2Fzm8p",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }]
+        },
+        "flow112_PobnAS": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control193_erPNu7",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }]
+        },
+        "flow130_dNSSqy": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control177_PgVsPV",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }, {
+                "toContextId": "context10_Tp4yhH",
+                "toModelId": "processToSend"
+            }, {
+                "toContextId": "context23_zUAAyb",
+                "toModelId": "forward"
+            }, {
+                "toContextId": "context2_owrLEy",
+                "toModelId": "waitTodo"
+            }]
+        },
+        "flow38_auivB6": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control163_lR4Oe7",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }]
+        },
+        "flow201_VoAbuk": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control180_XmtXEI",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }]
+        },
+        "flow217_MBQPsg": {
+            "fromContextId": "context24_ZWUvT7",
+            "fromAction": "doAction",
+            "fromControlId": "control355_2iGaTc",
+            "toContexts": [{
+                "toContextId": "context24_ZWUvT7"
+            }]
+        }
+    },
+    "pages": {
+        "page24_FHet2U": {
+            "contextId": "context24_ZWUvT7",
+            "layout": [{
+                "id": "uiControl84_HrkszS",
+                "controlId": "control161_DAx502",
+                "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                        "templateType": "react",
+                        "events": {
+                            "onDoAction": "doAction_uiControl84_HrkszS",
+                            "onGetTemplate": "getTemplate_uiControl84_HrkszS"
+                        }
+                    }
+                }
+            }, {
+                "id": "uiControl357_ah3ZAZ",
+                "display": {
+                    "type": "card",
+                    "adapterId": "card",
+                    "adapter": {
+                        "templateType": ""
+                    }
+                },
+                "layout": [{
+                    "id": "uiControl357_ah3ZAZheader",
+                    "display": {
+                        "type": "cardHeader",
+                        "text": "",
+                        "adapterId": "cardHeader",
+                        "adapter": {
+                            "templateType": ""
+                        }
+                    },
+                    "layout": []
+                }, {
+                    "id": "uiControl357_ah3ZAZbody",
+                    "display": {
+                        "type": "cardBody",
+                        "adapterId": "cardBody",
+                        "adapter": {
+                            "templateType": ""
+                        }
+                    },
+                    "layout": [{
+                        "id": "uiControl356_zvfq0u",
+                        "controlId": "control355_2iGaTc",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl356_zvfq0u",
+                                    "onGetTemplate": "getTemplate_uiControl356_zvfq0u"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl142_i6attl",
+                        "controlId": "control162_0w9L5M",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl142_i6attl",
+                                    "onGetTemplate": "getTemplate_uiControl142_i6attl"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl281_ikkeVB",
+                        "controlId": "control361_3GhTnD",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl281_ikkeVB",
+                                    "onGetTemplate": "getTemplate_uiControl281_ikkeVB"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl143_xuBll5",
+                        "controlId": "control163_lR4Oe7",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl143_xuBll5",
+                                    "onGetTemplate": "getTemplate_uiControl143_xuBll5"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl151_5KOrM7",
+                        "controlId": "control172_tHZDlv",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl151_5KOrM7",
+                                    "onGetTemplate": "getTemplate_uiControl151_5KOrM7"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl158_qfPsgO",
+                        "controlId": "control178_dWfvhq",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl158_qfPsgO",
+                                    "onGetTemplate": "getTemplate_uiControl158_qfPsgO"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl159_wWuvKA",
+                        "controlId": "control179_Hxzqpt",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl159_wWuvKA",
+                                    "onGetTemplate": "getTemplate_uiControl159_wWuvKA"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl160_Fmesxt",
+                        "controlId": "control180_XmtXEI",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl160_Fmesxt",
+                                    "onGetTemplate": "getTemplate_uiControl160_Fmesxt"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl170_dXn0lF",
+                        "controlId": "control189_KTtSss",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl170_dXn0lF",
+                                    "onGetTemplate": "getTemplate_uiControl170_dXn0lF"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl171_81uFLX",
+                        "controlId": "control190_T4HONH",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl171_81uFLX",
+                                    "onGetTemplate": "getTemplate_uiControl171_81uFLX"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl172_61UTiT",
+                        "controlId": "control191_2Fzm8p",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl172_61UTiT",
+                                    "onGetTemplate": "getTemplate_uiControl172_61UTiT"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl173_O7qHKR",
+                        "controlId": "control192_GaNmBF",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl173_O7qHKR",
+                                    "onGetTemplate": "getTemplate_uiControl173_O7qHKR"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl174_VWKeG5",
+                        "controlId": "control193_erPNu7",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl174_VWKeG5",
+                                    "onGetTemplate": "getTemplate_uiControl174_VWKeG5"
+                                }
+                            }
+                        }
+                    }, {
+                        "id": "uiControl175_EUVTSB",
+                        "controlId": "control194_ECDCX3",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl175_EUVTSB",
+                                    "onGetTemplate": "getTemplate_uiControl175_EUVTSB"
+                                }
+                            }
+                        }
+                    }]
+                }, {
+                    "id": "uiControl357_ah3ZAZfooter",
+                    "display": {
+                        "type": "cardFooter",
+                        "adapterId": "cardFooter",
+                        "adapter": {
+                            "templateType": ""
+                        }
+                    },
+                    "layout": []
+                }]
+            }, {
+                "id": "uiControl156_y1HTUv",
+                "display": {
+                    "type": "sticky",
+                    "adapterId": "sticky",
+                    "adapter": {
+                        "templateType": ""
+                    }
+                },
+                "layout": [{
+                    "id": "uiControl156_y1HTUvbody",
+                    "display": {
+                        "type": "stickyBody",
+                        "adapterId": "stickyBody",
+                        "adapter": {
+                            "templateType": ""
+                        }
+                    },
+                    "layout": [{
+                        "id": "uiControl157_cyBhVF",
+                        "controlId": "control177_PgVsPV",
+                        "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                                "templateType": "react",
+                                "events": {
+                                    "onDoAction": "doAction_uiControl157_cyBhVF",
+                                    "onGetTemplate": "getTemplate_uiControl157_cyBhVF"
+                                }
+                            }
+                        }
+                    }]
+                }]
+            }]
+        }
+    },
+    "matchers": {
+        "page/title": {
+            "contexts": {
+                "context24_ZWUvT7": ["111", "test003", "", "test001", "1-资金调拨审批流程-张济天-2017-11-13", "test006", "1-资金调拨审批流程-张济天-2017-11-14", "test008", "金融街集团发薪审批单-张济天-2017-11-28", "金融街集团发薪审批单-张济天-2018-01-19"]
+            }
+        },
+        "page/urls": {
+            "contexts": {
+                "context24_ZWUvT7": ["192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=215916&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false", "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321623&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false", "192.168.200.63/workflow/request/AddRequest.jsp?workflowid=6021&isagent=0&beagenter=0", "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321619&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false", "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=321622&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false", "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330438&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false", "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=330436&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false", "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=339247&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false", "192.168.200.63/workflow/request/ViewRequest.jsp?requestid=452187&isovertime=0", "192.168.200.63/workflow/request/ManageRequestNoForm.jsp?fromFlowDoc=&requestid=1086363&isrequest=0&isovertime=0&isaffirmance=&reEdit=1&seeflowdoc=0&isworkflowdoc=0&isfromtab=false"],
+                "context6_aweFC7": ["192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?documentids=", "192.168.200.63/systeminfo/BrowserMain.jsp?url=/workflow/request/MultiRequestBrowser.jsp?resourceids="],
+                "context10_Tp4yhH": ["192.168.200.63/workflow/request/Remark.jsp?requestid=118465&workflowRequestLogId=-1", "192.168.200.63/workflow/request/Remark.jsp?requestid=162836&workflowRequestLogId=-1", "192.168.200.63/workflow/request/Remark.jsp?requestid=118374&workflowRequestLogId=-1", "192.168.200.63/workflow/request/Remark.jsp?requestid=339247&workflowRequestLogId=-1"],
+                "context23_zUAAyb": ["192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312802%26isqc%3D1", "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312804%26isqc%3D1", "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D312805%26isqc%3D1", "192.168.200.63/workflow/workflow/BrowserMain.jsp?url=/workflow/request/FreeWorkflowSet.jsp%3Frequestid%3D339247%26isqc%3D1"]
+            }
+        },
+        "page/ids": {
+            "contexts": {
+                "context24_ZWUvT7": [
+                    ["BacoAddFavorite", "BacoTitle", "FONTSYSTEMF", "WfBill", "WfLog", "WfPic", "bodyiframe", "btnHelp", "closetext", "divTopTitle", "divWfBill", "divWfLog", "divWfPic", "ext-gen", "isonline", "isworkflowdoc", "loading", "loading-msg", "mainRequestFrame", "mainsupports", "needShow", "picInnerFrameurl", "piciframe", "requestTabButton", "requestmarkSpan", "resourceimg", "resourceimghref", "result", "rightMenu", "rightMenuIframe", "statInnerFrameurl", "statiframe", "toolbarbottommenu", "toolbarmenu", "toolbarmenuCoverdiv", "toolbarmenudiv", "triSubwfIframe", "wfdoc"],
+                    ["BacoAddFavorite", "BacoTitle", "FONTSYSTEMF", "WfBill", "WfLog", "WfPic", "_beagenter", "_isagent", "bodyiframe", "btnHelp", "closetext", "divTopTitle", "divWfBill", "divWfLog", "divWfPic", "ext-gen", "isonline", "isworkflowdoc", "loading", "loading-msg", "mainRequestFrame", "mainsupports", "needShow", "picInnerFrameurl", "piciframe", "requestTabButton", "resourceimg", "resourceimghref", "result", "rightMenu", "rightMenuIframe", "statInnerFrameurl", "statiframe", "toolbarbottommenu", "toolbarmenu", "toolbarmenuCoverdiv", "toolbarmenudiv"],
+                    ["BacoAddFavorite", "BacoTitle", "FONTSYSTEMF", "WfBill", "WfLog", "WfPic", "_xTable", "bodyiframe", "btnHelp", "closetext", "divTopTitle", "divWfBill", "divWfLog", "divWfPic", "ext-gen", "isonline", "loading", "loading-msg", "mainRequestFrame", "mainsupports", "needShow", "piciframe", "requestTabButton", "resourceimg", "resourceimghref", "result", "rightMenu", "rightMenuIframe", "statiframe", "toolbarbottommenu", "toolbarmenu", "toolbarmenuCoverdiv", "toolbarmenudiv"]
+                ],
+                "context10_Tp4yhH": [
+                    ["BacoAddFavorite", "BacoTitle", "FONTSYSTEMF", "SWFUpload_", "_xTable", "btnCancelannexupload", "btnHelp", "cke_", "cke__label", "cke__text", "cke_bottom_remark", "cke_contents_remark", "cke_path_remark", "cke_path_remark_label", "cke_remark", "cke_remark_arialbl", "cke_top_remark", "closetext", "divStatusannexupload", "divTopTitle", "docimages_num", "field-annexupload", "field-annexupload_tab", "field-annexuploadspan", "fieldspan", "fieldspanBtn", "fieldspanSpan", "flashUrl", "fsUploadProgressannexupload", "imgFileSpanTemp_remark", "imgFileSpan_remark", "imgFile_remark", "imgTypeFile_remark", "imgTypeUrl_remark", "imgUrl", "imgUrlSpan_remark", "insertObjectContainer_Flash_remark", "insertObjectContainer_Image_remark", "insertObjectContainer_remark", "isFlashVideoUrl", "isonline", "mainsupports", "needShow", "oFile", "oTable", "okBtn", "remark", "remarkSpan", "remarkText", "resourceimg", "resourceimghref", "result", "rightMenu", "rightMenuIframe", "signdocids", "signdocspan", "signworkflowids", "signworkflowspan", "uploadFileName_remark"],
+                    ["BacoAddFavorite", "BacoTitle", "FONTSYSTEMF", "SWFUpload_", "_xTable", "btnCancelannexupload", "btnHelp", "cke_", "cke__label", "cke__text", "cke_bottom_remark", "cke_contents_remark", "cke_elementspath__", "cke_elementspath___label", "cke_path_remark", "cke_path_remark_label", "cke_remark", "cke_remark_arialbl", "cke_top_remark", "closetext", "divStatusannexupload", "divTopTitle", "docimages_num", "field-annexupload", "field-annexupload_tab", "field-annexuploadspan", "fieldspan", "fieldspanBtn", "fieldspanSpan", "flashUrl", "fsUploadProgressannexupload", "imgFileSpanTemp_remark", "imgFileSpan_remark", "imgFile_remark", "imgTypeFile_remark", "imgTypeUrl_remark", "imgUrl", "imgUrlSpan_remark", "insertObjectContainer_Flash_remark", "insertObjectContainer_Image_remark", "insertObjectContainer_remark", "isFlashVideoUrl", "isonline", "mainsupports", "needShow", "oFile", "oTable", "okBtn", "remark", "remarkSpan", "remarkText", "resourceimg", "resourceimghref", "result", "rightMenu", "rightMenuIframe", "signdocids", "signdocspan", "signworkflowids", "signworkflowspan", "uploadFileName_remark"],
+                    ["BacoAddFavorite", "BacoTitle", "FONTSYSTEMF", "_xTable", "btnHelp", "cke_", "cke__label", "cke__text", "cke_bottom_remark", "cke_contents_remark", "cke_path_remark", "cke_path_remark_label", "cke_remark", "cke_remark_arialbl", "cke_top_remark", "closetext", "divTopTitle", "docimages_num", "fieldspan", "fieldspanBtn", "fieldspanSpan", "flashUrl", "imgFileSpanTemp_remark", "imgFileSpan_remark", "imgFile_remark", "imgTypeFile_remark", "imgTypeUrl_remark", "imgUrl", "imgUrlSpan_remark", "insertObjectContainer_Flash_remark", "insertObjectContainer_Image_remark", "insertObjectContainer_remark", "isFlashVideoUrl", "isonline", "mainsupports", "needShow", "oFile", "oTable", "okBtn", "remark", "remarkSpan", "remarkText", "resourceimg", "resourceimghref", "result", "rightMenu", "rightMenuIframe", "uploadFileName_remark"],
+                    ["BacoAddFavorite", "BacoTitle", "FONTSYSTEMF", "_xTable", "btnHelp", "cke_", "cke__label", "cke__text", "cke_bottom_remark", "cke_contents_remark", "cke_elementspath__", "cke_elementspath___label", "cke_path_remark", "cke_path_remark_label", "cke_remark", "cke_remark_arialbl", "cke_top_remark", "closetext", "divTopTitle", "docimages_num", "fieldspan", "fieldspanBtn", "fieldspanSpan", "flashUrl", "imgFileSpanTemp_remark", "imgFileSpan_remark", "imgFile_remark", "imgTypeFile_remark", "imgTypeUrl_remark", "imgUrl", "imgUrlSpan_remark", "insertObjectContainer_Flash_remark", "insertObjectContainer_Image_remark", "insertObjectContainer_remark", "isFlashVideoUrl", "isonline", "mainsupports", "needShow", "oFile", "oTable", "okBtn", "remark", "remarkSpan", "remarkText", "resourceimg", "resourceimghref", "result", "rightMenu", "rightMenuIframe", "uploadFileName_remark"],
+                    ["BacoAddFavorite", "BacoTitle", "FONTSYSTEMF", "_xTable", "btnCancelannexupload", "btnHelp", "cke_", "cke__label", "cke__text", "cke_bottom_remark", "cke_contents_remark", "cke_path_remark", "cke_path_remark_label", "cke_remark", "cke_remark_arialbl", "cke_top_remark", "closetext", "divStatusannexupload", "divTopTitle", "docimages_num", "field-annexupload", "field-annexupload_tab", "field-annexuploadspan", "fieldspan", "fieldspanBtn", "fieldspanSpan", "flashUrl", "fsUploadProgressannexupload", "imgFileSpanTemp_remark", "imgFileSpan_remark", "imgFile_remark", "imgTypeFile_remark", "imgTypeUrl_remark", "imgUrl", "imgUrlSpan_remark", "insertObjectContainer_Flash_remark", "insertObjectContainer_Image_remark", "insertObjectContainer_remark", "isFlashVideoUrl", "isonline", "mainsupports", "needShow", "oFile", "oTable", "okBtn", "remark", "remarkSpan", "remarkText", "resourceimg", "resourceimghref", "result", "rightMenu", "rightMenuIframe", "signdocids", "signdocspan", "signworkflowids", "signworkflowspan", "spanButtonPlaceHolderannexupload", "uploadFileName_remark"]
+                ]
+            }
+        },
+        "page/classes": {
+            "contexts": {
+                "context24_ZWUvT7": [
+                    ["STYLE", "TopTitle", "btnFavorite", "btnHelp", "btn_add", "btn_back", "btn_doDelete", "btn_edit", "btn_forward", "btn_print", "btn_subbackName", "btn_wfSave", "clickRightMenu", "drop-shadow", "highslide-container", "highslide-loading", "requestContentBody", "simplehrmhead", "x-btn", "x-btn-bc", "x-btn-bl", "x-btn-br", "x-btn-icon-small-left", "x-btn-mc", "x-btn-ml", "x-btn-mr", "x-btn-small", "x-btn-tc", "x-btn-text", "x-btn-text-icon", "x-btn-tl", "x-btn-tr", "x-panel-body", "x-panel-body-noheader", "x-small-editor", "x-tab-edge", "x-tab-left", "x-tab-panel-footer", "x-tab-right", "x-tab-strip", "x-tab-strip-active", "x-tab-strip-bottom", "x-tab-strip-close", "x-tab-strip-inner", "x-tab-strip-text", "x-tab-strip-wrap", "x-tab-with-icon", "x-toolbar", "x-toolbar-left-row"],
+                    ["STYLE", "TopTitle", "btnFavorite", "btnHelp", "btn_add", "btn_back", "btn_edit", "btn_forward", "btn_print", "btn_rejectName", "btn_subbackName", "btn_wfSave", "clickRightMenu", "drop-shadow", "highslide-container", "highslide-loading", "requestContentBody", "simplehrmhead", "x-btn", "x-btn-bc", "x-btn-bl", "x-btn-br", "x-btn-icon-small-left", "x-btn-mc", "x-btn-ml", "x-btn-mr", "x-btn-small", "x-btn-tc", "x-btn-text", "x-btn-text-icon", "x-btn-tl", "x-btn-tr", "x-panel-body", "x-panel-body-noheader", "x-small-editor", "x-tab-edge", "x-tab-left", "x-tab-panel-footer", "x-tab-right", "x-tab-strip", "x-tab-strip-active", "x-tab-strip-bottom", "x-tab-strip-close", "x-tab-strip-inner", "x-tab-strip-text", "x-tab-strip-wrap", "x-tab-with-icon", "x-toolbar", "x-toolbar-left-row"],
+                    ["STYLE", "TopTitle", "btnFavorite", "btnHelp", "btn_add", "btn_edit", "btn_subbackName", "btn_wfSave", "clickRightMenu", "drop-shadow", "highslide-container", "highslide-loading", "requestContentBody", "simplehrmhead", "x-btn", "x-btn-bc", "x-btn-bl", "x-btn-br", "x-btn-icon-small-left", "x-btn-mc", "x-btn-ml", "x-btn-mr", "x-btn-small", "x-btn-tc", "x-btn-text", "x-btn-text-icon", "x-btn-tl", "x-btn-tr", "x-panel-body", "x-panel-body-noheader", "x-small-editor", "x-tab-edge", "x-tab-left", "x-tab-panel-footer", "x-tab-right", "x-tab-strip", "x-tab-strip-active", "x-tab-strip-bottom", "x-tab-strip-close", "x-tab-strip-inner", "x-tab-strip-text", "x-tab-strip-wrap", "x-tab-with-icon", "x-toolbar", "x-toolbar-left-row"],
+                    ["STYLE", "TopTitle", "btnFavorite", "btnHelp", "btn_add", "btn_forward", "btn_print", "clickRightMenu", "drop-shadow", "highslide-container", "highslide-loading", "requestContentBody", "simplehrmhead", "x-btn", "x-btn-bc", "x-btn-bl", "x-btn-br", "x-btn-icon-small-left", "x-btn-mc", "x-btn-ml", "x-btn-mr", "x-btn-small", "x-btn-tc", "x-btn-text", "x-btn-text-icon", "x-btn-tl", "x-btn-tr", "x-panel-body", "x-panel-body-noheader", "x-small-editor", "x-tab-edge", "x-tab-left", "x-tab-panel-footer", "x-tab-right", "x-tab-strip", "x-tab-strip-active", "x-tab-strip-bottom", "x-tab-strip-close", "x-tab-strip-inner", "x-tab-strip-text", "x-tab-strip-wrap", "x-tab-with-icon", "x-toolbar", "x-toolbar-left-row"],
+                    ["STYLE", "TopTitle", "btnFavorite", "btnHelp", "btn_add", "btn_back", "btn_edit", "btn_forward", "btn_print", "btn_rejectName", "btn_subbackName", "btn_wfSave", "clickRightMenu", "drop-shadow", "highslide-container", "highslide-loading", "requestContentBody", "simplehrmhead", "x-btn", "x-btn-bc", "x-btn-bl", "x-btn-br", "x-btn-icon-small-left", "x-btn-mc", "x-btn-ml", "x-btn-mr", "x-btn-small", "x-btn-tc", "x-btn-text", "x-btn-text-icon", "x-btn-tl", "x-btn-tr", "x-panel-body", "x-panel-body-noheader", "x-small-editor", "x-tab-edge", "x-tab-left", "x-tab-panel-footer", "x-tab-right", "x-tab-strip", "x-tab-strip-active", "x-tab-strip-bottom", "x-tab-strip-close", "x-tab-strip-inner", "x-tab-strip-text", "x-tab-strip-wrap", "x-tab-with-icon", "x-toolbar", "x-toolbar-left-row", "ysp_load_haha"],
+                    ["STYLE", "TopTitle", "btnFavorite", "btnHelp", "btn_add", "btn_back", "btn_doDelete", "btn_forward", "btn_print", "btn_subbackName", "btn_wfSave", "clickRightMenu", "drop-shadow", "highslide-container", "highslide-loading", "requestContentBody", "simplehrmhead", "x-btn", "x-btn-bc", "x-btn-bl", "x-btn-br", "x-btn-icon-small-left", "x-btn-mc", "x-btn-ml", "x-btn-mr", "x-btn-small", "x-btn-tc", "x-btn-text", "x-btn-text-icon", "x-btn-tl", "x-btn-tr", "x-panel-body", "x-panel-body-noheader", "x-small-editor", "x-tab-edge", "x-tab-left", "x-tab-panel-footer", "x-tab-right", "x-tab-strip", "x-tab-strip-active", "x-tab-strip-bottom", "x-tab-strip-close", "x-tab-strip-inner", "x-tab-strip-text", "x-tab-strip-wrap", "x-tab-with-icon", "x-toolbar", "x-toolbar-left-row"]
+                ],
+                "context10_Tp4yhH": [
+                    ["Browser", "InputStyle", "Inputstyle", "Line", "STYLE", "Shadow", "Title", "TopTitle", "ViewForm", "browser", "btnFavorite", "btnHelp", "cke_", "cke_bottom", "cke_browser_quirks", "cke_browser_webkit", "cke_button", "cke_button_bgcolor", "cke_button_bold", "cke_button_customimage", "cke_button_flash", "cke_button_indent", "cke_button_insertcrm", "cke_button_insertdocs", "cke_button_insertproject", "cke_button_inserttask", "cke_button_insertwf", "cke_button_italic", "cke_button_justifyblock", "cke_button_justifycenter", "cke_button_justifyleft", "cke_button_justifyright", "cke_button_link", "cke_button_outdent", "cke_button_redo", "cke_button_source", "cke_button_table", "cke_button_textcolor", "cke_button_underline", "cke_button_undo", "cke_button_unlink", "cke_buttonarrow", "cke_contents", "cke_disabled", "cke_editor", "cke_editor_remark", "cke_empty", "cke_font", "cke_fontSize", "cke_icon", "cke_inline_label", "cke_label", "cke_ltr", "cke_off", "cke_openbutton", "cke_path", "cke_rcombo", "cke_separator", "cke_skin_v", "cke_text", "cke_toolbar", "cke_toolbar_end", "cke_toolbar_start", "cke_toolbox", "cke_toolbox_collapser", "cke_toolgroup", "cke_top", "cke_voice_label", "cke_wrapper", "clickRightMenu", "datalight", "drop-shadow", "editorImgWin", "field", "fieldset", "flash", "highslide-container", "highslide-loading", "simplehrmhead", "swfupload"],
+                    ["Browser", "InputStyle", "Inputstyle", "Line", "STYLE", "Shadow", "Title", "TopTitle", "ViewForm", "browser", "btnFavorite", "btnHelp", "cke_", "cke_bottom", "cke_browser_quirks", "cke_browser_webkit", "cke_button", "cke_button_bgcolor", "cke_button_bold", "cke_button_customimage", "cke_button_flash", "cke_button_indent", "cke_button_insertcrm", "cke_button_insertdocs", "cke_button_insertproject", "cke_button_inserttask", "cke_button_insertwf", "cke_button_italic", "cke_button_justifyblock", "cke_button_justifycenter", "cke_button_justifyleft", "cke_button_justifyright", "cke_button_link", "cke_button_outdent", "cke_button_redo", "cke_button_source", "cke_button_table", "cke_button_textcolor", "cke_button_underline", "cke_button_undo", "cke_button_unlink", "cke_buttonarrow", "cke_contents", "cke_disabled", "cke_editor", "cke_editor_remark", "cke_empty", "cke_font", "cke_fontSize", "cke_icon", "cke_inline_label", "cke_label", "cke_ltr", "cke_off", "cke_on", "cke_openbutton", "cke_path", "cke_rcombo", "cke_separator", "cke_skin_v", "cke_text", "cke_toolbar", "cke_toolbar_end", "cke_toolbar_start", "cke_toolbox", "cke_toolbox_collapser", "cke_toolgroup", "cke_top", "cke_voice_label", "cke_wrapper", "clickRightMenu", "datalight", "drop-shadow", "editorImgWin", "field", "fieldset", "flash", "highslide-container", "highslide-loading", "simplehrmhead", "swfupload"],
+                    ["Browser", "Inputstyle", "Line", "STYLE", "Shadow", "Title", "TopTitle", "ViewForm", "browser", "btnFavorite", "btnHelp", "cke_", "cke_bottom", "cke_browser_quirks", "cke_browser_webkit", "cke_button", "cke_button_bgcolor", "cke_button_bold", "cke_button_customimage", "cke_button_flash", "cke_button_indent", "cke_button_insertcrm", "cke_button_insertdocs", "cke_button_insertproject", "cke_button_inserttask", "cke_button_insertwf", "cke_button_italic", "cke_button_justifyblock", "cke_button_justifycenter", "cke_button_justifyleft", "cke_button_justifyright", "cke_button_link", "cke_button_outdent", "cke_button_redo", "cke_button_source", "cke_button_table", "cke_button_textcolor", "cke_button_underline", "cke_button_undo", "cke_button_unlink", "cke_buttonarrow", "cke_contents", "cke_disabled", "cke_editor", "cke_editor_remark", "cke_empty", "cke_font", "cke_fontSize", "cke_icon", "cke_inline_label", "cke_label", "cke_ltr", "cke_off", "cke_openbutton", "cke_path", "cke_rcombo", "cke_separator", "cke_skin_v", "cke_text", "cke_toolbar", "cke_toolbar_end", "cke_toolbar_start", "cke_toolbox", "cke_toolbox_collapser", "cke_toolgroup", "cke_top", "cke_voice_label", "cke_wrapper", "clickRightMenu", "datalight", "drop-shadow", "editorImgWin", "field", "highslide-container", "highslide-loading", "simplehrmhead"],
+                    ["Browser", "Inputstyle", "Line", "STYLE", "Shadow", "Title", "TopTitle", "ViewForm", "browser", "btnFavorite", "btnHelp", "cke_", "cke_bottom", "cke_browser_quirks", "cke_browser_webkit", "cke_button", "cke_button_bgcolor", "cke_button_bold", "cke_button_customimage", "cke_button_flash", "cke_button_indent", "cke_button_insertcrm", "cke_button_insertdocs", "cke_button_insertproject", "cke_button_inserttask", "cke_button_insertwf", "cke_button_italic", "cke_button_justifyblock", "cke_button_justifycenter", "cke_button_justifyleft", "cke_button_justifyright", "cke_button_link", "cke_button_outdent", "cke_button_redo", "cke_button_source", "cke_button_table", "cke_button_textcolor", "cke_button_underline", "cke_button_undo", "cke_button_unlink", "cke_buttonarrow", "cke_contents", "cke_disabled", "cke_editor", "cke_editor_remark", "cke_empty", "cke_font", "cke_fontSize", "cke_icon", "cke_inline_label", "cke_label", "cke_ltr", "cke_off", "cke_on", "cke_openbutton", "cke_path", "cke_rcombo", "cke_separator", "cke_skin_v", "cke_text", "cke_toolbar", "cke_toolbar_end", "cke_toolbar_start", "cke_toolbox", "cke_toolbox_collapser", "cke_toolgroup", "cke_top", "cke_voice_label", "cke_wrapper", "clickRightMenu", "datalight", "drop-shadow", "editorImgWin", "field", "highslide-container", "highslide-loading", "simplehrmhead"],
+                    ["Browser", "InputStyle", "Inputstyle", "Line", "STYLE", "Shadow", "Title", "TopTitle", "ViewForm", "browser", "btnFavorite", "btnHelp", "cke_", "cke_bottom", "cke_browser_quirks", "cke_browser_webkit", "cke_button", "cke_button_bgcolor", "cke_button_bold", "cke_button_customimage", "cke_button_flash", "cke_button_indent", "cke_button_insertcrm", "cke_button_insertdocs", "cke_button_insertproject", "cke_button_inserttask", "cke_button_insertwf", "cke_button_italic", "cke_button_justifyblock", "cke_button_justifycenter", "cke_button_justifyleft", "cke_button_justifyright", "cke_button_link", "cke_button_outdent", "cke_button_redo", "cke_button_source", "cke_button_table", "cke_button_textcolor", "cke_button_underline", "cke_button_undo", "cke_button_unlink", "cke_buttonarrow", "cke_contents", "cke_disabled", "cke_editor", "cke_editor_remark", "cke_empty", "cke_font", "cke_fontSize", "cke_icon", "cke_inline_label", "cke_label", "cke_ltr", "cke_off", "cke_openbutton", "cke_path", "cke_rcombo", "cke_separator", "cke_skin_v", "cke_text", "cke_toolbar", "cke_toolbar_end", "cke_toolbar_start", "cke_toolbox", "cke_toolbox_collapser", "cke_toolgroup", "cke_top", "cke_voice_label", "cke_wrapper", "clickRightMenu", "datalight", "drop-shadow", "editorImgWin", "field", "fieldset", "flash", "highslide-container", "highslide-loading", "simplehrmhead"]
+                ]
+            }
+        },
+        "page/tagTriplets": {
+            "contexts": {
+                "context24_ZWUvT7": [
+                    ["-/-/DIV", "-/-/IFRAME", "-/-/INPUT-hidden", "-/-/LINK", "-/-/META", "-/-/SCRIPT", "-/-/STYLE", "-/-/TITLE", "-/DIV/A", "-/DIV/DIV", "-/DIV/IFRAME", "-/DIV/SPAN", "-/DIV/TABLE", "A/EM/SPAN", "DIV/DIV/DIV", "DIV/DIV/IFRAME", "DIV/DIV/TABLE", "DIV/DIV/UL", "DIV/SPAN/IMG", "DIV/TABLE/TBODY", "DIV/UL/LI", "EM/SPAN/SPAN", "LI/A/EM", "SPAN/SPAN/SCRIPT", "TABLE/TBODY/TR", "TBODY/TR/TD", "TD/A/IMG", "TD/DIV/A", "TD/DIV/IMG", "TD/DIV/SPAN", "TD/EM/BUTTON", "TD/SPAN/SPAN", "TD/TABLE/TBODY", "TR/TD/A", "TR/TD/BUTTON", "TR/TD/DIV", "TR/TD/EM", "TR/TD/I", "TR/TD/IMG", "TR/TD/SPAN", "TR/TD/TABLE", "UL/LI/A"],
+                    ["-/-/DIV", "-/-/INPUT-hidden", "-/-/LINK", "-/-/SCRIPT", "-/-/STYLE", "-/DIV/A", "-/DIV/DIV", "-/DIV/IFRAME", "-/DIV/SPAN", "-/DIV/TABLE", "A/EM/SPAN", "DIV/DIV/DIV", "DIV/DIV/IFRAME", "DIV/DIV/TABLE", "DIV/DIV/UL", "DIV/SPAN/IMG", "DIV/TABLE/TBODY", "DIV/UL/LI", "EM/SPAN/SPAN", "LI/A/EM", "SPAN/SPAN/SCRIPT", "TABLE/TBODY/TR", "TBODY/TR/TD", "TD/A/IMG", "TD/DIV/A", "TD/DIV/IMG", "TD/DIV/SPAN", "TD/EM/BUTTON", "TD/TABLE/TBODY", "TR/TD/A", "TR/TD/BUTTON", "TR/TD/DIV", "TR/TD/EM", "TR/TD/I", "TR/TD/IMG", "TR/TD/SPAN", "TR/TD/TABLE", "UL/LI/A"],
+                    ["-/-/DIV", "-/-/INPUT-hidden", "-/-/LINK", "-/-/SCRIPT", "-/-/STYLE", "-/-/TABLE", "-/-/TITLE", "-/DIV/A", "-/DIV/DIV", "-/DIV/IFRAME", "-/DIV/SPAN", "-/DIV/TABLE", "-/TABLE/TBODY", "A/EM/SPAN", "DIV/DIV/DIV", "DIV/DIV/IFRAME", "DIV/DIV/TABLE", "DIV/DIV/UL", "DIV/SPAN/IMG", "DIV/TABLE/TBODY", "DIV/UL/LI", "EM/SPAN/SPAN", "LI/A/EM", "SPAN/SPAN/SCRIPT", "TABLE/TBODY/TR", "TBODY/TR/TD", "TD/A/IMG", "TD/DIV/A", "TD/DIV/IMG", "TD/DIV/SPAN", "TD/EM/BUTTON", "TD/TABLE/TBODY", "TR/TD/A", "TR/TD/BUTTON", "TR/TD/DIV", "TR/TD/EM", "TR/TD/I", "TR/TD/IMG", "TR/TD/SPAN", "TR/TD/TABLE", "UL/LI/A"]
+                ],
+                "context10_Tp4yhH": [
+                    ["-/-/DIV", "-/-/FORM", "-/-/INPUT-hidden", "-/-/LINK", "-/-/META", "-/-/OBJECT", "-/-/SCRIPT", "-/-/STYLE", "-/DIV/A", "-/DIV/DIV", "-/DIV/IFRAME", "-/DIV/TABLE", "-/FORM/DIV", "-/FORM/INPUT-hidden", "-/FORM/SPAN", "-/FORM/TABLE", "A/SPAN/SPAN", "DIV/BUTTON/U", "DIV/DIV/BUTTON", "DIV/LABEL/INPUT-radio", "DIV/SPAN/BR", "DIV/SPAN/DIV", "DIV/SPAN/INPUT-button", "DIV/SPAN/INPUT-hidden", "DIV/SPAN/INPUT-null", "DIV/SPAN/LABEL", "DIV/SPAN/OBJECT", "DIV/SPAN/SPAN", "DIV/TABLE/TBODY", "FORM/SPAN/DIV", "FORM/TABLE/COLGROUP", "FORM/TABLE/TBODY", "SPAN/A/SPAN", "SPAN/DIV/BR", "SPAN/DIV/DIV", "SPAN/DIV/LABEL", "SPAN/DIV/SPAN", "SPAN/LABEL/INPUT-checkbox", "SPAN/OBJECT/PARAM", "SPAN/SPAN/A", "SPAN/SPAN/FONT", "SPAN/SPAN/IMG", "SPAN/SPAN/SPAN", "SPAN/SPAN/STYLE", "SPAN/SPAN/TABLE", "SPAN/TABLE/TBODY", "TABLE/COLGROUP/COL", "TABLE/TBODY/TR", "TBODY/TR/TD", "TD/A/IMG", "TD/A/SPAN", "TD/DIV/A", "TD/DIV/FONT", "TD/DIV/IMG", "TD/DIV/SPAN", "TD/SPAN/IMG", "TD/SPAN/SPAN", "TD/TABLE/COLGROUP", "TD/TABLE/INPUT-hidden", "TD/TABLE/TBODY", "TR/TD/A", "TR/TD/BR", "TR/TD/BUTTON", "TR/TD/DIV", "TR/TD/FONT", "TR/TD/IFRAME", "TR/TD/IMG", "TR/TD/INPUT-hidden", "TR/TD/INPUT-null", "TR/TD/SCRIPT", "TR/TD/SPAN", "TR/TD/TABLE", "TR/TD/TEXTAREA"],
+                    ["-/-/DIV", "-/-/FORM", "-/-/INPUT-hidden", "-/-/LINK", "-/-/META", "-/-/OBJECT", "-/-/SCRIPT", "-/-/STYLE", "-/DIV/A", "-/DIV/DIV", "-/DIV/IFRAME", "-/DIV/TABLE", "-/FORM/DIV", "-/FORM/INPUT-hidden", "-/FORM/SPAN", "-/FORM/TABLE", "A/SPAN/SPAN", "DIV/A/SPAN", "DIV/BUTTON/U", "DIV/DIV/BUTTON", "DIV/LABEL/INPUT-radio", "DIV/SPAN/BR", "DIV/SPAN/DIV", "DIV/SPAN/INPUT-button", "DIV/SPAN/INPUT-hidden", "DIV/SPAN/INPUT-null", "DIV/SPAN/LABEL", "DIV/SPAN/OBJECT", "DIV/SPAN/SPAN", "DIV/TABLE/TBODY", "FORM/SPAN/DIV", "FORM/TABLE/COLGROUP", "FORM/TABLE/TBODY", "SPAN/A/SPAN", "SPAN/DIV/BR", "SPAN/DIV/DIV", "SPAN/DIV/LABEL", "SPAN/DIV/SPAN", "SPAN/LABEL/INPUT-checkbox", "SPAN/OBJECT/PARAM", "SPAN/SPAN/A", "SPAN/SPAN/FONT", "SPAN/SPAN/IMG", "SPAN/SPAN/SPAN", "SPAN/SPAN/STYLE", "SPAN/SPAN/TABLE", "SPAN/TABLE/TBODY", "TABLE/COLGROUP/COL", "TABLE/TBODY/TR", "TBODY/TR/TD", "TD/A/IMG", "TD/A/SPAN", "TD/DIV/A", "TD/DIV/FONT", "TD/DIV/IMG", "TD/DIV/SPAN", "TD/SPAN/IMG", "TD/SPAN/SPAN", "TD/TABLE/COLGROUP", "TD/TABLE/INPUT-hidden", "TD/TABLE/TBODY", "TR/TD/A", "TR/TD/BR", "TR/TD/BUTTON", "TR/TD/DIV", "TR/TD/FONT", "TR/TD/IFRAME", "TR/TD/IMG", "TR/TD/INPUT-hidden", "TR/TD/INPUT-null", "TR/TD/SCRIPT", "TR/TD/SPAN", "TR/TD/TABLE", "TR/TD/TEXTAREA"],
+                    ["-/-/DIV", "-/-/FORM", "-/-/INPUT-hidden", "-/-/LINK", "-/-/META", "-/-/OBJECT", "-/-/SCRIPT", "-/-/STYLE", "-/DIV/A", "-/DIV/DIV", "-/DIV/IFRAME", "-/DIV/TABLE", "-/FORM/DIV", "-/FORM/INPUT-hidden", "-/FORM/SPAN", "-/FORM/TABLE", "A/SPAN/SPAN", "DIV/BUTTON/U", "DIV/DIV/BUTTON", "DIV/LABEL/INPUT-radio", "DIV/SPAN/BR", "DIV/SPAN/DIV", "DIV/SPAN/INPUT-button", "DIV/SPAN/INPUT-hidden", "DIV/SPAN/INPUT-null", "DIV/SPAN/LABEL", "DIV/SPAN/SPAN", "DIV/TABLE/TBODY", "FORM/SPAN/DIV", "FORM/TABLE/COLGROUP", "FORM/TABLE/TBODY", "SPAN/A/SPAN", "SPAN/DIV/BR", "SPAN/DIV/DIV", "SPAN/DIV/LABEL", "SPAN/DIV/SPAN", "SPAN/LABEL/INPUT-checkbox", "SPAN/SPAN/A", "SPAN/SPAN/SPAN", "SPAN/SPAN/STYLE", "SPAN/SPAN/TABLE", "SPAN/TABLE/TBODY", "TABLE/COLGROUP/COL", "TABLE/TBODY/TR", "TBODY/TR/TD", "TD/A/IMG", "TD/A/SPAN", "TD/DIV/A", "TD/DIV/FONT", "TD/DIV/IMG", "TD/DIV/SPAN", "TD/SPAN/IMG", "TD/SPAN/SPAN", "TD/TABLE/TBODY", "TR/TD/A", "TR/TD/BR", "TR/TD/BUTTON", "TR/TD/DIV", "TR/TD/FONT", "TR/TD/IFRAME", "TR/TD/IMG", "TR/TD/INPUT-hidden", "TR/TD/INPUT-null", "TR/TD/SCRIPT", "TR/TD/SPAN", "TR/TD/TABLE", "TR/TD/TEXTAREA"],
+                    ["-/-/DIV", "-/-/FORM", "-/-/INPUT-hidden", "-/-/LINK", "-/-/META", "-/-/OBJECT", "-/-/SCRIPT", "-/-/STYLE", "-/DIV/A", "-/DIV/DIV", "-/DIV/IFRAME", "-/DIV/TABLE", "-/FORM/DIV", "-/FORM/INPUT-hidden", "-/FORM/SPAN", "-/FORM/TABLE", "A/SPAN/SPAN", "DIV/A/SPAN", "DIV/BUTTON/U", "DIV/DIV/BUTTON", "DIV/LABEL/INPUT-radio", "DIV/SPAN/BR", "DIV/SPAN/DIV", "DIV/SPAN/INPUT-button", "DIV/SPAN/INPUT-hidden", "DIV/SPAN/INPUT-null", "DIV/SPAN/LABEL", "DIV/SPAN/SPAN", "DIV/TABLE/TBODY", "FORM/SPAN/DIV", "FORM/TABLE/COLGROUP", "FORM/TABLE/TBODY", "SPAN/A/SPAN", "SPAN/DIV/BR", "SPAN/DIV/DIV", "SPAN/DIV/LABEL", "SPAN/DIV/SPAN", "SPAN/LABEL/INPUT-checkbox", "SPAN/SPAN/A", "SPAN/SPAN/SPAN", "SPAN/SPAN/STYLE", "SPAN/SPAN/TABLE", "SPAN/TABLE/TBODY", "TABLE/COLGROUP/COL", "TABLE/TBODY/TR", "TBODY/TR/TD", "TD/A/IMG", "TD/A/SPAN", "TD/DIV/A", "TD/DIV/FONT", "TD/DIV/IMG", "TD/DIV/SPAN", "TD/SPAN/IMG", "TD/SPAN/SPAN", "TD/TABLE/TBODY", "TR/TD/A", "TR/TD/BR", "TR/TD/BUTTON", "TR/TD/DIV", "TR/TD/FONT", "TR/TD/IFRAME", "TR/TD/IMG", "TR/TD/INPUT-hidden", "TR/TD/INPUT-null", "TR/TD/SCRIPT", "TR/TD/SPAN", "TR/TD/TABLE", "TR/TD/TEXTAREA"],
+                    ["-/-/DIV", "-/-/FORM", "-/-/INPUT-hidden", "-/-/LINK", "-/-/META", "-/-/OBJECT", "-/-/SCRIPT", "-/-/STYLE", "-/DIV/A", "-/DIV/DIV", "-/DIV/IFRAME", "-/DIV/TABLE", "-/FORM/DIV", "-/FORM/INPUT-hidden", "-/FORM/SPAN", "-/FORM/TABLE", "A/SPAN/SPAN", "DIV/BUTTON/U", "DIV/DIV/BUTTON", "DIV/LABEL/INPUT-radio", "DIV/SPAN/BR", "DIV/SPAN/DIV", "DIV/SPAN/INPUT-button", "DIV/SPAN/INPUT-hidden", "DIV/SPAN/INPUT-null", "DIV/SPAN/LABEL", "DIV/SPAN/SPAN", "DIV/TABLE/TBODY", "FORM/SPAN/DIV", "FORM/TABLE/COLGROUP", "FORM/TABLE/TBODY", "SPAN/A/SPAN", "SPAN/DIV/BR", "SPAN/DIV/DIV", "SPAN/DIV/LABEL", "SPAN/DIV/SPAN", "SPAN/LABEL/INPUT-checkbox", "SPAN/SPAN/A", "SPAN/SPAN/FONT", "SPAN/SPAN/IMG", "SPAN/SPAN/SPAN", "SPAN/SPAN/STYLE", "SPAN/SPAN/TABLE", "SPAN/TABLE/TBODY", "TABLE/COLGROUP/COL", "TABLE/TBODY/TR", "TBODY/TR/TD", "TD/A/IMG", "TD/A/SPAN", "TD/DIV/A", "TD/DIV/FONT", "TD/DIV/IMG", "TD/DIV/SPAN", "TD/SPAN/IMG", "TD/SPAN/SPAN", "TD/TABLE/COLGROUP", "TD/TABLE/INPUT-hidden", "TD/TABLE/TBODY", "TR/TD/A", "TR/TD/BR", "TR/TD/BUTTON", "TR/TD/DIV", "TR/TD/FONT", "TR/TD/IFRAME", "TR/TD/IMG", "TR/TD/INPUT-hidden", "TR/TD/INPUT-null", "TR/TD/SCRIPT", "TR/TD/SPAN", "TR/TD/TABLE", "TR/TD/TEXTAREA"]
+                ]
+            }
+        }
+    }
+}
