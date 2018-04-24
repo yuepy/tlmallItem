@@ -17,7 +17,9 @@
     "turnTask": "../turnTask/index.json",
     "positionChange": "../positionChange/index.json",
     "departure": "../departure/index.json",
-    "branchRelease": "../branchRelease/index.json"
+    "branchRelease": "../branchRelease/index.json",
+    "pricePolicy": "../pricePolicy/index.json",
+    "goodBargain": "../goodBargain/index.json"
   },
   "chineseName": "审批轨迹",
   "description": "",
@@ -300,6 +302,14 @@
         {
           "toContextId": "context31_GRspED",
           "toModelId": "branchRelease"
+        },
+        {
+          "toContextId": "context38_3olAon",
+          "toModelId": "pricePolicy"
+        },
+        {
+          "toContextId": "context37_43dcvf",
+          "toModelId": "goodBargain"
         }
       ]
     },
@@ -455,7 +465,9 @@
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&visitRelative",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&beginToWork",
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp",
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&monthChange"
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&monthChange",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&goodBargain",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&pricePolicy"
         ],
         "context8_ddpRhS": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861",
