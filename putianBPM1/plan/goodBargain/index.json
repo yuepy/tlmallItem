@@ -223,10 +223,10 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control172_Tk1SWX": {
+    "control185_EFsqoK": {
       "location": {
         "data": {
-          "tagName": "DIV"
+          "tagName": "IFRAME"
         },
         "userData": {
           "data": [],
@@ -234,52 +234,14 @@
         },
         "locators": [
           {
-            "id": "@id/word",
-            "prob": 2,
-            "value": "descendant::DIV[@id=\"datagridsubfen\"]/DIV[1]/DIV[2]"
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control172_Tk1SWX"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
-    },
-    "control172_7wFt5N": {
-      "location": {
-        "data": {
-          "tagName": "TD"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "div1",
-              "tagName": "DIV",
-              "prefix": "",
-              "suffix": "/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]",
-              "ratio": 0.246
-            }
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
           },
           {
             "id": "elderLevel",
@@ -290,18 +252,18 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control172_7wFt5N"
+        "onGetData": "getData_control185_EFsqoK"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "frameXPath": "",
       "componentType": "custom"
     },
-    "control185_Qg9CED": {
+    "control186_3185AU": {
       "location": {
         "data": {
-          "tagName": "DIV"
+          "tagName": "IFRAME"
         },
         "userData": {
           "data": [],
@@ -309,21 +271,14 @@
         },
         "locators": [
           {
-            "id": "@id/partialWord",
+            "id": "@class/word",
             "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "form1",
-              "tagName": "DIV",
-              "prefix": "",
-              "suffix": "/DIV[1]/DIV[4]",
-              "ratio": 0.92
-            }
+            "value": "TABLE.mini-tabs-table DIV.mini-tabs-bodys.mini-tabs-body-top DIV.mini-tabs-body.mini-tabs-hideOverflow IFRAME"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[1]/IFRAME[1]"
           },
           {
             "id": "elderLevel",
@@ -334,18 +289,55 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control185_Qg9CED"
+        "onGetData": "getData_control186_3185AU"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "monitored": true,
+      "frameXPath": "",
       "componentType": "custom"
     },
-    "control189_H9oQSP": {
+    "control188_HqRJHJ": {
       "location": {
         "data": {
-          "tagName": "TABLE"
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.mini-tabs-table DIV.mini-tabs-bodys.mini-tabs-body-top DIV.mini-tabs-body.mini-tabs-hideOverflow IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]/DIV[1]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control188_HqRJHJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control189_HK8O2o": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
         },
         "userData": {
           "data": [],
@@ -355,16 +347,42 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]"
+            "value": "/HTML[1]/BODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control189_H9oQSP"
+        "onGetData": "getData_control189_HK8O2o"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control190_Aw3o9T": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control190_Aw3o9T"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     }
@@ -378,10 +396,11 @@
         "control177_d2DXkd",
         "control180_qbH13x",
         "control172_EeoCIM",
-        "control172_Tk1SWX",
-        "control172_7wFt5N",
-        "control185_Qg9CED",
-        "control189_H9oQSP"
+        "control185_EFsqoK",
+        "control186_3185AU",
+        "control188_HqRJHJ",
+        "control189_HK8O2o",
+        "control190_Aw3o9T"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -516,31 +535,16 @@
           }
         },
         {
-          "id": "uiControl165_AMXN11",
-          "controlId": "control172_7wFt5N",
+          "id": "uiControl183_00AQUJ",
+          "controlId": "control190_Aw3o9T",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl165_AMXN11",
-                "onGetTemplate": "getTemplate_uiControl165_AMXN11"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl165_tWUoT9",
-          "controlId": "control172_Tk1SWX",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl165_tWUoT9",
-                "onGetTemplate": "getTemplate_uiControl165_tWUoT9"
+                "onDoAction": "doAction_uiControl183_00AQUJ",
+                "onGetTemplate": "getTemplate_uiControl183_00AQUJ"
               }
             }
           }
@@ -591,31 +595,61 @@
           }
         },
         {
-          "id": "uiControl182_gP4EzM",
-          "controlId": "control189_H9oQSP",
+          "id": "uiControl182_tg5mgt",
+          "controlId": "control189_HK8O2o",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl182_gP4EzM",
-                "onGetTemplate": "getTemplate_uiControl182_gP4EzM"
+                "onDoAction": "doAction_uiControl182_tg5mgt",
+                "onGetTemplate": "getTemplate_uiControl182_tg5mgt"
               }
             }
           }
         },
         {
-          "id": "uiControl178_BoEGdc",
-          "controlId": "control185_Qg9CED",
+          "id": "uiControl178_9qOocp",
+          "controlId": "control185_EFsqoK",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl178_BoEGdc",
-                "onGetTemplate": "getTemplate_uiControl178_BoEGdc"
+                "onDoAction": "doAction_uiControl178_9qOocp",
+                "onGetTemplate": "getTemplate_uiControl178_9qOocp"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl181_c8Wwa2",
+          "controlId": "control188_HqRJHJ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl181_c8Wwa2",
+                "onGetTemplate": "getTemplate_uiControl181_c8Wwa2"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl179_nPKKSK",
+          "controlId": "control186_3185AU",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl179_nPKKSK",
+                "onGetTemplate": "getTemplate_uiControl179_nPKKSK"
               }
             }
           }

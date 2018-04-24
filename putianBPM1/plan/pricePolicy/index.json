@@ -322,6 +322,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -343,6 +347,10 @@
       "location": {
         "data": {
           "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -377,6 +385,10 @@
         "data": {
           "tagName": "IFRAME"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -410,6 +422,10 @@
         "data": {
           "tagName": "IFRAME"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -437,6 +453,28 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control196_Ny8x1x": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control196_Ny8x1x"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -454,7 +492,8 @@
         "control191_HbXSJs",
         "control192_o7wtCW",
         "control194_5OkwOz",
-        "control195_Fl5P2E"
+        "control195_Fl5P2E",
+        "control196_Ny8x1x"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -587,6 +626,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl172_vQFZEu",
                 "onGetTemplate": "getTemplate_uiControl172_vQFZEu"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl189_NBalgT",
+          "controlId": "control196_Ny8x1x",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl189_NBalgT",
+                "onGetTemplate": "getTemplate_uiControl189_NBalgT"
               }
             }
           }
@@ -742,7 +796,8 @@
         "context38_3olAon": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317978&pricePolicy",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317976&pricePolicy",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294013&pricePolicy"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294013&pricePolicy",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327384&pricePolicy"
         ]
       }
     },
