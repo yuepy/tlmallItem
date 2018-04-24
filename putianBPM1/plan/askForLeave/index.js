@@ -264,7 +264,7 @@
     },
     doAction_uiControl116_UnmeiG: function (data, elem) {
       if (data.eventType == "enclosure") {
-        var i = data.dataCustom[0];var index = data.dataCustom[1];var _btn = elem.querySelectorAll("#enclosure")[index].querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);var string = encodeURIComponent(_btn.textContent.trim());if (ysp.appMain.isIOS()) {
+        var i = data.dataCustom[0];var index = data.dataCustom[1];var _btn = elem.querySelectorAll("#enclosure")[index].querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);var string = encodeURIComponent(_btn.textContent.trim());console.log(url);if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(url + '?_ysp_filepreview=1&_ysp_ftpEncoding=gbk');
         } else if (ysp.appMain.isAndroid()) {
           // top.location.href = url;
