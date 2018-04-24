@@ -151,7 +151,9 @@
     getData_control183_XaiivX: function (elem) {
       if (elem) {
         var arr = [];var tds = elem.querySelectorAll('.form_label');var tdsLen = tds.length;var tit = [];var pData = [];for (var j = 0; j < tdsLen; j++) {
-          tit.push(tds[j].textContent.trim());
+          var obj = { value: "", xy: "" };debugger;if (tds[j].querySelectorAll('label').length > 0) {
+            obj.value = tds[j].querySelector('label').textContent;obj.xy = tds[j].parentElement.getAttribute("style");
+          }tit.push(obj);
         }arr.push(tit); //   var inps = elem.querySelectorAll('.mini-textbox-input');
         //   var inpsLen = inps.length;
         //   for (var j = 0; j < inpsLen; j++) {
@@ -159,18 +161,18 @@
         //   }
         //   arr.push(pData);
         var spans = elem.querySelectorAll('.mini-textbox-border');for (var j = 0; j < spans.length; j++) {
-          var obj = { tip: "", value: "" };if (spans[j].querySelectorAll('input').length > 0) {
-            obj.tip = 'input';obj.value = spans[j].querySelector('input').value;
+          var obj = { tip: "", value: "", xy: "" };if (spans[j].querySelectorAll('input').length > 0) {
+            obj.tip = 'input';obj.value = spans[j].querySelector('input').value;obj.xy = spans[j].parentElement.parentElement.parentElement.getAttribute("style");
           } else if (spans[j].querySelectorAll('textarea').length > 0) {
-            obj.tip = 'textarea';obj.value = spans[j].querySelector('textarea').textContent;
+            obj.tip = 'textarea';obj.value = spans[j].querySelector('textarea').value;obj.xy = spans[j].parentElement.parentElement.parentElement.getAttribute("style");
           }pData.push(obj);
         }arr.push(pData);return arr;
       }return [];
     },
     doAction_uiControl176_TVcbPW: function (data, elem) {},
     getTemplate_uiControl176_TVcbPW: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var con = data&&data[0].length>0&&data[0].map(function(d,i){\n      return(\n        <div>\n          <span>{d}:</span>\n          {data[1][i].tip=="input"? <AInput type="text" value={data[1][i].value} disabled/> : <ATextarea disabled>{data[1][i].value}</ATextarea>}\n        </div>\n      )\n    })\n    return (\n      <div className="ysp-flowsheet ysp-datafrom2">{data&&data.length>0 ? <div className="ysp-rejectsStatus">{con}</div> : ""}</div>\n    )\n  }\n});';
-      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData;\n    var con = data && data[0].length > 0 && data[0].map(function (d, i) {\n      return React.createElement(\n        "div",\n        null,\n        React.createElement(\n          "span",\n          null,\n          d,\n          ":"\n        ),\n        data[1][i].tip == "input" ? React.createElement(AInput, { type: "text", value: data[1][i].value, disabled: true }) : React.createElement(\n          ATextarea,\n          { disabled: true },\n          data[1][i].value\n        )\n      );\n    });\n    return React.createElement(\n      "div",\n      { className: "ysp-flowsheet ysp-datafrom2" },\n      data && data.length > 0 ? React.createElement(\n        "div",\n        { className: "ysp-rejectsStatus" },\n        con\n      ) : ""\n    );\n  }\n});';
+      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var con = data&&data[0].length>0&&data[0].map(function(d,i){\n      return(\n        <div>\n          {d.xy==null ? <span>{d.value}:</span> : ""}\n          {data[1][i].tip=="input"&&data[1][i].xy==null ? <AInput type="text" value={data[1][i].value} disabled/> : data[1][i].tip=="textarea"&&data[1][i].xy==null ? <ATextarea value={data[1][i].value} disabled></ATextarea> : ""}\n        </div>\n      )\n    })\n    return (\n      <div className="ysp-flowsheet ysp-datafrom2">{data&&data.length>0 ? <div className="ysp-rejectsStatus">{con}</div> : ""}</div>\n    )\n  }\n});';
+      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData;\n    var con = data && data[0].length > 0 && data[0].map(function (d, i) {\n      return React.createElement(\n        "div",\n        null,\n        d.xy == null ? React.createElement(\n          "span",\n          null,\n          d.value,\n          ":"\n        ) : "",\n        data[1][i].tip == "input" && data[1][i].xy == null ? React.createElement(AInput, { type: "text", value: data[1][i].value, disabled: true }) : data[1][i].tip == "textarea" && data[1][i].xy == null ? React.createElement(ATextarea, { value: data[1][i].value, disabled: true }) : ""\n      );\n    });\n    return React.createElement(\n      "div",\n      { className: "ysp-flowsheet ysp-datafrom2" },\n      data && data.length > 0 ? React.createElement(\n        "div",\n        { className: "ysp-rejectsStatus" },\n        con\n      ) : ""\n    );\n  }\n});';
     },
     getData_control187_kIBBRM: function (elem) {
       if (!elem) {
