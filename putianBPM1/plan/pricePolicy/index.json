@@ -15,43 +15,6 @@
   "description": "",
   "firstPaintEnable": false,
   "controls": {
-    "control175_O5Gi4O": {
-      "location": {
-        "data": {
-          "tagName": "IFRAME"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control175_O5Gi4O"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control178_wOOVHf": {
       "location": {
         "data": {
@@ -241,7 +204,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
@@ -407,12 +370,44 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control182_k59NdK": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control182_k59NdK"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context38_3olAon": {
       "controls": [
-        "control175_O5Gi4O",
         "control178_wOOVHf",
         "control179_WAv5g2",
         "control183_XaiivX",
@@ -423,7 +418,8 @@
         "control192_o7wtCW",
         "control194_5OkwOz",
         "control195_Fl5P2E",
-        "control196_Ny8x1x"
+        "control196_Ny8x1x",
+        "control182_k59NdK"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -461,20 +457,6 @@
         }
       ]
     },
-    "flow141_rBm0qn": {
-      "fromContextId": "context38_3olAon",
-      "fromAction": "doAction",
-      "fromControlId": "control175_O5Gi4O",
-      "toContexts": [
-        {
-          "toContextId": "context38_3olAon"
-        },
-        {
-          "toContextId": "context1_wzzrby",
-          "toModelId": "index"
-        }
-      ]
-    },
     "flow143_LryV1i": {
       "fromContextId": "context38_3olAon",
       "fromAction": "doAction",
@@ -496,6 +478,24 @@
       "toContexts": [
         {
           "toContextId": "context38_3olAon"
+        }
+      ]
+    },
+    "flow141_xqE3tm": {
+      "fromContextId": "context38_3olAon",
+      "fromAction": "doAction",
+      "fromControlId": "control182_k59NdK",
+      "toContexts": [
+        {
+          "toContextId": "context38_3olAon"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
         }
       ]
     }
@@ -520,16 +520,16 @@
           }
         },
         {
-          "id": "uiControl168_vMlSVH",
-          "controlId": "control175_O5Gi4O",
+          "id": "uiControl175_ZtT5UK",
+          "controlId": "control182_k59NdK",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl168_vMlSVH",
-                "onGetTemplate": "getTemplate_uiControl168_vMlSVH"
+                "onDoAction": "doAction_uiControl175_ZtT5UK",
+                "onGetTemplate": "getTemplate_uiControl175_ZtT5UK"
               }
             }
           }
@@ -701,7 +701,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317978&pricePolicy",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317976&pricePolicy",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294013&pricePolicy",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327384&pricePolicy"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327384&pricePolicy",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327920&pricePolicy"
         ]
       }
     },
