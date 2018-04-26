@@ -853,6 +853,7 @@
               var win = item.ownerDocument.defaultView;
               if (item.href && item.href.indexOf('javascript') == -1) {
                 if (activeModel) {
+                  console.info('1::planName is : ' + planName + ' href is : ' + item.href)
                   var modelId = activeModel.id;
                   if (modelId == planName) {
                     //win[planName].location.href = item.href;
@@ -861,6 +862,7 @@
                   } else {
                     win.open(item.href, planName);
                     ysp.runtime.Model.setForceMatchModels([planName]);
+                    console.info('2::planName is : ' + planName + ' href is : ' + item.href)
                     //确保打开二级菜单有效
                     ysp.customHelper._insureSecondMenuTimer = setTimeout(function(){
                       if(!!!ysp.customHelper.getWinFromRTByName(planName)) findSecondMenu();

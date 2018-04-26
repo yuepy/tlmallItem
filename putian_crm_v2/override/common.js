@@ -543,6 +543,21 @@ function departmentbak(bizUnits){
 	return bizUnits;
 }
 
+//数字千分位转化(带小数或不带小数)
+function numChange(params) {
+  num = params.toString();   //将输入的数字转换为字符串
+  if(/^-?\d+\.?\d+$/.test(num)){  //判断输入内容是否为整数或小数
+    if(/^-?\d+$/.test(num)){       //判断输入内容是否为整数
+    	num =num.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");//对其进行分割
+    }else{
+      num_array=num.split(".");//如果是小数就根据"."拆分成两个数组，整数部分和小数部分，对整数部分进行千分位处理，再合并小数部分
+      num_before=num_array[0].replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+      num=num_before+"."+num_array[1];                       
+    }                     
+  }
+  return num;
+}
+
 //var isShowProject = $("#isShowProject").text();
 $(function (){
 	$(".clear-btn").click(function(){

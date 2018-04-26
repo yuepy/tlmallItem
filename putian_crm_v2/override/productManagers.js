@@ -452,14 +452,14 @@ window.addEventListener('DOMContentLoaded', function() {
                     $("#yearQty").html(response.yearQty);
                     $("#yearAmt").html(response.yearAmt);*/
                 	
-                	$("#dayQty").html(response.dayQty);
-                    $("#dayAmt").html(response.dayAmt.toFixed(2));
-                    $("#monthQty").html(response.monthQty);
-                    $("#monthAmt").html(response.monthAmt.toFixed(2));
-                    $("#weekQty").html(response.weekQty);
-                    $("#weekAmt").html(response.weekAmt.toFixed(2));
-                    $("#yearQty").html(response.yearQty);
-                    $("#yearAmt").html(response.yearAmt.toFixed(2));
+                	$("#dayQty").html(numChange(response.dayQty));
+                    $("#dayAmt").html(numChange(response.dayAmt.toFixed(2)));
+                    $("#monthQty").html(numChange(response.monthQty));
+                    $("#monthAmt").html(numChange(response.monthAmt.toFixed(2)));
+                    $("#weekQty").html(numChange(response.weekQty));
+                    $("#weekAmt").html(numChange(response.weekAmt.toFixed(2)));
+                    $("#yearQty").html(numChange(response.yearQty));
+                    $("#yearAmt").html(numChange(response.yearAmt.toFixed(2)));
 
                     // 全国地图
                     var mapDatas = response.province;
@@ -651,14 +651,14 @@ window.addEventListener('DOMContentLoaded', function() {
                     $("#yearQty").html(response.yearQty);
                     $("#yearAmt").html(response.yearAmt);*/
                 	
-                	$("#dayQty").html(response.dayQty);
-                    $("#dayAmt").html(response.dayAmt.toFixed(2));
-                    $("#monthQty").html(response.monthQty);
-                    $("#monthAmt").html(response.monthAmt.toFixed(2));
-                    $("#weekQty").html(response.weekQty);
-                    $("#weekAmt").html(response.weekAmt.toFixed(2));
-                    $("#yearQty").html(response.yearQty);
-                    $("#yearAmt").html(response.yearAmt.toFixed(2));
+                	$("#dayQty").html(numChange(response.dayQty));
+                    $("#dayAmt").html(numChange(response.dayAmt.toFixed(2)));
+                    $("#monthQty").html(numChange(response.monthQty));
+                    $("#monthAmt").html(numChange(response.monthAmt.toFixed(2)));
+                    $("#weekQty").html(numChange(response.weekQty));
+                    $("#weekAmt").html(numChange(response.weekAmt.toFixed(2)));
+                    $("#yearQty").html(numChange(response.yearQty));
+                    $("#yearAmt").html(numChange(response.yearAmt.toFixed(2)));
 
                     // 全国地图
                     var mapDatas = response.province;
