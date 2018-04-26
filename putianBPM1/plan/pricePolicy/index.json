@@ -6,7 +6,10 @@
   "requires": {
     "PendingTask": "../PendingTask/index.json",
     "approvalTrack": "../approvalTrack/index.json",
-    "approveAdvice": "../approveAdvice/index.json"
+    "approveAdvice": "../approveAdvice/index.json",
+    "processedTask": "../processedTask/index.json",
+    "operationLog": "../operationLog/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "产品价格政策审批",
   "description": "",
@@ -264,7 +267,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -301,7 +304,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -338,7 +341,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -375,7 +378,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -451,6 +454,10 @@
         {
           "toContextId": "context10_Hyn4t6",
           "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
         }
       ]
     },
@@ -463,8 +470,8 @@
           "toContextId": "context38_3olAon"
         },
         {
-          "toContextId": "context5_7wf9RT",
-          "toModelId": "PendingTask"
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         }
       ]
     },

@@ -385,6 +385,40 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control181_ptwra5": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::TABLE[@id=\"cause\"]/TBODY[1]",
+              "descendant::TABLE[@id=\"cause\"]//TBODY"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[2]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control181_ptwra5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -400,7 +434,8 @@
         "control186_3185AU",
         "control188_HqRJHJ",
         "control189_HK8O2o",
-        "control190_Aw3o9T"
+        "control190_Aw3o9T",
+        "control181_ptwra5"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -483,6 +518,16 @@
           "toModelId": "PendingTask"
         }
       ]
+    },
+    "flow146_htRPeR": {
+      "fromContextId": "context37_43dcvf",
+      "fromAction": "doAction",
+      "fromControlId": "control181_ptwra5",
+      "toContexts": [
+        {
+          "toContextId": "context37_43dcvf"
+        }
+      ]
     }
   },
   "pages": {
@@ -530,6 +575,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl167_zVT2Aa",
                 "onGetTemplate": "getTemplate_uiControl167_zVT2Aa"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl174_FXKnek",
+          "controlId": "control181_ptwra5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl174_FXKnek",
+                "onGetTemplate": "getTemplate_uiControl174_FXKnek"
               }
             }
           }
@@ -672,7 +732,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327121&goodBargain",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327316&goodBargain",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294392&goodBargain",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294390&goodBargain"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294390&goodBargain",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=327668&goodBargain"
         ]
       }
     },
