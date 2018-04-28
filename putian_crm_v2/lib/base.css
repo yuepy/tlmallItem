@@ -1213,10 +1213,26 @@ section.ysp-dialog-body-list > span:last-child > i:last-child {
 .ysp-sales-rebate-tot .ysp-sales-rebate > div > span {
   color: #aaa;
 }
-.ysp-sales-rebate-tot .ysp-sales-rebate > div > span:last-child {
-  width: 35%;
-  text-align: center;
-  float: right;
+.ysp-sales-rebate-tot .ysp-sales-rebate .ysp-sales-rebate-tot-next {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 13px;
+  padding-top: 5px;
+}
+.ysp-sales-rebate-tot .ysp-sales-rebate .ysp-sales-rebate-tot-next > div:nth-child(1) {
+  width: 50%;
+  color: #aaa;
+}
+.ysp-sales-rebate-tot .ysp-sales-rebate .ysp-sales-rebate-tot-next > div:nth-child(1) > span:nth-child(1) {
+  padding-right: 13px;
+}
+.ysp-sales-rebate-tot .ysp-sales-rebate .ysp-sales-rebate-tot-next > div:nth-child(2) {
+  color: #aaa;
+}
+.ysp-sales-rebate-tot .ysp-sales-rebate .ysp-sales-rebate-tot-next > div:nth-child(2) > span:nth-child(2) {
+  color: #e43c11;
+  padding-left: 13px;
 }
 .ysp-sales-rebate-tot .ysp-sales-rebate > footer > span {
   color: #aaa;
