@@ -8257,6 +8257,19 @@ div[data-ysp-modelid="infomationInput"] .list_ltt .listContent_ltt span {
 div[data-ysp-modelid="infomationInput"] .list_ltt .listContent_ltt span:first-child {
   color: #333;
 }
+div[data-ysp-modelid="infomationInput"] .list_ltt .listOpening_ltt {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 10px;
+}
+div[data-ysp-modelid="infomationInput"] .list_ltt .listOpening_ltt > span:nth-child(1) {
+  color: #333333;
+  padding-right: 10px;
+}
+div[data-ysp-modelid="infomationInput"] .list_ltt .listOpening_ltt > span:nth-child(2) {
+  color: #999;
+}
 div[data-ysp-modelid="infomationInput"] .list_ltt .listContentput_ltt {
   overflow: hidden;
 }
@@ -8387,6 +8400,29 @@ div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listContent_ltt s
 div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listContent_ltt span:first-child {
   color: #333;
 }
+div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listOpenSt_ltt {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 10px;
+}
+div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listOpenSt_ltt > div:nth-child(1) {
+  width: 60%;
+}
+div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listOpenSt_ltt > div:nth-child(1) > span:nth-child(1) {
+  color: #333333;
+  padding-right: 10px;
+}
+div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listOpenSt_ltt > div:nth-child(1) > span:nth-child(2) {
+  color: #999;
+}
+div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listOpenSt_ltt > div:nth-child(2) > span:nth-child(1) {
+  color: #333333;
+  padding-right: 10px;
+}
+div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listOpenSt_ltt > div:nth-child(2) > span:nth-child(2) {
+  color: #999;
+}
 div[data-ysp-modelid="customerInformationweekFill"] .list_ltt .listContentput_ltt {
   overflow: hidden;
 }
@@ -8495,26 +8531,39 @@ div[data-ysp-modelid="storeDayPSI"] > div:nth-child(4) {
 }
 .ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) > span:nth-child(1) {
+  color: #333333;
+}
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) > span:nth-child(2) {
+  color: #999;
+  padding-left: 5px;
+}
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) > div:first-child {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) > div:first-child {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) > div:first-child > span:first-child {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) > div:first-child > span:first-child {
   margin-right: 10px;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) > div:last-child {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) > div:last-child {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) > div:last-child > span:first-child {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) > div:last-child > span:first-child {
   margin-right: 10px;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) .ysp_StoreDay_PSI_item_input_color input {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) .ysp_StoreDay_PSI_item_input_color input {
   width: 60%;
   border: 1px solid #ccc;
   padding: 5px;
@@ -8524,30 +8573,30 @@ div[data-ysp-modelid="storeDayPSI"] > div:nth-child(4) {
   margin-bottom: 0px !important;
   border-radius: 4px;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) .ysp_StoreDay_PSI_item-color {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) .ysp_StoreDay_PSI_item-color {
   color: #ececec;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) .ysp_StoreDay_PSI_item-color input {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) .ysp_StoreDay_PSI_item-color input {
   width: 60%;
   border: 1px solid #ccc;
   padding: 5px;
   margin-bottom: 0px !important;
   border-radius: 4px;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) .ysp_StoreDay_PSI_item_input_blueColor input {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) .ysp_StoreDay_PSI_item_input_blueColor input {
   width: 60%;
   border: 2px solid #4796ed;
   padding: 5px;
   margin-bottom: 0px !important;
   border-radius: 4px;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) .ysp_StoreDay_PSI_item_noInput {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) .ysp_StoreDay_PSI_item_noInput {
   display: flex;
   justify-content: flex-start !important;
   align-items: center;
   width: 60%;
 }
-.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(3) .ysp_StoreDay_PSI_item_noInput > span:nth-child(2) {
+.ysp_StoreInfomationFillDay_PSI .ysp_StoreInfomationFillDay_PSI_item > div:nth-child(4) .ysp_StoreDay_PSI_item_noInput > span:nth-child(2) {
   color: #e8350d;
   font-size: 19px;
 }
@@ -8636,26 +8685,49 @@ div[data-ysp-modelid="storeWeekPSI"] {
 }
 .ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) > div:nth-child(1) {
+  width: 60%;
+}
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) > div:nth-child(1) > span:nth-child(1) {
+  color: #333333;
+  padding-right: 10px;
+}
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) > div:nth-child(1) > span:nth-child(2) {
+  color: #999;
+}
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) > div:nth-child(2) > span:nth-child(1) {
+  color: #333333;
+  padding-right: 10px;
+}
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) > div:nth-child(2) > span:nth-child(2) {
+  color: #999;
+}
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) > div:first-child {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) > div:first-child {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) > div:first-child > span:first-child {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) > div:first-child > span:first-child {
   margin-right: 10px;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) > div:last-child {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) > div:last-child {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) > div:last-child > span:first-child {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) > div:last-child > span:first-child {
   margin-right: 10px;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) .ysp_StoreWeek_PSI_item_input_color input {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) .ysp_StoreWeek_PSI_item_input_color input {
   width: 60%;
   border: 1px solid #ccc;
   padding: 5px;
@@ -8665,30 +8737,30 @@ div[data-ysp-modelid="storeWeekPSI"] {
   margin-bottom: 0px !important;
   border-radius: 4px;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) .ysp_StoreWeek_PSI_item-color {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) .ysp_StoreWeek_PSI_item-color {
   color: #ececec;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) .ysp_StoreWeek_PSI_item-color input {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) .ysp_StoreWeek_PSI_item-color input {
   width: 60%;
   border: 1px solid #ccc;
   padding: 5px;
   margin-bottom: 0px !important;
   border-radius: 4px;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) .ysp_StoreWeek_PSI_item_input_blueColor input {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) .ysp_StoreWeek_PSI_item_input_blueColor input {
   width: 60%;
   border: 2px solid #4796ed;
   padding: 5px;
   margin-bottom: 0px !important;
   border-radius: 4px;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) .ysp_StoreWeek_PSI_item_noInput {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) .ysp_StoreWeek_PSI_item_noInput {
   display: flex;
   justify-content: flex-start !important;
   align-items: center;
   width: 60%;
 }
-.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(3) .ysp_StoreWeek_PSI_item_noInput > span:nth-child(2) {
+.ysp_StoreInfomationFillWeek_PSI .ysp_StoreInfomationFillWeek_PSI_item > div:nth-child(4) .ysp_StoreWeek_PSI_item_noInput > span:nth-child(2) {
   color: #e8350d;
   font-size: 19px;
 }
