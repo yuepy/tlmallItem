@@ -210,12 +210,10 @@ window.addEventListener('DOMContentLoaded', function() {
             var table_minHeight = parseInt($(".table thead th").height()) + parseInt($(".table tbody td").height()) * 4;
 
             if ($(e).hasClass("Up")) {
-                console.log("1");
                 $(e).addClass("Down").removeClass("Up");
                 $(e).siblings(".content").height("auto").css("overflow", "auto");
                 $(e).find("span").text("收起");
             } else if ($(e).hasClass("Down")) {
-                console.log("2");
                 $(e).addClass("Up").removeClass("Down");
                 $(e).siblings(".content").height(table_minHeight).css("overflow", "hidden");
                 $(e).find("span").text("展开");
@@ -319,13 +317,11 @@ window.addEventListener('DOMContentLoaded', function() {
             var table_minHeight = parseInt($("#" + id).find("thead th").height()) + parseInt($("#" + id).find("tbody td").height()) * len;
 
             if ($("#" + id).find("tbody tr").length <= len) {
-//				console.log("tableSH--1");
                 $("#"+id).parent().parent().find(".content").height('auto');
                 $("#"+id).parent().parent().find(".btn-display").hide();
                 $("#" + id).parent().next(".btn-display").removeClass('Up');
                 $("#" + id).parent().next(".btn-display").removeClass('Down');
             } else {
-//				console.log("tableSH--2");
                 $("#" + id).parent().height(table_minHeight).css("overflow", "hidden");
                 $("#" + id).parent().next(".btn-display").show().addClass("Up");
             }
@@ -341,6 +337,9 @@ window.addEventListener('DOMContentLoaded', function() {
                 isYear = '1';
             }
 
+            //面包屑导航
+            breadcrumb("办事处","officeMaster");
+
             // 当前的月份
             var date = $("#selDay").val();
 
@@ -353,14 +352,15 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+            var drill = $("#drill").text();
 
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName),
+                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill,
                 async: false,
                 success: function (response) {
-                    //console.log(response);
+                    // console.log(response);
                     // 刷新头部的汇总数据
                     $("#totalTargetQty").html(toThousands(response.totalTargetQty));
                     $("#totalAuditQty").html(toThousands(response.totalAuditQty));
@@ -373,80 +373,130 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     if (configType != '02') {
 
-                        // 销售人员排行
-                        $("#rankName").html(response.rank.name);
-                        $("#rankQty").html('第' + response.rank.qtyRank + '位');
-                        $("#rankAmt").html('第' +response.rank.amtRank  + '位');
-
-                        // TODO 获取经纬度
-                        // 百度地图数据（data:坐标、门店名称、地址、销量、金额）
-                        //var BDmapName = '四川省';
-                        var BDmapName = response.geoProvince;
-                        /*                        var BDdatas = [{
-                                                    name: "四川省内江市威远县诚泰南大街华为体验店",
-                                                    address: "四川xxxx",
-                                                    salesNums: 684,
-                                                    sumNums: 99934,
-                                                    value: [104.674516, 29.532623]
-                                                }, {
-                                                    name: "四川省广安市华蓥市山水华蓥广场华为体验店",
-                                                    address: "四川xxxx",
-                                                    salesNums: 6841,
-                                                    sumNums: 19934,
-                                                    value: [106.783346, 30.390927]
-                                                }, {
-                                                    name: "四川省成都市都江堰市幸福大道城汇华为体验店",
-                                                    address: "四川xxxx",
-                                                    salesNums: 1841,
-                                                    sumNums: 12934,
-                                                    value: [103.632697, 30.999129]
-                                                }, {
-                                                    name: "四川省攀枝花市米易县未来通讯桥东街体验店",
-                                                    address: "四川xxxx",
-                                                    salesNums: 1841,
-                                                    sumNums: 12934,
-                                                    value: [102.11372, 26.891967]
-                                                }];*/
-                        var BDdatas = response.geoInfos;
-
-                        // 获取百度地图
-                        if(BDmapName && BDdatas) {
-                            getBDMap(BDmapName, BDdatas, "map");
-                        } else {
-                            getBDMap(BDmapName, [], "map");
-                        }
-
-                        // 事业部项目层级
-                        // 事业部项目层级
                         $(".bizUnitProject").remove();
-                        if(response.bizUnits) {
-                            var bizUnits = response.bizUnits;
-                            for (var k = 0; k < response.bizUnits.length; k++) {
-                                var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
-                                // 图表HTML
-                                var barMap = '<div class="chart chart-bars" id="bizUnit' + k + '"></div>';
-                                // 表格HTML
-                                var tableHtml = '<div class="content"><table style="word-wrap:break-word; word-break:break-all"  class="table u-table-b" id="bizUnit'+ k +'"><thead><tr><th>项目</th><th class="sort">目标销量</th><th class="sort">销量达成</th><th class="sort">销量达成率</th><th class="sort">目标销售额(万)</th><th class="sort">销售额达成(万)</th><th class="sort">销售额达成率</th></tr></thead><tbody>';
-                                //tableHtml = tableHtml + '<tr><td title="合计">合计</td><td>' + bizUnits[k].targetQty + '</td><td>' + bizUnits[k].reachQty + '</td><td>' + bizUnits[k].reachQtyRate + '%</td><td>'
-                                //    + bizUnits[k].targetAmt + '</td><td>' + bizUnits[k].reachAmt + '</td><td>' + bizUnits[k].reachAmtRate + '%</td></tr>';
+                        $(".projectAjax").remove();
+                        $("#modelTable").empty();
+                        $("#clientTable").empty();
+                        $("#storeTable").empty();
+                        $("#salesManTable").empty();
 
-                                var projects = bizUnits[k].subValues;
-                                for(var j =0; j< projects.length ;j++) {
-                                    tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="#" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
-                                        + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
-                                }
-                                tableHtml = tableHtml + '</tbody></table></div>';
+                        if(response.rank.value){
 
-                                // 整体区域HTML
-                                var html = '<div class="m-box bizUnitProject">' + barMap + tableHtml + '<a href="javascript:;" class="btn-display" onclick="displayTable(this)"><span>展开</span><i class="icon"></i></a></div>';
-                                $("#projectRankPlaceHolder").before(html);
-                                getBars(barData,  bizUnits[k].name, 'bizUnit' + k);
-                                tableSH("bizUnit" + k, 4);
+                            // 销售人员排行
+                            $("#branchName").text(response.rank.branchName);
+                            $("#officeName").text(response.rank.value.name);
+                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.name);
+
+                            //数据中的达成率添加%
+                            response = addPercentSigns(response);
+
+                            //销量达成排名悬浮窗
+                            $("#rankQty").html(suspBySalesCountReach(response.rank));
+
+                            //销售额达成排名悬浮窗
+                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
+
+                            // TODO 获取经纬度
+                            // 百度地图数据（data:坐标、门店名称、地址、销量、金额）
+                            //var BDmapName = '四川省';
+                            var BDmapName = response.geoProvince;
+                            /*                        var BDdatas = [{
+                             name: "四川省内江市威远县诚泰南大街华为体验店",
+                             address: "四川xxxx",
+                             salesNums: 684,
+                             sumNums: 99934,
+                             value: [104.674516, 29.532623]
+                             }, {
+                             name: "四川省广安市华蓥市山水华蓥广场华为体验店",
+                             address: "四川xxxx",
+                             salesNums: 6841,
+                             sumNums: 19934,
+                             value: [106.783346, 30.390927]
+                             }, {
+                             name: "四川省成都市都江堰市幸福大道城汇华为体验店",
+                             address: "四川xxxx",
+                             salesNums: 1841,
+                             sumNums: 12934,
+                             value: [103.632697, 30.999129]
+                             }, {
+                             name: "四川省攀枝花市米易县未来通讯桥东街体验店",
+                             address: "四川xxxx",
+                             salesNums: 1841,
+                             sumNums: 12934,
+                             value: [102.11372, 26.891967]
+                             }];*/
+                            var BDdatas = response.geoInfos;
+
+                            // 获取百度地图
+                            if(BDmapName && BDdatas) {
+                                getBDMap(BDmapName, BDdatas, "map");
+                            } else {
+                                getBDMap(BDmapName, [], "map");
                             }
+
+                            // 事业部项目层级
+                            if(response.bizUnits) {
+                                var bizUnits = response.bizUnits;
+                                for (var k = 0; k < bizUnits.length; k++) {
+                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
+                                    var deptSalesCountReachRankA;
+                                    var deptSalesAmountReachRankA;
+                                    for(var i in response.ranks){
+                                        if(response.ranks[i].value.department == bizUnits[k].name){
+                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
+                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
+                                            break;
+                                        }
+                                    }
+                                    var salesRank = '<ul class="sales-rank"><li><span>'+bizUnits[k].name+'</span></li><li><span>销量达成</span>'+deptSalesCountReachRankA+'</li><li><span>销售额达成</span>'+deptSalesAmountReachRankA+'</li></ul>';
+                                    // 图表HTML
+                                    var barMap = '<div class="chart chart-bars" style="height:138px;" id="bizUnit' + k + '"></div>';
+                                    // 表格HTML
+                                    var tableHtml = '<div class="content"><table style="word-wrap:break-word; word-break:break-all"  class="table u-table-b" id="bizUnit'+ k +'"><thead><tr><th>项目</th><th class="sort">目标销量</th><th class="sort">销量达成</th><th class="sort">销量达成率</th><th class="sort">目标销售额(万)</th><th class="sort">销售额达成(万)</th><th class="sort">销售额达成率</th></tr></thead><tbody>';
+                                    //tableHtml = tableHtml + '<tr><td title="合计">合计</td><td>' + bizUnits[k].targetQty + '</td><td>' + bizUnits[k].reachQty + '</td><td>' + bizUnits[k].reachQtyRate + '%</td><td>'
+                                    //    + bizUnits[k].targetAmt + '</td><td>' + bizUnits[k].reachAmt + '</td><td>' + bizUnits[k].reachAmtRate + '%</td></tr>';
+
+                                    var projects = bizUnits[k].subValues;
+                                    for(var j =0; j< projects.length ;j++) {
+                                        var link = '#';
+                                        if(isYear!='1') {
+                                            link = '/ptDataShow/salesPlan/salesOverview?type=06&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text()) + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                        }
+                                        tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
+                                            + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
+                                    }
+                                    tableHtml = tableHtml + '</tbody></table></div>';
+
+                                    // 整体区域HTML
+                                    var html = '<div class="m-box bizUnitProject">' + salesRank + barMap + tableHtml + '<a href="javascript:;" class="btn-display" onclick="displayTable(this)"><span>展开</span><i class="icon"></i></a></div>';
+                                    $("#projectRankPlaceHolder").before(html);
+                                    getBars(barData,  bizUnits[k].name, 'bizUnit' + k);
+                                    tableSH("bizUnit" + k, 4);
+                                }
+                            }else if(response.ranks) {
+                                // 项目
+                                for(var i =0; i< response.ranks.length; i++) {
+                                    var rank =  response.ranks[i];
+                                    if(!rank.value) {
+                                        continue;
+                                    }
+                                    var projectSalesCountReachRankA = suspByProjectSalesCountReach(rank);
+                                    var projectSalesAmountReachRankA = suspByProjectSalesAmountReach(rank);
+                                    var salesRank = '<ul class="sales-rank clearfix"><li><span>'+rank.value.projectName+'</span></li><li><span>销量达成</span>'+projectSalesCountReachRankA+'</li><li><span>销售额达成</span>'+projectSalesAmountReachRankA+'</li></ul>';
+
+                                    var barHtml = '<div class="m-box projectAjax">'+salesRank+'<div class="chart chart-bars" id="project-' + i + '"></div></div>';
+
+                                    // $("#projectRankPlaceHolder").before(rankHtml);
+                                    $("#projectRankPlaceHolder").before(barHtml);
+
+                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额", value: rank.value.targetAmt }, { name: "销售额达成", value: rank.value.reachAmt }];
+                                    getBars(hw_barsDatas, rank.value.projectName, "project-" + i);
+                                }
+                            }
+
                         }
 
                         // 机型列表 modelTable
-                        $("#modelTable").empty();
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
@@ -458,7 +508,6 @@ window.addEventListener('DOMContentLoaded', function() {
                         tableSH("model-table", 5);
 
                         // 客户列表
-                        $("#clientTable").empty();
                         if(response.customerName) {
                             for(var i =0; i< response.customerName.length ;i++) {
                                 var client = response.customerName[i];
@@ -470,7 +519,6 @@ window.addEventListener('DOMContentLoaded', function() {
                         tableSH("client-table", 5);
 
                         // 门店列表
-                        $("#storeTable").empty();
                         if(response.storeName) {
                             for(var i =0; i< response.storeName.length ;i++) {
                                 var store = response.storeName[i];
@@ -482,14 +530,15 @@ window.addEventListener('DOMContentLoaded', function() {
                         tableSH("store-table", 5);
 
                         // 业务人员
-                        $("#salesManTable").empty();
                         if(response.salerName) {
                             for(var i =0; i< response.salerName.length ;i++) {
                                 var saler = response.salerName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(saler.id) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
-                                if($("#drill").text() == '0') {
-                                    link = '#';
-                                }
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(saler.id) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
+                                    + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
+                                    + "&officeName=" + encodeURIComponent(officeName) + "&drill=" + encodeURIComponent($("#drill").text());
+                                // if($("#drill").text() == '0') {
+                                //     link = '#';
+                                // }
                                 var html = '<tr><td><a href="'+link+'" title="' + saler.name + '">' + saler.name + '</a></td><td>' + toThousands(saler.targetQty) + '</td><td>' + toThousands(saler.reachQty) + '</td><td>' + saler.reachQtyRate + '%</td><td>'
                                     + toThousands(saler.targetAmt) + '</td><td>' + toThousands(saler.reachAmt) + '</td><td>' + saler.reachAmtRate + '%</td></tr>';
                                 $("#salesManTable").append(html);
@@ -574,8 +623,9 @@ window.addEventListener('DOMContentLoaded', function() {
             //getBars(sx_barsDatas, '三星事业部', 'barsSX');
             //getBars(fx_barsDatas, '分销事业部', 'barsFX');
         }
-
-      	window.timeInit = function() {
+      
+      
+      window.timeInit = function() {
 
             // 年计划或月计划
             var isYear = '0';
@@ -585,6 +635,9 @@ window.addEventListener('DOMContentLoaded', function() {
                 isYear = '1';
             }
 
+            //面包屑导航
+            breadcrumb("办事处","officeMaster");
+
             // 当前的月份
             var date = $("#selDay").val();
 
@@ -597,14 +650,15 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+            var drill = $("#drill").text();
 
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName),
+                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill,
                 async: false,
                 success: function (response) {
-                    //console.log(response);
+                    // console.log(response);
                     // 刷新头部的汇总数据
                     $("#totalTargetQty").html(toThousands(response.totalTargetQty));
                     $("#totalAuditQty").html(toThousands(response.totalAuditQty));
@@ -617,80 +671,130 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     if (configType != '02') {
 
-                        // 销售人员排行
-                        $("#rankName").html(response.rank.name);
-                        $("#rankQty").html('第' + response.rank.qtyRank + '位');
-                        $("#rankAmt").html('第' +response.rank.amtRank  + '位');
-
-                        // TODO 获取经纬度
-                        // 百度地图数据（data:坐标、门店名称、地址、销量、金额）
-                        //var BDmapName = '四川省';
-                        var BDmapName = response.geoProvince;
-                        /*                        var BDdatas = [{
-                                                    name: "四川省内江市威远县诚泰南大街华为体验店",
-                                                    address: "四川xxxx",
-                                                    salesNums: 684,
-                                                    sumNums: 99934,
-                                                    value: [104.674516, 29.532623]
-                                                }, {
-                                                    name: "四川省广安市华蓥市山水华蓥广场华为体验店",
-                                                    address: "四川xxxx",
-                                                    salesNums: 6841,
-                                                    sumNums: 19934,
-                                                    value: [106.783346, 30.390927]
-                                                }, {
-                                                    name: "四川省成都市都江堰市幸福大道城汇华为体验店",
-                                                    address: "四川xxxx",
-                                                    salesNums: 1841,
-                                                    sumNums: 12934,
-                                                    value: [103.632697, 30.999129]
-                                                }, {
-                                                    name: "四川省攀枝花市米易县未来通讯桥东街体验店",
-                                                    address: "四川xxxx",
-                                                    salesNums: 1841,
-                                                    sumNums: 12934,
-                                                    value: [102.11372, 26.891967]
-                                                }];*/
-                        var BDdatas = response.geoInfos;
-
-                        // 获取百度地图
-                        if(BDmapName && BDdatas) {
-                            getBDMap(BDmapName, BDdatas, "map");
-                        } else {
-                            getBDMap(BDmapName, [], "map");
-                        }
-
-                        // 事业部项目层级
-                        // 事业部项目层级
                         $(".bizUnitProject").remove();
-                        if(response.bizUnits) {
-                            var bizUnits = response.bizUnits;
-                            for (var k = 0; k < response.bizUnits.length; k++) {
-                                var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
-                                // 图表HTML
-                                var barMap = '<div class="chart chart-bars" id="bizUnit' + k + '"></div>';
-                                // 表格HTML
-                                var tableHtml = '<div class="content"><table style="word-wrap:break-word; word-break:break-all"  class="table u-table-b" id="bizUnit'+ k +'"><thead><tr><th>项目</th><th class="sort">目标销量</th><th class="sort">销量达成</th><th class="sort">销量达成率</th><th class="sort">目标销售额(万)</th><th class="sort">销售额达成(万)</th><th class="sort">销售额达成率</th></tr></thead><tbody>';
-                                //tableHtml = tableHtml + '<tr><td title="合计">合计</td><td>' + bizUnits[k].targetQty + '</td><td>' + bizUnits[k].reachQty + '</td><td>' + bizUnits[k].reachQtyRate + '%</td><td>'
-                                //    + bizUnits[k].targetAmt + '</td><td>' + bizUnits[k].reachAmt + '</td><td>' + bizUnits[k].reachAmtRate + '%</td></tr>';
+                        $(".projectAjax").remove();
+                        $("#modelTable").empty();
+                        $("#clientTable").empty();
+                        $("#storeTable").empty();
+                        $("#salesManTable").empty();
 
-                                var projects = bizUnits[k].subValues;
-                                for(var j =0; j< projects.length ;j++) {
-                                    tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="#" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
-                                        + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
-                                }
-                                tableHtml = tableHtml + '</tbody></table></div>';
+                        if(response.rank.value){
 
-                                // 整体区域HTML
-                                var html = '<div class="m-box bizUnitProject">' + barMap + tableHtml + '<a href="javascript:;" class="btn-display" onclick="displayTable(this)"><span>展开</span><i class="icon"></i></a></div>';
-                                $("#projectRankPlaceHolder").before(html);
-                                getBars(barData,  bizUnits[k].name, 'bizUnit' + k);
-                                tableSH("bizUnit" + k, 4);
+                            // 销售人员排行
+                            $("#branchName").text(response.rank.branchName);
+                            $("#officeName").text(response.rank.value.name);
+                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.name);
+
+                            //数据中的达成率添加%
+                            response = addPercentSigns(response);
+
+                            //销量达成排名悬浮窗
+                            $("#rankQty").html(suspBySalesCountReach(response.rank));
+
+                            //销售额达成排名悬浮窗
+                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
+
+                            // TODO 获取经纬度
+                            // 百度地图数据（data:坐标、门店名称、地址、销量、金额）
+                            //var BDmapName = '四川省';
+                            var BDmapName = response.geoProvince;
+                            /*                        var BDdatas = [{
+                             name: "四川省内江市威远县诚泰南大街华为体验店",
+                             address: "四川xxxx",
+                             salesNums: 684,
+                             sumNums: 99934,
+                             value: [104.674516, 29.532623]
+                             }, {
+                             name: "四川省广安市华蓥市山水华蓥广场华为体验店",
+                             address: "四川xxxx",
+                             salesNums: 6841,
+                             sumNums: 19934,
+                             value: [106.783346, 30.390927]
+                             }, {
+                             name: "四川省成都市都江堰市幸福大道城汇华为体验店",
+                             address: "四川xxxx",
+                             salesNums: 1841,
+                             sumNums: 12934,
+                             value: [103.632697, 30.999129]
+                             }, {
+                             name: "四川省攀枝花市米易县未来通讯桥东街体验店",
+                             address: "四川xxxx",
+                             salesNums: 1841,
+                             sumNums: 12934,
+                             value: [102.11372, 26.891967]
+                             }];*/
+                            var BDdatas = response.geoInfos;
+
+                            // 获取百度地图
+                            if(BDmapName && BDdatas) {
+                                getBDMap(BDmapName, BDdatas, "map");
+                            } else {
+                                getBDMap(BDmapName, [], "map");
                             }
+
+                            // 事业部项目层级
+                            if(response.bizUnits) {
+                                var bizUnits = response.bizUnits;
+                                for (var k = 0; k < bizUnits.length; k++) {
+                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
+                                    var deptSalesCountReachRankA;
+                                    var deptSalesAmountReachRankA;
+                                    for(var i in response.ranks){
+                                        if(response.ranks[i].value.department == bizUnits[k].name){
+                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
+                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
+                                            break;
+                                        }
+                                    }
+                                    var salesRank = '<ul class="sales-rank"><li><span>'+bizUnits[k].name+'</span></li><li><span>销量达成</span>'+deptSalesCountReachRankA+'</li><li><span>销售额达成</span>'+deptSalesAmountReachRankA+'</li></ul>';
+                                    // 图表HTML
+                                    var barMap = '<div class="chart chart-bars" style="height:138px;" id="bizUnit' + k + '"></div>';
+                                    // 表格HTML
+                                    var tableHtml = '<div class="content"><table style="word-wrap:break-word; word-break:break-all"  class="table u-table-b" id="bizUnit'+ k +'"><thead><tr><th>项目</th><th class="sort">目标销量</th><th class="sort">销量达成</th><th class="sort">销量达成率</th><th class="sort">目标销售额(万)</th><th class="sort">销售额达成(万)</th><th class="sort">销售额达成率</th></tr></thead><tbody>';
+                                    //tableHtml = tableHtml + '<tr><td title="合计">合计</td><td>' + bizUnits[k].targetQty + '</td><td>' + bizUnits[k].reachQty + '</td><td>' + bizUnits[k].reachQtyRate + '%</td><td>'
+                                    //    + bizUnits[k].targetAmt + '</td><td>' + bizUnits[k].reachAmt + '</td><td>' + bizUnits[k].reachAmtRate + '%</td></tr>';
+
+                                    var projects = bizUnits[k].subValues;
+                                    for(var j =0; j< projects.length ;j++) {
+                                        var link = '#';
+                                        if(isYear!='1') {
+                                            link = '/ptDataShow/salesPlan/salesOverview?type=06&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text()) + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                        }
+                                        tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
+                                            + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
+                                    }
+                                    tableHtml = tableHtml + '</tbody></table></div>';
+
+                                    // 整体区域HTML
+                                    var html = '<div class="m-box bizUnitProject">' + salesRank + barMap + tableHtml + '<a href="javascript:;" class="btn-display" onclick="displayTable(this)"><span>展开</span><i class="icon"></i></a></div>';
+                                    $("#projectRankPlaceHolder").before(html);
+                                    getBars(barData,  bizUnits[k].name, 'bizUnit' + k);
+                                    tableSH("bizUnit" + k, 4);
+                                }
+                            }else if(response.ranks) {
+                                // 项目
+                                for(var i =0; i< response.ranks.length; i++) {
+                                    var rank =  response.ranks[i];
+                                    if(!rank.value) {
+                                        continue;
+                                    }
+                                    var projectSalesCountReachRankA = suspByProjectSalesCountReach(rank);
+                                    var projectSalesAmountReachRankA = suspByProjectSalesAmountReach(rank);
+                                    var salesRank = '<ul class="sales-rank clearfix"><li><span>'+rank.value.projectName+'</span></li><li><span>销量达成</span>'+projectSalesCountReachRankA+'</li><li><span>销售额达成</span>'+projectSalesAmountReachRankA+'</li></ul>';
+
+                                    var barHtml = '<div class="m-box projectAjax">'+salesRank+'<div class="chart chart-bars" id="project-' + i + '"></div></div>';
+
+                                    // $("#projectRankPlaceHolder").before(rankHtml);
+                                    $("#projectRankPlaceHolder").before(barHtml);
+
+                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额", value: rank.value.targetAmt }, { name: "销售额达成", value: rank.value.reachAmt }];
+                                    getBars(hw_barsDatas, rank.value.projectName, "project-" + i);
+                                }
+                            }
+
                         }
 
                         // 机型列表 modelTable
-                        $("#modelTable").empty();
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
@@ -702,7 +806,6 @@ window.addEventListener('DOMContentLoaded', function() {
                         tableSH("model-table", 5);
 
                         // 客户列表
-                        $("#clientTable").empty();
                         if(response.customerName) {
                             for(var i =0; i< response.customerName.length ;i++) {
                                 var client = response.customerName[i];
@@ -714,7 +817,6 @@ window.addEventListener('DOMContentLoaded', function() {
                         tableSH("client-table", 5);
 
                         // 门店列表
-                        $("#storeTable").empty();
                         if(response.storeName) {
                             for(var i =0; i< response.storeName.length ;i++) {
                                 var store = response.storeName[i];
@@ -726,14 +828,15 @@ window.addEventListener('DOMContentLoaded', function() {
                         tableSH("store-table", 5);
 
                         // 业务人员
-                        $("#salesManTable").empty();
                         if(response.salerName) {
                             for(var i =0; i< response.salerName.length ;i++) {
                                 var saler = response.salerName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(saler.id) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
-                                if($("#drill").text() == '0') {
-                                    link = '#';
-                                }
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(saler.id) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
+                                    + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
+                                    + "&officeName=" + encodeURIComponent(officeName) + "&drill=" + encodeURIComponent($("#drill").text());
+                                // if($("#drill").text() == '0') {
+                                //     link = '#';
+                                // }
                                 var html = '<tr><td><a href="'+link+'" title="' + saler.name + '">' + saler.name + '</a></td><td>' + toThousands(saler.targetQty) + '</td><td>' + toThousands(saler.reachQty) + '</td><td>' + saler.reachQtyRate + '%</td><td>'
                                     + toThousands(saler.targetAmt) + '</td><td>' + toThousands(saler.reachAmt) + '</td><td>' + saler.reachAmtRate + '%</td></tr>';
                                 $("#salesManTable").append(html);
@@ -774,58 +877,105 @@ window.addEventListener('DOMContentLoaded', function() {
                     console.log("Error:获取后台数据失败！");
                 }
             });
-
-            // data:地图数据(value:销量数据，sum:销售额数据)
-           // var mapDatas = [{ name: "朝阳市", value: 31100, sum: 3432, company: "朝阳办事处" }, { name: "铁岭市", value: 200, sum: 3414, company: "铁岭办事处" }, { name: "锦州市", value: 300, sum: 1432, company: "锦州办事处" }, { name: "本溪市", value: 100, sum: 342, company: "本溪办事处" }];
-
-            // 省份名称
-           // var provinceName = '辽宁省';
-            // 地图初始化
-           // getMap(mapDatas, provinceName, "map");
-
-            // data:销售达成月度趋势图
-/*            var barLineDatas = [{
-                name: '销量达成(万)',
-                data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
-            }, {
-                name: '销售额达成(千万)',
-                data: [{ time: '2017-2', value: 62 }, { time: '2017-3', value: 56 }, { time: '2017-4', value: 76 }, { time: '2017-5', value: 68 }, { time: '2017-6', value: 98 }, { time: '2017-7', value: 94 }]
-            }, {
-                name: '销量达成率',
-                data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
-            }, {
-                name: '销售额达成率',
-                data: [{ time: '2017-2', value: 12 }, { time: '2017-3', value: 16 }, { time: '2017-4', value: 26 }, { time: '2017-5', value: 48 }, { time: '2017-6', value: 38 }, { time: '2017-7', value: 24 }]
-            }];*/
-            //getBarLines(barLineDatas, "barLines");
-
-            // data:销售达成月度趋势图
-/*            var LineDatas = [{
-                name: '销量(万)',
-                data: [{ time: '近8周', value: 46 }, { time: '近7周', value: 86 }, { time: '近6周', value: 78 }, { time: '近5周', value: 88 }, { time: '近4周', value: 84 }, { time: '近3周', value: 52 }, { time: '近2周', value: 12 }, { time: '近1周', value: 44 }]
-            }, {
-                name: '销售额(千万)',
-                data: [{ time: '近8周', value: 12 }, { time: '近7周', value: 16 }, { time: '近6周', value: 26 }, { time: '近5周', value: 38 }, { time: '近4周', value: 84 }, { time: '近3周', value: 24 }, { time: '近2周', value: 90 }, { time: '近1周', value: 44 }]
-            }];*/
-            //getLines(LineDatas, "lines");
-
-            // data:业务维度数据
-            //var hw_barsDatas = [{ name: "目标销量", value: 600 }, { name: "销量达成", value: 600 }, { name: "目标销售额", value: 300 }, { name: "销售额达成", value: 200 }];
-            //var sx_barsDatas = [{ name: "目标销量", value: 400 }, { name: "销量达成", value: 250 }, { name: "目标销售额", value: 200 }, { name: "销售额达成", value: 100 }];
-            //var fx_barsDatas = [{ name: "目标销量", value: 350 }, { name: "销量达成", value: 200 }, { name: "目标销售额", value: 150 }, { name: "销售额达成", value: 90 }];
-            //var dkh_barsDatas = [{ name: "目标销量", value: 700 }, { name: "销量达成", value: 550 }, { name: "目标销售额", value: 350 }, { name: "销售额达成", value: 200 }];
-            //getBars(hw_barsDatas, '华为业务群', 'barsHW');
-            //getBars(sx_barsDatas, '三星事业部', 'barsSX');
-            //getBars(fx_barsDatas, '分销事业部', 'barsFX');
         }
+
+        //销量达成率排名悬浮窗
+        function suspBySalesCountReach(rank) {
+            var suspTitle = "销量达成排名";
+            var suspDesc = "办事处全部销量达成率分公司内排名（包括所有事业部和项目）";
+            var suspListName = ["月份","办事处","销量达成率","排名"];
+            var allData = rank.qtyRankDatas;
+            var row = rank.value;
+            var scriptByRank = null;
+            var suspListCode = ["month","name","reachQtyRate","qtyRank"];
+            var showValue = '第' + rank.value.qtyRank + '位';
+            var susp = getSuspAhtml(suspTitle, suspDesc, suspListName, allData, row, scriptByRank, suspListCode, showValue);
+
+            return susp;
+        }
+
+        //销售额达成率排名悬浮窗
+        function suspBySalesAmountReach(rank) {
+            var suspTitle = "销售额达成排名";
+            var suspDesc = "办事处全部销售额达成率分公司内排名（包括所有事业部和项目）";
+            var suspListName = ["月份","办事处","销售额达成率","排名"];
+            var allData = rank.amtRankDatas;
+            var row = rank.value;
+            var scriptByRank = null;
+            var suspListCode = ["month","name","reachAmtRate","amtRank"];
+            var showValue = '第' + rank.value.amtRank + '位';
+            var susp = getSuspAhtml(suspTitle, suspDesc, suspListName, allData, row, scriptByRank, suspListCode, showValue);
+
+            return susp;
+        }
+
+        //事业部——销量达成率排名悬浮窗
+        function suspByDeptSalesCountReach(rank) {
+            var suspTitle = "销量达成排名";
+            var suspDesc = "办事处该事业部下销量达成率分公司内排名";
+            var suspListName = ["月份","办事处","销量达成率","排名"];
+            var allData = rank.qtyRankDatas;
+            var row = rank.value;
+            var scriptByRank = null;
+            var suspListCode = ["month","name","reachQtyRate","qtyRank"];
+            var showValue = '第' + rank.value.qtyRank + '位';
+            var susp = getSuspAhtml(suspTitle, suspDesc, suspListName, allData, row, scriptByRank, suspListCode, showValue);
+
+            return susp;
+        }
+
+        //事业部——销售额达成率排名悬浮窗
+        function suspByDeptSalesAmountReach(rank) {
+            var suspTitle = "销售额达成排名";
+            var suspDesc = "办事处该事业部下销售额达成率分公司内排名";
+            var suspListName = ["月份","办事处","销售额达成率","排名"];
+            var allData = rank.amtRankDatas;
+            var row = rank.value;
+            var scriptByRank = null;
+            var suspListCode = ["month","name","reachAmtRate","amtRank"];
+            var showValue = '第' + rank.value.amtRank + '位';
+            var susp = getSuspAhtml(suspTitle, suspDesc, suspListName, allData, row, scriptByRank, suspListCode, showValue);
+
+            return susp;
+        }
+
+        //项目——销量达成率排名悬浮窗
+        function suspByProjectSalesCountReach(rank) {
+            var suspTitle = "销量达成排名";
+            var suspDesc = "办事处该项目下销量达成率分公司内排名";
+            var suspListName = ["月份","办事处","销量达成率","排名"];
+            var allData = rank.qtyRankDatas;
+            var row = rank.value;
+            var scriptByRank = null;
+            var suspListCode = ["month","name","reachQtyRate","qtyRank"];
+            var showValue = '第' + rank.value.qtyRank + '位';
+            var susp = getSuspAhtml(suspTitle, suspDesc, suspListName, allData, row, scriptByRank, suspListCode, showValue);
+
+            return susp;
+        }
+
+        //项目——销售额达成率排名悬浮窗
+        function suspByProjectSalesAmountReach(rank) {
+            var suspTitle = "销售额达成排名";
+            var suspDesc = "办事处该项目下销售额达成率分公司内排名";
+            var suspListName = ["月份","办事处","销售额达成率","排名"];
+            var allData = rank.amtRankDatas;
+            var row = rank.value;
+            var scriptByRank = null;
+            var suspListCode = ["month","name","reachAmtRate","amtRank"];
+            var showValue = '第' + rank.value.amtRank + '位';
+            var susp = getSuspAhtml(suspTitle, suspDesc, suspListName, allData, row, scriptByRank, suspListCode, showValue);
+
+            return susp;
+        }
+
 
         // 配置：百度地图
         function getBDMap(mapName, datas, Id) {
-            console.log(mapName);
+						console.log(mapName);
             console.log(datas);
           	document.getElementById("map").setAttribute('option',JSON.stringify(datas));
             document.getElementById("map").setAttribute('optionName',mapName);
-
             var BDmap = new BMap.Map(Id, {
                 enableMapClick: false
             }); // 创建Map实例
@@ -866,10 +1016,12 @@ window.addEventListener('DOMContentLoaded', function() {
         function inforContent(datas, index) {
             var loginName = $("#loginName").text();
             var encoder = $("#encoder").text();
-            var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(datas[index].name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
-            if($("#drill").text() == '0'){
-                link = '#';
-            }
+            var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(datas[index].name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
+                + "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+                + "&officeName=" + encodeURIComponent($("#officeName").text()) + "&drill=" + encodeURIComponent($("#drill").text());
+            // if($("#drill").text() == '0'){
+            //     link = '#';
+            // }
             var content = '<div class="popup-bd"><div class="box"><h6 class="title" title="' + datas[index].name + '"><a href="' +link + '" style="color:#fff">'  + datas[index].name + '</a></h6><div class="address clearfix"><h6><i class="icon-markads"></i>地址：</h6>' + '<p title="' + datas[index].address + '">' + datas[index].address + '</p></div>' + '<div class="content"><div class="one a"><span>销量：</span><b>' + toQfw(datas[index].salesNums) + '</b></div>' + '<div class="one b"><span>金额：</span><b>' + toQfw(datas[index].sumNums) + '</b>' + '</div></div></div></div>';
             return content;
         }
@@ -1025,7 +1177,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 tooltip: {
                     trigger: 'axis',
                     formatter: function formatter(params) {
-                        //console.log(params);
                         if (!params) {
                             return;
                         }
@@ -1219,7 +1370,7 @@ window.addEventListener('DOMContentLoaded', function() {
             };
 
             //chart.setOption(option);
-          	document.getElementById("barLines").setAttribute('option',JSON.stringify(option))//zyt
+          document.getElementById("barLines").setAttribute('option',JSON.stringify(option))//zyt
         }
 
         // 配置：折线图
@@ -1348,7 +1499,7 @@ window.addEventListener('DOMContentLoaded', function() {
             };
 
             //chart.setOption(option);
-          	document.getElementById("lines").setAttribute('option',JSON.stringify(option))//zyt
+          document.getElementById("lines").setAttribute('option',JSON.stringify(option))//zyt
         }
 
         // 配置：多柱状图
@@ -1371,16 +1522,16 @@ window.addEventListener('DOMContentLoaded', function() {
 
             var option = {
                 color: ["#43caff", '#2c81ff', '#ed9429', '#ed694f', '#ed694f'],
-                title: {
-                    text: titleText + '销售达成',
-                    textStyle: {
-                        color: '#333',
-                        fontSize: 16,
-                        fontWeight: 'normal'
-                    },
-                    top: '8px',
-                    left: 'center'
-                },
+                // title: {
+                //     text: titleText + '销售达成',
+                //     textStyle: {
+                //         color: '#333',
+                //         fontSize: 16,
+                //         fontWeight: 'normal'
+                //     },
+                //     top: '8px',
+                //     left: 'center'
+                // },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
@@ -1392,17 +1543,17 @@ window.addEventListener('DOMContentLoaded', function() {
                     itemGap: 10,
                     itemWidth: 18,
                     itemHeight: 5,
-                    top: 45,
+                    top: 0,
                     right: 5,
                     data: legendDatas
                 },
                 grid: {
                     containLabel: true,
-                    top: 60,
+                    top: 15,
                     left: 12,
                     right: 48,
                     bottom: 0,
-                    height: '80%'
+                    height: '110%'
                 },
                 xAxis: [{
                     type: 'value',
@@ -1477,7 +1628,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     axisLabel: {
                         show: true
                     },
-                    data: [titleText]
+                    data: [""]
                 },
                 series: [{
                     name: '目标销量',
@@ -1658,7 +1809,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 }]
             };
             //chart.setOption(option);
-          	if("bizUnit0" == Id){
+						if("bizUnit0" == Id){
               document.getElementById("bizUnit0").setAttribute('datas',JSON.stringify(datas));//zyt
               document.getElementById("bizUnit0").setAttribute('titleText',titleText);
             }else if("bizUnit1" == Id){
@@ -1692,6 +1843,27 @@ window.addEventListener('DOMContentLoaded', function() {
               document.getElementById("bizUnit10").setAttribute('datas',JSON.stringify(datas));
               document.getElementById("bizUnit10").setAttribute('titleText',titleText)
             }
+          
+            chart.on('click', function(params) {
+                var loginName = $("#loginName").text();
+                var encoder = $("#encoder").text();
+
+                var isYear = '0';
+                if ($("#planTypeSelect").val() == 'month') {
+                    isYear = '0';
+                } else if ($("#planTypeSelect").val() == 'year') {
+                    isYear = '1';
+                }
+                if(isYear!='1') {
+                    var link = "";
+                    if(Id.indexOf("bizUnit") != -1){
+                        link = '/ptDataShow/salesPlan/salesOverview?type=06&bizUnitName=' + encodeURIComponent(params.name) + "&branchName=" + encodeURIComponent($("#branchName").text())+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
+                    }else if(Id.indexOf("project") != -1){
+                        link = '/ptDataShow/salesPlan/salesOverview?type=06&projectName=' + encodeURIComponent(params.name) + "&branchName=" + encodeURIComponent($("#branchName").text())+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                    }
+                    window.location.href = link;
+                }
+            });
         }
 
         /***/ })
