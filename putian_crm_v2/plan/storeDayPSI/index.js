@@ -82,9 +82,9 @@
     doAction_uiControl263_mya1kd: function (data, elem) {
       if (data.eventType == "change") {
         var value = data.dataCustom.value;var index = data.dataCustom.index;var type = data.dataCustom.type;if ("PSISO" == type) {
-          elem.querySelector("#psiEnterTable").querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelectorAll("td")[6].querySelectorAll("input")[1].defaultValue = value.replace(/[^0-9]/g, "");
-        }if ("PSII" == type) {
           elem.querySelector("#psiEnterTable").querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelectorAll("td")[7].querySelectorAll("input")[1].defaultValue = value.replace(/[^0-9]/g, "");
+        }if ("PSII" == type) {
+          elem.querySelector("#psiEnterTable").querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelectorAll("td")[8].querySelectorAll("input")[1].defaultValue = value.replace(/[^0-9]/g, "");
         }
       } else if (data.eventType == "click") {
         elem.ownerDocument.querySelector(".collectionPSIentercontentbutton").querySelectorAll("span")[0].click();
