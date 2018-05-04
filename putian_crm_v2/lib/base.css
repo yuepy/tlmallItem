@@ -12422,3 +12422,50 @@ div[data-componentsid="uiControl306_RfQZGl"] > div:nth-child(1) > div:nth-child(
 }
 /****************汇报给我的总结end*********************/
 /*************新工作台样式****************/
+/*************计划达成总览排名样式start****************/
+.ysp-achievement-rank {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 10px 20px 10px;
+}
+.ysp-achievement-rank > div:nth-child(1) {
+  width: 47%;
+}
+.ysp-achievement-rank > div:nth-child(1) > span:nth-child(1) {
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #4796ed;
+  border: 1px solid #4796ed;
+  margin-right: 5px;
+}
+.ysp-achievement-rank > div:nth-child(1) > span:nth-child(2) {
+  color: #999;
+}
+.ysp-achievement-rank > div:nth-child(1) > span:nth-child(2) > span:nth-child(1) {
+  color: #4796ed;
+  padding: 0px 3px;
+  font-size: 20px;
+}
+.ysp-achievement-rank > div:nth-child(2) > span:nth-child(1) {
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #e7350d;
+  border: 1px solid #e7350d;
+  margin-right: 5px;
+}
+.ysp-achievement-rank > div:nth-child(2) > span:nth-child(2) {
+  color: #999;
+}
+.ysp-achievement-rank > div:nth-child(2) > span:nth-child(2) > span:nth-child(1) {
+  color: #e7350d;
+  padding: 0px 3px;
+  font-size: 20px;
+}
+div[data-ysp-modelid="achievement"] .ysp-dialog-wrapper {
+  margin-top: 0px !important;
+}
+div[data-ysp-modelid="achievement"] .ysp-header-position-fixed {
+  position: absolute !important;
+}
+/*************计划达成总览排名样式end****************/

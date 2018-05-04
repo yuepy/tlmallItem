@@ -13798,3 +13798,57 @@ div[data-componentsid="uiControl306_RfQZGl"]{
 /****************汇报给我的总结end*********************/
 
 /*************新工作台样式****************/
+
+/*************计划达成总览排名样式start****************/
+.ysp-achievement-rank{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 10px 20px 10px;
+  >div:nth-child(1){
+    width: 47%;
+    >span:nth-child(1){
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #4796ed;
+      border: 1px solid #4796ed;
+      margin-right: 5px;
+    }
+    >span:nth-child(2){
+      color: #999;
+      >span:nth-child(1){
+        color: #4796ed;
+        padding: 0px 3px;
+        font-size: 20px;
+      }
+    }
+  }
+  
+  >div:nth-child(2){
+    >span:nth-child(1){
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #e7350d;
+      border: 1px solid #e7350d;
+      margin-right: 5px;
+    }
+    >span:nth-child(2){
+      color: #999;
+      >span:nth-child(1){
+        color: #e7350d;
+        padding: 0px 3px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+//点击排名，修改显示页面的样式
+div[data-ysp-modelid="achievement"]{
+  .ysp-dialog-wrapper{
+    margin-top: 0px !important;
+  }
+  .ysp-header-position-fixed{
+    position: absolute !important
+  }
+}
+/*************计划达成总览排名样式end****************/
