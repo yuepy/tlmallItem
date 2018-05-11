@@ -681,6 +681,8 @@
     yearId: _yearId,
     saleTimeId: _saleTimeId,
     saleOrderId: _saleOrderId,
+    //新添加的（计划达成总览）
+    dateId: _dateId,
     /**
      * @description 登录状态管理器
      * @param currentStatus LOADING 数据加载中 NO_PRIVILEGE 无此权限  LOGINING 登录中  NETWORK_ERROR 网络异常
@@ -2163,5 +2165,10 @@
   function _saleOrderId(id){
     win.orderId = id;
     return win.orderId;
+  }
+  //新曾（计划达成总览）
+  function _dateId(id){
+    win.dateId = id;
+    return win.dateId;
   }
 })(window, ysp);

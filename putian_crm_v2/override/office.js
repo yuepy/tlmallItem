@@ -1844,6 +1844,41 @@ window.addEventListener('DOMContentLoaded', function() {
               document.getElementById("bizUnit10").setAttribute('titleText',titleText)
             }
           
+          	if("project-0" == Id){
+              document.getElementById("project-0").setAttribute('datas',JSON.stringify(datas));//zyt
+              document.getElementById("project-0").setAttribute('titleText',titleText);
+            }else if("project-1" == Id){
+               document.getElementById("project-1").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-1").setAttribute('titleText',titleText);
+            }else if("project-2" == Id){
+               document.getElementById("project-2").setAttribute('datas',JSON.stringify(datas));//zyt
+              document.getElementById("project-2").setAttribute('titleText',titleText);
+            }else if("project-3" == Id){
+              document.getElementById("project-3").setAttribute('datas',JSON.stringify(datas));
+              document.getElementById("project-3").setAttribute('titleText',titleText)
+            }else if("project-4" == Id){
+               document.getElementById("project-4").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-4").setAttribute('titleText',titleText);
+            }else if("project-5" == Id){
+               document.getElementById("project-5").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-5").setAttribute('titleText',titleText);
+            }else if("project-6" == Id){
+              document.getElementById("project-6").setAttribute('datas',JSON.stringify(datas));
+              document.getElementById("project-6").setAttribute('titleText',titleText)
+            }else if("project-7" == Id){
+              document.getElementById("project-7").setAttribute('datas',JSON.stringify(datas));
+              document.getElementById("project-7").setAttribute('titleText',titleText)
+            }else if("project-8" == Id){
+               document.getElementById("project-8").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-8").setAttribute('titleText',titleText);
+            }else if("project-9" == Id){
+               document.getElementById("project-9").setAttribute('datas',JSON.stringify(datas));//zyt
+              document.getElementById("project-9").setAttribute('titleText',titleText);
+            }else if("project-10" == Id){
+              document.getElementById("project-10").setAttribute('datas',JSON.stringify(datas));
+              document.getElementById("project-10").setAttribute('titleText',titleText)
+            }
+          
             chart.on('click', function(params) {
                 var loginName = $("#loginName").text();
                 var encoder = $("#encoder").text();
