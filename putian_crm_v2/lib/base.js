@@ -522,23 +522,23 @@
       // }
       //test
     }
-    if (type == 'login') {
-      var doc = topWin.document;
-      var flag = false;
-      if (topWin) {
-        var logout = doc.getElementById('logout');
-        if (logout) {
-          //logout.click();
-          //ysp.runtime.Model.setForceMatchModels(['login']);
-        }
-        var activeWin = ysp.runtime.Browser.activeBrowser.contentWindow;
-        if (activeWin) {
-          activeWin.close();
-        }
-        topWin.location.href = "http://192.168.220.82:8080/pttlCrm/res/page/login/login.html";
-      }
-      return;
-    }
+    // if (type == 'login') {
+    //   var doc = topWin.document;
+    //   var flag = false;
+    //   if (topWin) {
+    //     var logout = doc.getElementById('logout');
+    //     if (logout) {
+    //       //logout.click();
+    //       //ysp.runtime.Model.setForceMatchModels(['login']);
+    //     }
+    //     var activeWin = ysp.runtime.Browser.activeBrowser.contentWindow;
+    //     if (activeWin) {
+    //       activeWin.close();
+    //     }
+    //     topWin.location.href = "http://192.168.220.82:8080/pttlCrm/res/page/login/login.html";
+    //   }
+    //   return;
+    // }
     var taskPool = getSingletonTask();
     taskPool.executeTask(type);
   }
