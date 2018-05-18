@@ -590,3 +590,65 @@ $(function (){
 	})
 	
 })
+
+
+/**
+ * 排序
+ * @param property
+ * @returns {Function}
+ * var newList = list.sort(compareProp(code,true));
+ */
+function compareProp(prop,flag){
+    return function (obj1, obj2) {
+        var val1 = obj1[prop];
+        var val2 = obj2[prop];
+        if (!isNaN(Number(val1)) && !isNaN(Number(val2))) {
+            val1 = Number(val1);
+            val2 = Number(val2);
+        }
+        if(flag){
+        	if (val1 < val2) return 1;
+        	else if (val1 > val2) return -1;
+            else return 0;
+        }else{
+        	if (val1 < val2) return -1;
+        	else if (val1 > val2) return 1;
+            else return 0;
+        }
+    } 
+}
+
+/**
+ * 所有的表格进行排序
+ */
+function clickThSortCommon(){
+	$("table").each(function(){
+		var $table = $(this);
+		var list = [];
+		$table.find("tbody tr").each(function(){
+			var tMap = {};
+			$(this).find("td").each(function(index,element){
+				tMap[$table.find("thead th:eq("+index+")").text()] = $(element).html(); 
+			})
+			list.push(tMap);
+		})
+		$table.find("thead th").unbind().click(function(){
+			var newHtml = "";
+			$(this).toggleClass("desc");//this 指的是th
+			if($(this).hasClass("desc")){
+				list = list.sort(compareProp($(this).text(),true));
+    		}else{
+    			list = list.sort(compareProp($(this).text()));
+    		}
+			for(var i=0;i<list.length;i++){
+				var item = list[i];
+				newHtml += "<tr>";
+				for(var key in item){
+					newHtml += "<td>"+item[key]+"</td>";
+				}
+				newHtml += "</tr>";
+			}
+			$table.find("tbody").html(newHtml);
+		})
+	})
+}

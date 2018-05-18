@@ -565,7 +565,9 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     tableSH("office-table", tr_minH-2);
-
+                  
+                  	 /**点击排序*/
+                    clickThSortCommon();
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
@@ -762,7 +764,9 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     tableSH("office-table", tr_minH-2);
-
+                  
+                  	 /**点击排序*/
+                    clickThSortCommon();
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
