@@ -164,3 +164,148 @@ body {
 .ysp_salary_detail .ysp_detail > span:last-child {
   text-align: right;
 }
+/***********************************请假申请 start*************************************/
+.ysp-con-box {
+  background-color: #fff;
+  margin-top: 10px;
+}
+.ysp-lists {
+  display: flex;
+  padding: 0 0.75rem;
+  justify-content: space-between;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  border-bottom: 1px solid #e6e6e6;
+  flex-wrap: wrap;
+  color: #333;
+}
+.ysp-lists:first-child {
+  border-top: 1px solid #e6e6e6;
+}
+.ysp-lists .ysp-l {
+  width: 50%;
+  line-height: 2.75rem;
+}
+.ysp-lists .ysp-l em.star {
+  display: inline-block;
+  width: 6px;
+  font-style: normal;
+  font-size: 16px;
+  color: #f76f49;
+}
+.ysp-lists .ysp-r {
+  position: relative;
+  text-align: right;
+  width: 50%;
+}
+.ysp-lists .ysp-r select.sel-type {
+  display: inline-block;
+  direction: rtl;
+  width: -webkit- calc(100% - 22px);
+  width: -mox- calc(100% - 22px);
+  width: calc(100% - 22px);
+  background: #fff;
+  border: none;
+  text-align: center;
+  margin: 0;
+  margin-right: 22px;
+  padding: 0;
+  font-size: 14px;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", sans-serif;
+}
+.ysp-lists .ysp-r select.sel-type option {
+  direction: ltr;
+  font-size: 14px;
+}
+.ysp-lists .ysp-r .ysp-li-con {
+  display: inline-block;
+  text-align: right;
+  margin-right: 22px;
+}
+.ysp-lists .ysp-r .arrow-r {
+  display: inline-block;
+  font-family: Ratchicons, sans-serif;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 2.75rem;
+  color: #aaa;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ysp-lists .ysp-r .arrow-r:before {
+  content: "\e818";
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.readonly {
+  color: #999;
+}
+.ysp-reason {
+  justify-content: initial;
+}
+.ysp-reason .ysp-l {
+  width: 30%;
+}
+.ysp-reason .ysp-r {
+  width: 70%;
+  text-align: left;
+}
+.ysp-reason .ysp-r input.reason {
+  display: inline-block;
+  width: -webkit- calc(70% - 22px);
+  width: -moz- calc(70% - 22px);
+  width: calc(70% - 22px);
+  border: none;
+  height: 100%;
+  font-size: 14px;
+  background: #fff;
+}
+.annex-box {
+  padding: 10px 5% 15px;
+}
+.annex-box .annex-tit {
+  font-size: 14px;
+}
+.annex-box .annex-add {
+  border: 1px solid #dfdfdf;
+  margin-top: 10px;
+  width: 85px;
+  height: 85px;
+  text-align: center;
+  line-height: 85px;
+  font-size: 80px;
+  font-weight: 100;
+}
+.ysp-btn-box {
+  margin: 20px 5%;
+}
+.ysp-btn-box input {
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 100%;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  text-align: center;
+  font-size: 14px;
+}
+.ysp-btn-box .ysp-sel-btn {
+  background-color: #9AD4FA;
+  color: #fff;
+}
+.ysp-btn-box .ysp-sel-btn:hover {
+  background-color: #9AD4FA;
+  color: #fff;
+}
+.ysp-btn-box .ysp-save-btn {
+  background-color: #fff;
+  color: #999;
+}
+.ysp-btn-box .ysp-save-btn:hover {
+  background-color: #fff;
+  color: #999;
+}
+/***********************************请假申请 end*************************************/

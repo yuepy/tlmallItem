@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "salary": "../salary/index.json",
-    "employeeInfo": "../employeeInfo/index.json"
+    "employeeInfo": "../employeeInfo/index.json",
+    "holidayAppli": "../holidayAppli/index.json"
   },
   "chineseName": "菜单",
   "description": "",
@@ -388,6 +389,20 @@
         {
           "toContextId": "context2_UAeaAc",
           "toModelId": "employeeInfo"
+        }
+      ]
+    },
+    "flow7_Fr6rGN": {
+      "fromContextId": "context1_obTFlR",
+      "fromAction": "click",
+      "fromControlId": "control7_L6SR73",
+      "toContexts": [
+        {
+          "toContextId": "context1_obTFlR"
+        },
+        {
+          "toContextId": "context3_fi6f26",
+          "toModelId": "holidayAppli"
         }
       ]
     }
