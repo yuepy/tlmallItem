@@ -111,7 +111,7 @@ body {
 }
 .ysp_salary_box {
   height: 50vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .ysp_salary_box .ysp_salary_item {
   background: #fff;
@@ -150,17 +150,33 @@ body {
   border-radius: 5px;
 }
 /******************************薪资查询详情页start******************************************/
-.ysp_salary_detail .ysp_body_board {
+.ysp_salary_detail_list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #F8F8F8;
+}
+.ysp_salary_detail_list .ysp_salary_board {
   background: #fff;
-  padding: 10px;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 10px;
 }
-.ysp_salary_detail .ysp_detail > span {
+.ysp_salary_detail_list .ysp_salary_scroll {
+  height: 50vh;
+  overflow-y: scroll;
+}
+.ysp_salary_detail_list .ysp_detail {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.ysp_salary_detail_list .ysp_detail > span {
   display: inline-block;
   width: 50%;
   text-align: left;
 }
-.ysp_salary_detail .ysp_detail > span:last-child {
+.ysp_salary_detail_list .ysp_detail > span:last-child {
   text-align: right;
+  color: #9C9C9C;
 }
