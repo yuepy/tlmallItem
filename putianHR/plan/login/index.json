@@ -1,0 +1,604 @@
+{
+  "version": "0.1",
+  "id": "login",
+  "targetURL": "http://192.168.220.110/psp/ps/?cmd=login&languageCd=ZHS&",
+  "jsFile": "index.js",
+  "requires": {
+    "menu": "../menu/index.json"
+  },
+  "chineseName": "登录",
+  "description": "",
+  "controls": {
+    "control0_vpzRpG": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]/DIV[1]",
+              "descendant::FORM[@id=\"login\"]/DIV[1]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.signonMain"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0_vpzRpG"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control1_hcvnri": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "用户 ID"
+              ],
+              "visText": [
+                "用户 ID"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//SPAN[@id=\"ptLabelUserid\"]",
+              "descendant::FORM[@id=\"login\"]//SPAN[@id=\"ptLabelUserid\"]",
+              "descendant::SPAN[@id=\"ptLabelUserid\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.signonMain DIV.ps_signinentry SPAN.ps_label-show"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[2]/SPAN[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "content"
+    },
+    "control2_SbFsB1": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "label",
+            "prob": 4,
+            "value": {
+              "text": [
+                "用户 ID"
+              ],
+              "visText": [
+                "用户 ID"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "用户 ID"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"login\"]//INPUT[@name=\"userid\"]",
+              "descendant::INPUT[@name=\"userid\"]"
+            ]
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//INPUT[@id=\"userid\"]",
+              "descendant::FORM[@id=\"login\"]//INPUT[@id=\"userid\"]",
+              "descendant::INPUT[@id=\"userid\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.signonMain DIV.ps_signinentry DIV.ps_box-control INPUT"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[3]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "textbox"
+    },
+    "control3_wpa3fV": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "密码"
+              ],
+              "visText": [
+                "密码"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//SPAN[@id=\"ptLabelPassword\"]",
+              "descendant::FORM[@id=\"login\"]//SPAN[@id=\"ptLabelPassword\"]",
+              "descendant::SPAN[@id=\"ptLabelPassword\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "DIV.signonMain DIV.ps_signinentry SPAN.ps_label-show"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[4]/SPAN[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "content"
+    },
+    "control4_uPKiaU": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "label",
+            "prob": 4,
+            "value": {
+              "text": [
+                "密码"
+              ],
+              "visText": [
+                "密码"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "密码"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"login\"]//INPUT[@name=\"pwd\"]",
+              "descendant::INPUT[@name=\"pwd\"]"
+            ]
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//INPUT[@id=\"pwd\"]",
+              "descendant::FORM[@id=\"login\"]//INPUT[@id=\"pwd\"]",
+              "descendant::INPUT[@id=\"pwd\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.signonMain DIV.ps_signinentry DIV.ps_box-control INPUT"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[5]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "password"
+          }
+        ]
+      },
+      "intendedRole": "passwordbox",
+      "roles": "element,passwordbox,textbox",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "textbox"
+    },
+    "control5_zQnTnx": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "input/button/@value",
+            "prob": 3,
+            "value": {
+              "text": [
+                "登录"
+              ]
+            }
+          },
+          {
+            "id": "aria-label",
+            "prob": 3,
+            "value": "descendant::INPUT[@aria-label=\"要启用可访问模式，请在登录前选中“启用可访问模式”复选框。登录\"]"
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"login\"]//INPUT[@name=\"Submit\"]",
+              "descendant::INPUT[@name=\"Submit\"]"
+            ]
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]/DIV[1]/DIV[1]/DIV[8]/INPUT[1]",
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//INPUT",
+              "descendant::FORM[@id=\"login\"]//INPUT"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ps_signinentry DIV.ps_box-button INPUT.ps-button"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[8]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "submit"
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
+    }
+  },
+  "contexts": {
+    "context0_31wf4m": {
+      "controls": [
+        "control0_vpzRpG",
+        "control1_hcvnri",
+        "control2_SbFsB1",
+        "control3_wpa3fV",
+        "control4_uPKiaU",
+        "control5_zQnTnx"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow0_ZTqeBT": {
+      "toContexts": [
+        {
+          "toContextId": "context0_31wf4m"
+        }
+      ]
+    },
+    "flow1_JJ7UoV": {
+      "fromContextId": "context0_31wf4m",
+      "fromAction": "click",
+      "fromControlId": "control2_SbFsB1",
+      "toContexts": [
+        {
+          "toContextId": "context0_31wf4m"
+        }
+      ]
+    },
+    "flow2_dB90uc": {
+      "fromContextId": "context0_31wf4m",
+      "fromAction": "click",
+      "fromControlId": "control4_uPKiaU",
+      "toContexts": [
+        {
+          "toContextId": "context0_31wf4m"
+        }
+      ]
+    },
+    "flow3_aBZmrZ": {
+      "fromContextId": "context0_31wf4m",
+      "fromAction": "click",
+      "fromControlId": "control5_zQnTnx",
+      "toContexts": [
+        {
+          "toContextId": "context0_31wf4m"
+        },
+        {
+          "toContextId": "context1_obTFlR",
+          "toModelId": "menu"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0_xR1c03": {
+      "contextId": "context0_31wf4m",
+      "layout": [
+        {
+          "id": "uiControl0_uBD71x",
+          "controlId": "control0_vpzRpG",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl0_uBD71x",
+                "onGetTemplate": "getTemplate_uiControl0_uBD71x"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl1_EyE30R",
+          "controlId": "control1_hcvnri",
+          "display": {
+            "adapterId": "content",
+            "type": "content",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl2_waagd1",
+          "controlId": "control2_SbFsB1",
+          "display": {
+            "adapterId": "textbox",
+            "type": "textbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl3_3QtqlP",
+          "controlId": "control3_wpa3fV",
+          "display": {
+            "adapterId": "content",
+            "type": "content",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl4_bnDMeF",
+          "controlId": "control4_uPKiaU",
+          "display": {
+            "adapterId": "passwordbox",
+            "type": "passwordbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl5_hhDxbQ",
+          "controlId": "control5_zQnTnx",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0_31wf4m": [
+          "Oracle PeopleSoft 登录"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0_31wf4m": [
+          "192.168.220.110/psp/ps/?cmd=login&languageCd=ZHS&",
+          "192.168.220.110/psp/ps/?cmd=login",
+          "192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0_31wf4m": [
+          [
+            "accessible",
+            "browsercheck_error",
+            "discovery_error",
+            "error_link",
+            "login",
+            "login_error",
+            "ps_select_box",
+            "ps_select_parent",
+            "pswrapper",
+            "ptLabelPassword",
+            "ptLabelSelect",
+            "ptLabelUserid",
+            "ptfooter",
+            "ptinstalledlang",
+            "ptlangcd",
+            "ptlangsel",
+            "ptloginerrorcont",
+            "ptmode",
+            "pwd",
+            "timezoneOffset",
+            "userid"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0_31wf4m": [
+          [
+            "ps-button",
+            "ps-link",
+            "ps-staticimg",
+            "ps_box-button",
+            "ps_box-control",
+            "ps_box-link",
+            "ps_footer_text",
+            "ps_label-show",
+            "ps_login_error",
+            "ps_login_error_inner",
+            "ps_select",
+            "ps_signinentry",
+            "psloginerror",
+            "signonMain"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0_31wf4m": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/FORM",
+            "DIV/A/IMG",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-checkbox",
+            "DIV/DIV/INPUT-password",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/SELECT/OPTION",
+            "DIV/SPAN/A",
+            "DIV/SPAN/LABEL",
+            "FORM/DIV/DIV",
+            "FORM/DIV/FOOTER",
+            "FORM/DIV/IMG"
+          ]
+        ]
+      }
+    }
+  }
+}

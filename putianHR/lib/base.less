@@ -1,0 +1,183 @@
+// base.less 是整个工程全局的样式文件，会作用到所有的页面模板中
+// Less 的语法与 CSS 兼容，可以直接用 CSS 语法进行编写
+// 如需了解详情，请访问 http://www.lesscss.net/
+// 发布后，base.less 被编译成 base.css 文件
+/****************************公共样式************************/
+@fontXSmall:@fontBase - 2;
+@fontSmall:@fontBase - 1;
+@fontBase:14px;
+@fontMedium:@fontBase + 1;
+@fontLarge:@fontBase + 2;
+body{
+  background:#F8F8F8;
+  position:relative;
+}
+/******************************CustomHeader组件******************************************/
+.ysp_header_wrapper{
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.7rem;
+  font-size:@fontLarge;
+  background: #fff;
+  border-bottom:1px solid #ddd;
+  > span:nth-child(1){
+    flex: 0 1 20%;
+    display: flex;
+    align-items: center;
+    > span:first-child{
+      margin-left: .2rem;
+      display:flex;
+      align-items:center;
+    }
+  }
+  > span:nth-child(2){
+    flex: 0 1 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  > span:nth-child(3){
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex: 0 1 20%;
+    > span:first-child{
+        margin-left: .2rem;
+        display: flex;
+        align-items: center;
+        font-size: @fontSmall;
+    }
+    
+    > span:last-child{
+        margin-left: .3rem;
+    }
+  }
+  .ysp-header-edit{
+    display: inline-block;
+    width: 50px;
+  }
+}
+/******************************薪资查询start******************************************/
+.ysp_filter{
+  .ysp_selectBox{
+    position:fixed;
+    top:45px;
+    bottom: 0;
+    left:0;
+    right:0;
+    background: rgba(0,0,0,0.3);
+    .selectBox_content{
+      position:absolute;
+      top: 0;
+      bottom:0;
+      left:20%;
+      right:0;
+      width:80%;
+      background:#fff;
+      .contentTitle{
+        padding:10px;
+        border-bottom:1px solid #ddd;
+        font-weight: bold;
+      }
+      .contentScroll{
+        height: 54vh;
+        overflow-y: scroll;
+      }
+      .timeContent{
+        overflow: hidden;
+        padding: 10px 0 10px 10px;
+        .yearCell,.yearCellSelect{
+          float: left;
+          border: 1px solid #3398FE;
+          border-radius: 5px;
+          padding: 5px 0;
+          width: 31%;
+          text-align: center;
+          font-size: 15px;
+          color: #3398FE;
+          margin:0 2% 2% 0;
+        }
+        .yearCellSelect{
+          background:#3398FE;
+          color:#fff;
+        }
+      }
+      .filterSure{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 35%;
+        text-align: center;
+        background: -webkit-linear-gradient(left, #7863FA , #3397FC);
+        border-radius: 5px;
+        color: #fff;
+        padding: 5px;
+      }
+    }
+  }
+}
+.ysp_salary_box{
+  height: 50vh;
+  overflow: scroll;
+  .ysp_salary_item{
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    .ysp_salary_date{
+      font-size: @fontLarge;
+      font-weight: bold;
+    }
+    .ysp_salary_panel{
+      overflow: hidden;
+      .ysp_salary_detail{
+        float: left;
+        font-size: @fontBase;
+        color: #9F9F9F;
+        width: 90%;
+        overflow: hidden;
+        >div:nth-child(odd){
+          float: left;
+          width: 50%;
+        }
+        >div:nth-child(even){
+          float: left;
+          width: 40%;
+        }
+      }
+    }
+    .ysp_salary_check{
+      font-size: @fontBase;
+      background: #3198FF;
+      width: 10%;
+      float: right;
+      text-align: center;
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+}
+/******************************薪资查询详情页start******************************************/
+.ysp_salary_detail{
+  .ysp_body_board{
+    background: #fff;
+    padding: 10px;
+    font-size: @fontBase;
+    margin-bottom: 10px;
+  }
+  .ysp_detail{
+    
+    >span{
+      display: inline-block;
+      width: 50%;
+      text-align: left;
+    }
+    >span:last-child{
+      text-align: right;
+    }
+  }
+}
+  
