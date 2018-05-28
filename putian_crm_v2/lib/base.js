@@ -522,23 +522,23 @@
       // }
       //test
     }
-    if (type == 'login') {
-      var doc = topWin.document;
-      var flag = false;
-      if (topWin) {
-        var logout = doc.getElementById('logout');
-        if (logout) {
-          //logout.click();
-          //ysp.runtime.Model.setForceMatchModels(['login']);
-        }
-        var activeWin = ysp.runtime.Browser.activeBrowser.contentWindow;
-        if (activeWin) {
-          activeWin.close();
-        }
-        topWin.location.href = "http://192.168.220.82:8080/pttlCrm/res/page/login/login.html";
-      }
-      return;
-    }
+    // if (type == 'login') {
+    //   var doc = topWin.document;
+    //   var flag = false;
+    //   if (topWin) {
+    //     var logout = doc.getElementById('logout');
+    //     if (logout) {
+    //       //logout.click();
+    //       //ysp.runtime.Model.setForceMatchModels(['login']);
+    //     }
+    //     var activeWin = ysp.runtime.Browser.activeBrowser.contentWindow;
+    //     if (activeWin) {
+    //       activeWin.close();
+    //     }
+    //     topWin.location.href = "http://192.168.220.82:8080/pttlCrm/res/page/login/login.html";
+    //   }
+    //   return;
+    // }
     var taskPool = getSingletonTask();
     taskPool.executeTask(type);
   }
@@ -681,6 +681,8 @@
     yearId: _yearId,
     saleTimeId: _saleTimeId,
     saleOrderId: _saleOrderId,
+    //新添加的（计划达成总览）
+    dateId: _dateId,
     /**
      * @description 登录状态管理器
      * @param currentStatus LOADING 数据加载中 NO_PRIVILEGE 无此权限  LOGINING 登录中  NETWORK_ERROR 网络异常
@@ -2163,5 +2165,10 @@
   function _saleOrderId(id){
     win.orderId = id;
     return win.orderId;
+  }
+  //新曾（计划达成总览）
+  function _dateId(id){
+    win.dateId = id;
+    return win.dateId;
   }
 })(window, ysp);

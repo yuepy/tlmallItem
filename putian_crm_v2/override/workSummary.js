@@ -51,15 +51,15 @@
 
 	var Constant = _interopRequireWildcard(_constant);
 
-	var _iframeUtils = __webpack_require__(9);
+	var _iframeUtils = __webpack_require__(10);
 
 	var iframeUtils = _interopRequireWildcard(_iframeUtils);
 
-	var _ajaxUtils = __webpack_require__(4);
+	var _ajaxUtils = __webpack_require__(5);
 
 	var ajaxUtils = _interopRequireWildcard(_ajaxUtils);
 
-	var _StringUtils = __webpack_require__(7);
+	var _StringUtils = __webpack_require__(8);
 
 	var StringUtils = _interopRequireWildcard(_StringUtils);
 
@@ -67,7 +67,7 @@
 
 	var layerUtils = _interopRequireWildcard(_layerUtils);
 
-	var _objectUtil = __webpack_require__(5);
+	var _objectUtil = __webpack_require__(6);
 
 	var objectUtil = _interopRequireWildcard(_objectUtil);
 
@@ -78,6 +78,14 @@
 	var _dateUtils = __webpack_require__(24);
 
 	var dateUtils = _interopRequireWildcard(_dateUtils);
+
+	var _viewer = __webpack_require__(13);
+
+	var viewer = _interopRequireWildcard(_viewer);
+
+	var _CommonUtils = __webpack_require__(2);
+
+	var commonUtils = _interopRequireWildcard(_CommonUtils);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -106,6 +114,7 @@
 		//关闭
 		$('#close,#closeIfram').on('click', function () {
 			iframeUtils.hideSecondIframe();
+			commonUtils.getTopWin().$('iframe[name^=' + Constant.SECOND_LEVEL_IFRAME_NAME + ']').remove();
 		});
 
 		//业务部门总结-点击弹窗
@@ -145,8 +154,9 @@
 			}
 		});
 	});
-
-	window.workTime = function() {
+  
+  //选择时间方法
+  window.workTime = function() {
 		var body = {};
 		body.planType = StringUtils.getValue($("#workSummaryPlanType").val());
 		body.planTime = StringUtils.getValue($("#workSummaryPlanTime").val());
@@ -167,8 +177,8 @@
 			}
 		});
 	}
-  
-  function changeInput() {
+
+	function changeInput() {
 		var body = {};
 		body.planType = StringUtils.getValue($("#workSummaryPlanType").val());
 		body.planTime = StringUtils.getValue($("#workSummaryPlanTime").val());
@@ -346,7 +356,7 @@
 				html += getInitTextareaHtml_child(code, name, workTask[code]);
 			}
 			if (code == "distribution") {
-				name = "分销业务事业部";
+				name = "大客户业务部";
 				html += getInitTextareaHtml_child(code, name, workTask[code]);
 			}
 			if (code == "others") {
@@ -372,6 +382,10 @@
 					$(this).parent().remove();
 					//这里暂时先不删除      
 					//ajaxUtils.sendAjax("store/deleteFile",{fileName:$(this).attr("fileName")});
+				});
+				//查看图片
+				$("#imgsDiv .img img").unbind().click(function () {
+					viewer.displayImg($(this).attr("src"));
 				});
 			}
 
@@ -438,85 +452,101 @@
 	/**
 	 * 保存
 	 */
+	var saveWorkTaskFlag = true;
 	function saveWorkTask(status) {
-		var body = { status: status };
-		body.planType = $("#workSummaryPlanType").val(); //计划类型	
-		body.planTime = $("#workSummaryPlanTime").attr("planTime"); //计划时间
-		var flag = true;
-		$("textarea").each(function () {
-			var val = StringUtils.wrongCharacter($(this).val());
-			if (val.length > 1000) {
-				flag = false;
-				layerUtils.info($(this).attr("val") + ",超过1000字符，不可保存！");
-				return false;
-			} else {
-				body[$(this).attr("name")] = val;
-			}
-		});
-		if (flag) {
-
-			//分业务部门总结
-			var businessList = [];
-			$("#textareaDivs textarea").each(function () {
+		if (saveWorkTaskFlag) {
+			saveWorkTaskFlag = false;
+			var body = { status: status };
+			body.planType = $("#workSummaryPlanType").val(); //计划类型	
+			body.planTime = $("#workSummaryPlanTime").attr("planTime"); //计划时间
+			var flag = true;
+			$("textarea").each(function () {
 				var val = StringUtils.wrongCharacter($(this).val());
-				if (val != "") {
-					var m = {};
-					m.name = $(this).attr("val"); //名称
-					m.code = $(this).attr("name"); //编码
-					m.remark = val; //备注
-					businessList.push(m);
+				if (val.length > 1000) {
+					flag = false;
+					saveWorkTaskFlag = true;
+					layerUtils.info($(this).attr("val") + ",超过1000字符，不可保存！");
+					return false;
+				} else {
+					body[$(this).attr("name")] = val;
 				}
 			});
-			body.businessList = businessList;
+			if (flag) {
 
-			//标签list
-			var lableList = [];
-			$("#lableTabs span:not(.unchecked)").each(function () {
-				var m = {};
-				m.lableName = StringUtils.getValue($(this).html());
-				lableList.push(m);
-			});
-			body.lableList = lableList;
-
-			//图片list
-			var imgList = [];
-			$("#imgsDiv .img").each(function () {
-				var m = {};
-				m.imgName = StringUtils.getValue($(this).attr("imgName"));
-				m.imgUrl = StringUtils.getValue($(this).attr("imgUrl"));
-				imgList.push(m);
-			});
-			body.imgList = imgList;
-
-			//@人
-			var contactList = []; //contactList;
-			$("#ContactUsers span").each(function () {
-				var m = {};
-				m.salesmanId = $(this).attr("val");
-				contactList.push(m);
-			});
-			body.contactList = contactList;
-
-			if (status == "提交" && contactList.length == 0) {
-				layerUtils.info("请选择汇报对象！");
-				return;
-			}
-
-			var service = "crm/workSummary/addWorkSummary";
-			if ($("#workSummaryId").val() != "") {
-				body.id = $("#workSummaryId").val();
-				service = "crm/workSummary/updateWorkSummary";
-			}
-			ajaxUtils.sendAjax(service, { "workSummary": body }, null, function (data) {
-				if (null != data) {
-					if (data.result == "true") {
-						layerUtils.info("保存成功！", { time: 1000 });
-						iframeUtils.hideSecondIframe(); //关闭页面
-					} else {
-						layerUtils.info("保存失败！");
+				//分业务部门总结
+				var businessList = [];
+				$("#textareaDivs textarea").each(function () {
+					var val = StringUtils.wrongCharacter($(this).val());
+					if (val != "") {
+						var m = {};
+						m.name = $(this).attr("val"); //名称
+						m.code = $(this).attr("name"); //编码
+						m.remark = val; //备注
+						businessList.push(m);
 					}
+				});
+				if (StringUtils.getValue($("textarea[name='summary']").val()) != "") {
+					var summaryMap = {};
+					summaryMap.name = ""; //总结内容
+					summaryMap.remark = StringUtils.wrongCharacter($("textarea[name='summary']").val());
+					summaryMap.code = "workSummary"; //编码
+					businessList.push(summaryMap);
 				}
-			});
+				body.businessList = businessList;
+
+				//标签list
+				var lableList = [];
+				$("#lableTabs span:not(.unchecked)").each(function () {
+					var m = {};
+					m.lableName = StringUtils.getValue($(this).html());
+					lableList.push(m);
+				});
+				body.lableList = lableList;
+
+				//图片list
+				var imgList = [];
+				$("#imgsDiv .img").each(function () {
+					var m = {};
+					m.imgName = StringUtils.getValue($(this).attr("imgName"));
+					m.imgUrl = StringUtils.getValue($(this).attr("imgUrl"));
+					imgList.push(m);
+				});
+				body.imgList = imgList;
+
+				//@人
+				var contactList = []; //contactList;
+				$("#ContactUsers span").each(function () {
+					var m = {};
+					m.salesmanId = $(this).attr("val");
+					contactList.push(m);
+				});
+				body.contactList = contactList;
+
+				if (status == "提交" && contactList.length == 0) {
+					layerUtils.info("请选择汇报对象！");
+					saveWorkTaskFlag = true;
+					return;
+				}
+
+				var service = "crm/workSummary/addWorkSummary";
+				if ($("#workSummaryId").val() != "") {
+					body.id = $("#workSummaryId").val();
+					service = "crm/workSummary/updateWorkSummary";
+				}
+				ajaxUtils.sendAjax(service, { "workSummary": body }, null, function (data) {
+					saveWorkTaskFlag = true;
+					if (null != data) {
+						if (data.result == "true") {
+							layerUtils.info("保存成功！", { time: 1000 });
+							iframeUtils.hideSecondIframe(); //关闭页面
+						} else if (data.msg) {
+							//layerUtils.info(data.msg);
+						} else {
+							layerUtils.info("保存失败！");
+						}
+					}
+				});
+			}
 		}
 	}
 
@@ -540,10 +570,10 @@
 			$("#importFile").val("");
 			if (iframeLoadFlag) {
 				iframeLoadFlag = false;
-				//var c = $("iframe[name='formTargertIframe']").contents();
-        var c = $("iframe[name='formTargertIframe']")[0].contentDocument;
-				//var result = JSON.parse($(c[0]).find("pre").html());
-        var result = JSON.parse(c.querySelector("pre").textContent);
+				//let c = $("iframe[name='formTargertIframe']").contents();
+				//let result = JSON.parse($(c[0]).find("pre").html());
+				var c = $("iframe[name='formTargertIframe']")[0].contentDocument;
+				var result = JSON.parse(c.querySelector('pre').textContent);
 				if (null != result) {
 					var html = '<div class="img" imgName="' + result.name + '" imgUrl="' + result.url + '">\n\t\t\t\t<img src="' + Constant.SERVER_ROOT + '/pttlCrm/sys/file/showImag?path=' + encodeURI(encodeURI(result.url)) + '" />\n\t\t\t\t<span>' + result.name + '</span><a class="del" fileName="' + result.fileName + '" href="javascript:;"></a></div>';
 					$("#imgsDiv").append(html);
@@ -551,6 +581,10 @@
 					$("#imgsDiv .img a.del").unbind().click(function () {
 						$(this).parent().remove();
 						ajaxUtils.sendAjax("store/deleteFile", { fileName: $(this).attr("fileName") });
+					});
+					//查看图片
+					$("#imgsDiv .img img").unbind().click(function () {
+						viewer.displayImg($(this).attr("src"));
 					});
 				}
 				/* $.ajax({
@@ -584,7 +618,7 @@
 		map.huaweiStore = ""; //华为体验店
 		map.huaweiSB = ""; //华为省包	
 		map.samsung = ""; //三星业务事业部
-		map.distribution = ""; //分销业务事业部	
+		map.distribution = ""; //分销业务事业部	大客户业务部 
 		map.others = ""; //其他	
 		map.question = ""; //问题及所需资源总结	
 		map.creater = ""; //创建人	
@@ -658,7 +692,7 @@
 	 * 加载分业务部门总结
 	 */
 	function getDepartmentHtml() {
-		var temp = '\n\t\t<li><label><input type="checkbox" code="huaweiFD" val="\u534E\u4E3AFD"/><i></i>\u534E\u4E3AFD</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiPJ" val="\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408"/><i></i>\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiStore" val="\u534E\u4E3A\u4F53\u9A8C\u5E97"/><i></i>\u534E\u4E3A\u4F53\u9A8C\u5E97</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiSB" val="\u534E\u4E3A\u7701\u5305"/><i></i>\u534E\u4E3A\u7701\u5305</label></li>\n\t\t<li><label><input type="checkbox" code="samsung" val="\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8"/><i></i>\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="distribution" val="\u5206\u9500\u4E1A\u52A1\u4E8B\u4E1A\u90E8"/><i></i>\u5206\u9500\u4E1A\u52A1\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="others" val="\u5176\u4ED6"/><i></i>\u5176\u4ED6</label></li>\n\t';
+		var temp = '\n\t\t<li><label><input type="checkbox" code="huaweiFD" val="\u534E\u4E3AFD"/><i></i>\u534E\u4E3AFD</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiPJ" val="\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408"/><i></i>\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiStore" val="\u534E\u4E3A\u4F53\u9A8C\u5E97"/><i></i>\u534E\u4E3A\u4F53\u9A8C\u5E97</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiSB" val="\u534E\u4E3A\u7701\u5305"/><i></i>\u534E\u4E3A\u7701\u5305</label></li>\n\t\t<li><label><input type="checkbox" code="samsung" val="\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8"/><i></i>\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="distribution" val="\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8"/><i></i>\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="others" val="\u5176\u4ED6"/><i></i>\u5176\u4ED6</label></li>\n\t';
 		$("#businessDepartment").html(temp);
 		$("#textareaDivs textarea").each(function () {
 			var name = $(this).attr("name");
@@ -728,6 +762,10 @@
 	var _CommonUtils = __webpack_require__(2);
 
 	var commonUtils = _interopRequireWildcard(_CommonUtils);
+
+	var _dataUtils = __webpack_require__(4);
+
+	var dataUtils = _interopRequireWildcard(_dataUtils);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -833,6 +871,7 @@
 	        layerWaitingIndex = layer.load(c);
 	        commonUtils.getTopWin().document.documentElement.classList.add('loading');
 	    }
+	    dataUtils.setTopWindowData("loading", "loading");
 	};
 	/**
 	 * 加载数据层关闭
@@ -844,6 +883,7 @@
 	        layer.close(layerWaitingIndex);
 	        commonUtils.getTopWin().document.documentElement.classList.remove('loading');
 	    }
+	    dataUtils.clearTopWindowData("loading");
 	};
 
 	/**
@@ -991,6 +1031,97 @@
 /***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.clearIframe = exports.clearAllData = exports.getTopWindowData = exports.clearTopWindowData = exports.setTopWindowData = exports.topWindow = undefined;
+
+	var _CommonUtils = __webpack_require__(2);
+
+	var commonUtils = _interopRequireWildcard(_CommonUtils);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * 跨页面存取值
+	 */
+	var topWindow = exports.topWindow = commonUtils.getTopWin().document;
+
+	var $parent = commonUtils.getTopWin().$;
+
+	/**
+	 * 存值
+	 * @param {*} key 
+	 * @param {*} obj 
+	 */
+	var setTopWindowData = exports.setTopWindowData = function setTopWindowData(key, obj) {
+	    if ($parent) {
+	        if (key && obj) {
+	            $parent(topWindow).find("#contentContainer").data(key, obj);
+	        }
+	    }
+	};
+
+	/**
+	 * 清空
+	 * @param {*} key 
+	 */
+	var clearTopWindowData = exports.clearTopWindowData = function clearTopWindowData(key) {
+	    if ($parent) {
+	        if (key) {
+	            $parent(topWindow).find("#contentContainer").data(key, "");
+	        }
+	    }
+	};
+
+	/**
+	 * 取值
+	 * @param {*} key 
+	 */
+	var getTopWindowData = exports.getTopWindowData = function getTopWindowData(key) {
+	    if ($parent) {
+	        if (key) {
+	            return $parent(topWindow).find("#contentContainer").data(key);
+	        }
+	    } else {
+	        return "";
+	    }
+	};
+
+	/**
+	 * 清除所有
+	 */
+	var clearAllData = exports.clearAllData = function clearAllData() {
+	    if ($parent) {
+	        var userInfoEncoder = getTopWindowData("USERNAMEANDENCODER");
+	        $parent(topWindow).find("#contentContainer").removeData();
+	        setTopWindowData("USERNAMEANDENCODER", userInfoEncoder);
+	    }
+	};
+
+	/**
+	 * 
+	 * @param {*清理iframe} id 
+	 */
+	var clearIframe = exports.clearIframe = function clearIframe(id) {
+	    var jId = "sencondLevelIframeContainer"; //
+	    if (id && typeof id == 'string') {
+	        jId = id;
+	    }
+	    doClearIframe(jId);
+	};
+	function doClearIframe(id) {
+	    $parent(topWindow).find("iframe[name='" + id + "']").attr("src", "about:blank");
+	    $parent(topWindow).find("iframe[name='" + id + "']").remove();
+	}
+
+/***/ }),
+
+/***/ 5:
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -1004,11 +1135,11 @@
 
 	var Constant = _interopRequireWildcard(_constant);
 
-	var _objectUtil = __webpack_require__(5);
+	var _objectUtil = __webpack_require__(6);
 
 	var objextUtil = _interopRequireWildcard(_objectUtil);
 
-	var _page = __webpack_require__(6);
+	var _page = __webpack_require__(7);
 
 	var page = _interopRequireWildcard(_page);
 
@@ -1016,7 +1147,7 @@
 
 	var layerUtils = _interopRequireWildcard(_layerUtils);
 
-	var _StringUtils = __webpack_require__(7);
+	var _StringUtils = __webpack_require__(8);
 
 	var StringUtils = _interopRequireWildcard(_StringUtils);
 
@@ -1156,7 +1287,7 @@
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1207,7 +1338,7 @@
 
 /***/ }),
 
-/***/ 6:
+/***/ 7:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -1336,7 +1467,7 @@
 
 /***/ }),
 
-/***/ 7:
+/***/ 8:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -1484,7 +1615,7 @@
 
 /***/ }),
 
-/***/ 9:
+/***/ 10:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1626,6 +1757,50 @@
 	    if (topWin.frames[Constant.SECOND_LEVEL_IFRAME_NAME]) {
 	        topWin.$('iframe[name^=' + Constant.SECOND_LEVEL_IFRAME_NAME + ']').css({ 'left': '15%', 'width': '85%' });
 	    }
+	};
+
+/***/ }),
+
+/***/ 13:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.displayImg = exports.Viewer = exports.$parent = undefined;
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	var _CommonUtils = __webpack_require__(2);
+
+	var commonUtils = _interopRequireWildcard(_CommonUtils);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var $parent = exports.$parent = commonUtils.getTopWin().$;
+	var Viewer = exports.Viewer = commonUtils.getTopWin().Viewer;
+
+	var displayImg = exports.displayImg = function displayImg(array, index) {
+	    var srcArray = [];
+	    if (typeof array == 'string') {
+	        srcArray.push(array);
+	    } else if ((typeof array === 'undefined' ? 'undefined' : _typeof(array)) == 'object') {
+	        srcArray = array;
+	    }
+	    var imgs = '';
+	    for (var i in srcArray) {
+	        imgs += '<li style="display: none;"><img data-original="' + srcArray[i] + '" src="' + srcArray[i] + '"></li>';
+	    }
+	    $parent(commonUtils.getTopWin().document).find('.docs-pictures').html(imgs);
+	    var viewer = new Viewer(commonUtils.getTopWin().document.getElementById("docs-pictures"), {
+	        url: 'data-original'
+	    });
+	    if (!index) {
+	        index = 0;
+	    }
+	    $parent(commonUtils.getTopWin().document).find("#docs-pictures li:eq(" + index + ") img").click();
 	};
 
 /***/ }),

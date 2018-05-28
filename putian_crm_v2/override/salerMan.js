@@ -698,6 +698,9 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     tableSH("cust-table", tr_minH-2);
+                  
+                  	/**点击排序*/
+                    clickThSortCommon();
                     
                     // 门店表格
                     /*var storeName = response.storeName;
@@ -1038,6 +1041,8 @@ window.addEventListener('DOMContentLoaded', function() {
                     }
                     tableSH("cust-table", tr_minH-2);
                     
+                  	/**点击排序*/
+                    clickThSortCommon();
                     // 门店表格
                     /*var storeName = response.storeName;
                     $("#storeTable").empty();

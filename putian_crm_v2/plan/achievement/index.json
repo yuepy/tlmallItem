@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.220.82:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8yMDgvMjAxNyAxODoyNDo1OQ==",
   "jsFile": "index.js",
   "requires": {
-    "saleReach": "../saleReach/index.json"
+    "saleReach": "../saleReach/index.json",
+    "achievement": "../achievement/index.json"
   },
   "chineseName": "业绩首页",
   "description": "",
@@ -360,6 +361,30 @@
           "toContextId": "context30_fLMQCM"
         }
       ]
+    },
+    "flow249_d7oMlc": {
+      "fromContextId": "context30_fLMQCM",
+      "fromAction": "doAction",
+      "fromControlId": "control138_3EstT8",
+      "toContexts": [
+        {
+          "toContextId": "context30_fLMQCM"
+        }
+      ]
+    },
+    "flow250_6qvLpd": {
+      "fromContextId": "context30_fLMQCM",
+      "fromAction": "doAction",
+      "fromControlId": "control173_yZJTIx",
+      "toContexts": [
+        {
+          "toContextId": "context30_fLMQCM"
+        },
+        {
+          "toContextId": "context30_fLMQCM",
+          "toModelId": "achievement"
+        }
+      ]
     }
   },
   "pages": {
@@ -508,7 +533,8 @@
     "page/title": {
       "contexts": {
         "context30_fLMQCM": [
-          "业绩总览-总部领导"
+          "业绩总览-总部领导",
+          "计划达成总览-品牌经理"
         ]
       }
     },
@@ -526,7 +552,8 @@
           "192.168.220.82:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMjQ4LzIwMTcgMTg6MDk6NDU=",
           "192.168.220.82:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMjQ5LzIwMTcgMTA6MjM6MTg=",
           "192.168.220.82:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMjQ5LzIwMTcgMTc6MDg6MDE=",
-          "192.168.220.82:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMTAvMzAwLzIwMTcgMTM6NDQ6MTg="
+          "192.168.220.82:8080/ptDataShow/salesPlan/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMTAvMzAwLzIwMTcgMTM6NDQ6MTg=",
+          "192.168.220.82:8080/ptDataShow/salesPlan/salesOverview?type=05&projectName=%E5%BE%AE%E8%BD%AF%E8%AF%BA%E5%9F%BA%E4%BA%9AND&bizUnitName=&branchName=PTTL_OU_23_%E8%A5%BF%E5%AE%89%E5%88%86%E5%85%AC%E5%8F%B8&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDUvMTI0LzIwMTggMTA6MDE6MTI=&date=2018-05-04&drill=oneProject"
         ],
         "context37_iIDfFF": [
           "192.168.220.82:8080/ptDataShow/report/reportsByPidAndEncoder?encoder=V0FOR0RPTkcrMDQvMjUvMjAxNyAxMToyNDoyMQ%3d%3d&filter_userId=WANGDONG&reportPid=head-Company",
@@ -675,6 +702,44 @@
             "planTypeSelect",
             "projectName",
             "projectRankPlaceHolder",
+            "salerName",
+            "selDay",
+            "totalAuditAmt",
+            "totalAuditQty",
+            "totalReachAmt",
+            "totalReachAmtRate",
+            "totalReachQty",
+            "totalReachQtyRate",
+            "totalTargetAmt",
+            "totalTargetQty",
+            "type"
+          ],
+          [
+            "barLines",
+            "bizUnitName",
+            "branchName",
+            "branchRankAmt",
+            "branchRankName",
+            "branchRankQty",
+            "configType",
+            "data_",
+            "date",
+            "drill",
+            "encoder",
+            "lines",
+            "loginName",
+            "map",
+            "model-table",
+            "modelTable",
+            "office-table",
+            "officeName",
+            "officeTable",
+            "planTypeSelect",
+            "project-",
+            "projectName",
+            "projectRankPlaceHolder",
+            "saleman-table",
+            "salemanTable",
             "salerName",
             "selDay",
             "totalAuditAmt",
@@ -923,6 +988,59 @@
             "right",
             "sort",
             "spaceDimen",
+            "table",
+            "tableContent",
+            "timeDimen",
+            "title",
+            "u-selt",
+            "u-table-a",
+            "u-table-b",
+            "u-time",
+            "u-title",
+            "u-visualmap"
+          ],
+          [
+            "a",
+            "activ",
+            "b",
+            "box",
+            "breadcrumb",
+            "btn-display",
+            "businessDimen",
+            "c",
+            "chart",
+            "chart-bars",
+            "clearfix",
+            "content",
+            "detailDatas",
+            "g-main",
+            "header",
+            "icon",
+            "icon-line",
+            "l-chart",
+            "laydate-icon",
+            "left",
+            "m-body",
+            "m-box",
+            "m-box-datas",
+            "m-boxs",
+            "m-header",
+            "mask",
+            "max",
+            "min",
+            "one",
+            "overview",
+            "pop-table",
+            "pop-tit",
+            "projectAjax",
+            "r-chart",
+            "rank-pop-box",
+            "ranking",
+            "right",
+            "sales-rank",
+            "sort",
+            "spaceDimen",
+            "susp-a",
             "table",
             "tableContent",
             "timeDimen",
@@ -1818,6 +1936,43 @@
             "TBODY/TR/TD",
             "THEAD/TR/TH",
             "TR/TD/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/VAR",
+            "-/DIV/DIV",
+            "-/DIV/H4",
+            "-/DIV/TABLE",
+            "DIV/A/I",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/EM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H2",
+            "DIV/DIV/H3",
+            "DIV/DIV/H5",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/EM/A",
+            "DIV/H1/A",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "UL/LI/A",
+            "UL/LI/SPAN"
           ]
         ],
         "context37_iIDfFF": [
