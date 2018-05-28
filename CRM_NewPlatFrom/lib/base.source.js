@@ -1,18 +1,14 @@
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 //订阅模式
 ;
-(function (exports) {
+(function(exports) {
     function PSubscribe() {
         this.topicList = [];
     }
     PSubscribe.prototype = {
-        subscribe: function subscribe(topic, cb, caller) {
+        subscribe: function(topic, cb, caller) {
             if (!cb || !topic) return;
             var exist = false;
-            this.topicList.forEach(function (item) {
+            this.topicList.forEach(function(item) {
                 if (item.topic === topic) {
                     exist = true;
                     item.list.push({
@@ -31,22 +27,22 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 });
             }
         },
-        publish: function publish(topic, data) {
-            this.topicList.forEach(function (item) {
+        publish: function(topic, data) {
+            this.topicList.forEach(function(item) {
                 if (item.topic === topic) {
-                    item.list.forEach(function (listener) {
+                    item.list.forEach(function(listener) {
                         listener.callback.call(listener.caller ? listener.caller : null, data);
                     });
                 }
             });
         },
-        remove: function remove(topic, cb) {
+        remove: function(topic, cb) {
             if (!cb || !topic) return;
-            this.topicList.forEach(function (item) {
+            this.topicList.forEach(function(item) {
                 if (item.topic === topic) {
                     if (Array.isArray(item.list)) {
                         var start;
-                        item.list.forEach(function (listener, index) {
+                        item.list.forEach(function(listener, index) {
                             if (listener.callback === cb) {
                                 start = parseInt(index);
                             }
@@ -61,7 +57,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     };
     exports.pt_oberseve = new PSubscribe();
 })(window);;
-(function (win, ysp) {
+(function(win, ysp) {
     var utils = ysp.utils;
     ysp.customHelper = {};
     //var topWin = null;
@@ -75,61 +71,58 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     var clientEntry;
     var currentSecondMenuId;
     var isFirstLoaded = true;
-    var AllMenu,
-        firstLevelMenu,
-        twoLevelMenu = [],
-        threeLevelMenu = [];
-
-    /*        普天新平台范围         */
-    // 获取PC端左侧全部一级\二级\三级等菜单 ;  具体为:菜单名称以及URL\是否存在二级菜单或三级菜单以及URL
-    function getLeftMenuList() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile', true);
-        xhr.onreadystatechange = function () {
-            if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
-                if (xhr.responseText == '{"isHaveSession":"no"}') {
-                    console.warn('未登录状态:请登录或重新请求');
-                } else if (xhr.readyState == 4 && xhr.status == 200) {
-                    AllMenu = JSON.parse(xhr.responseText);
-                    if (AllMenu) {
-                        [].forEach.call(AllMenu, function (item, index) {
-                            //当前一级菜单
-                            if (item) {
-                                //是否存在二级菜单
-                                if (item.subMenuList) {
-                                    [].forEach.call(item.subMenuList, function (itemTwo, indexTwo) {
-                                        //当前二级菜单
-                                        if (itemTwo) {
-                                            if (itemTwo.subMenuList) {
-                                                [].forEach.call(itemTwo.subMenuList, function (itemThree, indexThree) {
-                                                    //当前三级菜单
-                                                    console.log(itemThree);
-                                                });
-                                            } else {
-                                                console.info('当前一级菜单:' + item.name + "下的二级菜单" + itemTwo.name + '并不存在三级菜单');
-                                            }
-                                        }
-                                    });
-                                } else {
-                                    console.info("当前一级菜单:" + item.name + "不存在二级菜单");
-                                }
-                            }
-                        });
-                    } else {
-                        console.error('数据返回为空,请检查请求状态以及返回值');
-                    }
-                    console.log(AllMenu);
-                }
-            } else {
-                console.warn('请求未通过' + xhr.error);
-                //3s后重新请求数据
-                setTimeout(getLeftMenuList(), 3000);
+  	var AllMenu,firstLevelMenu,twoLevelMenu=[],threeLevelMenu=[];
+  
+  	/*        普天新平台范围         */
+    // 获取PC端左侧全部一级\二级\三级等菜单 ;  具体为:菜单名称以及URL\是否存在二级菜单或三级菜单以及URL
+		function getLeftMenuList(){
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile', true);
+      xhr.onreadystatechange = function(){
+        if(xhr.status >=200 && xhr.status < 300 || xhr.status == 304){
+          if(xhr.responseText == '{"isHaveSession":"no"}'){
+            console.warn('未登录状态:请登录或重新请求');
+          }else if(xhr.readyState == 4 && xhr.status == 200){
+            AllMenu = JSON.parse(xhr.responseText);
+            if(AllMenu){
+              [].forEach.call(AllMenu,function(item,index){
+                //当前一级菜单
+                if(item){
+                  //是否存在二级菜单
+                  if(item.subMenuList){
+                  	[].forEach.call(item.subMenuList,function(itemTwo,indexTwo){
+                      //当前二级菜单
+                      if(itemTwo){
+                        if(itemTwo.subMenuList){
+                          [].forEach.call(itemTwo.subMenuList,function(itemThree,indexThree){
+                            //当前三级菜单
+														console.log(itemThree);
+                          })
+                        }else{
+                          console.info('当前一级菜单:'+item.name+"下的二级菜单"+itemTwo.name+'并不存在三级菜单');
+                        }
+                      }
+                    })
+                  }else{
+                    console.info("当前一级菜单:"+item.name+"不存在二级菜单");
+                  }
+                }
+              })
+            }else{
+            	console.error('数据返回为空,请检查请求状态以及返回值'); 
             }
-        };
-        xhr.send();
+            console.log(AllMenu)
+          }
+        }else{
+          console.warn('请求未通过'+xhr.error)
+          //3s后重新请求数据
+          setTimeout(getLeftMenuList(),3000);
+        }
+      }
+      xhr.send();
     }
-    getLeftMenuList();
-    /*        普天新平台范围         */
+  	getLeftMenuList();
+  	/*        普天新平台范围         */
     //行为拦截器
     function intercepter(type, menuId) {
         switch (type) {
@@ -160,7 +153,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             modelID && matchs.push(modelID);
             ysp.runtime.Model.setForceMatchModels(matchs);
             intercepter(modelID, menuId);
-            setTimeout(function () {
+            setTimeout(function() {
                 var taskPool = getSingletonTask();
                 taskPool.status = "idle";
                 taskPool.executeFinalTask();
@@ -237,13 +230,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             var xhr = new topWin.XMLHttpRequest();
             xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuList', true);
-            xhr.error = function (e) {
+            xhr.error = function(e) {
                 console.error(e);
-            };
-            xhr.onreadystatechange = function () {
+            }
+            xhr.onreadystatechange = function() {
                 if (xhr.readyState === topWin.XMLHttpRequest.DONE) {
                     if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
-                        var menuInfo = xhr.responseText;
+                        var menuInfo = xhr.responseText;
                         if (menuInfo == '{"isHaveSession":"no"}') {
                             //win.reload();
                             setTimeout(validatePrivilege.bind(_this), 3000);
@@ -263,7 +256,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                 if (rtWin && rtWin.frames) {
                                     var frames = rtWin.frames;
                                     ysp.runtime.Model.setForceMatchModels(['index']);
-                                    [].forEach.call(frames, function (frame) {
+                                    [].forEach.call(frames, function(frame) {
                                         if (frame.name != 'sourcePageFrame') {
                                             frame.close();
                                         }
@@ -283,7 +276,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                         //alert('网络异常');
                     }
                 }
-            };
+            }
 
             xhr.send(null);
         }
@@ -296,6 +289,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         if (topWin.location.href.indexOf('login') != -1) {
             executePlan('login');
         }
+
     }
 
     function _getThirdMenuList(parentId, callback) {
@@ -303,7 +297,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/menu/getThirdMenuList', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.onreadystatechange = function () {
+        xhr.onreadystatechange = function() {
             if (xhr.readyState === topWin.XMLHttpRequest.DONE) {
                 if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
                     var menuInfo = xhr.responseText;
@@ -311,7 +305,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     //callback("分货查询,产品上下架信息查询");
                 }
             }
-        };
+        }
         xhr.send('parentMenuId=' + parentId);
     }
     /*
@@ -323,49 +317,41 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         console.log('webview send msg type is: ' + type);
         if (!task.name) {
             switch (type) {
-                case 'clientList':
-                    //客户360视图 导航进入
+                case 'clientList': //客户360视图 导航进入
                     clientEntry = 'clientList';
                     task.title = "CUST360";
                     break;
-                case 'clientListCard':
-                    //客户360视图 一级菜单中进入
+                case 'clientListCard': //客户360视图 一级菜单中进入
                     clientEntry = 'clientListCard';
                     type = 'clientList';
                     task.title = "CUST360";
                     break;
-                case 'customerWorkspace':
-                    //工作台
+                case 'customerWorkspace': //工作台
                     task.title = "VISIT_WORKSPACE";
                     break;
-                case 'saleTask':
-                    //达成情况
+                case 'saleTask': //达成情况
                     task.title = "RESULT_INFO";
                     break;
-                // case 'newInformationTotle':// case 'informationFill': //信息录入
-                //    task.title = "DATA_ENTRY_MOBILE";
-                //    break;
-                // case 'customerInformationFIll': //信息录入(新)
-                //   task.title = "DATA_ENTRY";
-                //   break;
-                case 'newInformationTotle':
-                    //信息录入(新+1)
+                    // case 'newInformationTotle':// case 'informationFill': //信息录入
+                    //    task.title = "DATA_ENTRY_MOBILE";
+                    //    break;
+                    // case 'customerInformationFIll': //信息录入(新)
+                    //   task.title = "DATA_ENTRY";
+                    //   break;
+                case 'newInformationTotle': //信息录入(新+1)
                     task.title = "ENTRY_DATA_TOTLE";
                     break;
-                // case 'newInformationTotle': //信息录入(新+1)
-                // task.title = "ENTRY_DATA_TOTLE";
-                // break;
-                case 'SalesReached':
-                    //数据看版
+                    // case 'newInformationTotle': //信息录入(新+1)
+                    // task.title = "ENTRY_DATA_TOTLE";
+                    // break;
+                case 'SalesReached': //数据看版
                     task.title = "dataShowColection";
                     break;
-                case 'visitManager':
-                    //拜访管理
+                case 'visitManager': //拜访管理
                     //task.title = "VISIT_MANAGE";
                     task.title = "BFGLBB";
                     break;
-                case 'visitIndex':
-                    //拜访总览
+                case 'visitIndex': //拜访总览
                     task.title = "VISIT_TOTAL";
                     //task.intercepter = "拜访管理";
                     break;
@@ -375,24 +361,20 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 case 'achievementSecondMenu':
                     task.title = "YJDCBB";
                     break;
-                case 'clientStoreCard':
-                    // 客户和门店
+                case 'clientStoreCard': // 客户和门店
                     task.title = "cs_customerAndStore";
                     break;
-                case 'storeList':
-                    //门店
+                case 'storeList': //门店
                     task.title = "STORE360";
                     break;
-                case 'atMyReport':
-                    //at我的报告 一级菜单
-                    task.title = "myReport";
+                case 'atMyReport': //at我的报告 一级菜单
+                    task.title = "myReport"
                     break;
-                case 'reportAtMeSummed':
-                    //汇报给我的报告 一级菜单
-                    task.title = "GZZJYD";
+                case 'reportAtMeSummed': //汇报给我的报告 一级菜单
+                    task.title = "GZZJYD"
                     break;
                 default:
-                    msgType = "no";
+                    msgType = "no"
                     break;
             }
             task.name = msgType;
@@ -408,23 +390,21 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         this.currentTask = null;
         this.lastTimer;
     }
-    TasksManager.prototype.addTask = function (task) {
+    TasksManager.prototype.addTask = function(task) {
         this.tasks.push(task);
-    };
-    TasksManager.prototype.removeTasks = function () {
+    }
+    TasksManager.prototype.removeTasks = function() {
         this.tasks = [];
-    };
-    TasksManager.prototype.executeTask = function (task) {
-        //{title:,trails:,type:} name为任务名称，data为数据,type 任务类型
+    }
+    TasksManager.prototype.executeTask = function(task) { //{title:,trails:,type:} name为任务名称，data为数据,type 任务类型
         var _this = this;
         if (typeof task === 'string') {
             task = {
                 type: task
-            };
+            }
         }
         this.lastTimer && clearTimeout(this.lastTimer);
-        this.lastTimer = setTimeout(function () {
-            //确保用户在意外情况，强制让其进入闲置状态
+        this.lastTimer = setTimeout(function() { //确保用户在意外情况，强制让其进入闲置状态
             if (_this.status == 'busy') {
                 _this.status = 'idle';
                 _this.executeFinalTask();
@@ -439,15 +419,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         } else {
             this.addTask(task);
         }
-    };
-    TasksManager.prototype.existTask = function () {
+    }
+    TasksManager.prototype.existTask = function() {
         if (this.tasks.length > 0) {
             return true;
         } else {
             return false;
         }
-    };
-    TasksManager.prototype.executeFinalTask = function () {
+    }
+    TasksManager.prototype.executeFinalTask = function() {
         if (this.status == 'idle' && this.existTask()) {
             var task = this.tasks[this.tasks.length - 1];
             task = ysp.utils.assign({}, task);
@@ -456,12 +436,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 this.executeTask(task);
             }
         }
-    };
+    }
     Object.defineProperty(TasksManager.prototype, 'status', {
-        set: function set(newVaule) {
+        set: function(newVaule) {
             this._status = newVaule;
         },
-        get: function get() {
+        get: function() {
             return this._status;
         }
     });
@@ -476,231 +456,233 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     var waittingAction = "";
     var recoverSceneId;
     var timeStamps = [];
-    cwin._yspNativeEventHandler = function (type, stop) {
-        console.info('_yspNativeEventHandler is type = ' + type);
-        cwin.sessionStorage.clear();
-        cwin.sessionStorage.setItem('msg', type + '||currentHref:' + (topWin && topWin.location.href));
-        if (ysp.customHelper && ysp.customHelper.statusManager) ysp.customHelper.statusManager.currentStatus = "LOADING";
-        timeStamps.push(Date.now());
-        if (timeStamps.length >= 3) {
-            timeStamps.splice(0, timeStamps.length - 2);
-        }
-        clearTimeout(recoverSceneId);
-        var aWin = ysp.runtime.Browser.activeBrowser.contentWindow;
-        var activeContext = ysp.runtime.Context.activeContext;
-        var realType = type;
-        if (realType === "newInformationTotle") {
-            realType = "customerInformationFIll";
-            aWin && aWin.location.href.indexOf('index.html') == -1 && aWin.location.reload();
-        }
-        // if (type === "achievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard") {
-        //   if (activeContext && activeContext.model.id == realType) {
-        //     console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
-        //     return;
-        //   }
-        // }
-
-
-        if (type === "saleAchievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard" || type === "newInformationTotle1") {
-            if (activeContext && activeContext.model.id == realType) {
-                console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
-                return;
+    cwin._yspNativeEventHandler = function(type, stop) {
+            console.info('_yspNativeEventHandler is type = ' + type);
+            cwin.sessionStorage.clear();
+            cwin.sessionStorage.setItem('msg', type + '||currentHref:' + (topWin && topWin.location.href));
+            if (ysp.customHelper && ysp.customHelper.statusManager)
+                ysp.customHelper.statusManager.currentStatus = "LOADING";
+            timeStamps.push(Date.now());
+            if (timeStamps.length >= 3) {
+                timeStamps.splice(0, timeStamps.length - 2);
             }
-            if (activeContext && activeContext.model.id == 'customerInformationFIll' && type != "saleAchievement" && type != "dataPanel" && type != "customerIn" && type != "achievementSecondMenu" && type != "clientStoreCard") {
-                // 信息录入页面加载无刷新
-                aWin && aWin.location.href.indexOf('index.html') == -1 && aWin.location.reload();
-                return;
+            clearTimeout(recoverSceneId);
+            var aWin = ysp.runtime.Browser.activeBrowser.contentWindow;
+            var activeContext = ysp.runtime.Context.activeContext;
+            var realType = type;
+            if (realType === "newInformationTotle") {
+                realType = "customerInformationFIll";
+                aWin && (aWin.location.href.indexOf('index.html') == -1) && aWin.location.reload()
             }
-        }
-        //频繁点击，恢复现场
-        function recoverScene() {
-            var taskPool = getSingletonTask();
+            // if (type === "achievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard") {
+            //   if (activeContext && activeContext.model.id == realType) {
+            //     console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
+            //     return;
+            //   }
+            // }
 
-            function execute() {
-                var activeContext = ysp.runtime.Context.activeContext;
-                if (!activeContext && !stop) {
-                    cwin._yspNativeEventHandler(type, true);
+
+            if (type === "saleAchievement" || type === "dataPanel" || type === "customerIn" || type === "achievementSecondMenu" || type == 'newInformationTotle' || type === "clientStoreCard" || type === "newInformationTotle1") {
+                if (activeContext && activeContext.model.id == realType) {
+                    console.log('小伙子，你在当前方案下继续触发当前方案，驳回，_yspNativeEventHandler type is ' + type + 'real type is ' + realType);
                     return;
                 }
-                if (activeContext && activeContext.model.id != realType && !stop) {
-                    cwin._yspNativeEventHandler(type, true);
+                if (activeContext && activeContext.model.id == 'customerInformationFIll' && type != "saleAchievement" && type != "dataPanel" && type != "customerIn" && type != "achievementSecondMenu" && type != "clientStoreCard") { // 信息录入页面加载无刷新
+                    aWin && (aWin.location.href.indexOf('index.html') == -1) && aWin.location.reload();
+                    return;
                 }
             }
-            execute();
-        }
-        //recoverSceneId = setTimeout(recoverScene.bind(this),2000);
-        var timeGapLen = timeStamps.length;
-        if (timeGapLen >= 2) {
-            var timeGap = timeStamps[timeGapLen - 1] - timeStamps[timeGapLen - 2];
-            if (timeGap <= 1000) {
-                recoverScene();
+            //频繁点击，恢复现场
+            function recoverScene() {
+                var taskPool = getSingletonTask();
+
+                function execute() {
+                    var activeContext = ysp.runtime.Context.activeContext;
+                    if (!activeContext && !stop) {
+                        cwin._yspNativeEventHandler(type, true);
+                        return;
+                    }
+                    if (activeContext && activeContext.model.id != realType && !stop) {
+                        cwin._yspNativeEventHandler(type, true);
+                    }
+                }
+                execute();
             }
-        }
+            //recoverSceneId = setTimeout(recoverScene.bind(this),2000);
+            var timeGapLen = timeStamps.length;
+            if (timeGapLen >= 2) {
+                var timeGap = timeStamps[timeGapLen - 1] - timeStamps[timeGapLen - 2];
+                if (timeGap <= 1000) {
+                    recoverScene();
+                }
+            }
 
-        switch (type) {
-            case "dataPanel":
-                type = "SalesReached";
-                break;
-            case "achievement":
-                type = "achievementSecondMenu";
-                break;
-            case "newInformationTotle1":
-                type = "newInformationTotle";
-                break;
-        }
+            switch (type) {
+                case "dataPanel":
+                    type = "SalesReached";
+                    break;
+                case "achievement":
+                    type = "achievementSecondMenu";
+                    break;
+                case "newInformationTotle1":
+                    type = "newInformationTotle";
+                    break;
+            }
 
-        if (topWin) {
-            var activeBrowser = ysp.runtime.Browser.activeBrowser;
-            if (activeBrowser) {
-                var activeBrowserId = activeBrowser.id;
-                if (activeBrowserId != "firstLevelIframeContainer" && activeBrowserId != "mainFrame") {
-                    //activeBrowser.contentWindow && activeBrowser.contentWindow.close();
-                    var acWindow = activeBrowser.contentWindow;
-                    var count = 0;
-                    if (acWindow) {
-                        while (acWindow) {
-                            var acIframe = acWindow.frameElement;
-                            count++;
-                            if (count > 8) {
-                                count = 0;
-                                break;
-                            }
-                            if (acIframe.name == 'firstLevelIframeContainer' || acIframe.name == 'mainFrame') {
-                                break;
-                            } else {
-                                acWindow.close();
-                                acWindow = acWindow.opener;
+            if (topWin) {
+                var activeBrowser = ysp.runtime.Browser.activeBrowser;
+                if (activeBrowser) {
+                    var activeBrowserId = activeBrowser.id;
+                    if (activeBrowserId != "firstLevelIframeContainer" && activeBrowserId != "mainFrame") {
+                        //activeBrowser.contentWindow && activeBrowser.contentWindow.close();
+                        var acWindow = activeBrowser.contentWindow;
+                        var count = 0;
+                        if (acWindow) {
+                            while (acWindow) {
+                                var acIframe = acWindow.frameElement;
+                                count++;
+                                if (count > 8) {
+                                    count = 0;
+                                    break;
+                                }
+                                if (acIframe.name == 'firstLevelIframeContainer' || acIframe.name == 'mainFrame') {
+                                    break;
+                                } else {
+                                    acWindow.close();
+                                    acWindow = acWindow.opener;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-        if (type == 'login') {
-            var doc = topWin.document;
-            var flag = false;
-            if (topWin) {
-                var logout = doc.getElementById('logout');
-                if (logout) {
-                    //logout.click();
-                    //ysp.runtime.Model.setForceMatchModels(['login']);
-                }
-                var activeWin = ysp.runtime.Browser.activeBrowser.contentWindow;
-                if (activeWin) {
-                    activeWin.close();
-                }
-                topWin.location.href = "http://192.168.220.82:8080/pttlCrm/res/page/login/login.html";
-            }
-            return;
-        }
-        var taskPool = getSingletonTask();
-        taskPool.executeTask(type);
-    };
-    //获取放大图片器
-    var _bigPicture = {
-        getImgEl: function getImgEl() {
-            if (topWin) {
+            if (type == 'login') {
                 var doc = topWin.document;
-                var layerPicBox = ysp.utils.xfind('//div[contains(@class,"viewer-container") and contains(@class,"viewer-in")]', doc)[0];
-                if (layerPicBox) {
-                    var imgEl = layerPicBox.querySelector("img");
-                    if (imgEl) {
-                        return imgEl;
+                var flag = false;
+                if (topWin) {
+                    var logout = doc.getElementById('logout');
+                    if (logout) {
+                        //logout.click();
+                        //ysp.runtime.Model.setForceMatchModels(['login']);
+                    }
+                    var activeWin = ysp.runtime.Browser.activeBrowser.contentWindow;
+                    if (activeWin) {
+                        activeWin.close();
+                    }
+                    topWin.location.href = "http://192.168.220.82:8080/pttlCrm/res/page/login/login.html";
+                }
+                return;
+            }
+            var taskPool = getSingletonTask();
+            taskPool.executeTask(type);
+        }
+        //获取放大图片器
+    var _bigPicture = {
+            getImgEl: function() {
+                if (topWin) {
+                    var doc = topWin.document;
+                    var layerPicBox = ysp.utils.xfind('//div[contains(@class,"viewer-container") and contains(@class,"viewer-in")]', doc)[0];
+                    if (layerPicBox) {
+                        var imgEl = layerPicBox.querySelector("img");
+                        if (imgEl) {
+                            return imgEl
+                        }
                     }
                 }
             }
         }
         //获取不是当前iframe里的alert/div/弹框
-    };var _tipMsg = {
-        getMsg: function getMsg() {
-            if (topWin) {
-                var doc = topWin.document;
-                var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and @type="dialog" and contains(@id,"layui-layer")]', doc)[0];
-                if (layerTipEl) {
-                    var contentEl = layerTipEl.querySelector('div.layui-layer-content');
-                    if (contentEl) {
-                        return contentEl.textContent;
+    var _tipMsg = {
+            getMsg: function() {
+                if (topWin) {
+                    var doc = topWin.document;
+                    var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and @type="dialog" and contains(@id,"layui-layer")]', doc)[0];
+                    if (layerTipEl) {
+                        var contentEl = layerTipEl.querySelector('div.layui-layer-content');
+                        if (contentEl) {
+                            return contentEl.textContent;
+                        }
                     }
                 }
-            }
-        },
-        cancelText: function cancelText() {
-            if (topWin) {
-                var doc = topWin.document;
-                var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and @type="dialog" and contains(@id,"layui-layer")]', doc)[0];
-                if (layerTipEl) {
-                    var cancelTxt = layerTipEl.querySelector('a.layui-layer-btn1');
-                    if (cancelTxt) {
-                        return cancelTxt.textContent;
+            },
+            cancelText: function() {
+                if (topWin) {
+                    var doc = topWin.document;
+                    var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and @type="dialog" and contains(@id,"layui-layer")]', doc)[0];
+                    if (layerTipEl) {
+                        var cancelTxt = layerTipEl.querySelector('a.layui-layer-btn1');
+                        if (cancelTxt) {
+                            return cancelTxt.textContent
+                        }
                     }
                 }
-            }
-        },
-        confirm: function confirm() {
-            if (topWin) {
-                var doc = topWin.document;
-                var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and @type="dialog" and contains(@id,"layui-layer")]', doc)[0];
-                if (layerTipEl) {
-                    var confirmBtn = layerTipEl.querySelector('a.layui-layer-btn0');
-                    if (confirmBtn) {
-                        confirmBtn.click();
+            },
+            confirm: function() {
+                if (topWin) {
+                    var doc = topWin.document;
+                    var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and @type="dialog" and contains(@id,"layui-layer")]', doc)[0];
+                    if (layerTipEl) {
+                        var confirmBtn = layerTipEl.querySelector('a.layui-layer-btn0');
+                        if (confirmBtn) {
+                            confirmBtn.click();
+                        }
                     }
                 }
-            }
-        },
-        cancel: function cancel() {
-            if (topWin) {
-                var doc = topWin.document;
-                var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and @type="dialog" and contains(@id,"layui-layer")]', doc)[0];
-                if (layerTipEl) {
-                    var cancelBtn = layerTipEl.querySelector('a.layui-layer-btn1');
-                    if (cancelBtn) {
-                        cancelBtn.click();
+            },
+            cancel: function() {
+                if (topWin) {
+                    var doc = topWin.document;
+                    var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and @type="dialog" and contains(@id,"layui-layer")]', doc)[0];
+                    if (layerTipEl) {
+                        var cancelBtn = layerTipEl.querySelector('a.layui-layer-btn1');
+                        if (cancelBtn) {
+                            cancelBtn.click();
+                        }
                     }
                 }
-            }
-        },
-        getLoading: function getLoading() {
-            if (topWin) {
-                var doc = topWin.document;
-                var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and contains(@id,"layui-layer")]', doc)[0];
-                if (layerTipEl) {
-                    var contentEl = layerTipEl.classList.contains("layui-layer-loading");
-                    return contentEl;
-                    // var contentEl = layerTipEl.querySelector('div.layui-layer-loading');
-                    // return contentEl;
-                    // if (contentEl) {
-                    //   return contentEl.textContent;
-                    // }
+            },
+            getLoading: function() {
+                if (topWin) {
+                    var doc = topWin.document;
+                    var layerTipEl = ysp.utils.xfind('//div[contains(@class,"layui-layer") and contains(@id,"layui-layer")]', doc)[0];
+                    if (layerTipEl) {
+                        var contentEl = layerTipEl.classList.contains("layui-layer-loading")
+                        return contentEl;
+                        // var contentEl = layerTipEl.querySelector('div.layui-layer-loading');
+                        // return contentEl;
+                        // if (contentEl) {
+                        //   return contentEl.textContent;
+                        // }
+                    }
                 }
             }
         }
         //通过标记法来优化销售达成
-    };var _saleReachStamp = {
+    var _saleReachStamp = {
         tip: 0,
-        increment: function increment() {
+        increment: function() {
             this.tip += 1;
         },
-        decrement: function decrement() {
+        decrement: function() {
             if (this.tip < 0) {
                 this.tip = 0;
             } else {
                 this.tip -= 1;
             }
         },
-        getTipValue: function getTipValue() {
+        getTipValue: function() {
             return this.tip;
         },
-        clear: function clear() {
+        clear: function() {
             this.tip = 0;
         }
-    };
+    }
 
     function _refreshWinAfterWinName(name, cb) {
         var flag = false;
         var rtWin = ysp.customHelper.getRTWin();
         if (!flag) {
-            var refreshWin = function refreshWin() {
+            function refreshWin() {
                 if (!ysp.customHelper.getWinFromRTByName(name)) {
                     flag = true;
                     cb();
@@ -708,8 +690,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 if (!flag) {
                     setTimeout(refreshWin.bind(this), 200);
                 }
-            };
-
+            }
             refreshWin();
         }
     }
@@ -723,7 +704,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         bigPicture: _bigPicture,
         refreshWinAfterWinName: _refreshWinAfterWinName,
         getTableClassData: _getTableClassData,
-        getRTWin: function getRTWin() {
+        getRTWin: function() {
             var aWin = ysp.runtime.Browser.activeBrowser.contentWindow;
             if (aWin) {
                 return aWin.frameElement.ownerDocument.defaultView;
@@ -744,16 +725,21 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 return this._currentStatus;
             },
             set currentStatus(currentStatus) {
-                if (typeof currentStatus === 'string') this._currentStatus = currentStatus;else this._currentStatus = 0;
+                if (typeof currentStatus === 'string')
+                    this._currentStatus = currentStatus;
+                else
+                    this._currentStatus = 0;
             }
         },
-        getRootPath: function getRootPath(win) {
+        getRootPath: function(win) {
             var href = win.location.href;
             return href && href.match(/^http.*\//) && href.match(/^http.*\//)[0];
         },
-        closeLoading: function closeLoading() {},
+        closeLoading: function() {
+
+        },
         // 把image 转换为 canvas对象  
-        convertImageToCanvas: function convertImageToCanvas(image) {
+        convertImageToCanvas: function(image) {
             // 创建canvas DOM元素，并设置其宽高和图片一样   
             var canvas = document.createElement("canvas");
             canvas.width = image.naturalWidth;
@@ -763,11 +749,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             return canvas;
         },
         // 从 canvas 提取图片 image  
-        convertCanvasToImage: function convertCanvasToImage(canvas) {
+        convertCanvasToImage: function(canvas) {
             // canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持  
             return canvas.toDataURL("image/png");
         },
-        dealImage: function dealImage(path, obj, callback) {
+        dealImage: function(path, obj, callback) {
             var img = new Image();
             img.src = path;
             img.onload = function srcImg() {
@@ -777,7 +763,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     h = that.height,
                     scale = w / h;
                 w = obj.width || w;
-                h = obj.height || w / scale;
+                h = obj.height || (w / scale);
                 var quality = 0.7; // 默认图片质量为0.7
                 //生成canvas
                 var canvas = document.createElement('canvas');
@@ -798,12 +784,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 var base64 = canvas.toDataURL('image/png', quality);
                 // 回调函数返回base64的值
                 callback(base64);
-            };
+            }
         },
         secondMenu: {
             menuMap: {},
             currentMenuId: "",
-            init: function init() {
+            init: function() {
                 this.menuMap = {
                     visitLook: "拜访查看",
                     AtReport: "@我的报告",
@@ -832,10 +818,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     saleAchievement: ["销售业绩总览", "计划达成总览", "月度销售达成", "年度销售达成"],
                     customerIn: ["客户信息录入", "门店信息录入（HES）"],
                     clientStoreCard: ["客户信息", "门店信息"]
-                };
+                }
             },
-            getMenuNames: function getMenuNames(parentMenuType) {
-                //parentMenuType 相当于是modelId'
+            getMenuNames: function(parentMenuType) { //parentMenuType 相当于是modelId'
                 var secondMenuIframe = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');
                 if (!secondMenuIframe) {
                     return;
@@ -847,24 +832,25 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
                 var as = menu.querySelectorAll('a');
                 var content = [];
-                [].forEach.call(as, function (item, index, self) {
+                [].forEach.call(as, function(item, index, self) {
                     content.push(ysp.customHelper.trim(item.textContent));
                 });
                 var realMenuNames = [];
                 if (!!parentMenuType) {
                     var menuNames = this._getMenuNamesByMenuType(parentMenuType) || [];
-                    menuNames.forEach(function (item) {
-                        if (content.indexOf(item) != -1) realMenuNames.push(item);
+                    menuNames.forEach(function(item) {
+                        if (content.indexOf(item) != -1)
+                            realMenuNames.push(item);
                     });
                 }
                 return parentMenuType ? realMenuNames : content;
             },
 
-            _getMenuNamesByMenuType: function _getMenuNamesByMenuType(menuType) {
+            _getMenuNamesByMenuType: function(menuType) {
                 return this.menuNames && this.menuNames[menuType];
             },
             _insureSecondMenuTimer: null,
-            _toPlanByMenuName: function _toPlanByMenuName(menuName) {
+            _toPlanByMenuName: function(menuName) {
                 var planName = this.getPlanNameByMenuName(menuName);
                 this.currentMenuId = planName;
                 planName = planName === "saleReachMonth" || planName === "saleReachYear" ? "saleReach" : planName;
@@ -874,7 +860,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 clearTimeout(ysp.customHelper._insureSecondMenuTimer);
 
                 function findSecondMenu() {
-                    //debugger;
+                  //debugger;
                     var secondMenuIframe = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');
                     var doc = secondMenuIframe && secondMenuIframe.document;
                     if (doc.readyState != "complete") {
@@ -882,9 +868,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                         return;
                     }
                     var menu = doc && doc.getElementById('menu');
-                    var as = menu && menu.querySelectorAll('a') || [];
+                    var as = (menu && menu.querySelectorAll('a')) || [];
                     var activeWin = ysp.runtime.Browser.activeBrowser.contentWindow;
-                    [].forEach.call(as, function (item, index, self) {
+                    [].forEach.call(as, function(item, index, self) {
                         var text = ysp.customHelper.trim(item.textContent);
                         if (menuName === text) {
                             if (activeWin && activeWin.frameElement.name !== 'firstLevelIframeContainer') {
@@ -903,7 +889,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                             var win = item.ownerDocument.defaultView;
                             if (item.href && item.href.indexOf('javascript') == -1) {
                                 if (activeModel) {
-                                    console.info('1::planName is : ' + planName + ' href is : ' + item.href);
+                                    console.info('1::planName is : ' + planName + ' href is : ' + item.href)
                                     var modelId = activeModel.id;
                                     if (modelId == planName) {
                                         //win[planName].location.href = item.href;
@@ -912,9 +898,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                     } else {
                                         win.open(item.href, planName);
                                         ysp.runtime.Model.setForceMatchModels([planName]);
-                                        console.info('2::planName is : ' + planName + ' href is : ' + item.href);
-                                        //确保打开二级菜单有效
-                                        ysp.customHelper._insureSecondMenuTimer = setTimeout(function () {
+                                        console.info('2::planName is : ' + planName + ' href is : ' + item.href)
+                                            //确保打开二级菜单有效
+                                        ysp.customHelper._insureSecondMenuTimer = setTimeout(function() {
                                             if (!!!ysp.customHelper.getWinFromRTByName(planName)) findSecondMenu();
                                         }, 2000);
                                     }
@@ -931,15 +917,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
                 findSecondMenu();
             },
-            toPlanByMenuName: function toPlanByMenuName(menuName, planName, parentMenuId) {
+            toPlanByMenuName: function(menuName, planName, parentMenuId) {
                 var _this = this;
                 var parentMenuType;
 
                 if (typeof menuName !== 'string') {
                     return;
                 }
-                if (parentMenuId) {
-                    //有parentMenuId 就代表入口是从首页面进入的，也即_yspNativeEventHandler
+                if (parentMenuId) { //有parentMenuId 就代表入口是从首页面进入的，也即_yspNativeEventHandler
                     switch (menuName) {
                         case "库存查询":
                             parentMenuType = "dataPanel";
@@ -954,7 +939,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                             parentMenuType = "customerIn";
                             break;
                     }
-                    var callback = function callback(menuInfo) {
+                    var callback = function(menuInfo) {
                         if (menuInfo.indexOf(menuName) != -1) {
                             _this._toPlanByMenuName(menuName);
                         } else {
@@ -967,7 +952,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                 }
                             }
                         }
-                    };
+                    }
                     _getThirdMenuList(parentMenuId, callback);
                     // var flag = false;
                     // function findSecondMenu() {
@@ -1004,14 +989,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     this._toPlanByMenuName(menuName);
                 }
             },
-            getPlanNameByMenuName: function getPlanNameByMenuName(menuName) {
+            getPlanNameByMenuName: function(menuName) {
                 var planName;
                 if (this.menuMap[menuName]) {
                     return this.menuMap[menuName];
                 }
                 return;
             },
-            getCurrentMenuName: function getCurrentMenuName() {
+            getCurrentMenuName: function() {
                 var activeContext = ysp.runtime.Context.activeContext;
                 if (activeContext) {
                     var modelId = activeContext.model.id;
@@ -1021,7 +1006,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
             }
         },
-        getWinFromRTByName: function getWinFromRTByName(name) {
+        getWinFromRTByName: function(name) {
             if (typeof name !== 'string') {
                 console.error('getWinFromRTByName arg is not string,this type is ' + name);
             }
@@ -1032,25 +1017,25 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             return;
         },
         saleReachStamp: _saleReachStamp,
-        getClientEntry: function getClientEntry() {
+        getClientEntry: function() {
             return clientEntry;
         },
-        getTopWin: function getTopWin() {
+        getTopWin: function() {
             if (topWin) {
                 return topWin;
             }
         },
-        getCurrentOpenedWins: function getCurrentOpenedWins() {
+        getCurrentOpenedWins: function() {
             return winContainer;
         },
-        backHome: function backHome() {
+        backHome: function() {
             if (parent.EAPI.isIOS() || parent.EAPI.isAndroid()) {
                 parent.EAPI.back();
             } else {
                 ysp.appMain.back();
             }
         },
-        openWindow: function openWindow(url, title) {
+        openWindow: function(url, title) {
             if (typeof url !== "string") {
                 return;
             }
@@ -1058,7 +1043,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 title = "新窗口";
             }
             title = this.trim(title);
-            var flag = winContainer.some(function (winTitle) {
+            var flag = winContainer.some(function(winTitle) {
                 if (winTitle == title) {
                     return true;
                 }
@@ -1086,7 +1071,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 return contentWin.open(url, title);
             }
         },
-        formatStringToDate: function formatStringToDate(str) {
+        formatStringToDate(str) {
             var strArray = str.split('/');
             for (var i = 0; i < strArray.length; i++) {
                 if (+strArray[i] < 10) {
@@ -1095,7 +1080,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             return strArray.join('-');
         },
-        getDataIndex: function getDataIndex(array, tag) {
+        getDataIndex(array, tag) {
             if (!array) {
                 return;
             }
@@ -1113,28 +1098,28 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
             }
         },
-        getIndexInTitles: function getIndexInTitles(array, tag) {
+        getIndexInTitles(array, tag) {
             for (var i = 0; i < array.length; i++) {
                 if (array[i].indexOf(tag) != -1) {
                     return i;
                 }
             }
         },
-        isStringNull: function isStringNull(str) {
+        isStringNull(str) {
             if (str && str.trim().length === 0) {
                 return true;
             } else {
                 return false;
             }
         },
-        isArray: function isArray(array) {
+        isArray(array) {
             if (Object.prototype.toString.call(array).indexOf('Array') != -1) {
                 return true;
             } else {
                 return false;
             }
         },
-        isAllNull: function isAllNull(array) {
+        isAllNull(array) {
             var tag = true;
             for (var i = 0; i < array.length; i++) {
                 var item = ysp.customHelper.trim(array[i]);
@@ -1144,9 +1129,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             return tag;
         },
-
         //判断array.tag是存在一个值等于item
-        isExist: function isExist(item, tag, array) {
+        isExist(item, tag, array) {
             for (var i = 0; i < array.length; i++) {
                 if (item == array[i][tag]) {
                     return true;
@@ -1154,9 +1138,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             return false;
         },
-
         //数组去重
-        unique: function unique(array) {
+        unique(array) {
             var data = [];
             for (var i = 0; i < array.length; i++) {
                 if (!this.isExist(array[i].title, 'title', data)) {
@@ -1165,9 +1148,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             return data;
         },
-
-        getTemplateSaleReachData: function getTemplateSaleReachData(elem, headerConfig, tags) {
-            //[{lable:'',title:'',data:''}]
+        getTemplateSaleReachData: function(elem, headerConfig, tags) { //[{lable:'',title:'',data:''}]
             if (!elem) {
                 return;
             }
@@ -1224,7 +1205,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             var tbodyTrs = tbody.querySelectorAll('tr');
             var content = [];
             var headerTitles = [];
-            var headerTitle = [];
+            var headerTitle = []
             for (var i = 0; i < tbodyTrs.length; i++) {
                 var item = [];
                 if (!tbodyTrs[i].querySelectorAll('td')) {
@@ -1275,7 +1256,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             for (var k = 1; k <= headerTitle.length; k++) {
                 if (!zou && !headerTitle[k] && !Wu) {
-                    var isAllNull = function isAllNull(array) {
+                    if (!headerTitle[k]) {
+                        headerTitle[k] = '销售人员';
+                    }
+
+                    function isAllNull(array) {
                         var tag = true;
                         for (var i = 0; i < array.length; i++) {
                             var item = ysp.customHelper.trim(array[i].content);
@@ -1284,14 +1269,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                             }
                         }
                         return tag;
-                    };
-                    //根据传入的tags的字段，挑选出相应的值，最后返回
-
-
-                    if (!headerTitle[k]) {
-                        headerTitle[k] = '销售人员';
                     }
-
+                    //根据传入的tags的字段，挑选出相应的值，最后返回
                     var data = [];
                     var exportTitles = [];
                     var filterTitles = [];
@@ -1337,11 +1316,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                         }
                         if (!isAllNull(item)) {
                             if (exportTitles.length != item.length) {
-                                item.forEach(function (value, index) {
+                                item.forEach(function(value, index) {
                                     exportTitles.push({
                                         label: value.label ? value.label : value.title,
                                         title: value.title,
-                                        sort: filterTitles && filterTitles[index] || null
+                                        sort: (filterTitles && filterTitles[index]) || null
                                     });
                                 });
                             }
@@ -1356,7 +1335,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     };
                 }
                 if (!zou && headerTitle[k]) {
-                    var _isAllNull = function _isAllNull(array) {
+                    if (!headerTitle[k]) {
+                        headerTitle[k] = '分公司';
+                    }
+
+                    function isAllNull(array) {
                         var tag = true;
                         for (var i = 0; i < array.length; i++) {
                             var item = ysp.customHelper.trim(array[i].content);
@@ -1365,14 +1348,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                             }
                         }
                         return tag;
-                    };
-                    //根据传入的tags的字段，挑选出相应的值，最后返回
-
-
-                    if (!headerTitle[k]) {
-                        headerTitle[k] = '分公司';
                     }
-
+                    //根据传入的tags的字段，挑选出相应的值，最后返回
                     var data = [];
                     var exportTitles = [];
                     var filterTitles = [];
@@ -1406,7 +1383,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                     //   index = index == 3 ? index - 1 : index;
                                     // }
                                     if (title == '产品系列' && !ysp.customHelper.getDataIndex(titles, '客户名称')) {
-                                        index = content[i][index]['content'].trim() == "" ? content[i][index + 2]['content'].trim() == "" ? content[i][index + 4]['content'].trim() == "" ? content[i][index - 2]['content'].trim() == "" ? index - 3 : index - 2 : index + 4 : index + 2 : index;
+                                        index = content[i][index]['content'].trim() == "" ? (content[i][index + 2]['content'].trim() == "" ? (content[i][index + 4]['content'].trim() == "" ? (content[i][index - 2]['content'].trim() == "" ? index - 3 : index - 2) : index + 4) : index + 2) : index;
                                     }
                                     if (title == '产品系列' && ysp.customHelper.getDataIndex(titles, '客户名称')) {
                                         index = 2;
@@ -1418,9 +1395,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                         } else {
                                             index = 3;
                                         }
+
                                     }
                                     if (title == '机型' || title == '机型名称') {
-                                        index = content[i][index]['content'].trim() == "" ? content[i][index + 2]['content'].trim() == "" ? content[i][index - 2]['content'].trim() == "" ? content[i][index - 4]['content'].trim() == "" ? 2 : index - 4 : index - 2 : index + 2 : index;
+                                        index = content[i][index]['content'].trim() == "" ? (content[i][index + 2]['content'].trim() == "" ? (content[i][index - 2]['content'].trim() == "" ? (content[i][index - 4]['content'].trim() == "" ? 2 : index - 4) : index - 2) : index + 2) : index;
                                     }
                                 }
                                 if (content[i][index] && content[i][index]['content'].trim() == '' && index == 9) {
@@ -1449,13 +1427,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                 continue;
                             }
                         }
-                        if (!_isAllNull(item)) {
+                        if (!isAllNull(item)) {
                             if (exportTitles.length != item.length) {
-                                item.forEach(function (value, index) {
+                                item.forEach(function(value, index) {
                                     exportTitles.push({
                                         label: value.label ? value.label : value.title,
                                         title: value.title,
-                                        sort: filterTitles && filterTitles[index] || null
+                                        sort: (filterTitles && filterTitles[index]) || null
                                     });
                                 });
                             }
@@ -1470,7 +1448,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     };
                 }
                 if (zou || Wu) {
-                    var _isAllNull2 = function _isAllNull2(array) {
+                    if (!headerTitle[k] && zou == undefined) {
+                        headerTitle[k] = '项目';
+                    }
+                    if (!headerTitle[k]) {
+                        headerTitle[k] = '分公司';
+                    }
+
+                    function isAllNull(array) {
                         var tag = true;
                         for (var i = 0; i < array.length; i++) {
                             var item = ysp.customHelper.trim(array[i].content);
@@ -1479,17 +1464,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                             }
                         }
                         return tag;
-                    };
+                    }
                     //根据传入的tags的字段，挑选出相应的值，最后返回
-
-
-                    if (!headerTitle[k] && zou == undefined) {
-                        headerTitle[k] = '项目';
-                    }
-                    if (!headerTitle[k]) {
-                        headerTitle[k] = '分公司';
-                    }
-
                     var data = [];
                     var exportTitles = [];
                     var tit = false;
@@ -1534,6 +1510,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                 if (content[i][index] && content[i][index]['content'].trim() == '' && index == 9) {
                                     // index = ysp.customHelper.getDataIndex(titles, '销售达成率')
                                     index = 9;
+
                                 }
                                 if (content[i][index] && content[i][index]['content'].trim() == '' && index == 12) {
                                     // index = ysp.customHelper.getDataIndex(titles, '销售达成率')
@@ -1554,13 +1531,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                 continue;
                             }
                         }
-                        if (!_isAllNull2(item)) {
+                        if (!isAllNull(item)) {
                             if (exportTitles.length != item.length) {
-                                item.forEach(function (value, index) {
+                                item.forEach(function(value, index) {
                                     exportTitles.push({
                                         label: value.label ? value.label : value.title,
                                         title: value.title,
-                                        sort: filterTitles && filterTitles[index] || null
+                                        sort: (filterTitles && filterTitles[index]) || null
                                     });
                                 });
                             }
@@ -1576,7 +1553,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
             }
         },
-        getTemplateData: function getTemplateData(elem, tags) {
+        getTemplateData: function(elem, tags) {
             if (!elem) {
                 return;
             }
@@ -1641,7 +1618,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             return data;
         },
-        getSaleData: function getSaleData(elem, tags) {
+        getSaleData: function(elem, tags) {
             if (!elem) {
                 return;
             }
@@ -1686,7 +1663,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             //根据传入的tags的字段，挑选出相应的值，最后返回
             var data = [];
-            var con = [];
+            var con = []
             var num = [];
             for (var i = 0; i < content.length; i++) {
                 var item = [];
@@ -1703,17 +1680,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     }
                 }
                 if (!ysp.customHelper.isAllNull(item)) {
-                    num.push(i);
+                    num.push(i)
                     con.push(item);
                 }
             }
-            data.push(con, num);
+            data.push(con, num)
             return data;
         },
         /*用于筛选客户其他信息采集里面在手机端产生的对适配无用的td
         @param fakeTds：原网页采集过来的包含无用td的数组 -zyt
         */
-        filterTd: function filterTd(fakeTds) {
+        filterTd(fakeTds) {
             var tds = [];
             for (var i = 0; i < fakeTds.length; i++) {
                 if (!fakeTds[i].querySelector('input[type="checkbox"]')) {
@@ -1721,9 +1698,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
             }
             return tds;
-        },
-        //信息协同部分表格采集函数模板
-        getDataInInformation: function getDataInInformation(elem, tags) {
+        }, //信息协同部分表格采集函数模板
+        getDataInInformation: function(elem, tags) {
             if (!elem) {
                 return;
             }
@@ -1791,10 +1767,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         /*
         // 可以实现一个foo方法，在定制适配组件中被使用，如：ysp.customHelper.foo()
         foo: function(){
-         }
+
+        }
         */
         //重新过滤url,由于url在ios下可能出现某个参数重复很多次的情况,暂时没有定位问题出现的原因,由于时间原因,这里直接将重复的参数删除,只保留一个,如果url没有出现重复参数的情况则不做任何处理.
-        filterUrl: function filterUrl(url) {
+        filterUrl(url) {
             var firstSite = url.indexOf('?');
             var startString = url.slice(0, firstSite + 1);
             var cutUrl = url.slice(firstSite + 1);
@@ -1803,7 +1780,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             var filterUrl = startString + argsString;
             return filterUrl;
         },
-        uniqueString: function uniqueString(array) {
+        uniqueString(array) {
             var data = [];
             for (var i = 0, len = array.length; i < len; i++) {
                 if (data.join('').indexOf(array[i]) == -1) {
@@ -1812,14 +1789,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             return data;
         },
-
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
-        onTargetLoad: function onTargetLoad(aWin, doc) {
-            //debugger;
-            if (aWin) {
+        onTargetLoad: function(aWin, doc) {
+						//debugger;
+            if (aWin) {
                 if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
-                    var _this = this;
+                    var _this = this;
                     var xhr = new aWin.XMLHttpRequest();
                     xhr.open('GET', 'http://192.168.220.82:8080/pttlCrm/login/addMobileLoginLog', true);
                     xhr.send();
@@ -1827,18 +1803,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
-        beforeTargetLoad: function beforeTargetLoad(aWin, doc) {
-            //debugger;
+        beforeTargetLoad: function(aWin, doc) {
+          //debugger;
             //为了使移动端的日期方法toLocaleDateString和移动端保持一致
-            aWin.Date.prototype.toLocaleDateString = function () {
+            aWin.Date.prototype.toLocaleDateString = function() {
                 var date = this;
                 var year = date.getFullYear();
                 var month = date.getMonth() + 1;
                 var date = date.getDate();
-                return year + '/' + month + '/' + date;
-            };
-            /* CRM - OLD  2.3.3运行时方法.可能为实现单点登录逻辑 . 保留 
-            if (aWin.frameElement && aWin.frameElement.name == "sourcePageFrame" && aWin.frameElement.dataset.browser) {
+                return year + '/' + month + '/' + date; 
+            }
+            /* CRM - OLD  2.3.3运行时方法.可能为实现单点登录逻辑 . 保留 
+            if (aWin.frameElement && aWin.frameElement.name == "sourcePageFrame" && aWin.frameElement.dataset.browser) {
                 topWin = aWin;
                 if (aWin.location.href.indexOf('login') !== -1) {
                     ysp.runtime.Model.setForceMatchModels(['login']);
@@ -1848,7 +1824,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             aWin.Object.defineProperty(aWin, 'getTopWin', {
                 configurable: false,
                 writable: false,
-                value: function value() {
+                value: function() {
                     // var currentWin = aWin;
                     // var topWin;
                     // try {
@@ -1866,11 +1842,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     if (topWin) {
                         return topWin;
                     } else {
-                        console.error('无top，是有问题的');
+                        console.error('无top，是有问题的')
                     }
                 }
             });
-            aWin.addEventListener('DOMContentLoaded', function () {
+            aWin.addEventListener('DOMContentLoaded', function() {
                 if (aWin.location.href.indexOf('index.html') !== -1) {
                     var actionEvent = '{"target":"null","data":"closePreLoading"}';
                     //关闭主webview的loading状态
@@ -1880,57 +1856,59 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
 
                 aWin.createIframe = function createIframe(name, targetUrl, mount, data) {
-                    // if (parent.EAPI.isIOS() && targetUrl.indexOf("192.168.1.174") != -1) {
-                    //   var topWin = aWin.getTopWin(aWin);
-                    //   if (topWin.frames[name]) {
-                    //     var childrenWin = topWin.frames[name];
-                    //     if (childrenWin.location.href.indexOf(targetUrl) == -1) {
-                    //       aWin.postMsgToIframe(name, data, targetUrl);
-                    //     } else {
-                    //       aWin.postMsgToIframe(name, data);
-                    //     }
-                    //   } else {
-                    //     var doc = topWin.document;
-                    //     var temp = "<iframe src=" + targetUrl + " name=" + name + "></iframe>";
-                    //     var mountEl = doc.querySelector(mount);
-                    //     var iframe = void 0;
-                    //     try {
-                    //       iframe = doc.createElement("<iframe src=" + targetUrl + " name=" + name + "></iframe>");
-                    //     } catch (e) {
-                    //       iframe = doc.createElement('iframe');
-                    //       iframe.name = name;
-                    //       iframe.src = targetUrl;
-                    //     }
-                    //     if (iframe) {
-                    //       mountEl.appendChild(iframe);
-                    //     }
-                    //     aWin.postMsg(name, data);
-                    //   }
-                    //   return;
-                    // }
-                    var childWin = ysp.customHelper.openWindow(targetUrl, name);
-                    var flag = false;
+                        // if (parent.EAPI.isIOS() && targetUrl.indexOf("192.168.1.174") != -1) {
+                        //   var topWin = aWin.getTopWin(aWin);
+                        //   if (topWin.frames[name]) {
+                        //     var childrenWin = topWin.frames[name];
+                        //     if (childrenWin.location.href.indexOf(targetUrl) == -1) {
+                        //       aWin.postMsgToIframe(name, data, targetUrl);
+                        //     } else {
+                        //       aWin.postMsgToIframe(name, data);
+                        //     }
+                        //   } else {
+                        //     var doc = topWin.document;
+                        //     var temp = "<iframe src=" + targetUrl + " name=" + name + "></iframe>";
+                        //     var mountEl = doc.querySelector(mount);
+                        //     var iframe = void 0;
+                        //     try {
+                        //       iframe = doc.createElement("<iframe src=" + targetUrl + " name=" + name + "></iframe>");
+                        //     } catch (e) {
+                        //       iframe = doc.createElement('iframe');
+                        //       iframe.name = name;
+                        //       iframe.src = targetUrl;
+                        //     }
+                        //     if (iframe) {
+                        //       mountEl.appendChild(iframe);
+                        //     }
+                        //     aWin.postMsg(name, data);
+                        //   }
+                        //   return;
+                        // }
+                        var childWin = ysp.customHelper.openWindow(targetUrl, name);
+                        var flag = false;
 
-                    function postMsg(data) {
-                        if (childWin.receiveMsg) {
-                            childWin.receiveMsg(data);
-                            flag = true;
+                        function postMsg(data) {
+                            if (childWin.receiveMsg) {
+                                childWin.receiveMsg(data);
+                                flag = true;
+                            }
+                            if (!flag) {
+                                setTimeout(postMsg.bind(this, data), 200);
+                            }
                         }
-                        if (!flag) {
-                            setTimeout(postMsg.bind(this, data), 200);
+                        if (data) {
+                            postMsg(data);
                         }
                     }
-                    if (data) {
-                        postMsg(data);
-                    }
-                };
-                //观察页面是否等待状态,选择合适的showLoading和hideLoading
+                    //观察页面是否等待状态,选择合适的showLoading和hideLoading
                 if (aWin.location.href.indexOf('index.html') !== -1) {
                     try {
-                        var MutationObserver = aWin.MutationObserver || aWin.WebKitMutationObserver || aWin.MozMutationObserver;
+                        var MutationObserver = aWin.MutationObserver ||
+                            aWin.WebKitMutationObserver ||
+                            aWin.MozMutationObserver;
                         var mutationObserverSupport = !!MutationObserver;
-                        var callback = function callback(records) {
-                            var someFlag = records.some(function (record) {
+                        var callback = function(records) {
+                            var someFlag = records.some(function(record) {
                                 if (record.type == "attributes") {
                                     console.log('Mutation type: ' + record.type, ', target: ', record.target.nodeName);
                                     if (record.target.tagName.toLowerCase() === 'html' && record.target.classList && record.target.classList.contains('loading')) {
@@ -1946,7 +1924,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                             'attributes': true,
                             'childList': true
                         };
-                        var docEl = doc.documentElement;
+                        var docEl = doc.documentElement
                         if (docEl) {
                             mo.observe(docEl, option);
                         }
@@ -1956,21 +1934,22 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
             }, false);
             //日历组件，Date原型方法
-            aWin.Date.prototype.isLeapYear = function () {
-                var year = this.getFullYear();
-                return 0 == year % 4 && (year % 100 != 0 || year % 400 == 0);
-            };
-            //.判断当前月份有多少天
-            aWin.Date.prototype.getDaysOfMonth = function () {
-                return new Date(this.getFullYear(), this.getMonth() + 1, 0).getDate();
-            };
-            // . 比较日期
-            aWin.Date.prototype.dateCompare = function (date) {
-                if ((typeof date === 'undefined' ? 'undefined' : _typeof(date)) != "object" || !/Date/.test(date.constructor)) thrownewError(-1, "dateCompare(date)的date参数为Date类型.");
-                var d = this.getTime() - date.getTime();
-                return d > 0 ? 1 : d == 0 ? 0 : -1;
-            };
-            //判断studio和手机上body的显示
+            aWin.Date.prototype.isLeapYear = function() {
+                    var year = this.getFullYear();
+                    return (0 == year % 4 && ((year % 100 != 0) || (year % 400 == 0)));
+                }
+                //.判断当前月份有多少天
+            aWin.Date.prototype.getDaysOfMonth = function() {
+                    return (new Date(this.getFullYear(), this.getMonth() + 1, 0)).getDate();
+                }
+                // . 比较日期
+            aWin.Date.prototype.dateCompare = function(date) {
+                    if (typeof(date) != "object" || !(/Date/.test(date.constructor)))
+                        thrownewError(-1, "dateCompare(date)的date参数为Date类型.");
+                    var d = this.getTime() - date.getTime();
+                    return d > 0 ? 1 : (d == 0 ? 0 : -1);
+                }
+                //判断studio和手机上body的显示
             var doc = window.document;
             var yspStlyeEl = doc.createElement('style');
             yspStlyeEl.setAttribute("type", "text/css");
@@ -1983,13 +1962,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         //判断是否需要跳转到登录页面, 当页面匹配不上的时候会执行该方法, 若返回值为true则跳转, 否则不跳转.
         //判断是否需要跳转的思路为: 当前未登录, 系统自动跳转到了错误提示页面,
         //此时需要提取错误提示页面的特征, 保证只有跳转到错误提示页面的时候,needToLogin的返回值才为true
-        needToLogin: function needToLogin(doc) {
+        needToLogin: function(doc) {
             return false;
         },
         //判断是否登录成功, 当页面匹配不上的时候会执行该方法, 若返回值为true则登录成功刷新页面, 否则不成功不刷新页面.
         //时机: 当登录后的页面不是登录前打开的页面时, 需要用到此方法实现跳转.
         //思路与needToLogin类似, 保证能够唯一区分该页面即可.
-        isLoginSuccess: function isLoginSuccess(doc) {
+        isLoginSuccess: function(doc) {
             return false;
         }
     });
@@ -2018,11 +1997,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         var titlesIndexs = [];
         for (var i = 0; i < titlesThs.length; i++) {
             var titleValue = _trim(titlesThs[i].textContent);
-            var someCallback = function someCallback(value, index, array) {
+            var someCallback = function(value, index, array) {
                 if (value == titleValue) {
                     return true;
                 }
-            };
+            }
             var flag = titleArgs.some(someCallback);
             if (flag) {
                 titles.push(titleValue);
@@ -2053,23 +2032,23 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
             var tds = tbodyTrs[i].querySelectorAll('td');
             for (var j = 0; j < tds.length; j++) {
-                var someCallback = function someCallback(value, index, array) {
+                var someCallback = function(value, index, array) {
                     if (value == j) {
                         return true;
                     }
-                };
+                }
                 var flag = titlesIndexs.some(someCallback);
                 if (flag) {
                     //zyt
                     if (tds[j].querySelectorAll("input[type='text']").length != 0) {
-                        item.push(tds[j].querySelector("input[type='text']").value);
+                        item.push(tds[j].querySelector("input[type='text']").value)
                     } else if (tds[j].querySelector("select")) {
                         var optionarry = [];
-                        var options = tds[j].querySelector("select").querySelectorAll("option");
+                        var options = tds[j].querySelector("select").querySelectorAll("option")
                         for (var v = 0; v < options.length; v++) {
-                            optionarry.push(options[v].textContent);
+                            optionarry.push(options[v].textContent)
                         }
-                        item.push(optionarry);
+                        item.push(optionarry)
                     } else {
                         item.push(tds[j].textContent.trim());
                     }
@@ -2080,7 +2059,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return {
             titles: titles,
             content: content
-        };
+        }
     }
     /*调用场景：字符串前后需要去除空格时调用*/
     function _trim(str) {
@@ -2094,7 +2073,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             } else {
                 var actionEvent = '{"target":"null","data":"' + type + '"}';
                 window.parent.EAPI.postMessageToNative('dispatchNativeEventToWebview', actionEvent);
-                setTimeout(function () {
+                setTimeout(function() {
                     window.parent.EAPI.back();
                 }, 1000);
             }
@@ -2118,7 +2097,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             console.error('_toPlan参赛planName类型不正确');
         }
         var aEls = elem.querySelectorAll('ul > li > a');
-        [].forEach.call(aEls, function (item, index) {
+        [].forEach.call(aEls, function(item, index) {
             if (item.textContent == operation) {
                 item.click();
                 _forceMatchModels(planName);
@@ -2134,8 +2113,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
         sessionStorage.setItem('closePreLoading-rt' + closeCount, true);
         closeCount++;
-        if (closeCount < 10) {
-            //关闭10次，确保真正关闭
+        if (closeCount < 10) { //关闭10次，确保真正关闭
             setTimeout(closePreLoading.bind(this), 1500);
         }
     }
