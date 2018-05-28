@@ -191,4 +191,165 @@ body{
     }
   }
 }
+
+
+
+/***********************************请假申请 start*************************************/
+
+.ysp-con-box{
+  background-color:#fff;
+  margin-top:10px;
+}
+
+.ysp-lists{
+    display: flex;
+  	padding:0 0.75rem;
+    justify-content: space-between;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    border-bottom: 1px solid #e6e6e6;
+    flex-wrap: wrap;
+  	color:#333;
+  &:first-child{
+    border-top: 1px solid #e6e6e6;
+  }
+  .ysp-l{
+    width:50%;
+    line-height: 2.75rem;
+    em.star{
+      display: inline-block;
+      width:6px;
+      font-style: normal;
+      font-size: @fontLarge;
+      color:#f76f49;
+  	}
+  }
+  .ysp-r{
+    position: relative;
+    text-align: right;
+    width:50%;
+    select.sel-type{
+      display: inline-block;
+      direction: rtl;
+      width: ~"-webkit- calc(100% - 22px)";
+      width: ~"-mox- calc(100% - 22px)";
+      width: ~"calc(100% - 22px)";
+      background:#fff;
+      border:none;
+      text-align: center;
+      margin:0;
+      margin-right:22px;
+      padding:0;
+      font-size: @fontBase;
+      color:#333;
+      font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei",sans-serif;
+      option{
+        direction: ltr;
+        font-size: @fontBase;
+      }
+    }
+    .ysp-li-con{
+      display: inline-block;
+      text-align: right;
+      margin-right:22px;
+    }
+    .arrow-r{
+      display: inline-block;
+      font-family: Ratchicons,sans-serif;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 2.75rem;
+    	color:#aaa;
+    	text-decoration: none;
+   	 -webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+      &:before{
+        content: "\e818";
+        position: absolute;
+        top:0;
+        right:0;
+      }
+    }
+  }
+  
+}
+  .readonly{
+    color:#999;
+  }
+
+//年假余额
+
+
+//请假原因
+.ysp-reason{
+  justify-content: initial;
+  .ysp-l{
+    width:30%;
+  }
+  .ysp-r{
+    width:70%;
+    text-align: left;
+    input.reason{
+      display: inline-block;
+      width:~"-webkit- calc(70% - 22px)";
+      width:~"-moz- calc(70% - 22px)";
+       width:~"calc(70% - 22px)";
+       border:none;
+       height:100%;
+       font-size:@fontBase;
+       background:#fff;
+        }
+  }
+}
+//附件
+.annex-box{
+  padding:10px 5% 15px;
+  .annex-tit{
+  font-size:@fontBase;
+}
+.annex-add{
+  border:1px solid #dfdfdf;
+  margin-top: 10px;
+  width:85px;
+  height:85px;
+  text-align: center;
+  line-height: 85px;
+  font-size:80px;
+  font-weight: 100;
+}
+}
+//提交/保存
+.ysp-btn-box{
+  margin:20px 5%;
+  input{
+    border:none;
+    border-radius: 5px;
+    margin:5px 0;
+    width:100%;
+    height:2.75rem;
+    line-height: 2.75rem;
+    text-align: center;
+    font-size: @fontBase;
+  }
+  .ysp-sel-btn{
+    background-color: #9AD4FA;
+    color:#fff;
+    &:hover{
+    background-color: #9AD4FA;
+    color:#fff;
+    }
+  }
+  .ysp-save-btn{
+    background-color: #fff;
+    color:#999;
+    &:hover{
+    background-color: #fff;
+    color:#999;
+    }
+  }
+}
+
+
+
+/***********************************请假申请 end*************************************/
   
