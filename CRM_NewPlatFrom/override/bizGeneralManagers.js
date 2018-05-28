@@ -666,6 +666,9 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     tableSH("branch-table", tr_minH-2);
+                  
+                  	/**点击排序*/
+                    clickThSortCommon();
                     
                 },
                 error: function () {
@@ -962,6 +965,9 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     tableSH("branch-table", tr_minH-2);
+                  
+                  	/**点击排序*/
+                    clickThSortCommon();
                     
                 },
                 error: function () {
