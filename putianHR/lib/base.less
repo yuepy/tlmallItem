@@ -12,9 +12,15 @@ body{
   background:#F8F8F8;
   position:relative;
 }
+body,div,p,h4,table,input,button,ul,li{margin:0;padding:0;}
+ul li{
+  list-style: none;
+}
+img{border:none;}
 /******************************CustomHeader组件******************************************/
 .ysp_header_wrapper{
   position: fixed;
+  z-index: 23;
   width: 100%;
   text-align: center;
   display: flex;
@@ -199,6 +205,7 @@ body{
 .ysp-con-box{
   background-color:#fff;
   margin-top:10px;
+  font-size:@fontBase;
 }
 
 .ysp-lists{
@@ -220,7 +227,7 @@ body{
       display: inline-block;
       width:6px;
       font-style: normal;
-      font-size: @fontLarge;
+      font-size: @fontMedium;
       color:#f76f49;
   	}
   }
@@ -240,12 +247,12 @@ body{
       margin:0;
       margin-right:22px;
       padding:0;
-      font-size: @fontBase;
       color:#333;
       font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei",sans-serif;
+      font-size:@fontBase;
+      overflow: hidden;
       option{
         direction: ltr;
-        font-size: @fontBase;
       }
     }
     .ysp-li-con{
@@ -257,7 +264,7 @@ body{
       display: inline-block;
       font-family: Ratchicons,sans-serif;
       font-style: normal;
-      font-size: 22px;
+      font-size: @fontLarge;
       line-height: 2.75rem;
     	color:#aaa;
     	text-decoration: none;
@@ -273,12 +280,75 @@ body{
   }
   
 }
-  .readonly{
-    color:#999;
+.readonly{
+  color:#999;
+}
+
+//请假选择后的弹窗
+.ysp-pop-box{
+  .ysp-pop-mask{
+    position: fixed;
+    z-index: 999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity: 0.4;
   }
+  .ysp-pop-con{
+    position: fixed;
+    z-index:1000;
+    width:70%;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+    background:#fff;
+    border-radius: 10px;
+    text-align: center;
+    padding:10px 0 0;
+    h4{
+      padding:0 5% 10px;
+      font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei",sans-serif;
+      font-size: @fontMedium;
+    }
+    p{
+      padding:0;
+      margin:0;
+      padding:0 5% 10px;
+      font-size: @fontBase;
+      line-height: 14px;
+    }
+    button{
+      width:100%;
+      border:none;
+      border-top: 1px solid #dfdfdf;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      height:2.75rem;
+      line-height: 2.75rem;
+      background:#fff;
+      color:#0089FF;
+      font-size: @fontMedium;
+
+    }
+  }
+  
+}
 
 //年假余额
-
+.ysp-year-holiday{
+  color:#999;
+  font-size:@fontXSmall;
+  margin-top:10px;
+  padding:0 5%;
+  strong{
+    color:#f76f49;
+    font-weight: normal;
+    font-size: @fontLarge+2;
+    padding:0 5px;
+  }
+}
 
 //请假原因
 .ysp-reason{
@@ -310,18 +380,18 @@ body{
 .annex-add{
   border:1px solid #dfdfdf;
   margin-top: 10px;
-  width:85px;
-  height:85px;
+  width:60px;
+  height:60px;
   text-align: center;
-  line-height: 85px;
-  font-size:80px;
-  font-weight: 100;
+  line-height: 60px;
+  font-size:60px;
+  color:#999;
 }
 }
 //提交/保存
 .ysp-btn-box{
   margin:20px 5%;
-  input{
+  button{
     border:none;
     border-radius: 5px;
     margin:5px 0;
@@ -329,14 +399,23 @@ body{
     height:2.75rem;
     line-height: 2.75rem;
     text-align: center;
-    font-size: @fontBase;
   }
   .ysp-sel-btn{
-    background-color: #9AD4FA;
+    background-color: #7263FD;
+    color:#fff;
+    &:hover{
+    background-color: #7263FD;
+    color:#fff;
+    }
+  }
+  &.readonly{
+    .ysp-sel-btn{
+      background-color: #9AD4FA;
     color:#fff;
     &:hover{
     background-color: #9AD4FA;
     color:#fff;
+    }
     }
   }
   .ysp-save-btn{
