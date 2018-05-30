@@ -2,10 +2,10 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control3_t1ElOC: function getData_control3_t1ElOC(elem) {},
-    doAction_uiControl5_hecK9N: function doAction_uiControl5_hecK9N(data, elem) {
+    getData_control3_t1ElOC: function (elem) {},
+    doAction_uiControl5_hecK9N: function (data, elem) {
       if (data.eventType === 'back') {
-        ysp.customHelper.backHome();
+        ysp.appMain.back();
       }
     },
     getTemplate_uiControl5_hecK9N: function getTemplate_uiControl5_hecK9N() {

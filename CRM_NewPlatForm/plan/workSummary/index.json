@@ -3,6 +3,7 @@
   "id": "workSummary",
   "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workSummery.html",
   "jsFile": "index.js",
+  "requires": {},
   "chineseName": "工作总结（工作台）",
   "description": "工作总结（工作台）",
   "controls": {
@@ -70,6 +71,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -94,6 +99,10 @@
       "location": {
         "data": {
           "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -140,11 +149,7 @@
       "fromContextId": "context82_qcPd2X",
       "fromAction": "doAction",
       "fromControlId": "control46_IeXn9y",
-      "toContexts": [
-        {
-          "toContextId": "context82_qcPd2X"
-        }
-      ]
+      "toContexts": []
     },
     "flow239_x0F0wa": {
       "fromContextId": "context82_qcPd2X",
@@ -228,14 +233,16 @@
     "page/title": {
       "contexts": {
         "context82_qcPd2X": [
-          "工作总结填写"
+          "工作总结填写",
+          "汇报给我的总结"
         ]
       }
     },
     "page/urls": {
       "contexts": {
         "context82_qcPd2X": [
-          "192.168.220.82:8080/pttlCrm/res/page/workTask/workSummery.html"
+          "192.168.220.82:8080/pttlCrm/res/page/workTask/workSummery.html",
+          "192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html"
         ]
       }
     },
@@ -291,6 +298,23 @@
             "workSummaryPlanTime",
             "workSummaryPlanTimeLable",
             "workSummaryPlanType"
+          ],
+          [
+            "changeTab",
+            "clearBtn",
+            "endTime",
+            "exportExcel",
+            "muilSelectOption",
+            "page",
+            "queryBtnSearch",
+            "searchBtn",
+            "searchHead",
+            "searchInput",
+            "selectSearch",
+            "startTime",
+            "tbody",
+            "thead",
+            "zhanKai"
           ]
         ]
       }
@@ -382,6 +406,57 @@
             "work-box",
             "work-con",
             "work-tit"
+          ],
+          [
+            "act",
+            "active",
+            "all",
+            "atme-main",
+            "bt",
+            "btn-box",
+            "clear-btn",
+            "clearfix",
+            "commpnPage",
+            "con-table",
+            "content",
+            "crossbar",
+            "date",
+            "end",
+            "export",
+            "form-control",
+            "head-bottom",
+            "head-center",
+            "header",
+            "icon",
+            "m-body",
+            "main",
+            "mask",
+            "more",
+            "no-under",
+            "none",
+            "option-box",
+            "option-btn",
+            "option-con",
+            "option-l",
+            "option-list",
+            "option-r",
+            "option-r-c",
+            "out",
+            "outstore",
+            "pagination",
+            "read",
+            "search",
+            "search-btn",
+            "select",
+            "skip",
+            "skip-num",
+            "skip-right-icon",
+            "skip_count",
+            "skip_right_goto",
+            "start",
+            "sure-btn",
+            "tags-table",
+            "view"
           ]
         ]
       }
@@ -450,6 +525,40 @@
             "LI/LABEL/I",
             "LI/LABEL/INPUT-checkbox",
             "UL/LI/LABEL"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/SECTION",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SECTION/DIV",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "SECTION/DIV/A",
+            "SECTION/DIV/DIV",
+            "SECTION/DIV/INPUT-button",
+            "SECTION/DIV/INPUT-text",
+            "SECTION/DIV/SELECT",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/A",
+            "UL/LI/A",
+            "UL/LI/INPUT-number",
+            "UL/LI/SPAN"
           ]
         ]
       }

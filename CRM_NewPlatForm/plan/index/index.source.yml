@@ -1,0 +1,37 @@
+getData_control134_Atp4bh: >
+  ;if (!elem) {
+    return;
+  }
+
+  return ysp.customHelper.statusManager &&
+  ysp.customHelper.statusManager.currentStatus;
+doAction_uiControl1_5x8ShJ: ''
+getTemplate_uiControl1_5x8ShJ: |+
+  import {Component} from 'react';
+  import {StatusTip} from 'ysp-custom-components';
+  export default class extends Component{
+    constructor(props){
+      super(props);
+    }
+    render(){
+      const status = this.props.customData;
+      return (
+        <StatusTip
+          status = {status}
+          />
+      )
+    }
+  }
+
+getTemplate_uiControl63_ax7qQG: "import {Component} from 'react';\nexport default class extends Component{\n  onClick(e){\n    var _this = this;\n    if(e.target.nodeName != \"LI\"){\n      e.target = e.target.children\n    }\n    var handler = _this.props.customHandler;\n    if(handler){\n      handler({\n        data:e.target.dataset.url,\n        eventType:'click'\n      })\n    }\n  }\n  render(){\n    var _this = this;\n    var Menu = this.props.customData;\n    return(\n    \t<div>\n        <ul onClick={_this.onClick.bind(_this)}>\n \_ \_ \_ \_ \_<span>工作台</span>\n          {Menu && Menu.map((item,index)=>{\n            return(\n              <li data-url={item.url}>{item.name}</li>\n            )\n          })}\n        </ul>\n      </div>\n    )\n  }\n}"
+getData_control321_P7fT3E: |-
+  ;if(!elem){
+    return false;
+  }
+  var Menus = ysp.customHelper.getTargetMenus(["工作台","拜访总览","@我的报告","工作总结"])
+  return Menus
+doAction_uiControl63_ax7qQG: |-
+  if(data.eventType == 'click'){
+    var src = data.dataCustom;
+    elem.ownerDocument.defaultView.open(src);
+  }

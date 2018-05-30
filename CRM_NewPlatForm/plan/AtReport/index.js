@@ -2,9 +2,9 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control8_Nd3FGK: function getData_control8_Nd3FGK(elem) {},
-    doAction_uiControl7_0StoDe: function doAction_uiControl7_0StoDe(data, elem) {
-      data.eventType == 'back' ? ysp.customHelper.backHome() : '我回不去';
+    getData_control8_Nd3FGK: function (elem) {},
+    doAction_uiControl7_0StoDe: function (data, elem) {
+      data.eventType == 'back' ? ysp.appMain.back() : '我回不去';
     },
     getTemplate_uiControl7_0StoDe: function getTemplate_uiControl7_0StoDe() {
       var selfTemplate = 'import {Component} from \'react\'; \nimport {CustomHeader} from \'ysp-custom-components\';\nexport default class extends Component{\n   \n   render = () => {\n       let _this = this;\n       return (\n         <CustomHeader \n           data={{centerText:"\u62DC\u8BBF\u7BA1\u7406",rightText:"\u7B5B\u9009"}} \n           backIsShow={true} \n           back={()=>{ \n              let handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  eventType: \'back\'\n                });\n              }\n           }} \n           filterIsShow={false} \n           filter={()=>{console.info("header filter ...")}}/>\n       );\n   }\n}\n';
