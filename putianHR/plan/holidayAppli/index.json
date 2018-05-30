@@ -121,6 +121,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -169,6 +173,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -203,6 +211,10 @@
       "location": {
         "data": {
           "tagName": "TEXTAREA"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -262,6 +274,10 @@
         "data": {
           "tagName": "TBODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -293,6 +309,10 @@
         "data": {
           "tagName": "TBODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -323,6 +343,33 @@
       "monitored": false,
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control12_Vsnxkq": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.PSLEVEL1SCROLLAREABODY TABLE.PSGROUPBOXWBO TABLE.PSGROUPBOX TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[4]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control12_Vsnxkq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -335,7 +382,8 @@
         "control16_kr744n",
         "control17_3uqe6S",
         "control18_zb7y87",
-        "control19_c9rs44"
+        "control19_c9rs44",
+        "control12_Vsnxkq"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -470,6 +518,21 @@
           }
         },
         {
+          "id": "uiControl12_wy6H6W",
+          "controlId": "control12_Vsnxkq",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl12_wy6H6W",
+                "onGetTemplate": "getTemplate_uiControl12_wy6H6W"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl17_xcHdpi",
           "controlId": "control17_3uqe6S",
           "display": {
@@ -533,7 +596,8 @@
           "192.168.220.110/psp/ps_5/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_001_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455119057283242&IsFolder=false",
           "192.168.220.110/psp/ps_9/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_001_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455119057283242&IsFolder=false",
           "192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_001_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455119057283242&IsFolder=false",
-          "192.168.220.110/psp/ps_3/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_001_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455119057283242&IsFolder=false"
+          "192.168.220.110/psp/ps_3/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_001_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455119057283242&IsFolder=false",
+          "192.168.220.110/psp/ps_6/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_001_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455119057283242&IsFolder=false"
         ]
       }
     },

@@ -230,11 +230,24 @@ img{border:none;}
       font-size: @fontMedium;
       color:#f76f49;
   	}
+    //配偶
+    // .mate-name{
+    //   display: inline-block;
+    // }
+    // .mate{
+    //   border:none;
+    //   height:100%;
+    //   width: ~"-webkit- calc(100% - 60px)";
+    //   width: ~"-mox- calc(100% - 60px)";
+    //   width: ~"calc(100% - 60px)";
+    //   display: inline-block;
+    //   font-size:@fontBase;
+    // }
   }
   .ysp-r{
     position: relative;
     text-align: right;
-    width:50%;
+    width:50%;   
     select.sel-type{
       display: inline-block;
       direction: rtl;
@@ -266,6 +279,7 @@ img{border:none;}
       font-style: normal;
       font-size: @fontLarge;
       line-height: 2.75rem;
+      margin-right:22px;
     	color:#aaa;
     	text-decoration: none;
    	 -webkit-font-smoothing: antialiased;
@@ -277,6 +291,33 @@ img{border:none;}
         right:0;
       }
     }
+  }
+  //紧急联系人
+  .mate-phone{
+    text-align: left;
+     //单选切换按钮
+    .switch{
+      float: right;
+      margin-top:0.4rem;
+    }
+    .switch .switch-label{
+      background:#fff;
+    }
+    .switch .switch-label:before{
+      background: #aaa;
+    }
+    .switch input:checked+.switch-label:before{
+      background:#4CD664;
+    }
+    .switch input:checked+.switch-label, .switch input:checked+.switch-label:after{
+      background:#fff;
+    }
+    
+    .switch .switch-label:after{
+      background: #fff;
+    }
+  
+    
   }
   
 }
@@ -359,16 +400,19 @@ img{border:none;}
   .ysp-r{
     width:70%;
     text-align: left;
-    input.reason{
-      display: inline-block;
-      width:~"-webkit- calc(70% - 22px)";
-      width:~"-moz- calc(70% - 22px)";
-       width:~"calc(70% - 22px)";
-       border:none;
-       height:100%;
-       font-size:@fontBase;
-       background:#fff;
-        }
+    // .reason{
+    //   display: inline-block;
+    //   width:~"-webkit- calc(70% - 22px)";
+    //   width:~"-moz- calc(70% - 22px)";
+    //    width:~"calc(70% - 22px)";
+    //    font-size:@fontBase;
+    //     }
+    textarea.reason{
+      height:2.65rem;
+      border:none;
+      background:none;
+      resize: none;
+    }
   }
 }
 //附件

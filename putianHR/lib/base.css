@@ -265,6 +265,7 @@ img {
   font-style: normal;
   font-size: 16px;
   line-height: 2.75rem;
+  margin-right: 22px;
   color: #aaa;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
@@ -275,6 +276,29 @@ img {
   position: absolute;
   top: 0;
   right: 0;
+}
+.ysp-lists .mate-phone {
+  text-align: left;
+}
+.ysp-lists .mate-phone .switch {
+  float: right;
+  margin-top: 0.4rem;
+}
+.ysp-lists .mate-phone .switch .switch-label {
+  background: #fff;
+}
+.ysp-lists .mate-phone .switch .switch-label:before {
+  background: #aaa;
+}
+.ysp-lists .mate-phone .switch input:checked + .switch-label:before {
+  background: #4CD664;
+}
+.ysp-lists .mate-phone .switch input:checked + .switch-label,
+.ysp-lists .mate-phone .switch input:checked + .switch-label:after {
+  background: #fff;
+}
+.ysp-lists .mate-phone .switch .switch-label:after {
+  background: #fff;
 }
 .readonly {
   color: #999;
@@ -347,15 +371,11 @@ img {
   width: 70%;
   text-align: left;
 }
-.ysp-reason .ysp-r input.reason {
-  display: inline-block;
-  width: -webkit- calc(70% - 22px);
-  width: -moz- calc(70% - 22px);
-  width: calc(70% - 22px);
+.ysp-reason .ysp-r textarea.reason {
+  height: 2.65rem;
   border: none;
-  height: 100%;
-  font-size: 14px;
-  background: #fff;
+  background: none;
+  resize: none;
 }
 .annex-box {
   padding: 10px 5% 15px;
