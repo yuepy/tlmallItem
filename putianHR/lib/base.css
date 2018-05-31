@@ -66,6 +66,28 @@ img {
 .ysp_header_wrapper > span:nth-child(3) > span:last-child {
   margin-left: .3rem;
 }
+.ysp_header_wrapper .ysp_header_back_icon {
+  display: inline-block;
+  font-family: Ratchicons, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 2.75rem;
+  margin-left: 24px;
+  color: #7862FF;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ysp_header_wrapper .ysp_header_back_icon:before {
+  content: "\e818";
+  position: absolute;
+  top: 0;
+  left: 2.5%;
+  transform: rotate(180deg);
+}
+.ysp_header_wrapper .ysp_header_back {
+  color: #7862FF;
+}
 .ysp_header_wrapper .ysp-header-edit {
   display: inline-block;
   width: 50px;
@@ -229,14 +251,38 @@ img {
   font-size: 15px;
   color: #f76f49;
 }
+.ysp-lists .ysp-l .mate-name {
+  width: -webkit- calc(100% - 70px);
+  width: -mox- calc(100% - 70px);
+  width: calc(100% - 70px);
+  height: 100%;
+  border: none;
+  text-align: right;
+}
 .ysp-lists .ysp-r {
   position: relative;
   text-align: right;
   width: 50%;
 }
+.ysp-lists .ysp-r input {
+  width: -webkit- calc(100% - 22px);
+  width: -mox- calc(100% - 22px);
+  width: calc(100% - 22px);
+  color: #666;
+  font-size: 14px;
+  border: none;
+  text-align: right;
+  overflow-x: sroll;
+}
+.ysp-lists .ysp-r input.date-time {
+  height: 2.6rem;
+  margin-right: 42px;
+}
+.ysp-lists .ysp-r input[disabled].date-time {
+  background: #fff;
+}
 .ysp-lists .ysp-r select.sel-type {
   display: inline-block;
-  direction: rtl;
   width: -webkit- calc(100% - 22px);
   width: -mox- calc(100% - 22px);
   width: calc(100% - 22px);
@@ -250,6 +296,7 @@ img {
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", sans-serif;
   font-size: 14px;
   overflow: hidden;
+  direction: rtl;
 }
 .ysp-lists .ysp-r select.sel-type option {
   direction: ltr;
@@ -277,12 +324,20 @@ img {
   top: 0;
   right: 0;
 }
-.ysp-lists .mate-phone {
-  text-align: left;
+.ysp-lists .ysp-r .quxian {
+  vertical-align: top;
+  margin-top: 0.9rem;
+}
+.ysp-lists .ysp-r .address-btn {
+  margin: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 0.7rem;
+  cursor: pointer;
 }
 .ysp-lists .mate-phone .switch {
   float: right;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
 }
 .ysp-lists .mate-phone .switch .switch-label {
   background: #fff;
@@ -362,20 +417,26 @@ img {
   padding: 0 5px;
 }
 .ysp-reason {
-  justify-content: initial;
+  padding: 10px 5%;
 }
-.ysp-reason .ysp-l {
-  width: 30%;
+.ysp-reason .ysp-big-tit em.star {
+  display: inline-block;
+  width: 6px;
+  font-style: normal;
+  font-size: 15px;
+  color: #f76f49;
 }
-.ysp-reason .ysp-r {
-  width: 70%;
-  text-align: left;
-}
-.ysp-reason .ysp-r textarea.reason {
-  height: 2.65rem;
+.ysp-reason textarea.reason {
+  margin-top: 10px;
+  min-height: auto;
+  color: #666;
+  font-size: 14px;
   border: none;
-  background: none;
   resize: none;
+  padding: 0;
+}
+.ysp-reason textarea.reason:focus {
+  color: #666;
 }
 .annex-box {
   padding: 10px 5% 15px;
