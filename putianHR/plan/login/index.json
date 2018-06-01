@@ -1,18 +1,19 @@
 {
   "version": "0.1",
-  "id": "login",
-  "targetURL": "http://192.168.220.110/psp/ps/?cmd=login&languageCd=ZHS&",
+  "id": "Login",
+  "targetURL": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "jsFile": "index.js",
   "requires": {
     "menu": "../menu/index.json"
   },
   "chineseName": "登录",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
-    "control0_vpzRpG": {
+    "control0_JcsEtu": {
       "location": {
         "data": {
-          "tagName": "DIV"
+          "tagName": "IMG"
         },
         "userData": {
           "data": [],
@@ -20,88 +21,61 @@
         },
         "locators": [
           {
-            "id": "@id/word",
+            "id": "@alt",
             "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]/DIV[1]",
-              "descendant::FORM[@id=\"login\"]/DIV[1]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.signonMain"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control0_vpzRpG"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control1_hcvnri": {
-      "location": {
-        "data": {
-          "tagName": "SPAN"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
             "value": {
               "text": [
-                "用户 ID"
-              ],
-              "visText": [
-                "用户 ID"
+                "Oracle PeopleSoft 登录"
               ]
             }
           },
           {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "Oracle PeopleSoft 登录"
+              ]
+            }
+          },
+          {
+            "id": "img/@src",
+            "prob": 2,
+            "value": {
+              "pathname": "/ps/images/Header.png"
+            }
+          },
+          {
             "id": "@id/word",
-            "prob": 4,
+            "prob": 2,
             "value": [
-              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//SPAN[@id=\"ptLabelUserid\"]",
-              "descendant::FORM[@id=\"login\"]//SPAN[@id=\"ptLabelUserid\"]",
-              "descendant::SPAN[@id=\"ptLabelUserid\"]"
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]/DIV[1]/IMG[1]",
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//IMG",
+              "descendant::FORM[@id=\"login\"]//IMG"
             ]
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "ordinal": [
-              0,
-              3
-            ],
-            "value": "DIV.signonMain DIV.ps_signinentry SPAN.ps_label-show"
+            "value": "DIV.signonMain IMG.ps-staticimg"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[2]/SPAN[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/IMG[1]"
           }
         ]
       },
-      "roles": "element",
-      "content": true,
+      "events": {
+        "onGetData": "getData_control0_JcsEtu"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
       "monitored": false,
       "frameXPath": "",
-      "componentType": "content"
+      "componentType": "custom"
     },
-    "control2_SbFsB1": {
+    "control1_aTUy6m": {
       "location": {
         "data": {
           "tagName": "INPUT"
@@ -176,60 +150,7 @@
       "frameXPath": "",
       "componentType": "textbox"
     },
-    "control3_wpa3fV": {
-      "location": {
-        "data": {
-          "tagName": "SPAN"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "密码"
-              ],
-              "visText": [
-                "密码"
-              ]
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 4,
-            "value": [
-              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//SPAN[@id=\"ptLabelPassword\"]",
-              "descendant::FORM[@id=\"login\"]//SPAN[@id=\"ptLabelPassword\"]",
-              "descendant::SPAN[@id=\"ptLabelPassword\"]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              1,
-              3
-            ],
-            "value": "DIV.signonMain DIV.ps_signinentry SPAN.ps_label-show"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[4]/SPAN[1]"
-          }
-        ]
-      },
-      "roles": "element",
-      "content": true,
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "content"
-    },
-    "control4_uPKiaU": {
+    "control2_nD1HTo": {
       "location": {
         "data": {
           "tagName": "INPUT"
@@ -304,7 +225,7 @@
       "frameXPath": "",
       "componentType": "textbox"
     },
-    "control5_zQnTnx": {
+    "control3_JAUqTJ": {
       "location": {
         "data": {
           "tagName": "INPUT"
@@ -370,54 +291,42 @@
     }
   },
   "contexts": {
-    "context0_31wf4m": {
+    "context4_EIQlNA": {
       "controls": [
-        "control0_vpzRpG",
-        "control1_hcvnri",
-        "control2_SbFsB1",
-        "control3_wpa3fV",
-        "control4_uPKiaU",
-        "control5_zQnTnx"
+        "control0_JcsEtu",
+        "control1_aTUy6m",
+        "control2_nD1HTo",
+        "control3_JAUqTJ"
       ],
       "anchors": [],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow0_ZTqeBT": {
+    "flow0_fAqXMC": {
       "toContexts": [
         {
-          "toContextId": "context0_31wf4m"
+          "toContextId": "context4_EIQlNA"
         }
       ]
     },
-    "flow1_JJ7UoV": {
-      "fromContextId": "context0_31wf4m",
+    "flow1_z19mPh": {
+      "fromContextId": "context4_EIQlNA",
       "fromAction": "click",
-      "fromControlId": "control2_SbFsB1",
+      "fromControlId": "control1_aTUy6m",
       "toContexts": [
         {
-          "toContextId": "context0_31wf4m"
+          "toContextId": "context4_EIQlNA"
         }
       ]
     },
-    "flow2_dB90uc": {
-      "fromContextId": "context0_31wf4m",
+    "flow2_J2KSFZ": {
+      "fromContextId": "context4_EIQlNA",
       "fromAction": "click",
-      "fromControlId": "control4_uPKiaU",
+      "fromControlId": "control3_JAUqTJ",
       "toContexts": [
         {
-          "toContextId": "context0_31wf4m"
-        }
-      ]
-    },
-    "flow3_aBZmrZ": {
-      "fromContextId": "context0_31wf4m",
-      "fromAction": "click",
-      "fromControlId": "control5_zQnTnx",
-      "toContexts": [
-        {
-          "toContextId": "context0_31wf4m"
+          "toContextId": "context4_EIQlNA"
         },
         {
           "toContextId": "context1_obTFlR",
@@ -427,38 +336,27 @@
     }
   },
   "pages": {
-    "page0_xR1c03": {
-      "contextId": "context0_31wf4m",
+    "page4_DevrqP": {
+      "contextId": "context4_EIQlNA",
       "layout": [
         {
-          "id": "uiControl0_uBD71x",
-          "controlId": "control0_vpzRpG",
+          "id": "uiControl0_gmP1R2",
+          "controlId": "control0_JcsEtu",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl0_uBD71x",
-                "onGetTemplate": "getTemplate_uiControl0_uBD71x"
+                "onDoAction": "doAction_uiControl0_gmP1R2",
+                "onGetTemplate": "getTemplate_uiControl0_gmP1R2"
               }
             }
           }
         },
         {
-          "id": "uiControl1_EyE30R",
-          "controlId": "control1_hcvnri",
-          "display": {
-            "adapterId": "content",
-            "type": "content",
-            "adapter": {
-              "templateType": ""
-            }
-          }
-        },
-        {
-          "id": "uiControl2_waagd1",
-          "controlId": "control2_SbFsB1",
+          "id": "uiControl1_WQIMRg",
+          "controlId": "control1_aTUy6m",
           "display": {
             "adapterId": "textbox",
             "type": "textbox",
@@ -468,19 +366,8 @@
           }
         },
         {
-          "id": "uiControl3_3QtqlP",
-          "controlId": "control3_wpa3fV",
-          "display": {
-            "adapterId": "content",
-            "type": "content",
-            "adapter": {
-              "templateType": ""
-            }
-          }
-        },
-        {
-          "id": "uiControl4_bnDMeF",
-          "controlId": "control4_uPKiaU",
+          "id": "uiControl2_QwGgdR",
+          "controlId": "control2_nD1HTo",
           "display": {
             "adapterId": "passwordbox",
             "type": "passwordbox",
@@ -490,8 +377,8 @@
           }
         },
         {
-          "id": "uiControl5_hhDxbQ",
-          "controlId": "control5_zQnTnx",
+          "id": "uiControl3_EX30I6",
+          "controlId": "control3_JAUqTJ",
           "display": {
             "adapterId": "clickable",
             "type": "button",
@@ -506,23 +393,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context0_31wf4m": [
+        "context4_EIQlNA": [
           "Oracle PeopleSoft 登录"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context0_31wf4m": [
-          "192.168.220.110/psp/ps/?cmd=login&languageCd=ZHS&",
-          "192.168.220.110/psp/ps/?cmd=login",
+        "context4_EIQlNA": [
           "192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context0_31wf4m": [
+        "context4_EIQlNA": [
           [
             "accessible",
             "browsercheck_error",
@@ -551,7 +436,7 @@
     },
     "page/classes": {
       "contexts": {
-        "context0_31wf4m": [
+        "context4_EIQlNA": [
           [
             "ps-button",
             "ps-link",
@@ -573,7 +458,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context0_31wf4m": [
+        "context4_EIQlNA": [
           [
             "-/-/DIV",
             "-/-/SCRIPT",

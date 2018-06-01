@@ -40,13 +40,13 @@
       ]
     },
     {
-      "title": "login",
-      "url": "adapter://putianHR/plan/login/index.json",
+      "title": "Login",
+      "url": "adapter://putianHR/plan/Login/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/\\?cmd=login&languageCd=ZHS&"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout"
       ],
       "demo": [
-        "http://192.168.220.110/psp/ps/?cmd=login&languageCd=ZHS&"
+        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
       ]
     }
   ],
@@ -54,5 +54,5 @@
   "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "scope": "putianHR",
   "start_url": "enterplorer://putianHR/local/index.html",
-  "update_time": 1527754471725
+  "update_time": 1527834653208
 }
