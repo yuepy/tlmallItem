@@ -353,3 +353,37 @@ body{
 
 /***********************************请假申请 end*************************************/
   
+/*******************员工履历表（员工自助）start***************************/
+@A2A2A2:#A2A2A2;
+@E7E7E7:#E7E7E7;
+.ysp-baseInfo-tt{
+  >p{
+    margin:0;
+    span{
+      color: @A2A2A2;
+      font-size: @fontBase;
+    }
+  }
+}
+.ysp-baseInfo-detail{
+  width:100%;
+  .ysp-baseInfo-detailList{
+    border:1px solid @E7E7E7;
+    margin:0 auto;
+    overflow: hidden;
+    >div{
+      margin:0;
+      float: left;   
+      width: 24%;
+      border-bottom:1px solid @E7E7E7;
+      border-right:1px solid @E7E7E7;
+      text-align: center;
+      font-size:13px;
+    }
+    >div:nth-child(4),div:nth-child(8){
+      width:27%;
+      border-right:0;
+    }
+  }
+}
+/*******************员工履历表（员工自助）end***************************/

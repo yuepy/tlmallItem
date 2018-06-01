@@ -5,19 +5,321 @@
   "jsFile": "index.js",
   "chineseName": "员工履历表",
   "description": "",
-  "controls": {},
+  "controls": {
+    "control12_mTTkVE": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"HPS_RSM_SS\"]//TABLE[@id=\"ACE_width\"]//SPAN[@id=\"HPS_RSM_WRK_PAGE_TITLE\"]",
+              "descendant::TABLE[@id=\"ACE_width\"]//SPAN[@id=\"HPS_RSM_WRK_PAGE_TITLE\"]",
+              "descendant::SPAN[@id=\"HPS_RSM_WRK_PAGE_TITLE\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ps_pspagecontainer TABLE.PSPAGECONTAINER SPAN.PAPAGETITLE"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/DIV[1]/SPAN[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              68,
+              101,
+              144
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control12_mTTkVE"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control15_TT4EPb": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::TABLE[@id=\"ACE_width\"]//DIV[@id=\"hpsResume\"]//TABLE[@id=\"BASE\"]",
+              "descendant::DIV[@id=\"hpsResume\"]//TABLE[@id=\"BASE\"]",
+              "descendant::TABLE[@id=\"BASE\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[9]/TD[2]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control15_TT4EPb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control17_MQJlnO": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"HPS_RSM_SS\"]//TABLE[@id=\"ACE_width\"]//DIV[@id=\"hpsResume\"]",
+              "descendant::TABLE[@id=\"ACE_width\"]//DIV[@id=\"hpsResume\"]",
+              "descendant::DIV[@id=\"hpsResume\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[9]/TD[2]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control17_MQJlnO"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control18_ysLBGm": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"HPS_RSM_SS\"]//TABLE[@id=\"ACE_width\"]//DIV[@id=\"PSTABNBO\"]/TABLE[1]/TBODY[1]/TR[1]",
+              "descendant::FORM[@id=\"HPS_RSM_SS\"]//TABLE[@id=\"ACE_width\"]//DIV[@id=\"PSTABNBO\"]//TR",
+              "descendant::TABLE[@id=\"ACE_width\"]//DIV[@id=\"PSTABNBO\"]//TR",
+              "descendant::DIV[@id=\"PSTABNBO\"]//TR"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[7]/TD[2]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control18_ysLBGm"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
+    }
+  },
   "contexts": {
     "context2_UAeaAc": {
-      "controls": [],
+      "controls": [
+        "control12_mTTkVE",
+        "control15_TT4EPb",
+        "control17_MQJlnO",
+        "control18_ysLBGm"
+      ],
       "anchors": [],
       "urlAnchor": []
     }
   },
-  "flows": {},
+  "flows": {
+    "flow10_M4VX7Q": {
+      "toContexts": [
+        {
+          "toContextId": "context2_UAeaAc"
+        }
+      ]
+    },
+    "flow11_LSkFWH": {
+      "fromContextId": "context2_UAeaAc",
+      "fromAction": "doAction",
+      "fromControlId": "control12_mTTkVE",
+      "toContexts": [
+        {
+          "toContextId": "context2_UAeaAc"
+        }
+      ]
+    },
+    "flow13_EJJEn6": {
+      "fromContextId": "context2_UAeaAc",
+      "fromAction": "doAction",
+      "fromControlId": "control18_ysLBGm",
+      "toContexts": [
+        {
+          "toContextId": "context2_UAeaAc"
+        }
+      ]
+    }
+  },
   "pages": {
     "page2_tXKODm": {
       "contextId": "context2_UAeaAc",
-      "layout": []
+      "layout": [
+        {
+          "id": "uiControl12_QX7c7e",
+          "controlId": "control12_mTTkVE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl12_QX7c7e",
+                "onGetTemplate": "getTemplate_uiControl12_QX7c7e"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl17_xvQ3Mh",
+          "display": {
+            "type": "card",
+            "adapterId": "card",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl17_xvQ3Mhheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl17_xvQ3Mhbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl16_pvBLnV",
+                  "controlId": "control15_TT4EPb",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl16_pvBLnV",
+                        "onGetTemplate": "getTemplate_uiControl16_pvBLnV"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl17_xvQ3Mhfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl19_3GFMBU",
+          "controlId": "control18_ysLBGm",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl19_3GFMBU",
+                "onGetTemplate": "getTemplate_uiControl19_3GFMBU"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl18_pZFXoU",
+          "controlId": "control17_MQJlnO",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl18_pZFXoU",
+                "onGetTemplate": "getTemplate_uiControl18_pZFXoU"
+              }
+            }
+          }
+        }
+      ]
     }
   },
   "matchers": {
@@ -31,7 +333,9 @@
     "page/urls": {
       "contexts": {
         "context2_UAeaAc": [
-          "192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_RSM_SS.GBL?PORTALPARAM_PTCNAV=HPS_RSM_SS&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_HR_04_NEW&EOPP.SCLabel=TL_HR_04_NEW&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_HR_04_NEW.ADMN_S201802281349316939298684&IsFolder=false"
+          "192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_RSM_SS.GBL?PORTALPARAM_PTCNAV=HPS_RSM_SS&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_HR_04_NEW&EOPP.SCLabel=TL_HR_04_NEW&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_HR_04_NEW.ADMN_S201802281349316939298684&IsFolder=false",
+          "192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_RSM_SS.GBL?PORTALPARAM_PTCNAV=HPS_RSM_SS&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_HR_04_NEW&EOPP.SCLabel=TL_HR_04_NEW&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_HR_04_NEW.ADMN_S201802281349316939298684&IsFolder=false",
+          "192.168.220.110/psp/ps_3/EMPLOYEE/HRMS/c/HPS_MENU.HPS_RSM_SS.GBL?PORTALPARAM_PTCNAV=HPS_RSM_SS&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_HR_04_NEW&EOPP.SCLabel=TL_HR_04_NEW&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_HR_04_NEW.ADMN_S201802281349316939298684&IsFolder=false"
         ]
       }
     },
