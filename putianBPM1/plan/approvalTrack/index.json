@@ -19,7 +19,8 @@
     "departure": "../departure/index.json",
     "branchRelease": "../branchRelease/index.json",
     "pricePolicy": "../pricePolicy/index.json",
-    "goodBargain": "../goodBargain/index.json"
+    "goodBargain": "../goodBargain/index.json",
+    "PendingTask": "../PendingTask/index.json"
   },
   "chineseName": "审批轨迹",
   "description": "",
@@ -206,6 +207,28 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>"
+    },
+    "control188_Pz2Hxn": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control188_Pz2Hxn"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -215,7 +238,8 @@
         "control12_35Zg9R",
         "control37_PsrEre",
         "control43_7cv77t",
-        "control7_twMFdO"
+        "control7_twMFdO",
+        "control188_Pz2Hxn"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -351,6 +375,24 @@
           "toModelId": "approvalTrack"
         }
       ]
+    },
+    "flow147_CuMcp8": {
+      "fromContextId": "context7_6oqdXk",
+      "fromAction": "doAction",
+      "fromControlId": "control188_Pz2Hxn",
+      "toContexts": [
+        {
+          "toContextId": "context7_6oqdXk"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
     }
   },
   "pages": {
@@ -431,6 +473,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl181_WUQwtb",
+          "controlId": "control188_Pz2Hxn",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl181_WUQwtb",
+                "onGetTemplate": "getTemplate_uiControl181_WUQwtb"
+              }
+            }
+          }
         }
       ]
     }
@@ -467,7 +524,8 @@
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&monthChange",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&goodBargain",
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&pricePolicy"
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&pricePolicy",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&processForm"
         ],
         "context8_ddpRhS": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861",
