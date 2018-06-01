@@ -5,6 +5,7 @@
   var utils = ysp.utils;
   ysp.customHelper = {};
   top.date="";
+  top.click1Status=false;
   utils.extend(ysp.customHelper, {
     /* 适配中定制的公共代码放在这里 */
 
@@ -31,6 +32,7 @@
       if(tblpstabs&&tblpstabs.querySelectorAll("a")[1].textContent!=="调休假余额查询"){
         tblpstabs.querySelectorAll("a")[1].click();
       }
+      
     },
 
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
