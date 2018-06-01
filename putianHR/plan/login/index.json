@@ -285,9 +285,121 @@
       },
       "intendedRole": "button",
       "roles": "element,button",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "button"
+    },
+    "control4_izATG5": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "用户 ID"
+              ],
+              "visText": [
+                "用户 ID"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//SPAN[@id=\"ptLabelUserid\"]/LABEL[1]",
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//SPAN[@id=\"ptLabelUserid\"]//LABEL",
+              "descendant::FORM[@id=\"login\"]//SPAN[@id=\"ptLabelUserid\"]//LABEL",
+              "descendant::SPAN[@id=\"ptLabelUserid\"]//LABEL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.signonMain DIV.ps_signinentry SPAN.ps_label-show LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[2]/SPAN[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "content"
+    },
+    "control5_5kAZZr": {
+      "location": {
+        "data": {
+          "tagName": "LABEL"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "密码"
+              ],
+              "visText": [
+                "密码"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//SPAN[@id=\"ptLabelPassword\"]/LABEL[1]",
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//SPAN[@id=\"ptLabelPassword\"]//LABEL",
+              "descendant::FORM[@id=\"login\"]//SPAN[@id=\"ptLabelPassword\"]//LABEL",
+              "descendant::SPAN[@id=\"ptLabelPassword\"]//LABEL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "DIV.signonMain DIV.ps_signinentry SPAN.ps_label-show LABEL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/DIV[1]/DIV[4]/SPAN[1]/LABEL[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "content"
     }
   },
   "contexts": {
@@ -296,7 +408,9 @@
         "control0_JcsEtu",
         "control1_aTUy6m",
         "control2_nD1HTo",
-        "control3_JAUqTJ"
+        "control3_JAUqTJ",
+        "control4_izATG5",
+        "control5_5kAZZr"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -355,11 +469,33 @@
           }
         },
         {
+          "id": "uiControl4_19fRnT",
+          "controlId": "control4_izATG5",
+          "display": {
+            "adapterId": "content",
+            "type": "content",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
           "id": "uiControl1_WQIMRg",
           "controlId": "control1_aTUy6m",
           "display": {
             "adapterId": "textbox",
             "type": "textbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl5_Bl9wam",
+          "controlId": "control5_5kAZZr",
+          "display": {
+            "adapterId": "content",
+            "type": "content",
             "adapter": {
               "templateType": ""
             }
