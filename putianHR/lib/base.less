@@ -12,9 +12,15 @@ body{
   background:#F8F8F8;
   position:relative;
 }
+body,div,p,h4,table,input,button,ul,li{margin:0;padding:0;}
+ul li{
+  list-style: none;
+}
+img{border:none;}
 /******************************CustomHeader组件******************************************/
 .ysp_header_wrapper{
   position: fixed;
+  z-index: 23;
   width: 100%;
   text-align: center;
   display: flex;
@@ -55,6 +61,28 @@ body{
     > span:last-child{
         margin-left: .3rem;
     }
+  }
+  .ysp_header_back_icon{
+    display: inline-block;
+      font-family: Ratchicons,sans-serif;
+      font-style: normal;
+      font-size: @fontLarge;
+      line-height: 2.75rem;
+    	margin-left: 24px;
+    	color:#7862FF;
+    	text-decoration: none;
+   	 -webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+      &:before{
+        content: "\e818";
+        position: absolute;
+        top:0;
+        left:2.5%;
+        transform: rotate(180deg);
+      }
+  }
+  .ysp_header_back{
+    color:#7862FF;
   }
   .ysp-header-edit{
     display: inline-block;
@@ -199,6 +227,7 @@ body{
 .ysp-con-box{
   background-color:#fff;
   margin-top:10px;
+  font-size:@fontBase;
 }
 
 .ysp-lists{
@@ -220,17 +249,44 @@ body{
       display: inline-block;
       width:6px;
       font-style: normal;
-      font-size: @fontLarge;
+      font-size: @fontMedium;
       color:#f76f49;
   	}
+    //配偶姓名
+      //紧急联系人
+    .mate-name{
+      width: ~"-webkit- calc(100% - 70px)";
+      width: ~"-mox- calc(100% - 70px)";
+      width: ~"calc(100% - 70px)";
+      height:100%;
+      border:none;
+      text-align: right;
+    }
   }
   .ysp-r{
     position: relative;
     text-align: right;
     width:50%;
+    input{
+      width: ~"-webkit- calc(100% - 22px)";
+      width: ~"-mox- calc(100% - 22px)";
+      width: ~"calc(100% - 22px)";
+      color:#666;
+      font-size:@fontBase;
+      border:none;
+      text-align:right;
+      overflow-x: sroll;
+    }
+    //日期/时间输入
+    input.date-time{
+      height:2.6rem;
+      margin-right: 42px;
+    }
+    input[disabled].date-time{
+      background:#fff;
+    }
     select.sel-type{
       display: inline-block;
-      direction: rtl;
       width: ~"-webkit- calc(100% - 22px)";
       width: ~"-mox- calc(100% - 22px)";
       width: ~"calc(100% - 22px)";
@@ -240,12 +296,13 @@ body{
       margin:0;
       margin-right:22px;
       padding:0;
-      font-size: @fontBase;
       color:#333;
       font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei",sans-serif;
+      font-size:@fontBase;
+      overflow: hidden;
+      direction: rtl;
       option{
         direction: ltr;
-        font-size: @fontBase;
       }
     }
     .ysp-li-con{
@@ -257,8 +314,9 @@ body{
       display: inline-block;
       font-family: Ratchicons,sans-serif;
       font-style: normal;
-      font-size: 22px;
+      font-size: @fontLarge;
       line-height: 2.75rem;
+      margin-right:22px;
     	color:#aaa;
     	text-decoration: none;
    	 -webkit-font-smoothing: antialiased;
@@ -270,37 +328,149 @@ body{
         right:0;
       }
     }
+    .quxian{
+      vertical-align: top;
+      margin-top:0.9rem;
+    }
+    //点击选择地址
+    .address-btn{
+      margin:0;
+      width:22px;
+      height:22px;
+      // background:red;
+      margin-top:0.7rem;
+      cursor: pointer;
+    }
+  }
+  
+  //配偶编辑
+     //单选切换按钮
+  .mate-phone{
+    .switch{
+      float: right;
+      margin-top:0.5rem;
+      
+    }
+    .switch .switch-label{
+      background:#fff;
+    }
+    .switch .switch-label:before{
+      background: #aaa;
+    }
+    .switch input:checked+.switch-label:before{
+      background:#4CD664;
+    }
+    .switch input:checked+.switch-label, .switch input:checked+.switch-label:after{
+      background:#fff;
+    }
+    
+    .switch .switch-label:after{
+      background: #fff;
+    }
+    
+  }
+    
+
+  
+}
+.readonly{
+  color:#999;
+}
+
+//请假选择后的弹窗
+.ysp-pop-box{
+  .ysp-pop-mask{
+    position: fixed;
+    z-index: 999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity: 0.4;
+  }
+  .ysp-pop-con{
+    position: fixed;
+    z-index:1000;
+    width:70%;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+    background:#fff;
+    border-radius: 10px;
+    text-align: center;
+    padding:10px 0 0;
+    h4{
+      padding:0 5% 10px;
+      font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei",sans-serif;
+      font-size: @fontMedium;
+    }
+    p{
+      padding:0;
+      margin:0;
+      padding:0 5% 10px;
+      font-size: @fontBase;
+      line-height: 14px;
+    }
+    button{
+      width:100%;
+      border:none;
+      border-top: 1px solid #dfdfdf;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      height:2.75rem;
+      line-height: 2.75rem;
+      background:#fff;
+      color:#0089FF;
+      font-size: @fontMedium;
+
+    }
   }
   
 }
-  .readonly{
-    color:#999;
-  }
 
 //年假余额
-
+.ysp-year-holiday{
+  color:#999;
+  font-size:@fontXSmall;
+  margin-top:10px;
+  padding:0 5%;
+  strong{
+    color:#f76f49;
+    font-weight: normal;
+    font-size: @fontLarge+2;
+    padding:0 5px;
+  }
+}
 
 //请假原因
 .ysp-reason{
-  justify-content: initial;
-  .ysp-l{
-    width:30%;
-  }
-  .ysp-r{
-    width:70%;
-    text-align: left;
-    input.reason{
+  padding:10px 5%;
+  .ysp-big-tit{
+    em.star{
       display: inline-block;
-      width:~"-webkit- calc(70% - 22px)";
-      width:~"-moz- calc(70% - 22px)";
-       width:~"calc(70% - 22px)";
-       border:none;
-       height:100%;
-       font-size:@fontBase;
-       background:#fff;
-        }
+      width:6px;
+      font-style: normal;
+      font-size: @fontMedium;
+      color:#f76f49;
+  	}
+	}
+  textarea.reason{
+    margin-top: 10px;
+    min-height:auto;
+    color:#666;
+    font-size:@fontBase;
+    border:none;
+    resize: none;
+    padding:0;
+    &:focus{
+      color:#666;
+    }
   }
 }
+
+
+
 //附件
 .annex-box{
   padding:10px 5% 15px;
@@ -310,18 +480,18 @@ body{
 .annex-add{
   border:1px solid #dfdfdf;
   margin-top: 10px;
-  width:85px;
-  height:85px;
+  width:60px;
+  height:60px;
   text-align: center;
-  line-height: 85px;
-  font-size:80px;
-  font-weight: 100;
+  line-height: 60px;
+  font-size:60px;
+  color:#999;
 }
 }
 //提交/保存
 .ysp-btn-box{
   margin:20px 5%;
-  input{
+  button{
     border:none;
     border-radius: 5px;
     margin:5px 0;
@@ -329,14 +499,23 @@ body{
     height:2.75rem;
     line-height: 2.75rem;
     text-align: center;
-    font-size: @fontBase;
   }
   .ysp-sel-btn{
-    background-color: #9AD4FA;
+    background-color: #7263FD;
+    color:#fff;
+    &:hover{
+    background-color: #7263FD;
+    color:#fff;
+    }
+  }
+  &.readonly{
+    .ysp-sel-btn{
+      background-color: #9AD4FA;
     color:#fff;
     &:hover{
     background-color: #9AD4FA;
     color:#fff;
+    }
     }
   }
   .ysp-save-btn{

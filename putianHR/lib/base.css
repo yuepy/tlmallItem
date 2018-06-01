@@ -3,9 +3,28 @@ body {
   background: #F8F8F8;
   position: relative;
 }
+body,
+div,
+p,
+h4,
+table,
+input,
+button,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+img {
+  border: none;
+}
 /******************************CustomHeader组件******************************************/
 .ysp_header_wrapper {
   position: fixed;
+  z-index: 23;
   width: 100%;
   text-align: center;
   display: flex;
@@ -46,6 +65,28 @@ body {
 }
 .ysp_header_wrapper > span:nth-child(3) > span:last-child {
   margin-left: .3rem;
+}
+.ysp_header_wrapper .ysp_header_back_icon {
+  display: inline-block;
+  font-family: Ratchicons, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 2.75rem;
+  margin-left: 24px;
+  color: #7862FF;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ysp_header_wrapper .ysp_header_back_icon:before {
+  content: "\e818";
+  position: absolute;
+  top: 0;
+  left: 2.5%;
+  transform: rotate(180deg);
+}
+.ysp_header_wrapper .ysp_header_back {
+  color: #7862FF;
 }
 .ysp_header_wrapper .ysp-header-edit {
   display: inline-block;
@@ -184,6 +225,7 @@ body {
 .ysp-con-box {
   background-color: #fff;
   margin-top: 10px;
+  font-size: 14px;
 }
 .ysp-lists {
   display: flex;
@@ -206,17 +248,41 @@ body {
   display: inline-block;
   width: 6px;
   font-style: normal;
-  font-size: 16px;
+  font-size: 15px;
   color: #f76f49;
+}
+.ysp-lists .ysp-l .mate-name {
+  width: -webkit- calc(100% - 70px);
+  width: -mox- calc(100% - 70px);
+  width: calc(100% - 70px);
+  height: 100%;
+  border: none;
+  text-align: right;
 }
 .ysp-lists .ysp-r {
   position: relative;
   text-align: right;
   width: 50%;
 }
+.ysp-lists .ysp-r input {
+  width: -webkit- calc(100% - 22px);
+  width: -mox- calc(100% - 22px);
+  width: calc(100% - 22px);
+  color: #666;
+  font-size: 14px;
+  border: none;
+  text-align: right;
+  overflow-x: sroll;
+}
+.ysp-lists .ysp-r input.date-time {
+  height: 2.6rem;
+  margin-right: 42px;
+}
+.ysp-lists .ysp-r input[disabled].date-time {
+  background: #fff;
+}
 .ysp-lists .ysp-r select.sel-type {
   display: inline-block;
-  direction: rtl;
   width: -webkit- calc(100% - 22px);
   width: -mox- calc(100% - 22px);
   width: calc(100% - 22px);
@@ -226,13 +292,14 @@ body {
   margin: 0;
   margin-right: 22px;
   padding: 0;
-  font-size: 14px;
   color: #333;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  direction: rtl;
 }
 .ysp-lists .ysp-r select.sel-type option {
   direction: ltr;
-  font-size: 14px;
 }
 .ysp-lists .ysp-r .ysp-li-con {
   display: inline-block;
@@ -243,8 +310,9 @@ body {
   display: inline-block;
   font-family: Ratchicons, sans-serif;
   font-style: normal;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 2.75rem;
+  margin-right: 22px;
   color: #aaa;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
@@ -256,28 +324,119 @@ body {
   top: 0;
   right: 0;
 }
+.ysp-lists .ysp-r .quxian {
+  vertical-align: top;
+  margin-top: 0.9rem;
+}
+.ysp-lists .ysp-r .address-btn {
+  margin: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 0.7rem;
+  cursor: pointer;
+}
+.ysp-lists .mate-phone .switch {
+  float: right;
+  margin-top: 0.5rem;
+}
+.ysp-lists .mate-phone .switch .switch-label {
+  background: #fff;
+}
+.ysp-lists .mate-phone .switch .switch-label:before {
+  background: #aaa;
+}
+.ysp-lists .mate-phone .switch input:checked + .switch-label:before {
+  background: #4CD664;
+}
+.ysp-lists .mate-phone .switch input:checked + .switch-label,
+.ysp-lists .mate-phone .switch input:checked + .switch-label:after {
+  background: #fff;
+}
+.ysp-lists .mate-phone .switch .switch-label:after {
+  background: #fff;
+}
 .readonly {
   color: #999;
 }
-.ysp-reason {
-  justify-content: initial;
-}
-.ysp-reason .ysp-l {
-  width: 30%;
-}
-.ysp-reason .ysp-r {
-  width: 70%;
-  text-align: left;
-}
-.ysp-reason .ysp-r input.reason {
-  display: inline-block;
-  width: -webkit- calc(70% - 22px);
-  width: -moz- calc(70% - 22px);
-  width: calc(70% - 22px);
-  border: none;
+.ysp-pop-box .ysp-pop-mask {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  font-size: 14px;
+  background: #000;
+  opacity: 0.4;
+}
+.ysp-pop-box .ysp-pop-con {
+  position: fixed;
+  z-index: 1000;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
   background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 0 0;
+}
+.ysp-pop-box .ysp-pop-con h4 {
+  padding: 0 5% 10px;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", sans-serif;
+  font-size: 15px;
+}
+.ysp-pop-box .ysp-pop-con p {
+  padding: 0;
+  margin: 0;
+  padding: 0 5% 10px;
+  font-size: 14px;
+  line-height: 14px;
+}
+.ysp-pop-box .ysp-pop-con button {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #dfdfdf;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  background: #fff;
+  color: #0089FF;
+  font-size: 15px;
+}
+.ysp-year-holiday {
+  color: #999;
+  font-size: 12px;
+  margin-top: 10px;
+  padding: 0 5%;
+}
+.ysp-year-holiday strong {
+  color: #f76f49;
+  font-weight: normal;
+  font-size: 18px;
+  padding: 0 5px;
+}
+.ysp-reason {
+  padding: 10px 5%;
+}
+.ysp-reason .ysp-big-tit em.star {
+  display: inline-block;
+  width: 6px;
+  font-style: normal;
+  font-size: 15px;
+  color: #f76f49;
+}
+.ysp-reason textarea.reason {
+  margin-top: 10px;
+  min-height: auto;
+  color: #666;
+  font-size: 14px;
+  border: none;
+  resize: none;
+  padding: 0;
+}
+.ysp-reason textarea.reason:focus {
+  color: #666;
 }
 .annex-box {
   padding: 10px 5% 15px;
@@ -288,17 +447,17 @@ body {
 .annex-box .annex-add {
   border: 1px solid #dfdfdf;
   margin-top: 10px;
-  width: 85px;
-  height: 85px;
+  width: 60px;
+  height: 60px;
   text-align: center;
-  line-height: 85px;
-  font-size: 80px;
-  font-weight: 100;
+  line-height: 60px;
+  font-size: 60px;
+  color: #999;
 }
 .ysp-btn-box {
   margin: 20px 5%;
 }
-.ysp-btn-box input {
+.ysp-btn-box button {
   border: none;
   border-radius: 5px;
   margin: 5px 0;
@@ -306,13 +465,20 @@ body {
   height: 2.75rem;
   line-height: 2.75rem;
   text-align: center;
-  font-size: 14px;
 }
 .ysp-btn-box .ysp-sel-btn {
-  background-color: #9AD4FA;
+  background-color: #7263FD;
   color: #fff;
 }
 .ysp-btn-box .ysp-sel-btn:hover {
+  background-color: #7263FD;
+  color: #fff;
+}
+.ysp-btn-box.readonly .ysp-sel-btn {
+  background-color: #9AD4FA;
+  color: #fff;
+}
+.ysp-btn-box.readonly .ysp-sel-btn:hover {
   background-color: #9AD4FA;
   color: #fff;
 }

@@ -30,13 +30,23 @@
   "override_urls": [],
   "adapter_urls": [
     {
-      "title": "login",
-      "url": "adapter://putianHR/plan/login/index.json",
+      "title": "holidayAppli",
+      "url": "adapter://putianHR/plan/holidayAppli/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/\\?cmd=login&languageCd=ZHS&"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps_2\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL\\?PORTALPARAM_PTCNAV=HPS_TL_AWE_001_GBL&EOPP\\.SCNode=HRMS&EOPP\\.SCPortal=EMPLOYEE&EOPP\\.SCName=ADMN_TL_AWE_02&EOPP\\.SCLabel=TL_AWE_02&EOPP\\.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT\\.PORTAL_BASE_DATA\\.CO_NAVIGATION_COLLECTIONS\\.ADMN_TL_AWE_02\\.ADMN_S201802081455119057283242&IsFolder=false"
       ],
       "demo": [
-        "http://192.168.220.110/psp/ps/?cmd=login&languageCd=ZHS&"
+        "http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_001_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455119057283242&IsFolder=false"
+      ]
+    },
+    {
+      "title": "Login",
+      "url": "adapter://putianHR/plan/Login/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout"
+      ],
+      "demo": [
+        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
       ]
     }
   ],
@@ -44,5 +54,7 @@
   "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "scope": "putianHR",
   "start_url": "enterplorer://putianHR/local/index.html",
-  "update_time": 1527761804517
+
+  "update_time": 1527834653208
+
 }
