@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "id": "Login",
+  "id": "login",
   "targetURL": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "jsFile": "index.js",
   "requires": {
@@ -294,6 +294,10 @@
         "data": {
           "tagName": "LABEL"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "text",
@@ -349,6 +353,10 @@
       "location": {
         "data": {
           "tagName": "LABEL"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -536,10 +544,8 @@
     },
     "page/urls": {
       "contexts": {
-
         "context4_EIQlNA": [
           "192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
-
         ]
       }
     },
