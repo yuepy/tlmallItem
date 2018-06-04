@@ -22,6 +22,9 @@ img {
   border: none;
 }
 /******************************CustomHeader组件******************************************/
+div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
+  padding-top: 0;
+}
 .ysp_header_wrapper {
   position: fixed;
   z-index: 23;
@@ -32,8 +35,8 @@ img {
   justify-content: center;
   height: 2.7rem;
   font-size: 16px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
+  background: #333;
+  color: #fff;
 }
 .ysp_header_wrapper > span:nth-child(1) {
   flex: 0 1 20%;
@@ -73,10 +76,7 @@ img {
   font-size: 16px;
   line-height: 2.75rem;
   margin-left: 24px;
-  color: #7862FF;
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
 }
 .ysp_header_wrapper .ysp_header_back_icon:before {
   content: "\e818";
@@ -84,9 +84,6 @@ img {
   top: 0;
   left: 2.5%;
   transform: rotate(180deg);
-}
-.ysp_header_wrapper .ysp_header_back {
-  color: #7862FF;
 }
 .ysp_header_wrapper .ysp-header-edit {
   display: inline-block;
@@ -113,7 +110,6 @@ img {
 .ysp_filter .ysp_selectBox .selectBox_content .contentTitle {
   padding: 10px;
   border-bottom: 1px solid #ddd;
-  font-weight: bold;
 }
 .ysp_filter .ysp_selectBox .selectBox_content .contentScroll {
   height: 54vh;
@@ -126,18 +122,19 @@ img {
 .ysp_filter .ysp_selectBox .selectBox_content .timeContent .yearCell,
 .ysp_filter .ysp_selectBox .selectBox_content .timeContent .yearCellSelect {
   float: left;
-  border: 1px solid #3398FE;
-  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   padding: 5px 0;
   width: 31%;
   text-align: center;
   font-size: 15px;
-  color: #3398FE;
+  color: #333;
   margin: 0 2% 2% 0;
 }
 .ysp_filter .ysp_selectBox .selectBox_content .timeContent .yearCellSelect {
-  background: #3398FE;
+  background: #3796FB;
   color: #fff;
+  border: none;
 }
 .ysp_filter .ysp_selectBox .selectBox_content .filterSure {
   position: fixed;
@@ -145,8 +142,8 @@ img {
   right: 10px;
   width: 35%;
   text-align: center;
-  background: -webkit-linear-gradient(left, #7863FA, #3397FC);
-  border-radius: 5px;
+  background: #3796FB;
+  border-radius: 8px;
   color: #fff;
   padding: 5px;
 }
@@ -170,7 +167,7 @@ img {
   float: left;
   font-size: 14px;
   color: #9F9F9F;
-  width: 90%;
+  width: 85%;
   overflow: hidden;
 }
 .ysp_salary_box .ysp_salary_item .ysp_salary_panel .ysp_salary_detail > div:nth-child(odd) {
@@ -184,11 +181,11 @@ img {
 .ysp_salary_box .ysp_salary_item .ysp_salary_check {
   font-size: 14px;
   background: #3198FF;
-  width: 10%;
+  width: 15%;
   float: right;
   text-align: center;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 /******************************薪资查询详情页start******************************************/
 .ysp_salary_detail_list {
@@ -210,7 +207,7 @@ img {
 }
 .ysp_salary_detail_list .ysp_detail {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e1e1e1;
 }
 .ysp_salary_detail_list .ysp_detail > span {
   display: inline-block;

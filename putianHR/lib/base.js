@@ -29,7 +29,7 @@
       }
       //每个tab页面的切换
       var tblpstabs=doc.querySelector("#tblpstabs");
-      if(tblpstabs&&tblpstabs.querySelectorAll("a")[1].textContent!=="调休假余额查询"){
+      if(tblpstabs&&tblpstabs.querySelectorAll("a")[1].textContent!=="调休假余额查询"&&tblpstabs.querySelectorAll("a")[1].textContent!=="考勤类型"){
         tblpstabs.querySelectorAll("a")[1].click();
       }
       
