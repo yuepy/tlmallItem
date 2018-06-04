@@ -277,6 +277,10 @@ img {
 .ysp-lists .ysp-r input.date-time {
   height: 2.6rem;
   margin-right: 42px;
+  position: relative;
+}
+.ysp-lists .ysp-r input.input-edit {
+  text-align: left;
 }
 .ysp-lists .ysp-r input[disabled].date-time {
   background: #fff;
@@ -443,16 +447,30 @@ img {
 }
 .annex-box .annex-tit {
   font-size: 14px;
+  margin-bottom: 10px;
 }
 .annex-box .annex-add {
+  display: inline-block;
   border: 1px solid #dfdfdf;
-  margin-top: 10px;
   width: 60px;
   height: 60px;
   text-align: center;
   line-height: 60px;
   font-size: 60px;
   color: #999;
+  margin-right: 10px;
+  vertical-align: top;
+}
+.annex-box .annex-item {
+  display: inline-block;
+  border: 1px solid #dfdfdf;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  margin-right: 10px;
+  vertical-align: top;
 }
 .ysp-btn-box {
   margin: 20px 5%;
