@@ -557,6 +557,19 @@ img{border:none;}
 }
 .ysp-baseInfo-detail{
   width:100%;
+  .ysp-baseInfo-title{
+    color:#888888 ;
+    padding:0 0 0 20px;
+    margin:0 0 10px 0;
+  }
+  //icon图标的公共样式
+  .iImg{
+    display:block;
+    width:44px;
+    height:44px;
+    margin:10px auto;
+    border-radius:10px;
+  }
   .ysp-baseInfo-detailList{
     border:1px solid @E7E7E7;
     margin:0 auto;
@@ -568,12 +581,97 @@ img{border:none;}
       border-bottom:1px solid @E7E7E7;
       border-right:1px solid @E7E7E7;
       text-align: center;
-      font-size:13px;
+      p{
+        font-size:13px;
+      }
+      
     }
     >div:nth-child(4),div:nth-child(8){
       width:27%;
       border-right:0;
     }
+    >div:first-child{
+      i{
+				.iImg;
+        background: #3796FB url('img/jbxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(2){
+      i{
+				.iImg;
+        background: #42CDAA url('img/lxxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(3){
+      i{
+				.iImg;
+        background: #3796FB url('img/rzxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(4){
+      i{
+				.iImg;
+        background: #FABA31 url('img/nbfzxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(5){
+      i{
+				.iImg;
+        background: #FABA31 url('img/htxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(6){
+      i{
+				.iImg;
+        background: #3796FB url('img/jyjl0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(7){
+      i{
+				.iImg;
+        background: #42CDAA url('img/jtcy0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(8){
+      i{
+				.iImg;
+        background: #3796FB url('img/yhzh0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(9){
+      i{
+				.iImg;
+        background: #3796FB url('img/qtxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
   }
 }
+.ysp-infoZhezhao-tt{
+  display: none;
+  .ysp-infoBig-tt{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    height: 100vh;
+    width:100%;
+    background: #fff;
+    .ysp_header_wrapper{
+      background: #333;
+      span{
+        color: #fff;
+      }
+    }
+  }
+}
+
 /*******************员工履历表（员工自助）end***************************/

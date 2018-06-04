@@ -95,41 +95,6 @@
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control17_MQJlnO": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 4,
-            "value": [
-              "descendant::FORM[@id=\"HPS_RSM_SS\"]//TABLE[@id=\"ACE_width\"]//DIV[@id=\"hpsResume\"]",
-              "descendant::TABLE[@id=\"ACE_width\"]//DIV[@id=\"hpsResume\"]",
-              "descendant::DIV[@id=\"hpsResume\"]"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[9]/TD[2]/DIV[1]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control17_MQJlnO"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control18_ysLBGm": {
       "location": {
         "data": {
@@ -169,11 +134,51 @@
     "control14_IuIN2O": {
       "location": {
         "data": {},
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": []
       },
       "roles": "",
       "monitored": false,
       "componentType": "none"
+    },
+    "control20_rAKl6w": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"HPS_RSM_SS\"]//TABLE[@id=\"ACE_width\"]//DIV[@id=\"hpsResume\"]",
+              "descendant::TABLE[@id=\"ACE_width\"]//DIV[@id=\"hpsResume\"]",
+              "descendant::DIV[@id=\"hpsResume\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[9]/TD[2]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control20_rAKl6w"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -181,9 +186,9 @@
       "controls": [
         "control12_mTTkVE",
         "control15_TT4EPb",
-        "control17_MQJlnO",
         "control18_ysLBGm",
-        "control14_IuIN2O"
+        "control14_IuIN2O",
+        "control20_rAKl6w"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -315,16 +320,16 @@
           }
         },
         {
-          "id": "uiControl18_pZFXoU",
-          "controlId": "control17_MQJlnO",
+          "id": "uiControl20_MuwVGq",
+          "controlId": "control20_rAKl6w",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl18_pZFXoU",
-                "onGetTemplate": "getTemplate_uiControl18_pZFXoU"
+                "onDoAction": "doAction_uiControl20_MuwVGq",
+                "onGetTemplate": "getTemplate_uiControl20_MuwVGq"
               }
             }
           }

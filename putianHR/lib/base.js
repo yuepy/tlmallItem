@@ -5,7 +5,7 @@
   var utils = ysp.utils;
   ysp.customHelper = {};
   top.date="";
-  top.click1Status=false;
+  // top.click1Status=false;
   utils.extend(ysp.customHelper, {
     /* 适配中定制的公共代码放在这里 */
 
