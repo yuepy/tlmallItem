@@ -221,6 +221,16 @@
           "toContextId": "context2_UAeaAc"
         }
       ]
+    },
+    "flow26_62wUd3": {
+      "fromContextId": "context2_UAeaAc",
+      "fromAction": "doAction",
+      "fromControlId": "control20_rAKl6w",
+      "toContexts": [
+        {
+          "toContextId": "context2_UAeaAc"
+        }
+      ]
     }
   },
   "pages": {
@@ -243,66 +253,19 @@
           }
         },
         {
-          "id": "uiControl17_xvQ3Mh",
+          "id": "uiControl16_pvBLnV",
+          "controlId": "control15_TT4EPb",
           "display": {
-            "type": "card",
-            "adapterId": "card",
+            "adapterId": "custom",
+            "type": "custom",
             "adapter": {
-              "templateType": ""
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl16_pvBLnV",
+                "onGetTemplate": "getTemplate_uiControl16_pvBLnV"
+              }
             }
-          },
-          "layout": [
-            {
-              "id": "uiControl17_xvQ3Mhheader",
-              "display": {
-                "type": "cardHeader",
-                "text": "",
-                "adapterId": "cardHeader",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": []
-            },
-            {
-              "id": "uiControl17_xvQ3Mhbody",
-              "display": {
-                "type": "cardBody",
-                "adapterId": "cardBody",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": [
-                {
-                  "id": "uiControl16_pvBLnV",
-                  "controlId": "control15_TT4EPb",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl16_pvBLnV",
-                        "onGetTemplate": "getTemplate_uiControl16_pvBLnV"
-                      }
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "id": "uiControl17_xvQ3Mhfooter",
-              "display": {
-                "type": "cardFooter",
-                "adapterId": "cardFooter",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": []
-            }
-          ]
+          }
         },
         {
           "id": "uiControl19_3GFMBU",

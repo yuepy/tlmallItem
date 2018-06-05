@@ -8,6 +8,7 @@
 @fontBase:14px;
 @fontMedium:@fontBase + 1;
 @fontLarge:@fontBase + 2;
+@3796FB:#3796FB;
 body{
   background:#F8F8F8;
   position:relative;
@@ -134,7 +135,7 @@ div[data-ysp-modelid="salary"]{
           margin:0 2% 2% 0;
         }
         .yearCellSelect{
-          background:#3796FB;
+          background:@3796FB;
           color:#fff;
           border:none;
         }
@@ -566,13 +567,34 @@ div[data-ysp-modelid="salary"]{
 /***********************************请假申请 end*************************************/
   
 /*******************员工履历表（员工自助）start***************************/
-@A2A2A2:#A2A2A2;
-@E7E7E7:#E7E7E7;
+
+@E1E1E1:#E1E1E1;
+@999:#999;
+@F2F2F2:#F2F2F2;
+
 .ysp-baseInfo-tt{
+  margin:10px 20px;
+  border:1px solid @E1E1E1;
+  border-radius:5px;
+  box-shadow: 0px 0px 8px @E1E1E1;
+  padding:0 20px 10px;
+  .ysp-baseInfoPhoto-tt{
+    overflow: hidden;
+    h5{
+      float: left;
+      height: 80px;
+      line-height: 60px;
+      margin:0;
+    }
+    img{
+      float: right;
+      margin:10px 0 0 0;
+    }
+  }
   >p{
-    margin:0;
+    margin:0 0 5px 0;
     span{
-      color: @A2A2A2;
+      color: @999;
       font-size: @fontBase;
     }
   }
@@ -593,15 +615,15 @@ div[data-ysp-modelid="salary"]{
     border-radius:10px;
   }
   .ysp-baseInfo-detailList{
-    border:1px solid @E7E7E7;
+    border:1px solid @E1E1E1;
     margin:0 auto;
     overflow: hidden;
     >div{
       margin:0;
       float: left;   
       width: 24%;
-      border-bottom:1px solid @E7E7E7;
-      border-right:1px solid @E7E7E7;
+      border-bottom:1px solid @E1E1E1;
+      border-right:1px solid @E1E1E1;
       text-align: center;
       p{
         font-size:13px;
@@ -615,7 +637,7 @@ div[data-ysp-modelid="salary"]{
     >div:first-child{
       i{
 				.iImg;
-        background: #3796FB url('img/jbxx0604.png') no-repeat center;
+        background: @3796FB url('img/jbxx0604.png') no-repeat center;
         background-size: 70%;
       }
     }
@@ -629,7 +651,7 @@ div[data-ysp-modelid="salary"]{
     >div:nth-child(3){
       i{
 				.iImg;
-        background: #3796FB url('img/rzxx0604.png') no-repeat center;
+        background: @3796FB url('img/rzxx0604.png') no-repeat center;
         background-size: 70%;
       }
     }
@@ -650,7 +672,7 @@ div[data-ysp-modelid="salary"]{
     >div:nth-child(6){
       i{
 				.iImg;
-        background: #3796FB url('img/jyjl0604.png') no-repeat center;
+        background: @3796FB url('img/jyjl0604.png') no-repeat center;
         background-size: 70%;
       }
     }
@@ -664,20 +686,45 @@ div[data-ysp-modelid="salary"]{
     >div:nth-child(8){
       i{
 				.iImg;
-        background: #3796FB url('img/yhzh0604.png') no-repeat center;
+        background: @3796FB url('img/yhzh0604.png') no-repeat center;
         background-size: 70%;
       }
     }
     >div:nth-child(9){
+      border-bottom:0;
       i{
 				.iImg;
-        background: #3796FB url('img/qtxx0604.png') no-repeat center;
+        background: @3796FB url('img/qtxx0604.png') no-repeat center;
         background-size: 70%;
       }
     }
   }
 }
 .ysp-infoZhezhao-tt{
+  .fcgray{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    border:1px solid @E1E1E1;
+    padding:0 15px;
+    border-radius: 15px;
+    color: @999;
+  }
+  .fcblue{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    border:1px solid @3796FB;
+    border-radius:15px;
+    padding:0 15px;
+    color: @3796FB;
+  }
   display: none;
   .ysp-infoBig-tt{
     position: fixed;
@@ -686,11 +733,76 @@ div[data-ysp-modelid="salary"]{
     z-index: 1000;
     height: 100vh;
     width:100%;
-    background: #fff;
+    background: @F2F2F2;
+    overflow: scroll;
     .ysp_header_wrapper{
       background: #333;
       span{
         color: #fff;
+      }
+    }
+    .ysp-infoContent-tt{
+      .ysp-infoContentlist1-tt{
+        border-bottom:1px solid @E1E1E1;
+        border-top:1px solid @E1E1E1;
+        margin: 0 0 15px 0;
+        padding:10px;
+        background: #fff;
+        p{
+          margin:0 0 2px 0;
+          font-size: 15px;
+          span{
+            display: inline-block;
+            margin:0 20px 0 0;
+            &:nth-child(2){
+              color:@999;
+            }
+          }
+        }
+        p:first-child{
+          margin:0 0 5px 0;
+          font-size: 17px;
+          font-weight:bold;
+          span{
+            margin:0;
+            &:nth-child(2){
+              color:#333;
+            }
+          }
+        }
+      }
+      .ysp-infoContentlist2-tt{
+        .ysp-infoContentlist1-tt;
+        background: #fff;
+        p{
+          span{
+            color: @999;
+          }
+        }
+        p:first-child{
+          position: relative;
+          span{
+            color: #333;
+          }
+          
+          
+        }
+      }
+      .ysp-infoContentlist3-tt,.ysp-infoContentlist4-tt{
+        .ysp-infoContentlist1-tt
+      }
+      .ysp-infoContentlist5-tt{
+        .ysp-infoContentlist1-tt;
+        p:first-child{
+          font-weight:normal;
+          font-size: 15px;
+          span{
+            margin:0 20px 0 0;
+            &:nth-child(2){
+              color:@999;
+            }
+          }
+        }
       }
     }
   }

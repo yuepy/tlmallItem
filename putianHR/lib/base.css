@@ -507,11 +507,31 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 }
 /***********************************请假申请 end*************************************/
 /*******************员工履历表（员工自助）start***************************/
-.ysp-baseInfo-tt > p {
+.ysp-baseInfo-tt {
+  margin: 10px 20px;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px #E1E1E1;
+  padding: 0 20px 10px;
+}
+.ysp-baseInfo-tt .ysp-baseInfoPhoto-tt {
+  overflow: hidden;
+}
+.ysp-baseInfo-tt .ysp-baseInfoPhoto-tt h5 {
+  float: left;
+  height: 80px;
+  line-height: 60px;
   margin: 0;
 }
+.ysp-baseInfo-tt .ysp-baseInfoPhoto-tt img {
+  float: right;
+  margin: 10px 0 0 0;
+}
+.ysp-baseInfo-tt > p {
+  margin: 0 0 5px 0;
+}
 .ysp-baseInfo-tt > p span {
-  color: #A2A2A2;
+  color: #999;
   font-size: 14px;
 }
 .ysp-baseInfo-detail {
@@ -530,7 +550,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   border-radius: 10px;
 }
 .ysp-baseInfo-detail .ysp-baseInfo-detailList {
-  border: 1px solid #E7E7E7;
+  border: 1px solid #E1E1E1;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -538,8 +558,8 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   margin: 0;
   float: left;
   width: 24%;
-  border-bottom: 1px solid #E7E7E7;
-  border-right: 1px solid #E7E7E7;
+  border-bottom: 1px solid #E1E1E1;
+  border-right: 1px solid #E1E1E1;
   text-align: center;
 }
 .ysp-baseInfo-detail .ysp-baseInfo-detailList > div p {
@@ -622,6 +642,9 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   background: #3796FB url('img/yhzh0604.png') no-repeat center;
   background-size: 70%;
 }
+.ysp-baseInfo-detail .ysp-baseInfo-detailList > div:nth-child(9) {
+  border-bottom: 0;
+}
 .ysp-baseInfo-detail .ysp-baseInfo-detailList > div:nth-child(9) i {
   display: block;
   width: 44px;
@@ -634,6 +657,30 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 .ysp-infoZhezhao-tt {
   display: none;
 }
+.ysp-infoZhezhao-tt .fcgray {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+  border: 1px solid #E1E1E1;
+  padding: 0 15px;
+  border-radius: 15px;
+  color: #999;
+}
+.ysp-infoZhezhao-tt .fcblue {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+  border: 1px solid #3796FB;
+  border-radius: 15px;
+  padding: 0 15px;
+  color: #3796FB;
+}
 .ysp-infoZhezhao-tt .ysp-infoBig-tt {
   position: fixed;
   top: 0;
@@ -641,12 +688,155 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   z-index: 1000;
   height: 100vh;
   width: 100%;
-  background: #fff;
+  background: #F2F2F2;
+  overflow: scroll;
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp_header_wrapper {
   background: #333;
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp_header_wrapper span {
   color: #fff;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt {
+  border-bottom: 1px solid #E1E1E1;
+  border-top: 1px solid #E1E1E1;
+  margin: 0 0 15px 0;
+  padding: 10px;
+  background: #fff;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p {
+  margin: 0 0 2px 0;
+  font-size: 15px;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p span {
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p span:nth-child(2) {
+  color: #999;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p:first-child {
+  margin: 0 0 5px 0;
+  font-size: 17px;
+  font-weight: bold;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p:first-child span {
+  margin: 0;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p:first-child span:nth-child(2) {
+  color: #333;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt {
+  border-bottom: 1px solid #E1E1E1;
+  border-top: 1px solid #E1E1E1;
+  margin: 0 0 15px 0;
+  padding: 10px;
+  background: #fff;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p {
+  margin: 0 0 2px 0;
+  font-size: 15px;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p span {
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p span:nth-child(2) {
+  color: #999;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child {
+  margin: 0 0 5px 0;
+  font-size: 17px;
+  font-weight: bold;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child span {
+  margin: 0;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child span:nth-child(2) {
+  color: #333;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p span {
+  color: #999;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child {
+  position: relative;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child span {
+  color: #333;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt,
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt {
+  border-bottom: 1px solid #E1E1E1;
+  border-top: 1px solid #E1E1E1;
+  margin: 0 0 15px 0;
+  padding: 10px;
+  background: #fff;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p,
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p {
+  margin: 0 0 2px 0;
+  font-size: 15px;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p span,
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p span {
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p span:nth-child(2),
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p span:nth-child(2) {
+  color: #999;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p:first-child,
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p:first-child {
+  margin: 0 0 5px 0;
+  font-size: 17px;
+  font-weight: bold;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p:first-child span,
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p:first-child span {
+  margin: 0;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p:first-child span:nth-child(2),
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p:first-child span:nth-child(2) {
+  color: #333;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt {
+  border-bottom: 1px solid #E1E1E1;
+  border-top: 1px solid #E1E1E1;
+  margin: 0 0 15px 0;
+  padding: 10px;
+  background: #fff;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p {
+  margin: 0 0 2px 0;
+  font-size: 15px;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p span {
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p span:nth-child(2) {
+  color: #999;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child {
+  margin: 0 0 5px 0;
+  font-size: 17px;
+  font-weight: bold;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span {
+  margin: 0;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span:nth-child(2) {
+  color: #333;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child {
+  font-weight: normal;
+  font-size: 15px;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span {
+  margin: 0 20px 0 0;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span:nth-child(2) {
+  color: #999;
 }
 /*******************员工履历表（员工自助）end***************************/
