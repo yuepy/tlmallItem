@@ -225,8 +225,69 @@ div[data-ysp-modelid="salary"]{
     }
   }
 }
-
-
+/******************************下属员工考勤start******************************************/
+.subSearchType{
+  margin-bottom: 10px;
+}
+.ysp_search{
+  width: 90%;
+  margin: 10px auto;
+  background: #3796fb;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 8px;
+}
+.searchCondition{
+  background:#fff;
+  padding:0 10px;
+  .conditionItem{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    .conditionTitle{
+      display: inline-block;
+      width:25%;
+    }
+    .conditionContent{
+      display: inline-block;
+      width: 75%;
+      select,input{
+        border:none;
+        margin: 0;
+        padding: 0;
+        padding-right: 15px;
+        height:30px;
+        background: #fff;
+        text-align: right;
+        width: 100%;
+        background: url(../local/img/rightArrow.png) no-repeat;
+        background-position: 100%;
+    		background-size: 10px;
+        font-size: 15px;
+        color:#888;
+      }
+      select{
+        direction:rtl;
+      }
+      .staffName,.search{
+        background: none;
+      }
+      .search{
+        width: 90%;
+        padding: 0;
+      }
+      .searchIcon{
+        display: inline-block;
+        height: 30px;
+        width: 10%;
+        background: url(../local/img/rightArrow.png) no-repeat;
+    		background-position: 100%;
+        background-size: 10px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
 
 /***********************************请假申请 start*************************************/
 
