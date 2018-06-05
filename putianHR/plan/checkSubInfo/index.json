@@ -11,6 +11,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -37,6 +41,10 @@
       "location": {
         "data": {
           "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -69,6 +77,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -95,7 +107,39 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control28_dbqOIu": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::TABLE[@id=\"ACE_width\"]/TBODY[1]/TR[4]/TD[2]/DIV[1]/TABLE[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ps_pspagecontainer TABLE.PSPAGECONTAINER TABLE.PSLEVEL1GRIDWBO"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[4]/TD[2]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control28_dbqOIu"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     }
@@ -105,7 +149,8 @@
       "controls": [
         "control22_QTAv6T",
         "control23_uSaZLR",
-        "control24_tiZ0zf"
+        "control24_tiZ0zf",
+        "control28_dbqOIu"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -133,6 +178,26 @@
       "fromContextId": "context0_b95w1L",
       "fromAction": "doAction",
       "fromControlId": "control23_uSaZLR",
+      "toContexts": [
+        {
+          "toContextId": "context0_b95w1L"
+        }
+      ]
+    },
+    "flow26_CTipwb": {
+      "fromContextId": "context0_b95w1L",
+      "fromAction": "doAction",
+      "fromControlId": "control24_tiZ0zf",
+      "toContexts": [
+        {
+          "toContextId": "context0_b95w1L"
+        }
+      ]
+    },
+    "flow27_mBMizq": {
+      "fromContextId": "context0_b95w1L",
+      "fromAction": "doAction",
+      "fromControlId": "control28_dbqOIu",
       "toContexts": [
         {
           "toContextId": "context0_b95w1L"
@@ -185,6 +250,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl24_DZ1rQ2",
                 "onGetTemplate": "getTemplate_uiControl24_DZ1rQ2"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl28_N8wera",
+          "controlId": "control28_dbqOIu",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl28_N8wera",
+                "onGetTemplate": "getTemplate_uiControl28_N8wera"
               }
             }
           }
