@@ -171,47 +171,14 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control7_twMFdO": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"btn\"]/DIV[1]",
-              "descendant::DIV[@id=\"btn\"]//DIV"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              0,
-              3
-            ],
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control7_twMFdO"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>"
-    },
     "control188_Pz2Hxn": {
       "location": {
         "data": {
           "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -229,6 +196,28 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control199_5DGW5G": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control199_5DGW5G"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -238,8 +227,8 @@
         "control12_35Zg9R",
         "control37_PsrEre",
         "control43_7cv77t",
-        "control7_twMFdO",
-        "control188_Pz2Hxn"
+        "control188_Pz2Hxn",
+        "control199_5DGW5G"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -393,6 +382,16 @@
           "toModelId": "PendingTask"
         }
       ]
+    },
+    "flow150_SXJMwW": {
+      "fromContextId": "context7_6oqdXk",
+      "fromAction": "doAction",
+      "fromControlId": "control199_5DGW5G",
+      "toContexts": [
+        {
+          "toContextId": "context7_6oqdXk"
+        }
+      ]
     }
   },
   "pages": {
@@ -460,21 +459,6 @@
           }
         },
         {
-          "id": "uiControl12_KI2hm3",
-          "controlId": "control7_twMFdO",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl12_KI2hm3",
-                "onGetTemplate": "getTemplate_uiControl12_KI2hm3"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl181_WUQwtb",
           "controlId": "control188_Pz2Hxn",
           "display": {
@@ -485,6 +469,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl181_WUQwtb",
                 "onGetTemplate": "getTemplate_uiControl181_WUQwtb"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl192_baL1y0",
+          "controlId": "control199_5DGW5G",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl192_baL1y0",
+                "onGetTemplate": "getTemplate_uiControl192_baL1y0"
               }
             }
           }
@@ -647,6 +646,14 @@
             "mini-$",
             "mini-$body$",
             "tabs"
+          ],
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs",
+            "toast"
           ]
         ]
       }

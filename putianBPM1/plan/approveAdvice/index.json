@@ -18,7 +18,8 @@
     "branchRelease": "../branchRelease/index.json",
     "departure": "../departure/index.json",
     "goodBargain": "../goodBargain/index.json",
-    "pricePolicy": "../pricePolicy/index.json"
+    "pricePolicy": "../pricePolicy/index.json",
+    "PendingTask": "../PendingTask/index.json"
   },
   "chineseName": "已办查看表单-审批意见",
   "description": "",
@@ -156,6 +157,50 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control197_Hdliue": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control197_Hdliue"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control200_eQ23GQ": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control200_eQ23GQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -164,7 +209,9 @@
         "control23_P3UvaB",
         "control38_QOFFLs",
         "control52_ASAZ2n",
-        "control24_HKVNpA"
+        "control24_HKVNpA",
+        "control197_Hdliue",
+        "control200_eQ23GQ"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -288,6 +335,20 @@
           "toContextId": "context10_Hyn4t6"
         }
       ]
+    },
+    "flow148_pV3gmV": {
+      "fromContextId": "context10_Hyn4t6",
+      "fromAction": "doAction",
+      "fromControlId": "control197_Hdliue",
+      "toContexts": [
+        {
+          "toContextId": "context10_Hyn4t6"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
     }
   },
   "pages": {
@@ -340,6 +401,21 @@
           }
         },
         {
+          "id": "uiControl193_hCZA3k",
+          "controlId": "control200_eQ23GQ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl193_hCZA3k",
+                "onGetTemplate": "getTemplate_uiControl193_hCZA3k"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl31_N4421V",
           "controlId": "control24_HKVNpA",
           "display": {
@@ -350,6 +426,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl31_N4421V",
                 "onGetTemplate": "getTemplate_uiControl31_N4421V"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl190_BFndI2",
+          "controlId": "control197_Hdliue",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl190_BFndI2",
+                "onGetTemplate": "getTemplate_uiControl190_BFndI2"
               }
             }
           }
@@ -389,7 +480,8 @@
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&visitRelative",
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&monthChange",
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&goodBargain",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&pricePolicy"
+          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&pricePolicy",
+          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&processForm"
         ],
         "context4_d60WvN": [
           "192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777",

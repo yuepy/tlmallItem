@@ -170,6 +170,50 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control198_kM3Zde": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control198_kM3Zde"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control201_yX7Svk": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control201_yX7Svk"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -178,7 +222,9 @@
         "control18_V20gx9",
         "control20_y0QdaI",
         "control40_HdrWi4",
-        "control45_gS7NTD"
+        "control45_gS7NTD",
+        "control198_kM3Zde",
+        "control201_yX7Svk"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -314,6 +360,16 @@
           "toContextId": "context9_vdtoHx"
         }
       ]
+    },
+    "flow149_qlaLh3": {
+      "fromContextId": "context9_vdtoHx",
+      "fromAction": "doAction",
+      "fromControlId": "control198_kM3Zde",
+      "toContexts": [
+        {
+          "toContextId": "context9_vdtoHx"
+        }
+      ]
     }
   },
   "pages": {
@@ -379,6 +435,36 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl191_TanyTx",
+          "controlId": "control198_kM3Zde",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl191_TanyTx",
+                "onGetTemplate": "getTemplate_uiControl191_TanyTx"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl194_A1uDt7",
+          "controlId": "control201_yX7Svk",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl194_A1uDt7",
+                "onGetTemplate": "getTemplate_uiControl194_A1uDt7"
+              }
+            }
+          }
         }
       ]
     }
@@ -414,7 +500,8 @@
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&departure",
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&monthChange",
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&goodBargain",
-          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&pricePolicy"
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&pricePolicy",
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&processForm"
         ],
         "context27_AJKd80": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=133877&_winid=w6689",
@@ -525,6 +612,14 @@
             "mini-$",
             "mini-$body$",
             "tabs"
+          ],
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs",
+            "toast"
           ]
         ]
       }

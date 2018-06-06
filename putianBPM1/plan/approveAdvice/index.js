@@ -160,6 +160,108 @@
     getTemplate_uiControl31_N4421V: function () {
       var selfTemplate = "import {Component} from 'react';\nexport default class extends React.Component{\n  \n// componentWillMount(){\n//     var toastWord=this.refs.yspToast; \n//     if(toastWord){\n//       setTimeout(function(){\n//     \t\t\ttoastWord.style.display=\"none\";\n//       },20)\n//     }\n    \n//   }\n  // componentDidUpdate(props){\n  //   var data=this.props.customData;\n  //   var toastWord=this.refs.yspToast;\n  //   setTimeout(function(){\n  //     toastWord.style.display=\"none\";\n  //   },2000)\n  // }\nrender() {\n    var data=this.props.customData||[]\n    return (\n      <div className=\"ysp_alert_tips\" ref=\"yspToast\" onClick={(e)=>{e.target.style.display=\"none\"}}>\n        {data==\"\"? \"\":<div className=\"ysp_alert_words\"><span style={{height:\"40px\"}}>{data}</span></div>}\n      </div>\n    )\n  }\n};";
       return "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\"react\");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: \"render\",\n\n\n    // componentWillMount(){\n    //     var toastWord=this.refs.yspToast; \n    //     if(toastWord){\n    //       setTimeout(function(){\n    //     \t\t\ttoastWord.style.display=\"none\";\n    //       },20)\n    //     }\n\n    //   }\n    // componentDidUpdate(props){\n    //   var data=this.props.customData;\n    //   var toastWord=this.refs.yspToast;\n    //   setTimeout(function(){\n    //     toastWord.style.display=\"none\";\n    //   },2000)\n    // }\n    value: function render() {\n      var data = this.props.customData || [];\n      return React.createElement(\n        \"div\",\n        { className: \"ysp_alert_tips\", ref: \"yspToast\", onClick: function onClick(e) {\n            e.target.style.display = \"none\";\n          } },\n        data == \"\" ? \"\" : React.createElement(\n          \"div\",\n          { className: \"ysp_alert_words\" },\n          React.createElement(\n            \"span\",\n            { style: { height: \"40px\" } },\n            data\n          )\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;";
+    },
+    getData_control197_Hdliue: function (elem) {
+      if (!elem) {
+        return;
+      } // if (elem && elem.querySelector("#toast") && elem.querySelector("#toast").style.display != "none") {
+      //   return elem.querySelector("#toast").textContent;
+      // }
+      if (elem) {
+        var data = { button: [], tip: "" };var windowDrag = elem.querySelector(".mini-window-drag");if (windowDrag) {
+          var iframeOuter = elem.querySelector(".mini-window-drag").querySelector("iframe");if (iframeOuter) {
+            var btns = iframeOuter.contentDocument.querySelector("#btn");var agreeBtn = iframeOuter.contentDocument.querySelector('#td_0_0');var disagreeBtn = iframeOuter.contentDocument.querySelector('#td_0_1');if (btns && btns.style.display != "none" && agreeBtn) {
+              data.button.push(agreeBtn.textContent);
+            }if (btns && btns.style.display != "none" && disagreeBtn && disagreeBtn.textContent.trim() != '领取') {
+              data.button.push(disagreeBtn.textContent);
+            }
+          } // if (elem.contentWindow.document.querySelector(".mini-tips-danger")) {
+          // return elem.contentWindow.document.querySelector(".mini-tips-danger").innerHTML;
+          // }
+          //有黑色提示框出现
+          //   var tip = elem.querySelector("#toast");
+          //   if (tip) {
+          //     data.tip = tip.textContent;
+          //   }
+        }return data;
+      }
+    },
+    doAction_uiControl190_BFndI2: function (data, elem) {
+      if (data.eventType == 'click') {
+        var d = data.dataCustom.classNames;if (d == 'btn ysp-btn-one') {
+          var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");_btnTwo.click(); // setTimeout(function () {
+          //   ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bizform/components/back/backActivity.jsp?");
+          // }, 20);
+          var redTip = elem.querySelector(".mini-window-drag").querySelector('iframe').contentWindow.document.querySelector('#tab iframe').contentWindow.document.querySelector('.mini-tips-danger');if (!redTip) {
+            setTimeout(function () {
+              var tip = elem.querySelectorAll(".mini-window-drag");if (tip.length == 1) {
+                //_btnTwo.click(); 
+                var json = { time: new Date().getTime() };setTimeout(function () {
+                  ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+                }, 20);
+              }
+            }, 10);
+          }
+        } else if (d == 'btn ysp-btn-two') {
+          var btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_0')[0].querySelector("a");if (data.dataCustom.text == "执行") {
+            btnTwo.click();
+          } else if (data.dataCustom.text == "追回") {
+            btnTwo.click();var json = { time: new Date().getTime() };setTimeout(function () {
+              ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp");
+            }, 10);
+          } else {
+            //有黑色提示框出现
+            var tip = elem.querySelector("#toast");if (tip) {
+              data.tip = tip.textContent;
+            } //**如果流程iframe存在就留在当页，如果不存在就点击同意后回到待办里***//
+            btnTwo.click();var timer = setInterval(function () {
+              var redTip = elem.querySelector(".mini-window-drag"); //.querySelectorAll("iframe")[0].contentDocument.querySelector("#tab").querySelectorAll("iframe")[0].contentDocument.querySelector(".mini-tips-danger");
+              if (!redTip) {
+                var json = { time: new Date().getTime() };setTimeout(function () {
+                  ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+                }, 10);clearInterval(timer);
+              }
+            }, 10);
+          }
+        }
+      };
+    },
+    getTemplate_uiControl190_BFndI2: function () {
+      var selfTemplate = "import {Button} from 'ysp-custom-components'\nimport {Component} from 'react';\nexport default class extends React.Component{\n  // constructor(){\n  //   super();\n  //   this.flag=false\n  // }\n  click(e){\n//     if(!this.flag){\n     \n//     this.flag=true;\n      var handler=this.props.customHandler;\n    var e=e.target;\n      //alert(\"\u70B9\u51FB\u4E86\u6309\u94AE\")\n      \n     if(handler) {                                    \n       handler({\n         data:{classNames:e.className,text:e.textContent},\n         eventType:'click'                         \n       })\n     }\n    // }\n  \t\n  }\n  // componentDidMount(){\n  //   var windowH=document.documentElement.clientHeight;\n  //   this.setState({\n  //   \twindowH:windowH,\n  //   })\n  //   console.log(windowH)\n  //   var btn=window.document.querySelector('.ysp-btn');\n  //   setTimeout(function(){\n  //     btn.style.top=(windowH-100)+\"px\";\n  //   },500)\n  // }\n  render(){\n    var data=this.props.customData\t||\t[];\n    var btns=data.button||[]\n    if(\tbtns\t&& btns.length>0\t){\n    \treturn(\n    \t<Button  PassedCustomData={btns} btnClick={this.click.bind(this)} />\n   \t )\n    } else{\n      return(<div style={{display:'none'}}></div>)\n    } \n  }\n}";
+      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nvar _react = require('react');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: 'click',\n\n    // constructor(){\n    //   super();\n    //   this.flag=false\n    // }\n    value: function click(e) {\n      //     if(!this.flag){\n\n      //     this.flag=true;\n      var handler = this.props.customHandler;\n      var e = e.target;\n      //alert(\"\u70B9\u51FB\u4E86\u6309\u94AE\")\n\n      if (handler) {\n        handler({\n          data: { classNames: e.className, text: e.textContent },\n          eventType: 'click'\n        });\n      }\n      // }\n    }\n    // componentDidMount(){\n    //   var windowH=document.documentElement.clientHeight;\n    //   this.setState({\n    //   \twindowH:windowH,\n    //   })\n    //   console.log(windowH)\n    //   var btn=window.document.querySelector('.ysp-btn');\n    //   setTimeout(function(){\n    //     btn.style.top=(windowH-100)+\"px\";\n    //   },500)\n    // }\n\n  }, {\n    key: 'render',\n    value: function render() {\n      var data = this.props.customData || [];\n      var btns = data.button || [];\n      if (btns && btns.length > 0) {\n        return React.createElement(_yspCustomComponents.Button, { PassedCustomData: btns, btnClick: this.click.bind(this) });\n      } else {\n        return React.createElement('div', { style: { display: 'none' } });\n      }\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;";
+    },
+    getData_control200_eQ23GQ: function (elem) {
+      if (!elem) {
+        return;
+      }var iframe = elem && elem.ownerDocument.defaultView.frameElement;if (elem && elem.textContent.indexOf("回退方式") !== -1) {
+        var data = [];var signOne = elem.querySelectorAll('.form-label')[0];var signTwo = elem.querySelector('.mini-buttonedit-input');var signThree = elem.querySelectorAll('.form-label')[2]; //var signFour = elem.querySelectorAll('.mini-textbox-input')[0];
+        signOne && data.push(signOne.textContent);signTwo && data.push(signTwo.value);signThree && data.push(signThree.textContent.trim()); //signFour && data.push(signFour.value);
+        return data;
+      }
+    },
+    doAction_uiControl193_hCZA3k: function (data, elem) {
+      if (data.eventType == 'change') {
+        var d = data.dataCustom;var signFour = elem.querySelectorAll('.mini-textbox-input')[0];signFour.focus();signFour.value = d;signFour.dispatchEvent(new Event("change"));
+      } else if (data.eventType == 'click') {
+        var d = data.dataCustom;if (d == 'btn ysp-sure') {
+          // var signOne = elem.ownerDocument.querySelectorAll('#cancel')[0];
+          //   signOne.click();
+          var signOne = elem.ownerDocument.querySelectorAll('#save')[0];signOne.click();var _fk = elem.ownerDocument.defaultView.parent.document.querySelector('.mini-window-drag').querySelector('iframe').contentWindow.document.querySelector('iframe').contentWindow.document.querySelector('.mini-tips-danger');if (_fk) {
+            signOne.click();
+          } else {
+            var json = { time: new Date().getTime() }; // @可选的url：浏览器不会检查url是否存在，只改变url，url必须同域，不能跨域
+            var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
+              ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+            }
+          }
+        } else if (d == 'btn ysp-miss') {
+          var signOne = elem.ownerDocument.querySelectorAll('#cancel')[0];signOne.click();
+        }
+      }
+    },
+    getTemplate_uiControl193_hCZA3k: function () {
+      var selfTemplate = "export default class extends React.Component{\n  change(e){\n    var handler=this.props.customHandler;\n    var e=e.target;\n     if(handler) {                                    \n       handler({\n         data:e.value,\n         eventType:'change'                         \n       })\n     }\n  }\n  onClick(e){\n    var handler=this.props.customHandler\t;\n    var e=e.target;\n     if(handler) {                                    \n       handler({\n         data:e.className,\n         eventType:'click'                         \n       })\n     }\n  }\n  render(){\n    var\tdata=this.props.customData\t|| [];\n    if(data && data.length>0){\n   \treturn(\n      <div className='ysp-fallbackStrategy'>\n      \t<div className=\"ysp-fallbackStrategy-cont\">\n          <div style={{textAlign:'center',width:'100%'}}>\u56DE\u9000\u7B56\u7565</div>\n        \t<div>\n          \t<span>{data[0]}</span>\n            <label>{data[1]}</label>\n          </div>\n          <div>\n          \t<span className=\"yesOrno\">{data[2]}</span>\n            {/*<textarea defaultValue={data[3]} onBlur={this.change.bind(this)}></textarea>*/}\n          </div>\n          <div>\n          \t<AMUI.Button className=\"ysp-sure\" onClick={this.onClick.bind(this)}>\u786E\u5B9A</AMUI.Button>\n            <AMUI.Button className=\"ysp-miss\" onClick={this.onClick.bind(this)}>\u53D6\u6D88</AMUI.Button>\n          </div>\n        </div>\n      </div>\n    ) }else {\n      return(<div style={{display:'none'}}></div>)\n    }\n  }\n}";
+      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: 'change',\n    value: function change(e) {\n      var handler = this.props.customHandler;\n      var e = e.target;\n      if (handler) {\n        handler({\n          data: e.value,\n          eventType: 'change'\n        });\n      }\n    }\n  }, {\n    key: 'onClick',\n    value: function onClick(e) {\n      var handler = this.props.customHandler;\n      var e = e.target;\n      if (handler) {\n        handler({\n          data: e.className,\n          eventType: 'click'\n        });\n      }\n    }\n  }, {\n    key: 'render',\n    value: function render() {\n      var data = this.props.customData || [];\n      if (data && data.length > 0) {\n        return React.createElement(\n          'div',\n          { className: 'ysp-fallbackStrategy' },\n          React.createElement(\n            'div',\n            { className: 'ysp-fallbackStrategy-cont' },\n            React.createElement(\n              'div',\n              { style: { textAlign: 'center', width: '100%' } },\n              '\\u56DE\\u9000\\u7B56\\u7565'\n            ),\n            React.createElement(\n              'div',\n              null,\n              React.createElement(\n                'span',\n                null,\n                data[0]\n              ),\n              React.createElement(\n                'label',\n                null,\n                data[1]\n              )\n            ),\n            React.createElement(\n              'div',\n              null,\n              React.createElement(\n                'span',\n                { className: 'yesOrno' },\n                data[2]\n              )\n            ),\n            React.createElement(\n              'div',\n              null,\n              React.createElement(\n                AMUI.Button,\n                { className: 'ysp-sure', onClick: this.onClick.bind(this) },\n                '\\u786E\\u5B9A'\n              ),\n              React.createElement(\n                AMUI.Button,\n                { className: 'ysp-miss', onClick: this.onClick.bind(this) },\n                '\\u53D6\\u6D88'\n              )\n            )\n          )\n        );\n      } else {\n        return React.createElement('div', { style: { display: 'none' } });\n      }\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;";
     }
   }, "approveAdvice");
 })(window, ysp);
