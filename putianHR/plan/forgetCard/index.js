@@ -68,10 +68,14 @@
     getData_control29_p1tX0T: function (elem) {
       if (!elem) {
         return;
-      }var data = [];var a = elem.querySelector("#saveWait_win4");var b = elem.querySelector("#ptStatusText_win4");if (a) {
+      }var data = [];var a = elem.querySelector("#SAVED_win3");var b = elem.querySelector("#ptStatusText_win3");var c = elem.querySelector("#SAVED_win4");var d = elem.querySelector("#ptStatusText_win4");if (a) {
         data.push(a.style.display);
       }if (b) {
         data.push(b.textContent);
+      }if (c) {
+        data.push(c.textContent);
+      }if (d) {
+        data.push(d.textContent);
       }return data;
     },
     doAction_uiControl29_gPTASK: function (data, elem) {},

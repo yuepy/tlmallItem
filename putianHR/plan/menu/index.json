@@ -8,7 +8,8 @@
     "employeeInfo": "../employeeInfo/index.json",
     "holidayAppli": "../holidayAppli/index.json",
     "checkSubInfo": "../checkSubInfo/index.json",
-    "forgetCard": "../forgetCard/index.json"
+    "forgetCard": "../forgetCard/index.json",
+    "selloffAppli": "../selloffAppli/index.json"
   },
   "chineseName": "菜单",
   "description": "",
@@ -450,6 +451,10 @@
         "data": {
           "tagName": "A"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "button/text",
@@ -547,6 +552,109 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "button"
+    },
+    "control32_spR500": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "销假申请"
+              ],
+              "visText": [
+                "销假申请"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "销假申请"
+              ],
+              "visText": [
+                "销假申请"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "销假申请"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 1,
+            "ordinal": [
+              7,
+              10
+            ],
+            "value": {
+              "pathname": "/psp/ps_newwin/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_003.GBL",
+              "search": "PORTALPARAM_PTCNAV=HPS_TL_AWE_003_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081456511958983123&IsFolder=false"
+            }
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ADMN_TL_AWE_02_HMPG_Data",
+              "tagName": "DIV",
+              "prefix": "TABLE[@id=\"ptpglts\"]//",
+              "suffix": "/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[5]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/A[1]",
+              "ratio": 0.151
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              9,
+              30
+            ],
+            "value": "DIV.PSTEXT TD.EOPP_SCSECTIONCONTENT A.EOPP_SCSECTIONCONTENTLINK"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/UL[1]/LI[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[5]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              171,
+              91,
+              26
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
     }
   },
   "contexts": {
@@ -557,7 +665,8 @@
         "control8_WVT4mI",
         "control9_nBfofh",
         "control20_S0QHzq",
-        "control25_Jo0kDN"
+        "control25_Jo0kDN",
+        "control32_spR500"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -640,6 +749,20 @@
           "toModelId": "forgetCard"
         }
       ]
+    },
+    "flow30_kmP6qk": {
+      "fromContextId": "context1_obTFlR",
+      "fromAction": "click",
+      "fromControlId": "control32_spR500",
+      "toContexts": [
+        {
+          "toContextId": "context1_obTFlR"
+        },
+        {
+          "toContextId": "context5_k7LCe6",
+          "toModelId": "selloffAppli"
+        }
+      ]
     }
   },
   "pages": {
@@ -675,6 +798,17 @@
         {
           "id": "uiControl25_bHgAWm",
           "controlId": "control25_Jo0kDN",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl32_H3DvbA",
+          "controlId": "control32_spR500",
           "display": {
             "adapterId": "clickable",
             "type": "button",
