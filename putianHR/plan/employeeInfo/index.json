@@ -3,6 +3,9 @@
   "id": "employeeInfo",
   "targetURL": "http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_RSM_SS.GBL?PORTALPARAM_PTCNAV=HPS_RSM_SS&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_HR_04_NEW&EOPP.SCLabel=TL_HR_04_NEW&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_HR_04_NEW.ADMN_S201802281349316939298684&IsFolder=false",
   "jsFile": "index.js",
+  "requires": {
+    "EmployeeEditors": "../EmployeeEditors/index.json"
+  },
   "chineseName": "员工履历表",
   "description": "",
   "controls": {
@@ -221,6 +224,20 @@
           "toContextId": "context2_UAeaAc"
         }
       ]
+    },
+    "flow26_62wUd3": {
+      "fromContextId": "context2_UAeaAc",
+      "fromAction": "doAction",
+      "fromControlId": "control20_rAKl6w",
+      "toContexts": [
+        {
+          "toContextId": "context2_UAeaAc"
+        },
+        {
+          "toContextId": "context5_WMk3RJ",
+          "toModelId": "EmployeeEditors"
+        }
+      ]
     }
   },
   "pages": {
@@ -243,66 +260,19 @@
           }
         },
         {
-          "id": "uiControl17_xvQ3Mh",
+          "id": "uiControl16_pvBLnV",
+          "controlId": "control15_TT4EPb",
           "display": {
-            "type": "card",
-            "adapterId": "card",
+            "adapterId": "custom",
+            "type": "custom",
             "adapter": {
-              "templateType": ""
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl16_pvBLnV",
+                "onGetTemplate": "getTemplate_uiControl16_pvBLnV"
+              }
             }
-          },
-          "layout": [
-            {
-              "id": "uiControl17_xvQ3Mhheader",
-              "display": {
-                "type": "cardHeader",
-                "text": "",
-                "adapterId": "cardHeader",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": []
-            },
-            {
-              "id": "uiControl17_xvQ3Mhbody",
-              "display": {
-                "type": "cardBody",
-                "adapterId": "cardBody",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": [
-                {
-                  "id": "uiControl16_pvBLnV",
-                  "controlId": "control15_TT4EPb",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl16_pvBLnV",
-                        "onGetTemplate": "getTemplate_uiControl16_pvBLnV"
-                      }
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "id": "uiControl17_xvQ3Mhfooter",
-              "display": {
-                "type": "cardFooter",
-                "adapterId": "cardFooter",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": []
-            }
-          ]
+          }
         },
         {
           "id": "uiControl19_3GFMBU",
