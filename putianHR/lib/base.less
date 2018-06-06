@@ -743,8 +743,6 @@ div[data-ysp-modelid="salary"]{
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
-    position: absolute;
-    right: 10px;
     display: inline-block;
     border:1px solid @E1E1E1;
     padding:0 15px;
@@ -754,13 +752,11 @@ div[data-ysp-modelid="salary"]{
   .fcblue{
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
-    position: absolute;
-    right: 10px;
+    font-size: 12px;    
     display: inline-block;
     border:1px solid @3796FB;
     border-radius:15px;
-    padding:0 15px;
+    padding:0 10px;
     color: @3796FB;
   }
   display: none;
@@ -816,6 +812,10 @@ div[data-ysp-modelid="salary"]{
           span{
             color: @999;
           }
+          i{
+            position: absolute;
+    				right: 10px;
+          }
         }
         p:first-child{
           position: relative;
@@ -826,8 +826,15 @@ div[data-ysp-modelid="salary"]{
           
         }
       }
-      .ysp-infoContentlist3-tt,.ysp-infoContentlist4-tt{
-        .ysp-infoContentlist1-tt
+      .ysp-infoContentlist3-tt{
+        .ysp-infoContentlist1-tt;
+        i{
+          position: absolute;
+    			right: 10px;
+        }
+      }
+      .ysp-infoContentlist4-tt{
+         .ysp-infoContentlist1-tt;
       }
       .ysp-infoContentlist5-tt{
         .ysp-infoContentlist1-tt;
@@ -841,6 +848,87 @@ div[data-ysp-modelid="salary"]{
             }
           }
         }
+      }
+      .ysp-infoContentlist6-tt:first-child{
+        >p:first-child{
+          	display: none;
+        }
+        >p:nth-child(2){
+          border-bottom:1px solid @E1E1E1;
+        }
+      }
+      .ysp-infoContentlist6-tt{
+        background: #fff;
+        padding:0 0 0 20px;
+        &:nth-child(2n){
+          border-bottom: 1px solid @E1E1E1;   
+          margin:0 0 15px 0;
+          >p:nth-child(2){
+            border:0;
+          }
+        }
+        &:nth-child(2n-1){
+          border-top:1px solid @E1E1E1;
+        }
+        p{
+          padding:10px 0;
+          border-bottom:1px solid @E1E1E1;
+          span{
+            display: inline-block;
+            margin:0 15px 0 0;
+            &:first-child{
+              font-weight: bold;
+            }
+            &:nth-child(2){
+              color: @999;
+            }
+          }
+        }
+      }
+      .ysp-infoContentlist7-tt{
+        background: #fff;
+        padding:0 0 0 20px;
+        margin:0 0 15px 0;
+        border-top:1px solid @E1E1E1;
+        border-bottom:1px solid @E1E1E1;
+        >div{
+          &:last-child{
+            p:last-child{
+              border:0;
+            }
+          }
+          p{          
+            padding:10px 0;
+            border-bottom:1px solid @E1E1E1;
+            position: relative;
+            overflow: hidden;
+            span{
+              
+              &:first-child{
+                float: left;
+                font-weight: bold;
+              }
+              &:nth-child(2){
+                float: right;
+                padding:0 20px 0 0;
+                color: @999;
+                word-wrap: break-word;
+                word-break: break-word;
+              }
+            }
+            i{
+              position: absolute;
+              top:10px;
+              left:80px;
+            }
+          }
+        }
+        
+      }
+      .ysp-infoContentlist8-tt{
+        
+      
+      	.ysp-infoContentlist6-tt;
       }
     }
   }
