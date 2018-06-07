@@ -21,6 +21,9 @@ ul li {
 img {
   border: none;
 }
+.editor-state [data-ysp="component"] {
+  padding-top: 0;
+}
 /******************************CustomHeader组件******************************************/
 div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   padding-top: 0;
@@ -88,6 +91,35 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 .ysp_header_wrapper .ysp-header-edit {
   display: inline-block;
   width: 50px;
+}
+/******************************CustomPage组件******************************************/
+.ysp_page {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.ysp_page > div {
+  width: 36px;
+  height: 31px;
+  line-height: 31px;
+  margin-right: 5px;
+}
+.ysp_page .pageInfo {
+  width: auto;
+  color: #888;
+  margin-right: 5px;
+}
+.ysp_page .firstItem {
+  background: url(../local/img/ysp-leftBM-icon.png) no-repeat;
+}
+.ysp_page .prevPage {
+  background: url(../local/img/ysp-left-icon.png) no-repeat;
+}
+.ysp_page .nextPage {
+  background: url(../local/img/ysp-right-icon.png) no-repeat;
+}
+.ysp_page .lastItem {
+  background: url(../local/img/ysp-rightBM-icon.png) no-repeat;
 }
 /******************************薪资查询start******************************************/
 .ysp_filter .ysp_selectBox {
@@ -282,6 +314,68 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   background-position: 100%;
   background-size: 10px;
   vertical-align: middle;
+}
+/***********************************下属员工考察详情页 start*************************************/
+.consequence {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 25;
+  min-height: 100vh;
+  overflow: scroll;
+  background: #f8f8f8;
+}
+.consequence .listCard {
+  margin-bottom: 10px;
+  background: #fff;
+  padding: 10px;
+}
+.consequence .line1 {
+  overflow: hidden;
+}
+.consequence .line1 > div:first-child {
+  font-size: 16px;
+  float: left;
+  color: #333;
+}
+.consequence .line1 .approved,
+.consequence .line1 .approving {
+  color: #888;
+  border: 1px solid #888;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.consequence .line1 .approving {
+  color: #3796fb;
+  border: 1px solid #3796fb;
+}
+.consequence .line2 {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #888;
+}
+.consequence .line2 > div {
+  display: inline-block;
+}
+.consequence .line2 > div:first-child {
+  margin-right: 10px;
+}
+.consequence .line3 div,
+.consequence .line4 div,
+.consequence .line5 div,
+.consequence .line6 div {
+  color: #666;
+  font-size: 14px;
+  display: inline-block;
+}
+.consequence .line3 > div:first-child,
+.consequence .line4 > div:first-child,
+.consequence .line5 > div:first-child,
+.consequence .line6 > div:first-child {
+  margin-right: 10px;
 }
 /***********************************请假申请 start*************************************/
 .ysp-con-box {
@@ -484,7 +578,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   border-radius: 10px;
   padding: 10px 5%;
   position: fixed;
-  z-index: 999;
+  z-index: 12345;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -583,12 +677,8 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 }
 .ysp-btn-box .ysp-save-btn {
   background-color: #fff;
-  color: #999;
+  color: #333;
   border: 1px solid #e1e1e1;
-}
-.ysp-btn-box .ysp-save-btn:hover {
-  background-color: #fff;
-  color: #999;
 }
 /***********************************请假申请 end*************************************/
 /***********************************忘打卡管理 start*************************************/
@@ -610,6 +700,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   border: 1px solid #e1e1e1;
   border-radius: 3px;
   margin-top: 0.4rem;
+  padding-right: 22px;
 }
 /***********************************忘打卡管理 end*************************************/
 /***********************************销假申请 start*************************************/
@@ -708,6 +799,25 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   font-size: 14px;
   color: #fff;
   float: right;
+}
+.dele-reason-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 666;
+  background: #f2f2f2;
+}
+.dele-reason-box .ysp-del-reason {
+  margin-top: 3.5rem;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 10px 5%;
+}
+.dele-reason-box .ysp-del-reason textarea {
+  line-height: 22px;
+  font-size: 14px;
 }
 /***********************************销假申请 end*************************************/
 /*******************员工履历表（员工自助）start***************************/

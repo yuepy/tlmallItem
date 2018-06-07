@@ -18,6 +18,9 @@ ul li{
   list-style: none;
 }
 img{border:none;}
+.editor-state [data-ysp="component"]{
+  padding-top: 0;
+}
 /******************************CustomHeader组件******************************************/
 div[data-ysp-modelid="salary"]{
   .editor-state [data-ysp="component"]{
@@ -95,6 +98,36 @@ div[data-ysp-modelid="salary"]{
     width: 50px;
   }
 }
+/******************************CustomPage组件******************************************/
+.ysp_page{
+  display:	flex;
+  justify-content: center;
+  margin: 20px 0;
+  >div{
+    width:	36px;
+    height:	31px;
+    line-height:	31px;
+    margin-right: 5px;
+  }
+  .pageInfo{
+    width: auto;
+    color: #888;
+    margin-right: 5px;
+  }
+  .firstItem{
+    background:url(../local/img/ysp-leftBM-icon.png) no-repeat;
+  }
+  .prevPage{
+    background:url(../local/img/ysp-left-icon.png) no-repeat;
+  }
+  .nextPage{
+    background:url(../local/img/ysp-right-icon.png) no-repeat;
+  }
+  .lastItem{
+    background:url(../local/img/ysp-rightBM-icon.png) no-repeat;
+  }
+}
+
 /******************************薪资查询start******************************************/
 .ysp_filter{
   .ysp_selectBox{
@@ -289,7 +322,63 @@ div[data-ysp-modelid="salary"]{
     }
   }
 }
-
+/***********************************下属员工考察详情页 start*************************************/
+.consequence{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom: 0;
+  z-index: 25;
+  min-height:100vh;
+  overflow: scroll;
+  background: #f8f8f8;
+  .listCard{
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 10px;
+  }
+  .line1{
+    overflow: hidden;
+    >div:first-child{
+      font-size: @fontLarge;
+      float: left;
+      color: #333;
+    }
+    .approved,.approving{
+      color:#888;
+      border:1px solid #888;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size:@fontSmall;
+    }
+    .approving{
+      color:#3796fb;
+      border:1px solid #3796fb;
+    }
+  }
+  .line2{
+    font-size:@fontSmall;
+    margin-bottom: 10px;
+    color:#888;
+    >div{
+      display: inline-block;
+      &:first-child{
+        margin-right: 10px;
+      }
+    }
+  }
+  .line3,.line4,.line5,.line6{
+    div{
+      color:#666;
+      font-size:@fontBase;
+      display: inline-block;
+    }
+    >div:first-child{
+      margin-right: 10px;
+    }
+  }
+}
 
 /***********************************请假申请 start*************************************/
 
@@ -516,7 +605,7 @@ div[data-ysp-modelid="salary"]{
   border-radius: 10px;
   padding:10px 5%;
    position: fixed;
-    z-index: 999;
+    z-index: 12345;
     top:50%;
     left:50%;
     transform:translateX(-50%) translateY(-50%);
@@ -627,12 +716,8 @@ div[data-ysp-modelid="salary"]{
   }
   .ysp-save-btn{
     background-color: #fff;
-    color:#999;
+    color:#333;
     border:1px solid #e1e1e1;
-    &:hover{
-    background-color: #fff;
-    color:#999;
-    }
   }
 }
 
@@ -660,6 +745,7 @@ div[data-ysp-modelid="salary"]{
       border:1px solid #e1e1e1;
       border-radius: 3px;
       margin-top:0.4rem;
+      padding-right:22px;
     }
 }
 
@@ -763,6 +849,27 @@ div[data-ysp-modelid="salary"]{
     color:#fff;
     float:right;
   }
+}
+//销假原因
+.dele-reason-box{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:666;
+  background:#f2f2f2;
+  .ysp-del-reason{
+    margin-top:3.5rem;
+    border-top:1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding:10px 5%;
+    textarea{
+      line-height:22px;
+      font-size:@fontBase;
+    }
+  }
+  
 }
 
 
