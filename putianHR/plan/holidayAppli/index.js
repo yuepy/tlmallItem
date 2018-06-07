@@ -21,7 +21,11 @@
     },
     doAction_uiControl11_Tbpng8: function (data, elem) {
       if (data.eventType == "click") {
-        var d = data.dataCustom;var i = d[0];var val = d[1];elem.querySelectorAll("option")[i].selected = true;elem.querySelectorAll("option")[i].textContent = val;elem.dispatchEvent(new Event("change"));
+        var d = data.dataCustom;var i = d[0];var val = d[1];var options = elem.querySelectorAll("option");for (var n = 0; n < options.length; i++) {
+          if (options[n].textContent == val) {
+            options[n].selected = true;
+          }
+        }elem.dispatchEvent(new Event("change"));
       }
     },
     getTemplate_uiControl11_Tbpng8: function () {
