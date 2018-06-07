@@ -218,6 +218,71 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   text-align: right;
   color: #9C9C9C;
 }
+/******************************下属员工考勤start******************************************/
+.subSearchType {
+  margin-bottom: 10px;
+}
+.ysp_search {
+  width: 90%;
+  margin: 10px auto;
+  background: #3796fb;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 8px;
+}
+.searchCondition {
+  background: #fff;
+  padding: 0 10px;
+}
+.searchCondition .conditionItem {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.searchCondition .conditionItem .conditionTitle {
+  display: inline-block;
+  width: 25%;
+}
+.searchCondition .conditionItem .conditionContent {
+  display: inline-block;
+  width: 75%;
+}
+.searchCondition .conditionItem .conditionContent select,
+.searchCondition .conditionItem .conditionContent input {
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 15px;
+  height: 30px;
+  background: #fff;
+  text-align: right;
+  width: 100%;
+  background: url(../local/img/rightArrow.png) no-repeat;
+  background-position: 100%;
+  background-size: 10px;
+  font-size: 15px;
+  color: #888;
+}
+.searchCondition .conditionItem .conditionContent select {
+  direction: rtl;
+}
+.searchCondition .conditionItem .conditionContent .staffName,
+.searchCondition .conditionItem .conditionContent .search {
+  background: none;
+}
+.searchCondition .conditionItem .conditionContent .search {
+  width: 90%;
+  padding: 0;
+}
+.searchCondition .conditionItem .conditionContent .searchIcon {
+  display: inline-block;
+  height: 30px;
+  width: 10%;
+  background: url(../local/img/rightArrow.png) no-repeat;
+  background-position: 100%;
+  background-size: 10px;
+  vertical-align: middle;
+}
 /***********************************请假申请 start*************************************/
 .ysp-con-box {
   background-color: #fff;
@@ -1097,5 +1162,11 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist8-tt p span:nth-child(2) {
   color: #999;
+}
+.yyyyyy {
+  display: none;
+}
+.yyyyyy .a {
+  display: block;
 }
 /*******************员工履历表（员工自助）end***************************/
