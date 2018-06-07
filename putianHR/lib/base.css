@@ -289,9 +289,6 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   margin-top: 10px;
   font-size: 14px;
 }
-.ysp-con-box:first-child {
-  margin-top: 0;
-}
 .ysp-lists {
   display: flex;
   padding: 0 0.75rem;
@@ -330,7 +327,9 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   width: 50%;
 }
 .ysp-lists .ysp-r input {
-  width: 100%;
+  width: -webkit- calc(100% - 22px);
+  width: -mox- calc(100% - 22px);
+  width: calc(100% - 22px);
   color: #666;
   font-size: 14px;
   border: none;
@@ -341,30 +340,24 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   height: 2.6rem;
   margin-right: 42px;
   position: relative;
-  background: url(../local/img/arrow-r.png) no-repeat right 0.72rem #fff;
-}
-.ysp-lists .ysp-r input.clock-time {
-  height: 2.6rem;
-  padding-right: 22px;
-  position: relative;
-}
-.ysp-lists .ysp-r input[disabled].clock-time {
-  background: #fff;
-}
-.ysp-lists .ysp-r input[placeholder] {
-  color: #999;
 }
 .ysp-lists .ysp-r input.input-edit {
   text-align: left;
 }
+.ysp-lists .ysp-r input[disabled].date-time {
+  background: #fff;
+}
 .ysp-lists .ysp-r select.sel-type {
   display: inline-block;
-  background: url(../local/img/arrow-r.png) no-repeat right 0 #fff;
+  width: -webkit- calc(100% - 22px);
+  width: -mox- calc(100% - 22px);
+  width: calc(100% - 22px);
+  background: #fff;
   border: none;
   text-align: center;
   margin: 0;
+  margin-right: 22px;
   padding: 0;
-  padding-right: 22px;
   color: #333;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", sans-serif;
   font-size: 14px;
@@ -401,7 +394,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   vertical-align: top;
   margin-top: 0.9rem;
 }
-.ysp-lists .ysp-r .canclick-btn {
+.ysp-lists .ysp-r .address-btn {
   margin: 0;
   width: 22px;
   height: 22px;
@@ -468,7 +461,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 .ysp-pop-box .ysp-pop-con button {
   width: 100%;
   border: none;
-  border-top: 1px solid #e1e1e1;
+  border-top: 1px solid #dfdfdf;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 2.75rem;
@@ -476,18 +469,6 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   background: #fff;
   color: #0089FF;
   font-size: 15px;
-}
-.ysp-pop-tip {
-  color: #fff;
-  background: #000;
-  opacity: 0.4;
-  border-radius: 10px;
-  padding: 10px 5%;
-  position: fixed;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
 }
 .ysp-year-holiday {
   color: #999;
@@ -532,7 +513,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 }
 .annex-box .annex-add {
   display: inline-block;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #dfdfdf;
   width: 60px;
   height: 60px;
   text-align: center;
@@ -544,7 +525,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 }
 .annex-box .annex-item {
   display: inline-block;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #dfdfdf;
   width: 60px;
   height: 60px;
   text-align: center;
@@ -574,168 +555,28 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   color: #fff;
 }
 .ysp-btn-box.readonly .ysp-sel-btn {
-  background-color: #3696FC;
+  background-color: #9AD4FA;
   color: #fff;
 }
 .ysp-btn-box.readonly .ysp-sel-btn:hover {
-  background-color: #1D77D8;
+  background-color: #9AD4FA;
   color: #fff;
 }
 .ysp-btn-box .ysp-save-btn {
   background-color: #fff;
   color: #999;
-  border: 1px solid #e1e1e1;
 }
 .ysp-btn-box .ysp-save-btn:hover {
   background-color: #fff;
   color: #999;
 }
 /***********************************请假申请 end*************************************/
-/***********************************忘打卡管理 start*************************************/
-.ysp-r input.time-ipt {
-  display: inline-block;
-  width: 42%;
-  height: 1.8rem;
-  border: 1px solid #e1e1e1;
-  border-radius: 3px;
-  margin-top: 0.4rem;
-  background: url(../local/img/arrow-r.png) no-repeat right 0.2rem #fff;
-  padding-right: 10%;
-}
-.ysp-r em.bolang {
-  padding: 0 5%;
-}
-.ysp-r input.time-ipt-one {
-  height: 1.8rem;
-  border: 1px solid #e1e1e1;
-  border-radius: 3px;
-  margin-top: 0.4rem;
-}
-/***********************************忘打卡管理 end*************************************/
-/***********************************销假申请 start*************************************/
-.ysp-selloff-li {
-  background: #fff;
-  border-bottom: 1px solid #e1e1e1;
-  padding: 10px 5%;
-}
-.ysp-selloff-li label {
-  position: relative;
-  display: inline-block;
-  width: 15px;
-  margin: 0;
-  margin-right: 5%;
-}
-.ysp-selloff-li label input {
-  position: absolute;
-  display: none;
-}
-.ysp-selloff-li label i {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  margin-top: -1rem;
-  background: #f2f2f2;
-  border: 1px solid #ccc;
-  border-radius: 100%;
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
-}
-.ysp-selloff-li label input:checked + i {
-  border-color: #2c81ff;
-  background: url(../local/img/dui.png) no-repeat -3px -2px;
-}
-.ysp-selloff-li .selloff-li-con {
-  display: inline-block;
-}
-.ysp-selloff-li .selloff-li-con p {
-  font-size: 12px;
-  color: #666;
-}
-.ysp-selloff-li .selloff-li-con p:first-child {
-  font-size: 14px;
-  color: #333;
-}
-.ysp-selloff-li .selloff-li-time {
-  display: inline-block;
-  float: right;
-  font-size: 12px;
-  color: #999;
-}
-.ysp-selloff-sel {
-  width: 100%;
-  height: 2.75rem;
-  padding: 0 5%;
-  background: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  border-top: 1px solid #e1e1e1;
-  line-height: 2.75rem;
-}
-.ysp-selloff-sel label {
-  display: inline-block;
-  margin: 0;
-  width: 100px;
-  vertical-align: middle;
-}
-.ysp-selloff-sel label input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 15px;
-  height: 15px;
-  background: #f2f2f2;
-  border: 1px solid #ccc;
-  border-radius: 100%;
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
-  margin-right: 10%;
-}
-.ysp-selloff-sel label input[type="checkbox"]:checked {
-  border-color: #2c81ff;
-  background: url(../local/img/dui.png) no-repeat -3px -2px;
-}
-.ysp-selloff-sel .sel-reason {
-  display: inline-block;
-  width: 40%;
-  height: 2rem;
-  margin-top: 0.4rem;
-  background: #3796FB;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 2rem;
-  font-size: 14px;
-  color: #fff;
-  float: right;
-}
-/***********************************销假申请 end*************************************/
 /*******************员工履历表（员工自助）start***************************/
-.ysp-baseInfo-tt {
-  margin: 10px 20px;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  box-shadow: 0px 0px 8px #E1E1E1;
-  padding: 0 20px 10px;
-}
-.ysp-baseInfo-tt .ysp-baseInfoPhoto-tt {
-  overflow: hidden;
-}
-.ysp-baseInfo-tt .ysp-baseInfoPhoto-tt h5 {
-  float: left;
-  height: 80px;
-  line-height: 60px;
-  margin: 0;
-}
-.ysp-baseInfo-tt .ysp-baseInfoPhoto-tt img {
-  float: right;
-  margin: 10px 0 0 0;
-}
 .ysp-baseInfo-tt > p {
-  margin: 0 0 5px 0;
+  margin: 0;
 }
 .ysp-baseInfo-tt > p span {
-  color: #999;
+  color: #A2A2A2;
   font-size: 14px;
 }
 .ysp-baseInfo-detail {
@@ -754,7 +595,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   border-radius: 10px;
 }
 .ysp-baseInfo-detail .ysp-baseInfo-detailList {
-  border: 1px solid #E1E1E1;
+  border: 1px solid #E7E7E7;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -762,8 +603,8 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   margin: 0;
   float: left;
   width: 24%;
-  border-bottom: 1px solid #E1E1E1;
-  border-right: 1px solid #E1E1E1;
+  border-bottom: 1px solid #E7E7E7;
+  border-right: 1px solid #E7E7E7;
   text-align: center;
 }
 .ysp-baseInfo-detail .ysp-baseInfo-detailList > div p {
@@ -846,9 +687,6 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   background: #3796FB url('img/yhzh0604.png') no-repeat center;
   background-size: 70%;
 }
-.ysp-baseInfo-detail .ysp-baseInfo-detailList > div:nth-child(9) {
-  border-bottom: 0;
-}
 .ysp-baseInfo-detail .ysp-baseInfo-detailList > div:nth-child(9) i {
   display: block;
   width: 44px;
@@ -861,26 +699,6 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 .ysp-infoZhezhao-tt {
   display: none;
 }
-.ysp-infoZhezhao-tt .fcgray {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  display: inline-block;
-  border: 1px solid #E1E1E1;
-  padding: 0 15px;
-  border-radius: 15px;
-  color: #999;
-}
-.ysp-infoZhezhao-tt .fcblue {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  display: inline-block;
-  border: 1px solid #3796FB;
-  border-radius: 15px;
-  padding: 0 10px;
-  color: #3796FB;
-}
 .ysp-infoZhezhao-tt .ysp-infoBig-tt {
   position: fixed;
   top: 0;
@@ -888,279 +706,12 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   z-index: 1000;
   height: 100vh;
   width: 100%;
-  background: #F2F2F2;
-  overflow: scroll;
+  background: #fff;
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp_header_wrapper {
   background: #333;
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp_header_wrapper span {
   color: #fff;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt {
-  border-bottom: 1px solid #E1E1E1;
-  border-top: 1px solid #E1E1E1;
-  margin: 0 0 15px 0;
-  padding: 10px;
-  background: #fff;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p {
-  margin: 0 0 2px 0;
-  font-size: 15px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p span {
-  display: inline-block;
-  margin: 0 20px 0 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p span:nth-child(2) {
-  color: #999;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p:first-child {
-  margin: 0 0 5px 0;
-  font-size: 17px;
-  font-weight: bold;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p:first-child span {
-  margin: 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt p:first-child span:nth-child(2) {
-  color: #333;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt {
-  border-bottom: 1px solid #E1E1E1;
-  border-top: 1px solid #E1E1E1;
-  margin: 0 0 15px 0;
-  padding: 10px;
-  background: #fff;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p {
-  margin: 0 0 2px 0;
-  font-size: 15px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p span {
-  display: inline-block;
-  margin: 0 20px 0 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p span:nth-child(2) {
-  color: #999;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child {
-  margin: 0 0 5px 0;
-  font-size: 17px;
-  font-weight: bold;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child span {
-  margin: 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child span:nth-child(2) {
-  color: #333;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p span {
-  color: #999;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p i {
-  position: absolute;
-  right: 10px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child {
-  position: relative;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist2-tt p:first-child span {
-  color: #333;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt {
-  border-bottom: 1px solid #E1E1E1;
-  border-top: 1px solid #E1E1E1;
-  margin: 0 0 15px 0;
-  padding: 10px;
-  background: #fff;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p {
-  margin: 0 0 2px 0;
-  font-size: 15px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p span {
-  display: inline-block;
-  margin: 0 20px 0 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p span:nth-child(2) {
-  color: #999;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p:first-child {
-  margin: 0 0 5px 0;
-  font-size: 17px;
-  font-weight: bold;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p:first-child span {
-  margin: 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt p:first-child span:nth-child(2) {
-  color: #333;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist3-tt i {
-  position: absolute;
-  right: 10px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt {
-  border-bottom: 1px solid #E1E1E1;
-  border-top: 1px solid #E1E1E1;
-  margin: 0 0 15px 0;
-  padding: 10px;
-  background: #fff;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p {
-  margin: 0 0 2px 0;
-  font-size: 15px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p span {
-  display: inline-block;
-  margin: 0 20px 0 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p span:nth-child(2) {
-  color: #999;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p:first-child {
-  margin: 0 0 5px 0;
-  font-size: 17px;
-  font-weight: bold;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p:first-child span {
-  margin: 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist4-tt p:first-child span:nth-child(2) {
-  color: #333;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt {
-  border-bottom: 1px solid #E1E1E1;
-  border-top: 1px solid #E1E1E1;
-  margin: 0 0 15px 0;
-  padding: 10px;
-  background: #fff;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p {
-  margin: 0 0 2px 0;
-  font-size: 15px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p span {
-  display: inline-block;
-  margin: 0 20px 0 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p span:nth-child(2) {
-  color: #999;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child {
-  margin: 0 0 5px 0;
-  font-size: 17px;
-  font-weight: bold;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span {
-  margin: 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span:nth-child(2) {
-  color: #333;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child {
-  font-weight: normal;
-  font-size: 15px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span {
-  margin: 0 20px 0 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span:nth-child(2) {
-  color: #999;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt:first-child > p:first-child {
-  display: none;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt:first-child > p:nth-child(2) {
-  border-bottom: 1px solid #E1E1E1;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt {
-  background: #fff;
-  padding: 0 0 0 20px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt:nth-child(2n) {
-  border-bottom: 1px solid #E1E1E1;
-  margin: 0 0 15px 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt:nth-child(2n) > p:nth-child(2) {
-  border: 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt:nth-child(2n-1) {
-  border-top: 1px solid #E1E1E1;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt p {
-  padding: 10px 0;
-  border-bottom: 1px solid #E1E1E1;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt p span {
-  display: inline-block;
-  margin: 0 15px 0 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt p span:first-child {
-  font-weight: bold;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt p span:nth-child(2) {
-  color: #999;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist7-tt {
-  background: #fff;
-  padding: 0 0 0 20px;
-  margin: 0 0 15px 0;
-  border-top: 1px solid #E1E1E1;
-  border-bottom: 1px solid #E1E1E1;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist7-tt > div:last-child p:last-child {
-  border: 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist7-tt > div p {
-  padding: 10px 0;
-  border-bottom: 1px solid #E1E1E1;
-  position: relative;
-  overflow: hidden;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist7-tt > div p span:first-child {
-  float: left;
-  font-weight: bold;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist7-tt > div p span:nth-child(2) {
-  float: right;
-  padding: 0 20px 0 0;
-  color: #999;
-  word-wrap: break-word;
-  word-break: break-word;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist7-tt > div p i {
-  position: absolute;
-  top: 10px;
-  left: 80px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist8-tt {
-  background: #fff;
-  padding: 0 0 0 20px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist8-tt:nth-child(2n) {
-  border-bottom: 1px solid #E1E1E1;
-  margin: 0 0 15px 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist8-tt:nth-child(2n) > p:nth-child(2) {
-  border: 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist8-tt:nth-child(2n-1) {
-  border-top: 1px solid #E1E1E1;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist8-tt p {
-  padding: 10px 0;
-  border-bottom: 1px solid #E1E1E1;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist8-tt p span {
-  display: inline-block;
-  margin: 0 15px 0 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist8-tt p span:first-child {
-  font-weight: bold;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist8-tt p span:nth-child(2) {
-  color: #999;
 }
 /*******************员工履历表（员工自助）end***************************/
