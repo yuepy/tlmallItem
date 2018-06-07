@@ -578,7 +578,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   border-radius: 10px;
   padding: 10px 5%;
   position: fixed;
-  z-index: 12345;
+  z-index: 999;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -677,8 +677,12 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 }
 .ysp-btn-box .ysp-save-btn {
   background-color: #fff;
-  color: #333;
+  color: #999;
   border: 1px solid #e1e1e1;
+}
+.ysp-btn-box .ysp-save-btn:hover {
+  background-color: #fff;
+  color: #999;
 }
 /***********************************请假申请 end*************************************/
 /***********************************忘打卡管理 start*************************************/
@@ -700,7 +704,6 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   border: 1px solid #e1e1e1;
   border-radius: 3px;
   margin-top: 0.4rem;
-  padding-right: 22px;
 }
 /***********************************忘打卡管理 end*************************************/
 /***********************************销假申请 start*************************************/
@@ -799,25 +802,6 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   font-size: 14px;
   color: #fff;
   float: right;
-}
-.dele-reason-box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 666;
-  background: #f2f2f2;
-}
-.dele-reason-box .ysp-del-reason {
-  margin-top: 3.5rem;
-  border-top: 1px solid #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
-  padding: 10px 5%;
-}
-.dele-reason-box .ysp-del-reason textarea {
-  line-height: 22px;
-  font-size: 14px;
 }
 /***********************************销假申请 end*************************************/
 /*******************员工履历表（员工自助）start***************************/
