@@ -52,14 +52,17 @@
                 panelObj.subject.type = "textarea";panelObj.subject.text = partList[j].querySelector("textarea").value;
               } //上传图片展示
               if (partList[j].querySelector("#fileList")) {
-                var pics = partList[j].querySelector("#fileList").querySelectorAll("img");if (window.reportSrc) {
-                  if (window.reportSrc.length > pics.length) {
-                    window.reportSrc.splice(0, window.reportSrc.length - pics.length);
-                  }
-                } else {
-                  window.reportSrc = [];
-                }for (var k = 0; k < pics.length; k++) {
-                  var imgCanvas = ysp.customHelper.convertImageToCanvas(pics[k]);var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);panelObj.subject.fileList.push(scrC);
+                var pics = partList[j].querySelector("#fileList").querySelectorAll("img"); // if (window.reportSrc) {
+                //   if (window.reportSrc.length > pics.length) {
+                //     window.reportSrc.splice(0, window.reportSrc.length - pics.length);
+                //   }
+                // } else {
+                //   window.reportSrc = [];
+                // }
+                for (var k = 0; k < pics.length; k++) {
+                  // var imgCanvas = ysp.customHelper.convertImageToCanvas(pics[k]);
+                  // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
+                  var scrTitle = pics[k].getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;panelObj.subject.fileList.push(scrC);
                 }
               } //上传图片并且展示
               if (partList[j].querySelector(".uploadBtn")) {

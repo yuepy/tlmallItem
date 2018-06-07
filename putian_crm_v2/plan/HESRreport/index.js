@@ -57,7 +57,11 @@
                 } else {
                   window.reportSrc = [];
                 }for (var k = 0; k < pics.length; k++) {
-                  var imgCanvas = ysp.customHelper.convertImageToCanvas(pics[k]);var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);panelObj.subject.fileList.push(scrC);
+                  var imgCanvas = ysp.customHelper.convertImageToCanvas(pics[k]);var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas); // var scrTitle = pics[k].getAttribute('src');
+                  // var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];
+                  // var srcUrl = decodeURI(scrTitleSplit);
+                  // var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;
+                  panelObj.subject.fileList.push(scrC);
                 }
               } //上传图片并且展示
               if (partList[j].querySelector(".uploadBtn")) {
@@ -68,7 +72,8 @@
                 } else {
                   window.reportSrc = [];
                 }for (var k = 0; k < pics.length; k++) {
-                  var imgCanvas = ysp.customHelper.convertImageToCanvas(pics[k]);var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);panelObj.subject.picUpLoad.push(scrC);
+                  var imgCanvas = ysp.customHelper.convertImageToCanvas(pics[k]);var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
+                  panelObj.subject.picUpLoad.push(scrC);
                 }
               }if (elem.querySelector("#saveQuestion")) {
                 panelObj.upLoad = "ok";

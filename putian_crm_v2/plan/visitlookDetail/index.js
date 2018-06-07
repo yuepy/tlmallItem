@@ -64,14 +64,17 @@
           }data.reportdetail.reportcontent.push(arr);
         } //图片
         if (elem.querySelector("#fileList")) {
-          var arryPic = elem.querySelector("#fileList").querySelectorAll(".file-item");if (window.reportSrc) {
-            if (window.reportSrc.length > arryPic.length) {
-              window.reportSrc.splice(0, window.reportSrc.length - divs.length);
-            }
-          } else {
-            window.reportSrc = [];
-          }for (var i = 0; i < arryPic.length; i++) {
-            var imgCanvas = ysp.customHelper.convertImageToCanvas(arryPic[i].querySelector('img'));var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);data.reportdetail.titles.push(arryPic[i].querySelector(".info").textContent);data.reportdetail.pictures.push(scrC);
+          var arryPic = elem.querySelector("#fileList").querySelectorAll(".file-item"); // if (window.reportSrc) {
+          //   if (window.reportSrc.length > arryPic.length) {
+          //     window.reportSrc.splice(0, window.reportSrc.length - divs.length);
+          //   }
+          // } else {
+          //   window.reportSrc = [];
+          // }
+          for (var i = 0; i < arryPic.length; i++) {
+            //var imgCanvas = ysp.customHelper.convertImageToCanvas(arryPic[i].querySelector('img'));
+            //var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
+            var scrTitle = arryPic[i].querySelector("img").getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var titleUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + titleUrl;data.reportdetail.titles.push(arryPic[i].querySelector(".info").textContent);data.reportdetail.pictures.push(scrC);
           }
         } //留言
         if (elem.querySelector(".leaveWord")) {

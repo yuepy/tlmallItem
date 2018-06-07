@@ -21,24 +21,21 @@
       } else {
         data.postMessage = "";
       }data.header = { client: elem.querySelector('#contentCustomer').textContent, signTime: elem.querySelector('#signInDateTime').textContent };data.content = { HuaWeiFD: elem.querySelector('#huaweiFD').value, HuaweiRonghe: elem.querySelector('#huaweiPJ').value, SamSung: elem.querySelector('#SamsungDivison').value, Distribution: elem.querySelector('#FenXiaoDivison').value, GoodsInformation: elem.querySelector('#goodsInformation').value, FinancialInformation: elem.querySelector('#financialInformation').value, BusinessInformation: elem.querySelector('#businessInformation').value, Client: elem.querySelector('#CustomerRisk').value, OtherInfor: elem.querySelector('#OtherInfor').value };data.file = [];if (elem.querySelector('.images').querySelectorAll('.file-item').length > 0) {
-        var divs = elem.querySelector('.images').querySelectorAll('.file-item'); //sessionStorage.removeItem('reportSrc');
-        //window.reportSrc = [];
-        if (window.reportSrc) {
-          if (window.reportSrc.length > divs.length) {
-            window.reportSrc.splice(0, window.reportSrc.length - divs.length);
-          }
-        } else {
-          window.reportSrc = [];
-        }for (var i = 0; i < divs.length; i++) {
+        var divs = elem.querySelector('.images').querySelectorAll('.file-item'); //window.reportSrc = [];
+        // if (window.reportSrc) {
+        //   if (window.reportSrc.length > divs.length) {
+        //     window.reportSrc.splice(0, window.reportSrc.length - divs.length);
+        //   }
+        // } else {
+        //   window.reportSrc = [];
+        // }
+        for (var i = 0; i < divs.length; i++) {
           var src = [],
               title = [],
-              content = [];var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);src.push(scrC);var s; //src.push(ysp.customHelper.convertCanvasToImage(imgCanvas));
-          // ysp.customHelper.dealImage(scrC, imgCanvas, function(sc) {
-          //   var sImg = sc; //var srces = JSON.parse(sessionStorage.getItem('reportSrc')||[]);
-          //   window.reportSrc.push(sImg); //srces.push(sImg);
-          //   //sessionStorage.setItem('reportSrc',JSON.stringify(srces));
-          // });
-          title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent); //var srces = JSON.parse(sessionStorage.getItem('reportSrc')||[]);
+              content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
+          // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
+          // src.push(scrC);
+          var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var urlSrc = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + urlSrc;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent); //var srces = JSON.parse(sessionStorage.getItem('reportSrc')||[]);
           var images = { title: title, content: content, src: src };data.file.push(images);
         }
       } /*_____________________
@@ -72,7 +69,8 @@
       } //搜索人员列表
       if (elem.ownerDocument.querySelector("#search-lists")) {
         if (elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0]) {
-          data.searchList = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
+          data.searchList = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;
+          var searchListVal = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
             var labelEl = elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor).parentNode.parentNode;data.personIndex = $(elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId)).find(".lists-one").index(labelEl);
           }
         }
@@ -163,7 +161,8 @@
             ele.querySelector('#contactSearch').value = data.dataCustom;ele.querySelector('#icon-search').click();var lists = ele.querySelector('#search-lists');var list = lists.firstElementChild;list.click();
           }, 100);
         } else {
-          var name = as.innerHTML;if (name == data.dataCustom) {
+          var name = as.innerHTML;
+          if (name == data.dataCustom) {
             as.click();
           } else {
             setTimeout(function () {
