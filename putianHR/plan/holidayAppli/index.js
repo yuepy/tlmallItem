@@ -223,7 +223,7 @@
     getData_control43_0AveCg: function (elem) {
       if (!elem) {
         return;
-      }var data = ["", ""];var a = elem.querySelector("#saveWait_win12");var b = elem.querySelector("#ptStatusText_win12");var c = elem.querySelector("#saveWait_win1");var d = elem.querySelector("#ptStatusText_win1");if (a) {
+      }var data = ["", ""];var a = elem.querySelector("#saveWait_win12");var b = elem.querySelector("#ptStatusText_win12");var c = elem.querySelector("#saveWait_win11");var d = elem.querySelector("#ptStatusText_win11");if (a) {
         data[0] = a.style.display;
       }if (b) {
         data[1] = b.textContent;
