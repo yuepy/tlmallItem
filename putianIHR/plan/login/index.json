@@ -1,0 +1,207 @@
+{
+  "version": "0.1",
+  "id": "login",
+  "targetURL": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "jsFile": "index.js",
+  "chineseName": "登录",
+  "description": "",
+  "controls": {
+    "control0_4XQEix": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "@alt",
+            "prob": 2,
+            "value": {
+              "text": [
+                "Oracle PeopleSoft 登录"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "Oracle PeopleSoft 登录"
+              ]
+            }
+          },
+          {
+            "id": "img/@src",
+            "prob": 2,
+            "value": {
+              "pathname": "/ps/images/Header.png"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]/DIV[1]/IMG[1]",
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//IMG",
+              "descendant::FORM[@id=\"login\"]//IMG"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.signonMain IMG.ps-staticimg"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0_4XQEix"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context0_I812TP": {
+      "controls": [
+        "control0_4XQEix"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow0_kf1LVm": {
+      "toContexts": [
+        {
+          "toContextId": "context0_I812TP"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0_nXmqWG": {
+      "contextId": "context0_I812TP",
+      "layout": [
+        {
+          "id": "uiControl0_gR3Ja4",
+          "controlId": "control0_4XQEix",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl0_gR3Ja4",
+                "onGetTemplate": "getTemplate_uiControl0_gR3Ja4"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0_I812TP": [
+          "Oracle PeopleSoft 登录"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0_I812TP": [
+          "192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0_I812TP": [
+          [
+            "accessible",
+            "browsercheck_error",
+            "discovery_error",
+            "error_link",
+            "login",
+            "login_error",
+            "ps_select_box",
+            "ps_select_parent",
+            "pswrapper",
+            "ptLabelPassword",
+            "ptLabelSelect",
+            "ptLabelUserid",
+            "ptfooter",
+            "ptinstalledlang",
+            "ptlangcd",
+            "ptlangsel",
+            "ptloginerrorcont",
+            "ptmode",
+            "pwd",
+            "timezoneOffset",
+            "userid"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0_I812TP": [
+          [
+            "ps-button",
+            "ps-link",
+            "ps-staticimg",
+            "ps_box-button",
+            "ps_box-control",
+            "ps_box-link",
+            "ps_footer_text",
+            "ps_label-show",
+            "ps_login_error",
+            "ps_login_error_inner",
+            "ps_select",
+            "ps_signinentry",
+            "psloginerror",
+            "signonMain"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0_I812TP": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/FORM",
+            "DIV/A/IMG",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-checkbox",
+            "DIV/DIV/INPUT-password",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/SELECT/OPTION",
+            "DIV/SPAN/A",
+            "DIV/SPAN/LABEL",
+            "FORM/DIV/DIV",
+            "FORM/DIV/FOOTER",
+            "FORM/DIV/IMG"
+          ]
+        ]
+      }
+    }
+  }
+}
