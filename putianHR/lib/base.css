@@ -383,7 +383,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   margin-top: 10px;
   font-size: 14px;
 }
-.ysp-con-box:first-child {
+.ysp-first-box {
   margin-top: 0;
 }
 .ysp-lists {
@@ -441,6 +441,22 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   height: 2.6rem;
   padding-right: 22px;
   position: relative;
+}
+.ysp-lists .ysp-r .baoxiao-check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 15px;
+  height: 15px;
+  margin-top: 0.9rem;
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+.ysp-lists .ysp-r .baoxiao-check:checked {
+  border-color: #2c81ff;
+  background: url(../local/img/dui.png) no-repeat -3px -2px;
 }
 .ysp-lists .ysp-r input[disabled].clock-time {
   background: #fff;
@@ -502,24 +518,24 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   margin-top: 0.7rem;
   cursor: pointer;
 }
-.ysp-lists .mate-phone .switch {
+.ysp-lists .switch {
   float: right;
   margin-top: 0.5rem;
 }
-.ysp-lists .mate-phone .switch .switch-label {
+.ysp-lists .switch .switch-label {
   background: #fff;
 }
-.ysp-lists .mate-phone .switch .switch-label:before {
+.ysp-lists .switch .switch-label:before {
   background: #aaa;
 }
-.ysp-lists .mate-phone .switch input:checked + .switch-label:before {
-  background: #4CD664;
+.ysp-lists .switch input:checked + .switch-label:before {
+  background: #42cdaa;
 }
-.ysp-lists .mate-phone .switch input:checked + .switch-label,
-.ysp-lists .mate-phone .switch input:checked + .switch-label:after {
+.ysp-lists .switch input:checked + .switch-label,
+.ysp-lists .switch input:checked + .switch-label:after {
   background: #fff;
 }
-.ysp-lists .mate-phone .switch .switch-label:after {
+.ysp-lists .switch .switch-label:after {
   background: #fff;
 }
 .readonly {
@@ -638,14 +654,28 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 }
 .annex-box .annex-item {
   display: inline-block;
+  position: relative;
   border: 1px solid #e1e1e1;
   width: 60px;
   height: 60px;
+  line-height: 16px;
   text-align: center;
   font-size: 14px;
   color: #999;
   margin-right: 10px;
   vertical-align: top;
+}
+.annex-box .annex-item .delete-btn {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 14px;
+  height: 14px;
+  font-style: normal;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 100%;
+  background: #ccc;
 }
 .ysp-btn-box {
   margin: 20px 5%;
@@ -660,11 +690,11 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   text-align: center;
 }
 .ysp-btn-box .ysp-sel-btn {
-  background-color: #7263FD;
+  background-color: #3796FB;
   color: #fff;
 }
 .ysp-btn-box .ysp-sel-btn:hover {
-  background-color: #7263FD;
+  background-color: #3796FB;
   color: #fff;
 }
 .ysp-btn-box.readonly .ysp-sel-btn {

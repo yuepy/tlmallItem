@@ -386,9 +386,9 @@ div[data-ysp-modelid="salary"]{
   background-color:#fff;
   margin-top:10px;
   font-size:@fontBase;
-  &:first-child{
-    margin-top: 0;
-  }
+}
+.ysp-first-box{
+  margin-top:0;
 }
 
 .ysp-lists{
@@ -448,6 +448,23 @@ div[data-ysp-modelid="salary"]{
       padding-right:22px;
       position: relative;
     }
+     .baoxiao-check{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    margin-top:0.9rem;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+	}
+  .baoxiao-check:checked{
+    border-color: #2c81ff;
+  background: url(../local/img/dui.png) no-repeat -3px -2px;
+    
+  }
     input[disabled].clock-time{
       background:#fff;
     }
@@ -514,7 +531,7 @@ div[data-ysp-modelid="salary"]{
   
   //配偶编辑
      //单选切换按钮
-  .mate-phone{
+  // .mate-phone{
     .switch{
       float: right;
       margin-top:0.5rem;
@@ -527,20 +544,15 @@ div[data-ysp-modelid="salary"]{
       background: #aaa;
     }
     .switch input:checked+.switch-label:before{
-      background:#4CD664;
+      background:#42cdaa;
     }
     .switch input:checked+.switch-label, .switch input:checked+.switch-label:after{
       background:#fff;
     }
-    
     .switch .switch-label:after{
       background: #fff;
     }
-    
-  }
-    
-
-  
+  // }
 }
 .readonly{
   color:#999;
@@ -674,14 +686,28 @@ div[data-ysp-modelid="salary"]{
 }
   .annex-item{
     display: inline-block;
+    position: relative;
     border:1px solid #e1e1e1;
     width:60px;
     height:60px;
+    line-height: 16px;
     text-align: center;
     font-size:@fontBase;
     color:#999;
     margin-right:10px;
     vertical-align: top;
+    .delete-btn{
+      position: absolute;
+      top:-5px;
+      left:-5px;
+      width:14px;
+      height:14px;
+      font-style: normal;
+      font-size: @fontXSmall;
+      color:#fff;
+      border-radius: 100%;
+      background:#ccc;
+    }
   }
 }
 //提交/保存
@@ -697,10 +723,10 @@ div[data-ysp-modelid="salary"]{
     text-align: center;
   }
   .ysp-sel-btn{
-    background-color: #7263FD;
+    background-color: #3796FB;
     color:#fff;
     &:hover{
-    background-color: #7263FD;
+    background-color: #3796FB;
     color:#fff;
     }
   }
