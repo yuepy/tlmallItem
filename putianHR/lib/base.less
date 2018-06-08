@@ -686,6 +686,7 @@ div[data-ysp-modelid="salary"]{
 }
   .annex-item{
     display: inline-block;
+    position: relative;
     border:1px solid #e1e1e1;
     width:60px;
     height:60px;
@@ -695,7 +696,18 @@ div[data-ysp-modelid="salary"]{
     color:#999;
     margin-right:10px;
     vertical-align: top;
-    overflow: hidden;
+    .delete-btn{
+      position: absolute;
+      top:-5px;
+      left:-5px;
+      width:14px;
+      height:14px;
+      font-style: normal;
+      font-size: @fontXSmall;
+      color:#fff;
+      border-radius: 100%;
+      background:#ccc;
+    }
   }
 }
 //提交/保存

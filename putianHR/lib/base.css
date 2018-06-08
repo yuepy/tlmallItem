@@ -654,6 +654,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 }
 .annex-box .annex-item {
   display: inline-block;
+  position: relative;
   border: 1px solid #e1e1e1;
   width: 60px;
   height: 60px;
@@ -663,7 +664,18 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   color: #999;
   margin-right: 10px;
   vertical-align: top;
-  overflow: hidden;
+}
+.annex-box .annex-item .delete-btn {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 14px;
+  height: 14px;
+  font-style: normal;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 100%;
+  background: #ccc;
 }
 .ysp-btn-box {
   margin: 20px 5%;
