@@ -302,7 +302,7 @@
           aWin.login = function(){
            var form = new aWin.nui.Form("#form1");
              form.validate();
-						//以下两行是原PC的逻辑，将其注释
+						//以下两行是原PC的验证逻辑，将其注释
               //if (form.isValid() == false) 
              // return false;
 
