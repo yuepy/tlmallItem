@@ -2,3 +2,1270 @@
 // Less 的语法与 CSS 兼容，可以直接用 CSS 语法进行编写
 // 如需了解详情，请访问 http://www.lesscss.net/
 // 发布后，base.less 被编译成 base.css 文件
+/****************************公共样式************************/
+@fontXSmall:@fontBase - 2;
+@fontSmall:@fontBase - 1;
+@fontBase:14px;
+@fontMedium:@fontBase + 1;
+@fontLarge:@fontBase + 2;
+@3796FB:#3796FB;
+body{
+  background:#F8F8F8;
+  position:relative;
+}
+body,div,p,h4,table,input,button,ul,li{margin:0;padding:0;}
+ul li{
+  list-style: none;
+}
+img{border:none;}
+.editor-state [data-ysp="component"]{
+  padding-top: 0;
+}
+/******************************CustomHeader组件******************************************/
+div[data-ysp-modelid="salary"]{
+  .editor-state [data-ysp="component"]{
+    padding-top: 0;
+  }
+}
+.ysp_header_wrapper{
+  position: fixed;
+  z-index: 23;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.7rem;
+  font-size:@fontLarge;
+  background: #333;
+  color:#fff;
+  > span:nth-child(1){
+    flex: 0 1 20%;
+    display: flex;
+    align-items: center;
+    > span:first-child{
+      margin-left: .2rem;
+      display:flex;
+      align-items:center;
+    }
+  }
+  > span:nth-child(2){
+    flex: 0 1 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  > span:nth-child(3){
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex: 0 1 20%;
+    > span:first-child{
+        margin-left: .2rem;
+        display: flex;
+        align-items: center;
+        font-size: @fontSmall;
+    }
+    
+    > span:last-child{
+        margin-left: .3rem;
+    }
+  }
+  .ysp_header_back_icon{
+    display: inline-block;
+      font-family: Ratchicons,sans-serif;
+      font-style: normal;
+      font-size: @fontLarge;
+      line-height: 2.75rem;
+    	margin-left: 24px;
+    	color:#fff;
+    	// text-decoration: none;
+    	// -webkit-font-smoothing: antialiased;
+    	// -moz-osx-font-smoothing: grayscale;
+      &:before{
+        content: "\e818";
+        position: absolute;
+        top:0;
+        left:2.5%;
+        transform: rotate(180deg);
+      }
+  }
+  // .ysp_header_back{
+  //   color:#7862FF;
+  // }
+  .ysp-header-edit{
+    display: inline-block;
+    width: 50px;
+  }
+}
+/******************************CustomPage组件******************************************/
+.ysp_page{
+  display:	flex;
+  justify-content: center;
+  margin: 20px 0;
+  >div{
+    width:	36px;
+    height:	31px;
+    line-height:	31px;
+    margin-right: 5px;
+  }
+  .pageInfo{
+    width: auto;
+    color: #888;
+    margin-right: 5px;
+  }
+  .firstItem{
+    background:url(../local/img/ysp-leftBM-icon.png) no-repeat;
+  }
+  .prevPage{
+    background:url(../local/img/ysp-left-icon.png) no-repeat;
+  }
+  .nextPage{
+    background:url(../local/img/ysp-right-icon.png) no-repeat;
+  }
+  .lastItem{
+    background:url(../local/img/ysp-rightBM-icon.png) no-repeat;
+  }
+}
+
+/******************************薪资查询start******************************************/
+.ysp_filter{
+  .ysp_selectBox{
+    position:fixed;
+    top:45px;
+    bottom: 0;
+    left:0;
+    right:0;
+    background: rgba(0,0,0,0.3);
+    .selectBox_content{
+      position:absolute;
+      top: 0;
+      bottom:0;
+      left:20%;
+      right:0;
+      width:80%;
+      background:#fff;
+      .contentTitle{
+        padding:10px;
+        border-bottom:1px solid #ddd;
+      }
+      .contentScroll{
+        height: 54vh;
+        overflow-y: scroll;
+      }
+      .timeContent{
+        overflow: hidden;
+        padding: 10px 0 10px 10px;
+        .yearCell,.yearCellSelect{
+          float: left;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          padding: 5px 0;
+          width: 31%;
+          text-align: center;
+          font-size: 15px;
+          color: #333;
+          margin:0 2% 2% 0;
+        }
+        .yearCellSelect{
+          background:@3796FB;
+          color:#fff;
+          border:none;
+        }
+      }
+      .filterSure{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 35%;
+        text-align: center;
+        // background: -webkit-linear-gradient(left, #7863FA , #3397FC);
+        background: #3796FB;
+        border-radius: 8px;
+        color: #fff;
+        padding: 5px;
+      }
+    }
+  }
+}
+.ysp_salary_box{
+  height: 50vh;
+  overflow-y: scroll;
+  .ysp_salary_item{
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    .ysp_salary_date{
+      font-size: @fontLarge;
+      font-weight: bold;
+    }
+    .ysp_salary_panel{
+      overflow: hidden;
+      .ysp_salary_detail{
+        float: left;
+        font-size: @fontBase;
+        color: #9F9F9F;
+        width: 85%;
+        overflow: hidden;
+        >div:nth-child(odd){
+          float: left;
+          width: 50%;
+        }
+        >div:nth-child(even){
+          float: left;
+          width: 40%;
+        }
+      }
+    }
+    .ysp_salary_check{
+      font-size: @fontBase;
+      background: #3198FF;
+      width: 15%;
+      float: right;
+      text-align: center;
+      color: #fff;
+      border-radius: 8px;
+    }
+  }
+}
+/******************************薪资查询详情页start******************************************/
+.ysp_salary_detail_list{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom: 0;
+  background:#F8F8F8;
+  .ysp_salary_board{
+    background: #fff;
+    font-size: @fontMedium;
+    margin-bottom: 10px;
+  }
+  .ysp_salary_scroll{
+    height: 50vh;
+    overflow-y: scroll;
+  }
+  .ysp_detail{
+    padding: 10px;
+    border-bottom: 1px solid #e1e1e1;
+    >span{
+      display: inline-block;
+      width: 50%;
+      text-align: left;
+    }
+    >span:last-child{
+      text-align: right;
+      color: #9C9C9C;
+    }
+  }
+}
+/******************************下属员工考勤start******************************************/
+.subSearchType{
+  margin-bottom: 10px;
+}
+.ysp_search{
+  width: 90%;
+  margin: 10px auto;
+  background: #3796fb;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 8px;
+}
+.searchCondition{
+  background:#fff;
+  padding:0 10px;
+  .conditionItem{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    .conditionTitle{
+      display: inline-block;
+      width:25%;
+    }
+    .conditionContent{
+      display: inline-block;
+      width: 75%;
+      select,input{
+        border:none;
+        margin: 0;
+        padding: 0;
+        padding-right: 15px;
+        height:30px;
+        background: #fff;
+        text-align: right;
+        width: 100%;
+        background: url(../local/img/rightArrow.png) no-repeat;
+        background-position: 100%;
+    		background-size: 10px;
+        font-size: 15px;
+        color:#888;
+      }
+      select{
+        direction:rtl;
+      }
+      .staffName,.search{
+        background: none;
+      }
+      .search{
+        width: 90%;
+        padding: 0;
+      }
+      .searchIcon{
+        display: inline-block;
+        height: 30px;
+        width: 10%;
+        background: url(../local/img/rightArrow.png) no-repeat;
+    		background-position: 100%;
+        background-size: 10px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+/***********************************下属员工考察详情页 start*************************************/
+.consequence{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom: 0;
+  z-index: 25;
+  min-height:100vh;
+  overflow: scroll;
+  background: #f8f8f8;
+  .listCard{
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 10px;
+  }
+  .line1{
+    overflow: hidden;
+    >div:first-child{
+      font-size: @fontLarge;
+      float: left;
+      color: #333;
+    }
+    .approved,.approving{
+      color:#888;
+      border:1px solid #888;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size:@fontSmall;
+    }
+    .approving{
+      color:#3796fb;
+      border:1px solid #3796fb;
+    }
+  }
+  .line2{
+    font-size:@fontSmall;
+    margin-bottom: 10px;
+    color:#888;
+    >div{
+      display: inline-block;
+      &:first-child{
+        margin-right: 10px;
+      }
+    }
+  }
+  .line3,.line4,.line5,.line6{
+    div{
+      color:#666;
+      font-size:@fontBase;
+      display: inline-block;
+    }
+    >div:first-child{
+      margin-right: 10px;
+    }
+  }
+}
+
+/***********************************请假申请 start*************************************/
+
+.ysp-con-box{
+  background-color:#fff;
+  margin-top:10px;
+  font-size:@fontBase;
+}
+.ysp-first-box{
+  margin-top:0;
+}
+
+.ysp-lists{
+    display: flex;
+  	padding:0 0.75rem;
+    justify-content: space-between;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    border-bottom: 1px solid #e6e6e6;
+    flex-wrap: wrap;
+  	color:#333;
+  &:first-child{
+    border-top: 1px solid #e6e6e6;
+  }
+  .ysp-l{
+    width:50%;
+    line-height: 2.75rem;
+    em.star{
+      display: inline-block;
+      width:6px;
+      font-style: normal;
+      font-size: @fontMedium;
+      color:#f76f49;
+  	}
+    //配偶姓名
+      //紧急联系人
+    .mate-name{
+      width: ~"-webkit- calc(100% - 70px)";
+      width: ~"-mox- calc(100% - 70px)";
+      width: ~"calc(100% - 70px)";
+      height:100%;
+      border:none;
+      text-align: right;
+    }
+  }
+  .ysp-r{
+    position: relative;
+    text-align: right;
+    width:50%;
+    input{
+      width: 100%;
+      color:#666;
+      font-size:@fontBase;
+      border:none;
+      text-align:right;
+      overflow-x: sroll;
+    }
+    //日期/时间输入
+    input.date-time{
+      height:2.6rem;
+      margin-right: 42px;
+      position: relative;
+      background:url(../local/img/arrow-r.png) no-repeat right 0.72rem #fff;
+    }
+    input.clock-time{
+      height:2.6rem;
+      padding-right:22px;
+      position: relative;
+    }
+     .baoxiao-check{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    margin-top:0.9rem;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+	}
+  .baoxiao-check:checked{
+    border-color: #2c81ff;
+  background: url(../local/img/dui.png) no-repeat -3px -2px;
+    
+  }
+    input[disabled].clock-time{
+      background:#fff;
+    }
+    input[placeholder]{
+      color:#999;
+    }
+    input.input-edit{
+      text-align: left;
+    }
+    select.sel-type{
+      display: inline-block;
+      background:url(../local/img/arrow-r.png) no-repeat right 0 #fff;
+      border:none;
+      text-align: center;
+      margin:0;
+      padding:0;
+      padding-right:22px;
+      color:#333;
+      font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei",sans-serif;
+      font-size:@fontBase;
+      overflow: hidden;
+      direction: rtl;
+      option{
+        direction: ltr;
+      }
+    }
+    .ysp-li-con{
+      display: inline-block;
+      text-align: right;
+      margin-right:22px;
+    }
+    .arrow-r{
+      display: inline-block;
+      font-family: Ratchicons,sans-serif;
+      font-style: normal;
+      font-size: @fontLarge;
+      line-height: 2.75rem;
+      margin-right:22px;
+    	color:#aaa;
+    	text-decoration: none;
+   	 -webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+      &:before{
+        content: "\e818";
+        position: absolute;
+        top:0;
+        right:0;
+      }
+    }
+    .quxian{
+      vertical-align: top;
+      margin-top:0.9rem;
+    }
+    //点击选择地址
+    .canclick-btn{
+      margin:0;
+      width:22px;
+      height:22px;
+      // background:red;
+      margin-top:0.7rem;
+      cursor: pointer;
+    }
+  }
+  
+  //配偶编辑
+     //单选切换按钮
+  // .mate-phone{
+    .switch{
+      float: right;
+      margin-top:0.5rem;
+      
+    }
+    .switch .switch-label{
+      background:#fff;
+    }
+    .switch .switch-label:before{
+      background: #aaa;
+    }
+    .switch input:checked+.switch-label:before{
+      background:#42cdaa;
+    }
+    .switch input:checked+.switch-label, .switch input:checked+.switch-label:after{
+      background:#fff;
+    }
+    .switch .switch-label:after{
+      background: #fff;
+    }
+  // }
+}
+.readonly{
+  color:#999;
+}
+
+//请假选择后的弹窗
+.ysp-pop-box{
+  .ysp-pop-mask{
+    position: fixed;
+    z-index: 999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity: 0.4;
+  }
+  .ysp-pop-con{
+    position: fixed;
+    z-index:1000;
+    width:70%;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+    background:#fff;
+    border-radius: 10px;
+    text-align: center;
+    padding:10px 0 0;
+    h4{
+      padding:0 5% 10px;
+      font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei",sans-serif;
+      font-size: @fontMedium;
+    }
+    p{
+      padding:0;
+      margin:0;
+      padding:0 5% 10px;
+      font-size: @fontBase;
+      line-height: 14px;
+    }
+    button{
+      width:100%;
+      border:none;
+      border-top: 1px solid #e1e1e1;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      height:2.75rem;
+      line-height: 2.75rem;
+      background:#fff;
+      color:#0089FF;
+      font-size: @fontMedium;
+
+    }
+  }
+  
+}
+//显示一会儿又消失
+.ysp-pop-tip{
+  color:#fff;
+  background:#000;
+  opacity: 0.4;
+  border-radius: 10px;
+  padding:10px 5%;
+   position: fixed;
+    z-index: 12345;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+}
+
+//年假余额
+.ysp-year-holiday{
+  color:#999;
+  font-size:@fontXSmall;
+  margin-top:10px;
+  padding:0 5%;
+  strong{
+    color:#f76f49;
+    font-weight: normal;
+    font-size: @fontLarge+2;
+    padding:0 5px;
+  }
+}
+
+//请假原因
+.ysp-reason{
+  padding:10px 5%;
+  .ysp-big-tit{
+    em.star{
+      display: inline-block;
+      width:6px;
+      font-style: normal;
+      font-size: @fontMedium;
+      color:#f76f49;
+  	}
+	}
+  textarea.reason{
+    margin-top: 10px;
+    min-height:auto;
+    color:#666;
+    font-size:@fontBase;
+    border:none;
+    resize: none;
+    padding:0;
+    &:focus{
+      color:#666;
+    }
+  }
+}
+
+
+
+//附件
+.annex-box{
+  padding:10px 5% 15px;
+  .annex-tit{
+  font-size:@fontBase;
+    margin-bottom: 10px;
+}
+.annex-add{
+  display: inline-block;
+  border:1px solid #e1e1e1;
+  width:60px;
+  height:60px;
+  text-align: center;
+  line-height: 60px;
+  font-size:60px;
+  color:#999;
+  margin-right:10px;
+  vertical-align: top;
+}
+  .annex-item{
+    display: inline-block;
+    position: relative;
+    border:1px solid #e1e1e1;
+    width:60px;
+    height:60px;
+    line-height: 16px;
+    text-align: center;
+    font-size:@fontBase;
+    color:#999;
+    margin-right:10px;
+    vertical-align: top;
+    .delete-btn{
+      position: absolute;
+      top:-5px;
+      left:-5px;
+      width:14px;
+      height:14px;
+      font-style: normal;
+      font-size: @fontXSmall;
+      color:#fff;
+      border-radius: 100%;
+      background:#ccc;
+    }
+  }
+}
+//提交/保存
+.ysp-btn-box{
+  margin:20px 5%;
+  button{
+    border:none;
+    border-radius: 5px;
+    margin:5px 0;
+    width:100%;
+    height:2.75rem;
+    line-height: 2.75rem;
+    text-align: center;
+  }
+  .ysp-sel-btn{
+    background-color: #3796FB;
+    color:#fff;
+    &:hover{
+    background-color: #3796FB;
+    color:#fff;
+    }
+  }
+  &.readonly{
+    .ysp-sel-btn{
+      background-color: #3696FC;
+    color:#fff;
+    &:hover{
+    background-color: #1D77D8;
+    color:#fff;
+    }
+    }
+  }
+  .ysp-save-btn{
+    background-color: #fff;
+    color:#333;
+    border:1px solid #e1e1e1;
+  }
+}
+
+
+
+/***********************************请假申请 end*************************************/
+
+/***********************************忘打卡管理 start*************************************/
+.ysp-r{
+      input.time-ipt{
+      display: inline-block;
+      width:42%;
+      height:1.8rem;
+      border:1px solid #e1e1e1;
+      border-radius: 3px;
+      margin-top:0.4rem;
+      background:url(../local/img/arrow-r.png) no-repeat right 0.2rem #fff;
+      padding-right:10%;
+    }
+    em.bolang{
+        padding:0 5%;
+      }
+    input.time-ipt-one{
+      height:1.8rem;
+      border:1px solid #e1e1e1;
+      border-radius: 3px;
+      margin-top:0.4rem;
+      padding-right:22px;
+    }
+}
+
+
+/***********************************忘打卡管理 end*************************************/
+
+/***********************************销假申请 start*************************************/
+.ysp-selloff-li{
+  background:#fff;
+  border-bottom:1px solid #e1e1e1;
+  padding:10px 5%;
+  label{
+    position: relative;
+    display: inline-block;
+    width:15px;
+    margin:0;
+    margin-right:5%;
+  }
+  label input{
+    position: absolute;
+    display: none;
+	}
+  label i {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 15px;
+    height: 15px;
+    margin-top:-1rem;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+	}
+  label input:checked + i {
+  border-color: #2c81ff;
+  background: url(../local/img/dui.png) no-repeat -3px -2px;
+	}
+  .selloff-li-con{
+    display: inline-block;
+    p{
+      font-size:@fontXSmall;
+      color:#666;
+      &:first-child{
+        font-size: @fontBase;
+        color:#333;
+      }
+    }
+  }
+  .selloff-li-time{
+    display: inline-block;
+    float:right;
+    font-size:@fontXSmall;
+    color:#999;
+  }
+}
+.ysp-selloff-sel{
+  width:100%;
+  height:2.75rem;
+  padding:0 5%;
+  background:#fff;
+  position: fixed;
+  bottom:0;
+  left:0;
+  border-top: 1px solid #e1e1e1;
+  line-height: 2.75rem;
+   label{
+    display: inline-block;
+    margin:0;
+    width:100px;
+     vertical-align: middle;
+  }
+  label input[type="checkbox"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    margin-right:10%;
+	}
+  label input[type="checkbox"]:checked{
+    border-color: #2c81ff;
+  background: url(../local/img/dui.png) no-repeat -3px -2px;
+    
+  }
+  .sel-reason{
+    display: inline-block;
+    width:40%;
+    height:2rem;
+    margin-top:0.4rem;
+    background:#3796FB;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 2rem;
+    font-size: @fontBase;
+    color:#fff;
+    float:right;
+  }
+}
+//销假原因
+.dele-reason-box{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:666;
+  background:#f2f2f2;
+  .ysp-del-reason{
+    margin-top:3.5rem;
+    border-top:1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding:10px 5%;
+    textarea{
+      line-height:22px;
+      font-size:@fontBase;
+    }
+  }
+  
+}
+
+
+
+
+/***********************************销假申请 end*************************************/
+
+  
+/*******************员工履历表（员工自助）start***************************/
+
+@E1E1E1:#E1E1E1;
+@999:#999;
+@F2F2F2:#F2F2F2;
+.ysp-baseInfo-tt{
+  margin:10px 20px;
+  border:1px solid @E1E1E1;
+  border-radius:5px;
+  box-shadow: 0px 0px 8px @E1E1E1;
+  padding:0 20px 10px;
+  .ysp-baseInfoPhoto-tt{
+    overflow: hidden;
+    h5{
+      float: left;
+      height: 80px;
+      line-height: 60px;
+      margin:0;
+    }
+    img{
+      float: right;
+      margin:10px 0 0 0;
+    }
+  }
+  >p{
+    margin:0 0 5px 0;
+    span{
+      color: @999;
+      font-size: @fontBase;
+    }
+  }
+}
+.ysp-baseInfo-detail{
+  width:100%;
+  .ysp-baseInfo-title{
+    color:#888888 ;
+    padding:0 0 0 20px;
+    margin:0 0 10px 0;
+  }
+  //icon图标的公共样式
+  .iImg{
+    display:block;
+    width:44px;
+    height:44px;
+    margin:10px auto;
+    border-radius:10px;
+  }
+  .ysp-baseInfo-detailList{
+    border:1px solid @E1E1E1;
+    margin:0 auto;
+    overflow: hidden;
+    >div{
+      margin:0;
+      float: left;   
+      width: 24%;
+      border-bottom:1px solid @E1E1E1;
+      border-right:1px solid @E1E1E1;
+      text-align: center;
+      p{
+        font-size:13px;
+      }
+      
+    }
+    >div:nth-child(4),div:nth-child(8){
+      width:27%;
+      border-right:0;
+    }
+    >div:first-child{
+      i{
+				.iImg;
+        background: @3796FB url('img/jbxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(2){
+      i{
+				.iImg;
+        background: #42CDAA url('img/lxxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(3){
+      i{
+				.iImg;
+        background: @3796FB url('img/rzxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(4){
+      i{
+				.iImg;
+        background: #FABA31 url('img/nbfzxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(5){
+      i{
+				.iImg;
+        background: #FABA31 url('img/htxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(6){
+      i{
+				.iImg;
+        background: @3796FB url('img/jyjl0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(7){
+      i{
+				.iImg;
+        background: #42CDAA url('img/jtcy0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(8){
+      i{
+				.iImg;
+        background: @3796FB url('img/yhzh0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+    >div:nth-child(9){
+      border-bottom:0;
+      i{
+				.iImg;
+        background: @3796FB url('img/qtxx0604.png') no-repeat center;
+        background-size: 70%;
+      }
+    }
+  }
+}
+.ysp-infoZhezhao-tt{
+  .fcgray{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    display: inline-block;
+    border:1px solid @E1E1E1;
+    padding:0 15px;
+    border-radius: 15px;
+    color: @999;
+  }
+  .fcblue{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;    
+    display: inline-block;
+    border:1px solid @3796FB;
+    border-radius:15px;
+    padding:0 10px;
+    color: @3796FB;
+  }
+  display: none;
+  .ysp-infoBig-tt{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    height: 100vh;
+    width:100%;
+    background: @F2F2F2;
+    overflow: scroll;
+    .ysp_header_wrapper{
+      background: #333;
+      span{
+        color: #fff;
+      }
+    }
+    .ysp-infoContent-tt{
+      .ysp-infoContentlist1-tt{
+        border-bottom:1px solid @E1E1E1;
+        border-top:1px solid @E1E1E1;
+        margin: 0 0 15px 0;
+        padding:10px;
+        background: #fff;
+        p{
+          margin:0 0 2px 0;
+          font-size: 15px;
+          span{
+            display: inline-block;
+            margin:0 20px 0 0;
+            &:nth-child(2){
+              color:@999;
+            }
+          }
+        }
+        p:first-child{
+          margin:0 0 5px 0;
+          font-size: 17px;
+          font-weight:bold;
+          span{
+            margin:0;
+            &:nth-child(2){
+              color:#333;
+            }
+          }
+        }
+      }
+      .ysp-infoContentlist2-tt{
+        .ysp-infoContentlist1-tt;
+        background: #fff;
+        p{
+          span{
+            color: @999;
+          }
+          i{
+            position: absolute;
+    				right: 10px;
+          }
+        }
+        p:first-child{
+          position: relative;
+          span{
+            color: #333;
+          }
+          
+          
+        }
+      }
+      .ysp-infoContentlist3-tt{
+        .ysp-infoContentlist1-tt;
+        i{
+          position: absolute;
+    			right: 10px;
+        }
+      }
+      .ysp-infoContentlist4-tt{
+         .ysp-infoContentlist1-tt;
+      }
+      .ysp-infoContentlist5-tt{
+        .ysp-infoContentlist1-tt;
+        p:first-child{
+          font-weight:normal;
+          font-size: 15px;
+          span{
+            margin:0 20px 0 0;
+            &:nth-child(2){
+              color:@999;
+            }
+          }
+        }
+      }
+      .ysp-infoContentlist6-tt:first-child{
+        >p:first-child{
+          	display: none;
+        }
+        >p:nth-child(2){
+          border-bottom:1px solid @E1E1E1;
+        }
+      }
+      .ysp-infoContentlist6-tt{
+        background: #fff;
+        padding:0 0 0 20px;
+        &:nth-child(2n){
+          border-bottom: 1px solid @E1E1E1;   
+          margin:0 0 15px 0;
+          >p:nth-child(2){
+            border:0;
+          }
+        }
+        &:nth-child(2n-1){
+          border-top:1px solid @E1E1E1;
+        }
+        p{
+          padding:10px 0;
+          border-bottom:1px solid @E1E1E1;
+          span{
+            display: inline-block;
+            margin:0 15px 0 0;
+            &:first-child{
+              font-weight: bold;
+            }
+            &:nth-child(2){
+              color: @999;
+            }
+          }
+        }
+      }
+      .ysp-infoContentlist7-tt{
+        background: #fff;
+        padding:0 0 0 20px;
+        margin:0 0 15px 0;
+        border-top:1px solid @E1E1E1;
+        border-bottom:1px solid @E1E1E1;
+        >div{
+          &:last-child{
+            p:last-child{
+              border:0;
+            }
+          }
+          p{          
+            padding:10px 0;
+            border-bottom:1px solid @E1E1E1;
+            position: relative;
+            overflow: hidden;
+            span{
+              
+              &:first-child{
+                float: left;
+                font-weight: bold;
+              }
+              &:nth-child(2){
+                float: right;
+                padding:0 20px 0 0;
+                color: @999;
+                word-wrap: break-word;
+                word-break: break-word;
+              }
+            }
+            i{
+              position: absolute;
+              top:10px;
+              left:80px;
+            }
+          }
+        }
+        
+      }
+      .ysp-infoContentlist8-tt{
+      	.ysp-infoContentlist6-tt;
+      }
+    }
+  }
+}
+.ysp-xxbj-tt{
+  background: #F8F8F8;
+  .ysp-xxbjDetail-tt{
+    height: 40px;
+    line-height:40px;
+    border-bottom:1px solid @E1E1E1;
+    background: #fff;
+    padding:0 0 0 15px;
+    &:nth-child(5){
+      margin:15px 0 0  0;
+     	border-top:1px solid @E1E1E1;
+    }
+  }
+  .ysp-jbxx-tt{
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    overflow: scroll;
+    width:100%;
+    z-index: 1000;
+    background: #f8f8f8;
+    .ysp-jbxxList-tt{
+      	>p{
+        &:first-child{
+          width: 100%;
+          margin:20px 0;
+          img{
+            margin:0 auto;
+            display: block;
+          }
+        }
+      }
+    }
+    
+  }
+}
+
+/*******************员工履历表（员工自助）end***************************/
