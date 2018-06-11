@@ -9,7 +9,8 @@
     "selloffAppli": "../selloffAppli/index.json",
     "employeeInfo": "../employeeInfo/index.json",
     "salary": "../salary/index.json",
-    "checkSubInfo": "../checkSubInfo/index.json"
+    "checkSubInfo": "../checkSubInfo/index.json",
+    "checkMyInfo": "../checkMyInfo/index.json"
   },
   "chineseName": "菜单",
   "description": "",
@@ -659,6 +660,101 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "button"
+    },
+    "control21_2xgKJb": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "员工考勤、休假、加班信息查询"
+              ],
+              "visText": [
+                "员工考勤、休假、加班信息查询"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "员工考勤、休假、加班信息查询"
+              ],
+              "visText": [
+                "员工考勤、休假、加班信息查询"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "员工考勤、休假、加班信息查询"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "pathname": "/psp/ps_newwin/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL",
+              "search": "PORTALPARAM_PTCNAV=HPS_TL_PAG_010_CP_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_ABS_07&EOPP.SCLabel=TL_ABS_07&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_ABS_07.ADMN_S201802241601542922147282&IsFolder=false"
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              21,
+              32
+            ],
+            "value": "DIV.PSTEXT TD.EOPP_SCSECTIONCONTENT A.EOPP_SCSECTIONCONTENTLINK"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[3]/UL[1]/LI[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              66,
+              106,
+              146
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
     }
   },
   "contexts": {
@@ -670,7 +766,8 @@
         "control9_4Vh5Gr",
         "control10_qTwEn7",
         "control11_TdPO5f",
-        "control12_2gA1iQ"
+        "control12_2gA1iQ",
+        "control21_2xgKJb"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -767,6 +864,20 @@
           "toModelId": "checkSubInfo"
         }
       ]
+    },
+    "flow38_6oT5pD": {
+      "fromContextId": "context1_zfhIAP",
+      "fromAction": "click",
+      "fromControlId": "control21_2xgKJb",
+      "toContexts": [
+        {
+          "toContextId": "context1_zfhIAP"
+        },
+        {
+          "toContextId": "context4_REWkQH",
+          "toModelId": "checkMyInfo"
+        }
+      ]
     }
   },
   "pages": {
@@ -846,6 +957,17 @@
         {
           "id": "uiControl12_9fkAVo",
           "controlId": "control12_2gA1iQ",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl18_lpB8xx",
+          "controlId": "control21_2xgKJb",
           "display": {
             "adapterId": "clickable",
             "type": "button",
