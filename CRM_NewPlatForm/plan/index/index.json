@@ -64,25 +64,47 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control322_NTF0Ve": {
+    "control323_LpKwKt": {
       "location": {
         "data": {
-          "tagName": "HTML"
+          "tagName": "UL"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "selector",
+              "value": "HTML"
+            }
+          ],
           "force": false
         },
         "locators": [
           {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::NAV[@id=\"menu\"]/UL[1]",
+              "descendant::NAV[@id=\"menu\"]//UL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              5
+            ],
+            "value": "DIV.main-container DIV.sidebar-container NAV UL"
+          },
+          {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/NAV[1]/UL[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control322_NTF0Ve"
+        "onGetData": "getData_control323_LpKwKt"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -95,7 +117,7 @@
     "context0_pD8h1P": {
       "controls": [
         "control321_P7fT3E",
-        "control322_NTF0Ve"
+        "control323_LpKwKt"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -193,16 +215,16 @@
       "contextId": "context0_pD8h1P",
       "layout": [
         {
-          "id": "uiControl1_fUoVno",
-          "controlId": "control322_NTF0Ve",
+          "id": "uiControl312_k8ZZCQ",
+          "controlId": "control323_LpKwKt",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl1_fUoVno",
-                "onGetTemplate": "getTemplate_uiControl1_fUoVno"
+                "onDoAction": "doAction_uiControl312_k8ZZCQ",
+                "onGetTemplate": "getTemplate_uiControl312_k8ZZCQ"
               }
             }
           }
@@ -2586,6 +2608,42 @@
             "nav-menu-item",
             "nav-menu-title",
             "nav-menu-wrapper",
+            "shrink",
+            "sidebar-container",
+            "sidebar-container-footer",
+            "sidebar-container-footer-wrapper",
+            "sidebar-groove",
+            "title",
+            "u-help",
+            "u-time"
+          ],
+          [
+            "backImage",
+            "box",
+            "clearfix",
+            "client-portrait",
+            "content-container",
+            "content-main-region",
+            "disabled",
+            "docs-pictures",
+            "gob",
+            "halving-line",
+            "head_search",
+            "hide",
+            "ibar-adsList",
+            "ibar-code",
+            "ibar-code-content",
+            "ibar-msg",
+            "icon",
+            "icon-arrow",
+            "icon-msg",
+            "img",
+            "logo",
+            "m-head",
+            "m-settings",
+            "main-container",
+            "mask",
+            "mod-sideBar",
             "shrink",
             "sidebar-container",
             "sidebar-container-footer",

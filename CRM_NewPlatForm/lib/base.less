@@ -15075,29 +15075,120 @@ div[data-ysp-modelid="achievement"]{
 .list-icon(){
   text-align: center;
   display: block;
-  width: 100%;
-  height: 50px;
-  background-size: 50%;
+  width: 48px;
+  height: 48px;
+  //background-size: 50%;
+  
 }
 // 以上为移动端菜单公共样式
-.ysp-Menus-all{
-  padding: 20px;
-  padding-top: 0px;
-  .Menus-head{
-    display: block;
-    padding: 20px;
-    padding-top: 0px;
+.ysp-Menus-All{
+  ul{
+    min-height: 256px;
   }
-  .Menus-list{
-    	text-align: center;
-      display: inline-block;
-      width: 25%;
-      .Menus-content{
-        text-align: center;
+  .ysp-Menus-all-WorkSpace{
+    //padding: 20px;
+    padding-top: 0px;
+    .ysp-Menus-title{
+      padding: 5px 15px;
+      background: rgb(239,239,239);
+      margin-bottom: 15px;
+      .Menus-head{
+        display: block;
       }
     }
-  .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD{
-    background:@workspace;
-    .list-icon;
+    .Menus-list{
+        text-align: center;
+        display: inline-block;
+        width: 25%;
+        margin-bottom: 20px;
+        .Menus-content{
+          text-align: center;
+          color: #696969;
+        }
+      }
+    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD{
+      margin-bottom: 10px;
+      //background:@workspace;
+      .list-icon;
+      background: rgb(44,127,251);
+      color: #fff;
+      font-size: 18px;
+      border-radius: 50% 50% 50% 50%;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
   }
+  .ysp-Menus-all-Achievement{
+    //padding: 20px;
+    padding-top: 0px;
+    .ysp-Menus-title{
+      padding: 5px 15px;
+      background: rgb(239,239,239);
+      margin-bottom: 15px;
+      .Menus-head{
+        display: block;
+      }
+    }
+    .Menus-list{
+        text-align: center;
+        display: inline-block;
+        width: 25%;
+        margin-bottom: 20px;
+        .Menus-content{
+          text-align: center;
+          color: #696969;
+        }
+      }
+    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD,.JHDCZL_YD{
+      margin-bottom: 10px;
+      //background:@workspace;
+      .list-icon;
+      background: rgb(56,197,153);
+      color: #fff;
+      font-size: 18px;
+      border-radius: 50% 50% 50% 50%;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+  }
+  .ysp-Menus-all-InFormation{
+    padding-top: 0px;
+    .ysp-Menus-title{
+      padding: 5px 15px;
+      background: rgb(239,239,239);
+      margin-bottom: 15px;
+      .Menus-head{
+        display: block;
+      }
+    }
+    .Menus-list{
+        text-align: center;
+        display: inline-block;
+        width: 25%;
+        margin-bottom: 20px;
+        .Menus-content{
+          text-align: center;
+          color: #696969;
+        }
+      }
+    .CHCX_YD,.CPSXJXXCX_YD{
+      margin-bottom: 10px;
+      //background:@workspace;
+      .list-icon;
+      background: rgb(248,173,39);
+      color: #fff;
+      font-size: 18px;
+      border-radius: 50% 50% 50% 50%;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+  }
+}
+//有可能会影响全局的效果 .  注意测试功能
+.editor-state [data-ysp="component"]{
+  padding-top:0;
+  padding-bottom: 0;
 }
