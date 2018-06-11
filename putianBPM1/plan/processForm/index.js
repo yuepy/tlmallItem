@@ -1598,11 +1598,8 @@
     },
     doAction_uiControl33_sIcNwa: function (data, elem) {
       if (data.eventType == 'click') {
-        var d = data.dataCustom.classNames;if (d == 'btn ysp-btn-one') {
-          var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");_btnTwo.click(); // setTimeout(function () {
-          //   ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bizform/components/back/backActivity.jsp?");
-          // }, 20);
-          var redTip = elem.querySelector(".mini-window-drag").querySelector('iframe').contentWindow.document.querySelector('#tab iframe').contentWindow.document.querySelector('.mini-tips-danger');if (!redTip) {
+        debugger;var d = data.dataCustom.classNames;if (d == 'btn ysp-btn-one') {
+          var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");_btnTwo.click();var redTip = elem.querySelector(".mini-window-drag").querySelector('iframe').contentWindow.document.querySelector('#tab iframe').contentWindow.document.querySelector('.mini-tips-danger');if (!redTip) {
             setTimeout(function () {
               var tip = elem.querySelectorAll(".mini-window-drag");if (tip.length == 1) {
                 //_btnTwo.click(); 

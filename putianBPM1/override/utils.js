@@ -1021,6 +1021,25 @@ function getSaveFormByFormId(id,key,entity){
 		         }
 		     });
 	  }
+/*
+	 * 流程终止更改状态
+	 */
+	function terminateWorkfolw2(tableName,statusFiled,UUID,IDNAME) {
+		
+		$.ajax({
+			url:"com.primeton.plugext.utils.terminateFlow2.biz.ext",
+			type:'post',
+			data:nui.encode({tableName:tableName,statusFiled:statusFiled,UUID:UUID,IDNAME:IDNAME}),
+			cache: false,
+			contentType:'text/json',
+			success:function(text){
+				var returnJson = nui.decode(text);
+				if(returnJson.exception != null){
+					return;
+				}
+			}
+		});
+	}
 		
 	  /**
 	   * datagrid 反选
