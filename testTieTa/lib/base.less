@@ -1,0 +1,1033 @@
+// base.less 是整个工程全局的样式文件，会作用到所有的页面模板中
+// Less 的语法与 CSS 兼容，可以直接用 CSS 语法进行编写
+// 如需了解详情，请访问 http://www.lesscss.net/
+// 发布后，base.less 被编译成 base.css 文件
+@fontBase:14px;
+@fontSmall:@fontBase + 1;
+@fontXSmall:@fontBase - 2;
+@fontMedium:@fontBase + 2;
+@fontLarge:@fontBase + 4;
+
+@btnBlue:#0088E9;
+@fontBlue:#0088CD;
+@btnYellow:#FFA800;
+@fontBlack:#414141;
+@fontOrange:#FFA800;
+@fontGray:#888580;
+@borderGray:#E4E2DF;
+@loginBK:#C6C2BD;
+@bgcolorBlue:#00A0E2;
+//表头
+.tit{
+    display: inline-block;
+    background: red;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    .goback{
+      width: 20%;
+      margin-top: 15px;
+      color: #fff;
+      margin-left: 15px;
+      float: left;
+      .ysp_goback{
+        display: inline-block;
+        width:22px;
+        height:30px;
+        background: url(../local/img/left.png) no-repeat;
+        background-size: 50%;
+        float: left;
+      }
+      .text{
+       display: inline-block; 
+       float: left;
+       margin-left: -10px;
+       margin-top:-2px; 
+      }
+    }
+    .title{
+      width: 80%;
+      h1{
+        margin-top: 15px;
+      	padding-left: 25px;
+        color: #fff;
+        font-size: 18px;
+      } 
+    }
+  	.readAll{
+    	width: 20%;
+      margin-top: 13px;
+      color: #fff;
+      float: right;
+      margin-right: 10px;
+  	}
+  }
+//小标签
+label{
+  b{
+    width: 8px;
+    height: 28px;
+    background: url(../local/img/Titleicon.png)	no-repeat;
+    background-size:50%;
+    float: left;
+    margin-top: 5px;
+  }
+}
+//审批按钮
+.botton{
+  width: 100%;
+  background: white;
+  position: fixed;
+  bottom:0;
+  left:0;
+  .btn{
+    width:90%;
+    margin-left: 20px;
+    margin-top: 10px;
+    background: red;
+    border-radius: 5px;
+    color: white;
+    font-weight:600;
+  }
+}
+//导航条
+.container{
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    overflow: auto;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+       >span{
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        margin-right: 0.625rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 0.1875rem;
+        white-space: nowrap;
+         >span{
+           position: relative;
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          -webkit-transform: skew(-10deg);
+          transform: skew(-10deg);
+          font-size: 0.875rem;
+          text-align: center;
+          line-height: 1.2;
+          vertical-align: middle;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          padding-left: 1.375rem;
+          padding-right: 1.375rem;
+          border-radius: 0.1875rem;
+          color: #202020;
+          background: #f2f2f2;
+          transition: background 0.5s;
+           >span{
+             display: inline-block;
+              line-height: 1;
+              -webkit-transform: skew(10deg);
+              transform: skew(10deg);
+              vertical-align: text-bottom;
+           }
+         }
+      }
+    >span:first-child{
+      flex-basis: auto !important;
+      margin-left: 0.625rem;
+      margin-right: 0;
+      overflow: hidden;
+      z-index: 1;
+      flex-basis: 21.875%;
+      >span{
+            left: -0.625rem;
+      }
+    }
+    >span:last-child{
+      flex-basis: auto !important;
+      margin-right: 0.625rem;
+      margin-left: 0;
+      overflow: hidden;
+      z-index: 1;
+      flex-basis: 21.875%;
+      >span{
+            right: -0.625rem;
+      }
+    }
+    .selected{
+      >span{
+        color: #fff;
+        background: rgb(255,200,0);
+      }
+    }
+  }
+//审批意见
+.ysp_mask{
+  width: 100%;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,0.3);
+  	z-index: 10;
+  	height: 300vh;
+    .ysp_container{
+      width: 90%;
+      position: fixed;
+      transform:translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      background: #fff;
+      border-radius: 5px;
+      padding-bottom: 10px;
+      .ysp_title{
+        text-align: center;
+        background: red;
+        color: white;
+        padding: 5px 0;
+        font-weight: 600;
+      }
+      .ysp_advice,.conclusion{
+        b{
+          width: 8px;
+          height: 28px;
+          background: url(../local/img/Titleicon.png)	no-repeat;
+          background-size:50%;
+          float: left;
+          margin-top: 5px;
+        }
+      }
+      .ysp_advice{
+        span{
+          padding: 5px 0;
+          color: red;
+          font-weight: 600;
+        }
+        textarea{
+          width: 90%;
+          margin-left: 17px;
+          margin-top: 5px;
+        }
+      }
+      .conclusion{
+        span{
+          padding: 5px 0;
+          color: red;
+          font-weight: 600;
+        }
+        div{
+          width: 80%;
+          margin-left: 70px;
+          label{
+            width: 50%;
+            float: left;
+            span:last-child{
+              color: rgb(58,58,58);
+              font-weight: normal;
+            }
+            .checked{
+              background: url(../local/img/radiotrue.png) no-repeat;
+              background-size: 15px;
+              width: 15px;
+              height: 15px;
+              display: block;
+              float: left;
+            }
+            .unchecked{
+              background: url(../local/img/radiofasle.png) no-repeat;
+              background-size: 15px;
+              width: 15px;
+              height: 15px;
+              display: block;
+              float: left;
+            }
+          }
+        }
+      }
+      .ysp_btn{
+        width: 90%;
+        margin-left: 35px;
+        .btns{
+          width: 40%;
+          background: rgb(110,118,141);
+          float: left;
+        }
+        .btn{
+          width: 40%;
+          background: rgb(0,125,247);
+          float: left;
+          margin-left: 20px;
+        }
+        .btn,.btns{
+          padding: 10px 20px;
+          border-radius: 5px;
+          text-align: center;
+          color: #fff;
+          height: 38px;
+          font-size: 16px;
+          display: inline-block;
+        }
+      }
+    }
+    .suces{
+        background: url(../local/img/success.png) no-repeat;
+        background-size: 50%;
+        width: 400px;
+        height: 240px;
+        margin-left: 90px;
+        display: block;
+        position: fixed;
+        transform:translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+      }
+  }
+/**********page组件zyt*********/
+.ysp-PagesMessage-container{
+  margin-top:20px;
+  padding: 0 0 20px 0;
+  .ysp-PagesMessage-PartOne{
+    display:	flex;
+    justify-content: center;
+    font-size: @fontBase;	
+    color:	@fontGray;
+    margin-bottom: 10px;
+    .ysp-PagesMessage-select{
+      width:auto;
+      margin-right: 10px;
+      padding: 2px 5% 2px 1%;
+      text-align: center;
+      option{
+        text-align: center;
+      }
+      
+    }
+  }
+  .ysp-PagesMessage-PartTwo{
+   	display:	flex;
+    justify-content: center;
+    span{
+      width:	36px;
+      height:	31px;
+      line-height:	31px;
+      color:	@fontGray;
+    }
+    .ysp-page-num{
+      width:15%;
+    }
+    .ysp-pages-input{
+      width:	36px;
+      height:	29px;
+      background: white;
+      color:	red;
+      border:	none;
+    	text-align: center;
+      margin:	0;
+      padding:	0;
+      position: relative;
+      top:	1px;
+      margin-right: 5px;
+    }
+    .ysp-PagesMessage-leftBM-icon{
+      background: url(../local/img/ysp-leftBM-icon.png) no-repeat 0 0;
+      margin-right: 5px;
+    }
+    .ysp-PagesMessage-left-icon{
+      background: url(../local/img/ysp-left-icon.png) no-repeat 0 0;
+      margin-right: 5px;
+    }
+    .ysp-PagesMessage-right-icon{
+      background: url(../local/img/ysp-right-icon.png) no-repeat 0 0;
+      margin-right: 5px;
+    }
+    .ysp-PagesMessage-rightBM-icon{
+      background: url(../local/img/ysp-rightBM-icon.png) no-repeat 0 0;
+      margin-right: 5px;
+    }
+  }
+}
+//提示
+.messagers{
+  .messager{
+    position: fixed;
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,0.3);
+    z-index:10000;
+    .messager-title{
+      width: 70%;
+      margin-left: 70px;
+      color: white;
+      background: red;
+      margin-top: 50%;
+    }
+    .messager-body{
+      background: white;
+      width: 70%;
+      margin-left: 70px;
+      .messager-news{
+        font-size: 14px;
+        margin-left: 20px;
+        padding-top: 10px;
+      }
+      .btns{ 
+        margin-top: 10px;
+        margin-left: 40px;
+        width: 80%;
+        margin-bottom: 15px;
+        .btn{
+          width: 40%;
+          font-size: 14px;
+          color: white;
+          background: red;
+        }
+      }
+    }
+  }
+}
+//登录提示
+.alert_login{
+   width: 100%;
+   position: absolute;
+   top: 0;
+   bottom:0;
+   left:0;
+   right:0;
+   background:rgb(255,255,255);
+   z-index: 10;
+   height: 300vh;
+}
+div[data-ysp-modelid = "login"] {
+  .ysp_logo_background{
+    width:100%;
+    height:100vh;
+    background: url(../local/img/logo.png)	no-repeat	0	0;
+    background-size:100%	100%;
+    display:flex;
+    align-items:center;
+    .ysp-login-card{
+      width:100%;
+      margin:0 0.625rem;
+      padding:2rem 0.45rem;
+      .date{
+        .dateval{
+          width: 100%;
+          background: rgba(255,255,255,0.4);
+          border-radius:3px;
+          height: 42px;
+          float: left;
+          padding: 0 0;
+        }
+        input[type=date]::-webkit-inner-spin-button { 
+          visibility: hidden; 
+        } 
+        input[type=date]::-webkit-calendar-picker-indicator{
+          background: url(../local/img/dateImg.png)	no-repeat;
+          color: rgba(255,255,255,0);
+          margin: 0 0;
+          height: 25px;
+          width: 10%;
+        } 
+      }
+      .userName{
+        width: 100%;
+        border: none;
+        border-radius:3px;
+        background: rgba(255,255,255,0.4);
+      }
+      .pass{
+        width: 100%;
+        border: none;
+        border-radius:3px;
+        background: rgba(255,255,255,0.4);
+      }
+      .rmbbox{
+        width: 100%;
+        float: left;
+        label{
+          width: 33%;
+          float: left;
+          .checked{
+            background: url(../local/img/checktrue.png) no-repeat;
+            background-size: 15px;
+            width: 15px;
+            height: 15px;
+            display: block;
+            float: left;
+          }
+          .unchecked{
+            background: url(../local/img/checkfalse.png) no-repeat;
+            background-size: 15px;
+            width: 15px;
+            height: 15px;
+            display: block;
+            float: left;
+          }
+          .text{
+            float: left;
+            font-size: 14px;
+          }
+        }
+        #wjmm{
+          width: 25%;
+          color: white;
+          float: right;
+          font-size: 14px;
+        }
+      }
+      .btn{
+        width: 100%;
+        background: rgb(47,75,199);
+        border: none;
+        color: white;
+      }
+    }
+  }
+}
+div[data-ysp-modelid = "menu"] {
+  background: #f4f4f4;
+  .content_body{
+    width: 100%;
+  	background: #fff;
+    height: 50px;
+    border-bottom: 1px solid rgb(244,244,244);
+    padding-top: 10px;
+    margin: 0 0;
+    .logo{
+      display: block;
+      width:30px;
+      height:40px;
+      background: url(../local/img/OA.png) no-repeat;
+      background-size: 100%;
+      margin-left: 10px;
+      float: left;
+    }
+    .text{
+      margin: 0 0;
+      margin-left:10px;
+    }
+    .more{
+      width: 2%;
+      float: right;
+      display: block;
+      width:22px;
+      height:30px;
+      background: url(../local/img/more.png) no-repeat;
+      background-size: 100%;
+    }
+  }
+}
+div[data-ysp-modelid="toDoList"]{
+  .ysp_detailList{
+    background:#f6f6f6;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200vh;
+    .ysp_list_card{
+      background:#FFF;
+      padding: 20px 10px;
+			margin:15px 0;
+    }
+    h5{
+      margin:0;
+      margin-bottom:10px;
+    }
+    .ysp_card_top{
+      position:relative;
+      margin-bottom: 10px;
+      >div{
+        font-size: 14px;
+        color: rgba(0,0,0,0.6);
+      }
+    }
+    .foldIcon,.unFoldIcon{
+      background: url(../local/img/ysp-bottom-icon.png) no-repeat;
+      background-size: 20px;
+      background-position: 0px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: 0px;
+      right: 10px;
+    }
+    .unFoldIcon{
+      background: url(../local/img/ysp-top-icon.png) no-repeat;
+      background-size: 20px;
+      background-position: 0px;
+    }
+    .selectedIcon,.unselected{
+      background: url(../local/img/ysp-checkboxes.png) no-repeat;
+      background-size: 100%;
+      background-position: 0px;
+      width: 45px;
+      height: 45px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+    }
+    .unselected{
+      background: url(../local/img/ysp-nocheckboxs.png) no-repeat;
+      background-size: 100%;
+      background-position: 0px;
+    }
+    .ysp_card_panel{
+      border-top: 2px solid rgb(243,243,244);
+      margin-top: 10px;
+      >div{
+        font-size: 14px;
+        color: rgba(0,0,0,0.6);
+      }
+    }
+    .gj{
+      float: right;
+      font-size: 14px;
+      color: rgb(158,159,160);
+      margin-right: 20px;
+    }
+    .ysp-PagesMessage-container{
+      width: 95%;
+      margin-left: 20px;
+      height: 30px;
+      .ysp-PagesMessage-PartOne{
+        float: left;
+        .ysp-PagesMessage-select{
+          margin-top: 19px;
+          width: 45px;
+          height: 30px;
+          color: rgb(130,131,132);
+          padding: 0 0;
+          background-color: #fff;
+          border: none;
+        }
+      }
+      .ysp-PagesMessage-PartTwo{
+        float: left;
+        .text{
+          font-size: 14px;
+          color: rgb(130,131,132);
+        }
+      }
+    }
+  }
+  .ysp_mask{
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,0.3);
+    z-index:10;
+    .ysp_container{
+      width: 90%;
+      position: fixed;
+      transform:translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      background: #fff;
+      border-radius: 5px;
+      padding-bottom: 10px;
+      .ysp_title{
+        text-align: center;
+        background: red;
+        color: white;
+        padding: 5px 0;
+        font-weight: 600;
+      }
+      .ysp_advice,.conclusion{
+        b{
+          width: 8px;
+          height: 28px;
+          background: url(../local/img/Titleicon.png)	no-repeat;
+          background-size:50%;
+          float: left;
+          margin-top: 5px;
+        }
+      }
+      .ysp_advice{
+        span{
+          padding: 5px 0;
+          color: red;
+          font-weight: 600;
+        }
+        textarea{
+          width: 90%;
+          margin-left: 17px;
+          margin-top: 5px;
+        }
+      }
+      .conclusion{
+        span{
+          padding: 5px 0;
+          color: red;
+          font-weight: 600;
+        }
+        div{
+          width: 80%;
+          margin-left: 70px;
+          label{
+            width: 50%;
+            float: left;
+            span:last-child{
+              color: rgb(58,58,58);
+              font-weight: normal;
+            }
+            .checked{
+              background: url(../local/img/radiotrue.png) no-repeat;
+              background-size: 15px;
+              width: 15px;
+              height: 15px;
+              display: block;
+              float: left;
+            }
+            .unchecked{
+              background: url(../local/img/radiofasle.png) no-repeat;
+              background-size: 15px;
+              width: 15px;
+              height: 15px;
+              display: block;
+              float: left;
+            }
+          }
+        }
+      }
+      .ysp_btns{
+        width: 90%;
+        margin-left: 25px;
+        .ysp_cancel{
+          width: 45%;
+          background: rgb(110,118,141);
+          float: left;
+        }
+        .ysp_sure{
+          width: 45%;
+          background: rgb(0,125,247);
+          float: left;
+          margin-left: 20px;
+        }
+        .ysp_cancel,.ysp_sure{
+          padding: 10px 20px;
+          border-radius: 5px;
+          text-align: center;
+          color: #fff;
+        }
+      }
+    }
+    .suces{
+        background: url(../local/img/success.png) no-repeat;
+        background-size: 50%;
+        width: 400px;
+        height: 240px;
+        margin-left: 90px;
+        display: block;
+        position: fixed;
+        transform:translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+      }
+  }
+}
+.ysp_menuList{
+  height: auto;
+  .ysp_menu_level1{
+    position: relative;
+    padding: 5px 0;
+    border-bottom: 1px solid rgb(245,245,245);
+    >span:first-child{
+        padding: 10px 0 10px 30px;
+        background: url(../local/img/ggsp.png) no-repeat;
+        background-size: 23px;
+        background-position: 2px;
+      }
+    >span:nth-child(2){
+      background: red;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      text-align: center;
+      color: #fff;
+      font-size: 12px;
+      position: absolute;
+      top: 30%;
+      right: 10%;
+    }
+    .foldIcon,.unFoldIcon{
+      background: url(../local/img/ysp-bottom-icon.png) no-repeat;
+      background-size: 20px;
+      background-position: 0px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: 0px;
+      right: 10px;
+    }
+    .unFoldIcon{
+      background: url(../local/img/ysp-top-icon.png) no-repeat;
+      background-size: 20px;
+      background-position: 0px;
+    }
+  }
+  .ysp_menu_level2{
+    background: rgb(237,237,237);
+    border-bottom: 1px solid rgb(233,233,233);
+     >div{
+      background: rgb(237,237,237) url(../local/img/more.png) no-repeat;
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      background-size: 20px;
+      background-position: 97%;
+      position: relative;
+      >span:first-child{
+        padding: 10px 0 10px 30px;
+        background: url(../local/img/menuIcon.png) no-repeat;
+        background-size: 23px;
+        background-position: 2px;
+      }
+      >span:last-child{
+        background: rgb(255,178,14);
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;
+        font-size: 12px;
+        position: absolute;
+        top: 30%;
+        right: 10%;
+      }
+    }
+  }
+}
+div[data-ysp-modelid = "checkForm"] {
+  background: #f4f4f4;
+  .content{
+    width: 100%;
+    background: white;
+    label>span{
+      color: rgb(232,0,0);
+    }
+    .xy{
+      height: auto;
+    	.cards{
+        width: 95%;
+        margin-left: 15px;
+        display: inline-block;
+        height: 40px;
+       .cardsTit{
+         width: 20%;
+         font-size: 14px;
+         padding: 0 0;
+         float: left;
+        }
+       .cardsCon{
+         margin-left: 90px;
+          width: 80%;
+          border-bottom: 1px solid rgb(239,239,239);
+          padding: 0 0;
+         	// margin-bottom: 0;
+         	// white-space:nowrap; 
+        }
+      }
+    }
+    .more{
+      margin: 20px 10px;
+      border-top: 3px solid rgb(239,239,239);
+      padding: 10px 0;
+      .foldIcon,.unFoldIcon{
+        background: url(../local/img/ysp-bottom-icon.png) no-repeat;
+        background-size: 15px;
+        background-position: 0px;
+        width: 20px;
+        height: 12px;
+        float: left;
+        margin-top: 5px;
+        margin-left: 135px;
+      }
+      .unFoldIcon{
+        background: url(../local/img/ysp-top-icon.png) no-repeat;
+        background-size: 15px;
+        background-position: 0px;
+        width: 20px;
+        height: 12px;
+        float: left;
+        margin-top: 5px;
+        margin-left: 135px;
+      }
+    }
+  }
+  .contentTab{
+    width: 100%;
+    background: white;
+    .ysp-Tabs-container{
+      // height:	2.75rem; 
+      line-height: 2.75rem;
+      background:	white;
+      margin-bottom: 10px;
+      overflow-y:hidden;
+      overflow-x: auto;
+      white-space:nowrap;
+      width:95vw;
+      span{
+        display: inline-block;
+        width:40%;
+        text-align: center;
+      }
+      .reds{
+        color: red;
+        border-bottom: 2px solid red;
+      }
+    }
+    .tables{
+      margin: 10px 20px;
+      height:	auto; 
+      line-height: 2.75rem;
+      background:	white;
+      overflow-y:hidden;
+      overflow-x: auto;
+      white-space:nowrap;
+      width:95vw;
+      >div{
+        span{
+          display: inline-block;
+          width:35%;
+          text-align: center;
+        }
+        .theads{
+          width:95vw;
+          height: 44px;
+          >span{
+            background: rgb(255,213,213);
+            overflow:hidden; 
+          }
+        }
+        .tbodys{
+          width: 95vw;
+          height: 60px;
+          >span{
+            font-size: 14px;
+            border: 1px solid rgb(255,227,227);
+            background: rgb(255,239,239);
+            overflow: scroll;
+    				padding: 0 10px; 
+          }
+        }
+        .tfoots{
+          width: 95vw;
+          height: 60px;
+          >span{
+            font-size: 14px;
+            border: 1px solid rgb(255,227,227);
+            background: rgb(255,239,239);
+            overflow: scroll;
+    				padding: 0 10px; 
+          }
+        }
+      }
+    }
+  }
+}
+div[data-ysp-modelid = "readLog"] {
+  background: #f4f4f4;
+  .body{
+    background: white;
+    width: 100%;
+    height: auto;
+    .content{
+      display: block;
+      width: 90%;
+      border: 2px solid rgb(234,238,240);
+      border-radius:3px;
+      margin: 10px 20px;
+      .spUser{
+        background: rgb(255,216,216);
+        .tits{
+          font-size: 18px;
+          margin-left: 10px;
+          padding: 30px 0;
+        }
+        .ys{
+          color: rgb(0,143,255);
+          float: right;
+          margin-right: 10px;
+          font-size: 14px;
+        }
+      }
+      .con{
+        font-size: 14px;
+        color: rgb(144,144,144);
+        margin-left: 20px;
+      }
+    }
+  }
+}
+div[data-ysp-modelid = "enclosure"] {
+  background: #f4f4f4;
+  .content{
+    width: 100%;
+    background: white;
+    height: auto;
+    .head{
+      .title{
+        color: rgb(232,0,0);
+      }
+      .upload{
+        width: 10%;
+        height: 20px;
+        background: url(../local/img/upload.png)	no-repeat;
+        background-size:50%;
+        float: right;
+        margin-top: 5px;
+      }
+    }
+    .file{
+      width:90%;
+    	margin-left: 20px;
+      background: rgb(237,237,237);
+      height: 35px;
+      margin-bottom: 20px;
+      display: inline-block;
+      .name{
+        width: 70%;
+        margin-top: 5px;
+        margin-left: 10px;
+      }
+      .download{
+        width: 22px;
+        height: 23px;
+        background: url(../local/img/download.png)	no-repeat;
+        background-size:60%;
+        margin-left:290px;
+        float: left;
+        margin-top: -25px;
+      }
+      .del{
+        width: 22px;
+        height: 22px;
+        background: url(../local/img/del.png)	no-repeat;
+        background-size:50%;
+        float: right;
+        margin-top: -25px;
+      }
+    }
+  }
+}

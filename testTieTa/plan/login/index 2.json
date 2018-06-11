@@ -1,0 +1,561 @@
+{
+  "version": "0.1",
+  "id": "login",
+  "targetURL": "http://120.52.96.35:13080/cwbase/web/login.aspx",
+  "jsFile": "index.js",
+  "requires": {
+    "menu": "../menu/index.json",
+    "checkForm": "../checkForm/index.json"
+  },
+  "chineseName": "登录",
+  "description": "",
+  "controls": {
+    "control0_WPCK9i": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"loginshell\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.shell DIV.container DIV.loginshell"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0_WPCK9i"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": false,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control23_Ph6GKU": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.window.messager-window"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[8]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control23_Ph6GKU"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context0_ZHWviV": {
+      "controls": [
+        "control0_WPCK9i",
+        "control23_Ph6GKU"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow0_qgFPTc": {
+      "toContexts": [
+        {
+          "toContextId": "context0_ZHWviV"
+        },
+        {
+          "toContextId": "context1_3egkun",
+          "toModelId": "menu"
+        },
+        {
+          "toContextId": "context3_zW62XT",
+          "toModelId": "checkForm"
+        }
+      ]
+    },
+    "flow1_Cp1d5K": {
+      "fromContextId": "context0_ZHWviV",
+      "fromAction": "doAction",
+      "fromControlId": "control0_WPCK9i",
+      "toContexts": [
+        {
+          "toContextId": "context0_ZHWviV"
+        },
+        {
+          "toContextId": "context1_3egkun",
+          "toModelId": "menu"
+        }
+      ]
+    },
+    "flow15_7Cd3JV": {
+      "fromContextId": "context0_ZHWviV",
+      "fromAction": "doAction",
+      "fromControlId": "control23_Ph6GKU",
+      "toContexts": [
+        {
+          "toContextId": "context0_ZHWviV"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0_KEZl4r": {
+      "contextId": "context0_ZHWviV",
+      "layout": [
+        {
+          "id": "uiControl0_7vokyT",
+          "controlId": "control0_WPCK9i",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl0_7vokyT",
+                "onGetTemplate": "getTemplate_uiControl0_7vokyT"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl17_soZhyd",
+          "controlId": "control23_Ph6GKU",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl17_soZhyd",
+                "onGetTemplate": "getTemplate_uiControl17_soZhyd"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0_ZHWviV": [
+          "登录"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0_ZHWviV": [
+          "120.52.96.35:13080/cwbase/web/login.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0_ZHWviV": [
+          [
+            "BizDate",
+            "CA_Enabled",
+            "CA_Issuer",
+            "Reset",
+            "ResetPsd",
+            "SpanCancel",
+            "SpanConfirm",
+            "TxtDomainPath",
+            "Txt_CerSelectTip",
+            "Txt_LoginH",
+            "_easyui_combobox_",
+            "appSelect",
+            "aside",
+            "authSelect",
+            "btCancelPwd",
+            "btPwdSubmit",
+            "btn-login",
+            "caContainer",
+            "caSelect",
+            "cb_rmbUserInfo",
+            "cb_rmbUserName",
+            "content_MainPageUrl",
+            "findAuthType",
+            "footer",
+            "forgetPsd",
+            "hid_TypeCode",
+            "labCfmPassword",
+            "labNewPassword",
+            "labPassword",
+            "lh_BizDate",
+            "login_foot",
+            "loginshell",
+            "product",
+            "rmbbox",
+            "st-confirmPassword",
+            "st-oldPassword",
+            "st-password",
+            "topholder",
+            "txt_Password",
+            "txt_UserID"
+          ],
+          [
+            "BizDate",
+            "CA_Enabled",
+            "CA_Issuer",
+            "Reset",
+            "ResetPsd",
+            "SpanCancel",
+            "SpanConfirm",
+            "TxtDomainPath",
+            "Txt_CerSelectTip",
+            "Txt_LoginH",
+            "_easyui_combobox_",
+            "aside",
+            "authSelect",
+            "btCancelPwd",
+            "btPwdSubmit",
+            "btn-login",
+            "caContainer",
+            "caSelect",
+            "cb_rmbUserInfo",
+            "cb_rmbUserName",
+            "content_MainPageUrl",
+            "findAuthType",
+            "footer",
+            "forgetPsd",
+            "hid_TypeCode",
+            "labCfmPassword",
+            "labNewPassword",
+            "labPassword",
+            "lh_BizDate",
+            "login_foot",
+            "loginshell",
+            "product",
+            "rmbbox",
+            "st-confirmPassword",
+            "st-oldPassword",
+            "st-password",
+            "topholder",
+            "txt_Password",
+            "txt_UserID"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0_ZHWviV": [
+          [
+            "InputRow",
+            "a-btn",
+            "authinput",
+            "bg-color-normal",
+            "bg-color-standard",
+            "btntxt",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-header",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-title",
+            "calendar-today",
+            "checkbox",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combo-text",
+            "combo-value",
+            "combobox-f",
+            "combobox-item",
+            "combobox-item-selected",
+            "container",
+            "datebox",
+            "datebox-button",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "easyui-combobox",
+            "easyui-datebox",
+            "easyui-window",
+            "fg-color-standard",
+            "footline",
+            "footlt",
+            "footrt",
+            "forget",
+            "gslink",
+            "h",
+            "helper",
+            "hint",
+            "input-control",
+            "lab",
+            "lgdiv",
+            "lglabel",
+            "lh",
+            "loginshell",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "place",
+            "psd",
+            "pwdlabel",
+            "rmbbox",
+            "shell",
+            "topholder",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-shadow"
+          ],
+          [
+            "InputRow",
+            "a-btn",
+            "authinput",
+            "bg-color-normal",
+            "bg-color-standard",
+            "btntxt",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-header",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-title",
+            "calendar-today",
+            "checkbox",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combo-text",
+            "combo-value",
+            "combobox-f",
+            "combobox-item",
+            "combobox-item-selected",
+            "container",
+            "datebox",
+            "datebox-button",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "easyui-combobox",
+            "easyui-datebox",
+            "easyui-window",
+            "fg-color-standard",
+            "footline",
+            "footlt",
+            "footrt",
+            "forget",
+            "gslink",
+            "h",
+            "helper",
+            "hint",
+            "input-control",
+            "l-btn",
+            "l-btn-left",
+            "l-btn-text",
+            "lab",
+            "lgdiv",
+            "lglabel",
+            "lh",
+            "loginshell",
+            "messager-body",
+            "messager-button",
+            "messager-icon",
+            "messager-warning",
+            "messager-window",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "place",
+            "psd",
+            "pwdlabel",
+            "rmbbox",
+            "shell",
+            "topholder",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0_ZHWviV": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/NOSCRIPT",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-password",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-password",
+            "DIV/FORM/INPUT-reset",
+            "DIV/FORM/INPUT-text",
+            "DIV/FORM/SELECT",
+            "DIV/FORM/SPAN",
+            "DIV/LABEL/INPUT-checkbox",
+            "DIV/LABEL/SPAN",
+            "DIV/P/A",
+            "DIV/SPAN/A",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-text",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FORM/DIV/A",
+            "FORM/DIV/DIV",
+            "FORM/DIV/LABEL",
+            "FORM/DIV/SELECT",
+            "FORM/DIV/SPAN",
+            "FORM/SELECT/OPTION",
+            "FORM/SPAN/INPUT-hidden",
+            "FORM/SPAN/INPUT-text",
+            "FORM/SPAN/SPAN",
+            "P/A/SPAN",
+            "SPAN/SPAN/SPAN",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/NOSCRIPT",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "A/SPAN/SPAN",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-password",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-password",
+            "DIV/FORM/INPUT-reset",
+            "DIV/FORM/INPUT-text",
+            "DIV/FORM/SELECT",
+            "DIV/FORM/SPAN",
+            "DIV/LABEL/INPUT-checkbox",
+            "DIV/LABEL/SPAN",
+            "DIV/P/A",
+            "DIV/SPAN/A",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-text",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FORM/DIV/A",
+            "FORM/DIV/DIV",
+            "FORM/DIV/LABEL",
+            "FORM/DIV/SELECT",
+            "FORM/DIV/SPAN",
+            "FORM/SELECT/OPTION",
+            "FORM/SPAN/INPUT-hidden",
+            "FORM/SPAN/INPUT-text",
+            "FORM/SPAN/SPAN",
+            "P/A/SPAN",
+            "SPAN/SPAN/SPAN",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A"
+          ]
+        ]
+      }
+    }
+  }
+}
