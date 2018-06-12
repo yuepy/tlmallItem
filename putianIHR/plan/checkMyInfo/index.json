@@ -11,6 +11,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -42,6 +46,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -72,6 +80,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -108,6 +120,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -134,7 +150,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     }
@@ -183,6 +199,16 @@
       "fromContextId": "context4_REWkQH",
       "fromAction": "doAction",
       "fromControlId": "control25_xgd3im",
+      "toContexts": [
+        {
+          "toContextId": "context4_REWkQH"
+        }
+      ]
+    },
+    "flow43_HKnpeV": {
+      "fromContextId": "context4_REWkQH",
+      "fromAction": "doAction",
+      "fromControlId": "control44_l0Lt5Q",
       "toContexts": [
         {
           "toContextId": "context4_REWkQH"
