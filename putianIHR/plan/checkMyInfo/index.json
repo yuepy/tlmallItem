@@ -3,6 +3,11 @@
   "id": "checkMyInfo",
   "targetURL": "http://192.168.220.110/psp/ps_5/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL?PORTALPARAM_PTCNAV=HPS_TL_PAG_010_CP_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_ABS_07&EOPP.SCLabel=TL_ABS_07&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_ABS_07.ADMN_S201802241601542922147282&IsFolder=false",
   "jsFile": "index.js",
+  "requires": {
+    "holidayAppli": "file://C:/Users/w3cdr/Documents/enterplorer/enterprises/587743d37df4e62b8c4e3d60/apps/putianIHR/plan/holidayAppli/index.json",
+    "menu": "../menu/index.json",
+    "forgetCard": "file://C:/Users/w3cdr/Documents/enterplorer/enterprises/587743d37df4e62b8c4e3d60/apps/putianIHR/plan/forgetCard/index.json"
+  },
   "chineseName": "员工自助考勤、休假、加班信息查询",
   "description": "",
   "controls": {
@@ -10,6 +15,10 @@
       "location": {
         "data": {
           "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -42,6 +51,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -72,6 +85,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -108,6 +125,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -134,7 +155,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     }
@@ -165,7 +186,16 @@
       "fromControlId": "control32_qGwpO6",
       "toContexts": [
         {
-          "toContextId": "context4_REWkQH"
+          "toContextId": "context4_REWkQH",
+          "toModelId": "checkMyInfo"
+        },
+        {
+          "toContextId": "context3_fi6f26",
+          "toModelId": "holidayAppli"
+        },
+        {
+          "toModelId": "forgetCard",
+          "toContextId": "context0_Wkl3q7"
         }
       ]
     },
@@ -183,6 +213,20 @@
       "fromContextId": "context4_REWkQH",
       "fromAction": "doAction",
       "fromControlId": "control25_xgd3im",
+      "toContexts": [
+        {
+          "toContextId": "context4_REWkQH"
+        },
+        {
+          "toContextId": "context1_zfhIAP",
+          "toModelId": "menu"
+        }
+      ]
+    },
+    "flow43_HKnpeV": {
+      "fromContextId": "context4_REWkQH",
+      "fromAction": "doAction",
+      "fromControlId": "control44_l0Lt5Q",
       "toContexts": [
         {
           "toContextId": "context4_REWkQH"

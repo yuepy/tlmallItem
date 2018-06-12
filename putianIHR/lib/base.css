@@ -316,7 +316,8 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   vertical-align: middle;
 }
 /***********************************下属员工考察详情页 start*************************************/
-.consequence {
+.consequence,
+.abnormal {
   position: absolute;
   top: 0;
   right: 0;
@@ -327,21 +328,26 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   overflow: scroll;
   background: #f8f8f8;
 }
-.consequence .listCard {
+.consequence .listCard,
+.abnormal .listCard {
   margin-bottom: 10px;
   background: #fff;
   padding: 10px;
 }
-.consequence .line1 {
+.consequence .line1,
+.abnormal .line1 {
   overflow: hidden;
 }
-.consequence .line1 > div:first-child {
+.consequence .line1 > div:first-child,
+.abnormal .line1 > div:first-child {
   font-size: 16px;
   float: left;
   color: #333;
 }
 .consequence .line1 .approved,
-.consequence .line1 .approving {
+.abnormal .line1 .approved,
+.consequence .line1 .approving,
+.abnormal .line1 .approving {
   float: right;
   color: #888;
   border: 1px solid #888;
@@ -349,34 +355,108 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   border-radius: 5px;
   font-size: 13px;
 }
-.consequence .line1 .approving {
+.consequence .line1 .approving,
+.abnormal .line1 .approving {
   color: #3796fb;
   border: 1px solid #3796fb;
 }
-.consequence .line2 {
+.consequence .line2,
+.abnormal .line2 {
   font-size: 13px;
   margin-bottom: 10px;
   color: #888;
 }
-.consequence .line2 > div {
+.consequence .line2 > div,
+.abnormal .line2 > div {
   display: inline-block;
 }
-.consequence .line2 > div:first-child {
+.consequence .line2 > div:first-child,
+.abnormal .line2 > div:first-child {
   margin-right: 10px;
 }
 .consequence .line3 div,
+.abnormal .line3 div,
 .consequence .line4 div,
+.abnormal .line4 div,
 .consequence .line5 div,
-.consequence .line6 div {
+.abnormal .line5 div,
+.consequence .line6 div,
+.abnormal .line6 div {
   color: #666;
   font-size: 14px;
   display: inline-block;
 }
+.consequence .line3 .approved,
+.abnormal .line3 .approved,
+.consequence .line4 .approved,
+.abnormal .line4 .approved,
+.consequence .line5 .approved,
+.abnormal .line5 .approved,
+.consequence .line6 .approved,
+.abnormal .line6 .approved,
+.consequence .line3 .approving,
+.abnormal .line3 .approving,
+.consequence .line4 .approving,
+.abnormal .line4 .approving,
+.consequence .line5 .approving,
+.abnormal .line5 .approving,
+.consequence .line6 .approving,
+.abnormal .line6 .approving {
+  float: right;
+  color: #888;
+  border: 1px solid #888;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.consequence .line3 .approving,
+.abnormal .line3 .approving,
+.consequence .line4 .approving,
+.abnormal .line4 .approving,
+.consequence .line5 .approving,
+.abnormal .line5 .approving,
+.consequence .line6 .approving,
+.abnormal .line6 .approving {
+  color: #3796fb;
+  border: 1px solid #3796fb;
+}
+.consequence .line3 .check,
+.abnormal .line3 .check,
+.consequence .line4 .check,
+.abnormal .line4 .check,
+.consequence .line5 .check,
+.abnormal .line5 .check,
+.consequence .line6 .check,
+.abnormal .line6 .check {
+  color: #3796FB;
+  float: right;
+}
 .consequence .line3 > div:first-child,
+.abnormal .line3 > div:first-child,
 .consequence .line4 > div:first-child,
+.abnormal .line4 > div:first-child,
 .consequence .line5 > div:first-child,
-.consequence .line6 > div:first-child {
+.abnormal .line5 > div:first-child,
+.consequence .line6 > div:first-child,
+.abnormal .line6 > div:first-child {
   margin-right: 10px;
+}
+.abnormal .line1,
+.abnormal .line2,
+.abnormal .line3 {
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+}
+.abnormal .line1 div,
+.abnormal .line2 div,
+.abnormal .line3 div {
+  font-size: 15px;
+  color: #333;
+}
+.abnormal .line3 {
+  background: url(../local/img/arrow-r.png) no-repeat right 0.72rem #fff;
 }
 /***********************************请假申请 start*************************************/
 .ysp-con-box {
@@ -575,6 +655,10 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   padding: 0 5% 10px;
   font-size: 14px;
   line-height: 14px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.ysp-pop-box .ysp-pop-con .up-annex {
+  color: #0089FF;
 }
 .ysp-pop-box .ysp-pop-con button {
   width: 100%;
@@ -587,6 +671,15 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   background: #fff;
   color: #0089FF;
   font-size: 15px;
+}
+.ysp-pop-box .ysp-pop-con button.pop-two-btn {
+  width: 50%;
+  border-radius: 0;
+  border-right: 1px solid #e1e1e1;
+  border-bottom-left-radius: 10px;
+}
+.ysp-pop-box .ysp-pop-con button.pop-two-btn:last-child {
+  border-bottom-right-radius: 10px;
 }
 .ysp-pop-tip {
   color: #fff;
@@ -664,6 +757,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   font-size: 14px;
   color: #999;
   margin-right: 10px;
+  margin-bottom: 10px;
   vertical-align: top;
 }
 .annex-box .annex-item .delete-btn {

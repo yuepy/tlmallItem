@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "jsFile": "index.js",
   "requires": {
-    "menu": "../menu/index.json"
+    "menu": "../menu/index.json",
+    "checkMyInfo": "../checkMyInfo/index.json"
   },
   "chineseName": "登录",
   "description": "",
@@ -452,6 +453,10 @@
         {
           "toContextId": "context1_zfhIAP",
           "toModelId": "menu"
+        },
+        {
+          "toContextId": "context4_REWkQH",
+          "toModelId": "checkMyInfo"
         }
       ]
     }
