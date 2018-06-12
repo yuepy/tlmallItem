@@ -597,6 +597,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   padding: 0 5% 10px;
   font-size: 14px;
   line-height: 14px;
+  border-bottom: 1px solid #e1e1e1;
 }
 .ysp-pop-box .ysp-pop-con button {
   width: 100%;
@@ -609,6 +610,15 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   background: #fff;
   color: #0089FF;
   font-size: 15px;
+}
+.ysp-pop-box .ysp-pop-con button.pop-two-btn {
+  width: 50%;
+  border-radius: 0;
+  border-right: 1px solid #e1e1e1;
+  border-bottom-left-radius: 10px;
+}
+.ysp-pop-box .ysp-pop-con button.pop-two-btn:last-child {
+  border-bottom-right-radius: 10px;
 }
 .ysp-pop-tip {
   color: #fff;

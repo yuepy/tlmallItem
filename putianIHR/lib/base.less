@@ -605,6 +605,7 @@ div[data-ysp-modelid="salary"]{
       padding:0 5% 10px;
       font-size: @fontBase;
       line-height: 14px;
+      border-bottom: 1px solid #e1e1e1;
     }
     button{
       width:100%;
@@ -617,6 +618,15 @@ div[data-ysp-modelid="salary"]{
       background:#fff;
       color:#0089FF;
       font-size: @fontMedium;
+      &.pop-two-btn{
+        width:50%;
+        border-radius:0;
+        border-right: 1px solid #e1e1e1;
+        border-bottom-left-radius: 10px;
+        &:last-child{
+          border-bottom-right-radius: 10px;
+        }
+      }
 
     }
   }
