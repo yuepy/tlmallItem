@@ -3,7 +3,8 @@
     getData_control10_g7lH5a: function (elem) {},
     doAction_uiControl10_MhoIT9: function (data, elem) {
       var type = data.eventType;if (type == "back") {
-        ysp.appMain.back();
+        ysp.appMain.back(); //elem.ownerDocument.defaultView.close();
+        //ysp.runtime.Model.setForceMatchModels(['checkMyInfo']);
       }
     },
     getTemplate_uiControl10_MhoIT9: function () {

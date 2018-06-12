@@ -323,7 +323,7 @@ div[data-ysp-modelid="salary"]{
   }
 }
 /***********************************下属员工考察详情页 start*************************************/
-.consequence{
+.consequence,.abnormal{
   position: absolute;
   top: 0;
   right: 0;
@@ -387,12 +387,30 @@ div[data-ysp-modelid="salary"]{
       color:#3796fb;
       border:1px solid #3796fb;
     }
+    .check{
+      color:@3796FB;
+      float: right;
+    }
     >div:first-child{
       margin-right: 10px;
     }
   }
 }
-
+.abnormal{
+  .line1,.line2,.line3{
+    margin:0;
+    border-bottom: 1px solid #ccc;
+    padding:10px;
+    background:#fff;
+    div{
+      font-size:@fontMedium;
+    	color: #333;
+    }
+  }
+  .line3{
+    background:url(../local/img/arrow-r.png) no-repeat right 0.72rem #fff;
+  }
+}
 /***********************************请假申请 start*************************************/
 
 .ysp-con-box{
