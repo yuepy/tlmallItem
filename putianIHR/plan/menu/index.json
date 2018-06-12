@@ -10,7 +10,9 @@
     "employeeInfo": "../employeeInfo/index.json",
     "salary": "../salary/index.json",
     "checkSubInfo": "../checkSubInfo/index.json",
-    "checkMyInfo": "../checkMyInfo/index.json"
+    "checkMyInfo": "../checkMyInfo/index.json",
+    "remainHoliday": "../remainHoliday/index.json",
+    "addWork": "../addWork/index.json"
   },
   "chineseName": "菜单",
   "description": "",
@@ -755,6 +757,208 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "button"
+    },
+    "control45_5Ap82c": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "假期余额自助查询"
+              ],
+              "visText": [
+                "假期余额自助查询"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "假期余额自助查询"
+              ],
+              "visText": [
+                "假期余额自助查询"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "假期余额自助查询"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "pathname": "/psp/ps_newwin/EMPLOYEE/HRMS/c/HPS_MENU.HPS_SELF_VACA_CPT.GBL",
+              "search": "PORTALPARAM_PTCNAV=HPS_SELF_VACA_CPT_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_ABS_07&EOPP.SCLabel=TL_ABS_07&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_ABS_07.ADMN_S201804131619464569841608&IsFolder=false"
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              23,
+              32
+            ],
+            "value": "DIV.PSTEXT TD.EOPP_SCSECTIONCONTENT A.EOPP_SCSECTIONCONTENTLINK"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[3]/UL[1]/LI[2]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              66,
+              106,
+              146
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "button"
+    },
+    "control47_cGluZs": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "加班申请"
+              ],
+              "visText": [
+                "加班申请"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "加班申请"
+              ],
+              "visText": [
+                "加班申请"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "加班申请"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 1,
+            "ordinal": [
+              3,
+              10
+            ],
+            "value": {
+              "pathname": "/psp/ps_newwin/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_004.GBL",
+              "search": "PORTALPARAM_PTCNAV=HPS_TL_AWE_004_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455558703878902&IsFolder=false"
+            }
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ADMN_TL_AWE_02_HMPG_Data",
+              "tagName": "DIV",
+              "prefix": "TABLE[@id=\"ptpglts\"]//",
+              "suffix": "/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[3]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/A[1]",
+              "ratio": 0.165
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              5,
+              32
+            ],
+            "value": "DIV.PSTEXT TD.EOPP_SCSECTIONCONTENT A.EOPP_SCSECTIONCONTENTLINK"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/UL[1]/LI[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[3]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              66,
+              106,
+              146
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
     }
   },
   "contexts": {
@@ -767,7 +971,9 @@
         "control10_qTwEn7",
         "control11_TdPO5f",
         "control12_2gA1iQ",
-        "control21_2xgKJb"
+        "control21_2xgKJb",
+        "control45_5Ap82c",
+        "control47_cGluZs"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -878,6 +1084,34 @@
           "toModelId": "checkMyInfo"
         }
       ]
+    },
+    "flow44_lNbLcH": {
+      "fromContextId": "context1_zfhIAP",
+      "fromAction": "click",
+      "fromControlId": "control45_5Ap82c",
+      "toContexts": [
+        {
+          "toContextId": "context1_zfhIAP"
+        },
+        {
+          "toContextId": "context6_NIxgQ8",
+          "toModelId": "remainHoliday"
+        }
+      ]
+    },
+    "flow47_QWfhnp": {
+      "fromContextId": "context1_zfhIAP",
+      "fromAction": "click",
+      "fromControlId": "control47_cGluZs",
+      "toContexts": [
+        {
+          "toContextId": "context1_zfhIAP"
+        },
+        {
+          "toContextId": "context8_SXsRJl",
+          "toModelId": "addWork"
+        }
+      ]
     }
   },
   "pages": {
@@ -968,6 +1202,28 @@
         {
           "id": "uiControl18_lpB8xx",
           "controlId": "control21_2xgKJb",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl46_NxEkeB",
+          "controlId": "control47_cGluZs",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl44_wgZ2dt",
+          "controlId": "control45_5Ap82c",
           "display": {
             "adapterId": "clickable",
             "type": "button",
@@ -1386,6 +1642,236 @@
             "rfrshImgonHover_ADMN_TL_HR__NEW_HMPG",
             "rfrsh_ADMN_SC_PGT_",
             "rfrsh_ADMN_TL_HR__NEW_HMPG",
+            "selected"
+          ],
+          [
+            "ADMN_SC_PGT_TL_RZ_",
+            "ADMN_SC_PGT_TL_RZ__Data",
+            "ADMN_TL_ABS__HMPG",
+            "ADMN_TL_ABS__HMPG_Data",
+            "ADMN_TL_AWE__HMPG",
+            "ADMN_TL_AWE__HMPG_Data",
+            "ADMN_TL_HRAWE__HMPG",
+            "ADMN_TL_HRAWE__HMPG_Data",
+            "ADMN_TL_HR__NEW_HMPG",
+            "ADMN_TL_HR__NEW_HMPG_Data",
+            "ADMN_TL_PY__HMPG",
+            "ADMN_TL_PY__HMPG_Data",
+            "CO_EMPLOYEE_SELF_SERVICE",
+            "DEFAULT_FOOTER",
+            "DEFAULT_HEADER_TANGERINE_ALT",
+            "Delayed_empty",
+            "HC_GLOBAL_PAYROLL",
+            "HC_ORGANIZATIONAL_DEVELOPMENT",
+            "HC_SETUP_HRMS",
+            "HC_WORKFORCE_ADMINISTRATION",
+            "HPS_DEVELOP",
+            "HPS_DEVELOP_ABS",
+            "HPS_DEVELOP_RZ",
+            "HPS_RPT",
+            "HPS_STD_MENU_GBL",
+            "L_RZ_",
+            "PT_PEOPLETOOLS",
+            "PT_REPORTING_TOOLS",
+            "PT_TREE_MANAGER",
+            "Processing",
+            "TL_ABS",
+            "TL_HR",
+            "TL_MS",
+            "TL_ORG",
+            "TL_SELF",
+            "WAIT_empty",
+            "ancdobackclassic",
+            "crefli_PT_CHANGE_PASSWORD_GBL",
+            "crefli_PT_PTGP_USERPREF_FL_GBL",
+            "div_loading_ADMN_SC_PGT_TL_RZ_",
+            "div_loading_ADMN_TL_ABS__HMPG",
+            "div_loading_ADMN_TL_AWE__HMPG",
+            "div_loading_ADMN_TL_HRAWE__HMPG",
+            "div_loading_ADMN_TL_HR__NEW_HMPG",
+            "div_loading_ADMN_TL_PY__HMPG",
+            "divdobackclassic",
+            "fldra_CO_EMPLOYEE_SELF_SERVICE",
+            "fldra_HC_GLOBAL_PAYROLL",
+            "fldra_HC_ORGANIZATIONAL_DEVELOPMENT",
+            "fldra_HC_SETUP_HRMS",
+            "fldra_HC_WORKFORCE_ADMINISTRATION",
+            "fldra_HPS_DEVELOP",
+            "fldra_HPS_DEVELOP_ABS",
+            "fldra_HPS_DEVELOP_RZ",
+            "fldra_HPS_RPT",
+            "fldra_HPS_STD_MENU_GBL",
+            "fldra_PT_PEOPLETOOLS",
+            "fldra_PT_REPORTING_TOOLS",
+            "fldra_PT_TREE_MANAGER",
+            "max_ADMN_SC_PGT_TL_RZ_",
+            "max_ADMN_TL_ABS__HMPG",
+            "max_ADMN_TL_AWE__HMPG",
+            "max_ADMN_TL_HRAWE__HMPG",
+            "max_ADMN_TL_HR__NEW_HMPG",
+            "max_ADMN_TL_PY__HMPG",
+            "min_ADMN_SC_PGT_TL_RZ_",
+            "min_ADMN_TL_ABS__HMPG",
+            "min_ADMN_TL_AWE__HMPG",
+            "min_ADMN_TL_HRAWE__HMPG",
+            "min_ADMN_TL_HR__NEW_HMPG",
+            "min_ADMN_TL_PY__HMPG",
+            "portal_powered_by",
+            "ptDropDowndiv_ADMN_SC_PGT_TL_RZ_",
+            "ptDropDowndiv_ADMN_TL_ABS__HMPG",
+            "ptDropDowndiv_ADMN_TL_AWE__HMPG",
+            "ptDropDowndiv_ADMN_TL_HRAWE__HMPG",
+            "ptDropDowndiv_ADMN_TL_HR__NEW_HMPG",
+            "ptDropDowndiv_ADMN_TL_PY__HMPG",
+            "ptLayoutMode",
+            "ptPageletControls_ADMN_SC_PGT_TL_RZ_",
+            "ptPageletControls_ADMN_TL_ABS__HMPG",
+            "ptPageletControls_ADMN_TL_AWE__HMPG",
+            "ptPageletControls_ADMN_TL_HRAWE__HMPG",
+            "ptPageletControls_ADMN_TL_HR__NEW_HMPG",
+            "ptPageletControls_ADMN_TL_PY__HMPG",
+            "ptPgltReloadThis",
+            "pt_dropdownicon_ADMN_SC_PGT_TL_RZ_",
+            "pt_dropdownicon_ADMN_TL_ABS__HMPG",
+            "pt_dropdownicon_ADMN_TL_AWE__HMPG",
+            "pt_dropdownicon_ADMN_TL_HRAWE__HMPG",
+            "pt_dropdownicon_ADMN_TL_HR__NEW_HMPG",
+            "pt_dropdownicon_ADMN_TL_PY__HMPG",
+            "pt_fakeBC",
+            "ptabn",
+            "ptabn_SRCHPROMPT",
+            "ptabnclonebc",
+            "ptabncrefbc",
+            "ptabnfldrbc",
+            "ptabnportalfldrbc",
+            "ptabnprevresults",
+            "ptabnrscontainer",
+            "ptabnsadiv",
+            "ptabnsepbc",
+            "ptabnsp",
+            "ptabnsrchagain",
+            "ptabnsrchtitle",
+            "ptabntdiv",
+            "ptatfsid",
+            "ptbr_footer_container",
+            "ptbr_header_container",
+            "ptcol",
+            "ptcoladdpglt",
+            "ptdropdownicon_ADMN_SC_PGT_TL_RZ_",
+            "ptdropdownicon_ADMN_TL_ABS__HMPG",
+            "ptdropdownicon_ADMN_TL_AWE__HMPG",
+            "ptdropdownicon_ADMN_TL_HRAWE__HMPG",
+            "ptdropdownicon_ADMN_TL_HR__NEW_HMPG",
+            "ptdropdownicon_ADMN_TL_PY__HMPG",
+            "ptdropdownmenu",
+            "pthbcEndWall",
+            "pthbcScroll",
+            "pthbcScrollNext",
+            "pthbcScrollPrev",
+            "pthbcStartWall",
+            "pthbcUlScroll",
+            "pthdraddto",
+            "pthdraddto_div",
+            "pthdratf",
+            "pthdrcontainer",
+            "pthdrhome",
+            "pthdrlinks",
+            "pthdrlogoswan",
+            "pthdrlogout",
+            "pthdrnavbar",
+            "pthdrnavbar_div",
+            "pthdrnavbarlinks",
+            "pthdrnotify",
+            "pthdrnotify_badge",
+            "pthdrnotify_div",
+            "pthdrsyslinks",
+            "pthnavbc",
+            "pthnavbc_MYFAVORITES",
+            "pthnavbc_PORTAL_ROOT_OBJECT",
+            "pthnavbca_MYFAVORITES",
+            "pthnavbca_PORTAL_ROOT_OBJECT",
+            "pthnavbccref_PT_FAKE_TL_ABS",
+            "pthnavblock",
+            "pthnavcontainer",
+            "pthnavfavsep",
+            "pthnavfly_PORTAL_ROOT_OBJECT",
+            "pthnavmrs_",
+            "pthnavroot",
+            "pthnavsid",
+            "pthomepagetabline",
+            "pthomepagetabs",
+            "ptiframatfcontent",
+            "ptifrmatfcancel",
+            "ptifrmatfdescr",
+            "ptifrmatfinput",
+            "ptifrmatflbl",
+            "ptifrmatflist",
+            "ptifrmatfname",
+            "ptifrmatfok",
+            "ptifrmpopup",
+            "ptpageletDropdown_ADMN_SC_PGT_TL_RZ_",
+            "ptpageletDropdown_ADMN_TL_ABS__HMPG",
+            "ptpageletDropdown_ADMN_TL_AWE__HMPG",
+            "ptpageletDropdown_ADMN_TL_HRAWE__HMPG",
+            "ptpageletDropdown_ADMN_TL_HR__NEW_HMPG",
+            "ptpageletDropdown_ADMN_TL_PY__HMPG",
+            "ptpgltbody_ADMN_SC_PGT_TL_RZ_",
+            "ptpgltbody_ADMN_TL_ABS__HMPG",
+            "ptpgltbody_ADMN_TL_AWE__HMPG",
+            "ptpgltbody_ADMN_TL_HRAWE__HMPG",
+            "ptpgltbody_ADMN_TL_HR__NEW_HMPG",
+            "ptpgltbody_ADMN_TL_PY__HMPG",
+            "ptpgltbody_row_ADMN_SC_PGT_TL_RZ_",
+            "ptpgltbody_row_ADMN_TL_ABS__HMPG",
+            "ptpgltbody_row_ADMN_TL_AWE__HMPG",
+            "ptpgltbody_row_ADMN_TL_HRAWE__HMPG",
+            "ptpgltbody_row_ADMN_TL_HR__NEW_HMPG",
+            "ptpgltbody_row_ADMN_TL_PY__HMPG",
+            "ptpgltlbl_ADMN_SC_PGT_TL_RZ_",
+            "ptpgltlbl_ADMN_TL_ABS__HMPG",
+            "ptpgltlbl_ADMN_TL_AWE__HMPG",
+            "ptpgltlbl_ADMN_TL_HRAWE__HMPG",
+            "ptpgltlbl_ADMN_TL_HR__NEW_HMPG",
+            "ptpgltlbl_ADMN_TL_PY__HMPG",
+            "ptpgltli_ADMN_SC_PGT_TL_RZ_",
+            "ptpgltli_ADMN_TL_ABS__HMPG",
+            "ptpgltli_ADMN_TL_AWE__HMPG",
+            "ptpgltli_ADMN_TL_HRAWE__HMPG",
+            "ptpgltli_ADMN_TL_HR__NEW_HMPG",
+            "ptpgltli_ADMN_TL_PY__HMPG",
+            "ptpglts",
+            "ptpopoptitle",
+            "ptpopup",
+            "ptpopupclose",
+            "ptpopupcontainer",
+            "ptpopupcontent",
+            "ptpopupcontentcontainer",
+            "ptpopuplayouttbl",
+            "ptpopupmsg",
+            "ptpopupmsgbtn",
+            "ptpopupmsgbuttons",
+            "ptpopupmsgtext",
+            "ptpopupshadow",
+            "ptpopuptitlebar",
+            "remotedashboard",
+            "rfrshImg_ADMN_SC_PGT_TL_RZ_",
+            "rfrshImg_ADMN_TL_ABS__HMPG",
+            "rfrshImg_ADMN_TL_AWE__HMPG",
+            "rfrshImg_ADMN_TL_HRAWE__HMPG",
+            "rfrshImg_ADMN_TL_HR__NEW_HMPG",
+            "rfrshImg_ADMN_TL_PY__HMPG",
+            "rfrshImgonHover_ADMN_SC_PGT_TL_RZ_",
+            "rfrshImgonHover_ADMN_TL_ABS__HMPG",
+            "rfrshImgonHover_ADMN_TL_AWE__HMPG",
+            "rfrshImgonHover_ADMN_TL_HRAWE__HMPG",
+            "rfrshImgonHover_ADMN_TL_HR__NEW_HMPG",
+            "rfrshImgonHover_ADMN_TL_PY__HMPG",
+            "rfrsh_ADMN_SC_PGT_TL_RZ_",
+            "rfrsh_ADMN_TL_ABS__HMPG",
+            "rfrsh_ADMN_TL_AWE__HMPG",
+            "rfrsh_ADMN_TL_HRAWE__HMPG",
+            "rfrsh_ADMN_TL_HR__NEW_HMPG",
+            "rfrsh_ADMN_TL_PY__HMPG",
             "selected"
           ]
         ]

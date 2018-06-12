@@ -119,7 +119,7 @@
           target.click();
         }
       } else if (type == "applyClick") {
-        debugger;elem.querySelector("table[dir='ltr']").querySelectorAll("tr[id]")[group[0]].querySelectorAll("td")[group[1]].querySelector("a").click();if (group[1] == "9") {
+        elem.querySelector("table[dir='ltr']").querySelectorAll("tr[id]")[group[0]].querySelectorAll("td")[group[1]].querySelector("a").click();if (group[1] == "9") {
           ysp.runtime.Model.setForceMatchModels(['forgetCard']);
         } else if (group[1] == "10") {
           ysp.runtime.Model.setForceMatchModels(['holidayAppli']);

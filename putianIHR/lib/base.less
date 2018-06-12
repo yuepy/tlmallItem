@@ -79,9 +79,6 @@ div[data-ysp-modelid="salary"]{
       line-height: 2.75rem;
     	margin-left: 24px;
     	color:#fff;
-    	// text-decoration: none;
-    	// -webkit-font-smoothing: antialiased;
-    	// -moz-osx-font-smoothing: grayscale;
       &:before{
         content: "\e818";
         position: absolute;
@@ -90,12 +87,19 @@ div[data-ysp-modelid="salary"]{
         transform: rotate(180deg);
       }
   }
-  // .ysp_header_back{
-  //   color:#7862FF;
-  // }
   .ysp-header-edit{
     display: inline-block;
     width: 50px;
+  }
+}
+div[data-ysp-modelid="addWork"]{
+  .ysp_header_filter{
+    display: inline-block;
+    background: url(../local/img/add.png) no-repeat;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: 25px;
   }
 }
 /******************************CustomPage组件******************************************/
@@ -409,6 +413,63 @@ div[data-ysp-modelid="salary"]{
   }
   .line3{
     background:url(../local/img/arrow-r.png) no-repeat right 0.72rem #fff;
+  }
+}
+/***********************************加班申请 start*************************************/
+.ysp_addWork_list{
+  padding: 10px;
+  font-size:@fontMedium;
+  .ysp_addWork_card{
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  .line1,.line2{
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    div{
+      float: left;
+    }
+    input{
+      float: right;
+      width: 50%;
+      font-size:@fontMedium;
+      margin: 0;
+      padding: 0 10px;
+      border: none;
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+  .line1{
+    padding-top: 0;
+  }
+  .line2{
+    margin-bottom: 10px;
+    input{
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+  }
+  .delete{
+    margin: 0 auto;
+    width: 20%;
+    background: @3796FB;
+    text-align: center;
+    border-radius: 8px;
+    color: #fff;
+  }
+}
+.ysp_addWork_reason{
+  background: #fff;
+  padding: 10px 20px;
+  textarea{
+    border:none;
+    resize: none;
+    padding: 10px 0;
+    margin: 0;
   }
 }
 /***********************************请假申请 start*************************************/
