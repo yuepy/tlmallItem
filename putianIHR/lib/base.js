@@ -32,12 +32,48 @@
       if(tblpstabs&&tblpstabs.querySelectorAll("a")[1].textContent!=="调休假余额查询"&&tblpstabs.querySelectorAll("a")[1].textContent!=="考勤类型"){
         tblpstabs.querySelectorAll("a")[1].click();
       }
-      
+      //直接填写账号、用户
+			if(aWin.location.href.indexOf("cmd=logout")!==-1){
+        doc.querySelector("#userid").value="YSP";
+        doc.querySelector("#pwd").value="12345678";
+      }
+      //附件上传
+      // aWin.submitAction_win4=function(form, id, event, sAjaxTrfUrl, bWarning, sScriptAfter, nTrfURLType)
+      //   {
+      //   debugger;
+      //   aWin.setupTimeout2();
+      //   if (!aWin.ptCommonObj2.isICQryDownload(form, id))
+      //    { aWin.processing_win4(1,3000); }
+      //   aWin.preSubmitProcess_win4(form, id);
+      //   var spellcheckpos = id.indexOf('$spellcheck');
+      //   if ((spellcheckpos != -1) && (id.indexOf('#KEYA5') != -1))
+      //     form.ICAction.value = id.substring(0,spellcheckpos);
+      //   else 
+      //     form.ICAction.value=id;
+      //   var actionName = form.ICAction.value;
+      //   form.ICXPos.value=aWin.ptCommonObj2.getScrollX();
+      //   form.ICYPos.value=aWin.ptCommonObj2.getScrollY();
+      //   aWin.bcUpdater.storeBcDomData();
+      //   if ((typeof(doc.bAutoSave) != 'undefined') && doc.bAutoSave)
+      //     form.ICAutoSave.value = '1';
+      //   if (!aWin.ptCommonObj2.isAJAXReq(form, id) && !aWin.ptCommonObj2.isPromptReq(id)){
+      //   if (aWin.nLastAction == 1 && aWin.nResubmit > 0) return;
+      //   form.ICResubmit.value=aWin.nResubmit;
+      //   form.submit();
+      //   if (!aWin.ptCommonObj2.isICQryDownload(form, id))
+      //     aWin.nResubmit++;
+      //   }
+      //   else if (aWin.ptCommonObj2.isPromptReq(id))
+      //     aWin.pAction_win4(form, id, arguments[2]);
+      //   else
+      //     aWin.aAction_win4(form, actionName, null, true, false, sAjaxTrfUrl, bWarning, sScriptAfter, nTrfURLType);
+      //   aWin.cancelBubble(event);
+      //   }
     },
 
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
-
+      
     },
 
     //登录相关接口
