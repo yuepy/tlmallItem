@@ -94,7 +94,7 @@
       return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onclick: function onclick(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    // top.click1Status=true; \n    //sessionStorage.setItem(\"clickStatus\",true);\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: [target.tagName, target.textContent, target.getAttribute('data-val')]\n      });\n    }\n    target.ownerDocument.querySelector(\".ysp-infoZhezhao-tt\").style.display = \"block\";\n  },\n  render: function render() {\n    var _this = this;\n    var data = ['\u57FA\u672C\u4FE1\u606F', '\u8054\u7CFB\u4FE1\u606F', '\u4EFB\u804C\u4FE1\u606F', '\u5185\u90E8\u53D1\u5C55\u4FE1\u606F', '\u5408\u540C\u4FE1\u606F', '\u6559\u80B2\u7ECF\u5386', '\u5BB6\u5EAD\u6210\u5458', '\u94F6\u884C\u8D26\u6237', '\u5176\u4ED6\u4FE1\u606F'];\n    var list = data.map(function (d, i) {\n      return React.createElement(\n        'div',\n        { onClick: _this.onclick },\n        React.createElement('i', { 'data-val': d }),\n        React.createElement(\n          'p',\n          null,\n          d\n        )\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'ysp-baseInfo-detail' },\n      React.createElement(\n        'div',\n        { className: 'ysp-baseInfo-title' },\n        '\\u8BE6\\u7EC6\\u4FE1\\u606F'\n      ),\n      React.createElement(\n        'div',\n        { className: 'ysp-baseInfo-detailList' },\n        list\n      )\n    );\n  }\n});";
     },
     getData_control20_rAKl6w: function (elem) {
-      // console.log(elem);
+      //console.log(elem);
       if (!elem) {
         return;
       }if (elem) {
@@ -143,14 +143,14 @@
     },
     doAction_uiControl20_MuwVGq: function (data, elem) {
       if (data.eventType == 'back') {
-        // debugger;
+        //debugger;
         var param = elem.ownerDocument.querySelector('#PSTABNBO').querySelector('tr').querySelector('td#selected').nextElementSibling.querySelector('a').getAttribute('href').split(/,/)[0].split(/\(/)[1].split(/\./)[1];elem.ownerDocument.defaultView.submitAction_RBET(elem.ownerDocument.querySelector("form[name=" + param + "]"), 'TAB_BUTTON_ID', 'HPS_RSM_TAB_DTL#10');
       } else if (data.eventType == 'filter') {
         elem.ownerDocument.querySelector("input[value='编辑']").click();var timer = setInterval(function () {
           if (elem.ownerDocument.defaultView.frameElement.ownerDocument.defaultView.frameElement.ownerDocument.querySelectorAll(".frame-box").length == 3) {
             var target = elem.ownerDocument.defaultView.frameElement.ownerDocument.defaultView.frameElement.ownerDocument.querySelectorAll(".frame-box")[2].querySelector("iframe").contentDocument.querySelector("iframe").getAttribute("src");elem.ownerDocument.defaultView.open(target);clearInterval(timer);
           }
-        }, 500);
+        }, 300);
       }
     },
     getTemplate_uiControl20_MuwVGq: function () {

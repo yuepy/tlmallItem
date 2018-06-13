@@ -5,6 +5,7 @@
   "jsFile": "index.js",
   "chineseName": "员工信息编辑",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control37_yJKHWf": {
       "location": {
@@ -90,16 +91,141 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control52_bv6Nr8": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::TABLE[@id=\"ACE_width\"]//TABLE[@id=\"ACE_HPS_PHOTO_APR_\"]/TBODY[1]/TR[9]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              5
+            ],
+            "value": "TABLE.PSGROUPBOX TABLE.PSLEVEL1GRIDWBO TABLE.PSLEVEL1GRID"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[6]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[9]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control52_bv6Nr8"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control53_PATCGb": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::TABLE[@id=\"ACE_width\"]//TABLE[@id=\"ACE_HPS_PHOTO_APR_\"]/TBODY[1]/TR[11]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              5
+            ],
+            "value": "TABLE.PSGROUPBOX TABLE.PSLEVEL1GRIDWBO TABLE.PSLEVEL1GRID"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[6]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[11]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control53_PATCGb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control54_At6Ka1": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::TABLE[@id=\"ACE_width\"]//TABLE[@id=\"ACE_HPS_PHOTO_APR_\"]/TBODY[1]/TR[13]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              5
+            ],
+            "value": "TABLE.PSGROUPBOX TABLE.PSLEVEL1GRIDWBO TABLE.PSLEVEL1GRID"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[6]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[13]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control54_At6Ka1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context5_WMk3RJ": {
       "controls": [
         "control37_yJKHWf",
-        "control39_XieBFr"
+        "control39_XieBFr",
+        "control52_bv6Nr8",
+        "control53_PATCGb",
+        "control54_At6Ka1"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.110\\/psc\\/ps_.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_HR_SS_BAS.*"
+      ]
     }
   },
   "flows": {
@@ -124,6 +250,26 @@
       "fromContextId": "context5_WMk3RJ",
       "fromAction": "doAction",
       "fromControlId": "control37_yJKHWf",
+      "toContexts": [
+        {
+          "toContextId": "context5_WMk3RJ"
+        }
+      ]
+    },
+    "flow48_S3SBLJ": {
+      "fromContextId": "context5_WMk3RJ",
+      "fromAction": "doAction",
+      "fromControlId": "control52_bv6Nr8",
+      "toContexts": [
+        {
+          "toContextId": "context5_WMk3RJ"
+        }
+      ]
+    },
+    "flow51_bktJLq": {
+      "fromContextId": "context5_WMk3RJ",
+      "fromAction": "doAction",
+      "fromControlId": "control53_PATCGb",
       "toContexts": [
         {
           "toContextId": "context5_WMk3RJ"
@@ -161,6 +307,51 @@
               "events": {
                 "onDoAction": "doAction_uiControl39_iQbQNT",
                 "onGetTemplate": "getTemplate_uiControl39_iQbQNT"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl51_tEicQS",
+          "controlId": "control52_bv6Nr8",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl51_tEicQS",
+                "onGetTemplate": "getTemplate_uiControl51_tEicQS"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl52_MGcE1s",
+          "controlId": "control53_PATCGb",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl52_MGcE1s",
+                "onGetTemplate": "getTemplate_uiControl52_MGcE1s"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl53_96p6lf",
+          "controlId": "control54_At6Ka1",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl53_96p6lf",
+                "onGetTemplate": "getTemplate_uiControl53_96p6lf"
               }
             }
           }

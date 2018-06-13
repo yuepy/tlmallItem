@@ -1,0 +1,461 @@
+{
+  "version": "0.1",
+  "id": "educationalExperience",
+  "targetURL": "http://192.168.220.110/psc/ps_18/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_EUD_CPT1.GBL?Page=HPS_HR_SS_EDU_PAG1&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_18%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL%3fPage%3dHPS_HR_SS_EDU_PAG1%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_18%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_18%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_18%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes",
+  "jsFile": "index.js",
+  "chineseName": "教育经历",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control55_AdsyTc": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::TABLE[@id=\"ACE_width\"]/TBODY[1]/TR[2]/TD[2]/DIV[1]/SPAN[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "DIV.ps_pspagecontainer TABLE.PSPAGECONTAINER SPAN.PSTEXT"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/DIV[1]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control55_AdsyTc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context9_Ffd4Vf": {
+      "controls": [
+        "control55_AdsyTc"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.110\\/psc/ps_.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU.HPS_HR_SS_EUD.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow52_aIXTWf": {
+      "toContexts": [
+        {
+          "toContextId": "context9_Ffd4Vf"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page9_RKyoh6": {
+      "contextId": "context9_Ffd4Vf",
+      "layout": [
+        {
+          "id": "uiControl54_kJHQ4k",
+          "controlId": "control55_AdsyTc",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl54_kJHQ4k",
+                "onGetTemplate": "getTemplate_uiControl54_kJHQ4k"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context9_Ffd4Vf": [
+          "教育经历"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context9_Ffd4Vf": [
+          "192.168.220.110/psc/ps_18/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_EUD_CPT1.GBL?Page=HPS_HR_SS_EDU_PAG1&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_18%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL%3fPage%3dHPS_HR_SS_EDU_PAG1%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_18%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_18%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_18%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes",
+          "192.168.220.110/psc/ps_22/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_EUD_CPT1.GBL?Page=HPS_HR_SS_EDU_PAG1&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_22%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL%3fPage%3dHPS_HR_SS_EDU_PAG1%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_22%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_22%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_22%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context9_Ffd4Vf": [
+          [
+            "#HELPPOPUPCLOSE",
+            "$ICField$delete$$$",
+            "$ICField$hfind$",
+            "$ICField$new$$$",
+            "$ICField$scrolli$",
+            "ACE_$ICField$",
+            "ACE_width",
+            "ATTACHADD$",
+            "ATTACHDET$",
+            "CLEARCONSOLE",
+            "CLOSECONSOLE",
+            "COPYCONSOLE",
+            "CUSTPAGE",
+            "Delayed_win",
+            "DetachDiv",
+            "FacetPath",
+            "HIDECONSOLE",
+            "HPS_CPY_FILE_CLASS$",
+            "HPS_EDUCAT_APR_DATE$",
+            "HPS_EDUCAT_APR_DATE$prompt$",
+            "HPS_EDUCAT_APR_DATE$prompt$img$",
+            "HPS_EDUCAT_APR_DATE_LBL$",
+            "HPS_EDUCAT_APR_DATE_LBL$star$",
+            "HPS_EDUCAT_APR_HPS_DEGREE$",
+            "HPS_EDUCAT_APR_HPS_DEGREE_LBL$",
+            "HPS_EDUCAT_APR_HPS_DEGREE_LBL$star$",
+            "HPS_EDUCAT_APR_HPS_DESC_$",
+            "HPS_EDUCAT_APR_HPS_DESC__LBL$",
+            "HPS_EDUCAT_APR_HPS_EDUCATION$",
+            "HPS_EDUCAT_APR_HPS_EDUCATION_LBL$",
+            "HPS_EDUCAT_APR_HPS_EDUCATION_LBL$star$",
+            "HPS_EDUCAT_APR_HPS_EDU_BACKGROUND$",
+            "HPS_EDUCAT_APR_HPS_EDU_BACKGROUND_LBL$",
+            "HPS_EDUCAT_APR_HPS_EDU_BACKGROUND_LBL$star$",
+            "HPS_EDUCAT_APR_HPS_ENTR_EXAM_FLAG$",
+            "HPS_EDUCAT_APR_HPS_ENTR_EXAM_FLAG$chk$",
+            "HPS_EDUCAT_APR_HPS_ENTR_EXAM_FLAG_LBL$",
+            "HPS_EDUCAT_APR_HPS_FIRST_EDU_FLAG$",
+            "HPS_EDUCAT_APR_HPS_FIRST_EDU_FLAG$chk$",
+            "HPS_EDUCAT_APR_HPS_FIRST_EDU_FLAG_LBL$",
+            "HPS_EDUCAT_APR_HPS_GRADU_TYPE$",
+            "HPS_EDUCAT_APR_HPS_GRADU_TYPE_LBL$",
+            "HPS_EDUCAT_APR_HPS_GRADU_TYPE_LBL$star$",
+            "HPS_EDUCAT_APR_HPS_HIGH_DEG_FLAG$",
+            "HPS_EDUCAT_APR_HPS_HIGH_DEG_FLAG$chk$",
+            "HPS_EDUCAT_APR_HPS_HIGH_DEG_FLAG_LBL$",
+            "HPS_EDUCAT_APR_HPS_HIGH_EDU_FLAG$",
+            "HPS_EDUCAT_APR_HPS_HIGH_EDU_FLAG$chk$",
+            "HPS_EDUCAT_APR_HPS_HIGH_EDU_FLAG_LBL$",
+            "HPS_EDUCAT_APR_HPS_MAJOR_NAME$",
+            "HPS_EDUCAT_APR_HPS_MAJOR_NAME_LBL$",
+            "HPS_EDUCAT_APR_HPS_MAJOR_NAME_LBL$star$",
+            "HPS_EDUCAT_APR_HPS_SCHOOL_NAME$",
+            "HPS_EDUCAT_APR_HPS_SCHOOL_NAME_LBL$",
+            "HPS_EDUCAT_APR_HPS_SCHOOL_NAME_LBL$star$",
+            "HPS_EDUCAT_APR_HPS_STUDY_MET$",
+            "HPS_EDUCAT_APR_HPS_STUDY_MET_LBL$",
+            "HPS_EDUCAT_APR_HPS_STUDY_MET_LBL$star$",
+            "HPS_EDU_ATT_APR$delete$$$",
+            "HPS_EDU_ATT_APR$hexcel$",
+            "HPS_EDU_ATT_APR$hfind$",
+            "HPS_EDU_ATT_APR$hmodal$",
+            "HPS_EDU_ATT_APR$hpers$",
+            "HPS_EDU_ATT_APR$new$$$",
+            "HPS_EDU_ATT_APR$scrolli$",
+            "HPS_EDU_ATT_APR$srt$",
+            "HPS_EDU_ATT_APR_ATTACHUSERFILE$",
+            "HPS_EDU_ATT_APR_DESCR$",
+            "HPS_EMP_APR_DW_EMPLID",
+            "HPS_EMP_APR_DW_HPS_EMPLINFO_STA",
+            "HPS_EMP_APR_DW_HPS_SELECT_FLAG$",
+            "HPS_EMP_APR_DW_HPS_SELECT_FLAG$chk$",
+            "HPS_EMP_APR_DW_SAVE_BTN",
+            "HPS_EMP_APR_DW_SELECT_FLAG$",
+            "HPS_EMP_APR_DW_SELECT_FLAG$chk$",
+            "HPS_EMP_APR_DW_SELECT_FLAG_LBL$",
+            "HPS_EMP_APR_DW_SUBMIT_BTN",
+            "HPS_HR_SS_EUD_CPT",
+            "HelpDragFrame_win",
+            "HelpdivpopupFrame_win",
+            "HelppopupContainer_win",
+            "HelppopupDiv_win",
+            "HelppopupInner_win",
+            "HelppopupShadow",
+            "HelppopupShadowBottom",
+            "HelppopupShadowBottomLeftCorner",
+            "HelppopupShadowBottomMiddle",
+            "HelppopupShadowBottomRightCorner",
+            "HelppopupShadowTop",
+            "HelppopupShadowTopRightCorner",
+            "HelppopupTitleBarLeftImage",
+            "HelppopupTitleBarMiddle_win",
+            "HelppopupTitleBarRightImage",
+            "HelppopupTitleBar_win",
+            "HelppopupTitle_win",
+            "ICAPPCLSDATA",
+            "ICAction",
+            "ICActionPrompt",
+            "ICAddCount",
+            "ICAutoSave",
+            "ICBcDomData",
+            "ICChanged",
+            "ICElementNum",
+            "ICFind",
+            "ICFirstAnchor_win",
+            "ICFocus",
+            "ICLastAnchor_win",
+            "ICModelCancel",
+            "ICPanelName",
+            "ICResubmit",
+            "ICSID",
+            "ICSaveWarningFilter",
+            "ICSkipPending",
+            "ICStateNum",
+            "ICType",
+            "ICTypeAheadID",
+            "ICXPos",
+            "ICYPos",
+            "NEWWIN",
+            "PERSONAL_DATA_NAME",
+            "PT_HEADER_PANEL",
+            "ResponsetoDiffFrame",
+            "SAVED_win",
+            "TargetFrameName",
+            "WAIT_win",
+            "ancdobackclassic",
+            "divdobackclassic",
+            "popupDragFrame",
+            "processing",
+            "ptModalShadow",
+            "ptStatusText_win",
+            "pt_console",
+            "pt_dragResize",
+            "pt_dragtxt",
+            "pt_envinfo_win",
+            "pt_fakeBC",
+            "pt_modalMask",
+            "pt_modalMaskCover",
+            "pt_modals",
+            "pt_pageinfo_win",
+            "pt_typeahead",
+            "pthnavbccref_PT_FAKE_HPS_HR_SS_EUD_CPT_GBL",
+            "ptus_componenturl",
+            "ptus_dbname",
+            "ptus_defaultlocalnode",
+            "ptus_node",
+            "ptus_portal",
+            "ptus_universalSrch",
+            "ptus_workcenterid",
+            "saveWait_win",
+            "trHPS_EDU_ATT_APR$_row",
+            "winMOdivpopupFrame",
+            "winMOpopupContainer",
+            "winMOpopupInner",
+            "windiv$ICField",
+            "windiv$ICField$",
+            "windiv$ICFieldGP$",
+            "windivATTACHADD$",
+            "windivATTACHDET$",
+            "windivHPS_CPY_FILE_CLASS$",
+            "windivHPS_EDUCAT_APR_DATE$",
+            "windivHPS_EDUCAT_APR_DATElbl$",
+            "windivHPS_EDUCAT_APR_HPS_DEGREE$",
+            "windivHPS_EDUCAT_APR_HPS_DEGREElbl$",
+            "windivHPS_EDUCAT_APR_HPS_DESC_$",
+            "windivHPS_EDUCAT_APR_HPS_DESC_lbl$",
+            "windivHPS_EDUCAT_APR_HPS_EDUCATION$",
+            "windivHPS_EDUCAT_APR_HPS_EDUCATIONlbl$",
+            "windivHPS_EDUCAT_APR_HPS_EDU_BACKGROUND$",
+            "windivHPS_EDUCAT_APR_HPS_EDU_BACKGROUNDlbl$",
+            "windivHPS_EDUCAT_APR_HPS_ENTR_EXAM_FLAG$",
+            "windivHPS_EDUCAT_APR_HPS_FIRST_EDU_FLAG$",
+            "windivHPS_EDUCAT_APR_HPS_GRADU_TYPE$",
+            "windivHPS_EDUCAT_APR_HPS_GRADU_TYPElbl$",
+            "windivHPS_EDUCAT_APR_HPS_HIGH_DEG_FLAG$",
+            "windivHPS_EDUCAT_APR_HPS_HIGH_EDU_FLAG$",
+            "windivHPS_EDUCAT_APR_HPS_MAJOR_NAME$",
+            "windivHPS_EDUCAT_APR_HPS_MAJOR_NAMElbl$",
+            "windivHPS_EDUCAT_APR_HPS_SCHOOL_NAME$",
+            "windivHPS_EDUCAT_APR_HPS_SCHOOL_NAMElbl$",
+            "windivHPS_EDUCAT_APR_HPS_STUDY_MET$",
+            "windivHPS_EDUCAT_APR_HPS_STUDY_METlbl$",
+            "windivHPS_EDU_ATT_APR$",
+            "windivHPS_EDU_ATT_APRGP$",
+            "windivHPS_EDU_ATT_APR_ATTACHUSERFILE$",
+            "windivHPS_EDU_ATT_APR_DESCR$",
+            "windivHPS_EMP_APR_DW_EMPLID",
+            "windivHPS_EMP_APR_DW_EMPLIDlbl",
+            "windivHPS_EMP_APR_DW_HPS_EMPLINFO_STA",
+            "windivHPS_EMP_APR_DW_HPS_EMPLINFO_STAlbl",
+            "windivHPS_EMP_APR_DW_HPS_SELECT_FLAG$",
+            "windivHPS_EMP_APR_DW_SAVE_BTN",
+            "windivHPS_EMP_APR_DW_SELECT_FLAG$",
+            "windivHPS_EMP_APR_DW_SUBMIT_BTN",
+            "windivPAGEBAR",
+            "windivPAGECONTAINER",
+            "windivPERSONAL_DATA_NAME",
+            "windivPSHIDDENFIELDS",
+            "windivPSPAGECONTAINER",
+            "windivPSPANELTABLINKS",
+            "windivPSPANELTABS",
+            "windivPSTOOLSHIDDENS"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context9_Ffd4Vf": [
+          [
+            "HelpdivpopupFrame",
+            "HelppopupInner",
+            "HelppopupTitleBar",
+            "HelppopupTitleBarMiddle",
+            "Left",
+            "MOBGImage",
+            "PSCHECKBOX",
+            "PSDROPDOWNLABEL",
+            "PSDROPDOWNLIST",
+            "PSDROPDOWNLIST_DISPONLY",
+            "PSEDITBOX",
+            "PSEDITBOXLABEL",
+            "PSEDITBOX_DISPONLY",
+            "PSERRORTEXT",
+            "PSForm",
+            "PSGRIDCOUNTER",
+            "PSGRIDFIRSTCOLUMN",
+            "PSGRIDNAVIGATOR",
+            "PSHEADERHYPERLINKD",
+            "PSHYPERLINK",
+            "PSLEVELGRID",
+            "PSLEVELGRIDCOLUMNHDR",
+            "PSLEVELGRIDLABEL",
+            "PSLEVELGRIDODDROW",
+            "PSLEVELGRIDWBO",
+            "PSLEVELSCROLLAREABODY",
+            "PSLEVELSCROLLAREABODYWBO",
+            "PSLEVELSCROLLAREAHEADER",
+            "PSMODAL",
+            "PSPAGECONTAINER",
+            "PSPROCESSING",
+            "PSPUSHBUTTON",
+            "PSPUSHBUTTONDISABLED",
+            "PSTEXT",
+            "PTDOWNLOAD",
+            "PTMODALCNTRL",
+            "PTMODALCNTRL_CONTRAST",
+            "PTNEXTROW_D",
+            "PTPOPUP_HEADER",
+            "PTPOPUP_TITLE",
+            "PTPREVROW_D",
+            "PTROWADD",
+            "PTROWDELETE",
+            "abnanchor",
+            "popupDragFrame",
+            "popupShadow",
+            "popupShadowBottom",
+            "popupShadowBottomLeftCorner",
+            "popupShadowBottomMiddle",
+            "popupShadowBottomRightCorner",
+            "popupShadowTop",
+            "popupShadowTopRightCorner",
+            "ps_ajax_console",
+            "ps_box-pagetabs",
+            "ps_box-toolshiddens",
+            "ps_header_panel",
+            "ps_modalmask",
+            "ps_modalmask_cover",
+            "ps_pagecontainer",
+            "ps_pspagecontainer",
+            "ps_typeahead",
+            "psc_hidden",
+            "psc_processing",
+            "ptabncrefbc",
+            "ptfakercfbc",
+            "pthbcdispiblock",
+            "pthnavbarcref",
+            "pthnavcrefimg",
+            "pthnavhiearchysep",
+            "spanTextDropdown",
+            "x"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context9_Ffd4Vf": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/A",
+            "-/FORM/A",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "-/FORM/TABLE",
+            "-/TABLE/TBODY",
+            "A/SPAN/INPUT-button",
+            "DIV/A/IMG",
+            "DIV/A/SPAN",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-text",
+            "FORM/DIV/SPAN",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "FORM/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/A/IMG",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/INPUT-checkbox",
+            "TD/DIV/INPUT-hidden",
+            "TD/DIV/INPUT-text",
+            "TD/DIV/LABEL",
+            "TD/DIV/SELECT",
+            "TD/DIV/SPAN",
+            "TD/DIV/TABLE",
+            "TD/TABLE/TBODY",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/HR",
+            "TR/TD/IMG",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TH/A",
+            "UL/LI/A",
+            "UL/LI/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}
