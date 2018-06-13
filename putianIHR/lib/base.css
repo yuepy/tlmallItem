@@ -816,9 +816,22 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
   margin-right: 10px;
   vertical-align: top;
 }
-.annex-box .annex-item {
+.annex-box .annex-listItem {
   display: inline-block;
   position: relative;
+}
+.annex-box .fileName {
+  font-size: 12px;
+  word-wrap: break-word;
+  width: 60px;
+  color: #999;
+}
+.annex-box .pic {
+  height: 60px;
+  background: url(../local/img/picture1x.png) no-repeat;
+  background-size: 100%;
+}
+.annex-box .annex-item {
   border: 1px solid #e1e1e1;
   width: 60px;
   height: 60px;
