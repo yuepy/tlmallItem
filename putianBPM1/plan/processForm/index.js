@@ -74,8 +74,7 @@
                 var children = {};_title = item.childNodes[0];_title && (children.title = _title.textContent.trim());children.key = '*';
               } else {
                 var children = {};_title = item.childNodes[0];_title && (children.title = _title.textContent.trim());
-              }
-              data.rejectsStatus.Retit.push(children);
+              }data.rejectsStatus.Retit.push(children);
             } else if (i % 2 == 1 && item.parentElement.style != 'none' && item.style.display != 'none') {
               //此部分为内容。
               var rejectsStatusInput = item.querySelector('#rejectsStatuss');if (rejectsStatusInput) {
@@ -138,14 +137,16 @@
                   });
                 } else {
                   _input.length > 0 && [].forEach.call(_input, function (item, i) {
-                    var children = {};children.cont = [];children.attr = 'input';children.cont.push(item.value);children.change = 'true';children.id = 'ksPrice';var err = ksPrice.querySelector('.mini-errorIcon');err ? children.err = true : children.err = false;data.belowKsPeice.Recont.push(children);
+                    var children = {};
+                    children.cont = [];children.attr = 'input';children.cont.push(item.value);children.change = 'true';children.id = 'ksPrice';var err = ksPrice.querySelector('.mini-errorIcon');err ? children.err = true : children.err = false;data.belowKsPeice.Recont.push(children);
                   });
                 }
               }
             }
           });
         } /************************end****************************/var signOne = elem.contentWindow.document.querySelector('#form1');if (signOne) {
-          var form = elem.contentWindow.document.querySelector('#form');if (form) {
+          var form = elem.contentWindow.document.querySelector('#form');
+          if (form) {
             /*******针对与付款申请单********/var sheep = elem.contentWindow.document.querySelectorAll('#form>table>tbody>tr>td');var payNum = elem.contentWindow.document.querySelector('#form>div');if (payNum) {
               var children = {};children.title = payNum.textContent.trim();data.onePartTitle.push(children);var child = {};var _value = payNum.querySelector('input');child.cont = [];child.cont.push(_value.value);child.err = false;child.attr = 'INPUT';data.onePartCont.push(child);
             }
@@ -157,7 +158,8 @@
                 var btn = item.querySelector('a');data.btns.btn.push(btn.textContent);btn.id ? data.btns.btnID.push(btn.id) : (data.btns.btnID.push(btn.className), data.btns.class = true);
               } else if (item.childNodes[1] && item.childNodes[1].nodeName == 'LABEL') {
                 var star = item.querySelector('span');var btn = item.querySelector('a');if (star) {
-                  var children = {};var _h4 = item.querySelector('h4');if (item.querySelector('label').childNodes[0].nodeName == '#text' && !_h4) {
+                  var children = {};var _h4 = item.querySelector('h4');
+                  if (item.querySelector('label').childNodes[0].nodeName == '#text' && !_h4) {
                     var _label = item.querySelector('label').childNodes[0];_label && (children.title = _label.textContent.trim().replace(/：/g, ''));children.title = children.title.replace(/:/g, '');star.style.display != 'none' && (children.key = '*');
                   } else {
                     var _label = item.textContent.trim();children.title = _label;
@@ -169,7 +171,8 @@
                 }data.onePartTitle.push(children);
               } else if (item.childNodes[0] && item.childNodes[0].nodeName == 'LABEL') {
                 var star = item.querySelector('span');if (star && star.style.display != 'none') {
-                  var children = {};var _value = item.childNodes[0].childNodes[0].textContent;children.title = _value.trim().replace(/：/g, '');children.key = item.querySelector('span').textContent.trim();children.title = children.title.replace(/:/g, '');
+                  var children = {};
+                  var _value = item.childNodes[0].childNodes[0].textContent;children.title = _value.trim().replace(/：/g, '');children.key = item.querySelector('span').textContent.trim();children.title = children.title.replace(/:/g, '');
                 } else {
                   var children = {};var _value = item.childNodes[0].textContent;_value && (children.title = _value.trim().replace(/：/g, ''));children.title = children.title.replace(/:/g, '');
                 }data.onePartTitle.push(children);
@@ -187,7 +190,8 @@
                 }data.onePartTitle.push(children);
               }
             } else if (i % 2 == 1 && item.parentElement.style.display != 'none' && item.style.display != 'none') {
-              var bridge = item.querySelectorAll('span')[0];var zero = item.childNodes[1];var download = item.querySelector('#Filelist');var usedAmount = item.querySelector('#usedAmount');var _label = item.querySelector('label');var goodproId = item.querySelector('#goodproId');var cancelOrderNum = item.querySelector('#cancelOrderNum');var usedAmount = item.querySelector('#usedAmount');var usedDiscountAmount = item.querySelector('#usedDiscountAmount');var isFinish = item.querySelector("#isFinish");var inputRadio = item.querySelectorAll("input[type='radio']"); //是否特殊项目-input的type是radio
+              var bridge = item.querySelectorAll('span')[0];var zero = item.childNodes[1];var download = item.querySelector('#Filelist');var usedAmount = item.querySelector('#usedAmount');var _label = item.querySelector('label');var goodproId = item.querySelector('#goodproId');var cancelOrderNum = item.querySelector('#cancelOrderNum');var usedAmount = item.querySelector('#usedAmount');var usedDiscountAmount = item.querySelector('#usedDiscountAmount');var isFinish = item.querySelector("#isFinish");
+              var inputRadio = item.querySelectorAll("input[type='radio']"); //是否特殊项目-input的type是radio
               var _br = item.querySelectorAll('br');var _zero = item.querySelectorAll('.mini-list-inner');var orderedDate = item.querySelector('#orderedDate');var isSignUp = item.querySelector('#isSignUp'); //是否需要签办功能（公司收文审批单流程）
               var isReturn = item.querySelector("#isReturn"); //营业执照、法人身份证使用：到达最后一步审批，“归还”时，“是否归还复选框”元素
               var returnDate = item.querySelector("#returnDate"); //营业执照、法人身份证使用：到达最后一步审批，“归还”时，日期
@@ -202,8 +206,7 @@
                   children.checked.push(false);
                 }var err = item.querySelector('.mini-errorIcon');var _value = err.nextElementSibling;var _err = err.getAttribute('title');err && _err != null && _value.value == '' ? children.err = true : children.err = false;
               } else if (isReturn) {
-                var children = {};var check = isReturn.querySelector("input[type='checkbox']");
-                var disable = isReturn.querySelector(".mini-checkboxlist-item-selected");var returnDate = item.ownerDocument.querySelector("#returnDate");children.cont = [];children.cont.push(isReturn.textContent);if (isReturn && check && check.checked) {
+                var children = {};var check = isReturn.querySelector("input[type='checkbox']");var disable = isReturn.querySelector(".mini-checkboxlist-item-selected");var returnDate = item.ownerDocument.querySelector("#returnDate");children.cont = [];children.cont.push(isReturn.textContent);if (isReturn && check && check.checked) {
                   children.check = true;
                 } else {
                   children.check = false;
@@ -245,13 +248,12 @@
                   });
                 } else {
                   _input.length > 0 && [].forEach.call(_input, function (val, i) {
-                    var _cont = val.nextElementSibling;var _checked = val.checked;children.cont.push(_cont.textContent.trim());
-                    children.checked.push(_checked);children.attr = 'radio';children.change = 'true';children.id = 'isSignUp';var err = item.querySelector('.mini-errorIcon');var _value = err.nextElementSibling;var _err = err.getAttribute('title');err && _err != null && _value.value == '' ? children.err = true : children.err = false;
+                    var _cont = val.nextElementSibling;var _checked = val.checked;children.cont.push(_cont.textContent.trim());children.checked.push(_checked);children.attr = 'radio';
+                    children.change = 'true';children.id = 'isSignUp';var err = item.querySelector('.mini-errorIcon');var _value = err.nextElementSibling;var _err = err.getAttribute('title');err && _err != null && _value.value == '' ? children.err = true : children.err = false;
                   });
                 }
               } else if (isContersign) {
-                var hidden = isContersign.classList.contains('mini-disabled');
-                var _input = item.querySelectorAll("input[type='radio']");var children = {};children.cont = [];children.checked = [];if (hidden) {
+                var hidden = isContersign.classList.contains('mini-disabled');var _input = item.querySelectorAll("input[type='radio']");var children = {};children.cont = [];children.checked = [];if (hidden) {
                   _input.length > 0 && [].forEach.call(_input, function (val, i) {
                     var _cont = val.nextElementSibling;var _checked = val.checked;if (_checked == true) {
                       children.cont.push(_cont.textContent.trim());
@@ -271,7 +273,8 @@
                   });
                 } else {
                   _input.length > 0 && [].forEach.call(_input, function (val, i) {
-                    var _cont = val.nextElementSibling;var _checked = val.checked;children.cont.push(_cont.textContent.trim());children.checked.push(_checked);children.attr = 'radio';children.change = 'true';children.id = 'isPresidentApprove';var err = item.querySelector('.mini-errorIcon');var _value = err.nextElementSibling;var _err = err.getAttribute('title');err && _err != null && _value.value == '' ? children.err = true : children.err = false;
+                    var _cont = val.nextElementSibling;var _checked = val.checked;children.cont.push(_cont.textContent.trim());children.checked.push(_checked);children.attr = 'radio';children.change = 'true';children.id = 'isPresidentApprove';var err = item.querySelector('.mini-errorIcon');var _value = err.nextElementSibling;
+                    var _err = err.getAttribute('title');err && _err != null && _value.value == '' ? children.err = true : children.err = false;
                   });
                 }
               } else if (download) {
@@ -286,7 +289,8 @@
                         children.memory.push(item.textContent);
                       }
                     });
-                  });children.attr = 'A';children.parent = 'form1';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                  });
+                  children.attr = 'A';children.parent = 'form1';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                 } else {
                   children.cont.push(download.textContent);children.attr = 'INPUT';children.parent = 'form1';
                 }
@@ -318,13 +322,13 @@
               } else if (item.childNodes.length == 3 && item.childNodes[1].nodeName == 'A') {
                 var children = {};children.cont = [];children.attr = 'INPUT';var _value = item.querySelector('a').textContent;var err = item.querySelector('.mini-errorIcon');err && err.nodeName == 'SPAN' ? children.err = true : children.err = false;children.cont.push(_value); //合同号
               } else if (_label && item.childNodes.length == 3) {
-                var red = item.querySelector('label	span');var children = {};children.cont = []; //红色退款理由注意事项提示（销售退货申请流程）
+                var red = item.querySelector('label	span');var children = {};
+                children.cont = []; //红色退款理由注意事项提示（销售退货申请流程）
                 if (red && red.style.color == 'red') {
                   children.cont.push(red.textContent.trim());children.attr = 'RED';var err = item.querySelector('.mini-errorIcon');err && err.nodeName == 'SPAN' ? children.err = true : children.err = false;
                 }
               } else if (bridge && zero && zero.nodeName != 'DIV') {
-                var one = item.childNodes[1];
-                var three = item.childNodes[3];var two = item.childNodes[2];if (one.nodeName == 'SPAN' && item.childNodes.length == 2) {
+                var one = item.childNodes[1];var three = item.childNodes[3];var two = item.childNodes[2];if (one.nodeName == 'SPAN' && item.childNodes.length == 2) {
                   var children = {};var _bridge = bridge.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 ? children.err = true : children.err = false;
                 } else if (item.childNodes.length == 3 && item.childNodes[0].nodeName == 'INPUT' && item.childNodes[2].nodeName == 'SPAN' && _zero.length == 0) {
                   var children = {};children.cont = [];children.attr = 'INPUT';var _value = item.querySelector('span').textContent.trim();children.cont.push(_value);var err = item.querySelector('.mini-errorIcon');err && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
@@ -332,7 +336,8 @@
                   var children = {};children.cont = [];var _value = item.querySelector('span').textContent.trim();children.attr = 'INPUT';children.cont.push(_value);var err = item.querySelector('.mini-errorIcon');err && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                 } else if (one.nodeName == 'SPAN' && item.childNodes.length == 3) {
                   if (typeof bridge != 'undefined') {
-                    var date = item.querySelectorAll('#contractSealDate');var backStatus = item.querySelectorAll('#backStatus');var shenpiMoney = item.querySelector('#shenpiMoney');var yesNo = item.querySelector('#yesNo');var customerCrdInfo = item.querySelector('#customerCrdInfo'); /*铺货会签单客户信用资料情况*/var customerConSin = item.querySelector('#customerConSin'); /*铺货会签单客户合同签订*/var hidden = item.querySelector('span').classList.contains('mini-buttonedit-disabled');var svpCfo = item.querySelector(' #svpCfo '); /*公司收文里的选择高级副总裁或财务总监*/var deptHead = item.querySelector(' #deptHead '); /*公司收文里的选择部門負責人*/var deptApprover = item.querySelector(' #deptApprover '); /*商业物流临时操作 物流部总经理 相关部门人员选择*/var _hidden = item.querySelector('span').classList.contains('mini-textbox-disabled');if (date.length > 0) {
+                    var date = item.querySelectorAll('#contractSealDate');var backStatus = item.querySelectorAll('#backStatus');var shenpiMoney = item.querySelector('#shenpiMoney');var yesNo = item.querySelector('#yesNo');var customerCrdInfo = item.querySelector('#customerCrdInfo'); /*铺货会签单客户信用资料情况*/var customerConSin = item.querySelector('#customerConSin'); /*铺货会签单客户合同签订*/var hidden = item.querySelector('span').classList.contains('mini-buttonedit-disabled');
+                    var svpCfo = item.querySelector(' #svpCfo '); /*公司收文里的选择高级副总裁或财务总监*/var deptHead = item.querySelector(' #deptHead '); /*公司收文里的选择部門負責人*/var deptApprover = item.querySelector(' #deptApprover '); /*商业物流临时操作 物流部总经理 相关部门人员选择*/var _hidden = item.querySelector('span').classList.contains('mini-textbox-disabled');if (date.length > 0) {
                       if (hidden || _hidden) {
                         var children = {};var _bridge = bridge.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
                       } else {
@@ -348,12 +353,12 @@
                       if (hidden || _hidden) {
                         var children = {};var _bridge = bridge.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
                       } else {
-                        var children = {};var _bridge = bridge.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'SVPCFO');_bridge && (children.id = 'svpCfo');var err = item.querySelectorAll('.mini-errorIcon');
-                        err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                        var children = {};var _bridge = bridge.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'SVPCFO');_bridge && (children.id = 'svpCfo');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                       }
                     } else if (deptApprover) {
                       if (hidden || _hidden) {
-                        var children = {};var _bridge = bridge.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
+                        var children = {};var _bridge = bridge.childNodes[0].firstChild;
+                        var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
                       } else {
                         var children = {};var _bridge = bridge.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'SVPCFO');_bridge && (children.id = 'deptApprover');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                       }
@@ -367,12 +372,13 @@
                       if (hidden || _hidden) {
                         var children = {};var _bridge = bridge.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                       } else {
-                        var children = {};children.cont = [];var _bridge = bridge.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'OTHER');_bridge && (children.parent = 'form1');
-                        _bridge && (children.id = 'customerConSin');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                        var children = {};children.cont = [];var _bridge = bridge.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'OTHER');_bridge && (children.parent = 'form1');_bridge && (children.id = 'customerConSin');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                       }
                     } else if (backStatus.length > 0) {
                       if (hidden || _hidden) {
-                        var children = {};var _bridge = bridge.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                        var children = {};
+                        var _bridge = bridge.childNodes[0].firstChild;children.cont = [];
+                        _bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                       } else {
                         var children = {};children.cont = [];var _bridge = bridge.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'BACKSTATUS');_bridge && (children.parent = 'form1');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                       }
@@ -381,7 +387,9 @@
                         var children = {};_bridge && (children.attr = 'HIDDEN');var _bridge = bridge.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 ? children.err = true : children.err = false;
                       } else {
                         if (hidden || _hidden) {
-                          var children = {};var _bridge = bridge.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
+                          var children = {};var _bridge = bridge.childNodes[0].firstChild;
+                          var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');
+                          err.length > 0 ? children.err = true : children.err = false;
                         } else {
                           var children = {};var _bridge = bridge.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'SHENPIMONEY');_bridge && (children.parent = 'form1');var err = item.querySelectorAll('.mini-errorIcon');children.id = 'mini-33';children.sign = 'shenpiMoney';err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                         }
@@ -441,8 +449,7 @@
                         cont.push(0);
                       }
                     }
-                  });
-                  if (cont.length == 2) {
+                  });if (cont.length == 2) {
                     children.attr = 'td';
                   }var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                 }
@@ -487,7 +494,8 @@
           });
         } /*****************************end*******************************************/ /*****明细列表方阵(分为id为datagridsub和id为datagrid1两种情况)*******/ /**************明细列表下数据***************/function detailed(_id) {
           var viewPort = _id.querySelector('.mini-panel-viewport');if (viewPort) {
-            var gridColumnsV = _id.querySelector('.mini-panel-viewport	.mini-grid-columns-view .mini-grid-table');var gridRowsV = _id.querySelector('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table');if (gridColumnsV) {
+            var gridColumnsV = _id.querySelector('.mini-panel-viewport	.mini-grid-columns-view .mini-grid-table');
+            var gridRowsV = _id.querySelector('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table');if (gridColumnsV) {
               var _tr = gridColumnsV.querySelectorAll('tr');var _trLength = _tr.length;var _TitleCont = elem.contentWindow.document.querySelector('.mini-toolbar');if (_TitleCont) {
                 var _titleCont = _TitleCont.textContent.trim();
               }switch (_trLength) {case 2:
@@ -497,14 +505,15 @@
                           data.XTHJG.title.push(children);break;case 'THJL':
                           data.THJL.title.push(children);break;case 'KCBJ':
                           data.KCBJ.title.push(children);break;case 'ZDJL':
-                          data.ZDJL.title.push(children);break;case 'QQTHBC':
-                          data.QQTHBC.title.push(children);break;
-                        default:
+                          data.ZDJL.title.push(children);
+                          break;case 'QQTHBC':
+                          data.QQTHBC.title.push(children);break;default:
                           data.twoPartTitle.push(children);break;}
                     }_input.length > 0 && _inputArr.push('i');
                   });_inputArr.length > 0 ? data.twoPart.checked = true : data.twoPart.checked = false;if (gridRowsV) {
                     if (_id.id == 'datagridsub' && _id.classList.contains('mini-disabled') == false && _titleCont == '铺货会签单明细') {
-                      var sheep = _id.querySelectorAll('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table	.mini-grid-row');data.twoPartContCanInput = true;sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
+                      var sheep = _id.querySelectorAll('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table	.mini-grid-row');data.twoPartContCanInput = true;
+                      sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
                         var bridge = item.querySelectorAll('td');var children = [];bridge.length > 0 && [].forEach.call(bridge, function (val, index) {
                           if (val.childNodes.length > 0) {
                             var _bridge = val.textContent;_bridge && children.push(_bridge);
@@ -530,8 +539,7 @@
                       });data.type = "payOffDetail";
                     } else {
                       var sheep = _id.querySelectorAll('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table	.mini-grid-row');sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
-                        var bridge = item.querySelectorAll('td');var children = [];
-                        bridge.length > 0 && [].forEach.call(bridge, function (val, index) {
+                        var bridge = item.querySelectorAll('td');var children = [];bridge.length > 0 && [].forEach.call(bridge, function (val, index) {
                           if (val.childNodes.length > 0) {
                             var _bridge = val.textContent;_bridge && children.push(_bridge);
                           }
@@ -547,7 +555,8 @@
                   }break;case 3:
                   data.twoPart.title = 'MultipleHeader';data.twoPart.checked = false;data.twoPart.titleCont = [];data.twoPart.titleNum = [];var oneTitle = _id.querySelectorAll('.mini-grid-columns-view tr')[1].children;oneTitle.length > 0 && [].forEach.call(oneTitle, function (item, i) {
                     i != 0 && data.twoPart.titleCont.push(item.textContent.trim());i != 0 && data.twoPart.titleNum.push(parseInt(item.getAttribute('colspan')));
-                  });var twoTitle = _id.querySelectorAll('.mini-grid-columns-view tr')[2].children;var twoCont = _id.querySelectorAll('.mini-grid-rows-view	tr');twoTitle.length > 0 && [].forEach.call(twoTitle, function (item, i) {
+                  });var twoTitle = _id.querySelectorAll('.mini-grid-columns-view tr')[2].children;var twoCont = _id.querySelectorAll('.mini-grid-rows-view	tr');
+                  twoTitle.length > 0 && [].forEach.call(twoTitle, function (item, i) {
                     if (!item.style.width) {
                       var children = {};var start = item.querySelector('span');if (start && start.style.display != 'none') {
                         children.key = '*';children.title = item.textContent.trim().replace(/\*/g, '');
@@ -557,8 +566,7 @@
                     }
                   });twoCont.length > 0 && [].forEach.call(twoCont, function (item, i) {
                     if (i > 0) {
-                      var array = [];
-                      var _td = item.children;_td.length > 0 && [].forEach.call(_td, function (val, index) {
+                      var array = [];var _td = item.children;_td.length > 0 && [].forEach.call(_td, function (val, index) {
                         index > 0 && array.push(val.textContent.trim());
                       });data.twoPartCont.push(array);
                     }
@@ -572,8 +580,7 @@
                         data.twoPart.oneTitleRow.push(item.getAttribute('colspan'));
                       }
                     } else if (i > 2 && _oneTitle.length !== 4) {
-                      data.twoPart.oneTitle.push(item.textContent.trim());
-                      data.twoPart.oneTitleRow.push(item.getAttribute('colspan'));
+                      data.twoPart.oneTitle.push(item.textContent.trim());data.twoPart.oneTitleRow.push(item.getAttribute('colspan'));
                     }
                   });_twoTitle.length > 0 && [].forEach.call(_twoTitle, function (item, i) {
                     var _true = item.hasAttribute('rowspan');_true == false && item.textContent != '' && data.twoPart.twoTitle.push(item.textContent.trim()) && data.twoPart.twoTitleRow.push(item.getAttribute('colspan'));
@@ -588,12 +595,12 @@
                     }
                   });var sheep = _id.querySelectorAll('.mini-panel-viewport	.mini-grid-columns-view	.mini-grid-table	tr:nth-child(4) td');sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
                     if (item.childNodes.length > 0) {
-                      var children = {};var _sheep = item.querySelector('.mini-grid-headerCell-inner').childNodes[0];var star = item.querySelector('.mini-grid-headerCell-inner span');
-                      star ? (children.title = _sheep.textContent.trim(), children.key = '*') : children.title = _sheep.textContent.trim();data.twoPartTitle.push(children);
+                      var children = {};var _sheep = item.querySelector('.mini-grid-headerCell-inner').childNodes[0];var star = item.querySelector('.mini-grid-headerCell-inner span');star ? (children.title = _sheep.textContent.trim(), children.key = '*') : children.title = _sheep.textContent.trim();data.twoPartTitle.push(children);
                     }
                   });var sheep_ = _id.querySelectorAll('.mini-panel-viewport	.mini-grid-columns-view	.mini-grid-table	tr:nth-child(3) td');sheep_.length > 0 && [].forEach.call(sheep_, function (item, i) {
                     if (i > 5 && _oneTitle.length !== 4 || i > 7 && _oneTitle.length == 4) {
-                      var children = {};var _sheep = item.querySelector('.mini-grid-headerCell-inner').childNodes[0];var star = item.querySelector('.mini-grid-headerCell-inner span');star && star.style.display != 'none' ? (children.title = _sheep.textContent.trim(), children.key = '*') : children.title = _sheep.textContent.trim();data.twoPartTitle.push(children);
+                      var children = {};var _sheep = item.querySelector('.mini-grid-headerCell-inner').childNodes[0];
+                      var star = item.querySelector('.mini-grid-headerCell-inner span');star && star.style.display != 'none' ? (children.title = _sheep.textContent.trim(), children.key = '*') : children.title = _sheep.textContent.trim();data.twoPartTitle.push(children);
                     }
                   });if (gridRowsV) {
                     var sheep = _id.querySelectorAll('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table	.mini-grid-row');sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
@@ -639,8 +646,7 @@
                   data.totalTitle.push(title.textContent.trim());break;}
             }
           }
-        } /*******明细列表里的总计（不同ID）********/
-        function addUpTo(_id) {
+        } /*******明细列表里的总计（不同ID）********/function addUpTo(_id) {
           var gridSummRow = _id.querySelector('.mini-grid-summaryRow');var gridSummRowView = _id.querySelector('.mini-grid-summaryRow .mini-grid-summaryRow-view');if (gridSummRow && gridSummRow.style.display == 'block' && gridSummRowView) {
             var sheep = _id.querySelectorAll('.mini-grid-summaryRow-view table tbody tr:nth-child(2) td');sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
               switch (_id.id) {case 'XTHJG':
@@ -652,8 +658,10 @@
                   data.total.push(item.innerHTML.replace(/总计/, ' '));break;}
             });
           }
-        }var datagrid1 = elem.contentWindow.document.querySelector('#datagrid1');var datagrid2 = elem.contentWindow.document.querySelector('#datagrid2');var datagridsub = elem.contentWindow.document.querySelector('#datagridsub');var XTHJG = elem.contentWindow.document.querySelector('#XTHJG');var THJL = elem.contentWindow.document.querySelector('#THJL');var KCBJ = elem.contentWindow.document.querySelector('#KCBJ');var ZDJL = elem.contentWindow.document.querySelector('#ZDJL');var QQTHBC = elem.contentWindow.document.querySelector('#QQTHBC');var _body = elem.contentWindow.document;if (datagrid1) {
-          detailTitle(_body);detailed(datagrid1);addUpTo(datagrid1);
+        }var datagrid1 = elem.contentWindow.document.querySelector('#datagrid1');var datagrid2 = elem.contentWindow.document.querySelector('#datagrid2');var datagridsub = elem.contentWindow.document.querySelector('#datagridsub');var XTHJG = elem.contentWindow.document.querySelector('#XTHJG');var THJL = elem.contentWindow.document.querySelector('#THJL');var KCBJ = elem.contentWindow.document.querySelector('#KCBJ');var ZDJL = elem.contentWindow.document.querySelector('#ZDJL');var QQTHBC = elem.contentWindow.document.querySelector('#QQTHBC');
+        var _body = elem.contentWindow.document;if (datagrid1) {
+          detailTitle(_body);detailed(datagrid1);
+          addUpTo(datagrid1);
         } else if (datagridsub) {
           detailTitle(_body);detailed(datagridsub);addUpTo(datagridsub);
         } else {
@@ -666,8 +674,7 @@
           }if (ZDJL && ZDJL.style.display != 'none') {
             detailTitle(ZDJL);addUpTo(ZDJL);detailed(ZDJL);
           }if (QQTHBC && QQTHBC.style.display != 'none') {
-            detailTitle(QQTHBC);addUpTo(QQTHBC);
-            detailed(QQTHBC);
+            detailTitle(QQTHBC);addUpTo(QQTHBC);detailed(QQTHBC);
           }
         } /*************取销售合同里的按钮***************/var signBtn = elem.contentWindow && elem.contentWindow.document.querySelector('#report');if (signBtn && signBtn.style.display && signBtn.style.display == 'block') {
           var sheep = elem.contentWindow.document.querySelectorAll('#report	a');sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
@@ -716,7 +723,8 @@
                           if (hidden || _hidden) {
                             var children = {};var _bridge = _span.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
                           } else {
-                            var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);var _name = item.querySelector('span').id;_bridge && _name && (children.id = _name);_bridge && (children.attr = 'OTHER');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                            var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];
+                            _bridge && children.cont.push(_bridge.value);var _name = item.querySelector('span').id;_bridge && _name && (children.id = _name);_bridge && (children.attr = 'OTHER');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                           }
                         } else if (overdue) {
                           if (overdue.style.display != 'none') {
@@ -733,7 +741,9 @@
                             if (hidden || _hidden) {
                               var children = {};var _bridge = _span.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
                             } else {
-                              var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'SHENPIMONEY');_bridge && (children.parent = 'dataform1');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;children.id = 'mini-36';children.sign = 'yesNo';
+                              var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'SHENPIMONEY');_bridge && (children.parent = 'dataform1');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                              children.id = 'mini-36';
+                              children.sign = 'yesNo';
                             }
                           } else {
                             var children = {};children.cont = [];var _bridge = _span.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'HIDDEN');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 ? children.err = true : children.err = false;
@@ -743,12 +753,14 @@
                           var children = {};children.cont = [];var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 ? children.err = true : children.err = false;if (hidden || _hidden) {
                             var _bridge = _span.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');
                           } else {
-                            var _bridge = _span.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'REQUIRED'); //console.log(required)
+                            var _bridge = _span.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);
+                            _bridge && (children.attr = 'REQUIRED'); //console.log(required)
                             var _name = item.querySelector('.mini-textbox-input').name;_bridge && _name && (children.name = _name);
                           }
                         } else if (receiveType) {
                           if (hidden || _hidden) {
-                            var children = {};var _bridge = _span.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
+                            var children = {};var _bridge = _span.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');
+                            children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
                           } else {
                             var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'RECEIVETYPE');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                           }
@@ -832,8 +844,7 @@
                           var first = item.childNodes[1].querySelectorAll('tbody>tr>td')[0].childNodes[0];var _input = item.childNodes[1].querySelector('tbody>tr>td').childNodes[1].querySelector('.mini-buttonedit-input');var second = item.childNodes[1].querySelectorAll('tbody>tr>td')[0].childNodes[2];first && children.cont.push(first.textContent.trim());_input && children.cont.push(_input.value);second && children.cont.push(second.textContent.trim());
                         }
                       } else if (trLength == 4) {
-                        var first = item.querySelectorAll('.mini-radiobuttonlist-item	input');var second = item.querySelectorAll('.mini-textbox	.mini-textbox-input');var third = item.querySelectorAll('.mini-textbox')[0].parentElement;var _third = item.querySelectorAll('.mini-textbox')[1].parentElement;var _label = item.querySelectorAll('.mini-radiobuttonlist-item	label');
-                        if (first[0].checked == true) {
+                        var first = item.querySelectorAll('.mini-radiobuttonlist-item	input');var second = item.querySelectorAll('.mini-textbox	.mini-textbox-input');var third = item.querySelectorAll('.mini-textbox')[0].parentElement;var _third = item.querySelectorAll('.mini-textbox')[1].parentElement;var _label = item.querySelectorAll('.mini-radiobuttonlist-item	label');if (first[0].checked == true) {
                           _label[0] && children.cont.push(_label[0].textContent);second[0] && children.cont.push(second[0].value);third && children.cont.push(third.textContent.trim());children.attr = 'THREE';
                         } else if (first[1].checked == true) {
                           _label[1] && children.cont.push(_label[1].textContent);second[1] && children.cont.push(second[1].value);_third && children.cont.push(_third.textContent.trim());children.attr = 'THREE';
@@ -844,15 +855,12 @@
                     } else if (item.childNodes.length == 5 && one.nodeName == 'SPAN' && three.nodeName == 'SPAN') {
                       var children = {};children.cont = [];var sheep = item.childNodes[1].childNodes[0].firstChild;var _sheep = item.childNodes[3].childNodes[0].firstChild;sheep && children.cont.push(sheep.value);sheep && children.cont.push(_sheep.value);children.attr = 'TIME';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                     } else if (_br.length > 0) {
-                      var children = {};
-                      children.cont = [];var pushCont = item.innerHTML;pushCont && children.cont.push(pushCont);children.attr = 'REMARKS';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                      var children = {};children.cont = [];var pushCont = item.innerHTML;pushCont && children.cont.push(pushCont);children.attr = 'REMARKS';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                     } else if (item.childNodes.length == 7 && one.nodeName == 'SPAN' && three.nodeName == 'INPUT') {
-                      var children = {};children.cont = [];
-                      var value = item.querySelector('textarea');value && children.cont.push(value.value);children.attr = 'TEXTAREA';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                      var children = {};children.cont = [];var value = item.querySelector('textarea');value && children.cont.push(value.value);children.attr = 'TEXTAREA';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                     }
                   } else if (item.id == 'pay' && item.querySelector('a')) {
-                    var children = {};children.cont = [];var _a = item.querySelector('a');children.cont.push(_a.textContent);children.attr = 'RETURN';
-                    children.parent = 'pay';
+                    var children = {};children.cont = [];var _a = item.querySelector('a');children.cont.push(_a.textContent);children.attr = 'RETURN';children.parent = 'pay';
                   } else if (item.querySelector('a') && item.id == 'sale') {
                     //console.log('1');
                     var children = {};children.cont = [];var _a = item.querySelector('a');children.cont.push(_a.textContent);children.attr = 'RETURN';children.parent = 'sale';
@@ -874,7 +882,8 @@
                   } else if (typeof item.childNodes[1] != 'undefined' && item.childNodes[1].nodeName == 'DIV' && _zero) {
                     var _sheep = item.querySelectorAll('.mini-list-inner table td');var _input = item.querySelectorAll(".mini-list-inner	.mini-radiobuttonlist-item input[type='radio']");var hidden = item.querySelectorAll('div')[0].classList.contains('mini-disabled');var oneNodenName = item.childNodes[1];var threeNodeName = item.childNodes[3]; // if (hidden) {
                     if (item.childNodes.length == 3 && oneNodenName.nodeName == 'DIV') {
-                      var children = {};children.cont = [];var add = 0;var _input = item.querySelectorAll('.mini-list-inner input');_input.length > 0 && [].forEach.call(_input, function (val, idx) {
+                      var children = {};children.cont = [];
+                      var add = 0;var _input = item.querySelectorAll('.mini-list-inner input');_input.length > 0 && [].forEach.call(_input, function (val, idx) {
                         val.checked == true ? children.cont.push(val.nextElementSibling.textContent) : add++;
                       });add == _input.length ? children.cont.push('') : null;children.attr = 'INPUT';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                     } else if (item.childNodes.length == 5 && oneNodenName.nodeName == 'DIV' && threeNodeName.nodeName == 'SPAN') {
@@ -883,7 +892,8 @@
                         children.cont.push(text1.textContent.trim());children.attr = 'BADSALE';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;if (_input.value == '') {
                           children.number = 0;
                         } else {
-                          children.cont.push(_input.value);children.cont.push(item.childNodes[4].textContent.trim());children.number = 1;
+                          children.cont.push(_input.value);
+                          children.cont.push(item.childNodes[4].textContent.trim());children.number = 1;
                         }
                       } else if (radios[1].checked == true) {
                         // console.log('2');
@@ -896,8 +906,7 @@
                         var children = {};children.cont = [''];children.attr = 'INPUT';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                       } else {
                         if (typeof _sheep != 'undefined' && _sheep.length > 0) {
-                          var children = {};children.cont = [];
-                          var cont = [];_sheep.length > 0 && [].forEach.call(_sheep, function (val, index) {
+                          var children = {};children.cont = [];var cont = [];_sheep.length > 0 && [].forEach.call(_sheep, function (val, index) {
                             var key = val.querySelector('input');if (key && key.type == 'radio') {
                               if (key.checked == true) {
                                 children.cont.push(val.querySelector('label').textContent);children.attr = 'TD';
@@ -907,8 +916,7 @@
                             }
                           });if (cont.length == 2) {
                             children.attr = 'td';
-                          }
-                          var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                          }var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                         } else if (_input.length > 0) {
                           var children = {};children.cont = [];var add = 0;_input.length > 0 && [].forEach.call(_input, function (item, i) {
                             item.checked == true ? (children.cont.push(item.nextElementSibling.textContent.trim()), add++) : null;
@@ -936,7 +944,6 @@
                       //                         children.attr = 'RADIO';
                       //                         children.checked.push(false);
                       //                         children.parent = 'dataform1';
-
                       //                       }
                       //                       var err = item.querySelectorAll('.mini-errorIcon');
                       //                       err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
@@ -985,7 +992,8 @@
             var sheep = datagrid2.querySelectorAll('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table	.mini-grid-row');var datagridsub = elem.querySelector("#datagridsub");sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
               //item.classList.contains("mini-grid-newRow") == false
               if (item.classList.contains("mini-grid-newRow")) {
-                var bridge = item.querySelectorAll('td.mini-grid-cell');var children = [];if (item.childNodes.length > 0) {
+                var bridge = item.querySelectorAll('td.mini-grid-cell');var children = [];
+                if (item.childNodes.length > 0) {
                   children.push(item.childNodes[1].textContent);children.push(item.childNodes[2].textContent);children.push(item.childNodes[3].textContent);children.push(item.childNodes[4].textContent);children.push(item.childNodes[5].textContent);children.push("payOffDetail");
                 } //付款申请单特有的明细表标识
                 data.FGSCGFK.twoPartCont.push(children);
@@ -1004,8 +1012,7 @@
         }if (nuiFormTable) {
           var table = elem.contentWindow.document.querySelectorAll('.table-c')[1].previousElementSibling.querySelectorAll('table tr td');table.length > 0 && [].forEach.call(table, function (item, i) {
             if (i % 2 == 0 && item.parentElement.style.display != 'none' && item.style.display != 'none' && item.parentElement.parentElement.parentElement.style.display != 'none' && item.childNodes.length >= 1) {
-              var children = {};
-              var star = item.querySelector('span');if (star && star.style.display != 'none') {
+              var children = {};var star = item.querySelector('span');if (star && star.style.display != 'none') {
                 var _title = item.textContent;children.key = '*';children.title = _title.trim().replace(/：/g, '');
               } else {
                 var _title = item.textContent;children.title = _title.trim().replace(/：/g, '');
@@ -1016,13 +1023,11 @@
                   if (hidden || _hidden) {
                     var _input = item.querySelector('span>span>textarea').value;children.cont.push(_input);children.attr = 'TEXTAREA';
                   } else {
-                    var _input = item.querySelector('span>span>textarea').value;children.cont.push(_input);children.attr = 'CANTEXTAREA';
-                    var _id = item.querySelector('span').id;_id && (children.parenID = _id);
+                    var _input = item.querySelector('span>span>textarea').value;children.cont.push(_input);children.attr = 'CANTEXTAREA';var _id = item.querySelector('span').id;_id && (children.parenID = _id);
                   }
                 } else {
                   if (hidden || _hidden) {
-                    var _input = item.querySelector('span>span>input').value;
-                    children.cont.push(_input);children.attr = 'INPUT';
+                    var _input = item.querySelector('span>span>input').value;children.cont.push(_input);children.attr = 'INPUT';
                   } else {
                     var _up = item.querySelector('.mini-buttonedit-up');if (_up) {
                       var _input = item.querySelector('span>span>input').value;children.cont.push(_input);children.attr = 'CANINPUTADDNUM';var _id = item.querySelector('span').id;_id && (children.parenID = _id);
@@ -1051,13 +1056,11 @@
             } else if (i % 2 == 1 && item.parentElement.style.display != 'none' && item.style.display != 'none' && item.parentElement.parentElement.parentElement.style.display != 'none' && item.childNodes.length > 1) {
               var children = {};children.cont = [];if (item.childNodes.length == 3 && item.childNodes[1].nodeName == 'SPAN') {
                 var _input = item.querySelector('.mini-textbox-input'); //console.log(_input);
-                var hidden = item.querySelector('span').classList.contains('mini-textbox-disabled');var _hidden = item.querySelector('span').classList.contains('mini-buttonedit-disabled');var textarea = item.querySelector('textarea');
-                if (textarea) {
+                var hidden = item.querySelector('span').classList.contains('mini-textbox-disabled');var _hidden = item.querySelector('span').classList.contains('mini-buttonedit-disabled');var textarea = item.querySelector('textarea');if (textarea) {
                   var _textarea = item.querySelector('span>span>textarea').value;if (hidden || _hidden) {
                     children.cont.push(_textarea);children.attr = 'TEXTAREA';
                   } else {
-                    children.cont.push(_textarea);children.attr = 'CANTEXTAREA';var _id = item.querySelector('span').id;
-                    _id && (children.parenID = _id);
+                    children.cont.push(_textarea);children.attr = 'CANTEXTAREA';var _id = item.querySelector('span').id;_id && (children.parenID = _id);
                   }
                 } else {
                   var _input = item.querySelector('span>span>input').value;if (hidden || _hidden) {
@@ -1111,7 +1114,8 @@
                 if (item != '' && item != '&nbsp;' && item != '	:	') {
                   data.XTHJG.totalTF = true;
                 }
-              });break;case 'THJL':
+              });
+              break;case 'THJL':
               var arr = data.THJL.total;data.THJL.totalTF = false;arr.length > 0 && [].forEach.call(arr, function (item, i) {
                 if (item != '' && item != '&nbsp;' && item != '	:	') {
                   data.THJL.totalTF = true;
@@ -1136,8 +1140,8 @@
                 if (item != '' && item != '&nbsp;' && item != '	:	') {
                   data.totalTF = true;
                 }
-              });break;
-          }
+              });
+              break;}
         }data.totalTF = false;if (data.total.length > 0) {
           TotalTF(1);
         } else {
@@ -1241,10 +1245,13 @@
             var _btn = elem.contentWindow.document.querySelectorAll('' + '#' + d[2] + '	.mini-radiobuttonlist-item' + '')[d[1]].querySelector('input');_btn.click();break;case 'btn btn-xs btn-primary btn-hollow ysp-check':
             var _btn = elem.contentWindow.document.querySelector('' + '#' + d[2] + '').nextElementSibling;_btn.click();break;case 'ysp-inputRadio':
             var _btn = elem.contentWindow.document.querySelector('' + '#' + d[2] + '').querySelectorAll("input")[d[1]];_btn.click();break;case 'ysp-checkboxes':
-            var _btn = elem.contentWindow.document.querySelector('' + '#' + d[2] + '').querySelector("input");_btn.click();break;}
+            var _btn = elem.contentWindow.document.querySelector('' + '#' + d[2] + '').querySelector("input");_btn.click();break;
+        }
       } else if (data.eventType == 'blur') {
         var d = data.dataCustom;if (d[0] == 'ysp-advance field') {
-          var _input = elem.contentWindow.document.querySelector('#advanceBalance	.mini-buttonedit-input');_input.focus();_input.value = d[1];_input.dispatchEvent(new Event("change"));
+          var _input = elem.contentWindow.document.querySelector('#advanceBalance	.mini-buttonedit-input');
+          _input.focus();
+          _input.value = d[1];_input.dispatchEvent(new Event("change"));
         } else if (d[0] == 'ysp-otherInput field') {
           var _input = elem.contentWindow.document.querySelector('' + '#' + d[2] + '	.mini-textbox-input');_input.focus();_input.value = d[1];_input.dispatchEvent(new Event("change"));
         } else if (d[0] == 'ysp-storageModel field') {
@@ -1262,10 +1269,12 @@
           var _input = elem.contentWindow.document.querySelector('' + '#' + d[3] + '>span>input');_input.focus();_input.value = d[1];_input.dispatchEvent(new Event("change"));
         }
       } else if (data.eventType == "detailBlur") {
-        var d = data.dataCustom;var num = parseInt(d[2]) + 1;var _num = parseInt(d[3]) + 1;var _input1 = elem.contentWindow.document.querySelectorAll('#datagridsub	.mini-panel-viewport	.mini-panel-body	.mini-grid-rows-view	.mini-grid-table	tr')[num].querySelectorAll('td')[_num].children[0];window._input1 = _input1;if (d[0] == 'ysp-detailed-field field') {
+        var d = data.dataCustom;var num = parseInt(d[2]) + 1;var _num = parseInt(d[3]) + 1;var _input1 = elem.contentWindow.document.querySelectorAll('#datagridsub	.mini-panel-viewport	.mini-panel-body	.mini-grid-rows-view	.mini-grid-table	tr')[num].querySelectorAll('td')[_num].children[0];
+        window._input1 = _input1;if (d[0] == 'ysp-detailed-field field') {
           var ev = new Event("mousedown");ev.initEvent();window._input1.dispatchEvent(ev);var eva = new Event("mouseup");eva.initEvent();window._input1.dispatchEvent(eva);window._input1.click();var eidtWrap = elem.contentWindow.document.querySelector(".mini-grid-editwrap");if (eidtWrap) {
             eidtWrap.querySelectorAll("input")[0].style.display = "block"; //eidtWrap.querySelectorAll("input")[0].value = d[1].trim();
-            eidtWrap.querySelectorAll("input")[0].value = d[1];eidtWrap.querySelectorAll("input")[0].dispatchEvent(new Event("change"));eidtWrap.ownerDocument.body.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: eidtWrap.ownerDocument.defaultView }));eidtWrap.querySelectorAll("input")[0].style.display = "none";
+            eidtWrap.querySelectorAll("input")[0].value = d[1];eidtWrap.querySelectorAll("input")[0].dispatchEvent(new Event("change"));eidtWrap.ownerDocument.body.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: eidtWrap.ownerDocument.defaultView
+            }));eidtWrap.querySelectorAll("input")[0].style.display = "none";
           }
         }
       } else if (data.eventType == "focus") {
@@ -1274,30 +1283,32 @@
             var _input1 = elem.contentWindow.document.querySelectorAll('#datagrid2	.mini-panel-viewport	.mini-panel-body	.mini-grid-rows-view	.mini-grid-table	tr')[num].querySelectorAll('td')[_num].children[0];
           } else {
             var _input1 = elem.contentWindow.document.querySelectorAll('#datagridsub	.mini-panel-viewport	.mini-panel-body	.mini-grid-rows-view	.mini-grid-table	tr')[num].querySelectorAll('td')[_num].children[0];
-          }window._input1 = _input1;window._input1.ownerDocument.body.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input1.ownerDocument.defaultView }));window._input1.focus();window._input1.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input1.ownerDocument.defaultView }));window._input1.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input1.ownerDocument.defaultView }));window._input1.click();
+          }window._input1 = _input1;window._input1.ownerDocument.body.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input1.ownerDocument.defaultView }));window._input1.focus();window._input1.dispatchEvent(new MouseEvent('mousedown', {
+            bubbles: true, cancelable: true, view: window._input1.ownerDocument.defaultView }));window._input1.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input1.ownerDocument.defaultView }));window._input1.click();
         }
       } else if (data.eventType == 'changeSO') {
-        var d = data.dataCustom;
-        if (d[0] == 'ysp-spinner field') {
+        var d = data.dataCustom;if (d[0] == 'ysp-spinner field') {
           var _input = elem.contentWindow.document.querySelector("#form2	.mini-spinner	span input"); //     _input.focus();
           //     _input.value = d[1];
           //     _input.dispatchEvent(new Event("change"));
           //     _input.dispatchEvent(new Event("blur"));
-          window._input = _input;window._input.dispatchEvent(new Event("focus"));window._input.dispatchEvent(new Event("mousedown"));window._input.value = d[1];window._input.dispatchEvent(new Event("change"));window._input.dispatchEvent(new Event("mouseout"));window._input.dispatchEvent(new Event("change")); //     _input.dispatchEvent(new Event("blur"));
+          window._input = _input;window._input.dispatchEvent(new Event("focus"));window._input.dispatchEvent(new Event("mousedown"));window._input.value = d[1];window._input.dispatchEvent(new Event("change"));window._input.dispatchEvent(new Event("mouseout"));
+          window._input.dispatchEvent(new Event("change")); //     _input.dispatchEvent(new Event("blur"));
         }
       } else if (data.eventType == 'numblur') {
-        var d = data.dataCustom;var _input = elem.contentWindow.document.querySelector('' + '#' + d[2] + '>span>input');_input.dispatchEvent(new Event("focus"));_input.value = d[1];_input.dispatchEvent(new Event("change"));
+        var d = data.dataCustom;var _input = elem.contentWindow.document.querySelector('' + '#' + d[2] + '>span>input');_input.dispatchEvent(new Event("focus"));
+        _input.value = d[1];_input.dispatchEvent(new Event("change"));
       } else if (data.eventType == 'addNumblur') {
         var d = data.dataCustom;var _input = elem.contentWindow.document.querySelector('' + '#' + d[2] + '>span>input');_input.dispatchEvent(new Event("focus"));_input.value = d[1];_input.dispatchEvent(new Event("change"));
       } else if (data.eventType == 'moreOnClick') {
         var d = data.dataCustom;if (d == "svpCfo") {
-          /*公司收文里的选择高级副总裁或财务总监*/var _input = elem.contentWindow.document.querySelector("#svpCfo .mini-buttonedit-buttons .mini-buttonedit-button");window._input = _input;window._input.focus();window._input.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.click();
+          /*公司收文里的选择高级副总裁或财务总监*/var _input = elem.contentWindow.document.querySelector("#svpCfo .mini-buttonedit-buttons .mini-buttonedit-button");window._input = _input;window._input.focus();window._input.dispatchEvent(new MouseEvent('mousedown', { bubbles: true,
+            cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.click();
         } else if (d == "deptHead") {
-          /*公司收文里的选择部門負責人*/var _input = elem.contentWindow.document.querySelector("#deptHead .mini-buttonedit-buttons .mini-buttonedit-button");
-          window._input = _input;window._input.focus();window._input.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.click();
+          /*公司收文里的选择部門負責人*/var _input = elem.contentWindow.document.querySelector("#deptHead .mini-buttonedit-buttons .mini-buttonedit-button");window._input = _input;window._input.focus();window._input.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.click();
         } else if (d == "deptApprover") {
-          /*公司收文里的选择部門負責人*/var _input = elem.contentWindow.document.querySelector("#deptApprover .mini-buttonedit-buttons .mini-buttonedit-button");window._input = _input;window._input.focus();window._input.dispatchEvent(new MouseEvent('mousedown', {
-            bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.click();
+          /*公司收文里的选择部門負責人*/var _input = elem.contentWindow.document.querySelector("#deptApprover .mini-buttonedit-buttons .mini-buttonedit-button");window._input = _input;window._input.focus();window._input.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));
+          window._input.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.click();
         }
       } else if (data.eventType == 'clear') {
         var d = data.dataCustom;if (d == "svpCfo") {
