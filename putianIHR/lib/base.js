@@ -34,7 +34,7 @@
         tblpstabs.querySelectorAll("a")[1].click();
       }
       //直接填写账号、用户
-			if(aWin.location.href.indexOf("cmd=logout"||"cmd=login")!==-1){
+			if(aWin.location.href.indexOf("cmd=logout")!==-1||aWin.location.href.indexOf("cmd=login")!==-1){
         doc.querySelector("#userid").value="YSP";
         doc.querySelector("#pwd").value="12345678";
       }

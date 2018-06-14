@@ -129,6 +129,50 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .ysp_page .lastItem {
   background: url(../local/img/ysp-rightBM-icon.png) no-repeat;
 }
+/******************************CustomAlert组件******************************************/
+.ysp_alert_mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.ysp_alert_mask .ysp_alert_modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+.ysp_alert_mask .ysp_alert_modal .ysp_content_twoLine .ysp_alert_title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+}
+.ysp_alert_mask .ysp_alert_modal .ysp_content_twoLine .ysp_alert_content {
+  padding: 0 10px;
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.ysp_alert_mask .ysp_alert_modal .twoButton .cancel,
+.ysp_alert_mask .ysp_alert_modal .twoButton .sure {
+  font-size: 16px;
+  color: #3796FB;
+  padding: 10px;
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
+.ysp_alert_mask .ysp_alert_modal .twoButton .cancel {
+  border-right: 1px solid #ccc;
+}
 /******************************薪资查询start******************************************/
 .ysp_filter .ysp_selectBox {
   position: fixed;
@@ -528,6 +572,45 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
   padding: 10px 0;
   margin: 0;
 }
+/******************************外派探亲资格申请start******************************************/
+.ysp_visitRelative .ysp_visit_list {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+.ysp_visitRelative .ysp_visit_list:first-child,
+.ysp_visitRelative .ysp_visit_list:nth-child(5) {
+  margin-bottom: 10px;
+}
+.ysp_visitRelative .ysp_visit_list .visit_title,
+.ysp_visitRelative .ysp_visit_list .visit_content {
+  display: inline-block;
+  width: 50%;
+  font-size: 15px;
+}
+.ysp_visitRelative .ysp_visit_list .visit_title .star,
+.ysp_visitRelative .ysp_visit_list .visit_content .star {
+  color: red;
+}
+.ysp_visitRelative .ysp_visit_list .visit_content select,
+.ysp_visitRelative .ysp_visit_list .visit_content input {
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 15px;
+  height: 24px;
+  background: #fff;
+  text-align: right;
+  width: 100%;
+  background: url(../local/img/rightArrow.png) no-repeat;
+  background-position: 100%;
+  background-size: 10px;
+  font-size: 15px;
+  color: #888;
+}
+.ysp_visitRelative .ysp_visit_list .visit_content select {
+  direction: rtl;
+}
 /***********************************请假申请 start*************************************/
 .ysp-con-box {
   background-color: #fff;
@@ -798,11 +881,16 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
   color: #666;
 }
 .annex-box {
-  padding: 10px 5% 15px;
+  padding: 10px;
 }
 .annex-box .annex-tit {
   font-size: 14px;
   margin-bottom: 10px;
+}
+.annex-box .annex-conent {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 .annex-box .annex-add {
   display: inline-block;
@@ -829,6 +917,41 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .annex-box .pic {
   height: 60px;
   background: url(../local/img/picture1x.png) no-repeat;
+  background-size: 100%;
+}
+.annex-box .excel {
+  height: 60px;
+  background: url(../local/img/excel1x.png) no-repeat;
+  background-size: 100%;
+}
+.annex-box .doc {
+  height: 60px;
+  background: url(../local/img/word1x.png) no-repeat;
+  background-size: 100%;
+}
+.annex-box .pdf {
+  height: 60px;
+  background: url(../local/img/pdf1x.png) no-repeat;
+  background-size: 100%;
+}
+.annex-box .ppt {
+  height: 60px;
+  background: url(../local/img/ppt1x.png) no-repeat;
+  background-size: 100%;
+}
+.annex-box .rar {
+  height: 60px;
+  background: url(../local/img/rar1x.png) no-repeat;
+  background-size: 100%;
+}
+.annex-box .zip {
+  height: 60px;
+  background: url(../local/img/zip1x.png) no-repeat;
+  background-size: 100%;
+}
+.annex-box .default {
+  height: 60px;
+  background: url(../local/img/defaultDocument.png) no-repeat;
   background-size: 100%;
 }
 .annex-box .annex-item {

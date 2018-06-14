@@ -131,7 +131,53 @@ div[data-ysp-modelid="addWork"]{
     background:url(../local/img/ysp-rightBM-icon.png) no-repeat;
   }
 }
-
+/******************************CustomAlert组件******************************************/
+.ysp_alert_mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  .ysp_alert_modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    width: 300px;
+    transform: translate(-50%,-50%);
+    border-radius: 8px;
+    .ysp_content_twoLine{
+      .ysp_alert_title{
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+      }
+      .ysp_alert_content{
+        padding: 0 10px;
+        text-align: center;
+        font-size: 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+   	.twoButton{
+      .cancel,.sure{
+        font-size: 16px;
+        color: @3796FB;
+        padding: 10px;
+        display: inline-block;
+        width: 49%;
+        text-align: center;
+      }
+      .cancel{
+        border-right: 1px solid #ccc;
+      }
+    }
+  }
+}
 /******************************薪资查询start******************************************/
 .ysp_filter{
   .ysp_selectBox{
@@ -474,6 +520,45 @@ div[data-ysp-modelid="addWork"]{
     margin: 0;
   }
 }
+/******************************外派探亲资格申请start******************************************/
+.ysp_visitRelative{
+  .ysp_visit_list{
+    background: #fff;
+    border-bottom:1px solid #ccc;
+    padding: 10px;
+    &:first-child,&:nth-child(5){
+      margin-bottom: 10px;
+    }
+    .visit_title,.visit_content{
+      display: inline-block;
+      width:50%;
+      font-size: @fontMedium;
+      .star{
+        color: red;
+      }
+    }
+    .visit_content{
+      select,input{
+        border:none;
+        margin: 0;
+        padding: 0;
+        padding-right: 15px;
+        height:24px;
+        background: #fff;
+        text-align: right;
+        width: 100%;
+        background: url(../local/img/rightArrow.png) no-repeat;
+        background-position: 100%;
+    		background-size: 10px;
+        font-size: @fontMedium;
+        color:#888;
+      }
+      select{
+        direction:rtl;
+      }
+    }
+  }
+}
 /***********************************请假申请 start*************************************/
 
 .ysp-con-box{
@@ -775,11 +860,16 @@ div[data-ysp-modelid="addWork"]{
 
 //附件
 .annex-box{
-  padding:10px 5% 15px;
+  padding:10px;
   .annex-tit{
   font-size:@fontBase;
     margin-bottom: 10px;
 }
+  .annex-conent{
+     display: flex;
+  	align-items: flex-start;
+    flex-wrap:  wrap;
+  }
 .annex-add{
   display: inline-block;
   border:1px solid #e1e1e1;
@@ -805,6 +895,41 @@ div[data-ysp-modelid="addWork"]{
   .pic{
     height: 60px;
     background:url(../local/img/picture1x.png) no-repeat;
+    background-size: 100%;
+  }
+  .excel{
+    height: 60px;
+    background:url(../local/img/excel1x.png) no-repeat;
+    background-size: 100%;
+  }
+  .doc{
+    height: 60px;
+    background:url(../local/img/word1x.png) no-repeat;
+    background-size: 100%;
+  }
+  .pdf{
+    height: 60px;
+    background:url(../local/img/pdf1x.png) no-repeat;
+    background-size: 100%;
+  }
+  .ppt{
+    height: 60px;
+    background:url(../local/img/ppt1x.png) no-repeat;
+    background-size: 100%;
+  }
+  .rar{
+    height: 60px;
+    background:url(../local/img/rar1x.png) no-repeat;
+    background-size: 100%;
+  }
+  .zip{
+    height: 60px;
+    background:url(../local/img/zip1x.png) no-repeat;
+    background-size: 100%;
+  }
+  .default{
+    height: 60px;
+    background:url(../local/img/defaultDocument.png) no-repeat;
     background-size: 100%;
   }
   .annex-item{
