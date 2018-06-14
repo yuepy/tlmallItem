@@ -14,7 +14,8 @@
     "remainHoliday": "../remainHoliday/index.json",
     "addWork": "../addWork/index.json",
     "departureAppli": "../departureAppli/index.json",
-    "businessTravel": "../businessTravel/index.json"
+    "businessTravel": "../businessTravel/index.json",
+    "visitRelative": "../visitRelative/index.json"
   },
   "chineseName": "菜单",
   "description": "",
@@ -967,6 +968,10 @@
         "data": {
           "tagName": "A"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "button/text",
@@ -1070,6 +1075,10 @@
         "data": {
           "tagName": "A"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "button/text",
@@ -1167,6 +1176,113 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "button"
+    },
+    "control56_63x6bV": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "外派探亲假资格申请"
+              ],
+              "visText": [
+                "外派探亲假资格申请"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "外派探亲假资格申请"
+              ],
+              "visText": [
+                "外派探亲假资格申请"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "text": [
+                "外派探亲假资格申请"
+              ]
+            }
+          },
+          {
+            "id": "a/@href",
+            "prob": 1,
+            "ordinal": [
+              9,
+              10
+            ],
+            "value": {
+              "pathname": "/psp/ps_newwin/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_005.GBL",
+              "search": "PORTALPARAM_PTCNAV=HPS_TL_AWE_005_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081457125675832392&IsFolder=false"
+            }
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ADMN_TL_AWE_02_HMPG_Data",
+              "tagName": "DIV",
+              "prefix": "TABLE[@id=\"ptpglts\"]//",
+              "suffix": "/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/A[1]",
+              "ratio": 0.165
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              11,
+              32
+            ],
+            "value": "DIV.PSTEXT TD.EOPP_SCSECTIONCONTENT A.EOPP_SCSECTIONCONTENTLINK"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/UL[1]/LI[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[6]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/A[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              66,
+              106,
+              146
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
     }
   },
   "contexts": {
@@ -1183,7 +1299,8 @@
         "control45_5Ap82c",
         "control47_cGluZs",
         "control52_yBLEQe",
-        "control60_q1yoQ8"
+        "control60_q1yoQ8",
+        "control56_63x6bV"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -1350,6 +1467,20 @@
           "toModelId": "businessTravel"
         }
       ]
+    },
+    "flow67_zo3in1": {
+      "fromContextId": "context1_zfhIAP",
+      "fromAction": "click",
+      "fromControlId": "control56_63x6bV",
+      "toContexts": [
+        {
+          "toContextId": "context1_zfhIAP"
+        },
+        {
+          "toContextId": "context11_rJDB46",
+          "toModelId": "visitRelative"
+        }
+      ]
     }
   },
   "pages": {
@@ -1484,6 +1615,17 @@
         {
           "id": "uiControl59_FKkrAV",
           "controlId": "control60_q1yoQ8",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl55_4Dhz81",
+          "controlId": "control56_63x6bV",
           "display": {
             "adapterId": "clickable",
             "type": "button",
