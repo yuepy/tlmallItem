@@ -5,19 +5,92 @@
   "jsFile": "index.js",
   "chineseName": "家庭成员",
   "description": "",
-  "controls": {},
+  "controls": {
+    "control48_UJMHsu": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::FORM[@id=\"HPS_HR_SS_FAM_CPT\"]//TABLE[@id=\"ACE_width\"]//SPAN[@id=\"PERSONAL_DATA_NAME\"]",
+              "descendant::TABLE[@id=\"ACE_width\"]//SPAN[@id=\"PERSONAL_DATA_NAME\"]",
+              "descendant::SPAN[@id=\"PERSONAL_DATA_NAME\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "DIV.ps_pspagecontainer TABLE.PSPAGECONTAINER SPAN.PSEDITBOX_DISPONLY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[5]/TD[4]/DIV[1]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control48_UJMHsu"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
   "contexts": {
     "context10_26LNq7": {
-      "controls": [],
+      "controls": [
+        "control48_UJMHsu"
+      ],
       "anchors": [],
       "urlAnchor": []
     }
   },
-  "flows": {},
+  "flows": {
+    "flow63_WoJqqK": {
+      "toContexts": [
+        {
+          "toContextId": "context10_26LNq7"
+        }
+      ]
+    }
+  },
   "pages": {
     "page10_QrT0Jv": {
       "contextId": "context10_26LNq7",
-      "layout": []
+      "layout": [
+        {
+          "id": "uiControl47_Tva3dW",
+          "controlId": "control48_UJMHsu",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl47_Tva3dW",
+                "onGetTemplate": "getTemplate_uiControl47_Tva3dW"
+              }
+            }
+          }
+        }
+      ]
     }
   },
   "matchers": {
@@ -31,7 +104,8 @@
     "page/urls": {
       "contexts": {
         "context10_26LNq7": [
-          "192.168.220.110/psc/ps_19/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_FAM_CPT.GBL?Page=HPS_HR_SS_FAM_PAG&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_19%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_FAM_CPT.GBL%3fPage%3dHPS_HR_SS_FAM_PAG%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_19%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_FAM_CPT.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e5%ae%b6%e5%ba%ad%e6%88%90%e5%91%98&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_19%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_19%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes"
+          "192.168.220.110/psc/ps_19/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_FAM_CPT.GBL?Page=HPS_HR_SS_FAM_PAG&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_19%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_FAM_CPT.GBL%3fPage%3dHPS_HR_SS_FAM_PAG%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_19%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_FAM_CPT.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e5%ae%b6%e5%ba%ad%e6%88%90%e5%91%98&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_19%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_19%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes",
+          "192.168.220.110/psc/ps_5/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_FAM_CPT.GBL?Page=HPS_HR_SS_FAM_PAG&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_5%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_FAM_CPT.GBL%3fPage%3dHPS_HR_SS_FAM_PAG%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_5%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_FAM_CPT.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e5%ae%b6%e5%ba%ad%e6%88%90%e5%91%98&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_5%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_5%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes"
         ]
       }
     },
