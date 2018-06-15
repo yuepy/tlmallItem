@@ -213,56 +213,6 @@
       "roles": "element",
       "frameXPath": ""
     },
-    "control52_IxMAp6": {
-      "location": {
-        "data": {
-          "tagName": "UL"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "selector",
-              "value": "HTML"
-            }
-          ],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"pagecontent\"]//DIV[@id=\"mainTab\"]/DIV[1]/DIV[3]/UL[1]",
-              "descendant::DIV[@id=\"pagecontent\"]//DIV[@id=\"mainTab\"]//UL",
-              "descendant::DIV[@id=\"mainTab\"]//UL"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              2
-            ],
-            "value": "DIV.tabs-header DIV.tabs-wrap UL.tabs"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/UL[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control52_IxMAp6"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control1_Rz57Eh": {
       "location": {
         "data": {
@@ -360,7 +310,69 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control37_60nipi": {
+    "control34_NxEZ8l": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.panel-fit BODY.easyui-layout.layout.panel-noscroll DIV.panel.window.messager-window"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[30]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control34_NxEZ8l"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@id='rtf_frm_wftaskmgrcenterpc']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control40_lqF29t": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.panel-fit BODY.easyui-layout.layout.panel-noscroll.mask-container"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control40_lqF29t"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@id='rtf_frm_wftaskmgrcenterpc']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control43_PzgN3H": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -374,38 +386,61 @@
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
-              6,
-              7
+              0,
+              2
             ],
-            "value": "HTML.panel-fit BODY.easyui-layout.layout.panel-noscroll DIV.window-mask"
+            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader.panel-body-noborder DIV.datagrid-view"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[28]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          },
-          {
-            "id": "shield",
-            "value": {
-              "zIndex": "0",
-              "width": 987,
-              "height": 533
-            }
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control37_60nipi"
+        "onGetData": "getData_control43_PzgN3H"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
+      "frameXPath": "//iframe[@id='rtf_frm_wftaskmgrcenterpc']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control42_PoDz0D": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"searchField\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "HTML.panel-fit BODY.easyui-layout.layout.panel-noscroll DIV.menu-top.menu"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[29]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control42_PoDz0D"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
       "frameXPath": "//iframe[@id='rtf_frm_wftaskmgrcenterpc']<<IFRAME>>",
       "componentType": "custom"
     }
@@ -413,11 +448,13 @@
   "contexts": {
     "context2_QbPFRS": {
       "controls": [
-        "control52_IxMAp6",
         "control1_Rz57Eh",
         "control18_50dQHJ",
         "control16_FP0z2M",
-        "control37_60nipi"
+        "control34_NxEZ8l",
+        "control40_lqF29t",
+        "control43_PzgN3H",
+        "control42_PoDz0D"
       ],
       "anchors": [
         "control6_Dwrtqd"
@@ -430,20 +467,6 @@
       "toContexts": [
         {
           "toContextId": "context2_QbPFRS"
-        }
-      ]
-    },
-    "flow29_gszdUT": {
-      "fromContextId": "context2_QbPFRS",
-      "fromAction": "doAction",
-      "fromControlId": "control52_IxMAp6",
-      "toContexts": [
-        {
-          "toContextId": "context2_QbPFRS"
-        },
-        {
-          "toContextId": "context1_3egkun",
-          "toModelId": "menu"
         }
       ]
     },
@@ -470,6 +493,26 @@
           "toContextId": "context2_QbPFRS"
         }
       ]
+    },
+    "flow23_l1w45r": {
+      "fromContextId": "context2_QbPFRS",
+      "fromAction": "doAction",
+      "fromControlId": "control16_FP0z2M",
+      "toContexts": [
+        {
+          "toContextId": "context2_QbPFRS"
+        }
+      ]
+    },
+    "flow24_ByRLs0": {
+      "fromContextId": "context2_QbPFRS",
+      "fromAction": "doAction",
+      "fromControlId": "control34_NxEZ8l",
+      "toContexts": [
+        {
+          "toContextId": "context2_QbPFRS"
+        }
+      ]
     }
   },
   "pages": {
@@ -477,16 +520,16 @@
       "contextId": "context2_QbPFRS",
       "layout": [
         {
-          "id": "uiControl48_2UNCP5",
-          "controlId": "control52_IxMAp6",
+          "id": "uiControl32_v04q85",
+          "controlId": "control43_PzgN3H",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl48_2UNCP5",
-                "onGetTemplate": "getTemplate_uiControl48_2UNCP5"
+                "onDoAction": "doAction_uiControl32_v04q85",
+                "onGetTemplate": "getTemplate_uiControl32_v04q85"
               }
             }
           }
@@ -507,16 +550,31 @@
           }
         },
         {
-          "id": "uiControl27_loEbJt",
-          "controlId": "control37_60nipi",
+          "id": "uiControl29_TFXx1B",
+          "controlId": "control40_lqF29t",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl27_loEbJt",
-                "onGetTemplate": "getTemplate_uiControl27_loEbJt"
+                "onDoAction": "doAction_uiControl29_TFXx1B",
+                "onGetTemplate": "getTemplate_uiControl29_TFXx1B"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl31_Uuu8pM",
+          "controlId": "control42_PoDz0D",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl31_Uuu8pM",
+                "onGetTemplate": "getTemplate_uiControl31_Uuu8pM"
               }
             }
           }
@@ -547,6 +605,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl14_7kZbTE",
                 "onGetTemplate": "getTemplate_uiControl14_7kZbTE"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl23_caGcGz",
+          "controlId": "control34_NxEZ8l",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl23_caGcGz",
+                "onGetTemplate": "getTemplate_uiControl23_caGcGz"
               }
             }
           }
@@ -1295,6 +1368,333 @@
             "window-body",
             "window-header",
             "window-mask",
+            "window-shadow"
+          ],
+          [
+            "active",
+            "af-defico",
+            "af-detail",
+            "af-gp",
+            "af-gp-c",
+            "af-gp-h",
+            "af-gp-hi",
+            "af-gp-hl",
+            "af-gp-ht",
+            "bd-color-standard",
+            "bg-color-standard",
+            "bigheadimg",
+            "c_line",
+            "c_link",
+            "c_menu",
+            "c_menuitem",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-header",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-title",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combo-text",
+            "combo-value",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-cell",
+            "datagrid-cell-c-CREATOR",
+            "datagrid-cell-c-ID",
+            "datagrid-cell-c-IMPOTANCE",
+            "datagrid-cell-c-PUBLISHDATE",
+            "datagrid-cell-c-TITLE",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-sort-icon",
+            "datagrid-view",
+            "datagrid-wrap",
+            "datebox",
+            "datebox-button",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "dialog-content",
+            "easyui-datagrid",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-layout",
+            "easyui-linkbutton",
+            "easyui-menu",
+            "easyui-tabs",
+            "easyui-tooltip",
+            "easyui-tree",
+            "easyui-window",
+            "fav-list",
+            "fg-color-standard",
+            "headimg",
+            "ico-allfuns",
+            "ico-favorite",
+            "ico-search",
+            "icon-MoveLeft",
+            "icon-MoveRight",
+            "icon-star",
+            "l-btn",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-text",
+            "layout",
+            "layout-body",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-center",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "li-search",
+            "menu",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "nv-ico",
+            "nv-icoimg",
+            "nv-newmsg",
+            "nv-noborder",
+            "nv-text",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-icon",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-with-icon",
+            "search",
+            "tabs",
+            "tabs-closable",
+            "tabs-close",
+            "tabs-container",
+            "tabs-header",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-panels",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "text-center",
+            "tooltip-f",
+            "tree",
+            "tree-collapsed",
+            "tree-expanded",
+            "tree-file",
+            "tree-folder",
+            "tree-folder-open",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-node",
+            "tree-node-selected",
+            "tree-title",
+            "tright",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-shadow"
+          ],
+          [
+            "active",
+            "af-defico",
+            "af-detail",
+            "af-gp",
+            "af-gp-c",
+            "af-gp-h",
+            "af-gp-hi",
+            "af-gp-hl",
+            "af-gp-ht",
+            "bd-color-standard",
+            "bg-color-standard",
+            "bigheadimg",
+            "c_line",
+            "c_link",
+            "c_menu",
+            "c_menuitem",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-header",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-title",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combo-text",
+            "combo-value",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-cell",
+            "datagrid-cell-c-CREATOR",
+            "datagrid-cell-c-ID",
+            "datagrid-cell-c-IMPOTANCE",
+            "datagrid-cell-c-PUBLISHDATE",
+            "datagrid-cell-c-TITLE",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-sort-icon",
+            "datagrid-view",
+            "datagrid-wrap",
+            "datebox",
+            "datebox-button",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "dialog-content",
+            "easyui-datagrid",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-layout",
+            "easyui-linkbutton",
+            "easyui-menu",
+            "easyui-tabs",
+            "easyui-tooltip",
+            "easyui-tree",
+            "easyui-window",
+            "fav-list",
+            "fg-color-standard",
+            "headimg",
+            "ico-allfuns",
+            "ico-favorite",
+            "ico-search",
+            "icon-MoveLeft",
+            "icon-MoveRight",
+            "icon-star",
+            "l-btn",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-text",
+            "layout",
+            "layout-body",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-center",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "li-search",
+            "menu",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "nv-ico",
+            "nv-icoimg",
+            "nv-newmsg",
+            "nv-noborder",
+            "nv-text",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-icon",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-with-icon",
+            "search",
+            "tabs",
+            "tabs-closable",
+            "tabs-close",
+            "tabs-container",
+            "tabs-header",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-panels",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "text-center",
+            "tooltip",
+            "tooltip-arrow",
+            "tooltip-arrow-outer",
+            "tooltip-bottom",
+            "tooltip-content",
+            "tooltip-f",
+            "tree",
+            "tree-collapsed",
+            "tree-expanded",
+            "tree-file",
+            "tree-folder",
+            "tree-folder-open",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-node",
+            "tree-node-selected",
+            "tree-title",
+            "tright",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
             "window-shadow"
           ]
         ]

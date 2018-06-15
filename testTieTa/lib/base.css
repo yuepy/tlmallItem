@@ -27,13 +27,18 @@
   margin-top: -2px;
 }
 .tit .title {
-  width: 80%;
+  width: 60%;
+  float: left;
 }
 .tit .title h1 {
   margin-top: 15px;
   padding-left: 25px;
   color: #fff;
   font-size: 18px;
+}
+.tit .spAll {
+  width: 20%;
+  float: left;
 }
 .tit .readAll {
   width: 20%;
@@ -149,14 +154,13 @@ label b {
 }
 .ysp_mask {
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.3);
   z-index: 10;
-  height: 300vh;
 }
 .ysp_mask .ysp_container {
   width: 90%;
@@ -264,6 +268,48 @@ label b {
   top: 50%;
   left: 50%;
 }
+.ysp_mask .load {
+  background: #fff;
+  width: 60%;
+  height: 55px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border: 1px solid #FF0000;
+  padding: 10px;
+  border-radius: 10px;
+}
+.ysp_mask .load .loading {
+  background: url(../local/img/loading.gif) no-repeat;
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: left;
+}
+.ysp_mask .load .loadText {
+  background: #fff;
+  display: block;
+  height: 30px;
+  color: #FF0000;
+  padding-top: 3px;
+}
+.ysp_mask .spnull {
+  width: 200px;
+  height: 50px;
+  margin-left: 90px;
+  display: block;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 25%;
+  background: #FF0000;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 10px;
+}
 /**********page组件zyt*********/
 .ysp-PagesMessage-container {
   margin-top: 20px;
@@ -309,23 +355,40 @@ label b {
   padding: 0;
   position: relative;
   top: 1px;
-  margin-right: 5px;
+  margin-right: 10px;
+  font-size: 14px;
 }
 .ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-PagesMessage-leftBM-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  margin-top: 5px;
   background: url(../local/img/ysp-leftBM-icon.png) no-repeat 0 0;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-PagesMessage-left-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  margin-top: 5px;
   background: url(../local/img/ysp-left-icon.png) no-repeat 0 0;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-PagesMessage-right-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  margin-top: 5px;
   background: url(../local/img/ysp-right-icon.png) no-repeat 0 0;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-PagesMessage-rightBM-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  margin-top: 5px;
   background: url(../local/img/ysp-rightBM-icon.png) no-repeat 0 0;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .messagers .messager {
   position: fixed;
@@ -464,6 +527,7 @@ div[data-ysp-modelid="menu"] {
 }
 div[data-ysp-modelid="menu"] .content_body {
   width: 100%;
+  height: 100vh;
   background: #fff;
   height: 50px;
   border-bottom: 1px solid #f4f4f4;
@@ -501,7 +565,6 @@ div[data-ysp-modelid="toDoList"] .ysp_detailList {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 200vh;
 }
 div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp_list_card {
   background: #FFF;
@@ -567,8 +630,8 @@ div[data-ysp-modelid="toDoList"] .ysp_detailList .gj {
   margin-right: 20px;
 }
 div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp-PagesMessage-container {
-  width: 95%;
-  margin-left: 20px;
+  width: 90%;
+  margin-left: 35px;
   height: 30px;
 }
 div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp-PagesMessage-container .ysp-PagesMessage-PartOne {
@@ -591,7 +654,7 @@ div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp-PagesMessage-container .ys
   color: #828384;
 }
 div[data-ysp-modelid="toDoList"] .ysp_mask {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -702,6 +765,30 @@ div[data-ysp-modelid="toDoList"] .ysp_mask .suces {
   top: 50%;
   left: 50%;
 }
+div[data-ysp-modelid="toDoList"] .ysp_masksp {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+div[data-ysp-modelid="toDoList"] .ysp_masksp .spnull {
+  width: 200px;
+  height: 50px;
+  margin-left: 90px;
+  display: block;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 25%;
+  background: #FF0000;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 10px;
+}
 .ysp_menuList {
   height: auto;
 }
@@ -776,6 +863,7 @@ div[data-ysp-modelid="toDoList"] .ysp_mask .suces {
 }
 div[data-ysp-modelid="checkForm"] {
   background: #f4f4f4;
+  height: 120vh;
 }
 div[data-ysp-modelid="checkForm"] .content {
   width: 100%;
@@ -900,34 +988,35 @@ div[data-ysp-modelid="checkForm"] .contentTab .tables > div .tfoots > span {
 }
 div[data-ysp-modelid="readLog"] {
   background: #f4f4f4;
+  height: 100vh;
 }
 div[data-ysp-modelid="readLog"] .body {
-  background: white;
   width: 100%;
   height: auto;
 }
-div[data-ysp-modelid="readLog"] .body .content {
+div[data-ysp-modelid="readLog"] .body > div .content {
+  background: white;
   display: block;
   width: 90%;
   border: 2px solid #eaeef0;
   border-radius: 3px;
   margin: 10px 20px;
 }
-div[data-ysp-modelid="readLog"] .body .content .spUser {
+div[data-ysp-modelid="readLog"] .body > div .content .spUser {
   background: #ffd8d8;
 }
-div[data-ysp-modelid="readLog"] .body .content .spUser .tits {
+div[data-ysp-modelid="readLog"] .body > div .content .spUser .tits {
   font-size: 18px;
   margin-left: 10px;
   padding: 30px 0;
 }
-div[data-ysp-modelid="readLog"] .body .content .spUser .ys {
+div[data-ysp-modelid="readLog"] .body > div .content .spUser .ys {
   color: #008fff;
   float: right;
   margin-right: 10px;
   font-size: 14px;
 }
-div[data-ysp-modelid="readLog"] .body .content .con {
+div[data-ysp-modelid="readLog"] .body > div .content .con {
   font-size: 14px;
   color: #909090;
   margin-left: 20px;

@@ -18,18 +18,33 @@
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc){
       //如果cors行不通  ,改成iframe嵌套请求.除了速度会慢没有影响
-if(aWin.location.href.indexOf("login")!=-1){
-  var timer = setInterval(function(){
-    if(doc.querySelector('#topholder')){
-      var iframe = doc.createElement('iframe');
-            iframe.name='test'
-            iframe.setAttribute('src','http://120.52.96.35:45254/uac/services/CreateAiuapTokenSoap?wsdl');
-            doc.querySelector('#topholder').appendChild(iframe)
-      clearInterval(timer);
-    }
-  },500)
+// if(aWin.location.href.indexOf("login")!=-1){
+//   var timer = setInterval(function(){
+//     if(doc.querySelector('#topholder')){
+//       var iframe = doc.createElement('iframe');
+//             iframe.name='test'
+//             iframe.setAttribute('src','http://120.52.96.35:45254/uac/services/CreateAiuapTokenSoap?wsdl');
+//             doc.querySelector('#topholder').appendChild(iframe)
+//       clearInterval(timer);
+//     }
+//   },500)
    					
-}
+// }
+				var timer = setInterval(function(){
+          if(doc.querySelector("#funcTree")){
+            var panel=doc.querySelectorAll(".panel")[0];
+            if(panel.style.display!=="none"){
+              var tree=panel.querySelector("#funcTree").querySelectorAll(".tree-node");
+              for(var i=0;i<tree.length;i++){
+                if(tree[i].textContent.indexOf("任务中心")!==-1){
+                  tree[i].click()
+                }
+              }
+            }
+
+            clearInterval(timer);
+          } 
+        },500);
   
      },
 
