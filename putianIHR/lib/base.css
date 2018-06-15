@@ -173,6 +173,14 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .ysp_alert_mask .ysp_alert_modal .twoButton .cancel {
   border-right: 1px solid #ccc;
 }
+.ysp_alert_mask .ysp_alert_modal .oneButton .sure {
+  font-size: 16px;
+  color: #3796FB;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
 /******************************薪资查询start******************************************/
 .ysp_filter .ysp_selectBox {
   position: fixed;
@@ -610,6 +618,22 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 }
 .ysp_visitRelative .ysp_visit_list .visit_content select {
   direction: rtl;
+}
+.ysp_visitRelative .ysp_visit_list .visit_content .writeSearch {
+  display: flex;
+}
+.ysp_visitRelative .ysp_visit_list .visit_content .writeSearch input {
+  width: 80%;
+  background: #fff;
+  padding: 0;
+}
+.ysp_visitRelative .ysp_visit_list .visit_content .writeSearch span {
+  display: inline-block;
+  width: 20%;
+  height: 24px;
+  background: url(../local/img/rightArrow.png) no-repeat;
+  background-position: 100%;
+  background-size: 10px;
 }
 /***********************************请假申请 start*************************************/
 .ysp-con-box {
