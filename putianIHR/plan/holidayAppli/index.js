@@ -14,8 +14,8 @@
     getData_control11_5uTlmB: function (elem) {
       if (!elem) {
         return;
-      }var obj = { data: [], select: "" };var opts = elem.querySelectorAll("option");if (opts && opts.length > 0) {
-        [].forEach.call(opts, function (item, index) {
+      }var obj = { data: [], select: "" };if (elem.querySelectorAll("option") && elem.querySelectorAll("option").length > 0) {
+        var opts = elem.querySelectorAll("option");[].forEach.call(opts, function (item, index) {
           obj.data.push(item.textContent.trim());if (item.selected) {
             obj.select = item.textContent.trim();
           }
