@@ -131,7 +131,9 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 }
 /******************************CustomAlert组件******************************************/
 .ysp_alert_mask {
-  position: absolute;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -170,7 +172,7 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
   width: 49%;
   text-align: center;
 }
-.ysp_alert_mask .ysp_alert_modal .twoButton .cancel {
+.ysp_alert_mask .ysp_alert_modal .twoButton .sure {
   border-right: 1px solid #ccc;
 }
 .ysp_alert_mask .ysp_alert_modal .oneButton .sure {
@@ -937,6 +939,9 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
   word-wrap: break-word;
   width: 60px;
   color: #999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .annex-box .pic {
   height: 60px;
@@ -1648,7 +1653,8 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .ysp-sfzhkfy-tt,
 .ysp-ygdz-tt,
 .ysp-dhxx-tt,
-.ysp-dzyjdz-tt {
+.ysp-dzyjdz-tt,
+.ysp-fjsc-head-tt {
   position: fixed;
   top: 0;
   left: 0;
@@ -1664,7 +1670,8 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .ysp-sfzhkfy-tt .ysp-jbxxList-tt > p:first-child,
 .ysp-ygdz-tt .ysp-jbxxList-tt > p:first-child,
 .ysp-dhxx-tt .ysp-jbxxList-tt > p:first-child,
-.ysp-dzyjdz-tt .ysp-jbxxList-tt > p:first-child {
+.ysp-dzyjdz-tt .ysp-jbxxList-tt > p:first-child,
+.ysp-fjsc-head-tt .ysp-jbxxList-tt > p:first-child {
   width: 100%;
   margin: 20px 0;
 }
@@ -1674,7 +1681,8 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .ysp-sfzhkfy-tt .ysp-jbxxList-tt > p:first-child img,
 .ysp-ygdz-tt .ysp-jbxxList-tt > p:first-child img,
 .ysp-dhxx-tt .ysp-jbxxList-tt > p:first-child img,
-.ysp-dzyjdz-tt .ysp-jbxxList-tt > p:first-child img {
+.ysp-dzyjdz-tt .ysp-jbxxList-tt > p:first-child img,
+.ysp-fjsc-head-tt .ysp-jbxxList-tt > p:first-child img {
   margin: 0 auto;
   display: block;
 }

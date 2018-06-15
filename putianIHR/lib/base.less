@@ -133,7 +133,9 @@ div[data-ysp-modelid="addWork"]{
 }
 /******************************CustomAlert组件******************************************/
 .ysp_alert_mask{
-  position: absolute;
+  position: fixed;
+  width:100%;
+  height:100%;
   top: 0;
   left: 0;
   right: 0;
@@ -172,7 +174,7 @@ div[data-ysp-modelid="addWork"]{
         width: 49%;
         text-align: center;
       }
-      .cancel{
+      .sure{
         border-right: 1px solid #ccc;
       }
     }
@@ -917,6 +919,9 @@ div[data-ysp-modelid="addWork"]{
     word-wrap: break-word;
     width: 60px;
     color: #999;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .pic{
     height: 60px;
@@ -1520,7 +1525,7 @@ div[data-ysp-modelid="addWork"]{
   }
   
 }
-.ysp-jbxx-tt,.ysp-hkxx-tt,.ysp-sfzxx-tt,.ysp-sfzhkfy-tt,.ysp-ygdz-tt,.ysp-dhxx-tt,.ysp-dzyjdz-tt{
+.ysp-jbxx-tt,.ysp-hkxx-tt,.ysp-sfzxx-tt,.ysp-sfzhkfy-tt,.ysp-ygdz-tt,.ysp-dhxx-tt,.ysp-dzyjdz-tt,.ysp-fjsc-head-tt{
     position: fixed;
     top:0;
     left: 0;
@@ -1543,4 +1548,5 @@ div[data-ysp-modelid="addWork"]{
     }
     
   }
+
 /*******************员工履历表（员工自助）end***************************/
