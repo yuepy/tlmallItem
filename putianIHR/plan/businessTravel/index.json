@@ -139,45 +139,6 @@
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control64_6AmT9L": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::BODY[@id=\"ptifrmtemplate\"]//DIV[@id=\"pt_modals\"]/DIV[2]/DIV[1]",
-              "descendant::DIV[@id=\"pt_modals\"]/DIV[2]/DIV[1]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.PSPAGE DIV.PSMODAL DIV.PSMODALTABLE"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[8]/DIV[2]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control64_6AmT9L"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control66_FrkeoT": {
       "location": {
         "data": {
@@ -320,37 +281,14 @@
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control56_xvaXSQ": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "TABLE.PSLEVEL1SCROLLAREABODY TABLE.PSLEVEL2GRIDWBO TABLE.PSLEVEL2GRID"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[4]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control56_xvaXSQ"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control65_Sc4ES5": {
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -378,6 +316,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -408,6 +350,42 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control75_XqxNmG": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::TABLE[@id=\"ACE_width\"]/TBODY[1]/TR[10]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              7
+            ],
+            "value": "TABLE.PSPAGECONTAINER TABLE.PSLEVEL1SCROLLAREABODYWBO TABLE.PSLEVEL1SCROLLAREABODY TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control75_XqxNmG"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -416,13 +394,12 @@
         "control61_U1Nctq",
         "control62_6BvmTn",
         "control63_zTeaok",
-        "control64_6AmT9L",
         "control66_FrkeoT",
         "control67_B20vHF",
         "control68_1kCS7G",
-        "control56_xvaXSQ",
         "control65_Sc4ES5",
-        "control69_rsRMlX"
+        "control69_rsRMlX",
+        "control75_XqxNmG"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -450,16 +427,6 @@
       "fromContextId": "context10_Wpr2im",
       "fromAction": "doAction",
       "fromControlId": "control63_zTeaok",
-      "toContexts": [
-        {
-          "toContextId": "context10_Wpr2im"
-        }
-      ]
-    },
-    "flow61_9sFkU8": {
-      "fromContextId": "context10_Wpr2im",
-      "fromAction": "doAction",
-      "fromControlId": "control64_6AmT9L",
       "toContexts": [
         {
           "toContextId": "context10_Wpr2im"
@@ -506,20 +473,30 @@
         }
       ]
     },
-    "flow63_2pNIL1": {
+    "flow67_1dB5n8": {
       "fromContextId": "context10_Wpr2im",
       "fromAction": "doAction",
-      "fromControlId": "control56_xvaXSQ",
+      "fromControlId": "control65_Sc4ES5",
       "toContexts": [
         {
           "toContextId": "context10_Wpr2im"
         }
       ]
     },
-    "flow67_1dB5n8": {
+    "flow74_HuFEqC": {
       "fromContextId": "context10_Wpr2im",
       "fromAction": "doAction",
-      "fromControlId": "control65_Sc4ES5",
+      "fromControlId": "control69_rsRMlX",
+      "toContexts": [
+        {
+          "toContextId": "context10_Wpr2im"
+        }
+      ]
+    },
+    "flow75_cKgmDw": {
+      "fromContextId": "context10_Wpr2im",
+      "fromAction": "doAction",
+      "fromControlId": "control75_XqxNmG",
       "toContexts": [
         {
           "toContextId": "context10_Wpr2im"
@@ -577,21 +554,6 @@
           }
         },
         {
-          "id": "uiControl63_s2xNZy",
-          "controlId": "control64_6AmT9L",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl63_s2xNZy",
-                "onGetTemplate": "getTemplate_uiControl63_s2xNZy"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl65_q6yTlS",
           "controlId": "control66_FrkeoT",
           "display": {
@@ -622,31 +584,16 @@
           }
         },
         {
-          "id": "uiControl55_DUXLWM",
-          "controlId": "control56_xvaXSQ",
+          "id": "uiControl74_3xXdrR",
+          "controlId": "control75_XqxNmG",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl55_DUXLWM",
-                "onGetTemplate": "getTemplate_uiControl55_DUXLWM"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl68_uxwnei",
-          "controlId": "control69_rsRMlX",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl68_uxwnei",
-                "onGetTemplate": "getTemplate_uiControl68_uxwnei"
+                "onDoAction": "doAction_uiControl74_3xXdrR",
+                "onGetTemplate": "getTemplate_uiControl74_3xXdrR"
               }
             }
           }
@@ -662,6 +609,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl64_EgB4hW",
                 "onGetTemplate": "getTemplate_uiControl64_EgB4hW"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl68_uxwnei",
+          "controlId": "control69_rsRMlX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl68_uxwnei",
+                "onGetTemplate": "getTemplate_uiControl68_uxwnei"
               }
             }
           }
@@ -697,7 +659,8 @@
         "context10_Wpr2im": [
           "192.168.220.110/psp/ps_5/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_047_CP.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_047_CP_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201803021622509353312784&IsFolder=false",
           "192.168.220.110/psp/ps_9/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_047_CP.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_047_CP_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201803021622509353312784&IsFolder=false",
-          "192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_047_CP.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_047_CP_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201803021622509353312784&IsFolder=false"
+          "192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_047_CP.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_047_CP_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201803021622509353312784&IsFolder=false",
+          "192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_047_CP.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_047_CP_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201803021622509353312784&IsFolder=false"
         ]
       }
     },
@@ -2019,6 +1982,178 @@
             "pthnavbca_MYFAVORITES",
             "pthnavbca_PORTAL_ROOT_OBJECT",
             "pthnavbccref_HPS_TL_AWE__CP_GBL",
+            "pthnavbccrefanc_HPS_TL_AWE__CP_GBL",
+            "pthnavbccrefanc_HPS_TL_AWE__CP_GBL_mru_clone",
+            "pthnavblock",
+            "pthnavcontainer",
+            "pthnavfav",
+            "pthnavfavli",
+            "pthnavfavsep",
+            "pthnavfly_MYFAVORITES",
+            "pthnavfly_PORTAL_ROOT_OBJECT",
+            "pthnavmrs_",
+            "pthnavmrssep",
+            "pthnavmru",
+            "pthnavmru_HC_SCH_DEFINITION_GBL",
+            "pthnavmru_HPS_RSM_MNG_SELF",
+            "pthnavmru_HPS_SELF_VACA_CPT_GBL",
+            "pthnavmru_HPS_TL_AWE__CP_GBL",
+            "pthnavmru_HPS_TL_AWE__GBL",
+            "pthnavmrufavsep",
+            "pthnavmruroot",
+            "pthnavroot",
+            "pthnavsid",
+            "ptiframatfcontent",
+            "ptifrmatfcancel",
+            "ptifrmatfdescr",
+            "ptifrmatfinput",
+            "ptifrmatflbl",
+            "ptifrmatflist",
+            "ptifrmatfname",
+            "ptifrmatfok",
+            "ptifrmcontent",
+            "ptifrmpopup",
+            "ptifrmrc",
+            "ptifrmrchandle",
+            "ptifrmresizedownmask",
+            "ptifrmresizeupmask",
+            "ptifrmsep",
+            "ptifrmtarget",
+            "ptifrmtgtframe",
+            "ptpopoptitle",
+            "ptpopup",
+            "ptpopupclose",
+            "ptpopupcontainer",
+            "ptpopupcontent",
+            "ptpopupcontentcontainer",
+            "ptpopuplayouttbl",
+            "ptpopupmask",
+            "ptpopupmsg",
+            "ptpopupmsgbtn",
+            "ptpopupmsgbuttons",
+            "ptpopupmsgtext",
+            "ptpopupshadow",
+            "ptpopuptitlebar",
+            "ptrcControls_RelatedContent",
+            "ptrcDropDowndiv_RelatedContent",
+            "ptrcDropdown_RelatedContent",
+            "ptrcTCSpacer",
+            "ptrcclose",
+            "ptrccollapse_expand",
+            "ptrcdropdownicon_RelatedContent",
+            "ptrcnewwin",
+            "ptrcrefresh",
+            "ptrcrefreshonhover",
+            "ptrctitlebar",
+            "ptrctitleline",
+            "ptsrc_dropdownicon_RelatedContent",
+            "rcMenuOnRC",
+            "vRCPageletGroupsDiv",
+            "vRCPgltArea",
+            "vRCPgltAreaBody",
+            "vRCPgltAreaBodyAnchor",
+            "vRCPgltAreaBodyShow",
+            "vRCPgltAreaContainer",
+            "vRCPgltAreaFrameDiv",
+            "vRCPgltAreaHeader",
+            "vRCPgltAreaHide",
+            "vRCPgltAreaHideContainer",
+            "vRCPgltAreaResizeBar",
+            "vRCPgltAreaShow"
+          ],
+          [
+            "CO_EMPLOYEE_SELF_SERVICE",
+            "DEFAULT_HEADER_TANGERINE_ALT",
+            "Delayed_empty",
+            "HC_GLOBAL_PAYROLL",
+            "HC_ORGANIZATIONAL_DEVELOPMENT",
+            "HC_SETUP_HRMS",
+            "HC_WORKFORCE_ADMINISTRATION",
+            "HPS_DEVELOP",
+            "HPS_DEVELOP_ABS",
+            "HPS_DEVELOP_RZ",
+            "HPS_RPT",
+            "HPS_STD_MENU_GBL",
+            "PT_PEOPLETOOLS",
+            "PT_REPORTING_TOOLS",
+            "PT_TREE_MANAGER",
+            "RelatedContent",
+            "SRelatedContent",
+            "SrcMenuOnRC",
+            "WAIT_empty",
+            "crefli_PT_CHANGE_PASSWORD_GBL",
+            "crefli_PT_PORTAL_ADD_FAV_GBL",
+            "crefli_PT_PTGP_USERPREF_FL_GBL",
+            "crefli_fav_PT_PORTAL_EDIT_FAV_GBL",
+            "fldra_CO_EMPLOYEE_SELF_SERVICE",
+            "fldra_HC_GLOBAL_PAYROLL",
+            "fldra_HC_ORGANIZATIONAL_DEVELOPMENT",
+            "fldra_HC_SETUP_HRMS",
+            "fldra_HC_WORKFORCE_ADMINISTRATION",
+            "fldra_HPS_DEVELOP",
+            "fldra_HPS_DEVELOP_ABS",
+            "fldra_HPS_DEVELOP_RZ",
+            "fldra_HPS_RPT",
+            "fldra_HPS_STD_MENU_GBL",
+            "fldra_PT_PEOPLETOOLS",
+            "fldra_PT_REPORTING_TOOLS",
+            "fldra_PT_TREE_MANAGER",
+            "processing",
+            "ptModalShadow",
+            "pt_modalMask",
+            "pt_modalMaskCover",
+            "pt_modals",
+            "ptabn",
+            "ptabn_SRCHPROMPT",
+            "ptabnclonebc",
+            "ptabncrefbc",
+            "ptabnfldrbc",
+            "ptabnportalfldrbc",
+            "ptabnprevresults",
+            "ptabnrscontainer",
+            "ptabnsadiv",
+            "ptabnsepbc",
+            "ptabnsp",
+            "ptabnsrchagain",
+            "ptabnsrchtitle",
+            "ptabntdiv",
+            "ptalPageMask",
+            "ptatfsid",
+            "ptbr_header_container",
+            "ptdropdownmenu",
+            "pthbcEndWall",
+            "pthbcScroll",
+            "pthbcScrollNext",
+            "pthbcScrollPrev",
+            "pthbcStartWall",
+            "pthbcUlScroll",
+            "pthdraddto",
+            "pthdraddto_div",
+            "pthdratf",
+            "pthdrcontainer",
+            "pthdrhome",
+            "pthdrlinks",
+            "pthdrlogoswan",
+            "pthdrlogout",
+            "pthdrnavbar",
+            "pthdrnavbar_div",
+            "pthdrnavbarlinks",
+            "pthdrnotify",
+            "pthdrnotify_badge",
+            "pthdrnotify_div",
+            "pthdrsyslinks",
+            "pthnavbc",
+            "pthnavbc_HPS_DEVELOP",
+            "pthnavbc_HPS_WF_FLD",
+            "pthnavbc_MYFAVORITES",
+            "pthnavbc_PORTAL_ROOT_OBJECT",
+            "pthnavbca_HPS_DEVELOP",
+            "pthnavbca_HPS_WF_FLD",
+            "pthnavbca_MYFAVORITES",
+            "pthnavbca_PORTAL_ROOT_OBJECT",
+            "pthnavbccref_HPS_HR_AWE__GBL",
+            "pthnavbccref_HPS_TL_AWE__CP_GBL",
+            "pthnavbccrefanc_HPS_HR_AWE__GBL",
             "pthnavbccrefanc_HPS_TL_AWE__CP_GBL",
             "pthnavbccrefanc_HPS_TL_AWE__CP_GBL_mru_clone",
             "pthnavblock",
