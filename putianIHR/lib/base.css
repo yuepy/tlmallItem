@@ -621,6 +621,22 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .ysp_visitRelative .ysp_visit_list .visit_content select {
   direction: rtl;
 }
+.ysp_visitRelative .ysp_visit_list .visit_content .writeSearch {
+  display: flex;
+}
+.ysp_visitRelative .ysp_visit_list .visit_content .writeSearch input {
+  width: 80%;
+  background: #fff;
+  padding: 0;
+}
+.ysp_visitRelative .ysp_visit_list .visit_content .writeSearch span {
+  display: inline-block;
+  width: 20%;
+  height: 24px;
+  background: url(../local/img/rightArrow.png) no-repeat;
+  background-position: 100%;
+  background-size: 10px;
+}
 /***********************************请假申请 start*************************************/
 .ysp-con-box {
   background-color: #fff;
@@ -1637,7 +1653,8 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .ysp-sfzhkfy-tt,
 .ysp-ygdz-tt,
 .ysp-dhxx-tt,
-.ysp-dzyjdz-tt {
+.ysp-dzyjdz-tt,
+.ysp-fjsc-head-tt {
   position: fixed;
   top: 0;
   left: 0;
@@ -1653,7 +1670,8 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .ysp-sfzhkfy-tt .ysp-jbxxList-tt > p:first-child,
 .ysp-ygdz-tt .ysp-jbxxList-tt > p:first-child,
 .ysp-dhxx-tt .ysp-jbxxList-tt > p:first-child,
-.ysp-dzyjdz-tt .ysp-jbxxList-tt > p:first-child {
+.ysp-dzyjdz-tt .ysp-jbxxList-tt > p:first-child,
+.ysp-fjsc-head-tt .ysp-jbxxList-tt > p:first-child {
   width: 100%;
   margin: 20px 0;
 }
@@ -1663,7 +1681,8 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
 .ysp-sfzhkfy-tt .ysp-jbxxList-tt > p:first-child img,
 .ysp-ygdz-tt .ysp-jbxxList-tt > p:first-child img,
 .ysp-dhxx-tt .ysp-jbxxList-tt > p:first-child img,
-.ysp-dzyjdz-tt .ysp-jbxxList-tt > p:first-child img {
+.ysp-dzyjdz-tt .ysp-jbxxList-tt > p:first-child img,
+.ysp-fjsc-head-tt .ysp-jbxxList-tt > p:first-child img {
   margin: 0 auto;
   display: block;
 }
