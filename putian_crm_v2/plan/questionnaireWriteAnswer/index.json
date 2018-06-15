@@ -1,0 +1,174 @@
+{
+  "version": "0.1",
+  "id": "questionnaireWriteAnswer",
+  "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=74b1df8f885344e394f313868dfba7b5&batchId=&cid=SP1029937&datetime=2018-06-14",
+  "jsFile": "index.js",
+  "chineseName": "问卷填写答题(一级菜单)",
+  "description": "问卷填写答题(一级菜单)",
+  "controls": {
+    "control330_6gAef1": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control330_6gAef1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context88_MKRZN9": {
+      "controls": [
+        "control330_6gAef1"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow260_Faof2e": {
+      "toContexts": [
+        {
+          "toContextId": "context88_MKRZN9"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page88_4WVZ3l": {
+      "contextId": "context88_MKRZN9",
+      "layout": [
+        {
+          "id": "uiControl320_ibSXl8",
+          "controlId": "control330_6gAef1",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl320_ibSXl8",
+                "onGetTemplate": "getTemplate_uiControl320_ibSXl8"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context88_MKRZN9": [
+          "信息录入》问卷填写"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context88_MKRZN9": [
+          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=74b1df8f885344e394f313868dfba7b5&batchId=&cid=SP1029937&datetime=2018-06-14"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context88_MKRZN9": [
+          [
+            "aacdacabcfeaac",
+            "baocuncaogao",
+            "batchId",
+            "bbcafeefcbae",
+            "cid",
+            "content",
+            "dcebdfabeca",
+            "formTargertIframe",
+            "formUploadify",
+            "pic",
+            "pre_wrap_div",
+            "quId",
+            "remark",
+            "templateId",
+            "title"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context88_MKRZN9": [
+          [
+            "backImage",
+            "btn",
+            "btn-box",
+            "contaner",
+            "content",
+            "fill-say",
+            "filledit-content",
+            "goback",
+            "header",
+            "height",
+            "mask",
+            "pointImage",
+            "pre-box",
+            "pre-content",
+            "pre-tit",
+            "pre-wrap",
+            "question-item",
+            "questionnaireTop",
+            "save",
+            "star",
+            "title",
+            "title-a",
+            "title-b",
+            "xuan-tit"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context88_MKRZN9": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/OL",
+            "DIV/DIV/SPAN",
+            "DIV/FORM/INPUT-file",
+            "DIV/H4/I",
+            "DIV/OL/LI",
+            "OL/LI/EM",
+            "OL/LI/SPAN",
+            "OL/LI/TEXTAREA"
+          ]
+        ]
+      }
+    }
+  }
+}

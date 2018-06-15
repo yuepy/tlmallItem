@@ -1,0 +1,223 @@
+{
+  "version": "0.1",
+  "id": "questionnaireFeedback",
+  "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionRelease.html",
+  "jsFile": "index.js",
+  "chineseName": "问卷反馈(一级菜单)",
+  "description": "问卷反馈(一级菜单)",
+  "controls": {
+    "control331_Tw8J4p": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control331_Tw8J4p"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context89_V4mUa4": {
+      "controls": [
+        "control331_Tw8J4p"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow261_mCf1na": {
+      "toContexts": [
+        {
+          "toContextId": "context89_V4mUa4"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page89_wc29ZE": {
+      "contextId": "context89_V4mUa4",
+      "layout": [
+        {
+          "id": "uiControl321_2eBChP",
+          "controlId": "control331_Tw8J4p",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl321_2eBChP",
+                "onGetTemplate": "getTemplate_uiControl321_2eBChP"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context89_V4mUa4": [
+          "信息录入》问卷下发及查看"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context89_V4mUa4": [
+          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionRelease.html"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context89_V4mUa4": [
+          [
+            "Page",
+            "contaner",
+            "department_sele",
+            "e_time",
+            "exportExcel",
+            "id",
+            "name",
+            "project_sele",
+            "qu_name",
+            "queding",
+            "remark",
+            "s_time",
+            "scope_sele",
+            "status_sele",
+            "tab_box",
+            "tankuang",
+            "tbodyContent",
+            "template_id"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context89_V4mUa4": [
+          [
+            "act",
+            "active",
+            "all",
+            "backImage",
+            "bt",
+            "btn",
+            "build",
+            "clearfix",
+            "commpnPage",
+            "con-top-box",
+            "contaner",
+            "content",
+            "crossbar",
+            "date",
+            "delQu",
+            "editQu",
+            "export",
+            "failureQu",
+            "form-control",
+            "goback",
+            "header",
+            "icon",
+            "lookfeedback",
+            "mask",
+            "no-under",
+            "option-box",
+            "option-btn",
+            "option-con",
+            "option-l",
+            "option-list",
+            "option-r",
+            "option-r-c",
+            "out",
+            "outstore",
+            "pagination",
+            "pointImage",
+            "pop-btn",
+            "pop-cancel",
+            "pop-li",
+            "pop-tab-box",
+            "pop-tit-box",
+            "publishQu",
+            "qu_type",
+            "questionnaireTop",
+            "release-content",
+            "release-pop-con",
+            "release-pop-mask",
+            "release-table",
+            "search",
+            "search-box",
+            "search-btn",
+            "select",
+            "skip",
+            "skip-num",
+            "skip-right-icon",
+            "skip_count",
+            "skip_right_goto",
+            "sx-tag",
+            "tab-li",
+            "table",
+            "table-box",
+            "title",
+            "title-a",
+            "title-b"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context89_V4mUa4": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SELECT/OPTION",
+            "DIV/SPAN/I",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TD",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "UL/LI/A",
+            "UL/LI/INPUT-number",
+            "UL/LI/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

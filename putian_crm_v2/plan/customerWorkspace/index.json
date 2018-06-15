@@ -16,7 +16,8 @@
     "workPlanCustomStore": "../workPlanCustomStore/index.json",
     "workSummary": "../workSummary/index.json",
     "HESReport": "../HESReport/index.json",
-    "HESRreport": "../HESRreport/index.json"
+    "HESRreport": "../HESRreport/index.json",
+    "customerWorkInformation": "../customerWorkInformation/index.json"
   },
   "chineseName": "拜访工作台",
   "description": "拜访工作台页面",
@@ -435,6 +436,10 @@
         {
           "toContextId": "context35_53UgWr",
           "toModelId": "HESRreport"
+        },
+        {
+          "toContextId": "context85_mt1FJB",
+          "toModelId": "customerWorkInformation"
         }
       ]
     },
@@ -2232,27 +2237,35 @@
             "CloseReportPopRoot",
             "ContactAlert",
             "ContactUsers",
-            "CustomerRisk",
             "DisplayContact",
             "FenXiaoDivison",
+            "HuaweiExperienceStore",
+            "HuaweiFuse",
+            "HuaweiProvincePackage",
             "OtherInfor",
             "SamsungDivison",
+            "TargetPosition",
+            "VisitTarget",
+            "VisitTime",
             "body",
-            "businessInformation",
-            "contentCustomer",
             "customerReportPopBack",
+            "fenXiaoDivisonTags",
             "fileList",
             "filePicker",
-            "financialInformation",
-            "goodsInformation",
             "headCustomer",
             "header",
+            "huaweiExperienceStoreTags",
             "huaweiFD",
-            "huaweiPJ",
+            "huaweiFDTags",
+            "huaweiFuseTags",
+            "huaweiProvincePackageTags",
+            "otherInforTags",
             "planCreateDate",
             "planDate",
+            "reportContent",
             "reportImportContent",
-            "signInDateTime"
+            "samsungDivisonTags",
+            "signOrReportPop"
           ]
         ],
         "context1_vOOsmt": [
@@ -4118,6 +4131,7 @@
             "m-report-infors",
             "m-uploading",
             "sign",
+            "tags-box",
             "temp",
             "textBtn",
             "tipFont",
@@ -4125,8 +4139,7 @@
             "u-btn",
             "u-btn-default",
             "uploadBtn",
-            "users",
-            "z-act"
+            "users"
           ]
         ],
         "context1_vOOsmt": [
@@ -5248,14 +5261,17 @@
             "-/-/SCRIPT",
             "-/DIV/DIV",
             "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
             "DIV/DIV/DIV",
             "DIV/DIV/H1",
             "DIV/DIV/H6",
             "DIV/DIV/I",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SELECT",
             "DIV/DIV/SPAN",
             "DIV/DIV/TEXTAREA",
             "DIV/DIV/UL",
-            "DIV/H6/FONT",
+            "DIV/SELECT/OPTION",
             "DIV/SPAN/EM",
             "DIV/UL/LI",
             "UL/LI/A"

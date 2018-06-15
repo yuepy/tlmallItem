@@ -1,0 +1,181 @@
+{
+  "version": "0.1",
+  "id": "customerWorkQuestionnaireWrite",
+  "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=57fd7d3b2aaf4022b3c503254990193c&batchId=a500dc07b0c14a6c832c13729c28f969&cid=FB00011&datetime=2018-06-14",
+  "jsFile": "index.js",
+  "chineseName": "工作台中的问卷填写",
+  "description": "工作台中的问卷填写",
+  "controls": {
+    "control325_bCd2et": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"content\"]/DIV[2]",
+              "descendant::DIV[@id=\"content\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.contaner DIV.content.pre-content.filledit-content"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control325_bCd2et"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context86_IafnWi": {
+      "controls": [
+        "control325_bCd2et"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow255_D3w6pc": {
+      "toContexts": [
+        {
+          "toContextId": "context86_IafnWi"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page86_THVKqD": {
+      "contextId": "context86_IafnWi",
+      "layout": [
+        {
+          "id": "uiControl315_n4wsy2",
+          "controlId": "control325_bCd2et",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl315_n4wsy2",
+                "onGetTemplate": "getTemplate_uiControl315_n4wsy2"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context86_IafnWi": [
+          "信息录入》问卷填写"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context86_IafnWi": [
+          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=57fd7d3b2aaf4022b3c503254990193c&batchId=a500dc07b0c14a6c832c13729c28f969&cid=FB00011&datetime=2018-06-14"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context86_IafnWi": [
+          [
+            "batchId",
+            "cid",
+            "content",
+            "efcdaefeedee",
+            "formTargertIframe",
+            "formUploadify",
+            "pic",
+            "pre_wrap_div",
+            "quId",
+            "remark",
+            "templateId",
+            "title"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context86_IafnWi": [
+          [
+            "backImage",
+            "btn",
+            "btn-box",
+            "contaner",
+            "content",
+            "fill-say",
+            "filledit-content",
+            "goback",
+            "header",
+            "height",
+            "mask",
+            "pointImage",
+            "pre-box",
+            "pre-content",
+            "pre-tit",
+            "pre-wrap",
+            "question-item",
+            "questionnaireTop",
+            "save",
+            "title",
+            "title-a",
+            "title-b",
+            "xuan-tit"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context86_IafnWi": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/OL",
+            "DIV/DIV/SPAN",
+            "DIV/FORM/INPUT-file",
+            "DIV/H4/I",
+            "DIV/OL/LI",
+            "LI/LABEL/I",
+            "LI/LABEL/INPUT-radio",
+            "OL/LI/LABEL",
+            "OL/LI/SPAN",
+            "OL/LI/TEXTAREA"
+          ]
+        ]
+      }
+    }
+  }
+}

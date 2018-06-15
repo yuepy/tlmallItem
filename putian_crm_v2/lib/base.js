@@ -292,6 +292,12 @@
         case 'reportAtMeSummed'://汇报给我的报告 一级菜单
           task.title = "GZZJ_YD"
           break;
+        case 'questionnaireWrite'://问卷填写 一级菜单
+          task.title = "WJTX_YD";
+          break;
+        case 'questionnaireFeedback'://问卷反馈 一级菜单
+          task.title = "WJFK_YD";
+          break;
         default:
           msgType = "no"
           break;
