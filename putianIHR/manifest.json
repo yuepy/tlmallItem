@@ -1,60 +1,52 @@
 {
-  "type": "adapter",
-  "short_name": "",
-  "version": "0.0.1",
-  "runtime_version": "2.7.0",
-  "description": "",
-  "options": {
-    "resource_intercept": {
-      "type": [],
-      "ignore": []
+    "type": "adapter",
+    "short_name": "",
+    "version": "0.0.1",
+    "runtime_version": "2.7.0",
+    "description": "",
+    "options": {
+        "resource_intercept": {
+            "type": [],
+            "ignore": []
+        },
+        "resource_inject": [],
+        "resource_filter": [{
+            "url_match": [
+                "^http:\\/\\/192\\.168\\.220\\.110.*"
+            ],
+            "charset": "utf-8",
+            "Accept-Language": "zh-Hans-CN",
+            "replaces": [{
+                "regexp": "\\btop\\b",
+                "sub_str": "_ysp_top"
+            }]
+        }],
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
     },
     "resource_inject": [],
-    "resource_filter": [
-      {
+    "resource_filter": [{
         "url_match": [
-          "^http:\\/\\/192\\.168\\.220\\.110.*"
+            "^http:\\/\\/192\\.168\\.220\\.110.*"
         ],
-        "charset": "utf-8",
-        "Accept-Language": "zh-Hans-CN",
-        "replaces": [
-          {
-            "regexp": "\\btop\\b",
-            "sub_str": "_ysp_top"
-          }
+        "demo": [
+            "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
         ]
-      }
-    ],
-    "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
-  },
-  "resource_inject": [],
-  "resource_filter": [
-    {
-      "url_match": [
-        "^http:\\/\\/192\\.168\\.220\\.110.*"
-      ],
-      "demo": [
-        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
-      ]
-    }
-  ],
-  "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36",
-  "override_urls": [],
-  "adapter_urls": [
-    {
-      "title": "login",
-      "url": "adapter://putianIHR/plan/login/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout"
-      ],
-      "demo": [
-        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
-      ]
-    }
-  ],
-  "name": "普天HR系统",
-  "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
-  "scope": "putianIHR",
-  "start_url": "enterplorer://putianIHR/local/index.html",
-  "update_time": 1529026111042
+    }],
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36",
+    "override_urls": [],
+    "adapter_urls": [{
+        "title": "login",
+        "url": "adapter://putianIHR/plan/login/index.json",
+        "matcher": [
+            "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout"
+        ],
+        "demo": [
+            "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+        ]
+    }],
+    "name": "普天HR系统",
+    "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+    "scope": "putianIHR",
+    "start_url": "enterplorer://putianIHR/local/index.html",
+    "update_time": 1529026111042
 }

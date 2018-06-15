@@ -284,11 +284,17 @@
     if(elem.querySelector("#alertmsg")){
       data.content=elem.querySelector("#alertmsg").textContent.trim();
     }
-    if(elem.querySelector("#alertbutton")){
-      var buttons=elem.querySelector("#alertbutton").querySelectorAll("input");
-      for(var n=0;n<buttons.length;n++){
-        data.button.push(buttons[n].value)
-      }
+    // if(elem.querySelector("#alertbutton")){
+    //   var buttons=elem.querySelector("#alertbutton").querySelectorAll("input");
+    //   for(var n=0;n<buttons.length;n++){
+    //     data.button.push(buttons[n].value)
+    //   }
+    // }
+    if(elem.querySelectorAll(".PSPUSHBUTTON")){
+      var btns = elem.querySelectorAll(".PSPUSHBUTTON");
+      [].forEach.call(btns,function(item,index){
+        data.button.push(item.querySelector("input").value);
+      })
     }
     return data;
   }
