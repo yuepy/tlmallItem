@@ -53,7 +53,11 @@
         data.push(con.textContent);
       }var btn = elem.querySelector("#okbutton").querySelector("input");if (btn) {
         data.push(btn.value);
-      }return data;
+      }return data; // if (elem) {
+      //   return ysp.customHelper.alert(elem);
+      // } else {
+      //   return;
+      // }
     },
     doAction_uiControl27_a55LCI: function (data, elem) {
       if (data.eventType == "click") {

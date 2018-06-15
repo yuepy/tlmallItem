@@ -71,7 +71,7 @@
       //附件上传弹窗
       if (!elem) {
         return;
-      }var data = [];return data;
+      }console.log(elem);var data = [];return data;
     },
     doAction_uiControl51_Sb8SJa: function (data, elem) {
       if (data.eventType == "selclick") {
