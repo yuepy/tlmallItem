@@ -587,6 +587,50 @@ div[data-ysp-modelid="addWork"]{
     }
   }
 }
+//地址弹框
+.ysp_adrChoose{
+  display: none;
+  .ysp_showList{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #f4f4f4;
+    z-index: 50;
+    .ysp_adrSearch{
+      padding: 10px;
+      input{
+        width: 100%;
+        border: 1px solid #f4f4f4;
+        border-radius: 8px;
+        font-size: @fontSmall;
+        padding: 5px 5px 5px 20px;
+        height: 30px;
+        background: #fff url("../local/img/search.png") no-repeat 5px;
+        background-size: 15px;
+
+      }
+    }
+    .ysp_adrList{
+      height: 90vh;
+      overflow:auto;
+      background: #fff;
+      >div{
+        background:url("../local/img/arrow-r.png") no-repeat right;
+        padding: 5px 10px;
+        color: #888;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+    .ysp_tip{
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+    }
+  }
+}
+
 /***********************************请假申请 start*************************************/
 
 .ysp-con-box{

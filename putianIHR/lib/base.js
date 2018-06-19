@@ -203,9 +203,13 @@
         title:[],
         content:[]
       };
+   
       //表格
       if(elem.children[0].children.length==2&&elem.querySelectorAll("table").length==1){
         var targetTable=elem.querySelector("table");
+      }else{
+        var targetTable=elem;
+      }
         //表头
         var	ths=targetTable.querySelectorAll("tr")[0].querySelectorAll("th");
         [].forEach.call(ths,function(d1,i1){
@@ -264,9 +268,9 @@
           data.content.push(trArr);
         });
         return data;
-      }else{
-        return "elem里不止一个table或者elem有不止两个tr";
-      }
+      // }else{
+      //   return "elem里不止一个table或者elem有不止两个tr";
+      // }
     }else{
       return "elem不存在";
     }

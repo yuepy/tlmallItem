@@ -637,6 +637,47 @@ div[data-ysp-modelid="addWork"] .ysp_header_filter {
   background-position: 100%;
   background-size: 10px;
 }
+.ysp_adrChoose {
+  display: none;
+}
+.ysp_adrChoose .ysp_showList {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #f4f4f4;
+  z-index: 50;
+}
+.ysp_adrChoose .ysp_showList .ysp_adrSearch {
+  padding: 10px;
+}
+.ysp_adrChoose .ysp_showList .ysp_adrSearch input {
+  width: 100%;
+  border: 1px solid #f4f4f4;
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 5px 5px 5px 20px;
+  height: 30px;
+  background: #fff url("../local/img/search.png") no-repeat 5px;
+  background-size: 15px;
+}
+.ysp_adrChoose .ysp_showList .ysp_adrList {
+  height: 90vh;
+  overflow: auto;
+  background: #fff;
+}
+.ysp_adrChoose .ysp_showList .ysp_adrList > div {
+  background: url("../local/img/arrow-r.png") no-repeat right;
+  padding: 5px 10px;
+  color: #888;
+  border-bottom: 1px solid #ddd;
+}
+.ysp_adrChoose .ysp_showList .ysp_tip {
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
 /***********************************请假申请 start*************************************/
 .ysp-con-box {
   background-color: #fff;
