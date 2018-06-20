@@ -92,7 +92,7 @@ div[data-ysp-modelid="salary"]{
     width: 50px;
   }
 }
-div[data-ysp-modelid="addWork"]{
+div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"]{
   .ysp_header_filter{
     display: inline-block;
     background: url(../local/img/add.png) no-repeat;
@@ -1562,8 +1562,10 @@ div[data-ysp-modelid="addWork"]{
     height: 40px;
     line-height:40px;
     border-bottom:1px solid @E1E1E1;
-    background: #fff;
-    padding:0 0 0 15px;
+    padding:0 10px;
+    background:#fff url(../local/img/rightArrow.png) no-repeat;
+    background-position: 97%;
+    background-size: 10px;
     &:nth-child(5){
       margin:15px 0 0  0;
      	border-top:1px solid @E1E1E1;
@@ -1578,21 +1580,274 @@ div[data-ysp-modelid="addWork"]{
     height: 100vh;
     overflow: scroll;
     width:100%;
-    z-index: 1000;
-    background: #f8f8f8;
-    .ysp-jbxxList-tt{
-      	>p{
-        &:first-child{
+    z-index: 200;
+    background: #f8f8f8; 
+  }
+//基本信息
+.ysp-jbxx-tt{
+  .ysp-jbxxList-tt{
+    .ysp-listItem-tt{
+      background: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      span{
+        display: inline-block;
+        width: 25%;
+      }
+      select,input{
+        display: inline-block;
+        border:none;
+        margin: 0;
+        padding: 0;
+        padding-right: 15px;
+        height:30px;
+        background: #fff;
+        text-align: right;
+        width: 75%;
+        background:#fff url(../local/img/rightArrow.png) no-repeat;
+        background-position: 100%;
+    		background-size: 10px;
+        font-size: 15px;
+        color:#888;
+      }
+      select{
+        direction:rtl;
+      }
+    }
+    .portrait{
+      margin: 20px 0;
+      position: relative;
+      .portraitBg{
+        background: #fff;
+        width: 90px;
+        margin: 0 auto;
+        height: 110px;
+        padding: 5px;
+        box-shadow: 1px 1px 1px 1px #ccc;
+        img{
+          width: 80px;
+          height: 100px;
+        }
+      }
+      .photoImg{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 70%;
+    		right: 35%;
+        background:url(../local/img/photo.png) no-repeat;
+        background-size: 100%;
+      }
+      .photoTips{
+        margin:10px auto;
+        font-size: @fontSmall;
+        display: block;
+        width: 90%;
+        text-align: center;
+      }
+    }
+  }
+}
+//户口信息
+.ysp-hkxx-list-tt{
+  .ysp-hkxx-first-tt{
+    background: #fff;
+    margin-bottom: 10px;
+    >p{
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+    }
+    .title{
+      display: inline-block;
+      width: 45%;
+      i{
+        color: red;
+      }
+    }
+    .content{
+      display: inline-block;
+      width: 55%;
+      overflow: hidden;
+      input{
+        float: left;
+        border:none;
+        margin: 0;
+        padding: 0;
+        height:25px;
+        background: #fff;
+        text-align: right;
+        width: 90%;
+        font-size: 15px;
+        color:#888;
+      }
+      span{
+        float: right;
+        width: 10%;
+        height: 25px;
+        background:#fff url(../local/img/rightArrow.png) no-repeat;
+        background-position: 100%;
+    		background-size: 10px;
+      }
+    }
+    >p:last-child{
+      display: block;
+      .title{
+        width: 100%;
+      }
+      .content{
+        width:100%;
+        textarea{
+          border: none;
+          resize: none;
+          color: #888;
+        }
+        span{
+          float: none;
+          display: block;
+          font-size: @fontSmall;
+        	color: #ccc;
           width: 100%;
-          margin:20px 0;
-          img{
-            margin:0 auto;
-            display: block;
-          }
+          text-align: center;
+          background: none;
         }
       }
     }
-    
   }
-
+  >p{
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    overflow: hidden;
+    span{
+      float: left;
+      width: 40%;
+    }
+    input[type='date']{
+      float: right;
+      border: none;
+      margin: 0;
+      padding: 0;
+      padding-right: 15px;
+      height: 24px;
+      background: #fff;
+      text-align: right;
+      width: 60%;
+      background: url(../local/img/rightArrow.png) no-repeat;
+      background-position: 100%;
+      background-size: 10px;
+      font-size: 15px;
+      color: #888;
+    }
+    .ysp_switch_tt{
+      	float: right;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+      .ysp_switchOff_tt{
+        border: 1px solid #d0d0d0;
+        background: #fff;
+        position: relative;
+        display: block;
+        width: 2.5rem;
+        height: 1.5rem;
+        border-radius: 9999px;
+        transition: background .35s;
+        &:before{
+          background: #fff;
+          border: 1px solid #d0d0d0;
+          top: -1px;
+          left: -1px;
+          bottom: -1px;
+          width: 1.5rem;
+          height: 1.5rem;
+          transform: translateX(0);
+          position: absolute;
+          display: block;
+          content: " ";
+          transition: all .35s;
+          border-radius: 9999px;
+        }
+      }
+      .ysp_switchOn_tt{
+        border: 1px solid #59c831;
+        background: #59c831;
+        position: relative;
+        display: block;
+        width: 2.5rem;
+        height: 1.5rem;
+        border-radius: 9999px;
+        transition: background .35s;
+        &:after{
+          background: #fff;
+          border: 1px solid #d0d0d0;
+          top: -1px;
+          left: -1px;
+          bottom: -1px;
+          width: 1.5rem;
+          height: 1.5rem;
+          transform: translateX(1rem);
+          position: absolute;
+          display: block;
+          content: " ";
+          transition: all .35s;
+          border-radius: 9999px;
+        }
+      }
+    }
+  }
+}
+//身份证相关信息
+.ysp-sfzxx-list-tt{
+  
+  >p{
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+  }
+  .title{
+    display: inline-block;
+    width: 45%;
+    i{
+      color: red;
+    }
+  }
+  .content{
+    display: inline-block;
+    width: 55%;
+    overflow: hidden;
+    select,input{
+      display: inline-block;
+      border:none;
+      margin: 0;
+      padding: 0;
+      padding-right: 15px;
+      height:30px;
+      background: #fff;
+      text-align: right;
+      width: 100%;
+      background:#fff url(../local/img/rightArrow.png) no-repeat;
+      background-position: 100%;
+      background-size: 10px;
+      font-size: 15px;
+      color:#888;
+    }
+    select{
+      direction:rtl;
+    }
+    input{
+      background: none;
+    }
+    span{
+      float: right;
+      width: 10%;
+      height: 25px;
+      background:#fff url(../local/img/rightArrow.png) no-repeat;
+      background-position: 100%;
+      background-size: 10px;
+    }
+  }
+}
 /*******************员工履历表（员工自助）end***************************/

@@ -38,6 +38,9 @@
         doc.querySelector("#userid").value="YSP";
         doc.querySelector("#pwd").value="12345678";
       }
+      if(aWin.location.href.indexOf("cmd=login")!==-1){
+        doc.defaultView.frameElement.previousElementSibling.click();
+      }
     },
 
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
