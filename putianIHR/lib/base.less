@@ -92,7 +92,7 @@ div[data-ysp-modelid="salary"]{
     width: 50px;
   }
 }
-div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"]{
+div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data-ysp-modelid="educationalExperience"]{
   .ysp_header_filter{
     display: inline-block;
     background: url(../local/img/add.png) no-repeat;
@@ -1971,7 +1971,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"]{
   }
 }
 //员工地址	
-.ysp-ygdz-list-tt,.ysp-dhxx-list-tt{
+.ysp-ygdz-list-tt,.ysp-dhxx-list-tt,.ysp-jyjl-list-tt{
   margin: 10px auto;
   width: 95%;
   border: 1px solid #ddd;
@@ -1986,6 +1986,11 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"]{
       border:none;
     }
   }
+  .fileEntrance{
+    background:#fff url(../local/img/rightArrow.png) no-repeat;
+    background-position: 100%;
+    background-size: 10px;
+  }
   .title{
     display: inline-block;
     width: 45%;
@@ -1997,7 +2002,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"]{
     display: inline-block;
     width: 55%;
     overflow: hidden;
-    select{
+    select,input[type='date']{
       display: inline-block;
       border:none;
       margin: 0;
@@ -2036,7 +2041,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"]{
   }
 }
 //电话信息
-.ysp-dhxx-list-tt{
+.ysp-dhxx-list-tt,.ysp-jyjl-list-tt{
   >p:last-child{
     margin: 10px auto;
     padding: 5px;

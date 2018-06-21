@@ -93,7 +93,8 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   width: 50px;
 }
 div[data-ysp-modelid="addWork"] .ysp_header_filter,
-div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
+div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter,
+div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
   display: inline-block;
   background: url(../local/img/add.png) no-repeat;
   width: 40px;
@@ -2082,7 +2083,8 @@ div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
   background: #3796FB;
 }
 .ysp-ygdz-list-tt,
-.ysp-dhxx-list-tt {
+.ysp-dhxx-list-tt,
+.ysp-jyjl-list-tt {
   margin: 10px auto;
   width: 95%;
   border: 1px solid #ddd;
@@ -2091,32 +2093,48 @@ div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
   padding: 0 10px;
 }
 .ysp-ygdz-list-tt > p,
-.ysp-dhxx-list-tt > p {
+.ysp-dhxx-list-tt > p,
+.ysp-jyjl-list-tt > p {
   padding: 10px 0;
   border-bottom: 1px solid #ddd;
   display: flex;
 }
 .ysp-ygdz-list-tt > p:last-child,
-.ysp-dhxx-list-tt > p:last-child {
+.ysp-dhxx-list-tt > p:last-child,
+.ysp-jyjl-list-tt > p:last-child {
   border: none;
 }
+.ysp-ygdz-list-tt .fileEntrance,
+.ysp-dhxx-list-tt .fileEntrance,
+.ysp-jyjl-list-tt .fileEntrance {
+  background: #fff url(../local/img/rightArrow.png) no-repeat;
+  background-position: 100%;
+  background-size: 10px;
+}
 .ysp-ygdz-list-tt .title,
-.ysp-dhxx-list-tt .title {
+.ysp-dhxx-list-tt .title,
+.ysp-jyjl-list-tt .title {
   display: inline-block;
   width: 45%;
 }
 .ysp-ygdz-list-tt .title i,
-.ysp-dhxx-list-tt .title i {
+.ysp-dhxx-list-tt .title i,
+.ysp-jyjl-list-tt .title i {
   color: red;
 }
 .ysp-ygdz-list-tt .content,
-.ysp-dhxx-list-tt .content {
+.ysp-dhxx-list-tt .content,
+.ysp-jyjl-list-tt .content {
   display: inline-block;
   width: 55%;
   overflow: hidden;
 }
 .ysp-ygdz-list-tt .content select,
-.ysp-dhxx-list-tt .content select {
+.ysp-dhxx-list-tt .content select,
+.ysp-jyjl-list-tt .content select,
+.ysp-ygdz-list-tt .content input[type='date'],
+.ysp-dhxx-list-tt .content input[type='date'],
+.ysp-jyjl-list-tt .content input[type='date'] {
   display: inline-block;
   border: none;
   margin: 0;
@@ -2133,7 +2151,8 @@ div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
   direction: rtl;
 }
 .ysp-ygdz-list-tt .content input,
-.ysp-dhxx-list-tt .content input {
+.ysp-dhxx-list-tt .content input,
+.ysp-jyjl-list-tt .content input {
   float: left;
   border: none;
   margin: 0;
@@ -2146,7 +2165,8 @@ div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
   color: #888;
 }
 .ysp-ygdz-list-tt .content span,
-.ysp-dhxx-list-tt .content span {
+.ysp-dhxx-list-tt .content span,
+.ysp-jyjl-list-tt .content span {
   float: right;
   width: 10%;
   height: 25px;
@@ -2154,7 +2174,8 @@ div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
   background-position: 100%;
   background-size: 10px;
 }
-.ysp-dhxx-list-tt > p:last-child {
+.ysp-dhxx-list-tt > p:last-child,
+.ysp-jyjl-list-tt > p:last-child {
   margin: 10px auto;
   padding: 5px;
   border-radius: 8px;
@@ -2165,17 +2186,20 @@ div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
   background: #3796FB;
   display: block;
 }
-.ysp-dhxx-list-tt .content input {
+.ysp-dhxx-list-tt .content input,
+.ysp-jyjl-list-tt .content input {
   width: 100%;
 }
-.ysp-dhxx-list-tt .ysp_switch_tt {
+.ysp-dhxx-list-tt .ysp_switch_tt,
+.ysp-jyjl-list-tt .ysp_switch_tt {
   width: 100%;
   position: relative;
   display: inline-block;
   overflow: hidden;
   vertical-align: middle;
 }
-.ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOff_tt {
+.ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOff_tt,
+.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOff_tt {
   float: right;
   border: 1px solid #d0d0d0;
   background: #fff;
@@ -2186,7 +2210,8 @@ div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
   border-radius: 9999px;
   transition: background .35s;
 }
-.ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOff_tt:before {
+.ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOff_tt:before,
+.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOff_tt:before {
   background: #fff;
   border: 1px solid #d0d0d0;
   top: -1px;
@@ -2201,7 +2226,8 @@ div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
   transition: all .35s;
   border-radius: 9999px;
 }
-.ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOn_tt {
+.ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOn_tt,
+.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOn_tt {
   float: right;
   border: 1px solid #59c831;
   background: #59c831;
@@ -2212,7 +2238,8 @@ div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter {
   border-radius: 9999px;
   transition: background .35s;
 }
-.ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOn_tt:after {
+.ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOn_tt:after,
+.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOn_tt:after {
   background: #fff;
   border: 1px solid #d0d0d0;
   top: -1px;
