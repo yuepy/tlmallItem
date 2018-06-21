@@ -128,7 +128,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -217,6 +217,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -243,6 +247,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -276,6 +284,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -298,7 +310,42 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
+      "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control86_cRx0Sg": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              4,
+              5
+            ],
+            "value": "BODY.PSSRCHPAGE FORM.PSForm DIV.ps_pagecontainer DIV"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control86_cRx0Sg"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
       "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
       "componentType": "custom"
     }
@@ -313,7 +360,8 @@
         "control54_At6Ka1",
         "control83_1wmTih",
         "control84_0fbC0x",
-        "control85_u32vOn"
+        "control85_u32vOn",
+        "control86_cRx0Sg"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -383,6 +431,16 @@
       "fromContextId": "context5_WMk3RJ",
       "fromAction": "doAction",
       "fromControlId": "control84_0fbC0x",
+      "toContexts": [
+        {
+          "toContextId": "context5_WMk3RJ"
+        }
+      ]
+    },
+    "flow83_8bWz0c": {
+      "fromContextId": "context5_WMk3RJ",
+      "fromAction": "doAction",
+      "fromControlId": "control85_u32vOn",
       "toContexts": [
         {
           "toContextId": "context5_WMk3RJ"
@@ -510,6 +568,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl83_VJuyXG",
                 "onGetTemplate": "getTemplate_uiControl83_VJuyXG"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl84_D8y6mz",
+          "controlId": "control86_cRx0Sg",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl84_D8y6mz",
+                "onGetTemplate": "getTemplate_uiControl84_D8y6mz"
               }
             }
           }
