@@ -11769,29 +11769,168 @@ section.ysp-store-details{
 
 .ysp-store-report-dialog{
   background: #fff;
-  >div:nth-child(1){
-    border-bottom: 1px solid #ececec;
-    padding: 10px;
-    background: none !important;
-    >span:nth-child(1){
-      color: #999999;
-      padding-right: 10px;
-      background: none !important;
+  .ysp-store-report-dialog-top{
+    background-color:#fff;
+    padding: 0px 14px;
+    input{
+      margin-bottom: 0px !important;
+      padding: .5rem .5rem;
+      border-radius: 5px;
     }
-    >span:nth-child(2){
-      color: #4796ed;
+    >div:first-child{
+      border-bottom: 1px solid #e9e9e9;
+      padding: 10px 0px 10px 0px;
       background: none !important;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      >span:first-child{
+        color:#999999;
+      }
+      >span:last-child{
+        color:#4789e0;
+        margin-left: 8px;
+      }
+    }
+    >div:nth-child(2){
+      padding: 10px 0px 10px 0px;
+      border-bottom: 1px solid #e9e9e9;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      >span:first-child{
+        color:#999999;
+      }
+      >span:last-child{
+        color: #4789e0;
+        margin-left: 8px;
+      }
+    }
+    >div:last-child{
+      padding: 10px 0px 10px 0px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      >span:first-child{
+        color:#999999;
+      }
+      >span:last-child{
+        color: #4789e0;
+        margin-left: 8px;
+        select{
+          flex: 1;
+          margin: 0;
+          padding: 0;
+          border-radius: 5px;
+          background: #fff;
+          padding: 0px 136px 0px 10px;
+          font-size:12px;
+          display: block;
+          height: 36px;
+          background-size: 20px;
+          background-position: 179px;
+          background-repeat: no-repeat;
+          background-image: url(./images/down-arrow-icon.png);
+        }
+      }
     }
   }
-  >div:nth-child(2){
-    padding: 10px;
-    >span:nth-child(1){
-      color: #999999;
-      padding-right: 10px;
+  
+  .ysp-workReport-lable{
+      padding: 10px;
+      background: rgb(242,242,242);
+      position: relative;
+      overflow: hidden;
+      height: 60px;
+      overflow: hidden;
+      .ysp-workReport-uncheck{
+        float: left;
+        border-radius: 5px;
+        padding: 2px 5px;
+        border: 1px solid #4796ed;
+        margin: 5px;
+        color: #4796ed;
+        text-align: center;
+      }
+      .ysp-workReport-check{
+        float: left;
+        border-radius: 5px;
+        padding: 2px 5px;
+        border: 1px solid #4796ed;
+        margin: 5px;
+        text-align: center;
+        background: #4796ed;
+        color: #fff;
+      }
     }
-    >span:nth-child(2){
+  
+  .ysp-workReport-lable-gd{
+    padding: 10px 0px 10px 10px;
+    background: rgb(242,242,242);
+    position: relative;
+    overflow: hidden;
+    height: 55px;
+    overflow: hidden;
+    .ysp-workReport-uncheck{
+      float: left;
+      border-radius: 5px;
+      padding: 2px 5px;
+      border: 1px solid #4796ed;
+      margin: 5px;
       color: #4796ed;
+      text-align: center;
     }
+    .ysp-workReport-check{
+      float: left;
+      border-radius: 5px;
+      padding: 2px 5px;
+      border: 1px solid #4796ed;
+      margin: 5px;
+      text-align: center;
+      background: #4796ed;
+      color: #fff;
+    }
+  }
+  .ysp-workReport-gd{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgb(242,242,242);
+    padding-right: 10px;
+    padding-bottom: 5px;
+  }
+
+  .ysp-workReport-lable-sq{
+    padding: 10px 0px 10px 10px;
+    background: rgb(242,242,242);
+    overflow: hidden;
+    .ysp-workReport-uncheck{
+      float: left;
+      border-radius: 5px;
+      padding: 2px 5px;
+      border: 1px solid #4796ed;
+      margin: 5px;
+      color: #4796ed;
+      text-align: center;
+    }
+    .ysp-workReport-check{
+      float: left;
+      border-radius: 5px;
+      padding: 2px 5px;
+      border: 1px solid #4796ed;
+      margin: 5px;
+      text-align: center;
+      background: #4796ed;
+      color: #fff;
+    }
+  }
+  .ysp-workReport-sq{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgb(242,242,242);
+    padding-right: 10px;
+    padding-bottom: 5px;
   }
   
   .ysp-store-report-title-dialog{
@@ -11821,9 +11960,19 @@ section.ysp-store-details{
     margin: 10px;
     min-height: 120px;
     padding: 10px;
-    >div:nth-child(1){
-      min-height: 80px;
-      border: 1px solid #ececec;
+    border: 1px solid #ececec;
+    >div{
+      min-height: 60px;
+      border-bottom: 1px solid #ececec;
+      >div:nth-child(1){
+        color: #4796ed;
+      }
+      >div:nth-child(2){
+        >span:nth-child(2){
+          color: #4796ed;
+          padding: 0px 5px;
+        }
+      }
     }
   }
   

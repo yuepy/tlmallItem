@@ -10561,29 +10561,163 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
 .ysp-store-report-dialog {
   background: #fff;
 }
-.ysp-store-report-dialog > div:nth-child(1) {
-  border-bottom: 1px solid #ececec;
-  padding: 10px;
-  background: none !important;
+.ysp-store-report-dialog .ysp-store-report-dialog-top {
+  background-color: #fff;
+  padding: 0px 14px;
 }
-.ysp-store-report-dialog > div:nth-child(1) > span:nth-child(1) {
+.ysp-store-report-dialog .ysp-store-report-dialog-top input {
+  margin-bottom: 0px !important;
+  padding: .5rem .5rem;
+  border-radius: 5px;
+}
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:first-child {
+  border-bottom: 1px solid #e9e9e9;
+  padding: 10px 0px 10px 0px;
+  background: none !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:first-child > span:first-child {
   color: #999999;
-  padding-right: 10px;
-  background: none !important;
 }
-.ysp-store-report-dialog > div:nth-child(1) > span:nth-child(2) {
-  color: #4796ed;
-  background: none !important;
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:first-child > span:last-child {
+  color: #4789e0;
+  margin-left: 8px;
 }
-.ysp-store-report-dialog > div:nth-child(2) {
-  padding: 10px;
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:nth-child(2) {
+  padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid #e9e9e9;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-.ysp-store-report-dialog > div:nth-child(2) > span:nth-child(1) {
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:nth-child(2) > span:first-child {
   color: #999999;
-  padding-right: 10px;
 }
-.ysp-store-report-dialog > div:nth-child(2) > span:nth-child(2) {
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:nth-child(2) > span:last-child {
+  color: #4789e0;
+  margin-left: 8px;
+}
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:last-child {
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:last-child > span:first-child {
+  color: #999999;
+}
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:last-child > span:last-child {
+  color: #4789e0;
+  margin-left: 8px;
+}
+.ysp-store-report-dialog .ysp-store-report-dialog-top > div:last-child > span:last-child select {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  background: #fff;
+  padding: 0px 136px 0px 10px;
+  font-size: 12px;
+  display: block;
+  height: 36px;
+  background-size: 20px;
+  background-position: 179px;
+  background-repeat: no-repeat;
+  background-image: url(images/down-arrow-icon.png);
+}
+.ysp-store-report-dialog .ysp-workReport-lable {
+  padding: 10px;
+  background: #f2f2f2;
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+.ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-uncheck {
+  float: left;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 1px solid #4796ed;
+  margin: 5px;
   color: #4796ed;
+  text-align: center;
+}
+.ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-check {
+  float: left;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 1px solid #4796ed;
+  margin: 5px;
+  text-align: center;
+  background: #4796ed;
+  color: #fff;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-gd {
+  padding: 10px 0px 10px 10px;
+  background: #f2f2f2;
+  position: relative;
+  height: 55px;
+  overflow: hidden;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-uncheck {
+  float: left;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 1px solid #4796ed;
+  margin: 5px;
+  color: #4796ed;
+  text-align: center;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-check {
+  float: left;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 1px solid #4796ed;
+  margin: 5px;
+  text-align: center;
+  background: #4796ed;
+  color: #fff;
+}
+.ysp-store-report-dialog .ysp-workReport-gd {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #f2f2f2;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-sq {
+  padding: 10px 0px 10px 10px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-uncheck {
+  float: left;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 1px solid #4796ed;
+  margin: 5px;
+  color: #4796ed;
+  text-align: center;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-check {
+  float: left;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 1px solid #4796ed;
+  margin: 5px;
+  text-align: center;
+  background: #4796ed;
+  color: #fff;
+}
+.ysp-store-report-dialog .ysp-workReport-sq {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #f2f2f2;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 .ysp-store-report-dialog .ysp-store-report-title-dialog {
   background: #ececec;
@@ -10611,10 +10745,18 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   margin: 10px;
   min-height: 120px;
   padding: 10px;
-}
-.ysp-store-report-dialog .ysp-store-report-message-dialog > div:nth-child(1) {
-  min-height: 80px;
   border: 1px solid #ececec;
+}
+.ysp-store-report-dialog .ysp-store-report-message-dialog > div {
+  min-height: 60px;
+  border-bottom: 1px solid #ececec;
+}
+.ysp-store-report-dialog .ysp-store-report-message-dialog > div > div:nth-child(1) {
+  color: #4796ed;
+}
+.ysp-store-report-dialog .ysp-store-report-message-dialog > div > div:nth-child(2) > span:nth-child(2) {
+  color: #4796ed;
+  padding: 0px 5px;
 }
 .ysp-store-report-dialog .ysp-store-report-picturesrc {
   display: flex;
