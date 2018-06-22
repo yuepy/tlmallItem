@@ -3352,7 +3352,7 @@ __________________*/
           color:#999999;
         }
         >span:last-child{
-          color: #4789e0;
+          //color: #4789e0;
           margin-left: 8px;
           select{
             flex: 1;
@@ -3360,12 +3360,12 @@ __________________*/
             padding: 0;
             border-radius: 5px;
             background: #fff;
-            padding: 0px 136px 0px 10px;
+            padding: 0px 160px 0px 10px;
             font-size:12px;
             display: block;
             height: 36px;
             background-size: 20px;
-            background-position: 179px;
+            background-position: 185px;
             background-repeat: no-repeat;
             background-image: url(./images/down-arrow-icon.png);
           }
@@ -11823,12 +11823,12 @@ section.ysp-store-details{
           padding: 0;
           border-radius: 5px;
           background: #fff;
-          padding: 0px 136px 0px 10px;
+          padding: 0px 160px 0px 10px;
           font-size:12px;
           display: block;
           height: 36px;
           background-size: 20px;
-          background-position: 179px;
+          background-position: 185px;
           background-repeat: no-repeat;
           background-image: url(./images/down-arrow-icon.png);
         }
@@ -12001,6 +12001,9 @@ section.ysp-store-details{
         width: 100%;
         text-align: center;
         margin-left: 5px;
+        overflow: hidden;
+        text-overflow: ellipse;
+        white-space: nowrap;
       } 
     }
   }
@@ -15469,7 +15472,7 @@ div[data-componentsid="uiControl63_CWH4cl"],div[data-componentsid="uiControl316_
       color: #000000;
       font-size: 16px;
     }
-    >div:nth-child(2),>div:nth-child(3),>div:nth-child(4),>div:nth-child(5){
+    >div:nth-child(2){
       color: #999;
       display: flex;
       justify-content: flex-start;
@@ -15477,9 +15480,25 @@ div[data-componentsid="uiControl63_CWH4cl"],div[data-componentsid="uiControl316_
       width: 100%;
       >span:nth-child(1){
         padding-right: 5px;
+        width: 40%;
       }
       >span:nth-child(2){
-        width: 62%;
+        width: 60%;
+        word-break: break-word;
+      }
+    }
+    >div:nth-child(3),>div:nth-child(4),>div:nth-child(5){
+      color: #999;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      >span:nth-child(1){
+        padding-right: 5px;
+        width: 27%;
+      }
+      >span:nth-child(2){
+        width: 60%;
         word-break: break-word;
       }
     }
