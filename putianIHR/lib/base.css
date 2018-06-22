@@ -94,7 +94,8 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 }
 div[data-ysp-modelid="addWork"] .ysp_header_filter,
 div[data-ysp-modelid="EmployeeEditors"] .ysp_header_filter,
-div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
+div[data-ysp-modelid="educationalExperience"] .ysp_header_filter,
+div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   display: inline-block;
   background: url(../local/img/add.png) no-repeat;
   width: 40px;
@@ -2084,7 +2085,8 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
 }
 .ysp-ygdz-list-tt,
 .ysp-dhxx-list-tt,
-.ysp-jyjl-list-tt {
+.ysp-jyjl-list-tt,
+.ysp_family_item {
   margin: 10px auto;
   width: 95%;
   border: 1px solid #ddd;
@@ -2094,37 +2096,43 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
 }
 .ysp-ygdz-list-tt > p,
 .ysp-dhxx-list-tt > p,
-.ysp-jyjl-list-tt > p {
+.ysp-jyjl-list-tt > p,
+.ysp_family_item > p {
   padding: 10px 0;
   border-bottom: 1px solid #ddd;
   display: flex;
 }
 .ysp-ygdz-list-tt > p:last-child,
 .ysp-dhxx-list-tt > p:last-child,
-.ysp-jyjl-list-tt > p:last-child {
+.ysp-jyjl-list-tt > p:last-child,
+.ysp_family_item > p:last-child {
   border: none;
 }
 .ysp-ygdz-list-tt .fileEntrance,
 .ysp-dhxx-list-tt .fileEntrance,
-.ysp-jyjl-list-tt .fileEntrance {
+.ysp-jyjl-list-tt .fileEntrance,
+.ysp_family_item .fileEntrance {
   background: #fff url(../local/img/rightArrow.png) no-repeat;
   background-position: 100%;
   background-size: 10px;
 }
 .ysp-ygdz-list-tt .title,
 .ysp-dhxx-list-tt .title,
-.ysp-jyjl-list-tt .title {
+.ysp-jyjl-list-tt .title,
+.ysp_family_item .title {
   display: inline-block;
   width: 45%;
 }
 .ysp-ygdz-list-tt .title i,
 .ysp-dhxx-list-tt .title i,
-.ysp-jyjl-list-tt .title i {
+.ysp-jyjl-list-tt .title i,
+.ysp_family_item .title i {
   color: red;
 }
 .ysp-ygdz-list-tt .content,
 .ysp-dhxx-list-tt .content,
-.ysp-jyjl-list-tt .content {
+.ysp-jyjl-list-tt .content,
+.ysp_family_item .content {
   display: inline-block;
   width: 55%;
   overflow: hidden;
@@ -2132,9 +2140,11 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
 .ysp-ygdz-list-tt .content select,
 .ysp-dhxx-list-tt .content select,
 .ysp-jyjl-list-tt .content select,
+.ysp_family_item .content select,
 .ysp-ygdz-list-tt .content input[type='date'],
 .ysp-dhxx-list-tt .content input[type='date'],
-.ysp-jyjl-list-tt .content input[type='date'] {
+.ysp-jyjl-list-tt .content input[type='date'],
+.ysp_family_item .content input[type='date'] {
   display: inline-block;
   border: none;
   margin: 0;
@@ -2152,7 +2162,8 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
 }
 .ysp-ygdz-list-tt .content input,
 .ysp-dhxx-list-tt .content input,
-.ysp-jyjl-list-tt .content input {
+.ysp-jyjl-list-tt .content input,
+.ysp_family_item .content input {
   float: left;
   border: none;
   margin: 0;
@@ -2166,7 +2177,8 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
 }
 .ysp-ygdz-list-tt .content span,
 .ysp-dhxx-list-tt .content span,
-.ysp-jyjl-list-tt .content span {
+.ysp-jyjl-list-tt .content span,
+.ysp_family_item .content span {
   float: right;
   width: 10%;
   height: 25px;
@@ -2175,7 +2187,8 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
   background-size: 10px;
 }
 .ysp-dhxx-list-tt > p:last-child,
-.ysp-jyjl-list-tt > p:last-child {
+.ysp-jyjl-list-tt > p:last-child,
+.ysp_family_item > p:last-child {
   margin: 10px auto;
   padding: 5px;
   border-radius: 8px;
@@ -2187,11 +2200,13 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
   display: block;
 }
 .ysp-dhxx-list-tt .content input,
-.ysp-jyjl-list-tt .content input {
+.ysp-jyjl-list-tt .content input,
+.ysp_family_item .content input {
   width: 100%;
 }
 .ysp-dhxx-list-tt .ysp_switch_tt,
-.ysp-jyjl-list-tt .ysp_switch_tt {
+.ysp-jyjl-list-tt .ysp_switch_tt,
+.ysp_family_item .ysp_switch_tt {
   width: 100%;
   position: relative;
   display: inline-block;
@@ -2199,7 +2214,8 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
   vertical-align: middle;
 }
 .ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOff_tt,
-.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOff_tt {
+.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOff_tt,
+.ysp_family_item .ysp_switch_tt .ysp_switchOff_tt {
   float: right;
   border: 1px solid #d0d0d0;
   background: #fff;
@@ -2211,7 +2227,8 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
   transition: background .35s;
 }
 .ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOff_tt:before,
-.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOff_tt:before {
+.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOff_tt:before,
+.ysp_family_item .ysp_switch_tt .ysp_switchOff_tt:before {
   background: #fff;
   border: 1px solid #d0d0d0;
   top: -1px;
@@ -2227,7 +2244,8 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
   border-radius: 9999px;
 }
 .ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOn_tt,
-.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOn_tt {
+.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOn_tt,
+.ysp_family_item .ysp_switch_tt .ysp_switchOn_tt {
   float: right;
   border: 1px solid #59c831;
   background: #59c831;
@@ -2239,7 +2257,8 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
   transition: background .35s;
 }
 .ysp-dhxx-list-tt .ysp_switch_tt .ysp_switchOn_tt:after,
-.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOn_tt:after {
+.ysp-jyjl-list-tt .ysp_switch_tt .ysp_switchOn_tt:after,
+.ysp_family_item .ysp_switch_tt .ysp_switchOn_tt:after {
   background: #fff;
   border: 1px solid #d0d0d0;
   top: -1px;
@@ -2279,5 +2298,21 @@ div[data-ysp-modelid="educationalExperience"] .ysp_header_filter {
 }
 .ysp-dzyjdz-list-tt > p:last-child {
   border: none;
+}
+.ysp_family_item .search .content input {
+  width: 90%;
+}
+.ysp_family_item .detaileAddr {
+  display: block;
+}
+.ysp_family_item .detaileAddr .content {
+  display: block;
+  width: 100%;
+}
+.ysp_family_item .detaileAddr .content textarea {
+  margin: 0;
+  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 /*******************员工履历表（员工自助）end***************************/

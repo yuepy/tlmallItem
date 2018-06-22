@@ -92,7 +92,7 @@ div[data-ysp-modelid="salary"]{
     width: 50px;
   }
 }
-div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data-ysp-modelid="educationalExperience"]{
+div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data-ysp-modelid="educationalExperience"],div[data-ysp-modelid="familyNumber"]{
   .ysp_header_filter{
     display: inline-block;
     background: url(../local/img/add.png) no-repeat;
@@ -1971,7 +1971,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
   }
 }
 //员工地址	
-.ysp-ygdz-list-tt,.ysp-dhxx-list-tt,.ysp-jyjl-list-tt{
+.ysp-ygdz-list-tt,.ysp-dhxx-list-tt,.ysp-jyjl-list-tt,.ysp_family_item{
   margin: 10px auto;
   width: 95%;
   border: 1px solid #ddd;
@@ -2041,7 +2041,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
   }
 }
 //电话信息
-.ysp-dhxx-list-tt,.ysp-jyjl-list-tt{
+.ysp-dhxx-list-tt,.ysp-jyjl-list-tt,.ysp_family_item{
   >p:last-child{
     margin: 10px auto;
     padding: 5px;
@@ -2144,6 +2144,29 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
       // >span:last-child{
       //   text-align: left;
       // }
+    }
+  }
+}
+//家庭成员
+.ysp_family_item{
+  .search{
+    .content{
+      input{
+        width: 90%;
+      }
+    }
+  }
+  .detaileAddr{
+    display: block;
+    .content{
+      display: block;
+      width: 100%;
+      textarea{
+        margin:0;
+        resize: none;
+        border:1px solid #ddd;
+        border-radius: 8px;
+      }
     }
   }
 }
