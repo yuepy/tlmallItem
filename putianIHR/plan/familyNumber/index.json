@@ -5,6 +5,7 @@
   "jsFile": "index.js",
   "chineseName": "家庭成员",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control48_UJMHsu": {
       "location": {
@@ -179,6 +180,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -221,7 +226,9 @@
         "control92_lcpvd4"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.110\\/psc\\/ps_14\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_HR_SS_FAM_CPT\\.GBL\\?.*"
+      ]
     }
   },
   "flows": {
@@ -256,6 +263,16 @@
       "fromContextId": "context10_26LNq7",
       "fromAction": "doAction",
       "fromControlId": "control91_SK0n5U",
+      "toContexts": [
+        {
+          "toContextId": "context10_26LNq7"
+        }
+      ]
+    },
+    "flow88_QfPJ1r": {
+      "fromContextId": "context10_26LNq7",
+      "fromAction": "doAction",
+      "fromControlId": "control92_lcpvd4",
       "toContexts": [
         {
           "toContextId": "context10_26LNq7"
