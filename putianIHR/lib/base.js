@@ -34,13 +34,13 @@
         tblpstabs.querySelectorAll("a")[1].click();
       }
       //直接填写账号、用户
-      if(aWin.location.href.indexOf("cmd=login")!==-1){
-        doc.defaultView.frameElement.previousElementSibling.click();
-      };
+			if(aWin.location.href.indexOf("cmd=login")!==-1){
+				doc.defaultView.frameElement.previousElementSibling.click();
+			};
 			if(aWin.location.href.indexOf("cmd=logout")!==-1||aWin.location.href.indexOf("cmd=login")!==-1||aWin.location.href.indexOf("cmd=expire")!==-1){
         doc.querySelector("#userid").value="YSP";
         doc.querySelector("#pwd").value="12345678";
-      }
+			}
       
     },
 

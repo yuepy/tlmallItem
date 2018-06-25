@@ -21,7 +21,7 @@
     },
     getData_control89_btEK8F: function (elem) {
       if (elem) {
-        var data = { relationShip: [], relShipOpt: [], relShipId: [], familyName: [], familyNameId: [], isPrimaryCont: [], isPrimaryContId: [], addrType: [], addrTypeId: [], addrSearchId: [], isSameAddr: [], isSameAddrId: [], location: [], locationId: [], locationSearchId: [], detailAddr: [], detailAddrId: [], mobilePhone: [], mobilePhoneId: [], phone: [], phoneId: [], birthDay: [], birthDayId: [], political: [], politicalId: [], poliOpt: [], work: [], workId: [], position: [], positionId: [], deleteId: [] }; //员工关系
+        var data = { relationShip: [], relShipOpt: [], relShipId: [], familyName: [], familyNameId: [], isPrimaryCont: [], isPrimaryContId: [], addrType: [], addrTypeId: [], addrSearchId: [], isSameAddr: [], isSameAddrId: [], location: [], locationId: [], locationSearchId: [], detailAddr: [], detailAddrId: [], detailAddrType: [], mobilePhone: [], mobilePhoneId: [], phone: [], phoneId: [], birthDay: [], birthDayId: [], political: [], politicalId: [], poliOpt: [], work: [], workId: [], position: [], positionId: [], deleteId: [] }; //员工关系
         var relShipOpt = elem.querySelectorAll("select[id^='HPS_FAM_APR_RELATIONSHIP']")[0].querySelectorAll("option");[].forEach.call(relShipOpt, function (d1, i1) {
           data.relShipOpt.push(d1.textContent.trim());
         });var relShipSel = elem.querySelectorAll("select[id^='HPS_FAM_APR_RELATIONSHIP']");[].forEach.call(relShipSel, function (d2, i2) {
@@ -46,9 +46,18 @@
         var location = elem.querySelectorAll("input[id^='HPS_FAM_APR_LOCATION']");[].forEach.call(location, function (d8, i8) {
           data.location.push(d8.value);data.locationId.push(d8.getAttribute("id"));data.locationSearchId.push(d8.nextElementSibling.getAttribute("id"));
         }); //详细地址
-        var detailAddr = elem.querySelectorAll("input[id^='HPS_FAM_APR_ADDRESS']");[].forEach.call(detailAddr, function (d9, i9) {
-          data.detailAddr.push(d9.value);data.detailAddrId.push(d9.getAttribute("id"));
-        }); //手机号码
+        var detailDiv = elem.querySelectorAll("div[id*='HPS_FAM_APR_ADDRESS']");[].forEach.call(detailDiv, function (d9, i9) {
+          if (d9.querySelector("input[id^='HPS_FAM_APR_ADDRESS']")) {
+            data.detailAddr.push(d9.querySelector("input[id^='HPS_FAM_APR_ADDRESS']").value);data.detailAddrId.push(d9.querySelector("input[id^='HPS_FAM_APR_ADDRESS']").getAttribute("id"));data.detailAddrType.push("input");
+          } else if (d9.querySelector("span[id*='HPS_FAM_APR_ADDRESS']")) {
+            data.detailAddr.push(d9.textContent);data.detailAddrId.push(d9.getAttribute("id"));data.detailAddrType.push("span");
+          }
+        }); // var detailAddr = elem.querySelectorAll("input[id^='HPS_FAM_APR_ADDRESS']");
+        // [].forEach.call(detailAddr, function (d9, i9) {
+        //   data.detailAddr.push(d9.value);
+        //   data.detailAddrId.push(d9.getAttribute("id"));
+        // }); 
+        //手机号码
         var mobilePhone = elem.querySelectorAll("input[id^='HPS_FAM_APR_HPS_PHONE']");[].forEach.call(mobilePhone, function (d10, i10) {
           data.mobilePhone.push(d10.value);data.mobilePhoneId.push(d10.getAttribute("id"));
         }); //家庭电话
