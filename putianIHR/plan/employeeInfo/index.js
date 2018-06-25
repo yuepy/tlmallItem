@@ -14,23 +14,31 @@
       if (!elem) {
         return;
       }var data = {};if (elem) {
-        var trs = elem.querySelectorAll('tr');var trsLen = trs.length;for (var i = 0; i < trsLen; i++) {
-          if (i == 1) {
-            data.name = trs[i].querySelectorAll('td')[1].textContent;data.sex = trs[i].querySelectorAll('td')[2].textContent;data.sexCon = trs[i].querySelectorAll('td')[3].textContent;if (trs[i].querySelector('img')) {
-              data.src = trs[i].querySelector('img').getAttribute('src');
-            } else {
-              return '';
-            }
-          }if (i == 2) {
-            data.birth = trs[i].querySelectorAll('td')[0].textContent;data.birthCon = trs[i].querySelectorAll('td')[1].textContent;
-          }
-        }
+        //   var trs = elem.querySelectorAll('tr');
+        //   var trsLen = trs.length;
+        //   for (var i = 0; i < trsLen; i++) {
+        //     if (i == 1) {
+        //       data.name = trs[i].querySelectorAll('td')[1].textContent;
+        //       data.sex = trs[i].querySelectorAll('td')[2].textContent;
+        //       data.sexCon = trs[i].querySelectorAll('td')[3].textContent;
+        //       if (trs[i].querySelector('img')) {
+        //         data.src = trs[i].querySelector('img').getAttribute('src');
+        //       } else {
+        //         return '';
+        //       }
+        //     }
+        //     if (i == 2) {
+        //       data.birth = trs[i].querySelectorAll('td')[0].textContent;
+        //       data.birthCon = trs[i].querySelectorAll('td')[1].textContent;
+        //     }
+        //   }
+        data.name = elem.querySelector("#NAME").textContent;data.sexCon = elem.querySelector("#SEX").textContent;data.birthCon = elem.querySelector("#BIRTHDATE").textContent;data.src = elem.querySelector('img') && elem.querySelector('img').getAttribute('src');
       }return data;
     },
     doAction_uiControl16_pvBLnV: function (data, elem) {},
     getTemplate_uiControl16_pvBLnV: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  render: function() {    \n    var data=this.props.customData||[];\n    var _this=this;\n    var src=\"http://192.168.220.110\"+data.src;\n    return (\n      <div className=\"ysp-baseInfo-tt\">\n        <div className='ysp-baseInfoPhoto-tt'><h5>{data.name}</h5><img style={{width:'80px',height:'80px', borderRadius:'50%'}} src={src}/></div>\n        <p><span>{data.sex}\uFF1A</span><span>{data.sexCon}</span></p>\n        <p><span>{data.birth}\uFF1A</span><span>{data.birthCon}</span></p>\n      </div>\n    )\n  }\n});";
-      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    var data = this.props.customData || [];\n    var _this = this;\n    var src = \"http://192.168.220.110\" + data.src;\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-baseInfo-tt\" },\n      React.createElement(\n        \"div\",\n        { className: \"ysp-baseInfoPhoto-tt\" },\n        React.createElement(\n          \"h5\",\n          null,\n          data.name\n        ),\n        React.createElement(\"img\", { style: { width: '80px', height: '80px', borderRadius: '50%' }, src: src })\n      ),\n      React.createElement(\n        \"p\",\n        null,\n        React.createElement(\n          \"span\",\n          null,\n          data.sex,\n          \"\\uFF1A\"\n        ),\n        React.createElement(\n          \"span\",\n          null,\n          data.sexCon\n        )\n      ),\n      React.createElement(\n        \"p\",\n        null,\n        React.createElement(\n          \"span\",\n          null,\n          data.birth,\n          \"\\uFF1A\"\n        ),\n        React.createElement(\n          \"span\",\n          null,\n          data.birthCon\n        )\n      )\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {    \n    var data=this.props.customData||[];\n    var _this=this;\n    var src=\"http://192.168.220.110\"+data.src;\n    return (\n      <div className=\"ysp-baseInfo-tt\">\n        <div className='ysp-baseInfoPhoto-tt'><h5>{data.name}</h5>{data.src? <img style={{width:'80px',height:'80px', borderRadius:'50%'}} src={src}/>:<span></span>}</div>\n        <p><span>\u6027\u522B\uFF1A</span><span>{data.sexCon}</span></p>\n        <p><span>\u51FA\u751F\u65E5\u671F\uFF1A</span><span>{data.birthCon}</span></p>\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    var data = this.props.customData || [];\n    var _this = this;\n    var src = \"http://192.168.220.110\" + data.src;\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-baseInfo-tt\" },\n      React.createElement(\n        \"div\",\n        { className: \"ysp-baseInfoPhoto-tt\" },\n        React.createElement(\n          \"h5\",\n          null,\n          data.name\n        ),\n        data.src ? React.createElement(\"img\", { style: { width: '80px', height: '80px', borderRadius: '50%' }, src: src }) : React.createElement(\"span\", null)\n      ),\n      React.createElement(\n        \"p\",\n        null,\n        React.createElement(\n          \"span\",\n          null,\n          \"\\u6027\\u522B\\uFF1A\"\n        ),\n        React.createElement(\n          \"span\",\n          null,\n          data.sexCon\n        )\n      ),\n      React.createElement(\n        \"p\",\n        null,\n        React.createElement(\n          \"span\",\n          null,\n          \"\\u51FA\\u751F\\u65E5\\u671F\\uFF1A\"\n        ),\n        React.createElement(\n          \"span\",\n          null,\n          data.birthCon\n        )\n      )\n    );\n  }\n});";
     },
 
     getData_control18_ysLBGm: function (elem) {
