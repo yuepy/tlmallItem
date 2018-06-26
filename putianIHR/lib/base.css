@@ -21,8 +21,20 @@ ul li {
 img {
   border: none;
 }
-.editor-state [data-ysp="component"] {
-  padding-top: 0;
+.card {
+  border-radius: 0;
+  background: #f4f4f4;
+  box-shadow: none;
+  margin: 0;
+  position: fixed;
+  top: 2.7rem;
+  left: 0;
+  height: 90vh;
+  margin-top: -6px;
+  overflow-y: scroll;
+}
+.card-body {
+  padding: 0;
 }
 /******************************CustomHeader组件******************************************/
 div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
@@ -1066,7 +1078,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   background: #ccc;
 }
 .ysp-btn-box {
-  margin: 20px 5%;
+  margin: 20px 10px;
 }
 .ysp-btn-box button {
   border: none;

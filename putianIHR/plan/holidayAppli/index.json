@@ -486,6 +486,10 @@
         "data": {
           "tagName": "SPAN"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -523,7 +527,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     }
@@ -690,184 +694,231 @@
           }
         },
         {
-          "id": "uiControl11_Tbpng8",
-          "controlId": "control11_5uTlmB",
+          "id": "uiControl92_PqtSKA",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl11_Tbpng8",
-                "onGetTemplate": "getTemplate_uiControl11_Tbpng8"
-              }
+              "templateType": ""
             }
-          }
-        },
-        {
-          "id": "uiControl15_OcP4oU",
-          "controlId": "control15_0WwkP2",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl15_OcP4oU",
-                "onGetTemplate": "getTemplate_uiControl15_OcP4oU"
-              }
+          },
+          "layout": [
+            {
+              "id": "uiControl92_PqtSKAheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl92_PqtSKAbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl11_Tbpng8",
+                  "controlId": "control11_5uTlmB",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl11_Tbpng8",
+                        "onGetTemplate": "getTemplate_uiControl11_Tbpng8"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl15_OcP4oU",
+                  "controlId": "control15_0WwkP2",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl15_OcP4oU",
+                        "onGetTemplate": "getTemplate_uiControl15_OcP4oU"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl13_ZC4ohc",
+                  "controlId": "control13_F8Q8nG",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl13_ZC4ohc",
+                        "onGetTemplate": "getTemplate_uiControl13_ZC4ohc"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl12_wy6H6W",
+                  "controlId": "control12_Vsnxkq",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl12_wy6H6W",
+                        "onGetTemplate": "getTemplate_uiControl12_wy6H6W"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl76_J0ZVdw",
+                  "controlId": "control80_eA7hg4",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl76_J0ZVdw",
+                        "onGetTemplate": "getTemplate_uiControl76_J0ZVdw"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl17_xcHdpi",
+                  "controlId": "control17_3uqe6S",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl17_xcHdpi",
+                        "onGetTemplate": "getTemplate_uiControl17_xcHdpi"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl91_toil4v",
+                  "controlId": "control93_gLvabK",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl91_toil4v",
+                        "onGetTemplate": "getTemplate_uiControl91_toil4v"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl36_4rTy68",
+                  "controlId": "control41_nN90H7",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl36_4rTy68",
+                        "onGetTemplate": "getTemplate_uiControl36_4rTy68"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl18_oybhSC",
+                  "controlId": "control21_EDJpEf",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl18_oybhSC",
+                        "onGetTemplate": "getTemplate_uiControl18_oybhSC"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl43_5C7SAP",
+                  "controlId": "control43_0AveCg",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl43_5C7SAP",
+                        "onGetTemplate": "getTemplate_uiControl43_5C7SAP"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl16_4kVwFA",
+                  "controlId": "control16_kr744n",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl16_4kVwFA",
+                        "onGetTemplate": "getTemplate_uiControl16_4kVwFA"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl19_D72xbC",
+                  "controlId": "control19_c9rs44",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl19_D72xbC",
+                        "onGetTemplate": "getTemplate_uiControl19_D72xbC"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl92_PqtSKAfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
             }
-          }
-        },
-        {
-          "id": "uiControl13_ZC4ohc",
-          "controlId": "control13_F8Q8nG",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl13_ZC4ohc",
-                "onGetTemplate": "getTemplate_uiControl13_ZC4ohc"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl12_wy6H6W",
-          "controlId": "control12_Vsnxkq",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl12_wy6H6W",
-                "onGetTemplate": "getTemplate_uiControl12_wy6H6W"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl76_J0ZVdw",
-          "controlId": "control80_eA7hg4",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl76_J0ZVdw",
-                "onGetTemplate": "getTemplate_uiControl76_J0ZVdw"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl17_xcHdpi",
-          "controlId": "control17_3uqe6S",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl17_xcHdpi",
-                "onGetTemplate": "getTemplate_uiControl17_xcHdpi"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl91_toil4v",
-          "controlId": "control93_gLvabK",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl91_toil4v",
-                "onGetTemplate": "getTemplate_uiControl91_toil4v"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl36_4rTy68",
-          "controlId": "control41_nN90H7",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl36_4rTy68",
-                "onGetTemplate": "getTemplate_uiControl36_4rTy68"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl18_oybhSC",
-          "controlId": "control21_EDJpEf",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl18_oybhSC",
-                "onGetTemplate": "getTemplate_uiControl18_oybhSC"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl43_5C7SAP",
-          "controlId": "control43_0AveCg",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl43_5C7SAP",
-                "onGetTemplate": "getTemplate_uiControl43_5C7SAP"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl16_4kVwFA",
-          "controlId": "control16_kr744n",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl16_4kVwFA",
-                "onGetTemplate": "getTemplate_uiControl16_4kVwFA"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl19_D72xbC",
-          "controlId": "control19_c9rs44",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl19_D72xbC",
-                "onGetTemplate": "getTemplate_uiControl19_D72xbC"
-              }
-            }
-          }
+          ]
         }
       ]
     }
