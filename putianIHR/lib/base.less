@@ -633,9 +633,6 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
 }
 
 /***********************************请假申请 start*************************************/
-.PSERROR{
-  background-color: @tip;
-}
 .ysp-con-box{
   background-color:#fff;
   margin-top:10px;
@@ -738,7 +735,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
     }
     select.sel-type{
       display: inline-block;
-      height:100%;
+      height:2.5rem;
       background:url(../local/img/arrow-r.png) no-repeat right center #fff;
       border:none;
       text-align: center;
@@ -753,6 +750,9 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
       option{
         direction: ltr;
       }
+    }
+    select.PSERROR{
+      background-color: @tip;
     }
     .ysp-li-con{
       display: inline-block;
@@ -907,11 +907,15 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
   margin-top:10px;
   padding:0 5%;
   strong{
-    color:#f76f49;
+    color:@tip;
     font-weight: normal;
     font-size: @fontLarge+2;
     padding:0 5px;
   }
+}
+.ysp-tip{
+  color:@tip;
+  font-size:@fontSmall;
 }
 
 //请假原因
@@ -937,6 +941,9 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
     &:focus{
       color:#666;
     }
+  }
+  textarea.PSERROR{
+    background-color:@tip;
   }
 }
 

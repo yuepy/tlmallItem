@@ -682,9 +682,6 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   line-height: 100px;
 }
 /***********************************请假申请 start*************************************/
-.PSERROR {
-  background-color: #f76f49;
-}
 .ysp-con-box {
   background-color: #fff;
   margin-top: 10px;
@@ -781,7 +778,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 }
 .ysp-lists .ysp-r select.sel-type {
   display: inline-block;
-  height: 100%;
+  height: 2.5rem;
   background: url(../local/img/arrow-r.png) no-repeat right center #fff;
   border: none;
   text-align: center;
@@ -796,6 +793,9 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 }
 .ysp-lists .ysp-r select.sel-type option {
   direction: ltr;
+}
+.ysp-lists .ysp-r select.PSERROR {
+  background-color: #f76f49;
 }
 .ysp-lists .ysp-r .ysp-li-con {
   display: inline-block;
@@ -937,6 +937,10 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   font-size: 18px;
   padding: 0 5px;
 }
+.ysp-tip {
+  color: #f76f49;
+  font-size: 13px;
+}
 .ysp-reason {
   padding: 10px 5%;
 }
@@ -958,6 +962,9 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 }
 .ysp-reason textarea.reason:focus {
   color: #666;
+}
+.ysp-reason textarea.PSERROR {
+  background-color: #f76f49;
 }
 .annex-box {
   padding: 10px;
