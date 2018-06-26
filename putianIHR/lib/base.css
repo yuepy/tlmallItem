@@ -690,6 +690,9 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   border-bottom: 1px solid #e1e1e1;
 }
 .ysp-first-box {
+  border-bottom: none;
+}
+.ysp-top-box {
   margin-top: 0;
 }
 .ysp-lists {
@@ -772,7 +775,8 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 }
 .ysp-lists .ysp-r select.sel-type {
   display: inline-block;
-  background: url(../local/img/arrow-r.png) no-repeat right 0 #fff;
+  height: 100%;
+  background: url(../local/img/arrow-r.png) no-repeat right center #fff;
   border: none;
   text-align: center;
   margin: 0;
