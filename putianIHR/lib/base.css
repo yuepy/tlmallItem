@@ -72,7 +72,6 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
 .ysp_header_wrapper > span:nth-child(3) {
   width: 100%;
   font-size: 16px;
-  display: flex;
   flex: 0 1 20%;
 }
 .ysp_header_wrapper > span:nth-child(3) > span:first-child {
@@ -1707,6 +1706,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   background: #F8F8F8;
 }
 .ysp-xxbj-tt .ysp-xxbjDetail-tt {
+  position: relative;
   height: 40px;
   line-height: 40px;
   border-bottom: 1px solid #E1E1E1;
@@ -1714,6 +1714,11 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   background: #fff url(../local/img/rightArrow.png) no-repeat;
   background-position: 97%;
   background-size: 10px;
+}
+.ysp-xxbj-tt .ysp-xxbjDetail-tt > span {
+  position: absolute;
+  right: 25px;
+  color: #999;
 }
 .ysp-xxbj-tt .ysp-xxbjDetail-tt:nth-child(5) {
   margin: 15px 0 0  0;
