@@ -1,0 +1,1392 @@
+{
+  "version": "0.1",
+  "id": "readLog",
+  "targetURL": "http://fms.chinatowercom.cn:81/cwbase/web/gsprtf/main.aspx",
+  "jsFile": "index.js",
+  "requires": {
+    "enclosure": "../enclosure/index.json",
+    "toDoList": "../toDoList/index.json",
+    "menu": "../menu/index.json",
+    "checkForm": "../checkForm/index.json"
+  },
+  "chineseName": "审批日志",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control19_kO37rm": {
+      "location": {
+        "data": {
+          "tagName": "LI"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "审批日志"
+              ],
+              "visText": [
+                "审批日志"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"approvalLayout\"]//DIV[@id=\"approvalMain\"]/DIV[1]/DIV[3]/UL[1]/LI[2]",
+              "descendant::DIV[@id=\"approvalLayout\"]//DIV[@id=\"approvalMain\"]//LI",
+              "descendant::DIV[@id=\"approvalMain\"]//LI"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tabs-wrap UL.tabs LI.tabs-selected"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/UL[1]/LI[2]"
+          }
+        ]
+      },
+      "roles": "element,link",
+      "text": "审批日志",
+      "frameXPath": "//iframe[@id='rtf_frm_WFApprovePage']<<IFRAME>>",
+      "customJS": "if(elem.classList[0]==\"tabs-selected\"){return true;}else{return false;}"
+    },
+    "control28_TZiN3F": {
+      "location": {
+        "data": {
+          "tagName": "LI"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "我的待办(审批单据)"
+              ],
+              "visText": [
+                "我的待办(审批单据)"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"pagecontent\"]//DIV[@id=\"mainTab\"]/DIV[1]/DIV[3]/UL[1]/LI[3]",
+              "descendant::DIV[@id=\"pagecontent\"]//DIV[@id=\"mainTab\"]//LI",
+              "descendant::DIV[@id=\"mainTab\"]//LI"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.tabs-wrap UL.tabs LI.tabs-selected"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/UL[1]/LI[3]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "我的待办(审批单据)",
+      "frameXPath": "",
+      "customJS": "if(elem.classList[0]==\"tabs-selected\"){return true;}else{return false;}"
+    },
+    "control47_aaXJNl": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"approvalMain\"]//DIV[@id=\"WFBizLog\"]//DIV[@id=\"WFBizLogContainer\"]/DIV[1]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"WFBizLog\"]//DIV[@id=\"WFBizLogContainer\"]/DIV[1]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"WFBizLogContainer\"]/DIV[1]/DIV[1]/DIV[1]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-view"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control47_aaXJNl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@id='rtf_frm_WFApprovePage']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control7_gANQHD": {
+      "location": {
+        "data": {
+          "tagName": "UL"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"pagecontent\"]//DIV[@id=\"mainTab\"]/DIV[1]/DIV[3]/UL[1]",
+              "descendant::DIV[@id=\"pagecontent\"]//DIV[@id=\"mainTab\"]//UL",
+              "descendant::DIV[@id=\"mainTab\"]//UL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.tabs-header DIV.tabs-wrap UL.tabs"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/UL[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control7_gANQHD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control22_HgJHAM": {
+      "location": {
+        "data": {
+          "tagName": "UL"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"approvalLayout\"]//DIV[@id=\"approvalMain\"]/DIV[1]/DIV[3]/UL[1]",
+              "descendant::DIV[@id=\"approvalLayout\"]//DIV[@id=\"approvalMain\"]//UL",
+              "descendant::DIV[@id=\"approvalMain\"]//UL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.tabs-header.tabs-header-plain.tabs-header-noborder DIV.tabs-wrap UL.tabs"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/UL[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control22_HgJHAM"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@id='rtf_frm_WFApprovePage']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control14_KTy0Tp": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"approvalLayout\"]//DIV[@id=\"wfcstarea\"]/DIV[1]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"approvalLayout\"]//DIV[@id=\"wfcstarea\"]//DIV",
+              "descendant::DIV[@id=\"wfcstarea\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.easyui-layout.layout.easyui-fluid DIV.panel.layout-panel.layout-panel-center DIV.panel-body.panel-body-noheader.panel-body-noborder.layout-body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control14_KTy0Tp"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@id='rtf_frm_WFApprovePage']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control32_wwSEdD": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.panel-fit BODY.panel-noscroll DIV.window-mask"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[4]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "0",
+              "width": 987,
+              "height": 533
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control32_wwSEdD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@id='rtf_frm_WFApprovePage']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control37_zH76qP": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"approvalLayout\"]//DIV[@id=\"approvalMain\"]",
+              "descendant::DIV[@id=\"approvalMain\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.layout-panel.layout-panel-center.layout-split-center DIV.panel-body.panel-body-noheader.panel-body-noborder.layout-body.panel-noscroll DIV.easyui-tabs.tabs-container.easyui-fluid.mask-container"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control37_zH76qP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@id='rtf_frm_WFApprovePage']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control39_zUWnkS": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.panel-fit BODY.easyui-layout.layout.panel-noscroll DIV.panel.window.messager-window"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[23]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control39_zUWnkS"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context4_yV4JzM": {
+      "controls": [
+        "control47_aaXJNl",
+        "control7_gANQHD",
+        "control22_HgJHAM",
+        "control14_KTy0Tp",
+        "control32_wwSEdD",
+        "control37_zH76qP",
+        "control39_zUWnkS"
+      ],
+      "anchors": [
+        "control19_kO37rm",
+        "control28_TZiN3F"
+      ],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow12_veH5ZU": {
+      "toContexts": [
+        {
+          "toContextId": "context4_yV4JzM"
+        },
+        {
+          "toContextId": "context1_3egkun",
+          "toModelId": "menu"
+        }
+      ]
+    },
+    "flow21_Df6V0Q": {
+      "fromContextId": "context4_yV4JzM",
+      "fromAction": "doAction",
+      "fromControlId": "control22_HgJHAM",
+      "toContexts": [
+        {
+          "toContextId": "context4_yV4JzM"
+        },
+        {
+          "toContextId": "context5_DXi0HV",
+          "toModelId": "enclosure"
+        },
+        {
+          "toContextId": "context3_zW62XT",
+          "toModelId": "checkForm"
+        }
+      ]
+    },
+    "flow11_lASbIO": {
+      "fromContextId": "context4_yV4JzM",
+      "fromAction": "doAction",
+      "fromControlId": "control14_KTy0Tp",
+      "toContexts": [
+        {
+          "toContextId": "context4_yV4JzM"
+        }
+      ]
+    },
+    "flow13_noTenn": {
+      "fromContextId": "context4_yV4JzM",
+      "fromAction": "doAction",
+      "fromControlId": "control7_gANQHD",
+      "toContexts": [
+        {
+          "toContextId": "context4_yV4JzM"
+        },
+        {
+          "toContextId": "context2_QbPFRS",
+          "toModelId": "toDoList"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page4_vgJWWf": {
+      "contextId": "context4_yV4JzM",
+      "layout": [
+        {
+          "id": "uiControl8_WVzAgV",
+          "controlId": "control7_gANQHD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl8_WVzAgV",
+                "onGetTemplate": "getTemplate_uiControl8_WVzAgV"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl12_2lGN8F",
+          "controlId": "control22_HgJHAM",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl12_2lGN8F",
+                "onGetTemplate": "getTemplate_uiControl12_2lGN8F"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl43_5CarQt",
+          "controlId": "control47_aaXJNl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl43_5CarQt",
+                "onGetTemplate": "getTemplate_uiControl43_5CarQt"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl22_JctIIp",
+          "controlId": "control32_wwSEdD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl22_JctIIp",
+                "onGetTemplate": "getTemplate_uiControl22_JctIIp"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl10_GXqAV6",
+          "controlId": "control14_KTy0Tp",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl10_GXqAV6",
+                "onGetTemplate": "getTemplate_uiControl10_GXqAV6"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl28_uy7KAy",
+          "controlId": "control39_zUWnkS",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl28_uy7KAy",
+                "onGetTemplate": "getTemplate_uiControl28_uy7KAy"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl27_sgnmZu",
+          "controlId": "control37_zH76qP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl27_sgnmZu",
+                "onGetTemplate": "getTemplate_uiControl27_sgnmZu"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context4_yV4JzM": [
+          "浪潮GS管理软件"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context4_yV4JzM": [
+          "fms.chinatowercom.cn:81/cwbase/web/gsprtf/main.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context4_yV4JzM": [
+          [
+            "LitFavoriteFunction",
+            "LitRecentlyVisited",
+            "LitUname",
+            "WFApprovePage",
+            "_easyui_tree_",
+            "af-right",
+            "btn_changeBizDate",
+            "cm-autoRun",
+            "cm-fav",
+            "creator",
+            "diaChangeBizDate",
+            "fav-list",
+            "fav-win",
+            "funcContextMenu",
+            "funcTree",
+            "gspAutoRunItems",
+            "gspFavorites",
+            "gspFeedback",
+            "gspHistorys",
+            "gspLogoTxt",
+            "gspOpenFuncID",
+            "gspOpenIndex",
+            "gspWeb_AllFunc",
+            "gspfuncs",
+            "gspstate",
+            "his-list",
+            "hotline",
+            "indexPageUrl",
+            "isLogException",
+            "logo",
+            "mainTab",
+            "navbar",
+            "navlogotxt",
+            "newBizDate",
+            "nextBtn",
+            "noticeContent",
+            "noticeDetail",
+            "noticeGrid",
+            "noticeList",
+            "noticeTitle",
+            "nvLiFav",
+            "nvLiSearch",
+            "nv_logout",
+            "nv_person",
+            "nv_searchbtn",
+            "nv_searchtxt",
+            "nv_sys",
+            "nv_userPicBig",
+            "nv_userPicSml",
+            "nvbar-feedback",
+            "nvbar-msg",
+            "nvbar-user",
+            "nvbar-userdetail",
+            "nvbarUserLi",
+            "pagecontent",
+            "pagehead",
+            "panel-top",
+            "partialUrl",
+            "preBtn",
+            "publishDate",
+            "rtf_frm_WFApprovePage",
+            "rtf_frm_wftaskmgrcenterpc",
+            "rtfsession",
+            "scriptContainer",
+            "searchList",
+            "searchResult",
+            "sys_allFuncs",
+            "sys_fav",
+            "tabsMenu",
+            "tabsMenu-close",
+            "tabsMenu-closeall",
+            "tabsMenu-closeother",
+            "tabsMenu-refresh",
+            "wftaskmgrcenterpc"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context4_yV4JzM": [
+          [
+            "active",
+            "af-defico",
+            "af-detail",
+            "af-gp",
+            "af-gp-c",
+            "af-gp-h",
+            "af-gp-hi",
+            "af-gp-hl",
+            "af-gp-ht",
+            "bd-color-standard",
+            "bg-color-standard",
+            "bigheadimg",
+            "c_line",
+            "c_link",
+            "c_menu",
+            "c_menuitem",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-header",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-title",
+            "calendar-today",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combo-text",
+            "combo-value",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-cell",
+            "datagrid-cell-c-CREATOR",
+            "datagrid-cell-c-ID",
+            "datagrid-cell-c-IMPOTANCE",
+            "datagrid-cell-c-PUBLISHDATE",
+            "datagrid-cell-c-TITLE",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-sort-icon",
+            "datagrid-view",
+            "datagrid-wrap",
+            "datebox",
+            "datebox-button",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "dialog-content",
+            "easyui-datagrid",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-layout",
+            "easyui-linkbutton",
+            "easyui-menu",
+            "easyui-tabs",
+            "easyui-tooltip",
+            "easyui-tree",
+            "easyui-window",
+            "fav-list",
+            "fg-color-standard",
+            "headimg",
+            "ico-allfuns",
+            "ico-favorite",
+            "ico-search",
+            "icon-MoveLeft",
+            "icon-MoveRight",
+            "icon-star",
+            "l-btn",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-text",
+            "layout",
+            "layout-body",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-center",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "li-search",
+            "menu",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "nv-ico",
+            "nv-icoimg",
+            "nv-newmsg",
+            "nv-noborder",
+            "nv-text",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-icon",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-with-icon",
+            "search",
+            "tabs",
+            "tabs-closable",
+            "tabs-close",
+            "tabs-container",
+            "tabs-header",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-panels",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "text-center",
+            "tooltip-f",
+            "tree",
+            "tree-collapsed",
+            "tree-expanded",
+            "tree-file",
+            "tree-folder",
+            "tree-folder-open",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-node",
+            "tree-node-selected",
+            "tree-title",
+            "tright",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-shadow"
+          ],
+          [
+            "active",
+            "af-defico",
+            "af-detail",
+            "af-gp",
+            "af-gp-c",
+            "af-gp-h",
+            "af-gp-hi",
+            "af-gp-hl",
+            "af-gp-ht",
+            "bd-color-standard",
+            "bg-color-standard",
+            "bigheadimg",
+            "c_line",
+            "c_link",
+            "c_menu",
+            "c_menuitem",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-header",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-title",
+            "calendar-today",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combo-text",
+            "combo-value",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-cell",
+            "datagrid-cell-c-CREATOR",
+            "datagrid-cell-c-ID",
+            "datagrid-cell-c-IMPOTANCE",
+            "datagrid-cell-c-PUBLISHDATE",
+            "datagrid-cell-c-TITLE",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-sort-icon",
+            "datagrid-view",
+            "datagrid-wrap",
+            "datebox",
+            "datebox-button",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "dialog-content",
+            "easyui-datagrid",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-layout",
+            "easyui-linkbutton",
+            "easyui-menu",
+            "easyui-tabs",
+            "easyui-tooltip",
+            "easyui-tree",
+            "easyui-window",
+            "fav-list",
+            "fg-color-standard",
+            "headimg",
+            "ico-allfuns",
+            "ico-favorite",
+            "ico-search",
+            "icon-MoveLeft",
+            "icon-MoveRight",
+            "icon-star",
+            "l-btn",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-text",
+            "layout",
+            "layout-body",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-center",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "li-search",
+            "menu",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "nv-ico",
+            "nv-icoimg",
+            "nv-newmsg",
+            "nv-noborder",
+            "nv-text",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-icon",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-with-icon",
+            "search",
+            "tabs",
+            "tabs-closable",
+            "tabs-close",
+            "tabs-container",
+            "tabs-header",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-panels",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "text-center",
+            "tooltip",
+            "tooltip-arrow",
+            "tooltip-arrow-outer",
+            "tooltip-bottom",
+            "tooltip-content",
+            "tooltip-f",
+            "tree",
+            "tree-collapsed",
+            "tree-expanded",
+            "tree-file",
+            "tree-folder",
+            "tree-folder-open",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-node",
+            "tree-node-selected",
+            "tree-title",
+            "tright",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-shadow"
+          ],
+          [
+            "active",
+            "af-defico",
+            "af-detail",
+            "af-gp",
+            "af-gp-c",
+            "af-gp-h",
+            "af-gp-hi",
+            "af-gp-hl",
+            "af-gp-ht",
+            "bd-color-standard",
+            "bg-color-standard",
+            "bigheadimg",
+            "c_line",
+            "c_link",
+            "c_menu",
+            "c_menuitem",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-header",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-title",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combo-text",
+            "combo-value",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-cell",
+            "datagrid-cell-c-CREATOR",
+            "datagrid-cell-c-ID",
+            "datagrid-cell-c-IMPOTANCE",
+            "datagrid-cell-c-PUBLISHDATE",
+            "datagrid-cell-c-TITLE",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-sort-icon",
+            "datagrid-view",
+            "datagrid-wrap",
+            "datebox",
+            "datebox-button",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "dialog-content",
+            "easyui-datagrid",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-layout",
+            "easyui-linkbutton",
+            "easyui-menu",
+            "easyui-tabs",
+            "easyui-tooltip",
+            "easyui-tree",
+            "easyui-window",
+            "fav-list",
+            "fg-color-standard",
+            "headimg",
+            "ico-allfuns",
+            "ico-favorite",
+            "ico-search",
+            "icon-MoveLeft",
+            "icon-MoveRight",
+            "icon-star",
+            "l-btn",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-text",
+            "layout",
+            "layout-body",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-center",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "li-search",
+            "menu",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "nv-ico",
+            "nv-icoimg",
+            "nv-newmsg",
+            "nv-noborder",
+            "nv-text",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-icon",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-with-icon",
+            "search",
+            "tabs",
+            "tabs-closable",
+            "tabs-close",
+            "tabs-container",
+            "tabs-header",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-panels",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "text-center",
+            "tooltip-f",
+            "tree",
+            "tree-collapsed",
+            "tree-expanded",
+            "tree-file",
+            "tree-folder",
+            "tree-folder-open",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-node",
+            "tree-node-selected",
+            "tree-title",
+            "tright",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-shadow"
+          ],
+          [
+            "active",
+            "af-defico",
+            "af-detail",
+            "af-gp",
+            "af-gp-c",
+            "af-gp-h",
+            "af-gp-hi",
+            "af-gp-hl",
+            "af-gp-ht",
+            "bd-color-standard",
+            "bg-color-standard",
+            "bigheadimg",
+            "c_line",
+            "c_link",
+            "c_menu",
+            "c_menuitem",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-header",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-title",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combo-text",
+            "combo-value",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-cell",
+            "datagrid-cell-c-CREATOR",
+            "datagrid-cell-c-ID",
+            "datagrid-cell-c-IMPOTANCE",
+            "datagrid-cell-c-PUBLISHDATE",
+            "datagrid-cell-c-TITLE",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-sort-icon",
+            "datagrid-view",
+            "datagrid-wrap",
+            "datebox",
+            "datebox-button",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "dialog-content",
+            "easyui-datagrid",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-layout",
+            "easyui-linkbutton",
+            "easyui-menu",
+            "easyui-tabs",
+            "easyui-tooltip",
+            "easyui-tree",
+            "easyui-window",
+            "fav-list",
+            "fg-color-standard",
+            "headimg",
+            "ico-allfuns",
+            "ico-favorite",
+            "ico-search",
+            "icon-MoveLeft",
+            "icon-MoveRight",
+            "icon-star",
+            "l-btn",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-text",
+            "layout",
+            "layout-body",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-center",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "li-search",
+            "menu",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "messager-body",
+            "messager-button",
+            "messager-icon",
+            "messager-question",
+            "messager-window",
+            "nv-ico",
+            "nv-icoimg",
+            "nv-newmsg",
+            "nv-noborder",
+            "nv-text",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-icon",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-with-icon",
+            "search",
+            "tabs",
+            "tabs-closable",
+            "tabs-close",
+            "tabs-container",
+            "tabs-header",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-panels",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "text-center",
+            "tooltip-f",
+            "tree",
+            "tree-collapsed",
+            "tree-expanded",
+            "tree-file",
+            "tree-folder",
+            "tree-folder-open",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-node",
+            "tree-node-selected",
+            "tree-title",
+            "tright",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context4_yV4JzM": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "A/SPAN/IMG",
+            "A/SPAN/SPAN",
+            "DIV/A/IMG",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H3",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/STYLE",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "LI/A/IMG",
+            "LI/A/SPAN",
+            "LI/DIV/SPAN",
+            "LI/SPAN/IMG",
+            "LI/SPAN/INPUT-text",
+            "LI/SPAN/SPAN",
+            "LI/SPAN/UL",
+            "LI/UL/LI",
+            "SPAN/SPAN/SPAN",
+            "SPAN/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/SPAN",
+            "TD/SPAN/INPUT-hidden",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SPAN",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-text",
+            "TR/TD/SPAN",
+            "UL/LI/A",
+            "UL/LI/DIV",
+            "UL/LI/SPAN",
+            "UL/LI/UL"
+          ]
+        ]
+      }
+    }
+  }
+}

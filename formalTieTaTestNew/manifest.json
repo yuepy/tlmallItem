@@ -1,0 +1,70 @@
+{
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.7.0",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [],
+      "ignore": []
+    },
+    "component_match_mode": "polling",
+    "resource_inject": [],
+    "resource_filter": [
+      {
+        "url_match": [
+          "^http:\\/\\/fms\\.chinatowercom\\.cn.*"
+        ],
+        "charset": "utf-8",
+        "Accept-Language": "zh-Hans-CN",
+        "replaces": [
+          {
+            "regexp": "\\btop\\b",
+            "sub_str": "_ysp_top"
+          }
+        ]
+      }
+    ]
+  },
+  "override_urls": [],
+  "adapter_urls": [
+    {
+      "title": "login",
+      "url": "adapter://formalTieTa/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/fms\\.chinatowercom\\.cn:81\\/cwbase\\/web\\/login.*"
+      ],
+      "demo": [
+        "http://fms.chinatowercom.cn:81/cwbase/gsp/webservice/RESTFulWebService/RESTFulHandlerForWeb.ashx?resource=BizComponentRESTService&GSPWEB_VERB_TYPE=get"
+      ]
+    },
+    {
+      "title": "menu",
+      "url": "adapter://formalTieTa/plan/menu/index.json",
+      "matcher": [
+        "^http:\\/\\/fms\\.chinatowercom\\.cn:81\\/cwbase\\/web\\/gsprtf\\/main\\.aspx"
+      ]
+    },
+    {
+      "title": "loading",
+      "url": "adapter://formalTieTa/plan/loading/index.json",
+      "matcher": [
+        "^http:\\/\\/fms\\.chinatowercom\\.cn:81\\/cwbase\\/gsp\\/webservice\\/RESTFulWebService\\/RESTFulHandlerForWeb\\.ashx.*",
+        "^http:\\/\\/fms\\.chinatowercom\\.cn:81\\/cwbase\\/web\\/gspwf\\/approvalcenter\\.html.*",
+        "^http:\\/\\/fms\\.chinatowercom\\.cn:81\\/cwbase\\/web\\/login.*",
+        "^http:\\/\\/fms\\.chinatowercom\\.cn:81\\/cwbase\\/web\\/gspwf\\/zh-Cn\\/ApprovalCenter\\.html.*",
+        "^http:\\/\\/fms\\.chinatowercom\\.cn:81\\/cwbase\\/web\\/gspwf\\/zh-Cn\\/ApprovalCenter\\.html.*"
+      ],
+      "demo": [
+        "http://fms.chinatowercom.cn:81/cwbase/gsp/webservice/RESTFulWebService/RESTFulHandlerForWeb.ashx?resource=BizComponentRESTService&GSPWEB_VERB_TYPE=get"
+      ]
+    }
+  ],
+  "name": "铁塔财务",
+  "default_url": "http://fms.chinatowercom.cn:81/cwbase/web/gsprtf/main.aspx",
+  "scope": "formalTieTa",
+  "start_url": "enterplorer://formalTieTa/local/index.html",
+  "update_time": 1529662346226,
+  "fixed_version": 1
+}
