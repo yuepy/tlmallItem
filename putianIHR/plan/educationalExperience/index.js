@@ -22,12 +22,12 @@
       if (!elem) {
         return;
       }var data = { startime: [], endtime: [], school: [], major: [], studySel: [], gradeType: [], education: [], degree: [], edubackground: [], fileTable: [], fileSelOpt: [], isFirstEdu: [], isTZ: [], isZGXW: [], isZGXL: [], tips: [] };var RXtime = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_DATE1']");[].forEach.call(RXtime, function (d1, i1) {
-        data.startime.push(d1.value);data.endtime.push(d1.parentElement.parentElement.nextElementSibling.nextElementSibling.querySelector('input').value);
+        data.startime.push(d1.value.replace(/\//g, "-"));data.endtime.push(d1.parentElement.parentElement.nextElementSibling.nextElementSibling.querySelector('input').value.replace(/\//g, "-"));
       });var School = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_HPS_SCHOOL_NAME']");[].forEach.call(School, function (d2, i2) {
         data.school.push(d2.value);data.major.push(d2.parentElement.parentElement.nextElementSibling.nextElementSibling.querySelector('input').value);
       });var studySel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_STUDY_MET']");[].forEach.call(studySel, function (d3, i3) {
         var arrstudy = [];arrstudy.push(d3.querySelector("option[selected='selected']").textContent);var opt1 = d3.querySelectorAll('option');[].forEach.call(opt1, function (d33, i33) {
-          arrstudy.push(d33.textContent);
+          arrstudy.push(d33.textContent);if (d33.selected) {}
         });data.studySel.push(arrstudy);
       });var gradeSel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_GRADU_TYPE']");[].forEach.call(gradeSel, function (d4, i4) {
         var arrgrade = [];arrgrade.push(d4.querySelector("option[selected='selected']").textContent);var opt2 = d4.querySelectorAll('option');[].forEach.call(opt2, function (d44, i44) {
@@ -74,9 +74,9 @@
     doAction_uiControl55_VL6QSh: function (data, elem) {
       if (data.eventType == 'changeStartDate') {
         //debugger;
-        var index = data.dataCustom[0];var val = data.dataCustom[1];var target = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_DATE1']")[index];target.value = val;
+        var index = data.dataCustom[0];var val = data.dataCustom[1];var target = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_DATE1']")[index];target.value = val.replace(/-/g, "/");
       } else if (data.eventType == 'changeEndDate') {
-        var index = data.dataCustom[0];var val = data.dataCustom[1];var target = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_DATE2']")[index];target.value = val;
+        var index = data.dataCustom[0];var val = data.dataCustom[1];var target = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_DATE2']")[index];target.value = val.replace(/-/g, "/");
       } else if (data.eventType == 'blurschool') {
         var index = data.dataCustom[0];var val = data.dataCustom[1];var target = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_HPS_SCHOOL_NAME']")[index];target.value = val;
       } else if (data.eventType == 'blurmajor') {
