@@ -158,6 +158,41 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control346_DSlKeQ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"content\"]/DIV[2]",
+              "descendant::DIV[@id=\"content\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.contaner DIV.content.fill-content"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control346_DSlKeQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -166,7 +201,8 @@
         "control326_utfBUI",
         "control327_7ywfHq",
         "control328_GShoTC",
-        "control329_P6PZxU"
+        "control329_P6PZxU",
+        "control346_DSlKeQ"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -278,6 +314,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl336_NQ92bO",
+          "controlId": "control346_DSlKeQ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl336_NQ92bO",
+                "onGetTemplate": "getTemplate_uiControl336_NQ92bO"
+              }
+            }
+          }
         }
       ]
     }
@@ -305,6 +356,20 @@
             "cId",
             "content",
             "department",
+            "project",
+            "quType",
+            "search",
+            "srarch_date",
+            "srarch_date_",
+            "status",
+            "tbodyContent"
+          ],
+          [
+            "Page",
+            "cId",
+            "content",
+            "department",
+            "goback",
             "project",
             "quType",
             "search",
@@ -341,6 +406,40 @@
             "pointImage",
             "questionnaireTop",
             "sel-record-num",
+            "skip",
+            "skip-num",
+            "skip-right-icon",
+            "skip_count",
+            "skip_right_goto",
+            "sure-filter",
+            "t-btn-box",
+            "t-filter-box",
+            "table",
+            "title",
+            "title-a",
+            "title-b"
+          ],
+          [
+            "active",
+            "al-write",
+            "backImage",
+            "btn",
+            "clear-filter",
+            "clearfix",
+            "commpnPage",
+            "contaner",
+            "content",
+            "date",
+            "fill-content",
+            "fill-list",
+            "goback",
+            "header",
+            "ipt-time",
+            "ipt-week",
+            "mask",
+            "pagination",
+            "pointImage",
+            "questionnaireTop",
             "skip",
             "skip-num",
             "skip-right-icon",

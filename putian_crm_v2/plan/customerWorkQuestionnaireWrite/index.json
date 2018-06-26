@@ -84,6 +84,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -113,6 +117,32 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control344_xTxL4g": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control344_xTxL4g"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -120,7 +150,8 @@
       "controls": [
         "control325_bCd2et",
         "control332_asINRm",
-        "control342_nTl5kW"
+        "control342_nTl5kW",
+        "control344_xTxL4g"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -193,6 +224,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl334_UMPXSO",
+          "controlId": "control344_xTxL4g",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl334_UMPXSO",
+                "onGetTemplate": "getTemplate_uiControl334_UMPXSO"
+              }
+            }
+          }
         }
       ]
     }
@@ -210,7 +256,8 @@
         "context86_IafnWi": [
           "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=57fd7d3b2aaf4022b3c503254990193c&batchId=a500dc07b0c14a6c832c13729c28f969&cid=FB00011&datetime=2018-06-14",
           "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=dbb9d6255f664e768895f4773fcee303&batchId=&cid=FB00011&datetime=2018-06-25&cname=%E5%8D%97%E4%BA%AC%E8%8B%8F%E5%AE%81",
-          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=e682ed47055a4337b51a38dc5ce9e98b&batchId=&cid=FB00011&datetime=2018-06-25&cname=%E5%8D%97%E4%BA%AC%E8%8B%8F%E5%AE%81"
+          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=e682ed47055a4337b51a38dc5ce9e98b&batchId=&cid=FB00011&datetime=2018-06-25&cname=%E5%8D%97%E4%BA%AC%E8%8B%8F%E5%AE%81",
+          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=03af4e148c89429f8170bb0f06358f03&batchId=&cid=FB00011&datetime=2018-06-26&cname=%E5%8D%97%E4%BA%AC%E8%8B%8F%E5%AE%81"
         ]
       }
     },
@@ -258,6 +305,21 @@
             "batchId",
             "cid",
             "content",
+            "formTargertIframe",
+            "formUploadify",
+            "pic",
+            "pre_wrap_div",
+            "quId",
+            "remark",
+            "templateId",
+            "title"
+          ],
+          [
+            "baocuncaogao",
+            "batchId",
+            "cid",
+            "content",
+            "fafdedcb",
             "formTargertIframe",
             "formUploadify",
             "pic",
@@ -356,6 +418,32 @@
             "title-b",
             "xuan-tit",
             "xuanxiang-box"
+          ],
+          [
+            "backImage",
+            "btn",
+            "btn-box",
+            "contaner",
+            "content",
+            "fill-say",
+            "filledit-content",
+            "goback",
+            "header",
+            "height",
+            "mask",
+            "pointImage",
+            "pre-box",
+            "pre-content",
+            "pre-tit",
+            "pre-wrap",
+            "question-item",
+            "questionnaireTop",
+            "save",
+            "star",
+            "title",
+            "title-a",
+            "title-b",
+            "xuan-tit"
           ]
         ]
       }
@@ -437,6 +525,28 @@
             "LI/DIV/LABEL",
             "OL/LI/DIV",
             "OL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/OL",
+            "DIV/DIV/SPAN",
+            "DIV/FORM/INPUT-file",
+            "DIV/H4/I",
+            "DIV/OL/LI",
+            "OL/LI/EM",
+            "OL/LI/SPAN",
+            "OL/LI/TEXTAREA"
           ]
         ]
       }

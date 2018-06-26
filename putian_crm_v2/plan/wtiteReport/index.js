@@ -78,7 +78,8 @@
           var src = [],
               title = [],
               content = [];var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];if (scrTitleSplit) {
-            var urlSrc = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + urlSrc;
+            var urlSrc = decodeURI(scrTitleSplit);
+            var scrC = "http://192.168.220.82:8080/pttlCrm" + urlSrc;
           } else {
             var scrC = scrTitle;
           }src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
@@ -118,7 +119,8 @@
       } //搜索人员列表
       if (elem.ownerDocument.querySelector("#search-lists")) {
         if (elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0]) {
-          data.searchList = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
+          data.searchList = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");
+          var labelFor = "id" + searchListVal;if (elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
             var labelEl = elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor).parentNode.parentNode;data.personIndex = $(elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId)).find(".lists-one").index(labelEl);
           }
         }
@@ -142,7 +144,7 @@
           inputChange(data.dataCustom);break;case 'visitTime':
           visitTime(data.dataCustom);break;case 'buttonClick':
           buttonClick(data.dataCustom);break;}function icon_close(data) {
-        debugger;var a = [];var users = elem.ownerDocument.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
+        var a = [];var users = elem.ownerDocument.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
           var iconClose = users[i].querySelector("i").classList.contains("icon-close");if (iconClose) {
             a.push(users[i]);
           }
@@ -176,8 +178,8 @@
         //     if (targetWin) {
         //       targetWin.location.reload();
         //     }
-        //   }
 
+        //   }
         //   ysp.customHelper.refreshWinAfterWinName('sencondLevelIframeContainer', callback);
         var cwin = elem.ownerDocument.defaultView;function execute() {
           var flag = false;if (cwin.writeReportStatus == "completed") {
@@ -194,8 +196,7 @@
         }setTimeout(execute.bind(this), 300);
       }function delect(data) {
         elem.querySelectorAll('.file-item')[data].querySelector('.cancel').click();
-      }
-      function upValue(data) {
+      }function upValue(data) {
         var divs = elem.querySelectorAll('.lists-one');var text = data.sibling;for (var i = 0; i < divs.length; i++) {
           if (divs[i].querySelector('h6').textContent.replace(/^(\s*)|(\s*)$/g, '') == text) {
             divs[i].querySelector('textarea').value = data.Value;

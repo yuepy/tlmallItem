@@ -2574,6 +2574,12 @@ div[data-ysp-modelid="visitlookDetail"] #uiControl36_QLnuSc {
 .ysp-dialog-wrapper {
   position: fixed;
 }
+.ysp-dialog-wrapper .ysp_visitlook_reportDetail_atName {
+  min-height: 30px;
+  background: #fff;
+  padding: 10px;
+  border-top: 10px solid #ececec;
+}
 .ysp-dialog-wrapper .ysp_visitlook_reportDetail .ysp_reportDetail_title {
   padding: 0 15px;
   background: #fff;
@@ -2616,7 +2622,7 @@ div[data-ysp-modelid="visitlookDetail"] #uiControl36_QLnuSc {
 }
 .ysp-dialog-wrapper .ysp_visitlook_reportDetail .ysp_reportDetail_pic {
   padding: 10px;
-  margin: 40px 0 0 0;
+  margin: 10px 0 0 0;
   font-size: 13px;
   background: #fff;
 }
@@ -7056,8 +7062,8 @@ div[data-ysp-modelid="dayPSI"] > div:nth-child(3) {
 }
 .ysp_testPaper_wrapper .ysp_HESreport_btns button {
   margin: 0 auto;
-  width: 100px;
-  background: #2c81ff;
+  width: 120px;
+  background: #4796ed;
   border: none;
   color: #fff;
   padding: 10px;
@@ -7065,18 +7071,23 @@ div[data-ysp-modelid="dayPSI"] > div:nth-child(3) {
 }
 .ysp_testPaper_wrapper .ysp_HESreport_btns .ysp_HESreport_btns-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
-.ysp_testPaper_wrapper .ysp_HESreport_btns .ysp_HESreport_btns-buttons > button:nth-child(1) {
-  margin: 0 auto;
-  width: 100px;
+.ysp_testPaper_wrapper .ysp_HESreport_btns .ysp_HESreport_btns-buttons > span:nth-child(1) {
   background: #fff;
-  border: none;
   color: #000000;
-  padding: 10px;
-  border-radius: 3px;
+  padding: 5px 25px;
+  border-radius: 5px;
   border: 1px solid #ececec;
+  width: 45%;
+}
+.ysp_testPaper_wrapper .ysp_HESreport_btns .ysp_HESreport_btns-buttons > span:nth-child(2) {
+  background: #4796ed;
+  color: #fff;
+  padding: 5px 25px;
+  border-radius: 5px;
+  width: 45%;
 }
 .ysp_testPaper_wrapper .ysp_report_fileList {
   margin: 0 0 10px 0;
@@ -7092,8 +7103,8 @@ div[data-ysp-modelid="dayPSI"] > div:nth-child(3) {
 }
 .ysp_testPaper_wrapper .ysp_report_upPic .updata-image {
   float: left;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background: url('images/update.png') no-repeat center center;
   background-size: 100%;
   padding-top: 110px;
@@ -14060,6 +14071,7 @@ div[data-ysp-modelid="achievement"] .ysp-dialog-wrapper .ysp-header-wrapper-sale
   border: 1px solid #ececec;
   height: 36px;
   padding-left: 10px;
+  padding: 8px 64px 7px 10px;
 }
 /********问卷填写start*********/
 div[data-componentsid="uiControl312_FKv7tb"] > div:nth-child(1) .moudle-time,
@@ -14145,6 +14157,7 @@ div[data-componentsid="uiControl316_O3sq7E"] > div:nth-child(1) > div:nth-child(
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+  min-height: 60px;
 }
 .ysp-questionnaire-write-head > div:nth-child(2) {
   border-bottom: 15px solid #ececec;
@@ -14191,7 +14204,7 @@ div[data-componentsid="uiControl324_MTMHbM"] > div:nth-child(1) > div:nth-child(
 }
 div[data-componentsid="uiControl329_t8S3Mp"] > div:nth-child(1) .moudle-time,
 div[data-componentsid="uiControl330_eNHuwP"] > div:nth-child(1) .moudle-time {
-  z-index: 100000 !important;
+  z-index: 10000 !important;
 }
 .ysp-feed-back {
   overflow: hidden;

@@ -3010,6 +3010,12 @@ div[data-ysp-modelid="visitlookDetail"]{
 //拜访查看详情页里的报告
   .ysp-dialog-wrapper{
     position: fixed;
+    .ysp_visitlook_reportDetail_atName{
+      min-height: 30px;
+      background: #fff;
+      padding: 10px;
+      border-top: 10px solid #ececec;
+    }
     .ysp_visitlook_reportDetail{
       .ysp_reportDetail_title{
         padding: 0 15px;
@@ -3047,7 +3053,7 @@ div[data-ysp-modelid="visitlookDetail"]{
       }
       .ysp_reportDetail_pic{
         padding: 10px;
-        margin:40px 0 0 0;
+        margin:10px 0 0 0;
         font-size:@normalFont;
         background:#fff;
         .picDetail_item{
@@ -7878,8 +7884,8 @@ div[data-ysp-modelid="dayPSI"]{
     text-align: center;
     button{
       margin: 0 auto;
-      width:100px;
-      background:#2c81ff;
+      width:120px;
+      background:#4796ed;
       border:none;
       color: #fff;
       padding: 10px;
@@ -7887,17 +7893,23 @@ div[data-ysp-modelid="dayPSI"]{
     }
     .ysp_HESreport_btns-buttons{
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
-      >button:nth-child(1){
-        margin: 0 auto;
-        width:100px;
+      >span:nth-child(1){
         background:#fff;
-        border:none;
         color: #000000;
-        padding: 10px;
-        border-radius:3px;
+        padding: 5px 25px;
+        border-radius:5px;
         border: 1px solid #ececec;
+        width: 45%;
+      }
+      >span:nth-child(2){
+        background: #4796ed;
+        color: #fff;
+        padding: 5px 25px;
+        border-radius: 5px;
+        width: 45%;
+        
       }
     }
   }
@@ -7914,8 +7926,8 @@ div[data-ysp-modelid="dayPSI"]{
     margin: 0 0 10px 0;
      .updata-image{
         float: left;
-        width:100px;
-        height: 100px;
+        width:50px;
+        height: 50px;
         background: url('./images/update.png') no-repeat center center;
         background-size: 100%;
         padding-top: 110px;
@@ -15487,6 +15499,7 @@ div[data-ysp-modelid="achievement"]{
       border: 1px solid #ececec;
       height: 36px;
       padding-left: 10px;
+      padding: 8px 64px 7px 10px;
     }
   }
 }
@@ -15578,7 +15591,8 @@ div[data-componentsid="uiControl63_CWH4cl"],div[data-componentsid="uiControl316_
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 100%
+    width: 100%;
+    min-height: 60px;    
   }
   >div:nth-child(2){
     border-bottom: 15px solid #ececec;
@@ -15636,7 +15650,7 @@ div[data-componentsid="uiControl324_MTMHbM"]{
 div[data-componentsid="uiControl329_t8S3Mp"],div[data-componentsid="uiControl330_eNHuwP"]{
   >div:nth-child(1){
     .moudle-time{
-      z-index: 100000 !important;
+      z-index: 10000 !important;
     }
   }
 }

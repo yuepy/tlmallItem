@@ -23,7 +23,35 @@
     getData_control341_NN0az8: function (elem) {
       if (!elem) {
         return;
-      }var content = ysp.customHelper.getTableData(elem, ["题目名称", "选项", "数量", "比例"]);return content;
+      } // var content = ysp.customHelper.getTableData(elem, ["题目名称"]); //return content;
+      // var data = {
+      //   num: []
+      // };
+      // var trs = elem.ownerDocument.querySelector("#tbody").querySelectorAll("tr");
+      // for (var i = 0; i < trs.length; i++) {
+      //   var td = trs[i].querySelectorAll("td")[0];
+      //   var tdFlag = td.getAttribute("rowspan");
+      //   if (tdFlag) {
+      //     var index = tdFlag;
+      //   }
+      //   data.num.push(index);
+      // }
+      //return data;
+      var data = { subArr: [] };var trs = elem.ownerDocument.querySelector("#tbody").querySelectorAll("tr");var tds = [];var tempArr = [];var newArr = [];[].forEach.call(trs, function (item, index) {
+        var aa = [];aa.push(item.querySelectorAll("td")[1].textContent); //aa.push(item.querySelectorAll("td")[2].textContent);
+        //aa.push(item.querySelectorAll("td")[3].textContent);
+        tds.push(aa);
+      });var n = 0;for (var i = 0; i < tds.length; i++) {
+        if (i + 1 < tds.length) {
+          if (tds[i][1] != tds[i + 1][1]) {
+            newArr.push(tds.slice(n, i + 1));n = i + 1;
+          }
+        } else if (i + 1 == tds.length) {
+          if (tds[i] != tds[i + 1]) {
+            newArr.push(tds.slice(n, i + 1));n = i + 1;
+          }
+        }
+      }data.subArr.push(newArr);return data;
     },
     doAction_uiControl331_06oxt9: function (data, elem) {},
     getTemplate_uiControl331_06oxt9: function () {

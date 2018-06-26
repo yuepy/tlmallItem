@@ -76,6 +76,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -105,6 +109,32 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control347_sMfM3W": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control347_sMfM3W"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -112,7 +142,8 @@
       "controls": [
         "control330_6gAef1",
         "control333_QupCG8",
-        "control343_8TrllQ"
+        "control343_8TrllQ",
+        "control347_sMfM3W"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -195,6 +226,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl337_CMV3UG",
+          "controlId": "control347_sMfM3W",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl337_CMV3UG",
+                "onGetTemplate": "getTemplate_uiControl337_CMV3UG"
+              }
+            }
+          }
         }
       ]
     }
@@ -212,7 +258,8 @@
         "context88_MKRZN9": [
           "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=74b1df8f885344e394f313868dfba7b5&batchId=&cid=SP1029937&datetime=2018-06-14",
           "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=7ab101cd12c544e48d4e06121c03320d&batchId=&cid=0&datetime=2018-06-25&cname=",
-          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=cb7a574ea0074afdae7aff4676fb9390&batchId=&cid=C8033&datetime=2018-06-25&cname=%E6%B1%9F%E8%8B%8F%E4%BA%94%E6%98%9F%E7%94%B5%E5%99%A8%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"
+          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=cb7a574ea0074afdae7aff4676fb9390&batchId=&cid=C8033&datetime=2018-06-25&cname=%E6%B1%9F%E8%8B%8F%E4%BA%94%E6%98%9F%E7%94%B5%E5%99%A8%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8",
+          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=3d876d17e6304886b5511bd5e2334706&batchId=&cid=C8033&datetime=2018-06-26&cname=%E6%B1%9F%E8%8B%8F%E4%BA%94%E6%98%9F%E7%94%B5%E5%99%A8%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"
         ]
       }
     },
@@ -261,6 +308,27 @@
             "batchId",
             "cid",
             "content",
+            "formTargertIframe",
+            "formUploadify",
+            "pic",
+            "pre_wrap_div",
+            "quId",
+            "remark",
+            "templateId",
+            "title"
+          ],
+          [
+            "baocuncaogao",
+            "batchId",
+            "ceaabffde",
+            "cefebddedcaaa",
+            "cid",
+            "content",
+            "dccfbafddf",
+            "dfdbbbeddadba",
+            "ebcacacbbfac",
+            "eeceececfc",
+            "fdbbdabedcbadde",
             "formTargertIframe",
             "formUploadify",
             "pic",
@@ -360,6 +428,33 @@
             "title-b",
             "xuan-tit",
             "xuanxiang-box"
+          ],
+          [
+            "backImage",
+            "btn",
+            "btn-box",
+            "contaner",
+            "content",
+            "fill-say",
+            "filledit-content",
+            "goback",
+            "header",
+            "height",
+            "mask",
+            "pointImage",
+            "pre-box",
+            "pre-content",
+            "pre-tit",
+            "pre-wrap",
+            "question-item",
+            "questionnaireTop",
+            "save",
+            "star",
+            "title",
+            "title-a",
+            "title-b",
+            "xuan-tit",
+            "xuanxiang-box"
           ]
         ]
       }
@@ -441,6 +536,32 @@
             "LI/DIV/LABEL",
             "OL/LI/DIV",
             "OL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/OL",
+            "DIV/DIV/SPAN",
+            "DIV/FORM/INPUT-file",
+            "DIV/H4/I",
+            "DIV/LABEL/I",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/OL/LI",
+            "LI/DIV/LABEL",
+            "OL/LI/DIV",
+            "OL/LI/EM",
+            "OL/LI/SPAN",
+            "OL/LI/TEXTAREA"
           ]
         ]
       }
