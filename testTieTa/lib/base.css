@@ -1,0 +1,1072 @@
+.tit {
+  display: inline-block;
+  background: red;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.tit .goback {
+  width: 20%;
+  margin-top: 15px;
+  color: #fff;
+  margin-left: 15px;
+  float: left;
+}
+.tit .goback .ysp_goback {
+  display: inline-block;
+  width: 22px;
+  height: 30px;
+  background: url(../local/img/left.png) no-repeat;
+  background-size: 50%;
+  float: left;
+}
+.tit .goback .text {
+  display: inline-block;
+  float: left;
+  margin-left: -10px;
+  margin-top: -2px;
+}
+.tit .title {
+  width: 60%;
+  float: left;
+}
+.tit .title h1 {
+  margin-top: 15px;
+  padding-left: 25px;
+  color: #fff;
+  font-size: 18px;
+}
+.tit .spAll {
+  width: 20%;
+  float: left;
+}
+.tit .readAll {
+  width: 20%;
+  margin-top: 13px;
+  color: #fff;
+  float: right;
+  margin-right: 10px;
+}
+label b {
+  width: 8px;
+  height: 28px;
+  background: url(../local/img/img.png) no-repeat;
+  background-size: 50%;
+  float: left;
+  margin-top: 5px;
+}
+.botton {
+  width: 100%;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.botton .btn {
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 10px;
+  background: red;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+.container {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  overflow: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+}
+.container > span {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 0.625rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.1875rem;
+  white-space: nowrap;
+}
+.container > span > span {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transform: skew(-10deg);
+  transform: skew(-10deg);
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 1.2;
+  vertical-align: middle;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.375rem;
+  padding-right: 1.375rem;
+  border-radius: 0.1875rem;
+  color: #202020;
+  background: #f2f2f2;
+  transition: background 0.5s;
+}
+.container > span > span > span {
+  display: inline-block;
+  line-height: 1;
+  -webkit-transform: skew(10deg);
+  transform: skew(10deg);
+  vertical-align: text-bottom;
+}
+.container > span:first-child {
+  flex-basis: auto !important;
+  margin-left: 0.625rem;
+  margin-right: 0;
+  overflow: hidden;
+  z-index: 1;
+  flex-basis: 21.875%;
+}
+.container > span:first-child > span {
+  left: -0.625rem;
+}
+.container > span:last-child {
+  flex-basis: auto !important;
+  margin-right: 0.625rem;
+  margin-left: 0;
+  overflow: hidden;
+  z-index: 1;
+  flex-basis: 21.875%;
+}
+.container > span:last-child > span {
+  right: -0.625rem;
+}
+.container .selected > span {
+  color: #fff;
+  background: #ffc800;
+}
+.ysp_mask {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.ysp_mask .ysp_container {
+  width: 90%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+.ysp_mask .ysp_container .ysp_title {
+  text-align: center;
+  background: red;
+  color: white;
+  padding: 5px 0;
+  font-weight: 600;
+}
+.ysp_mask .ysp_container .ysp_advice b,
+.ysp_mask .ysp_container .conclusion b {
+  width: 8px;
+  height: 28px;
+  background: url(../local/img/Titleicon.png) no-repeat;
+  background-size: 50%;
+  float: left;
+  margin-top: 5px;
+}
+.ysp_mask .ysp_container .ysp_advice span {
+  padding: 5px 0;
+  color: red;
+  font-weight: 600;
+}
+.ysp_mask .ysp_container .ysp_advice textarea {
+  width: 90%;
+  margin-left: 17px;
+  margin-top: 5px;
+}
+.ysp_mask .ysp_container .conclusion span {
+  padding: 5px 0;
+  color: red;
+  font-weight: 600;
+}
+.ysp_mask .ysp_container .conclusion div {
+  width: 80%;
+  margin-left: 70px;
+}
+.ysp_mask .ysp_container .conclusion div label {
+  width: 50%;
+  float: left;
+}
+.ysp_mask .ysp_container .conclusion div label span:last-child {
+  color: #3a3a3a;
+  font-weight: normal;
+}
+.ysp_mask .ysp_container .conclusion div label .checked {
+  background: url(../local/img/radiotrue.png) no-repeat;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  display: block;
+  float: left;
+}
+.ysp_mask .ysp_container .conclusion div label .unchecked {
+  background: url(../local/img/radiofasle.png) no-repeat;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  display: block;
+  float: left;
+}
+.ysp_mask .ysp_container .ysp_btn {
+  width: 90%;
+  margin-left: 35px;
+}
+.ysp_mask .ysp_container .ysp_btn .btns {
+  width: 40%;
+  background: #6e768d;
+  float: left;
+}
+.ysp_mask .ysp_container .ysp_btn .btn {
+  width: 40%;
+  background: #007df7;
+  float: left;
+  margin-left: 20px;
+}
+.ysp_mask .ysp_container .ysp_btn .btn,
+.ysp_mask .ysp_container .ysp_btn .btns {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  height: 38px;
+  font-size: 16px;
+  display: inline-block;
+}
+.ysp_mask .suces {
+  background: url(../local/img/success.png) no-repeat;
+  background-size: 50%;
+  width: 400px;
+  height: 240px;
+  margin-left: 90px;
+  display: block;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.ysp_mask .load {
+  background: #fff;
+  width: 60%;
+  height: 55px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border: 1px solid #FF0000;
+  padding: 10px;
+  border-radius: 10px;
+}
+.ysp_mask .load .loading {
+  background: url(../local/img/loading.gif) no-repeat;
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: left;
+}
+.ysp_mask .load .loadText {
+  background: #fff;
+  display: block;
+  height: 30px;
+  color: #FF0000;
+  padding-top: 3px;
+}
+.ysp_mask .spnull {
+  width: 200px;
+  height: 50px;
+  margin-left: 90px;
+  display: block;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 25%;
+  background: #FF0000;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 10px;
+}
+/**********page组件zyt*********/
+.ysp-PagesMessage-container {
+  margin-top: 20px;
+  padding: 0 0 20px 0;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartOne {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: #888580;
+  margin-bottom: 10px;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartOne .ysp-PagesMessage-select {
+  width: auto;
+  margin-right: 10px;
+  padding: 2px 5% 2px 1%;
+  text-align: center;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartOne .ysp-PagesMessage-select option {
+  text-align: center;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartTwo {
+  display: flex;
+  justify-content: center;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartTwo span {
+  width: 36px;
+  height: 31px;
+  line-height: 31px;
+  color: #888580;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-page-num {
+  width: 15%;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-pages-input {
+  width: 36px;
+  height: 29px;
+  background: white;
+  color: red;
+  border: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 1px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-PagesMessage-leftBM-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  margin-top: 5px;
+  background: url(../local/img/ysp-leftBM-icon.png) no-repeat 0 0;
+  margin-right: 10px;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-PagesMessage-left-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  margin-top: 5px;
+  background: url(../local/img/ysp-left-icon.png) no-repeat 0 0;
+  margin-right: 10px;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-PagesMessage-right-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  margin-top: 5px;
+  background: url(../local/img/ysp-right-icon.png) no-repeat 0 0;
+  margin-right: 10px;
+}
+.ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .ysp-PagesMessage-rightBM-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  margin-top: 5px;
+  background: url(../local/img/ysp-rightBM-icon.png) no-repeat 0 0;
+  margin-right: 10px;
+}
+.messagers .messager {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+}
+.messagers .messager .messager-title {
+  width: 70%;
+  margin-left: 70px;
+  color: white;
+  background: red;
+  margin-top: 50%;
+}
+.messagers .messager .messager-body {
+  background: white;
+  width: 70%;
+  margin-left: 70px;
+}
+.messagers .messager .messager-body .messager-news {
+  font-size: 14px;
+  margin-left: 20px;
+  padding-top: 10px;
+}
+.messagers .messager .messager-body .btns {
+  margin-top: 10px;
+  margin-left: 40px;
+  width: 80%;
+  margin-bottom: 15px;
+}
+.messagers .messager .messager-body .btns .btn {
+  width: 40%;
+  font-size: 14px;
+  color: white;
+  background: red;
+}
+.alert_login {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  z-index: 10;
+  height: 300vh;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background {
+  width: 100%;
+  height: 100vh;
+  background: url(../local/img/logo.png) no-repeat 0 0;
+  background-size: 100%	100%;
+  display: flex;
+  align-items: center;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card {
+  width: 100%;
+  margin: 0 0.625rem;
+  padding: 2rem 0.45rem;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .date .dateval {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+  height: 42px;
+  float: left;
+  padding: 0 0;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .date input[type=date]::-webkit-inner-spin-button {
+  visibility: hidden;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .date input[type=date]::-webkit-calendar-picker-indicator {
+  background: url(../local/img/dateImg.png) no-repeat;
+  color: rgba(255, 255, 255, 0);
+  margin: 0 0;
+  height: 25px;
+  width: 10%;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .userName {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.4);
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .pass {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.4);
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .rmbbox {
+  width: 100%;
+  float: left;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .rmbbox label {
+  width: 33%;
+  float: left;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .rmbbox label .checked {
+  background: url(../local/img/checktrue.png) no-repeat;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  display: block;
+  float: left;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .rmbbox label .unchecked {
+  background: url(../local/img/checkfalse.png) no-repeat;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  display: block;
+  float: left;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .rmbbox label .text {
+  float: left;
+  font-size: 14px;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .rmbbox #wjmm {
+  width: 25%;
+  color: white;
+  float: right;
+  font-size: 14px;
+}
+div[data-ysp-modelid="login"] .ysp_logo_background .ysp-login-card .btn {
+  width: 100%;
+  background: #2f4bc7;
+  border: none;
+  color: white;
+}
+div[data-ysp-modelid="menu"] {
+  background: #f4f4f4;
+}
+div[data-ysp-modelid="menu"] .content_body {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  height: 50px;
+  border-bottom: 1px solid #f4f4f4;
+  padding-top: 10px;
+  margin: 0 0;
+}
+div[data-ysp-modelid="menu"] .content_body .logo {
+  display: block;
+  width: 30px;
+  height: 40px;
+  background: url(../local/img/OA.png) no-repeat;
+  background-size: 100%;
+  margin-left: 10px;
+  float: left;
+}
+div[data-ysp-modelid="menu"] .content_body .text {
+  margin: 0 0;
+  margin-left: 10px;
+}
+div[data-ysp-modelid="menu"] .content_body .more {
+  width: 2%;
+  float: right;
+  display: block;
+  width: 22px;
+  height: 30px;
+  background: url(../local/img/more.png) no-repeat;
+  background-size: 100%;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList {
+  background: #f6f6f6;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp_list_card {
+  background: #FFF;
+  padding: 20px 10px;
+  margin: 15px 0;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList h5 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp_card_top {
+  position: relative;
+  margin-bottom: 10px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp_card_top > div {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .foldIcon,
+div[data-ysp-modelid="toDoList"] .ysp_detailList .unFoldIcon {
+  background: url(../local/img/ysp-bottom-icon.png) no-repeat;
+  background-size: 20px;
+  background-position: 0px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .unFoldIcon {
+  background: url(../local/img/ysp-top-icon.png) no-repeat;
+  background-size: 20px;
+  background-position: 0px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .selectedIcon,
+div[data-ysp-modelid="toDoList"] .ysp_detailList .unselected {
+  background: url(../local/img/ysp-checkboxes.png) no-repeat;
+  background-size: 100%;
+  background-position: 0px;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .unselected {
+  background: url(../local/img/ysp-nocheckboxs.png) no-repeat;
+  background-size: 100%;
+  background-position: 0px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp_card_panel {
+  border-top: 2px solid #f3f3f4;
+  margin-top: 10px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp_card_panel > div {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .gj {
+  float: right;
+  font-size: 14px;
+  color: #9e9fa0;
+  margin-right: 20px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp-PagesMessage-container {
+  width: 90%;
+  margin-left: 35px;
+  height: 30px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp-PagesMessage-container .ysp-PagesMessage-PartOne {
+  float: left;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp-PagesMessage-container .ysp-PagesMessage-PartOne .ysp-PagesMessage-select {
+  margin-top: 19px;
+  width: 45px;
+  height: 30px;
+  color: #828384;
+  padding: 0 0;
+  background-color: #fff;
+  border: none;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp-PagesMessage-container .ysp-PagesMessage-PartTwo {
+  float: left;
+}
+div[data-ysp-modelid="toDoList"] .ysp_detailList .ysp-PagesMessage-container .ysp-PagesMessage-PartTwo .text {
+  font-size: 14px;
+  color: #828384;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container {
+  width: 90%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .ysp_title {
+  text-align: center;
+  background: red;
+  color: white;
+  padding: 5px 0;
+  font-weight: 600;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .ysp_advice b,
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .conclusion b {
+  width: 8px;
+  height: 28px;
+  background: url(../local/img/Titleicon.png) no-repeat;
+  background-size: 50%;
+  float: left;
+  margin-top: 5px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .ysp_advice span {
+  padding: 5px 0;
+  color: red;
+  font-weight: 600;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .ysp_advice textarea {
+  width: 90%;
+  margin-left: 17px;
+  margin-top: 5px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .conclusion span {
+  padding: 5px 0;
+  color: red;
+  font-weight: 600;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .conclusion div {
+  width: 80%;
+  margin-left: 70px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .conclusion div label {
+  width: 50%;
+  float: left;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .conclusion div label span:last-child {
+  color: #3a3a3a;
+  font-weight: normal;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .conclusion div label .checked {
+  background: url(../local/img/radiotrue.png) no-repeat;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  display: block;
+  float: left;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .conclusion div label .unchecked {
+  background: url(../local/img/radiofasle.png) no-repeat;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  display: block;
+  float: left;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .ysp_btns {
+  width: 90%;
+  margin-left: 25px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .ysp_btns .ysp_cancel {
+  width: 45%;
+  background: #6e768d;
+  float: left;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .ysp_btns .ysp_sure {
+  width: 45%;
+  background: #007df7;
+  float: left;
+  margin-left: 20px;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .ysp_btns .ysp_cancel,
+div[data-ysp-modelid="toDoList"] .ysp_mask .ysp_container .ysp_btns .ysp_sure {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+}
+div[data-ysp-modelid="toDoList"] .ysp_mask .suces {
+  background: url(../local/img/success.png) no-repeat;
+  background-size: 50%;
+  width: 400px;
+  height: 240px;
+  margin-left: 90px;
+  display: block;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+div[data-ysp-modelid="toDoList"] .ysp_masksp {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+div[data-ysp-modelid="toDoList"] .ysp_masksp .spnull {
+  width: 200px;
+  height: 50px;
+  margin-left: 90px;
+  display: block;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 25%;
+  background: #FF0000;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 10px;
+}
+.ysp_menuList {
+  height: auto;
+}
+.ysp_menuList .ysp_menu_level1 {
+  position: relative;
+  padding: 5px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.ysp_menuList .ysp_menu_level1 > span:first-child {
+  padding: 10px 0 10px 30px;
+  background: url(../local/img/ggsp.png) no-repeat;
+  background-size: 23px;
+  background-position: 2px;
+}
+.ysp_menuList .ysp_menu_level1 > span:nth-child(2) {
+  background: red;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+}
+.ysp_menuList .ysp_menu_level1 .foldIcon,
+.ysp_menuList .ysp_menu_level1 .unFoldIcon {
+  background: url(../local/img/ysp-bottom-icon.png) no-repeat;
+  background-size: 20px;
+  background-position: 0px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}
+.ysp_menuList .ysp_menu_level1 .unFoldIcon {
+  background: url(../local/img/ysp-top-icon.png) no-repeat;
+  background-size: 20px;
+  background-position: 0px;
+}
+.ysp_menuList .ysp_menu_level2 {
+  background: #ededed;
+  border-bottom: 1px solid #e9e9e9;
+}
+.ysp_menuList .ysp_menu_level2 > div {
+  background: #ededed url(../local/img/more.png) no-repeat;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  background-size: 20px;
+  background-position: 97%;
+  position: relative;
+}
+.ysp_menuList .ysp_menu_level2 > div > span:first-child {
+  padding: 10px 0 10px 30px;
+  background: url(../local/img/menuIcon.png) no-repeat;
+  background-size: 23px;
+  background-position: 2px;
+}
+.ysp_menuList .ysp_menu_level2 > div > span:last-child {
+  background: #ffb20e;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+}
+div[data-ysp-modelid="checkForm"] {
+  background: #f4f4f4;
+  height: 120vh;
+}
+div[data-ysp-modelid="checkForm"] .content {
+  width: 100%;
+  background: white;
+}
+div[data-ysp-modelid="checkForm"] .content label > span {
+  color: #e80000;
+}
+div[data-ysp-modelid="checkForm"] .content .xy {
+  height: auto;
+}
+div[data-ysp-modelid="checkForm"] .content .xy .cards {
+  width: 95%;
+  margin-left: 15px;
+  display: inline-block;
+  height: 40px;
+}
+div[data-ysp-modelid="checkForm"] .content .xy .cards .cardsTit {
+  width: 20%;
+  font-size: 14px;
+  padding: 0 0;
+  float: left;
+}
+div[data-ysp-modelid="checkForm"] .content .xy .cards .cardsCon {
+  margin-left: 90px;
+  width: 80%;
+  border-bottom: 1px solid #efefef;
+  padding: 0 0;
+}
+div[data-ysp-modelid="checkForm"] .content .more {
+  margin: 20px 10px;
+  border-top: 3px solid #efefef;
+  padding: 10px 0;
+}
+div[data-ysp-modelid="checkForm"] .content .more .foldIcon,
+div[data-ysp-modelid="checkForm"] .content .more .unFoldIcon {
+  background: url(../local/img/ysp-bottom-icon.png) no-repeat;
+  background-size: 15px;
+  background-position: 0px;
+  width: 20px;
+  height: 12px;
+  float: left;
+  margin-top: 5px;
+  margin-left: 135px;
+}
+div[data-ysp-modelid="checkForm"] .content .more .unFoldIcon {
+  background: url(../local/img/ysp-top-icon.png) no-repeat;
+  background-size: 15px;
+  background-position: 0px;
+  width: 20px;
+  height: 12px;
+  float: left;
+  margin-top: 5px;
+  margin-left: 135px;
+}
+div[data-ysp-modelid="checkForm"] .contentTab {
+  width: 100%;
+  background: white;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .ysp-Tabs-container {
+  line-height: 2.75rem;
+  background: white;
+  margin-bottom: 10px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 95vw;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .ysp-Tabs-container span {
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .ysp-Tabs-container .reds {
+  color: red;
+  border-bottom: 2px solid red;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .tables {
+  margin: 10px 20px;
+  height: auto;
+  line-height: 2.75rem;
+  background: white;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 95vw;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .tables > div span {
+  display: inline-block;
+  width: 35%;
+  text-align: center;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .tables > div .theads {
+  width: 95vw;
+  height: 44px;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .tables > div .theads > span {
+  background: #ffd5d5;
+  overflow: hidden;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .tables > div .tbodys {
+  width: 95vw;
+  height: 60px;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .tables > div .tbodys > span {
+  font-size: 14px;
+  border: 1px solid #ffe3e3;
+  background: #ffefef;
+  overflow: scroll;
+  padding: 0 10px;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .tables > div .tfoots {
+  width: 95vw;
+  height: 60px;
+}
+div[data-ysp-modelid="checkForm"] .contentTab .tables > div .tfoots > span {
+  font-size: 14px;
+  border: 1px solid #ffe3e3;
+  background: #ffefef;
+  overflow: scroll;
+  padding: 0 10px;
+}
+div[data-ysp-modelid="readLog"] {
+  background: #f4f4f4;
+  height: 100vh;
+}
+div[data-ysp-modelid="readLog"] .body {
+  width: 100%;
+  height: auto;
+}
+div[data-ysp-modelid="readLog"] .body > div .content {
+  background: white;
+  display: block;
+  width: 90%;
+  border: 2px solid #eaeef0;
+  border-radius: 3px;
+  margin: 10px 20px;
+}
+div[data-ysp-modelid="readLog"] .body > div .content .spUser {
+  background: #ffd8d8;
+}
+div[data-ysp-modelid="readLog"] .body > div .content .spUser .tits {
+  font-size: 18px;
+  margin-left: 10px;
+  padding: 30px 0;
+}
+div[data-ysp-modelid="readLog"] .body > div .content .spUser .ys {
+  color: #008fff;
+  float: right;
+  margin-right: 10px;
+  font-size: 14px;
+}
+div[data-ysp-modelid="readLog"] .body > div .content .con {
+  font-size: 14px;
+  color: #909090;
+  margin-left: 20px;
+}
+div[data-ysp-modelid="enclosure"] {
+  background: #f4f4f4;
+}
+div[data-ysp-modelid="enclosure"] .content {
+  width: 100%;
+  background: white;
+  height: auto;
+}
+div[data-ysp-modelid="enclosure"] .content .head .title {
+  color: #e80000;
+}
+div[data-ysp-modelid="enclosure"] .content .head .upload {
+  width: 10%;
+  height: 20px;
+  background: url(../local/img/upload.png) no-repeat;
+  background-size: 50%;
+  float: right;
+  margin-top: 5px;
+}
+div[data-ysp-modelid="enclosure"] .content .file {
+  width: 90%;
+  margin-left: 20px;
+  background: #ededed;
+  height: 35px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+div[data-ysp-modelid="enclosure"] .content .file .name {
+  width: 70%;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+div[data-ysp-modelid="enclosure"] .content .file .download {
+  width: 22px;
+  height: 23px;
+  background: url(../local/img/download.png) no-repeat;
+  background-size: 60%;
+  margin-left: 290px;
+  float: left;
+  margin-top: -25px;
+}
+div[data-ysp-modelid="enclosure"] .content .file .del {
+  width: 22px;
+  height: 22px;
+  background: url(../local/img/del.png) no-repeat;
+  background-size: 50%;
+  float: right;
+  margin-top: -25px;
+}

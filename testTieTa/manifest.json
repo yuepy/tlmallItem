@@ -1,0 +1,68 @@
+{
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.7.0",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [],
+      "ignore": []
+    },
+    "resource_inject": [],
+    "resource_filter": [
+      {
+        "url_match": [
+          "^http:\\/\\/120\\.52\\.96\\.35.*"
+        ],
+        "charset": "utf-8",
+        "Accept-Language": "zh-Hans-CN",
+        "replaces": [
+          {
+            "regexp": "\\btop\\b",
+            "sub_str": "_ysp_top"
+          }
+        ]
+      }
+    ]
+  },
+  "override_urls": [],
+  "adapter_urls": [
+    {
+      "title": "login",
+      "url": "adapter://testTieTa/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/120\\.52\\.96\\.35:13080\\/cwbase\\/web\\/login.*"
+      ],
+      "demo": [
+        "http://120.52.96.35:13080/cwbase/gsp/webservice/RESTFulWebService/RESTFulHandlerForWeb.ashx?resource=BizComponentRESTService&GSPWEB_VERB_TYPE=get"
+      ]
+    },
+    {
+      "title": "menu",
+      "url": "adapter://testTieTa/plan/menu/index.json",
+      "matcher": [
+        "^http:\\/\\/120\\.52\\.96\\.35:13080\\/cwbase\\/web\\/gsprtf\\/main\\.aspx"
+      ]
+    },
+    {
+      "title": "loading",
+      "url": "adapter://testTieTa/plan/loading/index.json",
+      "matcher": [
+        "^http:\\/\\/120\\.52\\.96\\.35:13080\\/cwbase\\/gsp\\/webservice\\/RESTFulWebService\\/RESTFulHandlerForWeb\\.ashx.*",
+        "^http:\\/\\/120\\.52\\.96\\.35:13080\\/cwbase\\/web\\/gspwf\\/approvalcenter\\.html.*",
+        "^http:\\/\\/120\\.52\\.96\\.35:13080\\/cwbase\\/web\\/login.*",
+        "^http:\\/\\/120\\.52\\.96\\.35:13080\\/cwbase\\/web\\/gspwf\\/zh-Cn\\/ApprovalCenter\\.html.*",
+        "^http:\\/\\/120\\.52\\.96\\.35:13080\\/cwbase\\/web\\/gspwf\\/zh-Cn\\/ApprovalCenter\\.html.*"
+      ],
+      "demo": [
+        "http://120.52.96.35:13080/cwbase/gsp/webservice/RESTFulWebService/RESTFulHandlerForWeb.ashx?resource=BizComponentRESTService&GSPWEB_VERB_TYPE=get"
+      ]
+    }
+  ],
+  "name": "铁塔财务",
+  "default_url": "http://120.52.96.35:13080/cwbase/web/gsprtf/main.aspx",
+  "scope": "testTieTa",
+  "start_url": "enterplorer://testTieTa/local/index.html",
+  "update_time": 1529585942163
+}
