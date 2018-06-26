@@ -682,6 +682,9 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   line-height: 100px;
 }
 /***********************************请假申请 start*************************************/
+.PSERROR {
+  background-color: #f76f49;
+}
 .ysp-con-box {
   background-color: #fff;
   margin-top: 10px;
@@ -747,6 +750,9 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   height: 2.6rem;
   padding-right: 22px;
   position: relative;
+}
+.ysp-lists .ysp-r input.PSERROR {
+  background-color: #f76f49;
 }
 .ysp-lists .ysp-r .baoxiao-check {
   -webkit-appearance: none;
@@ -970,12 +976,10 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   border: 1px solid #e1e1e1;
   width: 60px;
   height: 60px;
-  text-align: center;
-  line-height: 60px;
-  font-size: 60px;
-  color: #999;
+  font-size: 0;
   margin-right: 10px;
-  vertical-align: top;
+  background: url(../local/img/add2.png) center center no-repeat;
+  background-size: 40px 40px;
 }
 .annex-box .annex-listItem {
   display: inline-block;

@@ -9,6 +9,7 @@
 @fontMedium:@fontBase + 1;
 @fontLarge:@fontBase + 2;
 @3796FB:#3796FB;
+@tip:#f76f49;
 body{
   background:#F8F8F8;
   position:relative;
@@ -632,7 +633,9 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
 }
 
 /***********************************请假申请 start*************************************/
-
+.PSERROR{
+  background-color: @tip;
+}
 .ysp-con-box{
   background-color:#fff;
   margin-top:10px;
@@ -667,7 +670,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
       width:6px;
       font-style: normal;
       font-size: @fontMedium;
-      color:#f76f49;
+      color:@tip;
   	}
     //配偶姓名
       //紧急联系人
@@ -703,6 +706,9 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
       height:2.6rem;
       padding-right:22px;
       position: relative;
+    }
+    input.PSERROR{
+      background-color:@tip;
     }
      .baoxiao-check{
     -webkit-appearance: none;
@@ -953,12 +959,15 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
   border:1px solid #e1e1e1;
   width:60px;
   height:60px;
-  text-align: center;
-  line-height: 60px;
-  font-size:60px;
-  color:#999;
+  // text-align: center;
+  // line-height: 60px;
+  // font-size:60px;
+  // color:#666;
+  font-size:0;
   margin-right:10px;
-  vertical-align: top;
+  // vertical-align: top;
+  background:~"url(../local/img/add2.png) center center no-repeat";
+  background-size:40px 40px;
 }
   .annex-listItem{
     display: inline-block;
