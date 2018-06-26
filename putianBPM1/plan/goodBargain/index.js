@@ -382,11 +382,37 @@
           for (var i = 0; i < tit.length; i++) {
             arr.headThree.push(tit[i].textContent.trim());
           }var tab1 = div3.querySelectorAll(".mini-grid-columns-view");for (var i = 0; i < tab1.length; i++) {
-            var tab = tab1[i].querySelector("table");var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");var con = [];for (var j = 0; j < 3; j++) {
-              con.push(ths[j].textContent);
-            }for (var j = 4; j < ths.length; j++) {
-              con.push(ths[j].textContent);
-            }con.push(ths[3].textContent);arr.titleThree.push(con);
+            var tab = tab1[i].querySelector("table");var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");var con = [];if (tab.querySelector("tbody").querySelectorAll("tr").length == 2) {
+              for (var j = 0; j < ths.length; j++) {
+                con.push(ths[j].textContent);
+              }
+            } else {
+              for (var j = 0; j < 3; j++) {
+                con.push(ths[j].textContent);
+              }for (var j = 4; j < ths.length; j++) {
+                con.push(ths[j].textContent);
+              }con.push(ths[3].textContent);
+            } // [].forEach.call(arr.headThree,function(d,i){//zyt
+            //         if(d=="大盘价"){
+            //           for(var j=0;j<ths.length;j++){
+            //             con.push(ths[j].textContent);
+            //           }
+            //         }else{
+            //           for (var j = 0; j < 3; j++) {
+            //             con.push(ths[j].textContent);
+            //           }
+            //           for (var j = 4; j < ths.length; j++) {
+            //             con.push(ths[j].textContent);
+            //           }
+            //         }
+            //       })
+            //       for (var j = 0; j < 3; j++) {
+            //         con.push(ths[j].textContent);
+            //       }
+            //       for (var j = 4; j < ths.length; j++) {
+            //         con.push(ths[j].textContent);
+            //       }
+            arr.titleThree.push(con);
           } //表格内容
           var tab2 = div3.querySelectorAll(".mini-grid-rows-view");for (var n = 0; n < tab2.length; n++) {
             var tab = tab2[n].querySelector("table");var trs = tab.querySelectorAll("tr");var cons = [];for (var i = 1; i < trs.length; i++) {
