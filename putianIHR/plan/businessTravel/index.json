@@ -60,54 +60,6 @@
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control62_6BvmTn": {
-      "location": {
-        "data": {
-          "tagName": "SELECT"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "label",
-            "prob": 4,
-            "value": {
-              "text": [
-                "考勤类型"
-              ],
-              "visText": [
-                "考勤类型"
-              ]
-            }
-          },
-          {
-            "id": "elem/@name",
-            "prob": 1,
-            "value": "descendant::SELECT[@name=\"HPS_AWE047_01_HPS_LEAVE_TYPE$0\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "TABLE.PSLEVEL1SCROLLAREABODY TABLE.PSGROUPBOX SELECT.PSDROPDOWNLIST"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/DIV[1]/SELECT[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control62_6BvmTn"
-      },
-      "intendedRole": "custom",
-      "roles": "element,listbox,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control63_zTeaok": {
       "location": {
         "data": {
@@ -390,20 +342,51 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control96_NBQCdr": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "TABLE.PSLEVEL1SCROLLAREABODYWBO TABLE.PSLEVEL1SCROLLAREABODY TABLE.PSGROUPBOX TBODY TR"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[10]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control96_NBQCdr"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context10_Wpr2im": {
       "controls": [
         "control61_U1Nctq",
-        "control62_6BvmTn",
         "control63_zTeaok",
         "control66_FrkeoT",
         "control67_B20vHF",
         "control68_1kCS7G",
         "control65_Sc4ES5",
         "control69_rsRMlX",
-        "control75_XqxNmG"
+        "control75_XqxNmG",
+        "control96_NBQCdr"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -411,16 +394,6 @@
   },
   "flows": {
     "flow58_en9SxK": {
-      "toContexts": [
-        {
-          "toContextId": "context10_Wpr2im"
-        }
-      ]
-    },
-    "flow59_vl0ToI": {
-      "fromContextId": "context10_Wpr2im",
-      "fromAction": "doAction",
-      "fromControlId": "control62_6BvmTn",
       "toContexts": [
         {
           "toContextId": "context10_Wpr2im"
@@ -506,6 +479,16 @@
           "toContextId": "context10_Wpr2im"
         }
       ]
+    },
+    "flow12_QdK5h4": {
+      "fromContextId": "context10_Wpr2im",
+      "fromAction": "doAction",
+      "fromControlId": "control96_NBQCdr",
+      "toContexts": [
+        {
+          "toContextId": "context10_Wpr2im"
+        }
+      ]
     }
   },
   "pages": {
@@ -528,124 +511,171 @@
           }
         },
         {
-          "id": "uiControl61_r06vfV",
-          "controlId": "control62_6BvmTn",
+          "id": "uiControl96_0e7pOd",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl61_r06vfV",
-                "onGetTemplate": "getTemplate_uiControl61_r06vfV"
-              }
+              "templateType": ""
             }
-          }
-        },
-        {
-          "id": "uiControl62_zAZxb8",
-          "controlId": "control63_zTeaok",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl62_zAZxb8",
-                "onGetTemplate": "getTemplate_uiControl62_zAZxb8"
-              }
+          },
+          "layout": [
+            {
+              "id": "uiControl96_0e7pOdheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl96_0e7pOdbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl95_dkl8bu",
+                  "controlId": "control96_NBQCdr",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl95_dkl8bu",
+                        "onGetTemplate": "getTemplate_uiControl95_dkl8bu"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl62_zAZxb8",
+                  "controlId": "control63_zTeaok",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl62_zAZxb8",
+                        "onGetTemplate": "getTemplate_uiControl62_zAZxb8"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl65_q6yTlS",
+                  "controlId": "control66_FrkeoT",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl65_q6yTlS",
+                        "onGetTemplate": "getTemplate_uiControl65_q6yTlS"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl66_G5ofzc",
+                  "controlId": "control67_B20vHF",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl66_G5ofzc",
+                        "onGetTemplate": "getTemplate_uiControl66_G5ofzc"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl74_3xXdrR",
+                  "controlId": "control75_XqxNmG",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl74_3xXdrR",
+                        "onGetTemplate": "getTemplate_uiControl74_3xXdrR"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl64_EgB4hW",
+                  "controlId": "control65_Sc4ES5",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl64_EgB4hW",
+                        "onGetTemplate": "getTemplate_uiControl64_EgB4hW"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl68_uxwnei",
+                  "controlId": "control69_rsRMlX",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl68_uxwnei",
+                        "onGetTemplate": "getTemplate_uiControl68_uxwnei"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl67_MrUgVz",
+                  "controlId": "control68_1kCS7G",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl67_MrUgVz",
+                        "onGetTemplate": "getTemplate_uiControl67_MrUgVz"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl96_0e7pOdfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
             }
-          }
-        },
-        {
-          "id": "uiControl65_q6yTlS",
-          "controlId": "control66_FrkeoT",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl65_q6yTlS",
-                "onGetTemplate": "getTemplate_uiControl65_q6yTlS"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl66_G5ofzc",
-          "controlId": "control67_B20vHF",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl66_G5ofzc",
-                "onGetTemplate": "getTemplate_uiControl66_G5ofzc"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl74_3xXdrR",
-          "controlId": "control75_XqxNmG",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl74_3xXdrR",
-                "onGetTemplate": "getTemplate_uiControl74_3xXdrR"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl64_EgB4hW",
-          "controlId": "control65_Sc4ES5",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl64_EgB4hW",
-                "onGetTemplate": "getTemplate_uiControl64_EgB4hW"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl68_uxwnei",
-          "controlId": "control69_rsRMlX",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl68_uxwnei",
-                "onGetTemplate": "getTemplate_uiControl68_uxwnei"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl67_MrUgVz",
-          "controlId": "control68_1kCS7G",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl67_MrUgVz",
-                "onGetTemplate": "getTemplate_uiControl67_MrUgVz"
-              }
-            }
-          }
+          ]
         }
       ]
     }
@@ -2173,6 +2203,174 @@
             "pthnavmru_HC_SCH_DEFINITION_GBL",
             "pthnavmru_HPS_RSM_MNG_SELF",
             "pthnavmru_HPS_SELF_VACA_CPT_GBL",
+            "pthnavmru_HPS_TL_AWE__CP_GBL",
+            "pthnavmru_HPS_TL_AWE__GBL",
+            "pthnavmrufavsep",
+            "pthnavmruroot",
+            "pthnavroot",
+            "pthnavsid",
+            "ptiframatfcontent",
+            "ptifrmatfcancel",
+            "ptifrmatfdescr",
+            "ptifrmatfinput",
+            "ptifrmatflbl",
+            "ptifrmatflist",
+            "ptifrmatfname",
+            "ptifrmatfok",
+            "ptifrmcontent",
+            "ptifrmpopup",
+            "ptifrmrc",
+            "ptifrmrchandle",
+            "ptifrmresizedownmask",
+            "ptifrmresizeupmask",
+            "ptifrmsep",
+            "ptifrmtarget",
+            "ptifrmtgtframe",
+            "ptpopoptitle",
+            "ptpopup",
+            "ptpopupclose",
+            "ptpopupcontainer",
+            "ptpopupcontent",
+            "ptpopupcontentcontainer",
+            "ptpopuplayouttbl",
+            "ptpopupmask",
+            "ptpopupmsg",
+            "ptpopupmsgbtn",
+            "ptpopupmsgbuttons",
+            "ptpopupmsgtext",
+            "ptpopupshadow",
+            "ptpopuptitlebar",
+            "ptrcControls_RelatedContent",
+            "ptrcDropDowndiv_RelatedContent",
+            "ptrcDropdown_RelatedContent",
+            "ptrcTCSpacer",
+            "ptrcclose",
+            "ptrccollapse_expand",
+            "ptrcdropdownicon_RelatedContent",
+            "ptrcnewwin",
+            "ptrcrefresh",
+            "ptrcrefreshonhover",
+            "ptrctitlebar",
+            "ptrctitleline",
+            "ptsrc_dropdownicon_RelatedContent",
+            "rcMenuOnRC",
+            "vRCPageletGroupsDiv",
+            "vRCPgltArea",
+            "vRCPgltAreaBody",
+            "vRCPgltAreaBodyAnchor",
+            "vRCPgltAreaBodyShow",
+            "vRCPgltAreaContainer",
+            "vRCPgltAreaFrameDiv",
+            "vRCPgltAreaHeader",
+            "vRCPgltAreaHide",
+            "vRCPgltAreaHideContainer",
+            "vRCPgltAreaResizeBar",
+            "vRCPgltAreaShow"
+          ],
+          [
+            "CO_EMPLOYEE_SELF_SERVICE",
+            "DEFAULT_HEADER_TANGERINE_ALT",
+            "Delayed_empty",
+            "HC_GLOBAL_PAYROLL",
+            "HC_ORGANIZATIONAL_DEVELOPMENT",
+            "HC_SETUP_HRMS",
+            "HC_WORKFORCE_ADMINISTRATION",
+            "HPS_DEVELOP",
+            "HPS_DEVELOP_ABS",
+            "HPS_DEVELOP_RZ",
+            "HPS_RPT",
+            "HPS_STD_MENU_GBL",
+            "PT_PEOPLETOOLS",
+            "PT_REPORTING_TOOLS",
+            "PT_TREE_MANAGER",
+            "RelatedContent",
+            "SRelatedContent",
+            "SrcMenuOnRC",
+            "WAIT_empty",
+            "crefli_PT_CHANGE_PASSWORD_GBL",
+            "crefli_PT_PORTAL_ADD_FAV_GBL",
+            "crefli_PT_PTGP_USERPREF_FL_GBL",
+            "crefli_fav_PT_PORTAL_EDIT_FAV_GBL",
+            "fldra_CO_EMPLOYEE_SELF_SERVICE",
+            "fldra_HC_GLOBAL_PAYROLL",
+            "fldra_HC_ORGANIZATIONAL_DEVELOPMENT",
+            "fldra_HC_SETUP_HRMS",
+            "fldra_HC_WORKFORCE_ADMINISTRATION",
+            "fldra_HPS_DEVELOP",
+            "fldra_HPS_DEVELOP_ABS",
+            "fldra_HPS_DEVELOP_RZ",
+            "fldra_HPS_RPT",
+            "fldra_HPS_STD_MENU_GBL",
+            "fldra_PT_PEOPLETOOLS",
+            "fldra_PT_REPORTING_TOOLS",
+            "fldra_PT_TREE_MANAGER",
+            "processing",
+            "ptabn",
+            "ptabn_SRCHPROMPT",
+            "ptabnclonebc",
+            "ptabncrefbc",
+            "ptabnfldrbc",
+            "ptabnportalfldrbc",
+            "ptabnprevresults",
+            "ptabnrscontainer",
+            "ptabnsadiv",
+            "ptabnsepbc",
+            "ptabnsp",
+            "ptabnsrchagain",
+            "ptabnsrchtitle",
+            "ptabntdiv",
+            "ptalPageMask",
+            "ptatfsid",
+            "ptbr_header_container",
+            "ptdropdownmenu",
+            "pthbcEndWall",
+            "pthbcScroll",
+            "pthbcScrollNext",
+            "pthbcScrollPrev",
+            "pthbcStartWall",
+            "pthbcUlScroll",
+            "pthdraddto",
+            "pthdraddto_div",
+            "pthdratf",
+            "pthdrcontainer",
+            "pthdrhome",
+            "pthdrlinks",
+            "pthdrlogoswan",
+            "pthdrlogout",
+            "pthdrnavbar",
+            "pthdrnavbar_div",
+            "pthdrnavbarlinks",
+            "pthdrnotify",
+            "pthdrnotify_badge",
+            "pthdrnotify_div",
+            "pthdrsyslinks",
+            "pthnavbc",
+            "pthnavbc_HPS_DEVELOP",
+            "pthnavbc_HPS_WF_FLD",
+            "pthnavbc_MYFAVORITES",
+            "pthnavbc_PORTAL_ROOT_OBJECT",
+            "pthnavbca_HPS_DEVELOP",
+            "pthnavbca_HPS_WF_FLD",
+            "pthnavbca_MYFAVORITES",
+            "pthnavbca_PORTAL_ROOT_OBJECT",
+            "pthnavbccref_HPS_TL_AWE__CP_GBL",
+            "pthnavbccref_HPS_TL_AWE__GBL",
+            "pthnavbccrefanc_HPS_TL_AWE__CP_GBL",
+            "pthnavbccrefanc_HPS_TL_AWE__CP_GBL_mru_clone",
+            "pthnavbccrefanc_HPS_TL_AWE__GBL",
+            "pthnavblock",
+            "pthnavcontainer",
+            "pthnavfav",
+            "pthnavfavli",
+            "pthnavfavsep",
+            "pthnavfly_MYFAVORITES",
+            "pthnavfly_PORTAL_ROOT_OBJECT",
+            "pthnavmrs_",
+            "pthnavmrssep",
+            "pthnavmru",
+            "pthnavmru_HPS_HR_AWE__GBL",
+            "pthnavmru_HPS_HR_SS_BAS_CPT_GBL",
+            "pthnavmru_HPS_RSM_SS",
             "pthnavmru_HPS_TL_AWE__CP_GBL",
             "pthnavmru_HPS_TL_AWE__GBL",
             "pthnavmrufavsep",
