@@ -3,6 +3,9 @@
   "id": "customerWorkQuestionnaireWrite",
   "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=57fd7d3b2aaf4022b3c503254990193c&batchId=a500dc07b0c14a6c832c13729c28f969&cid=FB00011&datetime=2018-06-14",
   "jsFile": "index.js",
+  "requires": {
+    "customerWorkQuestionnaireWrite": "../customerWorkQuestionnaireWrite/index.json"
+  },
   "chineseName": "工作台中的问卷填写",
   "description": "工作台中的问卷填写",
   "controls": {
@@ -123,6 +126,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -154,7 +161,9 @@
         "control344_xTxL4g"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/page\\/questionnaire\\/questionFill\\.html\\?quId.*"
+      ]
     }
   },
   "flows": {
@@ -162,6 +171,10 @@
       "toContexts": [
         {
           "toContextId": "context86_IafnWi"
+        },
+        {
+          "toContextId": "context86_IafnWi",
+          "toModelId": "customerWorkQuestionnaireWrite"
         }
       ]
     },
@@ -257,7 +270,8 @@
           "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=57fd7d3b2aaf4022b3c503254990193c&batchId=a500dc07b0c14a6c832c13729c28f969&cid=FB00011&datetime=2018-06-14",
           "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=dbb9d6255f664e768895f4773fcee303&batchId=&cid=FB00011&datetime=2018-06-25&cname=%E5%8D%97%E4%BA%AC%E8%8B%8F%E5%AE%81",
           "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=e682ed47055a4337b51a38dc5ce9e98b&batchId=&cid=FB00011&datetime=2018-06-25&cname=%E5%8D%97%E4%BA%AC%E8%8B%8F%E5%AE%81",
-          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=03af4e148c89429f8170bb0f06358f03&batchId=&cid=FB00011&datetime=2018-06-26&cname=%E5%8D%97%E4%BA%AC%E8%8B%8F%E5%AE%81"
+          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=03af4e148c89429f8170bb0f06358f03&batchId=&cid=FB00011&datetime=2018-06-26&cname=%E5%8D%97%E4%BA%AC%E8%8B%8F%E5%AE%81",
+          "192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFill.html?quId=2541da0e09074090acb128e25de95cd2&batchId=&cid=C112227&datetime=2018-06-27&cname=%E5%8C%97%E4%BA%AC%E4%BA%AC%E7%B2%AE%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&source=workbench&ccid=C112227"
         ]
       }
     },
@@ -320,6 +334,21 @@
             "cid",
             "content",
             "fafdedcb",
+            "formTargertIframe",
+            "formUploadify",
+            "pic",
+            "pre_wrap_div",
+            "quId",
+            "remark",
+            "templateId",
+            "title"
+          ],
+          [
+            "baocuncaogao",
+            "batchId",
+            "cid",
+            "content",
+            "fanhui",
             "formTargertIframe",
             "formUploadify",
             "pic",
@@ -547,6 +576,30 @@
             "OL/LI/EM",
             "OL/LI/SPAN",
             "OL/LI/TEXTAREA"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/H3",
+            "DIV/DIV/H4",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/OL",
+            "DIV/DIV/SPAN",
+            "DIV/FORM/INPUT-file",
+            "DIV/H4/I",
+            "DIV/LABEL/I",
+            "DIV/LABEL/INPUT-radio",
+            "DIV/OL/LI",
+            "LI/DIV/LABEL",
+            "OL/LI/DIV",
+            "OL/LI/SPAN"
           ]
         ]
       }

@@ -47,16 +47,26 @@
               if (partList[j].querySelector("input[type='checkbox']")) {
                 //题目类型是选择题并且是CheckBox类型
                 panelObj.subject.type = "checkbox";var optionsArr = partList[j].querySelector(".xuanxiang-box").querySelectorAll("label");for (var s = 0; s < optionsArr.length; s++) {
-                  var optionObj = {};optionObj.isChecked = optionsArr[s].querySelector("input").checked;optionObj.content = optionsArr[s].textContent;if (optionsArr[s].querySelector(".mustFill")) {
-                    optionObj.itemRemark = optionsArr[s].querySelector(".mustFill").querySelector("input").value;
-                  }panelObj.subject.option.push(optionObj);
+                  var optionObj = {};optionObj.isChecked = optionsArr[s].querySelector("input").checked;optionObj.content = optionsArr[s].textContent;var nextEl = optionsArr[s].nextElementSibling;if (nextEl) {
+                    var pl = nextEl.getAttribute("placeholder");if (pl) {
+                      optionObj.itemRemark = nextEl.value;
+                    }
+                  } // if (optionsArr[s].querySelector(".mustFill")) {
+                  //   optionObj.itemRemark = optionsArr[s].querySelector(".mustFill").querySelector("input").value;
+                  // }
+                  panelObj.subject.option.push(optionObj);
                 }
               }if (partList[j].querySelector("input[type='radio']")) {
                 //题目类型是选择题并且是radio类型
                 var optionsArr = partList[j].querySelector(".xuanxiang-box").querySelectorAll("label");panelObj.subject.type = "radio";for (var s = 0; s < optionsArr.length; s++) {
-                  var optionObj = {};optionObj.isChecked = optionsArr[s].querySelector("input").checked;optionObj.content = optionsArr[s].textContent;optionObj.nameId = optionsArr[s].querySelector("input").getAttribute("name");if (optionsArr[s].querySelector(".mustFill")) {
-                    optionObj.itemRemark = optionsArr[s].querySelector(".mustFill").querySelector("input").value;
-                  }panelObj.subject.option.push(optionObj);
+                  var optionObj = {};optionObj.isChecked = optionsArr[s].querySelector("input").checked;optionObj.content = optionsArr[s].textContent;optionObj.nameId = optionsArr[s].querySelector("input").getAttribute("name");var nextEl = optionsArr[s].nextElementSibling;if (nextEl) {
+                    var pl = nextEl.getAttribute("placeholder");if (pl) {
+                      optionObj.itemRemark = nextEl.value;
+                    }
+                  } // if (optionsArr[s].querySelector(".mustFill")) {
+                  //   optionObj.itemRemark = optionsArr[s].querySelector(".mustFill").querySelector("input").value;
+                  // }
+                  panelObj.subject.option.push(optionObj);
                 }
               }if (partList[j].querySelector("textarea")) {
                 //题目类型是填空题并且是textarea类型
@@ -85,7 +95,7 @@
       if (data.eventType == "checkboxClick") {
         var index = data.dataCustom.index;var i = data.dataCustom.i;var t = data.dataCustom.t;elem.querySelectorAll(".pre-box")[i].querySelectorAll("li")[t].querySelectorAll("label")[index].querySelector("input").click();
       } else if (data.eventType == "inputChange") {
-        var index = data.dataCustom.index;var i = data.dataCustom.i;var t = data.dataCustom.t;var val = data.dataCustom.val;elem.querySelectorAll(".content-panel")[i].querySelectorAll(".content-panel-part_list")[t].querySelectorAll("label")[index].querySelectorAll("input")[1].focus();elem.querySelectorAll(".content-panel")[i].querySelectorAll(".content-panel-part_list")[t].querySelectorAll("label")[index].querySelectorAll("input")[1].value = val;
+        var index = data.dataCustom.index;var i = data.dataCustom.i;var t = data.dataCustom.t;var val = data.dataCustom.val;elem.querySelectorAll(".pre-box")[i].querySelectorAll("li")[t].querySelectorAll("label")[index].nextElementSibling.focus();elem.querySelectorAll(".pre-box")[i].querySelectorAll("li")[t].querySelectorAll("label")[index].nextElementSibling.value = val;
       } else if (data.eventType == "textareaChange") {
         var i = data.dataCustom.i;var t = data.dataCustom.t;var val = data.dataCustom.val;elem.querySelectorAll(".pre-box")[i].querySelectorAll("li")[t].querySelector("textarea").value = val;
       } else if (data.eventType == "btnClick") {

@@ -10995,6 +10995,26 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   color: #999999;
   font-size: 20px;
 }
+.ysp-no-datasss {
+  background: #f2f2f2;
+  height: 55vh;
+}
+.ysp-no-datasss > div:first-child {
+  display: inline-block;
+  height: 120px;
+  width: 100%;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-image: url(images/ysp-no-data.png);
+  background-position-x: 100px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.ysp-no-datasss > div:last-child {
+  text-align: center;
+  color: #999999;
+  font-size: 20px;
+}
 /*************门店360店奖信息start*************/
 .ysp-award-message-wrapper {
   background: #fff;
@@ -14204,7 +14224,7 @@ div[data-componentsid="uiControl324_MTMHbM"] > div:nth-child(1) > div:nth-child(
 }
 div[data-componentsid="uiControl329_t8S3Mp"] > div:nth-child(1) .moudle-time,
 div[data-componentsid="uiControl330_eNHuwP"] > div:nth-child(1) .moudle-time {
-  z-index: 10000 !important;
+  z-index: 100000 !important;
 }
 .ysp-feed-back {
   overflow: hidden;
@@ -14274,7 +14294,7 @@ div[data-componentsid="uiControl330_eNHuwP"] > div:nth-child(1) .moudle-time {
 }
 .ysp-feed-back .ysp-feed-back-right {
   float: left;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 .ysp-feed-back .ysp-feed-back-right .ysp-feed-back-right-span {
   border: 1px solid #4796ed;
@@ -14282,6 +14302,9 @@ div[data-componentsid="uiControl330_eNHuwP"] > div:nth-child(1) .moudle-time {
   background: #fff;
   padding: 2px 8px;
   border-radius: 5px;
+}
+div[data-ysp-modelid="questionnaireFeedbackSum"] {
+  background: #ececec;
 }
 .ysp-feed-back-sum > div:nth-child(1) {
   color: #4796ed;
@@ -14291,6 +14314,7 @@ div[data-componentsid="uiControl330_eNHuwP"] > div:nth-child(1) .moudle-time {
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+  background: #fff;
 }
 .ysp-feed-back-sum > div:nth-child(2),
 .ysp-feed-back-sum > div:nth-child(3) {
@@ -14299,6 +14323,7 @@ div[data-componentsid="uiControl330_eNHuwP"] > div:nth-child(1) .moudle-time {
   justify-content: space-between;
   padding: 10px 15px 10px 10px;
   border-bottom: 1px solid #ececec;
+  background: #fff;
 }
 .ysp-feed-back-sum > div:nth-child(2) > span:nth-child(1),
 .ysp-feed-back-sum > div:nth-child(3) > span:nth-child(1) {
@@ -14317,7 +14342,7 @@ div[data-componentsid="uiControl330_eNHuwP"] > div:nth-child(1) .moudle-time {
   align-items: center;
   justify-content: space-between;
   padding: 10px 15px 10px 10px ;
-  border-bottom: 15px solid #ececec;
+  background: #fff;
 }
 .ysp-feed-back-sum > div:nth-child(4) > span:nth-child(1) {
   justify-content: flex-start;
@@ -14328,5 +14353,81 @@ div[data-componentsid="uiControl330_eNHuwP"] > div:nth-child(1) .moudle-time {
   justify-content: flex-end;
   width: 30%;
   color: red;
+}
+.ysp-feed-back-table {
+  background: #fff;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+.ysp-feed-back-table .ysp-feed-back-table-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ysp-feed-back-table .ysp-feed-back-table-head > span:nth-child(1) {
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 85%;
+}
+.ysp-feed-back-table .ysp-feed-back-table-head > span:nth-child(2) {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ysp-feed-back-table .ysp-feed-back-table-head .active {
+  background-image: url(images/down-arrow.png);
+}
+.ysp-feed-back-table .ysp-feed-back-table-head .actives {
+  background-image: url(images/up-arrow-icon.png);
+}
+.ysp-feed-back-table .ysp-feed-back-table-content > div:last-child {
+  border-bottom: none !important;
+}
+.ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ececec;
+  margin-top: 10px;
+  min-height: 40px;
+}
+.ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-head > span:nth-child(1) {
+  width: 50%;
+  text-align: center;
+}
+.ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-head > span:nth-child(2),
+.ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-head > span:nth-child(3) {
+  width: 20%;
+  text-align: center;
+}
+.ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-text {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
+  min-height: 40px;
+  color: #999999;
+}
+.ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-text > span:nth-child(1) {
+  width: 50%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-text > span:nth-child(2),
+.ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-text > span:nth-child(3) {
+  width: 20%;
+  text-align: center;
+}
+.ysp-feed-back-tables {
+  min-height: 40px;
+  background: #ececec;
 }
 /***********问卷反馈end**************/
