@@ -11,7 +11,7 @@
 @3796FB:#3796FB;
 @tip:#f76f49;
 body{
-  background:#F8F8F8;
+  background:#f4f4f4;
   position:relative;
 }
 body,div,p,h4,table,input,button,ul,li{margin:0;padding:0;}
@@ -19,8 +19,26 @@ ul li{
   list-style: none;
 }
 img{border:none;}
-.editor-state [data-ysp="component"]{
-  padding-top: 0;
+// 解决ios中position:fixed不兼容的问题
+.view-wrapper{
+  background-color: #f4f4f4;
+}
+.card{
+  border-radius: 0;
+  background:#f4f4f4;
+  box-shadow: none;
+  margin:0;
+  position: fixed;
+  top:2.7rem;
+  left:0;
+  width:100%;
+  height:90vh;
+  margin-top:-6px;
+  overflow-y:scroll;
+}
+.card-body{
+  padding:0;
+   background-color: #f4f4f4;
 }
 /******************************CustomHeader组件******************************************/
 div[data-ysp-modelid="salary"]{
@@ -592,7 +610,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
 .ysp_adrChoose{
   display: none;
   .ysp_showList{
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
@@ -629,6 +647,9 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
       text-align: center;
       line-height: 100px;
     }
+  }
+  .ysp-holiday-showList{
+    // top:-2.5rem;
   }
 }
 
@@ -675,10 +696,14 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
       width: ~"-webkit- calc(100% - 70px)";
       width: ~"-mox- calc(100% - 70px)";
       width: ~"calc(100% - 70px)";
-      height:100%;
+      height:2.6rem;
       border:none;
       text-align: right;
     }
+    .PSERROR{
+      background-color:@tip;
+    }
+      
   }
   .ysp-r{
     position: relative;
@@ -690,7 +715,6 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
       font-size:@fontBase;
       border:none;
       text-align:right;
-      overflow-x: sroll;
     }
     //日期/时间输入
     input.date-time{
@@ -732,6 +756,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
     }
     input.input-edit{
       text-align: left;
+      height:2.6rem;
     }
     select.sel-type{
       display: inline-block;
@@ -777,10 +802,10 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
         right:0;
       }
     }
-    .quxian{
-      vertical-align: top;
-      margin-top:0.9rem;
-    }
+    // .quxian{
+    //   vertical-align: top;
+    //   margin-top:0.9rem;
+    // }
     //点击选择地址
     .canclick-btn{
       margin:0;
@@ -1058,7 +1083,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
 }
 //提交/保存
 .ysp-btn-box{
-  margin:20px 5%;
+  margin:20px 10px;
   button{
     border:none;
     border-radius: 5px;
