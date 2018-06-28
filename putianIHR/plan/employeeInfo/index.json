@@ -6,7 +6,8 @@
   "requires": {
     "EmployeeEditors": "../EmployeeEditors/index.json",
     "educationalExperience": "../educationalExperience/index.json",
-    "familyNumber": "../familyNumber/index.json"
+    "familyNumber": "../familyNumber/index.json",
+    "menu": "../menu/index.json"
   },
   "chineseName": "员工履历表",
   "description": "",
@@ -217,6 +218,10 @@
       "toContexts": [
         {
           "toContextId": "context2_UAeaAc"
+        },
+        {
+          "toContextId": "context1_zfhIAP",
+          "toModelId": "menu"
         }
       ]
     },

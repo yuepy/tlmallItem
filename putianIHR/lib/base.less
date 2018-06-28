@@ -224,6 +224,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
   right: 0;
   left:0;
   background: rgba(0,0,0,0.3);
+  z-index: 1000;
   .saveContent{
     position: absolute;
     top: 50%;
@@ -291,6 +292,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
     left:0;
     right:0;
     background: rgba(0,0,0,0.3);
+    z-index: 100;
     .selectBox_content{
       position:absolute;
       top: 0;
@@ -304,7 +306,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
         border-bottom:1px solid #ddd;
       }
       .contentScroll{
-        height: 54vh;
+        height: 80%;
         overflow-y: scroll;
       }
       .timeContent{
@@ -343,7 +345,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
   }
 }
 .ysp_salary_box{
-  height: 50vh;
+  height: 80%;
   overflow-y: scroll;
   .ysp_salary_item{
     background: #fff;
@@ -686,7 +688,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
 }
 //地址弹框
 .ysp_adrChoose{
-  display: none;
+  // display: none;
   .ysp_showList{
     position: fixed;
     top: 0;
@@ -1552,6 +1554,8 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
       }
     }
     .ysp-infoContent-tt{
+      height: 80%;
+      overflow: auto;
       .ysp-infoContentlist1-tt{
         border-bottom:1px solid @E1E1E1;
         border-top:1px solid @E1E1E1;

@@ -218,6 +218,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 .savedModal .saveContent {
   position: absolute;
@@ -279,6 +280,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 .ysp_filter .ysp_selectBox .selectBox_content {
   position: absolute;
@@ -294,7 +296,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   border-bottom: 1px solid #ddd;
 }
 .ysp_filter .ysp_selectBox .selectBox_content .contentScroll {
-  height: 54vh;
+  height: 80%;
   overflow-y: scroll;
 }
 .ysp_filter .ysp_selectBox .selectBox_content .timeContent {
@@ -330,7 +332,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   padding: 5px;
 }
 .ysp_salary_box {
-  height: 50vh;
+  height: 80%;
   overflow-y: scroll;
 }
 .ysp_salary_box .ysp_salary_item {
@@ -729,9 +731,6 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   background: url(../local/img/rightArrow.png) no-repeat;
   background-position: 100%;
   background-size: 10px;
-}
-.ysp_adrChoose {
-  display: none;
 }
 .ysp_adrChoose .ysp_showList {
   position: fixed;
@@ -1523,6 +1522,10 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp_header_wrapper span {
   color: #fff;
+}
+.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt {
+  height: 80%;
+  overflow: auto;
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt {
   border-bottom: 1px solid #E1E1E1;
