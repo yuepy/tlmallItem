@@ -103,6 +103,60 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control348_TChWSq": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"content\"]/div[1]/div/span[3]"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "查看统计"
+              ],
+              "visText": [
+                "查看统计"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::DIV[@id=\"content\"]/DIV[1]/DIV[1]/SPAN[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.questionnaireTop DIV.header SPAN.title.title-b"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/SPAN[3]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "查看统计",
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -112,8 +166,12 @@
         "control335_RpcT9A",
         "control341_NN0az8"
       ],
-      "anchors": [],
-      "urlAnchor": []
+      "anchors": [
+        "control348_TChWSq"
+      ],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/page\\/questionnaire\\/questionStatistics\\.html\\?.*"
+      ]
     }
   },
   "flows": {

@@ -21,7 +21,7 @@
         var obj = {};var eObje = $(elem).find(".m-report-infors");obj.customerName = eObje.find("#VisitTarget").val();obj.signDate = eObje.find("#TargetPosition").val();var selects = elem.querySelector('#VisitTime'); //拜访时长
         var options = selects.querySelectorAll('option');for (var i = 0; i < options.length; i++) {
           data.reportDate.push(options[i].textContent);
-        }obj.reportDateValue = eObje.find("#VisitTime").val();obj.huaweiFD = eObje.find("#huaweiFD").val();obj.huaweiExperience = eObje.find("#HuaweiExperienceStore").val();obj.HuaweiFuse = eObje.find("#HuaweiFuse").val();obj.huaweiProvince = eObje.find("#HuaweiProvincePackage").val();obj.samsungDivison = eObje.find("#SamsungDivison").val();obj.fenXiaoDivison = eObje.find("#FenXiaoDivison").val();obj.otherInfor = eObje.find("#OtherInfor").val();obj.atName = eObje.find(".chatUsers-check").find(".names").html();data.subcontent.subContentMessageHead.push(obj);eObje.find(".chats").find(".chat-one").each(function (index, items) {
+        }obj.reportDateValue = eObje.find("#VisitTime").val();obj.huaweiFD = eObje.find("#huaweiFD").html();obj.huaweiExperience = eObje.find("#HuaweiExperienceStore").html();obj.HuaweiFuse = eObje.find("#HuaweiFuse").html();obj.huaweiProvince = eObje.find("#HuaweiProvincePackage").html();obj.samsungDivison = eObje.find("#SamsungDivison").html();obj.fenXiaoDivison = eObje.find("#FenXiaoDivison").html();obj.otherInfor = eObje.find("#OtherInfor").html();obj.atName = eObje.find(".chatUsers-check").find(".names").html();data.subcontent.subContentMessageHead.push(obj);eObje.find(".chats").find(".chat-one").each(function (index, items) {
           var oo = {};oo.messageName = $(items).find("h6").html();oo.messageText = $(items).find("p").html();oo.messageTextB = $(items).find("p").find("b").html();oo.messageTime = $(items).find(".chatTime").html();data.subcontent.subContentMessage.push(oo);
         }); ///华为FD
         var huaweiFDButtons = elem.querySelector("#huaweiFDTags") && elem.querySelector("#huaweiFDTags").querySelectorAll("button");for (var i = 0; i < huaweiFDButtons.length; i++) {
@@ -112,8 +112,8 @@
                 content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
             // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
             // src.push(scrC);
-            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title,
-              content: content, src: src };data.file.push(images);
+            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);
+            var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
           }
         } /*
            	Dialog 数据   所选分公司树结构数据

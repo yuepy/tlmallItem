@@ -52,7 +52,7 @@
         var options = selects.querySelectorAll('option');for (var i = 0; i < options.length; i++) {
           data.reportDate.push(options[i].textContent);
         }var reportDateValue = selects && selects.value; //拜访所选的时长
-        data.reportDateValue.push(reportDateValue);data.header = { visitTarget: elem.querySelector('#VisitTarget').value, targetPosition: elem.querySelector('#TargetPosition').value };data.contents = { HuaWeiFD: elem.querySelector('#huaweiFD').value, HuaweiExperienceStore: elem.querySelector('#HuaweiExperienceStore').value, HuaweiFuse: elem.querySelector('#HuaweiFuse').value, HuaweiProvincePackage: elem.querySelector('#HuaweiProvincePackage').value, SamSung: elem.querySelector('#SamsungDivison').value, Distribution: elem.querySelector('#FenXiaoDivison').value, OtherInfor: elem.querySelector('#OtherInfor').value }; ///华为FD
+        data.reportDateValue.push(reportDateValue);data.header = { visitTarget: elem.querySelector('#VisitTarget').value, targetPosition: elem.querySelector('#TargetPosition').value };data.contents = { HuaWeiFD: elem.querySelector('#huaweiFD').textContent, HuaweiExperienceStore: elem.querySelector('#HuaweiExperienceStore').textContent, HuaweiFuse: elem.querySelector('#HuaweiFuse').textContent, HuaweiProvincePackage: elem.querySelector('#HuaweiProvincePackage').textContent, SamSung: elem.querySelector('#SamsungDivison').textContent, Distribution: elem.querySelector('#FenXiaoDivison').textContent, OtherInfor: elem.querySelector('#OtherInfor').textContent }; ///华为FD
         var huaweiFDButtons = elem.querySelector("#huaweiFDTags") && elem.querySelector("#huaweiFDTags").querySelectorAll("button");for (var i = 0; i < huaweiFDButtons.length; i++) {
           data.huaweiFDTags.push(huaweiFDButtons[i].textContent);
         }for (var i = 0; i < huaweiFDButtons.length; i++) {
@@ -128,7 +128,9 @@
           for (var i = 0; i < arryPic.length; i++) {
             //var imgCanvas = ysp.customHelper.convertImageToCanvas(arryPic[i].querySelector('img'));
             //var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
-            var scrTitle = arryPic[i].querySelector("img").getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var titleUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + titleUrl;data.reportdetail.titles.push(arryPic[i].querySelector(".info").textContent);data.reportdetail.pictures.push(scrC);
+            var scrTitle = arryPic[i].querySelector("img").getAttribute('src');
+            var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var titleUrl = decodeURI(scrTitleSplit);
+            var scrC = "http://192.168.220.82:8080/pttlCrm/" + titleUrl;data.reportdetail.titles.push(arryPic[i].querySelector(".info").textContent);data.reportdetail.pictures.push(scrC);
           }
         } //留言
         if (elem.querySelector(".leaveWord")) {

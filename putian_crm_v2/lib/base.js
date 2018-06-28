@@ -87,7 +87,7 @@
         ysp.customHelper.secondMenu.toPlanByMenuName('客户信息录入', null, menuId);
         break;
       case "clientStoreCard":
-        ysp.customHelper.secondMenu.toPlanByMenuName('客户信息', null, menuId);
+        ysp.customHelper.secondMenu.toPlanByMenuName('客户信息', null, menuId);
         break;
     }
   }
