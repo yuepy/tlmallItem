@@ -210,6 +210,35 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   width: 100%;
   text-align: center;
 }
+/*****************************已保存loading start******************************************/
+.savedModal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.savedModal .saveContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  width: 100px;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+}
+.savedModal .saveContent > div:first-child {
+  font-size: 18px;
+  font-weight: 900;
+  color: #3796FB;
+}
+.savedModal .saveContent > div:last-child {
+  font-size: 16px;
+  color: #3796FB;
+}
 /******************************菜单页start******************************************/
 .menu_tab {
   width: 60%;
@@ -615,6 +644,11 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 }
 .ysp_addWork_list .line1 {
   padding-top: 0;
+}
+.ysp_addWork_list .line1 input {
+  background: url(../local/img/rightArrow.png) no-repeat;
+  background-position: 100%;
+  background-size: 10px;
 }
 .ysp_addWork_list .line2 {
   margin-bottom: 10px;
@@ -1140,6 +1174,10 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   background-color: #fff;
   color: #333;
   border: 1px solid #e1e1e1;
+}
+.ysp-btn-box .disabled {
+  background: #ddd;
+  color: #999;
 }
 .editor-state div[data-componentsid="uiControl97_3kFTKh"] {
   margin: 0;
