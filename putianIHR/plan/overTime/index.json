@@ -1,0 +1,228 @@
+{
+  "version": "0.1",
+  "id": "overTime",
+  "targetURL": "http://192.168.220.110/psc/ps/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+  "jsFile": "index.js",
+  "chineseName": "会话过期",
+  "description": "",
+  "controls": {
+    "control82_usBZQE": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"msgcontainer\"]//DIV[@id=\"alertmsg\"]",
+              "descendant::DIV[@id=\"alertmsg\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.chrome.win.pc.standard.psc_dir-ltr.psc_form-xlarge DIV.pstimeoutmsgcontainer DIV.psfluidmsgalert"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "roles": "element",
+      "content": true,
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "content"
+    },
+    "control99_S8kbdl": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "确定"
+              ],
+              "visText": [
+                "确定"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "确定"
+              ],
+              "visText": [
+                "确定"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"buttoncontainer\"]//SPAN[@id=\"buttonwrapper\"]//A[@id=\"msgokbutton\"]",
+              "descendant::SPAN[@id=\"buttonwrapper\"]//A[@id=\"msgokbutton\"]",
+              "descendant::A[@id=\"msgokbutton\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.psfluidmsgactions SPAN.psfluidbuttonwrapper A.psfluidokbutton"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/SPAN[1]/A[1]"
+          },
+          {
+            "id": "role",
+            "value": "button"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
+    }
+  },
+  "contexts": {
+    "context12_el3bIi": {
+      "controls": [
+        "control82_usBZQE",
+        "control99_S8kbdl"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow91_fiBE8s": {
+      "toContexts": [
+        {
+          "toContextId": "context12_el3bIi"
+        }
+      ]
+    },
+    "flow92_fKEtRF": {
+      "fromContextId": "context12_el3bIi",
+      "fromAction": "click",
+      "fromControlId": "control99_S8kbdl",
+      "toContexts": [
+        {
+          "toContextId": "context12_el3bIi"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page12_4fzyqs": {
+      "contextId": "context12_el3bIi",
+      "layout": [
+        {
+          "id": "uiControl80_5PbAtA",
+          "controlId": "control82_usBZQE",
+          "display": {
+            "adapterId": "content",
+            "type": "content",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl100_IHrvRy",
+          "controlId": "control99_S8kbdl",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context12_el3bIi": [
+          "超时警告。单击“确定”将不结束会话。"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context12_el3bIi": [
+          "192.168.220.110/psc/ps/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context12_el3bIi": [
+          [
+            "alertmsg",
+            "buttoncontainer",
+            "buttonwrapper",
+            "longmsg",
+            "msgcontainer",
+            "msgokbutton",
+            "shortmsg"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context12_el3bIi": [
+          [
+            "psfluidbuttonwrapper",
+            "psfluidmsgactions",
+            "psfluidmsgalert",
+            "psfluidmsglong",
+            "psfluidmsgshort",
+            "psfluidokbutton",
+            "pstimeoutmsgcontainer"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context12_el3bIi": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/SPAN/A"
+          ]
+        ]
+      }
+    }
+  }
+}

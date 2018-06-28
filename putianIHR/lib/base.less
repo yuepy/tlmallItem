@@ -216,6 +216,43 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
     }
   }
 }
+/******************************菜单页start******************************************/
+.menu_tab{
+  width:60%;
+  margin: 0 auto;
+  span{
+    display: inline-block;
+    padding: 10px;
+    border:1px solid #ddd;
+  }
+  .selected{
+    background: red;
+    color: #fff;
+  }
+}
+.menu_content{
+  padding:0 10px;
+  font-size:@fontBase;
+  .title{
+    font-size: @fontLarge;
+  }
+  .content{
+    // position: relative;
+    // display: flex;
+    // flex-wrap:wrap;
+    .contentItem{
+      display: inline-block;
+      width: 25%;
+      height: 70px;
+      text-align: center;
+      .contentImg{
+        width: 80%;
+        margin:0 auto;
+        height: 100%;
+      }
+    }
+  }
+}
 /******************************薪资查询start******************************************/
 .ysp_filter{
   .ysp_selectBox{
