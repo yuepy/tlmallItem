@@ -14,7 +14,7 @@
     getData_control335_RpcT9A: function (elem) {
       if (!elem) {
         return;
-      }var data = { title: [], MB: [], TJ: [], BL: [] };debugger;var quName = elem.ownerDocument.querySelector("#quName").textContent;data.title.push(quName);var targetNumber = elem.ownerDocument.querySelector("#targetNumber").textContent;data.MB.push(targetNumber);var submitNumber = elem.ownerDocument.querySelector("#submitNumber").textContent;data.TJ.push(submitNumber);var proportion = elem.ownerDocument.querySelector("#proportion").textContent;data.BL.push(proportion);return data;
+      }var data = { title: [], MB: [], TJ: [], BL: [] };var quName = elem.ownerDocument.querySelector("#quName").textContent;data.title.push(quName);var targetNumber = elem.ownerDocument.querySelector("#targetNumber").textContent;data.MB.push(targetNumber);var submitNumber = elem.ownerDocument.querySelector("#submitNumber").textContent;data.TJ.push(submitNumber);var proportion = elem.ownerDocument.querySelector("#proportion").textContent;data.BL.push(proportion);return data;
     },
     doAction_uiControl325_6NQLn9: function (data, elem) {},
     getTemplate_uiControl325_6NQLn9: function () {

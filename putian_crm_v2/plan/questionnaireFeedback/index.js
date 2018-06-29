@@ -60,13 +60,8 @@
     },
     doAction_uiControl327_pV2g8n: function (data, elem) {
       if ("click" == data.eventType) {
-        // debugger;
-        // var index = data.dataCustom;
-        // var tbody = elem.ownerDocument.querySelector("#tbodyContent");
-        // var trs = tbody.querySelectorAll("tr")[index];
-        // trs.querySelectorAll("td")[9].querySelectorAll("button")[1].click();
-        // ysp.runtime.Model.setForceMatchModels(['questionnaireFeedbackSum']);
-        elem.ownerDocument.defaultView.open("http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionStatistics.html?quId=becddae3c56341ef8fcafa96c8033132&quName=123");
+        var index = data.dataCustom;var tbody = elem.ownerDocument.querySelector("#tbodyContent");var trs = tbody.querySelectorAll("tr")[index];var buttons = trs.querySelectorAll("td")[9].querySelectorAll("button")[1];var val = buttons && buttons.getAttribute("val");var val1 = buttons && buttons.getAttribute("val1");var url = "http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionStatistics.html?quId=" + val + "&quName=" + val1; // ysp.runtime.Model.setForceMatchModels(['questionnaireFeedbackSum']);
+        elem.ownerDocument.defaultView.open(url);
       }
     },
     getTemplate_uiControl327_pV2g8n: function () {
