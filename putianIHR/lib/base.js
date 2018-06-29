@@ -5,7 +5,10 @@
   var utils = ysp.utils;
   ysp.customHelper = {};
   top.date="";
-  //top.isBlock=false;
+  var topWin=top;
+  topWin.AndroidBack = function(){
+    ysp.appMain.back();
+  };
   utils.extend(ysp.customHelper, {
     /* 适配中定制的公共代码放在这里 */
 
