@@ -458,14 +458,3 @@
     }]);
     return data;
   doAction: ''
-- name: header
-  getTemplate: "import { Header, HeaderLeft } from 'ysp-interior-components';\nimport { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className='titleH1'>\n          <Header title={data.title}>\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={back}>返回</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});"
-  getData: |
-    if (!elem) {
-      return;
-    }
-    var data = {};
-    var span = elem.querySelector('span');
-    data.title = span.nextSibling.nextSibling.textContent.trim();
-    return data;
-  doAction: ''
