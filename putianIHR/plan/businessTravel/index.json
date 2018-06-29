@@ -193,46 +193,6 @@
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control68_1kCS7G": {
-      "location": {
-        "data": {
-          "tagName": "TBODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": "descendant::TABLE[@id=\"ACE_width\"]/TBODY[1]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              14
-            ],
-            "value": "TABLE.PSPAGECONTAINER DIV.ps_pspagecontainer TABLE.PSPAGECONTAINER TBODY"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control68_1kCS7G"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control65_Sc4ES5": {
       "location": {
         "data": {
@@ -378,40 +338,63 @@
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control62_X28Xf4": {
+    "control45_b9KvxZ": {
       "location": {
         "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "TABLE"
         },
         "locators": [
           {
             "id": "@id/word",
             "prob": 3,
-            "value": "descendant::BODY[@id=\"ptifrmtemplate\"]"
+            "value": "descendant::TABLE[@id=\"ACE_width\"]"
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "value": "HTML.chrome.win.pc.standard.psc_dir-ltr.psc_form-xlarge BODY.PSPAGE"
+            "value": "TABLE.PSPAGECONTAINER DIV.ps_pspagecontainer TABLE.PSPAGECONTAINER"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control62_X28Xf4"
+        "onGetData": "getData_control45_b9KvxZ"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control47_hxrng3": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge BODY.PSSRCHPAGE FORM.PSForm"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control47_hxrng3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     }
   },
@@ -422,12 +405,12 @@
         "control63_zTeaok",
         "control66_FrkeoT",
         "control67_B20vHF",
-        "control68_1kCS7G",
         "control65_Sc4ES5",
         "control69_rsRMlX",
         "control75_XqxNmG",
         "control96_NBQCdr",
-        "control62_X28Xf4"
+        "control45_b9KvxZ",
+        "control47_hxrng3"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -467,16 +450,6 @@
       "fromContextId": "context10_Wpr2im",
       "fromAction": "doAction",
       "fromControlId": "control66_FrkeoT",
-      "toContexts": [
-        {
-          "toContextId": "context10_Wpr2im"
-        }
-      ]
-    },
-    "flow65_e6VnXM": {
-      "fromContextId": "context10_Wpr2im",
-      "fromAction": "doAction",
-      "fromControlId": "control68_1kCS7G",
       "toContexts": [
         {
           "toContextId": "context10_Wpr2im"
@@ -691,81 +664,34 @@
                   }
                 },
                 {
-                  "id": "uiControl97_3kFTKh",
+                  "id": "uiControl46_tMUlPn",
+                  "controlId": "control47_hxrng3",
                   "display": {
-                    "type": "card",
-                    "adapterId": "card",
+                    "adapterId": "custom",
+                    "type": "custom",
                     "adapter": {
-                      "templateType": ""
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl46_tMUlPn",
+                        "onGetTemplate": "getTemplate_uiControl46_tMUlPn"
+                      }
                     }
-                  },
-                  "layout": [
-                    {
-                      "id": "uiControl97_3kFTKhheader",
-                      "display": {
-                        "type": "cardHeader",
-                        "text": "",
-                        "adapterId": "cardHeader",
-                        "adapter": {
-                          "templateType": ""
-                        }
-                      },
-                      "layout": []
-                    },
-                    {
-                      "id": "uiControl97_3kFTKhbody",
-                      "display": {
-                        "type": "cardBody",
-                        "adapterId": "cardBody",
-                        "adapter": {
-                          "templateType": ""
-                        }
-                      },
-                      "layout": [
-                        {
-                          "id": "uiControl67_MrUgVz",
-                          "controlId": "control68_1kCS7G",
-                          "display": {
-                            "adapterId": "custom",
-                            "type": "custom",
-                            "adapter": {
-                              "templateType": "react",
-                              "events": {
-                                "onDoAction": "doAction_uiControl67_MrUgVz",
-                                "onGetTemplate": "getTemplate_uiControl67_MrUgVz"
-                              }
-                            }
-                          }
-                        },
-                        {
-                          "id": "uiControl61_wZom54",
-                          "controlId": "control62_X28Xf4",
-                          "display": {
-                            "adapterId": "custom",
-                            "type": "custom",
-                            "adapter": {
-                              "templateType": "react",
-                              "events": {
-                                "onDoAction": "doAction_uiControl61_wZom54",
-                                "onGetTemplate": "getTemplate_uiControl61_wZom54"
-                              }
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "id": "uiControl97_3kFTKhfooter",
-                      "display": {
-                        "type": "cardFooter",
-                        "adapterId": "cardFooter",
-                        "adapter": {
-                          "templateType": ""
-                        }
-                      },
-                      "layout": []
+                  }
+                },
+                {
+                  "id": "uiControl44_UcC6BV",
+                  "controlId": "control45_b9KvxZ",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl44_UcC6BV",
+                        "onGetTemplate": "getTemplate_uiControl44_UcC6BV"
+                      }
                     }
-                  ]
+                  }
                 }
               ]
             },
@@ -3631,6 +3557,111 @@
             "pthbcdispiblock",
             "pthbcnext",
             "pthbcprev",
+            "pthbcscroll",
+            "pthdrcontainer",
+            "pthdrlinks",
+            "pthdrnavbarlinks",
+            "pthdrsep",
+            "pthdrsyslinks",
+            "pthnav",
+            "pthnav-mouse",
+            "pthnavHideTop",
+            "pthnavHideTxt",
+            "pthnavbarabnfldr",
+            "pthnavbarcref",
+            "pthnavbarfldr",
+            "pthnavbarhide",
+            "pthnavbcanchor",
+            "pthnavbcltr",
+            "pthnavcref",
+            "pthnavcrefimg",
+            "pthnavfakeli",
+            "pthnavfav",
+            "pthnavfavimg",
+            "pthnavfldr",
+            "pthnavfldrimg",
+            "pthnavflyout",
+            "pthnavflyoutscroll",
+            "pthnavhiearchysep",
+            "pthnavmrsimg",
+            "pthnavrightarrow",
+            "pthnavscroll",
+            "pthnavscrolldown",
+            "pthnavscrollul",
+            "pthnavscrollup",
+            "pthnavshadow",
+            "pthnavtitle",
+            "ptifrmatfbtns",
+            "ptifrmatfinstruct",
+            "ptifrmatftitle",
+            "ptifrmhandle",
+            "ptifrmrcmax",
+            "ptntop",
+            "ptpopuptitlebar",
+            "ptprtlcontainer",
+            "ptrcPgltControls",
+            "ptrcPgltcontrolsdropdown",
+            "ptrcPgltcontrolshadowabove",
+            "ptrcexpand",
+            "ptrcimg",
+            "ptrcpgltrefresh",
+            "ptrctitlebar",
+            "vRCActionIcon",
+            "vRCCollapseicon",
+            "vRCExpandicon",
+            "vRCHidden",
+            "vRCNoPadding",
+            "vRCPageletGroupsDiv",
+            "vRCPgltArea",
+            "vRCPgltAreaBar",
+            "vRCPgltAreaBody",
+            "vRCPgltAreaBodyAnchor",
+            "vRCPgltAreaBorderTopLeft",
+            "vRCPgltAreaBorderTopMiddle",
+            "vRCPgltAreaContainer",
+            "vRCPgltAreaFrameDiv",
+            "vRCPgltAreaGroupsBar",
+            "vRCPgltAreaHeader",
+            "vRCPgltAreaHideIcon",
+            "vRCPgltAreaResize",
+            "vRCPgltAreaResizeBar",
+            "vRCPgltAreaResizeMiddlediv",
+            "vRCPgltAreaShowIcon",
+            "vRCPgltArea_docked",
+            "vRCPgltArea_hidden"
+          ],
+          [
+            "Left",
+            "PAPAGEINSTRUCTIONS",
+            "PAPAGETITLE",
+            "PSEDITBOX",
+            "PSEDITBOXLABEL",
+            "PSHYPERLINK",
+            "PSPUSHBUTTON",
+            "PSPUSHBUTTONTBOK",
+            "PSSRCHSUBTITLE",
+            "PTPOPUP_TITLE",
+            "ltr",
+            "popupText",
+            "ps-img",
+            "ps-text",
+            "ps-textClassic",
+            "ps_header-notify",
+            "ps_header-pin",
+            "ps_header_button",
+            "psc_badge-text",
+            "ptWaitEmpty",
+            "ptabnconthide",
+            "ptabnheader",
+            "ptabnlayoutmargin",
+            "ptabnportalfldr",
+            "ptabnsrchprompt",
+            "ptalPageMask",
+            "ptdropdownmenu",
+            "ptdynnavbc",
+            "pthbcdispiblock",
+            "pthbcnext",
+            "pthbcprevshow",
             "pthbcscroll",
             "pthdrcontainer",
             "pthdrlinks",
