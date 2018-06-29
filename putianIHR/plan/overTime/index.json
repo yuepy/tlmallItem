@@ -11,6 +11,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -42,6 +46,10 @@
       "location": {
         "data": {
           "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -104,13 +112,41 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "button"
+    },
+    "control11_eZMddr": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.chrome.win.pc.standard.psc_dir-ltr.psc_form-xlarge BODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control11_eZMddr"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context12_el3bIi": {
       "controls": [
         "control82_usBZQE",
-        "control99_S8kbdl"
+        "control99_S8kbdl",
+        "control11_eZMddr"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -158,6 +194,21 @@
             "type": "button",
             "adapter": {
               "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl11_VTiae6",
+          "controlId": "control11_eZMddr",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl11_VTiae6",
+                "onGetTemplate": "getTemplate_uiControl11_VTiae6"
+              }
             }
           }
         }

@@ -246,6 +246,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
     }
   }
 }
+
 /******************************菜单页start******************************************/
 .menu_tab{
   width:60%;
@@ -1743,7 +1744,13 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
     width:100%;
     z-index: 200;
     background: #f8f8f8; 
-  }
+  
+}
+.baseInfoTip{
+  color: red;
+  font-size: 14px;
+  padding: 10px;
+}
 //基本信息
 .ysp-jbxx-tt{
   .ysp-jbxxList-tt{
@@ -2332,3 +2339,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
   }
 }
 /*******************员工履历表（员工自助）end***************************/
+/******************************公共样式-必填项没填提交后背景变红start******************************************/
+#warn{
+  background-color:rgb(255,102,102);
+}

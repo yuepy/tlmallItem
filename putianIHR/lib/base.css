@@ -1832,6 +1832,11 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   z-index: 200;
   background: #f8f8f8;
 }
+.baseInfoTip {
+  color: red;
+  font-size: 14px;
+  padding: 10px;
+}
 .ysp-jbxx-tt .ysp-jbxxList-tt .ysp-listItem-tt {
   background: #fff;
   padding: 10px;
@@ -2439,3 +2444,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   border-radius: 8px;
 }
 /*******************员工履历表（员工自助）end***************************/
+/******************************公共样式-必填项没填提交后背景变红start******************************************/
+#warn {
+  background-color: #ff6666;
+}
