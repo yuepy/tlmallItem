@@ -181,38 +181,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control40_88NibO": {
-      "location": {
-        "data": {
-          "tagName": "FORM"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge BODY.PSSRCHPAGE FORM.PSForm"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control40_88NibO"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
-      "componentType": "custom"
-    },
-    "control60_HBVKgs": {
+    "control40_H5vsyw": {
       "location": {
         "data": {
           "tagName": "FORM"
@@ -231,7 +200,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control60_HBVKgs"
+        "onGetData": "getData_control40_H5vsyw"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -247,8 +216,7 @@
         "control38_uf5CpS",
         "control42_RWs97s",
         "control39_gHDVro",
-        "control40_88NibO",
-        "control60_HBVKgs"
+        "control40_H5vsyw"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -355,6 +323,21 @@
           }
         },
         {
+          "id": "uiControl40_DyC3pT",
+          "controlId": "control40_H5vsyw",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl40_DyC3pT",
+                "onGetTemplate": "getTemplate_uiControl40_DyC3pT"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl39_1cSzpI",
           "controlId": "control39_gHDVro",
           "display": {
@@ -365,36 +348,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl39_1cSzpI",
                 "onGetTemplate": "getTemplate_uiControl39_1cSzpI"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl40_tVB0eW",
-          "controlId": "control40_88NibO",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl40_tVB0eW",
-                "onGetTemplate": "getTemplate_uiControl40_tVB0eW"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl59_boR2bP",
-          "controlId": "control60_HBVKgs",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl59_boR2bP",
-                "onGetTemplate": "getTemplate_uiControl59_boR2bP"
               }
             }
           }
@@ -1473,6 +1426,10 @@
             "fldra_PT_REPORTING_TOOLS",
             "fldra_PT_TREE_MANAGER",
             "processing",
+            "ptModalShadow",
+            "pt_modalMask",
+            "pt_modalMaskCover",
+            "pt_modals",
             "ptabn",
             "ptabn_SRCHPROMPT",
             "ptabnclonebc",
@@ -1932,6 +1889,112 @@
             "PSMODALHEADER",
             "PSMODALTABLE",
             "PSMODALTITLE",
+            "PSPUSHBUTTON",
+            "PSPUSHBUTTONTBOK",
+            "PSSRCHSUBTITLE",
+            "PTPOPUP_TITLE",
+            "ltr",
+            "popupDragFrame",
+            "popupText",
+            "ps-img",
+            "ps-text",
+            "ps-textClassic",
+            "ps_header-notify",
+            "ps_header-pin",
+            "ps_header_button",
+            "psc_badge-text",
+            "ptWaitEmpty",
+            "ptabnconthide",
+            "ptabnheader",
+            "ptabnlayoutmargin",
+            "ptabnportalfldr",
+            "ptabnsrchprompt",
+            "ptalPageMask",
+            "ptdropdownmenu",
+            "pthbcdispiblock",
+            "pthbcnext",
+            "pthbcprev",
+            "pthbcscroll",
+            "pthdrcontainer",
+            "pthdrlinks",
+            "pthdrnavbarlinks",
+            "pthdrsep",
+            "pthdrsyslinks",
+            "pthnav",
+            "pthnav-mouse",
+            "pthnavHideTop",
+            "pthnavHideTxt",
+            "pthnavbarabnfldr",
+            "pthnavbarcref",
+            "pthnavbarfldr",
+            "pthnavbarhide",
+            "pthnavbcanchor",
+            "pthnavbcltr",
+            "pthnavcref",
+            "pthnavcrefimg",
+            "pthnavfakeli",
+            "pthnavfav",
+            "pthnavfavimg",
+            "pthnavfldr",
+            "pthnavfldrimg",
+            "pthnavflyout",
+            "pthnavflyoutscroll",
+            "pthnavhiearchysep",
+            "pthnavmrsimg",
+            "pthnavrightarrow",
+            "pthnavscroll",
+            "pthnavscrolldown",
+            "pthnavscrollul",
+            "pthnavscrollup",
+            "pthnavshadow",
+            "pthnavtitle",
+            "ptifrmatfbtns",
+            "ptifrmatfinstruct",
+            "ptifrmatftitle",
+            "ptifrmhandle",
+            "ptifrmrcmax",
+            "ptntop",
+            "ptpopuptitlebar",
+            "ptprtlcontainer",
+            "ptrcPgltControls",
+            "ptrcPgltcontrolsdropdown",
+            "ptrcPgltcontrolshadowabove",
+            "ptrcexpand",
+            "ptrcimg",
+            "ptrcpgltrefresh",
+            "ptrctitlebar",
+            "vRCActionIcon",
+            "vRCCollapseicon",
+            "vRCExpandicon",
+            "vRCHidden",
+            "vRCNoPadding",
+            "vRCPageletGroupsDiv",
+            "vRCPgltArea",
+            "vRCPgltAreaBar",
+            "vRCPgltAreaBody",
+            "vRCPgltAreaBodyAnchor",
+            "vRCPgltAreaBorderTopLeft",
+            "vRCPgltAreaBorderTopMiddle",
+            "vRCPgltAreaContainer",
+            "vRCPgltAreaFrameDiv",
+            "vRCPgltAreaGroupsBar",
+            "vRCPgltAreaHeader",
+            "vRCPgltAreaHideIcon",
+            "vRCPgltAreaResize",
+            "vRCPgltAreaResizeBar",
+            "vRCPgltAreaResizeMiddlediv",
+            "vRCPgltAreaShowIcon",
+            "vRCPgltArea_docked",
+            "vRCPgltArea_hidden"
+          ],
+          [
+            "Left",
+            "PAPAGEINSTRUCTIONS",
+            "PAPAGETITLE",
+            "PSEDITBOX",
+            "PSEDITBOXLABEL",
+            "PSHYPERLINK",
+            "PSMODAL",
             "PSPUSHBUTTON",
             "PSPUSHBUTTONTBOK",
             "PSSRCHSUBTITLE",
