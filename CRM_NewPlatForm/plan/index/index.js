@@ -5,7 +5,7 @@
     getData_control321_P7fT3E: function (elem) {
       ;if (!elem) {
         return false;
-      }var WorkSpace = ysp.customHelper.getTargetMenus(["工作台", "信息录入", "拜访总览", "拜访查看", "@我的报告", "汇报总结"]);var Achievement = ysp.customHelper.getTargetMenus(["业绩总览", "达成总览", "事业部达成", "项目达成", "产品达成", "分公司达成", "办事处达成", "销售人员达成", "客户门店达成", "年度销售达成"]);var InFormation = ysp.customHelper.getTargetMenus(["库存查询", "产品上下架", "分货查询", "我的工作"]);var ClientOrStore = ysp.customHelper.getTargetMenus(['客户360', '门店360']);return { WorkSpace: WorkSpace, Achievement: Achievement, InFormation: InFormation, ClientOrStore: ClientOrStore };
+      }var WorkSpace = ysp.customHelper.getTargetMenus(["工作台", "信息录入", "拜访总览", "拜访查看", "@我的报告", "汇报总结"]);var Achievement = ysp.customHelper.getTargetMenus(["销售业绩总览", "计划达成总览", "事业部达成", "项目达成", "产品达成", "分公司达成", "办事处达成", "销售人员达成", "客户门店达成", "年度销售达成"]);var InFormation = ysp.customHelper.getTargetMenus(["库存查询", "产品上下架", "分货查询", "我的工作"]);var ClientOrStore = ysp.customHelper.getTargetMenus(['客户360', '门店360']);return { WorkSpace: WorkSpace, Achievement: Achievement, InFormation: InFormation, ClientOrStore: ClientOrStore };
     },
     doAction_uiControl63_ax7qQG: function (data, elem) {
       //下拉刷新 , 因模版原因,现刷新原网页实现
