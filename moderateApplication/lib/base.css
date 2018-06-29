@@ -10535,17 +10535,74 @@
   font-size: 14px;
 }
 /*****************************员工合同续签申请单  ltt  START*********************************/
-.ysp-RenewalInfo-tt .ysp-RenewalInfo-title-tt {
-  height: 40px;
-  line-height: 40px;
+.contenttitle {
+  color: #e64750;
+  padding: 15px 0;
 }
-.ysp-RenewalInfo-tt .ysp-RenewalInfo-title-tt span {
-  float: left;
-  padding: 0 0 0 30px;
-  background: url() no-repeat;
+.contenttitle p {
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  margin-left: 15px;
 }
-.ysp-RenewalInfo-tt .ysp-RenewalInfo-title-tt i {
-  float: right;
-  padding: 0 30px 0 0;
+.contenttitle span {
+  width: 8px;
+  height: 28px;
+  position: absolute;
+  background-image: url(img/圆角矩形2.png);
+}
+.initiator {
+  padding-bottom: 15px;
+  background-color: #ffffff;
+}
+.initiator .disnone {
+  display: none;
+}
+.initiator .contenttitle {
+  color: #e64750;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+.initiator .contenttitle p {
+  position: relative;
+  cursor: pointer;
+}
+.initiator .contenttitle p i {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+.initiator .contenttitle p .shouqi {
+  background-image: url(img/shouqi.png);
+}
+.initiator .contenttitle p .zhankai {
+  background-image: url(img/zhankai.png);
+}
+.initiator .content .contenttit {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+}
+.initiator .content .contenttit .contentitem {
+  min-height: 56px;
+  color: #313131;
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  align-items: center;
+}
+.initiator .content .contenttit .contentitem:nth-child(1) {
+  width: 64px;
+  font-size: 14px;
+  color: #202020;
+  display: flex;
+}
+.initiator .content .contenttit .contentitem:nth-child(2) {
+  width: 285px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #313131;
 }
 /*****************************员工合同续签申请单  ltt  END*********************************/

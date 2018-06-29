@@ -5,6 +5,7 @@
   "jsFile": "index.js",
   "chineseName": "员工合同续签申请单",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control165_igAkCc": {
       "location": {
@@ -45,14 +46,10 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control166_xWbkne": {
+    "control167_SKXxVq": {
       "location": {
         "data": {
           "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -76,12 +73,63 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control166_xWbkne"
+        "onGetData": "getData_control167_SKXxVq"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "ignoreVisibility": true,
       "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control168_dkXi2m": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[1]/TABLE[1]",
+              "ratio": 0.336
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control168_dkXi2m"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -90,10 +138,13 @@
     "context23_F8ZgpJ": {
       "controls": [
         "control165_igAkCc",
-        "control166_xWbkne"
+        "control167_SKXxVq",
+        "control168_dkXi2m"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http://172.16.11.61:8000/Forms/HR/YGHTXQ/Processing.aspx?.*"
+      ]
     }
   },
   "flows": {
@@ -125,16 +176,31 @@
           }
         },
         {
-          "id": "uiControl166_JpNFVF",
-          "controlId": "control166_xWbkne",
+          "id": "uiControl167_0M1geC",
+          "controlId": "control167_SKXxVq",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl166_JpNFVF",
-                "onGetTemplate": "getTemplate_uiControl166_JpNFVF"
+                "onDoAction": "doAction_uiControl167_0M1geC",
+                "onGetTemplate": "getTemplate_uiControl167_0M1geC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl168_CoIFDp",
+          "controlId": "control168_dkXi2m",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl168_CoIFDp",
+                "onGetTemplate": "getTemplate_uiControl168_CoIFDp"
               }
             }
           }

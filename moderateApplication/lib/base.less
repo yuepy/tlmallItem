@@ -11041,19 +11041,77 @@
 
 
 /*****************************员工合同续签申请单  ltt  START*********************************/
-.ysp-RenewalInfo-tt{
-  .ysp-RenewalInfo-title-tt{
-    height: 40px;
-    line-height: 40px;
-    span{
-      float:left;
-      padding:0 0 0 30px;
-      background: url() no-repeat;
+  //发起人
+ .contenttitle{
+    color: #e64750;
+    padding: 15px 0;
+    p{
+      height: 30px;
+      line-height: 30px;
+      display: block;
+      margin-left: 15px;
     }
-    i{
-      float:right;
-      padding:0 30px 0 0;
+      span{
+        width: 8px;
+        height: 28px;
+        position: absolute;
+        background-image: url(./img/圆角矩形2.png);
+      }
+  	}
+  .initiator{
+    padding-bottom: 15px;
+    background-color: #ffffff;
+    .disnone{
+      display: none;
+    }
+    .contenttitle{
+    color: #e64750;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 15px;
+      p{
+        position: relative;
+        cursor: pointer;
+        i{
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          top: 0;
+          right: 15px;
+        }
+        .shouqi{
+          background-image: url(./img/shouqi.png);
+        }
+        .zhankai{
+          background-image: url(./img/zhankai.png);
+        }
+      }
+  	}
+    .content{
+      .contenttit{
+      display: flex;
+      justify-content: space-between;
+        margin-left: 15px;
+        .contentitem{
+        min-height: 56px;
+        color: #313131;
+        display: flex;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        align-items: center;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 14px;
+        color: #202020;
+        display: flex;
+      }
+      .contentitem:nth-child(2){
+        width: 285px;
+        border-bottom: 1px solid #e0e0e0;
+        color: #313131;
+      }
+      }
     }
   }
-}
 /*****************************员工合同续签申请单  ltt  END*********************************/

@@ -458,34 +458,3 @@
     }]);
     return data;
   doAction: ''
-
-- name: 发起人信息-ltt
-  getTemplate: "import {Component} from \"react\";\nexport default class extends Component{\n  constructor(props){\n    super(props);\n    this.state={\n      isShow:false,\n     \n    }\n  }\n  onclick(e){\n    var target=e.target;\n    var handler=this.props.customHandler;    \n    if(false==this.state.isShow){\n       this.setState({\n        isShow:true\n      })\n    }else{\n      this.setState({\n        isShow:false\n      })\n    }\n    \n  }\n  render(){\n    var data=this.props.customData;\n    var _this=this;\n    var list=data.content.map(function(d,i){\n      return (\n      \t<p><span>{d.leftval}</span><span>{d.rightval}</span></p>\n      )\n    })\n    return (\n    \t<div className='ysp-RenewalInfo-tt'>\n      \t\t<div className='ysp-RenewalInfo-title-tt'><span>{data.title}</span><i onClick={_this.onclick.bind(_this)}>dddddddd</i></div>\n        {_this.state.isShow==true?<div className='ysp-RenewalInfo-content-tt'>{list}</div>:\"\"}\n      </div>\n    )\n  }\n}"
-  getData: >
-    if (!elem) {
-      return;
-    }
-
-    var data = {};
-
-    data.title = '发起人信息';
-
-    data.content = [];
-
-    var trs =
-    elem.querySelector('table').querySelector('tbody').querySelectorAll('tr');
-
-    for (var i = 0; i < trs.length; i++) {
-      var tds = trs[i].querySelectorAll('td');
-
-      for (var k = 0; k < tds.length; k++) {
-        data.content.push({
-          leftval: tds[k].querySelector('label').textContent.trim(),
-          rightval: tds[k].querySelector('input').value
-        });
-      }
-    }
-
-
-    return data;
-  doAction: ''
