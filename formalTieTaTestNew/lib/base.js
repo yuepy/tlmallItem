@@ -142,7 +142,7 @@
 						}
 						}
 						//xhr.open('POST','http://120.52.96.35:45254/uac/services/CreateAiuapTokenSoap?wsdl',false);
-						xhr.open('POST','http://120.52.40.19:19000/proxy',false);
+						xhr.open('POST','http://120.52.40.19:9000/proxy',false);
             //xhr.open('POST','http://120.52.96.35:9000/proxy',false);
               //现在为cors跨域资源共享.不能添加head头部 会改变method  .导致请求不会响应
 						//xhr.setRequestHeader("Content-Type", "text/xml;charset=UTF-8");
