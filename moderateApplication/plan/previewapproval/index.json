@@ -1,0 +1,191 @@
+{
+  "version": "0.1",
+  "id": "previewapproval",
+  "targetURL": "http://172.16.11.61:8000/ApprovalList.aspx?ProcessCode=Hr_XJSQ&ProcInstID=29882",
+  "jsFile": "index.js",
+  "chineseName": "审批预览",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control75_RJmbF0": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[2]",
+              "ratio": 0.726
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control75_RJmbF0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context10_P8RicR": {
+      "controls": [
+        "control75_RJmbF0"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:9995\\/ApprovalList\\.aspx\\?.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow27_D4nhql": {
+      "toContexts": [
+        {
+          "toContextId": "context10_P8RicR"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page10_pT0nmb": {
+      "contextId": "context10_P8RicR",
+      "layout": [
+        {
+          "id": "uiControl75_VJeb32",
+          "controlId": "control75_RJmbF0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl75_VJeb32",
+                "onGetTemplate": "getTemplate_uiControl75_VJeb32"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context10_P8RicR": [
+          "审批预览",
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context10_P8RicR": [
+          "172.16.11.61:8000/ApprovalList.aspx?ProcessCode=Hr_XJSQ&ProcInstID=29882",
+          "172.16.11.61:9995/ApprovalList.aspx?ProcessCode=CWLC_ZCCL&ProcInstID=29894",
+          "172.16.11.61:8000/ApprovalList.aspx?ProcessCode=Hr_JBSQ&ProcInstID=29889",
+          "172.16.11.61:8000/ApprovalList.aspx?ProcessCode=Hr_KQYCSQ&ProcInstID=29890",
+          "172.16.11.61:8000/ApprovalList.aspx?ProcessCode=&ProcInstID=11927",
+          "172.16.11.61:8000/ApprovalList.aspx?ProcessCode=&ProcInstID=29900",
+          "172.16.11.61:9995/ApprovalList.aspx?ProcessCode=&ProcInstID=11087"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context10_P8RicR": [
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "form"
+          ],
+          [
+            "__VIEWSTATE",
+            "form"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context10_P8RicR": [
+          [
+            "big-form",
+            "form-wrapper",
+            "layout-data",
+            "layout-form",
+            "page-shadow",
+            "title"
+          ],
+          [
+            "aspNetHidden",
+            "big-form",
+            "form-wrapper",
+            "layout-data",
+            "layout-form",
+            "page-shadow",
+            "title"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context10_P8RicR": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH"
+          ]
+        ]
+      }
+    }
+  }
+}

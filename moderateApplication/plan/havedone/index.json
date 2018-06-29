@@ -1,0 +1,262 @@
+{
+  "version": "0.1",
+  "id": "havedone",
+  "targetURL": "http://172.16.11.61:8000/MyProcess/MyApproveProcess.aspx",
+  "jsFile": "index.js",
+  "chineseName": "已办页",
+  "description": "",
+  "controls": {
+    "control130_eOK74Z": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.result-list TABLE.layout-data.hover"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[3]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control130_eOK74Z"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context17_P5qUSc": {
+      "controls": [
+        "control130_eOK74Z"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow39_b7soqR": {
+      "toContexts": [
+        {
+          "toContextId": "context17_P5qUSc"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page17_2IdWUm": {
+      "contextId": "context17_P5qUSc",
+      "layout": [
+        {
+          "id": "uiControl130_TdgVxM",
+          "controlId": "control130_eOK74Z",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl130_TdgVxM",
+                "onGetTemplate": "getTemplate_uiControl130_TdgVxM"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context17_P5qUSc": [
+          "首页-中可流程工作台"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context17_P5qUSc": [
+          "172.16.11.61:8000/MyProcess/MyApproveProcess.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context17_P5qUSc": [
+          [
+            "DivPerson",
+            "DivReport",
+            "DivSearch",
+            "DivSupport",
+            "LiLeave",
+            "LiReport",
+            "LiVacation",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__LASTFOCUS",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "aspnetForm",
+            "ctl_lblTaskNum",
+            "ctl_rightContent_AspNetPager",
+            "ctl_rightContent_DivTime",
+            "ctl_rightContent_Folio",
+            "ctl_rightContent_btnSearch",
+            "ctl_rightContent_ddlCategory",
+            "ctl_rightContent_ddlProcess",
+            "ctl_rightContent_ddlType",
+            "ctl_rightContent_hidPageSize",
+            "ctl_rightContent_lblRum",
+            "ctl_rightContent_rblStyleC",
+            "ctl_rightContent_rblStyleT",
+            "ctl_rightContent_rptList_ctl_hidTaskFnishedTime",
+            "ctl_rightContent_rptList_ctl_hidTaskStartTime",
+            "ctl_rightContent_txtApplicant",
+            "ctl_rightContent_txtEndDate",
+            "ctl_rightContent_txtStartDate",
+            "ctl_rightContent_txtSubject",
+            "imgIphone"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context17_P5qUSc": [
+          [
+            "Wdate",
+            "active",
+            "advanced-search",
+            "anpager",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "autofit",
+            "breadcrumb",
+            "btn",
+            "container",
+            "content",
+            "cpb",
+            "font-red",
+            "footer",
+            "form-wrapper",
+            "header",
+            "hover",
+            "icon-angle-right",
+            "icon-check",
+            "icon-check-empty",
+            "icon-comment-alt",
+            "icon-home",
+            "icon-key",
+            "icon-off",
+            "icon-pencil",
+            "icon-plus",
+            "icon-question-sign",
+            "icon-search",
+            "icon-user",
+            "layout-data",
+            "layout-form",
+            "logo",
+            "main",
+            "nav-left",
+            "nav-main",
+            "nav-quick",
+            "page-shadow",
+            "red",
+            "result-list",
+            "shadow",
+            "size-s",
+            "stats",
+            "title"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context17_P5qUSc": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H4",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/P/STRONG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/BR",
+            "DIV/UL/IMG",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "LI/A/I",
+            "LI/A/SPAN",
+            "P/STRONG/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/BUTTON/I",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/INPUT-submit",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-radio",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}

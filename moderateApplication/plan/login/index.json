@@ -1,0 +1,292 @@
+{
+  "version": "0.1",
+  "id": "login",
+  "targetURL": "http://172.16.11.61:8000/sysLoginMock.aspx",
+  "jsFile": "index.js",
+  "requires": {
+    "commission": "../commission/index.json"
+  },
+  "chineseName": "登录",
+  "description": "登录页面",
+  "controls": {
+    "control0_64AfPL": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[2]/DIV[2]",
+              "ratio": 0.31
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container.login DIV.main DIV.form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0_64AfPL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context0_X0IZyP": {
+      "controls": [
+        "control0_64AfPL"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow0_r1fmwF": {
+      "toContexts": [
+        {
+          "toContextId": "context0_X0IZyP"
+        }
+      ]
+    },
+    "flow1_E9TWkZ": {
+      "fromContextId": "context0_X0IZyP",
+      "fromAction": "doAction",
+      "fromControlId": "control0_64AfPL",
+      "toContexts": [
+        {
+          "toContextId": "context0_X0IZyP",
+          "toModelId": "login"
+        },
+        {
+          "toContextId": "context1_CPB3yD",
+          "toModelId": "commission"
+        },
+        {
+          "toContextId": "context0_X0IZyP"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0_xzxOfq": {
+      "contextId": "context0_X0IZyP",
+      "layout": [
+        {
+          "id": "uiControl0_dQui51",
+          "controlId": "control0_64AfPL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl0_dQui51",
+                "onGetTemplate": "getTemplate_uiControl0_dQui51"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0_X0IZyP": [
+          "首页-中可流程工作台"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0_X0IZyP": [
+          "172.16.11.61:8000/sysLoginMock.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0_X0IZyP": [
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "btnSysLogin",
+            "ctl",
+            "txtLoginID",
+            "txtPassword",
+            "txtUserName"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0_X0IZyP": [
+          [
+            "action",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "brand",
+            "btn",
+            "btn-add-user",
+            "container",
+            "form",
+            "init-text",
+            "login",
+            "logo",
+            "main",
+            "red",
+            "size-l"
+          ],
+          [
+            "action",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "brand",
+            "btn",
+            "btn-add-user",
+            "container",
+            "form",
+            "init-text",
+            "login",
+            "logo",
+            "main",
+            "red",
+            "size-l"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0_X0IZyP": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/P",
+            "DIV/DIV/TABLE",
+            "DIV/P/A",
+            "DIV/P/INPUT-checkbox",
+            "DIV/P/INPUT-password",
+            "DIV/P/INPUT-submit",
+            "DIV/P/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TR/TD/DIV"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/P/A",
+            "DIV/P/INPUT-checkbox",
+            "DIV/P/INPUT-password",
+            "DIV/P/INPUT-submit",
+            "DIV/P/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TR/TD/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}
