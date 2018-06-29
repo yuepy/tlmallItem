@@ -60,7 +60,13 @@
     },
     doAction_uiControl327_pV2g8n: function (data, elem) {
       if ("click" == data.eventType) {
-        var index = data.dataCustom;var tbody = elem.ownerDocument.querySelector("#tbodyContent");var trs = tbody.querySelectorAll("tr")[index];trs.querySelectorAll("td")[9].querySelectorAll("button")[1].click();
+        // debugger;
+        // var index = data.dataCustom;
+        // var tbody = elem.ownerDocument.querySelector("#tbodyContent");
+        // var trs = tbody.querySelectorAll("tr")[index];
+        // trs.querySelectorAll("td")[9].querySelectorAll("button")[1].click();
+        // ysp.runtime.Model.setForceMatchModels(['questionnaireFeedbackSum']);
+        elem.ownerDocument.defaultView.open("http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionStatistics.html?quId=becddae3c56341ef8fcafa96c8033132&quName=123");
       }
     },
     getTemplate_uiControl327_pV2g8n: function () {
