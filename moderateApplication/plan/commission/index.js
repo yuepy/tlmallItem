@@ -3,7 +3,7 @@
     getData_control2_axVtNW: function (elem) {
       if (!elem) {
         return;
-      }var content = ysp.customHelper.getTableData(elem, ['流程名称', '流程编号', '内容摘要', '申请人', '停留时间', '申请日期']);var arr = ['请假申请单', '离职申请单', '加班申请单', '因公外出申请单', '考勤异常申请单', '员工异动申请单', '招聘申请单', '员工合同续签申请单', '试用期转正申请单', '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '信用冻结订单释放申请流程', '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程', '路线组变更流程', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程'];var data = ysp.customHelper.getDatamove(content, arr);content.content = data.data;content.index = data.index;return content;
+      }var content = ysp.customHelper.getTableData(elem, ['流程名称', '流程编号', '内容摘要', '申请人', '停留时间', '申请日期']);var arr = ['请假申请单', '销假申请单', '离职申请单', '加班申请单', '因公外出申请单', '考勤异常申请单', '员工异动申请单', '招聘申请单', '员工合同续签申请单', '试用期转正申请单', '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '信用冻结订单释放申请流程', '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程', '路线组变更流程', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程', '合同审批流程'];var data = ysp.customHelper.getDatamove(content, arr);content.content = data.data;content.index = data.index;return content;
     },
     doAction_uiControl2_Vdb8fD: function (data, elem) {
       var type = data.eventType,

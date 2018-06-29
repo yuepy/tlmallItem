@@ -10,49 +10,6 @@
   "description": "",
   "firstPaintEnable": false,
   "controls": {
-    "control8_GzGczD": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[1]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              3
-            ],
-            "value": "DIV.big-form.page-shadow TABLE.layout-data"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control8_GzGczD"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control11_kkWV9f": {
       "location": {
         "data": {
@@ -334,7 +291,6 @@
   "contexts": {
     "context3_h3SngD": {
       "controls": [
-        "control8_GzGczD",
         "control11_kkWV9f",
         "control13_u3mRqw",
         "control7_I7k9cQ",
@@ -365,16 +321,6 @@
       "fromContextId": "context3_h3SngD",
       "fromAction": "doAction",
       "fromControlId": "control11_kkWV9f",
-      "toContexts": [
-        {
-          "toContextId": "context3_h3SngD"
-        }
-      ]
-    },
-    "flow13_tiaFx8": {
-      "fromContextId": "context3_h3SngD",
-      "fromAction": "doAction",
-      "fromControlId": "control8_GzGczD",
       "toContexts": [
         {
           "toContextId": "context3_h3SngD"
@@ -437,21 +383,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl10_0xef1w",
                 "onGetTemplate": "getTemplate_uiControl10_0xef1w"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl8_u4qXCW",
-          "controlId": "control8_GzGczD",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl8_u4qXCW",
-                "onGetTemplate": "getTemplate_uiControl8_u4qXCW"
               }
             }
           }

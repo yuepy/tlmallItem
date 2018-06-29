@@ -1,23 +1,5 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control8_GzGczD: function (elem) {
-      if (!elem) {
-        return;
-      }var data = {};data.title = '关联流程';data.titles = [];data.content = [];var ths = elem.querySelector('thead').querySelector('tr').querySelectorAll('th');for (var i = 0; i < ths.length; i++) {
-        if (i < ths.length - 1) {
-          data.titles.push(ths[i].textContent.trim());
-        }
-      }var trs = elem.querySelector('tbody').querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
-        var arr = [];var tds = trs[i].querySelectorAll('td');for (var k = 0; k < data.titles.length; k++) {
-          arr.push(tds[k].textContent.trim());
-        }data.content.push(arr);
-      }return data;
-    },
-    doAction_uiControl8_u4qXCW: function (data, elem) {},
-    getTemplate_uiControl8_u4qXCW: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      var list = ele.map(function(d,i){\n        if(i==0){\n          return(\n          \t<div className='titlediv'>\n            \t<div>{'0'+(i+1)}</div>\n              <div>{d}</div>\n            </div>\n          )\n        }\n        return(\n        \t<div>\n          \t<div className='contentitem'>{data.titles[i]}</div>\n            <div className='contentitem'>{d}</div>\n          </div>\n        )\n      })\n      return(\n      \t<div className='contentit'>{list}</div>\n      )\n    })\n    return (\n      <div className='relation'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n    \t\t\t{lis}    \t\n        </div>\n      </div>\n    )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var lis = data.content.map(function (ele, index) {\n      var list = ele.map(function (d, i) {\n        if (i == 0) {\n          return React.createElement(\n            'div',\n            { className: 'titlediv' },\n            React.createElement(\n              'div',\n              null,\n              '0' + (i + 1)\n            ),\n            React.createElement(\n              'div',\n              null,\n              d\n            )\n          );\n        }\n        return React.createElement(\n          'div',\n          null,\n          React.createElement(\n            'div',\n            { className: 'contentitem' },\n            data.titles[i]\n          ),\n          React.createElement(\n            'div',\n            { className: 'contentitem' },\n            d\n          )\n        );\n      });\n      return React.createElement(\n        'div',\n        { className: 'contentit' },\n        list\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'relation' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'content' },\n        lis\n      )\n    );\n  }\n});";
-    },
 
     getData_control11_kkWV9f: function (elem) {
       if (!elem) {

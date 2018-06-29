@@ -93,13 +93,45 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control172_cG4T0P": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container.main DIV.content DIV.advanced-search.form-wrapper"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control172_cG4T0P"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context1_CPB3yD": {
       "controls": [
         "control2_axVtNW",
-        "control123_yRTV3G"
+        "control123_yRTV3G",
+        "control172_cG4T0P"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -185,9 +217,6 @@
           "toModelId": "train"
         },
         {
-          "toContextId": "context1_CPB3yD"
-        },
-        {
           "toContextId": "context18_a7Av8T",
           "toModelId": "creditXYDJSF"
         },
@@ -224,6 +253,21 @@
     "page1_EXifX8": {
       "contextId": "context1_CPB3yD",
       "layout": [
+        {
+          "id": "uiControl172_vTNG1U",
+          "controlId": "control172_cG4T0P",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl172_vTNG1U",
+                "onGetTemplate": "getTemplate_uiControl172_vTNG1U"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl2_Vdb8fD",
           "controlId": "control2_axVtNW",
