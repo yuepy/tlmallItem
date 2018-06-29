@@ -67,6 +67,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   //var topWin = null;
   var topWin = top;
   var loginWin = null;
+  topWin.AndroidBack = function(){
+    ysp.appMain.back();
+  }
   var forEach = Array.prototype.forEach;
   var currentModelID = ""; //当前动作
   var singleTaskManager = null; //单例任务池
@@ -150,7 +153,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     if (typeof arr === "string") {
       arr = [arr];
     }
-    arr.some(function (current, index, arr) {
+    arr.some(function (current, index, arr) {
       for (var i = 0; i < ALLMENU.length; i++) {
         //在全部菜单中按照条件筛选出移动端可以进入的目标菜单及有效url存入数组.
         if (ALLMENU[i].name.indexOf(current) !== -1 ) {
@@ -784,6 +787,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     bigPicture: _bigPicture,
     refreshWinAfterWinName: _refreshWinAfterWinName,
     getTableClassData: _getTableClassData,
+    backTopHead:_backTopHead,
     getRTWin: function getRTWin() {
       var aWin = ysp.runtime.Browser.activeBrowser.contentWindow;
       if (aWin) {
@@ -2156,6 +2160,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   /*调用场景：字符串前后需要去除空格时调用*/
   function _trim(str) {
     return str ? str.replace(/(^\s*)|(\s*$)/g, "") : '';
+  }
+  /*调用场景：点击回到页面顶部.将scrollTop 置为0 */
+  function _backTopHead(elem){
+    if(elem.nodeType != 1){
+      console.error('当前elem不是正确元素,赶紧查一下的!!!')
+      return ;
+    }
+      elem.scrollTop = 0;
   }
   /*调用场景：页面返回时使用*/
   function _back(type) {

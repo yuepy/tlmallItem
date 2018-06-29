@@ -166,31 +166,6 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
-    },
-    "control253_T387SK": {
-      "location": {
-        "data": {
-          "tagName": "HTML"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control253_T387SK"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
     }
   },
   "contexts": {
@@ -199,8 +174,7 @@
         "control5_ReXFd8",
         "control29_Mfu81p",
         "control37_5gPfm7",
-        "control97_glUzoq",
-        "control253_T387SK"
+        "control97_glUzoq"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -263,20 +237,6 @@
           "toContextId": "context3_sTqBPp"
         }
       ]
-    },
-    "flow219_9HSIJU": {
-      "fromContextId": "context3_sTqBPp",
-      "fromAction": "doAction",
-      "fromControlId": "control253_T387SK",
-      "toContexts": [
-        {
-          "toContextId": "context3_sTqBPp"
-        },
-        {
-          "toContextId": "context57_AibCE9",
-          "toModelId": "storeList"
-        }
-      ]
     }
   },
   "pages": {
@@ -294,21 +254,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl33_9KK0th",
                 "onGetTemplate": "getTemplate_uiControl33_9KK0th"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl247_DHv8u2",
-          "controlId": "control253_T387SK",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl247_DHv8u2",
-                "onGetTemplate": "getTemplate_uiControl247_DHv8u2"
               }
             }
           }
@@ -423,6 +368,16 @@
           ],
           [
             "C",
+            "Page",
+            "clientList",
+            "clientListTbody",
+            "customerList_name",
+            "customerList_search",
+            "mainContainer"
+          ],
+          [
+            "C",
+            "FB",
             "Page",
             "clientList",
             "clientListTbody",

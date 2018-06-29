@@ -3,8 +3,10 @@
     getData_control318_nWgrHk: function (elem) {},
     doAction_uiControl309_GSUcPO: function (data, elem) {
       if ('back' == data.eventType) {
-        //history.go(-1);
-        var url = "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html";ysp.appMain.reloadPage(url);
+        // //history.go(-1);
+        // var url = "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html";
+        // ysp.appMain.reloadPage(url);
+        ysp.appMain.back();
       }
     },
     getTemplate_uiControl309_GSUcPO: function () {

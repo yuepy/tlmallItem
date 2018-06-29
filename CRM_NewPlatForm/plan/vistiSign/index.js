@@ -5,9 +5,8 @@
     getData_control30_ApZCXy: function (elem) {},
     doAction_uiControl34_5PKNHW: function (data, elem) {
       if (data.eventType == 'back') {
-        //ysp.customHelper.back();
-        var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
-        ysp.appMain.reloadPage(url);
+        ysp.customHelper.back(); // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
+        // ysp.appMain.reloadPage(url);
       }
     },
     getTemplate_uiControl34_5PKNHW: function getTemplate_uiControl34_5PKNHW() {

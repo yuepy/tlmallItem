@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/store360/storeList.html",
   "jsFile": "index.js",
   "requires": {
-    "storeDetails": "../storeDetails/index.json"
+    "storeDetails": "../storeDetails/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "门店360信息",
   "description": "门店360信息",
@@ -148,31 +149,6 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
-    },
-    "control254_rVTlDA": {
-      "location": {
-        "data": {
-          "tagName": "HTML"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control254_rVTlDA"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
     }
   },
   "contexts": {
@@ -181,8 +157,7 @@
         "control217_k2qBMU",
         "control218_NJJQ1X",
         "control219_0wZxTv",
-        "control220_tTLeEO",
-        "control254_rVTlDA"
+        "control220_tTLeEO"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -232,13 +207,17 @@
         }
       ]
     },
-    "flow172_VFkeeA": {
+    "flow172_Gk4r8P": {
       "fromContextId": "context57_AibCE9",
       "fromAction": "doAction",
-      "fromControlId": "control254_rVTlDA",
+      "fromControlId": "control219_0wZxTv",
       "toContexts": [
         {
           "toContextId": "context57_AibCE9"
+        },
+        {
+          "toContextId": "context0_pD8h1P",
+          "toModelId": "index"
         }
       ]
     }
@@ -258,21 +237,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl213_CltRKD",
                 "onGetTemplate": "getTemplate_uiControl213_CltRKD"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl248_9a6DUf",
-          "controlId": "control254_rVTlDA",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl248_9a6DUf",
-                "onGetTemplate": "getTemplate_uiControl248_9a6DUf"
               }
             }
           }

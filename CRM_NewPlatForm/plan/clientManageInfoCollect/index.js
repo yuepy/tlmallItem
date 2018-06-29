@@ -19,10 +19,10 @@
         //setTimeout(function () {
         //ysp.customHelper.back();
         //}, 100);
-
         //ysp.customHelper.forceMatchModels('newInformationTotle1');
         //}
-        var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.appMain.reloadPage(url);
+        ysp.appMain.back(); // var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";
+        // ysp.appMain.reloadPage(url);
       }
     },
     getTemplate_uiControl81_N7zeTo: function getTemplate_uiControl81_N7zeTo() {
