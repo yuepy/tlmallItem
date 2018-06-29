@@ -22,7 +22,9 @@
     "entry": "../entry/index.json",
     "recruit": "../recruit/index.json",
     "staffspecial": "../staffspecial/index.json",
+
     "RenewalApplication": "../RenewalApplication/index.json"
+
   },
   "chineseName": "代办首页",
   "description": "代办首页",
@@ -102,7 +104,9 @@
         "control123_yRTV3G"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Index\\.aspx\\?Path.*"
+      ]
     }
   },
   "flows": {
@@ -202,8 +206,13 @@
           "toModelId": "staffspecial"
         },
         {
+<<<<<<< HEAD
           "toContextId": "context23_F8ZgpJ",
           "toModelId": "RenewalApplication"
+=======
+          "toContextId": "context19_g6Z7vh",
+          "toModelId": "borrowmon"
+>>>>>>> b4747b42c45b8af66e4edae9f7889381cda915be
         }
       ]
     },

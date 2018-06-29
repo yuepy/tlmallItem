@@ -3,6 +3,9 @@
   "id": "creditXYDJSF",
   "targetURL": "http://172.16.11.61:9995/Workflow/Credit/Hold/Processing.aspx?SN=9631AEBA6065A3A47772EBAA3678986C&Guid=a33d7f52-db9b-44cc-a735-2e262e8ccc96",
   "jsFile": "index.js",
+  "requires": {
+    "costreimbursement": "../costreimbursement/index.json"
+  },
   "chineseName": "信用冻结订单释放申请流程",
   "description": "",
   "firstPaintEnable": false,
@@ -11,6 +14,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -44,6 +51,10 @@
       "location": {
         "data": {
           "tagName": "H1"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -83,6 +94,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -127,6 +142,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -170,6 +189,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -208,6 +231,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -252,6 +279,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -294,6 +325,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -338,6 +373,10 @@
         "data": {
           "tagName": "UL"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -377,6 +416,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -441,6 +484,14 @@
       "toContexts": [
         {
           "toContextId": "context18_a7Av8T"
+        }
+      ]
+    },
+    "flow43_gxzcoO": {
+      "toContexts": [
+        {
+          "toContextId": "context11_mB0Nro",
+          "toModelId": "costreimbursement"
         }
       ]
     }

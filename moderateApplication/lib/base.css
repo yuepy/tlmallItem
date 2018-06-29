@@ -22,6 +22,25 @@
   color: #fff;
   text-align: center;
 }
+.titleH1 Header {
+  background-color: #e64750;
+  color: #ffffff;
+  position: relative;
+}
+.titleH1 Header span {
+  width: 10px;
+  height: 17px;
+  background-image: url(img/ysp-prev.png);
+  background-size: 10px 17px;
+  position: absolute;
+  top: 13px;
+}
+.titleH1 Header button {
+  width: 42px;
+  height: 44px;
+  border: 0;
+  margin-left: 10px;
+}
 [data-ysp-modelid="commission"] {
   background-color: #ededed;
 }
@@ -121,7 +140,7 @@
   color: #202020;
 }
 [data-ysp-modelid="Printing"] .titleH1 {
-  background-color: #ffffff;
+  background-color: #e64750;
 }
 [data-ysp-modelid="Printing"] .titleH1 button {
   width: 42px;
@@ -796,13 +815,8 @@
   background-color: #ededed;
   color: #202020;
 }
-[data-ysp-modelid="Quit"] .titleH1 {
-  background-color: #ffffff;
-}
-[data-ysp-modelid="Quit"] .titleH1 button {
-  width: 42px;
-  height: 44px;
-  border: 0;
+[data-ysp-modelid="Quit"] div[data-componentsid="uiControl7_Hg3Rbf"] {
+  padding: 0;
 }
 [data-ysp-modelid="Quit"] .contenttitle {
   color: #e64750;
