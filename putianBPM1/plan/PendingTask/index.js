@@ -3,11 +3,9 @@
     getData_control22_7UfmP8: function (elem) {
       if (!elem) {
         return [];
-      }
-      if (elem) {
+      }if (elem) {
         // var data=elem.ownerDocument.defaultView.frameElementownerDocument.parentNode.querySelectorAll(".mini-tab-active")[1].querySelector("span").textContent
-        var data = "";
-        return data;
+        var data = "";return data;
       }
     },
     doAction_uiControl21_n99o77: function (data, elem) {
@@ -22,11 +20,16 @@
         //     if (num == 4) {
         //       clearInterval(a);
         //     }
-
         //     window.EAPI.back();
         //   }, 50);
-        var newUrl = ysp.appMain.getActiveWindow();
-        newUrl.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp";
+        var newUrl = ysp.appMain.getActiveWindow();newUrl.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"; //新平台方法
+        // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
+        //   ysp.EAPI.closeWindow();
+        // } else {
+        //   var newUrl = ysp.appMain.getActiveWindow();
+        //   newUrl.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp";
+
+        // }
       }
     },
     getTemplate_uiControl21_n99o77: function () {
