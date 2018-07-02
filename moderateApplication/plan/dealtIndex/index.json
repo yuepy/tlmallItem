@@ -1,39 +1,48 @@
 {
   "version": "0.1",
-  "id": "commission",
-  "targetURL": "http://172.16.11.61:8000/Index.aspx?Path=SysLogin",
+  "id": "dealtIndex",
+  "targetURL": "http://172.16.11.61:8000/Index.aspx",
   "jsFile": "index.js",
-  "requires": {
-    "leave": "../leave/index.json",
-    "awaybusiness": "../awaybusiness/index.json",
-    "Quit": "../Quit/index.json",
-    "Printing": "../Printing/index.json",
-    "assetbudget": "../assetbudget/index.json",
-    "assetshandle": "../assetshandle/index.json",
-    "overtime": "../overtime/index.json",
-    "eliminate": "../eliminate/index.json",
-    "costreimbursement": "../costreimbursement/index.json",
-    "travel": "../travel/index.json",
-    "examination_abnormal": "../examination_abnormal/index.json",
-    "contract": "../contract/index.json",
-    "probationformal": "file://C:/Users/xubo/Documents/enterplorer/enterprises/587743d37df4e62b8c4e3d60/apps/moderateApplication/plan/probationformal/index.json",
-    "train": "../train/index.json",
-    "creditXYDJSF": "../creditXYDJSF/index.json",
-    "entry": "../entry/index.json",
-    "recruit": "../recruit/index.json",
-    "borrowmon": "../borrowmon/index.json",
-    "staffspecial": "../staffspecial/index.json",
-    "dealtIndex": "../dealtIndex/index.json",
-    "haveDoneIndex": "../haveDoneIndex/index.json"
-  },
-  "chineseName": "代办首页",
-  "description": "代办首页",
+  "chineseName": "待办首页页面",
+  "description": "待办首页页面",
   "firstPaintEnable": false,
   "controls": {
-    "control172_pAOEAo": {
+    "control193_N9CBTD": {
       "location": {
         "data": {
-          "tagName": "UL"
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.result-list TABLE.layout-data.hover"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[3]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control193_N9CBTD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control194_rkfuKp": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
         },
         "userData": {
           "data": [],
@@ -42,31 +51,51 @@
         "locators": [
           {
             "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]/UL[2]",
-              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]//UL",
-              "descendant::DIV[@id=\"DivPerson\"]//UL"
-            ]
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[1]/DIV[2]/DIV[5]"
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "ordinal": [
-              1,
-              10
-            ],
-            "value": "DIV.autofit.page-shadow DIV.container.main DIV.nav-left UL"
+            "value": "DIV.autofit.page-shadow DIV.container.main DIV.content"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[1]/UL[2]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control172_pAOEAo"
+        "onGetData": "getData_control194_rkfuKp"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control123_7z5oV6": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.result-list DIV.anpager"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control123_7z5oV6"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -77,62 +106,80 @@
     }
   },
   "contexts": {
-    "context1_CPB3yD": {
+    "context24_EkSRuv": {
       "controls": [
-        "control172_pAOEAo"
+        "control193_N9CBTD",
+        "control194_rkfuKp",
+        "control123_7z5oV6"
       ],
       "anchors": [],
-      "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Index\\.aspx\\?Path=SysLogin"
-      ]
+      "urlAnchor": []
     }
   },
   "flows": {
-    "flow2_NlbX6S": {
+    "flow51_Vdtu6b": {
       "toContexts": [
         {
-          "toContextId": "context1_CPB3yD"
-        },
-        {
-          "toContextId": "context20_4zxkiP",
-          "toModelId": "entry"
+          "toContextId": "context24_EkSRuv"
         }
       ]
     },
-    "flow50_BCoKVe": {
-      "fromContextId": "context1_CPB3yD",
+    "flow52_ZGqATy": {
+      "fromContextId": "context24_EkSRuv",
       "fromAction": "doAction",
-      "fromControlId": "control172_pAOEAo",
+      "fromControlId": "control194_rkfuKp",
       "toContexts": [
         {
-          "toContextId": "context1_CPB3yD"
-        },
-        {
-          "toContextId": "context24_EkSRuv",
-          "toModelId": "dealtIndex"
-        },
-        {
-          "toContextId": "context25_IDCMfP",
-          "toModelId": "haveDoneIndex"
+          "toContextId": "context24_EkSRuv"
         }
       ]
     }
   },
   "pages": {
-    "page1_EXifX8": {
-      "contextId": "context1_CPB3yD",
+    "page24_M4g53E": {
+      "contextId": "context24_EkSRuv",
       "layout": [
         {
-          "id": "uiControl172_qpwrqq",
-          "controlId": "control172_pAOEAo",
+          "id": "uiControl194_iLZaeH",
+          "controlId": "control194_rkfuKp",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl172_qpwrqq",
-                "onGetTemplate": "getTemplate_uiControl172_qpwrqq"
+                "onDoAction": "doAction_uiControl194_iLZaeH",
+                "onGetTemplate": "getTemplate_uiControl194_iLZaeH"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl193_bw3nWM",
+          "controlId": "control193_N9CBTD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl193_bw3nWM",
+                "onGetTemplate": "getTemplate_uiControl193_bw3nWM"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl123_ScHZwa",
+          "controlId": "control123_7z5oV6",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl123_ScHZwa",
+                "onGetTemplate": "getTemplate_uiControl123_ScHZwa"
               }
             }
           }
@@ -143,22 +190,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context1_CPB3yD": [
+        "context24_EkSRuv": [
           "首页-中可流程工作台"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context1_CPB3yD": [
-          "172.16.11.61:8000/Index.aspx?Path=SysLogin",
+        "context24_EkSRuv": [
           "172.16.11.61:8000/Index.aspx"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context1_CPB3yD": [
+        "context24_EkSRuv": [
           [
             "DivPerson",
             "DivReport",
@@ -198,7 +244,7 @@
     },
     "page/classes": {
       "contexts": {
-        "context1_CPB3yD": [
+        "context24_EkSRuv": [
           [
             "Wdate",
             "active",
@@ -223,74 +269,6 @@
             "aui_outer",
             "aui_s",
             "aui_se",
-            "aui_sw",
-            "aui_title",
-            "aui_titleBar",
-            "aui_w",
-            "autofit",
-            "breadcrumb",
-            "btn",
-            "container",
-            "content",
-            "cpb",
-            "font-red",
-            "footer",
-            "form-wrapper",
-            "header",
-            "hover",
-            "icon-angle-right",
-            "icon-check",
-            "icon-check-empty",
-            "icon-comment-alt",
-            "icon-home",
-            "icon-key",
-            "icon-off",
-            "icon-pencil",
-            "icon-plus",
-            "icon-question-sign",
-            "icon-search",
-            "icon-user",
-            "layout-data",
-            "layout-form",
-            "logo",
-            "main",
-            "nav-left",
-            "nav-main",
-            "nav-quick",
-            "page-shadow",
-            "red",
-            "result-list",
-            "shadow",
-            "size-s",
-            "stats",
-            "title"
-          ],
-          [
-            "Wdate",
-            "active",
-            "advanced-search",
-            "anpager",
-            "aui_border",
-            "aui_buttons",
-            "aui_c",
-            "aui_close",
-            "aui_content",
-            "aui_dialog",
-            "aui_e",
-            "aui_footer",
-            "aui_header",
-            "aui_icon",
-            "aui_iconBg",
-            "aui_inner",
-            "aui_loading",
-            "aui_main",
-            "aui_n",
-            "aui_ne",
-            "aui_nw",
-            "aui_outer",
-            "aui_s",
-            "aui_se",
-            "aui_state_focus",
             "aui_sw",
             "aui_title",
             "aui_titleBar",
@@ -338,7 +316,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context1_CPB3yD": [
+        "context24_EkSRuv": [
           [
             "-/-/DIV",
             "-/-/FORM",

@@ -551,13 +551,16 @@ body {
   line-height: 40px;
   font-size: 14px;
 }
-[data-ysp-modelid="commission"] {
+[data-ysp-modelid="dealtIndex"],
+[data-ysp-modelid="haveDoneIndex"] {
   background-color: #ededed;
 }
-[data-ysp-modelid="commission"] .show {
+[data-ysp-modelid="dealtIndex"] .show,
+[data-ysp-modelid="haveDoneIndex"] .show {
   display: none;
 }
-[data-ysp-modelid="commission"] .Content {
+[data-ysp-modelid="dealtIndex"] .Content,
+[data-ysp-modelid="haveDoneIndex"] .Content {
   width: 100%;
   padding: 5%;
   padding-top: 10px;
@@ -566,10 +569,12 @@ body {
   margin-bottom: 10px;
   background-color: #ffffff;
 }
-[data-ysp-modelid="commission"] .Content .Content_item:nth-child(1) {
+[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(1),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(1) {
   cursor: pointer;
 }
-[data-ysp-modelid="commission"] .Content .Content_item {
+[data-ysp-modelid="dealtIndex"] .Content .Content_item,
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item {
   width: 100%;
   height: 20px;
   line-height: 20px;
@@ -577,47 +582,58 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-[data-ysp-modelid="commission"] .Content .Content_item p {
+[data-ysp-modelid="dealtIndex"] .Content .Content_item p,
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item p {
   display: inline-block;
   height: 20px;
   line-height: 20px;
   color: #313131;
 }
-[data-ysp-modelid="commission"] .Content .Content_item p:nth-child(1) {
+[data-ysp-modelid="dealtIndex"] .Content .Content_item p:nth-child(1),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item p:nth-child(1) {
   width: 80px;
   color: #666666;
 }
-[data-ysp-modelid="commission"] .Content .Content_disnone {
+[data-ysp-modelid="dealtIndex"] .Content .Content_disnone,
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone {
   display: none;
 }
-[data-ysp-modelid="commission"] .Content .Content_disnone div {
+[data-ysp-modelid="dealtIndex"] .Content .Content_disnone div,
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone div {
   width: 100%;
   font-size: 16px;
   display: inline-block;
 }
-[data-ysp-modelid="commission"] .Content .Content_disnone > div {
+[data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div,
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div {
   margin: 10px 0 10px 0;
 }
-[data-ysp-modelid="commission"] .Content .Content_disnone > div > div:nth-child(1) {
+[data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div > div:nth-child(1),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div > div:nth-child(1) {
   width: 80px;
   color: #959595;
   float: left;
 }
-[data-ysp-modelid="commission"] .Content .Content_disnone > div > div:nth-child(2) {
+[data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div > div:nth-child(2),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div > div:nth-child(2) {
   display: inline;
   display: left;
 }
-[data-ysp-modelid="commission"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1) {
+[data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1) {
   height: 60px;
 }
-[data-ysp-modelid="commission"] .Content > div:nth-child(1) {
+[data-ysp-modelid="dealtIndex"] .Content > div:nth-child(1),
+[data-ysp-modelid="haveDoneIndex"] .Content > div:nth-child(1) {
   font-size: 16px;
   color: #313131;
 }
-[data-ysp-modelid="commission"] .Content .Content_item:nth-child(3) {
+[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(3),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) {
   position: relative;
 }
-[data-ysp-modelid="commission"] .Content .Content_item:nth-child(3) a {
+[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(3) a,
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) a {
   width: 20px;
   height: 10px;
   overflow: hidden;
@@ -625,18 +641,21 @@ body {
   top: 5px;
   right: 10px;
 }
-[data-ysp-modelid="commission"] .Content .Content_item:nth-child(3) a span {
+[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(3) a span,
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) a span {
   width: 18px;
   height: 18px;
   border: 2px solid #d8d8d8;
   position: absolute;
   transform: translateY(3px) rotate(45deg);
 }
-[data-ysp-modelid="commission"] .footerbtn ul {
+[data-ysp-modelid="dealtIndex"] .footerbtn ul,
+[data-ysp-modelid="haveDoneIndex"] .footerbtn ul {
   overflow: none;
   height: 25px;
 }
-[data-ysp-modelid="commission"] .footerbtn ul li {
+[data-ysp-modelid="dealtIndex"] .footerbtn ul li,
+[data-ysp-modelid="haveDoneIndex"] .footerbtn ul li {
   width: 5%;
   margin: 0 10px 0 10px;
   background-color: red;
