@@ -238,22 +238,43 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   color: #3796FB;
 }
 /******************************菜单页start******************************************/
+div[data-ysp-modelid="menu"] div[data-ysp="component"] {
+  padding: 0;
+}
 .menu_tab {
-  width: 60%;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  background: #fff;
+}
+.menu_tab .tab_wrapper {
+  width: 51%;
   margin: 0 auto;
 }
 .menu_tab span {
   display: inline-block;
-  padding: 10px;
-  border: 1px solid #ddd;
+  padding: 2px 15px;
+  border: 1px solid #3796FB;
+  color: #3796FB;
+}
+.menu_tab span:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.menu_tab span:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 .menu_tab .selected {
-  background: red;
+  background: #3796FB;
   color: #fff;
 }
 .menu_content {
-  padding: 0 10px;
   font-size: 14px;
+  background: #fff;
+}
+.menu_content .listItem {
+  border-bottom: 10px solid #f4f4f4;
+  padding: 10px;
 }
 .menu_content .title {
   font-size: 16px;
@@ -261,13 +282,66 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 .menu_content .content .contentItem {
   display: inline-block;
   width: 25%;
-  height: 70px;
+  height: 80px;
   text-align: center;
+  padding-top: 10px;
 }
 .menu_content .content .contentItem .contentImg {
   width: 80%;
   margin: 0 auto;
   height: 100%;
+}
+.menu_content .content .contentItem .imgTitle {
+  font-size: 13px;
+  padding-top: 5px;
+}
+.menu_content .content .contentImg[title="公出、出差申请"] {
+  background: url(../local/img/businessTravel.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="假期申请"] {
+  background: url(../local/img/askForLeave.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="忘打卡申请"] {
+  background: url(../local/img/forgetCard.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="加班申请"] {
+  background: url(../local/img/addWork.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="销假申请"] {
+  background: url(../local/img/selloffAppli.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="员工考勤、休假、加班信息查询"] {
+  background: url(../local/img/checkMyInfo.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="假期余额自助查询"] {
+  background: url(../local/img/remainHoliday.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="员工履历表（员工自助）"] {
+  background: url(../local/img/employeeInfo.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="外派探亲假资格申请"] {
+  background: url(../local/img/visitRelative.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="离职申请（辞职）"] {
+  background: url(../local/img/departureAppli.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="自助查询薪资单"] {
+  background: url(../local/img/salary.png) no-repeat;
+  background-size: 70px;
+}
+.menu_content .content .contentImg[title="查看下属考勤、休假、加班信息"] {
+  background: url(../local/img/checkSubInfo.png) no-repeat;
+  background-size: 70px;
 }
 /******************************薪资查询start******************************************/
 .ysp_filter .ysp_selectBox {
