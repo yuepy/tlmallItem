@@ -59,7 +59,7 @@ div[data-ysp-modelid="salary"]{
   justify-content: center;
   height: 2.7rem;
   font-size:@fontLarge;
-  background: #333;
+  background: #37363c;
   color:#fff;
   > span:nth-child(1){
     flex: 0 1 20%;
@@ -500,15 +500,15 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
     }
     .approved,.approving{
       float: right;
-      color:#888;
-      border:1px solid #888;
+      color:#3796fb;
+      border:1px solid #3796fb;
       padding: 0 10px;
       border-radius: 5px;
       font-size:@fontSmall;
     }
     .approving{
-      color:#3796fb;
-      border:1px solid #3796fb;
+      color:red;
+      border:1px solid red;
     }
   }
   .line2{
@@ -2338,4 +2338,7 @@ div[data-ysp-modelid="addWork"],div[data-ysp-modelid="EmployeeEditors"],div[data
 /******************************公共样式-必填项没填提交后背景变红start******************************************/
 #warn{
   background-color:rgb(255,102,102);
+  input{
+    background-color:rgb(255,102,102);
+  }
 }

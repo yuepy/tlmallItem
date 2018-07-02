@@ -60,7 +60,7 @@ div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
   justify-content: center;
   height: 2.7rem;
   font-size: 16px;
-  background: #333;
+  background: #37363c;
   color: #fff;
 }
 .ysp_header_wrapper > span:nth-child(1) {
@@ -498,16 +498,16 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 .consequence .line1 .approving,
 .abnormal .line1 .approving {
   float: right;
-  color: #888;
-  border: 1px solid #888;
+  color: #3796fb;
+  border: 1px solid #3796fb;
   padding: 0 10px;
   border-radius: 5px;
   font-size: 13px;
 }
 .consequence .line1 .approving,
 .abnormal .line1 .approving {
-  color: #3796fb;
-  border: 1px solid #3796fb;
+  color: red;
+  border: 1px solid red;
 }
 .consequence .line2,
 .abnormal .line2 {
@@ -2443,5 +2443,8 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 /*******************员工履历表（员工自助）end***************************/
 /******************************公共样式-必填项没填提交后背景变红start******************************************/
 #warn {
+  background-color: #ff6666;
+}
+#warn input {
   background-color: #ff6666;
 }

@@ -3,8 +3,13 @@
     getData_control25_xgd3im: function (elem) {},
     doAction_uiControl21_MBUkG5: function (data, elem) {
       var type = data.eventType;if (type == "back") {
-        //ysp.appMain.back();
-        ysp.runtime.Browser.activeBrowser.contentWindow.close();elem.ownerDocument.defaultView.close();
+        // ysp.runtime.Browser.activeBrowser.contentWindow.close();
+        // elem.ownerDocument.defaultView.close();
+        if (ysp.appMain.isIOS()) {
+          top.EAPI.closeWindow();
+        } else {
+          ysp.appMain.back();
+        }
       } else if (type == "filter") {
         elem.click();
       }

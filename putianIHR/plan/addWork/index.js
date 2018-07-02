@@ -89,7 +89,11 @@
     getData_control53_SoW3bg: function (elem) {},
     doAction_uiControl52_y5AbQE: function (data, elem) {
       var type = data.eventType;if (type == "back") {
-        ysp.appMain.back();
+        if (ysp.appMain.isIOS()) {
+          top.EAPI.closeWindow();
+        } else {
+          ysp.appMain.back();
+        }
       } else if (type == "filter") {
         var trs = elem.querySelectorAll("tr[id]");trs[trs.length - 1].querySelectorAll("td")[4].querySelector("a").click();
       }

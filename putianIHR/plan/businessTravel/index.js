@@ -3,8 +3,13 @@
     getData_control61_U1Nctq: function (elem) {},
     doAction_uiControl60_8nHrMb: function (data, elem) {
       var type = data.eventType;if (type == "back") {
-        ysp.appMain.back(); //elem.ownerDocument.defaultView.close();
+        //elem.ownerDocument.defaultView.close();
         //ysp.runtime.Model.setForceMatchModels(['checkMyInfo']);
+        if (ysp.appMain.isIOS()) {
+          top.EAPI.closeWindow();
+        } else {
+          ysp.appMain.back();
+        }
       }
     },
     getTemplate_uiControl60_8nHrMb: function () {

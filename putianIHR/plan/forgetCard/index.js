@@ -3,7 +3,12 @@
     getData_control23_5agOhX: function (elem) {},
     doAction_uiControl23_t26RJN: function (data, elem) {
       var type = data.eventType;if (type == "back") {
-        ysp.appMain.back();
+        //ysp.appMain.back();
+        if (ysp.appMain.isIOS()) {
+          top.EAPI.closeWindow();
+        } else {
+          ysp.appMain.back();
+        }
       }
     },
     getTemplate_uiControl23_t26RJN: function () {
