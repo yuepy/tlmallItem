@@ -2,7 +2,12 @@
 // Less 的语法与 CSS 兼容，可以直接用 CSS 语法进行编写
 // 如需了解详情，请访问 http://www.lesscss.net/
 // 发布后，base.less 被编译成 base.css 文件
-
+body{
+  background: #f3f3f3;
+}
+[data-ysp="component"]{
+  padding:0;
+}
 .ysp-zk-login{
   padding: 10px;
 	>div:nth-child(1),>div:nth-child(2){
@@ -119,7 +124,7 @@
       }
   }
 //contenttitle
-  .contenttitle{
+.contenttitle{
     color: #e64750;
     padding: 15px 0;
     p{
@@ -135,8 +140,8 @@
         background-image: url(./img/titleup.png);
       }
   	}
-  //发起人  initiator
-  .initiator{
+//发起人  initiator
+.initiator{
     padding-bottom: 15px;
     background-color: #ffffff;
     .disnone{
@@ -12417,4 +12422,302 @@
   	}
   }
 }
-//考勤异常申请单
+
+
+/***********************员工合同续签申请单  ltt START**********************/
+  //基本信息 && 劳动合同信息
+  .information{
+    margin:10px 0 0 0;
+    background-color: #ffffff;
+    .disnone{
+      display: none;
+    }
+    .content{
+      .contenttit{
+        display: flex;
+        justify-content: space-between;
+        .contentitem{
+          min-height: 56px;
+          align-items: center;
+        }
+        .contentitem:nth-child(1){
+          width: 70px;
+          display: flex;
+          margin-left: 15px;
+          font-size: 14px;
+          color: #202020;
+        }
+        .contentitem:nth-child(2){
+          display: flex;
+          width: 285px;
+          border-bottom: 1px solid #e0e0e0;
+          font-size: 16px;
+          color: #313131;
+        }
+      }
+      textarea{
+        width: 285px;
+        display: inline-block;
+        float: right;        
+        min-height: 48px;
+        line-height: 24px;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        margin: 0;
+        color: #313131;
+        padding:24px 0 10px 0;
+      }
+    }
+    >span{
+        width: 100%;
+        height: 44px;
+        font-size: 14px;
+        line-height: 44px;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+        a{
+          color: #c0a7ff;
+          margin-right: 6px;
+        }
+    }
+    .shang{
+        width: 14px;
+        height: 8px;
+        display: inline-block;
+        background-image: url(./img/top.png);
+      	background-size: 14px 8px;
+      }
+    .xia{
+        width: 14px;
+        height: 8px;
+        display: inline-block;
+        background: url(./img/xia.png);
+        background-size: 14px 8px;
+      }
+  }
+
+ .ysp-Renewal-jixiao-tt{
+  margin:10px 0 0 0;
+  background: #fff;
+  .ysp-Renewal-jixiao-title-tt{
+    color: #e64750;
+    padding:15px 0 15px 15px;
+    margin:0;
+    background: url(./img/titleup.png) no-repeat;
+    background-position-y:15px; 
+  }
+  >div{
+    overflow: hidden;
+    div{
+      float: left;
+      width:33.33%;
+      p{
+        margin:0;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        &:first-child{
+          border-bottom:1px solid #e1e1e1;
+          
+        }
+      }
+    }
+  }
+}
+
+ .examination{
+    margin:10px 0 0 0;
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    .contentitem{
+      width: 345px;
+      padding-bottom: 0;
+      white-space: nowrap;
+      overflow-x: scroll;
+      margin-left: auto;
+      margin-right: auto;
+      table{
+      width: 95px;
+      border-right: 1px solid #bddaf0;
+      border-bottom: 1px solid #bddaf0; 
+      white-space: nowrap;
+      margin: 0 auto auto 0;
+      color: #0e3838;
+      thead{
+        height: 44px;
+        font-size: 16px;
+        tr{
+          display: flex;
+          th{
+          	width: 115px;
+            min-height: 44px;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break:break-all;
+            border-top: 1px solid #bddaf0;
+            border-left:1px solid #bddaf0;
+            background-color: #eaf3fa;
+            text-align: center;
+          }
+        }
+      }
+      tbody{
+        tr{
+          display: flex;
+          td{
+            width: 115px;
+            min-height: 44px;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break:break-all;
+            border-top: 1px solid #bddaf0;
+            border-left:1px solid #bddaf0;
+            background-color: #eaf3fa;
+            text-align: center;
+          }
+        }
+      }
+    }
+    }
+    .contentitem::-webkit-scrollbar{
+      background: #ffffff;
+      height: 8px;
+      border-radius: 5px;
+    }
+    .contentitem::-webkit-scrollbar-thumb{
+      background: #a9cde9;
+      border-radius: 5px;
+      }
+  }
+	//审批操作
+  .approval{
+    margin:10px 0 0 0;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    .content{
+      overflow: hidden;
+      .contentitem{
+          color: #313131;
+          display: inline-block;
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+        .contentitem:nth-child(1){
+          width: 64px;
+          font-size: 14px;
+          float: left;
+          text-align:justify; 
+          text-align-last: justify;
+          margin-left: 10px;
+          color: #202020;
+        }
+        .contentitem:nth-child(2){
+          width: 285px;
+          border-bottom: 1px solid #e0e0e0;
+          text-align: left;
+          float: right;
+          color: #313131;
+        }
+      	textarea{
+          width: 285px;
+          max-height: 225px;
+          min-height: 44px;
+          float: right;
+          margin: 0;
+          border: 0px;
+          border-bottom: 1px solid #cccccc;
+        }
+    }
+    .tishi{
+      height: 44px;
+      line-height: 44px;
+      padding-left: 20px;
+      color: #999999;
+      font-size: 12px;
+      width: 100%;
+      border-top: 1px solid #cccccc;
+    }
+  }
+  //底部按钮
+  .submit{
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    position: relative;
+    .subtrue{
+      height: 60px;
+      overflow: hidden;
+      button{
+        width: 150px;
+        height: 40px;
+        margin-left: 10px;
+        border: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      button:nth-child(1){
+        border:1px solid #40a7ff;
+        border-radius: 5px;
+      }
+      button:nth-child(2){
+        background-color: #40a7ff;
+        border-radius: 5px;
+      }
+      >div:nth-child(1){
+        float: left;
+        margin-top: 10px;
+      }
+      >div:nth-child(2){
+        width: 40px;
+        height: 40px;
+        background: url(./img/paging.png) 50% 50% no-repeat;
+        cursor: pointer;
+        margin-top: 10px;
+        float: right;
+      }
+    }
+    .dianbl{
+      width: 100%;
+      height: 1000%;
+      background-color: #cccccc;
+      overflow: hidden;
+      position: absolute;
+      bottom: 0;
+      display: none;
+      opacity: .9;
+      ul{
+        padding: 0;
+        li{
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          position: absolute;
+          float: left;
+          list-style: none;
+          background-color: #ffffff;
+          border-radius: 8px;
+          button{
+            width: 100%;
+            border: 0;
+          }
+          p{
+            text-align: center;
+            line-height: 40px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+/***********************员工合同续签申请单  ltt END**********************/
+
