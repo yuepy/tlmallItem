@@ -8,6 +8,7 @@
     /* 适配中定制的公共代码放在这里 */
     /*调用场景：该方法用于采集表格数据*/
     getTableData: function(elem, titleArgs) {
+     
       if (!elem) {
         return;
       }

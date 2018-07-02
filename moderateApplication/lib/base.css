@@ -1,3 +1,9 @@
+body {
+  background: #f3f3f3;
+}
+[data-ysp="component"] {
+  padding: 0;
+}
 .ysp-zk-login {
   padding: 10px;
 }
@@ -10460,3 +10466,289 @@
   line-height: 40px;
   font-size: 14px;
 }
+/***********************员工合同续签申请单  ltt START**********************/
+.information {
+  margin: 10px 0 0 0;
+  background-color: #ffffff;
+}
+.information .disnone {
+  display: none;
+}
+.information .content .contenttit {
+  display: flex;
+  justify-content: space-between;
+}
+.information .content .contenttit .contentitem {
+  min-height: 56px;
+  align-items: center;
+}
+.information .content .contenttit .contentitem:nth-child(1) {
+  width: 70px;
+  display: flex;
+  margin-left: 15px;
+  font-size: 14px;
+  color: #202020;
+}
+.information .content .contenttit .contentitem:nth-child(2) {
+  display: flex;
+  width: 285px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 16px;
+  color: #313131;
+}
+.information .content textarea {
+  width: 285px;
+  display: inline-block;
+  float: right;
+  min-height: 48px;
+  line-height: 24px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  margin: 0;
+  color: #313131;
+  padding: 24px 0 10px 0;
+}
+.information > span {
+  width: 100%;
+  height: 44px;
+  font-size: 14px;
+  line-height: 44px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+}
+.information > span a {
+  color: #c0a7ff;
+  margin-right: 6px;
+}
+.information .shang {
+  width: 14px;
+  height: 8px;
+  display: inline-block;
+  background-image: url(img/top.png);
+  background-size: 14px 8px;
+}
+.information .xia {
+  width: 14px;
+  height: 8px;
+  display: inline-block;
+  background: url(img/xia.png);
+  background-size: 14px 8px;
+}
+.ysp-Renewal-jixiao-tt {
+  margin: 10px 0 0 0;
+  background: #fff;
+}
+.ysp-Renewal-jixiao-tt .ysp-Renewal-jixiao-title-tt {
+  color: #e64750;
+  padding: 15px 0 15px 15px;
+  margin: 0;
+  background: url(img/titleup.png) no-repeat;
+  background-position-y: 15px;
+}
+.ysp-Renewal-jixiao-tt > div {
+  overflow: hidden;
+}
+.ysp-Renewal-jixiao-tt > div div {
+  float: left;
+  width: 33.33%;
+}
+.ysp-Renewal-jixiao-tt > div div p {
+  margin: 0;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.ysp-Renewal-jixiao-tt > div div p:first-child {
+  border-bottom: 1px solid #e1e1e1;
+}
+.examination {
+  margin: 10px 0 0 0;
+  background-color: #ffffff;
+  padding-bottom: 15px;
+}
+.examination .contentitem {
+  width: 345px;
+  padding-bottom: 0;
+  white-space: nowrap;
+  overflow-x: scroll;
+  margin-left: auto;
+  margin-right: auto;
+}
+.examination .contentitem table {
+  width: 95px;
+  border-right: 1px solid #bddaf0;
+  border-bottom: 1px solid #bddaf0;
+  white-space: nowrap;
+  margin: 0 auto auto 0;
+  color: #0e3838;
+}
+.examination .contentitem table thead {
+  height: 44px;
+  font-size: 16px;
+}
+.examination .contentitem table thead tr {
+  display: flex;
+}
+.examination .contentitem table thead tr th {
+  width: 115px;
+  min-height: 44px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-top: 1px solid #bddaf0;
+  border-left: 1px solid #bddaf0;
+  background-color: #eaf3fa;
+  text-align: center;
+}
+.examination .contentitem table tbody tr {
+  display: flex;
+}
+.examination .contentitem table tbody tr td {
+  width: 115px;
+  min-height: 44px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-top: 1px solid #bddaf0;
+  border-left: 1px solid #bddaf0;
+  background-color: #eaf3fa;
+  text-align: center;
+}
+.examination .contentitem::-webkit-scrollbar {
+  background: #ffffff;
+  height: 8px;
+  border-radius: 5px;
+}
+.examination .contentitem::-webkit-scrollbar-thumb {
+  background: #a9cde9;
+  border-radius: 5px;
+}
+.approval {
+  margin: 10px 0 0 0;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+.approval .content {
+  overflow: hidden;
+}
+.approval .content .contentitem {
+  color: #313131;
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.approval .content .contentitem:nth-child(1) {
+  width: 64px;
+  font-size: 14px;
+  float: left;
+  text-align: justify;
+  text-align-last: justify;
+  margin-left: 10px;
+  color: #202020;
+}
+.approval .content .contentitem:nth-child(2) {
+  width: 285px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  float: right;
+  color: #313131;
+}
+.approval .content textarea {
+  width: 285px;
+  max-height: 225px;
+  min-height: 44px;
+  float: right;
+  margin: 0;
+  border: 0px;
+  border-bottom: 1px solid #cccccc;
+}
+.approval .tishi {
+  height: 44px;
+  line-height: 44px;
+  padding-left: 20px;
+  color: #999999;
+  font-size: 12px;
+  width: 100%;
+  border-top: 1px solid #cccccc;
+}
+.submit {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  position: relative;
+}
+.submit .subtrue {
+  height: 60px;
+  overflow: hidden;
+}
+.submit .subtrue button {
+  width: 150px;
+  height: 40px;
+  margin-left: 10px;
+  border: 0;
+  padding: 0;
+  font-size: 16px;
+}
+.submit .subtrue button:nth-child(1) {
+  border: 1px solid #40a7ff;
+  border-radius: 5px;
+}
+.submit .subtrue button:nth-child(2) {
+  background-color: #40a7ff;
+  border-radius: 5px;
+}
+.submit .subtrue > div:nth-child(1) {
+  float: left;
+  margin-top: 10px;
+}
+.submit .subtrue > div:nth-child(2) {
+  width: 40px;
+  height: 40px;
+  background: url(img/paging.png) 50% 50% no-repeat;
+  cursor: pointer;
+  margin-top: 10px;
+  float: right;
+}
+.submit .dianbl {
+  width: 100%;
+  height: 1000%;
+  background-color: #cccccc;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  display: none;
+  opacity: .9;
+}
+.submit .dianbl ul {
+  padding: 0;
+}
+.submit .dianbl ul li {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  float: left;
+  list-style: none;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+.submit .dianbl ul li button {
+  width: 100%;
+  border: 0;
+}
+.submit .dianbl ul li p {
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+}
+/***********************员工合同续签申请单  ltt END**********************/
