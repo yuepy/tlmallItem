@@ -4,7 +4,8 @@
   "targetURL": "http://172.16.11.61:9995/Workflow/Credit/Hold/Processing.aspx?SN=9631AEBA6065A3A47772EBAA3678986C&Guid=a33d7f52-db9b-44cc-a735-2e262e8ccc96",
   "jsFile": "index.js",
   "requires": {
-    "costreimbursement": "../costreimbursement/index.json"
+    "costreimbursement": "../costreimbursement/index.json",
+    "commission": "../commission/index.json"
   },
   "chineseName": "信用冻结订单释放申请流程",
   "description": "",
@@ -492,6 +493,10 @@
         {
           "toContextId": "context11_mB0Nro",
           "toModelId": "costreimbursement"
+        },
+        {
+          "toContextId": "context1_CPB3yD",
+          "toModelId": "commission"
         }
       ]
     }

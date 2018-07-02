@@ -69,7 +69,9 @@
               var optionarry = [];
               var options = tds[j].querySelector("select").querySelectorAll("option")
               for (var v = 0; v < options.length; v++) {
-                optionarry.push(options[v].textContent)
+                if(options[v].selected){
+                  optionarry.push(options[v].textContent)
+                }
               }
               item.push(optionarry)
             } else {
