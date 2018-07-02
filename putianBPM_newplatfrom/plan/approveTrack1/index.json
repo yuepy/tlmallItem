@@ -1,0 +1,216 @@
+{
+  "version": "0.1",
+  "id": "approveTrack1",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=690739&_winid=w703",
+  "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json",
+    "employeeHire": "../employeeHire/index.json"
+  },
+  "chineseName": "审批轨迹",
+  "description": "",
+  "controls": {
+    "control152_AX5DbF": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]",
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//TR",
+              "descendant::DIV[@id=\"_tabs\"]//TR"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control152_AX5DbF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control153_iUrtX0": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 1166,
+              "height": 503
+            }
+          }
+        ]
+      },
+      "intendedRole": "section",
+      "roles": "element,section",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "section"
+    }
+  },
+  "contexts": {
+    "context35_tU0xaK": {
+      "controls": [
+        "control152_AX5DbF",
+        "control153_iUrtX0"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow116_uIsiAb": {
+      "toContexts": [
+        {
+          "toContextId": "context35_tU0xaK"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        }
+      ]
+    },
+    "flow117_0iDxhT": {
+      "fromContextId": "context35_tU0xaK",
+      "fromAction": "doAction",
+      "fromControlId": "control152_AX5DbF",
+      "toContexts": [
+        {
+          "toContextId": "context35_tU0xaK"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        }
+      ]
+    },
+    "flow118_TFtFg3": {
+      "fromContextId": "context35_tU0xaK",
+      "fromAction": "section",
+      "fromControlId": "control152_AX5DbF",
+      "toContexts": [
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context34_zEaLZG",
+          "toModelId": "employeeHire"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page35_SWD6hE": {
+      "contextId": "context35_tU0xaK",
+      "layout": [
+        {
+          "id": "uiControl146_KsCW6D",
+          "controlId": "control152_AX5DbF",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl146_KsCW6D",
+                "onGetTemplate": "getTemplate_uiControl146_KsCW6D"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl147_SJv0EN",
+          "controlId": "control153_iUrtX0",
+          "display": {
+            "adapterId": "section",
+            "type": "section",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": []
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context35_tU0xaK": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context35_tU0xaK": [
+          ""
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context35_tU0xaK": [
+          [
+            "mini-$body$"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context35_tU0xaK": [
+          [
+            "mini-tabs-body",
+            "mini-tabs-hideOverflow"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context35_tU0xaK": [
+          [
+            "-/-/DIV",
+            "-/DIV/IFRAME"
+          ]
+        ]
+      }
+    }
+  }
+}

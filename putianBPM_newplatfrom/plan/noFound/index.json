@@ -1,0 +1,201 @@
+{
+  "version": "0.1",
+  "id": "noFound",
+  "targetURL": "https://img.tlmall.com/remit/1510798802420/20171116102002-1510798802420.jpg",
+  "jsFile": "index.js",
+  "requires": {
+    "noFound": "../noFound/index.json"
+  },
+  "chineseName": "404页面",
+  "description": "",
+  "controls": {
+    "control78_ddDLZM": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control78_ddDLZM"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control80_c6UOwl": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control80_c6UOwl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": ""
+    }
+  },
+  "contexts": {
+    "context23_OydA9m": {
+      "controls": [
+        "control78_ddDLZM",
+        "control80_c6UOwl"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow78_QFcfhD": {
+      "fromContextId": "context8_ddpRhS",
+      "fromAction": "doAction",
+      "fromControlId": "control21_GeryA0",
+      "toContexts": [
+        {
+          "toContextId": "context23_OydA9m",
+          "toModelId": "noFound"
+        }
+      ]
+    },
+    "flow79_UE5vMI": {
+      "toContexts": [
+        {
+          "toContextId": "context23_OydA9m"
+        }
+      ]
+    },
+    "flow80_9l3sz2": {
+      "fromContextId": "context23_OydA9m",
+      "fromAction": "doAction",
+      "fromControlId": "control78_ddDLZM",
+      "toContexts": [
+        {
+          "toContextId": "context23_OydA9m"
+        }
+      ]
+    },
+    "flow82_6i9sH3": {
+      "fromContextId": "context20_r9MHM9",
+      "fromAction": "doAction",
+      "fromControlId": "control60_40OEw6",
+      "toContexts": [
+        {
+          "toContextId": "context23_OydA9m",
+          "toModelId": "noFound"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page23_D0AMns": {
+      "contextId": "context23_OydA9m",
+      "layout": [
+        {
+          "id": "uiControl72_n1QWMa",
+          "controlId": "control78_ddDLZM",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl72_n1QWMa",
+                "onGetTemplate": "getTemplate_uiControl72_n1QWMa"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl73_c7ypZk",
+          "controlId": "control80_c6UOwl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl73_c7ypZk",
+                "onGetTemplate": "getTemplate_uiControl73_c7ypZk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context23_OydA9m": [
+          "404 Not Found"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context23_OydA9m": [
+          "img.tlmall.com/remit/1510798802420/20171116102002-1510798802420.jpg",
+          "img.tlmall.com/file/upload/245553-1506754525809.jpg"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context23_OydA9m": [
+          []
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context23_OydA9m": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context23_OydA9m": [
+          [
+            "-/-/H1",
+            "-/-/HR",
+            "-/-/P",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/P/BR",
+            "-/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD"
+          ]
+        ]
+      }
+    }
+  }
+}
