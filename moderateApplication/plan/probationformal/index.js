@@ -137,8 +137,16 @@
         data.titles.push(ths[i].textContent.trim());
       }for (var i = 2; i < trs.length; i++) {
         var arr = [];var tds = trs[i].querySelectorAll('td');for (var j = 0; j < tds.length; j++) {
-          arr.push(tds[j].textContent.trim());
+          if (tds[j].querySelector('input')) {
+            arr.push(tds[j].querySelector('input').value);
+          } else {
+            arr.push(tds[j].textContent.trim());
+          }
         }data.content.push(arr);
+      }var table = elem.nextElementSibling;var trs = table.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        var obj = {};var tds = trs[i].querySelectorAll('td');for (var k = 0; k < tds.length; k++) {
+          var ipts = tds[k].querySelectorAll('input');for (var j = 0; j < ipts.length; j++) {}
+        }
       }return data;
     },
     doAction_uiControl178_qwTugN: function (data, elem) {},
