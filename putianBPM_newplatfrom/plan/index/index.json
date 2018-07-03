@@ -6,7 +6,7 @@
   "requires": {
     "processedTask": "../processedTask/index.json",
     "PendingTask": "../PendingTask/index.json",
-    "index": "../index/index.json"
+    "newPlatformPendingTask": "file://C:/Users/w3cdr/Documents/enterplorer/enterprises/587743d37df4e62b8c4e3d60/apps/putianBPM_newplatfrom/plan/newPlatformPendingTask/index.json"
   },
   "chineseName": "主页",
   "description": "",
@@ -154,7 +154,8 @@
       "fromControlId": "control13_aHOPRS",
       "toContexts": [
         {
-          "toContextId": "context1_wzzrby"
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
         },
         {
           "toContextId": "context2_Z2voN1",
@@ -163,6 +164,10 @@
         {
           "toContextId": "context5_7wf9RT",
           "toModelId": "PendingTask"
+        },
+        {
+          "toModelId": "newPlatformPendingTask",
+          "toContextId": "context39_JF6QGL"
         }
       ]
     },
@@ -250,7 +255,7 @@
           "192.168.220.51:8000/ptsoa/widget/user_select.jsp?_winid=w6406&_t=292443",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&beginToWork",
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/undefined&goodBargain",
-          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=339196&processForm"
         ],
         "context2_qmX095": [
           "192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self&_t=771907&_winid=w771",
@@ -371,6 +376,7 @@
           ],
           [
             "$cell$",
+            "__modalmini-",
             "endT",
             "endT$text",
             "endT$value",
@@ -782,6 +788,7 @@
             "mini-grid-vscroll-content",
             "mini-hidden",
             "mini-list-inner",
+            "mini-modal",
             "mini-page-buttons",
             "mini-pager",
             "mini-pager-first",
@@ -814,6 +821,10 @@
             "mini-tools",
             "mini-tools-close",
             "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag",
             "nui-form-input",
             "separator",
             "textof_clip"
@@ -1199,9 +1210,11 @@
             "-/-/SCRIPT",
             "-/-/TABLE",
             "-/DIV/DIV",
+            "-/DIV/IFRAME",
             "-/TABLE/TBODY",
             "DIV/DIV/A",
             "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
             "DIV/DIV/INPUT-checkbox",
             "DIV/DIV/LABEL",
             "DIV/DIV/SPAN",

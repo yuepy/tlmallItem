@@ -103,7 +103,13 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc) {
-      //用于作用于原网页第一次进入时的点击;
+      //新平台待办列表问题
+      if(aWin.location.href.indexOf("pendingTask")!==-1){
+        if(ysp.runtime.Model.modelsStack.length==0&&ysp.runtime.Model.modelsStack[0].model.id=="PendingTask"){
+          ysp.runtime.Model.setForceMatchModels(['newPlatformPendingTask']);
+        }
+      }
+      //用于作用于原网页第一次进入时的点击;
       if(aWin && doc){
         if(doc.querySelector('#workItemTabs')){
            var X = doc.querySelector('#workItemTabs').querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span')[2];
@@ -246,52 +252,53 @@
           title = "收回工作项";
           //width=800;
         }
+        topWin.open(url)
        
-        aWin.nui.open({
-          url: url,
-          title: title,
-          width: 1200,
-          height: 650,
-          showMaxButton: true,
-          onload: function() {
-            var iframe = this.getIFrameEl();
+//         aWin.nui.open({
+//           url: url,
+//           title: title,
+//           width: 1200,
+//           height: 650,
+//           showMaxButton: true,
+//           onload: function() {
+//             var iframe = this.getIFrameEl();
             
-             //if(top.pendTitle&&top.pendTitle=="总部转正"){
-               //topWin.test="Headquarters&";
-             //}else if(top.pendTitle&&top.pendTitle=="分公司离职管理流程(解除)"){
-             //topWin.test="branchRelease&";
-             //}else if(top.pendTitle&&top.pendTitle=="离职管理"){
-             //topWin.test="Departure&";
-             //}else if(top.pendTitle&&top.pendTitle=="员工职位变动"){
-             //topWin.test="positionChange&";
-             //}else if(top.pendTitle&&top.pendTitle=="假期申请"){
-             //topWin.test="askForLeave&";
-             // }else if(top.pendTitle&&top.pendTitle=="销假申请"){
-               //topWin.test="beginToWork&";
-             //}else if(top.pendTitle&&top.pendTitle=="忘打卡"){
-             //  topWin.test="forgetCard&";
-             //}else if (top.pendTitle&&top.pendTitle=="加班申请") {
-              // topWin.test="addWork&";
-             //}else if (top.pendTitle&&top.pendTitle=="外派探亲资格") {
-             //  topWin.test="visitRelative&";
-             //}else if (top.pendTitle&&top.pendTitle=="员工录用") {
-              // topWin.test="employeeHire&";
-             //}else{
-             //  topWin.test="test&";
-             //}
+//              //if(top.pendTitle&&top.pendTitle=="总部转正"){
+//                //topWin.test="Headquarters&";
+//              //}else if(top.pendTitle&&top.pendTitle=="分公司离职管理流程(解除)"){
+//              //topWin.test="branchRelease&";
+//              //}else if(top.pendTitle&&top.pendTitle=="离职管理"){
+//              //topWin.test="Departure&";
+//              //}else if(top.pendTitle&&top.pendTitle=="员工职位变动"){
+//              //topWin.test="positionChange&";
+//              //}else if(top.pendTitle&&top.pendTitle=="假期申请"){
+//              //topWin.test="askForLeave&";
+//              // }else if(top.pendTitle&&top.pendTitle=="销假申请"){
+//                //topWin.test="beginToWork&";
+//              //}else if(top.pendTitle&&top.pendTitle=="忘打卡"){
+//              //  topWin.test="forgetCard&";
+//              //}else if (top.pendTitle&&top.pendTitle=="加班申请") {
+//               // topWin.test="addWork&";
+//              //}else if (top.pendTitle&&top.pendTitle=="外派探亲资格") {
+//              //  topWin.test="visitRelative&";
+//              //}else if (top.pendTitle&&top.pendTitle=="员工录用") {
+//               // topWin.test="employeeHire&";
+//              //}else{
+//              //  topWin.test="test&";
+//              //}
            
-            if (iframe.contentWindow.initData) {
-              iframe.contentWindow.initData(row, aWin.taskType, isShowDetail);
-            }
-          },
-          ondestroy: function(action) {
-            if (action == "ok") {
-              aWin.taskListDataGridObj.load();
-            } else if (action == "execute") {
-              aWin.doOperate(rowIndex, false, newPage);
-            }
-          }
-        });
+//             if (iframe.contentWindow.initData) {
+//               iframe.contentWindow.initData(row, aWin.taskType, isShowDetail);
+//             }
+//           },
+//           ondestroy: function(action) {
+//             if (action == "ok") {
+//               aWin.taskListDataGridObj.load();
+//             } else if (action == "execute") {
+//               aWin.doOperate(rowIndex, false, newPage);
+//             }
+//           }
+//         });
       }
       /////////////////////////////////////
       

@@ -1,0 +1,725 @@
+{
+  "version": "0.1",
+  "id": "newPlatformPendingTask",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=747376&_winid=w7347",
+  "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json",
+    "newPlatFormProcessForm": "../newPlatFormProcessForm/index.json"
+  },
+  "chineseName": "新平台待办列表",
+  "description": "",
+  "controls": {
+    "control7_x3bs02": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body-font"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control7_x3bs02"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control202_Poxo0N": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"tableSearch\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              12
+            ],
+            "value": "BODY.body-font TABLE"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control202_Poxo0N"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control203_KKgJVO": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-grid-rows-view DIV.mini-grid-rows-content TABLE.mini-grid-table.mini-grid-rowstable"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control203_KKgJVO"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control204_wpxe8Q": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::DIV[@id=\"taskListId\"]/DIV[1]/DIV[2]/DIV[6]/DIV[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-viewport.mini-grid-viewport DIV.mini-grid-pager DIV.mini-pager"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[6]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control204_wpxe8Q"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context39_JF6QGL": {
+      "controls": [
+        "control7_x3bs02",
+        "control202_Poxo0N",
+        "control203_KKgJVO",
+        "control204_wpxe8Q"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow151_kosWK9": {
+      "toContexts": [
+        {
+          "toContextId": "context39_JF6QGL"
+        }
+      ]
+    },
+    "flow152_g0bTGG": {
+      "fromContextId": "context39_JF6QGL",
+      "fromAction": "doAction",
+      "fromControlId": "control203_KKgJVO",
+      "toContexts": [
+        {
+          "toContextId": "context39_JF6QGL"
+        },
+        {
+          "toContextId": "context1_wzzrby",
+          "toModelId": "index"
+        },
+        {
+          "toContextId": "context40_s6EosK",
+          "toModelId": "newPlatFormProcessForm"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page39_AzXNn2": {
+      "contextId": "context39_JF6QGL",
+      "layout": [
+        {
+          "id": "uiControl12_b3DTEr",
+          "controlId": "control7_x3bs02",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl12_b3DTEr",
+                "onGetTemplate": "getTemplate_uiControl12_b3DTEr"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl195_dzK3bZ",
+          "controlId": "control202_Poxo0N",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl195_dzK3bZ",
+                "onGetTemplate": "getTemplate_uiControl195_dzK3bZ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl196_a49DXS",
+          "controlId": "control203_KKgJVO",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl196_a49DXS",
+                "onGetTemplate": "getTemplate_uiControl196_a49DXS"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl197_T42hgE",
+          "controlId": "control204_wpxe8Q",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl197_T42hgE",
+                "onGetTemplate": "getTemplate_uiControl197_T42hgE"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context39_JF6QGL": [
+          "待处理任务"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context39_JF6QGL": [
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=747376&_winid=w7347",
+          "192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=115060&_winid=w1947",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=339196&processForm"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context39_JF6QGL": [
+          [
+            "$cell$",
+            "endT",
+            "endT$text",
+            "endT$value",
+            "likeQ",
+            "likeQ$text",
+            "likeSearch",
+            "mini-",
+            "mini-$",
+            "mini-$ck$",
+            "mini-$emptytext",
+            "mini-$filter$",
+            "mini-$headerCell$",
+            "mini-$row$",
+            "mini-$summary$",
+            "permissionList",
+            "permissionList$value",
+            "startT",
+            "startT$text",
+            "startT$value",
+            "tableSearch",
+            "taskFromList",
+            "taskFromList$value",
+            "taskListId"
+          ],
+          [
+            "$cell$",
+            "__modalmini-",
+            "endT",
+            "endT$text",
+            "endT$value",
+            "likeQ",
+            "likeQ$text",
+            "likeSearch",
+            "mini-",
+            "mini-$",
+            "mini-$ck$",
+            "mini-$emptytext",
+            "mini-$filter$",
+            "mini-$headerCell$",
+            "mini-$row$",
+            "mini-$summary$",
+            "permissionList",
+            "permissionList$value",
+            "startT",
+            "startT$text",
+            "startT$value",
+            "tableSearch",
+            "taskFromList",
+            "taskFromList$value",
+            "taskListId"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context39_JF6QGL": [
+          [
+            "bpsDatagrid",
+            "dgBtn",
+            "grayBtn",
+            "mini-button",
+            "mini-button-disabled",
+            "mini-button-iconOnly",
+            "mini-button-plain",
+            "mini-button-text",
+            "mini-buttonedit",
+            "mini-buttonedit-border",
+            "mini-buttonedit-button",
+            "mini-buttonedit-buttons",
+            "mini-buttonedit-close",
+            "mini-buttonedit-icon",
+            "mini-buttonedit-input",
+            "mini-checkboxlist",
+            "mini-checkboxlist-item",
+            "mini-checkboxlist-item-selected",
+            "mini-combobox",
+            "mini-datagrid",
+            "mini-datepicker",
+            "mini-errorIcon",
+            "mini-grid",
+            "mini-grid-border",
+            "mini-grid-bottomCell",
+            "mini-grid-cell",
+            "mini-grid-cell-inner",
+            "mini-grid-cell-nowrap",
+            "mini-grid-column-splitter",
+            "mini-grid-columns",
+            "mini-grid-columns-lock",
+            "mini-grid-columns-view",
+            "mini-grid-emptyText",
+            "mini-grid-filterCell",
+            "mini-grid-filterRow",
+            "mini-grid-filterRow-lock",
+            "mini-grid-filterRow-view",
+            "mini-grid-focus",
+            "mini-grid-headerCell",
+            "mini-grid-headerCell-inner",
+            "mini-grid-headerCell-nowrap",
+            "mini-grid-headerCell-outer",
+            "mini-grid-pager",
+            "mini-grid-rightCell",
+            "mini-grid-row",
+            "mini-grid-row-alt",
+            "mini-grid-rows",
+            "mini-grid-rows-content",
+            "mini-grid-rows-lock",
+            "mini-grid-rows-view",
+            "mini-grid-rowstable",
+            "mini-grid-scrollHeaderCell",
+            "mini-grid-summaryCell",
+            "mini-grid-summaryRow",
+            "mini-grid-summaryRow-lock",
+            "mini-grid-summaryRow-view",
+            "mini-grid-table",
+            "mini-grid-topRightCell",
+            "mini-grid-viewport",
+            "mini-grid-vscroll",
+            "mini-grid-vscroll-content",
+            "mini-hidden",
+            "mini-list-inner",
+            "mini-page-buttons",
+            "mini-pager",
+            "mini-pager-first",
+            "mini-pager-index",
+            "mini-pager-last",
+            "mini-pager-left",
+            "mini-pager-next",
+            "mini-pager-num",
+            "mini-pager-pages",
+            "mini-pager-prev",
+            "mini-pager-reload",
+            "mini-pager-right",
+            "mini-pager-size",
+            "mini-pager-sizetext",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-popupedit",
+            "mini-resizer-trigger",
+            "mini-textbox",
+            "mini-textbox-border",
+            "mini-textbox-input",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "nui-form-input",
+            "separator",
+            "textof_clip"
+          ],
+          [
+            "bpsDatagrid",
+            "dgBtn",
+            "grayBtn",
+            "mini-button",
+            "mini-button-disabled",
+            "mini-button-iconOnly",
+            "mini-button-plain",
+            "mini-button-text",
+            "mini-buttonedit",
+            "mini-buttonedit-border",
+            "mini-buttonedit-button",
+            "mini-buttonedit-buttons",
+            "mini-buttonedit-close",
+            "mini-buttonedit-icon",
+            "mini-buttonedit-input",
+            "mini-checkboxlist",
+            "mini-checkboxlist-item",
+            "mini-checkboxlist-item-selected",
+            "mini-combobox",
+            "mini-datagrid",
+            "mini-datepicker",
+            "mini-errorIcon",
+            "mini-grid",
+            "mini-grid-border",
+            "mini-grid-bottomCell",
+            "mini-grid-cell",
+            "mini-grid-cell-inner",
+            "mini-grid-cell-nowrap",
+            "mini-grid-column-splitter",
+            "mini-grid-columns",
+            "mini-grid-columns-lock",
+            "mini-grid-columns-view",
+            "mini-grid-emptyText",
+            "mini-grid-filterCell",
+            "mini-grid-filterRow",
+            "mini-grid-filterRow-lock",
+            "mini-grid-filterRow-view",
+            "mini-grid-focus",
+            "mini-grid-headerCell",
+            "mini-grid-headerCell-inner",
+            "mini-grid-headerCell-nowrap",
+            "mini-grid-headerCell-outer",
+            "mini-grid-pager",
+            "mini-grid-rightCell",
+            "mini-grid-row",
+            "mini-grid-row-alt",
+            "mini-grid-row-selected",
+            "mini-grid-rows",
+            "mini-grid-rows-content",
+            "mini-grid-rows-lock",
+            "mini-grid-rows-view",
+            "mini-grid-rowstable",
+            "mini-grid-scrollHeaderCell",
+            "mini-grid-summaryCell",
+            "mini-grid-summaryRow",
+            "mini-grid-summaryRow-lock",
+            "mini-grid-summaryRow-view",
+            "mini-grid-table",
+            "mini-grid-topRightCell",
+            "mini-grid-viewport",
+            "mini-grid-vscroll",
+            "mini-grid-vscroll-content",
+            "mini-hidden",
+            "mini-list-inner",
+            "mini-page-buttons",
+            "mini-pager",
+            "mini-pager-first",
+            "mini-pager-index",
+            "mini-pager-last",
+            "mini-pager-left",
+            "mini-pager-next",
+            "mini-pager-num",
+            "mini-pager-pages",
+            "mini-pager-prev",
+            "mini-pager-reload",
+            "mini-pager-right",
+            "mini-pager-size",
+            "mini-pager-sizetext",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-popupedit",
+            "mini-resizer-trigger",
+            "mini-textbox",
+            "mini-textbox-border",
+            "mini-textbox-input",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "nui-form-input",
+            "separator",
+            "textof_clip"
+          ],
+          [
+            "bpsDatagrid",
+            "dgBtn",
+            "grayBtn",
+            "mini-button",
+            "mini-button-disabled",
+            "mini-button-iconOnly",
+            "mini-button-plain",
+            "mini-button-text",
+            "mini-buttonedit",
+            "mini-buttonedit-border",
+            "mini-buttonedit-button",
+            "mini-buttonedit-buttons",
+            "mini-buttonedit-close",
+            "mini-buttonedit-icon",
+            "mini-buttonedit-input",
+            "mini-checkboxlist",
+            "mini-checkboxlist-item",
+            "mini-checkboxlist-item-selected",
+            "mini-combobox",
+            "mini-datagrid",
+            "mini-datepicker",
+            "mini-errorIcon",
+            "mini-grid",
+            "mini-grid-border",
+            "mini-grid-bottomCell",
+            "mini-grid-cell",
+            "mini-grid-cell-inner",
+            "mini-grid-cell-nowrap",
+            "mini-grid-column-splitter",
+            "mini-grid-columns",
+            "mini-grid-columns-lock",
+            "mini-grid-columns-view",
+            "mini-grid-emptyText",
+            "mini-grid-filterCell",
+            "mini-grid-filterRow",
+            "mini-grid-filterRow-lock",
+            "mini-grid-filterRow-view",
+            "mini-grid-focus",
+            "mini-grid-headerCell",
+            "mini-grid-headerCell-inner",
+            "mini-grid-headerCell-nowrap",
+            "mini-grid-headerCell-outer",
+            "mini-grid-pager",
+            "mini-grid-rightCell",
+            "mini-grid-row",
+            "mini-grid-row-alt",
+            "mini-grid-rows",
+            "mini-grid-rows-content",
+            "mini-grid-rows-lock",
+            "mini-grid-rows-view",
+            "mini-grid-rowstable",
+            "mini-grid-scrollHeaderCell",
+            "mini-grid-summaryCell",
+            "mini-grid-summaryRow",
+            "mini-grid-summaryRow-lock",
+            "mini-grid-summaryRow-view",
+            "mini-grid-table",
+            "mini-grid-topRightCell",
+            "mini-grid-viewport",
+            "mini-grid-vscroll",
+            "mini-grid-vscroll-content",
+            "mini-hidden",
+            "mini-list-inner",
+            "mini-modal",
+            "mini-page-buttons",
+            "mini-pager",
+            "mini-pager-first",
+            "mini-pager-index",
+            "mini-pager-last",
+            "mini-pager-left",
+            "mini-pager-next",
+            "mini-pager-num",
+            "mini-pager-pages",
+            "mini-pager-prev",
+            "mini-pager-reload",
+            "mini-pager-right",
+            "mini-pager-size",
+            "mini-pager-sizetext",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-popupedit",
+            "mini-resizer-trigger",
+            "mini-textbox",
+            "mini-textbox-border",
+            "mini-textbox-input",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag",
+            "nui-form-input",
+            "separator",
+            "textof_clip"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context39_JF6QGL": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/TABLE/TBODY",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-checkbox",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/LABEL",
+            "DIV/TABLE/TBODY",
+            "FORM/LABEL/SPAN",
+            "LABEL/SPAN/INPUT-hidden",
+            "LABEL/SPAN/SPAN",
+            "SPAN/SPAN/INPUT-hidden",
+            "SPAN/SPAN/INPUT-text",
+            "SPAN/SPAN/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/FORM",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/TABLE/TBODY",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-checkbox",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/LABEL",
+            "DIV/TABLE/TBODY",
+            "FORM/LABEL/SPAN",
+            "LABEL/SPAN/INPUT-hidden",
+            "LABEL/SPAN/SPAN",
+            "SPAN/SPAN/INPUT-hidden",
+            "SPAN/SPAN/INPUT-text",
+            "SPAN/SPAN/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/FORM",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

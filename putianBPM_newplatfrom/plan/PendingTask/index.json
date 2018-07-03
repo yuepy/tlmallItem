@@ -19,7 +19,9 @@
     "departure": "../departure/index.json",
     "positionChange": "../positionChange/index.json",
     "employeeHire": "../employeeHire/index.json",
-    "monthChange": "../monthChange/index.json"
+    "monthChange": "../monthChange/index.json",
+    "newPlatformPendingTask": "../newPlatformPendingTask/index.json",
+    "newPlatFormProcessForm": "../newPlatFormProcessForm/index.json"
   },
   "chineseName": "代办列表",
   "description": "",
@@ -250,6 +252,54 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control206_rgUsZ6": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "待处理的任务"
+              ],
+              "visText": [
+                "待处理的任务"
+              ]
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.mini-tabs-header TD.mini-tab.mini-tab-active SPAN.mini-tab-text"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              63,
+              136,
+              209
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "待处理的任务",
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -262,7 +312,9 @@
         "control34_XNdpHA",
         "control64_OUgNmD"
       ],
-      "anchors": [],
+      "anchors": [
+        "control206_rgUsZ6"
+      ],
       "urlAnchor": [
         "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/pendingTask\\.jsp.*"
       ]
@@ -285,6 +337,10 @@
         {
           "toContextId": "context25_ber6DF",
           "toModelId": "clientFlowForm"
+        },
+        {
+          "toContextId": "context39_JF6QGL",
+          "toModelId": "newPlatformPendingTask"
         }
       ]
     },
@@ -395,6 +451,10 @@
         {
           "toContextId": "context36_6C2hoz",
           "toModelId": "monthChange"
+        },
+        {
+          "toContextId": "context40_s6EosK",
+          "toModelId": "newPlatFormProcessForm"
         }
       ]
     },
