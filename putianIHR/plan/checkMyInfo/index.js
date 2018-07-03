@@ -5,12 +5,11 @@
       var type = data.eventType;if (type == "back") {
         // ysp.runtime.Browser.activeBrowser.contentWindow.close();
         // elem.ownerDocument.defaultView.close();
-        // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
-        //   top.EAPI.closeWindow();
-        // } else {
-        //   ysp.appMain.back();
-        // } 
-        ysp.appMain.back();
+        if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
+          top.EAPI.closeWindow();
+        } else {
+          ysp.appMain.back();
+        } // ysp.appMain.back();
       } else if (type == "filter") {
         elem.click();
       }
