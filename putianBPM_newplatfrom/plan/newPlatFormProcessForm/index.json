@@ -1,0 +1,171 @@
+{
+  "version": "0.1",
+  "id": "newPlatFormProcessForm",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=339196&undefined",
+  "jsFile": "index.js",
+  "chineseName": "新平台流程表单",
+  "description": "",
+  "controls": {
+    "control205_E81Qas": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control205_E81Qas"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context40_s6EosK": {
+      "controls": [
+        "control205_E81Qas"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow153_Q2RR7e": {
+      "toContexts": [
+        {
+          "toContextId": "context40_s6EosK"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page40_9KWTg3": {
+      "contextId": "context40_s6EosK",
+      "layout": [
+        {
+          "id": "uiControl198_4RMpA1",
+          "controlId": "control205_E81Qas",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl198_4RMpA1",
+                "onGetTemplate": "getTemplate_uiControl198_4RMpA1"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context40_s6EosK": [
+          "表单框架"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context40_s6EosK": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=339196&undefined"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context40_s6EosK": [
+          [
+            "_btns",
+            "_tabs",
+            "_tr_",
+            "backActivity",
+            "btn",
+            "mini-$",
+            "mini-$body$",
+            "submit",
+            "tab",
+            "td__"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context40_s6EosK": [
+          [
+            "icon-ok",
+            "icon-undo",
+            "mini-button",
+            "mini-button-icon",
+            "mini-button-text",
+            "mini-disabled",
+            "mini-fit",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-toolbar"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context40_s6EosK": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/DIV",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}
