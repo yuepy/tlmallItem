@@ -109,44 +109,6 @@
 
     return data;
   doAction: ''
-- name: 审批操作
-  getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
-  getData: >
-    if (!elem) {
-      return;
-    }
-
-    var data = {};
-
-    data.title = '审批操作';
-
-    data.content = [];
-
-    var trs = elem.querySelectorAll('tr');
-
-    var obj = {};
-
-    obj.left = '当前环节';
-
-    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
-
-    data.content.push(obj);
-
-    var obj = {};
-
-    obj.left = '意见';
-
-    obj.right =
-    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
-
-    data.content.push(obj);
-
-    data.content.push({
-      left: trs[1].querySelectorAll('td')[1].textContent.trim()
-    });
-
-    return data;
-  doAction: ''
 - name: 申请明细合计
   getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      if(i!=data.content.length-1){\n        var tds = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      \t})\n      }\n      return(\n      \t<tr>{tds}</tr>\n      )\n    })\n    var lislength = data.contentlength.map(function(d,i){\n      return(\n      \t<div className='content'>\n        \t<div className='contentitembom'>{d.left}</div>\n          <div className='contentitembom'>{d.right}</div>\n        </div>\n      )\n    })\n    return (\n      <div className='askleave'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n        <div className='tablebottom'>{lislength}</div>\n      </div>\n    )\n  }\n});"
   getData: |
@@ -472,4 +434,45 @@
     if (type == 'updel') {
       var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
       tds[tds.length - 1].querySelectorAll('a')[data.i].click();
+    }
+- name: 审批操作item
+  getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {};
+
+    data.title = '审批操作';
+
+    data.content = [];
+
+    var trs = elem.querySelectorAll('tr');
+
+    var obj = {};
+
+    obj.left = '当前环节';
+
+    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
+
+    data.content.push(obj);
+
+    var obj = {};
+
+    obj.left = '意见';
+
+    obj.right =
+    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
+
+    data.content.push(obj);
+
+    data.content.push({
+      left: trs[1].querySelectorAll('td')[1].textContent.trim()
+    });
+
+    return data;
+  doAction: |
+    if (data.eventType == 'change') {
+      elem.querySelector('textarea').value = data;
     }

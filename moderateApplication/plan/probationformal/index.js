@@ -131,8 +131,8 @@
       }var data = {};data.title = '审批操作';data.content = [];var trs = elem.querySelectorAll('tr');var obj = {};obj.left = '当前环节';obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();data.content.push(obj);var obj = {};obj.left = '意见';obj.right = trs[1].querySelectorAll('td')[1].querySelector('textarea').value;data.content.push(obj);data.content.push({ left: trs[1].querySelectorAll('td')[1].textContent.trim() });return data;
     },
     doAction_uiControl176_54SSa5: function (data, elem) {
-      var type = data.eventType;if (type == 'change') {
-        elem.querySelector('textarea').value = data.customData;
+      if (data.eventType == 'change') {
+        elem.querySelector('textarea').value = data;
       }
     },
     getTemplate_uiControl176_54SSa5: function () {

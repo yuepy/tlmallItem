@@ -12389,6 +12389,220 @@ body{
 //人才盘点信息表
 [data-ysp-modelid="personnel"]{
   background-color: #ededed;
+  color: #212121;
+  [data-componentsid="uiControl192_08z6aK"]{padding:0;}
+  //直线上级填写样式
+  .tage{
+    display: flex;
+    height: 44px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e4e6e9;
+    div{
+      display: flex;
+      height: 44px;
+      color: #313131;
+      align-items: center;
+      text-align: center;
+      width: 50%;
+      cursor: pointer;
+      justify-content: center;
+    }
+    .item{
+      color: #e64750;
+      border-bottom: 2px solid #f02a95;
+    }
+  }
+  .content{
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding-bottom:10px;
+  }
+  //填写指引
+  .superior_yspone{
+    font-size: 14px;
+    color: #202020;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  //个人优劣势综述
+  .superior_ysp_two{
+    width: 345px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    .titleone{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding-top: 10px; 
+      padding-bottom: 10px;
+      border-bottom: 1px solid #cccccc;
+      p:nth-child(1){
+        width: 40px;
+        justify-content: center;
+        padding-left: 10px;
+        margin: 0;
+        border-right: 1px solid #cccccc;
+      }
+      p:nth-child(2){
+        width: 100%;
+        padding-left: 10px;
+      }
+    }
+    .ysp-two-content{
+      display: flex;
+      justify-content: space-between;
+      div{
+        display: flex;
+        text-align-last: justify;
+        width: 56px;
+        margin-left: 10px;
+        font-size: 14px;
+        justify-content: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      input{
+        display: flex;
+        width: 260px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 0;
+        border-bottom: 1px solid #cccccc;
+      }
+    }
+    .ysp-two-content:last-child{
+      input{
+        border: 0;
+      }
+    }
+  }
+  //继任计划
+  .superior_ysp-three{
+    padding: 0 0 0 15px;
+    .ysp-itemopts{
+      display: flex;
+      justify-content: space-between;
+      div{
+        display: flex;
+        width: 56px;
+        font-size: 14px;
+        color: #202020;
+        text-align-last: justify;
+        padding: 15px 0;
+      }
+      select{
+        width: 260px;
+        border: 0;
+        border-bottom: 1px solid #cccccc;
+        background-color: #ffffff;
+        display: flex;
+      }
+    }
+    .ysp-textarea{
+      display: flex;
+      justify-content: space-between;
+      div{
+        display: flex;
+        width: 56px;
+        text-align-last: justify;
+        padding:15px 0;
+        font-size: 14px;
+      }
+      input{
+        width: 260px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 0;
+        border-bottom: 1px solid #cccccc;
+        display: flex;
+      }
+    }
+    .ysp-item-btn{
+      display: flex;
+      justify-content: space-between;
+      div{
+        display: flex;
+      }
+      div:nth-child(1){
+        width: 56px;
+        padding: 15px 0;
+        font-size: 14px;
+      }
+      div:nth-child(2){
+        width: 260px;
+        padding: 15px 0;
+        align-items: center;
+        border-bottom: 1px solid #cccccc;
+        button{
+          display: flex;
+          height: 30px;
+          width: 66px;
+          font-size: 14px;
+          border: 0;
+          color: #666666;
+          border-radius: 8px;
+          background-color: #eeeeee;
+          margin-left: 10px;
+          padding-left: 26px;
+        }
+        .onbtn{
+          color: #ffffff;
+          background-color: #2f9fff;
+        }
+      }
+    }
+    .infilename{
+      background-color: #f2f2f2;
+      margin: 10px 15px 10px 0;
+      border-radius: 5px;
+      padding-left: 5px;
+      padding-right: 5px;
+      >div{
+        display: flex;
+        justify-content: space-between;
+        div{
+          display: flex;
+        }
+        div:nth-child(1){
+          width: 56px;
+          font-size: 14px;
+          color: #202020;
+          padding: 15px 0;
+          text-align-last: justify;
+        }
+        div:nth-child(2){
+          width: 260px;
+          border-bottom: 1px solid #cccccc;
+          position: relative;
+          a{
+            width: 20px;
+            height: 10px;
+            position: absolute;
+            top: 20px;
+            right: 5px;
+            background-image: url(./img/top.png);
+            background-size: 20px 10px;
+          }
+          input{
+            border: 0;
+          }
+          select{
+            border: 0;
+            margin: 0;
+            background-color: #f2f2f2;
+          }
+        }
+      }
+      >div:nth-child(2){
+        div:nth-child(2){
+          border: 0;
+        }
+      }
+    }
+  }
   //知会信息
     .understanding{
     background-color: #ffffff;

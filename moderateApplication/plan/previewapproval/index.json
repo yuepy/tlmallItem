@@ -49,16 +49,48 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control130_x1XVmf": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control130_x1XVmf"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context10_P8RicR": {
       "controls": [
-        "control75_RJmbF0"
+        "control75_RJmbF0",
+        "control130_x1XVmf"
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:9995\\/ApprovalList\\.aspx\\?.*"
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/ApprovalList\\.aspx\\?.*"
       ]
     }
   },
@@ -75,6 +107,21 @@
     "page10_pT0nmb": {
       "contextId": "context10_P8RicR",
       "layout": [
+        {
+          "id": "uiControl130_74HZ6u",
+          "controlId": "control130_x1XVmf",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl130_74HZ6u",
+                "onGetTemplate": "getTemplate_uiControl130_74HZ6u"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl75_VJeb32",
           "controlId": "control75_RJmbF0",
@@ -111,7 +158,8 @@
           "172.16.11.61:8000/ApprovalList.aspx?ProcessCode=Hr_KQYCSQ&ProcInstID=29890",
           "172.16.11.61:8000/ApprovalList.aspx?ProcessCode=&ProcInstID=11927",
           "172.16.11.61:8000/ApprovalList.aspx?ProcessCode=&ProcInstID=29900",
-          "172.16.11.61:9995/ApprovalList.aspx?ProcessCode=&ProcInstID=11087"
+          "172.16.11.61:9995/ApprovalList.aspx?ProcessCode=&ProcInstID=11087",
+          "172.16.11.61:8000/ApprovalList.aspx?ProcessCode=&ProcInstID=29893"
         ]
       }
     },
