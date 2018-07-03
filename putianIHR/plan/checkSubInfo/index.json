@@ -3,6 +3,9 @@
   "id": "checkSubInfo",
   "targetURL": "http://192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_013_CP.GBL?PORTALPARAM_PTCNAV=HPS_TL_PAG_013_CP_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_&EOPP.SCLabel=&EOPP.SCPTcname=PT_PTPP_SCFNAV_BASEPAGE_SCR&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_.ADMN_S201804201533469897152623&IsFolder=false",
   "jsFile": "index.js",
+  "requires": {
+    "overTime": "../overTime/index.json"
+  },
   "chineseName": "查看下属考勤、休假、加班信息",
   "description": "",
   "controls": {
@@ -222,6 +225,10 @@
         "data": {
           "tagName": "FORM"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -297,6 +304,10 @@
       "toContexts": [
         {
           "toContextId": "context0_b95w1L"
+        },
+        {
+          "toContextId": "context12_el3bIi",
+          "toModelId": "overTime"
         }
       ]
     },
@@ -351,34 +362,81 @@
           }
         },
         {
-          "id": "uiControl23_5JK6Pw",
-          "controlId": "control23_uSaZLR",
+          "id": "uiControl43_LGVnTK",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl23_5JK6Pw",
-                "onGetTemplate": "getTemplate_uiControl23_5JK6Pw"
-              }
+              "templateType": ""
             }
-          }
-        },
-        {
-          "id": "uiControl24_DZ1rQ2",
-          "controlId": "control24_tiZ0zf",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl24_DZ1rQ2",
-                "onGetTemplate": "getTemplate_uiControl24_DZ1rQ2"
-              }
+          },
+          "layout": [
+            {
+              "id": "uiControl43_LGVnTKheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl43_LGVnTKbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl23_5JK6Pw",
+                  "controlId": "control23_uSaZLR",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl23_5JK6Pw",
+                        "onGetTemplate": "getTemplate_uiControl23_5JK6Pw"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl24_DZ1rQ2",
+                  "controlId": "control24_tiZ0zf",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl24_DZ1rQ2",
+                        "onGetTemplate": "getTemplate_uiControl24_DZ1rQ2"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl43_LGVnTKfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
             }
-          }
+          ]
         },
         {
           "id": "uiControl28_N8wera",

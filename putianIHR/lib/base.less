@@ -13,6 +13,7 @@
 body{
   background:#f4f4f4;
   position:relative;
+  min-height:100vh; 
 }
 body,div,p,h4,table,input,button,ul,li{margin:0;padding:0;}
 ul li{
@@ -42,6 +43,12 @@ padding:0;
 .card-body{
   padding:0;
    background-color: #f4f4f4;
+}
+data[data-ysp-modelid="checkSubInfo"]{
+  .card-body{
+    height: 47vh;
+    overflow: auto;
+  }
 }
 /******************************CustomHeader组件******************************************/
 div[data-ysp-modelid="salary"]{
@@ -290,7 +297,7 @@ div[data-ysp-modelid="menu"]{
     .contentItem{
       display: inline-block;
       width: 25%;
-      height: 80px;
+      height:85px;
       text-align: center;
       padding-top: 10px;
       .contentImg{
@@ -487,7 +494,7 @@ div[data-ysp-modelid="menu"]{
 }
 /******************************下属员工考勤start******************************************/
 .subSearchType{
-  margin-bottom: 10px;
+  border-bottom: 10px solid #f4f4f4;
 }
 .ysp_search{
   width: 90%;
@@ -525,6 +532,7 @@ div[data-ysp-modelid="menu"]{
     		background-size: 10px;
         font-size: 15px;
         color:#888;
+        display: inline-block;
       }
       select{
         direction:rtl;
@@ -559,6 +567,10 @@ div[data-ysp-modelid="menu"]{
   min-height:100vh;
   overflow: scroll;
   background: #f8f8f8;
+  .consequenceList{
+    height: 85vh;
+    overflow: auto;
+  }
   .listCard{
     margin-bottom: 10px;
     background: #fff;
@@ -642,12 +654,13 @@ div[data-ysp-modelid="menu"]{
   padding: 10px;
   padding-bottom: 0;
   font-size:@fontMedium;
+  background: #f4f4f4;
+  border-bottom: 10px solid #f4f4f4;
   .ysp_addWork_card{
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
-    margin-bottom: 10px;
   }
   .line1,.line2{
     overflow: hidden;
@@ -694,6 +707,7 @@ div[data-ysp-modelid="menu"]{
 .ysp_addWork_reason{
   background: #fff;
   padding: 10px 20px;
+  border-bottom: 10px solid #f4f4f4;
   textarea{
     border:none;
     resize: none;
@@ -807,10 +821,9 @@ div[data-ysp-modelid="menu"]{
 /***********************************请假申请 start*************************************/
 .ysp-con-box{
   background-color:#fff;
-  margin-top:10px;
   font-size:@fontBase;
   border-top:1px solid #e1e1e1;
-  border-bottom:1px solid #e1e1e1;
+  border-bottom:10px solid #f4f4f4;
 }
 .ysp-first-box{
   border-bottom: none;
@@ -1248,7 +1261,8 @@ div[data-ysp-modelid="menu"]{
 }
 //提交/保存
 .ysp-btn-box{
-  margin:20px 10px;
+  padding: 0 10px;
+  background: #f4f4f4;
   button{
     border:none;
     border-radius: 5px;
@@ -2390,4 +2404,9 @@ div[data-ysp-modelid="menu"]{
   input{
     background-color:rgb(255,102,102);
   }
+}
+/****************************禁止编辑***********************************/
+.disableMask{
+  background:rgba(255,255,255,0.5);
+  position: absolute;
 }
