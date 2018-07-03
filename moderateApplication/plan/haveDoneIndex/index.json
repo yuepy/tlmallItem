@@ -80,6 +80,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -98,7 +102,39 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": true,
+      "ignoreVisibility": false,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control196_oLyBgO": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.advanced-search.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control196_oLyBgO"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
@@ -109,7 +145,8 @@
       "controls": [
         "control190_B8XD6i",
         "control195_l7OwdG",
-        "control2_423LQM"
+        "control2_423LQM",
+        "control196_oLyBgO"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -134,6 +171,16 @@
           "toContextId": "context25_IDCMfP"
         }
       ]
+    },
+    "flow41_yoozyD": {
+      "fromContextId": "context25_IDCMfP",
+      "fromAction": "doAction",
+      "fromControlId": "control196_oLyBgO",
+      "toContexts": [
+        {
+          "toContextId": "context25_IDCMfP"
+        }
+      ]
     }
   },
   "pages": {
@@ -151,6 +198,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl195_ArMMGb",
                 "onGetTemplate": "getTemplate_uiControl195_ArMMGb"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl196_xvltbE",
+          "controlId": "control196_oLyBgO",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl196_xvltbE",
+                "onGetTemplate": "getTemplate_uiControl196_xvltbE"
               }
             }
           }
