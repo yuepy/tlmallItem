@@ -37,6 +37,12 @@ img{border:none;}
 //   height:85vh;
 //   overflow-y:scroll;
 // }
+.editor-state div[data-componentsid="uiControl96_0e7pOd"],.editor-state div[data-componentsid="uiControl92_PqtSKA"],.editor-state div[data-componentsid="uiControl98_Vgkb6O"]{
+  .card-body{
+    height: 85vh;
+    overflow: auto;
+  }
+}
 .card{
   border-radius: 0;
   background:#f4f4f4;
@@ -50,21 +56,9 @@ img{border:none;}
   padding:0;
    background-color: #f4f4f4;
 }
-div[data-ysp-modelid="holidayAppli"]{
+data[data-ysp-modelid="checkSubInfo"]{
   .card-body{
-    height: 85vh;
-    overflow: auto;
-  }
-}
-div[data-ysp-modelid="checkSubInfo"]{
-  .card-body{
-    min-height: 47vh;
-    overflow: auto;
-  }
-}
-div[data-ysp-modelid="addWork"]{
-  .card-body{
-    max-height: 85vh;
+    height: 47vh;
     overflow: auto;
   }
 }
@@ -382,7 +376,7 @@ div[data-ysp-modelid="menu"]{
 .ysp_filter{
   .ysp_selectBox{
     position:fixed;
-    top:43px;
+    top:45px;
     bottom: 0;
     left:0;
     right:0;
@@ -673,12 +667,12 @@ div[data-ysp-modelid="menu"]{
   padding-bottom: 0;
   font-size:@fontMedium;
   background: #f4f4f4;
+  border-bottom: 10px solid #f4f4f4;
   .ysp_addWork_card{
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
-    margin-bottom: 10px;
   }
   .line1,.line2{
     overflow: hidden;
@@ -2435,12 +2429,8 @@ div[data-ysp-modelid="menu"]{
     background-color:rgb(255,102,102);
   }
 }
-/****************************禁止编辑样式***********************************/
+/****************************禁止编辑***********************************/
 .disableMask{
   background:rgba(255,255,255,0.5);
   position: absolute;
-  top: 45px;
-  bottom: 0;
-  right: 0;
-  left:0;
 }
