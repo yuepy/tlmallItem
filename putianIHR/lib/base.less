@@ -44,9 +44,15 @@ padding:0;
   padding:0;
    background-color: #f4f4f4;
 }
-data[data-ysp-modelid="checkSubInfo"]{
+div[data-ysp-modelid="checkSubInfo"]{
   .card-body{
     height: 47vh;
+    overflow: auto;
+  }
+}
+div[data-ysp-modelid="addWork"]{
+  .card-body{
+    max-height: 85vh;
     overflow: auto;
   }
 }
@@ -655,12 +661,12 @@ div[data-ysp-modelid="menu"]{
   padding-bottom: 0;
   font-size:@fontMedium;
   background: #f4f4f4;
-  border-bottom: 10px solid #f4f4f4;
   .ysp_addWork_card{
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
+    margin-bottom: 10px;
   }
   .line1,.line2{
     overflow: hidden;
@@ -2405,8 +2411,12 @@ div[data-ysp-modelid="menu"]{
     background-color:rgb(255,102,102);
   }
 }
-/****************************禁止编辑***********************************/
+/****************************禁止编辑样式***********************************/
 .disableMask{
   background:rgba(255,255,255,0.5);
   position: absolute;
+  top: 45px;
+  bottom: 0;
+  right: 0;
+  left:0;
 }
