@@ -1,9 +1,4 @@
 /****************************公共样式************************/
-.editor-state [data-ysp="component"] {
-  padding-top: 0;
-  padding-bottom: none;
-  min-height: 0;
-}
 body {
   background: #f4f4f4;
   position: relative;
@@ -954,7 +949,12 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 }
 .ysp-lists .ysp-r .edit-two2 {
   display: inline-block;
-  width: 70%;
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-x: auto;
+  overflow-y: hidden;
   float: left;
   height: 2.6rem;
   line-height: 2.75rem;
