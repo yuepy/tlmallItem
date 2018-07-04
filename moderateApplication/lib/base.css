@@ -119,7 +119,6 @@ body {
   padding: 15px 0;
 }
 .contenttitle p {
-  height: 30px;
   line-height: 30px;
   display: block;
   margin-left: 15px;
@@ -11852,6 +11851,19 @@ body {
   background-color: #ededed;
   color: #212121;
 }
+[data-ysp-modelid="personnel"] select {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  padding: 0px 10px 0px 10px;
+  font-size: 12px;
+  display: block;
+  background-size: 10px 10px;
+  background-position: 260px;
+  background-repeat: no-repeat;
+  background-image: url(img/rightbtn.png);
+}
 [data-ysp-modelid="personnel"] [data-componentsid="uiControl192_08z6aK"] {
   padding: 0;
 }
@@ -11940,6 +11952,18 @@ body {
 }
 [data-ysp-modelid="personnel"] .superior_ysp-three {
   padding: 0 0 0 15px;
+}
+[data-ysp-modelid="personnel"] .superior_ysp-three select {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  padding: 0px 10px 0px 10px;
+  font-size: 12px;
+  display: block;
+  background-size: 10px 10px;
+  background-position: 260px;
+  background-repeat: no-repeat;
+  background-image: url(img/rightbtn.png);
 }
 [data-ysp-modelid="personnel"] .superior_ysp-three .ysp-itemopts {
   display: flex;
@@ -12055,9 +12079,381 @@ body {
   border: 0;
   margin: 0;
   background-color: #f2f2f2;
+  background-image: url(img/rightbtn.png);
 }
 [data-ysp-modelid="personnel"] .superior_ysp-three .infilename > div:nth-child(2) div:nth-child(2) {
   border: 0;
+}
+[data-ysp-modelid="personnel"] .desire {
+  padding-left: 15px;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(1) div {
+  display: flex;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(1) div:nth-child(1) {
+  font-size: 14px;
+  color: #202020;
+  width: 56px;
+  text-align-last: justify;
+  padding: 15px 0;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(1) div:nth-child(2) {
+  width: 260px;
+  font-size: 16px;
+  color: #313131;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(1) div:nth-child(2) button {
+  width: 66px;
+  height: 30px;
+  border: 0;
+  background-color: #cccccc;
+  color: #666666;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(1) div:nth-child(2) .desirebtn {
+  background-color: #2f9fff;
+  color: #ffffff;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(2) {
+  border-bottom: 1px solid #cccccc;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #202020;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(2) input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: 0;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(3) div {
+  display: flex;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(3) div:nth-child(1) {
+  font-size: 14px;
+  width: 56px;
+  text-align-last: justify;
+  padding: 15px 0;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(3) div:nth-child(2) {
+  padding: 15px 0;
+  width: 260px;
+  flex-direction: column;
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(3) div:nth-child(2) p {
+  display: block;
+  margin: 0;
+  margin-bottom: 10px;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(4) {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(4) div {
+  display: flex;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(4) div:nth-child(1) {
+  width: 56px;
+  text-align-last: justify;
+  font-size: 14px;
+  color: #202020;
+  padding: 15px 0;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(4) div:nth-child(2) {
+  padding: 15px 0;
+  width: 260px;
+  flex-wrap: wrap;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(4) div:nth-child(2) button {
+  height: 30px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: #bbbbbb;
+  border: 1px solid #bbbbbb;
+}
+[data-ysp-modelid="personnel"] .desire > div:nth-child(4) div:nth-child(2) .desirecheckbox {
+  color: #2f9fff;
+  border-color: #2f9fff;
+  background-image: url(img/duihao.png);
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
+[data-ysp-modelid="personnel"] .transfer {
+  padding-left: 15px;
+}
+[data-ysp-modelid="personnel"] .transfer > div {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="personnel"] .transfer > div div {
+  display: flex;
+  padding: 15px 0;
+}
+[data-ysp-modelid="personnel"] .transfer > div div:nth-child(1) {
+  width: 56px;
+  font-size: 14px;
+  color: #202020;
+  text-align-last: justify;
+}
+[data-ysp-modelid="personnel"] .transfer > div div:nth-child(2) {
+  width: 260px;
+}
+[data-ysp-modelid="personnel"] .transfer > div:nth-child(1) div:nth-child(2) {
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .transfer > div:nth-child(1) div:nth-child(2) button {
+  display: flex;
+  height: 30px;
+  width: 66px;
+  font-size: 14px;
+  border: 0;
+  color: #666666;
+  border-radius: 8px;
+  background-color: #eeeeee;
+  margin-left: 10px;
+  padding-left: 26px;
+}
+[data-ysp-modelid="personnel"] .transfer > div:nth-child(1) div:nth-child(2) .transferbtn {
+  color: #ffffff;
+  background-color: #2f9fff;
+}
+[data-ysp-modelid="personnel"] .transfer > div:nth-child(2) div:nth-child(2) {
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .transfer > div:nth-child(2) select {
+  width: 260px;
+  border: 0;
+  background-image: url(img/rightbtn.png);
+  display: flex;
+}
+[data-ysp-modelid="personnel"] .transfer > div:nth-child(3) input {
+  border: 0;
+  width: 260px;
+}
+[data-ysp-modelid="personnel"] .development {
+  margin: 10px 15px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+[data-ysp-modelid="personnel"] .development .titleone {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .development .titleone p:nth-child(1) {
+  width: 40px;
+  justify-content: center;
+  padding-left: 10px;
+  margin: 0;
+  border-right: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .development .titleone p:nth-child(2) {
+  width: 100%;
+  padding-left: 10px;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(1) div:nth-child(1) {
+  padding: 15px 0;
+  font-size: 14px;
+  width: 56px;
+  color: #202020;
+  text-align-last: justify;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(1) div:nth-child(2) {
+  width: 260px;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(1) div:nth-child(2) div {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(1) div:nth-child(2) div button {
+  height: 30px;
+  min-width: 66px;
+  border: 0;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(1) div:nth-child(2) div .twocontentbtn {
+  color: #ffffff;
+  background-color: #2f9fff;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(1) div:nth-child(2) input {
+  padding: 15px 0;
+  width: 260px;
+  border: 0;
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(2) {
+  padding: 15px 0;
+  margin-left: 10px;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(2) div {
+  width: 100%;
+  font-size: 14px;
+}
+[data-ysp-modelid="personnel"] .development .ysp-two-content > div:nth-child(2) input {
+  width: 100%;
+  display: block;
+  border: 0;
+}
+[data-ysp-modelid="personnel"] .direction {
+  padding-left: 10px;
+}
+[data-ysp-modelid="personnel"] .direction > div {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="personnel"] .direction > div div {
+  width: 56px;
+  font-size: 14px;
+  color: #202020;
+  padding: 15px 0;
+  text-align: justify;
+  text-align-last: justify;
+}
+[data-ysp-modelid="personnel"] .direction > div input {
+  width: 260px;
+  border: 0;
+  border-bottom: 1px solid #cccccc;
+  padding: 15px 0;
+}
+[data-ysp-modelid="personnel"] .remarks {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+[data-ysp-modelid="personnel"] .remarks div {
+  width: 56px;
+  text-align: justify;
+  text-align-last: justify;
+  padding: 15px 0;
+}
+[data-ysp-modelid="personnel"] .remarks input {
+  width: 260px;
+  border: 0;
+  padding: 15px 0;
+}
+[data-ysp-modelid="personnel"] .infilenameself {
+  background-color: #f2f2f2;
+  margin: 10px 0;
+  margin-right: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+[data-ysp-modelid="personnel"] .infilenameself > div {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="personnel"] .infilenameself > div div:nth-child(1) {
+  width: 56px;
+  padding: 15px 0;
+  font-size: 14px;
+  color: #202020;
+  text-align: justify;
+  text-align-last: justify;
+}
+[data-ysp-modelid="personnel"] .infilenameself > div div:nth-child(2) {
+  width: 260px;
+}
+[data-ysp-modelid="personnel"] .infilenameself > div div:nth-child(2) input {
+  width: 260px;
+  padding: 15px 0;
+  border: 0;
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .infilenameself > div:nth-child(2) div:nth-child(2) input {
+  border: 0;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself {
+  width: 345px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself .titleone {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself .titleone p:nth-child(1) {
+  width: 40px;
+  justify-content: center;
+  padding-left: 10px;
+  margin: 0;
+  border-right: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself .titleone p:nth-child(2) {
+  width: 100%;
+  padding-left: 10px;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself .ysp-two-content {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself .ysp-two-content div {
+  display: flex;
+  text-align-last: justify;
+  width: 56px;
+  margin-left: 10px;
+  font-size: 14px;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself .ysp-two-content input {
+  display: flex;
+  width: 260px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-bottom: 1px solid #cccccc;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself .ysp-two-content:nth-child(3) {
+  display: block;
+  padding-bottom: 15px;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself .ysp-two-content:nth-child(3) div {
+  width: 100%;
+  font-size: 14px;
+  color: #202020;
+  display: block;
+  margin: 0;
+  padding-left: 10px;
+}
+[data-ysp-modelid="personnel"] .superior_ysp_twoself .ysp-two-content:nth-child(3) input {
+  width: 100%;
+  margin-left: 10px;
+  border-bottom: 1px solid #cccccc;
 }
 [data-ysp-modelid="personnel"] .understanding {
   background-color: #ffffff;
@@ -12089,6 +12485,13 @@ body {
   border-bottom: 1px solid #e0e0e0;
   text-align: left;
   float: right;
+}
+[data-ysp-modelid="personnel"] .floatbox {
+  width: 100%;
+  height: 500px;
+  position: fixed;
+  top: 0;
+  display: none;
 }
 /***********************员工合同续签申请单  ltt START**********************/
 .information {
