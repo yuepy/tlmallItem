@@ -1,4 +1,9 @@
 /****************************公共样式************************/
+.editor-state [data-ysp="component"] {
+  padding-top: 0;
+  padding-bottom: none;
+  min-height: 0;
+}
 body {
   background: #f4f4f4;
   position: relative;
@@ -28,7 +33,7 @@ img {
 .editor-state div[data-componentsid="uiControl96_0e7pOd"] .card-body,
 .editor-state div[data-componentsid="uiControl92_PqtSKA"] .card-body,
 .editor-state div[data-componentsid="uiControl98_Vgkb6O"] .card-body {
-  height: 85vh;
+  height: 90vh;
   overflow: auto;
 }
 .card {
@@ -284,14 +289,14 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 .menu_content .content .contentItem {
   display: inline-block;
   width: 25%;
-  height: 85px;
+  height: 105px;
   text-align: center;
   padding-top: 10px;
 }
 .menu_content .content .contentItem .contentImg {
-  width: 80%;
+  width: 70px;
+  height: 70px;
   margin: 0 auto;
-  height: 100%;
 }
 .menu_content .content .contentItem .imgTitle {
   font-size: 13px;
