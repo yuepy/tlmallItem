@@ -3,6 +3,25 @@
   "id": "dealtIndex",
   "targetURL": "http://172.16.11.61:8000/Index.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "Printing": "../Printing/index.json",
+    "leave": "../leave/index.json",
+    "awaybusiness": "../awaybusiness/index.json",
+    "Quit": "../Quit/index.json",
+    "contract": "../contract/index.json",
+    "train": "../train/index.json",
+    "examination_abnormal": "../examination_abnormal/index.json",
+    "assetbudget": "../assetbudget/index.json",
+    "assetshandle": "../assetshandle/index.json",
+    "travel": "../travel/index.json",
+    "costreimbursement": "../costreimbursement/index.json",
+    "eliminate": "../eliminate/index.json",
+    "overtime": "../overtime/index.json",
+    "probationformal": "../probationformal/index.json",
+    "borrowmon": "../borrowmon/index.json",
+    "entry": "../entry/index.json",
+    "personnel": "../personnel/index.json"
+  },
   "chineseName": "待办首页页面",
   "description": "待办首页页面",
   "firstPaintEnable": false,
@@ -81,6 +100,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -131,6 +154,94 @@
       "toContexts": [
         {
           "toContextId": "context24_EkSRuv"
+        }
+      ]
+    },
+    "flow41_4Ctcq0": {
+      "fromContextId": "context24_EkSRuv",
+      "fromAction": "doAction",
+      "fromControlId": "control123_7z5oV6",
+      "toContexts": [
+        {
+          "toContextId": "context24_EkSRuv"
+        }
+      ]
+    },
+    "flow39_dfHNoK": {
+      "fromContextId": "context24_EkSRuv",
+      "fromAction": "doAction",
+      "fromControlId": "control193_N9CBTD",
+      "toContexts": [
+        {
+          "toContextId": "context24_EkSRuv"
+        },
+        {
+          "toContextId": "context2_yipHVo",
+          "toModelId": "Printing"
+        },
+        {
+          "toContextId": "context4_nyVhNa",
+          "toModelId": "leave"
+        },
+        {
+          "toContextId": "context6_wk2SuT",
+          "toModelId": "awaybusiness"
+        },
+        {
+          "toContextId": "context3_h3SngD",
+          "toModelId": "Quit"
+        },
+        {
+          "toContextId": "context15_flVVrS",
+          "toModelId": "contract"
+        },
+        {
+          "toContextId": "context16_Kn6Bzh",
+          "toModelId": "train"
+        },
+        {
+          "toContextId": "context14_Nkwmgd",
+          "toModelId": "examination_abnormal"
+        },
+        {
+          "toContextId": "context9_7mrSEm",
+          "toModelId": "assetbudget"
+        },
+        {
+          "toContextId": "context12_NhVsKN",
+          "toModelId": "assetshandle"
+        },
+        {
+          "toContextId": "context5_89gtiq",
+          "toModelId": "travel"
+        },
+        {
+          "toContextId": "context11_mB0Nro",
+          "toModelId": "costreimbursement"
+        },
+        {
+          "toContextId": "context8_9ZSEK4",
+          "toModelId": "eliminate"
+        },
+        {
+          "toContextId": "context7_o6oRBN",
+          "toModelId": "overtime"
+        },
+        {
+          "toContextId": "context13_FMltEV",
+          "toModelId": "probationformal"
+        },
+        {
+          "toContextId": "context19_g6Z7vh",
+          "toModelId": "borrowmon"
+        },
+        {
+          "toContextId": "context20_4zxkiP",
+          "toModelId": "entry"
+        },
+        {
+          "toContextId": "context23_vDtiE1",
+          "toModelId": "personnel"
         }
       ]
     }

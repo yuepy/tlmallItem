@@ -71,7 +71,7 @@
     },
     doAction_uiControl80_yRb53n: function (data, elem) {
       if (data.eventType == 'change') {
-        elem.querySelector('textarea').value = data.customData;
+        elem.querySelector('textarea').value = data;
       }
     },
     getTemplate_uiControl80_yRb53n: function () {

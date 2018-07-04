@@ -3,6 +3,9 @@
   "id": "entry",
   "targetURL": "http://172.16.11.61:8000/Forms/HR/LYSQ/Processing.aspx?SN=70E2DEFA818508B789A973F1DA277A3F&Guid=b8ac1e2a-883d-4605-ac7b-08091c73ca8d",
   "jsFile": "index.js",
+  "requires": {
+    "previewapproval": "../previewapproval/index.json"
+  },
   "chineseName": "录用入职审批单",
   "description": "",
   "firstPaintEnable": false,
@@ -51,6 +54,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -86,6 +93,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -123,6 +134,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -159,6 +174,10 @@
         "data": {
           "tagName": "UL"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -193,6 +212,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -230,6 +253,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -265,6 +292,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -302,6 +333,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -337,6 +372,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -374,6 +413,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -409,6 +452,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -446,6 +493,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -482,6 +533,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -517,6 +572,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -575,7 +634,22 @@
       ]
     }
   },
-  "flows": {},
+  "flows": {
+    "flow55_XkT50P": {
+      "fromContextId": "context20_4zxkiP",
+      "fromAction": "doAction",
+      "fromControlId": "control142_R2CP70",
+      "toContexts": [
+        {
+          "toContextId": "context20_4zxkiP"
+        },
+        {
+          "toContextId": "context10_P8RicR",
+          "toModelId": "previewapproval"
+        }
+      ]
+    }
+  },
   "pages": {
     "page20_P225DG": {
       "contextId": "context20_4zxkiP",
