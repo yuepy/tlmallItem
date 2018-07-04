@@ -3,6 +3,9 @@
   "id": "haveDoneIndex",
   "targetURL": "http://172.16.11.61:8000/MyProcess/MyApproveProcess.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "HavaDoneQuit": "../HavaDoneQuit/index.json"
+  },
   "chineseName": "已办首页页面",
   "description": "已办首页页面",
   "firstPaintEnable": false,
@@ -169,6 +172,10 @@
       "toContexts": [
         {
           "toContextId": "context25_IDCMfP"
+        },
+        {
+          "toContextId": "context26_xlI6VF",
+          "toModelId": "HavaDoneQuit"
         }
       ]
     },
