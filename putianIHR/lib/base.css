@@ -1,4 +1,9 @@
 /****************************公共样式************************/
+.editor-state [data-ysp="component"] {
+  padding-top: 0;
+  padding-bottom: none;
+  min-height: 0;
+}
 body {
   background: #f4f4f4;
   position: relative;
@@ -859,7 +864,6 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   background-color: #fff;
   font-size: 14px;
   border-top: 1px solid #e1e1e1;
-  border-bottom: 10px solid #f4f4f4;
 }
 .ysp-first-box {
   border-bottom: none;
@@ -1039,6 +1043,12 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 .ysp-lists .switch .switch-label:after {
   background: #fff;
 }
+.ysp-bottom-default {
+  border-bottom: 10px solid #f4f4f4;
+}
+.ysp-line-bottom {
+  border-bottom: 1px solid #e1e1e1;
+}
 .readonly {
   color: #999;
 }
@@ -1116,7 +1126,6 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 .ysp-year-holiday {
   color: #999;
   font-size: 12px;
-  margin-top: 10px;
   padding: 0 5%;
 }
 .ysp-year-holiday strong {
@@ -1128,6 +1137,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 .ysp-tip {
   color: #f76f49;
   font-size: 13px;
+  padding: 5px 10px;
 }
 .ysp-reason {
   padding: 10px 5%;
@@ -1156,6 +1166,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 }
 .annex-box {
   padding: 10px;
+  border-bottom: 1px solid #e1e1e1;
 }
 .annex-box .annex-tit {
   font-size: 14px;
@@ -1256,6 +1267,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 .ysp-btn-box {
   padding: 0 10px;
   background: #f4f4f4;
+  border: 5px solid #f4f4f4;
 }
 .ysp-btn-box button {
   border: none;
