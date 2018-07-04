@@ -270,7 +270,7 @@
     getData_control19_pCDSMy: function (elem) {
       if (!elem) {
         return;
-      }var data = { star: [], tit: [], con: [], pserror: [] };if (elem && elem.querySelector("[dir='ltr']") && elem.querySelector("[dir='ltr']").textContent.indexOf("时长") !== -1) {
+      }var data = { star: [], tit: [], con: [], pserror: [] };if (elem && elem.querySelector("[dir='ltr']") && elem.querySelector("[dir='ltr']").textContent.indexOf("开始日期") !== -1) {
         var elem = elem.querySelectorAll("[dir='ltr']")[0].querySelector("[dir='ltr']").querySelector("tbody");var titStr = elem.querySelectorAll("th"); // debugger;
         var titCon = elem.querySelectorAll("td");if (titStr) {
           [].forEach.call(titStr, function (item, index) {
