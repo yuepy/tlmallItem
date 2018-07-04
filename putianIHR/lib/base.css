@@ -353,7 +353,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 /******************************薪资查询start******************************************/
 .ysp_filter .ysp_selectBox {
   position: fixed;
-  top: 45px;
+  top: 43px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -396,7 +396,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 .ysp_filter .ysp_selectBox .selectBox_content .timeContent .yearCellSelect {
   background: #3796FB;
   color: #fff;
-  border: none;
+  border: 1px solid #3796FB;
 }
 .ysp_filter .ysp_selectBox .selectBox_content .filterSure {
   position: fixed;
@@ -764,14 +764,17 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   margin: 0;
 }
 /******************************外派探亲资格申请start******************************************/
+.ysp_visitRelative {
+  border-bottom: 10px solid #f4f4f4;
+}
 .ysp_visitRelative .ysp_visit_list {
   background: #fff;
   border-bottom: 1px solid #ccc;
   padding: 10px;
 }
-.ysp_visitRelative .ysp_visit_list:first-child,
-.ysp_visitRelative .ysp_visit_list:nth-child(5) {
-  margin-bottom: 10px;
+.ysp_visitRelative .ysp_visit_list:nth-child(2),
+.ysp_visitRelative .ysp_visit_list:nth-child(6) {
+  border-top: 10px solid #f4f4f4;
 }
 .ysp_visitRelative .ysp_visit_list .visit_title,
 .ysp_visitRelative .ysp_visit_list .visit_content {

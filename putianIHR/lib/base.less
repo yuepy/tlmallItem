@@ -379,7 +379,7 @@ div[data-ysp-modelid="menu"]{
 .ysp_filter{
   .ysp_selectBox{
     position:fixed;
-    top:45px;
+    top:43px;
     bottom: 0;
     left:0;
     right:0;
@@ -418,7 +418,7 @@ div[data-ysp-modelid="menu"]{
         .yearCellSelect{
           background:@3796FB;
           color:#fff;
-          border:none;
+          border:1px solid @3796FB;
         }
       }
       .filterSure{
@@ -733,12 +733,13 @@ div[data-ysp-modelid="menu"]{
 
 /******************************外派探亲资格申请start******************************************/
 .ysp_visitRelative{
+  border-bottom:10px solid @bgColor;
   .ysp_visit_list{
     background: #fff;
     border-bottom:1px solid #ccc;
     padding: 10px;
-    &:first-child,&:nth-child(5){
-      margin-bottom: 10px;
+    &:nth-child(2),&:nth-child(6){
+      border-top: 10px solid @bgColor;
     }
     .visit_title,.visit_content{
       display: inline-block;
