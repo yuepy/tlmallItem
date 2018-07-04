@@ -306,7 +306,7 @@
       } else if (data.eventType == "timeclick") {
         var data = data.dataCustom;var d = data[0];var i = data[1];var time = elem.querySelectorAll("input")[i];time.value = d;time.dispatchEvent(new Event("change"));
       } else if (data.eventType == "datechange") {
-        var data = data.dataCustom;var d = data[0];var i = data[1];var time = elem.querySelectorAll("input")[i];time.value = d.replace(/-/g, "/");time.dispatchEvent(new Event("change"));
+        var data = data.dataCustom;var d = data[0];var i = data[1];var time = elem.querySelectorAll("input")[i];time.value = d.replace(/-/g, "/");time.click();time.dispatchEvent(new Event("change"));
       } else if (data.eventType == "checkclick") {
         var data = data.dataCustom;var d = data[0];var i = data[1];var check = elem.querySelector("input[type='checkbox']");check.click();
       }
