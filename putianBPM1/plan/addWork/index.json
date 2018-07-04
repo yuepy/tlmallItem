@@ -1,0 +1,558 @@
+{
+    "version": "0.1",
+    "id": "addWork",
+    "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=968891&_winid=w3766",
+    "jsFile": "index.js",
+    "requires": {
+        "approvalTrack": "../approvalTrack/index.json",
+        "approveAdvice": "../approveAdvice/index.json",
+        "operationLog": "../operationLog/index.json",
+        "PendingTask": "../PendingTask/index.json",
+        "processedTask": "../processedTask/index.json"
+    },
+    "chineseName": "加班申请",
+    "description": "",
+    "firstPaintEnable": false,
+    "controls": {
+        "control104_u929qe": {
+            "location": {
+                "data": {
+                    "tagName": "IFRAME"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/partialWord",
+                        "prob": 1,
+                        "disabled": true,
+                        "value": {
+                            "elemId": "mini-2",
+                            "tagName": "DIV",
+                            "prefix": "",
+                            "suffix": "/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]",
+                            "ratio": 0.154
+                        }
+                    },
+                    {
+                        "id": "@class/word",
+                        "prob": 1,
+                        "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+                    },
+                    {
+                        "id": "elderLevel",
+                        "value": {
+                            "level": 0
+                        }
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control104_u929qe"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": ""
+        },
+        "control105_587L4U": {
+            "location": {
+                "data": {
+                    "tagName": "TR"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/word",
+                        "prob": 1,
+                        "value": [
+                            "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]",
+                            "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//TR",
+                            "descendant::DIV[@id=\"_tabs\"]//TR"
+                        ]
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]"
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control105_587L4U"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>"
+        },
+        "control106_p3Z6WF": {
+            "location": {
+                "data": {
+                    "tagName": "BODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "ordinal": [
+                        0,
+                        5
+                    ],
+                    "value": "/HTML[1]/BODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control106_p3Z6WF"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": ""
+        },
+        "control107_2l9Rn0": {
+            "location": {
+                "data": {
+                    "tagName": "DIV"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/partialWord",
+                        "prob": 1,
+                        "disabled": true,
+                        "value": {
+                            "elemId": "dataform1",
+                            "tagName": "DIV",
+                            "prefix": "",
+                            "suffix": "/DIV[1]/DIV[1]",
+                            "ratio": 0.736
+                        }
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control107_2l9Rn0"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+        },
+        "control108_VXyCSg": {
+            "location": {
+                "data": {
+                    "tagName": "DIV"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/partialWord",
+                        "prob": 1,
+                        "disabled": true,
+                        "value": {
+                            "elemId": "dataform1",
+                            "tagName": "DIV",
+                            "prefix": "",
+                            "suffix": "/DIV[2]/DIV[1]",
+                            "ratio": 0.736
+                        }
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]"
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control108_VXyCSg"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+        },
+        "control109_QTeUHS": {
+            "location": {
+                "data": {
+                    "tagName": "DIV"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/partialWord",
+                        "prob": 1,
+                        "disabled": true,
+                        "value": {
+                            "elemId": "dataform1",
+                            "tagName": "DIV",
+                            "prefix": "",
+                            "suffix": "/DIV[3]/DIV[1]",
+                            "ratio": 0.736
+                        }
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]"
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control109_QTeUHS"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "ignoreVisibility": true,
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>"
+        },
+        "control139_n5Fi1T": {
+            "location": {
+                "data": {
+                    "tagName": "TEXTAREA"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "elem/@name",
+                        "prob": 2,
+                        "value": "descendant::TEXTAREA[@name=\"approval.content\"]"
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]/SPAN[1]/TEXTAREA[1]"
+                    },
+                    {
+                        "id": "elderLevel",
+                        "value": {
+                            "level": 0
+                        }
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control139_n5Fi1T"
+            },
+            "intendedRole": "custom",
+            "roles": "element,textbox,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+            "componentType": "custom"
+        }
+    },
+    "contexts": {
+        "context29_qsgQH3": {
+            "controls": [
+                "control104_u929qe",
+                "control105_587L4U",
+                "control106_p3Z6WF",
+                "control107_2l9Rn0",
+                "control108_VXyCSg",
+                "control109_QTeUHS",
+                "control139_n5Fi1T"
+            ],
+            "anchors": [],
+            "urlAnchor": [
+                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*&addWork"
+            ]
+        }
+    },
+    "flows": {
+        "flow98_02BRg4": {
+            "toContexts": [{
+                "toContextId": "context29_qsgQH3"
+            }]
+        },
+        "flow99_wc97ap": {
+            "fromContextId": "context29_qsgQH3",
+            "fromAction": "doAction",
+            "fromControlId": "control104_u929qe",
+            "toContexts": [{
+                    "toContextId": "context29_qsgQH3"
+                },
+                {
+                    "toContextId": "context5_7wf9RT",
+                    "toModelId": "PendingTask"
+                },
+                {
+                    "toContextId": "context2_Z2voN1",
+                    "toModelId": "processedTask"
+                }
+            ]
+        },
+        "flow120_eVceLq": {
+            "fromContextId": "context29_qsgQH3",
+            "fromAction": "doAction",
+            "fromControlId": "control105_587L4U",
+            "toContexts": [{
+                    "toContextId": "context29_qsgQH3"
+                },
+                {
+                    "toContextId": "context7_6oqdXk",
+                    "toModelId": "approvalTrack"
+                },
+                {
+                    "toContextId": "context10_Hyn4t6",
+                    "toModelId": "approveAdvice"
+                },
+                {
+                    "toContextId": "context9_vdtoHx",
+                    "toModelId": "operationLog"
+                }
+            ]
+        }
+    },
+    "pages": {
+        "page29_oetUD5": {
+            "contextId": "context29_qsgQH3",
+            "layout": [{
+                    "id": "uiControl97_e12FE4",
+                    "controlId": "control104_u929qe",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl97_e12FE4",
+                                "onGetTemplate": "getTemplate_uiControl97_e12FE4"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl98_mRl5uX",
+                    "controlId": "control105_587L4U",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl98_mRl5uX",
+                                "onGetTemplate": "getTemplate_uiControl98_mRl5uX"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl100_KTh7T6",
+                    "controlId": "control107_2l9Rn0",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl100_KTh7T6",
+                                "onGetTemplate": "getTemplate_uiControl100_KTh7T6"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl101_z87Tvp",
+                    "controlId": "control108_VXyCSg",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl101_z87Tvp",
+                                "onGetTemplate": "getTemplate_uiControl101_z87Tvp"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl102_eHme9F",
+                    "controlId": "control109_QTeUHS",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl102_eHme9F",
+                                "onGetTemplate": "getTemplate_uiControl102_eHme9F"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl132_JNCXDg",
+                    "controlId": "control139_n5Fi1T",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl132_JNCXDg",
+                                "onGetTemplate": "getTemplate_uiControl132_JNCXDg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl99_c90oEq",
+                    "controlId": "control106_p3Z6WF",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl99_c90oEq",
+                                "onGetTemplate": "getTemplate_uiControl99_c90oEq"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "matchers": {
+        "page/title": {
+            "contexts": {
+                "context29_qsgQH3": [
+                    "移动端页面"
+                ]
+            }
+        },
+        "page/urls": {
+            "contexts": {
+                "context29_qsgQH3": [
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=968891&_winid=w3766",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=724826&_winid=w9800",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284925&_t=904753&_winid=w2845",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?addWork&workItemID=284350&_t=549931&_winid=w6211",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284350&addWork",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283277&addWork",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284983&beginToWork",
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317865&addWork"
+                ]
+            }
+        },
+        "page/ids": {
+            "contexts": {
+                "context29_qsgQH3": [
+                    [
+                        "__modalmini-",
+                        "mini-",
+                        "mini-$",
+                        "mini-$body$",
+                        "tabs"
+                    ]
+                ]
+            }
+        },
+        "page/classes": {
+            "contexts": {
+                "context29_qsgQH3": [
+                    [
+                        "mini-disabled",
+                        "mini-modal",
+                        "mini-panel",
+                        "mini-panel-body",
+                        "mini-panel-border",
+                        "mini-panel-footer",
+                        "mini-panel-header",
+                        "mini-panel-header-inner",
+                        "mini-panel-icon",
+                        "mini-panel-title",
+                        "mini-panel-toolbar",
+                        "mini-panel-viewport",
+                        "mini-resizer-trigger",
+                        "mini-tab",
+                        "mini-tab-active",
+                        "mini-tab-text",
+                        "mini-tabs",
+                        "mini-tabs-body",
+                        "mini-tabs-body-top",
+                        "mini-tabs-bodys",
+                        "mini-tabs-buttons",
+                        "mini-tabs-firstSpace",
+                        "mini-tabs-header",
+                        "mini-tabs-header-top",
+                        "mini-tabs-headers",
+                        "mini-tabs-hideOverflow",
+                        "mini-tabs-lastSpace",
+                        "mini-tabs-leftButton",
+                        "mini-tabs-nav",
+                        "mini-tabs-plain",
+                        "mini-tabs-position-top",
+                        "mini-tabs-rightButton",
+                        "mini-tabs-scrollCt",
+                        "mini-tabs-space",
+                        "mini-tabs-table",
+                        "mini-tools",
+                        "mini-tools-close",
+                        "mini-tools-collapse",
+                        "mini-tools-max",
+                        "mini-tools-min",
+                        "mini-window",
+                        "mini-window-drag"
+                    ]
+                ]
+            }
+        },
+        "page/tagTriplets": {
+            "contexts": {
+                "context29_qsgQH3": [
+                    [
+                        "-/-/DIV",
+                        "-/-/SCRIPT",
+                        "-/DIV/DIV",
+                        "-/DIV/IFRAME",
+                        "-/DIV/TABLE",
+                        "DIV/DIV/A",
+                        "DIV/DIV/DIV",
+                        "DIV/DIV/IFRAME",
+                        "DIV/DIV/SPAN",
+                        "DIV/DIV/TABLE",
+                        "DIV/TABLE/TBODY",
+                        "TABLE/TBODY/TR",
+                        "TBODY/TR/TD",
+                        "TD/DIV/DIV",
+                        "TR/TD/DIV",
+                        "TR/TD/SPAN"
+                    ]
+                ]
+            }
+        }
+    }
+}

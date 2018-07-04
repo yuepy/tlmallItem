@@ -1,0 +1,248 @@
+{
+  "version": "0.1",
+  "id": "checkForm",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7183&_t=998668&_winid=w523",
+  "jsFile": "index.js",
+  "requires": {
+    "checkForm": "../checkForm/index.json"
+  },
+  "chineseName": "已办任务-查看表单",
+  "description": "",
+  "controls": {
+    "control11_47aTEe": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]",
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//DIV",
+              "descendant::DIV[@id=\"_tabs\"]//DIV"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control11_47aTEe"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context14_rWskv4": {
+      "controls": [
+        "control11_47aTEe"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow42_AN2PQD": {
+      "toContexts": [
+        {
+          "toContextId": "context14_rWskv4",
+          "toModelId": "checkForm"
+        },
+        {
+          "toContextId": "context14_rWskv4"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page14_81lAvt": {
+      "contextId": "context14_rWskv4",
+      "layout": [
+        {
+          "id": "uiControl8_Qn2eAm",
+          "controlId": "control11_47aTEe",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl8_Qn2eAm",
+                "onGetTemplate": "getTemplate_uiControl8_Qn2eAm"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context14_rWskv4": [
+          "普元-用户机构及权限管理系统"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context14_rWskv4": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=7183&_t=998668&_winid=w523"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context14_rWskv4": [
+          [
+            "__modalmini-",
+            "container",
+            "contextMenu",
+            "levsmenu",
+            "logos",
+            "mainTabs",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabsMenu",
+            "wrapper"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context14_rWskv4": [
+          [
+            "J_tabClose",
+            "J_tabCloseAll",
+            "J_tabCloseOther",
+            "J_tabShowActive",
+            "active",
+            "b",
+            "divider",
+            "dropdown",
+            "dropdown-menu",
+            "dropdown-menu-right",
+            "fmain",
+            "inactive",
+            "last",
+            "main",
+            "menu",
+            "menu-wrap",
+            "mini-contextmenu",
+            "mini-disabled",
+            "mini-fit",
+            "mini-menu",
+            "mini-menu-border",
+            "mini-menu-bottomArrow",
+            "mini-menu-float",
+            "mini-menu-inner",
+            "mini-menu-toolbar",
+            "mini-menu-topArrow",
+            "mini-menuitem",
+            "mini-menuitem-allow",
+            "mini-menuitem-icon",
+            "mini-menuitem-inner",
+            "mini-menuitem-text",
+            "mini-modal",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-resizer-trigger",
+            "mini-separator",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag",
+            "radius",
+            "sidebar",
+            "submain",
+            "tcc",
+            "wrap"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context14_rWskv4": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/A",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "LI/A/I",
+            "LI/UL/LI",
+            "SPAN/A/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN",
+            "UL/LI/A",
+            "UL/LI/UL"
+          ]
+        ]
+      }
+    }
+  }
+}

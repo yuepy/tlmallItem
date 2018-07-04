@@ -1,0 +1,337 @@
+{
+  "version": "0.1",
+  "id": "PreviousDetails",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4045&_t=373009",
+  "jsFile": "index.js",
+  "requires": {
+    "PreviousDetails": "../PreviousDetails/index.json"
+  },
+  "chineseName": "查看前次明细(采购订单)",
+  "description": "",
+  "controls": {
+    "control53_lq1TnH": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.mini-panel.mini-window.mini-window-drag DIV.mini-panel-border DIV.mini-panel-header"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control53_lq1TnH"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": ""
+    },
+    "control57_E7T748": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.mini-panel.mini-window.mini-window-drag DIV.mini-panel-border"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control57_E7T748"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control58_c5FBEA": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::DIV[@id=\"grid\"]/DIV[1]/DIV[2]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control58_c5FBEA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context18_3haPT6": {
+      "controls": [
+        "control53_lq1TnH",
+        "control57_E7T748",
+        "control58_c5FBEA"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/GoodsManager\\/purchaseingManager\\/fn_order\\/queryBeforeDetail\\.jsp?.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow43_3prT8h": {
+      "fromContextId": "context8_ddpRhS",
+      "fromAction": "doAction",
+      "fromControlId": "control21_GeryA0",
+      "toContexts": [
+        {
+          "toContextId": "context18_3haPT6",
+          "toModelId": "PreviousDetails"
+        }
+      ]
+    },
+    "flow45_l4WV5F": {
+      "toContexts": [
+        {
+          "toContextId": "context18_3haPT6"
+        },
+        {
+          "toContextId": "context18_3haPT6",
+          "toModelId": "PreviousDetails"
+        }
+      ]
+    },
+    "flow55_TCa4ZH": {
+      "fromContextId": "context18_3haPT6",
+      "fromAction": "doAction",
+      "fromControlId": "control53_lq1TnH",
+      "toContexts": [
+        {
+          "toContextId": "context18_3haPT6"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page18_vEx1tF": {
+      "contextId": "context18_3haPT6",
+      "layout": [
+        {
+          "id": "uiControl50_vFTqdd",
+          "controlId": "control53_lq1TnH",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl50_vFTqdd",
+                "onGetTemplate": "getTemplate_uiControl50_vFTqdd"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl54_JVQfOT",
+          "controlId": "control57_E7T748",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl54_JVQfOT",
+                "onGetTemplate": "getTemplate_uiControl54_JVQfOT"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl55_KmWklP",
+          "controlId": "control58_c5FBEA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl55_KmWklP",
+                "onGetTemplate": "getTemplate_uiControl55_KmWklP"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context18_3haPT6": [
+          "移动端页面"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context18_3haPT6": [
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4045&_t=373009",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7095&_t=707156",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w2848&_t=941660",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w6643&_t=769337",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=790189",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=431468",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4797&_t=494500",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w446&_t=925974",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=430206",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=125745",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=481492",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w7&_t=91244",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w908&_t=898222",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w908&_t=186123",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w908&_t=127251",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w5840&_t=360314",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w5739&_t=211390",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w5739&_t=990586",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w5739&_t=819087",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w6584&_t=171241",
+          "192.168.220.51:8000/ptsoa/GoodsManager/purchaseingManager/fn_order/queryBeforeDetail.jsp?_winid=w4803&_t=125228"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context18_3haPT6": [
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context18_3haPT6": [
+          [
+            "mini-disabled",
+            "mini-modal",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-resizer-trigger",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context18_3haPT6": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "version": "0.1",
+  "id": "PaymentRequisitionCheck",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w3878&_t=366274",
+  "jsFile": "index.js",
+  "requires": {
+    "PaymentRequisitionCheck": "../PaymentRequisitionCheck/index.json"
+  },
+  "chineseName": "付款申请单查看",
+  "description": "",
+  "controls": {
+    "control68_yplTXL": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              5
+            ],
+            "value": "DIV.mini-panel-header DIV.mini-panel-header-inner DIV.mini-panel-title"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control68_yplTXL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control70_s7UXmF": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/nonWord",
+            "prob": 1,
+            "disabled": true,
+            "fact": "3",
+            "value": "descendant::SPAN[@id=\"3\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              7
+            ],
+            "value": "DIV.mini-panel-header-inner DIV.mini-tools SPAN.mini-tools-close"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[6]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/SPAN[4]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control70_s7UXmF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": ""
+    },
+    "control71_KOVyLy": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "descendant::DIV[@id=\"datagridsub\"]/DIV[1]/DIV[2]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control71_KOVyLy"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>"
+    }
+  },
+  "contexts": {
+    "context16_paqFtd": {
+      "controls": [
+        "control68_yplTXL",
+        "control70_s7UXmF",
+        "control71_KOVyLy"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/FinanceManager\\/accountManager\\/fn_payApplyOrder.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow64_U4iPgs": {
+      "fromContextId": "context8_ddpRhS",
+      "fromAction": "doAction",
+      "fromControlId": "control21_GeryA0",
+      "toContexts": [
+        {
+          "toContextId": "context16_paqFtd",
+          "toModelId": "PaymentRequisitionCheck"
+        }
+      ]
+    },
+    "flow38_VLyLVu": {
+      "toContexts": [
+        {
+          "toContextId": "context16_paqFtd"
+        },
+        {
+          "toContextId": "context16_paqFtd",
+          "toModelId": "PaymentRequisitionCheck"
+        }
+      ]
+    },
+    "flow65_JDfAny": {
+      "fromContextId": "context16_paqFtd",
+      "fromAction": "doAction",
+      "fromControlId": "control70_s7UXmF",
+      "toContexts": [
+        {
+          "toContextId": "context16_paqFtd"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page16_0RKqPp": {
+      "contextId": "context16_paqFtd",
+      "layout": [
+        {
+          "id": "uiControl64_hfR7LW",
+          "controlId": "control70_s7UXmF",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl64_hfR7LW",
+                "onGetTemplate": "getTemplate_uiControl64_hfR7LW"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl62_LrIZUo",
+          "controlId": "control68_yplTXL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl62_LrIZUo",
+                "onGetTemplate": "getTemplate_uiControl62_LrIZUo"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl65_XyGDEK",
+          "controlId": "control71_KOVyLy",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl65_XyGDEK",
+                "onGetTemplate": "getTemplate_uiControl65_XyGDEK"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context16_paqFtd": [
+          "移动端页面"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context16_paqFtd": [
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w3878&_t=366274",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w2128&_t=52444",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w482&_t=969944",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w1293&_t=373251",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w4405&_t=517478",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w4405&_t=203058",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w6400&_t=996940",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w6400&_t=929981",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w557&_t=565229",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedDisAccount.jsp?_winid=w735&_t=292072",
+          "192.168.220.51:8000/ptsoa/FinanceManager/accountManager/fn_payApplyOrder/usedAccount.jsp?_winid=w5271&_t=621843"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context16_paqFtd": [
+          [
+            "__modalmini-",
+            "mini-",
+            "mini-$",
+            "mini-$body$",
+            "tabs"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context16_paqFtd": [
+          [
+            "mini-disabled",
+            "mini-modal",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-resizer-trigger",
+            "mini-tab",
+            "mini-tab-active",
+            "mini-tab-text",
+            "mini-tabs",
+            "mini-tabs-body",
+            "mini-tabs-body-top",
+            "mini-tabs-bodys",
+            "mini-tabs-buttons",
+            "mini-tabs-firstSpace",
+            "mini-tabs-header",
+            "mini-tabs-header-top",
+            "mini-tabs-headers",
+            "mini-tabs-hideOverflow",
+            "mini-tabs-lastSpace",
+            "mini-tabs-leftButton",
+            "mini-tabs-nav",
+            "mini-tabs-plain",
+            "mini-tabs-position-top",
+            "mini-tabs-rightButton",
+            "mini-tabs-scrollCt",
+            "mini-tabs-space",
+            "mini-tabs-table",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context16_paqFtd": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/DIV/TABLE",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/DIV",
+            "TR/TD/DIV",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}
