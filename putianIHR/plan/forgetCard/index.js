@@ -4,11 +4,12 @@
     doAction_uiControl23_t26RJN: function (data, elem) {
       var type = data.eventType;if (type == "back") {
         //ysp.appMain.back();
-        if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
-          top.EAPI.closeWindow();
-        } else {
-          ysp.appMain.back();
-        } // ysp.appMain.back();
+        // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
+        //   top.EAPI.closeWindow();
+        // } else {
+        //   ysp.appMain.back();
+        // }
+        ysp.appMain.back();
       }
     },
     getTemplate_uiControl23_t26RJN: function () {

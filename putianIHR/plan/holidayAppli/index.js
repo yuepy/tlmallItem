@@ -5,11 +5,12 @@
       var type = data.eventType;if (type == "back") {
         //elem.ownerDocument.defaultView.close();
         //ysp.runtime.Model.setForceMatchModels(['checkMyInfo']);
-        if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
-          top.EAPI.closeWindow();
-        } else {
-          ysp.appMain.back();
-        } // ysp.appMain.back();
+        // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
+        //   top.EAPI.closeWindow();
+        // } else {
+        //   ysp.appMain.back();
+        // } 
+        ysp.appMain.back();
       }
     },
     getTemplate_uiControl10_MhoIT9: function () {

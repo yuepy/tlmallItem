@@ -47,7 +47,7 @@
             });obj.num = i;data.content.push(obj);
           } else if (d.querySelector("img") && !d.querySelector("img[alt*='日期']")) {
             obj.type = "search";if (i == 9) {
-              var text = d.nextElementSibling.textContent.trim();
+              var text = elem.querySelector("#PERSON_NAME_NAME").textContent.trim();
             } else {
               var text = d.nextElementSibling.nextElementSibling.textContent.trim();
             }obj.val = d.querySelector("input[type='text']").value + "  " + text;obj.num = i;data.content.push(obj);

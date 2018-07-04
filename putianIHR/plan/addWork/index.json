@@ -367,6 +367,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -385,7 +389,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     }
@@ -508,49 +512,111 @@
           }
         },
         {
-          "id": "uiControl48_gySyv1",
-          "controlId": "control49_6Hie6z",
+          "id": "uiControl62_f7NdBg",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl48_gySyv1",
-                "onGetTemplate": "getTemplate_uiControl48_gySyv1"
-              }
+              "templateType": ""
             }
-          }
-        },
-        {
-          "id": "uiControl49_GduLH8",
-          "controlId": "control50_MmhJ9y",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl49_GduLH8",
-                "onGetTemplate": "getTemplate_uiControl49_GduLH8"
-              }
+          },
+          "layout": [
+            {
+              "id": "uiControl62_f7NdBgheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl62_f7NdBgbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl48_gySyv1",
+                  "controlId": "control49_6Hie6z",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl48_gySyv1",
+                        "onGetTemplate": "getTemplate_uiControl48_gySyv1"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl49_GduLH8",
+                  "controlId": "control50_MmhJ9y",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl49_GduLH8",
+                        "onGetTemplate": "getTemplate_uiControl49_GduLH8"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl50_Tp9i9i",
+                  "controlId": "control51_GspU5y",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl50_Tp9i9i",
+                        "onGetTemplate": "getTemplate_uiControl50_Tp9i9i"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl74_bBS71r",
+                  "controlId": "control75_5yAX5O",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl74_bBS71r",
+                        "onGetTemplate": "getTemplate_uiControl74_bBS71r"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl62_f7NdBgfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
             }
-          }
-        },
-        {
-          "id": "uiControl50_Tp9i9i",
-          "controlId": "control51_GspU5y",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl50_Tp9i9i",
-                "onGetTemplate": "getTemplate_uiControl50_Tp9i9i"
-              }
-            }
-          }
+          ]
         },
         {
           "id": "uiControl51_Sb8SJa",
@@ -578,21 +644,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl47_cglekz",
                 "onGetTemplate": "getTemplate_uiControl47_cglekz"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl74_bBS71r",
-          "controlId": "control75_5yAX5O",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl74_bBS71r",
-                "onGetTemplate": "getTemplate_uiControl74_bBS71r"
               }
             }
           }
