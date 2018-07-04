@@ -10,6 +10,12 @@
 @fontLarge:@fontBase + 2;
 @3796FB:#3796FB;
 @tip:#f76f49;
+@bgColor:#f4f4f4;
+.editor-state [data-ysp="component"]{
+      padding-top: 0;
+    padding-bottom: none;
+    min-height: 0;
+}
 body{
   background:#f4f4f4;
   position:relative;
@@ -829,7 +835,7 @@ div[data-ysp-modelid="menu"]{
   background-color:#fff;
   font-size:@fontBase;
   border-top:1px solid #e1e1e1;
-  border-bottom:10px solid #f4f4f4;
+  // border-bottom:10px solid #f4f4f4;
 }
 .ysp-first-box{
   border-bottom: none;
@@ -1026,6 +1032,12 @@ div[data-ysp-modelid="menu"]{
     }
   // }
 }
+.ysp-bottom-default{
+  border-bottom:10px solid @bgColor;
+}
+.ysp-line-bottom{
+  border-bottom:1px solid #e1e1e1;
+}
 .readonly{
   color:#999;
 }
@@ -1113,7 +1125,8 @@ div[data-ysp-modelid="menu"]{
 .ysp-year-holiday{
   color:#999;
   font-size:@fontXSmall;
-  margin-top:10px;
+  // margin-top:10px;
+  // border-top:10px solid @bgColor;
   padding:0 5%;
   strong{
     color:@tip;
@@ -1125,11 +1138,14 @@ div[data-ysp-modelid="menu"]{
 .ysp-tip{
   color:@tip;
   font-size:@fontSmall;
+  padding:5px 10px;
+  background:@bgColor;
 }
 
 //请假原因
 .ysp-reason{
   padding:10px 5%;
+  // border-bottom:1px solid #e1e1e1;
   .ysp-big-tit{
     em.star{
       display: inline-block;
@@ -1161,6 +1177,7 @@ div[data-ysp-modelid="menu"]{
 //附件
 .annex-box{
   padding:10px;
+  border-bottom:1px solid #e1e1e1;
   .annex-tit{
   font-size:@fontBase;
     margin-bottom: 10px;
@@ -1269,6 +1286,7 @@ div[data-ysp-modelid="menu"]{
 .ysp-btn-box{
   padding: 0 10px;
   background: #f4f4f4;
+  border:5px solid @bgColor;
   button{
     border:none;
     border-radius: 5px;
