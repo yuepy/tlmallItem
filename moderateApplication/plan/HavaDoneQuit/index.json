@@ -5,11 +5,16 @@
   "jsFile": "index.js",
   "chineseName": "已办离职申请单",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control197_TkIMJV": {
       "location": {
         "data": {
           "tagName": "H1"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -45,6 +50,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -82,6 +91,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -100,7 +113,117 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control200_GtdD7z": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[2]",
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control200_GtdD7z"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control201_CTEg7a": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "a/@href",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "funcName": "__doPostBack"
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ufoot UL.ax LI.gb SPAN A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/UL[1]/LI[2]/SPAN[1]/A[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control201_CTEg7a"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control202_RobuZ5": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/DIV[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control202_RobuZ5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -110,14 +233,39 @@
       "controls": [
         "control197_TkIMJV",
         "control198_PHG1Tv",
-        "control199_rs2Enk"
+        "control199_rs2Enk",
+        "control200_GtdD7z",
+        "control201_CTEg7a",
+        "control202_RobuZ5"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/HR\\/LZSQ\\/View\\.aspx\\?.*"
+      ]
     }
   },
   "flows": {
     "flow54_r2AK9w": {
+      "toContexts": [
+        {
+          "toContextId": "context26_xlI6VF"
+        }
+      ]
+    },
+    "flow61_45ThyO": {
+      "fromContextId": "context26_xlI6VF",
+      "fromAction": "doAction",
+      "fromControlId": "control199_rs2Enk",
+      "toContexts": [
+        {
+          "toContextId": "context26_xlI6VF"
+        }
+      ]
+    },
+    "flow62_RVnBgs": {
+      "fromContextId": "context26_xlI6VF",
+      "fromAction": "doAction",
+      "fromControlId": "control201_CTEg7a",
       "toContexts": [
         {
           "toContextId": "context26_xlI6VF"
@@ -173,6 +321,51 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl202_9eJZ9H",
+          "controlId": "control202_RobuZ5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl202_9eJZ9H",
+                "onGetTemplate": "getTemplate_uiControl202_9eJZ9H"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl200_sLkU40",
+          "controlId": "control200_GtdD7z",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl200_sLkU40",
+                "onGetTemplate": "getTemplate_uiControl200_sLkU40"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl201_gD7MiX",
+          "controlId": "control201_CTEg7a",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl201_gD7MiX",
+                "onGetTemplate": "getTemplate_uiControl201_gD7MiX"
+              }
+            }
+          }
         }
       ]
     }
@@ -188,7 +381,8 @@
     "page/urls": {
       "contexts": {
         "context26_xlI6VF": [
-          "172.16.11.61:8000/Forms/HR/LZSQ/View.aspx?ProcInstId=63E1B34F9A905CDF"
+          "172.16.11.61:8000/Forms/HR/LZSQ/View.aspx?ProcInstId=63E1B34F9A905CDF",
+          "172.16.11.61:8000/Forms/HR/LZSQ/View.aspx?ProcInstId=3053A8CA6F695BF6"
         ]
       }
     },

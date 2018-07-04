@@ -435,7 +435,6 @@
       var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
       tds[tds.length - 1].querySelectorAll('a')[data.i].click();
     }
-
 - name: 已办查询
   getTemplate: "module.exports = React.createClass({\n  onchange:function(e){\n    //debugger;\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'onchange',\n        data:[target.getAttribute('name'),target.selectedIndex]\n      })\n    }\n  },\n  onclickDate:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'onclickDate',\n        data:[target.getAttribute('name'),target.value]\n      })\n    }\n  },\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'onblur',\n        data:[target.getAttribute('name'),target.value]\n      })\n    }\n  },\n  onclickRadius:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    var ind=target.dataset.index;\n    var sel=target.dataset.checked;\n    if(handler){\n      handler({\n        eventType:'onclickRadius',\n        data:[ind,sel]\n      })\n    }\n  },\n  onclickBtn:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    \n    if(handler){\n      handler({\n        eventType:'onclickBtn',\n        \n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n   //console.log(data.content[0]);\n    var list0=data.content[0].sel.opt.map(function(d,i){ \n        var opts=d.map(function(opt,optId){\n          if(optId>0){\n            return(\n                <option selected={d[0]==opt? true:false}>{opt}</option>\n            )\n          }\n            \n          \n          \n        })\n        return(              \n            <select name={data.content[0].sel.optType[i]} onChange={_this.onchange.bind(_this)}>{opts}</select>           \n        )\n    })\n    var lis1=data.content[1].sel.opt.map(function(d,i){ \n        var opts=d.map(function(opt,optId){\n          if(optId>0){\n            return(\n                <option>{opt}</option>\n            )\n          }\n        })\n        return(              \n            <select name={data.content[1].sel.optType[i]} onChange={_this.onchange.bind(_this)}>{opts}</select>           \n        )\n    })\n    return (\n      <div className='ysp-selectBar-tt'>\n        <div className='ysp-selectBar-title-tt'>{data.title}</div>\n        <div className='ysp-selectBar-content-tt'>\n          \t<div>\n          \t\t\t\t<p>{data.content[0].leftTitle[0]}</p>\n        \t\t\t\t\t{list0}\n              \t\t<p>—></p>\n          \t</div>\n          \t<div>\n          \t\t\t\t<p>{data.content[0].leftTitle[1]}</p>\n                  <AInput type='date' name={data.content[0].iptType[0]} value={data.content[0].iptVal[0]} onBlur={_this.onclickDate.bind(_this)}/>\n                  \n                  <AInput type='date' name={data.content[0].iptType[1]} value={data.content[0].iptVal[1]} onBlur={_this.onclickDate.bind(_this)}/>\n              \t\t<p>至</p>\n          \t</div>\n          \t<div>\n          \t\t\t<p>{data.content[0].leftTitle[2]}</p>\n          \t\t\t<AInput type='text' name={data.content[0].iptType[2]} value={data.content[0].iptVal[2]} onBlur={_this.onblur.bind(_this)}/>\n          \t</div>\n          \t\n        </div>\n     \t\t<div className='ysp-selectBar-content-tt'>\n        \t\t<div>\n          \t\t\t<p>{data.content[1].leftTitle[0]}</p>\n          \t\t\t<AInput type='text' name={data.content[1].iptType[0]} value={data.content[1].iptVal[0]} onBlur={_this.onblur.bind(_this)}/>\n          \t</div>\n          \t<div>\n            \t\t<p>{data.content[1].leftTitle[1]}</p>\n              \t<p className='ysp-radius-btn-tt'>\n              \t\t\t<span data-index='0' onClick={_this.onclickRadius.bind(_this)} data-checked={data.content[1].iptVal[2]} className={data.content[1].iptVal[2]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"}>流程类别模式</span>\n                <span data-index='1' onClick={_this.onclickRadius.bind(_this)} data-checked={data.content[1].iptVal[1]} className={data.content[1].iptVal[1]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"}>时间模式</span>\n              \t</p>\n                \n            </div>\n          \t<div>\n          \t\t\t<p>{data.content[1].leftTitle[2]}</p>\n          \t\t\t{lis1}          \t\n          \t</div>\n          \t\n          \t\n        </div>\n        <div className='ysp-selectBar-content-tt'>\n        \t<div>\n          \t<p>{data.content[2].leftTitle[0]}</p>\n          \t<AInput type='text' name={data.content[2].iptType[0]} value={data.content[2].iptVal[0]} onBlur={_this.onblur.bind(_this)}/>\n          </div>\n        </div>\n        <div className='ysp-selectBarBtn-tt'>\n        \t<button onClick={_this.onclickBtn.bind(_this)}>{data.content[3].btn}</button>\n        </div>\n      </div>\n    )\n  }\n});"
   getData: "if (!elem) {\n  return;\n}\nvar data = {\n  content: []\n};\ndata.title = '查询条件';\nvar trs = elem.querySelectorAll('tr'); //循环每个tr\nfor (var i = 0; i < trs.length; i++) {\n  var trArr = {\n    leftTitle: [],\n    sel: {\n      optType: [],\n      opt: []\n    },\n    iptVal: [],\n    iptType: []\n  };\n\n  if (i == 0) {\n    var tds = trs[i].querySelectorAll('td'); //循环第一行中的td\n\n    for (var j = 0; j < tds.length; j++) {\n      var tdArr = [];\n      tdArr.push(tds[j].querySelector('label').textContent.trim());\n      trArr.leftTitle.push(tdArr); //遍历select\t\t\t\n\n      var sel = tds[0].querySelectorAll('select');\n\n      if (tds[j].querySelector('select') != null) {\n        for (var k = 0; k < sel.length; k++) {\n          var selArr = []; //selArr.push(sel[k].querySelector(\"option[selected='selected']\").textContent);\n\n          var opt = sel[k].querySelectorAll('option');\n\n          for (var m = 0; m < opt.length; m++) {\n            if (opt[m].selected == true) {\n              selArr.push(opt[m].textContent);\n            }\n\n            selArr.push(opt[m].textContent);\n          }\n\n          trArr.sel.opt.push(selArr);\n          trArr.sel.optType.push(sel[k].getAttribute('name'));\n        }\n      }\n    }\n\n    trArr.iptType.push(tds[1].querySelectorAll('input')[0].getAttribute('name'));\n    trArr.iptType.push(tds[1].querySelectorAll('input')[1].getAttribute('name'));\n    trArr.iptType.push(tds[2].querySelectorAll('input')[0].getAttribute('name'));\n    trArr.iptVal.push(tds[1].querySelectorAll('input')[0].value);\n    trArr.iptVal.push(tds[1].querySelectorAll('input')[1].value);\n    trArr.iptVal.push(tds[2].querySelectorAll('input')[0].value);\n  } else if (i == 1) {\n    var tds = trs[i].querySelectorAll('td'); //循环第一行中的td\n\n    for (var j = 0; j < tds.length; j++) {\n      var tdArr = [];\n      tdArr.push(tds[j].querySelector('label').textContent.trim());\n      trArr.leftTitle.push(tdArr); //遍历select\t\t\t\n\n      var sel = tds[2].querySelectorAll('select');\n\n      if (tds[j].querySelector('select') != null) {\n        for (var k = 0; k < sel.length; k++) {\n          var selArr = []; //selArr.push(sel[k].querySelector(\"option[selected='selected']\").textContent);\n\n          var opt = sel[k].querySelectorAll('option');\n\n          for (var m = 0; m < opt.length; m++) {\n            if (opt[m].selected == true) {\n              selArr.push(opt[m].textContent);\n            }\n\n            selArr.push(opt[m].textContent);\n          }\n\n          trArr.sel.opt.push(selArr);\n          trArr.sel.optType.push(sel[k].getAttribute('name'));\n        }\n      }\n    }\n\n    trArr.iptType.push(tds[0].querySelectorAll('input')[0].getAttribute('name'));\n    trArr.iptType.push(tds[1].querySelectorAll('input')[0].getAttribute('name'));\n    trArr.iptType.push(tds[1].querySelectorAll('input')[1].getAttribute('name'));\n    trArr.iptVal.push(tds[0].querySelectorAll('input')[0].value);\n    trArr.iptVal.push(tds[1].querySelectorAll('input')[1].checked);\n    trArr.iptVal.push(tds[1].querySelectorAll('input')[0].checked);\n  } else if (i == 2) {\n    var tds = trs[i].querySelectorAll('td');\n\n    for (var j = 0; j < tds.length; j++) {\n      var tdArr = [];\n\n      if (tds[j].textContent.trim() != \"\") {\n        tdArr.push(tds[j].querySelector('label').textContent.trim());\n        trArr.leftTitle.push(tdArr);\n      }\n    }\n\n    trArr.iptType.push(tds[0].querySelectorAll('input')[0].getAttribute('name'));\n    trArr.iptVal.push(tds[0].querySelectorAll('input')[0].value);\n  } else if (i == 3) {\n    trArr.btn = trs[i].querySelector('button').textContent.trim();\n  }\n\n  data.content.push(trArr);\n}\nreturn data;\n"
@@ -468,7 +467,6 @@
     } else if (data.eventType == 'onclickBtn') {
       var target = elem.querySelector("button");
       target.click();
-
 - name: 审批操作item
   getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
   getData: >
@@ -510,4 +508,311 @@
     if (data.eventType == 'change') {
       elem.querySelector('textarea').value = data;
 
+    }
+- name: 分页
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:target.getAttribute('data-id')\n      })\n    }\n  },\n  onclickpage:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'onclickpage',\n        data:[target.dataset.index,target.dataset.id]\n      })\n    }\n  },\n  onclickpreOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onclickpreOnce'\n        \n      })\n    }\n  },\n  onClicknextOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onClicknextOnce',\n        \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return (\n        <div>\n        \t暂无数据\n        </div>\n      )\n    }\n    var str = '<',kr = '|<',\n        _this = this;\n    var lis = data.content.map(function(ele,index){\n      if(index!=0&&index!=data.content.length-1){\n        return(\n        \t<li data-id={index} onClick={_this.onClick} className={ele.class}>{ele.text}</li>\n        )\n      }\n    })\n    return (\n      <div className='footerbtn'>\n        <ul>\n          <li data-id='prevPage' data-index={0} onClick={_this.onclickpage.bind(_this)} className='ysp-prePage'>{kr}</li>\n          <li data-id='prev' onClick={_this.onclickpreOnce.bind(_this)} className='ysp-preOnce'>{str}</li>\n          {lis}\n          <li data-id='next' onClick={_this.onClicknextOnce.bind(_this)} className='ysp-nextOne'>></li>\n          <li data-id='nextPage' data-index={data.content.length-1} onClick={_this.onclickpage.bind(_this)} className='ysp-nextPage'>>|</li>\n        </ul>\n      </div>\n    )\n  }\n});"
+  getData: |
+    //console.log(elem);
+    if (!elem) {
+      return "";
+    }
+    if (elem) {
+      var data = {};
+      data.content = [];
+      var nodes = elem.children;
+
+      for (var i = 0; i < nodes.length; i++) {
+        data.content.push({
+          text: nodes[i].textContent.trim(),
+          class: nodes[i].className
+        });
+      }
+
+      return data;
+    }
+  doAction: |
+    if (data.eventType == 'click') {
+      //debugger;
+      var index = parseInt(data.dataCustom);
+
+      if (index == 1) {
+        var target = elem.querySelectorAll('a')[index];
+        target.click();
+      } else {
+        var target = elem.querySelectorAll('a')[index - 1];
+        target.click();
+      }
+    } else if (data.eventType == 'onclickpage') {
+      //debugger;
+      var index = parseInt(data.dataCustom[0]);
+      var id = data.dataCustom[1];
+
+      if (id == 'prevPage') {
+        var target = elem.querySelectorAll('a')[index];
+        target.click();
+      } else if (id == 'nextPage') {
+        var target = elem.querySelectorAll('a')[index - 1];
+        target.click();
+      }
+    } else if (data.eventType == 'onclickpreOnce') {
+      // debugger;
+      var child = elem.querySelectorAll('a');
+      var end = parseInt(elem.querySelector('.cpb').textContent);
+
+      for (var i = end; i > 0; i--) {
+        if (i == 1) {
+          alert('已经到首页了');
+        } else {
+          child[i - 1].click();
+          break;
+        }
+      }
+    } else if (data.eventType == 'onClicknextOnce') {
+      var child = elem.querySelectorAll('a');
+      var start = parseInt(elem.querySelector('.cpb').textContent);
+
+      for (var i = start; i < child.length; i++) {
+        if (i == child.length - 1) {
+          alert('已经到末页了');
+        } else {
+          child[i].click();
+          break;
+        }
+      }
+    }
+- name: 员工信息-ltt
+  getTemplate: "module.exports = React.createClass({\n  click:function(e){\n    var target = e.target;\n    // debugger;\n    if(target.tagName.toLowerCase() == 'i'){\n      target = target.parentElement.parentElement;\n    }\n    if(target.tagName.toLowerCase() == 'a'){\n      target = target.parentElement;\n    }\n    if(target.previousSibling.className == 'content disnone'){\n      target.previousSibling.className = 'content';\n      target.querySelector('a').className = 'xia';\n    }else{\n      target.previousSibling.className = 'content disnone';\n      target.querySelector('a').className = 'shang';\n    }\n  },\n  onclickRadio:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'clickRadio',\n        data:[target.dataset.checked,target.dataset.index]\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    var lis = data.content.map(function(ele,index){\n      if(index<2){\n        var lisele = ele.map(function(d,i){\n          return(\n          \t<div className='contenttit'>\n            \t<div className='contentitem'>{d.left}</div>\n              <div className='contentitem'>{d.right}</div>\n            </div>\n          )\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      }\n    })\n    var list = data.content.map(function(ele,index){\n      if(index>1){\n        var lisele = ele.map(function(d,i){\n          if(!d.type){\n            return(\n          \t<div className='contenttit'>\n            \t<div className='contentitem'>{d.left}</div>\n              <div className='contentitem'>{d.right}</div>\n            </div>\n          )\n          }else{\n            if(d.type == 'textarea'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem'><textarea value={d.right}></textarea></div>\n                </div>\n              )\n            }else if(d.type == 'radio'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem ysp-radioBtn-tt'>\n                  \t\t<span className={d.right[0]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[0]} data-index={0} onClick={_this.onclickRadio.bind(_this)}>是</span>\n                    \t<span className={d.right[1]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[1]} data-index={1} onClick={_this.onclickRadio.bind(_this)}>否</span>\n                  </div>\n                </div>\n              )\n            }\n          }\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      }\n    })\n    return (\n      <div className='information'>\n       \t<div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          {lis}</div>\n        <div className='content disnone'>\n          {list}\n          <div className='contentitem' style={{'border-bottom':'1px solid #e0e0e0','width':'100%','text-align':'right'}}>\n            <a href='javascript:;'>{data.content[2][data.content[2].length-1].text}</a>\n          </div>\n        </div>\n        <span onClick={_this.click}><a className='shang' href='javascript:;'></a>显示更多内容</span>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {}; // var table = elem.querySelectorAll('table')[0];
+    var trs = elem.querySelectorAll('tr');
+    data.title = '员工信息';
+    data.content = [];
+    for (var i = 0; i < trs.length; i++) {
+      var arr = [];
+      var tds = trs[i].querySelectorAll('td');
+
+      for (var k = 0; k < tds.length; k++) {
+        if (tds[k].querySelector("input[type='text']")) {
+          arr.push({
+            left: tds[k].querySelector('label').textContent.trim(),
+            right: tds[k].querySelector('input').value
+          });
+        }
+
+        if (tds[k].querySelector('textarea')) {
+          arr.push({
+            left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
+            right: tds[k].querySelector('textarea').value,
+            type: 'textarea'
+          });
+        }
+
+        if (tds[k].querySelector("input[type='radio']")) {
+          arr.push({
+            left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
+            right: [tds[k].querySelectorAll("input[type='radio']")[0].checked, tds[k].querySelectorAll("input[type='radio']")[1].checked],
+            type: 'radio'
+          });
+        }
+      }
+
+      data.content.push(arr);
+    }
+    return data;
+  doAction: |
+    if (data.eventType == 'clickRadio') {
+      var check = data.dataCustom[0];
+      var index = data.dataCustom[1];
+      var target = elem.querySelectorAll("input[type='radio']")[index];
+      target.checked = check;
+    }
+- name: 岗位信息（input有可以输入的情况）
+  getTemplate: "module.exports = React.createClass({\n  click:function(e){\n    var target = e.target;\n    // debugger;\n    if(target.tagName.toLowerCase() == 'i'){\n      target = target.parentElement.parentElement;\n    }\n    if(target.tagName.toLowerCase() == 'a'){\n      target = target.parentElement;\n    }\n    if(target.previousSibling.className == 'content disnone'){\n      target.previousSibling.className = 'content';\n      target.querySelector('a').className = 'xia';\n    }else{\n      target.previousSibling.className = 'content disnone';\n      target.querySelector('a').className = 'shang';\n    }\n  },\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:[target.dataset.index,target.value]\n      })\n    }\n  },\n  onclickRadio:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'clickRadio',\n        data:[target.dataset.checked,target.dataset.index]\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    var lis = data.content.map(function(ele,index){\n      if(index<2){\n        var lisele = ele.map(function(d,i){\n          return(\n          \t<div className='contenttit'>\n            \t<div className='contentitem'>{d.left}</div>\n              <div className='contentitem'> <AInput value={d.right} readOnly={d.readyState}/></div>\n            </div>\n          )\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      }\n    })\n    var list = data.content.map(function(ele,index){\n      if(index>1){\n        var lisele = ele.map(function(d,i){\n          if(!d.type){\n            return(\n          \t<div className='contenttit'>\n            \t<div className='contentitem'>{d.left}</div>\n              <div className='contentitem'>\n                \n                {d.readyState==true?<AInput value={d.right} readOnly={d.readyState}/>:<AInput value={d.right} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)} data-index={index}/>}\n                \n              </div>\n            </div>\n          )\n          }else{\n            if(d.type == 'textarea'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem'><textarea value={d.right}></textarea></div>\n                </div>\n              )\n            }else if(d.type == 'radio'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem ysp-radioBtn-tt'>\n                  \t\t<span className={d.right[0]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[0]} data-index={0} onClick={_this.onclickRadio.bind(_this)}>是</span>\n                    \t<span className={d.right[1]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[1]} data-index={1} onClick={_this.onclickRadio.bind(_this)}>否</span>\n                  </div>\n                </div>\n              )\n            }\n          }\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      }\n    })\n    return (\n      <div className='information'>\n       \t<div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          {lis}</div>\n        <div className='content disnone'>\n          {list}\n          <div className='contentitem' style={{'border-bottom':'1px solid #e0e0e0','width':'100%','text-align':'right'}}>\n            <a href='javascript:;'>{data.content[2][data.content[2].length-1].text}</a>\n          </div>\n        </div>\n        <span onClick={_this.click}><a className='shang' href='javascript:;'></a>显示更多内容</span>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {}; // var table = elem.querySelectorAll('table')[0];
+    var trs = elem.querySelectorAll('tr');
+    data.title = '岗位信息';
+    data.content = [];
+    for (var i = 0; i < trs.length; i++) {
+      var arr = [];
+      var tds = trs[i].querySelectorAll('td');
+
+      for (var k = 0; k < tds.length; k++) {
+        if (tds[k].querySelector("input[type='text']")) {
+          arr.push({
+            left: tds[k].querySelector('label').textContent.trim(),
+            right: tds[k].querySelector('input').value,
+            readyState: tds[k].querySelector('input').readOnly
+          });
+        }
+
+        if (tds[k].querySelector('textarea')) {
+          arr.push({
+            left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
+            right: tds[k].querySelector('textarea').value,
+            type: 'textarea'
+          });
+        }
+
+        if (tds[k].querySelector("input[type='radio']")) {
+          arr.push({
+            left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
+            right: [tds[k].querySelectorAll("input[type='radio']")[0].checked, tds[k].querySelectorAll("input[type='radio']")[1].checked],
+            type: 'radio'
+          });
+        }
+      }
+
+      data.content.push(arr);
+    }
+    return data;
+  doAction: |
+    if (data.eventType == 'clickRadio') {
+      var check = data.dataCustom[0];
+      var index = data.dataCustom[1];
+      var target = elem.querySelectorAll("input[type='radio']")[index];
+      target.checked = check;
+    } else if (data.eventType == 'blur') {
+      var index = parseInt(data.dataCustom[0]);
+      var val = data.dataCustom[1];
+      var target = elem.querySelectorAll('tr')[index].querySelectorAll("input");
+
+      for (var i = 0; i < target.length; i++) {
+        if (target[i].readOnly == false) {
+          target[i].value = val;
+        }
+      }
+    }
+- name: lttTable
+  getTemplate: "module.exports = React.createClass({\n  \n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:[target.dataset.index,target.value]\n      })\n    }\n  },\n \n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n \n    var list = data.content.map(function(ele,index){\n     \n        var lisele = ele.map(function(d,i){\n         if(d.type == 'textarea'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem'><textarea value={d.right} readOnly={d.readyState}></textarea></div>\n                </div>\n              )\n            }else {\n            return(\n                  <div className='contenttit'>\n                    <div className='contentitem'>{d.left}</div>\n                    <div className='contentitem'>\n\n                      {d.readyState==true?<AInput value={d.right} readOnly={d.readyState}/>:<AInput value={d.right} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)} data-index={index}/>}\n\n                    </div>\n                  </div>\n              )\n            }\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      \n    })\n    return (\n      <div className='information'>\n       \t<div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          {list}</div>\n        \n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {}; // var table = elem.querySelectorAll('table')[0];
+    var trs = elem.querySelectorAll('tr');
+    data.title = '岗位信息';
+    data.content = [];
+    for (var i = 0; i < trs.length; i++) {
+      var arr = [];
+      var tds = trs[i].querySelectorAll('td');
+
+      for (var k = 0; k < tds.length; k++) {
+        if (tds[k].querySelector("input[type='text']")) {
+          arr.push({
+            left: tds[k].querySelector('label').textContent.trim(),
+            right: tds[k].querySelector('input').value,
+            readyState: tds[k].querySelector('input').readOnly
+          });
+        }
+
+        if (tds[k].querySelector('textarea')) {
+          arr.push({
+            left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
+            right: tds[k].querySelector('textarea').value,
+            readyState: tds[k].querySelector('textarea').readOnly,
+            type: 'textarea'
+          });
+        }
+
+        if (tds[k].querySelector("input[type='radio']")) {
+          arr.push({
+            left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
+            right: [tds[k].querySelectorAll("input[type='radio']")[0].checked, tds[k].querySelectorAll("input[type='radio']")[1].checked],
+            type: 'radio'
+          });
+        }
+      }
+
+      data.content.push(arr);
+    }
+    return data;
+  doAction: |
+    if (data.eventType == 'blur') {
+      var index = parseInt(data.dataCustom[0]);
+      var val = data.dataCustom[1];
+      var target = elem.querySelectorAll('tr')[index].querySelectorAll("input");
+
+      for (var i = 0; i < target.length; i++) {
+        if (target[i].readOnly == false) {
+          target[i].value = val;
+        }
+      }
+    }
+- name: close关闭按钮
+  getTemplate: |-
+    module.exports = React.createClass({
+      onclickClose:function(e){
+        var target=e.target;
+        var handler=this.props.customHandler;
+        if(handler){
+          handler({
+            eventType:'close'
+          })
+        }
+      },
+      render: function() {
+        return (
+          <div className='ysp-closeBtn-tt'>
+            <button onClick={this.onclickClose.bind(this)}>{this.props.customData}</button>
+          </div>
+        )
+      }
+    });
+  getData: |
+    if (!elem) {
+      return;
+    }
+    return elem.textContent;
+  doAction: |
+    if (data.eventType == 'close') {
+      elem.click();
+    }
+- name: lutiantianChaxun
+  getTemplate: "module.exports = React.createClass({\n  onclickBtn:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'clickBtn'\n      })\n    }\n  },\n  onblurDate:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blurDate',\n        data:[target.getAttribute('id'),target.value]\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n    var lists=data.content.map(function(d,i){\n      var list=d.map(function(dd,ii){\n        if(dd.type=='button'){\n          return(\n          \t<button onClick={_this.onclickBtn.bind(_this)}>{dd.left}</button>\n          )\n        }else{\n          return(\n        \t\t<div>\n            \t<span>{dd.left}</span>\n              <AInput type='date' id={dd.id[0]} value={dd.right[0]} onBlur={_this.onblurDate.bind(_this)}/>\n              <AInput type='date' id={dd.id[1]} value={dd.right[1]} onBlur={_this.onblurDate.bind(_this)}/>\n              <span>—></span>\n            </div>\n        \t)\n        }\n        \n      })\n      return(\n      \t\t<div className='ysp-checkDateContent-tt'>{list}</div>\n      )\n    })\n    return (\n      <div className='ysp-checkDate-tt'>\n       {lists}\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {
+      content: []
+    };
+    var trs = elem.querySelectorAll('tr');
+    for (var i = 0; i < trs.length; i++) {
+      var arr = [];
+      var tds = trs[i].querySelectorAll('td');
+
+      for (var j = 0; j < tds.length; j++) {
+        if (tds[j].querySelector('button')) {
+          arr.push({
+            left: tds[j].querySelector('button').textContent.trim(),
+            type: 'button'
+          });
+        } else {
+          arr.push({
+            left: tds[j].querySelector('label').textContent.trim(),
+            right: [tds[j].querySelectorAll('input')[0].value, tds[j].querySelectorAll('input')[1].value],
+            id: [tds[j].querySelectorAll('input')[0].getAttribute('id'), tds[j].querySelectorAll('input')[1].getAttribute('id')]
+          });
+        }
+      }
+
+      data.content.push(arr);
+    }
+    return data;
+  doAction: |
+    if (data.eventType == 'clickBtn') {
+      var target = elem.querySelector('button');
+      target.click();
+    } else if (data.eventType == 'blurDate') {
+      var id = data.dataCustom[0];
+      var val = data.dataCustom[1];
+      var target = elem.querySelector("#" + id);
+      target.value = val;
     }

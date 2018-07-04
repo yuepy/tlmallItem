@@ -61,6 +61,19 @@ body {
   min-height: 56px;
   align-items: center;
 }
+.information .content .contenttit .contentitem input {
+  border: 0;
+  background: #fff;
+  width: 100%;
+  line-height: 40px;
+  font-size: 16px;
+}
+.information .content .contenttit .contentitem textarea {
+  background: #fff;
+  padding: 0 0 0 5px;
+  width: 100%;
+  border: 0;
+}
 .information .content .contenttit .contentitem:nth-child(1) {
   width: 56px;
   display: flex;
@@ -74,6 +87,28 @@ body {
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
+}
+.information .content .contenttit .ysp-submitBtn-tt,
+.information .content .contenttit .ysp-hrefA-tt {
+  width: 100% !important;
+}
+.information .content .contenttit .ysp-submitBtn-tt button,
+.information .content .contenttit .ysp-hrefA-tt button {
+  border: 0;
+  background: #2F9FFF;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+.information .content .contenttit .ysp-submitBtn-tt span,
+.information .content .contenttit .ysp-hrefA-tt span {
+  color: #0961B6;
+  display: block;
+  margin: 0 auto;
 }
 .information .content textarea {
   width: 285px;
@@ -648,21 +683,6 @@ body {
   border: 2px solid #d8d8d8;
   position: absolute;
   transform: translateY(3px) rotate(45deg);
-}
-[data-ysp-modelid="dealtIndex"] .footerbtn ul,
-[data-ysp-modelid="haveDoneIndex"] .footerbtn ul {
-  overflow: none;
-  height: 25px;
-}
-[data-ysp-modelid="dealtIndex"] .footerbtn ul li,
-[data-ysp-modelid="haveDoneIndex"] .footerbtn ul li {
-  width: 5%;
-  margin: 0 10px 0 10px;
-  background-color: red;
-  color: #ffffff;
-  height: 25px;
-  float: left;
-  list-style: none;
 }
 [data-ysp-modelid="Printing"] {
   background-color: #ededed;
@@ -12377,6 +12397,22 @@ body {
 }
 /***********************员工合同续签申请单  ltt END**********************/
 /*************************已办 ltt START****************************/
+.radioBtn span {
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 0 10px;
+  margin: 0 10px 0 0;
+}
+.radioBtn .ysp-RadiusUnselected-tt {
+  background: #eee;
+}
+.radioBtn .ysp-RadiusSelected-tt {
+  background: #2F9FFF;
+  color: #fff;
+}
 .ysp-selectBar-tt {
   background: #fff;
   padding: 0 0 10px 0;
@@ -12419,6 +12455,9 @@ body {
   background-position-x: 95%;
   background-position-y: 7px;
 }
+.ysp-selectBar-tt .ysp-selectBar-content-tt > div .ysp-radius-btn-tt {
+  text-align: left;
+}
 .ysp-selectBar-tt .ysp-selectBar-content-tt > div .ysp-radius-btn-tt span {
   height: 30px;
   line-height: 30px;
@@ -12445,5 +12484,115 @@ body {
   display: block;
   width: 80px;
   border-radius: 25px;
+}
+.footerbtn ul {
+  overflow: hidden;
+  padding: 0;
+}
+.footerbtn ul li {
+  color: #000;
+  width: 25px;
+  height: 25px;
+  margin: 0 8px;
+  background-color: red;
+  float: left;
+  list-style: none;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+}
+.footerbtn ul .cpb,
+.footerbtn ul .ysp-prePage {
+  background: #2F9FFF;
+  color: #fff;
+}
+.footerbtn ul .ysp-prePage,
+.footerbtn ul .ysp-preOnce,
+.footerbtn ul .ysp-nextOne,
+.footerbtn ul .ysp-nextPage {
+  margin: 0;
+  border-radius: 0;
+}
+.footerbtn ul .ysp-prePage,
+.footerbtn ul .ysp-nextOne {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.footerbtn ul .ysp-preOnce,
+.footerbtn ul .ysp-nextPage {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.ysp-radioBtn-tt span {
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 0 10px;
+  margin: 0 10px 0 0;
+}
+.ysp-radioBtn-tt .ysp-RadiusUnselected-tt {
+  background: #eee;
+}
+.ysp-radioBtn-tt .ysp-RadiusSelected-tt {
+  background: #2F9FFF;
+  color: #fff;
+}
+.ysp-closeBtn-tt {
+  margin: 10px 0 0 0;
+  padding: 10px 0;
+}
+.ysp-closeBtn-tt button {
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  background: #3D8CF8;
+  width: 95%;
+  border-radius: 5px;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+}
+.ysp-checkDate-tt {
+  background: #fff;
+  padding: 10px 0;
+}
+.ysp-checkDate-tt .ysp-checkDateContent-tt > div {
+  overflow: hidden;
+}
+.ysp-checkDate-tt .ysp-checkDateContent-tt > div span {
+  float: left;
+  display: block;
+  width: 30%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.ysp-checkDate-tt .ysp-checkDateContent-tt > div input {
+  float: right;
+  width: 65% ;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.ysp-checkDate-tt .ysp-checkDateContent-tt button {
+  display: block;
+  margin: 10px auto 0;
+  border: 0;
+  background: #2F9FFF;
+  color: #fff;
+  height: 30px;
+  line-height: 30px;
+  width: 80px;
+  border-radius: 5px;
+}
+div._3-WTIFHEDS-X9_V6uFJjTz {
+  width: 100%;
 }
 /*************************已办 ltt ENG****************************/

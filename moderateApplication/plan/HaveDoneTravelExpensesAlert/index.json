@@ -1,0 +1,147 @@
+{
+  "version": "0.1",
+  "id": "HaveDoneTravelExpensesAlert",
+  "targetURL": "http://172.16.11.61:9995/Workflow/Forms/CLFYBX/View.aspx?ProcInstId=860EC8ABFD63FC5E#",
+  "jsFile": "index.js",
+  "chineseName": "已办差旅费用报销流程弹框",
+  "description": "",
+  "controls": {},
+  "contexts": {
+    "context28_VG9e3W": {
+      "controls": [],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow69_CQMR27": {
+      "toContexts": [
+        {
+          "toContextId": "context28_VG9e3W"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page28_qn0Dw0": {
+      "contextId": "context28_VG9e3W",
+      "layout": []
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context28_VG9e3W": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context28_VG9e3W": [
+          ""
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context28_VG9e3W": [
+          [
+            "MainContent_AspNetPager",
+            "MainContent_DivTime",
+            "MainContent_HidEmployeeORSupplier",
+            "MainContent_HidType",
+            "MainContent_btnSearch",
+            "MainContent_txtEndDate",
+            "MainContent_txtStartDate",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "form"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context28_VG9e3W": [
+          [
+            "Wdate",
+            "advanced-search",
+            "anpager",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "breadcrumb",
+            "btn",
+            "cpb",
+            "form-wrapper",
+            "hover",
+            "icon-search",
+            "layout-data",
+            "layout-form",
+            "red",
+            "result-list",
+            "shadow",
+            "size-s"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context28_VG9e3W": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/BUTTON/I",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-submit",
+            "TR/TD/A",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

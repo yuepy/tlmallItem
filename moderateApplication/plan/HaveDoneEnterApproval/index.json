@@ -1,0 +1,1321 @@
+{
+  "version": "0.1",
+  "id": "HaveDoneEnterApproval",
+  "targetURL": "http://172.16.11.61:8000/Forms/HR/LYSQ/View.aspx?ProcInstId=310707A68BD73062#",
+  "jsFile": "index.js",
+  "requires": {
+    "haveDoneIndex": "../haveDoneIndex/index.json"
+  },
+  "chineseName": "已办录用入职审批单",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control203_Tas4nT": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "XPath",
+              "value": ""
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[1]/H1[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]//H1"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.top H1"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/H1[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control203_Tas4nT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control204_7l7vu5": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"person_infor\"]",
+              "descendant::DIV[@id=\"person_infor\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.show"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control204_7l7vu5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control205_LngBJg": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[3]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[3]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[3]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control205_LngBJg"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control213_CUsA6B": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[6]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[6]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[6]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control213_CUsA6B"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control214_leqNDS": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[10]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[10]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[10]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control214_leqNDS"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control215_f5GEWi": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[13]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[13]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[13]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control215_f5GEWi"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control216_06fUHT": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[16]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[16]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              4,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[16]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control216_06fUHT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control217_PDGVwN": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[19]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[19]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              5,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[19]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control217_PDGVwN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control218_GckwkC": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[22]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[22]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              6,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[22]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control218_GckwkC"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control219_Uw4PpL": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[25]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[25]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              7,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[25]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control219_Uw4PpL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control220_rkiK0L": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[28]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[28]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              8,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[28]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control220_rkiK0L"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control221_mqqgCS": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[2]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control221_mqqgCS"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control206_WDRgmL": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "a/@href",
+            "prob": 2,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": {
+              "funcName": "__doPostBack"
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ufoot UL.ax LI.gb SPAN A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/UL[1]/LI[2]/SPAN[1]/A[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control206_WDRgmL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control207_Vgt1dI": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[32]/TABLE[1]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[32]/TABLE[1]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              10,
+              13
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[32]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control207_Vgt1dI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control208_1Wa77G": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[32]/TABLE[2]"
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[32]/TABLE[2]",
+              "ratio": 0.579
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[32]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control208_1Wa77G"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context17_JmMWaz": {
+      "controls": [
+        "control203_Tas4nT",
+        "control204_7l7vu5",
+        "control205_LngBJg",
+        "control213_CUsA6B",
+        "control214_leqNDS",
+        "control215_f5GEWi",
+        "control216_06fUHT",
+        "control217_PDGVwN",
+        "control218_GckwkC",
+        "control219_Uw4PpL",
+        "control220_rkiK0L",
+        "control221_mqqgCS",
+        "control206_WDRgmL",
+        "control207_Vgt1dI",
+        "control208_1Wa77G"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/HR\\/LYSQ\\/View\\.aspx\\?.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow63_qxz9po": {
+      "toContexts": [
+        {
+          "toContextId": "context17_JmMWaz"
+        },
+        {
+          "toContextId": "context25_IDCMfP",
+          "toModelId": "haveDoneIndex"
+        }
+      ]
+    },
+    "flow64_h8BKTs": {
+      "fromContextId": "context17_JmMWaz",
+      "fromAction": "doAction",
+      "fromControlId": "control205_LngBJg",
+      "toContexts": [
+        {
+          "toContextId": "context17_JmMWaz"
+        }
+      ]
+    },
+    "flow65_HDJRJb": {
+      "fromContextId": "context17_JmMWaz",
+      "fromAction": "doAction",
+      "fromControlId": "control216_06fUHT",
+      "toContexts": [
+        {
+          "toContextId": "context17_JmMWaz"
+        }
+      ]
+    },
+    "flow66_RJLc4N": {
+      "fromContextId": "context17_JmMWaz",
+      "fromAction": "doAction",
+      "fromControlId": "control220_rkiK0L",
+      "toContexts": [
+        {
+          "toContextId": "context17_JmMWaz"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page17_JGxLGc": {
+      "contextId": "context17_JmMWaz",
+      "layout": [
+        {
+          "id": "uiControl203_HWnuM9",
+          "controlId": "control203_Tas4nT",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl203_HWnuM9",
+                "onGetTemplate": "getTemplate_uiControl203_HWnuM9"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl204_Ig5mR6",
+          "controlId": "control204_7l7vu5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl204_Ig5mR6",
+                "onGetTemplate": "getTemplate_uiControl204_Ig5mR6"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl205_JddXWg",
+          "controlId": "control205_LngBJg",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl205_JddXWg",
+                "onGetTemplate": "getTemplate_uiControl205_JddXWg"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl213_KwRt7E",
+          "controlId": "control213_CUsA6B",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl213_KwRt7E",
+                "onGetTemplate": "getTemplate_uiControl213_KwRt7E"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl214_OCKRWs",
+          "controlId": "control214_leqNDS",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl214_OCKRWs",
+                "onGetTemplate": "getTemplate_uiControl214_OCKRWs"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl215_6nKsGU",
+          "controlId": "control215_f5GEWi",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl215_6nKsGU",
+                "onGetTemplate": "getTemplate_uiControl215_6nKsGU"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl216_zfRORa",
+          "controlId": "control216_06fUHT",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl216_zfRORa",
+                "onGetTemplate": "getTemplate_uiControl216_zfRORa"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl217_B59gVN",
+          "controlId": "control217_PDGVwN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl217_B59gVN",
+                "onGetTemplate": "getTemplate_uiControl217_B59gVN"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl218_P8NUft",
+          "controlId": "control218_GckwkC",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl218_P8NUft",
+                "onGetTemplate": "getTemplate_uiControl218_P8NUft"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl219_WBXfyl",
+          "controlId": "control219_Uw4PpL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl219_WBXfyl",
+                "onGetTemplate": "getTemplate_uiControl219_WBXfyl"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl220_2K8zoi",
+          "controlId": "control220_rkiK0L",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl220_2K8zoi",
+                "onGetTemplate": "getTemplate_uiControl220_2K8zoi"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl207_TkrcKL",
+          "controlId": "control207_Vgt1dI",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl207_TkrcKL",
+                "onGetTemplate": "getTemplate_uiControl207_TkrcKL"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl208_pwHMJf",
+          "controlId": "control208_1Wa77G",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl208_pwHMJf",
+                "onGetTemplate": "getTemplate_uiControl208_pwHMJf"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl221_TT1rqP",
+          "controlId": "control221_mqqgCS",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl221_TT1rqP",
+                "onGetTemplate": "getTemplate_uiControl221_TT1rqP"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl206_eqxQ8L",
+          "controlId": "control206_WDRgmL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl206_eqxQ8L",
+                "onGetTemplate": "getTemplate_uiControl206_eqxQ8L"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context17_JmMWaz": [
+          "录用入职审批单 - 查看页"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context17_JmMWaz": [
+          "172.16.11.61:8000/Forms/HR/LYSQ/View.aspx?ProcInstId=310707A68BD73062"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context17_JmMWaz": [
+          [
+            "AppUsersDiv",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "aspnetForm",
+            "btnAddLink",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_P",
+            "ctl_contentForm_txt_ADLoginName",
+            "ctl_contentForm_txt_Birthday",
+            "ctl_contentForm_txt_Certificate",
+            "ctl_contentForm_txt_CertificateName",
+            "ctl_contentForm_txt_CertificateStartTime",
+            "ctl_contentForm_txt_CompanyMail",
+            "ctl_contentForm_txt_CompanyName",
+            "ctl_contentForm_txt_CurrentAddress",
+            "ctl_contentForm_txt_DeptName",
+            "ctl_contentForm_txt_EducationEndTime",
+            "ctl_contentForm_txt_EducationStartTime",
+            "ctl_contentForm_txt_EducationType",
+            "ctl_contentForm_txt_Email",
+            "ctl_contentForm_txt_EmployCharacter",
+            "ctl_contentForm_txt_EnteringDate",
+            "ctl_contentForm_txt_Height",
+            "ctl_contentForm_txt_HigherManager",
+            "ctl_contentForm_txt_HireType",
+            "ctl_contentForm_txt_HomeAddress",
+            "ctl_contentForm_txt_HomeTelephone",
+            "ctl_contentForm_txt_IDcard",
+            "ctl_contentForm_txt_InterviewOpinion",
+            "ctl_contentForm_txt_IsEntry",
+            "ctl_contentForm_txt_IsManagementTrainee",
+            "ctl_contentForm_txt_JobQualificationOrVoucherName",
+            "ctl_contentForm_txt_JobQualificationOrVoucherType",
+            "ctl_contentForm_txt_KosekiAddress",
+            "ctl_contentForm_txt_KosekiType",
+            "ctl_contentForm_txt_LanguageName",
+            "ctl_contentForm_txt_LanguageStartTime",
+            "ctl_contentForm_txt_Major",
+            "ctl_contentForm_txt_MaritalStatus",
+            "ctl_contentForm_txt_MobileTelephone",
+            "ctl_contentForm_txt_Name",
+            "ctl_contentForm_txt_Nation",
+            "ctl_contentForm_txt_NationalityOrProvince",
+            "ctl_contentForm_txt_NativePlace",
+            "ctl_contentForm_txt_OfficePhone",
+            "ctl_contentForm_txt_PerEnteringDate",
+            "ctl_contentForm_txt_PoliticaStatus",
+            "ctl_contentForm_txt_PostCode",
+            "ctl_contentForm_txt_PostName",
+            "ctl_contentForm_txt_PreviousEmployer",
+            "ctl_contentForm_txt_PreviousEmployerEndTime",
+            "ctl_contentForm_txt_PreviousEmployerStartTime",
+            "ctl_contentForm_txt_ProcessType",
+            "ctl_contentForm_txt_Proficiency",
+            "ctl_contentForm_txt_RecruitmentFolio",
+            "ctl_contentForm_txt_RecruitmentType",
+            "ctl_contentForm_txt_ReplaceMenName",
+            "ctl_contentForm_txt_SchoolOfGraduation",
+            "ctl_contentForm_txt_Sex",
+            "ctl_contentForm_txt_StudyType",
+            "ctl_contentForm_txt_Surname",
+            "ctl_contentForm_txt_WorkPlaceProvince",
+            "person_infor",
+            "person_infor_trigger",
+            "tb_List"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context17_JmMWaz": [
+          [
+            "active",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "show",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context17_JmMWaz": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/LABEL/BR",
+            "TD/LABEL/SPAN",
+            "THEAD/TR/TH",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "UL/LI/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -4,7 +4,8 @@
   "targetURL": "http://172.16.11.61:8000/MyProcess/MyApproveProcess.aspx",
   "jsFile": "index.js",
   "requires": {
-    "HavaDoneQuit": "../HavaDoneQuit/index.json"
+    "HavaDoneQuit": "../HavaDoneQuit/index.json",
+    "HaveDoneTravelExpenses": "../HaveDoneTravelExpenses/index.json"
   },
   "chineseName": "已办首页页面",
   "description": "已办首页页面",
@@ -37,7 +38,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -176,6 +177,10 @@
         {
           "toContextId": "context26_xlI6VF",
           "toModelId": "HavaDoneQuit"
+        },
+        {
+          "toContextId": "context27_urmBPN",
+          "toModelId": "HaveDoneTravelExpenses"
         }
       ]
     },
@@ -183,6 +188,26 @@
       "fromContextId": "context25_IDCMfP",
       "fromAction": "doAction",
       "fromControlId": "control196_oLyBgO",
+      "toContexts": [
+        {
+          "toContextId": "context25_IDCMfP"
+        }
+      ]
+    },
+    "flow59_M0d2pG": {
+      "fromContextId": "context25_IDCMfP",
+      "fromAction": "doAction",
+      "fromControlId": "control195_l7OwdG",
+      "toContexts": [
+        {
+          "toContextId": "context25_IDCMfP"
+        }
+      ]
+    },
+    "flow60_QcqQqr": {
+      "fromContextId": "context25_IDCMfP",
+      "fromAction": "doAction",
+      "fromControlId": "control2_423LQM",
       "toContexts": [
         {
           "toContextId": "context25_IDCMfP"
