@@ -1639,14 +1639,14 @@ div[data-ysp-modelid="menu"]{
   }
   display: none;
   .ysp-infoBig-tt{
-    position: fixed;
+    position: absolute;
     top:0;
     left:0;
+    right: 0;
+    bottom: 0;
     z-index: 1000;
-    min-height: 100vh;
     width:100%;
     background: @F2F2F2;
-    overflow: scroll;
     .ysp_header_wrapper{
       background: #333;
       span{
@@ -1654,8 +1654,9 @@ div[data-ysp-modelid="menu"]{
       }
     }
     .ysp-infoContent-tt{
-      min-height: 100vh;
+      min-height: 80vh;
       overflow: auto;
+      background: #f4f4f4;
       .ysp-infoContentlist1-tt{
         border-bottom:1px solid @E1E1E1;
         border-top:1px solid @E1E1E1;
