@@ -144,6 +144,10 @@
         "data": {
           "tagName": "TBODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -166,6 +170,39 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control240_CUwdNv": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[1]/DIV[2]/DIV[5]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.autofit.page-shadow DIV.container.main DIV.content"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control240_CUwdNv"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -174,7 +211,8 @@
         "control172_pAOEAo",
         "control228_Ccix5w",
         "control230_TRSBih",
-        "control231_r4Lwgd"
+        "control231_r4Lwgd",
+        "control240_CUwdNv"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -217,6 +255,21 @@
     "page1_EXifX8": {
       "contextId": "context1_CPB3yD",
       "layout": [
+        {
+          "id": "uiControl240_v1sG5H",
+          "controlId": "control240_CUwdNv",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl240_v1sG5H",
+                "onGetTemplate": "getTemplate_uiControl240_v1sG5H"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl172_qpwrqq",
           "controlId": "control172_pAOEAo",
