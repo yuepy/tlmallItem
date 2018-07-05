@@ -1991,7 +1991,57 @@ body{
   color: #202020;
   font-size: 16px;
   background-color: #f2f2f2;
-  
+  //弹出曾
+  ._2MbHyKJZCCA0KfQiShYZD5{
+    >button:nth-child(1){
+      display: none;
+    }
+    ._3-WTIFHEDS-X9_V6uFJjTz{
+      height: 480px;
+      [data-componentsid="uiControl279_9s7b87"],[data-componentsid="uiControl275_nrwPITbody"],[data-componentsid="uiControl277_5LQ9U0"]{
+        padding: 0;
+      }
+      .flexbox{
+        .flexdate{
+          display: flex;
+          justify-content: space-between;
+          div:nth-child(1){
+            width: 56px;
+            font-size: 14px;
+            color: #202020;
+            text-align: justify;
+            text-align-last: justify;
+            margin-left: 10px;
+            padding: 15px 0;;
+          }
+          div:nth-child(2){
+              width: 280px;
+            padding: 15px 0;
+            border-bottom: 1px solid #cccccc;
+            input,select{
+              border: 0;
+            }
+          }
+        }
+        .combtn{
+          width: 100%;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          button{
+            width: 100%;
+            height: 44px;
+            border: 0;
+            border-radius: 5px;
+            line-height: 44px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #2f9fff;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
   .contenttitle{
     color: #e64750;
     padding: 15px 0;
@@ -3115,7 +3165,7 @@ body{
     }
   }
 }
-//差旅费用申请单
+//差旅费用报销流程
 [data-ysp-modelid="travel"]{
   color: #202020;
   font-size: 16px;
@@ -13076,15 +13126,468 @@ body{
   	}
   }
   //弹出层
-  .floatbox{
-    width: 100%;
-    height: 500px;
+  .contentfloat{
     position: fixed;
     top: 0;
-    display: none;
+    width: 100%;
+    background-color: #666666;
+    .floatbox{
+    width: 345px;
+    height: 503px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: auto auto;
+    .boxtitle{
+      height: 44px;
+      width: 100%;
+      text-align: center;
+      line-height: 44px;
+      background-color: #2f9fff;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 5px 5px 0 0;
+    }
+    .ipttop{
+      width: 100%;
+      padding: 20px 10px 0 10px;
+      input{
+        width: 275px;
+        height: 36px;
+        border: 1px solid #cccccc;
+        border-right: 0;
+        border-radius: 5px 0 0 5px;
+        padding-left: 10px;
+      }
+      button{
+        width: 50px;
+        height: 36px;
+        background-color: #2f9fff;
+        color: #fff;
+        font-size: 12px;
+        border: 1px solid #cccccc;
+        border-left: 0;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+    .awinselect{
+      margin-top: 10px;
+      width: 100%;
+      .floatbox_title{
+        padding-left: 20px;
+        height: 44px;
+        line-height: 44px;
+        font-weight: bold;
+        color: #313131;
+      }
+      >div:nth-child(2){
+        height: 160px;
+        font-size: 14px;
+        color: #313131;
+        padding-left: 20px;
+        padding-right: 40px;
+        overflow: auto;
+        div{
+          height: 20px;
+          line-height: 20px;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+          margin: 10px 0;
+          cursor: pointer;
+        }
+      }
+    }
+    .listselect{
+      margin-top: 20px;
+      .floatbox_title{
+        padding-left: 20px;
+        height: 44px;
+        line-height: 44px;
+        font-weight: bold;
+        color: #313131;
+      }
+      >div:nth-child(2){
+        height: 40px;
+        font-size: 14px;
+        color: #313131;
+        padding-left: 20px;
+        padding-right: 15px;
+        overflow: auto;
+        div{
+          height: 20px;
+          line-height: 20px;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+          margin: 10px 0;
+          cursor: pointer;
+          padding-right: 20px;
+          position: relative;
+          span{
+            position: absolute;
+            right: 0;
+            width: 16px;
+            height: 16px;
+            background-image: url(./img/del.png);
+            background-size: 16px 16px;
+          }
+        }
+      }
+    }
+    .footbtn{
+      margin-top: 40px;
+      width: 100%;
+      border-top: 1px solid #cccccc;
+      button{
+        width: 50%;
+        height: 44px;
+        font-size: 16px;
+        background-color: #fff;
+        color: #333333;
+        border: 0;
+        font-weight: bold;
+      }
+      button:nth-child(1){
+        border-radius: 0 0 0 5px;
+      }
+      button:nth-child(2){
+        background-color: #2f9fff;
+        color: #fff;
+        border-radius: 0 0 5px 0;
+      }
+    }
+  }
   }
 }
-
+//资产预算调整流程
+[data-ysp-modelid="assedbudget"]{
+   .askleave{
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    .contentitem{
+      width: 345px;
+      padding-bottom: 0;
+      white-space: nowrap;
+      overflow-x: scroll;
+      margin-left: auto;
+      margin-right: auto;
+      table{
+      width: 95px;
+      border-right: 1px solid #bddaf0;
+      border-bottom: 1px solid #bddaf0; 
+      white-space: nowrap;
+      margin: 0 auto auto 0;
+      color: #0e3838;
+      thead{
+        height: 44px;
+        font-size: 16px;
+        tr{
+          display: flex;
+          th{
+          	width: 115px;
+            min-height: 44px;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break:break-all;
+            border-top: 1px solid #bddaf0;
+            border-left:1px solid #bddaf0;
+            background-color: #eaf3fa;
+            text-align: center;
+          }
+        }
+      }
+      tbody{
+        tr{
+          display: flex;
+          td{
+            width: 115px;
+            min-height: 44px;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break:break-all;
+            border-top: 1px solid #bddaf0;
+            border-left:1px solid #bddaf0;
+            background-color: #eaf3fa;
+            text-align: center;
+          }
+        }
+      }
+    }
+    }
+    .contentitem::-webkit-scrollbar{
+      background: #ffffff;
+      height: 8px;
+      border-radius: 5px;
+    }
+    .contentitem::-webkit-scrollbar-thumb{
+      background: #a9cde9;
+      border-radius: 5px;
+      }
+  }
+   .Auditor{
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    .content{
+      overflow: hidden;
+      margin-left: 15px;
+      .contentitem{
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 16px;
+        float: left;
+      }
+      .contentitem:nth-child(2){
+        width: 235px;
+        text-align: left;
+        float: right;
+      }
+    }
+  }
+    .understanding{
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    .content{
+      margin-left: 15px;
+      overflow: hidden;
+      .contenthidden{
+        overflow: hidden;
+      }
+      .contentitem{
+        min-height: 56px;
+        color: #313131;
+        display: inline-block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 16px;
+        float: left;
+        text-align:justify;
+        text-align-last: justify;
+      }
+      .contentitem:nth-child(2){
+        width: 235px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+        float: right;
+      }
+  	}
+  }
+}
+//路线新增流程
+[data-ysp-modelid="routeNew"]{
+  [data-componentsid="uiControl238_va79uC"]{
+    padding-top: 0; 
+  }
+    .information{
+      margin: 0;
+    }
+  .Auditor{
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    .content{
+      overflow: hidden;
+      margin-left: 15px;
+      .contentitem{
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 16px;
+        float: left;
+      }
+      .contentitem:nth-child(2){
+        width: 235px;
+        text-align: left;
+        float: right;
+      }
+    }
+  }
+    .understanding{
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    .content{
+      margin-left: 15px;
+      overflow: hidden;
+      .contenthidden{
+        overflow: hidden;
+      }
+      .contentitem{
+        min-height: 56px;
+        color: #313131;
+        display: inline-block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 16px;
+        float: left;
+        text-align:justify;
+        text-align-last: justify;
+      }
+      .contentitem:nth-child(2){
+        width: 235px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+        float: right;
+      }
+  	}
+  }
+  .approval{
+    margin: 0;
+  }
+}
+//路线变更流程
+[data-ysp-modelid="routechange"]{
+  [data-componentsid="uiControl238_va79uC"]{
+    padding-top: 0; 
+  }
+    .information{
+      margin: 0;
+    }
+  .examination{
+    margin: 0;
+  }
+  .Auditor{
+    background-color: #ffffff;
+    .content{
+      overflow: hidden;
+      margin-left: 15px;
+      .contentitem{
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 16px;
+        float: left;
+      }
+      .contentitem:nth-child(2){
+        width: 235px;
+        text-align: left;
+        float: right;
+      }
+    }
+  }
+    .understanding{
+    background-color: #ffffff;
+      padding-bottom: 5px;
+    .content{
+      margin-left: 15px;
+      overflow: hidden;
+      .contenthidden{
+        overflow: hidden;
+      }
+      .contentitem{
+        min-height: 56px;
+        color: #313131;
+        display: inline-block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 16px;
+        float: left;
+        text-align:justify;
+        text-align-last: justify;
+      }
+      .contentitem:nth-child(2){
+        width: 235px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+        float: right;
+      }
+  	}
+  }
+  .approval{
+    margin: 0;
+  }
+}
+//客资/送达方/销售人员、路线批量审批
+[data-ysp-modelid="batchex"]{
+  [data-componentsid="uiControl238_va79uC"]{
+    padding-top: 0; 
+  }
+  //知会信息
+    .Auditor{
+    background-color: #ffffff;
+    .content{
+      margin-left: 15px;
+      >div{
+        display: flex;
+        justify-content: space-between;
+        >div:nth-child(1){
+          width: 56px;
+          font-size: 14px;
+          color: #202020;
+          text-align: justify;
+          text-align-last: justify;
+          padding-top: 10px;
+        }
+        >div:nth-child(2){
+          width: 285px;
+          font-size: 16px;
+          color: #313131;
+          div{
+            padding: 10px 0;
+          }
+          div:nth-child(1){
+            // border-bottom: 1px solid #cccccc;
+          }
+        }
+      }
+    }
+  }
+  //环节信息
+    .understanding{
+    background-color: #ffffff;
+      padding-bottom: 5px;
+    .content{
+      margin-left: 15px;
+      overflow: hidden;
+      .contenthidden{
+        overflow: hidden;
+      }
+      .contentitem{
+        min-height: 56px;
+        color: #313131;
+        display: inline-block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 16px;
+        float: left;
+        text-align:justify;
+        text-align-last: justify;
+      }
+      .contentitem:nth-child(2){
+        width: 235px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+        float: right;
+      }
+  	}
+  }
+}
 
 /***********************员工合同续签申请单  ltt START**********************/
   //基本信息 && 劳动合同信息
