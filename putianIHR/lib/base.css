@@ -31,7 +31,7 @@ img {
   height: 90vh;
   overflow: auto;
 }
-.card {
+div[data-type="card"] .card {
   border-radius: 0;
   background: #f4f4f4;
   box-shadow: none;
@@ -49,11 +49,12 @@ data[data-ysp-modelid="checkSubInfo"] .card-body {
   overflow: auto;
 }
 /******************************CustomHeader组件******************************************/
-div[data-ysp-modelid="salary"] .editor-state [data-ysp="component"] {
+.editor-state [data-ysp="component"] {
   padding-top: 0;
 }
 .ysp_header_wrapper {
   position: fixed;
+  top: 0;
   z-index: 23;
   width: 100%;
   text-align: center;

@@ -43,7 +43,7 @@ img{border:none;}
     overflow: auto;
   }
 }
-.card{
+div[data-type="card"] .card{
   border-radius: 0;
   background:#f4f4f4;
   box-shadow: none;
@@ -63,13 +63,14 @@ data[data-ysp-modelid="checkSubInfo"]{
   }
 }
 /******************************CustomHeader组件******************************************/
-div[data-ysp-modelid="salary"]{
+// div[data-ysp-modelid="salary"],div[data-ysp-modelid="checkMyInfo"]{
   .editor-state [data-ysp="component"]{
     padding-top: 0;
   }
-}
+// }
 .ysp_header_wrapper{
   position: fixed;
+  top:0;
   z-index: 23;
   width: 100%;
   text-align: center;
