@@ -54,7 +54,7 @@ body{
     }
   }
 //基本信息   information
-  .information{
+.information{
     background-color: #ffffff;
     .disnone{
       display: none;
@@ -233,7 +233,7 @@ body{
     }
   }
 //审批操作
-  .approval{
+.approval{
     background-color: #ffffff;
     margin-bottom: 20px;
     .content{
@@ -281,7 +281,7 @@ body{
     }
   }
 //附件
-    .Enclosure{
+.Enclosure{
     background-color: #ffffff;
     padding-bottom: 15px;
     .contenttitle{
@@ -470,7 +470,7 @@ body{
     }
   }
 //审批日志
-  .examination{
+.examination{
     background-color: #ffffff;
     padding-bottom: 15px;
     .contentitem{
@@ -542,7 +542,7 @@ body{
       }
   }
 //底部按钮
-  .submit{
+.submit{
     width: 100%;
     height: 60px;
     background-color: #ffffff;
@@ -614,7 +614,8 @@ body{
   }
 //待办页
 [data-ysp-modelid="dealtIndex"],
-[data-ysp-modelid="haveDoneIndex"]{
+[data-ysp-modelid="haveDoneIndex"],
+[data-ysp-modelid="commission"]{
   background-color: #ededed;
   .show{
     display: none;
@@ -13765,9 +13766,9 @@ body{
   }
 	//审批操作
   .approval{
-    margin:10px 0 0 0;
+    margin:10px 0 0 20px;
     background-color: #ffffff;
-    margin-bottom: 20px;
+    
     .content{
       overflow: hidden;
       .contentitem{
@@ -14002,7 +14003,7 @@ body{
     }
   }
 .ysp-radioBtn-tt{
-  .radioBtn;
+  .radioBtn;  
 }
 .ysp-closeBtn-tt{
   margin:10px 0 0 0;
@@ -14044,6 +14045,10 @@ body{
         line-height: 40px;
         font-size:16px;
         border-bottom:1px solid #e1e1e1;
+        background: url(./img/yspDate0703.png) no-repeat;
+        background-size: 10%;
+        background-position-x: 95%;
+        background-position-y: 7px;
       }
     }
     button{
@@ -14059,7 +14064,131 @@ body{
     }
   }
 }
-div._3-WTIFHEDS-X9_V6uFJjTz{
+div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
   width:100%;
+  height: 100vh;
+}
+
+.ysp-baoxiao-tt{
+  padding:0!important;
+}
+.ysp-baoxiaoTotal-tt{
+  margin:0;
+}
+[data-componentsid="uiControl231_RWUOAz"],[data-componentsid="uiControl230_QCgU0F"],[data-componentsid="uiControl232_tm8nV5"],[data-componentsid="uiControl236_RcEyrQ"],[data-componentsid="uiControl237_tKTh5b"]{
+  padding:0!important; 
+  .information{
+    margin:0!important;   
+  }
+}
+[data-componentsid="uiControl227_bGqmUI"],[data-componentsid="uiControl250_faQt4X"]{
+  padding:0!important;
+  .examination {
+    margin:0!important;
+  }
+}
+.ysp-baoxiaoTotal-tt{
+  padding:10px 0 10px 10px;
+  .ysp-baoxiaoList-tt{
+    height: 50px;
+
+    .ysp-baoxiaoListTitle-tt{
+      float: left;
+      width:30%;
+      font-size: 14px;
+      height: 50px;
+
+    }
+    .yspbaoxiaoListContent-tt{
+      float: left;
+      width:70%;
+      height: 50px;
+      line-height: 50px;
+      border-bottom:1px solid #e1e1e1;
+      input{
+        width: 100%;
+        border:0;
+        background: #fff;
+        padding:0;
+        margin:0;
+        height: 30px;
+      }
+    }
+  }
+}
+.ysp-sxsm-tt{
+  background: #fff;
+  .ysp-sxsmTitle-tt{
+    padding:0 0 0 10px;
+  }
+  textarea{
+    background: #fff;
+    font-size:14px ;
+    padding:0 5px;
+    margin:0;
+  }
+}
+.ysp-zhInfo-tt{
+  background: #fff;
+  padding:15px 0 0 0;
+  >p{
+    margin:0; 
+    padding:0 0 0 15px;
+    background: url(./img/titleup.png) no-repeat;
+    height: 30px;
+    line-height: 30px;
+    
+  }
+  >div{
+    height: 50px;
+    span{
+      display: block;
+      width: 30%;
+      padding:0 0 0 10px;
+      float: left;
+      height: 40px;
+      line-height: 40px;
+    }
+    input{
+      float: left;
+      border:0;
+      width:70%;
+      border-bottom:1px solid #e1e1e1;
+      height: 40px;
+      line-height: 40px;
+      background: #fff;
+    }
+  }
+}
+.Auditor{
+  background: #fff;
 }
 /*************************已办 ltt ENG****************************/
+
+
+/**首页切换***/
+.ysp-index-title{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  height: 44px;
+  div{
+    width: 50%;
+    text-align: center;
+  }
+  >div:nth-child(1){
+    //border-right: 1px solid #ececec;
+  }
+  .ysp-index-title-color{
+    color: #e64750;
+    font-size: 17px;
+    border-bottom: 2px solid #e64750;
+    padding: 8px 0px;
+  }
+  .ysp-index-title-noColor{
+    color: #666666;
+    font-size: 15px;
+  }
+}
+

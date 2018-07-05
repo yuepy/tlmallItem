@@ -5,7 +5,9 @@
   "jsFile": "index.js",
   "requires": {
     "HavaDoneQuit": "../HavaDoneQuit/index.json",
-    "HaveDoneTravelExpenses": "../HaveDoneTravelExpenses/index.json"
+    "HaveDoneTravelExpenses": "../HaveDoneTravelExpenses/index.json",
+    "dealtIndex": "../dealtIndex/index.json",
+    "HaveDoneExpenseReimbursementt": "../HaveDoneExpenseReimbursementt/index.json"
   },
   "chineseName": "已办首页页面",
   "description": "已办首页页面",
@@ -142,6 +144,51 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control226_ysPTBF": {
+      "location": {
+        "data": {
+          "tagName": "UL"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]/UL[2]",
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]//UL",
+              "descendant::DIV[@id=\"DivPerson\"]//UL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              10
+            ],
+            "value": "DIV.autofit.page-shadow DIV.container.main DIV.nav-left UL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[1]/UL[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control226_ysPTBF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -150,7 +197,8 @@
         "control190_B8XD6i",
         "control195_l7OwdG",
         "control2_423LQM",
-        "control196_oLyBgO"
+        "control196_oLyBgO",
+        "control226_ysPTBF"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -181,6 +229,10 @@
         {
           "toContextId": "context27_urmBPN",
           "toModelId": "HaveDoneTravelExpenses"
+        },
+        {
+          "toContextId": "context29_3cCNa2",
+          "toModelId": "HaveDoneExpenseReimbursementt"
         }
       ]
     },
@@ -213,6 +265,20 @@
           "toContextId": "context25_IDCMfP"
         }
       ]
+    },
+    "flow71_bDrgBv": {
+      "fromContextId": "context25_IDCMfP",
+      "fromAction": "doAction",
+      "fromControlId": "control226_ysPTBF",
+      "toContexts": [
+        {
+          "toContextId": "context25_IDCMfP"
+        },
+        {
+          "toContextId": "context24_EkSRuv",
+          "toModelId": "dealtIndex"
+        }
+      ]
     }
   },
   "pages": {
@@ -230,6 +296,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl195_ArMMGb",
                 "onGetTemplate": "getTemplate_uiControl195_ArMMGb"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl226_QGhOPy",
+          "controlId": "control226_ysPTBF",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl226_QGhOPy",
+                "onGetTemplate": "getTemplate_uiControl226_QGhOPy"
               }
             }
           }
@@ -392,6 +473,73 @@
             "icon-plus",
             "icon-question-sign",
             "icon-search",
+            "icon-user",
+            "layout-data",
+            "layout-form",
+            "logo",
+            "main",
+            "nav-left",
+            "nav-main",
+            "nav-quick",
+            "page-shadow",
+            "red",
+            "result-list",
+            "shadow",
+            "size-s",
+            "stats",
+            "title"
+          ],
+          [
+            "Wdate",
+            "active",
+            "advanced-search",
+            "anpager",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "autofit",
+            "breadcrumb",
+            "btn",
+            "container",
+            "content",
+            "cpb",
+            "font-red",
+            "footer",
+            "form-wrapper",
+            "header",
+            "hover",
+            "icon-angle-right",
+            "icon-check",
+            "icon-check-empty",
+            "icon-comment-alt",
+            "icon-home",
+            "icon-key",
+            "icon-off",
+            "icon-pencil",
+            "icon-plus",
+            "icon-question-sign",
+            "icon-search",
+            "icon-sitemap",
             "icon-user",
             "layout-data",
             "layout-form",

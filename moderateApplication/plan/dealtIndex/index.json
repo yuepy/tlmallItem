@@ -22,8 +22,12 @@
     "entry": "../entry/index.json",
     "personnel": "../personnel/index.json",
     "RenewalApplication": "../RenewalApplication/index.json",
+<<<<<<< HEAD
     "routeNew": "../routeNew/index.json",
     "routechange": "../routechange/index.json"
+=======
+    "haveDoneIndex": "../haveDoneIndex/index.json"
+>>>>>>> 9d8cfda3cf586e55f5354f1e47f455bef7d898e8
   },
   "chineseName": "待办首页页面",
   "description": "待办首页页面",
@@ -129,6 +133,78 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control227_INKP3Z": {
+      "location": {
+        "data": {
+          "tagName": "UL"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]/UL[2]",
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]//UL",
+              "descendant::DIV[@id=\"DivPerson\"]//UL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              10
+            ],
+            "value": "DIV.autofit.page-shadow DIV.container.main DIV.nav-left UL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[1]/UL[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control227_INKP3Z"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control240_SJr66K": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.advanced-search.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control240_SJr66K"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -136,10 +212,14 @@
       "controls": [
         "control193_N9CBTD",
         "control194_rkfuKp",
-        "control123_7z5oV6"
+        "control123_7z5oV6",
+        "control227_INKP3Z",
+        "control240_SJr66K"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Index\\.aspx"
+      ]
     }
   },
   "flows": {
@@ -259,6 +339,20 @@
           "toModelId": "routechange"
         }
       ]
+    },
+    "flow72_H39fiR": {
+      "fromContextId": "context24_EkSRuv",
+      "fromAction": "doAction",
+      "fromControlId": "control227_INKP3Z",
+      "toContexts": [
+        {
+          "toContextId": "context24_EkSRuv"
+        },
+        {
+          "toContextId": "context25_IDCMfP",
+          "toModelId": "haveDoneIndex"
+        }
+      ]
     }
   },
   "pages": {
@@ -276,6 +370,36 @@
               "events": {
                 "onDoAction": "doAction_uiControl194_iLZaeH",
                 "onGetTemplate": "getTemplate_uiControl194_iLZaeH"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl227_w4xMQo",
+          "controlId": "control227_INKP3Z",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl227_w4xMQo",
+                "onGetTemplate": "getTemplate_uiControl227_w4xMQo"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl240_ur23qy",
+          "controlId": "control240_SJr66K",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl240_ur23qy",
+                "onGetTemplate": "getTemplate_uiControl240_ur23qy"
               }
             }
           }
@@ -421,6 +545,142 @@
             "icon-plus",
             "icon-question-sign",
             "icon-search",
+            "icon-user",
+            "layout-data",
+            "layout-form",
+            "logo",
+            "main",
+            "nav-left",
+            "nav-main",
+            "nav-quick",
+            "page-shadow",
+            "red",
+            "result-list",
+            "shadow",
+            "size-s",
+            "stats",
+            "title"
+          ],
+          [
+            "Wdate",
+            "active",
+            "advanced-search",
+            "anpager",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "autofit",
+            "breadcrumb",
+            "btn",
+            "container",
+            "content",
+            "cpb",
+            "font-red",
+            "footer",
+            "form-wrapper",
+            "header",
+            "hover",
+            "icon-angle-right",
+            "icon-check",
+            "icon-check-empty",
+            "icon-comment-alt",
+            "icon-home",
+            "icon-key",
+            "icon-off",
+            "icon-pencil",
+            "icon-plus",
+            "icon-question-sign",
+            "icon-search",
+            "icon-sitemap",
+            "icon-user",
+            "layout-data",
+            "layout-form",
+            "logo",
+            "main",
+            "nav-left",
+            "nav-main",
+            "nav-quick",
+            "page-shadow",
+            "red",
+            "result-list",
+            "shadow",
+            "size-s",
+            "stats",
+            "title"
+          ],
+          [
+            "Wdate",
+            "active",
+            "advanced-search",
+            "anpager",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "autofit",
+            "breadcrumb",
+            "btn",
+            "container",
+            "content",
+            "cpb",
+            "font-red",
+            "footer",
+            "form-wrapper",
+            "header",
+            "hover",
+            "icon-angle-right",
+            "icon-check",
+            "icon-check-empty",
+            "icon-comment-alt",
+            "icon-home",
+            "icon-key",
+            "icon-off",
+            "icon-pencil",
+            "icon-plus",
+            "icon-question-sign",
+            "icon-search",
+            "icon-sitemap",
             "icon-user",
             "layout-data",
             "layout-form",
