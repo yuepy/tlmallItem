@@ -405,13 +405,14 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   padding: 5px;
 }
 .ysp_salary_box {
-  height: 80%;
-  overflow-y: scroll;
+  height: 90vh;
+  overflow-y: auto;
+  background: #f4f4f4;
 }
 .ysp_salary_box .ysp_salary_item {
   background: #fff;
   padding: 10px;
-  margin-bottom: 10px;
+  border-bottom: 10px solid #f4f4f4;
 }
 .ysp_salary_box .ysp_salary_item .ysp_salary_date {
   font-size: 16px;
@@ -458,6 +459,9 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   font-size: 15px;
   margin-bottom: 10px;
 }
+.ysp_salary_detail_list .ysp_salary_board > div:last-child {
+  border: none;
+}
 .ysp_salary_detail_list .ysp_salary_scroll {
   height: 50vh;
   overflow-y: scroll;
@@ -478,6 +482,9 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 /******************************下属员工考勤start******************************************/
 .subSearchType {
   border-bottom: 10px solid #f4f4f4;
+}
+.searchConsequence {
+  background: #f4f4f4;
 }
 .ysp_search {
   width: 90%;
@@ -1608,7 +1615,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   top: 0;
   left: 0;
   z-index: 1000;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background: #F2F2F2;
   overflow: scroll;
@@ -1620,7 +1627,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   color: #fff;
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt {
-  height: 80%;
+  min-height: 100vh;
   overflow: auto;
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist1-tt {
@@ -1786,14 +1793,8 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   color: #333;
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child {
-  font-weight: normal;
+  font-weight: bold;
   font-size: 15px;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span {
-  margin: 0 20px 0 0;
-}
-.ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist5-tt p:first-child span:nth-child(2) {
-  color: #999;
 }
 .ysp-infoZhezhao-tt .ysp-infoBig-tt .ysp-infoContent-tt .ysp-infoContentlist6-tt:first-child > p:first-child {
   display: none;
