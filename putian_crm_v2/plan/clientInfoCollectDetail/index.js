@@ -84,7 +84,7 @@
         //   ysp.customHelper.forceMatchModels('newInformationTotle1');
         // }
       }function changeClick(data) {
-        elem.querySelectorAll(".content_top")[1].querySelectorAll(".btn")[data].click();ysp.customHelper.forceMatchModels('clientManageInfoCollect');
+        elem.querySelector(".content_top").querySelectorAll(".btn")[data].click();ysp.customHelper.forceMatchModels('clientManageInfoCollect');
       }function selectChange(data) {
         var ind = parseInt(data.ind);var i = parseInt(data.i);var t = setTimeout(a(), 50);function a() {
           elem.querySelector(".total").querySelectorAll("select")[ind].querySelectorAll("option")[i].selected = true;$(elem).find("select").eq(ind).change();
@@ -92,8 +92,7 @@
       }function editChange(data) {
         var ind = parseInt(data.ind);var i = parseInt(data.i);elem.querySelector(".dialog_detail").querySelectorAll("label")[ind].querySelector("select").querySelectorAll("option")[i].selected = true;
       }function editTextChange(data) {
-        var ind = parseInt(data.ind);var val = data.val;
-        elem.querySelector(".dialog_detail").querySelectorAll("label")[ind].querySelector("textarea").value = val;
+        var ind = parseInt(data.ind);var val = data.val;elem.querySelector(".dialog_detail").querySelectorAll("label")[ind].querySelector("textarea").value = val;
       }function addEditChange(data) {
         var ind = parseInt(data.ind);var val = data.val;elem.querySelector(".dialog_detail").querySelectorAll("label")[ind].querySelector("input").value = val;
       }function sure(data) {
