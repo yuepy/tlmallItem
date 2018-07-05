@@ -1,4 +1,9 @@
 /****************************公共样式************************/
+.editor-state [data-ysp="component"] {
+  padding-top: 0;
+  padding-bottom: none;
+  min-height: 0;
+}
 body {
   background: #f4f4f4;
   position: relative;
@@ -958,27 +963,19 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   text-align: left;
   height: 2.6rem;
 }
-.ysp-lists .ysp-r .edit-two2 {
-  display: inline-block;
-  max-width: 70%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  overflow-x: auto;
-  overflow-y: hidden;
-  float: left;
-  height: 2.6rem;
-  line-height: 2.75rem;
-  text-align: left;
-}
-.ysp-lists .ysp-r input.edit-two1 {
-  width: 30%;
-  line-height: 2.75rem;
-  float: left;
-}
 .ysp-lists .ysp-r input:disabled {
   background-color: #fff;
   height: 2.5rem;
+}
+.ysp-lists .ysp-r .p-address {
+  width: 90%;
+  margin-top: 0.75rem;
+  font-size: 14px;
+  color: #999;
+  line-height: 20px;
+  text-align: left;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 .ysp-lists .ysp-r select.sel-type {
   display: inline-block;
