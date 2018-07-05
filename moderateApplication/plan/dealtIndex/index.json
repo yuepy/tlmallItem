@@ -173,6 +173,33 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control240_SJr66K": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.advanced-search.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control240_SJr66K"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -181,7 +208,8 @@
         "control193_N9CBTD",
         "control194_rkfuKp",
         "control123_7z5oV6",
-        "control227_INKP3Z"
+        "control227_INKP3Z",
+        "control240_SJr66K"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -344,6 +372,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl227_w4xMQo",
                 "onGetTemplate": "getTemplate_uiControl227_w4xMQo"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl240_ur23qy",
+          "controlId": "control240_SJr66K",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl240_ur23qy",
+                "onGetTemplate": "getTemplate_uiControl240_ur23qy"
               }
             }
           }
@@ -529,6 +572,75 @@
             "aui_outer",
             "aui_s",
             "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "autofit",
+            "breadcrumb",
+            "btn",
+            "container",
+            "content",
+            "cpb",
+            "font-red",
+            "footer",
+            "form-wrapper",
+            "header",
+            "hover",
+            "icon-angle-right",
+            "icon-check",
+            "icon-check-empty",
+            "icon-comment-alt",
+            "icon-home",
+            "icon-key",
+            "icon-off",
+            "icon-pencil",
+            "icon-plus",
+            "icon-question-sign",
+            "icon-search",
+            "icon-sitemap",
+            "icon-user",
+            "layout-data",
+            "layout-form",
+            "logo",
+            "main",
+            "nav-left",
+            "nav-main",
+            "nav-quick",
+            "page-shadow",
+            "red",
+            "result-list",
+            "shadow",
+            "size-s",
+            "stats",
+            "title"
+          ],
+          [
+            "Wdate",
+            "active",
+            "advanced-search",
+            "anpager",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
             "aui_sw",
             "aui_title",
             "aui_titleBar",

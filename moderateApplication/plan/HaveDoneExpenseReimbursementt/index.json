@@ -1,0 +1,1308 @@
+{
+  "version": "0.1",
+  "id": "HaveDoneExpenseReimbursementt",
+  "targetURL": "http://172.16.11.61:9995/Workflow/Forms/FYBX/View.aspx?ProcInstId=317CFF637438C866",
+  "jsFile": "index.js",
+  "chineseName": "已办费用报销流程",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control241_9uH42N": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/H1[1]",
+              "ratio": 0.871
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.top H1"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/H1[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control241_9uH42N"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control242_Cyx5D9": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"person_infor\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.show"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control242_Cyx5D9"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control243_fPzTrx": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[9]/TABLE[1]",
+              "ratio": 0.871
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              16
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control243_fPzTrx"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control244_8zb90p": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "intendedRole": "dialog",
+      "roles": "element,dialog",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='OpenShowReport']<<IFRAME>>",
+      "componentType": "dialog"
+    },
+    "control245_Joks96": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/SPAN[1]",
+              "ratio": 0.467
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.breadcrumb SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/SPAN[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control245_Joks96"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenShowReport']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control246_dt6Exk": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[2]/TABLE[1]",
+              "ratio": 0.467
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.advanced-search.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control246_dt6Exk"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenShowReport']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control247_A869oH": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"MainContent_DivTime\"]/TABLE[1]",
+              "descendant::DIV[@id=\"MainContent_DivTime\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.result-list TABLE.layout-data.hover"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control247_A869oH"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenShowReport']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control248_IJvv7Q": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"MainContent_DivTime\"]/DIV[1]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"MainContent_DivTime\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.result-list DIV.anpager"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control248_IJvv7Q"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenShowReport']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control249_XNnxwr": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              12
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[2]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control249_XNnxwr"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control250_CxPe63": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"detailT\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              4,
+              12
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control250_CxPe63"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control251_WcXoaA": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"tableXiaoJi\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              5,
+              12
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control251_WcXoaA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context29_3cCNa2": {
+      "controls": [
+        "control241_9uH42N",
+        "control242_Cyx5D9",
+        "control243_fPzTrx",
+        "control244_8zb90p",
+        "control245_Joks96",
+        "control246_dt6Exk",
+        "control247_A869oH",
+        "control248_IJvv7Q",
+        "control249_XNnxwr",
+        "control250_CxPe63",
+        "control251_WcXoaA"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http://172.16.11.61:9995/Workflow/Forms/FYBX/View.aspx?.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow74_kTq2Wy": {
+      "toContexts": [
+        {
+          "toContextId": "context29_3cCNa2"
+        }
+      ]
+    },
+    "flow76_ADIqaN": {
+      "fromContextId": "context29_3cCNa2",
+      "fromAction": "doAction",
+      "fromControlId": "control243_fPzTrx",
+      "toContexts": [
+        {
+          "toContextId": "context29_3cCNa2"
+        }
+      ]
+    },
+    "flow77_0MGQmP": {
+      "fromContextId": "context29_3cCNa2",
+      "fromAction": "doAction",
+      "fromControlId": "control245_Joks96",
+      "toContexts": [
+        {
+          "toContextId": "context29_3cCNa2"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page29_LKSHRt": {
+      "contextId": "context29_3cCNa2",
+      "layout": [
+        {
+          "id": "uiControl241_TchMcP",
+          "controlId": "control241_9uH42N",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl241_TchMcP",
+                "onGetTemplate": "getTemplate_uiControl241_TchMcP"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl242_B3goJu",
+          "controlId": "control242_Cyx5D9",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl242_B3goJu",
+                "onGetTemplate": "getTemplate_uiControl242_B3goJu"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl243_iMWwv6",
+          "controlId": "control243_fPzTrx",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl243_iMWwv6",
+                "onGetTemplate": "getTemplate_uiControl243_iMWwv6"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl244_KL5gI6",
+          "controlId": "control244_8zb90p",
+          "display": {
+            "adapterId": "dialog",
+            "type": "dialog",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl244_KL5gI6body",
+              "display": {
+                "type": "dialogBody",
+                "adapterId": "dialogBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl245_KaGZVg",
+                  "controlId": "control245_Joks96",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl245_KaGZVg",
+                        "onGetTemplate": "getTemplate_uiControl245_KaGZVg"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl246_cOUlSk",
+                  "controlId": "control246_dt6Exk",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl246_cOUlSk",
+                        "onGetTemplate": "getTemplate_uiControl246_cOUlSk"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl247_5nIEXu",
+                  "controlId": "control247_A869oH",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl247_5nIEXu",
+                        "onGetTemplate": "getTemplate_uiControl247_5nIEXu"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl248_OuBvnO",
+                  "controlId": "control248_IJvv7Q",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl248_OuBvnO",
+                        "onGetTemplate": "getTemplate_uiControl248_OuBvnO"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl244_KL5gI6footer",
+              "display": {
+                "type": "dialogFooter",
+                "adapterId": "dialogFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl249_UiSWTg",
+          "controlId": "control249_XNnxwr",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl249_UiSWTg",
+                "onGetTemplate": "getTemplate_uiControl249_UiSWTg"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl250_faQt4X",
+          "controlId": "control250_CxPe63",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl250_faQt4X",
+                "onGetTemplate": "getTemplate_uiControl250_faQt4X"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl251_65Bnk4",
+          "controlId": "control251_WcXoaA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl251_65Bnk4",
+                "onGetTemplate": "getTemplate_uiControl251_65Bnk4"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context29_3cCNa2": [
+          "查看流程"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context29_3cCNa2": [
+          "172.16.11.61:9995/Workflow/Forms/FYBX/View.aspx?ProcInstId=317CFF637438C866"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context29_3cCNa2": [
+          [
+            "AppUsersDiv",
+            "Header_hidFlag",
+            "Header_txtCompanyName",
+            "Header_txtDate",
+            "Header_txtDepartName",
+            "Header_txtEmail",
+            "Header_txtPhone",
+            "Header_txtUserName",
+            "LinkedProcInst_hfGuid",
+            "LinkedProcInst_hfStart",
+            "LinkedProcInst_hfUserLoginName",
+            "TreatTable",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "btnAddLink",
+            "contentActionBar_ActionBar_Action",
+            "contentActionBar_ActionBar_ActionName",
+            "contentActionBar_ActionBar_AddApprover",
+            "contentActionBar_ActionBar_AddApproverName",
+            "contentActionBar_ActionBar_GotoActivityName",
+            "contentActionBar_ActionBar_IsReturnBack",
+            "contentActionBar_ActionBar_Print",
+            "contentActionBar_ActionBar_UserAction",
+            "contentActionBar_ActionBar_btnAddApprover",
+            "contentActionBar_ActionBar_btnClose",
+            "contentActionBar_ActionBar_btnPrint",
+            "contentActionBar_ActionBar_btnRedirect",
+            "contentActionBar_ActionBar_hidJBAffirm",
+            "contentForm_HLink_Report",
+            "contentForm_btn_JIZhang",
+            "contentForm_txtBXSY",
+            "contentForm_txtDetailTaxTotal",
+            "contentForm_txtJiZhangMoneyTotal",
+            "contentForm_txtReimbursementTotal",
+            "contentForm_txtRemarks",
+            "contentForm_txtSKRMoneyTotal",
+            "contentForm_txtSupplier",
+            "contentForm_txtSupplierApplyMoney",
+            "contentForm_txtSupplierBankCode",
+            "contentForm_txtSupplierCode",
+            "contentForm_txtSupplierOpenBank",
+            "contentForm_txtVirtualDepart",
+            "contentForm_txt_ActualMoneyToal",
+            "contentForm_txt_AddTaxTotalSum",
+            "contentForm_txt_ApplicantDeptName",
+            "contentForm_txt_ApplyCompany",
+            "contentForm_txt_ApplyEmployeeCode",
+            "contentForm_txt_ApplyEmployeeName",
+            "contentForm_txt_BELNR",
+            "contentForm_txt_BudgetNo",
+            "contentForm_txt_CPBCRate",
+            "contentForm_txt_Currency",
+            "contentForm_txt_ExchangeRate",
+            "contentForm_txt_GuoZhangDate",
+            "contentForm_txt_InformName",
+            "contentForm_txt_InvoiceNum_P",
+            "contentForm_txt_IsAsset",
+            "contentForm_txt_IsConstruction",
+            "contentForm_txt_IsPrepaid",
+            "contentForm_txt_JiZhangDate",
+            "contentForm_txt_LendTotal",
+            "contentForm_txt_Project",
+            "contentForm_txt_ReimbursementBigCate",
+            "contentForm_txt_ReimbursementType",
+            "contentForm_txt_Summary",
+            "contentForm_txt_SupplierActualPay",
+            "contentForm_txt_TreatCostCenter",
+            "contentForm_txt_TreatEmployeeName",
+            "contentForm_txt_TreatGuestCompany",
+            "contentForm_txt_TreatGuests",
+            "contentForm_txt_TreatHosts",
+            "contentForm_txt_TreatPeoples",
+            "contentForm_txt_TreatReason",
+            "contentForm_txt_TreatSite",
+            "detailT",
+            "detailTR",
+            "div",
+            "form",
+            "jkTable",
+            "miniTip",
+            "miniTip_a",
+            "miniTip_c",
+            "miniTip_t",
+            "person_infor",
+            "person_infor_trigger",
+            "skrTable",
+            "spanProject",
+            "table",
+            "tableXiaoJi",
+            "tb_List",
+            "thCar",
+            "thSupplier",
+            "trPublic",
+            "txt_ACCApplyMoney_SKR",
+            "txt_ApplyMoney_SKR",
+            "txt_CompanyCode_SKR",
+            "txt_Company_SKR",
+            "txt_DeptCode_SKR",
+            "txt_Dept_SKR",
+            "txt_Summary_SKR"
+          ],
+          [
+            "AppUsersDiv",
+            "Header_hidFlag",
+            "Header_txtCompanyName",
+            "Header_txtDate",
+            "Header_txtDepartName",
+            "Header_txtEmail",
+            "Header_txtPhone",
+            "Header_txtUserName",
+            "LinkedProcInst_hfGuid",
+            "LinkedProcInst_hfStart",
+            "LinkedProcInst_hfUserLoginName",
+            "TreatTable",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "_myDP",
+            "btnAddLink",
+            "contentActionBar_ActionBar_Action",
+            "contentActionBar_ActionBar_ActionName",
+            "contentActionBar_ActionBar_AddApprover",
+            "contentActionBar_ActionBar_AddApproverName",
+            "contentActionBar_ActionBar_GotoActivityName",
+            "contentActionBar_ActionBar_IsReturnBack",
+            "contentActionBar_ActionBar_Print",
+            "contentActionBar_ActionBar_UserAction",
+            "contentActionBar_ActionBar_btnAddApprover",
+            "contentActionBar_ActionBar_btnClose",
+            "contentActionBar_ActionBar_btnPrint",
+            "contentActionBar_ActionBar_btnRedirect",
+            "contentActionBar_ActionBar_hidJBAffirm",
+            "contentForm_HLink_Report",
+            "contentForm_btn_JIZhang",
+            "contentForm_txtBXSY",
+            "contentForm_txtDetailTaxTotal",
+            "contentForm_txtJiZhangMoneyTotal",
+            "contentForm_txtReimbursementTotal",
+            "contentForm_txtRemarks",
+            "contentForm_txtSKRMoneyTotal",
+            "contentForm_txtSupplier",
+            "contentForm_txtSupplierApplyMoney",
+            "contentForm_txtSupplierBankCode",
+            "contentForm_txtSupplierCode",
+            "contentForm_txtSupplierOpenBank",
+            "contentForm_txtVirtualDepart",
+            "contentForm_txt_ActualMoneyToal",
+            "contentForm_txt_AddTaxTotalSum",
+            "contentForm_txt_ApplicantDeptName",
+            "contentForm_txt_ApplyCompany",
+            "contentForm_txt_ApplyEmployeeCode",
+            "contentForm_txt_ApplyEmployeeName",
+            "contentForm_txt_BELNR",
+            "contentForm_txt_BudgetNo",
+            "contentForm_txt_CPBCRate",
+            "contentForm_txt_Currency",
+            "contentForm_txt_ExchangeRate",
+            "contentForm_txt_GuoZhangDate",
+            "contentForm_txt_InformName",
+            "contentForm_txt_InvoiceNum_P",
+            "contentForm_txt_IsAsset",
+            "contentForm_txt_IsConstruction",
+            "contentForm_txt_IsPrepaid",
+            "contentForm_txt_JiZhangDate",
+            "contentForm_txt_LendTotal",
+            "contentForm_txt_Project",
+            "contentForm_txt_ReimbursementBigCate",
+            "contentForm_txt_ReimbursementType",
+            "contentForm_txt_Summary",
+            "contentForm_txt_SupplierActualPay",
+            "contentForm_txt_TreatCostCenter",
+            "contentForm_txt_TreatEmployeeName",
+            "contentForm_txt_TreatGuestCompany",
+            "contentForm_txt_TreatGuests",
+            "contentForm_txt_TreatHosts",
+            "contentForm_txt_TreatPeoples",
+            "contentForm_txt_TreatReason",
+            "contentForm_txt_TreatSite",
+            "detailT",
+            "detailTR",
+            "div",
+            "form",
+            "jkTable",
+            "miniTip",
+            "miniTip_a",
+            "miniTip_c",
+            "miniTip_t",
+            "person_infor",
+            "person_infor_trigger",
+            "skrTable",
+            "spanProject",
+            "table",
+            "tableXiaoJi",
+            "tb_List",
+            "thCar",
+            "thSupplier",
+            "trPublic",
+            "txt_ACCApplyMoney_SKR",
+            "txt_ApplyMoney_SKR",
+            "txt_CompanyCode_SKR",
+            "txt_Company_SKR",
+            "txt_DeptCode_SKR",
+            "txt_Dept_SKR",
+            "txt_Summary_SKR"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context29_3cCNa2": [
+          [
+            "Beforehand",
+            "ConstructionClass",
+            "Repaird",
+            "Wdate",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "noprint",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trCWShow",
+            "trPerson",
+            "trPublic",
+            "ufoot"
+          ],
+          [
+            "Beforehand",
+            "ConstructionClass",
+            "Repaird",
+            "Wdate",
+            "active",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "noprint",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "show",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trCWShow",
+            "trPerson",
+            "trPublic",
+            "ufoot"
+          ],
+          [
+            "Beforehand",
+            "ConstructionClass",
+            "Repaird",
+            "Wdate",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_state_full",
+            "aui_state_lock",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "noprint",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trCWShow",
+            "trPerson",
+            "trPublic",
+            "ufoot"
+          ],
+          [
+            "Beforehand",
+            "ConstructionClass",
+            "Repaird",
+            "Wdate",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "n",
+            "none_edit",
+            "noprint",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trCWShow",
+            "trPerson",
+            "trPublic",
+            "ufoot"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context29_3cCNa2": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/LABEL",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-submit",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "TR/TH/SPAN",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/IFRAME",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/LABEL",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-submit",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "TR/TH/SPAN",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/LABEL",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-submit",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "TR/TH/SPAN",
+            "UL/LI/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}
