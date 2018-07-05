@@ -20,7 +20,7 @@
   	var PROCESSED = false; // 移动端点击已处理单点登录跳转标识
     //根据客户端传值来判断自动跳转的目标页面
     topWindow.isPending = function(str){
-      if(str == '待处理'){
+      if(str == '待处理'){
         PENDING = true;
         PROCESSED = false;
         ysp.customHelper.isPending = 'Pending';
@@ -364,6 +364,7 @@
 
             aWin.addEventListener('DOMContentLoaded', function() {
                 if (topWindow.EAPI.isIOS()) {
+                  //判断当前移动端应该跳转目标页面标识
                     if(aWin.location.href.indexOf('app/appMyTask.jsp') != -1){
                        topWindow.EAPI.postMessageToNative('isPending', null);
                     } 
@@ -380,6 +381,19 @@
                     }
                 }
                 if (topWindow.EAPI.isAndroid()) {
+                   //判断当前移动端应该跳转目标页面标识
+                  if(aWin.location.href.indexOf('app/appMyTask.jsp') != -1){
+                        var str = topWindow.yspCheckIn.showBPMIsPending();
+                        if(str == '待处理'){
+                          PENDING = true;
+                          PROCESSED = false;
+                          ysp.customHelper.isPending = 'Pending';
+                        }else{
+                          PROCESSED = true;
+                          PENDING = false;
+                          ysp.customHelper.isPending = 'Processed';
+                        }
+                    }
                     if (aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp" || aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#") {
                         topWindow.AndriodCardList = topWindow.yspCheckIn.showDetailBPMCard();
                         topWindow.AndriodCardList = JSON.parse(topWindow.AndriodCardList);
