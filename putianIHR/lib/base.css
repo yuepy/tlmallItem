@@ -36,7 +36,7 @@ img {
   height: 90vh;
   overflow: auto;
 }
-.card {
+div[data-type="card"] .card {
   border-radius: 0;
   background: #f4f4f4;
   box-shadow: none;
@@ -854,13 +854,14 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 .ysp_adrChoose .ysp_showList .ysp_adrList {
   height: 90vh;
   overflow: auto;
-  background: #fff;
+  padding-bottom: 15px;
 }
 .ysp_adrChoose .ysp_showList .ysp_adrList > div {
   background: url("../local/img/arrow-r.png") no-repeat right;
   padding: 5px 10px;
   color: #888;
   border-bottom: 1px solid #ddd;
+  background-color: #fff;
 }
 .ysp_adrChoose .ysp_showList .ysp_tip {
   height: 100px;
