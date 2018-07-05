@@ -614,7 +614,8 @@ body{
   }
 //待办页
 [data-ysp-modelid="dealtIndex"],
-[data-ysp-modelid="haveDoneIndex"]{
+[data-ysp-modelid="haveDoneIndex"],
+[data-ysp-modelid="commission"]{
   background-color: #ededed;
   .show{
     display: none;
@@ -13559,6 +13560,7 @@ body{
 div._3-WTIFHEDS-X9_V6uFJjTz{
   width:100%;
 }
+
 .ysp-baoxiao-tt{
   padding:0!important;
 }
@@ -13654,3 +13656,31 @@ div._3-WTIFHEDS-X9_V6uFJjTz{
   background: #fff;
 }
 /*************************已办 ltt ENG****************************/
+
+
+/**首页切换***/
+.ysp-index-title{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  height: 44px;
+  div{
+    width: 50%;
+    text-align: center;
+  }
+  >div:nth-child(1){
+    //border-right: 1px solid #ececec;
+  }
+  .ysp-index-title-color{
+    color: #e64750;
+    font-size: 17px;
+    border-bottom: 2px solid #e64750;
+    padding: 8px 0px;
+  }
+  .ysp-index-title-noColor{
+    color: #666666;
+    font-size: 15px;
+  }
+}
+

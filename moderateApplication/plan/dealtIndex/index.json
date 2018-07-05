@@ -21,7 +21,8 @@
     "borrowmon": "../borrowmon/index.json",
     "entry": "../entry/index.json",
     "personnel": "../personnel/index.json",
-    "RenewalApplication": "../RenewalApplication/index.json"
+    "RenewalApplication": "../RenewalApplication/index.json",
+    "haveDoneIndex": "../haveDoneIndex/index.json"
   },
   "chineseName": "待办首页页面",
   "description": "待办首页页面",
@@ -127,6 +128,51 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control227_INKP3Z": {
+      "location": {
+        "data": {
+          "tagName": "UL"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]/UL[2]",
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]//UL",
+              "descendant::DIV[@id=\"DivPerson\"]//UL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              10
+            ],
+            "value": "DIV.autofit.page-shadow DIV.container.main DIV.nav-left UL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[1]/UL[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control227_INKP3Z"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -134,10 +180,13 @@
       "controls": [
         "control193_N9CBTD",
         "control194_rkfuKp",
-        "control123_7z5oV6"
+        "control123_7z5oV6",
+        "control227_INKP3Z"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Index\\.aspx"
+      ]
     }
   },
   "flows": {
@@ -249,6 +298,20 @@
           "toModelId": "RenewalApplication"
         }
       ]
+    },
+    "flow72_H39fiR": {
+      "fromContextId": "context24_EkSRuv",
+      "fromAction": "doAction",
+      "fromControlId": "control227_INKP3Z",
+      "toContexts": [
+        {
+          "toContextId": "context24_EkSRuv"
+        },
+        {
+          "toContextId": "context25_IDCMfP",
+          "toModelId": "haveDoneIndex"
+        }
+      ]
     }
   },
   "pages": {
@@ -266,6 +329,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl194_iLZaeH",
                 "onGetTemplate": "getTemplate_uiControl194_iLZaeH"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl227_w4xMQo",
+          "controlId": "control227_INKP3Z",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl227_w4xMQo",
+                "onGetTemplate": "getTemplate_uiControl227_w4xMQo"
               }
             }
           }

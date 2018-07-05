@@ -586,15 +586,18 @@ body {
   font-size: 14px;
 }
 [data-ysp-modelid="dealtIndex"],
-[data-ysp-modelid="haveDoneIndex"] {
+[data-ysp-modelid="haveDoneIndex"],
+[data-ysp-modelid="commission"] {
   background-color: #ededed;
 }
 [data-ysp-modelid="dealtIndex"] .show,
-[data-ysp-modelid="haveDoneIndex"] .show {
+[data-ysp-modelid="haveDoneIndex"] .show,
+[data-ysp-modelid="commission"] .show {
   display: none;
 }
 [data-ysp-modelid="dealtIndex"] .Content,
-[data-ysp-modelid="haveDoneIndex"] .Content {
+[data-ysp-modelid="haveDoneIndex"] .Content,
+[data-ysp-modelid="commission"] .Content {
   width: 100%;
   padding: 5%;
   padding-top: 10px;
@@ -604,11 +607,13 @@ body {
   background-color: #ffffff;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(1),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(1) {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(1),
+[data-ysp-modelid="commission"] .Content .Content_item:nth-child(1) {
   cursor: pointer;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item,
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item,
+[data-ysp-modelid="commission"] .Content .Content_item {
   width: 100%;
   height: 20px;
   line-height: 20px;
@@ -617,57 +622,68 @@ body {
   margin-bottom: 10px;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item p,
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item p {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item p,
+[data-ysp-modelid="commission"] .Content .Content_item p {
   display: inline-block;
   height: 20px;
   line-height: 20px;
   color: #313131;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item p:nth-child(1),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item p:nth-child(1) {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item p:nth-child(1),
+[data-ysp-modelid="commission"] .Content .Content_item p:nth-child(1) {
   width: 80px;
   color: #666666;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone,
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone,
+[data-ysp-modelid="commission"] .Content .Content_disnone {
   display: none;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone div,
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone div {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone div,
+[data-ysp-modelid="commission"] .Content .Content_disnone div {
   width: 100%;
   font-size: 16px;
   display: inline-block;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div,
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div,
+[data-ysp-modelid="commission"] .Content .Content_disnone > div {
   margin: 10px 0 10px 0;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div > div:nth-child(1),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div > div:nth-child(1) {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div > div:nth-child(1),
+[data-ysp-modelid="commission"] .Content .Content_disnone > div > div:nth-child(1) {
   width: 80px;
   color: #959595;
   float: left;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div > div:nth-child(2),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div > div:nth-child(2) {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div > div:nth-child(2),
+[data-ysp-modelid="commission"] .Content .Content_disnone > div > div:nth-child(2) {
   display: inline;
   display: left;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1) {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1),
+[data-ysp-modelid="commission"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1) {
   height: 60px;
 }
 [data-ysp-modelid="dealtIndex"] .Content > div:nth-child(1),
-[data-ysp-modelid="haveDoneIndex"] .Content > div:nth-child(1) {
+[data-ysp-modelid="haveDoneIndex"] .Content > div:nth-child(1),
+[data-ysp-modelid="commission"] .Content > div:nth-child(1) {
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(3),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3),
+[data-ysp-modelid="commission"] .Content .Content_item:nth-child(3) {
   position: relative;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(3) a,
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) a {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) a,
+[data-ysp-modelid="commission"] .Content .Content_item:nth-child(3) a {
   width: 20px;
   height: 10px;
   overflow: hidden;
@@ -676,7 +692,8 @@ body {
   right: 10px;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(3) a span,
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) a span {
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) a span,
+[data-ysp-modelid="commission"] .Content .Content_item:nth-child(3) a span {
   width: 18px;
   height: 18px;
   border: 2px solid #d8d8d8;
@@ -13097,3 +13114,25 @@ div._3-WTIFHEDS-X9_V6uFJjTz {
   background: #fff;
 }
 /*************************已办 ltt ENG****************************/
+/**首页切换***/
+.ysp-index-title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  height: 44px;
+}
+.ysp-index-title div {
+  width: 50%;
+  text-align: center;
+}
+.ysp-index-title .ysp-index-title-color {
+  color: #e64750;
+  font-size: 17px;
+  border-bottom: 2px solid #e64750;
+  padding: 8px 0px;
+}
+.ysp-index-title .ysp-index-title-noColor {
+  color: #666666;
+  font-size: 15px;
+}

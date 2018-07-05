@@ -68,6 +68,28 @@
     getTemplate_uiControl123_ScHZwa: function () {
       var selfTemplate = 'module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:\'click\',\n        data:target.getAttribute(\'data-id\')\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var str = \'<\',kr = \'|<\',\n        _this = this;\n    var lis = data.content.map(function(ele,index){\n      if(index!=0&&index!=data.content.length-1){\n        return(\n        \t<li data-id={index} onClick={_this.onClick} className={ele.class}>{ele.text}</li>\n        )\n      }\n    })\n    return (\n      <div className=\'footerbtn\'>\n        <ul>\n          <li data-id={0} onClick={_this.onClick}>{kr}</li>\n          <li data-id=\'prev\' onClick={_this.onClick}>{str}</li>\n          {lis}\n          <li data-id=\'next\' onClick={_this.onClick}>></li>\n          <li data-id={data.content.length-1} onClick={_this.onClick}>>|</li>\n        </ul>\n      </div>\n    )\n  }\n});';
       return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler,\n        target = e.target;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: target.getAttribute(\'data-id\')\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var str = \'<\',\n        kr = \'|<\',\n        _this = this;\n    var lis = data.content.map(function (ele, index) {\n      if (index != 0 && index != data.content.length - 1) {\n        return React.createElement(\n          \'li\',\n          { \'data-id\': index, onClick: _this.onClick, className: ele.class },\n          ele.text\n        );\n      }\n    });\n    return React.createElement(\n      \'div\',\n      { className: \'footerbtn\' },\n      React.createElement(\n        \'ul\',\n        null,\n        React.createElement(\n          \'li\',\n          { \'data-id\': 0, onClick: _this.onClick },\n          kr\n        ),\n        React.createElement(\n          \'li\',\n          { \'data-id\': \'prev\', onClick: _this.onClick },\n          str\n        ),\n        lis,\n        React.createElement(\n          \'li\',\n          { \'data-id\': \'next\', onClick: _this.onClick },\n          \'>\'\n        ),\n        React.createElement(\n          \'li\',\n          { \'data-id\': data.content.length - 1, onClick: _this.onClick },\n          \'>|\'\n        )\n      )\n    );\n  }\n});';
+    },
+    getData_control227_INKP3Z: function (elem) {
+      if (!elem) {
+        return;
+      }var data = { flag: [] };var lis = elem.querySelectorAll("li");for (var i = 0; i < lis.length - 1; i++) {
+        var cla = lis[i].querySelector("a").getAttribute("class");data.flag.push(cla);
+      }return data;
+    },
+    doAction_uiControl227_w4xMQo: function (data, elem) {
+      if ('click' == data.eventType) {
+        var title = data.dataCustom;if ('待办' == title) {
+          elem.querySelectorAll("li")[0].querySelector("a").click();
+        } else {
+          // var url = ysp.appMain.getActiveUrl();
+          // ysp.appMain.openWindow(url);
+          elem.querySelectorAll("li")[1].querySelector("a").click();
+        }
+      }
+    },
+    getTemplate_uiControl227_w4xMQo: function () {
+      var selfTemplate = 'module.exports = React.createClass({\n  handlerClick:function(e){\n    var target = e.target;\n    var title = target.dataset.title;\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        data: title,\n        eventType:\'click\'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData && this.props.customData.flag || [];\n    return (\n      <div class="ysp-index-title">\n        <div className = {data[0] == "active" ? "ysp-index-title-color" : "ysp-index-title-noColor"} data-title = "\u5F85\u529E" onClick={this.handlerClick.bind(this)}>\u5F85\u529E</div>\n        <div className = {data[1] == "active" ? "ysp-index-title-color" : "ysp-index-title-noColor"} data-title = "\u5DF2\u529E" onClick={this.handlerClick.bind(this)}>\u5DF2\u529E</div>\n      </div>\n    )\n  }\n});';
+      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  handlerClick: function handlerClick(e) {\n    var target = e.target;\n    var title = target.dataset.title;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        data: title,\n        eventType: \'click\'\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData && this.props.customData.flag || [];\n    return React.createElement(\n      "div",\n      { "class": "ysp-index-title" },\n      React.createElement(\n        "div",\n        { className: data[0] == "active" ? "ysp-index-title-color" : "ysp-index-title-noColor", "data-title": "\\u5F85\\u529E", onClick: this.handlerClick.bind(this) },\n        "\\u5F85\\u529E"\n      ),\n      React.createElement(\n        "div",\n        { className: data[1] == "active" ? "ysp-index-title-color" : "ysp-index-title-noColor", "data-title": "\\u5DF2\\u529E", onClick: this.handlerClick.bind(this) },\n        "\\u5DF2\\u529E"\n      )\n    );\n  }\n});';
     }
   });
 })(window, ysp);

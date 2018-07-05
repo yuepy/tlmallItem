@@ -74,12 +74,107 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control228_Ccix5w": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.result-list TABLE.layout-data.hover"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[3]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control228_Ccix5w"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control230_TRSBih": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.result-list DIV.anpager"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control230_TRSBih"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control231_r4Lwgd": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.advanced-search.form-wrapper TABLE.layout-form TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[2]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control231_r4Lwgd"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context1_CPB3yD": {
       "controls": [
-        "control172_pAOEAo"
+        "control172_pAOEAo",
+        "control228_Ccix5w",
+        "control230_TRSBih",
+        "control231_r4Lwgd"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -133,6 +228,51 @@
               "events": {
                 "onDoAction": "doAction_uiControl172_qpwrqq",
                 "onGetTemplate": "getTemplate_uiControl172_qpwrqq"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl231_m00yRI",
+          "controlId": "control231_r4Lwgd",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl231_m00yRI",
+                "onGetTemplate": "getTemplate_uiControl231_m00yRI"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl228_GRaZTT",
+          "controlId": "control228_Ccix5w",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl228_GRaZTT",
+                "onGetTemplate": "getTemplate_uiControl228_GRaZTT"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl230_3STzCi",
+          "controlId": "control230_TRSBih",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl230_3STzCi",
+                "onGetTemplate": "getTemplate_uiControl230_3STzCi"
               }
             }
           }
@@ -317,6 +457,73 @@
             "icon-plus",
             "icon-question-sign",
             "icon-search",
+            "icon-user",
+            "layout-data",
+            "layout-form",
+            "logo",
+            "main",
+            "nav-left",
+            "nav-main",
+            "nav-quick",
+            "page-shadow",
+            "red",
+            "result-list",
+            "shadow",
+            "size-s",
+            "stats",
+            "title"
+          ],
+          [
+            "Wdate",
+            "active",
+            "advanced-search",
+            "anpager",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "autofit",
+            "breadcrumb",
+            "btn",
+            "container",
+            "content",
+            "cpb",
+            "font-red",
+            "footer",
+            "form-wrapper",
+            "header",
+            "hover",
+            "icon-angle-right",
+            "icon-check",
+            "icon-check-empty",
+            "icon-comment-alt",
+            "icon-home",
+            "icon-key",
+            "icon-off",
+            "icon-pencil",
+            "icon-plus",
+            "icon-question-sign",
+            "icon-search",
+            "icon-sitemap",
             "icon-user",
             "layout-data",
             "layout-form",
