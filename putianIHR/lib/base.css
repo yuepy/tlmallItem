@@ -22,6 +22,9 @@ ul li {
 img {
   border: none;
 }
+input[type='date'] {
+  display: inline-block;
+}
 .view-wrapper {
   background-color: #f4f4f4;
 }
@@ -31,7 +34,7 @@ img {
   height: 90vh;
   overflow: auto;
 }
-div[draggable] .card {
+div[data-ysp-modelid] .card {
   box-shadow: none;
 }
 .card {
@@ -253,7 +256,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   background: #fff;
 }
 .menu_tab .tab_wrapper {
-  width: 52%;
+  width: 53%;
   margin: 0 auto;
   font-size: 14px;
 }
@@ -467,10 +470,6 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 .ysp_salary_detail_list .ysp_salary_board > div:last-child {
   border: none;
 }
-.ysp_salary_detail_list .ysp_salary_scroll {
-  height: 50vh;
-  overflow-y: scroll;
-}
 .ysp_salary_detail_list .ysp_detail {
   padding: 10px;
   border-bottom: 1px solid #e1e1e1;
@@ -523,6 +522,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   padding: 0;
   padding-right: 15px;
   height: 30px;
+  line-height: 30px;
   background: #fff;
   text-align: right;
   width: 100%;
@@ -795,6 +795,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   padding: 0;
   padding-right: 15px;
   height: 24px;
+  line-height: 24px;
   background: #fff;
   text-align: right;
   width: 100%;
@@ -1307,6 +1308,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   display: inline-block;
   width: 42%;
   height: 1.8rem;
+  line-height: 1.8rem;
   border: 1px solid #e1e1e1;
   border-radius: 3px;
   margin-top: 0.4rem;
@@ -1318,6 +1320,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
 }
 .ysp-r input.time-ipt-one {
   height: 1.8rem;
+  line-height: 1.8rem;
   border: 1px solid #e1e1e1;
   border-radius: 3px;
   margin-top: 0.4rem;
@@ -1978,6 +1981,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   padding: 0;
   padding-right: 15px;
   height: 30px;
+  line-height: 30px;
   background: #fff;
   text-align: right;
   width: 75%;
@@ -2049,6 +2053,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   margin: 0;
   padding: 0;
   height: 25px;
+  line-height: 25px;
   background: #fff;
   text-align: right;
   width: 90%;
@@ -2103,6 +2108,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   padding: 0;
   padding-right: 15px;
   height: 24px;
+  line-height: 24px;
   background: #fff;
   text-align: right;
   width: 60%;
@@ -2195,6 +2201,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   padding: 0;
   padding-right: 15px;
   height: 30px;
+  line-height: 30px;
   background: #fff;
   text-align: right;
   width: 100%;
@@ -2410,6 +2417,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   padding: 0;
   padding-right: 15px;
   height: 30px;
+  line-height: 30px;
   text-align: right;
   width: 100%;
   background: #fff url(../local/img/rightArrow.png) no-repeat;
@@ -2428,6 +2436,7 @@ div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   margin: 0;
   padding: 0;
   height: 25px;
+  line-height: 25px;
   background: #fff;
   text-align: right;
   width: 90%;

@@ -27,6 +27,9 @@ ul li{
   list-style: none;
 }
 img{border:none;}
+input[type='date']{
+  display: inline-block;
+}
 // 解决ios中position:fixed不兼容的问题
 .view-wrapper{
   background-color: #f4f4f4;
@@ -37,7 +40,7 @@ img{border:none;}
     overflow: auto;
   }
 }
-div[draggable] .card{
+div[data-ysp-modelid] .card{
   box-shadow: none;
 }
 .card{
@@ -271,7 +274,7 @@ div[data-ysp-modelid="menu"]{
   padding: 10px 0;
   background: #fff;
   .tab_wrapper{
-    width:52%;
+    width:53%;
   	margin: 0 auto;
     font-size:14px;
   }
@@ -492,10 +495,10 @@ div[data-ysp-modelid="menu"]{
       border:none;
     }
   }
-  .ysp_salary_scroll{
-    height: 50vh;
-    overflow-y: scroll;
-  }
+  // .ysp_salary_scroll{
+  //   height: 50vh;
+  //   overflow-y: scroll;
+  // }
   .ysp_detail{
     padding: 10px;
     border-bottom: 1px solid #e1e1e1;
@@ -545,6 +548,7 @@ div[data-ysp-modelid="menu"]{
         padding: 0;
         padding-right: 15px;
         height:30px;
+        line-height: 30px;
         background: #fff;
         text-align: right;
         width: 100%;
@@ -762,6 +766,7 @@ div[data-ysp-modelid="menu"]{
         padding: 0;
         padding-right: 15px;
         height:24px;
+        line-height: 24px;
         background: #fff;
         text-align: right;
         width: 100%;
@@ -1331,6 +1336,7 @@ div[data-ysp-modelid="menu"]{
       display: inline-block;
       width:42%;
       height:1.8rem;
+      line-height: 1.8rem;
       border:1px solid #e1e1e1;
       border-radius: 3px;
       margin-top:0.4rem;
@@ -1342,6 +1348,7 @@ div[data-ysp-modelid="menu"]{
       }
     input.time-ipt-one{
       height:1.8rem;
+      line-height: 1.8rem;
       border:1px solid #e1e1e1;
       border-radius: 3px;
       margin-top:0.4rem;
@@ -1884,6 +1891,7 @@ div[data-ysp-modelid="menu"]{
         padding: 0;
         padding-right: 15px;
         height:30px;
+        line-height: 30px;
         background: #fff;
         text-align: right;
         width: 75%;
@@ -1958,6 +1966,7 @@ div[data-ysp-modelid="menu"]{
         margin: 0;
         padding: 0;
         height:25px;
+        line-height: 25px;
         background: #fff;
         text-align: right;
         width: 90%;
@@ -2013,6 +2022,7 @@ div[data-ysp-modelid="menu"]{
       padding: 0;
       padding-right: 15px;
       height: 24px;
+      line-height: 24px;
       background: #fff;
       text-align: right;
       width: 60%;
@@ -2108,6 +2118,7 @@ div[data-ysp-modelid="menu"]{
       padding: 0;
       padding-right: 15px;
       height:30px;
+      line-height: 30px;
       background: #fff;
       text-align: right;
       width: 100%;
@@ -2304,6 +2315,7 @@ div[data-ysp-modelid="menu"]{
       padding: 0;
       padding-right: 15px;
       height:30px;
+      line-height: 30px;
       text-align: right;
       width: 100%;
       background:#fff url(../local/img/rightArrow.png) no-repeat;
@@ -2319,6 +2331,7 @@ div[data-ysp-modelid="menu"]{
       margin: 0;
       padding: 0;
       height:25px;
+      line-height: 25px;
       background: #fff;
       text-align: right;
       width: 90%;
