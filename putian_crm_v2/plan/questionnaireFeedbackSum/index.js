@@ -3,7 +3,8 @@
     getData_control331_PNp7yv: function (elem) {},
     doAction_uiControl321_0gg0A7: function (data, elem) {
       if ("back" == data.eventType) {
-        history.go(-1);
+        //history.go(-1);
+        ysp.appMain.back();
       }
     },
     getTemplate_uiControl321_0gg0A7: function () {
