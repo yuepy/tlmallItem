@@ -6,7 +6,7 @@
   "requires": {
     "commission": "../commission/index.json"
   },
-  "chineseName": "员工合同续签申请单",
+  "chineseName": "代办员工合同续签申请单（lh）",
   "description": "",
   "firstPaintEnable": false,
   "controls": {
@@ -150,8 +150,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_P1\"]/div[5]/table"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {

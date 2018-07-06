@@ -416,7 +416,7 @@
       return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onblur: function onblur(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'blur',\n        data: target.getAttribute('id')\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    var list = data.content.map(function (d, i) {\n      return React.createElement(\n        'div',\n        null,\n        React.createElement(\n          'span',\n          null,\n          d.left\n        ),\n        d.readyState == false ? React.createElement(AInput, { readOnly: d.readyState, value: d.right, id: d.id, onBlur: _this.onblur.bind(_this) }) : React.createElement(AInput, { readOnly: d.readyState, value: d.right, id: d.id })\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'ysp-zhInfo-tt' },\n      React.createElement(\n        'p',\n        null,\n        data.title\n      ),\n      list\n    );\n  }\n});";
     },
     getData_control239_H6Ap9q: function (elem) {
-      if (!elem) {
+      console.log(elem);if (!elem) {
         return;
       }var data = {};data.title = '环节信息';data.content = [];var toptrs = elem.querySelector("table").querySelector('tbody').children;for (var i = 0; i < toptrs.length; i++) {
         var obj = {};obj.left = toptrs[i].querySelectorAll('td')[0].textContent.trim();obj.right = [];var fottrs = toptrs[i].querySelectorAll('td')[1].querySelectorAll('tr');for (var k = 0; k < fottrs.length; k++) {

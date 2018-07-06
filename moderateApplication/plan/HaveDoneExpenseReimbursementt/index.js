@@ -270,6 +270,158 @@
     getTemplate_uiControl253_X6vl3N: function () {
       var selfTemplate = "module.exports = React.createClass({\n  \n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:[target.dataset.index,target.value]\n      })\n    }\n  },\n \n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n \n    var list = data.content.map(function(ele,index){\n     \n        var lisele = ele.map(function(d,i){\n        \n              return(\n                <div className='ysp-baoxiaoTotal-tt'>\n                \t\t\t <div className='ysp-baoxiaoList-tt'>\n                          <div className='ysp-baoxiaoListTitle-tt' style={{'lineHeight':'50px'}}>{d.left.replace(/\\s+/g,'').split(':')[0]}</div>\n                          <div className='yspbaoxiaoListContent-tt'>\n\n                            {d.readyState==true?<AInput value={d.right[0]} readOnly={d.readyState[0]}/>:<AInput value={d.right[0]} readOnly={d.readyState[0]} onBlur={_this.onblur.bind(_this)} data-index={index}/>}\n\n                          </div>\n                   </div>\n                  \n                  \n                </div>\n                   \n                   \n                )\n            \n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      \n    })\n    return (\n      <div className='information'>\n       \n        <div className='content'>\n          {list}</div>\n        \n      </div>\n    )\n  }\n});";
       return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n\n  onblur: function onblur(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'blur',\n        data: [target.dataset.index, target.value]\n      });\n    }\n  },\n\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n\n    var list = data.content.map(function (ele, index) {\n\n      var lisele = ele.map(function (d, i) {\n\n        return React.createElement(\n          'div',\n          { className: 'ysp-baoxiaoTotal-tt' },\n          React.createElement(\n            'div',\n            { className: 'ysp-baoxiaoList-tt' },\n            React.createElement(\n              'div',\n              { className: 'ysp-baoxiaoListTitle-tt', style: { 'lineHeight': '50px' } },\n              d.left.replace(/\\s+/g, '').split(':')[0]\n            ),\n            React.createElement(\n              'div',\n              { className: 'yspbaoxiaoListContent-tt' },\n              d.readyState == true ? React.createElement(AInput, { value: d.right[0], readOnly: d.readyState[0] }) : React.createElement(AInput, { value: d.right[0], readOnly: d.readyState[0], onBlur: _this.onblur.bind(_this), 'data-index': index })\n            )\n          )\n        );\n      });\n      return React.createElement(\n        'div',\n        null,\n        lisele\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'information' },\n      React.createElement(\n        'div',\n        { className: 'content' },\n        list\n      )\n    );\n  }\n});";
+    },
+    getData_control267_ZPxDDq: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {}; // var table = elem.querySelectorAll('table')[0];
+      var trs = elem.querySelectorAll('tr');data.title = '交际应酬费明细';data.content = [];for (var i = 0; i < trs.length; i++) {
+        var arr = [];var tds = trs[i].querySelectorAll('td');for (var k = 0; k < tds.length; k++) {
+          if (tds[k].querySelector("input[type='text']")) {
+            arr.push({ left: tds[k].querySelector('label').textContent.trim(), right: tds[k].querySelector('input').value, readyState: tds[k].querySelector('input').readOnly });
+          }if (tds[k].querySelector('textarea')) {
+            arr.push({ left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''), right: tds[k].querySelector('textarea').value, readyState: tds[k].querySelector('textarea').readOnly, type: 'textarea' });
+          }if (tds[k].querySelector("input[type='radio']")) {
+            arr.push({ left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''), right: [tds[k].querySelectorAll("input[type='radio']")[0].checked, tds[k].querySelectorAll("input[type='radio']")[1].checked], type: 'radio' });
+          }
+        }data.content.push(arr);
+      }return data;
+    },
+    doAction_uiControl267_PaTNsB: function (data, elem) {
+      if (data.eventType == 'blur') {
+        var index = parseInt(data.dataCustom[0]);var val = data.dataCustom[1];var target = elem.querySelectorAll('tr')[index].querySelectorAll("input");for (var i = 0; i < target.length; i++) {
+          if (target[i].readOnly == false) {
+            target[i].value = val;
+          }
+        }
+      }
+    },
+    getTemplate_uiControl267_PaTNsB: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  \n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:[target.dataset.index,target.value]\n      })\n    }\n  },\n \n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n \n    var list = data.content.map(function(ele,index){\n     \n        var lisele = ele.map(function(d,i){\n         if(d.type == 'textarea'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem'><textarea value={d.right} readOnly={d.readyState}></textarea></div>\n                </div>\n              )\n            }else {\n            return(\n                  <div className='contenttit'>\n                    <div className='contentitem'>{d.left}</div>\n                    <div className='contentitem'>\n\n                      {d.readyState==true?<AInput value={d.right} readOnly={d.readyState}/>:<AInput value={d.right} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)} data-index={index}/>}\n\n                    </div>\n                  </div>\n              )\n            }\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      \n    })\n    return (\n      <div className='information'>\n       \t<div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          {list}</div>\n        \n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n\n  onblur: function onblur(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'blur',\n        data: [target.dataset.index, target.value]\n      });\n    }\n  },\n\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n\n    var list = data.content.map(function (ele, index) {\n\n      var lisele = ele.map(function (d, i) {\n        if (d.type == 'textarea') {\n          return React.createElement(\n            'div',\n            { className: 'contenttit' },\n            React.createElement(\n              'div',\n              { className: 'contentitem' },\n              d.left\n            ),\n            React.createElement(\n              'div',\n              { className: 'contentitem' },\n              React.createElement('textarea', { value: d.right, readOnly: d.readyState })\n            )\n          );\n        } else {\n          return React.createElement(\n            'div',\n            { className: 'contenttit' },\n            React.createElement(\n              'div',\n              { className: 'contentitem' },\n              d.left\n            ),\n            React.createElement(\n              'div',\n              { className: 'contentitem' },\n              d.readyState == true ? React.createElement(AInput, { value: d.right, readOnly: d.readyState }) : React.createElement(AInput, { value: d.right, readOnly: d.readyState, onBlur: _this.onblur.bind(_this), 'data-index': index })\n            )\n          );\n        }\n      });\n      return React.createElement(\n        'div',\n        null,\n        lisele\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'information' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'content' },\n        list\n      )\n    );\n  }\n});";
+    },
+    getData_control268_DwTnMs: function (elem) {
+      if (!elem) {
+        return;
+      }var data = { titles: [], content: [] };data.title = '收费人明细';var trs = elem.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        if (i == 1) {
+          var tds = trs[i].querySelectorAll('th');for (var j = 0; j < tds.length; j++) {
+            data.titles.push(tds[j].textContent.trim());
+          }
+        } else if (i > 1) {
+          var arr1 = [];var tds = trs[i].querySelectorAll('td');for (var j = 0; j < tds.length; j++) {
+            arr1.push(tds[j].querySelector("input[type='text']").value);
+          }data.content.push(arr1);
+        }
+      }return data;
+    },
+    doAction_uiControl268_pqoAbw: function (data, elem) {},
+    getTemplate_uiControl268_pqoAbw: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='examination'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function (d, i) {\n      return React.createElement(\n        'th',\n        null,\n        d\n      );\n    });\n    var trs = data.content.map(function (d, i) {\n      var lis = d.map(function (ele, index) {\n        return React.createElement(\n          'td',\n          null,\n          ele\n        );\n      });\n      return React.createElement(\n        'tr',\n        null,\n        lis\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'examination' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'contentitem' },\n        React.createElement(\n          'table',\n          null,\n          React.createElement(\n            'thead',\n            null,\n            React.createElement(\n              'tr',\n              null,\n              ths\n            )\n          ),\n          React.createElement(\n            'tbody',\n            null,\n            trs\n          )\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control269_s8VqHN: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {}; // var table = elem.querySelectorAll('table')[0];
+      var trs = elem.querySelectorAll('tr');data.content = [];for (var i = 0; i < trs.length; i++) {
+        var arr = [];var tds = trs[i].querySelectorAll('td');for (var k = 0; k < tds.length; k++) {
+          if (tds[k].querySelector("input[type='text']")) {
+            arr.push({ left: tds[k].textContent.replace(/\s+/g, ''), right: tds[k].querySelectorAll('input')[0].value, readyState: tds[k].querySelectorAll('input')[0].readOnly });
+          }if (tds[k].querySelector('textarea')) {
+            arr.push({ left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''), right: tds[k].querySelector('textarea').value, readyState: tds[k].querySelector('textarea').readOnly, type: 'textarea' });
+          }if (tds[k].querySelector("input[type='radio']")) {
+            arr.push({ left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''), right: [tds[k].querySelectorAll("input[type='radio']")[0].checked, tds[k].querySelectorAll("input[type='radio']")[1].checked], type: 'radio' });
+          }
+        }data.content.push(arr);
+      }return data;
+    },
+    doAction_uiControl269_NoLXuR: function (data, elem) {
+      if (data.eventType == 'blur') {
+        var index = parseInt(data.dataCustom[0]);var val = data.dataCustom[1];var target = elem.querySelectorAll('tr')[index].querySelectorAll("input");for (var i = 0; i < target.length; i++) {
+          if (target[i].readOnly == false) {
+            target[i].value = val;
+          }
+        }
+      }
+    },
+    getTemplate_uiControl269_NoLXuR: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  \n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:[target.dataset.index,target.value]\n      })\n    }\n  },\n \n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n \n    var list = data.content.map(function(ele,index){\n     \n        var lisele = ele.map(function(d,i){\n        \n              return(\n                <div className='ysp-baoxiaoTotal-tt'>\n                \t\t\t <div className='ysp-baoxiaoList-tt'>\n                          <div className='ysp-baoxiaoListTitle-tt' >{d.left.replace(/\\s+/g,'').split(':')[0]}</div>\n                          <div className='yspbaoxiaoListContent-tt'>\n\n                            {d.readyState==true?<AInput value={d.right} readOnly={d.readyState}/>:<AInput value={d.right} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)} data-index={index}/>}\n\n                          </div>\n                   </div>\n                  \n                </div>\n                   \n                   \n                )\n            \n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      \n    })\n    return (\n      <div className='information'>\n       \n        <div className='content'>\n          {list}</div>\n        \n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n\n  onblur: function onblur(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'blur',\n        data: [target.dataset.index, target.value]\n      });\n    }\n  },\n\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n\n    var list = data.content.map(function (ele, index) {\n\n      var lisele = ele.map(function (d, i) {\n\n        return React.createElement(\n          'div',\n          { className: 'ysp-baoxiaoTotal-tt' },\n          React.createElement(\n            'div',\n            { className: 'ysp-baoxiaoList-tt' },\n            React.createElement(\n              'div',\n              { className: 'ysp-baoxiaoListTitle-tt' },\n              d.left.replace(/\\s+/g, '').split(':')[0]\n            ),\n            React.createElement(\n              'div',\n              { className: 'yspbaoxiaoListContent-tt' },\n              d.readyState == true ? React.createElement(AInput, { value: d.right, readOnly: d.readyState }) : React.createElement(AInput, { value: d.right, readOnly: d.readyState, onBlur: _this.onblur.bind(_this), 'data-index': index })\n            )\n          )\n        );\n      });\n      return React.createElement(\n        'div',\n        null,\n        lisele\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'information' },\n      React.createElement(\n        'div',\n        { className: 'content' },\n        list\n      )\n    );\n  }\n});";
+    },
+    getData_control270_wb1Ndy: function (elem) {
+      if (!elem) {
+        return;
+      }var data = { content: [] };var trs = elem.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        var tds = trs[i].querySelectorAll('td');for (var j = 0; j < tds.length; j++) {
+          if (tds[j].querySelector('textarea')) {
+            data.content.push({ val: tds[j].querySelector('textarea').value, readyState: tds[j].querySelector('textarea').readOnly });
+          } else {
+            data.title = tds[j].textContent.trim();
+          }
+        }
+      }return data;
+    },
+    doAction_uiControl270_BZbIi6: function (data, elem) {
+      if (data.eventType == 'blur') {
+        var val = data.dataCustom;var target = elem.querySelector('textarea');target.value = val;
+      }
+    },
+    getTemplate_uiControl270_BZbIi6: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n  \tvar list=data.content.map(function(d,i){\n      return(\n       \t<div>\n        \t\t {d.readyState==false?<ATextarea value={d.val} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)}></ATextarea>:<ATextarea value={d.val} readOnly={d.readyState}></ATextarea>}\n        </div>\n      )\n    })\n    return (\n      <div className='ysp-sxsm-tt'>\n        <div className='ysp-sxsmTitle-tt'>{data.title}</div>\n       \t{list}\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onblur: function onblur(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'blur',\n        data: target.value\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    var list = data.content.map(function (d, i) {\n      return React.createElement(\n        'div',\n        null,\n        d.readyState == false ? React.createElement(ATextarea, { value: d.val, readOnly: d.readyState, onBlur: _this.onblur.bind(_this) }) : React.createElement(ATextarea, { value: d.val, readOnly: d.readyState })\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'ysp-sxsm-tt' },\n      React.createElement(\n        'div',\n        { className: 'ysp-sxsmTitle-tt' },\n        data.title\n      ),\n      list\n    );\n  }\n});";
+    },
+    getData_control271_1wnF4H: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {};data.title = '环节信息';data.content = [];data.content.push({ left: elem.querySelector('tr').querySelector('td').textContent.trim() });var trs = elem.querySelector('tr').querySelectorAll('td')[1].querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        data.content.push(trs[i].textContent.trim());
+      }return data;
+    },
+    doAction_uiControl271_bLT8sq: function (data, elem) {},
+    getTemplate_uiControl271_bLT8sq: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      if(index > 0){\n        return(\n      \t<div>{ele}\n        </div>\n      )\n      }\n    })\n    return (\n      <div className='Auditor'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'><div className='contentitem'>{data.content[0].left}</div><div className='contentitem'>{lis}</div></div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var lis = data.content.map(function (ele, index) {\n      if (index > 0) {\n        return React.createElement(\n          'div',\n          null,\n          ele\n        );\n      }\n    });\n    return React.createElement(\n      'div',\n      { className: 'Auditor' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'content' },\n        React.createElement(\n          'div',\n          { className: 'contentitem' },\n          data.content[0].left\n        ),\n        React.createElement(\n          'div',\n          { className: 'contentitem' },\n          lis\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control272_HE5fGC: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {};var trs = elem.querySelectorAll('tr');data.title = '知会信息';data.content = [];for (var i = 0; i < trs.length; i++) {
+        var arr = [];var tds = trs[i].querySelectorAll('td');for (var k = 0; k < tds.length; k++) {
+          if (tds[k].querySelector('input')) {
+            arr.push({ left: tds[k].querySelector('label').textContent.trim(), right: tds[k].querySelector('input').value });
+          }
+        }data.content.push(arr);
+      }return data;
+    },
+    doAction_uiControl272_UC6mhW: function (data, elem) {},
+    getTemplate_uiControl272_UC6mhW: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      var list = ele.map(function(d,i){\n        return(\n        \t<div>\n          \t<div className='contentitem'>{d.left}</div>\n            <div className='contentitem'>{d.right}</div>\n          </div>\n        )\n      })\n      return(\n      \t<div className='contentit'>{list}</div>\n      )\n    })\n    return (\n      <div className='understanding'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n    \t\t\t{lis}    \t\n        </div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var lis = data.content.map(function (ele, index) {\n      var list = ele.map(function (d, i) {\n        return React.createElement(\n          'div',\n          null,\n          React.createElement(\n            'div',\n            { className: 'contentitem' },\n            d.left\n          ),\n          React.createElement(\n            'div',\n            { className: 'contentitem' },\n            d.right\n          )\n        );\n      });\n      return React.createElement(\n        'div',\n        { className: 'contentit' },\n        list\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'understanding' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'content' },\n        lis\n      )\n    );\n  }\n});";
+    },
+    getData_control273_JrRaIN: function (elem) {
+      if (!elem) {
+        return;
+      }var data = ysp.customHelper.getTableData(elem, ['环节名称', '人员姓名', '人员公司', '人员部门', '人员职位', '审批操作', '审批时间', '意见']);data.title = '审批日志';return data;
+    },
+    doAction_uiControl273_lJ5mbn: function (data, elem) {},
+    getTemplate_uiControl273_lJ5mbn: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='examination'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function (d, i) {\n      return React.createElement(\n        'th',\n        null,\n        d\n      );\n    });\n    var trs = data.content.map(function (d, i) {\n      var lis = d.map(function (ele, index) {\n        return React.createElement(\n          'td',\n          null,\n          ele\n        );\n      });\n      return React.createElement(\n        'tr',\n        null,\n        lis\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'examination' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'contentitem' },\n        React.createElement(\n          'table',\n          null,\n          React.createElement(\n            'thead',\n            null,\n            React.createElement(\n              'tr',\n              null,\n              ths\n            )\n          ),\n          React.createElement(\n            'tbody',\n            null,\n            trs\n          )\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control274_r9SsaM: function (elem) {
+      if (!elem) {
+        return;
+      }return elem.textContent;
+    },
+    doAction_uiControl274_46PWCT: function (data, elem) {
+      if (data.eventType == 'close') {
+        elem.click();
+      }
+    },
+    getTemplate_uiControl274_46PWCT: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  onclickClose:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'close'\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div className='ysp-closeBtn-tt'>\n        <button onClick={this.onclickClose.bind(this)}>{this.props.customData}</button>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onclickClose: function onclickClose(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'close'\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\n      'div',\n      { className: 'ysp-closeBtn-tt' },\n      React.createElement(\n        'button',\n        { onClick: this.onclickClose.bind(this) },\n        this.props.customData\n      )\n    );\n  }\n});";
     }
   }, "HaveDoneExpenseReimbursementt");
 })(window, ysp);
