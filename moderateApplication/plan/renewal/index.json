@@ -1,20 +1,16 @@
 {
   "version": "0.1",
-  "id": "contract",
-  "targetURL": "http://172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=4E3CFE6253F1F2835FCA9DE626CD2A3B&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3",
+  "id": "renewal",
+  "targetURL": "http://172.16.11.61:8000/Forms/HR/YGHTXQ/ProcessingSSC.aspx?SN=4BE3ED6C3DDCC2455455A0DC2E39ADBA&Guid=1a53d696-434f-42e6-bddc-49c53f30a1de",
   "jsFile": "index.js",
-  "chineseName": "待办合同审批单",
+  "chineseName": "待办员工合同续签申请单(2)",
   "description": "",
   "firstPaintEnable": false,
   "controls": {
-    "control108_b7E3pM": {
+    "control283_4gh4I9": {
       "location": {
         "data": {
           "tagName": "H1"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -38,22 +34,18 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control108_b7E3pM"
+        "onGetData": "getData_control283_4gh4I9"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control109_3sHOzb": {
+    "control284_cRZEJn": {
       "location": {
         "data": {
           "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -77,7 +69,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control109_3sHOzb"
+        "onGetData": "getData_control284_cRZEJn"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -86,39 +78,50 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control110_MPTDfR": {
+    "control285_J7SmXU": {
       "location": {
         "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "TABLE"
         },
         "locators": [
           {
             "id": "@id/word",
             "prob": 1,
-            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[3]"
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[1]/TABLE[1]",
+              "ratio": 0.287
+            }
           },
           {
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
-              2,
-              5
+              0,
+              2
             ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper"
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control110_MPTDfR"
+        "onGetData": "getData_control285_J7SmXU"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -126,60 +129,17 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control111_7trSib": {
+    "control286_UTH5nh": {
       "location": {
         "data": {
           "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
             "id": "@id/word",
             "prob": 2,
             "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[1]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.big-form.page-shadow TABLE.layout-data.layout-form"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control111_7trSib"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control116_EP7tH3": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[11]/DIV[2]/TABLE[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[2]",
               "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
             ]
           },
@@ -190,60 +150,17 @@
               3,
               5
             ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[11]/DIV[2]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control116_EP7tH3"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control118_soe2nM": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[3]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              2,
-              4
-            ],
             "value": "DIV.big-form.page-shadow TABLE.layout-data"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control118_soe2nM"
+        "onGetData": "getData_control286_UTH5nh"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -251,100 +168,10 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control119_bB414e": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[4]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              3,
-              4
-            ],
-            "value": "DIV.big-form.page-shadow TABLE.layout-data"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[4]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control119_bB414e"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control120_Wx2FOX": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[25]/TABLE[1]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              3,
-              4
-            ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[25]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control120_Wx2FOX"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control121_HRP94d": {
+    "control287_ktW9JP": {
       "location": {
         "data": {
           "tagName": "UL"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -368,188 +195,396 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control121_HRP94d"
+        "onGetData": "getData_control287_ktW9JP"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control288_eADbxU": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[3]",
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              4,
+              5
+            ],
+            "value": "DIV.big-form.page-shadow TABLE.layout-data"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control288_eADbxU"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control289_EaiJgV": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[24]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              4,
+              5
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[24]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control289_EaiJgV"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control290_5ZFGvs": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]",
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control290_5ZFGvs"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control291_2be4nc": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[3]",
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control291_2be4nc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control292_KgnWed": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[4]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              5
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control292_KgnWed"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
-    "context15_flVVrS": {
+    "context34_SS1stH": {
       "controls": [
-        "control108_b7E3pM",
-        "control109_3sHOzb",
-        "control110_MPTDfR",
-        "control111_7trSib",
-        "control116_EP7tH3",
-        "control118_soe2nM",
-        "control119_bB414e",
-        "control120_Wx2FOX",
-        "control121_HRP94d"
+        "control283_4gh4I9",
+        "control284_cRZEJn",
+        "control285_J7SmXU",
+        "control286_UTH5nh",
+        "control287_ktW9JP",
+        "control288_eADbxU",
+        "control289_EaiJgV",
+        "control290_5ZFGvs",
+        "control291_2be4nc",
+        "control292_KgnWed"
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/LA\\/HT\\/Processing\\.aspx\\?.*"
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/HR\\/YGHTXQ\\/ProcessingSSC\\.aspx\\?.*"
       ]
     }
   },
   "flows": {
-    "flow34_caKy5E": {
+    "flow89_KLnr5Q": {
+      "fromContextId": "context34_SS1stH",
+      "fromAction": "doAction",
+      "fromControlId": "control286_UTH5nh",
       "toContexts": [
         {
-          "toContextId": "context15_flVVrS"
+          "toContextId": "context34_SS1stH"
         }
       ]
     },
-    "flow35_dASnC1": {
-      "fromContextId": "context15_flVVrS",
+    "flow90_56KnJk": {
+      "fromContextId": "context34_SS1stH",
       "fromAction": "doAction",
-      "fromControlId": "control121_HRP94d",
+      "fromControlId": "control289_EaiJgV",
       "toContexts": [
         {
-          "toContextId": "context15_flVVrS"
+          "toContextId": "context34_SS1stH"
         }
       ]
     }
   },
   "pages": {
-    "page15_A7D6ob": {
-      "contextId": "context15_flVVrS",
+    "page34_wKH3P3": {
+      "contextId": "context34_SS1stH",
       "layout": [
         {
-          "id": "uiControl108_XTpA2l",
-          "controlId": "control108_b7E3pM",
+          "id": "uiControl283_BPyCw9",
+          "controlId": "control283_4gh4I9",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl108_XTpA2l",
-                "onGetTemplate": "getTemplate_uiControl108_XTpA2l"
+                "onDoAction": "doAction_uiControl283_BPyCw9",
+                "onGetTemplate": "getTemplate_uiControl283_BPyCw9"
               }
             }
           }
         },
         {
-          "id": "uiControl109_JWzKky",
-          "controlId": "control109_3sHOzb",
+          "id": "uiControl284_6OVDQw",
+          "controlId": "control284_cRZEJn",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl109_JWzKky",
-                "onGetTemplate": "getTemplate_uiControl109_JWzKky"
+                "onDoAction": "doAction_uiControl284_6OVDQw",
+                "onGetTemplate": "getTemplate_uiControl284_6OVDQw"
               }
             }
           }
         },
         {
-          "id": "uiControl110_WVBDRy",
-          "controlId": "control110_MPTDfR",
+          "id": "uiControl285_PkQaBy",
+          "controlId": "control285_J7SmXU",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl110_WVBDRy",
-                "onGetTemplate": "getTemplate_uiControl110_WVBDRy"
+                "onDoAction": "doAction_uiControl285_PkQaBy",
+                "onGetTemplate": "getTemplate_uiControl285_PkQaBy"
               }
             }
           }
         },
         {
-          "id": "uiControl111_vQybms",
-          "controlId": "control111_7trSib",
+          "id": "uiControl290_znpUK6",
+          "controlId": "control290_5ZFGvs",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl111_vQybms",
-                "onGetTemplate": "getTemplate_uiControl111_vQybms"
+                "onDoAction": "doAction_uiControl290_znpUK6",
+                "onGetTemplate": "getTemplate_uiControl290_znpUK6"
               }
             }
           }
         },
         {
-          "id": "uiControl116_TJWFUr",
-          "controlId": "control116_EP7tH3",
+          "id": "uiControl291_CT3WTT",
+          "controlId": "control291_2be4nc",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl116_TJWFUr",
-                "onGetTemplate": "getTemplate_uiControl116_TJWFUr"
+                "onDoAction": "doAction_uiControl291_CT3WTT",
+                "onGetTemplate": "getTemplate_uiControl291_CT3WTT"
               }
             }
           }
         },
         {
-          "id": "uiControl118_cOHOOx",
-          "controlId": "control118_soe2nM",
+          "id": "uiControl292_soTh7d",
+          "controlId": "control292_KgnWed",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl118_cOHOOx",
-                "onGetTemplate": "getTemplate_uiControl118_cOHOOx"
+                "onDoAction": "doAction_uiControl292_soTh7d",
+                "onGetTemplate": "getTemplate_uiControl292_soTh7d"
               }
             }
           }
         },
         {
-          "id": "uiControl119_bcIo2z",
-          "controlId": "control119_bB414e",
+          "id": "uiControl286_JAgJLf",
+          "controlId": "control286_UTH5nh",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl119_bcIo2z",
-                "onGetTemplate": "getTemplate_uiControl119_bcIo2z"
+                "onDoAction": "doAction_uiControl286_JAgJLf",
+                "onGetTemplate": "getTemplate_uiControl286_JAgJLf"
               }
             }
           }
         },
         {
-          "id": "uiControl120_DWTfFB",
-          "controlId": "control120_Wx2FOX",
+          "id": "uiControl288_5sMqfb",
+          "controlId": "control288_eADbxU",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl120_DWTfFB",
-                "onGetTemplate": "getTemplate_uiControl120_DWTfFB"
+                "onDoAction": "doAction_uiControl288_5sMqfb",
+                "onGetTemplate": "getTemplate_uiControl288_5sMqfb"
               }
             }
           }
         },
         {
-          "id": "uiControl121_lJrxIU",
-          "controlId": "control121_HRP94d",
+          "id": "uiControl289_ZOJlO8",
+          "controlId": "control289_EaiJgV",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl121_lJrxIU",
-                "onGetTemplate": "getTemplate_uiControl121_lJrxIU"
+                "onDoAction": "doAction_uiControl289_ZOJlO8",
+                "onGetTemplate": "getTemplate_uiControl289_ZOJlO8"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl287_yicsyw",
+          "controlId": "control287_ktW9JP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl287_yicsyw",
+                "onGetTemplate": "getTemplate_uiControl287_yicsyw"
               }
             }
           }
@@ -560,26 +595,25 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context15_flVVrS": [
-          "审批流程"
+        "context34_SS1stH": [
+          "员工合同续签申请单 - 审批页"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context15_flVVrS": [
-          "172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=4E3CFE6253F1F2835FCA9DE626CD2A3B&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3",
-          "172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=73DA145900E0ED0C35D16AA0053FE141&Guid=ff1fbd34-d39c-4779-8af6-a247f4759781",
-          "172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=9E50486230A59898F93CCD17DC2B2C13&Guid=e827fdc2-d605-4e92-8398-6aded7530088"
+        "context34_SS1stH": [
+          "172.16.11.61:8000/Forms/HR/YGHTXQ/ProcessingSSC.aspx?SN=4BE3ED6C3DDCC2455455A0DC2E39ADBA&Guid=1a53d696-434f-42e6-bddc-49c53f30a1de"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context15_flVVrS": [
+        "context34_SS1stH": [
           [
             "__EVENTARGUMENT",
             "__EVENTTARGET",
+            "__LASTFOCUS",
             "__SCROLLPOSITIONX",
             "__SCROLLPOSITIONY",
             "__VIEWSTATE",
@@ -626,23 +660,24 @@
             "ctl_LinkedProcInst_hfUserLoginName",
             "ctl_btnSubmit",
             "ctl_contentForm_P",
-            "ctl_contentForm_rptDetail_ctl_hidId",
-            "ctl_contentForm_txt_AppDescription",
-            "ctl_contentForm_txt_ContractAmount",
-            "ctl_contentForm_txt_ContractClass",
-            "ctl_contentForm_txt_ContractTarget",
-            "ctl_contentForm_txt_ContractTitle",
-            "ctl_contentForm_txt_ContractType",
-            "ctl_contentForm_txt_Copys",
-            "ctl_contentForm_txt_Currency",
-            "ctl_contentForm_txt_EndDat",
-            "ctl_contentForm_txt_ExchangeRate",
-            "ctl_contentForm_txt_Ext",
-            "ctl_contentForm_txt_InformName",
-            "ctl_contentForm_txt_IsContinue",
-            "ctl_contentForm_txt_IsFixed",
-            "ctl_contentForm_txt_StrDat",
-            "div",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantName",
+            "ctl_contentForm_txt_CompanyName",
+            "ctl_contentForm_txt_ContracType",
+            "ctl_contentForm_txt_ContractEndDate",
+            "ctl_contentForm_txt_ContractStartDate",
+            "ctl_contentForm_txt_DeptName",
+            "ctl_contentForm_txt_DottedLineManager",
+            "ctl_contentForm_txt_Gender",
+            "ctl_contentForm_txt_HigherManager",
+            "ctl_contentForm_txt_IsRenew",
+            "ctl_contentForm_txt_Jobs",
+            "ctl_contentForm_txt_JoinDate",
+            "ctl_contentForm_txt_PostProperty",
+            "ctl_contentForm_txt_RenewTime",
+            "ctl_contentForm_txt_ServiceAge",
+            "ctl_contentForm_txt_Subordinates",
+            "ctl_contentForm_txt_Workplace",
             "fileAttachment",
             "filePanel",
             "file_upload_form",
@@ -651,6 +686,7 @@
             "hdUserLoginName",
             "person_infor",
             "person_infor_trigger",
+            "tab",
             "tb_AttachmentList",
             "tb_List",
             "uploadDiv",
@@ -661,7 +697,7 @@
     },
     "page/classes": {
       "contexts": {
-        "context15_flVVrS": [
+        "context34_SS1stH": [
           [
             "action-area",
             "aui_border",
@@ -702,9 +738,6 @@
             "gb",
             "green",
             "grey",
-            "icon-cloud-download",
-            "icon-paper-clip",
-            "labelwidth",
             "layout-data",
             "layout-form",
             "logo-leftcorner",
@@ -766,9 +799,6 @@
             "gb",
             "green",
             "grey",
-            "icon-cloud-download",
-            "icon-paper-clip",
-            "labelwidth",
             "layout-data",
             "layout-form",
             "logo-leftcorner",
@@ -789,205 +819,13 @@
             "tj",
             "top",
             "ufoot"
-          ],
-          [
-            "action-area",
-            "aui_border",
-            "aui_buttons",
-            "aui_c",
-            "aui_close",
-            "aui_content",
-            "aui_dialog",
-            "aui_e",
-            "aui_footer",
-            "aui_header",
-            "aui_icon",
-            "aui_iconBg",
-            "aui_inner",
-            "aui_loading",
-            "aui_main",
-            "aui_n",
-            "aui_ne",
-            "aui_nw",
-            "aui_outer",
-            "aui_s",
-            "aui_se",
-            "aui_state_focus",
-            "aui_sw",
-            "aui_title",
-            "aui_titleBar",
-            "aui_w",
-            "ax",
-            "bar-code-rightcorner",
-            "big-form",
-            "btn",
-            "clear",
-            "col",
-            "col-",
-            "fileUpload",
-            "font-lightgrey",
-            "font-red",
-            "font-xxl",
-            "form-wrapper",
-            "gb",
-            "green",
-            "grey",
-            "icon-cloud-download",
-            "icon-paper-clip",
-            "labelwidth",
-            "layout-data",
-            "layout-form",
-            "logo-leftcorner",
-            "meno",
-            "mt-s",
-            "none_edit",
-            "p-explain",
-            "page-shadow",
-            "pz",
-            "red",
-            "required",
-            "shadow",
-            "size-l",
-            "size-s",
-            "swich_btn",
-            "title",
-            "tj",
-            "top",
-            "ufoot"
-          ],
-          [
-            "action-area",
-            "aui_border",
-            "aui_buttons",
-            "aui_c",
-            "aui_close",
-            "aui_content",
-            "aui_dialog",
-            "aui_e",
-            "aui_footer",
-            "aui_header",
-            "aui_icon",
-            "aui_iconBg",
-            "aui_inner",
-            "aui_loading",
-            "aui_main",
-            "aui_n",
-            "aui_ne",
-            "aui_nw",
-            "aui_outer",
-            "aui_s",
-            "aui_se",
-            "aui_state_focus",
-            "aui_sw",
-            "aui_title",
-            "aui_titleBar",
-            "aui_w",
-            "ax",
-            "bar-code-rightcorner",
-            "big-form",
-            "btn",
-            "clear",
-            "col",
-            "col-",
-            "fileUpload",
-            "font-lightgrey",
-            "font-red",
-            "font-xxl",
-            "form-wrapper",
-            "gb",
-            "green",
-            "grey",
-            "labelwidth",
-            "layout-data",
-            "layout-form",
-            "logo-leftcorner",
-            "meno",
-            "mt-s",
-            "none_edit",
-            "p-explain",
-            "page-shadow",
-            "pz",
-            "red",
-            "required",
-            "shadow",
-            "size-l",
-            "size-s",
-            "swich_btn",
-            "title",
-            "tj",
-            "top",
-            "ufoot"
           ]
         ]
       }
     },
     "page/tagTriplets": {
       "contexts": {
-        "context15_flVVrS": [
-          [
-            "-/-/DIV",
-            "-/-/FORM",
-            "-/-/IFRAME",
-            "-/-/SCRIPT",
-            "-/DIV/DIV",
-            "-/DIV/IFRAME",
-            "-/FORM/DIV",
-            "-/FORM/INPUT-hidden",
-            "-/FORM/SCRIPT",
-            "-/FORM/SPAN",
-            "DIV/DIV/A",
-            "DIV/DIV/BR",
-            "DIV/DIV/BUTTON",
-            "DIV/DIV/DIV",
-            "DIV/DIV/H1",
-            "DIV/DIV/IMG",
-            "DIV/DIV/INPUT-hidden",
-            "DIV/DIV/INPUT-submit",
-            "DIV/DIV/INPUT-text",
-            "DIV/DIV/P",
-            "DIV/DIV/SPAN",
-            "DIV/DIV/TABLE",
-            "DIV/H1/BR",
-            "DIV/H1/SPAN",
-            "DIV/P/BR",
-            "DIV/P/STRONG",
-            "DIV/SPAN/INPUT-file",
-            "DIV/TABLE/TBODY",
-            "DIV/TABLE/THEAD",
-            "DIV/UL/LI",
-            "FORM/DIV/BR",
-            "FORM/DIV/BUTTON",
-            "FORM/DIV/DIV",
-            "FORM/DIV/INPUT-hidden",
-            "FORM/DIV/SCRIPT",
-            "FORM/DIV/TABLE",
-            "FORM/DIV/UL",
-            "LI/SPAN/A",
-            "TABLE/TBODY/TR",
-            "TABLE/THEAD/TR",
-            "TBODY/TR/TD",
-            "TBODY/TR/TH",
-            "TD/A/I",
-            "TD/DIV/A",
-            "TD/DIV/DIV",
-            "TD/DIV/TABLE",
-            "TD/LABEL/BR",
-            "TD/LABEL/SPAN",
-            "TD/SPAN/TEXTAREA",
-            "THEAD/TR/TH",
-            "TR/TD/A",
-            "TR/TD/BR",
-            "TR/TD/DIV",
-            "TR/TD/I",
-            "TR/TD/INPUT-hidden",
-            "TR/TD/INPUT-text",
-            "TR/TD/LABEL",
-            "TR/TD/P",
-            "TR/TD/SPAN",
-            "TR/TD/TEXTAREA",
-            "TR/TH/SPAN",
-            "UL/LI/SPAN"
-          ],
+        "context34_SS1stH": [
           [
             "-/-/DIV",
             "-/-/FORM",
@@ -1034,19 +872,16 @@
             "TD/DIV/A",
             "TD/DIV/DIV",
             "TD/DIV/TABLE",
-            "TD/LABEL/BR",
             "TD/LABEL/SPAN",
             "TD/SPAN/TEXTAREA",
             "THEAD/TR/TH",
             "TR/TD/BR",
             "TR/TD/DIV",
-            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-radio",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",
             "TR/TD/P",
             "TR/TD/SPAN",
-            "TR/TD/TEXTAREA",
-            "TR/TH/SPAN",
             "UL/LI/SPAN"
           ]
         ]

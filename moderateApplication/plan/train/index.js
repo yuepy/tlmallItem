@@ -103,7 +103,7 @@
     },
     doAction_uiControl170_Lyur2F: function (data, elem) {
       if (data.eventType == 'change') {
-        elem.querySelector('textarea').value = data;
+        elem.querySelector('textarea').value = data.customData;
       }
     },
     getTemplate_uiControl170_Lyur2F: function () {

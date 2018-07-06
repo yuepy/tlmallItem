@@ -86,7 +86,7 @@
     },
     doAction_uiControl188_DHCU2k: function (data, elem) {
       if (data.eventType == 'change') {
-        elem.querySelector('textarea').value = data;
+        elem.querySelector('textarea').value = data.customData;
       }
     },
     getTemplate_uiControl188_DHCU2k: function () {
@@ -129,7 +129,7 @@
     getData_control192_vKFdIB: function (elem) {
       if (!elem) {
         return;
-      }var titles = elem.querySelectorAll('.title');var data = {};data.id = elem.id;data.titles = []; //当id为这个的时候为上级填写栏
+      }var titles = elem.querySelectorAll('.title');var data = {};data.contentposition = {};data.contentposition.flat = false;data.id = elem.id;data.titles = []; //当id为这个的时候为上级填写栏
       if (data.id == 'ctl00_contentForm_UCSFInfo3_P1') {
         data.titles[0] = '填写指引';for (var i = 0; i < titles.length; i++) {
           data.titles.push(titles[i].textContent.trim());
@@ -241,8 +241,7 @@
           }data.content.push(arr);
         } //继任人选
         //弹出层
-        data.contentposition = {}; // debugger;
-        var floatbox = elem.parentElement.parentElement.parentElement.previousElementSibling.querySelector('table').querySelectorAll('tr')[1];data.contentposition.title = '查询条件';data.contentposition.btn = ['确定', '取消'];data.contentposition.flat = false;data.contentposition.waitoptions = [];data.contentposition.listoptions = [];data.contentposition.waitoptvalue = [];data.contentposition.waitid = 'listWaitingSelect';data.contentposition.listid = 'listSelected';data.contentposition.txtid = 'S_E_L_E_C_T_O_R_txtSearchEmployee';data.contentposition.btnid = 'S_E_L_E_C_T_O_R_btnSearchEmployee';data.contentposition.listoptvalue = [];if (floatbox.querySelector('div.aui_content') == floatbox.querySelector('div.aui_state_full')) {
+        data.contentposition = {};var floatbox = elem.parentElement.parentElement.parentElement.previousElementSibling.querySelector('table').querySelectorAll('tr')[1];data.contentposition.title = '查询条件';data.contentposition.btn = ['确定', '取消'];data.contentposition.flat = false;data.contentposition.waitoptions = [];data.contentposition.listoptions = [];data.contentposition.waitoptvalue = [];data.contentposition.waitid = 'listWaitingSelect';data.contentposition.listid = 'listSelected';data.contentposition.txtid = 'S_E_L_E_C_T_O_R_txtSearchEmployee';data.contentposition.btnid = 'S_E_L_E_C_T_O_R_btnSearchEmployee';data.contentposition.listoptvalue = [];if (floatbox.querySelector('div.aui_content') == floatbox.querySelector('div.aui_state_full')) {
           var ketbtn = floatbox.querySelector('div.aui_state_full').querySelector('iframe').contentDocument.querySelector('div.body').querySelectorAll('botton');var waitselect = floatbox.querySelector('div.aui_state_full').querySelector('iframe').contentDocument.querySelector('div.body').querySelector('#listWaitingSelect');var options = waitselect.querySelectorAll('option');for (var t = 0; t < options.length; t++) {
             data.contentposition.waitoptions.push(options[t].textContent.trim());data.contentposition.waitoptvalue.push(options[t].value);
           }var listopts = floatbox.querySelector('div.aui_state_full').querySelector('iframe').contentDocument.querySelector('div.body').querySelector('#listSelected').querySelectorAll('option');for (var t = 0; t < listopts.length; t++) {

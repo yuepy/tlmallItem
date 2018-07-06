@@ -174,7 +174,7 @@
         if(tds.length>0){
           for(var k=0;k<data.titles.length;k++){
             if(tds[k].querySelector('input')){
-              arr.push(tds[k].querySelector('input').value)
+              arr.push(tds[k].querySelectorAll('input')[tds[k].querySelectorAll('input').length-1].value)
             }else{
             	arr.push(tds[k].textContent.trim());
             }

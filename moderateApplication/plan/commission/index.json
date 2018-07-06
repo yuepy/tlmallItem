@@ -16,7 +16,7 @@
     "travel": "../travel/index.json",
     "examination_abnormal": "../examination_abnormal/index.json",
     "contract": "../contract/index.json",
-    "probationformal": "file://C:/Users/xubo/Documents/enterplorer/enterprises/587743d37df4e62b8c4e3d60/apps/moderateApplication/plan/probationformal/index.json",
+    "probationformal": "../probationformal/index.json",
     "train": "../train/index.json",
     "creditXYDJSF": "../creditXYDJSF/index.json",
     "entry": "../entry/index.json",
@@ -24,7 +24,15 @@
     "borrowmon": "../borrowmon/index.json",
     "staffspecial": "../staffspecial/index.json",
     "dealtIndex": "../dealtIndex/index.json",
-    "haveDoneIndex": "../haveDoneIndex/index.json"
+    "haveDoneIndex": "../haveDoneIndex/index.json",
+    "purchase": "../purchase/index.json",
+    "batchex": "../batchex/index.json",
+    "personnel": "../personnel/index.json",
+    "routeNew": "../routeNew/index.json",
+    "routechange": "../routechange/index.json",
+    "RenewalApplication": "../RenewalApplication/index.json",
+    "assedbudget": "../assedbudget/index.json",
+    "renewal": "../renewal/index.json"
   },
   "chineseName": "代办首页",
   "description": "代办首页",
@@ -275,6 +283,120 @@
         {
           "toContextId": "context4_nyVhNa",
           "toModelId": "leave"
+        },
+        {
+          "toContextId": "context33_sAXJax",
+          "toModelId": "purchase"
+        },
+        {
+          "toContextId": "context32_SUlTve",
+          "toModelId": "batchex"
+        },
+        {
+          "toContextId": "context23_vDtiE1",
+          "toModelId": "personnel"
+        },
+        {
+          "toContextId": "context6_wk2SuT",
+          "toModelId": "awaybusiness"
+        },
+        {
+          "toContextId": "context3_h3SngD",
+          "toModelId": "Quit"
+        },
+        {
+          "toContextId": "context2_yipHVo",
+          "toModelId": "Printing"
+        },
+        {
+          "toContextId": "context15_flVVrS",
+          "toModelId": "contract"
+        },
+        {
+          "toContextId": "context16_Kn6Bzh",
+          "toModelId": "train"
+        },
+        {
+          "toContextId": "context9_7mrSEm",
+          "toModelId": "assetbudget"
+        },
+        {
+          "toContextId": "context12_NhVsKN",
+          "toModelId": "assetshandle"
+        },
+        {
+          "toContextId": "context14_Nkwmgd",
+          "toModelId": "examination_abnormal"
+        },
+        {
+          "toContextId": "context7_o6oRBN",
+          "toModelId": "overtime"
+        },
+        {
+          "toContextId": "context8_9ZSEK4",
+          "toModelId": "eliminate"
+        },
+        {
+          "toContextId": "context11_mB0Nro",
+          "toModelId": "costreimbursement"
+        },
+        {
+          "toContextId": "context5_89gtiq",
+          "toModelId": "travel"
+        },
+        {
+          "toContextId": "context13_FMltEV",
+          "toModelId": "probationformal"
+        },
+        {
+          "toContextId": "context19_g6Z7vh",
+          "toModelId": "borrowmon"
+        },
+        {
+          "toContextId": "context30_GOG0PI",
+          "toModelId": "routeNew"
+        },
+        {
+          "toContextId": "context31_cTTiNK",
+          "toModelId": "routechange"
+        },
+        {
+          "toContextId": "context20_4zxkiP",
+          "toModelId": "entry"
+        },
+        {
+          "toContextId": "context21_qa2E2Z",
+          "toModelId": "recruit"
+        },
+        {
+          "toContextId": "context18_a7Av8T",
+          "toModelId": "creditXYDJSF"
+        },
+        {
+          "toContextId": "context23_F8ZgpJ",
+          "toModelId": "RenewalApplication"
+        },
+        {
+          "toContextId": "context29_hdcu03",
+          "toModelId": "assedbudget"
+        },
+        {
+          "toContextId": "context22_L7nfn7",
+          "toModelId": "staffspecial"
+        },
+        {
+          "toContextId": "context34_SS1stH",
+          "toModelId": "renewal"
+        }
+      ]
+    },
+    "flow85_rVsMn4": {
+      "fromContextId": "context1_CPB3yD",
+      "fromAction": "doAction",
+      "fromControlId": "control231_r4Lwgd",
+      "toContexts": [
+        {
+          "toContextId": "context1_CPB3yD"
         }
       ]
     }

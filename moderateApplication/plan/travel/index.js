@@ -81,7 +81,7 @@
     },
     doAction_uiControl45_lAB3qM: function (data, elem) {
       if (data.eventType == 'change') {
-        elem.querySelector('textarea').value = data;
+        elem.querySelector('textarea').value = data.customData;
       }
     },
     getTemplate_uiControl45_lAB3qM: function () {

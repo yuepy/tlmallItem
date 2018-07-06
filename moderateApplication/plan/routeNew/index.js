@@ -152,7 +152,7 @@
     },
     doAction_uiControl246_TEZRE8: function (data, elem) {
       if (data.eventType == 'change') {
-        elem.querySelector('textarea').value = data;
+        elem.querySelector('textarea').value = data.customData;
       }
     },
     getTemplate_uiControl246_TEZRE8: function () {

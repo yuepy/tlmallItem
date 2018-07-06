@@ -3,13 +3,18 @@
   "id": "recruit",
   "targetURL": "http://172.16.11.61:8000/Forms/Hr/ZPSQ/Processing.aspx?SN=51C88304FB6ED1433ACA9C692F4E9E58&Guid=3718d077-b1b6-43be-bd68-21bde726d0f6",
   "jsFile": "index.js",
-  "chineseName": "招聘申请单",
+  "chineseName": "待办招聘申请单",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control155_wBW2Z7": {
       "location": {
         "data": {
           "tagName": "H1"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -45,6 +50,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -82,6 +91,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -118,6 +131,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -153,6 +170,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -193,6 +214,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -232,6 +257,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -270,6 +299,10 @@
       "location": {
         "data": {
           "tagName": "UL"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -315,7 +348,9 @@
         "control162_JZanfk"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/Hr\\/ZPSQ\\/Processing\\.aspx\\?.*"
+      ]
     }
   },
   "flows": {
@@ -695,6 +730,67 @@
             "red",
             "shadow",
             "show",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "action-area",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "shadow",
             "size-l",
             "size-s",
             "swich_btn",

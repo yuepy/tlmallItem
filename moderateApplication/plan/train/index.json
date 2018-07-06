@@ -3,7 +3,7 @@
   "id": "train",
   "targetURL": "http://172.16.11.61:8000/Forms/HR/PXSQ/Processing.aspx?SN=7F1887BFC775777E40462209C765888A&Guid=47b9c2f9-fe37-401c-a176-40a28dc41781",
   "jsFile": "index.js",
-  "chineseName": "培训申请单",
+  "chineseName": "待办培训申请单",
   "description": "",
   "firstPaintEnable": false,
   "controls": {
@@ -353,6 +353,26 @@
   },
   "flows": {
     "flow37_9BU2tE": {
+      "toContexts": [
+        {
+          "toContextId": "context16_Kn6Bzh"
+        }
+      ]
+    },
+    "flow95_EIBb4I": {
+      "fromContextId": "context16_Kn6Bzh",
+      "fromAction": "doAction",
+      "fromControlId": "control170_qT92ls",
+      "toContexts": [
+        {
+          "toContextId": "context16_Kn6Bzh"
+        }
+      ]
+    },
+    "flow96_4ImNU7": {
+      "fromContextId": "context16_Kn6Bzh",
+      "fromAction": "doAction",
+      "fromControlId": "control168_5BFgBK",
       "toContexts": [
         {
           "toContextId": "context16_Kn6Bzh"
@@ -952,6 +972,69 @@
             "aui_s",
             "aui_se",
             "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "del",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "icon-trash",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "action-area",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
             "aui_sw",
             "aui_title",
             "aui_titleBar",

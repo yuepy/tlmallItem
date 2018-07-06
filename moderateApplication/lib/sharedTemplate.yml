@@ -435,48 +435,6 @@
       var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
       tds[tds.length - 1].querySelectorAll('a')[data.i].click();
     }
-- name: 审批操作item
-  getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
-  getData: >
-    if (!elem) {
-      return;
-    }
-
-    var data = {};
-
-    data.title = '审批操作';
-
-    data.content = [];
-
-    var trs = elem.querySelectorAll('tr');
-
-    var obj = {};
-
-    obj.left = '当前环节';
-
-    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
-
-    data.content.push(obj);
-
-    var obj = {};
-
-    obj.left = '意见';
-
-    obj.right =
-    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
-
-    data.content.push(obj);
-
-    data.content.push({
-      left: trs[1].querySelectorAll('td')[1].textContent.trim()
-    });
-
-    return data;
-  doAction: |
-    if (data.eventType == 'change') {
-      elem.querySelector('textarea').value = data;
-
-    }
 - name: 分页
   getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:target.getAttribute('data-id')\n      })\n    }\n  },\n  onclickpage:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'onclickpage',\n        data:[target.dataset.index,target.dataset.id]\n      })\n    }\n  },\n  onclickpreOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onclickpreOnce'\n        \n      })\n    }\n  },\n  onClicknextOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onClicknextOnce',\n        \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return (\n        <div>\n        \t暂无数据\n        </div>\n      )\n    }\n    var str = '<',kr = '|<',\n        _this = this;\n    var lis = data.content.map(function(ele,index){\n      if(index!=0&&index!=data.content.length-1){\n        return(\n        \t<li data-id={index} onClick={_this.onClick} className={ele.class}>{ele.text}</li>\n        )\n      }\n    })\n    return (\n      <div className='footerbtn'>\n        <ul>\n          <li data-id='prevPage' data-index={0} onClick={_this.onclickpage.bind(_this)} className='ysp-prePage'>{kr}</li>\n          <li data-id='prev' onClick={_this.onclickpreOnce.bind(_this)} className='ysp-preOnce'>{str}</li>\n          {lis}\n          <li data-id='next' onClick={_this.onClicknextOnce.bind(_this)} className='ysp-nextOne'>></li>\n          <li data-id='nextPage' data-index={data.content.length-1} onClick={_this.onclickpage.bind(_this)} className='ysp-nextPage'>>|</li>\n        </ul>\n      </div>\n    )\n  }\n});"
   getData: |
@@ -1014,4 +972,45 @@
       var val = data.dataCustom[1];
       var target = elem.querySelector("#" + id);
       target.value = val;
+    }
+- name: 审批操作item
+  getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {};
+
+    data.title = '审批操作';
+
+    data.content = [];
+
+    var trs = elem.querySelectorAll('tr');
+
+    var obj = {};
+
+    obj.left = '当前环节';
+
+    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
+
+    data.content.push(obj);
+
+    var obj = {};
+
+    obj.left = '意见';
+
+    obj.right =
+    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
+
+    data.content.push(obj);
+
+    data.content.push({
+      left: trs[1].querySelectorAll('td')[1].textContent.trim()
+    });
+
+    return data;
+  doAction: |
+    if (data.eventType == 'change') {
+      elem.querySelector('textarea').value = data.customData;
     }

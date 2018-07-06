@@ -99,7 +99,7 @@
     },
     doAction_uiControl143_wRfWTZ: function (data, elem) {
       if (data.eventType == 'change') {
-        elem.querySelector('textarea').value = data;
+        elem.querySelector('textarea').value = data.customData;
       }
     },
     getTemplate_uiControl143_wRfWTZ: function () {

@@ -3,7 +3,10 @@
   "id": "costreimbursement",
   "targetURL": "http://172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=6F27552185A1F052DC97A4309596EAFB&Guid=85ee9e59-f341-4fe3-82db-3bf44dbaaa33#",
   "jsFile": "index.js",
-  "chineseName": "费用报销流程",
+  "requires": {
+    "dealtIndex": "../dealtIndex/index.json"
+  },
+  "chineseName": "待办费用报销流程",
   "description": "",
   "firstPaintEnable": false,
   "controls": {
@@ -426,6 +429,10 @@
       "toContexts": [
         {
           "toContextId": "context11_mB0Nro"
+        },
+        {
+          "toContextId": "context24_EkSRuv",
+          "toModelId": "dealtIndex"
         }
       ]
     },
@@ -443,6 +450,16 @@
       "fromContextId": "context11_mB0Nro",
       "fromAction": "doAction",
       "fromControlId": "control83_Xx5WxU",
+      "toContexts": [
+        {
+          "toContextId": "context11_mB0Nro"
+        }
+      ]
+    },
+    "flow106_e0GEJ8": {
+      "fromContextId": "context11_mB0Nro",
+      "fromAction": "doAction",
+      "fromControlId": "control80_KHkvnv",
       "toContexts": [
         {
           "toContextId": "context11_mB0Nro"

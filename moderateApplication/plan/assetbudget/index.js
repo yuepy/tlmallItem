@@ -102,7 +102,7 @@
     },
     doAction_uiControl73_GJpICA: function (data, elem) {
       if (data.eventType == 'change') {
-        elem.querySelector('textarea').value = data;
+        elem.querySelector('textarea').value = data.customData;
       }
     },
     getTemplate_uiControl73_GJpICA: function () {
