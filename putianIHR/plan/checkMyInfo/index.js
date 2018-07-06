@@ -9,7 +9,7 @@
         //   top.EAPI.closeWindow();
         // } else {
         //   ysp.appMain.back();
-        // } 
+        // }
         ysp.appMain.back();
       } else if (type == "filter") {
         elem.click();

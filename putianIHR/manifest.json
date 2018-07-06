@@ -96,6 +96,16 @@
       "demo": [
         "http://192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_004.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_004_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455558703878902&IsFolder=false"
       ]
+    },
+    {
+      "title": "menu",
+      "url": "adapter://putianIHR/plan/menu/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?.*"
+      ],
+      "demo": [
+        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
+      ]
     }
   ],
   "name": "普天HR系统",
