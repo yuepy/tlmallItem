@@ -1,17 +1,13 @@
 {
   "version": "0.1",
-  "id": "RenewalApplication",
-  "targetURL": "http://172.16.11.61:8000/Forms/HR/YGHTXQ/Processing.aspx?SN=44F65C11A74909B626215D5D215E8380&Guid=d7f88805-e932-4b7d-8341-a39ba997ce06",
+  "id": "HaveDoneLeave",
+  "targetURL": "http://172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=E543852AA7A74040",
   "jsFile": "index.js",
-  "requires": {
-    "commission": "../commission/index.json"
-  },
-
-  "chineseName": "代办员工合同续签申请单（lh）",
+  "chineseName": "已办请假申请单",
   "description": "",
   "firstPaintEnable": false,
   "controls": {
-    "control165_igAkCc": {
+    "control276_KSoFCz": {
       "location": {
         "data": {
           "tagName": "H1"
@@ -32,7 +28,7 @@
           {
             "id": "@class/word",
             "prob": 1,
-            "value": "DIV.big-form.page-shadow DIV.top H1"
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.top H1"
           },
           {
             "id": "path/ordinal",
@@ -42,7 +38,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control165_igAkCc"
+        "onGetData": "getData_control276_KSoFCz"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -50,7 +46,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control167_SKXxVq": {
+    "control278_5a797l": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -71,7 +67,7 @@
           {
             "id": "@class/word",
             "prob": 1,
-            "value": "DIV.big-form.page-shadow DIV.show"
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.show"
           },
           {
             "id": "path/ordinal",
@@ -81,7 +77,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control167_SKXxVq"
+        "onGetData": "getData_control278_5a797l"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -90,7 +86,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control168_dkXi2m": {
+    "control282_2m9TIB": {
       "location": {
         "data": {
           "tagName": "TABLE"
@@ -109,18 +105,6 @@
             ]
           },
           {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "ctl00_contentForm_P1",
-              "tagName": "DIV",
-              "prefix": "FORM[@id=\"aspnetForm\"]//",
-              "suffix": "/DIV[1]/TABLE[1]",
-              "ratio": 0.336
-            }
-          },
-          {
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
@@ -137,48 +121,243 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control168_dkXi2m"
+        "onGetData": "getData_control282_2m9TIB"
       },
       "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
+      "roles": "element,link,custom",
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control179_AZytbK": {
+    "control283_2pTyyv": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "intendedRole": "dialog",
+      "roles": "element,dialog",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "dialog"
+    },
+    "control285_pZvOvt": {
       "location": {
         "data": {
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [
-            {
-              "method": "XPath",
-              "value": "//*[@id=\"ctl00_contentForm_P1\"]/div[5]/table"
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[2]/DIV[1]/TABLE[1]",
+              "ratio": 0.773
             }
-          ],
-          "force": true
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons DIV.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control285_pZvOvt"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control286_qB4y6e": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[2]/TABLE[1]",
+              "ratio": 0.641
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons TABLE.layout-data.zebra.hover"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control286_qB4y6e"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control287_DRaF8r": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons DIV.anpager"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/DIV[2]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control287_DRaF8r"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control288_TTiPDJ": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
         },
         "locators": [
           {
             "id": "@id/word",
             "prob": 1,
             "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[5]/TABLE[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]",
               "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
             ]
           },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control288_TTiPDJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control290_yekn6M": {
+      "location": {
+        "data": {
+          "tagName": "H3"
+        },
+        "locators": [
           {
             "id": "@id/partialWord",
             "prob": 1,
             "disabled": true,
             "value": {
-              "elemId": "ctl00_contentForm_P1",
-              "tagName": "DIV",
-              "prefix": "FORM[@id=\"aspnetForm\"]//",
-              "suffix": "/DIV[5]/TABLE[1]",
-              "ratio": 0.336
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/H3[1]",
+              "ratio": 0.773
             }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons DIV.top H3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/H3[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control290_yekn6M"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control291_5zL02c": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[3]",
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+            ]
           },
           {
             "id": "@class/word",
@@ -192,12 +371,12 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[5]/TABLE[1]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[3]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control179_AZytbK"
+        "onGetData": "getData_control291_5zL02c"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -205,76 +384,17 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control180_TnSvRc": {
+    "control292_OBdSgu": {
       "location": {
         "data": {
           "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[7]/TABLE[1]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "ctl00_contentForm_P1",
-              "tagName": "DIV",
-              "prefix": "FORM[@id=\"aspnetForm\"]//",
-              "suffix": "/DIV[7]/TABLE[1]",
-              "ratio": 0.336
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              2
-            ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[7]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control180_TnSvRc"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control181_QDe3ar": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
             "id": "@id/word",
             "prob": 2,
             "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[3]",
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[2]",
               "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
             ]
           },
@@ -282,20 +402,20 @@
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
-              4,
-              5
+              2,
+              3
             ],
-            "value": "DIV.big-form.page-shadow TABLE.layout-data"
+            "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control181_QDe3ar"
+        "onGetData": "getData_control292_OBdSgu"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -303,331 +423,323 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control182_Lm3yd7": {
+    "control293_fVwefE": {
       "location": {
         "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "A"
         },
         "locators": [
           {
-            "id": "@id/word",
+            "id": "a/@href",
             "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[24]/TABLE[1]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              3,
-              4
-            ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[24]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control182_Lm3yd7"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control184_y2tZ1Z": {
-      "location": {
-        "data": {
-          "tagName": "UL"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[5]/UL[1]",
-              "descendant::FORM[@id=\"aspnetForm\"]//UL"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.ufoot UL.ax"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/UL[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control184_y2tZ1Z"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control185_TbOIpd": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[7]/TABLE[2]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "ctl00_contentForm_P1",
-              "tagName": "DIV",
-              "prefix": "FORM[@id=\"aspnetForm\"]//",
-              "suffix": "/DIV[7]/TABLE[2]",
-              "ratio": 0.356
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
             "ordinal": [
               1,
               2
             ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data"
+            "value": {
+              "funcName": "__doPostBack"
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ufoot UL.ax LI.gb SPAN A"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[7]/TABLE[2]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/UL[1]/LI[2]/SPAN[1]/A[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control185_TbOIpd"
+        "onGetData": "getData_control293_fVwefE"
       },
       "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
+      "roles": "element,link,custom",
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     }
   },
   "contexts": {
-    "context23_F8ZgpJ": {
+    "context33_nImxHe": {
       "controls": [
-        "control165_igAkCc",
-        "control167_SKXxVq",
-        "control168_dkXi2m",
-        "control179_AZytbK",
-        "control180_TnSvRc",
-        "control181_QDe3ar",
-        "control182_Lm3yd7",
-        "control184_y2tZ1Z",
-        "control185_TbOIpd"
+        "control276_KSoFCz",
+        "control278_5a797l",
+        "control282_2m9TIB",
+        "control283_2pTyyv",
+        "control285_pZvOvt",
+        "control286_qB4y6e",
+        "control287_DRaF8r",
+        "control288_TTiPDJ",
+        "control290_yekn6M",
+        "control291_5zL02c",
+        "control292_OBdSgu",
+        "control293_fVwefE"
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/HR\\/YGHTXQ\\/Processing\\.aspx\\?.*"
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/HR\\/QJSQLC\\/View\\.aspx\\?.*"
       ]
     }
   },
   "flows": {
-    "flow43_xzRHe7": {
+    "flow82_6KB8VQ": {
       "toContexts": [
         {
-          "toContextId": "context23_F8ZgpJ"
-        },
-        {
-          "toContextId": "context1_CPB3yD",
-          "toModelId": "commission"
+          "toContextId": "context33_nImxHe"
         }
       ]
     },
-    "flow49_zyPTwX": {
-      "fromContextId": "context23_F8ZgpJ",
+    "flow84_QRahvu": {
+      "fromContextId": "context33_nImxHe",
       "fromAction": "doAction",
-      "fromControlId": "control184_y2tZ1Z",
+      "fromControlId": "control282_2m9TIB",
       "toContexts": [
         {
-          "toContextId": "context23_F8ZgpJ"
+          "toContextId": "context33_nImxHe"
         }
       ]
     },
-    "flow88_Ck2Xc0": {
-      "fromContextId": "context23_F8ZgpJ",
+    "flow88_rirel0": {
+      "fromContextId": "context33_nImxHe",
       "fromAction": "doAction",
-      "fromControlId": "control182_Lm3yd7",
+      "fromControlId": "control285_pZvOvt",
       "toContexts": [
         {
-          "toContextId": "context23_F8ZgpJ"
+          "toContextId": "context33_nImxHe"
+        }
+      ]
+    },
+    "flow89_iiWXws": {
+      "fromContextId": "context33_nImxHe",
+      "fromAction": "click",
+      "fromControlId": "control283_2pTyyv",
+      "toContexts": [
+        {
+          "toContextId": "context33_nImxHe"
+        }
+      ]
+    },
+    "flow81_DMJprJ": {
+      "fromContextId": "context33_nImxHe",
+      "fromAction": "doAction",
+      "fromControlId": "control290_yekn6M",
+      "toContexts": [
+        {
+          "toContextId": "context33_nImxHe"
         }
       ]
     }
   },
   "pages": {
-    "page23_dbHLdg": {
-      "contextId": "context23_F8ZgpJ",
+    "page33_TtxagS": {
+      "contextId": "context33_nImxHe",
       "layout": [
         {
-          "id": "uiControl165_tTClZ3",
-          "controlId": "control165_igAkCc",
+          "id": "uiControl276_WULyC6",
+          "controlId": "control276_KSoFCz",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl165_tTClZ3",
-                "onGetTemplate": "getTemplate_uiControl165_tTClZ3"
+                "onDoAction": "doAction_uiControl276_WULyC6",
+                "onGetTemplate": "getTemplate_uiControl276_WULyC6"
               }
             }
           }
         },
         {
-          "id": "uiControl167_0M1geC",
-          "controlId": "control167_SKXxVq",
+          "id": "uiControl278_MCLB0f",
+          "controlId": "control278_5a797l",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl167_0M1geC",
-                "onGetTemplate": "getTemplate_uiControl167_0M1geC"
+                "onDoAction": "doAction_uiControl278_MCLB0f",
+                "onGetTemplate": "getTemplate_uiControl278_MCLB0f"
               }
             }
           }
         },
         {
-          "id": "uiControl168_CoIFDp",
-          "controlId": "control168_dkXi2m",
+          "id": "uiControl282_NlknUG",
+          "controlId": "control282_2m9TIB",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl168_CoIFDp",
-                "onGetTemplate": "getTemplate_uiControl168_CoIFDp"
+                "onDoAction": "doAction_uiControl282_NlknUG",
+                "onGetTemplate": "getTemplate_uiControl282_NlknUG"
               }
             }
           }
         },
         {
-          "id": "uiControl179_iUN6UE",
-          "controlId": "control179_AZytbK",
+          "id": "uiControl283_rpQl9W",
+          "controlId": "control283_2pTyyv",
+          "display": {
+            "adapterId": "dialog",
+            "type": "dialog",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl283_rpQl9Wbody",
+              "display": {
+                "type": "dialogBody",
+                "adapterId": "dialogBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl283_rpQl9Wfooter",
+              "display": {
+                "type": "dialogFooter",
+                "adapterId": "dialogFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl290_XT2IBJ",
+                  "controlId": "control290_yekn6M",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl290_XT2IBJ",
+                        "onGetTemplate": "getTemplate_uiControl290_XT2IBJ"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl285_qk7oMu",
+                  "controlId": "control285_pZvOvt",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl285_qk7oMu",
+                        "onGetTemplate": "getTemplate_uiControl285_qk7oMu"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl286_XTwepc",
+                  "controlId": "control286_qB4y6e",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl286_XTwepc",
+                        "onGetTemplate": "getTemplate_uiControl286_XTwepc"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl287_oylsPF",
+                  "controlId": "control287_DRaF8r",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl287_oylsPF",
+                        "onGetTemplate": "getTemplate_uiControl287_oylsPF"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uiControl288_igDASb",
+          "controlId": "control288_TTiPDJ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl179_iUN6UE",
-                "onGetTemplate": "getTemplate_uiControl179_iUN6UE"
+                "onDoAction": "doAction_uiControl288_igDASb",
+                "onGetTemplate": "getTemplate_uiControl288_igDASb"
               }
             }
           }
         },
         {
-          "id": "uiControl180_cczDrk",
-          "controlId": "control180_TnSvRc",
+          "id": "uiControl291_2Z40SB",
+          "controlId": "control291_5zL02c",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl180_cczDrk",
-                "onGetTemplate": "getTemplate_uiControl180_cczDrk"
+                "onDoAction": "doAction_uiControl291_2Z40SB",
+                "onGetTemplate": "getTemplate_uiControl291_2Z40SB"
               }
             }
           }
         },
         {
-          "id": "uiControl185_i9tSlZ",
-          "controlId": "control185_TbOIpd",
+          "id": "uiControl292_GO1VUL",
+          "controlId": "control292_OBdSgu",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl185_i9tSlZ",
-                "onGetTemplate": "getTemplate_uiControl185_i9tSlZ"
+                "onDoAction": "doAction_uiControl292_GO1VUL",
+                "onGetTemplate": "getTemplate_uiControl292_GO1VUL"
               }
             }
           }
         },
         {
-          "id": "uiControl181_Mrxv1n",
-          "controlId": "control181_QDe3ar",
+          "id": "uiControl293_qdzcov",
+          "controlId": "control293_fVwefE",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl181_Mrxv1n",
-                "onGetTemplate": "getTemplate_uiControl181_Mrxv1n"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl182_CNpspi",
-          "controlId": "control182_Lm3yd7",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl182_CNpspi",
-                "onGetTemplate": "getTemplate_uiControl182_CNpspi"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl184_8sspuH",
-          "controlId": "control184_y2tZ1Z",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl184_8sspuH",
-                "onGetTemplate": "getTemplate_uiControl184_8sspuH"
+                "onDoAction": "doAction_uiControl293_qdzcov",
+                "onGetTemplate": "getTemplate_uiControl293_qdzcov"
               }
             }
           }
@@ -638,56 +750,33 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context23_F8ZgpJ": [
-          "员工合同续签申请单 - 审批页"
+        "context33_nImxHe": [
+          "请假流程-查看页面"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context23_F8ZgpJ": [
-          "172.16.11.61:8000/Forms/HR/YGHTXQ/Processing.aspx?SN=44F65C11A74909B626215D5D215E8380&Guid=d7f88805-e932-4b7d-8341-a39ba997ce06",
-          "172.16.11.61:8000/Forms/HR/YGHTXQ/ProcessingSSC.aspx?SN=4BE3ED6C3DDCC2455455A0DC2E39ADBA&Guid=1a53d696-434f-42e6-bddc-49c53f30a1de"
+        "context33_nImxHe": [
+          "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=E543852AA7A74040",
+          "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=7DD97F1471997E32",
+          "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=B699FAB6AF19DE86",
+          "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=20C51A0A24C5D895"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context23_F8ZgpJ": [
+        "context33_nImxHe": [
           [
+            "AppUsersDiv",
             "__EVENTARGUMENT",
             "__EVENTTARGET",
             "__SCROLLPOSITIONX",
             "__SCROLLPOSITIONY",
             "__VIEWSTATE",
-            "_myDP",
-            "approveMemo",
             "aspnetForm",
             "btnAddLink",
-            "btnFileUpload",
-            "ctl_ActionBar_Action",
-            "ctl_ActionBar_ActionName",
-            "ctl_ActionBar_AddApprover",
-            "ctl_ActionBar_AddApproverName",
-            "ctl_ActionBar_Approval",
-            "ctl_ActionBar_GotoActivityName",
-            "ctl_ActionBar_IsReturnBack",
-            "ctl_ActionBar_UserAction",
-            "ctl_ActionBar_WorkFlow",
-            "ctl_ActionBar_btnAddApprover",
-            "ctl_ActionBar_btnApprove",
-            "ctl_ActionBar_btnClose",
-            "ctl_ActionBar_btnInform",
-            "ctl_ActionBar_btnRedirect",
-            "ctl_ActionBar_btnWorkFlow",
-            "ctl_ActionBar_hidJBAffirm",
-            "ctl_ApproveControl_lblActivityName",
-            "ctl_ApproveControl_txtMemo",
-            "ctl_Attachment_fileUpload",
-            "ctl_Attachment_hfActivityName",
-            "ctl_Attachment_hfGuid",
-            "ctl_Attachment_hfIsStart",
-            "ctl_Attachment_hfUserLoginName",
             "ctl_Header_hidFlag",
             "ctl_Header_txtCompanyName",
             "ctl_Header_txtDate",
@@ -698,83 +787,48 @@
             "ctl_LinkedProcInst_hfGuid",
             "ctl_LinkedProcInst_hfStart",
             "ctl_LinkedProcInst_hfUserLoginName",
-            "ctl_btnSubmit",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_DivNull",
             "ctl_contentForm_P",
+            "ctl_contentForm_rptDetail_ctl_hidId",
+            "ctl_contentForm_txt_AgentCode",
+            "ctl_contentForm_txt_AgentName",
             "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantDeptCode",
+            "ctl_contentForm_txt_ApplicantDeptName",
             "ctl_contentForm_txt_ApplicantName",
-            "ctl_contentForm_txt_CompanyName",
-            "ctl_contentForm_txt_ContractEndDate",
-            "ctl_contentForm_txt_ContractNo",
-            "ctl_contentForm_txt_ContractStartDate",
-            "ctl_contentForm_txt_ContractSubject",
-            "ctl_contentForm_txt_DeptName",
-            "ctl_contentForm_txt_DottedLineManager",
-            "ctl_contentForm_txt_Gender",
-            "ctl_contentForm_txt_HigherManager",
-            "ctl_contentForm_txt_Jobs",
-            "ctl_contentForm_txt_JoinCompanyDate",
-            "ctl_contentForm_txt_JoinDate",
-            "ctl_contentForm_txt_PostProperty",
-            "ctl_contentForm_txt_Remark",
-            "ctl_contentForm_txt_RenewAge",
-            "ctl_contentForm_txt_RenewEndDate",
-            "ctl_contentForm_txt_RenewStartDate",
-            "ctl_contentForm_txt_RenewTime",
-            "ctl_contentForm_txt_RenewType",
-            "ctl_contentForm_txt_ServiceAge",
-            "ctl_contentForm_txt_Subordinates",
-            "ctl_contentForm_txt_Workplace",
-            "fileAttachment",
-            "filePanel",
-            "file_upload_form",
-            "hdActivityName",
-            "hdGuid",
-            "hdUserLoginName",
+            "ctl_contentForm_txt_CompanyCode",
+            "ctl_contentForm_txt_LeavePlace",
+            "ctl_contentForm_txt_LeaveReason",
+            "ctl_contentForm_txt_LeaveType",
+            "ctl_contentForm_txt_WorkTimeType",
             "person_infor",
             "person_infor_trigger",
-            "tb_AttachmentList",
-            "tb_List",
-            "uploadDiv",
-            "upload_target"
+            "tb_List"
           ],
           [
+            "AppUsersDiv",
             "__EVENTARGUMENT",
             "__EVENTTARGET",
-            "__LASTFOCUS",
             "__SCROLLPOSITIONX",
             "__SCROLLPOSITIONY",
             "__VIEWSTATE",
             "_myDP",
-            "approveMemo",
             "aspnetForm",
             "btnAddLink",
-            "btnFileUpload",
-            "ctl_ActionBar_Action",
-            "ctl_ActionBar_ActionName",
-            "ctl_ActionBar_AddApproval",
-            "ctl_ActionBar_AddApprover",
-            "ctl_ActionBar_AddApproverName",
-            "ctl_ActionBar_Approval",
-            "ctl_ActionBar_GotoActivityName",
-            "ctl_ActionBar_IsReturnBack",
-            "ctl_ActionBar_Reject",
-            "ctl_ActionBar_UserAction",
-            "ctl_ActionBar_WorkFlow",
-            "ctl_ActionBar_btnAddApprover",
-            "ctl_ActionBar_btnApprove",
-            "ctl_ActionBar_btnClose",
-            "ctl_ActionBar_btnInform",
-            "ctl_ActionBar_btnRedirect",
-            "ctl_ActionBar_btnReject",
-            "ctl_ActionBar_btnWorkFlow",
-            "ctl_ActionBar_hidJBAffirm",
-            "ctl_ApproveControl_lblActivityName",
-            "ctl_ApproveControl_txtMemo",
-            "ctl_Attachment_fileUpload",
-            "ctl_Attachment_hfActivityName",
-            "ctl_Attachment_hfGuid",
-            "ctl_Attachment_hfIsStart",
-            "ctl_Attachment_hfUserLoginName",
             "ctl_Header_hidFlag",
             "ctl_Header_txtCompanyName",
             "ctl_Header_txtDate",
@@ -785,48 +839,45 @@
             "ctl_LinkedProcInst_hfGuid",
             "ctl_LinkedProcInst_hfStart",
             "ctl_LinkedProcInst_hfUserLoginName",
-            "ctl_btnSubmit",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_DivNull",
             "ctl_contentForm_P",
+            "ctl_contentForm_rptDetail_ctl_hidId",
+            "ctl_contentForm_txt_AgentCode",
+            "ctl_contentForm_txt_AgentName",
             "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantDeptCode",
+            "ctl_contentForm_txt_ApplicantDeptName",
             "ctl_contentForm_txt_ApplicantName",
-            "ctl_contentForm_txt_CompanyName",
-            "ctl_contentForm_txt_ContracType",
-            "ctl_contentForm_txt_ContractEndDate",
-            "ctl_contentForm_txt_ContractStartDate",
-            "ctl_contentForm_txt_DeptName",
-            "ctl_contentForm_txt_DottedLineManager",
-            "ctl_contentForm_txt_Gender",
-            "ctl_contentForm_txt_HigherManager",
-            "ctl_contentForm_txt_IsRenew",
-            "ctl_contentForm_txt_Jobs",
-            "ctl_contentForm_txt_JoinDate",
-            "ctl_contentForm_txt_PostProperty",
-            "ctl_contentForm_txt_RenewTime",
-            "ctl_contentForm_txt_ServiceAge",
-            "ctl_contentForm_txt_Subordinates",
-            "ctl_contentForm_txt_Workplace",
-            "fileAttachment",
-            "filePanel",
-            "file_upload_form",
-            "hdActivityName",
-            "hdGuid",
-            "hdUserLoginName",
+            "ctl_contentForm_txt_CompanyCode",
+            "ctl_contentForm_txt_LeavePlace",
+            "ctl_contentForm_txt_LeaveReason",
+            "ctl_contentForm_txt_LeaveType",
+            "ctl_contentForm_txt_WorkTimeType",
             "person_infor",
             "person_infor_trigger",
-            "tab",
-            "tb_AttachmentList",
-            "tb_List",
-            "uploadDiv",
-            "upload_target"
+            "tb_List"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context23_F8ZgpJ": [
+        "context33_nImxHe": [
           [
-            "action-area",
             "aui_border",
             "aui_buttons",
             "aui_c",
@@ -857,26 +908,19 @@
             "clear",
             "col",
             "col-",
-            "fileUpload",
             "font-lightgrey",
             "font-red",
             "font-xxl",
             "form-wrapper",
             "gb",
-            "green",
-            "grey",
             "layout-data",
             "layout-form",
             "logo-leftcorner",
-            "meno",
             "mt-s",
             "none_edit",
             "p-explain",
             "page-shadow",
             "red",
-            "required",
-            "shadow",
-            "size-l",
             "size-s",
             "swich_btn",
             "title",
@@ -885,7 +929,6 @@
             "ufoot"
           ],
           [
-            "action-area",
             "active",
             "aui_border",
             "aui_buttons",
@@ -917,27 +960,20 @@
             "clear",
             "col",
             "col-",
-            "fileUpload",
             "font-lightgrey",
             "font-red",
             "font-xxl",
             "form-wrapper",
             "gb",
-            "green",
-            "grey",
             "layout-data",
             "layout-form",
             "logo-leftcorner",
-            "meno",
             "mt-s",
             "none_edit",
             "p-explain",
             "page-shadow",
             "red",
-            "required",
-            "shadow",
             "show",
-            "size-l",
             "size-s",
             "swich_btn",
             "title",
@@ -946,67 +982,7 @@
             "ufoot"
           ],
           [
-            "action-area",
-            "aui_border",
-            "aui_buttons",
-            "aui_c",
-            "aui_close",
-            "aui_content",
-            "aui_dialog",
-            "aui_e",
-            "aui_footer",
-            "aui_header",
-            "aui_icon",
-            "aui_iconBg",
-            "aui_inner",
-            "aui_main",
-            "aui_n",
-            "aui_ne",
-            "aui_nw",
-            "aui_outer",
-            "aui_s",
-            "aui_se",
-            "aui_sw",
-            "aui_title",
-            "aui_titleBar",
-            "aui_w",
-            "auto_width",
-            "ax",
-            "bar-code-rightcorner",
-            "big-form",
-            "btn",
-            "clear",
-            "col",
-            "col-",
-            "fileUpload",
-            "font-lightgrey",
-            "font-red",
-            "font-xxl",
-            "form-wrapper",
-            "gb",
-            "green",
-            "grey",
-            "layout-data",
-            "layout-form",
-            "logo-leftcorner",
-            "meno",
-            "mt-s",
-            "none_edit",
-            "p-explain",
-            "page-shadow",
-            "red",
-            "required",
-            "shadow",
-            "size-l",
-            "size-s",
-            "swich_btn",
-            "title",
-            "tj",
-            "top",
-            "ufoot"
-          ],
-          [
-            "action-area",
+            "active",
             "aui_border",
             "aui_buttons",
             "aui_c",
@@ -1028,11 +1004,12 @@
             "aui_s",
             "aui_se",
             "aui_state_focus",
+            "aui_state_full",
+            "aui_state_lock",
             "aui_sw",
             "aui_title",
             "aui_titleBar",
             "aui_w",
-            "auto_width",
             "ax",
             "bar-code-rightcorner",
             "big-form",
@@ -1040,26 +1017,20 @@
             "clear",
             "col",
             "col-",
-            "fileUpload",
             "font-lightgrey",
             "font-red",
             "font-xxl",
             "form-wrapper",
             "gb",
-            "green",
-            "grey",
             "layout-data",
             "layout-form",
             "logo-leftcorner",
-            "meno",
             "mt-s",
             "none_edit",
             "p-explain",
             "page-shadow",
             "red",
-            "required",
-            "shadow",
-            "size-l",
+            "show",
             "size-s",
             "swich_btn",
             "title",
@@ -1068,7 +1039,6 @@
             "ufoot"
           ],
           [
-            "action-area",
             "aui_border",
             "aui_buttons",
             "aui_c",
@@ -1090,6 +1060,8 @@
             "aui_s",
             "aui_se",
             "aui_state_focus",
+            "aui_state_full",
+            "aui_state_lock",
             "aui_sw",
             "aui_title",
             "aui_titleBar",
@@ -1101,27 +1073,19 @@
             "clear",
             "col",
             "col-",
-            "fileUpload",
             "font-lightgrey",
             "font-red",
             "font-xxl",
             "form-wrapper",
             "gb",
-            "green",
-            "grey",
             "layout-data",
             "layout-form",
             "logo-leftcorner",
-            "meno",
             "mt-s",
             "none_edit",
             "p-explain",
             "page-shadow",
-            "pz",
             "red",
-            "required",
-            "shadow",
-            "size-l",
             "size-s",
             "swich_btn",
             "title",
@@ -1134,35 +1098,25 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context23_F8ZgpJ": [
+        "context33_nImxHe": [
           [
             "-/-/DIV",
             "-/-/FORM",
-            "-/-/IFRAME",
             "-/-/SCRIPT",
             "-/DIV/DIV",
-            "-/DIV/IFRAME",
             "-/FORM/DIV",
-            "-/FORM/INPUT-hidden",
             "-/FORM/SCRIPT",
-            "-/FORM/SPAN",
             "DIV/DIV/A",
             "DIV/DIV/BR",
-            "DIV/DIV/BUTTON",
             "DIV/DIV/DIV",
             "DIV/DIV/H1",
             "DIV/DIV/IMG",
             "DIV/DIV/INPUT-hidden",
             "DIV/DIV/INPUT-submit",
             "DIV/DIV/INPUT-text",
-            "DIV/DIV/P",
-            "DIV/DIV/SPAN",
             "DIV/DIV/TABLE",
             "DIV/H1/BR",
             "DIV/H1/SPAN",
-            "DIV/P/BR",
-            "DIV/P/STRONG",
-            "DIV/SPAN/INPUT-file",
             "DIV/TABLE/TBODY",
             "DIV/TABLE/THEAD",
             "DIV/UL/LI",
@@ -1183,45 +1137,92 @@
             "TD/DIV/TABLE",
             "TD/LABEL/BR",
             "TD/LABEL/SPAN",
-            "TD/SPAN/TEXTAREA",
+            "TD/SELECT/OPTION",
             "THEAD/TR/TH",
-            "TR/TD/BR",
+            "TR/TD/A",
             "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",
-            "TR/TD/P",
+            "TR/TD/SELECT",
             "TR/TD/SPAN",
+            "TR/TD/TABLE",
             "TR/TD/TEXTAREA",
             "UL/LI/SPAN"
           ],
           [
             "-/-/DIV",
             "-/-/FORM",
-            "-/-/IFRAME",
             "-/-/SCRIPT",
             "-/DIV/DIV",
             "-/DIV/IFRAME",
             "-/FORM/DIV",
-            "-/FORM/INPUT-hidden",
             "-/FORM/SCRIPT",
-            "-/FORM/SPAN",
             "DIV/DIV/A",
             "DIV/DIV/BR",
-            "DIV/DIV/BUTTON",
             "DIV/DIV/DIV",
             "DIV/DIV/H1",
             "DIV/DIV/IMG",
             "DIV/DIV/INPUT-hidden",
             "DIV/DIV/INPUT-submit",
             "DIV/DIV/INPUT-text",
-            "DIV/DIV/P",
             "DIV/DIV/SPAN",
             "DIV/DIV/TABLE",
             "DIV/H1/BR",
             "DIV/H1/SPAN",
-            "DIV/P/BR",
-            "DIV/P/STRONG",
-            "DIV/SPAN/INPUT-file",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/IFRAME",
+            "TD/DIV/TABLE",
+            "TD/LABEL/BR",
+            "TD/LABEL/SPAN",
+            "TD/SELECT/OPTION",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
             "DIV/TABLE/TBODY",
             "DIV/TABLE/THEAD",
             "DIV/UL/LI",
@@ -1240,16 +1241,19 @@
             "TD/DIV/A",
             "TD/DIV/DIV",
             "TD/DIV/TABLE",
+            "TD/LABEL/BR",
             "TD/LABEL/SPAN",
-            "TD/SPAN/TEXTAREA",
+            "TD/SELECT/OPTION",
             "THEAD/TR/TH",
-            "TR/TD/BR",
+            "TR/TD/A",
             "TR/TD/DIV",
-            "TR/TD/INPUT-radio",
+            "TR/TD/INPUT-hidden",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",
-            "TR/TD/P",
+            "TR/TD/SELECT",
             "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
             "UL/LI/SPAN"
           ]
         ]
