@@ -10,7 +10,11 @@
     "HaveDoneExpenseReimbursementt": "../HaveDoneExpenseReimbursementt/index.json",
     "HaveDoneLeave": "../HaveDoneLeave/index.json",
     "HavaDoneGoOut": "../HavaDoneGoOut/index.json",
-    "HaveDoneChapter": "../HaveDoneChapter/index.json"
+    "HaveDoneChapter": "../HaveDoneChapter/index.json",
+    "HaveDoneAssets": "../HaveDoneAssets/index.json",
+    "haveDoneRecruit": "../haveDoneRecruit/index.json",
+    "haveDoneRegularWorker": "../haveDoneRegularWorker/index.json",
+    "haveDoneOverTime": "../haveDoneOverTime/index.json"
   },
   "chineseName": "已办首页页面",
   "description": "已办首页页面",
@@ -80,38 +84,6 @@
       "intendedRole": "custom",
       "roles": "element,custom",
       "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control2_423LQM": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.content DIV.result-list DIV.anpager"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control2_423LQM"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
@@ -192,6 +164,37 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control123_Hc2vF3": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.result-list DIV.anpager"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control123_Hc2vF3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -199,9 +202,9 @@
       "controls": [
         "control190_B8XD6i",
         "control195_l7OwdG",
-        "control2_423LQM",
         "control196_oLyBgO",
-        "control226_ysPTBF"
+        "control226_ysPTBF",
+        "control123_Hc2vF3"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -248,6 +251,22 @@
         {
           "toContextId": "context35_sCx1kZ",
           "toModelId": "HaveDoneChapter"
+        },
+        {
+          "toContextId": "context36_TXgTPJ",
+          "toModelId": "HaveDoneAssets"
+        },
+        {
+          "toContextId": "context37_NfZaHT",
+          "toModelId": "haveDoneRecruit"
+        },
+        {
+          "toContextId": "context38_gIs2in",
+          "toModelId": "haveDoneRegularWorker"
+        },
+        {
+          "toContextId": "context36_4AzglQ",
+          "toModelId": "haveDoneOverTime"
         }
       ]
     },
@@ -271,16 +290,6 @@
         }
       ]
     },
-    "flow60_QcqQqr": {
-      "fromContextId": "context25_IDCMfP",
-      "fromAction": "doAction",
-      "fromControlId": "control2_423LQM",
-      "toContexts": [
-        {
-          "toContextId": "context25_IDCMfP"
-        }
-      ]
-    },
     "flow71_bDrgBv": {
       "fromContextId": "context25_IDCMfP",
       "fromAction": "doAction",
@@ -292,6 +301,16 @@
         {
           "toContextId": "context24_EkSRuv",
           "toModelId": "dealtIndex"
+        }
+      ]
+    },
+    "flow60_bAr2GH": {
+      "fromContextId": "context25_IDCMfP",
+      "fromAction": "doAction",
+      "fromControlId": "control123_Hc2vF3",
+      "toContexts": [
+        {
+          "toContextId": "context25_IDCMfP"
         }
       ]
     }
@@ -361,16 +380,16 @@
           }
         },
         {
-          "id": "uiControl2_gIb7bP",
-          "controlId": "control2_423LQM",
+          "id": "uiControl123_i4qnyz",
+          "controlId": "control123_Hc2vF3",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl2_gIb7bP",
-                "onGetTemplate": "getTemplate_uiControl2_gIb7bP"
+                "onDoAction": "doAction_uiControl123_i4qnyz",
+                "onGetTemplate": "getTemplate_uiControl123_i4qnyz"
               }
             }
           }

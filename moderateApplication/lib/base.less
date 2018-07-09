@@ -14387,7 +14387,8 @@ body{
     ul{
       overflow: hidden;
      	padding:0;
-      
+      display:flex;
+ 			justify-content:space-between;
       li{
         color: #000;
         width: 25px;
@@ -14408,6 +14409,7 @@ body{
       .ysp-prePage,.ysp-preOnce,.ysp-nextOne,.ysp-nextPage{
         margin:0;
         border-radius: 0;
+        width: 40px;
       }
       .ysp-prePage,.ysp-nextOne{
         border-top-left-radius: 15px;
@@ -14606,7 +14608,7 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
 }
 
 //环节信息
-  .Auditor{
+.Auditor{
     background: #ffffff;
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -14628,6 +14630,63 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
         float: right;
       }
     }
+  }
+.ysp-iptVal-tt{
+  padding:10px 0;
+  p{
+    overflow: hidden;
+    span{
+      float: left;
+    	height: 35px;
+      line-height: 35px;
+      display: block;
+      width: 30%;
+      text-align: center;
+    }
+    input{
+      margin:0;
+      padding:0;
+      width: 65%;
+      height: 35px;
+      line-height: 35px;
+      border:0;
+      background: #fff;
+      border-bottom:1px solid #e1e1e1;
+        
+    }
+  } 
+}
+  //知会信息
+.understanding{
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    .content{
+      margin-left: 15px;
+      overflow: hidden;
+      .contenthidden{
+        overflow: hidden;
+      }
+      .contentitem{
+        min-height: 56px;
+        color: #313131;
+        display: inline-block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 16px;
+        float: left;
+        text-align:justify;
+        text-align-last: justify;
+      }
+      .contentitem:nth-child(2){
+        width: 235px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+        float: right;
+      }
+  	}
   }
 /*************************已办 ltt ENG****************************/
 
@@ -14658,3 +14717,25 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
   }
 }
 
+
+/*********已办加班申请单start************/
+
+[data-componentsid="uiControl314_hliO5T"]{
+  padding:0!important; 
+  .information{
+    margin:0!important;   
+  }
+}
+[data-componentsid="uiControl310_QPDxJ3"]{
+  padding:0!important;
+  .examination {
+    margin:0!important;
+  }
+}
+.ysp-radius-overTime{
+  color: #fff;
+  background: #4796ed;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+/*********已办加班申请单end************/

@@ -1,20 +1,16 @@
 {
   "version": "0.1",
-  "id": "HaveDoneChapter",
-  "targetURL": "http://172.16.11.61:8000/Forms/YYSQ/View.aspx?ProcInstId=E2C9352B55CB687F",
+  "id": "haveDoneRecruit",
+  "targetURL": "http://172.16.11.61:8000/Forms/Hr/ZPSQ/View.aspx?ProcInstId=471D64BAAFFC5A74",
   "jsFile": "index.js",
-  "chineseName": "已办用印申请单",
+  "chineseName": "已办招聘申请单",
   "description": "",
   "firstPaintEnable": false,
   "controls": {
-    "control284_U6UVpT": {
+    "control315_5l2gI2": {
       "location": {
         "data": {
           "tagName": "H1"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -38,7 +34,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control284_U6UVpT"
+        "onGetData": "getData_control315_5l2gI2"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -46,21 +42,155 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control289_4wpyLH": {
+    "control316_LvEP4C": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"person_infor\"]",
+              "descendant::DIV[@id=\"person_infor\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.show"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control316_LvEP4C"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control317_WUZCKe": {
       "location": {
         "data": {
           "tagName": "TABLE"
         },
-        "userData": {
-          "data": [],
-          "force": false
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[3]/TABLE[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[3]/TABLE[1]",
+              "ratio": 0.316
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[3]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control317_WUZCKe"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control318_F5xsPm": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[6]/TABLE[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[6]/TABLE[1]",
+              "ratio": 0.316
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[6]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control318_F5xsPm"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control319_O2RzWw": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
         },
         "locators": [
           {
             "id": "@id/word",
             "prob": 2,
             "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[3]",
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[2]",
               "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
             ]
           },
@@ -68,20 +198,20 @@
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
-              2,
-              3
+              1,
+              2
             ],
             "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control289_4wpyLH"
+        "onGetData": "getData_control319_O2RzWw"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -89,14 +219,10 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control301_ZMvzde": {
+    "control320_mnASp5": {
       "location": {
         "data": {
           "tagName": "A"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -129,311 +255,130 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control301_ZMvzde"
+        "onGetData": "getData_control320_mnASp5"
       },
       "intendedRole": "custom",
       "roles": "element,link,custom",
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
-    },
-    "control302_vfKkAs": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"person_infor\"]",
-              "descendant::DIV[@id=\"person_infor\"]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.formPage DIV.big-form.page-shadow DIV.show"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[5]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control302_vfKkAs"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control303_cQVbWr": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[1]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control303_cQVbWr"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control304_eH9IKx": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[13]/TABLE[1]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              2,
-              3
-            ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[13]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control304_eH9IKx"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control305_wnIOC3": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[2]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              1,
-              3
-            ],
-            "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control305_wnIOC3"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
     }
   },
   "contexts": {
-    "context35_sCx1kZ": {
+    "context37_NfZaHT": {
       "controls": [
-        "control284_U6UVpT",
-        "control289_4wpyLH",
-        "control301_ZMvzde",
-        "control302_vfKkAs",
-        "control303_cQVbWr",
-        "control304_eH9IKx",
-        "control305_wnIOC3"
+        "control315_5l2gI2",
+        "control316_LvEP4C",
+        "control317_WUZCKe",
+        "control318_F5xsPm",
+        "control319_O2RzWw",
+        "control320_mnASp5"
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/YYSQ\\/View\\.aspx"
+        "http://172.16.11.61:8000/Forms/Hr/ZPSQ/View.aspx?.*"
       ]
     }
   },
   "flows": {
-    "flow91_1QyATX": {
+    "flow92_euexow": {
       "toContexts": [
         {
-          "toContextId": "context35_sCx1kZ"
+          "toContextId": "context37_NfZaHT"
         }
       ]
     }
   },
   "pages": {
-    "page35_W6fGNp": {
-      "contextId": "context35_sCx1kZ",
+    "page37_7ZqO4E": {
+      "contextId": "context37_NfZaHT",
       "layout": [
         {
-          "id": "uiControl284_3sDnNT",
-          "controlId": "control284_U6UVpT",
+          "id": "uiControl315_RUbUAk",
+          "controlId": "control315_5l2gI2",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl284_3sDnNT",
-                "onGetTemplate": "getTemplate_uiControl284_3sDnNT"
+                "onDoAction": "doAction_uiControl315_RUbUAk",
+                "onGetTemplate": "getTemplate_uiControl315_RUbUAk"
               }
             }
           }
         },
         {
-          "id": "uiControl302_9Fz0Tx",
-          "controlId": "control302_vfKkAs",
+          "id": "uiControl316_f6ea0v",
+          "controlId": "control316_LvEP4C",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl302_9Fz0Tx",
-                "onGetTemplate": "getTemplate_uiControl302_9Fz0Tx"
+                "onDoAction": "doAction_uiControl316_f6ea0v",
+                "onGetTemplate": "getTemplate_uiControl316_f6ea0v"
               }
             }
           }
         },
         {
-          "id": "uiControl303_o2IP1r",
-          "controlId": "control303_cQVbWr",
+          "id": "uiControl317_VikvW5",
+          "controlId": "control317_WUZCKe",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl303_o2IP1r",
-                "onGetTemplate": "getTemplate_uiControl303_o2IP1r"
+                "onDoAction": "doAction_uiControl317_VikvW5",
+                "onGetTemplate": "getTemplate_uiControl317_VikvW5"
               }
             }
           }
         },
         {
-          "id": "uiControl304_LXtpG5",
-          "controlId": "control304_eH9IKx",
+          "id": "uiControl318_RPHqDb",
+          "controlId": "control318_F5xsPm",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl304_LXtpG5",
-                "onGetTemplate": "getTemplate_uiControl304_LXtpG5"
+                "onDoAction": "doAction_uiControl318_RPHqDb",
+                "onGetTemplate": "getTemplate_uiControl318_RPHqDb"
               }
             }
           }
         },
         {
-          "id": "uiControl305_rTvDuG",
-          "controlId": "control305_wnIOC3",
+          "id": "uiControl319_PT6Gdw",
+          "controlId": "control319_O2RzWw",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl305_rTvDuG",
-                "onGetTemplate": "getTemplate_uiControl305_rTvDuG"
+                "onDoAction": "doAction_uiControl319_PT6Gdw",
+                "onGetTemplate": "getTemplate_uiControl319_PT6Gdw"
               }
             }
           }
         },
         {
-          "id": "uiControl289_WPFebK",
-          "controlId": "control289_4wpyLH",
+          "id": "uiControl320_QUwEmN",
+          "controlId": "control320_mnASp5",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl289_WPFebK",
-                "onGetTemplate": "getTemplate_uiControl289_WPFebK"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl301_dzXsmL",
-          "controlId": "control301_ZMvzde",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl301_dzXsmL",
-                "onGetTemplate": "getTemplate_uiControl301_dzXsmL"
+                "onDoAction": "doAction_uiControl320_QUwEmN",
+                "onGetTemplate": "getTemplate_uiControl320_QUwEmN"
               }
             }
           }
@@ -444,22 +389,23 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context35_sCx1kZ": [
-          "查看流程"
+        "context37_NfZaHT": [
+          "招聘申请单 - 查看页"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context35_sCx1kZ": [
-          "172.16.11.61:8000/Forms/YYSQ/View.aspx?ProcInstId=E2C9352B55CB687F"
+        "context37_NfZaHT": [
+          "172.16.11.61:8000/Forms/Hr/ZPSQ/View.aspx?ProcInstId=471D64BAAFFC5A74"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context35_sCx1kZ": [
+        "context37_NfZaHT": [
           [
+            "AppUsersDiv",
             "__EVENTARGUMENT",
             "__EVENTTARGET",
             "__SCROLLPOSITIONX",
@@ -467,12 +413,6 @@
             "__VIEWSTATE",
             "aspnetForm",
             "btnAddLink",
-            "btnFileUpload",
-            "ctl_Attachment_fileUpload",
-            "ctl_Attachment_hfActivityName",
-            "ctl_Attachment_hfGuid",
-            "ctl_Attachment_hfIsStart",
-            "ctl_Attachment_hfUserLoginName",
             "ctl_Header_hidFlag",
             "ctl_Header_txtCompanyName",
             "ctl_Header_txtDate",
@@ -498,28 +438,39 @@
             "ctl_contentActionBar_ActionBar_btnRedirect",
             "ctl_contentActionBar_ActionBar_hidJBAffirm",
             "ctl_contentForm_P",
-            "ctl_contentForm_txt_AppDate",
-            "ctl_contentForm_txt_ApplicantName",
-            "ctl_contentForm_txt_Dept",
-            "ctl_contentForm_txt_FileNumber",
-            "ctl_contentForm_txt_FileType",
-            "ctl_contentForm_txt_SealContent",
-            "ctl_contentForm_txt_SealName",
-            "ctl_contentForm_txt_SealTitle",
-            "ctl_contentForm_txt_SendToUnit",
-            "filePanel",
+            "ctl_contentForm_txt_BudgetInfo",
+            "ctl_contentForm_txt_CommpanyName",
+            "ctl_contentForm_txt_DepartmentName",
+            "ctl_contentForm_txt_EducationType",
+            "ctl_contentForm_txt_EmployCharacter",
+            "ctl_contentForm_txt_HigherManager",
+            "ctl_contentForm_txt_HolpEnteringDate",
+            "ctl_contentForm_txt_JobQualification",
+            "ctl_contentForm_txt_Language",
+            "ctl_contentForm_txt_Other",
+            "ctl_contentForm_txt_PostName",
+            "ctl_contentForm_txt_ProcessType",
+            "ctl_contentForm_txt_ProfessionalSkill",
+            "ctl_contentForm_txt_RecruitmentResult",
+            "ctl_contentForm_txt_RecruitmentType",
+            "ctl_contentForm_txt_ReplaceMenName",
+            "ctl_contentForm_txt_Responsibilities",
+            "ctl_contentForm_txt_TheNewType",
+            "ctl_contentForm_txt_WorkAbility",
+            "ctl_contentForm_txt_WorkExperience",
+            "ctl_contentForm_txt_WorkPlaceCity",
+            "ctl_contentForm_txt_WorkPlaceProvince",
+            "ctl_contentForm_txt_WorkPlaceXian",
             "person_infor",
             "person_infor_trigger",
-            "tb_AttachmentList",
-            "tb_List",
-            "uploadDiv"
+            "tb_List"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context35_sCx1kZ": [
+        "context37_NfZaHT": [
           [
             "aui_border",
             "aui_buttons",
@@ -551,13 +502,10 @@
             "clear",
             "col",
             "col-",
-            "fileUpload",
             "font-lightgrey",
             "font-xxl",
             "form-wrapper",
             "gb",
-            "icon-cloud-download",
-            "icon-paper-clip",
             "layout-data",
             "layout-form",
             "logo-leftcorner",
@@ -566,7 +514,6 @@
             "p-explain",
             "page-shadow",
             "red",
-            "required",
             "size-s",
             "swich_btn",
             "title",
@@ -606,13 +553,10 @@
             "clear",
             "col",
             "col-",
-            "fileUpload",
             "font-lightgrey",
             "font-xxl",
             "form-wrapper",
             "gb",
-            "icon-cloud-download",
-            "icon-paper-clip",
             "layout-data",
             "layout-form",
             "logo-leftcorner",
@@ -621,7 +565,6 @@
             "p-explain",
             "page-shadow",
             "red",
-            "required",
             "show",
             "size-s",
             "swich_btn",
@@ -635,7 +578,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context35_sCx1kZ": [
+        "context37_NfZaHT": [
           [
             "-/-/DIV",
             "-/-/FORM",
@@ -645,21 +588,16 @@
             "-/FORM/SCRIPT",
             "DIV/DIV/A",
             "DIV/DIV/BR",
-            "DIV/DIV/BUTTON",
             "DIV/DIV/DIV",
             "DIV/DIV/H1",
             "DIV/DIV/IMG",
             "DIV/DIV/INPUT-hidden",
             "DIV/DIV/INPUT-submit",
             "DIV/DIV/INPUT-text",
-            "DIV/DIV/P",
             "DIV/DIV/SPAN",
             "DIV/DIV/TABLE",
             "DIV/H1/BR",
             "DIV/H1/SPAN",
-            "DIV/P/BR",
-            "DIV/P/STRONG",
-            "DIV/SPAN/INPUT-file",
             "DIV/TABLE/TBODY",
             "DIV/TABLE/THEAD",
             "DIV/UL/LI",
@@ -675,18 +613,11 @@
             "TABLE/THEAD/TR",
             "TBODY/TR/TD",
             "TBODY/TR/TH",
-            "TD/A/I",
             "TD/DIV/A",
             "TD/DIV/DIV",
             "TD/DIV/TABLE",
-            "TD/LABEL/SPAN",
-            "TD/TABLE/TBODY",
             "THEAD/TR/TH",
-            "TR/TD/A",
-            "TR/TD/BR",
             "TR/TD/DIV",
-            "TR/TD/I",
-            "TR/TD/IMG",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",
             "TR/TD/SPAN",
