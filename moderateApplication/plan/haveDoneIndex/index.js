@@ -30,6 +30,55 @@
       return '\'use strict\';\n\nvar _yspInteriorComponents = require(\'ysp-interior-components\');\n\nvar _appRenderer = require(\'appRenderer\');\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  back: function back(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: "back"\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      \'div\',\n      { className: \'titleH1\' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: \'\\u5DF2\\u529E\' },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement(\'span\', null),\n          React.createElement(\n            \'button\',\n            { onClick: this.back.bind(this) },\n            \'\\u8FD4\\u56DE\'\n          )\n        )\n      )\n    );\n  }\n});';
     },
 
+    getData_control2_423LQM: function (elem) {
+      //console.log(elem);
+      if (!elem) {
+        return "";
+      }if (elem) {
+        var data = {};data.content = [];var nodes = elem.children;for (var i = 0; i < nodes.length; i++) {
+          data.content.push({ text: nodes[i].textContent.trim(), class: nodes[i].className });
+        }return data;
+      }
+    },
+    doAction_uiControl2_gIb7bP: function (data, elem) {
+      if (data.eventType == 'click') {
+        //debugger;
+        var index = parseInt(data.dataCustom);if (index == 1) {
+          var target = elem.querySelectorAll('a')[index];target.click();
+        } else {
+          var target = elem.querySelectorAll('a')[index - 1];target.click();
+        }
+      } else if (data.eventType == 'onclickpage') {
+        //debugger;
+        var index = parseInt(data.dataCustom[0]);var id = data.dataCustom[1];if (id == 'prevPage') {
+          var target = elem.querySelectorAll('a')[index];target.click();
+        } else if (id == 'nextPage') {
+          var target = elem.querySelectorAll('a')[index - 1];target.click();
+        }
+      } else if (data.eventType == 'onclickpreOnce') {
+        // debugger;
+        var child = elem.querySelectorAll('a');var end = parseInt(elem.querySelector('.cpb').textContent);for (var i = end; i > 0; i--) {
+          if (i == 1) {
+            alert('已经到首页了');
+          } else {
+            child[i - 1].click();break;
+          }
+        }
+      } else if (data.eventType == 'onClicknextOnce') {
+        var child = elem.querySelectorAll('a');var start = parseInt(elem.querySelector('.cpb').textContent);for (var i = start; i < child.length; i++) {
+          if (i == child.length - 1) {
+            alert('已经到末页了');
+          } else {
+            child[i].click();break;
+          }
+        }
+      }
+    },
+    getTemplate_uiControl2_gIb7bP: function () {
+      var selfTemplate = 'module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:\'click\',\n        data:target.getAttribute(\'data-id\')\n      })\n    }\n  },\n  onclickpage:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\'onclickpage\',\n        data:[target.dataset.index,target.dataset.id]\n      })\n    }\n  },\n  onclickpreOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:\'onclickpreOnce\'\n        \n      })\n    }\n  },\n  onClicknextOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:\'onClicknextOnce\',\n        \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return (\n        <div>\n        \t\u6682\u65E0\u6570\u636E\n        </div>\n      )\n    }\n    var str = \'<\',kr = \'|<\',\n        _this = this;\n    var lis = data.content.map(function(ele,index){\n      if(index!=0&&index!=data.content.length-1){\n        return(\n        \t<li data-id={index} onClick={_this.onClick} className={ele.class}>{ele.text}</li>\n        )\n      }\n    })\n    return (\n      <div className=\'footerbtn\'>\n        <ul>\n          <li data-id=\'prevPage\' data-index={0} onClick={_this.onclickpage.bind(_this)} className=\'ysp-prePage\'>{kr}</li>\n          <li data-id=\'prev\' onClick={_this.onclickpreOnce.bind(_this)} className=\'ysp-preOnce\'>{str}</li>\n          {lis}\n          <li data-id=\'next\' onClick={_this.onClicknextOnce.bind(_this)} className=\'ysp-nextOne\'>></li>\n          <li data-id=\'nextPage\' data-index={data.content.length-1} onClick={_this.onclickpage.bind(_this)} className=\'ysp-nextPage\'>>|</li>\n        </ul>\n      </div>\n    )\n  }\n});';
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: target.getAttribute('data-id')\n      });\n    }\n  },\n  onclickpage: function onclickpage(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'onclickpage',\n        data: [target.dataset.index, target.dataset.id]\n      });\n    }\n  },\n  onclickpreOnce: function onclickpreOnce(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'onclickpreOnce'\n\n      });\n    }\n  },\n  onClicknextOnce: function onClicknextOnce(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'onClicknextOnce'\n\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    if (!data) {\n      return React.createElement(\n        'div',\n        null,\n        '\\u6682\\u65E0\\u6570\\u636E'\n      );\n    }\n    var str = '<',\n        kr = '|<',\n        _this = this;\n    var lis = data.content.map(function (ele, index) {\n      if (index != 0 && index != data.content.length - 1) {\n        return React.createElement(\n          'li',\n          { 'data-id': index, onClick: _this.onClick, className: ele.class },\n          ele.text\n        );\n      }\n    });\n    return React.createElement(\n      'div',\n      { className: 'footerbtn' },\n      React.createElement(\n        'ul',\n        null,\n        React.createElement(\n          'li',\n          { 'data-id': 'prevPage', 'data-index': 0, onClick: _this.onclickpage.bind(_this), className: 'ysp-prePage' },\n          kr\n        ),\n        React.createElement(\n          'li',\n          { 'data-id': 'prev', onClick: _this.onclickpreOnce.bind(_this), className: 'ysp-preOnce' },\n          str\n        ),\n        lis,\n        React.createElement(\n          'li',\n          { 'data-id': 'next', onClick: _this.onClicknextOnce.bind(_this), className: 'ysp-nextOne' },\n          '>'\n        ),\n        React.createElement(\n          'li',\n          { 'data-id': 'nextPage', 'data-index': data.content.length - 1, onClick: _this.onclickpage.bind(_this), className: 'ysp-nextPage' },\n          '>|'\n        )\n      )\n    );\n  }\n});";
+    },
+
     getData_control196_oLyBgO: function (elem) {
       if (!elem) {
         return;
