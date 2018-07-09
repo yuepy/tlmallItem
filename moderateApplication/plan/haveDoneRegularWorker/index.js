@@ -78,10 +78,163 @@
         return;
       }var data = {};data.title = '基本履历';data.val = elem.querySelector('textarea').value;data.readyState = elem.querySelector('textarea').readOnly;return data;
     },
-    doAction_uiControl324_Vyyb4q: function (data, elem) {},
+    doAction_uiControl324_Vyyb4q: function (data, elem) {
+      if (data.eventType == 'blur') {
+        var val = data.dataCustom;var target = elem.querySelector('textarea');target.value = val;
+      }
+    },
     getTemplate_uiControl324_Vyyb4q: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n    return (\n      <div className='ysp-regularWorker-jbll-tt'>\n        <p>{data.title}</p>\n        {data.readyState==true?<ATextarea value={data.val} readOnly={data.readyState}></ATextarea>:<ATextarea value={data.val} readOnly={data.readyState}></ATextarea>}\n      </div>\n    )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    return React.createElement(\n      'div',\n      { className: 'ysp-regularWorker-jbll-tt' },\n      React.createElement(\n        'p',\n        null,\n        data.title\n      ),\n      data.readyState == true ? React.createElement(ATextarea, { value: data.val, readOnly: data.readyState }) : React.createElement(ATextarea, { value: data.val, readOnly: data.readyState })\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n    return (\n      <div className='ysp-regularWorker-jbll-tt'>\n        <p>{data.title}</p>\n        {data.readyState==true?<ATextarea value={data.val} readOnly={data.readyState}></ATextarea>:<ATextarea value={data.val} readOnly={data.readyState} onBlur={_this.onblur.bind(_this)}></ATextarea>}\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onblur: function onblur(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'blur',\n        data: target.value\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    return React.createElement(\n      'div',\n      { className: 'ysp-regularWorker-jbll-tt' },\n      React.createElement(\n        'p',\n        null,\n        data.title\n      ),\n      data.readyState == true ? React.createElement(ATextarea, { value: data.val, readOnly: data.readyState }) : React.createElement(ATextarea, { value: data.val, readOnly: data.readyState, onBlur: _this.onblur.bind(_this) })\n    );\n  }\n});";
+    },
+    getData_control325_nvnyqd: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {};data.title = '试用期（述职）评估';data.val = elem.querySelector('textarea').value;data.readyState = elem.querySelector('textarea').readOnly;return data;
+    },
+    doAction_uiControl325_TQEy3e: function (data, elem) {
+      if (data.eventType == 'blur') {
+        var val = data.dataCustom;var target = elem.querySelector('textarea');target.value = val;
+      }
+    },
+    getTemplate_uiControl325_TQEy3e: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n    return (\n      <div className='ysp-regularWorker-jbll-tt'>\n        <p>{data.title}</p>\n        {data.readyState==true?<ATextarea value={data.val} readOnly={data.readyState}></ATextarea>:<ATextarea value={data.val} readOnly={data.readyState} onBlur={_this.onblur.bind(_this)}></ATextarea>}\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onblur: function onblur(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'blur',\n        data: target.value\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    return React.createElement(\n      'div',\n      { className: 'ysp-regularWorker-jbll-tt' },\n      React.createElement(\n        'p',\n        null,\n        data.title\n      ),\n      data.readyState == true ? React.createElement(ATextarea, { value: data.val, readOnly: data.readyState }) : React.createElement(ATextarea, { value: data.val, readOnly: data.readyState, onBlur: _this.onblur.bind(_this) })\n    );\n  }\n});";
+    },
+    getData_control326_VP9CkC: function (elem) {
+      if (!elem) {
+        return;
+      }var data = { titles: [], content: [] };data.title = '试用期评定';var trs = elem.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        if (i == 0) {
+          data.secondTitle = trs[i].querySelector('th').textContent.trim();
+        } else if (i == 1) {
+          var ths = trs[i].querySelectorAll('th');for (var j = 0; j < ths.length; j++) {
+            data.titles.push(ths[j].textContent.trim());
+          }
+        } else if (i > 1) {
+          var arr = [];var tds = trs[i].querySelectorAll('td');for (var k = 0; k < tds.length; k++) {
+            arr.push(tds[k].textContent.trim());
+          }data.content.push(arr);
+        }
+      }return data;
+    },
+    doAction_uiControl326_NSC41c: function (data, elem) {
+      if (data.eventType == 'click') {
+        var index = parseInt(data.dataCustom);var target = elem.querySelectorAll('tr')[index + 2].querySelector('a');target.click();
+      }
+    },
+    getTemplate_uiControl326_NSC41c: function () {
+      var selfTemplate = "module.exports = React.createClass({\n   onclick:function(e){\n     var target=e.target;\n     var handler=this.props.customHandler;\n     if(handler){\n       handler({\n         eventType:'click',\n         data:target.dataset.index\n       })\n     }\n   },\n  render: function() {\n    var data = this.props.customData;\n    var _this=this;\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        if(index==2){\n          return(\n            <td><span onClick={_this.onclick.bind(_this)} data-index={i}>{ele}</span></td>\n          )\n        }else{\n          return(\n            <td>{ele}</td>\n          )\n        }\n        \n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='examination ysp-alertTable-tt'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='ysp-alertTableSecond-tt'>{data.secondTitle}</div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n        \n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onclick: function onclick(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: target.dataset.index\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    var ths = data.titles.map(function (d, i) {\n      return React.createElement(\n        'th',\n        null,\n        d\n      );\n    });\n    var trs = data.content.map(function (d, i) {\n      var lis = d.map(function (ele, index) {\n        if (index == 2) {\n          return React.createElement(\n            'td',\n            null,\n            React.createElement(\n              'span',\n              { onClick: _this.onclick.bind(_this), 'data-index': i },\n              ele\n            )\n          );\n        } else {\n          return React.createElement(\n            'td',\n            null,\n            ele\n          );\n        }\n      });\n      return React.createElement(\n        'tr',\n        null,\n        lis\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'examination ysp-alertTable-tt' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'ysp-alertTableSecond-tt' },\n        data.secondTitle\n      ),\n      React.createElement(\n        'div',\n        { className: 'contentitem' },\n        React.createElement(\n          'table',\n          null,\n          React.createElement(\n            'thead',\n            null,\n            React.createElement(\n              'tr',\n              null,\n              ths\n            )\n          ),\n          React.createElement(\n            'tbody',\n            null,\n            trs\n          )\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control328_T8qPFM: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {};data.title = elem.textContent;return data;
+    },
+    doAction_uiControl328_Ozrvws: function (data, elem) {
+      if (data.eventType == 'back') {
+        //debugger;
+        var target = elem.ownerDocument.defaultView.frameElement.parentElement.ownerDocument.defaultView.frameElement.contentDocument.querySelector('.aui_close');target.click();
+      }
+    },
+    getTemplate_uiControl328_Ozrvws: function () {
+      var selfTemplate = "import { Header, HeaderLeft } from 'ysp-interior-components';\n//import { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  click:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n      \teventType:'back'  \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className='titleH1'>\n          <Header title={data.title}>\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.click.bind(this)}>\u8FD4\u56DE</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nvar _yspInteriorComponents = require('ysp-interior-components');\n\n//import { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  click: function click(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'back'\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      'div',\n      { className: 'titleH1' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: data.title },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement('span', null),\n          React.createElement(\n            'button',\n            { onClick: this.click.bind(this) },\n            '\\u8FD4\\u56DE'\n          )\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control329_3dqUSt: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {};var trs = elem.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        var arr = [];var tds = trs[i].querySelectorAll('td');for (var j = 0; j < tds.length; j++) {
+          arr.push({ left: tds[j].querySelector('label').textContent.trim(), right: tds[j].querySelector('span').textContent.trim() });
+        }data.content = arr;
+      }return data;
+    },
+    doAction_uiControl329_GdVpF8: function (data, elem) {},
+    getTemplate_uiControl329_GdVpF8: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n    var list=data.content.map(function(d,i){\n      return(\n      \t<p><span>{d.left}</span><span>{d.right}</span></p>\n      )\n    })\n    return (\n      <div className='ysp-syqzzsqdEvaluate-tt'>\n        {list}\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    var list = data.content.map(function (d, i) {\n      return React.createElement(\n        'p',\n        null,\n        React.createElement(\n          'span',\n          null,\n          d.left\n        ),\n        React.createElement(\n          'span',\n          null,\n          d.right\n        )\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'ysp-syqzzsqdEvaluate-tt' },\n      list\n    );\n  }\n});";
+    },
+    getData_control330_9k3Kn0: function (elem) {
+      if (!elem) {
+        return;
+      }var data = ysp.customHelper.getTableData(elem, ['环节名称', '人员姓名', '人员公司', '人员部门', '人员职位', '审批操作', '审批时间', '意见']);data.title = '审批日志';return data;
+    },
+    doAction_uiControl330_dlKMZG: function (data, elem) {},
+    getTemplate_uiControl330_dlKMZG: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='examination'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function (d, i) {\n      return React.createElement(\n        'th',\n        null,\n        d\n      );\n    });\n    var trs = data.content.map(function (d, i) {\n      var lis = d.map(function (ele, index) {\n        return React.createElement(\n          'td',\n          null,\n          ele\n        );\n      });\n      return React.createElement(\n        'tr',\n        null,\n        lis\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'examination' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'contentitem' },\n        React.createElement(\n          'table',\n          null,\n          React.createElement(\n            'thead',\n            null,\n            React.createElement(\n              'tr',\n              null,\n              ths\n            )\n          ),\n          React.createElement(\n            'tbody',\n            null,\n            trs\n          )\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control331_ohcB5P: function (elem) {
+      if (!elem) {
+        return;
+      }return elem.textContent;
+    },
+    doAction_uiControl331_qVInCp: function (data, elem) {
+      if (data.eventType == 'close') {
+        elem.click();
+      }
+    },
+    getTemplate_uiControl331_qVInCp: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  onclickClose:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'close'\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div className='ysp-closeBtn-tt'>\n        <button onClick={this.onclickClose.bind(this)}>{this.props.customData}</button>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onclickClose: function onclickClose(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'close'\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\n      'div',\n      { className: 'ysp-closeBtn-tt' },\n      React.createElement(\n        'button',\n        { onClick: this.onclickClose.bind(this) },\n        this.props.customData\n      )\n    );\n  }\n});";
+    },
+    getData_control332_AvX3B5: function (elem) {
+      if (!elem) {
+        return;
+      }var data = ysp.customHelper.getTabledata(elem, ['文件名', '上传人', '上传时间', '版本', '操作']);data.id = elem.nextElementSibling.nextElementSibling.id;data.title = '附件';return data;
+    },
+    doAction_uiControl332_84ZhFo: function (data, elem) {
+      var type = data.eventType;var data = data.customData;if (type == 'commit') {
+        // debugger;
+        elem.ownerDocument.querySelector("#" + data).click();setTimeout(function () {
+          elem.ownerDocument.defaultView.InitAttachmentList();
+        }, 1000); // setTimeout(function () {
+        //   var url = ysp.appMain.getActiveUrl();
+        //   ysp.appMain.reloadPage(url);
+        // }, 2000);
+      }if (type == 'add') {
+        elem.ownerDocument.querySelector("#" + data).previousElementSibling.querySelector('input').click();
+      }if (type == 'updel') {
+        var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');tds[tds.length - 1].querySelectorAll('a')[data.i].click();
+      }
+    },
+    getTemplate_uiControl332_84ZhFo: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data = '';\n    if(target.tagName.toLowerCase() == 'button'){\n      console.log(target.id);\n      if(target.id == 'uploadDiv' ){\n        type = 'commit';\n        data = 'btnFileUpload';\n      }else{\n        type = 'add';\n        data = 'btnFileUpload';\n      }\n    }\n    if(target.tagName.toLowerCase() == 'p'){\n      type = 'updel';\n      data = {\n        index:target.getAttribute('data-index'),\n        i:target.className=='xiazai'?0:1\n      }\n    }\n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  click:function(e){\n    var target = e.target;\n    if(target.className == 'shang'){\n      target.className = 'xia';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displnone');\n      for(var i=0;i<divs.length;i++){\n        divs[i].className = 'displblock';\n      }\n    }else{\n      target.className = 'shang';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displblock');\n      for(var i=0;i<divs.length;i++){\n        divs[i].className = 'displnone';\n      }\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    var lis = data.content.map(function(ele,index){\n      var list = ele.map(function(d,i){\n        if(i==0){\n          return(\n          \t<div className='titlediv'>\n            \t<div>{'0'+(index+1)}</div>\n              <div>{d}</div>\n              <div onClick={_this.click} className='shang'></div>\n            </div>\n          )\n        }\n        if(i == ele.length-1){\n          if(d.length>2){\n              return(\n              <div className='displnone'>\n                <div className='contentitem contentspan' style={{'width':'100%','text-align-last':'auto','text-align':'center'}}><p className='shanchu' data-index={index} onClick={_this.onClick.bind(_this)}><span></span>{d[2]+d[3]}</p><p data-index={index} className='xiazai' onClick={_this.onClick.bind(_this)}><span></span>{d.length>2?d[0]+d[1]:''}</p></div>\n              </div>\n            )\n          }else{\n             return(\n              <div className='displnone'>\n                <div className='contentitem'><p className='xiazai' data-index={index} onClick={_this.onClick.bind(_this)}><span></span>{d[0]+d[1]}</p></div>\n              </div>\n            )\n          }\n        }\n        return(\n        \t<div className='displnone'>\n          \t<div className='contentitem'>{data.titles[i]}</div>\n            <div className='contentitem'>{d}</div>\n          </div>\n        )\n      })\n      return(\n      \t<div className='contentit'>{list}</div>\n      )\n    })\n    \n    return (\n      <div className='Enclosure'>\n        <div className='contenttitle'>\n          <span className='xia'></span>\n          <p>{data.title}\n            \n          </p>\n        </div>\n        <div className='content'>\n    \t\t\t{lis}\n        </div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data = '';\n    if (target.tagName.toLowerCase() == 'button') {\n      console.log(target.id);\n      if (target.id == 'uploadDiv') {\n        type = 'commit';\n        data = 'btnFileUpload';\n      } else {\n        type = 'add';\n        data = 'btnFileUpload';\n      }\n    }\n    if (target.tagName.toLowerCase() == 'p') {\n      type = 'updel';\n      data = {\n        index: target.getAttribute('data-index'),\n        i: target.className == 'xiazai' ? 0 : 1\n      };\n    }\n    if (handler) {\n      handler({\n        eventType: type,\n        data: data\n      });\n    }\n  },\n  click: function click(e) {\n    var target = e.target;\n    if (target.className == 'shang') {\n      target.className = 'xia';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displnone');\n      for (var i = 0; i < divs.length; i++) {\n        divs[i].className = 'displblock';\n      }\n    } else {\n      target.className = 'shang';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displblock');\n      for (var i = 0; i < divs.length; i++) {\n        divs[i].className = 'displnone';\n      }\n    }\n  },\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n    var lis = data.content.map(function (ele, index) {\n      var list = ele.map(function (d, i) {\n        if (i == 0) {\n          return React.createElement(\n            'div',\n            { className: 'titlediv' },\n            React.createElement(\n              'div',\n              null,\n              '0' + (index + 1)\n            ),\n            React.createElement(\n              'div',\n              null,\n              d\n            ),\n            React.createElement('div', { onClick: _this.click, className: 'shang' })\n          );\n        }\n        if (i == ele.length - 1) {\n          if (d.length > 2) {\n            return React.createElement(\n              'div',\n              { className: 'displnone' },\n              React.createElement(\n                'div',\n                { className: 'contentitem contentspan', style: { 'width': '100%', 'text-align-last': 'auto', 'text-align': 'center' } },\n                React.createElement(\n                  'p',\n                  { className: 'shanchu', 'data-index': index, onClick: _this.onClick.bind(_this) },\n                  React.createElement('span', null),\n                  d[2] + d[3]\n                ),\n                React.createElement(\n                  'p',\n                  { 'data-index': index, className: 'xiazai', onClick: _this.onClick.bind(_this) },\n                  React.createElement('span', null),\n                  d.length > 2 ? d[0] + d[1] : ''\n                )\n              )\n            );\n          } else {\n            return React.createElement(\n              'div',\n              { className: 'displnone' },\n              React.createElement(\n                'div',\n                { className: 'contentitem' },\n                React.createElement(\n                  'p',\n                  { className: 'xiazai', 'data-index': index, onClick: _this.onClick.bind(_this) },\n                  React.createElement('span', null),\n                  d[0] + d[1]\n                )\n              )\n            );\n          }\n        }\n        return React.createElement(\n          'div',\n          { className: 'displnone' },\n          React.createElement(\n            'div',\n            { className: 'contentitem' },\n            data.titles[i]\n          ),\n          React.createElement(\n            'div',\n            { className: 'contentitem' },\n            d\n          )\n        );\n      });\n      return React.createElement(\n        'div',\n        { className: 'contentit' },\n        list\n      );\n    });\n\n    return React.createElement(\n      'div',\n      { className: 'Enclosure' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', { className: 'xia' }),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'content' },\n        lis\n      )\n    );\n  }\n});";
+    },
+    getData_control333_n8f0At: function (elem) {
+      if (!elem) {
+        return;
+      }var data = { content: [] };var trs = elem.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        if (i == 0) {
+          data.title = trs[i].querySelector('th').textContent.trim();
+        } else {
+          var arr = [];var tds = trs[i].querySelectorAll('td');for (var j = 0; j < tds.length; j++) {
+            arr.push(tds[j].textContent.trim());
+          }data.content.push(arr);
+        }
+      }return data;
+    },
+    doAction_uiControl333_vfUJEr: function (data, elem) {},
+    getTemplate_uiControl333_vfUJEr: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n    var list=data.content.map(function(d,i){\n      return(\n      \t<div>\n         <span>{d[0]}</span>\n          <span>{d[1]}</span>\n        </div>\n      )\n    })\n    return (\n      <div className='ysp-evaluateDetailInfo-tt'>\n        <p>{data.title}</p>\n        {list}\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    var list = data.content.map(function (d, i) {\n      return React.createElement(\n        'div',\n        null,\n        React.createElement(\n          'span',\n          null,\n          d[0]\n        ),\n        React.createElement(\n          'span',\n          null,\n          d[1]\n        )\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'ysp-evaluateDetailInfo-tt' },\n      React.createElement(\n        'p',\n        null,\n        data.title\n      ),\n      list\n    );\n  }\n});";
+    },
+    getData_control334_TTZaGX: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {};var trs = elem.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        if (trs[i].querySelector('textarea')) {
+          var tds = trs[i].querySelectorAll('td');for (j = 0; j < tds.length; j++) {}
+        }
+      }return data;
+    },
+    doAction_uiControl334_9gpmvK: function (data, elem) {},
+    getTemplate_uiControl334_9gpmvK: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div>\n        \u81EA\u5B9A\u4E49\u7EC4\u4EF6\u7528\u6765\u9002\u914D\u57FA\u672C\u7EC4\u4EF6\u65E0\u6CD5\u9002\u914D\u7684\u9875\u9762\u5143\u7D20\uFF0C\u60A8\u53EF\u4EE5\u901A\u8FC7\u53F3\u952E\u6253\u5F00\u8BE5\u81EA\u5B9A\u4E49\u7EC4\u4EF6\u7F16\u8F91\u5668\u8FDB\u884C\u7F16\u8F91\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      null,\n      \"\\u81EA\\u5B9A\\u4E49\\u7EC4\\u4EF6\\u7528\\u6765\\u9002\\u914D\\u57FA\\u672C\\u7EC4\\u4EF6\\u65E0\\u6CD5\\u9002\\u914D\\u7684\\u9875\\u9762\\u5143\\u7D20\\uFF0C\\u60A8\\u53EF\\u4EE5\\u901A\\u8FC7\\u53F3\\u952E\\u6253\\u5F00\\u8BE5\\u81EA\\u5B9A\\u4E49\\u7EC4\\u4EF6\\u7F16\\u8F91\\u5668\\u8FDB\\u884C\\u7F16\\u8F91\"\n    );\n  }\n});";
     }
   });
 })(window, ysp);
