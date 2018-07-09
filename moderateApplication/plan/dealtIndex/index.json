@@ -100,38 +100,6 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control123_7z5oV6": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.content DIV.result-list DIV.anpager"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control123_7z5oV6"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control227_INKP3Z": {
       "location": {
         "data": {
@@ -207,6 +175,33 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control2_2DedGV": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.result-list DIV.anpager"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control2_2DedGV"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -214,9 +209,9 @@
       "controls": [
         "control193_N9CBTD",
         "control194_rkfuKp",
-        "control123_7z5oV6",
         "control227_INKP3Z",
-        "control240_SJr66K"
+        "control240_SJr66K",
+        "control2_2DedGV"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -236,16 +231,6 @@
       "fromContextId": "context24_EkSRuv",
       "fromAction": "doAction",
       "fromControlId": "control194_rkfuKp",
-      "toContexts": [
-        {
-          "toContextId": "context24_EkSRuv"
-        }
-      ]
-    },
-    "flow41_4Ctcq0": {
-      "fromContextId": "context24_EkSRuv",
-      "fromAction": "doAction",
-      "fromControlId": "control123_7z5oV6",
       "toContexts": [
         {
           "toContextId": "context24_EkSRuv"
@@ -426,16 +411,16 @@
           }
         },
         {
-          "id": "uiControl123_ScHZwa",
-          "controlId": "control123_7z5oV6",
+          "id": "uiControl2_iAH5Jo",
+          "controlId": "control2_2DedGV",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl123_ScHZwa",
-                "onGetTemplate": "getTemplate_uiControl123_ScHZwa"
+                "onDoAction": "doAction_uiControl2_iAH5Jo",
+                "onGetTemplate": "getTemplate_uiControl2_iAH5Jo"
               }
             }
           }

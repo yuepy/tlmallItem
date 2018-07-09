@@ -13702,6 +13702,8 @@ body {
 .footerbtn ul {
   overflow: hidden;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 .footerbtn ul li {
   color: #000;
@@ -13727,6 +13729,7 @@ body {
 .footerbtn ul .ysp-nextPage {
   margin: 0;
   border-radius: 0;
+  width: 40px;
 }
 .footerbtn ul .ysp-prePage,
 .footerbtn ul .ysp-nextOne {
@@ -13969,6 +13972,61 @@ div._23s98qqds-Z7MF0Y5RBjWd {
 }
 .Auditor .content .contentitem:nth-child(2) {
   width: 235px;
+  text-align: left;
+  float: right;
+}
+.ysp-iptVal-tt {
+  padding: 10px 0;
+}
+.ysp-iptVal-tt p {
+  overflow: hidden;
+}
+.ysp-iptVal-tt p span {
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  display: block;
+  width: 30%;
+  text-align: center;
+}
+.ysp-iptVal-tt p input {
+  margin: 0;
+  padding: 0;
+  width: 65%;
+  height: 35px;
+  line-height: 35px;
+  border: 0;
+  background: #fff;
+  border-bottom: 1px solid #e1e1e1;
+}
+.understanding {
+  background-color: #ffffff;
+  padding-bottom: 15px;
+}
+.understanding .content {
+  margin-left: 15px;
+  overflow: hidden;
+}
+.understanding .content .contenthidden {
+  overflow: hidden;
+}
+.understanding .content .contentitem {
+  min-height: 56px;
+  color: #313131;
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.understanding .content .contentitem:nth-child(1) {
+  width: 64px;
+  font-size: 16px;
+  float: left;
+  text-align: justify;
+  text-align-last: justify;
+}
+.understanding .content .contentitem:nth-child(2) {
+  width: 235px;
+  border-bottom: 1px solid #e0e0e0;
   text-align: left;
   float: right;
 }
