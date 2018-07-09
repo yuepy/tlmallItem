@@ -75,7 +75,10 @@
     },
     doAction_uiControl51_Sb8SJa: function (data, elem) {
       if (data.eventType == "selclick") {
-        var d = data.dataCustom;elem.querySelector("input[type='file']").click();
+        //debugger;
+        // console.log(elem.ownerDocument.defaultView.enableUpload);
+        //elem.ownerDocument.defaultView.enableUpload(); 
+        elem.querySelector("input[type='file']").click();
       } else if (data.eventType == "upclick") {
         var d = data.dataCustom;var ipt1 = elem.querySelectorAll(".PSPUSHBUTTON")[0].querySelector("input");ipt1.click();
       } else if (data.eventType == "cancelclick") {
