@@ -56,9 +56,15 @@ div[data-ysp-modelid] .card{
   padding:0;
    background-color: #f4f4f4;
 }
-data[data-ysp-modelid="checkSubInfo"]{
+div[data-ysp-modelid="checkSubInfo"]{
   .card-body{
     height: 47vh;
+    overflow: auto;
+  }
+}
+div[data-ysp-modelid="addWork"]{
+  .card-body{
+    height: 95vh;
     overflow: auto;
   }
 }
@@ -583,6 +589,12 @@ div[data-ysp-modelid="menu"]{
   }
 }
 /***********************************下属员工考察详情页 start*************************************/
+div[data-ysp-modelid="checkMyInfo"]{
+  .consequenceList{
+    height: 95vh;
+    overflow: auto;
+  }
+}
 .consequence,.abnormal{
   position: absolute;
   top: 0;
