@@ -120,7 +120,7 @@
     getData_control68_uTPBoE: function (elem) {
       if (!elem) {
         return;
-      }var disabedMask = elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN").disabled;if (elem && disabedMask) {
+      }var disabedMask = elem && elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN") && elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN").disabled;if (elem && disabedMask) {
         return true;
       }
     },

@@ -393,38 +393,14 @@
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control102_2BVc0B": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge FORM.PSForm DIV.ps_box-toolshiddens"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control102_2BVc0B"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": false,
-      "monitored": true,
-      "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control103_WLTPht": {
       "location": {
         "data": {
           "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -463,60 +439,10 @@
         ]
       },
       "roles": "element,file",
+      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
       "componentType": "fileUpload"
-    },
-    "control104_11MtmF": {
-      "location": {
-        "data": {
-          "tagName": "INPUT"
-        },
-        "locators": [
-          {
-            "id": "@title",
-            "prob": 2,
-            "value": {
-              "text": [
-                "浏览"
-              ],
-              "textboxValue": "C:\\fakepath\\businessTravel.png"
-            }
-          },
-          {
-            "id": "elem/@name",
-            "prob": 2,
-            "value": "descendant::INPUT[@name=\"#ICOrigFileName\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              32,
-              41
-            ],
-            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge FORM.PSForm DIV.ps_box-toolshiddens INPUT"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[1]/INPUT[1]"
-          },
-          {
-            "id": "input/type",
-            "verifyEnabled": true,
-            "value": "file"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control104_11MtmF"
-      },
-      "intendedRole": "custom",
-      "roles": "element,file,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
-      "componentType": "custom"
     }
   },
   "contexts": {
@@ -531,9 +457,7 @@
         "control75_5yAX5O",
         "control8_f14Z7x",
         "control20_sQdATO",
-        "control102_2BVc0B",
-        "control103_WLTPht",
-        "control104_11MtmF"
+        "control103_WLTPht"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -613,16 +537,6 @@
       "fromContextId": "context8_SXsRJl",
       "fromAction": "doAction",
       "fromControlId": "control48_2B2nl2",
-      "toContexts": [
-        {
-          "toContextId": "context8_SXsRJl"
-        }
-      ]
-    },
-    "flow56_8rhsK6": {
-      "fromContextId": "context8_SXsRJl",
-      "fromAction": "doAction",
-      "fromControlId": "control102_2BVc0B",
       "toContexts": [
         {
           "toContextId": "context8_SXsRJl"
@@ -812,21 +726,6 @@
           }
         },
         {
-          "id": "uiControl105_sDph6e",
-          "controlId": "control102_2BVc0B",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl105_sDph6e",
-                "onGetTemplate": "getTemplate_uiControl105_sDph6e"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl20_KaTOBH",
           "controlId": "control20_sQdATO",
           "display": {
@@ -842,26 +741,12 @@
           }
         },
         {
-          "id": "uiControl107_zrhwsL",
-          "controlId": "control104_11MtmF",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl107_zrhwsL",
-                "onGetTemplate": "getTemplate_uiControl107_zrhwsL"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl106_AxOcKn",
           "controlId": "control103_WLTPht",
           "display": {
             "adapterId": "clickable",
             "type": "fileUpload",
+            "class": "fakeFile",
             "adapter": {
               "templateType": ""
             }
