@@ -1241,3 +1241,35 @@
       var target = elem.querySelector('textarea');
       target.value = val;
     }
+- name: 个人优劣势综述
+  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n    var list=data.content.map(function(d,i){\n      return(\n      \t<div>\n        \t\t<p><span>0{i+1}</span><span>{d[0]}</span></p>\n          <div>\n          \t\t<p><span>{data.titleBar[1]}</span><span>{d[1]}</span></p>\n            <p><span>{data.titleBar[2]}</span><span>{d[2]}</span></p>\n            <p><span>{data.titleBar[3]}</span><span>{d[3]}</span></p>\n          </div>\n        </div>\n      )\n    })\n    return (\n      <div className='ysp-grylszs-tt'>\n        <p>{data.title}</p>\n        {list}\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {
+      titleBar: [],
+      content: []
+    };
+    data.title = '个人优劣势综述';
+    var trs = elem.querySelectorAll('tr');
+    for (var i = 0; i < trs.length; i++) {
+      if (i == 0) {
+        var tds = trs[i].querySelectorAll('td');
+
+        for (var j = 0; j < tds.length; j++) {
+          data.titleBar.push(tds[j].textContent.trim());
+        }
+      } else if (i > 0) {
+        var arr = [];
+        var tds = trs[i].querySelectorAll('td');
+
+        for (var j = 0; j < tds.length; j++) {
+          arr.push(tds[j].textContent.trim());
+        }
+
+        data.content.push(arr);
+      }
+    }
+    return data;
+  doAction: ''
