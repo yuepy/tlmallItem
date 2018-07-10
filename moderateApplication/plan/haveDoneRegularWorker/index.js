@@ -225,16 +225,20 @@
     getData_control334_TTZaGX: function (elem) {
       if (!elem) {
         return;
-      }var data = {};var trs = elem.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
-        if (trs[i].querySelector('textarea')) {
-          var tds = trs[i].querySelectorAll('td');for (j = 0; j < tds.length; j++) {}
+      }var data = { txt: [], ipt: [] };var trs = elem.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        var tds = trs[i].querySelectorAll('td');for (j = 0; j < tds.length; j++) {
+          if (tds[j].querySelector('textarea')) {
+            data.txt.push({ left: tds[j].querySelector('label').textContent.replace(/\s+/g, ''), right: tds[j].querySelector('textarea').value, readyState: tds[j].querySelector('textarea').readOnly });
+          } else {
+            data.ipt.push({ left: tds[j].textContent.trim(), checked: tds[j].querySelector('input').checked, readyState: tds[j].querySelector('input').disabled });
+          }
         }
-      }return data;
+      }data.title = '试用期转正情况';return data;
     },
     doAction_uiControl334_9gpmvK: function (data, elem) {},
     getTemplate_uiControl334_9gpmvK: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div>\n        \u81EA\u5B9A\u4E49\u7EC4\u4EF6\u7528\u6765\u9002\u914D\u57FA\u672C\u7EC4\u4EF6\u65E0\u6CD5\u9002\u914D\u7684\u9875\u9762\u5143\u7D20\uFF0C\u60A8\u53EF\u4EE5\u901A\u8FC7\u53F3\u952E\u6253\u5F00\u8BE5\u81EA\u5B9A\u4E49\u7EC4\u4EF6\u7F16\u8F91\u5668\u8FDB\u884C\u7F16\u8F91\n      </div>\n    )\n  }\n});";
-      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      null,\n      \"\\u81EA\\u5B9A\\u4E49\\u7EC4\\u4EF6\\u7528\\u6765\\u9002\\u914D\\u57FA\\u672C\\u7EC4\\u4EF6\\u65E0\\u6CD5\\u9002\\u914D\\u7684\\u9875\\u9762\\u5143\\u7D20\\uFF0C\\u60A8\\u53EF\\u4EE5\\u901A\\u8FC7\\u53F3\\u952E\\u6253\\u5F00\\u8BE5\\u81EA\\u5B9A\\u4E49\\u7EC4\\u4EF6\\u7F16\\u8F91\\u5668\\u8FDB\\u884C\\u7F16\\u8F91\"\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n    var list=data.ipt.map(function(d,i){\n      return(\n      \t<p><input type='radio' disabled={d.readyState} checked={d.checked}/><label>{d.left}</label></p>\n      )\n    })\n    return (\n      <div className='ysp-regularWorkerRadio-tt'>\n        <div>{data.title}</div>\n        {list}\n        <div><span>{data.txt[0].left}</span><ATextarea readOnly={data.txt[0].readyState} value={data.txt[0].right}></ATextarea></div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    var list = data.ipt.map(function (d, i) {\n      return React.createElement(\n        'p',\n        null,\n        React.createElement('input', { type: 'radio', disabled: d.readyState, checked: d.checked }),\n        React.createElement(\n          'label',\n          null,\n          d.left\n        )\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'ysp-regularWorkerRadio-tt' },\n      React.createElement(\n        'div',\n        null,\n        data.title\n      ),\n      list,\n      React.createElement(\n        'div',\n        null,\n        React.createElement(\n          'span',\n          null,\n          data.txt[0].left\n        ),\n        React.createElement(ATextarea, { readOnly: data.txt[0].readyState, value: data.txt[0].right })\n      )\n    );\n  }\n});";
     }
   });
 })(window, ysp);
