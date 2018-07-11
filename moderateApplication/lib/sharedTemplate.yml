@@ -1273,3 +1273,37 @@
     }
     return data;
   doAction: ''
+- name: 弹框图片头部
+  getTemplate: "import { Header, HeaderLeft } from 'ysp-interior-components';\n//import { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  click:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n      \teventType:'back'  \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(data==undefined){return \"\"}\n    return (\n      <div className='titleH1'>\n          <Header title={data.title}>\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.click.bind(this)}>返回</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {};
+    data.title = "说明";
+    return data;
+  doAction: |
+    if (data.eventType == 'back') {
+      //debugger;
+      var target = elem.parentElement.parentElement.parentElement.previousElementSibling.querySelector('.aui_close');
+      target.click();
+    }
+- name: 弹框图片
+  getTemplate: |-
+    module.exports = React.createClass({
+      render: function() {
+        var data=this.props.customData;
+        var src="http://172.16.11.61:8000/"+data
+        return (
+          <div>
+            <img src={src}/>
+          </div>
+        )
+      }
+    });
+  getData: |
+    if (!elem) {
+      return;
+    }
+    return elem.getAttribute('src');
+  doAction: ''

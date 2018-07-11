@@ -12,6 +12,10 @@
         "data": {
           "tagName": "H1"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -46,6 +50,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -82,6 +90,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -126,6 +138,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -224,6 +240,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -260,6 +280,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -295,6 +319,10 @@
       "location": {
         "data": {
           "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -409,11 +437,11 @@
             },
             {
               "method": "XPath",
-              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo1_P1\"]/div[8]/table"
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo3_P1\"]/div[12]/table"
             },
             {
               "method": "XPath",
-              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo3_P1\"]/div[12]/table"
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo1_P1\"]/div[8]/table"
             }
           ]
         },
@@ -451,7 +479,429 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": true,
       "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control414_mubcRW": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo3_P1\"]/div[14]/table"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo2_P1\"]/div[14]/table"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo1_P1\"]/div[10]/table"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_UCSFInfo3_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[14]/TABLE[1]",
+              "ratio": 0.48
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              5,
+              7
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[5]/DIV[14]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control414_mubcRW"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control415_bye06l": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo1_P1\"]/div[13]/table"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo2_P1\"]/div[17]/table"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo3_P1\"]/div[17]/table"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_UCSFInfo1_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[13]/TABLE[1]",
+              "ratio": 0.41
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              4,
+              5
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[5]/DIV[13]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control415_bye06l"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control416_GAKTQV": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo2_P1\"]/div[10]/table"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo3_P1\"]/div[10]/table"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_UCSFInfo2_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[10]/TABLE[1]",
+              "ratio": 0.446
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              6
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[5]/DIV[10]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control416_GAKTQV"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control417_iAGADB": {
+      "location": {
+        "data": {
+          "tagName": "SPAN"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo2_P1\"]/div[1]/span"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo3_P1\"]/div[1]/span"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_UCSFInfo2_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[1]/SPAN[1]",
+              "ratio": 0.446
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              44
+            ],
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.form-wrapper SPAN"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[5]/DIV[1]/SPAN[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control417_iAGADB"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control418_OZ2UDb": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": false,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo2_P1\"]/div[8]/table"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo1_P1\"]/div[6]/table"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo3_P1\"]/div[8]/table"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_UCSFInfo2_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[8]/TABLE[1]",
+              "ratio": 0.446
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              7
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[5]/DIV[8]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control418_OZ2UDb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control420_7mHS1N": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "img/@src",
+            "prob": 1,
+            "value": {
+              "pathname": "/HelpDocument/%E5%B2%97%E4%BD%8D%E8%B0%83%E5%8A%A8%E8%AF%B4%E6%98%8E.png"
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "TABLE.aui_dialog TD.aui_main DIV.aui_content IMG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/DIV[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control420_7mHS1N"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control421_C5rEma": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UCSFInfo3_P1\"]/div[6]/table[1]"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl00_contentForm_UCSFInfo3_P1",
+              "tagName": "DIV",
+              "prefix": "FORM[@id=\"aspnetForm\"]//",
+              "suffix": "/DIV[6]/TABLE[1]",
+              "ratio": 0.48
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              7
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[5]/DIV[6]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control421_C5rEma"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": false,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control422_V5VGkF": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]/DIV[5]/DIV[5]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              12
+            ],
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.title"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]/DIV[5]/DIV[5]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control422_V5VGkF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -468,7 +918,15 @@
         "control358_ePkNrp",
         "control359_TGdNhO",
         "control360_8px16H",
-        "control361_gSFPJh"
+        "control361_gSFPJh",
+        "control414_mubcRW",
+        "control415_bye06l",
+        "control416_GAKTQV",
+        "control417_iAGADB",
+        "control418_OZ2UDb",
+        "control420_7mHS1N",
+        "control421_C5rEma",
+        "control422_V5VGkF"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -488,6 +946,26 @@
       "fromContextId": "context42_TpCtOD",
       "fromAction": "doAction",
       "fromControlId": "control354_S7sgbQ",
+      "toContexts": [
+        {
+          "toContextId": "context42_TpCtOD"
+        }
+      ]
+    },
+    "flow110_FyluWl": {
+      "fromContextId": "context42_TpCtOD",
+      "fromAction": "doAction",
+      "fromControlId": "control416_GAKTQV",
+      "toContexts": [
+        {
+          "toContextId": "context42_TpCtOD"
+        }
+      ]
+    },
+    "flow112_AhLHB4": {
+      "fromContextId": "context42_TpCtOD",
+      "fromAction": "doAction",
+      "fromControlId": "control420_7mHS1N",
       "toContexts": [
         {
           "toContextId": "context42_TpCtOD"
@@ -560,6 +1038,21 @@
           }
         },
         {
+          "id": "uiControl417_h4mDKk",
+          "controlId": "control417_iAGADB",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl417_h4mDKk",
+                "onGetTemplate": "getTemplate_uiControl417_h4mDKk"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl355_Bbh981",
           "controlId": "control355_gD0TbJ",
           "display": {
@@ -570,6 +1063,36 @@
               "events": {
                 "onDoAction": "doAction_uiControl355_Bbh981",
                 "onGetTemplate": "getTemplate_uiControl355_Bbh981"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl422_4PV6BO",
+          "controlId": "control422_V5VGkF",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl422_4PV6BO",
+                "onGetTemplate": "getTemplate_uiControl422_4PV6BO"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl421_ZOhXir",
+          "controlId": "control421_C5rEma",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl421_ZOhXir",
+                "onGetTemplate": "getTemplate_uiControl421_ZOhXir"
               }
             }
           }
@@ -590,6 +1113,51 @@
           }
         },
         {
+          "id": "uiControl418_TJLVCW",
+          "controlId": "control418_OZ2UDb",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl418_TJLVCW",
+                "onGetTemplate": "getTemplate_uiControl418_TJLVCW"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl416_PPodmf",
+          "controlId": "control416_GAKTQV",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl416_PPodmf",
+                "onGetTemplate": "getTemplate_uiControl416_PPodmf"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl420_c9pCow",
+          "controlId": "control420_7mHS1N",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl420_c9pCow",
+                "onGetTemplate": "getTemplate_uiControl420_c9pCow"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl361_CILv1M",
           "controlId": "control361_gSFPJh",
           "display": {
@@ -600,6 +1168,36 @@
               "events": {
                 "onDoAction": "doAction_uiControl361_CILv1M",
                 "onGetTemplate": "getTemplate_uiControl361_CILv1M"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl414_XxK4Qs",
+          "controlId": "control414_mubcRW",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl414_XxK4Qs",
+                "onGetTemplate": "getTemplate_uiControl414_XxK4Qs"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl415_F1bzl8",
+          "controlId": "control415_bye06l",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl415_F1bzl8",
+                "onGetTemplate": "getTemplate_uiControl415_F1bzl8"
               }
             }
           }
@@ -663,7 +1261,8 @@
     "page/urls": {
       "contexts": {
         "context42_TpCtOD": [
-          "172.16.11.61:8000/Forms/HR/SFInfo/View.aspx?ProcInstId=4BE44D591AF556BF"
+          "172.16.11.61:8000/Forms/HR/SFInfo/View.aspx?ProcInstId=4BE44D591AF556BF",
+          "172.16.11.61:8000/Forms/HR/SFInfo/View.aspx?ProcInstId=F344595B9E0BA1E6"
         ]
       }
     },
@@ -1133,6 +1732,59 @@
             "tj",
             "top",
             "ufoot"
+          ],
+          [
+            "activeA",
+            "activeTD",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "btn-add-user",
+            "clear",
+            "col",
+            "col-",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "initA",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "none_edit",
+            "page-shadow",
+            "red",
+            "required",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
           ]
         ]
       }
@@ -1248,6 +1900,66 @@
             "TR/TD/INPUT-hidden",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/SPAN/INPUT-submit",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/IMG",
+            "TD/DIV/TABLE",
+            "TD/LABEL/SPAN",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/INPUT-checkbox",
+            "TD/SPAN/INPUT-radio",
+            "TD/SPAN/LABEL",
+            "TD/TABLE/TBODY",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-radio",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SELECT",
             "TR/TD/SPAN",
             "TR/TD/TABLE",
             "TR/TD/TEXTAREA",
