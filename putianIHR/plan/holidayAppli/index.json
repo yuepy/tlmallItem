@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "menu": "../menu/index.json",
-    "checkMyInfo": "file://C:/Users/w3cdr/Documents/enterplorer/enterprises/587743d37df4e62b8c4e3d60/apps/putianIHR/plan/checkMyInfo/index.json"
+    "checkMyInfo": "file://C:/Users/w3cdr/Documents/enterplorer/enterprises/587743d37df4e62b8c4e3d60/apps/putianIHR/plan/checkMyInfo/index.json",
+    "overTime": "../overTime/index.json"
   },
   "chineseName": "假期申请",
   "description": "",
@@ -558,6 +559,10 @@
         "data": {
           "tagName": "INPUT"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@title",
@@ -712,6 +717,10 @@
       "toContexts": [
         {
           "toContextId": "context3_fi6f26"
+        },
+        {
+          "toContextId": "context12_el3bIi",
+          "toModelId": "overTime"
         }
       ]
     },
