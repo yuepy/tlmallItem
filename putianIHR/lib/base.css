@@ -896,6 +896,7 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   margin-top: 0;
 }
 .ysp-lists {
+  overflow: hidden;
   padding: 0 0.75rem;
   height: 2.75rem;
   line-height: 2.75rem;
@@ -903,8 +904,8 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   color: #333;
 }
 .ysp-lists .ysp-l {
-  display: inline-block;
   width: 50%;
+  float: left;
   line-height: 2.75rem;
 }
 .ysp-lists .ysp-l em.star {
@@ -929,12 +930,13 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   position: relative;
   text-align: right;
   width: 50%;
-  display: inline-block;
+  float: left;
   height: 2.75rem;
-  line-height: 1.75rem;
 }
 .ysp-lists .ysp-r input {
   width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
   color: #666;
   font-size: 14px;
   border: none;
@@ -942,16 +944,12 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   margin: 0;
 }
 .ysp-lists .ysp-r input.date-time {
-  height: 2.6rem;
-  line-height: 2.6rem;
   position: relative;
   background: url(../local/img/arrow-r.png) no-repeat right 0.72rem #fff;
 }
 .ysp-lists .ysp-r input.clock-time {
-  height: 2.6rem;
   padding-right: 22px;
   position: relative;
-  display: inline-block;
 }
 .ysp-lists .ysp-r input.PSERROR {
   background-color: #f76f49;
@@ -997,7 +995,6 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   overflow-x: scroll;
 }
 .ysp-lists .ysp-r select.sel-type {
-  display: inline-block;
   height: 2.5rem;
   background: url(../local/img/arrow-r.png) no-repeat right center #fff;
   border: none;
@@ -1326,8 +1323,6 @@ button[type='fileUpload'] {
   line-height: 1.8rem;
   border: 1px solid #e1e1e1;
   border-radius: 3px;
-  margin-top: 0.4rem;
-  background: url(../local/img/arrow-r.png) no-repeat right 0.2rem #fff;
   padding-right: 10%;
 }
 .ysp-r em.bolang {
