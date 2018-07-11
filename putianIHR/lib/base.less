@@ -881,15 +881,16 @@ div[data-ysp-modelid="checkMyInfo"]{
 }
 
 .ysp-lists{
-    display: flex;
+    // display: flex;zyt
   	padding:0 0.75rem;
-    justify-content: space-between;
+    // justify-content: space-between;zyt
     height: 2.75rem;
     line-height: 2.75rem;
     border-bottom: 1px solid #e6e6e6;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;zyt
   	color:#333;
   .ysp-l{
+    display: inline-block;//zyt
     width:50%;
     line-height: 2.75rem;
     em.star{
@@ -918,17 +919,22 @@ div[data-ysp-modelid="checkMyInfo"]{
     position: relative;
     text-align: right;
     width:50%;
+    display: inline-block;//zyt
+    height: 2.75rem;//zyt
+    line-height: 1.75rem;//zyt
     input{
       width: 100%;
       color:#666;
       font-size:@fontBase;
       border:none;
       text-align:right;
+      margin: 0;
     }
     //日期/时间输入
     input.date-time{
       height:2.6rem;
-      margin-right: 42px;
+      line-height: 2.6rem;
+      // margin-right: 42px;//zyt
       position: relative;
       background:url(../local/img/arrow-r.png) no-repeat right 0.72rem #fff;
     }
@@ -936,6 +942,7 @@ div[data-ysp-modelid="checkMyInfo"]{
       height:2.6rem;
       padding-right:22px;
       position: relative;
+      display: inline-block;//zyt
     }
     input.PSERROR{
       background-color:@tip;
@@ -1013,7 +1020,7 @@ div[data-ysp-modelid="checkMyInfo"]{
       font-style: normal;
       font-size: @fontLarge;
       line-height: 2.75rem;
-      margin-right:22px;
+      // margin-right:22px;zyt
     	color:#aaa;
     	text-decoration: none;
    	 -webkit-font-smoothing: antialiased;

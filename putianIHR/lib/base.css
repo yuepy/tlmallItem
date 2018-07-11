@@ -896,16 +896,14 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   margin-top: 0;
 }
 .ysp-lists {
-  display: flex;
   padding: 0 0.75rem;
-  justify-content: space-between;
   height: 2.75rem;
   line-height: 2.75rem;
   border-bottom: 1px solid #e6e6e6;
-  flex-wrap: wrap;
   color: #333;
 }
 .ysp-lists .ysp-l {
+  display: inline-block;
   width: 50%;
   line-height: 2.75rem;
 }
@@ -931,6 +929,9 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   position: relative;
   text-align: right;
   width: 50%;
+  display: inline-block;
+  height: 2.75rem;
+  line-height: 1.75rem;
 }
 .ysp-lists .ysp-r input {
   width: 100%;
@@ -938,10 +939,11 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   font-size: 14px;
   border: none;
   text-align: right;
+  margin: 0;
 }
 .ysp-lists .ysp-r input.date-time {
   height: 2.6rem;
-  margin-right: 42px;
+  line-height: 2.6rem;
   position: relative;
   background: url(../local/img/arrow-r.png) no-repeat right 0.72rem #fff;
 }
@@ -949,6 +951,7 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   height: 2.6rem;
   padding-right: 22px;
   position: relative;
+  display: inline-block;
 }
 .ysp-lists .ysp-r input.PSERROR {
   background-color: #f76f49;
@@ -1025,7 +1028,6 @@ div[data-ysp-modelid="checkMyInfo"] .consequenceList {
   font-style: normal;
   font-size: 16px;
   line-height: 2.75rem;
-  margin-right: 22px;
   color: #aaa;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
