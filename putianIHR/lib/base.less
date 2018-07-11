@@ -34,12 +34,12 @@ input[type='date']{
 .view-wrapper{
   background-color: #f4f4f4;
 }
-.editor-state div[data-componentsid="uiControl96_0e7pOd"],.editor-state div[data-componentsid="uiControl92_PqtSKA"],.editor-state div[data-componentsid="uiControl98_Vgkb6O"]{
-  .card-body{
-    height: 90vh;
-    overflow: auto;
-  }
-}
+// .editor-state div[data-componentsid="uiControl96_0e7pOd"],.editor-state div[data-componentsid="uiControl92_PqtSKA"],.editor-state div[data-componentsid="uiControl98_Vgkb6O"]{
+//   .card-body{
+//     height: 90vh;
+//     overflow: auto;
+//   }
+// }
 div[data-ysp-modelid] .card{
   box-shadow: none;
 }
@@ -68,6 +68,13 @@ div[data-ysp-modelid="addWork"]{
     overflow: auto;
   }
 }
+div[data-ysp-modelid="businessTravel"],div[data-ysp-modelid="holidayAppli"],div[data-ysp-modelid="forgetCard"]{
+  .card-body{
+    height: 90vh;
+    overflow: auto;
+  }
+}
+
 /******************************CustomHeader组件******************************************/
 .editor-state [data-ysp="component"]{
   padding-top: 0;
@@ -923,7 +930,6 @@ div[data-ysp-modelid="checkMyInfo"]{
     input{
       width: 100%;
       height:2.5rem;
-      // line-height:2.5rem;
       color:#666;
       font-size:@fontBase;
       border:none;
