@@ -72,6 +72,8 @@ div[data-ysp-modelid="businessTravel"],div[data-ysp-modelid="holidayAppli"],div[
   .card-body{
     height: 95vh;
     overflow: auto;
+    position: relative;
+    z-index: 200;
   }
 }
 
@@ -551,11 +553,11 @@ div[data-ysp-modelid="menu"]{
     padding: 10px 0;
     .conditionTitle{
       display: inline-block;
-      width:25%;
+      width:30%;
     }
     .conditionContent{
       display: inline-block;
-      width: 75%;
+      width: 70%;
       select,input{
         border:none;
         margin: 0;
@@ -820,7 +822,6 @@ div[data-ysp-modelid="checkMyInfo"]{
 }
 //地址弹框
 .ysp_adrChoose{
-  // display: none;
   .ysp_showList{
     position: fixed;
     top: 0;
@@ -847,7 +848,6 @@ div[data-ysp-modelid="checkMyInfo"]{
       height: 90vh;
       overflow:auto;
       padding-bottom:15px;
-      // background: #fff;
       >div{
         background:url("../local/img/arrow-r.png") no-repeat right;
         padding: 5px 10px;
@@ -878,7 +878,6 @@ div[data-ysp-modelid="checkMyInfo"]{
   background-color:#fff;
   font-size:@fontBase;
   border-top:1px solid #e1e1e1;
-  // border-bottom:10px solid #f4f4f4;
 }
 .ysp-first-box{
   border-bottom: none;
