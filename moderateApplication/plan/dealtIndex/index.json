@@ -25,7 +25,8 @@
     "routeNew": "../routeNew/index.json",
     "routechange": "../routechange/index.json",
     "haveDoneIndex": "../haveDoneIndex/index.json",
-    "recruit": "../recruit/index.json"
+    "recruit": "../recruit/index.json",
+    "staffspecial": "../staffspecial/index.json"
   },
   "chineseName": "待办首页页面",
   "description": "待办首页页面",
@@ -181,6 +182,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -328,6 +333,10 @@
         {
           "toContextId": "context21_qa2E2Z",
           "toModelId": "recruit"
+        },
+        {
+          "toContextId": "context22_L7nfn7",
+          "toModelId": "staffspecial"
         }
       ]
     },
