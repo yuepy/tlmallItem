@@ -3,6 +3,10 @@
   "id": "selloffAppli",
   "targetURL": "http://192.168.220.110/psp/ps_7/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_003.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_003_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081456511958983123&IsFolder=false",
   "jsFile": "index.js",
+  "requires": {
+    "overTime": "../overTime/index.json",
+    "menu": "file://C:/Users/w3cdr/Documents/enterplorer/enterprises/587743d37df4e62b8c4e3d60/apps/putianIHR/plan/menu/index.json"
+  },
   "chineseName": "销假申请",
   "description": "",
   "controls": {
@@ -217,6 +221,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -261,6 +269,10 @@
       "toContexts": [
         {
           "toContextId": "context5_k7LCe6"
+        },
+        {
+          "toContextId": "context12_el3bIi",
+          "toModelId": "overTime"
         }
       ]
     },
@@ -270,7 +282,16 @@
       "fromControlId": "control37_MvS3h7",
       "toContexts": [
         {
-          "toContextId": "context5_k7LCe6"
+          "toContextId": "context5_k7LCe6",
+          "toModelId": "selloffAppli"
+        },
+        {
+          "toModelId": "menu",
+          "toContextId": "context1_zfhIAP"
+        },
+        {
+          "toModelId": "overTime",
+          "toContextId": "context12_el3bIi"
         }
       ]
     },

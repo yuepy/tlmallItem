@@ -3,6 +3,9 @@
   "id": "salary",
   "targetURL": "http://192.168.220.110/psp/ps_3/EMPLOYEE/HRMS/c/HPS_MENU.HPS_PY_007_CPT.GBL?PORTALPARAM_PTCNAV=HPS_PY_007_CPT_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_PY_06&EOPP.SCLabel=TL_PY_06&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_PY_06.ADMN_S201802231333333512375255&IsFolder=false",
   "jsFile": "index.js",
+  "requires": {
+    "overTime": "../overTime/index.json"
+  },
   "chineseName": "薪资单",
   "description": "",
   "controls": {
@@ -241,7 +244,12 @@
       "fromControlId": "control31_0nUwQJ",
       "toContexts": [
         {
-          "toContextId": "context7_GskHkt"
+          "toContextId": "context7_GskHkt",
+          "toModelId": "salary"
+        },
+        {
+          "toModelId": "overTime",
+          "toContextId": "context12_el3bIi"
         }
       ]
     },

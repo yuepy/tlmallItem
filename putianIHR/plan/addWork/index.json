@@ -3,6 +3,9 @@
   "id": "addWork",
   "targetURL": "http://192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_004.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_004_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455558703878902&IsFolder=false",
   "jsFile": "index.js",
+  "requires": {
+    "overTime": "../overTime/index.json"
+  },
   "chineseName": "加班申请",
   "description": "",
   "controls": {
@@ -470,6 +473,10 @@
       "toContexts": [
         {
           "toContextId": "context8_SXsRJl"
+        },
+        {
+          "toContextId": "context12_el3bIi",
+          "toModelId": "overTime"
         }
       ]
     },
@@ -479,7 +486,12 @@
       "fromControlId": "control51_GspU5y",
       "toContexts": [
         {
-          "toContextId": "context8_SXsRJl"
+          "toContextId": "context8_SXsRJl",
+          "toModelId": "addWork"
+        },
+        {
+          "toModelId": "overTime",
+          "toContextId": "context12_el3bIi"
         }
       ]
     },

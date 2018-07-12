@@ -3,6 +3,9 @@
   "id": "remainHoliday",
   "targetURL": "http://192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_SELF_VACA_CPT.GBL?PORTALPARAM_PTCNAV=HPS_SELF_VACA_CPT_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_ABS_07&EOPP.SCLabel=TL_ABS_07&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_ABS_07.ADMN_S201804131619464569841608&IsFolder=false",
   "jsFile": "index.js",
+  "requires": {
+    "overTime": "../overTime/index.json"
+  },
   "chineseName": "假期余额自助查询",
   "description": "",
   "controls": {
@@ -259,6 +262,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -321,7 +328,12 @@
       "fromControlId": "control46_1gpNC0",
       "toContexts": [
         {
-          "toContextId": "context6_NIxgQ8"
+          "toContextId": "context6_NIxgQ8",
+          "toModelId": "remainHoliday"
+        },
+        {
+          "toModelId": "overTime",
+          "toContextId": "context12_el3bIi"
         }
       ]
     },

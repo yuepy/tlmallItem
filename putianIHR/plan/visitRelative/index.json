@@ -3,6 +3,9 @@
   "id": "visitRelative",
   "targetURL": "http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_005.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_005_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081457125675832392&IsFolder=false",
   "jsFile": "index.js",
+  "requires": {
+    "overTime": "../overTime/index.json"
+  },
   "chineseName": "外派探亲假资格申请",
   "description": "",
   "controls": {
@@ -297,6 +300,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -353,7 +360,12 @@
       "fromControlId": "control65_F0ivJ4",
       "toContexts": [
         {
-          "toContextId": "context11_rJDB46"
+          "toContextId": "context11_rJDB46",
+          "toModelId": "visitRelative"
+        },
+        {
+          "toModelId": "overTime",
+          "toContextId": "context12_el3bIi"
         }
       ]
     },
