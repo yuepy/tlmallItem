@@ -61,7 +61,7 @@
         }); //区县
         var location = elem.querySelectorAll("div[id*='HPS_FAM_APR_LOCATION$']");var locationDes = elem.querySelectorAll("span[id^='SET_LOC_VW_DESCR$']");[].forEach.call(location, function (d8, i8) {
           if (!d8.querySelector("label") && d8.querySelector("input[id^='HPS_FAM_APR_LOCATION']")) {
-            data.location.push(d8.querySelector("input[id^='HPS_FAM_APR_LOCATION']").value + "  " + locationDes[i8 - 1].textContent);data.locationId.push(d8.querySelector("input[id^='HPS_FAM_APR_LOCATION']").getAttribute("id"));data.locationSearchId.push(d8.querySelector("input[id^='HPS_FAM_APR_LOCATION']").nextElementSibling.getAttribute("id"));data.locationType.push("input");
+            data.location.push(d8.querySelector("input[id^='HPS_FAM_APR_LOCATION']").value + "  " + locationDes[i8].textContent);data.locationId.push(d8.querySelector("input[id^='HPS_FAM_APR_LOCATION']").getAttribute("id"));data.locationSearchId.push(d8.querySelector("input[id^='HPS_FAM_APR_LOCATION']").nextElementSibling.getAttribute("id"));data.locationType.push("input");
           } else if (!d8.querySelector("label") && d8.querySelector("span[id^='HPS_FAM_APR_LOCATION']")) {
             data.location.push(d8.textContent.trim() + "  " + locationDes[i8].textContent);data.locationId.push("");data.locationSearchId.push("");data.locationType.push("span");
           }
@@ -87,8 +87,7 @@
             data.phone.push(d11.value);data.phoneId.push(d11.getAttribute("id"));data.phoneType.push("input");
           });
         } else {
-          phone = elem.querySelectorAll("span[id^='HPS_FAM_APR_PHONE1']");
-          [].forEach.call(phone, function (d11, i11) {
+          phone = elem.querySelectorAll("span[id^='HPS_FAM_APR_PHONE1']");[].forEach.call(phone, function (d11, i11) {
             data.phone.push(d11.textContent);data.phoneType.push("span");
           });
         } //出生日期
@@ -127,14 +126,14 @@
         } //职务
         var position = elem.querySelectorAll("input[id^='HPS_FAM_APR_HPS_FAMILY_JOB']");if (position && position.length > 0) {
           [].forEach.call(position, function (d17, i17) {
-            data.position.push(d17.value);data.positionId.push(d17.getAttribute("id"));data.positionType.push("input");
+            data.position.push(d17.value);data.positionId.push(d17.getAttribute("id"));
+            data.positionType.push("input");
           });
         } else {
           position = elem.querySelectorAll("span[id^='HPS_FAM_APR_HPS_FAMILY_JOB']");[].forEach.call(position, function (d17, i17) {
             data.position.push(d17.textContent);data.positionType.push("span");
           });
-        }
-        //删除
+        } //删除
         var deleteId = elem.ownerDocument.querySelectorAll("a[id*='ICField'][title*='删除']");[].forEach.call(deleteId, function (d18, i18) {
           data.deleteId.push(d18.getAttribute("id"));
         });return data;
