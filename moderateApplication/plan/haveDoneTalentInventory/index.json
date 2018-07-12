@@ -3,6 +3,9 @@
   "id": "haveDoneTalentInventory",
   "targetURL": "http://172.16.11.61:8000/Forms/HR/SFInfo/View.aspx?ProcInstId=4BE44D591AF556BF#",
   "jsFile": "index.js",
+  "requires": {
+    "haveDoneIndex": "../haveDoneIndex/index.json"
+  },
   "chineseName": "已办人才盘点信息表",
   "description": "",
   "firstPaintEnable": false,
@@ -781,6 +784,10 @@
         "data": {
           "tagName": "IMG"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "img/@src",
@@ -868,6 +875,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -939,6 +950,10 @@
       "toContexts": [
         {
           "toContextId": "context42_TpCtOD"
+        },
+        {
+          "toContextId": "context25_IDCMfP",
+          "toModelId": "haveDoneIndex"
         }
       ]
     },

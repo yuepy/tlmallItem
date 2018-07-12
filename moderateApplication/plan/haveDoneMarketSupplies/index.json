@@ -374,6 +374,53 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control464_KnmozG": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/TABLE[3]",
+              "ratio": 0.839
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              4,
+              5
+            ],
+            "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control464_KnmozG"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -387,7 +434,8 @@
         "control339_AMNOep",
         "control340_X8RtrO",
         "control341_Z5fwzR",
-        "control343_Fk2gOX"
+        "control343_Fk2gOX",
+        "control464_KnmozG"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -544,6 +592,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl341_fWiAhE",
                 "onGetTemplate": "getTemplate_uiControl341_fWiAhE"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl464_SQdnQk",
+          "controlId": "control464_KnmozG",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl464_SQdnQk",
+                "onGetTemplate": "getTemplate_uiControl464_SQdnQk"
               }
             }
           }
