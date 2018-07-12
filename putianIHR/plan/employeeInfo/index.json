@@ -7,7 +7,8 @@
     "EmployeeEditors": "../EmployeeEditors/index.json",
     "educationalExperience": "../educationalExperience/index.json",
     "familyNumber": "../familyNumber/index.json",
-    "menu": "../menu/index.json"
+    "menu": "../menu/index.json",
+    "overTime": "../overTime/index.json"
   },
   "chineseName": "员工履历表",
   "description": "",
@@ -186,6 +187,38 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control105_B8GNSd": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::FORM[@id=\"HPS_RSM_SS\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge BODY.PSPAGE FORM.PSForm"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control105_B8GNSd"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -195,7 +228,8 @@
         "control15_TT4EPb",
         "control18_ysLBGm",
         "control14_IuIN2O",
-        "control100_82ucaX"
+        "control100_82ucaX",
+        "control105_B8GNSd"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -258,6 +292,10 @@
         {
           "toContextId": "context10_26LNq7",
           "toModelId": "familyNumber"
+        },
+        {
+          "toContextId": "context12_el3bIi",
+          "toModelId": "overTime"
         }
       ]
     }
@@ -322,6 +360,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl103_u86qyf",
                 "onGetTemplate": "getTemplate_uiControl103_u86qyf"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl108_yx4BuH",
+          "controlId": "control105_B8GNSd",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl108_yx4BuH",
+                "onGetTemplate": "getTemplate_uiControl108_yx4BuH"
               }
             }
           }
@@ -947,6 +1000,170 @@
             "pthnavmru_HC_PERSONAL_DATA",
             "pthnavmru_HPS_HR_AWE__GBL",
             "pthnavmru_HPS_RSM_SS",
+            "pthnavmru_HPS_TL_AWE__GBL",
+            "pthnavmrufavsep",
+            "pthnavmruroot",
+            "pthnavroot",
+            "pthnavsid",
+            "ptiframatfcontent",
+            "ptifrmatfcancel",
+            "ptifrmatfdescr",
+            "ptifrmatfinput",
+            "ptifrmatflbl",
+            "ptifrmatflist",
+            "ptifrmatfname",
+            "ptifrmatfok",
+            "ptifrmcontent",
+            "ptifrmpopup",
+            "ptifrmrc",
+            "ptifrmrchandle",
+            "ptifrmresizedownmask",
+            "ptifrmresizeupmask",
+            "ptifrmsep",
+            "ptifrmtarget",
+            "ptifrmtgtframe",
+            "ptpopoptitle",
+            "ptpopup",
+            "ptpopupclose",
+            "ptpopupcontainer",
+            "ptpopupcontent",
+            "ptpopupcontentcontainer",
+            "ptpopuplayouttbl",
+            "ptpopupmask",
+            "ptpopupmsg",
+            "ptpopupmsgbtn",
+            "ptpopupmsgbuttons",
+            "ptpopupmsgtext",
+            "ptpopupshadow",
+            "ptpopuptitlebar",
+            "ptrcControls_RelatedContent",
+            "ptrcDropDowndiv_RelatedContent",
+            "ptrcDropdown_RelatedContent",
+            "ptrcTCSpacer",
+            "ptrcclose",
+            "ptrccollapse_expand",
+            "ptrcdropdownicon_RelatedContent",
+            "ptrcnewwin",
+            "ptrcrefresh",
+            "ptrcrefreshonhover",
+            "ptrctitlebar",
+            "ptrctitleline",
+            "ptsrc_dropdownicon_RelatedContent",
+            "rcMenuOnRC",
+            "vRCPageletGroupsDiv",
+            "vRCPgltArea",
+            "vRCPgltAreaBody",
+            "vRCPgltAreaBodyAnchor",
+            "vRCPgltAreaBodyShow",
+            "vRCPgltAreaContainer",
+            "vRCPgltAreaFrameDiv",
+            "vRCPgltAreaHeader",
+            "vRCPgltAreaHide",
+            "vRCPgltAreaHideContainer",
+            "vRCPgltAreaResizeBar",
+            "vRCPgltAreaShow"
+          ],
+          [
+            "CO_EMPLOYEE_SELF_SERVICE",
+            "DEFAULT_HEADER_TANGERINE_ALT",
+            "Delayed_empty",
+            "HC_GLOBAL_PAYROLL",
+            "HC_ORGANIZATIONAL_DEVELOPMENT",
+            "HC_SETUP_HRMS",
+            "HC_WORKFORCE_ADMINISTRATION",
+            "HPS_DEVELOP",
+            "HPS_DEVELOP_ABS",
+            "HPS_DEVELOP_RZ",
+            "HPS_RPT",
+            "HPS_STD_MENU_GBL",
+            "PT_PEOPLETOOLS",
+            "PT_REPORTING_TOOLS",
+            "PT_TREE_MANAGER",
+            "RelatedContent",
+            "SRelatedContent",
+            "SrcMenuOnRC",
+            "WAIT_empty",
+            "crefli_PT_CHANGE_PASSWORD_GBL",
+            "crefli_PT_PORTAL_ADD_FAV_GBL",
+            "crefli_PT_PTGP_USERPREF_FL_GBL",
+            "crefli_fav_PT_PORTAL_EDIT_FAV_GBL",
+            "fldra_CO_EMPLOYEE_SELF_SERVICE",
+            "fldra_HC_GLOBAL_PAYROLL",
+            "fldra_HC_ORGANIZATIONAL_DEVELOPMENT",
+            "fldra_HC_SETUP_HRMS",
+            "fldra_HC_WORKFORCE_ADMINISTRATION",
+            "fldra_HPS_DEVELOP",
+            "fldra_HPS_DEVELOP_ABS",
+            "fldra_HPS_DEVELOP_RZ",
+            "fldra_HPS_RPT",
+            "fldra_HPS_STD_MENU_GBL",
+            "fldra_PT_PEOPLETOOLS",
+            "fldra_PT_REPORTING_TOOLS",
+            "fldra_PT_TREE_MANAGER",
+            "processing",
+            "ptabn",
+            "ptabn_SRCHPROMPT",
+            "ptabnclonebc",
+            "ptabncrefbc",
+            "ptabnfldrbc",
+            "ptabnportalfldrbc",
+            "ptabnprevresults",
+            "ptabnrscontainer",
+            "ptabnsadiv",
+            "ptabnsepbc",
+            "ptabnsp",
+            "ptabnsrchagain",
+            "ptabnsrchtitle",
+            "ptabntdiv",
+            "ptalPageMask",
+            "ptatfsid",
+            "ptbr_header_container",
+            "ptdropdownmenu",
+            "pthbcEndWall",
+            "pthbcScroll",
+            "pthbcScrollNext",
+            "pthbcScrollPrev",
+            "pthbcStartWall",
+            "pthbcUlScroll",
+            "pthdraddto",
+            "pthdraddto_div",
+            "pthdratf",
+            "pthdrcontainer",
+            "pthdrhome",
+            "pthdrlinks",
+            "pthdrlogoswan",
+            "pthdrlogout",
+            "pthdrnavbar",
+            "pthdrnavbar_div",
+            "pthdrnavbarlinks",
+            "pthdrnotify",
+            "pthdrnotify_badge",
+            "pthdrnotify_div",
+            "pthdrsyslinks",
+            "pthnavbc",
+            "pthnavbc_HPS_STD_MENU_GBL",
+            "pthnavbc_HPS_STD_RESUME",
+            "pthnavbc_MYFAVORITES",
+            "pthnavbc_PORTAL_ROOT_OBJECT",
+            "pthnavbca_HPS_STD_MENU_GBL",
+            "pthnavbca_HPS_STD_RESUME",
+            "pthnavbca_MYFAVORITES",
+            "pthnavbca_PORTAL_ROOT_OBJECT",
+            "pthnavbccref_HPS_RSM_SS",
+            "pthnavbccrefanc_HPS_RSM_SS",
+            "pthnavblock",
+            "pthnavcontainer",
+            "pthnavfav",
+            "pthnavfavli",
+            "pthnavfavsep",
+            "pthnavfly_MYFAVORITES",
+            "pthnavfly_PORTAL_ROOT_OBJECT",
+            "pthnavmrs_",
+            "pthnavmrssep",
+            "pthnavmru",
+            "pthnavmru_HC_PERSONAL_DATA",
+            "pthnavmru_HPS_RSM_SS",
+            "pthnavmru_HPS_TL_AWE__CP_GBL",
             "pthnavmru_HPS_TL_AWE__GBL",
             "pthnavmrufavsep",
             "pthnavmruroot",

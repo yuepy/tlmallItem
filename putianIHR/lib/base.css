@@ -253,6 +253,29 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   font-size: 16px;
   color: #3796FB;
 }
+.tab-loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0);
+  z-index: 1000;
+}
+.tab-loading p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  width: 200px;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  background: #000;
+  opacity: 0.4;
+}
 /******************************菜单页start******************************************/
 div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   padding: 0;
@@ -1954,25 +1977,6 @@ button[type='fileUpload'] {
   color: red;
   font-size: 14px;
   padding: 10px;
-}
-.tab-loading {
-  z-index: 2999;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-.tab-loading p {
-  position: absolute;
-  top: -30px;
-  left: -105px;
-  width: 200px;
-  padding: 20px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  color: #fff;
-  text-align: center;
-  background: #000;
-  opacity: 0.4;
 }
 .ysp-jbxx-tt .ysp-jbxxList-tt .ysp-listItem-tt {
   background: #fff;
