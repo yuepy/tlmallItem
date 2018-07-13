@@ -52,13 +52,9 @@
     },
     doAction_uiControl186_TMTRbg: function (data, elem) {
       var type = data.eventType;var data = data.customData;if (type == 'commit') {
-        // debugger;
         elem.ownerDocument.querySelector("#" + data).click();setTimeout(function () {
           elem.ownerDocument.defaultView.InitAttachmentList();
-        }, 1000); // setTimeout(function () {
-        //   var url = ysp.appMain.getActiveUrl();
-        //   ysp.appMain.reloadPage(url);
-        // }, 2000);
+        }, 1000);
       }if (type == 'add') {
         elem.ownerDocument.querySelector("#" + data).previousElementSibling.querySelector('input').click();
       }if (type == 'updel') {
