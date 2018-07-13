@@ -9,8 +9,13 @@
         //   top.EAPI.closeWindow();
         // } else {
         //   ysp.appMain.back();
-        // } 
-        ysp.appMain.back();
+        // } // ysp.appMain.back();
+        var backVal = ysp.customHelper.tab;
+        if (backVal == "menu") {
+          ysp.appMain.back();backVal = null;
+        } else {
+          top.EAPI.closeWindow();
+        }
       }
     },
     getTemplate_uiControl10_MhoIT9: function () {

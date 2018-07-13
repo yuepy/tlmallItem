@@ -23,6 +23,7 @@
     selectSthMask:_selectSthMask,
     tableData:_tableData,
     alert:_alert,
+    tab:null,
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc){
@@ -40,10 +41,14 @@
 			if(aWin.location.href.indexOf("cmd=login")!==-1){
 				doc.defaultView.frameElement.previousElementSibling.click();
 			};
-			if(aWin.location.href.indexOf("cmd=logout")!==-1||aWin.location.href.indexOf("cmd=login")!==-1||aWin.location.href.indexOf("cmd=expire")!==-1){
-        doc.querySelector("#userid").value="YSP";
-        doc.querySelector("#pwd").value="12345678";
-			}
+      //返回
+      if(aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF")!==-1){
+        ysp.customHelper.tab="menu"
+      }
+			// if(aWin.location.href.indexOf("cmd=logout")!==-1||aWin.location.href.indexOf("cmd=login")!==-1||aWin.location.href.indexOf("cmd=expire")!==-1){
+			// doc.querySelector("#userid").value="YSP";
+			// doc.querySelector("#pwd").value="12345678";
+			// }
       
     },
 

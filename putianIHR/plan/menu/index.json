@@ -16,7 +16,8 @@
     "departureAppli": "../departureAppli/index.json",
     "businessTravel": "../businessTravel/index.json",
     "visitRelative": "../visitRelative/index.json",
-    "overTime": "../overTime/index.json"
+    "overTime": "../overTime/index.json",
+    "menu": "../menu/index.json"
   },
   "chineseName": "菜单",
   "description": "",
@@ -258,7 +259,8 @@
     "page/title": {
       "contexts": {
         "context1_zfhIAP": [
-          "Employee-facing registry content"
+          "Employee-facing registry content",
+          "超时警告。单击“确定”将不结束会话。"
         ]
       }
     },
@@ -266,7 +268,8 @@
       "contexts": {
         "context1_zfhIAP": [
           "192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF",
-          "192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_MS"
+          "192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_MS",
+          "192.168.220.110/psc/ps/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING"
         ]
       }
     },
@@ -1555,6 +1558,15 @@
             "rfrsh_ADMN_TL_HRAWE__HMPG",
             "rfrsh_ADMN_TL_HR__NEW_HMPG",
             "rfrsh_ADMN_TL_PY__HMPG"
+          ],
+          [
+            "alertmsg",
+            "buttoncontainer",
+            "buttonwrapper",
+            "longmsg",
+            "msgcontainer",
+            "msgokbutton",
+            "shortmsg"
           ]
         ]
       }
@@ -1849,6 +1861,15 @@
             "ptpgltlabel",
             "ptpopuptitlebar",
             "ptprtlcontainer"
+          ],
+          [
+            "psfluidbuttonwrapper",
+            "psfluidmsgactions",
+            "psfluidmsgalert",
+            "psfluidmsglong",
+            "psfluidmsgshort",
+            "psfluidokbutton",
+            "pstimeoutmsgcontainer"
           ]
         ]
       }
@@ -1994,6 +2015,15 @@
             "UL/LI/DIV",
             "UL/LI/SPAN",
             "UL/LI/TABLE"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/SPAN/A"
           ]
         ]
       }
