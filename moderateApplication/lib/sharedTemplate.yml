@@ -902,6 +902,50 @@
       var target = elem.querySelector("#" + id);
       target.value = val;
     }
+<<<<<<< HEAD
+=======
+- name: 审批操作item
+  getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {};
+
+    data.title = '审批操作';
+
+    data.content = [];
+
+    var trs = elem.querySelectorAll('tr');
+
+    var obj = {};
+
+    obj.left = '当前环节';
+
+    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
+
+    data.content.push(obj);
+
+    var obj = {};
+
+    obj.left = '意见';
+
+    obj.right =
+    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
+
+    data.content.push(obj);
+
+    data.content.push({
+      left: trs[1].querySelectorAll('td')[1].textContent.trim()
+    });
+
+    return data;
+  doAction: |
+    if (data.eventType == 'change') {
+      elem.querySelector('textarea').value = data.customData;
+    }
+>>>>>>> b57c1493739fdbf1ed3f2e6a22903639f178fab0
 - name: 已办事项说明
   getTemplate: "module.exports = React.createClass({\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n  \tvar list=data.content.map(function(d,i){\n      return(\n       \t<div>\n        \t\t {d.readyState==false?<ATextarea value={d.val} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)}></ATextarea>:<ATextarea value={d.val} readOnly={d.readyState}></ATextarea>}\n        </div>\n      )\n    })\n    return (\n      <div className='ysp-sxsm-tt'>\n        <div className='ysp-sxsmTitle-tt'>{data.title}</div>\n       \t{list}\n      </div>\n    )\n  }\n});"
   getData: |
@@ -933,116 +977,8 @@
       var target = elem.querySelector('textarea');
       target.value = val;
     }
-- name: 带select的基本信息
-  getTemplate: "module.exports = React.createClass({\n  click:function(e){\n    var target = e.target;\n    // debugger;\n    if(target.tagName.toLowerCase() == 'i'){\n      target = target.parentElement.parentElement;\n    }\n    if(target.tagName.toLowerCase() == 'a'){\n      target = target.parentElement;\n    }\n    if(target.previousSibling.className == 'content disnone'){\n      target.previousSibling.className = 'content';\n      target.querySelector('a').className = 'xia';\n    }else{\n      target.previousSibling.className = 'content disnone';\n      target.querySelector('a').className = 'shang';\n    }\n  },\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:[target.dataset.index,target.value]\n      })\n    }\n  },\n  onclickRadio:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'clickRadio',\n        data:[target.dataset.checked,target.dataset.index]\n      })\n    }\n  },\n  onclickBtn:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'clickBtn',\n        data:target.getAttribute('id')\n      })\n    }\n  },\n  onclickhrefA:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'clickhrefA',    \n        data:target.getAttribute('id')\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n   var lis = data.content.map(function(ele,index){\n      if(index<2){\n        var lisele = ele.map(function(d,i){\n          if(!d.type){\n            return(\n          \t<div className='contenttit'>\n            \t<div className='contentitem'>{d.left}</div>\n              <div className='contentitem'>\n                \n                {d.readyState==true?<AInput value={d.right} readOnly={d.readyState}/>:<AInput value={d.right} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)} data-index={index}/>}\n                \n              </div>\n            </div>\n          )\n          }else{\n            if(d.type == 'textarea'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem'><textarea value={d.right}></textarea></div>\n                </div>\n              )\n            }else if(d.type == 'radio'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem ysp-radioBtn-tt'>\n                  \t\t<span className={d.right[0]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[0]} data-index={0} onClick={_this.onclickRadio.bind(_this)}>是</span>\n                    \t<span className={d.right[1]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[1]} data-index={1} onClick={_this.onclickRadio.bind(_this)}>否</span>\n                  </div>\n                </div>\n              )\n            }else if(d.type == 'submit'){\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem ysp-submitBtn-tt'>\n                  \t\t<button id={d.left} onClick={_this.onclickBtn.bind(_this)}>{d.right}</button>\n                  </div>\n                </div>\n              )\n            }else if(d.type == 'a'){\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem ysp-hrefA-tt'>\n                  \t\t<span id={d.left} onClick={_this.onclickhrefA.bind(_this)}>{d.right}</span>\n                  </div>\n                </div>\n              )\n            }else if(d.type=='sel'){\n              var opt=d.right.map(function(opt,optId){\n                if(optId!=1){\n                  \treturn(\n                      <option selected={d.selected==opt?true:false}>{opt}</option>\n                    )\n                }\n                \n              })\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem'>{d.left}</div>\n                   <div className='contentitem'><select disabled={d.disable}>{opt}</select></div>\n                </div>\n              )\n            }\n            \n          }\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      }\n    })\n    var list = data.content.map(function(ele,index){\n      if(index>1){\n        var lisele = ele.map(function(d,i){\n          if(!d.type){\n            return(\n          \t<div className='contenttit'>\n            \t<div className='contentitem'>{d.left}</div>\n              <div className='contentitem'>\n                \n                {d.readyState==true?<AInput value={d.right} readOnly={d.readyState}/>:<AInput value={d.right} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)} data-index={index}/>}\n                \n              </div>\n            </div>\n          )\n          }else{\n            if(d.type == 'textarea'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem'><textarea value={d.right}></textarea></div>\n                </div>\n              )\n            }else if(d.type == 'radio'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem ysp-radioBtn-tt'>\n                  \t\t<span className={d.right[0]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[0]} data-index={0} onClick={_this.onclickRadio.bind(_this)}>是</span>\n                    \t<span className={d.right[1]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[1]} data-index={1} onClick={_this.onclickRadio.bind(_this)}>否</span>\n                  </div>\n                </div>\n              )\n            }else if(d.type == 'submit'){\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem ysp-submitBtn-tt'>\n                  \t\t<button id={d.left} onClick={_this.onclickBtn.bind(_this)}>{d.right}</button>\n                  </div>\n                </div>\n              )\n            }else if(d.type == 'a'){\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem ysp-hrefA-tt'>\n                  \t\t<span id={d.left} onClick={_this.onclickhrefA.bind(_this)}>{d.right}</span>\n                  </div>\n                </div>\n              )\n            }else if(d.type=='sel'){\n              var opt=d.right.map(function(opt,optId){\n                if(optId!=1){\n                  \treturn(\n                      <option selected={d.selected==opt?true:false}>{opt}</option>\n                    )\n                }\n                \n              })\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem'>{d.left}</div>\n                  <select disabled={d.disable}>{opt}</select>\n                </div>\n              )\n            }\n            \n          }\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      }\n    })\n    return (\n      <div className='information'>\n       \t<div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          {lis}</div>\n        <div className='content disnone'>\n          {list}\n          <div className='contentitem' style={{'border-bottom':'1px solid #e0e0e0','width':'100%','text-align':'right'}}>\n            <a href='javascript:;'>{data.content[2][data.content[2].length-1].text}</a>\n          </div>\n        </div>\n        <span onClick={_this.click}><a className='shang' href='javascript:;'></a>显示更多内容</span>\n      </div>\n    )\n  }\n});"
-  getData: |
-    if (!elem) {
-      return;
-    }
-    var data = {}; // var table = elem.querySelectorAll('table')[0];
-    var trs = elem.querySelectorAll('tr');
-    data.title = '基本信息';
-    data.content = [];
-    for (var i = 0; i < trs.length; i++) {
-      var arr = [];
-      var tds = trs[i].querySelectorAll('td');
-
-      for (var k = 0; k < tds.length; k++) {
-        if (tds[k].querySelector('span') == null) {
-          if (tds[k].querySelector("input[type='text']")) {
-            arr.push({
-              left: tds[k].querySelector('label').textContent.trim(),
-              right: tds[k].querySelector("input[type='text']").value,
-              readyState: tds[k].querySelector("input[type='text']").readOnly
-            });
-          }
-
-          if (tds[k].querySelector('textarea')) {
-            arr.push({
-              left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
-              right: tds[k].querySelector('textarea').value,
-              type: 'textarea'
-            });
-          }
-
-          if (tds[k].querySelector("input[type='radio']")) {
-            arr.push({
-              left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
-              right: [tds[k].querySelectorAll("input[type='radio']")[0].checked, tds[k].querySelectorAll("input[type='radio']")[1].checked],
-              type: 'radio'
-            });
-          }
-
-          if (tds[k].querySelector("input[type='submit']")) {
-            arr.push({
-              left: tds[k].querySelector("input[type='submit']").getAttribute('id'),
-              right: tds[k].querySelector("input[type='submit']").value,
-              type: 'submit'
-            });
-          }
-
-          if (tds[k].querySelector("a")) {
-            arr.push({
-              //left: tds[k].querySelector('a').getAttribute('id'),
-              right: tds[k].querySelector("a").textContent,
-              type: 'a'
-            });
-          }
-
-          if (tds[k].querySelector('select')) {
-            var sel = [];
-            var selected = '';
-            var opt = tds[k].querySelector('select').querySelectorAll('option'); //debugger;
-
-            for (var m = 0; m < opt.length; m++) {
-              if (opt[m].selected == true) {
-                selected = opt[m].textContent;
-              }
-
-              sel.push(opt[m].textContent);
-            }
-
-            arr.push({
-              left: tds[k].querySelector("label").textContent.trim(),
-              selected: selected,
-              right: sel,
-              disable: tds[k].querySelector('select').disabled,
-              type: 'sel'
-            });
-          }
-        }
-      }
-
-      data.content.push(arr);
-    }
-    return data;
-  doAction: |
-    if (data.eventType == 'clickRadio') {
-      var check = data.dataCustom[0];
-      var index = data.dataCustom[1];
-      var target = elem.querySelectorAll("input[type='radio']")[index];
-      target.checked = check;
-    } else if (data.eventType == 'blur') {
-      var index = parseInt(data.dataCustom[0]);
-      var val = data.dataCustom[1];
-      var target = elem.querySelectorAll('tr')[index].querySelectorAll("input");
-
-      for (var i = 0; i < target.length; i++) {
-        if (target[i].readOnly == false) {
-          target[i].value = val;
-        }
-      }
-    } else if (data.eventType == 'clickBtn') {
-      var id = data.dataCustom;
-      var target = elem.querySelector("#" + id);
-      target.click();
-    } else if (data.eventType == 'clickhrefA') {
-      var id = data.dataCustom;
-      var target = elem.querySelector('a');
-      target.click();
-    }
-- name: 分页
-  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:target.getAttribute('data-id')\n      })\n    }\n  },\n  onclickpage:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'onclickpage',\n        data:[target.dataset.index,target.dataset.id]\n      })\n    }\n  },\n  onclickpreOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onclickpreOnce'\n        \n      })\n    }\n  },\n  onClicknextOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onClicknextOnce',\n        \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return (\n        <div>\n        \t\n        </div>\n      )\n    }\n    var str = '<',kr = '|<',\n        _this = this;\n    var lis = data.map(function(ele,index){\n      if(index!=0&&index!=data.length-1){\n        if(ele.type!='nextPage'){\n           return(\n              <li data-id={index} onClick={_this.onClick} className={ele.class}>{ele.text}</li>\n            )\n        }\n        \n      }\n    })\n    return (\n      <div className='footerbtn'>\n        <ul>\n          <li data-id='prevPage' data-index={0} onClick={_this.onclickpage.bind(_this)} className='ysp-prePage'>{kr}</li>\n          {data[1].type=='nextPage'?<li data-id='prev' onClick={_this.onclickpreOnce.bind(_this)} className='ysp-preOnce'>...</li>:''}\n          <span calssName='ysp-pageBtnScroll-tt'><span>{lis}</span></span>\n          {data[data.length-2].type=='nextPage'?<li data-id='next' onClick={_this.onClicknextOnce.bind(_this)} className='ysp-nextOne'>...</li>:''}\n          <li data-id='nextPage' data-index={data.length-1} onClick={_this.onclickpage.bind(_this)} className='ysp-nextPage'>>|</li>\n        </ul>\n      </div>\n    )\n  }\n});"
+- name: 分页滚动
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:target.getAttribute('data-id')\n      })\n    }\n  },\n  onclickpage:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'onclickpage',\n        data:[target.dataset.index,target.dataset.id]\n      })\n    }\n  },\n  onclickpreOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onclickpreOnce'\n        \n      })\n    }\n  },\n  onClicknextOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onClicknextOnce',\n        \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return (\n        <div>\n        \t\n        </div>\n      )\n    }\n    var str = '<',kr = '|<',\n        _this = this;\n    var lis = data.map(function(ele,index){\n      if(index!=0&&index!=data.length-1){\n        if(ele.type!='nextPage'){\n           return(\n              <li data-id={index} onClick={_this.onClick} className={ele.class}>{ele.text}</li>\n            )\n        }\n        \n      }\n    })\n    return (\n      <div className='footerbtn'>\n        <ul>\n          <span>\n          \t\t<li data-id='prevPage' data-index={0} onClick={_this.onclickpage.bind(_this)} className='ysp-prePage'>{kr}</li>\n          \t\t{data[1].type=='nextPage'?<li data-id='prev' onClick={_this.onclickpreOnce.bind(_this)} className='ysp-preOnce'>{str}</li>:''}\n          </span>\n          \n          <span className='ysp-pageBtnScroll-tt'><span>{lis}</span></span>\n          <span>\n          \t\t{data[data.length-2].type=='nextPage'?<li data-id='next' onClick={_this.onClicknextOnce.bind(_this)} className='ysp-nextOne'>></li>:''}\n          \t\t<li data-id='nextPage' data-index={data.length-1} onClick={_this.onclickpage.bind(_this)} className='ysp-nextPage'>>|</li>\n          </span>\n         \n        </ul>\n      </div>\n    )\n  }\n});"
   getData: |
     //console.log(elem);
     if (!elem) {
@@ -1134,8 +1070,8 @@
     //     }
     //   }
     // }
-- name: 审批操作
-  getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
+- name: 环节信息（带编号）
+  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      if(index > 0){\n        return(\n      \t<div><span>{index}、</span>{ele}</div>\n      )\n      }\n    })\n    return (\n      <div className='Auditor'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'><div className='contentitem'>{data.content[0].left}</div><div className='contentitem'>{lis}</div></div>\n      </div>\n    )\n  }\n});"
   getData: >
     if (!elem) {
       return;
@@ -1143,35 +1079,312 @@
 
     var data = {};
 
-    data.title = '审批操作';
+    data.title = '环节信息';
 
     data.content = [];
 
-    var trs = elem.querySelectorAll('tr');
-
-    var obj = {};
-
-    obj.left = '当前环节';
-
-    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
-
-    data.content.push(obj);
-
-    var obj = {};
-
-    obj.left = '意见';
-
-    obj.right =
-    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
-
-    data.content.push(obj);
-
     data.content.push({
-      left: trs[1].querySelectorAll('td')[1].textContent.trim()
+      left: elem.querySelector('tr').querySelector('td').textContent.trim()
     });
+
+    var trs =
+    elem.querySelector('tr').querySelectorAll('td')[1].querySelectorAll('tr');
+
+    for (var i = 0; i < trs.length; i++) {
+      data.content.push(trs[i].textContent.trim());
+    }
+
+    return data;
+  doAction: ''
+- name: 带select的基本信息
+  getTemplate: "module.exports = React.createClass({\n  click:function(e){\n    var target = e.target;\n    // debugger;\n    if(target.tagName.toLowerCase() == 'i'){\n      target = target.parentElement.parentElement;\n    }\n    if(target.tagName.toLowerCase() == 'a'){\n      target = target.parentElement;\n    }\n    if(target.previousSibling.className == 'content disnone'){\n      target.previousSibling.className = 'content';\n      target.querySelector('a').className = 'xia';\n    }else{\n      target.previousSibling.className = 'content disnone';\n      target.querySelector('a').className = 'shang';\n    }\n  },\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:[target.dataset.index,target.value]\n      })\n    }\n  },\n  onclickRadio:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'clickRadio',\n        data:[target.dataset.checked,target.dataset.index]\n      })\n    }\n  },\n  onclickBtn:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'clickBtn',\n        data:target.getAttribute('id')\n      })\n    }\n  },\n  onclickhrefA:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'clickhrefA',    \n        data:target.getAttribute('id')\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n   var lis = data.content.map(function(ele,index){\n      if(index<2){\n        var lisele = ele.map(function(d,i){\n          if(!d.type){\n            return(\n          \t<div className='contenttit'>\n            \t<div className='contentitem'>{d.left}</div>\n              <div className='contentitem'>\n                \n                {d.readyState==true?<AInput value={d.right} readOnly={d.readyState}/>:<AInput value={d.right} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)} data-index={index}/>}\n                \n              </div>\n            </div>\n          )\n          }else{\n            if(d.type == 'textarea'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem'><textarea value={d.right} readOnly={d.readyState}></textarea></div>\n                </div>\n              )\n            }else if(d.type == 'radio'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem ysp-radioBtn-tt'>\n                  \t\t<span className={d.right[0]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[0]} data-index={0} onClick={_this.onclickRadio.bind(_this)}>是</span>\n                    \t<span className={d.right[1]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[1]} data-index={1} onClick={_this.onclickRadio.bind(_this)}>否</span>\n                  </div>\n                </div>\n              )\n            }else if(d.type == 'submit'){\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem ysp-submitBtn-tt'>\n                  \t\t<button id={d.left} onClick={_this.onclickBtn.bind(_this)}>{d.right}</button>\n                  </div>\n                </div>\n              )\n            }else if(d.type == 'a'){\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem ysp-hrefA-tt'>\n                  \t\t<span id={d.left} onClick={_this.onclickhrefA.bind(_this)}>{d.right}</span>\n                  </div>\n                </div>\n              )\n            }else if(d.type=='sel'){\n              var opt=d.right.map(function(opt,optId){\n                if(optId!=1){\n                  \treturn(\n                      <option selected={d.selected==opt?true:false}>{opt}</option>\n                    )\n                }\n                \n              })\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem'>{d.left}</div>\n                   <div className='contentitem'><select disabled={d.disable}>{opt}</select></div>\n                </div>\n              )\n            }\n            \n          }\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      }\n    })\n    var list = data.content.map(function(ele,index){\n      if(index>1){\n        var lisele = ele.map(function(d,i){\n          if(!d.type){\n            return(\n          \t<div className='contenttit'>\n            \t<div className='contentitem'>{d.left}</div>\n              <div className='contentitem'>\n                \n                {d.readyState==true?<AInput value={d.right} readOnly={d.readyState}/>:<AInput value={d.right} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)} data-index={index}/>}\n                \n              </div>\n            </div>\n          )\n          }else{\n            if(d.type == 'textarea'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem'><textarea value={d.right} readOnly={d.readyState}></textarea></div>\n                </div>\n              )\n            }else if(d.type == 'radio'){\n              return(\n              \t<div className='contenttit'>\n                \t<div className='contentitem'>{d.left}</div>\n                  <div className='contentitem ysp-radioBtn-tt'>\n                  \t\t<span className={d.right[0]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[0]} data-index={0} onClick={_this.onclickRadio.bind(_this)}>是</span>\n                    \t<span className={d.right[1]==true?\"ysp-RadiusSelected-tt\":\"ysp-RadiusUnselected-tt\"} data-checked={d.right[1]} data-index={1} onClick={_this.onclickRadio.bind(_this)}>否</span>\n                  </div>\n                </div>\n              )\n            }else if(d.type == 'submit'){\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem ysp-submitBtn-tt'>\n                  \t\t<button id={d.left} onClick={_this.onclickBtn.bind(_this)}>{d.right}</button>\n                  </div>\n                </div>\n              )\n            }else if(d.type == 'a'){\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem ysp-hrefA-tt'>\n                  \t\t<span id={d.left} onClick={_this.onclickhrefA.bind(_this)}>{d.right}</span>\n                  </div>\n                </div>\n              )\n            }else if(d.type=='sel'){\n              var opt=d.right.map(function(opt,optId){\n                if(optId!=1){\n                  \treturn(\n                      <option selected={d.selected==opt?true:false}>{opt}</option>\n                    )\n                }\n                \n              })\n              return(\n              \t<div className='contenttit'>                \t\n                  <div className='contentitem'>{d.left}</div>\n                  <select disabled={d.disable}>{opt}</select>\n                </div>\n              )\n            }\n            \n          }\n        })\n        return(\n        \t<div>{lisele}</div>\n        )\n      }\n    })\n    return (\n      <div className='information'>\n       \t<div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          {lis}</div>\n        <div className='content disnone'>\n          {list}\n          <div className='contentitem' style={{'border-bottom':'1px solid #e0e0e0','width':'100%','text-align':'right'}}>\n            <a href='javascript:;'>{data.content[2][data.content[2].length-1].text}</a>\n          </div>\n        </div>\n        <span onClick={_this.click}><a className='shang' href='javascript:;'></a>显示更多内容</span>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {}; // var table = elem.querySelectorAll('table')[0];
+    var trs = elem.querySelectorAll('tr');
+    data.title = '基本信息';
+    data.content = [];
+    for (var i = 0; i < trs.length; i++) {
+      var arr = [];
+      var tds = trs[i].querySelectorAll('td');
+
+      for (var k = 0; k < tds.length; k++) {
+        if (tds[k].querySelector('span') == null) {
+          if (tds[k].querySelector("input[type='text']")) {
+            arr.push({
+              left: tds[k].querySelector('label').textContent.trim(),
+              right: tds[k].querySelector("input[type='text']").value,
+              readyState: tds[k].querySelector("input[type='text']").readOnly
+            });
+          }
+
+          if (tds[k].querySelector('textarea')) {
+            arr.push({
+              left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
+              right: tds[k].querySelector('textarea').value,
+              readyState: tds[k].querySelector('textarea').readOnly,
+              type: 'textarea'
+            });
+          }
+
+          if (tds[k].querySelector("input[type='radio']")) {
+            arr.push({
+              left: tds[k].querySelector('label').textContent.replace(/\s+/g, ''),
+              right: [tds[k].querySelectorAll("input[type='radio']")[0].checked, tds[k].querySelectorAll("input[type='radio']")[1].checked],
+              type: 'radio'
+            });
+          }
+
+          if (tds[k].querySelector("input[type='submit']")) {
+            arr.push({
+              left: tds[k].querySelector("input[type='submit']").getAttribute('id'),
+              right: tds[k].querySelector("input[type='submit']").value,
+              type: 'submit'
+            });
+          }
+
+          if (tds[k].querySelector("a")) {
+            arr.push({
+              //left: tds[k].querySelector('a').getAttribute('id'),
+              right: tds[k].querySelector("a").textContent,
+              type: 'a'
+            });
+          }
+
+          if (tds[k].querySelector('select')) {
+            var sel = [];
+            var selected = '';
+            var opt = tds[k].querySelector('select').querySelectorAll('option'); //debugger;
+
+            for (var m = 0; m < opt.length; m++) {
+              if (opt[m].selected == true) {
+                selected = opt[m].textContent;
+              }
+
+              sel.push(opt[m].textContent);
+            }
+
+            arr.push({
+              left: tds[k].querySelector("label").textContent.trim(),
+              selected: selected,
+              right: sel,
+              disable: tds[k].querySelector('select').disabled,
+              type: 'sel'
+            });
+          }
+        }
+      }
+
+      data.content.push(arr);
+    }
+    return data;
+  doAction: |
+    if (data.eventType == 'clickRadio') {
+      var check = data.dataCustom[0];
+      var index = data.dataCustom[1];
+      var target = elem.querySelectorAll("input[type='radio']")[index];
+      target.checked = check;
+    } else if (data.eventType == 'blur') {
+      var index = parseInt(data.dataCustom[0]);
+      var val = data.dataCustom[1];
+      var target = elem.querySelectorAll('tr')[index].querySelectorAll("input");
+
+      for (var i = 0; i < target.length; i++) {
+        if (target[i].readOnly == false) {
+          target[i].value = val;
+        }
+      }
+    } else if (data.eventType == 'clickBtn') {
+      var id = data.dataCustom;
+      var target = elem.querySelector("#" + id);
+      target.click();
+    } else if (data.eventType == 'clickhrefA') {
+      var id = data.dataCustom;
+      var target = elem.querySelector('a');
+      target.click();
+    }
+- name: 基本履历
+  getTemplate: |-
+    module.exports = React.createClass({
+      onblur:function(e){
+        var target=e.target;
+        var handler=this.props.customHandler;
+        if(handler){
+          handler({
+            eventType:'blur',
+            data:target.value
+          })
+        }
+      },
+      render: function() {
+        var data=this.props.customData;
+        var _this=this;
+        return (
+          <div className='ysp-regularWorker-jbll-tt'>
+            <p>{data.title}</p>
+            {data.readyState==true?<ATextarea value={data.val} readOnly={data.readyState}></ATextarea>:<ATextarea value={data.val} readOnly={data.readyState} onBlur={_this.onblur.bind(_this)}></ATextarea>}
+          </div>
+        )
+      }
+    });
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {};
+    data.title = '基本履历';
+    data.val = elem.querySelector('textarea').value;
+    data.readyState = elem.querySelector('textarea').readOnly;
+    return data;
+  doAction: |
+    if (data.eventType == 'blur') {
+      var val = data.dataCustom;
+      var target = elem.querySelector('textarea');
+      target.value = val;
+    }
+- name: 个人优劣势综述
+  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n    var list=data.content.map(function(d,i){\n      return(\n      \t<div>\n        \t\t<p><span>0{i+1}</span><span>{d[0]}</span></p>\n          <div>\n          \t\t<p><span>{data.titleBar[1]}</span><span>{d[1]}</span></p>\n            <p><span>{data.titleBar[2]}</span><span>{d[2]}</span></p>\n            <p><span>{data.titleBar[3]}</span><span>{d[3]}</span></p>\n          </div>\n        </div>\n      )\n    })\n    return (\n      <div className='ysp-grylszs-tt'>\n        <p>{data.title}</p>\n        {list}\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {
+      titleBar: [],
+      content: []
+    };
+    data.title = '个人优劣势综述';
+    var trs = elem.querySelectorAll('tr');
+    for (var i = 0; i < trs.length; i++) {
+      if (i == 0) {
+        var tds = trs[i].querySelectorAll('td');
+
+        for (var j = 0; j < tds.length; j++) {
+          data.titleBar.push(tds[j].textContent.trim());
+        }
+      } else if (i > 0) {
+        var arr = [];
+        var tds = trs[i].querySelectorAll('td');
+
+        for (var j = 0; j < tds.length; j++) {
+          arr.push(tds[j].textContent.trim());
+        }
+
+        data.content.push(arr);
+      }
+    }
+    return data;
+  doAction: ''
+- name: 弹框图片头部
+  getTemplate: "import { Header, HeaderLeft } from 'ysp-interior-components';\n//import { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  click:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n      \teventType:'back'  \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(data==undefined){return \"\"}\n    return (\n      <div className='titleH1'>\n          <Header title={data.title}>\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.click.bind(this)}>返回</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {};
+    data.title = "说明";
+    return data;
+  doAction: |
+    if (data.eventType == 'back') {
+      //debugger;
+      var target = elem.parentElement.parentElement.parentElement.previousElementSibling.querySelector('.aui_close');
+      target.click();
+    }
+- name: 弹框图片
+  getTemplate: |-
+    module.exports = React.createClass({
+      render: function() {
+        var data=this.props.customData;
+        var src="http://172.16.11.61:8000/"+data
+        return (
+          <div>
+            <img src={src}/>
+          </div>
+        )
+      }
+    });
+  getData: |
+    if (!elem) {
+      return;
+    }
+    return elem.getAttribute('src');
+  doAction: ''
+- name: 已办附件
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data = '';\n    if(target.tagName.toLowerCase() == 'button'){\n      console.log(target.id);\n      if(target.id == 'uploadDiv' ){\n        type = 'commit';\n        data = 'btnFileUpload';\n      }else{\n        type = 'add';\n        data = 'btnFileUpload';\n      }\n    }\n    if(target.tagName.toLowerCase() == 'p'){\n      type = 'updel';\n      data = {\n        index:target.getAttribute('data-index'),\n        i:target.className=='xiazai'?0:1\n      }\n    }\n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  click:function(e){\n    var target = e.target;\n    if(target.className == 'shang'){\n      target.className = 'xia';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displnone');\n      for(var i=0;i<divs.length;i++){\n        divs[i].className = 'displblock';\n      }\n    }else{\n      target.className = 'shang';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displblock');\n      for(var i=0;i<divs.length;i++){\n        divs[i].className = 'displnone';\n      }\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    if(data==undefined){return \"\"}\n    var lis = data.content.map(function(ele,index){\n      var list = ele.map(function(d,i){\n        if(i==0){\n          return(\n          \t<div className='titlediv'>\n            \t<div>{'0'+(index+1)}</div>\n              <div>{d}</div>\n              <div onClick={_this.click} className='shang'></div>\n            </div>\n          )\n        }\n        if(i == ele.length-1){\n          if(d.length>2){\n              return(\n              <div className='displnone'>\n                <div className='contentitem contentspan' style={{'width':'100%','text-align-last':'auto','text-align':'center'}}><p className='shanchu' data-index={index} onClick={_this.onClick.bind(_this)}><span></span>{d[2]+d[3]}</p><p data-index={index} className='xiazai' onClick={_this.onClick.bind(_this)}><span></span>{d.length>2?d[0]+d[1]:''}</p></div>\n              </div>\n            )\n          }else{\n             return(\n              <div className='displnone'>\n                <div className='contentitem'><p className='xiazai' data-index={index} onClick={_this.onClick.bind(_this)}><span></span>{d[0]+d[1]}</p></div>\n              </div>\n            )\n          }\n        }\n        return(\n        \t<div className='displnone'>\n          \t<div className='contentitem'>{data.titles[i]}</div>\n            <div className='contentitem'>{d}</div>\n          </div>\n        )\n      })\n      return(\n      \t<div className='contentit'>{list}</div>\n      )\n    })\n    \n    return (\n      <div className='Enclosure'>\n        <div className='contenttitle'>\n          <span className='xia'></span>\n          <p>{data.title}\n            \n          </p>\n        </div>\n        <div className='content'>\n    \t\t\t{lis}\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = ysp.customHelper.getTabledata(elem, ['文件名', '上传人', '上传时间', '版本',
+    '操作']);
+
+    data.id = elem.nextElementSibling.nextElementSibling.id;
+
+    data.title = '附件';
 
     return data;
   doAction: |
-    if (data.eventType == 'change') {
-      elem.querySelector('textarea').value = data.customData;
+    var type = data.eventType;
+    var data = data.customData;
+    if (type == 'commit') {
+      // debugger;
+      elem.ownerDocument.querySelector("#" + data).click();
+      setTimeout(function () {
+        elem.ownerDocument.defaultView.InitAttachmentList();
+      }, 1000); // setTimeout(function () {
+      //   var url = ysp.appMain.getActiveUrl();
+      //   ysp.appMain.reloadPage(url);
+      // }, 2000);
     }
+    if (type == 'add') {
+      elem.ownerDocument.querySelector("#" + data).previousElementSibling.querySelector('input').click();
+    }
+    if (type == 'updel') {
+      var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
+      tds[tds.length - 1].querySelectorAll('a')[data.i].click();
+    }
+- name: 已办的审批日志
+  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    if(data==undefined){return \"\" ;}\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='examination'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = ysp.customHelper.getTableData(elem, ['环节名称', '人员姓名', '人员公司',
+    '人员部门', '人员职位', '审批操作', '审批时间', '意见']);
+
+    data.title = '审批日志';
+
+    return data;
+  doAction: ''
+- name: 订单明细
+  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='examination'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {
+      titles: [],
+      content: []
+    };
+    var trs = elem.querySelectorAll('tr');
+    for (var i = 0; i < trs.length; i++) {
+      if (i == 1) {
+        var ths = trs[i].querySelectorAll('th');
+
+        for (var j = 0; j < ths.length; j++) {
+          data.titles.push(ths[j].textContent.trim());
+        }
+      } else if (i > 1) {
+        var arr = [];
+        var tds = trs[i].querySelectorAll('td');
+
+        for (var j = 0; j < tds.length; j++) {
+          arr.push(tds[j].querySelector('span').textContent.trim());
+        }
+
+        data.content.push(arr);
+      }
+    } 

@@ -89,7 +89,7 @@ body{
           //ltt20180704 end
         }        
         .contentitem:nth-child(1){
-          width: 56px;
+          width: 70px;
           display: flex;
           margin-left: 15px;
           font-size: 14px;
@@ -14321,6 +14321,16 @@ body{
     color: #fff;
   }
 }
+//左侧的红色背景
+.redLeft{
+  padding:0 0 0 20px;      
+  background: url(./img/titleup.png) no-repeat;
+  background-position-y:5px;
+  height: 40px;
+  line-height: 40px;
+  margin:0;
+  color: #E64750;
+}
 //头部查询
 .ysp-selectBar-tt{
   background: #fff;
@@ -14362,6 +14372,11 @@ body{
         background-position-x: 95%;
         background-position-y: 7px;
       }
+      select{
+        background: url('./img/rightbtn.png') no-repeat;
+        background-position-x: 95%;
+        background-position-y: 8px;
+      }
       .ysp-radius-btn-tt{
         text-align: left;
         .radioBtn;
@@ -14383,11 +14398,13 @@ body{
   }
 }
 .footerbtn{
-  
+  background: #fff;
+  padding:10px 3px;
     ul{
       overflow: hidden;
      	padding:0;
-      
+      display:flex;
+ 			justify-content:space-between;
       li{
         color: #000;
         width: 25px;
@@ -14408,6 +14425,7 @@ body{
       .ysp-prePage,.ysp-preOnce,.ysp-nextOne,.ysp-nextPage{
         margin:0;
         border-radius: 0;
+        width: 40px;
       }
       .ysp-prePage,.ysp-nextOne{
         border-top-left-radius: 15px;
@@ -14421,7 +14439,7 @@ body{
     }
   }
 .ysp-pageBtnScroll-tt{
-        width: 58%;
+        width: 55%;
         display: block;
         height: 44px;
         overflow-x: scroll;
@@ -14606,7 +14624,7 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
 }
 
 //环节信息
-  .Auditor{
+.Auditor{
     background: #ffffff;
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -14629,6 +14647,628 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
       }
     }
   }
+.ysp-iptVal-tt{
+  padding:10px 0;
+  p{
+    overflow: hidden;
+    span{
+      float: left;
+    	height: 35px;
+      line-height: 35px;
+      display: block;
+      width: 30%;
+      text-align: center;
+    }
+    input{
+      margin:0;
+      padding:0;
+      width: 65%;
+      height: 35px;
+      line-height: 35px;
+      border:0;
+      background: #fff;
+      border-bottom:1px solid #e1e1e1;
+        
+    }
+  } 
+}
+  //知会信息
+.understanding{
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    .content{
+      margin-left: 15px;
+      overflow: hidden;
+      .contenthidden{
+        overflow: hidden;
+      }
+      .contentitem{
+        min-height: 56px;
+        color: #313131;
+        display: inline-block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 16px;
+        float: left;
+        text-align:justify;
+        text-align-last: justify;
+      }
+      .contentitem:nth-child(2){
+        width: 235px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+        float: right;
+      }
+  	}
+  }
+.ysp-regularWorker-jbll-tt{
+  background: #fff;
+  padding:10px 0;
+  p{
+    padding:0 0 0 20px;      
+    background: url(./img/titleup.png) no-repeat;
+    background-position-y:5px;
+    height: 40px;
+    line-height: 40px;
+    margin:0;
+  }
+  textarea{
+    background: #fff;
+    padding: 5px;
+    width: 95%;
+    margin: 10px auto;
+  }
+}
+.ysp-alertTable-tt{
+.ysp-alertTableSecond-tt{
+      height: 40px;
+      line-height: 40px;      
+      margin: 0 0 0 10px;
+      padding: 0 0 0 10px;
+  }
+  table{
+    span{
+      color: #0961B6;
+    }
+  }
+}
+.ysp-syqzzsqdEvaluate-tt{
+  background: #fff;
+  padding:0 0 10px 0;
+  p{
+    height: 40px;
+    line-height: 40px;
+    span{
+      float:left;
+      display: block;
+      &:first-child{
+        width: 30%;
+        text-align: center;
+      }
+      &:last-child{
+        width: 70%;
+        padding:0 0 0 5px;
+        border-bottom:1px solid #e1e1e1;
+      }
+    }
+  }
+}
+[data-componentsid="uiControl329_GdVpF8"],[data-componentsid="uiControl360_vmvc3u"],[data-componentsid="uiControl421_ZOhXir"]{
+  padding:0!important;
+}
+.ysp-evaluateDetailInfo-tt{
+  padding:10px 0;
+  p{
+    margin:0;
+    text-align: left;
+    height: 40px;
+    line-height: 40px;
+    padding:0 0 0 10px;
+    border-bottom:1px solid #e1e1e1;
+  }
+  >div{
+    overflow: hidden;
+    width: 100%;   
+    border-bottom:1px solid #e1e1e1;
+    span{
+      display: block;
+      float: left;       
+      text-align: center;
+      height: 80px;      
+      &:first-child{
+        width: 15%;        
+        margin:0 10px 0 0;
+        line-height: 80px;
+      }
+      &:last-child{
+        width: 80%;
+        border-left:1px solid #e1e1e1;
+        text-align: left;
+        padding:0 0 0 5px;
+      }
+    }
+  }
+}
+.ysp-regularWorkerRadio-tt{
+  background: #fff;
+  padding:10px 0;
+  >div:first-child{
+    .redLeft;
+  }
+  >div:last-child{
+    margin:5px 0 0 0;
+    span{
+      padding:0 0 0 10px;
+    }
+    textarea{
+      background: #fff;
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+  p{
+    margin:0;
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+    padding:0 0 0 10px;
+    .radioBtn;
+  }
+}
+.ysp-brtx-tt{
+  overflow: hidden;
+  background: #fff;
+  span{
+  	float:left;
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    border-bottom:1px solid #e1e1e1;
+    height: 40px;
+    line-height: 40px;
+  }
+  .ysp-RadiusSelected-tt{
+     border-bottom:1px solid #E64750;
+     color: #E64750;
+  }
+}
+.ysp-grylszs-tt{
+  background: #fff;
+  padding:10px 0;
+  >p{
+    .redLeft;    
+  }
+  >div{
+    width: 90%;
+    margin: 0 auto 10px;
+    background: #f2f2f2;
+    border-radius: 5px;
+    >p{
+      margin: 0;
+      height: 35px;
+      line-height: 35px;
+      border-bottom:1px solid #e1e1e1;
+      span{
+        float: left;
+        &:first-child{
+          padding:0 10px;
+          border-right:1px solid #e1e1e1;
+        }
+        &:last-child{
+          padding:0 0 0 10px;
+        }
+      }
+    }
+    >div{
+      
+      p{
+        margin:0;
+        height: 35px;
+        line-height: 35px;
+        width: 100%;
+        &:last-child{
+          span{
+            &:last-child{
+              border:0;
+            }
+          }
+        }
+        span{
+          float: left;
+          display: block;
+          &:first-child{
+           
+            padding:0 0 0 10px;
+            width: 30%;
+          }
+          &:last-child{
+            padding:0 0 0 10px;
+            width: 70%;
+            border-bottom:1px solid #e1e1e1;
+          }
+        }
+      }
+    }
+  }
+}
+.ysp-post-tt{
+  >p{
+    height: auto;
+  }
+  >div{
+    padding: 0 0 10px 0;
+    >div{
+      p{
+        &:last-child{
+          height: auto;
+          span{
+            float: none;
+            width: 100%;
+            text-align: left;
+            padding:0 0 0 10px;
+            &:last-child{
+              border-bottom:1px solid #e1e1e1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.ysp-postRadio-tt{
+  >div.ysp-postRadioContent-tt{
+    border:0!important;
+    >p:nth-child(2){ 
+      padding:2px 0 0 10px;      
+      .radioBtn;
+      .ysp-RadiusUnselected-tt{
+        background: #D9D9D9;
+      }
+    }
+    >p:nth-child(4){
+      height: auto;
+      padding:0 0 0 10px;
+    }
+    >p:nth-child(5){
+      padding:0 0 0 10px;
+    }
+  }
+}
+.ysp-DirectionLifting-tt{
+  background: #fff;
+  padding:10px 0;
+  >p{
+    .redLeft;
+  }
+  >div{
+    height: 40px;
+    line-height: 40px;
+    span{
+      float: left;
+      display: block;
+      padding:0 0 0 10px;
+      &:first-child{
+        width:30%;
+      }
+      &:last-child{
+        width:65%;
+        border-bottom:1px solid #e1e1e1;
+      }
+    }
+  }
+}
+.ysp-Remarks-tt{
+  background: #fff;
+  padding:10px 0;
+  >p{
+    .redLeft;
+  }
+  textarea{
+    display: block;
+    width: 95%;
+    margin:0 10px;
+    background: #fff;
+  }
+}
+.ysp-JobTransfer-tt{
+  background: #fff;
+  padding:10px 0;
+  >p{
+    .redLeft;
+    height: auto;
+    line-height: 25px;
+    overflow: hidden;
+    span{
+      &:first-child{
+        float: left;
+        width: 80%;
+      }
+      &:last-child{
+        float: right;
+        width: 15%;
+        text-align: center;
+        color: #0653AE;
+      }
+    }
+  }
+  >div{
+    >div{
+      overflow: hidden;
+      p{
+        margin:0;
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        &:first-child{
+          padding:0 0 0 10px;   
+          width: 30%;
+        }
+        &:last-child{
+          .radioBtn;
+					padding:0 0 0 10px;
+          border-bottom:1px solid #e1e1e1;
+          width:65%;
+        }
+      }
+    }
+    >p{
+      overflow: hidden;
+      span{
+        margin:0;
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        &:first-child{
+          padding:0 0 0 10px;   
+          width: 30%;
+        }
+        &:last-child{
+          .radioBtn;
+					padding:0 0 0 10px;
+          border-bottom:1px solid #e1e1e1;
+          width:65%;
+        }
+      }
+    }
+    textarea{
+      display: block;
+      width: 95%;
+      margin: 0 10px;
+    }
+  }
+}
+.ysp-notice-tt{
+  >p{
+    .redLeft;
+  }
+  font-size: 14px;
+  background: #fff;
+  padding:0 10px;
+}
+._23s98qqds-Z7MF0Y5RBjWd{
+  height: 100vh;
+}
+.ysp-Desire-tt{
+  background: #fff;
+  padding:10px 0;
+  position: relative;
+  >p{
+    .redLeft;
+  }
+  .ysp-DesireOne-tt{
+    overflow: hidden;
+    padding: 10px 0;
+    p{
+      float: left;
+      margin: 0;
+      &:first-child{
+        width: 25%;
+        padding:0 0 0 10px;
+      }
+      &:last-child{
+        height: 40px;
+      	line-height: 40px;
+        width: 75%;
+        padding:0 0 0 10px;
+        border-bottom:1px solid #e1e1e1;
+        .radioBtn;
+      }
+    }
+  }
+  .ysp-DesireTwo-tt{
+    p{
+      margin:0;
+      padding:10px 0 10px 10px;      
+    }
+    textarea{
+      display: block;
+      width:95%;
+      margin:0 10px;
+    }
+  }
+  .ysp-DesireThree-tt{
+    margin:140px 0 0 0;
+    overflow: hidden;
+    >p{
+      padding:0 0 0 10px;
+      margin:0;
+      float: left;
+      width: 25%;
+      height: 40px;
+    	line-height: 40px;
+    }
+    >div{
+      float: right;
+      width: 75%;
+      overflow: hidden;
+      padding:0 0 0 10px;
+      span{
+        float:left;
+        display: block;
+        margin:5px;
+        padding: 5px 10px;
+        border:1px solid #ccc;
+        border-radius: 5px;
+        color: #ccc;
+      }
+      .ysp-checkedbox-tt{
+        border:1px solid #2F9FFF;
+        color: #2F9FFF;
+        background: url(./img/duihao.png) no-repeat;
+        background-size: 25%;
+        background-position-x: 100%;
+        
+      }
+    }
+  }
+  .ysp-Desirefour-tt{
+    overflow: hidden;
+    position: absolute;
+    top:260px;
+    p{
+      margin: 0;
+    }
+    >p{
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      width: 25%;
+      padding: 0 0 0 10px;
+    }
+    >div{
+      margin:0;
+      float: left;
+      width: 75%;
+      p{
+        height: 40px;
+        line-height: 40px;
+        span{
+          float: left;
+          width: 30%;
+          height: 30px;
+          line-height: 30px;
+        }
+        input{
+          float: left;
+          width: 70%;
+          margin: 0;
+          padding:0;         
+          border: 0;
+          background: #fff;
+          border-bottom: 1px solid #e1e1e1;
+          height: 30px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+.ysp-zhezhaoPic-tt{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+  >div{
+    background: #fff;
+    padding:10px 0;
+    margin:40% 0 0 0 ;
+    p{
+      margin:10px auto;
+      width: 100px;
+      background: #2F9FFF;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      color: #fff;
+      border-radius: 5px;
+      
+    }
+  }
+}
+.ysp-jrjh-tt{
+  background: #fff;
+  p{
+    .redLeft;
+  }
+}
+.ysp-jrjhPartOne-tt{
+  background: #fff;
+  >div{
+    p{
+      margin:0;
+      height: 40px;
+      line-height: 40px;
+      span{
+        float: left;
+        display: block;
+        padding:0 0 0 10px;
+        &:first-child{
+          width: 40%;          
+        }
+        &:last-child{
+          width: 60%;
+          border-bottom: 1px solid #e1e1e1;
+        }
+      }      
+    }
+    textarea{
+      display: block;
+      width: 95%;
+      background: #fff;
+      margin: 0 10px;
+    }
+  }
+}
+.ysp-jrjhPartTwo-tt{
+   background: #fff;
+   padding:10px 0;
+  >div{
+    >p{
+      margin: 0;
+      overflow: hidden;
+      >span{
+        float: left;
+        display: block;
+        width: 35%;
+        padding:0 0 0 10px;
+      }
+      >p{
+        float: left;
+        width:55%;
+        border-bottom:1px solid #e1e1e1;
+        height: 40px;
+        line-height: 40px;
+        .radioBtn;
+      }
+    }
+    >div{
+      p{
+        margin:0;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 0 0 10px;
+        &:last-child{
+          span{
+            display: inline-block;
+            &:first-child{
+              width: 30%;
+            }
+            &:last-child{
+              width:70%;
+              border-bottom:1px solid #e1e1e1;
+            }
+          }
+        }
+        &:first-child{
+          border-bottom: 1px solid #e1e1e1;
+        }
+      }
+    }
+  }
+}
 /*************************已办 ltt ENG****************************/
 
 
@@ -14639,18 +15279,18 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
   align-items: center;
   background: #fff;
   height: 44px;
+  line-height: 44px;
   div{
     width: 50%;
     text-align: center;
+    border-bottom: 2px solid #e1e1e1;
   }
-  >div:nth-child(1){
-    //border-right: 1px solid #ececec;
-  }
+  
   .ysp-index-title-color{
     color: #e64750;
     font-size: 17px;
     border-bottom: 2px solid #e64750;
-    padding: 8px 0px;
+   
   }
   .ysp-index-title-noColor{
     color: #666666;
@@ -14658,3 +15298,169 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
   }
 }
 
+
+/*********已办加班申请单start************/
+
+[data-componentsid="uiControl314_hliO5T"]{
+  padding:0!important; 
+  .information{
+    margin:0!important;   
+  }
+}
+[data-componentsid="uiControl310_QPDxJ3"]{
+  padding:0!important;
+  .examination {
+    margin:0!important;
+  }
+}
+.ysp-radius-overTime{
+  color: #fff;
+  background: #4796ed;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+/*********已办加班申请单end************/
+
+/**********市场用品采购流程*******/
+.ysp-haveDone-supplies{
+	font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 10px 0px 0px;
+}
+
+.ysp-train-radio{
+  color: #fff;
+  background: #4796ed;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+//已办资产处理申请单start
+.ysp-have-done-handle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px;
+  >div:nth-child(1){
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+  }
+  >div:nth-child(2){
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+  }
+}
+[data-componentsid="uiControl354_gr9QVJ"]{
+  padding:0!important;
+  .examination {
+    margin:0!important;
+  }
+}
+
+[data-componentsid="uiControl355_cmHa5z"]{
+  padding:0!important; 
+  .information{
+    margin:0!important;   
+  }
+}
+.ysp-handle-checked{
+  color: #fff;
+  background: #4796ed;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.ysp-handle-nochecked{
+  padding-right: 10px;
+}
+.ysp-handle-noschecked{
+  padding-left: 10px;
+}
+//已办资产处理申请单end
+
+
+//已办员工异动申请单V2start
+[data-componentsid="uiControl441_F20iUJ"],[data-componentsid="uiControl442_zDpCJQ"],[data-componentsid="uiControl443_I6xRa2"],[data-componentsid="uiControl447_Le8MdW"]{
+  padding:0!important;
+  .examination {
+    margin:0!important;
+  }
+}
+[data-componentsid="uiControl445_xzJau0"]{
+  padding-bottom: none !important;
+}
+
+.ysp-employee-change{
+  padding: 10px;
+  background: #fff;
+  div{
+    padding-bottom: 10px;
+  }
+}
+
+//员工异动申请单V2end
+
+//已办员工合同续签申请start
+[data-componentsid="uiControl384_1pZh6W"],[data-componentsid="uiControl385_oyEJtl"]{
+  padding:0!important;
+  .examination {
+    margin:0!important;
+  }
+}
+//员工合同续签申请end
+
+//已办考勤异常申请单start
+[data-componentsid="uiControl391_IkLF7O"]{
+  padding:0!important;
+  .examination {
+    margin:0!important;
+  }
+}
+[data-componentsid="uiControl392_9mePPc"]{
+  padding:0!important; 
+  .information{
+    margin:0!important;   
+  }
+}
+.ysp-have-work table thead tr th{
+  width: 170px !important;
+}
+.ysp-have-work table tbody tr td{
+  width: 170px !important;
+}
+//考勤异常申请单end
+
+/*********已办信用冻结订单释放申请流程start*************/
+[data-componentsid="uiControl417_y4o7g3"]{
+  padding:0!important;
+  .examination {
+    margin:0!important;
+  }
+}
+
+[data-componentsid="uiControl418_ARi5mu"]{
+  padding:0!important; 
+  .information{
+    margin:0!important;   
+  }
+}
+/*********信用冻结订单释放申请流程end*************/
+
+/*********已办销假申请单start********/
+[data-componentsid="uiControl452_SFvl9p"]{
+  padding:0!important;
+  .examination {
+    margin:0!important;
+  }
+}
+[data-componentsid="uiControl453_fAlTOp"]{
+  padding:0!important; 
+  .information{
+    margin:0!important;   
+  }
+}
+/*********已办销假申请单end********/
