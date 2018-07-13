@@ -135,7 +135,7 @@
       if (elem) {
         var data = { dataLabel: [], flag: [], flags: [] };var a_s = elem.querySelectorAll('a');var salePerson = a_s[0].getAttribute('href').indexOf("salePerson") != -1; //销售代表权限
         for (var i = 0; i < a_s.length; i++) {
-          if (a_s[i].textContent == "事业部非计划机型达成" || a_s[i].textContent == "非任务机型" || (salePerson ? false : a_s[i].textContent == "客户与门店达成")) {
+          if (a_s[i].textContent == "事业部非计划机型达成" || a_s[i].textContent == "非任务机型" || (salePerson ? false : a_s[i].textContent == "客户与门店达成") || a_s[i].textContent == "事业部别年度销售报表" || a_s[i].textContent == "项目别年度销售报表" || a_s[i].textContent == "机型别年度销售报表") {
             continue;
           } else {
             data.dataLabel.push([a_s[i].textContent]);

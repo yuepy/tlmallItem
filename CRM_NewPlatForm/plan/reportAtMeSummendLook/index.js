@@ -16,24 +16,24 @@
     getData_control319_VQqGyy: function (elem) {
       if (!elem) {
         return;
-      }var data = { textSum: [], huaweiFD: { huaweiFDFlag: [], huaweiFDText: [] }, huaweiPJ: { huaweiPJFlag: [], huaweiPJText: [] }, huaweiStore: { huaweiStoreFlag: [], huaweiStoreText: [] }, huaweiSB: { huaweiSBFlag: [], huaweiSBText: [] }, samsung: { samsungFlag: [], samsungText: [] }, distribution: { distributionFlag: [], distributionText: [] }, others: { othersFlag: [], othersText: [] }, problemValue: [], content: [], flag: [], file: [], searchList: '', No: '', boxId: "" };var text = elem.querySelectorAll(".con-box")[0].querySelector("textarea").value;data.textSum.push(text);var textAreas = elem.querySelector("#textareaDivs").querySelectorAll("div");var huaweiFD = "";var huaweiPJ = "";var huaweiStore = "";var huaweiSB = "";var samsung = "";var distribution = "";var others = "";for (var i = 0; i < textAreas.length; i++) {
-        var val = textAreas[i].querySelector("textarea").getAttribute("val");if ("华为FD" == val) {
-          huaweiFD = "华为FD";var text = textAreas[i].querySelector("textarea").value;data.huaweiFD.huaweiFDFlag.push(huaweiFD);data.huaweiFD.huaweiFDText.push(text);
+      }var data = { textSum: [], huaweiFD: { huaweiFDFlag: [], huaweiFDText: [] }, huaweiPJ: { huaweiPJFlag: [], huaweiPJText: [] }, huaweiStore: { huaweiStoreFlag: [], huaweiStoreText: [] }, huaweiSB: { huaweiSBFlag: [], huaweiSBText: [] }, samsung: { samsungFlag: [], samsungText: [] }, distribution: { distributionFlag: [], distributionText: [] }, others: { othersFlag: [], othersText: [] }, problemValue: [], content: [], flag: [], file: [], searchList: '', No: '', boxId: "" };debugger;var text = elem.querySelectorAll(".con-box")[0].querySelector("div").textContent;data.textSum.push(text);var textAreas = elem.querySelector("#textareaDivs").querySelectorAll(".con-box");var huaweiFD = "";var huaweiPJ = "";var huaweiStore = "";var huaweiSB = "";var samsung = "";var distribution = "";var others = "";for (var i = 0; i < textAreas.length; i++) {
+        var val = textAreas[i].querySelector("div").getAttribute("val");if ("华为FD" == val) {
+          huaweiFD = "华为FD";var text = textAreas[i].querySelector("div").textContent;data.huaweiFD.huaweiFDFlag.push(huaweiFD);data.huaweiFD.huaweiFDText.push(text);
         } else if ("华为配件与融合" == val) {
-          huaweiPJ = "华为配件与融合";var text = textAreas[i].querySelector("textarea").value;data.huaweiPJ.huaweiPJFlag.push(huaweiPJ);data.huaweiPJ.huaweiPJText.push(text);
+          huaweiPJ = "华为配件与融合";var text = textAreas[i].querySelector("div").textContent;data.huaweiPJ.huaweiPJFlag.push(huaweiPJ);data.huaweiPJ.huaweiPJText.push(text);
         } else if ("华为体验店" == val) {
-          huaweiStore = "华为体验店";var text = textAreas[i].querySelector("textarea").value;data.huaweiStore.huaweiStoreFlag.push(huaweiStore);data.huaweiStore.huaweiStoreText.push(text);
+          huaweiStore = "华为体验店";var text = textAreas[i].querySelector("div").textContent;data.huaweiStore.huaweiStoreFlag.push(huaweiStore);data.huaweiStore.huaweiStoreText.push(text);
         } else if ("华为省包" == val) {
-          huaweiSB = "华为省包";var text = textAreas[i].querySelector("textarea").value;data.huaweiSB.huaweiSBFlag.push(huaweiSB);data.huaweiSB.huaweiSBText.push(text);
+          huaweiSB = "华为省包";var text = textAreas[i].querySelector("div").textContent;data.huaweiSB.huaweiSBFlag.push(huaweiSB);data.huaweiSB.huaweiSBText.push(text);
         } else if ("三星业务事业部" == val) {
-          samsung = "三星业务事业部";var text = textAreas[i].querySelector("textarea").value;data.samsung.samsungFlag.push(samsung);data.samsung.samsungText.push(text);
+          samsung = "三星业务事业部";var text = textAreas[i].querySelector("div").textContent;data.samsung.samsungFlag.push(samsung);data.samsung.samsungText.push(text);
         } else if ("大客户业务部" == val) {
-          distribution = "大客户业务部";var text = textAreas[i].querySelector("textarea").value;data.distribution.distributionFlag.push(distribution);data.distribution.distributionText.push(text);
+          distribution = "大客户业务部";var text = textAreas[i].querySelector("div").textContent;data.distribution.distributionFlag.push(distribution);data.distribution.distributionText.push(text);
         } else if ("其他" == val) {
-          others = "其他";var text = textAreas[i].querySelector("textarea").value;data.others.othersFlag.push(others);data.others.othersText.push(text);
+          others = "其他";var text = textAreas[i].querySelector("div").textContent;data.others.othersFlag.push(others);data.others.othersText.push(text);
         }
       } //问题及所属资源
-      var problemValue = elem.querySelector(".problem-con") && elem.querySelector(".problem-con").querySelector("textarea").value;data.problemValue.push(problemValue);var spans = elem.querySelectorAll('#lableTabs span');[].forEach.call(spans, function (span, index) {
+      var problemValue = elem.querySelector(".problem-con") && elem.querySelector(".problem-con").querySelector(".textearaDiv").textContent;data.problemValue.push(problemValue);var spans = elem.querySelectorAll('#lableTabs span');[].forEach.call(spans, function (span, index) {
         var spanData = []; //   var spanClass = span.getAttribute("class");
         //   if (null == spanClass) {
         //     spanData.push("true");
@@ -48,26 +48,27 @@
       }); //判断是否有更多
       var as = elem.querySelectorAll('#lableTabs span');var flag = [];var more = "false";if (as.length > 6) {
         more = "true";
-      }data.flag.push(more);
-      //上传图片
+      }data.flag.push(more); //上传图片
       data.file = [];if (elem.querySelector('#imgsDiv').querySelectorAll('.img').length > 0) {
-        var divs = elem.querySelector('#imgsDiv').querySelectorAll('.img');if (window.reportSrc) {
-          if (window.reportSrc.length > divs.length) {
-            window.reportSrc.splice(0, window.reportSrc.length - divs.length);
-          }
-        } else {
-          window.reportSrc = [];
-        }for (var i = 0; i < divs.length; i++) {
+        var divs = elem.querySelector('#imgsDiv').querySelectorAll('.img'); // if (window.reportSrc) {
+        //   if (window.reportSrc.length > divs.length) {
+        //     window.reportSrc.splice(0, window.reportSrc.length - divs.length);
+        //   }
+        // } else {
+        //   window.reportSrc = [];
+        // }
+        for (var i = 0; i < divs.length; i++) {
           var src = [],
               title = [],
-              content = [];var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);src.push(scrC);var s;title.push(divs[i].getAttribute("imgname"));content.push(divs[i].getAttribute("imgname"));var images = { title: title, content: content, src: src };data.file.push(images);
+              content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
+          // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
+          var scrTitle = divs[i].querySelector("img").getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;src.push(scrC);var s;title.push(divs[i].getAttribute("imgname"));content.push(divs[i].getAttribute("imgname"));var images = { title: title, content: content, src: src };data.file.push(images);
         }
       } /*_____________________
                      	以下为@人员中展示数据
                      _______________________*/data.user = { users: [], val: [], val1: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
         data.user.users.push(users[i].querySelector('span').textContent);data.user.val.push(users[i].querySelector('span').getAttribute('val'));data.user.val1.push(users[i].querySelector('span').getAttribute('val1'));
-      }
-      return data;
+      }return data;
     },
     doAction_uiControl310_dbGLHF: function (data, elem) {},
     getTemplate_uiControl310_dbGLHF: function () {
