@@ -1342,3 +1342,49 @@
       var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
       tds[tds.length - 1].querySelectorAll('a')[data.i].click();
     }
+- name: 已办的审批日志
+  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    if(data==undefined){return \"\" ;}\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='examination'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = ysp.customHelper.getTableData(elem, ['环节名称', '人员姓名', '人员公司',
+    '人员部门', '人员职位', '审批操作', '审批时间', '意见']);
+
+    data.title = '审批日志';
+
+    return data;
+  doAction: ''
+- name: 订单明细
+  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='examination'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {
+      titles: [],
+      content: []
+    };
+    var trs = elem.querySelectorAll('tr');
+    for (var i = 0; i < trs.length; i++) {
+      if (i == 1) {
+        var ths = trs[i].querySelectorAll('th');
+
+        for (var j = 0; j < ths.length; j++) {
+          data.titles.push(ths[j].textContent.trim());
+        }
+      } else if (i > 1) {
+        var arr = [];
+        var tds = trs[i].querySelectorAll('td');
+
+        for (var j = 0; j < tds.length; j++) {
+          arr.push(tds[j].querySelector('span').textContent.trim());
+        }
+
+        data.content.push(arr);
+      }
+    }
+    data.title = '订单明细';
+    return data;
+  doAction: ''

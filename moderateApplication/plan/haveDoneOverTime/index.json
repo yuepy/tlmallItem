@@ -176,8 +176,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "selector",
+              "value": "#tableAttachment"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -206,54 +211,6 @@
       },
       "events": {
         "onGetData": "getData_control311_R2OmVR"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control312_doZd85": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "XPath",
-              "value": "//*[@id=\"aspnetForm\"]/div[3]/table[2]"
-            }
-          ],
-          "force": true
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[3]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              3,
-              4
-            ],
-            "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[3]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control312_doZd85"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -351,6 +308,54 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control469_ip1lIO": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "selector",
+              "value": "#tableComments"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE[@id=\"tableComments\"]",
+              "descendant::TABLE[@id=\"tableComments\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              4
+            ],
+            "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control469_ip1lIO"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -361,9 +366,9 @@
         "control309_iG4NNI",
         "control310_VRtGWM",
         "control311_R2OmVR",
-        "control312_doZd85",
         "control313_z0DXJw",
-        "control314_22NuPa"
+        "control314_22NuPa",
+        "control469_ip1lIO"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -371,7 +376,15 @@
       ]
     }
   },
-  "flows": {},
+  "flows": {
+    "flow116_ATd43e": {
+      "toContexts": [
+        {
+          "toContextId": "context36_4AzglQ"
+        }
+      ]
+    }
+  },
   "pages": {
     "page36_bBRedF": {
       "contextId": "context36_4AzglQ",
@@ -467,16 +480,16 @@
           }
         },
         {
-          "id": "uiControl312_3CQlqf",
-          "controlId": "control312_doZd85",
+          "id": "uiControl469_XPROKH",
+          "controlId": "control469_ip1lIO",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl312_3CQlqf",
-                "onGetTemplate": "getTemplate_uiControl312_3CQlqf"
+                "onDoAction": "doAction_uiControl469_XPROKH",
+                "onGetTemplate": "getTemplate_uiControl469_XPROKH"
               }
             }
           }
@@ -568,6 +581,64 @@
             "filePanel",
             "person_infor",
             "person_infor_trigger",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv"
+          ],
+          [
+            "AppUsersDiv",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "aspnetForm",
+            "btnAddLink",
+            "btnFileUpload",
+            "ctl_Attachment_fileUpload",
+            "ctl_Attachment_hfActivityName",
+            "ctl_Attachment_hfGuid",
+            "ctl_Attachment_hfIsStart",
+            "ctl_Attachment_hfUserLoginName",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_DivKaoQinNull",
+            "ctl_contentForm_P",
+            "ctl_contentForm_hidGuid",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantName",
+            "ctl_contentForm_txt_OvertimeBelong",
+            "ctl_contentForm_txt_OvertimeType",
+            "ctl_contentForm_txt_Remark",
+            "ctl_contentForm_txt_Travel",
+            "filePanel",
+            "person_infor",
+            "person_infor_trigger",
+            "tableAttachment",
+            "tableComments",
+            "tableHeader",
             "tb_AttachmentList",
             "tb_List",
             "uploadDiv"

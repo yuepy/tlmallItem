@@ -719,8 +719,8 @@
         "userData": {
           "data": [
             {
-              "method": "XPath",
-              "value": "//*[@id=\"form1\"]/div[3]/table[2]"
+              "method": "selector",
+              "value": "#tableAttachment"
             }
           ],
           "force": true
@@ -817,6 +817,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -855,6 +859,15 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "selector",
+              "value": "#tableComments"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -959,6 +972,16 @@
       "fromContextId": "context29_3cCNa2",
       "fromAction": "doAction",
       "fromControlId": "control251_WcXoaA",
+      "toContexts": [
+        {
+          "toContextId": "context29_3cCNa2"
+        }
+      ]
+    },
+    "flow119_PLgGTd": {
+      "fromContextId": "context29_3cCNa2",
+      "fromAction": "doAction",
+      "fromControlId": "control274_r9SsaM",
       "toContexts": [
         {
           "toContextId": "context29_3cCNa2"

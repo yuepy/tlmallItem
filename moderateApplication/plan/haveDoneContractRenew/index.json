@@ -319,8 +319,8 @@
         "userData": {
           "data": [
             {
-              "method": "XPath",
-              "value": "//*[@id=\"aspnetForm\"]/div[3]/table[2]"
+              "method": "selector",
+              "value": "#tableAttachment"
             }
           ],
           "force": true
@@ -409,7 +409,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control459_4bG4BP": {
+    "control472_T3IB3M": {
       "location": {
         "data": {
           "tagName": "TABLE"
@@ -418,38 +418,38 @@
           "force": true,
           "data": [
             {
-              "method": "XPath",
-              "value": "//*[@id=\"aspnetForm\"]/div[3]/table[3]"
+              "method": "selector",
+              "value": "#tableComments"
             }
           ]
         },
         "locators": [
           {
             "id": "@id/word",
-            "prob": 2,
+            "prob": 3,
             "value": [
-              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/TABLE[3]",
-              "descendant::FORM[@id=\"aspnetForm\"]//TABLE"
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE[@id=\"tableComments\"]",
+              "descendant::TABLE[@id=\"tableComments\"]"
             ]
           },
           {
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
-              4,
-              5
+              3,
+              4
             ],
             "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control459_4bG4BP"
+        "onGetData": "getData_control472_T3IB3M"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -469,7 +469,7 @@
         "control385_NrScBJ",
         "control386_mrr3UW",
         "control387_9T11DI",
-        "control459_4bG4BP"
+        "control472_T3IB3M"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -596,16 +596,16 @@
           }
         },
         {
-          "id": "uiControl459_4rK4Le",
-          "controlId": "control459_4bG4BP",
+          "id": "uiControl472_gm1G3o",
+          "controlId": "control472_T3IB3M",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl459_4rK4Le",
-                "onGetTemplate": "getTemplate_uiControl459_4rK4Le"
+                "onDoAction": "doAction_uiControl472_gm1G3o",
+                "onGetTemplate": "getTemplate_uiControl472_gm1G3o"
               }
             }
           }
@@ -777,6 +777,69 @@
             "tb_AttachmentList",
             "tb_List",
             "uploadDiv"
+          ],
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "aspnetForm",
+            "btnAddLink",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_P",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantName",
+            "ctl_contentForm_txt_CompanyName",
+            "ctl_contentForm_txt_ContractEndDate",
+            "ctl_contentForm_txt_ContractNo",
+            "ctl_contentForm_txt_ContractStartDate",
+            "ctl_contentForm_txt_ContractSubject",
+            "ctl_contentForm_txt_DeptName",
+            "ctl_contentForm_txt_DottedLineManager",
+            "ctl_contentForm_txt_Gender",
+            "ctl_contentForm_txt_HigherManager",
+            "ctl_contentForm_txt_Jobs",
+            "ctl_contentForm_txt_JoinCompanyDate",
+            "ctl_contentForm_txt_JoinDate",
+            "ctl_contentForm_txt_PostProperty",
+            "ctl_contentForm_txt_Remark",
+            "ctl_contentForm_txt_RenewAge",
+            "ctl_contentForm_txt_RenewEndDate",
+            "ctl_contentForm_txt_RenewStartDate",
+            "ctl_contentForm_txt_RenewTime",
+            "ctl_contentForm_txt_RenewType",
+            "ctl_contentForm_txt_ServiceAge",
+            "ctl_contentForm_txt_Subordinates",
+            "ctl_contentForm_txt_Workplace",
+            "person_infor",
+            "person_infor_trigger",
+            "tableComments",
+            "tableHeader",
+            "tb_List"
           ]
         ]
       }

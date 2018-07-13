@@ -627,8 +627,8 @@
         "userData": {
           "data": [
             {
-              "method": "XPath",
-              "value": "//*[@id=\"form1\"]/div[3]/table[2]"
+              "method": "selector",
+              "value": "#tableAttachment"
             }
           ],
           "force": true
@@ -920,6 +920,15 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [
+            {
+              "method": "selector",
+              "value": "#tableComments"
+            }
+          ],
+          "force": true
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -954,7 +963,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -1028,6 +1037,16 @@
       "fromContextId": "context27_urmBPN",
       "fromAction": "doAction",
       "fromControlId": "control230_JQkCpf",
+      "toContexts": [
+        {
+          "toContextId": "context27_urmBPN"
+        }
+      ]
+    },
+    "flow117_EDVTn0": {
+      "fromContextId": "context27_urmBPN",
+      "fromAction": "doAction",
+      "fromControlId": "control222_aM5o7Q",
       "toContexts": [
         {
           "toContextId": "context27_urmBPN"
