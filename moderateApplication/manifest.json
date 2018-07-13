@@ -24,6 +24,16 @@
       "demo": [
         "http://172.16.11.61:8000/Index.aspx?Path=SysLogin"
       ]
+    },
+    {
+      "title": "login",
+      "url": "adapter://moderateApplication/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:8000\\/sysLoginMock\\.aspx"
+      ],
+      "demo": [
+        "http://172.16.11.61:8000/sysLoginMock.aspx"
+      ]
     }
   ],
   "name": "中可工程",

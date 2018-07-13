@@ -3,6 +3,9 @@
   "id": "contract",
   "targetURL": "http://172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=4E3CFE6253F1F2835FCA9DE626CD2A3B&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3",
   "jsFile": "index.js",
+  "requires": {
+    "previewapproval": "../previewapproval/index.json"
+  },
   "chineseName": "待办合同审批单",
   "description": "",
   "firstPaintEnable": false,
@@ -408,6 +411,20 @@
       "fromContextId": "context15_flVVrS",
       "fromAction": "doAction",
       "fromControlId": "control121_HRP94d",
+      "toContexts": [
+        {
+          "toContextId": "context15_flVVrS"
+        },
+        {
+          "toContextId": "context10_P8RicR",
+          "toModelId": "previewapproval"
+        }
+      ]
+    },
+    "flow94_Q65Uh9": {
+      "fromContextId": "context15_flVVrS",
+      "fromAction": "doAction",
+      "fromControlId": "control118_soe2nM",
       "toContexts": [
         {
           "toContextId": "context15_flVVrS"
