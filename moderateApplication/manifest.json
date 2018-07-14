@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "runtime_version": "2.7.0",
   "description": "",
+  "runtime_env": "1webview",
   "options": {
     "resource_intercept": {
       "type": [],
@@ -19,11 +20,9 @@
       "title": "commission",
       "url": "adapter://moderateApplication/plan/commission/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:8000\\/Index\\.aspx\\?Path=SysLogin"
+        "^http:\\/\\/172\\.16\\.11\\.61.*"
       ],
-      "demo": [
-        "http://172.16.11.61:8000/Index.aspx?Path=SysLogin"
-      ]
+      "demo": []
     },
     {
       "title": "login",
@@ -40,5 +39,5 @@
   "default_url": "http://172.16.11.61:8000/sysLoginMock.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1531541390045
+  "update_time": 1531557931369
 }
