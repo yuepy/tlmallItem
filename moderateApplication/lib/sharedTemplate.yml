@@ -903,47 +903,7 @@
       target.value = val;
     }
 
-- name: 审批操作item
-  getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
-  getData: >
-    if (!elem) {
-      return;
-    }
 
-    var data = {};
-
-    data.title = '审批操作';
-
-    data.content = [];
-
-    var trs = elem.querySelectorAll('tr');
-
-    var obj = {};
-
-    obj.left = '当前环节';
-
-    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
-
-    data.content.push(obj);
-
-    var obj = {};
-
-    obj.left = '意见';
-
-    obj.right =
-    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
-
-    data.content.push(obj);
-
-    data.content.push({
-      left: trs[1].querySelectorAll('td')[1].textContent.trim()
-    });
-
-    return data;
-  doAction: |
-    if (data.eventType == 'change') {
-      elem.querySelector('textarea').value = data.customData;
-    }
 - name: 已办事项说明
   getTemplate: "module.exports = React.createClass({\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n  \tvar list=data.content.map(function(d,i){\n      return(\n       \t<div>\n        \t\t {d.readyState==false?<ATextarea value={d.val} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)}></ATextarea>:<ATextarea value={d.val} readOnly={d.readyState}></ATextarea>}\n        </div>\n      )\n    })\n    return (\n      <div className='ysp-sxsm-tt'>\n        <div className='ysp-sxsmTitle-tt'>{data.title}</div>\n       \t{list}\n      </div>\n    )\n  }\n});"
   getData: |
@@ -1357,32 +1317,3 @@
 
     return data;
   doAction: ''
-- name: 订单明细
-  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='examination'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});"
-  getData: |
-    if (!elem) {
-      return;
-    }
-    var data = {
-      titles: [],
-      content: []
-    };
-    var trs = elem.querySelectorAll('tr');
-    for (var i = 0; i < trs.length; i++) {
-      if (i == 1) {
-        var ths = trs[i].querySelectorAll('th');
-
-        for (var j = 0; j < ths.length; j++) {
-          data.titles.push(ths[j].textContent.trim());
-        }
-      } else if (i > 1) {
-        var arr = [];
-        var tds = trs[i].querySelectorAll('td');
-
-        for (var j = 0; j < tds.length; j++) {
-          arr.push(tds[j].querySelector('span').textContent.trim());
-        }
-
-        data.content.push(arr);
-      }
-    } 

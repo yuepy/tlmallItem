@@ -26,7 +26,9 @@
     "routechange": "../routechange/index.json",
     "haveDoneIndex": "../haveDoneIndex/index.json",
     "recruit": "../recruit/index.json",
-    "staffspecial": "../staffspecial/index.json"
+    "staffspecial": "../staffspecial/index.json",
+    "purchase": "../purchase/index.json",
+    "batchex": "../batchex/index.json"
   },
   "chineseName": "待办首页页面",
   "description": "待办首页页面",
@@ -337,6 +339,14 @@
         {
           "toContextId": "context22_L7nfn7",
           "toModelId": "staffspecial"
+        },
+        {
+          "toContextId": "context33_sAXJax",
+          "toModelId": "purchase"
+        },
+        {
+          "toContextId": "context32_SUlTve",
+          "toModelId": "batchex"
         }
       ]
     },
@@ -351,6 +361,26 @@
         {
           "toContextId": "context25_IDCMfP",
           "toModelId": "haveDoneIndex"
+        }
+      ]
+    },
+    "flow121_HUdbUZ": {
+      "fromContextId": "context24_EkSRuv",
+      "fromAction": "doAction",
+      "fromControlId": "control240_SJr66K",
+      "toContexts": [
+        {
+          "toContextId": "context24_EkSRuv"
+        }
+      ]
+    },
+    "flow122_2EZt98": {
+      "fromContextId": "context24_EkSRuv",
+      "fromAction": "doAction",
+      "fromControlId": "control2_2DedGV",
+      "toContexts": [
+        {
+          "toContextId": "context24_EkSRuv"
         }
       ]
     }
@@ -483,6 +513,39 @@
             "ctl_rightContent_rblStyleC",
             "ctl_rightContent_rblStyleT",
             "ctl_rightContent_rptList_ctl_hidReceiveTime",
+            "ctl_rightContent_txtApplicant",
+            "ctl_rightContent_txtEndDate",
+            "ctl_rightContent_txtFolio",
+            "ctl_rightContent_txtStartDate",
+            "ctl_rightContent_txtSubject",
+            "imgIphone"
+          ],
+          [
+            "DivPerson",
+            "DivReport",
+            "DivSearch",
+            "DivSupport",
+            "LiLeave",
+            "LiReport",
+            "LiVacation",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__LASTFOCUS",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "aspnetForm",
+            "ctl_lblTaskNum",
+            "ctl_rightContent_AspNetPager",
+            "ctl_rightContent_DivTime",
+            "ctl_rightContent_btnSearch",
+            "ctl_rightContent_ddlCategory",
+            "ctl_rightContent_ddlProcess",
+            "ctl_rightContent_hidPageSize",
+            "ctl_rightContent_lblRum",
+            "ctl_rightContent_rblStyleC",
+            "ctl_rightContent_rblStyleT",
             "ctl_rightContent_txtApplicant",
             "ctl_rightContent_txtEndDate",
             "ctl_rightContent_txtFolio",
@@ -746,6 +809,53 @@
             "TR/TD/BUTTON",
             "TR/TD/DIV",
             "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-radio",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H4",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/P/STRONG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/BR",
+            "DIV/UL/IMG",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "LI/A/I",
+            "LI/A/SPAN",
+            "P/STRONG/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/BUTTON/I",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/INPUT-submit",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
             "TR/TD/INPUT-radio",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",

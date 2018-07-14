@@ -4,7 +4,8 @@
   "targetURL": "http://172.16.11.61:8000/Forms/YYSQ/Processing.aspx?SN=6D6EBA596FF5682BF540067A6EE465EC&Guid=347b6904-8e9d-42ee-b4f7-2be3ec5c391d",
   "jsFile": "index.js",
   "requires": {
-    "previewapproval": "../previewapproval/index.json"
+    "previewapproval": "../previewapproval/index.json",
+    "dealtIndex": "../dealtIndex/index.json"
   },
   "chineseName": "用印申请单",
   "description": "",
@@ -364,6 +365,10 @@
       "toContexts": [
         {
           "toContextId": "context2_yipHVo"
+        },
+        {
+          "toContextId": "context24_EkSRuv",
+          "toModelId": "dealtIndex"
         }
       ]
     },
