@@ -902,8 +902,7 @@
       var target = elem.querySelector("#" + id);
       target.value = val;
     }
-<<<<<<< HEAD
-=======
+
 - name: 审批操作item
   getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
   getData: >
@@ -945,7 +944,6 @@
     if (data.eventType == 'change') {
       elem.querySelector('textarea').value = data.customData;
     }
->>>>>>> b57c1493739fdbf1ed3f2e6a22903639f178fab0
 - name: 已办事项说明
   getTemplate: "module.exports = React.createClass({\n  onblur:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData;\n    var _this=this;\n  \tvar list=data.content.map(function(d,i){\n      return(\n       \t<div>\n        \t\t {d.readyState==false?<ATextarea value={d.val} readOnly={d.readyState} onBlur={_this.onblur.bind(_this)}></ATextarea>:<ATextarea value={d.val} readOnly={d.readyState}></ATextarea>}\n        </div>\n      )\n    })\n    return (\n      <div className='ysp-sxsm-tt'>\n        <div className='ysp-sxsmTitle-tt'>{data.title}</div>\n       \t{list}\n      </div>\n    )\n  }\n});"
   getData: |
