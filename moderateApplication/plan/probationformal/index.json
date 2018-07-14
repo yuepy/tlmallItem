@@ -329,46 +329,6 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control176_oXGKQg": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[37]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              7,
-              8
-            ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[37]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control176_oXGKQg"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control178_gfyzri": {
       "location": {
         "data": {
@@ -438,6 +398,42 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control176_8ieDnT": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[37]/TABLE[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              8,
+              9
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[37]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control176_8ieDnT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -451,9 +447,9 @@
         "control125_1utkn1",
         "control153_qZBVL0",
         "control154_WXD5ry",
-        "control176_oXGKQg",
         "control178_gfyzri",
-        "control180_9hS8EB"
+        "control180_9hS8EB",
+        "control176_8ieDnT"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -553,21 +549,6 @@
           }
         },
         {
-          "id": "uiControl180_RME89i",
-          "controlId": "control180_9hS8EB",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl180_RME89i",
-                "onGetTemplate": "getTemplate_uiControl180_RME89i"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl153_ungpfB",
           "controlId": "control153_qZBVL0",
           "display": {
@@ -593,6 +574,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl154_XJAhbP",
                 "onGetTemplate": "getTemplate_uiControl154_XJAhbP"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl180_RME89i",
+          "controlId": "control180_9hS8EB",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl180_RME89i",
+                "onGetTemplate": "getTemplate_uiControl180_RME89i"
               }
             }
           }
@@ -628,16 +624,16 @@
           }
         },
         {
-          "id": "uiControl176_54SSa5",
-          "controlId": "control176_oXGKQg",
+          "id": "uiControl176_1KUfSB",
+          "controlId": "control176_8ieDnT",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl176_54SSa5",
-                "onGetTemplate": "getTemplate_uiControl176_54SSa5"
+                "onDoAction": "doAction_uiControl176_1KUfSB",
+                "onGetTemplate": "getTemplate_uiControl176_1KUfSB"
               }
             }
           }
@@ -848,6 +844,186 @@
             "hdUserLoginName",
             "person_infor",
             "person_infor_trigger",
+            "tbAssessInfo",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv",
+            "upload_target"
+          ],
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "approveMemo",
+            "aspnetForm",
+            "btnAddLink",
+            "btnFileUpload",
+            "ctl_ActionBar_Action",
+            "ctl_ActionBar_ActionName",
+            "ctl_ActionBar_AddApproval",
+            "ctl_ActionBar_AddApprover",
+            "ctl_ActionBar_AddApproverName",
+            "ctl_ActionBar_Approval",
+            "ctl_ActionBar_GotoActivityName",
+            "ctl_ActionBar_IsReturnBack",
+            "ctl_ActionBar_Reject",
+            "ctl_ActionBar_UserAction",
+            "ctl_ActionBar_WorkFlow",
+            "ctl_ActionBar_btnAddApprover",
+            "ctl_ActionBar_btnApprove",
+            "ctl_ActionBar_btnClose",
+            "ctl_ActionBar_btnInform",
+            "ctl_ActionBar_btnRedirect",
+            "ctl_ActionBar_btnReject",
+            "ctl_ActionBar_btnWorkFlow",
+            "ctl_ActionBar_hidJBAffirm",
+            "ctl_ApproveControl_lblActivityName",
+            "ctl_ApproveControl_txtMemo",
+            "ctl_Attachment_fileUpload",
+            "ctl_Attachment_hfActivityName",
+            "ctl_Attachment_hfGuid",
+            "ctl_Attachment_hfIsStart",
+            "ctl_Attachment_hfUserLoginName",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_btnSubmit",
+            "ctl_contentForm_P",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicationName",
+            "ctl_contentForm_txt_BasicResume",
+            "ctl_contentForm_txt_CompanyName",
+            "ctl_contentForm_txt_DeptName",
+            "ctl_contentForm_txt_DottedLineManager",
+            "ctl_contentForm_txt_Gender",
+            "ctl_contentForm_txt_HigherManager",
+            "ctl_contentForm_txt_PositiveDate",
+            "ctl_contentForm_txt_PostName",
+            "ctl_contentForm_txt_PostProperty",
+            "ctl_contentForm_txt_ProbationEvaluation",
+            "ctl_contentForm_txt_Remark",
+            "ctl_contentForm_txt_Subordinates",
+            "ctl_contentForm_txt_Workplace",
+            "fileAttachment",
+            "filePanel",
+            "file_upload_form",
+            "hdActivityName",
+            "hdGuid",
+            "hdUserLoginName",
+            "person_infor",
+            "person_infor_trigger",
+            "tableAttachment",
+            "tableComments",
+            "tableHeader",
+            "tbAssessInfo",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv",
+            "upload_target"
+          ],
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "approveMemo",
+            "aspnetForm",
+            "btnAddLink",
+            "btnFileUpload",
+            "ctl_ActionBar_Action",
+            "ctl_ActionBar_ActionName",
+            "ctl_ActionBar_AddApproval",
+            "ctl_ActionBar_AddApprover",
+            "ctl_ActionBar_AddApproverName",
+            "ctl_ActionBar_Approval",
+            "ctl_ActionBar_GotoActivityName",
+            "ctl_ActionBar_IsReturnBack",
+            "ctl_ActionBar_Reject",
+            "ctl_ActionBar_UserAction",
+            "ctl_ActionBar_WorkFlow",
+            "ctl_ActionBar_btnAddApprover",
+            "ctl_ActionBar_btnApprove",
+            "ctl_ActionBar_btnClose",
+            "ctl_ActionBar_btnInform",
+            "ctl_ActionBar_btnRedirect",
+            "ctl_ActionBar_btnReject",
+            "ctl_ActionBar_btnWorkFlow",
+            "ctl_ActionBar_hidJBAffirm",
+            "ctl_ApproveControl_lblActivityName",
+            "ctl_ApproveControl_txtMemo",
+            "ctl_Attachment_fileUpload",
+            "ctl_Attachment_hfActivityName",
+            "ctl_Attachment_hfGuid",
+            "ctl_Attachment_hfIsStart",
+            "ctl_Attachment_hfUserLoginName",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_btnSubmit",
+            "ctl_contentForm_P",
+            "ctl_contentForm_UpdatePanel",
+            "ctl_contentForm_rbtn_Excellent",
+            "ctl_contentForm_rbtn_Improve",
+            "ctl_contentForm_rbtn_NoQualified",
+            "ctl_contentForm_rbtn_Qualified",
+            "ctl_contentForm_rbtn_Well",
+            "ctl_contentForm_rbtn_adjustPost",
+            "ctl_contentForm_rbtn_agreePositive",
+            "ctl_contentForm_rbtn_relieveContract",
+            "ctl_contentForm_tbDecisionAbility",
+            "ctl_contentForm_tbExecuteAbility",
+            "ctl_contentForm_tbFosterAbility",
+            "ctl_contentForm_tbImpactAbility",
+            "ctl_contentForm_tbMajorAbility",
+            "ctl_contentForm_tbStudyAbility",
+            "ctl_contentForm_tbSurpassAbility",
+            "ctl_contentForm_tbTeamAbility",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicationName",
+            "ctl_contentForm_txt_Assessment",
+            "ctl_contentForm_txt_BasicResume",
+            "ctl_contentForm_txt_CompanyName",
+            "ctl_contentForm_txt_DeptName",
+            "ctl_contentForm_txt_DottedLineManager",
+            "ctl_contentForm_txt_Gender",
+            "ctl_contentForm_txt_HigherManager",
+            "ctl_contentForm_txt_PositiveDate",
+            "ctl_contentForm_txt_PostName",
+            "ctl_contentForm_txt_PostProperty",
+            "ctl_contentForm_txt_ProbationEvaluation",
+            "ctl_contentForm_txt_Remark",
+            "ctl_contentForm_txt_Subordinates",
+            "ctl_contentForm_txt_Workplace",
+            "fileAttachment",
+            "filePanel",
+            "file_upload_form",
+            "hdActivityName",
+            "hdGuid",
+            "hdUserLoginName",
+            "person_infor",
+            "person_infor_trigger",
+            "tableAttachment",
+            "tableComments",
+            "tableHeader",
             "tbAssessInfo",
             "tb_AttachmentList",
             "tb_List",

@@ -4,7 +4,8 @@
   "targetURL": "http://172.16.11.61:8000/Forms/HR/SFInfo/Processing.aspx?SN=9A070C80ADFC696E3A75715CCA71F736&Guid=544e4b64-ecf2-478a-9fee-01cc8615e0cc",
   "jsFile": "index.js",
   "requires": {
-    "dealtIndex": "../dealtIndex/index.json"
+    "dealtIndex": "../dealtIndex/index.json",
+    "previewapproval": "../previewapproval/index.json"
   },
   "chineseName": "人才盘点信息表",
   "description": "",
@@ -428,6 +429,10 @@
       "toContexts": [
         {
           "toContextId": "context23_vDtiE1"
+        },
+        {
+          "toContextId": "context10_P8RicR",
+          "toModelId": "previewapproval"
         }
       ]
     },

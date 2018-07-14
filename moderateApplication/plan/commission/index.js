@@ -9,8 +9,7 @@
     },
     doAction_uiControl172_qpwrqq: function (data, elem) {
       if ('click' == data.eventType) {
-        var title = data.dataCustom;
-        if ('待办' == title) {
+        var title = data.dataCustom;if ('待办' == title) {
           elem.querySelectorAll("li")[0].querySelector("a").click();
         } else {
           // var url = ysp.appMain.getActiveUrl();
