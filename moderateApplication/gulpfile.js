@@ -19,12 +19,12 @@ gulp.task('dev', function() {
         .pipe(gulp.dest('./'));
 });
 
-//修改域名 ip 172.16.11.61:8080 改为 域名 http://info.cofcoko.com
+//修改域名 ip 172.16.11.61:8000 改为 域名 http://info.cofcoko.com
 gulp.task('releaseCom', function() {
     gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
         //可口可乐 http://172.16.11.61:8000 环境转移 http://info.cofcoko.com 环境
         .pipe(replace(/http:\\{2}\/\\{2}\/172\\{2}.16\\{2}.11\\{2}.61:8000/gm, 'http:\\\\/\\\\/info\\\\.cofcoko\\\\.com'))
-        .pipe(replace(/172\.16\.11\.61:8080/gm, 'info.cofcoko.com'))
+        .pipe(replace(/172\.16\.11\.61:8000/gm, 'info.cofcoko.com'))
         .pipe(replace(/172\.16\.11\.61/gm, 'info.cofcoko.com'))
         .pipe(gulp.dest('./'));
 });
@@ -32,8 +32,8 @@ gulp.task('releaseCom', function() {
 gulp.task('devCom', function() {
     gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
         //可口可乐 http://info.cofcoko.com 环境转移 http://172.16.11.61:8000 环境
-        .pipe(replace(/http:\\{2}\/\\{2}\/info\\{2}.cofcoko\\{2}.com/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:8080'))
-        .pipe(replace(/info\.cofcoko\.com/gm, '172.16.11.61:8080'))
+        .pipe(replace(/http:\\{2}\/\\{2}\/info\\{2}.cofcoko\\{2}.com/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:8000'))
+        .pipe(replace(/info\.cofcoko\.com/gm, '172.16.11.61:8000'))
         .pipe(replace(/info\.cofcoko\.com/gm, '172.16.11.61'))
         .pipe(gulp.dest('./'));
 });
