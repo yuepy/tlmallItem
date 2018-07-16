@@ -3,6 +3,9 @@
   "id": "reportAtMeSummendLook",
   "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtmeView.html",
   "jsFile": "index.js",
+  "requires": {
+    "reportAtMeSummendLook": "../reportAtMeSummendLook/index.json"
+  },
   "chineseName": "汇报给我的总结查看",
   "description": "汇报给我的总结查看",
   "controls": {
@@ -41,6 +44,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -73,6 +80,10 @@
       "toContexts": [
         {
           "toContextId": "context84_bsgu84"
+        },
+        {
+          "toContextId": "context84_bsgu84",
+          "toModelId": "reportAtMeSummendLook"
         }
       ]
     },
@@ -151,6 +162,27 @@
             "lableTabs",
             "textareaDivs",
             "workSummaryId"
+          ],
+          [
+            "ChatIpt",
+            "ChatOnline",
+            "ContactAlert",
+            "ContactClose",
+            "ContactSure",
+            "ContactUsers",
+            "DisplayContact",
+            "chats_content",
+            "close",
+            "closeIfram",
+            "contactSearch",
+            "contentBody",
+            "icon-search",
+            "imgsDiv",
+            "lableTabs",
+            "search-lists",
+            "sendBtn",
+            "textareaDivs",
+            "workSummaryId"
           ]
         ]
       }
@@ -185,6 +217,47 @@
             "work-box",
             "work-con",
             "work-tit"
+          ],
+          [
+            "body",
+            "btn",
+            "btn-box",
+            "chat-one",
+            "chatTime",
+            "chatUsers",
+            "chats",
+            "clearfix",
+            "con",
+            "con-box",
+            "content",
+            "footer",
+            "head-tit",
+            "header",
+            "icon",
+            "icon-back",
+            "icon-close",
+            "icon-search",
+            "img-box",
+            "leaveWord",
+            "lists-one",
+            "m-contact",
+            "problem-con",
+            "problem-item",
+            "problem-r-box",
+            "search",
+            "search-lists",
+            "tabs",
+            "text",
+            "textarea",
+            "textareaDiv",
+            "textearaDiv",
+            "tipFont",
+            "title",
+            "user",
+            "users",
+            "work-box",
+            "work-con",
+            "work-tit"
           ]
         ]
       }
@@ -205,6 +278,28 @@
             "DIV/DIV/I",
             "DIV/DIV/SPAN",
             "DIV/DIV/TEXTAREA"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/H2",
+            "-/DIV/INPUT-hidden",
+            "DIV/A/EM",
+            "DIV/A/H6",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FONT",
+            "DIV/DIV/H4",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/P/B"
           ]
         ]
       }
