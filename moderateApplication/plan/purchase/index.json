@@ -3,6 +3,9 @@
   "id": "purchase",
   "targetURL": "http://172.16.11.61:9992/Forms/DME/SCYPCG/Processing.aspx?SN=418F009FD31887F2D0025A40111A5EE8&Guid=58f20823-8968-477a-a8b3-de2017004aa6",
   "jsFile": "index.js",
+  "requires": {
+    "previewapproval": "../previewapproval/index.json"
+  },
   "chineseName": "市场用品采购流程",
   "description": "",
   "firstPaintEnable": false,
@@ -519,6 +522,20 @@
           "toContextId": "context33_sAXJax"
         }
       ]
+    },
+    "flow123_i6NB0J": {
+      "fromContextId": "context33_sAXJax",
+      "fromAction": "doAction",
+      "fromControlId": "control269_yRxF4T",
+      "toContexts": [
+        {
+          "toContextId": "context33_sAXJax"
+        },
+        {
+          "toContextId": "context10_P8RicR",
+          "toModelId": "previewapproval"
+        }
+      ]
     }
   },
   "pages": {
@@ -908,7 +925,6 @@
             "uploadDiv",
             "upload_target"
           ]
-          
         ]
       }
     },

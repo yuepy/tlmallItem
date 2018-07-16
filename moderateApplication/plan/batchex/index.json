@@ -3,6 +3,9 @@
   "id": "batchex",
   "targetURL": "http://172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=9F96F82061414BF8E4613913A055CD8B&Guid=e5c0f19b-c0e1-4818-98eb-cc6f2dc2f041",
   "jsFile": "index.js",
+  "requires": {
+    "preverall": "../preverall/index.json"
+  },
   "chineseName": "待办客资/送达方/销售人员、路线批量审批",
   "description": "",
   "firstPaintEnable": false,
@@ -387,6 +390,30 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control482_UonBfM": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "intendedRole": "modal",
+      "roles": "element,link,modal",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
+      "componentType": "modal"
     }
   },
   "contexts": {
@@ -400,7 +427,8 @@
         "control263_QOap84",
         "control264_zpRFK5",
         "control265_qECv92",
-        "control266_TSBd1E"
+        "control266_TSBd1E",
+        "control482_UonBfM"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -433,6 +461,10 @@
       "toContexts": [
         {
           "toContextId": "context32_SUlTve"
+        },
+        {
+          "toContextId": "context54_LOGhS9",
+          "toModelId": "preverall"
         }
       ]
     }
@@ -562,6 +594,18 @@
           }
         },
         {
+          "id": "uiControl482_6Tzmdd",
+          "controlId": "control482_UonBfM",
+          "display": {
+            "adapterId": "modal",
+            "type": "modal",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": []
+        },
+        {
           "id": "uiControl262_MQly4f",
           "controlId": "control262_mNtfvC",
           "display": {
@@ -591,7 +635,8 @@
       "contexts": {
         "context32_SUlTve": [
           "172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=9F96F82061414BF8E4613913A055CD8B&Guid=e5c0f19b-c0e1-4818-98eb-cc6f2dc2f041",
-          "172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=621BC937A6383E8C7701DF8C337164AF&Guid=ec56725a-8f3f-4a92-bd48-2af6d33bd2bc"
+          "172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=621BC937A6383E8C7701DF8C337164AF&Guid=ec56725a-8f3f-4a92-bd48-2af6d33bd2bc",
+          "172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=E4D45F10D01B196927CF79AD3C3A5088&Guid=b1e89cb5-a6f8-41bb-b112-f513c4d240cf"
         ]
       }
     },
@@ -988,6 +1033,74 @@
             "tj",
             "top",
             "ufoot"
+          ],
+          [
+            "action-area",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_state_full",
+            "aui_state_lock",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "del",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "icon-trash",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
           ]
         ]
       }
@@ -1103,6 +1216,71 @@
             "TD/A/I",
             "TD/DIV/A",
             "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/DIV/TEXTAREA",
+            "TD/SPAN/TEXTAREA",
+            "TD/TABLE/TBODY",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/DIV",
+            "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/P",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SCRIPT",
+            "-/FORM/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/P/BR",
+            "DIV/P/SPAN",
+            "DIV/P/STRONG",
+            "DIV/SPAN/INPUT-file",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/A/I",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/IFRAME",
             "TD/DIV/TABLE",
             "TD/DIV/TEXTAREA",
             "TD/SPAN/TEXTAREA",

@@ -335,8 +335,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UpdatePanel2\"]/table"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -370,8 +375,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"ctl00_contentForm_UpdatePanel2\"]/table"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -404,6 +414,19 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"aspnetForm\"]/div[3]/div[37]/table"
+            },
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"aspnetForm\"]/div[3]/div[30]/table"
+            }
+          ],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -434,6 +457,45 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control474_GBadhE": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE[@id=\"tbAssessInfo\"]",
+              "descendant::TABLE[@id=\"tbAssessInfo\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control474_GBadhE"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -449,7 +511,8 @@
         "control154_WXD5ry",
         "control178_gfyzri",
         "control180_9hS8EB",
-        "control176_8ieDnT"
+        "control176_8ieDnT",
+        "control474_GBadhE"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -544,6 +607,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl178_qwTugN",
                 "onGetTemplate": "getTemplate_uiControl178_qwTugN"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl474_M5GPBD",
+          "controlId": "control474_GBadhE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl474_M5GPBD",
+                "onGetTemplate": "getTemplate_uiControl474_M5GPBD"
               }
             }
           }
@@ -669,7 +747,8 @@
         "context13_FMltEV": [
           "172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=2002C6F3E20AECD10EC6D3CA9F3C2EFD&Guid=3470b81d-d3ea-42fa-8825-49ecda6fcd14",
           "172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=2617A5E869F27A6967A5704307E112FC&Guid=6e8771fa-086a-402f-a3f1-38f78b727c6e",
-          "172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=9733111B98DF1F2B0328C8D741EAFA09&Guid=4af28b4a-bfc8-4b10-bd46-43f156bae1d9"
+          "172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=9733111B98DF1F2B0328C8D741EAFA09&Guid=4af28b4a-bfc8-4b10-bd46-43f156bae1d9",
+          "172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=8D13B557FB6B9387A2A77526D1FDE4EC&Guid=654dc17d-ded9-4bbe-af77-33f215ce87c1"
         ]
       }
     },

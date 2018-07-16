@@ -1,0 +1,304 @@
+{
+  "version": "0.1",
+  "id": "preverall",
+  "targetURL": "http://172.16.11.61:9995/Workflow/Forms/YSWSQNew/Processing.aspx?SN=E56233FB36C2127D6DB07CCA93FF9965&Guid=69261c15-dff8-47df-a1e1-20f7429bc19d",
+  "jsFile": "index.js",
+  "requires": {
+    "addName": "../addName/index.json",
+    "commission": "../commission/index.json"
+  },
+  "chineseName": "加签选项",
+  "description": "",
+  "controls": {
+    "control476_6BDyKm": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[2]/TABLE[1]",
+              "ratio": 0.278
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons DIV.body TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control476_6BDyKm"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control477_AuGIgm": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]",
+              "ratio": 0.495
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-top-buttons.choose-people DIV.body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 750,
+              "height": 530
+            }
+          }
+        ]
+      },
+      "intendedRole": "modal",
+      "roles": "element,modal",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "modal"
+    },
+    "control484_IqZpnH": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.278
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons DIV.popup-bottom-buttons"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control484_IqZpnH"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context54_LOGhS9": {
+      "controls": [
+        "control476_6BDyKm",
+        "control477_AuGIgm",
+        "control484_IqZpnH"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow124_33Foke": {
+      "toContexts": [
+        {
+          "toContextId": "context54_LOGhS9"
+        }
+      ]
+    },
+    "flow125_hBbOM1": {
+      "fromContextId": "context54_LOGhS9",
+      "fromAction": "doAction",
+      "fromControlId": "control476_6BDyKm",
+      "toContexts": [
+        {
+          "toContextId": "context54_LOGhS9"
+        },
+        {
+          "toContextId": "context55_49iD4h",
+          "toModelId": "addName"
+        },
+        {
+          "toContextId": "context1_CPB3yD",
+          "toModelId": "commission"
+        }
+      ]
+    },
+    "flow131_VRsy6e": {
+      "fromContextId": "context54_LOGhS9",
+      "fromAction": "doAction",
+      "fromControlId": "control484_IqZpnH",
+      "toContexts": [
+        {
+          "toContextId": "context54_LOGhS9"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page54_NnSXIB": {
+      "contextId": "context54_LOGhS9",
+      "layout": [
+        {
+          "id": "uiControl476_u3fyiU",
+          "controlId": "control476_6BDyKm",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl476_u3fyiU",
+                "onGetTemplate": "getTemplate_uiControl476_u3fyiU"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl477_xbs3ls",
+          "controlId": "control477_AuGIgm",
+          "display": {
+            "adapterId": "modal",
+            "type": "modal",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": []
+        },
+        {
+          "id": "uiControl484_WRXRqX",
+          "controlId": "control484_IqZpnH",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl484_WRXRqX",
+                "onGetTemplate": "getTemplate_uiControl484_WRXRqX"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context54_LOGhS9": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context54_LOGhS9": [
+          ""
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context54_LOGhS9": [
+          [
+            "btnConfirm",
+            "hid_LoginName",
+            "txt_UserName"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context54_LOGhS9": [
+          [
+            "body",
+            "btn",
+            "btn-add-user",
+            "layout-form",
+            "none_edit",
+            "popup-bottom-buttons",
+            "red",
+            "size-l",
+            "top"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context54_LOGhS9": [
+          [
+            "-/-/DIV",
+            "-/DIV/BR",
+            "-/DIV/H3",
+            "-/DIV/INPUT-submit",
+            "-/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TR/TD/A",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ]
+        ]
+      }
+    }
+  }
+}

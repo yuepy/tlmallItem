@@ -89,7 +89,7 @@ body {
 }
 .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
@@ -117,7 +117,7 @@ body {
   margin: 0 auto;
 }
 .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -259,7 +259,6 @@ body {
   float: right;
   margin: 0;
   border: 0px;
-  border-bottom: 1px solid #cccccc;
 }
 .approval .tishi {
   height: 44px;
@@ -457,9 +456,10 @@ body {
 }
 .examination .contentitem {
   width: 345px;
+  max-height: 220px;
   padding-bottom: 0;
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow: auto;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1094,6 +1094,8 @@ body {
 }
 [data-ysp-modelid="leave"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -1384,13 +1386,13 @@ body {
 }
 [data-ysp-modelid="awaybusiness"] .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="awaybusiness"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -1434,6 +1436,8 @@ body {
 }
 [data-ysp-modelid="awaybusiness"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -1722,13 +1726,13 @@ body {
 }
 [data-ysp-modelid="travel"] .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="travel"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -1772,6 +1776,8 @@ body {
 }
 [data-ysp-modelid="travel"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: auto;
@@ -1854,7 +1860,7 @@ body {
 }
 [data-ysp-modelid="travel"] .askleave .content .contenttit .contentfoot:nth-child(2) {
   min-height: 46px;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #cccccc;
 }
 [data-ysp-modelid="travel"] .Enclosure {
@@ -2066,13 +2072,13 @@ body {
 }
 [data-ysp-modelid="overtime"] .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="overtime"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -2116,6 +2122,8 @@ body {
 }
 [data-ysp-modelid="overtime"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -2404,13 +2412,13 @@ body {
 }
 [data-ysp-modelid="eliminate"] .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="eliminate"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -2459,6 +2467,8 @@ body {
   overflow-x: scroll;
   margin-left: auto;
   margin-right: auto;
+  max-height: 220px;
+  overflow: auto;
 }
 [data-ysp-modelid="eliminate"] .askleave .contentitem table {
   width: 95px;
@@ -2704,6 +2714,8 @@ body {
 }
 [data-ysp-modelid="eliminate"] .examination .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -2813,13 +2825,13 @@ body {
 }
 [data-ysp-modelid="assetbudget"] .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="assetbudget"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -2896,11 +2908,11 @@ body {
   text-align-last: justify;
 }
 [data-ysp-modelid="assetbudget"] .apply .content .contenttit .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
 }
 [data-ysp-modelid="assetbudget"] .apply .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -2921,6 +2933,8 @@ body {
   white-space: nowrap;
   overflow-x: auto;
   margin-left: 10px;
+  max-height: 220px;
+  overflow: auto;
 }
 [data-ysp-modelid="assetbudget"] .askleave .contentitem table {
   width: 95px;
@@ -3218,6 +3232,8 @@ body {
 }
 [data-ysp-modelid="previewapproval"] .examination .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -3325,13 +3341,13 @@ body {
 }
 [data-ysp-modelid="costreimbursement"] .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="costreimbursement"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -3375,6 +3391,8 @@ body {
 }
 [data-ysp-modelid="costreimbursement"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -3456,7 +3474,7 @@ body {
   text-align-last: justify;
 }
 [data-ysp-modelid="costreimbursement"] .askleave .contentfoot .content .contentfoot:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   text-align: left;
 }
@@ -3668,6 +3686,8 @@ body {
 }
 [data-ysp-modelid="assetshandle"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: auto;
@@ -3753,7 +3773,7 @@ body {
   text-align-last: justify;
 }
 [data-ysp-modelid="assetshandle"] .askleave .tablebottom .content .contentitembom:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
 }
 [data-ysp-modelid="assetshandle"] .Enclosure {
@@ -3965,13 +3985,13 @@ body {
 }
 [data-ysp-modelid="probationformal"] .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="probationformal"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -4015,6 +4035,8 @@ body {
 }
 [data-ysp-modelid="probationformal"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -4093,7 +4115,7 @@ body {
 }
 [data-ysp-modelid="probationformal"] .askleave .content .contentbtnright {
   display: flex;
-  width: 285px;
+  width: 265px;
   justify-content: space-around;
 }
 [data-ysp-modelid="probationformal"] .askleave .content .contentbtnright button {
@@ -4149,7 +4171,7 @@ body {
   display: flex;
 }
 [data-ysp-modelid="probationformal"] .Become .content:last-child .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   color: #313131;
 }
@@ -4378,13 +4400,13 @@ body {
 }
 [data-ysp-modelid="examination_abnormal"] .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="examination_abnormal"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -4428,6 +4450,8 @@ body {
 }
 [data-ysp-modelid="examination_abnormal"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: auto;
@@ -4700,13 +4724,13 @@ body {
 }
 [data-ysp-modelid="contract"] .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="contract"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   margin-top: 15px;
@@ -4750,6 +4774,8 @@ body {
 }
 [data-ysp-modelid="contract"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -5039,13 +5065,13 @@ body {
   text-align-last: justify;
 }
 [data-ysp-modelid="creditXYDJSF"] .information .content .contenttit .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="creditXYDJSF"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   margin-top: 15px;
   margin-bottom: 15px;
   min-height: 48px;
@@ -5087,6 +5113,8 @@ body {
 }
 [data-ysp-modelid="creditXYDJSF"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -5376,13 +5404,13 @@ body {
   text-align-last: justify;
 }
 [data-ysp-modelid="borrowmon"] .information .content .contenttit .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="borrowmon"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   margin-top: 15px;
   margin-bottom: 15px;
   min-height: 48px;
@@ -5455,6 +5483,8 @@ body {
 }
 [data-ysp-modelid="borrowmon"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -5744,13 +5774,13 @@ body {
   text-align-last: justify;
 }
 [data-ysp-modelid="entry"] .information .content .contenttit .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="entry"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   margin-top: 15px;
   margin-bottom: 15px;
   min-height: 48px;
@@ -5792,6 +5822,8 @@ body {
 }
 [data-ysp-modelid="entry"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -6081,13 +6113,13 @@ body {
   text-align-last: justify;
 }
 [data-ysp-modelid="recruit"] .information .content .contenttit .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="recruit"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   margin-top: 15px;
   margin-bottom: 15px;
   min-height: 48px;
@@ -6313,6 +6345,8 @@ body {
 }
 [data-ysp-modelid="train"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -6391,7 +6425,7 @@ body {
 }
 [data-ysp-modelid="train"] .askleave .content .contentbtnright {
   display: flex;
-  width: 285px;
+  width: 265px;
   justify-content: space-around;
 }
 [data-ysp-modelid="train"] .askleave .content .contentbtnright button {
@@ -6434,13 +6468,13 @@ body {
   text-align-last: justify;
 }
 [data-ysp-modelid="staffspecial"] .information .content .contenttit .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="staffspecial"] .information .content textarea {
-  width: 285px;
+  width: 265px;
   margin-top: 15px;
   margin-bottom: 15px;
   min-height: 48px;
@@ -6513,6 +6547,8 @@ body {
 }
 [data-ysp-modelid="staffspecial"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -7557,6 +7593,8 @@ body {
 }
 [data-ysp-modelid="assedbudget"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -7650,6 +7688,8 @@ body {
 }
 [data-ysp-modelid="purchase"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -7928,12 +7968,26 @@ body {
 [data-ysp-modelid="purchase"] .Enclosure .content .distag {
   margin-bottom: 0;
 }
+[data-ysp-modelid="preverall"] .addcommit button {
+  width: 50%;
+  height: 44px;
+  background-color: #e64750;
+  color: #fff;
+  border: 1px solid #cccccc;
+}
+[data-ysp-modelid="preverall"] .addcommit button:nth-child(2) {
+  border: 0;
+  background-color: #fff;
+  color: #313131;
+}
 [data-ysp-modelid="renewal"] .askleave {
   background-color: #ffffff;
   padding-bottom: 15px;
 }
 [data-ysp-modelid="renewal"] .askleave .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -8099,13 +8153,13 @@ body {
 }
 .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 .information .content textarea {
-  width: 285px;
+  width: 265px;
   display: inline-block;
   float: right;
   min-height: 48px;
@@ -8178,6 +8232,8 @@ body {
 }
 .examination .contentitem {
   width: 345px;
+  max-height: 220px;
+  overflow: auto;
   padding-bottom: 0;
   white-space: nowrap;
   overflow-x: scroll;
@@ -8277,7 +8333,6 @@ body {
   float: right;
   margin: 0;
   border: 0px;
-  border-bottom: 1px solid #cccccc;
 }
 .approval .tishi {
   height: 44px;

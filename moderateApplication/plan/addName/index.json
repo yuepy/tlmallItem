@@ -1,0 +1,397 @@
+{
+  "version": "0.1",
+  "id": "addName",
+  "targetURL": "http://172.16.11.61:9995/Workflow/Forms/YSWSQNew/Processing.aspx?SN=E56233FB36C2127D6DB07CCA93FF9965&Guid=69261c15-dff8-47df-a1e1-20f7429bc19d",
+  "jsFile": "index.js",
+  "requires": {
+    "commission": "../commission/index.json"
+  },
+  "chineseName": "添加人员",
+  "description": "",
+  "controls": {
+    "control478_7W6cFi": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/DIV[1]",
+              "ratio": 0.495
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-top-buttons.choose-people DIV.body DIV.popup-top-buttons"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control478_7W6cFi"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control479_7NzFhK": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/DIV[2]/DIV[1]/DIV[2]",
+              "ratio": 0.495
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.body DIV.right-main DIV.form-single-line.search-box"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control479_7NzFhK"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control480_HLaoxE": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]",
+              "ratio": 0.495
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.body DIV.right-main TABLE.user-list.mt-s TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control480_HLaoxE"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control481_oLkLI1": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[3]",
+              "ratio": 0.495
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "DIV.body DIV.right-main TABLE.user-list.mt-s TBODY TR TD"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control481_oLkLI1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context55_49iD4h": {
+      "controls": [
+        "control478_7W6cFi",
+        "control479_7NzFhK",
+        "control480_HLaoxE",
+        "control481_oLkLI1"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow126_9sin91": {
+      "toContexts": [
+        {
+          "toContextId": "context55_49iD4h"
+        },
+        {
+          "toContextId": "context1_CPB3yD",
+          "toModelId": "commission"
+        }
+      ]
+    },
+    "flow127_He26l3": {
+      "fromContextId": "context55_49iD4h",
+      "fromAction": "doAction",
+      "fromControlId": "control478_7W6cFi",
+      "toContexts": [
+        {
+          "toContextId": "context55_49iD4h"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page55_CJNzw9": {
+      "contextId": "context55_49iD4h",
+      "layout": [
+        {
+          "id": "uiControl479_vfHQFa",
+          "controlId": "control479_7NzFhK",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl479_vfHQFa",
+                "onGetTemplate": "getTemplate_uiControl479_vfHQFa"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl480_ag78LX",
+          "controlId": "control480_HLaoxE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl480_ag78LX",
+                "onGetTemplate": "getTemplate_uiControl480_ag78LX"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl481_AToeCC",
+          "controlId": "control481_oLkLI1",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl481_AToeCC",
+                "onGetTemplate": "getTemplate_uiControl481_AToeCC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl478_CyLhBa",
+          "controlId": "control478_7W6cFi",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl478_CyLhBa",
+                "onGetTemplate": "getTemplate_uiControl478_CyLhBa"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context55_49iD4h": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context55_49iD4h": [
+          ""
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context55_49iD4h": [
+          [
+            "S_E_L_E_C_T_O_R_btnSearchEmployee",
+            "S_E_L_E_C_T_O_R_txtSearchEmployee",
+            "hidCompany",
+            "hidDept",
+            "hidExtraFunction",
+            "hidIndex",
+            "hidIsHRAccount",
+            "hidIsSingleSelection",
+            "hidReturnCode",
+            "hidReturnName",
+            "listSelected",
+            "listWaitingSelect"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context55_49iD4h": [
+          [
+            "align-c",
+            "btn",
+            "btns",
+            "form-single-line",
+            "frame-name",
+            "grey",
+            "icon-angle-left",
+            "icon-angle-right",
+            "icon-double-angle-left",
+            "icon-double-angle-right",
+            "icon-search",
+            "init-text",
+            "mt-s",
+            "popup-top-buttons",
+            "red",
+            "right-main",
+            "search-box",
+            "shadow",
+            "size-m",
+            "size-s",
+            "title",
+            "user-list",
+            "user-list-container"
+          ],
+          [
+            "align-c",
+            "btn",
+            "btns",
+            "form-single-line",
+            "frame-name",
+            "grey",
+            "icon-angle-left",
+            "icon-angle-right",
+            "icon-double-angle-left",
+            "icon-double-angle-right",
+            "icon-search",
+            "mt-s",
+            "popup-top-buttons",
+            "red",
+            "right-main",
+            "search-box",
+            "shadow",
+            "size-m",
+            "size-s",
+            "title",
+            "user-list",
+            "user-list-container"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context55_49iD4h": [
+          [
+            "-/-/DIV",
+            "-/DIV/BUTTON",
+            "-/DIV/DIV",
+            "-/DIV/INPUT-hidden",
+            "DIV/BUTTON/I",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/TABLE",
+            "DIV/TABLE/TBODY",
+            "P/BUTTON/I",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/SELECT",
+            "TD/P/BR",
+            "TD/P/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/P"
+          ]
+        ]
+      }
+    }
+  }
+}

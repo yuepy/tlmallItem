@@ -31,7 +31,7 @@
               }
             }
           }if (tds[k].querySelector('a')) {
-            arr.push({ href: tds[k].querySelector('a').href, text: tds[k].textContent.trim(), type: 'a' });
+            arr.push({ href: '', text: tds[k].textContent.trim(), type: 'a' });
           }
         }data.content.push(arr);
       }var table = elem.querySelectorAll('table');var table = table[table.length - 1];var tr = table.querySelectorAll('tr')[0];var tds = tr.querySelectorAll('td')[0];data.content.push([{ left: tds.querySelector('label').querySelector('span').previousSibling.previousSibling.previousSibling.textContent.trim(), right: tds.querySelector('textarea').value, type: 'textarea' }]);return data;
