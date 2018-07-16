@@ -45,6 +45,9 @@
       if(aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF")!==-1){
         ysp.customHelper.tab="menu"
       }
+      if(aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/"||aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h"||aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?"){
+        aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
+      }
 			// if(aWin.location.href.indexOf("cmd=logout")!==-1||aWin.location.href.indexOf("cmd=login")!==-1||aWin.location.href.indexOf("cmd=expire")!==-1){
 			// doc.querySelector("#userid").value="YSP";
 			// doc.querySelector("#pwd").value="12345678";
