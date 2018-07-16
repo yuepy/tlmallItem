@@ -220,7 +220,7 @@ body {
   display: flex;
 }
 .initiator .content .contenttit .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   color: #313131;
 }
@@ -246,14 +246,14 @@ body {
   color: #202020;
 }
 .approval .content .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   text-align: left;
   float: right;
   color: #313131;
 }
 .approval .content textarea {
-  width: 285px;
+  width: 265px;
   max-height: 225px;
   min-height: 44px;
   float: right;
@@ -553,7 +553,7 @@ body {
 .submit .subtrue > div:nth-child(2) {
   width: 40px;
   height: 40px;
-  background: url(img/paging.png) 50% 100% no-repeat;
+  background: url(img/paging.png) 50% 50% no-repeat;
   cursor: pointer;
   margin-top: 10px;
   float: right;
@@ -6410,60 +6410,6 @@ body {
   font-size: 16px;
   background-color: #f2f2f2;
 }
-[data-ysp-modelid="staffspecial"] .initiator {
-  padding-bottom: 15px;
-  background-color: #ffffff;
-}
-[data-ysp-modelid="staffspecial"] .initiator .disnone {
-  display: none;
-}
-[data-ysp-modelid="staffspecial"] .initiator .contenttitle {
-  color: #e64750;
-  height: 30px;
-  line-height: 30px;
-  margin-bottom: 15px;
-}
-[data-ysp-modelid="staffspecial"] .initiator .contenttitle p {
-  position: relative;
-  cursor: pointer;
-}
-[data-ysp-modelid="staffspecial"] .initiator .contenttitle p i {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  right: 15px;
-}
-[data-ysp-modelid="staffspecial"] .initiator .contenttitle p .shouqi {
-  background-image: url(img/shouqi.png);
-}
-[data-ysp-modelid="staffspecial"] .initiator .contenttitle p .zhankai {
-  background-image: url(img/zhankai.png);
-}
-[data-ysp-modelid="staffspecial"] .initiator .content .contenttit {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 15px;
-}
-[data-ysp-modelid="staffspecial"] .initiator .content .contenttit .contentitem {
-  min-height: 56px;
-  color: #313131;
-  display: flex;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  align-items: center;
-}
-[data-ysp-modelid="staffspecial"] .initiator .content .contenttit .contentitem:nth-child(1) {
-  width: 64px;
-  font-size: 14px;
-  color: #202020;
-  display: flex;
-}
-[data-ysp-modelid="staffspecial"] .initiator .content .contenttit .contentitem:nth-child(2) {
-  width: 285px;
-  border-bottom: 1px solid #e0e0e0;
-  color: #313131;
-}
 [data-ysp-modelid="staffspecial"] .information {
   background-color: #ffffff;
 }
@@ -6653,75 +6599,6 @@ body {
   text-align: left;
   float: right;
 }
-[data-ysp-modelid="staffspecial"] .examination {
-  background-color: #ffffff;
-  padding-bottom: 15px;
-}
-[data-ysp-modelid="staffspecial"] .examination .contentitem {
-  width: 345px;
-  padding-bottom: 0;
-  white-space: nowrap;
-  overflow-x: scroll;
-  margin-left: auto;
-  margin-right: auto;
-}
-[data-ysp-modelid="staffspecial"] .examination .contentitem table {
-  width: 95px;
-  border-right: 1px solid #bddaf0;
-  border-bottom: 1px solid #bddaf0;
-  white-space: nowrap;
-  margin: 0 auto auto 0;
-  color: #0e3838;
-}
-[data-ysp-modelid="staffspecial"] .examination .contentitem table thead {
-  height: 44px;
-  font-size: 16px;
-}
-[data-ysp-modelid="staffspecial"] .examination .contentitem table thead tr {
-  display: flex;
-}
-[data-ysp-modelid="staffspecial"] .examination .contentitem table thead tr th {
-  width: 115px;
-  min-height: 44px;
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-all;
-  border-top: 1px solid #bddaf0;
-  border-left: 1px solid #bddaf0;
-  background-color: #eaf3fa;
-  text-align: center;
-}
-[data-ysp-modelid="staffspecial"] .examination .contentitem table tbody tr {
-  display: flex;
-}
-[data-ysp-modelid="staffspecial"] .examination .contentitem table tbody tr td {
-  width: 115px;
-  min-height: 44px;
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-all;
-  border-top: 1px solid #bddaf0;
-  border-left: 1px solid #bddaf0;
-  background-color: #eaf3fa;
-  text-align: center;
-}
-[data-ysp-modelid="staffspecial"] .examination .contentitem::-webkit-scrollbar {
-  background: #ffffff;
-  height: 8px;
-  border-radius: 5px;
-}
-[data-ysp-modelid="staffspecial"] .examination .contentitem::-webkit-scrollbar-thumb {
-  background: #a9cde9;
-  border-radius: 5px;
-}
 [data-ysp-modelid="staffspecial"] .Enclosure {
   background-color: #ffffff;
   padding-bottom: 15px;
@@ -6902,122 +6779,6 @@ body {
 }
 [data-ysp-modelid="staffspecial"] .Enclosure .content .distag {
   margin-bottom: 0;
-}
-[data-ysp-modelid="staffspecial"] .approval {
-  background-color: #ffffff;
-  margin-bottom: 20px;
-}
-[data-ysp-modelid="staffspecial"] .approval .content {
-  overflow: hidden;
-}
-[data-ysp-modelid="staffspecial"] .approval .content .contentitem {
-  color: #313131;
-  display: inline-block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-[data-ysp-modelid="staffspecial"] .approval .content .contentitem:nth-child(1) {
-  width: 64px;
-  font-size: 14px;
-  float: left;
-  text-align: justify;
-  text-align-last: justify;
-  margin-left: 10px;
-  color: #202020;
-}
-[data-ysp-modelid="staffspecial"] .approval .content .contentitem:nth-child(2) {
-  width: 285px;
-  border-bottom: 1px solid #e0e0e0;
-  float: right;
-  color: #313131;
-}
-[data-ysp-modelid="staffspecial"] .approval .content textarea {
-  width: 285px;
-  max-height: 225px;
-  min-height: 44px;
-  float: right;
-  margin: 0;
-  border: 0px;
-  border-bottom: 1px solid #cccccc;
-}
-[data-ysp-modelid="staffspecial"] .approval .tishi {
-  height: 44px;
-  line-height: 44px;
-  padding-left: 20px;
-  color: #999999;
-  font-size: 12px;
-  width: 100%;
-  border-top: 1px solid #cccccc;
-}
-[data-ysp-modelid="staffspecial"] .submit {
-  width: 100%;
-  height: 60px;
-  background-color: #ffffff;
-  position: relative;
-}
-[data-ysp-modelid="staffspecial"] .submit .subtrue {
-  height: 60px;
-  overflow: hidden;
-}
-[data-ysp-modelid="staffspecial"] .submit .subtrue button {
-  width: 150px;
-  height: 40px;
-  margin-left: 10px;
-  border: 0;
-  padding: 0;
-  font-size: 16px;
-}
-[data-ysp-modelid="staffspecial"] .submit .subtrue button:nth-child(1) {
-  border: 1px solid #40a7ff;
-  border-radius: 5px;
-}
-[data-ysp-modelid="staffspecial"] .submit .subtrue button:nth-child(2) {
-  background-color: #40a7ff;
-  border-radius: 5px;
-}
-[data-ysp-modelid="staffspecial"] .submit .subtrue > div:nth-child(1) {
-  float: left;
-  margin-top: 10px;
-}
-[data-ysp-modelid="staffspecial"] .submit .subtrue > div:nth-child(2) {
-  width: 40px;
-  height: 40px;
-  background: url(img/paging.png) 50% 100% no-repeat;
-  cursor: pointer;
-  margin-top: 10px;
-  float: right;
-}
-[data-ysp-modelid="staffspecial"] .submit .dianbl {
-  width: 100%;
-  height: 2000px;
-  background-color: #cccccc;
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  display: none;
-  opacity: .9;
-}
-[data-ysp-modelid="staffspecial"] .submit .dianbl ul {
-  padding: 0;
-}
-[data-ysp-modelid="staffspecial"] .submit .dianbl ul li {
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  position: absolute;
-  float: left;
-  list-style: none;
-  background-color: #ffffff;
-  border-radius: 8px;
-}
-[data-ysp-modelid="staffspecial"] .submit .dianbl ul li button {
-  width: 100%;
-  border: 0;
-}
-[data-ysp-modelid="staffspecial"] .submit .dianbl ul li p {
-  text-align: center;
-  line-height: 40px;
-  font-size: 14px;
 }
 [data-ysp-modelid="personnel"] {
   background-color: #ededed;
@@ -8503,14 +8264,14 @@ body {
   color: #202020;
 }
 .approval .content .contentitem:nth-child(2) {
-  width: 285px;
+  width: 265px;
   border-bottom: 1px solid #e0e0e0;
   text-align: left;
   float: right;
   color: #313131;
 }
 .approval .content textarea {
-  width: 285px;
+  width: 265px;
   max-height: 225px;
   min-height: 44px;
   float: right;

@@ -231,7 +231,7 @@ body{
         display: flex;
       }
       .contentitem:nth-child(2){
-        width: 285px;
+        width: 265px;
         border-bottom: 1px solid #e0e0e0;
         color: #313131;
       }
@@ -259,14 +259,14 @@ body{
           color: #202020;
         }
         .contentitem:nth-child(2){
-          width: 285px;
+          width: 265px;
           border-bottom: 1px solid #e0e0e0;
           text-align: left;
           float: right;
           color: #313131;
         }
       	textarea{
-          width: 285px;
+          width: 265px;
           max-height: 225px;
           min-height: 44px;
           float: right;
@@ -547,7 +547,7 @@ body{
       }
   }
 //底部按钮
-.submit{
+  .submit{
     width: 100%;
     height: 60px;
     background-color: #ffffff;
@@ -578,7 +578,7 @@ body{
       >div:nth-child(2){
         width: 40px;
         height: 40px;
-        background: url(./img/paging.png) 50% 100% no-repeat;
+        background: url(./img/paging.png) 50% 50% no-repeat;
         cursor: pointer;
         margin-top: 10px;
         float: right;
@@ -6769,63 +6769,6 @@ body{
     color: #202020;
   font-size: 16px;
   background-color: #f2f2f2;
-  //发起人
-  .initiator{
-    padding-bottom: 15px;
-    background-color: #ffffff;
-    .disnone{
-      display: none;
-    }
-    .contenttitle{
-    color: #e64750;
-    height: 30px;
-    line-height: 30px;
-    margin-bottom: 15px;
-      p{
-        position: relative;
-        cursor: pointer;
-        i{
-          width: 30px;
-          height: 30px;
-          position: absolute;
-          top: 0;
-          right: 15px;
-        }
-        .shouqi{
-          background-image: url(./img/shouqi.png);
-        }
-        .zhankai{
-          background-image: url(./img/zhankai.png);
-        }
-      }
-  	}
-    .content{
-      .contenttit{
-      display: flex;
-      justify-content: space-between;
-        margin-left: 15px;
-        .contentitem{
-        min-height: 56px;
-        color: #313131;
-        display: flex;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        align-items: center;
-      }
-      .contentitem:nth-child(1){
-        width: 64px;
-        font-size: 14px;
-        color: #202020;
-        display: flex;
-      }
-      .contentitem:nth-child(2){
-        width: 285px;
-        border-bottom: 1px solid #e0e0e0;
-        color: #313131;
-      }
-      }
-    }
-  }
     //基本信息
   .information{
     background-color: #ffffff;
@@ -7024,78 +6967,6 @@ body{
       }
     }
   }
-  //审批日志
-  .examination{
-    background-color: #ffffff;
-    padding-bottom: 15px;
-    .contentitem{
-      width: 345px;
-      padding-bottom: 0;
-      white-space: nowrap;
-      overflow-x: scroll;
-      margin-left: auto;
-      margin-right: auto;
-      table{
-      width: 95px;
-      border-right: 1px solid #bddaf0;
-      border-bottom: 1px solid #bddaf0; 
-      white-space: nowrap;
-      margin: 0 auto auto 0;
-      color: #0e3838;
-      thead{
-        height: 44px;
-        font-size: 16px;
-        tr{
-          display: flex;
-          th{
-          	width: 115px;
-            min-height: 44px;
-            font-size: 14px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            word-break:break-all;
-            border-top: 1px solid #bddaf0;
-            border-left:1px solid #bddaf0;
-            background-color: #eaf3fa;
-            text-align: center;
-          }
-        }
-      }
-      tbody{
-        tr{
-          display: flex;
-          td{
-            width: 115px;
-            min-height: 44px;
-            font-size: 14px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            word-break:break-all;
-            border-top: 1px solid #bddaf0;
-            border-left:1px solid #bddaf0;
-            background-color: #eaf3fa;
-            text-align: center;
-          }
-        }
-      }
-    }
-    }
-    .contentitem::-webkit-scrollbar{
-      background: #ffffff;
-      height: 8px;
-      border-radius: 5px;
-    }
-    .contentitem::-webkit-scrollbar-thumb{
-      background: #a9cde9;
-      border-radius: 5px;
-      }
-  }
   //附件
   .Enclosure{
     background-color: #ffffff;
@@ -7285,124 +7156,7 @@ body{
       }
     }
   }
-  //审批操作
-  .approval{
-    background-color: #ffffff;
-    margin-bottom: 20px;
-    .content{
-      overflow: hidden;
-      .contentitem{
-          color: #313131;
-          display: inline-block;
-          padding-top: 15px;
-          padding-bottom: 15px;
-        }
-        .contentitem:nth-child(1){
-          width: 64px;
-          font-size: 14px;
-          float: left;
-          text-align:justify; 
-          text-align-last: justify;
-          margin-left: 10px;
-          color: #202020;
-        }
-        .contentitem:nth-child(2){
-          width: 285px;
-          border-bottom: 1px solid #e0e0e0;
-          float: right;
-          color: #313131;
-        }
-      	textarea{
-          width: 285px;
-          max-height: 225px;
-          min-height: 44px;
-          float: right;
-          margin: 0;
-          border: 0px;
-          border-bottom: 1px solid #cccccc;
-        }
-    }
-    .tishi{
-      height: 44px;
-      line-height: 44px;
-      padding-left: 20px;
-      color: #999999;
-      font-size: 12px;
-      width: 100%;
-      border-top: 1px solid #cccccc;
-    }
-  }
-  //底部按钮
-  .submit{
-    width: 100%;
-    height: 60px;
-    background-color: #ffffff;
-    position: relative;
-    .subtrue{
-      height: 60px;
-      overflow: hidden;
-      button{
-        width: 150px;
-        height: 40px;
-        margin-left: 10px;
-        border: 0;
-        padding: 0;
-        font-size: 16px;
-      }
-      button:nth-child(1){
-        border:1px solid #40a7ff;
-        border-radius: 5px;
-      }
-      button:nth-child(2){
-        background-color: #40a7ff;
-        border-radius: 5px;
-      }
-      >div:nth-child(1){
-        float: left;
-        margin-top: 10px;
-      }
-      >div:nth-child(2){
-        width: 40px;
-        height: 40px;
-        background: url(./img/paging.png) 50% 100% no-repeat;
-        cursor: pointer;
-        margin-top: 10px;
-        float: right;
-      }
-    }
-    .dianbl{
-      width: 100%;
-      height: 2000px;
-      background-color: #cccccc;
-      overflow: hidden;
-      position: absolute;
-      bottom: 0;
-      display: none;
-      opacity: .9;
-      ul{
-        padding: 0;
-        li{
-          width: 100%;
-          height: 40px;
-          line-height: 40px;
-          position: absolute;
-          float: left;
-          list-style: none;
-          background-color: #ffffff;
-          border-radius: 8px;
-          button{
-            width: 100%;
-            border: 0;
-          }
-          p{
-            text-align: center;
-            line-height: 40px;
-            font-size: 14px;
-          }
-        }
-      }
-    }
-  }
+
 }
 //人才盘点信息表
 [data-ysp-modelid="personnel"]{
@@ -8966,14 +8720,14 @@ body{
           color: #202020;
         }
         .contentitem:nth-child(2){
-          width: 285px;
+          width: 265px;
           border-bottom: 1px solid #e0e0e0;
           text-align: left;
           float: right;
           color: #313131;
         }
       	textarea{
-          width: 285px;
+          width: 265px;
           max-height: 225px;
           min-height: 44px;
           float: right;
