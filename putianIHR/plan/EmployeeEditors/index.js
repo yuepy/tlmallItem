@@ -4,7 +4,7 @@
     getData_control37_yJKHWf: function (elem) {},
     doAction_uiControl37_sE7sBO: function (data, elem) {
       if (data.eventType == 'back') {
-        var area = elem.ownerDocument.defaultView.frameElement.ownerDocument.querySelectorAll(".frame-box")[0].querySelector("iframe").contentDocument.querySelector("#ptifrmtgtframe").contentDocument.defaultView;var form = elem.ownerDocument.defaultView.frameElement.ownerDocument.querySelectorAll(".frame-box")[0].querySelector("iframe").contentDocument.querySelector("#ptifrmtgtframe").contentDocument.querySelector("form");area.submitAction_RBET(form, 'TAB_BUTTON_ID', 'HPS_RSM_TAB_DTL#10');ysp.appMain.back();elem.ownerDocument.defaultView.frameElement.parentElement.previousElementSibling.querySelector('.btn-close').click();
+        var area = elem.ownerDocument.defaultView.frameElement.parentElement.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector("#ptifrmtgtframe").contentDocument.defaultView;var form = elem.ownerDocument.defaultView.frameElement.parentElement.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector("#ptifrmtgtframe").contentDocument.querySelector("form");area.submitAction_RBET(form, 'TAB_BUTTON_ID', 'HPS_RSM_TAB_DTL#10');ysp.appMain.back();elem.ownerDocument.defaultView.frameElement.parentElement.previousElementSibling.querySelector('.btn-close').click();
       }
     },
     getTemplate_uiControl37_sE7sBO: function () {

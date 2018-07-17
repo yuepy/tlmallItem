@@ -1093,6 +1093,7 @@ button[type='fileUpload'] {
   display: none;
 }
 .ysp-pop-box .ysp-pop-mask {
+  position: absolute;
   z-index: 999;
   top: 0;
   left: 0;
@@ -2353,8 +2354,22 @@ button[type='fileUpload'] {
   color: #fff;
   background: #3796FB;
 }
+.ysp-jyjl-tt .ysp-sfzhkfy-tt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 200;
+  background: #f4f4f4;
+}
+.ysp-jyjl-tt .closureContent {
+  height: 90vh;
+  overflow: auto;
+}
 .ysp-jyjl-tt {
-  max-height: 95vh;
+  height: 100vh;
   overflow: auto;
 }
 .ysp-ygdz-list-tt,
