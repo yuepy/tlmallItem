@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "login",
-  "targetURL": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "targetURL": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS?&cmd=login&languageCd=ZHS",
   "jsFile": "index.js",
   "requires": {
     "menu": "../menu/index.json",
@@ -9,6 +9,8 @@
   },
   "chineseName": "登录",
   "description": "",
+  "shouldLogin": false,
+  "firstPaintEnable": false,
   "controls": {
     "control0_4XQEix": {
       "location": {
@@ -436,11 +438,7 @@
       "fromContextId": "context0_I812TP",
       "fromAction": "click",
       "fromControlId": "control2_9LhxOm",
-      "toContexts": [
-        {
-          "toContextId": "context0_I812TP"
-        }
-      ]
+      "toContexts": []
     },
     "flow2_r0APDy": {
       "fromContextId": "context0_I812TP",
@@ -542,14 +540,17 @@
     "page/title": {
       "contexts": {
         "context0_I812TP": [
-          "Oracle PeopleSoft 登录"
+          "Oracle PeopleSoft 登录",
+          "Oracle PeopleSoft Sign-in"
         ]
       }
     },
     "page/urls": {
       "contexts": {
         "context0_I812TP": [
-          "192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+          "192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+          "192.168.220.110/psp/ps/EMPLOYEE/HRMS/?&cmd=login&languageCd=UKE",
+          "192.168.220.110/psp/ps/EMPLOYEE/HRMS/?&cmd=login&languageCd=ZHS"
         ]
       }
     },
