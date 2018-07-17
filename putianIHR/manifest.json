@@ -35,7 +35,7 @@
         "^http:\\/\\/192\\.168\\.220\\.110.*"
       ],
       "demo": [
-        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS?&cmd=login&languageCd=ZHS"
       ]
     }
   ],
@@ -46,11 +46,9 @@
       "title": "login",
       "url": "adapter://putianIHR/plan/login/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?\\&cmd=login\\&languageCd=ZHS"
       ],
-      "demo": [
-        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
-      ]
+      "demo": []
     },
     {
       "title": "checkMyInfo",
@@ -108,8 +106,8 @@
     }
   ],
   "name": "普天HR系统",
-  "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS?&cmd=login&languageCd=ZHS",
   "scope": "putianIHR",
   "start_url": "enterplorer://putianIHR/local/index.html",
-  "update_time": 1531814080217
+  "update_time": 1531828832643
 }
