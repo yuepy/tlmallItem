@@ -22,7 +22,8 @@
     },
     doAction_uiControl195_ArMMGb: function (data, elem) {
       if ('back' == data.eventType) {
-        ysp.appMain.back();
+        //ysp.appMain.back();
+        ysp.customHelper.backHome();
       }
     },
     getTemplate_uiControl195_ArMMGb: function () {

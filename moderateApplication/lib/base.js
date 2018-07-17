@@ -205,6 +205,13 @@
     tableTrim: function(str) {
       return str ? str.replace(/(^\s*)|(\s*$)/g, "") : '';
     },
+    backHome: function() {
+      if (parent.EAPI.isIOS() || parent.EAPI.isAndroid()) {
+        parent.EAPI.back();
+      } else {
+        ysp.appMain.back();
+      }
+    },
   	
 
     /*
