@@ -4,7 +4,8 @@
   "targetURL": "http://172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=9F96F82061414BF8E4613913A055CD8B&Guid=e5c0f19b-c0e1-4818-98eb-cc6f2dc2f041",
   "jsFile": "index.js",
   "requires": {
-    "preverall": "../preverall/index.json"
+    "preverall": "../preverall/index.json",
+    "previewapproval": "../previewapproval/index.json"
   },
   "chineseName": "待办客资/送达方/销售人员、路线批量审批",
   "description": "",
@@ -391,7 +392,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control482_UonBfM": {
+    "control563_OEPZ0G": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -409,11 +410,129 @@
           }
         ]
       },
-      "intendedRole": "modal",
-      "roles": "element,link,modal",
+      "intendedRole": "dialog",
+      "roles": "element,link,dialog",
       "monitored": false,
       "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
-      "componentType": "modal"
+      "componentType": "dialog"
+    },
+    "control564_SCynG7": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control564_SCynG7"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control565_cALmwe": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]",
+              "ratio": 0.485
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-top-buttons.choose-people DIV.body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 750,
+              "height": 530
+            }
+          }
+        ]
+      },
+      "intendedRole": "dialog",
+      "roles": "element,dialog",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "dialog"
+    },
+    "control566_TTW9Gp": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]",
+              "ratio": 0.485
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-top-buttons.choose-people DIV.body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 750,
+              "height": 530
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control566_TTW9Gp"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -428,7 +547,10 @@
         "control264_zpRFK5",
         "control265_qECv92",
         "control266_TSBd1E",
-        "control482_UonBfM"
+        "control563_OEPZ0G",
+        "control564_SCynG7",
+        "control565_cALmwe",
+        "control566_TTW9Gp"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -465,6 +587,20 @@
         {
           "toContextId": "context54_LOGhS9",
           "toModelId": "preverall"
+        },
+        {
+          "toContextId": "context10_P8RicR",
+          "toModelId": "previewapproval"
+        }
+      ]
+    },
+    "flow165_xySW9l": {
+      "fromContextId": "context32_SUlTve",
+      "fromAction": "doAction",
+      "fromControlId": "control564_SCynG7",
+      "toContexts": [
+        {
+          "toContextId": "context32_SUlTve"
         }
       ]
     }
@@ -594,16 +730,106 @@
           }
         },
         {
-          "id": "uiControl482_6Tzmdd",
-          "controlId": "control482_UonBfM",
+          "id": "uiControl563_kfhQFl",
+          "controlId": "control563_OEPZ0G",
           "display": {
-            "adapterId": "modal",
-            "type": "modal",
+            "adapterId": "dialog",
+            "type": "dialog",
             "adapter": {
               "templateType": ""
             }
           },
-          "layout": []
+          "layout": [
+            {
+              "id": "uiControl563_kfhQFlbody",
+              "display": {
+                "type": "dialogBody",
+                "adapterId": "dialogBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl563_kfhQFlfooter",
+              "display": {
+                "type": "dialogFooter",
+                "adapterId": "dialogFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl564_se30AZ",
+                  "controlId": "control564_SCynG7",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl564_se30AZ",
+                        "onGetTemplate": "getTemplate_uiControl564_se30AZ"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl565_cAgFeX",
+                  "controlId": "control565_cALmwe",
+                  "display": {
+                    "adapterId": "dialog",
+                    "type": "dialog",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl565_cAgFeXbody",
+                      "display": {
+                        "type": "dialogBody",
+                        "adapterId": "dialogBody",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": []
+                    },
+                    {
+                      "id": "uiControl565_cAgFeXfooter",
+                      "display": {
+                        "type": "dialogFooter",
+                        "adapterId": "dialogFooter",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": [
+                        {
+                          "id": "uiControl566_Evg8h7",
+                          "controlId": "control566_TTW9Gp",
+                          "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                              "templateType": "react",
+                              "events": {
+                                "onDoAction": "doAction_uiControl566_Evg8h7",
+                                "onGetTemplate": "getTemplate_uiControl566_Evg8h7"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "uiControl262_MQly4f",
@@ -1083,6 +1309,72 @@
             "icon-cloud-download",
             "icon-paper-clip",
             "icon-trash",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "action-area",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_state_full",
+            "aui_state_lock",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "icon-cloud-download",
+            "icon-paper-clip",
             "layout-data",
             "layout-form",
             "logo-leftcorner",

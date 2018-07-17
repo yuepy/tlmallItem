@@ -475,10 +475,14 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control475_QTWATM": {
+    "control498_CrXrce": {
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -493,11 +497,141 @@
           }
         ]
       },
-      "intendedRole": "modal",
-      "roles": "element,link,modal",
+      "intendedRole": "dialog",
+      "roles": "element,link,dialog",
       "monitored": false,
       "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
-      "componentType": "modal"
+      "componentType": "dialog"
+    },
+    "control499_Fbpgsd": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control499_Fbpgsd"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control500_ipOxbW": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]",
+              "ratio": 0.485
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-top-buttons.choose-people DIV.body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 750,
+              "height": 530
+            }
+          }
+        ]
+      },
+      "intendedRole": "dialog",
+      "roles": "element,dialog",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "dialog"
+    },
+    "control501_yzOrwl": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]",
+              "ratio": 0.485
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-top-buttons.choose-people DIV.body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 750,
+              "height": 530
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control501_yzOrwl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -514,7 +648,10 @@
         "control113_GFRRle",
         "control114_haueJA",
         "control129_vb1pUH",
-        "control475_QTWATM"
+        "control498_CrXrce",
+        "control499_Fbpgsd",
+        "control500_ipOxbW",
+        "control501_yzOrwl"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -545,6 +682,26 @@
         {
           "toContextId": "context10_P8RicR",
           "toModelId": "previewapproval"
+        }
+      ]
+    },
+    "flow144_AX2Dkg": {
+      "fromContextId": "context9_7mrSEm",
+      "fromAction": "doAction",
+      "fromControlId": "control499_Fbpgsd",
+      "toContexts": [
+        {
+          "toContextId": "context9_7mrSEm"
+        }
+      ]
+    },
+    "flow130_BVKvpU": {
+      "fromContextId": "context9_7mrSEm",
+      "fromAction": "doAction",
+      "fromControlId": "control501_yzOrwl",
+      "toContexts": [
+        {
+          "toContextId": "context9_7mrSEm"
         }
       ]
     }
@@ -704,18 +861,6 @@
           }
         },
         {
-          "id": "uiControl475_quspwy",
-          "controlId": "control475_QTWATM",
-          "display": {
-            "adapterId": "modal",
-            "type": "modal",
-            "adapter": {
-              "templateType": ""
-            }
-          },
-          "layout": []
-        },
-        {
           "id": "uiControl74_Rc1Gsy",
           "controlId": "control74_6t0A7h",
           "display": {
@@ -729,6 +874,108 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl498_is4rw6",
+          "controlId": "control498_CrXrce",
+          "display": {
+            "adapterId": "dialog",
+            "type": "dialog",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl498_is4rw6body",
+              "display": {
+                "type": "dialogBody",
+                "adapterId": "dialogBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl498_is4rw6footer",
+              "display": {
+                "type": "dialogFooter",
+                "adapterId": "dialogFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl499_xWMZOW",
+                  "controlId": "control499_Fbpgsd",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl499_xWMZOW",
+                        "onGetTemplate": "getTemplate_uiControl499_xWMZOW"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl500_RTu6Oq",
+                  "controlId": "control500_ipOxbW",
+                  "display": {
+                    "adapterId": "dialog",
+                    "type": "dialog",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl500_RTu6Oqbody",
+                      "display": {
+                        "type": "dialogBody",
+                        "adapterId": "dialogBody",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": []
+                    },
+                    {
+                      "id": "uiControl500_RTu6Oqfooter",
+                      "display": {
+                        "type": "dialogFooter",
+                        "adapterId": "dialogFooter",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": [
+                        {
+                          "id": "uiControl501_yZKf4n",
+                          "controlId": "control501_yzOrwl",
+                          "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                              "templateType": "react",
+                              "events": {
+                                "onDoAction": "doAction_uiControl501_yZKf4n",
+                                "onGetTemplate": "getTemplate_uiControl501_yZKf4n"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
