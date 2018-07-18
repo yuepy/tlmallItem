@@ -46,11 +46,9 @@
       "title": "login",
       "url": "adapter://putianIHR/plan/login/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?.*"
       ],
-      "demo": [
-        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
-      ]
+      "demo": []
     },
     {
       "title": "checkMyInfo",
@@ -102,7 +100,7 @@
       "title": "menu",
       "url": "adapter://putianIHR/plan/menu/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?tab=TL_SELF"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?tab=TL_SELF.*"
       ],
       "demo": []
     }
