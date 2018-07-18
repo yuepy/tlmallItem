@@ -1,102 +1,30 @@
 {
-    "type": "adapter",
-    "short_name": "",
-    "version": "0.0.1",
-    "runtime_version": "2.7.0",
-    "runtime_env": "1webview",
-    "description": "",
-    "options": {
-        "resource_intercept": {
-            "type": [],
-            "ignore": []
-        },
-        "resource_inject": [],
-        "resource_filter": [{
-            "url_match": [
-                "^http:\\/\\/192\\.168\\.220\\.110.*"
-            ],
-            "charset": "utf-8",
-            "Accept-Language": "zh-Hans-CN",
-            "replaces": [{
-                "regexp": "\\btop\\b",
-                "sub_str": "_ysp_top"
-            }]
-        }],
-        "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.7.0",
+  "runtime_env": "1webview",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [],
+      "ignore": []
     },
     "resource_inject": [],
-    "resource_filter": [{
+    "resource_filter": [
+      {
         "url_match": [
-            "^http:\\/\\/192\\.168\\.220\\.110.*"
+          "^http:\\/\\/192\\.168\\.220\\.110.*"
         ],
-        "demo": [
-            "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS?&cmd=login&languageCd=ZHS"
+        "charset": "utf-8",
+        "Accept-Language": "zh-Hans-CN",
+        "replaces": [
+          {
+            "regexp": "\\btop\\b",
+            "sub_str": "_ysp_top"
+          }
         ]
-    }],
-    "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36",
-    "override_urls": [],
-    "adapter_urls": [{
-            "title": "login",
-            "url": "adapter://putianIHR/plan/login/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?\\&cmd=login\\&languageCd=ZHS"
-            ],
-            "demo": []
-        },
-        {
-            "title": "checkMyInfo",
-            "url": "adapter://putianIHR/plan/checkMyInfo/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_PAG_010_CP\\.GBL\\?.*"
-            ],
-            "demo": []
-        },
-        {
-            "title": "businessTravel",
-            "url": "adapter://putianIHR/plan/businessTravel/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_047_CP\\.GBL\\?.*"
-            ],
-            "demo": []
-        },
-        {
-            "title": "forgetCard",
-            "url": "adapter://putianIHR/plan/forgetCard/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_002\\.GBL\\?.*"
-            ],
-            "demo": [
-                "http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_002.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_002_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081456365233619190&IsFolder=false"
-            ]
-        },
-        {
-            "title": "holidayAppli",
-            "url": "adapter://putianIHR/plan/holidayAppli/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL\\?.*"
-            ],
-            "demo": [
-                "http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_001_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455119057283242&IsFolder=false"
-            ]
-        },
-        {
-            "title": "addWork",
-            "url": "adapter://putianIHR/plan/addWork/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_004\\.GBL\\?.*"
-            ],
-            "demo": [
-                "http://192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_004.GBL?PORTALPARAM_PTCNAV=HPS_TL_AWE_004_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_AWE_02&EOPP.SCLabel=TL_AWE_02&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_AWE_02.ADMN_S201802081455558703878902&IsFolder=false"
-            ]
-        },
-        {
-            "title": "menu",
-            "url": "adapter://putianIHR/plan/menu/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?tab=TL_SELF"
-            ],
-            "demo": []
-        }
+      }
     ],
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
   },
@@ -183,5 +111,5 @@
   "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "scope": "putianIHR",
   "start_url": "enterplorer://putianIHR/local/index.html",
-  "update_time": 1531829438043
+  "update_time": 1531876688447
 }
