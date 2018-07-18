@@ -1,0 +1,576 @@
+{
+  "version": "0.1",
+  "id": "Newleave",
+  "targetURL": "http://172.16.11.61:8000/Forms/HR/QJSQLC/Start.aspx",
+  "jsFile": "index.js",
+  "chineseName": "请假申请单发起流程",
+  "description": "",
+  "controls": {
+    "control579_hrHbRD": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[1]/H1[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]//H1"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow DIV.top H1"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/H1[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control579_hrHbRD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control580_f1W4rT": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"person_infor\"]",
+              "descendant::DIV[@id=\"person_infor\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow DIV.show"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control580_f1W4rT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control581_TMgyEp": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE[@id=\"tableAttachment\"]",
+              "descendant::TABLE[@id=\"tableAttachment\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "DIV.big-form.page-shadow TABLE.layout-data"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control581_TMgyEp"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control582_RnftTJ": {
+      "location": {
+        "data": {
+          "tagName": "UL"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]/DIV[5]/UL[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]//UL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ufoot UL.ax"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/UL[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control582_RnftTJ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context56_U4PFJK": {
+      "controls": [
+        "control579_hrHbRD",
+        "control580_f1W4rT",
+        "control581_TMgyEp",
+        "control582_RnftTJ"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow172_xOnXle": {
+      "toContexts": [
+        {
+          "toContextId": "context56_U4PFJK"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page56_MRg9zA": {
+      "contextId": "context56_U4PFJK",
+      "layout": [
+        {
+          "id": "uiControl579_O4xCNq",
+          "controlId": "control579_hrHbRD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl579_O4xCNq",
+                "onGetTemplate": "getTemplate_uiControl579_O4xCNq"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl580_nAZ3vf",
+          "controlId": "control580_f1W4rT",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl580_nAZ3vf",
+                "onGetTemplate": "getTemplate_uiControl580_nAZ3vf"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl581_ygweiW",
+          "controlId": "control581_TMgyEp",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl581_ygweiW",
+                "onGetTemplate": "getTemplate_uiControl581_ygweiW"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl582_w1UkU1",
+          "controlId": "control582_RnftTJ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl582_w1UkU1",
+                "onGetTemplate": "getTemplate_uiControl582_w1UkU1"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context56_U4PFJK": [
+          "请假流程-发起页面"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context56_U4PFJK": [
+          "172.16.11.61:8000/Forms/HR/QJSQLC/Start.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context56_U4PFJK": [
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__LASTFOCUS",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "aspnetForm",
+            "btnAddLink",
+            "btnFileUpload",
+            "ctl_Attachment_fileUpload",
+            "ctl_Attachment_hfActivityName",
+            "ctl_Attachment_hfGuid",
+            "ctl_Attachment_hfIsStart",
+            "ctl_Attachment_hfUserLoginName",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_btnLaunch",
+            "ctl_btnSave",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Save",
+            "ctl_contentActionBar_ActionBar_Submit",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_WorkFlow",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_btnSave",
+            "ctl_contentActionBar_ActionBar_btnSubmit",
+            "ctl_contentActionBar_ActionBar_btnWorkFlow",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_ApproverCodes",
+            "ctl_contentForm_ApproverNames",
+            "ctl_contentForm_P",
+            "ctl_contentForm_btnAdd",
+            "ctl_contentForm_btnApp",
+            "ctl_contentForm_btnCheck",
+            "ctl_contentForm_hidLeaveHour",
+            "ctl_contentForm_hidSurplus",
+            "ctl_contentForm_hidUseLeave",
+            "ctl_contentForm_hid_ApproverIDs",
+            "ctl_contentForm_hid_ApproverNames",
+            "ctl_contentForm_lblDescription",
+            "ctl_contentForm_rptDetailByDay_ctl_btnDelete",
+            "ctl_contentForm_rptDetailByDay_ctl_hidId",
+            "ctl_contentForm_rptDetailByDay_ctl_lblActualSpendTime",
+            "ctl_contentForm_rptDetailByDay_ctl_lblCheckStatus",
+            "ctl_contentForm_rptDetailByDay_ctl_lblUnit",
+            "ctl_contentForm_rptDetailByDay_ctl_txtEndDate",
+            "ctl_contentForm_rptDetailByDay_ctl_txtEndTime",
+            "ctl_contentForm_rptDetailByDay_ctl_txtSpendTime",
+            "ctl_contentForm_rptDetailByDay_ctl_txtStartDate",
+            "ctl_contentForm_rptDetailByDay_ctl_txtStartTime",
+            "ctl_contentForm_txt_AgentCode",
+            "ctl_contentForm_txt_AgentName",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantDeptCode",
+            "ctl_contentForm_txt_ApplicantDeptName",
+            "ctl_contentForm_txt_ApplicantFuncDeptCode",
+            "ctl_contentForm_txt_ApplicantName",
+            "ctl_contentForm_txt_CompanyCode",
+            "ctl_contentForm_txt_InfoCode",
+            "ctl_contentForm_txt_InfoName",
+            "ctl_contentForm_txt_LeavePlace",
+            "ctl_contentForm_txt_LeaveReason",
+            "ctl_contentForm_txt_LeaveType",
+            "ctl_contentForm_txt_WorkTimeType",
+            "div",
+            "div_Approver",
+            "fileAttachment",
+            "filePanel",
+            "file_upload_form",
+            "hdActivityName",
+            "hdGuid",
+            "hdUserLoginName",
+            "hfApprover",
+            "person_infor",
+            "person_infor_trigger",
+            "span_subbutton",
+            "span_subbutton_msg",
+            "tableAttachment",
+            "tableHeader",
+            "tb",
+            "tb_Approver",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv",
+            "upload_target"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context56_U4PFJK": [
+          [
+            "Wdate",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "bottom-buttons",
+            "btn",
+            "btn-add-user",
+            "btn_blue",
+            "clear",
+            "col",
+            "col-",
+            "del",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "grey",
+            "icon-plus",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "Wdate",
+            "active",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "bottom-buttons",
+            "btn",
+            "btn-add-user",
+            "btn_blue",
+            "clear",
+            "col",
+            "col-",
+            "del",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "grey",
+            "icon-plus",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "show",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context56_U4PFJK": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SCRIPT",
+            "-/FORM/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/P/BR",
+            "DIV/P/SPAN",
+            "DIV/P/STRONG",
+            "DIV/SPAN/INPUT-file",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-submit",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/SPAN",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/A/INPUT-hidden",
+            "TD/BUTTON/I",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/LABEL/BR",
+            "TD/LABEL/SPAN",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/INPUT-hidden",
+            "TD/TABLE/TBODY",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/BUTTON",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "TR/TH/SPAN",
+            "UL/LI/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

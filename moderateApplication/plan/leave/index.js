@@ -65,8 +65,8 @@
     },
     doAction_uiControl21_wliMa2: function (data, elem) {},
     getTemplate_uiControl21_wliMa2: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      if(index > 0){\n        return(\n      \t<div>{ele}\n        </div>\n      )\n      }\n    })\n    if(!data){\n      return \'\';\n    }\n    return (\n      <div className=\'Auditor\'>\n        <div className=\'contenttitle\'><span></span><p>{data.title}</p></div>\n        <div className=\'content\'><div className=\'contentitem\'>{data.content[0].left}</div><div className=\'contentitem\'>{lis}</div></div>\n      </div>\n    )\n  }\n});';
-      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var data = this.props.customData;\n    var lis = data.content.map(function (ele, index) {\n      if (index > 0) {\n        return React.createElement(\n          \'div\',\n          null,\n          ele\n        );\n      }\n    });\n    if (!data) {\n      return \'\';\n    }\n    return React.createElement(\n      \'div\',\n      { className: \'Auditor\' },\n      React.createElement(\n        \'div\',\n        { className: \'contenttitle\' },\n        React.createElement(\'span\', null),\n        React.createElement(\n          \'p\',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        \'div\',\n        { className: \'content\' },\n        React.createElement(\n          \'div\',\n          { className: \'contentitem\' },\n          data.content[0].left\n        ),\n        React.createElement(\n          \'div\',\n          { className: \'contentitem\' },\n          lis\n        )\n      )\n    );\n  }\n});';
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      if(!data){\n        return '';\n      }\n      if(index > 0){\n        return(\n      \t<div>{ele}\n        </div>\n      )\n      }\n    })\n    return (\n      <div className='Auditor'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'><div className='contentitem'>{data.content[0].left}</div><div className='contentitem'>{lis}</div></div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var lis = data.content.map(function (ele, index) {\n      if (!data) {\n        return '';\n      }\n      if (index > 0) {\n        return React.createElement(\n          'div',\n          null,\n          ele\n        );\n      }\n    });\n    return React.createElement(\n      'div',\n      { className: 'Auditor' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'content' },\n        React.createElement(\n          'div',\n          { className: 'contentitem' },\n          data.content[0].left\n        ),\n        React.createElement(\n          'div',\n          { className: 'contentitem' },\n          lis\n        )\n      )\n    );\n  }\n});";
     },
 
     getData_control23_qpR09d: function (elem) {
@@ -96,14 +96,12 @@
     getData_control24_qTOETT: function (elem) {
       if (!elem) {
         return;
-      }var data = {};data.title = '审批操作';data.content = [];var trs = elem.querySelectorAll('tr');var obj = {}; // obj.left = trs[0].querySelectorAll('td')[0].textContent.trim();
-      obj.left = '当前环节';obj.right = '审批人'; // obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
-      data.content.push(obj);var obj = {}; // obj.left = trs[1].querySelectorAll('td')[0].textContent.trim();
-      obj.left = '意见';obj.right = trs[1].querySelectorAll('td')[1].querySelector('textarea').value;data.content.push(obj);data.content.push({ left: trs[1].querySelectorAll('td')[1].textContent.trim() });return data;
+      }var data = {};data.title = '审批操作';data.content = [];var trs = elem.querySelectorAll('tr');var obj = {};var str = trs[0].querySelectorAll('td')[0].textContent.trim();var arr = str.split(":");obj.left = trs[0].querySelectorAll('td')[0].textContent.trim().split('：')[0]; // obj.left = arr;
+      obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();data.content.push(obj);var obj = {};obj.left = trs[1].querySelectorAll('td')[0].textContent.trim().split('：')[0];obj.right = trs[1].querySelectorAll('td')[1].querySelector('textarea').value;data.content.push(obj);data.content.push({ left: trs[1].querySelectorAll('td')[1].querySelector('p').textContent.trim() });return data;
     },
     doAction_uiControl24_0WhEH6: function (data, elem) {
       var type = data.eventType;var data = data.customData;if (type == 'change') {
-        elem.querySelectorAll('tr')[1].querySelectorAll('td')[1].querySelector('textarea').value = data;
+        elem.querySelector('textarea').value = data;
       }
     },
     getTemplate_uiControl24_0WhEH6: function () {

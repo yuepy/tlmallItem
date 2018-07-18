@@ -1,29 +1,3 @@
-- name: 环节信息
-  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      if(index > 0){\n        return(\n      \t<div>{ele}\n        </div>\n      )\n      }\n    })\n    return (\n      <div className='Auditor'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'><div className='contentitem'>{data.content[0].left}</div><div className='contentitem'>{lis}</div></div>\n      </div>\n    )\n  }\n});"
-  getData: >
-    if (!elem) {
-      return;
-    }
-
-    var data = {};
-
-    data.title = '环节信息';
-
-    data.content = [];
-
-    data.content.push({
-      left: elem.querySelector('tr').querySelector('td').textContent.trim()
-    });
-
-    var trs =
-    elem.querySelector('tr').querySelectorAll('td')[1].querySelectorAll('tr');
-
-    for (var i = 0; i < trs.length; i++) {
-      data.content.push(trs[i].textContent.trim());
-    }
-
-    return data;
-  doAction: ''
 - name: 请假明细
   getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      return(\n      \t<tr>{lis}</tr>\n      )\n    })\n    return (\n      <div className='askleave'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});"
   getData: >
@@ -1483,6 +1457,7 @@
     if (type == 'click') {
       elem.querySelectorAll('li')[data].querySelector('a').click();
     }
+
 - name: 首页列表(快讯、公司公告等等)
   getTemplate: "import {Component} from 'react'; \nimport {CustomHeader} from 'ysp-custom-components';\nexport default class extends Component{\n   constructor(props){\n   \t super(props);\n  }\n  handlerClick(e){\n    var target = e.target;\n    var index = target.dataset.index;\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        data:{\n          index: index\n        },\n        eventType: 'click'\n      })\n    }\n  }\n  render = () => {\n    var _this = this;\n    var data = this.props.customData;\n    var title = this.props.customData && this.props.customData.title  || [];\n    var date = this.props.customData && this.props.customData.date || [];\n    var flag = this.props.customData && this.props.customData.flag || [];\n    var _this = this;\n    return (\n      <div className=\"ysp-flash-more\">\n        {\n          title.map((items,index)=>{\n            return(\n            \t<div onClick={_this.handlerClick.bind(_this)}  data-index={index}>\n                <span onClick={_this.handlerClick.bind(_this)}  data-index={index} \n                  className={flag[index][0] == null ? \"\" : \"ysp-flash-text-color\"}>\n                  {items}\n                </span>\n                <span onClick={_this.handlerClick.bind(_this)}  data-index={index}>\n                  {date[index]}\n                </span>\n              </div>\n            );\n          })\n        }\n      </div>\n    )\n   }\n}"
   getData: |
@@ -1517,4 +1492,133 @@
       var index = data.customData.index;
       var uls = elem.querySelector("ul");
       uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+- name: 审批操作
+  getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {};
+
+    data.title = '审批操作';
+
+    data.content = [];
+
+    var trs = elem.querySelectorAll('tr');
+
+    var obj = {};
+
+    var str = trs[0].querySelectorAll('td')[0].textContent.trim();
+
+    var arr = str.split(":");
+
+    obj.left =
+    trs[0].querySelectorAll('td')[0].textContent.trim().split('：')[0]; //
+    obj.left = arr;
+
+    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
+
+    data.content.push(obj);
+
+    var obj = {};
+
+    obj.left =
+    trs[1].querySelectorAll('td')[0].textContent.trim().split('：')[0];
+
+    obj.right =
+    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
+
+    data.content.push(obj);
+
+    data.content.push({
+      left: trs[1].querySelectorAll('td')[1].querySelector('p').textContent.trim()
+    });
+
+    return data;
+  doAction: |
+    var type = data.eventType;
+    var data = data.customData;
+    if (type == 'change') {
+      elem.querySelector('textarea').value = data;
+    }
+- name: 环节信息
+  getTemplate: "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      if(!data){\n        return '';\n      }\n      if(index > 0){\n        return(\n      \t<div>{ele}\n        </div>\n      )\n      }\n    })\n    return (\n      <div className='Auditor'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'><div className='contentitem'>{data.content[0].left}</div><div className='contentitem'>{lis}</div></div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {};
+
+    data.title = '环节信息';
+
+    data.content = [];
+
+    data.content.push({
+      left: elem.querySelector('tr').querySelector('td').textContent.trim()
+    });
+
+    var trs =
+    elem.querySelector('tr').querySelectorAll('td')[1].querySelectorAll('tr');
+
+    for (var i = 0; i < trs.length; i++) {
+      data.content.push(trs[i].textContent.trim());
+    }
+
+    return data;
+  doAction: ''
+- name: 详情table
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type,data={};\n    //点击事件   点击进入详情页\n    if(target.tagName.toLowerCase() == 'div'){\n      type='td_click';\n      var Contentele = ysp.customHelper.getparent(target,'Content');\n      data.id = Contentele.getAttribute('data-id');\n      data.text = Contentele.querySelectorAll('div.Content_item')[0].textContent.trim();\n    }\n    \n    \n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  onclick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    //判断是否为下啦按钮   改变隐藏的元素display\n    if(target.getAttribute('data-id') == 'true'){\n      // target = (target.tagName.toLowerCase() == 'span')? target.parentElement:target;\n      target.setAttribute('data-id','false');\n      target.className = 'disbottom';\n      target.parentElement.parentElement.querySelector('div.Content_disnone').style.display = 'block';\n    }else{\n      target.setAttribute('data-id','true');\n      target.className = 'distop';\n      target.parentElement.parentElement.querySelector('div.Content_disnone').style.display = 'none';\n    }\n    if(handler){\n      handler({\n        type:'tag',\n        data:target.getAttribute('data-id')\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n    \t\t_this = this;\n    if(!data){\n      return '';\n    }\n    var lis = data.content.map(function(ele,index){\n      return(\n      \t<div className='Content' onClick={_this.onClick} data-id={index}>\n        \t<div>\n          \t<div className='Content_item'>\n            {ele[0]}</div>\n          <div className='Content_item'><p>{data.titles[1]}</p><p>{ele[1]}</p></div>\n          <div className='Content_item'>\n            <p>{data.titles[3]}</p><p>{ele[3]}</p></div>\n            <a className='distop' href='javascript:;' data-id='true' onClick={_this.onclick} ><span ></span></a>\n          </div>\n          <div data-id={index} className='Content_disnone'>\n          \t<div id='summary'>\n            \t<div>{data.titles[2]}</div>\n              <div>{ele[2]}</div>\n            </div>\n            <div>\n            \t<div>{data.titles[4]}</div>\n              <div>{ele[4]}</div>\n            </div>\n            <div>\n            \t<div>{data.titles[5]}</div>\n              <div>{ele[5]}</div>\n            </div>\n          </div>\n        </div>\n      )\n    })\n    return (\n      <div>\n        {lis}\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var content = ysp.customHelper.getTableData(elem, ['流程名称', '流程编号', '内容摘要',
+    '申请人', '停留时间', '申请日期']); // var arr = ['请假申请单', '销假申请单', '离职申请单', '加班申请单',
+    '因公外出申请单', '考勤异常申请单', '员工异动申请单', '招聘申请单', '员工合同续签申请单', '试用期转正申请单',
+    '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '资产预算调整流程V2', '信用冻结订单释放申请流程',
+    '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程',
+    '路线变更流程', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程', '合同审批流程',
+    '客资批量审批', '送达方批量审批', '路线批量审批'];
+
+    // var data = ysp.customHelper.getDatamove(content, arr);
+
+    // content.content = data.data;
+
+    // content.index = data.index;
+
+    return content;
+  doAction: |
+    var type = data.eventType,
+        data = data.customData;
+    if (type == 'td_click') {
+      var arr = ['请假申请单', '销假申请单', '离职申请单', '加班申请单', '因公外出申请单', '考勤异常申请单', '员工异动申请单', '员工异动申请单V2', '招聘申请单', '员工合同续签申请单', '试用期转正申请单', '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '资产预算调整流程V2', '信用冻结订单释放申请流程', '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程', '路线变更流程', '路线组变更申请', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程', '合同审批流程', '客资批量审批', '送达方批量审批', '路线批量审批']; // debugger;
+
+      var flat = arr.indexOf(data.text);
+
+      if (flat == -1) {
+        // ysp.appMain.openWindow('http://172.16.11.61:8000/Forms/Common/TY/Processing.aspx?SN=9532480E5364DF3BC577107FF40AC672&Guid=81c96722-bf68-45a8-8106-608995104db1&_ysp_forcepc=1');
+        var hreflo = '';
+        hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
+
+        if (hreflo[0] == 'h') {
+          hreflo += "&_ysp_forcepc=1";
+          ysp.appMain.openWindow(hreflo);
+        } else {
+          hreflo = "http://172.16.11.61:8000:" + hreflo; // hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
+
+          hreflo += "&_ysp_forcepc=1";
+          ysp.appMain.openWindow(hreflo);
+        }
+      } else {
+        elem.querySelectorAll('tr')[++data.id].querySelector('a').click();
+      } // for (var i = 0; i < arr.length; i++) {
+      //   if (arr[i] == data.text) {
+      //     elem.querySelectorAll('tr')[data.id].querySelector('a').click();
+      //   } else {
+      //     window.location.href = 'http://172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3&_ysp_forcepc=1';
+      //   }
+      // }
     }
