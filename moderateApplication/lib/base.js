@@ -229,9 +229,9 @@
 
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
-      if(aWin.location.href == 'http://172.16.11.61/Index.aspx'){
-       aWin.location.href = 'http://172.16.11.61:8000/Index.aspx?Path=SysLogin';
-     }
+     //  if(aWin.location.href == 'http://172.16.11.61/Index.aspx'){
+     //   aWin.location.href = 'http://172.16.11.61:8000/Index.aspx?Path=SysLogin';
+     // }
     },
 
     //登录相关接口

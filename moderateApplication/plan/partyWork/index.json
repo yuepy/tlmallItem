@@ -1,0 +1,227 @@
+{
+  "version": "0.1",
+  "id": "partyWork",
+  "targetURL": "http://172.16.11.61/DQ/DQindex.aspx",
+  "jsFile": "index.js",
+  "chineseName": "党群工作",
+  "description": "党群工作",
+  "controls": {
+    "control575_7QubBt": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.821
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.pannel_dt"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control575_7QubBt"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control576_k5A89y": {
+      "location": {
+        "data": {
+          "tagName": "STRONG"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/SPAN[1]/STRONG[1]",
+              "ratio": 0.821
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.top.clearfix SPAN.style1 STRONG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/SPAN[1]/STRONG[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control576_k5A89y"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context57_lhX0gh": {
+      "controls": [
+        "control575_7QubBt",
+        "control576_k5A89y"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow176_pTnNpx": {
+      "toContexts": [
+        {
+          "toContextId": "context57_lhX0gh"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page57_eu7hfr": {
+      "contextId": "context57_lhX0gh",
+      "layout": [
+        {
+          "id": "uiControl576_0go5AM",
+          "controlId": "control576_k5A89y",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl576_0go5AM",
+                "onGetTemplate": "getTemplate_uiControl576_0go5AM"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl575_zgyAf2",
+          "controlId": "control575_7QubBt",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl575_zgyAf2",
+                "onGetTemplate": "getTemplate_uiControl575_zgyAf2"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context57_lhX0gh": [
+          "中粮可口可乐饮料有限公司"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context57_lhX0gh": [
+          "172.16.11.61/DQ/DQindex.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context57_lhX0gh": [
+          [
+            "Form",
+            "__VIEWSTATE"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context57_lhX0gh": [
+          [
+            "a-title",
+            "aspNetHidden",
+            "clear",
+            "clearfix",
+            "container",
+            "footer",
+            "logo",
+            "more",
+            "pannel_dq",
+            "pannel_dt",
+            "style",
+            "top",
+            "topjiwei",
+            "welcome"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context57_lhX0gh": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "A/CENTER/STRONG",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/STRONG",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/TABLE",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/CENTER",
+            "TR/TD/A"
+          ]
+        ]
+      }
+    }
+  }
+}

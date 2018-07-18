@@ -1,0 +1,334 @@
+{
+  "version": "0.1",
+  "id": "flashMorePage",
+  "targetURL": "http://172.16.11.61/List.aspx",
+  "jsFile": "index.js",
+  "chineseName": "快讯更多页面",
+  "description": "快讯更多页面",
+  "firstPaintEnable": false,
+  "controls": {
+    "control578_U4Ub8v": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl01",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.89
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control578_U4Ub8v"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control579_muZruu": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl01",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.89
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control579_muZruu"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control580_wRJPTR": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control580_wRJPTR"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context58_fysKAi": {
+      "controls": [
+        "control578_U4Ub8v",
+        "control579_muZruu",
+        "control580_wRJPTR"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61\\/List\\.aspx"
+      ]
+    }
+  },
+  "flows": {
+    "flow178_n3CkuT": {
+      "toContexts": [
+        {
+          "toContextId": "context58_fysKAi"
+        }
+      ]
+    },
+    "flow179_oRMg8T": {
+      "fromContextId": "context58_fysKAi",
+      "fromAction": "doAction",
+      "fromControlId": "control580_wRJPTR",
+      "toContexts": [
+        {
+          "toContextId": "context58_fysKAi"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page58_az5TQ6": {
+      "contextId": "context58_fysKAi",
+      "layout": [
+        {
+          "id": "uiControl579_AdDi0D",
+          "controlId": "control579_muZruu",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl579_AdDi0D",
+                "onGetTemplate": "getTemplate_uiControl579_AdDi0D"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl578_GVCVlT",
+          "controlId": "control578_U4Ub8v",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl578_GVCVlT",
+                "onGetTemplate": "getTemplate_uiControl578_GVCVlT"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl580_LnKI0Q",
+          "controlId": "control580_wRJPTR",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl580_LnKI0Q",
+                "onGetTemplate": "getTemplate_uiControl580_LnKI0Q"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context58_fysKAi": [
+          "中粮可口可乐饮料有限公司"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context58_fysKAi": [
+          "172.16.11.61/List.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context58_fysKAi": [
+          [
+            "DQTime",
+            "MainContent_Div",
+            "MainContent_btnSearch",
+            "MainContent_rptProperty_hlk_Title_",
+            "MainContent_txt_KeyWords",
+            "MainContent_ucListPage",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "ctl",
+            "tianqi"
+          ],
+          [
+            "DQTime",
+            "MainContent_Div",
+            "MainContent_btnSearch",
+            "MainContent_rptProperty_hlk_Title_",
+            "MainContent_txt_KeyWords",
+            "MainContent_ucListPage",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "ctl",
+            "tianqi"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context58_fysKAi": [
+          [
+            "a_visited",
+            "aspNetHidden",
+            "btn",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "creater",
+            "footer",
+            "logo",
+            "red",
+            "select",
+            "size-s",
+            "time",
+            "title",
+            "top",
+            "welcome",
+            "whether"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context58_fysKAi": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "LI/DIV/A",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/A",
+            "TD/SPAN/SPAN",
+            "TR/TD/A",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "UL/LI/DIV"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "LI/DIV/A",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/A",
+            "TD/SPAN/SPAN",
+            "TR/TD/A",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "UL/LI/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}

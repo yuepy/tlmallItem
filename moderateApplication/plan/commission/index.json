@@ -42,7 +42,8 @@
     "HaveDoneLeave": "../HaveDoneLeave/index.json",
     "HavaDoneGoOut": "../HavaDoneGoOut/index.json",
     "haveDoneOverTime": "../haveDoneOverTime/index.json",
-    "haveDoneRegularWorker": "../haveDoneRegularWorker/index.json"
+    "haveDoneRegularWorker": "../haveDoneRegularWorker/index.json",
+    "homePage": "../homePage/index.json"
   },
   "chineseName": "代办首页",
   "description": "代办首页",
@@ -445,6 +446,20 @@
         },
         {
           "toContextId": "context1_CPB3yD"
+        }
+      ]
+    },
+    "flow173_MocwgT": {
+      "fromContextId": "context1_CPB3yD",
+      "fromAction": "doAction",
+      "fromControlId": "control240_CUwdNv",
+      "toContexts": [
+        {
+          "toContextId": "context1_CPB3yD"
+        },
+        {
+          "toContextId": "context56_7xA3In",
+          "toModelId": "homePage"
         }
       ]
     }
