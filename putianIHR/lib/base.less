@@ -59,7 +59,7 @@ div[data-ysp-modelid] .card{
 
 div[data-ysp-modelid="checkSubInfo"],div[data-ysp-modelid="addWork"],div[data-ysp-modelid="businessTravel"],div[data-ysp-modelid="holidayAppli"],div[data-ysp-modelid="forgetCard"]{
   .card-body{
-    height: 95vh;
+    height: 90vh;
     overflow: auto;
   }
 }
@@ -84,6 +84,7 @@ div[style*="height: 2.7rem;"]{
   font-size:@fontLarge;
   background: #37363c;
   color:#fff;
+  overflow: hidden;
   > span:nth-child(1){
     flex: 0 1 20%;
     display: flex;
@@ -103,7 +104,6 @@ div[style*="height: 2.7rem;"]{
   > span:nth-child(3){
     width: 100%;
     font-size: 16px;
-    // display: flex;
     flex: 0 1 20%;
     > span:first-child{
         margin-left: .2rem;
@@ -858,7 +858,7 @@ div[data-ysp-modelid="checkMyInfo"]{
       }
     }
     .ysp_adrList{
-      height: 90vh;
+      height: 80vh;
       overflow:auto;
       padding-bottom:15px;
       >div{
@@ -926,6 +926,7 @@ div[data-ysp-modelid="checkMyInfo"]{
       height:2.6rem;
       border:none;
       text-align: right;
+      font-size:@fontBase;
     }
     .PSERROR{
       background-color:@tip;
