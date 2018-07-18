@@ -655,10 +655,13 @@ body {
 }
 .submit .subtrue {
   height: 60px;
-  overflow: hidden;
+  margin-right: 20px;
+}
+.submit .subtrue > div:nth-child(1) {
+  width: 100%;
 }
 .submit .subtrue button {
-  width: 150px;
+  width: 30%;
   height: 40px;
   margin-left: 10px;
   border: 0;
@@ -672,6 +675,12 @@ body {
 .submit .subtrue button:nth-child(2) {
   background-color: #40a7ff;
   border-radius: 5px;
+  color: #fff;
+}
+.submit .subtrue button:nth-child(3) {
+  background-color: #e64750;
+  border-radius: 5px;
+  color: #fff;
 }
 .submit .subtrue > div:nth-child(1) {
   float: left;
@@ -683,7 +692,8 @@ body {
   background: url(img/paging.png) 50% 50% no-repeat;
   cursor: pointer;
   margin-top: 10px;
-  float: right;
+  position: absolute;
+  right: -5px;
 }
 .submit .dianbl {
   width: 100%;
@@ -795,16 +805,12 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: #ffffff;
-}
-[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(1),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(1),
-[data-ysp-modelid="commission"] .Content .Content_item:nth-child(1) {
+  position: relative;
   cursor: pointer;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_item,
 [data-ysp-modelid="commission"] .Content .Content_item {
-  width: 100%;
   height: 20px;
   line-height: 20px;
   font-size: 14px;
@@ -833,7 +839,6 @@ body {
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone div,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone div,
 [data-ysp-modelid="commission"] .Content .Content_disnone div {
-  width: 100%;
   font-size: 16px;
   display: inline-block;
 }
@@ -866,29 +871,29 @@ body {
   font-size: 16px;
   color: #313131;
 }
-[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(3),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3),
-[data-ysp-modelid="commission"] .Content .Content_item:nth-child(3) {
-  position: relative;
-}
-[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(3) a,
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) a,
-[data-ysp-modelid="commission"] .Content .Content_item:nth-child(3) a {
+[data-ysp-modelid="dealtIndex"] .Content .distop,
+[data-ysp-modelid="haveDoneIndex"] .Content .distop,
+[data-ysp-modelid="commission"] .Content .distop {
   width: 20px;
-  height: 10px;
+  height: 13px;
   overflow: hidden;
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: 80px;
+  right: 20px;
+  background-image: url(img/top.png);
+  background-size: 20px 13px;
 }
-[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(3) a span,
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(3) a span,
-[data-ysp-modelid="commission"] .Content .Content_item:nth-child(3) a span {
-  width: 18px;
-  height: 18px;
-  border: 2px solid #d8d8d8;
+[data-ysp-modelid="dealtIndex"] .Content .disbottom,
+[data-ysp-modelid="haveDoneIndex"] .Content .disbottom,
+[data-ysp-modelid="commission"] .Content .disbottom {
+  width: 20px;
+  height: 13px;
+  overflow: hidden;
   position: absolute;
-  transform: translateY(3px) rotate(45deg);
+  top: 80px;
+  right: 20px;
+  background-image: url(img/xia.png);
+  background-size: 20px 13px;
 }
 [data-ysp-modelid="Printing"] {
   background-color: #ededed;
@@ -8532,7 +8537,6 @@ body {
   overflow: hidden;
 }
 .submit .subtrue button {
-  width: 150px;
   height: 40px;
   margin-left: 10px;
   border: 0;
