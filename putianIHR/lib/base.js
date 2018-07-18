@@ -52,10 +52,10 @@
 //             doc.querySelector("#ptlangsel").dispatchEvent(new Event("change"));
             
 //           }
-            // if(aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?"||aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/"||aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h"){
-            //   location.href = 'http://192.168.220.110/psp/ps/EMPLOYEE/HRMS?&cmd=login&languageCd=ZHS'
-            //   //aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
-            // }
+            if(aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?"||aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/"||aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h"){
+              // location.href = 'http://192.168.220.110/psp/ps/EMPLOYEE/HRMS?&cmd=login&languageCd=ZHS'
+              aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
+            }
 
             // if (aWin.location.href.indexOf("signal") !== -1) {
             //     alert(aWin.location.href)
