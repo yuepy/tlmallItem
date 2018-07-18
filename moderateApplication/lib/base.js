@@ -184,6 +184,20 @@
       }
         return data;
     },
+    //获取当前元素的某一个特定的父元素
+    getparent:function(ele,parclass){
+      var flat;
+      if(ele.className == parclass){
+        return ele;
+        // flat = true;
+      }else{
+        return this.getparent(ele.parentElement,parclass);
+        // flat = true;
+      }
+      if(flat){
+        return ele;
+      }
+    },
     //筛选26个待办数据
     getDatamove:function(obj,arr){
       var str = [],

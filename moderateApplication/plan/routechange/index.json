@@ -3,6 +3,9 @@
   "id": "routechange",
   "targetURL": "http://172.16.11.61:9992/Forms/KZ/LXBG/Processing.aspx?SN=393BE38DB768D40C03DD6F3C905331A3&Guid=647a40ef-9911-4d3e-b72d-33cb72260728",
   "jsFile": "index.js",
+  "requires": {
+    "previewapproval": "../previewapproval/index.json"
+  },
   "chineseName": "待办路线变更流程",
   "description": "",
   "firstPaintEnable": false,
@@ -482,7 +485,7 @@
       },
       "intendedRole": "dialog",
       "roles": "element,link,dialog",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
       "componentType": "dialog"
     },
@@ -667,6 +670,10 @@
       "toContexts": [
         {
           "toContextId": "context31_cTTiNK"
+        },
+        {
+          "toContextId": "context10_P8RicR",
+          "toModelId": "previewapproval"
         }
       ]
     },
@@ -674,6 +681,16 @@
       "fromContextId": "context31_cTTiNK",
       "fromAction": "doAction",
       "fromControlId": "control560_d6vRTp",
+      "toContexts": [
+        {
+          "toContextId": "context31_cTTiNK"
+        }
+      ]
+    },
+    "flow174_izgqTf": {
+      "fromContextId": "context31_cTTiNK",
+      "fromAction": "doAction",
+      "fromControlId": "control562_J3w1GB",
       "toContexts": [
         {
           "toContextId": "context31_cTTiNK"

@@ -148,11 +148,12 @@
     getData_control246_1DKkDh: function (elem) {
       if (!elem) {
         return;
-      }var data = {};data.title = '审批操作';data.content = [];var trs = elem.querySelectorAll('tr');var obj = {};obj.left = '当前环节';obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();data.content.push(obj);var obj = {};obj.left = '意见';obj.right = trs[1].querySelectorAll('td')[1].querySelector('textarea').value;data.content.push(obj);data.content.push({ left: trs[1].querySelectorAll('td')[1].textContent.trim() });return data;
+      }var data = {};data.title = '审批操作';data.content = [];var trs = elem.querySelectorAll('tr');var obj = {};var str = trs[0].querySelectorAll('td')[0].textContent.trim();var arr = str.split(":");obj.left = trs[0].querySelectorAll('td')[0].textContent.trim().split('：')[0]; // obj.left = arr;
+      obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();data.content.push(obj);var obj = {};obj.left = trs[1].querySelectorAll('td')[0].textContent.trim().split('：')[0];obj.right = trs[1].querySelectorAll('td')[1].querySelector('textarea').value;data.content.push(obj);data.content.push({ left: trs[1].querySelectorAll('td')[1].querySelector('p').textContent.trim() });return data;
     },
     doAction_uiControl246_TEZRE8: function (data, elem) {
-      if (data.eventType == 'change') {
-        elem.querySelector('textarea').value = data.customData;
+      var type = data.eventType;var data = data.customData;if (type == 'change') {
+        elem.querySelector('textarea').value = data;
       }
     },
     getTemplate_uiControl246_TEZRE8: function () {

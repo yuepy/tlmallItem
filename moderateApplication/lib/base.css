@@ -808,6 +808,12 @@ body {
   position: relative;
   cursor: pointer;
 }
+[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(1),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(1),
+[data-ysp-modelid="commission"] .Content .Content_item:nth-child(1) {
+  font-size: 16px;
+  display: inline-block;
+}
 [data-ysp-modelid="dealtIndex"] .Content .Content_item,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_item,
 [data-ysp-modelid="commission"] .Content .Content_item {
@@ -937,6 +943,187 @@ body {
   width: 235px;
   text-align: left;
   float: right;
+}
+[data-ysp-modelid="Printing"] .Enclosure {
+  background-color: #ffffff;
+  padding-bottom: 15px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .contenttitle p {
+  display: flex;
+  width: 345px;
+  margin-left: 15px;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Printing"] .Enclosure .contenttitle p > div {
+  margin-right: 10px;
+  display: flex;
+}
+[data-ysp-modelid="Printing"] .Enclosure .contenttitle p > div button {
+  display: flex;
+  border: 1px solid #20dffb;
+  border-radius: 2px;
+  color: #20dffb;
+}
+[data-ysp-modelid="Printing"] .Enclosure .contenttitle p > div button:last-child {
+  margin-left: 10px;
+  border: 1px solid #e64750;
+  color: #e64750;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit {
+  width: 345px;
+  overflow: hidden;
+  margin: auto;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  color: #313131;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .displnone {
+  display: none;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .displblock {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .displblock:nth-child(4) {
+  border-bottom: 1px solid #e0e0e0;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .displblock:nth-child(4) .contentitem {
+  border: 0;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentitem {
+  color: #313131;
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentitem:nth-child(1) {
+  width: 64px;
+  font-size: 16px;
+  float: left;
+  text-align: justify;
+  text-align-last: justify;
+  margin-left: 10px;
+  color: #202020;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentitem:nth-child(2) {
+  width: 225px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  float: right;
+  color: #313131;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentitem p {
+  width: 335px;
+  display: inline-block;
+  line-height: 44px;
+  line-height: 42px;
+  text-align: center;
+  text-align-last: auto;
+  cursor: pointer;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentitem p span {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 10px;
+  background-image: url(img/load.png);
+  background-size: 20px 20px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentspan {
+  width: 100%;
+  text-align: center;
+  text-align-last: auto;
+  display: inline-block;
+  cursor: pointer;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentspan > p {
+  width: 50%;
+  display: inline-block;
+  margin: 0;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentspan p:nth-child(1) {
+  height: 44px;
+  line-height: 44px;
+  display: inline-block;
+  border-right: 1px solid #cccccc;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentspan p:nth-child(1) span {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: inline-block;
+  background-image: url(img/delete.png);
+  background-size: 20px 20px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentspan p:nth-child(2) {
+  height: 44px;
+  display: inline-block;
+  line-height: 44px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .contentspan p:nth-child(2) span {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: inline-block;
+  background-image: url(img/load.png);
+  background-size: 20px 20px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .titlediv {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .titlediv div {
+  display: flex;
+  color: #313131;
+  align-items: center;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .titlediv div:nth-child(1) {
+  display: flex;
+  width: 40px;
+  height: 24px;
+  margin: auto;
+  line-height: 24px;
+  border-right: 1px solid #cccccc;
+  align-items: center;
+  padding-left: 10px;
+  text-align: center;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .titlediv div:nth-child(2) {
+  width: 80%;
+  padding-left: 10px;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .titlediv div:nth-child(3) {
+  cursor: pointer;
+  display: flex;
+  margin-right: 10px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .titlediv div.shang {
+  width: 20px;
+  height: 13px;
+  margin-top: 16px;
+  background-image: url(img/top.png);
+  background-size: 20px 13px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .contentit .titlediv div.xia {
+  width: 20px;
+  height: 13px;
+  margin-top: 16px;
+  background-image: url(img/xia.png);
+  background-size: 20px 13px;
+}
+[data-ysp-modelid="Printing"] .Enclosure .content .distag {
+  margin-bottom: 0;
 }
 [data-ysp-modelid="Quit"] {
   background-color: #ededed;
