@@ -86,76 +86,46 @@
     getData_control28_SZVJPk: function (elem) {
       if (!elem) {
         return;
-      }
-      if (elem) {
+      }if (elem) {
         //获取tr的数组
-        var data = [];
-        var trArr = elem.querySelector("tbody").querySelectorAll("tr");
-        for (var i = 0; i < trArr.length; i++) {
-          var tdArr = trArr[i].querySelectorAll("td");
-          var arry = [];
-          for (var j = 0; j < tdArr.length; j++) {
+        var data = [];var trArr = elem.querySelector("tbody").querySelectorAll("tr");for (var i = 0; i < trArr.length; i++) {
+          var tdArr = trArr[i].querySelectorAll("td");var arry = [];for (var j = 0; j < tdArr.length; j++) {
             arry.push(tdArr[j].textContent);
-          }
-          data.push(arry);
-          arry.shift();
-          arry.shift();
-        }
-        data.shift();
-        data.shift();
-        return data;
+          }data.push(arry);arry.shift();arry.shift();
+        }data.shift();data.shift();return data;
       }
     },
     doAction_uiControl26_6hpfrU: function (data, elem) {
       if (data.eventType == "clickBtn") {
-        var data = data.dataCustom;
-        var index = parseInt(data.index) + 2;
-        var i = data.i;
-        var title = data.title;
-        var win = elem.ownerDocument.defaultView;
-        if (title && title.indexOf("总部转正") !== -1) {
-          top.pendTitle = "总部转正";
-          win._ysp_top.tenderType = "turnTask";
+        var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
+          top.pendTitle = "总部转正";win._ysp_top.tenderType = "turnTask";
         } else if (title.indexOf("假期申请") !== -1 || title.indexOf("公出差申请") !== -1) {
-          top.pendTitle = "假期申请";
-          win._ysp_top.tenderType = "askForLeave";
+          top.pendTitle = "假期申请";win._ysp_top.tenderType = "askForLeave";
         } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
-          top.pendTitle = "分公司离职管理流程(解除)";
-          win._ysp_top.tenderType = "branchRelease";
+          top.pendTitle = "分公司离职管理流程(解除)";win._ysp_top.tenderType = "branchRelease";
         } else if (title.indexOf("离职管理") !== -1) {
-          top.pendTitle = "离职管理";
-          win._ysp_top.tenderType = "departure";
+          top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
         } else if (title.indexOf("员工职位变动") !== -1) {
-          top.pendTitle = "员工职位变动";
-          win._ysp_top.tenderType = "positionChange";
+          top.pendTitle = "员工职位变动";win._ysp_top.tenderType = "positionChange";
         } else if (title.indexOf("总部月度编制变动") !== -1) {
-          top.pendTitle = "总部月度编制变动";
-          win._ysp_top.tenderType = "monthChange";
+          top.pendTitle = "总部月度编制变动";win._ysp_top.tenderType = "monthChange";
         } else if (title.indexOf("销假申请") !== -1) {
-          top.pendTitle = "销假申请";
-          win._ysp_top.tenderType = "beginToWork";
+          top.pendTitle = "销假申请";win._ysp_top.tenderType = "beginToWork";
         } else if (title.indexOf("忘打卡") !== -1) {
-          top.pendTitle = "忘打卡";
-          win._ysp_top.tenderType = "forgetCard";
+          top.pendTitle = "忘打卡";win._ysp_top.tenderType = "forgetCard";
         } else if (title.indexOf("加班申请") !== -1) {
-          top.pendTitle = "加班申请";
-          win._ysp_top.tenderType = "addWork";
+          top.pendTitle = "加班申请";win._ysp_top.tenderType = "addWork";
         } else if (title.indexOf("外派探亲资格") !== -1) {
-          top.pendTitle = "外派探亲资格";
-          win._ysp_top.tenderType = "visitRelative";
+          top.pendTitle = "外派探亲资格";win._ysp_top.tenderType = "visitRelative";
         } else if (title.indexOf("员工录用") !== -1) {
-          top.pendTitle = "员工录用";
-          win._ysp_top.tenderType = "employeeHire";
+          top.pendTitle = "员工录用";win._ysp_top.tenderType = "employeeHire";
         } else if (title.indexOf("特价申请") !== -1) {
           win._ysp_top.tenderType = "goodBargain";
         } else if (title.indexOf("价格政策") !== -1) {
           win._ysp_top.tenderType = "pricePolicy";
         } else {
-          top.pendTitle = "第一期38个流程";
-          win._ysp_top.tenderType = "processForm";
-        }
-        elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();
-        ysp.appMain.showLoading();
+          top.pendTitle = "第一期38个流程";win._ysp_top.tenderType = "processForm";
+        }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();ysp.appMain.showLoading();
       }
     },
     getTemplate_uiControl26_6hpfrU: function () {
