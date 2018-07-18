@@ -609,6 +609,10 @@
         "data": {
           "tagName": "FORM"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -905,21 +909,6 @@
                   }
                 },
                 {
-                  "id": "uiControl76_J0ZVdw",
-                  "controlId": "control80_eA7hg4",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl76_J0ZVdw",
-                        "onGetTemplate": "getTemplate_uiControl76_J0ZVdw"
-                      }
-                    }
-                  }
-                },
-                {
                   "id": "uiControl17_xcHdpi",
                   "controlId": "control17_3uqe6S",
                   "display": {
@@ -1079,6 +1068,21 @@
               "layout": []
             }
           ]
+        },
+        {
+          "id": "uiControl76_J0ZVdw",
+          "controlId": "control80_eA7hg4",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl76_J0ZVdw",
+                "onGetTemplate": "getTemplate_uiControl76_J0ZVdw"
+              }
+            }
+          }
         }
       ]
     }
