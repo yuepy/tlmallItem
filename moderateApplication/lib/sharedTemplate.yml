@@ -1457,40 +1457,6 @@
     if (type == 'click') {
       elem.querySelectorAll('li')[data].querySelector('a').click();
     }
-- name: 首页列表(快讯、公司公告等等)
-  getTemplate: "import {Component} from 'react'; \nimport {CustomHeader} from 'ysp-custom-components';\nexport default class extends Component{\n   constructor(props){\n   \t super(props);\n  }\n  handlerClick(e){\n    var target = e.target;\n    var index = target.dataset.index;\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        data:{\n          index: index\n        },\n        eventType: 'click'\n      })\n    }\n  }\n  render = () => {\n    var _this = this;\n    var data = this.props.customData;\n    var title = this.props.customData && this.props.customData.title  || [];\n    var date = this.props.customData && this.props.customData.date || [];\n    var flag = this.props.customData && this.props.customData.flag || [];\n    var _this = this;\n    return (\n      <div className=\"ysp-flash-more\">\n        {\n          title.map((items,index)=>{\n            return(\n            \t<div onClick={_this.handlerClick.bind(_this)}  data-index={index}>\n                <span onClick={_this.handlerClick.bind(_this)}  data-index={index} \n                  className={flag[index][0] == null ? \"\" : \"ysp-flash-text-color\"}>\n                  {items}\n                </span>\n                <span onClick={_this.handlerClick.bind(_this)}  data-index={index}>\n                  {date[index]}\n                </span>\n              </div>\n            );\n          })\n        }\n      </div>\n    )\n   }\n}"
-  getData: |
-    if (!elem) {
-      return;
-    }
-    var data = {
-      title: [],
-      date: [],
-      flag: []
-    };
-    var uls = elem.querySelector("ul");
-    var lis = uls && uls.querySelectorAll("li");
-    for (var i = 0; i < lis.length; i++) {
-      var a = [];
-      var b = [];
-      var c = [];
-      var title = lis[i].querySelector(".title").textContent.trim();
-      var dates = lis[i].querySelector(".time").textContent.trim();
-      var date = dates && dates.substr(0, 10);
-      var flags = lis[i].querySelector(".title").querySelector("a").getAttribute("class");
-      a.push(title);
-      b.push(date);
-      c.push(flags);
-      data.title.push(a);
-      data.date.push(b);
-      data.flag.push(c);
-    }
-    return data;
-  doAction: |
-    if ('click' == data.eventType) {
-      var index = data.customData.index;
-      var uls = elem.querySelector("ul");
-      uls && uls.querySelectorAll("li")[index].querySelector('a').click();
 - name: 审批操作
   getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
   getData: >
@@ -1688,4 +1654,71 @@
     }
     if (data.eventType == 'onclick') {
       elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
+    }
+- name: 首页快讯、公告等头
+  getTemplate: "module.exports = React.createClass({\n  handlerClick:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div className='ysp-flash-hard'>\n        <div onClick={this.handlerClick.bind(this)}>\n          <span onClick={this.handlerClick.bind(this)}></span>\n          <span onClick={this.handlerClick.bind(this)}>返回</span>\n        </div>\n        <div>\n        \t<span>人事公告</span>\n        </div>\n        \n      </div>\n    )\n  }\n});"
+  getData: ''
+  doAction: |
+    if ('click' == data.eventType) {
+      ysp.customHelper.backHome();
+    }
+- name: 首页翻页(快讯、公告等)
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:target.getAttribute('data-id')\n      })\n    }\n  },\n  onclickpage:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'onclickpage',\n        data:[target.dataset.id]\n      })\n    }\n  },\n  onclickpreOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onclickpreOnce'\n        \n      })\n    }\n  },\n  onClicknextOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onClicknextOnce',\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return (\n        <div>\n        \t\n        </div>\n      )\n    }\n    var str = '<',kr = '|<',\n        _this = this;\n    var lis = data.map(function(ele,index){\n      return(\n        <li data-id={index} onClick={_this.onClick} className={ele.flag}>{ele.text}</li>\n      )\n    })\n    return (\n      <div className='footerbtn'>\n        <ul>\n          <span>\n            <li data-id='prevPage' data-index={0} onClick={_this.onclickpage.bind(_this)}\n              className='ysp-prePage'>\n              {kr}\n            </li>\n            <li data-id='prev' onClick={_this.onclickpreOnce.bind(_this)}\n              className='ysp-preOnce'>\n              {str}\n            </li>\n          </span>\n          \n          <span className='ysp-pageBtnScroll-tt'><span>{lis}</span></span>\n          <span>\n            <li data-id='next' onClick={_this.onClicknextOnce.bind(_this)} \n              className='ysp-nextOne'>\n              >\n            </li>\n            <li data-id='nextPage'\n              onClick={_this.onclickpage.bind(_this)} className='ysp-nextPage'>\n              >|\n            </li>\n          </span>\n        </ul>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return "";
+    }
+    if (elem) {
+      var data = [];
+      var nodes = elem.children;
+
+      for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i].textContent.trim() != '...' && nodes[i].textContent.trim() != '首页' && nodes[i].textContent.trim() != '末页' && nodes[i].textContent.trim() != '下一页' && nodes[i].textContent.trim() != '上一页') {
+          data.push({
+            text: nodes[i].textContent.trim(),
+            flag: nodes[i].style.color == 'red' ? 'cpb' : ''
+          });
+        }
+      }
+
+      return data;
+    }
+  doAction: |
+    if (data.eventType == 'click') {
+      //点击某一页
+      var index = parseInt(data.dataCustom);
+      var nodes = elem.children;
+      var a = [];
+
+      for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i].textContent.trim() != '...' && nodes[i].textContent.trim() != '首页' && nodes[i].textContent.trim() != '末页' && nodes[i].textContent.trim() != '下一页' && nodes[i].textContent.trim() != '上一页') {
+          var el = nodes[i];
+        }
+
+        if (el && el.tagName == 'A' || el && el.style.color == 'red') {
+          a.push(el);
+        }
+      }
+
+      a && a[index].click();
+    } else if (data.eventType == 'onclickpage') {
+      //首页和末页
+      var id = data.dataCustom[0];
+      var len = elem.querySelectorAll("a").length;
+
+      if (id == 'prevPage') {
+        var target = elem.querySelectorAll('a')[0];
+        target.click();
+      } else if (id == 'nextPage') {
+        var target = elem.querySelectorAll('a')[len - 1];
+        target.click();
+      }
+    } else if (data.eventType == 'onClicknextOnce') {
+      //下一页
+      var trs = elem.querySelectorAll('a');
+      var trsLen = trs.length;
+      trs[trsLen - 2].click();
+    } else if (data.eventType == 'onclickpreOnce') {
+      //上一页
+      var trs = elem.querySelectorAll('a')[1].click();
     }

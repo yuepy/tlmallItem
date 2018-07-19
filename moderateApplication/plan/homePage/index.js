@@ -51,8 +51,8 @@
       }
     },
     getTemplate_uiControl581_WKv8W8: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  handlerClick:function(e){\n    debugger;\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div className=\"ysp-homePage\" onClick={this.handlerClick.bind(this)}>\n        \u516C\u53F8\u516C\u544A\n      </div>\n    )\n  }\n});";
-      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  handlerClick: function handlerClick(e) {\n    debugger;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-homePage\", onClick: this.handlerClick.bind(this) },\n      \"\\u516C\\u53F8\\u516C\\u544A\"\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  handlerClick:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div className=\"ysp-homePage\" onClick={this.handlerClick.bind(this)}>\n        \u516C\u53F8\u516C\u544A\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  handlerClick: function handlerClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-homePage\", onClick: this.handlerClick.bind(this) },\n      \"\\u516C\\u53F8\\u516C\\u544A\"\n    );\n  }\n});";
     },
     getData_control584_Dv9hyl: function (elem) {},
     doAction_uiControl584_EzVBoB: function (data, elem) {

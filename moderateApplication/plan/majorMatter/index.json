@@ -12,6 +12,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -51,6 +55,10 @@
       "location": {
         "data": {
           "tagName": "STRONG"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -92,13 +100,37 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control598_gZ0r5x": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]/DIV[4]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control598_gZ0r5x"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context60_eGcIT4": {
       "controls": [
         "control585_6DK4pb",
-        "control586_GcmDn3"
+        "control586_GcmDn3",
+        "control598_gZ0r5x"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -111,6 +143,23 @@
       "fromContextId": "context60_eGcIT4",
       "fromAction": "doAction",
       "fromControlId": "control585_6DK4pb",
+      "toContexts": [
+        {
+          "toContextId": "context60_eGcIT4"
+        }
+      ]
+    },
+    "flow196_f1ZtAl": {
+      "fromContextId": "context60_eGcIT4",
+      "fromAction": "doAction",
+      "fromControlId": "control586_GcmDn3",
+      "toContexts": [
+        {
+          "toContextId": "context60_eGcIT4"
+        }
+      ]
+    },
+    "flow198_VFSBc3": {
       "toContexts": [
         {
           "toContextId": "context60_eGcIT4"
@@ -148,6 +197,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl585_tAqpNP",
                 "onGetTemplate": "getTemplate_uiControl585_tAqpNP"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl598_e2FHPf",
+          "controlId": "control598_gZ0r5x",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl598_e2FHPf",
+                "onGetTemplate": "getTemplate_uiControl598_e2FHPf"
               }
             }
           }

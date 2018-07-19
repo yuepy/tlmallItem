@@ -10085,45 +10085,55 @@ div._23s98qqds-Z7MF0Y5RBjWd {
 }
 /******首页样式end********/
 /****重大事项、党群、纪检 页面头******/
-.ysp-party-hard {
-  color: #e64750;
-  background: #fff;
-  min-height: 40px;
-  line-height: 40px;
-  text-align: center;
-  font-weight: bold;
-}
-/******快讯更多*******/
+/******快讯、公告等更多*******/
 .ysp-flash-hard {
-  color: #e64750;
+  color: #fff;
   text-align: center;
-  background: #fff;
+  background: #e64750;
   min-height: 50px;
   line-height: 50px;
   font-weight: bold;
+  display: flex;
+  padding-left: 10px;
+}
+.ysp-flash-hard > div:nth-child(1) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+}
+.ysp-flash-hard > div:nth-child(1) > span:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  background-image: url(img/ysp-prev.png);
+  background-size: 10px;
+  background-repeat: no-repeat;
+}
+.ysp-flash-hard > div:nth-child(2) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
 }
 .ysp-flash-more {
   background: #fff;
   min-height: 100vh;
 }
-.ysp-flash-more div {
+.ysp-flash-more .ysp-flash-more-content {
   border-bottom: 1px solid #ececec;
-  min-height: 60px;
-  line-height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  min-height: 30px;
+  line-height: 30px;
   padding: 0px 10px;
   font-size: 14px;
 }
-.ysp-flash-more div > span:nth-child(1) {
-  width: 75%;
+.ysp-flash-more .ysp-flash-more-content > div:nth-child(1) {
+  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.ysp-flash-more div > span:nth-child(2) {
-  color: #999999;
+.ysp-flash-more .ysp-flash-more-content > span:nth-child(2) {
+  color: #999;
 }
 .ysp-flash-text-color {
   color: #999999;

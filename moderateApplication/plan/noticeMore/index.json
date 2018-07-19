@@ -12,6 +12,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -52,6 +56,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -86,13 +94,37 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control597_LUzFNI": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control597_LUzFNI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context59_rNCplc": {
       "controls": [
         "control582_ntcEz7",
-        "control583_LKFDF2"
+        "control583_LKFDF2",
+        "control597_LUzFNI"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -102,6 +134,16 @@
   },
   "flows": {
     "flow181_CXL6GX": {
+      "toContexts": [
+        {
+          "toContextId": "context59_rNCplc"
+        }
+      ]
+    },
+    "flow194_ktallr": {
+      "fromContextId": "context59_rNCplc",
+      "fromAction": "doAction",
+      "fromControlId": "control582_ntcEz7",
       "toContexts": [
         {
           "toContextId": "context59_rNCplc"
@@ -139,6 +181,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl583_Tt7GMO",
                 "onGetTemplate": "getTemplate_uiControl583_Tt7GMO"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl597_KEB4y5",
+          "controlId": "control597_LUzFNI",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl597_KEB4y5",
+                "onGetTemplate": "getTemplate_uiControl597_KEB4y5"
               }
             }
           }
@@ -182,6 +239,25 @@
       "contexts": {
         "context59_rNCplc": [
           [
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "creater",
+            "footer",
+            "logo",
+            "select",
+            "time",
+            "title",
+            "top",
+            "welcome",
+            "whether"
+          ],
+          [
+            "a_visited",
             "aspNetHidden",
             "breadcrumb",
             "centerbox",
