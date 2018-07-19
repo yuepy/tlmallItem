@@ -3,13 +3,21 @@
   "id": "Newleave",
   "targetURL": "http://172.16.11.61:8000/Forms/HR/QJSQLC/Start.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "commission": "../commission/index.json"
+  },
   "chineseName": "请假申请单发起流程",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control579_hrHbRD": {
       "location": {
         "data": {
           "tagName": "H1"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -46,6 +54,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -81,6 +93,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -121,6 +137,10 @@
         "data": {
           "tagName": "UL"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -150,6 +170,188 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control593_LmULC3": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[3]"
+          },
+          {
+            "id": "@id/nonWord",
+            "prob": 1,
+            "disabled": true,
+            "fact": "tb3",
+            "value": "descendant::FORM[@id=\"aspnetForm\"]//TABLE[@id=\"tb3\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control593_LmULC3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control594_PT3E8W": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]"
+          },
+          {
+            "id": "@id/nonWord",
+            "prob": 1,
+            "disabled": true,
+            "fact": "tb2",
+            "value": "descendant::FORM[@id=\"aspnetForm\"]//TABLE[@id=\"tb2\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control594_PT3E8W"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control595_PSHoI0": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control595_PSHoI0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control596_30nOgi": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"tb1\"]"
+            }
+          ],
+          "force": true
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]"
+          },
+          {
+            "id": "@id/nonWord",
+            "prob": 1,
+            "disabled": true,
+            "fact": "tb1",
+            "value": "descendant::FORM[@id=\"aspnetForm\"]//TABLE[@id=\"tb1\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control596_30nOgi"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -158,7 +360,11 @@
         "control579_hrHbRD",
         "control580_f1W4rT",
         "control581_TMgyEp",
-        "control582_RnftTJ"
+        "control582_RnftTJ",
+        "control593_LmULC3",
+        "control594_PT3E8W",
+        "control595_PSHoI0",
+        "control596_30nOgi"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -166,6 +372,20 @@
   },
   "flows": {
     "flow172_xOnXle": {
+      "toContexts": [
+        {
+          "toContextId": "context56_U4PFJK"
+        },
+        {
+          "toContextId": "context1_CPB3yD",
+          "toModelId": "commission"
+        }
+      ]
+    },
+    "flow191_l5vm9v": {
+      "fromContextId": "context56_U4PFJK",
+      "fromAction": "doAction",
+      "fromControlId": "control582_RnftTJ",
       "toContexts": [
         {
           "toContextId": "context56_U4PFJK"
@@ -203,6 +423,66 @@
               "events": {
                 "onDoAction": "doAction_uiControl580_nAZ3vf",
                 "onGetTemplate": "getTemplate_uiControl580_nAZ3vf"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl595_2rT4iA",
+          "controlId": "control595_PSHoI0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl595_2rT4iA",
+                "onGetTemplate": "getTemplate_uiControl595_2rT4iA"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl596_aUEmb5",
+          "controlId": "control596_30nOgi",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl596_aUEmb5",
+                "onGetTemplate": "getTemplate_uiControl596_aUEmb5"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl594_TLkcX0",
+          "controlId": "control594_PT3E8W",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl594_TLkcX0",
+                "onGetTemplate": "getTemplate_uiControl594_TLkcX0"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl593_6rTATT",
+          "controlId": "control593_LmULC3",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl593_6rTATT",
+                "onGetTemplate": "getTemplate_uiControl593_6rTATT"
               }
             }
           }
@@ -484,6 +764,69 @@
             "red",
             "required",
             "show",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "Wdate",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "bottom-buttons",
+            "btn",
+            "btn-add-user",
+            "btn_blue",
+            "clear",
+            "col",
+            "col-",
+            "del",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "grey",
+            "icon-plus",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
             "size-l",
             "size-s",
             "swich_btn",

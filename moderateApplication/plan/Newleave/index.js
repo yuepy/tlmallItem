@@ -63,6 +63,63 @@
     getTemplate_uiControl582_w1UkU1: function () {
       var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data;\n    if(target.tagName.toLowerCase() == 'div'){\n      target.parentElement.nextElementSibling.style.display = 'block';\n      // target.parentElement.nextElementSibling.style.height = target.ownerDocument.style.height;\n      var lis = target.parentElement.parentElement.querySelector('.dianbl').querySelectorAll('li');\n      for(var i=0;i<lis.length;i++){\n        lis[i].style.bottom = i*50 +'px';\n      }\n    }\n    if(target.tagName.toLowerCase() == 'p'){\n      target.parentElement.parentElement.parentElement.style.display = 'none';\n    }\n    if(target.tagName.toLowerCase() == 'button'){\n      type = 'click';\n      data = target.getAttribute('data-id');\n    }\n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(!data){\n      return '';\n    }\n  \tvar lis = data.map(function(d,i){\n      if(i<3){\n        return(\n        \t<button data-id={i} onClick={_this.onClick}>{d}</button>\n        )\n      }\n    })\n    var list = data.map(function(d,i){\n      if(i>2){\n        return(\n        \t<li><button data-id={i} onClick={_this.onClick}>{d}</button></li>\n        )\n      }\n    })\n    return (\n      <div className='submit'>\n        <div className='subtrue'><div>{lis}</div><div style={{'display':data.length>3?'block':\"none\"}} onClick={_this.onClick.bind(_this)}></div></div>\n        <div className='dianbl'><ul><li><p onClick={_this.onClick}>\u53D6\u6D88</p></li>{list}</ul></div>\n      </div>\n    )\n  }\n});";
       return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data;\n    if (target.tagName.toLowerCase() == 'div') {\n      target.parentElement.nextElementSibling.style.display = 'block';\n      // target.parentElement.nextElementSibling.style.height = target.ownerDocument.style.height;\n      var lis = target.parentElement.parentElement.querySelector('.dianbl').querySelectorAll('li');\n      for (var i = 0; i < lis.length; i++) {\n        lis[i].style.bottom = i * 50 + 'px';\n      }\n    }\n    if (target.tagName.toLowerCase() == 'p') {\n      target.parentElement.parentElement.parentElement.style.display = 'none';\n    }\n    if (target.tagName.toLowerCase() == 'button') {\n      type = 'click';\n      data = target.getAttribute('data-id');\n    }\n    if (handler) {\n      handler({\n        eventType: type,\n        data: data\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (!data) {\n      return '';\n    }\n    var lis = data.map(function (d, i) {\n      if (i < 3) {\n        return React.createElement(\n          'button',\n          { 'data-id': i, onClick: _this.onClick },\n          d\n        );\n      }\n    });\n    var list = data.map(function (d, i) {\n      if (i > 2) {\n        return React.createElement(\n          'li',\n          null,\n          React.createElement(\n            'button',\n            { 'data-id': i, onClick: _this.onClick },\n            d\n          )\n        );\n      }\n    });\n    return React.createElement(\n      'div',\n      { className: 'submit' },\n      React.createElement(\n        'div',\n        { className: 'subtrue' },\n        React.createElement(\n          'div',\n          null,\n          lis\n        ),\n        React.createElement('div', { style: { 'display': data.length > 3 ? 'block' : \"none\" }, onClick: _this.onClick.bind(_this) })\n      ),\n      React.createElement(\n        'div',\n        { className: 'dianbl' },\n        React.createElement(\n          'ul',\n          null,\n          React.createElement(\n            'li',\n            null,\n            React.createElement(\n              'p',\n              { onClick: _this.onClick },\n              '\\u53D6\\u6D88'\n            )\n          ),\n          list\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control596_30nOgi: function (elem) {
+      if (!elem) {
+        return;
+      }var data = ysp.customHelper.getTableData(elem, ['假期类型', '有效期开始时间', '有效期结束时间', '假期总定额', '已用定额', '可用定额', '在途定额']);data.title = '剩余假期';return data;
+    },
+    doAction_uiControl596_aUEmb5: function (data, elem) {},
+    getTemplate_uiControl596_aUEmb5: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return '';\n    }\n    var ths = data.titles.map(function(d,i){\n      return(\n      \t<th>{d}</th>\n      )\n    })\n    var trs = data.content.map(function(d,i){\n      var lis = d.map(function(ele,index){\n        return(\n        \t<td>{ele}</td>\n        )\n      })\n      if(d.length>1){\n          return(\n          \t<tr>{lis}</tr>\n        \t)\n      }else{\n        return(<tr>{d}</tr>)\n      }\n    })\n    return (\n      <div className='askleave'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='contentitem'>\n        \t<table>\n            <thead><tr>{ths}</tr></thead>\n            <tbody>{trs}</tbody>\n          </table>\n        </div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    if (!data) {\n      return '';\n    }\n    var ths = data.titles.map(function (d, i) {\n      return React.createElement(\n        'th',\n        null,\n        d\n      );\n    });\n    var trs = data.content.map(function (d, i) {\n      var lis = d.map(function (ele, index) {\n        return React.createElement(\n          'td',\n          null,\n          ele\n        );\n      });\n      if (d.length > 1) {\n        return React.createElement(\n          'tr',\n          null,\n          lis\n        );\n      } else {\n        return React.createElement(\n          'tr',\n          null,\n          d\n        );\n      }\n    });\n    return React.createElement(\n      'div',\n      { className: 'askleave' },\n      React.createElement(\n        'div',\n        { className: 'contenttitle' },\n        React.createElement('span', null),\n        React.createElement(\n          'p',\n          null,\n          data.title\n        )\n      ),\n      React.createElement(\n        'div',\n        { className: 'contentitem' },\n        React.createElement(\n          'table',\n          null,\n          React.createElement(\n            'thead',\n            null,\n            React.createElement(\n              'tr',\n              null,\n              ths\n            )\n          ),\n          React.createElement(\n            'tbody',\n            null,\n            trs\n          )\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control594_PT3E8W: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {};return data;
+    },
+    doAction_uiControl594_TLkcX0: function (data, elem) {},
+    getTemplate_uiControl594_TLkcX0: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    return (\n      <div>\n        \u81EA\u5B9A\u4E49\u7EC4\u4EF6\u7528\u6765\u9002\u914D\u57FA\u672C\u7EC4\u4EF6\u65E0\u6CD5\u9002\u914D\u7684\u9875\u9762\u5143\u7D20\uFF0C\u60A8\u53EF\u4EE5\u901A\u8FC7\u53F3\u952E\u6253\u5F00\u8BE5\u81EA\u5B9A\u4E49\u7EC4\u4EF6\u7F16\u8F91\u5668\u8FDB\u884C\u7F16\u8F91\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      null,\n      \"\\u81EA\\u5B9A\\u4E49\\u7EC4\\u4EF6\\u7528\\u6765\\u9002\\u914D\\u57FA\\u672C\\u7EC4\\u4EF6\\u65E0\\u6CD5\\u9002\\u914D\\u7684\\u9875\\u9762\\u5143\\u7D20\\uFF0C\\u60A8\\u53EF\\u4EE5\\u901A\\u8FC7\\u53F3\\u952E\\u6253\\u5F00\\u8BE5\\u81EA\\u5B9A\\u4E49\\u7EC4\\u4EF6\\u7F16\\u8F91\\u5668\\u8FDB\\u884C\\u7F16\\u8F91\"\n    );\n  }\n});";
+    },
+    getData_control595_PSHoI0: function (elem) {
+      if (!elem) {
+        return;
+      }var data = {};data.title = '基本信息';data.content = [];var trs = elem.querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        var tds = trs[i].querySelectorAll('td');for (var k = 0; k < tds.length; k++) {
+          if (tds[k].textContent.trim() != '') {
+            var obj = {}; //判断是否为input
+            if (tds[k].querySelector('input')) {
+              //判断是单选还是输入框
+              if (!tds[k].querySelector('input[type="radio"]')) {
+                //判断有没有选人的功能
+                if (tds[k].querySelector('a')) {
+                  obj.hrefid = tds[k].querySelector('a').id;obj.type = 'ainput';
+                } else {
+                  obj.type = 'input';
+                }obj.readonly = tds[k].querySelector('input[type="text"]').readOnly;obj.id = tds[k].querySelector('input[type="text"]').id;obj.left = tds[k].querySelector('label').textContent.trim();obj.text = tds[k].querySelector('input[type="text"]').value;
+              } else {
+                //单选
+                obj.left = tds[k].querySelector('label').textContent.trim();obj.text = [];obj.name = [];obj.id = [];var radios = tds[k].querySelectorAll('input[type="radio"]');for (var u = 0; u < radios.length; u++) {
+                  obj.name.push(radios[u].name);obj.text.push(radios[u].nextSibling.textContent.trim());obj.id.push(radios[u].id);
+                }
+              }
+            } //判断是否有select
+            if (tds[k].querySelector('select')) {
+              obj.left = tds[k].querySelector('label').textContent.trim();obj.type = 'select';obj.opts = [];obj.selected = [];obj.id = tds[k].querySelector('select').id;var opts = tds[k].querySelector('select').querySelectorAll('option');for (var j = 0; j < opts.length; j++) {
+                obj.opts.push(opts[j].textContent.trim());obj.selected.push(opts[j].selected);
+              }
+            }data.content.push(obj);
+          }
+        }
+      }return data;
+    },
+    doAction_uiControl595_2rT4iA: function (data, elem) {},
+    getTemplate_uiControl595_2rT4iA: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    var lis = data.content.map(function(ele,index){\n      //\u666E\u901A\u8F93\u5165\u6846\n      if(ele.type == 'input'){\n        return(\n        \t<div>\n          \t<div>{ele.left}</div>\n            <div><input readOnly={ele.readonly} onChange={_this.onchange} value={ele.value} id={ele.id} /></div>\n          </div>\n      \t)\n      }\n      //\u5355\u9009\n      if(ele.type == 'radio'){\n        \n      }\n      //\u4E0B\u62C9\u6846\n      if(ele.type == 'select'){\n        \n      }\n      return (\n      \t<div>\n        \t\n        </div>\n      )\n    })\n    return (\n      <div>\n        {lis}\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    var lis = data.content.map(function (ele, index) {\n      //\u666E\u901A\u8F93\u5165\u6846\n      if (ele.type == 'input') {\n        return React.createElement(\n          'div',\n          null,\n          React.createElement(\n            'div',\n            null,\n            ele.left\n          ),\n          React.createElement(\n            'div',\n            null,\n            React.createElement('input', { readOnly: ele.readonly, onChange: _this.onchange, value: ele.value, id: ele.id })\n          )\n        );\n      }\n      //\u5355\u9009\n      if (ele.type == 'radio') {}\n      //\u4E0B\u62C9\u6846\n      if (ele.type == 'select') {}\n      return React.createElement('div', null);\n    });\n    return React.createElement(\n      'div',\n      null,\n      lis\n    );\n  }\n});";
     }
   });
 })(window, ysp);

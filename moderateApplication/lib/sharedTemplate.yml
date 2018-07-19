@@ -1457,7 +1457,6 @@
     if (type == 'click') {
       elem.querySelectorAll('li')[data].querySelector('a').click();
     }
-
 - name: 首页列表(快讯、公司公告等等)
   getTemplate: "import {Component} from 'react'; \nimport {CustomHeader} from 'ysp-custom-components';\nexport default class extends Component{\n   constructor(props){\n   \t super(props);\n  }\n  handlerClick(e){\n    var target = e.target;\n    var index = target.dataset.index;\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        data:{\n          index: index\n        },\n        eventType: 'click'\n      })\n    }\n  }\n  render = () => {\n    var _this = this;\n    var data = this.props.customData;\n    var title = this.props.customData && this.props.customData.title  || [];\n    var date = this.props.customData && this.props.customData.date || [];\n    var flag = this.props.customData && this.props.customData.flag || [];\n    var _this = this;\n    return (\n      <div className=\"ysp-flash-more\">\n        {\n          title.map((items,index)=>{\n            return(\n            \t<div onClick={_this.handlerClick.bind(_this)}  data-index={index}>\n                <span onClick={_this.handlerClick.bind(_this)}  data-index={index} \n                  className={flag[index][0] == null ? \"\" : \"ysp-flash-text-color\"}>\n                  {items}\n                </span>\n                <span onClick={_this.handlerClick.bind(_this)}  data-index={index}>\n                  {date[index]}\n                </span>\n              </div>\n            );\n          })\n        }\n      </div>\n    )\n   }\n}"
   getData: |
@@ -1621,4 +1620,72 @@
       //     window.location.href = 'http://172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3&_ysp_forcepc=1';
       //   }
       // }
+    }
+- name: commit三种流程
+  getTemplate: |-
+    module.exports = React.createClass({
+      onclick:function(e){
+        var handler = this.props.customHandler;
+        var target = e.target;
+        if(handler){
+          handler({
+            eventType:'onclick'
+          })
+        }
+      },
+      handlerClick:function(e){
+        var target = e.target;
+        var title = target.dataset.title;
+        var handler = this.props.customHandler;
+        if(handler){
+          handler({
+            data: title,
+            eventType:'click'
+          })
+        }
+      },
+      render: function() {
+        var data = this.props.customData && this.props.customData.flag || [];
+        return (
+          <div class="ysp-index-title">
+            <div className = {data[0] == "active" ? "ysp-index-title-color" : "ysp-index-title-noColor"} data-title = "待办" onClick={this.onclick.bind(this)}>新建申请</div>
+            <div className = {data[1] == "active" ? "ysp-index-title-color" : "ysp-index-title-noColor"} data-title = "待办" onClick={this.handlerClick.bind(this)}>待办</div>
+            <div className = {data[2] == "active" ? "ysp-index-title-color" : "ysp-index-title-noColor"} data-title = "已办" onClick={this.handlerClick.bind(this)}>已办</div>
+          </div>
+        )
+      }
+    });
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {
+      flag: []
+    };
+
+    data.flag.push(elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').getAttribute("class"));
+
+    var lis = elem.querySelectorAll("li");
+
+    for (var i = 0; i < lis.length - 1; i++) {
+      var cla = lis[i].querySelector("a").getAttribute("class");
+      data.flag.push(cla);
+    }
+
+    return data;
+  doAction: |
+    if ('click' == data.eventType) {
+      var title = data.dataCustom;
+
+      if ('待办' == title) {
+        elem.querySelectorAll("li")[0].querySelector("a").click();
+      } else {
+        // var url = ysp.appMain.getActiveUrl();
+        // ysp.appMain.openWindow(url);
+        elem.querySelectorAll("li")[1].querySelector("a").click();
+      }
+    }
+    if (data.eventType == 'onclick') {
+      elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
     }

@@ -1,0 +1,747 @@
+{
+  "version": "0.1",
+  "id": "Newapplocation",
+  "targetURL": "http://172.16.11.61:8000/MyProcess/StartProcess.aspx",
+  "jsFile": "index.js",
+  "requires": {
+    "Newleave": "../Newleave/index.json",
+    "commission": "../commission/index.json"
+  },
+  "chineseName": "新建申请",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control587_qgQlzN": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "a/@href",
+            "prob": 3,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": {
+              "pathname": "/MyProcess/StartProcess.aspx"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]/UL[1]/LI[1]/A[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]//A",
+              "descendant::DIV[@id=\"DivPerson\"]//A"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container.main DIV.nav-left A.active"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[1]/UL[1]/LI[1]/A[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control587_qgQlzN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control588_gFJbDL": {
+      "location": {
+        "data": {
+          "tagName": "UL"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]/UL[2]",
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"DivPerson\"]//UL",
+              "descendant::DIV[@id=\"DivPerson\"]//UL"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              10
+            ],
+            "value": "DIV.autofit.page-shadow DIV.container.main DIV.nav-left UL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[1]/UL[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control588_gFJbDL"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control589_UX7D7i": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[1]/DIV[2]/DIV[5]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.autofit.page-shadow DIV.container.main DIV.content"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control589_UX7D7i"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control590_H88pT8": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请假申请单"
+              ],
+              "visText": [
+                "请假申请单"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请假申请单"
+              ],
+              "visText": [
+                "请假申请单"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[6]/UL[1]/LI[5]/A[2]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              9,
+              97,
+              182
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "button"
+    },
+    "control591_KgF6bw": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "因公外出申请单"
+              ],
+              "visText": [
+                "因公外出申请单"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "因公外出申请单"
+              ],
+              "visText": [
+                "因公外出申请单"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[6]/UL[1]/LI[6]/A[2]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              255,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
+    },
+    "control592_WEfx6q": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "差旅费用报销流程"
+              ],
+              "visText": [
+                "差旅费用报销流程"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "差旅费用报销流程"
+              ],
+              "visText": [
+                "差旅费用报销流程"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[8]/UL[1]/LI[11]/A[2]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              255,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
+    }
+  },
+  "contexts": {
+    "context61_pqdpBL": {
+      "controls": [
+        "control587_qgQlzN",
+        "control588_gFJbDL",
+        "control589_UX7D7i",
+        "control590_H88pT8",
+        "control591_KgF6bw",
+        "control592_WEfx6q"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:8000\\/MyProcess\\/StartProcess\\.aspx"
+      ]
+    }
+  },
+  "flows": {
+    "flow182_KvipaB": {
+      "toContexts": [
+        {
+          "toContextId": "context61_pqdpBL"
+        }
+      ]
+    },
+    "flow183_lwQoVi": {
+      "fromContextId": "context61_pqdpBL",
+      "fromAction": "doAction",
+      "fromControlId": "control589_UX7D7i",
+      "toContexts": [
+        {
+          "toContextId": "context61_pqdpBL"
+        },
+        {
+          "toContextId": "context1_CPB3yD",
+          "toModelId": "commission"
+        }
+      ]
+    },
+    "flow187_OL1IM2": {
+      "fromContextId": "context61_pqdpBL",
+      "fromAction": "doAction",
+      "fromControlId": "control588_gFJbDL",
+      "toContexts": [
+        {
+          "toContextId": "context61_pqdpBL"
+        }
+      ]
+    },
+    "flow190_OvmExa": {
+      "fromContextId": "context61_pqdpBL",
+      "fromAction": "click",
+      "fromControlId": "control590_H88pT8",
+      "toContexts": [
+        {
+          "toContextId": "context61_pqdpBL"
+        },
+        {
+          "toContextId": "context56_U4PFJK",
+          "toModelId": "Newleave"
+        }
+      ]
+    },
+    "flow192_rIUR8T": {
+      "fromContextId": "context61_pqdpBL",
+      "fromAction": "click",
+      "fromControlId": "control592_WEfx6q",
+      "toContexts": [
+        {
+          "toContextId": "context61_pqdpBL"
+        }
+      ]
+    },
+    "flow193_bNsNvF": {
+      "fromContextId": "context61_pqdpBL",
+      "fromAction": "click",
+      "fromControlId": "control591_KgF6bw",
+      "toContexts": [
+        {
+          "toContextId": "context61_pqdpBL"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page61_9i4ISA": {
+      "contextId": "context61_pqdpBL",
+      "layout": [
+        {
+          "id": "uiControl587_km9Wh8",
+          "controlId": "control587_qgQlzN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl587_km9Wh8",
+                "onGetTemplate": "getTemplate_uiControl587_km9Wh8"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl588_WA9IUZ",
+          "controlId": "control588_gFJbDL",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl588_WA9IUZ",
+                "onGetTemplate": "getTemplate_uiControl588_WA9IUZ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl589_fBkpUm",
+          "controlId": "control589_UX7D7i",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl589_fBkpUm",
+                "onGetTemplate": "getTemplate_uiControl589_fBkpUm"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl590_ika4M4",
+          "controlId": "control590_H88pT8",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "hollow": true,
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl591_92WIDI",
+          "controlId": "control591_KgF6bw",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "hollow": true,
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl592_34Hyxq",
+          "controlId": "control592_WEfx6q",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "hollow": true,
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context61_pqdpBL": [
+          "首页-中可流程工作台"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context61_pqdpBL": [
+          "172.16.11.61:8000/MyProcess/StartProcess.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context61_pqdpBL": [
+          [
+            "-b-afc-be-fdc",
+            "-cde-db-c-ebefe",
+            "-e-ec-a-dddea",
+            "DivPerson",
+            "DivReport",
+            "DivSearch",
+            "DivSupport",
+            "LiLeave",
+            "LiReport",
+            "LiVacation",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "a--cc-aa-afaedb",
+            "a-a-b-add-adca",
+            "aaca-dd-dd-ae-bcfbf",
+            "abbeb-bc--b-bcdca",
+            "abd-ac-caf--fded",
+            "ac-fedf-f-a-adfcb",
+            "acab-ad--ba-a",
+            "ada-c-ee-ac-bed",
+            "adee-bb--bea-dbccfcd",
+            "aea-d--a-aafee",
+            "aedbf-ede---dddb",
+            "aefd-d-a-acf-bcab",
+            "af-a-a-bb-cbbbd",
+            "aspnetForm",
+            "b-c-e-be-bdecc",
+            "b-ee-fb--bfae",
+            "b-ef-a-be-dadd",
+            "ba--da-ab-bbd",
+            "ba-eca--edc-bedc",
+            "bcdd-d-f-bcc-defaff",
+            "bda--b-bdb-ffadbf",
+            "bde-ed-bd-c-fecf",
+            "bdff-eb-ef-bb-abebec",
+            "bec-bb-f-d-fafcd",
+            "bec-ec-d-aab-debbbab",
+            "bedbc-a-c-bb-cf",
+            "bedbc-a-c-bb-cfa",
+            "bedbc-a-c-bb-cfb",
+            "bedbc-a-c-bb-cfc",
+            "bedbc-a-c-bb-cfd",
+            "bedbc-a-c-bb-cfe",
+            "beece-f-b--aff",
+            "bfeccd-d-ec-fa-c",
+            "btn-flow-edit",
+            "c--cb-dd-adb",
+            "c-cf-aa-d-fe",
+            "ca-eb-af-c-fbaf",
+            "cabfad-b--b-bae",
+            "cac--b-ae-becaab",
+            "cb-f-da-b-fbdaffd",
+            "cb-fda-c-bc-cad",
+            "cbbf-db-df-a-dd",
+            "cbda-ab-da-f-cef",
+            "ccf-dfed-ebc-b-fba",
+            "cd-debf-fb-bdb-afccd",
+            "cdc-ddf--bff-adf",
+            "ceb--a-aab-abb",
+            "ceccee-dba--ad-da",
+            "cfa-c-fa--bcc",
+            "common-flow",
+            "ctl_lblTaskNum",
+            "ctl_rightContent_hfCurrentEmpLoginName",
+            "ctl_rightContent_rptCategoryListLevel__ctl_hfCategoryIDLevel_",
+            "d--ca-ac-afeadf",
+            "da-be-d-d-bcebb",
+            "dac--f-bba-edb",
+            "dad-ce-dc-fdd-c",
+            "daf--d-fb-deccef",
+            "dbcb-fcd-a--dfcc",
+            "dc-e-ee-bf-adb",
+            "dd--c-bff-dcdfbf",
+            "dd-fd-e-a-cefb",
+            "ddb-ec-d-ab-adbd",
+            "df-c--e-e",
+            "df-fcc-aae-c-fceabf",
+            "dfa-f--ad-fcbefdfdf",
+            "e--b-f-dcefbfd",
+            "e-eea-d-c-abab",
+            "e-f-c-b-cfebdb",
+            "eaaed-cbd-ff-fd-baffee",
+            "eab--e--acacafa",
+            "ebd-cf-aee-e-eaffda",
+            "ebd-f--a-edf",
+            "ecce-b--bde-cab",
+            "ecfec--d-e-dbbcdfe",
+            "ecff-d-ccf-b-bacbf",
+            "ed----cdde",
+            "ed-bb-a-ab-bcccf",
+            "edacea-f-c-acb-afcdb",
+            "edf--cc-afbf-aef",
+            "ef-ce--a-dfccc",
+            "efa-f-ac-abc-efc",
+            "efdbc-a--a-cbbbd",
+            "f-afe-ad-ab-bc",
+            "faa---ab-cbfcef",
+            "fbe-bb-e-a-a",
+            "fdac-e--cc-cec",
+            "fdbbe-d-d-eb-fbffe",
+            "fdbdf-bd-ec-dae-cdaa",
+            "fdd-bdbb-b-bbe-ad",
+            "fdfa-ad-eb-be-ecadc",
+            "fe----fdcdaaead",
+            "feb-cf-b--febf",
+            "ff-a--adf-ebdac",
+            "ff-e--a-fddafcca",
+            "ffab-fd-f-eed-beff",
+            "ffbfe--c-ac-aadea",
+            "imgIphone",
+            "ul_commonProc"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context61_pqdpBL": [
+          [
+            "action",
+            "active",
+            "all-flow",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "autofit",
+            "breadcrumb",
+            "common-flow",
+            "container",
+            "content",
+            "flow-list",
+            "flow-title",
+            "footer",
+            "header",
+            "icon-angle-right",
+            "icon-check",
+            "icon-check-empty",
+            "icon-comment-alt",
+            "icon-home",
+            "icon-key",
+            "icon-off",
+            "icon-pencil",
+            "icon-plus",
+            "icon-question-sign",
+            "icon-user",
+            "logo",
+            "main",
+            "nav-left",
+            "nav-main",
+            "nav-quick",
+            "page-shadow",
+            "special-notes",
+            "title"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context61_pqdpBL": [
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H4",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/STRONG",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/H4/INPUT-hidden",
+            "DIV/SPAN/A",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/BR",
+            "DIV/UL/IMG",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "LI/A/I",
+            "LI/A/SPAN",
+            "SPAN/A/I",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TR/TD/BR",
+            "TR/TD/DIV",
+            "UL/LI/A",
+            "UL/LI/IMG"
+          ]
+        ]
+      }
+    }
+  }
+}
