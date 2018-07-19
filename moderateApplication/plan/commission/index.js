@@ -5,11 +5,12 @@
         return;
       }var data = { flag: [] };var lis = elem.querySelectorAll("li");for (var i = 0; i < lis.length - 1; i++) {
         var cla = lis[i].querySelector("a").getAttribute("class");data.flag.push(cla);
-      }return data;
+      }data.flag.push(elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').getAttribute("class"));return data;
     },
     doAction_uiControl172_qpwrqq: function (data, elem) {
       if ('click' == data.eventType) {
-        var title = data.dataCustom;if ('待办' == title) {
+        var title = data.dataCustom;
+        if ('待办' == title) {
           elem.querySelectorAll("li")[0].querySelector("a").click();
         } else {
           // var url = ysp.appMain.getActiveUrl();
