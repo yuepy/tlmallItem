@@ -7,6 +7,7 @@
         //ysp.runtime.Model.setForceMatchModels(['checkMyInfo']);
         // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
         //   top.EAPI.closeWindow();
+
         // } else {
         //   ysp.appMain.back();
         // } // ysp.appMain.back();
