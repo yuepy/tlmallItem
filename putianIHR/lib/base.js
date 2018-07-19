@@ -47,29 +47,21 @@
                 ysp.customHelper.tab = "menu"
             }
 
-//           if(aWin.location.href.indexOf("cmd")!==-1&&aWin.location.href.indexOf("log")!==-1){
-//             alert(aWin.location.href);
-//             debugger;
-//             doc.querySelector("#ptlangsel").querySelector("option[value='ZHS']").selected=true;
-//             doc.querySelector("#ptlangsel").dispatchEvent(new Event("change"));
-            
-//           }
-            // if(aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?"||aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/"||aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h"){
-            //   // location.href = 'http://192.168.220.110/psp/ps/EMPLOYEE/HRMS?&cmd=login&languageCd=ZHS'
-            //   aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
-            // }
-
-            // if (aWin.location.href.indexOf("signal") !== -1) {
-            //     alert(aWin.location.href)
-            //     aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
-            // }
-          //http://192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL?PORTALPARAM_PTCNAV=HPS_TL_PAG_010_CP_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_ABS_07&EOPP.SCLabel=TL_ABS_07&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_ABS_07.ADMN_S201802241601542922147282&IsFolder=false
+						 
 
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-
+          //ios弹出_ysp_top
+// 					var oldAlert=aWin.alert;
+//           aWin.alert=function(str){
+//             if(/_ysp_top/.test(str)){
+//               return;
+//             }else{
+              
+//             }
+//           }
         },
 
         //登录相关接口
