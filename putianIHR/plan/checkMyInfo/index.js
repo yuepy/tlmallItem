@@ -145,7 +145,7 @@
         //   } else {
         //     top.EAPI.closeWindow();
         //   }
-        var innerBack = ysp.customHelper.innerBack;innerBack = "returnBack";
+        ysp.customHelper.innerBack = "returnBack";
       }
     },
     getTemplate_uiControl41_msI9wh: function () {

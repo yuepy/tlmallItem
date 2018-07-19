@@ -17,12 +17,12 @@
         //   } else {
         //     top.EAPI.closeWindow();
         //   }
-        var backVal = ysp.customHelper.tab;var innerBack = ysp.customHelper.innerBack;if (backVal == "menu" && innerBack == null) {
+        debugger;var backVal = ysp.customHelper.tab;if (backVal == "menu" && ysp.customHelper.innerBack == null) {
           ysp.appMain.back();backVal = null;
-        } else if (backVal == "menu" && innerBack == "returnBack") {
-          ysp.appMain.back();innerBack = null;
-        } else if (backVal == null && innerBack == "returnBack") {
-          ysp.appMain.back();innerBack = null;
+        } else if (backVal == "menu" && ysp.customHelper.innerBack == "returnBack") {
+          ysp.appMain.back();ysp.customHelper.innerBack = null;
+        } else if (backVal == null && ysp.customHelper.innerBack == "returnBack") {
+          ysp.appMain.back();ysp.customHelper.innerBack = null;
         } else {
           top.EAPI.closeWindow();
         }
