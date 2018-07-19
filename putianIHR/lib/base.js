@@ -24,6 +24,7 @@
         tableData: _tableData,
         alert: _alert,
         tab: null,
+      	innerBack:null,
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {

@@ -10,8 +10,19 @@
         // } else {
         //   ysp.appMain.back();
         // } // ysp.appMain.back();
-        var backVal = ysp.customHelper.tab;if (backVal == "menu") {
+        //   var backVal = ysp.customHelper.tab;
+        //   if (backVal == "menu") {
+        //     ysp.appMain.back();
+        //     backVal = null;
+        //   } else {
+        //     top.EAPI.closeWindow();
+        //   }
+        var backVal = ysp.customHelper.tab;var innerBack = ysp.customHelper.innerBack;if (backVal == "menu" && innerBack == null) {
           ysp.appMain.back();backVal = null;
+        } else if (backVal == "menu" && innerBack == "returnBack") {
+          ysp.appMain.back();innerBack = null;
+        } else if (backVal == null && innerBack == "returnBack") {
+          ysp.appMain.back();innerBack = null;
         } else {
           top.EAPI.closeWindow();
         }

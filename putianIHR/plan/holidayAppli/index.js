@@ -3,15 +3,26 @@
     getData_control10_g7lH5a: function (elem) {},
     doAction_uiControl10_MhoIT9: function (data, elem) {
       var type = data.eventType;if (type == "back") {
-        debugger; //elem.ownerDocument.defaultView.close();
+        //elem.ownerDocument.defaultView.close();
         //ysp.runtime.Model.setForceMatchModels(['checkMyInfo']);
         // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
         //   top.EAPI.closeWindow();
         // } else {
         //   ysp.appMain.back();
         // } // ysp.appMain.back();
-        var backVal = ysp.customHelper.tab;if (backVal == "menu") {
+        //   var backVal = ysp.customHelper.tab;
+        //   if (backVal == "menu") {
+        //     ysp.appMain.back();
+        //     backVal = null;
+        //   } else {
+        //     top.EAPI.closeWindow();
+        //   }
+        var backVal = ysp.customHelper.tab;var innerBack = ysp.customHelper.innerBack;if (backVal == "menu" && innerBack == null) {
           ysp.appMain.back();backVal = null;
+        } else if (backVal == "menu" && innerBack == "returnBack") {
+          ysp.appMain.back();innerBack = null;
+        } else if (backVal == null && innerBack == "returnBack") {
+          ysp.appMain.back();innerBack = null;
         } else {
           top.EAPI.closeWindow();
         }
