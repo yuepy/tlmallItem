@@ -66,7 +66,7 @@
       // }
       // }
       if ('click' == type) {
-        debugger;var alist = elem.querySelectorAll('a[href="javascript:void(0)"]')[data].click();
+        var alist = elem.querySelectorAll('a[href="javascript:void(0)"]')[data].click();
       }
     },
     getTemplate_uiControl589_fBkpUm: function () {

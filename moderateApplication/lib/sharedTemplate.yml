@@ -1689,3 +1689,233 @@
     if (data.eventType == 'onclick') {
       elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
     }
+- name: 发起流程知会信息
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType : 'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    if(!data){\n      return '';\n    }\n    \n    return (\n      <div className='derstanding'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='Content'>\n        \t<div>{data.left}</div>\n          <div>{data.right}</div>\n          <div><button onClick={_this.onClick.bind(_this)}>添加知会人</button></div>\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {};
+    data.left = elem.querySelector('label').textContent.trim().split('：')[0];
+    data.title = '知会信息';
+    data.right = elem.querySelector('input[type="text"]').value;
+    return data;
+  doAction: |
+    if (data.eventType == 'click') {
+      elem.querySelector('a').click();
+    }
+- name: 发起流程请假基本信息
+  getTemplate: "module.exports = React.createClass({\n  onchange:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'iptchange',\n        data:{\n          value:target.value,\n          id:target.id\n        }\n      })\n    }\n  },\n  onclick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'aclick',\n        data:{\n          data_id:target.getAttribute('data-id')\n        }\n      })\n    }\n  },\n  click:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'radiobtn',\n        data:{\n          id:target.id\n        }\n      })\n    }\n  },\n  change:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'selectchange',\n        data:{\n          index:target.selectedIndex,\n          id:target.id\n        }\n      })\n    }\n  },\n  blockclick:function(e){\n    var target = e.target;\n    target.style.display = 'none';\n  \ttarget.nextElementSibling.style.display = 'block';\n    target.previousElementSibling.style.display = 'block';\n  },\n  noneclick:function(e){\n    var target = e.target;\n    target.style.display = 'none';\n    target.previousElementSibling.style.display = 'block';\n    target.previousElementSibling.previousElementSibling.style.display = 'none';\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    var lis = data.content.map(function(ele,index){\n\t\t\tif(index<6){\n              //普通输入框\n      if(ele.type == 'input'){\n        return(\n        \t<div className='content'>\n          \t<div>{ele.left}</div>\n            <div><input readOnly={ele.readonly} onChange={_this.onchange} value={ele.text} id={ele.id} /></div>\n          </div>\n      \t)\n      }\n      //带选人的输入框\n      if(ele.type == 'ainput'){\n        return(\n        \t<div className='content'>\n          \t<div>{ele.left}</div>\n            <div><input type='text' readOnly={ele.readonly} value={ele.text} id={ele.id} /><a data-id={ele.hrefid} onClick={_this.onclick} href=\"javascript:;\"></a></div>\n          </div>\n        )\n      }\n      //单选\n      if(ele.type == 'radio'){\n        var btn = ele.text.map(function(d,i){\n          return(\n          \t<button onClick={_this.click} id={ele.id[i]} className={ele.checked[i]?'radiobtn':''}>{d}</button>\n          )\n        })\n        return(\n        \t<div className='content'>\n          \t<div>{ele.left}</div>\n            <div>{btn}</div>\n          </div>\n        )\n      }\n      //下拉框\n      if(ele.type == 'select'){\n        var opts = ele.opts.map(function(d,i){\n          return(<option selected={ele.selected[i]}>{d}</option>)\n        })\n        return(\n          <div className='content'>\n            <div>{ele.left}</div>\n            <div><select onChange={_this.change} id={ele.id}>{opts}</select></div>\n          </div>\n        )\n      }\n      }\n    })\n    var list = data.content.map(function(ele,index){\n      if(index>5){\n                      //普通输入框\n      if(ele.type == 'input'){\n        return(\n        \t<div className='content'>\n          \t<div>{ele.left}</div>\n            <div><input readOnly={ele.readonly} onChange={_this.onchange} value={ele.text} id={ele.id} /></div>\n          </div>\n      \t)\n      }\n      //带选人的输入框\n      if(ele.type == 'ainput'){\n        return(\n        \t<div className='content'>\n          \t<div>{ele.left}</div>\n            <div><input type='text' readOnly={ele.readonly} value={ele.text} id={ele.id} /><a data-id={ele.hrefid} onClick={_this.onclick} href=\"javascript:;\"></a></div>\n          </div>\n        )\n      }\n      //单选\n      if(ele.type == 'radio'){\n        var btn = ele.text.map(function(d,i){\n          return(\n          \t<button onClick={_this.click} id={ele.id[i]} className={ele.checked[i]?'radiobtn':''}>{d}</button>\n          )\n        })\n        return(\n        \t<div className='content'>\n          \t<div>{ele.left}</div>\n            <div>{btn}</div>\n          </div>\n        )\n      }\n      //下拉框\n      if(ele.type == 'select'){\n        var opts = ele.opts.map(function(d,i){\n          return(<option selected={ele.selected[i]}>{d}</option>)\n        })\n        return(\n          <div className='content'>\n            <div>{ele.left}</div>\n            <div><select onChange={_this.change} id={ele.id}>{opts}</select></div>\n          </div>\n        )\n      }\n        if(ele.type == 'textareaipt'){\n          return(\n          \t<div className='content textareaipt'>\n            \t<div><span>{ele.left}</span><span>{ele.lefttext}</span></div>\n              <div style={{'display':'block','border':'none'}}><textarea onChange={_this.textchange} value={ele.text} id={ele.id}></textarea>\n              <p>{ele.value}</p></div>\n            </div>\n          )\n        }\n      }\n    })\n    return (\n      <div className='leaveinforme'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='leave_Content'>\n        \t<div className='content_block'>{lis}</div>\n          <div className='content_none'>{list}</div>\n          <div className='previousblock' style={{'display':'block'}} onClick={_this.blockclick}>显示更多内容</div>\n          <div className='previousnone' style={{'display':'none'}} onClick={_this.noneclick}>收起更多内容</div>\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {};
+
+    data.title = '基本信息';
+
+    data.content = [];
+
+    var trs = elem.querySelectorAll('tr');
+
+    for (var i = 0; i < trs.length; i++) {
+      var tds = trs[i].querySelectorAll('td');
+
+      for (var k = 0; k < tds.length; k++) {
+        if (tds[k].textContent.trim() != '') {
+          var obj = {}; //判断是否为input
+
+          if (tds[k].querySelector('input')) {
+            //判断是单选还是输入框
+            if (!tds[k].querySelector('input[type="radio"]')) {
+              //判断有没有选人的功能
+              if (tds[k].querySelector('a')) {
+                obj.hrefid = tds[k].querySelector('input').id;
+                obj.type = 'ainput';
+              } else {
+                obj.type = 'input';
+              }
+
+              obj.readonly = tds[k].querySelector('input[type="text"]').readOnly;
+              obj.id = tds[k].querySelector('input[type="text"]').id;
+              obj.left = tds[k].querySelector('label').textContent.trim().split('*')[0];
+              obj.text = tds[k].querySelector('input[type="text"]').value;
+            } else {
+              //单选
+              obj.left = tds[k].querySelector('label').textContent.trim().split('*')[0];
+              obj.type = 'radio';
+              obj.text = [];
+              obj.name = [];
+              obj.id = [];
+              obj.checked = [];
+              var radios = tds[k].querySelectorAll('input[type="radio"]');
+
+              for (var u = 0; u < radios.length; u++) {
+                obj.name.push(radios[u].name);
+                obj.text.push(radios[u].nextSibling.textContent.trim());
+                obj.id.push(radios[u].id);
+                obj.checked.push(radios[u].checked);
+              }
+            }
+          } //判断是否有select
+
+
+          if (tds[k].querySelector('select')) {
+            obj.left = tds[k].querySelector('label').textContent.trim().split('*')[0];
+            obj.type = 'select';
+            obj.opts = [];
+            obj.selected = [];
+            obj.id = tds[k].querySelector('select').id;
+            var opts = tds[k].querySelector('select').querySelectorAll('option');
+
+            for (var j = 0; j < opts.length; j++) {
+              obj.opts.push(opts[j].textContent.trim());
+              obj.selected.push(opts[j].selected);
+            }
+          }
+
+          data.content.push(obj);
+        }
+      }
+    }
+
+    var box = elem.parentElement.querySelector("#tb3");
+
+    var str = {};
+
+    str.left = box.querySelector('label').textContent.trim().split("*")[0];
+
+    str.lefttext =
+    box.querySelector('label').textContent.trim().split("*")[1].trim();
+
+    str.value = box.nextElementSibling.textContent.trim();
+
+    str.type = 'textareaipt';
+
+    str.id = box.querySelector('textarea').id;
+
+    str.text = box.querySelector('textarea').value;
+
+    data.content.push(str);
+
+    return data;
+  doAction: |
+    var type = data.eventType;
+    var data = data.customData;
+    if (type == 'iptchange') {
+      elem.querySelector("#" + data.id).value = data.value;
+    }
+    if (type == 'aclick') {
+      //   for (var i = 0; i < trs.length; i++) {
+      //     var tds = trs[i].querySelectorAll('td');
+      //     for (var k = 0; k < tds.length; k++) {
+      //         if (tds[k].textContent.trim() != '') {
+      //         }
+      //     }
+      //   }
+      elem.querySelector("#" + data.data_id).parentElement.querySelector('a').click();
+    }
+    if (type == 'radiobtn') {
+      elem.querySelector("#" + data.id).click();
+    }
+    if (type == 'selectchange') {
+      elem.querySelector("#" + data.id).selectedIndex = data.index;
+      elem.querySelector("#" + data.id).onchange();
+    }
+- name: 发起请假明细
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    var index = target.getAttribute('data-id');\n    if(handler){\n      handler({\n        eventType:'onclick',\n        data:{\n          index:index\n        }\n      })\n    }\n  },\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        value = target.value;\n    if(handler){\n      handler({\n        eventType:'onChange',\n        data:{\n          value:value,\n          id:target.id\n        }\n      })\n    }\n  },\n  click:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'delclick',\n        data:{\n          id:target.id\n        }\n      })\n    }\n  },\n  dlsclick:function(e){\n    var target = e.target;\n    if(target.className=='display'){\n      target.parentElement.parentElement.nextElementSibling.style.display = 'none';\n      target.className = 'hide';\n    }else{\n      target.parentElement.parentElement.nextElementSibling.style.display = 'block';\n      target.className = 'display';\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(!data){\n      return '';\n    }\n    var lis = data.content.map(function(d,i){\n      return(\n      \t<div className='leave_content'>\n        \t<div className='content_title'>\n          \t<div>{'0'+(i+1)}</div>\n            <div>\n            \t<div>请假明细</div>\n              <span className='hide' onClick={_this.dlsclick}></span>\n            </div>\n          </div>\n          <div className='content_none'>\n            <div>\n              <div>{data.titles[0]}</div>\n              <div>\n              \t<input onChange={_this.onChange} type='date' id={d[0].id} />\n              </div>\n            </div>\n            <div>\n              <div>{data.titles[1]}</div>\n              <div>\n                <input onChange={_this.onChange} type='time' id={d[1].id} />\n              </div>\n            </div>\n            <div>\n            <div>{data.titles[2]}</div>\n              <div>\n                <input onChange={_this.onChange} type='date' id={d[2].id} />\n              </div>\n            </div>\n            <div><div>{data.titles[3]}</div><div><input onChange={_this.onChange} type='time' id={d[3].id} /></div></div>\n            <div><div>{data.titles[4]}</div><div><input type='text' id={d[4].id} value={d[4].text} /></div></div>\n            <div><div>{data.titles[5]}</div><div>{d[5].text}</div></div>\n            <div><div>{data.titles[6]}</div><div>{d[6].text}</div></div>\n            <div><button onClick={_this.click} id={d[7].id}>删除</button></div>\n          </div>\n        </div>\n      )\n    })\n    return (\n      <div className='leaveDeta'>\n        <div className='contenttitle'>\n          <span className='xia'></span>\n          <p>{data.title}\n            <div>\n              <button data-id='1' onClick={_this.onClick.bind(_this)}>验证</button>\n              <button data-id='0' onClick={_this.onClick.bind(_this)}>添加</button>\n            </div>\n          </p>\n        </div>\n        <div className='leave_box'>{lis}</div>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {};
+    data.titles = [];
+    data.content = [];
+    data.title = '请假明细';
+    var trs = elem.querySelectorAll('tr');
+    var ths = elem.querySelectorAll('th');
+    for (var i = 0; i < ths.length; i++) {
+      data.titles.push(ths[i].textContent.trim().split("*")[0]);
+    }
+    for (var i = 2; i < trs.length; i++) {
+      if (trs[i].querySelector('input')) {
+        var arr = [];
+        var tds = trs[i].querySelectorAll('td');
+
+        for (var k = 0; k < tds.length; k++) {
+          var obj = {};
+
+          if (tds[k].querySelector('input[type="text"]')) {
+            obj.id = tds[k].querySelector('input[type="text"]').id;
+            obj.text = tds[k].querySelector('input[type="text"]').value;
+          } else if (tds[k].querySelector('a')) {
+            obj.text = tds[k].querySelector('a').textContent.trim();
+            obj.id = tds[k].querySelector('a').id;
+          } else if (tds[k].querySelector('select')) {
+            obj.text = tds[k].querySelectorAll('select')[0].value + tds[k].querySelectorAll('select')[1].value + tds[k].querySelectorAll('span')[1].textContent.trim();
+          } else {
+            obj.text = tds[k].textContent.trim();
+          }
+
+          arr.push(obj);
+        }
+
+        data.content.push(arr);
+      }
+    }
+    return data;
+  doAction: |
+    var type = data.eventType;
+    var data = data.customData;
+    if (type == 'onclick') {
+      elem.querySelectorAll('button')[data.index].click();
+    }
+    if (type == 'onChange') {
+      elem.querySelector("#" + data.id).value = data.value;
+    }
+    if (type == 'delclick') {
+      elem.querySelector("#" + data.id).click();
+    }
+- name: 发起关联流程
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType : 'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      var list = ele.map(function(d,i){\n        if(i==0){\n          return(\n          \t<div className='titlediv'>\n            \t<div>{'0'+(i+1)}</div>\n              <div>{d}</div>\n            </div>\n          )\n        }\n        return(\n        \t<div>\n          \t<div className='contentitem'>{data.titles[i]}</div>\n            <div className='contentitem'>{d}</div>\n          </div>\n        )\n      })\n      return(\n      \t<div className='contentit'>{list}</div>\n      )\n    })\n    return (\n      <div className='relation'>\n        <div className='contenttitle'><span></span><p><div>{data.title}</div><button onClick={this.onClick}>添加关联流程</button></p></div>\n        <div className='content'>\n    \t\t\t{lis}    \t\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {};
+
+    data.title = '关联流程';
+
+    data.titles = [];
+
+    data.content = [];
+
+    var ths =
+    elem.querySelector('thead').querySelector('tr').querySelectorAll('th');
+
+    for (var i = 0; i < ths.length; i++) {
+      if (i < ths.length - 1) {
+        data.titles.push(ths[i].textContent.trim());
+      }
+    }
+
+    var trs = elem.querySelector('tbody').querySelectorAll('tr');
+
+    for (var i = 0; i < trs.length; i++) {
+      var arr = [];
+      var tds = trs[i].querySelectorAll('td');
+
+      for (var k = 0; k < data.titles.length; k++) {
+        arr.push(tds[k].textContent.trim());
+      }
+
+      data.content.push(arr);
+    }
+
+    return data;
+  doAction: |
+    if (data.eventType == 'click') {
+      elem.nextElementSibling.nextElementSibling.click();
+    }
