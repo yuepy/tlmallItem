@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "Newleave": "../Newleave/index.json",
-    "commission": "../commission/index.json"
+    "commission": "../commission/index.json",
+    "Newawaybus": "../Newawaybus/index.json"
   },
   "chineseName": "新建申请",
   "description": "",
@@ -141,189 +142,6 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
-    },
-    "control590_H88pT8": {
-      "location": {
-        "data": {
-          "tagName": "A"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "button/text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "请假申请单"
-              ],
-              "visText": [
-                "请假申请单"
-              ]
-            }
-          },
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "请假申请单"
-              ],
-              "visText": [
-                "请假申请单"
-              ]
-            }
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[6]/UL[1]/LI[5]/A[2]"
-          },
-          {
-            "id": "style/color",
-            "value": [
-              9,
-              97,
-              182
-            ]
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "intendedRole": "button",
-      "roles": "element,button,link",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "button"
-    },
-    "control591_KgF6bw": {
-      "location": {
-        "data": {
-          "tagName": "A"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "button/text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "因公外出申请单"
-              ],
-              "visText": [
-                "因公外出申请单"
-              ]
-            }
-          },
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "因公外出申请单"
-              ],
-              "visText": [
-                "因公外出申请单"
-              ]
-            }
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[6]/UL[1]/LI[6]/A[2]"
-          },
-          {
-            "id": "style/color",
-            "value": [
-              255,
-              0,
-              0
-            ]
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "intendedRole": "button",
-      "roles": "element,button,link",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "button"
-    },
-    "control592_WEfx6q": {
-      "location": {
-        "data": {
-          "tagName": "A"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "button/text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "差旅费用报销流程"
-              ],
-              "visText": [
-                "差旅费用报销流程"
-              ]
-            }
-          },
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "差旅费用报销流程"
-              ],
-              "visText": [
-                "差旅费用报销流程"
-              ]
-            }
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/DIV[2]/DIV[5]/DIV[8]/UL[1]/LI[11]/A[2]"
-          },
-          {
-            "id": "style/color",
-            "value": [
-              255,
-              0,
-              0
-            ]
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "intendedRole": "button",
-      "roles": "element,button,link",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "button"
     }
   },
   "contexts": {
@@ -331,10 +149,7 @@
       "controls": [
         "control587_qgQlzN",
         "control588_gFJbDL",
-        "control589_UX7D7i",
-        "control590_H88pT8",
-        "control591_KgF6bw",
-        "control592_WEfx6q"
+        "control589_UX7D7i"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -361,6 +176,14 @@
         {
           "toContextId": "context1_CPB3yD",
           "toModelId": "commission"
+        },
+        {
+          "toContextId": "context56_U4PFJK",
+          "toModelId": "Newleave"
+        },
+        {
+          "toContextId": "context62_frJuQH",
+          "toModelId": "Newawaybus"
         }
       ]
     },
@@ -371,40 +194,10 @@
       "toContexts": [
         {
           "toContextId": "context61_pqdpBL"
-        }
-      ]
-    },
-    "flow190_OvmExa": {
-      "fromContextId": "context61_pqdpBL",
-      "fromAction": "click",
-      "fromControlId": "control590_H88pT8",
-      "toContexts": [
-        {
-          "toContextId": "context61_pqdpBL"
         },
         {
-          "toContextId": "context56_U4PFJK",
-          "toModelId": "Newleave"
-        }
-      ]
-    },
-    "flow192_rIUR8T": {
-      "fromContextId": "context61_pqdpBL",
-      "fromAction": "click",
-      "fromControlId": "control592_WEfx6q",
-      "toContexts": [
-        {
-          "toContextId": "context61_pqdpBL"
-        }
-      ]
-    },
-    "flow193_bNsNvF": {
-      "fromContextId": "context61_pqdpBL",
-      "fromAction": "click",
-      "fromControlId": "control591_KgF6bw",
-      "toContexts": [
-        {
-          "toContextId": "context61_pqdpBL"
+          "toContextId": "context1_CPB3yD",
+          "toModelId": "commission"
         }
       ]
     }
@@ -455,42 +248,6 @@
                 "onDoAction": "doAction_uiControl589_fBkpUm",
                 "onGetTemplate": "getTemplate_uiControl589_fBkpUm"
               }
-            }
-          }
-        },
-        {
-          "id": "uiControl590_ika4M4",
-          "controlId": "control590_H88pT8",
-          "display": {
-            "adapterId": "clickable",
-            "type": "button",
-            "hollow": true,
-            "adapter": {
-              "templateType": ""
-            }
-          }
-        },
-        {
-          "id": "uiControl591_92WIDI",
-          "controlId": "control591_KgF6bw",
-          "display": {
-            "adapterId": "clickable",
-            "type": "button",
-            "hollow": true,
-            "adapter": {
-              "templateType": ""
-            }
-          }
-        },
-        {
-          "id": "uiControl592_34Hyxq",
-          "controlId": "control592_WEfx6q",
-          "display": {
-            "adapterId": "clickable",
-            "type": "button",
-            "hollow": true,
-            "adapter": {
-              "templateType": ""
             }
           }
         }
