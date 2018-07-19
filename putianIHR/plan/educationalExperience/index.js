@@ -57,9 +57,10 @@
             }
           });
         });data.fileTable.push(tempObj);
-      });var fileSelOpt = elem.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']")[0].querySelectorAll("option");[].forEach.call(fileSelOpt, function (d9, i9) {
-        data.fileSelOpt.push(d9.textContent.trim());
-      }); //附件部分end
+      }); // var fileSelOpt = elem.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']")[0].querySelectorAll("option");
+      // [].forEach.call(fileSelOpt, function (d9, i9) {
+      //   data.fileSelOpt.push(d9.textContent.trim());
+      // }); //附件部分end
       var isFirstEdu = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_FIRST_EDU_FLAG']");[].forEach.call(isFirstEdu, function (d11, i11) {
         data.isFirstEdu.push(d11.checked);
       });var isTZ = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_ENTR_EXAM_FLAG']");[].forEach.call(isTZ, function (d12, i12) {
