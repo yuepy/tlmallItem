@@ -3,8 +3,7 @@
     getData_control49_6Hie6z: function (elem) {
       if (elem) {
         var data = { vall: [], pserror: [] };var trs = elem.querySelectorAll("tr[id]");[].forEach.call(trs, function (d, i) {
-          var arr = [];var inputs = d.querySelectorAll("input");
-          [].forEach.call(inputs, function (d1, i1) {
+          var arr = [];var inputs = d.querySelectorAll("input");[].forEach.call(inputs, function (d1, i1) {
             if (i1 == 0) {
               arr.push(d1.value.replace(/\//g, "-"));data.pserror.push(d1.getAttribute("class"));
             } else {
@@ -18,9 +17,9 @@
     },
     doAction_uiControl48_gySyv1: function (data, elem) {
       var type = data.eventType;var group = data.dataCustom;var trs = elem.querySelectorAll("tr[id]");if (type == "inputBlur") {
-        if (group[0] == "time") {
+        if (group[0].indexOf("time") != -1) {
           trs[group[2]].querySelectorAll("input")[0].value = group[1].replace(/-/g, "/");trs[group[2]].querySelectorAll("input")[0].dispatchEvent(new Event("change"));
-        } else if (group[0] == "hours") {
+        } else if (group[0].indexOf("hours") != -1) {
           trs[group[2]].querySelectorAll("input")[1].value = group[1].replace(/-/g, "/");trs[group[2]].querySelectorAll("input")[1].dispatchEvent(new Event("change"));
         }
       } else if (type == "delete") {
