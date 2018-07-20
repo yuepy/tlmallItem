@@ -17,7 +17,7 @@
         //   } else {
         //     top.EAPI.closeWindow();
         //   }
-        debugger;var backVal = ysp.customHelper.tab;if (backVal == "menu" && ysp.customHelper.innerBack == null) {
+        var backVal = ysp.customHelper.tab;if (backVal == "menu" && ysp.customHelper.innerBack == null) {
           ysp.appMain.back();backVal = null;
         } else if (backVal == "menu" && ysp.customHelper.innerBack == "returnBack") {
           ysp.appMain.back();ysp.customHelper.innerBack = null;
