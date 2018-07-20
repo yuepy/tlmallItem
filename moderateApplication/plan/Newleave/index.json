@@ -5,7 +5,8 @@
   "jsFile": "index.js",
   "requires": {
     "commission": "../commission/index.json",
-    "Newapplocation": "../Newapplocation/index.json"
+    "Newapplocation": "../Newapplocation/index.json",
+    "previewapproval": "../previewapproval/index.json"
   },
   "chineseName": "请假申请单发起流程",
   "description": "",
@@ -411,50 +412,14 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control600_HiMkTy": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[12]/DIV[2]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              5,
-              6
-            ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[12]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control600_HiMkTy"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control603_plH32Q": {
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -492,6 +457,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -502,7 +471,7 @@
       },
       "intendedRole": "dialog",
       "roles": "element,dialog",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectLinkedProcInst']<<IFRAME>>",
       "componentType": "dialog"
     },
@@ -510,6 +479,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -545,49 +518,14 @@
       "frameXPath": "//iframe[@name='OpenSelectLinkedProcInst']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control606_3PFd3A": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "locators": [
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "Form1",
-              "tagName": "FORM",
-              "prefix": "",
-              "suffix": "/DIV[3]/DIV[2]/TABLE[2]",
-              "ratio": 0.495
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.popup.size-big.with-bottom-buttons DIV.body TABLE.layout-data.zebra.hover"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/TABLE[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control606_3PFd3A"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='OpenSelectLinkedProcInst']<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control607_8MGLRV": {
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -628,6 +566,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -654,6 +596,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -688,6 +634,89 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectLinkedProcInst']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control592_dPcwmC": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[12]/DIV[2]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              5,
+              6
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[12]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control592_dPcwmC"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control600_AzHWxy": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[2]/TABLE[2]",
+              "ratio": 0.495
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons DIV.body TABLE.layout-data.zebra.hover"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control600_AzHWxy"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectLinkedProcInst']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -702,14 +731,14 @@
         "control597_fE373m",
         "control598_91Q4T9",
         "control599_cNfZsm",
-        "control600_HiMkTy",
         "control603_plH32Q",
         "control604_A1xvgZ",
         "control605_TTOrvF",
-        "control606_3PFd3A",
         "control607_8MGLRV",
         "control608_Z8BLmu",
-        "control609_ramkzA"
+        "control609_ramkzA",
+        "control592_dPcwmC",
+        "control600_AzHWxy"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -736,6 +765,10 @@
       "toContexts": [
         {
           "toContextId": "context56_U4PFJK"
+        },
+        {
+          "toContextId": "context10_P8RicR",
+          "toModelId": "previewapproval"
         }
       ]
     },
@@ -777,16 +810,6 @@
       "fromContextId": "context56_U4PFJK",
       "fromAction": "doAction",
       "fromControlId": "control599_cNfZsm",
-      "toContexts": [
-        {
-          "toContextId": "context56_U4PFJK"
-        }
-      ]
-    },
-    "flow198_9ii23U": {
-      "fromContextId": "context56_U4PFJK",
-      "fromAction": "doAction",
-      "fromControlId": "control600_HiMkTy",
       "toContexts": [
         {
           "toContextId": "context56_U4PFJK"
@@ -837,6 +860,26 @@
       "fromContextId": "context56_U4PFJK",
       "fromAction": "doAction",
       "fromControlId": "control605_TTOrvF",
+      "toContexts": [
+        {
+          "toContextId": "context56_U4PFJK"
+        }
+      ]
+    },
+    "flow192_LyCmd3": {
+      "fromContextId": "context56_U4PFJK",
+      "fromAction": "doAction",
+      "fromControlId": "control600_AzHWxy",
+      "toContexts": [
+        {
+          "toContextId": "context56_U4PFJK"
+        }
+      ]
+    },
+    "flow214_akR6zZ": {
+      "fromContextId": "context56_U4PFJK",
+      "fromAction": "doAction",
+      "fromControlId": "control592_dPcwmC",
       "toContexts": [
         {
           "toContextId": "context56_U4PFJK"
@@ -975,16 +1018,16 @@
           }
         },
         {
-          "id": "uiControl600_S7odWu",
-          "controlId": "control600_HiMkTy",
+          "id": "uiControl592_bHLdRU",
+          "controlId": "control592_dPcwmC",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl600_S7odWu",
-                "onGetTemplate": "getTemplate_uiControl600_S7odWu"
+                "onDoAction": "doAction_uiControl592_bHLdRU",
+                "onGetTemplate": "getTemplate_uiControl592_bHLdRU"
               }
             }
           }
@@ -1067,16 +1110,16 @@
                   }
                 },
                 {
-                  "id": "uiControl606_u45eQN",
-                  "controlId": "control606_3PFd3A",
+                  "id": "uiControl600_IZ6T15",
+                  "controlId": "control600_AzHWxy",
                   "display": {
                     "adapterId": "custom",
                     "type": "custom",
                     "adapter": {
                       "templateType": "react",
                       "events": {
-                        "onDoAction": "doAction_uiControl606_u45eQN",
-                        "onGetTemplate": "getTemplate_uiControl606_u45eQN"
+                        "onDoAction": "doAction_uiControl600_IZ6T15",
+                        "onGetTemplate": "getTemplate_uiControl600_IZ6T15"
                       }
                     }
                   }

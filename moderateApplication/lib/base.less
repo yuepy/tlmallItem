@@ -18,6 +18,246 @@ body{
     cursor: pointer;
   }
 }
+//发起流程公共样式····································
+  //知会信息
+  .derstanding{
+    background-color: #fff;
+    .Content{
+      padding-left: 15px;
+      div:nth-child(1){
+        padding: 10px 0;
+      }
+      div:nth-child(2){
+        padding: 5px 0;
+        padding-right: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      div:nth-child(3){
+        line-height: 44px;
+        margin-top: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        button{
+          margin: 0 auto;
+          border: 0;
+          border: 1px solid #f4b8bb;
+          color: #f4b8bb;
+          border-radius: 5px;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+  //关联流程
+  .relation{
+    background-color: #fff;
+    padding-bottom: 5px;
+    .contenttitle{
+      button{
+        border: 0;
+        padding: 0 20px;
+        border: 1px solid #e64750;
+        color: #e64750;
+        margin-right: 20px;
+        border-radius: 5px;
+      }
+    }
+    .content{
+      width: 345px;
+      margin:  auto auto;
+      .contentit{
+      background-color: #f2f2f2;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        >div{
+          display: flex;
+          justify-content: space-between;
+          div{
+            padding: 10px 0;
+          }
+          div:nth-child(1){
+            width: 56px;
+            font-size: 14px;
+            color: #202020;
+            margin-left: 10px;
+            text-align: justify;
+            text-align-last: justify;
+          }
+          div:nth-child(2){
+            width: 260px;
+            border-bottom: 1px solid #ccc;
+          }
+        }
+        .titlediv{
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #ccc;
+          div:nth-child(1){
+            padding: 10px;
+            p{
+              padding-right: 10px;
+              border-right: 1px solid #ccc;
+            }
+          }
+          div:nth-child(2){
+            width: 100%;
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 10px;
+            border: 0;
+          }
+        }
+        div:nth-child(4){
+          div:nth-child(2){
+            border: 0;
+          }
+        }
+        div:nth-child(5){
+          display: block;
+          width: 100%;
+          border-top: 1px solid #ccc;
+          justify-content: none;
+          div{
+            width: 100%;
+          text-align-last: center;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+  .alertsub{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    button{
+      width: 50%;
+      height: 44px;
+      border: 0;
+      border: 1px solid #ccc;
+    }
+    button:nth-child(1){
+      background-color: #e64750;
+    }
+  }
+    .show{
+    display: none;
+  }
+  //关联流程弹出层输入框
+  .ipt_sub{
+    input,button{
+      margin: 0;
+      border: 0;
+    }
+    height: 36px;
+    width: 325px;
+    margin: 15px auto;
+    >div{
+      display: flex;
+      justify-content: space-between;
+    }
+    input{
+      height: 36px;
+      width: 275px;
+      border: 1px solid #ccc;
+      border-right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+    button{
+      width: 50px;
+      height: 36px;
+      line-height: 36px;
+      border: 1px solid #ccc;
+      border-left: 0;
+      border-radius: 0 5px 5px 0;
+      color: #fff;
+      background-color: #e64750;
+    }
+  }
+  //关联流程弹出层列表
+  .Contenttable{
+    background-color: #fff;
+    p{margin: 0;}
+    .Content{
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      .Content_radio{
+        padding:20px 10px;
+      }
+      .Content_right{
+        width: 100%;
+        background-color: #f5f5f5;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        .Content_title{
+          display: block;
+          >div{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+          }
+          >div:nth-child(1){
+            span.display_block{
+              width: 20px;
+              height: 15px;
+              background-image: url(./img/top.png);
+              display: inline-block;
+              background-size: 20px 15px;
+              margin-top: 8px;
+              cursor: pointer;
+            }
+            span.display_none{
+              width: 20px;
+              height: 15px;
+              background-image: url(./img/xia.png);
+              display: inline-block;
+              background-size: 20px 15px;
+              margin-top: 8px;
+              cursor: pointer;
+            }
+          }
+          >div:nth-child(2),>div:nth-child(3){
+            padding-right: 0;
+            div:nth-child(1){
+              width: 56px;
+              font-size: 14px;
+              color: #666666;
+              text-align: justify;
+              text-align-last: justify;
+            }
+            div:nth-child(2){
+              width: 80%;
+              font-size: 14px;
+              color: #313131;
+              text-align: left;
+            }
+          }
+        }
+        .Content_none{
+          padding-left: 15px;
+          >div:nth-child(1){
+            display: flex;
+            justify-content: space-between;
+            div:nth-child(1){
+              width: 56px;
+              text-align: justify;
+              text-align-last: justify;
+              font-size: 14px;
+              color: #666666;
+            }
+            div:nth-child(2){
+              width: 80%;
+              text-align: left;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+//发起流程公共样式···································································
 //弹出层选人框
     .floatbox{
     width: 345px;
@@ -10513,6 +10753,21 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
 
 //请假申请单发起流程
 [data-ysp-modelid="Newleave"]{
+  select{
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    padding: 0px 10px 0px 10px;
+    font-size: 12px;
+    display: block;
+    background-size: 20px 13px;
+    background-position: 200px;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-image: url(./img/rightbtn.png);
+  }
+  //基本信息
   .leaveinforme{
 		background-color: #fff;
     .leave_Content{
@@ -10579,7 +10834,6 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
             margin: 0;
             padding: 0;
             padding: 5px 0;
-            margin-right: 20px;
             border: 0;
             background-color: #fff;
           }
@@ -10844,6 +11098,7 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
   //关联流程
   .relation{
     background-color: #fff;
+    padding-bottom: 5px;
     .contenttitle{
       button{
         border: 0;
@@ -10852,13 +11107,76 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
         color: #e64750;
         margin-right: 20px;
         border-radius: 5px;
-        
+      }
+    }
+    .content{
+      width: 345px;
+      margin:  auto auto;
+      .contentit{
+      background-color: #f2f2f2;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        >div{
+          display: flex;
+          justify-content: space-between;
+          div{
+            padding: 10px 0;
+          }
+          div:nth-child(1){
+            width: 56px;
+            font-size: 14px;
+            color: #202020;
+            margin-left: 10px;
+            text-align: justify;
+            text-align-last: justify;
+          }
+          div:nth-child(2){
+            width: 260px;
+            border-bottom: 1px solid #ccc;
+          }
+        }
+        .titlediv{
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #ccc;
+          div:nth-child(1){
+            padding: 10px;
+            p{
+              padding-right: 10px;
+              border-right: 1px solid #ccc;
+            }
+          }
+          div:nth-child(2){
+            width: 100%;
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 10px;
+            border: 0;
+          }
+        }
+        div:nth-child(4){
+          div:nth-child(2){
+            border: 0;
+          }
+        }
+        div:nth-child(5){
+          display: block;
+          width: 100%;
+          border-top: 1px solid #ccc;
+          justify-content: none;
+          div{
+            width: 100%;
+          text-align-last: center;
+            margin-bottom: 5px;
+          }
+        }
       }
     }
   }
   .alertsub{
     display: flex;
     justify-content: space-between;
+    background-color: #fff;
     button{
       width: 50%;
       height: 44px;
@@ -10869,9 +11187,250 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
       background-color: #e64750;
     }
   }
+    .show{
+    display: none;
+  }
+  //关联流程弹出层输入框
+  .ipt_sub{
+    input,button{
+      margin: 0;
+      border: 0;
+    }
+    height: 36px;
+    width: 325px;
+    margin: 15px auto;
+    >div{
+      display: flex;
+      justify-content: space-between;
+    }
+    input{
+      height: 36px;
+      width: 275px;
+      border: 1px solid #ccc;
+      border-right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+    button{
+      width: 50px;
+      height: 36px;
+      line-height: 36px;
+      border: 1px solid #ccc;
+      border-left: 0;
+      border-radius: 0 5px 5px 0;
+      color: #fff;
+      background-color: #e64750;
+    }
+  }
+  //关联流程弹出层列表
+  .Contenttable{
+    background-color: #fff;
+    p{margin: 0;}
+    .Content{
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      .Content_radio{
+        padding:20px 10px;
+      }
+      .Content_right{
+        width: 100%;
+        background-color: #f5f5f5;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        .Content_title{
+          display: block;
+          >div{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+          }
+          >div:nth-child(1){
+            span.display_block{
+              width: 20px;
+              height: 15px;
+              background-image: url(./img/top.png);
+              display: inline-block;
+              background-size: 20px 15px;
+              margin-top: 8px;
+              cursor: pointer;
+            }
+            span.display_none{
+              width: 20px;
+              height: 15px;
+              background-image: url(./img/xia.png);
+              display: inline-block;
+              background-size: 20px 15px;
+              margin-top: 8px;
+              cursor: pointer;
+            }
+          }
+          >div:nth-child(2),>div:nth-child(3){
+            padding-right: 0;
+            div:nth-child(1){
+              width: 56px;
+              font-size: 14px;
+              color: #666666;
+              text-align: justify;
+              text-align-last: justify;
+            }
+            div:nth-child(2){
+              width: 80%;
+              font-size: 14px;
+              color: #313131;
+              text-align: left;
+            }
+          }
+        }
+        .Content_none{
+          padding-left: 15px;
+          >div:nth-child(1){
+            display: flex;
+            justify-content: space-between;
+            div:nth-child(1){
+              width: 56px;
+              text-align: justify;
+              text-align-last: justify;
+              font-size: 14px;
+              color: #666666;
+            }
+            div:nth-child(2){
+              width: 80%;
+              text-align: left;
+            }
+          }
+        }
+      }
+      
+    }
+  }
 }
 //因公外出申请单发起流程
 [data-ysp-modelid="Newawaybus"]{
+    select{
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    padding: 0px 10px 0px 10px;
+    font-size: 12px;
+    display: block;
+    background-size: 20px 13px;
+    background-position: 200px;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-image: url(./img/rightbtn.png);
+  }
+  //基本信息
+    .leaveinforme{
+		background-color: #fff;
+    .leave_Content{
+      padding-bottom: 44px;
+      position: relative;
+      .content_none{
+        display: none;
+      }
+      .previousblock{
+        width: 100%;
+        text-align: center;
+        position:absolute;
+        bottom: 10px;
+        padding-left:  20px;
+        background: url(./img/xia.png) no-repeat 35% 5px;
+        background-size: 20px 14px;
+        cursor: pointer;
+        padding-top:5px;
+      }
+      .previousnone{
+        width: 100%;
+        text-align: center;
+        position:absolute;
+        bottom: 10px;
+        padding-left:  20px;
+        background: url(./img/top.png) no-repeat 35% 5px;
+        background-size: 20px 14px;
+        cursor: pointer;
+        border-top:1px solid #ccc;
+        padding-top:5px;
+      }
+      .content{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-left: 10px;
+        a{
+          width: 17px;
+          height: 13px;
+          background-image: url(./img/rightbtn.png);
+          background-size: 17px 13px;
+          position: absolute;
+          right: 10px;
+          top: 40%;
+        }
+        div{
+          padding: 15px 0;
+        }
+        div:nth-child(1){
+          width: 56px;
+          font-size: 14px;
+          color: #202020;
+          text-align: justify;
+          text-align-last: justify;
+        }
+        div:nth-child(2){
+          width: 265px;
+          color: #313131;
+          display: flex;
+          // justify-content: space-between;
+          padding-right: 10px;
+          border-bottom: 1px solid #ccc;
+          input,select{
+            margin: 0;
+            padding: 0;
+            padding: 5px 0;
+            border: 0;
+            background-color: #fff;
+          }
+          button{
+            border: 0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            padding: 0px 40px;
+            border-radius: 5px;
+          }
+          .radiobtn{
+            background-color: #e64750;
+            color: #fff;
+          }
+        }
+      }
+    }
+          .textareaipt{
+            div:nth-child(1){
+              span{
+                display: block;
+              }
+              span:nth-child(2){
+                font-size: 12px;
+                color: #999999;
+              }
+            }
+            div:nth-child(2){
+              display: block;
+              border: 0;
+              textarea{
+                display: block;
+                border: 0;
+                border-bottom: 1px solid #ccc;
+              }
+              p{
+                display: block;
+                font-size: 12px;
+                color: #e64750;
+              }
+            }
+          }
+  }
   //知会信息
     .derstanding{
     background-color: #fff;
@@ -10923,6 +11482,7 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
   .alertsub{
     display: flex;
     justify-content: space-between;
+    background-color: #fff;
     button{
       width: 50%;
       height: 44px;
@@ -10933,4 +11493,392 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
       background-color: #e64750;
     }
   }
+  //外出明细
+    .leaveDeta{
+    background-color: #fff;
+    padding-bottom: 10px;
+    .leave_box{
+      width: 345px;
+      margin: auto auto;
+      .leave_content{
+      background-color: #f2f2f2;
+        margin-bottom: 10px;
+        .content_title{
+          display: flex;
+          justify-content: space-between;
+          >div:nth-child(1){
+            margin: 10px;
+            padding-right: 10px;
+            border-right: 1px solid #ccc;
+          }
+          >div:nth-child(2){
+            width: 100%;
+            padding:10px 0;
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            div{
+              font-weight: bold;
+            }
+            span{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/top.png);
+              background-size: 20px 10px;
+              cursor: pointer;
+            }
+            .hide{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/xia.png);
+              background-size: 20px 10px;
+            }
+          }
+        }
+        .content_none{
+          display: none;
+          margin-bottom: 10px;
+          >div{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 10px;
+            div:nth-child(1){
+              width: 56px;
+              padding: 15px 0;
+              text-align: justify;
+              text-align-last: justify;
+              font-size: 14px; 
+            }
+            div:nth-child(2){
+              width: 260px;
+              padding-right: 10px;
+              border-bottom: 1px solid #ccc;
+              input{
+                margin: 0;
+                border: 0;
+                background-color: #f2f2f2;
+              }
+            }
+          }
+          >div:nth-child(6),div:nth-child(7){
+            div:nth-child(2){
+              padding: 15px 0;
+            }
+          }
+          >div:last-child{
+            padding: 15px 0;
+            button{
+              margin: 0 auto;
+              padding: 5px 40px;
+              border: 0;
+              border: 1px solid #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+  .contenttitle{
+      p{
+        display: flex;
+        width: 345px;
+        margin-left: 15px;
+        justify-content: space-between;
+        >div{
+          margin-right: 10px;
+          display: flex;
+          button{
+            display: flex;
+            border-radius: 2px;
+            margin-left: 10px;
+            border: 1px solid #e64750;
+            color: #e64750;
+            padding: 5px 30px;
+          }
+        }
+      }
+    }
+}
+[data-ysp-modelid="Newtravel"]{
+ .leaveinforme{
+		background-color: #fff;
+    .leave_Content{
+      padding-bottom: 44px;
+      position: relative;
+      .content_none{
+        display: none;
+      }
+      .previousblock{
+        width: 100%;
+        text-align: center;
+        position:absolute;
+        bottom: 10px;
+        padding-left:  20px;
+        background: url(./img/xia.png) no-repeat 35% 5px;
+        background-size: 20px 14px;
+        cursor: pointer;
+        padding-top:5px;
+      }
+      .previousnone{
+        width: 100%;
+        text-align: center;
+        position:absolute;
+        bottom: 10px;
+        padding-left:  20px;
+        background: url(./img/top.png) no-repeat 35% 5px;
+        background-size: 20px 14px;
+        cursor: pointer;
+        border-top:1px solid #ccc;
+        padding-top:5px;
+      }
+      .content{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-left: 10px;
+        a{
+          width: 17px;
+          height: 13px;
+          background-image: url(./img/rightbtn.png);
+          background-size: 17px 13px;
+          position: absolute;
+          right: 10px;
+          top: 40%;
+        }
+        div{
+          padding: 15px 0;
+        }
+        div:nth-child(1){
+          width: 56px;
+          font-size: 14px;
+          color: #202020;
+          text-align: justify;
+          text-align-last: justify;
+        }
+        div:nth-child(2){
+          width: 265px;
+          color: #313131;
+          // display: flex;
+          // justify-content: space-between;
+          padding-right: 10px;
+          border-bottom: 1px solid #ccc;
+          input,select{
+            margin: 0;
+            padding: 0;
+            padding: 5px 0;
+            border: 0;
+            background-color: #fff;
+          }
+          button{
+            border: 0;
+            border: 1px solid #ccc;
+            padding: 10px 30px;
+            margin-left: 10px;
+            border-radius: 5px;
+          }
+          .radiobtn{
+            background-color: #e64750;
+            color: #fff;
+          }
+        }
+      }
+    }
+          .textareaipt{
+            div:nth-child(1){
+              span{
+                display: block;
+              }
+              span:nth-child(2){
+                font-size: 12px;
+                color: #999999;
+              }
+            }
+            div:nth-child(2){
+              display: block;
+              border: 0;
+              textarea{
+                display: block;
+                border: 0;
+                border-bottom: 1px solid #ccc;
+              }
+              p{
+                display: block;
+                font-size: 12px;
+                color: #e64750;
+              }
+            }
+          }
+  }
+  //关联流程
+  .relation{
+    .contenttitle{
+      p{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  .add_mx_xu{
+    background-color: #fff;
+    padding-bottom: 10px;
+    .contenttitle{
+      p{
+        display: flex;
+        justify-content: space-between;
+        button{
+          border: 0;
+          border: 1px solid #e64750;
+          border-radius: 5px;
+          padding: 10px 30px;
+          margin-right: 20px;
+          color: #e64750;
+        }
+      }
+    }
+    >div:nth-child(2){
+      padding-left: 15px;
+      >div{
+        display: flex;
+        justify-content: space-between;
+        div:nth-child(1){
+          width: 56px;
+          font-size: 14px;
+          color: #202020;
+          text-align: justify;
+          text-align-last: justify;
+          padding: 10px 0;
+        }
+        div:nth-child(2){
+          width: 80%;
+          border-bottom: 1px solid #ccc;
+          input{
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+    //请假明细
+  .leaveDeta{
+    background-color: #fff;
+    padding-bottom: 10px;
+    .leave_box{
+      width: 345px;
+      margin: auto auto;
+      .leave_content{
+      background-color: #f2f2f2;
+        margin-bottom: 10px;
+        .content_title{
+          display: flex;
+          justify-content: space-between;
+          >div:nth-child(1){
+            margin: 10px;
+            padding-right: 10px;
+            border-right: 1px solid #ccc;
+          }
+          >div:nth-child(2){
+            width: 100%;
+            padding:10px 0;
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            div{
+              font-weight: bold;
+            }
+            span{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/top.png);
+              background-size: 20px 10px;
+              cursor: pointer;
+            }
+            .hide{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/xia.png);
+              background-size: 20px 10px;
+            }
+          }
+        }
+        .content_none{
+          display: none;
+          margin-bottom: 10px;
+          >div{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 10px;
+            div:nth-child(1){
+              width: 56px;
+              padding: 15px 0;
+              text-align: justify;
+              text-align-last: justify;
+              font-size: 14px; 
+            }
+            div:nth-child(2){
+              width: 260px;
+              padding-right: 10px;
+              border-bottom: 1px solid #ccc;
+              input{
+                margin: 0;
+                border: 0;
+                background-color: #f2f2f2;
+              }
+            }
+          }
+          >div:nth-child(6),div:nth-child(7){
+            div:nth-child(2){
+              padding: 15px 0;
+            }
+          }
+          >div:last-child{
+            padding: 15px 0;
+            button{
+              margin: 0 auto;
+              padding: 5px 40px;
+              border: 0;
+              border: 1px solid #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+      .contenttitle{
+      p{
+        display: flex;
+        width: 345px;
+        margin-left: 15px;
+        justify-content: space-between;
+        >div{
+          margin-right: 10px;
+          display: flex;
+          button{
+            display: flex;
+            border: 1px solid #20dffb;
+            border-radius: 2px;
+            color: #20dffb;
+            padding:10px 30px;
+          }
+          button:last-child{
+            margin-left: 10px;
+            border: 1px solid #e64750;
+            color: #e64750;
+          }
+        }
+      }
+    }
 }

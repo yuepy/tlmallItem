@@ -6,7 +6,9 @@
   "requires": {
     "Newleave": "../Newleave/index.json",
     "commission": "../commission/index.json",
-    "Newawaybus": "../Newawaybus/index.json"
+    "Newawaybus": "../Newawaybus/index.json",
+    "haveDoneIndex": "../haveDoneIndex/index.json",
+    "Newtravel": "../Newtravel/index.json"
   },
   "chineseName": "新建申请",
   "description": "",
@@ -184,6 +186,10 @@
         {
           "toContextId": "context62_frJuQH",
           "toModelId": "Newawaybus"
+        },
+        {
+          "toContextId": "context63_he35RO",
+          "toModelId": "Newtravel"
         }
       ]
     },
@@ -198,6 +204,10 @@
         {
           "toContextId": "context1_CPB3yD",
           "toModelId": "commission"
+        },
+        {
+          "toContextId": "context25_IDCMfP",
+          "toModelId": "haveDoneIndex"
         }
       ]
     }
