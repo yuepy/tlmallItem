@@ -22,56 +22,115 @@
     getData_control56_fp2SJT: function (elem) {
       if (!elem) {
         return;
-      }var data = { startime: [], endtime: [], school: [], major: [], studySel: [], gradeType: [], education: [], degree: [], edubackground: [], fileTable: [], fileSelOpt: [], isFirstEdu: [], isTZ: [], isZGXW: [], isZGXL: [], tips: [] };var RXtime = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_DATE1']");[].forEach.call(RXtime, function (d1, i1) {
-        data.startime.push(d1.value.replace(/\//g, "-"));data.endtime.push(d1.parentElement.parentElement.nextElementSibling.nextElementSibling.querySelector('input').value.replace(/\//g, "-"));
-      });var School = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_HPS_SCHOOL_NAME']");[].forEach.call(School, function (d2, i2) {
-        data.school.push(d2.value);data.major.push(d2.parentElement.parentElement.nextElementSibling.nextElementSibling.querySelector('input').value);
-      });var studySel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_STUDY_MET']");[].forEach.call(studySel, function (d3, i3) {
-        var arrstudy = [];arrstudy.push(d3.querySelector("option[selected='selected']").textContent);var opt1 = d3.querySelectorAll('option');[].forEach.call(opt1, function (d33, i33) {
-          arrstudy.push(d33.textContent);if (d33.selected) {}
-        });data.studySel.push(arrstudy);
-      });var gradeSel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_GRADU_TYPE']");[].forEach.call(gradeSel, function (d4, i4) {
-        var arrgrade = [];arrgrade.push(d4.querySelector("option[selected='selected']").textContent);var opt2 = d4.querySelectorAll('option');[].forEach.call(opt2, function (d44, i44) {
-          arrgrade.push(d44.textContent);
-        });data.gradeType.push(arrgrade);
-      });var educationSel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_EDUCATION']");[].forEach.call(educationSel, function (d5, i5) {
-        var education = [];education.push(d5.querySelector("option[selected='selected']").textContent);var opt3 = d5.querySelectorAll('option');[].forEach.call(opt3, function (d55, i55) {
-          education.push(d55.textContent);
-        });data.education.push(education);
-      });var degreeSel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_DEGREE']");[].forEach.call(degreeSel, function (d6, i6) {
-        var degree = [];degree.push(d6.querySelector("option[selected='selected']").textContent);var opt4 = d6.querySelectorAll('option');[].forEach.call(opt4, function (d66, i66) {
-          degree.push(d66.textContent);
-        });data.degree.push(degree);
-      });var backgroundSel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_EDU_BACKGROUND']");[].forEach.call(backgroundSel, function (d7, i7) {
-        var background1 = [];background1.push(d7.querySelector("option[selected='selected']").textContent);var opt5 = d7.querySelectorAll('option');[].forEach.call(opt5, function (d77, i77) {
-          background1.push(d77.textContent);
-        });data.edubackground.push(background1);
+      }var data = { startime: [], endtime: [], school: [], major: [], studySel: [], gradeType: [], education: [], degree: [], edubackground: [], fileTable: [], fileSelOpt: [], isFirstEdu: [], isTZ: [], isZGXW: [], isZGXL: [], tips: [] };var RXtime = elem.querySelectorAll("[id^='HPS_EDUCAT_APR_DATE1']");[].forEach.call(RXtime, function (d1, i1) {
+        if (d1.tagName == "INPUT") {
+          data.startime.push(d1.value.replace(/\//g, "-"));
+        } else {
+          data.startime.push(d1.textContent);
+        }
+      });var BYtime = elem.querySelectorAll("[id^='HPS_EDUCAT_APR_DATE2']");[].forEach.call(BYtime, function (d1, i1) {
+        if (d1.tagName == "INPUT") {
+          data.startime.push(d1.value.replace(/\//g, "-"));
+        } else {
+          data.endtime.push(d1.textContent);
+        }
+      });var School = elem.querySelectorAll("[id^='HPS_EDUCAT_APR_HPS_SCHOOL_NAME']");[].forEach.call(School, function (d2, i2) {
+        if (d2.tagName == "INPUT") {
+          data.school.push(d2.value);
+        } else if (d2.tagName == "SPAN") {
+          data.school.push(d2.textContent);
+        }
+      });var Major = elem.querySelectorAll("[id^='HPS_EDUCAT_APR_HPS_MAJOR_NAME']");[].forEach.call(Major, function (d2, i2) {
+        if (d2.tagName == "INPUT") {
+          data.major.push(d2.value);
+        } else if (d2.tagName == "SPAN") {
+          data.major.push(d2.textContent);
+        }
+      });var studySel = elem.querySelectorAll("[id^='HPS_EDUCAT_APR_HPS_STUDY_MET']");[].forEach.call(studySel, function (d3, i3) {
+        if (d3.tagName == "SELECT") {
+          var arrstudy = [];arrstudy.push(d3.querySelector("option[selected='selected']").textContent);var opt1 = d3.querySelectorAll('option');[].forEach.call(opt1, function (d33, i33) {
+            arrstudy.push(d33.textContent);
+          });data.studySel.push(arrstudy);
+        } else {
+          var arrstudy = [];arrstudy.push(d3.textContent);data.studySel.push(arrstudy);
+        }
+      });var gradeSel = elem.querySelectorAll("[id^='HPS_EDUCAT_APR_HPS_GRADU_TYPE']");[].forEach.call(gradeSel, function (d4, i4) {
+        if (d4.tagName == "SELECT") {
+          var arrgrade = [];arrgrade.push(d4.querySelector("option[selected='selected']").textContent);var opt2 = d4.querySelectorAll('option');[].forEach.call(opt2, function (d44, i44) {
+            arrgrade.push(d44.textContent);
+          });data.gradeType.push(arrgrade);
+        } else {
+          var arrgrade = [];arrgrade.push(d4.textContent);data.gradeType.push(arrgrade);
+        }
+      });var educationSel = elem.querySelectorAll("[id^='HPS_EDUCAT_APR_HPS_EDUCATION']");[].forEach.call(educationSel, function (d5, i5) {
+        if (d5.tagName == "SELECT") {
+          var education = [];education.push(d5.querySelector("option[selected='selected']").textContent);var opt3 = d5.querySelectorAll('option');[].forEach.call(opt3, function (d55, i55) {
+            education.push(d55.textContent);
+          });data.education.push(education);
+        } else {
+          var education = [];education.push(d5.textContent);data.education.push(education);
+        }
+      });var degreeSel = elem.querySelectorAll("[id^='HPS_EDUCAT_APR_HPS_DEGREE']");[].forEach.call(degreeSel, function (d6, i6) {
+        if (d6.tagName == "SELECT") {
+          var degree = [];degree.push(d6.querySelector("option[selected='selected']").textContent);var opt4 = d6.querySelectorAll('option');[].forEach.call(opt4, function (d66, i66) {
+            degree.push(d66.textContent);
+          });data.degree.push(degree);
+        } else {
+          var degree = [];degree.push(d6.textContent);data.degree.push(degree);
+        }
+      });var backgroundSel = elem.querySelectorAll("[id^='HPS_EDUCAT_APR_HPS_EDU_BACKGROUND']");[].forEach.call(backgroundSel, function (d7, i7) {
+        if (d7.tagName == "SELECT") {
+          var background1 = [];background1.push(d7.querySelector("option[selected='selected']").textContent);var opt5 = d7.querySelectorAll('option');[].forEach.call(opt5, function (d77, i77) {
+            background1.push(d77.textContent);
+          });data.edubackground.push(background1);
+        } else {
+          var background1 = [];background1.push(d7.textContent);data.edubackground.push(background1);
+        }
       }); //附件部分start
-      var fileTable = elem.querySelectorAll(".PSLEVEL2GRID");[].forEach.call(fileTable, function (d8, i8) {
-        var tempObj = { fileName: [], fileType: [] };var fileName = d8.querySelectorAll("span[id^='HPS_EDU_ATT_APR_ATTACHUSERFILE']");[].forEach.call(fileName, function (d10, i10) {
-          tempObj.fileName.push(d10.textContent.trim());
-        });var fileSel = d8.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']");[].forEach.call(fileSel, function (d11, i11) {
-          [].forEach.call(d11.querySelectorAll("option"), function (d12, i12) {
-            if (d12.selected) {
-              tempObj.fileType.push(d12.textContent.trim());
-            }
-          });
-        });data.fileTable.push(tempObj);
-      }); // var fileSelOpt = elem.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']")[0].querySelectorAll("option");
+      // var fileTable = elem.querySelectorAll(".PSLEVEL2GRID");
+      // [].forEach.call(fileTable, function (d8, i8) {
+      //   var tempObj = {
+      //     fileName: [],
+      //     fileType: []
+      //   };
+      //   var fileName = d8.querySelectorAll("span[id^='HPS_EDU_ATT_APR_ATTACHUSERFILE']");
+      //   [].forEach.call(fileName, function (d10, i10) {
+      //     tempObj.fileName.push(d10.textContent.trim());
+      //   });
+      //   var fileSel = d8.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']");
+      //   [].forEach.call(fileSel, function (d11, i11) {
+      //     [].forEach.call(d11.querySelectorAll("option"), function (d12, i12) {
+      //       if (d12.selected) {
+      //         tempObj.fileType.push(d12.textContent.trim());
+      //       }
+      //     });
+      //   });
+      //   data.fileTable.push(tempObj);
+      // }); 
+      // var fileSelOpt = elem.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']")[0].querySelectorAll("option");
       // [].forEach.call(fileSelOpt, function (d9, i9) {
       //   data.fileSelOpt.push(d9.textContent.trim());
-      // }); //附件部分end
+      // }); 
+      //附件部分end
       var isFirstEdu = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_FIRST_EDU_FLAG']");[].forEach.call(isFirstEdu, function (d11, i11) {
         data.isFirstEdu.push(d11.checked);
-      });var isTZ = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_ENTR_EXAM_FLAG']");[].forEach.call(isTZ, function (d12, i12) {
-        data.isTZ.push(d12.checked);
-      });var isZGXW = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_HIGH_DEG_FLAG']");[].forEach.call(isZGXW, function (d13, i13) {
-        data.isZGXW.push(d13.checked);
-      });var isZGXL = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_HIGH_EDU_FLAG']");[].forEach.call(isZGXL, function (d14, i14) {
-        data.isZGXL.push(d14.checked);
-      });var tips = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_HPS_DESC']");[].forEach.call(tips, function (d15, i15) {
-        data.tips.push(d15.value);
-      });return data;
+      }); // var isTZ = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_ENTR_EXAM_FLAG']");
+      // [].forEach.call(isTZ, function (d12, i12) {
+      //   data.isTZ.push(d12.checked);
+      // });
+      // var isZGXW = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_HIGH_DEG_FLAG']");
+      // [].forEach.call(isZGXW, function (d13, i13) {
+      //   data.isZGXW.push(d13.checked);
+      // });
+      // var isZGXL = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_HIGH_EDU_FLAG']");
+      // [].forEach.call(isZGXL, function (d14, i14) {
+      //   data.isZGXL.push(d14.checked);
+      // });
+      // var tips = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_HPS_DESC']");
+      // [].forEach.call(tips, function (d15, i15) {
+      //   data.tips.push(d15.value);
+      // });
+      return data;
     },
     doAction_uiControl55_VL6QSh: function (data, elem) {
       if (data.eventType == 'changeStartDate') {
@@ -204,74 +263,6 @@
     getTemplate_uiControl86_lZzCFz: function () {
       var selfTemplate = 'import {Component} from \'react\';\n\nexport default class extends React.Component{\n    selClick(e) {\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:"selclick"\n      })\n    }\n  }\n  upClick(e) {\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:"upclick"\n      })\n    }\n  }\n    cancelClick(e) {\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:"cancelclick"\n      })\n    }\n  }\n\n  render(){\n    var data = this.props.customData;\n    var _this = this;\n  return(<div>\n    {data?\n        <div className="ysp-pop-box">\n          <div className="ysp-pop-mask"></div>\n          <div className="ysp-pop-con">\n        <h4>\u6587\u4EF6\u9644\u4EF6</h4>\n       <p onClick={_this.selClick.bind(_this)} className="up-annex">\u4E0A\u4F20\u9644\u4EF6</p>\n        <button className="pop-two-btn" onClick={_this.upClick.bind(_this)}>\u4E0A\u8F7D</button><button className="pop-two-btn" onClick={_this.cancelClick.bind(_this)}>\u53D6\u6D88</button>\n      </div>\n      </div>\n        :\n      <div style={{display:"none"}}></div>\n      }\n    </div>)\n  }\n};';
       return '"use strict";\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require("react");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: "selClick",\n    value: function selClick(e) {\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          eventType: "selclick"\n        });\n      }\n    }\n  }, {\n    key: "upClick",\n    value: function upClick(e) {\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          eventType: "upclick"\n        });\n      }\n    }\n  }, {\n    key: "cancelClick",\n    value: function cancelClick(e) {\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          eventType: "cancelclick"\n        });\n      }\n    }\n  }, {\n    key: "render",\n    value: function render() {\n      var data = this.props.customData;\n      var _this = this;\n      return React.createElement(\n        "div",\n        null,\n        data ? React.createElement(\n          "div",\n          { className: "ysp-pop-box" },\n          React.createElement("div", { className: "ysp-pop-mask" }),\n          React.createElement(\n            "div",\n            { className: "ysp-pop-con" },\n            React.createElement(\n              "h4",\n              null,\n              "\\u6587\\u4EF6\\u9644\\u4EF6"\n            ),\n            React.createElement(\n              "p",\n              { onClick: _this.selClick.bind(_this), className: "up-annex" },\n              "\\u4E0A\\u4F20\\u9644\\u4EF6"\n            ),\n            React.createElement(\n              "button",\n              { className: "pop-two-btn", onClick: _this.upClick.bind(_this) },\n              "\\u4E0A\\u8F7D"\n            ),\n            React.createElement(\n              "button",\n              { className: "pop-two-btn", onClick: _this.cancelClick.bind(_this) },\n              "\\u53D6\\u6D88"\n            )\n          )\n        ) : React.createElement("div", { style: { display: "none" } })\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;';
-    },
-    getData_control29_NETLf0: function (elem) {
-      if (!elem) {
-        return;
-      }var data = { startime: [], endtime: [], school: [], major: [], studySel: [], gradeType: [], education: [], degree: [], edubackground: [], fileTable: [], fileSelOpt: [], isFirstEdu: [], isTZ: [], isZGXW: [], isZGXL: [], tips: [], storage: "" };var RXtime = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_DATE1']");[].forEach.call(RXtime, function (d1, i1) {
-        data.startime.push(d1.value.replace(/\//g, "-"));data.endtime.push(d1.parentElement.parentElement.nextElementSibling.nextElementSibling.querySelector('input').value.replace(/\//g, "-"));
-      });var School = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_HPS_SCHOOL_NAME']");[].forEach.call(School, function (d2, i2) {
-        data.school.push(d2.value);data.major.push(d2.parentElement.parentElement.nextElementSibling.nextElementSibling.querySelector('input').value);
-      });var studySel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_STUDY_MET']");[].forEach.call(studySel, function (d3, i3) {
-        var arrstudy = [];arrstudy.push(d3.querySelector("option[selected='selected']").textContent);var opt1 = d3.querySelectorAll('option');[].forEach.call(opt1, function (d33, i33) {
-          arrstudy.push(d33.textContent);if (d33.selected) {}
-        });data.studySel.push(arrstudy);
-      });var gradeSel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_GRADU_TYPE']");[].forEach.call(gradeSel, function (d4, i4) {
-        var arrgrade = [];arrgrade.push(d4.querySelector("option[selected='selected']").textContent);var opt2 = d4.querySelectorAll('option');[].forEach.call(opt2, function (d44, i44) {
-          arrgrade.push(d44.textContent);
-        });data.gradeType.push(arrgrade);
-      });var educationSel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_EDUCATION']");[].forEach.call(educationSel, function (d5, i5) {
-        var education = [];education.push(d5.querySelector("option[selected='selected']").textContent);var opt3 = d5.querySelectorAll('option');[].forEach.call(opt3, function (d55, i55) {
-          education.push(d55.textContent);
-        });data.education.push(education);
-      });var degreeSel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_DEGREE']");[].forEach.call(degreeSel, function (d6, i6) {
-        var degree = [];degree.push(d6.querySelector("option[selected='selected']").textContent);var opt4 = d6.querySelectorAll('option');[].forEach.call(opt4, function (d66, i66) {
-          degree.push(d66.textContent);
-        });data.degree.push(degree);
-      });var backgroundSel = elem.querySelectorAll("select[id^='HPS_EDUCAT_APR_HPS_EDU_BACKGROUND']");[].forEach.call(backgroundSel, function (d7, i7) {
-        var background1 = [];background1.push(d7.querySelector("option[selected='selected']").textContent);var opt5 = d7.querySelectorAll('option');[].forEach.call(opt5, function (d77, i77) {
-          background1.push(d77.textContent);
-        });data.edubackground.push(background1);
-      }); //附件部分start
-      var fileTable = elem.querySelectorAll(".PSLEVEL2GRID");[].forEach.call(fileTable, function (d8, i8) {
-        var tempObj = { fileName: [], fileType: [] };var fileName = d8.querySelectorAll("span[id^='HPS_EDU_ATT_APR_ATTACHUSERFILE']");[].forEach.call(fileName, function (d10, i10) {
-          tempObj.fileName.push(d10.textContent.trim());
-        });var fileSel = d8.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']");[].forEach.call(fileSel, function (d11, i11) {
-          [].forEach.call(d11.querySelectorAll("option"), function (d12, i12) {
-            if (d12.selected) {
-              tempObj.fileType.push(d12.textContent.trim());
-            }
-          });
-        });data.fileTable.push(tempObj);
-      });var fileSelOpt = elem.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']")[0].querySelectorAll("option");[].forEach.call(fileSelOpt, function (d9, i9) {
-        data.fileSelOpt.push(d9.textContent.trim());
-      }); //附件部分end
-      var isFirstEdu = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_FIRST_EDU_FLAG']");[].forEach.call(isFirstEdu, function (d11, i11) {
-        data.isFirstEdu.push(d11.checked);
-      });var isTZ = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_ENTR_EXAM_FLAG']");[].forEach.call(isTZ, function (d12, i12) {
-        data.isTZ.push(d12.checked);
-      });var isZGXW = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_HIGH_DEG_FLAG']");[].forEach.call(isZGXW, function (d13, i13) {
-        data.isZGXW.push(d13.checked);
-      });var isZGXL = elem.querySelectorAll("input[type='checkbox'][id^='HPS_EDUCAT_APR_HPS_HIGH_EDU_FLAG']");[].forEach.call(isZGXL, function (d14, i14) {
-        data.isZGXL.push(d14.checked);
-      });var tips = elem.querySelectorAll("input[id^='HPS_EDUCAT_APR_HPS_DESC']");[].forEach.call(tips, function (d15, i15) {
-        data.tips.push(d15.value);
-      });data.storage = sessionStorage.getItem("index");return data;
-    },
-    doAction_uiControl58_IfvmSx: function (data, elem) {
-      if (data.eventType == "addMore") {
-        var ind = parseInt(data.dataCustom[0]);var row = data.dataCustom[1];var fileTable = elem.querySelectorAll(".PSLEVEL2GRID")[row];var add = fileTable.querySelectorAll("a[title*='添加']")[ind - 1];add.click();
-      } else if (data.eventType == "enclosureSel") {
-        var row = data.dataCustom[1];var ind = data.dataCustom[0];var index = data.dataCustom[2];var fileTable = elem.querySelectorAll(".PSLEVEL2GRID")[row];var enclosureSel = fileTable.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']")[index].querySelectorAll("option")[ind];enclosureSel.selected = true;fileTable.querySelectorAll("select[id^='HPS_CPY_FILE_CLASS']")[index].dispatchEvent(new Event("change"));
-      } else if (data.eventType == "addEnclosure") {
-        var row = data.dataCustom[0];var index = data.dataCustom[1];var fileTable = elem.querySelectorAll(".PSLEVEL2GRID")[row];var addFile = fileTable.querySelectorAll("input[value='上传']")[index];addFile.click();
-      } else if (data.eventType == "onclickDel") {
-        var row = data.dataCustom[0];var index = data.dataCustom[1];var fileTable = elem.querySelectorAll(".PSLEVEL2GRID")[row];var delFile = fileTable.querySelectorAll("a[title*='删除']")[index];delFile.click();
-      }
-    },
-    getTemplate_uiControl58_IfvmSx: function () {
-      var selfTemplate = 'import {Component} from \'react\';\nimport {CustomHeader} from \'ysp-custom-components\';\nexport default class extends Component{\n  enclosureSel(e){\n    var target=e.target; \n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\'enclosureSel\',\n        data:[target.selectedIndex,target.dataset.row,target.dataset.index]\n      })\n    }\n  }\n  addEnclosure(e){\n    var target=e.target; \n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\'addEnclosure\',\n        data:[target.dataset.row,target.dataset.index]\n      })\n    }\n\t}\nonclickDel(e){\n    var target=e.target; \n    var handler=this.props.customHandler;\n     var ind=target.dataset.index;\n    if(handler){\n      handler({\n        eventType:\'onclickDel\',\n        data:[target.dataset.row,target.dataset.index]\n      })\n    }\n  }\n  render() {   \n    var _this=this;\n    var data=this.props.customData;\n    var fileList=data.fileTable.map(function(item,index){\n      \n      return(\n      \t<div>\n        \t{data.storage==index?\n            \t\t<div className=\'ysp-sfzhkfy-tt\'>\n                  <CustomHeader data={{centerText:\'\u9644\u4EF6\u4E0A\u4F20\',rightText:\'\'}} \n                    backIsShow={true} \n                    back={(e)=>{\n                  \t\t\tsessionStorage.removeItem("index");\n                        e.target.ownerDocument.querySelector(".ysp-jyjl-tt1").style.display="none";\n                  \t\t\t\n                  \t}} filterIsShow={true} filter={(e)=>{\n                       var target=e.target; \n                       var handler=_this.props.customHandler;\n                        if(handler){\n                          handler({\n                            eventType:\'addMore\',\n                            data:[data.fileTable[index].fileName.length,index]\n                          })\n                        }\n                  \t}}></CustomHeader>\n                  \t<div style={{height:\'2.7rem\'}}></div>\n              \t\t\t<div className="fileWrapper" >\n                      {data.fileTable[index].fileName.map(function(d2,i2){\n                        return(\n                          <div className="ysp_enclosure">\n                            <div className="line1">\n                              <div>\u6587\u4EF6\u7C7B\u578B</div>\n                              <select  onChange={_this.enclosureSel.bind(_this)} data-row={index} data-index={i2}>{data.fileSelOpt.map(function(d1,i1){\n                                  return(<option selected={d1==data.fileTable[index].fileType[i2]? true:false}>{d1}</option>)\n                                })}</select>\n                            </div>\t\n                            <div className="line2">\n                              {d2==""? <div className="addEnclosure" data-row={index} data-index={i2} onClick={_this.addEnclosure.bind(_this)}>+</div>: <div className={d2.indexOf("doc")!=-1? "doc":d2.indexOf("xl")!=-1? "excel":d2.indexOf("ppt")!=-1? "ppt":d2.indexOf("pdf")!=-1? "pdf":(d2.indexOf("jpg")!=-1||d2.indexOf("png")!=-1)? "pic":d2.indexOf("zip")!=-1? "zip":d2.indexOf("rar")!=-1? "rar":"default"}></div>}\n                              <div className="words">\n                                <div>{d2}</div>\n                              </div>\n                            </div>\n                            <div className="line3"  data-row={index} data-index={i2} onClick={_this.onclickDel.bind(_this)}>\u5220\u9664</div>\n                         </div>\n                        )\n                      })}\n                     <span className="baseInfoTip">*\u6CE8\uFF1A\u8BF7\u8FD4\u56DE\u4E0A\u4E00\u7EA7\u9875\u9762\u63D0\u4EA4\u4FDD\u5B58</span>\n              \t\t </div>\n                   \n                </div>:""\n              }\n        </div>\n      )\n    });\n    return (\n      <div className=\'ysp-jyjl-tt1\' style={{display:"none"}}>\n        {fileList}\n      </div>\n    )\n  }\n};';
-      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: 'enclosureSel',\n    value: function enclosureSel(e) {\n      var target = e.target;\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          eventType: 'enclosureSel',\n          data: [target.selectedIndex, target.dataset.row, target.dataset.index]\n        });\n      }\n    }\n  }, {\n    key: 'addEnclosure',\n    value: function addEnclosure(e) {\n      var target = e.target;\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          eventType: 'addEnclosure',\n          data: [target.dataset.row, target.dataset.index]\n        });\n      }\n    }\n  }, {\n    key: 'onclickDel',\n    value: function onclickDel(e) {\n      var target = e.target;\n      var handler = this.props.customHandler;\n      var ind = target.dataset.index;\n      if (handler) {\n        handler({\n          eventType: 'onclickDel',\n          data: [target.dataset.row, target.dataset.index]\n        });\n      }\n    }\n  }, {\n    key: 'render',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData;\n      var fileList = data.fileTable.map(function (item, index) {\n\n        return React.createElement(\n          'div',\n          null,\n          data.storage == index ? React.createElement(\n            'div',\n            { className: 'ysp-sfzhkfy-tt' },\n            React.createElement(_yspCustomComponents.CustomHeader, { data: { centerText: '\u9644\u4EF6\u4E0A\u4F20', rightText: '' },\n              backIsShow: true,\n              back: function back(e) {\n                sessionStorage.removeItem(\"index\");\n                e.target.ownerDocument.querySelector(\".ysp-jyjl-tt1\").style.display = \"none\";\n              }, filterIsShow: true, filter: function filter(e) {\n                var target = e.target;\n                var handler = _this.props.customHandler;\n                if (handler) {\n                  handler({\n                    eventType: 'addMore',\n                    data: [data.fileTable[index].fileName.length, index]\n                  });\n                }\n              } }),\n            React.createElement('div', { style: { height: '2.7rem' } }),\n            React.createElement(\n              'div',\n              { className: 'fileWrapper' },\n              data.fileTable[index].fileName.map(function (d2, i2) {\n                return React.createElement(\n                  'div',\n                  { className: 'ysp_enclosure' },\n                  React.createElement(\n                    'div',\n                    { className: 'line1' },\n                    React.createElement(\n                      'div',\n                      null,\n                      '\\u6587\\u4EF6\\u7C7B\\u578B'\n                    ),\n                    React.createElement(\n                      'select',\n                      { onChange: _this.enclosureSel.bind(_this), 'data-row': index, 'data-index': i2 },\n                      data.fileSelOpt.map(function (d1, i1) {\n                        return React.createElement(\n                          'option',\n                          { selected: d1 == data.fileTable[index].fileType[i2] ? true : false },\n                          d1\n                        );\n                      })\n                    )\n                  ),\n                  React.createElement(\n                    'div',\n                    { className: 'line2' },\n                    d2 == \"\" ? React.createElement(\n                      'div',\n                      { className: 'addEnclosure', 'data-row': index, 'data-index': i2, onClick: _this.addEnclosure.bind(_this) },\n                      '+'\n                    ) : React.createElement('div', { className: d2.indexOf(\"doc\") != -1 ? \"doc\" : d2.indexOf(\"xl\") != -1 ? \"excel\" : d2.indexOf(\"ppt\") != -1 ? \"ppt\" : d2.indexOf(\"pdf\") != -1 ? \"pdf\" : d2.indexOf(\"jpg\") != -1 || d2.indexOf(\"png\") != -1 ? \"pic\" : d2.indexOf(\"zip\") != -1 ? \"zip\" : d2.indexOf(\"rar\") != -1 ? \"rar\" : \"default\" }),\n                    React.createElement(\n                      'div',\n                      { className: 'words' },\n                      React.createElement(\n                        'div',\n                        null,\n                        d2\n                      )\n                    )\n                  ),\n                  React.createElement(\n                    'div',\n                    { className: 'line3', 'data-row': index, 'data-index': i2, onClick: _this.onclickDel.bind(_this) },\n                    '\\u5220\\u9664'\n                  )\n                );\n              }),\n              React.createElement(\n                'span',\n                { className: 'baseInfoTip' },\n                '*\\u6CE8\\uFF1A\\u8BF7\\u8FD4\\u56DE\\u4E0A\\u4E00\\u7EA7\\u9875\\u9762\\u63D0\\u4EA4\\u4FDD\\u5B58'\n              )\n            )\n          ) : \"\"\n        );\n      });\n      return React.createElement(\n        'div',\n        { className: 'ysp-jyjl-tt1', style: { display: \"none\" } },\n        fileList\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;\n;";
     }
   }, "educationalExperience");
 })(window, ysp);

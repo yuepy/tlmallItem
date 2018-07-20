@@ -554,56 +554,6 @@
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control102_VdXUmd": {
-      "location": {
-        "data": {
-          "tagName": "INPUT"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@title",
-            "prob": 2,
-            "value": {
-              "text": [
-                "浏览"
-              ]
-            }
-          },
-          {
-            "id": "elem/@name",
-            "prob": 2,
-            "value": "descendant::INPUT[@name=\"#ICOrigFileName\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              32,
-              41
-            ],
-            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge FORM.PSForm DIV.ps_box-toolshiddens INPUT"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[1]/INPUT[1]"
-          },
-          {
-            "id": "input/type",
-            "verifyEnabled": true,
-            "value": "file"
-          }
-        ]
-      },
-      "roles": "element,file",
-      "monitored": false,
-      "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
-      "componentType": "fileUpload"
-    },
     "control109_yiloJm": {
       "location": {
         "data": {
@@ -653,7 +603,6 @@
         "control47_ACoOi5",
         "control19_pCDSMy",
         "control43_IR7TSD",
-        "control102_VdXUmd",
         "control109_yiloJm"
       ],
       "anchors": [],
@@ -780,16 +729,6 @@
       "fromContextId": "context3_fi6f26",
       "fromAction": "doAction",
       "fromControlId": "control19_pCDSMy",
-      "toContexts": [
-        {
-          "toContextId": "context3_fi6f26"
-        }
-      ]
-    },
-    "flow96_LvHAa3": {
-      "fromContextId": "context3_fi6f26",
-      "fromAction": "click",
-      "fromControlId": "control102_VdXUmd",
       "toContexts": [
         {
           "toContextId": "context3_fi6f26"
@@ -1040,17 +979,6 @@
                         "onDoAction": "doAction_uiControl46_l2k5ye",
                         "onGetTemplate": "getTemplate_uiControl46_l2k5ye"
                       }
-                    }
-                  }
-                },
-                {
-                  "id": "uiControl105_4r7fsd",
-                  "controlId": "control102_VdXUmd",
-                  "display": {
-                    "adapterId": "clickable",
-                    "type": "fileUpload",
-                    "adapter": {
-                      "templateType": ""
                     }
                   }
                 }
