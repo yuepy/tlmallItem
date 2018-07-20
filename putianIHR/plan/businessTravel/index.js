@@ -69,7 +69,7 @@
     },
     doAction_uiControl66_G5ofzc: function (data, elem) {
       if (data.eventType == 'change') {
-        var data = data.dataCustom;elem.value = data;elem.dispatchEvent(new Event('change'));
+        var data = data.dataCustom;elem.value = data;elem.dispatchEvent(new Event('change'));$(elem.ownerDocument.querySelectorAll("[dir='ltr']")[0]).find("input").focus();
       }
     },
     getTemplate_uiControl66_G5ofzc: function () {

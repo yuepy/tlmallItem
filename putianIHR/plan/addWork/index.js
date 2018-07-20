@@ -40,7 +40,7 @@
     },
     doAction_uiControl49_GduLH8: function (data, elem) {
       if (data.eventType == "textareaBlur") {
-        elem.value = data.dataCustom;elem.dispatchEvent(new Event("change"));
+        elem.value = data.dataCustom;elem.dispatchEvent(new Event("change"));$(elem.ownerDocument.querySelectorAll("[dir='ltr']")[0]).find("input").focus();
       }
     },
     getTemplate_uiControl49_GduLH8: function () {

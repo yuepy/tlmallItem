@@ -68,7 +68,8 @@
           }
         }
       } else if (data.eventType == "dateBlur") {
-        var d = data.dataCustom;elem.querySelector("#win7divHPS_AWE018_HDR_TERMINATION_DT").querySelector("input").value = d.replace(/-/g, "/");elem.querySelector("#HPS_AWE018_HDR_TERMINATION_DT$prompt").dispatchEvent(new Event("change"));
+        var d = data.dataCustom;elem.querySelector("#win7divHPS_AWE018_HDR_TERMINATION_DT").querySelector("input").value = d.replace(/-/g, "/"); // elem.querySelector("#HPS_AWE018_HDR_TERMINATION_DT$prompt").dispatchEvent(new Event("change"));
+        elem.querySelector("#win7divHPS_AWE018_HDR_TERMINATION_DT").querySelector("input").dispatchEvent(new Event("change"));$(elem.ownerDocument.querySelector("#HPS_AWE018_HDR_COMMENTS")).focus();
       }
     },
     getTemplate_uiControl56_ZGbLp2: function () {
@@ -82,7 +83,7 @@
     },
     doAction_uiControl57_bQey1L: function (data, elem) {
       if (data.eventType == 'change') {
-        var data = data.dataCustom;elem.value = data;elem.dispatchEvent(new Event('change'));
+        var data = data.dataCustom;elem.value = data;elem.dispatchEvent(new Event('change'));$(elem.ownerDocument.querySelector("#ACE_HPS_JOB_CUR_VW_")).find("input").focus();
       }
     },
     getTemplate_uiControl57_bQey1L: function () {

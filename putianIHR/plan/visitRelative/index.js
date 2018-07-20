@@ -49,7 +49,7 @@
       var group = data.dataCustom;var type = data.eventType;var tds = elem.querySelectorAll("td[valign]");if (type == "searchClick") {
         tds[group].querySelector("a").click();
       } else if (type == "searchBlur") {
-        tds[group[0]].querySelector("input").value = group[1];tds[group[0]].querySelector("input").dispatchEvent(new Event("change"));
+        tds[group[0]].querySelector("input").value = group[1];tds[group[0]].querySelector("input").dispatchEvent(new Event("change"));$(elem.querySelector("#HPS_AWE005_HDR_HPS_VISIT_DEST")).focus();
       } else if (type == "selectChange") {
         var options = tds[group[0]].querySelector("select").querySelectorAll("option"); // tds[group[0]].querySelector("select").querySelectorAll("option")[group[1]].selected = true;
         // tds[group[0]].querySelector("select").dispatchEvent(new Event("change"));
