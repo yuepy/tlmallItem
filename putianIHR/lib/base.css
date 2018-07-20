@@ -1,4 +1,9 @@
 /****************************公共样式************************/
+.editor-state [data-ysp="component"] {
+  padding-top: 0;
+  padding-bottom: none;
+  min-height: 0;
+}
 body {
   background: #f4f4f4;
   position: relative;
@@ -55,7 +60,6 @@ div[data-ysp-modelid="forgetCard"] .card-body {
 /******************************CustomHeader组件******************************************/
 .editor-state [data-ysp="component"] {
   padding-top: 0;
-  min-height: 0;
 }
 div[style*="height: 2.7rem;"] {
   background: #37363c;
@@ -227,7 +231,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  z-index: 1001;
 }
 .savedModal .saveContent {
   position: absolute;

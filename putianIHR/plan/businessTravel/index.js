@@ -280,7 +280,7 @@
     getData_control112_Mio4W6: function (elem) {
       if (!elem) {
         return;
-      }console.log(elem);if (elem.querySelectorAll("option") && elem.querySelectorAll("option").length > 0) {
+      }if (elem.querySelectorAll("option") && elem.querySelectorAll("option").length > 0) {
         var data = { con: [], select: "", pserror: "" };data.pserror = elem.querySelector("select").getAttribute("class");var opts = elem.querySelectorAll("option");[].forEach.call(opts, function (item, index) {
           data.con.push(item.textContent.trim());if (item.selected) {
             data.select = item.textContent.trim();
