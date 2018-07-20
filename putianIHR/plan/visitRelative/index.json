@@ -331,6 +331,10 @@
         "data": {
           "tagName": "FORM"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -482,34 +486,96 @@
           }
         },
         {
-          "id": "uiControl69_vzkryS",
-          "controlId": "control70_h70Dev",
+          "id": "uiControl105_H41RhZ",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl69_vzkryS",
-                "onGetTemplate": "getTemplate_uiControl69_vzkryS"
-              }
+              "templateType": ""
             }
-          }
-        },
-        {
-          "id": "uiControl70_7bqvxG",
-          "controlId": "control71_J0BsJh",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl70_7bqvxG",
-                "onGetTemplate": "getTemplate_uiControl70_7bqvxG"
-              }
+          },
+          "layout": [
+            {
+              "id": "uiControl105_H41RhZheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl105_H41RhZbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl69_vzkryS",
+                  "controlId": "control70_h70Dev",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl69_vzkryS",
+                        "onGetTemplate": "getTemplate_uiControl69_vzkryS"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl70_7bqvxG",
+                  "controlId": "control71_J0BsJh",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl70_7bqvxG",
+                        "onGetTemplate": "getTemplate_uiControl70_7bqvxG"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl73_TEIbnR",
+                  "controlId": "control74_1kdy8K",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl73_TEIbnR",
+                        "onGetTemplate": "getTemplate_uiControl73_TEIbnR"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl105_H41RhZfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
             }
-          }
+          ]
         },
         {
           "id": "uiControl71_URErdd",
@@ -527,21 +593,6 @@
           }
         },
         {
-          "id": "uiControl72_NayfBa",
-          "controlId": "control73_VOqBBU",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl72_NayfBa",
-                "onGetTemplate": "getTemplate_uiControl72_NayfBa"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl114_6mT1VU",
           "controlId": "control111_GXU1lt",
           "display": {
@@ -552,21 +603,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl114_6mT1VU",
                 "onGetTemplate": "getTemplate_uiControl114_6mT1VU"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl73_TEIbnR",
-          "controlId": "control74_1kdy8K",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl73_TEIbnR",
-                "onGetTemplate": "getTemplate_uiControl73_TEIbnR"
               }
             }
           }
@@ -612,6 +648,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl9_SNgvTP",
                 "onGetTemplate": "getTemplate_uiControl9_SNgvTP"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl72_NayfBa",
+          "controlId": "control73_VOqBBU",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl72_NayfBa",
+                "onGetTemplate": "getTemplate_uiControl72_NayfBa"
               }
             }
           }
