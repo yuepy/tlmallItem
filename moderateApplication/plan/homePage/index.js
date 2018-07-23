@@ -33,7 +33,9 @@
     getData_control577_63WGNP: function (elem) {},
     doAction_uiControl577_dppg6H: function (data, elem) {
       if ('click' == data.eventType) {
-        var el = elem && elem.querySelector('ul').nextElementSibling;el && el.click();
+        // var el = elem && elem.querySelector('ul').nextElementSibling;
+        // el && el.click();
+        elem.ownerDocument.defaultView.open('http://172.16.11.61:88/List.aspx');
       }
     },
     getTemplate_uiControl577_dppg6H: function () {

@@ -1,14 +1,13 @@
 {
   "version": "0.1",
   "id": "homePage",
-  "targetURL": "http://172.16.11.61/Index.aspx",
+  "targetURL": "http://172.16.11.61:88/Index.aspx",
   "jsFile": "index.js",
   "requires": {
     "partyWork": "../partyWork/index.json",
     "flashMorePage": "../flashMorePage/index.json",
     "noticeMore": "../noticeMore/index.json",
     "majorMatter": "../majorMatter/index.json",
-    "dealtIndex": "../dealtIndex/index.json",
     "img_detail": "../img_detail/index.json"
   },
   "chineseName": "中可首页",
@@ -389,11 +388,8 @@
       "fromControlId": "control572_xaRBP3",
       "toContexts": [
         {
-          "toContextId": "context56_7xA3In"
-        },
-        {
-          "toContextId": "context24_EkSRuv",
-          "toModelId": "dealtIndex"
+          "toContextId": "context56_7xA3In",
+          "toModelId": "homePage"
         }
       ]
     },
@@ -608,7 +604,7 @@
     "page/urls": {
       "contexts": {
         "context56_7xA3In": [
-          "172.16.11.61/Index.aspx"
+          "172.16.11.61:88/Index.aspx"
         ]
       }
     },
@@ -663,6 +659,52 @@
             "tianqi",
             "zdsxNotify",
             "zdsxRecordNum"
+          ],
+          [
+            "DQTime",
+            "MainContent_RptGonggao_hlk_Title_",
+            "MainContent_bpm",
+            "MainContent_bpmreport",
+            "MainContent_cart",
+            "MainContent_divPage",
+            "MainContent_docF",
+            "MainContent_docHQ",
+            "MainContent_dqgz",
+            "MainContent_ebz",
+            "MainContent_gzzd",
+            "MainContent_hfAccount",
+            "MainContent_hyxt",
+            "MainContent_jfpt",
+            "MainContent_jjjc",
+            "MainContent_law",
+            "MainContent_mail",
+            "MainContent_nbzp",
+            "MainContent_pw",
+            "MainContent_rcfz",
+            "MainContent_rptKX_hlk_Title_",
+            "MainContent_rsxz",
+            "MainContent_snapp",
+            "MainContent_wlxy",
+            "MainContent_yszj",
+            "MainContent_zjsj",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "bpmNotify",
+            "bpmRecordNum",
+            "ctl",
+            "iconBall",
+            "lawNotify",
+            "lawRecordNum",
+            "mailNotify",
+            "mailRecordNum",
+            "pwNotify",
+            "pwRecordNum",
+            "show_pic",
+            "slideBox",
+            "slideText",
+            "slides",
+            "textBall",
+            "tianqi"
           ]
         ]
       }

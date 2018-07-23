@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "notice_detail",
-  "targetURL": "http://172.16.11.61/GG/GGDetail.aspx?ID=118",
+  "targetURL": "http://172.16.11.61:88/GG/GGDetail.aspx?ID=118",
   "jsFile": "index.js",
   "chineseName": "人士公告详情页",
   "description": "",
@@ -11,6 +11,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -50,6 +54,10 @@
       "location": {
         "data": {
           "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -107,6 +115,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -150,7 +162,9 @@
         "control641_FJDv0k"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:88\\/GG\\/GGDetail\\.aspx\\?ID=.*"
+      ]
     }
   },
   "flows": {

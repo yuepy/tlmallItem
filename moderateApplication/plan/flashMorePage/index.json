@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "flashMorePage",
-  "targetURL": "http://172.16.11.61/List.aspx",
+  "targetURL": "http://172.16.11.61:88/List.aspx",
   "jsFile": "index.js",
   "requires": {
     "New_KX_detaile": "../New_KX_detaile/index.json"
@@ -134,9 +134,7 @@
         "control580_wRJPTR"
       ],
       "anchors": [],
-      "urlAnchor": [
-        "http:|\\/\\/172\\.16\\.11\\.61\\/List\\.aspx"
-      ]
+      "urlAnchor": []
     }
   },
   "flows": {
@@ -245,7 +243,8 @@
     "page/urls": {
       "contexts": {
         "context58_fysKAi": [
-          "172.16.11.61/List.aspx"
+          "172.16.11.61/List.aspx",
+          "172.16.11.61:88/List.aspx"
         ]
       }
     },

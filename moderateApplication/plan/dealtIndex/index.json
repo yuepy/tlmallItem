@@ -31,7 +31,6 @@
     "batchex": "../batchex/index.json",
     "creditXYDJSF": "../creditXYDJSF/index.json",
     "assedbudget": "../assedbudget/index.json",
-    "homePage": "../homePage/index.json",
     "Newapplocation": "../Newapplocation/index.json"
   },
   "chineseName": "待办首页页面",
@@ -248,11 +247,16 @@
       "fromControlId": "control194_rkfuKp",
       "toContexts": [
         {
-          "toContextId": "context24_EkSRuv"
+          "toContextId": "context24_EkSRuv",
+          "toModelId": "dealtIndex"
         },
         {
           "toContextId": "context56_7xA3In",
           "toModelId": "homePage"
+        },
+        {
+          "toModelId": "Newapplocation",
+          "toContextId": "context61_pqdpBL"
         }
       ]
     },

@@ -29,7 +29,7 @@
       "title": "commission",
       "url": "adapter://moderateApplication/plan/commission/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61.*"
+        "^http:\\/\\/172\\.16\\.11\\.61:8000.*"
       ],
       "demo": []
     },
@@ -42,11 +42,67 @@
       "demo": [
         "http://172.16.11.61:8000/sysLoginMock.aspx"
       ]
+    },
+    {
+      "title": "flashMorePage",
+      "url": "adapter://moderateApplication/plan/flashMorePage/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:88\\/List.aspx"
+      ],
+      "demo": []
+    },
+    {
+      "title": "homePage",
+      "url": "adapter://moderateApplication/plan/homePage/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:88/In.*"
+      ],
+      "demo": []
+    },
+    {
+      "title": "noticeMore",
+      "url": "adapter://moderateApplication/plan/noticeMore/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:88\\/GG\\/GGList\\.aspx"
+      ],
+      "demo": [
+        "http://172.16.11.61:88/GG/GGList.aspx"
+      ]
+    },
+    {
+      "title": "New_KX_detaile",
+      "url": "adapter://moderateApplication/plan/New_KX_detaile/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:88\\/Detail\\.aspx\\?ID.*"
+      ],
+      "demo": [
+        "http://172.16.11.61:88/GG/GGDetail.aspx?ID=118"
+      ]
+    },
+    {
+      "title": "notice_detail",
+      "url": "adapter://moderateApplication/plan/notice_detail/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:88\\/GG\\/GGDetail\\.aspx\\?ID.*"
+      ],
+      "demo": [
+        "http://172.16.11.61:88/GG/GGDetail.aspx?ID=118"
+      ]
+    },
+    {
+      "title": "img_detail",
+      "url": "adapter://moderateApplication/plan/img_detail/index.json",
+      "matcher": [
+        "^http:\\/\\/info\\.cofcoko\\.com\\/:88\\/Detail\\.aspx\\?ID.*"
+      ],
+      "demo": [
+        "http://info.cofcoko.com/Detail.aspx?ID=381"
+      ]
     }
   ],
   "name": "中可工程",
-  "default_url": "http://172.16.11.61/Index.aspx",
+  "default_url": "http://172.16.11.61:88/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1532332580008
+  "update_time": 1532337419305
 }
