@@ -8,7 +8,8 @@
     "flashMorePage": "../flashMorePage/index.json",
     "noticeMore": "../noticeMore/index.json",
     "majorMatter": "../majorMatter/index.json",
-    "dealtIndex": "../dealtIndex/index.json"
+    "dealtIndex": "../dealtIndex/index.json",
+    "img_detail": "../img_detail/index.json"
   },
   "chineseName": "中可首页",
   "description": "中可首页",
@@ -321,6 +322,49 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control644_fkQ0GT": {
+      "location": {
+        "data": {
+          "tagName": "UL"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"slideBox\"]//UL[@id=\"show_pic\"]",
+              "descendant::UL[@id=\"show_pic\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              6
+            ],
+            "value": "DIV.container UL"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/UL[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control644_fkQ0GT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -331,7 +375,8 @@
         "control574_rxxUS9",
         "control577_63WGNP",
         "control581_MyOJP0",
-        "control584_Dv9hyl"
+        "control584_Dv9hyl",
+        "control644_fkQ0GT"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -422,6 +467,20 @@
         {
           "toContextId": "context60_eGcIT4",
           "toModelId": "majorMatter"
+        }
+      ]
+    },
+    "flow232_9eXLZJ": {
+      "fromContextId": "context56_7xA3In",
+      "fromAction": "doAction",
+      "fromControlId": "control644_fkQ0GT",
+      "toContexts": [
+        {
+          "toContextId": "context56_7xA3In"
+        },
+        {
+          "toContextId": "context66_knKZUq",
+          "toModelId": "img_detail"
         }
       ]
     }
@@ -516,6 +575,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl581_WKv8W8",
                 "onGetTemplate": "getTemplate_uiControl581_WKv8W8"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl644_S884vI",
+          "controlId": "control644_fkQ0GT",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl644_S884vI",
+                "onGetTemplate": "getTemplate_uiControl644_S884vI"
               }
             }
           }

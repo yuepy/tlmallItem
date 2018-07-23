@@ -1,0 +1,294 @@
+{
+  "version": "0.1",
+  "id": "img_detail",
+  "targetURL": "http://info.cofcoko.com/Detail.aspx?ID=381",
+  "jsFile": "index.js",
+  "chineseName": "轮播图详情页",
+  "description": "",
+  "controls": {
+    "control645_R1t8pZ": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "a/@href",
+            "prob": 3,
+            "value": {
+              "pathname": "/List.aspx"
+            }
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[1]/A[2]",
+              "ratio": 0.785
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.container DIV.centerbox DIV.breadcrumb A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[1]/A[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control645_R1t8pZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control646_X4ikDB": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
+              "ratio": 0.785
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsDetail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control646_X4ikDB"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control647_aZrnWF": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[3]",
+              "ratio": 0.785
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsRelated"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control647_aZrnWF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context66_knKZUq": {
+      "controls": [
+        "control645_R1t8pZ",
+        "control646_X4ikDB",
+        "control647_aZrnWF"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow233_oMu0ET": {
+      "toContexts": [
+        {
+          "toContextId": "context66_knKZUq"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page66_qbEdVz": {
+      "contextId": "context66_knKZUq",
+      "layout": [
+        {
+          "id": "uiControl645_duSTU6",
+          "controlId": "control645_R1t8pZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl645_duSTU6",
+                "onGetTemplate": "getTemplate_uiControl645_duSTU6"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl646_TJfNKM",
+          "controlId": "control646_X4ikDB",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl646_TJfNKM",
+                "onGetTemplate": "getTemplate_uiControl646_TJfNKM"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl647_ZsvWTC",
+          "controlId": "control647_aZrnWF",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl647_ZsvWTC",
+                "onGetTemplate": "getTemplate_uiControl647_ZsvWTC"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context66_knKZUq": [
+          "中粮可口可乐饮料有限公司"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context66_knKZUq": [
+          "info.cofcoko.com/Detail.aspx?ID=381"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context66_knKZUq": [
+          [
+            "DQTime",
+            "Form",
+            "__VIEWSTATE",
+            "tianqi"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context66_knKZUq": [
+          [
+            "ExternalClassCDFCCFDFAA",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context66_knKZUq": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden"
+          ]
+        ]
+      }
+    }
+  }
+}

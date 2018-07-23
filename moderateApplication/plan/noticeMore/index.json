@@ -3,6 +3,9 @@
   "id": "noticeMore",
   "targetURL": "http://172.16.11.61/GG/GGList.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "notice_detail": "../notice_detail/index.json"
+  },
   "chineseName": "公司公告更多",
   "description": "公司公告更多",
   "firstPaintEnable": false,
@@ -100,6 +103,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -127,9 +134,7 @@
         "control597_LUzFNI"
       ],
       "anchors": [],
-      "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61\\/GG\\/GGList\\.aspx"
-      ]
+      "urlAnchor": []
     }
   },
   "flows": {
@@ -147,6 +152,20 @@
       "toContexts": [
         {
           "toContextId": "context59_rNCplc"
+        }
+      ]
+    },
+    "flow228_0tpotu": {
+      "fromContextId": "context59_rNCplc",
+      "fromAction": "doAction",
+      "fromControlId": "control583_LKFDF2",
+      "toContexts": [
+        {
+          "toContextId": "context59_rNCplc"
+        },
+        {
+          "toContextId": "context65_bm4mfK",
+          "toModelId": "notice_detail"
         }
       ]
     }

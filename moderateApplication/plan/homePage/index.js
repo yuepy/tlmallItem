@@ -63,6 +63,22 @@
     getTemplate_uiControl584_EzVBoB: function () {
       var selfTemplate = "module.exports = React.createClass({\n  handlerClick:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div className=\"ysp-homePage\" onClick={this.handlerClick.bind(this)}>\n        \u91CD\u5927\u4E8B\u9879\n      </div>\n    )\n  }\n});";
       return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  handlerClick: function handlerClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-homePage\", onClick: this.handlerClick.bind(this) },\n      \"\\u91CD\\u5927\\u4E8B\\u9879\"\n    );\n  }\n});";
+    },
+    getData_control644_fkQ0GT: function (elem) {
+      if (!elem) {
+        return;
+      }var data = [];var lis = elem.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
+        data.push(lis[i]);
+      }return data;
+    },
+    doAction_uiControl644_S884vI: function (data, elem) {
+      if (data.eventType == 'click') {
+        elem.querySelectorAll('li')[data.customData.index].querySelector('a').click();
+      }
+    },
+    getTemplate_uiControl644_S884vI: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        index = target.getAttribute('data-id');\n    if(handler){\n      handler({eventType:'click',data:{index:index}})\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n    _this = this;\n    var lis = data.map(function(ele,index){\n      return (\n      \t<div onClick={_this.onClick} data-id={index}>\u56FE\u7247{++index}</div>\n      )\n    })\n    return (\n      <div>\n        {lis}\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        index = target.getAttribute('data-id');\n    if (handler) {\n      handler({ eventType: 'click', data: { index: index } });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n    var lis = data.map(function (ele, index) {\n      return React.createElement(\n        'div',\n        { onClick: _this.onClick, 'data-id': index },\n        '\\u56FE\\u7247',\n        ++index\n      );\n    });\n    return React.createElement(\n      'div',\n      null,\n      lis\n    );\n  }\n});";
     }
   }, "homePage");
 })(window, ysp);

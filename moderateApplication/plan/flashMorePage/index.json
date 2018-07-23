@@ -3,6 +3,9 @@
   "id": "flashMorePage",
   "targetURL": "http://172.16.11.61/List.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "New_KX_detaile": "../New_KX_detaile/index.json"
+  },
   "chineseName": "快讯更多页面",
   "description": "快讯更多页面",
   "firstPaintEnable": false,
@@ -11,6 +14,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -52,6 +59,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -92,6 +103,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -119,9 +134,7 @@
         "control580_wRJPTR"
       ],
       "anchors": [],
-      "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61\\/List\\.aspx"
-      ]
+      "urlAnchor": []
     }
   },
   "flows": {
@@ -136,6 +149,30 @@
       "fromContextId": "context58_fysKAi",
       "fromAction": "doAction",
       "fromControlId": "control580_wRJPTR",
+      "toContexts": [
+        {
+          "toContextId": "context58_fysKAi"
+        }
+      ]
+    },
+    "flow225_qimeXA": {
+      "fromContextId": "context58_fysKAi",
+      "fromAction": "doAction",
+      "fromControlId": "control578_U4Ub8v",
+      "toContexts": [
+        {
+          "toContextId": "context58_fysKAi"
+        },
+        {
+          "toContextId": "context64_eFxaoF",
+          "toModelId": "New_KX_detaile"
+        }
+      ]
+    },
+    "flow226_3TZ8as": {
+      "fromContextId": "context58_fysKAi",
+      "fromAction": "doAction",
+      "fromControlId": "control579_muZruu",
       "toContexts": [
         {
           "toContextId": "context58_fysKAi"

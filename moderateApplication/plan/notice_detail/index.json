@@ -1,0 +1,408 @@
+{
+  "version": "0.1",
+  "id": "notice_detail",
+  "targetURL": "http://172.16.11.61/GG/GGDetail.aspx?ID=118",
+  "jsFile": "index.js",
+  "chineseName": "人士公告详情页",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control639_acOpTr": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl01",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
+              "ratio": 0.914
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsDetail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control639_acOpTr"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control640_foJnkb": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "locators": [
+          {
+            "id": "a/@href",
+            "prob": 3,
+            "value": {
+              "pathname": "/GG/List.aspx"
+            }
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl01",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[1]/A[2]",
+              "ratio": 0.806
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.container DIV.centerbox DIV.breadcrumb A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[1]/A[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control640_foJnkb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control641_FJDv0k": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl01",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[3]",
+              "ratio": 0.806
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsRelated"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control641_FJDv0k"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context65_bm4mfK": {
+      "controls": [
+        "control639_acOpTr",
+        "control640_foJnkb",
+        "control641_FJDv0k"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow229_bpuKWJ": {
+      "toContexts": [
+        {
+          "toContextId": "context65_bm4mfK"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page65_FBAmVt": {
+      "contextId": "context65_bm4mfK",
+      "layout": [
+        {
+          "id": "uiControl640_SZUZMZ",
+          "controlId": "control640_foJnkb",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl640_SZUZMZ",
+                "onGetTemplate": "getTemplate_uiControl640_SZUZMZ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl639_EgFo8Q",
+          "controlId": "control639_acOpTr",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl639_EgFo8Q",
+                "onGetTemplate": "getTemplate_uiControl639_EgFo8Q"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl641_WDTQ6z",
+          "controlId": "control641_FJDv0k",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl641_WDTQ6z",
+                "onGetTemplate": "getTemplate_uiControl641_WDTQ6z"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context65_bm4mfK": [
+          "中粮可口可乐饮料有限公司"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context65_bm4mfK": [
+          "172.16.11.61/GG/GGDetail.aspx?ID=118",
+          "172.16.11.61/GG/GGDetail.aspx?ID=119",
+          "172.16.11.61/GG/GGDetail.aspx?ID=120"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context65_bm4mfK": [
+          [
+            "DQTime",
+            "__VIEWSTATE",
+            "ctl",
+            "tianqi"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context65_bm4mfK": [
+          [
+            "ExternalClassDFFCADABEDB",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "select",
+            "top",
+            "welcome",
+            "whether"
+          ],
+          [
+            "ExternalClassDEFBEFCAEDFAACA",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "select",
+            "top",
+            "welcome",
+            "whether"
+          ],
+          [
+            "ExternalClassFCFDDBBCF",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "select",
+            "top",
+            "welcome",
+            "whether"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context65_bm4mfK": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "B/SPAN/SPAN",
+            "DIV/B/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/B",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "SPAN/B/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/A",
+            "TD/SPAN/SPAN",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "B/SPAN/SPAN",
+            "DIV/B/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "SPAN/SPAN/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/A",
+            "TD/SPAN/SPAN",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/P/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/A",
+            "TD/SPAN/SPAN",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

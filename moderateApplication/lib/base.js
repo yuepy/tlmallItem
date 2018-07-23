@@ -207,7 +207,7 @@
       }
       for(var i=0;i<obj.content.length;i++){
         for(var k=0;k<arr.length;k++){
-          if(obj.content[i][0] == arr[k]){
+          if(obj.content[i][0] != arr[k]){
             str.push(obj.content[i]);
             dataindex.push(i);
           }
