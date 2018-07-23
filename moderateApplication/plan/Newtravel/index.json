@@ -3,6 +3,9 @@
   "id": "Newtravel",
   "targetURL": "http://172.16.11.61:9995/Workflow/Forms/CLFYBX/Start.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "previewapproval": "../previewapproval/index.json"
+  },
   "chineseName": "差旅费用报销发起流程",
   "description": "",
   "controls": {
@@ -755,6 +758,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -798,6 +805,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -833,6 +844,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -990,6 +1005,20 @@
       "toContexts": [
         {
           "toContextId": "context63_he35RO"
+        }
+      ]
+    },
+    "flow236_zhzOnn": {
+      "fromContextId": "context63_he35RO",
+      "fromAction": "doAction",
+      "fromControlId": "control625_TE4D6e",
+      "toContexts": [
+        {
+          "toContextId": "context63_he35RO"
+        },
+        {
+          "toContextId": "context10_P8RicR",
+          "toModelId": "previewapproval"
         }
       ]
     }
