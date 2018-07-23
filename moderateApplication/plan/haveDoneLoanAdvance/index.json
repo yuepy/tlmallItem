@@ -431,6 +431,33 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control680_OIHdAM": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control680_OIHdAM"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -445,7 +472,8 @@
         "control367_v01ctv",
         "control368_toUm5G",
         "control369_HEs2W1",
-        "control459_EDMPya"
+        "control459_EDMPya",
+        "control680_OIHdAM"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -502,6 +530,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl362_pd1k3T",
                 "onGetTemplate": "getTemplate_uiControl362_pd1k3T"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl680_hBhISb",
+          "controlId": "control680_OIHdAM",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl680_hBhISb",
+                "onGetTemplate": "getTemplate_uiControl680_hBhISb"
               }
             }
           }
@@ -1049,6 +1092,62 @@
             "aui_outer",
             "aui_s",
             "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "fileUpload",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "aspNetDisabled",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
             "aui_sw",
             "aui_title",
             "aui_titleBar",

@@ -495,6 +495,38 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control656_QCKnrZ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control656_QCKnrZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -511,7 +543,8 @@
         "control486_UaH6BK",
         "control490_FGWdUt",
         "control492_B5qHBt",
-        "control493_XWlatA"
+        "control493_XWlatA",
+        "control656_QCKnrZ"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -660,6 +693,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl167_lTh8Ky",
                 "onGetTemplate": "getTemplate_uiControl167_lTh8Ky"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl656_1t1AcT",
+          "controlId": "control656_QCKnrZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl656_1t1AcT",
+                "onGetTemplate": "getTemplate_uiControl656_1t1AcT"
               }
             }
           }

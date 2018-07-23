@@ -642,6 +642,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -686,6 +690,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -727,6 +735,38 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control676_clAygo": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control676_clAygo"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -749,7 +789,8 @@
         "control554_Sde4n5",
         "control555_gohC5f",
         "control482_5J6tEV",
-        "control567_4NpTIW"
+        "control567_4NpTIW",
+        "control676_clAygo"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -1104,6 +1145,21 @@
               ]
             }
           ]
+        },
+        {
+          "id": "uiControl676_QJI8L2",
+          "controlId": "control676_clAygo",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl676_QJI8L2",
+                "onGetTemplate": "getTemplate_uiControl676_QJI8L2"
+              }
+            }
+          }
         },
         {
           "id": "uiControl1_H8k4xV",

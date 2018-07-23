@@ -407,6 +407,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -430,6 +434,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -457,6 +465,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -502,6 +514,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -543,6 +559,70 @@
       "monitored": false,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control673_27mKDZ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control673_27mKDZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control674_x3Elq5": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control674_x3Elq5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -561,7 +641,9 @@
         "control550_QgGnBV",
         "control551_VyROLR",
         "control552_ThrlSR",
-        "control553_nTawGJ"
+        "control553_nTawGJ",
+        "control673_27mKDZ",
+        "control674_x3Elq5"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -685,6 +767,21 @@
           }
         },
         {
+          "id": "uiControl674_ETToPh",
+          "controlId": "control674_x3Elq5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl674_ETToPh",
+                "onGetTemplate": "getTemplate_uiControl674_ETToPh"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl183_ARCCd7",
           "controlId": "control183_JBlHLP",
           "display": {
@@ -695,6 +792,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl183_ARCCd7",
                 "onGetTemplate": "getTemplate_uiControl183_ARCCd7"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl673_EAHppL",
+          "controlId": "control673_27mKDZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl673_EAHppL",
+                "onGetTemplate": "getTemplate_uiControl673_EAHppL"
               }
             }
           }

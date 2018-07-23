@@ -1990,3 +1990,7 @@
       var tr = elem.querySelector('tbody').querySelectorAll('tr')[data.customData.index];
       tr.querySelectorAll('td')[tr.querySelectorAll('td').length - 1].querySelector('a').click();
     }
+- name: 返回页面顶部
+  getTemplate: "import {Component} from \"react\";\nexport default class extends Component{\n \n  componentDidMount(){\n    \n    var elem=this.refs.toTop.ownerDocument.querySelector(\".view-wrapper\");\n    \n    setTimeout(function(){\n      elem.scrollTop=0;\n    },500)\n  }\n  render(){\n    return(\n    \t<div ref=\"toTop\"></div>\n    )\n  }\n}"
+  getData: ''
+  doAction: ''

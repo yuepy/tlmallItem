@@ -397,6 +397,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -420,6 +424,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -447,6 +455,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -492,6 +504,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -533,6 +549,33 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control651_7L49ys": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control651_7L49ys"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -550,7 +593,8 @@
         "control563_OEPZ0G",
         "control564_SCynG7",
         "control565_cALmwe",
-        "control566_TTW9Gp"
+        "control566_TTW9Gp",
+        "control651_7L49ys"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -635,6 +679,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl259_0syaAO",
                 "onGetTemplate": "getTemplate_uiControl259_0syaAO"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl651_UfbvPQ",
+          "controlId": "control651_7L49ys",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl651_UfbvPQ",
+                "onGetTemplate": "getTemplate_uiControl651_UfbvPQ"
               }
             }
           }
@@ -862,7 +921,8 @@
         "context32_SUlTve": [
           "172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=9F96F82061414BF8E4613913A055CD8B&Guid=e5c0f19b-c0e1-4818-98eb-cc6f2dc2f041",
           "172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=621BC937A6383E8C7701DF8C337164AF&Guid=ec56725a-8f3f-4a92-bd48-2af6d33bd2bc",
-          "172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=E4D45F10D01B196927CF79AD3C3A5088&Guid=b1e89cb5-a6f8-41bb-b112-f513c4d240cf"
+          "172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=E4D45F10D01B196927CF79AD3C3A5088&Guid=b1e89cb5-a6f8-41bb-b112-f513c4d240cf",
+          "172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=1A009DDBDC82C6FA7E01D3DF5F1B741E&Guid=e5c0f19b-c0e1-4818-98eb-cc6f2dc2f041"
         ]
       }
     },
@@ -1375,6 +1435,70 @@
             "grey",
             "icon-cloud-download",
             "icon-paper-clip",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "action-area",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "del",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "icon-trash",
             "layout-data",
             "layout-form",
             "logo-leftcorner",

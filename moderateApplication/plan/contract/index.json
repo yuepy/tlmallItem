@@ -384,6 +384,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -407,6 +411,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -434,6 +442,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -479,6 +491,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -520,6 +536,38 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control655_k7QSGt": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control655_k7QSGt"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -537,7 +585,8 @@
         "control485_S5dI1d",
         "control556_o1D8xX",
         "control557_N8rhi4",
-        "control558_OTUe5x"
+        "control558_OTUe5x",
+        "control655_k7QSGt"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -653,6 +702,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl110_WVBDRy",
                 "onGetTemplate": "getTemplate_uiControl110_WVBDRy"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl655_2s2s6a",
+          "controlId": "control655_k7QSGt",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl655_2s2s6a",
+                "onGetTemplate": "getTemplate_uiControl655_2s2s6a"
               }
             }
           }
@@ -866,7 +930,8 @@
           "172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=4E3CFE6253F1F2835FCA9DE626CD2A3B&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3",
           "172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=73DA145900E0ED0C35D16AA0053FE141&Guid=ff1fbd34-d39c-4779-8af6-a247f4759781",
           "172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=9E50486230A59898F93CCD17DC2B2C13&Guid=e827fdc2-d605-4e92-8398-6aded7530088",
-          "172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=D83CD73D0F52F39F22B477074105607A&Guid=ec8ab9dd-4b27-4240-9057-c9c4d7615428"
+          "172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=D83CD73D0F52F39F22B477074105607A&Guid=ec8ab9dd-4b27-4240-9057-c9c4d7615428",
+          "172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3"
         ]
       }
     },
@@ -1015,6 +1080,88 @@
             "ctl_contentForm_txt_InformName",
             "ctl_contentForm_txt_IsContinue",
             "ctl_contentForm_txt_IsFixed",
+            "div",
+            "fileAttachment",
+            "filePanel",
+            "file_upload_form",
+            "hdActivityName",
+            "hdGuid",
+            "hdUserLoginName",
+            "person_infor",
+            "person_infor_trigger",
+            "tableAttachment",
+            "tableComments",
+            "tableHeader",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv",
+            "upload_target"
+          ],
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "approveMemo",
+            "aspnetForm",
+            "btnAddLink",
+            "btnFileUpload",
+            "ctl_ActionBar_Action",
+            "ctl_ActionBar_ActionName",
+            "ctl_ActionBar_AddApproval",
+            "ctl_ActionBar_AddApprover",
+            "ctl_ActionBar_AddApproverName",
+            "ctl_ActionBar_Approval",
+            "ctl_ActionBar_GotoActivityName",
+            "ctl_ActionBar_IsReturnBack",
+            "ctl_ActionBar_Reject",
+            "ctl_ActionBar_UserAction",
+            "ctl_ActionBar_WorkFlow",
+            "ctl_ActionBar_btnAddApprover",
+            "ctl_ActionBar_btnApprove",
+            "ctl_ActionBar_btnClose",
+            "ctl_ActionBar_btnInform",
+            "ctl_ActionBar_btnRedirect",
+            "ctl_ActionBar_btnReject",
+            "ctl_ActionBar_btnWorkFlow",
+            "ctl_ActionBar_hidJBAffirm",
+            "ctl_ApproveControl_lblActivityName",
+            "ctl_ApproveControl_txtMemo",
+            "ctl_Attachment_fileUpload",
+            "ctl_Attachment_hfActivityName",
+            "ctl_Attachment_hfGuid",
+            "ctl_Attachment_hfIsStart",
+            "ctl_Attachment_hfUserLoginName",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_btnSubmit",
+            "ctl_contentForm_P",
+            "ctl_contentForm_rptDetail_ctl_hidId",
+            "ctl_contentForm_txt_AppDescription",
+            "ctl_contentForm_txt_ContractAmount",
+            "ctl_contentForm_txt_ContractClass",
+            "ctl_contentForm_txt_ContractTarget",
+            "ctl_contentForm_txt_ContractTitle",
+            "ctl_contentForm_txt_ContractType",
+            "ctl_contentForm_txt_Copys",
+            "ctl_contentForm_txt_Currency",
+            "ctl_contentForm_txt_EndDat",
+            "ctl_contentForm_txt_ExchangeRate",
+            "ctl_contentForm_txt_Ext",
+            "ctl_contentForm_txt_InformName",
+            "ctl_contentForm_txt_IsContinue",
+            "ctl_contentForm_txt_IsFixed",
+            "ctl_contentForm_txt_StrDat",
             "div",
             "fileAttachment",
             "filePanel",

@@ -333,6 +333,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -356,6 +360,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -383,6 +391,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -428,6 +440,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -469,6 +485,38 @@
       "monitored": false,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control670_9P07s6": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control670_9P07s6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -485,7 +533,8 @@
         "control475_NFcq2e",
         "control483_lpip2g",
         "control487_X1Puqo",
-        "control488_R8eTVT"
+        "control488_R8eTVT",
+        "control670_9P07s6"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -512,6 +561,13 @@
       "fromContextId": "context14_Nkwmgd",
       "fromAction": "doAction",
       "fromControlId": "control483_lpip2g",
+      "toContexts": [
+        {
+          "toContextId": "context14_Nkwmgd"
+        }
+      ]
+    },
+    "flow237_ybaHkZ": {
       "toContexts": [
         {
           "toContextId": "context14_Nkwmgd"
@@ -564,6 +620,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl101_effeia",
                 "onGetTemplate": "getTemplate_uiControl101_effeia"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl670_B9pTuB",
+          "controlId": "control670_9P07s6",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl670_B9pTuB",
+                "onGetTemplate": "getTemplate_uiControl670_B9pTuB"
               }
             }
           }

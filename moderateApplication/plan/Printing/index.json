@@ -346,6 +346,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -369,6 +373,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -396,6 +404,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -441,6 +453,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -482,6 +498,38 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control654_5Ga8vB": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control654_5Ga8vB"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -498,7 +546,8 @@
         "control572_b8xTFe",
         "control573_BsyGQ1",
         "control574_MBtLeA",
-        "control575_snnPNC"
+        "control575_snnPNC",
+        "control654_5Ga8vB"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -603,6 +652,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl28_UGkzTm",
                 "onGetTemplate": "getTemplate_uiControl28_UGkzTm"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl654_lQp9uT",
+          "controlId": "control654_5Ga8vB",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl654_lQp9uT",
+                "onGetTemplate": "getTemplate_uiControl654_lQp9uT"
               }
             }
           }

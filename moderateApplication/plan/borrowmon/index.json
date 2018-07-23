@@ -361,6 +361,10 @@
         "data": {
           "tagName": "HTML"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -379,6 +383,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -409,6 +417,33 @@
       "monitored": false,
       "frameXPath": "//iframe[@name='OpenSelectLendMoney']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control660_kOco2A": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control660_kOco2A"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -423,7 +458,8 @@
         "control136_STNi9a",
         "control137_fMm0mC",
         "control577_ehkzHZ",
-        "control578_bWSpBN"
+        "control578_bWSpBN",
+        "control660_kOco2A"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -460,6 +496,13 @@
       "fromContextId": "context19_g6Z7vh",
       "fromAction": "doAction",
       "fromControlId": "control132_ZfXPst",
+      "toContexts": [
+        {
+          "toContextId": "context19_g6Z7vh"
+        }
+      ]
+    },
+    "flow235_azOf5S": {
       "toContexts": [
         {
           "toContextId": "context19_g6Z7vh"
@@ -608,6 +651,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl135_6Z8xym",
                 "onGetTemplate": "getTemplate_uiControl135_6Z8xym"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl660_bzVX4v",
+          "controlId": "control660_kOco2A",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl660_bzVX4v",
+                "onGetTemplate": "getTemplate_uiControl660_bzVX4v"
               }
             }
           }
@@ -1081,6 +1139,69 @@
             "tj",
             "top",
             "ufoot"
+          ],
+          [
+            "action-area",
+            "aspNetDisabled",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
           ]
         ]
       }
@@ -1202,6 +1323,73 @@
             "TD/DIV/A",
             "TD/DIV/DIV",
             "TD/DIV/IFRAME",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-radio",
+            "TD/SPAN/LABEL",
+            "TD/SPAN/SELECT",
+            "TD/SPAN/TEXTAREA",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/DIV",
+            "TR/TD/I",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/P",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SCRIPT",
+            "-/FORM/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/P/BR",
+            "DIV/P/SPAN",
+            "DIV/P/STRONG",
+            "DIV/SPAN/INPUT-file",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "SPAN/SELECT/OPTION",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/A/I",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
             "TD/DIV/TABLE",
             "TD/SPAN/INPUT-radio",
             "TD/SPAN/LABEL",

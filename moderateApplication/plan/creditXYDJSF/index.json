@@ -462,6 +462,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -485,6 +489,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -512,6 +520,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -557,6 +569,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -598,6 +614,33 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control666_3ERMmu": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control666_3ERMmu"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -616,7 +659,8 @@
         "control522_hVNwJT",
         "control523_yegWKN",
         "control524_bMkc1W",
-        "control525_E6lx6D"
+        "control525_E6lx6D",
+        "control666_3ERMmu"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -649,6 +693,9 @@
         {
           "toContextId": "context1_CPB3yD",
           "toModelId": "commission"
+        },
+        {
+          "toContextId": "context18_a7Av8T"
         }
       ]
     },
@@ -738,6 +785,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl51_Zss0WA",
                 "onGetTemplate": "getTemplate_uiControl51_Zss0WA"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl666_7IksrZ",
+          "controlId": "control666_3ERMmu",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl666_7IksrZ",
+                "onGetTemplate": "getTemplate_uiControl666_7IksrZ"
               }
             }
           }
