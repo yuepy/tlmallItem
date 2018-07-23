@@ -618,6 +618,33 @@
       "monitored": false,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control667_22bwtN": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control667_22bwtN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -637,7 +664,8 @@
         "control559_LpnWtU",
         "control560_d6vRTp",
         "control561_qdlHmQ",
-        "control562_J3w1GB"
+        "control562_J3w1GB",
+        "control667_22bwtN"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -773,6 +801,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl252_rapv1g",
                 "onGetTemplate": "getTemplate_uiControl252_rapv1g"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl667_DCD7VV",
+          "controlId": "control667_22bwtN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl667_DCD7VV",
+                "onGetTemplate": "getTemplate_uiControl667_DCD7VV"
               }
             }
           }
@@ -976,7 +1019,8 @@
     "page/title": {
       "contexts": {
         "context31_cTTiNK": [
-          "路线变更流程-审批页面"
+          "路线变更流程-审批页面",
+          "路线组变更流程-审批页面"
         ]
       }
     },
@@ -984,7 +1028,8 @@
       "contexts": {
         "context31_cTTiNK": [
           "172.16.11.61:9992/Forms/KZ/LXBG/Processing.aspx?SN=271A3D5E25B962DBE7AEDC515211A4A1&Guid=cb73ed30-c146-4787-8dc1-13ffbe83a580",
-          "172.16.11.61:9992/Forms/KZ/LXBG/Processing.aspx?SN=24CB7441C9863C8F5A8555D3AABC5A7E&Guid=a039191c-8268-431c-a160-6c378cf5a84f"
+          "172.16.11.61:9992/Forms/KZ/LXBG/Processing.aspx?SN=24CB7441C9863C8F5A8555D3AABC5A7E&Guid=a039191c-8268-431c-a160-6c378cf5a84f",
+          "172.16.11.61:9992/Forms/KZ/LXZBG/Processing.aspx?SN=A9C52E7137AB95F7B7A37373D3381B1F&Guid=cb57ff8f-97d0-4cd6-8faa-8323f99f8c6f"
         ]
       }
     },
@@ -1135,6 +1180,83 @@
             "contentForm_txt_ZZSALAREADESC",
             "contentForm_txt_ZZSALEOFFDESC",
             "contentForm_txt_ZZSALROUT",
+            "ctl_ApproveControl_txtMemo",
+            "div",
+            "fileAttachment",
+            "filePanel",
+            "file_upload_form",
+            "form",
+            "hdActivityName",
+            "hdGuid",
+            "hdUserLoginName",
+            "person_infor",
+            "person_infor_trigger",
+            "tableAttachment",
+            "tableComments",
+            "tableHeader",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv",
+            "upload_target"
+          ],
+          [
+            "ActionBar_Action",
+            "ActionBar_ActionName",
+            "ActionBar_AddApproval",
+            "ActionBar_AddApprover",
+            "ActionBar_AddApproverName",
+            "ActionBar_Approval",
+            "ActionBar_GotoActivityName",
+            "ActionBar_IsReturnBack",
+            "ActionBar_Reject",
+            "ActionBar_UserAction",
+            "ActionBar_WorkFlow",
+            "ActionBar_btnAddApprover",
+            "ActionBar_btnApprove",
+            "ActionBar_btnClose",
+            "ActionBar_btnRedirect",
+            "ActionBar_btnReject",
+            "ActionBar_btnWorkFlow",
+            "ActionBar_hidJBAffirm",
+            "ApproveControl_lblActivityName",
+            "ApproveControl_p",
+            "Attachment_fileUpload",
+            "Attachment_hfActivityName",
+            "Attachment_hfGuid",
+            "Attachment_hfIsStart",
+            "Attachment_hfUserLoginName",
+            "Header_hidFlag",
+            "Header_txtCompanyName",
+            "Header_txtDate",
+            "Header_txtDepartName",
+            "Header_txtEmail",
+            "Header_txtPhone",
+            "Header_txtUserName",
+            "LinkedProcInst_hfGuid",
+            "LinkedProcInst_hfStart",
+            "LinkedProcInst_hfUserLoginName",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "_myDP",
+            "approveMemo",
+            "btnAddLink",
+            "btnFileUpload",
+            "btnSubmit",
+            "contentForm_P",
+            "contentForm_txt_ApplicantDeptName",
+            "contentForm_txt_ApplyCompany",
+            "contentForm_txt_ApplyEmployeeCode",
+            "contentForm_txt_ApplyEmployeeName",
+            "contentForm_txt_InformName",
+            "contentForm_txt_ZZLAREADESC",
+            "contentForm_txt_ZZMKTDESC",
+            "contentForm_txt_ZZOFFDESC",
+            "contentForm_txt_ZZROUTECODE",
+            "contentForm_txt_ZZROUTEDESC",
+            "contentForm_txt_ZZSALAREADESC",
+            "contentForm_txt_ZZSALEOFFDESC",
             "ctl_ApproveControl_txtMemo",
             "div",
             "fileAttachment",
@@ -1378,6 +1500,70 @@
             "aui_state_focus",
             "aui_state_full",
             "aui_state_lock",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "required",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "action-area",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
             "aui_sw",
             "aui_title",
             "aui_titleBar",

@@ -1,6 +1,9 @@
 body {
   background: #f3f3f3;
 }
+.contenttitle {
+  position: relative!important;
+}
 [data-ysp="component"] {
   padding: 0;
 }
@@ -1087,6 +1090,17 @@ body {
 [data-ysp-modelid="commission"] .Content .Content_disnone div {
   font-size: 16px;
   display: inline-block;
+}
+[data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div:nth-child(1),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div:nth-child(1),
+[data-ysp-modelid="commission"] .Content .Content_disnone > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div:nth-child(1) div:nth-child(2),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div:nth-child(1) div:nth-child(2),
+[data-ysp-modelid="commission"] .Content .Content_disnone > div:nth-child(1) div:nth-child(2) {
+  width: 80%;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div,
@@ -11505,4 +11519,13 @@ div._23s98qqds-Z7MF0Y5RBjWd {
 .next_prev button:nth-child(1) {
   background-color: #fff;
   color: #000;
+}
+  body {
+  overflow: hidden;
+  -webkit-overflow-x: initial !important;
+}
+.view-wrapper {
+  height: 100vh !important;
+  overflow: auto !important;
+  overflow-x: hidden !important;
 }

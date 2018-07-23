@@ -488,6 +488,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -511,6 +515,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -538,6 +546,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -583,6 +595,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -624,6 +640,38 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control663_NH5XWx": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control663_NH5XWx"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -643,7 +691,8 @@
         "control568_EplDIa",
         "control569_tI4lpm",
         "control570_9qXAAM",
-        "control571_I1VINb"
+        "control571_I1VINb",
+        "control663_NH5XWx"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -829,6 +878,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl164_cNhi6L",
                 "onGetTemplate": "getTemplate_uiControl164_cNhi6L"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl663_wXP0Ue",
+          "controlId": "control663_NH5XWx",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl663_wXP0Ue",
+                "onGetTemplate": "getTemplate_uiControl663_wXP0Ue"
               }
             }
           }

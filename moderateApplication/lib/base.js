@@ -8,7 +8,6 @@
     /* 适配中定制的公共代码放在这里 */
     /*调用场景：该方法用于采集表格数据*/
     getTableData: function(elem, titleArgs) {
-     
       if (!elem) {
         return;
       }
@@ -151,6 +150,11 @@
       }
       return data;
     },
+    // onToTop:function(){
+    //   debugger
+    //   var elem = this.ownerDocument.querySelector('.view-wrapper');
+    //   elem.scrollTop = 0;
+    // },
     //获取表格数据
     gettable:function(elem,titles){
       if(!elem){
