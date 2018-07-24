@@ -1,14 +1,15 @@
 {
   "version": "0.1",
   "id": "homePage",
-  "targetURL": "http://172.16.11.61:88/Index.aspx",
+  "targetURL": "http://172.16.11.61/Index.aspx",
   "jsFile": "index.js",
   "requires": {
     "partyWork": "../partyWork/index.json",
     "flashMorePage": "../flashMorePage/index.json",
     "noticeMore": "../noticeMore/index.json",
     "majorMatter": "../majorMatter/index.json",
-    "img_detail": "../img_detail/index.json"
+    "img_detail": "../img_detail/index.json",
+    "dealtIndex": "../dealtIndex/index.json"
   },
   "chineseName": "中可首页",
   "description": "中可首页",
@@ -390,6 +391,13 @@
         {
           "toContextId": "context56_7xA3In",
           "toModelId": "homePage"
+        },
+        {
+          "toContextId": "context56_7xA3In"
+        },
+        {
+          "toContextId": "context24_EkSRuv",
+          "toModelId": "dealtIndex"
         }
       ]
     },
@@ -604,7 +612,7 @@
     "page/urls": {
       "contexts": {
         "context56_7xA3In": [
-          "172.16.11.61:88/Index.aspx"
+          "172.16.11.61/Index.aspx"
         ]
       }
     },

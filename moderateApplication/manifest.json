@@ -47,7 +47,7 @@
       "title": "flashMorePage",
       "url": "adapter://moderateApplication/plan/flashMorePage/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:88\\/List.aspx"
+        "^http:\\/\\/172\\.16\\.11\\.61\\/List.aspx"
       ],
       "demo": []
     },
@@ -55,7 +55,7 @@
       "title": "homePage",
       "url": "adapter://moderateApplication/plan/homePage/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:88/In.*"
+        "^http:\\/\\/172\\.16\\.11\\.61\\/In.*"
       ],
       "demo": []
     },
@@ -63,46 +63,38 @@
       "title": "noticeMore",
       "url": "adapter://moderateApplication/plan/noticeMore/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:88\\/GG\\/GGList\\.aspx"
+        "^http:\\/\\/172\\.16\\.11\\.61\\/GG\\/GGList\\.aspx"
       ],
-      "demo": [
-        "http://172.16.11.61:88/GG/GGList.aspx"
-      ]
+      "demo": []
     },
     {
       "title": "New_KX_detaile",
       "url": "adapter://moderateApplication/plan/New_KX_detaile/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:88\\/Detail\\.aspx\\?ID.*"
+        "^http:\\/\\/172\\.16\\.11\\.61\\/Detail\\.aspx\\?ID.*"
       ],
-      "demo": [
-        "http://172.16.11.61:88/GG/GGDetail.aspx?ID=118"
-      ]
+      "demo": []
     },
     {
       "title": "notice_detail",
       "url": "adapter://moderateApplication/plan/notice_detail/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:88\\/GG\\/GGDetail\\.aspx\\?ID.*"
+        "^http:\\/\\/172\\.16\\.11\\.61\\/GG\\/GGDetail\\.aspx\\?ID.*"
       ],
-      "demo": [
-        "http://172.16.11.61:88/GG/GGDetail.aspx?ID=118"
-      ]
+      "demo": []
     },
     {
       "title": "img_detail",
       "url": "adapter://moderateApplication/plan/img_detail/index.json",
       "matcher": [
-        "^http:\\/\\/info\\.cofcoko\\.com\\/:88\\/Detail\\.aspx\\?ID.*"
+        "^http:\\/\\/info\\.cofcoko\\.com\\/Detail\\.aspx\\?ID.*"
       ],
-      "demo": [
-        "http://info.cofcoko.com/Detail.aspx?ID=381"
-      ]
+      "demo": []
     }
   ],
   "name": "中可工程",
-  "default_url": "http://172.16.11.61:88/Index.aspx",
+  "default_url": "http://172.16.11.61/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1532347226792
+  "update_time": 1532396546125
 }
