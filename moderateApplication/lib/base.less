@@ -658,6 +658,7 @@ body{
         }
     }
     .tishi{
+      word-wrap:break-word; 
       height: 44px;
       line-height: 44px;
       padding-left: 20px;
@@ -938,7 +939,7 @@ body{
     .subtrue{
       height: 60px;
       // overflow: hidden;
-      margin-right: 20px;
+      // margin-right: 20px;
       >div:nth-child(1){
         width: 100%;
       }
@@ -1089,27 +1090,43 @@ body{
     background-color: #ffffff;
     position: relative;
     cursor: pointer;
-    .Content_item:nth-child(1){
-      font-size: 16px;
-      display: inline-block;
-    }
+    // .Content_item:nth-child(1){
+    //   font-size: 16px;
+    //   display: inline-block;
+    // }
+    // .Content_item{
+    //   height: 20px;
+    //   line-height: 20px;
+    //   font-size: 14px;
+    //   margin-top: 10px;
+    //   margin-bottom: 10px;
+    //   p{
+    //     display: inline-block;
+    //     height: 20px;
+    //     line-height: 20px;
+    //     color: #313131;
+    //   }
+    //   p:nth-child(1){
+    //     width: 80px;
+    //     color: #666666;
+    //   }
     .Content_item{
-      height: 20px;
-      line-height: 20px;
-      font-size: 14px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      p{
-        display: inline-block;
-        height: 20px;
-        line-height: 20px;
-        color: #313131;
-      }
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      p{margin: 0;}
       p:nth-child(1){
-        width: 80px;
-        color: #666666;
+        width: 64px;
+        text-align: justify;
+        text-align-last: justify;
+        color: #959595;
       }
+      p:nth-child(2){color: #313131;width: 75%;padding-right: 20px;}
     }
+    .Content_item:nth-child(1){
+      display: block;
+    }
+    // }
     //隐藏盒子
     .Content_disnone{
       display: none;
@@ -1120,8 +1137,9 @@ body{
       >div:nth-child(1){
         display: flex;
         justify-content: space-between;
+        div:nth-child(1){width: 64px;}
         div:nth-child(2){
-          width: 80%;
+          width: 75%;
         }
       }
       >div{
@@ -1141,8 +1159,6 @@ body{
       }
       >div:nth-child(1){
         >div:nth-child(1){
-          
-          height: 60px;
         }
       }
     }
@@ -11643,9 +11659,395 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
       }
     }
 }
+//差旅费用报销发起流程
 [data-ysp-modelid="Newtravel"]{
+  //报销总明细
+   .leaveDeta{
+    background-color: #fff;
+    padding-bottom: 10px;
+    .leave_box{
+      width: 345px;
+      margin: auto auto;
+      .leave_content{
+      background-color: #f2f2f2;
+        margin-bottom: 10px;
+        .content_title{
+          display: flex;
+          justify-content: space-between;
+          >div:nth-child(1){
+            margin: 10px;
+            padding-right: 10px;
+            border-right: 1px solid #ccc;
+          }
+          >div:nth-child(2){
+            width: 100%;
+            padding:10px 0;
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            div{
+              font-weight: bold;
+            }
+            span{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/top.png);
+              background-size: 20px 10px;
+              cursor: pointer;
+            }
+            .hide{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/xia.png);
+              background-size: 20px 10px;
+            }
+          }
+        }
+        .content_none{
+          display: none;
+          margin-bottom: 10px;
+          >div{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 10px;
+            div:nth-child(1){
+              width: 56px;
+              padding: 15px 0;
+              text-align: justify;
+              text-align-last: justify;
+              font-size: 14px; 
+            }
+            div:nth-child(2){
+              width: 260px;
+              padding-right: 10px;
+              border-bottom: 1px solid #ccc;
+              input{
+                margin: 0;
+                border: 0;
+                background-color: #f2f2f2;
+              }
+            }
+          }
+          >div:nth-child(6),div:nth-child(7){
+            div:nth-child(2){
+              padding: 15px 0;
+            }
+          }
+          >div:last-child{
+            padding: 15px 0;
+            button{
+              margin: 0 auto;
+              padding: 5px 40px;
+              border: 0;
+              border: 1px solid #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+  //收款人明细
+  .payee_deta{
+    padding-bottom: 0;
+    background-color: #fff;
+    .Content_detail{
+      width: 345px;
+      margin: auto auto;
+    }
+    >div:nth-child(2){
+      width: 345px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      div:nth-child(1){
+        font-size: 14px;
+        color: #202020;
+        // width: 56px;
+        text-align: justify;
+        text-align-last: justify;
+      }
+      div:nth-child(2){
+        display: flex;
+        user-select: space-between;
+        button:nth-child(1){
+          padding: 5px 10px;
+          border: 1px solid #40a7ff;
+          color: #40a7ff;
+          margin-right: 10px;
+          border-radius: 5px;
+        }
+        button:nth-child(2){
+          padding: 5px 10px;
+          border: 1px solid #e64750;
+          color: #e64750;
+          border-radius: 5px;
+        }
+      }
+    }
+    .leave_box{
+      width: 345px;
+      margin: auto auto;
+      margin-top: 10px;
+      .leave_content{
+      background-color: #f2f2f2;
+        margin-bottom: 10px;
+        .content_title{
+          display: flex;
+          justify-content: space-between;
+          >div:nth-child(1){
+            margin: 10px;
+            padding-right: 10px;
+            border-right: 1px solid #ccc;
+          }
+          >div:nth-child(2){
+            width: 100%;
+            padding:10px 0;
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            div{
+              font-weight: bold;
+            }
+            span{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/top.png);
+              background-size: 20px 10px;
+              cursor: pointer;
+            }
+            .hide{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/xia.png);
+              background-size: 20px 10px;
+            }
+          }
+        }
+        .content_none{
+          display: none;
+          margin-bottom: 10px;
+          >div{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 10px;
+            div:nth-child(1){
+              width: 70px;
+              padding: 15px 0;
+              text-align: justify;
+              text-align-last: justify;
+              font-size: 14px; 
+            }
+            div:nth-child(2){
+              width: 260px;
+              padding-right: 10px;
+              border-bottom: 1px solid #ccc;
+              position: relative;
+              input{
+                margin: 0;
+                border: 0;
+                background-color: #f2f2f2;
+                padding-right: 25px;
+                padding-top: 20px;
+              }
+              span
+              {
+                position: absolute;
+                right: 10px;
+                // top: 15px;
+                top: 20px;
+                width: 20px;
+                height: 15px;
+                background-image: url(./img/rightbtn.png);
+                background-size: 20px 15px;
+              }
+            }
+          }
+          >div:nth-child(6),div:nth-child(7){
+            div:nth-child(2){
+              padding: 15px 0;
+            }
+          }
+          >div:last-child{
+            padding: 15px 0;
+            button{
+              margin: 0 auto;
+              padding: 5px 40px;
+              border: 0;
+              border: 1px solid #ccc;
+            }
+          }
+        }
+      }
+    }
+  
+  }
+  .leave_Content_box{
+    background-color: #fff;
+    padding-bottom: 10px;
+     .leave_box{
+      width: 345px;
+      margin: auto auto;
+      .leave_content{
+      background-color: #f2f2f2;
+        margin-bottom: 10px;
+        .content_title{
+          display: flex;
+          justify-content: space-between;
+          >div:nth-child(1){
+            margin: 10px;
+            padding-right: 10px;
+            border-right: 1px solid #ccc;
+          }
+          >div:nth-child(2){
+            width: 100%;
+            padding:10px 0;
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            div{
+              font-weight: bold;
+            }
+            span{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/top.png);
+              background-size: 20px 10px;
+              cursor: pointer;
+            }
+            .hide{
+              width: 20px;
+              height: 10px;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-image: url(./img/xia.png);
+              background-size: 20px 10px;
+            }
+          }
+        }
+        .content_none{
+          display: none;
+          margin-bottom: 10px;
+          >div{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 10px;
+            div:nth-child(1){
+              width: 70px;
+              padding: 15px 0;
+              text-align: justify;
+              text-align-last: justify;
+              font-size: 14px; 
+            }
+            div:nth-child(2){
+              width: 260px;
+              padding-right: 10px;
+              border-bottom: 1px solid #ccc;
+              position: relative;
+              display: flex;
+              justify-content: space-between;
+              input,select{
+                margin: 0;
+                border: 0;
+                background-color: #f2f2f2;
+                padding-right: 25px;
+                padding-top: 20px;
+              }
+              button{
+                padding: 10px 30px;
+                margin: auto auto;
+                border: 0;
+                background-color: #d9d9d9;
+                color: #202020;
+                border-radius: 5px;
+              }
+              button.selectbtn{
+                background-color: #e64750;
+                color: #fff;
+              }
+              span
+              {
+                position: absolute;
+                right: 10px;
+                // top: 15px;
+                top: 20px;
+                width: 20px;
+                height: 15px;
+                background-image: url(./img/rightbtn.png);
+                background-size: 20px 15px;
+              }
+            }
+          }
+          >div:nth-child(6),div:nth-child(7){
+            div:nth-child(2){
+              padding: 15px 0;
+            }
+          }
+          >div:last-child{
+            padding: 15px 0;
+            button{
+              margin: 0 auto;
+              padding: 5px 40px;
+              border: 0;
+              border: 1px solid #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+ 
+  .add_JY{
+    div:nth-child(2){
+      position: relative;
+      input{
+        padding-right: 20px;
+      }
+      span{
+        width: 20px;
+        height: 15px;
+        background-image: url(./img/rightbtn.png);
+        background-size: 20px 15px;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+      }
+    }
+  }
+  [data-parentid="page63_CQ1ZXU"]{
+    padding-top: 0;
+  }
+  .total_mon{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    div{
+      width: 50%;
+    }
+  }
+  //基本信息
  .leaveinforme{
-		background-color: #fff;
+ background-color: #fff;
     .leave_Content{
       padding-bottom: 44px;
       position: relative;
@@ -11803,97 +12205,7 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
     }
   }
     //请假明细
-  .leaveDeta{
-    background-color: #fff;
-    padding-bottom: 10px;
-    .leave_box{
-      width: 345px;
-      margin: auto auto;
-      .leave_content{
-      background-color: #f2f2f2;
-        margin-bottom: 10px;
-        .content_title{
-          display: flex;
-          justify-content: space-between;
-          >div:nth-child(1){
-            margin: 10px;
-            padding-right: 10px;
-            border-right: 1px solid #ccc;
-          }
-          >div:nth-child(2){
-            width: 100%;
-            padding:10px 0;
-            padding-left: 10px;
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            div{
-              font-weight: bold;
-            }
-            span{
-              width: 20px;
-              height: 10px;
-              position: absolute;
-              top: 20px;
-              right: 20px;
-              background-image: url(./img/top.png);
-              background-size: 20px 10px;
-              cursor: pointer;
-            }
-            .hide{
-              width: 20px;
-              height: 10px;
-              position: absolute;
-              top: 20px;
-              right: 20px;
-              background-image: url(./img/xia.png);
-              background-size: 20px 10px;
-            }
-          }
-        }
-        .content_none{
-          display: none;
-          margin-bottom: 10px;
-          >div{
-            display: flex;
-            justify-content: space-between;
-            padding-left: 10px;
-            div:nth-child(1){
-              width: 56px;
-              padding: 15px 0;
-              text-align: justify;
-              text-align-last: justify;
-              font-size: 14px; 
-            }
-            div:nth-child(2){
-              width: 260px;
-              padding-right: 10px;
-              border-bottom: 1px solid #ccc;
-              input{
-                margin: 0;
-                border: 0;
-                background-color: #f2f2f2;
-              }
-            }
-          }
-          >div:nth-child(6),div:nth-child(7){
-            div:nth-child(2){
-              padding: 15px 0;
-            }
-          }
-          >div:last-child{
-            padding: 15px 0;
-            button{
-              margin: 0 auto;
-              padding: 5px 40px;
-              border: 0;
-              border: 1px solid #ccc;
-            }
-          }
-        }
-      }
-    }
-  }
+
       .contenttitle{
       p{
         display: flex;
@@ -11914,6 +12226,85 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
             margin-left: 10px;
             border: 1px solid #e64750;
             color: #e64750;
+          }
+        }
+      }
+    }
+      .leave_Content{
+      padding-bottom: 44px;
+      position: relative;
+      .content_none{
+        display: none;
+      }
+      .previousblock{
+        width: 100%;
+        text-align: center;
+        position:absolute;
+        bottom: 10px;
+        padding-left:  20px;
+        background: url(./img/xia.png) no-repeat 35% 5px;
+        background-size: 20px 14px;
+        cursor: pointer;
+        padding-top:5px;
+      }
+      .previousnone{
+        width: 100%;
+        text-align: center;
+        position:absolute;
+        bottom: 10px;
+        padding-left:  20px;
+        background: url(./img/top.png) no-repeat 35% 5px;
+        background-size: 20px 14px;
+        cursor: pointer;
+        border-top:1px solid #ccc;
+        padding-top:5px;
+      }
+      .content{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-left: 10px;
+        a{
+          width: 17px;
+          height: 13px;
+          background-image: url(./img/rightbtn.png);
+          background-size: 17px 13px;
+          position: absolute;
+          right: 10px;
+          top: 40%;
+        }
+        div{
+          padding: 15px 0;
+        }
+        div:nth-child(1){
+          width: 56px;
+          font-size: 14px;
+          color: #202020;
+          text-align: justify;
+          text-align-last: justify;
+        }
+        div:nth-child(2){
+          width: 265px;
+          color: #313131;
+          display: flex;
+          justify-content: space-between;
+          padding-right: 10px;
+          border-bottom: 1px solid #ccc;
+          input,select{
+            margin: 0;
+            padding: 0;
+            padding: 5px 0;
+            border: 0;
+            background-color: #fff;
+          }
+          button{
+            border: 0;
+            border: 1px solid #ccc;
+            padding: 5px 20px;
+          }
+          .radiobtn{
+            background-color: #e64750;
+            color: #fff;
           }
         }
       }

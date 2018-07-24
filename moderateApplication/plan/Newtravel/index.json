@@ -876,7 +876,39 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control661_ZPSsnR": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form.trPerson"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[9]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control661_ZPSsnR"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -904,7 +936,8 @@
         "control636_ar6Tf8",
         "control684_FmqcDe",
         "control685_z1GrpC",
-        "control686_B8PebU"
+        "control686_B8PebU",
+        "control661_ZPSsnR"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -1019,6 +1052,26 @@
         {
           "toContextId": "context10_P8RicR",
           "toModelId": "previewapproval"
+        }
+      ]
+    },
+    "flow241_9I7And": {
+      "fromContextId": "context63_he35RO",
+      "fromAction": "doAction",
+      "fromControlId": "control686_B8PebU",
+      "toContexts": [
+        {
+          "toContextId": "context63_he35RO"
+        }
+      ]
+    },
+    "flow240_b76oWE": {
+      "fromContextId": "context63_he35RO",
+      "fromAction": "doAction",
+      "fromControlId": "control684_FmqcDe",
+      "toContexts": [
+        {
+          "toContextId": "context63_he35RO"
         }
       ]
     }
@@ -1229,6 +1282,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl686_kf6yUn",
                 "onGetTemplate": "getTemplate_uiControl686_kf6yUn"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl661_Ts17nA",
+          "controlId": "control661_ZPSsnR",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl661_Ts17nA",
+                "onGetTemplate": "getTemplate_uiControl661_Ts17nA"
               }
             }
           }

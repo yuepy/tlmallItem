@@ -633,6 +633,7 @@ body {
   border: 0px;
 }
 .approval .tishi {
+  word-wrap: break-word;
   height: 44px;
   line-height: 44px;
   padding-left: 20px;
@@ -900,7 +901,6 @@ body {
 }
 .submit .subtrue {
   height: 60px;
-  margin-right: 20px;
 }
 .submit .subtrue > div:nth-child(1) {
   width: 100%;
@@ -1053,34 +1053,37 @@ body {
   position: relative;
   cursor: pointer;
 }
-[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(1),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(1),
-[data-ysp-modelid="commission"] .Content .Content_item:nth-child(1) {
-  font-size: 16px;
-  display: inline-block;
-}
 [data-ysp-modelid="dealtIndex"] .Content .Content_item,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_item,
 [data-ysp-modelid="commission"] .Content .Content_item {
-  height: 20px;
-  line-height: 20px;
-  font-size: 14px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item p,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_item p,
 [data-ysp-modelid="commission"] .Content .Content_item p {
-  display: inline-block;
-  height: 20px;
-  line-height: 20px;
-  color: #313131;
+  margin: 0;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item p:nth-child(1),
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_item p:nth-child(1),
 [data-ysp-modelid="commission"] .Content .Content_item p:nth-child(1) {
-  width: 80px;
-  color: #666666;
+  width: 64px;
+  text-align: justify;
+  text-align-last: justify;
+  color: #959595;
+}
+[data-ysp-modelid="dealtIndex"] .Content .Content_item p:nth-child(2),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item p:nth-child(2),
+[data-ysp-modelid="commission"] .Content .Content_item p:nth-child(2) {
+  color: #313131;
+  width: 75%;
+  padding-right: 20px;
+}
+[data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(1),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(1),
+[data-ysp-modelid="commission"] .Content .Content_item:nth-child(1) {
+  display: block;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone,
@@ -1099,10 +1102,15 @@ body {
   display: flex;
   justify-content: space-between;
 }
+[data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div:nth-child(1) div:nth-child(1),
+[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div:nth-child(1) div:nth-child(1),
+[data-ysp-modelid="commission"] .Content .Content_disnone > div:nth-child(1) div:nth-child(1) {
+  width: 64px;
+}
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div:nth-child(1) div:nth-child(2),
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div:nth-child(1) div:nth-child(2),
 [data-ysp-modelid="commission"] .Content .Content_disnone > div:nth-child(1) div:nth-child(2) {
-  width: 80%;
+  width: 75%;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div,
@@ -1121,11 +1129,6 @@ body {
 [data-ysp-modelid="commission"] .Content .Content_disnone > div > div:nth-child(2) {
   display: inline;
   display: left;
-}
-[data-ysp-modelid="dealtIndex"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1),
-[data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1),
-[data-ysp-modelid="commission"] .Content .Content_disnone > div:nth-child(1) > div:nth-child(1) {
-  height: 60px;
 }
 [data-ysp-modelid="dealtIndex"] .Content > div:nth-child(1),
 [data-ysp-modelid="haveDoneIndex"] .Content > div:nth-child(1),
@@ -11235,6 +11238,377 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   color: #e64750;
   padding: 5px 30px;
 }
+[data-ysp-modelid="Newtravel"] .leaveDeta {
+  background-color: #fff;
+  padding-bottom: 10px;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box {
+  width: 345px;
+  margin: auto auto;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content {
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(1) {
+  margin: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #ccc;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(2) {
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(2) div {
+  font-weight: bold;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(2) span {
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-image: url(img/top.png);
+  background-size: 20px 10px;
+  cursor: pointer;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(2) .hide {
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-image: url(img/xia.png);
+  background-size: 20px 10px;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none {
+  display: none;
+  margin-bottom: 10px;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div div:nth-child(1) {
+  width: 56px;
+  padding: 15px 0;
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 14px;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div div:nth-child(2) {
+  width: 260px;
+  padding-right: 10px;
+  border-bottom: 1px solid #ccc;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div div:nth-child(2) input {
+  margin: 0;
+  border: 0;
+  background-color: #f2f2f2;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div:nth-child(6) div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none div:nth-child(7) div:nth-child(2) {
+  padding: 15px 0;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div:last-child {
+  padding: 15px 0;
+}
+[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div:last-child button {
+  margin: 0 auto;
+  padding: 5px 40px;
+  border: 0;
+  border: 1px solid #ccc;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta {
+  padding-bottom: 0;
+  background-color: #fff;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .Content_detail {
+  width: 345px;
+  margin: auto auto;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta > div:nth-child(2) {
+  width: 345px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta > div:nth-child(2) div:nth-child(1) {
+  font-size: 14px;
+  color: #202020;
+  text-align: justify;
+  text-align-last: justify;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta > div:nth-child(2) div:nth-child(2) {
+  display: flex;
+  user-select: space-between;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta > div:nth-child(2) div:nth-child(2) button:nth-child(1) {
+  padding: 5px 10px;
+  border: 1px solid #40a7ff;
+  color: #40a7ff;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta > div:nth-child(2) div:nth-child(2) button:nth-child(2) {
+  padding: 5px 10px;
+  border: 1px solid #e64750;
+  color: #e64750;
+  border-radius: 5px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box {
+  width: 345px;
+  margin: auto auto;
+  margin-top: 10px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content {
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_title {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_title > div:nth-child(1) {
+  margin: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #ccc;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_title > div:nth-child(2) {
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_title > div:nth-child(2) div {
+  font-weight: bold;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_title > div:nth-child(2) span {
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-image: url(img/top.png);
+  background-size: 20px 10px;
+  cursor: pointer;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_title > div:nth-child(2) .hide {
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-image: url(img/xia.png);
+  background-size: 20px 10px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none {
+  display: none;
+  margin-bottom: 10px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none > div {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none > div div:nth-child(1) {
+  width: 70px;
+  padding: 15px 0;
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 14px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none > div div:nth-child(2) {
+  width: 260px;
+  padding-right: 10px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none > div div:nth-child(2) input {
+  margin: 0;
+  border: 0;
+  background-color: #f2f2f2;
+  padding-right: 25px;
+  padding-top: 20px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none > div div:nth-child(2) span {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  width: 20px;
+  height: 15px;
+  background-image: url(img/rightbtn.png);
+  background-size: 20px 15px;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none > div:nth-child(6) div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none div:nth-child(7) div:nth-child(2) {
+  padding: 15px 0;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none > div:last-child {
+  padding: 15px 0;
+}
+[data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none > div:last-child button {
+  margin: 0 auto;
+  padding: 5px 40px;
+  border: 0;
+  border: 1px solid #ccc;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box {
+  background-color: #fff;
+  padding-bottom: 10px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box {
+  width: 345px;
+  margin: auto auto;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content {
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_title {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_title > div:nth-child(1) {
+  margin: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #ccc;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_title > div:nth-child(2) {
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_title > div:nth-child(2) div {
+  font-weight: bold;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_title > div:nth-child(2) span {
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-image: url(img/top.png);
+  background-size: 20px 10px;
+  cursor: pointer;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_title > div:nth-child(2) .hide {
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-image: url(img/xia.png);
+  background-size: 20px 10px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none {
+  display: none;
+  margin-bottom: 10px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div div:nth-child(1) {
+  width: 70px;
+  padding: 15px 0;
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 14px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div div:nth-child(2) {
+  width: 260px;
+  padding-right: 10px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div div:nth-child(2) input,
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div div:nth-child(2) select {
+  margin: 0;
+  border: 0;
+  background-color: #f2f2f2;
+  padding-right: 25px;
+  padding-top: 20px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div div:nth-child(2) button {
+  padding: 10px 30px;
+  margin: auto auto;
+  border: 0;
+  background-color: #d9d9d9;
+  color: #202020;
+  border-radius: 5px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div div:nth-child(2) button.selectbtn {
+  background-color: #e64750;
+  color: #fff;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div div:nth-child(2) span {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  width: 20px;
+  height: 15px;
+  background-image: url(img/rightbtn.png);
+  background-size: 20px 15px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div:nth-child(6) div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none div:nth-child(7) div:nth-child(2) {
+  padding: 15px 0;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div:last-child {
+  padding: 15px 0;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div:last-child button {
+  margin: 0 auto;
+  padding: 5px 40px;
+  border: 0;
+  border: 1px solid #ccc;
+}
+[data-ysp-modelid="Newtravel"] .add_JY div:nth-child(2) {
+  position: relative;
+}
+[data-ysp-modelid="Newtravel"] .add_JY div:nth-child(2) input {
+  padding-right: 20px;
+}
+[data-ysp-modelid="Newtravel"] .add_JY div:nth-child(2) span {
+  width: 20px;
+  height: 15px;
+  background-image: url(img/rightbtn.png);
+  background-size: 20px 15px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+[data-ysp-modelid="Newtravel"] [data-parentid="page63_CQ1ZXU"] {
+  padding-top: 0;
+}
+[data-ysp-modelid="Newtravel"] .total_mon {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+[data-ysp-modelid="Newtravel"] .total_mon div {
+  width: 50%;
+}
 [data-ysp-modelid="Newtravel"] .leaveinforme {
   background-color: #fff;
 }
@@ -11381,96 +11755,6 @@ div._23s98qqds-Z7MF0Y5RBjWd {
 [data-ysp-modelid="Newtravel"] .add_mx_xu > div:nth-child(2) > div div:nth-child(2) input {
   border: 0;
 }
-[data-ysp-modelid="Newtravel"] .leaveDeta {
-  background-color: #fff;
-  padding-bottom: 10px;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box {
-  width: 345px;
-  margin: auto auto;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content {
-  background-color: #f2f2f2;
-  margin-bottom: 10px;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title {
-  display: flex;
-  justify-content: space-between;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(1) {
-  margin: 10px;
-  padding-right: 10px;
-  border-right: 1px solid #ccc;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(2) {
-  width: 100%;
-  padding: 10px 0;
-  padding-left: 10px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(2) div {
-  font-weight: bold;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(2) span {
-  width: 20px;
-  height: 10px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-image: url(img/top.png);
-  background-size: 20px 10px;
-  cursor: pointer;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_title > div:nth-child(2) .hide {
-  width: 20px;
-  height: 10px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-image: url(img/xia.png);
-  background-size: 20px 10px;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none {
-  display: none;
-  margin-bottom: 10px;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 10px;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div div:nth-child(1) {
-  width: 56px;
-  padding: 15px 0;
-  text-align: justify;
-  text-align-last: justify;
-  font-size: 14px;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div div:nth-child(2) {
-  width: 260px;
-  padding-right: 10px;
-  border-bottom: 1px solid #ccc;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div div:nth-child(2) input {
-  margin: 0;
-  border: 0;
-  background-color: #f2f2f2;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div:nth-child(6) div:nth-child(2),
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none div:nth-child(7) div:nth-child(2) {
-  padding: 15px 0;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div:last-child {
-  padding: 15px 0;
-}
-[data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div:last-child button {
-  margin: 0 auto;
-  padding: 5px 40px;
-  border: 0;
-  border: 1px solid #ccc;
-}
 [data-ysp-modelid="Newtravel"] .contenttitle p {
   display: flex;
   width: 345px;
@@ -11492,6 +11776,86 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   margin-left: 10px;
   border: 1px solid #e64750;
   color: #e64750;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content {
+  padding-bottom: 44px;
+  position: relative;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .content_none {
+  display: none;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .previousblock {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  padding-left: 20px;
+  background: url(img/xia.png) no-repeat 35% 5px;
+  background-size: 20px 14px;
+  cursor: pointer;
+  padding-top: 5px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .previousnone {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  padding-left: 20px;
+  background: url(img/top.png) no-repeat 35% 5px;
+  background-size: 20px 14px;
+  cursor: pointer;
+  border-top: 1px solid #ccc;
+  padding-top: 5px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .content {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-left: 10px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .content a {
+  width: 17px;
+  height: 13px;
+  background-image: url(img/rightbtn.png);
+  background-size: 17px 13px;
+  position: absolute;
+  right: 10px;
+  top: 40%;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .content div {
+  padding: 15px 0;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .content div:nth-child(1) {
+  width: 56px;
+  font-size: 14px;
+  color: #202020;
+  text-align: justify;
+  text-align-last: justify;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .content div:nth-child(2) {
+  width: 265px;
+  color: #313131;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  border-bottom: 1px solid #ccc;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .content div:nth-child(2) input,
+[data-ysp-modelid="Newtravel"] .leave_Content .content div:nth-child(2) select {
+  margin: 0;
+  padding: 0;
+  padding: 5px 0;
+  border: 0;
+  background-color: #fff;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .content div:nth-child(2) button {
+  border: 0;
+  border: 1px solid #ccc;
+  padding: 5px 20px;
+}
+[data-ysp-modelid="Newtravel"] .leave_Content .content div:nth-child(2) .radiobtn {
+  background-color: #e64750;
+  color: #fff;
 }
 .detail_new {
   background-color: #fff;
