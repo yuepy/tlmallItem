@@ -416,6 +416,8 @@ body {
   height: 44px;
   border: 0;
   margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
 }
 .information {
   background-color: #ffffff;
@@ -9171,7 +9173,7 @@ body {
 }
 .footerbtn {
   background: #fff;
-  padding: 10px 3px;
+  padding: 0px 3px;
 }
 .footerbtn ul {
   overflow: hidden;
@@ -9203,7 +9205,7 @@ body {
 .footerbtn ul .ysp-nextPage {
   margin: 0;
   border-radius: 0;
-  width: 40px;
+  width: 30px;
 }
 .footerbtn ul .ysp-prePage,
 .footerbtn ul .ysp-nextOne {
@@ -11508,17 +11510,23 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   font-size: 14px;
   color: #313131;
 }
+.next_prev {
+  margin-bottom: 10px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
 .next_prev button {
   background-color: #e64750;
-  width: 50%;
+  width: 49%;
   border: 0;
   border-radius: 5px;
   color: #fff;
   height: 44px;
 }
 .next_prev button:nth-child(1) {
-  background-color: #fff;
-  color: #000;
+  background-color: #2f9fff;
+  color: #fff;
 }
   body {
   overflow: hidden;
