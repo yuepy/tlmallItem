@@ -313,6 +313,38 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control673_BTBgkh": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control673_BTBgkh"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -324,7 +356,8 @@
         "control347_G9gpkG",
         "control348_QCO2DR",
         "control349_IR1NI2",
-        "control350_ozZMeP"
+        "control350_ozZMeP",
+        "control673_BTBgkh"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -371,6 +404,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl345_7prrxX",
                 "onGetTemplate": "getTemplate_uiControl345_7prrxX"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl673_55re78",
+          "controlId": "control673_BTBgkh",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl673_55re78",
+                "onGetTemplate": "getTemplate_uiControl673_55re78"
               }
             }
           }
@@ -537,6 +585,79 @@
             "filePanel",
             "person_infor",
             "person_infor_trigger",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv"
+          ],
+          [
+            "AppUsersDiv",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "aspnetForm",
+            "btnAddLink",
+            "btnFileUpload",
+            "ctl_Attachment_fileUpload",
+            "ctl_Attachment_hfActivityName",
+            "ctl_Attachment_hfGuid",
+            "ctl_Attachment_hfIsStart",
+            "ctl_Attachment_hfUserLoginName",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_P",
+            "ctl_contentForm_rbtn_oneself",
+            "ctl_contentForm_rbtn_project",
+            "ctl_contentForm_txt_DollarsBonus",
+            "ctl_contentForm_txt_EndTime",
+            "ctl_contentForm_txt_PercapitaDollarsBonus",
+            "ctl_contentForm_txt_PercapitaResourcePurchase",
+            "ctl_contentForm_txt_PercapitaTableMoney",
+            "ctl_contentForm_txt_PercapitaTotal",
+            "ctl_contentForm_txt_PercapitaTravelCharge",
+            "ctl_contentForm_txt_Remark",
+            "ctl_contentForm_txt_ResourcePurchase",
+            "ctl_contentForm_txt_StartTime",
+            "ctl_contentForm_txt_TableMoney",
+            "ctl_contentForm_txt_Total",
+            "ctl_contentForm_txt_TrainAddress",
+            "ctl_contentForm_txt_TrainAim",
+            "ctl_contentForm_txt_TrainLevel",
+            "ctl_contentForm_txt_TrainNature",
+            "ctl_contentForm_txt_TrainNumber",
+            "ctl_contentForm_txt_TrainShape",
+            "ctl_contentForm_txt_TrainTitle",
+            "ctl_contentForm_txt_TrainType",
+            "ctl_contentForm_txt_TravelCharge",
+            "filePanel",
+            "person_infor",
+            "person_infor_trigger",
+            "tableAttachment",
+            "tableComments",
+            "tableHeader",
             "tb_AttachmentList",
             "tb_List",
             "uploadDiv"

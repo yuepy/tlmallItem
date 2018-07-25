@@ -527,6 +527,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -542,6 +546,33 @@
       },
       "events": {
         "onGetData": "getData_control677_aJaoJl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control691_ysEQMM": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control691_ysEQMM"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -565,7 +596,8 @@
         "control543_wQLK62",
         "control544_2LNHHH",
         "control545_RHaK0b",
-        "control677_aJaoJl"
+        "control677_aJaoJl",
+        "control691_ysEQMM"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -749,6 +781,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl44_gmyENw",
                 "onGetTemplate": "getTemplate_uiControl44_gmyENw"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl691_kJIgMS",
+          "controlId": "control691_ysEQMM",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl691_kJIgMS",
+                "onGetTemplate": "getTemplate_uiControl691_kJIgMS"
               }
             }
           }
