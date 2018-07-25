@@ -584,6 +584,98 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='TargetContent'][@id='ptifrmtgtframe']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control102_N34WH6": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "浏览"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"#ICOrigFileName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              32,
+              41
+            ],
+            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge FORM.PSForm DIV.ps_box-toolshiddens INPUT"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "file"
+          }
+        ]
+      },
+      "roles": "element,file",
+      "monitored": false,
+      "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
+      "componentType": "fileUpload"
+    },
+    "control115_0NQPiE": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "locators": [
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "浏览"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"#ICOrigFileName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              32,
+              41
+            ],
+            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge FORM.PSForm DIV.ps_box-toolshiddens INPUT"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "file"
+          }
+        ]
+      },
+      "roles": "element,file",
+      "monitored": false,
+      "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
+      "componentType": "fileUpload"
     }
   },
   "contexts": {
@@ -603,7 +695,9 @@
         "control47_ACoOi5",
         "control19_pCDSMy",
         "control43_IR7TSD",
-        "control109_yiloJm"
+        "control109_yiloJm",
+        "control102_N34WH6",
+        "control115_0NQPiE"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -803,6 +897,17 @@
               },
               "layout": [
                 {
+                  "id": "uiControl118_8QRSCD",
+                  "controlId": "control102_N34WH6",
+                  "display": {
+                    "adapterId": "clickable",
+                    "type": "fileUpload",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  }
+                },
+                {
                   "id": "uiControl94_658CFG",
                   "controlId": "control95_h4fw22",
                   "display": {
@@ -934,6 +1039,17 @@
                         "onDoAction": "doAction_uiControl44_wm359A",
                         "onGetTemplate": "getTemplate_uiControl44_wm359A"
                       }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl119_Zp102B",
+                  "controlId": "control115_0NQPiE",
+                  "display": {
+                    "adapterId": "clickable",
+                    "type": "fileUpload",
+                    "adapter": {
+                      "templateType": ""
                     }
                   }
                 }
@@ -3756,6 +3872,181 @@
             "pthnavmru_HPS_TL_AWE__GBL",
             "pthnavmru_HPS_TL_PAG__CP_GBL",
             "pthnavmru_PT_PTGP_USERPREF_FL_GBL",
+            "pthnavmrufavsep",
+            "pthnavmruroot",
+            "pthnavroot",
+            "pthnavsid",
+            "ptiframatfcontent",
+            "ptifrmatfcancel",
+            "ptifrmatfdescr",
+            "ptifrmatfinput",
+            "ptifrmatflbl",
+            "ptifrmatflist",
+            "ptifrmatfname",
+            "ptifrmatfok",
+            "ptifrmcontent",
+            "ptifrmpopup",
+            "ptifrmrc",
+            "ptifrmrchandle",
+            "ptifrmresizedownmask",
+            "ptifrmresizeupmask",
+            "ptifrmsep",
+            "ptifrmtarget",
+            "ptifrmtgtframe",
+            "ptpopoptitle",
+            "ptpopup",
+            "ptpopupclose",
+            "ptpopupcontainer",
+            "ptpopupcontent",
+            "ptpopupcontentcontainer",
+            "ptpopuplayouttbl",
+            "ptpopupmask",
+            "ptpopupmsg",
+            "ptpopupmsgbtn",
+            "ptpopupmsgbuttons",
+            "ptpopupmsgtext",
+            "ptpopupshadow",
+            "ptpopuptitlebar",
+            "ptrcControls_RelatedContent",
+            "ptrcDropDowndiv_RelatedContent",
+            "ptrcDropdown_RelatedContent",
+            "ptrcTCSpacer",
+            "ptrcclose",
+            "ptrccollapse_expand",
+            "ptrcdropdownicon_RelatedContent",
+            "ptrcnewwin",
+            "ptrcrefresh",
+            "ptrcrefreshonhover",
+            "ptrctitlebar",
+            "ptrctitleline",
+            "ptsrc_dropdownicon_RelatedContent",
+            "rcMenuOnRC",
+            "vRCPageletGroupsDiv",
+            "vRCPgltArea",
+            "vRCPgltAreaBody",
+            "vRCPgltAreaBodyAnchor",
+            "vRCPgltAreaBodyShow",
+            "vRCPgltAreaContainer",
+            "vRCPgltAreaFrameDiv",
+            "vRCPgltAreaHeader",
+            "vRCPgltAreaHide",
+            "vRCPgltAreaHideContainer",
+            "vRCPgltAreaResizeBar",
+            "vRCPgltAreaShow"
+          ],
+          [
+            "CO_EMPLOYEE_SELF_SERVICE",
+            "DEFAULT_HEADER_TANGERINE_ALT",
+            "Delayed_empty",
+            "HC_ORGANIZATIONAL_DEVELOPMENT",
+            "HC_SETUP_HRMS",
+            "HC_WORKFORCE_ADMINISTRATION",
+            "HPS_DEVELOP",
+            "HPS_DEVELOP_ABS",
+            "HPS_DEVELOP_RZ",
+            "HPS_STD_MENU_GBL",
+            "PT_PEOPLETOOLS",
+            "PT_REPORTING_TOOLS",
+            "PT_TREE_MANAGER",
+            "RelatedContent",
+            "SRelatedContent",
+            "SrcMenuOnRC",
+            "WAIT_empty",
+            "crefli_PT_CHANGE_PASSWORD_GBL",
+            "crefli_PT_PORTAL_ADD_FAV_GBL",
+            "crefli_PT_PTGP_USERPREF_FL_GBL",
+            "crefli_fav_PT_PORTAL_EDIT_FAV_GBL",
+            "fldra_CO_EMPLOYEE_SELF_SERVICE",
+            "fldra_HC_ORGANIZATIONAL_DEVELOPMENT",
+            "fldra_HC_SETUP_HRMS",
+            "fldra_HC_WORKFORCE_ADMINISTRATION",
+            "fldra_HPS_DEVELOP",
+            "fldra_HPS_DEVELOP_ABS",
+            "fldra_HPS_DEVELOP_RZ",
+            "fldra_HPS_STD_MENU_GBL",
+            "fldra_PT_PEOPLETOOLS",
+            "fldra_PT_REPORTING_TOOLS",
+            "fldra_PT_TREE_MANAGER",
+            "popupTitleBarLeftImage",
+            "popupTitleBarRightImage",
+            "processing",
+            "ptModBottom_",
+            "ptModCloseLnk_",
+            "ptModContent_",
+            "ptModControl_",
+            "ptModFrame_",
+            "ptModHeader_",
+            "ptModResize_",
+            "ptModTable_",
+            "ptModTitleBar_",
+            "ptModTitle_",
+            "ptMod_",
+            "ptModalShadow",
+            "pt_modalMask",
+            "pt_modalMaskCover",
+            "pt_modals",
+            "ptabn",
+            "ptabn_SRCHPROMPT",
+            "ptabnclonebc",
+            "ptabncrefbc",
+            "ptabnfldrbc",
+            "ptabnportalfldrbc",
+            "ptabnprevresults",
+            "ptabnrscontainer",
+            "ptabnsadiv",
+            "ptabnsepbc",
+            "ptabnsp",
+            "ptabnsrchagain",
+            "ptabnsrchtitle",
+            "ptabntdiv",
+            "ptalPageMask",
+            "ptatfsid",
+            "ptbr_header_container",
+            "ptdropdownmenu",
+            "pthbcEndWall",
+            "pthbcScroll",
+            "pthbcScrollNext",
+            "pthbcScrollPrev",
+            "pthbcStartWall",
+            "pthbcUlScroll",
+            "pthdraddto",
+            "pthdraddto_div",
+            "pthdratf",
+            "pthdrcontainer",
+            "pthdrhome",
+            "pthdrlinks",
+            "pthdrlogoswan",
+            "pthdrlogout",
+            "pthdrnavbar",
+            "pthdrnavbar_div",
+            "pthdrnavbarlinks",
+            "pthdrnotify",
+            "pthdrnotify_badge",
+            "pthdrnotify_div",
+            "pthdrsyslinks",
+            "pthnavbc",
+            "pthnavbc_HPS_EMP_APR",
+            "pthnavbc_HPS_STD_MENU_GBL",
+            "pthnavbc_MYFAVORITES",
+            "pthnavbc_PORTAL_ROOT_OBJECT",
+            "pthnavbca_HPS_EMP_APR",
+            "pthnavbca_HPS_STD_MENU_GBL",
+            "pthnavbca_MYFAVORITES",
+            "pthnavbca_PORTAL_ROOT_OBJECT",
+            "pthnavbccref_HPS_HR_SS_BAS_CPT_GBL",
+            "pthnavbccrefanc_HPS_HR_SS_BAS_CPT_GBL",
+            "pthnavbccrefanc_HPS_HR_SS_BAS_CPT_GBL_mru_clone",
+            "pthnavblock",
+            "pthnavcontainer",
+            "pthnavfav",
+            "pthnavfavli",
+            "pthnavfavsep",
+            "pthnavfly_MYFAVORITES",
+            "pthnavfly_PORTAL_ROOT_OBJECT",
+            "pthnavmrs_",
+            "pthnavmrssep",
+            "pthnavmru",
+            "pthnavmru_HPS_HR_SS_BAS_CPT_GBL",
             "pthnavmrufavsep",
             "pthnavmruroot",
             "pthnavroot",
