@@ -192,75 +192,80 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
       "componentType": "custom"
     },
-    "control29_IsBr6Z": {
+    "control29_eOS46G": {
       "location": {
         "data": {
           "tagName": "INPUT"
         },
         "locators": [
           {
-            "id": "input/button/@value",
-            "prob": 3,
-            "value": {
-              "text": [
-                "提交"
-              ]
-            }
-          },
-          {
             "id": "@title",
             "prob": 2,
             "value": {
               "text": [
-                "提交按钮"
-              ],
-              "textboxValue": "提交"
+                "浏览"
+              ]
             }
           },
           {
             "id": "elem/@name",
             "prob": 2,
-            "value": "descendant::INPUT[@name=\"HPS_EMP_APR_DW_SUBMIT_BTN\"]"
-          },
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": [
-              "descendant::TABLE[@id=\"ACE_width\"]//INPUT[@id=\"HPS_EMP_APR_DW_SUBMIT_BTN\"]",
-              "descendant::INPUT[@id=\"HPS_EMP_APR_DW_SUBMIT_BTN\"]"
-            ]
+            "value": "descendant::INPUT[@name=\"#ICOrigFileName\"]"
           },
           {
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
-              5,
-              6
+              32,
+              41
             ],
-            "value": "TABLE.PSPAGECONTAINER A.PSPUSHBUTTONDISABLED.Left INPUT.PSPUSHBUTTONDISABLED"
+            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge FORM.PSForm DIV.ps_box-toolshiddens INPUT"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[5]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[11]/TD[3]/DIV[1]/A[1]/SPAN[1]/INPUT[1]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[1]/INPUT[1]"
           },
           {
             "id": "input/type",
             "verifyEnabled": true,
-            "value": "button"
+            "value": "file"
+          }
+        ]
+      },
+      "roles": "element,file",
+      "monitored": false,
+      "frameXPath": "//iframe[contains(@name,'ptModFrame_')][contains(@id,'ptModFrame_')]<<IFRAME>>",
+      "componentType": "fileUpload"
+    },
+    "control116_zmIZua": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge BODY.PSPAGE FORM.PSForm"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control29_IsBr6Z"
+        "onGetData": "getData_control116_zmIZua"
       },
       "intendedRole": "custom",
-      "roles": "element,button,custom",
-      "monitored": false,
+      "roles": "element,custom",
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -273,7 +278,8 @@
         "control74_W1RwEU",
         "control87_nzqNhh",
         "control88_uhIqS6",
-        "control29_IsBr6Z"
+        "control29_eOS46G",
+        "control116_zmIZua"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -348,6 +354,26 @@
           "toContextId": "context9_Ffd4Vf"
         }
       ]
+    },
+    "flow96_VreLEO": {
+      "fromContextId": "context9_Ffd4Vf",
+      "fromAction": "click",
+      "fromControlId": "control29_eOS46G",
+      "toContexts": [
+        {
+          "toContextId": "context9_Ffd4Vf"
+        }
+      ]
+    },
+    "flow97_pnSlES": {
+      "fromContextId": "context9_Ffd4Vf",
+      "fromAction": "doAction",
+      "fromControlId": "control88_uhIqS6",
+      "toContexts": [
+        {
+          "toContextId": "context9_Ffd4Vf"
+        }
+      ]
     }
   },
   "pages": {
@@ -385,6 +411,17 @@
           }
         },
         {
+          "id": "uiControl58_yJlmLs",
+          "controlId": "control29_eOS46G",
+          "display": {
+            "adapterId": "clickable",
+            "type": "fileUpload",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
           "id": "uiControl86_lZzCFz",
           "controlId": "control88_uhIqS6",
           "display": {
@@ -395,6 +432,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl86_lZzCFz",
                 "onGetTemplate": "getTemplate_uiControl86_lZzCFz"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl120_4eVenK",
+          "controlId": "control116_zmIZua",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl120_4eVenK",
+                "onGetTemplate": "getTemplate_uiControl120_4eVenK"
               }
             }
           }
@@ -428,21 +480,6 @@
               }
             }
           }
-        },
-        {
-          "id": "uiControl58_guHllc",
-          "controlId": "control29_IsBr6Z",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl58_guHllc",
-                "onGetTemplate": "getTemplate_uiControl58_guHllc"
-              }
-            }
-          }
         }
       ]
     }
@@ -464,7 +501,8 @@
           "192.168.220.110/psc/ps_11/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_EUD_CPT1.GBL?Page=HPS_HR_SS_EDU_PAG1&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_11%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL%3fPage%3dHPS_HR_SS_EDU_PAG1%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_11%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_11%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_11%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes",
           "192.168.220.110/psc/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_EUD_CPT1.GBL?Page=HPS_HR_SS_EDU_PAG1&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_2%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL%3fPage%3dHPS_HR_SS_EDU_PAG1%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_2%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_2%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_2%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes",
           "192.168.220.110/psc/ps_7/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_EUD_CPT1.GBL?Page=HPS_HR_SS_EDU_PAG1&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_7%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL%3fPage%3dHPS_HR_SS_EDU_PAG1%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_7%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_7%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_7%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes",
-          "192.168.220.110/psc/ps_14/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_EUD_CPT1.GBL?Page=HPS_HR_SS_EDU_PAG1&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_14%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL%3fPage%3dHPS_HR_SS_EDU_PAG1%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_14%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_14%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_14%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes"
+          "192.168.220.110/psc/ps_14/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_EUD_CPT1.GBL?Page=HPS_HR_SS_EDU_PAG1&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_14%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL%3fPage%3dHPS_HR_SS_EDU_PAG1%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_14%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_14%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_14%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes",
+          "192.168.220.110/psc/ps_10/EMPLOYEE/HRMS/c/HPS_MENU.HPS_HR_SS_EUD_CPT1.GBL?Page=HPS_HR_SS_EDU_PAG1&Action=U&TargetFrameName=None&PortalActualURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_10%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL%3fPage%3dHPS_HR_SS_EDU_PAG1%26Action%3dU%26TargetFrameName%3dNone&PortalContentURL=http%3a%2f%2f192.168.220.110%2fpsc%2fps_10%2fEMPLOYEE%2fHRMS%2fc%2fHPS_MENU.HPS_HR_SS_EUD_CPT1.GBL&PortalContentProvider=HRMS&PortalCRefLabel=%e6%95%99%e8%82%b2%e7%bb%8f%e5%8e%86&PortalRegistryName=EMPLOYEE&PortalServletURI=http%3a%2f%2f192.168.220.110%2fpsp%2fps_10%2f&PortalURI=http%3a%2f%2f192.168.220.110%2fpsc%2fps_10%2f&PortalHostNode=HRMS&NoCrumbs=yes&PortalKeyStruct=yes"
         ]
       }
     },
