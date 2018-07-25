@@ -3,6 +3,9 @@
   "id": "inspect_detailJS",
   "targetURL": "http://172.16.11.61/JW/SJList.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "inspect_SJdetail": "../inspect_SJdetail/index.json"
+  },
   "chineseName": "中可纪检监察部上级精神",
   "description": "",
   "controls": {
@@ -123,6 +126,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -175,6 +182,20 @@
       "toContexts": [
         {
           "toContextId": "context80_8DOgz4"
+        }
+      ]
+    },
+    "flow284_lSwoJi": {
+      "fromContextId": "context80_8DOgz4",
+      "fromAction": "doAction",
+      "fromControlId": "control735_eGrmbi",
+      "toContexts": [
+        {
+          "toContextId": "context80_8DOgz4"
+        },
+        {
+          "toContextId": "context85_FV32Qv",
+          "toModelId": "inspect_SJdetail"
         }
       ]
     }

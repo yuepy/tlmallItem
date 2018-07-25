@@ -3,6 +3,9 @@
   "id": "inspect_detaikBS",
   "targetURL": "http://172.16.11.61/JW/YWList.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "inspect_YWdetail": "../inspect_YWdetail/index.json"
+  },
   "chineseName": "中可纪检监察部总部部署",
   "description": "",
   "controls": {
@@ -123,6 +126,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -175,6 +182,20 @@
       "toContexts": [
         {
           "toContextId": "context81_WvDNhs"
+        }
+      ]
+    },
+    "flow285_WEfSbK": {
+      "fromContextId": "context81_WvDNhs",
+      "fromAction": "doAction",
+      "fromControlId": "control738_Oy7s7s",
+      "toContexts": [
+        {
+          "toContextId": "context81_WvDNhs"
+        },
+        {
+          "toContextId": "context86_UNn0CN",
+          "toModelId": "inspect_YWdetail"
         }
       ]
     }

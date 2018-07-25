@@ -3,6 +3,9 @@
   "id": "inspect_detailseve",
   "targetURL": "http://172.16.11.61/JW/GGList.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "inspect_detail": "../inspect_detail/index.json"
+  },
   "chineseName": "中可纪检监察部更多动态",
   "description": "",
   "controls": {
@@ -123,6 +126,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -175,6 +182,20 @@
       "toContexts": [
         {
           "toContextId": "context79_81bAfD"
+        }
+      ]
+    },
+    "flow279_nLnl2p": {
+      "fromContextId": "context79_81bAfD",
+      "fromAction": "doAction",
+      "fromControlId": "control731_xQEo8C",
+      "toContexts": [
+        {
+          "toContextId": "context79_81bAfD"
+        },
+        {
+          "toContextId": "context84_X4swKW",
+          "toModelId": "inspect_detail"
         }
       ]
     }

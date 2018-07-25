@@ -5,11 +5,16 @@
   "jsFile": "index.js",
   "chineseName": "中可纪检监察部详情页",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control751_P9rzLE": {
       "location": {
         "data": {
           "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -67,6 +72,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -105,6 +114,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -149,7 +162,9 @@
         "control753_zh5viJ"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61\\/JW\\/GGDetail\\.aspx\\?ID.*"
+      ]
     }
   },
   "flows": {
@@ -224,7 +239,8 @@
     "page/urls": {
       "contexts": {
         "context84_X4swKW": [
-          "172.16.11.61/JW/GGDetail.aspx?ID=35"
+          "172.16.11.61/JW/GGDetail.aspx?ID=35",
+          "172.16.11.61/JW/GGDetail.aspx?ID=34"
         ]
       }
     },
@@ -245,6 +261,26 @@
         "context84_X4swKW": [
           [
             "ExternalClassABCDBDBDAAFD",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
+          ],
+          [
+            "ExternalClassDDDEFABCACC",
             "aspNetHidden",
             "breadcrumb",
             "centerbox",
@@ -289,6 +325,27 @@
             "P/SPAN/SPAN",
             "SPAN/SPAN/BR",
             "SPAN/SPAN/SPAN"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/BR",
+            "DIV/SPAN/FONT",
+            "DIV/SPAN/IMG",
+            "DIV/SPAN/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "P/SPAN/SPAN"
           ]
         ]
       }

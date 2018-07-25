@@ -3,6 +3,9 @@
   "id": "inspect_detailFG",
   "targetURL": "http://172.16.11.61/JW/DJList.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "spect_DJdetail": "../spect_DJdetail/index.json"
+  },
   "chineseName": "中可纪检监察部党纪法规",
   "description": "",
   "controls": {
@@ -10,6 +13,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -50,6 +57,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -71,6 +82,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -110,6 +125,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -163,6 +182,20 @@
       "toContexts": [
         {
           "toContextId": "context83_aCdN25"
+        }
+      ]
+    },
+    "flow287_Ppgyxi": {
+      "fromContextId": "context83_aCdN25",
+      "fromAction": "doAction",
+      "fromControlId": "control750_e1hdIR",
+      "toContexts": [
+        {
+          "toContextId": "context83_aCdN25"
+        },
+        {
+          "toContextId": "context88_WueRKU",
+          "toModelId": "spect_DJdetail"
         }
       ]
     }

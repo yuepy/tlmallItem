@@ -3,13 +3,22 @@
   "id": "inspect_detailJLSC",
   "targetURL": "http://172.16.11.61/JW/JLList.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "inspect_detailJLSC": "../inspect_detailJLSC/index.json",
+    "spectJLdetail": "../spectJLdetail/index.json"
+  },
   "chineseName": "中可纪检监察部纪律审查",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control743_ZvnHVt": {
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -50,6 +59,10 @@
         "data": {
           "tagName": "TD"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -71,6 +84,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -110,6 +127,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -155,7 +176,9 @@
         "control746_t8H6Cs"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http://172.16.11.61/JW/JLList.aspx"
+      ]
     }
   },
   "flows": {
@@ -163,6 +186,24 @@
       "toContexts": [
         {
           "toContextId": "context82_lTPIJw"
+        }
+      ]
+    },
+    "flow286_37ADJG": {
+      "fromContextId": "context82_lTPIJw",
+      "fromAction": "doAction",
+      "fromControlId": "control745_foPfgM",
+      "toContexts": [
+        {
+          "toContextId": "context82_lTPIJw"
+        },
+        {
+          "toContextId": "context82_lTPIJw",
+          "toModelId": "inspect_detailJLSC"
+        },
+        {
+          "toContextId": "context87_OvdgLi",
+          "toModelId": "spectJLdetail"
         }
       ]
     }
@@ -245,7 +286,8 @@
     "page/urls": {
       "contexts": {
         "context82_lTPIJw": [
-          "172.16.11.61/JW/JLList.aspx"
+          "172.16.11.61/JW/JLList.aspx",
+          "172.16.11.61/JW/JLDetail.aspx?ID=22"
         ]
       }
     },
@@ -260,6 +302,12 @@
             "__EVENTARGUMENT",
             "__EVENTTARGET",
             "__VIEWSTATE"
+          ],
+          [
+            "DQTime",
+            "Form",
+            "__VIEWSTATE",
+            "tianqi"
           ]
         ]
       }
@@ -283,6 +331,26 @@
             "top",
             "topjiwei",
             "welcome"
+          ],
+          [
+            "ExternalClassDAAACBDAFF",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
           ]
         ]
       }
@@ -314,6 +382,29 @@
             "TR/TD/A",
             "TR/TD/SPAN",
             "UL/LI/DIV"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "B/SPAN/SPAN",
+            "DIV/B/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/B",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/P/B",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "P/B/SPAN",
+            "SPAN/SPAN/SPAN"
           ]
         ]
       }
