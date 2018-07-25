@@ -2041,24 +2041,6 @@
     if (type == 'btnclick') {
       elem.querySelector('table').querySelector('a').click();
     }
-- name: 按钮修改
-  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data;\n    if(target.tagName.toLowerCase() == 'div'){\n      target.parentElement.nextElementSibling.style.display = 'block';\n      // target.parentElement.nextElementSibling.style.height = target.ownerDocument.style.height;\n      var lis = target.parentElement.parentElement.querySelector('.dianbl').querySelectorAll('li');\n      for(var i=0;i<lis.length;i++){\n        lis[i].style.bottom = i*50 +'px';\n      }\n    }\n    if(target.tagName.toLowerCase() == 'p'){\n      target.parentElement.parentElement.parentElement.style.display = 'none';\n    }\n    if(target.tagName.toLowerCase() == 'button'){\n      type = 'click';\n      data = target.getAttribute('data-id');\n    }\n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(!data){\n      return '';\n    }\n  \tvar lis = data.map(function(d,i){\n      if(i<3){\n        return(\n        \t<button data-id={i} onClick={_this.onClick}>{d}</button>\n        )\n      }\n    })\n    var list = data.map(function(d,i){\n      if(i>2){\n        return(\n        \t<li><button data-id={i} onClick={_this.onClick}>{d}</button></li>\n        )\n      }\n    })\n        //<div className='dianbl'><ul><li><p onClick={_this.onClick}>取消</p></li>{list}</ul></div><div style={{'display':data.length>3?'block':\"none\"}} onClick={_this.onClick.bind(_this)}></div>\n    return (\n      <div className='submit'>\n        <div className='subtrue'><div>{lis}</div></div>\n      </div>\n    )\n  }\n});"
-  getData: |
-    if (!elem) {
-      return;
-    }
-    var data = [];
-    var lis = elem.querySelectorAll('li');
-    for (var i = 0; i < lis.length; i++) {
-      data.push(lis[i].textContent.trim());
-    }
-    return data;
-  doAction: |
-    var type = data.eventType;
-    var data = data.customData;
-    if (type == 'click') {
-      elem.querySelectorAll('li')[data].querySelector('a').click();
-    }
 - name: 附件（无上传文件）
   getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data = '';\n    if(target.tagName.toLowerCase() == 'button'){\n      console.log(target.id);\n      if(target.id == 'uploadDiv' ){\n        type = 'commit';\n        data = 'btnFileUpload';\n      }else{\n        type = 'add';\n        data = 'btnFileUpload';\n      }\n    }\n    if(target.tagName.toLowerCase() == 'p'){\n      type = 'updel';\n      data = {\n        index:target.getAttribute('data-index'),\n        i:target.className=='xiazai'?0:1\n      }\n    }\n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  click:function(e){\n    var target = e.target;\n    if(target.className == 'shang'){\n      target.className = 'xia';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displnone');\n      for(var i=0;i<divs.length;i++){\n        divs[i].className = 'displblock';\n      }\n    }else{\n      target.className = 'shang';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displblock');\n      for(var i=0;i<divs.length;i++){\n        divs[i].className = 'displnone';\n      }\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    var lis = data.content.map(function(ele,index){\n      var list = ele.map(function(d,i){\n        if(i==0){\n          return(\n          \t<div className='titlediv'>\n            \t<div>{'0'+(index+1)}</div>\n              <div>{d}</div>\n              <div onClick={_this.click} className='shang'></div>\n            </div>\n          )\n        }\n        if(i == ele.length-1){\n          if(d.length>2){\n              return(\n              <div className='displnone'>\n                <div className='contentitem contentspan' style={{'width':'100%','text-align-last':'auto','text-align':'center'}}><p className='shanchu' data-index={index} onClick={_this.onClick.bind(_this)}><span></span>{d[2]+d[3]}</p><p data-index={index} className='xiazai' onClick={_this.onClick.bind(_this)}><span></span>{d.length>2?d[0]+d[1]:''}</p></div>\n              </div>\n            )\n          }else{\n             return(\n              <div className='displnone'>\n                <div className='contentitem'><p className='xiazai' data-index={index} onClick={_this.onClick.bind(_this)}><span></span>{d[0]+d[1]}</p></div>\n              </div>\n            )\n          }\n        }\n        return(\n        \t<div className='displnone'>\n          \t<div className='contentitem'>{data.titles[i]}</div>\n            <div className='contentitem'>{d}</div>\n          </div>\n        )\n      })\n      return(\n      \t<div className='contentit'>{list}</div>\n      )\n    })\n    \n            // <div>\n            //   <button onClick={_this.onClick.bind(_this)}>选择文件</button>\n            //   <button id={data.id} onClick={_this.onClick.bind(_this)}>上传文件</button>\n            // </div>\n    return (\n      <div className='Enclosure'>\n        <div className='contenttitle'>\n          <span className='xia'></span>\n          <p>{data.title}\n          </p>\n        </div>\n        <div className='content'>\n    \t\t\t{lis}\n        </div>\n      </div>\n    )\n  }\n});"
   getData: >
@@ -2093,4 +2075,162 @@
     if (type == 'updel') {
       var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
       tds[tds.length - 1].querySelectorAll('a')[data.i].click();
+    }
+- name: 按钮修改
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data;\n    if(target.tagName.toLowerCase() == 'div'){\n      target.parentElement.nextElementSibling.style.display = 'block';\n      // target.parentElement.nextElementSibling.style.height = target.ownerDocument.style.height;\n      var lis = target.parentElement.parentElement.querySelector('.dianbl').querySelectorAll('li');\n      for(var i=0;i<lis.length;i++){\n        lis[i].style.bottom = i*50 +'px';\n      }\n    }\n    if(target.tagName.toLowerCase() == 'p'){\n      target.parentElement.parentElement.parentElement.style.display = 'none';\n    }\n    if(target.tagName.toLowerCase() == 'button'){\n      type = 'click';\n      data = target.getAttribute('data-id');\n    }\n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(!data){\n      return '';\n    }\n  \tvar lis = data.map(function(d,i){\n        return(\n        \t<button data-id={i} onClick={_this.onClick}>{d}</button>\n        )\n      \n    })\n    var list = data.map(function(d,i){\n      // if(i>2){\n      //   return(\n      //   \t<li><button data-id={i} onClick={_this.onClick}>{d}</button></li>\n      //   )\n      // }\n    })\n        //<div className='dianbl'><ul><li><p onClick={_this.onClick}>取消</p></li>{list}</ul></div><div style={{'display':data.length>3?'block':\"none\"}} onClick={_this.onClick.bind(_this)}></div>\n    return (\n      <div className='submit'>\n        <div className='subtrue'><div className={data.length==1?'btnlength01':(data.length==2?'btnlength02':'btnlength03')}>{lis}</div></div>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = [];
+    var arr = ['同意', '拒绝', '加签', '建议'];
+    var lis = elem.querySelectorAll('li');
+    for (var i = 0; i < lis.length; i++) {
+      if (arr.indexOf(lis[i].textContent.trim()) != -1) {
+        data.push(lis[i].textContent.trim());
+      }
+    }
+    return data;
+  doAction: |
+    var type = data.eventType;
+    var data = data.customData;
+    if (type == 'click') {
+      elem.querySelectorAll('li')[data].querySelector('a').click();
+    }
+- name: 列表详情修改
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type,data={};\n    //点击事件   点击进入详情页\n    // if(target.tagName.toLowerCase() == 'div'){\n      type='td_click';\n      var Contentele = ysp.customHelper.getparent(target,'Content');\n      data.id = Contentele.getAttribute('data-id');\n      data.text = Contentele.querySelectorAll('div.Content_item')[0].textContent.trim();\n    // }\n    \n    \n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  onclick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    //判断是否为下啦按钮   改变隐藏的元素display\n    if(target.getAttribute('data-id') == 'true'){\n      // target = (target.tagName.toLowerCase() == 'span')? target.parentElement:target;\n      target.setAttribute('data-id','false');\n      target.className = 'disbottom';\n      target.parentElement.parentElement.querySelector('div.Content_disnone').style.display = 'block';\n    }else{\n      target.setAttribute('data-id','true');\n      target.className = 'distop';\n      target.parentElement.parentElement.querySelector('div.Content_disnone').style.display = 'none';\n    }\n    //阻止事件冒泡从而执行父元素的点击事件\n    e.stopPropagation()\n    // if(handler){\n    //   handler({\n    //     type:'tag',\n    //     data:target.getAttribute('data-id')\n    //   })\n    // }\n  },\n  render: function() {\n    var data = this.props.customData,\n    \t\t_this = this;\n    if(!data){\n      return '';\n    }\n    var lis = data.content.map(function(ele,index){\n      return(\n      \t<div className='Content' onClick={_this.onClick} data-id={data.index[index]}>\n        \t<div>\n          \t<div className='Content_item'>\n            {ele[0]}</div>\n          <div className='Content_item' onClick={_this.onClick}><p onClick={_this.onClick}>{data.titles[3]}</p><p onClick={_this.onClick}>{ele[3]}</p></div>\n          <div className='Content_item'>\n            <p>{data.titles[2]}</p><p>{ele[2]}</p>\n          </div>\n          <div className='Content_item'>\n            \t<p>{data.titles[4]}</p><p>{ele[4]}</p>\n            </div>\n            <div className='Content_item'>\n            \t<p>{data.titles[5]}</p><p>{ele[5]}</p>\n            </div>\n\t\t\t\t\t</div>\n        </div>\n      )\n          //             <a className='distop' href='javascript:;' data-id='true' onClick={_this.onclick} ><span></span></a>\n          // </div>\n          // <div data-id={index} className='Content_disnone'>\n          //       \t<div id='summary'>\n          //   \t<div>{data.titles[1]}</div>\n          //     <div>{ele[1]}</div>\n          //   </div>\n          //   <div>\n          //   \t<div>{data.titles[4]}</div>\n          //     <div>{ele[4]}</div>\n          //   </div>\n          //   <div>\n          //   \t<div>{data.titles[5]}</div>\n          //     <div>{ele[5]}</div>\n          //   </div>\n          // </div>\n\n    })\n    return (\n      <div>\n        {lis}\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var content = ysp.customHelper.getTableData(elem, ['流程名称', '流程编号', '内容摘要',
+    '申请人', '停留时间', '申请日期']);
+
+    var arr = ['要事追踪申请单'];
+
+    var data = ysp.customHelper.getDatamove(content, arr);
+
+    content.content = data.data;
+
+    content.index = data.index;
+
+    return content;
+  doAction: |
+    var type = data.eventType,
+        data = data.customData;
+    if (type == 'td_click') {
+      var arr = ['请假申请单', '销假申请单', '离职申请单', '加班申请单', '因公外出申请单', '考勤异常申请单', '员工异动申请单', '员工异动申请单V2', '招聘申请单', '员工合同续签申请单', '试用期转正申请单', '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '资产预算调整流程V2', '信用冻结订单释放申请流程', '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程', '路线变更流程', '路线组变更申请', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程', '合同审批流程', '客资批量审批', '送达方批量审批', '路线批量审批']; // debugger;
+
+      var flat = arr.indexOf(data.text);
+
+      if (flat == -1) {
+        // ysp.appMain.openWindow('http://172.16.11.61:8000/Forms/Common/TY/Processing.aspx?SN=9532480E5364DF3BC577107FF40AC672&Guid=81c96722-bf68-45a8-8106-608995104db1&_ysp_forcepc=1');
+        var hreflo = '';
+        hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
+
+        if (hreflo[0] == 'h') {
+          hreflo += "&_ysp_forcepc=1";
+          ysp.appMain.openWindow(hreflo);
+        } else {
+          hreflo = "http://172.16.11.61:8000:" + hreflo; // hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
+
+          hreflo += "&_ysp_forcepc=1";
+          ysp.appMain.openWindow(hreflo);
+        }
+      } else {
+        elem.querySelectorAll('tr')[++data.id].querySelector('a').click();
+      } // for (var i = 0; i < arr.length; i++) {
+      //   if (arr[i] == data.text) {
+      //     elem.querySelectorAll('tr')[data.id].querySelector('a').click();
+      //   } else {
+      //     window.location.href = 'http://172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3&_ysp_forcepc=1';
+      //   }
+      // }
+
+    }
+    return false;
+- name: 附件修改（只下载）
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data = '';\n    if(target.tagName.toLowerCase() == 'button'){\n      // console.log(target.id);\n      if(target.id == 'uploadDiv' ){\n        type = 'commit';\n        data = 'btnFileUpload';\n      }else{\n        type = 'add';\n        data = 'btnFileUpload';\n      }\n    }\n    if(target.tagName.toLowerCase() == 'p'){\n      type = 'updel';\n      data = {\n        index:target.getAttribute('data-index'),\n        i:target.className=='xiazai'?0:1\n      }\n    }\n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  click:function(e){\n    var target = e.target;\n    if(target.className == 'shang'){\n      target.className = 'xia';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displnone');\n      for(var i=0;i<divs.length;i++){\n        divs[i].className = 'displblock';\n      }\n    }else{\n      target.className = 'shang';\n      var divs = target.parentElement.parentElement.querySelectorAll('div.displblock');\n      for(var i=0;i<divs.length;i++){\n        divs[i].className = 'displnone';\n      }\n    }\n  },\n  loadclick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'loadbtn',\n        data:{\n          index:target.getAttribute('data-id')\n        }\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    if(!data){\n      return '';\n    }\n    // var lis = data.content.map(function(ele,index){\n    //   var list = ele.map(function(d,i){\n    //     if(i==0){\n    //       return(\n    //       \t<div className='titlediv'>\n    //         \t<div>{'0'+(index+1)}</div>\n    //           <div>{d}</div>\n    //           <div onClick={_this.click} className='shang'></div>\n    //         </div>\n    //       )\n    //     }\n    //     if(i == ele.length-1){\n    //       if(d.length>2){\n    //           return(\n    //           <div className='displnone'>\n    //             <div className='contentitem contentspan' style={{'width':'100%','text-align-last':'auto','text-align':'center'}}><p className='shanchu' data-index={index} onClick={_this.onClick.bind(_this)}><span></span>{d[2]+d[3]}</p><p data-index={index} className='xiazai' onClick={_this.onClick.bind(_this)}><span></span>{d.length>2?d[0]+d[1]:''}</p></div>\n    //           </div>\n    //         )\n    //       }else{\n    //          return(\n    //           <div className='displnone'>\n    //             <div className='contentitem'><p className='xiazai' data-index={index} onClick={_this.onClick.bind(_this)}><span></span>{d[0]+d[1]}</p></div>\n    //           </div>\n    //         )\n    //       }\n    //     }\n    //     return(\n    //     \t<div className='displnone'>\n    //       \t<div className='contentitem'>{data.titles[i]}</div>\n    //         <div className='contentitem'>{d}</div>\n    //       </div>\n    //     )\n    //   })\n    //   return(\n    //   \t<div className='contentit'>{list}</div>\n    //   )\n    // })\n    \n            // <div>\n            //   <button onClick={_this.onClick.bind(_this)}>选择文件</button>\n            //   <button id={data.id} onClick={_this.onClick.bind(_this)}>上传文件</button>\n            // </div>\n    var lis = data.content.map(function(ele,index){\n      return(\n      \t<div className='Encltitle'>\n        \t<div>{ele[0]}</div>\n          <div><button data-id={index} onClick={_this.loadclick.bind(_this)}>下载</button></div>\n        </div>\n      )\n    })\n    return (\n      <div className='Enclosure'>\n        <div className='contenttitle'>\n          <span className='xia'></span>\n          <p>{data.title}\n          </p>\n        </div>\n        <div className='content'>\n    \t\t\t{lis}\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    } // var data = ysp.customHelper.getTabledata(elem, ['文件名', '操作']);
+    var data = ysp.customHelper.getTabledata(elem, ['文件名']);
+    data.id = elem.nextElementSibling.nextElementSibling.id;
+    data.title = '附件';
+    return data;
+  doAction: |
+    var type = data.eventType;
+    var data = data.customData;
+    if (type == 'commit') {
+      // debugger;
+      elem.ownerDocument.querySelector("#" + data).click();
+      setTimeout(function () {
+        elem.ownerDocument.defaultView.InitAttachmentList();
+      }, 1000); // setTimeout(function () {
+      //   var url = ysp.appMain.getActiveUrl();
+      //   ysp.appMain.reloadPage(url);
+      // }, 2000);
+    }
+    if (type == 'add') {
+      elem.ownerDocument.querySelector("#" + data).previousElementSibling.querySelector('input').click();
+    }
+    if (type == 'updel') {
+      var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
+      tds[tds.length - 1].querySelectorAll('a')[data.i].click();
+    } //附件下载
+    if (type == 'loadbtn') {
+      var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
+      tds[tds.length - 1].querySelectorAll('a')[0].click();
+    }
+- name: 审批操作修改
+  getTemplate: "module.exports = React.createClass({\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        value = target.value;\n    if(value.length>=400){\n      value = value.substring(0,400);\n    }\n    if(handler){\n      handler({\n        eventType:'change',\n        data:value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <textarea value={data.content[1].right} onChange={_this.onChange}></textarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {};
+
+    data.title = '审批操作';
+
+    data.content = [];
+
+    var trs = elem.querySelectorAll('tr');
+
+    var obj = {};
+
+    var str = trs[0].querySelectorAll('td')[0].textContent.trim();
+
+    var arr = str.split(":");
+
+    obj.left =
+    trs[0].querySelectorAll('td')[0].textContent.trim().split('：')[0]; //
+    obj.left = arr;
+
+    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
+
+    data.content.push(obj);
+
+    var obj = {};
+
+    obj.left =
+    trs[1].querySelectorAll('td')[0].textContent.trim().split('：')[0];
+
+    obj.right =
+    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
+
+    data.content.push(obj);
+
+    data.content.push({
+      left: trs[1].querySelectorAll('td')[1].querySelector('p').textContent.trim()
+    });
+
+    return data;
+  doAction: |
+    var type = data.eventType;
+    var data = data.customData;
+    if (type == 'change') {
+      elem.querySelector('textarea').value = data;
     }

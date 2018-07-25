@@ -1,11 +1,19 @@
 body {
   background: #f3f3f3;
 }
+div.contentitem {
+  word-break: break-all !important;
+  word-wrap: break-all !important;
+}
 .contenttitle {
   position: relative!important;
 }
 [data-ysp="component"] {
   padding: 0;
+}
+.contentitem {
+  padding-top: 5px !important;
+  padding-bottom: 5px!important;
 }
 .Newapplocationbtn > div {
   width: 100%;
@@ -307,6 +315,7 @@ body {
   overflow: auto;
 }
 .floatbox .awinselect > div:nth-child(2) div {
+  text-align: left;
   height: 20px;
   line-height: 20px;
   overflow: hidden;
@@ -335,6 +344,7 @@ body {
   overflow: auto;
 }
 .floatbox .listselect > div:nth-child(2) div {
+  text-align: left;
   height: 20px;
   line-height: 20px;
   overflow: hidden;
@@ -412,9 +422,10 @@ body {
   top: 13px;
 }
 .titleH1 Header button {
-  width: 42px;
+  width: 100px;
   height: 44px;
   border: 0;
+  text-align: left;
   margin-left: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -429,8 +440,15 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.information .content .contenttit .contentitem:nth-child(1) {
+  display: block !important;
+  text-align: justify !important;
+  text-align-last: justify!important;
+}
 .information .content .contenttit .contentitem {
-  min-height: 56px;
+  min-height: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
   align-items: center;
 }
 .information .content .contenttit .contentitem input {
@@ -454,13 +472,13 @@ body {
 }
 .information .content .contenttit .contentitem:nth-child(1) {
   width: 70px;
-  display: flex;
   margin-left: 15px;
   font-size: 14px;
   color: #202020;
 }
 .information .content .contenttit .contentitem:nth-child(2) {
   display: flex;
+  padding-right: 10px;
   width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
@@ -543,7 +561,7 @@ body {
   background-image: url(img/titleup.png);
 }
 .initiator {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   background-color: #ffffff;
 }
 .initiator .disnone {
@@ -553,7 +571,7 @@ body {
   color: #e64750;
   height: 30px;
   line-height: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .initiator .contenttitle p {
   position: relative;
@@ -578,26 +596,28 @@ body {
   margin-left: 15px;
 }
 .initiator .content .contenttit .contentitem {
-  min-height: 56px;
   color: #313131;
-  display: flex;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .initiator .content .contenttit .contentitem:nth-child(1) {
+  display: block !important;
+  text-align: justify;
+  text-align-last: justify;
   width: 64px;
   font-size: 14px;
   color: #202020;
   display: flex;
 }
 .initiator .content .contenttit .contentitem:nth-child(2) {
-  width: 265px;
+  width: 75%;
+  padding-right: 10px;
   border-bottom: 1px solid #e0e0e0;
   color: #313131;
 }
 .approval {
   background-color: #ffffff;
+  margin-bottom: 0 !important;
 }
 .approval .content {
   overflow: hidden;
@@ -606,7 +626,6 @@ body {
   color: #313131;
   display: inline-block;
   padding-top: 15px;
-  padding-bottom: 15px;
 }
 .approval .content .contentitem:nth-child(1) {
   width: 64px;
@@ -620,6 +639,7 @@ body {
 .approval .content .contentitem:nth-child(2) {
   width: 265px;
   border-bottom: 1px solid #e0e0e0;
+  padding-right: 10px;
   text-align: left;
   float: right;
   color: #313131;
@@ -633,9 +653,7 @@ body {
   border: 0px;
 }
 .approval .tishi {
-  word-wrap: break-word;
-  height: 44px;
-  line-height: 44px;
+  padding-right: 20px;
   padding-left: 20px;
   color: #999999;
   font-size: 12px;
@@ -667,161 +685,26 @@ body {
   border: 1px solid #e64750;
   color: #e64750;
 }
-.Enclosure .content .contentit {
-  width: 345px;
-  overflow: hidden;
-  margin: auto;
-  background-color: #f2f2f2;
-  font-size: 16px;
-  color: #313131;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-.Enclosure .content .contentit .displnone {
-  display: none;
-}
-.Enclosure .content .contentit .displblock {
+.Enclosure .content .Encltitle {
   display: flex;
   justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 15px;
 }
-.Enclosure .content .contentit .displblock:nth-child(4) {
-  border-bottom: 1px solid #e0e0e0;
-}
-.Enclosure .content .contentit .displblock:nth-child(4) .contentitem {
-  border: 0;
-}
-.Enclosure .content .contentit .contentitem {
-  color: #313131;
-  display: inline-block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.Enclosure .content .contentit .contentitem:nth-child(1) {
+.Enclosure .content .Encltitle > div:nth-child(2) {
   width: 64px;
-  font-size: 16px;
-  float: left;
-  text-align: justify;
-  text-align-last: justify;
-  margin-left: 10px;
-  color: #202020;
 }
-.Enclosure .content .contentit .contentitem:nth-child(2) {
-  width: 225px;
-  border-bottom: 1px solid #e0e0e0;
-  text-align: left;
-  float: right;
-  color: #313131;
-}
-.Enclosure .content .contentit .contentitem p {
-  width: 335px;
-  display: inline-block;
-  line-height: 44px;
-  line-height: 42px;
-  text-align: center;
-  text-align-last: auto;
-  cursor: pointer;
-}
-.Enclosure .content .contentit .contentitem p span {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  margin-right: 10px;
-  background-image: url(img/load.png);
-  background-size: 20px 20px;
-}
-.Enclosure .content .contentit .contentspan {
+.Enclosure .content .Encltitle > div:nth-child(2) button {
   width: 100%;
-  text-align: center;
-  text-align-last: auto;
-  display: inline-block;
-  cursor: pointer;
+  background-color: #e64750;
+  border: 1px solid #e64750;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
-.Enclosure .content .contentit .contentspan > p {
-  width: 50%;
-  display: inline-block;
-  margin: 0;
-}
-.Enclosure .content .contentit .contentspan p:nth-child(1) {
-  height: 44px;
-  line-height: 44px;
-  display: inline-block;
-  border-right: 1px solid #cccccc;
-}
-.Enclosure .content .contentit .contentspan p:nth-child(1) span {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  display: inline-block;
-  background-image: url(img/delete.png);
-  background-size: 20px 20px;
-}
-.Enclosure .content .contentit .contentspan p:nth-child(2) {
-  height: 44px;
-  display: inline-block;
-  line-height: 44px;
-}
-.Enclosure .content .contentit .contentspan p:nth-child(2) span {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  display: inline-block;
-  background-image: url(img/load.png);
-  background-size: 20px 20px;
-}
-.Enclosure .content .contentit .titlediv {
-  width: 100%;
-  height: 45px;
-  line-height: 45px;
-  border-bottom: 1px solid #cccccc;
-  display: flex;
-  justify-content: space-between;
-}
-.Enclosure .content .contentit .titlediv div {
-  display: flex;
-  color: #313131;
-  align-items: center;
-}
-.Enclosure .content .contentit .titlediv div:nth-child(1) {
-  display: flex;
-  width: 40px;
-  height: 24px;
-  margin: auto;
-  line-height: 24px;
-  border-right: 1px solid #cccccc;
-  align-items: center;
-  padding-left: 10px;
-  text-align: center;
-}
-.Enclosure .content .contentit .titlediv div:nth-child(2) {
-  width: 80%;
-  padding-left: 10px;
-  margin: 0;
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.Enclosure .content .contentit .titlediv div:nth-child(3) {
-  cursor: pointer;
-  display: flex;
-  margin-right: 10px;
-}
-.Enclosure .content .contentit .titlediv div.shang {
-  width: 20px;
-  height: 13px;
-  margin-top: 16px;
-  background-image: url(img/top.png);
-  background-size: 20px 13px;
-}
-.Enclosure .content .contentit .titlediv div.xia {
-  width: 20px;
-  height: 13px;
-  margin-top: 16px;
-  background-image: url(img/xia.png);
-  background-size: 20px 13px;
-}
-.Enclosure .content .distag {
-  margin-bottom: 0;
+.Enclosure .content .Encltitle:nth-child(1) {
+  margin-top: 0;
 }
 .examination {
   background-color: #ffffff;
@@ -940,6 +823,18 @@ body {
   position: absolute;
   right: -5px;
 }
+.submit .subtrue .btnlength01 {
+  padding-right: 20px;
+}
+.submit .subtrue .btnlength01 button {
+  background-color: #e64750;
+  border: 1px solid #e64750 !important;
+  color: #fff;
+  width: 100%;
+}
+.submit .subtrue .btnlength02 button {
+  width: 50%;
+}
 .submit .dianbl {
   width: 100%;
   height: 1000%;
@@ -1011,7 +906,6 @@ body {
   overflow: hidden;
 }
 .understanding .content .contentitem {
-  min-height: 56px;
   color: #313131;
   display: inline-block;
   padding-top: 15px;
@@ -1058,7 +952,7 @@ body {
 [data-ysp-modelid="commission"] .Content .Content_item {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 2px 0;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item p,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_item p,
@@ -1079,6 +973,11 @@ body {
   color: #313131;
   width: 75%;
   padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_item:nth-child(1),
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(1),
@@ -8002,37 +7901,6 @@ body {
   margin-left: 10px;
   border-bottom: 1px solid #cccccc;
 }
-[data-ysp-modelid="personnel"] .understanding {
-  background-color: #ffffff;
-  padding-bottom: 15px;
-}
-[data-ysp-modelid="personnel"] .understanding .content {
-  margin-left: 15px;
-  overflow: hidden;
-}
-[data-ysp-modelid="personnel"] .understanding .content .contenthidden {
-  overflow: hidden;
-}
-[data-ysp-modelid="personnel"] .understanding .content .contentitem {
-  min-height: 56px;
-  color: #313131;
-  display: inline-block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-[data-ysp-modelid="personnel"] .understanding .content .contentitem:nth-child(1) {
-  width: 64px;
-  font-size: 16px;
-  float: left;
-  text-align: justify;
-  text-align-last: justify;
-}
-[data-ysp-modelid="personnel"] .understanding .content .contentitem:nth-child(2) {
-  width: 235px;
-  border-bottom: 1px solid #e0e0e0;
-  text-align: left;
-  float: right;
-}
 [data-ysp-modelid="personnel"] .contentfloat {
   position: fixed;
   top: 0;
@@ -8579,9 +8447,9 @@ body {
   margin-left: 10px;
 }
 .addlots .addname > div:nth-child(2) {
+  width: 75%;
   border-bottom: 1px solid #ccc;
   height: 56px;
-  padding: 10px 0;
 }
 .addlots .addname > div:nth-child(2) input {
   height: 44px;
@@ -8964,8 +8832,6 @@ body {
   border: 0px;
 }
 .approval .tishi {
-  height: 44px;
-  line-height: 44px;
   padding-left: 20px;
   color: #999999;
   font-size: 12px;
@@ -9477,37 +9343,6 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   border: 0;
   background: #fff;
   border-bottom: 1px solid #e1e1e1;
-}
-.understanding {
-  background-color: #ffffff;
-  padding-bottom: 15px;
-}
-.understanding .content {
-  margin-left: 15px;
-  overflow: hidden;
-}
-.understanding .content .contenthidden {
-  overflow: hidden;
-}
-.understanding .content .contentitem {
-  min-height: 56px;
-  color: #313131;
-  display: inline-block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.understanding .content .contentitem:nth-child(1) {
-  width: 64px;
-  font-size: 16px;
-  float: left;
-  text-align: justify;
-  text-align-last: justify;
-}
-.understanding .content .contentitem:nth-child(2) {
-  width: 235px;
-  border-bottom: 1px solid #e0e0e0;
-  text-align: left;
-  float: right;
 }
 .ysp-regularWorker-jbll-tt {
   background: #fff;

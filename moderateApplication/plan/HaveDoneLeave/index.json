@@ -543,6 +543,38 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control689_F9oNtH": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control689_F9oNtH"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -560,7 +592,8 @@
         "control291_5zL02c",
         "control293_fVwefE",
         "control461_0A8n2w",
-        "control463_VnhP2h"
+        "control463_VnhP2h",
+        "control689_F9oNtH"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -672,6 +705,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl282_NlknUG",
                 "onGetTemplate": "getTemplate_uiControl282_NlknUG"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl689_SLQF4r",
+          "controlId": "control689_F9oNtH",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl689_SLQF4r",
+                "onGetTemplate": "getTemplate_uiControl689_SLQF4r"
               }
             }
           }
@@ -865,7 +913,8 @@
           "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=7DD97F1471997E32",
           "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=B699FAB6AF19DE86",
           "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=20C51A0A24C5D895",
-          "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=55E0D9BCCDC2B5A0"
+          "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=55E0D9BCCDC2B5A0",
+          "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=47B19F12F079D838"
         ]
       }
     },
