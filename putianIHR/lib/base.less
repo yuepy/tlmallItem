@@ -11,11 +11,11 @@
 @3796FB:#3796FB;
 @tip:#f76f49;
 @bgColor:#f4f4f4;
-// .editor-state [data-ysp="component"]{
-//       padding-top: 0;
-//     padding-bottom: none;
-//     min-height: 0;
-// }
+.editor-state [data-ysp="component"]{
+      padding-top: 0;
+    padding-bottom: none;
+    min-height: 0;
+}
 
 body{
   background:#f4f4f4;
@@ -2486,6 +2486,27 @@ button[type='fileUpload']{
       width: 70%;
       text-align: right;
       color: #888;
+    }
+    >select,input{
+      float: right;
+      border:none;
+      margin: 0;
+      padding: 0;
+      padding-right: 15px;
+      height:30px;
+      line-height: 30px;
+      text-align: right;
+      width: 60%;
+      background:#fff url(../local/img/rightArrow.png) no-repeat;
+      background-position: 100%;
+      background-size: 10px;
+      font-size: 15px;
+      color:#888;
+      direction:rtl;
+    }
+    input{
+      background:none;
+      padding-right:0;
     }
     &:last-child{
       border:none;
