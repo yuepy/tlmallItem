@@ -1,0 +1,596 @@
+{
+  "version": "0.1",
+  "id": "Inspect",
+  "targetURL": "http://172.16.11.61/JW/JWindex.aspx",
+  "jsFile": "index.js",
+  "requires": {
+    "inspect_detailseve": "../inspect_detailseve/index.json",
+    "inspect_detailJS": "../inspect_detailJS/index.json",
+    "inspect_detaikBS": "../inspect_detaikBS/index.json",
+    "inspect_detailJLSC": "../inspect_detailJLSC/index.json",
+    "inspect_detailFG": "../inspect_detailFG/index.json",
+    "inspect_detail": "../inspect_detail/index.json",
+    "inspect_SJdetail": "../inspect_SJdetail/index.json",
+    "inspect_YWdetail": "../inspect_YWdetail/index.json",
+    "spectJLdetail": "../spectJLdetail/index.json",
+    "spect_DJdetail": "../spect_DJdetail/index.json"
+  },
+  "chineseName": "纪检监察部5个分类",
+  "description": "",
+  "controls": {
+    "control725_EteDyI": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.914
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.pannel_dt"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control725_EteDyI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control726_oT7BV3": {
+      "location": {
+        "data": {
+          "tagName": "STRONG"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/SPAN[1]/STRONG[1]",
+              "ratio": 0.914
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.top.clearfix SPAN.style1 STRONG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/SPAN[1]/STRONG[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control726_oT7BV3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control727_BIvVl7": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[4]",
+              "ratio": 0.914
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "DIV.container DIV.pannel_dq"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control727_BIvVl7"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control728_0urBig": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[7]",
+              "ratio": 0.914
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              4
+            ],
+            "value": "DIV.container DIV.pannel_dq"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control728_0urBig"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control729_MtMqfg": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[6]",
+              "ratio": 0.914
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              4
+            ],
+            "value": "DIV.container DIV.pannel_dq"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[6]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control729_MtMqfg"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control730_ZVJ2Qb": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[5]",
+              "ratio": 0.914
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              4
+            ],
+            "value": "DIV.container DIV.pannel_dq"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control730_ZVJ2Qb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context78_2ZpbTH": {
+      "controls": [
+        "control725_EteDyI",
+        "control726_oT7BV3",
+        "control727_BIvVl7",
+        "control728_0urBig",
+        "control729_MtMqfg",
+        "control730_ZVJ2Qb"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow268_QTHOl5": {
+      "toContexts": [
+        {
+          "toContextId": "context78_2ZpbTH"
+        }
+      ]
+    },
+    "flow269_WADv7E": {
+      "fromContextId": "context78_2ZpbTH",
+      "fromAction": "doAction",
+      "fromControlId": "control725_EteDyI",
+      "toContexts": [
+        {
+          "toContextId": "context78_2ZpbTH"
+        },
+        {
+          "toContextId": "context79_81bAfD",
+          "toModelId": "inspect_detailseve"
+        },
+        {
+          "toContextId": "context84_X4swKW",
+          "toModelId": "inspect_detail"
+        }
+      ]
+    },
+    "flow271_l5cR67": {
+      "fromContextId": "context78_2ZpbTH",
+      "fromAction": "doAction",
+      "fromControlId": "control727_BIvVl7",
+      "toContexts": [
+        {
+          "toContextId": "context78_2ZpbTH"
+        },
+        {
+          "toContextId": "context80_8DOgz4",
+          "toModelId": "inspect_detailJS"
+        },
+        {
+          "toContextId": "context85_FV32Qv",
+          "toModelId": "inspect_SJdetail"
+        }
+      ]
+    },
+    "flow273_U3WSxM": {
+      "fromContextId": "context78_2ZpbTH",
+      "fromAction": "doAction",
+      "fromControlId": "control730_ZVJ2Qb",
+      "toContexts": [
+        {
+          "toContextId": "context78_2ZpbTH"
+        },
+        {
+          "toContextId": "context81_WvDNhs",
+          "toModelId": "inspect_detaikBS"
+        },
+        {
+          "toContextId": "context86_UNn0CN",
+          "toModelId": "inspect_YWdetail"
+        }
+      ]
+    },
+    "flow267_goeXkH": {
+      "fromContextId": "context78_2ZpbTH",
+      "fromAction": "doAction",
+      "fromControlId": "control729_MtMqfg",
+      "toContexts": [
+        {
+          "toContextId": "context78_2ZpbTH"
+        },
+        {
+          "toContextId": "context82_lTPIJw",
+          "toModelId": "inspect_detailJLSC"
+        },
+        {
+          "toContextId": "context87_OvdgLi",
+          "toModelId": "spectJLdetail"
+        }
+      ]
+    },
+    "flow276_3V6oqX": {
+      "fromContextId": "context78_2ZpbTH",
+      "fromAction": "doAction",
+      "fromControlId": "control728_0urBig",
+      "toContexts": [
+        {
+          "toContextId": "context78_2ZpbTH"
+        },
+        {
+          "toContextId": "context83_aCdN25",
+          "toModelId": "inspect_detailFG"
+        },
+        {
+          "toContextId": "context88_WueRKU",
+          "toModelId": "spect_DJdetail"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page78_dpamuD": {
+      "contextId": "context78_2ZpbTH",
+      "layout": [
+        {
+          "id": "uiControl726_pKefd7",
+          "controlId": "control726_oT7BV3",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl726_pKefd7",
+                "onGetTemplate": "getTemplate_uiControl726_pKefd7"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl725_QEhqGl",
+          "controlId": "control725_EteDyI",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl725_QEhqGl",
+                "onGetTemplate": "getTemplate_uiControl725_QEhqGl"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl727_dNm2yO",
+          "controlId": "control727_BIvVl7",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl727_dNm2yO",
+                "onGetTemplate": "getTemplate_uiControl727_dNm2yO"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl730_nPw7R1",
+          "controlId": "control730_ZVJ2Qb",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl730_nPw7R1",
+                "onGetTemplate": "getTemplate_uiControl730_nPw7R1"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl729_Wuo7f3",
+          "controlId": "control729_MtMqfg",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl729_Wuo7f3",
+                "onGetTemplate": "getTemplate_uiControl729_Wuo7f3"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl728_azd6GT",
+          "controlId": "control728_0urBig",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl728_azd6GT",
+                "onGetTemplate": "getTemplate_uiControl728_azd6GT"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context78_2ZpbTH": [
+          "中粮可口可乐饮料有限公司"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context78_2ZpbTH": [
+          "172.16.11.61/JW/JWindex.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context78_2ZpbTH": [
+          [
+            "Form",
+            "MainContent_rptDJ_hlk_Title_",
+            "MainContent_rptGZDT_hlk_Title_",
+            "MainContent_rptJL_hlk_Title_",
+            "MainContent_rptSJJS_hlk_Title_",
+            "MainContent_rptYW_hlk_Title_",
+            "__VIEWSTATE"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context78_2ZpbTH": [
+          [
+            "a_visited",
+            "aspNetHidden",
+            "clear",
+            "clearfix",
+            "container",
+            "footer",
+            "logo",
+            "more",
+            "pannel_dq",
+            "pannel_dt",
+            "style",
+            "time",
+            "top",
+            "topjiwei",
+            "welcome"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context78_2ZpbTH": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "A/CENTER/STRONG",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/STRONG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/TABLE",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/CENTER",
+            "TR/TD/A",
+            "UL/LI/A",
+            "UL/LI/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}

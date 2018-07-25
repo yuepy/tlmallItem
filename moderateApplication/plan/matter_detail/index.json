@@ -1,22 +1,24 @@
 {
   "version": "0.1",
-  "id": "partyWorkZT",
-  "targetURL": "http://172.16.11.61/DQ/ZTSJDetail.aspx?ID=2",
+  "id": "matter_detail",
+  "targetURL": "http://172.16.11.61/YS/YSDetail.aspx?Guid=7329819f-a4fe-4d3e-87ee-f2028d71e289&ID=137",
   "jsFile": "index.js",
-  "chineseName": "党群工作-主题实践",
-  "description": "党群工作-主题实践",
-  "firstPaintEnable": false,
+  "chineseName": "重大事项详情页",
+  "description": "",
   "controls": {
-    "control713_xVxbST": {
+    "control722_GIuRhm": {
       "location": {
         "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "A"
         },
         "locators": [
+          {
+            "id": "a/@href",
+            "prob": 3,
+            "value": {
+              "pathname": "/YS/YSList.aspx"
+            }
+          },
           {
             "id": "@id/partialWord",
             "prob": 1,
@@ -25,40 +27,45 @@
               "elemId": "Form1",
               "tagName": "FORM",
               "prefix": "",
-              "suffix": "/DIV[2]/DIV[3]",
-              "ratio": 0.848
+              "suffix": "/DIV[3]/DIV[3]/DIV[1]/A[2]",
+              "ratio": 0.767
             }
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "value": "DIV.container DIV.centerbox"
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.container DIV.centerbox DIV.breadcrumb A"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[1]/A[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control713_xVxbST"
+        "onGetData": "getData_control722_GIuRhm"
       },
       "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
+      "roles": "element,link,custom",
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control714_iXwR7e": {
+    "control723_48oTJh": {
       "location": {
         "data": {
           "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -69,8 +76,8 @@
               "elemId": "Form1",
               "tagName": "FORM",
               "prefix": "",
-              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
-              "ratio": 0.848
+              "suffix": "/DIV[3]/DIV[3]/DIV[2]",
+              "ratio": 0.767
             }
           },
           {
@@ -81,28 +88,23 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control714_iXwR7e"
+        "onGetData": "getData_control723_48oTJh"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control715_1cubd7": {
+    "control724_QpGbCf": {
       "location": {
         "data": {
           "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -113,8 +115,8 @@
               "elemId": "Form1",
               "tagName": "FORM",
               "prefix": "",
-              "suffix": "/DIV[2]/DIV[3]/DIV[3]",
-              "ratio": 0.848
+              "suffix": "/DIV[3]/DIV[3]/DIV[4]",
+              "ratio": 0.767
             }
           },
           {
@@ -125,52 +127,12 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[4]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control715_1cubd7"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control720_ZQTGyQ": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "Form1",
-              "tagName": "FORM",
-              "prefix": "",
-              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
-              "ratio": 0.848
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.container DIV.centerbox DIV.newsDetail"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control720_ZQTGyQ"
+        "onGetData": "getData_control724_QpGbCf"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -180,88 +142,70 @@
     }
   },
   "contexts": {
-    "context75_xbDTxf": {
+    "context77_fRlpnG": {
       "controls": [
-        "control713_xVxbST",
-        "control714_iXwR7e",
-        "control715_1cubd7",
-        "control720_ZQTGyQ"
+        "control722_GIuRhm",
+        "control723_48oTJh",
+        "control724_QpGbCf"
       ],
       "anchors": [],
-      "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61\\/DQ\\/ZTSJDetail\\.aspx\\?ID.*"
-      ]
+      "urlAnchor": []
     }
   },
   "flows": {
-    "flow264_QuQAgU": {
+    "flow266_zZvxgu": {
       "toContexts": [
         {
-          "toContextId": "context75_xbDTxf"
+          "toContextId": "context77_fRlpnG"
         }
       ]
     }
   },
   "pages": {
-    "page75_PiSbKc": {
-      "contextId": "context75_xbDTxf",
+    "page77_TcW31H": {
+      "contextId": "context77_fRlpnG",
       "layout": [
         {
-          "id": "uiControl713_UUe0cE",
-          "controlId": "control713_xVxbST",
+          "id": "uiControl722_qRz8Kf",
+          "controlId": "control722_GIuRhm",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl713_UUe0cE",
-                "onGetTemplate": "getTemplate_uiControl713_UUe0cE"
+                "onDoAction": "doAction_uiControl722_qRz8Kf",
+                "onGetTemplate": "getTemplate_uiControl722_qRz8Kf"
               }
             }
           }
         },
         {
-          "id": "uiControl714_vnNI6C",
-          "controlId": "control714_iXwR7e",
+          "id": "uiControl723_1uAz89",
+          "controlId": "control723_48oTJh",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl714_vnNI6C",
-                "onGetTemplate": "getTemplate_uiControl714_vnNI6C"
+                "onDoAction": "doAction_uiControl723_1uAz89",
+                "onGetTemplate": "getTemplate_uiControl723_1uAz89"
               }
             }
           }
         },
         {
-          "id": "uiControl720_kN3M63",
-          "controlId": "control720_ZQTGyQ",
+          "id": "uiControl724_nqS4TQ",
+          "controlId": "control724_QpGbCf",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl720_kN3M63",
-                "onGetTemplate": "getTemplate_uiControl720_kN3M63"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl715_sSS371",
-          "controlId": "control715_1cubd7",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl715_sSS371",
-                "onGetTemplate": "getTemplate_uiControl715_sSS371"
+                "onDoAction": "doAction_uiControl724_nqS4TQ",
+                "onGetTemplate": "getTemplate_uiControl724_nqS4TQ"
               }
             }
           }
@@ -272,24 +216,27 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context75_xbDTxf": [
+        "context77_fRlpnG": [
           "中粮可口可乐饮料有限公司"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context75_xbDTxf": [
-          "172.16.11.61/DQ/ZTSJDetail.aspx?ID=2"
+        "context77_fRlpnG": [
+          "172.16.11.61/YS/YSDetail.aspx?Guid=7329819f-a4fe-4d3e-87ee-f2028d71e289&ID=137"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context75_xbDTxf": [
+        "context77_fRlpnG": [
           [
             "DQTime",
             "Form",
+            "MainContent_btnDelete",
+            "MainContent_btnUpdate",
+            "__EVENTVALIDATION",
             "__VIEWSTATE",
             "tianqi"
           ]
@@ -298,11 +245,11 @@
     },
     "page/classes": {
       "contexts": {
-        "context75_xbDTxf": [
+        "context77_fRlpnG": [
           [
-            "ExternalClassEBEDDAAEEACCEA",
             "aspNetHidden",
             "breadcrumb",
+            "btn",
             "centerbox",
             "clear",
             "clearfix",
@@ -315,6 +262,8 @@
             "newsRelated",
             "next",
             "previous",
+            "red",
+            "size-s",
             "top",
             "welcome",
             "whether"
@@ -324,28 +273,25 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context75_xbDTxf": [
+        "context77_fRlpnG": [
           [
             "-/-/FORM",
             "-/-/SCRIPT",
             "-/FORM/DIV",
-            "B/SPAN/FONT",
-            "DIV/B/SPAN",
             "DIV/DIV/A",
-            "DIV/DIV/B",
             "DIV/DIV/DIV",
             "DIV/DIV/H1",
             "DIV/DIV/HR",
             "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-submit",
             "DIV/DIV/P",
             "DIV/DIV/SPAN",
-            "DIV/P/BR",
             "DIV/P/SPAN",
             "DIV/SPAN/A",
             "DIV/SPAN/SPAN",
             "FORM/DIV/DIV",
-            "FORM/DIV/INPUT-hidden",
-            "SPAN/SPAN/IMG"
+            "FORM/DIV/INPUT-hidden"
           ]
         ]
       }

@@ -11,6 +11,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -50,6 +54,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -91,6 +99,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -125,6 +137,45 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control434_1EWVyP": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]",
+              "ratio": 0.833
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control434_1EWVyP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -132,7 +183,8 @@
       "controls": [
         "control689_XPqfle",
         "control690_kCTk7I",
-        "control691_dMOz3P"
+        "control691_dMOz3P",
+        "control434_1EWVyP"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -187,6 +239,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl689_ARcAEV",
                 "onGetTemplate": "getTemplate_uiControl689_ARcAEV"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl434_LdbUKu",
+          "controlId": "control434_1EWVyP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl434_LdbUKu",
+                "onGetTemplate": "getTemplate_uiControl434_LdbUKu"
               }
             }
           }

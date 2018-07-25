@@ -137,6 +137,45 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control682_xLPhhE": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
+              "ratio": 0.75
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsDetail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control682_xLPhhE"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -144,7 +183,8 @@
       "controls": [
         "control701_ItH1NQ",
         "control702_s62inZ",
-        "control703_1bUqFe"
+        "control703_1bUqFe",
+        "control682_xLPhhE"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -189,6 +229,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl702_aDnr1F",
                 "onGetTemplate": "getTemplate_uiControl702_aDnr1F"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl682_gkTulN",
+          "controlId": "control682_xLPhhE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl682_gkTulN",
+                "onGetTemplate": "getTemplate_uiControl682_gkTulN"
               }
             }
           }

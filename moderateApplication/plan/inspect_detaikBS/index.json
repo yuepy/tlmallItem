@@ -1,16 +1,12 @@
 {
   "version": "0.1",
-  "id": "majorMatter",
-  "targetURL": "http://172.16.11.61/YS/YSList.aspx",
+  "id": "inspect_detaikBS",
+  "targetURL": "http://172.16.11.61/JW/YWList.aspx",
   "jsFile": "index.js",
-  "requires": {
-    "matter_detail": "../matter_detail/index.json"
-  },
-  "chineseName": "重大事项",
-  "description": "重大事项",
-  "firstPaintEnable": false,
+  "chineseName": "中可纪检监察部总部部署",
+  "description": "",
   "controls": {
-    "control585_6DK4pb": {
+    "control737_yu9Hew": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -28,36 +24,35 @@
               "elemId": "Form1",
               "tagName": "FORM",
               "prefix": "",
-              "suffix": "/DIV[4]/DIV[3]",
-              "ratio": 0.813
+              "suffix": "/DIV[3]/DIV[3]/DIV[1]",
+              "ratio": 0.893
             }
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "value": "DIV.container DIV.centerbox"
+            "value": "DIV.container DIV.centerbox DIV.breadcrumb"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control585_6DK4pb"
+        "onGetData": "getData_control737_yu9Hew"
       },
       "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
+      "roles": "element,link,custom",
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control586_GcmDn3": {
+    "control738_Oy7s7s": {
       "location": {
         "data": {
-          "tagName": "STRONG"
+          "tagName": "DIV"
         },
         "userData": {
           "data": [],
@@ -72,39 +67,32 @@
               "elemId": "Form1",
               "tagName": "FORM",
               "prefix": "",
-              "suffix": "/DIV[4]/DIV[1]/SPAN[1]/STRONG[1]",
-              "ratio": 0.813
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.893
             }
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "value": "DIV.container DIV.top.clearfix SPAN.style1 STRONG"
+            "value": "DIV.container DIV.centerbox"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[1]/SPAN[1]/STRONG[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control586_GcmDn3"
+        "onGetData": "getData_control738_Oy7s7s"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control598_gZ0r5x": {
+    "control739_z80Q0T": {
       "location": {
         "data": {
           "tagName": "TD"
@@ -117,21 +105,20 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]/DIV[4]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control598_gZ0r5x"
+        "onGetData": "getData_control739_z80Q0T"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control721_lBF1ZI": {
+    "control740_lxEHn9": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -145,153 +132,113 @@
               "elemId": "Form1",
               "tagName": "FORM",
               "prefix": "",
-              "suffix": "/DIV[4]/DIV[3]/DIV[3]",
-              "ratio": 0.813
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.893
             }
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "ordinal": [
-              2,
-              11
-            ],
-            "value": "DIV.container DIV.centerbox DIV"
+            "value": "DIV.container DIV.centerbox"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]/DIV[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control721_lBF1ZI"
+        "onGetData": "getData_control740_lxEHn9"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     }
   },
   "contexts": {
-    "context60_eGcIT4": {
+    "context81_WvDNhs": {
       "controls": [
-        "control585_6DK4pb",
-        "control586_GcmDn3",
-        "control598_gZ0r5x",
-        "control721_lBF1ZI"
+        "control737_yu9Hew",
+        "control738_Oy7s7s",
+        "control739_z80Q0T",
+        "control740_lxEHn9"
       ],
       "anchors": [],
-      "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61\\/YS\\/YSList\\.aspx"
-      ]
+      "urlAnchor": []
     }
   },
   "flows": {
-    "flow186_1Ocvp6": {
-      "fromContextId": "context60_eGcIT4",
-      "fromAction": "doAction",
-      "fromControlId": "control585_6DK4pb",
+    "flow274_iiJVHI": {
       "toContexts": [
         {
-          "toContextId": "context60_eGcIT4"
-        },
-        {
-          "toContextId": "context77_fRlpnG",
-          "toModelId": "matter_detail"
-        }
-      ]
-    },
-    "flow196_f1ZtAl": {
-      "fromContextId": "context60_eGcIT4",
-      "fromAction": "doAction",
-      "fromControlId": "control586_GcmDn3",
-      "toContexts": [
-        {
-          "toContextId": "context60_eGcIT4"
-        }
-      ]
-    },
-    "flow198_VFSBc3": {
-      "toContexts": [
-        {
-          "toContextId": "context60_eGcIT4"
-        }
-      ]
-    },
-    "flow265_6FBoO2": {
-      "fromContextId": "context60_eGcIT4",
-      "fromAction": "doAction",
-      "fromControlId": "control721_lBF1ZI",
-      "toContexts": [
-        {
-          "toContextId": "context60_eGcIT4"
+          "toContextId": "context81_WvDNhs"
         }
       ]
     }
   },
   "pages": {
-    "page60_5l8JFw": {
-      "contextId": "context60_eGcIT4",
+    "page81_tbArz4": {
+      "contextId": "context81_WvDNhs",
       "layout": [
         {
-          "id": "uiControl586_rRtIcM",
-          "controlId": "control586_GcmDn3",
+          "id": "uiControl737_SkuZDe",
+          "controlId": "control737_yu9Hew",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl586_rRtIcM",
-                "onGetTemplate": "getTemplate_uiControl586_rRtIcM"
+                "onDoAction": "doAction_uiControl737_SkuZDe",
+                "onGetTemplate": "getTemplate_uiControl737_SkuZDe"
               }
             }
           }
         },
         {
-          "id": "uiControl721_t00QPp",
-          "controlId": "control721_lBF1ZI",
+          "id": "uiControl738_6vnb1V",
+          "controlId": "control738_Oy7s7s",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl721_t00QPp",
-                "onGetTemplate": "getTemplate_uiControl721_t00QPp"
+                "onDoAction": "doAction_uiControl738_6vnb1V",
+                "onGetTemplate": "getTemplate_uiControl738_6vnb1V"
               }
             }
           }
         },
         {
-          "id": "uiControl585_tAqpNP",
-          "controlId": "control585_6DK4pb",
+          "id": "uiControl740_QZOWWt",
+          "controlId": "control740_lxEHn9",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl585_tAqpNP",
-                "onGetTemplate": "getTemplate_uiControl585_tAqpNP"
+                "onDoAction": "doAction_uiControl740_QZOWWt",
+                "onGetTemplate": "getTemplate_uiControl740_QZOWWt"
               }
             }
           }
         },
         {
-          "id": "uiControl598_e2FHPf",
-          "controlId": "control598_gZ0r5x",
+          "id": "uiControl739_hacW1T",
+          "controlId": "control739_z80Q0T",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl598_e2FHPf",
-                "onGetTemplate": "getTemplate_uiControl598_e2FHPf"
+                "onDoAction": "doAction_uiControl739_hacW1T",
+                "onGetTemplate": "getTemplate_uiControl739_hacW1T"
               }
             }
           }
@@ -302,31 +249,26 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context60_eGcIT4": [
+        "context81_WvDNhs": [
           "中粮可口可乐饮料有限公司"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context60_eGcIT4": [
-          "172.16.11.61/YS/YSList.aspx"
+        "context81_WvDNhs": [
+          "172.16.11.61/JW/YWList.aspx"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context60_eGcIT4": [
+        "context81_WvDNhs": [
           [
-            "DQTime",
             "Form",
             "MainContent_Div",
-            "MainContent_btnAddLink",
-            "MainContent_btnSearch",
             "MainContent_rptProperty_hlk_Title_",
-            "MainContent_txt_KeyWords",
             "MainContent_ucListPage",
-            "__EVENTVALIDATION",
             "__VIEWSTATE"
           ]
         ]
@@ -334,22 +276,35 @@
     },
     "page/classes": {
       "contexts": {
-        "context60_eGcIT4": [
+        "context81_WvDNhs": [
           [
-            "a_visited",
             "aspNetHidden",
-            "btn",
+            "breadcrumb",
             "centerbox",
             "clear",
             "clearfix",
             "container",
-            "copyright",
             "creater",
             "footer",
             "logo",
-            "red",
-            "select",
-            "size-s",
+            "style",
+            "time",
+            "title",
+            "top",
+            "topjiwei",
+            "welcome"
+          ],
+          [
+            "a_visited",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "creater",
+            "footer",
+            "logo",
             "style",
             "time",
             "title",
@@ -362,16 +317,14 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context60_eGcIT4": [
+        "context81_WvDNhs": [
           [
             "-/-/FORM",
             "-/-/SCRIPT",
             "-/FORM/DIV",
+            "A/CENTER/STRONG",
             "DIV/DIV/A",
-            "DIV/DIV/BUTTON",
             "DIV/DIV/DIV",
-            "DIV/DIV/INPUT-submit",
-            "DIV/DIV/INPUT-text",
             "DIV/DIV/SPAN",
             "DIV/DIV/TABLE",
             "DIV/DIV/UL",
@@ -380,14 +333,12 @@
             "DIV/UL/LI",
             "FORM/DIV/DIV",
             "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/TABLE",
             "LI/DIV/A",
             "TABLE/TBODY/TR",
             "TBODY/TR/TD",
-            "TD/SELECT/OPTION",
-            "TD/SPAN/A",
-            "TD/SPAN/SPAN",
+            "TD/A/CENTER",
             "TR/TD/A",
-            "TR/TD/SELECT",
             "TR/TD/SPAN",
             "UL/LI/DIV"
           ]

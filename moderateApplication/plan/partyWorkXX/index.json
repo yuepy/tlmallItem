@@ -137,6 +137,49 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control719_qwLcU0": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]",
+              "ratio": 0.731
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control719_qwLcU0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -144,7 +187,8 @@
       "controls": [
         "control707_ZOPqh5",
         "control708_dSA3ef",
-        "control709_mG0HKb"
+        "control709_mG0HKb",
+        "control719_qwLcU0"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -194,6 +238,21 @@
           }
         },
         {
+          "id": "uiControl719_53I3FD",
+          "controlId": "control719_qwLcU0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl719_53I3FD",
+                "onGetTemplate": "getTemplate_uiControl719_53I3FD"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl709_somRTD",
           "controlId": "control709_mG0HKb",
           "display": {
@@ -223,7 +282,8 @@
       "contexts": {
         "context73_N54F4S": [
           "172.16.11.61/DQ/XXCLDetail.aspx?ID=8",
-          "172.16.11.61/DQ/XXCLDetail.aspx?ID=3"
+          "172.16.11.61/DQ/XXCLDetail.aspx?ID=3",
+          "172.16.11.61/DQ/XXCLDetail.aspx?ID=6"
         ]
       }
     },
@@ -264,6 +324,25 @@
           ],
           [
             "ExternalClassACAFBEFADFEAABBF",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
+          ],
+          [
             "aspNetHidden",
             "breadcrumb",
             "centerbox",
@@ -328,6 +407,23 @@
             "FORM/DIV/DIV",
             "FORM/DIV/INPUT-hidden",
             "P/SPAN/SPAN"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden"
           ]
         ]
       }

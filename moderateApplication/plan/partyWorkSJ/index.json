@@ -138,6 +138,45 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control435_1SmGTb": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
+              "ratio": 0.905
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsDetail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control435_1SmGTb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -145,7 +184,8 @@
       "controls": [
         "control695_HeeHuX",
         "control696_vVaUpl",
-        "control697_kTnoWZ"
+        "control697_kTnoWZ",
+        "control435_1SmGTb"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -192,6 +232,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl696_4b2a8L",
                 "onGetTemplate": "getTemplate_uiControl696_4b2a8L"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl435_N7CSi2",
+          "controlId": "control435_1SmGTb",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl435_N7CSi2",
+                "onGetTemplate": "getTemplate_uiControl435_N7CSi2"
               }
             }
           }

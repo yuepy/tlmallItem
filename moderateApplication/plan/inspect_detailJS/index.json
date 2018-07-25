@@ -1,16 +1,55 @@
 {
   "version": "0.1",
-  "id": "majorMatter",
-  "targetURL": "http://172.16.11.61/YS/YSList.aspx",
+  "id": "inspect_detailJS",
+  "targetURL": "http://172.16.11.61/JW/SJList.aspx",
   "jsFile": "index.js",
-  "requires": {
-    "matter_detail": "../matter_detail/index.json"
-  },
-  "chineseName": "重大事项",
-  "description": "重大事项",
-  "firstPaintEnable": false,
+  "chineseName": "中可纪检监察部上级精神",
+  "description": "",
   "controls": {
-    "control585_6DK4pb": {
+    "control734_tlt75U": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[4]/DIV[3]/DIV[1]",
+              "ratio": 0.912
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.breadcrumb"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control734_tlt75U"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control735_eGrmbi": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -29,7 +68,7 @@
               "tagName": "FORM",
               "prefix": "",
               "suffix": "/DIV[4]/DIV[3]",
-              "ratio": 0.813
+              "ratio": 0.912
             }
           },
           {
@@ -45,66 +84,15 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control585_6DK4pb"
+        "onGetData": "getData_control735_eGrmbi"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control586_GcmDn3": {
-      "location": {
-        "data": {
-          "tagName": "STRONG"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "Form1",
-              "tagName": "FORM",
-              "prefix": "",
-              "suffix": "/DIV[4]/DIV[1]/SPAN[1]/STRONG[1]",
-              "ratio": 0.813
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.container DIV.top.clearfix SPAN.style1 STRONG"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[1]/SPAN[1]/STRONG[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control586_GcmDn3"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control598_gZ0r5x": {
+    "control736_En2Ek6": {
       "location": {
         "data": {
           "tagName": "TD"
@@ -117,21 +105,20 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]/DIV[4]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control598_gZ0r5x"
+        "onGetData": "getData_control736_En2Ek6"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control721_lBF1ZI": {
+    "control742_XbUab0": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -145,153 +132,113 @@
               "elemId": "Form1",
               "tagName": "FORM",
               "prefix": "",
-              "suffix": "/DIV[4]/DIV[3]/DIV[3]",
-              "ratio": 0.813
+              "suffix": "/DIV[4]/DIV[3]",
+              "ratio": 0.912
             }
           },
           {
             "id": "@class/word",
             "prob": 1,
-            "ordinal": [
-              2,
-              11
-            ],
-            "value": "DIV.container DIV.centerbox DIV"
+            "value": "DIV.container DIV.centerbox"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]/DIV[3]"
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control721_lBF1ZI"
+        "onGetData": "getData_control742_XbUab0"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     }
   },
   "contexts": {
-    "context60_eGcIT4": {
+    "context80_8DOgz4": {
       "controls": [
-        "control585_6DK4pb",
-        "control586_GcmDn3",
-        "control598_gZ0r5x",
-        "control721_lBF1ZI"
+        "control734_tlt75U",
+        "control735_eGrmbi",
+        "control736_En2Ek6",
+        "control742_XbUab0"
       ],
       "anchors": [],
-      "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61\\/YS\\/YSList\\.aspx"
-      ]
+      "urlAnchor": []
     }
   },
   "flows": {
-    "flow186_1Ocvp6": {
-      "fromContextId": "context60_eGcIT4",
-      "fromAction": "doAction",
-      "fromControlId": "control585_6DK4pb",
+    "flow272_cAKkoU": {
       "toContexts": [
         {
-          "toContextId": "context60_eGcIT4"
-        },
-        {
-          "toContextId": "context77_fRlpnG",
-          "toModelId": "matter_detail"
-        }
-      ]
-    },
-    "flow196_f1ZtAl": {
-      "fromContextId": "context60_eGcIT4",
-      "fromAction": "doAction",
-      "fromControlId": "control586_GcmDn3",
-      "toContexts": [
-        {
-          "toContextId": "context60_eGcIT4"
-        }
-      ]
-    },
-    "flow198_VFSBc3": {
-      "toContexts": [
-        {
-          "toContextId": "context60_eGcIT4"
-        }
-      ]
-    },
-    "flow265_6FBoO2": {
-      "fromContextId": "context60_eGcIT4",
-      "fromAction": "doAction",
-      "fromControlId": "control721_lBF1ZI",
-      "toContexts": [
-        {
-          "toContextId": "context60_eGcIT4"
+          "toContextId": "context80_8DOgz4"
         }
       ]
     }
   },
   "pages": {
-    "page60_5l8JFw": {
-      "contextId": "context60_eGcIT4",
+    "page80_FszPyd": {
+      "contextId": "context80_8DOgz4",
       "layout": [
         {
-          "id": "uiControl586_rRtIcM",
-          "controlId": "control586_GcmDn3",
+          "id": "uiControl734_2cOHpT",
+          "controlId": "control734_tlt75U",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl586_rRtIcM",
-                "onGetTemplate": "getTemplate_uiControl586_rRtIcM"
+                "onDoAction": "doAction_uiControl734_2cOHpT",
+                "onGetTemplate": "getTemplate_uiControl734_2cOHpT"
               }
             }
           }
         },
         {
-          "id": "uiControl721_t00QPp",
-          "controlId": "control721_lBF1ZI",
+          "id": "uiControl742_gGgVAs",
+          "controlId": "control742_XbUab0",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl721_t00QPp",
-                "onGetTemplate": "getTemplate_uiControl721_t00QPp"
+                "onDoAction": "doAction_uiControl742_gGgVAs",
+                "onGetTemplate": "getTemplate_uiControl742_gGgVAs"
               }
             }
           }
         },
         {
-          "id": "uiControl585_tAqpNP",
-          "controlId": "control585_6DK4pb",
+          "id": "uiControl735_vleKT1",
+          "controlId": "control735_eGrmbi",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl585_tAqpNP",
-                "onGetTemplate": "getTemplate_uiControl585_tAqpNP"
+                "onDoAction": "doAction_uiControl735_vleKT1",
+                "onGetTemplate": "getTemplate_uiControl735_vleKT1"
               }
             }
           }
         },
         {
-          "id": "uiControl598_e2FHPf",
-          "controlId": "control598_gZ0r5x",
+          "id": "uiControl736_0JHdvp",
+          "controlId": "control736_En2Ek6",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl598_e2FHPf",
-                "onGetTemplate": "getTemplate_uiControl598_e2FHPf"
+                "onDoAction": "doAction_uiControl736_0JHdvp",
+                "onGetTemplate": "getTemplate_uiControl736_0JHdvp"
               }
             }
           }
@@ -302,31 +249,28 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context60_eGcIT4": [
+        "context80_8DOgz4": [
           "中粮可口可乐饮料有限公司"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context60_eGcIT4": [
-          "172.16.11.61/YS/YSList.aspx"
+        "context80_8DOgz4": [
+          "172.16.11.61/JW/SJList.aspx"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context60_eGcIT4": [
+        "context80_8DOgz4": [
           [
-            "DQTime",
             "Form",
             "MainContent_Div",
-            "MainContent_btnAddLink",
-            "MainContent_btnSearch",
             "MainContent_rptProperty_hlk_Title_",
-            "MainContent_txt_KeyWords",
             "MainContent_ucListPage",
-            "__EVENTVALIDATION",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
             "__VIEWSTATE"
           ]
         ]
@@ -334,22 +278,18 @@
     },
     "page/classes": {
       "contexts": {
-        "context60_eGcIT4": [
+        "context80_8DOgz4": [
           [
             "a_visited",
             "aspNetHidden",
-            "btn",
+            "breadcrumb",
             "centerbox",
             "clear",
             "clearfix",
             "container",
-            "copyright",
             "creater",
             "footer",
             "logo",
-            "red",
-            "select",
-            "size-s",
             "style",
             "time",
             "title",
@@ -362,16 +302,15 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context60_eGcIT4": [
+        "context80_8DOgz4": [
           [
             "-/-/FORM",
             "-/-/SCRIPT",
             "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "A/CENTER/STRONG",
             "DIV/DIV/A",
-            "DIV/DIV/BUTTON",
             "DIV/DIV/DIV",
-            "DIV/DIV/INPUT-submit",
-            "DIV/DIV/INPUT-text",
             "DIV/DIV/SPAN",
             "DIV/DIV/TABLE",
             "DIV/DIV/UL",
@@ -380,14 +319,12 @@
             "DIV/UL/LI",
             "FORM/DIV/DIV",
             "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/TABLE",
             "LI/DIV/A",
             "TABLE/TBODY/TR",
             "TBODY/TR/TD",
-            "TD/SELECT/OPTION",
-            "TD/SPAN/A",
-            "TD/SPAN/SPAN",
+            "TD/A/CENTER",
             "TR/TD/A",
-            "TR/TD/SELECT",
             "TR/TD/SPAN",
             "UL/LI/DIV"
           ]
