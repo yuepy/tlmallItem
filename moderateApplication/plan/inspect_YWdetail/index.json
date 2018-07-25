@@ -5,11 +5,16 @@
   "jsFile": "index.js",
   "chineseName": "中可纪检总部部署详情页",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control758_zIG4To": {
       "location": {
         "data": {
           "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -67,6 +72,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -106,6 +115,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -144,6 +157,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -189,7 +206,9 @@
         "control761_yeIXQD"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61\\/JW\\/YWDetail\\.aspx\\?ID.*"
+      ]
     }
   },
   "flows": {
@@ -279,7 +298,8 @@
     "page/urls": {
       "contexts": {
         "context86_UNn0CN": [
-          "172.16.11.61/JW/YWDetail.aspx?ID=27"
+          "172.16.11.61/JW/YWDetail.aspx?ID=27",
+          "172.16.11.61/JW/YWDetail.aspx?ID=26"
         ]
       }
     },
@@ -317,6 +337,28 @@
             "top",
             "welcome",
             "whether"
+          ],
+          [
+            "ExternalClassBEACBAEEB",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "ms-asset-icon",
+            "ms-rtePosition-",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
           ]
         ]
       }
@@ -341,6 +383,30 @@
             "DIV/SPAN/SPAN",
             "FORM/DIV/DIV",
             "FORM/DIV/INPUT-hidden"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FONT",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/FONT/SPAN",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/FONT",
+            "DIV/SPAN/SPAN",
+            "FONT/A/IMG",
+            "FONT/SPAN/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "P/SPAN/SPAN",
+            "SPAN/FONT/A"
           ]
         ]
       }
