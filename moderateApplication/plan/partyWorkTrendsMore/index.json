@@ -1,0 +1,299 @@
+{
+  "version": "0.1",
+  "id": "partyWorkTrendsMore",
+  "targetURL": "http://172.16.11.61/DQ/GZDT.aspx",
+  "jsFile": "index.js",
+  "requires": {
+    "partyWorkDD": "../partyWorkDD/index.json"
+  },
+  "chineseName": "党群工作-工作动态更多",
+  "description": "党群工作-工作动态更多",
+  "controls": {
+    "control692_p64qz2": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[4]/DIV[3]",
+              "ratio": 0.904
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control692_p64qz2"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control693_V35VDp": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[4]/DIV[3]",
+              "ratio": 0.904
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control693_V35VDp"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control694_HJKZBO": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[4]/DIV[3]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control694_HJKZBO"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context68_XU90g9": {
+      "controls": [
+        "control692_p64qz2",
+        "control693_V35VDp",
+        "control694_HJKZBO"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow246_ZaZ8Ja": {
+      "toContexts": [
+        {
+          "toContextId": "context68_XU90g9"
+        }
+      ]
+    },
+    "flow247_WEONrK": {
+      "fromContextId": "context68_XU90g9",
+      "fromAction": "doAction",
+      "fromControlId": "control692_p64qz2",
+      "toContexts": [
+        {
+          "toContextId": "context68_XU90g9"
+        }
+      ]
+    },
+    "flow248_ug0HrA": {
+      "fromContextId": "context68_XU90g9",
+      "fromAction": "doAction",
+      "fromControlId": "control693_V35VDp",
+      "toContexts": [
+        {
+          "toContextId": "context68_XU90g9"
+        },
+        {
+          "toContextId": "context67_xnLAwQ",
+          "toModelId": "partyWorkDD"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page68_GyqVUp": {
+      "contextId": "context68_XU90g9",
+      "layout": [
+        {
+          "id": "uiControl692_UEZ8LF",
+          "controlId": "control692_p64qz2",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl692_UEZ8LF",
+                "onGetTemplate": "getTemplate_uiControl692_UEZ8LF"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl693_k5bPW0",
+          "controlId": "control693_V35VDp",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl693_k5bPW0",
+                "onGetTemplate": "getTemplate_uiControl693_k5bPW0"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl694_5pwtsl",
+          "controlId": "control694_HJKZBO",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl694_5pwtsl",
+                "onGetTemplate": "getTemplate_uiControl694_5pwtsl"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context68_XU90g9": [
+          "中粮可口可乐饮料有限公司"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context68_XU90g9": [
+          "172.16.11.61/DQ/GZDT.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context68_XU90g9": [
+          [
+            "Form",
+            "MainContent_Div",
+            "MainContent_rptProperty_hlk_Title_",
+            "MainContent_ucListPage",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__VIEWSTATE"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context68_XU90g9": [
+          [
+            "a-title",
+            "a_visited",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "creater",
+            "footer",
+            "logo",
+            "style",
+            "time",
+            "title",
+            "top",
+            "topjiwei",
+            "welcome"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context68_XU90g9": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "A/CENTER/STRONG",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/STRONG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/TABLE",
+            "LI/DIV/A",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/CENTER",
+            "TR/TD/A",
+            "TR/TD/SPAN",
+            "UL/LI/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}

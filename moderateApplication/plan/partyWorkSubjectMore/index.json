@@ -1,0 +1,289 @@
+{
+  "version": "0.1",
+  "id": "partyWorkSubjectMore",
+  "targetURL": "http://172.16.11.61/DQ/ZTSJ.aspx",
+  "jsFile": "index.js",
+  "requires": {
+    "partyWorkZT": "../partyWorkZT/index.json"
+  },
+  "chineseName": "党群工作-主题实践更多",
+  "description": "党群工作-主题实践更多",
+  "firstPaintEnable": false,
+  "controls": {
+    "control716_rUOEkx": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.824
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control716_rUOEkx"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control717_9SWPd2": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.824
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control717_9SWPd2"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control718_Zvl7fr": {
+      "location": {
+        "data": {
+          "tagName": "TD"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control718_Zvl7fr"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context76_3SqIlw": {
+      "controls": [
+        "control716_rUOEkx",
+        "control717_9SWPd2",
+        "control718_Zvl7fr"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61\\/DQ\\/ZTSJ\\.aspx"
+      ]
+    }
+  },
+  "flows": {
+    "flow258_LMgZ2z": {
+      "toContexts": [
+        {
+          "toContextId": "context76_3SqIlw"
+        }
+      ]
+    },
+    "flow262_x1nVJ3": {
+      "fromContextId": "context76_3SqIlw",
+      "fromAction": "doAction",
+      "fromControlId": "control717_9SWPd2",
+      "toContexts": [
+        {
+          "toContextId": "context76_3SqIlw"
+        },
+        {
+          "toContextId": "context75_xbDTxf",
+          "toModelId": "partyWorkZT"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page76_nh5fmW": {
+      "contextId": "context76_3SqIlw",
+      "layout": [
+        {
+          "id": "uiControl716_lLS8hN",
+          "controlId": "control716_rUOEkx",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl716_lLS8hN",
+                "onGetTemplate": "getTemplate_uiControl716_lLS8hN"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl717_DeM566",
+          "controlId": "control717_9SWPd2",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl717_DeM566",
+                "onGetTemplate": "getTemplate_uiControl717_DeM566"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl718_RZGSVD",
+          "controlId": "control718_Zvl7fr",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl718_RZGSVD",
+                "onGetTemplate": "getTemplate_uiControl718_RZGSVD"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context76_3SqIlw": [
+          "中粮可口可乐饮料有限公司"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context76_3SqIlw": [
+          "172.16.11.61/DQ/ZTSJ.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context76_3SqIlw": [
+          [
+            "Form",
+            "MainContent_Div",
+            "MainContent_rptProperty_hlk_Title_",
+            "MainContent_ucListPage",
+            "__VIEWSTATE"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context76_3SqIlw": [
+          [
+            "a-title",
+            "a_visited",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "creater",
+            "footer",
+            "logo",
+            "style",
+            "time",
+            "title",
+            "top",
+            "topjiwei",
+            "welcome"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context76_3SqIlw": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "A/CENTER/STRONG",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/SPAN/STRONG",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/TABLE",
+            "LI/DIV/A",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/CENTER",
+            "TR/TD/A",
+            "TR/TD/SPAN",
+            "UL/LI/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}

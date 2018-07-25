@@ -1,0 +1,335 @@
+{
+  "version": "0.1",
+  "id": "partyWorkSJ",
+  "targetURL": "http://172.16.11.61/DQ/SJJSDetail.aspx?ID=22",
+  "jsFile": "index.js",
+  "chineseName": "党群工作-上级精神",
+  "description": "党群工作-上级精神",
+  "firstPaintEnable": false,
+  "controls": {
+    "control695_HeeHuX": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]",
+              "ratio": 0.905
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control695_HeeHuX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control696_vVaUpl": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
+              "ratio": 0.905
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsDetail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control696_vVaUpl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control697_kTnoWZ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[3]",
+              "ratio": 0.905
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsRelated"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control697_kTnoWZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context69_bMOkwf": {
+      "controls": [
+        "control695_HeeHuX",
+        "control696_vVaUpl",
+        "control697_kTnoWZ"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61\\/DQ\\/SJJSDetail\\.aspx\\?ID.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow250_e4aRkT": {
+      "toContexts": [
+        {
+          "toContextId": "context69_bMOkwf"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page69_9HPJsu": {
+      "contextId": "context69_bMOkwf",
+      "layout": [
+        {
+          "id": "uiControl695_VPkWgq",
+          "controlId": "control695_HeeHuX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl695_VPkWgq",
+                "onGetTemplate": "getTemplate_uiControl695_VPkWgq"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl696_4b2a8L",
+          "controlId": "control696_vVaUpl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl696_4b2a8L",
+                "onGetTemplate": "getTemplate_uiControl696_4b2a8L"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl697_QnIZAg",
+          "controlId": "control697_kTnoWZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl697_QnIZAg",
+                "onGetTemplate": "getTemplate_uiControl697_QnIZAg"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context69_bMOkwf": [
+          "中粮可口可乐饮料有限公司"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context69_bMOkwf": [
+          "172.16.11.61/DQ/SJJSDetail.aspx?ID=22",
+          "172.16.11.61/DQ/SJJSDetail.aspx?ID=12"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context69_bMOkwf": [
+          [
+            "DQTime",
+            "Form",
+            "__VIEWSTATE",
+            "tianqi"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context69_bMOkwf": [
+          [
+            "ExternalClassBBCEFACDFEBC",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
+          ],
+          [
+            "ExternalClassDDFCCCADEEABA",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context69_bMOkwf": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden"
+          ]
+        ]
+      }
+    }
+  }
+}

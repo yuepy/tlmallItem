@@ -1,0 +1,344 @@
+{
+  "version": "0.1",
+  "id": "partyWorkZB",
+  "targetURL": "http://172.16.11.61/DQ/ZBBSDetail.aspx?ID=21",
+  "jsFile": "index.js",
+  "chineseName": "党群工作-总部部署",
+  "description": "党群工作-总部部署",
+  "controls": {
+    "control701_ItH1NQ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
+              "ratio": 0.75
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsDetail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control701_ItH1NQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control702_s62inZ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
+              "ratio": 0.75
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsDetail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control702_s62inZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control703_1bUqFe": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[3]",
+              "ratio": 0.75
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsRelated"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control703_1bUqFe"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context71_cXhOc5": {
+      "controls": [
+        "control701_ItH1NQ",
+        "control702_s62inZ",
+        "control703_1bUqFe"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow255_ctXNeD": {
+      "toContexts": [
+        {
+          "toContextId": "context71_cXhOc5"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page71_s6zkyA": {
+      "contextId": "context71_cXhOc5",
+      "layout": [
+        {
+          "id": "uiControl701_l61H20",
+          "controlId": "control701_ItH1NQ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl701_l61H20",
+                "onGetTemplate": "getTemplate_uiControl701_l61H20"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl702_aDnr1F",
+          "controlId": "control702_s62inZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl702_aDnr1F",
+                "onGetTemplate": "getTemplate_uiControl702_aDnr1F"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl703_dOhxK9",
+          "controlId": "control703_1bUqFe",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl703_dOhxK9",
+                "onGetTemplate": "getTemplate_uiControl703_dOhxK9"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context71_cXhOc5": [
+          "中粮可口可乐饮料有限公司"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context71_cXhOc5": [
+          "172.16.11.61/DQ/ZBBSDetail.aspx?ID=21",
+          "172.16.11.61/DQ/ZBBSDetail.aspx?ID=19"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context71_cXhOc5": [
+          [
+            "DQTime",
+            "Form",
+            "__VIEWSTATE",
+            "tianqi"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context71_cXhOc5": [
+          [
+            "ExternalClassFEFFBCFABEEDDFF",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "ms-asset-icon",
+            "ms-rtePosition-",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
+          ],
+          [
+            "ExternalClassDDABDBCDBCFE",
+            "MsoNormalTable",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context71_cXhOc5": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/P/A",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "P/A/IMG"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/B/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "SPAN/SPAN/BR",
+            "SPAN/SPAN/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/B",
+            "TD/DIV/SPAN",
+            "TR/TD/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -9657,7 +9657,7 @@ body{
 }
 .footerbtn{
   background: #fff;
-  padding:0px 3px;
+  padding:10px 3px;
     ul{
       overflow: hidden;
      	padding:0;
@@ -12369,4 +12369,47 @@ body{
   height: 100vh !important;
   overflow: auto !important;
   overflow-x: hidden !important;
+}
+
+
+/*****党群工作*********/
+div[data-ysp-modelid="partyWork"]{
+  background: #ececec;
+}
+.ysp-party-work-more{
+  background: #fff;
+  min-height: 20%;
+  margin-bottom: 10px;
+  .ysp-party-work-hard{
+    color: red;
+    min-height: 40px;
+    line-height: 40px;
+    text-align: center;
+    >span:nth-child(1){
+    	font-weight: bold;
+    }
+    >span:nth-child(2){
+      float: right;
+      padding-right: 15px;
+    }
+  }
+  .ysp-party-work-more-content{
+    border-bottom: 1px solid #ececec;
+    min-height: 30px;
+    line-height: 30px;
+    padding: 0px 10px;
+    font-size: 14px;
+    >div:nth-child(1){
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    >span:nth-child(2){
+      color: #999;
+    }
+  }
+}
+.ysp-party-work-text-color{
+  color: #999999;
 }
