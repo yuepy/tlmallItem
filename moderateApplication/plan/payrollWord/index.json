@@ -1,0 +1,257 @@
+{
+  "version": "0.1",
+  "id": "payrollWord",
+  "targetURL": "http://172.16.11.61:81/Login.aspx",
+  "jsFile": "index.js",
+  "requires": {
+    "payrollWordQuery": "../payrollWordQuery/index.json"
+  },
+  "chineseName": "工资单",
+  "description": "工资单",
+  "firstPaintEnable": false,
+  "controls": {
+    "control773_ZVOOtN": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.75
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control773_ZVOOtN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control774_4vB8WK": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]/DIV[2]/DIV[1]",
+              "ratio": 0.75
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.centerbox DIV.main DIV.form-payroll.verify.align-c"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control774_4vB8WK"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context89_enDZhR": {
+      "controls": [
+        "control773_ZVOOtN",
+        "control774_4vB8WK"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:81\\/Login\\.aspx"
+      ]
+    }
+  },
+  "flows": {
+    "flow289_3R2hDU": {
+      "toContexts": [
+        {
+          "toContextId": "context89_enDZhR"
+        }
+      ]
+    },
+    "flow290_lPnRDo": {
+      "fromContextId": "context89_enDZhR",
+      "fromAction": "doAction",
+      "fromControlId": "control774_4vB8WK",
+      "toContexts": [
+        {
+          "toContextId": "context89_enDZhR"
+        },
+        {
+          "toContextId": "context90_pPWGka",
+          "toModelId": "payrollWordQuery"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page89_rahTTt": {
+      "contextId": "context89_enDZhR",
+      "layout": [
+        {
+          "id": "uiControl773_uX2PUQ",
+          "controlId": "control773_ZVOOtN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl773_uX2PUQ",
+                "onGetTemplate": "getTemplate_uiControl773_uX2PUQ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl774_EPDrCd",
+          "controlId": "control774_4vB8WK",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl774_EPDrCd",
+                "onGetTemplate": "getTemplate_uiControl774_EPDrCd"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context89_enDZhR": [
+          "工资单"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context89_enDZhR": [
+          "172.16.11.61:81/Login.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context89_enDZhR": [
+          [
+            "DQTime",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "btnLogin",
+            "form",
+            "txtNumber",
+            "txtPassword",
+            "txtUserName"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context89_enDZhR": [
+          [
+            "align-c",
+            "aspNetHidden",
+            "breadcrumb",
+            "btn-submit",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "form-payroll",
+            "highlight",
+            "init",
+            "item",
+            "logo",
+            "main",
+            "size-m",
+            "textinfor",
+            "top",
+            "verify",
+            "welcome"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context89_enDZhR": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H2",
+            "DIV/DIV/INPUT-password",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/P/A",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden"
+          ]
+        ]
+      }
+    }
+  }
+}

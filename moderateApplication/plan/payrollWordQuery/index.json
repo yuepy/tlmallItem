@@ -1,0 +1,324 @@
+{
+  "version": "0.1",
+  "id": "payrollWordQuery",
+  "targetURL": "http://172.16.11.61:81/SalaryList.aspx",
+  "jsFile": "index.js",
+  "chineseName": "工资单查询",
+  "description": "工资单查询",
+  "firstPaintEnable": false,
+  "controls": {
+    "control775_zuuKhe": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]",
+              "ratio": 0.85
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control775_zuuKhe"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control776_2i0SMt": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]/DIV[2]/DIV[1]",
+              "ratio": 0.85
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.centerbox DIV.main DIV.form-payroll.condition.verify.align-c"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control776_2i0SMt"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control777_F8SyLd": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.centerbox DIV.main DIV.result"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control777_F8SyLd"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context90_pPWGka": {
+      "controls": [
+        "control775_zuuKhe",
+        "control776_2i0SMt",
+        "control777_F8SyLd"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/172\\.16\\.11\\.61:81\\/SalaryList\\.aspx"
+      ]
+    }
+  },
+  "flows": {
+    "flow291_W0P4tU": {
+      "toContexts": [
+        {
+          "toContextId": "context90_pPWGka"
+        }
+      ]
+    },
+    "flow292_VCI94f": {
+      "fromContextId": "context90_pPWGka",
+      "fromAction": "doAction",
+      "fromControlId": "control775_zuuKhe",
+      "toContexts": [
+        {
+          "toContextId": "context90_pPWGka"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page90_FEbnAq": {
+      "contextId": "context90_pPWGka",
+      "layout": [
+        {
+          "id": "uiControl775_zVOl8a",
+          "controlId": "control775_zuuKhe",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl775_zVOl8a",
+                "onGetTemplate": "getTemplate_uiControl775_zVOl8a"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl776_TTonb4",
+          "controlId": "control776_2i0SMt",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl776_TTonb4",
+                "onGetTemplate": "getTemplate_uiControl776_TTonb4"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl777_Di237t",
+          "controlId": "control777_F8SyLd",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl777_Di237t",
+                "onGetTemplate": "getTemplate_uiControl777_Di237t"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context90_pPWGka": [
+          "工资单"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context90_pPWGka": [
+          "172.16.11.61:81/SalaryList.aspx"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context90_pPWGka": [
+          [
+            "DQTime",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "btnQuery",
+            "ddlMonth",
+            "ddlYear",
+            "form",
+            "table"
+          ],
+          [
+            "DQTime",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "btnQuery",
+            "ddlMonth",
+            "ddlYear",
+            "form",
+            "rptPreview_hlUrl_",
+            "rptPreview_lblRemark_",
+            "rptPreview_lblTime_",
+            "rptPreview_lblType_",
+            "table"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context90_pPWGka": [
+          [
+            "align-c",
+            "aspNetHidden",
+            "breadcrumb",
+            "btn-submit",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "condition",
+            "container",
+            "copyright",
+            "even",
+            "footer",
+            "form-payroll",
+            "item",
+            "logo",
+            "main",
+            "result",
+            "size-m",
+            "top",
+            "verify",
+            "welcome"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context90_pPWGka": [
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H2",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H2",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TR/TD/A",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

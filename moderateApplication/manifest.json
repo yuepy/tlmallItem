@@ -100,11 +100,21 @@
       "demo": [
         "http://172.16.11.61/DQ/DQindex.aspx"
       ]
+    },
+    {
+      "title": "payrollWord",
+      "url": "adapter://moderateApplication/plan/payrollWord/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:81\\/Login\\.aspx"
+      ],
+      "demo": [
+        "http://172.16.11.61:81/Login.aspx"
+      ]
     }
   ],
   "name": "中可工程",
   "default_url": "http://172.16.11.61/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1532575740946
+  "update_time": 1532583475753
 }

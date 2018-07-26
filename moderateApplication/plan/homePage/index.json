@@ -366,6 +366,64 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control772_ZLrDG3": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "ctl01",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[5]/H1[1]",
+              "ratio": 0.907
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.pannel H1"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[5]/H1[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              238,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control772_ZLrDG3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -377,7 +435,8 @@
         "control577_63WGNP",
         "control581_MyOJP0",
         "control584_Dv9hyl",
-        "control644_fkQ0GT"
+        "control644_fkQ0GT",
+        "control772_ZLrDG3"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -492,6 +551,16 @@
           "toModelId": "img_detail"
         }
       ]
+    },
+    "flow288_FI5irM": {
+      "fromContextId": "context56_7xA3In",
+      "fromAction": "doAction",
+      "fromControlId": "control772_ZLrDG3",
+      "toContexts": [
+        {
+          "toContextId": "context56_7xA3In"
+        }
+      ]
     }
   },
   "pages": {
@@ -584,6 +653,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl581_WKv8W8",
                 "onGetTemplate": "getTemplate_uiControl581_WKv8W8"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl772_nTamgL",
+          "controlId": "control772_ZLrDG3",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl772_nTamgL",
+                "onGetTemplate": "getTemplate_uiControl772_nTamgL"
               }
             }
           }
