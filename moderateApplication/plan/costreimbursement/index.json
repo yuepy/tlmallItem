@@ -315,53 +315,6 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control83_Xx5WxU": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "form1",
-              "tagName": "FORM",
-              "prefix": "",
-              "suffix": "/DIV[3]/TABLE[2]",
-              "ratio": 0.828
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              7,
-              9
-            ],
-            "value": "DIV.big-form.page-shadow TABLE.layout-data"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control83_Xx5WxU"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control85_aMCMgd": {
       "location": {
         "data": {
@@ -433,37 +386,6 @@
       "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
       "componentType": "dialog"
     },
-    "control539_La6vTC": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.popup.size-big.with-bottom-buttons"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control539_La6vTC"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control540_9cRaJ5": {
       "location": {
         "data": {
@@ -512,7 +434,7 @@
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "dialog"
     },
-    "control541_715zWo": {
+    "control671_qHxwx6": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -520,6 +442,176 @@
         "userData": {
           "data": [],
           "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control671_qHxwx6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control770_6pNRD9": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              6
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control770_6pNRD9"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control771_vZQe6V": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"detailT\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              6
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control771_vZQe6V"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control772_E9c7Bp": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"tableXiaoJi\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form.trPerson"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control772_E9c7Bp"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control83_uQRiCK": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-bottom-buttons"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control83_uQRiCK"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control223_H3l6nQ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
         },
         "locators": [
           {
@@ -554,111 +646,57 @@
           }
         ]
       },
+      "intendedRole": "dialog",
+      "roles": "element,dialog",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "dialog"
+    },
+    "control539_osvg9r": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]",
+              "ratio": 0.495
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-top-buttons.choose-people DIV.body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 750,
+              "height": 530
+            }
+          }
+        ]
+      },
       "events": {
-        "onGetData": "getData_control541_715zWo"
+        "onGetData": "getData_control539_osvg9r"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
-      "componentType": "custom"
-    },
-    "control671_qHxwx6": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.big-form.page-shadow"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control671_qHxwx6"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control770_6pNRD9": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              6
-            ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control770_6pNRD9"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control771_vZQe6V": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::TABLE[@id=\"detailT\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              1,
-              6
-            ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[3]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control771_vZQe6V"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "",
       "componentType": "custom"
     }
   },
@@ -672,15 +710,16 @@
         "control80_KHkvnv",
         "control81_GJLcaV",
         "control82_BSndNR",
-        "control83_Xx5WxU",
         "control85_aMCMgd",
         "control538_RqxcSg",
-        "control539_La6vTC",
         "control540_9cRaJ5",
-        "control541_715zWo",
         "control671_qHxwx6",
         "control770_6pNRD9",
-        "control771_vZQe6V"
+        "control771_vZQe6V",
+        "control772_E9c7Bp",
+        "control83_uQRiCK",
+        "control223_H3l6nQ",
+        "control539_osvg9r"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -714,16 +753,6 @@
         }
       ]
     },
-    "flow30_5HvEkz": {
-      "fromContextId": "context11_mB0Nro",
-      "fromAction": "doAction",
-      "fromControlId": "control83_Xx5WxU",
-      "toContexts": [
-        {
-          "toContextId": "context11_mB0Nro"
-        }
-      ]
-    },
     "flow106_e0GEJ8": {
       "fromContextId": "context11_mB0Nro",
       "fromAction": "doAction",
@@ -734,10 +763,30 @@
         }
       ]
     },
-    "flow160_ilaRlp": {
+    "flow289_aTE0i4": {
+      "fromContextId": "context11_mB0Nro",
+      "fromAction": "click",
+      "fromControlId": "control538_RqxcSg",
+      "toContexts": [
+        {
+          "toContextId": "context11_mB0Nro"
+        }
+      ]
+    },
+    "flow160_d5XAe1": {
       "fromContextId": "context11_mB0Nro",
       "fromAction": "doAction",
-      "fromControlId": "control539_La6vTC",
+      "fromControlId": "control83_uQRiCK",
+      "toContexts": [
+        {
+          "toContextId": "context11_mB0Nro"
+        }
+      ]
+    },
+    "flow288_BTZyhC": {
+      "fromContextId": "context11_mB0Nro",
+      "fromAction": "doAction",
+      "fromControlId": "control539_osvg9r",
       "toContexts": [
         {
           "toContextId": "context11_mB0Nro"
@@ -825,6 +874,21 @@
           }
         },
         {
+          "id": "uiControl772_WpxLLW",
+          "controlId": "control772_E9c7Bp",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl772_WpxLLW",
+                "onGetTemplate": "getTemplate_uiControl772_WpxLLW"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl82_omO4Ah",
           "controlId": "control82_BSndNR",
           "display": {
@@ -850,21 +914,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl85_aIMk32",
                 "onGetTemplate": "getTemplate_uiControl85_aIMk32"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl83_wl8gCB",
-          "controlId": "control83_Xx5WxU",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl83_wl8gCB",
-                "onGetTemplate": "getTemplate_uiControl83_wl8gCB"
               }
             }
           }
@@ -947,21 +996,6 @@
               },
               "layout": [
                 {
-                  "id": "uiControl539_sF4N0U",
-                  "controlId": "control539_La6vTC",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl539_sF4N0U",
-                        "onGetTemplate": "getTemplate_uiControl539_sF4N0U"
-                      }
-                    }
-                  }
-                },
-                {
                   "id": "uiControl540_TZGeew",
                   "controlId": "control540_9cRaJ5",
                   "display": {
@@ -994,23 +1028,74 @@
                       },
                       "layout": [
                         {
-                          "id": "uiControl541_iOroff",
-                          "controlId": "control541_715zWo",
+                          "id": "uiControl223_CU1Ho7",
+                          "controlId": "control223_H3l6nQ",
                           "display": {
-                            "adapterId": "custom",
-                            "type": "custom",
+                            "adapterId": "dialog",
+                            "type": "dialog",
                             "adapter": {
-                              "templateType": "react",
-                              "events": {
-                                "onDoAction": "doAction_uiControl541_iOroff",
-                                "onGetTemplate": "getTemplate_uiControl541_iOroff"
-                              }
+                              "templateType": ""
                             }
-                          }
+                          },
+                          "layout": [
+                            {
+                              "id": "uiControl223_CU1Ho7body",
+                              "display": {
+                                "type": "dialogBody",
+                                "adapterId": "dialogBody",
+                                "adapter": {
+                                  "templateType": ""
+                                }
+                              },
+                              "layout": []
+                            },
+                            {
+                              "id": "uiControl223_CU1Ho7footer",
+                              "display": {
+                                "type": "dialogFooter",
+                                "adapterId": "dialogFooter",
+                                "adapter": {
+                                  "templateType": ""
+                                }
+                              },
+                              "layout": [
+                                {
+                                  "id": "uiControl539_bv8xXf",
+                                  "controlId": "control539_osvg9r",
+                                  "display": {
+                                    "adapterId": "custom",
+                                    "type": "custom",
+                                    "adapter": {
+                                      "templateType": "react",
+                                      "events": {
+                                        "onDoAction": "doAction_uiControl539_bv8xXf",
+                                        "onGetTemplate": "getTemplate_uiControl539_bv8xXf"
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     }
                   ]
+                },
+                {
+                  "id": "uiControl83_Q37DD8",
+                  "controlId": "control83_uQRiCK",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl83_Q37DD8",
+                        "onGetTemplate": "getTemplate_uiControl83_Q37DD8"
+                      }
+                    }
+                  }
                 }
               ]
             }
@@ -1046,7 +1131,8 @@
       "contexts": {
         "context11_mB0Nro": [
           "172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=6F27552185A1F052DC97A4309596EAFB&Guid=85ee9e59-f341-4fe3-82db-3bf44dbaaa33",
-          "172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=C480312391FF7BF94454BA45BDB2A475&Guid=9a2b710f-cfa7-4a8d-97c9-0fe81be27aea"
+          "172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=C480312391FF7BF94454BA45BDB2A475&Guid=9a2b710f-cfa7-4a8d-97c9-0fe81be27aea",
+          "172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=94CCD7277804FA37AEC74DA154445369&Guid=637b27de-44e5-4a91-9d66-ca41e33f75e0"
         ]
       }
     },
@@ -1667,6 +1753,77 @@
             "icon-cloud-download",
             "icon-paper-clip",
             "icon-trash",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "required",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trPerson",
+            "trPublic",
+            "ufoot"
+          ],
+          [
+            "Beforehand",
+            "action-area",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_state_full",
+            "aui_state_lock",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "icon-cloud-download",
+            "icon-paper-clip",
             "labelwidth",
             "layout-data",
             "layout-form",

@@ -504,6 +504,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -530,6 +534,38 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control777_x9TmXo": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control777_x9TmXo"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -547,7 +583,8 @@
         "control573_BsyGQ1",
         "control574_MBtLeA",
         "control575_snnPNC",
-        "control654_5Ga8vB"
+        "control654_5Ga8vB",
+        "control777_x9TmXo"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -732,6 +769,21 @@
           }
         },
         {
+          "id": "uiControl777_kGP2Og",
+          "controlId": "control777_x9TmXo",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl777_kGP2Og",
+                "onGetTemplate": "getTemplate_uiControl777_kGP2Og"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl31_sN2AOc",
           "controlId": "control31_tk7eEP",
           "display": {
@@ -881,7 +933,8 @@
           "172.16.11.61:8000/Forms/YYSQ/Processing.aspx?SN=6D6EBA596FF5682BF540067A6EE465EC&Guid=347b6904-8e9d-42ee-b4f7-2be3ec5c391d",
           "172.16.11.61:8000/Forms/HR/LZSQ/Processing.aspx?SN=C53D580835BD09479962B965F4D5FE73&Guid=19fb40fd-f1ce-4b38-841a-1c7ac83b2f85",
           "172.16.11.61:8000/Forms/HR/LZSQ/Processing.aspx?SN=ECF4A307A9AC3A43D1035232D7B4160F&Guid=fd3afd50-ad44-4134-bbf9-840b03e21adb",
-          "172.16.11.61:8000/Forms/YYSQ/Processing.aspx?SN=5D4E493D5A0393C626DA2C5F7F0829A5&Guid=347b6904-8e9d-42ee-b4f7-2be3ec5c391d"
+          "172.16.11.61:8000/Forms/YYSQ/Processing.aspx?SN=5D4E493D5A0393C626DA2C5F7F0829A5&Guid=347b6904-8e9d-42ee-b4f7-2be3ec5c391d",
+          "172.16.11.61:8000/Forms/YYSQ/Processing.aspx?SN=3F451EF47E0F776DBA8009B1EB672354&Guid=3e0f1e8a-e2d6-4363-86cd-64df4dfac75b"
         ]
       }
     },
@@ -1695,6 +1748,66 @@
             "tj",
             "top",
             "ufoot"
+          ],
+          [
+            "action-area",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "required",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
           ]
         ]
       }
@@ -1888,6 +2001,67 @@
             "TR/TD/BR",
             "TR/TD/DIV",
             "TR/TD/I",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/P",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SCRIPT",
+            "-/FORM/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/P/BR",
+            "DIV/P/STRONG",
+            "DIV/SPAN/INPUT-file",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/LABEL/SPAN",
+            "TD/SPAN/TEXTAREA",
+            "TD/TABLE/TBODY",
+            "THEAD/TR/TH",
+            "TR/TD/BR",
+            "TR/TD/DIV",
             "TR/TD/IMG",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",

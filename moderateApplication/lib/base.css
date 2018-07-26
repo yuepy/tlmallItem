@@ -692,6 +692,12 @@ div.contentitem {
   padding-left: 10px;
   margin-top: 15px;
 }
+.Enclosure .content .Encltitle > div:nth-child(1) {
+  width: 75%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .Enclosure .content .Encltitle > div:nth-child(2) {
   width: 64px;
 }
@@ -3778,6 +3784,27 @@ div.contentitem {
   color: #202020;
   font-size: 16px;
   background-color: #f2f2f2;
+}
+[data-ysp-modelid="costreimbursement"] [data-componentsid="uiControl772_WpxLLW"] {
+  padding: 0;
+}
+[data-ysp-modelid="costreimbursement"] .ysp_content_baoxiao {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0 10px;
+}
+[data-ysp-modelid="costreimbursement"] .ysp_content_baoxiao .content:first-child {
+  text-align: justify;
+  text-align-last: justify;
+  width: 64px;
+  color: #202020;
+}
+[data-ysp-modelid="costreimbursement"] .ysp_content_baoxiao .content:last-child {
+  width: 75%;
+  color: #313131;
+  display: flex;
+  align-items: center;
 }
 [data-ysp-modelid="costreimbursement"] .contenttitle {
   color: #e64750;
