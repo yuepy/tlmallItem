@@ -568,6 +568,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -583,6 +587,73 @@
       },
       "events": {
         "onGetData": "getData_control671_qHxwx6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control770_6pNRD9": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              6
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control770_6pNRD9"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control771_vZQe6V": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"detailT\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              6
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control771_vZQe6V"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -607,7 +678,9 @@
         "control539_La6vTC",
         "control540_9cRaJ5",
         "control541_715zWo",
-        "control671_qHxwx6"
+        "control671_qHxwx6",
+        "control770_6pNRD9",
+        "control771_vZQe6V"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -717,6 +790,36 @@
               "events": {
                 "onDoAction": "doAction_uiControl78_EMGQ0a",
                 "onGetTemplate": "getTemplate_uiControl78_EMGQ0a"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl770_b4WGdv",
+          "controlId": "control770_6pNRD9",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl770_b4WGdv",
+                "onGetTemplate": "getTemplate_uiControl770_b4WGdv"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl771_vFFfTT",
+          "controlId": "control771_vZQe6V",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl771_vFFfTT",
+                "onGetTemplate": "getTemplate_uiControl771_vFFfTT"
               }
             }
           }
@@ -1472,6 +1575,75 @@
             "aui_s",
             "aui_se",
             "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "del",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "icon-trash",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "required",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trPerson",
+            "trPublic",
+            "ufoot"
+          ],
+          [
+            "Beforehand",
+            "action-area",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
             "aui_sw",
             "aui_title",
             "aui_titleBar",
