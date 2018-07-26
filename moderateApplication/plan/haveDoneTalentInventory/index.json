@@ -969,6 +969,38 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control773_pGEGuk": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control773_pGEGuk"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -992,7 +1024,8 @@
         "control420_7mHS1N",
         "control421_C5rEma",
         "control422_V5VGkF",
-        "control465_UAnArO"
+        "control465_UAnArO",
+        "control773_pGEGuk"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -1073,6 +1106,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl352_OL3zoh",
                 "onGetTemplate": "getTemplate_uiControl352_OL3zoh"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl773_HeeMfG",
+          "controlId": "control773_pGEGuk",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl773_HeeMfG",
+                "onGetTemplate": "getTemplate_uiControl773_HeeMfG"
               }
             }
           }
@@ -2086,6 +2134,66 @@
             "aui_outer",
             "aui_s",
             "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "btn-add-user",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "initA",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "activeA",
+            "activeTD",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
             "aui_sw",
             "aui_title",
             "aui_titleBar",

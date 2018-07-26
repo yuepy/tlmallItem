@@ -209,49 +209,6 @@
       "frameXPath": "//iframe[@name='OpenShowReport']<<IFRAME>>",
       "componentType": "custom"
     },
-    "control223_aeb2yk": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "form1",
-              "tagName": "FORM",
-              "prefix": "",
-              "suffix": "/DIV[3]/DIV[2]/TABLE[1]",
-              "ratio": 0.556
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.advanced-search.form-wrapper TABLE.layout-form"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control223_aeb2yk"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[@name='OpenShowReport']<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control224_1MO8OD": {
       "location": {
         "data": {
@@ -964,7 +921,6 @@
         "control211_vmwCCs",
         "control212_TKrauq",
         "control222_aM5o7Q",
-        "control223_aeb2yk",
         "control224_1MO8OD",
         "control225_2WsiCc",
         "control226_ElA2SA",
@@ -1133,21 +1089,6 @@
                       "events": {
                         "onDoAction": "doAction_uiControl222_V1tins",
                         "onGetTemplate": "getTemplate_uiControl222_V1tins"
-                      }
-                    }
-                  }
-                },
-                {
-                  "id": "uiControl223_4rwBvd",
-                  "controlId": "control223_aeb2yk",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl223_4rwBvd",
-                        "onGetTemplate": "getTemplate_uiControl223_4rwBvd"
                       }
                     }
                   }

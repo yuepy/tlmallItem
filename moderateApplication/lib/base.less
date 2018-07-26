@@ -726,6 +726,12 @@ div.contentitem{
         padding-right: 10px;
         padding-left: 10px;
         margin-top: 15px;
+        >div:nth-child(1){
+          width: 75%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
         >div:nth-child(2){
           width: 64px;
           button{
@@ -4129,7 +4135,25 @@ display:-webkit-box;
     color: #202020;
   font-size: 16px;
   background-color: #f2f2f2;
-
+  [data-componentsid="uiControl772_WpxLLW"]{padding: 0;}
+  .ysp_content_baoxiao{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 0 10px;
+    .content:first-child{
+    	text-align: justify;
+      text-align-last: justify;
+      width: 64px;
+      color: #202020;
+    }
+    .content:last-child{
+      width: 75%;
+      color: #313131;
+      display: flex;
+      align-items: center;
+    }
+  }
   .contenttitle{
     color: #e64750;
     padding: 15px 0;
