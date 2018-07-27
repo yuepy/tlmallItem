@@ -4,7 +4,6 @@
   "targetURL": "http://172.16.11.61:9995/Workflow/Forms/ZCCL/Processing.aspx?SN=444D9FA8B0CDDB9A088B44760E31C247&Guid=94431caf-d468-4d01-ab3f-284a86650a68",
   "jsFile": "index.js",
   "requires": {
-    "commission": "../commission/index.json",
     "previewapproval": "../previewapproval/index.json"
   },
   "chineseName": "待办资产处理申请单",
@@ -598,6 +597,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -651,10 +654,6 @@
       "toContexts": [
         {
           "toContextId": "context12_NhVsKN"
-        },
-        {
-          "toContextId": "context1_CPB3yD",
-          "toModelId": "commission"
         }
       ]
     },

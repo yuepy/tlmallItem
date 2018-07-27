@@ -5,7 +5,6 @@
   "jsFile": "index.js",
   "requires": {
     "costreimbursement": "../costreimbursement/index.json",
-    "commission": "../commission/index.json",
     "previewapproval": "../previewapproval/index.json"
   },
   "chineseName": "待办信用冻结订单释放申请流程",
@@ -620,6 +619,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -689,10 +692,6 @@
         {
           "toContextId": "context11_mB0Nro",
           "toModelId": "costreimbursement"
-        },
-        {
-          "toContextId": "context1_CPB3yD",
-          "toModelId": "commission"
         },
         {
           "toContextId": "context18_a7Av8T"

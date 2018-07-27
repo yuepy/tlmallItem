@@ -3,9 +3,7 @@
   "id": "staffspecial",
   "targetURL": "http://172.16.11.61:8000/Forms/HR/YGYDSQ/Processing.aspx?SN=3ABF8D6C989909BA7FB03EDE5F88AC61&Guid=2caa70d5-fcce-412a-8120-1d705a0d9900",
   "jsFile": "index.js",
-  "requires": {
-    "commission": "../commission/index.json"
-  },
+  "requires": {},
   "chineseName": "待办员工异动申请单",
   "description": "",
   "firstPaintEnable": false,
@@ -646,6 +644,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -706,10 +708,6 @@
       "toContexts": [
         {
           "toContextId": "context22_L7nfn7"
-        },
-        {
-          "toContextId": "context1_CPB3yD",
-          "toModelId": "commission"
         }
       ]
     },
@@ -720,10 +718,6 @@
       "toContexts": [
         {
           "toContextId": "context22_L7nfn7"
-        },
-        {
-          "toContextId": "context1_CPB3yD",
-          "toModelId": "commission"
         }
       ]
     },

@@ -26,12 +26,14 @@
   "override_urls": [],
   "adapter_urls": [
     {
-      "title": "commission",
-      "url": "adapter://moderateApplication/plan/commission/index.json",
+      "title": "dealtIndex",
+      "url": "adapter://moderateApplication/plan/dealtIndex/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:8000.*"
+        "^http:\\/\\/172\\.16\\.11\\.61:8000\\/Index\\.aspx"
       ],
-      "demo": []
+      "demo": [
+        "http://172.16.11.61:8000/Index.aspx"
+      ]
     },
     {
       "title": "login",
@@ -55,9 +57,11 @@
       "title": "homePage",
       "url": "adapter://moderateApplication/plan/homePage/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/In.*"
+        "^http:\\/\\/172\\.16\\.11\\.61\\/Index\\.aspx"
       ],
-      "demo": []
+      "demo": [
+        "http://172.16.11.61/Index.aspx"
+      ]
     },
     {
       "title": "noticeMore",
@@ -136,5 +140,5 @@
   "default_url": "http://172.16.11.61/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1532654522245
+  "update_time": 1532672044768
 }

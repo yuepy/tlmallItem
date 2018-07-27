@@ -4,8 +4,7 @@
   "targetURL": "http://172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=2002C6F3E20AECD10EC6D3CA9F3C2EFD&Guid=3470b81d-d3ea-42fa-8825-49ecda6fcd14#",
   "jsFile": "index.js",
   "requires": {
-    "previewapproval": "../previewapproval/index.json",
-    "commission": "../commission/index.json"
+    "previewapproval": "../previewapproval/index.json"
   },
   "chineseName": "试用期转正申请单",
   "description": "",
@@ -660,6 +659,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -720,10 +723,6 @@
       "toContexts": [
         {
           "toContextId": "context13_FMltEV"
-        },
-        {
-          "toContextId": "context1_CPB3yD",
-          "toModelId": "commission"
         }
       ]
     },
