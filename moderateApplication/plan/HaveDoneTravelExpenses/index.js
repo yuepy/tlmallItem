@@ -312,19 +312,23 @@
       var data = ysp.customHelper.getTabledata(elem, ['文件名']);data.id = elem.nextElementSibling.nextElementSibling.id;data.title = '附件';return data;
     },
     doAction_uiControl233_vmP1Je: function (data, elem) {
-      var type = data.eventType;var data = data.customData;if (type == 'commit') {
-        // debugger;
-        elem.ownerDocument.querySelector("#" + data).click();setTimeout(function () {
-          elem.ownerDocument.defaultView.InitAttachmentList();
-        }, 1000); // setTimeout(function () {
-        //   var url = ysp.appMain.getActiveUrl();
-        //   ysp.appMain.reloadPage(url);
-        // }, 2000);
-      }if (type == 'add') {
-        elem.ownerDocument.querySelector("#" + data).previousElementSibling.querySelector('input').click();
-      }if (type == 'updel') {
-        var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');tds[tds.length - 1].querySelectorAll('a')[data.i].click();
-      } //附件下载
+      var type = data.eventType;var data = data.customData; // if (type == 'commit') {
+      //   // debugger;
+      //   elem.ownerDocument.querySelector("#" + data).click();
+      //   setTimeout(function () {
+      //     elem.ownerDocument.defaultView.InitAttachmentList();
+      //   }, 1000); // setTimeout(function () {
+      //   //   var url = ysp.appMain.getActiveUrl();
+      //   //   ysp.appMain.reloadPage(url);
+      //   // }, 2000);
+      // }
+      // if (type == 'add') {
+      //   elem.ownerDocument.querySelector("#" + data).previousElementSibling.querySelector('input').click();
+      // }
+      // if (type == 'updel') {
+      //   var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
+      //   tds[tds.length - 1].querySelectorAll('a')[data.i].click();
+      // } //附件下载
       if (type == 'loadbtn') {
         var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');tds[tds.length - 1].querySelectorAll('a')[0].click();
       }

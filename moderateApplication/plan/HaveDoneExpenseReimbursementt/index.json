@@ -906,6 +906,33 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control807_01iGk9": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control807_01iGk9"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -932,7 +959,8 @@
         "control273_JrRaIN",
         "control274_r9SsaM",
         "control466_Cyg8Tl",
-        "control467_avrJTE"
+        "control467_avrJTE",
+        "control807_01iGk9"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -1210,21 +1238,6 @@
           }
         },
         {
-          "id": "uiControl267_PaTNsB",
-          "controlId": "control267_ZPxDDq",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl267_PaTNsB",
-                "onGetTemplate": "getTemplate_uiControl267_PaTNsB"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl268_pqoAbw",
           "controlId": "control268_DwTnMs",
           "display": {
@@ -1270,6 +1283,21 @@
           }
         },
         {
+          "id": "uiControl807_Z4rzWl",
+          "controlId": "control807_01iGk9",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl807_Z4rzWl",
+                "onGetTemplate": "getTemplate_uiControl807_Z4rzWl"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl466_QEEP8b",
           "controlId": "control466_Cyg8Tl",
           "display": {
@@ -1310,6 +1338,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl273_lJ5mbn",
                 "onGetTemplate": "getTemplate_uiControl273_lJ5mbn"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl267_PaTNsB",
+          "controlId": "control267_ZPxDDq",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl267_PaTNsB",
+                "onGetTemplate": "getTemplate_uiControl267_PaTNsB"
               }
             }
           }
@@ -1802,6 +1845,112 @@
             "txt_Dept_SKR",
             "txt_Summary_SKR",
             "uploadDiv"
+          ],
+          [
+            "AppUsersDiv",
+            "Header_hidFlag",
+            "Header_txtCompanyName",
+            "Header_txtDate",
+            "Header_txtDepartName",
+            "Header_txtEmail",
+            "Header_txtPhone",
+            "Header_txtUserName",
+            "LinkedProcInst_hfGuid",
+            "LinkedProcInst_hfStart",
+            "LinkedProcInst_hfUserLoginName",
+            "TreatTable",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "btnAddLink",
+            "contentActionBar_ActionBar_Action",
+            "contentActionBar_ActionBar_ActionName",
+            "contentActionBar_ActionBar_AddApprover",
+            "contentActionBar_ActionBar_AddApproverName",
+            "contentActionBar_ActionBar_GotoActivityName",
+            "contentActionBar_ActionBar_IsReturnBack",
+            "contentActionBar_ActionBar_Print",
+            "contentActionBar_ActionBar_UserAction",
+            "contentActionBar_ActionBar_btnAddApprover",
+            "contentActionBar_ActionBar_btnClose",
+            "contentActionBar_ActionBar_btnPrint",
+            "contentActionBar_ActionBar_btnRedirect",
+            "contentActionBar_ActionBar_hidJBAffirm",
+            "contentForm_HLink_Report",
+            "contentForm_btn_JIZhang",
+            "contentForm_txtBXSY",
+            "contentForm_txtDetailTaxTotal",
+            "contentForm_txtJiZhangMoneyTotal",
+            "contentForm_txtReimbursementTotal",
+            "contentForm_txtRemarks",
+            "contentForm_txtSKRMoneyTotal",
+            "contentForm_txtSupplier",
+            "contentForm_txtSupplierApplyMoney",
+            "contentForm_txtSupplierBankCode",
+            "contentForm_txtSupplierCode",
+            "contentForm_txtSupplierOpenBank",
+            "contentForm_txtVirtualDepart",
+            "contentForm_txt_ActualMoneyToal",
+            "contentForm_txt_AddTaxTotalSum",
+            "contentForm_txt_ApplicantDeptName",
+            "contentForm_txt_ApplyCompany",
+            "contentForm_txt_ApplyEmployeeCode",
+            "contentForm_txt_ApplyEmployeeName",
+            "contentForm_txt_BELNR",
+            "contentForm_txt_BudgetNo",
+            "contentForm_txt_CPBCRate",
+            "contentForm_txt_Currency",
+            "contentForm_txt_ExchangeRate",
+            "contentForm_txt_GuoZhangDate",
+            "contentForm_txt_InformName",
+            "contentForm_txt_InvoiceNum_P",
+            "contentForm_txt_IsAsset",
+            "contentForm_txt_IsConstruction",
+            "contentForm_txt_IsPrepaid",
+            "contentForm_txt_JiZhangDate",
+            "contentForm_txt_LendTotal",
+            "contentForm_txt_Project",
+            "contentForm_txt_ReimbursementBigCate",
+            "contentForm_txt_ReimbursementType",
+            "contentForm_txt_Summary",
+            "contentForm_txt_SupplierActualPay",
+            "contentForm_txt_TreatCostCenter",
+            "contentForm_txt_TreatEmployeeName",
+            "contentForm_txt_TreatGuestCompany",
+            "contentForm_txt_TreatGuests",
+            "contentForm_txt_TreatHosts",
+            "contentForm_txt_TreatPeoples",
+            "contentForm_txt_TreatReason",
+            "contentForm_txt_TreatSite",
+            "detailT",
+            "detailTR",
+            "div",
+            "form",
+            "jkTable",
+            "miniTip",
+            "miniTip_a",
+            "miniTip_c",
+            "miniTip_t",
+            "person_infor",
+            "person_infor_trigger",
+            "skrTable",
+            "spanProject",
+            "table",
+            "tableComments",
+            "tableHeader",
+            "tableXiaoJi",
+            "tb_List",
+            "thCar",
+            "thSupplier",
+            "trPublic",
+            "txt_ACCApplyMoney_SKR",
+            "txt_ApplyMoney_SKR",
+            "txt_CompanyCode_SKR",
+            "txt_Company_SKR",
+            "txt_DeptCode_SKR",
+            "txt_Dept_SKR",
+            "txt_Summary_SKR"
           ]
         ]
       }
@@ -2185,6 +2334,69 @@
             "trPerson",
             "trPublic",
             "ufoot"
+          ],
+          [
+            "Beforehand",
+            "ConstructionClass",
+            "Repaird",
+            "Wdate",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "noprint",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trCWShow",
+            "trPerson",
+            "trPublic",
+            "ufoot"
           ]
         ]
       }
@@ -2399,6 +2611,58 @@
             "TR/TD/DIV",
             "TR/TD/I",
             "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "TR/TH/SPAN",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/LABEL",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-submit",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",
             "TR/TD/SPAN",
