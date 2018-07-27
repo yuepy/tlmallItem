@@ -542,6 +542,38 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control803_9lpxEi": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control803_9lpxEi"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -558,7 +590,8 @@
         "control447_UFKyOr",
         "control448_WDtIbb",
         "control342_3qULeM",
-        "control446_69gOl6"
+        "control446_69gOl6",
+        "control803_9lpxEi"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -620,6 +653,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl440_myKx1a",
                 "onGetTemplate": "getTemplate_uiControl440_myKx1a"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl803_isy59s",
+          "controlId": "control803_9lpxEi",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl803_isy59s",
+                "onGetTemplate": "getTemplate_uiControl803_isy59s"
               }
             }
           }
@@ -773,7 +821,8 @@
     "page/urls": {
       "contexts": {
         "context52_kn26w7": [
-          "172.16.11.61:8000/Forms/HR/YGYD/View.aspx?ProcInstId=FEE010B8FF9A8CE6"
+          "172.16.11.61:8000/Forms/HR/YGYD/View.aspx?ProcInstId=FEE010B8FF9A8CE6",
+          "172.16.11.61:8000/Forms/HR/YGYD/View.aspx?ProcInstId=F88E0278F5621D86"
         ]
       }
     },
@@ -918,6 +967,73 @@
             "tb_AttachmentList",
             "tb_List",
             "uploadDiv"
+          ],
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "aspnetForm",
+            "btnAddLink",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_P",
+            "ctl_contentForm_txt_AdjustType",
+            "ctl_contentForm_txt_AfterCompanyCode",
+            "ctl_contentForm_txt_AfterCompanyName",
+            "ctl_contentForm_txt_AfterDeptCode",
+            "ctl_contentForm_txt_AfterDeptName",
+            "ctl_contentForm_txt_AfterPositionCode",
+            "ctl_contentForm_txt_AfterPositionName",
+            "ctl_contentForm_txt_AfterWorkCity",
+            "ctl_contentForm_txt_AfterWorkProvince",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantName",
+            "ctl_contentForm_txt_BeforeCompanyCode",
+            "ctl_contentForm_txt_BeforeCompanyName",
+            "ctl_contentForm_txt_BeforeDeptCode",
+            "ctl_contentForm_txt_BeforeDeptName",
+            "ctl_contentForm_txt_BeforePosition",
+            "ctl_contentForm_txt_BeforeWorkplace",
+            "ctl_contentForm_txt_DashedManagerName",
+            "ctl_contentForm_txt_Description",
+            "ctl_contentForm_txt_EffectiveDate",
+            "ctl_contentForm_txt_InformName",
+            "ctl_contentForm_txt_IsWP",
+            "ctl_contentForm_txt_JoinDate",
+            "ctl_contentForm_txt_LineManagerName",
+            "ctl_contentForm_txt_Nature",
+            "ctl_contentForm_txt_Rank",
+            "ctl_contentForm_txt_Reason",
+            "div",
+            "person_infor",
+            "person_infor_trigger",
+            "tableComments",
+            "tableHeader",
+            "tb_List"
           ]
         ]
       }

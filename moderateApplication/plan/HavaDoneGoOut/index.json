@@ -330,6 +330,38 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control801_X5llH4": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control801_X5llH4"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -342,7 +374,8 @@
         "control298_dz68cH",
         "control299_DeyHWJ",
         "control300_MQD7Kp",
-        "control468_x2yAOy"
+        "control468_x2yAOy",
+        "control801_X5llH4"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -459,6 +492,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl299_RdsQ0X",
                 "onGetTemplate": "getTemplate_uiControl299_RdsQ0X"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl801_qy6axu",
+          "controlId": "control801_X5llH4",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl801_qy6axu",
+                "onGetTemplate": "getTemplate_uiControl801_qy6axu"
               }
             }
           }
