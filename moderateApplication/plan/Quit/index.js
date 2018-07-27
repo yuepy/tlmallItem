@@ -30,7 +30,7 @@
     getData_control7_I7k9cQ: function (elem) {
       if (!elem) {
         return;
-      }var data = {};data.title = '发起人信息';data.content = [];var trs = elem.querySelector('tbody').querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+      }var data = {};data.title = '发起人';data.content = [];var trs = elem.querySelector('tbody').querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
         var tds = trs[i].querySelectorAll('td');for (var k = 0; k < tds.length; k++) {
           data.content.push({ leftval: tds[k].querySelector('label').textContent.trim(), rightval: tds[k].querySelector('input').value });
         }
