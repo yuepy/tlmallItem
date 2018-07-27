@@ -303,6 +303,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -329,6 +333,46 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control809_PNmnaa": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"AppUsersDiv\"]/DIV[3]/TABLE[1]",
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"AppUsersDiv\"]//TABLE",
+              "descendant::DIV[@id=\"AppUsersDiv\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              4
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[11]/DIV[3]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control809_PNmnaa"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -341,7 +385,8 @@
         "control201_CTEg7a",
         "control202_RobuZ5",
         "control458_6RsVzk",
-        "control681_4oDiaM"
+        "control681_4oDiaM",
+        "control809_PNmnaa"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -453,6 +498,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl202_9eJZ9H",
                 "onGetTemplate": "getTemplate_uiControl202_9eJZ9H"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl809_id9TeT",
+          "controlId": "control809_PNmnaa",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl809_id9TeT",
+                "onGetTemplate": "getTemplate_uiControl809_id9TeT"
               }
             }
           }
