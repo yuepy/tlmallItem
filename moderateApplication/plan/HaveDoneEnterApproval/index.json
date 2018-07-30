@@ -808,6 +808,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -834,6 +838,33 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control814_9ITS6D": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]/DIV[7]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[7]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control814_9ITS6D"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -855,7 +886,8 @@
         "control207_Vgt1dI",
         "control208_1Wa77G",
         "control473_odzHzq",
-        "control775_9dTCkf"
+        "control775_9dTCkf",
+        "control814_9ITS6D"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -1136,6 +1168,21 @@
           }
         },
         {
+          "id": "uiControl814_lyOSCl",
+          "controlId": "control814_9ITS6D",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl814_lyOSCl",
+                "onGetTemplate": "getTemplate_uiControl814_lyOSCl"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl221_TT1rqP",
           "controlId": "control221_mqqgCS",
           "display": {
@@ -1182,7 +1229,8 @@
           "172.16.11.61:8000/Forms/HR/LYSQ/View.aspx?ProcInstId=310707A68BD73062",
           "172.16.11.61:8000/Forms/HR/LYSQ/View.aspx?ProcInstId=53D9C85505642A5A",
           "172.16.11.61:8000/Forms/HR/LYSQ/View.aspx?ProcInstId=A857878BFF81859D",
-          "172.16.11.61:8000/Forms/HR/LYSQ/View.aspx?ProcInstId=2E4BFE4100251B6B"
+          "172.16.11.61:8000/Forms/HR/LYSQ/View.aspx?ProcInstId=2E4BFE4100251B6B",
+          "172.16.11.61:8000/Forms/HR/LYSQ/View.aspx?ProcInstId=39AEA705F1AE292C"
         ]
       }
     },
@@ -1701,6 +1749,103 @@
             "tableComments",
             "tableHeader",
             "tb_List"
+          ],
+          [
+            "AppUsersDiv",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "aspnetForm",
+            "btnAddLink",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_P",
+            "ctl_contentForm_rptFamily_ctl_hidId",
+            "ctl_contentForm_txt_ADLoginName",
+            "ctl_contentForm_txt_Birthday",
+            "ctl_contentForm_txt_Certificate",
+            "ctl_contentForm_txt_CertificateName",
+            "ctl_contentForm_txt_CertificateStartTime",
+            "ctl_contentForm_txt_CompanyMail",
+            "ctl_contentForm_txt_CompanyName",
+            "ctl_contentForm_txt_CurrentAddress",
+            "ctl_contentForm_txt_DeptName",
+            "ctl_contentForm_txt_EducationEndTime",
+            "ctl_contentForm_txt_EducationStartTime",
+            "ctl_contentForm_txt_EducationType",
+            "ctl_contentForm_txt_Email",
+            "ctl_contentForm_txt_EmployCharacter",
+            "ctl_contentForm_txt_EnteringDate",
+            "ctl_contentForm_txt_Height",
+            "ctl_contentForm_txt_HigherManager",
+            "ctl_contentForm_txt_HireType",
+            "ctl_contentForm_txt_HomeAddress",
+            "ctl_contentForm_txt_HomeTelephone",
+            "ctl_contentForm_txt_IDcard",
+            "ctl_contentForm_txt_InterviewOpinion",
+            "ctl_contentForm_txt_IsEntry",
+            "ctl_contentForm_txt_IsManagementTrainee",
+            "ctl_contentForm_txt_JobQualificationOrVoucherName",
+            "ctl_contentForm_txt_JobQualificationOrVoucherType",
+            "ctl_contentForm_txt_KosekiAddress",
+            "ctl_contentForm_txt_KosekiType",
+            "ctl_contentForm_txt_LanguageName",
+            "ctl_contentForm_txt_LanguageStartTime",
+            "ctl_contentForm_txt_Major",
+            "ctl_contentForm_txt_MaritalStatus",
+            "ctl_contentForm_txt_MobileTelephone",
+            "ctl_contentForm_txt_Name",
+            "ctl_contentForm_txt_Nation",
+            "ctl_contentForm_txt_NationalityOrProvince",
+            "ctl_contentForm_txt_NativePlace",
+            "ctl_contentForm_txt_OfficePhone",
+            "ctl_contentForm_txt_PerEnteringDate",
+            "ctl_contentForm_txt_PoliticaStatus",
+            "ctl_contentForm_txt_PostCode",
+            "ctl_contentForm_txt_PostName",
+            "ctl_contentForm_txt_PreviousEmployer",
+            "ctl_contentForm_txt_PreviousEmployerEndTime",
+            "ctl_contentForm_txt_PreviousEmployerStartTime",
+            "ctl_contentForm_txt_ProcessType",
+            "ctl_contentForm_txt_Proficiency",
+            "ctl_contentForm_txt_RecruitmentFolio",
+            "ctl_contentForm_txt_RecruitmentType",
+            "ctl_contentForm_txt_ReplaceMenName",
+            "ctl_contentForm_txt_SchoolOfGraduation",
+            "ctl_contentForm_txt_Sex",
+            "ctl_contentForm_txt_StudyType",
+            "ctl_contentForm_txt_Surname",
+            "ctl_contentForm_txt_WorkPlaceCity",
+            "ctl_contentForm_txt_WorkPlaceProvince",
+            "person_infor",
+            "person_infor_trigger",
+            "tableComments",
+            "tableHeader",
+            "tb_List"
           ]
         ]
       }
@@ -2019,6 +2164,55 @@
             "TR/TD/A",
             "TR/TD/DIV",
             "TR/TD/I",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/LABEL/BR",
+            "TD/LABEL/SPAN",
+            "THEAD/TR/TH",
+            "TR/TD/DIV",
             "TR/TD/INPUT-hidden",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",

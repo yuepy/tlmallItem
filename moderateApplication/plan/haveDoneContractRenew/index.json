@@ -456,6 +456,38 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control812_QrD0wD": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control812_QrD0wD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -469,7 +501,8 @@
         "control385_NrScBJ",
         "control386_mrr3UW",
         "control387_9T11DI",
-        "control472_T3IB3M"
+        "control472_T3IB3M",
+        "control812_QrD0wD"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -596,6 +629,21 @@
           }
         },
         {
+          "id": "uiControl812_cETPoB",
+          "controlId": "control812_QrD0wD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl812_cETPoB",
+                "onGetTemplate": "getTemplate_uiControl812_cETPoB"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl472_gm1G3o",
           "controlId": "control472_T3IB3M",
           "display": {
@@ -640,7 +688,8 @@
       "contexts": {
         "context45_VXAmlL": [
           "172.16.11.61:8000/Forms/HR/YGHTXQ/View.aspx?ProcInstId=42669FE38A51B844",
-          "172.16.11.61:8000/Forms/HR/YGHTXQ/View.aspx?ProcInstId=3155A2ECFF7936D8"
+          "172.16.11.61:8000/Forms/HR/YGHTXQ/View.aspx?ProcInstId=3155A2ECFF7936D8",
+          "172.16.11.61:8000/Forms/HR/YGHTXQ/View.aspx?ProcInstId=30BF2186B8491A94"
         ]
       }
     },
@@ -840,6 +889,79 @@
             "tableComments",
             "tableHeader",
             "tb_List"
+          ],
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "aspnetForm",
+            "btnAddLink",
+            "btnFileUpload",
+            "ctl_Attachment_fileUpload",
+            "ctl_Attachment_hfActivityName",
+            "ctl_Attachment_hfGuid",
+            "ctl_Attachment_hfIsStart",
+            "ctl_Attachment_hfUserLoginName",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_P",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantName",
+            "ctl_contentForm_txt_CompanyName",
+            "ctl_contentForm_txt_ContractEndDate",
+            "ctl_contentForm_txt_ContractNo",
+            "ctl_contentForm_txt_ContractStartDate",
+            "ctl_contentForm_txt_ContractSubject",
+            "ctl_contentForm_txt_DeptName",
+            "ctl_contentForm_txt_DottedLineManager",
+            "ctl_contentForm_txt_Gender",
+            "ctl_contentForm_txt_HigherManager",
+            "ctl_contentForm_txt_Jobs",
+            "ctl_contentForm_txt_JoinCompanyDate",
+            "ctl_contentForm_txt_JoinDate",
+            "ctl_contentForm_txt_PostProperty",
+            "ctl_contentForm_txt_Remark",
+            "ctl_contentForm_txt_RenewAge",
+            "ctl_contentForm_txt_RenewEndDate",
+            "ctl_contentForm_txt_RenewStartDate",
+            "ctl_contentForm_txt_RenewTime",
+            "ctl_contentForm_txt_RenewType",
+            "ctl_contentForm_txt_ServiceAge",
+            "ctl_contentForm_txt_Subordinates",
+            "ctl_contentForm_txt_Workplace",
+            "filePanel",
+            "person_infor",
+            "person_infor_trigger",
+            "tableAttachment",
+            "tableComments",
+            "tableHeader",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv"
           ]
         ]
       }
@@ -965,6 +1087,62 @@
             "aui_outer",
             "aui_s",
             "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
             "aui_sw",
             "aui_title",
             "aui_titleBar",

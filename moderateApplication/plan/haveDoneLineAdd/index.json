@@ -277,8 +277,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "selector",
+              "value": "#tableComments"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -367,6 +372,42 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control818_L2RT6F": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"tableAttachment\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "BODY.formPage DIV.big-form.page-shadow TABLE.layout-data"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control818_L2RT6F"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -379,7 +420,8 @@
         "control427_saVc9Q",
         "control428_ztsWWc",
         "control429_Eo27Kb",
-        "control430_tyAMT0"
+        "control430_tyAMT0",
+        "control818_L2RT6F"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -495,6 +537,21 @@
           }
         },
         {
+          "id": "uiControl818_AEXSQ2",
+          "controlId": "control818_L2RT6F",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl818_AEXSQ2",
+                "onGetTemplate": "getTemplate_uiControl818_AEXSQ2"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl429_xl3Tzs",
           "controlId": "control429_Eo27Kb",
           "display": {
@@ -539,7 +596,8 @@
       "contexts": {
         "context50_1eSGt0": [
           "172.16.11.61:9992/Forms/KZ/LXXZ/View.aspx?ProcInstId=37A2E7EC9D65D5AF",
-          "172.16.11.61:9992/Forms/KZ/LXXZ/View.aspx?ProcInstId=8DAFF52E027E8CC0"
+          "172.16.11.61:9992/Forms/KZ/LXXZ/View.aspx?ProcInstId=8DAFF52E027E8CC0",
+          "172.16.11.61:9992/Forms/KZ/LXXZ/View.aspx?ProcInstId=A87F93A7874F98EC"
         ]
       }
     },
