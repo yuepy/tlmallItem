@@ -34,7 +34,7 @@
       "title": "checkMyInfo",
       "url": "adapter://putianIHR/plan/checkMyInfo/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_PAG_010_CP\\.GBL\\?.*"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_PAG_010_CP\\.GBL\\?.*"
       ],
       "demo": []
     },
@@ -42,7 +42,7 @@
       "title": "businessTravel",
       "url": "adapter://putianIHR/plan/businessTravel/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_047_CP\\.GBL\\?.*"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_047_CP\\.GBL\\?.*"
       ],
       "demo": []
     },
@@ -50,7 +50,7 @@
       "title": "forgetCard",
       "url": "adapter://putianIHR/plan/forgetCard/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_002\\.GBL\\?.*"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_002\\.GBL\\?.*"
       ],
       "demo": []
     },
@@ -58,7 +58,7 @@
       "title": "holidayAppli",
       "url": "adapter://putianIHR/plan/holidayAppli/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL\\?.*"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL\\?.*"
       ],
       "demo": []
     },
@@ -66,7 +66,7 @@
       "title": "addWork",
       "url": "adapter://putianIHR/plan/addWork/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps_\\d*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_004\\.GBL\\?.*"
+        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_004\\.GBL\\?.*"
       ],
       "demo": []
     },
@@ -93,5 +93,5 @@
   "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "scope": "putianIHR",
   "start_url": "enterplorer://putianIHR/local/index.html",
-  "update_time": 1532516962372
+  "update_time": 1532686500285
 }
