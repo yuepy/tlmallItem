@@ -38,10 +38,11 @@
             if (tblpstabs && tblpstabs.querySelectorAll("a")[1].textContent !== "调休假余额查询" && tblpstabs.querySelectorAll("a")[1].textContent !== "考勤类型") {
                 tblpstabs.querySelectorAll("a")[1].click();
             }
-            //直接填写账号、用户
-            if (aWin.location.href.indexOf("cmd=login") !== -1) {
-                doc.defaultView.frameElement.previousElementSibling.click();
-            };
+          	// //用户名、密码记录
+          	// if(aWin.location.href.match(/http:\/\/192\.168\.220\.110\/psp\/ps\/EMPLOYEE\/HRMS\/\?.*/g)){
+          	// debugger;
+          	// sessionStorage.setItem("userid",doc.querySelector("#userid").value)//doc.querySelector("#userid").value
+          	// }
             //返回
             if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
                 ysp.customHelper.tab = "menu"
