@@ -45,49 +45,12 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
-    },
-    "control1_CzvsNt": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": "descendant::DIV[@id=\"pswrapper\"]/DIV[5]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.index DIV.login-box"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[5]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control1_CzvsNt"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "custom"
     }
   },
   "contexts": {
     "context13_CStx6r": {
       "controls": [
-        "control0_wW4HsH",
-        "control1_CzvsNt"
+        "control0_wW4HsH"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -133,21 +96,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl0_cOnUE8",
                 "onGetTemplate": "getTemplate_uiControl0_cOnUE8"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl1_gcoJCc",
-          "controlId": "control1_CzvsNt",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl1_gcoJCc",
-                "onGetTemplate": "getTemplate_uiControl1_gcoJCc"
               }
             }
           }
