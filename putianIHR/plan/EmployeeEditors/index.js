@@ -154,15 +154,12 @@
         return;
       }var data = [];var trs = $(elem).children('tbody').children('tr');var trsLen = trs.length;[].forEach.call(trs, function (d, i) {
         if (i > 0) {
-          var obj = { wjlxSel: [], wjlxVal: [] };if (d.querySelector("select") || d.querySelectorAll("input[type='text']")[0]) {
+          var obj = { wjlxSel: [], wjlxVal: [] };if (d.querySelector('select')) {
             obj.selName = d.querySelector('select').getAttribute('name');obj.selClass = d.querySelector('select').getAttribute('class');obj.selTxt = d.querySelector('select').querySelector("option[selected='selected']").textContent;obj.iptVal1 = d.querySelectorAll("input[type='text']")[0].value;obj.iptVal2 = d.querySelectorAll("input[type='text']")[1].value;obj.iptVal3 = d.querySelectorAll("input[type='text']")[2].value;obj.iptName1 = d.querySelectorAll("input[type='text']")[0].getAttribute('name');obj.iptName2 = d.querySelectorAll("input[type='text']")[1].getAttribute('name');obj.iptName3 = d.querySelectorAll("input[type='text']")[2].getAttribute('name');obj.aName = d.querySelector("a").getAttribute('name');obj.address = d.querySelector('span.PSEDITBOX_DISPONLY').textContent;var opt4 = d.querySelector('select').querySelectorAll('option');[].forEach.call(opt4, function (m, n) {
               obj.wjlxSel.push(m.textContent);obj.wjlxVal.push(m.value);
             });
           } else {
-            var tds = d.querySelectorAll("td");[].forEach.call(tds, function (m, n) {
-              // obj.selTxt = m.querySelector("span").innerHTML;
-              obj.selTxt = n;
-            });
+            obj.selTxt = d.querySelectorAll("td")[1].textContent.trim();obj.iptVal1 = d.querySelectorAll("td")[2].textContent.trim();obj.address = d.querySelectorAll("td")[3].textContent.trim();obj.iptVal2 = d.querySelectorAll("td")[4].textContent.trim();obj.iptVal3 = d.querySelectorAll("td")[5].textContent.trim();obj.iptName1 = "";obj.iptName2 = "";obj.iptName3 = "";obj.aName = "";
           }data.push(obj);
         }
       });return data;
