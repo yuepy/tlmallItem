@@ -2461,6 +2461,7 @@
 	            map.addOverlay(mk);
 	            map.panTo(point);
 	            showPosition(point, true); //百度地图WebAPI 坐标转地址
+           		 map.enableScrollWheelZoom(true);
 	        } else {
 	            initMap();
 	        }
@@ -2560,6 +2561,7 @@
 	    map.addOverlay(mk);
 	    map.panTo(point);
 	    showPosition(point);
+    map.enableScrollWheelZoom(true);
 	    // $.ajax({
 	    //         url: `${Constant.SERVER_ROOT}/pttlCrm/visit/customerVisitPlan/getLocation`,
 	    //         dataType: 'json',
@@ -2751,6 +2753,7 @@
 	            map.addOverlay(mk);
 	            map.panTo(point);
 	            showPosition(point, true); //百度地图WebAPI 坐标转地址
+           		 map.enableScrollWheelZoom(true);
 	        } else {
 	            initMap();
 	        }
@@ -2840,7 +2843,7 @@
 	    map.addOverlay(mk);
 	    map.panTo(point);
 	    showPosition(point);
-
+map.enableScrollWheelZoom(true);
 	    // $.ajax({
 	    //         url: `${Constant.SERVER_ROOT}/pttlCrm/visit/customerVisitPlan/getLocation`,
 	    //         dataType: 'json',

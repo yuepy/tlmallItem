@@ -5,8 +5,12 @@
     getData_control49_hLhTy9: function (elem) {},
     doAction_uiControl53_uQ6Chf: function (data, elem) {
       if (data.eventType == 'back') {
-        ysp.customHelper.back(); // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
+        //ysp.customHelper.back();
+        // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
         // ysp.appMain.reloadPage(url);
+        //ysp.appMain.back();
+        //更换返回方法 BackReload()回到工作台
+        ysp.customHelper.BackReload();
       }
     },
     getTemplate_uiControl53_uQ6Chf: function getTemplate_uiControl53_uQ6Chf() {
@@ -78,8 +82,7 @@
           var src = [],
               title = [],
               content = [];var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];if (scrTitleSplit) {
-            var urlSrc = decodeURI(scrTitleSplit);
-            var scrC = "http://192.168.220.82:8080/pttlCrm" + urlSrc;
+            var urlSrc = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + urlSrc;
           } else {
             var scrC = scrTitle;
           }src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
@@ -119,8 +122,7 @@
       } //搜索人员列表
       if (elem.ownerDocument.querySelector("#search-lists")) {
         if (elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0]) {
-          data.searchList = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");
-          var labelFor = "id" + searchListVal;if (elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
+          data.searchList = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.ownerDocument.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
             var labelEl = elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor).parentNode.parentNode;data.personIndex = $(elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId)).find(".lists-one").index(labelEl);
           }
         }
@@ -154,7 +156,8 @@
       }function save(data) {
         var HuaWeiFD = data.HuaWeiFD;var HuaweiExperienceStore = data.HuaweiExperienceStore;var HuaweiFuse = data.HuaweiFuse;var HuaweiProvincePackage = data.HuaweiProvincePackage;var SamSung = data.SamSung;var Distribution = data.Distribution;var OtherInfor = data.OtherInfor;elem.ownerDocument.querySelector('.footer').querySelector('#customerReportPopBtnSuccess').click();if (HuaWeiFD != "" || HuaweiExperienceStore != "" || SamSung != "" || Distribution != "" || HuaweiFuse != "" || HuaweiProvincePackage != "" || OtherInfor != "") {
           //ysp.customHelper.back();
-          var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url); //更换返回方法 BackReload()回到工作台
+          ysp.customHelper.BackReload();
         } //   function callback() {
         //     var targetWin = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');
         //     if (targetWin) {
@@ -178,7 +181,6 @@
         //     if (targetWin) {
         //       targetWin.location.reload();
         //     }
-
         //   }
         //   ysp.customHelper.refreshWinAfterWinName('sencondLevelIframeContainer', callback);
         var cwin = elem.ownerDocument.defaultView;function execute() {
@@ -186,7 +188,9 @@
             //ysp.appMain.back(); 
             cwin && cwin.close();flag = true;cwin.writeReportStatus = undefined;var targetWin = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');if (targetWin) {
               //targetWin.location.reload();
-              var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+              var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
+              //更换返回方法 BackReload()回到工作台
+              ysp.customHelper.BackReload();
             }
           }if (!cwin.writeReportStatus || !elem) {
             flag = true;
@@ -213,7 +217,8 @@
       }function personnel(data) {
         var index = data.Index;var parentIndex = data.parentIndex;var parent = elem.ownerDocument.querySelectorAll('.box')[parentIndex];var btn = parent.querySelectorAll(".iCheck-helper")[index];btn.click();
       }function serch(data) {
-        var ele = elem.ownerDocument;ele.querySelector('#contactSearch').value = data.dataCustom;ele.querySelector('#icon-search').click();var list = ele.querySelector('#search-lists');var as = list.firstElementChild;if (as == null) {
+        var ele = elem.ownerDocument;ele.querySelector('#contactSearch').value = data.dataCustom;ele.querySelector('#icon-search').click();
+        var list = ele.querySelector('#search-lists');var as = list.firstElementChild;if (as == null) {
           setTimeout(function () {
             ele.querySelector('#contactSearch').value = data.dataCustom;ele.querySelector('#icon-search').click();var lists = ele.querySelector('#search-lists');var list = lists.firstElementChild;list.click();
           }, 100);

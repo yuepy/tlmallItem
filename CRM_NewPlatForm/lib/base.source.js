@@ -173,7 +173,7 @@
         ysp.customHelper.secondMenu.toPlanByMenuName('客户信息录入', null, menuId);
         break;
       case "clientStoreCard":
-        ysp.customHelper.secondMenu.toPlanByMenuName('客户信息', null, menuId);
+        ysp.customHelper.secondMenu.toPlanByMenuName('客户信息', null, menuId);
         break;
     }
   }
@@ -351,38 +351,61 @@
     console.log('webview send msg type is: ' + type);
     if (!task.name) {
       switch (type) {
+        case 'clientList': //客户360视图 导航进入
+          clientEntry = 'clientList';
+          task.title = "CUST360";
+          break;
+        case 'clientListCard': //客户360视图 一级菜单中进入
+          clientEntry = 'clientListCard';
+          type = 'clientList';
+          task.title = "CUST360";
+          break;
         case 'customerWorkspace': //工作台
-          task.title = "GZT_YD";
+          task.title = "VISIT_WORKSPACE";
           break;
         case 'saleTask': //达成情况
           task.title = "RESULT_INFO";
           break;
-        case 'newInformationTotle': //信息录入
-          task.title = "XXLR";
+          // case 'newInformationTotle':// case 'informationFill': //信息录入
+          //    task.title = "DATA_ENTRY_MOBILE";
+          //    break;
+        // case 'customerInformationFIll': //信息录入(新)
+        //   task.title = "DATA_ENTRY";
+        //   break;
+        case 'newInformationTotle': //信息录入(新+1)
+          task.title = "ENTRY_DATA_TOTLE";
           break;
+          // case 'newInformationTotle': //信息录入(新+1)
+          // task.title = "ENTRY_DATA_TOTLE";
+          // break;
         case 'SalesReached': //数据看版
           task.title = "dataShowColection";
           break;
         case 'visitManager': //拜访管理
+          //task.title = "VISIT_MANAGE";
           task.title = "BFGLBB";
           break;
-        case 'achievementSecondMenu': //业绩
+        case 'visitIndex': //拜访总览
+          task.title = "VISIT_TOTAL";
+          //task.intercepter = "拜访管理";
+          break;
+        case 'achievementIndex':
+          task.title = "YJDCBB";
+          break;
+        case 'achievementSecondMenu':
           task.title = "YJDCBB";
           break;
         case 'clientStoreCard': // 客户和门店
           task.title = "cs_customerAndStore";
           break;
+        case 'storeList'://门店
+          task.title = "STORE360";
+          break;
         case 'atMyReport'://at我的报告 一级菜单
           task.title = "myReport"
           break;
         case 'reportAtMeSummed'://汇报给我的报告 一级菜单
-          task.title = "GZZJ_YD"
-          break;
-        case 'questionnaireWrite'://问卷填写 一级菜单
-          task.title = "WJTX_YD";
-          break;
-        case 'questionnaireFeedback'://问卷反馈 一级菜单
-          task.title = "WJFK_YD";
+          task.title = "GZZJYD"
           break;
         default:
           msgType = "no"

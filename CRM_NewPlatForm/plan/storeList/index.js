@@ -36,7 +36,9 @@
       }
     },
     doAction_uiControl213_CltRKD: function (data, elem) {
-      data.eventType == 'back' ? ysp.appMain.back() : '回不去了';
+      if (data.eventType == 'back') {
+        data.eventType == 'back' ? ysp.appMain.back() : '回不去了';
+      }
     },
     getTemplate_uiControl213_CltRKD: function () {
       var selfTemplate = "import {Component} from 'react'; \nimport {CustomHeader} from 'ysp-custom-components';\nexport default class extends Component{\n   \n   render = () => {\n       let _this = this;\n       let flag = this.props.customData;\n       return (\n         <CustomHeader \n           data={{centerText:\"\u95E8\u5E97\u4FE1\u606F\",rightText:\"\u7B5B\u9009\"}} \n           backIsShow={true} \n           back={()=>{ \n              let handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  eventType: 'back'\n                });\n              }\n           }} \n           filterIsShow={false} \n           filter={()=>{console.info(\"header filter ...\")}}/>\n       );\n   }\n}";

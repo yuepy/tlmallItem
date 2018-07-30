@@ -2,20 +2,20 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control106_x0Qq2q: function (elem) {
+    getData_control106_x0Qq2q: function getData_control106_x0Qq2q(elem) {
       if (!elem) {
         return [];
       }if (elem && elem.querySelectorAll(".collectionPSIentertop-text")) {
         return elem.querySelectorAll(".collectionPSIentertop-text")[1].textContent;
       }
     },
-    doAction_uiControl102_R9FT7H: function (data, elem) {
+    doAction_uiControl102_R9FT7H: function doAction_uiControl102_R9FT7H(data, elem) {
       if (data.eventType == "back") {
         // ysp.customHelper.backHome();
-        ysp.appMain.back(); //ysp.customHelper.back();
-
+        // ysp.appMain.back();
+        //ysp.customHelper.back();
         //elem.querySelector("a").click();
-        //history.go(-1);
+        history.go(-1);
       }
     },
     getTemplate_uiControl102_R9FT7H: function getTemplate_uiControl102_R9FT7H() {

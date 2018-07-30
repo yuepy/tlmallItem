@@ -56,13 +56,14 @@
         }var customerName = elem.querySelector("#customerName_span").textContent;data.customerName = customerName;return data;
       }
     }, doAction_uiControl77_gc6Z0T: function (data, elem) {
-      switch (data.eventType) {case 'topback':
+      var Backurl = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";switch (data.eventType) {case 'topback':
           topback(data.dataCustom);break;case 'back':
-          elem.ownerDocument.querySelector('#information-dialog').click();break;case 'changeClick':
+          // elem.ownerDocument.querySelector('#information-dialog').click();
+          //更换返回方式,跳回至信息录入
+          ysp.customHelper.BackReload(Backurl);break;case 'changeClick':
           changeClick(data.dataCustom);break;case 'selectChange':
           selectChange(data.dataCustom);break;case 'liClick':
-          elem.querySelectorAll(".editContact")[data.dataCustom].click();break;
-        case 'addClick':
+          elem.querySelectorAll(".editContact")[data.dataCustom].click();break;case 'addClick':
           elem.querySelector(".addconect").click();break;case 'editChange':
           editChange(data.dataCustom);break;case 'editTextChange':
           editTextChange(data.dataCustom);break;case 'addEditChange':
@@ -71,7 +72,7 @@
           sure(data.dataCustom);break;case "delete":
           elem.querySelectorAll(".delete")[data.dataCustom].querySelector("a").click();break;case "alertClick":
           ysp.customHelper.tipMsg.confirm();break;}function topback(data) {
-        ysp.appMain.back(); // var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";
+        // var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";
         // ysp.appMain.reloadPage(url); //history.back();
         //ysp.customHelper.forceMatchModels('newInformationTotle1'); // elem.ownerDocument.querySelector(".head_title").querySelector("a").click();
         //history.go(-1);
@@ -85,11 +86,13 @@
         //   }, 100);
         //   ysp.customHelper.forceMatchModels('newInformationTotle1');
         // }
+        ysp.appMain.back();
       }function changeClick(data) {
         elem.querySelector(".content_top").querySelectorAll(".btn")[data].click();ysp.customHelper.forceMatchModels('clientManageInfoCollect');
       }function selectChange(data) {
         var ind = parseInt(data.ind);var i = parseInt(data.i);var t = setTimeout(a(), 50);function a() {
-          elem.querySelector(".total").querySelectorAll("select")[ind].querySelectorAll("option")[i].selected = true;$(elem).find("select").eq(ind).change();
+          elem.querySelector(".total").querySelectorAll("select")[ind].querySelectorAll("option")[i].selected = true;
+          $(elem).find("select").eq(ind).change();
         }
       }function editChange(data) {
         var ind = parseInt(data.ind);var i = parseInt(data.i);elem.querySelector(".dialog_detail").querySelectorAll("label")[ind].querySelector("select").querySelectorAll("option")[i].selected = true;

@@ -11,10 +11,13 @@
     "clientManageINfoCollect": "../clientManageInfoCollect/index.json",
     "customerInformationweekFill": "../customerInformationweekFill/index.json",
     "newInformationTotle": "../newInformationTotle/index.json",
-    "clientManageInfoCollect": "../clientManageInfoCollect/index.json"
+    "clientManageInfoCollect": "../clientManageInfoCollect/index.json",
+    "HESInformationFill": "../HESInformationFill/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "客户信息录入",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control175_N2PNWg": {
       "location": {
@@ -35,31 +38,6 @@
       },
       "events": {
         "onGetData": "getData_control175_N2PNWg"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control176_SZ1KRK": {
-      "location": {
-        "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control176_SZ1KRK"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -209,6 +187,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -220,16 +202,55 @@
       "roles": "element",
       "text": "\n    \n        \n            \n                \n                信息录入\n                \n                其他信息采集\n                \n            \n        \n        \n            江苏五星电器有限公司\n        \n        \n            客户经营信息采集\n            客户基本信息采集\n        \n        \n     \n        \n            企业信息\n            \n                \n                    \n                        渠道类型\n                        渠道类型特征\n                        支付偏好\n                    \n                    \n                        \n                            \n                                \n                                \n                            \n                            \n                            \n                        \n                    \n                \n            \n        \n        \n            \n                联系人\n                \n                    \n                    添加联系人\n                    \n        \n                \n        \n    \n            \n            \n                \n                \n                    联系人\n                    性别\n                    生日\n                    职位\n                    用户类型\n                    移动电话\n                    办公电话\n                    办公传真\n                    电子邮件\n                    注释\n                    \n                    \n                \n                \n                     \n                        \n                            沈胜男\n                            \n                            \n                            采购\n                            商务人员\n                            13851766799\n                            \n                            \n                            shengnan.shen@five-star.cn\n                            \n                            编辑\n                            删除\n                        \n                          \n                \n            \n            \n            \n                保存\n            \n        \n        \n    \n    \n\n\n\n\n\n\n",
       "frameXPath": ""
+    },
+    "control115_mAl5BO": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"messagePSI\"]/DIV[2]",
+              "descendant::DIV[@id=\"messagePSI\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.collectionPSIentercontent"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control115_mAl5BO"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context51_PhTFP3": {
       "controls": [
         "control175_N2PNWg",
-        "control176_SZ1KRK",
         "control179_zxz2Sq",
         "control180_iteyGr",
-        "control181_T9ux95"
+        "control181_T9ux95",
+        "control115_mAl5BO"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -260,6 +281,10 @@
         {
           "toContextId": "context50_VkOplu",
           "toModelId": "newInformationTotle"
+        },
+        {
+          "toContextId": "context0_pD8h1P",
+          "toModelId": "index"
         }
       ]
     },
@@ -303,13 +328,17 @@
         }
       ]
     },
-    "flow70_5vt903": {
+    "flow7_OPBfev": {
       "fromContextId": "context51_PhTFP3",
       "fromAction": "doAction",
-      "fromControlId": "control176_SZ1KRK",
+      "fromControlId": "control115_mAl5BO",
       "toContexts": [
         {
           "toContextId": "context51_PhTFP3"
+        },
+        {
+          "toContextId": "context52_Wg5qcG",
+          "toModelId": "HESInformationFill"
         }
       ]
     }
@@ -334,16 +363,16 @@
           }
         },
         {
-          "id": "uiControl173_uCWh6y",
-          "controlId": "control176_SZ1KRK",
+          "id": "uiControl1_k6Pm8Q",
+          "controlId": "control115_mAl5BO",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl173_uCWh6y",
-                "onGetTemplate": "getTemplate_uiControl173_uCWh6y"
+                "onDoAction": "doAction_uiControl1_k6Pm8Q",
+                "onGetTemplate": "getTemplate_uiControl1_k6Pm8Q"
               }
             }
           }
@@ -400,14 +429,16 @@
     "page/title": {
       "contexts": {
         "context51_PhTFP3": [
-          "客户PSI采集"
+          "客户PSI采集",
+          "公用三级菜单"
         ]
       }
     },
     "page/urls": {
       "contexts": {
         "context51_PhTFP3": [
-          "192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"
+          "192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html",
+          "192.168.220.82:8080/pttlCrm/res/page/home/commonMenu.html"
         ],
         "context22_Epm35T": [
           "192.168.220.82:8080/pttlCrm/res/customerInfoEntry.html?rowId=1-100DGK",
@@ -459,6 +490,10 @@
             "search",
             "tbodyContent",
             "week_th"
+          ],
+          [
+            "menu",
+            "menuName"
           ]
         ],
         "context56_VUl6Pd": [
@@ -742,6 +777,19 @@
             "skip_count",
             "skip_right_goto",
             "table"
+          ],
+          [
+            "clearfix",
+            "icon",
+            "icon-title",
+            "leftPart",
+            "mask",
+            "menu-item",
+            "menu-item-icon",
+            "menu-item-list",
+            "null",
+            "visit-manager",
+            "visit-manager-title_tool"
           ]
         ],
         "context56_VUl6Pd": [
@@ -829,6 +877,18 @@
             "UL/LI/A",
             "UL/LI/INPUT-number",
             "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/UL",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/I",
+            "DIV/UL/LI",
+            "LI/A/SPAN",
+            "UL/LI/A"
           ]
         ]
       }

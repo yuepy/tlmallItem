@@ -13,11 +13,14 @@
       } else if (data.eventType == 'back') {
         //ysp.customHelper.back();
         var pageId = window.beforePageId;if (parent.EAPI.isAndroid() && pageId == "context51_PhTFP3") {
-          history.back();
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
+          ysp.customHelper.BackReload(url); //history.back();
         } else if (parent.EAPI.isIOS() && pageId == "context51_PhTFP3") {
-          var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.appMain.reloadPage(url);
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
+          ysp.customHelper.BackReload(url);
         } else if (parent.EAPI.isIOS() && pageId == "context2_15cCKI") {
-          var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //更换返回方式,跳回至工作台
+          ysp.customHelper.BackReload();
         } else {
           history.back();
         }

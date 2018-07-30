@@ -5,7 +5,7 @@
     getData_control3_t1ElOC: function (elem) {},
     doAction_uiControl5_hecK9N: function (data, elem) {
       if (data.eventType === 'back') {
-        ysp.appMain.back();
+        elem.ownerDocument.defaultView.close();
       }
     },
     getTemplate_uiControl5_hecK9N: function getTemplate_uiControl5_hecK9N() {

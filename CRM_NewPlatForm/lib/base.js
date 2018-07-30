@@ -1,9 +1,4 @@
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 //订阅模式
-;
 (function (exports) {
   function PSubscribe() {
     this.topicList = [];
@@ -60,7 +55,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     }
   };
   exports.pt_oberseve = new PSubscribe();
-})(window);;
+})(window);
 (function (win, ysp) {
   var utils = ysp.utils;
   ysp.customHelper = {};
@@ -132,7 +127,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           var AllMenu = JSON.parse(xhr.response);
           //当前方法为接口只存在移动端菜单时可以直接想ALLMENU里面添加菜单信息
           ALLMENU = AllMenu;
-          console.log(ALLMENU)
+          //console.log(ALLMENU)
           //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
           //AllMobileMenu(AllMenu);
         }
@@ -776,7 +771,27 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       refreshWin();
     }
   }
+  //页面地址返回刷新问题与返回工作台问题.有参数可以刷新至固定地址,无参数默认回到工作台
+  function _BackReload(url,model){
+    if(url && typeof url !== 'string'){
+      console.info(url+'!字符串,可不行');
+    }
+    if(model && typeof model !== 'string'){
+      console.info(model+'模板名称也得是字符串!');
+    }
+    var currentWin = ysp.runtime.Browser.activeBrowser.contentWindow;
+    if(url && !model){
+      currentWin.location.href = url
+    }else if(!url && !model){
+      currentWin.location.href = 'http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html';
+    }
+    if(url && model){
+      currentWin.location.href = url;
+      ysp.runtime.Model.setForceMatchModels([model]);
+    }
+  }
   utils.extend(ysp.customHelper, {
+    BackReload:_BackReload,
     getTargetMenus: _getTargetMenus,
     getTableData: _getTableData,
     trim: _trim,

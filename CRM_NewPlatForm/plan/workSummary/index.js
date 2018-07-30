@@ -13,8 +13,11 @@
     }, doAction_uiControl49_Q2Z6nE: function (data, elem) {
       if ('back' == data.eventType) {
         //history.go(-1);
-        var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
-        ysp.appMain.reloadPage(url);
+        // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
+        // ysp.appMain.reloadPage(url); 
+        //ysp.appMain.back();
+        //更换返回方法 BackReload()回到工作台
+        ysp.customHelper.BackReload();
       }if ("click" == data.eventType) {
         var index = data.dataCustom;elem.querySelector("#businessDepartment").querySelectorAll("li")[index].querySelector("input").click();
       }if ("chose" == data.eventType) {
@@ -205,7 +208,6 @@
       //   val1: []
       // };
       // var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');
-
       // for (var i = 0; i < users.length; i++) {
       //   data.user.users.push(users[i].querySelector('span').textContent);
       //   data.user.val.push(users[i].querySelector('span').getAttribute('val'));
@@ -239,6 +241,7 @@
       //       data.personIndex = $(elem.ownerDocument.querySelector("#contentBody").querySelector("#" + data.boxId)).find(".lists-one").index(labelEl);
       //     }
       //   }
+
       // }
       // return data;
     },
@@ -283,14 +286,18 @@
       if ("save" == data.eventType) {
         //history.go(-1);
         elem.querySelector("#draft") && elem.querySelector("#draft").click();ysp.appMain.showLoading();setTimeout(function () {
-          ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+          ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
+          //更换返回方法 BackReload()回到工作台
+          ysp.customHelper.BackReload();
         }, 500);
       } //提交报告
       if ("commitReport" == data.eventType) {
         var user = data.dataCustom;if (user.length > 0) {
           //history.go(-1);
           ysp.appMain.showLoading();setTimeout(function () {
-            ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+            ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
+            //更换返回方法 BackReload()回到工作台
+            ysp.customHelper.BackReload();
           }, 500);
         }elem.querySelector("#save") && elem.querySelector("#save").click();
       } //点击at报告

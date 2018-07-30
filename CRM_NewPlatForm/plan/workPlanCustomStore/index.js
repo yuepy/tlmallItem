@@ -96,14 +96,16 @@
     }, doAction_uiControl44_fBiQg5: function (data, elem) {
       //返回按钮方法，返回工作台页面
       if ('back' == data.eventType) {
-        var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+        // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
+        // ysp.appMain.reloadPage(url);
+        // ysp.appMain.back();
+        ysp.customHelper.BackReload();
       }var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = '';var queryBtn;var queryInput;var customerOrStoreEl = doc.getElementById('customerOrStorePopList'); //工作计划
       var tempCustomerOrStoreEl = doc.getElementById('tempCustomerOrStorePopList'); //临时签到计划
       if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
         elem = customerOrStoreEl;isShow = "work";queryBtn = doc.getElementById('newPlanListSearch');queryInput = doc.getElementById('newPlanListSearchText');
       }if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
-        elem = tempCustomerOrStoreEl;
-        isShow = "temp";queryBtn = doc.getElementById('newTempVisitSearch');queryInput = doc.getElementById('newTempVisitSearchText');
+        elem = tempCustomerOrStoreEl;isShow = "temp";queryBtn = doc.getElementById('newTempVisitSearch');queryInput = doc.getElementById('newTempVisitSearchText');
       } //工作计划
       var customer = elem.querySelector(".menu");var customerLis = customer.querySelectorAll("li"); //临时工作计划
       var temp = elem.querySelector(".menu");var tempLis = temp.querySelectorAll("li"); //点击客户列表按钮
@@ -131,8 +133,7 @@
         }
       } //点击确认按钮方法
       if ('ascertain' == data.eventType) {
-        var textArea = data.dataCustom.textArea;var tempAreaText = data.dataCustom.tempAreaText;var selectedCount = data.dataCustom.selectedCount;var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn') || elem.querySelector('#addDayPlanOkBtn');var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn');
-        var addDayPlanOkBtn = elem.querySelector('#addDayPlanOkBtn'); //if (addTempDayPlanOkBtn) {} //addTempDayPlanOkBtn.click();
+        var textArea = data.dataCustom.textArea;var tempAreaText = data.dataCustom.tempAreaText;var selectedCount = data.dataCustom.selectedCount;var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn') || elem.querySelector('#addDayPlanOkBtn');var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn');var addDayPlanOkBtn = elem.querySelector('#addDayPlanOkBtn'); //if (addTempDayPlanOkBtn) {} //addTempDayPlanOkBtn.click();
         //临时拜访
         var cwin = elem.ownerDocument.defaultView;if (addTempDayPlanOkBtn) {
           cwin.tempShow();
@@ -141,15 +142,16 @@
         }if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
           var tempTextAreaValue = tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer") && tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer").value;if (tempTextAreaValue != "" || selectedCount != "") {
             ysp.appMain.showLoading();setTimeout(function () {
-              ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+              ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
+              //更换方法 返回刷新
+              ysp.customHelper.BackReload();
             }, 2000);
           }
         } //计划拜访
         if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
           var textAreaValue = customerOrStoreEl.querySelector("#dayPlanContent") && customerOrStoreEl.querySelector("#dayPlanContent").value;if (textAreaValue != "") {
             ysp.appMain.showLoading();setTimeout(function () {
-              ysp.appMain.hideLoading();
-              var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+              ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.BackReload();
             }, 2000);
           }
         } //   var flag = false;
@@ -173,7 +175,6 @@
           }
         }); // elem.querySelector('.u-search').querySelector("input").value = data.dataCustom;
       }switch (data.eventType) {case 'prev':
-          //上一页
           prevtitle(data.dataCustom);break;case 'next':
           prevtitle(data.dataCustom);break;case 'GO':
           clickGO(data.dataCustom);break;}function clickGO(data) {
@@ -219,5 +220,5 @@
       var selfTemplate = 'import {\n  Component\n} from \'react\';\nimport {\n\tAlert\n} from \'ysp-custom-components\';\nexport default class extends Component {\n  render(){\n    var dataMessage = (this.props.customData && this.props.customData.postMessage) || "";\n    var dataCancel = (this.props.customData && this.props.customData.cancel) || "";\n     return(\n    \t<div>\n        {dataMessage =="" ? "" : \n          <Alert\n            content={dataMessage}\n            cancelText={dataCancel}\n            dismiss={\n              (e)=>{\n                var handler=this.props.customHandler;\n                if(handler){\n                  handler({\n                    eventType:"confirmClick"\n                  })\n                }\n              }\n            }\n            cancel={\n             (e)=>{\n                var handler=this.props.customHandler;\n                if(handler){\n                  handler({\n                    eventType:"cancelClick"\n                  })\n                }\n              }\n           }\n          />\n        }\n      </div>\n    )\n  }\n}\n';
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: \'render\',\n    value: function render() {\n      var _this2 = this;\n\n      var dataMessage = this.props.customData && this.props.customData.postMessage || "";\n      var dataCancel = this.props.customData && this.props.customData.cancel || "";\n      return React.createElement(\n        \'div\',\n        null,\n        dataMessage == "" ? "" : React.createElement(_yspCustomComponents.Alert, {\n          content: dataMessage,\n          cancelText: dataCancel,\n          dismiss: function dismiss(e) {\n            var handler = _this2.props.customHandler;\n            if (handler) {\n              handler({\n                eventType: "confirmClick"\n              });\n            }\n          },\n          cancel: function cancel(e) {\n            var handler = _this2.props.customHandler;\n            if (handler) {\n              handler({\n                eventType: "cancelClick"\n              });\n            }\n          }\n        })\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     }
-  });
+  }, "workPlanCustomStore");
 })(window, ysp);

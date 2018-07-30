@@ -5,8 +5,10 @@
     getData_control8_lxNlWI: function (elem) {},
     doAction_uiControl7_7ZETAx: function (data, elem) {
       if (data.eventType == 'back') {
-        ysp.customHelper.back(); // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
+        //ysp.customHelper.back(); // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
         // ysp.appMain.reloadPage(url);
+        //更换返回方法 BackReload()回到工作台
+        ysp.customHelper.BackReload();
       }
     },
     getTemplate_uiControl7_7ZETAx: function getTemplate_uiControl7_7ZETAx() {
@@ -44,10 +46,12 @@
             var flag = false;if (cwin.signOutStatus == "completed") {
               //ysp.appMain.back(); 
               cwin && cwin.close();flag = true;cwin.signOutStatus = undefined;setTimeout(function () {
-                var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url); //           var targetWin = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');
+                var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url); //           var targetWin = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');
                 //           if (targetWin) {
                 //             targetWin.location.reload();
                 //           }
+                //更换返回方法 BackReload()回到工作台
+                ysp.customHelper.BackReload();
               }, 1000);
             }if (!cwin.signOutStatus || !elem) {
               flag = true;

@@ -41,7 +41,6 @@ html,body{
 // }
 body {
 	-webkit-overflow-scrolling: initial !important;
-  color: #000;
 }
 
 //字体变量
@@ -3310,110 +3309,82 @@ __________________*/
 
 
 .ysp-atreport-dialog-body{
-  	background:#e9e9e9;
-  	overflow-x: hidden;
-  	overflow-y: auto;
-    .ysp-atreport-aimdate{
-      background-color:#fff;
-      padding: 0px 14px;
-      input{
-        margin-bottom: 0px !important;
-        padding: .5rem .5rem;
-        border-radius: 5px;
+  background:#e9e9e9;
+  overflow-x: hidden;
+  overflow-y: auto;
+  .ysp-atreport-aimdate{
+    background-color:#fff;
+    padding: 0px 14px;
+    input{
+      margin-bottom: 0px !important;
+      padding: .5rem .5rem;
+      border-radius: 5px;
+    }
+    >div:first-child{
+      border-bottom: 1px solid #e9e9e9;
+      padding: 10px 0px 10px 0px;
+      background: none !important;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      >span:first-child{
+        color:#999999;
       }
-      >div:first-child{
-        border-bottom: 1px solid #e9e9e9;
-        padding: 10px 0px 10px 0px;
-        background: none !important;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        >span:first-child{
-          color:#999999;
-        }
-        >span:last-child{
-          color:#4789e0;
-          margin-left: 8px;
-        }
+      >span:last-child{
+        color:#4789e0;
+        margin-left: 8px;
       }
-      >div:nth-child(2){
-        padding: 10px 0px 10px 0px;
-        border-bottom: 1px solid #e9e9e9;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        >span:first-child{
-          color:#999999;
-        }
-        >span:last-child{
-          color: #4789e0;
-          margin-left: 8px;
-        }
+    }
+    >div:nth-child(2){
+      padding: 10px 0px 10px 0px;
+      border-bottom: 1px solid #e9e9e9;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      >span:first-child{
+        color:#999999;
       }
-      >div:last-child{
-        padding: 10px 0px 10px 0px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        >span:first-child{
-          color:#999999;
-        }
-        >span:last-child{
-          //color: #4789e0;
-          margin-left: 8px;
-          select{
-            flex: 1;
-            margin: 0;
-            padding: 0;
-            border-radius: 5px;
-            background: #fff;
-            padding: 0px 160px 0px 10px;
-            font-size:12px;
-            display: block;
-            height: 36px;
-            background-size: 20px;
-            background-position: 185px;
-            background-repeat: no-repeat;
-            background-image: url(./images/down-arrow-icon.png);
-          }
+      >span:last-child{
+        color: #4789e0;
+        margin-left: 8px;
+      }
+    }
+    >div:last-child{
+      padding: 10px 0px 10px 0px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      >span:first-child{
+        color:#999999;
+      }
+      >span:last-child{
+        //color: #4789e0;
+        margin-left: 8px;
+        select{
+          flex: 1;
+          margin: 0;
+          padding: 0;
+          border-radius: 5px;
+          background: #fff;
+          padding: 0px 160px 0px 10px;
+          font-size:12px;
+          display: block;
+          height: 36px;
+          background-size: 20px;
+          background-position: 185px;
+          background-repeat: no-repeat;
+          background-image: url(./images/down-arrow-icon.png);
         }
       }
     }
-  
-  	.ysp-workReport-lable{
-      padding: 10px;
-      background: rgb(242,242,242);
-      position: relative;
-      overflow: hidden;
-      height: 60px;
-      overflow: hidden;
-      .ysp-workReport-uncheck{
-        float: left;
-        border-radius: 5px;
-        padding: 2px 5px;
-        border: 1px solid #4796ed;
-        margin: 5px;
-        color: #4796ed;
-        text-align: center;
-      }
-      .ysp-workReport-check{
-        float: left;
-        border-radius: 5px;
-        padding: 2px 5px;
-        border: 1px solid #4796ed;
-        margin: 5px;
-        text-align: center;
-        background: #4796ed;
-        color: #fff;
-      }
-    }
-  
-  .ysp-workReport-lable-gd{
-    padding: 10px 0px 10px 10px;
+  }
+
+  .ysp-workReport-lable{
+    padding: 10px;
     background: rgb(242,242,242);
     position: relative;
     overflow: hidden;
-    height: 55px;
+    height: 60px;
     overflow: hidden;
     .ysp-workReport-uncheck{
       float: left;
@@ -3434,115 +3405,143 @@ __________________*/
       background: #4796ed;
       color: #fff;
     }
-  }
-  .ysp-workReport-gd{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background: rgb(242,242,242);
-    padding-right: 10px;
-    padding-bottom: 5px;
   }
 
-  .ysp-workReport-lable-sq{
-    padding: 10px 0px 10px 10px;
-    background: rgb(242,242,242);
-    overflow: hidden;
-    .ysp-workReport-uncheck{
-      float: left;
-      border-radius: 5px;
-      padding: 2px 5px;
-      border: 1px solid #4796ed;
-      margin: 5px;
-      color: #4796ed;
-      text-align: center;
+.ysp-workReport-lable-gd{
+  padding: 10px 0px 10px 10px;
+  background: rgb(242,242,242);
+  position: relative;
+  overflow: hidden;
+  height: 55px;
+  overflow: hidden;
+  .ysp-workReport-uncheck{
+    float: left;
+    border-radius: 5px;
+    padding: 2px 5px;
+    border: 1px solid #4796ed;
+    margin: 5px;
+    color: #4796ed;
+    text-align: center;
+  }
+  .ysp-workReport-check{
+    float: left;
+    border-radius: 5px;
+    padding: 2px 5px;
+    border: 1px solid #4796ed;
+    margin: 5px;
+    text-align: center;
+    background: #4796ed;
+    color: #fff;
+  }
+}
+.ysp-workReport-gd{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgb(242,242,242);
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+
+.ysp-workReport-lable-sq{
+  padding: 10px 0px 10px 10px;
+  background: rgb(242,242,242);
+  overflow: hidden;
+  .ysp-workReport-uncheck{
+    float: left;
+    border-radius: 5px;
+    padding: 2px 5px;
+    border: 1px solid #4796ed;
+    margin: 5px;
+    color: #4796ed;
+    text-align: center;
+  }
+  .ysp-workReport-check{
+    float: left;
+    border-radius: 5px;
+    padding: 2px 5px;
+    border: 1px solid #4796ed;
+    margin: 5px;
+    text-align: center;
+    background: #4796ed;
+    color: #fff;
+  }
+}
+.ysp-workReport-sq{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgb(242,242,242);
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+
+
+
+  .ysp-atreport-part{
+    padding:10px 0px 10px 14px;
+  }
+  .ysp-atreport-text{
+    min-height: 80px;
+    background-color: #fff;
+    padding:8px 14px 0px 14px;
+    resize: none;
+    //-webkit-user-select:text;
+    //overflow-y: hidden
+  }
+  // div[contenteditable='true']{
+  // -webkit-user-select:text;
+  // }
+  .ysp-atreport-text-div{
+    min-height: 80px;
+    background-color: #fff;
+    padding: 8px 14px 0px 14px;
+  }
+  .ysp-atreport-fill{
+    background-color: #fff;
+    min-height: 100px;
+    >div:first-child{
+      display: flex;
+      justify-content: space-between;
+      color: #4888DF;
+      padding: 20px 10px 10px 20px;
+      span{
+        display: flex;
+        justify-content: flex-start;
+      }
+      i{
+        display: flex;
+        justify-content: flex-end;
+        background: url(./images/visitcalendar-pre-icon.png);
+        background-repeat: no-repeat;
+        background-size: 12px;
+        width: 20px;
+        height: 20px;
+        
+      }
     }
-    .ysp-workReport-check{
-      float: left;
-      border-radius: 5px;
-      padding: 2px 5px;
-      border: 1px solid #4796ed;
-      margin: 5px;
-      text-align: center;
-      background: #4796ed;
-      color: #fff;
+    
+    >div:last-child{
+      display: flex;
+      justify-content: space-between;
+      color: #4888DF;
+      padding: 10px 10px 20px 20px;
+      span{
+        display: flex;
+        justify-content: flex-start;
+      }
+      i{
+        display: flex;
+        justify-content: flex-end;
+        background: url(./images/visitcalendar-pre-icon.png);
+        background-repeat: no-repeat;
+        background-size: 12px;
+        width: 20px;
+        height: 20px;
+        
+      }
     }
   }
-  .ysp-workReport-sq{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background: rgb(242,242,242);
-    padding-right: 10px;
-    padding-bottom: 5px;
-  }
-  
-  
-  
-    .ysp-atreport-part{
-      padding:10px 0px 10px 14px;
-    }
-    .ysp-atreport-text{
-      min-height: 80px;
-      background-color: #fff;
-      padding:8px 14px 0px 14px;
-      resize: none;
-      //-webkit-user-select:text;
-      //overflow-y: hidden
-    }
-  	// div[contenteditable='true']{
-  	// -webkit-user-select:text;
-  	// }
-    .ysp-atreport-text-div{
-      min-height: 80px;
-      background-color: #fff;
-      padding: 8px 14px 0px 14px;
-    }
-    .ysp-atreport-fill{
-			background-color: #fff;
-      min-height: 100px;
-      >div:first-child{
-        display: flex;
-        justify-content: space-between;
-        color: #4888DF;
-        padding: 20px 10px 10px 20px;
-        span{
-          display: flex;
-          justify-content: flex-start;
-        }
-        i{
-          display: flex;
-          justify-content: flex-end;
-          background: url(./images/visitcalendar-pre-icon.png);
-          background-repeat: no-repeat;
-          background-size: 12px;
-          width: 20px;
-          height: 20px;
-          
-        }
-      }
-      
-      >div:last-child{
-        display: flex;
-        justify-content: space-between;
-        color: #4888DF;
-        padding: 10px 10px 20px 20px;
-        span{
-          display: flex;
-          justify-content: flex-start;
-        }
-        i{
-          display: flex;
-          justify-content: flex-end;
-          background: url(./images/visitcalendar-pre-icon.png);
-          background-repeat: no-repeat;
-          background-size: 12px;
-          width: 20px;
-          height: 20px;
-          
-        }
-      }
-    }
 
     .ysp-atreport-picture{
         background-color: #fff;
@@ -6533,11 +6532,7 @@ div[data-ysp-modelid="wtiteReport"]{//8.24
       justify-content: flex-start;
       align-items: center;
       >div:nth-child(1){
-<<<<<<< HEAD:CRM_NewPlatForm/lib/base.less
-        width: 45%;
-=======
         width: 50%;
->>>>>>> 074d589bd986e8a7eb730cc4889f8f1087325107:putian_crm_v2/lib/base.less
         span:nth-child(1){
           padding-right: 5px;
         }
@@ -7918,7 +7913,7 @@ div[data-ysp-modelid="dayPSI"]{
       }
     }
   }
-  .ysp_report_fileList{
+    .ysp_report_fileList{
     margin:0 0 10px 0;
     img{
       width: 80px;
@@ -9739,22 +9734,22 @@ div[data-ysp-modelid="storeDayPSI"]{
           color: #999999;
         }
       }
-    >div:nth-child(3){
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      padding-bottom: 10px;
-      >span:nth-child(1){
-        color: #333333;
+      >div:nth-child(3){
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 10px;
+        >span:nth-child(1){
+          color: #333333;
+        }
+        >span:nth-child(2){
+          color: #999;
+          padding-left: 5px;
+        }
       }
-      >span:nth-child(2){
-        color: #999;
-        padding-left: 5px;
-      }
-    }
-    >div:nth-child(4){
-      display: flex;
-      justify-content: space-between;
+      >div:nth-child(4){
+        display: flex;
+              justify-content: space-between;
       align-items: center;
       >div:first-child{
         display: flex;
@@ -12262,6 +12257,7 @@ section.ysp-store-details{
     font-size: 20px;
   }
 }
+
 
 /*************门店360店奖信息start*************/
 .ysp-award-message-wrapper{
@@ -15330,8 +15326,6 @@ div[data-ysp-modelid="achievement"]{
   z-index: 99999;
   overflow: auto;
   margin-top: 45px;
-<<<<<<< HEAD:CRM_NewPlatForm/lib/base.less
-=======
   .ysp-search-chose-time{
     padding: 10px;
     border-bottom: 1px solid #ececec;
@@ -15364,8 +15358,7 @@ div[data-ysp-modelid="achievement"]{
         margin-top: 5px;
       }
     }
-  }
->>>>>>> 074d589bd986e8a7eb730cc4889f8f1087325107:putian_crm_v2/lib/base.less
+  }  
   .ysp-search-title-chose{
     display: flex;
     justify-content: space-between;
@@ -15456,170 +15449,7 @@ div[data-ysp-modelid="achievement"]{
   }
 }
 
-<<<<<<< HEAD:CRM_NewPlatForm/lib/base.less
 
-
-/*             普天新平台 - 首页菜单样式                 */
-@workspace:url(../lib/images/customerInformation.png) no-repeat center center;
-// 以上为移动端菜单所有icon图标
-.list-icon(){
-  text-align: center;
-  display: block;
-  width: 48px;
-  height: 48px;
-  //background-size: 50%;
-  
-}
-// 以上为移动端菜单公共样式
-.ysp-Menus-All{
-  ul{
-    min-height: 120px;
-    padding-bottom: 20px;
-  }
-  //工作台部分
-  .ysp-Menus-all-WorkSpace{
-    //padding: 20px;
-    padding-top: 0px;
-    .ysp-Menus-title{
-      padding: 5px 15px;
-      background: rgb(239,239,239);
-      
-      .Menus-head{
-        display: block;
-      }
-    }
-    .Menus-list{
-        text-align: center;
-        display: inline-block;
-        width: 25%;
-        margin-top: 20px;
-        .Menus-content{
-          text-align: center;
-          font-size: 12px;
-        }
-      }
-    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD,.XXLR_YD{
-      margin-bottom: 10px;
-      //background:@workspace;
-      .list-icon;
-      background: rgb(44,127,251);
-      color: #fff;
-      font-size: 18px;
-      border-radius: 50% 50% 50% 50%;
-      margin: auto;
-      margin-bottom: 10px;
-      padding: 10px;
-    }
-  }
-  //业绩达成部分
-  .ysp-Menus-all-Achievement{
-    //padding: 20px;
-    padding-top: 0px;
-    
-    .ysp-Menus-title{
-      padding: 5px 15px;
-      background: rgb(239,239,239);
-      .Menus-head{
-        display: block;
-      }
-    }
-    .Menus-list{
-        text-align: center;
-        display: inline-block;
-        width: 25%;
-        margin-top: 20px;
-      	white-space: nowrap;
-        .Menus-content{
-          text-align: center;
-          font-size: 12px;
-        }
-      }
-    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD,.JHDCZL_YD,.SYBDC_YD,.BSCDCOffice_YD,.CPDCOffice_YD,.XSYEZL_YD,.YDXSDC_YD,.BSCDC_YD,.XSRYDC_YD,.FGSDC_YD,.NDXSDC_YD,.XMDC_YD,.CPDC_YD{
-      margin-bottom: 10px;
-      //background:@workspace;
-      .list-icon;
-      background: rgb(56,197,153);
-      color: #fff;
-      font-size: 18px;
-      border-radius: 50% 50% 50% 50%;
-      margin: auto;
-      margin-bottom: 10px;
-      padding: 10px;
-    }
-  }
-  //数据看板部分
-  .ysp-Menus-all-InFormation{
-    padding-top: 0px;
-    .ysp-Menus-title{
-      padding: 5px 15px;
-      background: rgb(239,239,239);
-      .Menus-head{
-        display: block;
-      }
-    }
-    .Menus-list{
-        text-align: center;
-        display: inline-block;
-        width: 25%;
-        margin-top: 20px;
-        .Menus-content{
-          text-align: center;
-          font-size: 12px;
-        }
-      }
-    .CHCX_YD,.CPSXJXXCX_YD,.KCCC_YD{
-      margin-bottom: 10px;
-      //background:@workspace;
-      .list-icon;
-      background: rgb(248,174,40);
-      color: #fff;
-      font-size: 18px;
-      border-radius: 50% 50% 50% 50%;
-      margin: auto;
-      margin-bottom: 10px;
-      padding: 10px;
-    }
-  }
-  //客户门店部分
-  .ysp-Menus-all-ClientOrStore{
-    padding-top: 0px;
-    .ysp-Menus-title{
-      padding: 5px 15px;
-      background: rgb(239,239,239);
-      .Menus-head{
-        display: block;
-      }
-    }
-    .Menus-list{
-        text-align: center;
-        display: inline-block;
-        width: 25%;
-        margin-top: 20px;
-        .Menus-content{
-          text-align: center;
-          font-size: 12px;
-        }
-      }
-    .KH360_YD,.MD360_YD{
-      margin-bottom: 10px;
-      //background:@workspace;
-      .list-icon;
-      background: rgb(240,85,58);
-      color: #fff;
-      font-size: 18px;
-      border-radius: 50% 50% 50% 50%;
-      margin: auto;
-      margin-bottom: 10px;
-      padding: 10px;
-    }
-  }
-}
-//有可能会影响全局的效果 .  注意测试功能
-.editor-state [data-ysp="component"]{
-  padding-top:0;
-  padding-bottom: 0;
-}
-=======
 .ysp-search-chose-selected{
   width: 90%;
   height: 92%;
@@ -16055,4 +15885,163 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
 }
 
 /***********问卷反馈end**************/
->>>>>>> 074d589bd986e8a7eb730cc4889f8f1087325107:putian_crm_v2/lib/base.less
+/*             普天新平台 - 首页菜单样式                 */
+@workspace:url(../lib/images/customerInformation.png) no-repeat center center;
+// 以上为移动端菜单所有icon图标
+.list-icon(){
+  text-align: center;
+  display: block;
+  width: 48px;
+  height: 48px;
+  //background-size: 50%;
+  
+}
+// 以上为移动端菜单公共样式
+.ysp-Menus-All{
+  ul{
+    min-height: 120px;
+    padding-bottom: 20px;
+  }
+  //工作台部分
+  .ysp-Menus-all-WorkSpace{
+    //padding: 20px;
+    padding-top: 0px;
+    .ysp-Menus-title{
+      padding: 5px 15px;
+      background: rgb(239,239,239);
+      
+      .Menus-head{
+        display: block;
+      }
+    }
+    .Menus-list{
+        text-align: center;
+        display: inline-block;
+        width: 25%;
+        margin-top: 20px;
+        .Menus-content{
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD,.XXLR_YD,.WJTX_YD{
+      margin-bottom: 10px;
+      //background:@workspace;
+      .list-icon;
+      background: rgb(44,127,251);
+      color: #fff;
+      font-size: 18px;
+      border-radius: 50% 50% 50% 50%;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+  }
+  //业绩达成部分
+  .ysp-Menus-all-Achievement{
+    //padding: 20px;
+    padding-top: 0px;
+    
+    .ysp-Menus-title{
+      padding: 5px 15px;
+      background: rgb(239,239,239);
+      .Menus-head{
+        display: block;
+      }
+    }
+    .Menus-list{
+        text-align: center;
+        display: inline-block;
+        width: 25%;
+        margin-top: 20px;
+      	white-space: nowrap;
+        .Menus-content{
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD,.JHDCZL_YD,.SYBDC_YD,.BSCDCOffice_YD,.CPDCOffice_YD,.XSYEZL_YD,.YDXSDC_YD,.BSCDC_YD,.XSRYDC_YD,.FGSDC_YD,.NDXSDC_YD,.XMDC_YD,.CPDC_YD,.KHMDDC_YD{
+      margin-bottom: 10px;
+      //background:@workspace;
+      .list-icon;
+      background: rgb(56,197,153);
+      color: #fff;
+      font-size: 18px;
+      border-radius: 50% 50% 50% 50%;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+  }
+  //数据看板部分
+  .ysp-Menus-all-InFormation{
+    padding-top: 0px;
+    .ysp-Menus-title{
+      padding: 5px 15px;
+      background: rgb(239,239,239);
+      .Menus-head{
+        display: block;
+      }
+    }
+    .Menus-list{
+        text-align: center;
+        display: inline-block;
+        width: 25%;
+        margin-top: 20px;
+        .Menus-content{
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+    .CHCX_YD,.CPSXJXXCX_YD,.KCCC_YD{
+      margin-bottom: 10px;
+      //background:@workspace;
+      .list-icon;
+      background: rgb(248,174,40);
+      color: #fff;
+      font-size: 18px;
+      border-radius: 50% 50% 50% 50%;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+  }
+  //客户门店部分
+  .ysp-Menus-all-ClientOrStore{
+    padding-top: 0px;
+    .ysp-Menus-title{
+      padding: 5px 15px;
+      background: rgb(239,239,239);
+      .Menus-head{
+        display: block;
+      }
+    }
+    .Menus-list{
+        text-align: center;
+        display: inline-block;
+        width: 25%;
+        margin-top: 20px;
+        .Menus-content{
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+    .KH360_YD,.MD360_YD{
+      margin-bottom: 10px;
+      //background:@workspace;
+      .list-icon;
+      background: rgb(240,85,58);
+      color: #fff;
+      font-size: 18px;
+      border-radius: 50% 50% 50% 50%;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+  }
+}
+//有可能会影响全局的效果 .  注意测试功能
+.editor-state [data-ysp="component"]{
+  padding-top:0;
+  padding-bottom: 0;
+}
