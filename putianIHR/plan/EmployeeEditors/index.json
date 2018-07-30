@@ -439,6 +439,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -465,6 +469,10 @@
       "location": {
         "data": {
           "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -650,6 +658,21 @@
       "contextId": "context5_WMk3RJ",
       "layout": [
         {
+          "id": "uiControl52_MGcE1s",
+          "controlId": "control53_PATCGb",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl52_MGcE1s",
+                "onGetTemplate": "getTemplate_uiControl52_MGcE1s"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl37_sE7sBO",
           "controlId": "control37_yJKHWf",
           "display": {
@@ -720,21 +743,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl51_tEicQS",
                 "onGetTemplate": "getTemplate_uiControl51_tEicQS"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl52_MGcE1s",
-          "controlId": "control53_PATCGb",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl52_MGcE1s",
-                "onGetTemplate": "getTemplate_uiControl52_MGcE1s"
               }
             }
           }
