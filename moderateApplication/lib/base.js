@@ -250,6 +250,9 @@
      //  if(aWin.location.href == 'http://172.16.11.61/Index.aspx'){
      //   aWin.location.href = 'http://172.16.11.61:8000/Index.aspx?Path=SysLogin';
      // }
+      // if(aWin.location.href.indexOf('8000') ==-1){
+      // 	ysp.appMain.openWindow(aWin.location.href);
+      // }
     },
 
     //登录相关接口

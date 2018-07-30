@@ -21,17 +21,21 @@
         }
       ]
     },
-    "resource_filter": [{
-		"url_match": [
-			"^http:\\/\\/172\\.16\\.11\\.61.*"
-		],
-		"charset": "utf-8",
-		"Accept-Language": "zh-Hans-CN",
-		"replaces": [{
-			"regexp": "\\btop\\b",
-			"sub_str": "_ysp_top"
-		}]
-	}],
+    "resource_filter": [
+      {
+        "url_match": [
+          "^http:\\/\\/172\\.16\\.11\\.61.*"
+        ],
+        "charset": "utf-8",
+        "Accept-Language": "zh-Hans-CN",
+        "replaces": [
+          {
+            "regexp": "\\btop\\b",
+            "sub_str": "_ysp_top"
+          }
+        ]
+      }
+    ],
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
   },
   "override_urls": [],
@@ -151,5 +155,5 @@
   "default_url": "http://172.16.11.61/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1532936850229
+  "update_time": 1532952736381
 }
