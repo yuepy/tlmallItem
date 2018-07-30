@@ -85,8 +85,8 @@
     getData_control772_ZLrDG3: function (elem) {},
     doAction_uiControl772_nTamgL: function (data, elem) {
       if ('click' == data.eventType) {
-        //window.open("http://payroll.cofcoko.com:81/SalaryList.aspx");
-        ysp.appMain.openWindow("http://172.16.11.61:81/Login.aspx");
+        //ysp.appMain.openWindow("http://172.16.11.61:81/Login.aspx");
+        elem.ownerDocument.defaultView.open("http://172.16.11.61:81/Login.aspx");
       }
     },
     getTemplate_uiControl772_nTamgL: function () {
