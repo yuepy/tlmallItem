@@ -28,7 +28,7 @@ gulp.task('releaseCom', function() {
         .pipe(replace(/http:\\{2}\/\\{2}\/172\\{2}.16\\{2}.11\\{2}.61:9992/gm, 'http:\\\\/\\\\/bpm\\\\.cofcoko\\\\.com:8080'))
         .pipe(replace(/http:\\{2}\/\\{2}\/172\\{2}.16\\{2}.11\\{2}.61:9993/gm, 'http:\\\\/\\\\/bpm\\\\.cofcoko\\\\.com:9001'))
         .pipe(replace(/http:\\{2}\/\\{2}\/172\\{2}.16\\{2}.11\\{2}.61:9099/gm, 'http:\\\\/\\\\/bpm\\\\.cofcoko\\\\.com:9099'))
-        .pipe(replace(/http:\\{2}\/\\{2}\/172\\{2}.16\\{2}.11\\{2}.61:81/gm, 'http:\\\\/\\\\/payroll\\\\.cofcoko\\\\.com:81'))
+        .pipe(replace(/http:\\{2}\/\\{2}\/172\\{2}.16\\{2}.11\\{2}.61:81/gm, 'https:\\\\/\\\\/payroll\\\\.cofcoko\\\\.com'))
         .pipe(replace(/http:\\{2}\/\\{2}\/172\\{2}.16\\{2}.11\\{2}.61/gm, 'https:\\\\/\\\\/info\\\\.cofcoko\\\\.com'))
         .pipe(replace(/http:\\{2}\/\\{2}\/info\\{2}.cofcoko\\{2}.com/gm, 'https:\\\\/\\\\/info\\\\.cofcoko\\\\.com'))
         .pipe(replace(/172\.16\.11\.61:8000/gm, 'bpm.cofcoko.com'))
@@ -36,7 +36,7 @@ gulp.task('releaseCom', function() {
         .pipe(replace(/172\.16\.11\.61:9992/gm, 'bpm.cofcoko.com:8080'))
         .pipe(replace(/172\.16\.11\.61:9993/gm, 'bpm.cofcoko.com:9001'))
         .pipe(replace(/172\.16\.11\.61:9099/gm, 'bpm.cofcoko.com:9099'))
-        .pipe(replace(/172\.16\.11\.61:81/gm, 'payroll.cofcoko.com:81'))
+        .pipe(replace(/http:\/\/172\.16\.11\.61:81/gm, 'https://payroll.cofcoko.com'))
         .pipe(replace(/http:\/\/172\.16\.11\.61/gm, 'https://info.cofcoko.com'))
         .pipe(replace(/http:\/\/info\.cofcoko\.com/gm, 'https://info.cofcoko.com'))
         .pipe(gulp.dest('./'));
