@@ -17,7 +17,8 @@
     "businessTravel": "../businessTravel/index.json",
     "visitRelative": "../visitRelative/index.json",
     "overTime": "../overTime/index.json",
-    "menu": "../menu/index.json"
+    "menu": "../menu/index.json",
+    "login": "../login/index.json"
   },
   "chineseName": "菜单",
   "description": "",
@@ -125,6 +126,37 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control1_nOBZ25": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.chrome.win.pc.standard.psc_dir-ltr.psc_form-xlarge.chrome.win.pc.standard.psc_dir-ltr.psc_form-xlarge BODY.PSPAGE.homePageHdr"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control1_nOBZ25"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -132,7 +164,8 @@
       "controls": [
         "control6_RWT0cx",
         "control98_gMxEXR",
-        "control106_QdzPdD"
+        "control106_QdzPdD",
+        "control1_nOBZ25"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -238,6 +271,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl6_PZE4AI",
                 "onGetTemplate": "getTemplate_uiControl6_PZE4AI"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl1_JBFDQF",
+          "controlId": "control1_nOBZ25",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl1_JBFDQF",
+                "onGetTemplate": "getTemplate_uiControl1_JBFDQF"
               }
             }
           }

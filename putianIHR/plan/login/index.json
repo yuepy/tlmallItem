@@ -8,9 +8,8 @@
   },
   "chineseName": "登录",
   "description": "",
-  "firstPaintEnable": false,
   "controls": {
-    "control0_wW4HsH": {
+    "control0_vXKNxf": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -38,11 +37,47 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control0_wW4HsH"
+        "onGetData": "getData_control0_vXKNxf"
       },
       "intendedRole": "custom",
       "roles": "element,link,custom",
-      "monitored": true,
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control2_MzbSWh": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::DIV[@id=\"pswrapper\"]/DIV[5]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.index DIV.login-box"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control2_MzbSWh"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -50,12 +85,11 @@
   "contexts": {
     "context13_CStx6r": {
       "controls": [
-        "control0_wW4HsH"
+        "control0_vXKNxf",
+        "control2_MzbSWh"
       ],
       "anchors": [],
-      "urlAnchor": [
-        "http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?.*"
-      ]
+      "urlAnchor": []
     }
   },
   "flows": {
@@ -66,10 +100,10 @@
         }
       ]
     },
-    "flow1_pZxSSS": {
+    "flow1_BOohwl": {
       "fromContextId": "context13_CStx6r",
       "fromAction": "doAction",
-      "fromControlId": "control0_wW4HsH",
+      "fromControlId": "control0_vXKNxf",
       "toContexts": [
         {
           "toContextId": "context13_CStx6r"
@@ -79,6 +113,16 @@
           "toModelId": "menu"
         }
       ]
+    },
+    "flow2_Ug17su": {
+      "fromContextId": "context13_CStx6r",
+      "fromAction": "doAction",
+      "fromControlId": "control2_MzbSWh",
+      "toContexts": [
+        {
+          "toContextId": "context13_CStx6r"
+        }
+      ]
     }
   },
   "pages": {
@@ -86,16 +130,31 @@
       "contextId": "context13_CStx6r",
       "layout": [
         {
-          "id": "uiControl0_cOnUE8",
-          "controlId": "control0_wW4HsH",
+          "id": "uiControl0_vbflXP",
+          "controlId": "control0_vXKNxf",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl0_cOnUE8",
-                "onGetTemplate": "getTemplate_uiControl0_cOnUE8"
+                "onDoAction": "doAction_uiControl0_vbflXP",
+                "onGetTemplate": "getTemplate_uiControl0_vbflXP"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl2_uu4X6y",
+          "controlId": "control2_MzbSWh",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl2_uu4X6y",
+                "onGetTemplate": "getTemplate_uiControl2_uu4X6y"
               }
             }
           }

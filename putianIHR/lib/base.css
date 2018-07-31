@@ -58,6 +58,10 @@ div[data-ysp-modelid="visitRelative"] .card-body {
   height: 92vh;
   overflow: auto;
 }
+div[data-componentsid="uiControl2_fI1WWo"],
+div[data-componentsid="uiControl3_QW428F"] {
+  display: none;
+}
 /******************************CustomHeader组件******************************************/
 div[style*="height: 2.7rem;"] {
   background: #37363c;
@@ -276,9 +280,7 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
 }
 /******************************登录页start******************************************/
 .login_background {
-  background: #fff url(../local/img/logo.png) no-repeat;
-  background-position: 50% 30%;
-  background-size: 200px;
+  background: #fff;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -287,6 +289,12 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   width: 100%;
   margin: 0 1.25rem;
   padding: 2rem 0.75rem;
+}
+.login_background .login_content .logo {
+  background: #fff url(../local/img/logo.png) no-repeat;
+  background-position: 50% 50%;
+  background-size: 200px;
+  height: 160px;
 }
 .login_background .login_content .message {
   display: flex;
