@@ -357,11 +357,9 @@
       "title": "productFrom",
       "url": "adapter://CRM_NewPlatForm/plan/productFrom/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/sku\\/querySku\\?a=1&username=YUGUOJIAN&encoder=WVVHVU9KSUFOKzA2LzE3OC8yMDE3IDE4OjMyOjMy&branch=15"
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/sku\\/querySku\\?a=1.*"
       ],
-      "demo": [
-        "http://192.168.220.82:8080/ptDataShow/sku/querySku?a=1&username=YUGUOJIAN&encoder=WVVHVU9KSUFOKzA2LzE3OC8yMDE3IDE4OjMyOjMy&branch=15"
-      ]
+      "demo": []
     },
     {
       "title": "login",
@@ -451,16 +449,6 @@
       ],
       "demo": [
         "http://192.168.220.82:8080/ptDataShow/invAllocation/queryInvAllocation?username=ZHOUHEJIE&encoder=WkhPVUhFSklFKzAzLzMxLzIwMTcgMTU6Mjg6NTI%3d&queryType=Product"
-      ]
-    },
-    {
-      "title": "productFrom",
-      "url": "adapter://CRM_NewPlatForm/plan/productFrom/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/sku\\/querySku.*\\?.*username=.*&encoder=.*"
-      ],
-      "demo": [
-        "http://192.168.220.82:8080/ptDataShow/sku/querySku?a=1&username=YUGUOJIAN&encoder=WVVHVU9KSUFOKzA2LzE3OC8yMDE3IDE4OjMyOjMy&branch=15"
       ]
     },
     {
@@ -572,11 +560,21 @@
       "demo": [
         "http://192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDEvMjYvMjAxOCAxNTo0Mjo0MQ=="
       ]
+    },
+    {
+      "title": "reportAtMeSummendLook",
+      "url": "adapter://CRM_NewPlatForm/plan/reportAtMeSummendLook/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/page\\/workTask\\/workAtmeView\\.html"
+      ],
+      "demo": [
+        "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtmeView.html"
+      ]
     }
   ],
   "name": "普天CRM_新平台",
   "default_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
   "scope": "CRM_NewPlatForm",
   "start_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
-  "update_time": 1532569120555
+  "update_time": 1533004952241
 }

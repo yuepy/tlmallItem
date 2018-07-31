@@ -87,7 +87,8 @@
     },
     doAction_uiControl306_RfQZGl: function (data, elem) {
       if (data.eventType === 'back') {
-        ysp.appMain.back();
+        // ysp.appMain.back();
+        elem.ownerDocument.defaultView.close();
       }if ("query" == data.eventType) {
         var queryValue = data.dataCustom.queryValue;var searchInput = elem.querySelector("#searchInput");var queryBtnSearch = elem.querySelector("#queryBtnSearch");searchInput && (searchInput.value = queryValue);queryBtnSearch && queryBtnSearch.click();
       } //翻页方法
@@ -98,11 +99,9 @@
           prevtitle(data.dataCustom);break;case 'GO':
           //跳转指定页数
           clickGO(data.dataCustom);break;}function clickGO(data) {
-        var input = elem.ownerDocument.querySelector('.skip-num');input.value = data;
-        input.blur();elem.ownerDocument.querySelector('.commpnPage').querySelector('.skip_right_goto').querySelector('.skip-right-icon').click();
+        var input = elem.ownerDocument.querySelector('.skip-num');input.value = data;input.blur();elem.ownerDocument.querySelector('.commpnPage').querySelector('.skip_right_goto').querySelector('.skip-right-icon').click();
       }function prevtitle(data) {
-        var lis = elem.querySelectorAll('li');
-        for (var i = 0; i < lis.length; i++) {
+        var lis = elem.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
           var as = lis[i].querySelectorAll('a');for (var j = 0; j < as.length; j++) {
             if (data == 'prev' && as[j].getAttribute('title') == 'Go to previous page') {
               as[j].click();
@@ -130,13 +129,13 @@
       if ("yes" == data.eventType) {
         var text = data.dataCustom;if ("重置" == text) {
           elem.querySelector("#clearBtn2").click();
-        }if ("确认" == text) {
+        }
+        if ("确认" == text) {
           elem.querySelector("#searchBtn2").click();
         }
       } //点击查看按钮方法
       if ('look' == data.eventType) {
-        var index = data.dataCustom;
-        elem.querySelector("#tbody").querySelectorAll("tr")[index].querySelector("a").click();
+        var index = data.dataCustom;elem.querySelector("#tbody").querySelectorAll("tr")[index].querySelector("a").click();
       }
     },
     getTemplate_uiControl306_RfQZGl: function () {

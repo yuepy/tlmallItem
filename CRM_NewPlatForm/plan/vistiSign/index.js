@@ -7,8 +7,7 @@
       if (data.eventType == 'back') {
         //ysp.customHelper.back();
         var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; // ysp.appMain.reloadPage(url);
-        //ysp.appMain.back();
-        ysp.customHelper.BackReload(url, 'customerWorkspace');
+        ysp.appMain.back();ysp.customHelper.BackReload(url, 'customerWorkspace');
       }
     },
     getTemplate_uiControl34_5PKNHW: function getTemplate_uiControl34_5PKNHW() {
@@ -72,6 +71,7 @@
                 //             targetWin.location.reload();
                 //           }
                 //更换返回方法.回到工作台
+                //ysp.appMain.back();
                 ysp.customHelper.BackReload();
               }, 1000);
             }if (!cwin.signStatus || !elem) {

@@ -3,7 +3,8 @@
     getData_control330_6gAef1: function (elem) {},
     doAction_uiControl320_ibSXl8: function (data, elem) {
       if ("back" == data.eventType) {
-        history.go(-1);
+        //history.go(-1);
+        ysp.customHelper.BackReload('http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=');
       }
     },
     getTemplate_uiControl320_ibSXl8: function () {

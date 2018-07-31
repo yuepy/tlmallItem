@@ -17,7 +17,7 @@
         //ysp.customHelper.back();
         // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
         // ysp.appMain.reloadPage(url);
-        // ysp.appMain.back();
+        //ysp.appMain.back();
         ysp.customHelper.BackReload();
       }if (data.eventType == "select") {
         var value = data.dataCustom.value;var text = data.dataCustom.text;var selectEl;if ("归属机构" == text) {
