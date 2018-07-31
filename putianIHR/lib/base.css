@@ -274,6 +274,66 @@ div[data-ysp-modelid="familyNumber"] .ysp_header_filter {
   background: #000;
   opacity: 0.4;
 }
+/******************************登录页start******************************************/
+.login_background {
+  background: #fff url(../local/img/logo.png) no-repeat;
+  background-position: 50% 30%;
+  background-size: 200px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.login_background .login_content {
+  width: 100%;
+  margin: 0 1.25rem;
+  padding: 2rem 0.75rem;
+}
+.login_background .login_content .message {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f8f8f8;
+  padding-bottom: 5px;
+}
+.login_background .login_content .message input {
+  border: none;
+  font-size: 14px;
+  padding: 0;
+}
+.login_background .login_content .message .getMsgBtn {
+  border: 1px solid #f8f8f8;
+  font-size: 14px;
+  padding: 2px 20px;
+  border-radius: 8px;
+  background: #f4f4f4;
+}
+.login_background .login_content .error {
+  color: red;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 20px;
+}
+.login_background .login_content .btnGroup {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 50px 0 50px;
+}
+.login_background .login_content .btnGroup .cancelBtn {
+  width: 50%;
+  text-align: center;
+  border: 1px solid #f2f2f2;
+  padding: 2px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.login_background .login_content .btnGroup .loginBtn {
+  width: 50%;
+  text-align: center;
+  background: #118EEA;
+  padding: 2px;
+  border-radius: 8px;
+  color: #fff;
+}
 /******************************菜单页start******************************************/
 div[data-ysp-modelid="menu"] div[data-ysp="component"] {
   padding: 0;
@@ -2649,9 +2709,6 @@ button[type='fileUpload'] {
 .ysp-dzyjdz-list-tt > p input {
   background: none;
   padding-right: 0;
-}
-.ysp-dzyjdz-list-tt > p .PSERROR {
-  background-color: #f76f49;
 }
 .ysp-dzyjdz-list-tt > p:last-child {
   margin: 10px auto;
