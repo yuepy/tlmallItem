@@ -437,6 +437,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -458,49 +462,6 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
-    },
-    "control821_bPB7m8": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@id/partialWord",
-            "prob": 1,
-            "disabled": true,
-            "value": {
-              "elemId": "form1",
-              "tagName": "FORM",
-              "prefix": "",
-              "suffix": "/DIV[3]/DIV[13]",
-              "ratio": 0.842
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              3,
-              5
-            ],
-            "value": "BODY.formPage DIV.big-form.page-shadow DIV.form-wrapper"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[13]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control821_bPB7m8"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "custom"
     }
   },
   "contexts": {
@@ -516,8 +477,7 @@
         "control341_Z5fwzR",
         "control343_Fk2gOX",
         "control464_KnmozG",
-        "control820_dLMCIo",
-        "control821_bPB7m8"
+        "control820_dLMCIo"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -659,21 +619,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl339_n3E64G",
                 "onGetTemplate": "getTemplate_uiControl339_n3E64G"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl821_kWi6Tb",
-          "controlId": "control821_bPB7m8",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl821_kWi6Tb",
-                "onGetTemplate": "getTemplate_uiControl821_kWi6Tb"
               }
             }
           }

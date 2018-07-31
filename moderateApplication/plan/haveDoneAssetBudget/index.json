@@ -12,6 +12,10 @@
         "data": {
           "tagName": "H1"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -52,6 +56,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -84,6 +92,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -129,6 +141,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -166,6 +182,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -202,6 +222,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -243,6 +267,10 @@
         "data": {
           "tagName": "TBODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -274,6 +302,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -319,6 +351,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -363,6 +399,10 @@
         "data": {
           "tagName": "A"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "a/@href",
@@ -402,6 +442,33 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control826_TXIGTm": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control826_TXIGTm"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -416,7 +483,8 @@
         "control410_oa9Oga",
         "control411_gi7qHO",
         "control412_m4og4b",
-        "control413_sRooe7"
+        "control413_sRooe7",
+        "control826_TXIGTm"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -478,6 +546,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl406_OaXncW",
                 "onGetTemplate": "getTemplate_uiControl406_OaXncW"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl826_vcf82I",
+          "controlId": "control826_TXIGTm",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl826_vcf82I",
+                "onGetTemplate": "getTemplate_uiControl826_vcf82I"
               }
             }
           }
@@ -662,6 +745,64 @@
             "tb_AttachmentList",
             "tb_List",
             "uploadDiv"
+          ],
+          [
+            "AppUsersDiv",
+            "Attachment_fileUpload",
+            "Attachment_hfActivityName",
+            "Attachment_hfGuid",
+            "Attachment_hfIsStart",
+            "Attachment_hfUserLoginName",
+            "Header_hidFlag",
+            "Header_txtCompanyName",
+            "Header_txtDate",
+            "Header_txtDepartName",
+            "Header_txtEmail",
+            "Header_txtPhone",
+            "Header_txtUserName",
+            "InTable",
+            "LinkedProcInst_hfGuid",
+            "LinkedProcInst_hfStart",
+            "LinkedProcInst_hfUserLoginName",
+            "OutTable",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "btnAddLink",
+            "btnFileUpload",
+            "contentActionBar_ActionBar_Action",
+            "contentActionBar_ActionBar_ActionName",
+            "contentActionBar_ActionBar_AddApprover",
+            "contentActionBar_ActionBar_AddApproverName",
+            "contentActionBar_ActionBar_GotoActivityName",
+            "contentActionBar_ActionBar_IsReturnBack",
+            "contentActionBar_ActionBar_Print",
+            "contentActionBar_ActionBar_UserAction",
+            "contentActionBar_ActionBar_btnAddApprover",
+            "contentActionBar_ActionBar_btnClose",
+            "contentActionBar_ActionBar_btnPrint",
+            "contentActionBar_ActionBar_btnRedirect",
+            "contentActionBar_ActionBar_hidJBAffirm",
+            "contentForm_TxtRemark",
+            "contentForm_txtChangeCode",
+            "contentForm_txtChangeReason",
+            "contentForm_txtCompany",
+            "contentForm_txtCostCenter",
+            "contentForm_txt_HeadOfficeDept",
+            "contentForm_txt_HeadOfficeDeptCode",
+            "contentForm_txt_NoticePurchaseApplicant",
+            "div",
+            "filePanel",
+            "form",
+            "person_infor",
+            "person_infor_trigger",
+            "tableAttachment",
+            "tableComments",
+            "tableHeader",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv"
           ]
         ]
       }
@@ -772,6 +913,62 @@
             "page-shadow",
             "red",
             "show",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "fileUpload",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
             "size-s",
             "swich_btn",
             "title",

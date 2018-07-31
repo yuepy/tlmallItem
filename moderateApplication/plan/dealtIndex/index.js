@@ -41,7 +41,8 @@
     },
     doAction_uiControl194_iLZaeH: function (data, elem) {
       if ("back" == data.eventType) {
-        ysp.appMain.back(); //ysp.runtime.Model.setForceMatchModels(['commission']);
+        // ysp.appMain.back(); //ysp.runtime.Model.setForceMatchModels(['commission']);
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
     },
     getTemplate_uiControl194_iLZaeH: function () {

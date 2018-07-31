@@ -601,7 +601,7 @@
       },
       "intendedRole": "dialog",
       "roles": "element,link,dialog",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
       "componentType": "dialog"
     },
@@ -680,7 +680,7 @@
       },
       "intendedRole": "dialog",
       "roles": "element,dialog",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "dialog"
     },
@@ -896,108 +896,6 @@
     "page4_8RZ42m": {
       "contextId": "context4_nyVhNa",
       "layout": [
-        {
-          "id": "uiControl554_2JFxvb",
-          "controlId": "control554_Sde4n5",
-          "display": {
-            "adapterId": "dialog",
-            "type": "dialog",
-            "adapter": {
-              "templateType": ""
-            }
-          },
-          "layout": [
-            {
-              "id": "uiControl554_2JFxvbbody",
-              "display": {
-                "type": "dialogBody",
-                "adapterId": "dialogBody",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": [
-                {
-                  "id": "uiControl555_SMSMxq",
-                  "controlId": "control555_gohC5f",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl555_SMSMxq",
-                        "onGetTemplate": "getTemplate_uiControl555_SMSMxq"
-                      }
-                    }
-                  }
-                },
-                {
-                  "id": "uiControl482_cTPBVf",
-                  "controlId": "control482_5J6tEV",
-                  "display": {
-                    "adapterId": "dialog",
-                    "type": "dialog",
-                    "adapter": {
-                      "templateType": ""
-                    }
-                  },
-                  "layout": [
-                    {
-                      "id": "uiControl482_cTPBVfbody",
-                      "display": {
-                        "type": "dialogBody",
-                        "adapterId": "dialogBody",
-                        "adapter": {
-                          "templateType": ""
-                        }
-                      },
-                      "layout": [
-                        {
-                          "id": "uiControl567_8Drcaf",
-                          "controlId": "control567_4NpTIW",
-                          "display": {
-                            "adapterId": "custom",
-                            "type": "custom",
-                            "adapter": {
-                              "templateType": "react",
-                              "events": {
-                                "onDoAction": "doAction_uiControl567_8Drcaf",
-                                "onGetTemplate": "getTemplate_uiControl567_8Drcaf"
-                              }
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "id": "uiControl482_cTPBVffooter",
-                      "display": {
-                        "type": "dialogFooter",
-                        "adapterId": "dialogFooter",
-                        "adapter": {
-                          "templateType": ""
-                        }
-                      },
-                      "layout": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "uiControl554_2JFxvbfooter",
-              "display": {
-                "type": "dialogFooter",
-                "adapterId": "dialogFooter",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": []
-            }
-          ]
-        },
         {
           "id": "uiControl25_hSnO5i",
           "controlId": "control25_lHDBZw",
@@ -1230,6 +1128,108 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl554_2JFxvb",
+          "controlId": "control554_Sde4n5",
+          "display": {
+            "adapterId": "dialog",
+            "type": "dialog",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl554_2JFxvbbody",
+              "display": {
+                "type": "dialogBody",
+                "adapterId": "dialogBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl555_SMSMxq",
+                  "controlId": "control555_gohC5f",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl555_SMSMxq",
+                        "onGetTemplate": "getTemplate_uiControl555_SMSMxq"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl482_cTPBVf",
+                  "controlId": "control482_5J6tEV",
+                  "display": {
+                    "adapterId": "dialog",
+                    "type": "dialog",
+                    "adapter": {
+                      "templateType": ""
+                    }
+                  },
+                  "layout": [
+                    {
+                      "id": "uiControl482_cTPBVfbody",
+                      "display": {
+                        "type": "dialogBody",
+                        "adapterId": "dialogBody",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": [
+                        {
+                          "id": "uiControl567_8Drcaf",
+                          "controlId": "control567_4NpTIW",
+                          "display": {
+                            "adapterId": "custom",
+                            "type": "custom",
+                            "adapter": {
+                              "templateType": "react",
+                              "events": {
+                                "onDoAction": "doAction_uiControl567_8Drcaf",
+                                "onGetTemplate": "getTemplate_uiControl567_8Drcaf"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "id": "uiControl482_cTPBVffooter",
+                      "display": {
+                        "type": "dialogFooter",
+                        "adapterId": "dialogFooter",
+                        "adapter": {
+                          "templateType": ""
+                        }
+                      },
+                      "layout": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "uiControl554_2JFxvbfooter",
+              "display": {
+                "type": "dialogFooter",
+                "adapterId": "dialogFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
         },
         {
           "id": "uiControl18_WTAGhV",

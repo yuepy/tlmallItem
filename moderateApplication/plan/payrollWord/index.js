@@ -3,7 +3,8 @@
     getData_control773_ZVOOtN: function (elem) {},
     doAction_uiControl773_uX2PUQ: function (data, elem) {
       if ('click' == data.eventType) {
-        ysp.customHelper.backHome();
+        // ysp.customHelper.backHome();
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
     },
     getTemplate_uiControl773_uX2PUQ: function () {

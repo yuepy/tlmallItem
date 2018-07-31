@@ -2776,3 +2776,22 @@
         tds[tds.length - 1].querySelectorAll('a')[0].click();
       }
     }
+- name: ios返回按钮修改
+  getTemplate: "import { Header, HeaderLeft } from 'ysp-interior-components';\nimport { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  click:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className='titleH1'>\n          <Header title={data.title}>\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.click.bind(this)}>返回</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = {};
+    var span = elem.querySelector('span');
+    data.title = span.nextSibling.nextSibling.textContent.trim();
+    return data;
+  doAction: |
+    if (data.eventType == 'click') {
+      if (ysp.appMain.isIOS()) {
+        // elem.ownerDocument.defaultView.close();
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
+      } else {
+        ysp.appMain.back();
+      }
+    }

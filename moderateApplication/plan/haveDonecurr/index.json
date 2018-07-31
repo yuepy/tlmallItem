@@ -301,6 +301,15 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"tableAttachment\"]"
+            }
+          ],
+          "force": true
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -331,6 +340,38 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control824_Fi78SV": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.formPage DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control824_Fi78SV"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
@@ -346,7 +387,8 @@
         "control794_PRTJwp",
         "control795_nVk3TB",
         "control796_unaIfo",
-        "control815_7e8UCt"
+        "control815_7e8UCt",
+        "control824_Fi78SV"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -451,6 +493,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl815_m39D1T",
                 "onGetTemplate": "getTemplate_uiControl815_m39D1T"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl824_VvCtPT",
+          "controlId": "control824_Fi78SV",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl824_VvCtPT",
+                "onGetTemplate": "getTemplate_uiControl824_VvCtPT"
               }
             }
           }
@@ -787,6 +844,61 @@
             "aui_outer",
             "aui_s",
             "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
             "aui_sw",
             "aui_title",
             "aui_titleBar",
