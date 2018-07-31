@@ -789,9 +789,11 @@ div.contentitem {
 }
 .submit .subtrue {
   height: 60px;
+  margin-right: 10px;
 }
 .submit .subtrue > div:nth-child(1) {
   width: 100%;
+  display: flex;
 }
 .submit .subtrue button {
   width: 30%;
@@ -3375,6 +3377,7 @@ div.contentitem {
 }
 [data-ysp-modelid="assetbudget"] .apply .content .contenttit {
   display: flex;
+  justify-content: space-between;
 }
 [data-ysp-modelid="assetbudget"] .apply .content .contenttit .contentitem {
   min-height: 56px;
