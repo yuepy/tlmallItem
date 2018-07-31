@@ -25,8 +25,8 @@
         alert: _alert,
         tab: null,
       	innerBack:null,
-    		userId:null,
-      	passWord:null,
+    		// userId:null,
+    		// passWord:null,
       	//indexName:null,
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
@@ -52,10 +52,10 @@
             }
 
 						 // debugger;
-          if(aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?")!==-1){
-            ysp.customHelper.userId=doc.querySelector("#userid")&&doc.querySelector("#userid").value;
-            ysp.customHelper.passWord=doc.querySelector("#pwd")&&doc.querySelector("#pwd").value;
-          }
+						 // if(aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/")!==-1){
+						 // ysp.customHelper.userId=doc.querySelector("#userid")&&doc.querySelector("#userid").value;
+						 // ysp.customHelper.passWord=doc.querySelector("#pwd")&&doc.querySelector("#pwd").value;
+						 // }
 
         },
 
