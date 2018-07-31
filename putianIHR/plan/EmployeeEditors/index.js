@@ -24,16 +24,20 @@
     getData_control39_XieBFr: function (elem) {
       if (!elem) {
         return;
-      }var data = { btn: [], table1: { syqkSel: [], syqkVal: [], hyzkSel: [], hyzkVal: [] }, table2: {}, table3: { sfSel: [], sfVal: [] }, table4: [] }; //提交按钮
+      }var data = { btn: [], table1: { syqkSel: [], syqkVal: [], hyzkSel: [], hyzkVal: [] }, txtTable1: {}, table2: {}, txtTable2: {}, table3: { sfSel: [], sfVal: [] }, txtTable3: {}, table4: [], txtTable4: [] }; //提交按钮
       var tr = $(elem).children('tbody').children('tr');var len = tr.length;data.btn.push(tr[len - 1].querySelectorAll('input')[0].value, tr[len - 1].querySelectorAll('input')[1].value);var sub = elem.ownerDocument.querySelector("#HPS_EMP_APR_DW_SUBMIT_BTN");if (sub.disabled) {
         data.btn.push("grey");
       } else {
         data.btn.push("");
-      } //基本信息
-      var table1 = $(elem).children('tbody').children('tr').eq(len - 3).find('table').eq(3).children('tbody').children('tr');var tab1Len = table1.length;if (table1[tab1Len - 3].querySelector('label')) {
-        data.table1.picDel = table1[tab1Len - 1].querySelector('span.PSTEXT').textContent;data.table1.jhrq = table1[tab1Len - 3].querySelector('label').textContent; //结婚日期
+      } //编辑，提交公用部分
+      var table1 = $(elem).children('tbody').children('tr').eq(len - 3).find('table').eq(3).children('tbody').children('tr');var tab1Len = table1.length;var table2 = $(elem).find("table[role='presentation']").children('tbody').children('tr');var tab2Len = table2.length;var table3 = $(elem).find(".PSLEVEL1GRID").eq(0).children('tbody').children('tr');var tab3Len = table3.length;var table4 = $(elem).find(".PSLEVEL1GRID").eq(4).children('tbody').children('tr[id]');data.tab4Len = table4.length; //基本信息
+      data.txtTable1.picDel = table1[tab1Len - 1].querySelector('span.PSTEXT').textContent;data.table1.pic = table1[1] && table1[1].querySelectorAll('img')[2] && table1[1].querySelectorAll('img')[2].getAttribute('src'); //户口类型
+      data.table2.addRemark = table2[tab2Len - 1].querySelector('span.PSTEXT').textContent;if (table1[tab1Len - 3].querySelector('label')) {
+        //编辑状态
+        //基本信息
+        data.table1.jhrq = table1[tab1Len - 3].querySelector('label').textContent; //结婚日期
         data.table1.jhrqVal = elem.querySelector("#HPS_BASE_APR_MAR_STATUS_DT").value.replace(/\//g, '-'); //生育情况
-        data.table1.syqk = table1[tab1Len - 5].querySelector('label').textContent;data.table1.pic = table1[1] && table1[1].querySelectorAll('img')[2] && table1[1].querySelectorAll('img')[2].getAttribute('src');data.table1.selName1 = table1[tab1Len - 6] && table1[tab1Len - 6].querySelector('select') && table1[tab1Len - 6].querySelector('select').getAttribute('name');var opt1 = table1[tab1Len - 6].querySelectorAll('option');[].forEach.call(opt1, function (d, i) {
+        data.table1.syqk = table1[tab1Len - 5].querySelector('label').textContent;data.table1.selName1 = table1[tab1Len - 6] && table1[tab1Len - 6].querySelector('select') && table1[tab1Len - 6].querySelector('select').getAttribute('name');var opt1 = table1[tab1Len - 6].querySelectorAll('option');[].forEach.call(opt1, function (d, i) {
           data.table1.syqkSel.push(d.textContent.replace(/(\n)+/g, ''));data.table1.syqkVal.push(d.value);if (d.selected) {
             data.table1.syqkSelVal = d.textContent.trim();
           }
@@ -43,18 +47,31 @@
             data.table1.hyzkSelVal = d.textContent.trim();
           }
         }); //户口类型
-        var table2 = $(elem).find("table[role='presentation']").children('tbody').children('tr');var tab2Len = table2.length;data.table2.addRemark = table2[tab2Len - 1].querySelector('span.PSTEXT').textContent;data.table2.addTitle = table2[tab2Len - 2].querySelector('label').textContent;data.table2.addValue = table2[tab2Len - 3].querySelector('input').value;data.table2.addDisponly = table2[tab2Len - 4].querySelector('span').textContent;data.table2.addLocation = table2[tab2Len - 5].querySelector('label').textContent;data.table2.addLocationValue = table2[tab2Len - 6].querySelector('input').value;data.table2.addBirthDate = table2[tab2Len - 7].querySelector('label').textContent;data.table2.addBirthDateVal = elem.querySelector("#HPS_BASE_APR_HPS_DATE_BJ").value.replace(/\//g, '-');data.table2.addHkou = table2[tab2Len - 9].querySelector('span').textContent;data.table2.addHkouCag = table2[tab2Len - 10].querySelector('label').textContent;data.table2.addisBJ = table2[tab2Len - 11].querySelector('label').textContent;data.table2.addHkouValue = table2[tab2Len - 11].querySelector('input').value;data.table2.addisBJvalue = table2[tab2Len - 11].querySelector('input[type="checkbox"]').checked; //身份证明信息
-        var table3 = $(elem).find(".PSLEVEL1GRID").eq(0).children('tbody').children('tr');var tab3Len = table3.length;var opt3 = table3[tab3Len - 1].querySelector('select').querySelectorAll('option');[].forEach.call(opt3, function (d, i) {
+        data.table2.addTitle = table2[tab2Len - 2].querySelector('label').textContent;data.table2.addValue = table2[tab2Len - 3].querySelector('input').value;data.table2.addDisponly = table2[tab2Len - 4].querySelector('span').textContent;data.table2.addLocation = table2[tab2Len - 5].querySelector('label').textContent;data.table2.addLocationValue = table2[tab2Len - 6].querySelector('input').value;data.table2.addBirthDate = table2[tab2Len - 7].querySelector('label').textContent;data.table2.addBirthDateVal = elem.querySelector("#HPS_BASE_APR_HPS_DATE_BJ").value.replace(/\//g, '-');data.table2.addHkou = table2[tab2Len - 9].querySelector('span').textContent;data.table2.addHkouCag = table2[tab2Len - 10].querySelector('label').textContent;data.table2.addisBJ = table2[tab2Len - 11].querySelector('label').textContent;data.table2.addHkouValue = table2[tab2Len - 11].querySelector('input').value;data.table2.addisBJvalue = table2[tab2Len - 11].querySelector('input[type="checkbox"]').checked; //身份证明信息
+        var opt3 = table3[tab3Len - 1].querySelector('select').querySelectorAll('option');[].forEach.call(opt3, function (d, i) {
           data.table3.sfSel.push(d.textContent);data.table3.sfVal.push(d.value);
         });data.table3.sfzNumber = table3[tab3Len - 1].querySelector("input[name='HPS_NID_APR_NATIONAL_ID$0']").value;data.table3.selName = table3[tab3Len - 1] && table3[tab3Len - 1].querySelector("select") && table3[tab3Len - 1].querySelector("select").getAttribute('name');data.table3.dateLength = table3[tab3Len - 1].querySelector("input[name*='HPS_NID_APR_HPS_NATIONAL_DT']").value.replace(/\//g, "-"); //身份证/户口复印件
-        var table4 = $(elem).find(".PSLEVEL1GRID").eq(4).children('tbody').children('tr[id]');data.tab4Len = table4.length;[].forEach.call(table4, function (trs, trsId) {
+        [].forEach.call(table4, function (trs, trsId) {
           var obj = { wjlxSel: [] };var opt4 = trs.querySelector('select').querySelectorAll('option');[].forEach.call(opt4, function (d, i) {
             obj.wjlxSel.push(d.textContent);if (d.selected) {
               obj.fileType = d.textContent.trim();
             }
           });obj.discript = trs.querySelector("input[id*='DESCR']").value;obj.fileName = trs.querySelector("span[id*='ATTACHUSERFILE']").textContent.trim();obj.upTime = trs.querySelector("span[id*='DTTM']").textContent;data.table4.push(obj);
         });
-      } else {}return data;
+      } else {
+        //已提交状态
+        //基本信息
+        data.txtTable1.jhrq = table1[tab1Len - 3].querySelectorAll('td')[1].textContent.trim(); //结婚日期
+        data.txtTable1.jhrqSel = table1[tab1Len - 3].querySelectorAll('td')[2].textContent.trim().replace(/\//g, '-'); //生育情况
+        data.txtTable1.syqk = table1[tab1Len - 4].querySelectorAll('td')[1].textContent.trim();data.txtTable1.syqkSel = table1[tab1Len - 4].querySelectorAll('td')[2].textContent.trim(); //婚姻状况
+        data.txtTable1.hyzk = table1[tab1Len - 5].querySelectorAll('td')[1].textContent.trim();data.txtTable1.hyzkSel = table1[tab1Len - 5].querySelectorAll('td')[3].textContent.trim(); //户口类型
+        data.txtTable2.addTitle = table2[tab2Len - 2].querySelectorAll('td')[1].textContent.trim();data.txtTable2.addValue = table2[tab2Len - 2].querySelectorAll('td')[1].textContent.trim();data.txtTable2.addDisponly = table2[tab2Len - 3].querySelectorAll('td')[3].textContent.trim();data.txtTable2.addLocation = table2[tab2Len - 3].querySelectorAll('td')[1].textContent.trim();data.txtTable2.addLocationValue = table2[tab2Len - 3].querySelectorAll('td')[2].textContent.trim();data.txtTable2.addBirthDate = table2[tab2Len - 4].querySelectorAll('td')[2].textContent.trim();data.txtTable2.addBirthDateVal = table2[tab2Len - 4].querySelectorAll('td')[4].textContent.trim().replace(/\//g, '-');data.txtTable2.addHkou = table2[tab2Len - 5].querySelectorAll('td')[4].textContent.trim();
+        data.txtTable2.addHkouCag = table2[tab2Len - 5].querySelectorAll('td')[1].textContent.trim();data.txtTable2.addisBJ = table2[tab2Len - 6].querySelector('label').textContent;data.txtTable2.addHkouValue = table2[tab2Len - 6].querySelector('input').value; //身份证明信息
+        data.txtTable3.sfSel = table3[tab3Len - 1].querySelectorAll('td')[1].textContent.trim();data.txtTable3.sfzNumber = table3[tab3Len - 1].querySelectorAll('td')[2].textContent.trim();data.txtTable3.dateLength = table3[tab3Len - 1].querySelectorAll('td')[3].textContent.trim().replace(/\//g, "-"); //身份证/户口复印件
+        [].forEach.call(table4, function (trs, index) {
+          var obj = {};obj.txtTable4.wjlxSel = trs.querySelectorAll("td")[2].textContent.trim();obj.discript = trs.querySelectorAll("td")[3].textContent.trim();obj.fileName = trs.querySelectorAll("td")[4].textContent.trim();obj.upTime = trs.querySelectorAll("td")[5].textContent.trim().replace(/\//g, "-");data.txtTable4.push(obj);
+        });
+      }return data;
     },
     doAction_uiControl39_iQbQNT: function (data, elem) {
       if (data.eventType == 'onshow') {
@@ -104,7 +121,6 @@
         //debugger;
         var target = elem.ownerDocument.querySelector("input[name='#ALERTOK']");target.click();
       } else if (data.eventType == 'onclickNO') {
-        //debugger;
         var target = elem.ownerDocument.querySelector("input[name='#ALERTCANCEL']");target.click();
       } else if (data.eventType == "searchClick") {
         var dataId = data.dataCustom;elem.ownerDocument.querySelector("a[name='" + dataId + "']").click();
