@@ -1,7 +1,10 @@
 // base.js 是对原 PC 页面进行操作的脚本文件
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function (win, ysp) {
-
+	var winTop = top;
+  window.winTop = function(){
+    ysp.appMain.closeWindow();
+  }
   var utils = ysp.utils;
   ysp.customHelper = {};
   utils.extend(ysp.customHelper, {

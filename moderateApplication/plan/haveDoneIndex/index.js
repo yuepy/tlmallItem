@@ -10,22 +10,25 @@
           data = data.customData;if (type == 'td_click') {
         var arr = ['请假申请单', '销假申请单', '离职申请单', '加班申请单', '因公外出申请单', '考勤异常申请单', '员工异动申请单', '员工异动申请单V2', '招聘申请单', '员工合同续签申请单', '试用期转正申请单', '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '资产预算调整流程V2', '信用冻结订单释放申请流程', '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程', '路线变更流程', '路线组变更申请', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程', '合同审批流程', '客资批量审批', '送达方批量审批', '路线批量审批', '通用流程（知会）', '通用流程'];var flat = arr.indexOf(data.text);var hreflo = elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];if (flat == -1) {
           if (hreflo[0] == 'h') {
-            hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
+            if (ysp.appMain.isAndroid()) {
+              window.yspCheckIn.closePageType("2");
+            }hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
           } else {
-            hreflo = "http://172.16.11.61:8000" + hreflo;hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
+            if (ysp.appMain.isAndroid()) {
+              window.yspCheckIn.closePageType("2");
+            }hreflo = "http://172.16.11.61:8000" + hreflo;hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
           }
         } else {
           if (ysp.appMain.isIOS()) {
             if (hreflo.indexOf('http://172.16.11.61') != -1) {
               ysp.appMain.openWindow(hreflo);
             } else {
-              elem.ownerDocument.defaultView.open(hreflo);
+              window.yspCheckIn.closePageType("0");elem.ownerDocument.defaultView.open(hreflo);
             }
           } else {
-            // elem.ownerDocument.defaultView.open(hreflo);
-            // debugger;
-            // ysp.appMain.openWindow(hreflo);
-            elem.ownerDocument.defaultView.open(hreflo);
+            if (ysp.appMain.isAndroid()) {
+              window.yspCheckIn.closePageType("0");
+            }elem.ownerDocument.defaultView.open(hreflo);
           }
         }
       }return false;
@@ -51,8 +54,8 @@
       }
     },
     getTemplate_uiControl195_ArMMGb: function () {
-      var selfTemplate = 'import { Header, HeaderLeft } from \'ysp-interior-components\';\nimport { back } from \'appRenderer\';\nmodule.exports = React.createClass({\n  back:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:"back"\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className=\'titleH1\'>\n          <Header title="\u5DF2\u529E">\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.back.bind(this)}>\u8FD4\u56DE</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});';
-      return '\'use strict\';\n\nvar _yspInteriorComponents = require(\'ysp-interior-components\');\n\nvar _appRenderer = require(\'appRenderer\');\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  back: function back(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: "back"\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      \'div\',\n      { className: \'titleH1\' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: \'\\u5DF2\\u529E\' },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement(\'span\', null),\n          React.createElement(\n            \'button\',\n            { onClick: this.back.bind(this) },\n            \'\\u8FD4\\u56DE\'\n          )\n        )\n      )\n    );\n  }\n});';
+      var selfTemplate = 'import { Header, HeaderLeft } from \'ysp-interior-components\';\nimport { back } from \'appRenderer\';\nmodule.exports = React.createClass({\n  back:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:"back"\n      })\n    }\n  },\n  componentDidMount:function(){\n    if(ysp.appMain.isAndroid()){\n      window.yspCheckIn.closePageType("1");\n    }\n    if(ysp.appMain.isIOS()){\n      var _setupWebViewJavascriptBridge = function (callback) {\n        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }\n        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }\n        window.WVJBCallbacks = [callback];\n        var WVJBIframe = document.createElement("iframe");\n        WVJBIframe.style.display = "none";\n        WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";\n        document.documentElement.appendChild(WVJBIframe);\n        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)\n    \t};\n      _setupWebViewJavascriptBridge(function(bridge) {\n          bridge.callHandler("closePageType", \'true\',function responseCallback(responseData) {\n              console.log("JS received response:", responseData)\n          })\n      });\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className=\'titleH1\'>\n          <Header title="\u5DF2\u529E">\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.back.bind(this)}>\u8FD4\u56DE</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});';
+      return '\'use strict\';\n\nvar _yspInteriorComponents = require(\'ysp-interior-components\');\n\nvar _appRenderer = require(\'appRenderer\');\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  back: function back(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: "back"\n      });\n    }\n  },\n  componentDidMount: function componentDidMount() {\n    if (ysp.appMain.isAndroid()) {\n      window.yspCheckIn.closePageType("1");\n    }\n    if (ysp.appMain.isIOS()) {\n      var _setupWebViewJavascriptBridge = function _setupWebViewJavascriptBridge(callback) {\n        if (window.WebViewJavascriptBridge) {\n          return callback(WebViewJavascriptBridge);\n        }\n        if (window.WVJBCallbacks) {\n          return window.WVJBCallbacks.push(callback);\n        }\n        window.WVJBCallbacks = [callback];\n        var WVJBIframe = document.createElement("iframe");\n        WVJBIframe.style.display = "none";\n        WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";\n        document.documentElement.appendChild(WVJBIframe);\n        setTimeout(function () {\n          document.documentElement.removeChild(WVJBIframe);\n        }, 0);\n      };\n      _setupWebViewJavascriptBridge(function (bridge) {\n        bridge.callHandler("closePageType", \'true\', function responseCallback(responseData) {\n          console.log("JS received response:", responseData);\n        });\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      \'div\',\n      { className: \'titleH1\' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: \'\\u5DF2\\u529E\' },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement(\'span\', null),\n          React.createElement(\n            \'button\',\n            { onClick: this.back.bind(this) },\n            \'\\u8FD4\\u56DE\'\n          )\n        )\n      )\n    );\n  }\n});';
     },
 
     getData_control2_423LQM: function (elem) {
