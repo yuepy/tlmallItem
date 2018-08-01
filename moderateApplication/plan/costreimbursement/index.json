@@ -281,8 +281,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"skrTable\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -471,8 +476,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"Table1\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -507,8 +517,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"detailT\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -547,8 +562,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"tableXiaoJi\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -577,7 +597,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -750,6 +770,42 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control828_SJzrl0": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"TreatTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              6
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control828_SJzrl0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -772,7 +828,8 @@
         "control83_uQRiCK",
         "control223_H3l6nQ",
         "control539_osvg9r",
-        "control823_zQHI4A"
+        "control823_zQHI4A",
+        "control828_SJzrl0"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -937,6 +994,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl772_WpxLLW",
                 "onGetTemplate": "getTemplate_uiControl772_WpxLLW"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl828_QPJ4vA",
+          "controlId": "control828_SJzrl0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl828_QPJ4vA",
+                "onGetTemplate": "getTemplate_uiControl828_QPJ4vA"
               }
             }
           }
@@ -1201,7 +1273,8 @@
         "context11_mB0Nro": [
           "172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=6F27552185A1F052DC97A4309596EAFB&Guid=85ee9e59-f341-4fe3-82db-3bf44dbaaa33",
           "172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=C480312391FF7BF94454BA45BDB2A475&Guid=9a2b710f-cfa7-4a8d-97c9-0fe81be27aea",
-          "172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=94CCD7277804FA37AEC74DA154445369&Guid=637b27de-44e5-4a91-9d66-ca41e33f75e0"
+          "172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=94CCD7277804FA37AEC74DA154445369&Guid=637b27de-44e5-4a91-9d66-ca41e33f75e0",
+          "172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=4961E5BCB3AF25BA28B0DF3FB6706258&Guid=4431ce40-092a-464b-8e89-5e56a9d5f227"
         ]
       }
     },
@@ -1893,6 +1966,71 @@
             "grey",
             "icon-cloud-download",
             "icon-paper-clip",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "required",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trPerson",
+            "trPublic",
+            "ufoot"
+          ],
+          [
+            "Beforehand",
+            "action-area",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
             "labelwidth",
             "layout-data",
             "layout-form",

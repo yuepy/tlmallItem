@@ -330,8 +330,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"detailT\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -360,7 +365,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -583,6 +588,221 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control829_iXJ9Ts": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"skrTable\"]"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"skrTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form.trPerson"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[8]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control829_iXJ9Ts"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control830_PPB5e8": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[9]/TABLE[2]",
+              "ratio": 0.838
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              8
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control830_PPB5e8"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control831_XgcWhA": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"TravelTable\"]"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"TravelTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              8
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control831_XgcWhA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control832_yLvZLu": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[9]/TABLE[5]",
+              "ratio": 0.838
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              8
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control832_yLvZLu"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control833_K6yPLK": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"AppUsersDiv\"]/DIV[3]/TABLE[1]",
+              "descendant::DIV[@id=\"AppUsersDiv\"]//TABLE"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              11,
+              13
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[11]/DIV[3]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control833_K6yPLK"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -601,7 +821,12 @@
         "control544_2LNHHH",
         "control545_RHaK0b",
         "control677_aJaoJl",
-        "control691_ysEQMM"
+        "control691_ysEQMM",
+        "control829_iXJ9Ts",
+        "control830_PPB5e8",
+        "control831_XgcWhA",
+        "control832_yLvZLu",
+        "control833_K6yPLK"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -678,6 +903,16 @@
           "toContextId": "context5_89gtiq"
         }
       ]
+    },
+    "flow304_xWCh6K": {
+      "fromContextId": "context5_89gtiq",
+      "fromAction": "doAction",
+      "fromControlId": "control39_9R1adn",
+      "toContexts": [
+        {
+          "toContextId": "context5_89gtiq"
+        }
+      ]
     }
   },
   "pages": {
@@ -730,6 +965,51 @@
           }
         },
         {
+          "id": "uiControl830_qGyXLy",
+          "controlId": "control830_PPB5e8",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl830_qGyXLy",
+                "onGetTemplate": "getTemplate_uiControl830_qGyXLy"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl831_acU1zD",
+          "controlId": "control831_XgcWhA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl831_acU1zD",
+                "onGetTemplate": "getTemplate_uiControl831_acU1zD"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl832_asRSed",
+          "controlId": "control832_yLvZLu",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl832_asRSed",
+                "onGetTemplate": "getTemplate_uiControl832_asRSed"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl128_NQldZe",
           "controlId": "control128_lRD59W",
           "display": {
@@ -740,6 +1020,36 @@
               "events": {
                 "onDoAction": "doAction_uiControl128_NQldZe",
                 "onGetTemplate": "getTemplate_uiControl128_NQldZe"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl829_zVVTb9",
+          "controlId": "control829_iXJ9Ts",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl829_zVVTb9",
+                "onGetTemplate": "getTemplate_uiControl829_zVVTb9"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl833_vwERMx",
+          "controlId": "control833_K6yPLK",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl833_vwERMx",
+                "onGetTemplate": "getTemplate_uiControl833_vwERMx"
               }
             }
           }
@@ -953,7 +1263,9 @@
           "http://172.16.11.61:9995/Workflow/Forms/CLFYBX/Processing.aspx?SN=EEA7784D0DD68CE8D4EA38D9028E8038&Guid=b53a0631-440d-449d-92b0-5b6789da6c44",
           "172.16.11.61:9995/Workflow/Forms/CLFYBX/Processing.aspx?SN=EE0F481873ADD0A5ECBCA67D40122D4A&Guid=bdb110bd-f650-47fb-9752-65170b2ceacf",
           "172.16.11.61:9995/Workflow/Forms/CLFYBX/Processing.aspx?SN=367083853FBCE6906C7C73FFCE11702B&Guid=cf305c4a-d49d-4cca-904c-1453c53fe03c",
-          "172.16.11.61:9995/Workflow/Forms/CLFYBX/Processing.aspx?SN=FC57A890736311E43E3BCE2F4A10ACA2&Guid=bcb6633f-4183-4a92-8a81-8bece71f1752"
+          "172.16.11.61:9995/Workflow/Forms/CLFYBX/Processing.aspx?SN=FC57A890736311E43E3BCE2F4A10ACA2&Guid=bcb6633f-4183-4a92-8a81-8bece71f1752",
+          "172.16.11.61:9995/Workflow/Forms/CLFYBX/Processing.aspx?SN=A494C8C21DC0FF54E5CE7859219702FE&Guid=b1bad578-8398-4afa-bb69-94b79086a75e",
+          "172.16.11.61:9995/Workflow/Forms/CLFYBX/Processing.aspx?SN=F13389E81D651AE118333D7EF4A8C701&Guid=1ec744ed-6508-41f1-9adf-14bca7d5c0b9"
         ]
       }
     },
@@ -1166,6 +1478,106 @@
             "txt_DeptCode_SKR",
             "txt_Dept_SKR",
             "txt_Summary_SKR",
+            "uploadDiv",
+            "upload_target"
+          ],
+          [
+            "ActionBar_Action",
+            "ActionBar_ActionName",
+            "ActionBar_AddApproval",
+            "ActionBar_AddApprover",
+            "ActionBar_AddApproverName",
+            "ActionBar_Approval",
+            "ActionBar_GotoActivityName",
+            "ActionBar_IsReturnBack",
+            "ActionBar_Reject",
+            "ActionBar_UserAction",
+            "ActionBar_WorkFlow",
+            "ActionBar_btnAddApprover",
+            "ActionBar_btnApprove",
+            "ActionBar_btnClose",
+            "ActionBar_btnRedirect",
+            "ActionBar_btnReject",
+            "ActionBar_btnWorkFlow",
+            "ActionBar_hidJBAffirm",
+            "AppUsersDiv",
+            "ApproveControl_lblActivityName",
+            "ApproveControl_txtMemo",
+            "Attachment_fileUpload",
+            "Attachment_hfActivityName",
+            "Attachment_hfGuid",
+            "Attachment_hfIsStart",
+            "Attachment_hfUserLoginName",
+            "Header_hidFlag",
+            "Header_txtCompanyName",
+            "Header_txtDate",
+            "Header_txtDepartName",
+            "Header_txtEmail",
+            "Header_txtPhone",
+            "Header_txtUserName",
+            "LinkedProcInst_hfGuid",
+            "LinkedProcInst_hfStart",
+            "LinkedProcInst_hfUserLoginName",
+            "TravelTable",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "_myDP",
+            "approveMemo",
+            "btnAddLink",
+            "btnFileUpload",
+            "btnSubmit",
+            "contentForm_HLink_Report",
+            "contentForm_HLink_YuSuan",
+            "contentForm_txtBXSY",
+            "contentForm_txtReimbursementTotal",
+            "contentForm_txtRemarks",
+            "contentForm_txtSKRMoneyTotal",
+            "contentForm_txtSupplier",
+            "contentForm_txtSupplierApplyMoney",
+            "contentForm_txtSupplierBankCode",
+            "contentForm_txtSupplierCode",
+            "contentForm_txtSupplierOpenBank",
+            "contentForm_txtVirtualDepart",
+            "contentForm_txt_AppCompanyCode_Ext",
+            "contentForm_txt_ApplicantDeptCode",
+            "contentForm_txt_ApplicantDeptName",
+            "contentForm_txt_ApplyCompany",
+            "contentForm_txt_ApplyCompanyCode",
+            "contentForm_txt_ApplyEmployeeCode",
+            "contentForm_txt_ApplyEmployeeName",
+            "contentForm_txt_BudgetNo",
+            "contentForm_txt_CPBCRate",
+            "contentForm_txt_Currency",
+            "contentForm_txt_ExchangeRate",
+            "contentForm_txt_InvoiceNum",
+            "contentForm_txt_IsAsset",
+            "contentForm_txt_PayeeTotal",
+            "contentForm_txt_Project",
+            "contentForm_txt_SecondDetail",
+            "contentForm_txt_ThirdDetail",
+            "contentForm_txt_TravelMethod",
+            "contentForm_txt_TravelType",
+            "detailT",
+            "fileAttachment",
+            "filePanel",
+            "file_upload_form",
+            "form",
+            "hdActivityName",
+            "hdGuid",
+            "hdUserLoginName",
+            "person_infor",
+            "person_infor_trigger",
+            "skrTable",
+            "spanProject",
+            "table",
+            "tableAttachment",
+            "tableComments",
+            "tableHeader",
+            "tableXiaoJi",
+            "tb_AttachmentList",
+            "tb_List",
             "uploadDiv",
             "upload_target"
           ]
@@ -1442,6 +1854,75 @@
             "trPerson",
             "trPublic",
             "ufoot"
+          ],
+          [
+            "Beforehand",
+            "action-area",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "del",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "icon-cloud-download",
+            "icon-paper-clip",
+            "icon-trash",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "required",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trPerson",
+            "trPublic",
+            "ufoot"
           ]
         ]
       }
@@ -1568,6 +2049,72 @@
             "TR/TD/A",
             "TR/TD/BR",
             "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/P",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "TR/TH/SPAN",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SCRIPT",
+            "-/FORM/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/P/BR",
+            "DIV/P/STRONG",
+            "DIV/SPAN/INPUT-file",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/A/I",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-hidden",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/LABEL",
+            "TD/SPAN/TEXTAREA",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/DIV",
+            "TR/TD/I",
             "TR/TD/INPUT-hidden",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",

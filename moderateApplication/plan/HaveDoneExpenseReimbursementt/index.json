@@ -368,8 +368,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"detailT\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -408,8 +413,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"tableXiaoJi\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -448,8 +458,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"detailTR\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -517,55 +532,19 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control267_ZPxDDq": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::TABLE[@id=\"TreatTable\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              9,
-              12
-            ],
-            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[7]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control267_ZPxDDq"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": false,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control268_DwTnMs": {
       "location": {
         "data": {
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"skrTable\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -912,6 +891,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -927,6 +910,51 @@
       },
       "events": {
         "onGetData": "getData_control807_01iGk9"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control834_nLEBn4": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"TreatTable\"]"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::TABLE[@id=\"TreatTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              9,
+              12
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/TABLE[7]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control834_nLEBn4"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -951,7 +979,6 @@
         "control251_WcXoaA",
         "control252_ydhZ4J",
         "control253_PPk7Wo",
-        "control267_ZPxDDq",
         "control268_DwTnMs",
         "control269_s8VqHN",
         "control270_wb1Ndy",
@@ -960,7 +987,8 @@
         "control274_r9SsaM",
         "control466_Cyg8Tl",
         "control467_avrJTE",
-        "control807_01iGk9"
+        "control807_01iGk9",
+        "control834_nLEBn4"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -1010,6 +1038,26 @@
       "fromContextId": "context29_3cCNa2",
       "fromAction": "doAction",
       "fromControlId": "control274_r9SsaM",
+      "toContexts": [
+        {
+          "toContextId": "context29_3cCNa2"
+        }
+      ]
+    },
+    "flow305_rMgNNV": {
+      "fromContextId": "context29_3cCNa2",
+      "fromAction": "doAction",
+      "fromControlId": "control241_9uH42N",
+      "toContexts": [
+        {
+          "toContextId": "context29_3cCNa2"
+        }
+      ]
+    },
+    "flow306_9MK8Bz": {
+      "fromContextId": "context29_3cCNa2",
+      "fromAction": "doAction",
+      "fromControlId": "control273_JrRaIN",
       "toContexts": [
         {
           "toContextId": "context29_3cCNa2"
@@ -1238,6 +1286,21 @@
           }
         },
         {
+          "id": "uiControl834_QRdkoB",
+          "controlId": "control834_nLEBn4",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl834_QRdkoB",
+                "onGetTemplate": "getTemplate_uiControl834_QRdkoB"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl268_pqoAbw",
           "controlId": "control268_DwTnMs",
           "display": {
@@ -1343,21 +1406,6 @@
           }
         },
         {
-          "id": "uiControl267_PaTNsB",
-          "controlId": "control267_ZPxDDq",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl267_PaTNsB",
-                "onGetTemplate": "getTemplate_uiControl267_PaTNsB"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl467_IOxvgp",
           "controlId": "control467_avrJTE",
           "display": {
@@ -1403,7 +1451,8 @@
         "context29_3cCNa2": [
           "172.16.11.61:9995/Workflow/Forms/FYBX/View.aspx?ProcInstId=317CFF637438C866",
           "172.16.11.61:9995/Workflow/Forms/FYBX/View.aspx?ProcInstId=6749FDDA4050B8B6",
-          "172.16.11.61:9995/Workflow/Forms/FYBX/View.aspx?ProcInstId=096074C772F69B1A"
+          "172.16.11.61:9995/Workflow/Forms/FYBX/View.aspx?ProcInstId=096074C772F69B1A",
+          "172.16.11.61:9995/Workflow/Forms/FYBX/View.aspx?ProcInstId=38544D0D94604F26"
         ]
       }
     },

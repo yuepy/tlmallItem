@@ -719,8 +719,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"TravelTable\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -806,8 +811,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"detailT\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -846,8 +856,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"skrTable\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -885,6 +900,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -1069,6 +1088,16 @@
       "fromContextId": "context63_he35RO",
       "fromAction": "doAction",
       "fromControlId": "control684_FmqcDe",
+      "toContexts": [
+        {
+          "toContextId": "context63_he35RO"
+        }
+      ]
+    },
+    "flow303_3SF1rc": {
+      "fromContextId": "context63_he35RO",
+      "fromAction": "doAction",
+      "fromControlId": "control685_z1GrpC",
       "toContexts": [
         {
           "toContextId": "context63_he35RO"

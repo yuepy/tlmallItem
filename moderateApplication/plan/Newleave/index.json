@@ -222,6 +222,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"tb1\"]"
+            },
+            {
+              "method": "selector",
+              "value": "#tablePreview"
             }
           ],
           "force": true
@@ -308,7 +312,7 @@
       },
       "intendedRole": "dialog",
       "roles": "element,dialog",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "dialog"
     },
@@ -372,12 +376,12 @@
           "force": true,
           "data": [
             {
-              "method": "XPath",
-              "value": "//*[@id=\"tb2\"]"
+              "method": "selector",
+              "value": "#ctl00_contentForm_P1 > table.layout-data.layout-form"
             },
             {
               "method": "selector",
-              "value": "#ctl00_contentForm_P1 > table.layout-data.layout-form"
+              "value": "#tableDetailByDay"
             }
           ]
         },
@@ -720,6 +724,53 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectLinkedProcInst']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control827_kCBFt3": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]",
+              "ratio": 0.514
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.with-top-buttons.choose-people DIV.body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]"
+          },
+          {
+            "id": "shield",
+            "value": {
+              "zIndex": "auto",
+              "width": 750,
+              "height": 530
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control827_kCBFt3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -741,7 +792,8 @@
         "control608_Z8BLmu",
         "control609_ramkzA",
         "control592_dPcwmC",
-        "control600_AzHWxy"
+        "control600_AzHWxy",
+        "control827_kCBFt3"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -884,6 +936,16 @@
           "toContextId": "context56_U4PFJK"
         }
       ]
+    },
+    "flow173_EGCnhp": {
+      "fromContextId": "context56_U4PFJK",
+      "fromAction": "click",
+      "fromControlId": "control597_fE373m",
+      "toContexts": [
+        {
+          "toContextId": "context56_U4PFJK"
+        }
+      ]
     }
   },
   "pages": {
@@ -939,6 +1001,7 @@
           "id": "uiControl597_GTKggl",
           "controlId": "control597_fE373m",
           "display": {
+            "presentation": "popup",
             "adapterId": "dialog",
             "type": "dialog",
             "adapter": {
@@ -955,7 +1018,23 @@
                   "templateType": ""
                 }
               },
-              "layout": []
+              "layout": [
+                {
+                  "id": "uiControl827_BsdtPK",
+                  "controlId": "control827_kCBFt3",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl827_BsdtPK",
+                        "onGetTemplate": "getTemplate_uiControl827_BsdtPK"
+                      }
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "uiControl597_GTKgglfooter",
@@ -1413,6 +1492,111 @@
             "tableAttachment",
             "tableHeader",
             "tb",
+            "tb_Approver",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv",
+            "upload_target"
+          ],
+          [
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__LASTFOCUS",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "aspnetForm",
+            "btnAddLink",
+            "btnFileUpload",
+            "ctl_Attachment_fileUpload",
+            "ctl_Attachment_hfActivityName",
+            "ctl_Attachment_hfGuid",
+            "ctl_Attachment_hfIsStart",
+            "ctl_Attachment_hfUserLoginName",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_btnLaunch",
+            "ctl_btnSave",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Save",
+            "ctl_contentActionBar_ActionBar_Submit",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_WorkFlow",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_btnSave",
+            "ctl_contentActionBar_ActionBar_btnSubmit",
+            "ctl_contentActionBar_ActionBar_btnWorkFlow",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_ApproverCodes",
+            "ctl_contentForm_ApproverNames",
+            "ctl_contentForm_P",
+            "ctl_contentForm_btnAdd",
+            "ctl_contentForm_btnApp",
+            "ctl_contentForm_btnCheck",
+            "ctl_contentForm_hidLeaveHour",
+            "ctl_contentForm_hidSurplus",
+            "ctl_contentForm_hidUseLeave",
+            "ctl_contentForm_hid_ApproverIDs",
+            "ctl_contentForm_hid_ApproverNames",
+            "ctl_contentForm_lblDescription",
+            "ctl_contentForm_rptDetailByDay_ctl_btnDelete",
+            "ctl_contentForm_rptDetailByDay_ctl_hidId",
+            "ctl_contentForm_rptDetailByDay_ctl_lblActualSpendTime",
+            "ctl_contentForm_rptDetailByDay_ctl_lblCheckStatus",
+            "ctl_contentForm_rptDetailByDay_ctl_lblUnit",
+            "ctl_contentForm_rptDetailByDay_ctl_txtEndDate",
+            "ctl_contentForm_rptDetailByDay_ctl_txtEndTime",
+            "ctl_contentForm_rptDetailByDay_ctl_txtSpendTime",
+            "ctl_contentForm_rptDetailByDay_ctl_txtStartDate",
+            "ctl_contentForm_rptDetailByDay_ctl_txtStartTime",
+            "ctl_contentForm_txt_AgentCode",
+            "ctl_contentForm_txt_AgentName",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantDeptCode",
+            "ctl_contentForm_txt_ApplicantDeptName",
+            "ctl_contentForm_txt_ApplicantFuncDeptCode",
+            "ctl_contentForm_txt_ApplicantName",
+            "ctl_contentForm_txt_CompanyCode",
+            "ctl_contentForm_txt_InfoCode",
+            "ctl_contentForm_txt_InfoName",
+            "ctl_contentForm_txt_LeavePlace",
+            "ctl_contentForm_txt_LeaveReason",
+            "ctl_contentForm_txt_LeaveType",
+            "ctl_contentForm_txt_WorkTimeType",
+            "div",
+            "div_Approver",
+            "fileAttachment",
+            "filePanel",
+            "file_upload_form",
+            "hdActivityName",
+            "hdGuid",
+            "hdUserLoginName",
+            "hfApprover",
+            "person_infor",
+            "person_infor_trigger",
+            "span_subbutton",
+            "span_subbutton_msg",
+            "tableAttachment",
+            "tableDetailByDay",
+            "tableHeader",
+            "tablePreview",
             "tb_Approver",
             "tb_AttachmentList",
             "tb_List",
