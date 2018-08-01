@@ -462,7 +462,7 @@
       },
       "intendedRole": "dialog",
       "roles": "element,link,dialog",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='OpenOperationOption']<<IFRAME>>",
       "componentType": "dialog"
     },
@@ -601,6 +601,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -645,7 +649,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/KZ\\/LXXZ\\/Processing\\.aspx\\?.*"
+        "http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/KZ\\/LXXZ\\/Processing\\.aspx.*"
       ]
     }
   },
@@ -675,6 +679,36 @@
       "fromContextId": "context30_GOG0PI",
       "fromAction": "doAction",
       "fromControlId": "control519_uHfGbQ",
+      "toContexts": [
+        {
+          "toContextId": "context30_GOG0PI"
+        }
+      ]
+    },
+    "flow300_2oC3H0": {
+      "fromContextId": "context30_GOG0PI",
+      "fromAction": "doAction",
+      "fromControlId": "control244_4vI97Z",
+      "toContexts": [
+        {
+          "toContextId": "context30_GOG0PI"
+        }
+      ]
+    },
+    "flow301_dNQvbI": {
+      "fromContextId": "context30_GOG0PI",
+      "fromAction": "doAction",
+      "fromControlId": "control521_IbaKxz",
+      "toContexts": [
+        {
+          "toContextId": "context30_GOG0PI"
+        }
+      ]
+    },
+    "flow302_7AwT5V": {
+      "fromContextId": "context30_GOG0PI",
+      "fromAction": "click",
+      "fromControlId": "control518_CJTPAq",
       "toContexts": [
         {
           "toContextId": "context30_GOG0PI"
@@ -840,6 +874,7 @@
           "id": "uiControl518_yZeaZU",
           "controlId": "control518_CJTPAq",
           "display": {
+            "presentation": "actions",
             "adapterId": "dialog",
             "type": "dialog",
             "adapter": {

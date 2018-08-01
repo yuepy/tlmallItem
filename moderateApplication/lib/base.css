@@ -19,34 +19,45 @@ div.contentitem {
   margin-left: auto !important;
   margin-right: auto !important;
 }
-.Newapplocationbtn > div {
-  width: 100%;
-  padding: 15px 0 15px 20px;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
+[data-ysp-modelid="Newleave"] .contenttitle p,
+[data-ysp-modelid="Newawaybus"] .contenttitle p,
+[data-ysp-modelid="Newtravel"] .contenttitle p {
+  width: 100% !important;
+  padding-right: 20px !important;
 }
-.derstanding {
+[data-ysp-modelid="Newleave"] .derstanding,
+[data-ysp-modelid="Newawaybus"] .derstanding,
+[data-ysp-modelid="Newtravel"] .derstanding {
   background-color: #fff;
 }
-.derstanding .Content {
+[data-ysp-modelid="Newleave"] .derstanding .Content,
+[data-ysp-modelid="Newawaybus"] .derstanding .Content,
+[data-ysp-modelid="Newtravel"] .derstanding .Content {
   padding-left: 15px;
 }
-.derstanding .Content div:nth-child(1) {
+[data-ysp-modelid="Newleave"] .derstanding .Content div:nth-child(1),
+[data-ysp-modelid="Newawaybus"] .derstanding .Content div:nth-child(1),
+[data-ysp-modelid="Newtravel"] .derstanding .Content div:nth-child(1) {
   padding: 10px 0;
 }
-.derstanding .Content div:nth-child(2) {
+[data-ysp-modelid="Newleave"] .derstanding .Content div:nth-child(2),
+[data-ysp-modelid="Newawaybus"] .derstanding .Content div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .derstanding .Content div:nth-child(2) {
   padding: 5px 0;
   padding-right: 10px;
   border-bottom: 1px solid #ccc;
 }
-.derstanding .Content div:nth-child(3) {
+[data-ysp-modelid="Newleave"] .derstanding .Content div:nth-child(3),
+[data-ysp-modelid="Newawaybus"] .derstanding .Content div:nth-child(3),
+[data-ysp-modelid="Newtravel"] .derstanding .Content div:nth-child(3) {
   line-height: 44px;
   margin-top: 10px;
   text-align: center;
   padding-bottom: 10px;
 }
-.derstanding .Content div:nth-child(3) button {
+[data-ysp-modelid="Newleave"] .derstanding .Content div:nth-child(3) button,
+[data-ysp-modelid="Newawaybus"] .derstanding .Content div:nth-child(3) button,
+[data-ysp-modelid="Newtravel"] .derstanding .Content div:nth-child(3) button {
   margin: 0 auto;
   border: 0;
   border: 1px solid #f4b8bb;
@@ -54,11 +65,15 @@ div.contentitem {
   border-radius: 5px;
   padding: 10px 20px;
 }
-.relation {
+[data-ysp-modelid="Newleave"] .relation,
+[data-ysp-modelid="Newawaybus"] .relation,
+[data-ysp-modelid="Newtravel"] .relation {
   background-color: #fff;
   padding-bottom: 5px;
 }
-.relation .contenttitle button {
+[data-ysp-modelid="Newleave"] .relation .contenttitle button,
+[data-ysp-modelid="Newawaybus"] .relation .contenttitle button,
+[data-ysp-modelid="Newtravel"] .relation .contenttitle button {
   border: 0;
   padding: 0 20px;
   border: 1px solid #e64750;
@@ -66,23 +81,33 @@ div.contentitem {
   margin-right: 20px;
   border-radius: 5px;
 }
-.relation .content {
+[data-ysp-modelid="Newleave"] .relation .content,
+[data-ysp-modelid="Newawaybus"] .relation .content,
+[data-ysp-modelid="Newtravel"] .relation .content {
   width: 345px;
   margin: auto auto;
 }
-.relation .content .contentit {
+[data-ysp-modelid="Newleave"] .relation .content .contentit,
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit,
+[data-ysp-modelid="Newtravel"] .relation .content .contentit {
   background-color: #f2f2f2;
   margin-bottom: 10px;
   border-radius: 5px;
 }
-.relation .content .contentit > div {
+[data-ysp-modelid="Newleave"] .relation .content .contentit > div,
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit > div,
+[data-ysp-modelid="Newtravel"] .relation .content .contentit > div {
   display: flex;
   justify-content: space-between;
 }
-.relation .content .contentit > div div {
+[data-ysp-modelid="Newleave"] .relation .content .contentit > div div,
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit > div div,
+[data-ysp-modelid="Newtravel"] .relation .content .contentit > div div {
   padding: 10px 0;
 }
-.relation .content .contentit > div div:nth-child(1) {
+[data-ysp-modelid="Newleave"] .relation .content .contentit > div div:nth-child(1),
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit > div div:nth-child(1),
+[data-ysp-modelid="Newtravel"] .relation .content .contentit > div div:nth-child(1) {
   width: 56px;
   font-size: 14px;
   color: #202020;
@@ -90,82 +115,118 @@ div.contentitem {
   text-align: justify;
   text-align-last: justify;
 }
-.relation .content .contentit > div div:nth-child(2) {
+[data-ysp-modelid="Newleave"] .relation .content .contentit > div div:nth-child(2),
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit > div div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .relation .content .contentit > div div:nth-child(2) {
   width: 260px;
   border-bottom: 1px solid #ccc;
 }
-.relation .content .contentit .titlediv {
+[data-ysp-modelid="Newleave"] .relation .content .contentit .titlediv,
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit .titlediv,
+[data-ysp-modelid="Newtravel"] .relation .content .contentit .titlediv {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
 }
-.relation .content .contentit .titlediv div:nth-child(1) {
+[data-ysp-modelid="Newleave"] .relation .content .contentit .titlediv div:nth-child(1),
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit .titlediv div:nth-child(1),
+[data-ysp-modelid="Newtravel"] .relation .content .contentit .titlediv div:nth-child(1) {
   padding: 10px;
 }
-.relation .content .contentit .titlediv div:nth-child(1) p {
+[data-ysp-modelid="Newleave"] .relation .content .contentit .titlediv div:nth-child(1) p,
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit .titlediv div:nth-child(1) p,
+[data-ysp-modelid="Newtravel"] .relation .content .contentit .titlediv div:nth-child(1) p {
   padding-right: 10px;
   border-right: 1px solid #ccc;
 }
-.relation .content .contentit .titlediv div:nth-child(2) {
+[data-ysp-modelid="Newleave"] .relation .content .contentit .titlediv div:nth-child(2),
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit .titlediv div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .relation .content .contentit .titlediv div:nth-child(2) {
   width: 100%;
   text-align: left;
   padding-top: 10px;
   padding-left: 10px;
   border: 0;
 }
-.relation .content .contentit div:nth-child(4) div:nth-child(2) {
+[data-ysp-modelid="Newleave"] .relation .content .contentit div:nth-child(4) div:nth-child(2),
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit div:nth-child(4) div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .relation .content .contentit div:nth-child(4) div:nth-child(2) {
   border: 0;
 }
-.relation .content .contentit div:nth-child(5) {
+[data-ysp-modelid="Newleave"] .relation .content .contentit div:nth-child(5),
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit div:nth-child(5),
+[data-ysp-modelid="Newtravel"] .relation .content .contentit div:nth-child(5) {
   display: block;
   width: 100%;
   border-top: 1px solid #ccc;
   justify-content: none;
 }
-.relation .content .contentit div:nth-child(5) div {
+[data-ysp-modelid="Newleave"] .relation .content .contentit div:nth-child(5) div,
+[data-ysp-modelid="Newawaybus"] .relation .content .contentit div:nth-child(5) div,
+[data-ysp-modelid="Newtravel"] .relation .content .contentit div:nth-child(5) div {
   width: 100%;
   text-align-last: center;
   margin-bottom: 5px;
 }
-.alertsub {
+[data-ysp-modelid="Newleave"] .alertsub,
+[data-ysp-modelid="Newawaybus"] .alertsub,
+[data-ysp-modelid="Newtravel"] .alertsub {
   display: flex;
   justify-content: space-between;
   background-color: #fff;
 }
-.alertsub button {
+[data-ysp-modelid="Newleave"] .alertsub button,
+[data-ysp-modelid="Newawaybus"] .alertsub button,
+[data-ysp-modelid="Newtravel"] .alertsub button {
   width: 50%;
   height: 44px;
   border: 0;
   border: 1px solid #ccc;
 }
-.alertsub button:nth-child(1) {
+[data-ysp-modelid="Newleave"] .alertsub button:nth-child(1),
+[data-ysp-modelid="Newawaybus"] .alertsub button:nth-child(1),
+[data-ysp-modelid="Newtravel"] .alertsub button:nth-child(1) {
   background-color: #e64750;
 }
-.show {
+[data-ysp-modelid="Newleave"] .show,
+[data-ysp-modelid="Newawaybus"] .show,
+[data-ysp-modelid="Newtravel"] .show {
   display: none;
 }
-.ipt_sub {
+[data-ysp-modelid="Newleave"] .ipt_sub,
+[data-ysp-modelid="Newawaybus"] .ipt_sub,
+[data-ysp-modelid="Newtravel"] .ipt_sub {
   height: 36px;
   width: 325px;
   margin: 15px auto;
 }
-.ipt_sub input,
-.ipt_sub button {
+[data-ysp-modelid="Newleave"] .ipt_sub input,
+[data-ysp-modelid="Newawaybus"] .ipt_sub input,
+[data-ysp-modelid="Newtravel"] .ipt_sub input,
+[data-ysp-modelid="Newleave"] .ipt_sub button,
+[data-ysp-modelid="Newawaybus"] .ipt_sub button,
+[data-ysp-modelid="Newtravel"] .ipt_sub button {
   margin: 0;
   border: 0;
 }
-.ipt_sub > div {
+[data-ysp-modelid="Newleave"] .ipt_sub > div,
+[data-ysp-modelid="Newawaybus"] .ipt_sub > div,
+[data-ysp-modelid="Newtravel"] .ipt_sub > div {
   display: flex;
   justify-content: space-between;
 }
-.ipt_sub input {
+[data-ysp-modelid="Newleave"] .ipt_sub input,
+[data-ysp-modelid="Newawaybus"] .ipt_sub input,
+[data-ysp-modelid="Newtravel"] .ipt_sub input {
   height: 36px;
   width: 275px;
   border: 1px solid #ccc;
   border-right: 0;
   border-radius: 5px 0 0 5px;
 }
-.ipt_sub button {
+[data-ysp-modelid="Newleave"] .ipt_sub button,
+[data-ysp-modelid="Newawaybus"] .ipt_sub button,
+[data-ysp-modelid="Newtravel"] .ipt_sub button {
   width: 50px;
   height: 36px;
   line-height: 36px;
@@ -175,36 +236,52 @@ div.contentitem {
   color: #fff;
   background-color: #e64750;
 }
-.Contenttable {
+[data-ysp-modelid="Newleave"] .Contenttable,
+[data-ysp-modelid="Newawaybus"] .Contenttable,
+[data-ysp-modelid="Newtravel"] .Contenttable {
   background-color: #fff;
 }
-.Contenttable p {
+[data-ysp-modelid="Newleave"] .Contenttable p,
+[data-ysp-modelid="Newawaybus"] .Contenttable p,
+[data-ysp-modelid="Newtravel"] .Contenttable p {
   margin: 0;
 }
-.Contenttable .Content {
+[data-ysp-modelid="Newleave"] .Contenttable .Content,
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content,
+[data-ysp-modelid="Newtravel"] .Contenttable .Content {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
 }
-.Contenttable .Content .Content_radio {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_radio,
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_radio,
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_radio {
   padding: 20px 10px;
 }
-.Contenttable .Content .Content_right {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right,
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right,
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right {
   width: 100%;
   background-color: #f5f5f5;
   margin-right: 10px;
   margin-top: 10px;
   margin-bottom: 5px;
 }
-.Contenttable .Content .Content_right .Content_title {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title,
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title,
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title {
   display: block;
 }
-.Contenttable .Content .Content_right .Content_title > div {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title > div,
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title > div,
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title > div {
   display: flex;
   justify-content: space-between;
   padding: 15px;
 }
-.Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_block {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_block,
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_block,
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_block {
   width: 20px;
   height: 15px;
   background-image: url(img/top.png);
@@ -213,7 +290,9 @@ div.contentitem {
   margin-top: 8px;
   cursor: pointer;
 }
-.Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_none {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_none,
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_none,
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_none {
   width: 20px;
   height: 15px;
   background-image: url(img/xia.png);
@@ -222,42 +301,69 @@ div.contentitem {
   margin-top: 8px;
   cursor: pointer;
 }
-.Contenttable .Content .Content_right .Content_title > div:nth-child(2),
-.Contenttable .Content .Content_right .Content_title > div:nth-child(3) {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title > div:nth-child(2),
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title > div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title > div:nth-child(2),
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title > div:nth-child(3),
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title > div:nth-child(3),
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title > div:nth-child(3) {
   padding-right: 0;
 }
-.Contenttable .Content .Content_right .Content_title > div:nth-child(2) div:nth-child(1),
-.Contenttable .Content .Content_right .Content_title > div:nth-child(3) div:nth-child(1) {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title > div:nth-child(2) div:nth-child(1),
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title > div:nth-child(2) div:nth-child(1),
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title > div:nth-child(2) div:nth-child(1),
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title > div:nth-child(3) div:nth-child(1),
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title > div:nth-child(3) div:nth-child(1),
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title > div:nth-child(3) div:nth-child(1) {
   width: 56px;
   font-size: 14px;
   color: #666666;
   text-align: justify;
   text-align-last: justify;
 }
-.Contenttable .Content .Content_right .Content_title > div:nth-child(2) div:nth-child(2),
-.Contenttable .Content .Content_right .Content_title > div:nth-child(3) div:nth-child(2) {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title > div:nth-child(2) div:nth-child(2),
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title > div:nth-child(2) div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title > div:nth-child(2) div:nth-child(2),
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_title > div:nth-child(3) div:nth-child(2),
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_title > div:nth-child(3) div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_title > div:nth-child(3) div:nth-child(2) {
   width: 80%;
   font-size: 14px;
   color: #313131;
   text-align: left;
 }
-.Contenttable .Content .Content_right .Content_none {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_none,
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_none,
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_none {
   padding-left: 15px;
 }
-.Contenttable .Content .Content_right .Content_none > div:nth-child(1) {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_none > div:nth-child(1),
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_none > div:nth-child(1),
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_none > div:nth-child(1) {
   display: flex;
   justify-content: space-between;
 }
-.Contenttable .Content .Content_right .Content_none > div:nth-child(1) div:nth-child(1) {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_none > div:nth-child(1) div:nth-child(1),
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_none > div:nth-child(1) div:nth-child(1),
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_none > div:nth-child(1) div:nth-child(1) {
   width: 56px;
   text-align: justify;
   text-align-last: justify;
   font-size: 14px;
   color: #666666;
 }
-.Contenttable .Content .Content_right .Content_none > div:nth-child(1) div:nth-child(2) {
+[data-ysp-modelid="Newleave"] .Contenttable .Content .Content_right .Content_none > div:nth-child(1) div:nth-child(2),
+[data-ysp-modelid="Newawaybus"] .Contenttable .Content .Content_right .Content_none > div:nth-child(1) div:nth-child(2),
+[data-ysp-modelid="Newtravel"] .Contenttable .Content .Content_right .Content_none > div:nth-child(1) div:nth-child(2) {
   width: 80%;
   text-align: left;
+}
+.Newapplocationbtn > div {
+  width: 100%;
+  padding: 15px 0 15px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
 }
 .floatbox {
   width: 345px;
@@ -554,6 +660,7 @@ div.contentitem {
 }
 .contenttitle p {
   line-height: 30px;
+  width: 100%;
   display: block;
   margin-left: 15px;
 }

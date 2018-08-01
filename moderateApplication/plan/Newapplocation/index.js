@@ -32,7 +32,7 @@
           elem.querySelectorAll("li")[1].querySelector("a").click();
         }
       }if (data.eventType == 'onclick') {
-        elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
+        elem.parentElement.querySelector('ul').querySelectorAll('li')[0].querySelector('a').click(); // elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
       }
     },
     getTemplate_uiControl588_WA9IUZ: function () {
@@ -57,7 +57,7 @@
       // }
       var arr = [];var str = ['请假申请单', '因公外出申请单', '差旅费用报销流程'];var alist = elem.querySelectorAll('a[href="javascript:void(0)"]');for (var i = 0; i < alist.length; i++) {
         if (str.indexOf(alist[i].textContent.trim()) != -1) {
-          arr.push({ text: alist[i].textContent.trim(), index: i });
+          arr.push({ text: alist[i].textContent.trim(), index: i, url: alist[i].getAttribute('url') });
         }
       }return arr;
     },
@@ -71,12 +71,20 @@
       // }
       // }
       if ('click' == type) {
-        var alist = elem.querySelectorAll('a[href="javascript:void(0)"]')[data].click();
+        var url = data.url;var flat = url.indexOf('http://172.16.11.61') != -1 ? true : false;if (ysp.appMain.isIOS()) {
+          if (flat) {
+            ysp.appMain.openWindow(url);
+          } else {
+            elem.ownerDocument.defaultView.open(url);
+          }
+        } else {
+          elem.ownerDocument.defaultView.open(url); // var alist = elem.querySelectorAll('a[href="javascript:void(0)"]')[data.index].click();
+        }
       }
     },
     getTemplate_uiControl589_fBkpUm: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  // click:function(e){\n  //   debugger;\n  //   var handler = this.props.customHandler,\n  //       target = e.target;\n  //   if(handler){\n  //     handler({\n  //       eventType:'click',\n  //       data:{\n  //         title:target.getAttribute('data-title'),\n  //         id:target.getAttribute('data-id')\n  //       }\n  //     })\n  //   }\n  // },\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:target.getAttribute('data-id')\n\t\t\t})\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(!data){\n      return '';\n    }\n    var lis = data.map(function(ele,index){\n      return(\n        <div onClick={_this.onClick} data-id={ele.index}>{ele.text}</div>\n      )\n    })\n    return(\n    \t<div className='Newapplocationbtn'>\n        \t{lis}\n      </div>\n    )\n    // var flow_content = data.title.map(function(d,i){\n    //   var flow_list = data.content[i].map(function(ele,index){\n    //     return(\n    //     \t<button data-id={i} data-title={index} onClick={_this.click.bind(_this)}>{ele}</button>\n    //     )\n    //   })\n    //   return(\n    //   \t<div>\n    //     \t<div>{d}</div>\n    //       <div>{flow_list}</div>\n    //     </div>\n    //   )\n    // })\n    // return (\n    //   <div>\n    //     <div>{flow_content}</div>\n    //   </div>\n    // )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  // click:function(e){\n  //   debugger;\n  //   var handler = this.props.customHandler,\n  //       target = e.target;\n  //   if(handler){\n  //     handler({\n  //       eventType:'click',\n  //       data:{\n  //         title:target.getAttribute('data-title'),\n  //         id:target.getAttribute('data-id')\n  //       }\n  //     })\n  //   }\n  // },\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: target.getAttribute('data-id')\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (!data) {\n      return '';\n    }\n    var lis = data.map(function (ele, index) {\n      return React.createElement(\n        'div',\n        { onClick: _this.onClick, 'data-id': ele.index },\n        ele.text\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'Newapplocationbtn' },\n      lis\n    );\n    // var flow_content = data.title.map(function(d,i){\n    //   var flow_list = data.content[i].map(function(ele,index){\n    //     return(\n    //     \t<button data-id={i} data-title={index} onClick={_this.click.bind(_this)}>{ele}</button>\n    //     )\n    //   })\n    //   return(\n    //   \t<div>\n    //     \t<div>{d}</div>\n    //       <div>{flow_list}</div>\n    //     </div>\n    //   )\n    // })\n    // return (\n    //   <div>\n    //     <div>{flow_content}</div>\n    //   </div>\n    // )\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  // click:function(e){\n  //   debugger;\n  //   var handler = this.props.customHandler,\n  //       target = e.target;\n  //   if(handler){\n  //     handler({\n  //       eventType:'click',\n  //       data:{\n  //         title:target.getAttribute('data-title'),\n  //         id:target.getAttribute('data-id')\n  //       }\n  //     })\n  //   }\n  // },\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:{\n          index:target.getAttribute('data-id'),\n          url:target.getAttribute('url')\n        }\n\t\t\t})\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(!data){\n      return '';\n    }\n    var lis = data.map(function(ele,index){\n      return(\n        <div url={ele.url} onClick={_this.onClick} data-id={ele.index}>{ele.text}</div>\n      )\n    })\n    return(\n    \t<div className='Newapplocationbtn'>\n        \t{lis}\n      </div>\n    )\n    // var flow_content = data.title.map(function(d,i){\n    //   var flow_list = data.content[i].map(function(ele,index){\n    //     return(\n    //     \t<button data-id={i} data-title={index} onClick={_this.click.bind(_this)}>{ele}</button>\n    //     )\n    //   })\n    //   return(\n    //   \t<div>\n    //     \t<div>{d}</div>\n    //       <div>{flow_list}</div>\n    //     </div>\n    //   )\n    // })\n    // return (\n    //   <div>\n    //     <div>{flow_content}</div>\n    //   </div>\n    // )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  // click:function(e){\n  //   debugger;\n  //   var handler = this.props.customHandler,\n  //       target = e.target;\n  //   if(handler){\n  //     handler({\n  //       eventType:'click',\n  //       data:{\n  //         title:target.getAttribute('data-title'),\n  //         id:target.getAttribute('data-id')\n  //       }\n  //     })\n  //   }\n  // },\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: {\n          index: target.getAttribute('data-id'),\n          url: target.getAttribute('url')\n        }\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    var _this = this;\n    if (!data) {\n      return '';\n    }\n    var lis = data.map(function (ele, index) {\n      return React.createElement(\n        'div',\n        { url: ele.url, onClick: _this.onClick, 'data-id': ele.index },\n        ele.text\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'Newapplocationbtn' },\n      lis\n    );\n    // var flow_content = data.title.map(function(d,i){\n    //   var flow_list = data.content[i].map(function(ele,index){\n    //     return(\n    //     \t<button data-id={i} data-title={index} onClick={_this.click.bind(_this)}>{ele}</button>\n    //     )\n    //   })\n    //   return(\n    //   \t<div>\n    //     \t<div>{d}</div>\n    //       <div>{flow_list}</div>\n    //     </div>\n    //   )\n    // })\n    // return (\n    //   <div>\n    //     <div>{flow_content}</div>\n    //   </div>\n    // )\n  }\n});";
     }
-  });
+  }, "Newapplocation");
 })(window, ysp);

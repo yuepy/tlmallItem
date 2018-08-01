@@ -186,7 +186,7 @@
           elem.querySelectorAll("li")[1].querySelector("a").click();
         }
       }if (data.eventType == 'onclick') {
-        elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
+        elem.parentElement.querySelector('ul').querySelectorAll('li')[0].querySelector('a').click(); // elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
       }
     },
     getTemplate_uiControl226_QGhOPy: function () {

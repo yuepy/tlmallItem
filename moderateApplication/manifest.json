@@ -369,11 +369,31 @@
       "demo": [
         "http://172.16.11.61:9995/Workflow/Forms/YSWSQNew/Processing.aspx?SN=E56233FB36C2127D6DB07CCA93FF9965&Guid=69261c15-dff8-47df-a1e1-20f7429bc19d"
       ]
+    },
+    {
+      "title": "Newtravel",
+      "url": "adapter://moderateApplication/plan/Newtravel/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/CLFYBX\\/Start\\.aspx"
+      ],
+      "demo": [
+        "http://172.16.11.61:9995/Workflow/Forms/CLFYBX/Start.aspx"
+      ]
+    },
+    {
+      "title": "eliminate",
+      "url": "adapter://moderateApplication/plan/eliminate/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:8000.*"
+      ],
+      "demo": [
+        "http://172.16.11.61:8000/Forms/HR/XJSQ/Processing.aspx?SN=942D33DE9D003EE91F20CDAF6A2127C9&Guid=9602f22c-f6e9-43fd-934c-2809b644ff29"
+      ]
     }
   ],
   "name": "中可工程",
   "default_url": "http://172.16.11.61/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1533086310260
+  "update_time": 1533104204940
 }

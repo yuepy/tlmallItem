@@ -26,18 +26,14 @@ div.contentitem{
     margin-right: auto !important;
   }
 }
-
-//新建申请流程
-.Newapplocationbtn{
-  >div{
-    width: 100%;
-    padding: 15px 0 15px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    cursor: pointer;
+[data-ysp-modelid="Newleave"],[data-ysp-modelid="Newawaybus"],[data-ysp-modelid="Newtravel"]{
+  //发起流程公共样式····································
+  .contenttitle{
+    p{
+      width: 100% !important;
+      padding-right: 20px !important;
+    }
   }
-}
-//发起流程公共样式····································
   //知会信息
   .derstanding{
     background-color: #fff;
@@ -277,6 +273,18 @@ div.contentitem{
     }
   }
 //发起流程公共样式···································································
+}
+//新建申请流程
+.Newapplocationbtn{
+  >div{
+    width: 100%;
+    padding: 15px 0 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
+}
+
 //弹出层选人框
     .floatbox{
     width: 345px;
@@ -579,6 +587,7 @@ div.contentitem{
     padding: 15px 0;
     p{
       line-height: 30px;
+      width: 100%;
       display: block;
       margin-left: 15px;
     }
