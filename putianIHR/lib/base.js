@@ -62,14 +62,15 @@
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
           //ios弹出_ysp_top
-// 					var oldAlert=aWin.alert;
-//           aWin.alert=function(str){
-//             if(/_ysp_top/.test(str)){
-//               return;
-//             }else{
+          debugger;
+					var oldAlert=aWin.alert;
+          aWin.alert=function(str){
+            if(/_ysp_top/.test(str)){
+              return;
+            }else{
               
-//             }
-//           }
+            }
+          }
           //hr前五个快捷入口加载不出来的解决办法
           // var href=aWin.location.href;
           // debugger;
