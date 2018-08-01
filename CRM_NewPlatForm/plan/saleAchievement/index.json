@@ -3,6 +3,9 @@
   "id": "saleAchievement",
   "targetURL": "http://192.168.220.82:8080/ptDataShow/salesAll/salesOverview?a=1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDEvMjYvMjAxOCAxNTo0Mjo0MQ==",
   "jsFile": "index.js",
+  "requires": {
+    "achievement": "../achievement/index.json"
+  },
   "chineseName": "销售总览业绩",
   "description": "销售总览业绩",
   "controls": {
@@ -846,6 +849,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -939,6 +946,30 @@
       "fromContextId": "context76_9rFC8S",
       "fromAction": "doAction",
       "fromControlId": "control287_GUn0CG",
+      "toContexts": [
+        {
+          "toContextId": "context76_9rFC8S"
+        }
+      ]
+    },
+    "flow124_6en5Ie": {
+      "fromContextId": "context76_9rFC8S",
+      "fromAction": "doAction",
+      "fromControlId": "control274_87SuoT",
+      "toContexts": [
+        {
+          "toContextId": "context76_9rFC8S"
+        },
+        {
+          "toContextId": "context30_fLMQCM",
+          "toModelId": "achievement"
+        }
+      ]
+    },
+    "flow172_ZAkPlL": {
+      "fromContextId": "context76_9rFC8S",
+      "fromAction": "doAction",
+      "fromControlId": "control294_QhsLey",
       "toContexts": [
         {
           "toContextId": "context76_9rFC8S"
