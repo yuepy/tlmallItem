@@ -1996,6 +1996,15 @@ button[type='fileUpload']{
         direction:rtl;
       }
     }
+    .ysp-listItem-txt{
+      overflow: hidden;
+      span{
+        width:50%;
+      }
+      span:last-child{
+        text-align:right;
+      }
+    }
     .portrait{
       margin: 20px 0;
       position: relative;
@@ -2050,6 +2059,7 @@ button[type='fileUpload']{
     .content{
       display: inline-block;
       width: 55%;
+      text-align: right;
       overflow: hidden;
       input{
         float: left;
@@ -2064,7 +2074,7 @@ button[type='fileUpload']{
         font-size: 15px;
         color:#888;
       }
-      span{
+      span[data-id]{
         float: right;
         width: 10%;
         height: 25px;
@@ -2105,6 +2115,10 @@ button[type='fileUpload']{
     span{
       float: left;
       width: 40%;
+    }
+    .ysp-span-txt{
+      float:right;
+      text-align: right;
     }
     input[type='date']{
       float: right;
@@ -2201,6 +2215,7 @@ button[type='fileUpload']{
   .content{
     display: inline-block;
     width: 55%;
+    text-align: right;
     overflow: hidden;
     select,input{
       display: inline-block;
@@ -2230,14 +2245,14 @@ button[type='fileUpload']{
       background-position: 100%;
       background-size: 10px;
     }
-    span{
-      float: right;
-      width: 10%;
-      height: 25px;
-      background:#fff url(../local/img/rightArrow.png) no-repeat;
-      background-position: 100%;
-      background-size: 10px;
-    }
+    // span{
+    //   float: right;
+    //   width: 10%;
+    //   height: 25px;
+    //   background:#fff url(../local/img/rightArrow.png) no-repeat;
+    //   background-position: 100%;
+    //   background-size: 10px;
+    // }
   }
 }
 //身份证户口复印件
@@ -2414,6 +2429,7 @@ button[type='fileUpload']{
   .content{
     display: inline-block;
     width: 55%;
+    text-align: right;
     overflow: hidden;
     select,input[type='date']{
       display: inline-block;
@@ -2458,6 +2474,24 @@ button[type='fileUpload']{
       background:#fff url(../local/img/rightArrow.png) no-repeat;
       background-position: 100%;
       background-size: 10px;
+    }
+    .ysp-address-txt{
+      width:100%;
+      background:none;
+      text-align: right;
+    }
+  }
+}
+.ysp-yddz-list-txt p{
+  display: block;
+  span{
+    display: inline-block;
+     &:first-child{
+      width: 25%;
+       text-align: left;
+      }
+    &:last-child{
+      float:right;
     }
   }
 }

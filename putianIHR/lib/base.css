@@ -2099,6 +2099,15 @@ button[type='fileUpload'] {
 .ysp-jbxx-tt .ysp-jbxxList-tt .ysp-listItem-tt select {
   direction: rtl;
 }
+.ysp-jbxx-tt .ysp-jbxxList-tt .ysp-listItem-txt {
+  overflow: hidden;
+}
+.ysp-jbxx-tt .ysp-jbxxList-tt .ysp-listItem-txt span {
+  width: 50%;
+}
+.ysp-jbxx-tt .ysp-jbxxList-tt .ysp-listItem-txt span:last-child {
+  text-align: right;
+}
 .ysp-jbxx-tt .ysp-jbxxList-tt .portrait {
   margin: 20px 0;
   position: relative;
@@ -2150,6 +2159,7 @@ button[type='fileUpload'] {
 .ysp-hkxx-list-tt .ysp-hkxx-first-tt .content {
   display: inline-block;
   width: 55%;
+  text-align: right;
   overflow: hidden;
 }
 .ysp-hkxx-list-tt .ysp-hkxx-first-tt .content input {
@@ -2165,7 +2175,7 @@ button[type='fileUpload'] {
   font-size: 15px;
   color: #888;
 }
-.ysp-hkxx-list-tt .ysp-hkxx-first-tt .content span {
+.ysp-hkxx-list-tt .ysp-hkxx-first-tt .content span[data-id] {
   float: right;
   width: 10%;
   height: 25px;
@@ -2205,6 +2215,10 @@ button[type='fileUpload'] {
 .ysp-hkxx-list-tt > p span {
   float: left;
   width: 40%;
+}
+.ysp-hkxx-list-tt > p .ysp-span-txt {
+  float: right;
+  text-align: right;
 }
 .ysp-hkxx-list-tt > p input[type='date'] {
   float: right;
@@ -2296,6 +2310,7 @@ button[type='fileUpload'] {
 .ysp-sfzxx-list-tt .content {
   display: inline-block;
   width: 55%;
+  text-align: right;
   overflow: hidden;
 }
 .ysp-sfzxx-list-tt .content select,
@@ -2323,14 +2338,6 @@ button[type='fileUpload'] {
   background: none;
 }
 .ysp-sfzxx-list-tt .content input[type='date'] {
-  background: #fff url(../local/img/rightArrow.png) no-repeat;
-  background-position: 100%;
-  background-size: 10px;
-}
-.ysp-sfzxx-list-tt .content span {
-  float: right;
-  width: 10%;
-  height: 25px;
   background: #fff url(../local/img/rightArrow.png) no-repeat;
   background-position: 100%;
   background-size: 10px;
@@ -2520,6 +2527,7 @@ button[type='fileUpload'] {
 .ysp_family_item .content {
   display: inline-block;
   width: 55%;
+  text-align: right;
   overflow: hidden;
 }
 .ysp-ygdz-list-tt .content select,
@@ -2583,6 +2591,27 @@ button[type='fileUpload'] {
   background: #fff url(../local/img/rightArrow.png) no-repeat;
   background-position: 100%;
   background-size: 10px;
+}
+.ysp-ygdz-list-tt .content .ysp-address-txt,
+.ysp-dhxx-list-tt .content .ysp-address-txt,
+.ysp-jyjl-list-tt .content .ysp-address-txt,
+.ysp_family_item .content .ysp-address-txt {
+  width: 100%;
+  background: none;
+  text-align: right;
+}
+.ysp-yddz-list-txt p {
+  display: block;
+}
+.ysp-yddz-list-txt p span {
+  display: inline-block;
+}
+.ysp-yddz-list-txt p span:first-child {
+  width: 25%;
+  text-align: left;
+}
+.ysp-yddz-list-txt p span:last-child {
+  float: right;
 }
 .ysp-dhxx-list-tt > p:last-child,
 .ysp-jyjl-list-tt > p:last-child,
