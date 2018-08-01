@@ -64,7 +64,7 @@
       //   data.eventType == 'back' ? ysp.customHelper.backHome() : '我回不去';
       // }
       if (data.eventType === 'back') {
-        var li = elem && elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('li').length;li > 1 ? elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('li')[li - 2].querySelector('a').click() : ysp.appMain.back();
+        var li = elem && elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('li').length;li > 1 ? elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('li')[li - 2].querySelector('a').click() : elem.ownerDocument.defaultView.close();
       }
     },
     getTemplate_uiControl121_Umg5QL: function getTemplate_uiControl121_Umg5QL() {

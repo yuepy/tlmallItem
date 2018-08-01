@@ -130,6 +130,12 @@
           //console.log(ALLMENU)
           //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
           //AllMobileMenu(AllMenu);
+          //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
+          if(ALLMENU != '' && AllMenu){
+             // lyh
+						 xhr.open('POST','http://192.168.220.82:8080/ptDataShow/login/crmLogin',false);
+						 xhr.send({'filter_userId':'zhaoweili','encoder':'emhhb3dlaWxpKzA3LzMxLzIwMTggMTc6MjQ6MDM='});
+          }
         }
       } else if (xhr.status >= 400) {
         console.warn('请求失败,可能正在登陆中,3s后重新请求');
