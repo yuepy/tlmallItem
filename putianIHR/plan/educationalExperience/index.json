@@ -201,6 +201,10 @@
         "data": {
           "tagName": "INPUT"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@title",
@@ -247,6 +251,10 @@
         "data": {
           "tagName": "FORM"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -268,6 +276,60 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control2_uarhvs": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge BODY.PSPAGE"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control2_uarhvs"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control3_AKZnFE": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.pc.chrome.win.psc_dir-ltr.psc_form-xlarge BODY.PSPAGE"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control3_AKZnFE"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -279,7 +341,9 @@
         "control87_nzqNhh",
         "control88_uhIqS6",
         "control29_eOS46G",
-        "control116_zmIZua"
+        "control116_zmIZua",
+        "control2_uarhvs",
+        "control3_AKZnFE"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -406,6 +470,36 @@
               "events": {
                 "onDoAction": "doAction_uiControl55_VL6QSh",
                 "onGetTemplate": "getTemplate_uiControl55_VL6QSh"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl2_wJgmpS",
+          "controlId": "control2_uarhvs",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl2_wJgmpS",
+                "onGetTemplate": "getTemplate_uiControl2_wJgmpS"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl3_kU0rwv",
+          "controlId": "control3_AKZnFE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl3_kU0rwv",
+                "onGetTemplate": "getTemplate_uiControl3_kU0rwv"
               }
             }
           }

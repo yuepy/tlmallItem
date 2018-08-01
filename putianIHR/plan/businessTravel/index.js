@@ -251,7 +251,7 @@
     getData_control59_g8VqUC: function (elem) {
       if (!elem) {
         return;
-      }var disabedMask = elem && elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN") && elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN").disabled;if (elem && disabedMask) {
+      }console.log(elem);var disabedMask = elem && elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN") && elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN").disabled;if (elem && disabedMask) {
         return true;
       }
     },
