@@ -8,7 +8,11 @@
     doAction_uiControl587_km9Wh8: function (data, elem) {
       if ("back" == data.eventType) {
         // ysp.appMain.back(); //ysp.runtime.Model.setForceMatchModels(['commission']);
-        ysp.runtime.Browser.activeBrowser.contentWindow.close();
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();if (ysp.appMain.isIOS()) {
+          top.EAPI.postMessageToNative('closePage', null);
+        }if (ysp.appMain.isAndroid()) {
+          window.yspCheckIn.closePage();
+        }
       }
     },
     getTemplate_uiControl587_km9Wh8: function () {
