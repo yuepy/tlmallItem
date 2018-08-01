@@ -105,7 +105,7 @@
             }data.content.push(obj);
           }
         }
-      }var box = elem.parentElement.querySelector("#tb3");var str = {};str.left = box.querySelector('label').textContent.trim().split("*")[0];str.lefttext = box.querySelector('label').textContent.trim().split("*")[1].trim();str.value = box.nextElementSibling.textContent.trim();str.type = 'textareaipt';str.id = box.querySelector('textarea').id;str.text = box.querySelector('textarea').value;data.content.push(str);return data;
+      }var box = elem.parentElement.querySelector("#tb3") ? elem.parentElement.querySelector("#tb3") : elem.parentElement.querySelectorAll('table')[elem.parentElement.querySelectorAll('table').length - 1];var str = {};str.left = box.querySelector('label').textContent.trim().split("*")[0];str.lefttext = box.querySelector('label').textContent.trim().split("*")[1].trim();str.value = box.nextElementSibling.textContent.trim();str.type = 'textareaipt';str.id = box.querySelector('textarea').id;str.text = box.querySelector('textarea').value;data.content.push(str);return data;
     },
     doAction_uiControl595_2rT4iA: function (data, elem) {
       var type = data.eventType;var data = data.customData;if (type == 'iptchange') {
