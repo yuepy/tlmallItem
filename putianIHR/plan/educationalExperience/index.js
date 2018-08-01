@@ -150,10 +150,10 @@
         var index = data.dataCustom;var target = elem.querySelectorAll("label[id^='HPS_EDUCAT_APR_HPS_HIGH_EDU_FLAG_LBL$']")[index].previousElementSibling;target.click();
       } else if (data.eventType == 'clickSave') {
         //debugger;
-        var target = elem.ownerDocument.querySelectorAll("input[id^='HPS_EMP_APR_DW_SAVE_BTN']");target.click();
+        var target = elem.ownerDocument.querySelector("input[id='HPS_EMP_APR_DW_SAVE_BTN']");target.click();
       } else if (data.eventType == 'clicktijiao') {
         //debugger;
-        var target = elem.ownerDocument.querySelectorAll("input[id^='HPS_EMP_APR_DW_SUBMIT_BTN']");target.click();
+        var target = elem.ownerDocument.querySelector("input[id='HPS_EMP_APR_DW_SUBMIT_BTN']");target.click();
       } else if (data.eventType == 'clickdelect') {
         var index = data.dataCustom;var target = elem.querySelectorAll("a[name^='$ICField82$delete$']")[index];target.click();
       } else if (data.eventType == "addMore") {
