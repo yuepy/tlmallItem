@@ -46,41 +46,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control124_6f9iyR": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "selector",
-              "value": "html"
-            }
-          ],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.body-bg DIV.g-main DIV.m-header"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control124_6f9iyR"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control128_5Gm11K": {
       "location": {
         "data": {
@@ -318,7 +283,6 @@
     "context30_fLMQCM": {
       "controls": [
         "control123_1NaFXs",
-        "control124_6f9iyR",
         "control128_5Gm11K",
         "control138_3EstT8",
         "control173_yZJTIx",
@@ -336,20 +300,6 @@
       "toContexts": [
         {
           "toContextId": "context30_fLMQCM"
-        }
-      ]
-    },
-    "flow102_A7Bm1I": {
-      "fromContextId": "context30_fLMQCM",
-      "fromAction": "doAction",
-      "fromControlId": "control124_6f9iyR",
-      "toContexts": [
-        {
-          "toContextId": "context30_fLMQCM"
-        },
-        {
-          "toContextId": "context37_iIDfFF",
-          "toModelId": "saleReach"
         }
       ]
     },
@@ -400,6 +350,16 @@
           "toModelId": "index"
         }
       ]
+    },
+    "flow269_z6kTbS": {
+      "fromContextId": "context30_fLMQCM",
+      "fromAction": "doAction",
+      "fromControlId": "control174_u04FZR",
+      "toContexts": [
+        {
+          "toContextId": "context30_fLMQCM"
+        }
+      ]
     }
   },
   "pages": {
@@ -417,21 +377,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl121_Umg5QL",
                 "onGetTemplate": "getTemplate_uiControl121_Umg5QL"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl122_InFkss",
-          "controlId": "control124_6f9iyR",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl122_InFkss",
-                "onGetTemplate": "getTemplate_uiControl122_InFkss"
               }
             }
           }
