@@ -220,10 +220,6 @@
         "userData": {
           "data": [
             {
-              "method": "XPath",
-              "value": "//*[@id=\"tb1\"]"
-            },
-            {
               "method": "selector",
               "value": "#tablePreview"
             }
@@ -264,7 +260,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
@@ -375,10 +371,6 @@
         "userData": {
           "force": true,
           "data": [
-            {
-              "method": "selector",
-              "value": "#ctl00_contentForm_P1 > table.layout-data.layout-form"
-            },
             {
               "method": "selector",
               "value": "#tableDetailByDay"
@@ -729,6 +721,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
