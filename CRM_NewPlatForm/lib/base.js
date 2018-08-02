@@ -797,7 +797,9 @@
     }
   }
   utils.extend(ysp.customHelper, {
-    BackReload:_BackReload,
+    filter_userId:null,//存储大数据session请求参数 
+    encode:null,//存储大数据session请求参数 
+    BackReload:_BackReload,
     getTargetMenus: _getTargetMenus,
     getTableData: _getTableData,
     trim: _trim,

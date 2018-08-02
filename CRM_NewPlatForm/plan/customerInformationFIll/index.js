@@ -27,8 +27,7 @@
     doAction_uiControl176_cUGqtJ: function (data, elem) {
       if (data.eventType == "click") {
         console.log(data.dataCustom);ysp.customHelper.pageId();var i = data.dataCustom.i;var val = data.dataCustom.val;elem.querySelector("tbody").querySelectorAll("tr")[i].querySelectorAll("td")[val].querySelector("a").click();
-      } // {d[4] == ''? <i style={{color:'#cccccc'}}>预测PSI：</i> :<i>预测PSI：</i>}{d[4]=="未采集"? <b onClick={_this.onClick.bind(_this)} data-index="4" data-i={i} style={{color:"#e8350d"}}>{d[4]}</b> : <b  onClick={_this.onClick.bind(_this)} data-index="4" data-i={i} style={{color:"#4796ed"}}>{d[4]}</b>}
-      if (data.eventType == "showLoading") {
+      }if (data.eventType == "showLoading") {
         // setTimeout(function () {
         //   ysp.appMain.showLoading();
         // }, 1000);
