@@ -5,11 +5,7 @@
       if (!elem) {
         return;
       } else {
-        var obj;obj = elem.parentElement.parentElement.parentElement.previousElementSibling.querySelector("#HPS_EMP_APR_DW_HPS_EMPLINFO_STA").textContent; // if (obj == "已提交") {
-        //   return false;
-        // } else {
-        //   return true;
-        // }
+        var obj;obj = elem.parentElement.parentElement.parentElement.previousElementSibling.querySelector("#HPS_EMP_APR_DW_HPS_EMPLINFO_STA").textContent;
       }
     },
     doAction_uiControl37_sE7sBO: function (data, elem) {
