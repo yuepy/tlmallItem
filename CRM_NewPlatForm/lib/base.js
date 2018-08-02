@@ -797,6 +797,7 @@
     }
   }
   utils.extend(ysp.customHelper, {
+		BackFlag:0, // 拜访总览逐级返回标识
     filter_userId:null,//存储大数据session请求参数 
     encode:null,//存储大数据session请求参数 
     BackReload:_BackReload,
