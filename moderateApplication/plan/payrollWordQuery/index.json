@@ -3,6 +3,9 @@
   "id": "payrollWordQuery",
   "targetURL": "http://172.16.11.61:81/SalaryList.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "homePage": "../homePage/index.json"
+  },
   "chineseName": "工资单查询",
   "description": "工资单查询",
   "firstPaintEnable": false,
@@ -11,6 +14,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -52,6 +59,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/partialWord",
@@ -91,6 +102,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -141,6 +156,20 @@
       "fromContextId": "context90_pPWGka",
       "fromAction": "doAction",
       "fromControlId": "control775_zuuKhe",
+      "toContexts": [
+        {
+          "toContextId": "context90_pPWGka"
+        },
+        {
+          "toContextId": "context56_7xA3In",
+          "toModelId": "homePage"
+        }
+      ]
+    },
+    "flow299_vF23Mn": {
+      "fromContextId": "context90_pPWGka",
+      "fromAction": "doAction",
+      "fromControlId": "control776_2i0SMt",
       "toContexts": [
         {
           "toContextId": "context90_pPWGka"

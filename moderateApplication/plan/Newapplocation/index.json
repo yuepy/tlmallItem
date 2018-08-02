@@ -8,7 +8,8 @@
     "Newawaybus": "../Newawaybus/index.json",
     "haveDoneIndex": "../haveDoneIndex/index.json",
     "Newtravel": "../Newtravel/index.json",
-    "dealtIndex": "../dealtIndex/index.json"
+    "dealtIndex": "../dealtIndex/index.json",
+    "homePage": "../homePage/index.json"
   },
   "chineseName": "新建申请",
   "description": "",
@@ -204,6 +205,20 @@
         {
           "toContextId": "context24_EkSRuv",
           "toModelId": "dealtIndex"
+        }
+      ]
+    },
+    "flow307_piBTXn": {
+      "fromContextId": "context61_pqdpBL",
+      "fromAction": "doAction",
+      "fromControlId": "control587_qgQlzN",
+      "toContexts": [
+        {
+          "toContextId": "context61_pqdpBL"
+        },
+        {
+          "toContextId": "context56_7xA3In",
+          "toModelId": "homePage"
         }
       ]
     }

@@ -2,12 +2,19 @@
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function (win, ysp) {
 	var winTop = top;
-  window.winTop = function(){
+  winTop.closePageWindow = function(){
     ysp.appMain.closeWindow();
   }
+  // var URL = "http://172.16.11.61:81/SalaryList.aspx";
+  // winTop.reloadPage1 = function(URL){
+  //   if(URL !=  ''){
+  //     ysp.runtime.Browser.activeBrowser.contentWindow.location.href = URL;
+  //   }
+  // }
   var utils = ysp.utils;
   ysp.customHelper = {};
   utils.extend(ysp.customHelper, {
+    serchURL:null,
     /* 适配中定制的公共代码放在这里 */
     /*调用场景：该方法用于采集表格数据*/
     getTableData: function(elem, titleArgs) {

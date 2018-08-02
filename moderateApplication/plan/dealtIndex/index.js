@@ -12,27 +12,64 @@
           if (hreflo[0] == 'h') {
             if (ysp.appMain.isAndroid()) {
               window.yspCheckIn.closePageType("2");
+            }if (ysp.appMain.isIOS()) {
+              var _setupWebViewJavascriptBridge = function (callback) {
+                if (window.WebViewJavascriptBridge) {
+                  return callback(WebViewJavascriptBridge);
+                }if (window.WVJBCallbacks) {
+                  return window.WVJBCallbacks.push(callback);
+                }window.WVJBCallbacks = [callback];var WVJBIframe = document.createElement("iframe");WVJBIframe.style.display = "none";WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";document.documentElement.appendChild(WVJBIframe);setTimeout(function () {
+                  document.documentElement.removeChild(WVJBIframe);
+                }, 0);
+              };_setupWebViewJavascriptBridge(function (bridge) {
+                bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
+              });
             }hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
           } else {
             if (ysp.appMain.isAndroid()) {
               window.yspCheckIn.closePageType("2");
+            }if (ysp.appMain.isIOS()) {
+              var _setupWebViewJavascriptBridge = function (callback) {
+                if (window.WebViewJavascriptBridge) {
+                  return callback(WebViewJavascriptBridge);
+                }if (window.WVJBCallbacks) {
+                  return window.WVJBCallbacks.push(callback);
+                }
+                window.WVJBCallbacks = [callback];
+                var WVJBIframe = document.createElement("iframe");WVJBIframe.style.display = "none";WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";document.documentElement.appendChild(WVJBIframe);setTimeout(function () {
+                  document.documentElement.removeChild(WVJBIframe);
+                }, 0);
+              };_setupWebViewJavascriptBridge(function (bridge) {
+                bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
+              });
             }hreflo = "http://172.16.11.61:8000" + hreflo;hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
           }
         } else {
           if (ysp.appMain.isIOS()) {
-            if (hreflo.indexOf('http://172.16.11.61') != -1) {
+            var _setupWebViewJavascriptBridge = function (callback) {
+              if (window.WebViewJavascriptBridge) {
+                return callback(WebViewJavascriptBridge);
+              }if (window.WVJBCallbacks) {
+                return window.WVJBCallbacks.push(callback);
+              }window.WVJBCallbacks = [callback];var WVJBIframe = document.createElement("iframe");WVJBIframe.style.display = "none";WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";document.documentElement.appendChild(WVJBIframe);setTimeout(function () {
+                document.documentElement.removeChild(WVJBIframe);
+              }, 0);
+            };_setupWebViewJavascriptBridge(function (bridge) {
+              bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
+            });
+          }if (ysp.appMain.isAndroid()) {
+            window.yspCheckIn.closePageType("0");
+          }if (hreflo.indexOf('http://172.16.11.61') != -1) {
+            if (ysp.appMain.isIOS()) {
               ysp.appMain.openWindow(hreflo);
             } else {
-              window.yspCheckIn.closePageType("0");elem.ownerDocument.defaultView.open(hreflo);
+              elem.ownerDocument.defaultView.open(hreflo);
             }
           } else {
-            if (ysp.appMain.isAndroid()) {
-              window.yspCheckIn.closePageType("0");
-            }elem.ownerDocument.defaultView.open(hreflo);
+            elem.ownerDocument.defaultView.open(hreflo);
           }
         }
-      }
-      return false;
+      }return false;
     },
     getTemplate_uiControl193_bw3nWM: function () {
       var selfTemplate = 'module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type,data={};\n    //\u70B9\u51FB\u4E8B\u4EF6   \u70B9\u51FB\u8FDB\u5165\u8BE6\u60C5\u9875\n    // if(target.tagName.toLowerCase() == \'div\'){\n      type=\'td_click\';\n      var Contentele = ysp.customHelper.getparent(target,\'Content\');\n      data.id = Contentele.getAttribute(\'data-id\');\n      data.text = Contentele.querySelectorAll(\'div.Content_item\')[0].textContent.trim();\n    // }\n    \n    \n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  onclick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    //\u5224\u65AD\u662F\u5426\u4E3A\u4E0B\u5566\u6309\u94AE   \u6539\u53D8\u9690\u85CF\u7684\u5143\u7D20display\n    if(target.getAttribute(\'data-id\') == \'true\'){\n      // target = (target.tagName.toLowerCase() == \'span\')? target.parentElement:target;\n      target.setAttribute(\'data-id\',\'false\');\n      target.className = \'disbottom\';\n      target.parentElement.parentElement.querySelector(\'div.Content_disnone\').style.display = \'block\';\n    }else{\n      target.setAttribute(\'data-id\',\'true\');\n      target.className = \'distop\';\n      target.parentElement.parentElement.querySelector(\'div.Content_disnone\').style.display = \'none\';\n    }\n    //\u963B\u6B62\u4E8B\u4EF6\u5192\u6CE1\u4ECE\u800C\u6267\u884C\u7236\u5143\u7D20\u7684\u70B9\u51FB\u4E8B\u4EF6\n    e.stopPropagation()\n    // if(handler){\n    //   handler({\n    //     type:\'tag\',\n    //     data:target.getAttribute(\'data-id\')\n    //   })\n    // }\n  },\n  render: function() {\n    var data = this.props.customData,\n    \t\t_this = this;\n    if(!data){\n      return \'\';\n    }\n    var lis = data.content.map(function(ele,index){\n      return(\n      \t<div className=\'Content\' onClick={_this.onClick} data-id={data.index[index]}>\n        \t<div>\n          \t<div className=\'Content_item\'>\n            {ele[0]}</div>\n          <div className=\'Content_item\' onClick={_this.onClick}><p onClick={_this.onClick}>{data.titles[3]}</p><p onClick={_this.onClick}>{ele[3]}</p></div>\n          <div className=\'Content_item\'>\n            <p>{data.titles[2]}</p><p>{ele[2]}</p>\n          </div>\n          <div className=\'Content_item\'>\n            \t<p>{data.titles[4]}</p><p>{ele[4]}</p>\n            </div>\n            <div className=\'Content_item\'>\n            \t<p>{data.titles[5]}</p><p>{ele[5]}</p>\n            </div>\n\t\t\t\t\t</div>\n        </div>\n      )\n          //             <a className=\'distop\' href=\'javascript:;\' data-id=\'true\' onClick={_this.onclick} ><span></span></a>\n          // </div>\n          // <div data-id={index} className=\'Content_disnone\'>\n          //       \t<div id=\'summary\'>\n          //   \t<div>{data.titles[1]}</div>\n          //     <div>{ele[1]}</div>\n          //   </div>\n          //   <div>\n          //   \t<div>{data.titles[4]}</div>\n          //     <div>{ele[4]}</div>\n          //   </div>\n          //   <div>\n          //   \t<div>{data.titles[5]}</div>\n          //     <div>{ele[5]}</div>\n          //   </div>\n          // </div>\n\n    })\n    return (\n      <div>\n        {lis}\n      </div>\n    )\n  }\n});';

@@ -78,6 +78,18 @@
         var url = data.url;var flat = url.indexOf('http://172.16.11.61') != -1 ? true : false;if (ysp.appMain.isAndroid()) {
           window.yspCheckIn.closePageType("0");
         }if (ysp.appMain.isIOS()) {
+          var _setupWebViewJavascriptBridge = function (callback) {
+            if (window.WebViewJavascriptBridge) {
+              return callback(WebViewJavascriptBridge);
+            }if (window.WVJBCallbacks) {
+              return window.WVJBCallbacks.push(callback);
+            }window.WVJBCallbacks = [callback];var WVJBIframe = document.createElement("iframe");WVJBIframe.style.display = "none";WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";document.documentElement.appendChild(WVJBIframe);setTimeout(function () {
+              document.documentElement.removeChild(WVJBIframe);
+            }, 0);
+          };_setupWebViewJavascriptBridge(function (bridge) {
+            bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
+          });
+        }if (ysp.appMain.isIOS()) {
           if (flat) {
             ysp.appMain.openWindow(url);
           } else {

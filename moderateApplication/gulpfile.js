@@ -45,21 +45,19 @@ gulp.task('releaseCom', function() {
 gulp.task('devCom', function() {
     gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
         //可口可乐 http://info.cofcoko.com 环境转移 http://172.16.11.61:8000 环境
-        .pipe(replace(/http:\\{2}\/\\{2}\/bpm\\{2}.cofcoko\\{2}.com/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:8000'))
         .pipe(replace(/http:\\{2}\/\\{2}\/bpm\\{2}.cofcoko\\{2}.com:9997/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:9995'))
         .pipe(replace(/http:\\{2}\/\\{2}\/bpm\\{2}.cofcoko\\{2}.com:8080/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:9992'))
         .pipe(replace(/http:\\{2}\/\\{2}\/bpm\\{2}.cofcoko\\{2}.com:9001/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:9993'))
         .pipe(replace(/http:\\{2}\/\\{2}\/bpm\\{2}.cofcoko\\{2}.com:9099/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:9099'))
-        .pipe(replace(/http:\\{2}\/\\{2}\/payroll\\{2}.cofcoko\\{2}.com:81/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:81'))
+        .pipe(replace(/https:\\{2}\/\\{2}\/payroll\\{2}.cofcoko\\{2}.com/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:81'))
+        .pipe(replace(/http:\\{2}\/\\{2}\/bpm\\{2}.cofcoko\\{2}.com/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61:8000'))
         .pipe(replace(/https:\\{2}\/\\{2}\/info\\{2}.cofcoko\\{2}.com/gm, 'http:\\\\/\\\\/172\\\\.16\\\\.11\\\\.61'))
-        .pipe(replace(/https:\\{2}\/\\{2}\/info\\{2}.cofcoko\\{2}.com/gm, 'http:\\\\/\\\\/info\\\\.cofcoko\\\\.com'))
         .pipe(replace(/bpm\.cofcoko\.com:9997/gm, '172.16.11.61:9995'))
         .pipe(replace(/bpm\.cofcoko\.com:8080/gm, '172.16.11.61:9992'))
         .pipe(replace(/bpm\.cofcoko\.com:9001/gm, '172.16.11.61:9993'))
         .pipe(replace(/bpm\.cofcoko\.com:9099/gm, '172.16.11.61:9099'))
         .pipe(replace(/bpm\.cofcoko\.com/gm, '172.16.11.61:8000'))
-        .pipe(replace(/payroll\.cofcoko\.com:81/gm, '172.16.11.61:81'))
+        .pipe(replace(/https:\/\/payroll\.cofcoko\.com/gm, 'http://172.16.11.61:81'))
         .pipe(replace(/https:\/\/info\.cofcoko\.com/gm, 'http://172.16.11.61'))
-        .pipe(replace(/https:\/\/info\.cofcoko\.com/gm, 'http://info.cofcoko.com'))
         .pipe(gulp.dest('./'));
 });
