@@ -234,7 +234,7 @@
       var type = data.eventType;var d = data.dataCustom;if (type == "selclick") {
         var num1 = parseInt(d[1]) + parseInt(1);var num2 = d[2];elem.querySelectorAll('tr')[num1].querySelectorAll("option")[num2].selected = true;elem.querySelectorAll('tr')[num].querySelector("select").dispatchEvent(new Event("change"));
       } else if (type == "addMore") {
-        var target = elem.querySelector("a[name='SET_LOC_VW_$new$0$$0']");target.click();
+        var Len = elem.querySelectorAll('tr').length - 1;var target = elem.querySelectorAll("tr")[Len].querySelectorAll("a")[0];target.click();
       } else if (type == "change") {
         var num1 = parseInt(d[1]) + parseInt(1);var ipt = elem.querySelectorAll("tr")[num1].querySelector("input[type='text']");ipt.value = d[0];ipt.dispatchEvent(new Event("change"));
       } else if (type == "clickDel") {
