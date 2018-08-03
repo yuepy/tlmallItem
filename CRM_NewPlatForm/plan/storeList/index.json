@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/store360/storeList.html",
   "jsFile": "index.js",
   "requires": {
-    "storeDetails": "../storeDetails/index.json"
+    "storeDetails": "../storeDetails/index.json",
+    "index": "../index/index.json"
   },
   "chineseName": "门店360信息",
   "description": "门店360信息",
@@ -203,6 +204,20 @@
         {
           "toContextId": "context58_M7WVrw",
           "toModelId": "storeDetails"
+        }
+      ]
+    },
+    "flow269_t0KsdI": {
+      "fromContextId": "context57_AibCE9",
+      "fromAction": "doAction",
+      "fromControlId": "control219_0wZxTv",
+      "toContexts": [
+        {
+          "toContextId": "context57_AibCE9"
+        },
+        {
+          "toContextId": "context0_pD8h1P",
+          "toModelId": "index"
         }
       ]
     }

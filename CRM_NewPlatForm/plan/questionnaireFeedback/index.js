@@ -35,7 +35,7 @@
         var options = elem.ownerDocument.querySelectorAll(".option-r-c");var option = options && options[indexs];option && option.querySelectorAll("span")[index].click();
       }if (data.eventType == "back") {
         //ysp.appMain.back();
-        ysp.customHelper.backHome();
+        elem.ownerDocument.defaultView.close();
       }
     },
     getTemplate_uiControl324_MTMHbM: function () {

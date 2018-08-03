@@ -123,7 +123,8 @@
           console.info('系统正在登录中...');
           setTimeout(getAllMenu.bind(_this), 3000);
         } else if (xhr.status == 200 && xhr.readyState == 4) {
-          getAllMenuStatus = true; //此状态说明当前已经全部拿到PC端所有菜单信息;
+          getAllMenuStatus = true; 
+          //此状态说明当前已经全部拿到PC端所有菜单信息;
           var AllMenu = JSON.parse(xhr.response);
           //当前方法为接口只存在移动端菜单时可以直接想ALLMENU里面添加菜单信息
           ALLMENU = AllMenu;
@@ -132,7 +133,6 @@
           //AllMobileMenu(AllMenu);
           //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
           if(ALLMENU != '' && AllMenu){
-             // lyh
 						 xhr.open('POST','http://192.168.220.82:8080/ptDataShow/login/crmLogin',false);
 						 xhr.send({'filter_userId':'zhaoweili','encoder':'emhhb3dlaWxpKzA3LzMxLzIwMTggMTc6MjQ6MDM='});
           }
@@ -145,7 +145,7 @@
         }, 3000);
       }
     };
-    xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile', false);
+    xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
     xhr.send();
   }
   //按照传进来的名称来配置二级菜单
@@ -797,7 +797,10 @@
     }
   }
   utils.extend(ysp.customHelper, {
-    BackReload:_BackReload,
+		BackFlag:0, // 拜访总览逐级返回标识
+    filter_userId:null,//存储大数据session请求参数 
+    encode:null,//存储大数据session请求参数 
+    BackReload:_BackReload,
     getTargetMenus: _getTargetMenus,
     getTableData: _getTableData,
     trim: _trim,
