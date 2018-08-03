@@ -292,6 +292,9 @@
         {
           "toModelId": "overTime",
           "toContextId": "context12_el3bIi"
+        },
+        {
+          "toContextId": "context5_k7LCe6"
         }
       ]
     },
@@ -331,6 +334,21 @@
       "contextId": "context5_k7LCe6",
       "layout": [
         {
+          "id": "uiControl100_WTfc2b",
+          "controlId": "control68_uTPBoE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl100_WTfc2b",
+                "onGetTemplate": "getTemplate_uiControl100_WTfc2b"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl37_tWrnRr",
           "controlId": "control37_MvS3h7",
           "display": {
@@ -346,49 +364,81 @@
           }
         },
         {
-          "id": "uiControl38_B0mpHW",
-          "controlId": "control38_uf5CpS",
+          "id": "uiControl4_QekW0L",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "card",
+            "adapterId": "card",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl38_B0mpHW",
-                "onGetTemplate": "getTemplate_uiControl38_B0mpHW"
-              }
+              "templateType": ""
             }
-          }
-        },
-        {
-          "id": "uiControl42_MeT95O",
-          "controlId": "control42_RWs97s",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl42_MeT95O",
-                "onGetTemplate": "getTemplate_uiControl42_MeT95O"
-              }
+          },
+          "layout": [
+            {
+              "id": "uiControl4_QekW0Lheader",
+              "display": {
+                "type": "cardHeader",
+                "text": "",
+                "adapterId": "cardHeader",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl4_QekW0Lbody",
+              "display": {
+                "type": "cardBody",
+                "adapterId": "cardBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl38_B0mpHW",
+                  "controlId": "control38_uf5CpS",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl38_B0mpHW",
+                        "onGetTemplate": "getTemplate_uiControl38_B0mpHW"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl42_MeT95O",
+                  "controlId": "control42_RWs97s",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl42_MeT95O",
+                        "onGetTemplate": "getTemplate_uiControl42_MeT95O"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "uiControl4_QekW0Lfooter",
+              "display": {
+                "type": "cardFooter",
+                "adapterId": "cardFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
             }
-          }
-        },
-        {
-          "id": "uiControl100_WTfc2b",
-          "controlId": "control68_uTPBoE",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl100_WTfc2b",
-                "onGetTemplate": "getTemplate_uiControl100_WTfc2b"
-              }
-            }
-          }
+          ]
         },
         {
           "id": "uiControl40_DyC3pT",

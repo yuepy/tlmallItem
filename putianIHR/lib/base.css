@@ -1,9 +1,4 @@
 /****************************公共样式************************/
-.editor-state [data-ysp="component"] {
-  padding-top: 0;
-  padding-bottom: none;
-  min-height: 0;
-}
 body {
   background: #f4f4f4;
   position: relative;
@@ -56,6 +51,10 @@ div[data-ysp-modelid="holidayAppli"] .card-body,
 div[data-ysp-modelid="forgetCard"] .card-body,
 div[data-ysp-modelid="visitRelative"] .card-body {
   height: 92vh;
+  overflow: auto;
+}
+div[data-ysp-modelid="selloffAppli"] .card-body {
+  height: 82vh;
   overflow: auto;
 }
 div[data-componentsid="uiControl2_fI1WWo"],
@@ -1481,6 +1480,11 @@ button[type='fileUpload'] {
   border-color: #2c81ff;
   background: url(../local/img/dui.png) no-repeat -3px -2px;
 }
+.ysp-selloff-li label input[disabled] + i {
+  -webkit-filter: grayscale(1);
+  filter: gray;
+  filter: grayscale(1);
+}
 .ysp-selloff-li .selloff-li-con {
   display: inline-block;
 }
@@ -1563,6 +1567,9 @@ button[type='fileUpload'] {
 .dele-reason-box .ysp-del-reason textarea {
   line-height: 22px;
   font-size: 14px;
+}
+.dele-reason-box .ysp-del-reason textarea {
+  background: #fff;
 }
 /***********************************销假申请 end*************************************/
 /*******************员工履历表（员工自助）start***************************/
