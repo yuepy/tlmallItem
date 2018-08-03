@@ -18,10 +18,10 @@
     },
     getData_control48_TFfB70: function (elem) {
       var data = { subcontent: { subContentMessageHead: [], subContentMessage: [] }, reportDate: [], huaweiFDTags: [], huaweiFDTagsFlag: [], huaweiFDTagsLength: [], huaweiExperienceStoreTags: [], huaweiExperienceStoreTagsFlag: [], huaweiExperienceStoreTagsLength: [], huaweiFuseTags: [], huaweiFuseTagsFlag: [], huaweiFuseTagsLength: [], huaweiProvincePackageTags: [], huaweiProvincePackageTagsFlag: [], huaweiProvincePackageTagsLength: [], samsungDivisonTags: [], samsungDivisonTagsFlag: [], samsungDivisonTagsLength: [], fenXiaoDivisonTags: [], fenXiaoDivisonTagsFlag: [], fenXiaoDivisonTagsLength: [], otherInforTags: [], otherInforTagsFlag: [], otherInforTagsLength: [], searchList: '', No: '', boxId: "", subPerson: [], sumNumber: [], atNames: [], pictures: [] };if ($(elem).length > 0) {
-        var obj = {};var eObje = $(elem).find(".m-report-infors");obj.customerName = eObje.find("#VisitTarget").val();obj.signDate = eObje.find("#TargetPosition").val();var selects = elem.querySelector('#VisitTime'); //拜访时长
+        var obj = {};var eObje = elem.querySelector(".m-report-infors");obj.customerName = eObje.querySelector("#VisitTarget").value;obj.signDate = eObje.querySelector("#TargetPosition").value;var selects = elem.querySelector('#VisitTime'); //拜访时长
         var options = selects.querySelectorAll('option');for (var i = 0; i < options.length; i++) {
           data.reportDate.push(options[i].textContent);
-        }obj.reportDateValue = eObje.find("#VisitTime").val();obj.huaweiFD = eObje.find("#huaweiFD").html();obj.huaweiExperience = eObje.find("#HuaweiExperienceStore").html();obj.HuaweiFuse = eObje.find("#HuaweiFuse").html();obj.huaweiProvince = eObje.find("#HuaweiProvincePackage").html();obj.samsungDivison = eObje.find("#SamsungDivison").html();obj.fenXiaoDivison = eObje.find("#FenXiaoDivison").html();obj.otherInfor = eObje.find("#OtherInfor").html();obj.atName = eObje.find(".chatUsers-check").find(".names").html();data.subcontent.subContentMessageHead.push(obj);eObje.find(".chats").find(".chat-one").each(function (index, items) {
+        }obj.reportDateValue = eObje.querySelector("#VisitTime").value;obj.huaweiFD = eObje.querySelector("#huaweiFD").textContent;obj.huaweiExperience = eObje.querySelector("#HuaweiExperienceStore").textContent;obj.HuaweiFuse = eObje.querySelector("#HuaweiFuse").textContent;obj.huaweiProvince = eObje.querySelector("#HuaweiProvincePackage").textContent;obj.samsungDivison = eObje.querySelector("#SamsungDivison").textContent;obj.fenXiaoDivison = eObje.querySelector("#FenXiaoDivison").textContent;obj.otherInfor = eObje.querySelector("#OtherInfor").textContent;obj.atName = eObje.querySelector(".chatUsers-check").querySelector(".names").textContent;data.subcontent.subContentMessageHead.push(obj);var eObject = $(elem).find(".m-report-infors");eObject.find(".chats").find(".chat-one").each(function (index, items) {
           var oo = {};oo.messageName = $(items).find("h6").html();oo.messageText = $(items).find("p").html();oo.messageTextB = $(items).find("p").find("b").html();oo.messageTime = $(items).find(".chatTime").html();data.subcontent.subContentMessage.push(oo);
         }); ///华为FD
         var huaweiFDButtons = elem.querySelector("#huaweiFDTags") && elem.querySelector("#huaweiFDTags").querySelectorAll("button");for (var i = 0; i < huaweiFDButtons.length; i++) {
@@ -63,7 +63,8 @@
           data.fenXiaoDivisonTags.push(fenXiaoDivisonTagsButtons[i].textContent);
         }for (var i = 0; i < fenXiaoDivisonTagsButtons.length; i++) {
           data.fenXiaoDivisonTagsFlag.push(fenXiaoDivisonTagsButtons[i].getAttribute("class"));
-        }var fenXiaoDivison = "false";if (fenXiaoDivisonTagsButtons.length > 3) {
+        }
+        var fenXiaoDivison = "false";if (fenXiaoDivisonTagsButtons.length > 3) {
           fenXiaoDivison = "true";
         }data.fenXiaoDivisonTagsLength.push(fenXiaoDivison); ///其他信息
         var otherInforTagsButtons = elem.querySelector("#otherInforTags") && elem.querySelector("#otherInforTags").querySelectorAll("button");for (var i = 0; i < otherInforTagsButtons.length; i++) {
@@ -88,10 +89,9 @@
         //   var atName = {};
         //   atName.names = $(item).find("span").html();
         //   data.atNames.push(atName);
-
         // });
-        data.user = { users: [], val: [], val1: [], users2: [],
-          vals: [], vals2: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
+        data.user = { users: [], val: [], val1: [], users2: [], vals: [], vals2: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');
+        for (var i = 0; i < users.length; i++) {
           var iconClose = users[i].querySelector("i") && users[i].querySelector("i").classList.contains("icon-close");if (iconClose) {
             data.user.users.push(users[i].querySelector('span').textContent);data.user.val.push(users[i].querySelector('span').getAttribute('val'));data.user.val1.push(users[i].querySelector('span').getAttribute('val1'));
           } else {
@@ -112,8 +112,7 @@
                 content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
             // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
             // src.push(scrC);
-            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);
-            var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
+            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
           }
         } /*
            	Dialog 数据   所选分公司树结构数据
