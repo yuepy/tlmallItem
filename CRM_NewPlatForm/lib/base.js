@@ -133,8 +133,9 @@
           //AllMobileMenu(AllMenu);
           //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
           if(ALLMENU != '' && AllMenu){
-						 xhr.open('POST','http://192.168.220.82:8080/ptDataShow/login/crmLogin',false);
-						 xhr.send({'filter_userId':'zhaoweili','encoder':'emhhb3dlaWxpKzA3LzMxLzIwMTggMTc6MjQ6MDM='});
+             var SessionXhr = new XMLHttpRequest();
+						 SessionXhr.open('POST','http://192.168.220.82:8080/ptDataShow/login/crmLogin',false);
+						 SessionXhr.send({'filter_userId':'zhaoweili','encoder':'emhhb3dlaWxpKzA3LzMxLzIwMTggMTc6MjQ6MDM='});
           }
         }
       } else if (xhr.status >= 400) {
