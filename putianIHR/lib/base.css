@@ -58,6 +58,10 @@ div[data-ysp-modelid="visitRelative"] .card-body {
   height: 92vh;
   overflow: auto;
 }
+div[data-ysp-modelid="selloffAppli"] .card-body {
+  height: 82vh;
+  overflow: auto;
+}
 div[data-componentsid="uiControl2_fI1WWo"],
 div[data-componentsid="uiControl3_QW428F"] {
   display: none;
@@ -1294,6 +1298,9 @@ button[type='fileUpload'] {
 .ysp-reason textarea.PSERROR {
   background-color: #f76f49;
 }
+.ysp-reason textarea[readonly] {
+  background: #fff;
+}
 .annex-box {
   padding: 10px;
   border-bottom: 1px solid #e1e1e1;
@@ -1478,6 +1485,11 @@ button[type='fileUpload'] {
   border-color: #2c81ff;
   background: url(../local/img/dui.png) no-repeat -3px -2px;
 }
+.ysp-selloff-li label input[disabled] + i {
+  -webkit-filter: grayscale(1);
+  filter: gray;
+  filter: grayscale(1);
+}
 .ysp-selloff-li .selloff-li-con {
   display: inline-block;
 }
@@ -1560,6 +1572,9 @@ button[type='fileUpload'] {
 .dele-reason-box .ysp-del-reason textarea {
   line-height: 22px;
   font-size: 14px;
+}
+.dele-reason-box .ysp-del-reason textarea {
+  background: #fff;
 }
 /***********************************销假申请 end*************************************/
 /*******************员工履历表（员工自助）start***************************/
@@ -2518,7 +2533,7 @@ button[type='fileUpload'] {
 .ysp-jyjl-list-tt .title,
 .ysp_family_item .title {
   display: inline-block;
-  width: 45%;
+  width: 46%;
 }
 .ysp-ygdz-list-tt .title i,
 .ysp-dhxx-list-tt .title i,
@@ -2531,7 +2546,7 @@ button[type='fileUpload'] {
 .ysp-jyjl-list-tt .content,
 .ysp_family_item .content {
   display: inline-block;
-  width: 55%;
+  width: 54%;
   text-align: right;
   overflow: hidden;
 }
@@ -2563,6 +2578,13 @@ button[type='fileUpload'] {
 .ysp-jyjl-list-tt .content select,
 .ysp_family_item .content select {
   direction: rtl;
+  font-size: 14px;
+}
+.ysp-ygdz-list-tt .content select option,
+.ysp-dhxx-list-tt .content select option,
+.ysp-jyjl-list-tt .content select option,
+.ysp_family_item .content select option {
+  direction: ltr;
 }
 .ysp-ygdz-list-tt .content input,
 .ysp-dhxx-list-tt .content input,
@@ -2606,10 +2628,11 @@ button[type='fileUpload'] {
   text-align: right;
 }
 .ysp-jyjl-list-tt p .content .ysp-jybj-txt {
-  width: 75%;
+  width: 100%;
   background: none;
   float: right;
   color: #999;
+  font-size: 14px;
 }
 .ysp-yddz-list-txt p {
   display: block;

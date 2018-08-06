@@ -1,95 +1,90 @@
 {
-  "type": "adapter",
-  "short_name": "",
-  "version": "0.0.1",
-  "runtime_version": "2.7.0",
-  "runtime_env": "1webview",
-  "description": "",
-  "options": {
-    "resource_intercept": {
-      "type": [],
-      "ignore": []
+    "type": "adapter",
+    "short_name": "",
+    "version": "0.0.1",
+    "runtime_version": "2.7.0",
+    "runtime_env": "1webview",
+    "description": "",
+    "options": {
+        "resource_intercept": {
+            "type": [],
+            "ignore": []
+        },
+        "resource_inject": [],
+        "resource_filter": [{
+            "url_match": [
+                "^http:\\/\\/192\\.168\\.220\\.110.*"
+            ],
+            "charset": "utf-8",
+            "Accept-Language": "zh-Hans-CN",
+            "replaces": [{
+                "regexp": "\\btop\\b",
+                "sub_str": "_ysp_top"
+            }]
+        }],
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
     },
-    "resource_inject": [],
-    "resource_filter": [
-      {
-        "url_match": [
-          "^http:\\/\\/192\\.168\\.220\\.110.*"
-        ],
-        "charset": "utf-8",
-        "Accept-Language": "zh-Hans-CN",
-        "replaces": [
-          {
-            "regexp": "\\btop\\b",
-            "sub_str": "_ysp_top"
-          }
-        ]
-      }
+    "override_urls": [],
+    "adapter_urls": [{
+            "title": "checkMyInfo",
+            "url": "adapter://putianIHR/plan/checkMyInfo/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_PAG_010_CP\\.GBL\\?.*"
+            ],
+            "demo": []
+        },
+        {
+            "title": "businessTravel",
+            "url": "adapter://putianIHR/plan/businessTravel/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_047_CP\\.GBL\\?.*"
+            ],
+            "demo": []
+        },
+        {
+            "title": "forgetCard",
+            "url": "adapter://putianIHR/plan/forgetCard/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_002\\.GBL\\?.*"
+            ],
+            "demo": []
+        },
+        {
+            "title": "holidayAppli",
+            "url": "adapter://putianIHR/plan/holidayAppli/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL\\?.*"
+            ],
+            "demo": []
+        },
+        {
+            "title": "addWork",
+            "url": "adapter://putianIHR/plan/addWork/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_004\\.GBL\\?.*"
+            ],
+            "demo": []
+        },
+        {
+            "title": "menu",
+            "url": "adapter://putianIHR/plan/menu/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?tab=TL_SELF.*"
+            ],
+            "demo": []
+        },
+        {
+            "title": "login",
+            "url": "adapter://putianIHR/plan/login/index.json",
+            "matcher": [
+                "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?.*"
+            ],
+            "demo": []
+        }
     ],
-    "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
-  },
-  "override_urls": [],
-  "adapter_urls": [
-    {
-      "title": "checkMyInfo",
-      "url": "adapter://putianIHR/plan/checkMyInfo/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_PAG_010_CP\\.GBL\\?.*"
-      ],
-      "demo": []
-    },
-    {
-      "title": "businessTravel",
-      "url": "adapter://putianIHR/plan/businessTravel/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_047_CP\\.GBL\\?.*"
-      ],
-      "demo": []
-    },
-    {
-      "title": "forgetCard",
-      "url": "adapter://putianIHR/plan/forgetCard/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_002\\.GBL\\?.*"
-      ],
-      "demo": []
-    },
-    {
-      "title": "holidayAppli",
-      "url": "adapter://putianIHR/plan/holidayAppli/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL\\?.*"
-      ],
-      "demo": []
-    },
-    {
-      "title": "addWork",
-      "url": "adapter://putianIHR/plan/addWork/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_004\\.GBL\\?.*"
-      ],
-      "demo": []
-    },
-    {
-      "title": "menu",
-      "url": "adapter://putianIHR/plan/menu/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?tab=TL_SELF.*"
-      ],
-      "demo": []
-    },
-    {
-      "title": "login",
-      "url": "adapter://putianIHR/plan/login/index.json",
-      "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?.*"
-      ],
-      "demo": []
-    }
-  ],
-  "name": "普天HR系统",
-  "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
-  "scope": "putianIHR",
-  "start_url": "enterplorer://putianIHR/local/index.html",
-  "update_time": 1533547305029
+    "name": "普天HR系统",
+    "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+    "scope": "putianIHR",
+    "start_url": "enterplorer://putianIHR/local/index.html",
+    "update_time": 1533547305029
 }
