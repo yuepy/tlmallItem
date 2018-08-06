@@ -2,7 +2,7 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control12_SEyDLw: function getData_control12_SEyDLw(elem) {
+    getData_control12_SEyDLw: function (elem) {
       if (!elem) {
         return { value: '', len: '', title: '销售达成' };
       }var data = elem.ownerDocument.querySelector('.form-group') && elem.ownerDocument.querySelector('.form-group').querySelector('input[placeholder="选择日期"]').value;var len = data.length;data = data.slice(0, len);var title;var u_title = elem.ownerDocument.querySelector('#u_title');if (u_title) {
@@ -15,7 +15,7 @@
         title = '销售达成';
       }var back = elem.ownerDocument.querySelector('.select_condition').querySelectorAll('li').length > 1 ? true : false;return { value: data, len: len, title: title, back: back };
     },
-    doAction_uiControl45_Cx7Spf: function doAction_uiControl45_Cx7Spf(data, elem) {
+    doAction_uiControl45_Cx7Spf: function (data, elem) {
       if (data.eventType === 'back') {
         // // if (window.parent == window) {
         // if (ysp.customHelper.saleReachStamp.getTipValue() !== 0) {
