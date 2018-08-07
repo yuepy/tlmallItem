@@ -3,6 +3,9 @@
   "id": "Newawaybus",
   "targetURL": "http://172.16.11.61:8000/Forms/HR/WCSQ/Start.aspx",
   "jsFile": "index.js",
+  "requires": {
+    "previewapproval": "../previewapproval/index.json"
+  },
   "chineseName": "因公外出申请单发起流程",
   "description": "",
   "firstPaintEnable": false,
@@ -284,7 +287,7 @@
       },
       "intendedRole": "dialog",
       "roles": "element,dialog",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectLinkedProcInst']<<IFRAME>>",
       "componentType": "dialog"
     },
@@ -578,7 +581,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
     },
@@ -655,6 +658,38 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control835_HMTyLD": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": "descendant::FORM[@id=\"aspnetForm\"]/DIV[3]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control835_HMTyLD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -675,7 +710,8 @@
         "control590_xHUGcw",
         "control591_o0nl8P",
         "control606_dWQa7c",
-        "control618_FScXHM"
+        "control618_FScXHM",
+        "control835_HMTyLD"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -698,6 +734,10 @@
       "toContexts": [
         {
           "toContextId": "context62_frJuQH"
+        },
+        {
+          "toContextId": "context10_P8RicR",
+          "toModelId": "previewapproval"
         }
       ]
     },
@@ -832,6 +872,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl594_rvfVwF",
                 "onGetTemplate": "getTemplate_uiControl594_rvfVwF"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl835_TUe44s",
+          "controlId": "control835_HMTyLD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl835_TUe44s",
+                "onGetTemplate": "getTemplate_uiControl835_TUe44s"
               }
             }
           }

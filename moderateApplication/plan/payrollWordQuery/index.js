@@ -53,7 +53,7 @@
     },
     doAction_uiControl777_Di237t: function (data, elem) {
       if ('click' == data.eventType) {
-        var ind = data.customData.index;var index = parseInt(ind);var url = elem.querySelectorAll("tr")[index + 1].querySelectorAll("td")[3].querySelector("a").href;if (ysp.appMain.isIOS()) {
+        debugger;var ind = data.customData.index;var index = parseInt(ind);var url = elem.querySelectorAll("tr")[index + 1].querySelectorAll("td")[3].querySelector("a").href;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = url;

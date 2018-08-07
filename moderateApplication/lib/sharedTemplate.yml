@@ -2845,3 +2845,73 @@
     if (type == 'change') {
       elem.querySelector('textarea').value = data;
     }
+- name: 发起流程按钮
+  getTemplate: "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        type = '',\n        data;\n    if(target.tagName.toLowerCase() == 'div'){\n      target.parentElement.nextElementSibling.style.display = 'block';\n      // target.parentElement.nextElementSibling.style.height = target.ownerDocument.style.height;\n      var lis = target.parentElement.parentElement.querySelector('.dianbl').querySelectorAll('li');\n      for(var i=0;i<lis.length;i++){\n        lis[i].style.bottom = i*50 +'px';\n      }\n    }\n    if(target.tagName.toLowerCase() == 'p'){\n      target.parentElement.parentElement.parentElement.style.display = 'none';\n    }\n    if(target.tagName.toLowerCase() == 'button'){\n      type = 'click';\n      data = target.getAttribute('data-id');\n    }\n    if(handler){\n      handler({\n        eventType:type,\n        data:data\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    var _this = this;\n    if(!data){\n      return '';\n    }\n  \tvar lis = data.map(function(d,i){\n      if(i<3){\n        return(\n        \t<button data-id={i} onClick={_this.onClick}>{d}</button>\n        )\n      }\n    })\n    var list = data.map(function(d,i){\n      if(i>2){\n        return(\n        \t<li><button data-id={i} onClick={_this.onClick}>{d}</button></li>\n        )\n      }\n    })\n    return (\n      <div className='submit'>\n        <div className='subtrue'><div className='btnlength02'>{lis}</div></div>\n      </div>\n    )\n    // <div style={{'display':data.length>3?'block':\"none\"}} onClick={_this.onClick.bind(_this)}></div>\n    //     <div className='dianbl'><ul><li><p onClick={_this.onClick}>取消</p></li>{list}</ul></div>\n  }\n});"
+  getData: |
+    if (!elem) {
+      return;
+    }
+    var data = [];
+    var lis = elem.querySelectorAll('li');
+    for (var i = 0; i < lis.length; i++) {
+      if (lis[i].textContent.trim() == '提交申请' || lis[i].textContent.trim() == '审批预览') {
+        data.push(lis[i].textContent.trim());
+      }
+    }
+    return data;
+  doAction: |
+    var type = data.eventType;
+    var data = data.customData;
+    if (type == 'click') {
+      elem.querySelectorAll('li')[data].querySelector('a').click();
+    }
+- name: 待办审批操作
+  getTemplate: "module.exports = React.createClass({\n  onBlur:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'change',\n        data:target.value\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    return (\n      <div className='approval'>\n        <div className='contenttitle'><span></span><p>{data.title}</p></div>\n        <div className='content'>\n          \t<div className='contentitem'>{data.content[0].left}</div>\n          \t<div className='contentitem'>{data.content[0].right}</div>\n          </div>\n          <div className='content'>\n          \t<div className='contentitem'>{data.content[1].left}</div>\n            <ATextarea value={data.content[1].right} onBlur={_this.onBlur.bind(_this)}></ATextarea>\n        \t</div>\n        <div className='tishi'>{data.content[2].left}</div>\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) {
+      return;
+    }
+
+    var data = {};
+
+    data.title = '审批操作';
+
+    data.content = [];
+
+    var trs = elem.querySelectorAll('tr');
+
+    var obj = {};
+
+    var str = trs[0].querySelectorAll('td')[0].textContent.trim();
+
+    var arr = str.split(":");
+
+    obj.left =
+    trs[0].querySelectorAll('td')[0].textContent.trim().split('：')[0]; //
+    obj.left = arr;
+
+    obj.right = trs[0].querySelectorAll('td')[1].textContent.trim();
+
+    data.content.push(obj);
+
+    var obj = {};
+
+    obj.left =
+    trs[1].querySelectorAll('td')[0].textContent.trim().split('：')[0];
+
+    obj.right =
+    trs[1].querySelectorAll('td')[1].querySelector('textarea').value;
+
+    data.content.push(obj);
+
+    data.content.push({
+      left: trs[1].querySelectorAll('td')[1].querySelector('p').textContent.trim()
+    });
+
+    return data;
+  doAction: |
+    var type = data.eventType;
+    var data = data.customData;
+    if (type == 'change') {
+      elem.querySelector('textarea').value = data;
+    }

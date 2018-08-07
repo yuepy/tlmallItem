@@ -86,10 +86,10 @@
       // if (type == 'loadbtn') {
       // var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');
       // tds[tds.length - 1].querySelectorAll('a')[0].click();
-      // }
+      // 
       if ("loadbtn" == type) {
         // var url = data.customData;
-        var url = data.href;if (ysp.appMain.isIOS()) {
+        var url = data.href;debugger;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = url;

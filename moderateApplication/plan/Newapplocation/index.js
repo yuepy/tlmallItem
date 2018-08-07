@@ -59,9 +59,13 @@
       //   }
       //   data.content.push(arr);
       // }
-      var arr = [];var str = ['请假申请单', '因公外出申请单', '差旅费用报销流程'];var alist = elem.querySelectorAll('a[href="javascript:void(0)"]');for (var i = 0; i < alist.length; i++) {
+      var arr = [];var str = ['请假申请单', '因公外出申请单', '差旅费用报销流程'];var alist = elem.querySelectorAll('a[href="javascript:void(0)"]'); // debugger
+      for (var i = 0; i < alist.length; i++) {
+        var flag = alist[i].getAttribute('url'); //筛选掉常用流程中无URL的流程
         if (str.indexOf(alist[i].textContent.trim()) != -1) {
-          arr.push({ text: alist[i].textContent.trim(), index: i, url: alist[i].getAttribute('url') });
+          if (flag != null) {
+            arr.push({ text: alist[i].textContent.trim(), index: i, url: alist[i].getAttribute('url') });
+          }
         }
       }return arr;
     },

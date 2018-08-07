@@ -1,6 +1,11 @@
 body {
   background: #f3f3f3;
 }
+input,
+select,
+textarea {
+  font-size: 16px!important;
+}
 div.contentitem {
   word-break: break-all !important;
   word-wrap: break-all !important;
@@ -28,6 +33,17 @@ div.contentitem {
 .titles_two tr td,
 .titles_two tr th {
   width: 50% !important;
+}
+[data-ysp-modelid="Newleave"] input,
+[data-ysp-modelid="Newawaybus"] input,
+[data-ysp-modelid="Newtravel"] input,
+[data-ysp-modelid="Newleave"] select,
+[data-ysp-modelid="Newawaybus"] select,
+[data-ysp-modelid="Newtravel"] select,
+[data-ysp-modelid="Newleave"] textarea,
+[data-ysp-modelid="Newawaybus"] textarea,
+[data-ysp-modelid="Newtravel"] textarea {
+  font-size: 16px!important;
 }
 [data-ysp-modelid="Newleave"] .contenttitle p,
 [data-ysp-modelid="Newawaybus"] .contenttitle p,
@@ -10420,7 +10436,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   padding: 0px 10px 0px 10px;
   font-size: 12px;
   display: block;
-  background-size: 20px 13px;
+  background-size: 20px 20px;
   background-position: 200px;
   background-position-x: right;
   background-repeat: no-repeat;
@@ -10434,7 +10450,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   position: relative;
 }
 [data-ysp-modelid="Newleave"] .leaveinforme .leave_Content .content_none {
-  display: none;
+  display: block;
 }
 [data-ysp-modelid="Newleave"] .leaveinforme .leave_Content .previousblock {
   width: 100%;
@@ -10442,7 +10458,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   position: absolute;
   bottom: 10px;
   padding-left: 20px;
-  background: url(img/xia.png) no-repeat 35% 5px;
+  background: url(img/xia.png) no-repeat 35% 10px;
   background-size: 20px 14px;
   cursor: pointer;
   padding-top: 5px;
@@ -10453,7 +10469,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   position: absolute;
   bottom: 10px;
   padding-left: 20px;
-  background: url(img/top.png) no-repeat 35% 5px;
+  background: url(img/top.png) no-repeat 35% 10px;
   background-size: 20px 14px;
   cursor: pointer;
   border-top: 1px solid #ccc;
@@ -10466,10 +10482,10 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   padding-left: 10px;
 }
 [data-ysp-modelid="Newleave"] .leaveinforme .leave_Content .content a {
-  width: 17px;
-  height: 13px;
+  width: 20px;
+  height: 20px;
   background-image: url(img/rightbtn.png);
-  background-size: 17px 13px;
+  background-size: 20px 20px;
   position: absolute;
   right: 10px;
   top: 40%;
@@ -10654,7 +10670,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   background-size: 20px 10px;
 }
 [data-ysp-modelid="Newleave"] .leaveDeta .leave_box .leave_content .content_none {
-  display: none;
+  display: block;
   margin-bottom: 10px;
 }
 [data-ysp-modelid="Newleave"] .leaveDeta .leave_box .leave_content .content_none > div {
@@ -10969,7 +10985,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   position: relative;
 }
 [data-ysp-modelid="Newawaybus"] .leaveinforme .leave_Content .content_none {
-  display: none;
+  display: block;
 }
 [data-ysp-modelid="Newawaybus"] .leaveinforme .leave_Content .previousblock {
   width: 100%;
@@ -10977,7 +10993,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   position: absolute;
   bottom: 10px;
   padding-left: 20px;
-  background: url(img/xia.png) no-repeat 35% 5px;
+  background: url(img/xia.png) no-repeat 35% 10px;
   background-size: 20px 14px;
   cursor: pointer;
   padding-top: 5px;
@@ -10988,7 +11004,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   position: absolute;
   bottom: 10px;
   padding-left: 20px;
-  background: url(img/top.png) no-repeat 35% 5px;
+  background: url(img/top.png) no-repeat 35% 10px;
   background-size: 20px 14px;
   cursor: pointer;
   border-top: 1px solid #ccc;
@@ -11175,7 +11191,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   background-size: 20px 10px;
 }
 [data-ysp-modelid="Newawaybus"] .leaveDeta .leave_box .leave_content .content_none {
-  display: none;
+  display: block;
   margin-bottom: 10px;
 }
 [data-ysp-modelid="Newawaybus"] .leaveDeta .leave_box .leave_content .content_none > div {
@@ -11283,7 +11299,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   background-size: 20px 10px;
 }
 [data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none {
-  display: none;
+  display: block;
   margin-bottom: 10px;
 }
 [data-ysp-modelid="Newtravel"] .leaveDeta .leave_box .leave_content .content_none > div {
@@ -11407,7 +11423,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   background-size: 20px 10px;
 }
 [data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none {
-  display: none;
+  display: block;
   margin-bottom: 10px;
 }
 [data-ysp-modelid="Newtravel"] .payee_deta .leave_box .leave_content .content_none > div {
@@ -11509,7 +11525,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   background-size: 20px 10px;
 }
 [data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none {
-  display: none;
+  display: block;
   margin-bottom: 10px;
 }
 [data-ysp-modelid="Newtravel"] .leave_Content_box .leave_box .leave_content .content_none > div {
@@ -11610,7 +11626,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   position: relative;
 }
 [data-ysp-modelid="Newtravel"] .leaveinforme .leave_Content .content_none {
-  display: none;
+  display: block;
 }
 [data-ysp-modelid="Newtravel"] .leaveinforme .leave_Content .previousblock {
   width: 100%;
@@ -11618,7 +11634,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   position: absolute;
   bottom: 10px;
   padding-left: 20px;
-  background: url(img/xia.png) no-repeat 35% 5px;
+  background: url(img/xia.png) no-repeat 35% 10px;
   background-size: 20px 14px;
   cursor: pointer;
   padding-top: 5px;
@@ -11629,7 +11645,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   position: absolute;
   bottom: 10px;
   padding-left: 20px;
-  background: url(img/top.png) no-repeat 35% 5px;
+  background: url(img/top.png) no-repeat 35% 10px;
   background-size: 20px 14px;
   cursor: pointer;
   border-top: 1px solid #ccc;

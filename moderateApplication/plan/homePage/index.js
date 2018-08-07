@@ -59,7 +59,8 @@
     getData_control584_Dv9hyl: function (elem) {},
     doAction_uiControl584_EzVBoB: function (data, elem) {
       if ('click' == data.eventType) {
-        elem && elem.click();
+        // elem && elem.click();
+        elem.ownerDocument.defaultView.location.href = 'http://172.16.11.61/YS/YSList.aspx?adName=fangxj';
       }
     },
     getTemplate_uiControl584_EzVBoB: function () {
