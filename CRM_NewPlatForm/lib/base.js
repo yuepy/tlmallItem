@@ -136,9 +136,15 @@
              var SessionXhr = new XMLHttpRequest();
              SessionXhr.onreadystatechange = function(){
               if(SessionXhr.status == 200 && SessionXhr.readyState == 4){
-                debugger;
-                SessionXhr.open('POST','http://192.168.220.82:8080/ptDataShow/login/crmLogin',false);
-						 		SessionXhr.send({'filter_userId':'zhaoweili','encoder':'emhhb3dlaWxpKzA3LzMxLzIwMTggMTc6MjQ6MDM='});
+                var encoder = JSON.parse(SessionXhr.response).encoder;
+                var userId = JSON.parse(SessionXhr.response).userId;
+                if(encoder && userId){
+                  var encoderXHR = new XMLHttpRequest();
+                	encoderXHR.open('POST','http://192.168.220.82:8080/ptDataShow/login/crmLogin',false);
+                	encoderXHR.send({'filter_userId':userId,'encoder':encoder});
+                }else{
+                  console.error('AndEncoder接口请求失败!')
+                }
               }
             }
              SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
