@@ -140,8 +140,9 @@
                 var userId = JSON.parse(SessionXhr.response).userId;
                 if(encoder && userId){
                   var encoderXHR = new XMLHttpRequest();
-                	encoderXHR.open('POST','http://192.168.220.82:8080/ptDataShow/login/crmLogin',false);
-                	encoderXHR.send({'filter_userId':userId,'encoder':encoder});
+                	encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+                	//encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+                  encoderXHR.send();
                 }else{
                   console.error('AndEncoder接口请求失败!')
                 }
@@ -149,7 +150,6 @@
             }
              SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
              SessionXhr.send();
-
           }
         }
       } else if (xhr.status >= 400) {

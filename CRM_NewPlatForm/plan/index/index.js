@@ -13,19 +13,24 @@
         elem.ownerDocument.defaultView.location.reload();
       }if (data.eventType == 'click') {
         var src = data.dataCustom.url;var title = data.dataCustom.title;if (title == '拜访总览') {
-          openUrl(src);
+          openUrl(src, title);
         } else {
           elem.ownerDocument.defaultView.open(src);
         }
       } //图标尺寸  48 * 48   文字大小 17px
       if (data.eventType == 'click_infomation') {
-        var src = data.dataCustom.url;var title = data.dataCustom.title;switch (title) {case '产品上下架':
-            src = src + '/querySku?a=1&';break;}openUrl(src);
+        var src = data.dataCustom.url;var title = data.dataCustom.title;openUrl(src, title);
       } //请求大数据参数接口 . 拼接地址进行跳转
-      function openUrl(src) {
-        var xhr = new XMLHttpRequest();xhr.onreadystatechange = function () {
+      function openUrl(src, title) {
+        var xhr = new XMLHttpRequest();debugger;xhr.onreadystatechange = function () {
           if (xhr.readyState == 4) {
-            var obj = JSON.parse(xhr.response);var branch = obj.branch.match(/\d+/) ? obj.branch.match(/\d+/)[0] : obj.branch;src = src.indexOf('?') != -1 && src.indexOf('&') != -1 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId : src + '?filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId;elem.ownerDocument.defaultView.open(src);
+            var obj = JSON.parse(xhr.response);var branch = obj.branch.match(/\d+/) ? obj.branch.match(/\d+/)[0] : obj.branch;if (obj.position == '总部领导' || obj.position == '事业部总经理' || obj.position == '产品经理') {
+              src = title == '产品上下架' && src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '/querySku4Manager?a=1&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag' : src.indexOf('?') != -1 && src.indexOf('&') != -1 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag' : src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '?filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag' : src.indexOf('?') != -1 && src.indexOf('&') == -1 && src.split('?')[1].length > 0 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag' : src + 'filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag';
+            } else if (obj.position == '分公司分总' || obj.position == '品牌经理') {
+              src = title == '产品上下架' && src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '/querySku4Manager?a=1&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&firstFlag' : src.indexOf('?') != -1 && src.indexOf('&') != -1 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&firstFlag' : src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '?filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&firstFlag' : src.indexOf('?') != -1 && src.indexOf('&') == -1 && src.split('?')[1].length > 0 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&firstFlag' : src + 'filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&firstFlag';
+            } else if (obj.position == '办事处主任' || obj.position == '销售代表') {
+              src = title == '产品上下架' && src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '/querySku?a=1&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag' : src.indexOf('?') != -1 && src.indexOf('&') != -1 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag' : src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '?filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag' : src.indexOf('?') != -1 && src.indexOf('&') == -1 && src.split('?')[1].length > 0 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag' : src + 'filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag=true';
+            }elem.ownerDocument.defaultView.open(src);
           }
         };xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder', false);xhr.send();
       } //+ '&branch=' + branch;
