@@ -41,6 +41,21 @@
             if (tblpstabs && tblpstabs.querySelectorAll("a")[1].textContent !== "调休假余额查询" && tblpstabs.querySelectorAll("a")[1].textContent !== "考勤类型") {
                 tblpstabs.querySelectorAll("a")[1].click();
             }
+          	//解决重复登录的问题
+          	if(aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout")!==-1){
+            	var timer=setInterval(function(){
+                if(doc.querySelector("#userid").value!==""&&doc.querySelector("#pwd").value!==""){
+                  sessionStorage.setItem("userid",doc.querySelector("#userid").value);
+              		sessionStorage.setItem("pwd",doc.querySelector("#pwd").value);
+                  aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
+                  clearInterval(timer);
+                }
+              },500);
+            }
+          	if(aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS")!==-1){
+              doc.querySelector("#userid").value=sessionStorage.getItem("userid");
+              doc.querySelector("#pwd").value=sessionStorage.getItem("pwd");
+          	}
           	// //用户名、密码记录
           	// if(aWin.location.href.match(/http:\/\/192\.168\.220\.110\/psp\/ps\/EMPLOYEE\/HRMS\/\?.*/g)){
           	// debugger;
@@ -71,6 +86,7 @@
               
             }
           }
+        
           //hr前五个快捷入口加载不出来的解决办法
           // var href=aWin.location.href;
           // debugger;
