@@ -152,6 +152,45 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control843_MAz01S": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[2]/DIV[3]/DIV[2]",
+              "ratio": 0.797
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsDetail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[2]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control843_MAz01S"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -159,7 +198,8 @@
       "controls": [
         "control637_rNTSVo",
         "control638_w4DHkT",
-        "control642_rA1IaL"
+        "control642_rA1IaL",
+        "control843_MAz01S"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -169,6 +209,16 @@
   },
   "flows": {
     "flow227_pSh8rM": {
+      "toContexts": [
+        {
+          "toContextId": "context64_eFxaoF"
+        }
+      ]
+    },
+    "flow320_pqIk4u": {
+      "fromContextId": "context64_eFxaoF",
+      "fromAction": "doAction",
+      "fromControlId": "control642_rA1IaL",
       "toContexts": [
         {
           "toContextId": "context64_eFxaoF"
@@ -211,6 +261,21 @@
           }
         },
         {
+          "id": "uiControl843_asx0X6",
+          "controlId": "control843_MAz01S",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl843_asx0X6",
+                "onGetTemplate": "getTemplate_uiControl843_asx0X6"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl642_1iayCt",
           "controlId": "control642_rA1IaL",
           "display": {
@@ -240,7 +305,9 @@
       "contexts": {
         "context64_eFxaoF": [
           "172.16.11.61/Detail.aspx?ID=383",
-          "172.16.11.61/Detail.aspx?ID=382"
+          "172.16.11.61/Detail.aspx?ID=382",
+          "172.16.11.61/Detail.aspx?ID=385",
+          "172.16.11.61/Detail.aspx?ID=380"
         ]
       }
     },
@@ -281,6 +348,46 @@
           ],
           [
             "ExternalClassAAAFEFFBCEDDA",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
+          ],
+          [
+            "ExternalClassEBBDCEC",
+            "aspNetHidden",
+            "breadcrumb",
+            "centerbox",
+            "clear",
+            "clearfix",
+            "container",
+            "copyright",
+            "footer",
+            "logo",
+            "newsDetail",
+            "newsInfo",
+            "newsRelated",
+            "next",
+            "previous",
+            "top",
+            "welcome",
+            "whether"
+          ],
+          [
+            "ExternalClassBBEAFBBDBE",
             "aspNetHidden",
             "breadcrumb",
             "centerbox",

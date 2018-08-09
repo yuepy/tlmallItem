@@ -152,6 +152,45 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control850_0kRi6H": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[3]/DIV[2]",
+              "ratio": 0.759
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.container DIV.centerbox DIV.newsDetail"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control850_0kRi6H"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -159,7 +198,8 @@
       "controls": [
         "control722_GIuRhm",
         "control723_48oTJh",
-        "control724_QpGbCf"
+        "control724_QpGbCf",
+        "control850_0kRi6H"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -169,6 +209,16 @@
   },
   "flows": {
     "flow266_zZvxgu": {
+      "toContexts": [
+        {
+          "toContextId": "context77_fRlpnG"
+        }
+      ]
+    },
+    "flow321_7AdWrT": {
+      "fromContextId": "context77_fRlpnG",
+      "fromAction": "doAction",
+      "fromControlId": "control724_QpGbCf",
       "toContexts": [
         {
           "toContextId": "context77_fRlpnG"
@@ -211,6 +261,21 @@
           }
         },
         {
+          "id": "uiControl850_kkqJm1",
+          "controlId": "control850_0kRi6H",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl850_kkqJm1",
+                "onGetTemplate": "getTemplate_uiControl850_kkqJm1"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl724_nqS4TQ",
           "controlId": "control724_QpGbCf",
           "display": {
@@ -239,7 +304,8 @@
     "page/urls": {
       "contexts": {
         "context77_fRlpnG": [
-          "172.16.11.61/YS/YSDetail.aspx?Guid=7329819f-a4fe-4d3e-87ee-f2028d71e289&ID=137"
+          "172.16.11.61/YS/YSDetail.aspx?Guid=7329819f-a4fe-4d3e-87ee-f2028d71e289&ID=137",
+          "172.16.11.61/YS/YSDetail.aspx?Guid=ba04cea3-e978-4354-af3a-571c746e6820&ID=119&adName=fangxj"
         ]
       }
     },
@@ -251,6 +317,16 @@
             "Form",
             "MainContent_btnDelete",
             "MainContent_btnUpdate",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "tianqi"
+          ],
+          [
+            "DQTime",
+            "Form",
+            "MainContent_btnDelete",
+            "MainContent_btnUpdate",
+            "MainContent_hidUser",
             "__EVENTVALIDATION",
             "__VIEWSTATE",
             "tianqi"
@@ -299,6 +375,25 @@
             "DIV/DIV/HR",
             "DIV/DIV/IFRAME",
             "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/P/SPAN",
+            "DIV/SPAN/A",
+            "DIV/SPAN/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden"
+          ],
+          [
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/FORM/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/HR",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-hidden",
             "DIV/DIV/INPUT-submit",
             "DIV/DIV/P",
             "DIV/DIV/SPAN",
