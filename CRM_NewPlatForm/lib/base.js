@@ -62,7 +62,13 @@
   //var topWin = null;
   var topWin = top;
   var loginWin = null;
-  topWin.AndroidBack = function(){
+  topWin.GetIconNum = function(str){
+    if(!str){
+      return ;
+    }
+    ysp.customHelper.IconNum = str;
+  }
+  topWin.AndroidBack = function(){
     ysp.appMain.back();
   }
   var forEach = Array.prototype.forEach;
@@ -116,52 +122,58 @@
   // 请求首页面所有一级\二级\三级菜单
   function getAllMenu() {
     var _this = this;
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.status == 200 && xhr.status < 300 || xhr.status == 304 && !getAllMenuStatus) {
-        if (xhr.responseText == '{"isHaveSession":"no"}') {
-          console.info('系统正在登录中...');
-          setTimeout(getAllMenu.bind(_this), 3000);
-        } else if (xhr.status == 200 && xhr.readyState == 4) {
-          getAllMenuStatus = true; 
-          //此状态说明当前已经全部拿到PC端所有菜单信息;
-          var AllMenu = JSON.parse(xhr.response);
-          //当前方法为接口只存在移动端菜单时可以直接想ALLMENU里面添加菜单信息
-          ALLMENU = AllMenu;
-          //console.log(ALLMENU)
-          //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
-          //AllMobileMenu(AllMenu);
-          //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
-          if(ALLMENU != '' && AllMenu){
-             var SessionXhr = new XMLHttpRequest();
-             SessionXhr.onreadystatechange = function(){
-              if(SessionXhr.status == 200 && SessionXhr.readyState == 4){
-                var encoder = JSON.parse(SessionXhr.response).encoder;
-                var userId = JSON.parse(SessionXhr.response).userId;
-                if(encoder && userId){
-                  var encoderXHR = new XMLHttpRequest();
-                	encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-                	//encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
-                  encoderXHR.send();
-                }else{
-                  console.error('AndEncoder接口请求失败!')
+    if(window.XMLHttpRequest){
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.status == 200 && xhr.status < 300 || xhr.status == 304 && !getAllMenuStatus) {
+          if (xhr.responseText == '{"isHaveSession":"no"}') {
+            console.info('系统正在登录中...');
+            setTimeout(getAllMenu.bind(_this), 3000);
+          } else if (xhr.status == 200 && xhr.readyState == 4) {
+            //topWin.EAPI.postMessageToNative('GetIconNum', null);//给客户端发消息 - 请求角标数据
+            getAllMenuStatus = true; 
+            //此状态说明当前已经全部拿到PC端所有菜单信息;
+            var AllMenu = JSON.parse(xhr.response);
+            //当前方法为接口只存在移动端菜单时可以直接想ALLMENU里面添加菜单信息
+            ALLMENU = AllMenu;
+            //console.log(ALLMENU)
+            //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
+            //AllMobileMenu(AllMenu);
+            //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
+            if(ALLMENU != '' && AllMenu){
+               var SessionXhr = new XMLHttpRequest();
+               SessionXhr.onreadystatechange = function(){
+                if(SessionXhr.status == 200 && SessionXhr.readyState == 4){
+                  var encoder = JSON.parse(SessionXhr.response).encoder;
+                  var userId = JSON.parse(SessionXhr.response).userId;
+                  if(encoder && userId){
+                    var encoderXHR = new XMLHttpRequest();
+                    //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+                  encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+                    //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+                    encoderXHR.send();
+                  }else{
+                    console.error('AndEncoder接口请求失败!')
+                  }
                 }
               }
+               SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+               SessionXhr.send();
             }
-             SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
-             SessionXhr.send();
           }
+        } else if (xhr.status >= 400) {
+          console.warn('请求失败,可能正在登陆中,3s后重新请求');
+          //3s后重新请求菜单列表
+          setTimeout(function () {
+            getAllMenu();
+          }, 3000);
         }
-      } else if (xhr.status >= 400) {
-        console.warn('请求失败,可能正在登陆中,3s后重新请求');
-        //3s后重新请求菜单列表
-        setTimeout(function () {
-          getAllMenu();
-        }, 3000);
-      }
-    };
-    xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
-    xhr.send();
+      };
+      xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
+      xhr.send();
+    }else{
+      console.error('对象只有一个,当前代码并没有兼容别的对象!!!!');
+    }
   }
   //按照传进来的名称来配置二级菜单
   function _getTargetMenus(arr) {
@@ -812,6 +824,7 @@
     }
   }
   utils.extend(ysp.customHelper, {
+    IconNum:null,//报告数量变量
 		BackFlag:0, // 拜访总览逐级返回标识
     filter_userId:null,//存储大数据session请求参数 
     encode:null,//存储大数据session请求参数 
