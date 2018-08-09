@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "haveDoneChanges",
-  "targetURL": "http://172.16.11.61:8000/Forms/HR/YGYDSQ/View.aspx?ProcInstId=30B27A4C1F81A5F5",
+  "targetURL": "http://bpm.cofcoko.com/Forms/HR/YGYDSQ/View.aspx?ProcInstId=30B27A4C1F81A5F5",
   "jsFile": "index.js",
   "chineseName": "已办员工异动申请单",
   "description": "已办员工异动申请单",
@@ -239,8 +239,13 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"tableAttachment\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -280,7 +285,12 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"tableComments\"]"
+            }
+          ],
           "force": false
         },
         "locators": [
@@ -470,7 +480,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/HR\\/YGYDSQ\\/View\\.aspx.*"
+        "http:\\/\\/bpm\\.cofcoko\\.com\\/Forms\\/HR\\/YGYDSQ\\/View\\.aspx.*"
       ]
     }
   },
@@ -651,7 +661,7 @@
     "page/urls": {
       "contexts": {
         "context44_60uz5O": [
-          "172.16.11.61:8000/Forms/HR/YGYDSQ/View.aspx?ProcInstId=30B27A4C1F81A5F5"
+          "bpm.cofcoko.com/Forms/HR/YGYDSQ/View.aspx?ProcInstId=30B27A4C1F81A5F5"
         ]
       }
     },

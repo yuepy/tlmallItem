@@ -20,7 +20,7 @@
               var imgs = contents[i].querySelectorAll('img');obj.src = [];obj.alt = [];for (var k = 0; k < imgs.length; k++) {
                 obj.src.push(imgs[k].src);obj.alt.push(imgs[k].alt);
               }obj.text = contents[i].textContent.trim();obj.flat = 'img';
-            }if (contents[i].textContent.trim() != '' && !contents[i].querySelector('a')) {
+            }if (contents[i].textContent.trim().length > 1 && !contents[i].querySelector('a')) {
               obj.text = contents[i].textContent.trim();obj.flat = 'text';
             } //有下载但是没有图片
             if (contents[i].querySelector('a') && !contents[i].querySelector('img')) {
@@ -33,7 +33,8 @@
                 obj.src.push(imgs[k].src);obj.alt.push(imgs[k].alt);
               }obj.text = contents[i].textContent.trim();obj.flat = 'img';obj.href = [];obj.text = [];var hrefs = contents[i].querySelectorAll('a');for (var k = 0; k < hrefs.length; k++) {
                 obj.href.push(hrefs[k].href);obj.text.push(hrefs[k].textContent.trim());
-              }obj.textele = contents[i].textContent.trim();var str = obj.textele;for (var u = 0; u < obj.text.length; u++) {
+              }
+              obj.textele = contents[i].textContent.trim();var str = obj.textele;for (var u = 0; u < obj.text.length; u++) {
                 if (obj.textele.indexOf(obj.text[u]) != -1) {
                   str = str.replace(obj.text[u], '').trim();
                 }
@@ -65,8 +66,8 @@
       }
     },
     getTemplate_uiControl715_sSS371: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,type,data;\n    if(target.className == 'next'){\n      type = 'nextclick';\n    }else{\n      type = 'prevclick'\n    }\n    if(handler){\n      handler({\n        eventType:type\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div className='next_prev'>\n        <button className='prev' onClick={this.onClick}>\u4E0A\u4E00\u7BC7</button>\n        <button className='next' onClick={this.onClick}>\u4E0B\u4E00\u7BC7</button>\n      </div>\n    )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        type,\n        data;\n    if (target.className == 'next') {\n      type = 'nextclick';\n    } else {\n      type = 'prevclick';\n    }\n    if (handler) {\n      handler({\n        eventType: type\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\n      'div',\n      { className: 'next_prev' },\n      React.createElement(\n        'button',\n        { className: 'prev', onClick: this.onClick },\n        '\\u4E0A\\u4E00\\u7BC7'\n      ),\n      React.createElement(\n        'button',\n        { className: 'next', onClick: this.onClick },\n        '\\u4E0B\\u4E00\\u7BC7'\n      )\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,type,data;\n    if(target.className == 'next'){\n      type = 'nextclick';\n    }else{\n      type = 'prevclick'\n    }\n    if(handler){\n      handler({\n        eventType:type\n      })\n    }\n    var elem=this.refs.toTop.ownerDocument.querySelector(\".view-wrapper\");\n    \n    setTimeout(function(){\n      elem.scrollTop=0;\n    },500)\n  },\n  render: function() {\n    return (\n      <div ref='toTop' className='next_prev'>\n        <button className='prev' onClick={this.onClick}>\u4E0A\u4E00\u7BC7</button>\n        <button className='next' onClick={this.onClick}>\u4E0B\u4E00\u7BC7</button>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        type,\n        data;\n    if (target.className == 'next') {\n      type = 'nextclick';\n    } else {\n      type = 'prevclick';\n    }\n    if (handler) {\n      handler({\n        eventType: type\n      });\n    }\n    var elem = this.refs.toTop.ownerDocument.querySelector(\".view-wrapper\");\n\n    setTimeout(function () {\n      elem.scrollTop = 0;\n    }, 500);\n  },\n  render: function render() {\n    return React.createElement(\n      'div',\n      { ref: 'toTop', className: 'next_prev' },\n      React.createElement(\n        'button',\n        { className: 'prev', onClick: this.onClick },\n        '\\u4E0A\\u4E00\\u7BC7'\n      ),\n      React.createElement(\n        'button',\n        { className: 'next', onClick: this.onClick },\n        '\\u4E0B\\u4E00\\u7BC7'\n      )\n    );\n  }\n});";
     },
     getData_control720_ZQTGyQ: function (elem) {},
     doAction_uiControl720_kN3M63: function (data, elem) {},

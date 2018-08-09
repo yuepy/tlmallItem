@@ -8,57 +8,87 @@
     doAction_uiControl193_bw3nWM: function (data, elem) {
       var type = data.eventType,
           data = data.customData;if (type == 'td_click') {
-        var arr = ['请假申请单', '销假申请单', '离职申请单', '加班申请单', '因公外出申请单', '考勤异常申请单', '员工异动申请单', '员工异动申请单V2', '招聘申请单', '员工合同续签申请单', '试用期转正申请单', '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '资产预算调整流程V2', '信用冻结订单释放申请流程', '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程', '路线变更流程', '路线组变更申请', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程', '总部用印申请', '合同审批流程', '客资批量审批', '送达方批量审批', '路线批量审批', '通用流程（知会）', '通用流程'];var flat = arr.indexOf(data.text);var hreflo = elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];if (flat == -1) {
+        var arr = ['请假申请单', '销假申请单', '离职申请单', '加班申请单', '因公外出申请单', '考勤异常申请单', '员工异动申请单', '员工异动申请单V2', '招聘申请单', '员工合同续签申请单', '试用期转正申请单', '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '资产预算调整流程V2', '信用冻结订单释放申请流程', '资产类预算外申请V2', '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程', '路线变更流程', '路线组变更申请', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程', '总部用印申请', '合同审批流程', '客资批量审批', '送达方批量审批', '路线批量审批', '通用流程（知会）', '通用流程'];var flat = arr.indexOf(data.text);var hreflo = elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];if (flat == -1) {
           if (hreflo[0] == 'h') {
-            if (ysp.appMain.isAndroid()) {
-              window.yspCheckIn.closePageType("2");
-            }if (ysp.appMain.isIOS()) {
-              var _setupWebViewJavascriptBridge = function (callback) {
-                if (window.WebViewJavascriptBridge) {
-                  return callback(WebViewJavascriptBridge);
-                }if (window.WVJBCallbacks) {
-                  return window.WVJBCallbacks.push(callback);
-                }window.WVJBCallbacks = [callback];var WVJBIframe = document.createElement("iframe");WVJBIframe.style.display = "none";WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";document.documentElement.appendChild(WVJBIframe);setTimeout(function () {
-                  document.documentElement.removeChild(WVJBIframe);
-                }, 0);
-              };_setupWebViewJavascriptBridge(function (bridge) {
-                bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
-              });
-            }hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
+            // if (ysp.appMain.isAndroid()) {
+            //   window.yspCheckIn.closePageType("2");
+            // }
+            //       if (ysp.appMain.isIOS()) {
+            //         var _setupWebViewJavascriptBridge = function (callback) {
+            //           if (window.WebViewJavascriptBridge) {
+            //             return callback(WebViewJavascriptBridge);
+            //           }
+            //           if (window.WVJBCallbacks) {
+            //             return window.WVJBCallbacks.push(callback);
+            //           }
+            //           window.WVJBCallbacks = [callback];
+            //           var WVJBIframe = document.createElement("iframe");
+            //           WVJBIframe.style.display = "none";
+            //           WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";
+            //           document.documentElement.appendChild(WVJBIframe);
+            //           setTimeout(function () {
+            //             document.documentElement.removeChild(WVJBIframe);
+            //           }, 0);
+            //         };
+            //         _setupWebViewJavascriptBridge(function (bridge) {
+            //           bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
+            //         });
+            //       }
+            hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
           } else {
-            if (ysp.appMain.isAndroid()) {
-              window.yspCheckIn.closePageType("2");
-            }if (ysp.appMain.isIOS()) {
-              var _setupWebViewJavascriptBridge = function (callback) {
-                if (window.WebViewJavascriptBridge) {
-                  return callback(WebViewJavascriptBridge);
-                }if (window.WVJBCallbacks) {
-                  return window.WVJBCallbacks.push(callback);
-                }window.WVJBCallbacks = [callback];var WVJBIframe = document.createElement("iframe");WVJBIframe.style.display = "none";
-                WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";document.documentElement.appendChild(WVJBIframe);setTimeout(function () {
-                  document.documentElement.removeChild(WVJBIframe);
-                }, 0);
-              };_setupWebViewJavascriptBridge(function (bridge) {
-                bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
-              });
-            }hreflo = "http://172.16.11.61:8000" + hreflo;hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
+            // if (ysp.appMain.isAndroid()) {
+            // window.yspCheckIn.closePageType("2");
+            // }
+            //       if (ysp.appMain.isIOS()) {
+            //         var _setupWebViewJavascriptBridge = function (callback) {
+            //           if (window.WebViewJavascriptBridge) {
+            //             return callback(WebViewJavascriptBridge);
+            //           }
+            //           if (window.WVJBCallbacks) {
+            //             return window.WVJBCallbacks.push(callback);
+            //           }
+            //           window.WVJBCallbacks = [callback];
+            //           var WVJBIframe = document.createElement("iframe");
+            //           WVJBIframe.style.display = "none";
+            //           WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";
+            //           document.documentElement.appendChild(WVJBIframe);
+            //           setTimeout(function () {
+            //             document.documentElement.removeChild(WVJBIframe);
+            //           }, 0);
+            //         };
+            //         _setupWebViewJavascriptBridge(function (bridge) {
+            //           bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
+            //         });
+            //       }
+            hreflo = "http://bpm.cofcoko.com" + hreflo;hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
           }
         } else {
-          if (ysp.appMain.isIOS()) {
-            var _setupWebViewJavascriptBridge = function (callback) {
-              if (window.WebViewJavascriptBridge) {
-                return callback(WebViewJavascriptBridge);
-              }if (window.WVJBCallbacks) {
-                return window.WVJBCallbacks.push(callback);
-              }window.WVJBCallbacks = [callback];var WVJBIframe = document.createElement("iframe");WVJBIframe.style.display = "none";WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";document.documentElement.appendChild(WVJBIframe);setTimeout(function () {
-                document.documentElement.removeChild(WVJBIframe);
-              }, 0);
-            };_setupWebViewJavascriptBridge(function (bridge) {
-              bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
-            });
-          }if (ysp.appMain.isAndroid()) {
-            window.yspCheckIn.closePageType("0");
-          }var str = 'http://172.16.11.61:8000'; // str = str.indexOf('s') == -1 ? str : 'http://172.16.11.61';
+          //     if (ysp.appMain.isIOS()) {
+          //       var _setupWebViewJavascriptBridge = function (callback) {
+          //         if (window.WebViewJavascriptBridge) {
+          //           return callback(WebViewJavascriptBridge);
+          //         }
+          //         if (window.WVJBCallbacks) {
+
+          //           return window.WVJBCallbacks.push(callback);
+          //         }
+          //         window.WVJBCallbacks = [callback];
+          //         var WVJBIframe = document.createElement("iframe");
+          //         WVJBIframe.style.display = "none";
+          //         WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";
+          //         document.documentElement.appendChild(WVJBIframe);
+          //         setTimeout(function () {
+          //           document.documentElement.removeChild(WVJBIframe);
+          //         }, 0);
+          //       };
+          //       _setupWebViewJavascriptBridge(function (bridge) {
+          //         bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
+          //       });
+          //     }
+          //     if (ysp.appMain.isAndroid()) {
+          //       window.yspCheckIn.closePageType("0");
+          //     }
+          var str = 'http://bpm.cofcoko.com'; // str = str.indexOf('s') == -1 ? str : 'https://info.cofcoko.com';
           if (hreflo.indexOf(str) != -1) {
             if (ysp.appMain.isIOS()) {
               ysp.appMain.openWindow(hreflo);
@@ -83,16 +113,17 @@
     doAction_uiControl194_iLZaeH: function (data, elem) {
       if ("back" == data.eventType) {
         // ysp.appMain.back(); //ysp.runtime.Model.setForceMatchModels(['commission']);
-        ysp.runtime.Browser.activeBrowser.contentWindow.close();if (ysp.appMain.isIOS()) {
-          top.EAPI.postMessageToNative('closePage', null);
-        }if (ysp.appMain.isAndroid()) {
-          window.yspCheckIn.closePage();
-        }
+        ysp.runtime.Browser.activeBrowser.contentWindow.close(); //   if (ysp.appMain.isIOS()) {
+        //     top.EAPI.postMessageToNative('closePage', null);
+        //   }
+        //   if (ysp.appMain.isAndroid()) {
+        //     window.yspCheckIn.closePage();
+        //   }
       }
     },
     getTemplate_uiControl194_iLZaeH: function () {
-      var selfTemplate = 'import { Header, HeaderLeft } from \'ysp-interior-components\';\nimport { back } from \'appRenderer\';\nmodule.exports = React.createClass({\n  back:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\'back\'\n      })\n    }\n  },\n  componentDidMount:function(){\n    if(ysp.appMain.isAndroid()){\n      window.yspCheckIn.closePageType("1");\n    }\n    if(ysp.appMain.isIOS()){\n      var _setupWebViewJavascriptBridge = function (callback) {\n        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }\n        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }\n        window.WVJBCallbacks = [callback];\n        var WVJBIframe = document.createElement("iframe");\n        WVJBIframe.style.display = "none";\n        WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";\n        document.documentElement.appendChild(WVJBIframe);\n        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)\n    \t};\n      _setupWebViewJavascriptBridge(function(bridge) {\n          bridge.callHandler("closePageType", \'true\',function responseCallback(responseData) {\n              console.log("JS received response:", responseData)\n          })\n      });\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className=\'titleH1\'>\n          <Header title="\u5F85\u529E">\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.back.bind(this)}>\u8FD4\u56DE</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});';
-      return '\'use strict\';\n\nvar _yspInteriorComponents = require(\'ysp-interior-components\');\n\nvar _appRenderer = require(\'appRenderer\');\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  back: function back(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \'back\'\n      });\n    }\n  },\n  componentDidMount: function componentDidMount() {\n    if (ysp.appMain.isAndroid()) {\n      window.yspCheckIn.closePageType("1");\n    }\n    if (ysp.appMain.isIOS()) {\n      var _setupWebViewJavascriptBridge = function _setupWebViewJavascriptBridge(callback) {\n        if (window.WebViewJavascriptBridge) {\n          return callback(WebViewJavascriptBridge);\n        }\n        if (window.WVJBCallbacks) {\n          return window.WVJBCallbacks.push(callback);\n        }\n        window.WVJBCallbacks = [callback];\n        var WVJBIframe = document.createElement("iframe");\n        WVJBIframe.style.display = "none";\n        WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";\n        document.documentElement.appendChild(WVJBIframe);\n        setTimeout(function () {\n          document.documentElement.removeChild(WVJBIframe);\n        }, 0);\n      };\n      _setupWebViewJavascriptBridge(function (bridge) {\n        bridge.callHandler("closePageType", \'true\', function responseCallback(responseData) {\n          console.log("JS received response:", responseData);\n        });\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      \'div\',\n      { className: \'titleH1\' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: \'\\u5F85\\u529E\' },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement(\'span\', null),\n          React.createElement(\n            \'button\',\n            { onClick: this.back.bind(this) },\n            \'\\u8FD4\\u56DE\'\n          )\n        )\n      )\n    );\n  }\n});';
+      var selfTemplate = "import { Header, HeaderLeft } from 'ysp-interior-components';\nimport { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  back:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'back'\n      })\n    }\n  },\n  // componentDidMount:function(){\n  //   if(ysp.appMain.isAndroid()){\n  //     window.yspCheckIn.closePageType(\"1\");\n  //   }\n  //   if(ysp.appMain.isIOS()){\n  //     var _setupWebViewJavascriptBridge = function (callback) {\n  //       if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }\n  //       if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }\n  //       window.WVJBCallbacks = [callback];\n  //       var WVJBIframe = document.createElement(\"iframe\");\n  //       WVJBIframe.style.display = \"none\";\n  //       WVJBIframe.src = \"wvjbscheme://__BRIDGE_LOADED__\";\n  //       document.documentElement.appendChild(WVJBIframe);\n  //       setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)\n  //   \t};\n  //     _setupWebViewJavascriptBridge(function(bridge) {\n  //         bridge.callHandler(\"closePageType\", 'true',function responseCallback(responseData) {\n  //             console.log(\"JS received response:\", responseData)\n  //         })\n  //     });\n  //   }\n  // },\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className='titleH1'>\n          <Header title=\"\u5F85\u529E\">\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.back.bind(this)}>\u8FD4\u56DE</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});";
+      return '\'use strict\';\n\nvar _yspInteriorComponents = require(\'ysp-interior-components\');\n\nvar _appRenderer = require(\'appRenderer\');\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  back: function back(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \'back\'\n      });\n    }\n  },\n  // componentDidMount:function(){\n  //   if(ysp.appMain.isAndroid()){\n  //     window.yspCheckIn.closePageType("1");\n  //   }\n  //   if(ysp.appMain.isIOS()){\n  //     var _setupWebViewJavascriptBridge = function (callback) {\n  //       if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }\n  //       if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }\n  //       window.WVJBCallbacks = [callback];\n  //       var WVJBIframe = document.createElement("iframe");\n  //       WVJBIframe.style.display = "none";\n  //       WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";\n  //       document.documentElement.appendChild(WVJBIframe);\n  //       setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)\n  //   \t};\n  //     _setupWebViewJavascriptBridge(function(bridge) {\n  //         bridge.callHandler("closePageType", \'true\',function responseCallback(responseData) {\n  //             console.log("JS received response:", responseData)\n  //         })\n  //     });\n  //   }\n  // },\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      \'div\',\n      { className: \'titleH1\' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: \'\\u5F85\\u529E\' },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement(\'span\', null),\n          React.createElement(\n            \'button\',\n            { onClick: this.back.bind(this) },\n            \'\\u8FD4\\u56DE\'\n          )\n        )\n      )\n    );\n  }\n});';
     },
 
     getData_control227_INKP3Z: function (elem) {
@@ -253,8 +284,8 @@
       // }
     },
     getTemplate_uiControl2_iAH5Jo: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:\'click\',\n        data:target.getAttribute(\'data-id\')\n      })\n    }\n  },\n  onclickpage:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\'onclickpage\',\n        data:[target.dataset.index,target.dataset.id]\n      })\n    }\n  },\n  onclickpreOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:\'onclickpreOnce\'\n        \n      })\n    }\n  },\n  onClicknextOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:\'onClicknextOnce\',\n        \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return (\n        <div>\n        \t\n        </div>\n      )\n    }\n    var str = \'<\',kr = \'|<\',\n        _this = this;\n    var lis = data.map(function(ele,index){\n      if(index!=0&&index!=data.length-1){\n        if(ele.type!=\'nextPage\'){\n           return(\n              <li data-id={index} onClick={_this.onClick} className={ele.class}>{ele.text}</li>\n            )\n        }\n        \n      }\n    })\n    return (\n      <div className=\'footerbtn\'>\n        <ul>\n          <span>\n          \t\t<li data-id=\'prevPage\' data-index={0} onClick={_this.onclickpage.bind(_this)} className=\'ysp-prePage\'>{kr}</li>\n          \t\t{data[1].type==\'nextPage\'?<li data-id=\'prev\' onClick={_this.onclickpreOnce.bind(_this)} className=\'ysp-preOnce\'>{str}</li>:\'\'}\n          </span>\n          \n          <span className=\'ysp-pageBtnScroll-tt\'><span>{lis}</span></span>\n          <span>\n          \t\t{data[data.length-2].type==\'nextPage\'?<li data-id=\'next\' onClick={_this.onClicknextOnce.bind(_this)} className=\'ysp-nextOne\'>></li>:\'\'}\n          \t\t<li data-id=\'nextPage\' data-index={data.length-1} onClick={_this.onclickpage.bind(_this)} className=\'ysp-nextPage\'>>|</li>\n          </span>\n         \n        </ul>\n      </div>\n    )\n  }\n});';
-      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: target.getAttribute(\'data-id\')\n      });\n    }\n  },\n  onclickpage: function onclickpage(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \'onclickpage\',\n        data: [target.dataset.index, target.dataset.id]\n      });\n    }\n  },\n  onclickpreOnce: function onclickpreOnce(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: \'onclickpreOnce\'\n\n      });\n    }\n  },\n  onClicknextOnce: function onClicknextOnce(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: \'onClicknextOnce\'\n\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    if (!data) {\n      return React.createElement(\'div\', null);\n    }\n    var str = \'<\',\n        kr = \'|<\',\n        _this = this;\n    var lis = data.map(function (ele, index) {\n      if (index != 0 && index != data.length - 1) {\n        if (ele.type != \'nextPage\') {\n          return React.createElement(\n            \'li\',\n            { \'data-id\': index, onClick: _this.onClick, className: ele.class },\n            ele.text\n          );\n        }\n      }\n    });\n    return React.createElement(\n      \'div\',\n      { className: \'footerbtn\' },\n      React.createElement(\n        \'ul\',\n        null,\n        React.createElement(\n          \'span\',\n          null,\n          React.createElement(\n            \'li\',\n            { \'data-id\': \'prevPage\', \'data-index\': 0, onClick: _this.onclickpage.bind(_this), className: \'ysp-prePage\' },\n            kr\n          ),\n          data[1].type == \'nextPage\' ? React.createElement(\n            \'li\',\n            { \'data-id\': \'prev\', onClick: _this.onclickpreOnce.bind(_this), className: \'ysp-preOnce\' },\n            str\n          ) : \'\'\n        ),\n        React.createElement(\n          \'span\',\n          { className: \'ysp-pageBtnScroll-tt\' },\n          React.createElement(\n            \'span\',\n            null,\n            lis\n          )\n        ),\n        React.createElement(\n          \'span\',\n          null,\n          data[data.length - 2].type == \'nextPage\' ? React.createElement(\n            \'li\',\n            { \'data-id\': \'next\', onClick: _this.onClicknextOnce.bind(_this), className: \'ysp-nextOne\' },\n            \'>\'\n          ) : \'\',\n          React.createElement(\n            \'li\',\n            { \'data-id\': \'nextPage\', \'data-index\': data.length - 1, onClick: _this.onclickpage.bind(_this), className: \'ysp-nextPage\' },\n            \'>|\'\n          )\n        )\n      )\n    );\n  }\n});';
+      var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:target.getAttribute('data-id')\n      })\n    }\n  },\n  onclickpage:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'onclickpage',\n        data:[target.dataset.index,target.dataset.id]\n      })\n    }\n  },\n  onclickpreOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onclickpreOnce'\n        \n      })\n    }\n  },\n  onClicknextOnce:function(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if(handler){\n      handler({\n        eventType:'onClicknextOnce',\n        \n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return (\n        <div>\n        \t\n        </div>\n      )\n    }\n    var str = '<',kr = '|<',\n        _this = this;\n    var lis = data.map(function(ele,index){\n      if(index!=0&&index!=data.length-1){\n        if(ele.type!='nextPage'){\n           return(\n              <li data-id={index} onClick={_this.onClick} className={ele.class}>{ele.text}</li>\n            )\n        }\n        \n      }\n    })\n    return (\n      <div className='footerbtn'>\n        <ul>\n          <span>\n          \t\t<li data-id='prevPage' data-index={0} onClick={_this.onclickpage.bind(_this)} className='ysp-prePage'>{kr}</li>\n          \t\t{data[1].type=='nextPage'?<li data-id='prev' onClick={_this.onclickpreOnce.bind(_this)} className='ysp-preOnce'>{str}</li>:''}\n          </span>\n          \n          <span className='ysp-pageBtnScroll-tt'><span>{lis}</span></span>\n          <span>\n          \t\t{data[data.length-2].type=='nextPage'?<li data-id='next' onClick={_this.onClicknextOnce.bind(_this)} className='ysp-nextOne'>></li>:''}\n          \t\t<li data-id='nextPage' data-index={data.length-1} onClick={_this.onclickpage.bind(_this)} className='ysp-nextPage'>>|</li>\n          </span>\n         \n        </ul>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: target.getAttribute('data-id')\n      });\n    }\n  },\n  onclickpage: function onclickpage(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'onclickpage',\n        data: [target.dataset.index, target.dataset.id]\n      });\n    }\n  },\n  onclickpreOnce: function onclickpreOnce(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'onclickpreOnce'\n\n      });\n    }\n  },\n  onClicknextOnce: function onClicknextOnce(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'onClicknextOnce'\n\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    if (!data) {\n      return React.createElement('div', null);\n    }\n    var str = '<',\n        kr = '|<',\n        _this = this;\n    var lis = data.map(function (ele, index) {\n      if (index != 0 && index != data.length - 1) {\n        if (ele.type != 'nextPage') {\n          return React.createElement(\n            'li',\n            { 'data-id': index, onClick: _this.onClick, className: ele.class },\n            ele.text\n          );\n        }\n      }\n    });\n    return React.createElement(\n      'div',\n      { className: 'footerbtn' },\n      React.createElement(\n        'ul',\n        null,\n        React.createElement(\n          'span',\n          null,\n          React.createElement(\n            'li',\n            { 'data-id': 'prevPage', 'data-index': 0, onClick: _this.onclickpage.bind(_this), className: 'ysp-prePage' },\n            kr\n          ),\n          data[1].type == 'nextPage' ? React.createElement(\n            'li',\n            { 'data-id': 'prev', onClick: _this.onclickpreOnce.bind(_this), className: 'ysp-preOnce' },\n            str\n          ) : ''\n        ),\n        React.createElement(\n          'span',\n          { className: 'ysp-pageBtnScroll-tt' },\n          React.createElement(\n            'span',\n            null,\n            lis\n          )\n        ),\n        React.createElement(\n          'span',\n          null,\n          data[data.length - 2].type == 'nextPage' ? React.createElement(\n            'li',\n            { 'data-id': 'next', onClick: _this.onClicknextOnce.bind(_this), className: 'ysp-nextOne' },\n            '>'\n          ) : '',\n          React.createElement(\n            'li',\n            { 'data-id': 'nextPage', 'data-index': data.length - 1, onClick: _this.onclickpage.bind(_this), className: 'ysp-nextPage' },\n            '>|'\n          )\n        )\n      )\n    );\n  }\n});";
     }
   }, "dealtIndex");
 })(window, ysp);

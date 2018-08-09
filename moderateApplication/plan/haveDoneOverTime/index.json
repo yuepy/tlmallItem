@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "haveDoneOverTime",
-  "targetURL": "http://172.16.11.61:8000/Forms/HR/JBSQ/View.aspx?ProcInstId=83A05BE111105359",
+  "targetURL": "http://bpm.cofcoko.com/Forms/HR/JBSQ/View.aspx?ProcInstId=83A05BE111105359",
   "jsFile": "index.js",
   "chineseName": "已办加班申请单",
   "description": "已办加班申请单",
@@ -392,6 +392,46 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control854_Z4El2K": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"AppUsersDiv\"]/DIV[3]",
+              "descendant::FORM[@id=\"aspnetForm\"]//DIV[@id=\"AppUsersDiv\"]//DIV",
+              "descendant::DIV[@id=\"AppUsersDiv\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              4
+            ],
+            "value": "BODY.formPage DIV.big-form.page-shadow DIV.form-wrapper"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[11]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control854_Z4El2K"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -405,11 +445,12 @@
         "control313_z0DXJw",
         "control314_22NuPa",
         "control469_ip1lIO",
-        "control810_TaysT8"
+        "control810_TaysT8",
+        "control854_Z4El2K"
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/HR\\/JBSQ\\/View\\.aspx.*"
+        "http:\\/\\/bpm\\.cofcoko\\.com\\/Forms\\/HR\\/JBSQ\\/View\\.aspx.*"
       ]
     }
   },
@@ -502,6 +543,21 @@
           }
         },
         {
+          "id": "uiControl854_f3xqcU",
+          "controlId": "control854_Z4El2K",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl854_f3xqcU",
+                "onGetTemplate": "getTemplate_uiControl854_f3xqcU"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl311_QaD1sF",
           "controlId": "control311_R2OmVR",
           "display": {
@@ -575,9 +631,10 @@
     "page/urls": {
       "contexts": {
         "context36_4AzglQ": [
-          "172.16.11.61:8000/Forms/HR/JBSQ/View.aspx?ProcInstId=83A05BE111105359",
-          "172.16.11.61:8000/Forms/HR/JBSQ/View.aspx?ProcInstId=800E69FE4740E330",
-          "172.16.11.61:8000/Forms/HR/JBSQ/View.aspx?ProcInstId=F354E627556796D5"
+          "bpm.cofcoko.com/Forms/HR/JBSQ/View.aspx?ProcInstId=83A05BE111105359",
+          "bpm.cofcoko.com/Forms/HR/JBSQ/View.aspx?ProcInstId=800E69FE4740E330",
+          "bpm.cofcoko.com/Forms/HR/JBSQ/View.aspx?ProcInstId=F354E627556796D5",
+          "bpm.cofcoko.com/Forms/HR/JBSQ/View.aspx?ProcInstId=B54F15186802B178"
         ]
       }
     },
@@ -738,6 +795,56 @@
             "ctl_contentForm_txt_OvertimeBelong",
             "ctl_contentForm_txt_OvertimeType",
             "ctl_contentForm_txt_Remark",
+            "ctl_contentForm_txt_Travel",
+            "person_infor",
+            "person_infor_trigger",
+            "tableComments",
+            "tableHeader",
+            "tb_List"
+          ],
+          [
+            "AppUsersDiv",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "aspnetForm",
+            "btnAddLink",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_contentActionBar_ActionBar_Action",
+            "ctl_contentActionBar_ActionBar_ActionName",
+            "ctl_contentActionBar_ActionBar_AddApprover",
+            "ctl_contentActionBar_ActionBar_AddApproverName",
+            "ctl_contentActionBar_ActionBar_GotoActivityName",
+            "ctl_contentActionBar_ActionBar_IsReturnBack",
+            "ctl_contentActionBar_ActionBar_Print",
+            "ctl_contentActionBar_ActionBar_UserAction",
+            "ctl_contentActionBar_ActionBar_btnAddApprover",
+            "ctl_contentActionBar_ActionBar_btnClose",
+            "ctl_contentActionBar_ActionBar_btnInform",
+            "ctl_contentActionBar_ActionBar_btnPrint",
+            "ctl_contentActionBar_ActionBar_btnRedirect",
+            "ctl_contentActionBar_ActionBar_hidJBAffirm",
+            "ctl_contentForm_DivKaoQin",
+            "ctl_contentForm_P",
+            "ctl_contentForm_hidGuid",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantName",
+            "ctl_contentForm_txt_OvertimeBelong",
+            "ctl_contentForm_txt_OvertimeType",
+            "ctl_contentForm_txt_Remark",
+            "ctl_contentForm_txt_TimekeeperCode",
+            "ctl_contentForm_txt_TimekeeperName",
             "ctl_contentForm_txt_Travel",
             "person_infor",
             "person_infor_trigger",
@@ -1024,6 +1131,60 @@
             "TD/SPAN/INPUT-radio",
             "THEAD/TR/TH",
             "TR/TD/DIV",
+            "TR/TD/INPUT-radio",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "TR/TD/TEXTAREA",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/FORM/DIV",
+            "-/FORM/SCRIPT",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/LABEL/BR",
+            "TD/LABEL/INPUT-hidden",
+            "TD/LABEL/SPAN",
+            "TD/SPAN/A",
+            "TD/SPAN/INPUT-radio",
+            "TD/TABLE/TBODY",
+            "THEAD/TR/TH",
+            "TR/TD/DIV",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-hidden",
             "TR/TD/INPUT-radio",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",

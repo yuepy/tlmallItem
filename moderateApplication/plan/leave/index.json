@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "leave",
-  "targetURL": "http://172.16.11.61:8000/Forms/HR/QJSQLC/Processing.aspx?SN=8A48E40ADF357FF4D7E5F58A4571924D&Guid=e3db9f04-d415-4acc-bf75-4a96b7fbe82c#",
+  "targetURL": "http://bpm.cofcoko.com/Forms/HR/QJSQLC/Processing.aspx?SN=8A48E40ADF357FF4D7E5F58A4571924D&Guid=e3db9f04-d415-4acc-bf75-4a96b7fbe82c#",
   "jsFile": "index.js",
   "requires": {
     "travel": "../travel/index.json",
@@ -775,6 +775,55 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control853_V1Td8c": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "force": true,
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"tablePreview\"]"
+            }
+          ]
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::FORM[@id=\"aspnetForm\"]//TABLE[@id=\"tablePreview\"]",
+              "descendant::TABLE[@id=\"tablePreview\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form_tab TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[9]/DIV[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control853_V1Td8c"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -798,11 +847,12 @@
         "control555_gohC5f",
         "control482_5J6tEV",
         "control567_4NpTIW",
-        "control676_clAygo"
+        "control676_clAygo",
+        "control853_V1Td8c"
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/HR\\/QJSQLC\\/Processing\\.aspx.*"
+        "http:\\/\\/bpm\\.cofcoko\\.com\\/Forms\\/HR\\/QJSQLC\\/Processing\\.aspx.*"
       ]
     }
   },
@@ -1060,6 +1110,21 @@
           }
         },
         {
+          "id": "uiControl853_Wngtzi",
+          "controlId": "control853_V1Td8c",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl853_Wngtzi",
+                "onGetTemplate": "getTemplate_uiControl853_Wngtzi"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl1_H8k4xV",
           "controlId": "control1_RhXmQz",
           "display": {
@@ -1267,12 +1332,13 @@
     "page/urls": {
       "contexts": {
         "context4_nyVhNa": [
-          "172.16.11.61:8000/Forms/HR/QJSQLC/Processing.aspx?SN=8A48E40ADF357FF4D7E5F58A4571924D&Guid=e3db9f04-d415-4acc-bf75-4a96b7fbe82c",
+          "bpm.cofcoko.com/Forms/HR/QJSQLC/Processing.aspx?SN=8A48E40ADF357FF4D7E5F58A4571924D&Guid=e3db9f04-d415-4acc-bf75-4a96b7fbe82c",
           "text/html,chromewebdata",
-          "172.16.11.61:8000/Forms/HR/QJSQLC/View.aspx?ProcInstId=6629FF628D7E697C",
-          "172.16.11.61:8000/Forms/HR/QJSQLC/Processing.aspx?SN=62735567CB8DFA325EFB583EE881E919&Guid=52395092-054a-4e2a-b185-b83d67334358",
-          "172.16.11.61:8000/Forms/HR/QJSQLC/Processing.aspx?SN=F5F078DC842D41C978334441A5ACFFAB&Guid=45e50ba6-b190-4e09-bd94-ddb771fef20e",
-          "172.16.11.61:8000/Forms/HR/QJSQLC/Processing.aspx?SN=9E13F5ED8632278AA6CFD069E4001271&Guid=1953922a-a145-4c94-a278-a560e7c0e70b"
+          "bpm.cofcoko.com/Forms/HR/QJSQLC/View.aspx?ProcInstId=6629FF628D7E697C",
+          "bpm.cofcoko.com/Forms/HR/QJSQLC/Processing.aspx?SN=62735567CB8DFA325EFB583EE881E919&Guid=52395092-054a-4e2a-b185-b83d67334358",
+          "bpm.cofcoko.com/Forms/HR/QJSQLC/Processing.aspx?SN=F5F078DC842D41C978334441A5ACFFAB&Guid=45e50ba6-b190-4e09-bd94-ddb771fef20e",
+          "bpm.cofcoko.com/Forms/HR/QJSQLC/Processing.aspx?SN=9E13F5ED8632278AA6CFD069E4001271&Guid=1953922a-a145-4c94-a278-a560e7c0e70b",
+          "bpm.cofcoko.com/Forms/HR/QJSQLC/Processing.aspx?SN=DACB8DB85096D684108F5339D371DED3&Guid=1036d513-709d-43db-abc2-8d52f49acc4f"
         ]
       }
     },
@@ -1569,6 +1635,97 @@
             "tableAttachment",
             "tableComments",
             "tableHeader",
+            "tb_AttachmentList",
+            "tb_List",
+            "uploadDiv",
+            "upload_target"
+          ],
+          [
+            "AppUsersDiv",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__SCROLLPOSITIONX",
+            "__SCROLLPOSITIONY",
+            "__VIEWSTATE",
+            "_myDP",
+            "approveMemo",
+            "aspnetForm",
+            "btnAddLink",
+            "btnFileUpload",
+            "ctl_ActionBar_Action",
+            "ctl_ActionBar_ActionName",
+            "ctl_ActionBar_AddApproval",
+            "ctl_ActionBar_AddApprover",
+            "ctl_ActionBar_AddApproverName",
+            "ctl_ActionBar_Approval",
+            "ctl_ActionBar_GotoActivityName",
+            "ctl_ActionBar_IsReturnBack",
+            "ctl_ActionBar_Reject",
+            "ctl_ActionBar_UserAction",
+            "ctl_ActionBar_WorkFlow",
+            "ctl_ActionBar_btnAddApprover",
+            "ctl_ActionBar_btnApprove",
+            "ctl_ActionBar_btnClose",
+            "ctl_ActionBar_btnInform",
+            "ctl_ActionBar_btnRedirect",
+            "ctl_ActionBar_btnReject",
+            "ctl_ActionBar_btnWorkFlow",
+            "ctl_ActionBar_hidJBAffirm",
+            "ctl_ApproveControl_lblActivityName",
+            "ctl_ApproveControl_txtMemo",
+            "ctl_Attachment_fileUpload",
+            "ctl_Attachment_hfActivityName",
+            "ctl_Attachment_hfGuid",
+            "ctl_Attachment_hfIsStart",
+            "ctl_Attachment_hfUserLoginName",
+            "ctl_Header_hidFlag",
+            "ctl_Header_txtCompanyName",
+            "ctl_Header_txtDate",
+            "ctl_Header_txtDepartName",
+            "ctl_Header_txtEmail",
+            "ctl_Header_txtPhone",
+            "ctl_Header_txtUserName",
+            "ctl_LinkedProcInst_hfGuid",
+            "ctl_LinkedProcInst_hfStart",
+            "ctl_LinkedProcInst_hfUserLoginName",
+            "ctl_btnSubmit",
+            "ctl_contentForm_DivNull",
+            "ctl_contentForm_P",
+            "ctl_contentForm_hidLeaveHour",
+            "ctl_contentForm_hidSurplus",
+            "ctl_contentForm_hidUseLeave",
+            "ctl_contentForm_rptDetail_ctl_hidId",
+            "ctl_contentForm_rptPreview_ctl_lblANZHL",
+            "ctl_contentForm_rptPreview_ctl_lblBEGDA",
+            "ctl_contentForm_rptPreview_ctl_lblENDDA",
+            "ctl_contentForm_rptPreview_ctl_lblKVERB",
+            "ctl_contentForm_rptPreview_ctl_lblProcessing",
+            "ctl_contentForm_rptPreview_ctl_lblREMAIN",
+            "ctl_contentForm_rptPreview_ctl_lblSUBTY",
+            "ctl_contentForm_txt_AgentCode",
+            "ctl_contentForm_txt_AgentName",
+            "ctl_contentForm_txt_ApplicantCode",
+            "ctl_contentForm_txt_ApplicantDeptCode",
+            "ctl_contentForm_txt_ApplicantDeptName",
+            "ctl_contentForm_txt_ApplicantName",
+            "ctl_contentForm_txt_CompanyCode",
+            "ctl_contentForm_txt_LeavePlace",
+            "ctl_contentForm_txt_LeaveReason",
+            "ctl_contentForm_txt_LeaveType",
+            "ctl_contentForm_txt_WorkTimeType",
+            "fileAttachment",
+            "filePanel",
+            "file_upload_form",
+            "hdActivityName",
+            "hdGuid",
+            "hdUserLoginName",
+            "person_infor",
+            "person_infor_trigger",
+            "tableAttachment",
+            "tableComments",
+            "tableDetailByDay",
+            "tableHeader",
+            "tablePreview",
             "tb_AttachmentList",
             "tb_List",
             "uploadDiv",
@@ -2059,6 +2216,67 @@
             "grey",
             "icon-cloud-download",
             "icon-paper-clip",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "action-area",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "auto_width",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "form_tab",
+            "gb",
+            "green",
+            "grey",
             "layout-data",
             "layout-form",
             "logo-leftcorner",

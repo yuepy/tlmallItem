@@ -7,7 +7,8 @@
         ysp.runtime.Browser.activeBrowser.contentWindow.close();if (ysp.appMain.isIOS()) {
           top.EAPI.postMessageToNative('closePage', null);
         }if (ysp.appMain.isAndroid()) {
-          window.yspCheckIn.closePage();
+          // window.yspCheckIn.closePage();
+          window.yspCheckIn.closePageMoney();
         }
       }
     }, getTemplate_uiControl773_uX2PUQ: function () {

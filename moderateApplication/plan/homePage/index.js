@@ -3,12 +3,13 @@
     getData_control572_xaRBP3: function (elem) {},
     doAction_uiControl572_bOwq97: function (data, elem) {
       if ('click' == data.eventType) {
-        elem && elem.click();
+        // elem && elem.click();
+        elem.ownerDocument.defaultView.open('http://bpm.cofcoko.com/Index.aspx?m=1');
       }
     },
     getTemplate_uiControl572_bOwq97: function () {
       var selfTemplate = "module.exports = React.createClass({\n  handlerClick:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'click'\n      })\n    }\n  },\n  render: function() {\n    return (\n      <div className=\"ysp-homePage\"  onClick={this.handlerClick.bind(this)}>\n        BPM\n      </div>\n    )\n  }\n});";
-      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  handlerClick: function handlerClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'click'\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-homePage\", onClick: this.handlerClick.bind(this) },\n      \"BPM\"\n    );\n  }\n});";
+      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  handlerClick: function handlerClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: \'click\'\n      });\n    }\n  },\n  render: function render() {\n    return React.createElement(\n      "div",\n      { className: "ysp-homePage", onClick: this.handlerClick.bind(this) },\n      "BPM"\n    );\n  }\n});';
     },
     getData_control573_yxwQIJ: function (elem) {},
     doAction_uiControl573_UzV3Su: function (data, elem) {
@@ -35,7 +36,7 @@
       if ('click' == data.eventType) {
         // var el = elem && elem.querySelector('ul').nextElementSibling;
         // el && el.click();
-        elem.ownerDocument.defaultView.open('http://172.16.11.61/List.aspx');
+        elem.ownerDocument.defaultView.open('https://info.cofcoko.com/List.aspx');
       }
     },
     getTemplate_uiControl577_dppg6H: function () {
@@ -60,7 +61,7 @@
     doAction_uiControl584_EzVBoB: function (data, elem) {
       if ('click' == data.eventType) {
         // elem && elem.click();
-        elem.ownerDocument.defaultView.location.href = 'http://172.16.11.61/YS/YSList.aspx?adName=fangxj';
+        elem.ownerDocument.defaultView.location.href = 'https://info.cofcoko.com/YS/YSList.aspx?adName=fangxj';
       }
     },
     getTemplate_uiControl584_EzVBoB: function () {
@@ -86,8 +87,8 @@
     getData_control772_ZLrDG3: function (elem) {},
     doAction_uiControl772_nTamgL: function (data, elem) {
       if ('click' == data.eventType) {
-        //ysp.appMain.openWindow("http://172.16.11.61:81/Login.aspx");
-        elem.ownerDocument.defaultView.open("http://172.16.11.61:81/Login.aspx");
+        //ysp.appMain.openWindow("https://payroll.cofcoko.com/Login.aspx");
+        elem.ownerDocument.defaultView.open("https://payroll.cofcoko.com/Login.aspx");
       }
     },
     getTemplate_uiControl772_nTamgL: function () {

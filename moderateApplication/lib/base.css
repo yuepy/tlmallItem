@@ -55,6 +55,8 @@ div.contentitem {
 [data-ysp-modelid="Newleave"] .pubbtn,
 [data-ysp-modelid="Newawaybus"] .pubbtn,
 [data-ysp-modelid="Newtravel"] .pubbtn {
+  background-color: #fff;
+  height: 44px;
   width: 100%;
   margin-right: 10px;
   display: flex;
@@ -674,8 +676,8 @@ div.contentitem {
   width: 50%;
   height: 44px;
   font-size: 16px;
-  background-color: #fff;
-  color: #333333;
+  background-color: #2f9fff;
+  color: #fff;
   border: 0;
   font-weight: bold;
 }
@@ -767,6 +769,17 @@ div.contentitem {
   padding: 0 0 0 5px;
   width: 100%;
   border: 0;
+}
+.information .content .contenttit .contentitem button {
+  border: 0;
+  background-color: #ccc;
+  padding: 10px 20px;
+  margin-left: 10px;
+  color: #fff;
+  border-radius: 5px;
+}
+.information .content .contenttit .contentitem .clickbtn {
+  background-color: #e64750;
 }
 .information .content .contenttit .contentitem select {
   width: 100% !important;
@@ -1186,6 +1199,7 @@ div.contentitem {
   font-size: 14px;
 }
 .Auditor {
+  display: none!important;
   background-color: #ffffff;
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -1214,6 +1228,7 @@ div.contentitem {
   border-bottom: 1px solid #ccc;
 }
 .understanding {
+  display: none!important;
   background-color: #ffffff;
   padding-bottom: 15px;
   padding-right: 10px;
@@ -1303,6 +1318,7 @@ div.contentitem {
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_item:nth-child(1),
 [data-ysp-modelid="commission"] .Content .Content_item:nth-child(1) {
   display: block;
+  font-weight: bold;
 }
 [data-ysp-modelid="dealtIndex"] .Content .Content_disnone,
 [data-ysp-modelid="haveDoneIndex"] .Content .Content_disnone,
@@ -8364,8 +8380,8 @@ div.contentitem {
   width: 50%;
   height: 44px;
   font-size: 16px;
-  background-color: #fff;
-  color: #333333;
+  background-color: #2f9fff;
+  color: #fff;
   border: 0;
   font-weight: bold;
 }
@@ -8818,8 +8834,8 @@ div.contentitem {
 }
 .addlots .addcommit button:nth-child(1) {
   border: 0;
-  background-color: #fff;
-  color: #313131;
+  background-color: #2f9fff;
+  color: #fff;
 }
 [data-ysp-modelid="renewal"] .askleave {
   background-color: #ffffff;

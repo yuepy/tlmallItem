@@ -24,7 +24,7 @@
     "resource_filter": [
       {
         "url_match": [
-          "^http:\\/\\/172\\.16\\.11\\.61.*"
+          "^https:\\/\\/info\\.cofcoko\\.com.*"
         ],
         "charset": "utf-8",
         "Accept-Language": "zh-Hans-CN",
@@ -44,27 +44,27 @@
       "title": "dealtIndex",
       "url": "adapter://moderateApplication/plan/dealtIndex/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:8000\\/Index\\.aspx"
+        "^http:\\/\\/bpm\\.cofcoko\\.com\\/Index\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:8000/Index.aspx"
+        "http://bpm.cofcoko.com/Index.aspx"
       ]
     },
     {
       "title": "login",
       "url": "adapter://moderateApplication/plan/login/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:8000\\/sysLoginMock\\.aspx"
+        "^http:\\/\\/bpm\\.cofcoko\\.com\\/sysLoginMock\\.aspx"
       ],
       "demo": [
-        "http://172.16.11.61:8000/sysLoginMock.aspx"
+        "http://bpm.cofcoko.com/sysLoginMock.aspx"
       ]
     },
     {
       "title": "flashMorePage",
       "url": "adapter://moderateApplication/plan/flashMorePage/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/List.aspx"
+        "^https:\\/\\/info\\.cofcoko\\.com\\/List.aspx"
       ],
       "demo": []
     },
@@ -72,17 +72,17 @@
       "title": "homePage",
       "url": "adapter://moderateApplication/plan/homePage/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/Index\\.aspx"
+        "^https:\\/\\/info\\.cofcoko\\.com\\/Index\\.aspx"
       ],
       "demo": [
-        "http://172.16.11.61/Index.aspx"
+        "https://info.cofcoko.com/Index.aspx"
       ]
     },
     {
       "title": "noticeMore",
       "url": "adapter://moderateApplication/plan/noticeMore/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/GG\\/GGList\\.aspx"
+        "^https:\\/\\/info\\.cofcoko\\.com\\/GG\\/GGList\\.aspx"
       ],
       "demo": []
     },
@@ -90,7 +90,7 @@
       "title": "New_KX_detaile",
       "url": "adapter://moderateApplication/plan/New_KX_detaile/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/Detail\\.aspx\\?ID.*"
+        "^https:\\/\\/info\\.cofcoko\\.com\\/Detail\\.aspx\\?ID.*"
       ],
       "demo": []
     },
@@ -98,7 +98,7 @@
       "title": "notice_detail",
       "url": "adapter://moderateApplication/plan/notice_detail/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/GG\\/GGDetail\\.aspx\\?ID.*"
+        "^https:\\/\\/info\\.cofcoko\\.com\\/GG\\/GGDetail\\.aspx\\?ID.*"
       ],
       "demo": []
     },
@@ -106,7 +106,7 @@
       "title": "img_detail",
       "url": "adapter://moderateApplication/plan/img_detail/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/Detail\\.aspx\\?ID.*"
+        "^https:\\/\\/info\\.cofcoko\\.com\\/Detail\\.aspx\\?ID.*"
       ],
       "demo": []
     },
@@ -114,276 +114,276 @@
       "title": "partyWork",
       "url": "adapter://moderateApplication/plan/partyWork/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/DQ\\/DQindex\\.aspx"
+        "^https:\\/\\/info\\.cofcoko\\.com\\/DQ\\/DQindex\\.aspx"
       ],
       "demo": [
-        "http://172.16.11.61/DQ/DQindex.aspx"
+        "https://info.cofcoko.com/DQ/DQindex.aspx"
       ]
     },
     {
       "title": "payrollWord",
       "url": "adapter://moderateApplication/plan/payrollWord/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:81\\/Login\\.aspx"
+        "^https:\\/\\/payroll\\.cofcoko\\.com\\/Login\\.aspx"
       ],
       "demo": [
-        "http://172.16.11.61:81/Login.aspx"
+        "https://payroll.cofcoko.com/Login.aspx"
       ]
     },
     {
       "title": "majorMatter",
       "url": "adapter://moderateApplication/plan/majorMatter/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/YS\\/YSList\\.aspx.*"
+        "^https:\\/\\/info\\.cofcoko\\.com\\/YS\\/YSList\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61/YS/YSList.aspx"
+        "https://info.cofcoko.com/YS/YSList.aspx"
       ]
     },
     {
       "title": "Inspect",
       "url": "adapter://moderateApplication/plan/Inspect/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61\\/JW\\/JWindex\\.aspx"
+        "^https:\\/\\/info\\.cofcoko\\.com\\/JW\\/JWindex\\.aspx"
       ],
       "demo": [
-        "http://172.16.11.61/JW/JWindex.aspx"
+        "https://info.cofcoko.com/JW/JWindex.aspx"
       ]
     },
     {
       "title": "assetshandle",
       "url": "adapter://moderateApplication/plan/assetshandle/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/ZCCL\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/ZCCL\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/ZCCL/Processing.aspx?SN=444D9FA8B0CDDB9A088B44760E31C247&Guid=94431caf-d468-4d01-ab3f-284a86650a68"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/ZCCL/Processing.aspx?SN=444D9FA8B0CDDB9A088B44760E31C247&Guid=94431caf-d468-4d01-ab3f-284a86650a68"
       ]
     },
     {
       "title": "routechange",
       "url": "adapter://moderateApplication/plan/routechange/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/KZ\\/LXZBG\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:8080\\/Forms\\/KZ\\/LXZBG\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/CLFYBX/View.aspx?ProcInstId=860EC8ABFD63FC5E"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/CLFYBX/View.aspx?ProcInstId=860EC8ABFD63FC5E"
       ]
     },
     {
       "title": "travel",
       "url": "adapter://moderateApplication/plan/travel/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/CLFYBX\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/CLFYBX\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/CLFYBX/Processing.aspx?SN=EE0F481873ADD0A5ECBCA67D40122D4A&Guid=bdb110bd-f650-47fb-9752-65170b2ceacf"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/CLFYBX/Processing.aspx?SN=EE0F481873ADD0A5ECBCA67D40122D4A&Guid=bdb110bd-f650-47fb-9752-65170b2ceacf"
       ]
     },
     {
       "title": "assedbudget",
       "url": "adapter://moderateApplication/plan/assedbudget/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/ZCYSTZNEW\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/ZCYSTZNEW\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/ZCYSTZNEW/Processing.aspx?SN=0FC754EA0E177F2C7BB74E3ED50F5D92&Guid=ae90ee53-df2b-4997-bda1-34a573a1f07b"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/ZCYSTZNEW/Processing.aspx?SN=0FC754EA0E177F2C7BB74E3ED50F5D92&Guid=ae90ee53-df2b-4997-bda1-34a573a1f07b"
       ]
     },
     {
       "title": "costreimbursement",
       "url": "adapter://moderateApplication/plan/costreimbursement/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/FYBX\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/FYBX\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/FYBX/Processing.aspx?SN=6F27552185A1F052DC97A4309596EAFB&Guid=85ee9e59-f341-4fe3-82db-3bf44dbaaa33#"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/FYBX/Processing.aspx?SN=6F27552185A1F052DC97A4309596EAFB&Guid=85ee9e59-f341-4fe3-82db-3bf44dbaaa33#"
       ]
     },
     {
       "title": "routeNew",
       "url": "adapter://moderateApplication/plan/routeNew/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/KZ\\/LXXZ\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:8080\\/Forms\\/KZ\\/LXXZ\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9992/Forms/KZ/LXXZ/Processing.aspx?SN=785602939859CB582C898F25DF72A1EB&Guid=d2204b72-79e2-41a7-a307-4f1943dfd515"
+        "http://bpm.cofcoko.com:8080/Forms/KZ/LXXZ/Processing.aspx?SN=785602939859CB582C898F25DF72A1EB&Guid=d2204b72-79e2-41a7-a307-4f1943dfd515"
       ]
     },
     {
       "title": "purchase",
       "url": "adapter://moderateApplication/plan/purchase/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/DME\\/SCYPCG\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:8080\\/Forms\\/DME\\/SCYPCG\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9992/Forms/DME/SCYPCG/Processing.aspx?SN=418F009FD31887F2D0025A40111A5EE8&Guid=58f20823-8968-477a-a8b3-de2017004aa6"
+        "http://bpm.cofcoko.com:8080/Forms/DME/SCYPCG/Processing.aspx?SN=418F009FD31887F2D0025A40111A5EE8&Guid=58f20823-8968-477a-a8b3-de2017004aa6"
       ]
     },
     {
       "title": "batchex",
       "url": "adapter://moderateApplication/plan/batchex/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/KZ\\/PL\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:8080\\/Forms\\/KZ\\/PL\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9992/Forms/KZ/PL/Processing.aspx?SN=9F96F82061414BF8E4613913A055CD8B&Guid=e5c0f19b-c0e1-4818-98eb-cc6f2dc2f041"
+        "http://bpm.cofcoko.com:8080/Forms/KZ/PL/Processing.aspx?SN=9F96F82061414BF8E4613913A055CD8B&Guid=e5c0f19b-c0e1-4818-98eb-cc6f2dc2f041"
       ]
     },
     {
       "title": "borrowmon",
       "url": "adapter://moderateApplication/plan/borrowmon/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/JKSQ\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/JKSQ\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/JKSQ/Processing.aspx?SN=90E2466211D653BBDDB9E83B2D6DA731&Guid=10c5e880-1e26-47db-bee2-cc18fcdff4a5"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/JKSQ/Processing.aspx?SN=90E2466211D653BBDDB9E83B2D6DA731&Guid=10c5e880-1e26-47db-bee2-cc18fcdff4a5"
       ]
     },
     {
       "title": "creditXYDJSF",
       "url": "adapter://moderateApplication/plan/creditXYDJSF/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Credit\\/Hold\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Credit\\/Hold\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Credit/Hold/Processing.aspx?SN=9631AEBA6065A3A47772EBAA3678986C&Guid=a33d7f52-db9b-44cc-a735-2e262e8ccc96"
+        "http://bpm.cofcoko.com:9997/Workflow/Credit/Hold/Processing.aspx?SN=9631AEBA6065A3A47772EBAA3678986C&Guid=a33d7f52-db9b-44cc-a735-2e262e8ccc96"
       ]
     },
     {
       "title": "haveDoneAssetBudget",
       "url": "adapter://moderateApplication/plan/haveDoneAssetBudget/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/ZCYSTZNEW\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/ZCYSTZNEW\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/ZCYSTZNEW/View.aspx?ProcInstId=A7F4C4B8AEC2F0C4"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/ZCYSTZNEW/View.aspx?ProcInstId=A7F4C4B8AEC2F0C4"
       ]
     },
     {
       "title": "haveDoneAssetHandle",
       "url": "adapter://moderateApplication/plan/haveDoneAssetHandle/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/ZCCL\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/ZCCL\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/ZCCL/View.aspx?ProcInstId=E12FBD7B35CFDDF2"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/ZCCL/View.aspx?ProcInstId=E12FBD7B35CFDDF2"
       ]
     },
     {
       "title": "HaveDoneAssets",
       "url": "adapter://moderateApplication/plan/HaveDoneAssets/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/YSWSQNew\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/YSWSQNew\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/YSWSQNew/View.aspx?ProcInstId=FAB110918E6DEBBC"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/YSWSQNew/View.aspx?ProcInstId=FAB110918E6DEBBC"
       ]
     },
     {
       "title": "haveDoneCustomerLine",
       "url": "adapter://moderateApplication/plan/haveDoneCustomerLine/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/KZ\\/PL\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:8080\\/Forms\\/KZ\\/PL\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9992/Forms/KZ/PL/View.aspx?ProcInstId=C1E20439595E838A"
+        "http://bpm.cofcoko.com:8080/Forms/KZ/PL/View.aspx?ProcInstId=C1E20439595E838A"
       ]
     },
     {
       "title": "HaveDoneExpenseReimbursementt",
       "url": "adapter://moderateApplication/plan/HaveDoneExpenseReimbursementt/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/FYBX\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/FYBX\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/FYBX/View.aspx?ProcInstId=317CFF637438C866"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/FYBX/View.aspx?ProcInstId=317CFF637438C866"
       ]
     },
     {
       "title": "haveDoneLetterFreeze",
       "url": "adapter://moderateApplication/plan/haveDoneLetterFreeze/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Credit\\/Hold\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Credit\\/Hold\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Credit/Hold/View.aspx?ProcInstId=31517BC38F5C08A0"
+        "http://bpm.cofcoko.com:9997/Workflow/Credit/Hold/View.aspx?ProcInstId=31517BC38F5C08A0"
       ]
     },
     {
       "title": "haveDoneLineAdd",
       "url": "adapter://moderateApplication/plan/haveDoneLineAdd/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/KZ\\/LXXZ\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:8080\\/Forms\\/KZ\\/LXXZ\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9992/Forms/KZ/LXXZ/View.aspx?ProcInstId=37A2E7EC9D65D5AF"
+        "http://bpm.cofcoko.com:8080/Forms/KZ/LXXZ/View.aspx?ProcInstId=37A2E7EC9D65D5AF"
       ]
     },
     {
       "title": "haveDoneLineChange",
       "url": "adapter://moderateApplication/plan/haveDoneLineChange/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/KZ\\/LXZBG\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:8080\\/Forms\\/KZ\\/LXZBG\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9992/Forms/KZ/LXZBG/View.aspx?ProcInstId=0C5CCFA70BA84D00"
+        "http://bpm.cofcoko.com:8080/Forms/KZ/LXZBG/View.aspx?ProcInstId=0C5CCFA70BA84D00"
       ]
     },
     {
       "title": "haveDoneLoanAdvance",
       "url": "adapter://moderateApplication/plan/haveDoneLoanAdvance/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/JKSQ\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/JKSQ\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/JKSQ/View.aspx?ProcInstId=8D55705767D1E681"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/JKSQ/View.aspx?ProcInstId=8D55705767D1E681"
       ]
     },
     {
       "title": "haveDoneMarketSupplies",
       "url": "adapter://moderateApplication/plan/haveDoneMarketSupplies/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/DME\\/SCYPCG\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:8080\\/Forms\\/DME\\/SCYPCG\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9992/Forms/DME/SCYPCG/View.aspx?ProcInstId=9F0FE3B60B9C5FB0"
+        "http://bpm.cofcoko.com:8080/Forms/DME/SCYPCG/View.aspx?ProcInstId=9F0FE3B60B9C5FB0"
       ]
     },
     {
       "title": "HaveDoneTravelExpenses",
       "url": "adapter://moderateApplication/plan/HaveDoneTravelExpenses/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/CLFYBX\\/View\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/CLFYBX\\/View\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/CLFYBX/View.aspx?ProcInstId=860EC8ABFD63FC5E"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/CLFYBX/View.aspx?ProcInstId=860EC8ABFD63FC5E"
       ]
     },
     {
       "title": "assetbudget",
       "url": "adapter://moderateApplication/plan/assetbudget/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/YSWSQNew\\/Processing\\.aspx.*"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/YSWSQNew\\/Processing\\.aspx.*"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/YSWSQNew/Processing.aspx?SN=E56233FB36C2127D6DB07CCA93FF9965&Guid=69261c15-dff8-47df-a1e1-20f7429bc19d"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/YSWSQNew/Processing.aspx?SN=E56233FB36C2127D6DB07CCA93FF9965&Guid=69261c15-dff8-47df-a1e1-20f7429bc19d"
       ]
     },
     {
       "title": "Newtravel",
       "url": "adapter://moderateApplication/plan/Newtravel/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/CLFYBX\\/Start\\.aspx"
+        "^http:\\/\\/bpm\\.cofcoko\\.com:9997\\/Workflow\\/Forms\\/CLFYBX\\/Start\\.aspx"
       ],
       "demo": [
-        "http://172.16.11.61:9995/Workflow/Forms/CLFYBX/Start.aspx"
+        "http://bpm.cofcoko.com:9997/Workflow/Forms/CLFYBX/Start.aspx"
       ]
     }
   ],
   "name": "中可工程",
-  "default_url": "http://172.16.11.61/Index.aspx",
+  "default_url": "http://info.cofcoko.com/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1533778918437
+  "update_time": 1533818809121
 }

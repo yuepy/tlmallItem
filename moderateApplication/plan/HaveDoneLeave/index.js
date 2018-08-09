@@ -46,9 +46,9 @@
               var sel = [];var selected = '';var opt = tds[k].querySelector('select').querySelectorAll('option'); //debugger;
               for (var m = 0; m < opt.length; m++) {
                 if (opt[m].selected == true) {
-                  selected = opt[m].textContent;
-                }sel.push(opt[m].textContent);
-              }arr.push({ left: tds[k].querySelector("label").textContent.trim(), selected: selected, right: sel, disable: tds[k].querySelector('select').disabled, type: 'sel' });
+                  selected = opt[m].textContent;sel.push(opt[m].textContent);
+                }
+              }arr.push({ left: tds[k].querySelector("label").textContent.trim(), selected: selected, right: sel[0], disable: tds[k].querySelector('select').disabled });
             }
           }
         }data.content.push(arr);

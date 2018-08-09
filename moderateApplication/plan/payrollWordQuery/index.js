@@ -6,6 +6,9 @@
         //ysp.customHelper.backHome();
         ysp.appMain.back(); //history.go(-1);
         //top.reloadPage1(top.URL);
+        if (ysp.appMain.isAndroid()) {
+          window.yspCheckIn.closePageMoney();
+        }
       }
     },
     getTemplate_uiControl775_zVOl8a: function () {
