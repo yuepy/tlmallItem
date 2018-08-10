@@ -124,11 +124,9 @@
       "title": "payrollWord",
       "url": "adapter://moderateApplication/plan/payrollWord/index.json",
       "matcher": [
-        "^https:\\/\\/payroll\\.cofcoko\\.com\\/Login\\.aspx"
+        "^https:\\/\\/payroll\\.cofcoko\\.com\\/Login\\.aspx.*"
       ],
-      "demo": [
-        "https://payroll.cofcoko.com/Login.aspx"
-      ]
+      "demo": []
     },
     {
       "title": "majorMatter",
@@ -385,5 +383,5 @@
   "default_url": "https://info.cofcoko.com/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1533878343626
+  "update_time": 1533879880625
 }
