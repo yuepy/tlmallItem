@@ -5,7 +5,7 @@
   winTop.closePageWindow = function(){
     ysp.appMain.closeWindow();
   }
-  // var URL = "https://payroll.cofcoko.com/SalaryList.aspx";
+  // var URL = "http://172.16.11.61:81/SalaryList.aspx";
   // winTop.reloadPage1 = function(URL){
   //   if(URL !=  ''){
   //     ysp.runtime.Browser.activeBrowser.contentWindow.location.href = URL;
@@ -257,8 +257,8 @@
 
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
-     //  if(aWin.location.href == 'https://info.cofcoko.com/Index.aspx'){
-     //   aWin.location.href = 'http://bpm.cofcoko.com/Index.aspx?Path=SysLogin';
+     //  if(aWin.location.href == 'http://172.16.11.61/Index.aspx'){
+     //   aWin.location.href = 'http://172.16.11.61:8000/Index.aspx?Path=SysLogin';
      // }
       // if(aWin.location.href.indexOf('8000') ==-1){
       // 	ysp.appMain.openWindow(aWin.location.href);

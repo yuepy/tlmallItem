@@ -105,10 +105,10 @@
       // }
       if ("loadbtn" == type) {
         // var url = data.customData;
-        var url = data.href;var _url = 'http://192.168.220.82:8080' + url;if (ysp.appMain.isIOS()) {
-          top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
+        var url = data.href;if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
-          top.location.href = _url;
+          top.location.href = url;
         } else {
           var tds = elem.querySelectorAll('tbody')[1].querySelectorAll('tr')[data.index].querySelectorAll('td');tds[tds.length - 1].querySelectorAll('a')[0].click();
         }
@@ -273,7 +273,7 @@
       var type = data.eventType;var data = data.customData;if (type == 'click') {
         elem.ownerDocument.defaultView.frameElement.parentElement.parentElement.parentElement.previousElementSibling.querySelector('a').click();
       }if (type == 'onclick') {
-        elem.querySelector("input[type='submit']").click(); // location.href = 'http://bpm.cofcoko.com/sysLoginMock.aspx';
+        elem.querySelector("input[type='submit']").click(); // location.href = 'http://172.16.11.61:8000/sysLoginMock.aspx';
         if (data.value) {
           setTimeout(function () {
             alert('测试');
