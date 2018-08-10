@@ -1438,6 +1438,45 @@
       "monitored": false,
       "frameXPath": "//iframe[@name='OpenSelectAsset']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control864_eq2aWu": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"div_Approver\"]/DIV[2]",
+              "descendant::DIV[@id=\"div_Approver\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              6
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[13]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control864_eq2aWu"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -1477,7 +1516,8 @@
         "control847_mhlLmu",
         "control837_IJ6aTz",
         "control849_9sbBNR",
-        "control852_MRoaLe"
+        "control852_MRoaLe",
+        "control864_eq2aWu"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -2176,6 +2216,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl661_Ts17nA",
                 "onGetTemplate": "getTemplate_uiControl661_Ts17nA"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl864_nAexET",
+          "controlId": "control864_eq2aWu",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl864_nAexET",
+                "onGetTemplate": "getTemplate_uiControl864_nAexET"
               }
             }
           }

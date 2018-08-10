@@ -40,11 +40,48 @@ div.contentitem{
 //差旅   费用  table
 [data-ysp-modelid="Newleave"],[data-ysp-modelid="Newawaybus"],[data-ysp-modelid="Newtravel"]{
   //发起流程公共样式····································
+  .clabtn{
+    display: flex;
+    justify-content: space-between;
+  }
+  .Auditorbox{
+    background-color: #fff;
+    button{
+      border: 1px solid #e64750;
+      border-radius: 5px;
+    }
+    .content{
+      display: flex;
+      justify-content: space-between;
+      .content_item{
+        padding: 5px 5px;
+      }
+      .contentitem:nth-child(1){
+        width: 56px;
+        text-align: justify;
+        text-align-last: justify;
+        margin-left: 5px;
+      }
+      .contentitem:nth-child(2){
+        width: 75%;
+      }
+    }
+  }
   input,select,textarea{font-size: 16px!important;}
   .contenttitle{
     p{
       width: 100% !important;
       padding-right: 20px !important;
+    }
+  }
+  .popup-header{
+    display: none;
+  }
+  .Auditor{
+    display: block!important;
+    button{
+      border: 1px solid #e64750;
+      border-radius: 5px;
     }
   }
   .pubbtn{
@@ -5042,7 +5079,30 @@ display:-webkit-box;
     color: #202020;
   font-size: 16px;
   background-color: #f2f2f2;
-
+  .clabtn{
+    display: flex;
+    justify-content: space-between;
+    >div:nth-child(1){
+      width: 56px;
+      text-align: justify;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+    >div:nth-child(2){
+      width: 75%;
+      button{
+        padding: 5px 10px;
+        margin: 0 5px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .clsbtn{
+        background-color: #e64750;
+        color: #fff;
+      }
+    }
+  }
     //基本信息
   .information{
     background-color: #ffffff;
@@ -5242,10 +5302,29 @@ display:-webkit-box;
         color: #ffffff;
       }
     }
+    .iptchange{
+      display: flex;
+      justify-content: space-between;
+      .contentitem:nth-child(2){
+        width: 75%;
+        min-height: 40px;
+      }
+      .contentitem:nth-child(1){
+        width: 64px;
+        font-size: 14px;
+        color: #202020;
+      }
+      input{
+        height: 100%;
+        min-height: 20px;
+        width: 100%;
+        border: 1px solid #ccc;
+      }
+    }
     .content:last-child{
       display: flex;
-      margin-right: 0;
       padding-bottom: 10px;
+      justify-content: space-between;
       .contentitem{
         min-height: 56px;
         color: #313131;
@@ -5261,7 +5340,7 @@ display:-webkit-box;
         display: flex;
       }
       .contentitem:nth-child(2){
-        width: 265px;
+        width: 75%;
         border-bottom: 1px solid #e0e0e0;
         color: #313131;
       }
@@ -10124,6 +10203,7 @@ div._3-WTIFHEDS-X9_V6uFJjTz,div._23s98qqds-Z7MF0Y5RBjWd{
   }
 }
 .ysp-zhInfo-tt{
+  display: none;
   background: #fff;
   padding:15px 0 0 0;
   >p{

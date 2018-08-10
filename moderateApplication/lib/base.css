@@ -35,6 +35,47 @@ div.contentitem {
 .titles_two tr th {
   width: 50% !important;
 }
+[data-ysp-modelid="Newleave"] .clabtn,
+[data-ysp-modelid="Newawaybus"] .clabtn,
+[data-ysp-modelid="Newtravel"] .clabtn {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Newleave"] .Auditorbox,
+[data-ysp-modelid="Newawaybus"] .Auditorbox,
+[data-ysp-modelid="Newtravel"] .Auditorbox {
+  background-color: #fff;
+}
+[data-ysp-modelid="Newleave"] .Auditorbox button,
+[data-ysp-modelid="Newawaybus"] .Auditorbox button,
+[data-ysp-modelid="Newtravel"] .Auditorbox button {
+  border: 1px solid #e64750;
+  border-radius: 5px;
+}
+[data-ysp-modelid="Newleave"] .Auditorbox .content,
+[data-ysp-modelid="Newawaybus"] .Auditorbox .content,
+[data-ysp-modelid="Newtravel"] .Auditorbox .content {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="Newleave"] .Auditorbox .content .content_item,
+[data-ysp-modelid="Newawaybus"] .Auditorbox .content .content_item,
+[data-ysp-modelid="Newtravel"] .Auditorbox .content .content_item {
+  padding: 5px 5px;
+}
+[data-ysp-modelid="Newleave"] .Auditorbox .content .contentitem:nth-child(1),
+[data-ysp-modelid="Newawaybus"] .Auditorbox .content .contentitem:nth-child(1),
+[data-ysp-modelid="Newtravel"] .Auditorbox .content .contentitem:nth-child(1) {
+  width: 56px;
+  text-align: justify;
+  text-align-last: justify;
+  margin-left: 5px;
+}
+[data-ysp-modelid="Newleave"] .Auditorbox .content .contentitem:nth-child(2),
+[data-ysp-modelid="Newawaybus"] .Auditorbox .content .contentitem:nth-child(2),
+[data-ysp-modelid="Newtravel"] .Auditorbox .content .contentitem:nth-child(2) {
+  width: 75%;
+}
 [data-ysp-modelid="Newleave"] input,
 [data-ysp-modelid="Newawaybus"] input,
 [data-ysp-modelid="Newtravel"] input,
@@ -51,6 +92,22 @@ div.contentitem {
 [data-ysp-modelid="Newtravel"] .contenttitle p {
   width: 100% !important;
   padding-right: 20px !important;
+}
+[data-ysp-modelid="Newleave"] .popup-header,
+[data-ysp-modelid="Newawaybus"] .popup-header,
+[data-ysp-modelid="Newtravel"] .popup-header {
+  display: none;
+}
+[data-ysp-modelid="Newleave"] .Auditor,
+[data-ysp-modelid="Newawaybus"] .Auditor,
+[data-ysp-modelid="Newtravel"] .Auditor {
+  display: block!important;
+}
+[data-ysp-modelid="Newleave"] .Auditor button,
+[data-ysp-modelid="Newawaybus"] .Auditor button,
+[data-ysp-modelid="Newtravel"] .Auditor button {
+  border: 1px solid #e64750;
+  border-radius: 5px;
 }
 [data-ysp-modelid="Newleave"] .pubbtn,
 [data-ysp-modelid="Newawaybus"] .pubbtn,
@@ -4799,6 +4856,30 @@ div.contentitem {
   font-size: 16px;
   background-color: #f2f2f2;
 }
+[data-ysp-modelid="probationformal"] .clabtn {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="probationformal"] .clabtn > div:nth-child(1) {
+  width: 56px;
+  text-align: justify;
+  font-size: 14px;
+  margin-left: 10px;
+}
+[data-ysp-modelid="probationformal"] .clabtn > div:nth-child(2) {
+  width: 75%;
+}
+[data-ysp-modelid="probationformal"] .clabtn > div:nth-child(2) button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+[data-ysp-modelid="probationformal"] .clabtn > div:nth-child(2) .clsbtn {
+  background-color: #e64750;
+  color: #fff;
+}
 [data-ysp-modelid="probationformal"] .information {
   background-color: #ffffff;
 }
@@ -4988,10 +5069,29 @@ div.contentitem {
   background-color: #2f9fff;
   color: #ffffff;
 }
+[data-ysp-modelid="probationformal"] .Become .iptchange {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="probationformal"] .Become .iptchange .contentitem:nth-child(2) {
+  width: 75%;
+  min-height: 40px;
+}
+[data-ysp-modelid="probationformal"] .Become .iptchange .contentitem:nth-child(1) {
+  width: 64px;
+  font-size: 14px;
+  color: #202020;
+}
+[data-ysp-modelid="probationformal"] .Become .iptchange input {
+  height: 100%;
+  min-height: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
 [data-ysp-modelid="probationformal"] .Become .content:last-child {
   display: flex;
-  margin-right: 0;
   padding-bottom: 10px;
+  justify-content: space-between;
 }
 [data-ysp-modelid="probationformal"] .Become .content:last-child .contentitem {
   min-height: 56px;
@@ -5008,7 +5108,7 @@ div.contentitem {
   display: flex;
 }
 [data-ysp-modelid="probationformal"] .Become .content:last-child .contentitem:nth-child(2) {
-  width: 265px;
+  width: 75%;
   border-bottom: 1px solid #e0e0e0;
   color: #313131;
 }
@@ -9627,6 +9727,7 @@ div._23s98qqds-Z7MF0Y5RBjWd {
   margin: 0 10px;
 }
 .ysp-zhInfo-tt {
+  display: none;
   background: #fff;
   padding: 15px 0 0 0;
 }
