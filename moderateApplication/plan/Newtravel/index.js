@@ -478,7 +478,11 @@
         var tr = elem.querySelectorAll('tr')[++data.index];tr.querySelectorAll('td')[tr.querySelectorAll('td').length - 1].querySelector('a').click();
       }if (type == 'selectchange') {
         debugger; // elem.querySelectorAll('tr')[++data.data_id].querySelector('select').selectedIndex = data.index;
-        elem.querySelector("#" + data.id).selectedIndex = data.index;elem.querySelector("#" + data.id).onchange ? elem.querySelector("#" + data.id).onchange() : ''; // elem.querySelectorAll('tr')[++data.data_id].querySelector('select').onchange ? elem.querySelectorAll('tr')[++data.data_id].querySelector('select').onchange() : '';
+        if (!data.id.trim()) {
+          elem.querySelectorAll('tr')[+data.data_id + 1].querySelector('select').selectedIndex = data.index;var select = elem.querySelectorAll('tr')[+data.data_id + 1].querySelector('select').onchange(); // select ? select() : '';
+        } else {
+          elem.querySelector("#" + data.id).selectedIndex = data.index;elem.querySelector("#" + data.id).onchange(); // elem.querySelectorAll('tr')[++data.data_id].querySelector('select').onchange ? elem.querySelectorAll('tr')[++data.data_id].querySelector('select').onchange() : '';
+        }
       }if (type == 'selectbtn') {
         elem.querySelectorAll('tr')[++data.data_id].querySelector("#" + data.id).selectedIndex = data.index;elem.querySelectorAll('tr')[++data.data_id].querySelector("#" + data.id).onchange ? elem.querySelectorAll('tr')[++data.data_id].querySelector("#" + data.id).onchange() : '';
       }if (type == 'detailclick') {
@@ -693,8 +697,8 @@
     },
     doAction_uiControl849_0JX9bX: function (data, elem) {},
     getTemplate_uiControl849_0JX9bX: function () {
-      var selfTemplate = 'import { Header, HeaderLeft } from \'ysp-interior-components\';\nimport { back } from \'appRenderer\';\nmodule.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className=\'titleH1\'>\n          <Header title={data.title}>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});';
-      return '\'use strict\';\n\nvar _yspInteriorComponents = require(\'ysp-interior-components\');\n\nvar _appRenderer = require(\'appRenderer\');\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      \'div\',\n      { className: \'titleH1\' },\n      React.createElement(_yspInteriorComponents.Header, { title: data.title })\n    );\n  }\n});';
+      var selfTemplate = 'import { Header, HeaderLeft } from \'ysp-interior-components\';\nimport { back } from \'appRenderer\';\nmodule.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return \'\';\n    }\n    return (\n      <div className=\'titleH1\'>\n          <Header title={data.title}>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});';
+      return '\'use strict\';\n\nvar _yspInteriorComponents = require(\'ysp-interior-components\');\n\nvar _appRenderer = require(\'appRenderer\');\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var data = this.props.customData;\n    if (!data) {\n      return \'\';\n    }\n    return React.createElement(\n      \'div\',\n      { className: \'titleH1\' },\n      React.createElement(_yspInteriorComponents.Header, { title: data.title })\n    );\n  }\n});';
     },
     getData_control852_MRoaLe: function (elem) {
       //console.log(elem);
