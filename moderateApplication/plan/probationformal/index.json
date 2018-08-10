@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "probationformal",
-  "targetURL": "http://172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=2002C6F3E20AECD10EC6D3CA9F3C2EFD&Guid=3470b81d-d3ea-42fa-8825-49ecda6fcd14#",
+  "targetURL": "http://bpm.cofcoko.com/Forms/HR/SYQZZ/Processing.aspx?SN=2002C6F3E20AECD10EC6D3CA9F3C2EFD&Guid=3470b81d-d3ea-42fa-8825-49ecda6fcd14#",
   "jsFile": "index.js",
   "requires": {
     "previewapproval": "../previewapproval/index.json"
@@ -689,6 +689,192 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control857_8EQ19v": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-data.layout-form"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[18]/DIV[1]/DIV[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control857_8EQ19v"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control858_Q8y5u6": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              3,
+              5
+            ],
+            "value": "DIV.big-form.page-shadow DIV.form-wrapper TABLE.layout-form.col-3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[18]/DIV[1]/DIV[1]/TABLE[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control858_Q8y5u6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control859_y7EKVp": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[2]",
+              "ratio": 0.388
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.popup.size-big.witd-bottom-buttons DIV"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]"
+          }
+        ]
+      },
+      "intendedRole": "dialog",
+      "roles": "element,dialog",
+      "monitored": false,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "dialog"
+    },
+    "control860_zihDHn": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[2]/TABLE[1]",
+              "ratio": 0.388
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.witd-bottom-buttons TABLE.layout-data.zebra.hover"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control860_zihDHn"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control861_KEITl3": {
+      "location": {
+        "data": {
+          "tagName": "H3"
+        },
+        "locators": [
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "Form1",
+              "tagName": "FORM",
+              "prefix": "",
+              "suffix": "/DIV[3]/DIV[1]/H3[1]",
+              "ratio": 0.388
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.popup.size-big.witd-bottom-buttons DIV.top H3"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]/DIV[1]/H3[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control861_KEITl3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -710,11 +896,16 @@
         "control511_ROgda3",
         "control512_oqTMsc",
         "control513_FSwQzW",
-        "control653_TppyGV"
+        "control653_TppyGV",
+        "control857_8EQ19v",
+        "control858_Q8y5u6",
+        "control859_y7EKVp",
+        "control860_zihDHn",
+        "control861_KEITl3"
       ],
       "anchors": [],
       "urlAnchor": [
-        "http:\\/\\/172\\.16\\.11\\.61:8000\\/Forms\\/HR\\/SYQZZ\\/Processing\\.aspx\\?.*"
+        "http:\\/\\/bpm\\.cofcoko\\.com\\/Forms\\/HR\\/SYQZZ\\/Processing\\.aspx\\?.*"
       ]
     }
   },
@@ -764,6 +955,16 @@
       "fromContextId": "context13_FMltEV",
       "fromAction": "doAction",
       "fromControlId": "control176_8ieDnT",
+      "toContexts": [
+        {
+          "toContextId": "context13_FMltEV"
+        }
+      ]
+    },
+    "flow322_a0LSzT": {
+      "fromContextId": "context13_FMltEV",
+      "fromAction": "doAction",
+      "fromControlId": "control857_8EQ19v",
       "toContexts": [
         {
           "toContextId": "context13_FMltEV"
@@ -879,6 +1080,102 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl857_OXKN4D",
+          "controlId": "control857_8EQ19v",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl857_OXKN4D",
+                "onGetTemplate": "getTemplate_uiControl857_OXKN4D"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl858_o9JzRZ",
+          "controlId": "control858_Q8y5u6",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl858_o9JzRZ",
+                "onGetTemplate": "getTemplate_uiControl858_o9JzRZ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl859_fc2f4E",
+          "controlId": "control859_y7EKVp",
+          "display": {
+            "adapterId": "dialog",
+            "type": "dialog",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl859_fc2f4Ebody",
+              "display": {
+                "type": "dialogBody",
+                "adapterId": "dialogBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl859_fc2f4Efooter",
+              "display": {
+                "type": "dialogFooter",
+                "adapterId": "dialogFooter",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl861_CWtI7X",
+                  "controlId": "control861_KEITl3",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl861_CWtI7X",
+                        "onGetTemplate": "getTemplate_uiControl861_CWtI7X"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl860_KJ2L5v",
+                  "controlId": "control860_zihDHn",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl860_KJ2L5v",
+                        "onGetTemplate": "getTemplate_uiControl860_KJ2L5v"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "uiControl180_RME89i",
@@ -1086,10 +1383,11 @@
     "page/urls": {
       "contexts": {
         "context13_FMltEV": [
-          "172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=2002C6F3E20AECD10EC6D3CA9F3C2EFD&Guid=3470b81d-d3ea-42fa-8825-49ecda6fcd14",
-          "172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=2617A5E869F27A6967A5704307E112FC&Guid=6e8771fa-086a-402f-a3f1-38f78b727c6e",
-          "172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=9733111B98DF1F2B0328C8D741EAFA09&Guid=4af28b4a-bfc8-4b10-bd46-43f156bae1d9",
-          "172.16.11.61:8000/Forms/HR/SYQZZ/Processing.aspx?SN=8D13B557FB6B9387A2A77526D1FDE4EC&Guid=654dc17d-ded9-4bbe-af77-33f215ce87c1"
+          "bpm.cofcoko.com/Forms/HR/SYQZZ/Processing.aspx?SN=2002C6F3E20AECD10EC6D3CA9F3C2EFD&Guid=3470b81d-d3ea-42fa-8825-49ecda6fcd14",
+          "bpm.cofcoko.com/Forms/HR/SYQZZ/Processing.aspx?SN=2617A5E869F27A6967A5704307E112FC&Guid=6e8771fa-086a-402f-a3f1-38f78b727c6e",
+          "bpm.cofcoko.com/Forms/HR/SYQZZ/Processing.aspx?SN=9733111B98DF1F2B0328C8D741EAFA09&Guid=4af28b4a-bfc8-4b10-bd46-43f156bae1d9",
+          "bpm.cofcoko.com/Forms/HR/SYQZZ/Processing.aspx?SN=8D13B557FB6B9387A2A77526D1FDE4EC&Guid=654dc17d-ded9-4bbe-af77-33f215ce87c1",
+          "bpm.cofcoko.com/Forms/HR/SYQZZ/Processing.aspx?SN=5E7EE7F35EE754BF1EFE22C52C0FEC84&Guid=4f79011b-3eba-4180-89b9-cc88be9dd5ed"
         ]
       }
     },
@@ -1964,6 +2262,130 @@
             "tj",
             "top",
             "ufoot"
+          ],
+          [
+            "action-area",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "required",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
+          ],
+          [
+            "action-area",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_state_full",
+            "aui_state_lock",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "btn",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-red",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "green",
+            "grey",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "meno",
+            "mt-s",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "pz",
+            "red",
+            "required",
+            "shadow",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "ufoot"
           ]
         ]
       }
@@ -2207,6 +2629,133 @@
             "TR/TD/BR",
             "TR/TD/DIV",
             "TR/TD/I",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/P",
+            "TR/TD/SPAN",
+            "TR/TD/TEXTAREA",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SCRIPT",
+            "-/FORM/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/P/BR",
+            "DIV/P/SPAN",
+            "DIV/P/STRONG",
+            "DIV/SPAN/INPUT-file",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/TABLE",
+            "TD/LABEL/BR",
+            "TD/LABEL/SPAN",
+            "TD/SPAN/INPUT-radio",
+            "TD/SPAN/TEXTAREA",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/P",
+            "TR/TD/SPAN",
+            "TR/TD/TEXTAREA",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/FORM",
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/FORM/DIV",
+            "-/FORM/INPUT-hidden",
+            "-/FORM/SCRIPT",
+            "-/FORM/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-submit",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/H1/BR",
+            "DIV/H1/SPAN",
+            "DIV/P/BR",
+            "DIV/P/SPAN",
+            "DIV/P/STRONG",
+            "DIV/SPAN/INPUT-file",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "FORM/DIV/BR",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/SCRIPT",
+            "FORM/DIV/TABLE",
+            "FORM/DIV/UL",
+            "LI/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TBODY/TR/TH",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/IFRAME",
+            "TD/DIV/TABLE",
+            "TD/LABEL/BR",
+            "TD/LABEL/SPAN",
+            "TD/SPAN/INPUT-radio",
+            "TD/SPAN/TEXTAREA",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/BR",
+            "TR/TD/DIV",
             "TR/TD/INPUT-text",
             "TR/TD/LABEL",
             "TR/TD/P",

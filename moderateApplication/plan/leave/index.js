@@ -273,7 +273,7 @@
       var type = data.eventType;var data = data.customData;if (type == 'click') {
         elem.ownerDocument.defaultView.frameElement.parentElement.parentElement.parentElement.previousElementSibling.querySelector('a').click();
       }if (type == 'onclick') {
-        elem.querySelector("input[type='submit']").click(); // location.href = 'http://172.16.11.61:8000/sysLoginMock.aspx';
+        elem.querySelector("input[type='submit']").click(); // location.href = 'http://bpm.cofcoko.com/sysLoginMock.aspx';
         if (data.value) {
           setTimeout(function () {
             alert('测试');

@@ -80,7 +80,7 @@
       // }
       // }
       if ('click' == type) {
-        var url = data.url;var flat = url.indexOf('http://172.16.11.61') != -1 ? true : false; //   if (ysp.appMain.isAndroid()) {
+        var url = data.url;var flat = url.indexOf('https://info.cofcoko.com') != -1 ? true : false; //   if (ysp.appMain.isAndroid()) {
         //     window.yspCheckIn.closePageType("0");
         //   }
         //   if (ysp.appMain.isIOS()) {
