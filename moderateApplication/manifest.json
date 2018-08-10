@@ -124,11 +124,9 @@
       "title": "payrollWord",
       "url": "adapter://moderateApplication/plan/payrollWord/index.json",
       "matcher": [
-        "^http:\\/\\/172\\.16\\.11\\.61:81\\/Login\\.aspx"
+        "^http:\\/\\/172\\.16\\.11\\.61:81\\/Login\\.aspx.*"
       ],
-      "demo": [
-        "http://172.16.11.61:81/Login.aspx"
-      ]
+      "demo": []
     },
     {
       "title": "majorMatter",
@@ -385,5 +383,5 @@
   "default_url": "http://172.16.11.61/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1533868879709
+  "update_time": 1533873417267
 }
