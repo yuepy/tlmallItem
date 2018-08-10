@@ -56,21 +56,26 @@
               doc.querySelector("#userid").value=sessionStorage.getItem("userid");
               doc.querySelector("#pwd").value=sessionStorage.getItem("pwd");
           	}
-          	// //用户名、密码记录
-          	// if(aWin.location.href.match(/http:\/\/192\.168\.220\.110\/psp\/ps\/EMPLOYEE\/HRMS\/\?.*/g)){
-          	// debugger;
-          	// sessionStorage.setItem("userid",doc.querySelector("#userid").value)//doc.querySelector("#userid").value
-          	// }
+          	// 用户名、密码记录
+          	if(doc.querySelector("#login_error")&&(doc.querySelector("#login_error").textContent.indexOf("您已请求了一个安全资源")!==-1||doc.querySelector("#login_error").textContent.indexOf("验证码校验超时")!==-1)){
+            	var timer=setInterval(function(){
+                if(doc.querySelector("#userid").value!==""&&doc.querySelector("#pwd").value!==""){
+                  sessionStorage.setItem("userid",doc.querySelector("#userid").value);
+              		sessionStorage.setItem("pwd",doc.querySelector("#pwd").value);
+                  clearInterval(timer);
+                }
+              },500);
+            }
+          	if(doc.querySelector("#login_error")&&doc.querySelector("#login_error").textContent=="验证码校验错误"){
+              doc.querySelector("#userid").value=sessionStorage.getItem("userid");
+              doc.querySelector("#pwd").value=sessionStorage.getItem("pwd");
+          	}
             //返回
             if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
                 ysp.customHelper.tab = "menu"
             }
-
-						 // debugger;
-						 // if(aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/")!==-1){
-						 // ysp.customHelper.userId=doc.querySelector("#userid")&&doc.querySelector("#userid").value;
-						 // ysp.customHelper.passWord=doc.querySelector("#pwd")&&doc.querySelector("#pwd").value;
-						 // }
+							
+						
 
         },
 
