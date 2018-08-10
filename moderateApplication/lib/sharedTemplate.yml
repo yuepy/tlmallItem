@@ -1208,7 +1208,7 @@
     module.exports = React.createClass({
       render: function() {
         var data=this.props.customData;
-        var src="http://bpm.cofcoko.com/"+data
+        var src="http://172.16.11.61:8000/"+data
         return (
           <div>
             <img src={src}/>
@@ -1415,7 +1415,7 @@
       var flat = arr.indexOf(data.text);
 
       if (flat == -1) {
-        // ysp.appMain.openWindow('http://bpm.cofcoko.com/Forms/Common/TY/Processing.aspx?SN=9532480E5364DF3BC577107FF40AC672&Guid=81c96722-bf68-45a8-8106-608995104db1&_ysp_forcepc=1');
+        // ysp.appMain.openWindow('http://172.16.11.61:8000/Forms/Common/TY/Processing.aspx?SN=9532480E5364DF3BC577107FF40AC672&Guid=81c96722-bf68-45a8-8106-608995104db1&_ysp_forcepc=1');
         var hreflo = '';
         hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
 
@@ -1423,7 +1423,7 @@
           hreflo += "&_ysp_forcepc=1";
           ysp.appMain.openWindow(hreflo);
         } else {
-          hreflo = "http://bpm.cofcoko.com:" + hreflo; // hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
+          hreflo = "http://172.16.11.61:8000:" + hreflo; // hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
 
           hreflo += "&_ysp_forcepc=1";
           ysp.appMain.openWindow(hreflo);
@@ -1434,7 +1434,7 @@
       //   if (arr[i] == data.text) {
       //     elem.querySelectorAll('tr')[data.id].querySelector('a').click();
       //   } else {
-      //     window.location.href = 'http://bpm.cofcoko.com/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3&_ysp_forcepc=1';
+      //     window.location.href = 'http://172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3&_ysp_forcepc=1';
       //   }
       // }
 
@@ -1538,7 +1538,7 @@
       var flat = arr.indexOf(data.text);
 
       if (flat == -1) {
-        // ysp.appMain.openWindow('http://bpm.cofcoko.com/Forms/Common/TY/Processing.aspx?SN=9532480E5364DF3BC577107FF40AC672&Guid=81c96722-bf68-45a8-8106-608995104db1&_ysp_forcepc=1');
+        // ysp.appMain.openWindow('http://172.16.11.61:8000/Forms/Common/TY/Processing.aspx?SN=9532480E5364DF3BC577107FF40AC672&Guid=81c96722-bf68-45a8-8106-608995104db1&_ysp_forcepc=1');
         var hreflo = '';
         hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
 
@@ -1546,7 +1546,7 @@
           hreflo += "&_ysp_forcepc=1";
           ysp.appMain.openWindow(hreflo);
         } else {
-          hreflo = "http://bpm.cofcoko.com:" + hreflo; // hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
+          hreflo = "http://172.16.11.61:8000:" + hreflo; // hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
 
           hreflo += "&_ysp_forcepc=1";
           ysp.appMain.openWindow(hreflo);
@@ -1557,7 +1557,7 @@
       //   if (arr[i] == data.text) {
       //     elem.querySelectorAll('tr')[data.id].querySelector('a').click();
       //   } else {
-      //     window.location.href = 'http://bpm.cofcoko.com/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3&_ysp_forcepc=1';
+      //     window.location.href = 'http://172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3&_ysp_forcepc=1';
       //   }
       // }
     }
@@ -2099,7 +2099,7 @@
       var flat = arr.indexOf(data.text);
 
       if (flat == -1) {
-        // ysp.appMain.openWindow('http://bpm.cofcoko.com/Forms/Common/TY/Processing.aspx?SN=9532480E5364DF3BC577107FF40AC672&Guid=81c96722-bf68-45a8-8106-608995104db1&_ysp_forcepc=1');
+        // ysp.appMain.openWindow('http://172.16.11.61:8000/Forms/Common/TY/Processing.aspx?SN=9532480E5364DF3BC577107FF40AC672&Guid=81c96722-bf68-45a8-8106-608995104db1&_ysp_forcepc=1');
         var hreflo = '';
         hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
 
@@ -2107,7 +2107,7 @@
           hreflo += "&_ysp_forcepc=1";
           ysp.appMain.openWindow(hreflo);
         } else {
-          hreflo = "http://bpm.cofcoko.com:" + hreflo; // hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
+          hreflo = "http://172.16.11.61:8000:" + hreflo; // hreflo += elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];
 
           hreflo += "&_ysp_forcepc=1";
           ysp.appMain.openWindow(hreflo);
@@ -2118,7 +2118,7 @@
       //   if (arr[i] == data.text) {
       //     elem.querySelectorAll('tr')[data.id].querySelector('a').click();
       //   } else {
-      //     window.location.href = 'http://bpm.cofcoko.com/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3&_ysp_forcepc=1';
+      //     window.location.href = 'http://172.16.11.61:8000/Forms/LA/HT/Processing.aspx?SN=9B1052B656E8EB71EED60E34F49F1CF2&Guid=bd7ac34d-574c-41a7-a64f-5bfa1488fbd3&_ysp_forcepc=1';
       //   }
       // }
 
