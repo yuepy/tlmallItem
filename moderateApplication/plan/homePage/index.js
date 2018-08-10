@@ -4,7 +4,7 @@
     doAction_uiControl572_bOwq97: function (data, elem) {
       if ('click' == data.eventType) {
         // elem && elem.click();
-        elem.ownerDocument.defaultView.open('http://bpm.cofcoko.com/Index.aspx?m=1');
+        elem.ownerDocument.defaultView.open('http://172.16.11.61:8000/Index.aspx?m=1');
       }
     },
     getTemplate_uiControl572_bOwq97: function () {
@@ -36,7 +36,7 @@
       if ('click' == data.eventType) {
         // var el = elem && elem.querySelector('ul').nextElementSibling;
         // el && el.click();
-        elem.ownerDocument.defaultView.open('https://info.cofcoko.com/List.aspx');
+        elem.ownerDocument.defaultView.open('http://172.16.11.61/List.aspx');
       }
     },
     getTemplate_uiControl577_dppg6H: function () {
@@ -61,7 +61,7 @@
     doAction_uiControl584_EzVBoB: function (data, elem) {
       if ('click' == data.eventType) {
         // elem && elem.click();
-        elem.ownerDocument.defaultView.location.href = 'https://info.cofcoko.com/YS/YSList.aspx?adName=fangxj';
+        elem.ownerDocument.defaultView.location.href = 'http://172.16.11.61/YS/YSList.aspx?adName=fangxj';
       }
     },
     getTemplate_uiControl584_EzVBoB: function () {
@@ -87,8 +87,8 @@
     getData_control772_ZLrDG3: function (elem) {},
     doAction_uiControl772_nTamgL: function (data, elem) {
       if ('click' == data.eventType) {
-        //ysp.appMain.openWindow("https://payroll.cofcoko.com/Login.aspx");
-        elem.ownerDocument.defaultView.open("https://payroll.cofcoko.com/Login.aspx");
+        //ysp.appMain.openWindow("http://172.16.11.61:81/Login.aspx");
+        elem.ownerDocument.defaultView.open("http://172.16.11.61:81/Login.aspx");
       }
     },
     getTemplate_uiControl772_nTamgL: function () {
