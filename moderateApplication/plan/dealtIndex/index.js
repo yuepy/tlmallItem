@@ -136,14 +136,14 @@
     doAction_uiControl227_w4xMQo: function (data, elem) {
       if ('click' == data.eventType) {
         var title = data.dataCustom;if ('待办' == title) {
-          elem.querySelectorAll("li")[0].querySelector("a").click();
+          ysp.appMain.showLoading();elem.querySelectorAll("li")[0].querySelector("a").click();
         } else {
           // var url = ysp.appMain.getActiveUrl();
           // ysp.appMain.openWindow(url);
-          elem.querySelectorAll("li")[1].querySelector("a").click();
+          ysp.appMain.showLoading();elem.querySelectorAll("li")[1].querySelector("a").click();
         }
       }if (data.eventType == 'onclick') {
-        elem.parentElement.querySelector('ul').querySelectorAll('li')[0].querySelector('a').click(); // elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
+        ysp.appMain.showLoading();elem.parentElement.querySelector('ul').querySelectorAll('li')[0].querySelector('a').click(); // elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
       }
     },
     getTemplate_uiControl227_w4xMQo: function () {

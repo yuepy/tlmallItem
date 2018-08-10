@@ -8,16 +8,17 @@
     doAction_uiControl587_km9Wh8: function (data, elem) {
       if ("back" == data.eventType) {
         // ysp.appMain.back(); //ysp.runtime.Model.setForceMatchModels(['commission']);
-        ysp.runtime.Browser.activeBrowser.contentWindow.close();if (ysp.appMain.isIOS()) {
-          top.EAPI.postMessageToNative('closePage', null);
-        }if (ysp.appMain.isAndroid()) {
-          window.yspCheckIn.closePage();
-        }
+        ysp.runtime.Browser.activeBrowser.contentWindow.close(); //   if (ysp.appMain.isIOS()) {
+        //     top.EAPI.postMessageToNative('closePage', null);
+        //   }
+        //   if (ysp.appMain.isAndroid()) {
+        //     window.yspCheckIn.closePage();
+        //   }
       }
     },
     getTemplate_uiControl587_km9Wh8: function () {
-      var selfTemplate = "import { Header, HeaderLeft } from 'ysp-interior-components';\nimport { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  back:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'back'\n      })\n    }\n  },\n  componentDidMount:function(){\n    if(ysp.appMain.isAndroid()){\n      window.yspCheckIn.closePageType(\"1\");\n    }\n    if(ysp.appMain.isIOS()){\n      var _setupWebViewJavascriptBridge = function (callback) {\n        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }\n        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }\n        window.WVJBCallbacks = [callback];\n        var WVJBIframe = document.createElement(\"iframe\");\n        WVJBIframe.style.display = \"none\";\n        WVJBIframe.src = \"wvjbscheme://__BRIDGE_LOADED__\";\n        document.documentElement.appendChild(WVJBIframe);\n        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)\n    \t};\n      _setupWebViewJavascriptBridge(function(bridge) {\n          bridge.callHandler(\"closePageType\", 'true',function responseCallback(responseData) {\n              console.log(\"JS received response:\", responseData)\n          })\n      });\n    }\n  },\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className='titleH1'>\n          <Header title={data.title}>\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.back.bind(this)}>\u8FD4\u56DE</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});";
-      return "'use strict';\n\nvar _yspInteriorComponents = require('ysp-interior-components');\n\nvar _appRenderer = require('appRenderer');\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  back: function back(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'back'\n      });\n    }\n  },\n  componentDidMount: function componentDidMount() {\n    if (ysp.appMain.isAndroid()) {\n      window.yspCheckIn.closePageType(\"1\");\n    }\n    if (ysp.appMain.isIOS()) {\n      var _setupWebViewJavascriptBridge = function _setupWebViewJavascriptBridge(callback) {\n        if (window.WebViewJavascriptBridge) {\n          return callback(WebViewJavascriptBridge);\n        }\n        if (window.WVJBCallbacks) {\n          return window.WVJBCallbacks.push(callback);\n        }\n        window.WVJBCallbacks = [callback];\n        var WVJBIframe = document.createElement(\"iframe\");\n        WVJBIframe.style.display = \"none\";\n        WVJBIframe.src = \"wvjbscheme://__BRIDGE_LOADED__\";\n        document.documentElement.appendChild(WVJBIframe);\n        setTimeout(function () {\n          document.documentElement.removeChild(WVJBIframe);\n        }, 0);\n      };\n      _setupWebViewJavascriptBridge(function (bridge) {\n        bridge.callHandler(\"closePageType\", 'true', function responseCallback(responseData) {\n          console.log(\"JS received response:\", responseData);\n        });\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      'div',\n      { className: 'titleH1' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: data.title },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement('span', null),\n          React.createElement(\n            'button',\n            { onClick: this.back.bind(this) },\n            '\\u8FD4\\u56DE'\n          )\n        )\n      )\n    );\n  }\n});";
+      var selfTemplate = "import { Header, HeaderLeft } from 'ysp-interior-components';\nimport { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  back:function(e){\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:'back'\n      })\n    }\n  },\n  // componentDidMount:function(){\n  //   if(ysp.appMain.isAndroid()){\n  //     window.yspCheckIn.closePageType(\"1\");\n  //   }\n  //   if(ysp.appMain.isIOS()){\n  //     var _setupWebViewJavascriptBridge = function (callback) {\n  //       if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }\n  //       if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }\n  //       window.WVJBCallbacks = [callback];\n  //       var WVJBIframe = document.createElement(\"iframe\");\n  //       WVJBIframe.style.display = \"none\";\n  //       WVJBIframe.src = \"wvjbscheme://__BRIDGE_LOADED__\";\n  //       document.documentElement.appendChild(WVJBIframe);\n  //       setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)\n  //   \t};\n  //     _setupWebViewJavascriptBridge(function(bridge) {\n  //         bridge.callHandler(\"closePageType\", 'true',function responseCallback(responseData) {\n  //             console.log(\"JS received response:\", responseData)\n  //         })\n  //     });\n  //   }\n  // },\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className='titleH1'>\n          <Header title={data.title}>\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={this.back.bind(this)}>\u8FD4\u56DE</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nvar _yspInteriorComponents = require('ysp-interior-components');\n\nvar _appRenderer = require('appRenderer');\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  back: function back(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        eventType: 'back'\n      });\n    }\n  },\n  // componentDidMount:function(){\n  //   if(ysp.appMain.isAndroid()){\n  //     window.yspCheckIn.closePageType(\"1\");\n  //   }\n  //   if(ysp.appMain.isIOS()){\n  //     var _setupWebViewJavascriptBridge = function (callback) {\n  //       if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }\n  //       if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }\n  //       window.WVJBCallbacks = [callback];\n  //       var WVJBIframe = document.createElement(\"iframe\");\n  //       WVJBIframe.style.display = \"none\";\n  //       WVJBIframe.src = \"wvjbscheme://__BRIDGE_LOADED__\";\n  //       document.documentElement.appendChild(WVJBIframe);\n  //       setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)\n  //   \t};\n  //     _setupWebViewJavascriptBridge(function(bridge) {\n  //         bridge.callHandler(\"closePageType\", 'true',function responseCallback(responseData) {\n  //             console.log(\"JS received response:\", responseData)\n  //         })\n  //     });\n  //   }\n  // },\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      'div',\n      { className: 'titleH1' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: data.title },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement('span', null),\n          React.createElement(\n            'button',\n            { onClick: this.back.bind(this) },\n            '\\u8FD4\\u56DE'\n          )\n        )\n      )\n    );\n  }\n});";
     },
     getData_control588_gFJbDL: function (elem) {
       if (!elem) {
@@ -29,14 +30,14 @@
     doAction_uiControl588_WA9IUZ: function (data, elem) {
       if ('click' == data.eventType) {
         var title = data.dataCustom;if ('待办' == title) {
-          elem.querySelectorAll("li")[0].querySelector("a").click();
+          ysp.appMain.showLoading();elem.querySelectorAll("li")[0].querySelector("a").click();
         } else {
           // var url = ysp.appMain.getActiveUrl();
           // ysp.appMain.openWindow(url);
-          elem.querySelectorAll("li")[1].querySelector("a").click();
+          ysp.appMain.showLoading();elem.querySelectorAll("li")[1].querySelector("a").click();
         }
       }if (data.eventType == 'onclick') {
-        elem.parentElement.querySelector('ul').querySelectorAll('li')[0].querySelector('a').click(); // elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
+        ysp.appMain.showLoading();elem.parentElement.querySelector('ul').querySelectorAll('li')[0].querySelector('a').click(); // elem.previousElementSibling.previousElementSibling.querySelectorAll('li')[0].querySelector('a').click();
       }
     },
     getTemplate_uiControl588_WA9IUZ: function () {
@@ -79,21 +80,31 @@
       // }
       // }
       if ('click' == type) {
-        var url = data.url;var flat = url.indexOf('https://info.cofcoko.com') != -1 ? true : false;if (ysp.appMain.isAndroid()) {
-          window.yspCheckIn.closePageType("0");
-        }if (ysp.appMain.isIOS()) {
-          var _setupWebViewJavascriptBridge = function (callback) {
-            if (window.WebViewJavascriptBridge) {
-              return callback(WebViewJavascriptBridge);
-            }if (window.WVJBCallbacks) {
-              return window.WVJBCallbacks.push(callback);
-            }window.WVJBCallbacks = [callback];var WVJBIframe = document.createElement("iframe");WVJBIframe.style.display = "none";WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";document.documentElement.appendChild(WVJBIframe);setTimeout(function () {
-              document.documentElement.removeChild(WVJBIframe);
-            }, 0);
-          };_setupWebViewJavascriptBridge(function (bridge) {
-            bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
-          });
-        }if (ysp.appMain.isIOS()) {
+        var url = data.url;var flat = url.indexOf('https://info.cofcoko.com') != -1 ? true : false; //   if (ysp.appMain.isAndroid()) {
+        //     window.yspCheckIn.closePageType("0");
+        //   }
+        //   if (ysp.appMain.isIOS()) {
+        //     var _setupWebViewJavascriptBridge = function (callback) {
+        //       if (window.WebViewJavascriptBridge) {
+        //         return callback(WebViewJavascriptBridge);
+        //       }
+        //       if (window.WVJBCallbacks) {
+        //         return window.WVJBCallbacks.push(callback);
+        //       }
+        //       window.WVJBCallbacks = [callback];
+        //       var WVJBIframe = document.createElement("iframe");
+        //       WVJBIframe.style.display = "none";
+        //       WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";
+        //       document.documentElement.appendChild(WVJBIframe);
+        //       setTimeout(function () {
+        //         document.documentElement.removeChild(WVJBIframe);
+        //       }, 0);
+        //     };
+        //     _setupWebViewJavascriptBridge(function (bridge) {
+        //       bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
+        //     });
+        //   }
+        if (ysp.appMain.isIOS()) {
           if (flat) {
             ysp.appMain.openWindow(url);
           } else {
