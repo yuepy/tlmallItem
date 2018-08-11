@@ -60,7 +60,7 @@
           var tdText;if (tds[k].querySelector("input") && tds[k].querySelector("input").getAttribute("type") == 'text') {
             tdText = tds[k].querySelector("input").value;
           } else if (tds[k].querySelector("select")) {
-            tdText = [tds[k].querySelectorAll("select") && tds[k].querySelectorAll("select")[0].value, tds[k].querySelectorAll("select")[1] && tds[k].querySelectorAll("select")[1].value];
+            tdText = [tds[k].querySelectorAll("select") && tds[k].querySelectorAll("select")[0].value, tds[k].querySelectorAll("select")[1] && tds[k].querySelectorAll("select")[2].value, tds[k].querySelectorAll("select")[1] && tds[k].querySelectorAll("select")[2].value];
           } else {
             tdText = tds[k].textContent.trim();
           }a.push(tdText);
