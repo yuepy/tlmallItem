@@ -9,9 +9,9 @@
     },
     doAction_uiControl725_QEhqGl: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
-        var as = elem.querySelectorAll("a");var asLength = as && as.length;elem.querySelectorAll("a")[asLength - 1].click();
+        var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
     },
     getTemplate_uiControl725_QEhqGl: function () {
@@ -25,8 +25,8 @@
     },
     doAction_uiControl726_pKefd7: function (data, elem) {},
     getTemplate_uiControl726_pKefd7: function () {
-      var selfTemplate = "import { Header, HeaderLeft } from 'ysp-interior-components';\nimport { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className='titleH1'>\n          <Header title={data.title}>\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={back}>\u8FD4\u56DE</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});";
-      return "'use strict';\n\nvar _yspInteriorComponents = require('ysp-interior-components');\n\nvar _appRenderer = require('appRenderer');\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      'div',\n      { className: 'titleH1' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: data.title },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement('span', null),\n          React.createElement(\n            'button',\n            { onClick: _appRenderer.back },\n            '\\u8FD4\\u56DE'\n          )\n        )\n      )\n    );\n  }\n});";
+      var selfTemplate = "import { Header, HeaderLeft } from 'ysp-interior-components';\nimport { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  componentDidMount(){\n    ysp.appMain.showLoading();\n    setTimeout(function(){\n      ysp.appMain.hideLoading();\n    },2000)\n  },\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <div className='titleH1'>\n          <Header title={data.title}>\n    \t\t\t\t<HeaderLeft>\n      \t\t\t\t<span></span><button onClick={back}>\u8FD4\u56DE</button>\n    \t\t\t\t</HeaderLeft>\n  \t\t\t\t</Header>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nvar _yspInteriorComponents = require('ysp-interior-components');\n\nvar _appRenderer = require('appRenderer');\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n  componentDidMount: function componentDidMount() {\n    ysp.appMain.showLoading();\n    setTimeout(function () {\n      ysp.appMain.hideLoading();\n    }, 2000);\n  },\n\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      'div',\n      { className: 'titleH1' },\n      React.createElement(\n        _yspInteriorComponents.Header,\n        { title: data.title },\n        React.createElement(\n          _yspInteriorComponents.HeaderLeft,\n          null,\n          React.createElement('span', null),\n          React.createElement(\n            'button',\n            { onClick: _appRenderer.back },\n            '\\u8FD4\\u56DE'\n          )\n        )\n      )\n    );\n  }\n});";
     },
     getData_control727_BIvVl7: function (elem) {
       if (!elem) {
@@ -37,9 +37,9 @@
     },
     doAction_uiControl727_dNm2yO: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
-        var as = elem.querySelectorAll("a");var asLength = as && as.length;elem.querySelectorAll("a")[asLength - 1].click();
+        var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
     },
     getTemplate_uiControl727_dNm2yO: function () {
@@ -55,9 +55,9 @@
     },
     doAction_uiControl728_azd6GT: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
-        var as = elem.querySelectorAll("a");var asLength = as && as.length;elem.querySelectorAll("a")[asLength - 1].click();
+        var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
     },
     getTemplate_uiControl728_azd6GT: function () {
@@ -73,9 +73,9 @@
     },
     doAction_uiControl729_Wuo7f3: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
-        var as = elem.querySelectorAll("a");var asLength = as && as.length;elem.querySelectorAll("a")[asLength - 1].click();
+        var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
     },
     getTemplate_uiControl729_Wuo7f3: function () {
@@ -91,9 +91,9 @@
     },
     doAction_uiControl730_nPw7R1: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
-        var as = elem.querySelectorAll("a");var asLength = as && as.length;elem.querySelectorAll("a")[asLength - 1].click();
+        var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
     },
     getTemplate_uiControl730_nPw7R1: function () {
