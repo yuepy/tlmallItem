@@ -77,11 +77,14 @@
               item.push(tds[j].querySelector("input[type='text']").value)
             } else if (tds[j].querySelector("select")) {
               var optionarry = [];
-              var options = tds[j].querySelector("select").querySelectorAll("option")
-              for (var v = 0; v < options.length; v++) {
-                if(options[v].selected){
-                  optionarry.push(options[v].textContent)
-                }
+							var selects = tds[j].querySelectorAll('select');
+              for(var m=0;m<selects.length;m++){
+                var options = selects[m].querySelectorAll("option");
+              	for (var v = 0; v < options.length; v++) {
+                  if(options[v].selected){
+                    optionarry.push(options[v].textContent)
+                  }
+              	}
               }
               item.push(optionarry)
             } else {
