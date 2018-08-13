@@ -59,8 +59,8 @@
       //     arr.push(alist[k].textContent.trim());
       //   data.content.push(arr);
       // }
-      var arr = []; // var str = ['请假申请单', '因公外出申请单', '差旅费用报销流程'];
-      var str = ['请假申请单', '因公外出申请单'];var alist = elem.querySelectorAll('a[href="javascript:void(0)"]'); // debugger
+      var arr = [];var str = ['请假申请单', '因公外出申请单', '差旅费用报销流程']; //var str = ['请假申请单', '因公外出申请单'];
+      var alist = elem.querySelectorAll('a[href="javascript:void(0)"]'); // debugger
       for (var i = 0; i < alist.length; i++) {
         var flag = alist[i].getAttribute('url'); //筛选掉常用流程中无URL的流程
         if (str.indexOf(alist[i].textContent.trim()) != -1) {
@@ -80,8 +80,7 @@
       // }
       // }
       if ('click' == type) {
-        var url = data.url;var flat = url.indexOf('http://172.16.11.61') != -1 ? true : false; //     window.yspCheckIn.closePageType("0");
-        //   }
+        var url = data.url;var flat = url.indexOf('http://172.16.11.61') != -1 ? true : false; //   }
         //   if (ysp.appMain.isIOS()) {
         //     var _setupWebViewJavascriptBridge = function (callback) {
         //       if (window.WebViewJavascriptBridge) {
@@ -104,10 +103,11 @@
         //     });
         //   }
         if (ysp.appMain.isIOS()) {
-          // if (flat) {
-          // ysp.appMain.openWindow(url);
-          // } else {
-          elem.ownerDocument.defaultView.open(url); // }
+          if (flat) {
+            ysp.appMain.openWindow(url);
+          } else {
+            elem.ownerDocument.defaultView.open(url);
+          }
         } else {
           elem.ownerDocument.defaultView.open(url); // var alist = elem.querySelectorAll('a[href="javascript:void(0)"]')[data.index].click();
         }
