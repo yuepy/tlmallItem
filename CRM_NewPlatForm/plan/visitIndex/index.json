@@ -154,41 +154,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control89_DqINPL": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "force": false,
-          "data": [
-            {
-              "method": "selector",
-              "value": "html"
-            }
-          ]
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.bgcolor_white.body-vcrm DIV.wrapper.wrapper-content DIV.header"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control89_DqINPL"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control255_x5oZAQ": {
       "location": {
         "data": {
@@ -257,7 +222,6 @@
         "control148_6ilf9M",
         "control152_75cpfg",
         "control67_v1oOpi",
-        "control89_DqINPL",
         "control255_x5oZAQ",
         "control256_DdNnpf"
       ],
@@ -267,16 +231,6 @@
   },
   "flows": {
     "flow89_F0LV8s": {
-      "toContexts": [
-        {
-          "toContextId": "context36_qigJlm"
-        }
-      ]
-    },
-    "flow75_8ghsVC": {
-      "fromContextId": "context36_qigJlm",
-      "fromAction": "doAction",
-      "fromControlId": "control89_DqINPL",
       "toContexts": [
         {
           "toContextId": "context36_qigJlm"
@@ -294,6 +248,16 @@
         {
           "toContextId": "context34_aAVair",
           "toModelId": "secondMenu"
+        }
+      ]
+    },
+    "flow273_rkFueG": {
+      "fromContextId": "context36_qigJlm",
+      "fromAction": "doAction",
+      "fromControlId": "control67_v1oOpi",
+      "toContexts": [
+        {
+          "toContextId": "context36_qigJlm"
         }
       ]
     }
@@ -314,21 +278,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl143_rTGLwe",
                 "onGetTemplate": "getTemplate_uiControl143_rTGLwe"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl65_B15nnn",
-          "controlId": "control89_DqINPL",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl65_B15nnn",
-                "onGetTemplate": "getTemplate_uiControl65_B15nnn"
               }
             }
           }

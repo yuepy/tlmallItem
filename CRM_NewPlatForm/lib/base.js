@@ -62,11 +62,14 @@
   //var topWin = null;
   var topWin = top;
   var loginWin = null;
-  topWin.GetIconNum = function(str){
-    if(!str){
+  //IOS客户端调用.解决请求ICON接口跨域问题;
+  topWin.GetIconNum = function(summary,atMe){
+    if(!summary && !atMe || summary == 'error'){
+      console.error('ICON接口请求未通过,请查找原因!');
       return ;
     }
-    ysp.customHelper.IconNum = str;
+    ysp.customHelper.IconNum.summary = summary.split('=')[1];
+    ysp.customHelper.IconNum.atMe = atMe.split('=')[1];
   }
   topWin.AndroidBack = function(){
     ysp.appMain.back();
@@ -119,8 +122,28 @@
       }
     });
   }
+  //安卓端请求ICON角标数量 - ;
+  function AndroidGetIconNum(summary,atMe){
+    this.summary = summary;
+    this.atMe = atMe;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+      if(xhr.status >= 200 && xhr.readyState == 4){
+        if(xhr.response != ''){
+          var obj = JSON.parse(xhr.response);
+          if(obj.summaryReportCount && obj.atMeUnreadReportCount){
+            ysp.customHelper.IconNum.summary = obj.summaryReportCount;
+    				ysp.customHelper.IconNum.atMe = obj.atMeUnreadReportCount;
+          }
+        }
+      }
+    }
+    xhr.open('POST','http://192.168.220.82:8080/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
+    xhr.send()
+  }
   // 请求首页面所有一级\二级\三级菜单
   function getAllMenu() {
+    // alert('执行;')
     var _this = this;
     if(window.XMLHttpRequest){
       var xhr = new XMLHttpRequest();
@@ -130,7 +153,11 @@
             console.info('系统正在登录中...');
             setTimeout(getAllMenu.bind(_this), 3000);
           } else if (xhr.status == 200 && xhr.readyState == 4) {
-            //topWin.EAPI.postMessageToNative('GetIconNum', null);//给客户端发消息 - 请求角标数据
+            if(top.EAPI.isIOS()){
+              top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
+            }else{
+              AndroidGetIconNum(); // 安卓端ICON数量取值;
+            }
             getAllMenuStatus = true; 
             //此状态说明当前已经全部拿到PC端所有菜单信息;
             var AllMenu = JSON.parse(xhr.response);
@@ -824,7 +851,8 @@
     }
   }
   utils.extend(ysp.customHelper, {
-    IconNum:null,//报告数量变量
+    CUSTOMURL:'',
+    IconNum:{summary:'',atMe:''},//报告数量变量
 		BackFlag:0, // 拜访总览逐级返回标识
     filter_userId:null,//存储大数据session请求参数 
     encode:null,//存储大数据session请求参数 
