@@ -58,8 +58,13 @@
           "tagName": "DIV"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"person_infor\"]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -95,8 +100,17 @@
           "tagName": "TABLE"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//*[@id=\"form1\"]/div[3]/div[9]/table[1]"
+            },
+            {
+              "method": "selector",
+              "value": "#form1 > div.big-form.page-shadow > div:nth-child(11) > table:nth-child(1)"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -142,8 +156,13 @@
           "tagName": "DIV"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "selector",
+              "value": "#div1 > div.form-wrapper > table"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -826,6 +845,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"detailT\"]"
+            },
+            {
+              "method": "selector",
+              "value": "#detailT"
             }
           ],
           "force": true
@@ -857,7 +880,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "ignoreVisibility": false,
+      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
@@ -872,6 +895,10 @@
             {
               "method": "XPath",
               "value": "//*[@id=\"skrTable\"]"
+            },
+            {
+              "method": "selector",
+              "value": "#skrTable"
             }
           ],
           "force": true
@@ -1493,7 +1520,8 @@
       },
       "intendedRole": "custom",
       "roles": "element,link,custom",
-      "monitored": false,
+      "ignoreVisibility": true,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -2593,6 +2621,157 @@
             "txt_Summary_SKR",
             "uploadDiv",
             "upload_target"
+          ],
+          [
+            "   ",
+            "A",
+            "Attachment_fileUpload",
+            "Attachment_hfActivityName",
+            "Attachment_hfGuid",
+            "Attachment_hfIsStart",
+            "Attachment_hfUserLoginName",
+            "CPPCRate",
+            "Ggbm",
+            "Header_hidFlag",
+            "Header_txtCompanyName",
+            "Header_txtDate",
+            "Header_txtDepartName",
+            "Header_txtEmail",
+            "Header_txtPhone",
+            "Header_txtUserName",
+            "LinkedProcInst_hfGuid",
+            "LinkedProcInst_hfStart",
+            "LinkedProcInst_hfUserLoginName",
+            "ProcessDescription_lblDescription",
+            "TravelTable",
+            "__EVENTARGUMENT",
+            "__EVENTTARGET",
+            "__EVENTVALIDATION",
+            "__VIEWSTATE",
+            "_myDP",
+            "btnAddBXMX",
+            "btnAddLink",
+            "btnAddSKR",
+            "btnFileUpload",
+            "btnHC",
+            "btnLaunch",
+            "btnSave",
+            "btnSelectSubject",
+            "contentActionBar_ActionBar_Action",
+            "contentActionBar_ActionBar_ActionName",
+            "contentActionBar_ActionBar_AddApprover",
+            "contentActionBar_ActionBar_AddApproverName",
+            "contentActionBar_ActionBar_GotoActivityName",
+            "contentActionBar_ActionBar_IsReturnBack",
+            "contentActionBar_ActionBar_Save",
+            "contentActionBar_ActionBar_Submit",
+            "contentActionBar_ActionBar_UserAction",
+            "contentActionBar_ActionBar_WorkFlow",
+            "contentActionBar_ActionBar_btnAddApprover",
+            "contentActionBar_ActionBar_btnClose",
+            "contentActionBar_ActionBar_btnRedirect",
+            "contentActionBar_ActionBar_btnSave",
+            "contentActionBar_ActionBar_btnSubmit",
+            "contentActionBar_ActionBar_btnWorkFlow",
+            "contentActionBar_ActionBar_hidJBAffirm",
+            "contentForm_ApproverCodes",
+            "contentForm_ApproverNames",
+            "contentForm_Button",
+            "contentForm_FileUpload",
+            "contentForm_HidCostCenter",
+            "contentForm_HidCostCenterHR",
+            "contentForm_HidUserIdForSelect",
+            "contentForm_HidVirtualCostCenterCode",
+            "contentForm_HidVirtualDepartCode",
+            "contentForm_ddl_CPBCRate",
+            "contentForm_hid_ApproverIDs",
+            "contentForm_hid_ApproverNames",
+            "contentForm_rbAssetFou",
+            "contentForm_rbAssetShi",
+            "contentForm_rb_TravelMethod_GJ",
+            "contentForm_rb_TravelMethod_GN",
+            "contentForm_rdPerson",
+            "contentForm_rdPublic",
+            "contentForm_txtBXSY",
+            "contentForm_txtReimbursementTotal",
+            "contentForm_txtRemarks",
+            "contentForm_txtSKRMoneyTotal",
+            "contentForm_txtSupplier",
+            "contentForm_txtSupplierApplyMoney",
+            "contentForm_txtSupplierBankCode",
+            "contentForm_txtSupplierCode",
+            "contentForm_txtSupplierOpenBank",
+            "contentForm_txtVirtualDepart",
+            "contentForm_txt_AppCompanyCode_Ext",
+            "contentForm_txt_ApplicantDeptCode",
+            "contentForm_txt_ApplicantDeptName",
+            "contentForm_txt_ApplyCompany",
+            "contentForm_txt_ApplyCompanyCode",
+            "contentForm_txt_ApplyEmployeeCode",
+            "contentForm_txt_ApplyEmployeeName",
+            "contentForm_txt_BudgetNo",
+            "contentForm_txt_Currency",
+            "contentForm_txt_ExchangeRate",
+            "contentForm_txt_InfoCode",
+            "contentForm_txt_InfoName",
+            "contentForm_txt_InvoiceNum",
+            "contentForm_txt_PayeeTotal",
+            "contentForm_txt_Project",
+            "contentForm_txt_SecondDetail",
+            "contentForm_txt_ThirdDetail",
+            "ddl_LastYearBeforehand",
+            "detailT",
+            "div",
+            "div_Approver",
+            "fileAttachment",
+            "filePanel",
+            "file_upload_form",
+            "form",
+            "hdActivityName",
+            "hdGuid",
+            "hdUserLoginName",
+            "hfApprover",
+            "miniTip",
+            "miniTip_a",
+            "miniTip_c",
+            "miniTip_t",
+            "person_infor",
+            "person_infor_trigger",
+            "skrTable",
+            "spanProject",
+            "span_subbutton",
+            "span_subbutton_msg",
+            "table",
+            "tableAttachment",
+            "tableBXHJ",
+            "tableBXHead",
+            "tableDetailHead",
+            "tableHeader",
+            "tableXiaoJi",
+            "tb_Approver",
+            "tb_AttachmentList",
+            "tb_List",
+            "txt_ApplyMoney",
+            "txt_ApplyMoney_SKR",
+            "txt_CompanyCode",
+            "txt_CompanyCode_Ext",
+            "txt_CompanyCode_SKR",
+            "txt_Company_SKR",
+            "txt_CostCenter",
+            "txt_CostCenterCode",
+            "txt_Dept",
+            "txt_DeptCode",
+            "txt_DeptCode_SKR",
+            "txt_Dept_SKR",
+            "txt_ECode",
+            "txt_ECode_SKR",
+            "txt_EName",
+            "txt_EName_SKR",
+            "txt_JiZhangMoney",
+            "txt_Subject",
+            "txt_Summary_SKR",
+            "uploadDiv",
+            "upload_target"
           ]
         ]
       }
@@ -2918,6 +3097,72 @@
             "logo-leftcorner",
             "mt-s",
             "n",
+            "none_edit",
+            "p-explain",
+            "page-shadow",
+            "red",
+            "required",
+            "size-l",
+            "size-s",
+            "swich_btn",
+            "title",
+            "tj",
+            "top",
+            "trPerson",
+            "trPublic",
+            "ufoot"
+          ],
+          [
+            "Beforehand",
+            "Wdate",
+            "aspNetHidden",
+            "aui_border",
+            "aui_buttons",
+            "aui_c",
+            "aui_close",
+            "aui_content",
+            "aui_dialog",
+            "aui_e",
+            "aui_footer",
+            "aui_header",
+            "aui_icon",
+            "aui_iconBg",
+            "aui_inner",
+            "aui_loading",
+            "aui_main",
+            "aui_n",
+            "aui_ne",
+            "aui_nw",
+            "aui_outer",
+            "aui_s",
+            "aui_se",
+            "aui_state_focus",
+            "aui_sw",
+            "aui_title",
+            "aui_titleBar",
+            "aui_w",
+            "ax",
+            "bar-code-rightcorner",
+            "big-form",
+            "bottom-buttons",
+            "btn",
+            "btn-add",
+            "btn-add-user",
+            "clear",
+            "col",
+            "col-",
+            "fileUpload",
+            "font-lightgrey",
+            "font-xxl",
+            "form-wrapper",
+            "gb",
+            "grey",
+            "icon-plus",
+            "labelwidth",
+            "layout-data",
+            "layout-form",
+            "logo-leftcorner",
+            "mt-s",
             "none_edit",
             "p-explain",
             "page-shadow",
