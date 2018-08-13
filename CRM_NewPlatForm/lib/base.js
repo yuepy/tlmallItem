@@ -14,8 +14,8 @@
             callback: cb,
             caller: caller
           });
-        }
-      });
+        }
+      });
       if (!exist) {
         this.topicList.push({
           topic: topic,
@@ -143,7 +143,6 @@
   }
   // 请求首页面所有一级\二级\三级菜单
   function getAllMenu() {
-    // alert('执行;')
     var _this = this;
     if(window.XMLHttpRequest){
       var xhr = new XMLHttpRequest();

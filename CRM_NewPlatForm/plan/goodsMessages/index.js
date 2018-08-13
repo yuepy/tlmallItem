@@ -73,12 +73,12 @@
       if (data.eventType === 'back') {
         var a = elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('a');var index;for (var i = 0; i < a.length; i++) {
           index = +i;
-        }if (index >= 2) {
+        }if (index > 2) {
           elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('a')[index - 1].click();ysp.appMain.showLoading();setTimeout(function () {
             ysp.appMain.hideLoading();
           }, 1000);
         } else {
-          ysp.appMain.back();
+          elem.ownerDocument.defaultView.close();
         }
       } /****筛选框的方法******/if ("choseClick" == data.eventType) {
         var index = data.customData.index;var indexs = data.customData.indexs;var muilSelectOption = elem.querySelector("#muilSelectOption");var optionAll = muilSelectOption && muilSelectOption.querySelectorAll(".option-r-c");var spans = optionAll[indexs].querySelectorAll("span");spans[index].click();
