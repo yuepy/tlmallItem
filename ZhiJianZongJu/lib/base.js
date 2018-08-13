@@ -6,7 +6,6 @@
   ysp.customHelper = {};
   utils.extend(ysp.customHelper, {
     /* 适配中定制的公共代码放在这里 */
-
     /*
     // 可以实现一个foo方法，在定制适配组件中被使用，如：ysp.customHelper.foo()
     foo: function(){
@@ -17,7 +16,10 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc){
-
+			if(aWin.location.href == 'http://egs.itownet.cn:9080/ecqs_server_web/'){
+        debugger
+        doc.querySelector('#randomNumber').setAttribute('src','imageGenerator?'+Math.random());
+      }
     },
 
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象

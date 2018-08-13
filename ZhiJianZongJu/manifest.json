@@ -12,10 +12,21 @@
     "resource_inject": []
   },
   "override_urls": [],
-  "adapter_urls": [],
-  "name": "质检总局",
+  "adapter_urls": [
+    {
+      "title": "login",
+      "url": "adapter://itownet_Applocation/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/"
+      ],
+      "demo": [
+        "http://egs.itownet.cn:9080/ecqs_server_web/"
+      ]
+    }
+  ],
+  "name": "质检总局B版",
   "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/",
-  "scope": "ZhiJianZongJu",
-  "start_url": "enterplorer://ZhiJianZongJu/local/index.html",
-  "update_time": 1534149867952
+  "scope": "itownet_Applocation",
+  "start_url": "enterplorer://itownet_Applocation/local/index.html",
+  "update_time": 1534153161732
 }

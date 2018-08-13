@@ -1,0 +1,530 @@
+{
+  "version": "0.1",
+  "id": "super_index",
+  "targetURL": "http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp",
+  "jsFile": "index.js",
+  "chineseName": "监督抽查",
+  "description": "",
+  "controls": {
+    "control2_CGv9FH": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]/DIV[1]",
+              "descendant::DIV[@id=\"mainMenu\"]/DIV[1]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "DIV.panel-body.layout-body.panel-noscroll DIV.easyui-accordion.accordion.accordion-noborder.easyui-fluid DIV.panel"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control2_CGv9FH"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control3_tT6qSs": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]",
+              "descendant::DIV[@id=\"mainMenu\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.layout-panel.layout-panel-west.layout-split-west DIV.panel-body.layout-body.panel-noscroll DIV.easyui-accordion.accordion.accordion-noborder.easyui-fluid"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control3_tT6qSs"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context2_fOUCC5": {
+      "controls": [
+        "control2_CGv9FH",
+        "control3_tT6qSs"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow3_aPt47s": {
+      "toContexts": [
+        {
+          "toContextId": "context2_fOUCC5"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page2_JlLtAg": {
+      "contextId": "context2_fOUCC5",
+      "layout": [
+        {
+          "id": "uiControl3_iD6kPJ",
+          "controlId": "control2_CGv9FH",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl3_iD6kPJ",
+                "onGetTemplate": "getTemplate_uiControl3_iD6kPJ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl2_mUyTOO",
+          "controlId": "control3_tT6qSs",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl2_mUyTOO",
+                "onGetTemplate": "getTemplate_uiControl2_mUyTOO"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context2_fOUCC5": [
+          "RCP-WebClient"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context2_fOUCC5": [
+          "egs.itownet.cn:9080/ecqs_server_web/system/main.jsp"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context2_fOUCC5": [
+          [
+            "_easyui_tree_",
+            "layout_north_kzmbMenu",
+            "layout_north_pfMenu",
+            "layout_north_zxMenu",
+            "mainMenu",
+            "mainTabs",
+            "menuRoot",
+            "mm",
+            "mm-tabclose",
+            "mm-tabcloseall",
+            "mm-tabcloseleft",
+            "mm-tabcloseother",
+            "mm-tabcloseright",
+            "newApp---",
+            "nodeItem",
+            "nodeItemnewApp",
+            "nodeItemnewApp-",
+            "nodeItemweb-app-",
+            "pf-hd",
+            "sessionInfoDiv"
+          ],
+          [
+            "_easyui_tree_",
+            "layout_north_kzmbMenu",
+            "layout_north_pfMenu",
+            "layout_north_zxMenu",
+            "mainMenu",
+            "mainTabs",
+            "menuRoot",
+            "mm",
+            "mm-tabclose",
+            "mm-tabcloseall",
+            "mm-tabcloseleft",
+            "mm-tabcloseother",
+            "mm-tabcloseright",
+            "nodeItem",
+            "nodeItemnewApp",
+            "nodeItemnewApp-",
+            "nodeItemweb-app-",
+            "pf-hd",
+            "sessionInfoDiv"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context2_fOUCC5": [
+          [
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-expand",
+            "accordion-header",
+            "accordion-header-selected",
+            "accordion-noborder",
+            "disabled",
+            "easyui-accordion",
+            "easyui-fluid",
+            "easyui-menu",
+            "easyui-menubutton",
+            "easyui-tree",
+            "ext-icon-computer_key",
+            "ext-icon-door_out",
+            "ext-icon-picture",
+            "ext-icon-rainbow",
+            "ext-icon-user",
+            "ext-icon-user_edit",
+            "ext-icon-world",
+            "iconfont",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout-body",
+            "layout-button-left",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "logo",
+            "m-btn",
+            "m-btn-downarrow",
+            "m-btn-line",
+            "m-btn-small",
+            "menu",
+            "menu-icon",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-collapse",
+            "panel-tool-expand",
+            "pf-logo",
+            "pf-nav",
+            "pf-nav-next",
+            "pf-nav-prev",
+            "pf-nav-wrap",
+            "pf-nav-ww",
+            "tabs",
+            "tabs-closable",
+            "tabs-close",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-header-noborder",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-panels-noborder",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "tree",
+            "tree-collapsed",
+            "tree-file",
+            "tree-folder",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-joinbottom",
+            "tree-lines",
+            "tree-node",
+            "tree-node-last",
+            "tree-node-selected",
+            "tree-root-first",
+            "tree-root-one",
+            "tree-title"
+          ],
+          [
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-expand",
+            "accordion-header",
+            "accordion-header-selected",
+            "accordion-noborder",
+            "disabled",
+            "easyui-accordion",
+            "easyui-fluid",
+            "easyui-menu",
+            "easyui-menubutton",
+            "easyui-tree",
+            "ext-icon-computer_key",
+            "ext-icon-door_out",
+            "ext-icon-picture",
+            "ext-icon-rainbow",
+            "ext-icon-user",
+            "ext-icon-user_edit",
+            "ext-icon-world",
+            "iconfont",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout-body",
+            "layout-button-left",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "logo",
+            "m-btn",
+            "m-btn-downarrow",
+            "m-btn-line",
+            "m-btn-small",
+            "menu",
+            "menu-icon",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-collapse",
+            "panel-tool-expand",
+            "pf-logo",
+            "pf-nav",
+            "pf-nav-next",
+            "pf-nav-prev",
+            "pf-nav-wrap",
+            "pf-nav-ww",
+            "tabs",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-header-noborder",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-panels-noborder",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "tree",
+            "tree-collapsed",
+            "tree-file",
+            "tree-folder",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-joinbottom",
+            "tree-lines",
+            "tree-node",
+            "tree-node-last",
+            "tree-root-first",
+            "tree-root-one",
+            "tree-title"
+          ],
+          [
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-expand",
+            "accordion-header",
+            "accordion-noborder",
+            "disabled",
+            "easyui-accordion",
+            "easyui-fluid",
+            "easyui-menu",
+            "easyui-menubutton",
+            "easyui-tree",
+            "ext-icon-computer_key",
+            "ext-icon-door_out",
+            "ext-icon-picture",
+            "ext-icon-rainbow",
+            "ext-icon-user",
+            "ext-icon-user_edit",
+            "ext-icon-world",
+            "iconfont",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout-body",
+            "layout-button-left",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "logo",
+            "m-btn",
+            "m-btn-downarrow",
+            "m-btn-line",
+            "m-btn-small",
+            "menu",
+            "menu-icon",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-collapse",
+            "panel-tool-expand",
+            "pf-logo",
+            "pf-nav",
+            "pf-nav-next",
+            "pf-nav-prev",
+            "pf-nav-wrap",
+            "pf-nav-ww",
+            "tabs",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-header-noborder",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-panels-noborder",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "tree",
+            "tree-collapsed",
+            "tree-file",
+            "tree-folder",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-joinbottom",
+            "tree-lines",
+            "tree-node",
+            "tree-node-last",
+            "tree-root-first",
+            "tree-root-one",
+            "tree-title"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context2_fOUCC5": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "A/SPAN/SPAN",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/LINK",
+            "DIV/DIV/SCRIPT",
+            "DIV/DIV/UL",
+            "DIV/UL/LI",
+            "LI/A/SPAN",
+            "LI/DIV/SPAN",
+            "UL/LI/A",
+            "UL/LI/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}
