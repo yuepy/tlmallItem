@@ -259,6 +259,10 @@
         "data": {
           "tagName": "A"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "a/@href",
@@ -305,6 +309,60 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "header"
+    },
+    "control9_3fUA9K": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": {
+              "text": [
+                "现场抽样"
+              ],
+              "visText": [
+                "现场抽样"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]/DIV[1]/DIV[2]",
+              "descendant::DIV[@id=\"mainMenu\"]/DIV[1]/DIV[2]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "DIV.easyui-accordion.accordion.accordion-noborder.easyui-fluid DIV.panel DIV.panel-body.accordion-body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "现场抽样",
+      "frameXPath": ""
     }
   },
   "contexts": {
