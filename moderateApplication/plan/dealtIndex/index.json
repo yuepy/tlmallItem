@@ -34,7 +34,8 @@
     "Newapplocation": "../Newapplocation/index.json",
     "currency": "../currency/index.json",
     "renewal": "../renewal/index.json",
-    "homePage": "../homePage/index.json"
+    "homePage": "../homePage/index.json",
+    "LYBFSQ_DB": "file://C:/Users/xubo/Documents/enterplorer/enterprises/587743d37df4e62b8c4e3d60/apps/moderateApplication/plan/LYBFSQ_DB/index.json"
   },
   "chineseName": "待办首页页面",
   "description": "待办首页页面",
@@ -272,7 +273,8 @@
       "fromControlId": "control193_N9CBTD",
       "toContexts": [
         {
-          "toContextId": "context24_EkSRuv"
+          "toContextId": "context24_EkSRuv",
+          "toModelId": "dealtIndex"
         },
         {
           "toContextId": "context2_yipHVo",
@@ -389,6 +391,10 @@
         {
           "toContextId": "context56_7xA3In",
           "toModelId": "homePage"
+        },
+        {
+          "toModelId": "LYBFSQ_DB",
+          "toContextId": "context1_v363oJ"
         }
       ]
     },
