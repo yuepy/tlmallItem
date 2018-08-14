@@ -110,7 +110,7 @@
       "text": "监督抽查(移动端)",
       "frameXPath": ""
     },
-    "control11_4UGULQ": {
+    "control11_VU6AiQ": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -120,15 +120,15 @@
             "id": "@id/word",
             "prob": 2,
             "value": [
-              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]/DIV[1]/DIV[2]",
-              "descendant::DIV[@id=\"mainMenu\"]/DIV[1]/DIV[2]"
+              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]/DIV[2]/DIV[2]",
+              "descendant::DIV[@id=\"mainMenu\"]/DIV[2]/DIV[2]"
             ]
           },
           {
             "id": "@class/word",
             "prob": 1,
             "ordinal": [
-              0,
+              1,
               4
             ],
             "value": "DIV.easyui-accordion.accordion.accordion-noborder.easyui-fluid DIV.panel DIV.panel-body.accordion-body"
@@ -136,12 +136,48 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]"
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[2]/DIV[2]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control11_4UGULQ"
+        "onGetData": "getData_control11_VU6AiQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control15_yhSlrb": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]/DIV[2]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"mainMenu\"]/DIV[2]/DIV[1]/DIV[1]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[2]/DIV[1]/DIV[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control15_yhSlrb"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -153,11 +189,10 @@
   "contexts": {
     "context5_TB20GM": {
       "controls": [
-        "control11_4UGULQ"
+        "control11_VU6AiQ",
+        "control15_yhSlrb"
       ],
-      "anchors": [
-        "control10_Vxt6SV"
-      ],
+      "anchors": [],
       "urlAnchor": []
     }
   },
@@ -175,16 +210,31 @@
       "contextId": "context5_TB20GM",
       "layout": [
         {
-          "id": "uiControl4_A7hmQ4",
-          "controlId": "control11_4UGULQ",
+          "id": "uiControl11_c5KCUQ",
+          "controlId": "control15_yhSlrb",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl4_A7hmQ4",
-                "onGetTemplate": "getTemplate_uiControl4_A7hmQ4"
+                "onDoAction": "doAction_uiControl11_c5KCUQ",
+                "onGetTemplate": "getTemplate_uiControl11_c5KCUQ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl4_J11h2C",
+          "controlId": "control11_VU6AiQ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl4_J11h2C",
+                "onGetTemplate": "getTemplate_uiControl4_J11h2C"
               }
             }
           }
