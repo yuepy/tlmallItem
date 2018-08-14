@@ -1,3 +1,6 @@
+li {
+  list-style: none;
+}
 .itwont {
   width: 100%;
 }
@@ -6,4 +9,75 @@
   height: 44px;
   background-color: #e64750;
   border: 0;
+}
+[data-ysp-modelid="supervise_index"] {
+  background-color: #f2f2f2;
+}
+.tabbox > div .bot {
+  background-image: url(img/xia.png);
+  background-repeat: no-repeat;
+  background-size: 20px 15px;
+  background-position: 95% 14px;
+}
+.tabbox > div .top {
+  background-image: url(img/top.png);
+  background-repeat: no-repeat;
+  background-size: 20px 15px;
+  background-position: 95% 14px;
+}
+.tabbox > div div:nth-child(1) {
+  height: 44px;
+  line-height: 44px;
+  font-size: 15px;
+  color: #313131;
+  font-weight: bold;
+  padding-left: 55px;
+  position: relative;
+  padding-right: 15px;
+  background-color: #fff;
+}
+.tabbox > div div:nth-child(1) > span {
+  width: 17px;
+  height: 16px;
+  position: absolute;
+  top: 14px;
+  left: 29px;
+  background-image: url(img/fenpei.png);
+  background-size: 17px 16px;
+}
+.tabbox > div .tabul {
+  width: 345px;
+  margin: 5px auto 5px auto;
+  font-size: 14px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.tabbox > div .tabul ul {
+  margin: 0;
+  padding: 0;
+}
+.tabbox > div .tabul ul li {
+  border-top: 1px solid #ccc;
+  height: 44px;
+  line-height: 44px;
+  background-image: url(img/icon.png);
+  background-size: 12px 14px;
+  background-repeat: no-repeat;
+  background-position: 20px 15px;
+  padding-left: 40px;
+}
+.tabbox > div .tabul ul li:first-child {
+  border: 0;
+}
+.tabbox > div:nth-child(2) div:nth-child(1) span {
+  background-image: url(img/shujuchaxun.png);
+}
+.Nubsuprive {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Nubsuprive div {
+  text-align: center;
+  height: 44px;
+  width: 25%;
 }

@@ -2,6 +2,9 @@
 // Less 的语法与 CSS 兼容，可以直接用 CSS 语法进行编写
 // 如需了解详情，请访问 http://www.lesscss.net/
 // 发布后，base.less 被编译成 base.css 文件
+li{
+  list-style: none;
+}
 //首页按钮公用样式
 .itwont{
   width: 100%;
@@ -13,3 +16,86 @@
   }
 }
 //首页按钮公用样式结束
+
+//计量强检tab页
+[data-ysp-modelid="supervise_index"]{
+  background-color: #f2f2f2;
+}
+.tabbox{
+  >div{
+    .bot{
+      background-image: url(./img/xia.png);
+      background-repeat: no-repeat;
+      background-size: 20px 15px;
+      background-position: 95% 14px;
+    }
+    .top{
+      background-image: url(./img/top.png);
+      background-repeat: no-repeat;
+      background-size: 20px 15px;
+      background-position: 95% 14px;
+    }
+    div:nth-child(1){
+      height: 44px;
+      line-height: 44px;
+      font-size: 15px;
+      color: #313131;
+      font-weight: bold;
+      padding-left: 55px;
+      position: relative;
+      // padding-left: 15px;
+      padding-right: 15px;
+      background-color: #fff;
+      >span{
+        width: 17px;
+        height: 16px;
+        position: absolute;
+        top: 14px;
+        left: 29px;
+        background-image: url(./img/fenpei.png);
+        background-size: 17px 16px;
+      }
+    }
+    .tabul{
+      width: 345px;
+      margin: 5px auto 5px auto;
+      font-size: 14px;
+      background-color: #fff;
+      border-radius: 5px;
+      ul{
+        margin: 0;
+        padding: 0;
+        li{
+          border-top: 1px solid #ccc;
+          height: 44px;
+          line-height: 44px;
+          background-image: url(./img/icon.png);
+          background-size: 12px 14px;
+          background-repeat: no-repeat;
+          background-position: 20px 15px;
+          padding-left: 40px;
+        }
+        li:first-child{
+          border: 0;
+        }
+      }
+    }
+  }
+  >div:nth-child(2){
+    div:nth-child(1){
+      span{
+        background-image: url(./img/shujuchaxun.png);
+      }
+    }
+  }
+}
+
+.Nubsuprive{
+  display: flex;
+  flex-wrap: wrap;
+  div{
+    text-align: center;
+    height: 44px;
+    width: 25%;
+  }
+}
