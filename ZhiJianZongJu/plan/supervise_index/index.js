@@ -1,7 +1,8 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control11_VU6AiQ: function (elem) {
-      if (!elem) return;var data = []; // var lis = elem.querySelectorAll('ul>li');
+      if (!elem) return; // elem.previousElementSibling.querySelectorAll('div')[elem.previousElementSibling.querySelectorAll('div').length-1].click();
+      var data = []; // var lis = elem.querySelectorAll('ul>li');
       if (elem.querySelector('ul')) {
         debugger;var lis = elem.querySelector('ul').children;for (var i = 0; i < lis.length; i++) {
           var obj = {};obj.text = lis[i].querySelector('div').textContent.trim(); // var list = lis[i].querySelectorAll('ul>li');
@@ -13,8 +14,8 @@
     },
     doAction_uiControl4_J11h2C: function (data, elem) {},
     getTemplate_uiControl4_J11h2C: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    var lis = data.map(function(ele,index){\n      if(ele.child){\n         var list = ele.child.map(function(d,i){\n        return(\n        \t<li>{d.text}</li>\n        )\n      })\n     }\n      return(\n      \t<div>\n        \t<div>{ele.text}</div>\n          <div><ul>{list?list:\'\'}</ul></div>\n        </div>\n      )\n    })\n    return (\n      <div>\n        {lis}\n      </div>\n    )\n  }\n});';
-      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n    var lis = data.map(function (ele, index) {\n      if (ele.child) {\n        var list = ele.child.map(function (d, i) {\n          return React.createElement(\n            \'li\',\n            null,\n            d.text\n          );\n        });\n      }\n      return React.createElement(\n        \'div\',\n        null,\n        React.createElement(\n          \'div\',\n          null,\n          ele.text\n        ),\n        React.createElement(\n          \'div\',\n          null,\n          React.createElement(\n            \'ul\',\n            null,\n            list ? list : \'\'\n          )\n        )\n      );\n    });\n    return React.createElement(\n      \'div\',\n      null,\n      lis\n    );\n  }\n});';
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    if(!data){\n      return '';\n    }\n    var lis = data.map(function(ele,index){\n      if(ele.child){\n         var list = ele.child.map(function(d,i){\n        return(\n        \t<li>{d.text}</li>\n        )\n      })\n     }\n      return(\n      \t<div>\n        \t<div>{ele.text}</div>\n          <div><ul>{list?list:''}</ul></div>\n        </div>\n      )\n    })\n    return (\n      <div>\n        {lis}\n      </div>\n    )\n  }\n});";
+      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n    if (!data) {\n      return \'\';\n    }\n    var lis = data.map(function (ele, index) {\n      if (ele.child) {\n        var list = ele.child.map(function (d, i) {\n          return React.createElement(\n            \'li\',\n            null,\n            d.text\n          );\n        });\n      }\n      return React.createElement(\n        \'div\',\n        null,\n        React.createElement(\n          \'div\',\n          null,\n          ele.text\n        ),\n        React.createElement(\n          \'div\',\n          null,\n          React.createElement(\n            \'ul\',\n            null,\n            list ? list : \'\'\n          )\n        )\n      );\n    });\n    return React.createElement(\n      \'div\',\n      null,\n      lis\n    );\n  }\n});';
     },
     getData_control15_yhSlrb: function (elem) {},
     doAction_uiControl11_c5KCUQ: function (data, elem) {},

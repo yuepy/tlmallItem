@@ -17,7 +17,6 @@
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc){
 			if(aWin.location.href == 'http://egs.itownet.cn:9080/ecqs_server_web/'){
-        debugger
         doc.querySelector('#randomNumber').setAttribute('src','imageGenerator?'+Math.random());
       }
     },
