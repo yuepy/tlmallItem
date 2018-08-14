@@ -615,6 +615,42 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control203_ai7utc": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::INPUT[@name=\"customerName\"]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[3]/TD[4]/SPAN[1]/SPAN[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control203_ai7utc"
+      },
+      "intendedRole": "custom",
+      "roles": "element,textbox,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -633,7 +669,8 @@
         "control61_S2UifR",
         "control63_Pt9BN8",
         "control67_28ok7e",
-        "control168_3Cu2Vn"
+        "control168_3Cu2Vn",
+        "control203_ai7utc"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -894,6 +931,21 @@
           }
         },
         {
+          "id": "uiControl196_ai3pdC",
+          "controlId": "control203_ai7utc",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl196_ai3pdC",
+                "onGetTemplate": "getTemplate_uiControl196_ai3pdC"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl22_QmOw34",
           "controlId": "control21_GeryA0",
           "display": {
@@ -1085,7 +1137,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=261676",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294850&processForm",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317748&processForm",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=269975&processForm"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=269975&processForm",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=335802&processForm"
         ],
         "context10_zlXaLZ": [
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=867767&_winid=w6448",
