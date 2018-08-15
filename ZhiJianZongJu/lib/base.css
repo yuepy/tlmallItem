@@ -10,16 +10,20 @@ li {
   background-color: #e64750;
   border: 0;
 }
+div[data-ysp-modelid="login"] {
+  padding-bottom: 0 !important;
+}
 div[data-ysp-modelid="login"] .ysp_whole {
   width: 100%;
   height: 100vh;
-  background: url(img/login.png) no-repeat 0 -10px;
+  background: url(img/login.png) no-repeat 0 0px;
   background-size: 100% 100%;
   display: flex;
   align-items: center;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body {
   width: 100%;
+  padding-top: 30px;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header {
   width: 90%;
@@ -32,10 +36,12 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label {
   background: #fff;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label span {
-  width: 20%;
-  color: #005995;
+  width: 25%;
+  color: #0a568c;
   float: left;
   margin-top: 10px;
+  padding-left: 15px;
+  font-size: 16px;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label .username,
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label .password {
@@ -43,9 +49,11 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label .password {
   height: 20px;
   margin: 10px 0;
   border: none;
+  color: #202020;
+  font-size: 16px;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label .yz {
-  width: 55%;
+  width: 50%;
   float: left;
   height: 25px;
   margin: 10px 0;
@@ -56,15 +64,16 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label img {
   padding-top: 10px;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
   width: 90%;
   margin-left: 20px;
   color: #fff;
-  background: #004ba0;
+  background: #00539a;
   border-radius: 5px;
   border: none;
+  font-size: 16px;
 }
 [data-ysp-modelid="index_itownet"] {
   background-color: #f2f2f2;
