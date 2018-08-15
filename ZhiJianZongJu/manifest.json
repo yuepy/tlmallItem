@@ -9,21 +9,33 @@
       "type": [],
       "ignore": []
     },
-    "resource_inject": []
+    "resource_inject": [],
+    "unadapted": {
+      "timeout": 15000,
+      "rules": [{
+        "match": "*",
+        "type": "block"
+      }]
+    },
+    "component_match_mode": "polling"
   },
-  "override_urls": [],
-  "adapter_urls": [
-    {
-      "title": "login",
-      "url": "adapter://itownet_Applocation/plan/login/index.json",
-      "matcher": [
-        "^http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/"
-      ],
-      "demo": [
-        "http://egs.itownet.cn:9080/ecqs_server_web/"
-      ]
-    }
-  ],
+  "override_urls": [{
+    "origin_url": [
+      "http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/js\\/sysmanage\\/main\\.js"
+    ],
+    "target_url": "override/main.js",
+    "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/js/sysmanage/main.js"
+  }],
+  "adapter_urls": [{
+    "title": "login",
+    "url": "adapter://itownet_Applocation/plan/login/index.json",
+    "matcher": [
+      "^http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/"
+    ],
+    "demo": [
+      "http://egs.itownet.cn:9080/ecqs_server_web/"
+    ]
+  }],
   "name": "质检总局B版",
   "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/",
   "scope": "itownet_Applocation",
