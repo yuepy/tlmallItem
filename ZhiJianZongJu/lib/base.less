@@ -16,6 +16,79 @@ li{
     border: 0;
   }
 }
+//首页按钮公用样式结束
+/*抽样*/
+.zc-amInput{
+  .amt-item{
+    padding: 0;
+    .amt-field-wrap{
+      ::-webkit-input-placeholder {
+        text-align:right
+      }
+      input{
+        padding-right:33px;
+      }
+    }
+  }
+  .amt-field-single{
+    border-bottom: 0;
+    margin-bottom: 0;
+    .amt-field-label{
+      width: auto;
+    }
+  }
+}
+.zc-detail-top{
+  .amt-list{
+    margin: 0;
+  }
+}
+.zc-group-btn{
+  padding: 20px 10px 20px 10px;
+  display: flex;
+  button{
+    flex: 1;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 5px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+  button:first-child{
+    border: solid 1px #004788;
+    color: #004788;
+  }
+  button:last-child{
+    border: solid 1px #004788;
+    background: #004788;
+    color: #fff;
+  }
+}
+.zc-check{
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  margin: 10px 0;
+  background: #fff;
+  .amt-card{
+    flex: 1;
+    box-shadow: none;
+  }
+}
+.zc-information{
+  width: 100%;
+  height: 40px;
+  display: flex;
+	justify-content: center;
+  span{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url(img/zc_information.png) no-repeat;
+    background-size: 40px 40px;
+  }
+} 
 //登录页
 div[data-ysp-modelid = "login"] {
   padding-bottom: 0 !important;
@@ -297,3 +370,71 @@ div[data-ysp-modelid = "login"] {
     width: 25%;
   }
 }
+
+
+//hzx-start
+.displ-body{
+  display:fixed;
+  height:100%;
+  background:#fff;
+  
+}
+.displ-body>div,.displ-body>div>div,.displ-body>div>div>div{
+    height:100%;
+}
+.displ-body>div>div{
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  transform: translate3d(0,0,0)
+}
+.displ-body .ysp-module{
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+.navbar-primary,.amt-navbar-primary{
+  top:0;
+  z-index:99;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  background:#0a568c!important;
+}
+.amt-btn-primary,.btn-primary{
+  width: 100%;
+  border: 0px;
+  background:#0a568c!important;
+}
+.amt-btn-hollow{
+  width: 100%;
+  border:1px solid #0a568c;
+}
+.amt-item-title{
+  font-weight: bold;
+}
+.hzx-success-icon{
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  background:url(./img/duihao.png);
+}
+.hzx-mask{
+  z-index: 998;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  background:#000;
+  opacity: 0.3;
+}
+.hzx-btn-box .amt-btn-group .amt-btn-hollow:nth-of-type(1){
+  background:#0a568c!important;
+  color: #fff;
+}
+.hzx-btn-box .amt-btn-group .amt-btn-hollow:nth-of-type(2){
+  color: #0a568c;
+  border: 1px solid #0a568c
+}
+//hzx-end
