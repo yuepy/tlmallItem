@@ -22,7 +22,15 @@
     "component_match_mode": "polling",
     "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0_3 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Mobile/15A432"
   },
-  "override_urls": [],
+  "override_urls": [
+    {
+      "origin_url": [
+        "http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/js\\/sysmanage\\/main\\.js"
+      ],
+      "target_url": "override/main.js",
+      "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/js/sysmanage/main.js"
+    }
+  ],
   "adapter_urls": [
     {
       "title": "login",
@@ -39,5 +47,5 @@
   "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/",
   "scope": "itownet_Applocation",
   "start_url": "enterplorer://itownet_Applocation/local/index.html",
-  "update_time": 1534320929740
+  "update_time": 1534320681988
 }

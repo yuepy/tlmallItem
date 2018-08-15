@@ -6,6 +6,7 @@ li{
   list-style: none;
 }
 //首页按钮公用样式
+
 .itwont{
   width: 100%;
   button{
@@ -17,11 +18,10 @@ li{
 }
 //登录页
 div[data-ysp-modelid = "login"] {
-  padding-bottom: 0 !important;
   .ysp_whole{
     width:100%;
     height:100vh;
-    background: url(./img/beijing.png) no-repeat 0 0px;
+    background: url(./img/login.png) no-repeat 0 -10px;
     background-size:100% 100%;
     display:flex;
     align-items:center;
@@ -30,36 +30,29 @@ div[data-ysp-modelid = "login"] {
       .ysp_header{
         width: 90%;
         margin-left: 20px;
-        margin-top: 20px;
         label{
           font-size: 16px;
           border: 1px solid rgb(239,239,239);
           border-radius: 5px;
           background: #fff;
           span{
-            width: 25%;
-            color: #0a568c;
+            width: 20%;
+            color: rgb(0,89,149);
             float: left;
             margin-top: 10px;
-            padding-left: 15px;
-            font-size: 16px;
           }
           .username,.password{
             width: 75%;
             height: 20px;
             margin: 10px 0;
             border: none;
-            color: #202020;
-            font-size: 16px;
           }
           .yz{
-            width: 50%;
+            width: 55%;
             float: left;
             height: 25px;
             margin: 10px 0;
             border: none;
-            color: #202020;
-            font-size: 16px;
           }
           img{
             width: 25%;
@@ -68,15 +61,14 @@ div[data-ysp-modelid = "login"] {
         }
       }
       .ysp_footer{
-        margin-top: 20px;
+        margin-top: 40px;
         .btn{
           width: 90%;
           margin-left: 20px;
           color: #fff;
-          background: #00539a;
+          background: rgb(0,75,160);
           border-radius: 5px;
           border: none;
-          font-size: 16px;
         }
       }
     }
