@@ -1,15 +1,16 @@
 {
   "version": "0.1",
   "id": "login",
-  "targetURL": "http://egs.itownet.cn:9080/ecqs_server_web/",
+  "targetURL": "http://egs.itownet.cn:9080/mobileProject/login.jsp",
   "jsFile": "index.js",
   "requires": {
+    "todo_list": "../todo_list/index.json",
     "index_itownet": "../index_itownet/index.json"
   },
-  "chineseName": "登录",
+  "chineseName": "login",
   "description": "",
   "controls": {
-    "control0_0A99GA": {
+    "control7_Ni8QgM": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -32,115 +33,46 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control0_0A99GA"
+        "onGetData": "getData_control7_Ni8QgM"
       },
       "intendedRole": "custom",
       "roles": "element,link,custom",
       "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control1_1ZvGs4": {
-      "location": {
-        "data": {
-          "tagName": "A"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "button/text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "登 录"
-              ],
-              "visText": [
-                "登 录"
-              ]
-            }
-          },
-          {
-            "id": "text",
-            "prob": 3,
-            "value": {
-              "text": [
-                "登 录"
-              ],
-              "visText": [
-                "登 录"
-              ]
-            }
-          },
-          {
-            "id": "a/@href",
-            "prob": 1,
-            "value": {
-              "funcName": "void"
-            }
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.lg-box DIV.enter.login-ft A.purchaser"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/A[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "intendedRole": "button",
-      "roles": "element,button,link",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "button"
+      "frameXPath": ""
     }
   },
   "contexts": {
-    "context0_k56nRU": {
+    "context0_RfJIQw": {
       "controls": [
-        "control0_0A99GA",
-        "control1_1ZvGs4"
+        "control7_Ni8QgM"
       ],
       "anchors": [],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow0_aN7Mdx": {
+    "flow0_y2a0Sf": {
       "toContexts": [
         {
-          "toContextId": "context0_k56nRU"
+          "toContextId": "context0_RfJIQw"
+        },
+        {
+          "toContextId": "context3_C8GZy1",
+          "toModelId": "todo_list"
         }
       ]
     },
-    "flow1_0CU3cN": {
-      "fromContextId": "context0_k56nRU",
+    "flow2_7RTB7C": {
+      "fromContextId": "context0_RfJIQw",
       "fromAction": "doAction",
-      "fromControlId": "control0_0A99GA",
+      "fromControlId": "control7_Ni8QgM",
       "toContexts": [
         {
-          "toContextId": "context0_k56nRU"
-        }
-      ]
-    },
-    "flow2_7NTbJc": {
-      "fromContextId": "context0_k56nRU",
-      "fromAction": "click",
-      "fromControlId": "control1_1ZvGs4",
-      "toContexts": [
+          "toContextId": "context0_RfJIQw",
+          "toModelId": "login"
+        },
         {
-          "toContextId": "context0_k56nRU"
+          "toContextId": "context0_RfJIQw"
         },
         {
           "toContextId": "context1_tCLsmq",
@@ -150,32 +82,21 @@
     }
   },
   "pages": {
-    "page0_fO2B4e": {
-      "contextId": "context0_k56nRU",
+    "page0_qN3dDT": {
+      "contextId": "context0_RfJIQw",
       "layout": [
         {
-          "id": "uiControl0_irZDSI",
-          "controlId": "control0_0A99GA",
+          "id": "uiControl7_mp5GF6",
+          "controlId": "control7_Ni8QgM",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl0_irZDSI",
-                "onGetTemplate": "getTemplate_uiControl0_irZDSI"
+                "onDoAction": "doAction_uiControl7_mp5GF6",
+                "onGetTemplate": "getTemplate_uiControl7_mp5GF6"
               }
-            }
-          }
-        },
-        {
-          "id": "uiControl1_PmpBFy",
-          "controlId": "control1_1ZvGs4",
-          "display": {
-            "adapterId": "clickable",
-            "type": "button",
-            "adapter": {
-              "templateType": ""
             }
           }
         }
@@ -185,34 +106,159 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context0_k56nRU": [
-          "用户登录"
+        "context0_RfJIQw": [
+          "用户登录",
+          ""
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context0_k56nRU": [
+        "context0_RfJIQw": [
+          "egs.itownet.cn:9080/mobileProject/login.jsp",
+          "text/html,chromewebdata",
+          "egs.itownet.cn:9080/ecqs_server_web/login.jsp",
           "egs.itownet.cn:9080/ecqs_server_web/"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context0_k56nRU": [
+        "context0_RfJIQw": [
           [
             "_random_number",
             "form",
             "password",
             "randomNumber",
             "userName"
-          ]
+          ],
+          []
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context0_k56nRU": [
+        "context0_RfJIQw": [
+          [
+            "basic-radio",
+            "bd-inner",
+            "easyui-textbox",
+            "enter",
+            "form",
+            "inner-wrap",
+            "left-bg",
+            "lg-box",
+            "lg-label",
+            "lg-poster",
+            "lg-zone",
+            "login-bd",
+            "login-ft",
+            "login-hd",
+            "login-table",
+            "login-table-input",
+            "login-table-text",
+            "purchaser",
+            "right-bg",
+            "table",
+            "textbox",
+            "textbox-f",
+            "textbox-invalid",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "validatebox-invalid",
+            "validatebox-text"
+          ],
+          [
+            "basic-radio",
+            "bd-inner",
+            "easyui-textbox",
+            "enter",
+            "form",
+            "inner-wrap",
+            "left-bg",
+            "lg-box",
+            "lg-label",
+            "lg-poster",
+            "lg-zone",
+            "login-bd",
+            "login-ft",
+            "login-hd",
+            "login-table",
+            "login-table-input",
+            "login-table-text",
+            "messager-body",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "purchaser",
+            "right-bg",
+            "table",
+            "textbox",
+            "textbox-f",
+            "textbox-focused",
+            "textbox-text",
+            "textbox-value",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header"
+          ],
+          [],
+          [
+            "basic-radio",
+            "bd-inner",
+            "easyui-textbox",
+            "enter",
+            "form",
+            "inner-wrap",
+            "left-bg",
+            "lg-box",
+            "lg-label",
+            "lg-poster",
+            "lg-zone",
+            "login-bd",
+            "login-ft",
+            "login-hd",
+            "login-table",
+            "login-table-input",
+            "login-table-text",
+            "messager-body",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "purchaser",
+            "right-bg",
+            "table",
+            "textbox",
+            "textbox-f",
+            "textbox-focused",
+            "textbox-invalid",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "tooltip",
+            "tooltip-arrow",
+            "tooltip-arrow-outer",
+            "tooltip-content",
+            "tooltip-f",
+            "tooltip-left",
+            "validatebox-invalid",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header"
+          ],
           [
             "basic-radio",
             "bd-inner",
@@ -250,7 +296,28 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context0_k56nRU": [
+        "context0_RfJIQw": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/H4",
+            "DIV/FORM/TABLE",
+            "FORM/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/SPAN/INPUT-hidden",
+            "TD/SPAN/INPUT-password",
+            "TD/SPAN/INPUT-text",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-password",
+            "TR/TD/INPUT-text",
+            "TR/TD/SPAN"
+          ],
+          [],
           [
             "-/-/DIV",
             "-/-/SCRIPT",

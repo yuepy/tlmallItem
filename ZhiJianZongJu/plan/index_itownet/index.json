@@ -254,62 +254,6 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control2_rQCTkA": {
-      "location": {
-        "data": {
-          "tagName": "A"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "a/@href",
-            "prob": 1,
-            "ordinal": [
-              13,
-              14
-            ],
-            "value": {
-              "funcName": "void"
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainTabs\"]/DIV[1]/DIV[3]/UL[1]/LI[1]/A[1]",
-              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainTabs\"]//A",
-              "descendant::DIV[@id=\"mainTabs\"]//A"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "UL.tabs LI.tabs-selected.tabs-first.tabs-last A.tabs-inner"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/UL[1]/LI[1]/A[1]"
-          },
-          {
-            "id": "style/color",
-            "value": [
-              14,
-              45,
-              95
-            ]
-          }
-        ]
-      },
-      "intendedRole": "header",
-      "roles": "element,link,header",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "header"
-    },
     "control9_3fUA9K": {
       "location": {
         "data": {
@@ -363,6 +307,268 @@
       "roles": "element",
       "text": "现场抽样",
       "frameXPath": ""
+    },
+    "control2_RH8DRb": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/nonWord",
+            "prob": 1,
+            "disabled": true,
+            "fact": "pf-hd",
+            "value": "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"pf-hd\"]/DIV[1]/DIV[1]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.layout-panel.layout-panel-north DIV.logo.panel-body.panel-body-noheader.layout-body DIV.pf-logo"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control2_RH8DRb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control17_B6kmqX": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]",
+              "descendant::DIV[@id=\"mainMenu\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.layout-panel.layout-panel-west.layout-split-west DIV.panel-body.layout-body.panel-noscroll DIV.easyui-accordion.accordion.accordion-noborder.easyui-fluid"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control17_B6kmqX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control16_CEutKf": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/P[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control16_CEutKf"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control18_rUQaO8": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.datagrid-view DIV.datagrid-view2 DIV.datagrid-body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control18_rUQaO8"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control0_RoUGcz": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "DIV.datagrid-view DIV.datagrid-view2 DIV.datagrid-body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control0_RoUGcz"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control1_4hwJdW": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/P[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control1_4hwJdW"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control19_OqWGTq": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": "DIV.datagrid-view DIV.datagrid-view2 DIV.datagrid-body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control19_OqWGTq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control20_rt0i8l": {
+      "location": {
+        "data": {
+          "tagName": "P"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/P[3]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control20_rt0i8l"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -371,7 +577,14 @@
         "control3_017ukM",
         "control4_Z0FrGU",
         "control7_3qAPSe",
-        "control2_rQCTkA"
+        "control2_RH8DRb",
+        "control17_B6kmqX",
+        "control16_CEutKf",
+        "control18_rUQaO8",
+        "control0_RoUGcz",
+        "control1_4hwJdW",
+        "control19_OqWGTq",
+        "control20_rt0i8l"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -428,12 +641,142 @@
           "toModelId": "sapling_itownet"
         }
       ]
+    },
+    "flow11_p3Ugr3": {
+      "fromContextId": "context1_tCLsmq",
+      "fromAction": "doAction",
+      "fromControlId": "control17_B6kmqX",
+      "toContexts": [
+        {
+          "toContextId": "context1_tCLsmq"
+        }
+      ]
     }
   },
   "pages": {
     "page1_Q8nBF8": {
       "contextId": "context1_tCLsmq",
       "layout": [
+        {
+          "id": "uiControl2_EbTsN1",
+          "controlId": "control2_RH8DRb",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl2_EbTsN1",
+                "onGetTemplate": "getTemplate_uiControl2_EbTsN1"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl12_fFctEC",
+          "controlId": "control17_B6kmqX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl12_fFctEC",
+                "onGetTemplate": "getTemplate_uiControl12_fFctEC"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl7_tMO3px",
+          "controlId": "control16_CEutKf",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl7_tMO3px",
+                "onGetTemplate": "getTemplate_uiControl7_tMO3px"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl13_rPynnw",
+          "controlId": "control18_rUQaO8",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl13_rPynnw",
+                "onGetTemplate": "getTemplate_uiControl13_rPynnw"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl1_qi2nLe",
+          "controlId": "control1_4hwJdW",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl1_qi2nLe",
+                "onGetTemplate": "getTemplate_uiControl1_qi2nLe"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl0_mCp0IF",
+          "controlId": "control0_RoUGcz",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl0_mCp0IF",
+                "onGetTemplate": "getTemplate_uiControl0_mCp0IF"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl15_CTvikU",
+          "controlId": "control20_rt0i8l",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl15_CTvikU",
+                "onGetTemplate": "getTemplate_uiControl15_CTvikU"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl14_NFDcys",
+          "controlId": "control19_OqWGTq",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl14_NFDcys",
+                "onGetTemplate": "getTemplate_uiControl14_NFDcys"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl6_RrcIOM",
           "controlId": "control7_3qAPSe",
@@ -478,66 +821,6 @@
               }
             }
           }
-        },
-        {
-          "id": "uiControl7_d2hauE",
-          "display": {
-            "type": "sticky",
-            "adapterId": "sticky",
-            "position": "top",
-            "adapter": {
-              "templateType": ""
-            }
-          },
-          "layout": [
-            {
-              "id": "uiControl7_d2hauEbody",
-              "display": {
-                "type": "stickyBody",
-                "adapterId": "stickyBody",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": [
-                {
-                  "id": "uiControl2_8OU8mw",
-                  "controlId": "control2_rQCTkA",
-                  "display": {
-                    "adapterId": "header",
-                    "type": "header",
-                    "adapter": {
-                      "templateType": ""
-                    }
-                  },
-                  "layout": [
-                    {
-                      "id": "uiControl2_8OU8mwheaderLeft",
-                      "display": {
-                        "type": "headerLeft",
-                        "adapterId": "headerLeft",
-                        "adapter": {
-                          "templateType": ""
-                        }
-                      },
-                      "layout": []
-                    },
-                    {
-                      "id": "uiControl2_8OU8mwheaderRight",
-                      "display": {
-                        "type": "headerRight",
-                        "adapterId": "headerRight",
-                        "adapter": {
-                          "templateType": ""
-                        }
-                      },
-                      "layout": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -1201,6 +1484,198 @@
             "tree-node",
             "tree-node-last",
             "tree-node-selected",
+            "tree-root-first",
+            "tree-root-one",
+            "tree-title"
+          ],
+          [
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-expand",
+            "accordion-header",
+            "accordion-header-selected",
+            "accordion-noborder",
+            "disabled",
+            "easyui-accordion",
+            "easyui-fluid",
+            "easyui-menu",
+            "easyui-menubutton",
+            "easyui-tree",
+            "ext-icon-computer_key",
+            "ext-icon-door_out",
+            "ext-icon-picture",
+            "ext-icon-rainbow",
+            "ext-icon-user",
+            "ext-icon-user_edit",
+            "ext-icon-world",
+            "iconfont",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout-body",
+            "layout-button-left",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "logo",
+            "m-btn",
+            "m-btn-downarrow",
+            "m-btn-line",
+            "m-btn-small",
+            "menu",
+            "menu-icon",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-collapse",
+            "panel-tool-expand",
+            "pf-logo",
+            "pf-nav",
+            "pf-nav-next",
+            "pf-nav-prev",
+            "pf-nav-wrap",
+            "pf-nav-ww",
+            "tabs",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-header-noborder",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-panels-noborder",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "tree",
+            "tree-collapsed",
+            "tree-file",
+            "tree-folder",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-joinbottom",
+            "tree-lines",
+            "tree-node",
+            "tree-node-last",
+            "tree-node-selected",
+            "tree-root-first",
+            "tree-root-one",
+            "tree-title"
+          ],
+          [
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-expand",
+            "accordion-header",
+            "accordion-noborder",
+            "disabled",
+            "easyui-accordion",
+            "easyui-fluid",
+            "easyui-menu",
+            "easyui-menubutton",
+            "easyui-tree",
+            "ext-icon-computer_key",
+            "ext-icon-door_out",
+            "ext-icon-picture",
+            "ext-icon-rainbow",
+            "ext-icon-user",
+            "ext-icon-user_edit",
+            "ext-icon-world",
+            "iconfont",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout-body",
+            "layout-button-left",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "logo",
+            "m-btn",
+            "m-btn-downarrow",
+            "m-btn-line",
+            "m-btn-small",
+            "menu",
+            "menu-icon",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-collapse",
+            "panel-tool-expand",
+            "pf-logo",
+            "pf-nav",
+            "pf-nav-next",
+            "pf-nav-prev",
+            "pf-nav-wrap",
+            "pf-nav-ww",
+            "tabs",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-header-noborder",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-panels-noborder",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "tree",
+            "tree-collapsed",
+            "tree-file",
+            "tree-folder",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-joinbottom",
+            "tree-lines",
+            "tree-node",
+            "tree-node-last",
             "tree-root-first",
             "tree-root-one",
             "tree-title"

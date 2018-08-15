@@ -15,8 +15,158 @@ li{
     border: 0;
   }
 }
+//登录页
+div[data-ysp-modelid = "login"] {
+  .ysp_whole{
+    width:100%;
+    height:100vh;
+    background: url(./img/login.png) no-repeat 0 -10px;
+    background-size:100% 100%;
+    display:flex;
+    align-items:center;
+    .ysp_body{
+      width: 100%;
+      .ysp_header{
+        width: 90%;
+        margin-left: 20px;
+        label{
+          font-size: 16px;
+          border: 1px solid rgb(239,239,239);
+          border-radius: 5px;
+          background: #fff;
+          span{
+            width: 20%;
+            color: rgb(0,89,149);
+            float: left;
+            margin-top: 10px;
+          }
+          .username,.password{
+            width: 75%;
+            height: 20px;
+            margin: 10px 0;
+            border: none;
+          }
+          .yz{
+            width: 55%;
+            float: left;
+            height: 25px;
+            margin: 10px 0;
+            border: none;
+          }
+          img{
+            width: 25%;
+            padding-top: 10px;
+          }
+        }
+      }
+      .ysp_footer{
+        margin-top: 40px;
+        .btn{
+          width: 90%;
+          margin-left: 20px;
+          color: #fff;
+          background: rgb(0,75,160);
+          border-radius: 5px;
+          border: none;
+        }
+      }
+    }
+  }
+}
 //首页按钮公用样式结束
+//首页样式
+[data-ysp-modelid="index_itownet"]{
+  background-color: #f2f2f2;
+  //顶部应用
+  .titleapps{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #fff;
+    >div{
+      width: 33.3%;
+      text-align: center;
+      font-size: 14p;
+      font-weight: bold;
+      >div:nth-child(1){
+        width: 50px;
+        height: 50px;
+        background-image: url(./img/jiandu.png);
+        background-size: 50px 50px;
+        margin: 0 auto 5px auto;
+      }
+    }
+    >div:nth-child(2){
+      >div:nth-child(1){
+        background-image: url(./img/jiliang.png);
+      }
+    }
+    >div:nth-child(3){
+      >div:nth-child(1){
+        background-image: url(./img/shuju.png);
+      }
+    }
+  }
+  //待阅信息
+  [data-componentsid="uiControl13_rPynnw"]{padding: 0;}
+  .datatitle{
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    padding-left: 48px;
+    background-color: #fff;
+    font-size: 15px;
+    color: #313131;
+    font-weight: bold;
+    background-image: url(./img/daiyue.png);
+    background-size: 16px 16px;
+    background-position: 20px 10px;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #ccc;
+  }
+  //通知公告
+  [data-componentsid="uiControl1_qi2nLe"]{
+    .datatitle{
+    	background-image: url(./img/gongao.png);
+    }
+  }
+  [data-componentsid="uiControl0_mCp0IF"]{padding: 0;}
+  //待办任务
+  [data-componentsid="uiControl15_CTvikU"]{
+    .datatitle{
+      background-image: url(./img/daiban.png);
+    }
+  }
+  .Padingtable{
+    background-color: #fff;
+    >div{
+      padding-left: 20px;
+      div{
+        height: 46px;
+        color: #333333;
+        font-size: 14px;
+        line-height: 46px;
+        border-bottom: 1px dashed #ccc;
+      }
+      >div:last-child{
+        border: 0;
+      }
+    }
+    >div:nth-child(3){
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      font-size: 12px;
+      color: #999999;
+    }
+  }
+}
 
+
+//首页样式结束
 //计量强检tab页
 [data-ysp-modelid="supervise_index"]{
   background-color: #f2f2f2;
