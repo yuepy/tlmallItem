@@ -1,0 +1,173 @@
+{
+  "version": "0.1",
+  "id": "saleReadOnline",
+  "targetURL": "https://img.tlmall.com/authorizationLeter/786337-1534126469369.jpg",
+  "jsFile": "index.js",
+  "chineseName": "销售订单在线预览",
+  "description": "",
+  "controls": {
+    "control203_6aKiRb": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "img/@src",
+            "prob": 1,
+            "value": {
+              "pathname": "/authorizationLeter/786337-1534126469369.jpg"
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control203_6aKiRb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control204_rWSDFI": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "img/@src",
+            "prob": 1,
+            "value": {
+              "pathname": "/authorizationLeter/786337-1534126469369.jpg"
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control204_rWSDFI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context40_wwH4of": {
+      "controls": [
+        "control203_6aKiRb",
+        "control204_rWSDFI"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow153_BpKRpu": {
+      "toContexts": [
+        {
+          "toContextId": "context40_wwH4of"
+        }
+      ]
+    },
+    "flow154_rzZh1b": {
+      "fromContextId": "context40_wwH4of",
+      "fromAction": "doAction",
+      "fromControlId": "control203_6aKiRb",
+      "toContexts": [
+        {
+          "toContextId": "context40_wwH4of"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page40_tr0l9e": {
+      "contextId": "context40_wwH4of",
+      "layout": [
+        {
+          "id": "uiControl196_tWZGfd",
+          "controlId": "control203_6aKiRb",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl196_tWZGfd",
+                "onGetTemplate": "getTemplate_uiControl196_tWZGfd"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl197_s8OmwO",
+          "controlId": "control204_rWSDFI",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl197_s8OmwO",
+                "onGetTemplate": "getTemplate_uiControl197_s8OmwO"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context40_wwH4of": [
+          "786337-1534126469369.jpg (2550×3507)"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context40_wwH4of": [
+          "img.tlmall.com/authorizationLeter/786337-1534126469369.jpg"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context40_wwH4of": [
+          []
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context40_wwH4of": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context40_wwH4of": [
+          [
+            "-/-/IMG"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -45,7 +45,7 @@
         // @页面标题：目前所有浏览器都不支持
         // @可选的url：浏览器不会检查url是否存在，只改变url，url必须同域，不能跨域
         var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
-          btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self");
+          btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "http://192.168.128.13:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=self");
         }
       }
     },
