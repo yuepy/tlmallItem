@@ -166,10 +166,8 @@
 			if(aWin.location.href == 'http://egs.itownet.cn:9080/ecqs_server_web/'){
         doc.querySelector('#randomNumber').setAttribute('src','imageGenerator?'+Math.random());
       }
-      if(aWin.location.href == 'http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp'){
-        doc.querySelector('#mainMenu').querySelectorAll('div.panel')[0].querySelector('div.panel-tool').click();
-      }
       //关闭页面中生成的所有的iframe
+      // debugger
       // if(aWin.location.href == 'http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp'){
       //   var closes = doc.querySelectorAll('.tabs-close');
       //   for(var i=0;i<closes.length;i++){

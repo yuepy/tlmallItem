@@ -40,11 +40,21 @@
       "demo": [
         "http://egs.itownet.cn:9080/ecqs_server_web/"
       ]
+    },
+    {
+      "title": "index_itownet",
+      "url": "adapter://itownet_Applocation/plan/index_itownet/index.json",
+      "matcher": [
+        "^http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/system\\/main\\.jsp"
+      ],
+      "demo": [
+        "http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp"
+      ]
     }
   ],
   "name": "质检总局B版",
   "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/",
   "scope": "itownet_Applocation",
   "start_url": "enterplorer://itownet_Applocation/local/index.html",
-  "update_time": 1534330519624
+  "update_time": 1534331805339
 }
