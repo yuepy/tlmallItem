@@ -307,44 +307,6 @@
       "text": "现场抽样",
       "frameXPath": ""
     },
-    "control2_RH8DRb": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/nonWord",
-            "prob": 1,
-            "disabled": true,
-            "fact": "pf-hd",
-            "value": "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"pf-hd\"]/DIV[1]/DIV[1]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.panel.layout-panel.layout-panel-north DIV.logo.panel-body.panel-body-noheader.layout-body DIV.pf-logo"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control2_RH8DRb"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control17_B6kmqX": {
       "location": {
         "data": {
@@ -592,7 +554,6 @@
         "control3_017ukM",
         "control4_Z0FrGU",
         "control7_3qAPSe",
-        "control2_RH8DRb",
         "control17_B6kmqX",
         "control16_CEutKf",
         "control18_rUQaO8",
@@ -668,21 +629,6 @@
     "page1_Q8nBF8": {
       "contextId": "context1_tCLsmq",
       "layout": [
-        {
-          "id": "uiControl2_EbTsN1",
-          "controlId": "control2_RH8DRb",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl2_EbTsN1",
-                "onGetTemplate": "getTemplate_uiControl2_EbTsN1"
-              }
-            }
-          }
-        },
         {
           "id": "uiControl12_fFctEC",
           "controlId": "control17_B6kmqX",
@@ -1684,6 +1630,106 @@
             "tree-icon",
             "tree-indent",
             "tree-joinbottom",
+            "tree-lines",
+            "tree-node",
+            "tree-node-last",
+            "tree-root-first",
+            "tree-root-one",
+            "tree-title"
+          ],
+          [
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-expand",
+            "accordion-header",
+            "accordion-header-selected",
+            "accordion-noborder",
+            "disabled",
+            "easyui-accordion",
+            "easyui-fluid",
+            "easyui-menu",
+            "easyui-menubutton",
+            "easyui-tree",
+            "ext-icon-computer_key",
+            "ext-icon-door_out",
+            "ext-icon-picture",
+            "ext-icon-rainbow",
+            "ext-icon-user",
+            "ext-icon-user_edit",
+            "ext-icon-world",
+            "iconfont",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout-body",
+            "layout-button-left",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "logo",
+            "m-btn",
+            "m-btn-downarrow",
+            "m-btn-line",
+            "m-btn-small",
+            "menu",
+            "menu-icon",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-collapse",
+            "panel-tool-expand",
+            "pf-logo",
+            "pf-nav",
+            "pf-nav-next",
+            "pf-nav-prev",
+            "pf-nav-wrap",
+            "pf-nav-ww",
+            "tabs",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-header-noborder",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-panels-noborder",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "tree",
+            "tree-collapsed",
+            "tree-expanded",
+            "tree-file",
+            "tree-folder",
+            "tree-folder-open",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-join",
+            "tree-joinbottom",
+            "tree-line",
             "tree-lines",
             "tree-node",
             "tree-node-last",
