@@ -40,8 +40,12 @@
     },
     doAction_uiControl12_fFctEC: function (data, elem) {
       var type = data.eventType,
-          data = data.customData;if (type == 'click') {
-        elem.querySelectorAll('div.panel')[+data.index].querySelector('div').click();
+          index = +data.customData.index;if (type == 'click') {
+        if (2 == index) {
+          ysp.appMain.openWindow("http://egs.itownet.cn:9080/dataApEsp/homepage/homepage.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcDEzIn0.OlDYfwa-4T8hzsplTfW03ibgO6U26Vt-VkP2kZmoc5lHhIAF-je2qtpVKUEFDK8uYLqoyrvcu64zbbFghHALUHIrJIfLQ03V_zwsX2B14f8e-uxepnRDZRwtCk6lx4CNg22r_rVRgyIbsoO2NxpH3E0qNO41xAb4hErqAIzbnnw&_ysp_forcepc=1");
+        } else {
+          elem.querySelectorAll('div.panel')[index].querySelector('div').click();
+        }
       }
     },
     getTemplate_uiControl12_fFctEC: function () {
