@@ -368,10 +368,10 @@
                     if(aWin.location.href.indexOf('app/appMyTask.jsp') != -1){
                        topWindow.EAPI.postMessageToNative('isPending', null);
                     } 
-                    if (aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp" || aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#") {
-                        topWindow.EAPI.postMessageToNative('showDetailBPMCard', null);
-                        sessionStorage.setItem('showDetailBPMCard', true);
-                    }
+                    // if (aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp" || aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#") {
+                    //     topWindow.EAPI.postMessageToNative('showDetailBPMCard', null);
+                    //     sessionStorage.setItem('showDetailBPMCard', true);
+                    // }
                     if (aWin.location.href.indexOf('index.html') !== -1) {
                         var actionEvent = '{"target":"null","data":"closePreLoading"}';
                         //关闭主webview的loading状态
@@ -394,10 +394,10 @@
                           ysp.customHelper.isPending = 'Processed';
                         }
                     }
-                    if (aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp" || aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#") {
-                        topWindow.AndriodCardList = topWindow.yspCheckIn.showDetailBPMCard();
-                        topWindow.AndriodCardList = JSON.parse(topWindow.AndriodCardList);
-                    }
+                    // if (aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp" || aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#") {
+                    //     topWindow.AndriodCardList = topWindow.yspCheckIn.showDetailBPMCard();
+                    //     topWindow.AndriodCardList = JSON.parse(topWindow.AndriodCardList);
+                    // }
                 }
                 aWin.createIframe = function createIframe(name, targetUrl, mount, data) {
                         // if (parent.EAPI.isIOS() && targetUrl.indexOf("192.168.1.174") != -1) {

@@ -307,6 +307,16 @@
       "demo": [
         "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548"
       ]
+    },
+    {
+      "title": "saleReadOnline",
+      "url": "adapter://putianBPM1/plan/saleReadOnline/index.json",
+      "matcher": [
+        "^https:\\/\\/img\\.tlmall\\.com\\/authorizationLeter.*"
+      ],
+      "demo": [
+        "https://img.tlmall.com/authorizationLeter/786337-1534126469369.jpg"
+      ]
     }
   ],
   "name": "普天",
@@ -314,5 +324,5 @@
   "scope": "putianBPM1",
   "start_url": "enterplorer://putianBPM1/local/index.html",
   "fixed_version": 1,
-  "update_time": 1534296704771
+  "update_time": 1534337113630
 }

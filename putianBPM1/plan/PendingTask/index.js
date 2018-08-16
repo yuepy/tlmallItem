@@ -22,13 +22,13 @@
         //     }
         //     window.EAPI.back();
         //   }, 50);
-        var newUrl = ysp.appMain.getActiveWindow();newUrl.location.href = "http://192.168.128.13:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"; //新平台方法
+        var newUrl = ysp.appMain.getActiveWindow();newUrl.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"; //新平台方法
         // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
         //   ysp.EAPI.closeWindow();
         // } else {
 
         //   var newUrl = ysp.appMain.getActiveWindow();
-        //   newUrl.location.href = "http://192.168.128.13:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp";
+        //   newUrl.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp";
         // }
       }
     },
