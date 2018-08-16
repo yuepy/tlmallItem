@@ -48,19 +48,16 @@
     },
     doAction_uiControl12_fFctEC: function (data, elem) {
       var type = data.eventType,
-          index = +data.customData.index;
-      if (type == 'click') {
-        ysp.appMain.showLoading();
-        setTimeout(function () {
+          data = data.customData;if (type == 'click') {
+        ysp.appMain.showLoading();setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 2000);
-        if (2 == index) {
+        }, 2000);if (2 == +data.index) {
           ysp.appMain.openWindow("http://egs.itownet.cn:9080/dataApEsp/homepage/homepage.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcDEzIn0.OlDYfwa-4T8hzsplTfW03ibgO6U26Vt-VkP2kZmoc5lHhIAF-je2qtpVKUEFDK8uYLqoyrvcu64zbbFghHALUHIrJIfLQ03V_zwsX2B14f8e-uxepnRDZRwtCk6lx4CNg22r_rVRgyIbsoO2NxpH3E0qNO41xAb4hErqAIzbnnw&_ysp_forcepc=1");
         } else {
           elem.querySelectorAll('div.panel')[+data.index].querySelector('div').click();
         }
       }if (type == 'talJLclick') {
-        debugger;elem.querySelectorAll('.panel')[1].querySelector('ul#nodeItemnewApp-12').querySelector("#" + data.id).querySelector('span').click();
+        elem.querySelectorAll('.panel')[1].querySelector('ul#nodeItemnewApp-12').querySelector("#" + data.id).querySelector('span').click();
       }if (type == 'JLclick') {
         elem.querySelectorAll('.panel')[1].querySelector('div').click();
       }
