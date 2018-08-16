@@ -1,0 +1,170 @@
+{
+  "version": "0.1",
+  "id": "deil_Dy",
+  "targetURL": "http://egs.itownet.cn:9080/ecqs_server_web/sysmanage/view_message.jsp?oid=46B29CACC0A838017AF8F062E9243B50&roid=46B69AD2C0A838017AF8F06284F2D744",
+  "jsFile": "index.js",
+  "chineseName": "待阅消息详情页",
+  "description": "",
+  "controls": {
+    "control1_6CTSeZ": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control1_6CTSeZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control2_pX2Dki": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"title\"]/H1[1]",
+              "descendant::DIV[@id=\"title\"]//H1"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/H1[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control2_pX2Dki"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context4_Mn7BMT": {
+      "controls": [
+        "control1_6CTSeZ",
+        "control2_pX2Dki"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow10_BL2WRB": {
+      "toContexts": [
+        {
+          "toContextId": "context4_Mn7BMT"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page4_KwqsNy": {
+      "contextId": "context4_Mn7BMT",
+      "layout": [
+        {
+          "id": "uiControl2_7w0M92",
+          "controlId": "control2_pX2Dki",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl2_7w0M92",
+                "onGetTemplate": "getTemplate_uiControl2_7w0M92"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl1_VoxhiB",
+          "controlId": "control1_6CTSeZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl1_VoxhiB",
+                "onGetTemplate": "getTemplate_uiControl1_VoxhiB"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context4_Mn7BMT": [
+          "首页"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context4_Mn7BMT": [
+          "egs.itownet.cn:9080/ecqs_server_web/sysmanage/view_message.jsp?oid=46B29CACC0A838017AF8F062E9243B50&roid=46B69AD2C0A838017AF8F06284F2D744"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context4_Mn7BMT": [
+          [
+            "content",
+            "create_time",
+            "title"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context4_Mn7BMT": [
+          []
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context4_Mn7BMT": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/H1",
+            "-/DIV/P"
+          ]
+        ]
+      }
+    }
+  }
+}
