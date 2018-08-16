@@ -206,19 +206,33 @@ div[data-ysp-modelid = "login"] {
     background-position: 20px 10px;
     background-repeat: no-repeat;
     border-bottom: 1px solid #ccc;
+    >span{
+      color: #999;
+      float: right;
+      padding-right: 10px;
+      font-weight: normal !important;
+    }
   }
   //通知公告
-  [data-componentsid="uiControl1_qi2nLe"]{
+  [data-componentsid="uiControl0_mCp0IF"]{
     .datatitle{
     	background-image: url(./img/gongao.png);
     }
   }
   [data-componentsid="uiControl0_mCp0IF"]{padding: 0;}
   //待办任务
-  [data-componentsid="uiControl15_CTvikU"]{
+  [data-componentsid="uiControl14_NFDcys"]{
     .datatitle{
       background-image: url(./img/daiban.png);
     }
+  }
+  //待阅、待办、公告等更多
+  .ysp-ZJ-datatitle{
+    position: fixed;
+    background: #fff;
+    min-height: 100vh;
+    width: 100%;
+    top: 0;
   }
   [data-componentsid="uiControl14_NFDcys"]{
     padding: 0;
@@ -229,7 +243,8 @@ div[data-ysp-modelid = "login"] {
         padding-left: 20px;
         >div{
           font-size: 14px;
-          border-bottom: 1px dashed #ccc;
+          //border-bottom: 1px dashed #ccc;
+          border-bottom: 1px solid #ccc;
           div:nth-child(2){
           	margin: 5px 0;
             display: flex;
@@ -269,7 +284,8 @@ div[data-ysp-modelid = "login"] {
         color: #333333;
         font-size: 14px;
         line-height: 46px;
-        border-bottom: 1px dashed #ccc;
+        //border-bottom: 1px dashed #ccc;
+        border-bottom: 1px solid #ccc;
       }
       >div:last-child{
         border: 0;

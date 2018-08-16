@@ -346,38 +346,6 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control16_CEutKf": {
-      "location": {
-        "data": {
-          "tagName": "P"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/P[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control16_CEutKf"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control18_rUQaO8": {
       "location": {
         "data": {
@@ -448,38 +416,6 @@
       "frameXPath": "//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
-    "control1_4hwJdW": {
-      "location": {
-        "data": {
-          "tagName": "P"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/P[2]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control1_4hwJdW"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control19_OqWGTq": {
       "location": {
         "data": {
@@ -514,38 +450,6 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>",
       "componentType": "custom"
-    },
-    "control20_rt0i8l": {
-      "location": {
-        "data": {
-          "tagName": "P"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/P[3]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control20_rt0i8l"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
     }
   },
   "contexts": {
@@ -555,12 +459,9 @@
         "control4_Z0FrGU",
         "control7_3qAPSe",
         "control17_B6kmqX",
-        "control16_CEutKf",
         "control18_rUQaO8",
         "control0_RoUGcz",
-        "control1_4hwJdW",
-        "control19_OqWGTq",
-        "control20_rt0i8l"
+        "control19_OqWGTq"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -645,16 +546,16 @@
           }
         },
         {
-          "id": "uiControl7_tMO3px",
-          "controlId": "control16_CEutKf",
+          "id": "uiControl14_NFDcys",
+          "controlId": "control19_OqWGTq",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl7_tMO3px",
-                "onGetTemplate": "getTemplate_uiControl7_tMO3px"
+                "onDoAction": "doAction_uiControl14_NFDcys",
+                "onGetTemplate": "getTemplate_uiControl14_NFDcys"
               }
             }
           }
@@ -675,21 +576,6 @@
           }
         },
         {
-          "id": "uiControl1_qi2nLe",
-          "controlId": "control1_4hwJdW",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl1_qi2nLe",
-                "onGetTemplate": "getTemplate_uiControl1_qi2nLe"
-              }
-            }
-          }
-        },
-        {
           "id": "uiControl0_mCp0IF",
           "controlId": "control0_RoUGcz",
           "display": {
@@ -700,36 +586,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl0_mCp0IF",
                 "onGetTemplate": "getTemplate_uiControl0_mCp0IF"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl15_CTvikU",
-          "controlId": "control20_rt0i8l",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl15_CTvikU",
-                "onGetTemplate": "getTemplate_uiControl15_CTvikU"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl14_NFDcys",
-          "controlId": "control19_OqWGTq",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl14_NFDcys",
-                "onGetTemplate": "getTemplate_uiControl14_NFDcys"
               }
             }
           }
@@ -1733,6 +1589,210 @@
             "tree-lines",
             "tree-node",
             "tree-node-last",
+            "tree-root-first",
+            "tree-root-one",
+            "tree-title"
+          ],
+          [
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-expand",
+            "accordion-header",
+            "accordion-header-selected",
+            "accordion-noborder",
+            "disabled",
+            "easyui-accordion",
+            "easyui-fluid",
+            "easyui-menu",
+            "easyui-menubutton",
+            "easyui-tree",
+            "ext-icon-computer_key",
+            "ext-icon-door_out",
+            "ext-icon-picture",
+            "ext-icon-rainbow",
+            "ext-icon-user",
+            "ext-icon-user_edit",
+            "ext-icon-world",
+            "iconfont",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout-body",
+            "layout-button-left",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "logo",
+            "m-btn",
+            "m-btn-downarrow",
+            "m-btn-line",
+            "m-btn-small",
+            "menu",
+            "menu-icon",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-collapse",
+            "panel-tool-expand",
+            "pf-logo",
+            "pf-nav",
+            "pf-nav-next",
+            "pf-nav-prev",
+            "pf-nav-wrap",
+            "pf-nav-ww",
+            "tabs",
+            "tabs-closable",
+            "tabs-close",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-header-noborder",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-panels-noborder",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "tree",
+            "tree-collapsed",
+            "tree-expanded",
+            "tree-file",
+            "tree-folder",
+            "tree-folder-open",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-join",
+            "tree-joinbottom",
+            "tree-line",
+            "tree-lines",
+            "tree-node",
+            "tree-node-last",
+            "tree-node-selected",
+            "tree-root-first",
+            "tree-root-one",
+            "tree-title"
+          ],
+          [
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-expand",
+            "accordion-header",
+            "accordion-header-selected",
+            "accordion-noborder",
+            "disabled",
+            "easyui-accordion",
+            "easyui-fluid",
+            "easyui-menu",
+            "easyui-menubutton",
+            "easyui-tree",
+            "ext-icon-computer_key",
+            "ext-icon-door_out",
+            "ext-icon-picture",
+            "ext-icon-rainbow",
+            "ext-icon-user",
+            "ext-icon-user_edit",
+            "ext-icon-world",
+            "iconfont",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout-body",
+            "layout-button-left",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "layout-split-west",
+            "logo",
+            "m-btn",
+            "m-btn-downarrow",
+            "m-btn-line",
+            "m-btn-small",
+            "menu",
+            "menu-icon",
+            "menu-item",
+            "menu-line",
+            "menu-sep",
+            "menu-text",
+            "menu-top",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-collapse",
+            "panel-tool-expand",
+            "pf-logo",
+            "pf-nav",
+            "pf-nav-next",
+            "pf-nav-prev",
+            "pf-nav-wrap",
+            "pf-nav-ww",
+            "tabs",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-header-noborder",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-panels-noborder",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "tree",
+            "tree-collapsed",
+            "tree-expanded",
+            "tree-file",
+            "tree-folder",
+            "tree-folder-open",
+            "tree-hit",
+            "tree-icon",
+            "tree-indent",
+            "tree-join",
+            "tree-joinbottom",
+            "tree-line",
+            "tree-lines",
+            "tree-node",
+            "tree-node-last",
+            "tree-node-selected",
             "tree-root-first",
             "tree-root-one",
             "tree-title"
