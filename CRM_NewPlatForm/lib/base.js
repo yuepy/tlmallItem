@@ -74,11 +74,12 @@
   topWin.AndroidBack = function(){
     var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
     var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
+    var name = ysp.customHelper.AndroidName; //客户门店返回名称标识
+    var currentElem = ysp.customHelper.AndroidDocument; // 客户门店返回主元素
     if(ysp.customHelper.AndroidBackFlag == 'default'){
       ysp.customHelper.back();
     }
     if(ysp.customHelper.AndroidBackFlag == 'PageClose'){
-      ysp.customHelper.AndroidBackFlag == 'default';
       if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
         ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
@@ -88,18 +89,26 @@
       }
     }
     if(ysp.customHelper.AndroidBackFlag == 'destination' && url != ''){
-      ysp.customHelper.AndroidBackFlag == 'default';
       ysp.customHelper.BackReload(url,model);
     }
     if(ysp.customHelper.AndroidBackFlag == 'BigData'){
-      ysp.customHelper.AndroidBackFlag == 'default';
       ysp.runtime.Browser.activeBrowser.contentWindow.histroy.back();
     }
     if(ysp.customHelper.AndroidBackFlag == 'AndroidHistory'){
-      ysp.customHelper.AndroidBackFlag == 'default';
       ysp.runtime.Browser.activeBrowser.contentWindow.history.go(-1);
     }
+    if(ysp.customHelper.AndroidBackFlag == 'Client&Store'){
+      debugger;
+      ysp.customHelper.toPlan(currentElem, name, model)
+    }
+    //恢复默认值
+    ysp.customHelper.AndroidBackFlag == 'default';
+    ysp.customHelper.AndroidBackURL = '';
+    ysp.customHelper.AndroidBackModel = '';
+    ysp.customHelper.AndroidDocument = ''
+    ysp.customHelper.AndroidName = '';
     //default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面 BigData:为大数据钻取返回 . AndroidHistory:针对与页面后退一步返回
+    //Client&Store : 针对客户||门店返回方案
   }
   var forEach = Array.prototype.forEach;
   var currentModelID = ""; //当前动作
@@ -838,10 +847,11 @@
       currentWin.location.href = url;
       ysp.runtime.Model.setForceMatchModels([model]);
     }
-    ysp.customHelper.AndroidBackURL = '';
-    ysp.customHelper.AndroidBackModel = '';
+   
   }
   utils.extend(ysp.customHelper, {
+    AndroidDocument:'',//安卓物理返回键客户门店返回元素
+    AndroidName:'',//安卓物理返回键客户门店返回名称
     AndroidBackURL:'',//安卓物理返回键目标地址
     AndroidBackModel:'',//安卓物理返回键目标模板
     AndroidBackFlag:'default',//安卓物理返回键返回方法 条件 标识 default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面
