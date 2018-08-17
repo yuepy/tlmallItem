@@ -6,7 +6,8 @@
   "requires": {
     "sapling_itownet": "../sapling_itownet/index.json",
     "displ_itownet": "../displ_itownet/index.json",
-    "deil_Dy": "../deil_Dy/index.json"
+    "deil_Dy": "../deil_Dy/index.json",
+    "dis_itownet_pl": "../dis_itownet_pl/index.json"
   },
   "chineseName": "质检B版首页",
   "description": "",
@@ -343,6 +344,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
@@ -523,6 +525,14 @@
       "toContexts": [
         {
           "toContextId": "context1_tCLsmq"
+        },
+        {
+          "toContextId": "context2_w6GRea",
+          "toModelId": "sapling_itownet"
+        },
+        {
+          "toContextId": "context6_zKDTmn",
+          "toModelId": "dis_itownet_pl"
         }
       ]
     },
