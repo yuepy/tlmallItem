@@ -6,7 +6,10 @@
   "description": "",
   "options": {
     "resource_intercept": {
-      "type": [],
+      "type": [
+        "image",
+        "css"
+      ],
       "ignore": []
     },
     "resource_inject": [],
@@ -570,12 +573,22 @@
       "demo": [
         "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtmeView.html"
       ]
+    },
+    {
+      "title": "questionnaireFeedbackSum",
+      "url": "adapter://CRM_NewPlatForm/plan/questionnaireFeedbackSum/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/page\\/questionnaire\\/questionStatistics\\.html\\?quId.*"
+      ],
+      "demo": [
+        "http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionStatistics.html?quId=db7950cd0e124a83aa0d77b65a753b71&quName=13123"
+      ]
     }
   ],
   "name": "普天CRM_新平台",
   "default_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
   "scope": "CRM_NewPlatForm",
   "start_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
-  "update_time": 1534148054560,
+  "update_time": 1534382783020,
   "runtime_env": "1webview"
 }

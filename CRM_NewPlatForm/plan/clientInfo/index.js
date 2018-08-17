@@ -2,10 +2,9 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control9_4QwNn7: function getData_control9_4QwNn7(elem) {},
-    doAction_uiControl9_OwGTna: function doAction_uiControl9_OwGTna(data, elem) {
+    getData_control9_4QwNn7: function (elem) {},
+    doAction_uiControl9_OwGTna: function (data, elem) {
       if (data.eventType === 'back') {
-        //ysp.customHelper.back(); 
         ysp.appMain.getActiveWindow().close();
       }
     },

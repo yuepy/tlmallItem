@@ -71,10 +71,16 @@
     },
     doAction_uiControl37_8GUy0l: function (data, elem) {
       if (data.eventType === 'back') {
-        var a = elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('a');var index;for (var i = 0; i < a.length; i++) {
-          index = +i;
-        }if (index > 2) {
-          elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('a')[index - 1].click();ysp.appMain.showLoading();setTimeout(function () {
+        var a = elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('a');var index = 0;for (var i = 0; i < a.length; i++) {
+          if (a[i].onclick != null) {
+            index++;
+          }
+        }if (index > 1) {
+          index -= 1;var aL = elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('a').length;if (aL - index > 1) {
+            elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('a')[aL - 2].click();
+          } else {
+            elem.ownerDocument.querySelector('.breadcrumb').querySelectorAll('a')[index - 1].click();
+          }ysp.appMain.showLoading();setTimeout(function () {
             ysp.appMain.hideLoading();
           }, 1000);
         } else {

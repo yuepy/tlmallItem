@@ -10922,7 +10922,7 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
 /***************暂无数据样式*******************/
 .ysp-no-data {
   background: #f2f2f2;
-  height: 92vh;
+  height: 100vh;
 }
 .ysp-no-data > div:first-child {
   display: inline-block;
@@ -10962,7 +10962,7 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
 }
 .ysp-no-datas {
   background: #f2f2f2;
-  height: 73vh;
+  height: 84vh;
 }
 .ysp-no-datas > div:first-child {
   display: inline-block;
@@ -14403,12 +14403,12 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
   min-height: 40px;
 }
 .ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-head > span:nth-child(1) {
-  width: 50%;
+  width: 30%;
   text-align: center;
 }
 .ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-head > span:nth-child(2),
 .ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-head > span:nth-child(3) {
-  width: 20%;
+  width: 30%;
   text-align: center;
 }
 .ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-text {
@@ -14420,7 +14420,7 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
   color: #999999;
 }
 .ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-text > span:nth-child(1) {
-  width: 50%;
+  width: 30%;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -14428,7 +14428,7 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
 }
 .ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-text > span:nth-child(2),
 .ysp-feed-back-table .ysp-feed-back-table-content .ysp-feed-back-table-content-text > span:nth-child(3) {
-  width: 20%;
+  width: 30%;
   text-align: center;
 }
 .ysp-feed-back-tables {
@@ -14635,4 +14635,8 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
 }
 .atreport .ysp-atreport .icon-eye.z-act {
   background: url('images/ysp-icon-eye-z-act.png') no-repeat 0 0;
+}
+.ysp-atreport-dialog-body .ysp-dialog-wrapper {
+  position: none!important;
+  height: 100vh!important;
 }

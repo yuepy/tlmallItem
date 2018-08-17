@@ -33,9 +33,6 @@
     getData_control34_naU7hu: function (elem) {},
     doAction_uiControl37_napNCJ: function (data, elem) {
       if (data.eventType === 'back') {
-        //ysp.customHelper.forceMatchModels('visitLook'); //elem.querySelector("#Close").click(); //
-        //history.go(-1);
-        //elem.ownerDocument.querySelector(".btn-close").click();
         ysp.appMain.back();
       }
     },

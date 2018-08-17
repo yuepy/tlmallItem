@@ -2,13 +2,9 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control47_syfpWU: function getData_control47_syfpWU(elem) {},
-    doAction_uiControl51_UHfnhZ: function doAction_uiControl51_UHfnhZ(data, elem) {
+    getData_control47_syfpWU: function (elem) {},
+    doAction_uiControl51_UHfnhZ: function (data, elem) {
       if (data.eventType === 'back') {
-        // var close = elem.ownerDocument.querySelector("#Details");
-        // var aa = close.querySelector(".details-head");
-        // var bb = aa.querySelector("#Close");
-        // bb.click();
         ysp.customHelper.back();
       }
     },

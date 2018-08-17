@@ -12164,7 +12164,7 @@ section.ysp-store-details{
 /***************暂无数据样式*******************/
 .ysp-no-data{
   background: #f2f2f2;
-  height: 92vh;
+  height: 100vh; //92
   >div:first-child{
     display: inline-block;
     height: 250px;
@@ -12185,7 +12185,7 @@ section.ysp-store-details{
 
 .ysp-no-dataes{
   background: #f2f2f2;
-  height: 82vh;
+  height: 82vh;  //82
   >div:first-child{
     display: inline-block;
     height: 250px;
@@ -12205,7 +12205,7 @@ section.ysp-store-details{
 }
 .ysp-no-datas{
   background: #f2f2f2;
-  height: 73vh;
+  height: 84vh;//73
   >div:first-child{
     display: inline-block;
     height: 250px;
@@ -15856,11 +15856,11 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
       margin-top: 10px;
       min-height: 40px;
       >span:nth-child(1){
-        width: 50%;
+        width: 30%;
         text-align: center;
       }
       >span:nth-child(2),>span:nth-child(3){
-        width: 20%;
+        width: 30%;
         text-align: center;
       }
     }
@@ -15872,14 +15872,14 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
       min-height: 40px;
       color: #999999;
       >span:nth-child(1){
-        width: 50%;
+        width: 30%;//50%
         text-align: center;
         overflow: hidden;
         text-overflow:ellipsis;
         white-space: nowrap;
       }
       >span:nth-child(2),>span:nth-child(3){
-        width: 20%;
+        width: 30%;//20%
         text-align: center;
       }
     }
@@ -16083,4 +16083,11 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
 
 .atreport .ysp-atreport .icon-eye.z-act{
   background: url('images/ysp-icon-eye-z-act.png') no-repeat 0 0;
+}
+//@ 报告 页面无法覆盖问题解决.出现别的页面展示
+.ysp-atreport-dialog-body{
+  .ysp-dialog-wrapper{
+    position: none!important;
+    height: 100vh!important;
+  }
 }
