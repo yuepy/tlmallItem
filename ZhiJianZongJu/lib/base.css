@@ -76,6 +76,22 @@ li {
   background: url(img/zc_information.png) no-repeat;
   background-size: 40px 40px;
 }
+.zc-amSele li {
+  border-top: 0;
+}
+.amt-title-primary,
+.amt-title-primary .amt-title-left-text,
+.amt-switch input + .amt-switch-checkbox:before,
+.amt-title-primary .amt-title-left-icon {
+  color: #004788 !important;
+  border-color: #004788 !important;
+}
+.amt-title-primary span,
+.amt-title-primary .amt-title-left-text span,
+.amt-switch input + .amt-switch-checkbox:before span,
+.amt-title-primary .amt-title-left-icon span {
+  border-color: #004788;
+}
 div[data-ysp-modelid="login"] {
   padding-bottom: 0 !important;
 }
@@ -368,7 +384,7 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
 .btn-primary {
   width: 100%;
   border: 0px;
-  background: #0a568c!important;
+  background: #0a568c;
 }
 .amt-btn-hollow {
   width: 100%;

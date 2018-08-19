@@ -3,6 +3,9 @@
   "id": "sampling",
   "targetURL": "http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp",
   "jsFile": "index.js",
+  "requires": {
+    "addSampling": "../addSampling/index.json"
+  },
   "chineseName": "sampling",
   "description": "sampling",
   "controls": {
@@ -203,6 +206,20 @@
       "toContexts": [
         {
           "toContextId": "context3_9gs7Hh"
+        }
+      ]
+    },
+    "flow1_pKSxZx": {
+      "fromContextId": "context3_9gs7Hh",
+      "fromAction": "doAction",
+      "fromControlId": "control8_em0xM3",
+      "toContexts": [
+        {
+          "toContextId": "context3_9gs7Hh"
+        },
+        {
+          "toContextId": "context4_fzuozF",
+          "toModelId": "addSampling"
         }
       ]
     }
