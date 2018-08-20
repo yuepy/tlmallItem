@@ -1,11 +1,20 @@
 li {
   list-style: none;
 }
+Header {
+  background-color: #0a568c !important;
+  color: #fff !important;
+}
 Header button {
   height: 40px;
   width: 100%;
   padding: 0;
   border: 0;
+  background-image: url(img/ysp-prev.png);
+  background-size: 12px 14px;
+  background-repeat: no-repeat;
+  background-position: 10%;
+  font-size: 15px;
 }
 .itwont {
   width: 100%;
@@ -146,6 +155,40 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
   border-radius: 5px;
   border: none;
   font-size: 16px;
+}
+div[data-ysp-modelid="login"] .login_flex {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+div[data-ysp-modelid="login"] .login_flex div {
+  width: 270px;
+  height: 106px;
+  margin: auto auto;
+  line-height: 106px;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid #ccc;
+}
+div[data-ysp-modelid="login"] .login_flex div:nth-child(1) {
+  margin-top: 50%;
+}
+div[data-ysp-modelid="login"] .login_flex div:nth-child(2) {
+  height: 44px;
+  line-height: 44px;
+  border-radius: 0 0 10px 10px;
+}
+div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  color: #0a568c;
+  padding: 10px 20px;
+  height: 44px;
+  border-radius: 5px;
 }
 [data-ysp-modelid="index_itownet"] {
   background-color: #f2f2f2;

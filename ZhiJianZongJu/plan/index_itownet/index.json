@@ -126,135 +126,6 @@
       "text": "首页",
       "frameXPath": ""
     },
-    "control3_017ukM": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]/DIV[2]/DIV[2]/UL[1]/LI[1]/UL[1]/LI[1]/DIV[1]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              1,
-              5
-            ],
-            "value": "DIV.panel-body.accordion-body UL.easyui-tree.tree.tree-lines DIV.tree-node.tree-node-last"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/UL[1]/LI[1]/UL[1]/LI[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control3_017ukM"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control4_Z0FrGU": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]/DIV[3]/DIV[2]/UL[1]/LI[1]/DIV[1]",
-              "descendant::DIV[@id=\"mainMenu\"]/DIV[3]/DIV[2]/UL[1]/LI[1]/DIV[1]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              1,
-              2
-            ],
-            "value": "DIV.panel-body.accordion-body UL.easyui-tree.tree.tree-lines DIV.tree-node.tree-root-one.tree-node-last.tree-node-selected"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[3]/DIV[2]/UL[1]/LI[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control4_Z0FrGU"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control7_3qAPSe": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::BODY[@id=\"mainLayout\"]//DIV[@id=\"mainMenu\"]/DIV[1]/DIV[2]/UL[1]/LI[1]/DIV[1]",
-              "descendant::DIV[@id=\"mainMenu\"]/DIV[1]/DIV[2]/UL[1]/LI[1]/DIV[1]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "ordinal": [
-              0,
-              2
-            ],
-            "value": "DIV.panel-body.accordion-body UL.easyui-tree.tree.tree-lines DIV.tree-node.tree-root-one.tree-node-last.tree-node-selected"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/UL[1]/LI[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control7_3qAPSe"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control9_3fUA9K": {
       "location": {
         "data": {
@@ -458,9 +329,6 @@
   "contexts": {
     "context1_tCLsmq": {
       "controls": [
-        "control3_017ukM",
-        "control4_Z0FrGU",
-        "control7_3qAPSe",
         "control17_B6kmqX",
         "control18_rUQaO8",
         "control0_RoUGcz",
@@ -477,44 +345,6 @@
       "toContexts": [
         {
           "toContextId": "context1_tCLsmq"
-        }
-      ]
-    },
-    "flow5_Z3u25C": {
-      "fromContextId": "context1_tCLsmq",
-      "fromAction": "doAction",
-      "fromControlId": "control3_017ukM",
-      "toContexts": [
-        {
-          "toContextId": "context1_tCLsmq"
-        },
-        {
-          "toContextId": "context3_eGwpuQ",
-          "toModelId": "displ_itownet"
-        }
-      ]
-    },
-    "flow6_oI1FV8": {
-      "fromContextId": "context1_tCLsmq",
-      "fromAction": "doAction",
-      "fromControlId": "control4_Z0FrGU",
-      "toContexts": [
-        {
-          "toContextId": "context1_tCLsmq"
-        }
-      ]
-    },
-    "flow7_5SdMJR": {
-      "fromContextId": "context1_tCLsmq",
-      "fromAction": "doAction",
-      "fromControlId": "control7_3qAPSe",
-      "toContexts": [
-        {
-          "toContextId": "context1_tCLsmq"
-        },
-        {
-          "toContextId": "context2_w6GRea",
-          "toModelId": "sapling_itownet"
         }
       ]
     },
@@ -621,51 +451,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl0_mCp0IF",
                 "onGetTemplate": "getTemplate_uiControl0_mCp0IF"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl6_RrcIOM",
-          "controlId": "control7_3qAPSe",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl6_RrcIOM",
-                "onGetTemplate": "getTemplate_uiControl6_RrcIOM"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl3_ARdezt",
-          "controlId": "control3_017ukM",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl3_ARdezt",
-                "onGetTemplate": "getTemplate_uiControl3_ARdezt"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl5_gs2qFW",
-          "controlId": "control4_Z0FrGU",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl5_gs2qFW",
-                "onGetTemplate": "getTemplate_uiControl5_gs2qFW"
               }
             }
           }
