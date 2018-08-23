@@ -167,13 +167,13 @@
         doc.querySelector('#randomNumber').setAttribute('src','imageGenerator?'+Math.random());
       }
       //关闭页面中生成的所有的iframe
-      debugger
-      if(aWin.location.href == 'http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp'){
-        var closes = doc.querySelectorAll('.tabs-close');
-        for(var i=0;i<closes.length;i++){
-          closes[i].click();
-        }
-      }
+      // debugger
+      // if(aWin.location.href == 'http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp'){
+      //   var closes = doc.querySelectorAll('.tabs-close');
+      //   for(var i=0;i<closes.length;i++){
+      //     closes[i].click();
+      //   }
+      // }
       //判断页面是否有树存在、
       // if(aWin.location.href == 'http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp')){
       //   debugger
@@ -233,8 +233,42 @@
     //思路与needToLogin类似, 保证能够唯一区分该页面即可.
     isLoginSuccess: function(doc) {
       return false;
+    },
+     fireKeyEvent: function (el, evtType, keyCode) {
+        var doc = el.ownerDocument,
+            win = doc.defaultView || doc.parentWindow,
+            evtObj;
+        if (doc.createEvent) {
+            if (win.KeyEvent) {
+                evtObj = doc.createEvent('KeyEvents');
+                evtObj.initKeyEvent(evtType, true, true, win, false, false, false, false, keyCode, 0);
+            } else {
+                evtObj = doc.createEvent('UIEvents');
+                Object.defineProperty(evtObj, 'keyCode', {
+                    get: function () {
+                        return this.keyCodeVal;
+                    }
+                });
+                Object.defineProperty(evtObj, 'which', {
+                    get: function () {
+                        return this.keyCodeVal;
+                    }
+                });
+                evtObj.initUIEvent(evtType, true, true, win, 1);
+                evtObj.keyCodeVal = keyCode;
+                if (evtObj.keyCode !== keyCode) {
+                    console.log("keyCode " + evtObj.keyCode + " 和 (" + evtObj.which + ") 不匹配");
+                }
+            }
+            el.dispatchEvent(evtObj);
+        } else if (doc.createEventObject) {
+            evtObj = doc.createEventObject();
+            evtObj.keyCode = keyCode;
+            el.fireEvent('on' + evtType, evtObj);
+        }
+        return false;
     }
-
+		
 
   });
 

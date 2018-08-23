@@ -1,6 +1,21 @@
 li {
   list-style: none;
 }
+Header {
+  background-color: #0a568c !important;
+  color: #fff !important;
+}
+Header button {
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background-image: url(img/ysp-prev.png);
+  background-size: 12px 14px;
+  background-repeat: no-repeat;
+  background-position: 10%;
+  font-size: 15px;
+}
 .itwont {
   width: 100%;
 }
@@ -9,6 +24,91 @@ li {
   height: 44px;
   background-color: #e64750;
   border: 0;
+}
+/*抽样*/
+.zc-amInput .amt-item {
+  padding: 0;
+}
+.zc-amInput .amt-item .amt-field-wrap ::-webkit-input-placeholder {
+  text-align: right;
+}
+.zc-amInput .amt-item .amt-field-wrap input {
+  padding-right: 33px;
+}
+.zc-amInput .amt-field-single {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+.zc-amInput .amt-field-single .amt-field-label {
+  width: auto;
+}
+.zc-detail-top .amt-list {
+  margin: 0;
+}
+.zc-group-btn {
+  padding: 20px 10px 20px 10px;
+  display: flex;
+}
+.zc-group-btn button {
+  flex: 1;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 5px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.zc-group-btn button:first-child {
+  border: solid 1px #004788;
+  color: #004788;
+}
+.zc-group-btn button:last-child {
+  border: solid 1px #004788;
+  background: #004788;
+  color: #fff;
+}
+.zc-check {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  margin: 10px 0;
+  background: #fff;
+}
+.zc-check .amt-card {
+  flex: 1;
+  box-shadow: none;
+}
+.zc-information {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+.zc-information span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url(img/zc_information.png) no-repeat;
+  background-size: 40px 40px;
+}
+.zc-amSele li {
+  border-top: 0;
+}
+.amt-title-primary,
+.amt-title-primary .amt-title-left-text,
+.amt-switch input + .amt-switch-checkbox:before,
+.amt-title-primary .amt-title-left-icon {
+  color: #004788 !important;
+  border-color: #004788 !important;
+}
+.amt-title-primary span,
+.amt-title-primary .amt-title-left-text span,
+.amt-switch input + .amt-switch-checkbox:before span,
+.amt-title-primary .amt-title-left-icon span {
+  border-color: #004788;
+}
+.amt-popup-body {
+  padding: 0 !important;
 }
 div[data-ysp-modelid="login"] {
   padding-bottom: 0 !important;
@@ -75,6 +175,40 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
   border: none;
   font-size: 16px;
 }
+div[data-ysp-modelid="login"] .login_flex {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+div[data-ysp-modelid="login"] .login_flex div {
+  width: 270px;
+  height: 106px;
+  margin: auto auto;
+  line-height: 106px;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid #ccc;
+}
+div[data-ysp-modelid="login"] .login_flex div:nth-child(1) {
+  margin-top: 50%;
+}
+div[data-ysp-modelid="login"] .login_flex div:nth-child(2) {
+  height: 44px;
+  line-height: 44px;
+  border-radius: 0 0 10px 10px;
+}
+div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  color: #0a568c;
+  padding: 10px 20px;
+  height: 44px;
+  border-radius: 5px;
+}
 [data-ysp-modelid="index_itownet"] {
   background-color: #f2f2f2;
 }
@@ -122,15 +256,102 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
   background-position: 20px 10px;
   background-repeat: no-repeat;
   border-bottom: 1px solid #ccc;
+  margin-top: 10px;
 }
-[data-ysp-modelid="index_itownet"] [data-componentsid="uiControl1_qi2nLe"] .datatitle {
+[data-ysp-modelid="index_itownet"] .datatitle > span {
+  color: #999;
+  float: right;
+  padding-right: 10px;
+  font-weight: normal !important;
+}
+[data-ysp-modelid="index_itownet"] [data-componentsid="uiControl0_mCp0IF"] .datatitle {
   background-image: url(img/gongao.png);
 }
 [data-ysp-modelid="index_itownet"] [data-componentsid="uiControl0_mCp0IF"] {
   padding: 0;
 }
-[data-ysp-modelid="index_itownet"] [data-componentsid="uiControl15_CTvikU"] .datatitle {
+[data-ysp-modelid="index_itownet"] [data-componentsid="uiControl14_NFDcys"] .datatitle {
   background-image: url(img/daiban.png);
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle {
+  position: fixed;
+  background: #fff;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle button {
+  border: 0;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk {
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  margin-top: 44px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk > div {
+  margin: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk > div > div:nth-child(1) {
+  font-size: 14px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk > div div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk > div div:nth-child(2) label {
+  color: #999999;
+  font-size: 12px;
+  margin: 0;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk > div div:nth-child(2) label:nth-child(1) {
+  width: 100px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk > div div:nth-child(2) label:nth-child(2) {
+  width: 100%;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0px ;
+  padding: 20px 0px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageFirst > span:nth-child(1) {
+  background: #2F9FFF;
+  border-radius: 10px 0px 0px 10px;
+  color: #fff;
+  padding: 2px 12px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageFirst > span:nth-child(2) {
+  background: #ececec;
+  border-radius: 0px 10px 10px 0px;
+  padding: 2px 12px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(1) {
+  padding-right: 5px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(2) {
+  padding: 0px 5px;
+  border-radius: 100%;
+  background: #2F9FFF;
+  color: #fff;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageCenter > span:nth-child(2) {
+  padding-left: 5px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageLast > span:nth-child(1) {
+  background: #ececec;
+  border-radius: 10px 0px 0px 10px;
+  padding: 2px 12px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageLast > span:nth-child(2) {
+  background: #2F9FFF;
+  border-radius: 0px 10px 10px 0px;
+  color: #fff;
+  padding: 2px 12px;
 }
 [data-ysp-modelid="index_itownet"] [data-componentsid="uiControl14_NFDcys"] {
   padding: 0;
@@ -144,7 +365,7 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
 }
 [data-ysp-modelid="index_itownet"] [data-componentsid="uiControl14_NFDcys"] .undovedtesk > div > div {
   font-size: 14px;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px solid #ccc;
 }
 [data-ysp-modelid="index_itownet"] [data-componentsid="uiControl14_NFDcys"] .undovedtesk > div > div div:nth-child(2) {
   margin: 5px 0;
@@ -183,7 +404,7 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
   color: #333333;
   font-size: 14px;
   line-height: 46px;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px solid #ccc;
 }
 [data-ysp-modelid="index_itownet"] .Padingtable > div > div:last-child {
   border: 0;
@@ -297,6 +518,12 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
 }
 .icon-left-nav {
   background: #0a568c!important;
+}
+.amt-btn-primary,
+.btn-primary {
+  width: 100%;
+  border: 0px;
+  background: #0a568c;
 }
 .amt-btn-hollow {
   width: 100%;
@@ -432,3 +659,158 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
   border-radius: 20px 20px 20px 20px;
   background-color: #f7f7f7;
 }
+/*首页图标点击后的样式start*/
+.ysp-ZJ-jiandu {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  top: 0;
+  background-color: #f2f2f2;
+}
+.ysp-ZJ-jiandu button {
+  border: 0;
+}
+.ysp-ZJ-jiandu Header {
+  background-color: #0a568c;
+  color: #fff;
+}
+.ysp-ZJ-jiandu .JDtabul {
+  width: 345px;
+  margin: 5px auto 5px auto;
+  font-size: 14px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.ysp-ZJ-jiandu .JDtabul ul {
+  margin: 0;
+  padding: 0;
+}
+.ysp-ZJ-jiandu .JDtabul ul li {
+  border-top: 1px solid #ccc;
+  height: 44px;
+  line-height: 44px;
+  background-image: url(img/icon.png);
+  background-size: 12px 14px;
+  background-repeat: no-repeat;
+  background-position: 20px 15px;
+  padding-left: 40px;
+  cursor: pointer;
+}
+.ysp-ZJ-jiandu .JDtabul ul li:first-child {
+  border: 0;
+}
+.ysp-ZJ-jiliang {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  top: 0;
+  background-color: #f2f2f2;
+}
+/*首页图标点击后的样式end*/
+.Dy_deil {
+  margin-top: 44px;
+}
+/*分配记录查询页*/
+.queryCondition {
+  margin-top: 64px;
+}
+.queryCondition input,
+.queryCondition select,
+.queryCondition option {
+  border: 0 !important;
+  text-align: right;
+}
+.queryCondition .conditionTitle {
+  color: #0a568c;
+  font-weight: bold;
+  padding-left: 20px;
+  background: url(img/tou.png) no-repeat 0 0;
+  background-size: 8px 25px;
+}
+.queryCondition .conditionContent {
+  padding-left: 20px;
+}
+.queryCondition .conditionContent > div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8d8d8;
+}
+.queryCondition .conditionContent > div > div:nth-child(1) {
+  width: 60px;
+  color: #323e4d;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.queryCondition .conditionContent > div > div:nth-child(2) {
+  width: 80%;
+}
+.queryCondition .conditionContent > div > div:nth-child(2) input,
+.queryCondition .conditionContent > div > div:nth-child(2) select {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+  color: #838b9f;
+  margin: 0;
+  padding-right: 20px;
+}
+.queryCondition .querybtn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.queryCondition .querybtn button {
+  width: 168px;
+  height: 32px;
+  background: #004788;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+}
+.queryCondition .querybtn button:nth-child(1) {
+  background: #fff;
+  color: #004788;
+  border: 1px solid #004788;
+}
+.deilTable {
+  background: #f2f2f2;
+}
+.deilTable p {
+  margin: 0;
+}
+.deilTable .deilitem {
+  background: #fff;
+  margin: 5px 0;
+  padding: 0 20px;
+}
+.deilTable .deilitem .deilTitle p:nth-child(1) {
+  color: #202020;
+  font-weight: bold;
+  padding: 10px 0 2.5px 0;
+}
+.deilTable .deilitem .deilTitle p:nth-child(2) {
+  font-size: 14px;
+  color: #87939f;
+  background-position: right 25%;
+  background-repeat: no-repeat;
+  background-size: 16px 10px;
+  padding: 2.5px 0 10px 0;
+}
+.deilTable .deilitem .deilTitle .top {
+  background-image: url(img/top.png);
+}
+.deilTable .deilitem .deilTitle .xia {
+  background-image: url(img/xia.png);
+}
+.deilTable .deilitem .deilContent p {
+  font-size: 14px;
+  color: #87939f;
+  padding: 5px 0;
+}
+/*分配记录查询页*/

@@ -11,7 +11,7 @@
     },
     "resource_inject": [],
     "unadapted": {
-      "timeout": 15000,
+      "timeout": 30000,
       "rules": [
         {
           "match": "*",
@@ -28,6 +28,13 @@
       ],
       "target_url": "override/main.js",
       "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/js/sysmanage/main.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/js\\/sysmanage\\/homePage\\.js"
+      ],
+      "target_url": "override/homePage.js",
+      "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/js/sysmanage/homePage.js"
     }
   ],
   "adapter_urls": [
@@ -40,11 +47,22 @@
       "demo": [
         "http://egs.itownet.cn:9080/ecqs_server_web/"
       ]
+    },
+    {
+      "title": "index_itownet",
+      "url": "adapter://itownet_Applocation/plan/index_itownet/index.json",
+      "matcher": [
+        "^http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/system\\/main\\.jsp"
+      ],
+      "demo": [
+        "http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp"
+      ]
     }
   ],
   "name": "质检总局B版",
   "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/",
   "scope": "itownet_Applocation",
   "start_url": "enterplorer://itownet_Applocation/local/index.html",
-  "update_time": 1535006112037
+  "update_time": 1535009185716,
+  "runtime_env": "1webview"
 }
