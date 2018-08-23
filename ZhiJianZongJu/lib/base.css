@@ -632,15 +632,20 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 .deilTable .deilitem .deilTitle p:nth-child(2) {
   font-size: 14px;
   color: #87939f;
-  padding: 10px 0 2.5px 0;
-  background: url(img/xia.png) right 50% no-repeat;
+  background-position: right 25%;
+  background-repeat: no-repeat;
   background-size: 16px 10px;
+  padding: 2.5px 0 10px 0;
 }
-.deilTable .deilitem .deilContent {
-  display: none;
+.deilTable .deilitem .deilTitle .top {
+  background-image: url(img/top.png);
+}
+.deilTable .deilitem .deilTitle .xia {
+  background-image: url(img/xia.png);
 }
 .deilTable .deilitem .deilContent p {
   font-size: 14px;
   color: #87939f;
+  padding: 5px 0;
 }
 /*分配记录查询页*/
