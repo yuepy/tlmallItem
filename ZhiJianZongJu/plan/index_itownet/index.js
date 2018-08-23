@@ -96,7 +96,7 @@
           data = data.customData;if (type == 'deilclick') {
         elem.querySelector('table').querySelectorAll('tr')[+data.index].querySelectorAll('td')[1].querySelector('div').click();elem.parentElement.parentElement.previousElementSibling.querySelector('a').click();var closes = elem.ownerDocument.defaultView.frameElement.ownerDocument.querySelector('#mainTabs').querySelector('ul.tabs').querySelectorAll('a.tabs-close');for (var i = 0; i < closes.length; i++) {
           closes[i].click();
-        } // elem.ownerDocument.defaultView.open(elem.parentElement.parentElement.previousElementSibling.querySelector('a').getAttribute('data-url'));
+        }elem.ownerDocument.defaultView.open(elem.parentElement.parentElement.previousElementSibling.querySelector('a').getAttribute('data-url'));
       }if ('page' == type) {
         var pageEl = elem.parentElement.parentElement.nextElementSibling;if ('first' == data) {
           pageEl.querySelector("table").querySelector("tbody").querySelectorAll("td")[2].querySelector("a").click();
