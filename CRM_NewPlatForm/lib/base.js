@@ -98,8 +98,12 @@
       ysp.runtime.Browser.activeBrowser.contentWindow.history.go(-1);
     }
     if(ysp.customHelper.AndroidBackFlag == 'Client&Store'){
-      debugger;
       ysp.customHelper.toPlan(currentElem, name, model)
+    }
+    if(ysp.customHelper.AndroidBackFlag == 'ClientorStory'){
+      if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
+      }
     }
     //恢复默认值
     ysp.customHelper.AndroidBackFlag == 'default';
@@ -108,7 +112,7 @@
     ysp.customHelper.AndroidDocument = ''
     ysp.customHelper.AndroidName = '';
     //default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面 BigData:为大数据钻取返回 . AndroidHistory:针对与页面后退一步返回
-    //Client&Store : 针对客户||门店返回方案
+    //Client&Store : 针对客户||门店返回方案  ClientorStory:针对客户门店360返回列表方案
   }
   var forEach = Array.prototype.forEach;
   var currentModelID = ""; //当前动作
@@ -164,7 +168,7 @@
     this.atMe = atMe;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
-      if(xhr.status >= 200 && xhr.readyState == 4){
+      if(xhr.status >= 200 && xhr.status <300 || xhr.status == 304){
         if(xhr.response != ''){
           var obj = JSON.parse(xhr.response);
           if(obj.summaryReportCount && obj.atMeUnreadReportCount){
@@ -205,7 +209,7 @@
             if(ALLMENU != '' && AllMenu){
                var SessionXhr = new XMLHttpRequest();
                SessionXhr.onreadystatechange = function(){
-                if(SessionXhr.status == 200 && SessionXhr.readyState == 4){
+                if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
                   var encoder = JSON.parse(SessionXhr.response).encoder;
                   var userId = JSON.parse(SessionXhr.response).userId;
                   if(encoder && userId){
@@ -289,9 +293,6 @@
   function executePlan(modelID, menuId) {
     if (ysp.runtime.Model.setForceMatchModels && modelID) {
       var matchs = [];
-      //@todo 暂时放在这里处理
-      //if(modelID === 'newInformationTotle1') modelID && matchs.push('newInformationTotle');
-      //else  modelID && matchs.push(modelID);
       modelID && matchs.push(modelID);
       ysp.runtime.Model.setForceMatchModels(matchs);
       intercepter(modelID, menuId);
