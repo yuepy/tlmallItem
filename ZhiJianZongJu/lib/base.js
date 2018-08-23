@@ -185,7 +185,41 @@
     beforeTargetLoad: function(aWin, doc) {
 
     },
-
+		
+    fireKeyEvent: function (el, evtType, keyCode) {
+        var doc = el.ownerDocument,
+            win = doc.defaultView || doc.parentWindow,
+            evtObj;
+        if (doc.createEvent) {
+            if (win.KeyEvent) {
+                evtObj = doc.createEvent('KeyEvents');
+                evtObj.initKeyEvent(evtType, true, true, win, false, false, false, false, keyCode, 0);
+            } else {
+                evtObj = doc.createEvent('UIEvents');
+                Object.defineProperty(evtObj, 'keyCode', {
+                    get: function () {
+                        return this.keyCodeVal;
+                    }
+                });
+                Object.defineProperty(evtObj, 'which', {
+                    get: function () {
+                        return this.keyCodeVal;
+                    }
+                });
+                evtObj.initUIEvent(evtType, true, true, win, 1);
+                evtObj.keyCodeVal = keyCode;
+                if (evtObj.keyCode !== keyCode) {
+                    console.log("keyCode " + evtObj.keyCode + " 和 (" + evtObj.which + ") 不匹配");
+                }
+            }
+            el.dispatchEvent(evtObj);
+        } else if (doc.createEventObject) {
+            evtObj = doc.createEventObject();
+            evtObj.keyCode = keyCode;
+            el.fireEvent('on' + evtType, evtObj);
+        }
+        return false;
+    },
     //登录相关接口
     //判断是否需要跳转到登录页面, 当页面匹配不上的时候会执行该方法, 若返回值为true则跳转, 否则不跳转.
     //判断是否需要跳转的思路为: 当前未登录, 系统自动跳转到了错误提示页面,
