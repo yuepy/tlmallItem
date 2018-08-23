@@ -22,8 +22,8 @@
     getData_control2_pX2Dki: function (elem) {},
     doAction_uiControl2_7w0M92: function (data, elem) {},
     getTemplate_uiControl2_7w0M92: function () {
-      var selfTemplate = 'import { Header, HeaderLeft } from \'ysp-interior-components\';\nimport { back } from \'appRenderer\';\nexport default () =>\n<Header amStyle="primary" title="\u5F85\u9605\u6D88\u606F">\n  <HeaderLeft>\n    <button amStyle="primary" onClick={back}>\u8FD4\u56DE</button>\n  </HeaderLeft>\n</Header>;';
-      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _yspInteriorComponents = require(\'ysp-interior-components\');\n\nvar _appRenderer = require(\'appRenderer\');\n\nexports.default = function () {\n  return React.createElement(\n    _yspInteriorComponents.Header,\n    { amStyle: \'primary\', title: \'\\u5F85\\u9605\\u6D88\\u606F\' },\n    React.createElement(\n      _yspInteriorComponents.HeaderLeft,\n      null,\n      React.createElement(\n        \'button\',\n        { amStyle: \'primary\', onClick: _appRenderer.back },\n        \'\\u8FD4\\u56DE\'\n      )\n    )\n  );\n};';
+      var selfTemplate = "import { Header, HeaderLeft } from 'ysp-interior-components';\nimport { back } from 'appRenderer';\nexport default () =>\n<Header amStyle=\"primary\" title=\"\u5F85\u9605\u6D88\u606F\">\n  <HeaderLeft>\n    <button onClick={back}>\u8FD4\u56DE</button>\n  </HeaderLeft>\n</Header>;";
+      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _yspInteriorComponents = require('ysp-interior-components');\n\nvar _appRenderer = require('appRenderer');\n\nexports.default = function () {\n  return React.createElement(\n    _yspInteriorComponents.Header,\n    { amStyle: 'primary', title: '\\u5F85\\u9605\\u6D88\\u606F' },\n    React.createElement(\n      _yspInteriorComponents.HeaderLeft,\n      null,\n      React.createElement(\n        'button',\n        { onClick: _appRenderer.back },\n        '\\u8FD4\\u56DE'\n      )\n    )\n  );\n};";
     }
-  });
+  }, "deil_Dy");
 })(window, ysp);
