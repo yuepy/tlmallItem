@@ -1,21 +1,6 @@
 li {
   list-style: none;
 }
-Header {
-  background-color: #0a568c !important;
-  color: #fff !important;
-}
-Header button {
-  height: 40px;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background-image: url(img/ysp-prev.png);
-  background-size: 12px 14px;
-  background-repeat: no-repeat;
-  background-position: 10%;
-  font-size: 15px;
-}
 .itwont {
   width: 100%;
 }
@@ -211,6 +196,34 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 }
 [data-ysp-modelid="index_itownet"] {
   background-color: #f2f2f2;
+}
+[data-ysp-modelid="index_itownet"] Header {
+  background-color: #0a568c !important;
+  color: #fff !important;
+}
+[data-ysp-modelid="index_itownet"] Header button {
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background-image: url(img/ysp-prev.png);
+  background-size: 12px 14px;
+  background-repeat: no-repeat;
+  background-position: 10%;
+  font-size: 15px;
+}
+[data-ysp-modelid="index_itownet"] .index_title {
+  height: 44px;
+  text-align: center;
+  color: #0a568c;
+  font-size: 18px;
+  line-height: 44px;
+  font-weight: bold;
+  background-color: #fff;
+  border-bottom: 1px solid #ececec;
+}
+[data-ysp-modelid="index_itownet"] .index_title [data-componentsid="uiControl12_fFctEC"] {
+  padding: 0;
 }
 [data-ysp-modelid="index_itownet"] .titleapps {
   display: flex;

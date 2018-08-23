@@ -325,6 +325,38 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control40_6TvnsZ": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::BODY[@id=\"mainLayout\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.panel-fit BODY.easyui-layout.layout.panel-noscroll"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control40_6TvnsZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -333,7 +365,8 @@
         "control17_B6kmqX",
         "control18_rUQaO8",
         "control0_RoUGcz",
-        "control19_OqWGTq"
+        "control19_OqWGTq",
+        "control40_6TvnsZ"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -425,6 +458,21 @@
     "page1_Q8nBF8": {
       "contextId": "context1_tCLsmq",
       "layout": [
+        {
+          "id": "uiControl38_wfqwEf",
+          "controlId": "control40_6TvnsZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl38_wfqwEf",
+                "onGetTemplate": "getTemplate_uiControl38_wfqwEf"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl12_fFctEC",
           "controlId": "control17_B6kmqX",

@@ -4,7 +4,7 @@
   "targetURL": "http://egs.itownet.cn:9080/mobileProject/fieldSampling/list.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6IjEwMTAxMTExMDAifQ.YbnCoVt6qhjBgA7Z3XqevbDzHCfGmfa4wAl7kDd_pd3m2GZqFQSAmuol0f7fx3RX5BuPeJQGYy96oNT_GbXKOZwWaaZkFwPmcgIbeJgFayY1osgpOP8J-LtbdVxBFuiCtw_zvRHnzK-XHF8dSy6AYyDdZzHtwz7kYU0kDKCyNRs",
   "jsFile": "index.js",
   "requires": {
-    "addSampling": "../addSampling/index.json"
+    "deil_sampling": "../deil_sampling/index.json"
   },
   "chineseName": "现场抽样",
   "description": "",
@@ -256,7 +256,15 @@
       "fromControlId": "control34_GOSLPz",
       "toContexts": [
         {
+          "toContextId": "context2_w6GRea",
+          "toModelId": "sapling_itownet"
+        },
+        {
           "toContextId": "context2_w6GRea"
+        },
+        {
+          "toContextId": "context6_NQcCzC",
+          "toModelId": "deil_sampling"
         }
       ]
     },
@@ -277,17 +285,6 @@
       "toContexts": [
         {
           "toContextId": "context2_w6GRea"
-        }
-      ]
-    },
-    "flow31_Ztc7wE": {
-      "fromContextId": "context2_w6GRea",
-      "fromAction": "click",
-      "fromControlId": "control30_2NTUE1",
-      "toContexts": [
-        {
-          "toContextId": "context4_fzuozF",
-          "toModelId": "addSampling"
         }
       ]
     }
