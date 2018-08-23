@@ -10,10 +10,10 @@
         // } else {
         //   ysp.appMain.back();
         // } // ysp.appMain.back();
-        var backVal = ysp.customHelper.tab;if (backVal == "menu") {
-          ysp.appMain.back();backVal = null;
+        var backVal = ysp.customHelper.tab;debugger;if (backVal == "menu") {
+          ysp.customHelper.indexName = null;ysp.appMain.back();backVal = null;
         } else {
-          top.EAPI.closeWindow();
+          ysp.customHelper.indexName = null;top.EAPI.closeWindow();
         }
       } else if (type == "filter") {
         elem.click();

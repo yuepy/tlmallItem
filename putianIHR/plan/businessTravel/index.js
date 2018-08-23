@@ -18,13 +18,13 @@
         //     top.EAPI.closeWindow();
         //   }
         var backVal = ysp.customHelper.tab;if (backVal == "menu" && ysp.customHelper.innerBack == null) {
-          ysp.appMain.back();backVal = null;
+          ysp.appMain.back();backVal = null;ysp.customHelper.indexName = null;
         } else if (backVal == "menu" && ysp.customHelper.innerBack == "returnBack") {
-          ysp.appMain.back();ysp.customHelper.innerBack = null;
+          ysp.appMain.back();ysp.customHelper.innerBack = null;ysp.customHelper.indexName = null;
         } else if (backVal == null && ysp.customHelper.innerBack == "returnBack") {
-          ysp.appMain.back();ysp.customHelper.innerBack = null;
+          ysp.appMain.back();ysp.customHelper.innerBack = null;ysp.customHelper.indexName = null;
         } else {
-          top.EAPI.closeWindow();
+          ysp.customHelper.indexName = null;top.EAPI.closeWindow();
         }
       }
     },
