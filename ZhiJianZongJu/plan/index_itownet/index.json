@@ -5,11 +5,10 @@
   "jsFile": "index.js",
   "requires": {
     "sapling_itownet": "../sapling_itownet/index.json",
-    "displ_itownet": "../displ_itownet/index.json",
     "deil_Dy": "../deil_Dy/index.json",
-    "dis_itownet_pl": "../dis_itownet_pl/index.json",
     "allocationQuery": "../allocationQuery/index.json",
-    "deilNotice": "../deilNotice/index.json"
+    "deilNotice": "../deilNotice/index.json",
+    "displ_itownet": "../displ_itownet/index.json"
   },
   "chineseName": "质检B版首页",
   "description": "",
@@ -356,19 +355,19 @@
       "fromControlId": "control17_B6kmqX",
       "toContexts": [
         {
-          "toContextId": "context1_tCLsmq"
+          "toContextId": "context1_tCLsmq",
+          "toModelId": "index_itownet"
         },
         {
           "toContextId": "context2_w6GRea",
           "toModelId": "sapling_itownet"
         },
         {
-          "toContextId": "context6_zKDTmn",
-          "toModelId": "dis_itownet_pl"
-        },
-        {
           "toContextId": "context7_RqD6TR",
           "toModelId": "allocationQuery"
+        },
+        {
+          "toContextId": "context1_tCLsmq"
         }
       ]
     },
@@ -407,6 +406,17 @@
         {
           "toContextId": "context8_R7ZlCw",
           "toModelId": "deilNotice"
+        }
+      ]
+    },
+    "flow24_0E9sel": {
+      "fromContextId": "context1_tCLsmq",
+      "fromAction": "click",
+      "fromControlId": "control17_B6kmqX",
+      "toContexts": [
+        {
+          "toContextId": "context3_eGwpuQ",
+          "toModelId": "displ_itownet"
         }
       ]
     }
