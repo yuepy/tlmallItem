@@ -4,7 +4,6 @@
   "targetURL": "http://egs.itownet.cn:9080/mobileProject/login.jsp",
   "jsFile": "index.js",
   "requires": {
-    "todo_list": "../todo_list/index.json",
     "index_itownet": "../index_itownet/index.json"
   },
   "chineseName": "login",
@@ -40,12 +39,44 @@
       "roles": "element,link,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control3_HgLBCU": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body DIV.panel.window"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control3_HgLBCU"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context0_RfJIQw": {
       "controls": [
-        "control7_Ni8QgM"
+        "control7_Ni8QgM",
+        "control3_HgLBCU"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -58,10 +89,6 @@
       "toContexts": [
         {
           "toContextId": "context0_RfJIQw"
-        },
-        {
-          "toContextId": "context3_C8GZy1",
-          "toModelId": "todo_list"
         }
       ]
     },
@@ -99,6 +126,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl7_mp5GF6",
                 "onGetTemplate": "getTemplate_uiControl7_mp5GF6"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl3_kgbd9S",
+          "controlId": "control3_HgLBCU",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl3_kgbd9S",
+                "onGetTemplate": "getTemplate_uiControl3_kgbd9S"
               }
             }
           }
@@ -293,6 +335,93 @@
             "textbox-text",
             "textbox-value",
             "validatebox-text"
+          ],
+          [
+            "basic-radio",
+            "bd-inner",
+            "easyui-textbox",
+            "enter",
+            "form",
+            "hd-inner",
+            "inner-wrap",
+            "left-bg",
+            "lg-box",
+            "lg-label",
+            "lg-poster",
+            "lg-zone",
+            "login-bd",
+            "login-ft",
+            "login-hd",
+            "login-table",
+            "login-table-input",
+            "login-table-text",
+            "logo",
+            "messager-body",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "purchaser",
+            "right-bg",
+            "split",
+            "sys-name",
+            "table",
+            "textbox",
+            "textbox-f",
+            "textbox-text",
+            "textbox-value",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header"
+          ],
+          [
+            "basic-radio",
+            "bd-inner",
+            "easyui-textbox",
+            "enter",
+            "form",
+            "hd-inner",
+            "inner-wrap",
+            "left-bg",
+            "lg-box",
+            "lg-label",
+            "lg-poster",
+            "lg-zone",
+            "login-bd",
+            "login-ft",
+            "login-hd",
+            "login-table",
+            "login-table-input",
+            "login-table-text",
+            "logo",
+            "messager-body",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "purchaser",
+            "right-bg",
+            "split",
+            "sys-name",
+            "table",
+            "textbox",
+            "textbox-f",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header"
           ]
         ]
       }

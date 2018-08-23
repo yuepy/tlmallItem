@@ -7,6 +7,24 @@ li{
 }
 //首页按钮公用样式
 
+Header{
+  background-color: #0a568c !important;
+  color: #fff !important;
+  button{
+    // background-color: red;
+    height: 40px;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background-image: url(./img/ysp-prev.png);
+    background-size: 12px 14px;
+    background-repeat: no-repeat;
+    background-position: 10%;
+    font-size: 15px;
+  }
+}
+
+
 .itwont{
   width: 100%;
   button{
@@ -168,6 +186,42 @@ div[data-ysp-modelid = "login"] {
       }
     }
   }
+  .login_flex{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,.4);
+  	// opacity: .4;
+    text-align: center;
+    div{
+      // position: absolute;
+      width: 270px;
+      height: 106px;
+      margin: auto auto;
+      line-height: 106px;
+      background-color: #fff;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 1px solid #ccc;
+    }
+    div:nth-child(1){
+      margin-top: 50%;
+    }
+    div:nth-child(2){
+      height: 44px;
+      line-height: 44px;
+      border-radius: 0 0 10px 10px;
+      button{
+        width: 100%;
+        height: 100%;
+        border: 0;
+        color: #0a568c;
+        padding: 10px 20px;
+        height: 44px;
+        border-radius: 5px;
+      }
+    }
+  }
 }
 //首页按钮公用样式结束
 //首页样式
@@ -221,18 +275,112 @@ div[data-ysp-modelid = "login"] {
     background-position: 20px 10px;
     background-repeat: no-repeat;
     border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+    >span{
+      color: #999;
+      float: right;
+      padding-right: 10px;
+      font-weight: normal !important;
+    }
   }
   //通知公告
-  [data-componentsid="uiControl1_qi2nLe"]{
+  [data-componentsid="uiControl0_mCp0IF"]{
     .datatitle{
     	background-image: url(./img/gongao.png);
     }
   }
   [data-componentsid="uiControl0_mCp0IF"]{padding: 0;}
   //待办任务
-  [data-componentsid="uiControl15_CTvikU"]{
+  [data-componentsid="uiControl14_NFDcys"]{
     .datatitle{
       background-image: url(./img/daiban.png);
+    }
+  }
+  //待阅、待办、公告等更多
+  .ysp-ZJ-datatitle{
+    position: fixed;
+    background: #fff;
+    min-height: 100vh;
+    width: 100%;
+    top: 0;
+    button{border: 0}
+    .dovedtesk{
+      height: 100vh;
+      overflow-y: auto;
+      padding-bottom: 40px;
+      padding-left: 20px;
+      margin-top: 44px;
+      >div{
+        margin: 10px 0;
+        border-bottom: 1px solid #ccc;
+        >div:nth-child(1){
+          font-size: 14px;
+        }
+        div:nth-child(2){
+          display: flex;
+          justify-content: space-between;
+          label{
+            color: #999999;
+            font-size: 12px;
+            margin: 0;
+          }
+          label:nth-child(1){
+            width: 100px;
+          }
+          label:nth-child(2){
+            width: 100%;
+          }
+        }
+      }
+      .dovedteskPage{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 0px ;
+        padding: 20px 0px;
+        .dovedteskPageFirst{
+          >span:nth-child(1){
+            background: #2F9FFF;
+            border-radius: 10px 0px 0px 10px;
+            color: #fff;
+            padding: 2px 12px;
+          }
+          >span:nth-child(2){
+            background: #ececec;
+            border-radius: 0px 10px 10px 0px;
+            padding: 2px 12px;
+          }
+        }
+        .dovedteskPageCenter{
+          >span:nth-child(1){
+            >span:nth-child(1){
+              padding-right: 5px;
+            }
+            >span:nth-child(2){
+              padding: 0px 5px;
+              border-radius: 100%;
+              background: #2F9FFF;
+              color: #fff;
+            }
+          }
+          >span:nth-child(2){
+            padding-left: 5px;
+          }
+        }
+        .dovedteskPageLast{
+          >span:nth-child(1){
+            background: #ececec;
+            border-radius: 10px 0px 0px 10px;
+            padding: 2px 12px;
+          }
+          >span:nth-child(2){
+            background: #2F9FFF;
+            border-radius: 0px 10px 10px 0px;
+            color: #fff;
+            padding: 2px 12px;
+          }
+        }
+      }
     }
   }
   [data-componentsid="uiControl14_NFDcys"]{
@@ -244,7 +392,8 @@ div[data-ysp-modelid = "login"] {
         padding-left: 20px;
         >div{
           font-size: 14px;
-          border-bottom: 1px dashed #ccc;
+          //border-bottom: 1px dashed #ccc;
+          border-bottom: 1px solid #ccc;
           div:nth-child(2){
           	margin: 5px 0;
             display: flex;
@@ -284,7 +433,8 @@ div[data-ysp-modelid = "login"] {
         color: #333333;
         font-size: 14px;
         line-height: 46px;
-        border-bottom: 1px dashed #ccc;
+        //border-bottom: 1px dashed #ccc;
+        border-bottom: 1px solid #ccc;
       }
       >div:last-child{
         border: 0;
@@ -453,3 +603,165 @@ div[data-ysp-modelid = "login"] {
   border: 1px solid #0a568c
 }
 //hzx-end
+
+/*首页图标点击后的样式start*/
+.ysp-ZJ-jiandu{
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  top: 0;
+	background-color: #f2f2f2;
+  button{border: 0;}
+  Header{
+    background-color: #0a568c;
+    color: #fff;
+    button{
+      // padding-left: 20px;
+    }
+  }
+  .JDtabul{
+    width: 345px;
+    margin: 5px auto 5px auto;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 5px;
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        border-top: 1px solid #ccc;
+        height: 44px;
+        line-height: 44px;
+        background-image: url(./img/icon.png);
+        background-size: 12px 14px;
+        background-repeat: no-repeat;
+        background-position: 20px 15px;
+        padding-left: 40px;
+        cursor: pointer;
+      }
+      li:first-child{
+        border: 0;
+      }
+    }
+  }
+}
+.ysp-ZJ-jiliang{
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  top: 0;
+  background-color: #f2f2f2;
+}
+/*首页图标点击后的样式end*/
+//待阅详情页
+.Dy_deil{
+  margin-top: 44px;
+}
+/*分配记录查询页*/
+.queryCondition{
+  margin-top: 64px;
+  input,select,option{
+    border: 0 !important;
+    text-align: right;
+  }
+  .conditionTitle{
+    color: #0a568c;
+    font-weight: bold;
+    padding-left: 20px;
+    background: url(./img/tou.png) no-repeat 0 0;
+    background-size: 8px 25px;
+  }
+  .conditionContent{
+    padding-left: 20px;
+    >div{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #d8d8d8;
+      >div:nth-child(1){
+        width: 60px;
+        color: #323e4d;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+      }
+      >div:nth-child(2){
+        width: 80%;
+        input,select{
+          height: 100%;
+          width: 100%;
+          background-color: #fff;
+          font-size: 14px;
+          color: #838b9f;
+          margin: 0;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+  .querybtn{
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    button{
+      width: 168px;
+      height: 32px;
+      background: #004788;
+      color: #fff;
+      border: 0;
+      border-radius: 5px;
+    }
+    button:nth-child(1){
+      background: #fff;
+      color: #004788;
+      border: 1px solid #004788;
+    }
+  }
+}
+
+.deilTable{
+  background: #f2f2f2;
+  p{margin: 0;}
+  .deilitem{
+    background: #fff;
+    margin: 5px 0;
+    padding: 0 20px;
+    .deilTitle{
+      p:nth-child(1){
+        color: #202020;
+        font-weight: bold;
+        padding: 10px 0 2.5px 0;
+      }
+      p:nth-child(2){
+        font-size: 14px;
+        color: #87939f;
+        // background-image: url(./img/xia.png);
+        background-position: right 25%;
+        background-repeat: no-repeat;
+        // background: url(./img/xia.png) right 25% no-repeat;
+        background-size: 16px 10px;
+        padding: 2.5px 0 10px 0;
+      }
+      .top{
+        background-image: url(./img/top.png);
+      }
+      .xia{
+        background-image: url(./img/xia.png);
+      }
+    }
+    .deilContent{
+      // display: none;
+      p{
+        font-size: 14px;
+        color: #87939f;
+        padding: 5px 0;
+      }
+    }
+  }
+}
+
+/*分配记录查询页*/
