@@ -547,3 +547,100 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 .Dy_deil {
   margin-top: 44px;
 }
+/*分配记录查询页*/
+.queryCondition {
+  margin-top: 64px;
+}
+.queryCondition input,
+.queryCondition select,
+.queryCondition option {
+  border: 0 !important;
+  text-align: right;
+}
+.queryCondition .conditionTitle {
+  color: #0a568c;
+  font-weight: bold;
+  padding-left: 20px;
+  background: url(img/tou.png) no-repeat 0 0;
+  background-size: 8px 25px;
+}
+.queryCondition .conditionContent {
+  padding-left: 20px;
+}
+.queryCondition .conditionContent > div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8d8d8;
+}
+.queryCondition .conditionContent > div > div:nth-child(1) {
+  width: 60px;
+  color: #323e4d;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.queryCondition .conditionContent > div > div:nth-child(2) {
+  width: 80%;
+}
+.queryCondition .conditionContent > div > div:nth-child(2) input,
+.queryCondition .conditionContent > div > div:nth-child(2) select {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+  color: #838b9f;
+  margin: 0;
+  padding-right: 20px;
+}
+.queryCondition .querybtn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.queryCondition .querybtn button {
+  width: 168px;
+  height: 32px;
+  background: #004788;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+}
+.queryCondition .querybtn button:nth-child(1) {
+  background: #fff;
+  color: #004788;
+  border: 1px solid #004788;
+}
+.deilTable {
+  background: #f2f2f2;
+}
+.deilTable p {
+  margin: 0;
+}
+.deilTable .deilitem {
+  background: #fff;
+  margin: 5px 0;
+  padding: 0 20px;
+}
+.deilTable .deilitem .deilTitle p:nth-child(1) {
+  color: #202020;
+  font-weight: bold;
+  padding: 10px 0 2.5px 0;
+}
+.deilTable .deilitem .deilTitle p:nth-child(2) {
+  font-size: 14px;
+  color: #87939f;
+  padding: 10px 0 2.5px 0;
+  background: url(img/xia.png) right 50% no-repeat;
+  background-size: 16px 10px;
+}
+.deilTable .deilitem .deilContent {
+  display: none;
+}
+.deilTable .deilitem .deilContent p {
+  font-size: 14px;
+  color: #87939f;
+}
+/*分配记录查询页*/
