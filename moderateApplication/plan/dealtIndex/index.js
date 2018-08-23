@@ -8,7 +8,7 @@
     doAction_uiControl193_bw3nWM: function (data, elem) {
       var type = data.eventType,
           data = data.customData;if (type == 'td_click') {
-        var arr = ['请假申请单', '销假申请单', '离职申请单', '加班申请单', '因公外出申请单', '考勤异常申请单', '员工异动申请单', '员工异动申请单V2', '招聘申请单', '员工合同续签申请单', '试用期转正申请单', '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '资产预算调整流程V2', '信用冻结订单释放申请流程', '资产类预算外申请V2', '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程', '路线变更流程', '路线组变更申请', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程', '总部用印申请', '合同审批流程', '客资批量审批', '送达方批量审批', '路线批量审批', '通用流程（知会）', '通用流程', '冷饮设备报废申请'];var flat = arr.indexOf(data.text);var hreflo = elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];hreflo += '&m=1';if (flat == -1) {
+        var arr = ['请假申请单', '销假申请单', '离职申请单', '加班申请单', '因公外出申请单', '考勤异常申请单', '员工异动申请单', '员工异动申请单V2', '招聘申请单', '员工合同续签申请单', '试用期转正申请单', '录用入职申请单', '培训申请单', '人才盘点信息表', '资产预算调整流程', '资产预算调整流程V2', '信用冻结订单释放申请流程', '资产类预算外申请V2', '资产类预算外申请流程V2', '借款/预付款申请单', '资产处理申请单', '差旅费用报销流程', '费用报销流程', '路线新增流程', '路线变更流程', '路线组变更申请', '客资/送大方/销售人员.路线批量审批', '市场用品采购流程', '总部合同审批流程', '用印申请流程', '总部用印申请', '合同审批流程', '客资批量审批', '送达方批量审批', '路线批量审批', '通用流程（知会）', '通用流程', '冷饮设备报废申请', '资产采购申请单', '存货采购申请单'];var flat = arr.indexOf(data.text);var hreflo = elem.querySelectorAll('tr')[++data.id].querySelector('a').onclick.toString().split("ShowPage('")[1].split("')")[0];hreflo += '&m=1';if (flat == -1) {
           if (hreflo[0] == 'h') {
             // if (ysp.appMain.isAndroid()) {
             //   window.yspCheckIn.closePageType("2");
@@ -61,13 +61,13 @@
             //           bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
             //         });
             //       }
-            hreflo = "http://172.16.11.61:8000" + hreflo;
-            hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
+            hreflo = "http://172.16.11.61:8000" + hreflo;hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
           }
         } else {
           //     if (ysp.appMain.isIOS()) {
           //       var _setupWebViewJavascriptBridge = function (callback) {
           //         if (window.WebViewJavascriptBridge) {
+
           //           return callback(WebViewJavascriptBridge);
           //         }
           //         if (window.WVJBCallbacks) {
@@ -80,7 +80,6 @@
           //         document.documentElement.appendChild(WVJBIframe);
           //         setTimeout(function () {
           //           document.documentElement.removeChild(WVJBIframe);
-
           //         }, 0);
           //       };
           //       _setupWebViewJavascriptBridge(function (bridge) {

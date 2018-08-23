@@ -35,7 +35,9 @@
     "currency": "../currency/index.json",
     "renewal": "../renewal/index.json",
     "homePage": "../homePage/index.json",
-    "LYBFSQ_DB": "../LYBFSQ_DB/index.json"
+    "LYBFSQ_DB": "../LYBFSQ_DB/index.json",
+    "assetMakeNo": "../assetMakeNo/index.json",
+    "stokeMakeNo": "../stokeMakeNo/index.json"
   },
   "chineseName": "待办首页页面",
   "description": "待办首页页面",
@@ -398,6 +400,14 @@
         {
           "toContextId": "context1_gUMhIs",
           "toModelId": "LYBFSQ_DB"
+        },
+        {
+          "toContextId": "context1_vBPizX",
+          "toModelId": "assetMakeNo"
+        },
+        {
+          "toContextId": "context93_H27hQz",
+          "toModelId": "stokeMakeNo"
         }
       ]
     },
@@ -440,6 +450,21 @@
       "toContexts": [
         {
           "toContextId": "context24_EkSRuv"
+        }
+      ]
+    },
+    "flow340_ikoUQ9": {
+      "fromContextId": "context24_EkSRuv",
+      "fromAction": "click",
+      "fromControlId": "control194_rkfuKp",
+      "toContexts": [
+        {
+          "toContextId": "context1_vBPizX",
+          "toModelId": "assetMakeNo"
+        },
+        {
+          "toContextId": "context93_H27hQz",
+          "toModelId": "stokeMakeNo"
         }
       ]
     }
