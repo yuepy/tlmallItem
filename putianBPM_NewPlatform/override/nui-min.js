@@ -3312,6 +3312,7 @@ mini._doOpen = function(c) {
     return f
 };
 mini.open = function(b) {
+  debugger;
     if (!b) {
         return
     }
