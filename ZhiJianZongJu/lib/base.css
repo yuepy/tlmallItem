@@ -1,6 +1,48 @@
 li {
   list-style: none;
 }
+/*分页样式*/
+.dovedteskPage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0px ;
+  padding: 20px 0px;
+}
+.dovedteskPage .dovedteskPageFirst > span:nth-child(1) {
+  background: #2F9FFF;
+  border-radius: 10px 0px 0px 10px;
+  color: #fff;
+  padding: 2px 12px;
+}
+.dovedteskPage .dovedteskPageFirst > span:nth-child(2) {
+  background: #ececec;
+  border-radius: 0px 10px 10px 0px;
+  padding: 2px 12px;
+}
+.dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(1) {
+  padding-right: 5px;
+}
+.dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(2) {
+  padding: 0px 5px;
+  border-radius: 100%;
+  background: #2F9FFF;
+  color: #fff;
+}
+.dovedteskPage .dovedteskPageCenter > span:nth-child(2) {
+  padding-left: 5px;
+}
+.dovedteskPage .dovedteskPageLast > span:nth-child(1) {
+  background: #ececec;
+  border-radius: 10px 0px 0px 10px;
+  padding: 2px 12px;
+}
+.dovedteskPage .dovedteskPageLast > span:nth-child(2) {
+  background: #2F9FFF;
+  border-radius: 0px 10px 10px 0px;
+  color: #fff;
+  padding: 2px 12px;
+}
 .itwont {
   width: 100%;
 }
@@ -323,47 +365,6 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 }
 [data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk > div div:nth-child(2) label:nth-child(2) {
   width: 100%;
-}
-[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 0px ;
-  padding: 20px 0px;
-}
-[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageFirst > span:nth-child(1) {
-  background: #2F9FFF;
-  border-radius: 10px 0px 0px 10px;
-  color: #fff;
-  padding: 2px 12px;
-}
-[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageFirst > span:nth-child(2) {
-  background: #ececec;
-  border-radius: 0px 10px 10px 0px;
-  padding: 2px 12px;
-}
-[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(1) {
-  padding-right: 5px;
-}
-[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(2) {
-  padding: 0px 5px;
-  border-radius: 100%;
-  background: #2F9FFF;
-  color: #fff;
-}
-[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageCenter > span:nth-child(2) {
-  padding-left: 5px;
-}
-[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageLast > span:nth-child(1) {
-  background: #ececec;
-  border-radius: 10px 0px 0px 10px;
-  padding: 2px 12px;
-}
-[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageLast > span:nth-child(2) {
-  background: #2F9FFF;
-  border-radius: 0px 10px 10px 0px;
-  color: #fff;
-  padding: 2px 12px;
 }
 [data-ysp-modelid="index_itownet"] [data-componentsid="uiControl14_NFDcys"] {
   padding: 0;
@@ -719,9 +720,6 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 }
 /*首页图标点击后的样式end*/
 /*分配记录查询页*/
-.queryCondition {
-  margin-top: 64px;
-}
 .queryCondition input,
 .queryCondition select,
 .queryCondition option {
@@ -822,16 +820,19 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 /*分配记录查询页*/
 /*待阅信息详情页*/
 [data-ysp-modelid='deil_Dy'] button,
-[data-ysp-modelid='deilNotice'] button {
+[data-ysp-modelid='deilNotice'] button,
+[data-ysp-modelid="allocationQuery"] button {
   border: 0;
 }
 [data-ysp-modelid='deil_Dy'] Header,
-[data-ysp-modelid='deilNotice'] Header {
+[data-ysp-modelid='deilNotice'] Header,
+[data-ysp-modelid="allocationQuery"] Header {
   background-color: #0a568c !important;
   color: #fff !important;
 }
 [data-ysp-modelid='deil_Dy'] Header button,
-[data-ysp-modelid='deilNotice'] Header button {
+[data-ysp-modelid='deilNotice'] Header button,
+[data-ysp-modelid="allocationQuery"] Header button {
   height: 40px;
   width: 100%;
   padding: 0;
@@ -853,11 +854,11 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   text-overflow: ellipsis;
 }
 .Dy_deil .deilContent {
-  text-indent: 2rem;
   font-size: 14px;
   color: #333333;
 }
 .Dy_deil .deilContent p {
+  text-indent: 2rem;
   margin: 0;
   margin-top: 5px;
 }

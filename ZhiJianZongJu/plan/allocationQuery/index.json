@@ -95,30 +95,30 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control25_ORywtD": {
+    "control8_eVP6Mt": {
       "location": {
         "data": {
-          "tagName": "TR"
+          "tagName": "TABLE"
         },
         "locators": [
           {
             "id": "@class/word",
             "prob": 1,
-            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-pager.pagination TABLE TBODY TR"
+            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-pager.pagination TABLE"
           },
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control25_ORywtD"
+        "onGetData": "getData_control8_eVP6Mt"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -129,7 +129,7 @@
         "control12_UF5UM1",
         "control13_3znx5x",
         "control14_A3AtPE",
-        "control25_ORywtD"
+        "control8_eVP6Mt"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -204,16 +204,16 @@
           }
         },
         {
-          "id": "uiControl22_g8Joxi",
-          "controlId": "control25_ORywtD",
+          "id": "uiControl11_uzrrgb",
+          "controlId": "control8_eVP6Mt",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl22_g8Joxi",
-                "onGetTemplate": "getTemplate_uiControl22_g8Joxi"
+                "onDoAction": "doAction_uiControl11_uzrrgb",
+                "onGetTemplate": "getTemplate_uiControl11_uzrrgb"
               }
             }
           }
