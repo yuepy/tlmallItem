@@ -124,7 +124,8 @@ input::-webkit-clear-button{
 */
 
 //针对每个模块重载样式
-div[data-ysp-modelid^="achievement"],div[data-ysp-modelid^="saleAchievement"]{
+div[data-ysp-modelid^="achievement"],div[data-ysp-modelid^="saleAchievement"],
+div[data-ysp-modelid^="businesHeadquartersDC"]{
   background:#f0eff5;
   overflow: hidden;
 }
@@ -16083,4 +16084,304 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
 
 .atreport .ysp-atreport .icon-eye.z-act{
   background: url('images/ysp-icon-eye-z-act.png') no-repeat 0 0;
+}
+
+.ysp-table-titles{
+  position: relative;
+  background-color: #fff;
+  padding:12px 0;
+  border-bottom:1px solid #ECEAEA;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  overflow-x:auto;
+}
+.ysp-table-titleItem{
+  position: relative;
+  display: inline-block;
+  border:1px solid #e2e2e2;
+  margin:0 4px;
+  padding:2px 28px 2px 8px;
+  font-size: 15px;
+  color:#777;
+  &.active{
+    color:#509aee;
+  }
+  .ysp-s-ico{
+    position: absolute;
+    right:8px;
+    top:6px;
+    .ui-asc,.ui-desc{
+      display: block;
+      width:10px;
+      height:7px;
+    }
+    .ui-asc{
+      background: url(images/bottom03.png) no-repeat;
+      background-size:100%;
+      margin-bottom:2px;
+      &.ui-disabled{
+        background: url(images/top01.png) no-repeat;
+      	background-size:100%;
+      }
+    }
+    .ui-desc{
+      background: url(images/bottom04.png) no-repeat;
+      background-size:100%;
+      &.ui-disabled{
+        background: url(images/top02.png) no-repeat;
+      	background-size:100%;
+      }
+    }
+  }
+}
+
+.ysp-tableLists-box{
+  background-color: #fff;
+  padding-left: .9375rem;
+  border-bottom:1px solid #e6e6e6;
+  .rank-top,.rank-else,.rank-main{
+    margin-right:12px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    text-align: center;
+    line-height: 16px;
+    position: relative;
+    top:-2px;
+  }
+  .rank-top{
+    background: url(images/bg-rank.png)  no-repeat;
+    background-size: 100%;
+    width: 15px;
+    height: 20px;
+    color: #fff;
+    padding-top: 5px;
+  }
+  .rank-else{
+    color: #e53710;
+    border: 1px solid #e53710;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background-color:#fff;
+  }
+  .rank-main{
+    background-color: #3d95f4;
+    color:#fff;
+    border: 1px solid #3d95f4;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  }
+  .item{
+    &:first-child{
+      border-top:0;
+    }
+    &:last-child{
+      border-bottom:0;
+    }
+    position: relative;
+    display: block;
+    padding-left: 0;
+    overflow: hidden;
+    .ysp-cardlist-icon{
+      position: absolute;
+      right:15px;
+      top:0;
+      bottom:0;
+      margin:auto 0;
+      display: block;
+      width: 10px;
+      height: 15px;
+      background: url(images/visitcalendar-pre-icon.png) no-repeat;
+      background-size: 100%;
+    }
+  }
+  .left{
+    float: left;
+    width: 60%;
+    &.wd{width:68%;}
+    .title{
+      font-size: 17px;
+      font-weight:normal;
+      color:#509aee;
+      margin-top:2px;
+      margin-bottom: 6px;
+    }
+    ul li{
+      text-align: left;
+      span{
+        font-size: 14px;
+        color:#a0a0a0;
+        margin-right:10px;
+      }
+      b{
+        font-size: 14px;
+        color:#757575;
+        font-weight: normal;
+        margin-right:5px;
+      }
+    }
+  }
+  .right{
+    float: right;
+    width: 30%;
+    margin-right:18px;
+    &.mg0{
+      margin-right:0;
+    }
+    .top,.btm{
+      &>div{
+        color: #787878;
+        font-size: 13px;
+        text-align: center;
+      }
+      em{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        margin-right: 3px;
+      }
+      h5{
+        background-color: #f2f2f2;
+  			font-size: 14px;
+        color: #a0a0a0;
+        text-align: left;
+        display: inline-block;
+        padding: 4px 10px;
+        width: 104px;
+        border-radius: 50px;
+        font-weight: normal;
+      }
+    }
+    .top{
+      em{
+        color: #3e98f6;
+      }
+    }
+    .btm{
+      em{
+        color: #e32d12;
+      }
+    }
+  }
+}
+
+.ysp-tableList-boxSum{
+  background-color: #fff;
+  margin-top:20px;
+  box-shadow: 0 -1px 7px rgba(0, 0, 0, 0.1);
+  &>div{
+    padding:.625rem .9375rem;
+  }
+  .title{
+    color:#333;
+    font-size: 17px;
+    font-weight:normal;
+    .icon{
+      width: 12px;
+      height:12px;
+      background:url(images/mark-point.png) no-repeat;
+      background-size: 100%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    span{
+      vertical-align: middle;
+    }
+  }
+  ul{
+    overflow:hidden;
+    li{
+      float:left;
+      width:46%;
+      white-space: nowrap;
+      span{
+          font-size: 14px;
+          color:#a0a0a0;
+          margin-right:10px;
+      }
+      b{
+          font-size: 14px;
+          color:#333;
+          font-weight: normal;
+      }
+    }
+  }
+  
+}
+
+.ysp-rank-lists{
+  background-color: #fff;
+  .main,.itemLists .item{
+    padding-left: 15px;
+    padding-right: 30px;
+    height: 69px;
+  }
+  .main{
+    position: relative;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      left:0;
+      top:0;
+      height:100%;
+      width:0;
+      border-left:4px solid #3d95f4;
+    }
+  }
+  .title{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 69px;
+    color:#000;
+    font-size: 16px;
+  }
+  .itemLists{
+    overflow: hidden;
+    .item{
+      padding-top:0;
+      padding-bottom: 0;
+    }
+    .item-main{
+      background-color: #f2f2f2;
+      .infos{
+        h5{
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  .infos{
+    float:right;
+    margin-top:6px;
+    text-align: center;
+    div{
+      font-size:13px;
+      color:#3d95f4;
+      line-height: normal;
+      b{
+        font-style: normal;
+  			font-weight: normal;
+        font-size:24px;
+        margin-right:3px;
+      }
+    }
+    h5{
+      background-color: #f2f2f2;
+      font-size: 14px;
+      color: #a0a0a0;
+      text-align: left;
+      display: inline-block;
+      padding: 4px 10px;
+      width: 90px;
+      border-radius: 50px;
+      font-weight: normal;
+    }
+  }
 }
