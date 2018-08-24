@@ -2641,7 +2641,7 @@
           }
         } else {
           ysp.customHelper.dateId("0");
-        }input.focus(); //elem.ownerDocument.querySelector('.laydate_btn').querySelector('#laydate_ok').click();
+        } //input.focus(); //elem.ownerDocument.querySelector('.laydate_btn').querySelector('#laydate_ok').click();
         var cwin = elem.ownerDocument.defaultView;cwin.timeInit();
       }
     },

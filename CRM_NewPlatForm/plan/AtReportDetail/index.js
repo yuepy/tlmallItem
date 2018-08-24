@@ -2,13 +2,9 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control47_syfpWU: function getData_control47_syfpWU(elem) {},
-    doAction_uiControl51_UHfnhZ: function doAction_uiControl51_UHfnhZ(data, elem) {
+    getData_control47_syfpWU: function (elem) {},
+    doAction_uiControl51_UHfnhZ: function (data, elem) {
       if (data.eventType === 'back') {
-        // var close = elem.ownerDocument.querySelector("#Details");
-        // var aa = close.querySelector(".details-head");
-        // var bb = aa.querySelector("#Close");
-        // bb.click();
         ysp.customHelper.back();
       }
     },
@@ -90,8 +86,7 @@
         //   atName.names = $(item).find("span").html();
         //   data.atNames.push(atName);
         // });
-        data.user = { users: [], val: [], val1: [], users2: [], vals: [], vals2: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');
-        for (var i = 0; i < users.length; i++) {
+        data.user = { users: [], val: [], val1: [], users2: [], vals: [], vals2: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
           var iconClose = users[i].querySelector("i") && users[i].querySelector("i").classList.contains("icon-close");if (iconClose) {
             data.user.users.push(users[i].querySelector('span').textContent);data.user.val.push(users[i].querySelector('span').getAttribute('val'));data.user.val1.push(users[i].querySelector('span').getAttribute('val1'));
           } else {
@@ -112,7 +107,8 @@
                 content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
             // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
             // src.push(scrC);
-            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
+            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);
+            var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
           }
         } /*
            	Dialog 数据   所选分公司树结构数据

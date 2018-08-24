@@ -6,7 +6,10 @@
   "description": "",
   "options": {
     "resource_intercept": {
-      "type": [],
+      "type": [
+        "image",
+        "css"
+      ],
       "ignore": []
     },
     "resource_inject": [],
@@ -25,171 +28,262 @@
   "override_urls": [
     {
       "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/js\\/lib\\/jquery-3\\.2\\.1\\.min\\.js"
+      ],
+      "target_url": "override/jquery-3.js",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/js/lib/jquery-3.2.1.min.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/js\\/lib\\/bootstrap\\/bootstrap-paginator\\.js"
+      ],
+      "target_url": "override/bootstrap-paginator.js",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/js/lib/bootstrap/bootstrap-paginator.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/js\\/lib\\/webuploader\\/webuploader\\.min\\.js"
+      ],
+      "target_url": "override/webuploader.js",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/js/lib/webuploader/webuploader.min.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/js\\/lib\\/iCheck\\/js\\/jquery\\.icheck\\.js"
+      ],
+      "target_url": "override/jquery.js",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/js/lib/iCheck/js/jquery.icheck.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/css\\/common\\.css"
+      ],
+      "target_url": "override/common.css",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/css/common.css"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/css\\/customer-atreport\\.css"
+      ],
+      "target_url": "override/customer-atreport.css",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/css/customer-atreport.css"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/css\\/customer-reportPop\\.css"
+      ],
+      "target_url": "override/customer-reportPop.css",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/css/customer-reportPop.css"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/js\\/lib\\/iCheck\\/skins\\/ick-red\\.css"
+      ],
+      "target_url": "override/ick-red.css",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/js/lib/iCheck/skins/ick-red.css"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/css\\/page\\.css"
+      ],
+      "target_url": "override/page.css",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/css/page.css"
+    },
+    {
+      "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/home\\/home\\.js.*"
       ],
-      "target_url": "override/home.js"
+      "target_url": "override/home.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/home/home.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/plugins\\/echarts\\/customerHome\\.js.*"
       ],
-      "target_url": "override/customerHome.js"
+      "target_url": "override/customerHome.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/plugins/echarts/customerHome.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/jquery\\.min\\.js.*"
       ],
-      "target_url": "override/jquery.min.js"
+      "target_url": "override/jquery.min.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/jquery.min.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.1\\.174:8080\\/ptDataShow\\/js\\/home\\/home\\.js.*"
       ],
-      "target_url": "override/home174.js"
+      "target_url": "override/home174.js",
+      "default_url": "http://192.168.1.174:8080/ptDataShow/js/home/home.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.1\\.174:8080\\/ptDataShow\\/js\\/jquery\\.min\\.js.*"
       ],
-      "target_url": "override/jquery174.min.js"
+      "target_url": "override/jquery174.min.js",
+      "default_url": "http://192.168.1.174:8080/ptDataShow/js/jquery.min.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/headLeaderView\\.js.*"
       ],
-      "target_url": "override/headLeaderView.js"
+      "target_url": "override/headLeaderView.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/headLeaderView.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/Imchat\\/im\\/imMain\\.html"
       ],
-      "target_url": "override/imMain.html"
+      "target_url": "override/imMain.html",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/Imchat/im/imMain.html"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/js\\/customerVisitInfo\\.js"
       ],
-      "target_url": "override/customerVisitInfo.js"
+      "target_url": "override/customerVisitInfo.js",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/js/customerVisitInfo.js"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/plugins\\/echarts\\/customerHomeMap\\.js.*"
       ],
-      "target_url": "override/customerHomeMap.js"
+      "target_url": "override/customerHomeMap.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/plugins/echarts/customerHomeMap.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/plugins\\/echarts\\/customerHomeData\\.js.*"
       ],
-      "target_url": "override/customerHomeData.js"
+      "target_url": "override/customerHomeData.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/plugins/echarts/customerHomeData.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesReach\\/brandManager\\.js.*"
       ],
-      "target_url": "override/brandManager.js"
+      "target_url": "override/brandManager.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesReach/brandManager.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesReach\\/leader\\.js.*"
       ],
-      "target_url": "override/leader.js"
+      "target_url": "override/leader.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesReach/leader.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesReach\\/branch\\.js.*"
       ],
-      "target_url": "override/branch.js"
+      "target_url": "override/branch.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesReach/branch.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesReach\\/bizGeneralManager\\.js.*"
       ],
-      "target_url": "override/bizGeneralManager.js"
+      "target_url": "override/bizGeneralManager.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesReach/bizGeneralManager.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesReach\\/productManager\\.js.*"
       ],
-      "target_url": "override/productManager.js"
+      "target_url": "override/productManager.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesReach/productManager.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesReach\\/office\\.js.*"
       ],
-      "target_url": "override/office.js"
+      "target_url": "override/office.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesReach/office.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesReach\\/salesman\\.js.*"
       ],
-      "target_url": "override/salesman.js"
+      "target_url": "override/salesman.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesReach/salesman.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesAll\\/leader\\.js.*"
       ],
-      "target_url": "override/leaders.js"
+      "target_url": "override/leaders.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesAll/leader.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesAll\\/common\\.js.*"
       ],
-      "target_url": "override/common.js"
+      "target_url": "override/common.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesAll/common.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesAll\\/branch\\.js.*"
       ],
-      "target_url": "override/branchs.js"
+      "target_url": "override/branchs.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesAll/branch.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesAll\\/bizGeneralManager\\.js.*"
       ],
-      "target_url": "override/bizGeneralManagers.js"
+      "target_url": "override/bizGeneralManagers.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesAll/bizGeneralManager.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesAll\\/productManager\\.js.*"
       ],
-      "target_url": "override/productManagers.js"
+      "target_url": "override/productManagers.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesAll/productManager.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesAll\\/brandManager\\.js.*"
       ],
-      "target_url": "override/brandManagers.js"
+      "target_url": "override/brandManagers.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesAll/brandManager.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesAll\\/office\\.js.*"
       ],
-      "target_url": "override/offices.js"
+      "target_url": "override/offices.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesAll/office.js.*"
     },
     {
       "origin_url": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/ptDataShow\\/js\\/salesAll\\/salerMan\\.js.*"
       ],
-      "target_url": "override/salerMan.js"
+      "target_url": "override/salerMan.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesAll/salerMan.js.*"
     },
     {
       "origin_url": [
         "http://192.168.220.82:8080/pttlCrm/res/js/workSummary.js"
       ],
-      "target_url": "override/workSummary.js"
+      "target_url": "override/workSummary.js",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/js/workSummary.js"
     },
     {
       "origin_url": [
         "http://192.168.220.82:8080/pttlCrm/res/js/newPlanPop.js"
       ],
-      "target_url": "override/newPlanPop.js"
+      "target_url": "override/newPlanPop.js",
+      "default_url": "http://192.168.220.82:8080/pttlCrm/res/js/newPlanPop.js"
     },
     {
       "origin_url": [
         "http://192.168.220.82:8080/ptDataShow/js/salesReach/common.js"
       ],
-      "target_url": "override/commons.js"
+      "target_url": "override/commons.js",
+      "default_url": "http://192.168.220.82:8080/ptDataShow/js/salesReach/common.js"
     }
   ],
   "adapter_urls": [
@@ -570,12 +664,22 @@
       "demo": [
         "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtmeView.html"
       ]
+    },
+    {
+      "title": "questionnaireFeedbackSum",
+      "url": "adapter://CRM_NewPlatForm/plan/questionnaireFeedbackSum/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/page\\/questionnaire\\/questionStatistics\\.html\\?quId.*"
+      ],
+      "demo": [
+        "http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionStatistics.html?quId=db7950cd0e124a83aa0d77b65a753b71&quName=13123"
+      ]
     }
   ],
   "name": "普天CRM_新平台",
   "default_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
   "scope": "CRM_NewPlatForm",
   "start_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
-  "update_time": 1535076601204,
+  "update_time": 1535077762714,
   "runtime_env": "1webview"
 }

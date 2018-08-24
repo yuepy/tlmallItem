@@ -4,7 +4,9 @@
   ysp.runtime.Model.extendLoadingModel({
     getData_control28_EuBEJL: function (elem) {},
     doAction_uiControl32_ytkHxp: function (data, elem) {
-      data.eventType == 'back' ? ysp.appMain.back() : '我回不去';
+      if (data.eventType == 'back') {
+        ysp.appMain.back();
+      }
     },
     getTemplate_uiControl32_ytkHxp: function getTemplate_uiControl32_ytkHxp() {
       var selfTemplate = "import {Component} from 'react'; \nimport {CustomHeader} from 'ysp-custom-components';\nexport default class extends Component{\n   \n   render = () => {\n       let _this = this;\n       return (\n         <CustomHeader \n \xA0 \xA0 \xA0 \xA0 \xA0 data={{centerText:\"\u62DC\u8BBF\u67E5\u770B\",rightText:\"\u7B5B\u9009\"}} \n           backIsShow={true} \n           back={()=>{ \n              let handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  eventType: 'back'\n                });\n              }\n           }} \n           filterIsShow={false} \n           filter={()=>{console.info(\"header filter ...\")}}/>\n       );\n   }\n}";

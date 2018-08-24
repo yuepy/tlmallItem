@@ -39,31 +39,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control275_Vm4ciI": {
-      "location": {
-        "data": {
-          "tagName": "HTML"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control275_Vm4ciI"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control286_xVOThl": {
       "location": {
         "data": {
@@ -884,7 +859,6 @@
     "context76_9rFC8S": {
       "controls": [
         "control274_87SuoT",
-        "control275_Vm4ciI",
         "control286_xVOThl",
         "control287_GUn0CG",
         "control288_fFLi4R",
@@ -916,16 +890,6 @@
   },
   "flows": {
     "flow228_qEhMTr": {
-      "toContexts": [
-        {
-          "toContextId": "context76_9rFC8S"
-        }
-      ]
-    },
-    "flow230_oRs28P": {
-      "fromContextId": "context76_9rFC8S",
-      "fromAction": "doAction",
-      "fromControlId": "control275_Vm4ciI",
       "toContexts": [
         {
           "toContextId": "context76_9rFC8S"
@@ -992,21 +956,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl268_dLVTD8",
                 "onGetTemplate": "getTemplate_uiControl268_dLVTD8"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl269_bgVPgo",
-          "controlId": "control275_Vm4ciI",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl269_bgVPgo",
-                "onGetTemplate": "getTemplate_uiControl269_bgVPgo"
               }
             }
           }

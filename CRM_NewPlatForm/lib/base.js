@@ -72,7 +72,47 @@
     ysp.customHelper.IconNum.atMe = atMe.split('=')[1];
   }
   topWin.AndroidBack = function(){
-    ysp.appMain.back();
+    var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
+    var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
+    var name = ysp.customHelper.AndroidName; //客户门店返回名称标识
+    var currentElem = ysp.customHelper.AndroidDocument; // 客户门店返回主元素
+    if(ysp.customHelper.AndroidBackFlag == 'default'){
+      ysp.customHelper.back();
+    }
+    if(ysp.customHelper.AndroidBackFlag == 'PageClose'){
+      if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
+      }
+      ysp.runtime.Browser.activeBrowser.contentWindow.close();
+      if(url == '' && model){
+         ysp.customHelper.BackReload('',model);
+      }
+    }
+    if(ysp.customHelper.AndroidBackFlag == 'destination' && url != ''){
+      ysp.customHelper.BackReload(url,model);
+    }
+    if(ysp.customHelper.AndroidBackFlag == 'BigData'){
+      ysp.runtime.Browser.activeBrowser.contentWindow.histroy.back();
+    }
+    if(ysp.customHelper.AndroidBackFlag == 'AndroidHistory'){
+      ysp.runtime.Browser.activeBrowser.contentWindow.history.go(-1);
+    }
+    if(ysp.customHelper.AndroidBackFlag == 'Client&Store'){
+      ysp.customHelper.toPlan(currentElem, name, model)
+    }
+    if(ysp.customHelper.AndroidBackFlag == 'ClientorStory'){
+      if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
+      }
+    }
+    //恢复默认值
+    ysp.customHelper.AndroidBackFlag == 'default';
+    ysp.customHelper.AndroidBackURL = '';
+    ysp.customHelper.AndroidBackModel = '';
+    ysp.customHelper.AndroidDocument = ''
+    ysp.customHelper.AndroidName = '';
+    //default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面 BigData:为大数据钻取返回 . AndroidHistory:针对与页面后退一步返回
+    //Client&Store : 针对客户||门店返回方案  ClientorStory:针对客户门店360返回列表方案
   }
   var forEach = Array.prototype.forEach;
   var currentModelID = ""; //当前动作
@@ -128,7 +168,7 @@
     this.atMe = atMe;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
-      if(xhr.status >= 200 && xhr.readyState == 4){
+      if(xhr.status >= 200 && xhr.status <300 || xhr.status == 304){
         if(xhr.response != ''){
           var obj = JSON.parse(xhr.response);
           if(obj.summaryReportCount && obj.atMeUnreadReportCount){
@@ -155,8 +195,8 @@
             if(top.EAPI.isIOS()){
               top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
             }else{
-              AndroidGetIconNum(); // 安卓端ICON数量取值;
-            }
+            	AndroidGetIconNum(); // 安卓端ICON数量取值;
+            }
             getAllMenuStatus = true; 
             //此状态说明当前已经全部拿到PC端所有菜单信息;
             var AllMenu = JSON.parse(xhr.response);
@@ -169,7 +209,7 @@
             if(ALLMENU != '' && AllMenu){
                var SessionXhr = new XMLHttpRequest();
                SessionXhr.onreadystatechange = function(){
-                if(SessionXhr.status == 200 && SessionXhr.readyState == 4){
+                if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
                   var encoder = JSON.parse(SessionXhr.response).encoder;
                   var userId = JSON.parse(SessionXhr.response).userId;
                   if(encoder && userId){
@@ -253,9 +293,6 @@
   function executePlan(modelID, menuId) {
     if (ysp.runtime.Model.setForceMatchModels && modelID) {
       var matchs = [];
-      //@todo 暂时放在这里处理
-      //if(modelID === 'newInformationTotle1') modelID && matchs.push('newInformationTotle');
-      //else  modelID && matchs.push(modelID);
       modelID && matchs.push(modelID);
       ysp.runtime.Model.setForceMatchModels(matchs);
       intercepter(modelID, menuId);
@@ -674,42 +711,7 @@
           }
         }
       }
-      //test
-      // if (type == 'visitLookerTest') {
-      //   topWin.open("http://192.168.220.82:8080/pttlCrm/res/page/visitManager/visitLook/visitlook.html", type);
-      //   executePlan('visitLookerTest');
-      //   return;
-      // } else if (type == 'atMyReportTest') {
-      //   topWin.open("http://192.168.220.82:8080/pttlCrm/res/page/customerAtReport/customerAtReport.html", type);
-      //   executePlan('atMyReportTest');
-      //   return;
-      // } else if (type == 'personVisitAchieveTest') {
-      //   if (parent.EAPI.isIOS()) {
-      //     ysp.appMain.openWindow('http://192.168.220.82:8080/ptDataShow/commonReports/commonReportsByEncoder?reportPid=customerView&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8xOTIvMjAxNyAxMzo0NjoxOA==');
-      //   } else {
-      //     topWin.open('http://192.168.220.82:8080/ptDataShow/commonReports/commonReportsByEncoder?reportPid=customerView&filter_userId=SONGFEI&encoder=U09OR0ZFSSswNy8xOTIvMjAxNyAxMzo0NjoxOA==', type);
-      //     executePlan('personVisitAchieveTest');
-      //   }
-      // }
-      //test
     }
-    // if (type == 'login') {
-    //   var doc = topWin.document;
-    //   var flag = false;
-    //   if (topWin) {
-    //     var logout = doc.getElementById('logout');
-    //     if (logout) {
-    //       //logout.click();
-    //       //ysp.runtime.Model.setForceMatchModels(['login']);
-    //     }
-    //     var activeWin = ysp.runtime.Browser.activeBrowser.contentWindow;
-    //     if (activeWin) {
-    //       activeWin.close();
-    //     }
-    //     topWin.location.href = "http://192.168.220.82:8080/pttlCrm/res/page/login/login.html";
-    //   }
-    //   return;
-    // }
     var taskPool = getSingletonTask();
     taskPool.executeTask(type);
   };
@@ -784,11 +786,6 @@
         if (layerTipEl) {
           var contentEl = layerTipEl.classList.contains("layui-layer-loading");
           return contentEl;
-          // var contentEl = layerTipEl.querySelector('div.layui-layer-loading');
-          // return contentEl;
-          // if (contentEl) {
-          //   return contentEl.textContent;
-          // }
         }
       }
     }
@@ -844,12 +841,22 @@
     }else if(!url && !model){
       currentWin.location.href = 'http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html';
     }
+    if(url=='' && model){
+      ysp.runtime.Model.setForceMatchModels([model]);
+    }
     if(url && model){
       currentWin.location.href = url;
       ysp.runtime.Model.setForceMatchModels([model]);
     }
+   
   }
   utils.extend(ysp.customHelper, {
+    AndroidDocument:'',//安卓物理返回键客户门店返回元素
+    AndroidName:'',//安卓物理返回键客户门店返回名称
+    AndroidBackURL:'',//安卓物理返回键目标地址
+    AndroidBackModel:'',//安卓物理返回键目标模板
+    AndroidBackFlag:'default',//安卓物理返回键返回方法 条件 标识 default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面
+    AndroidGetIconNum:AndroidGetIconNum, //安卓端请求待办角标数量
     CUSTOMURL:'',
     IconNum:{summary:'',atMe:''},//报告数量变量
 		BackFlag:0, // 拜访总览逐级返回标识

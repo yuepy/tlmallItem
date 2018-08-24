@@ -4260,6 +4260,7 @@ div[data-ysp-modelid="AtReportDetail"]{
       top: 51px;
       left: 0;
       position: absolute;//9.21
+      z-index: 1000;
     }
   }
   
@@ -4273,6 +4274,7 @@ div[data-ysp-modelid="AtReportDetail"]{
       left: 0;
       position: absolute;
     	bottom: 0;
+      z-index: 1000;
     }
   }
   .commitSearches-moudle{
@@ -4281,10 +4283,11 @@ div[data-ysp-modelid="AtReportDetail"]{
       height: 100%;
       //position: fixed;
       background: rgba(0,0,0,.5);
-      top: 100px;
+      top: 93px;
       left: 0;
       position: absolute;
     	bottom: 0;
+      z-index: 1000;
     }
   }
 }
@@ -6776,6 +6779,7 @@ div[data-ysp-modelid="clientInfoCollectDetail"]{
     color: #fff;
     border-radius: 5px;
     margin-bottom: 30px;
+    font-size: 14px;
   }
 }
 .ysp_delete{//删除按钮
@@ -8455,7 +8459,6 @@ div[data-ysp-modelid="dayPSI"]{
 /****责任团队视图end***/
 
 /***客户经营规模STart***/
-
 .ysp-custom-manage-nav-wrapper{
    width: 100%;
    overflow-x: auto;
@@ -8515,7 +8518,23 @@ div[data-ysp-modelid="dayPSI"]{
       }
    }
 }
-
+//客户360中用户功能 统一标签页面
+.new-ysp-custom-manage-nav-wrapper{
+  >ul{
+    i{
+      display: inline-block;
+      width: 2px;
+      height: 20px;
+      border-right: 1px solid #aaa;
+    }
+    >li{
+      flex:0 1 50%;
+      span{
+        border: none!important;
+      }
+    }
+  }
+}
 .ysp-custom-manage-competitor{
   display: flex;
   justify-content: space-between;
@@ -9474,7 +9493,6 @@ div[data-ysp-modelid="infomationInput"]{
         padding: 0 0 0 25px;
         height: 30px;
       }
-     
       .inputWrite_ltt{
         	background:url(./images/fillIn-icon.png) no-repeat;
         	background-size: 15px;
@@ -9486,6 +9504,8 @@ div[data-ysp-modelid="infomationInput"]{
     text-align: center;
     margin: 0 auto;
     width: 100%;
+    padding-top: 5px;
+    padding-bottom: 15px;
     .save_ltt{
       text-align: center;
       width: 80%;
@@ -9494,15 +9514,13 @@ div[data-ysp-modelid="infomationInput"]{
       background: #4895ED;
       border-radius: 5px;
       color: #fff;
-      height: 30px;
-      line-height: 30px;
+      height: 36px;
+      line-height: 32px;
+      font-size: 14px;
     }
   }
-    
- 
   .noContent_ltt{
     background: #fff;
-    
   }
 }
 
@@ -9666,6 +9684,8 @@ div[data-ysp-modelid="customerInformationweekFill"]{
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    padding-top: 5px;
+    padding-bottom: 15px;
     .save_ltt{
       text-align: center;
       width: 80%;
@@ -9674,8 +9694,9 @@ div[data-ysp-modelid="customerInformationweekFill"]{
       background: #4895ED;
       border-radius: 5px;
       color: #fff;
-      height: 30px;
-      line-height: 30px;
+      height: 36px;
+      line-height: 32px;
+      font-size: 14px;
     }
   }
  
@@ -9683,7 +9704,6 @@ div[data-ysp-modelid="customerInformationweekFill"]{
   
   .noContent_ltt{
     background: #fff;
-    
   }
 }
 
@@ -12165,7 +12185,7 @@ section.ysp-store-details{
 /***************暂无数据样式*******************/
 .ysp-no-data{
   background: #f2f2f2;
-  height: 92vh;
+  height: 100vh; //92
   >div:first-child{
     display: inline-block;
     height: 250px;
@@ -12186,7 +12206,7 @@ section.ysp-store-details{
 
 .ysp-no-dataes{
   background: #f2f2f2;
-  height: 82vh;
+  height: 82vh;  //82
   >div:first-child{
     display: inline-block;
     height: 250px;
@@ -12206,7 +12226,7 @@ section.ysp-store-details{
 }
 .ysp-no-datas{
   background: #f2f2f2;
-  height: 73vh;
+  height: 84vh;//73
   >div:first-child{
     display: inline-block;
     height: 250px;
@@ -15857,11 +15877,11 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
       margin-top: 10px;
       min-height: 40px;
       >span:nth-child(1){
-        width: 50%;
+        width: 30%;
         text-align: center;
       }
       >span:nth-child(2),>span:nth-child(3){
-        width: 20%;
+        width: 30%;
         text-align: center;
       }
     }
@@ -15873,14 +15893,14 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
       min-height: 40px;
       color: #999999;
       >span:nth-child(1){
-        width: 50%;
+        width: 30%;//50%
         text-align: center;
         overflow: hidden;
         text-overflow:ellipsis;
         white-space: nowrap;
       }
       >span:nth-child(2),>span:nth-child(3){
-        width: 20%;
+        width: 30%;//20%
         text-align: center;
       }
     }
@@ -16085,6 +16105,7 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
 .atreport .ysp-atreport .icon-eye.z-act{
   background: url('images/ysp-icon-eye-z-act.png') no-repeat 0 0;
 }
+
 
 .ysp-table-titles{
   position: relative;
@@ -16383,5 +16404,12 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
       border-radius: 50px;
       font-weight: normal;
     }
+  }
+}
+//@ 报告 页面无法覆盖问题解决.出现别的页面展示
+.ysp-atreport-dialog-body{
+  .ysp-dialog-wrapper{
+    position: none!important;
+    height: 100vh!important;
   }
 }
