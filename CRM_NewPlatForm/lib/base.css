@@ -53,7 +53,8 @@ input::-webkit-clear-button{
 }
 */
 div[data-ysp-modelid^="achievement"],
-div[data-ysp-modelid^="saleAchievement"] {
+div[data-ysp-modelid^="saleAchievement"],
+div[data-ysp-modelid^="businesHeadquartersDC"] {
   background: #f0eff5;
   overflow: hidden;
 }
@@ -14657,6 +14658,302 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
 }
 .atreport .ysp-atreport .icon-eye.z-act {
   background: url('images/ysp-icon-eye-z-act.png') no-repeat 0 0;
+}
+.ysp-table-titles {
+  position: relative;
+  background-color: #fff;
+  padding: 12px 0;
+  border-bottom: 1px solid #ECEAEA;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.ysp-table-titleItem {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #e2e2e2;
+  margin: 0 4px;
+  padding: 2px 28px 2px 8px;
+  font-size: 15px;
+  color: #777;
+}
+.ysp-table-titleItem.active {
+  color: #509aee;
+}
+.ysp-table-titleItem .ysp-s-ico {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+}
+.ysp-table-titleItem .ysp-s-ico .ui-asc,
+.ysp-table-titleItem .ysp-s-ico .ui-desc {
+  display: block;
+  width: 10px;
+  height: 7px;
+}
+.ysp-table-titleItem .ysp-s-ico .ui-asc {
+  background: url(images/bottom03.png) no-repeat;
+  background-size: 100%;
+  margin-bottom: 2px;
+}
+.ysp-table-titleItem .ysp-s-ico .ui-asc.ui-disabled {
+  background: url(images/top01.png) no-repeat;
+  background-size: 100%;
+}
+.ysp-table-titleItem .ysp-s-ico .ui-desc {
+  background: url(images/bottom04.png) no-repeat;
+  background-size: 100%;
+}
+.ysp-table-titleItem .ysp-s-ico .ui-desc.ui-disabled {
+  background: url(images/top02.png) no-repeat;
+  background-size: 100%;
+}
+.ysp-tableLists-box {
+  background-color: #fff;
+  padding-left: .9375rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+.ysp-tableLists-box .rank-top,
+.ysp-tableLists-box .rank-else,
+.ysp-tableLists-box .rank-main {
+  margin-right: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 12px;
+  text-align: center;
+  line-height: 16px;
+  position: relative;
+  top: -2px;
+}
+.ysp-tableLists-box .rank-top {
+  background: url(images/bg-rank.png) no-repeat;
+  background-size: 100%;
+  width: 15px;
+  height: 20px;
+  color: #fff;
+  padding-top: 5px;
+}
+.ysp-tableLists-box .rank-else {
+  color: #e53710;
+  border: 1px solid #e53710;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+}
+.ysp-tableLists-box .rank-main {
+  background-color: #3d95f4;
+  color: #fff;
+  border: 1px solid #3d95f4;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+}
+.ysp-tableLists-box .item {
+  position: relative;
+  display: block;
+  padding-left: 0;
+  overflow: hidden;
+}
+.ysp-tableLists-box .item:first-child {
+  border-top: 0;
+}
+.ysp-tableLists-box .item:last-child {
+  border-bottom: 0;
+}
+.ysp-tableLists-box .item .ysp-cardlist-icon {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  display: block;
+  width: 10px;
+  height: 15px;
+  background: url(images/visitcalendar-pre-icon.png) no-repeat;
+  background-size: 100%;
+}
+.ysp-tableLists-box .left {
+  float: left;
+  width: 60%;
+}
+.ysp-tableLists-box .left.wd {
+  width: 68%;
+}
+.ysp-tableLists-box .left .title {
+  font-size: 17px;
+  font-weight: normal;
+  color: #509aee;
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+.ysp-tableLists-box .left ul li {
+  text-align: left;
+}
+.ysp-tableLists-box .left ul li span {
+  font-size: 14px;
+  color: #a0a0a0;
+  margin-right: 10px;
+}
+.ysp-tableLists-box .left ul li b {
+  font-size: 14px;
+  color: #757575;
+  font-weight: normal;
+  margin-right: 5px;
+}
+.ysp-tableLists-box .right {
+  float: right;
+  width: 30%;
+  margin-right: 18px;
+}
+.ysp-tableLists-box .right.mg0 {
+  margin-right: 0;
+}
+.ysp-tableLists-box .right .top > div,
+.ysp-tableLists-box .right .btm > div {
+  color: #787878;
+  font-size: 13px;
+  text-align: center;
+}
+.ysp-tableLists-box .right .top em,
+.ysp-tableLists-box .right .btm em {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  margin-right: 3px;
+}
+.ysp-tableLists-box .right .top h5,
+.ysp-tableLists-box .right .btm h5 {
+  background-color: #f2f2f2;
+  font-size: 14px;
+  color: #a0a0a0;
+  text-align: left;
+  display: inline-block;
+  padding: 4px 10px;
+  width: 104px;
+  border-radius: 50px;
+  font-weight: normal;
+}
+.ysp-tableLists-box .right .top em {
+  color: #3e98f6;
+}
+.ysp-tableLists-box .right .btm em {
+  color: #e32d12;
+}
+.ysp-tableList-boxSum {
+  background-color: #fff;
+  margin-top: 20px;
+  box-shadow: 0 -1px 7px rgba(0, 0, 0, 0.1);
+}
+.ysp-tableList-boxSum > div {
+  padding: .625rem .9375rem;
+}
+.ysp-tableList-boxSum .title {
+  color: #333;
+  font-size: 17px;
+  font-weight: normal;
+}
+.ysp-tableList-boxSum .title .icon {
+  width: 12px;
+  height: 12px;
+  background: url(images/mark-point.png) no-repeat;
+  background-size: 100%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.ysp-tableList-boxSum .title span {
+  vertical-align: middle;
+}
+.ysp-tableList-boxSum ul {
+  overflow: hidden;
+}
+.ysp-tableList-boxSum ul li {
+  float: left;
+  width: 46%;
+  white-space: nowrap;
+}
+.ysp-tableList-boxSum ul li span {
+  font-size: 14px;
+  color: #a0a0a0;
+  margin-right: 10px;
+}
+.ysp-tableList-boxSum ul li b {
+  font-size: 14px;
+  color: #333;
+  font-weight: normal;
+}
+.ysp-rank-lists {
+  background-color: #fff;
+}
+.ysp-rank-lists .main,
+.ysp-rank-lists .itemLists .item {
+  padding-left: 15px;
+  padding-right: 30px;
+  height: 69px;
+}
+.ysp-rank-lists .main {
+  position: relative;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.ysp-rank-lists .main:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  border-left: 4px solid #3d95f4;
+}
+.ysp-rank-lists .title {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 69px;
+  color: #000;
+  font-size: 16px;
+}
+.ysp-rank-lists .itemLists {
+  overflow: hidden;
+}
+.ysp-rank-lists .itemLists .item {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ysp-rank-lists .itemLists .item-main {
+  background-color: #f2f2f2;
+}
+.ysp-rank-lists .itemLists .item-main .infos h5 {
+  background-color: #fff;
+}
+.ysp-rank-lists .infos {
+  float: right;
+  margin-top: 6px;
+  text-align: center;
+}
+.ysp-rank-lists .infos div {
+  font-size: 13px;
+  color: #3d95f4;
+  line-height: normal;
+}
+.ysp-rank-lists .infos div b {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  margin-right: 3px;
+}
+.ysp-rank-lists .infos h5 {
+  background-color: #f2f2f2;
+  font-size: 14px;
+  color: #a0a0a0;
+  text-align: left;
+  display: inline-block;
+  padding: 4px 10px;
+  width: 90px;
+  border-radius: 50px;
+  font-weight: normal;
 }
 .ysp-atreport-dialog-body .ysp-dialog-wrapper {
   position: none!important;

@@ -11,6 +11,10 @@
         "data": {
           "tagName": "LI"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -57,12 +61,156 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control89_EwPocV": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"jqGrid_wrapper\"]/DIV[1]/DIV[3]/DIV[2]/DIV[1]/TABLE[1]/THEAD[1]/TR[1]",
+              "descendant::DIV[@id=\"jqGrid_wrapper\"]//TR"
+            ]
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "gview_table_list_1",
+              "tagName": "DIV",
+              "prefix": "DIV[@id=\"jqGrid_wrapper\"]//",
+              "suffix": "/DIV[2]/DIV[1]/TABLE[1]/THEAD[1]/TR[1]",
+              "ratio": 0.396
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ui-jqgrid-hbox TABLE.ui-jqgrid-htable.ui-common-table.table.table-bordered TR.ui-jqgrid-labels"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[4]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[2]/DIV[1]/TABLE[1]/THEAD[1]/TR[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control89_EwPocV"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control116_QcA22u": {
+      "location": {
+        "data": {
+          "tagName": "TBODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"jqGrid_wrapper\"]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]",
+              "descendant::DIV[@id=\"jqGrid_wrapper\"]//TBODY"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ui-jqgrid-view.table-responsive DIV.ui-jqgrid-bdiv TABLE.ui-jqgrid-btable.ui-common-table.table.table-bordered TBODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[4]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control116_QcA22u"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control124_1ZAE1L": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"jqGrid_wrapper\"]/DIV[1]/DIV[3]/DIV[4]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]",
+              "descendant::DIV[@id=\"jqGrid_wrapper\"]//TR"
+            ]
+          },
+          {
+            "id": "@id/partialWord",
+            "prob": 1,
+            "disabled": true,
+            "value": {
+              "elemId": "gview_table_list_1",
+              "tagName": "DIV",
+              "prefix": "DIV[@id=\"jqGrid_wrapper\"]//",
+              "suffix": "/DIV[4]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]",
+              "ratio": 0.396
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.ui-jqgrid-hbox TABLE.ui-jqgrid-ftable.ui-common-table.table.table-bordered TR.footrow.footrow-ltr"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[4]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[4]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control124_1ZAE1L"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context91_3yemwg": {
       "controls": [
-        "control98_UOORsI"
+        "control98_UOORsI",
+        "control89_EwPocV",
+        "control116_QcA22u",
+        "control124_1ZAE1L"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -70,6 +218,36 @@
   },
   "flows": {
     "flow102_L0DwrI": {
+      "toContexts": [
+        {
+          "toContextId": "context91_3yemwg"
+        }
+      ]
+    },
+    "flow75_qMNqRs": {
+      "fromContextId": "context91_3yemwg",
+      "fromAction": "doAction",
+      "fromControlId": "control89_EwPocV",
+      "toContexts": [
+        {
+          "toContextId": "context91_3yemwg"
+        }
+      ]
+    },
+    "flow274_cm6yW0": {
+      "fromContextId": "context91_3yemwg",
+      "fromAction": "doAction",
+      "fromControlId": "control98_UOORsI",
+      "toContexts": [
+        {
+          "toContextId": "context91_3yemwg"
+        }
+      ]
+    },
+    "flow275_UKrzkA": {
+      "fromContextId": "context91_3yemwg",
+      "fromAction": "doAction",
+      "fromControlId": "control116_QcA22u",
       "toContexts": [
         {
           "toContextId": "context91_3yemwg"
@@ -95,6 +273,51 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl65_OItCfI",
+          "controlId": "control89_EwPocV",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl65_OItCfI",
+                "onGetTemplate": "getTemplate_uiControl65_OItCfI"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl113_3GMoae",
+          "controlId": "control116_QcA22u",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl113_3GMoae",
+                "onGetTemplate": "getTemplate_uiControl113_3GMoae"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl114_XrbJwG",
+          "controlId": "control124_1ZAE1L",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl114_XrbJwG",
+                "onGetTemplate": "getTemplate_uiControl114_XrbJwG"
+              }
+            }
+          }
         }
       ]
     }
@@ -110,7 +333,10 @@
     "page/urls": {
       "contexts": {
         "context91_3yemwg": [
-          "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDgvMDYvMjAxOCAxMDoxMjowNw==&username=WANGDONG"
+          "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDgvMDYvMjAxOCAxMDoxMjowNw==&username=WANGDONG",
+          "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDgvMTUvMjAxOCAxNDo0MDo1OA==&username=WANGDONG&a=1",
+          "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDgvMTYvMjAxOCAxNDoxNzoxMA&username=WANGDONG&clickLi=true",
+          "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDgvMTYvMjAxOCAxNTozNzozMg==&username=WANGDONG&a=1"
         ]
       }
     },
