@@ -39,3 +39,77 @@
         elem.querySelector("tbody").querySelectorAll("td")[10].querySelector("a").click();
       }
     }
+- name: 详情查询功能
+  getTemplate: "module.exports = React.createClass({\n  onblur:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:{\n          value:target.value,\n          index:target.getAttribute('data-index')\n        }\n      })\n    }\n  },\n  dateblur:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'dateipt',\n        data:{\n          value:target.value,\n          index:target.getAttribute('data-index'),\n          id_index:target.getAttribute('data-id')\n        }\n      })\n    }\n  },\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        selectedindex = target.selectedIndex;\n    if(handler){\n      handler({\n        eventType:'selectchange',\n        data:{\n          index:target.getAttribute('data-index'),\n          selectedIndex:selectedindex\n        }\n      })\n    }\n  },\n  querybtn:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        id = target.id;\n    if(handler){\n      handler({\n        eventType:'querclick',\n        data:{\n          id:id\n        }\n      })\n    }\n  },\n  delbtn:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        id = target.id;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:{\n          \n        }\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    if(!data){\n      return '';\n    }\n    var lis = data.content.map(function(ele,index){\n\t\t\t\t\t\t\tif(ele.flat == 'ipt'){\n                return(\n                  <div>\n                  \t<div>{ele.left}</div>\n                    <div><AInput placeholder='请输入' onBlur={_this.onblur.bind(_this)} type='text' data-index={ele.index} value={ele.val} /></div>\n                  </div>\n                )\n              }else if(ele.flat == 'date'){\n                return(\n                \t<div>\n                  \t<div>{ele.left}</div>\n                    <div><AInput onBlur={_this.dateblur.bind(_this)} type='date' data-id={index==4?0:1} data-index={ele.index} value={ele.val} /></div>\n                  </div>\n                )\n              } else if(ele.flat == 'select'){\n                return(\n                \t<div>\n                  \t<div>{ele.left}</div>\n                    <div>\n                      <select data-index={ele.index} onChange={_this.onChange.bind(_this)}>\n                        {\n                        ele.opts.map(function(d,i){\n                          return(\n                          \t<option data-index={i} selected={ele.selected[i]}>{d}</option>\n                          )\n                        })\n                      }\n                      </select>\n                    </div>\n                  </div>\n                )\n              }\n            })\n    return (\n      <div className='queryCondition'>\n        <div className='conditionTitle'>{data.title}</div>\n        <div className='conditionContent'>\n        \t{\n            lis\n          }\n        </div>\n        <div className='querybtn'>\n        \t<button onClick={_this.querybtn.bind(_this)} id={data.querybtn.id}>{data.querybtn.text}</button>\n          <button onClick={_this.delbtn.bind(_this)}>{data.delbtn.text}</button>\n        </div>\n      </div>\n    )\n  }\n});"
+  getData: "if (!elem) return;\nvar data = {};\ndata.title = elem.querySelector('div').textContent.trim();\ndata.querybtn = {\n  text: elem.querySelector('button').textContent,\n  id: elem.querySelector('button').id\n};\ndata.delbtn = {\n  text: elem.querySelectorAll('button')[1].textContent.trim(),\n  id: elem.querySelectorAll('button')[1].id\n};\ndata.content = [];\nvar div = elem.querySelector(\"#queryDiv\");\nvar ipts = elem.querySelectorAll('label');\nfor (var i = 0; i < ipts.length; i++) {\n  var obj = {};\n\n  if (i < 4) {\n    obj.left = ipts[i].textContent;\n    obj.val = ipts[i].nextElementSibling.nextElementSibling.querySelector('input[type=\"text\"]').value;\n    obj.flat = 'ipt';\n    obj.index = i;\n    data.content.push(obj);\n  } else if (i == 4) {\n    obj.left = ipts[i].textContent;\n    obj.flat = 'date';\n    obj.index = i;\n    obj.val = ipts[i].nextElementSibling.nextElementSibling.querySelector('input[type=\"text\"]').value;\n    data.content.push(obj);\n    data.content.push({\n      left: ipts[i].nextElementSibling.nextElementSibling.nextSibling.textContent.trim(),\n      flat: 'date',\n      index: i,\n      val: ipts[i].nextElementSibling.nextElementSibling.nextSibling.nextElementSibling.nextElementSibling.querySelector('input[type=\"text\"]').value\n    }); // obj.left = ipts[i].nextElementSibling.nextElementSibling.nextSibling.textContent.trim();\n  } else {\n    obj.left = ipts[i].textContent;\n    obj.opts = [];\n    obj.index = i;\n    obj.flat = 'select';\n    var opts = elem.ownerDocument.querySelector(\".panel.combo-p\").querySelector('div').querySelectorAll('div');\n    obj.selected = [];\n\n    for (var k = 0; k < opts.length; k++) {\n      obj.opts.push(opts[k].textContent);\n\n      if (opts[k].className.indexOf('combobox-item-selected') != -1) {\n        obj.selected.push(true);\n      } else {\n        obj.selected.push(false);\n      }\n    }\n\n    data.content.push(obj);\n  }\n} // var ipts = elem.querySelectorAll('input[type=\"text\"]');\n// for(var i=0;i<ipts.length;i++){\n// \tif(ipts[i].style.display!='none'){\n//     var obj = {};\n//     if(i<4){\n//       obj.left = ipts[i].parentElement.parentElement.querySelector('label').textContent;\n//       obj.val = ipts[i].value\n//       obj.flat = 'ipt';\n//     }else if(i==4){\n//       obj.left = ipts[i].textContent;\t\n//       obj.flat = 'date';\n//       obj.val = [];\n//     }else{\n//       obj.left = ipts[i].textContent;\n//       obj.opts = [];\n//       obj.flat = 'select';\n//       var opts = elem.ownerDocument.querySelector(\".panel.combo-p\").querySelector('div').querySelectorAll('div');\n//       for(var k=0;k<opts.length;k++){\n//         obj.opts.push(opts[k].textContent)\n//       }\n//     }\n//     data.content.push(obj);\n//   }\n// }\nreturn data;\n"
+  doAction: |
+    var type = data.eventType,
+        data = data.customData,
+        index = +data.index;
+    if (type == 'querclick') {
+      elem.querySelector("#" + data.id).click();
+    }
+    if (type == 'click') {
+      elem.querySelectorAll('button')[1].click();
+    }
+    var labels = elem.querySelectorAll('label');
+    if (type == 'blur') {
+      if (index < 4) {
+        labels[index].nextElementSibling.value = data.value;
+        labels[index].nextElementSibling.nextElementSibling.querySelectorAll('input')[0].value = data.value;
+        labels[index].nextElementSibling.nextElementSibling.querySelectorAll('input')[1].value = data.value;
+      }
+    }
+    if (type == 'dateipt') {
+      if (data.id_index == 0) {
+        labels[index].nextElementSibling.value = data.value;
+        labels[index].nextElementSibling.nextElementSibling.querySelectorAll('input')[0].value = data.value;
+        labels[index].nextElementSibling.nextElementSibling.querySelectorAll('input')[1].value = data.value;
+      } else {
+        labels[index].nextElementSibling.value = data.value;
+        labels[index].nextElementSibling.nextElementSibling.nextSibling.nextElementSibling.value = data.value;
+        labels[index].nextElementSibling.nextElementSibling.nextSibling.nextElementSibling.nextElementSibling.querySelectorAll('input')[1].value = data.value;
+      }
+    }
+    if (type == 'selectchange') {
+      elem.ownerDocument.querySelector(".panel.combo-p").querySelector('div').querySelectorAll('div')[+data.selectedIndex].click();
+    }
+- name: 详情列表数据
+  getTemplate: "module.exports = React.createClass({\n  click:function(e){\n    var target = e.target;\n    if(target.parentElement.nextElementSibling.style.display=='none'){\n      // target.style.backgroundImage = 'url(./img/top.png)';\n      target.className = 'top';\n      target.parentElement.style.borderBottom = '1px solid #ccc';\n      target.parentElement.nextElementSibling.style.display = 'block';\n    }else{\n      // target.style.backgroundImage = 'url(./img/xia.png)';\n      target.className = 'xia';\n      target.parentElement.style.borderBottom = '0';\n      target.parentElement.nextElementSibling.style.display = 'none';\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    var lis = data.content.map(function(ele,index){\n      return(\n      \t<div className='deilitem'>\n          <div className='deilTitle'>\n          \t<p>{ele[2]}</p>\n            <p className='xia' onClick={_this.click.bind(_this)}>{ele[1]}</p>\n          </div>\n          <div className='deilContent' style={{'display':'none'}} >\n          \t<p>{data.titles[0]}:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ele[0]}</p>\n          \t<p>{data.titles[3]}:&nbsp;&nbsp;{ele[3]}</p>\n          \t<p>{data.titles[4]}:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ele[4]}</p>\n          \t<p>{data.titles[5]}:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ele[5]}</p>\n          \t<p>{data.titles[6]}:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ele[6]}</p>\n          </div>\n        </div>\n      )\n    })\n    return (\n      <div className='deilTable'>\n        {\n          lis\n        }\n      </div>\n    )\n  }\n});"
+  getData: >
+    if (!elem) return;
+
+    var data = {};
+
+    data.titles = [];
+
+    data.content = [];
+
+    var tds =
+    elem.querySelector('table').querySelector('tr').querySelectorAll('td');
+
+    for (var i = 1; i < tds.length; i++) {
+      if (tds[i].style.display != 'none') {
+        data.titles.push(tds[i].textContent.trim());
+      }
+    }
+
+    var trs = elem.querySelectorAll('table')[1].querySelectorAll('tr');
+
+    for (var i = 0; i < trs.length; i++) {
+      if (trs[i].style.display != 'none') {
+        var tds = trs[i].querySelectorAll('td');
+        var arr = [];
+
+        for (var k = 1; k < tds.length; k++) {
+          if (tds[k].style.display != 'none') {
+            arr.push(tds[k].textContent.trim());
+          }
+        }
+
+        data.content.push(arr);
+      }
+    }
+
+    return data;
+  doAction: ''

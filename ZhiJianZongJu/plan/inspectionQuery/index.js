@@ -1,0 +1,139 @@
+(function (win, ysp) {
+  ysp.runtime.Model.extendLoadingModel({
+    getData_control10_hTTLsG: function (elem) {
+      if (!elem) return;return elem.textContent.trim();
+    },
+    doAction_uiControl26_0WbBbW: function (data, elem) {},
+    getTemplate_uiControl26_0WbBbW: function () {
+      var selfTemplate = "import { Header, HeaderLeft } from 'ysp-interior-components';\nimport { back } from 'appRenderer';\nmodule.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    return (\n      <Header amStyle=\"primary\" title={data}>\n        <HeaderLeft>\n          <button  onClick={back}>\u8FD4\u56DE</button>\n        </HeaderLeft>\n      </Header>\n    )\n  }\n});";
+      return "'use strict';\n\nvar _yspInteriorComponents = require('ysp-interior-components');\n\nvar _appRenderer = require('appRenderer');\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    return React.createElement(\n      _yspInteriorComponents.Header,\n      { amStyle: 'primary', title: data },\n      React.createElement(\n        _yspInteriorComponents.HeaderLeft,\n        null,\n        React.createElement(\n          'button',\n          { onClick: _appRenderer.back },\n          '\\u8FD4\\u56DE'\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control11_3XcZvT: function (elem) {
+      if (!elem) return;var data = { page: [], sumPage: [] }; // var pageEl = elem.parentElement.parentElement.nextElementSibling;
+      var page = elem.querySelector("tbody").querySelectorAll("td")[6].querySelector("input").value;data.page.push(page);var sumPage = elem.querySelector("tbody").querySelectorAll("td")[7].textContent;data.sumPage.push(sumPage);return data;
+    },
+    doAction_uiControl27_u3E9np: function (data, elem) {
+      var type = data.eventType;var data = data.customData;if ('page' == type) {
+        if ('first' == data) {
+          elem.querySelector("tbody").querySelectorAll("td")[2].querySelector("a").click();
+        }if ("up" == data) {
+          elem.querySelector("tbody").querySelectorAll("td")[3].querySelector("a").click();
+        }if ("down" == data) {
+          elem.querySelector("tbody").querySelectorAll("td")[9].querySelector("a").click();
+        }if ("last" == data) {
+          elem.querySelector("tbody").querySelectorAll("td")[10].querySelector("a").click();
+        }
+      }
+    },
+    getTemplate_uiControl27_u3E9np: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  handlerPage:function(e){\n    var target = e.target;\n    var handler = this.props.customHandler;\n    var type = target.dataset.type;\n    if(handler){\n      handler({\n        eventType:'page',\n        data:type\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customdata,\n    \t\tfirst = \"|<\",up=\"<\",down=\">\",last=\">|\";\n    var sumPage = this.props.customData && this.props.customData.sumPage || [];\n    var page = this.props.customData && this.props.customData.page || [];\n    return (\n      <div>\n        <div className=\"dovedteskPage\">\n          <span className=\"dovedteskPageFirst\">\n            <span onClick={this.handlerPage.bind(this)} data-type=\"first\">{first}</span>\n            <span onClick={this.handlerPage.bind(this)} data-type=\"up\">{up}</span>\n          </span>\n          <span className=\"dovedteskPageCenter\">\n            <span>\n              <span>\u7B2C</span>\n              <span>{page}</span>\n            </span>\n            <span>{sumPage}</span>\n          </span>\n          <span className=\"dovedteskPageLast\">\n            <span onClick={this.handlerPage.bind(this)} data-type=\"down\">{down}</span>\n            <span onClick={this.handlerPage.bind(this)} data-type=\"last\">{last}</span>\n          </span>\n        </div>\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  handlerPage: function handlerPage(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    var type = target.dataset.type;\n    if (handler) {\n      handler({\n        eventType: 'page',\n        data: type\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customdata,\n        first = \"|<\",\n        up = \"<\",\n        down = \">\",\n        last = \">|\";\n    var sumPage = this.props.customData && this.props.customData.sumPage || [];\n    var page = this.props.customData && this.props.customData.page || [];\n    return React.createElement(\n      \"div\",\n      null,\n      React.createElement(\n        \"div\",\n        { className: \"dovedteskPage\" },\n        React.createElement(\n          \"span\",\n          { className: \"dovedteskPageFirst\" },\n          React.createElement(\n            \"span\",\n            { onClick: this.handlerPage.bind(this), \"data-type\": \"first\" },\n            first\n          ),\n          React.createElement(\n            \"span\",\n            { onClick: this.handlerPage.bind(this), \"data-type\": \"up\" },\n            up\n          )\n        ),\n        React.createElement(\n          \"span\",\n          { className: \"dovedteskPageCenter\" },\n          React.createElement(\n            \"span\",\n            null,\n            React.createElement(\n              \"span\",\n              null,\n              \"\\u7B2C\"\n            ),\n            React.createElement(\n              \"span\",\n              null,\n              page\n            )\n          ),\n          React.createElement(\n            \"span\",\n            null,\n            sumPage\n          )\n        ),\n        React.createElement(\n          \"span\",\n          { className: \"dovedteskPageLast\" },\n          React.createElement(\n            \"span\",\n            { onClick: this.handlerPage.bind(this), \"data-type\": \"down\" },\n            down\n          ),\n          React.createElement(\n            \"span\",\n            { onClick: this.handlerPage.bind(this), \"data-type\": \"last\" },\n            last\n          )\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control15_OWbb2m: function (elem) {
+      if (!elem) return;var data = {};data.title = elem.querySelector('div').textContent.trim();data.querybtn = { text: elem.querySelector('button').textContent, id: elem.querySelector('button').id };data.delbtn = { text: elem.querySelectorAll('button')[1].textContent.trim(), id: elem.querySelectorAll('button')[1].id };data.content = [];var div = elem.querySelector("#queryDiv");var ipts = elem.querySelectorAll('label');for (var i = 0; i < ipts.length; i++) {
+        var obj = {};if (i < 4) {
+          obj.left = ipts[i].textContent.trim();obj.val = ipts[i].nextElementSibling.nextElementSibling.querySelector('input[type="text"]').value;obj.flat = 'ipt';obj.index = i;data.content.push(obj);
+        } else if (i == 4) {
+          obj.left = ipts[i].textContent.trim();obj.flat = 'date';obj.index = i;obj.val = ipts[i].nextElementSibling.nextElementSibling.querySelector('input[type="text"]').value;data.content.push(obj);data.content.push({ left: ipts[i].nextElementSibling.nextElementSibling.nextSibling.textContent.trim(), flat: 'date', index: i, val: ipts[i].nextElementSibling.nextElementSibling.nextSibling.nextElementSibling.nextElementSibling.querySelector('input[type="text"]').value }); // obj.left = ipts[i].nextElementSibling.nextElementSibling.nextSibling.textContent.trim();
+        } else {
+          obj.left = ipts[i].textContent.trim();obj.opts = [];obj.index = i;obj.flat = 'select';var opts = elem.ownerDocument.querySelector(".panel.combo-p").querySelector('div').querySelectorAll('div');obj.selected = [];for (var k = 0; k < opts.length; k++) {
+            obj.opts.push(opts[k].textContent);if (opts[k].className.indexOf('combobox-item-selected') != -1) {
+              obj.selected.push(true);
+            } else {
+              obj.selected.push(false);
+            }
+          }data.content.push(obj);
+        }
+      } // var ipts = elem.querySelectorAll('input[type="text"]');
+      // for(var i=0;i<ipts.length;i++){
+      // 	if(ipts[i].style.display!='none'){
+      //     var obj = {};
+      //     if(i<4){
+      //       obj.left = ipts[i].parentElement.parentElement.querySelector('label').textContent;
+      //       obj.val = ipts[i].value
+      //       obj.flat = 'ipt';
+      //     }else if(i==4){
+      //       obj.left = ipts[i].textContent;	
+      //       obj.flat = 'date';
+      //       obj.val = [];
+      //     }else{
+      //       obj.left = ipts[i].textContent;
+      //       obj.opts = [];
+      //       obj.flat = 'select';
+      //       var opts = elem.ownerDocument.querySelector(".panel.combo-p").querySelector('div').querySelectorAll('div');
+      //       for(var k=0;k<opts.length;k++){
+      //         obj.opts.push(opts[k].textContent)
+      //       }
+      //     }
+      //     data.content.push(obj);
+      //   }
+      // }
+      return data;
+    },
+    doAction_uiControl39_hvkkGe: function (data, elem) {
+      var type = data.eventType,
+          data = data.customData,
+          index = +data.index;if (type == 'querclick') {
+        elem.querySelector("#" + data.id).click();
+      }if (type == 'click') {
+        elem.querySelectorAll('button')[1].click();
+      }var labels = elem.querySelectorAll('label');if (type == 'blur') {
+        if (index < 4) {
+          labels[index].nextElementSibling.value = data.value;labels[index].nextElementSibling.nextElementSibling.querySelectorAll('input')[0].value = data.value;labels[index].nextElementSibling.nextElementSibling.querySelectorAll('input')[1].value = data.value;
+        }
+      }if (type == 'dateipt') {
+        if (data.id_index == 0) {
+          labels[index].nextElementSibling.value = data.value;labels[index].nextElementSibling.nextElementSibling.querySelectorAll('input')[0].value = data.value;labels[index].nextElementSibling.nextElementSibling.querySelectorAll('input')[1].value = data.value;
+        } else {
+          labels[index].nextElementSibling.value = data.value;labels[index].nextElementSibling.nextElementSibling.nextSibling.nextElementSibling.value = data.value;labels[index].nextElementSibling.nextElementSibling.nextSibling.nextElementSibling.nextElementSibling.querySelectorAll('input')[1].value = data.value;
+        }
+      }if (type == 'selectchange') {
+        elem.ownerDocument.querySelector(".panel.combo-p").querySelector('div').querySelectorAll('div')[+data.selectedIndex].click();
+      }
+    },
+    getTemplate_uiControl39_hvkkGe: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  onblur:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'blur',\n        data:{\n          value:target.value,\n          index:target.getAttribute('data-index')\n        }\n      })\n    }\n  },\n  dateblur:function(e){\n    var handler = this.props.customHandler,\n        target = e.target;\n    if(handler){\n      handler({\n        eventType:'dateipt',\n        data:{\n          value:target.value,\n          index:target.getAttribute('data-index'),\n          id_index:target.getAttribute('data-id')\n        }\n      })\n    }\n  },\n  onChange:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        selectedindex = target.selectedIndex;\n    if(handler){\n      handler({\n        eventType:'selectchange',\n        data:{\n          index:target.getAttribute('data-index'),\n          selectedIndex:selectedindex\n        }\n      })\n    }\n  },\n  querybtn:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        id = target.id;\n    if(handler){\n      handler({\n        eventType:'querclick',\n        data:{\n          id:id\n        }\n      })\n    }\n  },\n  delbtn:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        id = target.id;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:{\n          \n        }\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    if(!data){\n      return '';\n    }\n    var lis = data.content.map(function(ele,index){\n\t\t\t\t\t\t\tif(ele.flat == 'ipt'){\n                return(\n                  <div>\n                  \t<div>{ele.left}</div>\n                    <div><AInput placeholder='\u8BF7\u8F93\u5165' onBlur={_this.onblur.bind(_this)} type='text' data-index={ele.index} value={ele.val} /></div>\n                  </div>\n                )\n              }else if(ele.flat == 'date'){\n                return(\n                \t<div>\n                  \t<div>{ele.left}</div>\n                    <div><AInput onBlur={_this.dateblur.bind(_this)} type='date' data-id={index==4?0:1} data-index={ele.index} value={ele.val} /></div>\n                  </div>\n                )\n              } else if(ele.flat == 'select'){\n                return(\n                \t<div>\n                  \t<div>{ele.left}</div>\n                    <div>\n                      <select data-index={ele.index} onChange={_this.onChange.bind(_this)}>\n                        {\n                        ele.opts.map(function(d,i){\n                          return(\n                          \t<option data-index={i} selected={ele.selected[i]}>{d}</option>\n                          )\n                        })\n                      }\n                      </select>\n                    </div>\n                  </div>\n                )\n              }\n            })\n    return (\n      <div className='queryCondition'>\n        <div className='conditionTitle'>{data.title}</div>\n        <div className='conditionContent'>\n        \t{\n            lis\n          }\n        </div>\n        <div className='querybtn'>\n        \t<button onClick={_this.querybtn.bind(_this)} id={data.querybtn.id}>{data.querybtn.text}</button>\n          <button onClick={_this.delbtn.bind(_this)}>{data.delbtn.text}</button>\n        </div>\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onblur: function onblur(e) {\n    var handler = this.props.customHandler,\n        target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'blur',\n        data: {\n          value: target.value,\n          index: target.getAttribute('data-index')\n        }\n      });\n    }\n  },\n  dateblur: function dateblur(e) {\n    var handler = this.props.customHandler,\n        target = e.target;\n    if (handler) {\n      handler({\n        eventType: 'dateipt',\n        data: {\n          value: target.value,\n          index: target.getAttribute('data-index'),\n          id_index: target.getAttribute('data-id')\n        }\n      });\n    }\n  },\n  onChange: function onChange(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        selectedindex = target.selectedIndex;\n    if (handler) {\n      handler({\n        eventType: 'selectchange',\n        data: {\n          index: target.getAttribute('data-index'),\n          selectedIndex: selectedindex\n        }\n      });\n    }\n  },\n  querybtn: function querybtn(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        id = target.id;\n    if (handler) {\n      handler({\n        eventType: 'querclick',\n        data: {\n          id: id\n        }\n      });\n    }\n  },\n  delbtn: function delbtn(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        id = target.id;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: {}\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n    if (!data) {\n      return '';\n    }\n    var lis = data.content.map(function (ele, index) {\n      if (ele.flat == 'ipt') {\n        return React.createElement(\n          'div',\n          null,\n          React.createElement(\n            'div',\n            null,\n            ele.left\n          ),\n          React.createElement(\n            'div',\n            null,\n            React.createElement(AInput, { placeholder: '\\u8BF7\\u8F93\\u5165', onBlur: _this.onblur.bind(_this), type: 'text', 'data-index': ele.index, value: ele.val })\n          )\n        );\n      } else if (ele.flat == 'date') {\n        return React.createElement(\n          'div',\n          null,\n          React.createElement(\n            'div',\n            null,\n            ele.left\n          ),\n          React.createElement(\n            'div',\n            null,\n            React.createElement(AInput, { onBlur: _this.dateblur.bind(_this), type: 'date', 'data-id': index == 4 ? 0 : 1, 'data-index': ele.index, value: ele.val })\n          )\n        );\n      } else if (ele.flat == 'select') {\n        return React.createElement(\n          'div',\n          null,\n          React.createElement(\n            'div',\n            null,\n            ele.left\n          ),\n          React.createElement(\n            'div',\n            null,\n            React.createElement(\n              'select',\n              { 'data-index': ele.index, onChange: _this.onChange.bind(_this) },\n              ele.opts.map(function (d, i) {\n                return React.createElement(\n                  'option',\n                  { 'data-index': i, selected: ele.selected[i] },\n                  d\n                );\n              })\n            )\n          )\n        );\n      }\n    });\n    return React.createElement(\n      'div',\n      { className: 'queryCondition' },\n      React.createElement(\n        'div',\n        { className: 'conditionTitle' },\n        data.title\n      ),\n      React.createElement(\n        'div',\n        { className: 'conditionContent' },\n        lis\n      ),\n      React.createElement(\n        'div',\n        { className: 'querybtn' },\n        React.createElement(\n          'button',\n          { onClick: _this.querybtn.bind(_this), id: data.querybtn.id },\n          data.querybtn.text\n        ),\n        React.createElement(\n          'button',\n          { onClick: _this.delbtn.bind(_this) },\n          data.delbtn.text\n        )\n      )\n    );\n  }\n});";
+    },
+    getData_control41_I0znSz: function (elem) {
+      if (!elem) return;var data = {};data.titles = [];data.content = [];var tds = elem.querySelector('table').querySelector('tr').querySelectorAll('td');for (var i = 1; i < tds.length; i++) {
+        if (tds[i].style.display != 'none') {
+          data.titles.push(tds[i].textContent.trim());
+        }
+      }var trs = elem.querySelectorAll('table')[1].querySelectorAll('tr');for (var i = 0; i < trs.length; i++) {
+        if (trs[i].style.display != 'none') {
+          var tds = trs[i].querySelectorAll('td');var arr = [];for (var k = 1; k < tds.length; k++) {
+            if (tds[k].style.display != 'none') {
+              arr.push(tds[k].textContent.trim());
+            }
+          }arr.push(trs[i].className.indexOf('datagrid-row-checked') != -1 ? true : false);data.content.push(arr);
+        }
+      }return data;
+    },
+    doAction_uiControl40_KnEeSz: function (data, elem) {
+      var type = data.eventType,
+          data = +data.customData;if (type == 'click') {
+        elem.querySelectorAll('table')[1].querySelectorAll('tr')[data].click();
+      }
+    },
+    getTemplate_uiControl40_KnEeSz: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  click:function(e){\n    var target = e.target;\n    if(target.parentElement.nextElementSibling.style.display=='none'){\n      // target.style.backgroundImage = 'url(./img/top.png)';\n      target.className = 'top';\n      target.parentElement.style.borderBottom = '1px solid #ccc';\n      target.parentElement.nextElementSibling.style.display = 'block';\n    }else{\n      // target.style.backgroundImage = 'url(./img/xia.png)';\n      target.className = 'xia';\n      target.parentElement.style.borderBottom = '0';\n      target.parentElement.nextElementSibling.style.display = 'none';\n    }\n  },\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        index = target.dataset.index;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:index\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    if(!data){\n      return '';\n    }\n    var lis = data.content.map(function(ele,index){\n      if(!ele[0]){return ''}\n      return(\n      \t<div className='deilitem deilQuery'>\n          <div data-index={index} onClick={_this.onClick.bind(_this)} className={ele[ele.length-1]?'seledradio':''}></div>\n          <div className='deilTitle'>\n          \t<p>{ele[2]}</p>\n            <p className='xia' onClick={_this.click.bind(_this)}>{ele[1]}</p>\n          </div>\n          <div className='deilContent' style={{'display':'none'}} >\n          \t<p>{data.titles[0]}:&nbsp;&nbsp;&nbsp;{ele[0]}</p>\n          \t<p>{data.titles[3]}:&nbsp;&nbsp;&nbsp;{ele[3]}</p>\n          \t<p>{data.titles[4]}:&nbsp;&nbsp;&nbsp;{ele[4]}</p>\n          \t<p>{data.titles[5]}:&nbsp;&nbsp;&nbsp;{ele[5]}</p>\n          \t<p>{data.titles[6]}:&nbsp;&nbsp;&nbsp;{ele[6]}</p>\n          </div>\n        </div>\n      )\n    })\n    return (\n      <div className='deilTable'>\n        {\n          lis\n        }\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  click: function click(e) {\n    var target = e.target;\n    if (target.parentElement.nextElementSibling.style.display == 'none') {\n      // target.style.backgroundImage = 'url(./img/top.png)';\n      target.className = 'top';\n      target.parentElement.style.borderBottom = '1px solid #ccc';\n      target.parentElement.nextElementSibling.style.display = 'block';\n    } else {\n      // target.style.backgroundImage = 'url(./img/xia.png)';\n      target.className = 'xia';\n      target.parentElement.style.borderBottom = '0';\n      target.parentElement.nextElementSibling.style.display = 'none';\n    }\n  },\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: index\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n    if (!data) {\n      return '';\n    }\n    var lis = data.content.map(function (ele, index) {\n      if (!ele[0]) {\n        return '';\n      }\n      return React.createElement(\n        'div',\n        { className: 'deilitem deilQuery' },\n        React.createElement('div', { 'data-index': index, onClick: _this.onClick.bind(_this), className: ele[ele.length - 1] ? 'seledradio' : '' }),\n        React.createElement(\n          'div',\n          { className: 'deilTitle' },\n          React.createElement(\n            'p',\n            null,\n            ele[2]\n          ),\n          React.createElement(\n            'p',\n            { className: 'xia', onClick: _this.click.bind(_this) },\n            ele[1]\n          )\n        ),\n        React.createElement(\n          'div',\n          { className: 'deilContent', style: { 'display': 'none' } },\n          React.createElement(\n            'p',\n            null,\n            data.titles[0],\n            ':\\xA0\\xA0\\xA0',\n            ele[0]\n          ),\n          React.createElement(\n            'p',\n            null,\n            data.titles[3],\n            ':\\xA0\\xA0\\xA0',\n            ele[3]\n          ),\n          React.createElement(\n            'p',\n            null,\n            data.titles[4],\n            ':\\xA0\\xA0\\xA0',\n            ele[4]\n          ),\n          React.createElement(\n            'p',\n            null,\n            data.titles[5],\n            ':\\xA0\\xA0\\xA0',\n            ele[5]\n          ),\n          React.createElement(\n            'p',\n            null,\n            data.titles[6],\n            ':\\xA0\\xA0\\xA0',\n            ele[6]\n          )\n        )\n      );\n    });\n    return React.createElement(\n      'div',\n      { className: 'deilTable' },\n      lis\n    );\n  }\n});";
+    },
+    getData_control42_wbW7Es: function (elem) {
+      if (!elem) return;var data = [];var btns = elem.querySelectorAll('button');for (var i = 0; i < btns.length; i++) {
+        data.push({ text: btns[i].textContent.trim(), index: i });
+      }return data;
+    },
+    doAction_uiControl41_ZEr9i0: function (data, elem) {
+      var type = data.eventType,
+          data = +data.customData;if (type == 'click') {
+        elem.querySelectorAll('button')[data].click();
+      }
+    },
+    getTemplate_uiControl41_ZEr9i0: function () {
+      var selfTemplate = "module.exports = React.createClass({\n  onClick:function(e){\n    var handler = this.props.customHandler,\n        target = e.target,\n        index = target.dataset.index;\n    if(handler){\n      handler({\n        eventType:'click',\n        data:index\n      })\n    }\n  },\n  render: function() {\n    var data = this.props.customData,\n        _this = this;\n    if(!data){\n      return '';\n    }\n    return (\n      <div className='querydeilbtn'>\n        {\n          data.map(function(ele,index){\n            return(<button onClick={_this.onClick.bind(_this)} data-index={ele.index}>{ele.text}</button>)\n          })\n        }\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  onClick: function onClick(e) {\n    var handler = this.props.customHandler,\n        target = e.target,\n        index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: index\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData,\n        _this = this;\n    if (!data) {\n      return '';\n    }\n    return React.createElement(\n      'div',\n      { className: 'querydeilbtn' },\n      data.map(function (ele, index) {\n        return React.createElement(\n          'button',\n          { onClick: _this.onClick.bind(_this), 'data-index': ele.index },\n          ele.text\n        );\n      })\n    );\n  }\n});";
+    }
+  });
+})(window, ysp);
