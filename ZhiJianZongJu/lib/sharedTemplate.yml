@@ -1,1 +1,54 @@
-[]
+- name: 待阅消息详情页content
+  getTemplate: |-
+    module.exports = React.createClass({
+      render: function() {
+        var data = this.props.customData;
+        var lis = data.content.map(function(ele,index){
+          return(<p>{ele.text}</p>)
+        })
+        return (
+          <div className='Dy_deil'>
+            <div className='deilTitle'><h1>{data.titles}</h1></div>
+            <div className='deilContent'>{lis}</div>
+            <div className='deilFoot'>{data.foots}</div>
+          </div>
+        )
+      }
+    });
+  getData: |
+    if (!elem) return;
+    var data = {};
+    data.content = [];
+    var divs = elem.children;
+    for (var i = 0; i < divs.length; i++) {
+      if (divs[i].textContent != '' || divs[i].querySelector('img')) {
+        var obj = {
+          imgs: [],
+          text: []
+        };
+
+        if (divs[i].querySelector('img')) {
+          var imgs = divs[i].querySelectorAll('img');
+
+          for (var k = 0; k < imgs.length; k++) {
+            obj.imgs.push(imgs[k].src);
+          }
+
+          obj.flat = 'img';
+        } else if (divs[i].querySelector('h1')) {
+          data.titles = divs[i].querySelector('h1').textContent.trim();
+        } else {
+          obj.text = divs[i].textContent.trim();
+        }
+
+        if (obj.text.indexOf('创建时间') != -1) {
+          data.foots = divs[i].textContent.trim();
+        }
+
+        if (!divs[i].querySelector('h1') && divs[i].textContent.indexOf('创建时间') == -1) {
+          data.content.push(obj);
+        }
+      }
+    }
+    return data;
+  doAction: ''

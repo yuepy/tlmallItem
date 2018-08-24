@@ -465,9 +465,9 @@ Header{
 
 //首页样式结束
 //计量强检tab页
-[data-ysp-modelid="supervise_index"]{
-  background-color: #f2f2f2;
-}
+// [data-ysp-modelid="supervise_index"]{
+//   background-color: #f2f2f2;
+// }
 .tabbox{
   >div{
     .bot{
@@ -885,3 +885,54 @@ Header{
 }
 
 /*分配记录查询页*/
+
+/*待阅信息详情页*/
+[data-ysp-modelid='deil_Dy'],[data-ysp-modelid='deilNotice']{
+  button{
+    border: 0
+  }
+  Header{
+  background-color: #0a568c !important;
+  color: #fff !important;
+  button{
+    // background-color: red;
+    height: 40px;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background-image: url(./img/ysp-prev.png);
+    background-size: 12px 14px;
+    background-repeat: no-repeat;
+    background-position: 10%;
+    font-size: 15px;
+  }
+}
+}
+.Dy_deil{
+  padding: 0 20px;
+  .deilTitle{
+    h1{
+      font-size: 18px;
+      text-align: center;    
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .deilContent{
+    text-indent: 2rem;
+    font-size: 14px;
+    color: #333333;
+    p{
+      margin: 0;
+      margin-top: 5px;
+    }
+  }
+  .deilFoot{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #bdbdbd;
+    text-align: right;
+  }
+}
+/*待阅信息详情页*/

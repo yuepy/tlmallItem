@@ -1,23 +1,28 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control1_6CTSeZ: function (elem) {
-      if (!elem) return;var data = [];var divs = elem.children;for (var i = 0; i < divs.length; i++) {
+      if (!elem) return;var data = {};data.content = [];var divs = elem.children;for (var i = 0; i < divs.length; i++) {
         if (divs[i].textContent != '' || divs[i].querySelector('img')) {
           var obj = { imgs: [], text: [] };if (divs[i].querySelector('img')) {
             var imgs = divs[i].querySelectorAll('img');for (var k = 0; k < imgs.length; k++) {
               obj.imgs.push(imgs[k].src);
             }obj.flat = 'img';
+          } else if (divs[i].querySelector('h1')) {
+            data.titles = divs[i].querySelector('h1').textContent.trim();
           } else {
             obj.text = divs[i].textContent.trim();
-          }data.push(obj);
+          }if (obj.text.indexOf('创建时间') != -1) {
+            data.foots = divs[i].textContent.trim();
+          }if (!divs[i].querySelector('h1') && divs[i].textContent.indexOf('创建时间') == -1) {
+            data.content.push(obj);
+          }
         }
-      }
-      return data;
+      }return data;
     },
     doAction_uiControl1_VoxhiB: function (data, elem) {},
     getTemplate_uiControl1_VoxhiB: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.map(function(ele,index){\n      return(<p>{ele.text}</p>)\n    })\n    return (\n      <div className=\'Dy_deil\'>\n        {lis}\n      </div>\n    )\n  }\n});';
-      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var data = this.props.customData;\n    var lis = data.map(function (ele, index) {\n      return React.createElement(\n        \'p\',\n        null,\n        ele.text\n      );\n    });\n    return React.createElement(\n      \'div\',\n      { className: \'Dy_deil\' },\n      lis\n    );\n  }\n});';
+      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lis = data.content.map(function(ele,index){\n      return(<p>{ele.text}</p>)\n    })\n    return (\n      <div className=\'Dy_deil\'>\n        <div className=\'deilTitle\'><h1>{data.titles}</h1></div>\n        <div className=\'deilContent\'>{lis}</div>\n        <div className=\'deilFoot\'>{data.foots}</div>\n      </div>\n    )\n  }\n});';
+      return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    var data = this.props.customData;\n    var lis = data.content.map(function (ele, index) {\n      return React.createElement(\n        \'p\',\n        null,\n        ele.text\n      );\n    });\n    return React.createElement(\n      \'div\',\n      { className: \'Dy_deil\' },\n      React.createElement(\n        \'div\',\n        { className: \'deilTitle\' },\n        React.createElement(\n          \'h1\',\n          null,\n          data.titles\n        )\n      ),\n      React.createElement(\n        \'div\',\n        { className: \'deilContent\' },\n        lis\n      ),\n      React.createElement(\n        \'div\',\n        { className: \'deilFoot\' },\n        data.foots\n      )\n    );\n  }\n});';
     },
     getData_control2_pX2Dki: function (elem) {},
     doAction_uiControl2_7w0M92: function (data, elem) {},

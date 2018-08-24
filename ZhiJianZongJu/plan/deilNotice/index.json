@@ -11,6 +11,10 @@
         "data": {
           "tagName": "H1"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -41,49 +45,12 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
-    },
-    "control27_ODa7vn": {
-      "location": {
-        "data": {
-          "tagName": "H1"
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": [
-              "descendant::DIV[@id=\"title\"]/H1[1]",
-              "descendant::DIV[@id=\"title\"]//H1"
-            ]
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/H1[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control27_ODa7vn"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "custom"
     }
   },
   "contexts": {
     "context8_R7ZlCw": {
       "controls": [
-        "control26_gWTnBn",
-        "control27_ODa7vn"
+        "control26_gWTnBn"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -113,21 +80,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl23_UO9GDq",
                 "onGetTemplate": "getTemplate_uiControl23_UO9GDq"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl24_nDWumd",
-          "controlId": "control27_ODa7vn",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl24_nDWumd",
-                "onGetTemplate": "getTemplate_uiControl24_nDWumd"
               }
             }
           }
