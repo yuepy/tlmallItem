@@ -12,6 +12,32 @@
 
     }
     */   
+    /*取table内数据*/
+    getTableText:function(elem){
+      if(!elem){
+        return
+      }
+      var ths = elem.querySelectorAll('th'),
+          trs = elem.querySelector('tbody').querySelectorAll('tr'),
+          tableth = [],
+          tabletr = [];
+      for(var i=0;i<ths.length;i++){
+        // if(){}
+        tableth.push(ths[i].textContent.trim());
+      }
+      for(var i=0;i<trs.length;i++){
+        var tds = trs[i].querySelectorAll('td'),
+            arr = [];
+        for(var k=0;k<tds.length;k++){
+          arr.push(tds[k].textContent.trim());
+        }
+        tabletr.push(arr);
+      }
+      return {
+        'th':tableth,
+        'tr':tabletr
+      }
+    },
     /*调用场景：该方法用于采集表格数据*/
     getTableData: function(elem, titleArgs) {
       if (!elem) {
@@ -129,7 +155,6 @@
     getTabData:function(ele){
       var trs = ele.querySelectorAll('tr');
     	if(trs.length==0){
-        console.log(ele+'这个table里面没有tr');
         return
       }
       var	arr = [];

@@ -1,15 +1,15 @@
 {
   "version": "0.1",
-  "id": "allocationQuery",
-  "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//AssignRecordsQuery/AssignRecordsQuery.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw",
+  "id": "inspectionQuery",
+  "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/inspmeterOrgInfoQuery.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw",
   "jsFile": "index.js",
-  "chineseName": "分配记录查询",
+  "chineseName": "检定机构信息查询",
   "description": "",
   "controls": {
-    "control12_UF5UM1": {
+    "control10_hTTLsG": {
       "location": {
         "data": {
-          "tagName": "STRONG"
+          "tagName": "DIV"
         },
         "userData": {
           "data": [],
@@ -19,18 +19,43 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/STRONG[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control12_UF5UM1"
+        "onGetData": "getData_control10_hTTLsG"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control11_3XcZvT": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-pager.pagination TABLE"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control11_3XcZvT"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -38,7 +63,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control13_3znx5x": {
+    "control15_OWbb2m": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -56,15 +81,15 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control13_3znx5x"
+        "onGetData": "getData_control15_OWbb2m"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control14_A3AtPE": {
+    "control41_I0znSz": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -87,7 +112,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control14_A3AtPE"
+        "onGetData": "getData_control41_I0znSz"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -95,26 +120,21 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control8_eVP6Mt": {
+    "control42_wbW7Es": {
       "location": {
         "data": {
-          "tagName": "TABLE"
+          "tagName": "DIV"
         },
         "locators": [
           {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-pager.pagination TABLE"
-          },
-          {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]"
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[3]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control8_eVP6Mt"
+        "onGetData": "getData_control42_wbW7Es"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -124,96 +144,132 @@
     }
   },
   "contexts": {
-    "context7_RqD6TR": {
+    "context5_ZEOZGD": {
       "controls": [
-        "control12_UF5UM1",
-        "control13_3znx5x",
-        "control14_A3AtPE",
-        "control8_eVP6Mt"
+        "control10_hTTLsG",
+        "control11_3XcZvT",
+        "control15_OWbb2m",
+        "control41_I0znSz",
+        "control42_wbW7Es"
       ],
       "anchors": [],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow6_yAFP4x": {
+    "flow33_nIfRw9": {
       "toContexts": [
         {
-          "toContextId": "context7_RqD6TR"
+          "toContextId": "context5_ZEOZGD"
         }
       ]
     },
-    "flow7_HC9bN7": {
-      "fromContextId": "context7_RqD6TR",
+    "flow8_HeF8ZV": {
+      "fromContextId": "context5_ZEOZGD",
       "fromAction": "doAction",
-      "fromControlId": "control13_3znx5x",
+      "fromControlId": "control11_3XcZvT",
       "toContexts": [
         {
-          "toContextId": "context7_RqD6TR"
+          "toContextId": "context5_ZEOZGD"
+        }
+      ]
+    },
+    "flow34_rMwBMo": {
+      "fromContextId": "context5_ZEOZGD",
+      "fromAction": "doAction",
+      "fromControlId": "control15_OWbb2m",
+      "toContexts": [
+        {
+          "toContextId": "context5_ZEOZGD"
+        }
+      ]
+    },
+    "flow35_xLWTn3": {
+      "fromContextId": "context5_ZEOZGD",
+      "fromAction": "doAction",
+      "fromControlId": "control41_I0znSz",
+      "toContexts": [
+        {
+          "toContextId": "context5_ZEOZGD"
         }
       ]
     }
   },
   "pages": {
-    "page7_ZkCGqA": {
-      "contextId": "context7_RqD6TR",
+    "page5_uaqdTC": {
+      "contextId": "context5_ZEOZGD",
       "layout": [
         {
-          "id": "uiControl5_4QGZrI",
-          "controlId": "control12_UF5UM1",
+          "id": "uiControl26_0WbBbW",
+          "controlId": "control10_hTTLsG",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl5_4QGZrI",
-                "onGetTemplate": "getTemplate_uiControl5_4QGZrI"
+                "onDoAction": "doAction_uiControl26_0WbBbW",
+                "onGetTemplate": "getTemplate_uiControl26_0WbBbW"
               }
             }
           }
         },
         {
-          "id": "uiControl6_eS0Tls",
-          "controlId": "control13_3znx5x",
+          "id": "uiControl39_hvkkGe",
+          "controlId": "control15_OWbb2m",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl6_eS0Tls",
-                "onGetTemplate": "getTemplate_uiControl6_eS0Tls"
+                "onDoAction": "doAction_uiControl39_hvkkGe",
+                "onGetTemplate": "getTemplate_uiControl39_hvkkGe"
               }
             }
           }
         },
         {
-          "id": "uiControl21_hA8pLC",
-          "controlId": "control14_A3AtPE",
+          "id": "uiControl40_KnEeSz",
+          "controlId": "control41_I0znSz",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl21_hA8pLC",
-                "onGetTemplate": "getTemplate_uiControl21_hA8pLC"
+                "onDoAction": "doAction_uiControl40_KnEeSz",
+                "onGetTemplate": "getTemplate_uiControl40_KnEeSz"
               }
             }
           }
         },
         {
-          "id": "uiControl11_uzrrgb",
-          "controlId": "control8_eVP6Mt",
+          "id": "uiControl27_u3E9np",
+          "controlId": "control11_3XcZvT",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl11_uzrrgb",
-                "onGetTemplate": "getTemplate_uiControl11_uzrrgb"
+                "onDoAction": "doAction_uiControl27_u3E9np",
+                "onGetTemplate": "getTemplate_uiControl27_u3E9np"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl41_ZEr9i0",
+          "controlId": "control42_wbW7Es",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl41_ZEr9i0",
+                "onGetTemplate": "getTemplate_uiControl41_ZEr9i0"
               }
             }
           }
@@ -224,100 +280,74 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context7_RqD6TR": [
-          "分配记录查询"
+        "context5_ZEOZGD": [
+          "检定机构信息查询"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context7_RqD6TR": [
-          "egs.itownet.cn:9080/InspMeterMobile//AssignRecordsQuery/AssignRecordsQuery.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw"
+        "context5_ZEOZGD": [
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/inspmeterOrgInfoQuery.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context7_RqD6TR": [
+        "context5_ZEOZGD": [
           [
-            "_easyui_combobox_i_",
-            "appointmentId",
-            "assignOrgName",
-            "assignTimeEnd",
-            "assignTimeStart",
-            "assigneeStaus",
             "base-footer",
             "base-header",
+            "checkPersonShow",
             "datagrid-row-r--",
-            "dc",
+            "dg",
             "ecqs-header",
             "header-left",
             "header-right",
-            "meterIntruName",
-            "queryButton",
+            "manageDeptName",
+            "orgCode",
+            "orgName",
+            "orgQuery",
+            "projectQuery",
+            "query",
             "queryDiv",
-            "queryForm",
-            "reservatAdminName"
+            "reset",
+            "scanId",
+            "show-dialog",
+            "showForm",
+            "showImg-dialog",
+            "showImgs",
+            "uuid"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context7_RqD6TR": [
+        "context5_ZEOZGD": [
           [
             "Orange_but",
             "basic-radio",
             "blue_but",
-            "calendar",
-            "calendar-body",
-            "calendar-day",
-            "calendar-dtable",
-            "calendar-first",
-            "calendar-header",
-            "calendar-last",
-            "calendar-menu",
-            "calendar-menu-month-inner",
-            "calendar-menu-next",
-            "calendar-menu-prev",
-            "calendar-menu-year",
-            "calendar-menu-year-inner",
-            "calendar-nav",
-            "calendar-nextmonth",
-            "calendar-nextyear",
-            "calendar-other-month",
-            "calendar-prevmonth",
-            "calendar-prevyear",
-            "calendar-saturday",
-            "calendar-selected",
-            "calendar-sunday",
-            "calendar-text",
-            "calendar-title",
-            "calendar-today",
             "clearfix",
             "col",
-            "combo",
-            "combo-arrow",
-            "combo-f",
-            "combo-p",
-            "combo-panel",
-            "combobox-f",
-            "combobox-item",
-            "combobox-item-selected",
+            "daili",
             "datagrid",
             "datagrid-body",
             "datagrid-body-inner",
             "datagrid-btable",
             "datagrid-cell",
-            "datagrid-cell-c-appointmentId",
-            "datagrid-cell-c-assignOrgName",
-            "datagrid-cell-c-assignTime",
-            "datagrid-cell-c-assigneeName",
-            "datagrid-cell-c-ck",
-            "datagrid-cell-c-meterIntruName",
-            "datagrid-cell-c-porgaoName",
-            "datagrid-cell-c-reservatAdminName",
-            "datagrid-cell-c-serialNum",
+            "datagrid-cell-c-authDistrict",
+            "datagrid-cell-c-contactMan",
+            "datagrid-cell-c-email",
+            "datagrid-cell-c-legalRepre",
+            "datagrid-cell-c-manageDeptName",
+            "datagrid-cell-c-mobile",
+            "datagrid-cell-c-orgCode",
+            "datagrid-cell-c-orgGrade",
+            "datagrid-cell-c-orgName",
+            "datagrid-cell-c-postStatus",
+            "datagrid-cell-c-telephone",
             "datagrid-cell-rownumber",
             "datagrid-f",
             "datagrid-footer",
@@ -330,142 +360,26 @@
             "datagrid-pager",
             "datagrid-row",
             "datagrid-row-alt",
+            "datagrid-row-checked",
+            "datagrid-row-selected",
             "datagrid-sort-icon",
             "datagrid-td-rownumber",
             "datagrid-view",
             "datagrid-wrap",
-            "datebox",
-            "datebox-calendar-inner",
-            "datebox-f",
-            "easyui-combobox",
-            "easyui-datebox",
+            "dialog-Character",
+            "dialog-Character-label",
+            "dialog-Character-td",
+            "easyui-dialog",
             "easyui-fluid",
+            "easyui-form",
             "easyui-textbox",
             "ecqs-container",
             "form-control",
             "header-logo",
+            "icon-save",
             "info-bottom",
             "info-top",
-            "l-btn",
-            "l-btn-disabled",
-            "l-btn-empty",
-            "l-btn-icon",
-            "l-btn-icon-left",
-            "l-btn-left",
-            "l-btn-plain",
-            "l-btn-plain-disabled",
-            "l-btn-small",
-            "l-btn-text",
-            "pagination",
-            "pagination-btn-separator",
-            "pagination-first",
-            "pagination-info",
-            "pagination-last",
-            "pagination-load",
-            "pagination-next",
-            "pagination-num",
-            "pagination-page-list",
-            "pagination-prev",
-            "panel",
-            "panel-body",
-            "panel-body-noheader",
-            "panel-noscroll",
-            "textbox",
-            "textbox-addon",
-            "textbox-addon-right",
-            "textbox-f",
-            "textbox-icon",
-            "textbox-prompt",
-            "textbox-text",
-            "textbox-value",
-            "title-line",
-            "title-line-blue",
-            "title-line-grey",
-            "validatebox-text"
-          ],
-          [
-            "Orange_but",
-            "basic-radio",
-            "blue_but",
-            "calendar",
-            "calendar-body",
-            "calendar-day",
-            "calendar-dtable",
-            "calendar-first",
-            "calendar-header",
-            "calendar-last",
-            "calendar-menu",
-            "calendar-menu-month-inner",
-            "calendar-menu-next",
-            "calendar-menu-prev",
-            "calendar-menu-year",
-            "calendar-menu-year-inner",
-            "calendar-nav",
-            "calendar-nextmonth",
-            "calendar-nextyear",
-            "calendar-other-month",
-            "calendar-prevmonth",
-            "calendar-prevyear",
-            "calendar-saturday",
-            "calendar-selected",
-            "calendar-sunday",
-            "calendar-text",
-            "calendar-title",
-            "calendar-today",
-            "clearfix",
-            "col",
-            "combo",
-            "combo-arrow",
-            "combo-f",
-            "combo-p",
-            "combo-panel",
-            "combobox-f",
-            "combobox-item",
-            "combobox-item-selected",
-            "datagrid",
-            "datagrid-body",
-            "datagrid-body-inner",
-            "datagrid-btable",
-            "datagrid-cell",
-            "datagrid-cell-c-appointmentId",
-            "datagrid-cell-c-assignOrgName",
-            "datagrid-cell-c-assignTime",
-            "datagrid-cell-c-assigneeName",
-            "datagrid-cell-c-ck",
-            "datagrid-cell-c-meterIntruName",
-            "datagrid-cell-c-porgaoName",
-            "datagrid-cell-c-reservatAdminName",
-            "datagrid-cell-c-serialNum",
-            "datagrid-cell-rownumber",
-            "datagrid-f",
-            "datagrid-footer",
-            "datagrid-footer-inner",
-            "datagrid-header",
-            "datagrid-header-inner",
-            "datagrid-header-row",
-            "datagrid-header-rownumber",
-            "datagrid-htable",
-            "datagrid-pager",
-            "datagrid-row",
-            "datagrid-row-alt",
-            "datagrid-sort-icon",
-            "datagrid-td-rownumber",
-            "datagrid-view",
-            "datagrid-wrap",
-            "datebox",
-            "datebox-calendar-inner",
-            "datebox-f",
-            "dialog-button",
-            "easyui-combobox",
-            "easyui-datebox",
-            "easyui-fluid",
-            "easyui-textbox",
-            "ecqs-container",
-            "form-control",
-            "header-logo",
-            "icon-ok",
-            "info-bottom",
-            "info-top",
+            "ipt",
             "l-btn",
             "l-btn-disabled",
             "l-btn-empty",
@@ -492,15 +406,113 @@
             "panel-body-noheader",
             "panel-header",
             "panel-header-noborder",
-            "panel-noscroll",
+            "panel-icon",
             "panel-title",
             "panel-tool",
             "panel-tool-close",
+            "panel-with-icon",
             "textbox",
-            "textbox-addon",
-            "textbox-addon-right",
             "textbox-f",
-            "textbox-icon",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "title-line",
+            "title-line-blue",
+            "title-line-grey",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ],
+          [
+            "Orange_but",
+            "basic-radio",
+            "blue_but",
+            "clearfix",
+            "col",
+            "daili",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-authDistrict",
+            "datagrid-cell-c-contactMan",
+            "datagrid-cell-c-email",
+            "datagrid-cell-c-legalRepre",
+            "datagrid-cell-c-manageDeptName",
+            "datagrid-cell-c-mobile",
+            "datagrid-cell-c-orgCode",
+            "datagrid-cell-c-orgGrade",
+            "datagrid-cell-c-orgName",
+            "datagrid-cell-c-postStatus",
+            "datagrid-cell-c-telephone",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-pager",
+            "datagrid-row",
+            "datagrid-row-checked",
+            "datagrid-row-selected",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-view",
+            "datagrid-wrap",
+            "dialog-Character",
+            "dialog-Character-label",
+            "dialog-Character-td",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-form",
+            "easyui-textbox",
+            "ecqs-container",
+            "form-control",
+            "header-logo",
+            "icon-save",
+            "info-bottom",
+            "info-top",
+            "ipt",
+            "l-btn",
+            "l-btn-disabled",
+            "l-btn-empty",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-plain-disabled",
+            "l-btn-small",
+            "l-btn-text",
+            "pagination",
+            "pagination-btn-separator",
+            "pagination-first",
+            "pagination-info",
+            "pagination-last",
+            "pagination-load",
+            "pagination-next",
+            "pagination-num",
+            "pagination-page-list",
+            "pagination-prev",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-icon",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-with-icon",
+            "textbox",
+            "textbox-f",
             "textbox-prompt",
             "textbox-text",
             "textbox-value",
@@ -519,7 +531,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context7_RqD6TR": [
+        "context5_ZEOZGD": [
           [
             "-/-/DIV",
             "-/-/LINK",
@@ -530,85 +542,37 @@
             "-/DIV/DIV",
             "-/DIV/P",
             "A/SPAN/SPAN",
-            "DIV/DIV/BR",
-            "DIV/DIV/DIV",
-            "DIV/DIV/FORM",
-            "DIV/DIV/IMG",
-            "DIV/DIV/SPAN",
-            "DIV/DIV/STRONG",
-            "DIV/DIV/STYLE",
-            "DIV/DIV/TABLE",
-            "DIV/FORM/DIV",
-            "DIV/P/SPAN",
-            "DIV/SELECT/OPTION",
-            "DIV/SPAN/INPUT-hidden",
-            "DIV/SPAN/INPUT-text",
-            "DIV/SPAN/SPAN",
-            "DIV/TABLE/TBODY",
-            "DIV/TABLE/THEAD",
-            "FORM/DIV/BUTTON",
-            "FORM/DIV/INPUT-text",
-            "FORM/DIV/LABEL",
-            "FORM/DIV/SELECT",
-            "FORM/DIV/SPAN",
-            "SPAN/SPAN/A",
-            "TABLE/TBODY/TR",
-            "TABLE/THEAD/TR",
-            "TBODY/TR/TD",
-            "TD/A/SPAN",
-            "TD/DIV/SPAN",
-            "TD/SELECT/OPTION",
-            "THEAD/TR/TH",
-            "TR/TD/A",
-            "TR/TD/DIV",
-            "TR/TD/INPUT-text",
-            "TR/TD/SELECT",
-            "TR/TD/SPAN"
-          ],
-          [
-            "-/-/DIV",
-            "-/-/LINK",
-            "-/-/META",
-            "-/-/SCRIPT",
-            "-/-/TITLE",
-            "-/DIV/BR",
-            "-/DIV/DIV",
-            "-/DIV/P",
-            "A/SPAN/SPAN",
-            "DIV/A/SPAN",
             "DIV/DIV/A",
             "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
             "DIV/DIV/DIV",
             "DIV/DIV/FORM",
             "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/LABLE",
             "DIV/DIV/SPAN",
             "DIV/DIV/STRONG",
             "DIV/DIV/STYLE",
             "DIV/DIV/TABLE",
-            "DIV/FORM/DIV",
+            "DIV/FORM/TABLE",
             "DIV/P/SPAN",
-            "DIV/SELECT/OPTION",
             "DIV/SPAN/INPUT-hidden",
             "DIV/SPAN/INPUT-text",
-            "DIV/SPAN/SPAN",
             "DIV/TABLE/TBODY",
-            "DIV/TABLE/THEAD",
-            "FORM/DIV/BUTTON",
-            "FORM/DIV/INPUT-text",
-            "FORM/DIV/LABEL",
-            "FORM/DIV/SELECT",
-            "FORM/DIV/SPAN",
-            "SPAN/SPAN/A",
+            "FORM/TABLE/TBODY",
             "TABLE/TBODY/TR",
-            "TABLE/THEAD/TR",
             "TBODY/TR/TD",
             "TD/A/SPAN",
             "TD/DIV/SPAN",
+            "TD/LABEL/BR",
             "TD/SELECT/OPTION",
-            "THEAD/TR/TH",
             "TR/TD/A",
             "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
             "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
             "TR/TD/SELECT",
             "TR/TD/SPAN"
           ]

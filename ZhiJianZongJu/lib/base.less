@@ -6,24 +6,56 @@ li{
   list-style: none;
 }
 //首页按钮公用样式
-
-Header{
-  background-color: #0a568c !important;
-  color: #fff !important;
-  button{
-    // background-color: red;
-    height: 40px;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    background-image: url(./img/ysp-prev.png);
-    background-size: 12px 14px;
-    background-repeat: no-repeat;
-    background-position: 10%;
-    font-size: 15px;
-  }
-}
-
+/*分页样式*/
+      .dovedteskPage{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 0px ;
+        padding: 20px 0px;
+        .dovedteskPageFirst{
+          >span:nth-child(1){
+            background: #2F9FFF;
+            border-radius: 10px 0px 0px 10px;
+            color: #fff;
+            padding: 2px 12px;
+          }
+          >span:nth-child(2){
+            background: #ececec;
+            border-radius: 0px 10px 10px 0px;
+            padding: 2px 12px;
+          }
+        }
+        .dovedteskPageCenter{
+          >span:nth-child(1){
+            >span:nth-child(1){
+              padding-right: 5px;
+            }
+            >span:nth-child(2){
+              padding: 0px 5px;
+              border-radius: 100%;
+              background: #2F9FFF;
+              color: #fff;
+            }
+          }
+          >span:nth-child(2){
+            padding-left: 5px;
+          }
+        }
+        .dovedteskPageLast{
+          >span:nth-child(1){
+            background: #ececec;
+            border-radius: 10px 0px 0px 10px;
+            padding: 2px 12px;
+          }
+          >span:nth-child(2){
+            background: #2F9FFF;
+            border-radius: 0px 10px 10px 0px;
+            color: #fff;
+            padding: 2px 12px;
+          }
+        }
+      }
 
 .itwont{
   width: 100%;
@@ -227,6 +259,34 @@ div[data-ysp-modelid = "login"] {
 //首页样式
 [data-ysp-modelid="index_itownet"]{
   background-color: #f2f2f2;
+
+Header{
+  background-color: #0a568c !important;
+  color: #fff !important;
+  button{
+    // background-color: red;
+    height: 40px;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background-image: url(./img/ysp-prev.png);
+    background-size: 12px 14px;
+    background-repeat: no-repeat;
+    background-position: 10%;
+    font-size: 15px;
+  }
+}
+  .index_title{
+    height: 44px;
+    text-align: center;
+    color: #fff;
+    background-color: #0a568c;
+    font-size: 18px;
+    line-height: 44px;
+    font-weight: bold;
+    border-bottom: 1px solid #ececec;
+    [data-componentsid="uiControl12_fFctEC"]{padding: 0;}
+  }
   //顶部应用
   .titleapps{
     display: flex;
@@ -309,7 +369,7 @@ div[data-ysp-modelid = "login"] {
       overflow-y: auto;
       padding-bottom: 40px;
       padding-left: 20px;
-      margin-top: 44px;
+      //margin-top: 44px;
       >div{
         margin: 10px 0;
         border-bottom: 1px solid #ccc;
@@ -329,55 +389,6 @@ div[data-ysp-modelid = "login"] {
           }
           label:nth-child(2){
             width: 100%;
-          }
-        }
-      }
-      .dovedteskPage{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border-bottom: 0px ;
-        padding: 20px 0px;
-        .dovedteskPageFirst{
-          >span:nth-child(1){
-            background: #2F9FFF;
-            border-radius: 10px 0px 0px 10px;
-            color: #fff;
-            padding: 2px 12px;
-          }
-          >span:nth-child(2){
-            background: #ececec;
-            border-radius: 0px 10px 10px 0px;
-            padding: 2px 12px;
-          }
-        }
-        .dovedteskPageCenter{
-          >span:nth-child(1){
-            >span:nth-child(1){
-              padding-right: 5px;
-            }
-            >span:nth-child(2){
-              padding: 0px 5px;
-              border-radius: 100%;
-              background: #2F9FFF;
-              color: #fff;
-            }
-          }
-          >span:nth-child(2){
-            padding-left: 5px;
-          }
-        }
-        .dovedteskPageLast{
-          >span:nth-child(1){
-            background: #ececec;
-            border-radius: 10px 0px 0px 10px;
-            padding: 2px 12px;
-          }
-          >span:nth-child(2){
-            background: #2F9FFF;
-            border-radius: 0px 10px 10px 0px;
-            color: #fff;
-            padding: 2px 12px;
           }
         }
       }
@@ -454,9 +465,9 @@ div[data-ysp-modelid = "login"] {
 
 //首页样式结束
 //计量强检tab页
-[data-ysp-modelid="supervise_index"]{
-  background-color: #f2f2f2;
-}
+// [data-ysp-modelid="supervise_index"]{
+//   background-color: #f2f2f2;
+// }
 .tabbox{
   >div{
     .bot{
@@ -794,12 +805,11 @@ div[data-ysp-modelid = "login"] {
 }
 /*首页图标点击后的样式end*/
 //待阅详情页
-.Dy_deil{
-  margin-top: 44px;
-}
+// .Dy_deil{
+//   //margin-top: 44px;
+// }
 /*分配记录查询页*/
 .queryCondition{
-  margin-top: 64px;
   input,select,option{
     border: 0 !important;
     text-align: right;
@@ -818,12 +828,14 @@ div[data-ysp-modelid = "login"] {
       justify-content: space-between;
       border-bottom: 1px solid #d8d8d8;
       >div:nth-child(1){
+        padding: 5px 0;
         width: 60px;
         color: #323e4d;
         font-size: 14px;
         display: flex;
         align-items: center;
         font-weight: bold;
+        text-align-last: justify;
       }
       >div:nth-child(2){
         width: 80%;
@@ -902,4 +914,97 @@ div[data-ysp-modelid = "login"] {
   }
 }
 
+.deilQuery{
+  padding-left: 40px !important;
+  position: relative;
+  >div:nth-child(1){
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    border-radius: 50%;
+    border: 1px solid #8a96a2;
+    input{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .seledradio{
+    background-image: url(./img/duihao.png);
+    background-size: 20px 20px;
+    background-position: 0;
+  }
+}
+.querydeilbtn{
+  height: 44px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  button{
+    height: 100%;
+    width: 48%;
+    border-radius: 5px;
+    background: #004788;
+    color: #fff;
+  }
+  button:nth-child(1){
+    background-color: #fff;
+    color: #004788;
+    border: 1px solid #004788;
+  }
+}
 /*分配记录查询页*/
+
+/*待阅信息详情页*/
+[data-ysp-modelid='deil_Dy'],[data-ysp-modelid='deilNotice'],[data-ysp-modelid="allocationQuery"],[data-ysp-modelid="inspectionQuery"]{
+  button{
+    border: 0
+  }
+  Header{
+  background-color: #0a568c !important;
+  color: #fff !important;
+  button{
+    // background-color: red;
+    height: 40px;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background-image: url(./img/ysp-prev.png);
+    background-size: 12px 14px;
+    background-repeat: no-repeat;
+    background-position: 10%;
+    font-size: 15px;
+  }
+}
+}
+.Dy_deil{
+  padding: 0 20px;
+  .deilTitle{
+    h1{
+      font-size: 18px;
+      text-align: center;    
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .deilContent{
+    font-size: 14px;
+    color: #333333;
+    p{
+    	text-indent: 2rem;
+      margin: 0;
+      margin-top: 5px;
+    }
+  }
+  .deilFoot{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #bdbdbd;
+    text-align: right;
+  }
+}
+/*待阅信息详情页*/
