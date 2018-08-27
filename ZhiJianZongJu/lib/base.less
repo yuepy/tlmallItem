@@ -5,6 +5,18 @@
 li{
   list-style: none;
 }
+  .seledradio{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    border-radius: 50%;
+    border: 1px solid #8a96a2;
+    background-image: url(./img/duihao.png);
+    background-size: 20px 20px;
+    background-position: 0;
+  }
 //首页按钮公用样式
 /*分页样式*/
       .dovedteskPage{
@@ -779,6 +791,9 @@ Header{
 // .Dy_deil{
 //   //margin-top: 44px;
 // }
+
+
+
 /*分配记录查询页*/
 .queryCondition{
   input,select,option{
@@ -903,11 +918,6 @@ Header{
       padding: 0;
     }
   }
-  .seledradio{
-    background-image: url(./img/duihao.png);
-    background-size: 20px 20px;
-    background-position: 0;
-  }
 }
 .querydeilbtn{
   height: 44px;
@@ -928,9 +938,65 @@ Header{
   }
 }
 /*分配记录查询页*/
+/*检定结构查询页*/
 
+.dialogdiv{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #f3f3f3;
+  overflow-y: auto;
+  background: #fff;
+  >div{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    div:nth-child(1){
+      font-size: 14px;
+      width: 64px;
+      text-align: justify;
+      text-align-last: justify;
+      padding: 5px 0;
+      color: #202020;
+    }
+    >div:nth-child(2){
+      width: 75%;
+      display: flex;
+      color: #313131;
+      padding: 5px 0;
+      align-items: center;
+    	border-bottom: 1px solid #ccc;
+    }
+  }
+  button{
+    height: 44px;
+    width: 100%;
+    border: 0;
+    background: #0a568c;
+    color: #fff;
+    margin:10px 0;
+    border-radius: 5px;
+  }
+}
+.openboximg{
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 1000vh;
+  background: #fff;
+  button{
+    width: 100%;
+    height: 44px;
+    background-color: #0a568c;
+    color: #fff;
+  }
+}
+
+/*检定结构查询页*/
 /*待阅信息详情页*/
-[data-ysp-modelid='deil_Dy'],[data-ysp-modelid='deilNotice'],[data-ysp-modelid="allocationQuery"],[data-ysp-modelid="inspectionQuery"]{
+[data-ysp-modelid='deil_Dy'],[data-ysp-modelid='deilNotice'],[data-ysp-modelid="allocationQuery"],[data-ysp-modelid="inspectionQuery"],[data-ysp-modelid="deil_inspection"]{
   button{
     border: 0
   }
