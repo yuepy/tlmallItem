@@ -8,7 +8,6 @@ li{
 //首页按钮公用样式
 
 Header{
-  background-color: #0a568c !important;
   color: #fff !important;
   button{
     // background-color: red;
@@ -112,6 +111,65 @@ Header{
     border-top: 0;
   }
 }
+.zc-btnAction{
+  .amt-btn{
+    background: url(img/gengduo.png) no-repeat center;
+    background-size: 5px;
+    span{
+      display: none;
+    }
+  }
+}
+.hzx-page-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0px ;
+  padding: 20px 0px;
+}
+
+.hzx-page-left{
+>span:nth-child(1){
+  background: #2F9FFF;
+  border-radius: 10px 0px 0px 10px;
+  padding: 2px 12px;
+  color: #fff;
+ }
+ >span:nth-child(2){
+   background: #ececec;
+   padding: 2px 12px;
+   border-radius: 0px 10px 10px 0px;
+          }
+        }
+.hzx-page-center{
+	>span:nth-child(1){
+		>span:nth-child(1){
+       padding-right: 5px;
+      }
+    >span:nth-child(2){
+       padding: 0px 5px;
+       border-radius: 100%;
+       background: #2F9FFF;
+       color: #fff;
+      }
+    }
+    >span:nth-child(2){
+       padding-left: 5px;
+      }
+   }
+.hzx-page-right{
+>span:nth-child(1){
+  background: #ececec;
+  padding: 2px 12px;
+  border-radius: 10px 0px 0px 10px;
+ }
+ >span:nth-child(2){
+   background: #2F9FFF;
+   padding: 2px 12px;
+   border-radius: 0px 10px 10px 0px;
+   color: #fff;
+          }
+        }
 .amt-title-primary, .amt-title-primary .amt-title-left-text,.amt-switch input+.amt-switch-checkbox:before, .amt-title-primary .amt-title-left-icon{
   color: #004788 !important;
   border-color:#004788 !important;
