@@ -154,6 +154,8 @@
         elem.ownerDocument.querySelector("#show-dialog").querySelector('button').click();
       }if (type == 'openimg') {
         var tds = elem.ownerDocument.querySelector("#show-dialog").querySelector('table').querySelectorAll('tr')[+data.trindex].querySelectorAll('td');tds[tds.length - 1].querySelector('input').click();
+      }if (type == 'closeimg') {
+        var showimg = elem.ownerDocument.querySelector("#showImg-dialog");showimg.previousElementSibling.querySelector('a').click();
       }
     },
     getTemplate_uiControl41_ZEr9i0: function () {

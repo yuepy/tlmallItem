@@ -1119,11 +1119,152 @@ Header{
   top: 0;
   z-index: 1000;
   width: 100%;
-  height: 1000vh;
+  height: 100vh;
   background: #fff;
+  overflow: auto;
   button{
     width: 100%;
     height: 44px;
+    background-color: #0a568c;
+    color: #fff;
+  }
+}
+.deil_title{
+    margin: 10px 0;
+    color: #0a568c;
+    font-weight: bold;
+    padding-left: 20px;
+    background: url(./img/tou.png) no-repeat 0 0;
+    background-size: 8px 25px;
+    border: 0;
+}
+.maintain_query{
+  margin-bottom: 10px;
+  >div:nth-child(1){
+    margin: 10px 0;
+    color: #0a568c;
+    font-weight: bold;
+    padding-left: 20px;
+    background: url(./img/tou.png) no-repeat 0 0;
+    background-size: 8px 25px;
+    border: 0;
+  }
+  >div{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-right:10px;
+    >div:nth-child(1){
+      // width: 56px;
+      font-size: 14px;
+      color: #323e4d;
+      text-align: justify;
+      text-align-last: justify;
+      padding: 10px 0;
+    }
+    >div:nth-child(2){
+      // width: 75%;
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      padding: 10px 0;
+      font-size: 14px;
+      color: #838b9f;
+      // text-align: right;
+    }
+  }
+}
+
+.maintain_table{
+  >div:nth-child(2){
+    width: 345px;
+    margin-left: auto;
+    margin-right: auto;
+    table{
+      width: 345px;
+      thead{
+        tr{
+          th{
+            width: 152px;
+            border: 1px solid #bddaf0;
+            padding: 10px 0;
+          	font-size: 15px;
+            color: #0e3838;
+            background-color: #d5ebfc;
+          }
+          th:nth-child(1){
+            width: 41px;
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            border: 1px solid #bddaf0;
+            width: 152px;
+            padding: 10px 0;
+            text-align: center;
+            background-color: #eaf3fa;
+            font-size: 14px;
+            color: #0e3838;
+          }
+          td:nth-child(1){
+            width: 41px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.deilCatalog{
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  >div{
+    >div:nth-child(3){
+      >div{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 20px;
+        padding-right: 10px;
+        border-bottom: 1px solid #ccc;
+        font-size: 14px;
+        div{
+          padding: 10px 0;
+        }
+        div:nth-child(1){
+          min-width: 100px;
+        }
+        div:nth-child(2){
+          max-width: 65%;
+        }
+      }
+    }
+    button{
+      margin-top: 10px;
+      width: 100%;
+      border-radius: 5px;
+      height: 44px;
+      line-height: 44px;
+      border: 0;
+      background-color: #0a568c;
+      color: #fff;
+    }
+  }
+}
+
+.deilbtn{
+  button{
+    width: 100%;
+    border-radius: 5px;
+    height: 44px;
+    line-height: 44px;
+    border: 0;
     background-color: #0a568c;
     color: #fff;
   }
