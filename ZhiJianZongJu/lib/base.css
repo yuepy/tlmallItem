@@ -13,6 +13,21 @@ li {
   background-size: 20px 20px;
   background-position: 0;
 }
+.HeaderTitle Header {
+  background-color: #0a568c !important;
+  color: #fff !important;
+}
+.HeaderTitle Header button {
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background-image: url(img/ysp-prev.png);
+  background-size: 12px 14px;
+  background-repeat: no-repeat;
+  background-position: 10%;
+  font-size: 15px;
+}
 /*分页样式*/
 .dovedteskPage {
   display: flex;
@@ -847,6 +862,21 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   font-size: 14px;
   color: #87939f;
   padding: 5px 0;
+}
+.querybtns {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+}
+.querybtns button {
+  width: 49%;
+  border-radius: 5px;
+  border: 1px solid #87939f !important;
+}
+.querybtns button:nth-child(1) {
+  background: #0a568c;
+  color: #fff;
 }
 .deilQuery {
   padding-left: 40px !important;

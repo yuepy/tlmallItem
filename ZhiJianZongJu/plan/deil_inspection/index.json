@@ -4,7 +4,8 @@
   "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfo.jsp?orgCode=1233052347128859XU",
   "jsFile": "index.js",
   "requires": {
-    "index_itownet": "../index_itownet/index.json"
+    "index_itownet": "../index_itownet/index.json",
+    "inspme_maintain": "../inspme_maintain/index.json"
   },
   "chineseName": "强检项目查询",
   "description": "",
@@ -66,6 +67,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -93,6 +98,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -114,6 +123,28 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control20_6pvHnP": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control20_6pvHnP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -122,7 +153,8 @@
         "control43_ryZmG4",
         "control45_F4KsxR",
         "control44_EUpzSF",
-        "control46_TDEnbV"
+        "control46_TDEnbV",
+        "control20_6pvHnP"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -157,6 +189,20 @@
       "toContexts": [
         {
           "toContextId": "context9_WkvN60"
+        }
+      ]
+    },
+    "flow40_mxxHaB": {
+      "fromContextId": "context9_WkvN60",
+      "fromAction": "doAction",
+      "fromControlId": "control20_6pvHnP",
+      "toContexts": [
+        {
+          "toContextId": "context9_WkvN60"
+        },
+        {
+          "toContextId": "context10_n2Tfnp",
+          "toModelId": "inspme_maintain"
         }
       ]
     }
@@ -221,6 +267,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl45_iiragH",
                 "onGetTemplate": "getTemplate_uiControl45_iiragH"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl15_MIHilp",
+          "controlId": "control20_6pvHnP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl15_MIHilp",
+                "onGetTemplate": "getTemplate_uiControl15_MIHilp"
               }
             }
           }

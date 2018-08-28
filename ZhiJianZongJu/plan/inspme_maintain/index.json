@@ -1,0 +1,316 @@
+{
+  "version": "0.1",
+  "id": "inspme_maintain",
+  "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfoAdd.jsp?oduuid=zjdq-10&&chakan=1&&proCode=B-10&&orgCode=123305217272253587",
+  "jsFile": "index.js",
+  "chineseName": "强检项目维护",
+  "description": "",
+  "controls": {
+    "control47_k7iJPb": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control47_k7iJPb"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control48_vzq1C5": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control48_vzq1C5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context10_n2Tfnp": {
+      "controls": [
+        "control47_k7iJPb",
+        "control48_vzq1C5"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow41_xLO43b": {
+      "toContexts": [
+        {
+          "toContextId": "context10_n2Tfnp"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page10_Dfo4zn": {
+      "contextId": "context10_n2Tfnp",
+      "layout": [
+        {
+          "id": "uiControl46_LGTXf5",
+          "controlId": "control47_k7iJPb",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl46_LGTXf5",
+                "onGetTemplate": "getTemplate_uiControl46_LGTXf5"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl47_7KrR3H",
+          "controlId": "control48_vzq1C5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl47_7KrR3H",
+                "onGetTemplate": "getTemplate_uiControl47_7KrR3H"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context10_n2Tfnp": [
+          "强检项目新增"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context10_n2Tfnp": [
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfoAdd.jsp?oduuid=zjdq-10&&chakan=1&&proCode=B-10&&orgCode=123305217272253587",
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfoAdd.jsp?oduuid=zjdq-19&&chakan=1&&proCode=B-19&&orgCode=123305217272253587"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context10_n2Tfnp": [
+          [
+            "add-buttons-qiju",
+            "addqiju",
+            "addquyu",
+            "allqiju",
+            "base-footer",
+            "base-header",
+            "but",
+            "cancel",
+            "datagrid-row-r--",
+            "ecqs-header",
+            "editorForm",
+            "header-left",
+            "header-right",
+            "memo",
+            "oduuid",
+            "orgCode",
+            "orgName",
+            "popdivquyu",
+            "popqiju",
+            "proCode",
+            "proNum",
+            "qijuTable",
+            "qq",
+            "queryButton",
+            "queryDiv",
+            "queryForm",
+            "quyuTable",
+            "removeqiju",
+            "removequyu",
+            "returnList",
+            "save",
+            "saveOrgDete",
+            "typeCode",
+            "typeName",
+            "zoing"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context10_n2Tfnp": [
+          [
+            "Orange_but",
+            "basic-radio",
+            "blue_but",
+            "clearfix",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-domCode",
+            "datagrid-cell-c-domName",
+            "datagrid-cell-c-typeCode",
+            "datagrid-cell-c-typeName",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-row",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-toolbar",
+            "datagrid-view",
+            "datagrid-wrap",
+            "dialog-Character",
+            "dialog-Character-td",
+            "dialog-button",
+            "easyui-datagrid",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-layout",
+            "easyui-linkbutton",
+            "easyui-textbox",
+            "ecqs-container",
+            "form-control",
+            "header-logo",
+            "icon-add",
+            "icon-remove",
+            "info-bottom",
+            "info-top",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout",
+            "layout-body",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-east",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "textbox",
+            "textbox-disabled",
+            "textbox-f",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "title-line",
+            "title-line-blue",
+            "title-line-grey",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context10_n2Tfnp": [
+          [
+            "-/-/DIV",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/SCRIPT",
+            "-/-/TITLE",
+            "-/DIV/BR",
+            "-/DIV/DIV",
+            "-/DIV/INPUT-hidden",
+            "-/DIV/P",
+            "A/SPAN/SPAN",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/STRONG",
+            "DIV/DIV/STYLE",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/FORM/TABLE",
+            "DIV/P/SPAN",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/INPUT-text",
+            "FORM/DIV/LABLE",
+            "FORM/DIV/SPAN",
+            "FORM/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/DIV/SPAN",
+            "TD/SPAN/INPUT-hidden",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/TEXTAREA",
+            "THEAD/TR/TH",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-null",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}
