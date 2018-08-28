@@ -1,19 +1,15 @@
 {
   "version": "0.1",
-  "id": "addSampling",
-  "targetURL": "http://egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=add",
+  "id": "deil_sampling",
+  "targetURL": "http://egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=update&samplTaskNo=2019000002120100080013&samplState=3",
   "jsFile": "index.js",
-  "chineseName": "addSampling",
-  "description": "addSampling",
+  "chineseName": "录入抽样信息",
+  "description": "",
   "controls": {
-    "control12_3csfXA": {
+    "control36_QbUTEQ": {
       "location": {
         "data": {
           "tagName": "IMG"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -67,33 +63,29 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control12_3csfXA"
+        "onGetData": "getData_control36_QbUTEQ"
       },
       "intendedRole": "custom",
       "roles": "element,image,button,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control13_5uyXkI": {
+    "control37_b3H3P5": {
       "location": {
         "data": {
-          "tagName": "HTML"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "BODY"
         },
         "locators": [
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]"
+            "value": "/HTML[1]/BODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control13_5uyXkI"
+        "onGetData": "getData_control37_b3H3P5"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -101,25 +93,21 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control14_LX5w2M": {
+    "control38_ZmkHmT": {
       "location": {
         "data": {
-          "tagName": "HTML"
-        },
-        "userData": {
-          "data": [],
-          "force": false
+          "tagName": "BODY"
         },
         "locators": [
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]"
+            "value": "/HTML[1]/BODY[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control14_LX5w2M"
+        "onGetData": "getData_control38_ZmkHmT"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -127,7 +115,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control25_lpZr1o": {
+    "control39_zQJhL1": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -190,169 +178,119 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control26_P8mG16"
+        "onGetData": "getData_control39_zQJhL1"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     }
   },
   "contexts": {
-    "context4_fzuozF": {
+    "context6_NQcCzC": {
       "controls": [
-        "control12_3csfXA",
-        "control13_5uyXkI",
-        "control14_LX5w2M",
-        "control25_lpZr1o",
-        "control26_P8mG16"
+        "control36_QbUTEQ",
+        "control37_b3H3P5",
+        "control38_ZmkHmT",
+        "control39_zQJhL1"
       ],
       "anchors": [],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow9_dz9Sck": {
+    "flow25_NkJlbd": {
       "toContexts": [
         {
-          "toContextId": "context4_fzuozF"
+          "toContextId": "context6_NQcCzC"
         }
       ]
     },
-    "flow10_53o3fA": {
-      "fromContextId": "context4_fzuozF",
+    "flow31_ULdd9v": {
+      "fromContextId": "context6_NQcCzC",
       "fromAction": "doAction",
-      "fromControlId": "control13_5uyXkI",
+      "fromControlId": "control38_ZmkHmT",
       "toContexts": [
         {
-          "toContextId": "context4_fzuozF"
+          "toContextId": "context6_NQcCzC"
         }
       ]
     },
-    "flow19_Wn4MaZ": {
-      "fromContextId": "context4_fzuozF",
+    "flow32_W2lDzC": {
+      "fromContextId": "context6_NQcCzC",
       "fromAction": "doAction",
-      "fromControlId": "control14_LX5w2M",
+      "fromControlId": "control37_b3H3P5",
       "toContexts": [
         {
-          "toContextId": "context4_fzuozF"
-        }
-      ]
-    },
-    "flow20_HbCRuX": {
-      "fromContextId": "context4_fzuozF",
-      "fromAction": "doAction",
-      "fromControlId": "control25_lpZr1o",
-      "toContexts": [
-        {
-          "toContextId": "context4_fzuozF"
+          "toContextId": "context6_NQcCzC"
         }
       ]
     }
   },
   "pages": {
-    "page4_77v0vm": {
-      "contextId": "context4_fzuozF",
+    "page6_O6oZeT": {
+      "contextId": "context6_NQcCzC",
       "layout": [
         {
-          "id": "uiControl21_LpMBnd",
-          "controlId": "control12_3csfXA",
+          "id": "uiControl34_IovkR9",
+          "controlId": "control36_QbUTEQ",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl21_LpMBnd",
-                "onGetTemplate": "getTemplate_uiControl21_LpMBnd"
+                "onDoAction": "doAction_uiControl34_IovkR9",
+                "onGetTemplate": "getTemplate_uiControl34_IovkR9"
               }
             }
           }
         },
         {
-          "id": "uiControl23_dXei2q",
-          "controlId": "control14_LX5w2M",
+          "id": "uiControl35_5W1bUI",
+          "controlId": "control37_b3H3P5",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl23_dXei2q",
-                "onGetTemplate": "getTemplate_uiControl23_dXei2q"
+                "onDoAction": "doAction_uiControl35_5W1bUI",
+                "onGetTemplate": "getTemplate_uiControl35_5W1bUI"
               }
             }
           }
         },
         {
-          "id": "uiControl26_KwgBAw",
-          "controlId": "control26_P8mG16",
+          "id": "uiControl36_IuXoWX",
+          "controlId": "control38_ZmkHmT",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl26_KwgBAw",
-                "onGetTemplate": "getTemplate_uiControl26_KwgBAw"
+                "onDoAction": "doAction_uiControl36_IuXoWX",
+                "onGetTemplate": "getTemplate_uiControl36_IuXoWX"
               }
             }
           }
         },
         {
-          "id": "uiControl22_XPmDuc",
-          "controlId": "control13_5uyXkI",
+          "id": "uiControl37_Tvs9EQ",
+          "controlId": "control39_zQJhL1",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl22_XPmDuc",
-                "onGetTemplate": "getTemplate_uiControl22_XPmDuc"
+                "onDoAction": "doAction_uiControl37_Tvs9EQ",
+                "onGetTemplate": "getTemplate_uiControl37_Tvs9EQ"
               }
             }
           }
-        },
-        {
-          "id": "uiControl24_3DkUrG",
-          "display": {
-            "type": "sticky",
-            "adapterId": "sticky",
-            "adapter": {
-              "templateType": ""
-            }
-          },
-          "layout": [
-            {
-              "id": "uiControl24_3DkUrGbody",
-              "display": {
-                "type": "stickyBody",
-                "adapterId": "stickyBody",
-                "adapter": {
-                  "templateType": ""
-                }
-              },
-              "layout": [
-                {
-                  "id": "uiControl25_kTznRA",
-                  "controlId": "control25_lpZr1o",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl25_kTznRA",
-                        "onGetTemplate": "getTemplate_uiControl25_kTznRA"
-                      }
-                    }
-                  }
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -360,22 +298,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context4_fzuozF": [
+        "context6_NQcCzC": [
           "抽样单录入"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context4_fzuozF": [
-          "egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=add",
+        "context6_NQcCzC": [
           "egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=update&samplTaskNo=2019000002120100080013&samplState=3"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context4_fzuozF": [
+        "context6_NQcCzC": [
           [
             "T_quantityUnit",
             "_easyui_combobox_i_",
@@ -506,7 +443,100 @@
     },
     "page/classes": {
       "contexts": {
-        "context4_fzuozF": [
+        "context6_NQcCzC": [
+          [
+            "abc",
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-header",
+            "accordion-header-selected",
+            "basic-radio",
+            "butClass",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-dtable",
+            "calendar-first",
+            "calendar-header",
+            "calendar-last",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nav",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-text",
+            "calendar-title",
+            "calendar-today",
+            "chouDao",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combobox-f",
+            "combobox-item",
+            "combobox-item-selected",
+            "container",
+            "datebox",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "delBut",
+            "downloadBut",
+            "easyui-accordion",
+            "easyui-combobox",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-numberbox",
+            "easyui-textbox",
+            "fileBut",
+            "info-bottom",
+            "info-top",
+            "inputtext",
+            "noBorder",
+            "numberbox",
+            "numberbox-f",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-tool-collapse",
+            "requiredTrue",
+            "textbox",
+            "textbox-addon",
+            "textbox-addon-right",
+            "textbox-disabled",
+            "textbox-f",
+            "textbox-icon",
+            "textbox-icon-disabled",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ],
           [
             "abc",
             "accordion",
@@ -595,211 +625,6 @@
             "textbox-text",
             "textbox-value",
             "validatebox-invalid",
-            "validatebox-text",
-            "window",
-            "window-body",
-            "window-header",
-            "window-mask",
-            "window-shadow"
-          ],
-          [
-            "abc",
-            "accordion",
-            "accordion-body",
-            "accordion-collapse",
-            "accordion-header",
-            "accordion-header-selected",
-            "basic-radio",
-            "butClass",
-            "calendar",
-            "calendar-body",
-            "calendar-day",
-            "calendar-dtable",
-            "calendar-first",
-            "calendar-header",
-            "calendar-last",
-            "calendar-menu",
-            "calendar-menu-month-inner",
-            "calendar-menu-next",
-            "calendar-menu-prev",
-            "calendar-menu-year",
-            "calendar-menu-year-inner",
-            "calendar-nav",
-            "calendar-nextmonth",
-            "calendar-nextyear",
-            "calendar-noborder",
-            "calendar-other-month",
-            "calendar-prevmonth",
-            "calendar-prevyear",
-            "calendar-saturday",
-            "calendar-selected",
-            "calendar-sunday",
-            "calendar-text",
-            "calendar-title",
-            "calendar-today",
-            "chouDao",
-            "combo",
-            "combo-arrow",
-            "combo-f",
-            "combo-p",
-            "combo-panel",
-            "combobox-f",
-            "combobox-item",
-            "combobox-item-selected",
-            "container",
-            "datebox",
-            "datebox-calendar-inner",
-            "datebox-f",
-            "delBut",
-            "dialog-button",
-            "downloadBut",
-            "easyui-accordion",
-            "easyui-combobox",
-            "easyui-datebox",
-            "easyui-dialog",
-            "easyui-fluid",
-            "easyui-numberbox",
-            "easyui-textbox",
-            "fileBut",
-            "icon-ok",
-            "info-bottom",
-            "info-top",
-            "inputtext",
-            "l-btn",
-            "l-btn-icon",
-            "l-btn-icon-left",
-            "l-btn-left",
-            "l-btn-small",
-            "l-btn-text",
-            "noBorder",
-            "numberbox",
-            "numberbox-f",
-            "panel",
-            "panel-body",
-            "panel-body-noborder",
-            "panel-body-noheader",
-            "panel-header",
-            "panel-header-noborder",
-            "panel-noscroll",
-            "panel-title",
-            "panel-tool",
-            "panel-tool-close",
-            "panel-tool-collapse",
-            "requiredTrue",
-            "textbox",
-            "textbox-addon",
-            "textbox-addon-right",
-            "textbox-disabled",
-            "textbox-f",
-            "textbox-icon",
-            "textbox-icon-disabled",
-            "textbox-invalid",
-            "textbox-prompt",
-            "textbox-text",
-            "textbox-value",
-            "validatebox-invalid",
-            "validatebox-text",
-            "window",
-            "window-body",
-            "window-header",
-            "window-mask",
-            "window-shadow"
-          ],
-          [
-            "abc",
-            "accordion",
-            "accordion-body",
-            "accordion-collapse",
-            "accordion-header",
-            "accordion-header-selected",
-            "basic-radio",
-            "butClass",
-            "calendar",
-            "calendar-body",
-            "calendar-day",
-            "calendar-dtable",
-            "calendar-first",
-            "calendar-header",
-            "calendar-last",
-            "calendar-menu",
-            "calendar-menu-month-inner",
-            "calendar-menu-next",
-            "calendar-menu-prev",
-            "calendar-menu-year",
-            "calendar-menu-year-inner",
-            "calendar-nav",
-            "calendar-nextmonth",
-            "calendar-nextyear",
-            "calendar-noborder",
-            "calendar-other-month",
-            "calendar-prevmonth",
-            "calendar-prevyear",
-            "calendar-saturday",
-            "calendar-selected",
-            "calendar-sunday",
-            "calendar-text",
-            "calendar-title",
-            "calendar-today",
-            "chouDao",
-            "combo",
-            "combo-arrow",
-            "combo-f",
-            "combo-p",
-            "combo-panel",
-            "combobox-f",
-            "combobox-item",
-            "combobox-item-selected",
-            "container",
-            "datebox",
-            "datebox-calendar-inner",
-            "datebox-f",
-            "delBut",
-            "downloadBut",
-            "easyui-accordion",
-            "easyui-combobox",
-            "easyui-datebox",
-            "easyui-dialog",
-            "easyui-fluid",
-            "easyui-numberbox",
-            "easyui-textbox",
-            "fileBut",
-            "info-bottom",
-            "info-top",
-            "inputtext",
-            "l-btn",
-            "l-btn-left",
-            "l-btn-small",
-            "l-btn-text",
-            "messager-body",
-            "messager-button",
-            "messager-icon",
-            "messager-info",
-            "messager-window",
-            "noBorder",
-            "numberbox",
-            "numberbox-f",
-            "panel",
-            "panel-body",
-            "panel-body-noborder",
-            "panel-body-noheader",
-            "panel-header",
-            "panel-header-noborder",
-            "panel-noscroll",
-            "panel-title",
-            "panel-tool",
-            "panel-tool-close",
-            "panel-tool-collapse",
-            "requiredTrue",
-            "textbox",
-            "textbox-addon",
-            "textbox-addon-right",
-            "textbox-disabled",
-            "textbox-f",
-            "textbox-icon",
-            "textbox-icon-disabled",
-            "textbox-prompt",
-            "textbox-text",
-            "textbox-value",
             "validatebox-text",
             "window",
             "window-body",
@@ -812,115 +637,13 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context4_fzuozF": [
-          [
-            "-/-/DIV",
-            "-/-/INPUT-hidden",
-            "-/-/SCRIPT",
-            "-/DIV/DIV",
-            "DIV/DIV/A",
-            "DIV/DIV/DIV",
-            "DIV/DIV/FORM",
-            "DIV/DIV/IMG",
-            "DIV/DIV/INPUT-button",
-            "DIV/DIV/INPUT-null",
-            "DIV/DIV/P",
-            "DIV/DIV/SPAN",
-            "DIV/DIV/TABLE",
-            "DIV/DIV/UL",
-            "DIV/FORM/DIV",
-            "DIV/FORM/INPUT-hidden",
-            "DIV/FORM/SPAN",
-            "DIV/FORM/TABLE",
-            "DIV/P/SPAN",
-            "DIV/SPAN/INPUT-hidden",
-            "DIV/SPAN/INPUT-text",
-            "DIV/SPAN/TEXTAREA",
-            "DIV/TABLE/TBODY",
-            "DIV/TABLE/THEAD",
-            "DIV/UL/A",
-            "FORM/DIV/DIV",
-            "FORM/SPAN/INPUT-button",
-            "FORM/TABLE/TBODY",
-            "SPAN/SPAN/A",
-            "TABLE/TBODY/TR",
-            "TABLE/THEAD/TR",
-            "TBODY/TR/TD",
-            "TD/LABEL/INPUT-checkbox",
-            "TD/SPAN/INPUT-button",
-            "TD/SPAN/INPUT-hidden",
-            "TD/SPAN/INPUT-text",
-            "TD/SPAN/SPAN",
-            "TD/SPAN/TEXTAREA",
-            "THEAD/TR/TH",
-            "TR/TD/BR",
-            "TR/TD/IMG",
-            "TR/TD/INPUT-button",
-            "TR/TD/INPUT-hidden",
-            "TR/TD/INPUT-null",
-            "TR/TD/INPUT-text",
-            "TR/TD/LABEL",
-            "TR/TD/SPAN"
-          ],
-          [
-            "-/-/DIV",
-            "-/-/INPUT-hidden",
-            "-/-/SCRIPT",
-            "-/DIV/DIV",
-            "A/SPAN/SPAN",
-            "DIV/A/SPAN",
-            "DIV/DIV/A",
-            "DIV/DIV/DIV",
-            "DIV/DIV/FORM",
-            "DIV/DIV/IMG",
-            "DIV/DIV/INPUT-button",
-            "DIV/DIV/INPUT-null",
-            "DIV/DIV/P",
-            "DIV/DIV/SPAN",
-            "DIV/DIV/TABLE",
-            "DIV/DIV/UL",
-            "DIV/FORM/DIV",
-            "DIV/FORM/INPUT-hidden",
-            "DIV/FORM/SPAN",
-            "DIV/FORM/TABLE",
-            "DIV/P/SPAN",
-            "DIV/SPAN/INPUT-hidden",
-            "DIV/SPAN/INPUT-text",
-            "DIV/SPAN/TEXTAREA",
-            "DIV/TABLE/TBODY",
-            "DIV/TABLE/THEAD",
-            "DIV/UL/A",
-            "FORM/DIV/DIV",
-            "FORM/SPAN/INPUT-button",
-            "FORM/TABLE/TBODY",
-            "SPAN/SPAN/A",
-            "TABLE/TBODY/TR",
-            "TABLE/THEAD/TR",
-            "TBODY/TR/TD",
-            "TD/LABEL/INPUT-checkbox",
-            "TD/SPAN/INPUT-button",
-            "TD/SPAN/INPUT-hidden",
-            "TD/SPAN/INPUT-text",
-            "TD/SPAN/SPAN",
-            "TD/SPAN/TEXTAREA",
-            "THEAD/TR/TH",
-            "TR/TD/BR",
-            "TR/TD/IMG",
-            "TR/TD/INPUT-button",
-            "TR/TD/INPUT-hidden",
-            "TR/TD/INPUT-null",
-            "TR/TD/INPUT-text",
-            "TR/TD/LABEL",
-            "TR/TD/SPAN"
-          ],
+        "context6_NQcCzC": [
           [
             "-/-/DIV",
             "-/-/INPUT-file",
             "-/-/INPUT-hidden",
             "-/-/SCRIPT",
             "-/DIV/DIV",
-            "A/SPAN/SPAN",
-            "DIV/A/SPAN",
             "DIV/DIV/A",
             "DIV/DIV/DIV",
             "DIV/DIV/FORM",

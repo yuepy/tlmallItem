@@ -1,15 +1,18 @@
 {
   "version": "0.1",
-  "id": "allocationQuery",
-  "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//AssignRecordsQuery/AssignRecordsQuery.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw",
+  "id": "deil_inspection",
+  "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfo.jsp?orgCode=1233052347128859XU",
   "jsFile": "index.js",
-  "chineseName": "分配记录查询",
+  "requires": {
+    "index_itownet": "../index_itownet/index.json"
+  },
+  "chineseName": "强检项目查询",
   "description": "",
   "controls": {
-    "control12_UF5UM1": {
+    "control43_ryZmG4": {
       "location": {
         "data": {
-          "tagName": "STRONG"
+          "tagName": "DIV"
         },
         "userData": {
           "data": [],
@@ -19,18 +22,12 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/STRONG[1]"
-          },
-          {
-            "id": "elderLevel",
-            "value": {
-              "level": 0
-            }
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control12_UF5UM1"
+        "onGetData": "getData_control43_ryZmG4"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -38,7 +35,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control13_3znx5x": {
+    "control45_F4KsxR": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -56,22 +53,18 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control13_3znx5x"
+        "onGetData": "getData_control45_F4KsxR"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control14_A3AtPE": {
+    "control44_EUpzSF": {
       "location": {
         "data": {
           "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
         },
         "locators": [
           {
@@ -87,7 +80,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control14_A3AtPE"
+        "onGetData": "getData_control44_EUpzSF"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -95,7 +88,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control8_eVP6Mt": {
+    "control46_TDEnbV": {
       "location": {
         "data": {
           "tagName": "TABLE"
@@ -114,106 +107,120 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control8_eVP6Mt"
+        "onGetData": "getData_control46_TDEnbV"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     }
   },
   "contexts": {
-    "context7_RqD6TR": {
+    "context9_WkvN60": {
       "controls": [
-        "control12_UF5UM1",
-        "control13_3znx5x",
-        "control14_A3AtPE",
-        "control8_eVP6Mt"
+        "control43_ryZmG4",
+        "control45_F4KsxR",
+        "control44_EUpzSF",
+        "control46_TDEnbV"
       ],
       "anchors": [],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow6_yAFP4x": {
+    "flow37_IbobHe": {
       "toContexts": [
         {
-          "toContextId": "context7_RqD6TR"
+          "toContextId": "context9_WkvN60"
         }
       ]
     },
-    "flow7_HC9bN7": {
-      "fromContextId": "context7_RqD6TR",
+    "flow38_qOZGL1": {
+      "fromContextId": "context9_WkvN60",
       "fromAction": "doAction",
-      "fromControlId": "control13_3znx5x",
+      "fromControlId": "control45_F4KsxR",
       "toContexts": [
         {
-          "toContextId": "context7_RqD6TR"
+          "toContextId": "context9_WkvN60"
+        },
+        {
+          "toContextId": "context1_tCLsmq",
+          "toModelId": "index_itownet"
+        }
+      ]
+    },
+    "flow39_9GZhl7": {
+      "fromContextId": "context9_WkvN60",
+      "fromAction": "doAction",
+      "fromControlId": "control44_EUpzSF",
+      "toContexts": [
+        {
+          "toContextId": "context9_WkvN60"
         }
       ]
     }
   },
   "pages": {
-    "page7_ZkCGqA": {
-      "contextId": "context7_RqD6TR",
+    "page9_oTOVth": {
+      "contextId": "context9_WkvN60",
       "layout": [
         {
-          "id": "uiControl5_4QGZrI",
-          "controlId": "control12_UF5UM1",
+          "id": "uiControl42_FPPNCN",
+          "controlId": "control43_ryZmG4",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl5_4QGZrI",
-                "onGetTemplate": "getTemplate_uiControl5_4QGZrI"
+                "onDoAction": "doAction_uiControl42_FPPNCN",
+                "onGetTemplate": "getTemplate_uiControl42_FPPNCN"
               }
             }
           }
         },
         {
-          "id": "uiControl6_eS0Tls",
-          "controlId": "control13_3znx5x",
+          "id": "uiControl44_XncTVu",
+          "controlId": "control45_F4KsxR",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl6_eS0Tls",
-                "onGetTemplate": "getTemplate_uiControl6_eS0Tls"
+                "onDoAction": "doAction_uiControl44_XncTVu",
+                "onGetTemplate": "getTemplate_uiControl44_XncTVu"
               }
             }
           }
         },
         {
-          "id": "uiControl21_hA8pLC",
-          "controlId": "control14_A3AtPE",
+          "id": "uiControl43_1tTct0",
+          "controlId": "control44_EUpzSF",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl21_hA8pLC",
-                "onGetTemplate": "getTemplate_uiControl21_hA8pLC"
+                "onDoAction": "doAction_uiControl43_1tTct0",
+                "onGetTemplate": "getTemplate_uiControl43_1tTct0"
               }
             }
           }
         },
         {
-          "id": "uiControl11_uzrrgb",
-          "controlId": "control8_eVP6Mt",
+          "id": "uiControl45_iiragH",
+          "controlId": "control46_TDEnbV",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl11_uzrrgb",
-                "onGetTemplate": "getTemplate_uiControl11_uzrrgb"
+                "onDoAction": "doAction_uiControl45_iiragH",
+                "onGetTemplate": "getTemplate_uiControl45_iiragH"
               }
             }
           }
@@ -224,121 +231,78 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context7_RqD6TR": [
-          "分配记录查询"
+        "context9_WkvN60": [
+          "强检项目查询"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context7_RqD6TR": [
-          "egs.itownet.cn:9080/InspMeterMobile//AssignRecordsQuery/AssignRecordsQuery.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw"
+        "context9_WkvN60": [
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfo.jsp?orgCode=1233052347128859XU",
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfo.jsp?orgCode=12330600590589053X",
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfo.jsp?orgCode=123305217272253587"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context7_RqD6TR": [
+        "context9_WkvN60": [
           [
-            "_easyui_combobox_i_",
-            "appointmentId",
-            "assignOrgName",
-            "assignTimeEnd",
-            "assignTimeStart",
-            "assigneeStaus",
             "base-footer",
             "base-header",
             "datagrid-row-r--",
-            "dc",
+            "dg",
+            "dumpButton",
             "ecqs-header",
             "header-left",
             "header-right",
-            "meterIntruName",
+            "proCode",
+            "proName",
             "queryButton",
             "queryDiv",
             "queryForm",
-            "reservatAdminName"
+            "returnList"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context7_RqD6TR": [
+        "context9_WkvN60": [
           [
             "Orange_but",
             "basic-radio",
             "blue_but",
-            "calendar",
-            "calendar-body",
-            "calendar-day",
-            "calendar-dtable",
-            "calendar-first",
-            "calendar-header",
-            "calendar-last",
-            "calendar-menu",
-            "calendar-menu-month-inner",
-            "calendar-menu-next",
-            "calendar-menu-prev",
-            "calendar-menu-year",
-            "calendar-menu-year-inner",
-            "calendar-nav",
-            "calendar-nextmonth",
-            "calendar-nextyear",
-            "calendar-other-month",
-            "calendar-prevmonth",
-            "calendar-prevyear",
-            "calendar-saturday",
-            "calendar-selected",
-            "calendar-sunday",
-            "calendar-text",
-            "calendar-title",
-            "calendar-today",
             "clearfix",
             "col",
-            "combo",
-            "combo-arrow",
-            "combo-f",
-            "combo-p",
-            "combo-panel",
-            "combobox-f",
-            "combobox-item",
-            "combobox-item-selected",
             "datagrid",
             "datagrid-body",
             "datagrid-body-inner",
             "datagrid-btable",
             "datagrid-cell",
-            "datagrid-cell-c-appointmentId",
-            "datagrid-cell-c-assignOrgName",
-            "datagrid-cell-c-assignTime",
-            "datagrid-cell-c-assigneeName",
-            "datagrid-cell-c-ck",
-            "datagrid-cell-c-meterIntruName",
-            "datagrid-cell-c-porgaoName",
-            "datagrid-cell-c-reservatAdminName",
-            "datagrid-cell-c-serialNum",
-            "datagrid-cell-rownumber",
+            "datagrid-cell-c-degreeAccuracy",
+            "datagrid-cell-c-instrClassName",
+            "datagrid-cell-c-instrClassNumber",
+            "datagrid-cell-c-measuringRange",
+            "datagrid-cell-c-memo",
+            "datagrid-cell-c-proNum",
+            "datagrid-cell-c-tabstatus",
+            "datagrid-cell-c-verificationNumber",
+            "datagrid-cell-check",
             "datagrid-f",
             "datagrid-footer",
             "datagrid-footer-inner",
             "datagrid-header",
+            "datagrid-header-check",
             "datagrid-header-inner",
             "datagrid-header-row",
             "datagrid-header-rownumber",
             "datagrid-htable",
             "datagrid-pager",
-            "datagrid-row",
-            "datagrid-row-alt",
             "datagrid-sort-icon",
-            "datagrid-td-rownumber",
             "datagrid-view",
             "datagrid-wrap",
-            "datebox",
-            "datebox-calendar-inner",
-            "datebox-f",
-            "easyui-combobox",
-            "easyui-datebox",
             "easyui-fluid",
             "easyui-textbox",
             "ecqs-container",
@@ -371,10 +335,7 @@
             "panel-body-noheader",
             "panel-noscroll",
             "textbox",
-            "textbox-addon",
-            "textbox-addon-right",
             "textbox-f",
-            "textbox-icon",
             "textbox-prompt",
             "textbox-text",
             "textbox-value",
@@ -387,83 +348,43 @@
             "Orange_but",
             "basic-radio",
             "blue_but",
-            "calendar",
-            "calendar-body",
-            "calendar-day",
-            "calendar-dtable",
-            "calendar-first",
-            "calendar-header",
-            "calendar-last",
-            "calendar-menu",
-            "calendar-menu-month-inner",
-            "calendar-menu-next",
-            "calendar-menu-prev",
-            "calendar-menu-year",
-            "calendar-menu-year-inner",
-            "calendar-nav",
-            "calendar-nextmonth",
-            "calendar-nextyear",
-            "calendar-other-month",
-            "calendar-prevmonth",
-            "calendar-prevyear",
-            "calendar-saturday",
-            "calendar-selected",
-            "calendar-sunday",
-            "calendar-text",
-            "calendar-title",
-            "calendar-today",
             "clearfix",
             "col",
-            "combo",
-            "combo-arrow",
-            "combo-f",
-            "combo-p",
-            "combo-panel",
-            "combobox-f",
-            "combobox-item",
-            "combobox-item-selected",
             "datagrid",
             "datagrid-body",
             "datagrid-body-inner",
             "datagrid-btable",
             "datagrid-cell",
-            "datagrid-cell-c-appointmentId",
-            "datagrid-cell-c-assignOrgName",
-            "datagrid-cell-c-assignTime",
-            "datagrid-cell-c-assigneeName",
-            "datagrid-cell-c-ck",
-            "datagrid-cell-c-meterIntruName",
-            "datagrid-cell-c-porgaoName",
-            "datagrid-cell-c-reservatAdminName",
-            "datagrid-cell-c-serialNum",
+            "datagrid-cell-c-degreeAccuracy",
+            "datagrid-cell-c-instrClassName",
+            "datagrid-cell-c-instrClassNumber",
+            "datagrid-cell-c-measuringRange",
+            "datagrid-cell-c-memo",
+            "datagrid-cell-c-proNum",
+            "datagrid-cell-c-tabstatus",
+            "datagrid-cell-c-verificationNumber",
+            "datagrid-cell-check",
             "datagrid-cell-rownumber",
             "datagrid-f",
             "datagrid-footer",
             "datagrid-footer-inner",
             "datagrid-header",
+            "datagrid-header-check",
             "datagrid-header-inner",
             "datagrid-header-row",
             "datagrid-header-rownumber",
             "datagrid-htable",
             "datagrid-pager",
             "datagrid-row",
-            "datagrid-row-alt",
             "datagrid-sort-icon",
             "datagrid-td-rownumber",
             "datagrid-view",
             "datagrid-wrap",
-            "datebox",
-            "datebox-calendar-inner",
-            "datebox-f",
-            "dialog-button",
-            "easyui-combobox",
-            "easyui-datebox",
             "easyui-fluid",
             "easyui-textbox",
             "ecqs-container",
             "form-control",
             "header-logo",
-            "icon-ok",
             "info-bottom",
             "info-top",
             "l-btn",
@@ -488,45 +409,108 @@
             "pagination-prev",
             "panel",
             "panel-body",
-            "panel-body-noborder",
             "panel-body-noheader",
-            "panel-header",
-            "panel-header-noborder",
             "panel-noscroll",
-            "panel-title",
-            "panel-tool",
-            "panel-tool-close",
             "textbox",
-            "textbox-addon",
-            "textbox-addon-right",
             "textbox-f",
-            "textbox-icon",
             "textbox-prompt",
             "textbox-text",
             "textbox-value",
             "title-line",
             "title-line-blue",
             "title-line-grey",
-            "validatebox-text",
-            "window",
-            "window-body",
-            "window-header",
-            "window-mask",
-            "window-shadow"
+            "validatebox-text"
+          ],
+          [
+            "Orange_but",
+            "basic-radio",
+            "blue_but",
+            "clearfix",
+            "col",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-degreeAccuracy",
+            "datagrid-cell-c-instrClassName",
+            "datagrid-cell-c-instrClassNumber",
+            "datagrid-cell-c-measuringRange",
+            "datagrid-cell-c-memo",
+            "datagrid-cell-c-proNum",
+            "datagrid-cell-c-tabstatus",
+            "datagrid-cell-c-verificationNumber",
+            "datagrid-cell-check",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-check",
+            "datagrid-header-inner",
+            "datagrid-header-over",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-pager",
+            "datagrid-row",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-view",
+            "datagrid-wrap",
+            "easyui-fluid",
+            "easyui-textbox",
+            "ecqs-container",
+            "form-control",
+            "header-logo",
+            "info-bottom",
+            "info-top",
+            "l-btn",
+            "l-btn-disabled",
+            "l-btn-empty",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-plain-disabled",
+            "l-btn-small",
+            "l-btn-text",
+            "pagination",
+            "pagination-btn-separator",
+            "pagination-first",
+            "pagination-info",
+            "pagination-last",
+            "pagination-load",
+            "pagination-next",
+            "pagination-num",
+            "pagination-page-list",
+            "pagination-prev",
+            "panel",
+            "panel-body",
+            "panel-body-noheader",
+            "panel-noscroll",
+            "textbox",
+            "textbox-f",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "title-line",
+            "title-line-blue",
+            "title-line-grey",
+            "validatebox-text"
           ]
         ]
       }
     },
     "page/tagTriplets": {
       "contexts": {
-        "context7_RqD6TR": [
+        "context9_WkvN60": [
           [
             "-/-/DIV",
             "-/-/LINK",
             "-/-/META",
             "-/-/SCRIPT",
             "-/-/TITLE",
-            "-/DIV/BR",
             "-/DIV/DIV",
             "-/DIV/P",
             "A/SPAN/SPAN",
@@ -534,78 +518,25 @@
             "DIV/DIV/DIV",
             "DIV/DIV/FORM",
             "DIV/DIV/IMG",
-            "DIV/DIV/SPAN",
+            "DIV/DIV/INPUT-button",
             "DIV/DIV/STRONG",
             "DIV/DIV/STYLE",
             "DIV/DIV/TABLE",
             "DIV/FORM/DIV",
             "DIV/P/SPAN",
-            "DIV/SELECT/OPTION",
             "DIV/SPAN/INPUT-hidden",
             "DIV/SPAN/INPUT-text",
-            "DIV/SPAN/SPAN",
             "DIV/TABLE/TBODY",
-            "DIV/TABLE/THEAD",
             "FORM/DIV/BUTTON",
             "FORM/DIV/INPUT-text",
-            "FORM/DIV/LABEL",
-            "FORM/DIV/SELECT",
+            "FORM/DIV/LABLE",
             "FORM/DIV/SPAN",
-            "SPAN/SPAN/A",
             "TABLE/TBODY/TR",
-            "TABLE/THEAD/TR",
             "TBODY/TR/TD",
             "TD/A/SPAN",
+            "TD/DIV/INPUT-checkbox",
             "TD/DIV/SPAN",
             "TD/SELECT/OPTION",
-            "THEAD/TR/TH",
-            "TR/TD/A",
-            "TR/TD/DIV",
-            "TR/TD/INPUT-text",
-            "TR/TD/SELECT",
-            "TR/TD/SPAN"
-          ],
-          [
-            "-/-/DIV",
-            "-/-/LINK",
-            "-/-/META",
-            "-/-/SCRIPT",
-            "-/-/TITLE",
-            "-/DIV/BR",
-            "-/DIV/DIV",
-            "-/DIV/P",
-            "A/SPAN/SPAN",
-            "DIV/A/SPAN",
-            "DIV/DIV/A",
-            "DIV/DIV/BR",
-            "DIV/DIV/DIV",
-            "DIV/DIV/FORM",
-            "DIV/DIV/IMG",
-            "DIV/DIV/SPAN",
-            "DIV/DIV/STRONG",
-            "DIV/DIV/STYLE",
-            "DIV/DIV/TABLE",
-            "DIV/FORM/DIV",
-            "DIV/P/SPAN",
-            "DIV/SELECT/OPTION",
-            "DIV/SPAN/INPUT-hidden",
-            "DIV/SPAN/INPUT-text",
-            "DIV/SPAN/SPAN",
-            "DIV/TABLE/TBODY",
-            "DIV/TABLE/THEAD",
-            "FORM/DIV/BUTTON",
-            "FORM/DIV/INPUT-text",
-            "FORM/DIV/LABEL",
-            "FORM/DIV/SELECT",
-            "FORM/DIV/SPAN",
-            "SPAN/SPAN/A",
-            "TABLE/TBODY/TR",
-            "TABLE/THEAD/TR",
-            "TBODY/TR/TD",
-            "TD/A/SPAN",
-            "TD/DIV/SPAN",
-            "TD/SELECT/OPTION",
-            "THEAD/TR/TH",
             "TR/TD/A",
             "TR/TD/DIV",
             "TR/TD/INPUT-text",

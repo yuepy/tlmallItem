@@ -5,11 +5,11 @@
   "jsFile": "index.js",
   "requires": {
     "sapling_itownet": "../sapling_itownet/index.json",
-    "displ_itownet": "../displ_itownet/index.json",
     "deil_Dy": "../deil_Dy/index.json",
-    "dis_itownet_pl": "../dis_itownet_pl/index.json",
     "allocationQuery": "../allocationQuery/index.json",
-    "deilNotice": "../deilNotice/index.json"
+    "deilNotice": "../deilNotice/index.json",
+    "displ_itownet": "../displ_itownet/index.json",
+    "inspectionQuery": "../inspectionQuery/index.json"
   },
   "chineseName": "质检B版首页",
   "description": "",
@@ -326,6 +326,42 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control40_6TvnsZ": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::BODY[@id=\"mainLayout\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.panel-fit BODY.easyui-layout.layout.panel-noscroll"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control40_6TvnsZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -334,7 +370,8 @@
         "control17_B6kmqX",
         "control18_rUQaO8",
         "control0_RoUGcz",
-        "control19_OqWGTq"
+        "control19_OqWGTq",
+        "control40_6TvnsZ"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -356,19 +393,23 @@
       "fromControlId": "control17_B6kmqX",
       "toContexts": [
         {
-          "toContextId": "context1_tCLsmq"
+          "toContextId": "context1_tCLsmq",
+          "toModelId": "index_itownet"
         },
         {
           "toContextId": "context2_w6GRea",
           "toModelId": "sapling_itownet"
         },
         {
-          "toContextId": "context6_zKDTmn",
-          "toModelId": "dis_itownet_pl"
-        },
-        {
           "toContextId": "context7_RqD6TR",
           "toModelId": "allocationQuery"
+        },
+        {
+          "toContextId": "context1_tCLsmq"
+        },
+        {
+          "toContextId": "context5_ZEOZGD",
+          "toModelId": "inspectionQuery"
         }
       ]
     },
@@ -409,12 +450,38 @@
           "toModelId": "deilNotice"
         }
       ]
+    },
+    "flow24_0E9sel": {
+      "fromContextId": "context1_tCLsmq",
+      "fromAction": "click",
+      "fromControlId": "control17_B6kmqX",
+      "toContexts": [
+        {
+          "toContextId": "context3_eGwpuQ",
+          "toModelId": "displ_itownet"
+        }
+      ]
     }
   },
   "pages": {
     "page1_Q8nBF8": {
       "contextId": "context1_tCLsmq",
       "layout": [
+        {
+          "id": "uiControl38_wfqwEf",
+          "controlId": "control40_6TvnsZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl38_wfqwEf",
+                "onGetTemplate": "getTemplate_uiControl38_wfqwEf"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl12_fFctEC",
           "controlId": "control17_B6kmqX",
