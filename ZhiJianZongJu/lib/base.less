@@ -659,7 +659,7 @@ Header{
 //hzx-start
 .displ-body{
   position:fixed;
-  z-index:1020;
+  z-index:1020 !important;
   height:100%;
   margin-bottom:-44px;
   background:#fff;
@@ -688,7 +688,7 @@ Header{
 }
 .amt-modal-dialog{
 
-  z-index:9999; 
+  z-index:1025; 
 }
 .navbar-primary,.amt-navbar-primary{
   background:#0a568c!important;
@@ -858,11 +858,11 @@ Header{
           }
         }
 .amt-icon-more-l:before {
-    content: "";
+    content:none !important;
 }
 .amt-btn-more{
-  background: url(img/gengduo.png) no-repeat center;
-  background-size: 5px;
+  background: url(img/gengduo.png) no-repeat center !important;
+  background-size: 5px !important;
 }
 
 //hzx-end

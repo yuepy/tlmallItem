@@ -589,7 +589,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 }
 .displ-body {
   position: fixed;
-  z-index: 1020;
+  z-index: 1020 !important;
   height: 100%;
   margin-bottom: -44px;
   background: #fff;
@@ -618,7 +618,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   z-index: 9999;
 }
 .amt-modal-dialog {
-  z-index: 9999;
+  z-index: 1025;
 }
 .navbar-primary,
 .amt-navbar-primary {
@@ -778,11 +778,11 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   color: #fff;
 }
 .amt-icon-more-l:before {
-  content: "";
+  content: none !important;
 }
 .amt-btn-more {
-  background: url(img/gengduo.png) no-repeat center;
-  background-size: 5px;
+  background: url(img/gengduo.png) no-repeat center !important;
+  background-size: 5px !important;
 }
 /*首页图标点击后的样式start*/
 .ysp-ZJ-jiandu {
