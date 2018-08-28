@@ -1,15 +1,16 @@
 {
   "version": "0.1",
-  "id": "inspectionQuery",
-  "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/inspmeterOrgInfoQuery.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw",
+  "id": "deil_inspection",
+  "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfo.jsp?orgCode=1233052347128859XU",
   "jsFile": "index.js",
   "requires": {
-    "deil_inspection": "../deil_inspection/index.json"
+    "index_itownet": "../index_itownet/index.json",
+    "inspme_maintain": "../inspme_maintain/index.json"
   },
-  "chineseName": "检定机构信息查询",
+  "chineseName": "强检项目查询",
   "description": "",
   "controls": {
-    "control10_hTTLsG": {
+    "control43_ryZmG4": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -27,38 +28,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control10_hTTLsG"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control11_3XcZvT": {
-      "location": {
-        "data": {
-          "tagName": "TABLE"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-pager.pagination TABLE"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control11_3XcZvT"
+        "onGetData": "getData_control43_ryZmG4"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -66,7 +36,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control15_OWbb2m": {
+    "control45_F4KsxR": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -84,7 +54,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control15_OWbb2m"
+        "onGetData": "getData_control45_F4KsxR"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -92,7 +62,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control41_I0znSz": {
+    "control44_EUpzSF": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -115,7 +85,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control41_I0znSz"
+        "onGetData": "getData_control44_EUpzSF"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -123,14 +93,41 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control42_wbW7Es": {
+    "control46_TDEnbV": {
       "location": {
         "data": {
-          "tagName": "DIV"
+          "tagName": "TABLE"
         },
         "userData": {
           "data": [],
           "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-pager.pagination TABLE"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control46_TDEnbV"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control20_6pvHnP": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
         },
         "locators": [
           {
@@ -141,7 +138,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control42_wbW7Es"
+        "onGetData": "getData_control20_6pvHnP"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -151,146 +148,140 @@
     }
   },
   "contexts": {
-    "context5_ZEOZGD": {
+    "context9_WkvN60": {
       "controls": [
-        "control10_hTTLsG",
-        "control11_3XcZvT",
-        "control15_OWbb2m",
-        "control41_I0znSz",
-        "control42_wbW7Es"
+        "control43_ryZmG4",
+        "control45_F4KsxR",
+        "control44_EUpzSF",
+        "control46_TDEnbV",
+        "control20_6pvHnP"
       ],
       "anchors": [],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow33_nIfRw9": {
+    "flow37_IbobHe": {
       "toContexts": [
         {
-          "toContextId": "context5_ZEOZGD"
+          "toContextId": "context9_WkvN60"
         }
       ]
     },
-    "flow8_HeF8ZV": {
-      "fromContextId": "context5_ZEOZGD",
+    "flow38_qOZGL1": {
+      "fromContextId": "context9_WkvN60",
       "fromAction": "doAction",
-      "fromControlId": "control11_3XcZvT",
+      "fromControlId": "control45_F4KsxR",
       "toContexts": [
         {
-          "toContextId": "context5_ZEOZGD"
-        }
-      ]
-    },
-    "flow34_rMwBMo": {
-      "fromContextId": "context5_ZEOZGD",
-      "fromAction": "doAction",
-      "fromControlId": "control15_OWbb2m",
-      "toContexts": [
-        {
-          "toContextId": "context5_ZEOZGD"
-        }
-      ]
-    },
-    "flow35_xLWTn3": {
-      "fromContextId": "context5_ZEOZGD",
-      "fromAction": "doAction",
-      "fromControlId": "control41_I0znSz",
-      "toContexts": [
-        {
-          "toContextId": "context5_ZEOZGD"
-        }
-      ]
-    },
-    "flow36_uvLGFg": {
-      "fromContextId": "context5_ZEOZGD",
-      "fromAction": "doAction",
-      "fromControlId": "control42_wbW7Es",
-      "toContexts": [
-        {
-          "toContextId": "context5_ZEOZGD"
+          "toContextId": "context9_WkvN60"
         },
         {
-          "toContextId": "context9_WkvN60",
-          "toModelId": "deil_inspection"
+          "toContextId": "context1_tCLsmq",
+          "toModelId": "index_itownet"
+        }
+      ]
+    },
+    "flow39_9GZhl7": {
+      "fromContextId": "context9_WkvN60",
+      "fromAction": "doAction",
+      "fromControlId": "control44_EUpzSF",
+      "toContexts": [
+        {
+          "toContextId": "context9_WkvN60"
+        }
+      ]
+    },
+    "flow40_mxxHaB": {
+      "fromContextId": "context9_WkvN60",
+      "fromAction": "doAction",
+      "fromControlId": "control20_6pvHnP",
+      "toContexts": [
+        {
+          "toContextId": "context9_WkvN60"
+        },
+        {
+          "toContextId": "context10_n2Tfnp",
+          "toModelId": "inspme_maintain"
         }
       ]
     }
   },
   "pages": {
-    "page5_uaqdTC": {
-      "contextId": "context5_ZEOZGD",
+    "page9_oTOVth": {
+      "contextId": "context9_WkvN60",
       "layout": [
         {
-          "id": "uiControl26_0WbBbW",
-          "controlId": "control10_hTTLsG",
+          "id": "uiControl42_FPPNCN",
+          "controlId": "control43_ryZmG4",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl26_0WbBbW",
-                "onGetTemplate": "getTemplate_uiControl26_0WbBbW"
+                "onDoAction": "doAction_uiControl42_FPPNCN",
+                "onGetTemplate": "getTemplate_uiControl42_FPPNCN"
               }
             }
           }
         },
         {
-          "id": "uiControl39_hvkkGe",
-          "controlId": "control15_OWbb2m",
+          "id": "uiControl44_XncTVu",
+          "controlId": "control45_F4KsxR",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl39_hvkkGe",
-                "onGetTemplate": "getTemplate_uiControl39_hvkkGe"
+                "onDoAction": "doAction_uiControl44_XncTVu",
+                "onGetTemplate": "getTemplate_uiControl44_XncTVu"
               }
             }
           }
         },
         {
-          "id": "uiControl40_KnEeSz",
-          "controlId": "control41_I0znSz",
+          "id": "uiControl43_1tTct0",
+          "controlId": "control44_EUpzSF",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl40_KnEeSz",
-                "onGetTemplate": "getTemplate_uiControl40_KnEeSz"
+                "onDoAction": "doAction_uiControl43_1tTct0",
+                "onGetTemplate": "getTemplate_uiControl43_1tTct0"
               }
             }
           }
         },
         {
-          "id": "uiControl27_u3E9np",
-          "controlId": "control11_3XcZvT",
+          "id": "uiControl45_iiragH",
+          "controlId": "control46_TDEnbV",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl27_u3E9np",
-                "onGetTemplate": "getTemplate_uiControl27_u3E9np"
+                "onDoAction": "doAction_uiControl45_iiragH",
+                "onGetTemplate": "getTemplate_uiControl45_iiragH"
               }
             }
           }
         },
         {
-          "id": "uiControl41_ZEr9i0",
-          "controlId": "control42_wbW7Es",
+          "id": "uiControl15_MIHilp",
+          "controlId": "control20_6pvHnP",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl41_ZEr9i0",
-                "onGetTemplate": "getTemplate_uiControl41_ZEr9i0"
+                "onDoAction": "doAction_uiControl15_MIHilp",
+                "onGetTemplate": "getTemplate_uiControl15_MIHilp"
               }
             }
           }
@@ -301,106 +292,85 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context5_ZEOZGD": [
-          "检定机构信息查询"
+        "context9_WkvN60": [
+          "强检项目查询"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context5_ZEOZGD": [
-          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/inspmeterOrgInfoQuery.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw"
+        "context9_WkvN60": [
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfo.jsp?orgCode=1233052347128859XU",
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfo.jsp?orgCode=12330600590589053X",
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfo.jsp?orgCode=123305217272253587"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context5_ZEOZGD": [
+        "context9_WkvN60": [
           [
             "base-footer",
             "base-header",
-            "checkPersonShow",
             "datagrid-row-r--",
             "dg",
+            "dumpButton",
             "ecqs-header",
             "header-left",
             "header-right",
-            "manageDeptName",
-            "orgCode",
-            "orgName",
-            "orgQuery",
-            "projectQuery",
-            "query",
+            "proCode",
+            "proName",
+            "queryButton",
             "queryDiv",
-            "reset",
-            "scanId",
-            "show-dialog",
-            "showForm",
-            "showImg-dialog",
-            "showImgs",
-            "uuid"
+            "queryForm",
+            "returnList"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context5_ZEOZGD": [
+        "context9_WkvN60": [
           [
             "Orange_but",
             "basic-radio",
             "blue_but",
             "clearfix",
             "col",
-            "daili",
             "datagrid",
             "datagrid-body",
             "datagrid-body-inner",
             "datagrid-btable",
             "datagrid-cell",
-            "datagrid-cell-c-authDistrict",
-            "datagrid-cell-c-contactMan",
-            "datagrid-cell-c-email",
-            "datagrid-cell-c-legalRepre",
-            "datagrid-cell-c-manageDeptName",
-            "datagrid-cell-c-mobile",
-            "datagrid-cell-c-orgCode",
-            "datagrid-cell-c-orgGrade",
-            "datagrid-cell-c-orgName",
-            "datagrid-cell-c-postStatus",
-            "datagrid-cell-c-telephone",
-            "datagrid-cell-rownumber",
+            "datagrid-cell-c-degreeAccuracy",
+            "datagrid-cell-c-instrClassName",
+            "datagrid-cell-c-instrClassNumber",
+            "datagrid-cell-c-measuringRange",
+            "datagrid-cell-c-memo",
+            "datagrid-cell-c-proNum",
+            "datagrid-cell-c-tabstatus",
+            "datagrid-cell-c-verificationNumber",
+            "datagrid-cell-check",
             "datagrid-f",
             "datagrid-footer",
             "datagrid-footer-inner",
             "datagrid-header",
+            "datagrid-header-check",
             "datagrid-header-inner",
             "datagrid-header-row",
             "datagrid-header-rownumber",
             "datagrid-htable",
             "datagrid-pager",
-            "datagrid-row",
-            "datagrid-row-alt",
-            "datagrid-row-checked",
-            "datagrid-row-selected",
             "datagrid-sort-icon",
-            "datagrid-td-rownumber",
             "datagrid-view",
             "datagrid-wrap",
-            "dialog-Character",
-            "dialog-Character-label",
-            "dialog-Character-td",
-            "easyui-dialog",
             "easyui-fluid",
-            "easyui-form",
             "easyui-textbox",
             "ecqs-container",
             "form-control",
             "header-logo",
-            "icon-save",
             "info-bottom",
             "info-top",
-            "ipt",
             "l-btn",
             "l-btn-disabled",
             "l-btn-empty",
@@ -423,15 +393,8 @@
             "pagination-prev",
             "panel",
             "panel-body",
-            "panel-body-noborder",
             "panel-body-noheader",
-            "panel-header",
-            "panel-header-noborder",
-            "panel-icon",
-            "panel-title",
-            "panel-tool",
-            "panel-tool-close",
-            "panel-with-icon",
+            "panel-noscroll",
             "textbox",
             "textbox-f",
             "textbox-prompt",
@@ -440,12 +403,7 @@
             "title-line",
             "title-line-blue",
             "title-line-grey",
-            "validatebox-text",
-            "window",
-            "window-body",
-            "window-header",
-            "window-mask",
-            "window-shadow"
+            "validatebox-text"
           ],
           [
             "Orange_but",
@@ -453,54 +411,43 @@
             "blue_but",
             "clearfix",
             "col",
-            "daili",
             "datagrid",
             "datagrid-body",
             "datagrid-body-inner",
             "datagrid-btable",
             "datagrid-cell",
-            "datagrid-cell-c-authDistrict",
-            "datagrid-cell-c-contactMan",
-            "datagrid-cell-c-email",
-            "datagrid-cell-c-legalRepre",
-            "datagrid-cell-c-manageDeptName",
-            "datagrid-cell-c-mobile",
-            "datagrid-cell-c-orgCode",
-            "datagrid-cell-c-orgGrade",
-            "datagrid-cell-c-orgName",
-            "datagrid-cell-c-postStatus",
-            "datagrid-cell-c-telephone",
+            "datagrid-cell-c-degreeAccuracy",
+            "datagrid-cell-c-instrClassName",
+            "datagrid-cell-c-instrClassNumber",
+            "datagrid-cell-c-measuringRange",
+            "datagrid-cell-c-memo",
+            "datagrid-cell-c-proNum",
+            "datagrid-cell-c-tabstatus",
+            "datagrid-cell-c-verificationNumber",
+            "datagrid-cell-check",
             "datagrid-cell-rownumber",
             "datagrid-f",
             "datagrid-footer",
             "datagrid-footer-inner",
             "datagrid-header",
+            "datagrid-header-check",
             "datagrid-header-inner",
             "datagrid-header-row",
             "datagrid-header-rownumber",
             "datagrid-htable",
             "datagrid-pager",
             "datagrid-row",
-            "datagrid-row-checked",
-            "datagrid-row-selected",
             "datagrid-sort-icon",
             "datagrid-td-rownumber",
             "datagrid-view",
             "datagrid-wrap",
-            "dialog-Character",
-            "dialog-Character-label",
-            "dialog-Character-td",
-            "easyui-dialog",
             "easyui-fluid",
-            "easyui-form",
             "easyui-textbox",
             "ecqs-container",
             "form-control",
             "header-logo",
-            "icon-save",
             "info-bottom",
             "info-top",
-            "ipt",
             "l-btn",
             "l-btn-disabled",
             "l-btn-empty",
@@ -523,15 +470,8 @@
             "pagination-prev",
             "panel",
             "panel-body",
-            "panel-body-noborder",
             "panel-body-noheader",
-            "panel-header",
-            "panel-header-noborder",
-            "panel-icon",
-            "panel-title",
-            "panel-tool",
-            "panel-tool-close",
-            "panel-with-icon",
+            "panel-noscroll",
             "textbox",
             "textbox-f",
             "textbox-prompt",
@@ -540,60 +480,127 @@
             "title-line",
             "title-line-blue",
             "title-line-grey",
-            "validatebox-text",
-            "window",
-            "window-body",
-            "window-header",
-            "window-mask",
-            "window-shadow"
+            "validatebox-text"
+          ],
+          [
+            "Orange_but",
+            "basic-radio",
+            "blue_but",
+            "clearfix",
+            "col",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-degreeAccuracy",
+            "datagrid-cell-c-instrClassName",
+            "datagrid-cell-c-instrClassNumber",
+            "datagrid-cell-c-measuringRange",
+            "datagrid-cell-c-memo",
+            "datagrid-cell-c-proNum",
+            "datagrid-cell-c-tabstatus",
+            "datagrid-cell-c-verificationNumber",
+            "datagrid-cell-check",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-check",
+            "datagrid-header-inner",
+            "datagrid-header-over",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-pager",
+            "datagrid-row",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-view",
+            "datagrid-wrap",
+            "easyui-fluid",
+            "easyui-textbox",
+            "ecqs-container",
+            "form-control",
+            "header-logo",
+            "info-bottom",
+            "info-top",
+            "l-btn",
+            "l-btn-disabled",
+            "l-btn-empty",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-plain-disabled",
+            "l-btn-small",
+            "l-btn-text",
+            "pagination",
+            "pagination-btn-separator",
+            "pagination-first",
+            "pagination-info",
+            "pagination-last",
+            "pagination-load",
+            "pagination-next",
+            "pagination-num",
+            "pagination-page-list",
+            "pagination-prev",
+            "panel",
+            "panel-body",
+            "panel-body-noheader",
+            "panel-noscroll",
+            "textbox",
+            "textbox-f",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "title-line",
+            "title-line-blue",
+            "title-line-grey",
+            "validatebox-text"
           ]
         ]
       }
     },
     "page/tagTriplets": {
       "contexts": {
-        "context5_ZEOZGD": [
+        "context9_WkvN60": [
           [
             "-/-/DIV",
             "-/-/LINK",
             "-/-/META",
             "-/-/SCRIPT",
             "-/-/TITLE",
-            "-/DIV/BR",
             "-/DIV/DIV",
             "-/DIV/P",
             "A/SPAN/SPAN",
-            "DIV/DIV/A",
             "DIV/DIV/BR",
-            "DIV/DIV/BUTTON",
             "DIV/DIV/DIV",
             "DIV/DIV/FORM",
             "DIV/DIV/IMG",
-            "DIV/DIV/INPUT-text",
-            "DIV/DIV/LABEL",
-            "DIV/DIV/LABLE",
-            "DIV/DIV/SPAN",
+            "DIV/DIV/INPUT-button",
             "DIV/DIV/STRONG",
             "DIV/DIV/STYLE",
             "DIV/DIV/TABLE",
-            "DIV/FORM/TABLE",
+            "DIV/FORM/DIV",
             "DIV/P/SPAN",
             "DIV/SPAN/INPUT-hidden",
             "DIV/SPAN/INPUT-text",
             "DIV/TABLE/TBODY",
-            "FORM/TABLE/TBODY",
+            "FORM/DIV/BUTTON",
+            "FORM/DIV/INPUT-text",
+            "FORM/DIV/LABLE",
+            "FORM/DIV/SPAN",
             "TABLE/TBODY/TR",
             "TBODY/TR/TD",
             "TD/A/SPAN",
+            "TD/DIV/INPUT-checkbox",
             "TD/DIV/SPAN",
-            "TD/LABEL/BR",
             "TD/SELECT/OPTION",
             "TR/TD/A",
             "TR/TD/DIV",
-            "TR/TD/INPUT-hidden",
-            "TR/TD/INPUT-null",
             "TR/TD/INPUT-text",
-            "TR/TD/LABEL",
             "TR/TD/SELECT",
             "TR/TD/SPAN"
           ]

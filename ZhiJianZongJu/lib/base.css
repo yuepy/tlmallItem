@@ -1,6 +1,47 @@
 li {
   list-style: none;
 }
+Header {
+  color: #fff !important;
+}
+Header button {
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background-image: url(img/ysp-prev.png);
+  background-size: 12px 14px;
+  background-repeat: no-repeat;
+  background-position: 10%;
+  font-size: 15px;
+}
+.seledradio {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  border-radius: 50%;
+  border: 1px solid #8a96a2;
+  background-image: url(img/duihao.png);
+  background-size: 20px 20px;
+  background-position: 0;
+}
+.HeaderTitle Header {
+  background-color: #0a568c !important;
+  color: #fff !important;
+}
+.HeaderTitle Header button {
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background-image: url(img/ysp-prev.png);
+  background-size: 12px 14px;
+  background-repeat: no-repeat;
+  background-position: 10%;
+  font-size: 15px;
+}
 /*分页样式*/
 .dovedteskPage {
   display: flex;
@@ -120,6 +161,54 @@ li {
 }
 .zc-amSele li {
   border-top: 0;
+}
+.zc-btnAction .amt-btn {
+  background: url(img/gengduo.png) no-repeat center;
+  background-size: 5px;
+}
+.zc-btnAction .amt-btn span {
+  display: none;
+}
+.hzx-page-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0px ;
+  padding: 20px 0px;
+}
+.hzx-page-left > span:nth-child(1) {
+  background: #2F9FFF;
+  border-radius: 10px 0px 0px 10px;
+  padding: 2px 12px;
+  color: #fff;
+}
+.hzx-page-left > span:nth-child(2) {
+  background: #ececec;
+  padding: 2px 12px;
+  border-radius: 0px 10px 10px 0px;
+}
+.hzx-page-center > span:nth-child(1) > span:nth-child(1) {
+  padding-right: 5px;
+}
+.hzx-page-center > span:nth-child(1) > span:nth-child(2) {
+  padding: 0px 5px;
+  border-radius: 100%;
+  background: #2F9FFF;
+  color: #fff;
+}
+.hzx-page-center > span:nth-child(2) {
+  padding-left: 5px;
+}
+.hzx-page-right > span:nth-child(1) {
+  background: #ececec;
+  padding: 2px 12px;
+  border-radius: 10px 0px 0px 10px;
+}
+.hzx-page-right > span:nth-child(2) {
+  background: #2F9FFF;
+  padding: 2px 12px;
+  border-radius: 0px 10px 10px 0px;
+  color: #fff;
 }
 .amt-title-primary,
 .amt-title-primary .amt-title-left-text,
@@ -845,6 +934,21 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   color: #87939f;
   padding: 5px 0;
 }
+.querybtns {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+}
+.querybtns button {
+  width: 49%;
+  border-radius: 5px;
+  border: 1px solid #87939f !important;
+}
+.querybtns button:nth-child(1) {
+  background: #0a568c;
+  color: #fff;
+}
 .deilQuery {
   padding-left: 40px !important;
   position: relative;
@@ -863,11 +967,6 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-.deilQuery .seledradio {
-  background-image: url(img/duihao.png);
-  background-size: 20px 20px;
-  background-position: 0;
 }
 .querydeilbtn {
   height: 44px;
@@ -888,24 +987,82 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   border: 1px solid #004788;
 }
 /*分配记录查询页*/
+/*检定结构查询页*/
+.dialogdiv {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #f3f3f3;
+  overflow-y: auto;
+  background: #fff;
+}
+.dialogdiv > div {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+.dialogdiv > div div:nth-child(1) {
+  font-size: 14px;
+  width: 64px;
+  text-align: justify;
+  text-align-last: justify;
+  padding: 5px 0;
+  color: #202020;
+}
+.dialogdiv > div > div:nth-child(2) {
+  width: 75%;
+  display: flex;
+  color: #313131;
+  padding: 5px 0;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.dialogdiv button {
+  height: 44px;
+  width: 100%;
+  border: 0;
+  background: #0a568c;
+  color: #fff;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.openboximg {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 1000vh;
+  background: #fff;
+}
+.openboximg button {
+  width: 100%;
+  height: 44px;
+  background-color: #0a568c;
+  color: #fff;
+}
+/*检定结构查询页*/
 /*待阅信息详情页*/
 [data-ysp-modelid='deil_Dy'] button,
 [data-ysp-modelid='deilNotice'] button,
 [data-ysp-modelid="allocationQuery"] button,
-[data-ysp-modelid="inspectionQuery"] button {
+[data-ysp-modelid="inspectionQuery"] button,
+[data-ysp-modelid="deil_inspection"] button {
   border: 0;
 }
 [data-ysp-modelid='deil_Dy'] Header,
 [data-ysp-modelid='deilNotice'] Header,
 [data-ysp-modelid="allocationQuery"] Header,
-[data-ysp-modelid="inspectionQuery"] Header {
+[data-ysp-modelid="inspectionQuery"] Header,
+[data-ysp-modelid="deil_inspection"] Header {
   background-color: #0a568c !important;
   color: #fff !important;
 }
 [data-ysp-modelid='deil_Dy'] Header button,
 [data-ysp-modelid='deilNotice'] Header button,
 [data-ysp-modelid="allocationQuery"] Header button,
-[data-ysp-modelid="inspectionQuery"] Header button {
+[data-ysp-modelid="inspectionQuery"] Header button,
+[data-ysp-modelid="deil_inspection"] Header button {
   height: 40px;
   width: 100%;
   padding: 0;
