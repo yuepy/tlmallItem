@@ -1,0 +1,251 @@
+{
+  "version": "0.1",
+  "id": "sapling_itownet",
+  "targetURL": "http://egs.itownet.cn:9080/mobileProject/fieldSampling/list.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6IjEwMTAxMTExMDAifQ.YbnCoVt6qhjBgA7Z3XqevbDzHCfGmfa4wAl7kDd_pd3m2GZqFQSAmuol0f7fx3RX5BuPeJQGYy96oNT_GbXKOZwWaaZkFwPmcgIbeJgFayY1osgpOP8J-LtbdVxBFuiCtw_zvRHnzK-XHF8dSy6AYyDdZzHtwz7kYU0kDKCyNRs",
+  "jsFile": "index.js",
+  "chineseName": "现场抽样",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {},
+  "contexts": {
+    "context2_w6GRea": {
+      "controls": [],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/egs\\.itownet\\.cn:9080\\/mobileProject\\/fieldSampling\\/list\\.jsp.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow4_9E0c8Q": {
+      "toContexts": [
+        {
+          "toContextId": "context2_w6GRea"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page2_15pI9t": {
+      "contextId": "context2_w6GRea",
+      "layout": []
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context2_w6GRea": [
+          "抽样单录入"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context2_w6GRea": [
+          "egs.itownet.cn:9080/mobileProject/fieldSampling/list.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6IjEwMTAxMTExMDAifQ.YbnCoVt6qhjBgA7Z3XqevbDzHCfGmfa4wAl7kDd_pd3m2GZqFQSAmuol0f7fx3RX5BuPeJQGYy96oNT_GbXKOZwWaaZkFwPmcgIbeJgFayY1osgpOP8J-LtbdVxBFuiCtw_zvRHnzK-XHF8dSy6AYyDdZzHtwz7kYU0kDKCyNRs"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context2_w6GRea": [
+          [
+            "_easyui_combobox_i_",
+            "backInfoBtn",
+            "backToEditBtn",
+            "base-footer",
+            "base-header",
+            "basePath",
+            "beiShengEntTab",
+            "beiShengForm",
+            "checkPlanNo",
+            "checkTaskNo",
+            "datagrid-row-r--",
+            "deleteBtn",
+            "ecqs-header",
+            "entName",
+            "enterprise-info",
+            "fieldSamplingBut",
+            "fieldSamplingTab",
+            "header-left",
+            "header-right",
+            "header-top",
+            "hiddenBeiShengEnt",
+            "infoRegisterBtn",
+            "newInfoBtn",
+            "prodName",
+            "queryBtn",
+            "queryDiv",
+            "resetBtn",
+            "samplState",
+            "sampleUnitName",
+            "tmpSamplTaskNo"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context2_w6GRea": [
+          [
+            "basic-radio",
+            "clearfix",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combobox-f",
+            "combobox-item",
+            "container",
+            "cydjbut",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-checkPlanName",
+            "datagrid-cell-c-checkTaskNo",
+            "datagrid-cell-c-enterpAddr",
+            "datagrid-cell-c-isSamplProd",
+            "datagrid-cell-c-planOrgCode",
+            "datagrid-cell-c-prodName",
+            "datagrid-cell-c-produceOrganName",
+            "datagrid-cell-c-samplState",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-pager",
+            "datagrid-row",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-toolbar",
+            "datagrid-view",
+            "datagrid-wrap",
+            "easyui-combobox",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-tabs",
+            "easyui-textbox",
+            "ecqs-container",
+            "header-logo",
+            "info-bottom",
+            "info-top",
+            "l-btn",
+            "l-btn-disabled",
+            "l-btn-empty",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-plain-disabled",
+            "l-btn-small",
+            "l-btn-text",
+            "pagination",
+            "pagination-btn-separator",
+            "pagination-first",
+            "pagination-info",
+            "pagination-last",
+            "pagination-load",
+            "pagination-next",
+            "pagination-num",
+            "pagination-page-list",
+            "pagination-prev",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "tabs",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "textbox",
+            "textbox-addon",
+            "textbox-addon-right",
+            "textbox-f",
+            "textbox-icon",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context2_w6GRea": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/INPUT-hidden",
+            "-/DIV/P",
+            "A/SPAN/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/STYLE",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/TABLE",
+            "DIV/P/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/TABLE/TBODY",
+            "LI/A/SPAN",
+            "SPAN/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/DIV",
+            "TD/DIV/INPUT-button",
+            "TD/DIV/SPAN",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/INPUT-hidden",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-button",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/INPUT-text",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
+            "TR/TD/TABLE",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
   "version": "0.1",
-  "id": "deil_sampling",
-  "targetURL": "http://egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=update&samplTaskNo=2019000002120100080013&samplState=3",
+  "id": "addSampling",
+  "targetURL": "http://egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=add",
   "jsFile": "index.js",
-  "chineseName": "录入抽样信息",
-  "description": "",
+  "chineseName": "addSampling",
+  "description": "addSampling",
   "controls": {
-    "control36_QbUTEQ": {
+    "control12_3csfXA": {
       "location": {
         "data": {
           "tagName": "IMG"
@@ -67,18 +67,18 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control36_QbUTEQ"
+        "onGetData": "getData_control12_3csfXA"
       },
       "intendedRole": "custom",
       "roles": "element,image,button,custom",
-      "monitored": true,
+      "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control37_b3H3P5": {
+    "control13_5uyXkI": {
       "location": {
         "data": {
-          "tagName": "BODY"
+          "tagName": "HTML"
         },
         "userData": {
           "data": [],
@@ -88,12 +88,12 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]"
+            "value": "/HTML[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control37_b3H3P5"
+        "onGetData": "getData_control13_5uyXkI"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -101,10 +101,10 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control38_ZmkHmT": {
+    "control14_LX5w2M": {
       "location": {
         "data": {
-          "tagName": "BODY"
+          "tagName": "HTML"
         },
         "userData": {
           "data": [],
@@ -114,12 +114,12 @@
           {
             "id": "path/ordinal",
             "prob": 1,
-            "value": "/HTML[1]/BODY[1]"
+            "value": "/HTML[1]"
           }
         ]
       },
       "events": {
-        "onGetData": "getData_control38_ZmkHmT"
+        "onGetData": "getData_control14_LX5w2M"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -127,7 +127,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control39_zQJhL1": {
+    "control25_lpZr1o": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -190,34 +190,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control39_zQJhL1"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
-    "control50_ts3aoi": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.panel.window"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[20]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control50_ts3aoi"
+        "onGetData": "getData_control26_P8mG16"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -227,125 +200,159 @@
     }
   },
   "contexts": {
-    "context6_NQcCzC": {
+    "context4_fzuozF": {
       "controls": [
-        "control36_QbUTEQ",
-        "control37_b3H3P5",
-        "control38_ZmkHmT",
-        "control39_zQJhL1",
-        "control50_ts3aoi"
+        "control12_3csfXA",
+        "control13_5uyXkI",
+        "control14_LX5w2M",
+        "control25_lpZr1o",
+        "control26_P8mG16"
       ],
       "anchors": [],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow25_NkJlbd": {
+    "flow9_dz9Sck": {
       "toContexts": [
         {
-          "toContextId": "context6_NQcCzC"
+          "toContextId": "context4_fzuozF"
         }
       ]
     },
-    "flow31_ULdd9v": {
-      "fromContextId": "context6_NQcCzC",
+    "flow10_53o3fA": {
+      "fromContextId": "context4_fzuozF",
       "fromAction": "doAction",
-      "fromControlId": "control38_ZmkHmT",
+      "fromControlId": "control13_5uyXkI",
       "toContexts": [
         {
-          "toContextId": "context6_NQcCzC"
+          "toContextId": "context4_fzuozF"
         }
       ]
     },
-    "flow32_W2lDzC": {
-      "fromContextId": "context6_NQcCzC",
+    "flow19_Wn4MaZ": {
+      "fromContextId": "context4_fzuozF",
       "fromAction": "doAction",
-      "fromControlId": "control37_b3H3P5",
+      "fromControlId": "control14_LX5w2M",
       "toContexts": [
         {
-          "toContextId": "context6_NQcCzC"
+          "toContextId": "context4_fzuozF"
+        }
+      ]
+    },
+    "flow20_HbCRuX": {
+      "fromContextId": "context4_fzuozF",
+      "fromAction": "doAction",
+      "fromControlId": "control25_lpZr1o",
+      "toContexts": [
+        {
+          "toContextId": "context4_fzuozF"
         }
       ]
     }
   },
   "pages": {
-    "page6_O6oZeT": {
-      "contextId": "context6_NQcCzC",
+    "page4_77v0vm": {
+      "contextId": "context4_fzuozF",
       "layout": [
         {
-          "id": "uiControl34_IovkR9",
-          "controlId": "control36_QbUTEQ",
+          "id": "uiControl21_LpMBnd",
+          "controlId": "control12_3csfXA",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl34_IovkR9",
-                "onGetTemplate": "getTemplate_uiControl34_IovkR9"
+                "onDoAction": "doAction_uiControl21_LpMBnd",
+                "onGetTemplate": "getTemplate_uiControl21_LpMBnd"
               }
             }
           }
         },
         {
-          "id": "uiControl35_5W1bUI",
-          "controlId": "control37_b3H3P5",
+          "id": "uiControl23_dXei2q",
+          "controlId": "control14_LX5w2M",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl35_5W1bUI",
-                "onGetTemplate": "getTemplate_uiControl35_5W1bUI"
+                "onDoAction": "doAction_uiControl23_dXei2q",
+                "onGetTemplate": "getTemplate_uiControl23_dXei2q"
               }
             }
           }
         },
         {
-          "id": "uiControl49_F3Zo19",
-          "controlId": "control50_ts3aoi",
+          "id": "uiControl26_KwgBAw",
+          "controlId": "control26_P8mG16",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl49_F3Zo19",
-                "onGetTemplate": "getTemplate_uiControl49_F3Zo19"
+                "onDoAction": "doAction_uiControl26_KwgBAw",
+                "onGetTemplate": "getTemplate_uiControl26_KwgBAw"
               }
             }
           }
         },
         {
-          "id": "uiControl36_IuXoWX",
-          "controlId": "control38_ZmkHmT",
+          "id": "uiControl22_XPmDuc",
+          "controlId": "control13_5uyXkI",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl36_IuXoWX",
-                "onGetTemplate": "getTemplate_uiControl36_IuXoWX"
+                "onDoAction": "doAction_uiControl22_XPmDuc",
+                "onGetTemplate": "getTemplate_uiControl22_XPmDuc"
               }
             }
           }
         },
         {
-          "id": "uiControl37_Tvs9EQ",
-          "controlId": "control39_zQJhL1",
+          "id": "uiControl24_3DkUrG",
           "display": {
-            "adapterId": "custom",
-            "type": "custom",
+            "type": "sticky",
+            "adapterId": "sticky",
             "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl37_Tvs9EQ",
-                "onGetTemplate": "getTemplate_uiControl37_Tvs9EQ"
-              }
+              "templateType": ""
             }
-          }
+          },
+          "layout": [
+            {
+              "id": "uiControl24_3DkUrGbody",
+              "display": {
+                "type": "stickyBody",
+                "adapterId": "stickyBody",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": [
+                {
+                  "id": "uiControl25_kTznRA",
+                  "controlId": "control25_lpZr1o",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl25_kTznRA",
+                        "onGetTemplate": "getTemplate_uiControl25_kTznRA"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -353,22 +360,22 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context6_NQcCzC": [
+        "context4_fzuozF": [
           "抽样单录入"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context6_NQcCzC": [
-          "egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=update&samplTaskNo=2019000002120100080013&samplState=3",
-          "egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=add"
+        "context4_fzuozF": [
+          "egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=add",
+          "egs.itownet.cn:9080/mobileProject/detailedResults/portal/fieldSampling.jsp?operType=update&samplTaskNo=2019000002120100080013&samplState=3"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context6_NQcCzC": [
+        "context4_fzuozF": [
           [
             "T_quantityUnit",
             "_easyui_combobox_i_",
@@ -493,226 +500,13 @@
             "wcdyDiv",
             "xgdw",
             "zsbh"
-          ],
-          [
-            "T_quantityUnit",
-            "_easyui_combobox_i_",
-            "accordionDiv",
-            "addAttachMent",
-            "annualSales",
-            "atAre",
-            "atCity",
-            "atProvince",
-            "baoCun",
-            "base-footer",
-            "base-header",
-            "baseInfo",
-            "brand",
-            "busLiceNo",
-            "cccLice",
-            "certItem",
-            "checkCont",
-            "checkPlanName",
-            "checkPlanNo",
-            "checkScope",
-            "checkTaskProdNo",
-            "checkType",
-            "cjcpxx",
-            "cjdw",
-            "contacts",
-            "econType",
-            "employee",
-            "entHonor",
-            "entInfoNo",
-            "entManNum",
-            "entScale",
-            "enterpAddr",
-            "enterprise-info",
-            "entruAccid",
-            "exeStd",
-            "fieldSampling",
-            "foodLicenseNo",
-            "footer-bot",
-            "globalBasePath",
-            "header",
-            "header-top",
-            "inspOrgCode",
-            "inspOrgName",
-            "isExpProd",
-            "isSamplProd",
-            "jcjg",
-            "leadOrgNameCom",
-            "leglPersnName",
-            "logo-left",
-            "logo-right",
-            "mediaNo",
-            "openedDialog",
-            "operType",
-            "operationRevenue",
-            "orgAddr",
-            "orgCode",
-            "orgP",
-            "orgTel",
-            "other",
-            "post",
-            "price",
-            "proLicIssNo",
-            "prodCode",
-            "prodDetailName",
-            "prodLevel",
-            "prodName",
-            "produceDate",
-            "produceOrganCode",
-            "produceOrganCodeBtn",
-            "produceOrganName",
-            "quantity",
-            "quantityUnit",
-            "regNo",
-            "relateEnt",
-            "remark",
-            "returnBut",
-            "samplContacts",
-            "samplEntAddr",
-            "samplEntEmail",
-            "samplEntPost",
-            "samplEntTel",
-            "samplOrgCode",
-            "samplState",
-            "samplTime",
-            "samplUnitCode",
-            "samplUnitName",
-            "sampleBaseNum",
-            "sampleNum",
-            "sampleNumUnit",
-            "sampleUnitAddress",
-            "sampleUnitCode",
-            "sampleUnitContacts",
-            "sampleUnitLegalRepres",
-            "sampleUnitName",
-            "sampleUnitNameBtn",
-            "sampleUnitTel",
-            "sampler",
-            "scdw",
-            "sealedSamplesState",
-            "sealedStoreLocation",
-            "sendAddr",
-            "sendProEndDate",
-            "specificModels",
-            "ssrd",
-            "ssrdDiv",
-            "tel",
-            "tiJiao",
-            "tmpOrgCode",
-            "tmpParaEntCode",
-            "tmpSamplTaskNo",
-            "unSampleReason",
-            "unSampleRepReason",
-            "universal",
-            "value",
-            "wcdy",
-            "wcdyDiv",
-            "xgdw",
-            "zsbh"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context6_NQcCzC": [
-          [
-            "abc",
-            "accordion",
-            "accordion-body",
-            "accordion-collapse",
-            "accordion-header",
-            "accordion-header-selected",
-            "basic-radio",
-            "butClass",
-            "calendar",
-            "calendar-body",
-            "calendar-day",
-            "calendar-dtable",
-            "calendar-first",
-            "calendar-header",
-            "calendar-last",
-            "calendar-menu",
-            "calendar-menu-month-inner",
-            "calendar-menu-next",
-            "calendar-menu-prev",
-            "calendar-menu-year",
-            "calendar-menu-year-inner",
-            "calendar-nav",
-            "calendar-nextmonth",
-            "calendar-nextyear",
-            "calendar-noborder",
-            "calendar-other-month",
-            "calendar-prevmonth",
-            "calendar-prevyear",
-            "calendar-saturday",
-            "calendar-selected",
-            "calendar-sunday",
-            "calendar-text",
-            "calendar-title",
-            "calendar-today",
-            "chouDao",
-            "combo",
-            "combo-arrow",
-            "combo-f",
-            "combo-p",
-            "combo-panel",
-            "combobox-f",
-            "combobox-item",
-            "combobox-item-selected",
-            "container",
-            "datebox",
-            "datebox-calendar-inner",
-            "datebox-f",
-            "delBut",
-            "downloadBut",
-            "easyui-accordion",
-            "easyui-combobox",
-            "easyui-datebox",
-            "easyui-dialog",
-            "easyui-fluid",
-            "easyui-numberbox",
-            "easyui-textbox",
-            "fileBut",
-            "info-bottom",
-            "info-top",
-            "inputtext",
-            "noBorder",
-            "numberbox",
-            "numberbox-f",
-            "panel",
-            "panel-body",
-            "panel-body-noborder",
-            "panel-body-noheader",
-            "panel-header",
-            "panel-header-noborder",
-            "panel-noscroll",
-            "panel-title",
-            "panel-tool",
-            "panel-tool-close",
-            "panel-tool-collapse",
-            "requiredTrue",
-            "textbox",
-            "textbox-addon",
-            "textbox-addon-right",
-            "textbox-disabled",
-            "textbox-f",
-            "textbox-icon",
-            "textbox-icon-disabled",
-            "textbox-prompt",
-            "textbox-text",
-            "textbox-value",
-            "validatebox-text",
-            "window",
-            "window-body",
-            "window-header",
-            "window-mask",
-            "window-shadow"
-          ],
+        "context4_fzuozF": [
           [
             "abc",
             "accordion",
@@ -856,16 +650,24 @@
             "datebox",
             "datebox-calendar-inner",
             "datebox-f",
+            "delBut",
             "dialog-button",
+            "downloadBut",
             "easyui-accordion",
             "easyui-combobox",
             "easyui-datebox",
+            "easyui-dialog",
             "easyui-fluid",
             "easyui-numberbox",
             "easyui-textbox",
+            "fileBut",
+            "icon-ok",
             "info-bottom",
             "info-top",
+            "inputtext",
             "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
             "l-btn-left",
             "l-btn-small",
             "l-btn-text",
@@ -883,7 +685,6 @@
             "panel-tool",
             "panel-tool-close",
             "panel-tool-collapse",
-            "panel-tool-max",
             "requiredTrue",
             "textbox",
             "textbox-addon",
@@ -903,16 +704,117 @@
             "window-header",
             "window-mask",
             "window-shadow"
+          ],
+          [
+            "abc",
+            "accordion",
+            "accordion-body",
+            "accordion-collapse",
+            "accordion-header",
+            "accordion-header-selected",
+            "basic-radio",
+            "butClass",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-dtable",
+            "calendar-first",
+            "calendar-header",
+            "calendar-last",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nav",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-noborder",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-text",
+            "calendar-title",
+            "calendar-today",
+            "chouDao",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combobox-f",
+            "combobox-item",
+            "combobox-item-selected",
+            "container",
+            "datebox",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "delBut",
+            "downloadBut",
+            "easyui-accordion",
+            "easyui-combobox",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-numberbox",
+            "easyui-textbox",
+            "fileBut",
+            "info-bottom",
+            "info-top",
+            "inputtext",
+            "l-btn",
+            "l-btn-left",
+            "l-btn-small",
+            "l-btn-text",
+            "messager-body",
+            "messager-button",
+            "messager-icon",
+            "messager-info",
+            "messager-window",
+            "noBorder",
+            "numberbox",
+            "numberbox-f",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-tool-collapse",
+            "requiredTrue",
+            "textbox",
+            "textbox-addon",
+            "textbox-addon-right",
+            "textbox-disabled",
+            "textbox-f",
+            "textbox-icon",
+            "textbox-icon-disabled",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
           ]
         ]
       }
     },
     "page/tagTriplets": {
       "contexts": {
-        "context6_NQcCzC": [
+        "context4_fzuozF": [
           [
             "-/-/DIV",
-            "-/-/INPUT-file",
             "-/-/INPUT-hidden",
             "-/-/SCRIPT",
             "-/DIV/DIV",
@@ -970,7 +872,6 @@
             "DIV/DIV/A",
             "DIV/DIV/DIV",
             "DIV/DIV/FORM",
-            "DIV/DIV/IFRAME",
             "DIV/DIV/IMG",
             "DIV/DIV/INPUT-button",
             "DIV/DIV/INPUT-null",
@@ -980,6 +881,8 @@
             "DIV/DIV/UL",
             "DIV/FORM/DIV",
             "DIV/FORM/INPUT-hidden",
+            "DIV/FORM/SPAN",
+            "DIV/FORM/TABLE",
             "DIV/P/SPAN",
             "DIV/SPAN/INPUT-hidden",
             "DIV/SPAN/INPUT-text",
@@ -988,11 +891,66 @@
             "DIV/TABLE/THEAD",
             "DIV/UL/A",
             "FORM/DIV/DIV",
+            "FORM/SPAN/INPUT-button",
+            "FORM/TABLE/TBODY",
             "SPAN/SPAN/A",
             "TABLE/TBODY/TR",
             "TABLE/THEAD/TR",
             "TBODY/TR/TD",
             "TD/LABEL/INPUT-checkbox",
+            "TD/SPAN/INPUT-button",
+            "TD/SPAN/INPUT-hidden",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SPAN",
+            "TD/SPAN/TEXTAREA",
+            "THEAD/TR/TH",
+            "TR/TD/BR",
+            "TR/TD/IMG",
+            "TR/TD/INPUT-button",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-file",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "A/SPAN/SPAN",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "DIV/FORM/SPAN",
+            "DIV/FORM/TABLE",
+            "DIV/P/SPAN",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-text",
+            "DIV/SPAN/TEXTAREA",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/A",
+            "FORM/DIV/DIV",
+            "FORM/SPAN/INPUT-button",
+            "FORM/TABLE/TBODY",
+            "SPAN/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TD/LABEL/INPUT-checkbox",
+            "TD/SPAN/INPUT-button",
             "TD/SPAN/INPUT-hidden",
             "TD/SPAN/INPUT-text",
             "TD/SPAN/SPAN",

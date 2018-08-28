@@ -100,18 +100,6 @@ Header button {
 .zc-btnAction .amt-btn span {
   display: none;
 }
-.zc-am-after h3 {
-  height: 47px;
-}
-.zc-am-after .amt-field-group {
-  margin-bottom: 0;
-  border-bottom: 0;
-  margin-left: .9375rem;
-  padding-right: 10px;
-}
-.zc-am-after .amt-field-group .amt-icon {
-  margin-left: 10px;
-}
 .hzx-page-box {
   display: flex;
   justify-content: space-around;
@@ -271,34 +259,6 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 [data-ysp-modelid="index_itownet"] {
   background-color: #f2f2f2;
 }
-[data-ysp-modelid="index_itownet"] Header {
-  background-color: #0a568c !important;
-  color: #fff !important;
-}
-[data-ysp-modelid="index_itownet"] Header button {
-  height: 40px;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background-image: url(img/ysp-prev.png);
-  background-size: 12px 14px;
-  background-repeat: no-repeat;
-  background-position: 10%;
-  font-size: 15px;
-}
-[data-ysp-modelid="index_itownet"] .index_title {
-  height: 44px;
-  text-align: center;
-  color: #fff;
-  background-color: #0a568c;
-  font-size: 18px;
-  line-height: 44px;
-  font-weight: bold;
-  border-bottom: 1px solid #ececec;
-}
-[data-ysp-modelid="index_itownet"] .index_title [data-componentsid="uiControl12_fFctEC"] {
-  padding: 0;
-}
 [data-ysp-modelid="index_itownet"] .titleapps {
   display: flex;
   justify-content: space-between;
@@ -375,6 +335,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   overflow-y: auto;
   padding-bottom: 40px;
   padding-left: 20px;
+  margin-top: 44px;
 }
 [data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk > div {
   margin: 10px 0;
@@ -397,6 +358,47 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 }
 [data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk > div div:nth-child(2) label:nth-child(2) {
   width: 100%;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0px ;
+  padding: 20px 0px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageFirst > span:nth-child(1) {
+  background: #2F9FFF;
+  border-radius: 10px 0px 0px 10px;
+  color: #fff;
+  padding: 2px 12px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageFirst > span:nth-child(2) {
+  background: #ececec;
+  border-radius: 0px 10px 10px 0px;
+  padding: 2px 12px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(1) {
+  padding-right: 5px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(2) {
+  padding: 0px 5px;
+  border-radius: 100%;
+  background: #2F9FFF;
+  color: #fff;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageCenter > span:nth-child(2) {
+  padding-left: 5px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageLast > span:nth-child(1) {
+  background: #ececec;
+  border-radius: 10px 0px 0px 10px;
+  padding: 2px 12px;
+}
+[data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle .dovedtesk .dovedteskPage .dovedteskPageLast > span:nth-child(2) {
+  background: #2F9FFF;
+  border-radius: 0px 10px 10px 0px;
+  color: #fff;
+  padding: 2px 12px;
 }
 [data-ysp-modelid="index_itownet"] [data-componentsid="uiControl14_NFDcys"] {
   padding: 0;
@@ -461,6 +463,9 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   border-top: 1px solid #ccc;
   font-size: 12px;
   color: #999999;
+}
+[data-ysp-modelid="supervise_index"] {
+  background-color: #f2f2f2;
 }
 .tabbox > div .bot {
   background-image: url(img/xia.png);
@@ -533,14 +538,12 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 .displ-body {
   display: fixed;
   height: 100%;
-  margin-bottom: -44px;
   background: #fff;
 }
 .displ-body > div,
 .displ-body > div > div,
 .displ-body > div > div > div {
   height: 100%;
-  background: #fff;
 }
 .displ-body > div > div {
   width: 100%;
@@ -556,9 +559,11 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 }
 .navbar-primary,
 .amt-navbar-primary {
-  background: #0a568c!important;
-}
-.icon-left-nav {
+  top: 0;
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  left: 0;
   background: #0a568c!important;
 }
 .amt-btn-primary,
@@ -585,7 +590,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   position: absolute;
   width: 100%;
   height: 100%;
-  bottom: 0;
+  top: 0;
   background: #000;
   opacity: 0.3;
 }
@@ -596,127 +601,6 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 .hzx-btn-box .amt-btn-group .amt-btn-hollow:nth-of-type(2) {
   color: #0a568c;
   border: 1px solid #0a568c;
-}
-.hzx-btn-close .amt-btn-primary {
-  background: #0a568c!important;
-  color: #fff;
-  border: 1px solid #0a568c;
-}
-.hzx-btn-actions > div > div > div > button:nth-of-type(1) {
-  color: #0a568c;
-  border: 1px solid #0a568c;
-  background: #fff;
-}
-.hzx-btn-actions > div > div > div > button:nth-of-type(2) {
-  background: #0a568c!important;
-  color: #fff;
-}
-.hzx-btn-othBox .amt-btn-group .amt-btn-hollow:nth-of-type(1) {
-  color: #0a568c;
-  border: 1px solid #0a568c;
-}
-.hzx-btn-othBox .amt-btn-group .amt-btn-hollow:nth-of-type(2) {
-  background: #0a568c!important;
-  color: #fff;
-}
-.hzx-btn-modal .amt-btn-group .amt-btn-hollow:nth-of-type(1) {
-  color: #0a568c;
-  border: 1px solid #0a568c;
-}
-.hzx-btn-modal .amt-btn-group .amt-btn-primary:nth-of-type(2) {
-  background: #0a568c!important;
-  color: #fff;
-}
-.amt-modal-actions {
-  z-index: 20;
-}
-.amt-active {
-  z-index: 19;
-}
-.amt-btn-action {
-  z-index: 18;
-}
-.query-selector .amt-popup-body {
-  padding: 0;
-}
-.query-selector .amt-popup-body ul {
-  margin: 0;
-}
-.hzx-input {
-  border: 0px;
-  height: 32px;
-  font-size: .875rem;
-  padding-left: 7em;
-  border-bottom: 1px solid #e0e0e0;
-}
-.hzx-title {
-  margin-top: 20px;
-  background-color: #fff !important;
-}
-.hzx-title .amt-title-left-text {
-  color: #0a568c;
-  font-weight: bold;
-}
-.hzx-title .amt-title-left-icon {
-  color: #0a568c;
-  border-left: 4px solid #0a568c;
-}
-.amt-popup-header {
-  background: #0a568c!important;
-  color: #fff;
-}
-.hzx-page-center span {
-  height: 30px;
-  line-height: 30px;
-  vertical-align: middle;
-}
-.hzx-page-box {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 0px ;
-  padding: 20px 0px;
-}
-.hzx-page-left > span:nth-child(1) {
-  background: #2F9FFF;
-  border-radius: 10px 0px 0px 10px;
-  padding: 2px 12px;
-  color: #fff;
-}
-.hzx-page-left > span:nth-child(2) {
-  background: #ececec;
-  padding: 2px 12px;
-  border-radius: 0px 10px 10px 0px;
-}
-.hzx-page-center > span:nth-child(1) > span:nth-child(1) {
-  padding-right: 5px;
-}
-.hzx-page-center > span:nth-child(1) > span:nth-child(2) {
-  padding: 0px 5px;
-  border-radius: 100%;
-  background: #2F9FFF;
-  color: #fff;
-}
-.hzx-page-center > span:nth-child(2) {
-  padding-left: 5px;
-}
-.hzx-page-right > span:nth-child(1) {
-  background: #ececec;
-  padding: 2px 12px;
-  border-radius: 10px 0px 0px 10px;
-}
-.hzx-page-right > span:nth-child(2) {
-  background: #2F9FFF;
-  padding: 2px 12px;
-  border-radius: 0px 10px 10px 0px;
-  color: #fff;
-}
-.amt-icon-more-l:before {
-  content: "";
-}
-.amt-btn-more {
-  background: url(img/gengduo.png) no-repeat center;
-  background-size: 5px;
 }
 /*首页图标点击后的样式start*/
 .ysp-ZJ-jiandu {
@@ -768,7 +652,13 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   background-color: #f2f2f2;
 }
 /*首页图标点击后的样式end*/
+.Dy_deil {
+  margin-top: 44px;
+}
 /*分配记录查询页*/
+.queryCondition {
+  margin-top: 64px;
+}
 .queryCondition input,
 .queryCondition select,
 .queryCondition option {
@@ -791,14 +681,12 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   border-bottom: 1px solid #d8d8d8;
 }
 .queryCondition .conditionContent > div > div:nth-child(1) {
-  padding: 5px 0;
   width: 60px;
   color: #323e4d;
   font-size: 14px;
   display: flex;
   align-items: center;
   font-weight: bold;
-  text-align-last: justify;
 }
 .queryCondition .conditionContent > div > div:nth-child(2) {
   width: 80%;
@@ -868,168 +756,4 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   color: #87939f;
   padding: 5px 0;
 }
-.querybtns {
-  width: 100%;
-  height: 44px;
-  display: flex;
-  justify-content: space-between;
-}
-.querybtns button {
-  width: 49%;
-  border-radius: 5px;
-  border: 1px solid #87939f !important;
-}
-.querybtns button:nth-child(1) {
-  background: #0a568c;
-  color: #fff;
-}
-.deilQuery {
-  padding-left: 40px !important;
-  position: relative;
-}
-.deilQuery > div:nth-child(1) {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  border-radius: 50%;
-  border: 1px solid #8a96a2;
-}
-.deilQuery > div:nth-child(1) input {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-.querydeilbtn {
-  height: 44px;
-  margin: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-.querydeilbtn button {
-  height: 100%;
-  width: 48%;
-  border-radius: 5px;
-  background: #004788;
-  color: #fff;
-}
-.querydeilbtn button:nth-child(1) {
-  background-color: #fff;
-  color: #004788;
-  border: 1px solid #004788;
-}
 /*分配记录查询页*/
-/*检定结构查询页*/
-.dialogdiv {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  background: #f3f3f3;
-  overflow-y: auto;
-  background: #fff;
-}
-.dialogdiv > div {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 15px;
-}
-.dialogdiv > div div:nth-child(1) {
-  font-size: 14px;
-  width: 64px;
-  text-align: justify;
-  text-align-last: justify;
-  padding: 5px 0;
-  color: #202020;
-}
-.dialogdiv > div > div:nth-child(2) {
-  width: 75%;
-  display: flex;
-  color: #313131;
-  padding: 5px 0;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
-}
-.dialogdiv button {
-  height: 44px;
-  width: 100%;
-  border: 0;
-  background: #0a568c;
-  color: #fff;
-  margin: 10px 0;
-  border-radius: 5px;
-}
-.openboximg {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 1000vh;
-  background: #fff;
-}
-.openboximg button {
-  width: 100%;
-  height: 44px;
-  background-color: #0a568c;
-  color: #fff;
-}
-/*检定结构查询页*/
-/*待阅信息详情页*/
-[data-ysp-modelid='deil_Dy'] button,
-[data-ysp-modelid='deilNotice'] button,
-[data-ysp-modelid="allocationQuery"] button,
-[data-ysp-modelid="inspectionQuery"] button,
-[data-ysp-modelid="deil_inspection"] button {
-  border: 0;
-}
-[data-ysp-modelid='deil_Dy'] Header,
-[data-ysp-modelid='deilNotice'] Header,
-[data-ysp-modelid="allocationQuery"] Header,
-[data-ysp-modelid="inspectionQuery"] Header,
-[data-ysp-modelid="deil_inspection"] Header {
-  background-color: #0a568c !important;
-  color: #fff !important;
-}
-[data-ysp-modelid='deil_Dy'] Header button,
-[data-ysp-modelid='deilNotice'] Header button,
-[data-ysp-modelid="allocationQuery"] Header button,
-[data-ysp-modelid="inspectionQuery"] Header button,
-[data-ysp-modelid="deil_inspection"] Header button {
-  height: 40px;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background-image: url(img/ysp-prev.png);
-  background-size: 12px 14px;
-  background-repeat: no-repeat;
-  background-position: 10%;
-  font-size: 15px;
-}
-.Dy_deil {
-  padding: 0 20px;
-}
-.Dy_deil .deilTitle h1 {
-  font-size: 18px;
-  text-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.Dy_deil .deilContent {
-  font-size: 14px;
-  color: #333333;
-}
-.Dy_deil .deilContent p {
-  text-indent: 2rem;
-  margin: 0;
-  margin-top: 5px;
-}
-.Dy_deil .deilFoot {
-  margin-top: 10px;
-  font-size: 12px;
-  color: #bdbdbd;
-  text-align: right;
-}
-/*待阅信息详情页*/

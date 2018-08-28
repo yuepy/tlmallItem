@@ -204,6 +204,37 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control49_GfmIyU": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-pager.pagination"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control49_GfmIyU"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -214,7 +245,8 @@
         "control32_Fpd09X",
         "control33_5P7ZlT",
         "control34_GOSLPz",
-        "control35_z11Gzi"
+        "control35_z11Gzi",
+        "control49_GfmIyU"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -364,6 +396,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl31_AoLagy",
                 "onGetTemplate": "getTemplate_uiControl31_AoLagy"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl48_TtTNzw",
+          "controlId": "control49_GfmIyU",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl48_TtTNzw",
+                "onGetTemplate": "getTemplate_uiControl48_TtTNzw"
               }
             }
           }
@@ -877,6 +924,118 @@
             "window-header",
             "window-mask",
             "window-shadow"
+          ],
+          [
+            "basic-radio",
+            "clearfix",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combobox-f",
+            "combobox-item",
+            "container",
+            "cydjbut",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-checkPlanName",
+            "datagrid-cell-c-checkTaskNo",
+            "datagrid-cell-c-enterpAddr",
+            "datagrid-cell-c-isSamplProd",
+            "datagrid-cell-c-marketunitAddress",
+            "datagrid-cell-c-marketunitOrgName",
+            "datagrid-cell-c-planOrgCode",
+            "datagrid-cell-c-prodName",
+            "datagrid-cell-c-produceOrganName",
+            "datagrid-cell-c-samplState",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-pager",
+            "datagrid-row",
+            "datagrid-row-checked",
+            "datagrid-row-selected",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-toolbar",
+            "datagrid-view",
+            "datagrid-wrap",
+            "easyui-combobox",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-tabs",
+            "easyui-textbox",
+            "ecqs-container",
+            "header-logo",
+            "info-bottom",
+            "info-top",
+            "l-btn",
+            "l-btn-disabled",
+            "l-btn-empty",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-plain-disabled",
+            "l-btn-small",
+            "l-btn-text",
+            "pagination",
+            "pagination-btn-separator",
+            "pagination-first",
+            "pagination-info",
+            "pagination-last",
+            "pagination-load",
+            "pagination-next",
+            "pagination-num",
+            "pagination-page-list",
+            "pagination-prev",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "tabs",
+            "tabs-container",
+            "tabs-first",
+            "tabs-header",
+            "tabs-icon",
+            "tabs-inner",
+            "tabs-last",
+            "tabs-panels",
+            "tabs-scroller-left",
+            "tabs-scroller-right",
+            "tabs-selected",
+            "tabs-title",
+            "tabs-wrap",
+            "textbox",
+            "textbox-addon",
+            "textbox-addon-right",
+            "textbox-f",
+            "textbox-icon",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
           ]
         ]
       }
@@ -969,6 +1128,48 @@
             "TR/TD/SELECT",
             "TR/TD/SPAN",
             "TR/TD/TABLE",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/INPUT-hidden",
+            "-/DIV/P",
+            "A/SPAN/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/STYLE",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/FORM/TABLE",
+            "DIV/P/SPAN",
+            "DIV/TABLE/TBODY",
+            "DIV/UL/LI",
+            "FORM/TABLE/TBODY",
+            "LI/A/SPAN",
+            "SPAN/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/DIV",
+            "TD/DIV/INPUT-button",
+            "TD/DIV/SPAN",
+            "TD/SELECT/OPTION",
+            "TD/SPAN/INPUT-hidden",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-button",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-null",
+            "TR/TD/INPUT-text",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN",
             "UL/LI/A"
           ]
         ]
