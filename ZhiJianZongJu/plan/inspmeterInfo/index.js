@@ -129,8 +129,8 @@
     },
     doAction_uiControl60_UC03iZ: function (data, elem) {},
     getTemplate_uiControl60_UC03iZ: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return '';\n    }\n    return (\n      <div>\n        {data}\n      </div>\n    )\n  }\n});";
-      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    if (!data) {\n      return '';\n    }\n    return React.createElement(\n      'div',\n      null,\n      data\n    );\n  }\n});";
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    if(!data){\n      return '';\n    }\n    return (\n      <div>\n        {alert(data)}\n      </div>\n    )\n  }\n});";
+      return "'use strict';\n\nmodule.exports = React.createClass({\n  displayName: 'exports',\n\n  render: function render() {\n    var data = this.props.customData;\n    if (!data) {\n      return '';\n    }\n    return React.createElement(\n      'div',\n      null,\n      alert(data)\n    );\n  }\n});";
     }
   });
 })(window, ysp);

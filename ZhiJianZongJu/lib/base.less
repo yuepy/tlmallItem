@@ -1304,7 +1304,30 @@ Header{
 }
 
 .deil_inspam{
-  
+  >div{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    border-bottom: 1px solid #ccc;
+    div:nth-child(1){
+      font-size: 14px;
+      padding: 10px 0;
+      color: #323e4d;
+      max-width: 100px;
+    }
+    div:nth-child(2){
+      font-size: 14px;
+      padding: 10px 20px 5px 0;
+      color: #838b9f;
+      max-width: 70%;
+    }
+  }
+  >div:nth-child(1){
+    display: block;
+    margin-bottom: 10px;
+    border: 0;
+    margin-left: 0;
+  }
 }
 
 /*检定结构查询页*/

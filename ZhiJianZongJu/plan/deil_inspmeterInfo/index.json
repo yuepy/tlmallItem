@@ -11,6 +11,10 @@
         "data": {
           "tagName": "IMG"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@alt",
@@ -68,6 +72,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -84,13 +92,36 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control64_OJuV8e": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control64_OJuV8e"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context13_kFTUS2": {
       "controls": [
         "control62_3Vpvzg",
-        "control63_mlk6gq"
+        "control63_mlk6gq",
+        "control64_OJuV8e"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -135,6 +166,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl62_dZW4uG",
                 "onGetTemplate": "getTemplate_uiControl62_dZW4uG"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl63_ghSQit",
+          "controlId": "control64_OJuV8e",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl63_ghSQit",
+                "onGetTemplate": "getTemplate_uiControl63_ghSQit"
               }
             }
           }
