@@ -1,0 +1,317 @@
+{
+  "version": "0.1",
+  "id": "deil_inspmeterInfo",
+  "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//InspmeterInfo/appraisalView.jsp?uuid=e2ec7499be474385a38e0598ff894e47&registerStatus=%272%27&meterIntruNameQuery=%25E7%2594%25B5%25E5%25AD%2590%25E5%25A4%25A9%25E5%25B9%25B3&modelSpecQuery=undefined&measureRangQuery=1mg~1000kg&accuracyLevelQuery=%25E2%2585%25A0%25E7%25BA%25A7%25E5%258F%258A%25E5%2585%25B6%25E4%25BB%25A5%25E4%25B8%258B&meterIntruCodeQuery=undefined&serialNumQuery=S2709462&setupPlaceQuery=%25E5%258D%2596%25E5%259C%25BA&instrPurposeNameQuery=%25E8%25B4%25B8%25E6%2598%2593%25E7%25BB%2593%25E7%25AE%2597&meterStatusQuery=%25E5%2590%25AF%25E7%2594%25A8&meterNumberQuery=1&instrCertAuthQuery=(%25E6%25B5%2599%25E6%25B1%259F%25EF%25BC%2589%25E6%25B3%2595%25E8%25AE%25A1%25EF%25BC%25882018%25EF%25BC%258933002%25E5%258F%25B7&meterUuid=e2ec7499be474385a38e0598ff894e47&porgaoNameQuery=%25E4%25B8%258A%25E6%25B5%25B7%25E8%258B%25B1%25E5%25B1%2595%25E6%259C%25BA%25E7%2594%25B5%25E4%25BC%2581%25E4%25B8%259A%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8&applyCompanyNameReturn=&meterIntruCodeReturn=%20&meterIntruNameReturn=&serialNumReturn=%20&meterTypeReturn=%20&registerStatusReturn=%20",
+  "jsFile": "index.js",
+  "chineseName": "证书信息详情页",
+  "description": "",
+  "controls": {
+    "control62_3Vpvzg": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "@alt",
+            "prob": 2,
+            "value": {
+              "text": [
+                "国家质量监督总站"
+              ]
+            }
+          },
+          {
+            "id": "img/@src",
+            "prob": 1,
+            "value": {
+              "pathname": "/InspMeterMobile/img/index-logo3.png"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]/IMG[1]",
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"header-left\"]//IMG"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.ecqs-container.clearfix IMG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control62_3Vpvzg"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control63_mlk6gq": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control63_mlk6gq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context13_kFTUS2": {
+      "controls": [
+        "control62_3Vpvzg",
+        "control63_mlk6gq"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow52_oSTZU8": {
+      "toContexts": [
+        {
+          "toContextId": "context13_kFTUS2"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page13_wmCHJK": {
+      "contextId": "context13_kFTUS2",
+      "layout": [
+        {
+          "id": "uiControl61_K4RhoF",
+          "controlId": "control62_3Vpvzg",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl61_K4RhoF",
+                "onGetTemplate": "getTemplate_uiControl61_K4RhoF"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl62_dZW4uG",
+          "controlId": "control63_mlk6gq",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl62_dZW4uG",
+                "onGetTemplate": "getTemplate_uiControl62_dZW4uG"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context13_kFTUS2": [
+          "检定结果登记"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context13_kFTUS2": [
+          "egs.itownet.cn:9080/InspMeterMobile//InspmeterInfo/appraisalView.jsp?uuid=e2ec7499be474385a38e0598ff894e47&registerStatus=%272%27&meterIntruNameQuery=%25E7%2594%25B5%25E5%25AD%2590%25E5%25A4%25A9%25E5%25B9%25B3&modelSpecQuery=undefined&measureRangQuery=1mg~1000kg&accuracyLevelQuery=%25E2%2585%25A0%25E7%25BA%25A7%25E5%258F%258A%25E5%2585%25B6%25E4%25BB%25A5%25E4%25B8%258B&meterIntruCodeQuery=undefined&serialNumQuery=S2709462&setupPlaceQuery=%25E5%258D%2596%25E5%259C%25BA&instrPurposeNameQuery=%25E8%25B4%25B8%25E6%2598%2593%25E7%25BB%2593%25E7%25AE%2597&meterStatusQuery=%25E5%2590%25AF%25E7%2594%25A8&meterNumberQuery=1&instrCertAuthQuery=(%25E6%25B5%2599%25E6%25B1%259F%25EF%25BC%2589%25E6%25B3%2595%25E8%25AE%25A1%25EF%25BC%25882018%25EF%25BC%258933002%25E5%258F%25B7&meterUuid=e2ec7499be474385a38e0598ff894e47&porgaoNameQuery=%25E4%25B8%258A%25E6%25B5%25B7%25E8%258B%25B1%25E5%25B1%2595%25E6%259C%25BA%25E7%2594%25B5%25E4%25BC%2581%25E4%25B8%259A%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8&applyCompanyNameReturn=&meterIntruCodeReturn=%20&meterIntruNameReturn=&serialNumReturn=%20&meterTypeReturn=%20&registerStatusReturn=%20"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context13_kFTUS2": [
+          [
+            "accuracyLevel",
+            "applyCompanyNameReturn",
+            "approverCode",
+            "approverCodeAdd",
+            "approverName",
+            "approverNameAdd",
+            "base-footer",
+            "base-header",
+            "basedName",
+            "basedNameAdd",
+            "button",
+            "certificateType",
+            "certificateTypeAdd",
+            "checkConc",
+            "checkConcAdd",
+            "checkDate",
+            "checkDateAdd",
+            "checkPersCode",
+            "checkPersCodeAdd",
+            "checkPersName",
+            "checkPersNameAdd",
+            "checkResult",
+            "checkResultAdd",
+            "chooseCourse",
+            "chooseCourseAdd",
+            "contextPath",
+            "eaitFrom",
+            "ecqs-header",
+            "expiryDate",
+            "expiryDateAdd",
+            "header-left",
+            "header-right",
+            "instrAssCertNo",
+            "instrAssCertNoAdd",
+            "instrCertAuth",
+            "instrCertAuthAdd",
+            "instrCertNo",
+            "instrCertNoAdd",
+            "instrNo",
+            "instrNoAdd",
+            "instrPurposeName",
+            "measureRang",
+            "meterAddOther",
+            "meterIntruCode",
+            "meterIntruCodeAdd",
+            "meterIntruCodeReturn",
+            "meterIntruName",
+            "meterIntruNameReturn",
+            "meterNumber",
+            "meterStatus",
+            "meterTypeReturn",
+            "modelSpec",
+            "porgaoName",
+            "reApprCode",
+            "reApprCodeAdd",
+            "reApprName",
+            "reApprNameAdd",
+            "reason",
+            "reasonAdd",
+            "registerStatus",
+            "registerStatusReturn",
+            "remark",
+            "remarkAdd",
+            "scanId",
+            "scanIdAdd",
+            "scanName",
+            "scanNameAdd",
+            "sendSamEnt",
+            "sendSamEntAdd",
+            "serialNum",
+            "serialNumReturn",
+            "setupPlace",
+            "showImg-dialog",
+            "showImgs",
+            "specialCoding",
+            "specialCodingAdd",
+            "tttmeterNumber",
+            "tttmeterNumberAdd",
+            "type",
+            "uuid",
+            "vv"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context13_kFTUS2": [
+          [
+            "blue_button",
+            "clearfix",
+            "col",
+            "easyui-dialog",
+            "ecqs-container",
+            "form-controlss",
+            "header-logo",
+            "icon-save",
+            "info-bottom",
+            "info-top",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-icon",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-with-icon",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context13_kFTUS2": [
+          [
+            "-/-/A",
+            "-/-/DIV",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/SCRIPT",
+            "-/-/TITLE",
+            "-/DIV/DIV",
+            "-/DIV/P",
+            "DIV/DIV/A",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/LABLE",
+            "DIV/FORM/DIV",
+            "DIV/LABLE/IMG",
+            "DIV/P/SPAN",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-hidden",
+            "FORM/DIV/INPUT-null",
+            "FORM/DIV/INPUT-text",
+            "FORM/DIV/LABEL"
+          ]
+        ]
+      }
+    }
+  }
+}
