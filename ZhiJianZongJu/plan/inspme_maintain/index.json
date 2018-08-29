@@ -3,6 +3,9 @@
   "id": "inspme_maintain",
   "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfoAdd.jsp?oduuid=zjdq-10&&chakan=1&&proCode=B-10&&orgCode=123305217272253587",
   "jsFile": "index.js",
+  "requires": {
+    "index_itownet": "../index_itownet/index.json"
+  },
   "chineseName": "强检项目维护",
   "description": "",
   "controls": {
@@ -10,6 +13,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -33,6 +40,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -49,13 +60,90 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control49_MSdXh7": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::DIV[@id=\"popdivquyu\"]/DIV[3]/DIV[1]/DIV[2]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-view"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control49_MSdXh7"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control50_K5pa1O": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-view"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[2]/DIV[1]/DIV[3]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control50_K5pa1O"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context10_n2Tfnp": {
       "controls": [
         "control47_k7iJPb",
-        "control48_vzq1C5"
+        "control48_vzq1C5",
+        "control49_MSdXh7",
+        "control50_K5pa1O"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -66,6 +154,10 @@
       "toContexts": [
         {
           "toContextId": "context10_n2Tfnp"
+        },
+        {
+          "toContextId": "context1_tCLsmq",
+          "toModelId": "index_itownet"
         }
       ]
     }
@@ -103,6 +195,36 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl48_PPJl9I",
+          "controlId": "control49_MSdXh7",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl48_PPJl9I",
+                "onGetTemplate": "getTemplate_uiControl48_PPJl9I"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl49_Jn0wyQ",
+          "controlId": "control50_K5pa1O",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl49_Jn0wyQ",
+                "onGetTemplate": "getTemplate_uiControl49_Jn0wyQ"
+              }
+            }
+          }
         }
       ]
     }
@@ -119,7 +241,8 @@
       "contexts": {
         "context10_n2Tfnp": [
           "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfoAdd.jsp?oduuid=zjdq-10&&chakan=1&&proCode=B-10&&orgCode=123305217272253587",
-          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfoAdd.jsp?oduuid=zjdq-19&&chakan=1&&proCode=B-19&&orgCode=123305217272253587"
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfoAdd.jsp?oduuid=zjdq-19&&chakan=1&&proCode=B-19&&orgCode=123305217272253587",
+          "egs.itownet.cn:9080/InspMeterMobile//inspmeterOrgInfo/OrgVerificationInfoAdd.jsp?oduuid=zjdq-13&&chakan=1&&proCode=B-13&&orgCode=123305217272253587"
         ]
       }
     },
@@ -189,6 +312,94 @@
             "datagrid-footer-inner",
             "datagrid-header",
             "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-row",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-toolbar",
+            "datagrid-view",
+            "datagrid-wrap",
+            "dialog-Character",
+            "dialog-Character-td",
+            "dialog-button",
+            "easyui-datagrid",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-layout",
+            "easyui-linkbutton",
+            "easyui-textbox",
+            "ecqs-container",
+            "form-control",
+            "header-logo",
+            "icon-add",
+            "icon-remove",
+            "info-bottom",
+            "info-top",
+            "l-btn",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-small",
+            "l-btn-text",
+            "layout",
+            "layout-body",
+            "layout-panel",
+            "layout-panel-center",
+            "layout-panel-east",
+            "layout-panel-north",
+            "layout-panel-west",
+            "layout-split-proxy-h",
+            "layout-split-proxy-v",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "textbox",
+            "textbox-disabled",
+            "textbox-f",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "title-line",
+            "title-line-blue",
+            "title-line-grey",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ],
+          [
+            "Orange_but",
+            "basic-radio",
+            "blue_but",
+            "clearfix",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-domCode",
+            "datagrid-cell-c-domName",
+            "datagrid-cell-c-typeCode",
+            "datagrid-cell-c-typeName",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-over",
             "datagrid-header-row",
             "datagrid-header-rownumber",
             "datagrid-htable",

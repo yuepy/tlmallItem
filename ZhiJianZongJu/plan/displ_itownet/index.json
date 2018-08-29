@@ -226,45 +226,6 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control21_5RzVCo": {
-      "location": {
-        "data": {
-          "tagName": "FORM"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": [
-              "descendant::DIV[@id=\"looker-dialog\"]//FORM[@id=\"form\"]",
-              "descendant::FORM[@id=\"form\"]"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.easyui-layout.layout.easyui-fluid DIV.panel.layout-panel.layout-panel-center DIV.panel-body.panel-body-noheader.panel-body-noborder.layout-body FORM"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control21_5RzVCo"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "//iframe[1]<<IFRAME>>",
-      "componentType": "custom"
-    },
     "control22_dMMdhr": {
       "location": {
         "data": {
@@ -597,7 +558,6 @@
         "control18_pQ0Aqt",
         "control23_fPtLX6",
         "control24_vzBHSe",
-        "control21_5RzVCo",
         "control22_dMMdhr",
         "control13_fAtIib",
         "control12_LmKPug",
@@ -989,21 +949,6 @@
                       "events": {
                         "onDoAction": "doAction_uiControl14_fTnxNe",
                         "onGetTemplate": "getTemplate_uiControl14_fTnxNe"
-                      }
-                    }
-                  }
-                },
-                {
-                  "id": "uiControl16_WpXa63",
-                  "controlId": "control21_5RzVCo",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl16_WpXa63",
-                        "onGetTemplate": "getTemplate_uiControl16_WpXa63"
                       }
                     }
                   }

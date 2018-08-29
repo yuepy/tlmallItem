@@ -1,0 +1,486 @@
+{
+  "version": "0.1",
+  "id": "remindDetection",
+  "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//RemindDetectionApply/RemindDetection.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw",
+  "jsFile": "index.js",
+  "chineseName": "强制检定器具目录查询",
+  "description": "",
+  "controls": {
+    "control51_6Jq70B": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control51_6Jq70B"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control52_wSGG0f": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control52_wSGG0f"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control53_NJnUAP": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-view DIV.datagrid-view2"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control53_NJnUAP"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control54_y7AEQp": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.datagrid.easyui-fluid DIV.datagrid-wrap.panel-body.panel-body-noheader DIV.datagrid-pager.pagination"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control54_y7AEQp"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control55_BeV9pA": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[3]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control55_BeV9pA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context11_lNn6kP": {
+      "controls": [
+        "control51_6Jq70B",
+        "control52_wSGG0f",
+        "control53_NJnUAP",
+        "control54_y7AEQp",
+        "control55_BeV9pA"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow42_AT6QHa": {
+      "toContexts": [
+        {
+          "toContextId": "context11_lNn6kP"
+        }
+      ]
+    },
+    "flow43_i09ESD": {
+      "fromContextId": "context11_lNn6kP",
+      "fromAction": "doAction",
+      "fromControlId": "control52_wSGG0f",
+      "toContexts": [
+        {
+          "toContextId": "context11_lNn6kP"
+        }
+      ]
+    },
+    "flow44_iPgPMD": {
+      "fromContextId": "context11_lNn6kP",
+      "fromAction": "doAction",
+      "fromControlId": "control53_NJnUAP",
+      "toContexts": [
+        {
+          "toContextId": "context11_lNn6kP"
+        }
+      ]
+    },
+    "flow45_HzPD6S": {
+      "fromContextId": "context11_lNn6kP",
+      "fromAction": "doAction",
+      "fromControlId": "control54_y7AEQp",
+      "toContexts": [
+        {
+          "toContextId": "context11_lNn6kP"
+        }
+      ]
+    },
+    "flow46_m44B9R": {
+      "fromContextId": "context11_lNn6kP",
+      "fromAction": "doAction",
+      "fromControlId": "control55_BeV9pA",
+      "toContexts": [
+        {
+          "toContextId": "context11_lNn6kP"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page11_PvfMs5": {
+      "contextId": "context11_lNn6kP",
+      "layout": [
+        {
+          "id": "uiControl50_yKAdBW",
+          "controlId": "control51_6Jq70B",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl50_yKAdBW",
+                "onGetTemplate": "getTemplate_uiControl50_yKAdBW"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl51_KT81Tf",
+          "controlId": "control52_wSGG0f",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl51_KT81Tf",
+                "onGetTemplate": "getTemplate_uiControl51_KT81Tf"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl52_4ZF8F2",
+          "controlId": "control53_NJnUAP",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl52_4ZF8F2",
+                "onGetTemplate": "getTemplate_uiControl52_4ZF8F2"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl53_J0FZZx",
+          "controlId": "control54_y7AEQp",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl53_J0FZZx",
+                "onGetTemplate": "getTemplate_uiControl53_J0FZZx"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl54_KVI7Nl",
+          "controlId": "control55_BeV9pA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl54_KVI7Nl",
+                "onGetTemplate": "getTemplate_uiControl54_KVI7Nl"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context11_lNn6kP": [
+          "强制检定器具目录查询"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context11_lNn6kP": [
+          "egs.itownet.cn:9080/InspMeterMobile//RemindDetectionApply/RemindDetection.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context11_lNn6kP": [
+          [
+            "_easyui_combobox_i_",
+            "base-footer",
+            "base-header",
+            "checkPersonShow",
+            "datagrid-row-r--",
+            "dc",
+            "ecqs-header",
+            "editorForm",
+            "header-left",
+            "header-right",
+            "instrClassName",
+            "instrClassNumber",
+            "instrScope",
+            "instrSortCdde",
+            "instrSortName",
+            "orgCode",
+            "postStatus",
+            "query",
+            "queryDiv",
+            "show-dialog"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context11_lNn6kP": [
+          [
+            "Orange_but",
+            "basic-radio",
+            "blue_but",
+            "clearfix",
+            "col",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combobox-f",
+            "combobox-item",
+            "combobox-item-selected",
+            "daili",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-instrClassName",
+            "datagrid-cell-c-instrClassNumber",
+            "datagrid-cell-c-instrForm",
+            "datagrid-cell-c-instrScope",
+            "datagrid-cell-c-instrSortCdde",
+            "datagrid-cell-c-instrSortName",
+            "datagrid-cell-c-postStatus",
+            "datagrid-cell-check",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-check",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-pager",
+            "datagrid-row",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-view",
+            "datagrid-wrap",
+            "dialog-Character",
+            "dialog-Character-label",
+            "dialog-Character-td",
+            "easyui-combobox",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-form",
+            "easyui-textbox",
+            "ecqs-container",
+            "form-control",
+            "header-logo",
+            "info-bottom",
+            "info-top",
+            "ipt",
+            "l-btn",
+            "l-btn-disabled",
+            "l-btn-empty",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-plain-disabled",
+            "l-btn-small",
+            "l-btn-text",
+            "pagination",
+            "pagination-btn-separator",
+            "pagination-first",
+            "pagination-info",
+            "pagination-last",
+            "pagination-load",
+            "pagination-next",
+            "pagination-num",
+            "pagination-page-list",
+            "pagination-prev",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "panel-tool-max",
+            "panel-tool-min",
+            "textarea",
+            "textbox",
+            "textbox-addon",
+            "textbox-addon-right",
+            "textbox-f",
+            "textbox-icon",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "title-line",
+            "title-line-blue",
+            "title-line-grey",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context11_lNn6kP": [
+          [
+            "-/-/DIV",
+            "-/-/LINK",
+            "-/-/META",
+            "-/-/SCRIPT",
+            "-/-/TITLE",
+            "-/DIV/BR",
+            "-/DIV/DIV",
+            "-/DIV/P",
+            "A/SPAN/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/BR",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/LABLE",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/STRONG",
+            "DIV/DIV/STYLE",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/TABLE",
+            "DIV/P/SPAN",
+            "DIV/SELECT/OPTION",
+            "DIV/SPAN/INPUT-hidden",
+            "DIV/SPAN/INPUT-text",
+            "DIV/SPAN/SPAN",
+            "DIV/TABLE/TBODY",
+            "FORM/TABLE/TBODY",
+            "SPAN/SPAN/A",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/INPUT-checkbox",
+            "TD/DIV/SPAN",
+            "TD/SELECT/OPTION",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-null",
+            "TR/TD/INPUT-text",
+            "TR/TD/LABEL",
+            "TR/TD/SELECT",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}
