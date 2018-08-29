@@ -3,6 +3,9 @@
   "id": "inspmeterInfo",
   "targetURL": "http://egs.itownet.cn:9080/InspMeterMobile//InspmeterInfo/InspmeterInfo.jsp?tokenInfo=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6InJvb3QiLCJpc3MiOiJhdXRoMCIsInBvcnRsZXRJZCI6Im5ld0FwcC0xMiJ9.Q-xFW_03TSan6pGJiNI46SgHbNs5S0TfRrXl9mOEg0MFR54Vx9ZhW35D4XefqF8jHYompi3bXVwzTQHHl--B5mESri6X0j7bj7HbfBzDyFdgptHtgW98F9WNtd5jnktxYseB6XhnW8X2Z2JhH0vEKPFu5Z59B7oZxoi2YX2wdaw",
   "jsFile": "index.js",
+  "requires": {
+    "deil_inspmeterInfo": "../deil_inspmeterInfo/index.json"
+  },
   "chineseName": "强检器具信息查询",
   "description": "",
   "controls": {
@@ -10,6 +13,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -33,6 +40,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -54,6 +65,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -82,6 +97,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -109,6 +128,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -122,7 +145,38 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control61_N7Lmdu": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.panel.window"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[11]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control61_N7Lmdu"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
     }
@@ -134,7 +188,8 @@
         "control57_mdA6BC",
         "control58_Z4NgTx",
         "control59_I8Inzr",
-        "control60_nE2USE"
+        "control60_nE2USE",
+        "control61_N7Lmdu"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -165,6 +220,30 @@
       "toContexts": [
         {
           "toContextId": "context12_KFZqE5"
+        }
+      ]
+    },
+    "flow50_UoSbZq": {
+      "fromContextId": "context12_KFZqE5",
+      "fromAction": "doAction",
+      "fromControlId": "control59_I8Inzr",
+      "toContexts": [
+        {
+          "toContextId": "context12_KFZqE5"
+        }
+      ]
+    },
+    "flow51_zd6kiB": {
+      "fromContextId": "context12_KFZqE5",
+      "fromAction": "doAction",
+      "fromControlId": "control60_nE2USE",
+      "toContexts": [
+        {
+          "toContextId": "context12_KFZqE5"
+        },
+        {
+          "toContextId": "context13_kFTUS2",
+          "toModelId": "deil_inspmeterInfo"
         }
       ]
     }
@@ -244,6 +323,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl59_DfEuwz",
                 "onGetTemplate": "getTemplate_uiControl59_DfEuwz"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl60_UC03iZ",
+          "controlId": "control61_N7Lmdu",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl60_UC03iZ",
+                "onGetTemplate": "getTemplate_uiControl60_UC03iZ"
               }
             }
           }
@@ -680,6 +774,145 @@
             "l-btn-plain-disabled",
             "l-btn-small",
             "l-btn-text",
+            "pagination",
+            "pagination-btn-separator",
+            "pagination-first",
+            "pagination-info",
+            "pagination-last",
+            "pagination-load",
+            "pagination-next",
+            "pagination-num",
+            "pagination-page-list",
+            "pagination-prev",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "textbox",
+            "textbox-addon",
+            "textbox-addon-right",
+            "textbox-f",
+            "textbox-icon",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "title-line",
+            "title-line-blue",
+            "title-line-grey",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ],
+          [
+            "Orange_but",
+            "basic-radio",
+            "blue_but",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-dtable",
+            "calendar-first",
+            "calendar-header",
+            "calendar-last",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nav",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-text",
+            "calendar-title",
+            "calendar-today",
+            "clearfix",
+            "col",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combobox-f",
+            "combobox-item",
+            "combobox-item-selected",
+            "daili",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-accuracyLevel",
+            "datagrid-cell-c-applyCompanyName",
+            "datagrid-cell-c-checkResult",
+            "datagrid-cell-c-expiryDate",
+            "datagrid-cell-c-instrPurposeCode",
+            "datagrid-cell-c-measureRang",
+            "datagrid-cell-c-meterIntruName",
+            "datagrid-cell-c-meterStatus",
+            "datagrid-cell-c-modelSpec",
+            "datagrid-cell-c-serialNum",
+            "datagrid-cell-check",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-check",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-pager",
+            "datagrid-row",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-view",
+            "datagrid-wrap",
+            "datebox",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "dialog-Character",
+            "dialog-Character-label",
+            "dialog-Character-td",
+            "easyui-combobox",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-form",
+            "easyui-textbox",
+            "ecqs-container",
+            "form-control",
+            "header-logo",
+            "info-bottom",
+            "info-top",
+            "ipt",
+            "l-btn",
+            "l-btn-disabled",
+            "l-btn-empty",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-plain-disabled",
+            "l-btn-small",
+            "l-btn-text",
+            "messager-body",
             "pagination",
             "pagination-btn-separator",
             "pagination-first",

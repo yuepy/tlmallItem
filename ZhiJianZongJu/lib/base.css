@@ -15,6 +15,75 @@ Header button {
   background-position: 10%;
   font-size: 15px;
 }
+.seledradio {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  border-radius: 50%;
+  border: 1px solid #8a96a2;
+  background-image: url(img/duihao.png);
+  background-size: 20px 20px;
+  background-position: 0;
+}
+.HeaderTitle Header {
+  background-color: #0a568c !important;
+  color: #fff !important;
+}
+.HeaderTitle Header button {
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background-image: url(img/ysp-prev.png);
+  background-size: 12px 14px;
+  background-repeat: no-repeat;
+  background-position: 10%;
+  font-size: 15px;
+}
+/*分页样式*/
+.dovedteskPage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0px ;
+  padding: 20px 0px;
+}
+.dovedteskPage .dovedteskPageFirst > span:nth-child(1) {
+  background: #2F9FFF;
+  border-radius: 10px 0px 0px 10px;
+  color: #fff;
+  padding: 2px 12px;
+}
+.dovedteskPage .dovedteskPageFirst > span:nth-child(2) {
+  background: #ececec;
+  border-radius: 0px 10px 10px 0px;
+  padding: 2px 12px;
+}
+.dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(1) {
+  padding-right: 5px;
+}
+.dovedteskPage .dovedteskPageCenter > span:nth-child(1) > span:nth-child(2) {
+  padding: 0px 5px;
+  border-radius: 100%;
+  background: #2F9FFF;
+  color: #fff;
+}
+.dovedteskPage .dovedteskPageCenter > span:nth-child(2) {
+  padding-left: 5px;
+}
+.dovedteskPage .dovedteskPageLast > span:nth-child(1) {
+  background: #ececec;
+  border-radius: 10px 0px 0px 10px;
+  padding: 2px 12px;
+}
+.dovedteskPage .dovedteskPageLast > span:nth-child(2) {
+  background: #2F9FFF;
+  border-radius: 0px 10px 10px 0px;
+  color: #fff;
+  padding: 2px 12px;
+}
 .itwont {
   width: 100%;
 }
@@ -784,6 +853,13 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   background-color: #f2f2f2;
 }
 /*首页图标点击后的样式end*/
+.conditionTitle {
+  color: #0a568c;
+  font-weight: bold;
+  padding-left: 20px;
+  background: url(img/tou.png) no-repeat 0 0;
+  background-size: 8px 25px;
+}
 /*分配记录查询页*/
 .queryCondition input,
 .queryCondition select,
