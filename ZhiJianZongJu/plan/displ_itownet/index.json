@@ -431,8 +431,13 @@
           "tagName": "DIV"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "XPath",
+              "value": "//div[contains(@class, 'messager-window')][last()]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -882,6 +887,36 @@
                   }
                 },
                 {
+                  "id": "uiControl15_lB7mlt",
+                  "controlId": "control20_v12yAy",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl15_lB7mlt",
+                        "onGetTemplate": "getTemplate_uiControl15_lB7mlt"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "uiControl13_sV26Mu",
+                  "controlId": "control17_VeuQX0",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl13_sV26Mu",
+                        "onGetTemplate": "getTemplate_uiControl13_sV26Mu"
+                      }
+                    }
+                  }
+                },
+                {
                   "id": "uiControl24_02QD6P",
                   "controlId": "control28_sbvmmd",
                   "display": {
@@ -908,21 +943,6 @@
                 }
               },
               "layout": [
-                {
-                  "id": "uiControl13_sV26Mu",
-                  "controlId": "control17_VeuQX0",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl13_sV26Mu",
-                        "onGetTemplate": "getTemplate_uiControl13_sV26Mu"
-                      }
-                    }
-                  }
-                },
                 {
                   "id": "uiControl19_rWqio7",
                   "controlId": "control23_fPtLX6",
@@ -979,21 +999,6 @@
                       "events": {
                         "onDoAction": "doAction_uiControl18_SPZ3rD",
                         "onGetTemplate": "getTemplate_uiControl18_SPZ3rD"
-                      }
-                    }
-                  }
-                },
-                {
-                  "id": "uiControl15_lB7mlt",
-                  "controlId": "control20_v12yAy",
-                  "display": {
-                    "adapterId": "custom",
-                    "type": "custom",
-                    "adapter": {
-                      "templateType": "react",
-                      "events": {
-                        "onDoAction": "doAction_uiControl15_lB7mlt",
-                        "onGetTemplate": "getTemplate_uiControl15_lB7mlt"
                       }
                     }
                   }

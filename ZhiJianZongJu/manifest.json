@@ -12,42 +12,41 @@
     "resource_inject": [],
     "unadapted": {
       "timeout": 30000,
-      "rules": [
-        {
-          "match": "*",
-          "type": "block"
-        }
-      ]
+      "rules": [{
+        "match": "*",
+        "type": "block"
+      }]
     },
     "component_match_mode": "polling"
   },
   "override_urls": [],
-  "adapter_urls": [
-    {
-      "title": "login",
-      "url": "adapter://itownet_Applocation/plan/login/index.json",
-      "matcher": [
-        "^http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/"
-      ],
-      "demo": [
-        "http://egs.itownet.cn:9080/ecqs_server_web/"
-      ]
-    },
-    {
-      "title": "index_itownet",
-      "url": "adapter://itownet_Applocation/plan/index_itownet/index.json",
-      "matcher": [
-        "^http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/system\\/main\\.jsp"
-      ],
-      "demo": [
-        "http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp"
-      ]
-    }
-  ],
+  "adapter_urls": [{
+    "title": "login",
+    "url": "adapter://itownet_Applocation/plan/login/index.json",
+    "matcher": [
+      "^http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/"
+    ],
+    "demo": [
+      "http://egs.itownet.cn:9080/ecqs_server_web/"
+    ]
+  }, {
+    "title": "index_itownet",
+    "url": "adapter://itownet_Applocation/plan/index_itownet/index.json",
+    "matcher": [
+      "^http:\\/\\/egs\\.itownet\\.cn:9080\\/ecqs_server_web\\/system\\/main\\.jsp"
+    ],
+    "demo": [
+      "http://egs.itownet.cn:9080/ecqs_server_web/system/main.jsp"
+    ]
+  }],
   "name": "质检总局B版",
   "default_url": "http://egs.itownet.cn:9080/ecqs_server_web/",
   "scope": "itownet_Applocation",
   "start_url": "enterplorer://itownet_Applocation/local/index.html",
+<<<<<<< HEAD
+  "update_time": 1535590483807,
+=======
   "update_time": 1535598707629,
+>>>>>>> 8d0c9a3adfb06cc70f0bac5002ff980454564908
   "runtime_env": "1webview"
 }
