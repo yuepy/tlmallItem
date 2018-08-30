@@ -151,6 +151,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -178,6 +182,63 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control70_CaUOHT": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "@alt",
+            "prob": 2,
+            "value": {
+              "text": [
+                "国家质量监督总站"
+              ]
+            }
+          },
+          {
+            "id": "img/@src",
+            "prob": 1,
+            "value": {
+              "pathname": "/InspMeterMobile/img/index-logo3.png"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]/IMG[1]",
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"header-left\"]//IMG"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.ecqs-container.clearfix IMG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control70_CaUOHT"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -188,7 +249,8 @@
         "control53_NJnUAP",
         "control54_y7AEQp",
         "control55_BeV9pA",
-        "control65_3e9rWT"
+        "control65_3e9rWT",
+        "control70_CaUOHT"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -333,6 +395,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl54_KVI7Nl",
                 "onGetTemplate": "getTemplate_uiControl54_KVI7Nl"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl69_1PJIkt",
+          "controlId": "control70_CaUOHT",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl69_1PJIkt",
+                "onGetTemplate": "getTemplate_uiControl69_1PJIkt"
               }
             }
           }

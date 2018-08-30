@@ -183,6 +183,63 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control71_CeTuEA": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "@alt",
+            "prob": 2,
+            "value": {
+              "text": [
+                "国家质量监督总站"
+              ]
+            }
+          },
+          {
+            "id": "img/@src",
+            "prob": 1,
+            "value": {
+              "pathname": "/InspMeterMobile/img/index-logo3.png"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]/IMG[1]",
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"header-left\"]//IMG"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.ecqs-container.clearfix IMG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control71_CeTuEA"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -193,7 +250,8 @@
         "control58_Z4NgTx",
         "control59_I8Inzr",
         "control60_nE2USE",
-        "control61_N7Lmdu"
+        "control61_N7Lmdu",
+        "control71_CeTuEA"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -327,6 +385,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl59_DfEuwz",
                 "onGetTemplate": "getTemplate_uiControl59_DfEuwz"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl70_V3mvTl",
+          "controlId": "control71_CeTuEA",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl70_V3mvTl",
+                "onGetTemplate": "getTemplate_uiControl70_V3mvTl"
               }
             }
           }
