@@ -51,6 +51,10 @@
                 var btn = doc.querySelectorAll(".ps_loginmessagelarge")[1].querySelector("a");
                 btn.click();
             }
+          	//index页重定向
+          	if(aWin.location.href.indexOf("http://192.168.220.110:8080/putianHR/toHome")!==-1){
+              aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
+            }
             //每个tab页面的切换
             var tblpstabs = doc.querySelector("#tblpstabs");
             if (tblpstabs&&tblpstabs.querySelectorAll("a")[1] && tblpstabs.querySelectorAll("a")[1].textContent !== "调休假余额查询" && tblpstabs.querySelectorAll("a")[1].textContent !== "考勤类型") {
@@ -80,8 +84,7 @@
                   clearInterval(timer);
                 }
               },500);
-          	}else if(aWin.location.href.indexOf("HPS_TL_PAG_010_CP.GBL?&cmd=login")!==-1&&doc.querySelector("#userid")&&aWin.location.href.indexOf("languageCd=ZHS")==-1){
-              debugger;
+          	}else if(aWin.location.href.indexOf("CP.GBL?&cmd=login")!==-1&&doc.querySelector("#userid")&&aWin.location.href.indexOf("languageCd=ZHS")==-1){
               var host=aWin.location.href.match(/http.*\?/)[0];
               
               var timer=setInterval(function(){
@@ -96,7 +99,7 @@
           	if(aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS")!==-1){
               doc.querySelector("#userid").value=sessionStorage.getItem("userid");
               doc.querySelector("#pwd").value=sessionStorage.getItem("pwd");
-          	}else if(aWin.location.href.indexOf("HPS_TL_PAG_010_CP.GBL?&cmd=login&languageCd=ZHS")!==-1){
+          	}else if(aWin.location.href.indexOf("CP.GBL?&cmd=login&languageCd=ZHS")!==-1){
               doc.querySelector("#userid").value=sessionStorage.getItem("userid");
               doc.querySelector("#pwd").value=sessionStorage.getItem("pwd");
             }
