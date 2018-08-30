@@ -1,3 +1,6 @@
+body {
+  font-family: 'Microsoft YaHei' !important;
+}
 li {
   list-style: none;
 }
@@ -251,7 +254,7 @@ div[data-ysp-modelid="login"] {
 div[data-ysp-modelid="login"] .ysp_whole {
   width: 100%;
   height: 100vh;
-  background: url(img/login.png) no-repeat 0 0px;
+  background: url(img/beijing.png) no-repeat 0 0px;
   background-size: 100% 100%;
   display: flex;
   align-items: center;
@@ -386,8 +389,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 [data-ysp-modelid="index_itownet"] .titleapps > div {
   width: 33.3%;
   text-align: center;
-  font-size: 14p;
-  font-weight: bold;
+  font-size: 14px;
 }
 [data-ysp-modelid="index_itownet"] .titleapps > div > div:nth-child(1) {
   width: 50px;
@@ -526,6 +528,9 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   font-size: 14px;
   line-height: 46px;
   border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 [data-ysp-modelid="index_itownet"] .Padingtable > div > div:last-child {
   border: 0;
@@ -541,14 +546,14 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 .tabbox > div .bot {
   background-image: url(img/xia.png);
   background-repeat: no-repeat;
-  background-size: 20px 15px;
-  background-position: 95% 14px;
+  background-size: 16px 11px;
+  background-position: 96% 16px;
 }
 .tabbox > div .top {
   background-image: url(img/top.png);
   background-repeat: no-repeat;
-  background-size: 20px 15px;
-  background-position: 95% 14px;
+  background-size: 16px 11px;
+  background-position: 96% 16px;
 }
 .tabbox > div div:nth-child(1) {
   height: 44px;

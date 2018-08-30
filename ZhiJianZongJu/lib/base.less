@@ -2,6 +2,9 @@
 // Less 的语法与 CSS 兼容，可以直接用 CSS 语法进行编写
 // 如需了解详情，请访问 http://www.lesscss.net/
 // 发布后，base.less 被编译成 base.css 文件
+body{
+  font-family: 'Microsoft YaHei' !important;
+}
 li{
   list-style: none;
 }
@@ -286,7 +289,7 @@ div[data-ysp-modelid = "login"] {
   .ysp_whole{
     width:100%;
     height:100vh;
-    background: url(./img/login.png) no-repeat 0 0px;
+    background: url(./img/beijing.png) no-repeat 0 0px;
     background-size:100% 100%;
     display:flex;
     align-items:center;
@@ -424,8 +427,8 @@ Header{
     >div{
       width: 33.3%;
       text-align: center;
-      font-size: 14p;
-      font-weight: bold;
+      font-size: 14px;
+      // font-weight: bold;
       >div:nth-child(1){
         width: 50px;
         height: 50px;
@@ -572,6 +575,9 @@ Header{
         line-height: 46px;
         //border-bottom: 1px dashed #ccc;
         border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
       >div:last-child{
         border: 0;
@@ -599,14 +605,14 @@ Header{
     .bot{
       background-image: url(./img/xia.png);
       background-repeat: no-repeat;
-      background-size: 20px 15px;
-      background-position: 95% 14px;
+      background-size: 16px 11px;
+      background-position: 96% 16px;
     }
     .top{
       background-image: url(./img/top.png);
       background-repeat: no-repeat;
-      background-size: 20px 15px;
-      background-position: 95% 14px;
+      background-size: 16px 11px;
+      background-position: 96% 16px;
     }
     div:nth-child(1){
       height: 44px;
