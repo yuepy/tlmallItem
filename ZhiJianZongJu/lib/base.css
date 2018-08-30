@@ -1,3 +1,6 @@
+body {
+  font-family: 'Microsoft YaHei' !important;
+}
 li {
   list-style: none;
 }
@@ -188,6 +191,13 @@ Header button {
   border-bottom: 0px ;
   padding: 20px 0px;
 }
+.zc-am-check {
+  padding: 10px;
+}
+.zc-am-check .amt-btn-hollow.amt-btn-warning {
+  border: 1px solid #0a568c;
+  color: #0a568c;
+}
 .hzx-page-left > span:nth-child(1) {
   background: #2F9FFF;
   border-radius: 10px 0px 0px 10px;
@@ -244,7 +254,7 @@ div[data-ysp-modelid="login"] {
 div[data-ysp-modelid="login"] .ysp_whole {
   width: 100%;
   height: 100vh;
-  background: url(img/login.png) no-repeat 0 0px;
+  background: url(img/beijing.png) no-repeat 0 0px;
   background-size: 100% 100%;
   display: flex;
   align-items: center;
@@ -379,8 +389,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 [data-ysp-modelid="index_itownet"] .titleapps > div {
   width: 33.3%;
   text-align: center;
-  font-size: 14p;
-  font-weight: bold;
+  font-size: 14px;
 }
 [data-ysp-modelid="index_itownet"] .titleapps > div > div:nth-child(1) {
   width: 50px;
@@ -519,6 +528,9 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   font-size: 14px;
   line-height: 46px;
   border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 [data-ysp-modelid="index_itownet"] .Padingtable > div > div:last-child {
   border: 0;
@@ -534,14 +546,14 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 .tabbox > div .bot {
   background-image: url(img/xia.png);
   background-repeat: no-repeat;
-  background-size: 20px 15px;
-  background-position: 95% 14px;
+  background-size: 16px 11px;
+  background-position: 96% 16px;
 }
 .tabbox > div .top {
   background-image: url(img/top.png);
   background-repeat: no-repeat;
-  background-size: 20px 15px;
-  background-position: 95% 14px;
+  background-size: 16px 11px;
+  background-position: 96% 16px;
 }
 .tabbox > div div:nth-child(1) {
   height: 44px;
@@ -895,6 +907,9 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   background-size: 8px 25px;
 }
 /*分配记录查询页*/
+.queryCondition {
+  margin-top: 10px;
+}
 .queryCondition input,
 .queryCondition select,
 .queryCondition option {
@@ -942,7 +957,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
 .queryCondition .querybtn {
   width: 100%;
   margin-top: 10px;
-  padding: 0 10px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -952,7 +967,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   background: #004788;
   color: #fff;
   border: 0;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 .queryCondition .querybtn button:nth-child(1) {
   background: #fff;
@@ -1017,7 +1032,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 50%;
+  top: 25px;
   left: 10px;
   border-radius: 50%;
   border: 1px solid #8a96a2;
@@ -1136,8 +1151,10 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   text-align: justify;
   text-align-last: justify;
   padding: 10px 0;
+  max-width: 100px;
 }
 .maintain_query > div > div:nth-child(2) {
+  max-width: 70%;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
@@ -1151,6 +1168,7 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   margin-right: auto;
 }
 .maintain_table > div:nth-child(2) table {
+  margin-bottom: 10px;
   width: 345px;
 }
 .maintain_table > div:nth-child(2) table thead tr th {
@@ -1211,6 +1229,9 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   background-color: #0a568c;
   color: #fff;
 }
+.deilbtn {
+  padding: 0 10px;
+}
 .deilbtn button {
   width: 100%;
   border-radius: 5px;
@@ -1219,6 +1240,30 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   border: 0;
   background-color: #0a568c;
   color: #fff;
+}
+.deil_inspam > div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.deil_inspam > div div:nth-child(1) {
+  font-size: 14px;
+  padding: 10px 0;
+  color: #323e4d;
+  max-width: 100px;
+}
+.deil_inspam > div div:nth-child(2) {
+  font-size: 14px;
+  padding: 10px 20px 5px 0;
+  color: #838b9f;
+  max-width: 70%;
+}
+.deil_inspam > div:nth-child(1) {
+  display: block;
+  margin-bottom: 10px;
+  border: 0;
+  margin-left: 0;
 }
 /*检定结构查询页*/
 /*待阅信息详情页*/
