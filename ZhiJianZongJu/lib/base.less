@@ -2,6 +2,9 @@
 // Less 的语法与 CSS 兼容，可以直接用 CSS 语法进行编写
 // 如需了解详情，请访问 http://www.lesscss.net/
 // 发布后，base.less 被编译成 base.css 文件
+body{
+  font-family: 'Microsoft YaHei' !important;
+}
 li{
   list-style: none;
 }
@@ -296,7 +299,7 @@ div[data-ysp-modelid = "login"] {
   .ysp_whole{
     width:100%;
     height:100vh;
-    background: url(./img/login.png) no-repeat 0 0px;
+    background: url(./img/beijing.png) no-repeat 0 0px;
     background-size:100% 100%;
     display:flex;
     align-items:center;
@@ -434,8 +437,8 @@ Header{
     >div{
       width: 33.3%;
       text-align: center;
-      font-size: 14p;
-      font-weight: bold;
+      font-size: 14px;
+      // font-weight: bold;
       >div:nth-child(1){
         width: 50px;
         height: 50px;
@@ -582,6 +585,9 @@ Header{
         line-height: 46px;
         //border-bottom: 1px dashed #ccc;
         border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
       >div:last-child{
         border: 0;
@@ -609,14 +615,14 @@ Header{
     .bot{
       background-image: url(./img/xia.png);
       background-repeat: no-repeat;
-      background-size: 20px 15px;
-      background-position: 95% 14px;
+      background-size: 16px 11px;
+      background-position: 96% 16px;
     }
     .top{
       background-image: url(./img/top.png);
       background-repeat: no-repeat;
-      background-size: 20px 15px;
-      background-position: 95% 14px;
+      background-size: 16px 11px;
+      background-position: 96% 16px;
     }
     div:nth-child(1){
       height: 44px;
@@ -973,6 +979,7 @@ Header{
   }
 /*分配记录查询页*/
 .queryCondition{
+  margin-top: 10px;
   input,select,option{
     border: 0 !important;
     text-align: right;
@@ -1017,7 +1024,7 @@ Header{
   .querybtn{
     width: 100%;
     margin-top: 10px;
-    padding: 0 10px;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     button{
@@ -1026,7 +1033,7 @@ Header{
       background: #004788;
       color: #fff;
       border: 0;
-      border-radius: 5px;
+      border-radius: 8px;
     }
     button:nth-child(1){
       background: #fff;
@@ -1098,7 +1105,7 @@ Header{
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 50%;
+    top: 25px;
     left: 10px;
     border-radius: 50%;
     border: 1px solid #8a96a2;
@@ -1218,9 +1225,10 @@ Header{
       text-align: justify;
       text-align-last: justify;
       padding: 10px 0;
+      max-width: 100px;
     }
     >div:nth-child(2){
-      // width: 75%;
+      max-width: 70%;
       display: flex;
       align-items: center;
       flex-direction: row-reverse;
@@ -1238,6 +1246,7 @@ Header{
     margin-left: auto;
     margin-right: auto;
     table{
+      margin-bottom: 10px;
       width: 345px;
       thead{
         tr{
@@ -1315,6 +1324,7 @@ Header{
 }
 
 .deilbtn{
+  padding: 0 10px;
   button{
     width: 100%;
     border-radius: 5px;
@@ -1327,7 +1337,30 @@ Header{
 }
 
 .deil_inspam{
-  
+  >div{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    border-bottom: 1px solid #ccc;
+    div:nth-child(1){
+      font-size: 14px;
+      padding: 10px 0;
+      color: #323e4d;
+      max-width: 100px;
+    }
+    div:nth-child(2){
+      font-size: 14px;
+      padding: 10px 20px 5px 0;
+      color: #838b9f;
+      max-width: 70%;
+    }
+  }
+  >div:nth-child(1){
+    display: block;
+    margin-bottom: 10px;
+    border: 0;
+    margin-left: 0;
+  }
 }
 
 /*检定结构查询页*/
