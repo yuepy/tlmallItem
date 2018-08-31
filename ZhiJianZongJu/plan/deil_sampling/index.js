@@ -59,7 +59,7 @@
                     }obj.tagName.push({ key: lablesArr, check: 'check' });
                   } else {
                     obj.tagName.push({ key: tagNameK });
-                  }var objK = obj.tagName[obj.tagName.length - 1].key;if (objK == '受检单位名称' || objK == '单位编码') {
+                  }var objK = obj.tagName[obj.tagName.length - 1].key;if (objK == '*受检单位名称' || objK == '*单位编码') {
                     obj.tagName[obj.tagName.length - 1].button = true;
                   } else {
                     obj.tagName[obj.tagName.length - 1].button = false;
