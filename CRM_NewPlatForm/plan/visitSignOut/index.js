@@ -7,9 +7,6 @@
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if (data.eventType == 'back') {
-        //ysp.customHelper.back(); // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
-        // ysp.appMain.reloadPage(url);
-        //更换返回方法 BackReload()回到工作台
         ysp.appMain.back();ysp.customHelper.BackReload();
       }
     },

@@ -89,6 +89,9 @@
       }
     }
     if(ysp.customHelper.AndroidBackFlag == 'destination' && url != ''){
+      if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
+      }
       ysp.customHelper.BackReload(url,model);
     }
     if(ysp.customHelper.AndroidBackFlag == 'BigData'){
