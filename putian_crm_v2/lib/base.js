@@ -177,7 +177,7 @@
         return;
       }
       var xhr = new topWin.XMLHttpRequest();
-      xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuList', true);
+      xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListNew', true);
       xhr.error = function(e) {
         console.error(e);
       }
