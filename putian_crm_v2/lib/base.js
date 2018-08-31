@@ -225,7 +225,6 @@
           }
         }
       }
-
       xhr.send(null);
     }
     validatePrivilege();
