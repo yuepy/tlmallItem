@@ -1091,6 +1091,7 @@
       return data;
     },
     getTemplateSaleReachData: function(elem, headerConfig, tags) { //[{lable:'',title:'',data:''}]
+      //debugger;
       if (!elem) {
         return;
       }
@@ -1196,6 +1197,7 @@
           var Wu = true;
         }
       }
+      //debugger;
       for(var k = 1 ;k <= headerTitle.length; k++){
         if (!zou && !headerTitle[k] && !Wu) {
           if (!headerTitle[k]) {
@@ -1388,12 +1390,15 @@
         };
       }
       	if (zou || Wu) {
-          if (!headerTitle[k] && zou == undefined) {
-            headerTitle[k] = '项目';
-          }
           if (!headerTitle[k]) {
             headerTitle[k] = '分公司';
           }
+          if (!headerTitle[k] && zou == undefined) {
+            headerTitle[k] = '项目';
+          }
+          // if (!headerTitle[k]) {
+          //   headerTitle[k] = '分公司';
+          // }
 
           function isAllNull(array) {
             var tag = true;
@@ -1413,7 +1418,7 @@
             headerTitle[k] = '项目';
           } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && !ysp.customHelper.getDataIndex(titles, '客户名称') && !ysp.customHelper.getDataIndex(titles, '销售人员') && ysp.customHelper.getDataIndex(titles,'事业部')) {
             headerTitle[k] = '事业部';
-          } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && !ysp.customHelper.getDataIndex(titles, '客户名称') && !ysp.customHelper.getDataIndex(titles, '销售人员') && !ysp.customHelper.getDataIndex(titles,'事业部')) {
+          } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && !ysp.customHelper.getDataIndex(titles, '客户名称') && !ysp.customHelper.getDataIndex(titles, '销售人员') && !ysp.customHelper.getDataIndex(titles,'分公司')) {
             headerTitle[k] = '分公司';
           } else if (headerTitle[k] == '项目' && !ysp.customHelper.getDataIndex(titles, '项目') && ysp.customHelper.getDataIndex(titles, '客户名称')) {
             headerTitle[k] = '客户名称';

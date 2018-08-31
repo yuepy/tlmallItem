@@ -2,7 +2,7 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control12_SEyDLw: function getData_control12_SEyDLw(elem) {
+    getData_control12_SEyDLw: function (elem) {
       if (!elem) {
         return { value: '', len: '', title: '销售达成' };
       }var data = elem.ownerDocument.querySelector('.form-group') && elem.ownerDocument.querySelector('.form-group').querySelector('input[placeholder="选择日期"]').value;var len = data.length;data = data.slice(0, len);var title;var u_title = elem.ownerDocument.querySelector('#u_title');if (u_title) {
@@ -15,7 +15,7 @@
         title = '销售达成';
       }var back = elem.ownerDocument.querySelector('.select_condition').querySelectorAll('li').length > 1 ? true : false;return { value: data, len: len, title: title, back: back };
     },
-    doAction_uiControl45_Cx7Spf: function doAction_uiControl45_Cx7Spf(data, elem) {
+    doAction_uiControl45_Cx7Spf: function (data, elem) {
       if (data.eventType === 'back') {
         // // if (window.parent == window) {
         // if (ysp.customHelper.saleReachStamp.getTipValue() !== 0) {
@@ -27,12 +27,14 @@
         var li = elem && elem.ownerDocument.querySelector('.select_condition').querySelectorAll('li').length;li > 1 ? elem.ownerDocument.querySelector('.select_condition').querySelectorAll('li')[li - 2].querySelector('a').click() : alert('已回到首页');
       }if (data.eventType == 'close') {
         ysp.appMain.back(); // ysp.appMain.getActiveWindow().history.back();
+
         // var pageIframe = window.document.querySelectorAll('iframe')[1];
         // pageIframe.contentWindow.close();
         // ysp.runtime.Model.setForceMatchModels(['saleTask']); 
         // ysp.customHelper.toPlan('销售任务', 'saleTask'); 
         // ysp.appMain.back();
-      }if (data.eventType == 'time') {// elem.ownerDocument.querySelector('#filterArea').querySelector('.input-group-addon').click();
+      }
+      if (data.eventType == 'time') {// elem.ownerDocument.querySelector('#filterArea').querySelector('.input-group-addon').click();
       }if (data.eventType == 'change') {
         var datetime = data.dataCustom.value;var len = data.dataCustom.len;datetime = datetime.slice(0, len);console.log(datetime);elem.ownerDocument.querySelector('#filterArea').querySelector('.input-group-addon').click();var time = elem.ownerDocument.querySelector('#filterArea').querySelector('input[placeholder="选择日期"]');time.focus();time.value = datetime;time.blur();elem.ownerDocument.querySelector('#queryBtn').click();
       }
@@ -73,8 +75,10 @@
         var subContent = ysp.customHelper.getSaleData(elem, ['排名']);var isDrilled = true;if (elem.querySelector('.ui-jqgrid-bdiv') != null) {
           var bdiv = elem && elem.querySelector('.ui-jqgrid-bdiv');var bdiv_table = bdiv && bdiv.querySelector('table');var bdiv_tr = bdiv_table.querySelectorAll('tr');for (var i = 0; i < bdiv_tr.length; i++) {
             var tds = bdiv_tr[i].querySelectorAll('td');for (var j = 0; j < tds.length; j++) {
-              if (tds[j].querySelector('a')) {
-                isDrilled = false;
+              if (tds[j].getAttribute("aria-describedby") && tds[j].getAttribute("aria-describedby").indexOf("rank") == -1) {
+                if (tds[j].querySelector('a')) {
+                  isDrilled = false;
+                }
               }
             }
           }
@@ -246,7 +250,9 @@
     },
     doAction_uiControl110_hRHebt: function (data, elem) {
       if (data.eventType == 'upValue') {
-        var input = elem.ownerDocument.querySelector('input[placeholder="选择日期"]');input.focus();input.value = data.dataCustom;elem.ownerDocument.querySelector('#queryBtn').click();
+        var dataValue = data.dataCustom;var dataLength = dataValue.length;var input = elem.ownerDocument.querySelector("#data_6").querySelector('input[placeholder="选择日期"]');input.focus();input.value = dataValue;if (7 == dataLength) {
+          var month = parseInt(dataValue.substr("5", "7"));var spans = elem.ownerDocument.querySelector(".datepicker-months").querySelector("tbody").querySelectorAll("span");spans[month - 1].click();
+        }elem.ownerDocument.querySelector('#queryBtn').click();
       }
     },
     getTemplate_uiControl110_hRHebt: function getTemplate_uiControl110_hRHebt() {

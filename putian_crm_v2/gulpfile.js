@@ -27,6 +27,25 @@ gulp.task('dev', function() {
         .pipe(gulp.dest('./'));
 });
 
+//修改域名 ip 192.168.220.82:8080 改为 域名 http://vcrm.putiantaili.com.cn
+gulp.task('releaseCom', function() {
+    gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
+        //VRCM 192.168.220.82:8080 环境转移 http://vcrm.putiantaili.com.cn (IP为192.168.1.227)环境
+        .pipe(replace(/http:\\{2}\/\\{2}\/192\\{2}.168\\{2}.220\\{2}.82:8080/gm, 'http:\\\\/\\\\/vcrm\\\\.putiantaili\\\\.com\\\\.cn'))
+        .pipe(replace(/192\.168\.220\.82:8080/gm, 'vcrm.putiantaili.com.cn'))
+        .pipe(replace(/192\.168\.220\.82/gm, 'vcrm.putiantaili.com.cn'))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('devCom', function() {
+    gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
+        //VCRM http://vcrm.putiantaili.com.cn(IP为192.168.1.227) 环境转移 192.168.1.224:8080 环境
+        .pipe(replace(/http:\\{2}\/\\{2}\/vcrm\\{2}.putiantaili\\{2}.com\\{2}.cn/gm, 'http:\\\\/\\\\/192\\\\.168\\\\.220\\\\.82:8080'))
+        .pipe(replace(/vcrm\.putiantaili\.com\.cn/gm, '192.168.220.82:8080'))
+        .pipe(replace(/vcrm\.putiantaili\.com\.cn/gm, '192.168.220.82'))
+        .pipe(gulp.dest('./'));
+});
+
 //174to224
 gulp.task('174to224', function() {
     gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
