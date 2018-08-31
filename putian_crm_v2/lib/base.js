@@ -196,7 +196,7 @@
                 //alert('正在登录中...');
                 //return;
                 ysp.customHelper.statusManager.currentStatus = 'LOADING'; //LOADING 数据加载中 NO_PRIVILEGE 无此权限  LOGINING 登录中 NETWORK_ERROR 网路异常
-                setTimeout(validatePrivilege.bind(_this), 100);
+                setTimeout(validatePrivilege.bind(_this), 5000);
               } else {
                 //alert('没有此权限');
                 ysp.customHelper.statusManager.currentStatus = 'NO_PRIVILEGE';
@@ -220,7 +220,7 @@
             }
           } else {
             ysp.customHelper.statusManager.currentStatus = 'LOADING';
-            setTimeout(validatePrivilege.bind(_this), 100);
+            setTimeout(validatePrivilege.bind(_this), 5000);
             //alert('网络异常');
           }
         }
