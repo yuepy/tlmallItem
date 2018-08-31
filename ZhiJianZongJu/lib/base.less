@@ -4,7 +4,49 @@
 // 发布后，base.less 被编译成 base.css 文件
 body{
   font-family: 'Microsoft YaHei' !important;
+  padding-bottom: 60px !important;
 }
+/*底部导航*/
+.foottabhome{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  >div{
+    font-size: 14px;
+    width: 50%;
+    height: 60px;    
+    padding-top: 34px;
+    color: #0a568c;
+    text-align: center;
+  }
+  .home{
+    background: url(./img/shou-ming.png) no-repeat 50% 14px;
+    background-size: 10%;
+  }
+  .checkhome{
+    background: url(./img/shou-an.png) no-repeat 50% 14px;
+    color: #ccc;
+    background-size: 10%;
+  }
+  .checkself{
+    background: url(./img/geren-ming.png) no-repeat 50% 10px;
+    background-size: 10%;
+    color: #0a568c;
+  }
+  .selfhome{
+    background: url(./img/geren-an.png) no-repeat 50% 10px;
+    background-size: 10%;
+    color: #ccc;
+  }
+}
+/*底部导航*/
+
+
+
 li{
   list-style: none;
 }
@@ -19,7 +61,7 @@ Header{
     padding: 0;
     border: 0;
     background-image: url(./img/ysp-prev.png);
-    background-size: 12px 14px;
+    background-size: 9%;
     background-repeat: no-repeat;
     background-position: 10%;
     font-size: 15px;
@@ -621,7 +663,7 @@ Header{
     .top{
       background-image: url(./img/top.png);
       background-repeat: no-repeat;
-      background-size: 16px 11px;
+      background-size: 4.5%;
       background-position: 96% 16px;
     }
     div:nth-child(1){

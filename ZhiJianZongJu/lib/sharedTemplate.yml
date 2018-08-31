@@ -193,3 +193,14 @@
     if (type == 'click') {
       elem.querySelectorAll('table')[1].querySelectorAll('tr')[data].click();
     }
+- name: 底部导航栏
+  getTemplate: |-
+    import { FootIcon } from 'ysp-custom-components';
+    import { Component } from 'react';
+    export default class extends Component{
+      render(){
+        return(<FootIcon />)
+      }
+    }
+  getData: ''
+  doAction: ''

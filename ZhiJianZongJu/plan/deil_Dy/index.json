@@ -11,6 +11,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -32,6 +36,10 @@
       "location": {
         "data": {
           "tagName": "H1"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -63,13 +71,50 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control67_EaAeLF": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"title\"]/H1[1]",
+              "descendant::DIV[@id=\"title\"]//H1"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/H1[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control67_EaAeLF"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context4_Mn7BMT": {
       "controls": [
         "control1_6CTSeZ",
-        "control2_pX2Dki"
+        "control2_pX2Dki",
+        "control67_EaAeLF"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -117,6 +162,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl66_h5DoyW",
+          "controlId": "control67_EaAeLF",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl66_h5DoyW",
+                "onGetTemplate": "getTemplate_uiControl66_h5DoyW"
+              }
+            }
+          }
         }
       ]
     }
@@ -132,7 +192,8 @@
     "page/urls": {
       "contexts": {
         "context4_Mn7BMT": [
-          "egs.itownet.cn:9080/ecqs_server_web/sysmanage/view_message.jsp?oid=46B29CACC0A838017AF8F062E9243B50&roid=46B69AD2C0A838017AF8F06284F2D744"
+          "egs.itownet.cn:9080/ecqs_server_web/sysmanage/view_message.jsp?oid=46B29CACC0A838017AF8F062E9243B50&roid=46B69AD2C0A838017AF8F06284F2D744",
+          "egs.itownet.cn:9080/ecqs_server_web/sysmanage/view_message.jsp?oid=469F9D8AC0A8380123EC8F33E9A138EC&roid=469FCA19C0A8380123EC8F3343C93A4E"
         ]
       }
     },

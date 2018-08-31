@@ -148,6 +148,63 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control69_7GqVTl": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "@alt",
+            "prob": 2,
+            "value": {
+              "text": [
+                "国家质量监督总站"
+              ]
+            }
+          },
+          {
+            "id": "img/@src",
+            "prob": 1,
+            "value": {
+              "pathname": "/InspMeterMobile/img/index-logo3.png"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]/IMG[1]",
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"header-left\"]//IMG"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.ecqs-container.clearfix IMG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control69_7GqVTl"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -157,7 +214,8 @@
         "control11_3XcZvT",
         "control15_OWbb2m",
         "control41_I0znSz",
-        "control42_wbW7Es"
+        "control42_wbW7Es",
+        "control69_7GqVTl"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -291,6 +349,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl41_ZEr9i0",
                 "onGetTemplate": "getTemplate_uiControl41_ZEr9i0"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl68_lg9gRm",
+          "controlId": "control69_7GqVTl",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl68_lg9gRm",
+                "onGetTemplate": "getTemplate_uiControl68_lg9gRm"
               }
             }
           }

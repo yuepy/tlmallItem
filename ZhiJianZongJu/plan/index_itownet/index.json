@@ -364,6 +364,53 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control66_eTiwpM": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@alt",
+            "prob": 2,
+            "value": {
+              "text": [
+                "logo"
+              ]
+            }
+          },
+          {
+            "id": "img/@src",
+            "prob": 2,
+            "value": {
+              "pathname": "/ecqs_server_web/images/main/main_logo.png"
+            }
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.layout-panel.layout-panel-north DIV.logo.panel-body.panel-body-noheader.layout-body DIV.pf-logo IMG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control66_eTiwpM"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -373,7 +420,8 @@
         "control18_rUQaO8",
         "control0_RoUGcz",
         "control19_OqWGTq",
-        "control40_6TvnsZ"
+        "control40_6TvnsZ",
+        "control66_eTiwpM"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -548,6 +596,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl0_mCp0IF",
                 "onGetTemplate": "getTemplate_uiControl0_mCp0IF"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl65_XAxCVc",
+          "controlId": "control66_eTiwpM",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl65_XAxCVc",
+                "onGetTemplate": "getTemplate_uiControl65_XAxCVc"
               }
             }
           }

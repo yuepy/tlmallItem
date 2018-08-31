@@ -100,6 +100,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -121,6 +125,63 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control72_FU2pIE": {
+      "location": {
+        "data": {
+          "tagName": "IMG"
+        },
+        "locators": [
+          {
+            "id": "@alt",
+            "prob": 2,
+            "value": {
+              "text": [
+                "国家质量监督总站"
+              ]
+            }
+          },
+          {
+            "id": "img/@src",
+            "prob": 1,
+            "value": {
+              "pathname": "/InspMeterMobile/img/index-logo3.png"
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]/IMG[1]",
+              "descendant::DIV[@id=\"base-header\"]//DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"ecqs-header\"]//DIV[@id=\"header-left\"]//IMG",
+              "descendant::DIV[@id=\"header-left\"]//IMG"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.ecqs-container.clearfix IMG"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/IMG[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control72_FU2pIE"
+      },
+      "intendedRole": "custom",
+      "roles": "element,image,button,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -129,7 +190,8 @@
         "control12_UF5UM1",
         "control13_3znx5x",
         "control14_A3AtPE",
-        "control8_eVP6Mt"
+        "control8_eVP6Mt",
+        "control72_FU2pIE"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -214,6 +276,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl11_uzrrgb",
                 "onGetTemplate": "getTemplate_uiControl11_uzrrgb"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl71_CJ2VWX",
+          "controlId": "control72_FU2pIE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl71_CJ2VWX",
+                "onGetTemplate": "getTemplate_uiControl71_CJ2VWX"
               }
             }
           }
@@ -513,6 +590,125 @@
             "window-header",
             "window-mask",
             "window-shadow"
+          ],
+          [
+            "Orange_but",
+            "basic-radio",
+            "blue_but",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-dtable",
+            "calendar-first",
+            "calendar-header",
+            "calendar-last",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nav",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-text",
+            "calendar-title",
+            "calendar-today",
+            "clearfix",
+            "col",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combobox-f",
+            "combobox-item",
+            "combobox-item-selected",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-appointmentId",
+            "datagrid-cell-c-assignOrgName",
+            "datagrid-cell-c-assignTime",
+            "datagrid-cell-c-assigneeName",
+            "datagrid-cell-c-assigneeStaus",
+            "datagrid-cell-c-ck",
+            "datagrid-cell-c-meterIntruName",
+            "datagrid-cell-c-porgaoName",
+            "datagrid-cell-c-reservatAdminName",
+            "datagrid-cell-c-serialNum",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-pager",
+            "datagrid-row",
+            "datagrid-row-alt",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-view",
+            "datagrid-wrap",
+            "datebox",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "easyui-combobox",
+            "easyui-datebox",
+            "easyui-fluid",
+            "easyui-textbox",
+            "ecqs-container",
+            "form-control",
+            "header-logo",
+            "info-bottom",
+            "info-top",
+            "l-btn",
+            "l-btn-disabled",
+            "l-btn-empty",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-plain-disabled",
+            "l-btn-small",
+            "l-btn-text",
+            "pagination",
+            "pagination-btn-separator",
+            "pagination-first",
+            "pagination-info",
+            "pagination-last",
+            "pagination-load",
+            "pagination-next",
+            "pagination-num",
+            "pagination-page-list",
+            "pagination-prev",
+            "panel",
+            "panel-body",
+            "panel-body-noheader",
+            "panel-noscroll",
+            "textbox",
+            "textbox-addon",
+            "textbox-addon-right",
+            "textbox-f",
+            "textbox-icon",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "title-line",
+            "title-line-blue",
+            "title-line-grey",
+            "validatebox-text"
           ]
         ]
       }

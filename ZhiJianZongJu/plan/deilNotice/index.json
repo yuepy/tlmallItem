@@ -3,6 +3,9 @@
   "id": "deilNotice",
   "targetURL": "http://egs.itownet.cn:9080/ecqs_server_web/sysmanage/view_sys_message.jsp?oid=46A228F9C0A8380123EC8F331CC527D2",
   "jsFile": "index.js",
+  "requires": {
+    "index_itownet": "../index_itownet/index.json"
+  },
   "chineseName": "公告详情页",
   "description": "",
   "controls": {
@@ -51,6 +54,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -67,13 +74,50 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control68_Vg2KVi": {
+      "location": {
+        "data": {
+          "tagName": "H1"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"title\"]/H1[1]",
+              "descendant::DIV[@id=\"title\"]//H1"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/H1[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control68_Vg2KVi"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context8_R7ZlCw": {
       "controls": [
         "control26_gWTnBn",
-        "control4_KbFuc5"
+        "control4_KbFuc5",
+        "control68_Vg2KVi"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -84,6 +128,10 @@
       "toContexts": [
         {
           "toContextId": "context8_R7ZlCw"
+        },
+        {
+          "toContextId": "context1_tCLsmq",
+          "toModelId": "index_itownet"
         }
       ]
     }
@@ -118,6 +166,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl4_pPrcFA",
                 "onGetTemplate": "getTemplate_uiControl4_pPrcFA"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl67_qNZl43",
+          "controlId": "control68_Vg2KVi",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl67_qNZl43",
+                "onGetTemplate": "getTemplate_uiControl67_qNZl43"
               }
             }
           }
