@@ -189,6 +189,10 @@
         "data": {
           "tagName": "IMG"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@alt",
@@ -240,6 +244,39 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control73_OLiyze": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.window DIV.messager-body.panel-body.panel-body-noborder.window-body"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[11]/DIV[2]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control73_OLiyze"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -251,7 +288,8 @@
         "control59_I8Inzr",
         "control60_nE2USE",
         "control61_N7Lmdu",
-        "control71_CeTuEA"
+        "control71_CeTuEA",
+        "control73_OLiyze"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -415,6 +453,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl60_UC03iZ",
                 "onGetTemplate": "getTemplate_uiControl60_UC03iZ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl72_VT9um9",
+          "controlId": "control73_OLiyze",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl72_VT9um9",
+                "onGetTemplate": "getTemplate_uiControl72_VT9um9"
               }
             }
           }
@@ -957,6 +1010,147 @@
             "datagrid-htable",
             "datagrid-pager",
             "datagrid-row",
+            "datagrid-sort-icon",
+            "datagrid-td-rownumber",
+            "datagrid-view",
+            "datagrid-wrap",
+            "datebox",
+            "datebox-calendar-inner",
+            "datebox-f",
+            "dialog-Character",
+            "dialog-Character-label",
+            "dialog-Character-td",
+            "easyui-combobox",
+            "easyui-datebox",
+            "easyui-dialog",
+            "easyui-fluid",
+            "easyui-form",
+            "easyui-textbox",
+            "ecqs-container",
+            "form-control",
+            "header-logo",
+            "info-bottom",
+            "info-top",
+            "ipt",
+            "l-btn",
+            "l-btn-disabled",
+            "l-btn-empty",
+            "l-btn-icon",
+            "l-btn-icon-left",
+            "l-btn-left",
+            "l-btn-plain",
+            "l-btn-plain-disabled",
+            "l-btn-small",
+            "l-btn-text",
+            "messager-body",
+            "pagination",
+            "pagination-btn-separator",
+            "pagination-first",
+            "pagination-info",
+            "pagination-last",
+            "pagination-load",
+            "pagination-next",
+            "pagination-num",
+            "pagination-page-list",
+            "pagination-prev",
+            "panel",
+            "panel-body",
+            "panel-body-noborder",
+            "panel-body-noheader",
+            "panel-header",
+            "panel-header-noborder",
+            "panel-noscroll",
+            "panel-title",
+            "panel-tool",
+            "panel-tool-close",
+            "textbox",
+            "textbox-addon",
+            "textbox-addon-right",
+            "textbox-f",
+            "textbox-icon",
+            "textbox-prompt",
+            "textbox-text",
+            "textbox-value",
+            "title-line",
+            "title-line-blue",
+            "title-line-grey",
+            "validatebox-text",
+            "window",
+            "window-body",
+            "window-header",
+            "window-mask",
+            "window-shadow"
+          ],
+          [
+            "Orange_but",
+            "basic-radio",
+            "blue_but",
+            "calendar",
+            "calendar-body",
+            "calendar-day",
+            "calendar-dtable",
+            "calendar-first",
+            "calendar-header",
+            "calendar-last",
+            "calendar-menu",
+            "calendar-menu-month-inner",
+            "calendar-menu-next",
+            "calendar-menu-prev",
+            "calendar-menu-year",
+            "calendar-menu-year-inner",
+            "calendar-nav",
+            "calendar-nextmonth",
+            "calendar-nextyear",
+            "calendar-other-month",
+            "calendar-prevmonth",
+            "calendar-prevyear",
+            "calendar-saturday",
+            "calendar-selected",
+            "calendar-sunday",
+            "calendar-text",
+            "calendar-title",
+            "calendar-today",
+            "clearfix",
+            "col",
+            "combo",
+            "combo-arrow",
+            "combo-f",
+            "combo-p",
+            "combo-panel",
+            "combobox-f",
+            "combobox-item",
+            "combobox-item-selected",
+            "daili",
+            "datagrid",
+            "datagrid-body",
+            "datagrid-body-inner",
+            "datagrid-btable",
+            "datagrid-cell",
+            "datagrid-cell-c-accuracyLevel",
+            "datagrid-cell-c-applyCompanyName",
+            "datagrid-cell-c-checkResult",
+            "datagrid-cell-c-expiryDate",
+            "datagrid-cell-c-instrPurposeCode",
+            "datagrid-cell-c-measureRang",
+            "datagrid-cell-c-meterIntruName",
+            "datagrid-cell-c-meterStatus",
+            "datagrid-cell-c-modelSpec",
+            "datagrid-cell-c-serialNum",
+            "datagrid-cell-check",
+            "datagrid-cell-rownumber",
+            "datagrid-f",
+            "datagrid-footer",
+            "datagrid-footer-inner",
+            "datagrid-header",
+            "datagrid-header-check",
+            "datagrid-header-inner",
+            "datagrid-header-row",
+            "datagrid-header-rownumber",
+            "datagrid-htable",
+            "datagrid-pager",
+            "datagrid-row",
+            "datagrid-row-checked",
+            "datagrid-row-selected",
             "datagrid-sort-icon",
             "datagrid-td-rownumber",
             "datagrid-view",
