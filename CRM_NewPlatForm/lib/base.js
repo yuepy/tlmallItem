@@ -62,7 +62,8 @@
   //var topWin = null;
   var topWin = top;
   var loginWin = null;
-  //IOS客户端调用.解决请求ICON接口跨域问题;
+  var FlagNum=0;//接口次数计数  超过十 停止重置
+  //IOS客户端调用.解决请求ICON接口跨域问题;
   topWin.GetIconNum = function(summary,atMe){
     if(!summary && !atMe || summary == 'error'){
       console.error('ICON接口请求未通过,请查找原因!');
@@ -193,7 +194,12 @@
         if (xhr.status == 200 && xhr.status < 300 || xhr.status == 304 && !getAllMenuStatus) {
           if (xhr.responseText == '{"isHaveSession":"no"}') {
             console.info('系统正在登录中...');
-            setTimeout(getAllMenu.bind(_this), 3000);
+            if(FlagNum<10){
+              setTimeout(getAllMenu(), 3000);
+            }else{
+              FlagNum = 0;
+            }
+            
           } else if (xhr.status == 200 && xhr.readyState == 4) {
             if(top.EAPI.isIOS()){
               top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
@@ -233,9 +239,14 @@
         } else if (xhr.status >= 400) {
           console.warn('请求失败,可能正在登陆中,3s后重新请求');
           //3s后重新请求菜单列表
-          setTimeout(function () {
-            getAllMenu();
-          }, 3000);
+          if(FlagNum<10){
+            FlagNum+=1;
+            setTimeout(function () {
+            	getAllMenu();
+          	}, 3000);
+          }else{
+            FlagNum=0;
+          }
         }
       };
       xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
