@@ -173,7 +173,7 @@
     function validatePrivilege() {
       var _this = this;
       if(!topWin){
-        setTimeout(validatePrivilege.bind(_this), 3000);//如果topWin无值的话，请睡三秒
+        //setTimeout(validatePrivilege.bind(_this), 3000);//如果topWin无值的话，请睡三秒
         return;
       }
       var xhr = new topWin.XMLHttpRequest();
@@ -187,7 +187,7 @@
             var menuInfo = xhr.responseText;
             if(menuInfo == '{"isHaveSession":"no"}'){
               //win.reload();
-              setTimeout(validatePrivilege.bind(_this), 3000);
+              setTimeout(validatePrivilege(), 3000);
             }
             if (menuInfo.indexOf(operation) == -1) {
               //flag = true; //如果没有权限的话，监控马上终止
@@ -196,7 +196,7 @@
                 //alert('正在登录中...');
                 //return;
                 ysp.customHelper.statusManager.currentStatus = 'LOADING'; //LOADING 数据加载中 NO_PRIVILEGE 无此权限  LOGINING 登录中 NETWORK_ERROR 网路异常
-                setTimeout(validatePrivilege.bind(_this), 5000);
+                //setTimeout(validatePrivilege.bind(_this), 5000);
               } else {
                 //alert('没有此权限');
                 ysp.customHelper.statusManager.currentStatus = 'NO_PRIVILEGE';
@@ -220,7 +220,7 @@
             }
           } else {
             ysp.customHelper.statusManager.currentStatus = 'LOADING';
-            setTimeout(validatePrivilege.bind(_this), 5000);
+            //setTimeout(validatePrivilege.bind(_this), 5000);
             //alert('网络异常');
           }
         }
