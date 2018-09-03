@@ -176,23 +176,11 @@
         //setTimeout(validatePrivilege.bind(_this), 3000);//如果topWin无值的话，请睡三秒
         return;
       }
-      var xhr = new topWin.XMLHttpRequest();
-      xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListNew', true);
-      xhr.error = function(e) {
-        console.error(e);
-      }
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === topWin.XMLHttpRequest.DONE) {
-          if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
-            var menuInfo = xhr.responseText;
-            if(menuInfo == '{"isHaveSession":"no"}'){
-              //win.reload();
-              setTimeout(validatePrivilege(), 3000);
-            }
-            if (menuInfo.indexOf(operation) == -1) {
+      var menuInfo = ysp.runtime.Browser.activeBrowser.contentWindow.localStorage.getItem('menuList');
+      if (menuInfo.indexOf(operation) == -1) {
               //flag = true; //如果没有权限的话，监控马上终止
-              menuInfo = JSON.parse(menuInfo);
-              if (menuInfo.isHaveSession && menuInfo.isHaveSession == 'no') {
+              menuInfo = ysp.runtime.Browser.activeBrowser.contentWindow.localStorage.getItem('menuList');
+              if (menuInfo == '') {
                 //alert('正在登录中...');
                 //return;
                 ysp.customHelper.statusManager.currentStatus = 'LOADING'; //LOADING 数据加载中 NO_PRIVILEGE 无此权限  LOGINING 登录中 NETWORK_ERROR 网路异常
@@ -216,16 +204,66 @@
               //return;
             } else {
               ysp.customHelper.statusManager.currentStatus = 'LOADING';
-              execute();
-            }
-          } else {
-            ysp.customHelper.statusManager.currentStatus = 'LOADING';
-            //setTimeout(validatePrivilege.bind(_this), 5000);
-            //alert('网络异常');
-          }
-        }
-      }
-      xhr.send(null);
+              setTimeout(function(){
+                execute();
+              },0)
+              
+            } 
+      //修改服务器请求崩溃问题
+//       if(!topWin){
+//       //setTimeout(validatePrivilege.bind(_this), 3000);//如果topWin无值的话，请睡三秒
+//       return;
+//       }
+//       var xhr = new topWin.XMLHttpRequest();
+//       xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListNew', true);
+//       xhr.error = function(e) {
+//         console.error(e);
+//       }
+//       xhr.onreadystatechange = function() {
+//         if (xhr.readyState === topWin.XMLHttpRequest.DONE) {
+//           if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+//             var menuInfo = xhr.responseText;
+//             if(menuInfo == '{"isHaveSession":"no"}'){
+//               //win.reload();
+//               setTimeout(validatePrivilege(), 3000);
+//             }
+//             if (menuInfo.indexOf(operation) == -1) {
+//               //flag = true; //如果没有权限的话，监控马上终止
+//               menuInfo = JSON.parse(menuInfo);
+//               if (menuInfo.isHaveSession && menuInfo.isHaveSession == 'no') {
+//                 //alert('正在登录中...');
+//                 //return;
+//                 ysp.customHelper.statusManager.currentStatus = 'LOADING'; //LOADING 数据加载中 NO_PRIVILEGE 无此权限  LOGINING 登录中 NETWORK_ERROR 网路异常
+//                 //setTimeout(validatePrivilege.bind(_this), 5000);
+//               } else {
+//                 //alert('没有此权限');
+//                 ysp.customHelper.statusManager.currentStatus = 'NO_PRIVILEGE';
+//                 var rtWin = ysp.customHelper.getRTWin();
+//                 if (rtWin && rtWin.frames) {
+//                   var frames = rtWin.frames;
+//                   ysp.runtime.Model.setForceMatchModels(['index']);
+//                   [].forEach.call(frames, function(frame) {
+//                     if (frame.name != 'sourcePageFrame') {
+//                       frame.close();
+//                     }
+//                   });
+//                 }
+//                 //parent.EAPI.back();
+//               }
+
+//               //return;
+//             } else {
+//               ysp.customHelper.statusManager.currentStatus = 'LOADING';
+//               execute();
+//             }
+//           } else {
+//             ysp.customHelper.statusManager.currentStatus = 'LOADING';
+//             //setTimeout(validatePrivilege.bind(_this), 5000);
+//             //alert('网络异常');
+//           }
+//         }
+//       }
+//       xhr.send(null);
     }
     validatePrivilege();
     //写一个方法,刚进入页面弹出一个alert提示加载中.500ms后自动关闭
