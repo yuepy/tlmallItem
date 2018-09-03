@@ -22,10 +22,7 @@
     ],
     "Accept-Language": "zh-Hans-CN",
     "resource_intercept": {
-      "type": [
-        "image",
-        "css"
-      ],
+      "type": [],
       "ignore": []
     },
     "resource_inject": [],
@@ -57,17 +54,17 @@
     },
     {
       "origin_url": [
-        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js.*"
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js"
       ],
       "target_url": "override/common.js",
-      "default_url": "http://192.168.220.51:8000/ptsoa/bps/wfclient/common/js/common.js.*"
+      "default_url": "http://192.168.220.51:8000/ptsoa/bps/wfclient/common/js/common.js"
     },
     {
       "origin_url": [
-        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/themes\\/default\\/miniui\\.css.*"
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/themes\\/default\\/miniui\\.css"
       ],
       "target_url": "override/miniui.css",
-      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/themes/default/miniui.css.*"
+      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/themes/default/miniui.css"
     },
     {
       "origin_url": [
@@ -324,5 +321,5 @@
   "scope": "putianBPM1",
   "start_url": "enterplorer://putianBPM1/local/index.html",
   "fixed_version": 1,
-  "update_time": 1535609082414
+  "update_time": 1535959825745
 }
