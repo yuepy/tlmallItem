@@ -1,11 +1,10 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control6_RWT0cx: function (elem) {
-      if (elem && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1) {
+      if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("查看下属考勤") == -1) {
         return "未授权";
       }
-    },
-    doAction_uiControl6_PZE4AI: function (data, elem) {
+    }, doAction_uiControl6_PZE4AI: function (data, elem) {
       var type = data.eventType;if (type == "back") {
         var backVal = ysp.customHelper.tab;top.EAPI.closeWindow();
       }
@@ -21,7 +20,7 @@
           data.managerSelect = true;
         }if (managerLi && managerLi.parentElement.getAttribute("id") == "selected" && elem.textContent.indexOf("查看下属考勤、休假、加班信息") !== -1) {
           data.managerContent = "存在";
-        }if (elem.ownerDocument.body.textContent.indexOf("假期申请") == -1) {
+        }if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("查看下属考勤") == -1) {
           data.flag = "未授权";
         }return data;
       } else {
@@ -64,7 +63,7 @@
     },
     getData_control106_QdzPdD: function (elem) {
       if (elem) {
-        var dataList = { flag: "", data: { self: [], manager: [], selected: "" } };var tab = elem.querySelector("ul[role='tablist']");if (elem.ownerDocument.body.textContent.indexOf("假期申请") == -1) {
+        var dataList = { flag: "", data: { self: [], manager: [], selected: "" } };var tab = elem.querySelector("ul[role='tablist']");if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("查看下属考勤") == -1) {
           dataList.flag = "未授权";
         }if (tab) {
           // var data = {

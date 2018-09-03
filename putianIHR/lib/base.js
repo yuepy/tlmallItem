@@ -52,7 +52,18 @@
                 btn.click();
             }
           	//index页重定向
-          	if(aWin.location.href.indexOf("http://192.168.220.110:8080/putianHR/toHome")!==-1){
+          	
+          	if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_PAG_010_CP")!==-1){
+              aWin.location.href="http://192.168.220.110/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL";
+            }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_047_CP")!==-1){
+              aWin.location.href="http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_047_CP.GBL";
+            }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_002")!==-1){
+              aWin.location.href="http://192.168.220.110/psp/ps_3/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_002.GBL";
+            }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_001")!==-1){
+              aWin.location.href="http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL";
+            }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_004")!==-1){
+              aWin.location.href="http://192.168.220.110/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_004.GBL";
+            }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("TL_SELF")!==-1){
               aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
             }
             //每个tab页面的切换
@@ -103,6 +114,10 @@
               doc.querySelector("#userid").value=sessionStorage.getItem("userid");
               doc.querySelector("#pwd").value=sessionStorage.getItem("pwd");
             }
+          	//正式环境更多登录进去后地址变成https://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?
+          	if(aWin.location.href=="https://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?"){
+              aWin.location.href="https://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
+            }
           	// 用户名、密码记录
           	if(doc.querySelector("#login_error")&&(doc.querySelector("#login_error").textContent.indexOf("您已请求了一个安全资源")!==-1||doc.querySelector("#login_error").textContent.indexOf("验证码校验超时")!==-1)){
               var timer=setInterval(function(){
@@ -137,6 +152,7 @@
               
             }
           }
+          
           // alert(aWin.location.href)
           //hr前五个快捷入口加载不出来的解决办法
           // var href=aWin.location.href;
