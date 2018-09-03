@@ -203,37 +203,14 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control176_X8MgTb": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.detail-box"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control176_X8MgTb"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control275_2EgUIJ": {
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -264,6 +241,28 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control253_wPBgTz": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control253_wPBgTz"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -273,8 +272,8 @@
         "control89_EwPocV",
         "control116_QcA22u",
         "control124_1ZAE1L",
-        "control176_X8MgTb",
-        "control275_2EgUIJ"
+        "control275_2EgUIJ",
+        "control253_wPBgTz"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -318,20 +317,20 @@
         }
       ]
     },
-    "flow230_BxEzTP": {
+    "flow276_HgdrXi": {
       "fromContextId": "context91_3yemwg",
       "fromAction": "doAction",
-      "fromControlId": "control176_X8MgTb",
+      "fromControlId": "control275_2EgUIJ",
       "toContexts": [
         {
           "toContextId": "context91_3yemwg"
         }
       ]
     },
-    "flow276_HgdrXi": {
+    "flow230_rkqIw1": {
       "fromContextId": "context91_3yemwg",
       "fromAction": "doAction",
-      "fromControlId": "control275_2EgUIJ",
+      "fromControlId": "control253_wPBgTz",
       "toContexts": [
         {
           "toContextId": "context91_3yemwg"
@@ -359,16 +358,16 @@
           }
         },
         {
-          "id": "uiControl122_P8WaOf",
-          "controlId": "control176_X8MgTb",
+          "id": "uiControl173_btOVow",
+          "controlId": "control253_wPBgTz",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl122_P8WaOf",
-                "onGetTemplate": "getTemplate_uiControl122_P8WaOf"
+                "onDoAction": "doAction_uiControl173_btOVow",
+                "onGetTemplate": "getTemplate_uiControl173_btOVow"
               }
             }
           }
@@ -452,7 +451,8 @@
           "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDgvMTYvMjAxOCAxNDoxNzoxMA&username=WANGDONG&clickLi=true",
           "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDgvMTYvMjAxOCAxNTozNzozMg==&username=WANGDONG&a=1",
           "192.168.220.81:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMDEvMjAxOCAxNjo1NTo1Nw==&username=WANGDONG&a=1",
-          "192.168.220.81:8080/ptDataShow/reportNew/reportsByPid?reportPid=report1&reportId=report1-1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMDEvMjAxOCAxNzowNTo1NA&username=WANGDONG&a=1&click_department=%E4%B8%89%E6%98%9F%E4%B8%9A%E5%8A%A1%E4%BA%8B%E4%B8%9A%E9%83%A8&month=2018-06"
+          "192.168.220.81:8080/ptDataShow/reportNew/reportsByPid?reportPid=report1&reportId=report1-1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMDEvMjAxOCAxNzowNTo1NA&username=WANGDONG&a=1&click_department=%E4%B8%89%E6%98%9F%E4%B8%9A%E5%8A%A1%E4%BA%8B%E4%B8%9A%E9%83%A8&month=2018-06",
+          "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMDMvMjAxOCAxMDoxNToxMQ==&username=WANGDONG&a=1"
         ]
       }
     },
