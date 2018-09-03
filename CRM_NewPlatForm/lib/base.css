@@ -14843,6 +14843,12 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
   color: #e32d12;
 }
 .ysp-tableList-boxSum {
+  /*** width:100%;
+  position:fixed;
+  bottom:10px;为为了使总额固定在当前浏览器窗口的最下面的布局样式**/
+  width: 100%;
+  position: fixed;
+  bottom: 10px;
   background-color: #fff;
   margin-top: 20px;
   box-shadow: 0 -1px 7px rgba(0, 0, 0, 0.1);
