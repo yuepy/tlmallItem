@@ -239,6 +239,33 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control74_AG95oa": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.panel.window"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[5]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control74_AG95oa"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -250,7 +277,8 @@
         "control33_5P7ZlT",
         "control34_GOSLPz",
         "control35_z11Gzi",
-        "control49_GfmIyU"
+        "control49_GfmIyU",
+        "control74_AG95oa"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -415,6 +443,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl48_TtTNzw",
                 "onGetTemplate": "getTemplate_uiControl48_TtTNzw"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl73_BCsTMU",
+          "controlId": "control74_AG95oa",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl73_BCsTMU",
+                "onGetTemplate": "getTemplate_uiControl73_BCsTMU"
               }
             }
           }
