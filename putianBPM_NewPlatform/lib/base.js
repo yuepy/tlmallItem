@@ -7,6 +7,7 @@
     var loginWin = null;
     var forEach = Array.prototype.forEach;
     var topWindow = window.top;
+  	var in18 = []; // 更改加载地址
     topWindow.AndriodCardList = '';
     topWindow.num = 0;
     topWindow.IOSBPMCard = function(u, n) {
@@ -236,79 +237,79 @@
                     this.endUpdate()
                 }
             }
-//             aWin.doOperate = function(rowIndex, isShowDetail, newPage) {
+            aWin.doOperate = function(rowIndex, isShowDetail, newPage) {
 
-//                     // var row = aWin.taskListDataGridObj.getRow(rowIndex);
-//                     // var url = aWin.contextPath + "/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=" + row.workItemID + "&newPage=" + newPage;
-//                     // if (isShowDetail) {
-//                     //   url = aWin.contextPath + "/bps/wfclient/task/task.jsp";
-//                     //   //width=800;
-//                     // } else if (aWin.taskType == "entrust") {
-//                     //   url = aWin.contextPath + "/bps/wfclient/task/task.jsp";
-//                     //   //width=800;
-//                     // }
-//                     var row = aWin.taskListDataGridObj.getRow(rowIndex);
-//                     var url = aWin.contextPath + "/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=" + row.workItemID + "&newPage=" + newPage;
-//                     var title = "工作项执行";
-//                     var width = 850;
-//                     var topWin = ysp.customHelper.getTop(aWin);
-//                     topWin.history.pushState(url, null, url);
-//                     if (isShowDetail) {
-//                         url = aWin.contextPath + "/bps/wfclient/task/task.jsp";
-//                         title = "工作项详细信息";
-//                         //width=800;
-//                     } else if (aWin.taskType == "entrust") {
-//                         url = aWin.contextPath + "/bps/wfclient/task/task.jsp";
-//                         title = "收回工作项";
-//                         //width=800;
-//                     }
+                    // var row = aWin.taskListDataGridObj.getRow(rowIndex);
+                    // var url = aWin.contextPath + "/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=" + row.workItemID + "&newPage=" + newPage;
+                    // if (isShowDetail) {
+                    //   url = aWin.contextPath + "/bps/wfclient/task/task.jsp";
+                    //   //width=800;
+                    // } else if (aWin.taskType == "entrust") {
+                    //   url = aWin.contextPath + "/bps/wfclient/task/task.jsp";
+                    //   //width=800;
+                    // }
+                    var row = aWin.taskListDataGridObj.getRow(rowIndex);
+                    var url = aWin.contextPath + "/bps/wfclient/task/dispatchTaskExecute.jsp?workItemID=" + row.workItemID + "&newPage=" + newPage;
+                    var title = "工作项执行";
+                    var width = 850;
+                    var topWin = ysp.customHelper.getTop(aWin);
+                    topWin.history.pushState(url, null, url);
+                    if (isShowDetail) {
+                        url = aWin.contextPath + "/bps/wfclient/task/task.jsp";
+                        title = "工作项详细信息";
+                        //width=800;
+                    } else if (aWin.taskType == "entrust") {
+                        url = aWin.contextPath + "/bps/wfclient/task/task.jsp";
+                        title = "收回工作项";
+                        //width=800;
+                    }
 
-//                     aWin.nui.open({
-//                         url: url,
-//                         title: title,
-//                         width: 1200,
-//                         height: 650,
-//                         showMaxButton: true,
-//                         onload: function() {
-//                             var iframe = this.getIFrameEl();
+                    aWin.nui.open({
+                        url: url,
+                        title: title,
+                        width: 1200,
+                        height: 650,
+                        showMaxButton: true,
+                        onload: function() {
+                            var iframe = this.getIFrameEl();
 
-//                             //if(top.pendTitle&&top.pendTitle=="总部转正"){
-//                             //topWin.test="Headquarters&";
-//                             //}else if(top.pendTitle&&top.pendTitle=="分公司离职管理流程(解除)"){
-//                             //topWin.test="branchRelease&";
-//                             //}else if(top.pendTitle&&top.pendTitle=="离职管理"){
-//                             //topWin.test="Departure&";
-//                             //}else if(top.pendTitle&&top.pendTitle=="员工职位变动"){
-//                             //topWin.test="positionChange&";
-//                             //}else if(top.pendTitle&&top.pendTitle=="假期申请"){
-//                             //topWin.test="askForLeave&";
-//                             // }else if(top.pendTitle&&top.pendTitle=="销假申请"){
-//                             //topWin.test="beginToWork&";
-//                             //}else if(top.pendTitle&&top.pendTitle=="忘打卡"){
-//                             //  topWin.test="forgetCard&";
-//                             //}else if (top.pendTitle&&top.pendTitle=="加班申请") {
-//                             // topWin.test="addWork&";
-//                             //}else if (top.pendTitle&&top.pendTitle=="外派探亲资格") {
-//                             //  topWin.test="visitRelative&";
-//                             //}else if (top.pendTitle&&top.pendTitle=="员工录用") {
-//                             // topWin.test="employeeHire&";
-//                             //}else{
-//                             //  topWin.test="test&";
-//                             //}
+                            //if(top.pendTitle&&top.pendTitle=="总部转正"){
+                            //topWin.test="Headquarters&";
+                            //}else if(top.pendTitle&&top.pendTitle=="分公司离职管理流程(解除)"){
+                            //topWin.test="branchRelease&";
+                            //}else if(top.pendTitle&&top.pendTitle=="离职管理"){
+                            //topWin.test="Departure&";
+                            //}else if(top.pendTitle&&top.pendTitle=="员工职位变动"){
+                            //topWin.test="positionChange&";
+                            //}else if(top.pendTitle&&top.pendTitle=="假期申请"){
+                            //topWin.test="askForLeave&";
+                            // }else if(top.pendTitle&&top.pendTitle=="销假申请"){
+                            //topWin.test="beginToWork&";
+                            //}else if(top.pendTitle&&top.pendTitle=="忘打卡"){
+                            //  topWin.test="forgetCard&";
+                            //}else if (top.pendTitle&&top.pendTitle=="加班申请") {
+                            // topWin.test="addWork&";
+                            //}else if (top.pendTitle&&top.pendTitle=="外派探亲资格") {
+                            //  topWin.test="visitRelative&";
+                            //}else if (top.pendTitle&&top.pendTitle=="员工录用") {
+                            // topWin.test="employeeHire&";
+                            //}else{
+                            //  topWin.test="test&";
+                            //}
 
-//                             if (iframe.contentWindow.initData) {
-//                                 iframe.contentWindow.initData(row, aWin.taskType, isShowDetail);
-//                             }
-//                         },
-//                         ondestroy: function(action) {
-//                             if (action == "ok") {
-//                                 aWin.taskListDataGridObj.load();
-//                             } else if (action == "execute") {
-//                                 aWin.doOperate(rowIndex, false, newPage);
-//                             }
-//                         }
-//                     });
-//                 }
+                            if (iframe.contentWindow.initData) {
+                                iframe.contentWindow.initData(row, aWin.taskType, isShowDetail);
+                            }
+                        },
+                        ondestroy: function(action) {
+                            if (action == "ok") {
+                                aWin.taskListDataGridObj.load();
+                            } else if (action == "execute") {
+                                aWin.doOperate(rowIndex, false, newPage);
+                            }
+                        }
+                    });
+                }
                 /////////////////////////////////////
 
             //#############################################override pc function end##################################
@@ -334,7 +335,6 @@
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-
             //aWin.alert=topWin.alert.bind(aWin);
             // 插入隐藏input的css
             var testCSS = doc.createElement('style');
@@ -364,6 +364,18 @@
 
 
             aWin.addEventListener('DOMContentLoaded', function() {
+              	var in18Str = doc.querySelectorAll('script');
+                [].forEach.call(in18Str,function(item,index){
+                  if(item){
+                    if(item.src.indexOf('i18n')!==-1){
+                      if(item.src.indexOf('HANS')!=-1){
+                        item.src = item.src.replace('HANS_','');
+                      	in18.push(item.src);
+                      }
+                    }
+                  }
+                })
+                  console.log(in18);
                 if (topWindow.EAPI.isIOS()) {
                   //判断当前移动端应该跳转目标页面标识
                     if(aWin.location.href.indexOf('app/appMyTask.jsp') != -1){
