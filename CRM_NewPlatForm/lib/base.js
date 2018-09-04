@@ -186,74 +186,114 @@
     xhr.send()
   }
   // 请求首页面所有一级\二级\三级菜单
-  function getAllMenu() {
-    var _this = this;
-    if(window.XMLHttpRequest){
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function () {
-        if (xhr.status == 200 && xhr.status < 300 || xhr.status == 304 && !getAllMenuStatus) {
-          if (xhr.responseText == '{"isHaveSession":"no"}') {
-            console.info('系统正在登录中...');
-            if(FlagNum<10){
-              setTimeout(getAllMenu(), 3000);
-            }else{
-              FlagNum = 0;
-            }
-            
-          } else if (xhr.status == 200 && xhr.readyState == 4) {
-            if(top.EAPI.isIOS()){
-              top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
-            }else{
-            	AndroidGetIconNum(); // 安卓端ICON数量取值;
-            }
-            getAllMenuStatus = true; 
-            //此状态说明当前已经全部拿到PC端所有菜单信息;
-            var AllMenu = JSON.parse(xhr.response);
-            //当前方法为接口只存在移动端菜单时可以直接想ALLMENU里面添加菜单信息
-            ALLMENU = AllMenu;
-            //console.log(ALLMENU)
-            //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
-            //AllMobileMenu(AllMenu);
-            //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
-            if(ALLMENU != '' && AllMenu){
-               var SessionXhr = new XMLHttpRequest();
-               SessionXhr.onreadystatechange = function(){
-                if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
-                  var encoder = JSON.parse(SessionXhr.response).encoder;
-                  var userId = JSON.parse(SessionXhr.response).userId;
-                  if(encoder && userId){
-                    var encoderXHR = new XMLHttpRequest();
-                    //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-                  encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-                    //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
-                    encoderXHR.send();
-                  }else{
-                    console.error('AndEncoder接口请求失败!')
-                  }
+  function getAllMenu(aWin) {
+   	//取值localStorage内接口数据,进行菜单渲染
+    var _this = this;
+    if(aWin.localStorage.listMenuForMobile){
+      var AllMenu = JSON.parse(decodeURIComponent(aWin.localStorage.listMenuForMobile));
+      if(AllMenu == '' || AllMenu == '{"isHaveSession":"no"}'){
+        console.error('当前菜单为空,具体原因为PC端未将菜单传入');
+        alert('请双击刷新低栏VCRM图标,重新加载');
+      }else{
+        if(top.EAPI.isIOS()){
+          top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
+        }else{
+          AndroidGetIconNum(); // 安卓端ICON数量取值;
+        }
+          ALLMENU = AllMenu;
+          //console.log(ALLMENU)
+          //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
+          //AllMobileMenu(AllMenu);
+          //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
+          if(ALLMENU != '' && AllMenu){
+             var SessionXhr = new XMLHttpRequest();
+             SessionXhr.onreadystatechange = function(){
+              if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
+                var encoder = JSON.parse(SessionXhr.response).encoder;
+                var userId = JSON.parse(SessionXhr.response).userId;
+                if(encoder && userId){
+                  var encoderXHR = new XMLHttpRequest();
+                  //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+                encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+                  //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+                  encoderXHR.send();
+                }else{
+                  console.error('AndEncoder接口请求失败!')
                 }
               }
-               SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
-               SessionXhr.send();
             }
+             SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+             SessionXhr.send();
           }
-        } else if (xhr.status >= 400) {
-          console.warn('请求失败,可能正在登陆中,3s后重新请求');
-          //3s后重新请求菜单列表
-          if(FlagNum<10){
-            FlagNum+=1;
-            setTimeout(function () {
-            	getAllMenu();
-          	}, 3000);
-          }else{
-            FlagNum=0;
-          }
-        }
-      };
-      xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
-      xhr.send();
-    }else{
-      console.error('对象只有一个,当前代码并没有兼容别的对象!!!!');
+      }
     }
+    //请求接口获取连接方式,暂时弃用
+//     if(window.XMLHttpRequest){
+//       var xhr = new XMLHttpRequest();
+//       xhr.onreadystatechange = function () {
+//         if (xhr.status == 200 && xhr.status < 300 || xhr.status == 304 && !getAllMenuStatus) {
+//           if (xhr.responseText == '{"isHaveSession":"no"}') {
+//             console.info('系统正在登录中...');
+//             if(FlagNum<10){
+//               setTimeout(getAllMenu(), 3000);
+//             }else{
+//               FlagNum = 0;
+//             }
+            
+//           } else if (xhr.status == 200 && xhr.readyState == 4) {
+//             if(top.EAPI.isIOS()){
+//               top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
+//             }else{
+//             	AndroidGetIconNum(); // 安卓端ICON数量取值;
+//             }
+//             getAllMenuStatus = true; 
+//             //此状态说明当前已经全部拿到PC端所有菜单信息;
+//             var AllMenu = JSON.parse(xhr.response);
+//             //当前方法为接口只存在移动端菜单时可以直接想ALLMENU里面添加菜单信息
+//             ALLMENU = AllMenu;
+//             //console.log(ALLMENU)
+//             //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
+//             //AllMobileMenu(AllMenu);
+//             //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
+//             if(ALLMENU != '' && AllMenu){
+//                var SessionXhr = new XMLHttpRequest();
+//                SessionXhr.onreadystatechange = function(){
+//                 if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
+//                   var encoder = JSON.parse(SessionXhr.response).encoder;
+//                   var userId = JSON.parse(SessionXhr.response).userId;
+//                   if(encoder && userId){
+//                     var encoderXHR = new XMLHttpRequest();
+//                     //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+//                   encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+//                     //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+//                     encoderXHR.send();
+//                   }else{
+//                     console.error('AndEncoder接口请求失败!')
+//                   }
+//                 }
+//               }
+//                SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+//                SessionXhr.send();
+//             }
+//           }
+//         } else if (xhr.status >= 400) {
+//           console.warn('请求失败,可能正在登陆中,3s后重新请求');
+//           //3s后重新请求菜单列表
+//           if(FlagNum<10){
+//             FlagNum+=1;
+//             setTimeout(function () {
+//             	getAllMenu();
+//           	}, 3000);
+//           }else{
+//             FlagNum=0;
+//           }
+//         }
+//       };
+//       xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
+//       xhr.send();
+//     }else{
+//       console.error('对象只有一个,当前代码并没有兼容别的对象!!!!');
+//     }
   }
   //按照传进来的名称来配置二级菜单
   function _getTargetMenus(arr) {
@@ -1995,7 +2035,7 @@
     beforeTargetLoad: function beforeTargetLoad(aWin, doc) {
       if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
-          getAllMenu();
+          getAllMenu(aWin);
       }
       //为了使移动端的日期方法toLocaleDateString和移动端保持一致
       aWin.Date.prototype.toLocaleDateString = function () {
