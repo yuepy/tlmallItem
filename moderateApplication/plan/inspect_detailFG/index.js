@@ -65,7 +65,7 @@
     },
     doAction_uiControl750_q7CaLB: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();elem.ownerDocument.defaultView.location.reload();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }
     },
     getTemplate_uiControl750_q7CaLB: function () {

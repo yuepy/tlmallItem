@@ -9,7 +9,7 @@
     },
     doAction_uiControl725_QEhqGl: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();elem.ownerDocument.defaultView.location.reload();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
         var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
@@ -37,7 +37,7 @@
     },
     doAction_uiControl727_dNm2yO: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = +data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();elem.ownerDocument.defaultView.location.reload();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
         var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
@@ -55,7 +55,7 @@
     },
     doAction_uiControl728_azd6GT: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = +data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();elem.ownerDocument.defaultView.location.reload();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
         var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
@@ -73,7 +73,7 @@
     },
     doAction_uiControl729_Wuo7f3: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = +data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();elem.ownerDocument.defaultView.location.reload();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
         var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
@@ -91,7 +91,7 @@
     },
     doAction_uiControl730_nPw7R1: function (data, elem) {
       if ('click' == data.eventType) {
-        var index = data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
+        var index = +data.customData.index;var uls = elem.querySelector("ul");ysp.appMain.showLoading();elem.ownerDocument.defaultView.location.reload();uls && uls.querySelectorAll("li")[index].querySelector('a').click();
       }if ('moreClick' == data.eventType) {
         var as = elem.querySelectorAll("a");var asLength = as && as.length;ysp.appMain.showLoading();elem.querySelectorAll("a")[asLength - 1].click();
       }
