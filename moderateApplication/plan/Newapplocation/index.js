@@ -59,8 +59,8 @@
       //     arr.push(alist[k].textContent.trim());
       //   data.content.push(arr);
       // }
-      var arr = []; // var str = ['请假申请单', '因公外出申请单', '差旅费用报销流程'];
-      var str = ['请假申请单', '因公外出申请单'];var alist = elem.querySelectorAll('a[href="javascript:void(0)"]'); // debugger
+      var arr = [];var str = ['请假申请单', '因公外出申请单', '差旅费用报销流程']; //var str = ['请假申请单', '因公外出申请单'];
+      var alist = elem.querySelectorAll('a[href="javascript:void(0)"]'); // debugger
       for (var i = 0; i < alist.length; i++) {
         var flag = alist[i].getAttribute('url'); //筛选掉常用流程中无URL的流程
         if (str.indexOf(alist[i].textContent.trim()) != -1) {
@@ -80,36 +80,14 @@
       // }
       // }
       if ('click' == type) {
-        var url = data.url;var flat = url.indexOf('http://172.16.11.61') != -1 ? true : false; //     window.yspCheckIn.closePageType("0");
-        //   }
-        //   if (ysp.appMain.isIOS()) {
-        //     var _setupWebViewJavascriptBridge = function (callback) {
-        //       if (window.WebViewJavascriptBridge) {
-        //         return callback(WebViewJavascriptBridge);
-        //       }
-        //       if (window.WVJBCallbacks) {
-        //         return window.WVJBCallbacks.push(callback);
-        //       }
-        //       window.WVJBCallbacks = [callback];
-        //       var WVJBIframe = document.createElement("iframe");
-        //       WVJBIframe.style.display = "none";
-        //       WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";
-        //       document.documentElement.appendChild(WVJBIframe);
-        //       setTimeout(function () {
-        //         document.documentElement.removeChild(WVJBIframe);
-        //       }, 0);
-        //     };
-        //     _setupWebViewJavascriptBridge(function (bridge) {
-        //       bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
-        //     });
-        //   }
-        if (ysp.appMain.isIOS()) {
-          // if (flat) {
-          // ysp.appMain.openWindow(url);
-          // } else {
-          elem.ownerDocument.defaultView.open(url); // }
+        var url = data.url;var flat = url.indexOf('http://172.16.11.61') != -1 ? true : false;if (ysp.appMain.isIOS()) {
+          if (flat) {
+            ysp.appMain.openWindow(url);
+          } else {
+            elem.ownerDocument.defaultView.open(url);
+          }
         } else {
-          elem.ownerDocument.defaultView.open(url); // var alist = elem.querySelectorAll('a[href="javascript:void(0)"]')[data.index].click();
+          elem.ownerDocument.defaultView.open(url);
         }
       }
     },
