@@ -21,14 +21,12 @@
             //           if (window.WVJBCallbacks) {
             //             return window.WVJBCallbacks.push(callback);
             //           }
-
             //           window.WVJBCallbacks = [callback];
             //           var WVJBIframe = document.createElement("iframe");
             //           WVJBIframe.style.display = "none";
             //           WVJBIframe.src = "wvjbscheme://__BRIDGE_LOADED__";
             //           document.documentElement.appendChild(WVJBIframe);
             //           setTimeout(function () {
-
             //             document.documentElement.removeChild(WVJBIframe);
             //           }, 0);
             //         };
@@ -62,7 +60,7 @@
             //           bridge.callHandler("closePageType", 'false', function responseCallback(responseData) {});
             //         });
             //       }
-            hreflo = "http://172.16.11.61:8000" + hreflo;hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
+            hreflo = "http://172.16.11.61" + hreflo;hreflo += "&_ysp_forcepc=1";ysp.appMain.openWindow(hreflo);
           }
         } else {
           //     if (ysp.appMain.isIOS()) {
@@ -89,7 +87,7 @@
           //     if (ysp.appMain.isAndroid()) {
           //       window.yspCheckIn.closePageType("0");
           //     }
-          var str = 'http://172.16.11.61:8000'; // str = str.indexOf('s') == -1 ? str : 'http://172.16.11.61';
+          var str = 'http://172.16.11.61'; // str = str.indexOf('s') == -1 ? str : 'http://172.16.11.61';
           if (hreflo.indexOf(str) != -1) {
             if (ysp.appMain.isIOS()) {
               ysp.appMain.openWindow(hreflo);
