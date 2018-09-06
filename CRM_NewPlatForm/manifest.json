@@ -6,7 +6,9 @@
   "description": "",
   "options": {
     "resource_intercept": {
-      "type": [],
+      "type": [
+        "css"
+      ],
       "ignore": []
     },
     "resource_inject": [],
@@ -358,11 +360,10 @@
       "title": "index",
       "url": "adapter://CRM_NewPlatForm/plan/index/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/index\\.html"
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/index\\.html",
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/index.*"
       ],
-      "demo": [
-        "http://192.168.220.82:8080/pttlCrm/res/index.html"
-      ]
+      "demo": []
     },
     {
       "title": "customPSI",
@@ -677,6 +678,6 @@
   "default_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
   "scope": "CRM_NewPlatForm",
   "start_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
-  "update_time": 1536027037192,
+  "update_time": 1536198862683,
   "runtime_env": "1webview"
 }
