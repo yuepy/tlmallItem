@@ -1,0 +1,164 @@
+{
+  "version": "0.1",
+  "id": "overTime",
+  "targetURL": "https://tlihr.pttl.com/psc/ps/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+  "jsFile": "index.js",
+  "chineseName": "会话过期",
+  "description": "",
+  "controls": {
+    "control11_eZMddr": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.chrome.win.pc.standard.psc_dir-ltr.psc_form-xlarge BODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control11_eZMddr"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context12_el3bIi": {
+      "controls": [
+        "control11_eZMddr"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow91_fiBE8s": {
+      "toContexts": [
+        {
+          "toContextId": "context12_el3bIi"
+        }
+      ]
+    },
+    "flow60_4h2tKm": {
+      "fromContextId": "context12_el3bIi",
+      "fromAction": "doAction",
+      "fromControlId": "control11_eZMddr",
+      "toContexts": [
+        {
+          "toContextId": "context12_el3bIi"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page12_4fzyqs": {
+      "contextId": "context12_el3bIi",
+      "layout": [
+        {
+          "id": "uiControl11_VTiae6",
+          "controlId": "control11_eZMddr",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl11_VTiae6",
+                "onGetTemplate": "getTemplate_uiControl11_VTiae6"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context12_el3bIi": [
+          "超时警告。单击“确定”将不结束会话。"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context12_el3bIi": [
+          "192.168.220.110/psc/ps/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_2/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_9/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_1/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_4/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_26/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_13/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_3/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_6/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_7/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_10/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING",
+          "192.168.220.110/psc/ps_11/EMPLOYEE/HRMS/s/WEBLIB_TIMEOUT.PT_TIMEOUTWARNING.FieldFormula.IScript_TIMEOUTWARNING"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context12_el3bIi": [
+          [
+            "alertmsg",
+            "buttoncontainer",
+            "buttonwrapper",
+            "longmsg",
+            "msgcontainer",
+            "msgokbutton",
+            "shortmsg"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context12_el3bIi": [
+          [
+            "psfluidbuttonwrapper",
+            "psfluidmsgactions",
+            "psfluidmsgalert",
+            "psfluidmsglong",
+            "psfluidmsgshort",
+            "psfluidokbutton",
+            "pstimeoutmsgcontainer"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context12_el3bIi": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/BR",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/SPAN/A"
+          ]
+        ]
+      }
+    }
+  }
+}

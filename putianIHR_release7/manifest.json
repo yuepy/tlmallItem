@@ -15,7 +15,7 @@
     "resource_filter": [
       {
         "url_match": [
-          "^http:\\/\\/192\\.168\\.220\\.110.*"
+          "^https:\\/\\/tlihr\\.pttl\\.com.*"
         ],
         "charset": "utf-8",
         "Accept-Language": "zh-Hans-CN",
@@ -35,7 +35,7 @@
       "title": "checkMyInfo",
       "url": "adapter://putianIHR/plan/checkMyInfo/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_PAG_010_CP\\.GBL.*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_PAG_010_CP\\.GBL.*"
       ],
       "demo": []
     },
@@ -43,7 +43,7 @@
       "title": "businessTravel",
       "url": "adapter://putianIHR/plan/businessTravel/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_047_CP\\.GBL.*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_047_CP\\.GBL.*"
       ],
       "demo": []
     },
@@ -51,7 +51,7 @@
       "title": "forgetCard",
       "url": "adapter://putianIHR/plan/forgetCard/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_002\\.GBL.*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_002\\.GBL.*"
       ],
       "demo": []
     },
@@ -59,7 +59,7 @@
       "title": "holidayAppli",
       "url": "adapter://putianIHR/plan/holidayAppli/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL.*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL.*"
       ],
       "demo": []
     },
@@ -67,7 +67,7 @@
       "title": "addWork",
       "url": "adapter://putianIHR/plan/addWork/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_004\\.GBL.*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_004\\.GBL.*"
       ],
       "demo": []
     },
@@ -75,36 +75,36 @@
       "title": "remainHoliday",
       "url": "adapter://putianIHR/plan/remainHoliday/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_SELF_VACA_CPT\\.GBL.*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_SELF_VACA_CPT\\.GBL.*"
       ],
       "demo": [
-        "http://192.168.220.110/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_SELF_VACA_CPT.GBL?PORTALPARAM_PTCNAV=HPS_SELF_VACA_CPT_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_ABS_07&EOPP.SCLabel=TL_ABS_07&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_ABS_07.ADMN_S201804131619464569841608&IsFolder=false"
+        "https://tlihr.pttl.com/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_SELF_VACA_CPT.GBL?PORTALPARAM_PTCNAV=HPS_SELF_VACA_CPT_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_ABS_07&EOPP.SCLabel=TL_ABS_07&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_ABS_07.ADMN_S201804131619464569841608&IsFolder=false"
       ]
     },
     {
       "title": "login",
       "url": "adapter://putianIHR/plan/login/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?.*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?.*"
       ],
       "demo": [
-        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
+        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
       ]
     },
     {
       "title": "menu",
       "url": "adapter://putianIHR/plan/menu/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.110\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?(?!cmd.*).*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?(?!cmd.*).*"
       ],
       "demo": [
-        "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
+        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
       ]
     }
   ],
   "name": "普天HR系统",
-  "default_url": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "default_url": "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "scope": "putianIHR",
   "start_url": "enterplorer://putianIHR/local/index.html",
-  "update_time": 1536223471777
+  "update_time": 1536198763006
 }
