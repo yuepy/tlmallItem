@@ -108,13 +108,13 @@
     },
     doAction_uiControl870_0v4GGn: function (data, elem) {
       if (data.eventType === 'change1') {
-        elem.parentNode.parentNode.querySelector('#tableOrderClause').querySelector('textarea').value = data.dataCustom.value;
+        elem.parentNode.parentNode.querySelector('#tableOrderClause').querySelector('textarea').value = data.dataCustom.value;elem.parentNode.parentNode.querySelector('#tableOrderClause').querySelector('textarea').onchange ? elem.parentNode.parentNode.querySelector('#tableOrderClause').querySelector('textarea').onchange() : '';
       }if (data.eventType === 'changeS1') {
-        elem.querySelector('#' + data.dataCustom.id).value = data.dataCustom.value;
+        elem.querySelector('#' + data.dataCustom.id).value = data.dataCustom.value;elem.querySelector('#' + data.dataCustom.id).onchange ? elem.querySelector('#' + data.dataCustom.id).onchange() : '';
       }if (data.eventType === 'changeI1') {
-        elem.querySelector('#' + data.dataCustom.id).value = data.dataCustom.value;
+        elem.querySelector('#' + data.dataCustom.id).value = data.dataCustom.value;elem.querySelector('#' + data.dataCustom.id).onchange ? elem.querySelector('#' + data.dataCustom.id).onchange() : '';
       }if (data.eventType === 'clickadd') {
-        console.log(data);elem.querySelector('#' + data.dataCustom).parentNode.querySelector('a').click();
+        elem.querySelector('#' + data.dataCustom).parentNode.querySelector('a').click();
       }
     },
     getTemplate_uiControl870_0v4GGn: function () {

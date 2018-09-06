@@ -102,17 +102,17 @@
     },
     doAction_uiControl884_SoFqTk: function (data, elem) {
       if (data.eventType === 'change1') {
-        elem.parentNode.parentNode.querySelector('#tableOrderClause').querySelector('textarea').value = data.dataCustom.value;
+        elem.parentNode.parentNode.querySelector('#tableOrderClause').querySelector('textarea').value = data.dataCustom.value;elem.parentNode.parentNode.querySelector('#tableOrderClause').querySelector('textarea').onchange ? elem.parentNode.parentNode.querySelector('#tableOrderClause').querySelector('textarea').onchange() : '';
       }if (data.eventType === 'changeS1') {
-        elem.querySelector('#' + data.dataCustom.id).value = data.dataCustom.value;
+        elem.querySelector('#' + data.dataCustom.id).value = data.dataCustom.value;elem.querySelector('#' + data.dataCustom.id).onchange ? elem.querySelector('#' + data.dataCustom.id).onchange() : '';
       }if (data.eventType === 'changeI1') {
-        elem.querySelector('#' + data.dataCustom.id).value = data.dataCustom.value;
+        elem.querySelector('#' + data.dataCustom.id).value = data.dataCustom.value;elem.querySelector('#' + data.dataCustom.id).onchange ? elem.querySelector('#' + data.dataCustom.id).onchange() : '';
       }if (data.eventType === 'clickadd') {
         // console.log(data);
         elem.querySelector('#' + data.dataCustom).parentNode.querySelector('a').click();
       }if (data.eventType === 'changeI2') {
         // console.log(data);
-        $(elem).parent().parent().children('#' + data.dataCustom.id).value = data.dataCustom.value;
+        $(elem).parent().parent().children('#' + data.dataCustom.id).value = data.dataCustom.value;$(elem).parent().parent().children('#' + data.dataCustom.id).onchange ? $(elem).parent().parent().children('#' + data.dataCustom.id).onchange() : '';
       }
     },
     getTemplate_uiControl884_SoFqTk: function () {
