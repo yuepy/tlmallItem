@@ -82,23 +82,24 @@
       ]
     },
     {
-      "title": "login",
-      "url": "adapter://putianIHR/plan/login/index.json",
-      "matcher": [
-        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?.*"
-      ],
-      "demo": [
-        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
-      ]
-    },
-    {
       "title": "menu",
       "url": "adapter://putianIHR/plan/menu/index.json",
       "matcher": [
         "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?(?!cmd.*).*"
       ],
       "demo": [
-        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
+        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+      ]
+    },
+    {
+      "title": "login",
+      "url": "adapter://putianIHR/plan/login/index.json",
+      "matcher": [
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout",
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?cmd=logout"
+      ],
+      "demo": [
+        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
       ]
     }
   ],
@@ -106,5 +107,5 @@
   "default_url": "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "scope": "putianIHR",
   "start_url": "enterplorer://putianIHR/local/index.html",
-  "update_time": 1536198763006
+  "update_time": 1536223969502
 }

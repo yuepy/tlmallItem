@@ -44,7 +44,6 @@
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
-            aWin.alert(aWin.location.href);
             //取消操作时间超过20分钟页面
             if (aWin.location.href.indexOf("cmd=expire") !== -1) {
                 var btn = doc.querySelectorAll(".ps_loginmessagelarge")[1].querySelector("a");
@@ -76,8 +75,6 @@
 
 
             if (aWin.location.href.indexOf("_ysp_appid") !== -1) {
-                alert('弹出')
-                debugger;
                 setTimeout(function() {
                         if (doc.body.textContent.indexOf("未授权您访问此页面") !== -1) {
                             ysp.runtime.Browser.activeBrowser.contentWindow.location.reload()
@@ -146,7 +143,11 @@
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-            alert(aWin.location.href)
+            alert(aWin.location.href);
+            if(aWin.location.href.indexOf('?tab') != -1){
+              debugger;
+      				aWin.location.href = 'https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout';
+            }
                 //ios弹出_ysp_top
                 // var oldAlert = aWin.alert;
                 // aWin.alert = function(str) {
