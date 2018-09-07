@@ -8,7 +8,7 @@
         // ysp.appMain.back();
         // ysp.customHelper.back();
         //history.go(-1);
-        var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+        var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
       }
     },
     getTemplate_uiControl130_bJfEQb: function getTemplate_uiControl130_bJfEQb() {
@@ -62,7 +62,7 @@
                 for (var k = 0; k < pics.length; k++) {
                   // var imgCanvas = ysp.customHelper.convertImageToCanvas(pics[k]);
                   // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
-                  var scrTitle = pics[k].getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.1.227/pttlCrm/" + srcUrl;panelObj.subject.fileList.push(scrC);
+                  var scrTitle = pics[k].getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;panelObj.subject.fileList.push(scrC);
                 }
               } //上传图片并且展示
               if (partList[j].querySelector(".uploadBtn")) {
@@ -92,7 +92,7 @@
         var i = data.dataCustom.i;var t = data.dataCustom.t;var val = data.dataCustom.val;elem.querySelectorAll(".content-panel")[i].querySelectorAll(".content-panel-part_list")[t].querySelector(".fill-box").querySelector("textarea").value = val;
       } else if (data.eventType == "btnClick") {
         var data = data.dataCustom;if ("back" == data) {
-          var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.reloadPage(url);
         } else {
           elem.querySelector(".buttons-tool").querySelector("button").click();
         }

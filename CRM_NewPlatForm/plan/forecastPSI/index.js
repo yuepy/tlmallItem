@@ -3,11 +3,11 @@
     getData_control197_qhm3H1: function (elem) {},
     doAction_uiControl194_lb7fU4: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://192.168.1.227/pttlCrm/res/page/psi/customerInfocollection.html";ysp.customHelper.AndroidBackFlag = 'destination';
+        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.customHelper.AndroidBackFlag = 'destination';
       }if (data.eventType == "back") {
         //ysp.customHelper.back();
         //history.go(-1);
-        var url = "http://192.168.1.227/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
+        var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
         ysp.customHelper.BackReload(url);
       }
     }, getTemplate_uiControl194_lb7fU4: function () {

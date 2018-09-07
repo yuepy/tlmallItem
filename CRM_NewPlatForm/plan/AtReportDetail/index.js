@@ -108,7 +108,7 @@
             // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
             // src.push(scrC);
             var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);
-            var scrC = "http://192.168.1.227/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
+            var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
           }
         } /*
            	Dialog 数据   所选分公司树结构数据
