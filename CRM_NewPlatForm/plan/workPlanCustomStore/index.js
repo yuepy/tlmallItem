@@ -96,9 +96,9 @@
     }, doAction_uiControl44_fBiQg5: function (data, elem) {
       //返回按钮方法，返回工作台页面
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
+        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
-        // var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
+        // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
         // ysp.appMain.reloadPage(url);
         ysp.appMain.back();ysp.customHelper.BackReload();
       }var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = '';var queryBtn;var queryInput;var customerOrStoreEl = doc.getElementById('customerOrStorePopList'); //工作计划
@@ -144,7 +144,7 @@
         }if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
           var tempTextAreaValue = tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer") && tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer").value;if (tempTextAreaValue != "" || selectedCount != "") {
             ysp.appMain.showLoading();setTimeout(function () {
-              ysp.appMain.hideLoading();var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
+              ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
               //更换方法 返回刷新
               ysp.appMain.back();ysp.customHelper.BackReload();
             }, 2000);
@@ -153,7 +153,7 @@
         if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
           var textAreaValue = customerOrStoreEl.querySelector("#dayPlanContent") && customerOrStoreEl.querySelector("#dayPlanContent").value;if (textAreaValue != "") {
             ysp.appMain.showLoading();setTimeout(function () {
-              ysp.appMain.hideLoading();var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.BackReload();
+              ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.BackReload();
             }, 2000);
           }
         } //   var flag = false;

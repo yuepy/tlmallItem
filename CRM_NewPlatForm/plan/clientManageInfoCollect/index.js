@@ -5,9 +5,9 @@
     getData_control78_FQm8iF: function (elem) {},
     doAction_uiControl81_N7zeTo: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://192.168.1.227/pttlCrm/res/page/psi/customerInfocollection.html";ysp.customHelper.AndroidBackModel = 'customerInformationFIll';ysp.customHelper.AndroidBackFlag = 'destination';
+        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.customHelper.AndroidBackModel = 'customerInformationFIll';ysp.customHelper.AndroidBackFlag = 'destination';
       }if (data.eventType == "back") {
-        var url = "http://192.168.1.227/pttlCrm/res/page/psi/customerInfocollection.html";ysp.customHelper.BackReload(url);
+        var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.customHelper.BackReload(url);
       }
     },
     getTemplate_uiControl81_N7zeTo: function getTemplate_uiControl81_N7zeTo() {
