@@ -127,8 +127,9 @@
   var currentSecondMenuId;
   var isFirstLoaded = true;
   var getAllMenuStatus; //该状态判断当前是否已经拿到PC端全部菜单信息
-  var ALLMENU = []; //所有菜单列表结合
-  //菜单筛选 , 将全部菜单按照{name:'',url:''}格式存储至ALLMENU;
+  var ALLMENU = []; //所有菜单列表集合
+  var removeMenuAll = ['我是被筛除的菜单:']; //所有被指定删除菜单的集合
+  //菜单筛选 , 将全部菜单按照{name:'',url:''}格式存储至ALLMENU;
   function AllMobileMenu(All) {
     [].forEach.call(All, function (oneItem, oneIndex) {
       //当前oneItem为一级菜单.
@@ -305,16 +306,27 @@
     if(typeof removeName === 'string'){
       removeName = [removeName];
     }
+    if(removeName){
+      removeName.some(function(current,index,arr){
+        for(var i = 0;i<ALLMENU.length;i++){
+          if(ALLMENU[i].name.indexOf(current) !== -1){
+            removeMenuAll.push(ALLMENU.splice(i,1));
+            //打印removeMenuAll 可以得到筛选排除的所有菜单;
+            ALLMENU.splice(i,1);
+          }
+        }
+      })
+    }
     arr.some(function (current, index, arr) {
       for (var i = 0; i < ALLMENU.length; i++) {
         //在全部菜单中按照条件筛选出移动端可以进入的目标菜单及有效url存入数组.
-        if (ALLMENU[i].name.indexOf(current) !== -1 ) {
+        if (ALLMENU[i].name.indexOf(current) !== -1) {
           //针对三级菜单地址进行截取,保证url有效
           if(ALLMENU[i].url.indexOf('../') !== -1){
             ALLMENU[i].url = ALLMENU[i].url.replace('../.','');
             ALLMENU[i].url = ALLMENU[i].url.replace(/^\s+/,'');
           }
-          var menus = {
+          var menus = {
             name: current,
             url: ALLMENU[i].url,
             code:ALLMENU[i].code,
