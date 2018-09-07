@@ -28,7 +28,7 @@
       var index = data.dataCustom;var aEls = elem.querySelectorAll("tr > td a"); // elem.querySelectorAll("tr > td a").click();
       if (aEls[index]) {
         var src = aEls[index].getAttribute('ordernum');src = ysp.customHelper.trim(src); //var indexWin = ysp.customHelper.getWinFromRTByName('sourcePageFrame');
-        var indexWin = elem.ownerDocument.defaultView;indexWin && indexWin.open("http://192.168.220.82:8080/pttlCrm/res/page/order/orderDetail.html?orderNum=" + src, 'orderDetail'); // var win = ysp.appMain.getActiveWindow();
+        var indexWin = elem.ownerDocument.defaultView;indexWin && indexWin.open("http://192.168.1.227/pttlCrm/res/page/order/orderDetail.html?orderNum=" + src, 'orderDetail'); // var win = ysp.appMain.getActiveWindow();
         // win.close();
       }
     },
