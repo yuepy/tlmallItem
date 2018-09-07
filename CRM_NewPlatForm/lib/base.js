@@ -127,8 +127,9 @@
   var currentSecondMenuId;
   var isFirstLoaded = true;
   var getAllMenuStatus; //该状态判断当前是否已经拿到PC端全部菜单信息
-  var ALLMENU = []; //所有菜单列表结合
-  //菜单筛选 , 将全部菜单按照{name:'',url:''}格式存储至ALLMENU;
+  var ALLMENU = []; //所有菜单列表集合
+  var removeMenuAll = ['我是被筛除的菜单:']; //所有被指定删除菜单的集合
+  //菜单筛选 , 将全部菜单按照{name:'',url:''}格式存储至ALLMENU;
   function AllMobileMenu(All) {
     [].forEach.call(All, function (oneItem, oneIndex) {
       //当前oneItem为一级菜单.
@@ -182,7 +183,7 @@
         }
       }
     }
-    xhr.open('POST','http://192.168.220.82:8080/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
+    xhr.open('POST','http://192.168.1.227/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
     xhr.send()
   }
   // 请求首页面所有一级\二级\三级菜单
@@ -214,7 +215,7 @@
                 if(encoder && userId){
                   var encoderXHR = new XMLHttpRequest();
                   //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-                encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+                encoderXHR.open('GET','http://192.168.1.227/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
                   //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
                   encoderXHR.send();
                 }else{
@@ -222,7 +223,7 @@
                 }
               }
             }
-             SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+             SessionXhr.open('GET','http://192.168.1.227/pttlCrm/homepage/getUserIdAndEncoder',false);
              SessionXhr.send();
           }
       }
@@ -264,7 +265,7 @@
 //                   if(encoder && userId){
 //                     var encoderXHR = new XMLHttpRequest();
 //                     //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-//                   encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+//                   encoderXHR.open('GET','http://192.168.1.227/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
 //                     //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
 //                     encoderXHR.send();
 //                   }else{
@@ -272,7 +273,7 @@
 //                   }
 //                 }
 //               }
-//                SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+//                SessionXhr.open('GET','http://192.168.1.227/pttlCrm/homepage/getUserIdAndEncoder',false);
 //                SessionXhr.send();
 //             }
 //           }
@@ -289,7 +290,7 @@
 //           }
 //         }
 //       };
-//       xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
+//       xhr.open('POST', 'http://192.168.1.227/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
 //       xhr.send();
 //     }else{
 //       console.error('对象只有一个,当前代码并没有兼容别的对象!!!!');
@@ -305,16 +306,27 @@
     if(typeof removeName === 'string'){
       removeName = [removeName];
     }
+    if(removeName){
+      removeName.some(function(current,index,arr){
+        for(var i = 0;i<ALLMENU.length;i++){
+          if(ALLMENU[i].name.indexOf(current) !== -1){
+            removeMenuAll.push(ALLMENU.splice(i,1));
+            //打印removeMenuAll 可以得到筛选排除的所有菜单;
+            ALLMENU.splice(i,1);
+          }
+        }
+      })
+    }
     arr.some(function (current, index, arr) {
       for (var i = 0; i < ALLMENU.length; i++) {
         //在全部菜单中按照条件筛选出移动端可以进入的目标菜单及有效url存入数组.
-        if (ALLMENU[i].name.indexOf(current) !== -1 ) {
+        if (ALLMENU[i].name.indexOf(current) !== -1) {
           //针对三级菜单地址进行截取,保证url有效
           if(ALLMENU[i].url.indexOf('../') !== -1){
             ALLMENU[i].url = ALLMENU[i].url.replace('../.','');
             ALLMENU[i].url = ALLMENU[i].url.replace(/^\s+/,'');
           }
-          var menus = {
+          var menus = {
             name: current,
             url: ALLMENU[i].url,
             code:ALLMENU[i].code,
@@ -430,7 +442,7 @@
         return;
       }
       var xhr = new topWin.XMLHttpRequest();
-      xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuList', true);
+      xhr.open('POST', 'http://192.168.1.227/pttlCrm/sys/auth/rela/getSystemLeftMenuList', true);
       xhr.error = function (e) {
         console.error(e);
       };
@@ -494,7 +506,7 @@
 
   function _getThirdMenuList(parentId, callback) {
     var xhr = new topWin.XMLHttpRequest();
-    xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/menu/getThirdMenuList', true);
+    xhr.open('POST', 'http://192.168.1.227/pttlCrm/sys/auth/menu/getThirdMenuList', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.onreadystatechange = function () {
@@ -897,7 +909,7 @@
     if(url && !model){
       currentWin.location.href = url
     }else if(!url && !model){
-      currentWin.location.href = 'http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html';
+      currentWin.location.href = 'http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html';
     }
     if(url=='' && model){
       ysp.runtime.Model.setForceMatchModels([model]);
@@ -2025,19 +2037,19 @@
     onTargetLoad: function onTargetLoad(aWin, doc) {
 
       if (aWin) {
-        if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
+        if (aWin.location.href == 'http://192.168.1.227/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           //getAllMenu();
           var _this = this;
           var xhr = new aWin.XMLHttpRequest();
-          xhr.open('GET', 'http://192.168.220.82:8080/pttlCrm/login/addMobileLoginLog', true);
+          xhr.open('GET', 'http://192.168.1.227/pttlCrm/login/addMobileLoginLog', true);
           xhr.send();
         }
       }
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function beforeTargetLoad(aWin, doc) {
-      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
+      if (aWin.location.href == 'http://192.168.1.227/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);
       }

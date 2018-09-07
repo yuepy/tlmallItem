@@ -95,7 +95,7 @@
             var src = [],
                 title = [],
                 content = [];
-            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
+            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.1.227/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
           }
         } // var imgList = $(elem).find(".m-uploading").find(".imagesBox").find("#fileList").find(".file-item");
         // imgList.each(function (index, items) {
