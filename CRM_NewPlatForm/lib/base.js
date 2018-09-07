@@ -296,10 +296,14 @@
 //     }
   }
   //按照传进来的名称来配置二级菜单
-  function _getTargetMenus(arr) {
+  function _getTargetMenus(arr,removeName) {
+    //arr为当前要筛选的菜单名称 removeName为要排除相似的菜单名称. ps:移动端和PC名称相似却不相同,或者统一名称在移动端特殊展示
     var Allmenus = [];
-    if (typeof arr === "string") {
+    if (typeof arr === "string") {
       arr = [arr];
+    }
+    if(typeof removeName === 'string'){
+      removeName = [removeName];
     }
     arr.some(function (current, index, arr) {
       for (var i = 0; i < ALLMENU.length; i++) {

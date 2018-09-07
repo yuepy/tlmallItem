@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.220.82:8080/pttlCrm/order/salesOrder/getStoreSalesOrderList",
   "jsFile": "index.js",
   "requires": {
-    "storeOrderFromDetails": "../storeOrderFromDetails/index.json"
+    "storeOrderFromDetails": "../storeOrderFromDetails/index.json",
+    "storeList": "../storeList/index.json"
   },
   "chineseName": "门店订单",
   "description": "门店订单",
@@ -154,6 +155,10 @@
       "toContexts": [
         {
           "toContextId": "context65_pPsNpL"
+        },
+        {
+          "toContextId": "context57_AibCE9",
+          "toModelId": "storeList"
         }
       ]
     }
