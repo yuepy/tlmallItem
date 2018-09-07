@@ -3,6 +3,9 @@
   "id": "customManageScope",
   "targetURL": "http://192.168.1.227/pttlCrm/cust/customerInfo/getCustomerBusinessScale",
   "jsFile": "index.js",
+  "requires": {
+    "clientList": "../clientList/index.json"
+  },
   "chineseName": "客户经营规模",
   "description": "客户经营规模",
   "controls": {
@@ -84,6 +87,20 @@
       "toContexts": [
         {
           "toContextId": "context41_KMtq5D"
+        }
+      ]
+    },
+    "flow277_4Wyclz": {
+      "fromContextId": "context41_KMtq5D",
+      "fromAction": "doAction",
+      "fromControlId": "control151_8Wixyn",
+      "toContexts": [
+        {
+          "toContextId": "context41_KMtq5D"
+        },
+        {
+          "toContextId": "context3_sTqBPp",
+          "toModelId": "clientList"
         }
       ]
     }
