@@ -80,7 +80,7 @@
       // }
       // }
       if ('click' == type) {
-        var url = data.url;var flat = url.indexOf('http://172.16.11.61') != -1 ? true : false;if (ysp.appMain.isIOS()) {
+        var url = data.url;var flat = url.indexOf('http') != -1 ? true : false;if (ysp.appMain.isIOS()) {
           if (flat) {
             ysp.appMain.openWindow(url);
           } else {
