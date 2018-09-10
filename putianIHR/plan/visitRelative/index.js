@@ -55,7 +55,7 @@
         // tds[group[0]].querySelector("select").dispatchEvent(new Event("change"));
         for (var n = 0; n < options.length; n++) {
           if (options[n].textContent == group[2]) {
-            options[n].selected = true;elem.querySelector("select").dispatchEvent(new Event("change"));
+            options[n].selected = true;tds[group[0]].querySelector("select").dispatchEvent(new Event("change"));
           }
         }
       }

@@ -37,7 +37,7 @@
         selectSthMask: _selectSthMask,
         tableData: _tableData,
         alert: _alert,
-        // tab: null,
+        tab: null,
         innerBack: null,
         // indexName:null,
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
@@ -70,37 +70,68 @@
 
 
             //安卓偶现首次登录更多不跳转到登录页问题
-
-
-            if (aWin.location.href.indexOf("_ysp_appid") !== -1) {
-                setTimeout(function() {
-                        if (doc.body.textContent.indexOf("未授权您访问此页面") !== -1) {
-                            ysp.runtime.Browser.activeBrowser.contentWindow.location.reload()
-                        }
-                    }, 2000)
-                    // aWin.location.href="https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
-            }
+            // if (aWin.location.href.indexOf("_ysp_appid") !== -1) {
+            //     alert('弹出')
+            //     debugger;
+            //     setTimeout(function() {
+            //             if (doc.body.textContent.indexOf("未授权您访问此页面") !== -1) {
+            //                 ysp.runtime.Browser.activeBrowser.contentWindow.location.reload()
+            //             }
+            //         }, 2000)
+            //         // aWin.location.href="https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
+            // }
             //解决重复登录的问题
-            if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout") !== -1) {
-                var timer = setInterval(function() {
-                    if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
-                        sessionStorage.setItem("userid", doc.querySelector("#userid").value);
-                        sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
-                        aWin.location.href = "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
-                        clearInterval(timer);
-                    }
-                }, 500);
-            } else if (aWin.location.href.indexOf("CP.GBL?&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("languageCd=ZHS") == -1) {
-                var host = aWin.location.href.match(/http.*\?/)[0];
 
-                var timer = setInterval(function() {
-                    if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
-                        sessionStorage.setItem("userid", doc.querySelector("#userid").value);
-                        sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
-                        aWin.location.href = host + "&cmd=login&languageCd=ZHS";
-                        clearInterval(timer);
-                    }
-                }, 500);
+            //manager更多地址配置成 https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab
+            // if(aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab&")!==-1){
+            // 	aWin.location.href=="https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
+            // }
+            //安卓登录逻辑
+            if (topWindow.EAPI.isAndroid()) {
+                if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout") !== -1) {
+                    var timer = setInterval(function() {
+                        if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
+                            sessionStorage.setItem("userid", doc.querySelector("#userid").value);
+                            sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
+                            aWin.location.href = "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
+                            clearInterval(timer);
+                        }
+                    }, 500);
+                } else if (aWin.location.href.indexOf("CP.GBL?&") !== -1 && aWin.location.href.indexOf("cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("languageCd=ZHS") !== -1) {
+                    var host = aWin.location.href.match(/http.*\?/)[0];
+
+                    var timer = setInterval(function() {
+                        if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
+                            sessionStorage.setItem("userid", doc.querySelector("#userid").value);
+                            sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
+                            // aWin.location.href = host + "&cmd=login&languageCd=ZHS";
+                            clearInterval(timer);
+                        }
+                    }, 500);
+                }
+
+            } else if (topWindow.EAPI.isIOS()) {
+                if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout") !== -1) {
+                    var timer = setInterval(function() {
+                        if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
+                            sessionStorage.setItem("userid", doc.querySelector("#userid").value);
+                            sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
+                            aWin.location.href = "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
+                            clearInterval(timer);
+                        }
+                    }, 500);
+                } else if (aWin.location.href.indexOf("CP.GBL?&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("languageCd=ZHS") == -1) {
+                    var host = aWin.location.href.match(/http.*\?/)[0];
+
+                    var timer = setInterval(function() {
+                        if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
+                            sessionStorage.setItem("userid", doc.querySelector("#userid").value);
+                            sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
+                            aWin.location.href = host + "&cmd=login&languageCd=ZHS";
+                            clearInterval(timer);
+                        }
+                    }, 500);
+                }
             }
             if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS") !== -1) {
                 doc.querySelector("#userid").value = sessionStorage.getItem("userid");
@@ -110,8 +141,8 @@
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
             }
             //正式环境更多登录进去后地址变成https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?
-            if(aWin.location.href=="https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?"){
-            	aWin.location.href="https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
+            if (aWin.location.href == "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?") {
+                aWin.location.href = "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
             }
             // 用户名、密码记录
             if (doc.querySelector("#login_error") && (doc.querySelector("#login_error").textContent.indexOf("您已请求了一个安全资源") !== -1 || doc.querySelector("#login_error").textContent.indexOf("验证码校验超时") !== -1)) {
@@ -128,12 +159,10 @@
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
             }
             //返回
-            // if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
-            //     alert('弹出地址');
-            //     // ysp.customHelper.tab = "menu"
-            // }else{
-            //   	ysp.customHelper.tab = "menu"
-            // }
+            if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
+                alert('弹出地址');
+                ysp.customHelper.tab = "menu"
+            }
 
 
 
