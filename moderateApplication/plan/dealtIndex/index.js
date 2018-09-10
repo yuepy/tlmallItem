@@ -17,7 +17,7 @@
           }
         } else {
           //在适配范围内
-          var str = 'http://172.16.11.61';if (hreflo.indexOf(str) != -1) {
+          var str = 'http';if (hreflo.indexOf(str) >= 0) {
             if (ysp.appMain.isIOS()) {
               ysp.appMain.openWindow(hreflo);
             } else {

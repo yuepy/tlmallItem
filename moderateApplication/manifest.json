@@ -379,11 +379,41 @@
       "demo": [
         "http://172.16.11.61:9995/Workflow/Forms/CLFYBX/Start.aspx"
       ]
+    },
+    {
+      "title": "LYBFSQ_DB",
+      "url": "adapter://moderateApplication/plan/LYBFSQ_DB/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:9992\\/Forms\\/ColdDrink\\/BFSQ\\/Processing\\.aspx.*"
+      ],
+      "demo": [
+        "http://172.16.11.61:9992/Forms/ColdDrink/BFSQ/Processing.aspx?SN=5AC2349EDBAECC864ED8EA8D5E8B8303&Guid=55ade542-5e96-499e-9fb5-9a9d0ab47f0a&m=1"
+      ]
+    },
+    {
+      "title": "assetMakeNo",
+      "url": "adapter://moderateApplication/plan/assetMakeNo/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/ZCCGSQ\\/Processing\\.aspx.*"
+      ],
+      "demo": [
+        "http://172.16.11.61:9995/Workflow/Forms/ZCCGSQ/Processing.aspx?SN=F91EC17769296ACD5FD1797E77532817&Guid=3a099aa3-0c33-41ac-b721-95e24f9f7d3c&m=1"
+      ]
+    },
+    {
+      "title": "stokeMakeNo",
+      "url": "adapter://moderateApplication/plan/stokeMakeNo/index.json",
+      "matcher": [
+        "^http:\\/\\/172\\.16\\.11\\.61:9995\\/Workflow\\/Forms\\/CHCG\\/Processing\\.aspx.*"
+      ],
+      "demo": [
+        "http://172.16.11.61:9995/Workflow/Forms/CHCG/Processing.aspx?SN=9E1D4BC06FDCECB6108634DB52BAB8B5&Guid=03dd9ee0-7738-4d4d-9cb0-9cbe13b4824b&m=1"
+      ]
     }
   ],
   "name": "中可工程",
   "default_url": "http://172.16.11.61/Index.aspx",
   "scope": "moderateApplication",
   "start_url": "enterplorer://moderateApplication/local/index.html",
-  "update_time": 1536557958543
+  "update_time": 1536566578811
 }
