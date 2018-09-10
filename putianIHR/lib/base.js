@@ -38,20 +38,20 @@
         selectSthMask: _selectSthMask,
         tableData: _tableData,
         alert: _alert,
-        // tab: null,
+        tab: null,
         innerBack: null,
         // indexName:null,
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
-            aWin.alert(aWin.location.href);
+            
             //取消操作时间超过20分钟页面
             if (aWin.location.href.indexOf("cmd=expire") !== -1) {
                 var btn = doc.querySelectorAll(".ps_loginmessagelarge")[1].querySelector("a");
                 btn.click();
             }
             //index页重定向
-            debugger;
+           
             // if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_PAG_010_CP")!==-1){
             //   aWin.location.href="http://192.168.220.110/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL";
             // }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_047_CP")!==-1){
@@ -76,8 +76,7 @@
 
 
             if (aWin.location.href.indexOf("_ysp_appid") !== -1) {
-                alert('弹出')
-                debugger;
+               
                 setTimeout(function() {
                         if (doc.body.textContent.indexOf("未授权您访问此页面") !== -1) {
                             ysp.runtime.Browser.activeBrowser.contentWindow.location.reload()
@@ -133,12 +132,9 @@
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
             }
             //返回
-            // if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
-            //     alert('弹出地址');
-            //     // ysp.customHelper.tab = "menu"
-            // }else{
-            //   	ysp.customHelper.tab = "menu"
-            // }
+            if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
+                ysp.customHelper.tab = "menu"
+            }
 
 
 
@@ -146,7 +142,7 @@
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-            alert(aWin.location.href)
+           
                 //ios弹出_ysp_top
                 // var oldAlert = aWin.alert;
                 // aWin.alert = function(str) {

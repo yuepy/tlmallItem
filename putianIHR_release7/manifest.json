@@ -85,11 +85,10 @@
       "title": "login",
       "url": "adapter://putianIHR/plan/login/index.json",
       "matcher": [
-        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?.*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?.*",
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?cmd=logout"
       ],
-      "demo": [
-        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
-      ]
+      "demo": []
     },
     {
       "title": "menu",
@@ -106,5 +105,5 @@
   "default_url": "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "scope": "putianIHR",
   "start_url": "enterplorer://putianIHR/local/index.html",
-  "update_time": 1536198763006
+  "update_time": 1536303886141
 }
