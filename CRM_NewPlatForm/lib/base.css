@@ -4753,7 +4753,6 @@ div[data-ysp-modelid="wtiteReport"] {
   overflow: scroll;
 }
 div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
-  position: absolute;
   background: #fff;
   height: 1700px;
 }
@@ -4889,7 +4888,8 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
 }
 .Dialog-content {
   background: #fff;
-  overflow: scroll;
+  overflow: auto;
+  height: 100vh;
 }
 .Dialog-content .ysp-atreport-dialog-person {
   position: relative;
@@ -14961,8 +14961,4 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
   width: 90px;
   border-radius: 50px;
   font-weight: normal;
-}
-.ysp-atreport-dialog-body .ysp-dialog-wrapper {
-  position: none!important;
-  height: 100vh!important;
 }
