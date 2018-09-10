@@ -173,10 +173,7 @@
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
             alert(aWin.location.href);
-            if (aWin.location.href.indexOf('?tab') != -1) {
-                debugger;
-                aWin.location.href = 'https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout';
-            }
+            
             //ios弹出_ysp_top
             // var oldAlert = aWin.alert;
             // aWin.alert = function(str) {
