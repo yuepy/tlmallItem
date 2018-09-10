@@ -45,12 +45,158 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control5_z7huAG": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请输入用户ID"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "用户 ID"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"login\"]//INPUT[@name=\"userid\"]",
+              "descendant::INPUT[@name=\"userid\"]"
+            ]
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//INPUT[@id=\"userid\"]",
+              "descendant::FORM[@id=\"login\"]//INPUT[@id=\"userid\"]",
+              "descendant::INPUT[@id=\"userid\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "FORM.form-box DIV.form-group INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[5]/FORM[1]/DIV[2]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "textbox"
+    },
+    "control121_rcIqvE": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请输入密码"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "密码"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"login\"]//INPUT[@name=\"pwd\"]",
+              "descendant::INPUT[@name=\"pwd\"]"
+            ]
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//INPUT[@id=\"pwd\"]",
+              "descendant::FORM[@id=\"login\"]//INPUT[@id=\"pwd\"]",
+              "descendant::INPUT[@id=\"pwd\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "FORM.form-box DIV.form-group INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[5]/FORM[1]/DIV[3]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "password"
+          }
+        ]
+      },
+      "intendedRole": "passwordbox",
+      "roles": "element,passwordbox,textbox",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "textbox"
     }
   },
   "contexts": {
     "context13_CStx6r": {
       "controls": [
-        "control0_vXKNxf"
+        "control0_vXKNxf",
+        "control5_z7huAG",
+        "control121_rcIqvE"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -84,6 +230,28 @@
       "contextId": "context13_CStx6r",
       "layout": [
         {
+          "id": "uiControl125_XqSl3r",
+          "controlId": "control5_z7huAG",
+          "display": {
+            "adapterId": "textbox",
+            "type": "textbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl126_1LqNoU",
+          "controlId": "control121_rcIqvE",
+          "display": {
+            "adapterId": "passwordbox",
+            "type": "passwordbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
           "id": "uiControl0_vbflXP",
           "controlId": "control0_vXKNxf",
           "display": {
@@ -112,7 +280,8 @@
     "page/urls": {
       "contexts": {
         "context13_CStx6r": [
-          "tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+          "tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+          "tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout"
         ]
       }
     },

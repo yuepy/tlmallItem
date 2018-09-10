@@ -1,7 +1,6 @@
 // base.js 是对原 PC 页面进行操作的脚本文件
 // 通常用于处理原 PC 页面的兼容性问题、页面跳转逻辑等
 (function(win, ysp) {
-
     var utils = ysp.utils;
     ysp.customHelper = {};
     top.date = "";
@@ -50,7 +49,6 @@
                 btn.click();
             }
             //index页重定向
-            debugger;
             // if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_PAG_010_CP")!==-1){
             //   aWin.location.href="https://tlihr.pttl.com/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL";
             // }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_047_CP")!==-1){
@@ -143,11 +141,6 @@
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-            alert(aWin.location.href);
-            if(aWin.location.href.indexOf('?tab') != -1){
-              debugger;
-      				aWin.location.href = 'https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout';
-            }
                 //ios弹出_ysp_top
                 // var oldAlert = aWin.alert;
                 // aWin.alert = function(str) {

@@ -85,27 +85,25 @@
       "title": "menu",
       "url": "adapter://putianIHR/plan/menu/index.json",
       "matcher": [
-        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?(?!cmd.*).*"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?(?!cmd.*).*",
+        ""
       ],
-      "demo": [
-        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
-      ]
+      "demo": []
     },
     {
       "title": "login",
       "url": "adapter://putianIHR/plan/login/index.json",
       "matcher": [
         "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout",
-        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?cmd=logout"
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?cmd=logout.*",
+        ""
       ],
-      "demo": [
-        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
-      ]
+      "demo": []
     }
   ],
   "name": "普天HR系统",
   "default_url": "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
   "scope": "putianIHR",
   "start_url": "enterplorer://putianIHR/local/index.html",
-  "update_time": 1536223969502
+  "update_time": 1536569561164
 }
