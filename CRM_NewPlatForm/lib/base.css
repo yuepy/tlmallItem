@@ -4809,7 +4809,6 @@ div[data-ysp-modelid="wtiteReport"] {
   overflow: scroll;
 }
 div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
-  position: absolute;
   background: #fff;
   height: 1700px;
 }
@@ -4945,7 +4944,8 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
 }
 .Dialog-content {
   background: #fff;
-  overflow: scroll;
+  overflow: auto;
+  height: 100vh;
 }
 .Dialog-content .ysp-atreport-dialog-person {
   position: relative;
@@ -15023,7 +15023,7 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
   bottom:10px;为为了使总额固定在当前浏览器窗口的最下面的布局样式**/
   width: 100%;
   position: fixed;
-  bottom: 10px;
+  bottom: 0px;
   background-color: #fff;
   /** margin-top:20px;**/
   box-shadow: 0 -1px 7px rgba(0, 0, 0, 0.1);
@@ -15135,8 +15135,4 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
   width: 90px;
   border-radius: 50px;
   font-weight: normal;
-}
-.ysp-atreport-dialog-body .ysp-dialog-wrapper {
-  position: none!important;
-  height: 100vh!important;
 }
