@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "menu",
-  "targetURL": "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF",
+  "targetURL": "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF",
   "jsFile": "index.js",
   "requires": {
     "holidayAppli": "../holidayAppli/index.json",
@@ -15,7 +15,8 @@
     "addWork": "../addWork/index.json",
     "businessTravel": "../businessTravel/index.json",
     "visitRelative": "../visitRelative/index.json",
-    "overTime": "../overTime/index.json"
+    "overTime": "../overTime/index.json",
+    "departureAppli": "../departureAppli/index.json"
   },
   "chineseName": "菜单",
   "description": "",
@@ -239,6 +240,10 @@
         },
         {
           "toContextId": "context1_zfhIAP"
+        },
+        {
+          "toContextId": "context9_3DSwPg",
+          "toModelId": "departureAppli"
         }
       ]
     },
