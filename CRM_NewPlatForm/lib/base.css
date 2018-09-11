@@ -2850,6 +2850,25 @@ __________________*/
   overflow-x: hidden;
   overflow-y: auto;
 }
+.ysp-atreport-dialog-body .personnel .report-fill-in {
+  background: #ececec;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.ysp-atreport-dialog-body .personnel .report-fill-in > span:nth-child(1) {
+  color: #999;
+}
+.ysp-atreport-dialog-body .personnel .report-fill-in > span:nth-child(2) {
+  background-color: #FFF;
+  color: #4796ed;
+  text-align: center;
+  border: 1px solid #4796ed;
+  border-radius: 5px;
+  padding: 4px 12px;
+  padding-top: 2px;
+}
 .ysp-atreport-dialog-body > header.myreport-title-info > ul {
   list-style-type: none;
   width: 100%;
@@ -2860,7 +2879,7 @@ __________________*/
 .ysp-atreport-dialog-body > header.myreport-title-info > ul > li {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid #ccc;
   padding: 15px 0;
   margin: 0 10px;
 }
@@ -2872,7 +2891,6 @@ __________________*/
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate {
   background-color: #fff;
-  padding: 0px 14px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate input {
   margin-bottom: 0px !important;
@@ -2880,11 +2898,15 @@ __________________*/
   border-radius: 5px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child {
-  border-bottom: 1px solid #e9e9e9;
-  padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid #ccc;
+  /*** padding: 10px 0px 10px 0px;***/
+  padding: 15px 0;
   background: none !important;
   display: flex;
+  margin-left: 15px;
+  /***添加的新样式**/
   justify-content: flex-start;
+  /*** justify-content: space-between;***/
   align-items: center;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child > span:first-child {
@@ -2895,9 +2917,11 @@ __________________*/
   margin-left: 8px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:nth-child(2) {
-  padding: 10px 0px 10px 0px;
-  border-bottom: 1px solid #e9e9e9;
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc;
   display: flex;
+  margin-left: 15px;
+  /***添加的新样式**/
   justify-content: flex-start;
   align-items: center;
 }
@@ -2909,31 +2933,34 @@ __________________*/
   margin-left: 8px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:last-child {
-  padding: 10px 0px 10px 0px;
+  padding: 15px 15px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #dedede;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:last-child > span:first-child {
   color: #999999;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:last-child > span:last-child {
   margin-left: 8px;
+  flex: 1;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:last-child > span:last-child select {
   flex: 1;
   margin: 0;
   padding: 0;
-  border-radius: 5px;
   background: #fff;
-  padding: 0px 160px 0px 10px;
-  font-size: 12px;
+  /*** padding: 0px 160px 0px 10px;***/
   display: block;
+  font-weight: bold;
   height: 36px;
-  background-size: 20px;
-  background-position: 185px;
+  border: none;
+  color: #4a8ade;
+  background-size: 12px 20px;
+  background-position: right center;
   background-repeat: no-repeat;
-  background-image: url(images/down-arrow-icon.png);
+  background-image: url(images/ysp-achievement-pre-icon.png);
 }
 .ysp-atreport-dialog-body .ysp-workReport-lable {
   padding: 10px;
@@ -2942,24 +2969,20 @@ __________________*/
   height: 60px;
   overflow: hidden;
 }
-.ysp-atreport-dialog-body .ysp-workReport-lable .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-atreport-dialog-body .ysp-workReport-lable .ysp-workReport-uncheck,
 .ysp-atreport-dialog-body .ysp-workReport-lable .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-atreport-dialog-body .ysp-workReport-lable .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-atreport-dialog-body .ysp-workReport-lable-gd {
   padding: 10px 0px 10px 10px;
@@ -2968,24 +2991,20 @@ __________________*/
   height: 55px;
   overflow: hidden;
 }
-.ysp-atreport-dialog-body .ysp-workReport-lable-gd .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-atreport-dialog-body .ysp-workReport-lable-gd .ysp-workReport-uncheck,
 .ysp-atreport-dialog-body .ysp-workReport-lable-gd .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-atreport-dialog-body .ysp-workReport-lable-gd .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-atreport-dialog-body .ysp-workReport-gd {
   display: flex;
@@ -3000,24 +3019,20 @@ __________________*/
   background: #f2f2f2;
   overflow: hidden;
 }
-.ysp-atreport-dialog-body .ysp-workReport-lable-sq .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-atreport-dialog-body .ysp-workReport-lable-sq .ysp-workReport-uncheck,
 .ysp-atreport-dialog-body .ysp-workReport-lable-sq .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-atreport-dialog-body .ysp-workReport-lable-sq .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-atreport-dialog-body .ysp-workReport-sq {
   display: flex;
@@ -3341,7 +3356,7 @@ __________________*/
         **/
   background-color: #d9eafa;
   padding: 0 8px;
-  width: 27%;
+  min-width: 27%;
   text-align: center;
   border: 1px solid #5692E2;
   color: #5692E2;
@@ -4910,7 +4925,7 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   overflow: hidden;
 }
 .wtite-report .personnel .report {
-  width: 27%;
+  min-width: 27%;
   text-align: center;
   border: 1px solid #5692E2;
   color: #5692E2;
@@ -4918,6 +4933,35 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   float: left;
   margin: 10px;
   position: relative;
+}
+.wtite-report .personnel .report1 {
+  background-color: #d9eafa;
+  padding: 0 10px;
+}
+.wtite-report .personnel .report1 > div {
+  /***text-align:right;***/
+}
+.wtite-report .personnel .report1 > div .personal-close {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  color: #FFF;
+  border-radius: 10px;
+  font-size: 22px;
+  padding-right: 2px;
+  margin-right: 8px;
+  background-color: #9fc8f4;
+}
+.wtite-report .personnel .report1 > div .personal-close > span {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.wtite-report .personnel .report1 > div span {
+  display: inline-block;
+  vertical-align: middle;
 }
 .wtite-report .update-commit {
   text-align: center;
@@ -10764,24 +10808,20 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   height: 60px;
   overflow: hidden;
 }
-.ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-uncheck,
 .ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-store-report-dialog .ysp-workReport-lable-gd {
   padding: 10px 0px 10px 10px;
@@ -10790,24 +10830,20 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   height: 55px;
   overflow: hidden;
 }
-.ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-uncheck,
 .ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-store-report-dialog .ysp-workReport-gd {
   display: flex;
@@ -10822,24 +10858,20 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   background: #f2f2f2;
   overflow: hidden;
 }
-.ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-uncheck,
 .ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-store-report-dialog .ysp-workReport-sq {
   display: flex;
@@ -11919,6 +11951,10 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: #e1e1e1;
+  /***>span:first-child{
+      flex:1;
+    }
+   ***/
   /***
     >div:nth-child(1){
       display: flex;
@@ -11975,18 +12011,14 @@ div[data-ysp-modelid="workPlanCustomStore"] {
       } 
     }***/
 }
-.ysp-workSummary-style .timeSearch > .summary-type > span:first-child,
-.ysp-workSummary-style .timeSearch > .plan-time > span:first-child {
-  flex: 1;
-}
 .ysp-workSummary-style .timeSearch > .summary-type > span:last-of-type,
 .ysp-workSummary-style .timeSearch > .plan-time > span:last-of-type {
-  flex: 4;
+  flex: 1;
 }
 .ysp-workSummary-style .timeSearch > .summary-type > span:last-child select {
   border: none;
   margin: 0;
-  padding: 2px 0 0 8px ;
+  padding: 2px 0 0 10px ;
   background-color: #fff;
   display: block;
   height: 30px;
@@ -12000,7 +12032,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 .ysp-workSummary-style .timeSearch > .plan-time span:last-of-type {
   border: none;
   margin: 0;
-  padding: 2px 0 0 8px ;
+  padding: 2px 0 0 10px ;
   background-color: #fff;
   display: block;
   height: 30px;
@@ -12324,7 +12356,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   overflow: hidden;
 }
 .ysp-workSummary-style .personnel .report {
-  width: 27%;
+  min-width: 27%;
   text-align: center;
   border: 1px solid #5692E2;
   color: #5692E2;
@@ -12455,10 +12487,12 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 div[data-componentsid="uiControl49_Q2Z6nE"] div.ysp-dialog-wrapper {
   margin-top: 0px !important;
 }
-div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper {
+div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper,
+div[data-componentsid="uiControl54_SGf8tA"] div.ysp-dialog-wrapper {
   margin-top: 0px !important;
 }
-div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper div.surebtn-right-top > span {
+div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper div.surebtn-right-top > span,
+div[data-componentsid="uiControl54_SGf8tA"] div.ysp-dialog-wrapper div.surebtn-right-top > span {
   position: fixed;
   top: 10px;
   right: 10px;
@@ -12697,10 +12731,17 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 .ysp-atMe-workSummary .ysp-atMe-workSummary-text textarea {
   margin-bottom: 0rem;
   resize: none;
+  background-color: #FFF;
+  color: #3c3c3c;
+  border: none;
+}
+.ysp-atMe-workSummary .ysp-atMe-workSummary-text textarea[readonly="readonly"] {
+  color: #919191;
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-text > div:nth-child(1) {
   background: #ececec;
   height: 40px;
+  border: 1px solid #e1e1e1;
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-text > div:nth-child(1) > span:nth-child(1) {
   display: inline-block;
@@ -12710,6 +12751,12 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 .ysp-atMe-workSummary .ysp-atMe-workSummary-choseText textarea {
   margin-bottom: 0rem;
   resize: none;
+  background-color: #FFF;
+  color: #3c3c3c;
+  border: none;
+}
+.ysp-atMe-workSummary .ysp-atMe-workSummary-choseText textarea[readonly="readonly"] {
+  color: #919191;
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-choseText > div:nth-child(1) {
   display: flex;
@@ -12717,6 +12764,7 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   align-items: center;
   background: #ececec;
   height: 40px;
+  border: 1px solid #e1e1e1;
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-choseText > div:nth-child(1) > span:nth-child(1) {
   color: #999;
@@ -14346,7 +14394,7 @@ div[data-componentsid="uiControl316_O3sq7E"] > div:nth-child(1) > div:nth-child(
 .ysp-questionnaire-write > div:nth-child(1) > div:nth-child(4) > span:nth-child(1),
 .ysp-questionnaire-write > div:nth-child(1) > div:nth-child(5) > span:nth-child(1) {
   padding-right: 5px;
-  width: 27%;
+  min-width: 27%;
 }
 .ysp-questionnaire-write > div:nth-child(1) > div:nth-child(3) > span:nth-child(2),
 .ysp-questionnaire-write > div:nth-child(1) > div:nth-child(4) > span:nth-child(2),

@@ -3313,6 +3313,26 @@ __________________*/
   background:#e9e9e9;
   overflow-x: hidden;
   overflow-y: auto;
+  .personnel .report-fill-in{
+    background: #ececec;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    > span:nth-child(1) {
+    color: #999;
+		}
+    > span:nth-child(2) {
+    background-color: #FFF;
+    color: #4796ed;
+    text-align: center;
+    border: 1px solid #4796ed;
+    border-radius: 5px;
+    padding: 4px 12px;
+    padding-top: 2px;
+		}
+    
+	}
   >header.myreport-title-info>ul{
     list-style-type:none;
     width:100%;
@@ -3322,7 +3342,7 @@ __________________*/
     >li{
       display:flex;
       justify-content:space-between;
-      border-bottom:1px solid rgb(222,222,222);
+      border-bottom:1px solid #ccc;
       padding:15px 0;
       margin: 0 10px;
       &:last-child{margin-bottom:20px;}
@@ -3333,18 +3353,21 @@ __________________*/
   }
   .ysp-atreport-aimdate{
     background-color:#fff;
-    padding: 0px 14px;
+    // padding: 0px 14px;
     input{
       margin-bottom: 0px !important;
       padding: .5rem .5rem;
       border-radius: 5px;
     }
     >div:first-child{
-      border-bottom: 1px solid #e9e9e9;
-      padding: 10px 0px 10px 0px;
+      border-bottom: 1px solid #ccc;
+     /*** padding: 10px 0px 10px 0px;***/
+      padding: 15px 0;
       background: none !important;
       display: flex;
+      margin-left:15px;/***添加的新样式**/
       justify-content: flex-start;
+      /*** justify-content: space-between;***/
       align-items: center;
       >span:first-child{
         color:#999999;
@@ -3355,44 +3378,52 @@ __________________*/
       }
     }
     >div:nth-child(2){
-      padding: 10px 0px 10px 0px;
-      border-bottom: 1px solid #e9e9e9;
+      // padding: 10px 0px 10px 0px;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
       display: flex;
+      margin-left:15px;/***添加的新样式**/
       justify-content: flex-start;
+      // justify-content: space-between;
       align-items: center;
       >span:first-child{
         color:#999999;
       }
       >span:last-child{
         color: #4789e0;
-        margin-left: 8px;
+         margin-left: 8px;
       }
     }
     >div:last-child{
-      padding: 10px 0px 10px 0px;
+      // padding: 10px 0px 10px 0px;
+      padding: 15px 15px;
       display: flex;
-      justify-content: flex-start;
+      // justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid rgb(222,222,222);
       >span:first-child{
         color:#999999;
       }
       >span:last-child{
         //color: #4789e0;
-        margin-left: 8px;
+         margin-left: 8px;
+         flex:1;
         select{
           flex: 1;
           margin: 0;
           padding: 0;
-          border-radius: 5px;
           background: #fff;
-          padding: 0px 160px 0px 10px;
-          font-size:12px;
+         /*** padding: 0px 160px 0px 10px;***/
           display: block;
+          font-weight: bold;
           height: 36px;
-          background-size: 20px;
-          background-position: 185px;
+          border:none;
+          color:rgb(74,138,222);
+          background-size: 12px 20px;
+          background-position: right center;
           background-repeat: no-repeat;
-          background-image: url(./images/down-arrow-icon.png);
+          background-image: url(./images/ysp-achievement-pre-icon.png);
         }
       }
     }
@@ -3405,24 +3436,20 @@ __________________*/
     overflow: hidden;
     height: 60px;
     overflow: hidden;
-    .ysp-workReport-uncheck{
+    .ysp-workReport-uncheck,.ysp-workReport-check{
       float: left;
       border-radius: 5px;
-      padding: 2px 5px;
+   	  text-align: center;
+      padding: 3px 12px;
       border: 1px solid #4796ed;
       margin: 5px;
-      color: #4796ed;
-      text-align: center;
+      color: #4796ed; 
+      background-color: #FFF;
+      
     }
     .ysp-workReport-check{
-      float: left;
-      border-radius: 5px;
-      padding: 2px 5px;
-      border: 1px solid #4796ed;
-      margin: 5px;
-      text-align: center;
+      color: #fff !important;
       background: #4796ed;
-      color: #fff;
     }
   }
 
@@ -3433,25 +3460,21 @@ __________________*/
   overflow: hidden;
   height: 55px;
   overflow: hidden;
-  .ysp-workReport-uncheck{
-    float: left;
-    border-radius: 5px;
-    padding: 2px 5px;
-    border: 1px solid #4796ed;
-    margin: 5px;
-    color: #4796ed;
-    text-align: center;
-  }
-  .ysp-workReport-check{
-    float: left;
-    border-radius: 5px;
-    padding: 2px 5px;
-    border: 1px solid #4796ed;
-    margin: 5px;
-    text-align: center;
-    background: #4796ed;
-    color: #fff;
-  }
+  .ysp-workReport-uncheck,.ysp-workReport-check{
+      float: left;
+      border-radius: 5px;
+   	  text-align: center;
+      padding: 3px 12px;
+      border: 1px solid #4796ed;
+      margin: 5px;
+      color: #4796ed; 
+      background-color: #FFF;
+      
+    }
+    .ysp-workReport-check{
+      color: #fff !important;
+      background: #4796ed;
+    }
 }
 .ysp-workReport-gd{
   display: flex;
@@ -3466,25 +3489,21 @@ __________________*/
   padding: 10px 0px 10px 10px;
   background: rgb(242,242,242);
   overflow: hidden;
-  .ysp-workReport-uncheck{
-    float: left;
-    border-radius: 5px;
-    padding: 2px 5px;
-    border: 1px solid #4796ed;
-    margin: 5px;
-    color: #4796ed;
-    text-align: center;
-  }
-  .ysp-workReport-check{
-    float: left;
-    border-radius: 5px;
-    padding: 2px 5px;
-    border: 1px solid #4796ed;
-    margin: 5px;
-    text-align: center;
-    background: #4796ed;
-    color: #fff;
-  }
+   .ysp-workReport-uncheck,.ysp-workReport-check{
+      float: left;
+      border-radius: 5px;
+   	  text-align: center;
+      padding: 3px 12px;
+      border: 1px solid #4796ed;
+      margin: 5px;
+      color: #4796ed; 
+      background-color: #FFF;
+      
+    }
+    .ysp-workReport-check{
+      color: #fff !important;
+      background: #4796ed;
+    }
 }
 .ysp-workReport-sq{
   display: flex;
@@ -3851,7 +3870,7 @@ __________________*/
         **/
         background-color: #d9eafa;
         padding: 0 8px;
-        width: 27%;
+        min-width: 27%;
         text-align: center;
         border: 1px solid #5692E2;
         color: #5692E2;
@@ -5544,7 +5563,7 @@ div[data-ysp-modelid="wtiteReport"]{//8.24
       overflow: hidden;
     }
     .report{
-      width: 27%;
+      min-width: 27%;
       text-align: center;
       border: 1px solid #5692E2;
       color: #5692E2;
@@ -5552,6 +5571,37 @@ div[data-ysp-modelid="wtiteReport"]{//8.24
       float: left;
       margin: 10px;
       position: relative;
+    }
+    .report1{
+      background-color:#d9eafa;
+      padding: 0 10px;
+      >div{
+        /***text-align:right;***/
+        .personal-close{
+        display:inline-block;
+        vertical-align: middle;
+        position:relative;
+        width:20px;
+        height:20px;
+        color:#FFF;
+        border-radius:10px;
+        font-size:22px;
+        padding-right:2px;
+        margin-right: 8px; 
+        background-color:#9fc8f4;
+          >span{
+            position:absolute;
+            top:50%;
+            transform:translate(-50%,-50%);
+          }
+      }
+        span{
+          display:inline-block;
+          vertical-align: middle;
+        }
+        
+      }
+       
     }
   }
   .update-commit{
@@ -11978,25 +12028,21 @@ section.ysp-store-details{
       overflow: hidden;
       height: 60px;
       overflow: hidden;
-      .ysp-workReport-uncheck{
-        float: left;
-        border-radius: 5px;
-        padding: 2px 5px;
-        border: 1px solid #4796ed;
-        margin: 5px;
-        color: #4796ed;
-        text-align: center;
-      }
-      .ysp-workReport-check{
-        float: left;
-        border-radius: 5px;
-        padding: 2px 5px;
-        border: 1px solid #4796ed;
-        margin: 5px;
-        text-align: center;
-        background: #4796ed;
-        color: #fff;
-      }
+      .ysp-workReport-uncheck,.ysp-workReport-check{
+      float: left;
+      border-radius: 5px;
+   	  text-align: center;
+      padding: 3px 12px;
+      border: 1px solid #4796ed;
+      margin: 5px;
+      color: #4796ed; 
+      background-color: #FFF;
+      
+    }
+    .ysp-workReport-check{
+      color: #fff !important;
+      background: #4796ed;
+    }
     }
   
   .ysp-workReport-lable-gd{
@@ -12006,24 +12052,20 @@ section.ysp-store-details{
     overflow: hidden;
     height: 55px;
     overflow: hidden;
-    .ysp-workReport-uncheck{
+     .ysp-workReport-uncheck,.ysp-workReport-check{
       float: left;
       border-radius: 5px;
-      padding: 2px 5px;
+   	  text-align: center;
+      padding: 3px 12px;
       border: 1px solid #4796ed;
       margin: 5px;
-      color: #4796ed;
-      text-align: center;
+      color: #4796ed; 
+      background-color: #FFF;
+      
     }
     .ysp-workReport-check{
-      float: left;
-      border-radius: 5px;
-      padding: 2px 5px;
-      border: 1px solid #4796ed;
-      margin: 5px;
-      text-align: center;
+      color: #fff !important;
       background: #4796ed;
-      color: #fff;
     }
   }
   .ysp-workReport-gd{
@@ -12039,24 +12081,20 @@ section.ysp-store-details{
     padding: 10px 0px 10px 10px;
     background: rgb(242,242,242);
     overflow: hidden;
-    .ysp-workReport-uncheck{
+     .ysp-workReport-uncheck,.ysp-workReport-check{
       float: left;
       border-radius: 5px;
-      padding: 2px 5px;
+   	  text-align: center;
+      padding: 3px 12px;
       border: 1px solid #4796ed;
       margin: 5px;
-      color: #4796ed;
-      text-align: center;
+      color: #4796ed; 
+      background-color: #FFF;
+      
     }
     .ysp-workReport-check{
-      float: left;
-      border-radius: 5px;
-      padding: 2px 5px;
-      border: 1px solid #4796ed;
-      margin: 5px;
-      text-align: center;
+      color: #fff !important;
       background: #4796ed;
-      color: #fff;
     }
   }
   .ysp-workReport-sq{
@@ -13244,7 +13282,7 @@ div[data-ysp-modelid="workPlanCustomStore"]{
 .summary-common-arrow(){
   border:none;
   margin:0;
-  padding:2px 0 0 8px ;
+  padding:2px 0 0 10px ;
   background-color:#fff;
   display:block;
   height:30px;
@@ -13269,12 +13307,13 @@ div[data-ysp-modelid="workPlanCustomStore"]{
     border-bottom-width:1px;
     border-bottom-style:solid;
     border-bottom-color:#e1e1e1;
-    >span:first-child{
+     /***>span:first-child{
       flex:1;
     }
+   ***/
     
     >span:last-of-type{
-      flex:4;
+      flex:1;
     } 
     /***
     >div:nth-child(1){
@@ -13676,7 +13715,7 @@ div[data-ysp-modelid="workPlanCustomStore"]{
       overflow: hidden;
     }
     .report{
-      width: 27%;
+      min-width: 27%;
       text-align: center;
       border: 1px solid #5692E2;
       color: #5692E2;
@@ -13829,7 +13868,7 @@ div[data-componentsid="uiControl49_Q2Z6nE"]{
   	margin-top: 0px !important;
 	}
 }
-div[data-componentsid="uiControl50_m3HABT"]{
+div[data-componentsid="uiControl50_m3HABT"],div[data-componentsid="uiControl54_SGf8tA"]{
   div.ysp-dialog-wrapper{
   	margin-top: 0px !important;
      div.surebtn-right-top{
@@ -14072,10 +14111,15 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
     textarea{
       margin-bottom: 0rem;
       resize: none;
+      background-color:#FFF;
+      color:rgb(60,60,60);
+      border:none;
     }
+    textarea[readonly="readonly"]{color:rgb(145,145,145); }
     >div:nth-child(1){
       background: #ececec;
       height: 40px;
+      border:1px solid rgb(225,225,225);
       >span:nth-child(1){
         display: inline-block;
         padding: 10px 10px;
@@ -14087,13 +14131,18 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
     textarea{
       margin-bottom: 0rem;
       resize: none;
+      background-color:#FFF;
+      color:rgb(60,60,60);
+      border:none;
     }
+    textarea[readonly="readonly"]{color:rgb(145,145,145); }
     >div:nth-child(1){
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #ececec;
       height: 40px;
+       border:1px solid rgb(225,225,225);
       >span:nth-child(1){
         color: #999;
         padding: 0px 10px;
@@ -15785,7 +15834,7 @@ div[data-componentsid="uiControl63_CWH4cl"],div[data-componentsid="uiControl316_
       width: 100%;
       >span:nth-child(1){
         padding-right: 5px;
-        width: 27%;
+        min-width: 27%;
       }
       >span:nth-child(2){
         width: 60%;
