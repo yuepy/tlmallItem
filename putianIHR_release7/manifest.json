@@ -1,106 +1,109 @@
 {
-    "type": "adapter",
-    "short_name": "",
-    "version": "0.0.1",
-    "runtime_version": "2.7.0",
-    "runtime_env": "1webview",
-    "description": "",
-    "options": {
-        "resource_intercept": {
-            "type": [],
-            "ignore": []
-        },
-        "component_match_mode": "polling",
-        "resource_inject": [],
-        "resource_filter": [{
-            "url_match": [
-                "^https:\\/\\/tlihr\\.pttl\\.com.*"
-            ],
-            "charset": "utf-8",
-            "Accept-Language": "zh-Hans-CN",
-            "replaces": [{
-                "regexp": "\\btop\\b",
-                "sub_str": "_ysp_top"
-            }]
-        }],
-        "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.7.0",
+  "runtime_env": "1webview",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [],
+      "ignore": []
     },
-    "override_urls": [],
-    "adapter_urls": [{
-            "title": "checkMyInfo",
-            "url": "adapter://putianIHR/plan/checkMyInfo/index.json",
-            "matcher": [
-                "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_PAG_010_CP\\.GBL.*"
-            ],
-            "demo": []
-        },
-        {
-            "title": "businessTravel",
-            "url": "adapter://putianIHR/plan/businessTravel/index.json",
-            "matcher": [
-                "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_047_CP\\.GBL.*"
-            ],
-            "demo": []
-        },
-        {
-            "title": "forgetCard",
-            "url": "adapter://putianIHR/plan/forgetCard/index.json",
-            "matcher": [
-                "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_002\\.GBL.*"
-            ],
-            "demo": []
-        },
-        {
-            "title": "holidayAppli",
-            "url": "adapter://putianIHR/plan/holidayAppli/index.json",
-            "matcher": [
-                "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL.*"
-            ],
-            "demo": []
-        },
-        {
-            "title": "addWork",
-            "url": "adapter://putianIHR/plan/addWork/index.json",
-            "matcher": [
-                "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_004\\.GBL.*"
-            ],
-            "demo": []
-        },
-        {
-            "title": "remainHoliday",
-            "url": "adapter://putianIHR/plan/remainHoliday/index.json",
-            "matcher": [
-                "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_SELF_VACA_CPT\\.GBL.*"
-            ],
-            "demo": [
-                "https://tlihr.pttl.com/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_SELF_VACA_CPT.GBL?PORTALPARAM_PTCNAV=HPS_SELF_VACA_CPT_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_ABS_07&EOPP.SCLabel=TL_ABS_07&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_ABS_07.ADMN_S201804131619464569841608&IsFolder=false"
-            ]
-        },
-        {
-            "title": "menu",
-            "url": "adapter://putianIHR/plan/menu/index.json",
-            "matcher": [
-                "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?(?!cmd.*).*"
-            ],
-            "demo": [
-                "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
-            ]
-        },
-        {
-            "title": "login",
-            "url": "adapter://putianIHR/plan/login/index.json",
-            "matcher": [
-                "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout",
-                "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?cmd=logout"
-            ],
-            "demo": [
-                "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
-            ]
-        }
+    "component_match_mode": "polling",
+    "resource_inject": [],
+    "resource_filter": [
+      {
+        "url_match": [
+          "^https:\\/\\/tlihr\\.pttl\\.com.*"
+        ],
+        "charset": "utf-8",
+        "Accept-Language": "zh-Hans-CN",
+        "replaces": [
+          {
+            "regexp": "\\btop\\b",
+            "sub_str": "_ysp_top"
+          }
+        ]
+      }
     ],
-    "name": "普天HR系统",
-    "default_url": "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
-    "scope": "putianIHR",
-    "start_url": "enterplorer://putianIHR/local/index.html",
-    "update_time": 1536303886141
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+  },
+  "override_urls": [],
+  "adapter_urls": [
+    {
+      "title": "checkMyInfo",
+      "url": "adapter://putianIHR/plan/checkMyInfo/index.json",
+      "matcher": [
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_PAG_010_CP\\.GBL.*"
+      ],
+      "demo": []
+    },
+    {
+      "title": "businessTravel",
+      "url": "adapter://putianIHR/plan/businessTravel/index.json",
+      "matcher": [
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_047_CP\\.GBL.*"
+      ],
+      "demo": []
+    },
+    {
+      "title": "forgetCard",
+      "url": "adapter://putianIHR/plan/forgetCard/index.json",
+      "matcher": [
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_002\\.GBL.*"
+      ],
+      "demo": []
+    },
+    {
+      "title": "holidayAppli",
+      "url": "adapter://putianIHR/plan/holidayAppli/index.json",
+      "matcher": [
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_001\\.GBL.*"
+      ],
+      "demo": []
+    },
+    {
+      "title": "addWork",
+      "url": "adapter://putianIHR/plan/addWork/index.json",
+      "matcher": [
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_TL_AWE_004\\.GBL.*"
+      ],
+      "demo": []
+    },
+    {
+      "title": "remainHoliday",
+      "url": "adapter://putianIHR/plan/remainHoliday/index.json",
+      "matcher": [
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/(psp||psc)\\/ps.*\\/EMPLOYEE\\/HRMS\\/c\\/HPS_MENU\\.HPS_SELF_VACA_CPT\\.GBL.*"
+      ],
+      "demo": [
+        "https://tlihr.pttl.com/psp/ps_1/EMPLOYEE/HRMS/c/HPS_MENU.HPS_SELF_VACA_CPT.GBL?PORTALPARAM_PTCNAV=HPS_SELF_VACA_CPT_GBL&EOPP.SCNode=HRMS&EOPP.SCPortal=EMPLOYEE&EOPP.SCName=ADMN_TL_ABS_07&EOPP.SCLabel=TL_ABS_07&EOPP.SCPTcname=&FolderPath=PORTAL_ROOT_OBJECT.PORTAL_BASE_DATA.CO_NAVIGATION_COLLECTIONS.ADMN_TL_ABS_07.ADMN_S201804131619464569841608&IsFolder=false"
+      ]
+    },
+    {
+      "title": "menu",
+      "url": "adapter://putianIHR/plan/menu/index.json",
+      "matcher": [
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?(?!cmd.*).*"
+      ],
+      "demo": [
+        "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+      ]
+    },
+    {
+      "title": "login",
+      "url": "adapter://putianIHR/plan/login/index.json",
+      "matcher": [
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout",
+        "^https:\\/\\/tlihr\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/h\\/\\?cmd=logout"
+      ],
+      "demo": []
+    }
+  ],
+  "name": "普天HR系统",
+  "default_url": "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "scope": "putianIHR",
+  "start_url": "enterplorer://putianIHR/local/index.html",
+  "update_time": 1536575869584
 }
