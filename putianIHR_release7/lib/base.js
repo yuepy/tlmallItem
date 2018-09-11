@@ -113,6 +113,7 @@
             } else if (topWindow.EAPI.isIOS()) {
                 if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout") !== -1) {
                     var timer = setInterval(function() {
+                      debugger;
                         if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
                             sessionStorage.setItem("userid", doc.querySelector("#userid").value);
                             sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
@@ -122,7 +123,6 @@
                     }, 500);
                 } else if (aWin.location.href.indexOf("CP.GBL?&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("languageCd=ZHS") == -1) {
                     var host = aWin.location.href.match(/http.*\?/)[0];
-
                     var timer = setInterval(function() {
                         if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
                             sessionStorage.setItem("userid", doc.querySelector("#userid").value);
@@ -134,6 +134,7 @@
                 }
             }
             if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS") !== -1) {
+              debugger;
                 doc.querySelector("#userid").value = sessionStorage.getItem("userid");
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
             } else if (aWin.location.href.indexOf("CP.GBL?&cmd=login&languageCd=ZHS") !== -1) {
@@ -160,16 +161,20 @@
             }
             //返回
             if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
-                alert('弹出地址');
                 ysp.customHelper.tab = "menu"
             }
-
-
 
         },
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
+          if(aWin.location.href.indexOf('TL_SELF') !== -1){
+            if(doc.querySelectorAll('.PSTEXT').length > 1){
+              console.log('正常进入');
+            }else{
+              aWin.location.href = 'https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout';
+            }
+          }
                 //ios弹出_ysp_top
                 // var oldAlert = aWin.alert;
                 // aWin.alert = function(str) {
