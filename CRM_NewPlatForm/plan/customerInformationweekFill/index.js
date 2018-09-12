@@ -18,7 +18,7 @@
           ysp.customHelper.AndroidBackURL = url;
         } else if (parent.EAPI.isIOS() && pageId == "context2_15cCKI") {
           var urls = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //更换返回方法 - 跳回至工作台
-          ysp.customHelper.AndroidBackURL = urls;
+          ysp.customHelper.AndroidBackFn = urls;
         } else {
           ysp.customHelper.AndroidBackFlag = 'AndroidHistory';
         }ysp.customHelper.AndroidBackFlag = 'destination';
@@ -28,7 +28,7 @@
         //ysp.customHelper.back();
         var pageId = window.beforePageId;if (parent.EAPI.isAndroid() && pageId == "context51_PhTFP3") {
           var url = "http://192.168.1.227/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
-          ysp.customHelper.BackReload(url); //history.back();
+          ysp.customHelper.AndroidBackFn(); //history.back();
         } else if (parent.EAPI.isIOS() && pageId == "context51_PhTFP3") {
           var url = "http://192.168.1.227/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
           ysp.customHelper.BackReload(url);

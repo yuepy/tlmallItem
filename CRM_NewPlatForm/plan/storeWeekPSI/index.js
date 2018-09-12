@@ -14,7 +14,7 @@
         }ysp.customHelper.AndroidBackFlag = 'destination';
       }if (data.eventType == "back") {
         var pageId = window.beforePageId;var storeUrl = "http://192.168.1.227/pttlCrm/res/page/psi/storeInfocollection.html";if (parent.EAPI.isAndroid() && (pageId == "context52_Wg5qcG" || pageId == "context2_15cCKI")) {
-          ysp.customHelper.BackReload(storeUrl);
+          ysp.customHelper.AndroidBackFn();
         } else if (parent.EAPI.isIOS() && pageId == "context52_Wg5qcG") {
           ysp.customHelper.BackReload(storeUrl);
         } else if (parent.EAPI.isIOS() && pageId == "context2_15cCKI") {

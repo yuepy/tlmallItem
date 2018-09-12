@@ -7,11 +7,11 @@
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackURL = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if (data.eventType == 'back') {
-        //ysp.customHelper.back();
-        // var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
-        // ysp.appMain.reloadPage(url);
-        ysp.appMain.back(); //更换返回方法 BackReload()回到工作台
-        ysp.customHelper.BackReload();
+        if (!top.EAPI.isAndroid()) {
+          ysp.appMain.back();ysp.customHelper.BackReload();
+        } else {
+          ysp.customHelper.AndroidBackFn();
+        }
       }
     },
     getTemplate_uiControl53_uQ6Chf: function getTemplate_uiControl53_uQ6Chf() {

@@ -61,9 +61,8 @@
       }var Backurl = "http://192.168.1.227/pttlCrm/res/page/psi/customerInfocollection.html";switch (data.eventType) {case 'topback':
           topback(data.dataCustom);
           break;case 'back':
-          // elem.ownerDocument.querySelector('#information-dialog').click();
-          //更换返回方式,跳回至信息录入
-          ysp.customHelper.BackReload(Backurl);break;case 'changeClick':
+          !top.EAPI.isAndroid() ? ysp.customHelper.BackReload(Backurl) : ysp.customHelper.AndroidBackFn(); //更换返回方式,跳回至信息录入
+          break;case 'changeClick':
           changeClick(data.dataCustom);break;case 'selectChange':
           selectChange(data.dataCustom);break;case 'liClick':
           elem.querySelectorAll(".editContact")[data.dataCustom].click();break;case 'addClick':
@@ -71,8 +70,8 @@
           editChange(data.dataCustom);break;case 'editTextChange':
           editTextChange(data.dataCustom);break;case 'addEditChange':
           addEditChange(data.dataCustom);break;case 'save':
-          elem.querySelector("#save_btn_switch").click();
-          break;case 'sure':
+          elem.querySelector("#save_btn_switch").click();break;
+        case 'sure':
           sure(data.dataCustom);break;case "delete":
           elem.querySelectorAll(".delete")[data.dataCustom].querySelector("a").click();break;case "alertClick":
           ysp.customHelper.tipMsg.confirm();break;}function topback(data) {
@@ -98,8 +97,7 @@
         }
       }function editChange(data) {
         var ind = parseInt(data.ind);var i = parseInt(data.i);elem.querySelector(".dialog_detail").querySelectorAll("label")[ind].querySelector("select").querySelectorAll("option")[i].selected = true;
-      }
-      function editTextChange(data) {
+      }function editTextChange(data) {
         var ind = parseInt(data.ind);var val = data.val;elem.querySelector(".dialog_detail").querySelectorAll("label")[ind].querySelector("textarea").value = val;
       }function addEditChange(data) {
         var ind = parseInt(data.ind);var val = data.val;elem.querySelector(".dialog_detail").querySelectorAll("label")[ind].querySelector("input").value = val;
