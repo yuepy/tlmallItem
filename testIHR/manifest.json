@@ -1,0 +1,32 @@
+{
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.7.0",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [],
+      "ignore": []
+    },
+    "resource_inject": []
+  },
+  "override_urls": [],
+  "adapter_urls": [
+    {
+      "title": "login",
+      "url": "adapter://testIHR/plan/login/index.json",
+      "matcher": [
+        "^https:\\/\\/192\\.168\\.128\\.95\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout"
+      ],
+      "demo": [
+        "https://192.168.128.95/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+      ]
+    }
+  ],
+  "name": "测试IHR",
+  "default_url": "https://192.168.128.95/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "scope": "testIHR",
+  "start_url": "https://192.168.128.95/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "update_time": 1536663874304
+}

@@ -1,0 +1,552 @@
+{
+  "version": "0.1",
+  "id": "login",
+  "targetURL": "https://ehrtest.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "jsFile": "index.js",
+  "requires": {
+    "menu": "../menu/index.json"
+  },
+  "chineseName": "登录",
+  "description": "",
+  "controls": {
+    "control0_OT4G6D": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请输入用户ID"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "用户 ID"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"login\"]//INPUT[@name=\"userid\"]",
+              "descendant::INPUT[@name=\"userid\"]"
+            ]
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//INPUT[@id=\"userid\"]",
+              "descendant::FORM[@id=\"login\"]//INPUT[@id=\"userid\"]",
+              "descendant::INPUT[@id=\"userid\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              3
+            ],
+            "value": "FORM.form-box DIV.form-group INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[5]/FORM[1]/DIV[2]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "textbox"
+    },
+    "control1_EcG6Kd": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请输入密码"
+              ]
+            }
+          },
+          {
+            "id": "@title",
+            "prob": 2,
+            "value": {
+              "text": [
+                "密码"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"login\"]//INPUT[@name=\"pwd\"]",
+              "descendant::INPUT[@name=\"pwd\"]"
+            ]
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//INPUT[@id=\"pwd\"]",
+              "descendant::FORM[@id=\"login\"]//INPUT[@id=\"pwd\"]",
+              "descendant::INPUT[@id=\"pwd\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              3
+            ],
+            "value": "FORM.form-box DIV.form-group INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[5]/FORM[1]/DIV[3]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "password"
+          }
+        ]
+      },
+      "intendedRole": "passwordbox",
+      "roles": "element,passwordbox,textbox",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "textbox"
+    },
+    "control2_PDtsvL": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "value": {
+              "text": [
+                "请输入手机验证码"
+              ]
+            }
+          },
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": [
+              "descendant::form[@name=\"login\"]//INPUT[@name=\"code\"]",
+              "descendant::INPUT[@name=\"code\"]"
+            ]
+          },
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//INPUT[@id=\"code\"]",
+              "descendant::FORM[@id=\"login\"]//INPUT[@id=\"code\"]",
+              "descendant::INPUT[@id=\"code\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.form-group.message-box DIV.message-input INPUT.form-control"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[5]/FORM[1]/DIV[4]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "textbox"
+    },
+    "control3_zEPQ14": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "ordinal": [
+              2,
+              3
+            ],
+            "value": {
+              "text": [
+                "发送短信"
+              ],
+              "visText": [
+                "发送短信"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]/DIV[4]/DIV[2]/DIV[1]",
+              "descendant::FORM[@id=\"login\"]/DIV[4]/DIV[2]/DIV[1]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.form-group.message-box DIV.tel-button-box DIV.tel-button"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[5]/FORM[1]/DIV[4]/DIV[2]/DIV[1]"
+          },
+          {
+            "id": "style/color",
+            "value": [
+              81,
+              134,
+              237
+            ]
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
+    },
+    "control4_BHds2A": {
+      "location": {
+        "data": {
+          "tagName": "BUTTON"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "登录"
+              ],
+              "visText": [
+                "登录"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]/BUTTON[1]",
+              "descendant::DIV[@id=\"pswrapper\"]//FORM[@id=\"login\"]//BUTTON",
+              "descendant::FORM[@id=\"login\"]//BUTTON"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.login-box FORM.form-box BUTTON.btn.btn-primary"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[5]/FORM[1]/BUTTON[1]"
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
+    }
+  },
+  "contexts": {
+    "context0_e0hczR": {
+      "controls": [
+        "control0_OT4G6D",
+        "control1_EcG6Kd",
+        "control2_PDtsvL",
+        "control3_zEPQ14",
+        "control4_BHds2A"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow0_Mp1iVV": {
+      "toContexts": [
+        {
+          "toContextId": "context0_e0hczR"
+        }
+      ]
+    },
+    "flow1_X7yEsV": {
+      "fromContextId": "context0_e0hczR",
+      "fromAction": "click",
+      "fromControlId": "control0_OT4G6D",
+      "toContexts": [
+        {
+          "toContextId": "context0_e0hczR"
+        }
+      ]
+    },
+    "flow2_0tbGkz": {
+      "fromContextId": "context0_e0hczR",
+      "fromAction": "click",
+      "fromControlId": "control2_PDtsvL",
+      "toContexts": [
+        {
+          "toContextId": "context0_e0hczR"
+        }
+      ]
+    },
+    "flow3_xH65O8": {
+      "fromContextId": "context0_e0hczR",
+      "fromAction": "click",
+      "fromControlId": "control1_EcG6Kd",
+      "toContexts": [
+        {
+          "toContextId": "context0_e0hczR"
+        }
+      ]
+    },
+    "flow4_OkMvT3": {
+      "fromContextId": "context0_e0hczR",
+      "fromAction": "click",
+      "fromControlId": "control4_BHds2A",
+      "toContexts": [
+        {
+          "toContextId": "context0_e0hczR"
+        },
+        {
+          "toContextId": "context1_lwOhR7",
+          "toModelId": "menu"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0_A7yvCq": {
+      "contextId": "context0_e0hczR",
+      "layout": [
+        {
+          "id": "uiControl0_GItX1r",
+          "controlId": "control0_OT4G6D",
+          "display": {
+            "adapterId": "textbox",
+            "type": "textbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl1_veFtMA",
+          "controlId": "control1_EcG6Kd",
+          "display": {
+            "adapterId": "passwordbox",
+            "type": "passwordbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl2_u9VMBp",
+          "controlId": "control2_PDtsvL",
+          "display": {
+            "adapterId": "textbox",
+            "type": "textbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl3_JeWW1d",
+          "controlId": "control3_zEPQ14",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl4_f44Fy6",
+          "controlId": "control4_BHds2A",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0_e0hczR": [
+          "Oracle PeopleSoft 登录"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0_e0hczR": [
+          "ehrtest.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0_e0hczR": [
+          [
+            "browsercheck_error",
+            "code",
+            "discovery_error",
+            "login",
+            "login_error",
+            "pswrapper",
+            "ptinstalledlang",
+            "ptlangcd",
+            "ptloginerrorcont",
+            "ptmode",
+            "pwd",
+            "timezoneOffset",
+            "userid"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0_e0hczR": [
+          [
+            "backImg",
+            "backTopImg",
+            "boot-box",
+            "btn",
+            "btn-primary",
+            "forget",
+            "form-box",
+            "form-control",
+            "form-group",
+            "index",
+            "index-bottom",
+            "index-img",
+            "index-log-img",
+            "index-top",
+            "logImg",
+            "login-box",
+            "message-box",
+            "message-input",
+            "ps_box-control",
+            "ps_login_error",
+            "ps_login_error_inner",
+            "psloginerror",
+            "tel-button",
+            "tel-button-box"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0_e0hczR": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/DIV",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FORM",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/FORM/BUTTON",
+            "DIV/FORM/DIV",
+            "DIV/FORM/INPUT-hidden",
+            "FORM/DIV/A",
+            "FORM/DIV/DIV",
+            "FORM/DIV/INPUT-password",
+            "FORM/DIV/INPUT-text"
+          ]
+        ]
+      }
+    }
+  }
+}

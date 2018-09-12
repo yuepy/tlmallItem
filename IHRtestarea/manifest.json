@@ -1,0 +1,32 @@
+{
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.7.0",
+  "description": "",
+  "options": {
+    "resource_intercept": {
+      "type": [],
+      "ignore": []
+    },
+    "resource_inject": []
+  },
+  "override_urls": [],
+  "adapter_urls": [
+    {
+      "title": "login",
+      "url": "adapter://IHRtestarea/plan/login/index.json",
+      "matcher": [
+        "^https:\\/\\/ehrtest\\.pttl\\.com\\/psp\\/ps\\/EMPLOYEE\\/HRMS\\/\\?cmd=logout"
+      ],
+      "demo": [
+        "https://ehrtest.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout"
+      ]
+    }
+  ],
+  "name": "IHR测试环境",
+  "default_url": "https://ehrtest.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "scope": "IHRtestarea",
+  "start_url": "https://ehrtest.pttl.com/psp/ps/EMPLOYEE/HRMS/?cmd=logout",
+  "update_time": 1536730836880
+}
