@@ -7,7 +7,11 @@
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.customHelper.AndroidBackModel = 'customerInformationFIll';ysp.customHelper.AndroidBackFlag = 'destination';
       }if (data.eventType == "back") {
-        var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.customHelper.BackReload(url);
+        if (!top.EAPI.isAndroid()) {
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html";ysp.customHelper.BackReload(url);
+        } else {
+          ysp.customHelper.AndroidBackFn();
+        }
       }
     },
     getTemplate_uiControl81_N7zeTo: function getTemplate_uiControl81_N7zeTo() {

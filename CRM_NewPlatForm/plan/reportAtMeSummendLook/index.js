@@ -5,11 +5,11 @@
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html";ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
-        //history.go(-1);
-        var url = "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html";
-        //ysp.appMain.reloadPage(url);
-        ysp.customHelper.back();
-        ysp.customHelper.BackReload(url);
+        if (!top.EAPI.isAndroid()) {
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html";ysp.customHelper.back();ysp.customHelper.BackReload(url);
+        } else {
+          ysp.customHelper.AndroidBackFn();
+        }
       }
     },
     getTemplate_uiControl309_GSUcPO: function () {

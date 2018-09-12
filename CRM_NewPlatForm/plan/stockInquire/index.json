@@ -130,47 +130,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control126_iwcGRH": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [
-            {
-              "method": "selector",
-              "value": "html"
-            }
-          ],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::DIV[@id=\"content\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.wrapper.wrapper-content.animated.fadeInRight"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control126_iwcGRH"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control127_Jx2ncW": {
       "location": {
         "data": {
@@ -224,7 +183,6 @@
         "control121_TZUAHF",
         "control129_dZPASs",
         "control72_ql29xv",
-        "control126_iwcGRH",
         "control127_Jx2ncW"
       ],
       "anchors": [],
@@ -251,7 +209,11 @@
       "fromContextId": "context32_uZlCdg",
       "fromAction": "doAction",
       "fromControlId": "control121_TZUAHF",
-      "toContexts": []
+      "toContexts": [
+        {
+          "toContextId": "context32_uZlCdg"
+        }
+      ]
     },
     "flow77_kOum9E": {
       "fromContextId": "context32_uZlCdg",
@@ -276,20 +238,6 @@
           "toModelId": "index"
         }
       ]
-    },
-    "flow112_PH67hb": {
-      "fromContextId": "context32_uZlCdg",
-      "fromAction": "doAction",
-      "fromControlId": "control126_iwcGRH",
-      "toContexts": [
-        {
-          "toContextId": "context32_uZlCdg"
-        },
-        {
-          "toContextId": "context33_PGqDhw",
-          "toModelId": "goodsMessages"
-        }
-      ]
     }
   },
   "pages": {
@@ -307,21 +255,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl116_f4yPcq",
                 "onGetTemplate": "getTemplate_uiControl116_f4yPcq"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl125_evlfRK",
-          "controlId": "control126_iwcGRH",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl125_evlfRK",
-                "onGetTemplate": "getTemplate_uiControl125_evlfRK"
               }
             }
           }

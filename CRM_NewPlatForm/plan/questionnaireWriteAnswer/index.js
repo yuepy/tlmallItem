@@ -5,8 +5,11 @@
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackURL = 'http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=';ysp.customHelper.AndroidBackModel = 'questionnaireWrite';ysp.customHelper.AndroidBackFlag = 'destination';
       }if ("back" == data.eventType) {
-        //history.go(-1);
-        ysp.customHelper.BackReload('http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=');
+        if (!top.EAPI.isAndroid()) {
+          ysp.customHelper.BackReload('http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=');
+        } else {
+          ysp.customHelper.AndroidBackFn();
+        }
       }
     },
     getTemplate_uiControl320_ibSXl8: function () {
