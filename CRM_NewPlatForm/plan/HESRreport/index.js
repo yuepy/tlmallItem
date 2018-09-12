@@ -60,7 +60,7 @@
                   var imgCanvas = ysp.customHelper.convertImageToCanvas(pics[k]);var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas); // var scrTitle = pics[k].getAttribute('src');
                   // var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];
                   // var srcUrl = decodeURI(scrTitleSplit);
-                  // var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;
+                  // var scrC = "http://192.168.1.227/pttlCrm/" + srcUrl;
                   panelObj.subject.fileList.push(scrC);
                 }
               } //上传图片并且展示

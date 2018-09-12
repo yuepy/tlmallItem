@@ -3,10 +3,10 @@
     getData_control318_nWgrHk: function (elem) {},
     doAction_uiControl309_GSUcPO: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html";ysp.customHelper.AndroidBackFlag = 'destination';
+        ysp.customHelper.AndroidBackURL = "http://192.168.1.227/pttlCrm/res/page/workTask/workAtme.html";ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
         if (!top.EAPI.isAndroid()) {
-          var url = "http://192.168.220.82:8080/pttlCrm/res/page/workTask/workAtme.html";ysp.customHelper.back();ysp.customHelper.BackReload(url);
+          var url = "http://192.168.1.227/pttlCrm/res/page/workTask/workAtme.html";ysp.customHelper.back();ysp.customHelper.BackReload(url);
         } else {
           ysp.customHelper.AndroidBackFn();
         }
@@ -65,7 +65,7 @@
               title = [],
               content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
           // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
-          var scrTitle = divs[i].querySelector("img").getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;src.push(scrC);var s;title.push(divs[i].getAttribute("imgname"));content.push(divs[i].getAttribute("imgname"));var images = { title: title, content: content, src: src };data.file.push(images);
+          var scrTitle = divs[i].querySelector("img").getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.1.227/pttlCrm/" + srcUrl;src.push(scrC);var s;title.push(divs[i].getAttribute("imgname"));content.push(divs[i].getAttribute("imgname"));var images = { title: title, content: content, src: src };data.file.push(images);
         }
       } /*_____________________
                      	以下为@人员中展示数据

@@ -5,7 +5,7 @@
     getData_control49_hLhTy9: function (elem) {},
     doAction_uiControl53_uQ6Chf: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
+        ysp.customHelper.AndroidBackURL = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if (data.eventType == 'back') {
         if (!top.EAPI.isAndroid()) {
           ysp.appMain.back();ysp.customHelper.BackReload();
@@ -83,7 +83,7 @@
           var src = [],
               title = [],
               content = [];var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];if (scrTitleSplit) {
-            var urlSrc = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + urlSrc;
+            var urlSrc = decodeURI(scrTitleSplit);var scrC = "http://192.168.1.227/pttlCrm" + urlSrc;
           } else {
             var scrC = scrTitle;
           }
@@ -159,7 +159,7 @@
       }function save(data) {
         var HuaWeiFD = data.HuaWeiFD;var HuaweiExperienceStore = data.HuaweiExperienceStore;var HuaweiFuse = data.HuaweiFuse;var HuaweiProvincePackage = data.HuaweiProvincePackage;var SamSung = data.SamSung;var Distribution = data.Distribution;var OtherInfor = data.OtherInfor;elem.ownerDocument.querySelector('.footer').querySelector('#customerReportPopBtnSuccess').click();if (HuaWeiFD != "" || HuaweiExperienceStore != "" || SamSung != "" || Distribution != "" || HuaweiFuse != "" || HuaweiProvincePackage != "" || OtherInfor != "") {
           //ysp.customHelper.back();
-          var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url); 
+          var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url); 
           //更换返回方法 BackReload()回到工作台
           ysp.customHelper.back();ysp.customHelper.BackReload();
         } //   function callback() {
@@ -192,7 +192,7 @@
             //ysp.appMain.back(); 
             cwin && cwin.close();flag = true;cwin.writeReportStatus = undefined;var targetWin = ysp.customHelper.getWinFromRTByName('firstLevelIframeContainer');if (targetWin) {
               //targetWin.location.reload();
-              var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
+              var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
               //更换返回方法 BackReload()回到工作台
               // ysp.appMain.back();
               ysp.customHelper.back();ysp.customHelper.BackReload();
