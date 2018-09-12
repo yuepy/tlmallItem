@@ -104,7 +104,7 @@
                         if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
                             sessionStorage.setItem("userid", doc.querySelector("#userid").value);
                             sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
-                            // aWin.location.href = host + "&cmd=login&languageCd=ZHS";
+                            aWin.location.href = host + "&cmd=login&languageCd=ZHS";
                             clearInterval(timer);
                         }
                     }, 500);
@@ -160,7 +160,6 @@
             }
             //返回
             if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
-                alert('弹出地址');
                 ysp.customHelper.tab = "menu"
             }
 

@@ -104,7 +104,7 @@
                         if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
                             sessionStorage.setItem("userid", doc.querySelector("#userid").value);
                             sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
-                            // aWin.location.href = host + "&cmd=login&languageCd=ZHS";
+                            aWin.location.href = host + "&cmd=login&languageCd=ZHS";
                             clearInterval(timer);
                         }
                     }, 500);
@@ -168,13 +168,13 @@
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-          if(aWin.location.href.indexOf('TL_SELF') !== -1){
-            if(doc.querySelectorAll('.PSTEXT').length > 1){
-              console.log('正常进入');
-            }else{
-              aWin.location.href = 'https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout';
-            }
-          }
+          // if(aWin.location.href.indexOf('TL_SELF') !== -1){
+          //   if(doc.querySelectorAll('.PSTEXT').length > 1){
+          //     console.log('正常进入');
+          //   }else{
+          //     aWin.location.href = 'https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout';
+          //   }
+          // }
                 //ios弹出_ysp_top
                 // var oldAlert = aWin.alert;
                 // aWin.alert = function(str) {
