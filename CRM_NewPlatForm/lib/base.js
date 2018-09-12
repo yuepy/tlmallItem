@@ -73,6 +73,7 @@
     ysp.customHelper.IconNum.atMe = atMe.split('=')[1];
   }
   topWin.AndroidBack = function(){
+    debugger;
     var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
     var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
     var name = ysp.customHelper.AndroidName; //客户门店返回名称标识
@@ -921,6 +922,7 @@
    
   }
   utils.extend(ysp.customHelper, {
+    AndroidBackFn:topWin.AndroidBack,
     AndroidDocument:'',//安卓物理返回键客户门店返回元素
     AndroidName:'',//安卓物理返回键客户门店返回名称
     AndroidBackURL:'',//安卓物理返回键目标地址
