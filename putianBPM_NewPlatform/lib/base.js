@@ -39,7 +39,48 @@
     var clientEntry;
     var topW = top;
     topW.AndroidBack = function() {
-        ysp.appMain.back();
+      debugger;
+      var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
+      var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
+      var name = ysp.customHelper.AndroidName; //客户门店返回名称标识
+      var currentElem = ysp.customHelper.AndroidDocument; // 客户门店返回主元素
+      if(ysp.customHelper.AndroidBackFlag == 'default'){
+        ysp.customHelper.back();
+      }
+      if(ysp.customHelper.AndroidBackFlag == 'PageClose'){
+        if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
+          ysp.runtime.Browser.activeBrowser.contentWindow.close();
+        }
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
+        if(url == '' && model){
+           ysp.customHelper.BackReload('',model);
+        }
+      }
+      if(ysp.customHelper.AndroidBackFlag == 'destination' && url != ''){
+        ysp.customHelper.BackReload(url,model);
+      }
+      // if(ysp.customHelper.AndroidBackFlag == 'BigData'){
+      //   ysp.runtime.Browser.activeBrowser.contentWindow.histroy.back();
+      // }
+      if(ysp.customHelper.AndroidBackFlag == 'AndroidHistory'){
+        ysp.runtime.Browser.activeBrowser.contentWindow.history.go(-1);
+      }
+      // if(ysp.customHelper.AndroidBackFlag == 'Client&Store'){
+      //   ysp.customHelper.toPlan(currentElem, name, model)
+      // }
+      // if(ysp.customHelper.AndroidBackFlag == 'ClientorStory'){
+      //   if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
+      //     ysp.runtime.Browser.activeBrowser.contentWindow.close();
+      //   }
+      // }
+      //恢复默认值
+      ysp.customHelper.AndroidBackFlag == 'default';
+      ysp.customHelper.AndroidBackURL = '';
+      ysp.customHelper.AndroidBackModel = '';
+      ysp.customHelper.AndroidDocument = ''
+      ysp.customHelper.AndroidName = '';
+      //default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面 BigData:为大数据钻取返回 . AndroidHistory:针对与页面后退一步返回
+      //Client&Store : 针对客户||门店返回方案  ClientorStory:针对客户门店360返回列表方案
     };
 
     utils.extend(ysp.customHelper, {
@@ -55,7 +96,15 @@
         forceMatchModels: _forceMatchModels,
         back: _back,
         toPlan: _toPlan,
-
+				
+      	AndroidBackFn:topW.AndroidBack,
+        AndroidDocument:'',//安卓物理返回键客户门店返回元素
+        AndroidName:'',//安卓物理返回键客户门店返回名称
+        AndroidBackURL:'',//安卓物理返回键目标地址
+        AndroidBackModel:'',//安卓物理返回键目标模板
+        AndroidBackFlag:'default',//安卓物理返回键返回方法 条件 标识 default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面
+        BackReload:_BackReload,
+      
         openWindow: function(url, title) {
 
             if (typeof url !== "string") {
@@ -636,5 +685,24 @@
             }
         });
     }
-
+		/*调用场景：新平台页面安卓返回键返回时使用*/
+    function _BackReload(url,model){
+      if(url && typeof url !== 'string'){
+        console.info(url+'!字符串,可不行');
+      }
+      if(model && typeof model !== 'string'){
+        console.info(model+'模板名称也得是字符串!');
+      }
+      var currentWin = ysp.runtime.Browser.activeBrowser.contentWindow;
+      if(url && !model){
+        currentWin.location.href = url
+      }
+      if(url=='' && model){
+        ysp.runtime.Model.setForceMatchModels([model]);
+      }
+      if(url && model){
+        currentWin.location.href = url;
+        ysp.runtime.Model.setForceMatchModels([model]);
+      }
+    }
 })(window, ysp);
