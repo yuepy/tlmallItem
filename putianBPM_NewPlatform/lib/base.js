@@ -38,6 +38,7 @@
     var winContainer = [];
     var clientEntry;
     var topW = top;
+  	debugger;
     topW.AndroidBack = function() {
       debugger;
       var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
@@ -56,7 +57,7 @@
            ysp.customHelper.BackReload('',model);
         }
       }
-      if(ysp.customHelper.AndroidBackFlag == 'destination' && url != ''){
+      if(ysp.customHelper.AndroidBackFlag == 'destination'){
         ysp.customHelper.BackReload(url,model);
       }
       // if(ysp.customHelper.AndroidBackFlag == 'BigData'){
@@ -698,6 +699,7 @@
         currentWin.location.href = url
       }
       if(url=='' && model){
+        currentWin.document.querySelector('.mini-tools-close').click();
         ysp.runtime.Model.setForceMatchModels([model]);
       }
       if(url && model){
