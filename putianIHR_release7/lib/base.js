@@ -75,25 +75,29 @@
             //安卓偶现首次登录更多不跳转到登录页问题
 
 
-            if (aWin.location.href.indexOf("_ysp_appid") !== -1) {
-                setTimeout(function() {
-                        if (doc.body.textContent.indexOf("未授权您访问此页面") !== -1) {
-                            ysp.runtime.Browser.activeBrowser.contentWindow.location.reload()
-                        }
-                    }, 2000)
-                    // aWin.location.href="https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
-            }
+            // if (aWin.location.href.indexOf("_ysp_appid") !== -1) {
+            //     setTimeout(function() {
+            //             if (doc.body.textContent.indexOf("未授权您访问此页面") !== -1) {
+            //                 ysp.runtime.Browser.activeBrowser.contentWindow.location.reload()
+            //             }
+            //         }, 2000)
+            //         // aWin.location.href="https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
+            // }
             //解决重复登录的问题
-            if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout") !== -1) {
+            if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login") !== -1) {
                 var timer = setInterval(function() {
                     if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
+                      	// var userName=doc.querySelector("#userid").value;
+                      	// userName=userName.replace(/tl/g,"TL")
+                      	alert(doc.querySelector("#userid").value)
                         sessionStorage.setItem("userid", doc.querySelector("#userid").value);
+                      	// sessionStorage.setItem("userid", userName);
                         sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
                         aWin.location.href = "https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
                         clearInterval(timer);
                     }
                 }, 500);
-            } else if (aWin.location.href.indexOf("CP.GBL?&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("languageCd=ZHS") == -1) {
+            } else if (aWin.location.href.indexOf("CP.GBL?") !== -1&&aWin.location.href.indexOf("&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("languageCd=ZHS") !== -1) {
                 var host = aWin.location.href.match(/http.*\?/)[0];
 
                 var timer = setInterval(function() {
