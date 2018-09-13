@@ -699,8 +699,45 @@
         currentWin.location.href = url
       }
       if(url=='' && model){
-        currentWin.document.querySelector('.mini-tools-close').click();
-        ysp.runtime.Model.setForceMatchModels([model]);
+        debugger;
+        // var btns = currentWin.document.querySelector("#btn");
+        var currentDOC=currentWin.document.querySelector("iframe[src*='newPage']").contentDocument;
+				var btns =currentDOC .querySelector("#btn");
+        if (btns && btns.style.display != "none") {
+          if (btns.querySelector("#recover") && btns.querySelector("#recover").textContent == "追回") {
+            var json = {
+              time: new Date().getTime()
+            };
+            var btn = currentWin.document.querySelector('.mini-tools-close');
+
+            if (btn) {
+              btn.click();
+              ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+            }
+          } else {
+            var json = {
+              time: new Date().getTime()
+            };
+            var btn = currentWin.document.querySelector('.mini-tools-close');
+
+            if (btn) {
+              btn.click();
+              ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+            }
+          }
+        } else {
+          var json = {
+            time: new Date().getTime()
+          };
+          var btn = currentWin.document.querySelector('.mini-tools-close');
+
+          if (btn) {
+            btn.click();
+            ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+          }
+        }
+        // currentWin.document.querySelector('.mini-tools-close').click();
+        // ysp.runtime.Model.setForceMatchModels([model]);
       }
       if(url && model){
         currentWin.location.href = url;
