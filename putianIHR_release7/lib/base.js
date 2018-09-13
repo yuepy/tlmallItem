@@ -24,11 +24,9 @@
       // }
     utils.extend(ysp.customHelper, {
         /* 适配中定制的公共代码放在这里 */
-
         /*
         // 可以实现一个foo方法，在定制适配组件中被使用，如：ysp.customHelper.foo()
         foo: function(){
-
         }
         */
         isPending: "",
@@ -67,25 +65,6 @@
             if (tblpstabs && tblpstabs.querySelectorAll("a")[1] && tblpstabs.querySelectorAll("a")[1].textContent !== "调休假余额查询" && tblpstabs.querySelectorAll("a")[1].textContent !== "考勤类型") {
                 tblpstabs.querySelectorAll("a")[1].click();
             }
-
-
-            //安卓偶现首次登录更多不跳转到登录页问题
-            // if (aWin.location.href.indexOf("_ysp_appid") !== -1) {
-            //     alert('弹出')
-            //     debugger;
-            //     setTimeout(function() {
-            //             if (doc.body.textContent.indexOf("未授权您访问此页面") !== -1) {
-            //                 ysp.runtime.Browser.activeBrowser.contentWindow.location.reload()
-            //             }
-            //         }, 2000)
-            //         // aWin.location.href="https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
-            // }
-            //解决重复登录的问题
-
-            //manager更多地址配置成 https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab
-            // if(aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab&")!==-1){
-            // 	aWin.location.href=="https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF"
-            // }
             //安卓登录逻辑
             if (topWindow.EAPI.isAndroid()) {
                 if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout") !== -1) {
@@ -168,33 +147,6 @@
 
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
-          // if(aWin.location.href.indexOf('TL_SELF') !== -1){
-          //   if(doc.querySelectorAll('.PSTEXT').length > 1){
-          //     console.log('正常进入');
-          //   }else{
-          //     aWin.location.href = 'https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?cmd=logout';
-          //   }
-          // }
-                //ios弹出_ysp_top
-                // var oldAlert = aWin.alert;
-                // aWin.alert = function(str) {
-                //     if (/_ysp_top/.test(str)) {
-                //         return;
-                //     } else {
-
-            //     }
-            // }
-
-            // alert(aWin.location.href)
-            //hr前五个快捷入口加载不出来的解决办法
-            // var href=aWin.location.href;
-            // // alert("beforeTarget"+aWin.location.href)
-            // if(href.indexOf("kaoqin")!==-1){
-            //   ysp.customHelper.indexName="kaoqin"
-            // }else if(href.indexOf("gongchu")!==-1){
-            //   ysp.customHelper.indexName="gongchu";
-            // }
-
 
         },
 
