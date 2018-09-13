@@ -3333,10 +3333,37 @@ __________________*/
   min-heigth: 130px;
   background-color: #fff;
   padding: 14px;
+  position: relative;
+}
+.ysp-atreport-dialog-body .ysp-atreport-send::before {
+  position: absolute;
+  display: block;
+  content: '';
+  visibility: visible;
+  width: 4px;
+  height: 20px;
+  background-color: #2c7dff;
+  top: 14px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-send textarea {
   resize: none;
   font-size: 16px;
+  border: none;
+  margin-left: 8px;
+  padding: 0;
+}
+.ysp-atreport-dialog-body .ysp-atreport-send textarea::-webkit-input-placeholder {
+  color: #9d9d9d;
+  /**对占位符字体颜色的更改竟然没有起作用？！*/
+}
+.ysp-atreport-dialog-body .ysp-atreport-send textarea::-moz-placeholder {
+  color: #9d9d9d;
+}
+.ysp-atreport-dialog-body .ysp-atreport-send textarea:-moz-placeholder {
+  color: #9d9d9d;
+}
+.ysp-atreport-dialog-body .ysp-atreport-send textarea:-ms-input-placeholder {
+  color: #9d9d9d;
 }
 .ysp-atreport-dialog-body .ysp-atreport-send .ysp-textArea {
   color: #333333 !important;

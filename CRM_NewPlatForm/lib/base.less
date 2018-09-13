@@ -3840,10 +3840,37 @@ __________________*/
        min-heigth:130px;
        background-color: #fff;
        padding: 14px;
+       position:relative;
+       &::before{
+         position:absolute;
+         display:block;
+         content:'';
+         visibility:visible;
+         width:4px;
+         height:20px;
+         background-color:rgb(44,125,255);
+         top:14px;
+       }
        textarea{
          resize : none;
          font-size: 16px;
+         border:none;
+         margin-left: 8px;
+         padding: 0;
        }
+       textarea::-webkit-input-placeholder{
+         color:rgb(157,157,157);/**对占位符字体颜色的更改竟然没有起作用？！*/
+       }
+       textarea::-moz-placeholder{
+        color:rgb(157,157,157);
+       }
+       textarea:-moz-placeholder{
+         color:rgb(157,157,157);
+       }
+       textarea:-ms-input-placeholder{
+         color:rgb(157,157,157);
+       }
+    
        .ysp-textArea{
          color: #333333 !important
        }
