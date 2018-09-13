@@ -3048,8 +3048,11 @@ __________________*/
 .ysp-atreport-dialog-body .ysp-atreport-text {
   min-height: 80px;
   background-color: #fff;
-  padding: 8px 14px 0px 14px;
+  padding: 15px;
   resize: none;
+}
+.ysp-atreport-dialog-body .ysp-atreport-text ul > li {
+  margin-bottom: 10px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-text-div {
   min-height: 80px;
@@ -4971,6 +4974,7 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
 }
 .wtite-report .personnel > div:nth-child(2) {
   overflow: hidden;
+  min-height: 48px;
 }
 .wtite-report .personnel .report {
   min-width: 27%;
@@ -5013,6 +5017,7 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
 }
 .wtite-report .update-commit {
   text-align: center;
+  background: #ececec;
 }
 .wtite-report .update-commit button {
   width: 47%;
@@ -12322,7 +12327,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 .ysp-workSummary-style .images-report .upload {
   display: inherit!important;
   overflow: hidden;
-  padding: 0px 20px 10px 20px;
+  padding: 0 20px 10px 10px;
 }
 .ysp-workSummary-style .images-report .upload > div:nth-child(1) {
   /***padding: 0px 0px 0px 10px;***/
@@ -12336,10 +12341,10 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   margin-bottom: 40px;
   background: url('images/update.png') no-repeat center center;
   background-size: 50%;
-  padding-top: 100px;
+  padding-top: 110px;
   text-align: center;
   margin-right: 5px;
-  border: 1px solid #ececec;
+  border: 3px solid #ececec;
   color: #999;
   position: relative;
 }
@@ -12351,37 +12356,6 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   margin-top: 10px;
   color: #9e9e9e;
   min-width: 4rem;
-}
-.ysp-workSummary-style .images-report .upload .file-images-row {
-  float: left;
-  width: 100px;
-  overflow: hidden;
-  height: 100px;
-  position: relative;
-  margin-right: 6px;
-}
-.ysp-workSummary-style .images-report .upload .file-images-row span {
-  position: absolute;
-  white-space: nowrap;
-  font-size: 15px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin-bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.ysp-workSummary-style .images-report .upload .file-images-row i {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
-  background-size: 100%;
-  border-radius: 50%;
-  padding: 10px;
-  margin: 3px;
 }
 .ysp-workSummary-style .images-report .upload .file-images {
   position: relative;
@@ -12397,7 +12371,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   content: '';
   clear: both;
 }
-.ysp-workSummary-style .images-report .upload .file-images-rows {
+.ysp-workSummary-style .images-report .upload .file-images .file-images-rows {
   width: 100px;
   overflow: hidden;
   height: 116px;
@@ -12405,10 +12379,10 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   margin-right: 6px;
   background: #dbdddc;
 }
-.ysp-workSummary-style .images-report .upload .file-images-rows img {
+.ysp-workSummary-style .images-report .upload .file-images .file-images-rows img {
   height: 100px;
 }
-.ysp-workSummary-style .images-report .upload .file-images-rows i {
+.ysp-workSummary-style .images-report .upload .file-images .file-images-rows i {
   position: absolute;
   right: 0;
   top: 0;
@@ -12424,7 +12398,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   padding: 10px;
   margin: 3px;
 }
-.ysp-workSummary-style .images-report .upload .file-images-rows i > span {
+.ysp-workSummary-style .images-report .upload .file-images .file-images-rows i > span {
   font-size: 23px;
   position: absolute;
   left: 50%;
@@ -12432,7 +12406,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   margin-left: -1px;
   color: #d4d4d4;
 }
-.ysp-workSummary-style .images-report .upload > span {
+.ysp-workSummary-style .images-report .upload .file-images > span {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -12443,7 +12417,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   margin-bottom: 5px;
   top: 116px;
   margin-top: 10px;
-  min-width: 80px;
+  max-width: 80px;
 }
 .ysp-workSummary-style .ysp-worksum {
   background: #ececec;
@@ -12483,6 +12457,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 }
 .ysp-workSummary-style .personnel > div:nth-child(2) {
   overflow: hidden;
+  min-height: 48px;
 }
 .ysp-workSummary-style .personnel .report {
   min-width: 27%;
@@ -13200,7 +13175,7 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   margin-bottom: 5px;
   top: 116px;
   margin-top: 10px;
-  min-width: 80px;
+  max-width: 80px;
 }
 .ysp-atMe-workSummary .ysp-worksum {
   background: #ececec;

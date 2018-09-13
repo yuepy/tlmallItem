@@ -3522,10 +3522,13 @@ __________________*/
   .ysp-atreport-text{
     min-height: 80px;
     background-color: #fff;
-    padding:8px 14px 0px 14px;
+    padding:15px;
     resize: none;
     //-webkit-user-select:text;
     //overflow-y: hidden
+    ul>li{
+      margin-bottom:10px;
+    }
   }
   // div[contenteditable='true']{
   // -webkit-user-select:text;
@@ -5610,6 +5613,7 @@ div[data-ysp-modelid="wtiteReport"]{//8.24
     }
     >div:nth-child(2){
       overflow: hidden;
+      min-height: 48px;
     }
     .report{
       min-width: 27%;
@@ -5655,6 +5659,7 @@ div[data-ysp-modelid="wtiteReport"]{//8.24
   }
   .update-commit{
     text-align: center;
+    background: #ececec;
     button{
       width: 47%;
       padding: 7px;
@@ -13681,7 +13686,7 @@ div[data-ysp-modelid="workPlanCustomStore"]{
     .upload{
       display: inherit!important;
       overflow:hidden;
-      padding:0px 20px 10px 20px;
+      padding:0 20px 10px 10px;
       >div:nth-child(1){
         /***padding: 0px 0px 0px 10px;***/
        padding: 0;
@@ -13695,10 +13700,10 @@ div[data-ysp-modelid="workPlanCustomStore"]{
         //height: 100px;
         background: url('./images/update.png') no-repeat center center;
         background-size: 50%;
-        padding-top: 100px;
+        padding-top: 110px;
     		text-align: center;
         margin-right: 5px;
-        border: 1px solid #ececec;
+        border: 3px solid #ececec;
         color: #999;
         position:relative;
         >span{
@@ -13711,37 +13716,6 @@ div[data-ysp-modelid="workPlanCustomStore"]{
           min-width: 4rem;
         }
     	}
-      .file-images-row{
-        float: left;
-        width: 100px;
-        overflow: hidden;
-        height: 100px;
-        position: relative;
-        margin-right: 6px;
-        span{
-          position: absolute;
-          white-space: nowrap;
-          font-size: 15px;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          margin-bottom: 5px;
-          left: 50%;
-    			transform: translateX(-50%);
-        }
-        i{
-          position: absolute;
-          right: 0;
-          top: 0;
-          display: block;
-          width: 20px;
-          height: 20px;
-          background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
-          background-size: 100%;
-          border-radius: 50%;
-          padding: 10px;
-          margin: 3px;
-        }
-      }
       .file-images{
         position:relative;
         float:left;
@@ -13757,8 +13731,7 @@ div[data-ysp-modelid="workPlanCustomStore"]{
           content:'';
           clear:both;
         }
-      }
-      .file-images-rows{
+         .file-images-rows{
         width: 100px;
         overflow: hidden;
         height: 116px;
@@ -13795,7 +13768,7 @@ div[data-ysp-modelid="workPlanCustomStore"]{
           }
         }
       }
-     >span{
+        >span{
         	position: absolute;
           left: 50%;
           transform: translateX(-50%);
@@ -13806,8 +13779,11 @@ div[data-ysp-modelid="workPlanCustomStore"]{
           margin-bottom: 5px;
           top: 116px;
           margin-top: 10px;
-          min-width: 80px;
+          max-width: 80px;
         }
+      }
+     
+     
     }
 	}
   
@@ -13850,6 +13826,7 @@ div[data-ysp-modelid="workPlanCustomStore"]{
     }
     >div:nth-child(2){
       overflow: hidden;
+      min-height: 48px;
     }
     .report{
       min-width: 27%;
@@ -14599,7 +14576,7 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
           margin-bottom: 5px;
           top: 116px;
           margin-top: 10px;
-          min-width: 80px;
+          max-width: 80px;
         }}
       
     }
