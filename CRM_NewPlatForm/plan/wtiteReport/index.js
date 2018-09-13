@@ -86,8 +86,7 @@
             var urlSrc = decodeURI(scrTitleSplit);var scrC = "http://192.168.1.227/pttlCrm" + urlSrc;
           } else {
             var scrC = scrTitle;
-          }
-          src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
+          }src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
         }
       } /*_____________________
               
@@ -118,7 +117,8 @@
         }
       } //判断状态
       var buttonLength = elem.querySelector('.footer').querySelector('.m-btns').querySelectorAll('a').length;data.button = buttonLength; //获取搜索后的分公司
-      data.subPerson = [];var parElem = elem.parentElement.parentElement.parentElement;var act = $(parElem).find('#contentBody').find(".z-act");if (act.length > 0) {
+      data.subPerson = [];
+      var parElem = elem.parentElement.parentElement.parentElement;var act = $(parElem).find('#contentBody').find(".z-act");if (act.length > 0) {
         act.each(function (index, item) {
           var planGs = [];var gs = $(item).find('.title').find('.area-name').html();planGs.push(gs);var itemData = { planGs: planGs };data.subPerson.push(itemData);
         });
@@ -219,7 +219,8 @@
         }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
       }function cancel(data) {
         var index = data;var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
-      }function personnel(data) {
+      }
+      function personnel(data) {
         var index = data.Index;var parentIndex = data.parentIndex;var parent = elem.ownerDocument.querySelectorAll('.box')[parentIndex];var btn = parent.querySelectorAll(".iCheck-helper")[index];btn.click();
       }function serch(data) {
         var ele = elem.ownerDocument;ele.querySelector('#contactSearch').value = data.dataCustom;ele.querySelector('#icon-search').click();var list = ele.querySelector('#search-lists');var as = list.firstElementChild;if (as == null) {
