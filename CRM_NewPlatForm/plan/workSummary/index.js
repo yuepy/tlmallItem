@@ -14,11 +14,11 @@
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
-        //history.go(-1);
-        // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
-        // ysp.appMain.reloadPage(url); 
-        ysp.appMain.back(); //更换返回方法 BackReload()回到工作台
-        ysp.customHelper.BackReload();
+        if (!top.EAPI.isAndroid()) {
+          ysp.appMain.back();ysp.customHelper.BackReload();
+        } else {
+          ysp.customHelper.AndroidBackFn();
+        }
       }if ("click" == data.eventType) {
         var index = data.dataCustom;elem.querySelector("#businessDepartment").querySelectorAll("li")[index].querySelector("input").click();
       }if ("chose" == data.eventType) {

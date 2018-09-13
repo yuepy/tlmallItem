@@ -73,11 +73,11 @@
     ysp.customHelper.IconNum.atMe = atMe.split('=')[1];
   }
   topWin.AndroidBack = function(){
-    debugger;
     var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
     var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
     var name = ysp.customHelper.AndroidName; //客户门店返回名称标识
     var currentElem = ysp.customHelper.AndroidDocument; // 客户门店返回主元素
+    var BigFlag = ysp.customHelper.AndroidBidFlag;
     if(ysp.customHelper.AndroidBackFlag == 'default'){
       ysp.customHelper.back();
     }
@@ -97,7 +97,32 @@
       ysp.customHelper.BackReload(url,model);
     }
     if(ysp.customHelper.AndroidBackFlag == 'BigData'){
-      ysp.runtime.Browser.activeBrowser.contentWindow.histroy.back();
+      var a = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb').querySelectorAll('a');
+      var index = 0;
+      for (var i = 0; i < a.length; i++) {
+        if (a[i].onclick != null) {
+          index++;
+        }
+      }
+      if (index > 1) {
+         index -= 1;
+         var aL = a.length;
+         if (aL - index > 1) {
+           a[aL - 2].click();
+         } else {
+           a[index - 1].click();
+         }
+         ysp.appMain.showLoading();
+         	 setTimeout(function () {
+           ysp.appMain.hideLoading();
+         }, 1000);
+      } else {
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
+      }
+    }
+    if(ysp.customHelper.AndroidBackFlag == 'SaleBigData'){
+      var li = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb').querySelectorAll('li').length;
+  li > 1 ? ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb').querySelectorAll('li')[li - 2].querySelector('a').click() : ysp.runtime.Browser.activeBrowser.contentWindow.close();
     }
     if(ysp.customHelper.AndroidBackFlag == 'AndroidHistory'){
       ysp.runtime.Browser.activeBrowser.contentWindow.history.go(-1);
@@ -110,8 +135,11 @@
         ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
     }
+    if(ysp.customHelper.AndroidBackFlag == 'indexBack'){
+      console.log('溜了溜了 !!!');
+    }
     //恢复默认值
-    ysp.customHelper.AndroidBackFlag == 'default';
+    ysp.customHelper.AndroidBackFlag != 'indexBack' ? ysp.customHelper.AndroidBackFlag == 'default':'';
     ysp.customHelper.AndroidBackURL = '';
     ysp.customHelper.AndroidBackModel = '';
     ysp.customHelper.AndroidDocument = ''
@@ -919,9 +947,9 @@
       currentWin.location.href = url;
       ysp.runtime.Model.setForceMatchModels([model]);
     }
-   
   }
   utils.extend(ysp.customHelper, {
+    AndroidBidFlag:'',
     AndroidBackFn:topWin.AndroidBack,
     AndroidDocument:'',//安卓物理返回键客户门店返回元素
     AndroidName:'',//安卓物理返回键客户门店返回名称

@@ -16,11 +16,11 @@
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if (data.eventType == 'back') {
-        //ysp.customHelper.back();
-        // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
-        // ysp.appMain.reloadPage(url);
-        //ysp.appMain.back();
-        ysp.customHelper.BackReload();
+        if (!top.EAPI.isAndroid()) {
+          ysp.customHelper.BackReload();
+        } else {
+          ysp.customHelper.AndroidBackFn();
+        }
       }if (data.eventType == "select") {
         var value = data.dataCustom.value;var text = data.dataCustom.text;var selectEl;if ("归属机构" == text) {
           selectEl = elem.querySelector('#department');

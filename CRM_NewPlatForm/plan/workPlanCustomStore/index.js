@@ -98,9 +98,11 @@
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
-        // var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
-        // ysp.appMain.reloadPage(url);
-        ysp.appMain.back();ysp.customHelper.BackReload();
+        if (!top.EAPI.isAndroid()) {
+          ysp.appMain.back();ysp.customHelper.BackReload();
+        } else {
+          ysp.customHelper.AndroidBackFn();
+        }
       }var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = '';var queryBtn;var queryInput;var customerOrStoreEl = doc.getElementById('customerOrStorePopList'); //工作计划
       var tempCustomerOrStoreEl = doc.getElementById('tempCustomerOrStorePopList'); //临时签到计划
       if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
@@ -108,8 +110,7 @@
       }if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
         elem = tempCustomerOrStoreEl;isShow = "temp";queryBtn = doc.getElementById('newTempVisitSearch');queryInput = doc.getElementById('newTempVisitSearchText');
       } //工作计划
-      var customer = elem.querySelector(".menu");
-      var customerLis = customer.querySelectorAll("li"); //临时工作计划
+      var customer = elem.querySelector(".menu");var customerLis = customer.querySelectorAll("li"); //临时工作计划
       var temp = elem.querySelector(".menu");var tempLis = temp.querySelectorAll("li"); //点击客户列表按钮
       if ('customer' == data.eventType) {
         if ('work' == isShow) {
@@ -169,11 +170,9 @@
         //   }
       } //搜索方法
       if ('query' == data.eventType) {
-        var queryValue = data.dataCustom.queryValue;queryInput && (queryInput.value = queryValue);
-        queryBtn && queryBtn.click();
+        var queryValue = data.dataCustom.queryValue;queryInput && (queryInput.value = queryValue);queryBtn && queryBtn.click();
       }if ('checkClick' == data.eventType) {
-        var clickIndex = data.dataCustom.clickIndex;var doc = elem.ownerDocument;
-        var inputs = elem.querySelectorAll('table  tr input');[].forEach.call(inputs, function (item, index) {
+        var clickIndex = data.dataCustom.clickIndex;var doc = elem.ownerDocument;var inputs = elem.querySelectorAll('table  tr input');[].forEach.call(inputs, function (item, index) {
           if (parseInt(index) == clickIndex) {
             item.click();
           }
@@ -183,7 +182,8 @@
           prevtitle(data.dataCustom);break;case 'GO':
           clickGO(data.dataCustom);break;}function clickGO(data) {
         var input = elem.ownerDocument.querySelector('.skip-num');input.value = data;input.blur();elem.ownerDocument.querySelector('.commpnPage').querySelector('.skip_right_goto').querySelector('.skip-right-icon').click();
-      }function prevtitle(data) {
+      }
+      function prevtitle(data) {
         var lis = elem.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
           var as = lis[i].querySelectorAll('a');for (var j = 0; j < as.length; j++) {
             if (data == 'prev' && as[j].getAttribute('title') == 'Go to previous page') {
