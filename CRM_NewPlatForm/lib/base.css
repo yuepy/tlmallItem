@@ -2893,9 +2893,11 @@ __________________*/
   background-color: #fff;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate input {
-  margin-bottom: 0px !important;
-  padding: .5rem .5rem;
-  border-radius: 5px;
+  margin-bottom: 0 !important;
+  padding: .5rem 0;
+  border: none;
+  color: #4789e0;
+  font-size: 22px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child {
   border-bottom: 1px solid #ccc;
@@ -2913,8 +2915,23 @@ __________________*/
   color: #999999;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child > span:last-child {
-  color: #4789e0;
   margin-left: 8px;
+  flex: 1;
+  position: relative;
+  zoom: 1;
+}
+.ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child > span:last-child::after {
+  display: block;
+  content: '';
+  visibility: visible;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 20px;
+  background: url('images/ysp-achievement-pre-icon.png') center no-repeat;
+  background-size: 100%;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:nth-child(2) {
   padding: 15px 0;
@@ -2929,8 +2946,23 @@ __________________*/
   color: #999999;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:nth-child(2) > span:last-child {
-  color: #4789e0;
   margin-left: 8px;
+  position: relative;
+  flex: 1;
+  zoom: 1;
+}
+.ysp-atreport-dialog-body .ysp-atreport-aimdate > div:nth-child(2) > span:last-child::after {
+  display: block;
+  content: '';
+  visibility: visible;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 20px;
+  background: url('images/ysp-achievement-pre-icon.png') center no-repeat;
+  background-size: 100%;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:last-child {
   padding: 15px 15px;
@@ -2953,7 +2985,8 @@ __________________*/
   background: #fff;
   /*** padding: 0px 160px 0px 10px;***/
   display: block;
-  font-weight: bold;
+  /**font-weight: bold;*/
+  font-size: 18px;
   height: 36px;
   border: none;
   color: #4a8ade;
@@ -9052,9 +9085,7 @@ div[data-ysp-modelid="storeDayPSI"] > div:nth-child(4) {
   text-align: center;
   background: #0e90d2;
   color: #fff;
-  padding: 8px 0;
-  font-size: 14px;
-  margin-top: 20px;
+  padding: 5px 0;
 }
 /**************HES信息录入日别PSI录入END***************************/
 /**************HES信息录入周别PSI录入start***************************/
@@ -9218,9 +9249,7 @@ div[data-ysp-modelid="storeWeekPSI"] {
   background: #0e90d2;
   border: 1px solid #0e90d2;
   color: #fff;
-  padding: 8px 0;
-  font-size: 14px;
-  margin-top: 20px;
+  padding: 5px 0;
 }
 /**************HES信息录入周别PSI录入END***************************/
 input::-webkit-outer-spin-button,

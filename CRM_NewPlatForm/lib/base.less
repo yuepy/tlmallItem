@@ -3351,13 +3351,28 @@ __________________*/
       }
     }
   }
+  .input-right-arrow(){
+     display:block;
+          content:'';
+          visibility: visible;
+          position:absolute;
+          right: 15px;
+          top:50%;
+          transform:translateY(-50%);
+          width:12px;
+          height:20px;
+          background:url('./images/ysp-achievement-pre-icon.png') center no-repeat;
+          background-size:100%;
+  }
   .ysp-atreport-aimdate{
     background-color:#fff;
     // padding: 0px 14px;
     input{
-      margin-bottom: 0px !important;
-      padding: .5rem .5rem;
-      border-radius: 5px;
+      margin-bottom: 0 !important;
+      padding: .5rem 0;
+      border:none;
+      color: #4789e0;
+      font-size: 22px;
     }
     >div:first-child{
       border-bottom: 1px solid #ccc;
@@ -3373,8 +3388,14 @@ __________________*/
         color:#999999;
       }
       >span:last-child{
-        color:#4789e0;
         margin-left: 8px;
+        flex: 1; 
+        position: relative;
+        &{zoom:1;}
+        &::after{
+         .input-right-arrow;
+        }
+        
       }
     }
     >div:nth-child(2){
@@ -3390,8 +3411,13 @@ __________________*/
         color:#999999;
       }
       >span:last-child{
-        color: #4789e0;
-         margin-left: 8px;
+        margin-left: 8px;
+        position: relative;
+        flex:1;
+        &{zoom:1;}
+        &::after{
+         .input-right-arrow;
+        }
       }
     }
     >div:last-child{
@@ -3416,7 +3442,8 @@ __________________*/
           background: #fff;
          /*** padding: 0px 160px 0px 10px;***/
           display: block;
-          font-weight: bold;
+          /**font-weight: bold;*/
+          font-size: 18px;
           height: 36px;
           border:none;
           color:rgb(74,138,222);
@@ -10081,9 +10108,7 @@ div[data-ysp-modelid="storeDayPSI"]{
     text-align: center;
     background: #0e90d2;
     color: #fff;
-    padding: 8px 0;
-    font-size: 14px;
-    margin-top: 20px;
+    padding: 5px 0;
   }
 }
 
@@ -10267,9 +10292,7 @@ div[data-ysp-modelid="storeWeekPSI"]{
     background: #0e90d2;
     border: 1px solid #0e90d2;
     color: #fff;
-    padding: 8px 0;
-    font-size: 14px;
-    margin-top: 20px;
+    padding: 5px 0;
   }
 }
 
