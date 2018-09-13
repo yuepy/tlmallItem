@@ -11,7 +11,7 @@
       if (data.eventType == "msgBlur") {
         var val = data.dataCustom;elem.querySelector("#code").value = val;elem.querySelector("#code").dispatchEvent(new Event("change"));
       } else if (data.eventType == "click") {
-        var classname = data.dataCustom;if (classname == "getMsgBtn") {
+        ysp.appMain.showLoading();var classname = data.dataCustom;if (classname == "getMsgBtn") {
           elem.querySelector(".tel-button-box").click();
         } else if (classname == "cancelBtn") {
           top.EAPI.closeWindow();
@@ -20,10 +20,12 @@
           //     if (elem.querySelector("#login_error").textContent !== "") {
           //       elem.querySelector("#userid").value = ysp.customHelper.userId;
           //       elem.querySelector("#pwd").value = ysp.customHelper.passWord;
+
           //     }
         }
       } else if (data.eventType == "userBlur") {
-        var classname = data.dataCustom[0];var val = data.dataCustom[1];if (classname == "usrid") {
+        var classname = data.dataCustom[0];
+        var val = data.dataCustom[1];if (classname == "usrid") {
           elem.querySelector("#userid").value = sessionStorage.getItem("userId");elem.querySelector("#userid").dispatchEvent(new Event("change"));
         } else if (classname == "psw") {
           elem.querySelector("#pwd").value = val;elem.querySelector("#pwd").dispatchEvent(new Event("change"));
