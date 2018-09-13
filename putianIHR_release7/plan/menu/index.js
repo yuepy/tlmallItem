@@ -24,6 +24,8 @@
           if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("查看下属考勤") == -1) {
             dataList.flag = "未授权";
           }
+        } else {
+          dataList.flag = '';
         }return data;
       } else {
         return;
@@ -69,6 +71,8 @@
           if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("查看下属考勤") == -1) {
             dataList.flag = "未授权";
           }
+        } else {
+          dataList.flag = '';
         }if (tab) {
           // var data = {
           //   self: [],

@@ -44,14 +44,14 @@
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
-            aWin.alert(aWin.location.href);
+            //aWin.alert(aWin.location.href);
             //取消操作时间超过20分钟页面
             if (aWin.location.href.indexOf("cmd=expire") !== -1) {
                 var btn = doc.querySelectorAll(".ps_loginmessagelarge")[1].querySelector("a");
                 btn.click();
             }
             //index页重定向
-            debugger;
+            //debugger;
             // if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_PAG_010_CP")!==-1){
             //   aWin.location.href="https://tlihr.pttl.com/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL";
             // }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_047_CP")!==-1){
@@ -132,7 +132,7 @@
             }
             //返回
             if (aWin.location.href.indexOf("https://tlihr.pttl.com/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
-                alert('弹出地址');
+                //alert('弹出地址');
                 ysp.customHelper.tab = "menu"
             }
 
