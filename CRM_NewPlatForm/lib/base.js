@@ -9,7 +9,7 @@
       var exist = false;
       this.topicList.forEach(function (item) {
         if (item.topic === topic) {
-          exist = true;
+          exist = true; 
           item.list.push({
             callback: cb,
             caller: caller
@@ -2066,7 +2066,6 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function onTargetLoad(aWin, doc) {
-
       if (aWin) {
         if (aWin.location.href == 'http://192.168.1.227/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
