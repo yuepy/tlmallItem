@@ -1,7 +1,7 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control6_RWT0cx: function (elem) {
-      if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("查看下属考勤") == -1) {
+      if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("考勤信息") == -1) {
         return "未授权";
       }
     }, doAction_uiControl6_PZE4AI: function (data, elem) {
@@ -18,10 +18,12 @@
       if (elem) {
         var data = { managerSelect: "", managerContent: "", flag: "" };var managerLi = elem.ownerDocument.querySelector("#TL_MS");if (managerLi && managerLi.parentElement.getAttribute("id") == "selected") {
           data.managerSelect = true;
-        }if (managerLi && managerLi.parentElement.getAttribute("id") == "selected" && elem.textContent.indexOf("查看下属考勤、休假、加班信息") !== -1) {
+        }if (managerLi && managerLi.parentElement.getAttribute("id") == "selected" && elem.textContent.indexOf("考勤信息") !== -1) {
           data.managerContent = "存在";
-        }if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("查看下属考勤") == -1) {
-          data.flag = "未授权";
+        }if (elem.ownerDocument.querySelector("#selected")) {
+          if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("考勤信息") == -1) {
+            data.flag = "未授权";
+          }
         }return data;
       } else {
         return;
@@ -63,8 +65,10 @@
     },
     getData_control106_QdzPdD: function (elem) {
       if (elem) {
-        var dataList = { flag: "", data: { self: [], manager: [], selected: "" } };var tab = elem.querySelector("ul[role='tablist']");if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("查看下属考勤") == -1) {
-          dataList.flag = "未授权";
+        var dataList = { flag: "", data: { self: [], manager: [], selected: "" } };var tab = elem.querySelector("ul[role='tablist']");if (elem.ownerDocument.querySelector("#selected") || elem.ownerDocument.querySelector("#selected")) {
+          if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("考勤信息") == -1) {
+            dataList.flag = "未授权";
+          }
         }if (tab) {
           // var data = {
           //   self: [],
