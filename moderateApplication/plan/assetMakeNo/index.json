@@ -664,6 +664,33 @@
       "monitored": true,
       "frameXPath": "//iframe[@name='OpenSelectUser']<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control899_IDOTCH": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.big-form.page-shadow"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/FORM[1]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control899_IDOTCH"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -685,7 +712,8 @@
         "control882_edOy2p",
         "control883_vpnl6T",
         "control885_3JTTxg",
-        "control886_kTaq5X"
+        "control886_kTaq5X",
+        "control899_IDOTCH"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -1100,6 +1128,21 @@
               "events": {
                 "onDoAction": "doAction_uiControl876_x1IozG",
                 "onGetTemplate": "getTemplate_uiControl876_x1IozG"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl899_bdBIEm",
+          "controlId": "control899_IDOTCH",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl899_bdBIEm",
+                "onGetTemplate": "getTemplate_uiControl899_bdBIEm"
               }
             }
           }
