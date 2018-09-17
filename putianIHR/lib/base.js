@@ -52,99 +52,88 @@
             }
             //index页重定向
             // debugger;
-            // if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_PAG_010_CP")!==-1){
-            //   aWin.location.href="http://192.168.220.110/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL";
-            // }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_047_CP")!==-1){
-            //   aWin.location.href="http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_047_CP.GBL";
-            // }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_002")!==-1){
-            //   aWin.location.href="http://192.168.220.110/psp/ps_3/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_002.GBL";
-            // }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_001")!==-1){
-            //   aWin.location.href="http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL";
-            // }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("HPS_TL_AWE_004")!==-1){
-            //   aWin.location.href="http://192.168.220.110/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_004.GBL";
-            // }else if(aWin.location.href.indexOf("FieldFormula")!==-1&&aWin.location.href.indexOf("TL_SELF")!==-1){
-            //   aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
-            // }
+            if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("HPS_TL_PAG_010_CP") !== -1) {
+                aWin.location.href = "http://192.168.220.110/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL";
+            } else if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("HPS_TL_AWE_047_CP") !== -1) {
+                aWin.location.href = "http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_047_CP.GBL";
+            } else if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("HPS_TL_AWE_002") !== -1) {
+                aWin.location.href = "http://192.168.220.110/psp/ps_3/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_002.GBL";
+            } else if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("HPS_TL_AWE_001") !== -1) {
+                aWin.location.href = "http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL";
+            } else if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("HPS_TL_AWE_004") !== -1) {
+                aWin.location.href = "http://192.168.220.110/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_004.GBL";
+            } else if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("TL_SELF") !== -1&&aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("ysp_appid") !== -1) {
+                aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login";
+            }
+           	if(aWin.location.href.indexOf("toHome")!==-1){
+              aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
+            }
             //每个tab页面的切换
             var tblpstabs = doc.querySelector("#tblpstabs");
             if (tblpstabs && tblpstabs.querySelectorAll("a")[1] && tblpstabs.querySelectorAll("a")[1].textContent !== "调休假余额查询" && tblpstabs.querySelectorAll("a")[1].textContent !== "考勤类型") {
                 tblpstabs.querySelectorAll("a")[1].click();
             }
-
-
-            //安卓偶现首次登录更多不跳转到登录页问题
-
-
-            // if (aWin.location.href.indexOf("_ysp_appid") !== -1) {
-            //     setTimeout(function() {
-            //             if (doc.body.textContent.indexOf("未授权您访问此页面") !== -1) {
-            //                 ysp.runtime.Browser.activeBrowser.contentWindow.location.reload()
-            //             }
-            //         }, 2000)
-            //         // aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
-            // }
             //解决重复登录的问题
-          	/**********************当快捷地址直接打开是目标地址&cmd=login时解锁以下判断*************************/
-          	if(aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login")!==-1){
-              var timer=setInterval(function(){
-              if(doc.querySelector("#userid").value!==""&&doc.querySelector("#pwd").value!==""){
-                  sessionStorage.setItem("userid",doc.querySelector("#userid").value);
-                  sessionStorage.setItem("pwd",doc.querySelector("#pwd").value);
-                  aWin.location.href="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
-                  clearInterval(timer);
-                }
-              },500);
-          	}else if(aWin.location.href.indexOf("CP.GBL?")!==-1&&aWin.location.href.indexOf("&cmd=login")!==-1&&doc.querySelector("#userid")&&aWin.location.href.indexOf("languageCd=ZHS")==-1){
-              var host=aWin.location.href.match(/http.*\?/)[0];
-              
-              var timer=setInterval(function(){
-              if(doc.querySelector("#userid").value!==""&&doc.querySelector("#pwd").value!==""){
-                  sessionStorage.setItem("userid",doc.querySelector("#userid").value);
-                  sessionStorage.setItem("pwd",doc.querySelector("#pwd").value);
-                  aWin.location.href=host+"&cmd=login&languageCd=ZHS";
-                  clearInterval(timer);
-                }
-              },500);      
+            /**********************当快捷地址直接打开是目标地址&cmd=login时解锁以下判断*************************/
+            if (aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login") {
+                var timer = setInterval(function() {
+                    if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
+                        sessionStorage.setItem("userid", doc.querySelector("#userid").value);
+                        sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
+                        aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login&languageCd=ZHS";
+                        clearInterval(timer);
+                    }
+                }, 500);
+            } else if (aWin.location.href.indexOf("CP.GBL?") !== -1 && aWin.location.href.indexOf("&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("languageCd=ZHS") == -1) {
+                var host = aWin.location.href.match(/http.*\?/)[0];
+
+                var timer = setInterval(function() {
+                    if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
+                        sessionStorage.setItem("userid", doc.querySelector("#userid").value);
+                        sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
+                        aWin.location.href = host + "&cmd=login&languageCd=ZHS";
+                        clearInterval(timer);
+                    }
+                }, 500);
             }
-          	/**********************当快捷地址直接打开有errorCode时解锁以下判断***************************/
-//             if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login") !== -1) {
-//                 var timer = setInterval(function() {
-//                     if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
-//                       	// var userName=doc.querySelector("#userid").value;
-//                       	// userName=userName.replace(/tl/g,"TL")
-                      	
-//                         sessionStorage.setItem("userid", doc.querySelector("#userid").value);
-//                       	// sessionStorage.setItem("userid", userName);
-//                         sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
-//                         aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
-//                         clearInterval(timer);
-//                     }
-//                 }, 500);
-//             } else if (aWin.location.href.indexOf("&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("errorCode") !== -1) {
-//                 var host = aWin.location.href.match(/http.*\?/)[0];
+            /**********************当快捷地址直接打开有errorCode时解锁以下判断***************************/
+            //             if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login") !== -1) {
+            //                 var timer = setInterval(function() {
+            //                     if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
+            //                       	// var userName=doc.querySelector("#userid").value;
+            //                       	// userName=userName.replace(/tl/g,"TL")
 
-//                 var timer = setInterval(function() {
-//                     if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
-//                         sessionStorage.setItem("userid", doc.querySelector("#userid").value);
-//                         sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
-//                         // aWin.location.href = host + "&cmd=login&languageCd=ZHS";
-//                         clearInterval(timer);
-//                     }
-//                 }, 500);
-//             }
-              /**********************end***************************/
+            //                         sessionStorage.setItem("userid", doc.querySelector("#userid").value);
+            //                       	// sessionStorage.setItem("userid", userName);
+            //                         sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
+            //                         aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS";
+            //                         clearInterval(timer);
+            //                     }
+            //                 }, 500);
+            //             } else if (aWin.location.href.indexOf("&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("errorCode") !== -1) {
+            //                 var host = aWin.location.href.match(/http.*\?/)[0];
 
-            if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF?&cmd=login&languageCd=ZHS") !== -1) {
+            //                 var timer = setInterval(function() {
+            //                     if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
+            //                         sessionStorage.setItem("userid", doc.querySelector("#userid").value);
+            //                         sessionStorage.setItem("pwd", doc.querySelector("#pwd").value);
+            //                         // aWin.location.href = host + "&cmd=login&languageCd=ZHS";
+            //                         clearInterval(timer);
+            //                     }
+            //                 }, 500);
+            //             }
+            /**********************end***************************/
+
+            if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login&languageCd=ZHS") !== -1) {
                 doc.querySelector("#userid").value = sessionStorage.getItem("userid");
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
             } else if (aWin.location.href.indexOf("CP.GBL?&cmd=login&languageCd=ZHS") !== -1) {
                 doc.querySelector("#userid").value = sessionStorage.getItem("userid");
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
+            }else if(aWin.location.href.indexOf("errorCode=999&languageCd=ZHS") !== -1){
+              	doc.querySelector("#userid").value = sessionStorage.getItem("userid");
+                doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
             }
-            //正式环境更多登录进去后地址变成https://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?
-            // if(aWin.location.href=="https://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?"){
-            // aWin.location.href="https://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
-            // }
             // 用户名、密码记录
             if (doc.querySelector("#login_error") && (doc.querySelector("#login_error").textContent.indexOf("您已请求了一个安全资源") !== -1 || doc.querySelector("#login_error").textContent.indexOf("验证码校验超时") !== -1)) {
                 var timer = setInterval(function() {
@@ -161,7 +150,7 @@
             }
             //返回
             if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF") !== -1) {
-                
+
                 ysp.customHelper.tab = "menu"
             }
 
@@ -172,12 +161,12 @@
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
 
-                //ios弹出_ysp_top
-                // var oldAlert = aWin.alert;
-                // aWin.alert = function(str) {
-                //     if (/_ysp_top/.test(str)) {
-                //         return;
-                //     } else {
+            //ios弹出_ysp_top
+            // var oldAlert = aWin.alert;
+            // aWin.alert = function(str) {
+            //     if (/_ysp_top/.test(str)) {
+            //         return;
+            //     } else {
 
             //     }
             // }
