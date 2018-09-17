@@ -39,7 +39,7 @@
           ysp.customHelper.AndroidBackFn();
         }
       }if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackFlag = 'PageClose';
+        ysp.customHelper.AndroidBackFlag = 'default';
       }
     },
     getTemplate_uiControl37_napNCJ: function getTemplate_uiControl37_napNCJ() {

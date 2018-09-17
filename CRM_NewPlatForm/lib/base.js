@@ -9,7 +9,7 @@
       var exist = false;
       this.topicList.forEach(function (item) {
         if (item.topic === topic) {
-          exist = true;
+          exist = true; 
           item.list.push({
             callback: cb,
             caller: caller
@@ -236,24 +236,25 @@
           //AllMobileMenu(AllMenu);
           //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
           if(ALLMENU != '' && AllMenu){
-             var SessionXhr = new XMLHttpRequest();
-             SessionXhr.onreadystatechange = function(){
-              if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
-                var encoder = JSON.parse(SessionXhr.response).encoder;
-                var userId = JSON.parse(SessionXhr.response).userId;
-                if(encoder && userId){
-                  var encoderXHR = new XMLHttpRequest();
-                  //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-                encoderXHR.open('GET','http://192.168.1.227/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-                  //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
-                  encoderXHR.send();
-                }else{
-                  console.error('AndEncoder接口请求失败!')
-                }
-              }
-            }
-             SessionXhr.open('GET','http://192.168.1.227/pttlCrm/homepage/getUserIdAndEncoder',false);
-             SessionXhr.send();
+            //正式环境暂时没有效验
+            //  var SessionXhr = new XMLHttpRequest();
+            //  SessionXhr.onreadystatechange = function(){
+            //   if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
+            //     var encoder = JSON.parse(SessionXhr.response).encoder;
+            //     var userId = JSON.parse(SessionXhr.response).userId;
+            //     if(encoder && userId){
+            //       var encoderXHR = new XMLHttpRequest();
+            //       //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+            //     encoderXHR.open('GET','http://192.168.1.227/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+            //       //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+            //       encoderXHR.send();
+            //     }else{
+            //       console.error('AndEncoder接口请求失败!')
+            //     }
+            //   }
+            // }
+            //  SessionXhr.open('GET','http://192.168.1.227/pttlCrm/homepage/getUserIdAndEncoder',false);
+            //  SessionXhr.send();
           }
       }
     }
@@ -2065,7 +2066,6 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function onTargetLoad(aWin, doc) {
-
       if (aWin) {
         if (aWin.location.href == 'http://192.168.1.227/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
