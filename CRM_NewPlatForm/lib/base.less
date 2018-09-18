@@ -3615,6 +3615,7 @@ __________________*/
     .ysp-atreport-picture{
         background-color: #fff;
         margin-top: 14px;
+      	border-bottom: 1px solid #e9e9e9;
         >div:first-child{
           border-bottom: 1px solid #e9e9e9;
           display: flex;
@@ -3725,7 +3726,6 @@ __________________*/
              }
            }
          }
-
          .ysp-atreport-message-name{
              min-height: 40px;
              border-bottom: 1px solid #e9e9e9;
@@ -3769,59 +3769,139 @@ __________________*/
              }
            }
          }
-       .ysp-atreport-message-unhf{
-         	//background: #f2f2f2;
-           // padding: 14px;
-           // font-size: 13px;
-           // border-bottom: 1px solid #e9e9e9;
-           // background: #F2F2F2;
-           // >div:first-child{
-           //   color:#2c80ff;
-           // }
-           // >div:last-child{
-           //   >span:first-child{
-           //     color: #333333;
-           //   }
-           //   >span:last-child{
-           //     color: #333333;
-           //     padding-left: 4px;
-           //   }
-           // }
-         }
-       .ysp-atreport-message-nohf{
-         padding: 14px;
-         font-size: 13px;
-         border-bottom: 1px solid #e9e9e9;
-           >div:first-child{
-             color:#2c80ff;
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
+         .ysp-atreport-message-unhf{
+            //background: #f2f2f2;
+             // padding: 14px;
+             // font-size: 13px;
+             // border-bottom: 1px solid #e9e9e9;
+             // background: #F2F2F2;
+             // >div:first-child{
+             //   color:#2c80ff;
+             // }
+             // >div:last-child{
+             //   >span:first-child{
+             //     color: #333333;
+             //   }
+             //   >span:last-child{
+             //     color: #333333;
+             //     padding-left: 4px;
+             //   }
+             // }
+           }
+         .ysp-atreport-message-nohf{
+           padding: 14px;
+           font-size: 13px;
+           border-bottom: 1px solid #e9e9e9;
              >div:first-child{
+               color:#2c80ff;
                display: flex;
-               justify-content: flex-start;
+               justify-content: space-between;
                align-items: center;
+               >div:first-child{
+                 display: flex;
+                 justify-content: flex-start;
+                 align-items: center;
+               }
+               >div:last-child{
+                 display: flex;
+                 justify-content: flex-end;
+                 align-items: center;
+               }
              }
              >div:last-child{
-               display: flex;
-               justify-content: flex-end;
-               align-items: center;
+               span{
+                 color: #333333;
+                 padding-left: 4px;
+               }
              }
            }
-           >div:last-child{
-             span{
-               color: #333333;
-               padding-left: 4px;
-             }
-           }
-       	 }
-       	 .ysp-atreport-message-answername{
+         .ysp-atreport-message-answername{
               color: #2c80ff;
               padding:0px 4px 0px 4px;
            }
-           .ysp-atreport-messageks{
-             color: #999999;
+         .ysp-atreport-messageks{
+           color: #999999;
+         }
+         .message-reply1{
+						margin-left:10px;
+            padding:30px 10px 30px 0;
+         }
+         .message-reply2{
+               padding: 30px 10px;
+             }
+         .message-reply1,.message-reply2{
+           line-height:1.5;
+           border-bottom: 1px solid rgb(231,231,231);
+          h6,span:nth-of-type(2){
+            color:rgb(63,144,230);
+            font-weight: normal;
+            font-size:16px;
+            margin-bottom:8px;
+          }
+          .reply-time-btn{
+            margin-top: 8px;
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            color:rgb(152,152,152);
+            span{flex:1;}
+            a:first-of-type{
+              position: relative;
+              width: 36px;
+              height: 30px;
+              margin-right: 8px;
+              background-color: rgb(190,190,190);
+              -moz-border-radius: 50% 50%;
+              -webkit-border-radius: 50% 50%;
+              border-radius: 50% 50%;
+              transform: rotate(10deg);
+              &:before{
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                top: 60%;
+                left: 20%;
+                border-width: 20px 6px;
+                border-color: rgb(190,190,190) transparent transparent transparent;
+              	border-style: solid;
+              }
+            }
+          }
+          
+  }
+         .reply-content-dialog{
+						padding:0 10px 30px;
+            background-color:rgb(242,242,242);
+           >.dialog-input{
+             margin-bottom:10px;
+             textarea{
+               width:100%;
+               background-color:#FFF;
+               padding:10px 0 0 10px;
+               border:1px solid rgb(228,228,228);
+             }
            }
+           >.dialog-btn{
+             display: flex;
+             justify-content:flex-end;
+             span{
+               padding:5px 12px;
+               border-radius: 5px;
+             }
+             span:first-child{
+               background-color:#fff;
+               color:rgb(72,149,237);
+               border:1px solid rgb(72,149,237);
+               margin-right: 10px;
+             }
+             span:last-child{
+                color:#fff;
+                background-color:rgb(72,149,237);
+             }
+           }
+           
+         }
      }
      
      .ysp-atreport-dxname{
@@ -3836,11 +3916,13 @@ __________________*/
            color: #333333;
          }
      }
-     .ysp-atreport-send{
+    .ysp-atreport-send{
        min-heigth:130px;
        background-color: #fff;
        padding: 14px;
        position:relative;
+       border-bottom: 1px solid #e9e9e9;
+    	 margin-bottom: 20px;
        &::before{
          position:absolute;
          display:block;
@@ -3883,13 +3965,23 @@ __________________*/
          color: #999999;
          align-items: center;
          .ysp-atreport-atsend{
-           font-size: 20px;
-           padding-right: 20px;
-         }
-         .ysp-atreport-unatsend{
            font-size: 16px;
-           padding-right: 20px;
-           color: #2c80ff;
+           padding: 3px 20px;
+           border: 2px solid #2c80ff;
+           border-radius: 10px;
+           margin-right: 10px;
+           color:#2c80ff;
+           background-color:#fff;
+         }
+         /**.ysp-atreport-unatsend{
+           font-size: 16px;
+           color: #777;
+           padding: 3px 15px;
+           border: 2px solid #777;
+           border-radius: 10px;
+           margin-right: 15px;
+           background-color: #ccc;
+           
          }
       
          .ysp-atreport-buttonsend{
@@ -3897,7 +3989,8 @@ __________________*/
            border-radius:10px;
            padding: 5px 20px;
            font-size: 16px;
-         }
+         }**/
+         
          .ysp-atreport-unbuttonsend{
            border: 1px solid #e9e9e9;
            border-radius: 10px;
@@ -3908,7 +4001,6 @@ __________________*/
          }
        }
      }
-  
   	.ysp-atreport-atnames{
       display: flex;
       justify-content: flex-start;
@@ -13661,6 +13753,7 @@ div[data-ysp-modelid="workPlanCustomStore"]{
 .ysp-atreport-picture{
   background-color: #fff;
   margin-top: 14px;
+  border-bottom: 1px solid #e9e9e9;
   >div:first-child{
     border-bottom: 1px solid #e9e9e9;
     display: flex;
@@ -14403,6 +14496,7 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
 .ysp-atreport-picture{
   background-color: #fff;
   margin-top: 14px;
+  border-bottom: 1px solid #e9e9e9;
   .report-supervisor{
     margin:20px 0;
     background-color:#fff;
