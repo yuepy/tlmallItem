@@ -2083,6 +2083,12 @@
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);
       }
+      if (aWin.location.href.indexOf('login') !== -1) {
+          debugger;
+          if(aWin.login){
+            debugger;
+          }
+        }
       //为了使移动端的日期方法toLocaleDateString和移动端保持一致
       aWin.Date.prototype.toLocaleDateString = function () {
         var date = this;
@@ -2102,6 +2108,10 @@
       if (aWin.frameElement && aWin.frameElement.name == "browserFrame2" && aWin.frameElement.dataset.browser) {
         topWin = aWin;
         if (aWin.location.href.indexOf('login') !== -1) {
+          debugger;
+          if(aWin.login){
+            debugger;
+          }
           ysp.runtime.Model.setForceMatchModels(['login']);
         }
       }
