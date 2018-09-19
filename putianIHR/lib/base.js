@@ -50,7 +50,7 @@
                 var btn = doc.querySelectorAll(".ps_loginmessagelarge")[1].querySelector("a");
                 btn.click();
             }
-            //index页重定向
+            //index页重定向---测试环境
             // debugger;
             if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("HPS_TL_PAG_010_CP") !== -1) {
                 aWin.location.href = "http://192.168.220.110/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_PAG_010_CP.GBL";
@@ -68,6 +68,7 @@
            	if(aWin.location.href.indexOf("toHome")!==-1){
               aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
             }
+          	/******end**********/
             //每个tab页面的切换
             var tblpstabs = doc.querySelector("#tblpstabs");
             if (tblpstabs && tblpstabs.querySelectorAll("a")[1] && tblpstabs.querySelectorAll("a")[1].textContent !== "调休假余额查询" && tblpstabs.querySelectorAll("a")[1].textContent !== "考勤类型") {
