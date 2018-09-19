@@ -12620,32 +12620,44 @@ div[data-ysp-modelid="partyWork"] {
   margin-bottom: 0;
 }
 [data-ysp-modelid="assetMakeNo"],
-[data-ysp-modelid="stokeMakeNo"] {
+[data-ysp-modelid="stokeMakeNo"],
+[data-ysp-modelid="HavadoneassetMakeNo"],
+[data-ysp-modelid="HavehonestokeMakeNo"] {
   color: #202020;
   font-size: 16px;
   background-color: #f2f2f2;
 }
 [data-ysp-modelid="assetMakeNo"] .information,
-[data-ysp-modelid="stokeMakeNo"] .information {
+[data-ysp-modelid="stokeMakeNo"] .information,
+[data-ysp-modelid="HavadoneassetMakeNo"] .information,
+[data-ysp-modelid="HavehonestokeMakeNo"] .information {
   background-color: #ffffff;
 }
 [data-ysp-modelid="assetMakeNo"] .information .disnone,
-[data-ysp-modelid="stokeMakeNo"] .information .disnone {
+[data-ysp-modelid="stokeMakeNo"] .information .disnone,
+[data-ysp-modelid="HavadoneassetMakeNo"] .information .disnone,
+[data-ysp-modelid="HavehonestokeMakeNo"] .information .disnone {
   display: none;
 }
 [data-ysp-modelid="assetMakeNo"] .information .content .contenttit,
-[data-ysp-modelid="stokeMakeNo"] .information .content .contenttit {
+[data-ysp-modelid="stokeMakeNo"] .information .content .contenttit,
+[data-ysp-modelid="HavadoneassetMakeNo"] .information .content .contenttit,
+[data-ysp-modelid="HavehonestokeMakeNo"] .information .content .contenttit {
   display: flex;
   justify-content: space-between;
 }
 [data-ysp-modelid="assetMakeNo"] .information .content .contenttit .contentitem,
-[data-ysp-modelid="stokeMakeNo"] .information .content .contenttit .contentitem {
+[data-ysp-modelid="stokeMakeNo"] .information .content .contenttit .contentitem,
+[data-ysp-modelid="HavadoneassetMakeNo"] .information .content .contenttit .contentitem,
+[data-ysp-modelid="HavehonestokeMakeNo"] .information .content .contenttit .contentitem {
   min-height: 56px;
   align-items: center;
   display: flex;
 }
 [data-ysp-modelid="assetMakeNo"] .information .content .contenttit .contentitem:nth-child(1),
-[data-ysp-modelid="stokeMakeNo"] .information .content .contenttit .contentitem:nth-child(1) {
+[data-ysp-modelid="stokeMakeNo"] .information .content .contenttit .contentitem:nth-child(1),
+[data-ysp-modelid="HavadoneassetMakeNo"] .information .content .contenttit .contentitem:nth-child(1),
+[data-ysp-modelid="HavehonestokeMakeNo"] .information .content .contenttit .contentitem:nth-child(1) {
   width: 56px;
   margin-left: 15px;
   font-size: 14px;
@@ -12654,14 +12666,18 @@ div[data-ysp-modelid="partyWork"] {
   text-align-last: justify;
 }
 [data-ysp-modelid="assetMakeNo"] .information .content .contenttit .contentitem:nth-child(2),
-[data-ysp-modelid="stokeMakeNo"] .information .content .contenttit .contentitem:nth-child(2) {
+[data-ysp-modelid="stokeMakeNo"] .information .content .contenttit .contentitem:nth-child(2),
+[data-ysp-modelid="HavadoneassetMakeNo"] .information .content .contenttit .contentitem:nth-child(2),
+[data-ysp-modelid="HavehonestokeMakeNo"] .information .content .contenttit .contentitem:nth-child(2) {
   width: 265px;
   border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
   color: #313131;
 }
 [data-ysp-modelid="assetMakeNo"] .information .content textarea,
-[data-ysp-modelid="stokeMakeNo"] .information .content textarea {
+[data-ysp-modelid="stokeMakeNo"] .information .content textarea,
+[data-ysp-modelid="HavadoneassetMakeNo"] .information .content textarea,
+[data-ysp-modelid="HavehonestokeMakeNo"] .information .content textarea {
   width: 265px;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -12672,7 +12688,9 @@ div[data-ysp-modelid="partyWork"] {
   margin: 0;
 }
 [data-ysp-modelid="assetMakeNo"] .information > span,
-[data-ysp-modelid="stokeMakeNo"] .information > span {
+[data-ysp-modelid="stokeMakeNo"] .information > span,
+[data-ysp-modelid="HavadoneassetMakeNo"] .information > span,
+[data-ysp-modelid="HavehonestokeMakeNo"] .information > span {
   width: 100%;
   height: 44px;
   font-size: 14px;
@@ -12682,12 +12700,16 @@ div[data-ysp-modelid="partyWork"] {
   display: block;
 }
 [data-ysp-modelid="assetMakeNo"] .information > span a,
-[data-ysp-modelid="stokeMakeNo"] .information > span a {
+[data-ysp-modelid="stokeMakeNo"] .information > span a,
+[data-ysp-modelid="HavadoneassetMakeNo"] .information > span a,
+[data-ysp-modelid="HavehonestokeMakeNo"] .information > span a {
   color: #c0a7ff;
   margin-right: 6px;
 }
 [data-ysp-modelid="assetMakeNo"] .information .shang,
-[data-ysp-modelid="stokeMakeNo"] .information .shang {
+[data-ysp-modelid="stokeMakeNo"] .information .shang,
+[data-ysp-modelid="HavadoneassetMakeNo"] .information .shang,
+[data-ysp-modelid="HavehonestokeMakeNo"] .information .shang {
   width: 14px;
   height: 8px;
   display: inline-block;
@@ -12695,7 +12717,9 @@ div[data-ysp-modelid="partyWork"] {
   background-size: 14px 8px;
 }
 [data-ysp-modelid="assetMakeNo"] .information .xia,
-[data-ysp-modelid="stokeMakeNo"] .information .xia {
+[data-ysp-modelid="stokeMakeNo"] .information .xia,
+[data-ysp-modelid="HavadoneassetMakeNo"] .information .xia,
+[data-ysp-modelid="HavehonestokeMakeNo"] .information .xia {
   width: 14px;
   height: 8px;
   display: inline-block;
@@ -12703,21 +12727,29 @@ div[data-ysp-modelid="partyWork"] {
   background-size: 14px 8px;
 }
 [data-ysp-modelid="assetMakeNo"] .understanding,
-[data-ysp-modelid="stokeMakeNo"] .understanding {
+[data-ysp-modelid="stokeMakeNo"] .understanding,
+[data-ysp-modelid="HavadoneassetMakeNo"] .understanding,
+[data-ysp-modelid="HavehonestokeMakeNo"] .understanding {
   background-color: #ffffff;
   padding-bottom: 15px;
 }
 [data-ysp-modelid="assetMakeNo"] .understanding .content,
-[data-ysp-modelid="stokeMakeNo"] .understanding .content {
+[data-ysp-modelid="stokeMakeNo"] .understanding .content,
+[data-ysp-modelid="HavadoneassetMakeNo"] .understanding .content,
+[data-ysp-modelid="HavehonestokeMakeNo"] .understanding .content {
   margin-left: 15px;
   overflow: hidden;
 }
 [data-ysp-modelid="assetMakeNo"] .understanding .content .contenthidden,
-[data-ysp-modelid="stokeMakeNo"] .understanding .content .contenthidden {
+[data-ysp-modelid="stokeMakeNo"] .understanding .content .contenthidden,
+[data-ysp-modelid="HavadoneassetMakeNo"] .understanding .content .contenthidden,
+[data-ysp-modelid="HavehonestokeMakeNo"] .understanding .content .contenthidden {
   overflow: hidden;
 }
 [data-ysp-modelid="assetMakeNo"] .understanding .content .contentitem,
-[data-ysp-modelid="stokeMakeNo"] .understanding .content .contentitem {
+[data-ysp-modelid="stokeMakeNo"] .understanding .content .contentitem,
+[data-ysp-modelid="HavadoneassetMakeNo"] .understanding .content .contentitem,
+[data-ysp-modelid="HavehonestokeMakeNo"] .understanding .content .contentitem {
   min-height: 56px;
   color: #313131;
   display: inline-block;
@@ -12725,7 +12757,9 @@ div[data-ysp-modelid="partyWork"] {
   padding-bottom: 15px;
 }
 [data-ysp-modelid="assetMakeNo"] .understanding .content .contentitem:nth-child(1),
-[data-ysp-modelid="stokeMakeNo"] .understanding .content .contentitem:nth-child(1) {
+[data-ysp-modelid="stokeMakeNo"] .understanding .content .contentitem:nth-child(1),
+[data-ysp-modelid="HavadoneassetMakeNo"] .understanding .content .contentitem:nth-child(1),
+[data-ysp-modelid="HavehonestokeMakeNo"] .understanding .content .contentitem:nth-child(1) {
   width: 64px;
   font-size: 16px;
   float: left;
@@ -12733,19 +12767,25 @@ div[data-ysp-modelid="partyWork"] {
   text-align-last: justify;
 }
 [data-ysp-modelid="assetMakeNo"] .understanding .content .contentitem:nth-child(2),
-[data-ysp-modelid="stokeMakeNo"] .understanding .content .contentitem:nth-child(2) {
+[data-ysp-modelid="stokeMakeNo"] .understanding .content .contentitem:nth-child(2),
+[data-ysp-modelid="HavadoneassetMakeNo"] .understanding .content .contentitem:nth-child(2),
+[data-ysp-modelid="HavehonestokeMakeNo"] .understanding .content .contentitem:nth-child(2) {
   width: 235px;
   border-bottom: 1px solid #e0e0e0;
   text-align: left;
   float: right;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave,
-[data-ysp-modelid="stokeMakeNo"] .askleave {
+[data-ysp-modelid="stokeMakeNo"] .askleave,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave {
   background-color: #ffffff;
   padding-bottom: 15px;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave .contentitem,
-[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem {
+[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave .contentitem,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave .contentitem {
   width: 345px;
   max-height: 220px;
   overflow: auto;
@@ -12756,7 +12796,9 @@ div[data-ysp-modelid="partyWork"] {
   margin-right: auto;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave .contentitem table,
-[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table {
+[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave .contentitem table,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave .contentitem table {
   width: 95px;
   border-right: 1px solid #bddaf0;
   border-bottom: 1px solid #bddaf0;
@@ -12765,16 +12807,22 @@ div[data-ysp-modelid="partyWork"] {
   color: #0e3838;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave .contentitem table thead,
-[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table thead {
+[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table thead,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave .contentitem table thead,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave .contentitem table thead {
   height: 44px;
   font-size: 16px;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave .contentitem table thead tr,
-[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table thead tr {
+[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table thead tr,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave .contentitem table thead tr,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave .contentitem table thead tr {
   display: flex;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave .contentitem table thead tr th,
-[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table thead tr th {
+[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table thead tr th,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave .contentitem table thead tr th,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave .contentitem table thead tr th {
   width: 115px;
   min-height: 44px;
   font-size: 14px;
@@ -12790,11 +12838,15 @@ div[data-ysp-modelid="partyWork"] {
   text-align: center;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave .contentitem table tbody tr,
-[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table tbody tr {
+[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table tbody tr,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave .contentitem table tbody tr,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave .contentitem table tbody tr {
   display: flex;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave .contentitem table tbody tr td,
-[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table tbody tr td {
+[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem table tbody tr td,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave .contentitem table tbody tr td,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave .contentitem table tbody tr td {
   width: 115px;
   min-height: 44px;
   font-size: 14px;
@@ -12810,76 +12862,102 @@ div[data-ysp-modelid="partyWork"] {
   text-align: center;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave .contentitem::-webkit-scrollbar,
-[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem::-webkit-scrollbar {
+[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem::-webkit-scrollbar,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave .contentitem::-webkit-scrollbar,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave .contentitem::-webkit-scrollbar {
   background: #ffffff;
   height: 8px;
   border-radius: 5px;
 }
 [data-ysp-modelid="assetMakeNo"] .askleave .contentitem::-webkit-scrollbar-thumb,
-[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem::-webkit-scrollbar-thumb {
+[data-ysp-modelid="stokeMakeNo"] .askleave .contentitem::-webkit-scrollbar-thumb,
+[data-ysp-modelid="HavadoneassetMakeNo"] .askleave .contentitem::-webkit-scrollbar-thumb,
+[data-ysp-modelid="HavehonestokeMakeNo"] .askleave .contentitem::-webkit-scrollbar-thumb {
   background: #a9cde9;
   border-radius: 5px;
 }
 [data-ysp-modelid="assetMakeNo"] .Auditor,
-[data-ysp-modelid="stokeMakeNo"] .Auditor {
+[data-ysp-modelid="stokeMakeNo"] .Auditor,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Auditor,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Auditor {
   background-color: #ffffff;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
 [data-ysp-modelid="assetMakeNo"] .Auditor .content,
-[data-ysp-modelid="stokeMakeNo"] .Auditor .content {
+[data-ysp-modelid="stokeMakeNo"] .Auditor .content,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Auditor .content,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Auditor .content {
   overflow: hidden;
   margin-left: 15px;
 }
 [data-ysp-modelid="assetMakeNo"] .Auditor .content .contentitem,
-[data-ysp-modelid="stokeMakeNo"] .Auditor .content .contentitem {
+[data-ysp-modelid="stokeMakeNo"] .Auditor .content .contentitem,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Auditor .content .contentitem,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Auditor .content .contentitem {
   padding-top: 15px;
   padding-bottom: 15px;
 }
 [data-ysp-modelid="assetMakeNo"] .Auditor .content .contentitem:nth-child(1),
-[data-ysp-modelid="stokeMakeNo"] .Auditor .content .contentitem:nth-child(1) {
+[data-ysp-modelid="stokeMakeNo"] .Auditor .content .contentitem:nth-child(1),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Auditor .content .contentitem:nth-child(1),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Auditor .content .contentitem:nth-child(1) {
   width: 64px;
   font-size: 16px;
   float: left;
 }
 [data-ysp-modelid="assetMakeNo"] .Auditor .content .contentitem:nth-child(2),
-[data-ysp-modelid="stokeMakeNo"] .Auditor .content .contentitem:nth-child(2) {
+[data-ysp-modelid="stokeMakeNo"] .Auditor .content .contentitem:nth-child(2),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Auditor .content .contentitem:nth-child(2),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Auditor .content .contentitem:nth-child(2) {
   width: 235px;
   text-align: left;
   float: right;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure {
   background-color: #ffffff;
   padding-bottom: 15px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .contenttitle p,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .contenttitle p {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .contenttitle p,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .contenttitle p,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .contenttitle p {
   display: flex;
   width: 345px;
   margin-left: 15px;
   justify-content: space-between;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .contenttitle p > div,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .contenttitle p > div {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .contenttitle p > div,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .contenttitle p > div,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .contenttitle p > div {
   margin-right: 10px;
   display: flex;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .contenttitle p > div button,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .contenttitle p > div button {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .contenttitle p > div button,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .contenttitle p > div button,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .contenttitle p > div button {
   display: flex;
   border: 1px solid #20dffb;
   border-radius: 2px;
   color: #20dffb;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .contenttitle p > div button:last-child,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .contenttitle p > div button:last-child {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .contenttitle p > div button:last-child,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .contenttitle p > div button:last-child,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .contenttitle p > div button:last-child {
   margin-left: 10px;
   border: 1px solid #e64750;
   color: #e64750;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit {
   width: 345px;
   overflow: hidden;
   margin: auto;
@@ -12890,31 +12968,43 @@ div[data-ysp-modelid="partyWork"] {
   margin-bottom: 10px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .displnone,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .displnone {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .displnone,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .displnone,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .displnone {
   display: none;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .displblock,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .displblock {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .displblock,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .displblock,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .displblock {
   display: flex;
   justify-content: space-between;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4),
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4) {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4) {
   border-bottom: 1px solid #e0e0e0;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4) .contentitem,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4) .contentitem {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4) .contentitem,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4) .contentitem,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .displblock:nth-child(4) .contentitem {
   border: 0;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentitem,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentitem,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentitem {
   color: #313131;
   display: inline-block;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(1),
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(1) {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(1),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(1),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(1) {
   width: 64px;
   font-size: 16px;
   float: left;
@@ -12924,7 +13014,9 @@ div[data-ysp-modelid="partyWork"] {
   color: #202020;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(2),
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(2) {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(2),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(2),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentitem:nth-child(2) {
   width: 225px;
   border-bottom: 1px solid #e0e0e0;
   text-align: left;
@@ -12932,7 +13024,9 @@ div[data-ysp-modelid="partyWork"] {
   color: #313131;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentitem p,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem p {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem p,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentitem p,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentitem p {
   width: 335px;
   display: inline-block;
   line-height: 44px;
@@ -12942,7 +13036,9 @@ div[data-ysp-modelid="partyWork"] {
   cursor: pointer;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentitem p span,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem p span {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentitem p span,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentitem p span,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentitem p span {
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -12951,7 +13047,9 @@ div[data-ysp-modelid="partyWork"] {
   background-size: 20px 20px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentspan,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentspan,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentspan {
   width: 100%;
   text-align: center;
   text-align-last: auto;
@@ -12959,20 +13057,26 @@ div[data-ysp-modelid="partyWork"] {
   cursor: pointer;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentspan > p,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan > p {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan > p,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentspan > p,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentspan > p {
   width: 50%;
   display: inline-block;
   margin: 0;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1),
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1) {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1) {
   height: 44px;
   line-height: 44px;
   display: inline-block;
   border-right: 1px solid #cccccc;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1) span,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1) span {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1) span,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1) span,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(1) span {
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -12981,13 +13085,17 @@ div[data-ysp-modelid="partyWork"] {
   background-size: 20px 20px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2),
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2) {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2) {
   height: 44px;
   display: inline-block;
   line-height: 44px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2) span,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2) span {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2) span,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2) span,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .contentspan p:nth-child(2) span {
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -12996,7 +13104,9 @@ div[data-ysp-modelid="partyWork"] {
   background-size: 20px 20px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .titlediv,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .titlediv,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .titlediv {
   width: 100%;
   height: 45px;
   line-height: 45px;
@@ -13005,13 +13115,17 @@ div[data-ysp-modelid="partyWork"] {
   justify-content: space-between;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .titlediv div,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .titlediv div,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .titlediv div {
   display: flex;
   color: #313131;
   align-items: center;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(1),
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(1) {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(1),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(1),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(1) {
   display: flex;
   width: 40px;
   height: 24px;
@@ -13023,7 +13137,9 @@ div[data-ysp-modelid="partyWork"] {
   text-align: center;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(2),
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(2) {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(2),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(2),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(2) {
   width: 80%;
   padding-left: 10px;
   margin: 0;
@@ -13033,13 +13149,17 @@ div[data-ysp-modelid="partyWork"] {
   text-overflow: ellipsis;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(3),
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(3) {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(3),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(3),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .titlediv div:nth-child(3) {
   cursor: pointer;
   display: flex;
   margin-right: 10px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .titlediv div.shang,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div.shang {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div.shang,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .titlediv div.shang,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .titlediv div.shang {
   width: 20px;
   height: 13px;
   margin-top: 16px;
@@ -13047,7 +13167,9 @@ div[data-ysp-modelid="partyWork"] {
   background-size: 20px 13px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .contentit .titlediv div.xia,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div.xia {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .contentit .titlediv div.xia,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .contentit .titlediv div.xia,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .contentit .titlediv div.xia {
   width: 20px;
   height: 13px;
   margin-top: 16px;
@@ -13055,11 +13177,15 @@ div[data-ysp-modelid="partyWork"] {
   background-size: 20px 13px;
 }
 [data-ysp-modelid="assetMakeNo"] .Enclosure .content .distag,
-[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .distag {
+[data-ysp-modelid="stokeMakeNo"] .Enclosure .content .distag,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Enclosure .content .distag,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Enclosure .content .distag {
   margin-bottom: 0;
 }
 [data-ysp-modelid="assetMakeNo"] .ipt_sub,
-[data-ysp-modelid="stokeMakeNo"] .ipt_sub {
+[data-ysp-modelid="stokeMakeNo"] .ipt_sub,
+[data-ysp-modelid="HavadoneassetMakeNo"] .ipt_sub,
+[data-ysp-modelid="HavehonestokeMakeNo"] .ipt_sub {
   height: 36px;
   width: 374px;
   margin: 15px auto;
@@ -13067,23 +13193,33 @@ div[data-ysp-modelid="partyWork"] {
 }
 [data-ysp-modelid="assetMakeNo"] .ipt_sub input,
 [data-ysp-modelid="stokeMakeNo"] .ipt_sub input,
+[data-ysp-modelid="HavadoneassetMakeNo"] .ipt_sub input,
+[data-ysp-modelid="HavehonestokeMakeNo"] .ipt_sub input,
 [data-ysp-modelid="assetMakeNo"] .ipt_sub button,
-[data-ysp-modelid="stokeMakeNo"] .ipt_sub button {
+[data-ysp-modelid="stokeMakeNo"] .ipt_sub button,
+[data-ysp-modelid="HavadoneassetMakeNo"] .ipt_sub button,
+[data-ysp-modelid="HavehonestokeMakeNo"] .ipt_sub button {
   margin: 0;
   border: 0;
 }
 [data-ysp-modelid="assetMakeNo"] .ipt_sub > div,
-[data-ysp-modelid="stokeMakeNo"] .ipt_sub > div {
+[data-ysp-modelid="stokeMakeNo"] .ipt_sub > div,
+[data-ysp-modelid="HavadoneassetMakeNo"] .ipt_sub > div,
+[data-ysp-modelid="HavehonestokeMakeNo"] .ipt_sub > div {
   display: flex;
   justify-content: space-between;
 }
 [data-ysp-modelid="assetMakeNo"] .ipt_sub label,
-[data-ysp-modelid="stokeMakeNo"] .ipt_sub label {
+[data-ysp-modelid="stokeMakeNo"] .ipt_sub label,
+[data-ysp-modelid="HavadoneassetMakeNo"] .ipt_sub label,
+[data-ysp-modelid="HavehonestokeMakeNo"] .ipt_sub label {
   width: 100px;
   height: 36px;
 }
 [data-ysp-modelid="assetMakeNo"] .ipt_sub input,
-[data-ysp-modelid="stokeMakeNo"] .ipt_sub input {
+[data-ysp-modelid="stokeMakeNo"] .ipt_sub input,
+[data-ysp-modelid="HavadoneassetMakeNo"] .ipt_sub input,
+[data-ysp-modelid="HavehonestokeMakeNo"] .ipt_sub input {
   height: 36px;
   width: 200px;
   border: 1px solid #ccc;
@@ -13091,7 +13227,9 @@ div[data-ysp-modelid="partyWork"] {
   border-radius: 5px;
 }
 [data-ysp-modelid="assetMakeNo"] .ipt_sub button,
-[data-ysp-modelid="stokeMakeNo"] .ipt_sub button {
+[data-ysp-modelid="stokeMakeNo"] .ipt_sub button,
+[data-ysp-modelid="HavadoneassetMakeNo"] .ipt_sub button,
+[data-ysp-modelid="HavehonestokeMakeNo"] .ipt_sub button {
   width: 50px;
   height: 36px;
   line-height: 36px;
@@ -13102,7 +13240,9 @@ div[data-ysp-modelid="partyWork"] {
   background-color: #e64750;
 }
 [data-ysp-modelid="assetMakeNo"] .ipt_sub .btn-big,
-[data-ysp-modelid="stokeMakeNo"] .ipt_sub .btn-big {
+[data-ysp-modelid="stokeMakeNo"] .ipt_sub .btn-big,
+[data-ysp-modelid="HavadoneassetMakeNo"] .ipt_sub .btn-big,
+[data-ysp-modelid="HavehonestokeMakeNo"] .ipt_sub .btn-big {
   width: 75px;
   height: 36px;
   line-height: 36px;
@@ -13113,25 +13253,35 @@ div[data-ysp-modelid="partyWork"] {
   background-color: #e64750;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable {
   background-color: #fff;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable p,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable p {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable p,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable p,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable p {
   margin: 0;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_radio,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_radio {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_radio,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_radio,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_radio {
   padding: 20px 10px;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right {
   width: 100%;
   background-color: #f5f5f5;
   margin-right: 10px;
@@ -13139,23 +13289,31 @@ div[data-ysp-modelid="partyWork"] {
   margin-bottom: 5px;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_title,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_title,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_title {
   display: block;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_title > div,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_title > div,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div {
   display: flex;
   justify-content: space-between;
   margin: 7px 0;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1),
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1),
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1),
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) {
   margin: 0 0 7px;
   position: relative;
   height: 20px;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_block,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_block {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_block,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_block,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_block {
   position: absolute;
   top: 0;
   right: 10px;
@@ -13168,7 +13326,9 @@ div[data-ysp-modelid="partyWork"] {
   cursor: pointer;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_none,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_none {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_none,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_none,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div:nth-child(1) span.display_none {
   position: absolute;
   top: 0;
   right: 10px;
@@ -13181,7 +13341,9 @@ div[data-ysp-modelid="partyWork"] {
   cursor: pointer;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_title > div label,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div label {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div label,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_title > div label,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div label {
   text-align: left;
   width: 30%;
   font-size: 14px;
@@ -13189,19 +13351,25 @@ div[data-ysp-modelid="partyWork"] {
   margin-bottom: none;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_title > div span,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div span {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div span,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_title > div span,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_title > div span {
   width: 70%;
   text-align: right;
   font-size: 14px;
   color: #313131;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_none > div,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_none > div {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_none > div,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_none > div,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_none > div {
   display: flex;
   justify-content: space-between;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_none > div label,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_none > div label {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_none > div label,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_none > div label,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_none > div label {
   text-align: left;
   width: 30%;
   font-size: 14px;
@@ -13209,7 +13377,9 @@ div[data-ysp-modelid="partyWork"] {
   margin-bottom: none;
 }
 [data-ysp-modelid="assetMakeNo"] .Contenttable .Content .Content_right .Content_none > div span,
-[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_none > div span {
+[data-ysp-modelid="stokeMakeNo"] .Contenttable .Content .Content_right .Content_none > div span,
+[data-ysp-modelid="HavadoneassetMakeNo"] .Contenttable .Content .Content_right .Content_none > div span,
+[data-ysp-modelid="HavehonestokeMakeNo"] .Contenttable .Content .Content_right .Content_none > div span {
   width: 70%;
   text-align: right;
   font-size: 14px;
