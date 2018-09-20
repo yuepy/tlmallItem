@@ -2099,6 +2099,9 @@
       //   }
       // }
       //2.7.0及以上 运行时 当主iframe.name=='browserFrame2'  使页面匹配login
+      if(aWin.location.href.indexOf('ysp_mobile') !== -1){
+        aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login?clientType=ysp'
+      }
       if (aWin.frameElement && aWin.frameElement.name == "browserFrame2" && aWin.frameElement.dataset.browser) {
         topWin = aWin;
         if (aWin.location.href.indexOf('login') !== -1) {
