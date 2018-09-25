@@ -74,6 +74,12 @@
             if (tblpstabs && tblpstabs.querySelectorAll("a")[1] && tblpstabs.querySelectorAll("a")[1].textContent !== "调休假余额查询" && tblpstabs.querySelectorAll("a")[1].textContent !== "考勤类型") {
                 tblpstabs.querySelectorAll("a")[1].click();
             }
+          	//华为附件上传当页刷新的问题
+          	if(doc.body.textContent.indexOf("加班申请"||"假期申请"||"公出"||"外派探亲"||"自助查看个人信息")!==-1){
+              if (topWindow.EAPI.isAndroid()) {
+                window.yspCheckIn.isRefresh(true);
+              }
+            }
             //解决重复登录的问题
             /**********************当快捷地址直接打开是目标地址&cmd=login时解锁以下判断*************************/
             if (aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login") {
@@ -85,7 +91,7 @@
                         clearInterval(timer);
                     }
                 }, 500);
-            } else if (aWin.location.href.indexOf("CP.GBL?") !== -1 && aWin.location.href.indexOf("&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("languageCd=ZHS") == -1) {
+            } else if (aWin.location.href.indexOf("GBL?") !== -1 && aWin.location.href.indexOf("&cmd=login") !== -1 && doc.querySelector("#userid")&& aWin.location.href.indexOf("languageCd=ZHS") == -1 ) {
                 var host = aWin.location.href.match(/http.*\?/)[0];
 
                 var timer = setInterval(function() {
@@ -131,7 +137,7 @@
             } else if (aWin.location.href.indexOf("CP.GBL?&cmd=login&languageCd=ZHS") !== -1) {
                 doc.querySelector("#userid").value = sessionStorage.getItem("userid");
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
-            }else if(aWin.location.href.indexOf("errorCode=999&languageCd=ZHS") !== -1){
+            }else if(aWin.location.href.indexOf("errorCode") !== -1&&aWin.location.href.indexOf("&languageCd=ZHS") !== -1){
               	doc.querySelector("#userid").value = sessionStorage.getItem("userid");
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
             }

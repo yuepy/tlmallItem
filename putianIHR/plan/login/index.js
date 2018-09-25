@@ -4,7 +4,11 @@
       if (!elem) {
         return;
       }if (elem) {
-        var data = { userid: "", pwd: "", msg: "", error: "" };data.userid = elem.querySelector("#userid").value;data.pwd = elem.querySelector("#pwd").value;data.msg = elem.querySelector("#code").value;data.error = elem.querySelector("#login_error").textContent;return data;
+        var data = { userid: "", pwd: "", msg: "", error: "" };data.userid = elem.querySelector("#userid").value;data.pwd = elem.querySelector("#pwd").value;data.msg = elem.querySelector("#code").value;if (elem.querySelector("#login_error") && elem.querySelector("#login_error").textContent.indexOf("需要输入用户 ID 和密码。") !== -1) {
+          data.error = '请输入验证码';
+        } else {
+          data.error = elem.querySelector("#login_error").textContent;
+        }return data;
       }
     },
     doAction_uiControl0_vbflXP: function (data, elem) {
