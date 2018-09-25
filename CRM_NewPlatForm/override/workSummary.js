@@ -67,19 +67,15 @@
 
 	var layerUtils = _interopRequireWildcard(_layerUtils);
 
-	var _objectUtil = __webpack_require__(6);
-
-	var objectUtil = _interopRequireWildcard(_objectUtil);
-
-	var _backfill = __webpack_require__(65);
+	var _backfill = __webpack_require__(169);
 
 	var backfill = _interopRequireWildcard(_backfill);
 
-	var _dateUtils = __webpack_require__(24);
+	var _dateUtils = __webpack_require__(12);
 
 	var dateUtils = _interopRequireWildcard(_dateUtils);
 
-	var _viewer = __webpack_require__(13);
+	var _viewer = __webpack_require__(16);
 
 	var viewer = _interopRequireWildcard(_viewer);
 
@@ -94,9 +90,9 @@
 			$("body").animate({ scrollTop: '0px' }, 100); //滚动到顶部
 			iframeUtils.showSecondIframe();
 			//先初始化数据
-			getDepartmentHtml();
-			$("#ContactAlert").html(getTreeHtml()); //加载树形
-			treeClick();
+			getDepartmentHtml(); //分业务部门的静态html页面
+			$("#ContactAlert").append(getTreeHtml()); //加载@人树形静态html页面
+			treeClick(); //@人树形 的点击事件
 			doAction();
 		//};
 
@@ -154,29 +150,6 @@
 			}
 		});
 	});
-  
-  //选择时间方法
-  window.workTime = function() {
-		var body = {};
-		body.planType = StringUtils.getValue($("#workSummaryPlanType").val());
-		body.planTime = StringUtils.getValue($("#workSummaryPlanTime").val());
-		ajaxUtils.sendAjax("crm/workSummary/getWorkTime", body, null, function (data) {
-			if (StringUtils.getValue(data.data) != "") {
-				$("#workSummaryPlanTime").attr("planTime", data.data);
-				$("#workSummaryPlanTimeLable span").html(data.data);
-				if (!isNotEditOrSave()) {
-					$("#save,#draft").hide();
-				} else {
-					$("#save,#draft").show();
-				}
-				doAction();
-			} else {
-				$("#save,#draft").hide();
-				clearWorkSummaryHtml();
-				layerUtils.info($("#workSummaryPlanType").val() + "下，该日期不可选择！");
-			}
-		});
-	}
 
 	function changeInput() {
 		var body = {};
@@ -210,13 +183,14 @@
 			var item = textareaList[i];
 			if ($("#textareaDivs div." + item.code + "").length > 0) {
 				var context = $("#textareaDivs div." + item.code + " textarea").val();
-				html += '<div class="con-box ' + item.code + '"><span>' + item.name + '</span><textarea name="' + item.code + '" val="' + item.name + '">' + context + '</textarea>\n\t\t\t<a href="javascript:;">\u5220\u9664</a></div>';
+				html += '<div class="con-box ' + item.code + '"><span>' + item.name + '</span><textarea autoHeight="true" name="' + item.code + '" val="' + item.name + '">' + context + '</textarea>\n\t\t\t<a href="javascript:;">\u5220\u9664</a></div>';
 				//html += $("#textareaDivs div."+item.code+"").clone(true)[0].outerHTML;
 			} else {
-				html += '<div class="con-box ' + item.code + '"><span>' + item.name + '</span><textarea name="' + item.code + '" val="' + item.name + '"></textarea>\n\t\t\t<a href="javascript:;">\u5220\u9664</a></div>';
+				html += '<div class="con-box ' + item.code + '"><span>' + item.name + '</span><textarea autoHeight="true" name="' + item.code + '" val="' + item.name + '"></textarea>\n\t\t\t<a href="javascript:;">\u5220\u9664</a></div>';
 			}
 		}
 		$("#textareaDivs").html(html);
+		$('textarea[autoHeight]').autoHeight();
 		$("#textareaDivs div a").unbind().click(function () {
 			$(this).parent().remove();
 		});
@@ -229,8 +203,10 @@
 	function doAction() {
 
 		var cWidth = $("#ContactAlert").css("width");
+		var oWidth = $(window).width();
 		$("#ContactAlert").animate({
-			right: "-" + cWidth
+			// right: "-" + cWidth
+			left: oWidth
 		});
 
 		var body = {};
@@ -392,12 +368,13 @@
 			if (code == "contactList") {
 				var atNameList = workTask.contactList;
 				$("#ContactUsers").html(getAtName(atNameList)); //@人
-				$("#ContactUsers .user i.icon-close").on("click", function () {
+				$("#ContactUsers i.chate-del").on("click", function () {
 					$(this).parent().remove();
 				});
 			}
 		}
 		$("#textareaDivs").html(html);
+		$('textarea[autoHeight]').autoHeight();
 		$("#textareaDivs div a").unbind().click(function () {
 			$(this).parent().remove();
 		});
@@ -408,7 +385,7 @@
 			return "";
 		} else {
 			$("#businessDepartment input[type='checkbox'][code='" + code + "']").prop("checked", true);
-			var temp = '<div class="con-box ' + code + '"><span>' + name + '</span>\n\t\t<textarea name="' + code + '" val="' + name + '">' + StringUtils.globReplace(value) + '</textarea>\n\t\t<a href="javascript:;">\u5220\u9664</a></div>';
+			var temp = '<div class="con-box ' + code + '"><span>' + name + '</span>\n\t\t<textarea autoHeight="true" name="' + code + '" val="' + name + '">' + StringUtils.globReplace(value) + '</textarea>\n\t\t<a href="javascript:;">\u5220\u9664</a></div>';
 			return temp;
 		}
 	}
@@ -454,6 +431,7 @@
 	 */
 	var saveWorkTaskFlag = true;
 	function saveWorkTask(status) {
+		var blankFlag = 0; //为空的标识
 		if (saveWorkTaskFlag) {
 			saveWorkTaskFlag = false;
 			var body = { status: status };
@@ -468,6 +446,9 @@
 					layerUtils.info($(this).attr("val") + ",超过1000字符，不可保存！");
 					return false;
 				} else {
+					if (val != "") {
+						blankFlag++;
+					}
 					body[$(this).attr("name")] = val;
 				}
 			});
@@ -497,6 +478,7 @@
 				//标签list
 				var lableList = [];
 				$("#lableTabs span:not(.unchecked)").each(function () {
+					blankFlag++;
 					var m = {};
 					m.lableName = StringUtils.getValue($(this).html());
 					lableList.push(m);
@@ -506,6 +488,7 @@
 				//图片list
 				var imgList = [];
 				$("#imgsDiv .img").each(function () {
+					blankFlag++;
 					var m = {};
 					m.imgName = StringUtils.getValue($(this).attr("imgName"));
 					m.imgUrl = StringUtils.getValue($(this).attr("imgUrl"));
@@ -513,6 +496,12 @@
 				});
 				body.imgList = imgList;
 
+				//没填内容、没选标签、没传图片，只选了个@人员，应不允许提交
+				if (blankFlag == 0) {
+					layerUtils.info("内容不可以为空！");
+					saveWorkTaskFlag = true;
+					return;
+				}
 				//@人
 				var contactList = []; //contactList;
 				$("#ContactUsers span").each(function () {
@@ -574,7 +563,7 @@
 				//let result = JSON.parse($(c[0]).find("pre").html());
 				var c = $("iframe[name='formTargertIframe']")[0].contentDocument;
 				var result = JSON.parse(c.querySelector('pre').textContent);
-				if (null != result) {
+				if (null != result && result.status == 'true') {
 					var html = '<div class="img" imgName="' + result.name + '" imgUrl="' + result.url + '">\n\t\t\t\t<img src="' + Constant.SERVER_ROOT + '/pttlCrm/sys/file/showImag?path=' + encodeURI(encodeURI(result.url)) + '" />\n\t\t\t\t<span>' + result.name + '</span><a class="del" fileName="' + result.fileName + '" href="javascript:;"></a></div>';
 					$("#imgsDiv").append(html);
 					//删除图片
@@ -586,6 +575,8 @@
 					$("#imgsDiv .img img").unbind().click(function () {
 						viewer.displayImg($(this).attr("src"));
 					});
+				} else {
+					layerUtils.error("图片格式错误,不允许上传!");
 				}
 				/* $.ajax({
 	       type: 'POST',
@@ -604,34 +595,10 @@
 		});
 	}
 
-	/**
-	 * 工作汇总
-	 */
-	function getWorkSummaryObj() {
-		var map = {};
-		map.id = ""; //主键
-		map.planType = ""; //计划类型
-		map.planTime = ""; //计划时间	
-		map.summary = ""; //总结内容
-		map.huaweiFD = ""; //华为FD	
-		map.huaweiPJ = ""; //华为配件与融合	
-		map.huaweiStore = ""; //华为体验店
-		map.huaweiSB = ""; //华为省包	
-		map.samsung = ""; //三星业务事业部
-		map.distribution = ""; //分销业务事业部	大客户业务部 
-		map.others = ""; //其他	
-		map.question = ""; //问题及所需资源总结	
-		map.creater = ""; //创建人	
-		map.createTime = ""; //创建时间
-		map.updateBy = ""; //修改人	
-		map.updateTime = ""; //修改时间
-		return map;
-	}
-
 	//被@人
 	function getAtName(list) {
 		var temp = '\n        ' + (list == null ? "" : list.map(function (item) {
-			return '\n               <div class="user">\n                    <i class="icon icon-close" val="' + item.salesmanId + '"></i>\n                    <span val="' + item.salesmanId + '" val1="' + item.atName + '" val2="">' + item.atName + '</span>\n                </div>\n            ';
+			return '\n\t\t\t\t<span val="' + item.salesmanId + '" val1="' + item.atName + '">\n\t\t\t\t\t<i class="icon chate-del" val="' + item.salesmanId + '"></i>' + item.atName + '\n\t\t\t\t</span>   \n            ';
 		}).join('')) + '\n    ';
 		return temp;
 	}
@@ -639,8 +606,10 @@
 	//@人的点击事件
 	function treeClick() {
 		var cWidth = $("#ContactAlert").css("width");
+		var oWidth = $(window).width();
 		$("#ContactAlert").animate({
-			right: "-" + cWidth
+			// right: "-" + cWidth
+			left: oWidth
 		});
 		$("#DisplayContact").unbind().click(function () {
 			$("#search-lists").hide();
@@ -650,13 +619,16 @@
 	      $("#DisplayContact").addClass("initFlag");
 	      backfill.load();
 	  } */
-			var flag = $("#ContactAlert").css("right") == 0 ? false : true;
+			$('.m-contact').slideDown();
+			// let flag = $("#ContactAlert").css("right") == 0 ? false : true;
+			var flag = $("#ContactAlert").css("left") == oWidth + "px" ? true : false;
 			if (flag) {
 				$("#ContactAlert").animate({
-					right: "0px"
+					// right: "0px"
+					left: oWidth - parseInt(cWidth) + "px"
 				});
 			} else {
-				return flase;
+				return false;
 			}
 		});
 		/* 8、搜索框：
@@ -681,10 +653,22 @@
 		$("#icon-search").unbind().on("click", function () {
 			backfill.searchNameList('contactSearch', 'search-lists');
 		});
-	}
 
+		//按回车搜索
+		$("#contactSearch").unbind().keydown(function () {
+			if (event.keyCode == "13") {
+				//keyCode=13是回车键
+				backfill.searchNameList('contactSearch', 'search-lists');
+			}
+		});
+	}
+	// <label for="contactSearch"></label>
 	function getTreeHtml() {
-		var temp = '\n        <div class="header clearfix">\n            <i class="icon icon-back" id="ContactClose"></i>\n            <div class="search">\n                <label for="contactSearch">\u8BF7\u8F93\u5165\u641C\u7D22\u5185\u5BB9</label>\n                <input type="text" name="contactSearch" id="contactSearch">\n                <i class="icon icon-search" id="icon-search"></i>\n                <div class="search-lists" id="search-lists">\n                </div>\n            </div>\n        </div>\n        <div class="body">\n            <div class="content" id="contentBody"></div>\n        </div>\n        <div class="footer clearfix">\n            <a href="javascript:;" class="btn" id="ContactSure">\u786E\u5B9A<em></em></a>\n        </div>\n    ';
+		var temp = '\n        <div class="header clearfix">\n            <i class="icon icon-back" id="ContactClose"></i>\n            <div class="search">\n               \n                <input type="text" name="contactSearch" id="contactSearch" placeholder="\u8BF7\u8F93\u5165\u641C\u7D22\u5185\u5BB9">\n                <i class="icon icon-search" id="icon-search"></i>\n                <div class="search-lists" id="search-lists">\n                </div>\n            </div>\n        </div>\n        <div class="body">\n            <div class="content" id="contentBody"></div>\n        </div>\n        <div class="footer clearfix">\n\t\t\t\n        </div>\n\t';
+		/*
+	 	<a href="javascript:;" class="btn" id="ContactSure">确定<em></em></a>
+	 	<i id="coor">//</i> 
+	 */
 		return temp;
 	}
 
@@ -981,7 +965,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	var USERNAME = exports.USERNAME = ''; //用户名
 	var MENU_MOUNT = exports.MENU_MOUNT = '#clientMenu'; //菜单挂载点
@@ -994,6 +978,10 @@
 	var MENU_NAVIGATOR = exports.MENU_NAVIGATOR = '#menuNavigator'; //头部导航菜单
 	var USERNAMEANDENCODER = exports.USERNAMEANDENCODER = 'USERNAMEANDENCODER';
 
+	var SYSTEM_MENU = exports.SYSTEM_MENU = "";
+	var SYSTEM_MOBILE_MENU = exports.SYSTEM_MOBILE_MENU = "";
+	var CURRENT_USER = exports.CURRENT_USER = "";
+
 	//本地
 	//export const SERVER_ROOT = 'http://192.168.1.223:8080'; //服务端根路径
 	//export const LOCAL_SERVER_ROOT = 'http://localhost:3000'; //本地服务端根路径
@@ -1005,8 +993,8 @@
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.224:8080/ptDataShow';
 
 	//生产 nginx
-	//export const SERVER_ROOT = 'http://192.168.220.82:8080'; //服务端根路径
-	//export const LOCAL_SERVER_ROOT = 'http://192.168.220.82:8080'; //本地服务端根路径
+	//export const SERVER_ROOT = 'http://192.168.1.227'; //服务端根路径
+	//export const LOCAL_SERVER_ROOT = 'http://192.168.1.227'; //本地服务端根路径
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.202/ptDataShow';
 
 	//生产 228
@@ -1014,17 +1002,16 @@
 	var LOCAL_SERVER_ROOT = exports.LOCAL_SERVER_ROOT = ''; //本地服务端根路径
 	var PTDATASHOW_SERVER_ROOT = exports.PTDATASHOW_SERVER_ROOT = 'http://192.168.220.82:8080/ptDataShow';
 
-	var _dgt = _dgt || [];
-	window._dgt = _dgt;
-	(function () {
-	    _dgt.push(['setSiteId', '4f81f635b5871938']);
-	    var d = document,
-	        g = d.createElement('script'),
-	        s = d.getElementsByTagName('script')[0];
-	    g.type = 'text/javascript';g.async = true;g.defer = true;
-	    g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'shujike.cn/dgt.js';
-	    s.parentNode.insertBefore(g, s);
-	})();
+	// var _dgt = _dgt || [];
+	// window._dgt = _dgt;
+	// (function () {
+	//     _dgt.push(['setSiteId', '4f81f635b5871938']);
+	//     var d = document, g = d.createElement('script'),
+	//     s = d.getElementsByTagName('script')[0];
+	//     g.type = 'text/javascript'; g.async = true;g.defer = true;
+	//     g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'shujike.cn/dgt.js';
+	//     s.parentNode.insertBefore(g, s);
+	// })();
 
 /***/ }),
 
@@ -1127,7 +1114,7 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.submitExcleGlobal = exports.sendAjax = undefined;
+	exports.submitExcleGlobal = exports.sendAjaxNoWaiting = exports.sendAjax = undefined;
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -1219,6 +1206,63 @@
 			}
 		});
 	};
+	/**
+	 * ajax进行封装 不带加载
+	 * @param {*} service 请求路劲  类的命名空间+"/"+方法名的命名空间
+	 * @param {*} body    请求参数，如果有分页需要添加分页参数
+	 * @param {*} pageDivId 分页的div
+	 * @param {*} callback 回调函数
+	 * @param {*} Fn       当前需要分页的函数
+	 */
+	var sendAjaxNoWaiting = exports.sendAjaxNoWaiting = function sendAjaxNoWaiting(service, body, pageDivId, callback, Fn) {
+		var param = void 0;
+		if (body == null) {
+			param = new Object();
+		} else {
+			if (typeof body.pageNum == "undefined" && typeof body.pageSize == "undefined") {
+				//没有分页
+			} else {
+				if (typeof body.pageNum != "undefined" && (typeof body.pageSize == "undefined" || body.pageSize == null)) {
+					alert("分页参数错误，请检查！");
+					return;
+				} else if ((typeof body.pageNum == "undefined" || body.pageNum == null) && typeof body.pageSize != "undefined") {
+					alert("分页参数错误，请检查！");
+					return;
+				}
+			}
+			param = getJsonString(objextUtil.clone(body)); //保留原来的  克隆一个提交参数
+		}
+		$.ajax({
+			type: 'POST',
+			url: Constant.SERVER_ROOT + '/pttlCrm/' + service,
+			data: param,
+			dataType: 'json',
+			success: function success(result) {
+				if (null != result && typeof result.isHaveSession == "string" && result.isHaveSession == "no") {
+					//没有登陆信息  跳转到登陆页面
+					//alert("用户未登陆，或者登陆超时，请重新登陆！");
+					var loginHtml = Constant.SERVER_ROOT + '/pttlCrm/login';
+					if ('' + Constant.LOCAL_SERVER_ROOT == "http://localhost:3000") {
+						loginHtml = Constant.LOCAL_SERVER_ROOT + '/page/login/login.html';
+					}
+					window.location.href = loginHtml;
+				} else if (null != result && typeof result.Error == "string") {
+					layerUtils.info(result.Error);
+				} else {
+					if (callback) {
+						callback(result);
+					}
+					//是否存在分页
+					if (typeof pageDivId != "undefined" && pageDivId != null && pageDivId != "") {
+						page.page({ fn: Fn, page: result.page, pageId: pageDivId });
+					}
+				}
+			},
+			error: function error(e) {
+				//console.error(e);
+			}
+		});
+	};
 	//参数中的对象 转为 json字符串
 	function getJsonString(body) {
 		for (var key in body) {
@@ -1259,30 +1303,32 @@
 	 * @param obj
 	 */
 	var submitExcleGlobal = exports.submitExcleGlobal = function submitExcleGlobal(service, obj, method, enctype) {
-		var $form = $("#submitExcelGlobal");
-		var type = "get";
-		var enctypeHtml = "";
-		if (method && typeof method == "string") {
-			type = method;
-		}
-		/*if(enctype){
-	 	enctypeHtml = 'enctype="application/json"';
-	 }*/
-		service = Constant.SERVER_ROOT + '/pttlCrm/' + service;
-		if ($form && $form.length == 0) {
-			var form = '<form action="' + service + '" method="' + type + '" id="submitExcelGlobal" ' + enctypeHtml + ' target="iframeGloable">';
-			form += '</form>';
-			form += '<iframe name="iframeGloable" id="iframeGloable" style="display:none"></iframe>';
-			$("body").append(form);
-		}
-		var inputHtml = "";
-		if (obj && (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) == "object") {
-			for (var key in obj) {
-				inputHtml += '<input type="hidden" name="' + key + '" value=\'' + obj[key] + '\'/>';
+		layerUtils.confirm(function () {
+			var $form = $("#submitExcelGlobal");
+			var type = "get";
+			var enctypeHtml = "";
+			if (method && typeof method == "string") {
+				type = method;
 			}
-		}
-		$("#submitExcelGlobal").html(inputHtml);
-		$("#submitExcelGlobal").submit();
+			/*if(enctype){
+	  	enctypeHtml = 'enctype="application/json"';
+	  }*/
+			service = Constant.SERVER_ROOT + '/pttlCrm/' + service;
+			if ($form && $form.length == 0) {
+				var form = '<form action="' + service + '" method="' + type + '" id="submitExcelGlobal" ' + enctypeHtml + ' target="iframeGloable">';
+				form += '</form>';
+				form += '<iframe name="iframeGloable" id="iframeGloable" style="display:none"></iframe>';
+				$("body").append(form);
+			}
+			var inputHtml = "";
+			if (obj && (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) == "object") {
+				for (var key in obj) {
+					inputHtml += '<input type="hidden" name="' + key + '" value=\'' + obj[key] + '\'/>';
+				}
+			}
+			$("#submitExcelGlobal").html(inputHtml);
+			$("#submitExcelGlobal").submit();
+		}, "敏感数据，不许外传！", "提示信息");
 	};
 
 /***/ }),
@@ -1548,8 +1594,9 @@
 	 * 参数 attributes 是一个可选的字符串，包含属性 "g"、"i" 和 "m"，
 	 * 分别用于指定全局匹配、区分大小写的匹配和多行匹配。
 	 * ECMAScript 标准化之前，不支持 m 属性。如果 pattern 是正则表达式，而不是字符串，则必须省略该参数。
+	 * xmpFalg在div中显示标签
 	 */
-	var globReplace = exports.globReplace = function globReplace(str, replaceStr, resultStr, typeStr) {
+	var globReplace = exports.globReplace = function globReplace(str, replaceStr, resultStr, typeStr, xmpFalg) {
 		str = getValue(str);
 		str = str.replace(/doubleQM/g, "\""); //双引号替换
 		str = str.replace(/bigDY/g, ">"); //大于
@@ -1570,6 +1617,12 @@
 		var rightStr = "\n";
 		if (resultStr && typeof resultStr == "string") {
 			rightStr = resultStr;
+		}
+		if (xmpFalg) {
+			str = str.replace(/&/g, "&amp;"); //
+			str = str.replace(/ /g, "&nbsp;"); //空格
+			str = str.replace(/>/g, "&gt;"); //大于
+			str = str.replace(/</g, "&lt;"); //小于
 		}
 		return str.replace(r, rightStr);
 	};
@@ -1761,51 +1814,7 @@
 
 /***/ }),
 
-/***/ 13:
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.displayImg = exports.Viewer = exports.$parent = undefined;
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-	var _CommonUtils = __webpack_require__(2);
-
-	var commonUtils = _interopRequireWildcard(_CommonUtils);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	var $parent = exports.$parent = commonUtils.getTopWin().$;
-	var Viewer = exports.Viewer = commonUtils.getTopWin().Viewer;
-
-	var displayImg = exports.displayImg = function displayImg(array, index) {
-	    var srcArray = [];
-	    if (typeof array == 'string') {
-	        srcArray.push(array);
-	    } else if ((typeof array === 'undefined' ? 'undefined' : _typeof(array)) == 'object') {
-	        srcArray = array;
-	    }
-	    var imgs = '';
-	    for (var i in srcArray) {
-	        imgs += '<li style="display: none;"><img data-original="' + srcArray[i] + '" src="' + srcArray[i] + '"></li>';
-	    }
-	    $parent(commonUtils.getTopWin().document).find('.docs-pictures').html(imgs);
-	    var viewer = new Viewer(commonUtils.getTopWin().document.getElementById("docs-pictures"), {
-	        url: 'data-original'
-	    });
-	    if (!index) {
-	        index = 0;
-	    }
-	    $parent(commonUtils.getTopWin().document).find("#docs-pictures li:eq(" + index + ") img").click();
-	};
-
-/***/ }),
-
-/***/ 24:
+/***/ 12:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -2063,7 +2072,51 @@
 
 /***/ }),
 
-/***/ 65:
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.displayImg = exports.Viewer = exports.$parent = undefined;
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	var _CommonUtils = __webpack_require__(2);
+
+	var commonUtils = _interopRequireWildcard(_CommonUtils);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var $parent = exports.$parent = commonUtils.getTopWin().$;
+	var Viewer = exports.Viewer = commonUtils.getTopWin().Viewer;
+
+	var displayImg = exports.displayImg = function displayImg(array, index) {
+	    var srcArray = [];
+	    if (typeof array == 'string') {
+	        srcArray.push(array);
+	    } else if ((typeof array === 'undefined' ? 'undefined' : _typeof(array)) == 'object') {
+	        srcArray = array;
+	    }
+	    var imgs = '';
+	    for (var i in srcArray) {
+	        imgs += '<li style="display: none;"><img data-original="' + srcArray[i] + '" src="' + srcArray[i] + '"></li>';
+	    }
+	    $parent(commonUtils.getTopWin().document).find('.docs-pictures').html(imgs);
+	    var viewer = new Viewer(commonUtils.getTopWin().document.getElementById("docs-pictures"), {
+	        url: 'data-original'
+	    });
+	    if (!index) {
+	        index = 0;
+	    }
+	    $parent(commonUtils.getTopWin().document).find("#docs-pictures li:eq(" + index + ") img").click();
+	};
+
+/***/ }),
+
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2108,20 +2161,28 @@
 	        success: function success(data) {
 	            $("#contentBody").html(render(data));
 	            $("#ContactClose").unbind("click").click(function () {
-	                var cWidth = $("#ContactAlert").css("width");
+	                $('.m-contact').slideUp();
+	                /* let cWidth = $("#ContactAlert").css("width");
 	                $("#ContactAlert").animate({
 	                    right: "-" + cWidth
-	                });
+	                }); */
 	            });
 	            // 3
-	            var mainH = $("#ContactAlert").outerHeight();
-	            var headerH = $("#ContactAlert .header").outerHeight();
-	            var footerH = $("#ContactAlert .footer").outerHeight();
-	            var bodyMtop = parseInt($("#ContactAlert .body").css("margin-top"));
-	            var bodyH = mainH - headerH - footerH - bodyMtop;
-	            $("#ContactAlert .body").height(bodyH); //outerHeight
-	            $("#ContactAlert .body").css("padding", "0");
-	            showSalesMen();
+	            /* //let mainH = $("#ContactAlert").outerHeight();
+	            let mainH = $(".work-box").outerHeight();
+	            let headerH = $("#ContactAlert .header").outerHeight();
+	            let footerH = $("#ContactAlert .footer").outerHeight();
+	            let bodyMtop = parseInt($("#ContactAlert .body").css("margin-top"));
+	            let bodyH = mainH - headerH - footerH - bodyMtop;
+	            $("#ContactAlert .body").height(bodyH);//outerHeight
+	            $("#ContactAlert .body").css("padding","0");
+	             */
+	            //通讯录高度
+	            $("#ContactAlert").height($(window).height());
+	            var alertH = $("#ContactAlert").height() - $("#ContactAlert .header").height() - $("#ContactAlert .footer").height() - 22;
+	            $("#ContactAlert .body").height(alertH);
+
+	            showSalesMen(); //展开联系人
 	        },
 	        error: function error(e) {
 	            console.error(e);
@@ -2145,7 +2206,7 @@
 	function showSalesMen() {
 	    var empIds = [];
 	    $("#ContactUsers span").each(function () {
-	        empIds.push($(this).attr("val")); //$(this).attr("val2")+":"+
+	        empIds.push($(this).attr("val"));
 	    });
 	    $("#ContactAlert .box>.title").click(function () {
 	        var branchId = $(this).find(".img-folder").attr("id");
@@ -2212,29 +2273,20 @@
 	        m.id = $(obj).attr("val");
 	        name.push(m);
 	    });
-	    $("#ContactUsers").html(backDiv(name));
-	    delChecked();
+	    //$("#ContactUsers").html(backDiv(name));
+	    //delChecked();    
 	}
-	//删除选中的元素
+	//重新注册 删除选中的元素
 	function delChecked() {
-	    var contactSum1 = $("#ContactAlert .body input[type='checkbox']:checked").length;
-	    $("#ContactUsers .user i.icon-close").unbind("click").on("click", function () {
+	    $("#ContactUsers i.chate-del").unbind("click").on("click", function () {
 	        var val = $(this).attr("val");
 	        $(this).parent().remove();
 	        var $checkboxs = $("#ContactAlert .body input[type='checkbox'][id='id" + val + "']");
 	        $checkboxs.iCheck('uncheck');
-	        contactSum1--;
-	        if (contactSum1 <= 0) {
-	            $("#ContactSure em").html("");
-	        } else {
-	            $("#ContactSure em").html("(" + contactSum1 + ")");
-	        }
 	    });
 	}
-	function backDiv(list) {
-	    var temp = '\n    ' + (list == null ? "" : list.map(function (item) {
-	        return '\n               <div class="user">\n                    <i class="icon icon-close" val="' + item.id + '"></i>\n                    <span val="' + item.id + '" val1="' + item.name + '" val2="">' + item.name + '</span>\n                </div>\n            ';
-	    }).join('')) + '         \n    ';
+	function backDiv(salasmanName, salasmanId) {
+	    var temp = '\n        <span val="' + salasmanId + '" val1="' + salasmanName + '">\n            <i class="icon chate-del" val="' + salasmanId + '"></i>' + salasmanName + '\n        </span> \n    ';
 	    return temp;
 	}
 	//初始化弹出层函数
@@ -2243,79 +2295,29 @@
 	       * 联系人 浮层弹出框
 	       * 
 	       * (注：checkbox用了iCheck插件，相关点击和判断事件请参考http://www.bootcss.com/p/icheck/)
-	       * 
-	       * 功能效果：
-	       * 1、点击@弹出框联系人弹出框
-	       * 2、返回按钮：点击隐藏弹出框
-	       * 3、判断body需要的高度
-	       * 4、点击各组（包括展开和闭合），显示该组的所有联系人，超出部分body显示滚动条，去除搜索提示的效果
-	       * 5、点击各组联系人，确认按钮显示已选中的个数
-	       * 6、全选：（包括全部选择和取消）全选指当前的展开项，兼并功能5
-	       * 7、确定按钮：点击之后将所有选中的联系人添加到相应模块中
-	       * 8、搜索框：
-	       * （1）focus:隐藏提示文字
-	       * （2）blur:如果有用户输入的内容就隐藏提示问题，否则显示提示文字
-	       * （3）搜索内容列表：点击之后隐藏，跳转到相应用户行,添加提示搜索到名称的效果
 	       */
-
-	    // 1
-	    // 2
-
-
-	    // 4
-	    /*$("#ContactAlert .box>.title").click(function() {
-	        let $this = $(this);
-	        let flag = $this.siblings(".lists").css("display") == "none" ? true : false;
-	        if (flag) {
-	            $this.parent().addClass("z-act");
-	            $this.siblings(".lists").slideDown(400);
-	        } else {
-	            $this.parent().removeClass("z-act");
-	            $this.siblings(".lists").slideUp(400);
-	        }
-	    });*/
-
-	    // 5
 	    // 记录确定按钮显示已选中的联系人的个数
-	    var contactSum = $("#ContactAlert .body input[type='checkbox']:checked").length;
+	    //let contactSum = $("#ContactAlert .body input[type='checkbox']:checked").length;
 	    $("#ContactAlert .body input[type='checkbox']").on('ifChanged', function (event) {
-	        var $btnCount = $("#ContactSure em");
-	        $(this).parents(".lists-one").removeClass("z-tipAct");
-
+	        var salasmanName = $(this).attr("val1");
+	        var salasmanId = $(this).attr("val");
 	        if ($(this).is(':checked')) {
-	            contactSum++;
+	            //选中
+	            if ($("#ContactUsers span[val='" + salasmanId + "']").length == 0) {
+	                $("#ContactUsers").append(backDiv(salasmanName, salasmanId));
+	                delChecked();
+	            }
 	        } else {
-	            contactSum--;
-	        }
-
-	        if (contactSum <= 0) {
-	            $btnCount.html("");
-	        } else {
-	            $btnCount.html("(" + contactSum + ")");
+	            //不选中
+	            $("#ContactUsers span[val='" + salasmanId + "']").remove();
 	        }
 	    });
-
-	    // 6
-	    /* $("#ContactCheckAll").on('ifChanged', function(event) {
-	         let $checkboxs = $("#ContactAlert .body input[type='checkbox']");
-	         if ($(this).is(':checked')) {
-	             $checkboxs.iCheck('check');
-	         } else {
-	             $checkboxs.iCheck('uncheck');
-	         }
-	       });*/
 
 	    // 7(1)确定之后，将已选中的人员按顺序填写到相应框中；如果没有选中任何人，填写为空；
-	    $("#ContactSure").click(function () {
-	        /*var $this = $(this);
-	        var count = $this.find("em").html();
-	        if (count == "") {
-	            $("#ContactClose").click();
-	        } else {
-	          }*/
+	    /* $("#ContactSure").click(function() {
 	        $("#ContactClose").click();
 	        backFillHtml();
-	    });
+	    }); */
 	}
 
 	//搜索
@@ -2347,7 +2349,7 @@
 	}
 	function renderSearch(list) {
 	    var temp = '\n     ' + (list == null ? "" : list.map(function (item) {
-	        return '\n            <a href="javascript:;" val="' + item.SALESMANID + '" val1="' + item.SALESMANNAME + '" val2="' + item.BRANCHID + '">' + item.SALESMANNAME + '</a>\n        ';
+	        return '\n            <a href="javascript:;" val="' + item.SALESMANID + '" val1="' + item.SALESMANNAME + '" val2="' + item.BRANCHID + '">\n                ' + item.SALESMANNAME + '<span style="display:inline-block;color:#808281">' + item.BRANCHNAME + '</span>\n            </a>\n        ';
 	    }).join('')) + '\n    ';
 	    return temp;
 	}

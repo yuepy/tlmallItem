@@ -1547,7 +1547,9 @@ section.ysp-dialog-body-list{
    bottom: 0;
    right: 0;
    z-index: 9999;
+/**
    overflow: auto;
+  **/
 }
 .ysp-dialog-wrapper-hidden{
   display:none;
@@ -3312,7 +3314,13 @@ __________________*/
 .ysp-atreport-dialog-body{
   background:#e9e9e9;
   overflow-x: hidden;
-  overflow-y: auto;
+  /*overflow-y: auto;*/
+  overflow-y: hidden;
+  position:absolute;
+  width: 100%;
+  /**
+  margin-top:44px;
+  **/
   .personnel .report-fill-in{
     background: #ececec;
     height: 50px;
@@ -3616,6 +3624,19 @@ __________________*/
         background-color: #fff;
         margin-top: 14px;
       	border-bottom: 1px solid #e9e9e9;
+        .report-superiors{
+          .report{
+            min-width: 27%;
+            text-align: center;
+            border: 1px solid #5692E2;
+            color: #5692E2;
+            border-radius: 5px;
+            float: left;
+            margin: 10px;
+            position: relative;
+
+          }
+    }
         >div:first-child{
           border-bottom: 1px solid #e9e9e9;
           display: flex;
@@ -3686,9 +3707,10 @@ __________________*/
           padding:14px;
           color: #4789e0;
           font-size: 16px;
+          /**
           text-overflow:ellipsis; 
           white-space:nowrap; 
-          overflow:hidden;
+          overflow:hidden;***/
         }
     }
      
@@ -3850,7 +3872,11 @@ __________________*/
               width: 36px;
               height: 30px;
               margin-right: 8px;
+							/**
               background-color: rgb(190,190,190);
+              **/
+              border: 1px solid rgb(190,190,190);
+              border-bottom: none;
               -moz-border-radius: 50% 50%;
               -webkit-border-radius: 50% 50%;
               border-radius: 50% 50%;
@@ -3858,13 +3884,15 @@ __________________*/
               &:before{
                 position: absolute;
                 content: "";
-                width: 0;
-                height: 0;
-                top: 60%;
-                left: 20%;
-                border-width: 20px 6px;
-                border-color: rgb(190,190,190) transparent transparent transparent;
+                width: 7px;
+                height: 7px;
+                top: 85%;
+                left: 40%;
+                border-width: 1px 1px 0 0;
+                border-radius: 1px 1px 0 0;
+                border-color: rgb(190,190,190) rgb(190,190,190) transparent transparent;
               	border-style: solid;
+                transform: rotate(130deg);
               }
             }
           }
@@ -4061,22 +4089,72 @@ __________________*/
         
       }
     }
+  .layui-layer-dialog{
+    position: absolute;
+    z-index: 99999;
+    background-color: rgba(0,0,0,0.5);
+		left:0;
+    right: 0;
+    top:0;
+    bottom:0;
+    .dialog-body{
+      width: 80%;
+      position: fixed;
+      left: 50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      background-color:#FFF;
+      padding-bottom:20px;
+      .dialog-title,.dialog-sure{ display:flex; align-items:center;padding:0 10px;}
+      .dialog-title{
+        justify-content: space-between;
+        background-color:#F8F8F8;
+        border-bottom: 1px solid rgb(190,190,190); 
+        span:last-child{
+          font-size: 22px;
+        }
+      }
+      .dialog-title,.dialog-content{
+          line-height: 3;
+        text-align: center;
+      }
+    
+      .dialog-sure{
+        justify-content: flex-end;
+        span{
+          color:#FFF;
+          background-color: #2e8ded;
+          border:1px solid #2e8ded;
+          border-radius:5px;
+          padding:5px 12px;
+        }
+      }
+    }
+  }
   } 
 
 .ysp-atreport-dialog-gsperson{
   overflow-x:hidden;
-  overflow-y: auto;
+ 	overflow-y: auto;
+  /** overflow-y: hidden;**/
   background: #F2F2F2;
   .ysp-atreport-dialog-search{
   }
   .ysp-atreport-dialog-personsum{
     background: #fff;
     //height: 1000px;//8.25
-    overflow: scroll;
+    /**overflow: scroll;*/
+    overflow: auto;
   .ysp-atreport-dialog-person{
+    &:not(:last-child){
+      border-bottom: 1px solid #d2d2d2;
+    }
     position: relative;
     padding: 10px;
     z-index: 0;
+    .ysp-person-list{
+     color: rgb(51, 51, 51);
+    }
     .active{
       position: absolute;
       top: 13px;
@@ -4099,7 +4177,7 @@ __________________*/
       background-size: 75%;
     }
   }
-  >div:nth-last-child(2){margin-bottom:120px;}
+  >div:nth-last-child(2){margin-bottom:160px;}
   .person-icon{
     width: 95%;
     text-align: center;
@@ -4127,6 +4205,22 @@ __________________*/
       border-radius: 50%;
     	border: 1px solid #ddd;
     }
+    .icon-selected{
+      width: 33px;
+      height: 33px;
+      background: url('images/selected-person-image.png') no-repeat center center;
+      background-size: 100%;
+      float:left;
+      margin-left:10px;
+    }
+    .icon-unselected{
+      width: 33px;
+      height: 33px;
+      background: url('images/unselected-person-image.png') no-repeat center center;
+      background-size: 100%;
+      float:left;
+      margin-left:10px;
+    }
     >div{
       float: left;
     	margin-left: 20px;
@@ -4145,7 +4239,7 @@ __________________*/
   padding: 0 25px 0 0;
   position: fixed;
   z-index:9999;
-  background: #fff;
+  background: #f2f2f2;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -5860,7 +5954,8 @@ div[data-ysp-modelid="wtiteReport"]{//8.24
       background-size: 75%;
     }
   }
-  >div:nth-last-child(2){margin-bottom:120px;}
+  >div:nth-last-child(2){margin-bottom:160px;}
+  /**>div:last-child{margin-bottom:120px;}**/
   .person-icon{
     width: 95%;
     text-align: center;
@@ -13829,7 +13924,6 @@ div[data-ysp-modelid="workPlanCustomStore"]{
     overflow:hidden;
   }
 }
-  
   .images-report{
     .upload{
       display: inherit!important;
@@ -14390,7 +14484,12 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
     }
     .ysp-atMe-workSummary-text-div{
       min-height: 40px;
-      padding: 0px 10px;
+      padding: 10px 15px;
+       >ul{
+        li:not(:last-child){
+          margin-bottom: 10px;
+        }
+      }
     }
   }
   .ysp-atMe-workSummary-choseText{
@@ -14416,7 +14515,12 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
     }
     .ysp-atMe-workSummary-text-div{
       min-height: 40px;
-      padding: 0px 10px;
+      padding: 10px 15px;
+      >ul{
+        li:not(:last-child){
+          margin-bottom: 10px;
+        }
+      }
     }
   }
   .ysp-workSummary-lable{
@@ -14504,7 +14608,125 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
 .ysp-atreport-picture{
   background-color: #fff;
   margin-top: 14px;
+  /**
   border-bottom: 1px solid #e9e9e9;
+  ***/
+  
+  .personnel{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    >div{
+      // width: 27%;
+      // float:left;
+      margin: 0 8px 10px 0;
+      background-color:rgb(217,234,250);
+      border-radius: 5px;
+      padding:3px 12px;
+      >i{
+        &:first-child{
+        padding-left: 0;
+      }
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #9fc8f4;
+        a{
+          position: absolute;
+          /**
+          left: 0;
+          top:0;
+          bottom: 0;
+          right: 0;
+          margin:auto;*/
+          left: 50%;
+          top: 50%;
+          transform: translate(-60%,-50%);
+          font-size: 22px;
+          color:#FFF;
+        }
+      }
+    }
+    &::after{
+      display: block;
+      content:"";
+      width: 0;
+      height: 0;
+      font-size: 0;
+      visibility: hidden;
+      clear:both;
+    }
+    &:after{
+      display: block;
+      content:"";
+      width: 0;
+      height: 0;
+      font-size: 0;
+      visibility: hidden;
+      clear:both;
+    }
+  }
+  .report-superiors{
+    .report{
+      min-width: 27%;
+      text-align: center;
+      border: 1px solid #5692E2;
+      color: #5692E2;
+      border-radius: 5px;
+      float: left;
+      margin: 10px;
+      position: relative;
+     
+    }
+    .report1{
+      background-color:#d9eafa;
+      padding: 0 10px;
+      >div{
+        /***text-align:right;***/
+        .personal-close{
+        display:inline-block;
+        vertical-align: middle;
+        position:relative;
+        width:20px;
+        height:20px;
+        color:#FFF;
+        border-radius:10px;
+        font-size:22px;
+        padding-right:2px;
+        margin-right: 8px; 
+        background-color:#9fc8f4;
+          >span{
+            position:absolute;
+            top:50%;
+            transform:translate(-50%,-50%);
+          }
+      }
+        span{
+          display:inline-block;
+          vertical-align: middle;
+        }
+        
+      }
+       
+    }
+    &::after{
+      display:block;
+      content:"";
+      width:0;
+      height: 0;
+      font-size: 0;
+      visibility: hidden;
+      clear: both;
+    }
+    &{
+      zoom:1;
+    }
+  }
   .report-supervisor{
     margin:20px 0;
     background-color:#fff;
@@ -14597,12 +14819,315 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
   }
   >div:last-child{
     min-height: 50px;
-    padding:14px;
-    color: #4789e0;
+    /**padding:14px;**/
+    padding: 10px 0;
+    // color: #4789e0;
     font-size: 16px;
     text-overflow:ellipsis; 
     white-space:nowrap; 
     overflow:hidden;
+  }
+  .ysp-atreport-message{
+      	.ysp-atreport-send{
+          padding: 20px 10px;
+          border-bottom: 1px solid #e9e9e9;
+          position: relative;
+           &::before{
+         position:absolute;
+         display:block;
+         content:'';
+         visibility:visible;
+         width:4px;
+         height:20px;
+         background-color:rgb(44,125,255);
+       }
+       textarea{
+         resize : none;
+         font-size: 16px;
+         border:none;
+         margin-left: 8px;
+         padding: 0;
+       }
+       textarea::-webkit-input-placeholder{
+         color:rgb(157,157,157);/**对占位符字体颜色的更改竟然没有起作用？！*/
+       }
+       textarea::-moz-placeholder{
+        color:rgb(157,157,157);
+       }
+       textarea:-moz-placeholder{
+         color:rgb(157,157,157);
+       }
+       textarea:-ms-input-placeholder{
+         color:rgb(157,157,157);
+       }
+    
+       .ysp-textArea{
+         color: #333333 !important
+       }
+       .textAreaColor{
+         color: #e9e9e9 !important;
+       }
+       >span:last-child{
+         display: flex;
+         justify-content:flex-end;
+         color: #999999;
+         align-items: center;
+         .ysp-atreport-atsend{
+           font-size: 16px;
+           padding: 3px 20px;
+           border: 2px solid #2c80ff;
+           border-radius: 10px;
+           margin-right: 10px;
+           color:#2c80ff;
+           background-color:#fff;
+         }
+         .ysp-atreport-unbuttonsend{
+           border: 1px solid #e9e9e9;
+           border-radius: 10px;
+           padding: 5px 20px;
+           font-size: 16px;
+           background: #2c80ff;
+           color: #fff;
+         }
+       }
+    		}
+         background-color: #fff;
+         margin-top: 14px;
+         >div:first-child{
+           display:flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 10px;
+           >span:first-child{
+             display: flex;
+             justify-content:space-between;
+             font-size: 16px;
+             color: #000000;
+           }
+           >span:last-child{
+             display: flex;
+             justify-content:space-between;
+             >span:first-child{
+               color: #4789e0;
+               font-size: 13px;
+             }
+             >span:last-child{
+              	display: inline-block;
+                vertical-align: middle;
+                width: 20px;
+                height: 20px;
+                background: url(./images/atreport-message-icon.png);
+                background-repeat: no-repeat;
+                background-size: 15px;
+                margin-left: 4px;
+             }
+           }
+         }
+         .ysp-atreport-message-name{
+             min-height: 40px;
+             border-bottom: 1px solid #e9e9e9;
+             padding: 20px 14px;
+             font-size: 13px;
+             >div:first-child{
+               color: #2c80ff;
+             }
+             >div:last-child{
+               color: #333333;
+             }
+         }
+         .ysp-atreport-message-hf{
+           padding: 14px;
+           font-size: 13px;
+           border-bottom: 1px solid #e9e9e9;
+           >div:first-child{
+             color:#2c80ff;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             >div:first-child{
+               display: flex;
+               justify-content: flex-start;
+               align-items: center;
+             }
+             >div:last-child{
+               display: flex;
+               justify-content: flex-end;
+               align-items: center;
+             }
+           }
+           >div:last-child{
+             >span:first-child{
+               color: #333333;
+             }
+             >span:last-child{
+               color: #333333;
+               padding-left: 4px;
+             }
+           }
+         }
+         .ysp-atreport-message-unhf{
+            //background: #f2f2f2;
+             // padding: 14px;
+             // font-size: 13px;
+             // border-bottom: 1px solid #e9e9e9;
+             // background: #F2F2F2;
+             // >div:first-child{
+             //   color:#2c80ff;
+             // }
+             // >div:last-child{
+             //   >span:first-child{
+             //     color: #333333;
+             //   }
+             //   >span:last-child{
+             //     color: #333333;
+             //     padding-left: 4px;
+             //   }
+             // }
+           }
+         .ysp-atreport-message-nohf{
+           padding: 14px;
+           font-size: 13px;
+           border-bottom: 1px solid #e9e9e9;
+             >div:first-child{
+               color:#2c80ff;
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               >div:first-child{
+                 display: flex;
+                 justify-content: flex-start;
+                 align-items: center;
+               }
+               >div:last-child{
+                 display: flex;
+                 justify-content: flex-end;
+                 align-items: center;
+               }
+             }
+             >div:last-child{
+               span{
+                 color: #333333;
+                 padding-left: 4px;
+               }
+             }
+           }
+         .ysp-atreport-message-answername{
+              color: #2c80ff;
+              padding:0px 4px 0px 4px;
+           }
+         .ysp-atreport-messageks{
+           color: #999999;
+         }
+         .message-reply1{
+						margin-left:10px;
+            padding:30px 10px 30px 0;
+         }
+         .message-reply2{
+               padding: 30px 10px;
+             }
+         .message-reply1,.message-reply2{
+           line-height:1.5;
+           border-bottom: 1px solid rgb(231,231,231);
+           h6,span{
+               	font-weight: normal;
+                font-size:16px;
+                margin-bottom:8px;
+           }
+           h6{    
+             color: rgb(71, 137, 224);
+           }
+           span:nth-of-type(1),span:nth-of-type(3){
+            color:rgb(0,0,0);
+           }
+           span:nth-of-type(3){
+            white-space: normal;
+           }
+          .reply-time-btn{
+            margin-top: 8px;
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            color:rgb(152,152,152);
+            span{flex:1;}
+            a:first-of-type{
+              position: relative;
+              width: 36px;
+              height: 30px;
+              margin-right: 8px;
+							/**
+              background-color: rgb(190,190,190);
+              **/
+              border: 1px solid rgb(190,190,190);
+              border-bottom: none;
+              -moz-border-radius: 50% 50%;
+              -webkit-border-radius: 50% 50%;
+              border-radius: 50% 50%;
+              transform: rotate(10deg);
+              &:before{
+                position: absolute;
+                content: "";
+                width: 7px;
+                height: 7px;
+                top: 85%;
+                left: 40%;
+                border-width: 1px 1px 0 0;
+                border-radius: 1px 1px 0 0;
+                border-color: rgb(190,190,190) rgb(190,190,190) transparent transparent;
+              	border-style: solid;
+                transform: rotate(130deg);
+              }
+            }
+          }
+          
+  }
+         .reply-content-dialog{
+						padding:0 10px 30px;
+            background-color:rgb(242,242,242);
+           >.dialog-input{
+             margin-bottom:10px;
+             textarea{
+               width:100%;
+               background-color:#FFF;
+               padding:10px 0 0 10px;
+               border:1px solid rgb(228,228,228);
+             }
+           }
+           >.dialog-btn{
+             display: flex;
+             justify-content:flex-end;
+             span{
+               padding:5px 12px;
+               border-radius: 5px;
+             }
+             span:first-child{
+               background-color:#fff;
+               color:rgb(72,149,237);
+               border:1px solid rgb(72,149,237);
+               margin-right: 10px;
+             }
+             span:last-child{
+                color:#fff;
+                background-color:rgb(72,149,237);
+             }
+           }
+           
+         }
+     }
+  .ysp-atreport-dialog{
+    .ysp-dialog-wrapper{
+      position:absolute;
+      background: #fff;
+      height: 1700px;
+    }
+    div.surebtn-right-top{
+      >span{
+         	position: fixed;
+          top: 10px;
+          right: 10px;
+          color: #FFF;
+          z-index: 2000;
+      }
+    }
   }
 }
   
@@ -14738,7 +15263,6 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
       
     }
 	}
-  
   .ysp-worksum{
     background: #ececec;
     height: 40px;
