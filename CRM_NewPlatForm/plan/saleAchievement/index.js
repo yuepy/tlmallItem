@@ -190,14 +190,14 @@
             if (subItem.tagName.toLocaleLowerCase() == "th") {
               if (subIndex == 0) {
                 //titles.push(ysp.customHelper.trim(subItem.textContent));
-                titles.push(ysp.customHelper.trim(subItem.title));
+                titles.push(ysp.customHelper.trim(subItem.title ? subItem.title : subItem.textContent));
               } else {
                 item.push(ysp.customHelper.trim(subItem.textContent));
               }
             } else {
               if (subIndex == 0) {
                 //var subString = subItem.textContent;
-                var subString = subItem.title;if (subString.indexOf("HUAWEI") >= 0) {
+                var subString = subItem.title ? subItem.title : subItem.textContent;if (subString.indexOf("HUAWEI") >= 0) {
                   subString = subString.split("HUAWEI")[1];
                 }titles.push(ysp.customHelper.trim(subString));
               } else {

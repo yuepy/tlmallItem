@@ -237,24 +237,24 @@
           //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
           if(ALLMENU != '' && AllMenu){
             //正式环境暂时没有效验
-            //  var SessionXhr = new XMLHttpRequest();
-            //  SessionXhr.onreadystatechange = function(){
-            //   if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
-            //     var encoder = JSON.parse(SessionXhr.response).encoder;
-            //     var userId = JSON.parse(SessionXhr.response).userId;
-            //     if(encoder && userId){
-            //       var encoderXHR = new XMLHttpRequest();
-            //       //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-            //     encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-            //       //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
-            //       encoderXHR.send();
-            //     }else{
-            //       console.error('AndEncoder接口请求失败!')
-            //     }
-            //   }
-            // }
-            //  SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
-            //  SessionXhr.send();
+             var SessionXhr = new XMLHttpRequest();
+             SessionXhr.onreadystatechange = function(){
+              if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
+                var encoder = JSON.parse(SessionXhr.response).encoder;
+                var userId = JSON.parse(SessionXhr.response).userId;
+                if(encoder && userId){
+                  var encoderXHR = new XMLHttpRequest();
+                  //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+                encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+                  //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+                  encoderXHR.send();
+                }else{
+                  console.error('AndEncoder接口请求失败!')
+                }
+              }
+            }
+             SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+             SessionXhr.send();
           }
       }
     }
@@ -355,6 +355,9 @@
           if(ALLMENU[i].url.indexOf('../') !== -1){
             ALLMENU[i].url = ALLMENU[i].url.replace('../.','');
             ALLMENU[i].url = ALLMENU[i].url.replace(/^\s+/,'');
+          }
+          if(current.indexOf('(新)')!=-1){
+            current = current.replace('(新)','');
           }
           var menus = {
             name: current,
@@ -2067,7 +2070,7 @@
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function onTargetLoad(aWin, doc) {
       if (aWin) {
-        if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
+        if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html' || aWin.location.href.indexOf('ysp_mobile') != -1) {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           //getAllMenu();
           var _this = this;
@@ -2079,7 +2082,7 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function beforeTargetLoad(aWin, doc) {
-      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
+      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html' || aWin.location.href.indexOf('ysp_mobile') != -1) {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);
       }
@@ -2099,6 +2102,9 @@
       //   }
       // }
       //2.7.0及以上 运行时 当主iframe.name=='browserFrame2'  使页面匹配login
+      if(aWin.location.href.indexOf('ysp_mobile') !== -1){
+        aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login?clientType=ysp'
+      }
       if (aWin.frameElement && aWin.frameElement.name == "browserFrame2" && aWin.frameElement.dataset.browser) {
         topWin = aWin;
         if (aWin.location.href.indexOf('login') !== -1) {
