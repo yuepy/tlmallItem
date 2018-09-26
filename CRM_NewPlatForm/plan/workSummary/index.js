@@ -274,7 +274,8 @@
     },
     doAction_uiControl305_f4G8f6: function (data, elem) {
       if (data.eventType == 'upValue') {
-        var input = elem.ownerDocument.querySelector('#workSummaryPlanTime');input.value = data.dataCustom;input.focus();var cwin = elem.ownerDocument.defaultView;cwin.workTime();
+        debugger;console.log(data.dataCustom);var input = elem.ownerDocument.querySelector('#workSummaryPlanTime'),
+            span = elem.ownerDocument.querySelector("#workSummaryPlanTimeLable span ");input.value = data.dataCustom, span.textContent = data.dataCustom;input.focus();var cwin = elem.ownerDocument.defaultView;cwin.workTime();
       }
     },
     getTemplate_uiControl305_f4G8f6: function () {
