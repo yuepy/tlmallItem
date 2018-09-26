@@ -99,13 +99,59 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control176_ZNIZFs": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control176_ZNIZFs"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control254_bTT0Ef": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control254_bTT0Ef"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context14_LNCPgA": {
       "controls": [
         "control47_syfpWU",
-        "control48_TFfB70"
+        "control48_TFfB70",
+        "control176_ZNIZFs",
+        "control254_bTT0Ef"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -180,6 +226,36 @@
               "events": {
                 "onDoAction": "doAction_uiControl51_UHfnhZ",
                 "onGetTemplate": "getTemplate_uiControl51_UHfnhZ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl125_tCCQ7y",
+          "controlId": "control176_ZNIZFs",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl125_tCCQ7y",
+                "onGetTemplate": "getTemplate_uiControl125_tCCQ7y"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl247_vlAxg9",
+          "controlId": "control254_bTT0Ef",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl247_vlAxg9",
+                "onGetTemplate": "getTemplate_uiControl247_vlAxg9"
               }
             }
           }
@@ -389,6 +465,51 @@
             "samsungDivisonTags",
             "search-lists",
             "sendBtn"
+          ],
+          [
+            "ChatIpt",
+            "ChatOnline",
+            "Close",
+            "ContactAlert",
+            "ContactClose",
+            "ContactUsers",
+            "Details",
+            "DisplayContact",
+            "FenXiaoDivison",
+            "HuaweiExperienceStore",
+            "HuaweiFuse",
+            "HuaweiProvincePackage",
+            "OtherInfor",
+            "SamsungDivison",
+            "TargetPosition",
+            "VisitTarget",
+            "VisitTime",
+            "chats_content",
+            "contactSearch",
+            "contentBody",
+            "dragbottom",
+            "dragleft",
+            "dragright",
+            "dragtop",
+            "fenXiaoDivisonDiv",
+            "fenXiaoDivisonTags",
+            "fileList",
+            "huaweiExperienceStoreDiv",
+            "huaweiExperienceStoreTags",
+            "huaweiFD",
+            "huaweiFDTags",
+            "huaweiFdDiv",
+            "huaweiFuseDiv",
+            "huaweiFuseTags",
+            "huaweiProvincePackageDiv",
+            "huaweiProvincePackageTags",
+            "icon-search",
+            "otherInforDiv",
+            "otherInforTags",
+            "samsungDivisonDiv",
+            "samsungDivisonTags",
+            "search-lists",
+            "sendBtn"
           ]
         ]
       }
@@ -570,6 +691,47 @@
             "title",
             "user",
             "users"
+          ],
+          [
+            "body",
+            "btn",
+            "center",
+            "chat-one",
+            "chat-reply",
+            "chatUsers",
+            "chatUsers-check",
+            "clearfix",
+            "content",
+            "custSpan",
+            "details-head",
+            "footer",
+            "header",
+            "icon",
+            "icon-back",
+            "icon-search",
+            "images",
+            "imagesBox",
+            "leaveWord",
+            "lists-one",
+            "m-contact",
+            "m-report-infors",
+            "m-uploading",
+            "names",
+            "replyChat",
+            "search",
+            "search-lists",
+            "sel-chat",
+            "signTime",
+            "t-header",
+            "tags-box",
+            "textBtn",
+            "textarea",
+            "textareaDiv",
+            "textearaDiv",
+            "tipFont",
+            "title",
+            "user",
+            "users"
           ]
         ]
       }
@@ -646,6 +808,25 @@
             "DIV/DIV/SPAN",
             "DIV/DIV/TEXTAREA",
             "DIV/H6/FONT",
+            "DIV/SELECT/OPTION"
+          ],
+          [
+            "-/-/DIV",
+            "-/DIV/DIV",
+            "-/DIV/SPAN",
+            "DIV/A/EM",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/EM",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/P",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/H6/FONT",
+            "DIV/H6/SPAN",
             "DIV/SELECT/OPTION"
           ]
         ]

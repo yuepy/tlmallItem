@@ -3321,6 +3321,15 @@ __________________*/
   /**
   margin-top:44px;
   **/
+  .ysp-worksum {
+    background: #ececec;
+    height: 40px;
+     > span:nth-child(1) {
+	    display: inline-block;
+	    padding: 10px 10px;
+	    color: #999;	
+	}
+}
   .personnel .report-fill-in{
     background: #ececec;
     height: 50px;
@@ -3549,9 +3558,6 @@ __________________*/
   padding-right: 10px;
   padding-bottom: 5px;
 }
-
-
-
   .ysp-atreport-part{
     padding:10px 0px 10px 14px;
   }
@@ -3948,12 +3954,12 @@ __________________*/
          }
      }
     .ysp-atreport-send{
-       min-heigth:130px;
+      /**  margin-bottom: 20px;**/
+       min-height:130px;
        background-color: #fff;
        padding: 14px;
        position:relative;
        border-bottom: 1px solid #e9e9e9;
-    	 margin-bottom: 20px;
        &::before{
          position:absolute;
          display:block;
@@ -4038,7 +4044,7 @@ __________________*/
       justify-content: flex-start;
       align-items:center;
       background: #fff;
-      padding:14px;
+      padding:10px;
       flex-wrap: wrap;
       .ysp-atreport-names{
         /**
@@ -4076,7 +4082,7 @@ __________________*/
           font-size: 22px;
           left: 50%;
           top: 50%;
-          transform: translate(-60%,-60%);
+          transform: translate(-60%,-55%);
         }
         
           /***
@@ -5890,7 +5896,7 @@ div[data-ysp-modelid="wtiteReport"]{//8.24
           >span{
             position:absolute;
             top:50%;
-            transform:translate(-50%,-50%);
+            transform:translate(-50%,-55%);
           }
       }
         span{
@@ -14105,7 +14111,7 @@ div[data-ysp-modelid="workPlanCustomStore"]{
           >span{
             position:absolute;
             top:50%;
-            transform:translate(-50%,-50%);
+            transform:translate(-50%,-55%);
           }
       }
         span{
@@ -14621,7 +14627,8 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0 10px;
+    padding: 14px 10px 4px;
+    border-bottom: 14px solid #e9e9e9;
     >div{
       // width: 27%;
       // float:left;
@@ -14629,6 +14636,7 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
       background-color:rgb(217,234,250);
       border-radius: 5px;
       padding:3px 12px;
+      border: 1px solid #5692E2;
       >i{
         &:first-child{
         padding-left: 0;
@@ -14650,7 +14658,7 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
           margin:auto;*/
           left: 50%;
           top: 50%;
-          transform: translate(-60%,-60%);
+          transform: translate(-60%,-55%);
           font-size: 22px;
           color:#FFF;
         }
@@ -14707,7 +14715,7 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
           >span{
             position:absolute;
             top:50%;
-            transform:translate(-50%,-50%);
+            transform:translate(-50%,-55%);
           }
       }
         span{
@@ -14835,6 +14843,7 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
       	.ysp-atreport-send{
           padding: 20px 10px;
           border-bottom: 1px solid #e9e9e9;
+          border-top: 1px solid #e9e9e9;
           position: relative;
            &::before{
          position:absolute;
@@ -15038,7 +15047,7 @@ div[data-componentsid="uiControl308_Xs0S2e"]{
                 font-size:16px;
                 margin-bottom:8px;
            }
-           h6{    
+           h6,span:nth-of-type(2){    
              color: rgb(71, 137, 224);
            }
            span:nth-of-type(1),span:nth-of-type(3){
