@@ -47,16 +47,42 @@
       if (!elem) {
         return;
       }var data = [];var ths = elem.querySelectorAll("th");for (var i = 0; i < ths.length; i++) {
-        var obj = {};obj.title = ths[i].querySelector(".ui-jqgrid-sortable").textContent;data.push(obj);
+        var obj = {};var title = ths[i].querySelector(".ui-jqgrid-sortable").textContent;if ("实际销量" == title || "实际销售额" == title || "销量达成率" == title || "销售额达成率" == title) {
+          obj.title = title;data.push(obj);
+        }
       }return data;
     },
     doAction_uiControl65_OItCfI: function (data, elem) {
       var eventType = data.eventType;var customData = data.customData;var index = +customData;if (eventType == 'click') {
-        var titleBtns = elem.querySelectorAll("th");titleBtns[index].querySelector(".ui-jqgrid-sortable").click();
+        var titleBtns = elem.querySelectorAll("th");if (0 == index) {
+          for (var i = 0; i < titleBtns.length; i++) {
+            var title = titleBtns[i].querySelector(".ui-jqgrid-sortable").textContent;if ("实际销量" == title) {
+              titleBtns[i].querySelector(".ui-jqgrid-sortable").click();
+            }
+          }
+        }if (1 == index) {
+          for (var i = 0; i < titleBtns.length; i++) {
+            var title = titleBtns[i].querySelector(".ui-jqgrid-sortable").textContent;if ("实际销售额" == title) {
+              titleBtns[i].querySelector(".ui-jqgrid-sortable").click();
+            }
+          }
+        }if (2 == index) {
+          for (var i = 0; i < titleBtns.length; i++) {
+            var title = titleBtns[i].querySelector(".ui-jqgrid-sortable").textContent;if ("销量达成率" == title) {
+              titleBtns[i].querySelector(".ui-jqgrid-sortable").click();
+            }
+          }
+        }if (3 == index) {
+          for (var i = 0; i < titleBtns.length; i++) {
+            var title = titleBtns[i].querySelector(".ui-jqgrid-sortable").textContent;if ("销售额达成率" == title) {
+              titleBtns[i].querySelector(".ui-jqgrid-sortable").click();
+            }
+          }
+        }
       }
     },
     getTemplate_uiControl65_OItCfI: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  handleClick: function(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    var index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data:index\n      });\n    }\n    \n    target.classList.add("active");\n  \tvar _broNode = target.parentNode.childNodes;\n    var _broNodeLen = _broNode.length;\n    \n    for(var i=0; i<_broNodeLen; i++){\n      var _asc = _broNode[i].querySelector(".ui-asc");\n      var _desc = _broNode[i].querySelector(".ui-desc");\n      \n      if(i == index){\n        if(_asc.classList.contains(\'ui-disabled\')==true){\n\u3000\u3000\u3000\u3000\t\t_asc.classList.remove("ui-disabled");\n      \t\t _desc.classList.add("ui-disabled");\n      \t}else{\n        \t_asc.classList.add("ui-disabled");\n      \t\t_desc.classList.remove("ui-disabled");\n        }\n      }else{\n        _broNode[i].classList.remove("active");\n      \t_asc.classList.add("ui-disabled");\n      \t_desc.classList.add("ui-disabled");\n      }\n    }\n  },\n  render: function() {\n    var _this = this;\n    var data = this.props.data.customData;\n    var titleBtn = data.map(function(d,i){\n      return (\n        <div className="ysp-table-titleItem" onClick={_this.handleClick.bind(_this)} data-index={i}>{data[i].title}<span className="ysp-s-ico"><span className="ui-asc ui-disabled"></span><span className="ui-desc ui-disabled"></span></span></div>\n      )\n    });\n    \n    \n    return (\n      <div className="ysp-table-titles">\n        {titleBtn}\n      </div>\n    )\n  }\n})';
+      var selfTemplate = 'module.exports = React.createClass({\n  handleClick: function(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    var index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data:index\n      });\n    }\n    \n    target.classList.add("active");\n  \tvar _broNode = target.parentNode.childNodes;\n    var _broNodeLen = _broNode.length;\n    \n    for(var i=0; i<_broNodeLen; i++){\n      var _asc = _broNode[i].querySelector(".ui-asc");\n      var _desc = _broNode[i].querySelector(".ui-desc");\n      \n      if(i == index){\n        if(_asc.classList.contains(\'ui-disabled\')==true){\n\u3000\u3000\u3000\u3000\t\t_asc.classList.remove("ui-disabled");\n      \t\t _desc.classList.add("ui-disabled");\n      \t}else{\n        \t_asc.classList.add("ui-disabled");\n      \t\t_desc.classList.remove("ui-disabled");\n        }\n      }else{\n        _broNode[i].classList.remove("active");\n      \t_asc.classList.add("ui-disabled");\n      \t_desc.classList.add("ui-disabled");\n      }\n    }\n  },\n  render: function() {\n    var _this = this;\n    var data = this.props.data.customData;\n    var titleBtn = data.map(function(d,i){\n      return (\n        <div className="ysp-table-titleItem" onClick={_this.handleClick.bind(_this)} data-index={i}>{data[i].title}\n          <span className="ysp-s-ico">\n            <span className="ui-asc ui-disabled"></span>\n            <span className="ui-desc ui-disabled"></span>\n          </span>\n        </div>\n      )\n    });\n    \n    return (\n      <div className="ysp-table-titles">\n        {titleBtn}\n      </div>\n    )\n  }\n})';
       return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  handleClick: function handleClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    var index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: index\n      });\n    }\n\n    target.classList.add("active");\n    var _broNode = target.parentNode.childNodes;\n    var _broNodeLen = _broNode.length;\n\n    for (var i = 0; i < _broNodeLen; i++) {\n      var _asc = _broNode[i].querySelector(".ui-asc");\n      var _desc = _broNode[i].querySelector(".ui-desc");\n\n      if (i == index) {\n        if (_asc.classList.contains(\'ui-disabled\') == true) {\n          _asc.classList.remove("ui-disabled");\n          _desc.classList.add("ui-disabled");\n        } else {\n          _asc.classList.add("ui-disabled");\n          _desc.classList.remove("ui-disabled");\n        }\n      } else {\n        _broNode[i].classList.remove("active");\n        _asc.classList.add("ui-disabled");\n        _desc.classList.add("ui-disabled");\n      }\n    }\n  },\n  render: function render() {\n    var _this = this;\n    var data = this.props.data.customData;\n    var titleBtn = data.map(function (d, i) {\n      return React.createElement(\n        "div",\n        { className: "ysp-table-titleItem", onClick: _this.handleClick.bind(_this), "data-index": i },\n        data[i].title,\n        React.createElement(\n          "span",\n          { className: "ysp-s-ico" },\n          React.createElement("span", { className: "ui-asc ui-disabled" }),\n          React.createElement("span", { className: "ui-desc ui-disabled" })\n        )\n      );\n    });\n\n    return React.createElement(\n      "div",\n      { className: "ysp-table-titles" },\n      titleBtn\n    );\n  }\n});';
     },
     getData_control116_QcA22u: function (elem) {
