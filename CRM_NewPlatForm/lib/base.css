@@ -3241,6 +3241,7 @@ __________________*/
 .ysp-atreport-dialog-body .ysp-atreport-message {
   background-color: #fff;
   margin-top: 14px;
+  padding-bottom: 60px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-message > div:first-child {
   display: flex;
@@ -3479,7 +3480,7 @@ __________________*/
   border: none;
   margin-left: 8px;
   padding: 0;
-  min-height: 4rem;
+  min-height: 3rem;
 }
 .ysp-atreport-dialog-body .ysp-atreport-send textarea::-webkit-input-placeholder {
   color: #9d9d9d;
@@ -3814,7 +3815,7 @@ div[data-ysp-modelid="AtReportDetail"] {
 div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog .ysp-dialog-wrapper {
   position: absolute;
   background: #fff;
-  height: 1700px;
+  overflow: auto;
 }
 div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-top > span {
   position: fixed;
@@ -13253,6 +13254,7 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   flex-wrap: wrap;
   padding: 14px 10px 4px;
   border-bottom: 14px solid #e9e9e9;
+  min-height: 48px;
 }
 .ysp-atMe-workSummary .ysp-atreport-picture .personnel > div {
   margin: 0 8px 10px 0;
