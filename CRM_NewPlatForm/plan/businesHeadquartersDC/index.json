@@ -113,45 +113,6 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control116_QcA22u": {
-      "location": {
-        "data": {
-          "tagName": "TBODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 1,
-            "value": [
-              "descendant::DIV[@id=\"jqGrid_wrapper\"]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]",
-              "descendant::DIV[@id=\"jqGrid_wrapper\"]//TBODY"
-            ]
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.ui-jqgrid-view.table-responsive DIV.ui-jqgrid-bdiv TABLE.ui-jqgrid-btable.ui-common-table.table.table-bordered TBODY"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[4]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/TABLE[1]/TBODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control116_QcA22u"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control124_1ZAE1L": {
       "location": {
         "data": {
@@ -267,6 +228,38 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control349_5u80Vy": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.detail-box"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control349_5u80Vy"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -274,10 +267,10 @@
       "controls": [
         "control98_UOORsI",
         "control89_EwPocV",
-        "control116_QcA22u",
         "control124_1ZAE1L",
         "control275_2EgUIJ",
-        "control253_wPBgTz"
+        "control253_wPBgTz",
+        "control349_5u80Vy"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -311,16 +304,6 @@
         }
       ]
     },
-    "flow275_UKrzkA": {
-      "fromContextId": "context91_3yemwg",
-      "fromAction": "doAction",
-      "fromControlId": "control116_QcA22u",
-      "toContexts": [
-        {
-          "toContextId": "context91_3yemwg"
-        }
-      ]
-    },
     "flow276_HgdrXi": {
       "fromContextId": "context91_3yemwg",
       "fromAction": "doAction",
@@ -335,6 +318,16 @@
       "fromContextId": "context91_3yemwg",
       "fromAction": "doAction",
       "fromControlId": "control253_wPBgTz",
+      "toContexts": [
+        {
+          "toContextId": "context91_3yemwg"
+        }
+      ]
+    },
+    "flow279_m7LFEe": {
+      "fromContextId": "context91_3yemwg",
+      "fromAction": "doAction",
+      "fromControlId": "control349_5u80Vy",
       "toContexts": [
         {
           "toContextId": "context91_3yemwg"
@@ -407,16 +400,16 @@
           }
         },
         {
-          "id": "uiControl113_3GMoae",
-          "controlId": "control116_QcA22u",
+          "id": "uiControl269_1Mcp0r",
+          "controlId": "control349_5u80Vy",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl113_3GMoae",
-                "onGetTemplate": "getTemplate_uiControl113_3GMoae"
+                "onDoAction": "doAction_uiControl269_1Mcp0r",
+                "onGetTemplate": "getTemplate_uiControl269_1Mcp0r"
               }
             }
           }
@@ -456,7 +449,8 @@
           "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDgvMTYvMjAxOCAxNTozNzozMg==&username=WANGDONG&a=1",
           "192.168.220.81:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMDEvMjAxOCAxNjo1NTo1Nw==&username=WANGDONG&a=1",
           "192.168.220.81:8080/ptDataShow/reportNew/reportsByPid?reportPid=report1&reportId=report1-1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMDEvMjAxOCAxNzowNTo1NA&username=WANGDONG&a=1&click_department=%E4%B8%89%E6%98%9F%E4%B8%9A%E5%8A%A1%E4%BA%8B%E4%B8%9A%E9%83%A8&month=2018-06",
-          "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMDMvMjAxOCAxMDoxNToxMQ==&username=WANGDONG&a=1"
+          "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=head-Company&reportId=report1&clickLi=true&filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDkvMDMvMjAxOCAxMDoxNToxMQ==&username=WANGDONG&a=1",
+          "192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?reportPid=salePerson&reportId=report34-2&filter_userId=SUNWANXIN&encoder=U1VOV0FOWElOKzA5LzI3LzIwMTggMTU6NTQ6NTI=&username=SUNWANXIN&a=1&branch=02"
         ]
       }
     },
@@ -656,6 +650,70 @@
             "table_list__salesCountPercent",
             "table_list__salesPercent",
             "table_list__targetCoverCustomer",
+            "table_list__targetSalesAmount",
+            "table_list__targetSalesCount",
+            "top",
+            "up",
+            "yes"
+          ],
+          [
+            "HideFrm",
+            "aggsArea",
+            "amountPercent",
+            "bottom",
+            "countPercent",
+            "customerPercent",
+            "down",
+            "filter_customerANDstore",
+            "filter_planType",
+            "filter_type",
+            "first_pager_list_",
+            "gbox_table_list_",
+            "gview_table_list_",
+            "input_pager_list_",
+            "jqGrid_wrapper",
+            "jqgh_table_list__branchName",
+            "jqgh_table_list__customerName",
+            "jqgh_table_list__month",
+            "jqgh_table_list__officeName",
+            "jqgh_table_list__realSalesAmount",
+            "jqgh_table_list__realSalesCount",
+            "jqgh_table_list__salesAmountPercent",
+            "jqgh_table_list__salesCountPercent",
+            "jqgh_table_list__storeName",
+            "jqgh_table_list__targetSalesAmount",
+            "jqgh_table_list__targetSalesCount",
+            "last_pager_list_",
+            "load_table_list_",
+            "lui_table_list_",
+            "muilSelectOption",
+            "next_pager_list_",
+            "no",
+            "pager_list_",
+            "pager_list__center",
+            "pager_list__left",
+            "pager_list__right",
+            "pg_pager_list_",
+            "prev_pager_list_",
+            "queryBtnSearch",
+            "queryForm",
+            "rs_mtable_list_",
+            "searchHead",
+            "sel-l",
+            "sel-r",
+            "sp__pager_list_",
+            "tab-head",
+            "tab_box",
+            "table_list_",
+            "table_list__branchName",
+            "table_list__customerName",
+            "table_list__month",
+            "table_list__officeName",
+            "table_list__realSalesAmount",
+            "table_list__realSalesCount",
+            "table_list__salesAmountPercent",
+            "table_list__salesCountPercent",
+            "table_list__storeName",
             "table_list__targetSalesAmount",
             "table_list__targetSalesCount",
             "top",
