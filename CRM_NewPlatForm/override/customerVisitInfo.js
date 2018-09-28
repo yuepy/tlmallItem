@@ -1423,13 +1423,19 @@
 	    //$(".m-popBox>#body>.content>.center").height(popInforsH);
 	}
 	function render() {
-	    var temp = '\n        <div class="content">\n            <div class="center">\n                <!--\u62A5\u544A-->\n                <div class="m-report-infors">\n                    <div class="content" id="reportContent">\n                        <div class="header clearfix">\n                            <span>\u62DC\u8BBF\u5BF9\u8C61\uFF1A</span>\n                            <input type="text" id="VisitTarget" name="VisitTarget"/>\n                            <span>\u804C\u52A1\uFF1A</span>\n                            <input type="text" id="TargetPosition" name="TargetPosition"/>\n                            <span>\u62DC\u8BBF\u65F6\u957F\uFF1A</span>\n                            <select id="VisitTime" name="VisitTime" style="width:120px;height:30px;">\n                                <option value="">--\u8BF7\u9009\u62E9--</option>\n                                <option value="10\u5206\u949F">10\u5206\u949F</option>\n                                <option value="30\u5206\u949F">30\u5206\u949F</option>\n                                <option value="60\u5206\u949F">60\u5206\u949F</option>\n                                <option value="60\u5206\u949F\u4EE5\u4E0A">60\u5206\u949F\u4EE5\u4E0A</option>\n                            </select>\n                            <!--<a href="javascript:;" class="inform-coll">\u4FE1\u606F\u91C7\u96C6</a>-->\n                        </div>\n                        <div class="body clearfix" id="reportImportContent">\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3AFD</h6>\n                                <textarea name="huaweiFD" id="huaweiFD"></textarea>\n                                <div class="tags-box" id="huaweiFDTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u4F53\u9A8C\u5E97</h6>\n                                <textarea name="HuaweiExperienceStore" id="HuaweiExperienceStore"></textarea>\n                                <div class="tags-box" id="huaweiExperienceStoreTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u878D\u5408</h6>\n                                <textarea name="HuaweiFuse" id="HuaweiFuse"></textarea>\n                                <div class="tags-box" id="huaweiFuseTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u7701\u5305</h6>\n                                <textarea name="HuaweiProvincePackage" id="HuaweiProvincePackage"></textarea>\n                                <div class="tags-box" id="huaweiProvincePackageTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u4E09\u661F</h6>\n                                <textarea name="SamsungDivison" id="SamsungDivison"></textarea>\n                                <div class="tags-box" id="samsungDivisonTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8</h6>\n                                <textarea name="FenXiaoDivison" id="FenXiaoDivison"></textarea>\n                                <div class="tags-box" id="fenXiaoDivisonTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u5176\u4ED6\u4FE1\u606F</h6>\n                                <textarea name="OtherInfor" id="OtherInfor"></textarea>\n                                <div class="tags-box" id="otherInforTags"></div>\n                            </div>\n\n                            <div class="m-uploading">\n                                <h6 class="title">\u4E0A\u4F20\u7167\u7247</h6>\n                                <div class="imagesBox" style="height:auto;">\n                                    <div class="uploadBtn" id="filePicker"></div>\n                                    <div class="images" id="fileList">\n                                        <!--.temp\u5360\u4F4D\u7528\u7684-->\n                                        <div class="temp"></div>\n                                    </div>\n                                </div>\n                                <a href="javascript:;" class="textBtn"></a>\n                            </div>\n                            <div class="lists-one">\n                                <!--\u53EA\u8BFB\u72B6\u6001\u4E0B\u6DFB\u52A0\u7C7B\u540D chatUsers-check -->\n                                <h6>\n                                    <!-- <font style="color:transparent">@\u7684\u4EBA</font> -->\n                                </h6>\n                                <div class="chatUsers">\n                                    <i class="tipFont" id="DisplayContact">@</i>\n\n                                    <!--\u53EF\u7F16\u8F91\u72B6\u6001\u4E0B\u663E\u793A\u7684\u6A21\u5757-->\n                                    <div class="users" id="ContactUsers"></div>\n\n                                    <!--\u53EA\u8BFB\u72B6\u6001\u4E0B\u663E\u793A\u7684\u6A21\u5757-->\n                                    <!-- <em class="names">\u674E\u71D5\uFF1B\u5F20\u6D77\uFF1B\u5218\u4F73\uFF1B</em> -->\n                                </div>\n                            </div>\n                        </div>\n\n                        <div class="footer">\n                            <div class="m-btns m-btns-rd">\n                                <!--\u7981\u7528\u72B6\u6001\uFF0C\u6DFB\u52A0\u7C7B\u540Ddisabled-->\n                                <a href="javascript:;" class="u-btn u-btn-success"\n                                    id="customerReportPopBtnSuccess">\u4FDD\u5B58\u8349\u7A3F</a>\n                                <a href="javascript:;" class="u-btn u-btn-primary"\n                                    id="customerReportPopBtnPrimary">\u786E\u8BA4</a>\n                                <a href="javascript:;" class="u-btn u-btn-default" id="customerReportPopBack">\u8FD4\u56DE</a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class="m-contact" id="ContactAlert"></div>\n    ';
+     var temp = '\n        <div class="content">\n            <div class="center">\n                <!--\u62A5\u544A-->\n                <div class="m-report-infors">\n                    <div class="content" id="reportContent">\n                        <div class="header clearfix">\n                            <span>\u62DC\u8BBF\u5BF9\u8C61\uFF1A</span>\n                            <input type="text" id="VisitTarget" name="VisitTarget" maxlength=\'50\'/>\n                            <span>\u804C\u52A1\uFF1A</span>\n                            <input type="text" id="TargetPosition" name="TargetPosition" maxlength=\'50\'/>\n                            <span>\u62DC\u8BBF\u65F6\u957F\uFF1A</span>\n                            <select id="VisitTime" name="VisitTime" style="width:120px;height:30px;">\n                                <option value="">--\u8BF7\u9009\u62E9--</option>\n                                <option value="10\u5206\u949F">10\u5206\u949F</option>\n                                <option value="30\u5206\u949F">30\u5206\u949F</option>\n                                <option value="60\u5206\u949F">60\u5206\u949F</option>\n                                <option value="60\u5206\u949F\u4EE5\u4E0A">60\u5206\u949F\u4EE5\u4E0A</option>\n                            </select>\n                            <!--<a href="javascript:;" class="inform-coll">\u4FE1\u606F\u91C7\u96C6</a>-->\n                        </div>\n                        <div class="body clearfix" id="reportImportContent">\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3AFD</h6>\n                                <textarea name="huaweiFD" id="huaweiFD" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiFDTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u4F53\u9A8C\u5E97</h6>\n                                <textarea name="HuaweiExperienceStore" id="HuaweiExperienceStore" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiExperienceStoreTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u878D\u5408</h6>\n                                <textarea name="HuaweiFuse" id="HuaweiFuse" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiFuseTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u7701\u5305</h6>\n                                <textarea name="HuaweiProvincePackage" id="HuaweiProvincePackage" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiProvincePackageTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u4E09\u661F</h6>\n                                <textarea name="SamsungDivison" id="SamsungDivison" autoHeight="true"></textarea>\n                                <div class="tags-box" id="samsungDivisonTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8</h6>\n                                <textarea name="FenXiaoDivison" id="FenXiaoDivison" autoHeight="true"></textarea>\n                                <div class="tags-box" id="fenXiaoDivisonTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u5176\u4ED6\u4FE1\u606F</h6>\n                                <textarea name="OtherInfor" id="OtherInfor" autoHeight="true"></textarea>\n                                <div class="tags-box" id="otherInforTags"></div>\n                            </div>\n\n                            <div class="m-uploading">\n                                <h6 class="title">\u4E0A\u4F20\u7167\u7247</h6>\n                                <div class="imagesBox" style="height:auto;">\n                                    <div class="uploadBtn" id="filePicker"></div>\n                                    <div class="images" id="fileList">\n                                        <!--.temp\u5360\u4F4D\u7528\u7684-->\n                                        <div class="temp"></div>\n                                    </div>\n                                </div>\n                                <a href="javascript:;" class="textBtn"></a>\n                            </div>\n                        \n                            <div class="lists-one lists-one1">\n                                <h6 class="title">\u6C47\u62A5</h6>\n                                <div class="chate-open">\n                                    <a href="javascript:;" id="DisplayContact"><em>+</em>\u9009\u62E9\u5BF9\u8C61</a>\n                                </div>\n                                <div class="chate-box" id="ContactUsers">\n                                    <!-- <span><i class="icon chate-del"></i>\u7956\u5927\u5BFF</span> -->\n                                </div>\n                            </div>\n\n                        </div>\n\n                        <div class="footer">\n                            <div class="m-btns m-btns-rd">\n                                <!--\u7981\u7528\u72B6\u6001\uFF0C\u6DFB\u52A0\u7C7B\u540Ddisabled-->\n                                <a href="javascript:;" class="u-btn u-btn-success"\n                                    id="customerReportPopBtnSuccess">\u4FDD\u5B58\u8349\u7A3F</a>\n                                <a href="javascript:;" class="u-btn u-btn-primary"\n                                    id="customerReportPopBtnPrimary">\u786E\u8BA4</a>\n                                <a href="javascript:;" class="u-btn u-btn-default" id="customerReportPopBack">\u8FD4\u56DE</a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class="m-contact" id="ContactAlert"><span id="dragtop"></span><span id="dragright"></span><span id="dragbottom"></span><span id="dragleft"></span></div>\n    ';
+	    
 	    return temp;
 	}
 	function initFn(data) {
 	    var dataTemp = data;
 	    report.load(data);
 	    upload.load(data.acitonEaiId); //row_Id
+	    var cWidth = $("#ContactAlert").css("width");
+	    var oWidth = $(window).width();
+	    $("#ContactAlert").animate({
+	        left: oWidth
+	    });
 	    $("#DisplayContact").click(function () {
 	        $("#search-lists").hide();
 	        $("#contactSearch").val("");
@@ -1438,13 +1444,16 @@
 	            $("#DisplayContact").addClass("initFlag");
 	            backfill.load();
 	        }
-	        var flag = $("#ContactAlert").css("right") == 0 ? false : true;
+	        $('.m-contact').slideDown();
+	        // let flag = $("#ContactAlert").css("right") == 0 ? false : true;
+	        var flag = $("#ContactAlert").css("left") == oWidth + "px" ? true : false;
 	        if (flag) {
 	            $("#ContactAlert").animate({
-	                right: "0px"
+	                // right: "0px"
+	                left: oWidth - parseInt(cWidth) + "px"
 	            });
 	        } else {
-	            return flase;
+	            return false;
 	        }
 	    });
 	    /* 8、搜索框：
@@ -1470,6 +1479,14 @@
 	        backfill.searchNameList('contactSearch', 'search-lists');
 	    });
 
+	    //按回车搜索
+	    $("#contactSearch").unbind().keydown(function () {
+	        if (event.keyCode == "13") {
+	            //keyCode=13是回车键
+	            backfill.searchNameList('contactSearch', 'search-lists');
+	        }
+	    });
+
 	    //关闭
 	    $('#CloseReportPopRoot').unbind().on('click', function () {
 	        iframeUtils.hideSecondIframe();
@@ -1491,7 +1508,7 @@
 	}
 
 	function getTreeHtml() {
-	    var temp = '\n        <div class="header clearfix">\n            <i class="icon icon-back" id="ContactClose"></i>\n            <div class="search">\n                <label for="contactSearch">\u8BF7\u8F93\u5165\u641C\u7D22\u5185\u5BB9</label>\n                <input type="text" name="contactSearch" id="contactSearch">\n                <i class="icon icon-search" id="icon-search"></i>\n                <div class="search-lists" id="search-lists">\n                </div>\n            </div>\n        </div>\n        <div class="body">\n            <div class="content" id="contentBody"></div>\n        </div>\n        <div class="footer clearfix">\n            <a href="javascript:;" class="btn" id="ContactSure">\u786E\u5B9A<em></em></a>\n        </div>\n    ';
+	    var temp = '\n        <div class="header clearfix">\n            <i class="icon icon-back" id="ContactClose"></i>\n            <div class="search">\n                <input type="text" name="contactSearch" id="contactSearch" placeholder="\u8BF7\u8F93\u5165\u641C\u7D22\u5185\u5BB9">\n                <i class="icon icon-search" id="icon-search"></i>\n                <div class="search-lists" id="search-lists">\n                </div>\n            </div>\n        </div>\n        <div class="body">\n            <div class="content" id="contentBody"></div>\n        </div>\n        <div class="footer clearfix"></div>\n    ';
 	    return temp;
 	}
 
@@ -1725,20 +1742,14 @@
 	        success: function success(data) {
 	            $("#contentBody").html(render(data));
 	            $("#ContactClose").unbind("click").click(function () {
-	                var cWidth = $("#ContactAlert").css("width");
-	                $("#ContactAlert").animate({
-	                    right: "-" + cWidth
-	                });
+	                $('.m-contact').slideUp();
 	            });
-	            // 3
-	            var mainH = $("#ContactAlert").outerHeight();
-	            var headerH = $("#ContactAlert .header").outerHeight();
-	            var footerH = $("#ContactAlert .footer").outerHeight();
-	            var bodyMtop = parseInt($("#ContactAlert .body").css("margin-top"));
-	            var bodyH = mainH - headerH - footerH - bodyMtop;
-	            $("#ContactAlert .body").height(bodyH); //outerHeight
-	            $("#ContactAlert .body").css("padding", "0");
-	            showSalesMen();
+	            //通讯录高度
+	            $("#ContactAlert").height($(window).height());
+	            var alertH = $("#ContactAlert").height() - $("#ContactAlert .header").height() - $("#ContactAlert .footer").height() - 22;
+	            $("#ContactAlert .body").height(alertH);
+
+	            showSalesMen(); //展开联系人
 	        },
 	        error: function error(e) {
 	            console.error(e);
@@ -1762,7 +1773,7 @@
 	function showSalesMen() {
 	    var empIds = [];
 	    $("#ContactUsers span").each(function () {
-	        empIds.push($(this).attr("val")); //$(this).attr("val2")+":"+
+	        empIds.push($(this).attr("val"));
 	    });
 	    $("#ContactAlert .box>.title").click(function () {
 	        var branchId = $(this).find(".img-folder").attr("id");
@@ -1829,29 +1840,20 @@
 	        m.id = $(obj).attr("val");
 	        name.push(m);
 	    });
-	    $("#ContactUsers").html(backDiv(name));
-	    delChecked();
+	    //$("#ContactUsers").html(backDiv(name));
+	    //delChecked();    
 	}
-	//删除选中的元素
+	//重新注册 删除选中的元素
 	function delChecked() {
-	    var contactSum1 = $("#ContactAlert .body input[type='checkbox']:checked").length;
-	    $("#ContactUsers .user i.icon-close").unbind("click").on("click", function () {
+	    $("#ContactUsers i.chate-del").unbind("click").on("click", function () {
 	        var val = $(this).attr("val");
 	        $(this).parent().remove();
 	        var $checkboxs = $("#ContactAlert .body input[type='checkbox'][id='id" + val + "']");
 	        $checkboxs.iCheck('uncheck');
-	        contactSum1--;
-	        if (contactSum1 <= 0) {
-	            $("#ContactSure em").html("");
-	        } else {
-	            $("#ContactSure em").html("(" + contactSum1 + ")");
-	        }
 	    });
 	}
-	function backDiv(list) {
-	    var temp = '\n    ' + (list == null ? "" : list.map(function (item) {
-	        return '\n               <div class="user">\n                    <i class="icon icon-close" val="' + item.id + '"></i>\n                    <span val="' + item.id + '" val1="' + item.name + '" val2="">' + item.name + '</span>\n                </div>\n            ';
-	    }).join('')) + '         \n    ';
+	function backDiv(salasmanName, salasmanId) {
+	    var temp = '\n        <span val="' + salasmanId + '" val1="' + salasmanName + '">\n            <i class="icon chate-del" val="' + salasmanId + '"></i>' + salasmanName + '\n        </span> \n    ';
 	    return temp;
 	}
 	//初始化弹出层函数
@@ -1860,79 +1862,29 @@
 	       * 联系人 浮层弹出框
 	       * 
 	       * (注：checkbox用了iCheck插件，相关点击和判断事件请参考http://www.bootcss.com/p/icheck/)
-	       * 
-	       * 功能效果：
-	       * 1、点击@弹出框联系人弹出框
-	       * 2、返回按钮：点击隐藏弹出框
-	       * 3、判断body需要的高度
-	       * 4、点击各组（包括展开和闭合），显示该组的所有联系人，超出部分body显示滚动条，去除搜索提示的效果
-	       * 5、点击各组联系人，确认按钮显示已选中的个数
-	       * 6、全选：（包括全部选择和取消）全选指当前的展开项，兼并功能5
-	       * 7、确定按钮：点击之后将所有选中的联系人添加到相应模块中
-	       * 8、搜索框：
-	       * （1）focus:隐藏提示文字
-	       * （2）blur:如果有用户输入的内容就隐藏提示问题，否则显示提示文字
-	       * （3）搜索内容列表：点击之后隐藏，跳转到相应用户行,添加提示搜索到名称的效果
 	       */
-
-	    // 1
-	    // 2
-
-
-	    // 4
-	    /*$("#ContactAlert .box>.title").click(function() {
-	        let $this = $(this);
-	        let flag = $this.siblings(".lists").css("display") == "none" ? true : false;
-	        if (flag) {
-	            $this.parent().addClass("z-act");
-	            $this.siblings(".lists").slideDown(400);
-	        } else {
-	            $this.parent().removeClass("z-act");
-	            $this.siblings(".lists").slideUp(400);
-	        }
-	    });*/
-
-	    // 5
 	    // 记录确定按钮显示已选中的联系人的个数
-	    var contactSum = $("#ContactAlert .body input[type='checkbox']:checked").length;
+	    //let contactSum = $("#ContactAlert .body input[type='checkbox']:checked").length;
 	    $("#ContactAlert .body input[type='checkbox']").on('ifChanged', function (event) {
-	        var $btnCount = $("#ContactSure em");
-	        $(this).parents(".lists-one").removeClass("z-tipAct");
-
+	        var salasmanName = $(this).attr("val1");
+	        var salasmanId = $(this).attr("val");
 	        if ($(this).is(':checked')) {
-	            contactSum++;
+	            //选中
+	            if ($("#ContactUsers span[val='" + salasmanId + "']").length == 0) {
+	                $("#ContactUsers").append(backDiv(salasmanName, salasmanId));
+	                delChecked();
+	            }
 	        } else {
-	            contactSum--;
-	        }
-
-	        if (contactSum <= 0) {
-	            $btnCount.html("");
-	        } else {
-	            $btnCount.html("(" + contactSum + ")");
+	            //不选中
+	            $("#ContactUsers span[val='" + salasmanId + "']").remove();
 	        }
 	    });
-
-	    // 6
-	    /* $("#ContactCheckAll").on('ifChanged', function(event) {
-	         let $checkboxs = $("#ContactAlert .body input[type='checkbox']");
-	         if ($(this).is(':checked')) {
-	             $checkboxs.iCheck('check');
-	         } else {
-	             $checkboxs.iCheck('uncheck');
-	         }
-	       });*/
 
 	    // 7(1)确定之后，将已选中的人员按顺序填写到相应框中；如果没有选中任何人，填写为空；
-	    $("#ContactSure").click(function () {
-	        /*var $this = $(this);
-	        var count = $this.find("em").html();
-	        if (count == "") {
-	            $("#ContactClose").click();
-	        } else {
-	          }*/
+	    /* $("#ContactSure").click(function() {
 	        $("#ContactClose").click();
 	        backFillHtml();
-	    });
+	    }); */
 	}
 
 	//搜索
@@ -1964,7 +1916,7 @@
 	}
 	function renderSearch(list) {
 	    var temp = '\n     ' + (list == null ? "" : list.map(function (item) {
-	        return '\n            <a href="javascript:;" val="' + item.SALESMANID + '" val1="' + item.SALESMANNAME + '" val2="' + item.BRANCHID + '">' + item.SALESMANNAME + '</a>\n        ';
+	        return '\n            <a href="javascript:;" val="' + item.SALESMANID + '" val1="' + item.SALESMANNAME + '" val2="' + item.BRANCHID + '">\n                ' + item.SALESMANNAME + '<span style="display:inline-block;color:#808281">' + item.BRANCHNAME + '</span>\n            </a>\n        ';
 	    }).join('')) + '\n    ';
 	    return temp;
 	}
@@ -2113,7 +2065,7 @@
 	                if (result.reportManStatus == "true") {
 	                    var atNameList = result.reportManList;
 	                    $("#ContactUsers").html(getAtName(atNameList)); //@人
-	                    $("#ContactUsers .user i.icon-close").on("click", function () {
+	                    $("#ContactUsers i.chate-del").on("click", function () {
 	                        $(this).parent().remove();
 	                    });
 	                } else {
@@ -2176,7 +2128,7 @@
 	//被@人
 	function getAtName(list) {
 	    var temp = '\n        ' + (list == null ? "" : list.map(function (item) {
-	        return '\n               <div class="user">\n                    <i class="icon ' + (item.isDefault == '1' ? '' : 'icon-close') + '" val="' + item.empId + '"></i>\n                    <span val="' + item.empId + '" val1="' + item.atName + '" val2="">' + item.atName + '</span>\n                </div>\n            ';
+	        return '\n\t\t\t\t<span val="' + item.empId + '" val1="' + item.atName + '">\n\t\t\t\t\t<i class="icon chate-del" val="' + item.empId + '"></i>' + item.atName + '\n\t\t\t\t</span>   \n            ';
 	    }).join('')) + '\n    ';
 	    return temp;
 	}
@@ -2508,6 +2460,7 @@
 	    if (signSubmit == '1') {
 	        return;
 	    }
+    debugger;
 	    signSubmit = '1';
 	    param.signInOutScope = signInOutScope;
 	    ajaxUtils.sendAjax("visit/customerVisitPlan/addCustomerSignIn", param, null, function (reslult) {

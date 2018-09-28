@@ -229,7 +229,6 @@ div.view-wrapper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 95px;
   white-space: nowrap;
 }
 .ysp-header-wrapper-sale div:nth-child(1) .back {
@@ -289,7 +288,6 @@ div.view-wrapper {
   height: 1.2rem;
 }
 .ysp-header-wrapper-sale .ysp-date-time {
-  width: 80px;
   text-align: right;
 }
 .ysp-header-back-icon {
@@ -1256,7 +1254,9 @@ section.ysp-dialog-body-list > span:last-child > i:last-child {
   bottom: 0;
   right: 0;
   z-index: 9999;
-  overflow: auto;
+  /**
+   overflow: auto;
+  **/
 }
 .ysp-dialog-wrapper-hidden {
   display: none;
@@ -2847,36 +2847,113 @@ __________________*/
 .ysp-atreport-dialog-body {
   background: #e9e9e9;
   overflow-x: hidden;
-  overflow-y: auto;
+  /*overflow-y: auto;*/
+  overflow-y: hidden;
+  position: absolute;
+  width: 100%;
+  /**
+  margin-top:44px;
+  **/
+}
+.ysp-atreport-dialog-body .ysp-worksum {
+  background: #ececec;
+  height: 40px;
+}
+.ysp-atreport-dialog-body .ysp-worksum > span:nth-child(1) {
+  display: inline-block;
+  padding: 10px 10px;
+  color: #999;
+}
+.ysp-atreport-dialog-body .personnel .report-fill-in {
+  background: #ececec;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.ysp-atreport-dialog-body .personnel .report-fill-in > span:nth-child(1) {
+  color: #999;
+}
+.ysp-atreport-dialog-body .personnel .report-fill-in > span:nth-child(2) {
+  background-color: #FFF;
+  color: #4796ed;
+  text-align: center;
+  border: 1px solid #4796ed;
+  border-radius: 5px;
+  padding: 4px 12px;
+  padding-top: 2px;
+}
+.ysp-atreport-dialog-body > header.myreport-title-info > ul {
+  list-style-type: none;
+  width: 100%;
+  background-color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+.ysp-atreport-dialog-body > header.myreport-title-info > ul > li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+  margin: 0 10px;
+}
+.ysp-atreport-dialog-body > header.myreport-title-info > ul > li:last-child {
+  margin-bottom: 20px;
+}
+.ysp-atreport-dialog-body > header.myreport-title-info > ul > li span:first-child {
+  color: #ccc;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate {
   background-color: #fff;
-  padding: 0px 14px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate input {
-  margin-bottom: 0px !important;
-  padding: .5rem .5rem;
-  border-radius: 5px;
+  margin-bottom: 0 !important;
+  padding: .5rem 0;
+  border: none;
+  color: #4789e0;
+  background: #fff;
+  font-size: 20px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child {
-  border-bottom: 1px solid #e9e9e9;
-  padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid #ccc;
+  /*** padding: 10px 0px 10px 0px;***/
+  padding: 15px 0;
   background: none !important;
   display: flex;
+  margin-left: 15px;
+  /***添加的新样式**/
   justify-content: flex-start;
+  /*** justify-content: space-between;***/
   align-items: center;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child > span:first-child {
   color: #999999;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child > span:last-child {
-  color: #4789e0;
   margin-left: 8px;
+  flex: 1;
+  position: relative;
+  zoom: 1;
+}
+.ysp-atreport-dialog-body .ysp-atreport-aimdate > div:first-child > span:last-child::after {
+  display: block;
+  content: '';
+  visibility: visible;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 20px;
+  background: url('images/ysp-achievement-pre-icon.png') center no-repeat;
+  background-size: 100%;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:nth-child(2) {
-  padding: 10px 0px 10px 0px;
-  border-bottom: 1px solid #e9e9e9;
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc;
   display: flex;
+  margin-left: 15px;
+  /***添加的新样式**/
   justify-content: flex-start;
   align-items: center;
 }
@@ -2884,35 +2961,54 @@ __________________*/
   color: #999999;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:nth-child(2) > span:last-child {
-  color: #4789e0;
   margin-left: 8px;
+  position: relative;
+  flex: 1;
+  zoom: 1;
+}
+.ysp-atreport-dialog-body .ysp-atreport-aimdate > div:nth-child(2) > span:last-child::after {
+  display: block;
+  content: '';
+  visibility: visible;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 20px;
+  background: url('images/ysp-achievement-pre-icon.png') center no-repeat;
+  background-size: 100%;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:last-child {
-  padding: 10px 0px 10px 0px;
+  padding: 15px 15px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #dedede;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:last-child > span:first-child {
   color: #999999;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:last-child > span:last-child {
   margin-left: 8px;
+  flex: 1;
 }
 .ysp-atreport-dialog-body .ysp-atreport-aimdate > div:last-child > span:last-child select {
   flex: 1;
   margin: 0;
   padding: 0;
-  border-radius: 5px;
   background: #fff;
-  padding: 0px 160px 0px 10px;
-  font-size: 12px;
+  /*** padding: 0px 160px 0px 10px;***/
   display: block;
+  /**font-weight: bold;*/
+  font-size: 20px;
   height: 36px;
-  background-size: 20px;
-  background-position: 185px;
+  border: none;
+  color: #4a8ade;
+  background-size: 12px 20px;
+  background-position: right center;
   background-repeat: no-repeat;
-  background-image: url(images/down-arrow-icon.png);
+  background-image: url(images/ysp-achievement-pre-icon.png);
 }
 .ysp-atreport-dialog-body .ysp-workReport-lable {
   padding: 10px;
@@ -2921,24 +3017,20 @@ __________________*/
   height: 60px;
   overflow: hidden;
 }
-.ysp-atreport-dialog-body .ysp-workReport-lable .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-atreport-dialog-body .ysp-workReport-lable .ysp-workReport-uncheck,
 .ysp-atreport-dialog-body .ysp-workReport-lable .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-atreport-dialog-body .ysp-workReport-lable .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-atreport-dialog-body .ysp-workReport-lable-gd {
   padding: 10px 0px 10px 10px;
@@ -2947,24 +3039,20 @@ __________________*/
   height: 55px;
   overflow: hidden;
 }
-.ysp-atreport-dialog-body .ysp-workReport-lable-gd .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-atreport-dialog-body .ysp-workReport-lable-gd .ysp-workReport-uncheck,
 .ysp-atreport-dialog-body .ysp-workReport-lable-gd .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-atreport-dialog-body .ysp-workReport-lable-gd .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-atreport-dialog-body .ysp-workReport-gd {
   display: flex;
@@ -2979,24 +3067,20 @@ __________________*/
   background: #f2f2f2;
   overflow: hidden;
 }
-.ysp-atreport-dialog-body .ysp-workReport-lable-sq .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-atreport-dialog-body .ysp-workReport-lable-sq .ysp-workReport-uncheck,
 .ysp-atreport-dialog-body .ysp-workReport-lable-sq .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-atreport-dialog-body .ysp-workReport-lable-sq .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-atreport-dialog-body .ysp-workReport-sq {
   display: flex;
@@ -3012,8 +3096,11 @@ __________________*/
 .ysp-atreport-dialog-body .ysp-atreport-text {
   min-height: 80px;
   background-color: #fff;
-  padding: 8px 14px 0px 14px;
+  padding: 15px;
   resize: none;
+}
+.ysp-atreport-dialog-body .ysp-atreport-text ul > li {
+  margin-bottom: 10px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-text-div {
   min-height: 80px;
@@ -3065,6 +3152,17 @@ __________________*/
 .ysp-atreport-dialog-body .ysp-atreport-picture {
   background-color: #fff;
   margin-top: 14px;
+  border-bottom: 1px solid #e9e9e9;
+}
+.ysp-atreport-dialog-body .ysp-atreport-picture .report-superiors .report {
+  min-width: 27%;
+  text-align: center;
+  border: 1px solid #5692E2;
+  color: #5692E2;
+  border-radius: 5px;
+  float: left;
+  margin: 10px;
+  position: relative;
 }
 .ysp-atreport-dialog-body .ysp-atreport-picture > div:first-child {
   border-bottom: 1px solid #e9e9e9;
@@ -3133,13 +3231,15 @@ __________________*/
   padding: 14px;
   color: #4789e0;
   font-size: 16px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  /**
+          text-overflow:ellipsis; 
+          white-space:nowrap; 
+          overflow:hidden;***/
 }
 .ysp-atreport-dialog-body .ysp-atreport-message {
   background-color: #fff;
   margin-top: 14px;
+  padding-bottom: 60px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-message > div:first-child {
   display: flex;
@@ -3244,6 +3344,104 @@ __________________*/
 .ysp-atreport-dialog-body .ysp-atreport-message .ysp-atreport-messageks {
   color: #999999;
 }
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply1 {
+  margin-left: 10px;
+  padding: 30px 10px 30px 0;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply2 {
+  padding: 30px 10px;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply1,
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply2 {
+  line-height: 1.5;
+  border-bottom: 1px solid #e7e7e7;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply1 h6,
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply2 h6,
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply1 span:nth-of-type(2),
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply2 span:nth-of-type(2) {
+  color: #3f90e6;
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply1 .reply-time-btn,
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply2 .reply-time-btn {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #989898;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply1 .reply-time-btn span,
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply2 .reply-time-btn span {
+  flex: 1;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply1 .reply-time-btn a:first-of-type,
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply2 .reply-time-btn a:first-of-type {
+  position: relative;
+  width: 24px;
+  height: 20px;
+  margin-right: 8px;
+  /**
+              background-color: rgb(190,190,190);
+              **/
+  border: 1px solid #bebebe;
+  border-bottom: none;
+  -moz-border-radius: 50% 50%;
+  -webkit-border-radius: 50% 50%;
+  border-radius: 50% 50%;
+  transform: rotate(10deg);
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply1 .reply-time-btn a:first-of-type:before,
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply2 .reply-time-btn a:first-of-type:before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  top: 78%;
+  left: 40%;
+  border-width: 1px 1px 0 0;
+  border-radius: 1px 1px 0 0;
+  border-color: #a3a3a3 #a3a3a3 transparent transparent;
+  border-style: solid;
+  transform: rotate(130deg);
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply1 .reply-time-btn a:last-of-type,
+.ysp-atreport-dialog-body .ysp-atreport-message .message-reply2 .reply-time-btn a:last-of-type {
+  color: #a3a3a3;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .reply-content-dialog {
+  padding: 0 10px 30px;
+  background-color: #f2f2f2;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .reply-content-dialog > .dialog-input {
+  margin-bottom: 10px;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .reply-content-dialog > .dialog-input textarea {
+  width: 100%;
+  background-color: #FFF;
+  padding: 10px 0 0 10px;
+  border: 1px solid #e4e4e4;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .reply-content-dialog > .dialog-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .reply-content-dialog > .dialog-btn span {
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .reply-content-dialog > .dialog-btn span:first-child {
+  background-color: #fff;
+  color: #4895ed;
+  border: 1px solid #4895ed;
+  margin-right: 10px;
+}
+.ysp-atreport-dialog-body .ysp-atreport-message .reply-content-dialog > .dialog-btn span:last-child {
+  color: #fff;
+  background-color: #4895ed;
+}
 .ysp-atreport-dialog-body .ysp-atreport-dxname {
   min-height: 40px;
   padding: 14px;
@@ -3257,13 +3455,43 @@ __________________*/
   color: #333333;
 }
 .ysp-atreport-dialog-body .ysp-atreport-send {
-  min-heigth: 130px;
+  /**  margin-bottom: 20px;**/
+  min-height: 130px;
   background-color: #fff;
   padding: 14px;
+  position: relative;
+  border-bottom: 1px solid #e9e9e9;
+}
+.ysp-atreport-dialog-body .ysp-atreport-send::before {
+  position: absolute;
+  display: block;
+  content: '';
+  visibility: visible;
+  width: 4px;
+  height: 20px;
+  background-color: #2c7dff;
+  top: 14px;
 }
 .ysp-atreport-dialog-body .ysp-atreport-send textarea {
   resize: none;
   font-size: 16px;
+  border: none;
+  margin-left: 8px;
+  padding: 0;
+  min-height: 3rem;
+}
+.ysp-atreport-dialog-body .ysp-atreport-send textarea::-webkit-input-placeholder {
+  color: #9d9d9d;
+  /**对占位符字体颜色的更改竟然没有起作用？！*/
+}
+.ysp-atreport-dialog-body .ysp-atreport-send textarea::-moz-placeholder {
+  color: #9d9d9d;
+}
+.ysp-atreport-dialog-body .ysp-atreport-send textarea:-moz-placeholder {
+  color: #9d9d9d;
+}
+.ysp-atreport-dialog-body .ysp-atreport-send textarea:-ms-input-placeholder {
+  color: #9d9d9d;
 }
 .ysp-atreport-dialog-body .ysp-atreport-send .ysp-textArea {
   color: #333333 !important;
@@ -3276,21 +3504,32 @@ __________________*/
   justify-content: flex-end;
   color: #999999;
   align-items: center;
+  /**.ysp-atreport-unatsend{
+           font-size: 16px;
+           color: #777;
+           padding: 3px 15px;
+           border: 2px solid #777;
+           border-radius: 10px;
+           margin-right: 15px;
+           background-color: #ccc;
+           
+         }
+      
+         .ysp-atreport-buttonsend{
+           border: 1px solid #e9e9e9;
+           border-radius:10px;
+           padding: 5px 20px;
+           font-size: 16px;
+         }**/
 }
 .ysp-atreport-dialog-body .ysp-atreport-send > span:last-child .ysp-atreport-atsend {
-  font-size: 20px;
-  padding-right: 20px;
-}
-.ysp-atreport-dialog-body .ysp-atreport-send > span:last-child .ysp-atreport-unatsend {
   font-size: 16px;
-  padding-right: 20px;
-  color: #2c80ff;
-}
-.ysp-atreport-dialog-body .ysp-atreport-send > span:last-child .ysp-atreport-buttonsend {
-  border: 1px solid #e9e9e9;
+  padding: 3px 20px;
+  border: 2px solid #2c80ff;
   border-radius: 10px;
-  padding: 5px 20px;
-  font-size: 16px;
+  margin-right: 10px;
+  color: #2c80ff;
+  background-color: #fff;
 }
 .ysp-atreport-dialog-body .ysp-atreport-send > span:last-child .ysp-atreport-unbuttonsend {
   border: 1px solid #e9e9e9;
@@ -3305,67 +3544,151 @@ __________________*/
   justify-content: flex-start;
   align-items: center;
   background: #fff;
-  padding: 14px;
+  padding: 10px;
   flex-wrap: wrap;
 }
 .ysp-atreport-dialog-body .ysp-atreport-atnames .ysp-atreport-names {
-  border: 2px solid #cccccc;
-  border-radius: 8px;
-  color: #666666;
-  font-size: 13px;
-  padding: 5px 5px 2px 5px;
-  margin-left: 5px;
-  margin-bottom: 8px;
+  /**
+        border: 2px solid #cccccc;
+        border-radius: 8px;
+        color: #666666;
+        font-size: 13px;
+        padding: 5px 5px 2px 5px;
+    		margin-left: 5px;
+        margin-bottom: 8px;
+        **/
+  background-color: #d9eafa;
+  padding: 0 8px;
+  min-width: 27%;
+  text-align: center;
+  border: 1px solid #5692E2;
+  color: #5692E2;
+  border-radius: 5px;
+  float: left;
+  margin: 8px;
+  position: relative;
 }
 .ysp-atreport-dialog-body .ysp-atreport-atnames .ysp-atreport-names > span:first-child {
   display: inline-block;
   vertical-align: middle;
+  position: relative;
   width: 20px;
   height: 20px;
-  background: url(images/ysp-atreport-delect-icon.png);
-  background-repeat: no-repeat;
-  background-size: 15px;
-  margin-left: 4px;
+  border-radius: 10px;
+  padding-right: 2px;
+  margin-right: 4px;
+  background-color: #9fc8f4;
+  /***
+          background: url(./images/ysp-atreport-delect-icon.png);
+          background-repeat: no-repeat;
+          background-size: 15px;
+          margin-left: 4px;***/
+}
+.ysp-atreport-dialog-body .ysp-atreport-atnames .ysp-atreport-names > span:first-child > i {
+  position: absolute;
+  color: #FFF;
+  font-size: 22px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-60%, -55%);
 }
 .ysp-atreport-dialog-body .ysp-atreport-atnames .ysp-atreport-names > span:last-child {
-  margin-left: 5px;
+  /***margin-left: 5px;***/
+  display: inline-block;
+  vertical-align: middle;
+}
+.ysp-atreport-dialog-body .layui-layer-dialog {
+  position: absolute;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.ysp-atreport-dialog-body .layui-layer-dialog .dialog-body {
+  width: 80%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  padding-bottom: 20px;
+}
+.ysp-atreport-dialog-body .layui-layer-dialog .dialog-body .dialog-title,
+.ysp-atreport-dialog-body .layui-layer-dialog .dialog-body .dialog-sure {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.ysp-atreport-dialog-body .layui-layer-dialog .dialog-body .dialog-title {
+  justify-content: space-between;
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #bebebe;
+}
+.ysp-atreport-dialog-body .layui-layer-dialog .dialog-body .dialog-title span:last-child {
+  font-size: 22px;
+}
+.ysp-atreport-dialog-body .layui-layer-dialog .dialog-body .dialog-title,
+.ysp-atreport-dialog-body .layui-layer-dialog .dialog-body .dialog-content {
+  line-height: 3;
+  text-align: center;
+}
+.ysp-atreport-dialog-body .layui-layer-dialog .dialog-body .dialog-sure {
+  justify-content: flex-end;
+}
+.ysp-atreport-dialog-body .layui-layer-dialog .dialog-body .dialog-sure span {
+  color: #FFF;
+  background-color: #2e8ded;
+  border: 1px solid #2e8ded;
+  border-radius: 5px;
+  padding: 5px 12px;
 }
 .ysp-atreport-dialog-gsperson {
   overflow-x: hidden;
   overflow-y: auto;
+  /** overflow-y: hidden;**/
   background: #F2F2F2;
 }
 .ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum {
   background: #fff;
-  overflow: scroll;
+  /**overflow: scroll;*/
+  overflow: auto;
 }
 .ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .ysp-atreport-dialog-person {
   position: relative;
   padding: 10px;
   z-index: 0;
 }
+.ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .ysp-atreport-dialog-person:not(:last-child) {
+  border-bottom: 1px solid #d2d2d2;
+}
+.ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .ysp-atreport-dialog-person .ysp-person-list {
+  color: #333333;
+}
 .ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .ysp-atreport-dialog-person .active {
   position: absolute;
   top: 13px;
-  left: 29px;
+  right: 10px;
   display: block;
-  width: 20px;
+  width: 12px;
   height: 20px;
-  background: url('images/ysp-atreport-gs-icon.png') no-repeat center center;
-  background-size: 50%;
+  background: url('images/ysp-achievement-pre-icon.png') no-repeat center center;
+  background-size: 75%;
 }
 .ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .ysp-atreport-dialog-person .unactive {
   position: absolute;
   top: 13px;
-  left: 29px;
+  /*** left: 29px;  样式修改：将left: 29px;修改成如下的 right:10px;***/
+  right: 10px;
   display: block;
   width: 20px;
-  height: 20px;
-  background: url('images/ysp-atreport-gsopen-icon.png') no-repeat center center;
+  height: 12px;
+  background: url('images/ysp-achievement-pre-open-icon.jpg') no-repeat center center;
   background-size: 75%;
 }
 .ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum > div:nth-last-child(2) {
-  margin-bottom: 120px;
+  margin-bottom: 160px;
 }
 .ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .person-icon {
   width: 95%;
@@ -3380,7 +3703,7 @@ __________________*/
   background: url('images/checkbox-checked-icon.png') no-repeat center center;
   background-size: 100%;
   float: left;
-  margin-left: 66px;
+  margin-left: 26px;
   border-radius: 50%;
   color: white;
   padding: 0 4px 0 0;
@@ -3391,9 +3714,25 @@ __________________*/
   background: url('images/checkbox-unchecked-icon.png') no-repeat center center;
   background-size: 100%;
   float: left;
-  margin-left: 66px;
+  margin-left: 26px;
   border-radius: 50%;
   border: 1px solid #ddd;
+}
+.ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .person-icon .icon-selected {
+  width: 33px;
+  height: 33px;
+  background: url('images/selected-person-image.png') no-repeat center center;
+  background-size: 100%;
+  float: left;
+  margin-left: 10px;
+}
+.ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .person-icon .icon-unselected {
+  width: 33px;
+  height: 33px;
+  background: url('images/unselected-person-image.png') no-repeat center center;
+  background-size: 100%;
+  float: left;
+  margin-left: 10px;
 }
 .ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .person-icon > div {
   float: left;
@@ -3401,8 +3740,8 @@ __________________*/
 }
 .ysp-atreport-dialog-gsperson .Dialog-file-Wj {
   padding: 10px;
-  padding-left: 100px;
-  background: url('images/ysp-atreport-file-icon.png') no-repeat 55px center;
+  padding-left: 42px;
+  background: url('images/ysp-atreport-file-icon.png') no-repeat 10px center;
   background-size: 22px;
 }
 .ysp-atreport-dialog-gsperson .commit-dialog {
@@ -3410,7 +3749,7 @@ __________________*/
   padding: 0 25px 0 0;
   position: fixed;
   z-index: 9999;
-  background: #fff;
+  background: #f2f2f2;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -3474,7 +3813,14 @@ div[data-ysp-modelid="AtReportDetail"] {
 div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog .ysp-dialog-wrapper {
   position: absolute;
   background: #fff;
-  height: 1700px;
+  overflow: auto;
+}
+div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-top > span {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #FFF;
+  z-index: 2000;
 }
 /***
 @我的报告 end
@@ -4758,17 +5104,35 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
 .wtite-report .images-report .upload {
   display: inherit!important;
   overflow: hidden;
-  padding: 24px 20px;
+  padding: 24px 10px;
+}
+.wtite-report .images-report .upload > div:nth-child(1) {
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #525252;
 }
 .wtite-report .images-report .upload .updata-image {
+  border: 3px solid #e1e1e1;
   float: left;
   width: 100px;
   height: 100px;
+  margin-bottom: 40px;
   background: url('images/update.png') no-repeat center center;
-  background-size: 100%;
+  background-size: 40%;
   padding-top: 110px;
   text-align: center;
   margin-right: 5px;
+  color: #9e9e9e;
+  position: relative;
+}
+.wtite-report .images-report .upload .updata-image > span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  margin-top: 10px;
+  color: #9e9e9e;
+  min-width: 4rem;
 }
 .wtite-report .images-report .upload .file-images-row {
   float: left;
@@ -4787,6 +5151,8 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   text-overflow: ellipsis;
   overflow: hidden;
   margin-bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .wtite-report .images-report .upload .file-images-row i {
   position: absolute;
@@ -4801,40 +5167,68 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   padding: 10px;
   margin: 3px;
 }
-.wtite-report .images-report .upload .file-images-rows {
+.wtite-report .images-report .upload .file-images {
+  position: relative;
   float: left;
+  margin-bottom: 40px;
+  zoom: 1;
+}
+.wtite-report .images-report .upload .file-images::after {
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  content: '';
+  clear: both;
+}
+.wtite-report .images-report .upload .file-images .file-images-rows {
   width: 100px;
   overflow: hidden;
-  height: 138px;
+  height: 116px;
   position: relative;
   margin-right: 6px;
+  background: #dbdddc;
 }
-.wtite-report .images-report .upload .file-images-rows span {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  white-space: nowrap;
-  font-size: 15px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin-bottom: 5px;
-}
-.wtite-report .images-report .upload .file-images-rows i {
+.wtite-report .images-report .upload .file-images .file-images-rows i {
   position: absolute;
   right: 0;
   top: 0;
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
-  background-size: 100%;
+  /** 
+          background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
+          background-size: 100%;
+          **/
+  background-color: #FFF;
   border-radius: 50%;
   padding: 10px;
   margin: 3px;
 }
+.wtite-report .images-report .upload .file-images .file-images-rows i > span {
+  font-size: 23px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: -1px;
+  color: #d4d4d4;
+}
+.wtite-report .images-report .upload .file-images > span {
+  max-width: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 5px;
+  top: 116px;
+  margin-top: 10px;
+}
 .wtite-report .personnel > div:nth-child(1) {
   overflow: hidden;
-  padding: 10px;
+  padding: 10px 15px;
 }
 .wtite-report .personnel > div:nth-child(1) > div:nth-child(1) {
   float: left;
@@ -4851,9 +5245,10 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
 }
 .wtite-report .personnel > div:nth-child(2) {
   overflow: hidden;
+  min-height: 48px;
 }
 .wtite-report .personnel .report {
-  width: 27%;
+  min-width: 27%;
   text-align: center;
   border: 1px solid #5692E2;
   color: #5692E2;
@@ -4862,8 +5257,38 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   margin: 10px;
   position: relative;
 }
+.wtite-report .personnel .report1 {
+  background-color: #d9eafa;
+  padding: 0 10px;
+}
+.wtite-report .personnel .report1 > div {
+  /***text-align:right;***/
+}
+.wtite-report .personnel .report1 > div .personal-close {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  color: #FFF;
+  border-radius: 10px;
+  font-size: 22px;
+  padding-right: 2px;
+  margin-right: 8px;
+  background-color: #9fc8f4;
+}
+.wtite-report .personnel .report1 > div .personal-close > span {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -55%);
+}
+.wtite-report .personnel .report1 > div span {
+  display: inline-block;
+  vertical-align: middle;
+}
 .wtite-report .update-commit {
   text-align: center;
+  background: #ececec;
 }
 .wtite-report .update-commit button {
   width: 47%;
@@ -4889,33 +5314,35 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   background: #fff;
   overflow: auto;
   height: 100vh;
+  /**>div:last-child{margin-bottom:120px;}**/
 }
 .Dialog-content .ysp-atreport-dialog-person {
   position: relative;
   padding: 10px;
+  border-bottom: 1px solid #d2d2d2;
 }
 .Dialog-content .ysp-atreport-dialog-person .active {
   position: absolute;
   top: 13px;
-  left: 29px;
+  right: 10px;
   display: block;
-  width: 20px;
+  width: 12px;
   height: 20px;
-  background: url('images/ysp-atreport-gs-icon.png') no-repeat center center;
-  background-size: 50%;
+  background: url('images/ysp-achievement-pre-icon.png') no-repeat center center;
+  background-size: 75%;
 }
 .Dialog-content .ysp-atreport-dialog-person .unactive {
   position: absolute;
   top: 13px;
-  left: 29px;
+  right: 10px;
   display: block;
   width: 20px;
-  height: 20px;
-  background: url('images/ysp-atreport-gsopen-icon.png') no-repeat center center;
+  height: 12px;
+  background: url('images/ysp-achievement-pre-open-icon.jpg') no-repeat center center;
   background-size: 75%;
 }
 .Dialog-content > div:nth-last-child(2) {
-  margin-bottom: 120px;
+  margin-bottom: 160px;
 }
 .Dialog-content .person-icon {
   width: 95%;
@@ -4924,13 +5351,30 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   overflow: hidden;
   padding: 10px;
 }
+.Dialog-content .person-icon .icon-selected {
+  width: 33px;
+  height: 33px;
+  background: url('images/selected-person-image.png') no-repeat center center;
+  background-size: 100%;
+  float: left;
+  margin-left: 10px;
+}
+.Dialog-content .person-icon .icon-unselected {
+  width: 33px;
+  height: 33px;
+  background: url('images/unselected-person-image.png') no-repeat center center;
+  background-size: 100%;
+  float: left;
+  margin-left: 10px;
+}
 .Dialog-content .person-icon .icon-active {
   width: 23px;
   height: 23px;
   background: url('images/checkbox-checked-icon.png') no-repeat center center;
   background-size: 100%;
   float: left;
-  margin-left: 66px;
+  margin-left: 26px;
+  margin-top: 5px;
   border-radius: 50%;
   color: white;
   padding: 0 4px 0 0;
@@ -4941,18 +5385,20 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   background: url('images/checkbox-unchecked-icon.png') no-repeat center center;
   background-size: 100%;
   float: left;
-  margin-left: 66px;
+  margin-left: 26px;
+  margin-top: 5px;
   border-radius: 50%;
   border: 1px solid #ddd;
 }
 .Dialog-content .person-icon > div {
   float: left;
-  margin-left: 20px;
+  margin-left: 10px;
+  padding-top: 4px;
 }
 .Dialog-file-Wj {
   padding: 10px;
-  padding-left: 100px;
-  background: url('images/ysp-atreport-file-icon.png') no-repeat 55px center;
+  padding-left: 42px;
+  background: url('images/ysp-atreport-file-icon.png') no-repeat 10px center;
   background-size: 22px;
 }
 .commit-dialog {
@@ -4960,7 +5406,8 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   padding: 0 25px 0 0;
   position: fixed;
   z-index: 1000;
-  background: #fff;
+  /**background: #fff;**/
+  background-color: #f2f2f2;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -7110,45 +7557,84 @@ div[data-ysp-modelid="dayPSI"] > div:nth-child(3) {
   margin: 0 0 10px 0;
 }
 .ysp_testPaper_wrapper .ysp_report_upPic .updata-image {
+  /***
+        float: left;
+        width:50px;
+        height: 50px;
+        background: url('./images/update.png') no-repeat center center;
+        background-size: 100%;
+        padding-top: 110px;
+    		text-align: center;
+        margin-right: 5px;***/
+  border: 2px solid #e1e1e1;
   float: left;
   width: 50px;
   height: 50px;
   background: url('images/update.png') no-repeat center center;
-  background-size: 100%;
-  padding-top: 110px;
+  background-size: 40%;
+  padding-top: 55px;
   text-align: center;
   margin-right: 5px;
+  color: #9e9e9e;
 }
-.ysp_testPaper_wrapper .ysp_report_upPic .file-images-rows {
+.ysp_testPaper_wrapper .ysp_report_upPic .file-images {
+  position: relative;
   float: left;
+  margin-bottom: 40px;
+  zoom: 1;
+}
+.ysp_testPaper_wrapper .ysp_report_upPic .file-images::after {
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  content: '';
+  clear: both;
+}
+.ysp_testPaper_wrapper .ysp_report_upPic .file-images .file-images-rows {
   width: 100px;
   overflow: hidden;
-  height: 138px;
+  height: 116px;
   position: relative;
   margin-right: 6px;
+  background: #dbdddc;
 }
-.ysp_testPaper_wrapper .ysp_report_upPic .file-images-rows span {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  white-space: nowrap;
-  font-size: 15px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin-bottom: 5px;
-}
-.ysp_testPaper_wrapper .ysp_report_upPic .file-images-rows i {
+.ysp_testPaper_wrapper .ysp_report_upPic .file-images .file-images-rows i {
   position: absolute;
   right: 0;
   top: 0;
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
-  background-size: 100%;
+  /** 
+          background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
+          background-size: 100%;
+          **/
+  background-color: #FFF;
   border-radius: 50%;
   padding: 10px;
   margin: 3px;
+}
+.ysp_testPaper_wrapper .ysp_report_upPic .file-images .file-images-rows i > span {
+  font-size: 23px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: -1px;
+  color: #d4d4d4;
+}
+.ysp_testPaper_wrapper .ysp_report_upPic .file-images > span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 5px;
+  top: 116px;
+  margin-top: 10px;
+  min-width: 80px;
 }
 /******HES报告 end**********/
 .ysp-sale-count .contentItem .content-left > div:last-child div:nth-child(3) {
@@ -8838,9 +9324,7 @@ div[data-ysp-modelid="storeDayPSI"] > div:nth-child(4) {
   text-align: center;
   background: #0e90d2;
   color: #fff;
-  padding: 8px 0;
-  font-size: 14px;
-  margin-top: 20px;
+  padding: 5px 0;
 }
 /**************HES信息录入日别PSI录入END***************************/
 /**************HES信息录入周别PSI录入start***************************/
@@ -9004,9 +9488,7 @@ div[data-ysp-modelid="storeWeekPSI"] {
   background: #0e90d2;
   border: 1px solid #0e90d2;
   color: #fff;
-  padding: 8px 0;
-  font-size: 14px;
-  margin-top: 20px;
+  padding: 5px 0;
 }
 /**************HES信息录入周别PSI录入END***************************/
 input::-webkit-outer-spin-button,
@@ -10690,24 +11172,20 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   height: 60px;
   overflow: hidden;
 }
-.ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-uncheck,
 .ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-store-report-dialog .ysp-workReport-lable .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-store-report-dialog .ysp-workReport-lable-gd {
   padding: 10px 0px 10px 10px;
@@ -10716,24 +11194,20 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   height: 55px;
   overflow: hidden;
 }
-.ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-uncheck,
 .ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-gd .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-store-report-dialog .ysp-workReport-gd {
   display: flex;
@@ -10748,24 +11222,20 @@ section.ysp-store-details > footer > div:nth-child(4) > ul > li:last-child {
   background: #f2f2f2;
   overflow: hidden;
 }
-.ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-uncheck {
-  float: left;
-  border-radius: 5px;
-  padding: 2px 5px;
-  border: 1px solid #4796ed;
-  margin: 5px;
-  color: #4796ed;
-  text-align: center;
-}
+.ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-uncheck,
 .ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-check {
   float: left;
   border-radius: 5px;
-  padding: 2px 5px;
+  text-align: center;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
-  text-align: center;
+  color: #4796ed;
+  background-color: #FFF;
+}
+.ysp-store-report-dialog .ysp-workReport-lable-sq .ysp-workReport-check {
+  color: #fff !important;
   background: #4796ed;
-  color: #fff;
 }
 .ysp-store-report-dialog .ysp-workReport-sq {
   display: flex;
@@ -11834,63 +12304,108 @@ div[data-tiptool="true"] {
 div[data-ysp-modelid="workPlanCustomStore"] {
   background: #f0eff5;
 }
-.ysp-workSummary-style .timeSearch {
+/**总结类型与计划时间的右半部分的公共样式向右箭头的**/
+.ysp-workSummary-style .timeSearch > .summary-type,
+.ysp-workSummary-style .timeSearch > .plan-time {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 10px 10px 0;
+  margin-left: 10px ;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e1e1e1;
+  /***>span:first-child{
+      flex:1;
+    }
+   ***/
+  /***
+    >div:nth-child(1){
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      >span:nth-child(1){
+        color: #999;
+        padding-right: 10px;
+      }
+      >span:nth-child(2){
+        select{
+          flex: 1;
+          margin: 0;
+          padding: 0;
+          border-radius: 6px;
+          background: #fff;
+          padding: 0px 30px 0px 10px;
+          font-size:12px;
+          display: block;
+          height: 30px;
+          background-size: 20px;
+          background-position: 40px;
+          background-repeat: no-repeat;
+          background-image: url(./images/down-arrow-icon.png);
+      	}
+      }
+    }
+    >div:nth-child(2){
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      >i:first-child{
+        display: block;
+        height: 20px;
+        width: 20px;
+        background-size: 15px;
+        background-repeat: no-repeat;
+        background-image: url(./images/ysp-achievement-date-icon.png);
+        margin-top: 2px;
+      }
+      >span:nth-child(2){
+        color: #999999;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      >i:nth-child(3){
+        display: block;
+        height: 20px;
+        width: 20px;
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-image: url(./images/ysp-achievement-pre-icon.png);
+        margin-top: 4px;
+      } 
+    }***/
 }
-.ysp-workSummary-style .timeSearch > div:nth-child(1) {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.ysp-workSummary-style .timeSearch > div:nth-child(1) > span:nth-child(1) {
-  color: #999;
-  padding-right: 10px;
-}
-.ysp-workSummary-style .timeSearch > div:nth-child(1) > span:nth-child(2) select {
+.ysp-workSummary-style .timeSearch > .summary-type > span:last-of-type,
+.ysp-workSummary-style .timeSearch > .plan-time > span:last-of-type {
   flex: 1;
+}
+.ysp-workSummary-style .timeSearch > .summary-type > span:last-child select {
+  border: none;
   margin: 0;
-  padding: 0;
-  border-radius: 6px;
-  background: #fff;
-  padding: 0px 30px 0px 10px;
-  font-size: 12px;
+  padding: 2px 0 0 10px ;
+  background-color: #fff;
   display: block;
   height: 30px;
-  background-size: 20px;
-  background-position: 40px;
-  background-repeat: no-repeat;
-  background-image: url(images/down-arrow-icon.png);
-}
-.ysp-workSummary-style .timeSearch > div:nth-child(2) {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.ysp-workSummary-style .timeSearch > div:nth-child(2) > i:first-child {
-  display: block;
-  height: 20px;
-  width: 20px;
-  background-size: 15px;
-  background-repeat: no-repeat;
-  background-image: url(images/ysp-achievement-date-icon.png);
-  margin-top: 2px;
-}
-.ysp-workSummary-style .timeSearch > div:nth-child(2) > span:nth-child(2) {
-  color: #999999;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.ysp-workSummary-style .timeSearch > div:nth-child(2) > i:nth-child(3) {
-  display: block;
-  height: 20px;
-  width: 20px;
   background-size: 10px;
+  background-position: right center;
   background-repeat: no-repeat;
   background-image: url(images/ysp-achievement-pre-icon.png);
-  margin-top: 4px;
+  color: #4796ed;
+  font-size: 18px;
+}
+.ysp-workSummary-style .timeSearch > .plan-time span:last-of-type {
+  border: none;
+  margin: 0;
+  padding: 2px 0 0 10px ;
+  background-color: #fff;
+  display: block;
+  height: 30px;
+  background-size: 10px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-image: url(images/ysp-achievement-pre-icon.png);
+  color: #4796ed;
+  font-size: 18px;
 }
 .ysp-workSummary-style .ysp-workSummary-text textarea {
   margin-bottom: 0rem;
@@ -11939,7 +12454,8 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 .ysp-workSummary-style .ysp-workSummary-lable .ysp-workSummary-uncheck {
   float: left;
   border-radius: 5px;
-  padding: 5px;
+  background-color: #FFF;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
   color: #4796ed;
@@ -11953,13 +12469,14 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   padding: 10px 0px 10px 10px;
   background: #f2f2f2;
   position: relative;
-  height: 108px;
+  height: 100px;
   overflow: hidden;
 }
 .ysp-workSummary-style .ysp-workSummary-lable-gd .ysp-workSummary-uncheck {
   float: left;
   border-radius: 5px;
-  padding: 5px;
+  background-color: #FFF;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
   color: #4796ed;
@@ -11985,7 +12502,8 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 .ysp-workSummary-style .ysp-workSummary-lable-sq .ysp-workSummary-uncheck {
   float: left;
   border-radius: 5px;
-  padding: 5px;
+  background-color: #FFF;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
   color: #4796ed;
@@ -12006,6 +12524,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 .ysp-workSummary-style .ysp-atreport-picture {
   background-color: #fff;
   margin-top: 14px;
+  border-bottom: 1px solid #e9e9e9;
 }
 .ysp-workSummary-style .ysp-atreport-picture > div:first-child {
   border-bottom: 1px solid #e9e9e9;
@@ -12081,95 +12600,116 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 .ysp-workSummary-style .images-report .upload {
   display: inherit!important;
   overflow: hidden;
-  padding: 0px 20px 10px 20px;
+  padding: 0 20px 10px 10px;
 }
 .ysp-workSummary-style .images-report .upload > div:nth-child(1) {
-  padding: 0px 0px 0px 10px;
+  /***padding: 0px 0px 0px 10px;***/
+  padding: 0;
+  margin-bottom: 14px;
+  font-size: 18px;
 }
 .ysp-workSummary-style .images-report .upload .updata-image {
   float: left;
   width: 100px;
+  margin-bottom: 40px;
   background: url('images/update.png') no-repeat center center;
   background-size: 50%;
-  padding-top: 100px;
+  padding-top: 110px;
   text-align: center;
   margin-right: 5px;
-  border: 1px solid #ececec;
+  border: 3px solid #ececec;
   color: #999;
+  position: relative;
 }
-.ysp-workSummary-style .images-report .upload .file-images-row {
+.ysp-workSummary-style .images-report .upload .updata-image > span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  margin-top: 10px;
+  color: #9e9e9e;
+  min-width: 4rem;
+}
+.ysp-workSummary-style .images-report .upload .file-images {
+  position: relative;
   float: left;
+  margin-bottom: 40px;
+  zoom: 1;
+}
+.ysp-workSummary-style .images-report .upload .file-images::after {
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  content: '';
+  clear: both;
+}
+.ysp-workSummary-style .images-report .upload .file-images .file-images-rows {
   width: 100px;
   overflow: hidden;
-  height: 100px;
+  height: 116px;
   position: relative;
   margin-right: 6px;
+  background: #dbdddc;
 }
-.ysp-workSummary-style .images-report .upload .file-images-row span {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  white-space: nowrap;
-  font-size: 15px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin-bottom: 5px;
+.ysp-workSummary-style .images-report .upload .file-images .file-images-rows img {
+  height: 100px;
 }
-.ysp-workSummary-style .images-report .upload .file-images-row i {
+.ysp-workSummary-style .images-report .upload .file-images .file-images-rows i {
   position: absolute;
   right: 0;
   top: 0;
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
-  background-size: 100%;
+  /** 
+          background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
+          background-size: 100%;
+          **/
+  background-color: #FFF;
   border-radius: 50%;
   padding: 10px;
   margin: 3px;
 }
-.ysp-workSummary-style .images-report .upload .file-images-rows {
-  float: left;
-  width: 100px;
-  overflow: hidden;
-  height: 138px;
-  position: relative;
-  margin-right: 6px;
-}
-.ysp-workSummary-style .images-report .upload .file-images-rows img {
-  height: 100px;
-}
-.ysp-workSummary-style .images-report .upload .file-images-rows span {
+.ysp-workSummary-style .images-report .upload .file-images .file-images-rows i > span {
+  font-size: 23px;
   position: absolute;
-  bottom: 0px;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: -1px;
+  color: #d4d4d4;
+}
+.ysp-workSummary-style .images-report .upload .file-images > span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   white-space: nowrap;
   font-size: 15px;
   text-overflow: ellipsis;
   overflow: hidden;
   margin-bottom: 5px;
-}
-.ysp-workSummary-style .images-report .upload .file-images-rows i {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
-  background-size: 100%;
-  border-radius: 50%;
-  padding: 10px;
-  margin: 3px;
+  top: 116px;
+  margin-top: 10px;
+  max-width: 80px;
 }
 .ysp-workSummary-style .ysp-worksum {
   background: #ececec;
-  height: 40px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 .ysp-workSummary-style .ysp-worksum > span:nth-child(1) {
-  display: inline-block;
-  padding: 10px 10px;
   color: #999;
+}
+.ysp-workSummary-style .ysp-worksum > span:nth-child(2) {
+  background-color: #FFF;
+  color: #4796ed;
+  text-align: center;
+  border: 1px solid #4796ed;
+  border-radius: 5px;
+  padding: 4px 12px;
+  padding-top: 2px;
 }
 .ysp-workSummary-style .personnel > div:nth-child(1) {
   overflow: hidden;
@@ -12190,9 +12730,10 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 }
 .ysp-workSummary-style .personnel > div:nth-child(2) {
   overflow: hidden;
+  min-height: 48px;
 }
 .ysp-workSummary-style .personnel .report {
-  width: 27%;
+  min-width: 27%;
   text-align: center;
   border: 1px solid #5692E2;
   color: #5692E2;
@@ -12200,6 +12741,35 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   float: left;
   margin: 10px;
   position: relative;
+}
+.ysp-workSummary-style .personnel .report1 {
+  background-color: #d9eafa;
+  padding: 0 10px;
+}
+.ysp-workSummary-style .personnel .report1 > div {
+  /***text-align:right;***/
+}
+.ysp-workSummary-style .personnel .report1 > div .personal-close {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  color: #FFF;
+  border-radius: 10px;
+  font-size: 22px;
+  padding-right: 2px;
+  margin-right: 8px;
+  background-color: #9fc8f4;
+}
+.ysp-workSummary-style .personnel .report1 > div .personal-close > span {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -55%);
+}
+.ysp-workSummary-style .personnel .report1 > div span {
+  display: inline-block;
+  vertical-align: middle;
 }
 .ysp-workSummary-style .update-commit {
   text-align: center;
@@ -12294,8 +12864,17 @@ div[data-ysp-modelid="workPlanCustomStore"] {
 div[data-componentsid="uiControl49_Q2Z6nE"] div.ysp-dialog-wrapper {
   margin-top: 0px !important;
 }
-div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper {
+div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper,
+div[data-componentsid="uiControl54_SGf8tA"] div.ysp-dialog-wrapper {
   margin-top: 0px !important;
+}
+div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper div.surebtn-right-top > span,
+div[data-componentsid="uiControl54_SGf8tA"] div.ysp-dialog-wrapper div.surebtn-right-top > span {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #FFF;
+  z-index: 2000;
 }
 .view-wrapper {
   height: 100vh;
@@ -12529,10 +13108,17 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 .ysp-atMe-workSummary .ysp-atMe-workSummary-text textarea {
   margin-bottom: 0rem;
   resize: none;
+  background-color: #FFF;
+  color: #3c3c3c;
+  border: none;
+}
+.ysp-atMe-workSummary .ysp-atMe-workSummary-text textarea[readonly="readonly"] {
+  color: #919191;
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-text > div:nth-child(1) {
   background: #ececec;
   height: 40px;
+  border: 1px solid #e1e1e1;
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-text > div:nth-child(1) > span:nth-child(1) {
   display: inline-block;
@@ -12541,11 +13127,20 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-text .ysp-atMe-workSummary-text-div {
   min-height: 40px;
-  padding: 0px 10px;
+  padding: 10px 15px;
+}
+.ysp-atMe-workSummary .ysp-atMe-workSummary-text .ysp-atMe-workSummary-text-div > ul li:not(:last-child) {
+  margin-bottom: 10px;
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-choseText textarea {
   margin-bottom: 0rem;
   resize: none;
+  background-color: #FFF;
+  color: #3c3c3c;
+  border: none;
+}
+.ysp-atMe-workSummary .ysp-atMe-workSummary-choseText textarea[readonly="readonly"] {
+  color: #919191;
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-choseText > div:nth-child(1) {
   display: flex;
@@ -12553,6 +13148,7 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   align-items: center;
   background: #ececec;
   height: 40px;
+  border: 1px solid #e1e1e1;
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-choseText > div:nth-child(1) > span:nth-child(1) {
   color: #999;
@@ -12560,7 +13156,10 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 }
 .ysp-atMe-workSummary .ysp-atMe-workSummary-choseText .ysp-atMe-workSummary-text-div {
   min-height: 40px;
-  padding: 0px 10px;
+  padding: 10px 15px;
+}
+.ysp-atMe-workSummary .ysp-atMe-workSummary-choseText .ysp-atMe-workSummary-text-div > ul li:not(:last-child) {
+  margin-bottom: 10px;
 }
 .ysp-atMe-workSummary .ysp-workSummary-lable {
   padding: 10px 0px 10px 10px;
@@ -12571,8 +13170,9 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 }
 .ysp-atMe-workSummary .ysp-workSummary-lable .ysp-workSummary-uncheck {
   float: left;
+  background-color: #FFF;
   border-radius: 5px;
-  padding: 5px;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
   color: #4796ed;
@@ -12586,13 +13186,14 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   padding: 10px 0px 10px 10px;
   background: #f2f2f2;
   position: relative;
-  height: 108px;
+  height: 100px;
   overflow: hidden;
 }
 .ysp-atMe-workSummary .ysp-workSummary-lable-gd .ysp-workSummary-uncheck {
   float: left;
+  background-color: #FFF;
   border-radius: 5px;
-  padding: 5px;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
   color: #4796ed;
@@ -12618,7 +13219,8 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 .ysp-atMe-workSummary .ysp-workSummary-lable-sq .ysp-workSummary-uncheck {
   float: left;
   border-radius: 5px;
-  padding: 5px;
+  background-color: #FFF;
+  padding: 3px 12px;
   border: 1px solid #4796ed;
   margin: 5px;
   color: #4796ed;
@@ -12639,6 +13241,146 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 .ysp-atMe-workSummary .ysp-atreport-picture {
   background-color: #fff;
   margin-top: 14px;
+  /**
+  border-bottom: 1px solid #e9e9e9;
+  ***/
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .personnel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 10px 4px;
+  border-bottom: 14px solid #e9e9e9;
+  min-height: 48px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .personnel > div {
+  margin: 0 8px 10px 0;
+  background-color: #d9eafa;
+  border-radius: 5px;
+  padding: 3px 12px;
+  border: 1px solid #5692E2;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .personnel > div > i {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #9fc8f4;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .personnel > div > i:first-child {
+  padding-left: 0;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .personnel > div > i a {
+  position: absolute;
+  /**
+          left: 0;
+          top:0;
+          bottom: 0;
+          right: 0;
+          margin:auto;*/
+  left: 50%;
+  top: 50%;
+  transform: translate(-60%, -55%);
+  font-size: 22px;
+  color: #FFF;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .personnel::after {
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  clear: both;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .personnel:after {
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  clear: both;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-superiors {
+  zoom: 1;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-superiors .report {
+  min-width: 27%;
+  text-align: center;
+  border: 1px solid #5692E2;
+  color: #5692E2;
+  border-radius: 5px;
+  float: left;
+  margin: 10px;
+  position: relative;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-superiors .report1 {
+  background-color: #d9eafa;
+  padding: 0 10px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-superiors .report1 > div {
+  /***text-align:right;***/
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-superiors .report1 > div .personal-close {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  color: #FFF;
+  border-radius: 10px;
+  font-size: 22px;
+  padding-right: 2px;
+  margin-right: 8px;
+  background-color: #9fc8f4;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-superiors .report1 > div .personal-close > span {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -55%);
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-superiors .report1 > div span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-superiors::after {
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  clear: both;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-supervisor {
+  margin: 20px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 10px 40px 10px;
+  zoom: 1;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-supervisor span {
+  float: left;
+  background-color: #daebfb;
+  padding: 10px;
+  text-align: center;
+  color: #4485de;
+  border-radius: 5px ;
+  margin: 10px;
+  min-width: 26%;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .report-supervisor:after {
+  content: "";
+  /**display:inline-block;特别要注意的是要清除浮动，display的属性值必须得是 block **/
+  display: block;
+  /**display:block 一定要记住,不能使display:inline-block;**/
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 .ysp-atMe-workSummary .ysp-atreport-picture > div:first-child {
   border-bottom: 1px solid #e9e9e9;
@@ -12704,12 +13446,308 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 }
 .ysp-atMe-workSummary .ysp-atreport-picture > div:last-child {
   min-height: 50px;
-  padding: 14px;
-  color: #4789e0;
+  /**padding:14px;**/
+  padding: 10px 0;
   font-size: 16px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message {
+  background-color: #fff;
+  margin-top: 14px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send {
+  padding: 20px 10px;
+  border-bottom: 1px solid #e9e9e9;
+  border-top: 1px solid #e9e9e9;
+  position: relative;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send::before {
+  position: absolute;
+  display: block;
+  content: '';
+  visibility: visible;
+  width: 4px;
+  height: 20px;
+  background-color: #2c7dff;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send textarea {
+  resize: none;
+  font-size: 16px;
+  border: none;
+  margin-left: 8px;
+  padding: 0;
+  min-height: 3rem;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send textarea::-webkit-input-placeholder {
+  color: #9d9d9d;
+  /**对占位符字体颜色的更改竟然没有起作用？！*/
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send textarea::-moz-placeholder {
+  color: #9d9d9d;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send textarea:-moz-placeholder {
+  color: #9d9d9d;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send textarea:-ms-input-placeholder {
+  color: #9d9d9d;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send .ysp-textArea {
+  color: #333333 !important;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send .textAreaColor {
+  color: #e9e9e9 !important;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send > span:last-child {
+  display: flex;
+  justify-content: flex-end;
+  color: #999999;
+  align-items: center;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send > span:last-child .ysp-atreport-atsend {
+  font-size: 16px;
+  padding: 3px 20px;
+  border: 2px solid #2c80ff;
+  border-radius: 10px;
+  margin-right: 10px;
+  color: #2c80ff;
+  background-color: #fff;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-send > span:last-child .ysp-atreport-unbuttonsend {
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  padding: 5px 20px;
+  font-size: 16px;
+  background: #2c80ff;
+  color: #fff;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message > div:first-child > span:first-child {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #000000;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message > div:first-child > span:last-child {
+  display: flex;
+  justify-content: space-between;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message > div:first-child > span:last-child > span:first-child {
+  color: #4789e0;
+  font-size: 13px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message > div:first-child > span:last-child > span:last-child {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url(images/atreport-message-icon.png);
+  background-repeat: no-repeat;
+  background-size: 15px;
+  margin-left: 4px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-name {
+  min-height: 40px;
+  border-bottom: 1px solid #e9e9e9;
+  padding: 20px 14px;
+  font-size: 13px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-name > div:first-child {
+  color: #2c80ff;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-name > div:last-child {
+  color: #333333;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-hf {
+  padding: 14px;
+  font-size: 13px;
+  border-bottom: 1px solid #e9e9e9;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-hf > div:first-child {
+  color: #2c80ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-hf > div:first-child > div:first-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-hf > div:first-child > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-hf > div:last-child > span:first-child {
+  color: #333333;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-hf > div:last-child > span:last-child {
+  color: #333333;
+  padding-left: 4px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-nohf {
+  padding: 14px;
+  font-size: 13px;
+  border-bottom: 1px solid #e9e9e9;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-nohf > div:first-child {
+  color: #2c80ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-nohf > div:first-child > div:first-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-nohf > div:first-child > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-nohf > div:last-child span {
+  color: #333333;
+  padding-left: 4px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-message-answername {
+  color: #2c80ff;
+  padding: 0px 4px 0px 4px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .ysp-atreport-messageks {
+  color: #999999;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 {
+  margin-left: 10px;
+  padding: 30px 10px 30px 0;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 {
+  padding: 30px 10px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 {
+  line-height: 1.5;
+  border-bottom: 1px solid #e7e7e7;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 h6,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 h6,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 span,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 span {
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 h6,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 h6,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 span:nth-of-type(2),
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 span:nth-of-type(2) {
+  color: #4789e0;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 span:nth-of-type(1),
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 span:nth-of-type(1),
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 span:nth-of-type(3),
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 span:nth-of-type(3) {
+  color: #000000;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 span:nth-of-type(3),
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 span:nth-of-type(3) {
+  white-space: normal;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 .reply-time-btn,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 .reply-time-btn {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #989898;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 .reply-time-btn span,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 .reply-time-btn span {
+  flex: 1;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 .reply-time-btn a:first-of-type,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 .reply-time-btn a:first-of-type {
+  position: relative;
+  width: 24px;
+  height: 20px;
+  margin-right: 8px;
+  /**
+              background-color: rgb(190,190,190);
+              **/
+  border: 1px solid #bebebe;
+  border-bottom: none;
+  -moz-border-radius: 50% 50%;
+  -webkit-border-radius: 50% 50%;
+  border-radius: 50% 50%;
+  transform: rotate(10deg);
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 .reply-time-btn a:first-of-type:before,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 .reply-time-btn a:first-of-type:before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  top: 78%;
+  left: 40%;
+  border-width: 1px 1px 0 0;
+  border-radius: 1px 1px 0 0;
+  border-color: #a3a3a3 #a3a3a3 transparent transparent;
+  border-style: solid;
+  transform: rotate(130deg);
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply1 .reply-time-btn a:last-of-type,
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .message-reply2 .reply-time-btn a:last-of-type {
+  color: #a3a3a3;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .reply-content-dialog {
+  padding: 0 10px 30px;
+  background-color: #f2f2f2;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .reply-content-dialog > .dialog-input {
+  margin-bottom: 10px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .reply-content-dialog > .dialog-input textarea {
+  width: 100%;
+  background-color: #FFF;
+  padding: 10px 0 0 10px;
+  border: 1px solid #e4e4e4;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .reply-content-dialog > .dialog-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .reply-content-dialog > .dialog-btn span {
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .reply-content-dialog > .dialog-btn span:first-child {
+  background-color: #fff;
+  color: #4895ed;
+  border: 1px solid #4895ed;
+  margin-right: 10px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-message .reply-content-dialog > .dialog-btn span:last-child {
+  color: #fff;
+  background-color: #4895ed;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-dialog .ysp-dialog-wrapper {
+  position: absolute;
+  background: #fff;
+  height: 1700px;
+}
+.ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-dialog div.surebtn-right-top > span {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #FFF;
+  z-index: 2000;
 }
 .ysp-atMe-workSummary .images-report .upload {
   display: inherit!important;
@@ -12722,6 +13760,7 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
 .ysp-atMe-workSummary .images-report .upload .updata-image {
   float: left;
   width: 100px;
+  margin-bottom: 40px;
   background: url('images/update.png') no-repeat center center;
   background-size: 50%;
   padding-top: 100px;
@@ -12729,6 +13768,16 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   margin-right: 5px;
   border: 1px solid #ececec;
   color: #999;
+  position: relative;
+}
+.ysp-atMe-workSummary .images-report .upload .updata-image > span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  margin-top: 10px;
+  color: #9e9e9e;
+  min-width: 4rem;
 }
 .ysp-atMe-workSummary .images-report .upload .file-images-row {
   float: left;
@@ -12747,6 +13796,8 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   text-overflow: ellipsis;
   overflow: hidden;
   margin-bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .ysp-atMe-workSummary .images-report .upload .file-images-row i {
   position: absolute;
@@ -12761,39 +13812,67 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   padding: 10px;
   margin: 3px;
 }
-.ysp-atMe-workSummary .images-report .upload .file-images-rows {
+.ysp-atMe-workSummary .images-report .upload .file-images {
+  position: relative;
   float: left;
+  margin-bottom: 40px;
+  zoom: 1;
+}
+.ysp-atMe-workSummary .images-report .upload .file-images::after {
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  content: '';
+  clear: both;
+}
+.ysp-atMe-workSummary .images-report .upload .file-images .file-images-rows {
   width: 100px;
   overflow: hidden;
-  height: 138px;
+  height: 116px;
   position: relative;
   margin-right: 6px;
+  background: #dbdddc;
 }
-.ysp-atMe-workSummary .images-report .upload .file-images-rows img {
+.ysp-atMe-workSummary .images-report .upload .file-images .file-images-rows img {
   height: 100px;
 }
-.ysp-atMe-workSummary .images-report .upload .file-images-rows span {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  white-space: nowrap;
-  font-size: 15px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin-bottom: 5px;
-}
-.ysp-atMe-workSummary .images-report .upload .file-images-rows i {
+.ysp-atMe-workSummary .images-report .upload .file-images .file-images-rows i {
   position: absolute;
   right: 0;
   top: 0;
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
-  background-size: 100%;
+  /** 
+          background: transparent url('images/ysp-atreport-delect-icon.png') no-repeat center center;
+          background-size: 100%;
+          **/
+  background-color: #FFF;
   border-radius: 50%;
   padding: 10px;
   margin: 3px;
+}
+.ysp-atMe-workSummary .images-report .upload .file-images .file-images-rows i > span {
+  font-size: 23px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: -1px;
+  color: #d4d4d4;
+}
+.ysp-atMe-workSummary .images-report .upload .file-images > span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 5px;
+  top: 116px;
+  margin-top: 10px;
+  max-width: 80px;
 }
 .ysp-atMe-workSummary .ysp-worksum {
   background: #ececec;
@@ -14183,7 +15262,7 @@ div[data-componentsid="uiControl316_O3sq7E"] > div:nth-child(1) > div:nth-child(
 .ysp-questionnaire-write > div:nth-child(1) > div:nth-child(4) > span:nth-child(1),
 .ysp-questionnaire-write > div:nth-child(1) > div:nth-child(5) > span:nth-child(1) {
   padding-right: 5px;
-  width: 27%;
+  min-width: 27%;
 }
 .ysp-questionnaire-write > div:nth-child(1) > div:nth-child(3) > span:nth-child(2),
 .ysp-questionnaire-write > div:nth-child(1) > div:nth-child(4) > span:nth-child(2),
@@ -14722,8 +15801,7 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
 .ysp-tableLists-box {
   background-color: #fff;
   padding-left: .9375rem;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 136px;
+  margin-bottom: 130px;
 }
 .ysp-tableLists-box .rank-top,
 .ysp-tableLists-box .rank-else,
