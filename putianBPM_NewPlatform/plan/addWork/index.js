@@ -229,7 +229,16 @@
       if (!elem) {
         return;
       }if (elem) {
-        var data = [];var enclosure = elem.querySelector("#enclosure");if (enclosure) {
+        var data = []; //   var enclosure = elem.querySelector("#enclosure");
+        //   if (enclosure) {
+        //     var enclosureList = enclosure.querySelectorAll("a");
+        //     if (enclosureList.length > 0) {
+        //       for (var i = 0; i < enclosureList.length; i++) {
+        //         data.push(enclosureList[i].textContent.trim());
+        //       }
+        //     }
+        //   }
+        var enclosure = elem.querySelector("#file");if (enclosure) {
           var enclosureList = enclosure.querySelectorAll("a");if (enclosureList.length > 0) {
             for (var i = 0; i < enclosureList.length; i++) {
               data.push(enclosureList[i].textContent.trim());
@@ -240,7 +249,8 @@
     },
     doAction_uiControl102_eHme9F: function (data, elem) {
       if (data.eventType == "enclosure") {
-        var i = data.dataCustom;var _btn = elem.querySelector("#enclosure").querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);var string = encodeURIComponent(_btn.textContent.trim());if (ysp.appMain.isIOS()) {
+        var i = data.dataCustom; // var _btn = elem.querySelector("#enclosure").querySelectorAll("a")[i];
+        var _btn = elem.querySelector("#file").querySelectorAll("a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);var string = encodeURIComponent(_btn.textContent.trim());if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(url + '?_ysp_filepreview=1&_ysp_ftpEncoding=gbk');
         } else if (ysp.appMain.isAndroid()) {
           // top.location.href = url;
@@ -249,8 +259,8 @@
       }
     },
     getTemplate_uiControl102_eHme9F: function () {
-      var selfTemplate = "module.exports = React.createClass({\n  enclosure:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        data:target.dataset.i,\n        eventType:\"enclosure\"\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData||[];\n \xA0 \xA0var _this=this;\n \xA0  return (\n      <div className=\"ysp_hrDetailInfo\" style={{marginTop:\"10px\"}}>\n       \t<div className=\"ysp_hrDetailInfo_title\">\u9644\u4EF6\u4FE1\u606F</div>\n        <div className=\"ysp_hrDetailInfo_content\">\n        {data&&data.length>0&&data.map(function(item,index){\n          return(\n \xA0 \xA0 \xA0 \xA0  \t<div className=\"ysp_hrDownload\" onClick={_this.enclosure.bind(_this)} data-i={index}>{item}</div>\n          )\n        })}  \n        </div>\n      </div>\n    )\n  }\n});";
-      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  enclosure: function enclosure(e) {\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        data: target.dataset.i,\n        eventType: "enclosure"\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData || [];\n    var _this = this;\n    return React.createElement(\n      "div",\n      { className: "ysp_hrDetailInfo", style: { marginTop: "10px" } },\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_title" },\n        "\\u9644\\u4EF6\\u4FE1\\u606F"\n      ),\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_content" },\n        data && data.length > 0 && data.map(function (item, index) {\n          return React.createElement(\n            "div",\n            { className: "ysp_hrDownload", onClick: _this.enclosure.bind(_this), "data-i": index },\n            item\n          );\n        })\n      )\n    );\n  }\n});';
+      var selfTemplate = 'module.exports = React.createClass({\n  enclosure:function(e){\n   \n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        data:target.dataset.i,\n        eventType:"enclosure"\n      })\n    }\n  },\n  render: function() {\n    var data=this.props.customData||[];\n \xA0 \xA0var _this=this;\n \xA0  return (\n      <div className="ysp_hrDetailInfo" style={{marginTop:"10px"}}>\n       \t<div className="ysp_hrDetailInfo_title">\u9644\u4EF6\u4FE1\u606F</div>\n        <div className="ysp_hrDetailInfo_content">\n        {data&&data.length>0&&data.map(function(item,index){\n          return(\n \xA0 \xA0 \xA0 \xA0  \t<div className="ysp_hrDownload" onClick={_this.enclosure.bind(_this)} data-i={index}>{item}</div>\n          )\n        })}  \n        </div>\n      </div>\n    )\n  }\n});';
+      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  enclosure: function enclosure(e) {\n\n    var target = e.target;\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        data: target.dataset.i,\n        eventType: "enclosure"\n      });\n    }\n  },\n  render: function render() {\n    var data = this.props.customData || [];\n    var _this = this;\n    return React.createElement(\n      "div",\n      { className: "ysp_hrDetailInfo", style: { marginTop: "10px" } },\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_title" },\n        "\\u9644\\u4EF6\\u4FE1\\u606F"\n      ),\n      React.createElement(\n        "div",\n        { className: "ysp_hrDetailInfo_content" },\n        data && data.length > 0 && data.map(function (item, index) {\n          return React.createElement(\n            "div",\n            { className: "ysp_hrDownload", onClick: _this.enclosure.bind(_this), "data-i": index },\n            item\n          );\n        })\n      )\n    );\n  }\n});';
     },
     getData_control139_n5Fi1T: function (elem) {
       if (!elem) {

@@ -38,9 +38,9 @@
     var winContainer = [];
     var clientEntry;
     var topW = top;
-  	debugger;
+  	
     topW.AndroidBack = function() {
-      debugger;
+   
       var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
       var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
       var name = ysp.customHelper.AndroidName; //客户门店返回名称标识

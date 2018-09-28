@@ -101,7 +101,7 @@
       if (data.eventType == "clickBtn") {
         var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
           top.pendTitle = "总部转正";win._ysp_top.tenderType = "turnTask";
-        } else if (title.indexOf("假期申请") !== -1 || title.indexOf("公出差申请") !== -1) {
+        } else if (title.indexOf("假期管理") !== -1 || title.indexOf("公出") !== -1 || title.indexOf("假期申请") !== -1) {
           top.pendTitle = "假期申请";win._ysp_top.tenderType = "askForLeave";
         } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
           top.pendTitle = "分公司离职管理流程(解除)";win._ysp_top.tenderType = "branchRelease";
