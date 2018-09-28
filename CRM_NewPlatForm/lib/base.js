@@ -71,6 +71,8 @@
     }
     ysp.customHelper.IconNum.summary = summary.split('=')[1];
     ysp.customHelper.IconNum.atMe = atMe.split('=')[1];
+    localStorage.setItem('atMe',atMe.split('=')[1]);
+    localStorage.setItem('summary',summary.split('=')[1]);
   }
   topWin.AndroidBack = function(){
     var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
@@ -208,6 +210,8 @@
           if(obj.summaryReportCount && obj.atMeUnreadReportCount){
             ysp.customHelper.IconNum.summary = obj.summaryReportCount;
     				ysp.customHelper.IconNum.atMe = obj.atMeUnreadReportCount;
+            localStorage.setItem('atMe',obj.atMeUnreadReportCount);
+            localStorage.setItem('summary',obj.summaryReportCount);
           }
         }
       }
