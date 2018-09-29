@@ -522,7 +522,9 @@
                 obj.realSalesAmount = _textContent;break;case "salesCountPercent":
                 obj.salesCountPercent = parseFloat(_textContent).toFixed(2);break;case "salesAmountPercent":
                 obj.salesAmountPercent = parseFloat(_textContent).toFixed(2);break;case "salesCountBigCustomer":
-                obj.salesCountBigCustomer = parseFloat(_textContent).toFixed(2);break;case "salesAmountBigCustomer":
+                obj.salesCountBigCustomer = _textContent;break;case "salesCountHead":
+                obj.salesCountBigCustomer = _textContent;break;case "salesAmountBigCustomer":
+                obj.salesAmountBigCustomer = parseFloat(_textContent).toFixed(2);break;case "salesAmountHead":
                 obj.salesAmountBigCustomer = parseFloat(_textContent).toFixed(2);break;case "rank":
                 var rank_a = tds[j].querySelector("a");obj.rank = {};if (rank_a) {
                   obj.rank.rankFlag = true;var tempData = rank_a.getAttribute("onmouseover");var tempStart = tempData.indexOf("[{");var tempEnd = tempData.indexOf("}]");var dataArray = JSON.parse(tempData.substring(tempStart, tempEnd + 2));obj.rank.data = dataArray;
