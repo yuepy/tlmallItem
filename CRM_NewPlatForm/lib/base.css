@@ -3688,7 +3688,7 @@ __________________*/
   background-size: 75%;
 }
 .ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum > div:nth-last-child(2) {
-  margin-bottom: 160px;
+  margin-bottom: 67px;
 }
 .ysp-atreport-dialog-gsperson .ysp-atreport-dialog-personsum .person-icon {
   width: 95%;
@@ -3811,7 +3811,8 @@ div[data-ysp-modelid="AtReportDetail"] {
   overflow: scroll;
 }
 div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog .ysp-dialog-wrapper {
-  position: absolute;
+  /**
+      position:absolute;**/
   background: #fff;
   overflow: auto;
 }
@@ -4014,7 +4015,7 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-to
   height: 100%;
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
-  top: 51px;
+  top: 93px;
   left: 0;
   position: absolute;
   z-index: 1000;
@@ -5342,7 +5343,7 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   background-size: 75%;
 }
 .Dialog-content > div:nth-last-child(2) {
-  margin-bottom: 160px;
+  margin-bottom: 67px;
 }
 .Dialog-content .person-icon {
   width: 95%;
@@ -13244,6 +13245,7 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   /**
   border-bottom: 1px solid #e9e9e9;
   ***/
+  /**汇报给我的总结+++**/
 }
 .ysp-atMe-workSummary .ysp-atreport-picture .personnel {
   display: flex;
@@ -13738,9 +13740,11 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   background-color: #4895ed;
 }
 .ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-dialog .ysp-dialog-wrapper {
-  position: absolute;
   background: #fff;
-  height: 1700px;
+  /**
+      position:absolute;
+      height: 1700px;**/
+  overflow-y: auto;
 }
 .ysp-atMe-workSummary .ysp-atreport-picture .ysp-atreport-dialog div.surebtn-right-top > span {
   position: fixed;
