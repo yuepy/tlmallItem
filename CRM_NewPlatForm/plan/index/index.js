@@ -67,7 +67,9 @@
       if (data.eventType === 'back') {//ysp.customHelper.backHome();
       }if (data.eventType === 'initState') {
         ysp.customHelper.BackFlag = 0; //初始化拜访管理逐级返回标识
-        top.yspCheckIn.backMarking('indexFlag');
+        // if (top.EAPI.isAndroid()) {
+        //   top.yspCheckIn.backMarking('indexFlag');
+        // }
       }
     },
     getTemplate_uiControl312_k8ZZCQ: function () {
