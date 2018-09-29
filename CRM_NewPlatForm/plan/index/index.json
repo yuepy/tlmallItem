@@ -121,63 +121,13 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
-    },
-    "control116_kenEPG": {
-      "location": {
-        "data": {
-          "tagName": "IMG"
-        },
-        "locators": [
-          {
-            "id": "@alt",
-            "prob": 2,
-            "value": {
-              "text": [
-                "欢迎页"
-              ]
-            }
-          },
-          {
-            "id": "img/@src",
-            "prob": 1,
-            "value": {
-              "pathname": "/pttlCrm/sys/file/showImag",
-              "search": "path=upload-dir/welcomechange.jpg"
-            }
-          },
-          {
-            "id": "@id/word",
-            "prob": 3,
-            "value": "descendant::IMG[@id=\"welcomeimg\"]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.m-body DIV.content DIV.img IMG"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[2]/IMG[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control116_kenEPG"
-      },
-      "intendedRole": "custom",
-      "roles": "element,image,button,custom",
-      "monitored": false,
-      "frameXPath": "//iframe[@name='firstLevelIframeContainer']<<IFRAME>>",
-      "componentType": "custom"
     }
   },
   "contexts": {
     "context0_pD8h1P": {
       "controls": [
         "control321_P7fT3E",
-        "control323_LpKwKt",
-        "control116_kenEPG"
+        "control323_LpKwKt"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -282,16 +232,6 @@
           "toContextId": "context0_pD8h1P"
         }
       ]
-    },
-    "flow275_hkEZa2": {
-      "fromContextId": "context0_pD8h1P",
-      "fromAction": "doAction",
-      "fromControlId": "control116_kenEPG",
-      "toContexts": [
-        {
-          "toContextId": "context0_pD8h1P"
-        }
-      ]
     }
   },
   "pages": {
@@ -324,21 +264,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl63_ax7qQG",
                 "onGetTemplate": "getTemplate_uiControl63_ax7qQG"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl113_EQtg8a",
-          "controlId": "control116_kenEPG",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl113_EQtg8a",
-                "onGetTemplate": "getTemplate_uiControl113_EQtg8a"
               }
             }
           }

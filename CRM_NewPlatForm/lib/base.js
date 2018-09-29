@@ -64,6 +64,7 @@
   topWin.setImageData = function(base64){
     debugger;
     topWin.img = base64
+    //top.yspCheckIn.openCamera();调用安卓端相册功能 返回值为base64格式图片 缺少Type  需要自行添加
   }
   var loginWin = null;
   var FlagNum=0;//接口次数计数  超过十 停止重置
