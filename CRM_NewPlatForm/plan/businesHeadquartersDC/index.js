@@ -393,8 +393,8 @@
                 }
               }
             }
-          } else if ("report23" == reportId || "report23-1" == reportId || "report23-1-1" == reportId || "report27" == reportId || "report24" == reportId || "report22" == reportId || "report22-1" == reportId) {
-            //品牌经理 办事处项目达成、分公司销售人员达成、分公司分项目达成
+          } else if ("report23" == reportId || "report23-1" == reportId || "report23-1-1" == reportId || "report27" == reportId || "report24" == reportId || "report22" == reportId || "report22-1" == reportId || "report47" == reportId) {
+            //品牌经理 办事处项目达成、分公司销售人员达成、分公司分项目达成、产品销售达成
             if ("report23" == reportId) {
               for (var n = 0; n < _tds.length; n++) {
                 var _str = strFuc(_tds[n]);if ("officeName" == _str) {
@@ -413,7 +413,7 @@
                   l = n;
                 }
               }
-            } else if ("report27" == reportId || "report22-1" == reportId) {
+            } else if ("report27" == reportId || "report22-1" == reportId || "report47" == reportId) {
               for (var n = 0; n < _tds.length; n++) {
                 var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                   l = n;
@@ -498,7 +498,7 @@
               var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
                 titles = tds[titleIdx + 1].textContent.trim();
               }obj.title = titles;
-            } else if ("report49" == reportId || "report33-1-1" == reportId || "report48" == reportId || "report16-1" == reportId || "report46" == reportId || "report29-1" == reportId || "report45" == reportId || "report1-1-1" == reportId || "report4-1" == reportId || "report43" == reportId || "report44" == reportId) {
+            } else if ("report49" == reportId || "report33-1-1" == reportId || "report48" == reportId || "report16-1" == reportId || "report46" == reportId || "report29-1" == reportId || "report45" == reportId || "report1-1-1" == reportId || "report4-1" == reportId || "report43" == reportId || "report44" == reportId || "report47" == reportId) {
               var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
                 titles = tds[titleIdx - 2].textContent.trim();if ("" == titles) {
                   titles = tds[titleIdx - 4].textContent.trim();
@@ -520,10 +520,12 @@
                 obj.realSalesCount = _textContent;break;case "targetSalesAmount":
                 obj.targetSalesAmount = _textContent;break;case "realSalesAmount":
                 obj.realSalesAmount = _textContent;break;case "salesCountPercent":
-                obj.salesCountPercent = parseFloat(_textContent).toFixed(2);break;case "salesAmountPercent":
-                obj.salesAmountPercent = parseFloat(_textContent).toFixed(2);break;case "salesCountBigCustomer":
-                obj.salesCountBigCustomer = parseFloat(_textContent).toFixed(2);break;case "salesAmountBigCustomer":
-                obj.salesAmountBigCustomer = parseFloat(_textContent).toFixed(2);break;case "rank":
+                obj.salesCountPercent = _textContent;break;case "salesAmountPercent":
+                obj.salesAmountPercent = _textContent;break;case "salesCountBigCustomer":
+                obj.salesCountBigCustomer = _textContent;break;case "salesCountHead":
+                obj.salesCountBigCustomer = _textContent;break;case "salesAmountBigCustomer":
+                obj.salesAmountBigCustomer = _textContent;break;case "salesAmountHead":
+                obj.salesAmountBigCustomer = _textContent;break;case "rank":
                 var rank_a = tds[j].querySelector("a");obj.rank = {};if (rank_a) {
                   obj.rank.rankFlag = true;var tempData = rank_a.getAttribute("onmouseover");var tempStart = tempData.indexOf("[{");var tempEnd = tempData.indexOf("}]");var dataArray = JSON.parse(tempData.substring(tempStart, tempEnd + 2));obj.rank.data = dataArray;
                 } else {
