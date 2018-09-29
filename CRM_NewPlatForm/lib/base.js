@@ -61,6 +61,10 @@
   ysp.customHelper = {};
   //var topWin = null;
   var topWin = top;
+  topWin.setImageData = function(base64){
+    debugger;
+    topWin.img = base64
+  }
   var loginWin = null;
   var FlagNum=0;//接口次数计数  超过十 停止重置
   //IOS客户端调用.解决请求ICON接口跨域问题;
@@ -138,7 +142,9 @@
       }
     }
     if(ysp.customHelper.AndroidBackFlag == 'indexBack'){
-      top.yspCheckIn.backMarking('indexFlag');
+      if (top.EAPI.isAndroid() && top.yspCheckIn && top.yspCheckIn.backMarking) {
+        top.yspCheckIn.backMarking('indexFlag');
+      }
       console.log('溜了溜了 !!!');
     }
     //恢复默认值
