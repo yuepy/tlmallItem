@@ -309,7 +309,7 @@
                 }
               }
             }
-          } else if ("report1" == reportId || "report1-1" == reportId || "report1-1-1" == reportId || "report1-2" == reportId || "report1-2-1" == reportId || "report1-2-1-1" == reportId || "report1-2-1-1-1" == reportId || "report4" == reportId || "report4-1" == reportId || "report43" == reportId || "report2" == reportId || "report2-1" == reportId || "report2-1-1" == reportId || "report2-1-1-1" == reportId) {
+          } else if ("report1" == reportId || "report1-1" == reportId || "report1-1-1" == reportId || "report1-2" == reportId || "report1-2-1" == reportId || "report1-2-1-1" == reportId || "report1-2-1-1-1" == reportId || "report4" == reportId || "report4-1" == reportId || "report43" == reportId || "report2" == reportId || "report2-1" == reportId || "report2-1-1" == reportId || "report2-1-1-1" == reportId || "report2-2" == reportId || "report2-2-1" == reportId || "report2-2-1-1" == reportId) {
             //总部领导 事业部销售计划总体达成 、事业部销售计划分项目达成、事业部销售计划分渠道达成、分公司销售计划达成
             if ("report1" == reportId || "report2-1" == reportId) {
               for (var n = 0; n < _tds.length; n++) {
@@ -335,26 +335,26 @@
                   l = n;
                 }
               }
-            } else if ("report1-2-1" == reportId) {
+            } else if ("report1-2-1" == reportId || "report2-2" == reportId) {
               for (var n = 0; n < _tds.length; n++) {
                 var _str = strFuc(_tds[n]);if ("officeName" == _str) {
                   l = n;
                 }
               }
-            } else if ("report1-2-1-1" == reportId) {
+            } else if ("report1-2-1-1" == reportId || "report2-2-1" == reportId) {
               for (var n = 0; n < _tds.length; n++) {
                 var _str = strFuc(_tds[n]);if ("salerName" == _str) {
                   l = n;
                 }
               }
-            } else if ("report1-2-1-1-1" == reportId) {
+            } else if ("report1-2-1-1-1" == reportId || "report2-2-1-1" == reportId) {
               for (var n = 0; n < _tds.length; n++) {
                 var _str = strFuc(_tds[n]);if ("customerName" == _str) {
                   l = n;
                 }
               }
             }
-          } else if ("report7" == reportId || "report8" == reportId || "report44" == reportId || "report9" == reportId || "report10" == reportId || "report10-1" == reportId) {
+          } else if ("report7" == reportId || "report8" == reportId || "report44" == reportId || "report9" == reportId || "report10" == reportId || "report10-1" == reportId || "report9-1" == reportId || "report9-1-1" == reportId || "report9-1-1-1" == reportId) {
             //事业部总经理 事业部分项目达成、产品销售达成、分公司事业部达成
             if ("report7" == reportId || "report10" == reportId) {
               for (var n = 0; n < _tds.length; n++) {
@@ -371,6 +371,24 @@
             } else if ("report9" == reportId) {
               for (var n = 0; n < _tds.length; n++) {
                 var _str = strFuc(_tds[n]);if ("branchName" == _str) {
+                  l = n;
+                }
+              }
+            } else if ("report9-1" == reportId) {
+              for (var n = 0; n < _tds.length; n++) {
+                var _str = strFuc(_tds[n]);if ("officeName" == _str) {
+                  l = n;
+                }
+              }
+            } else if ("report9-1-1" == reportId) {
+              for (var n = 0; n < _tds.length; n++) {
+                var _str = strFuc(_tds[n]);if ("salerName" == _str) {
+                  l = n;
+                }
+              }
+            } else if ("report9-1-1-1" == reportId) {
+              for (var n = 0; n < _tds.length; n++) {
+                var _str = strFuc(_tds[n]);if ("customerName" == _str) {
                   l = n;
                 }
               }
@@ -476,7 +494,7 @@
           } else {
             obj.deepFlag = deepFlag;
           }for (var j = 0; j < tds.length; j++) {
-            var _str = strFuc(tds[j]);var _textContent = tds[j].textContent.trim();if ("report34-2" == reportId || "report34-1" == reportId || "report18-1" == reportId || "report31-1-1-1" == reportId || "report1-2-1-1-1" == reportId || "report23-1-1" == reportId) {
+            var _str = strFuc(tds[j]);var _textContent = tds[j].textContent.trim();if ("report34-2" == reportId || "report34-1" == reportId || "report18-1" == reportId || "report31-1-1-1" == reportId || "report1-2-1-1-1" == reportId || "report23-1-1" == reportId || "report2-2-1-1" == reportId || "report9-1-1-1" == reportId) {
               var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
                 titles = tds[titleIdx + 1].textContent.trim();
               }obj.title = titles;
