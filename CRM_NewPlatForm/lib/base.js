@@ -138,7 +138,6 @@
       }
     }
     if(ysp.customHelper.AndroidBackFlag == 'indexBack'){
-      top.yspCheckIn.backMarking('indexFlag');
       console.log('溜了溜了 !!!');
     }
     //恢复默认值
