@@ -5100,7 +5100,7 @@ div[data-ysp-modelid="wtiteReport"] {
 }
 div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
   background: #fff;
-  height: 1700px;
+  overflow-y: auto;
 }
 .wtite-report .images-report .upload {
   display: inherit!important;
@@ -5313,8 +5313,10 @@ div[data-ysp-modelid="wtiteReport"] div.ysp-dialog-wrapper {
 }
 .Dialog-content {
   background: #fff;
+  /**
   overflow: auto;
   height: 100vh;
+  **/
   /**>div:last-child{margin-bottom:120px;}**/
 }
 .Dialog-content .ysp-atreport-dialog-person {
@@ -12868,6 +12870,7 @@ div[data-componentsid="uiControl49_Q2Z6nE"] div.ysp-dialog-wrapper {
 div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper,
 div[data-componentsid="uiControl54_SGf8tA"] div.ysp-dialog-wrapper {
   margin-top: 0px !important;
+  overflow-y: auto;
 }
 div[data-componentsid="uiControl50_m3HABT"] div.ysp-dialog-wrapper div.surebtn-right-top > span,
 div[data-componentsid="uiControl54_SGf8tA"] div.ysp-dialog-wrapper div.surebtn-right-top > span {
