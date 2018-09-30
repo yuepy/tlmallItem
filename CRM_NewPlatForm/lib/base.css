@@ -220,7 +220,7 @@ div.view-wrapper {
   color: #fefefe;
   font-size: 16px;
   font-weight: 600;
-  padding: 0 10px;
+  padding: 0 20px 0 5px;
 }
 .ysp-header-wrapper-sale span {
   white-space: nowrap;
@@ -16026,7 +16026,8 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
   font-size: 16px;
 }
 .ysp-rank-lists .itemLists {
-  overflow: hidden;
+  overflow: auto;
+  height: 75vh;
 }
 .ysp-rank-lists .itemLists .item {
   padding-top: 0;
@@ -16061,7 +16062,6 @@ div[data-ysp-modelid="questionnaireFeedbackSum"] {
   text-align: left;
   display: inline-block;
   padding: 4px 10px;
-  width: 90px;
   border-radius: 50px;
   font-weight: normal;
 }

@@ -309,7 +309,7 @@ div.view-wrapper{
   color: #fefefe;
   font-size:@normalLargeFont;
   font-weight:600;
-  padding: 0 10px;
+  padding: 0 20px 0 5px;
   span{
     white-space: nowrap;
   }
@@ -17497,7 +17497,9 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
     font-size: 16px;
   }
   .itemLists{
-    overflow: hidden;
+    //overflow: hidden;
+    overflow: auto;
+    height: 75vh;
     .item{
       padding-top:0;
       padding-bottom: 0;
@@ -17533,7 +17535,7 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
       text-align: left;
       display: inline-block;
       padding: 4px 10px;
-      width: 90px;
+      //width: 90px;
       border-radius: 50px;
       font-weight: normal;
     }
