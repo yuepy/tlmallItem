@@ -99,7 +99,19 @@
         /**获取当前元素拥有的所有的classList的长度**/let len = v.classList.length;if (len == 1 && v.classList[0] === 'chat-one') {
           var oo = {},
               messageRelatedObj = v.querySelector("h6").childNodes,
-              messageReplyContentDiv = v.querySelector(".chat-reply");oo.messageRelated = { replyOwner: messageRelatedObj[0].textContent, replyKey: messageRelatedObj[1].textContent, replyGuest: messageRelatedObj[2].textContent };oo.messageText = v.querySelector("p").innerText;oo.messageReply = { replyTime: messageReplyContentDiv.querySelector('span').innerText, replyBtn: messageReplyContentDiv.querySelector('a').innerText }; /**查看当前元素的下一个元素是否有chat-two这个类**/if (v.nextElementSibling) {
+              messageReplyContentDiv = v.querySelector(".chat-reply");oo.messageRelated = { replyOwner: messageRelatedObj[0].textContent, replyKey: messageRelatedObj[1].textContent, replyGuest: messageRelatedObj[2].textContent };oo.messageText = v.querySelector("p").innerText;let tempReplyTime = messageReplyContentDiv.querySelector('span').innerText,
+              tempReplyTimeArr = tempReplyTime.split(":");let replyTime = tempReplyTimeArr.map((v, i) => {
+            if (i === 0) {
+              if (+v.slice(-2) < 10 && v.slice(-2).search("0") === -1) {
+                return v.slice(0, -2) + '0' + v.slice(-2);
+              }return v;
+            } else {
+              if (+v < 10 && v.search("0") === -1) {
+                return "0" + v;
+              }return v;
+            }
+          }).join(":");
+          oo.messageReply = { replyTime: replyTime, replyBtn: messageReplyContentDiv.querySelector('a').innerText }; /**查看当前元素的下一个元素是否有chat-two这个类**/if (v.nextElementSibling) {
             oo.flag = v.nextElementSibling.className.search('chat-two');if (oo.flag === -1) {} else {
               oo.placeHolder = v.nextElementSibling.querySelector('textarea').getAttribute('placeholder');
             }
