@@ -61,6 +61,11 @@
   ysp.customHelper = {};
   //var topWin = null;
   var topWin = top;
+  topWin.setImageData = function(base64){
+    debugger;
+    topWin.img = base64
+    //top.yspCheckIn.openCamera();调用安卓端相册功能 返回值为base64格式图片 缺少Type  需要自行添加
+  }
   var loginWin = null;
   var FlagNum=0;//接口次数计数  超过十 停止重置
   //IOS客户端调用.解决请求ICON接口跨域问题;
@@ -71,6 +76,8 @@
     }
     ysp.customHelper.IconNum.summary = summary.split('=')[1];
     ysp.customHelper.IconNum.atMe = atMe.split('=')[1];
+    localStorage.setItem('atMe',atMe.split('=')[1]);
+    localStorage.setItem('summary',summary.split('=')[1]);
   }
   topWin.AndroidBack = function(){
     var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
@@ -136,6 +143,9 @@
       }
     }
     if(ysp.customHelper.AndroidBackFlag == 'indexBack'){
+      if (top.EAPI.isAndroid() && top.yspCheckIn && top.yspCheckIn.backMarking) {
+        top.yspCheckIn.backMarking('indexFlag');
+      }
       console.log('溜了溜了 !!!');
     }
     //恢复默认值
@@ -208,6 +218,8 @@
           if(obj.summaryReportCount && obj.atMeUnreadReportCount){
             ysp.customHelper.IconNum.summary = obj.summaryReportCount;
     				ysp.customHelper.IconNum.atMe = obj.atMeUnreadReportCount;
+            localStorage.setItem('atMe',obj.atMeUnreadReportCount);
+            localStorage.setItem('summary',obj.summaryReportCount);
           }
         }
       }
