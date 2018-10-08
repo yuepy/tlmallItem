@@ -213,7 +213,7 @@
       }
     }
     xhr.open('POST','http://192.168.1.227/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
-    xhr.send()
+    xhr.send();
   }
   // 请求首页面所有一级\二级\三级菜单
   function getAllMenu(aWin) {
