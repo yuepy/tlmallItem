@@ -8,7 +8,8 @@
           data.error = '请输入验证码';
         } else {
           data.error = elem.querySelector("#login_error").textContent;
-        }return data;
+        }
+        return data;
       }
     },
     doAction_uiControl0_vbflXP: function (data, elem) {

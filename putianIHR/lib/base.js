@@ -134,7 +134,7 @@
             if (aWin.location.href.indexOf("http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login&languageCd=ZHS") !== -1) {
                 doc.querySelector("#userid").value = sessionStorage.getItem("userid");
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
-            } else if (aWin.location.href.indexOf("CP.GBL?&cmd=login&languageCd=ZHS") !== -1) {
+            } else if (aWin.location.href.indexOf("GBL?&cmd=login&languageCd=ZHS") !== -1) {
                 doc.querySelector("#userid").value = sessionStorage.getItem("userid");
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
             }else if(aWin.location.href.indexOf("errorCode") !== -1&&aWin.location.href.indexOf("&languageCd=ZHS") !== -1){
