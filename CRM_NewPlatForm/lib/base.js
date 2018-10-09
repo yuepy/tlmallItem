@@ -152,7 +152,7 @@
     ysp.customHelper.AndroidBackFlag != 'indexBack' ? ysp.customHelper.AndroidBackFlag == 'default':'';
     ysp.customHelper.AndroidBackURL = '';
     ysp.customHelper.AndroidBackModel = '';
-    ysp.customHelper.AndroidDocument = ''
+    ysp.customHelper.AndroidDocument = '';
     ysp.customHelper.AndroidName = '';
     //default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面 BigData:为大数据钻取返回 . AndroidHistory:针对与页面后退一步返回
     //Client&Store : 针对客户||门店返回方案  ClientorStory:针对客户门店360返回列表方案
