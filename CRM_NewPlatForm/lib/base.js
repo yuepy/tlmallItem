@@ -152,7 +152,7 @@
     ysp.customHelper.AndroidBackFlag != 'indexBack' ? ysp.customHelper.AndroidBackFlag == 'default':'';
     ysp.customHelper.AndroidBackURL = '';
     ysp.customHelper.AndroidBackModel = '';
-    ysp.customHelper.AndroidDocument = ''
+    ysp.customHelper.AndroidDocument = '';
     ysp.customHelper.AndroidName = '';
     //default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面 BigData:为大数据钻取返回 . AndroidHistory:针对与页面后退一步返回
     //Client&Store : 针对客户||门店返回方案  ClientorStory:针对客户门店360返回列表方案
@@ -2081,6 +2081,14 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function onTargetLoad(aWin, doc) {
+      if(aWin){
+        if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
+          ysp.appMain.hideLoading();
+        }
+        if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') != null ){
+          ysp.appMain.hideLoading();
+        }
+      }
       if (aWin) {
         if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html' || aWin.location.href.indexOf('ysp_mobile') != -1) {
           //在登录成功时,请求菜单接口,获取全部菜单列表
@@ -2094,6 +2102,14 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function beforeTargetLoad(aWin, doc) {
+      if(aWin){
+        if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
+          ysp.appMain.hideLoading();
+        }
+        if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') != null ){
+          ysp.appMain.hideLoading();
+        }
+      }
       if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html' || aWin.location.href.indexOf('ysp_mobile') != -1) {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);

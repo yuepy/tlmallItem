@@ -149,344 +149,349 @@
       var selfTemplate = "import {Component} from 'react';\nimport {SaleReachCalendar} from 'ysp-custom-components';\nexport default class extends Component{\n  constructor(props){\n    super(props);\n    this.state={\n      mouth : true,\n      day : false,\n      show : false,\n      data : props.customData\n    }\n    window.addEventListener('ysp-time-show',this.toggle.bind(this),false)\n  }\n  componentDidMount(){\n    if(this.props.customData){\n      this.state.show ? this.styleId(): console.log('\u65E5\u5386\u8FD8\u6CA1\u6253\u5F00\u5462');\n    }else{\n      this.state.show ? this.stylesId(): console.log('\u65E5\u5386\u8FD8\u6CA1\u6253\u5F00\u5462');\n    }\n  }\n  componentDidUpdate(){\n    if(this.props.customData){\n      this.state.show ? this.styleId(): console.log('\u65E5\u5386\u8FD8\u6CA1\u6253\u5F00\u5462');\n    }else{\n      this.state.show ? this.stylesId(): console.log('\u65E5\u5386\u8FD8\u6CA1\u6253\u5F00\u5462');\n    }\n  }\n  styleId(){\n    var doc = this.refs.time;\n    if(doc){\n      doc.querySelector('#year').style.width = '50%';\n      doc.querySelector('#mouth').style.width = '50%';\n      \n      // if(this.state.data && !this.state.day  && !!this.state.mouth){\n      // \tdoc.querySelector('#year').style.width = '50%';\n      // \tdoc.querySelector('#mouth').style.width = '50%';\n      // }\n      // if(!this.state.data){\n      //   doc.querySelector('#year').style.width = '50%';\n      // \tdoc.querySelector('#mouth').style.width = '50%';\n      // }\n      // if(this.state.data && !this.state.mouth && !this.state.day){\n      //   doc.querySelector('#year').style.width = '100%';\n      // }\n      // if(!this.state.data){\n      //   doc.querySelector('#mouth').removeAttribute('style');\n      //   doc.querySelector('#year').style.width = '100%';\n      // }\n    }\n  }\n  stylesId(){\n    var doc = this.refs.time;\n    if(doc){\n      doc.querySelector('#year').style.width = '100%';\n    }\n  }\n  \n  toggle(){\n    this.setState({\n      show : !this.state.show\n    })\n  }\n  activeValue(even){\n    var doc = even.parentElement.nextElementSibling;\n    if(this.props.customData){\n      var year = doc.querySelector('#year').querySelector('.active').textContent;\n    var mouth = this.state.mouth && doc.querySelector('#mouth').querySelector('.active').textContent;\n    var day = this.state.day && doc.querySelector('#day').querySelector('.active').textContent;\n\t\tmouth = mouth < 10 ? '0' + mouth : mouth; \n  \tday = day && day < 10 ? '0' + day : day;\n    var time = day ? (year + '-' + mouth + '-' + day ) :( mouth ? year + '-' + mouth : year);\n      return time;\n    }else{\n      return doc.querySelector('#year').querySelector('.active').textContent;\n    }\n    \n  }\n  upValue(e){\n    var handler = this.props.customHandler;\n    var value = this.activeValue(e.target);\n    if(handler){\n      handler({\n        data : value,\n        eventType : 'upValue'\n      })\n    }\n    this.setState({\n      show : false\n    })\n  }\n  render(){\n    var _this = this;\n    return(\n      <div>{this.state.show && \n        <div className='moudle-time' ref='time'>\n          <div className = 'date-time'>\n            <SaleReachCalendar \n              mouth = {_this.state.mouth}\n              day = {_this.state.day}\n              upValue = {_this.upValue.bind(_this)}\n              show = {(e)=>{\n                _this.toggle();\n              }}\n              y = {this.props.customData}\n            />\n          </div>\n        </div>}\n      </div>\n    )\n  }\n}";
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.state = {\n      mouth: true,\n      day: false,\n      show: false,\n      data: props.customData\n    };\n    window.addEventListener(\'ysp-time-show\', _this2.toggle.bind(_this2), false);\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'componentDidMount\',\n    value: function componentDidMount() {\n      if (this.props.customData) {\n        this.state.show ? this.styleId() : console.log(\'\u65E5\u5386\u8FD8\u6CA1\u6253\u5F00\u5462\');\n      } else {\n        this.state.show ? this.stylesId() : console.log(\'\u65E5\u5386\u8FD8\u6CA1\u6253\u5F00\u5462\');\n      }\n    }\n  }, {\n    key: \'componentDidUpdate\',\n    value: function componentDidUpdate() {\n      if (this.props.customData) {\n        this.state.show ? this.styleId() : console.log(\'\u65E5\u5386\u8FD8\u6CA1\u6253\u5F00\u5462\');\n      } else {\n        this.state.show ? this.stylesId() : console.log(\'\u65E5\u5386\u8FD8\u6CA1\u6253\u5F00\u5462\');\n      }\n    }\n  }, {\n    key: \'styleId\',\n    value: function styleId() {\n      var doc = this.refs.time;\n      if (doc) {\n        doc.querySelector(\'#year\').style.width = \'50%\';\n        doc.querySelector(\'#mouth\').style.width = \'50%\';\n\n        // if(this.state.data && !this.state.day  && !!this.state.mouth){\n        // \tdoc.querySelector(\'#year\').style.width = \'50%\';\n        // \tdoc.querySelector(\'#mouth\').style.width = \'50%\';\n        // }\n        // if(!this.state.data){\n        //   doc.querySelector(\'#year\').style.width = \'50%\';\n        // \tdoc.querySelector(\'#mouth\').style.width = \'50%\';\n        // }\n        // if(this.state.data && !this.state.mouth && !this.state.day){\n        //   doc.querySelector(\'#year\').style.width = \'100%\';\n        // }\n        // if(!this.state.data){\n        //   doc.querySelector(\'#mouth\').removeAttribute(\'style\');\n        //   doc.querySelector(\'#year\').style.width = \'100%\';\n        // }\n      }\n    }\n  }, {\n    key: \'stylesId\',\n    value: function stylesId() {\n      var doc = this.refs.time;\n      if (doc) {\n        doc.querySelector(\'#year\').style.width = \'100%\';\n      }\n    }\n  }, {\n    key: \'toggle\',\n    value: function toggle() {\n      this.setState({\n        show: !this.state.show\n      });\n    }\n  }, {\n    key: \'activeValue\',\n    value: function activeValue(even) {\n      var doc = even.parentElement.nextElementSibling;\n      if (this.props.customData) {\n        var year = doc.querySelector(\'#year\').querySelector(\'.active\').textContent;\n        var mouth = this.state.mouth && doc.querySelector(\'#mouth\').querySelector(\'.active\').textContent;\n        var day = this.state.day && doc.querySelector(\'#day\').querySelector(\'.active\').textContent;\n        mouth = mouth < 10 ? \'0\' + mouth : mouth;\n        day = day && day < 10 ? \'0\' + day : day;\n        var time = day ? year + \'-\' + mouth + \'-\' + day : mouth ? year + \'-\' + mouth : year;\n        return time;\n      } else {\n        return doc.querySelector(\'#year\').querySelector(\'.active\').textContent;\n      }\n    }\n  }, {\n    key: \'upValue\',\n    value: function upValue(e) {\n      var handler = this.props.customHandler;\n      var value = this.activeValue(e.target);\n      if (handler) {\n        handler({\n          data: value,\n          eventType: \'upValue\'\n        });\n      }\n      this.setState({\n        show: false\n      });\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this = this;\n      return React.createElement(\n        \'div\',\n        null,\n        this.state.show && React.createElement(\n          \'div\',\n          { className: \'moudle-time\', ref: \'time\' },\n          React.createElement(\n            \'div\',\n            { className: \'date-time\' },\n            React.createElement(_yspCustomComponents.SaleReachCalendar, {\n              mouth: _this.state.mouth,\n              day: _this.state.day,\n              upValue: _this.upValue.bind(_this),\n              show: function show(e) {\n                _this.toggle();\n              },\n              y: this.props.customData\n            })\n          )\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
-    getData_control349_5u80Vy: function (elem) {
+
+    getData_control116_kIDcZ0: function (elem) {
       if (!elem) {
         return [];
       }if (elem) {
         var data = [];var trs = elem.querySelector("#table_list_1").querySelectorAll("tr");var reportId = elem.querySelector('input[name="reportId"]').value;var titleIdx = null;var deepFlag = true;var strFuc = function (_obj) {
           var _string = _obj.getAttribute("aria-describedby");var _index = _string.lastIndexOf('_');var _str = _string.substring(_index + 1);return _str;
         };if (!titleIdx) {
-          var _tds = trs[1].querySelectorAll("td");var a, b, c, d, e, f, g, h, l;if ("report34-2" == reportId || "report34-1" == reportId || "report49" == reportId) {
-            //销售代表（客户与门店达成）、（产品销售达成）
-            if ("report34-2" == reportId || "report34-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("customerName" == _str) {
-                  a = n;
+          var _tds = trs[1] && trs[1].querySelectorAll("td");var a, b, c, d, e, f, g, h, l;if (_tds) {
+            if ("report34-2" == reportId || "report34-1" == reportId || "report49" == reportId) {
+              //销售代表（客户与门店达成）、（产品销售达成）
+              if ("report34-2" == reportId || "report34-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("customerName" == _str) {
+                    a = n;
+                  }
+                }
+              } else if ("report49" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                    a = n;
+                  }
                 }
               }
-            } else if ("report49" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                  a = n;
+            } else if ("report34" == reportId || "report33" == reportId || "report33-1" == reportId || "report33-1-1" == reportId || "report48" == reportId) {
+              //办事处主任 （分公司销售人员达成）、（办事处事业部达成）
+              if ("report34" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("salerName" == _str) {
+                    b = n;
+                  }
+                }
+              } else if ("report33" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("department" == _str) {
+                    b = n;
+                  }
+                }
+              } else if ("report33-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("projectName" == _str) {
+                    b = n;
+                  }
+                }
+              } else if ("report33-1-1" == reportId || "report48" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                    b = n;
+                  }
                 }
               }
+            } else if ("report15" == reportId || "report16" == reportId || "report16-1" == reportId) {
+              //分总 分公司事业部达成 
+              if ("report15" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("department" == _str) {
+                    e = n;
+                  }
+                }
+              } else if ("report16" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("projectName" == _str) {
+                    e = n;
+                  }
+                }
+              } else if ("report16-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                    e = n;
+                  }
+                }
+              }
+            } else if ("report20" == reportId || "report46" == reportId) {
+              //分总 分公司项目达成、产品销售达成
+              if ("report20" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("projectName" == _str) {
+                    f = n;
+                  }
+                }
+              } else if ("report46" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                    f = n;
+                  }
+                }
+              }
+            } else if ("report17" == reportId || "report18" == reportId || "report18-1" == reportId || "report19" == reportId) {
+              //分总 分公司办事处销售达成
+              if ("report17" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("officeName" == _str) {
+                    g = n;
+                  }
+                }
+              } else if ("report18" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("salerName" == _str) {
+                    g = n;
+                  }
+                }
+              } else if ("report18-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("customerName" == _str) {
+                    g = n;
+                  }
+                }
+              } else if ("report19" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("salerName" == _str) {
+                    g = n;
+                  }
+                }
+              }
+            } else if ("report29" == reportId || "report29-1" == reportId || "report45" == reportId) {
+              //产品经理 事业部分项目达成、产品销售达成
+              if ("report29" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("projectName" == _str) {
+                    h = n;
+                  }
+                }
+              } else if ("report29-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                    h = n;
+                  }
+                }
+              } else if ("report45" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                    h = n;
+                  }
+                }
+              }
+            } else if ("report31" == reportId || "report31-1" == reportId || "report31-1-1" == reportId || "report31-1-1-1" == reportId) {
+              //产品经理 分公司项目达成
+              if ("report31" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("branchName" == _str) {
+                    h = n;
+                  }
+                }
+              } else if ("report31-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("officeName" == _str) {
+                    h = n;
+                  }
+                }
+              } else if ("report31-1-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("salerName" == _str) {
+                    h = n;
+                  }
+                }
+              } else if ("report31-1-1-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("customerName" == _str) {
+                    h = n;
+                  }
+                }
+              }
+            } else if ("report1" == reportId || "report1-1" == reportId || "report1-1-1" == reportId || "report1-2" == reportId || "report1-2-1" == reportId || "report1-2-1-1" == reportId || "report1-2-1-1-1" == reportId || "report4" == reportId || "report4-1" == reportId || "report43" == reportId || "report2" == reportId || "report2-1" == reportId || "report2-1-1" == reportId || "report2-1-1-1" == reportId || "report2-2" == reportId || "report2-2-1" == reportId || "report2-2-1-1" == reportId) {
+              //总部领导 事业部销售计划总体达成 、事业部销售计划分项目达成、事业部销售计划分渠道达成、分公司销售计划达成
+              if ("report1" == reportId || "report2-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("department" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report1-1" == reportId || "report4" == reportId || "report2-1-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("projectName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report1-1-1" == reportId || "report4-1" == reportId || "report43" == reportId || "report2-1-1-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report1-2" == reportId || "report2" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("branchName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report1-2-1" == reportId || "report2-2" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("officeName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report1-2-1-1" == reportId || "report2-2-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("salerName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report1-2-1-1-1" == reportId || "report2-2-1-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("customerName" == _str) {
+                    l = n;
+                  }
+                }
+              }
+            } else if ("report7" == reportId || "report8" == reportId || "report44" == reportId || "report9" == reportId || "report10" == reportId || "report10-1" == reportId || "report9-1" == reportId || "report9-1-1" == reportId || "report9-1-1-1" == reportId) {
+              //事业部总经理 事业部分项目达成、产品销售达成、分公司事业部达成
+              //大客户业务部总经理和客户经理 事业部分项目达成、产品销售达成、分公司事业部达成
+              if ("report7" == reportId || "report10" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("projectName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report8" == reportId || "report44" == reportId || "report10-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report9" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("branchName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report9-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("officeName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report9-1-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("salerName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report9-1-1-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("customerName" == _str) {
+                    l = n;
+                  }
+                }
+              }
+            } else if ("report23" == reportId || "report23-1" == reportId || "report23-1-1" == reportId || "report27" == reportId || "report24" == reportId || "report22" == reportId || "report22-1" == reportId || "report47" == reportId) {
+              //品牌经理 办事处项目达成、分公司销售人员达成、分公司分项目达成、产品销售达成
+              if ("report23" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("officeName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report23-1" == reportId || "report24" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("salerName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report23-1-1" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("customerName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report27" == reportId || "report22-1" == reportId || "report47" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report22" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("projectName" == _str) {
+                    l = n;
+                  }
+                }
+              }
+            } else if ("report5" == reportId || "report5-1" == reportId || "report6" == reportId || "report21" == reportId || "report32" == reportId || "report11" == reportId || "report28" == reportId) {
+              // 总部领导 年度事业部达成、年度事业部达成
+              // 分总 年度分公司事业部达成
+              // 产品经理 年度分公司事业部达成
+              // 品牌经理 事业部分公司达成
+              // 事业部总经理 年度分公司事业部达成
+              // 销售代表没有年度达成
+              // 办事处主任没有年度达成
+              // 大客户业务部总经理和客户经理年度销售达成
+              if ("report5" == reportId || "report21" == reportId || "report28" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("department" == _str) {
+                    l = n;
+                  }
+                }
+              } else if ("report5-1" == reportId || "report6" == reportId || "report32" == reportId || "report11" == reportId) {
+                for (var n = 0; n < _tds.length; n++) {
+                  var _str = strFuc(_tds[n]);if ("branchName" == _str) {
+                    l = n;
+                  }
+                }
+              }
+            } else {//       for (var n = 0; n < _tds.length; n++) {
+              //         var _str = strFuc(_tds[n]);
+              //         switch (_str) {
+              //           case "projectSeries":
+              //             a = n;
+              //             break;
+              //           case "modelName":
+              //             b = n;
+              //             break;
+              //           case "projectName":
+              //             c = n;
+              //             break;
+              //           case "department":
+              //             d = n;
+              //             break;
+              //           case "branchName":
+              //             e = n;
+              //             break;
+              //         }
+              //       }
+            }if (a) {
+              titleIdx = a;
+            } else if (b) {
+              titleIdx = b;
+            } else if (c) {
+              titleIdx = c;
+            } else if (d) {
+              titleIdx = d;
+            } else if (e) {
+              titleIdx = e;
+            } else if (f) {
+              titleIdx = f;
+            } else if (g) {
+              titleIdx = g;
+            } else if (h) {
+              titleIdx = h;
+            } else if (l) {
+              titleIdx = l;
+            }if (!_tds[titleIdx].querySelector("a")) {
+              deepFlag = false;
             }
-          } else if ("report34" == reportId || "report33" == reportId || "report33-1" == reportId || "report33-1-1" == reportId || "report48" == reportId) {
-            //办事处主任 （分公司销售人员达成）、（办事处事业部达成）
-            if ("report34" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("salerName" == _str) {
-                  b = n;
-                }
-              }
-            } else if ("report33" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("department" == _str) {
-                  b = n;
-                }
-              }
-            } else if ("report33-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("projectName" == _str) {
-                  b = n;
-                }
-              }
-            } else if ("report33-1-1" == reportId || "report48" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                  b = n;
-                }
-              }
-            }
-          } else if ("report15" == reportId || "report16" == reportId || "report16-1" == reportId) {
-            //分总 分公司事业部达成 
-            if ("report15" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("department" == _str) {
-                  e = n;
-                }
-              }
-            } else if ("report16" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("projectName" == _str) {
-                  e = n;
-                }
-              }
-            } else if ("report16-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                  e = n;
-                }
-              }
-            }
-          } else if ("report20" == reportId || "report46" == reportId) {
-            //分总 分公司项目达成、产品销售达成
-            if ("report20" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("projectName" == _str) {
-                  f = n;
-                }
-              }
-            } else if ("report46" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                  f = n;
-                }
-              }
-            }
-          } else if ("report17" == reportId || "report18" == reportId || "report18-1" == reportId || "report19" == reportId) {
-            //分总 分公司办事处销售达成
-            if ("report17" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("officeName" == _str) {
-                  g = n;
-                }
-              }
-            } else if ("report18" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("salerName" == _str) {
-                  g = n;
-                }
-              }
-            } else if ("report18-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("customerName" == _str) {
-                  g = n;
-                }
-              }
-            } else if ("report19" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("salerName" == _str) {
-                  g = n;
-                }
-              }
-            }
-          } else if ("report29" == reportId || "report29-1" == reportId || "report45" == reportId) {
-            //产品经理 事业部分项目达成、产品销售达成
-            if ("report29" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("projectName" == _str) {
-                  h = n;
-                }
-              }
-            } else if ("report29-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                  h = n;
-                }
-              }
-            } else if ("report45" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                  h = n;
-                }
-              }
-            }
-          } else if ("report31" == reportId || "report31-1" == reportId || "report31-1-1" == reportId || "report31-1-1-1" == reportId) {
-            //产品经理 分公司项目达成
-            if ("report31" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("branchName" == _str) {
-                  h = n;
-                }
-              }
-            } else if ("report31-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("officeName" == _str) {
-                  h = n;
-                }
-              }
-            } else if ("report31-1-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("salerName" == _str) {
-                  h = n;
-                }
-              }
-            } else if ("report31-1-1-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("customerName" == _str) {
-                  h = n;
-                }
-              }
-            }
-          } else if ("report1" == reportId || "report1-1" == reportId || "report1-1-1" == reportId || "report1-2" == reportId || "report1-2-1" == reportId || "report1-2-1-1" == reportId || "report1-2-1-1-1" == reportId || "report4" == reportId || "report4-1" == reportId || "report43" == reportId || "report2" == reportId || "report2-1" == reportId || "report2-1-1" == reportId || "report2-1-1-1" == reportId || "report2-2" == reportId || "report2-2-1" == reportId || "report2-2-1-1" == reportId) {
-            //总部领导 事业部销售计划总体达成 、事业部销售计划分项目达成、事业部销售计划分渠道达成、分公司销售计划达成
-            if ("report1" == reportId || "report2-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("department" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report1-1" == reportId || "report4" == reportId || "report2-1-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("projectName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report1-1-1" == reportId || "report4-1" == reportId || "report43" == reportId || "report2-1-1-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report1-2" == reportId || "report2" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("branchName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report1-2-1" == reportId || "report2-2" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("officeName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report1-2-1-1" == reportId || "report2-2-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("salerName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report1-2-1-1-1" == reportId || "report2-2-1-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("customerName" == _str) {
-                  l = n;
-                }
-              }
-            }
-          } else if ("report7" == reportId || "report8" == reportId || "report44" == reportId || "report9" == reportId || "report10" == reportId || "report10-1" == reportId || "report9-1" == reportId || "report9-1-1" == reportId || "report9-1-1-1" == reportId) {
-            //事业部总经理 事业部分项目达成、产品销售达成、分公司事业部达成
-            if ("report7" == reportId || "report10" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("projectName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report8" == reportId || "report44" == reportId || "report10-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report9" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("branchName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report9-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("officeName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report9-1-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("salerName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report9-1-1-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("customerName" == _str) {
-                  l = n;
-                }
-              }
-            }
-          } else if ("report23" == reportId || "report23-1" == reportId || "report23-1-1" == reportId || "report27" == reportId || "report24" == reportId || "report22" == reportId || "report22-1" == reportId || "report47" == reportId) {
-            //品牌经理 办事处项目达成、分公司销售人员达成、分公司分项目达成、产品销售达成
-            if ("report23" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("officeName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report23-1" == reportId || "report24" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("salerName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report23-1-1" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("customerName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report27" == reportId || "report22-1" == reportId || "report47" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report22" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("projectName" == _str) {
-                  l = n;
-                }
-              }
-            }
-          } else if ("report5" == reportId || "report5-1" == reportId || "report6" == reportId || "report21" == reportId || "report32" == reportId || "report11" == reportId || "report28" == reportId) {
-            // 总部领导 年度事业部达成、年度事业部达成
-            // 分总 年度分公司事业部达成
-            // 产品经理 年度分公司事业部达成
-            // 品牌经理 事业部分公司达成
-            // 事业部总经理 年度分公司事业部达成
-            // 销售代表没有年度达成
-            // 办事处主任没有年度达成
-            if ("report5" == reportId || "report21" == reportId || "report28" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("department" == _str) {
-                  l = n;
-                }
-              }
-            } else if ("report5-1" == reportId || "report6" == reportId || "report32" == reportId || "report11" == reportId) {
-              for (var n = 0; n < _tds.length; n++) {
-                var _str = strFuc(_tds[n]);if ("branchName" == _str) {
-                  l = n;
-                }
-              }
-            }
-          } else {//       for (var n = 0; n < _tds.length; n++) {
-            //         var _str = strFuc(_tds[n]);
-            //         switch (_str) {
-            //           case "projectSeries":
-            //             a = n;
-            //             break;
-            //           case "modelName":
-            //             b = n;
-            //             break;
-            //           case "projectName":
-            //             c = n;
-            //             break;
-            //           case "department":
-            //             d = n;
-            //             break;
-            //           case "branchName":
-            //             e = n;
-            //             break;
-            //         }
-            //       }
-          }if (a) {
-            titleIdx = a;
-          } else if (b) {
-            titleIdx = b;
-          } else if (c) {
-            titleIdx = c;
-          } else if (d) {
-            titleIdx = d;
-          } else if (e) {
-            titleIdx = e;
-          } else if (f) {
-            titleIdx = f;
-          } else if (g) {
-            titleIdx = g;
-          } else if (h) {
-            titleIdx = h;
-          } else if (l) {
-            titleIdx = l;
-          }if (!_tds[titleIdx].querySelector("a")) {
-            deepFlag = false;
           }
         }for (var i = 1; i < trs.length; i++) {
           var tds = trs[i].querySelectorAll("td");var obj = {};if (!trs[i].querySelectorAll('a')) {
@@ -527,7 +532,47 @@
                 obj.salesAmountBigCustomer = _textContent;break;case "salesAmountHead":
                 obj.salesAmountBigCustomer = _textContent;break;case "rank":
                 var rank_a = tds[j].querySelector("a");obj.rank = {};if (rank_a) {
-                  obj.rank.rankFlag = true;obj.rank.reportId = reportId;var tempData = rank_a.getAttribute("onmouseover");var tempStart = tempData.indexOf("[{");var tempEnd = tempData.indexOf("}]");var dataArray = JSON.parse(tempData.substring(tempStart, tempEnd + 2));obj.rank.data = dataArray;
+                  obj.rank.rankFlag = true;obj.rank.reportId = reportId; // var tempData = rank_a.getAttribute("onmouseover");
+                  // var tempStart = tempData.indexOf("[{");
+                  // var tempEnd = tempData.indexOf("}]");
+                  // var dataArray = JSON.parse(tempData.substring(tempStart, tempEnd + 2));
+                  var aa = [];var cc = [];var rankTrs = elem.ownerDocument.querySelector(".rank-pop-box").querySelector(".pop-table").querySelector("tbody").querySelectorAll("tr");if (rankTrs.length > 0) {
+                    for (var z = 0; z < rankTrs.length; z++) {
+                      //所有的排名数据
+                      var bb = {};var rankTds = rankTrs[z].querySelectorAll("td");for (var w = 0; w < rankTds.length; w++) {
+                        if ("report15" == reportId || "report16" == reportId) {
+                          bb.branchName = rankTds[1].textContent;bb.salesAmountPercent = rankTds[4].textContent.substr(0, rankTds[4].textContent.length - 1);bb.rank = rankTds[5].textContent;
+                        } else if ("report18" == reportId || "report34" == reportId) {
+                          bb.salerName = rankTds[3].textContent;bb.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);bb.rank = rankTds[6].textContent;
+                        } else if ("report20" == reportId || "report22" == reportId) {
+                          bb.branchName = rankTds[1].textContent;bb.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);bb.rank = rankTds[6].textContent;
+                        } else if ("report33" == reportId) {
+                          bb.officeName = rankTds[2].textContent;bb.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);bb.rank = rankTds[6].textContent;
+                        } else if ("report33-1" == reportId) {
+                          bb.officeName = rankTds[2].textContent;bb.salesAmountPercent = rankTds[6].textContent.substr(0, rankTds[6].textContent.length - 1);bb.rank = rankTds[7].textContent;
+                        }
+                      }aa.push(bb);
+                    }
+                  }if (rankTrs.length > 0) {
+                    //选中的排名数据
+                    for (var z1 = 0; z1 < rankTrs.length; z1++) {
+                      var dd = {};if (rankTrs[z1].getAttribute("class") == "activ") {
+                        var rankTds = rankTrs[z1].querySelectorAll("td");for (var w1 = 0; w1 < rankTds.length; w1++) {
+                          if ("report15" == reportId || "report16" == reportId) {
+                            dd.branchName = rankTds[1].textContent;dd.salesAmountPercent = rankTds[4].textContent.substr(0, rankTds[4].textContent.length - 1);dd.rank = rankTds[5].textContent;
+                          } else if ("report18" == reportId || "report34" == reportId) {
+                            dd.salerName = rankTds[3].textContent;dd.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);dd.rank = rankTds[6].textContent;
+                          } else if ("report20" == reportId || "report22" == reportId) {
+                            dd.branchName = rankTds[1].textContent;dd.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);dd.rank = rankTds[6].textContent;
+                          } else if ("report33" == reportId) {
+                            dd.officeName = rankTds[2].textContent;dd.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);dd.rank = rankTds[6].textContent;
+                          } else if ("report33-1" == reportId) {
+                            dd.officeName = rankTds[2].textContent;dd.salesAmountPercent = rankTds[6].textContent.substr(0, rankTds[6].textContent.length - 1);dd.rank = rankTds[7].textContent;
+                          }
+                        }cc.push(dd);
+                      }
+                    }
+                  }obj.rank.data = aa;obj.rank.chooseData = cc;
                 } else {
                   obj.rank.rankFlag = false;
                 }if (rank_a) {
@@ -540,7 +585,7 @@
         }return data;
       }
     },
-    doAction_uiControl269_1Mcp0r: function (data, elem) {
+    doAction_uiControl113_KRsmxE: function (data, elem) {
       if (!elem) {
         return;
       }var trs = elem.querySelector("#table_list_1").querySelectorAll("tr");if (data.eventType === 'click') {
@@ -548,11 +593,13 @@
           console.warn('到最底层了，不能在钻取了！'); // alert('已无法钻取');
           return;
         }var btn = trs[index].querySelector('a');btn.click();
+      }if ('clickRank' == data.eventType) {
+        var index = +data.customData + 1;var dos = trs[index].querySelector('a[class="susp-a"]');dos.dispatchEvent(new Event("mouseover"));
       }
     },
-    getTemplate_uiControl269_1Mcp0r: function () {
-      var selfTemplate = 'import {\n  Component\n} from \'react\';\nimport {\n  Dialog,\n  ComplexHeader\n} from \'ysp-custom-components\';\n\nexport default class extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n    \tclose: true,\n      idx: null\n    } \n  }\n  \n  handleClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.currentTarget;\n    var index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: index\n      });\n    }\n  }\n  \n  handleRank(e){\n    this.setState({\n      close: !this.state.close,\n      idx: e.target.dataset.index\n    });\n  }\n  \n  render() {\n    var data = this.props.customData;\n    var _this = this;\n    var lists;\n    var a = 0;\n    \t{data?\n      lists = data.map(function(d,i){\n        return (\n            <div className="item">\n              <div className={d.deepFlag?"left":"left wd"}>\n                <h5 className="title">\n                  {\n                    d.rank && d.rank.num !="" ? \n                      <i className={d.rank.num>3?\'rank-else\':\'rank-top\'} onClick={d.rank.rankFlag ?_this.handleRank.bind(_this) : \'\'} data-index={i}>\n                        {d.rank.num}\n                      </i> : \'\'\n                  }\n                  {d.title?d.title:d.projectSeries}</h5>\n                {\n                  d.titles ? <h5 className="titlesXM">{d.titles}</h5> : \'\'\n                }\n                <ul>\n                  <li><span>\u76EE\u6807\u9500\u91CF</span><b>{d.targetSalesCount}</b></li>\n                  <li><span>\u5B9E\u9645\u9500\u91CF</span><b>{d.realSalesCount}</b>\n                    {\n                      d.salesCountBigCustomer !=null || d.salesCountBigCustomer !=undefined ? \n                        <span>\n                        \t<span style={{marginRight:0}}>\n                            (\u5927\u5BA2\u6237\uFF1A\n                          </span>\n                          <b>\n                            {d.salesCountBigCustomer})\n                          </b>\n                        </span> : \'\'\n                    }\n                    </li>\n                  <li><span>\u76EE\u6807\u9500\u552E\u989D</span><b>{d.targetSalesAmount}</b></li>\n                  <li><span>\u5B9E\u9645\u9500\u552E\u989D</span><b>{d.realSalesAmount}</b>\n                    {\n                      d.salesAmountBigCustomer!=null || d.salesAmountBigCustomer!=undefined ?\n                        <span>\n                        \t<span style={{marginRight:0}}>\n                            (\u5927\u5BA2\u6237\uFF1A\n                          </span>\n                          <b> \n                            {d.salesAmountBigCustomer})\n                          </b>\n                        </span>\n                         : \'\'\n                    }\n                    \n                    \n                  </li>\n                </ul>\n              </div>\n              <div className={d.deepFlag?"right":"right mg0"}>\n                  <div className="top">\n                    <div><em>{d.salesCountPercent}</em>%</div>\n                    <h5>\u9500\u91CF\u8FBE\u6210\u7387</h5>\n                  </div>\n                  <div className="btm">\n                      <div><em>{d.salesAmountPercent}</em>%</div>\n                      <h5>\u9500\u91CF\u989D\u8FBE\u6210\u7387</h5>\n                    </div>\n              </div>\n               { d.deepFlag?<i class="ysp-cardlist-icon" onClick={_this.handleClick.bind(_this)} data-index={i}></i>:"" }\n\n           \t\t { d.rank && d.rank.data?\n              \t<DialogRank \n                  dataIndex = {i} \n                  customData = {d.rank} \n                  close = {_this.state.close} \n                  openIndex = {_this.state.idx}\n                  handleRank = {_this.handleRank.bind(_this)}\n                />:\'\'}\n            </div>\n        )  \n      })\n      :\n \xA0 \xA0 \xA0lists = <div className="ysp-no-datass" \n                style={{\'marginLeft\':\'-15px\',\'background\':\'#F0EFF5\'}}>\n                <div></div>\n                <div>\u6682\u65F6\u6CA1\u6709\u6570\u636E~</div>\n              </div>\n      }\n\n    return (\n      <div className="ysp-tableLists-box">\n        {lists}\n      </div>\n    )\n  }\n};\n\n// DialogRank\nclass DialogRank extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    var data = this.props.customData;\n    var dataLists = data.data;\n    var index = data.num;\n    var dataMain = data.data[index-1];\n    var rankReportId = data && data.reportId;\n    var _this = this;\n    var _close = true;\n    if(_this.props.dataIndex == _this.props.openIndex){\n      _close = false;\n    }else{\n      _close = true;\n    }\n    \n    // console.log(data);\n    return (\n      <Dialog close={_close} dataId={_this.props.dataIndex}>\n        <ComplexHeader \n           data={{centerText: "\u9500\u552E\u8FBE\u6210\u6392\u540D",rightText:"\u65F6\u95F4"}} \n           backIsShow={true} \n           back={_this.props.handleRank}\n           centerTime={true}\n           closeIsShow={false} \n           filterIsShow={false} \n           />\n        <div className="ysp-rank-lists">\n          <div className="main">\n            <i className="rank-main">{dataMain.rank}</i>\n            <span className="title">\n              {"report15" == rankReportId || "report16" == rankReportId \n               || "report20" == rankReportId || "report22" == rankReportId\n                ? dataMain.branchName : "report33" == rankReportId \n               || "report33-1" == rankReportId ? dataMain.officeName : "report34" == rankReportId \n                ? dataMain.salerName : ""\n              }\n            </span>\n            <div className="infos">\n              \t<div><b>{dataMain.salesAmountPercent}</b>%</div>\n              \t<h5>\u9500\u552E\u989D\u8FBE\u6210\u7387</h5>\n            </div>\n          </div>\n          \n          <div className="itemLists">\n            {\n              dataLists.map(function(d,i){\n                return (\n                \t<div className={i==index-1?\'item item-main\':\'item\'}>\n                    {\n                      <i className={i!=index-1?(d.rank>3?\'rank-else\':\'rank-top\'):\'rank-main\'}>{d.rank}</i>\n                    }\n                    <span className="title">\n                      {"report15" == rankReportId || "report16" == rankReportId \n                       || "report20" == rankReportId || "report22" == rankReportId \n                        ? d.branchName : "report33" == rankReportId \n                       || "report33-1" == rankReportId ? d.officeName : "report34" == rankReportId \n                        ? d.salerName : ""\n                      }\n                    </span>\n                    <div className="infos">\n                        <div><b>{d.salesAmountPercent}</b>%</div>\n                        <h5>\u9500\u552E\u989D\u8FBE\u6210\u7387</h5>\n                    </div>\n                  </div>  \n                )\n              })\n            }\n          </div>\n          \n        </div>\n      </Dialog>\n    )\n  }\n}';
-      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.state = {\n      close: true,\n      idx: null\n    };\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'handleClick\',\n    value: function handleClick(e) {\n      var handler = this.props.customHandler;\n      var target = e.currentTarget;\n      var index = target.dataset.index;\n      if (handler) {\n        handler({\n          eventType: \'click\',\n          data: index\n        });\n      }\n    }\n  }, {\n    key: \'handleRank\',\n    value: function handleRank(e) {\n      this.setState({\n        close: !this.state.close,\n        idx: e.target.dataset.index\n      });\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var data = this.props.customData;\n      var _this = this;\n      var lists;\n      var a = 0;\n      {\n        data ? lists = data.map(function (d, i) {\n          return React.createElement(\n            \'div\',\n            { className: \'item\' },\n            React.createElement(\n              \'div\',\n              { className: d.deepFlag ? "left" : "left wd" },\n              React.createElement(\n                \'h5\',\n                { className: \'title\' },\n                d.rank && d.rank.num != "" ? React.createElement(\n                  \'i\',\n                  { className: d.rank.num > 3 ? \'rank-else\' : \'rank-top\', onClick: d.rank.rankFlag ? _this.handleRank.bind(_this) : \'\', \'data-index\': i },\n                  d.rank.num\n                ) : \'\',\n                d.title ? d.title : d.projectSeries\n              ),\n              d.titles ? React.createElement(\n                \'h5\',\n                { className: \'titlesXM\' },\n                d.titles\n              ) : \'\',\n              React.createElement(\n                \'ul\',\n                null,\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u76EE\\u6807\\u9500\\u91CF\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.targetSalesCount\n                  )\n                ),\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u5B9E\\u9645\\u9500\\u91CF\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.realSalesCount\n                  ),\n                  d.salesCountBigCustomer != null || d.salesCountBigCustomer != undefined ? React.createElement(\n                    \'span\',\n                    null,\n                    React.createElement(\n                      \'span\',\n                      { style: { marginRight: 0 } },\n                      \'(\\u5927\\u5BA2\\u6237\\uFF1A\'\n                    ),\n                    React.createElement(\n                      \'b\',\n                      null,\n                      d.salesCountBigCustomer,\n                      \')\'\n                    )\n                  ) : \'\'\n                ),\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u76EE\\u6807\\u9500\\u552E\\u989D\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.targetSalesAmount\n                  )\n                ),\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u5B9E\\u9645\\u9500\\u552E\\u989D\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.realSalesAmount\n                  ),\n                  d.salesAmountBigCustomer != null || d.salesAmountBigCustomer != undefined ? React.createElement(\n                    \'span\',\n                    null,\n                    React.createElement(\n                      \'span\',\n                      { style: { marginRight: 0 } },\n                      \'(\\u5927\\u5BA2\\u6237\\uFF1A\'\n                    ),\n                    React.createElement(\n                      \'b\',\n                      null,\n                      d.salesAmountBigCustomer,\n                      \')\'\n                    )\n                  ) : \'\'\n                )\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: d.deepFlag ? "right" : "right mg0" },\n              React.createElement(\n                \'div\',\n                { className: \'top\' },\n                React.createElement(\n                  \'div\',\n                  null,\n                  React.createElement(\n                    \'em\',\n                    null,\n                    d.salesCountPercent\n                  ),\n                  \'%\'\n                ),\n                React.createElement(\n                  \'h5\',\n                  null,\n                  \'\\u9500\\u91CF\\u8FBE\\u6210\\u7387\'\n                )\n              ),\n              React.createElement(\n                \'div\',\n                { className: \'btm\' },\n                React.createElement(\n                  \'div\',\n                  null,\n                  React.createElement(\n                    \'em\',\n                    null,\n                    d.salesAmountPercent\n                  ),\n                  \'%\'\n                ),\n                React.createElement(\n                  \'h5\',\n                  null,\n                  \'\\u9500\\u91CF\\u989D\\u8FBE\\u6210\\u7387\'\n                )\n              )\n            ),\n            d.deepFlag ? React.createElement(\'i\', { \'class\': \'ysp-cardlist-icon\', onClick: _this.handleClick.bind(_this), \'data-index\': i }) : "",\n            d.rank && d.rank.data ? React.createElement(DialogRank, {\n              dataIndex: i,\n              customData: d.rank,\n              close: _this.state.close,\n              openIndex: _this.state.idx,\n              handleRank: _this.handleRank.bind(_this)\n            }) : \'\'\n          );\n        }) : lists = React.createElement(\n          \'div\',\n          { className: \'ysp-no-datass\',\n            style: { \'marginLeft\': \'-15px\', \'background\': \'#F0EFF5\' } },\n          React.createElement(\'div\', null),\n          React.createElement(\n            \'div\',\n            null,\n            \'\\u6682\\u65F6\\u6CA1\\u6709\\u6570\\u636E~\'\n          )\n        );\n      }\n\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-tableLists-box\' },\n        lists\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;\n\n// DialogRank\n\nvar DialogRank = function (_React$Component2) {\n  _inherits(DialogRank, _React$Component2);\n\n  function DialogRank(props) {\n    _classCallCheck(this, DialogRank);\n\n    return _possibleConstructorReturn(this, (DialogRank.__proto__ || Object.getPrototypeOf(DialogRank)).call(this, props));\n  }\n\n  _createClass(DialogRank, [{\n    key: \'render\',\n    value: function render() {\n      var data = this.props.customData;\n      var dataLists = data.data;\n      var index = data.num;\n      var dataMain = data.data[index - 1];\n      var rankReportId = data && data.reportId;\n      var _this = this;\n      var _close = true;\n      if (_this.props.dataIndex == _this.props.openIndex) {\n        _close = false;\n      } else {\n        _close = true;\n      }\n\n      // console.log(data);\n      return React.createElement(\n        _yspCustomComponents.Dialog,\n        { close: _close, dataId: _this.props.dataIndex },\n        React.createElement(_yspCustomComponents.ComplexHeader, {\n          data: { centerText: "\u9500\u552E\u8FBE\u6210\u6392\u540D", rightText: "\u65F6\u95F4" },\n          backIsShow: true,\n          back: _this.props.handleRank,\n          centerTime: true,\n          closeIsShow: false,\n          filterIsShow: false\n        }),\n        React.createElement(\n          \'div\',\n          { className: \'ysp-rank-lists\' },\n          React.createElement(\n            \'div\',\n            { className: \'main\' },\n            React.createElement(\n              \'i\',\n              { className: \'rank-main\' },\n              dataMain.rank\n            ),\n            React.createElement(\n              \'span\',\n              { className: \'title\' },\n              "report15" == rankReportId || "report16" == rankReportId || "report20" == rankReportId || "report22" == rankReportId ? dataMain.branchName : "report33" == rankReportId || "report33-1" == rankReportId ? dataMain.officeName : "report34" == rankReportId ? dataMain.salerName : ""\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'infos\' },\n              React.createElement(\n                \'div\',\n                null,\n                React.createElement(\n                  \'b\',\n                  null,\n                  dataMain.salesAmountPercent\n                ),\n                \'%\'\n              ),\n              React.createElement(\n                \'h5\',\n                null,\n                \'\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387\'\n              )\n            )\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'itemLists\' },\n            dataLists.map(function (d, i) {\n              return React.createElement(\n                \'div\',\n                { className: i == index - 1 ? \'item item-main\' : \'item\' },\n                React.createElement(\n                  \'i\',\n                  { className: i != index - 1 ? d.rank > 3 ? \'rank-else\' : \'rank-top\' : \'rank-main\' },\n                  d.rank\n                ),\n                React.createElement(\n                  \'span\',\n                  { className: \'title\' },\n                  "report15" == rankReportId || "report16" == rankReportId || "report20" == rankReportId || "report22" == rankReportId ? d.branchName : "report33" == rankReportId || "report33-1" == rankReportId ? d.officeName : "report34" == rankReportId ? d.salerName : ""\n                ),\n                React.createElement(\n                  \'div\',\n                  { className: \'infos\' },\n                  React.createElement(\n                    \'div\',\n                    null,\n                    React.createElement(\n                      \'b\',\n                      null,\n                      d.salesAmountPercent\n                    ),\n                    \'%\'\n                  ),\n                  React.createElement(\n                    \'h5\',\n                    null,\n                    \'\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387\'\n                  )\n                )\n              );\n            })\n          )\n        )\n      );\n    }\n  }]);\n\n  return DialogRank;\n}(React.Component);';
+    getTemplate_uiControl113_KRsmxE: function () {
+      var selfTemplate = 'import {\n  Component\n} from \'react\';\nimport {\n  Dialog,\n  ComplexHeader\n} from \'ysp-custom-components\';\n\nexport default class extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n    \tclose: true,\n      idx: null\n    } \n  }\n  \n  handleClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.currentTarget;\n    var index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: index\n      });\n    }\n  }\n  \n  handleRank(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    var index = target.dataset.index;\n    if(handler){\n      handler({\n        eventType:\'clickRank\',\n        data: index\n      })\n    }\n    this.setState({\n      close: !this.state.close,\n      idx: e.target.dataset.index\n    });\n  }\n  \n  render() {\n    var data = this.props.customData;\n    var _this = this;\n    var lists;\n    var a = 0;\n    \t{data && data.length > 0 ?\n      lists = data.map(function(d,i){\n        return (\n            <div className="item">\n              <div className={d.deepFlag?"left":"left wd"}>\n                <h5 className="title">\n                  {\n                    d.rank && d.rank.num !="" ? \n                      <i className={d.rank.num>3?\'rank-else\':\'rank-top\'} onClick={d.rank.rankFlag ?_this.handleRank.bind(_this) : \'\'} data-index={i}>\n                        {d.rank.num}\n                      </i> : \'\'\n                  }\n                  {d.title?d.title:d.projectSeries}</h5>\n                {\n                  d.titles ? <h5 className="titlesXM">{d.titles}</h5> : \'\'\n                }\n                <ul>\n                  <li><span>\u76EE\u6807\u9500\u91CF</span><b>{d.targetSalesCount}</b></li>\n                  <li><span>\u5B9E\u9645\u9500\u91CF</span><b>{d.realSalesCount}</b>\n                    {\n                      d.salesCountBigCustomer !=null || d.salesCountBigCustomer !=undefined ? \n                        <span>\n                        \t<span style={{marginRight:0}}>\n                            (\u5927\u5BA2\u6237\uFF1A\n                          </span>\n                          <b>\n                            {d.salesCountBigCustomer})\n                          </b>\n                        </span> : \'\'\n                    }\n                    </li>\n                  <li><span>\u76EE\u6807\u9500\u552E\u989D</span><b>{d.targetSalesAmount}</b></li>\n                  <li><span>\u5B9E\u9645\u9500\u552E\u989D</span><b>{d.realSalesAmount}</b>\n                    {\n                      d.salesAmountBigCustomer!=null || d.salesAmountBigCustomer!=undefined ?\n                        <span>\n                        \t<span style={{marginRight:0}}>\n                            (\u5927\u5BA2\u6237\uFF1A\n                          </span>\n                          <b> \n                            {d.salesAmountBigCustomer})\n                          </b>\n                        </span>\n                         : \'\'\n                    }\n                    \n                    \n                  </li>\n                </ul>\n              </div>\n              <div className={d.deepFlag?"right":"right mg0"}>\n                  <div className="top">\n                    <div><em>{d.salesCountPercent}</em>%</div>\n                    <h5>\u9500\u91CF\u8FBE\u6210\u7387</h5>\n                  </div>\n                  <div className="btm">\n                      <div><em>{d.salesAmountPercent}</em>%</div>\n                      <h5>\u9500\u91CF\u989D\u8FBE\u6210\u7387</h5>\n                    </div>\n              </div>\n               { d.deepFlag?<i class="ysp-cardlist-icon" onClick={_this.handleClick.bind(_this)} data-index={i}></i>:"" }\n\n           \t\t { d.rank && d.rank.data && d.rank.data.length > 0 ?\n              \t<DialogRank \n                  dataIndex = {i} \n                  customData = {d.rank} \n                  close = {_this.state.close} \n                  openIndex = {_this.state.idx}\n                  handleRank = {_this.handleRank.bind(_this)}\n                />:\'\'}\n            </div>\n        )  \n      })\n      :\n \xA0 \xA0 \xA0lists = <div className="ysp-no-datass" \n                style={{\'marginLeft\':\'-15px\',\'background\':\'#F0EFF5\'}}>\n                <div></div>\n                <div>\u6682\u65F6\u6CA1\u6709\u6570\u636E~</div>\n              </div>\n      }\n\n    return (\n      <div className="ysp-tableLists-box">\n        {lists}\n      </div>\n    )\n  }\n};\n\n// DialogRank \u6392\u540D\u9875\u9762\nclass DialogRank extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    var data = this.props.customData;\n    var dataLists = data.data;\n    var index = data.num;\n    //var dataMain = data.data[index-1];\n    var dataMain = data.chooseData && data.chooseData[0];\n    var rankReportId = data && data.reportId;\n    var _this = this;\n    var _close = true;\n    if(_this.props.dataIndex == _this.props.openIndex){\n      _close = false;\n    }else{\n      _close = true;\n    }\n    \n    // console.log(data);\n    return (\n      <Dialog close={_close} dataId={_this.props.dataIndex}>\n        <ComplexHeader \n           data={{centerText: "\u9500\u552E\u8FBE\u6210\u6392\u540D",rightText:"\u65F6\u95F4"}} \n           backIsShow={true} \n           back={_this.props.handleRank}\n           centerTime={true}\n           closeIsShow={false} \n           filterIsShow={false} \n           />\n        <div className="ysp-rank-lists">\n          <div className="main">\n            <i className="rank-main">{dataMain.rank}</i>\n            <span className="title">\n              {"report15" == rankReportId || "report16" == rankReportId \n               || "report20" == rankReportId || "report22" == rankReportId\n                ? dataMain.branchName : "report33" == rankReportId \n               || "report33-1" == rankReportId ? dataMain.officeName : \n              \t"report34" == rankReportId || "report18" == rankReportId\n                ? dataMain.salerName : ""\n              }\n            </span>\n            <div className="infos">\n              \t<div><b>{dataMain.salesAmountPercent}</b>%</div>\n              \t<h5>\u9500\u552E\u989D\u8FBE\u6210\u7387</h5>\n            </div>\n          </div>\n          \n          <div className="itemLists">\n            {\n              dataLists.map(function(d,i){\n                return (\n                \t<div className={i==index-1?\'item item-main\':\'item\'}>\n                    {\n                      <i className={i!=index-1?(d.rank>3?\'rank-else\':\'rank-top\'):\'rank-main\'}>{d.rank}</i>\n                    }\n                    <span className="title">\n                      {"report15" == rankReportId || "report16" == rankReportId \n                       || "report20" == rankReportId || "report22" == rankReportId \n                        ? d.branchName : "report33" == rankReportId \n                       || "report33-1" == rankReportId ? d.officeName : \n                      \t"report34" == rankReportId || "report18" == rankReportId\n                        ? d.salerName : ""\n                      }\n                    </span>\n                    <div className="infos">\n                        <div><b>{d.salesAmountPercent}</b>%</div>\n                        <h5>\u9500\u552E\u989D\u8FBE\u6210\u7387</h5>\n                    </div>\n                  </div>  \n                )\n              })\n            }\n          </div>\n          \n        </div>\n      </Dialog>\n    )\n  }\n}';
+      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.state = {\n      close: true,\n      idx: null\n    };\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'handleClick\',\n    value: function handleClick(e) {\n      var handler = this.props.customHandler;\n      var target = e.currentTarget;\n      var index = target.dataset.index;\n      if (handler) {\n        handler({\n          eventType: \'click\',\n          data: index\n        });\n      }\n    }\n  }, {\n    key: \'handleRank\',\n    value: function handleRank(e) {\n      var handler = this.props.customHandler;\n      var target = e.target;\n      var index = target.dataset.index;\n      if (handler) {\n        handler({\n          eventType: \'clickRank\',\n          data: index\n        });\n      }\n      this.setState({\n        close: !this.state.close,\n        idx: e.target.dataset.index\n      });\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var data = this.props.customData;\n      var _this = this;\n      var lists;\n      var a = 0;\n      {\n        data && data.length > 0 ? lists = data.map(function (d, i) {\n          return React.createElement(\n            \'div\',\n            { className: \'item\' },\n            React.createElement(\n              \'div\',\n              { className: d.deepFlag ? "left" : "left wd" },\n              React.createElement(\n                \'h5\',\n                { className: \'title\' },\n                d.rank && d.rank.num != "" ? React.createElement(\n                  \'i\',\n                  { className: d.rank.num > 3 ? \'rank-else\' : \'rank-top\', onClick: d.rank.rankFlag ? _this.handleRank.bind(_this) : \'\', \'data-index\': i },\n                  d.rank.num\n                ) : \'\',\n                d.title ? d.title : d.projectSeries\n              ),\n              d.titles ? React.createElement(\n                \'h5\',\n                { className: \'titlesXM\' },\n                d.titles\n              ) : \'\',\n              React.createElement(\n                \'ul\',\n                null,\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u76EE\\u6807\\u9500\\u91CF\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.targetSalesCount\n                  )\n                ),\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u5B9E\\u9645\\u9500\\u91CF\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.realSalesCount\n                  ),\n                  d.salesCountBigCustomer != null || d.salesCountBigCustomer != undefined ? React.createElement(\n                    \'span\',\n                    null,\n                    React.createElement(\n                      \'span\',\n                      { style: { marginRight: 0 } },\n                      \'(\\u5927\\u5BA2\\u6237\\uFF1A\'\n                    ),\n                    React.createElement(\n                      \'b\',\n                      null,\n                      d.salesCountBigCustomer,\n                      \')\'\n                    )\n                  ) : \'\'\n                ),\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u76EE\\u6807\\u9500\\u552E\\u989D\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.targetSalesAmount\n                  )\n                ),\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u5B9E\\u9645\\u9500\\u552E\\u989D\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.realSalesAmount\n                  ),\n                  d.salesAmountBigCustomer != null || d.salesAmountBigCustomer != undefined ? React.createElement(\n                    \'span\',\n                    null,\n                    React.createElement(\n                      \'span\',\n                      { style: { marginRight: 0 } },\n                      \'(\\u5927\\u5BA2\\u6237\\uFF1A\'\n                    ),\n                    React.createElement(\n                      \'b\',\n                      null,\n                      d.salesAmountBigCustomer,\n                      \')\'\n                    )\n                  ) : \'\'\n                )\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: d.deepFlag ? "right" : "right mg0" },\n              React.createElement(\n                \'div\',\n                { className: \'top\' },\n                React.createElement(\n                  \'div\',\n                  null,\n                  React.createElement(\n                    \'em\',\n                    null,\n                    d.salesCountPercent\n                  ),\n                  \'%\'\n                ),\n                React.createElement(\n                  \'h5\',\n                  null,\n                  \'\\u9500\\u91CF\\u8FBE\\u6210\\u7387\'\n                )\n              ),\n              React.createElement(\n                \'div\',\n                { className: \'btm\' },\n                React.createElement(\n                  \'div\',\n                  null,\n                  React.createElement(\n                    \'em\',\n                    null,\n                    d.salesAmountPercent\n                  ),\n                  \'%\'\n                ),\n                React.createElement(\n                  \'h5\',\n                  null,\n                  \'\\u9500\\u91CF\\u989D\\u8FBE\\u6210\\u7387\'\n                )\n              )\n            ),\n            d.deepFlag ? React.createElement(\'i\', { \'class\': \'ysp-cardlist-icon\', onClick: _this.handleClick.bind(_this), \'data-index\': i }) : "",\n            d.rank && d.rank.data && d.rank.data.length > 0 ? React.createElement(DialogRank, {\n              dataIndex: i,\n              customData: d.rank,\n              close: _this.state.close,\n              openIndex: _this.state.idx,\n              handleRank: _this.handleRank.bind(_this)\n            }) : \'\'\n          );\n        }) : lists = React.createElement(\n          \'div\',\n          { className: \'ysp-no-datass\',\n            style: { \'marginLeft\': \'-15px\', \'background\': \'#F0EFF5\' } },\n          React.createElement(\'div\', null),\n          React.createElement(\n            \'div\',\n            null,\n            \'\\u6682\\u65F6\\u6CA1\\u6709\\u6570\\u636E~\'\n          )\n        );\n      }\n\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-tableLists-box\' },\n        lists\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;\n\n// DialogRank \u6392\u540D\u9875\u9762\n\nvar DialogRank = function (_React$Component2) {\n  _inherits(DialogRank, _React$Component2);\n\n  function DialogRank(props) {\n    _classCallCheck(this, DialogRank);\n\n    return _possibleConstructorReturn(this, (DialogRank.__proto__ || Object.getPrototypeOf(DialogRank)).call(this, props));\n  }\n\n  _createClass(DialogRank, [{\n    key: \'render\',\n    value: function render() {\n      var data = this.props.customData;\n      var dataLists = data.data;\n      var index = data.num;\n      //var dataMain = data.data[index-1];\n      var dataMain = data.chooseData && data.chooseData[0];\n      var rankReportId = data && data.reportId;\n      var _this = this;\n      var _close = true;\n      if (_this.props.dataIndex == _this.props.openIndex) {\n        _close = false;\n      } else {\n        _close = true;\n      }\n\n      // console.log(data);\n      return React.createElement(\n        _yspCustomComponents.Dialog,\n        { close: _close, dataId: _this.props.dataIndex },\n        React.createElement(_yspCustomComponents.ComplexHeader, {\n          data: { centerText: "\u9500\u552E\u8FBE\u6210\u6392\u540D", rightText: "\u65F6\u95F4" },\n          backIsShow: true,\n          back: _this.props.handleRank,\n          centerTime: true,\n          closeIsShow: false,\n          filterIsShow: false\n        }),\n        React.createElement(\n          \'div\',\n          { className: \'ysp-rank-lists\' },\n          React.createElement(\n            \'div\',\n            { className: \'main\' },\n            React.createElement(\n              \'i\',\n              { className: \'rank-main\' },\n              dataMain.rank\n            ),\n            React.createElement(\n              \'span\',\n              { className: \'title\' },\n              "report15" == rankReportId || "report16" == rankReportId || "report20" == rankReportId || "report22" == rankReportId ? dataMain.branchName : "report33" == rankReportId || "report33-1" == rankReportId ? dataMain.officeName : "report34" == rankReportId || "report18" == rankReportId ? dataMain.salerName : ""\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'infos\' },\n              React.createElement(\n                \'div\',\n                null,\n                React.createElement(\n                  \'b\',\n                  null,\n                  dataMain.salesAmountPercent\n                ),\n                \'%\'\n              ),\n              React.createElement(\n                \'h5\',\n                null,\n                \'\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387\'\n              )\n            )\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'itemLists\' },\n            dataLists.map(function (d, i) {\n              return React.createElement(\n                \'div\',\n                { className: i == index - 1 ? \'item item-main\' : \'item\' },\n                React.createElement(\n                  \'i\',\n                  { className: i != index - 1 ? d.rank > 3 ? \'rank-else\' : \'rank-top\' : \'rank-main\' },\n                  d.rank\n                ),\n                React.createElement(\n                  \'span\',\n                  { className: \'title\' },\n                  "report15" == rankReportId || "report16" == rankReportId || "report20" == rankReportId || "report22" == rankReportId ? d.branchName : "report33" == rankReportId || "report33-1" == rankReportId ? d.officeName : "report34" == rankReportId || "report18" == rankReportId ? d.salerName : ""\n                ),\n                React.createElement(\n                  \'div\',\n                  { className: \'infos\' },\n                  React.createElement(\n                    \'div\',\n                    null,\n                    React.createElement(\n                      \'b\',\n                      null,\n                      d.salesAmountPercent\n                    ),\n                    \'%\'\n                  ),\n                  React.createElement(\n                    \'h5\',\n                    null,\n                    \'\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387\'\n                  )\n                )\n              );\n            })\n          )\n        )\n      );\n    }\n  }]);\n\n  return DialogRank;\n}(React.Component);';
     }
   }, "businesHeadquartersDC");
 })(window, ysp);
