@@ -2,7 +2,17 @@
 
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
-    getData_control175_N2PNWg: function (elem) {},
+    getData_control175_N2PNWg: function (elem) {
+      if (elem) {
+        if (elem.ownerDocument.defaultView.localStorage.getItem('layerLoading') == null) {
+          setTimeout(function () {
+            ysp.appMain.hideLoading();
+          }, 5000);
+        } else {
+          ysp.appMain.showLoading();
+        }
+      }
+    },
     doAction_uiControl172_rHIQIG: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackModel = 'index';ysp.customHelper.AndroidBackFlag = 'PageClose';
