@@ -545,8 +545,8 @@
     // }
     onceExecuteFlag = false;
     if (topWin.location.href.indexOf('login') != -1) {
-      executePlan('login');
-    }
+      //executePlan('login');  //测试登录框问题 lyh
+    }
   }
 
   function _getThirdMenuList(parentId, callback) {
@@ -964,7 +964,12 @@
       ysp.runtime.Model.setForceMatchModels([model]);
     }
   }
-  utils.extend(ysp.customHelper, {
+  //页面加载Loading . 数据加载中 , 数据请求时机 ,页面调用会判断当前数据请求是否成功,请求中时加载loading . 请求成功时 ,关闭loading
+  function _isLoading(){
+    var currentWin = ysp.runtime.Browser.activeBrowser.contentWindow; //当前激活window . 
+    
+  }
+  utils.extend(ysp.customHelper, {
     AndroidBidFlag:'',
     AndroidBackFn:topWin.AndroidBack,
     AndroidDocument:'',//安卓物理返回键客户门店返回元素
@@ -2130,13 +2135,14 @@
       //   }
       // }
       //2.7.0及以上 运行时 当主iframe.name=='browserFrame2'  使页面匹配login
-      if(aWin.location.href.indexOf('ysp_mobile') !== -1){
-        aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login?clientType=ysp'
-      }
+      // if(aWin.location.href.indexOf('ysp_mobile') !== -1){
+      //   aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login?clientType=ysp'
+      // }
       if (aWin.frameElement && aWin.frameElement.name == "browserFrame2" && aWin.frameElement.dataset.browser) {
         topWin = aWin;
         if (aWin.location.href.indexOf('login') !== -1) {
           ysp.runtime.Model.setForceMatchModels(['login']);
+          console.log('打印几次,+++++++')
         }
       }
       aWin.Object.defineProperty(aWin, 'getTopWin', {
