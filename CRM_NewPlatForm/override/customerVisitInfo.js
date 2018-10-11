@@ -1439,11 +1439,13 @@
 	    $("#DisplayContact").click(function () {
 	        $("#search-lists").hide();
 	        $("#contactSearch").val("");
-	        //backfill.load();
+	        backfill.load();
+         /**
 	        if (!$("#DisplayContact").hasClass("initFlag")) {
 	            $("#DisplayContact").addClass("initFlag");
 	            backfill.load();
 	        }
+          **/
 	        $('.m-contact').slideDown();
 	        // let flag = $("#ContactAlert").css("right") == 0 ? false : true;
 	        var flag = $("#ContactAlert").css("left") == oWidth + "px" ? true : false;
