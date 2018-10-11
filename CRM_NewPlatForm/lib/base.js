@@ -354,7 +354,7 @@
           if(ALLMENU[i].name.indexOf(current) !== -1){
             removeMenuAll.push(ALLMENU.splice(i,1));
             //打印removeMenuAll 可以得到筛选排除的所有菜单;
-            ALLMENU.splice(i,1);
+            //ALLMENU.splice(i,1);
           }
         }
       })
