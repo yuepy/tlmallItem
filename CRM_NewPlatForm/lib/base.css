@@ -12629,7 +12629,7 @@ div[data-ysp-modelid="workPlanCustomStore"] {
   background: #dbdddc;
 }
 .ysp-workSummary-style .images-report .upload .file-images .file-images-rows img {
-  height: 100px;
+  height: 100%;
 }
 .ysp-workSummary-style .images-report .upload .file-images .file-images-rows i {
   position: absolute;
@@ -13225,6 +13225,14 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   padding: 3px 12px;
   border: 1px solid #5692E2;
 }
+.ysp-atMe-workSummary .ysp-atreport-picture .personnel > div:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  height: 100%;
+  width: 0;
+  visibility: hidden;
+}
 .ysp-atMe-workSummary .ysp-atreport-picture .personnel > div > i {
   display: inline-block;
   vertical-align: middle;
@@ -13792,7 +13800,8 @@ div[data-componentsid="uiControl308_Xs0S2e"] > div:nth-child(1) .moudle-time {
   background: #dbdddc;
 }
 .ysp-atMe-workSummary .images-report .upload .file-images .file-images-rows img {
-  height: 100px;
+  height: 100%;
+  width: 100%;
 }
 .ysp-atMe-workSummary .images-report .upload .file-images .file-images-rows i {
   position: absolute;
