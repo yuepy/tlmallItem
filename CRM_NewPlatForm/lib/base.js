@@ -249,24 +249,24 @@
           //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
           if(ALLMENU != '' && AllMenu){
             //正式环境暂时没有效验
-            //  var SessionXhr = new XMLHttpRequest();
-            //  SessionXhr.onreadystatechange = function(){
-            //   if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
-            //     var encoder = JSON.parse(SessionXhr.response).encoder;
-            //     var userId = JSON.parse(SessionXhr.response).userId;
-            //     if(encoder && userId){
-            //       var encoderXHR = new XMLHttpRequest();
-            //       //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-            //     encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-            //       //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
-            //       encoderXHR.send();
-            //     }else{
-            //       console.error('AndEncoder接口请求失败!')
-            //     }
-            //   }
-            // }
-            //  SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
-            //  SessionXhr.send();
+             var SessionXhr = new XMLHttpRequest();
+             SessionXhr.onreadystatechange = function(){
+              if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
+                var encoder = JSON.parse(SessionXhr.response).encoder;
+                var userId = JSON.parse(SessionXhr.response).userId;
+                if(encoder && userId){
+                  var encoderXHR = new XMLHttpRequest();
+                  //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+                encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+                  //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+                  encoderXHR.send();
+                }else{
+                  console.error('AndEncoder接口请求失败!')
+                }
+              }
+            }
+             SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+             SessionXhr.send();
           }
       }
     }
