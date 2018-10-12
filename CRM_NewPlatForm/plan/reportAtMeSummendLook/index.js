@@ -103,7 +103,7 @@
               tempReplyTimeArr = tempReplyTime.split(":");let replyTime = tempReplyTimeArr.map((v, i) => {
             if (i === 0) {
               if (+v.slice(-2) < 10 && v.slice(-2).search("0") === -1) {
-                return v.slice(0, -2) + '0' + v.slice(-2);
+                return v.slice(0, -1) + '0' + v.slice(-1);
               }return v;
             } else {
               if (+v < 10 && v.search("0") === -1) {
