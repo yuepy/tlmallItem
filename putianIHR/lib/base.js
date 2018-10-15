@@ -50,6 +50,8 @@
                 var btn = doc.querySelectorAll(".ps_loginmessagelarge")[1].querySelector("a");
                 btn.click();
             }
+
+
             //index页重定向---测试环境
             // debugger;
             if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("HPS_TL_PAG_010_CP") !== -1) {
@@ -62,27 +64,48 @@
                 aWin.location.href = "http://192.168.220.110/psp/ps_2/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_001.GBL";
             } else if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("HPS_TL_AWE_004") !== -1) {
                 aWin.location.href = "http://192.168.220.110/psp/ps_4/EMPLOYEE/HRMS/c/HPS_MENU.HPS_TL_AWE_004.GBL";
-            } else if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("TL_SELF") !== -1&&aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("ysp_appid") !== -1) {
+            } else if (aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("TL_SELF") !== -1 && aWin.location.href.indexOf("FieldFormula") !== -1 && aWin.location.href.indexOf("ysp_appid") !== -1) {
                 aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login";
             }
-           	if(aWin.location.href.indexOf("toHome")!==-1){
-              aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
+            if (aWin.location.href.indexOf("toHome") !== -1) {
+                aWin.location.href = "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF";
             }
-          	/******end**********/
+            /******end**********/
             //每个tab页面的切换
             var tblpstabs = doc.querySelector("#tblpstabs");
             if (tblpstabs && tblpstabs.querySelectorAll("a")[1] && tblpstabs.querySelectorAll("a")[1].textContent !== "调休假余额查询" && tblpstabs.querySelectorAll("a")[1].textContent !== "考勤类型") {
                 tblpstabs.querySelectorAll("a")[1].click();
             }
-          	//华为附件上传当页刷新的问题
-          	if(doc.body.textContent.indexOf("加班申请"||"假期申请"||"公出"||"外派探亲"||"自助查看个人信息")!==-1){
-              if (topWindow.EAPI.isAndroid()) {
-                window.yspCheckIn.isRefresh(true);
-              }
+            //华为附件上传当页刷新的问题
+
+            if (doc.body.textContent.indexOf("加班申请") !== -1||doc.body.textContent.indexOf("请假申请") !== -1||doc.body.textContent.indexOf("公出") !== -1||doc.body.textContent.indexOf("忘打卡") !== -1||doc.body.textContent.indexOf("外派探亲") !== -1||doc.body.textContent.indexOf("自助查看个人信息") !== -1) {
+                if (topWindow.EAPI.isAndroid()) {
+                    window.yspCheckIn.isRefresh(true);
+                }
+              
+              
+            }
+          	//加班申请和忘打卡软键盘弹出问题
+          	if(doc.body.textContent.indexOf("忘打卡") !== -1){
+              
+              var timer=setInterval(function(){
+                if(doc.querySelector("input[id*='HDR_PDATE']")){
+                  doc.querySelector("input[id*='HDR_PDATE']").style.visibility="hidden";
+                  clearInterval(timer)
+                }
+              },500)
+            }else if(doc.body.textContent.indexOf("加班") !== -1){
+              
+              var timer=setInterval(function(){
+                if(doc.querySelector("input[id*='DATE']")){
+                  doc.querySelector("input[id*='DATE']").style.visibility="hidden";
+                  clearInterval(timer)
+                }
+              },500)
             }
             //解决重复登录的问题
             /**********************当快捷地址直接打开是目标地址&cmd=login时解锁以下判断*************************/
-            if (aWin.location.href=="http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login") {
+            if (aWin.location.href == "http://192.168.220.110/psp/ps/EMPLOYEE/HRMS/h/?tab=TL_SELF&cmd=login") {
                 var timer = setInterval(function() {
                     if (doc.querySelector("#userid").value !== "" && doc.querySelector("#pwd").value !== "") {
                         sessionStorage.setItem("userid", doc.querySelector("#userid").value);
@@ -91,7 +114,7 @@
                         clearInterval(timer);
                     }
                 }, 500);
-            } else if (aWin.location.href.indexOf("GBL?") !== -1 && aWin.location.href.indexOf("&cmd=login") !== -1 && doc.querySelector("#userid")&& aWin.location.href.indexOf("languageCd=ZHS") == -1 ) {
+            } else if (aWin.location.href.indexOf("GBL?") !== -1 && aWin.location.href.indexOf("&cmd=login") !== -1 && doc.querySelector("#userid") && aWin.location.href.indexOf("languageCd=ZHS") == -1) {
                 var host = aWin.location.href.match(/http.*\?/)[0];
 
                 var timer = setInterval(function() {
@@ -137,8 +160,8 @@
             } else if (aWin.location.href.indexOf("GBL?&cmd=login&languageCd=ZHS") !== -1) {
                 doc.querySelector("#userid").value = sessionStorage.getItem("userid");
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
-            }else if(aWin.location.href.indexOf("errorCode") !== -1&&aWin.location.href.indexOf("&languageCd=ZHS") !== -1){
-              	doc.querySelector("#userid").value = sessionStorage.getItem("userid");
+            } else if (aWin.location.href.indexOf("errorCode") !== -1 && aWin.location.href.indexOf("&languageCd=ZHS") !== -1) {
+                doc.querySelector("#userid").value = sessionStorage.getItem("userid");
                 doc.querySelector("#pwd").value = sessionStorage.getItem("pwd");
             }
             // 用户名、密码记录
@@ -161,6 +184,19 @@
                 ysp.customHelper.tab = "menu"
             }
 
+          	// //解决焦点问题
+          	// if(aWin.location.href.indexOf("GBL") !== -1){
+          	// var onfocusTimer=setInterval(function() {
+          	// if (doc.querySelector("input")) {
+          	// doc.querySelector("input").blur();
+          	// clearInterval(timer);
+          	// }else if(doc.querySelector("select")) {
+          	// doc.querySelector("select").blur();
+          	// clearInterval(timer);
+          	// }
+          	// }, 500);
+          	// }
+          	
 
 
         },
@@ -187,8 +223,9 @@
             // }else if(href.indexOf("gongchu")!==-1){
             //   ysp.customHelper.indexName="gongchu";
             // }
-
-
+						//软键盘弹出问题
+						aWin.HTMLElement.prototype.focus = function(){ };
+          	
         },
 
         //登录相关接口

@@ -107,7 +107,7 @@
           top.EAPI.closeWindow();
         }
       } else if (type == "filter") {
-        var trs = elem.querySelectorAll("tr[id]");trs[trs.length - 1].querySelectorAll("td")[4].querySelector("a").click();
+        var trs = elem.querySelectorAll("tr[id]");trs[trs.length - 1].querySelectorAll("td")[5].querySelector("a").click();
       }
     },
     getTemplate_uiControl52_y5AbQE: function () {
