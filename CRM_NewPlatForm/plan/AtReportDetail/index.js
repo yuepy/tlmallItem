@@ -228,8 +228,9 @@
         var value = data.dataCustom;var text = elem.ownerDocument.querySelector("#ChatIpt");text.value = value;
       } //点击@显示方法
       if ('clickAt' == data.eventType) {
-        var btn = elem.ownerDocument.querySelector(".textarea>.chatUsers").querySelector("#DisplayContact"),
-            btn1 = elem.ownerDocument.querySelectorAll(".area-name")[0];btn.click();btn1.click(); /**因此要默认第一个分公司展开就要模仿点击一下原PC网站上第一个分公司，这样才会有数据**/
+        var btn = elem.ownerDocument.querySelector(".textarea>.chatUsers").querySelector("#DisplayContact");btn.click();setTimeout(function () {
+          var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[0];btn1.click();
+        }, 1000); /**因此要默认第一个分公司展开就要模仿点击一下原PC网站上第一个分公司，这样才会有数据**/
       } //点击发送
       if ('send' == data.eventType) {
         /**找到原页面的发送按钮对应的匹配的元素：是第二个a标签**/var send = elem.ownerDocument.querySelector(".textarea").querySelectorAll("a")[1];send.click();
@@ -251,8 +252,7 @@
             as.click();
           } else {
             setTimeout(function () {
-              elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var lists = elem.querySelector('#search-lists');var list = lists.firstElementChild;
-              list.click();
+              elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var lists = elem.querySelector('#search-lists');var list = lists.firstElementChild;list.click();
             }, 100);
           }as.click();
         }
