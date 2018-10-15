@@ -102,6 +102,14 @@
                   clearInterval(timer)
                 }
               },500)
+            }else if(doc.body.textContent.indexOf("外派") !== -1){
+              
+              var timer=setInterval(function(){
+                if(doc.querySelector("input[id*='EXPATRIATE']")){
+                  doc.querySelector("input[id*='EXPATRIATE']").style.visibility="hidden";
+                  clearInterval(timer)
+                }
+              },500)
             }
             //解决重复登录的问题
             /**********************当快捷地址直接打开是目标地址&cmd=login时解锁以下判断*************************/
