@@ -71,7 +71,9 @@
   //IOS客户端调用.解决请求ICON接口跨域问题;
   topWin.GetIconNum = function(summary,atMe){
     if(!summary && !atMe || summary == 'error'){
-      console.error('ICON接口请求未通过,请查找原因!');
+      if(summary =='error'){
+        console.info('未登录成功,请稍后!');
+      }
       return ;
     }
     ysp.customHelper.IconNum.summary = summary.split('=')[1];
@@ -227,7 +229,7 @@
     xhr.open('POST','http://192.168.220.82:8080/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
     xhr.send()
   }
-  // 请求首页面所有一级\二级\三级菜单
+  // 请求首页面所有一级\二级\三级菜\\\\\                                                                                                              单
   function getAllMenu(aWin) {
    	//取值localStorage内接口数据,进行菜单渲染
     var _this = this;
@@ -2096,7 +2098,7 @@
         }
       }
       if (aWin) {
-        if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html' || aWin.location.href.indexOf('ysp_mobile') != -1) {
+        if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           //getAllMenu();
           var _this = this;
@@ -2116,7 +2118,11 @@
           ysp.appMain.hideLoading();
         }
       }
-      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html' || aWin.location.href.indexOf('ysp_mobile') != -1) {
+      //调试IOS登录框问题 - 地址变成特殊地址 
+      if(aWin.location.href.indexOf('ysp_mobile')!==-1){
+        aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login?clientType=ysp'
+      }
+      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);
       }
@@ -2142,6 +2148,7 @@
       if (aWin.frameElement && aWin.frameElement.name == "browserFrame2" && aWin.frameElement.dataset.browser) {
         topWin = aWin;
         if (aWin.location.href.indexOf('login') !== -1) {
+          console.log(aWin.location);
           ysp.runtime.Model.setForceMatchModels(['login']);
           console.log('打印几次,+++++++')
         }
