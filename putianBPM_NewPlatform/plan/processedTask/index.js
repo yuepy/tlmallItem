@@ -108,6 +108,8 @@
           top.pendTitle = "外派探亲资格";win._ysp_top.tenderType = "visitRelative";
         } else if (title.indexOf("员工录用") !== -1) {
           top.pendTitle = "员工录用";win._ysp_top.tenderType = "employeeHire";
+        } else if (title.indexOf("分公司转正") !== -1) {
+          win._ysp_top.tenderType = "branchTurnRegular";
         } else if (title.indexOf("特价申请") !== -1) {
           win._ysp_top.tenderType = "goodBargain";
         } else if (title.indexOf("价格政策") !== -1) {

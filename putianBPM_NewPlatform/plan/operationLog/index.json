@@ -21,7 +21,8 @@
     "positionChange": "../positionChange/index.json",
     "departure": "../departure/index.json",
     "goodBargain": "../goodBargain/index.json",
-    "pricePolicy": "../pricePolicy/index.json"
+    "pricePolicy": "../pricePolicy/index.json",
+    "branchTurnRegular": "../branchTurnRegular/index.json"
   },
   "chineseName": "操作日志",
   "description": "",
@@ -176,6 +177,10 @@
         "data": {
           "tagName": "BODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -197,6 +202,10 @@
       "location": {
         "data": {
           "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -319,6 +328,10 @@
         {
           "toContextId": "context38_3olAon",
           "toModelId": "pricePolicy"
+        },
+        {
+          "toContextId": "context41_WzBtqX",
+          "toModelId": "branchTurnRegular"
         }
       ]
     },
@@ -501,7 +514,8 @@
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&monthChange",
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&goodBargain",
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&pricePolicy",
-          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&processForm"
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&processForm",
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&branchTurnRegular"
         ],
         "context27_AJKd80": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?Headquarters&workItemID=278652&_t=133877&_winid=w6689",

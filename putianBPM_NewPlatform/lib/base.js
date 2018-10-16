@@ -699,7 +699,7 @@
         currentWin.location.href = url
       }
       if(url=='' && model){
-        debugger;
+        
         // var btns = currentWin.document.querySelector("#btn");
         var currentDOC=currentWin.document.querySelector("iframe[src*='newPage']").contentDocument;
 				var btns =currentDOC .querySelector("#btn");
