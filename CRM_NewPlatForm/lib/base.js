@@ -282,7 +282,6 @@
 //             }else{
 //               FlagNum = 0;
 //             }
-            
 //           } else if (xhr.status == 200 && xhr.readyState == 4) {
 //             if(top.EAPI.isIOS()){
 //               top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
