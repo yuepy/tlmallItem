@@ -547,7 +547,7 @@
     onceExecuteFlag = false;
     if (topWin.location.href.indexOf('login') != -1) {
       if(top.EAPI.isIOS()){
-        executePlan('login');  //测试登录框问题 lyh
+        //executePlan('login');  //测试登录框问题 lyh
       }
     }
   }
