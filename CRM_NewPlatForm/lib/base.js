@@ -2119,9 +2119,9 @@
         }
       }
       //调试IOS登录框问题 - 地址变成特殊地址 
-      if(aWin.location.href.indexOf('ysp_mobile')!==-1){
-        aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login?clientType=ysp'
-      }
+      // if(aWin.location.href.indexOf('ysp_mobile')!==-1){
+      //   aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login?clientType=ysp'
+      // }
       if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);
@@ -2148,7 +2148,6 @@
       if (aWin.frameElement && aWin.frameElement.name == "browserFrame2" && aWin.frameElement.dataset.browser) {
         topWin = aWin;
         if (aWin.location.href.indexOf('login') !== -1) {
-          console.log(aWin.location);
           ysp.runtime.Model.setForceMatchModels(['login']);
           console.log('打印几次,+++++++')
         }
