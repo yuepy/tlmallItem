@@ -88,6 +88,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -112,6 +116,42 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control254_mZ1pqN": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"mainContainer\"]//DIV[@id=\"salesrebate-content\"]//DIV[@id=\"saleRebatePage\"]",
+              "descendant::DIV[@id=\"salesrebate-content\"]//DIV[@id=\"saleRebatePage\"]",
+              "descendant::DIV[@id=\"saleRebatePage\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.commpnPage DIV.pagination"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[3]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control254_mZ1pqN"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -119,11 +159,12 @@
       "controls": [
         "control12_sVQ6Ze",
         "control19_4hyTIt",
-        "control195_XJnIGc"
+        "control195_XJnIGc",
+        "control254_mZ1pqN"
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/cust\\/customer\\/getCustomerRebateByCustomerCode\\?customerCode*"
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/cust\\/customer\\/getCustomerRebateByCustomerCode"
       ]
     }
   },
@@ -202,6 +243,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl247_nM5qaV",
+          "controlId": "control254_mZ1pqN",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl247_nM5qaV",
+                "onGetTemplate": "getTemplate_uiControl247_nM5qaV"
+              }
+            }
+          }
         }
       ]
     }
@@ -222,7 +278,8 @@
       "contexts": {
         "context7_mzpfzL": [
           "192.168.220.82:8080/pttlCrm/cust/customer/getCustomerRebateByCustomerCode?customerCode=C104689",
-          "192.168.220.82:8080/pttlCrm/cust/customer/getCustomerRebateByCustomerCode?customerCode=C71212911"
+          "192.168.220.82:8080/pttlCrm/cust/customer/getCustomerRebateByCustomerCode?customerCode=C71212911",
+          "192.168.220.82:8080/pttlCrm/cust/customer/getCustomerRebateByCustomerCode"
         ],
         "context0_1ekenN": [
           "192.168.220.82:8080/",
@@ -268,6 +325,20 @@
             "rightArrow",
             "saleRebatePage",
             "salesrebate-content"
+          ],
+          [
+            "Close",
+            "brandHeader",
+            "clientInfoMenu",
+            "clientMenu",
+            "leftArrow",
+            "mainContainer",
+            "publicHead",
+            "rightArrow",
+            "saleRebatePage",
+            "salesrebate-content",
+            "tableThead",
+            "tbodyContent"
           ]
         ],
         "context0_1ekenN": [
@@ -348,6 +419,31 @@
             "salesrebate-clsnumber",
             "salesrebate-contenttable",
             "table"
+          ],
+          [
+            "active",
+            "arrows",
+            "commpnPage",
+            "content-salesrebate",
+            "down",
+            "head",
+            "head-detile",
+            "head-tab",
+            "head-title",
+            "icon",
+            "left-arrow",
+            "pagination",
+            "right-arrow",
+            "salesrebate-clsmoney",
+            "salesrebate-contenttable",
+            "skip",
+            "skip-num",
+            "skip-right-icon",
+            "skip_count",
+            "skip_right_goto",
+            "table",
+            "title-property",
+            "up"
           ]
         ],
         "context0_1ekenN": [
@@ -495,6 +591,32 @@
             "TBODY/TR/TD",
             "THEAD/TR/TH",
             "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H2",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "TH/DIV/A",
+            "THEAD/TR/TH",
+            "TR/TH/DIV",
+            "TR/TH/SPAN",
+            "UL/LI/A",
+            "UL/LI/INPUT-number",
+            "UL/LI/SPAN"
           ]
         ],
         "context0_1ekenN": [
