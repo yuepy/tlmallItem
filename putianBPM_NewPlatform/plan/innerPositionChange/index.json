@@ -225,6 +225,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": false,
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
@@ -374,6 +375,32 @@
       "monitored": false,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control229_VBQR3Z": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[7]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control229_VBQR3Z"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -390,7 +417,8 @@
         "control225_lRE6d1",
         "control226_f4wJ8S",
         "control227_T0xd5m",
-        "control228_WvKHMK"
+        "control228_WvKHMK",
+        "control229_VBQR3Z"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -610,6 +638,21 @@
           }
         },
         {
+          "id": "uiControl222_cxm3xA",
+          "controlId": "control229_VBQR3Z",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl222_cxm3xA",
+                "onGetTemplate": "getTemplate_uiControl222_cxm3xA"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl218_dtflFR",
           "controlId": "control225_lRE6d1",
           "display": {
@@ -684,7 +727,8 @@
       "contexts": {
         "context42_hr14DK": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=513142&innerPositionChange",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=513920&innerPositionChange"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=513920&innerPositionChange",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=513317&innerPositionChange"
         ]
       }
     },

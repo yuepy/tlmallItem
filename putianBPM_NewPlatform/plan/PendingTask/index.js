@@ -109,7 +109,7 @@
           top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
         } else if (title.indexOf("员工职位变动") !== -1) {
           win._ysp_top.tenderType = "positionChange";
-        } else if (title.indexOf("内部职位变动") !== -1) {
+        } else if (title.indexOf("内部职位变动") !== -1 || title.indexOf("分公司间职位变动") !== -1) {
           win._ysp_top.tenderType = "innerPositionChange";
         } else if (title.indexOf("总部月度编制变动") !== -1 || title.indexOf("月度编制") !== -1) {
           win._ysp_top.tenderType = "monthChange";
