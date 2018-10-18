@@ -95,11 +95,11 @@
         } else if (title.indexOf("离职管理") !== -1) {
           top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
         } else if (title.indexOf("员工职位变动") !== -1) {
-          top.pendTitle = "员工职位变动";win._ysp_top.tenderType = "positionChange";
-        } else if (title.indexOf("总部月度编制变动") !== -1) {
-          top.pendTitle = "总部月度编制变动";win._ysp_top.tenderType = "monthChange";
-        } else if (title.indexOf("销假申请") !== -1) {
-          top.pendTitle = "销假申请";win._ysp_top.tenderType = "beginToWork";
+          win._ysp_top.tenderType = "positionChange";
+        } else if (title.indexOf("内部职位变动") !== -1) {
+          win._ysp_top.tenderType = "innerPositionChange";
+        } else if (title.indexOf("总部月度编制变动") !== -1 || title.indexOf("月度编制") !== -1) {
+          win._ysp_top.tenderType = "monthChange";
         } else if (title.indexOf("忘打卡") !== -1) {
           top.pendTitle = "忘打卡";win._ysp_top.tenderType = "forgetCard";
         } else if (title.indexOf("加班申请") !== -1) {
@@ -108,7 +108,7 @@
           top.pendTitle = "外派探亲资格";win._ysp_top.tenderType = "visitRelative";
         } else if (title.indexOf("员工录用") !== -1) {
           top.pendTitle = "员工录用";win._ysp_top.tenderType = "employeeHire";
-        } else if (title.indexOf("分公司转正") !== -1) {
+        } else if (title.indexOf("分公司转正") !== -1 || title.indexOf("有关") !== -1 && title.indexOf("转正") !== -1) {
           win._ysp_top.tenderType = "branchTurnRegular";
         } else if (title.indexOf("特价申请") !== -1) {
           win._ysp_top.tenderType = "goodBargain";

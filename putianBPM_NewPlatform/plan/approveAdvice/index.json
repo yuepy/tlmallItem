@@ -19,7 +19,8 @@
     "departure": "../departure/index.json",
     "goodBargain": "../goodBargain/index.json",
     "pricePolicy": "../pricePolicy/index.json",
-    "PendingTask": "../PendingTask/index.json"
+    "PendingTask": "../PendingTask/index.json",
+    "innerPositionChange": "../innerPositionChange/index.json"
   },
   "chineseName": "已办查看表单-审批意见",
   "description": "",
@@ -306,6 +307,10 @@
         {
           "toContextId": "context5_7wf9RT",
           "toModelId": "PendingTask"
+        },
+        {
+          "toContextId": "context42_hr14DK",
+          "toModelId": "innerPositionChange"
         }
       ]
     },
@@ -494,7 +499,8 @@
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&goodBargain",
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&pricePolicy",
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&processForm",
-          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&branchTurnRegular"
+          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&branchTurnRegular",
+          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&innerPositionChange"
         ],
         "context4_d60WvN": [
           "192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777",
