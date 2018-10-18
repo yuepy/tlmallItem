@@ -9704,9 +9704,29 @@ div[data-ysp-modelid="dayPSI"]{
     >div:first-child{
       // color: #4789e0;
       // margin-bottom: 5px;
-      color: #6E9DCC;
       margin: 0 0 10px 0;
       font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      >div:nth-child(1){
+        color: #6E9DCC;
+        width: 75%;
+      }
+      .ysp-statement-account-content-no{
+        font-size: 12px;
+        background: #F4371F;
+        border-radius: 5px;
+        padding: 1px 5px;
+        color: #fff;
+      }
+      .ysp-statement-account-content-yes{
+        font-size: 12px;
+        background: #ececec;
+        border-radius: 5px;
+        padding: 1px 5px;
+        color: #fff;
+      }
     }
     >div:nth-child(2){
       display: flex;
