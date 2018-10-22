@@ -125,6 +125,8 @@
           top.pendTitle = "员工录用";win._ysp_top.tenderType = "employeeHire";
         } else if (title.indexOf("分公司录用审批") !== -1) {
           win._ysp_top.tenderType = "branchEmployeeHire";
+        } else if (title.indexOf("分公司员工个别薪酬") !== -1) {
+          win._ysp_top.tenderType = "branchEmpSalary";
         } else if (title.indexOf("分公司转正") !== -1 || title.indexOf("有关") !== -1 && title.indexOf("转正") !== -1) {
           win._ysp_top.tenderType = "branchTurnRegular";
         } else if (title.indexOf("特价申请") !== -1) {

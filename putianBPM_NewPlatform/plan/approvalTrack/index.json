@@ -24,7 +24,8 @@
     "branchTurnRegular": "../branchTurnRegular/index.json",
     "innerPositionChange": "../innerPositionChange/index.json",
     "morePositionChange": "../morePositionChange/index.json",
-    "branchEmployeeHire": "../branchEmployeeHire/index.json"
+    "branchEmployeeHire": "../branchEmployeeHire/index.json",
+    "branchEmpSalary": "../branchEmpSalary/index.json"
   },
   "chineseName": "审批轨迹",
   "description": "",
@@ -347,6 +348,10 @@
         {
           "toContextId": "context44_N9LLxT",
           "toModelId": "branchEmployeeHire"
+        },
+        {
+          "toContextId": "context45_gtcJSo",
+          "toModelId": "branchEmpSalary"
         }
       ]
     },
@@ -552,7 +557,9 @@
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&branchTurnRegular",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&innerPositionChange",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&morePositionChange",
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&branchEmployeeHire"
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&branchEmployeeHire",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&branchEmpSalary",
+          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&branchEmpSalary"
         ],
         "context8_ddpRhS": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861",
