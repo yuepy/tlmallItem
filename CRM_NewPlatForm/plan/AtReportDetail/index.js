@@ -200,7 +200,6 @@
                                         for (var j = 0; j < leaveWordArrs.length; j++) {
                                         classArr.push(leaveWordArrs[j].className);
                                         }
-                                        debugger;
                                         if (classArr.indexOf("chat-one chat-two") > -1) {
                                         leaveWordArrs[i + 1].querySelector("a").click();
                                         } else {
@@ -209,17 +208,15 @@
           return v.className.indexOf('chat-two') === -1;
         });leaveWordArrs[i].querySelector("a").click(); /**                                                  **/ /**
                                                                                                                    if (+data.dataCustom.index == +data.dataCustom.len - 1) {
-                                                                                                                     debugger;
-                                                                                                                     data.dataCustom.anchor.scrollIntoView(); **/ //let hh = `#${data.dataCustom.anchor}`;
-        //location.href = `#${data.dataCustom.anchor}`;
-        //console.log(hh); // window.location.hash = "focus";
-        // onclick="document.getElementById('am').scrollIntoView();"
-        /**
-                                               console.log(data.dataCustom.focus.getAttribute("id"));**/ /**
-                                                                                                         console.log("hahahahahahahahaha");
-                                                                                                         console.log(data.dataCustom.focus.id);
-                                                                                                         console.log(data.dataCustom.focus.nodeName);
-                                                                                                         data.dataCustom.focus.scrollIntoView();**/ //}
+                                                                                                                 //location.href = `#${data.dataCustom.anchor}`;
+                                                                                                                 //console.log(hh); // window.location.hash = "focus";
+                                                                                                                 // onclick="document.getElementById('am').scrollIntoView();"
+                                                                                                                 /**
+                                                                                                                 console.log(data.dataCustom.focus.getAttribute("id"));**/ /**
+                                                                                                                                                                           console.log("hahahahahahahahaha");
+                                                                                                                                                                           console.log(data.dataCustom.focus.id);
+                                                                                                                                                                           console.log(data.dataCustom.focus.nodeName);
+                                                                                                                                                                           data.dataCustom.focus.scrollIntoView();**/ //}
       } //点击返回关闭查看详情的弹出框
       if ('clickBack' == data.eventType) {
         var close = elem.ownerDocument.querySelector("#ContactAlert").querySelector("#ContactClose");close.focus();close.click();
@@ -228,9 +225,7 @@
         var value = data.dataCustom;var text = elem.ownerDocument.querySelector("#ChatIpt");text.value = value;
       } //点击@显示方法
       if ('clickAt' == data.eventType) {
-        var btn = elem.ownerDocument.querySelector(".textarea>.chatUsers").querySelector("#DisplayContact");btn.click();setTimeout(function () {
-          var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[0];btn1.click();
-        }, 1000); /**因此要默认第一个分公司展开就要模仿点击一下原PC网站上第一个分公司，这样才会有数据**/
+        var btn = elem.ownerDocument.querySelector(".textarea>.chatUsers").querySelector("#DisplayContact");btn.click();
       } //点击发送
       if ('send' == data.eventType) {
         /**找到原页面的发送按钮对应的匹配的元素：是第二个a标签**/var send = elem.ownerDocument.querySelector(".textarea").querySelectorAll("a")[1];send.click();
@@ -242,8 +237,7 @@
       if (data.eventType == 'searchClick') {
         elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var list = elem.querySelector('#search-lists');var as = list.firstElementChild;if (as == null) {
           setTimeout(function () {
-            elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var lists = elem.querySelector('#search-lists');var list = lists.firstElementChild;
-            list.click();
+            elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var lists = elem.querySelector('#search-lists');var list = lists.firstElementChild;list.click();
           }, 100);
         } else {
           var name = as.innerHTML;if (name.indexOf(data.dataCustom.value) != -1) {
@@ -256,8 +250,7 @@
         }
       } //点击回复
       if (data.eventType == 'clickhf') {
-        var index = data.customData;var btn = elem.ownerDocument.querySelector('.chats').querySelectorAll('.chat-one');
-        btn[index].querySelector('a').querySelector('h6').click();
+        var index = data.customData;var btn = elem.ownerDocument.querySelector('.chats').querySelectorAll('.chat-one');btn[index].querySelector('a').querySelector('h6').click();
       }if ("oldBranch" == data.eventType) {
         var oldNumber = +data.dataCustom;if (!isNaN(oldNumber)) {
           var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[oldNumber];btn1.click();
@@ -274,8 +267,7 @@
         var data = data.customData;var index = data;var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
       } //点击分公司
       if (data.eventType == 'branch') {
-        var data = data.customData;var index = data.Index;
-        var oldNumber = data.OldNumber;if (oldNumber != '') {
+        var data = data.customData;var index = data.Index;var oldNumber = +data.OldNumber; /**如果是第一项的时候就是0,如果使用不严格相等，0与空格""是相等的:会造成默认的第一项展开时，就不会关闭了**/if (!isNaN(oldNumber)) {
           var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[oldNumber];btn1.click();
         }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
       } //点击员工
@@ -283,7 +275,6 @@
         var data = data.customData;var index = data.Index;var parentIndex = data.parentIndex;var parent = elem.ownerDocument.querySelectorAll('.box')[parentIndex];var btn = parent.querySelectorAll(".iCheck-helper")[index];btn.click();
       } //点击放大图片
       // if (data.eventType == "clickPic") {
-      //   elem.ownerDocument.querySelector(".file-item").querySelectorAll("img")[data.dataCust// debugger;
       // alert('1223')
       //console.log(this.refs);
       // console.log("zenmele这是怎么回事？！");
