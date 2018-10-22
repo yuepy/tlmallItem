@@ -68,17 +68,54 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control349_8Bu5M3": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 4,
+            "value": [
+              "descendant::DIV[@id=\"mainContainer\"]//DIV[@id=\"account-mounth-border\"]//DIV[@id=\"pageHead\"]",
+              "descendant::DIV[@id=\"account-mounth-border\"]//DIV[@id=\"pageHead\"]",
+              "descendant::DIV[@id=\"pageHead\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.accountMounth DIV.commpnPage DIV.pagination"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control349_8Bu5M3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context49_RZ0w80": {
       "controls": [
         "control170_olTeL3",
-        "control171_mNTHld"
+        "control171_mNTHld",
+        "control349_8Bu5M3"
       ],
       "anchors": [],
       "urlAnchor": [
-        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/cust\\/customerCreditLimitAndDetial\\/getStatementAccountDetial"
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/cust\\/customerInfo\\/getStatementAccount"
       ]
     }
   },
@@ -134,6 +171,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl269_NsmIG2",
+          "controlId": "control349_8Bu5M3",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl269_NsmIG2",
+                "onGetTemplate": "getTemplate_uiControl269_NsmIG2"
+              }
+            }
+          }
         }
       ]
     }
@@ -149,7 +201,8 @@
     "page/urls": {
       "contexts": {
         "context49_RZ0w80": [
-          "192.168.220.82:8080/pttlCrm/cust/customerCreditLimitAndDetial/getStatementAccountDetial"
+          "192.168.220.82:8080/pttlCrm/cust/customerCreditLimitAndDetial/getStatementAccountDetial",
+          "192.168.220.82:8080/pttlCrm/cust/customerInfo/getStatementAccount"
         ]
       }
     },
@@ -167,6 +220,21 @@
             "mainContainer",
             "mounthAccountBody",
             "page",
+            "publicHead",
+            "rightArrow"
+          ],
+          [
+            "Close",
+            "account-mounth-border",
+            "brandHeader",
+            "clientInfoMenu",
+            "clientMenu",
+            "detailAccountBody",
+            "leftArrow",
+            "mainContainer",
+            "mounthAccountBody",
+            "page",
+            "pageHead",
             "publicHead",
             "rightArrow"
           ]
@@ -203,6 +271,31 @@
             "skip_count",
             "skip_right_goto",
             "table"
+          ],
+          [
+            "a",
+            "account-detail-head",
+            "account-mounth-head",
+            "accountDetail",
+            "accountMounth",
+            "active",
+            "commpnPage",
+            "detail-account",
+            "head",
+            "head-detile",
+            "head-tab",
+            "head-title",
+            "left-arrow",
+            "mounth-account",
+            "pagination",
+            "right-arrow",
+            "riqi",
+            "skip",
+            "skip-num",
+            "skip-right-icon",
+            "skip_count",
+            "skip_right_goto",
+            "table"
           ]
         ]
       }
@@ -220,6 +313,30 @@
             "DIV/DIV/H4",
             "DIV/DIV/I",
             "DIV/DIV/INPUT-text",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "UL/LI/A",
+            "UL/LI/INPUT-number",
+            "UL/LI/SPAN"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H2",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
             "DIV/DIV/SPAN",
             "DIV/DIV/TABLE",
             "DIV/DIV/UL",

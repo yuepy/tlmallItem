@@ -8759,9 +8759,29 @@ div[data-ysp-modelid="dayPSI"] > div:nth-child(3) {
   padding: 10px;
 }
 .ysp-statement-account-wrapper .ysp-statement-account-content > div:first-child {
-  color: #6E9DCC;
   margin: 0 0 10px 0;
   font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ysp-statement-account-wrapper .ysp-statement-account-content > div:first-child > div:nth-child(1) {
+  color: #6E9DCC;
+  width: 75%;
+}
+.ysp-statement-account-wrapper .ysp-statement-account-content > div:first-child .ysp-statement-account-content-no {
+  font-size: 12px;
+  background: #F4371F;
+  border-radius: 5px;
+  padding: 1px 5px;
+  color: #fff;
+}
+.ysp-statement-account-wrapper .ysp-statement-account-content > div:first-child .ysp-statement-account-content-yes {
+  font-size: 12px;
+  background: #BEBEBE;
+  border-radius: 5px;
+  padding: 1px 5px;
+  color: #fff;
 }
 .ysp-statement-account-wrapper .ysp-statement-account-content > div:nth-child(2) {
   display: flex;
@@ -15230,18 +15250,21 @@ div[data-componentsid="uiControl316_O3sq7E"] > div:nth-child(1) > div:nth-child(
 .ysp-questionnaire-write > div:nth-child(2) {
   float: left;
   align-items: center;
-  border-radius: 10px;
-  padding: 1px 8px;
-  border: 1px solid #ececec;
+  border-radius: 15px;
+  padding: 1px 10px;
   margin-top: 30%;
 }
 .ysp-questionnaire-write .ysp-questionnaire-no {
-  background: #E1E1E1;
-  color: #A8A8A8;
+  background: #ec361e;
+  color: #fff;
 }
 .ysp-questionnaire-write .ysp-questionnaire-yes {
   background: #4796ed;
   color: #fff;
+}
+.ysp-questionnaire-write .ysp-questionnaire-lose {
+  background: #E1E1E1;
+  color: #A8A8A8;
 }
 /********问卷填写**********/
 .ysp-questionnaire-write-head > div:nth-child(1) {

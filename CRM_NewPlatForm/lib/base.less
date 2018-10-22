@@ -9704,9 +9704,29 @@ div[data-ysp-modelid="dayPSI"]{
     >div:first-child{
       // color: #4789e0;
       // margin-bottom: 5px;
-      color: #6E9DCC;
       margin: 0 0 10px 0;
       font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      >div:nth-child(1){
+        color: #6E9DCC;
+        width: 75%;
+      }
+      .ysp-statement-account-content-no{
+        font-size: 12px;
+        background: #F4371F;
+        border-radius: 5px;
+        padding: 1px 5px;
+        color: #fff;
+      }
+      .ysp-statement-account-content-yes{
+        font-size: 12px;
+        background: #BEBEBE;
+        border-radius: 5px;
+        padding: 1px 5px;
+        color: #fff;
+      }
     }
     >div:nth-child(2){
       display: flex;
@@ -16686,18 +16706,22 @@ div[data-componentsid="uiControl63_CWH4cl"],div[data-componentsid="uiControl316_
   >div:nth-child(2){
     float: left;
     align-items: center;
-    border-radius: 10px;
-    padding: 1px 8px;
-    border: 1px solid #ececec;
+    border-radius: 15px;
+    padding: 1px 10px;
+    //border: 1px solid #ececec;
     margin-top: 30%;
   }
   .ysp-questionnaire-no{
-    background: #E1E1E1;
-    color: #A8A8A8;
+    background: #ec361e;
+    color: #fff;
   }
   .ysp-questionnaire-yes{
     background: #4796ed;
     color: #fff;
+  }
+  .ysp-questionnaire-lose{
+    background: #E1E1E1;
+    color: #A8A8A8;
   }
 }
 
