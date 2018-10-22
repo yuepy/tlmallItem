@@ -3,6 +3,12 @@
   "id": "branchEmployeeHire",
   "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278434&branchEmployeeHire",
   "jsFile": "index.js",
+  "requires": {
+    "PendingTask": "../PendingTask/index.json",
+    "approvalTrack": "../approvalTrack/index.json",
+    "approveAdvice": "../approveAdvice/index.json",
+    "operationLog": "../operationLog/index.json"
+  },
   "chineseName": "分公司录用审批",
   "description": "",
   "firstPaintEnable": false,
@@ -11,6 +17,10 @@
       "location": {
         "data": {
           "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -45,6 +55,10 @@
         "data": {
           "tagName": "TR"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@id/word",
@@ -76,6 +90,10 @@
         "data": {
           "tagName": "TBODY"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -97,6 +115,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -120,6 +142,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -141,6 +167,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -164,6 +194,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -185,6 +219,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -208,6 +246,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -229,6 +271,10 @@
       "location": {
         "data": {
           "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -252,6 +298,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "path/ordinal",
@@ -273,6 +323,10 @@
       "location": {
         "data": {
           "tagName": "TEXTAREA"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -301,6 +355,84 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control252_QgodO9": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[6]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control252_QgodO9"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control253_0sTlPq": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control253_0sTlPq"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control254_nyyVaR": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control254_nyyVaR"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -317,7 +449,10 @@
         "control248_srSJBT",
         "control249_V785xr",
         "control250_aQCyTQ",
-        "control251_PgZ7w4"
+        "control251_PgZ7w4",
+        "control252_QgodO9",
+        "control253_0sTlPq",
+        "control254_nyyVaR"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -330,6 +465,56 @@
       "toContexts": [
         {
           "toContextId": "context44_N9LLxT"
+        }
+      ]
+    },
+    "flow175_1lzgBC": {
+      "fromContextId": "context44_N9LLxT",
+      "fromAction": "doAction",
+      "fromControlId": "control240_7dbXcJ",
+      "toContexts": [
+        {
+          "toContextId": "context44_N9LLxT"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
+    },
+    "flow176_RHbNns": {
+      "fromContextId": "context44_N9LLxT",
+      "fromAction": "doAction",
+      "fromControlId": "control241_1zaHQi",
+      "toContexts": [
+        {
+          "toContextId": "context44_N9LLxT"
+        },
+        {
+          "toContextId": "context7_6oqdXk",
+          "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context10_Hyn4t6",
+          "toModelId": "approveAdvice"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
+        }
+      ]
+    },
+    "flow177_cPDzy7": {
+      "fromContextId": "context44_N9LLxT",
+      "fromAction": "doAction",
+      "fromControlId": "control253_0sTlPq",
+      "toContexts": [
+        {
+          "toContextId": "context44_N9LLxT"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
         }
       ]
     }
@@ -459,6 +644,21 @@
           }
         },
         {
+          "id": "uiControl245_ZWHlAw",
+          "controlId": "control252_QgodO9",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl245_ZWHlAw",
+                "onGetTemplate": "getTemplate_uiControl245_ZWHlAw"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl241_2p0CTT",
           "controlId": "control248_srSJBT",
           "display": {
@@ -517,6 +717,36 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl247_4izPbs",
+          "controlId": "control254_nyyVaR",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl247_4izPbs",
+                "onGetTemplate": "getTemplate_uiControl247_4izPbs"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl246_PS1XNT",
+          "controlId": "control253_0sTlPq",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl246_PS1XNT",
+                "onGetTemplate": "getTemplate_uiControl246_PS1XNT"
+              }
+            }
+          }
         }
       ]
     }
@@ -532,7 +762,8 @@
     "page/urls": {
       "contexts": {
         "context44_N9LLxT": [
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278434&branchEmployeeHire"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278434&branchEmployeeHire",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=511940&branchEmployeeHire"
         ]
       }
     },
