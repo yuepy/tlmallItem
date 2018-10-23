@@ -271,7 +271,7 @@
       }if (data.eventType == 'cancel') {
         var data = data.customData;var index = data;var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
       }if (data.eventType == 'searchBranch') {
-        var index = +data.customData;;var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();btn.click();
+        debugger;var index = +data.customData;;var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();btn.click();
       }if (data.eventType == 'branch') {
         var data = data.customData;var index = data.Index;var oldNumber = +data.OldNumber; /**如果是第一项的时候就是0,如果使用不严格相等，0与空格""是相等的:会造成默认的第一项展开时，就不会关闭了**/if (!isNaN(oldNumber)) {
           var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[oldNumber];btn1.click();
