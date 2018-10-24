@@ -1,6 +1,5 @@
 //Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6
 (function(win, ysp) {
-
     var utils = ysp.utils;
     ysp.customHelper = {};
     var topWin = null;
@@ -402,6 +401,7 @@
             if (aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp" || aWin.location.href == "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#") {
                 //top.location.reload();
                 aWin.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
+              //aWin.location.href = 'http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp'
 
             }
             aWin.alert = function(msg) {
@@ -425,7 +425,6 @@
                     }
                   }
                 })
-                  console.log(in18);
                 if (topWindow.EAPI.isIOS()) {
                   //判断当前移动端应该跳转目标页面标识
                     if(aWin.location.href.indexOf('app/appMyTask.jsp') != -1){
