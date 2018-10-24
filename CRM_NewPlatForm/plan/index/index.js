@@ -48,7 +48,7 @@
               src = title == '产品上下架' && src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '/querySku?a=1&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' + '&branch=' + branch : src.indexOf('?') != -1 && src.indexOf('&') != -1 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' + '&branch=' + branch : src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '?filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&firstFlag' : src.indexOf('?') != -1 && src.indexOf('&') == -1 && src.split('?')[1].length > 0 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' : src + 'filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' + '&branch=' + branch;
             }elem.ownerDocument.defaultView.open(src);
           }
-        };xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder', false);xhr.send();
+        };xhr.open('POST', 'https://vcrm-uat.pttl.com:8080/pttlCrm/homepage/getUserIdAndEncoder', false);xhr.send();
       } // var Achievement = ysp.customHelper.getTargetMenus(["销售业绩总览", "计划达成总览", "事业部达成", "项目达成", "产品达成", "分公司达成", "办事处达成", "销售人员达成", "客户门店达成", "年度销售达成"]);
       // , "事业部达成", "项目达成", "产品达成", "分公司达成", "办事处达成", "销售人员达成", "客户门店达成", "年度销售达成"
     },

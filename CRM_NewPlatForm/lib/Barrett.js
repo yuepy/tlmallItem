@@ -1,4 +1,4 @@
-﻿// BarrettMu, a class for performing Barrett modular reduction computations in
+// BarrettMu, a class for performing Barrett modular reduction computations in
 // JavaScript.
 //
 // Requires BigInt.js.

@@ -7,7 +7,7 @@
         //history.go(-1);
         // var el = elem.ownerDocument.querySelector(".leftPart2").querySelector("i");
         // el.click();
-        var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/visitLook/visitlook.html";ysp.appMain.reloadPage(url);
+        var url = "https://vcrm-uat.pttl.com:8080/pttlCrm/res/page/visitManager/visitLook/visitlook.html";ysp.appMain.reloadPage(url);
       }
     },
     getTemplate_uiControl258_4EgCqa: function () {
@@ -98,7 +98,7 @@
         var i = data.dataCustom.i;var t = data.dataCustom.t;var val = data.dataCustom.val;elem.querySelectorAll(".content-panel")[i].querySelectorAll(".content-panel-part_list")[t].querySelector(".fill-box").querySelector("textarea").value = val;
       } else if (data.eventType == "btnClick") {
         var data = data.customData;if ("back" == data) {
-          var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/visitLook/visitlook.html";ysp.appMain.reloadPage(url);
+          var url = "https://vcrm-uat.pttl.com:8080/pttlCrm/res/page/visitManager/visitLook/visitlook.html";ysp.appMain.reloadPage(url);
         } else {
           elem.querySelector(".buttons-tool").querySelector("button").click();
         }

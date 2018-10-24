@@ -4,7 +4,7 @@
     doAction_uiControl321_0gg0A7: function (data, elem) {
       if ("back" == data.eventType) {
         if (ysp.appMain.isIOS()) {
-          ysp.customHelper.BackReload('http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionRelease.html?role=0');
+          ysp.customHelper.BackReload('https://vcrm-uat.pttl.com:8080/pttlCrm/res/page/questionnaire/questionRelease.html?role=0');
         } else {
           ysp.appMain.back();
         }

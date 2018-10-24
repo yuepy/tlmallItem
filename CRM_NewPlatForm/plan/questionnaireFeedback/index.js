@@ -67,7 +67,7 @@
     doAction_uiControl327_pV2g8n: function (data, elem) {
       if ("click" == data.eventType) {
         var index = data.dataCustom;var tbody = elem.ownerDocument.querySelector("#tbodyContent");var trs = tbody.querySelectorAll("tr")[index];if (ysp.appMain.isIOS()) {
-          var quId = trs.querySelectorAll("td")[9].querySelectorAll("button")[1].getAttribute('val');var quName = trs.querySelectorAll("td")[9].querySelectorAll("button")[1].getAttribute('val1');elem.ownerDocument.defaultView.location.href = "http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionStatistics.html?quId=" + quId + "&quName=" + quName; //需要跳转完整地址,IOS上会因为相对地址而拼接为xcloud2app等路径;
+          var quId = trs.querySelectorAll("td")[9].querySelectorAll("button")[1].getAttribute('val');var quName = trs.querySelectorAll("td")[9].querySelectorAll("button")[1].getAttribute('val1');elem.ownerDocument.defaultView.location.href = "https://vcrm-uat.pttl.com:8080/pttlCrm/res/page/questionnaire/questionStatistics.html?quId=" + quId + "&quName=" + quName; //需要跳转完整地址,IOS上会因为相对地址而拼接为xcloud2app等路径;
         } else {
           trs.querySelectorAll("td")[9].querySelectorAll("button")[1].click();
         }

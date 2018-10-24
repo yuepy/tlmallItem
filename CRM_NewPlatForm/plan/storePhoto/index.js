@@ -29,7 +29,7 @@
               // }
               // var imgCanvas = ysp.customHelper.convertImageToCanvas(lis[j].querySelector('img'));
               // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
-              var scrTitle = lis[j].querySelector("img").getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;src.push(scrC);srcs.push(src);var images = { titles: titles, srcs: srcs, content: content };
+              var scrTitle = lis[j].querySelector("img").getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "https://vcrm-uat.pttl.com:8080/pttlCrm/" + srcUrl;src.push(scrC);srcs.push(src);var images = { titles: titles, srcs: srcs, content: content };
             }data.push(images);
           }
         } //   if (fileList.querySelectorAll(".file-item").length > 0) {

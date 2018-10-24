@@ -12,7 +12,7 @@
         //  $(dataUtils.topWindow).find("iframe[name='sencondLevelIframeContainer']").css('left','30%');
         // $(dataUtils.topWindow).find("iframe[name='thirdLevelIframeContainer']").remove();//删除iframe  
         // var indexWin = ysp.customHelper.getWinFromRTByName('sourcePageFrame');
-        // indexWin && indexWin.open("http://192.168.220.82:8080/pttlCrm/res/page/customerList/customerList.html", 'firstLevelIframeContainer'); //   ysp.customHelper.back();
+        // indexWin && indexWin.open("https://vcrm-uat.pttl.com:8080/pttlCrm/res/page/customerList/customerList.html", 'firstLevelIframeContainer'); //   ysp.customHelper.back();
       }
     },
     getTemplate_uiControl142_ioA93K: function getTemplate_uiControl142_ioA93K() {
