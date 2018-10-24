@@ -4,7 +4,8 @@
   "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548",
   "jsFile": "index.js",
   "requires": {
-    "clientFlowForm": "../clientFlowForm/index.json"
+    "clientFlowForm": "../clientFlowForm/index.json",
+    "branchTurnRegular": "../branchTurnRegular/index.json"
   },
   "chineseName": "客户端需要的流程单",
   "description": "",
@@ -200,6 +201,10 @@
         },
         {
           "toContextId": "context25_ber6DF"
+        },
+        {
+          "toContextId": "context41_WzBtqX",
+          "toModelId": "branchTurnRegular"
         }
       ]
     },

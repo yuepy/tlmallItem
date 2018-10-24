@@ -218,7 +218,12 @@ div[data-componentsid="uiControl155_A4or0k"],
 div[data-componentsid="uiControl165_X9OuO6"],
 div[data-componentsid="uiControl168_vMlSVH"],
 div[data-componentsid="uiControl175_ZtT5UK"],
-div[data-componentsid="uiControl12_u3P2z8"] {
+div[data-componentsid="uiControl12_u3P2z8"],
+div[data-componentsid="uiControl197_W0sNDl"],
+div[data-componentsid="uiControl204_XEAFIX"],
+div[data-componentsid="uiControl223_zHhsUn"],
+div[data-componentsid="uiControl233_WVHePB"],
+div[data-componentsid="uiControl248_EebPvq"] {
   height: 44px;
 }
 header {
@@ -2058,7 +2063,12 @@ div[data-ysp-modelid="askForLeave"] .ysp-Approval-opinions,
 div[data-ysp-modelid="addWork"] .ysp-Approval-opinions,
 div[data-ysp-modelid="visitRelative"] .ysp-Approval-opinions,
 div[data-ysp-modelid="beginToWork"] .ysp-Approval-opinions,
-div[data-ysp-modelid="employeeHire"] .ysp-Approval-opinions {
+div[data-ysp-modelid="employeeHire"] .ysp-Approval-opinions,
+div[data-ysp-modelid="branchTurnRegular"] .ysp-Approval-opinions,
+div[data-ysp-modelid="innerPositionChange"] .ysp-Approval-opinions,
+div[data-ysp-modelid="morePositionChange"] .ysp-Approval-opinions,
+div[data-ysp-modelid="branchEmployeeHire"] .ysp-Approval-opinions,
+div[data-ysp-modelid="branchEmpSalary"] .ysp-Approval-opinions {
   margin: 10px 10px 80px 10px;
 }
 .ysp_hrDownload {
@@ -2087,7 +2097,7 @@ div[data-ysp-modelid="beginToWork"] .ysp-total {
 }
 .ysp_hrDetailInfo {
   background: #fff;
-  margin: 0	10px;
+  margin: 0	10px 10px 10px;
 }
 .ysp_hrDetailInfo .ysp_hrDetailInfo_content {
   padding: 0.75rem 0.75rem;
@@ -2120,7 +2130,12 @@ div[data-ysp-modelid="beginToWork"] .ysp-total {
 /*--------------------加班申请------------------------*/
 div[data-ysp-modelid="addWork"] .ysp-flowsheet,
 div[data-ysp-modelid="askForLeave"] .ysp-flowsheet,
-div[data-ysp-modelid="beginToWork"] .ysp-flowsheet {
+div[data-ysp-modelid="beginToWork"] .ysp-flowsheet,
+div[data-ysp-modelid="branchTurnRegular"] .ysp-flowsheet,
+div[data-ysp-modelid="innerPositionChange"] .ysp-flowsheet,
+div[data-ysp-modelid="morePositionChange"] .ysp-flowsheet,
+div[data-ysp-modelid="branchEmployeeHire"] .ysp-flowsheet,
+div[data-ysp-modelid="branchEmpSalary"] .ysp-flowsheet {
   margin-bottom: 10px;
   background: #fff;
 }
@@ -2376,3 +2391,13 @@ div[data-ysp-modelid="pricePolicy"] .ysp-flowsheet {
 div[data-ysp-modelid="pricePolicy"] .area {
   margin-bottom: 50px;
 }
+/***********************************分公司转正 start*******************************************/
+div[data-ysp-modelid="branchTurnRegular"] .errorIcon {
+  background: url(../local/img/error.png) no-repeat 0 0;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 7px;
+  right: 20px;
+}
+/***********************************分公司转正 end*******************************************/

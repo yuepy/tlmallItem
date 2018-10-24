@@ -101,18 +101,20 @@
       if (data.eventType == "clickBtn") {
         var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
           top.pendTitle = "总部转正";win._ysp_top.tenderType = "turnTask";
-        } else if (title.indexOf("假期申请") !== -1 || title.indexOf("公出差申请") !== -1) {
+        } else if (title.indexOf("假期管理") !== -1 || title.indexOf("公出") !== -1 || title.indexOf("假期申请") !== -1) {
           top.pendTitle = "假期申请";win._ysp_top.tenderType = "askForLeave";
         } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
           top.pendTitle = "分公司离职管理流程(解除)";win._ysp_top.tenderType = "branchRelease";
         } else if (title.indexOf("离职管理") !== -1) {
           top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
         } else if (title.indexOf("员工职位变动") !== -1) {
-          top.pendTitle = "员工职位变动";win._ysp_top.tenderType = "positionChange";
-        } else if (title.indexOf("总部月度编制变动") !== -1) {
-          top.pendTitle = "总部月度编制变动";win._ysp_top.tenderType = "monthChange";
-        } else if (title.indexOf("销假申请") !== -1) {
-          top.pendTitle = "销假申请";win._ysp_top.tenderType = "beginToWork";
+          win._ysp_top.tenderType = "positionChange";
+        } else if (title.indexOf("内部职位变动") !== -1 || title.indexOf("分公司间职位变动") !== -1) {
+          win._ysp_top.tenderType = "innerPositionChange";
+        } else if (title.indexOf("批量提交员工职位变更") !== -1) {
+          win._ysp_top.tenderType = "morePositionChange";
+        } else if (title.indexOf("总部月度编制变动") !== -1 || title.indexOf("月度编制") !== -1) {
+          win._ysp_top.tenderType = "monthChange";
         } else if (title.indexOf("忘打卡") !== -1) {
           top.pendTitle = "忘打卡";win._ysp_top.tenderType = "forgetCard";
         } else if (title.indexOf("加班申请") !== -1) {
@@ -121,6 +123,12 @@
           top.pendTitle = "外派探亲资格";win._ysp_top.tenderType = "visitRelative";
         } else if (title.indexOf("员工录用") !== -1) {
           top.pendTitle = "员工录用";win._ysp_top.tenderType = "employeeHire";
+        } else if (title.indexOf("分公司录用审批") !== -1) {
+          win._ysp_top.tenderType = "branchEmployeeHire";
+        } else if (title.indexOf("分公司员工个别薪酬") !== -1) {
+          win._ysp_top.tenderType = "branchEmpSalary";
+        } else if (title.indexOf("分公司转正") !== -1 || title.indexOf("有关") !== -1 && title.indexOf("转正") !== -1) {
+          win._ysp_top.tenderType = "branchTurnRegular";
         } else if (title.indexOf("特价申请") !== -1) {
           win._ysp_top.tenderType = "goodBargain";
         } else if (title.indexOf("价格政策") !== -1) {

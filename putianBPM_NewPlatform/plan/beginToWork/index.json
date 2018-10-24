@@ -298,6 +298,48 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control203_fKIQ15": {
+      "location": {
+        "data": {
+          "tagName": "TEXTAREA"
+        },
+        "locators": [
+          {
+            "id": "elem/@name",
+            "prob": 2,
+            "value": "descendant::TEXTAREA[@name=\"sickLeaveReason\"]"
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::SPAN[@id=\"sickLeaveReason\"]//TEXTAREA[@id=\"sickLeaveReason$text\"]",
+              "descendant::TEXTAREA[@id=\"sickLeaveReason$text\"]"
+            ]
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/SPAN[4]/SPAN[1]/TEXTAREA[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control203_fKIQ15"
+      },
+      "intendedRole": "custom",
+      "roles": "element,textbox,custom",
+      "ignoreVisibility": false,
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -310,7 +352,8 @@
         "control97_pdThem",
         "control98_mgKI7U",
         "control141_TUMALw",
-        "control169_1DJsHs"
+        "control169_1DJsHs",
+        "control203_fKIQ15"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -382,6 +425,20 @@
       "fromContextId": "context27_OgI7Vc",
       "fromAction": "doAction",
       "fromControlId": "control95_Fs8F16",
+      "toContexts": [
+        {
+          "toContextId": "context27_OgI7Vc"
+        },
+        {
+          "toContextId": "context5_7wf9RT",
+          "toModelId": "PendingTask"
+        }
+      ]
+    },
+    "flow153_bVVQQw": {
+      "fromContextId": "context27_OgI7Vc",
+      "fromAction": "doAction",
+      "fromControlId": "control203_fKIQ15",
       "toContexts": [
         {
           "toContextId": "context27_OgI7Vc"
@@ -469,6 +526,21 @@
           }
         },
         {
+          "id": "uiControl196_WdHvb1",
+          "controlId": "control203_fKIQ15",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl196_WdHvb1",
+                "onGetTemplate": "getTemplate_uiControl196_WdHvb1"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl134_pT94RH",
           "controlId": "control141_TUMALw",
           "display": {
@@ -539,7 +611,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?beginToWork&workItemID=284811&_t=239779&_winid=w2978",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284983&beginToWork",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283792&visitRelative",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284979&beginToWork"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284979&beginToWork",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=509974&beginToWork"
         ],
         "context10_Hyn4t6": [
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513",
