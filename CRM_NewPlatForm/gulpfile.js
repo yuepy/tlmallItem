@@ -24,6 +24,15 @@ gulp.task('releaseCom', function() {
         .pipe(gulp.dest('./'));
 });
 
+gulp.task('releaseCom227', function() {
+    gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
+        //VRCM 切换生产环境 https://vcrm-uat.pttl.com:8080 环境转移 http://192.168.1.227 环境
+        .pipe(replace(/https:\\{2}\/\\{2}\/vcrm-uat\\{2}.pttl\\{2}.com:8080/gm, 'http:\\\\/\\\\/192\\\\.168\\\\.1\\\\.227'))
+        .pipe(replace(/https:\/\/vcrm-uat\.pttl\.com:8080/gm, 'http://192.168.1.227'))
+        .pipe(replace(/https:\/\/vcrm-uat\.pttl\.com/gm, 'http://192.168.1.227'))
+        .pipe(gulp.dest('./'));
+});
+
 gulp.task('dev', function() {
     gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
         //VCRM 192.168.1.227 环境转移 192.168.1.224:8080 环境
@@ -33,6 +42,15 @@ gulp.task('dev', function() {
         //大数据 192.168.1.202环境转移192.168.1.174环境
         // .pipe(replace(/http:\\{2}\/\\{2}\/192\\{2}.168\\{2}.1\\{2}.202/gm,'http:\\\\/\\\\/192\\\\.168\\\\.1\\\\.174:8080'))
         // .pipe(replace(/192\.168\.1\.202/gm,'192.168.1.174:8080'))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('devCom', function() {
+    gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
+        //VCRM切换测试环境域名地址  http://192.168.1.227 环境转移 https://vcrm-uat.pttl.com:8080 环境
+        .pipe(replace(/http:\\{2}\/\\{2}\/192\\{2}.168\\{2}.1\\{2}.227/gm, 'https:\\\\/\\\\/vcrm-uat\\\\.pttl\\\\.com:8080'))
+        .pipe(replace(/http:\/\/192\.168\.1\.227/gm, 'https://vcrm-uat.pttl.com:8080'))
+        .pipe(replace(/http:\/\/192\.168\.1\.227/gm, 'https://vcrm-uat.pttl.com'))
         .pipe(gulp.dest('./'));
 });
 
