@@ -5,25 +5,24 @@
         return;
       }var data = { dateTime: [], GSJG: [], GSJGValue: [], XM: [], XMValue: [], WJLX: [], WJLXValue: [], ZT: [], ZTValue: [], loadingFlag: [] };var el = elem.ownerDocument;var date = el.querySelector("#srarch_date").value;data.dateTime.push(date);var department = el.querySelector("#department").querySelectorAll("option");for (var i = 0; i < department.length; i++) {
         data.GSJG.push(department[i].textContent);
-      }var departmentValue = el.querySelector("#department").selectedIndex;data.GSJGValue.push(departmentValue);var project = el.querySelector("#project").querySelectorAll("option");for (var i = 0; i < project.length; i++) {
+      }var departmentValue = el.querySelector("#department").selectedIndex;
+      data.GSJGValue.push(departmentValue);var project = el.querySelector("#project").querySelectorAll("option");for (var i = 0; i < project.length; i++) {
         data.XM.push(project[i].textContent);
       }var projectValue = el.querySelector("#project").selectedIndex;data.XMValue.push(projectValue);var quType = el.querySelector("#quType").querySelectorAll("option");for (var i = 0; i < quType.length; i++) {
         data.WJLX.push(quType[i].textContent);
       }var quTypeValue = el.querySelector("#quType").selectedIndex;data.WJLXValue.push(quTypeValue);var status = el.querySelector("#status").querySelectorAll("option");for (var i = 0; i < status.length; i++) {
         data.ZT.push(status[i].textContent);
-      }var statusValue = el.querySelector("#status").selectedIndex;data.ZTValue.push(statusValue);
-      var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
+      }var statusValue = el.querySelector("#status").selectedIndex;data.ZTValue.push(statusValue);var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 500);
+        }, 5000);
       } else {
         ysp.appMain.showLoading();
       }data.loadingFlag.push(load);return data;
     },
     doAction_uiControl316_O3sq7E: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackModel = 'index';
-        ysp.customHelper.AndroidBackFlag = 'PageClose';
+        ysp.customHelper.AndroidBackModel = 'index';ysp.customHelper.AndroidBackFlag = 'PageClose';
       }if (data.eventType == 'back') {
         if (!top.EAPI.isAndroid()) {
           elem.ownerDocument.defaultView.close();

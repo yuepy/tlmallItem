@@ -3,8 +3,8 @@
     getData_control315_PFxRaT: function (elem) {
       if (!elem) {
         return;
-      }var data = { table: [], dateStart: [],
-        dateEnd: [], page: [], contentDate: [], contentType: [], contentState: [], contentGS: [], contentJS: [], contentPerson: [], loadingFlag: [] }; //上报时间
+      }var data = { table: [], dateStart: [], dateEnd: [], page: [], contentDate: [], contentType: [], contentState: [],
+        contentGS: [], contentJS: [], contentPerson: [], loadingFlag: [] }; //上报时间
       var startTime = elem.querySelector("#startTime").value;var endTime = elem.querySelector("#endTime").value;data.dateStart.push(startTime);data.dateEnd.push(endTime); //表格数据
       var content = ysp.customHelper.getTableData(elem, ["总结类型", "查询状态", "归属组织", "上报人", "人员角色", "上报时间"]);data.table.push(content); //翻页
       var pageData = {};pageData.prev = false;pageData.next = false;if (elem.querySelector('.skip')) {
@@ -33,8 +33,7 @@
       }var spansOne = optionAll[1].querySelectorAll("span");if (spansOne.length > 0) {
         [].forEach.call(spansOne, function (span, index) {
           if (0 != index) {
-            var spanData = [];var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');
-            if ("act" == flag) {
+            var spanData = [];var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
               spanData.push(true);
             } else {
               spanData.push(false);
@@ -58,17 +57,20 @@
               spanData.push(true);
             } else {
               spanData.push(false);
-            }data.contentGS.push(spanData);
+            }
+            data.contentGS.push(spanData);
           }
         });
       }var spansFour = optionAll[4].querySelectorAll("span");if (spansFour.length > 0) {
         [].forEach.call(spansFour, function (span, index) {
           if (0 != index) {
-            var spanData = [];var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
+            var spanData = [];var text = span.textContent;spanData.push(text);
+            var flag = span.getAttribute('class');if ("act" == flag) {
               spanData.push(true);
             } else {
               spanData.push(false);
-            }data.contentJS.push(spanData);
+            }
+            data.contentJS.push(spanData);
           }
         });
       }var spansFive = optionAll[5].querySelectorAll("span");if (spansFive.length > 0) {
@@ -81,10 +83,11 @@
             }data.contentPerson.push(spanData);
           }
         });
-      }var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
+      }
+      var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 500);
+        }, 5000);
       } else {
         ysp.appMain.showLoading();
       }data.loadingFlag.push(load);return data;
@@ -110,7 +113,8 @@
           clickGO(data.dataCustom);break;}function clickGO(data) {
         var input = elem.ownerDocument.querySelector('.skip-num');input.value = data;input.blur();elem.ownerDocument.querySelector('.commpnPage').querySelector('.skip_right_goto').querySelector('.skip-right-icon').click();
       }function prevtitle(data) {
-        var lis = elem.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
+        var lis = elem.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
           var as = lis[i].querySelectorAll('a');for (var j = 0; j < as.length; j++) {
             if (data == 'prev' && as[j].getAttribute('title') == 'Go to previous page') {
               as[j].click();
@@ -129,7 +133,8 @@
           option && option[2].querySelectorAll("span")[index + 1].click();
         }if ('归属组织' == text) {
           option && option[3].querySelectorAll("span")[index + 1].click();
-        }if ('人员角色' == text) {
+        }
+        if ('人员角色' == text) {
           option && option[4].querySelectorAll("span")[index + 1].click();
         }if ('上报人' == text) {
           option && option[5].querySelectorAll("span")[index + 1].click();

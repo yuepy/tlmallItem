@@ -7,7 +7,7 @@
         var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
           setTimeout(function () {
             ysp.appMain.hideLoading();
-          }, 500);
+          }, 5000);
         } else {
           ysp.appMain.showLoading();
         }return load;
