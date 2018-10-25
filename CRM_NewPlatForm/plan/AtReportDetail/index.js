@@ -96,10 +96,8 @@
           data.samsungDivisonTagsFlag.push(samsungDivisonTagsButtons[i].getAttribute("class"));
         }var samsungDivison = "false";if (samsungDivisonTagsButtons.length > 3) {
           samsungDivison = "true";
-        }
-        data.samsungDivisonTagsLength.push(samsungDivison); ///大客户业务部
-        var fenXiaoDivisonTagsButtons = elem.querySelector("#fenXiaoDivisonTags") && elem.querySelector("#fenXiaoDivisonTags").querySelectorAll("button");
-        for (var i = 0; i < fenXiaoDivisonTagsButtons.length; i++) {
+        }data.samsungDivisonTagsLength.push(samsungDivison); ///大客户业务部
+        var fenXiaoDivisonTagsButtons = elem.querySelector("#fenXiaoDivisonTags") && elem.querySelector("#fenXiaoDivisonTags").querySelectorAll("button");for (var i = 0; i < fenXiaoDivisonTagsButtons.length; i++) {
           data.fenXiaoDivisonTags.push(fenXiaoDivisonTagsButtons[i].textContent);
         }for (var i = 0; i < fenXiaoDivisonTagsButtons.length; i++) {
           data.fenXiaoDivisonTagsFlag.push(fenXiaoDivisonTagsButtons[i].getAttribute("class"));
@@ -131,8 +129,7 @@
         // });
         data.user = { users: [], users2: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
           var iconClose = users[i].querySelector("i") && users[i].querySelector("i").classList.contains("icon-close");if (iconClose) {
-            data.user.users.push({
-              text: users[i].querySelector('span').textContent, val: users[i].querySelector('span').getAttribute('val'), val1: users[i].querySelector('span').getAttribute('val1'), val2: users[i].querySelector('span').getAttribute('val2') });
+            data.user.users.push({ text: users[i].querySelector('span').textContent, val: users[i].querySelector('span').getAttribute('val'), val1: users[i].querySelector('span').getAttribute('val1'), val2: users[i].querySelector('span').getAttribute('val2') });
           } else {
             data.user.users2.push({ text: users[i].querySelector('span').textContent, val: users[i].querySelector('span').getAttribute('val'), val1: users[i].querySelector('span').getAttribute('val1'), val2: users[i].querySelector('span').getAttribute('val2') });
           }
@@ -151,8 +148,7 @@
                 content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
             // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
             // src.push(scrC);
-            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "https://vcrm-uat.pttl.com:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);
-            var images = { title: title, content: content, src: src };data.file.push(images);
+            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "https://vcrm-uat.pttl.com:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
           }
         } /*
            	Dialog 数据   所选分公司树结构数据
@@ -165,14 +161,15 @@
         }
       } /**
         var selfFrame = elem.ownerDocument.defaultView.frameElement;
-        此处通过来当前元素的父级是否存在来判断是不是定位到了最外层html**/ /**
-                                             while (selfFrame.parentNode != null) {
-                                               selfFrame = selfFrame.parentNode;
-                                             }
-                                             **/ /**data.modalDialog = selfFrame.querySelector('.layui-layer-dialog'); **/data.modalDialog = elem.ownerDocument.defaultView.frameElement.parentNode.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector(".layui-layer-dialog"); /**return elem.getAttribute("style");**/return data; /**return elem.ownerDocument.defaultView.parent.document.querySelector("title").innerHTML;
-                                                                                                                                                                                                                                                                                                                                                                                                  **/ /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           return $(elem.ownerDocument.querySelector('.leaveWord').querySelectorAll('.chat-one')[0]).prop('className').search("chat-one");    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           **/
+        此处通过来当前元素的父级是否存在来判断是不是定位到了最外层html**/
+      /**
+      while (selfFrame.parentNode != null) {
+        selfFrame = selfFrame.parentNode;
+      }
+      **/ /**data.modalDialog = selfFrame.querySelector('.layui-layer-dialog'); **/data.modalDialog = elem.ownerDocument.defaultView.frameElement.parentNode.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector(".layui-layer-dialog"); /**return elem.getAttribute("style");**/return data; /**return elem.ownerDocument.defaultView.parent.document.querySelector("title").innerHTML;
+                                                                                                                                                                                                                                                                                                                                                           **/ /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    return $(elem.ownerDocument.querySelector('.leaveWord').querySelectorAll('.chat-one')[0]).prop('className').search("chat-one");    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    **/
     },
     doAction_uiControl52_AyvrZ0: function (data, elem) {
       //当移动端用户键入的文本框内容有变化时触发此事件
@@ -232,11 +229,14 @@
                                                                                                                                       elem.ownerDocument.querySelector("#ContactAlert").style.left = "727px";
                                                                                                                                      
                                                                                                                          ***/ //@我的报告很是奇怪：点击选择对象之后还必须将逐个分公司分别点击之后才能保证是活的，也就是在移动端点击另一个分公司时就能展开关闭，
-        setTimeout(function () {
-          var branchArr = [].slice.call(elem.ownerDocument.querySelectorAll(".area-name"));branchArr.forEach(function (v, i) {
-            v.click();v.click();
-          });
-        }, 1000);
+        var branchArr = [].slice.call(elem.ownerDocument.querySelectorAll(".area-name")); /**
+                                                                                             setTimeout(function () {
+                                                                                             branchArr.forEach(function (v, i) {
+                                                                                           v.click();
+                                                                                           v.click();
+                                                                                          });
+                                                                                             }, 1000);
+                                                                                             **/
       } //点击发送
       if ('send' == data.eventType) {
         /**找到原页面的发送按钮对应的匹配的元素：是第二个a标签**/var send = elem.ownerDocument.querySelector(".textarea").querySelectorAll("a")[1];send.click();
@@ -248,7 +248,8 @@
       if (data.eventType == 'searchClick') {
         elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var list = elem.querySelector('#search-lists');var as = list.firstElementChild;if (as == null) {
           setTimeout(function () {
-            elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var lists = elem.querySelector('#search-lists');var list = lists.firstElementChild;list.click();
+            elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();
+            var lists = elem.querySelector('#search-lists');var list = lists.firstElementChild;list.click();
           }, 100);
         } else {
           var name = as.innerHTML;if (name.indexOf(data.dataCustom.value) != -1) {
@@ -275,8 +276,7 @@
           a[index].querySelector("i").click();
         }
       }if (data.eventType == 'cancel') {
-        var data = data.customData;var index = data;
-        var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
+        var data = data.customData;var index = data;var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
       } /**
         if (data.eventType == 'searchBranch') {
           var index = +data.customData;
@@ -290,9 +290,12 @@
         **/if (data.eventType == 'branch') {
         var data = data.customData;var index = data.Index;var oldNumber = +data.OldNumber; /**如果是第一项的时候就是0,如果使用不严格相等，0与空格""是相等的:会造成默认的第一项展开时，就不会关闭了**/if (!isNaN(oldNumber)) {
           var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[oldNumber];btn1.click();
-        }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click(); /******/setTimeout(function () {
-          btn.click();btn.click();
-        }, 1000);
+        }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click(); /***
+                                                                                         setTimeout(function () {
+                                                                                           btn.click();
+                                                                                           btn.click();
+                                                                                         }, 1000);
+                                                                                         ***/
       } //点击员工
       if (data.eventType == 'personnel') {
         var data = data.customData;var index = data.Index;var parentIndex = data.parentIndex;var parent = elem.ownerDocument.querySelectorAll('.box')[parentIndex];var btn = parent.querySelectorAll(".iCheck-helper")[index];btn.click();
@@ -321,6 +324,7 @@
       //     eventType:"toReply",
       //     data:e.target.getAttribute('data-index')
       //   });
+
       // }om].click();
       // }
     },
