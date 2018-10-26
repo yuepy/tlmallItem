@@ -212,11 +212,7 @@
                                                                                                                  //console.log(hh); // window.location.hash = "focus";
                                                                                                                  // onclick="document.getElementById('am').scrollIntoView();"
                                                                                                                  /**
-                                                                                                                 console.log(data.dataCustom.focus.getAttribute("id"));**/ /**
-                                                                                                                                                                           console.log("hahahahahahahahaha");
-                                                                                                                                                                           console.log(data.dataCustom.focus.id);
-                                                                                                                                                                           console.log(data.dataCustom.focus.nodeName);
-                                                                                                                                                                           data.dataCustom.focus.scrollIntoView();**/ //}
+                                                                                                                 data.dataCustom.focus.scrollIntoView();**/ //}
       } //点击返回关闭查看详情的弹出框
       if ('clickBack' == data.eventType) {
         var close = elem.ownerDocument.querySelector("#ContactAlert").querySelector("#ContactClose");close.focus();close.click();
@@ -241,7 +237,7 @@
       if (data.eventType == 'searchClick') {
         elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var list = elem.querySelector('#search-lists');var as = list.firstElementChild;if (as == null) {
           setTimeout(function () {
-            elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var lists = elem.querySelector('#search-lists');var list = lists.firstElementChild;list.click();
+            debugger;elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var lists = elem.querySelector('#search-lists');var list = lists.firstElementChild;list.click();
           }, 100);
         } else {
           var name = as.innerHTML;if (name.indexOf(data.dataCustom.value) != -1) {
@@ -276,7 +272,8 @@
       }if (data.eventType == 'branch') {
         var data = data.customData;var index = data.Index;var oldNumber = +data.OldNumber; /**如果是第一项的时候就是0,如果使用不严格相等，0与空格""是相等的:会造成默认的第一项展开时，就不会关闭了**/if (!isNaN(oldNumber)) {
           var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[oldNumber];btn1.click();
-        }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();setTimeout(function () {
+        }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
+        setTimeout(function () {
           btn.click();setTimeout(function () {
             btn.click();
           }, 500);
