@@ -237,8 +237,11 @@
       function goToSearch() {}if (data.eventType == 'searchClick') {
         elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var list = elem.querySelector('#search-lists');var as = list.firstElementChild;if (as == null) {
           setTimeout(function () {
-            elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click(); // var lists = elem.querySelector('#search-lists');
-            var lists = elem.querySelector('#search-lists'),
+            /***
+            elem.querySelector('#contactSearch').value = data.dataCustom.value;
+            elem.querySelector('#icon-search').click();
+            var lists = elem.querySelector('#search-lists');
+            ***/var lists = elem.querySelector('#search-lists'),
                 list = lists && lists.firstElementChild;if (list) {
               list.click();
             } else {
@@ -250,9 +253,9 @@
                   setTimeout(function () {
                     var lists = elem.querySelector('#search-lists'),
                         list = lists && lists.firstElementChild;
-                  }, 1000);
+                  }, 500);
                 }
-              }, 500);
+              }, 400);
             }
           }, 100);
         } else {
