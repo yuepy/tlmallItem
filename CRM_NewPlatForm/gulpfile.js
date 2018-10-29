@@ -24,6 +24,16 @@ gulp.task('releaseCom', function() {
         .pipe(gulp.dest('./'));
 });
 
+gulp.task('releaseCom82', function() {
+    gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
+        //VRCM 切换UAT环境 https://vcrm-uat.pttl.com:8080 环境转移 http://192.168.220.82 环境
+        .pipe(replace(/https:\\{2}\/\\{2}\/vcrm-uat\\{2}.pttl\\{2}.com:8080/gm, 'http:\\\\/\\\\/192\\\\.168\\\\.220\\\\.82:8080'))
+        .pipe(replace(/https:\\{2}\/\\{2}\/vcrm-uat\\{2}.pttl\\{2}.com/gm, 'http:\\\\/\\\\/192\\\\.168\\\\.220\\\\.82'))
+        .pipe(replace(/https:\/\/vcrm-uat\.pttl\.com:8080/gm, 'http://192.168.220.82:8080'))
+        .pipe(replace(/https:\/\/vcrm-uat\.pttl\.com/gm, 'http://192.168.220.82'))
+        .pipe(gulp.dest('./'));
+});
+
 gulp.task('releaseCom227', function() {
     gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
         //VRCM 切换生产环境 https://vcrm-uat.pttl.com:8080 环境转移 http://192.168.1.227 环境

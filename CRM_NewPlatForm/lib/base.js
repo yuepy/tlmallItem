@@ -104,21 +104,21 @@
               loginFlag = true;
               if (currentAwin.frameElement && currentAwin.frameElement.name == "browserFrame2" && currentAwin.frameElement.dataset.browser) {
                 if (currentAwin.location.href.indexOf('login') !== -1) {
-                  //currentAwin.frameElement.src = 'https://vcrm-uat.pttl.com:8080/pttlCrm/res/index.html'
+                  //currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html'
                   //ysp.runtime.Model.setForceMatchModels(['index']);
                 }
               }
-              currentAwin.location.href = 'https://vcrm-uat.pttl.com:8080/pttlCrm/res/index.html';
+              currentAwin.location.href = 'http://192.168.220.82:8080/pttlCrm/res/index.html';
               getAllMenu(currentAwin,MenuList);
               ysp.appMain.hideLoading();
             }
           }
-          LoginXhr.open('POST','https://vcrm-uat.pttl.com:8080/pttlCrm/login/loginInForMobile');
+          LoginXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/loginInForMobile');
           LoginXhr.send(body);
           ysp.appMain.showLoading();
         }
       }
-      EnCoderXhr.open('POST','https://vcrm-uat.pttl.com:8080/pttlCrm/login/getEncoderForMobile');
+      EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile');
       EnCoderXhr.send();
     }
   }
@@ -267,7 +267,7 @@
         }
       }
     }
-    xhr.open('POST','https://vcrm-uat.pttl.com:8080/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
+    xhr.open('POST','http://192.168.220.82:8080/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
     xhr.send()
   }
   // 请求首页面所有一级\二级\三级菜\\\\\                                                                                                              单
@@ -300,7 +300,7 @@
           //       if(encoder && userId){
           //         var encoderXHR = new XMLHttpRequest();
           //         //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-          //       encoderXHR.open('GET','https://vcrm-uat.pttl.com:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+          //       encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
           //         //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
           //         encoderXHR.send();
           //       }else{
@@ -308,7 +308,7 @@
           //       }
           //     }
           //   }
-          //    SessionXhr.open('GET','https://vcrm-uat.pttl.com:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+          //    SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
           //    SessionXhr.send();
           // }
       }
@@ -340,7 +340,7 @@
               if(encoder && userId){
                 var encoderXHR = new XMLHttpRequest();
                 //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-              encoderXHR.open('GET','https://vcrm-uat.pttl.com:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+              encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
                 //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
                 encoderXHR.send();
               }else{
@@ -348,7 +348,7 @@
               }
             }
           }
-           SessionXhr.open('GET','https://vcrm-uat.pttl.com:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+           SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
            SessionXhr.send();
         }
     }
@@ -388,7 +388,7 @@
 //                   if(encoder && userId){
 //                     var encoderXHR = new XMLHttpRequest();
 //                     //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-//                   encoderXHR.open('GET','https://vcrm-uat.pttl.com:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+//                   encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
 //                     //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
 //                     encoderXHR.send();
 //                   }else{
@@ -396,7 +396,7 @@
 //                   }
 //                 }
 //               }
-//                SessionXhr.open('GET','https://vcrm-uat.pttl.com:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+//                SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
 //                SessionXhr.send();
 //             }
 //           }
@@ -413,7 +413,7 @@
 //           }
 //         }
 //       };
-//       xhr.open('POST', 'https://vcrm-uat.pttl.com:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
+//       xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
 //       xhr.send();
 //     }else{
 //       console.error('对象只有一个,当前代码并没有兼容别的对象!!!!');
@@ -568,7 +568,7 @@
         return;
       }
       var xhr = new topWin.XMLHttpRequest();
-      xhr.open('POST', 'https://vcrm-uat.pttl.com:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuList', true);
+      xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuList', true);
       xhr.error = function (e) {
         console.error(e);
       };
@@ -633,7 +633,7 @@
 
   function _getThirdMenuList(parentId, callback) {
     var xhr = new topWin.XMLHttpRequest();
-    xhr.open('POST', 'https://vcrm-uat.pttl.com:8080/pttlCrm/sys/auth/menu/getThirdMenuList', true);
+    xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/menu/getThirdMenuList', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.onreadystatechange = function () {
@@ -1036,7 +1036,7 @@
     if(url && !model){
       currentWin.location.href = url
     }else if(!url && !model){
-      currentWin.location.href = 'https://vcrm-uat.pttl.com:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html';
+      currentWin.location.href = 'http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html';
     }
     if(url=='' && model){
       ysp.runtime.Model.setForceMatchModels([model]);
@@ -2180,12 +2180,12 @@
         }
       }
       if (aWin) {
-        if (aWin.location.href == 'https://vcrm-uat.pttl.com:8080/pttlCrm/res/index.html') {
+        if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);
           // var _this = this;
           // var xhr = new aWin.XMLHttpRequest();
-          // xhr.open('GET', 'https://vcrm-uat.pttl.com:8080/pttlCrm/login/addMobileLoginLog', true);
+          // xhr.open('GET', 'http://192.168.220.82:8080/pttlCrm/login/addMobileLoginLog', true);
           // xhr.send();
         }
       }
@@ -2202,7 +2202,7 @@
       }
       //调试IOS登录框问题 - 地址变成特殊地址 
       if(aWin.location.href.indexOf('ysp_mobile')!==-1){
-        aWin.location.href = 'https://vcrm-uat.pttl.com:8080/pttlCrm/login';
+        aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login';
         top.EAPI.postMessageToNative('IOSLoginIn', '');
         
       }
@@ -2210,7 +2210,7 @@
         topWin.currentWindow = aWin;
         //top.EAPI.postMessageToNative('IOSLoginIn', '');
       }
-      if (aWin.location.href == 'https://vcrm-uat.pttl.com:8080/pttlCrm/res/index.html' && !top.EAPI.isIOS()) {
+      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html' && !top.EAPI.isIOS()) {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);
       }
@@ -2231,7 +2231,7 @@
       // }
       //2.7.0及以上 运行时 当主iframe.name=='browserFrame2'  使页面匹配login
       // if(aWin.location.href.indexOf('ysp_mobile') !== -1){
-      //   aWin.location.href = 'https://vcrm-uat.pttl.com:8080/pttlCrm/login?clientType=ysp'
+      //   aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login?clientType=ysp'
       // }
       if (aWin.frameElement && aWin.frameElement.name == "browserFrame2" && aWin.frameElement.dataset.browser) {
         topWin = aWin;

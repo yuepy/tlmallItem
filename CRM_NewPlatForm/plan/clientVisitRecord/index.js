@@ -92,7 +92,7 @@
                 content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
             // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
             // src.push(scrC);
-            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var scrTitleSplitUri = decodeURI(scrTitleSplit);var scrC = "https://vcrm-uat.pttl.com:8080/pttlCrm" + scrTitleSplitUri;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
+            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var scrTitleSplitUri = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + scrTitleSplitUri;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
           }
         }
       }data.dataLoading = [];var loading = ysp.customHelper.tipMsg.getLoading();data.dataLoading.push(loading);return data;
@@ -113,7 +113,7 @@
       //     storeCode = ysp.customHelper.trim(storeCode);
       //     eaiId = ysp.customHelper.trim(eaiId);
       //     var indexWin = elem.ownerDocument.defaultView;
-      //     indexWin && indexWin.open("https://vcrm-uat.pttl.com:8080/pttlCrm/res/page/visitManager/report/answerList.html?source=" + source + "&rowId=" + rowId + "&storeCode=" + storeCode + "&eaiId=" + eaiId, 'answerList');
+      //     indexWin && indexWin.open("http://192.168.220.82:8080/pttlCrm/res/page/visitManager/report/answerList.html?source=" + source + "&rowId=" + rowId + "&storeCode=" + storeCode + "&eaiId=" + eaiId, 'answerList');
       //   }
       // }
     },

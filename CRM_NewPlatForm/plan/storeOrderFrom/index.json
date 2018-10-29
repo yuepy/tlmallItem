@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "id": "storeOrderFrom",
-  "targetURL": "https://vcrm-uat.pttl.com:8080/pttlCrm/order/salesOrder/getStoreSalesOrderList",
+  "targetURL": "http://192.168.220.82:8080/pttlCrm/order/salesOrder/getStoreSalesOrderList",
   "jsFile": "index.js",
   "requires": {
     "storeOrderFromDetails": "../storeOrderFromDetails/index.json",
@@ -122,7 +122,7 @@
       ],
       "anchors": [],
       "urlAnchor": [
-        "^https:\\/\\/vcrm-uat\\.pttl\\.com\\:8080\\/pttlCrm\\/order\\/salesOrder\\/getStoreSalesOrderList"
+        "^http:\\/\\/192\\.168\\.220\\.82\\:8080\\/pttlCrm\\/order\\/salesOrder\\/getStoreSalesOrderList"
       ]
     }
   },

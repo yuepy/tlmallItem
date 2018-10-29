@@ -25,7 +25,7 @@
     },
     doAction_uiControl266_dffH95: function (data, elem) {
       if ("click" == data.eventType) {
-        var url = data.customData;var _url = 'https://vcrm-uat.pttl.com:8080' + url;if (ysp.appMain.isIOS()) {
+        var url = data.customData;var _url = 'http://192.168.220.82:8080' + url;if (ysp.appMain.isIOS()) {
           top.EAPI.openWindow(_url + "&_ysp_filepreview=1");
         } else if (ysp.appMain.isAndroid()) {
           top.location.href = _url;
