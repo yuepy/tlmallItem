@@ -21,7 +21,7 @@
           topic: topic,
           list: [{
             callback: cb,
-            caller: caller
+            caller: caller 
           }]
         });
       }
