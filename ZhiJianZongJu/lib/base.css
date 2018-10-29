@@ -1,6 +1,5 @@
 body {
   font-family: 'Microsoft YaHei' !important;
-  padding-bottom: 60px !important;
 }
 /*底部导航*/
 .foottabhome {
@@ -293,10 +292,21 @@ div[data-ysp-modelid="login"] {
 div[data-ysp-modelid="login"] .ysp_whole {
   width: 100%;
   height: 100vh;
-  background: url(img/beijing.png) no-repeat 0 0px;
+  background: url(img/BJ.png) no-repeat 0 0px;
   background-size: 100% 100%;
   display: flex;
   align-items: center;
+  flex-direction: column;
+}
+div[data-ysp-modelid="login"] .ysp_whole .ysp_login_header {
+  margin-top: 20%;
+}
+div[data-ysp-modelid="login"] .ysp_whole .ysp_login_header h1 {
+  color: #fff;
+}
+div[data-ysp-modelid="login"] .ysp_whole .ysp_login_header h5 {
+  color: #fff;
+  text-align: center;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body {
   width: 100%;
@@ -308,17 +318,20 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header {
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label {
   font-size: 16px;
-  border: 1px solid #efefef;
-  border-radius: 5px;
-  background: #fff;
+  border: 1px solid rgba(0, 102, 192, 0);
+  background: rgba(0, 102, 192, 0);
+  border-bottom-color: #fff;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label span {
   width: 25%;
-  color: #0a568c;
+  color: #fff;
   float: left;
   margin-top: 10px;
-  padding-left: 15px;
   font-size: 16px;
+}
+div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label input {
+  background-color: rgba(0, 102, 192, 0);
+  color: #fff;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label .username,
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label .password {
@@ -326,7 +339,7 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label .password {
   height: 20px;
   margin: 10px 0;
   border: none;
-  color: #202020;
+  color: #fff;
   font-size: 16px;
 }
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_header label .yz {
@@ -346,11 +359,12 @@ div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer {
 div[data-ysp-modelid="login"] .ysp_whole .ysp_body .ysp_footer .btn {
   width: 90%;
   margin-left: 20px;
-  color: #fff;
-  background: #00539a;
+  color: #1e539a;
+  background: #fff;
   border-radius: 5px;
   border: none;
   font-size: 16px;
+  font-weight: 600;
 }
 div[data-ysp-modelid="login"] .login_flex {
   position: fixed;
@@ -450,13 +464,13 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   height: 35px;
   line-height: 35px;
   width: 100%;
-  padding-left: 48px;
+  padding-left: 38px;
   background-color: #fff;
   font-size: 15px;
-  color: #313131;
+  color: #003c8c;
   font-weight: bold;
-  background-image: url(img/daiyue.png);
-  background-size: 16px 16px;
+  background-image: url(img/lefticon.png);
+  background-size: 2%;
   background-position: 20px 10px;
   background-repeat: no-repeat;
   border-bottom: 1px solid #ccc;
@@ -469,13 +483,13 @@ div[data-ysp-modelid="login"] .login_flex div:nth-child(2) button {
   font-weight: normal !important;
 }
 [data-ysp-modelid="index_itownet"] [data-componentsid="uiControl0_mCp0IF"] .datatitle {
-  background-image: url(img/gongao.png);
+  background-image: url(img/lefticon.png);
 }
 [data-ysp-modelid="index_itownet"] [data-componentsid="uiControl0_mCp0IF"] {
   padding: 0;
 }
 [data-ysp-modelid="index_itownet"] [data-componentsid="uiControl14_NFDcys"] .datatitle {
-  background-image: url(img/daiban.png);
+  background-image: url(img/lefticon.png);
 }
 [data-ysp-modelid="index_itownet"] .ysp-ZJ-datatitle {
   position: fixed;
