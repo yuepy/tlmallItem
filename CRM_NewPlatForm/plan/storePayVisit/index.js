@@ -86,7 +86,7 @@
                   content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
               // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
               // src.push(scrC);
-              var scrTitle = divss[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var scrTitleSplitUri = decodeURI(scrTitleSplit);var scrC = "https://vcrm-uat.pttl.com:8080/pttlCrm" + scrTitleSplitUri;src.push(scrC);var s;title.push(divss[i].querySelector('img').getAttribute('title') || divss[i].querySelector('.info').getAttribute('title'));content.push(divss[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
+              var scrTitle = divss[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var scrTitleSplitUri = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + scrTitleSplitUri;src.push(scrC);var s;title.push(divss[i].querySelector('img').getAttribute('title') || divss[i].querySelector('.info').getAttribute('title'));content.push(divss[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
             }
           }
         }
@@ -97,7 +97,7 @@
         var index = data.dataCustom;var trs = elem.ownerDocument.querySelector("#bodyContent").querySelectorAll("tr");trs[index].querySelectorAll("td")[12].querySelector("a").click();
       }if (data.eventType == "clickHES") {
         var index = data.dataCustom;var aEls = elem.ownerDocument.querySelectorAll("tr > td a");if (aEls[index]) {
-          var source = "store360";var rowId = aEls[index].getAttribute('val');var storeCode = aEls[index].getAttribute('val1');var eaiId = aEls[index].getAttribute('val2');source = ysp.customHelper.trim(source);rowId = ysp.customHelper.trim(rowId);storeCode = ysp.customHelper.trim(storeCode);eaiId = ysp.customHelper.trim(eaiId);var indexWin = elem.ownerDocument.defaultView;indexWin && indexWin.open("https://vcrm-uat.pttl.com:8080/pttlCrm/res/page/visitManager/report/answerList.html?source=" + source + "&rowId=" + rowId + "&storeCode=" + storeCode + "&eaiId=" + eaiId, 'answerList');
+          var source = "store360";var rowId = aEls[index].getAttribute('val');var storeCode = aEls[index].getAttribute('val1');var eaiId = aEls[index].getAttribute('val2');source = ysp.customHelper.trim(source);rowId = ysp.customHelper.trim(rowId);storeCode = ysp.customHelper.trim(storeCode);eaiId = ysp.customHelper.trim(eaiId);var indexWin = elem.ownerDocument.defaultView;indexWin && indexWin.open("http://192.168.220.82:8080/pttlCrm/res/page/visitManager/report/answerList.html?source=" + source + "&rowId=" + rowId + "&storeCode=" + storeCode + "&eaiId=" + eaiId, 'answerList');
         }
       }
     },
