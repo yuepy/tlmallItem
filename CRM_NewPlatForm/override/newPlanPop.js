@@ -51,27 +51,27 @@
 
 	var Constant = _interopRequireWildcard(_constant);
 
-	var _iframeUtils = __webpack_require__(9);
+	var _iframeUtils = __webpack_require__(10);
 
 	var iframeUtils = _interopRequireWildcard(_iframeUtils);
 
-	var _newPlan = __webpack_require__(77);
+	var _newPlan = __webpack_require__(85);
 
 	var newPlan = _interopRequireWildcard(_newPlan);
 
-	var _newStorePlan = __webpack_require__(79);
+	var _newStorePlan = __webpack_require__(87);
 
 	var newStorePlan = _interopRequireWildcard(_newStorePlan);
 
-	var _newTempVisit = __webpack_require__(78);
+	var _newTempVisit = __webpack_require__(86);
 
 	var newTempVisit = _interopRequireWildcard(_newTempVisit);
 
-	var _newTempStoreVisit = __webpack_require__(80);
+	var _newTempStoreVisit = __webpack_require__(88);
 
 	var newTempStoreVisit = _interopRequireWildcard(_newTempStoreVisit);
 
-	var _StringUtils = __webpack_require__(7);
+	var _StringUtils = __webpack_require__(8);
 
 	var StringUtils = _interopRequireWildcard(_StringUtils);
 
@@ -145,13 +145,13 @@
 
 		/** 加载制定拜访计划客户列表 #newPlanAddButton */
 		$('#visitCustomerListBtn').click(function (e) {
-			if ($("#planEaiId").val() == '') {
+      //后添加的
+		if ($("#planEaiId").val() == '') {
 				$("#chooseVisitInfo").val("");
 				$("#visitCustomerListBtn").attr("num", 0); //选中的数量 
 				$("#visitStoreListBtn").attr("num", 0); //选中的数量
 				$("#dayPlanContent").val("");
 			}
-
 			//清空搜索内容
 			$("#visitCustomerListBtn").attr("class", "active");
 			$("#visitStoreListBtn").attr("class", "");
@@ -277,6 +277,13 @@
 				editPlanTag = '0';
 				return;
 			}
+			var temp = planComment.replace(/[^\u4e00-\u9fa5]/gi, "");
+			if (planComment.length - temp.length + temp.length * 3 > 1500) {
+				var msg = planRowId == '' ? "工作计划内容长度超限,不允许添加!" : "工作计划内容长度超限,不允许修改!";
+				layerUtils.error(msg);
+				editPlanTag = '0';
+				return;
+			}
 
 			layerUtils.waitingOpen(); //打开加载层
 			$.ajax({
@@ -288,7 +295,7 @@
 					if (data.status == 'true') {
 						visitPlanList.referenceHtml(); //刷新页面
 						//inintWorkPlan(planDate);
-            window.show = "true";
+            window.show = "true"; //后添加的
 						$("#addDayPlanCancleBtn").click();
 						$('#newPlanList').html("");
 						$("#dayPlanContent").val("");
@@ -296,7 +303,7 @@
 						$("#chooseCustomerCodes").val("");
 						$("#chooseStoreCodes").val("");
 
-						zhuge.track('新增拜访计划');
+						//zhuge.track('新增拜访计划');
 					} else if (data.message != '') {
 						layerUtils.error(data.message);
 					} else {
@@ -313,7 +320,7 @@
 			});
 		});
     
-    //工作计划提交
+    //工作计划提交 后添加的
     window.Show = function () {
 			if (editPlanTag == '1') {
 				return;
@@ -387,13 +394,19 @@
 					clickCountTemp = 0;
 					return;
 				}
+				if (otherCustomer.length * 3 > 150) {
+					layerUtils.info("手填客户名称长度超限,不允许添加!");
+					clickCountTemp = 0;
+					return;
+				}
+
 				if (cusInfo != "" && otherCustomer != "") {
 					otherCustomer = "";
-					//$("#tempPlanOtherCustomer").val("");
 					layerUtils.info("已经选择，不支持手填！");
 					clickCountTemp = 0;
 					return;
 				}
+
 				layerUtils.waitingOpen(); //打开加载层
 				var obj_a = $(this);
 				$.ajax({
@@ -412,7 +425,7 @@
 							$("#chooseCustomerCodes").val("");
 							$("#chooseStoreCodes").val("");
 
-							zhuge.track('新增临时拜访计划');
+							//zhuge.track('新增临时拜访计划');
 						} else {
 							layerUtils.error("添加失败!");
 						}
@@ -424,9 +437,8 @@
 				});
 			}
 		});
-    
-    //临时拜访提交
-    window.tempShow = function (e) {
+  //临时拜访提交 后添加的
+	window.tempShow = function (e) {
 			clickCountTemp++;
 			//e.preventDefault();
 			if (clickCountTemp > 1) {
@@ -499,6 +511,10 @@
 	var _CommonUtils = __webpack_require__(2);
 
 	var commonUtils = _interopRequireWildcard(_CommonUtils);
+
+	var _dataUtils = __webpack_require__(4);
+
+	var dataUtils = _interopRequireWildcard(_dataUtils);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -604,6 +620,8 @@
 	        layerWaitingIndex = layer.load(c);
 	        commonUtils.getTopWin().document.documentElement.classList.add('loading');
 	    }
+	    dataUtils.setTopWindowData("loading", "loading");
+	    localStorage.setItem("layerLoading", "1"); //放入session
 	};
 	/**
 	 * 加载数据层关闭
@@ -615,6 +633,8 @@
 	        layer.close(layerWaitingIndex);
 	        commonUtils.getTopWin().document.documentElement.classList.remove('loading');
 	    }
+	    dataUtils.clearTopWindowData("loading");
+	    localStorage.removeItem("layerLoading"); //删除名称为“layerLoading”的信息。
 	};
 
 	/**
@@ -712,7 +732,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	var USERNAME = exports.USERNAME = ''; //用户名
 	var MENU_MOUNT = exports.MENU_MOUNT = '#clientMenu'; //菜单挂载点
@@ -725,6 +745,10 @@
 	var MENU_NAVIGATOR = exports.MENU_NAVIGATOR = '#menuNavigator'; //头部导航菜单
 	var USERNAMEANDENCODER = exports.USERNAMEANDENCODER = 'USERNAMEANDENCODER';
 
+	var SYSTEM_MENU = exports.SYSTEM_MENU = "";
+	var SYSTEM_MOBILE_MENU = exports.SYSTEM_MOBILE_MENU = "";
+	var CURRENT_USER = exports.CURRENT_USER = "";
+
 	//本地
 	//export const SERVER_ROOT = 'http://192.168.1.223:8080'; //服务端根路径
 	//export const LOCAL_SERVER_ROOT = 'http://localhost:3000'; //本地服务端根路径
@@ -736,30 +760,121 @@
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.224:8080/ptDataShow';
 
 	//生产 nginx
-	//export const SERVER_ROOT = 'https://vcrm-uat.pttl.com:8080'; //服务端根路径
-	//export const LOCAL_SERVER_ROOT = 'https://vcrm-uat.pttl.com:8080'; //本地服务端根路径
+	//export const SERVER_ROOT = 'http://192.168.1.227'; //服务端根路径
+	//export const LOCAL_SERVER_ROOT = 'http://192.168.1.227'; //本地服务端根路径
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.202/ptDataShow';
 
 	//生产 228
 	var SERVER_ROOT = exports.SERVER_ROOT = ''; //服务端根路径
 	var LOCAL_SERVER_ROOT = exports.LOCAL_SERVER_ROOT = ''; //本地服务端根路径
-	var PTDATASHOW_SERVER_ROOT = exports.PTDATASHOW_SERVER_ROOT = 'https://vcrm-uat.pttl.com:8080/ptDataShow';
+	var PTDATASHOW_SERVER_ROOT = exports.PTDATASHOW_SERVER_ROOT = 'https://vcrm-uat.pttl.com:8080/ptDataShow'; //'http://192.168.220.60:8080/ptDataShow';
 
-	var _dgt = _dgt || [];
-	window._dgt = _dgt;
-	(function () {
-	    _dgt.push(['setSiteId', '4f81f635b5871938']);
-	    var d = document,
-	        g = d.createElement('script'),
-	        s = d.getElementsByTagName('script')[0];
-	    g.type = 'text/javascript';g.async = true;g.defer = true;
-	    g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'shujike.cn/dgt.js';
-	    s.parentNode.insertBefore(g, s);
-	})();
+
+	// var _dgt = _dgt || [];
+	// window._dgt = _dgt;
+	// (function () {
+	//     _dgt.push(['setSiteId', '4f81f635b5871938']);
+	//     var d = document, g = d.createElement('script'),
+	//     s = d.getElementsByTagName('script')[0];
+	//     g.type = 'text/javascript'; g.async = true;g.defer = true;
+	//     g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'shujike.cn/dgt.js';
+	//     s.parentNode.insertBefore(g, s);
+	// })();
 
 /***/ }),
 
 /***/ 4:
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.clearIframe = exports.clearAllData = exports.getTopWindowData = exports.clearTopWindowData = exports.setTopWindowData = exports.topWindow = undefined;
+
+	var _CommonUtils = __webpack_require__(2);
+
+	var commonUtils = _interopRequireWildcard(_CommonUtils);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * 跨页面存取值
+	 */
+	var topWindow = exports.topWindow = commonUtils.getTopWin().document;
+
+	var $parent = commonUtils.getTopWin().$;
+
+	/**
+	 * 存值
+	 * @param {*} key 
+	 * @param {*} obj 
+	 */
+	var setTopWindowData = exports.setTopWindowData = function setTopWindowData(key, obj) {
+	    if ($parent) {
+	        if (key && obj) {
+	            $parent(topWindow).find("#contentContainer").data(key, obj);
+	        }
+	    }
+	};
+
+	/**
+	 * 清空
+	 * @param {*} key 
+	 */
+	var clearTopWindowData = exports.clearTopWindowData = function clearTopWindowData(key) {
+	    if ($parent) {
+	        if (key) {
+	            $parent(topWindow).find("#contentContainer").data(key, "");
+	        }
+	    }
+	};
+
+	/**
+	 * 取值
+	 * @param {*} key 
+	 */
+	var getTopWindowData = exports.getTopWindowData = function getTopWindowData(key) {
+	    if ($parent) {
+	        if (key) {
+	            return $parent(topWindow).find("#contentContainer").data(key);
+	        }
+	    } else {
+	        return "";
+	    }
+	};
+
+	/**
+	 * 清除所有
+	 */
+	var clearAllData = exports.clearAllData = function clearAllData() {
+	    if ($parent) {
+	        var userInfoEncoder = getTopWindowData("USERNAMEANDENCODER");
+	        $parent(topWindow).find("#contentContainer").removeData();
+	        setTopWindowData("USERNAMEANDENCODER", userInfoEncoder);
+	    }
+	};
+
+	/**
+	 * 
+	 * @param {*清理iframe} id 
+	 */
+	var clearIframe = exports.clearIframe = function clearIframe(id) {
+	    var jId = "sencondLevelIframeContainer"; //
+	    if (id && typeof id == 'string') {
+	        jId = id;
+	    }
+	    doClearIframe(jId);
+	};
+	function doClearIframe(id) {
+	    $parent(topWindow).find("iframe[name='" + id + "']").attr("src", "about:blank");
+	    $parent(topWindow).find("iframe[name='" + id + "']").remove();
+	}
+
+/***/ }),
+
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -767,7 +882,7 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.submitExcleGlobal = exports.sendAjax = undefined;
+	exports.submitExcleGlobal = exports.sendAjaxNoWaiting = exports.sendAjax = undefined;
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -775,11 +890,11 @@
 
 	var Constant = _interopRequireWildcard(_constant);
 
-	var _objectUtil = __webpack_require__(5);
+	var _objectUtil = __webpack_require__(6);
 
 	var objextUtil = _interopRequireWildcard(_objectUtil);
 
-	var _page = __webpack_require__(6);
+	var _page = __webpack_require__(7);
 
 	var page = _interopRequireWildcard(_page);
 
@@ -787,7 +902,7 @@
 
 	var layerUtils = _interopRequireWildcard(_layerUtils);
 
-	var _StringUtils = __webpack_require__(7);
+	var _StringUtils = __webpack_require__(8);
 
 	var StringUtils = _interopRequireWildcard(_StringUtils);
 
@@ -859,6 +974,63 @@
 			}
 		});
 	};
+	/**
+	 * ajax进行封装 不带加载
+	 * @param {*} service 请求路劲  类的命名空间+"/"+方法名的命名空间
+	 * @param {*} body    请求参数，如果有分页需要添加分页参数
+	 * @param {*} pageDivId 分页的div
+	 * @param {*} callback 回调函数
+	 * @param {*} Fn       当前需要分页的函数
+	 */
+	var sendAjaxNoWaiting = exports.sendAjaxNoWaiting = function sendAjaxNoWaiting(service, body, pageDivId, callback, Fn) {
+		var param = void 0;
+		if (body == null) {
+			param = new Object();
+		} else {
+			if (typeof body.pageNum == "undefined" && typeof body.pageSize == "undefined") {
+				//没有分页
+			} else {
+				if (typeof body.pageNum != "undefined" && (typeof body.pageSize == "undefined" || body.pageSize == null)) {
+					alert("分页参数错误，请检查！");
+					return;
+				} else if ((typeof body.pageNum == "undefined" || body.pageNum == null) && typeof body.pageSize != "undefined") {
+					alert("分页参数错误，请检查！");
+					return;
+				}
+			}
+			param = getJsonString(objextUtil.clone(body)); //保留原来的  克隆一个提交参数
+		}
+		$.ajax({
+			type: 'POST',
+			url: Constant.SERVER_ROOT + '/pttlCrm/' + service,
+			data: param,
+			dataType: 'json',
+			success: function success(result) {
+				if (null != result && typeof result.isHaveSession == "string" && result.isHaveSession == "no") {
+					//没有登陆信息  跳转到登陆页面
+					//alert("用户未登陆，或者登陆超时，请重新登陆！");
+					var loginHtml = Constant.SERVER_ROOT + '/pttlCrm/login';
+					if ('' + Constant.LOCAL_SERVER_ROOT == "http://localhost:3000") {
+						loginHtml = Constant.LOCAL_SERVER_ROOT + '/page/login/login.html';
+					}
+					window.location.href = loginHtml;
+				} else if (null != result && typeof result.Error == "string") {
+					layerUtils.info(result.Error);
+				} else {
+					if (callback) {
+						callback(result);
+					}
+					//是否存在分页
+					if (typeof pageDivId != "undefined" && pageDivId != null && pageDivId != "") {
+						page.page({ fn: Fn, page: result.page, pageId: pageDivId });
+					}
+				}
+			},
+			error: function error(e) {
+				//console.error(e);
+			}
+		});
+	};
 	//参数中的对象 转为 json字符串
 	function getJsonString(body) {
 		for (var key in body) {
@@ -899,35 +1071,37 @@
 	 * @param obj
 	 */
 	var submitExcleGlobal = exports.submitExcleGlobal = function submitExcleGlobal(service, obj, method, enctype) {
-		var $form = $("#submitExcelGlobal");
-		var type = "get";
-		var enctypeHtml = "";
-		if (method && typeof method == "string") {
-			type = method;
-		}
-		/*if(enctype){
-	 	enctypeHtml = 'enctype="application/json"';
-	 }*/
-		service = Constant.SERVER_ROOT + '/pttlCrm/' + service;
-		if ($form && $form.length == 0) {
-			var form = '<form action="' + service + '" method="' + type + '" id="submitExcelGlobal" ' + enctypeHtml + ' target="iframeGloable">';
-			form += '</form>';
-			form += '<iframe name="iframeGloable" id="iframeGloable" style="display:none"></iframe>';
-			$("body").append(form);
-		}
-		var inputHtml = "";
-		if (obj && (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) == "object") {
-			for (var key in obj) {
-				inputHtml += '<input type="hidden" name="' + key + '" value=\'' + obj[key] + '\'/>';
+		layerUtils.confirm(function () {
+			var $form = $("#submitExcelGlobal");
+			var type = "get";
+			var enctypeHtml = "";
+			if (method && typeof method == "string") {
+				type = method;
 			}
-		}
-		$("#submitExcelGlobal").html(inputHtml);
-		$("#submitExcelGlobal").submit();
+			/*if(enctype){
+	  	enctypeHtml = 'enctype="application/json"';
+	  }*/
+			service = Constant.SERVER_ROOT + '/pttlCrm/' + service;
+			if ($form && $form.length == 0) {
+				var form = '<form action="' + service + '" method="' + type + '" id="submitExcelGlobal" ' + enctypeHtml + ' target="iframeGloable">';
+				form += '</form>';
+				form += '<iframe name="iframeGloable" id="iframeGloable" style="display:none"></iframe>';
+				$("body").append(form);
+			}
+			var inputHtml = "";
+			if (obj && (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) == "object") {
+				for (var key in obj) {
+					inputHtml += '<input type="hidden" name="' + key + '" value=\'' + obj[key] + '\'/>';
+				}
+			}
+			$("#submitExcelGlobal").html(inputHtml);
+			$("#submitExcelGlobal").submit();
+		}, "敏感数据，不许外传！", "提示信息");
 	};
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -978,7 +1152,7 @@
 
 /***/ }),
 
-/***/ 6:
+/***/ 7:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -1107,7 +1281,7 @@
 
 /***/ }),
 
-/***/ 7:
+/***/ 8:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -1188,8 +1362,9 @@
 	 * 参数 attributes 是一个可选的字符串，包含属性 "g"、"i" 和 "m"，
 	 * 分别用于指定全局匹配、区分大小写的匹配和多行匹配。
 	 * ECMAScript 标准化之前，不支持 m 属性。如果 pattern 是正则表达式，而不是字符串，则必须省略该参数。
+	 * xmpFalg在div中显示标签
 	 */
-	var globReplace = exports.globReplace = function globReplace(str, replaceStr, resultStr, typeStr) {
+	var globReplace = exports.globReplace = function globReplace(str, replaceStr, resultStr, typeStr, xmpFalg) {
 		str = getValue(str);
 		str = str.replace(/doubleQM/g, "\""); //双引号替换
 		str = str.replace(/bigDY/g, ">"); //大于
@@ -1210,6 +1385,12 @@
 		var rightStr = "\n";
 		if (resultStr && typeof resultStr == "string") {
 			rightStr = resultStr;
+		}
+		if (xmpFalg) {
+			str = str.replace(/&/g, "&amp;"); //
+			str = str.replace(/ /g, "&nbsp;"); //空格
+			str = str.replace(/>/g, "&gt;"); //大于
+			str = str.replace(/</g, "&lt;"); //小于
 		}
 		return str.replace(r, rightStr);
 	};
@@ -1255,7 +1436,7 @@
 
 /***/ }),
 
-/***/ 9:
+/***/ 10:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1401,7 +1582,7 @@
 
 /***/ }),
 
-/***/ 77:
+/***/ 85:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1419,7 +1600,7 @@
 
 	var layerUtils = _interopRequireWildcard(_layerUtils);
 
-	var _ajaxUtils = __webpack_require__(4);
+	var _ajaxUtils = __webpack_require__(5);
 
 	var ajaxUtils = _interopRequireWildcard(_ajaxUtils);
 
@@ -1501,7 +1682,7 @@
 
 /***/ }),
 
-/***/ 78:
+/***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1511,7 +1692,7 @@
 	});
 	exports.load = undefined;
 
-	var _ajaxUtils = __webpack_require__(4);
+	var _ajaxUtils = __webpack_require__(5);
 
 	var ajaxUtils = _interopRequireWildcard(_ajaxUtils);
 
@@ -1564,7 +1745,7 @@
 
 /***/ }),
 
-/***/ 79:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1582,7 +1763,7 @@
 
 	var layerUtils = _interopRequireWildcard(_layerUtils);
 
-	var _ajaxUtils = __webpack_require__(4);
+	var _ajaxUtils = __webpack_require__(5);
 
 	var ajaxUtils = _interopRequireWildcard(_ajaxUtils);
 
@@ -1662,7 +1843,7 @@
 
 /***/ }),
 
-/***/ 80:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1672,7 +1853,7 @@
 	});
 	exports.load = undefined;
 
-	var _ajaxUtils = __webpack_require__(4);
+	var _ajaxUtils = __webpack_require__(5);
 
 	var ajaxUtils = _interopRequireWildcard(_ajaxUtils);
 
