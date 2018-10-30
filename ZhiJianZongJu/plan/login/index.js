@@ -61,13 +61,19 @@
         }
       } else if (data.eventType == "change") {
         var clas = data.dataCustom.clas;var val = data.dataCustom.val;if (clas == 'username') {
-          var name = elem.querySelector("#form").querySelectorAll("tr")[0].querySelector("span").querySelector("input");$(name).focus();name.value = val;name.nextElementSibling.value = val;name.parentElement.previousElementSibling.value = val; // name.dispatchEvent(new Event("mouseover"));
+          var name = elem.querySelector("#form").querySelectorAll("tr")[0].querySelector("span").querySelector("input");$(name).focus(); // $(name).parent().addClass('textbox-focused');
+          // name.value = val; 
+          $(name).val(val); // name.nextElementSibling.value = val;
+          // name.parentElement.previousElementSibling.value = val; 
+          // name.dispatchEvent(new Event("mouseover"));
           // name.dispatchEvent(new Event("click"));
           // name.dispatchEvent(new Event("focus"));
           // name.value = val;
           $(name).blur();
         } else if (clas == 'password') {
-          var password = elem.querySelector("#form").querySelectorAll("tr")[1].querySelector("span").querySelector("input");$(password).focus();password.value = val;password.nextElementSibling.value = val;password.parentElement.previousElementSibling.value = val; // password.dispatchEvent(new Event("mouseover"));
+          var password = elem.querySelector("#form").querySelectorAll("tr")[1].querySelector("span").querySelector("input");$(password).focus();$(password).parent().addClass('textbox-focused');password.value = val; // password.nextElementSibling.value = val;
+          // password.parentElement.previousElementSibling.value = val;
+          // password.dispatchEvent(new Event("mouseover"));
           // password.click();
           // password.dispatchEvent(new Event("focus"));
           // password.value = val;
