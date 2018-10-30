@@ -235,11 +235,11 @@
       // }
       if (data.eventType == 'searchClick') {
         elem.querySelector('#contactSearch').value = data.dataCustom.value;elem.querySelector('#icon-search').click();var lists = elem.querySelector('#search-lists');setTimeout(function () {
-          var list = lists && lists.firstElementChild;if (list) {
-            //500毫秒之后搜索到了该分公司下的某一个员工
+          var list = lists && lists.firstElementChild;debugger;if (list) {
+            debugger; //500毫秒之后搜索到了该分公司下的某一个员工
             var name = list.innerHTML; //获取该员工的文本信息
             if (name.indexOf(data.dataCustom.value) != -1) {
-              list.click();
+              debugger;list.click();
             }
           } else {
             setTimeout(function () {
