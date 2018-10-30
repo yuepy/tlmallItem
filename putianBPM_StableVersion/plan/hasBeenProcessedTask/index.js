@@ -108,11 +108,15 @@
         } else if (title.indexOf("离职管理") !== -1) {
           top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
         } else if (title.indexOf("员工职位变动") !== -1) {
-          top.pendTitle = "员工职位变动";win._ysp_top.tenderType = "positionChange";
-        } else if (title.indexOf("总部月度编制变动") !== -1) {
-          top.pendTitle = "总部月度编制变动";win._ysp_top.tenderType = "monthChange";
+          win._ysp_top.tenderType = "positionChange";
         } else if (title.indexOf("销假申请") !== -1) {
-          top.pendTitle = "销假申请";win._ysp_top.tenderType = "beginToWork";
+          win._ysp_top.tenderType = "beginToWork";
+        } else if (title.indexOf("内部职位变动") !== -1 || title.indexOf("分公司间职位变动") !== -1) {
+          win._ysp_top.tenderType = "innerPositionChange";
+        } else if (title.indexOf("批量提交员工职位变更") !== -1) {
+          win._ysp_top.tenderType = "morePositionChange";
+        } else if (title.indexOf("总部月度编制变动") !== -1 || title.indexOf("月度编制") !== -1) {
+          win._ysp_top.tenderType = "monthChange";
         } else if (title.indexOf("忘打卡") !== -1) {
           top.pendTitle = "忘打卡";win._ysp_top.tenderType = "forgetCard";
         } else if (title.indexOf("加班申请") !== -1) {
@@ -121,6 +125,12 @@
           top.pendTitle = "外派探亲资格";win._ysp_top.tenderType = "visitRelative";
         } else if (title.indexOf("员工录用") !== -1) {
           top.pendTitle = "员工录用";win._ysp_top.tenderType = "employeeHire";
+        } else if (title.indexOf("分公司录用审批") !== -1) {
+          win._ysp_top.tenderType = "branchEmployeeHire";
+        } else if (title.indexOf("分公司员工个别薪酬") !== -1) {
+          win._ysp_top.tenderType = "branchEmpSalary";
+        } else if (title.indexOf("分公司转正") !== -1 || title.indexOf("有关") !== -1 && title.indexOf("转正") !== -1) {
+          win._ysp_top.tenderType = "branchTurnRegular";
         } else if (title.indexOf("特价申请") !== -1) {
           win._ysp_top.tenderType = "goodBargain";
         } else if (title.indexOf("价格政策") !== -1) {
@@ -189,5 +199,5 @@
       var selfTemplate = "import {Component} from 'react';\nexport default class extends React.Component{\n  componentDidUpdate(props){\n    var data=this.props.customData;\n    var toastWord=this.refs.yspToast;; \n    setTimeout(function(){\n      toastWord.style.display=\"none\";\n    },2000)\n  }\n  render() {\n    var data=this.props.customData||[]\n    return (\n      <div className=\"ysp_alert_tips\" ref=\"yspToast\" onClick={(e)=>{e.target.style.display=\"none\"}}>\n        {data==\"\"? \"\":<div className=\"ysp_alert_words\"><span style={{height:\"40px\"}}>{data}</span></div>}\n      </div>\n    )\n  }\n};";
       return "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\"react\");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: \"componentDidUpdate\",\n    value: function componentDidUpdate(props) {\n      var data = this.props.customData;\n      var toastWord = this.refs.yspToast;;\n      setTimeout(function () {\n        toastWord.style.display = \"none\";\n      }, 2000);\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      var data = this.props.customData || [];\n      return React.createElement(\n        \"div\",\n        { className: \"ysp_alert_tips\", ref: \"yspToast\", onClick: function onClick(e) {\n            e.target.style.display = \"none\";\n          } },\n        data == \"\" ? \"\" : React.createElement(\n          \"div\",\n          { className: \"ysp_alert_words\" },\n          React.createElement(\n            \"span\",\n            { style: { height: \"40px\" } },\n            data\n          )\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;";
     }
-  });
+  }, "hasBeenProcessedTask");
 })(window, ysp);
