@@ -110,12 +110,12 @@
               }
               currentAwin.location.href = 'http://192.168.220.82:8080/pttlCrm/res/index.html';
               getAllMenu(currentAwin,MenuList);
-              ysp.appMain.hideLoading();
+              //ysp.appMain.hideLoading();
             }
           }
           LoginXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/loginInForMobile');
           LoginXhr.send(body);
-          ysp.appMain.showLoading();
+          //ysp.appMain.showLoading();
         }
       }
       EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile');
