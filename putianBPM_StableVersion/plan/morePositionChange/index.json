@@ -1,0 +1,599 @@
+{
+    "version": "0.1",
+    "id": "morePositionChange",
+    "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=513309&morePositionChange",
+    "jsFile": "index.js",
+    "requires": {
+        "approvalTrack": "../approvalTrack/index.json",
+        "approveAdvice": "../approveAdvice/index.json",
+        "operationLog": "../operationLog/index.json"
+    },
+    "chineseName": "批量员工职位变动",
+    "description": "",
+    "firstPaintEnable": false,
+    "controls": {
+        "control230_u6i85c": {
+            "location": {
+                "data": {
+                    "tagName": "IFRAME"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/partialWord",
+                        "prob": 1,
+                        "disabled": true,
+                        "value": {
+                            "elemId": "mini-2",
+                            "tagName": "DIV",
+                            "prefix": "",
+                            "suffix": "/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]",
+                            "ratio": 0.17
+                        }
+                    },
+                    {
+                        "id": "@class/word",
+                        "prob": 1,
+                        "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+                    },
+                    {
+                        "id": "elderLevel",
+                        "value": {
+                            "level": 0
+                        }
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control230_u6i85c"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "",
+            "componentType": "custom"
+        },
+        "control231_7nNAL2": {
+            "location": {
+                "data": {
+                    "tagName": "TR"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/word",
+                        "prob": 1,
+                        "value": [
+                            "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]",
+                            "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//TR",
+                            "descendant::DIV[@id=\"_tabs\"]//TR"
+                        ]
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]"
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control231_7nNAL2"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>",
+            "componentType": "custom"
+        },
+        "control232_XrPIgI": {
+            "location": {
+                "data": {
+                    "tagName": "TBODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control232_XrPIgI"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+            "componentType": "custom"
+        },
+        "control233_rUrMeo": {
+            "location": {
+                "data": {
+                    "tagName": "DIV"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control233_rUrMeo"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+            "componentType": "custom"
+        },
+        "control234_p29MvD": {
+            "location": {
+                "data": {
+                    "tagName": "DIV"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "@id/word",
+                        "prob": 2,
+                        "value": "descendant::DIV[@id=\"cancel\"]/DIV[1]"
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]"
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control234_p29MvD"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+            "componentType": "custom"
+        },
+        "control235_zfOD1U": {
+            "location": {
+                "data": {
+                    "tagName": "DIV"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[4]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control235_zfOD1U"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+            "componentType": "custom"
+        },
+        "control236_0d17Xd": {
+            "location": {
+                "data": {
+                    "tagName": "TEXTAREA"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                        "id": "elem/@name",
+                        "prob": 2,
+                        "value": "descendant::TEXTAREA[@name=\"approval.content\"]"
+                    },
+                    {
+                        "id": "path/ordinal",
+                        "prob": 1,
+                        "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/SPAN[1]/SPAN[1]/TEXTAREA[1]"
+                    },
+                    {
+                        "id": "elderLevel",
+                        "value": {
+                            "level": 0
+                        }
+                    }
+                ]
+            },
+            "events": {
+                "onGetData": "getData_control236_0d17Xd"
+            },
+            "intendedRole": "custom",
+            "roles": "element,textbox,custom",
+            "monitored": true,
+            "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+            "componentType": "custom"
+        },
+        "control237_4xisi5": {
+            "location": {
+                "data": {
+                    "tagName": "BODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control237_4xisi5"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "",
+            "componentType": "custom"
+        },
+        "control238_vm7IVT": {
+            "location": {
+                "data": {
+                    "tagName": "BODY"
+                },
+                "userData": {
+                    "data": [],
+                    "force": false
+                },
+                "locators": [{
+                    "id": "path/ordinal",
+                    "prob": 1,
+                    "value": "/HTML[1]/BODY[1]"
+                }]
+            },
+            "events": {
+                "onGetData": "getData_control238_vm7IVT"
+            },
+            "intendedRole": "custom",
+            "roles": "element,custom",
+            "monitored": true,
+            "frameXPath": "",
+            "componentType": "custom"
+        }
+    },
+    "contexts": {
+        "context43_w92LvX": {
+            "controls": [
+                "control230_u6i85c",
+                "control231_7nNAL2",
+                "control232_XrPIgI",
+                "control233_rUrMeo",
+                "control234_p29MvD",
+                "control235_zfOD1U",
+                "control236_0d17Xd",
+                "control237_4xisi5",
+                "control238_vm7IVT"
+            ],
+            "anchors": [],
+            "urlAnchor": [
+                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*&morePositionChange"
+            ]
+        }
+    },
+    "flows": {
+        "flow169_ROBU3O": {
+            "toContexts": [{
+                "toContextId": "context43_w92LvX"
+            }]
+        },
+        "flow170_y39dHX": {
+            "fromContextId": "context43_w92LvX",
+            "fromAction": "doAction",
+            "fromControlId": "control236_0d17Xd",
+            "toContexts": [{
+                "toContextId": "context43_w92LvX"
+            }]
+        },
+        "flow171_czVaww": {
+            "fromContextId": "context43_w92LvX",
+            "fromAction": "doAction",
+            "fromControlId": "control231_7nNAL2",
+            "toContexts": [{
+                    "toContextId": "context43_w92LvX"
+                },
+                {
+                    "toContextId": "context7_6oqdXk",
+                    "toModelId": "approvalTrack"
+                },
+                {
+                    "toContextId": "context10_Hyn4t6",
+                    "toModelId": "approveAdvice"
+                },
+                {
+                    "toContextId": "context9_vdtoHx",
+                    "toModelId": "operationLog"
+                }
+            ]
+        },
+        "flow172_cohhrW": {
+            "fromContextId": "context43_w92LvX",
+            "fromAction": "doAction",
+            "fromControlId": "control230_u6i85c",
+            "toContexts": [{
+                "toContextId": "context43_w92LvX"
+            }]
+        },
+        "flow173_MdtG8d": {
+            "fromContextId": "context43_w92LvX",
+            "fromAction": "doAction",
+            "fromControlId": "control237_4xisi5",
+            "toContexts": [{
+                "toContextId": "context43_w92LvX"
+            }]
+        }
+    },
+    "pages": {
+        "page43_sBfVG7": {
+            "contextId": "context43_w92LvX",
+            "layout": [{
+                    "id": "uiControl223_zHhsUn",
+                    "controlId": "control230_u6i85c",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl223_zHhsUn",
+                                "onGetTemplate": "getTemplate_uiControl223_zHhsUn"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl224_sR7I08",
+                    "controlId": "control231_7nNAL2",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl224_sR7I08",
+                                "onGetTemplate": "getTemplate_uiControl224_sR7I08"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl225_QMHsJ8",
+                    "controlId": "control232_XrPIgI",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl225_QMHsJ8",
+                                "onGetTemplate": "getTemplate_uiControl225_QMHsJ8"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl226_VqVPeG",
+                    "controlId": "control233_rUrMeo",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl226_VqVPeG",
+                                "onGetTemplate": "getTemplate_uiControl226_VqVPeG"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl227_MUTAw7",
+                    "controlId": "control234_p29MvD",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl227_MUTAw7",
+                                "onGetTemplate": "getTemplate_uiControl227_MUTAw7"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl228_gq8bBz",
+                    "controlId": "control235_zfOD1U",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl228_gq8bBz",
+                                "onGetTemplate": "getTemplate_uiControl228_gq8bBz"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl229_nNSBA7",
+                    "controlId": "control236_0d17Xd",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl229_nNSBA7",
+                                "onGetTemplate": "getTemplate_uiControl229_nNSBA7"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl231_fwbiMB",
+                    "controlId": "control238_vm7IVT",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl231_fwbiMB",
+                                "onGetTemplate": "getTemplate_uiControl231_fwbiMB"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "uiControl230_a5WcHC",
+                    "controlId": "control237_4xisi5",
+                    "display": {
+                        "adapterId": "custom",
+                        "type": "custom",
+                        "adapter": {
+                            "templateType": "react",
+                            "events": {
+                                "onDoAction": "doAction_uiControl230_a5WcHC",
+                                "onGetTemplate": "getTemplate_uiControl230_a5WcHC"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "matchers": {
+        "page/title": {
+            "contexts": {
+                "context43_w92LvX": [
+                    "移动端页面"
+                ]
+            }
+        },
+        "page/urls": {
+            "contexts": {
+                "context43_w92LvX": [
+                    "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=513309&morePositionChange"
+                ]
+            }
+        },
+        "page/ids": {
+            "contexts": {
+                "context43_w92LvX": [
+                    [
+                        "__modalmini-",
+                        "mini-",
+                        "mini-$",
+                        "mini-$body$",
+                        "tabs"
+                    ]
+                ]
+            }
+        },
+        "page/classes": {
+            "contexts": {
+                "context43_w92LvX": [
+                    [
+                        "mini-disabled",
+                        "mini-modal",
+                        "mini-panel",
+                        "mini-panel-body",
+                        "mini-panel-border",
+                        "mini-panel-footer",
+                        "mini-panel-header",
+                        "mini-panel-header-inner",
+                        "mini-panel-icon",
+                        "mini-panel-title",
+                        "mini-panel-toolbar",
+                        "mini-panel-viewport",
+                        "mini-resizer-trigger",
+                        "mini-tab",
+                        "mini-tab-active",
+                        "mini-tab-text",
+                        "mini-tabs",
+                        "mini-tabs-body",
+                        "mini-tabs-body-top",
+                        "mini-tabs-bodys",
+                        "mini-tabs-buttons",
+                        "mini-tabs-firstSpace",
+                        "mini-tabs-header",
+                        "mini-tabs-header-top",
+                        "mini-tabs-headers",
+                        "mini-tabs-hideOverflow",
+                        "mini-tabs-lastSpace",
+                        "mini-tabs-leftButton",
+                        "mini-tabs-nav",
+                        "mini-tabs-plain",
+                        "mini-tabs-position-top",
+                        "mini-tabs-rightButton",
+                        "mini-tabs-scrollCt",
+                        "mini-tabs-space",
+                        "mini-tabs-table",
+                        "mini-tools",
+                        "mini-tools-close",
+                        "mini-tools-collapse",
+                        "mini-tools-max",
+                        "mini-tools-min",
+                        "mini-window",
+                        "mini-window-drag"
+                    ]
+                ]
+            }
+        },
+        "page/tagTriplets": {
+            "contexts": {
+                "context43_w92LvX": [
+                    [
+                        "-/-/DIV",
+                        "-/-/SCRIPT",
+                        "-/DIV/DIV",
+                        "-/DIV/IFRAME",
+                        "-/DIV/TABLE",
+                        "DIV/DIV/A",
+                        "DIV/DIV/DIV",
+                        "DIV/DIV/IFRAME",
+                        "DIV/DIV/SPAN",
+                        "DIV/DIV/TABLE",
+                        "DIV/TABLE/TBODY",
+                        "TABLE/TBODY/TR",
+                        "TBODY/TR/TD",
+                        "TD/DIV/DIV",
+                        "TR/TD/DIV",
+                        "TR/TD/SPAN"
+                    ]
+                ]
+            }
+        }
+    }
+}
