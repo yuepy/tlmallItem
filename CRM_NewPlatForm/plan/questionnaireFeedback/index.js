@@ -3,8 +3,7 @@
     getData_control334_b62gGa: function (elem) {
       if (!elem) {
         return;
-      }var data = { dateStart: [], dateEnd: [], content: [], loadingFlag: []
-      };var startTime = elem.querySelector("#s_time").value;var endTime = elem.querySelector("#e_time").value;data.dateStart.push(startTime);data.dateEnd.push(endTime);var muilSelectOption = elem.querySelector(".option-con");var optionAll = muilSelectOption && muilSelectOption.querySelectorAll(".option-list");if (optionAll && optionAll.length > 0) {
+      }var data = { dateStart: [], dateEnd: [], content: [], loadingFlag: [] };var startTime = elem.querySelector("#s_time").value;var endTime = elem.querySelector("#e_time").value;data.dateStart.push(startTime);data.dateEnd.push(endTime);var muilSelectOption = elem.querySelector(".option-con");var optionAll = muilSelectOption && muilSelectOption.querySelectorAll(".option-list");if (optionAll && optionAll.length > 0) {
         [].forEach.call(optionAll, function (option, index) {
           var spans = option.querySelector(".option-r-c").querySelectorAll("span");var a = [];var b = [];var title = option.querySelector(".option-l").querySelector("span").textContent;b.push(title);a.push(b);[].forEach.call(spans, function (subSpan, subIndex) {
             if (0 != subIndex) {
@@ -19,7 +18,7 @@
       }var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
-        }, 500);
+        }, 5000);
       } else {
         ysp.appMain.showLoading();
       }data.loadingFlag.push(load);return data;
