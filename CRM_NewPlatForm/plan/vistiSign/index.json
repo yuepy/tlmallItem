@@ -199,6 +199,48 @@
       "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": ""
+    },
+    "control350_R3ZwTb": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"body\"]//DIV[@id=\"customersign-content\"]//DIV[@id=\"allmap\"]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"customersign-content\"]//DIV[@id=\"allmap\"]/DIV[1]/DIV[1]",
+              "descendant::DIV[@id=\"allmap\"]/DIV[1]/DIV[1]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.content DIV.customersign-map DIV.BMap_mask"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "image"
     }
   },
   "contexts": {
@@ -207,7 +249,8 @@
         "control30_ApZCXy",
         "control31_CyMkLp",
         "control92_xairM3",
-        "control140_OHTT9h"
+        "control140_OHTT9h",
+        "control350_R3ZwTb"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -449,6 +492,25 @@
             "planCreateDate",
             "planDate",
             "remarktextname",
+            "signTime"
+          ],
+          [
+            "CloseReportPopRoot",
+            "address",
+            "allmap",
+            "body",
+            "csAddress",
+            "csLatitude",
+            "csLongitude",
+            "customersign-content",
+            "headCustomer",
+            "header",
+            "latitude",
+            "longitude",
+            "planCreateDate",
+            "planDate",
+            "remarktextname",
+            "signOrReportPop",
             "signTime"
           ]
         ],

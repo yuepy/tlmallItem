@@ -162,7 +162,7 @@
          } else {
            a[index - 1].click();
          }
-         ysp.appMain.showLoading();
+         //ysp.appMain.showLoading();
          	 setTimeout(function () {
            ysp.appMain.hideLoading();
          }, 1000);
@@ -283,7 +283,7 @@
         if(top.EAPI.isIOS()){
           //top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
         }else{
-          AndroidGetIconNum(); // 安卓端ICON数量取值;
+          //AndroidGetIconNum(); // 安卓端ICON数量取值;
         }
           ALLMENU = AllMenu;
           //console.log(ALLMENU)
@@ -2286,9 +2286,9 @@
                 if (record.type == "attributes") {
                   console.log('Mutation type: ' + record.type, ', target: ', record.target.nodeName);
                   if (record.target.tagName.toLowerCase() === 'html' && record.target.classList && record.target.classList.contains('loading')) {
-                    ysp.appMain.showLoading();
+                    //ysp.appMain.showLoading();
                   } else {
-                    ysp.appMain.hideLoading();
+                    //ysp.appMain.hideLoading();
                   }
                 }
               });
