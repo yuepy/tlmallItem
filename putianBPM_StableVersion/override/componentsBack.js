@@ -103,7 +103,7 @@ $(function(){
 			}
 		},
 		showBackWindow: function(instance,cb){
-      debugger;
+      
 			var workItemID = bps.components.core.getPageContext().workItemID;
 			var processInstID = bps.components.core.getPageContext().workItem.processInstID;
 			var currentActInstID = bps.components.core.getPageContext().workItem.activityInstID;

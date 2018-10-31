@@ -3083,7 +3083,7 @@
       if (!elem) {
         return [];
       }if (elem) {
-        var data = [];var btns = elem.contentWindow && elem.contentWindow.document.querySelector('#btn');var receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2');var _receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2	a');var noReceive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_3');var td_0_1 = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_1');var td_0_0 = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_0');if (btns && btns.style.display != 'none' && receive && _receive.style.display != 'none') {
+        var data = [];var btns = elem.contentWindow && elem.contentWindow.document.querySelector('#btn');var receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2');var _receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2	a');var noReceive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_3');var td_0_1 = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_1');var td_0_0 = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_0');if (btns && btns.style.display != 'none' && receive && _receive.style.display != 'none' && receive.textContent.trim() !== "终止") {
           data.push(receive.textContent);
         } else if (btns && btns.style.display != 'none' && noReceive) {
           data.push(noReceive.textContent);
@@ -3228,15 +3228,14 @@
       //提示
       if (!elem) {
         return;
-      }
-      if (elem && elem.querySelector("#toast") && elem.querySelector("#toast").style.display != "none") {
+      }if (elem && elem.querySelector("#toast") && elem.querySelector("#toast").style.display != "none") {
         return elem.querySelector("#toast").textContent;
       }
     },
     doAction_uiControl32_XxUHn7: function (data, elem) {},
     getTemplate_uiControl32_XxUHn7: function () {
-      var selfTemplate = 'import {Component} from \'react\';\nexport default class extends React.Component{\n  \n// componentWillMount(){\n//     var toastWord=this.refs.yspToast; \n//     if(toastWord){\n//       setTimeout(function(){\n//     \t\t\ttoastWord.style.display="none";\n//       },20)\n//     }\n    \n//   }\n  // componentDidUpdate(props){\n  //   var data=this.props.customData;\n  //   var toastWord=this.refs.yspToast;\n  //   setTimeout(function(){\n  //     toastWord.style.display="none";\n  //   },2000)\n  // }\nrender() {\n    var data=this.props.customData||[]\n    return (\n      <div className="ysp_alert_tips" ref="yspToast" onClick={(e)=>{e.target.style.display="none"}}>\n        {data==""? "":<div className="ysp_alert_words"><span style={{height:"40px"}}>{data}</span></div>}\n      </div>\n    )\n  }\n};';
-      return '"use strict";\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require("react");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: "render",\n\n\n    // componentWillMount(){\n    //     var toastWord=this.refs.yspToast; \n    //     if(toastWord){\n    //       setTimeout(function(){\n    //     \t\t\ttoastWord.style.display="none";\n    //       },20)\n    //     }\n\n    //   }\n    // componentDidUpdate(props){\n    //   var data=this.props.customData;\n    //   var toastWord=this.refs.yspToast;\n    //   setTimeout(function(){\n    //     toastWord.style.display="none";\n    //   },2000)\n    // }\n    value: function render() {\n      var data = this.props.customData || [];\n      return React.createElement(\n        "div",\n        { className: "ysp_alert_tips", ref: "yspToast", onClick: function onClick(e) {\n            e.target.style.display = "none";\n          } },\n        data == "" ? "" : React.createElement(\n          "div",\n          { className: "ysp_alert_words" },\n          React.createElement(\n            "span",\n            { style: { height: "40px" } },\n            data\n          )\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;';
+      var selfTemplate = 'import {Component} from \'react\';\nexport default class extends React.Component{\n  \n// componentWillMount(){\n//     var toastWord=this.refs.yspToast; \n//     if(toastWord){\n//       setTimeout(function(){\n//     \t\t\ttoastWord.style.display="none";\n//       },20)\n//     }\n    \n//   }\n  // componentDidUpdate(props){\n  //   var data=this.props.customData;\n  //   var toastWord=this.refs.yspToast;\n  //   setTimeout(function(){\n  //     toastWord.style.display="none";\n  //   },2000)\n  // }\nrender() {\n    var data=this.props.customData||[]\n    return (\n      <div className="ysp_alert_tips" ref="yspToast" onClick={(e)=>{e.target.style.display="none"}}>\n        {data==""? "":<div className="ysp_alert_words"><span>{data}</span></div>}\n      </div>\n    )\n  }\n};';
+      return '"use strict";\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require("react");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: "render",\n\n\n    // componentWillMount(){\n    //     var toastWord=this.refs.yspToast; \n    //     if(toastWord){\n    //       setTimeout(function(){\n    //     \t\t\ttoastWord.style.display="none";\n    //       },20)\n    //     }\n\n    //   }\n    // componentDidUpdate(props){\n    //   var data=this.props.customData;\n    //   var toastWord=this.refs.yspToast;\n    //   setTimeout(function(){\n    //     toastWord.style.display="none";\n    //   },2000)\n    // }\n    value: function render() {\n      var data = this.props.customData || [];\n      return React.createElement(\n        "div",\n        { className: "ysp_alert_tips", ref: "yspToast", onClick: function onClick(e) {\n            e.target.style.display = "none";\n          } },\n        data == "" ? "" : React.createElement(\n          "div",\n          { className: "ysp_alert_words" },\n          React.createElement(\n            "span",\n            null,\n            data\n          )\n        )\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;';
     },
     getData_control42_dc43cW: function (elem) {
       if (!elem) {
@@ -3295,19 +3294,14 @@
       //   return elem.querySelector("#toast").textContent;
       // }
       if (elem) {
-        var data = { button: [], tip: "" };
-        var windowDrag = elem.querySelector(".mini-window-drag");
-        if (windowDrag) {
-          var iframeOuter = elem.querySelector(".mini-window-drag").querySelector("iframe");
-          if (iframeOuter) {
-            var btns = iframeOuter.contentDocument.querySelector("#btn");
-            var agreeBtn = iframeOuter.contentDocument.querySelector('#td_0_0');
-            var disagreeBtn = iframeOuter.contentDocument.querySelector('#td_0_1');
-            if (btns && btns.style.display != "none" && agreeBtn && agreeBtn.textContent.indexOf("领取") == -1) {
+        var data = { button: [], tip: "" };var windowDrag = elem.querySelector(".mini-window-drag");if (windowDrag) {
+          var iframeOuter = elem.querySelector(".mini-window-drag").querySelector("iframe");if (iframeOuter) {
+            var btns = iframeOuter.contentDocument.querySelector("#btn");var agreeBtn = iframeOuter.contentDocument.querySelector('#td_0_0');var disagreeBtn = iframeOuter.contentDocument.querySelector('#td_0_1');var stopBtn = iframeOuter.contentDocument.querySelector('#td_0_2');if (btns && btns.style.display != "none" && agreeBtn && agreeBtn.textContent.indexOf("领取") == -1) {
               data.button.push(agreeBtn.textContent);
-            }
-            if (btns && btns.style.display != "none" && disagreeBtn && disagreeBtn.textContent.indexOf("领取") == -1) {
+            }if (btns && btns.style.display != "none" && disagreeBtn && disagreeBtn.textContent.indexOf("领取") == -1 && disagreeBtn.textContent !== "暂存") {
               data.button.push(disagreeBtn.textContent);
+            }if (btns && btns.style.display != "none" && stopBtn && stopBtn.textContent.indexOf("领取") == -1 && stopBtn.textContent == "终止") {
+              data.button.push(stopBtn.textContent);
             }
           } // if (elem.contentWindow.document.querySelector(".mini-tips-danger")) {
           // return elem.contentWindow.document.querySelector(".mini-tips-danger").innerHTML;
@@ -3317,55 +3311,44 @@
           //   if (tip) {
           //     data.tip = tip.textContent;
           //   }
-        }
-        return data;
+        }return data;
       }
     },
     doAction_uiControl33_sIcNwa: function (data, elem) {
       if (data.eventType == 'click') {
-
-        var d = data.dataCustom.classNames;
-        if (d == 'btn ysp-btn-one') {
-          var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");
-          _btnTwo.click();
-          var redTip = elem.querySelector(".mini-window-drag").querySelector('iframe').contentWindow.document.querySelector('#tab iframe').contentWindow.document.querySelector('.mini-tips-danger');
-          if (!redTip) {
+        var d = data.dataCustom.classNames;if (d == 'btn ysp-btn-one') {
+          if (elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].textContent.indexOf("暂存") !== -1) {
+            var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_2')[0].querySelector(".mini-button");
+          } else {
+            var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");
+          }_btnTwo.click();var redTip = elem.querySelector(".mini-window-drag").querySelector('iframe').contentWindow.document.querySelector('#tab iframe').contentWindow.document.querySelector('.mini-tips-danger');if (!redTip) {
             setTimeout(function () {
-              var tip = elem.querySelectorAll(".mini-window-drag");
-              if (tip.length == 1) {
+              var tip = elem.querySelectorAll(".mini-window-drag");if (tip.length == 1) {
                 //_btnTwo.click(); 
-                var json = { time: new Date().getTime() };
-                setTimeout(function () {
+                var json = { time: new Date().getTime() };setTimeout(function () {
                   ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
                 }, 20);
               }
             }, 10);
           }
         } else if (d == 'btn ysp-btn-two') {
-          var btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_0')[0].querySelector("a");
-          if (data.dataCustom.text == "执行") {
+          var btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_0')[0].querySelector("a");if (data.dataCustom.text == "执行" || data.dataCustom.text == "暂存") {
             btnTwo.click();
           } else if (data.dataCustom.text == "追回") {
-            btnTwo.click();
-            var json = { time: new Date().getTime() };
-            setTimeout(function () {
+            btnTwo.click();var json = { time: new Date().getTime() };setTimeout(function () {
               ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp");
             }, 10);
           } else {
             //有黑色提示框出现
-            var tip = elem.querySelector("#toast");
-            if (tip) {
+            var tip = elem.querySelector("#toast");if (tip) {
               data.tip = tip.textContent;
             } //**如果流程iframe存在就留在当页，如果不存在就点击同意后回到待办里***//
-            btnTwo.click();
-            var timer = setInterval(function () {
+            btnTwo.click();var timer = setInterval(function () {
               var redTip = elem.querySelector(".mini-window-drag"); //.querySelectorAll("iframe")[0].contentDocument.querySelector("#tab").querySelectorAll("iframe")[0].contentDocument.querySelector(".mini-tips-danger");
               if (!redTip) {
-                var json = { time: new Date().getTime() };
-                setTimeout(function () {
+                var json = { time: new Date().getTime() };setTimeout(function () {
                   ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
-                }, 10);
-                clearInterval(timer);
+                }, 10);clearInterval(timer);
               }
             }, 10);
           }

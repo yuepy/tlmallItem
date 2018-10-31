@@ -8,7 +8,8 @@
     "askForLeave": "../askForLeave/index.json",
     "forgetCard": "../forgetCard/index.json",
     "checkProcess": "../checkProcess/index.json",
-    "pendingTask": "../pendingTask/index.json"
+    "pendingTask": "../pendingTask/index.json",
+    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json"
   },
   "chineseName": "待办列表",
   "description": "",
@@ -239,6 +240,10 @@
       "toContexts": [
         {
           "toContextId": "context1_ceUML4"
+        },
+        {
+          "toContextId": "context2_MwGkVx",
+          "toModelId": "hasBeenProcessedTask"
         }
       ]
     },
@@ -272,6 +277,16 @@
       "fromContextId": "context1_ceUML4",
       "fromAction": "doAction",
       "fromControlId": "control27_iQ9miC",
+      "toContexts": [
+        {
+          "toContextId": "context1_ceUML4"
+        }
+      ]
+    },
+    "flow54_axZwZp": {
+      "fromContextId": "context1_ceUML4",
+      "fromAction": "doAction",
+      "fromControlId": "control28_cLuOpT",
       "toContexts": [
         {
           "toContextId": "context1_ceUML4"

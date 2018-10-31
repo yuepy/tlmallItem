@@ -8,7 +8,8 @@
     "beginToWork": "../beginToWork/index.json",
     "approvalTrack": "../approvalTrack/index.json",
     "operationLog": "../operationLog/index.json",
-    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json"
+    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json",
+    "pendingTask": "../pendingTask/index.json"
   },
   "chineseName": "销假申请",
   "description": "",
@@ -386,6 +387,10 @@
         {
           "toContextId": "context2_MwGkVx",
           "toModelId": "hasBeenProcessedTask"
+        },
+        {
+          "toContextId": "context1_ceUML4",
+          "toModelId": "pendingTask"
         }
       ]
     },
@@ -418,6 +423,20 @@
       "toContexts": [
         {
           "toContextId": "context27_OgI7Vc"
+        }
+      ]
+    },
+    "flow61_wHT74k": {
+      "fromContextId": "context27_OgI7Vc",
+      "fromAction": "doAction",
+      "fromControlId": "control95_Fs8F16",
+      "toContexts": [
+        {
+          "toContextId": "context27_OgI7Vc"
+        },
+        {
+          "toContextId": "context1_ceUML4",
+          "toModelId": "pendingTask"
         }
       ]
     }

@@ -407,9 +407,9 @@
                 }
               //studio切换到移动端需要注释掉
               //代办
-              // aWin.location.href="http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp";
+              aWin.location.href="http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp";
               //已办
-              aWin.location.href="http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp";
+              // aWin.location.href="http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp";
             }
             aWin.alert = function(msg) {
 

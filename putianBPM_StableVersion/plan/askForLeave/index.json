@@ -9,7 +9,8 @@
         "enclosure": "../enclosure/index.json",
         "approveAdvice": "../approveAdvice/index.json",
         "operationLog": "../operationLog/index.json",
-        "pendingTask": "../pendingTask/index.json"
+        "pendingTask": "../pendingTask/index.json",
+        "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json"
     },
     "chineseName": "请假申请",
     "description": "",
@@ -344,6 +345,10 @@
                 {
                     "toContextId": "context1_ceUML4",
                     "toModelId": "pendingTask"
+                },
+                {
+                    "toContextId": "context2_MwGkVx",
+                    "toModelId": "hasBeenProcessedTask"
                 }
             ]
         },

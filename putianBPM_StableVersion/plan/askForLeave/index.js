@@ -23,7 +23,7 @@
           }_click.click();
         } else if (d == '取消领取') {
           var _click = elem.contentWindow.document.querySelector('#td_0_3'); //红色提示
-          var newRow = elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];var reg = /\s/;if (_click && reg.test(newRow.textContent)) {
+          var newRow = elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];var reg = /\s/;if (reg.test(newRow.textContent)) {
             if (_click) {
               var _icon = _click.querySelector('a');_icon.click();
             } else {
@@ -31,18 +31,23 @@
             }
           } else {
             if (_click) {
-              var _icon = _click.querySelector('a');var _innerHTML = _click.querySelector('span').textContent;_innerHTML == '取消领取' && _icon.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+              var _icon = _click.querySelector('a');var _innerHTML = _click.querySelector('span').textContent;_innerHTML == '取消领取' && _icon.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             } else {
-              var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");var _innerHTML = _click.querySelector('span').textContent;_click.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+              var _click = elem.contentWindow.document.querySelector('#td_0_2');if (_click) {
+                var _innerHTML = _click.querySelector('span').textContent;_click.querySelector("a").click();
+              } else {
+                var _click = elem.contentWindow.document.querySelector('#td_0_1').querySelector("a");_click.click();
+              }var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             }
           }
         } else {
-          var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");_click.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+          var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");_click.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
         }
       } else if (data.eventType == 'back') {
         //待办里面#dataForm1里面的第一个input的class里没有mini-disabled
         //   var dataForm1 = elem.contentWindow.document.querySelectorAll("iframe")[0].contentDocument.querySelector('#dataform1');
         //   if (dataForm1) {
+
         //     var disable = dataForm1.querySelector("#uuid");
         //   } 
         //待办里面#form1里含有#status和#statusApprove
@@ -63,6 +68,7 @@
         //     var json = {
         //       time: new Date().getTime()
         //     };
+
         //     var btn = elem.ownerDocument.querySelector('.mini-tools-close');
         //     if (btn) {
         //       btn.click();
@@ -76,12 +82,12 @@
             }
           } else {
             var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];if (btn) {
-              btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+              btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             }
           }
         } else {
           var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];if (btn) {
-            btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+            btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
           }
         }
       }
