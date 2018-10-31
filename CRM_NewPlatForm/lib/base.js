@@ -2171,14 +2171,14 @@
         topWin.currentWindow = aWin;
         top.EAPI.postMessageToNative('IOSLoginIn', '');
       }
-      if(aWin){
-        if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
-          ysp.appMain.hideLoading();
-        }
-        if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') != null ){
-          ysp.appMain.hideLoading();
-        }
-      }
+      // if(aWin){
+      //   if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
+      //     ysp.appMain.hideLoading();
+      //   }
+      //   if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') != null ){
+      //     ysp.appMain.hideLoading();
+      //   }
+      // }
       if (aWin) {
         if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
