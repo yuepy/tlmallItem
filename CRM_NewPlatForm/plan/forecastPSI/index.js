@@ -138,7 +138,7 @@
               nextOneWeekWOSOnly = [];var nextTwoWeekSTOnly = [],
               nextTwoWeekSOOnly = [],
               nextTwoWeekVOnly = [],
-              nextTwoWeekWOSOnly = [];for (let i = 0; i < STtds.length; i++) {
+              nextTwoWeekWOSOnly = [];for (var i = 0; i < STtds.length; i++) {
             ST.push(STtds[4].querySelector('input').value);STOnly.push(STtds[4].querySelector("input").readOnly);
             switch (i) {//         case 4:
               //           ST.push(STtds[4].querySelector('input').value);
@@ -157,7 +157,7 @@
                 nextTwoWeekST.push(STtds[15].querySelector('input').value);
                 nextTwoWeekSTOnly.push(STtds[15].querySelector('input').readOnly);break;}
           } //以上为 : ST
-          for (let i = 0; i < SOtds.length; i++) {
+          for (var i = 0; i < SOtds.length; i++) {
             SO.push(SOtds[3].querySelector('input').value);SOOnly.push(SOtds[3].querySelector("input").readOnly);
             switch (i) {// case 3:
               //   SO.push(SOtds[3].querySelector('input').value);
@@ -178,7 +178,7 @@
                 nextOneWeekSO.push(SOtds[13].querySelector('input').value);nextOneWeekSOOnly.push(SOtds[13].querySelector('input').readOnly);break;case 14:
                 nextTwoWeekSO.push(SOtds[14].querySelector('input').value);nextTwoWeekSOOnly.push(SOtds[14].querySelector('input').readOnly);break;}
           } //以上为 : SO
-          for (let i = 0; i < Itds.length; i++) {
+          for (var i = 0; i < Itds.length; i++) {
             I.push(Itds[3].querySelector('input').value);IOnly.push(Itds[3].querySelector('input').readOnly);switch (i) {// case 3:
               //   I.push(Itds[3].querySelector('input').value);
               //   break;

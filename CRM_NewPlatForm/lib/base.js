@@ -341,7 +341,6 @@
                 var encoderXHR = new XMLHttpRequest();
                 //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
               encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-                //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
                 encoderXHR.send();
               }else{
                 console.error('AndEncoder接口请求失败!')
@@ -603,7 +602,6 @@
                 }
                 //parent.EAPI.back();
               }
-
               //return;
             } else {
               ysp.customHelper.statusManager.currentStatus = 'LOADING';
@@ -2167,11 +2165,11 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function onTargetLoad(aWin, doc) {
-      if(aWin.location.href.indexOf('login') !==-1 && top.EAPI.isIOS()){
-        topWin.currentWindow = aWin;
-        top.EAPI.postMessageToNative('IOSLoginIn', '');
-      }
-      // if(aWin){
+      // if(aWin.location.href.indexOf('login') !==-1 && top.EAPI.isIOS()){
+      //   topWin.currentWindow = aWin;
+      //   top.EAPI.postMessageToNative('IOSLoginIn', '');
+      // }  
+      // if(aWin){
       //   if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
       //     ysp.appMain.hideLoading();
       //   }
@@ -2208,9 +2206,10 @@
       }
       if(aWin.location.href.indexOf('login') !==-1 && top.EAPI.isIOS()){
         topWin.currentWindow = aWin;
-        //top.EAPI.postMessageToNative('IOSLoginIn', '');
+        ysp.appMain.showLoading();
+        top.EAPI.postMessageToNative('IOSLoginIn', '');
       }
-      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html' && !top.EAPI.isIOS()) {
+      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);
       }
@@ -2286,9 +2285,9 @@
                 if (record.type == "attributes") {
                   console.log('Mutation type: ' + record.type, ', target: ', record.target.nodeName);
                   if (record.target.tagName.toLowerCase() === 'html' && record.target.classList && record.target.classList.contains('loading')) {
-                    //ysp.appMain.showLoading();
+                    ysp.appMain.showLoading();
                   } else {
-                    //ysp.appMain.hideLoading();
+                    ysp.appMain.hideLoading();
                   }
                 }
               });
