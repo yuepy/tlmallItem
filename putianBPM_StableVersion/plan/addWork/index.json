@@ -7,7 +7,8 @@
     "approvalTrack": "../approvalTrack/index.json",
     "approveAdvice": "../approveAdvice/index.json",
     "operationLog": "../operationLog/index.json",
-    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json"
+    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json",
+    "pendingTask": "../pendingTask/index.json"
   },
   "chineseName": "加班申请",
   "description": "",
@@ -315,6 +316,10 @@
         {
           "toContextId": "context2_MwGkVx",
           "toModelId": "hasBeenProcessedTask"
+        },
+        {
+          "toContextId": "context1_ceUML4",
+          "toModelId": "pendingTask"
         }
       ]
     },
@@ -348,6 +353,20 @@
       "toContexts": [
         {
           "toContextId": "context29_qsgQH3"
+        }
+      ]
+    },
+    "flow63_uz4y3X": {
+      "fromContextId": "context29_qsgQH3",
+      "fromAction": "doAction",
+      "fromControlId": "control106_p3Z6WF",
+      "toContexts": [
+        {
+          "toContextId": "context29_qsgQH3"
+        },
+        {
+          "toContextId": "context1_ceUML4",
+          "toModelId": "pendingTask"
         }
       ]
     }

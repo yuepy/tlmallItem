@@ -25,6 +25,8 @@
           top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
         } else if (title.indexOf("员工职位变动") !== -1) {
           win._ysp_top.tenderType = "positionChange";
+        } else if (title.indexOf("个别薪酬") !== -1) {
+          win._ysp_top.tenderType = "branchEmpSalary";
         } else if (title.indexOf("销假申请") !== -1) {
           win._ysp_top.tenderType = "beginToWork";
         } else if (title.indexOf("内部职位变动") !== -1 || title.indexOf("分公司间职位变动") !== -1) {

@@ -7,7 +7,8 @@
     "approvalTrack": "../approvalTrack/index.json",
     "approveAdvice": "../approveAdvice/index.json",
     "operationLog": "../operationLog/index.json",
-    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json"
+    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json",
+    "pendingTask": "../pendingTask/index.json"
   },
   "chineseName": "员工录用",
   "description": "",
@@ -343,6 +344,10 @@
         {
           "toContextId": "context2_MwGkVx",
           "toModelId": "hasBeenProcessedTask"
+        },
+        {
+          "toContextId": "context1_ceUML4",
+          "toModelId": "pendingTask"
         }
       ]
     },
@@ -410,6 +415,10 @@
       "toContexts": [
         {
           "toContextId": "context34_zEaLZG"
+        },
+        {
+          "toContextId": "context1_ceUML4",
+          "toModelId": "pendingTask"
         }
       ]
     }

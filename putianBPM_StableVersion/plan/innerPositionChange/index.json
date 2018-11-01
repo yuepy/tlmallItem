@@ -7,7 +7,8 @@
     "approvalTrack": "../approvalTrack/index.json",
     "approveAdvice": "../approveAdvice/index.json",
     "operationLog": "../operationLog/index.json",
-    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json"
+    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json",
+    "pendingTask": "../pendingTask/index.json"
   },
   "chineseName": "分公司内部职位变动",
   "description": "",
@@ -512,6 +513,10 @@
         {
           "toContextId": "context2_MwGkVx",
           "toModelId": "hasBeenProcessedTask"
+        },
+        {
+          "toContextId": "context1_ceUML4",
+          "toModelId": "pendingTask"
         }
       ]
     },
@@ -522,6 +527,10 @@
       "toContexts": [
         {
           "toContextId": "context42_hr14DK"
+        },
+        {
+          "toContextId": "context1_ceUML4",
+          "toModelId": "pendingTask"
         }
       ]
     }
