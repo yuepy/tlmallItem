@@ -34,7 +34,7 @@ function Init_All(selDayStr) {
     ajaxData_1001();
     ajaxData_1002();
     if(configType!='02')
-        buildMap();   // ajaxData_1004();  deprecated
+        //buildMap(); 后修改  // ajaxData_1004();  deprecated
     ajaxData_1007();
     ajaxData_1008();
     ajaxData_1009();
@@ -42,18 +42,18 @@ function Init_All(selDayStr) {
     ajaxData_1011();
     ajaxData_1012();
     if(configType!='02')
-        ajaxData_1013();
+        //ajaxData_1013(); 后修改
     if(configType!='02')
-        ajaxData_1014();
+        //ajaxData_1014(); 后修改
 
     // 拜访明细
     // deprecated ajaxData_n();
     ajaxDate_visit_list();
 
     ajaxData_1025();
-    ajaxData_1026();
+    //ajaxData_1026();
     ajaxData_1027();
-    ajaxData_1028();
+    //ajaxData_1028();
 
     ajaxData_1003();
     ajaxData_1039();
@@ -77,7 +77,7 @@ window.Init_All_Time = function(selDayStr) {
     ajaxData_1001();
     ajaxData_1002();
     if(configType!='02')
-        buildMap();   // ajaxData_1004();  deprecated
+        //buildMap(); 后修改   // ajaxData_1004();  deprecated
     ajaxData_1007();
     ajaxData_1008();
     ajaxData_1009();
@@ -85,18 +85,18 @@ window.Init_All_Time = function(selDayStr) {
     ajaxData_1011();
     ajaxData_1012();
     if(configType!='02')
-        ajaxData_1013();
+        //ajaxData_1013(); 后修改
     if(configType!='02')
-        ajaxData_1014();
+        //ajaxData_1014(); 后修改
 
     // 拜访明细
     // deprecated ajaxData_n();
     ajaxDate_visit_list();
 
     ajaxData_1025();
-    ajaxData_1026();
+    //ajaxData_1026();
     ajaxData_1027();
-    ajaxData_1028();
+    //ajaxData_1028();
 
     ajaxData_1003();
     ajaxData_1039();
