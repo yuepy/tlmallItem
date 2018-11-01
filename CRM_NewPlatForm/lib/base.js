@@ -88,7 +88,7 @@
       var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
      	var EnCoderXhr = new XMLHttpRequest();
       EnCoderXhr.onreadystatechange = function(){
-        if(EnCoderXhr.readyState == 4){
+        if(EnCoderXhr.readyState == 4){
           var param = JSON.parse(EnCoderXhr.response);
           setMaxDigits(130);
           var encrypPublicKey = new RSAKeyPair(param.publicExponent,'',param.modulus);
@@ -118,7 +118,7 @@
           //ysp.appMain.showLoading();
         }
       }
-      EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile');
+      EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile?'+user);
       EnCoderXhr.send();
     }
   }
