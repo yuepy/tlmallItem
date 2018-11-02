@@ -137,7 +137,8 @@
     }
     if(ysp.customHelper.AndroidBackFlag == 'indexBack'){
       console.log('溜了溜了 !!!');
-    }
+      //top.yspCheckIn.backMarking('indexFlag');//调用安卓端返回手机桌面方法 - 该方法只在首页中执行
+    }
     //恢复默认值
     ysp.customHelper.AndroidBackFlag != 'indexBack' ? ysp.customHelper.AndroidBackFlag == 'default':'';
     ysp.customHelper.AndroidBackURL = '';
@@ -212,8 +213,8 @@
         }
       }
     }
-    xhr.open('POST','http://192.168.1.227/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
-    xhr.send();
+    //xhr.open('POST','http://192.168.1.227/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
+   // xhr.send()
   }
   // 请求首页面所有一级\二级\三级菜单
   function getAllMenu(aWin) {
@@ -224,38 +225,34 @@
       if(AllMenu == '' || AllMenu == '{"isHaveSession":"no"}'){
         console.error('当前菜单为空,具体原因为PC端未将菜单传入');
         alert('请双击刷新低栏VCRM图标,重新加载');
-      }else{
-        if(top.EAPI.isIOS()){
-          top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
-        }else{
-          AndroidGetIconNum(); // 安卓端ICON数量取值;
-        }
+       }
           ALLMENU = AllMenu;
           //console.log(ALLMENU)
           //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
           //AllMobileMenu(AllMenu);
           //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
-          if(ALLMENU != '' && AllMenu){
-            //正式环境暂时没有效验
-            //  var SessionXhr = new XMLHttpRequest();
-            //  SessionXhr.onreadystatechange = function(){
-            //   if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
-            //     var encoder = JSON.parse(SessionXhr.response).encoder;
-            //     var userId = JSON.parse(SessionXhr.response).userId;
-            //     if(encoder && userId){
-            //       var encoderXHR = new XMLHttpRequest();
-            //       //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-            //     encoderXHR.open('GET','http://192.168.1.227/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-            //       //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
-            //       encoderXHR.send();
-            //     }else{
-            //       console.error('AndEncoder接口请求失败!')
-            //     }
-            //   }
-            // }
-            //  SessionXhr.open('GET','http://192.168.1.227/pttlCrm/homepage/getUserIdAndEncoder',false);
-            //  SessionXhr.send();
-          }
+           if(ALLMENU != '' && AllMenu && top.EAPI.isAndroid()){
+          //   //正式环境暂时没有效验
+             var SessionXhr = new XMLHttpRequest();
+             SessionXhr.onreadystatechange = function(){
+              if(SessionXhr.status == 200 && SessionXhr.readyState == 4 &&  SessionXhr.status <300 || Selection.status == 304){
+                debugger;
+                var encoder = JSON.parse(SessionXhr.response).encoder;
+                var userId = JSON.parse(SessionXhr.response).userId;
+                if(encoder && userId){
+                  var encoderXHR = new XMLHttpRequest();
+                  //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+                encoderXHR.open('GET','http://192.168.1.227/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+                  encoderXHR.send({'filter_userId':userId,'encoder':encoder});
+                  //encoderXHR.send();
+                }else{
+                  console.error('AndEncoder接口请求失败!')
+                }
+              }
+            }
+             //SessionXhr.open('GET','http://192.168.1.227/pttlCrm/homepage/getUserIdAndEncoder',false);
+             //SessionXhr.send();
+           }
       }
     }
     //请求接口获取连接方式,暂时弃用
@@ -325,7 +322,7 @@
 //     }else{
 //       console.error('对象只有一个,当前代码并没有兼容别的对象!!!!');
 //     }
-  }
+  //}
   //按照传进来的名称来配置二级菜单
   function _getTargetMenus(arr,removeName) {
     //arr为当前要筛选的菜单名称 removeName为要排除相似的菜单名称. ps:移动端和PC名称相似却不相同,或者统一名称在移动端特殊展示
@@ -342,7 +339,7 @@
           if(ALLMENU[i].name.indexOf(current) !== -1){
             removeMenuAll.push(ALLMENU.splice(i,1));
             //打印removeMenuAll 可以得到筛选排除的所有菜单;
-            ALLMENU.splice(i,1);
+            //ALLMENU.splice(i,1);
           }
         }
       })
@@ -530,7 +527,9 @@
     // }
     onceExecuteFlag = false;
     if (topWin.location.href.indexOf('login') != -1) {
-      executePlan('login');
+      if(top.EAPI.isIOS()){
+        //executePlan('login');
+      }
     }
   }
 
@@ -2069,11 +2068,12 @@
       if (aWin) {
         if (aWin.location.href == 'http://192.168.1.227/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
-          //getAllMenu();
-          var _this = this;
-          var xhr = new aWin.XMLHttpRequest();
-          xhr.open('GET', 'http://192.168.1.227/pttlCrm/login/addMobileLoginLog', true);
-          xhr.send();
+          //aWin.frameElement.src='http://192.168.1.227/pttlCrm/res/index.html'
+          getAllMenu(aWin);
+          // var _this = this;
+          // var xhr = new aWin.XMLHttpRequest();
+          // xhr.open('GET', 'http://192.168.1.227/pttlCrm/login/addMobileLoginLog', true);
+          // xhr.send();
         }
       }
     },
@@ -2081,7 +2081,9 @@
     beforeTargetLoad: function beforeTargetLoad(aWin, doc) {
       if (aWin.location.href == 'http://192.168.1.227/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
-          getAllMenu(aWin);
+        //if(top.EAPI.isAndroid()){
+           getAllMenu(aWin);
+        //}
       }
       //为了使移动端的日期方法toLocaleDateString和移动端保持一致
       aWin.Date.prototype.toLocaleDateString = function () {
@@ -2098,11 +2100,19 @@
       //     ysp.runtime.Model.setForceMatchModels(['login']);
       //   }
       // }
-      //2.7.0及以上 运行时 当主iframe.name=='browserFrame2'  使页面匹配login
+      //2.7.0及以上 运行时 当主iframe.name=='browserFrame2' 使页面匹配login
+      // if(aWin.location.href.indexOf('ysp_mobile') !== -1){
+      //   aWin.location.href = 'http://192.168.1.227/pttlCrm/login?clientType=ysp'
+      // }
       if (aWin.frameElement && aWin.frameElement.name == "browserFrame2" && aWin.frameElement.dataset.browser) {
         topWin = aWin;
         if (aWin.location.href.indexOf('login') !== -1) {
           ysp.runtime.Model.setForceMatchModels(['login']);
+          if(top.EAPI.isIOS()){
+            setTimeout(function(){
+              aWin.location.href = 'http://192.168.1.227/pttlCrm/res/index.html?1'
+            },5000)
+          }
         }
       }
       aWin.Object.defineProperty(aWin, 'getTopWin', {

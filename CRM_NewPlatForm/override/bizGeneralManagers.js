@@ -648,9 +648,22 @@ window.addEventListener('DOMContentLoaded', function() {
                     var modelName = response.modelName;
                     $("#modelTable").empty();
                     if(modelName) {
-                        for (var i = 0; i < modelName.length; i++) {
-                            var html = '<tr><td>' + modelName[i].name.substr(11) + '</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
-                            $("#modelTable").append(html);
+                        // for (var i = 0; i < modelName.length; i++) {
+                        //     var html = '<tr><td>' + modelName[i].name.substr(11) + '</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
+                        //     $("#modelTable").append(html);
+                        // }
+                      for (var i = 0; i < modelName.length; i++) {
+                        	var modelName_title = modelName[i].name;
+                        	var nodelName_show = modelName_title;
+                        	if(null != modelName_title && modelName_title.length>11){
+                        		nodelName_show = modelName_title.substring(0,11)+"...";
+                        	}
+                        	var reachQty_num = Number(modelName[i].reachQty);
+                        	var reachAmt_num = Number(modelName[i].reachAmt);
+                        	if(reachQty_num !=0 && reachAmt_num != 0){
+                        		var html = '<tr><td title="'+modelName_title+'">'+nodelName_show+'</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
+                        		$("#modelTable").append(html);
+                        	}
                         }
                     }
                     tableSH("model-table", tr_minH-2);
@@ -947,9 +960,22 @@ window.addEventListener('DOMContentLoaded', function() {
                     var modelName = response.modelName;
                     $("#modelTable").empty();
                     if(modelName) {
-                        for (var i = 0; i < modelName.length; i++) {
-                            var html = '<tr><td>' + modelName[i].name.substr(11) + '</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
-                            $("#modelTable").append(html);
+                        // for (var i = 0; i < modelName.length; i++) {
+                        //     var html = '<tr><td>' + modelName[i].name.substr(11) + '</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
+                        //     $("#modelTable").append(html);
+                        // }
+                      for (var i = 0; i < modelName.length; i++) {
+                        	var modelName_title = modelName[i].name;
+                        	var nodelName_show = modelName_title;
+                        	if(null != modelName_title && modelName_title.length>11){
+                        		nodelName_show = modelName_title.substring(0,11)+"...";
+                        	}
+                        	var reachQty_num = Number(modelName[i].reachQty);
+                        	var reachAmt_num = Number(modelName[i].reachAmt);
+                        	if(reachQty_num !=0 && reachAmt_num != 0){
+                        		var html = '<tr><td title="'+modelName_title+'">'+nodelName_show+'</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
+                        		$("#modelTable").append(html);
+                        	}
                         }
                     }
                     tableSH("model-table", tr_minH-2);
