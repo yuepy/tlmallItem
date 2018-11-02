@@ -22,13 +22,13 @@ function buildMap() {
             outRows = data.rows;
             // 总部全国视图
             if('总部领导' == position || '事业部总经理' == position || '产品经理' == position || '大客户业务部总经理' == position) {
-                getChinaMap(array, 'mapChart');
+                //getChinaMap(array, 'mapChart'); 后修改
             } else if ('分公司分总' == position || '品牌经理' == position) {
-                getProvinceMap(array, data.province, 'mapChart');
+                //getProvinceMap(array, data.province, 'mapChart');
             } else if ('办事处主任' == position) {
-                getBDMapForOfficeView(data.province, array, 'mapChart');
+                //getBDMapForOfficeView(data.province, array, 'mapChart');
             } else if('销售代表' == position || '总部客户经理' == position){
-                getBDMapForSaler(data.province, array, 'mapChart');
+                //getBDMapForSaler(data.province, array, 'mapChart');
             }
 
         },
@@ -74,7 +74,7 @@ function getBDMapForSaler(mapName, datas, Id) {
                 var marker = new BMap.Marker(point, {
                     icon: newIcon
                 });
-                BDmap.addOverlay(marker);
+                //BDmap.addOverlay(marker); 后修改的
                 var sContent = inforContent(datas, i);
 
                 var infoWindow = new BMap.InfoWindow(sContent); // 创建信息窗口对象(注：为去掉“隐藏百度地图默认图片样式”,需要先初始化下，此代码务必保留！)
@@ -120,7 +120,7 @@ function getBDMapForOfficeView(mapName, datas, Id) {
                 var marker = new BMap.Marker(point, {
                     icon: newIcon
                 });
-                BDmap.addOverlay(marker);
+                //BDmap.addOverlay(marker);后修改的
                 var sContent = inforContentForOfficeView(datas, i);
 
                 var infoWindow = new BMap.InfoWindow(sContent); // 创建信息窗口对象(注：为去掉“隐藏百度地图默认图片样式”,需要先初始化下，此代码务必保留！)
@@ -146,8 +146,8 @@ function getProvinceMap(datas, provinceName, Id) {
 
     // 省份地图初始化
     $.get('/ptDataShow/js/echarts/province/' + provinceName + '/' + provinceName + '.json', function(data) {
-        echarts.registerMap('mapProvince', data);
-        chart.setOption(option);
+        //echarts.registerMap('mapProvince', data);
+        //chart.setOption(option); 后修改
 
         chart.on('click', function(params) {
             // params.data && params.data.value
@@ -434,7 +434,6 @@ function numToShow(num) {
 
 // 百度地图信息窗内容
 function inforContent(datas, index) {
-    console.log(datas);
     var imgSrc = '';
     var timesLists = '';
     //	var loginName = $("#loginName").text();
