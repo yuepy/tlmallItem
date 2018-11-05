@@ -174,6 +174,11 @@
       var li = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb').querySelectorAll('li').length;
   li > 1 ? ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb').querySelectorAll('li')[li - 2].querySelector('a').click() : ysp.runtime.Browser.activeBrowser.contentWindow.close();
     }
+    if(ysp.customHelper.AndroidBackFlag == "reachBigData"){
+      //达成物理返回
+      var li = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('#searchHead').querySelectorAll('li').length;
+  li > 1 ? ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('#searchHead').querySelectorAll('li')[li - 2].querySelector('a').click() : ysp.runtime.Browser.activeBrowser.contentWindow.close();
+    }
     if(ysp.customHelper.AndroidBackFlag == 'AndroidHistory'){
       ysp.runtime.Browser.activeBrowser.contentWindow.history.go(-1);
     }
