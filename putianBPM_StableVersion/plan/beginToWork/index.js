@@ -103,7 +103,8 @@
       if (!elem) {
         return [];
       }if (elem) {
-        var data = { tabs: [], tabsNum: [], key: {} };var _tabs = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');[].map.call(_tabs, function (item, i) {
+        var data = { tabs: [], tabsNum: [], key: {} }; // console.log(elem)
+        var _tabs = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');[].map.call(_tabs, function (item, i) {
           var key = item.parentElement.classList.contains('mini-tab-active');var num = item.parentElement.getAttribute("index");if (item.innerHTML != '流程监控') {
             if (key == true) {
               data.tabs.push(item.innerHTML);data.tabsNum.push(num);data.key = i;
