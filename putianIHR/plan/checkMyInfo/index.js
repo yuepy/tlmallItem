@@ -68,7 +68,11 @@
           } else if (d.querySelector("img") && !d.querySelector("img[alt*='日期']")) {
             obj.type = "search";obj.val = d.querySelector("input[type='text']").value;obj.num = i;data.content.push(obj);
           } else if (d.querySelector("img[alt*='日期']")) {
-            obj.type = "date";obj.val = d.querySelector("input[type='text']").value.replace(/\//g, "-");obj.num = i;if (d.querySelector("input[type='text']").className == "PSERROR") {
+            obj.type = "date";if (ysp.appMain.isIOS()) {
+              var date = d.querySelector("input[type='text']").value.split("/");obj.val = date[2] + "-" + date[1] + "-" + date[0];
+            } else {
+              obj.val = d.querySelector("input[type='text']").value.replace(/\//g, "-");
+            }obj.num = i;if (d.querySelector("input[type='text']").className == "PSERROR") {
               obj.status = "red";
             }data.content.push(obj);
           } else if (d.querySelector("#HPS_SEARCH_WRK_HPS_NAME")) {
@@ -85,7 +89,12 @@
       } else if (type == "writeBlur") {
         trs[num].querySelector("input").value = val;
       } else if (type == "timeBlur") {
-        trs[num].querySelector("input").value = val.replace(/-/g, "/");trs[num].querySelector("input").dispatchEvent(new Event("change"));$(trs[num]).siblings().find("input").focus(); // trs[num].querySelector("input").focus();
+        var time = trs[num].querySelector("input");if (ysp.appMain.isIOS()) {
+          var date = val.split("-");time.value = date[2] + "/" + date[1] + "/" + date[0];
+        } else {
+          time.value = val.replace(/-/g, "/");
+        }trs[num].querySelector("input").dispatchEvent(new Event("change")); // $(trs[num]).siblings().find("input").focus(); 
+        // trs[num].querySelector("input").focus();
       } else if (type == "searchClick") {
         trs[num].querySelector("img").parentElement.click();
       }
