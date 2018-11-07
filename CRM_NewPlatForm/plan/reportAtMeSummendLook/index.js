@@ -86,7 +86,8 @@
               title = [],
               content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
           // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
-          var scrTitle = divs[i].querySelector("img").getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;src.push(scrC);var s;title.push(divs[i].getAttribute("imgname"));content.push(divs[i].getAttribute("imgname"));var images = { title: title, content: content, src: src };data.file.push(images);
+          var scrTitle = divs[i].querySelector("img").getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;var imgSrc = "http://192.168.220.82:8080" + divs[i].querySelector("img").getAttribute('src'); // src.push(scrC);
+          src.push(imgSrc);var s;title.push(divs[i].getAttribute("imgname"));content.push(divs[i].getAttribute("imgname"));var images = { title: title, content: content, src: src };data.file.push(images);
         }
       } /*_____________________
                        	以下为@人员中展示数据
@@ -96,12 +97,13 @@
           leng = reportSuperVisorObjArrs && reportSuperVisorObjArrs.length; /**循环拿出所有的span标签**/for (var i = 0; i < leng; i++) {
         data.reportSuperVisor[i] = { text: reportSuperVisorObjArrs[i].querySelector("span").innerText, val: reportSuperVisorObjArrs[i].querySelector("i").getAttribute("val"), val1: reportSuperVisorObjArrs[i].querySelector("i").getAttribute("val1") };
       }var leaveWordDivs = [].slice.call(elem.querySelector("#chats_content").querySelectorAll(".chat-one")); //蒋获取的dom类数组结构转变为真正的数组
-      /**过滤掉classList同时拥有chat-one和chat-two的元素**/leaveWordDivs && leaveWordDivs.forEach((v, i) => {
+      /**过滤掉classList同时拥有chat-one和chat-two的元素**/
+      leaveWordDivs && leaveWordDivs.forEach((v, i) => {
         /**获取当前元素拥有的所有的classList的长度**/var len = v.classList.length;if (len == 1 && v.classList[0] === 'chat-one') {
           var oo = {},
               messageRelatedObj = v.querySelector("h6").childNodes,
-              messageReplyContentDiv = v.querySelector(".chat-reply");oo.messageRelated = { replyOwner: messageRelatedObj[0].textContent, replyKey: messageRelatedObj[1].textContent, replyGuest: messageRelatedObj[2].textContent };
-          oo.messageText = v.querySelector("p").innerText;var tempReplyTime = messageReplyContentDiv.querySelector('span').innerText,
+              messageReplyContentDiv = v.querySelector(".chat-reply");oo.messageRelated = { replyOwner: messageRelatedObj[0].textContent, replyKey: messageRelatedObj[1].textContent,
+            replyGuest: messageRelatedObj[2].textContent };oo.messageText = v.querySelector("p").innerText;var tempReplyTime = messageReplyContentDiv.querySelector('span').innerText,
               tempReplyTimeArr = tempReplyTime.split(":");var replyTime = tempReplyTimeArr.map((v, i) => {
             if (i === 0) {
               if (+v.slice(-2) < 10 && v.slice(-2).search("0") === -1) {
@@ -129,7 +131,8 @@
       } //搜索人员列表/**以下的256——269行全部是从@我的报告里复制粘贴过来的，纯粹的ctrl+c 与ctrl+v操作**/
       if (elem.querySelector("#search-lists")) {
         if (elem.querySelector("#search-lists").querySelectorAll("a")[0]) {
-          data.searchList = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
+          data.searchList = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;
+          var searchListVal = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
             var labelEl = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor).parentNode.parentNode;data.personIndex = $(elem.querySelector("#contentBody").querySelector("#" + data.boxId)).find(".lists-one").index(labelEl);
           }
         }
