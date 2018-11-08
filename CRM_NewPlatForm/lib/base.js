@@ -311,7 +311,7 @@
         if(top.EAPI.isIOS()){
           //top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
         }else{
-          AndroidGetIconNum(); // 安卓端ICON数量取值;
+          //AndroidGetIconNum(); // 安卓端ICON数量取值;
         }
           ALLMENU = AllMenu;
           //console.log(ALLMENU)
@@ -2210,10 +2210,10 @@
         if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
           ysp.appMain.hideLoading();
         }
-        if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') != null ){
-          ysp.appMain.hideLoading();
+    		if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') != null ){
+        	ysp.appMain.hideLoading();
         }
-      }
+    	}
       //调试IOS登录框问题 - 地址变成特殊地址 
       if(aWin.location.href.indexOf('ysp_mobile')!==-1 && top.EAPI.isIOS()){
         aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login';
