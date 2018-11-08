@@ -98,12 +98,8 @@
         }var item = { branch: bran, personnel: perso, checked: checked };data.Dialog.push(item);
       } /*_____________________
                    	以下为@人员中展示数据
-                   _______________________*/data.user = { users: [], val: [], val1: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('span');for (var i = 0; i < users.length; i++) {
-        /**使用ES5新添加的filter方法来过滤掉不符合，剩下的就是符合的元素*/var textInfo = [].slice.call(users[i].childNodes).filter((v, i) => {
-          return v.textContent;
-        }).map((v, i) => {
-          return v.textContent;
-        });data.user.users.push(textInfo);data.user.val.push(users[i].getAttribute('val'));data.user.val1.push(users[i].getAttribute('val1'));
+                   _______________________*/data.user = { users: [], val: [], val1: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('span').length && elem.querySelector('#ContactUsers').querySelectorAll('span') || [];for (var i = 0; i < users.length; i++) {
+        var textInfo = users[i].textContent.trim();data.user.users.push(textInfo);data.user.val.push(users[i].getAttribute('val'));data.user.val1.push(users[i].getAttribute('val1'));
       } //判断状态
       //var buttonLength = elem.querySelector('.btn-box').querySelectorAll('button');
       // [].forEach.call(buttonLength,function(button,index){
