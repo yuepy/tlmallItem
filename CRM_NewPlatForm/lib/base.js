@@ -133,9 +133,10 @@
                 }
               }
               getAllMenu(currentAwin,MenuList);
-            }else{
-              alert('登录效验失败.请手动登录!'+LoginXhr.status);
-            }
+            }
+            //else if(xhr.status >=400 ){
+            // alert('登录效验失败.请手动登录!'+LoginXhr.status);
+            // }
           }
           LoginXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/loginInForMobile');
           LoginXhr.send(body);
@@ -349,7 +350,7 @@
         alert('请双击刷新低栏VCRM图标,重新加载');
       }else{
         if(top.EAPI.isIOS()){
-          //top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
+          top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
         }
       }
       	ALLMENU = AllMenu;
