@@ -373,6 +373,8 @@
         },
         // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
         beforeTargetLoad: function(aWin, doc) {
+          	//软键盘弹出
+          	aWin.HTMLElement.prototype.focus = function(){ };
             //aWin.alert=topWin.alert.bind(aWin);
             // 插入隐藏input的css
             var testCSS = doc.createElement('style');
