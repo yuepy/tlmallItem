@@ -82,13 +82,34 @@
     localStorage.setItem('atMe',atMe.split('=')[1]);
     localStorage.setItem('summary',summary.split('=')[1]);
   }
+  // 普天总线接口 - 时间戳拼接
+  var timeStamp = function(){
+    var date = new Date();
+    var year = date.getFullYear().toString();
+    var month = date.getMonth()+1;
+    var day = date. getDate();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    return addZero(year)+addZero(month)+addZero(day)+addZero(hours)+addZero(minutes)+addZero(seconds);
+  }
+  var addZero = function(str){
+    if(str == ''){
+      return ;
+    }
+    return str<10?'0'+str.toString() : str.toString();
+  }
   //IOS端 登录方式 避开常规登录 用单独接口请求判断状态进行跳转登录(不走密码管家) 登录成功后调取菜单; /
   topWin.IOSLoginIn = function(user,password){
-    if(user&&password){
+    if(user == '' || password == ''){
+      alert('用户名或密码为空,登录失败!');
+      return ;
+    }
+    if(user&&password){
       var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
-     	var EnCoderXhr = new XMLHttpRequest();
+      var EnCoderXhr = new XMLHttpRequest();
       EnCoderXhr.onreadystatechange = function(){
-        if(EnCoderXhr.readyState == 4){
+        if(EnCoderXhr.readyState == 4){
           var param = JSON.parse(EnCoderXhr.response);
           setMaxDigits(130);
           var encrypPublicKey = new RSAKeyPair(param.publicExponent,'',param.modulus);
@@ -97,31 +118,33 @@
           body = JSON.stringify(body);
           var LoginXhr = new XMLHttpRequest();
           LoginXhr.onreadystatechange = function(){
+            //每次响应状态都起一个Loading . -- 防止白屏无loading 运行时关闭loading 请求时间过长等问题 .
+            ysp.appMain.showLoading();
             if(LoginXhr.status == 200 && LoginXhr.readyState == 4){
-              var MenuList = JSON.parse(LoginXhr.response).listMenu;
+              var MenuList = JSON.parse(LoginXhr.response).listMenu;
+              ALLMENU = MenuList;
               var localMenuList = JSON.stringify(MenuList);
               localStorage.setItem('listMenuForMobile',localMenuList);
               loginFlag = true;
               if (currentAwin.frameElement && currentAwin.frameElement.name == "browserFrame2" && currentAwin.frameElement.dataset.browser) {
                 if (currentAwin.location.href.indexOf('login') !== -1) {
-                  //currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html'
-                  //ysp.runtime.Model.setForceMatchModels(['index']);
+                  currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html'
+                  ysp.runtime.Model.setForceMatchModels(['index']);
                 }
               }
-              currentAwin.location.href = 'http://192.168.220.82:8080/pttlCrm/res/index.html';
               getAllMenu(currentAwin,MenuList);
-              //ysp.appMain.hideLoading();
+            }else{
+              alert('登录效验失败.请手动登录!'+LoginXhr.status);
             }
           }
           LoginXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/loginInForMobile');
           LoginXhr.send(body);
-          //ysp.appMain.showLoading();
         }
       }
       EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile?'+user);
       EnCoderXhr.send();
     }
-  }
+	}
   topWin.AndroidBack = function(){
     var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
     var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
@@ -162,7 +185,6 @@
          } else {
            a[index - 1].click();
          }
-         //ysp.appMain.showLoading();
          	 setTimeout(function () {
            ysp.appMain.hideLoading();
          }, 1000);
@@ -288,7 +310,7 @@
         if(top.EAPI.isIOS()){
           //top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
         }else{
-          //AndroidGetIconNum(); // 安卓端ICON数量取值;
+          AndroidGetIconNum(); // 安卓端ICON数量取值;
         }
           ALLMENU = AllMenu;
           //console.log(ALLMENU)
@@ -327,7 +349,7 @@
         alert('请双击刷新低栏VCRM图标,重新加载');
       }else{
         if(top.EAPI.isIOS()){
-          top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
+          //top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
         }
       }
       	ALLMENU = AllMenu;
@@ -335,26 +357,26 @@
         //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
         //AllMobileMenu(AllMenu);
         //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
-        if(ALLMENU != '' && AllMenu){
-          //正式环境暂时没有效验
-           var SessionXhr = new XMLHttpRequest();
-           SessionXhr.onreadystatechange = function(){
-            if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
-              var encoder = JSON.parse(SessionXhr.response).encoder;
-              var userId = JSON.parse(SessionXhr.response).userId;
-              if(encoder && userId){
-                var encoderXHR = new XMLHttpRequest();
-                //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-              encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-                encoderXHR.send();
-              }else{
-                console.error('AndEncoder接口请求失败!')
-              }
-            }
-          }
-           SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
-           SessionXhr.send();
-        }
+        // if(ALLMENU != '' && AllMenu){
+        //   //正式环境暂时没有效验
+        //    var SessionXhr = new XMLHttpRequest();
+        //    SessionXhr.onreadystatechange = function(){
+        //     if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
+        //       var encoder = JSON.parse(SessionXhr.response).encoder;
+        //       var userId = JSON.parse(SessionXhr.response).userId;
+        //       if(encoder && userId){
+        //         var encoderXHR = new XMLHttpRequest();
+        //         //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+        //       encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+        //         encoderXHR.send();
+        //       }else{
+        //         console.error('AndEncoder接口请求失败!')
+        //       }
+        //     }
+        //   }
+        //    SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+        //    SessionXhr.send();
+        // }
     }
     //请求接口获取连接方式,暂时弃用
 //     if(window.XMLHttpRequest){
@@ -2170,22 +2192,10 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function onTargetLoad(aWin, doc) {
-      // if(aWin.location.href.indexOf('login') !==-1 && top.EAPI.isIOS()){
-      //   topWin.currentWindow = aWin;
-      //   top.EAPI.postMessageToNative('IOSLoginIn', '');
-      // }  
-      // if(aWin){
-      //   if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
-      //     ysp.appMain.hideLoading();
-      //   }
-      //   if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') != null ){
-      //     ysp.appMain.hideLoading();
-      //   }
-      // }
       if (aWin) {
         if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
-          //在登录成功时,请求菜单接口,获取全部菜单列表
-          getAllMenu(aWin);
+          //在登录成功时,请求PC端菜单接口,获取全部菜单列表  -- 新平台做临时调试使用 .
+          getAllMenu(aWin);
           // var _this = this;
           // var xhr = new aWin.XMLHttpRequest();
           // xhr.open('GET', 'http://192.168.220.82:8080/pttlCrm/login/addMobileLoginLog', true);
@@ -2204,11 +2214,11 @@
         }
       }
       //调试IOS登录框问题 - 地址变成特殊地址 
-      if(aWin.location.href.indexOf('ysp_mobile')!==-1){
+      if(aWin.location.href.indexOf('ysp_mobile')!==-1 && top.EAPI.isIOS()){
         aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login';
         top.EAPI.postMessageToNative('IOSLoginIn', '');
-        
-      }
+        ysp.appMain.showLoading();
+      }
       if(aWin.location.href.indexOf('login') !==-1 && top.EAPI.isIOS()){
         topWin.currentWindow = aWin;
         ysp.appMain.showLoading();
@@ -2260,8 +2270,8 @@
           var actionEvent = '{"target":"null","data":"closePreLoading"}';
           //关闭主webview的loading状态
           var parent = aWin.frameElement.ownerDocument.defaultView;
-          parent && parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
-          sessionStorage.setItem('closePreLoading-domcontentloaded', true);
+          //parent && parent.EAPI.postMessageToNative('closePreLoading', actionEvent);
+          //sessionStorage.setItem('closePreLoading-domcontentloaded', true);
         }
         aWin.createIframe = function createIframe(name, targetUrl, mount, data) {
           var childWin = ysp.customHelper.openWindow(targetUrl, name);
