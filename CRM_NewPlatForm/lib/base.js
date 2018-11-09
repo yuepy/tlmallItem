@@ -2222,7 +2222,6 @@
       }
       if(aWin.location.href.indexOf('login') !==-1 && top.EAPI.isIOS()){
         topWin.currentWindow = aWin;
-        ysp.appMain.showLoading();
         top.EAPI.postMessageToNative('IOSLoginIn', '');
       }
       if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
