@@ -213,7 +213,7 @@
               setTimeout(function () {
                 var list = lists.firstElementChild;if (list) {
                   var personName = list.innerText;if (inputVal && personName.indexOf(inputVal) != -1) {
-                    debugger;list.click();sureFlag = 'true';
+                    list.click();sureFlag = 'true';
                   } else {
                     sureFlag = 'false';
                   }if (window.sessionStorage) {
@@ -227,7 +227,7 @@
           setTimeout(function () {
             var list = lists.firstElementChild;if (list) {
               var name = list.innerText;if (inputVal && name.indexOf(inputVal) != -1) {
-                debugger;list.click();sureFlag = 'true';
+                list.click();sureFlag = 'true';
               } else {
                 sureFlag = 'false';
               }
