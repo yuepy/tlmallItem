@@ -18,7 +18,7 @@ gulp.task('release', function() {
 gulp.task('releaseCom', function() {
     gulp.src(['**/*', '!./gulpfile.js', '!./lib/images/**/*', '!./**/*.png', '!./**/css/**/*', '!/**/*.ico'])
         //VRCM http://192.168.220.82:8080 环境转移 https://vcrm-uat.pttl.com:8080 环境
-        .pipe(replace(/http:\\{2}\/\\{2}\/192\\{2}.168\\{2}.220\\{2}.82:8080/gm, 'https:\\\\/\\\\/vcrm-uat\\\\.pttl\\\\.com\\\\:8080'))
+        .pipe(replace(/http:\\{2}\/\\{2}\/192\\{2}.168\\{2}.220\\{2}.82:8080/gm, 'https:\\\\/\\\\/vcrm-uat\\\\.pttl\\\\.com:8080'))
         .pipe(replace(/http:\/\/192\.168\.220\.82:8080/gm, 'https://vcrm-uat.pttl.com:8080'))
         .pipe(replace(/http:\/\/192\.168\.220\.82/gm, 'https://vcrm-uat.pttl.com:8080'))
         .pipe(gulp.dest('./'));
