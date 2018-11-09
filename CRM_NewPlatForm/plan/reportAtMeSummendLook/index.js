@@ -139,9 +139,7 @@
       //当移动端用户键入的文本框内容有变化时触发此事件
       if ('closeDialog' == data.eventType) {
         /**
-        var selfFrame = elem.ownerDocument.defaultView.frameElement; **/ /**此处通过来当前元素的父级是否存在来判断是不是定位到了最外层html**/ /**while (selfFrame.parentNode != null) {
-                                                                                                                   selfFrame = selfFrame.parentNode;
-                                                                                                                 }*/var sureCloseBtn = elem.ownerDocument.defaultView.frameElement.parentNode.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector('.layui-layer-setwin a');sureCloseBtn.click();
+        var selfFrame = elem.ownerDocument.defaultView.frameElement; **/ /**此处通过来当前元素的父级是否存在来判断是不是定位到了最外层html**/ /**while (selfFrame.parentNode != null) {                                           selfFrame = selfFrame.parentNode;                                                                                              }*/var sureCloseBtn = elem.ownerDocument.defaultView.frameElement.parentNode.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector('.layui-layer-setwin a');sureCloseBtn.click();
       } //当移动端用户键入的文本框内容有变化时触发此事件
       if ('sureToClose' == data.eventType) {
         var sureCloseBtn = elem.ownerDocument.defaultView.frameElement.parentNode.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector('.layui-layer-btn0');sureCloseBtn.click();
@@ -207,8 +205,7 @@
             } else {
               setTimeout(function () {
                 var list = lists.firstElementChild;if (list) {
-                  var personName = list.innerText;
-                  if (inputVal && personName.indexOf(inputVal) != -1) {
+                  var personName = list.innerText;if (inputVal && personName.indexOf(inputVal) != -1) {
                     list.click();sureFlag = 'true';
                   } else {
                     sureFlag = 'false';
