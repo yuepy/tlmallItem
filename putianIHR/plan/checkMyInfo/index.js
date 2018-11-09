@@ -89,7 +89,7 @@
       } else if (type == "writeBlur") {
         trs[num].querySelector("input").value = val;
       } else if (type == "timeBlur") {
-        var time = trs[num].querySelector("input");if (ysp.appMain.isIOS()) {
+        var time = trs[num].querySelector("input");var href = elem.ownerDocument.defaultView.location.href;if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
           var date = val.split("-");time.value = date[2] + "/" + date[1] + "/" + date[0];
         } else {
           time.value = val.replace(/-/g, "/");
