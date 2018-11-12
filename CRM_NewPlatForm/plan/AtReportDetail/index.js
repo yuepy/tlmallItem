@@ -33,7 +33,7 @@
             var text = huaweiFDNodes[i].textContent;obj.huaweiFD.push(huaweiFDNodes[i].textContent);
           }
         }obj.huaweiExperience = eObje.querySelector("#HuaweiExperienceStore").textContent;obj.HuaweiFuse = eObje.querySelector("#HuaweiFuse").textContent;obj.huaweiProvince = eObje.querySelector("#HuaweiProvincePackage").textContent; /**需要判断当前标签下的子元素是不是只有一个纯文本节点以及是否存在所谓的br换行节点**/var samsungDivisonNodes = eObje.querySelector("#SamsungDivison").childNodes && [].slice.call(eObje.querySelector("#SamsungDivison").childNodes);obj.samsungDivison = [];for (var i = 0, len = samsungDivisonNodes.length; i < len; i++) {
-          var eleName = samsungDivisonNodes[i].nodeName;console.log("true");console.log("false!");if (eleName == "#text") {
+          var eleName = samsungDivisonNodes[i].nodeName;if (eleName == "#text") {
             var text = samsungDivisonNodes[i].textContent;obj.samsungDivison.push(text);
           }
         }var fenXiaoDivisonNodes = eObje.querySelector("#FenXiaoDivison").childNodes && [].slice.call(eObje.querySelector("#FenXiaoDivison").childNodes);obj.fenXiaoDivison = [];for (var i = 0, len = fenXiaoDivisonNodes.length; i < len; i++) {
@@ -62,11 +62,13 @@
               }
             }data.subcontent.subContentMessage.push(oo);
           } else {}
-        });var huaweiFDButtons = elem.querySelector("#huaweiFDTags") && elem.querySelector("#huaweiFDTags").querySelectorAll("button");for (var i = 0; i < huaweiFDButtons.length; i++) {
+        });var huaweiFDButtons = elem.querySelector("#huaweiFDTags") && elem.querySelector("#huaweiFDTags").querySelectorAll("button");
+        for (var i = 0; i < huaweiFDButtons.length; i++) {
           data.huaweiFDTags.push(huaweiFDButtons[i].textContent);
         }for (var i = 0; i < huaweiFDButtons.length; i++) {
           data.huaweiFDTagsFlag.push(huaweiFDButtons[i].getAttribute("class"));
-        }var more = "false";if (huaweiFDButtons.length > 3) {
+        }var more = "false";
+        if (huaweiFDButtons.length > 3) {
           more = "true";
         }data.huaweiFDTagsLength.push(more); ///华为体验店
         var huaweiExperienceStoreButtons = elem.querySelector("#huaweiExperienceStoreTags") && elem.querySelector("#huaweiExperienceStoreTags").querySelectorAll("button");for (var i = 0; i < huaweiExperienceStoreButtons.length; i++) {
@@ -76,7 +78,8 @@
         }var huaweiExperience = "false";if (huaweiExperienceStoreButtons.length > 3) {
           huaweiExperience = "true";
         }data.huaweiExperienceStoreTagsLength.push(huaweiExperience); ///华为融合
-        var huaweiFuseTagsButtons = elem.querySelector("#huaweiFuseTags") && elem.querySelector("#huaweiFuseTags").querySelectorAll("button");for (var i = 0; i < huaweiFuseTagsButtons.length; i++) {
+        var huaweiFuseTagsButtons = elem.querySelector("#huaweiFuseTags") && elem.querySelector("#huaweiFuseTags").querySelectorAll("button");
+        for (var i = 0; i < huaweiFuseTagsButtons.length; i++) {
           data.huaweiFuseTags.push(huaweiFuseTagsButtons[i].textContent);
         }for (var i = 0; i < huaweiFuseTagsButtons.length; i++) {
           data.huaweiFuseTagsFlag.push(huaweiFuseTagsButtons[i].getAttribute("class"));
@@ -113,14 +116,14 @@
         }data.otherInforTagsLength.push(otherInfor); //搜索人员列表
         if (elem.querySelector("#search-lists")) {
           if (elem.querySelector("#search-lists").querySelectorAll("a")[0]) {
-            data.searchList = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;
-            if (elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
+            data.searchList = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
               var labelEl = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor).parentNode.parentNode;data.personIndex = $(elem.querySelector("#contentBody").querySelector("#" + data.boxId)).find(".lists-one").index(labelEl);
             }
           }
         }var act = $(elem).find('#contentBody').find(".z-act");if (act.length > 0) {
           act.each(function (index, item) {
-            var planGs = [];var checkedName = [];var gs = $(item).find('.title').find('.area-name').html();planGs.push(gs);var itemData = { planGs: planGs };data.subPerson.push(itemData);
+            var planGs = [];var checkedName = [];
+            var gs = $(item).find('.title').find('.area-name').html();planGs.push(gs);var itemData = { planGs: planGs };data.subPerson.push(itemData);
           });
         }var sum = {};sum.number = $(elem).find("#ContactSure").find("em").html();data.sumNumber.push(sum); //获取@的名字
         // $(elem).find("#ContactUsers").find(".user").each(function (index, item) {
@@ -149,8 +152,7 @@
                 content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
             // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
             // src.push(scrC);
-            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));
-            content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
+            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
           }
         } /*
            	Dialog 数据   所选分公司树结构数据
@@ -158,7 +160,8 @@
           var bran = [],
               perso = [],
               checked = [];bran.push([branchs[i].querySelector('.area-name').textContent.replace(/^(\s*)|(\s*)$/g, '')]);personnel = branchs[i].querySelectorAll('.lists-one');for (var j = 0; j < personnel.length; j++) {
-            perso.push(personnel[j].querySelector('label').textContent.replace(/^(\s*)|(\s*)$/g, ''));checked.push(perso.length > 0 && personnel[j].querySelector('input').checked);
+            perso.push(personnel[j].querySelector('label').textContent.replace(/^(\s*)|(\s*)$/g, ''));
+            checked.push(perso.length > 0 && personnel[j].querySelector('input').checked);
           }var item = { branch: bran, personnel: perso, checked: checked };data.Dialog.push(item);
         }
       }data.modalDialog = elem.ownerDocument.defaultView.frameElement.parentNode.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector(".layui-layer-dialog");return data;
