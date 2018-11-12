@@ -20,32 +20,32 @@
       if (!elem) {
         return;
       }var data = { textSum: [], subcontent: { subContentMessageHead: [], subContentMessage: [] }, huaweiFD: { huaweiFDFlag: [], huaweiFDText: [] }, huaweiPJ: { huaweiPJFlag: [], huaweiPJText: [] }, huaweiStore: { huaweiStoreFlag: [], huaweiStoreText: [] }, huaweiSB: { huaweiSBFlag: [], huaweiSBText: [] }, samsung: { samsungFlag: [], samsungText: [] }, distribution: { distributionFlag: [], distributionText: [] }, others: { othersFlag: [], othersText: [] }, problemValue: [], content: [], flag: [], file: [], searchList: '', No: '', boxId: "", reportSuperVisor: [] /**添加的汇报的管理人数组**/ };var textNodeArrs = [].slice.call(elem.querySelectorAll(".con-box")[0].querySelector("div") && elem.querySelectorAll(".con-box")[0].querySelector("div").childNodes),
-          text1 = [];for (var i = 0, len = textNodeArrs.length; i < len; i++) {
-        var eleName = textNodeArrs[i].nodeName;if (eleName == "#text") {
-          var text = textNodeArrs[i].textContent;text1.push(text);
-        }
-      }data.textSum = text1;var textAreas = elem.querySelector("#textareaDivs").querySelectorAll(".con-box");var huaweiFD = "";var huaweiPJ = "";var huaweiStore = "";var huaweiSB = "";var samsung = "";var distribution = "";var others = "";for (var i = 0; i < textAreas.length; i++) {
+          text1 = [];text1 = textNodeArrs.filter((v, i) => {
+        return v.textContent;
+      }).map((v, i) => {
+        return v.textContent;
+      });data.textSum = text1;var textAreas = elem.querySelector("#textareaDivs").querySelectorAll(".con-box");var huaweiFD = "";var huaweiPJ = "";var huaweiStore = "";var huaweiSB = "";var samsung = "";var distribution = "";var others = "";for (var i = 0; i < textAreas.length; i++) {
         var val = textAreas[i].querySelector("div").getAttribute("val");if ("华为FD" == val) {
           huaweiFD = "华为FD";var textNodeArrs = [].slice.call(textAreas[i].querySelector("div") && textAreas[i].querySelector("div").childNodes),
-              text = [];for (var i = 0, len = textNodeArrs.length; i < len; i++) {
-            var eleName = textNodeArrs[i].nodeName;if (eleName == "#text") {
-              var textIn = textNodeArrs[i].textContent;text.push(textIn);
-            }
-          }data.huaweiFD.huaweiFDFlag.push(huaweiFD);data.huaweiFD.huaweiFDText = text;
+              text = [];text = textNodeArrs.filter((v, i) => {
+            return v.textContent;
+          }).map((v, i) => {
+            return v.textContent;
+          });data.huaweiFD.huaweiFDFlag.push(huaweiFD);data.huaweiFD.huaweiFDText = text;
         } else if ("华为配件与融合" == val) {
           huaweiPJ = "华为配件与融合";var textNodeArrs = [].slice.call(textAreas[i].querySelector("div") && textAreas[i].querySelector("div").childNodes),
-              text = [];for (var i = 0, len = textNodeArrs.length; i < len; i++) {
-            var eleName = textNodeArrs[i].nodeName;if (eleName == "#text") {
-              var textInfo = textNodeArrs[i].textContent;text.push(textInfo);
-            }
-          }data.huaweiPJ.huaweiPJFlag.push(huaweiPJ);data.huaweiPJ.huaweiPJText = text;
+              text = [];text = textNodeArrs.filter((v, i) => {
+            return v.textContent;
+          }).map((v, i) => {
+            return v.textContent;
+          });data.huaweiPJ.huaweiPJFlag.push(huaweiPJ);data.huaweiPJ.huaweiPJText = text;
         } else if ("华为体验店" == val) {
           huaweiStore = "华为体验店";var textNodeArrs = [].slice.call(textAreas[i].querySelector("div") && textAreas[i].querySelector("div").childNodes),
-              text = [];for (var i = 0, len = textNodeArrs.length; i < len; i++) {
-            var eleName = textNodeArrs[i].nodeName;if (eleName == "#text") {
-              var textInfo = textNodeArrs[i].textContent;text.push(textInfo);
-            }
-          }data.huaweiStore.huaweiStoreFlag.push(huaweiStore);data.huaweiStore.huaweiStoreText = text;
+              text = [];text = textNodeArrs.filter((v, i) => {
+            return v.textContent;
+          }).map((v, i) => {
+            return v.textContent;
+          });data.huaweiStore.huaweiStoreFlag.push(huaweiStore);data.huaweiStore.huaweiStoreText = text;
         } else if ("华为省包" == val) {
           huaweiSB = "华为省包";var text = textAreas[i].querySelector("div").textContent;data.huaweiSB.huaweiSBFlag.push(huaweiSB);data.huaweiSB.huaweiSBText.push(text);
         } else if ("三星业务事业部" == val) {
@@ -78,6 +78,7 @@
         //     window.reportSrc.splice(0, window.reportSrc.length - divs.length);
         //   }
         // } else {
+
         //   window.reportSrc = [];
         // }
         for (var i = 0; i < divs.length; i++) {
