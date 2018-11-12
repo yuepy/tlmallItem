@@ -33,7 +33,7 @@
             var text = huaweiFDNodes[i].textContent;obj.huaweiFD.push(huaweiFDNodes[i].textContent);
           }
         }obj.huaweiExperience = eObje.querySelector("#HuaweiExperienceStore").textContent;obj.HuaweiFuse = eObje.querySelector("#HuaweiFuse").textContent;obj.huaweiProvince = eObje.querySelector("#HuaweiProvincePackage").textContent; /**需要判断当前标签下的子元素是不是只有一个纯文本节点以及是否存在所谓的br换行节点**/var samsungDivisonNodes = eObje.querySelector("#SamsungDivison").childNodes && [].slice.call(eObje.querySelector("#SamsungDivison").childNodes);obj.samsungDivison = [];for (var i = 0, len = samsungDivisonNodes.length; i < len; i++) {
-          var eleName = samsungDivisonNodes[i].nodeName;console.log("true");console.log("false!");if (eleName == "#text") {
+          var eleName = samsungDivisonNodes[i].nodeName;if (eleName == "#text") {
             var text = samsungDivisonNodes[i].textContent;obj.samsungDivison.push(text);
           }
         }var fenXiaoDivisonNodes = eObje.querySelector("#FenXiaoDivison").childNodes && [].slice.call(eObje.querySelector("#FenXiaoDivison").childNodes);obj.fenXiaoDivison = [];for (var i = 0, len = fenXiaoDivisonNodes.length; i < len; i++) {
@@ -113,8 +113,7 @@
         }data.otherInforTagsLength.push(otherInfor); //搜索人员列表
         if (elem.querySelector("#search-lists")) {
           if (elem.querySelector("#search-lists").querySelectorAll("a")[0]) {
-            data.searchList = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;
-            if (elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
+            data.searchList = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
               var labelEl = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor).parentNode.parentNode;data.personIndex = $(elem.querySelector("#contentBody").querySelector("#" + data.boxId)).find(".lists-one").index(labelEl);
             }
           }
@@ -122,7 +121,8 @@
           act.each(function (index, item) {
             var planGs = [];var checkedName = [];var gs = $(item).find('.title').find('.area-name').html();planGs.push(gs);var itemData = { planGs: planGs };data.subPerson.push(itemData);
           });
-        }var sum = {};sum.number = $(elem).find("#ContactSure").find("em").html();data.sumNumber.push(sum); //获取@的名字
+        }var sum = {};
+        sum.number = $(elem).find("#ContactSure").find("em").html();data.sumNumber.push(sum); //获取@的名字
         // $(elem).find("#ContactUsers").find(".user").each(function (index, item) {
         //   var atName = {};
         //   atName.names = $(item).find("span").html();
