@@ -1,0 +1,397 @@
+{
+  "version": "0.1",
+  "id": "login",
+  "targetURL": "http://192.168.220.82:8080/pttlCrm/login",
+  "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json"
+  },
+  "chineseName": "登录",
+  "description": "",
+  "controls": {
+    "control0_qLUh9h": {
+      "location": {
+        "data": {
+          "tagName": "FORM"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.wrapper FORM"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]"
+          }
+        ]
+      },
+      "intendedRole": "header",
+      "roles": "element,link,header",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "header"
+    },
+    "control1_tOvygO": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "value": {
+              "text": [
+                "用户ID"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::INPUT[@id=\"loginName\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.login-container-form DIV.login-fieldset INPUT.login-input-text"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[2]/DIV[1]/DIV[1]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "text"
+          }
+        ]
+      },
+      "intendedRole": "textbox",
+      "roles": "element,textbox",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "textbox"
+    },
+    "control2_QcPFTv": {
+      "location": {
+        "data": {
+          "tagName": "INPUT"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@placeholder",
+            "prob": 3,
+            "value": {
+              "text": [
+                "密码"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::INPUT[@id=\"password\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.login-container-form DIV.login-fieldset INPUT.login-input-text"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[2]/DIV[1]/DIV[2]/INPUT[1]"
+          },
+          {
+            "id": "input/type",
+            "verifyEnabled": true,
+            "value": "password"
+          }
+        ]
+      },
+      "intendedRole": "passwordbox",
+      "roles": "element,passwordbox,textbox",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "textbox"
+    },
+    "control3_d6w20u": {
+      "location": {
+        "data": {
+          "tagName": "A"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "button/text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "登录"
+              ],
+              "visText": [
+                "登录"
+              ]
+            }
+          },
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "登录"
+              ],
+              "visText": [
+                "登录"
+              ]
+            }
+          },
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"loginButton\"]/A[1]",
+              "descendant::DIV[@id=\"loginButton\"]//A"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.login-container DIV.login-container-form DIV.login-btn A"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[2]/DIV[1]/DIV[4]/A[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "intendedRole": "button",
+      "roles": "element,button,link",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "button"
+    }
+  },
+  "contexts": {
+    "context0_3N6GDG": {
+      "controls": [
+        "control0_qLUh9h",
+        "control1_tOvygO",
+        "control2_QcPFTv",
+        "control3_d6w20u"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow0_qa15M3": {
+      "toContexts": [
+        {
+          "toContextId": "context0_3N6GDG"
+        }
+      ]
+    },
+    "flow1_gPkDn2": {
+      "fromContextId": "context0_3N6GDG",
+      "fromAction": "click",
+      "fromControlId": "control1_tOvygO",
+      "toContexts": [
+        {
+          "toModelId": "login",
+          "toContextId": "context0_3N6GDG"
+        }
+      ]
+    },
+    "flow2_NVTLTO": {
+      "fromContextId": "context0_3N6GDG",
+      "fromAction": "click",
+      "fromControlId": "control3_d6w20u",
+      "toContexts": [
+        {
+          "toContextId": "context0_3N6GDG"
+        },
+        {
+          "toContextId": "context1_GIcG30",
+          "toModelId": "index"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page0_hVA6Dy": {
+      "contextId": "context0_3N6GDG",
+      "layout": [
+        {
+          "id": "uiControl0_I3I0I4",
+          "controlId": "control0_qLUh9h",
+          "display": {
+            "adapterId": "header",
+            "type": "header",
+            "title": "登录",
+            "amStyle": "dark",
+            "adapter": {
+              "templateType": ""
+            }
+          },
+          "layout": [
+            {
+              "id": "uiControl0_I3I0I4headerLeft",
+              "display": {
+                "type": "headerLeft",
+                "adapterId": "headerLeft",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            },
+            {
+              "id": "uiControl0_I3I0I4headerRight",
+              "display": {
+                "type": "headerRight",
+                "adapterId": "headerRight",
+                "adapter": {
+                  "templateType": ""
+                }
+              },
+              "layout": []
+            }
+          ]
+        },
+        {
+          "id": "uiControl1_TK4G0O",
+          "controlId": "control1_tOvygO",
+          "display": {
+            "adapterId": "textbox",
+            "type": "textbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl2_qeCEXM",
+          "controlId": "control2_QcPFTv",
+          "display": {
+            "adapterId": "passwordbox",
+            "type": "passwordbox",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        },
+        {
+          "id": "uiControl3_9fWNJn",
+          "controlId": "control3_d6w20u",
+          "display": {
+            "adapterId": "clickable",
+            "type": "button",
+            "amStyle": "dark",
+            "adapter": {
+              "templateType": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context0_3N6GDG": [
+          ""
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context0_3N6GDG": [
+          "192.168.220.82:8080/pttlCrm/login"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context0_3N6GDG": [
+          [
+            "loginButton",
+            "loginName",
+            "password"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context0_3N6GDG": [
+          [
+            "key-icon",
+            "login-btn",
+            "login-container",
+            "login-container-form",
+            "login-fieldset",
+            "login-input-text",
+            "login-welcome",
+            "user-icon",
+            "wrapper"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context0_3N6GDG": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/FORM",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-checkbox",
+            "DIV/DIV/INPUT-password",
+            "DIV/DIV/INPUT-text",
+            "DIV/DIV/LABEL",
+            "DIV/FORM/DIV",
+            "FORM/DIV/DIV"
+          ]
+        ]
+      }
+    }
+  }
+}
