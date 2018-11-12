@@ -122,7 +122,8 @@
           act.each(function (index, item) {
             var planGs = [];var checkedName = [];var gs = $(item).find('.title').find('.area-name').html();planGs.push(gs);var itemData = { planGs: planGs };data.subPerson.push(itemData);
           });
-        }var sum = {};sum.number = $(elem).find("#ContactSure").find("em").html();data.sumNumber.push(sum); //获取@的名字
+        }var sum = {};
+        sum.number = $(elem).find("#ContactSure").find("em").html();data.sumNumber.push(sum); //获取@的名字
         // $(elem).find("#ContactUsers").find(".user").each(function (index, item) {
         //   var atName = {};
         //   atName.names = $(item).find("span").html();
