@@ -28,19 +28,25 @@
         }var obj = {};var eObje = elem.querySelector(".m-report-infors");obj.customerName = eObje.querySelector("#VisitTarget").value;obj.signDate = eObje.querySelector("#TargetPosition").value;var selects = elem.querySelector('#VisitTime'); //拜访时长
         var options = selects.querySelectorAll('option');for (var i = 0; i < options.length; i++) {
           data.reportDate.push(options[i].textContent);
-        }obj.reportDateValue = eObje.querySelector("#VisitTime").value; /**需要判断当前标签下的子元素是不是只有一个纯文本节点以及是否存在所谓的br换行节点**/var huaweiFDNodes = eObje.querySelector("#huaweiFD").childNodes && [].slice.call(eObje.querySelector("#huaweiFD").childNodes);obj.huaweiFD = huaweiFDNodes && huaweiFDNodes.filter((v, i) => {
-          return v.textContent;
-        }).map((v, i) => {
-          return v.textContent;
-        });obj.huaweiExperience = eObje.querySelector("#HuaweiExperienceStore").textContent;obj.HuaweiFuse = eObje.querySelector("#HuaweiFuse").textContent;obj.huaweiProvince = eObje.querySelector("#HuaweiProvincePackage").textContent; /**需要判断当前标签下的子元素是不是只有一个纯文本节点以及是否存在所谓的br换行节点**/var samsungDivisonNodes = eObje.querySelector("#SamsungDivison").childNodes && [].slice.call(eObje.querySelector("#SamsungDivison").childNodes); /**那么则以数组的形式获取该值===此时值是数组*/obj.samsungDivison = samsungDivisonNodes && samsungDivisonNodes.filter((v, i) => {
-          return v.textContent;
-        }).map((v, i) => {
-          return v.textContent;
-        });var fenXiaoDivisonNodes = eObje.querySelector("#FenXiaoDivison").childNodes && [].slice.call(eObje.querySelector("#FenXiaoDivison").childNodes);obj.fenXiaoDivison = fenXiaoDivisonNodes && fenXiaoDivisonNodes.filter((v, i) => {
-          return v.textContent;
-        }).map((v, i) => {
-          return v.textContent;
-        });obj.otherInfor = eObje.querySelector("#OtherInfor").textContent;obj.atName = eObje.querySelector(".chatUsers-check").querySelector(".names").textContent;data.subcontent.subContentMessageHead.push(obj);var eObject = elem.querySelector(".m-report-infors");var leaveWordDivs = [].slice.call(eObject.querySelector("#chats_content").querySelectorAll(".chat-one")); //蒋获取的dom类数组结构转变为真正的数组
+        }obj.reportDateValue = eObje.querySelector("#VisitTime").value; /**需要判断当前标签下的子元素是不是只有一个纯文本节点以及是否存在所谓的br换行节点**/var huaweiFDNodes = eObje.querySelector("#huaweiFD").childNodes && [].slice.call(eObje.querySelector("#huaweiFD").childNodes);obj.huaweiFD = [];for (var i = 0, len = huaweiFDNodes.length; i < len; i++) {
+          var eleName = huaweiFDNodes[i].nodeName;if (eleName == "#text") {
+            var text = huaweiFDNodes[i].textContent;obj.huaweiFD.push(huaweiFDNodes[i].textContent);
+          }
+        }obj.huaweiExperience = eObje.querySelector("#HuaweiExperienceStore").textContent;obj.HuaweiFuse = eObje.querySelector("#HuaweiFuse").textContent;obj.huaweiProvince = eObje.querySelector("#HuaweiProvincePackage").textContent; /**需要判断当前标签下的子元素是不是只有一个纯文本节点以及是否存在所谓的br换行节点**/var samsungDivisonNodes = eObje.querySelector("#SamsungDivison").childNodes && [].slice.call(eObje.querySelector("#SamsungDivison").childNodes);obj.samsungDivison = [];for (var i = 0, len = samsungDivisonNodes.length; i < len; i++) {
+          var eleName = samsungDivisonNodes[i].nodeName;if (eleName == "#text") {
+            var text = samsungDivisonNodes[i].textContent;obj.samsungDivison.push(text);
+          }
+        }var fenXiaoDivisonNodes = eObje.querySelector("#FenXiaoDivison").childNodes && [].slice.call(eObje.querySelector("#FenXiaoDivison").childNodes); /***
+                                                                                                                                                          obj.fenXiaoDivison = fenXiaoDivisonNodes && fenXiaoDivisonNodes.filter((v, i) => {
+                                                                                                                                                            return v.textContent;
+                                                                                                                                                          }).map((v, i) => {
+                                                                                                                                                            return v.textContent;
+                                                                                                                                                          });
+                                                                                                                                                          ***/obj.fenXiaoDivison = [];for (var i = 0, len = fenXiaoDivisonNodes.length; i < len; i++) {
+          var eleName = fenXiaoDivisonNodes[i].nodeName;if (eleName == "#text") {
+            var text = fenXiaoDivisonNodes[i].textContent;obj.fenXiaoDivison.push(text);
+          }
+        }obj.otherInfor = eObje.querySelector("#OtherInfor").textContent;obj.atName = eObje.querySelector(".chatUsers-check").querySelector(".names").textContent;data.subcontent.subContentMessageHead.push(obj);var eObject = elem.querySelector(".m-report-infors");var leaveWordDivs = [].slice.call(eObject.querySelector("#chats_content").querySelectorAll(".chat-one")); //蒋获取的dom类数组结构转变为真正的数组
         /**过滤掉classList同时拥有chat-one和chat-two的元素**/leaveWordDivs && leaveWordDivs.forEach((v, i) => {
           /**获取当前元素拥有的所有的classList的长度**/var len = v.classList.length;if (len == 1 && v.classList[0] === 'chat-one') {
             var oo = {},
@@ -117,7 +123,8 @@
               var labelEl = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor).parentNode.parentNode;data.personIndex = $(elem.querySelector("#contentBody").querySelector("#" + data.boxId)).find(".lists-one").index(labelEl);
             }
           }
-        }var act = $(elem).find('#contentBody').find(".z-act");if (act.length > 0) {
+        }var act = $(elem).find('#contentBody').find(".z-act");
+        if (act.length > 0) {
           act.each(function (index, item) {
             var planGs = [];var checkedName = [];var gs = $(item).find('.title').find('.area-name').html();planGs.push(gs);var itemData = { planGs: planGs };data.subPerson.push(itemData);
           });
@@ -148,7 +155,8 @@
                 content = []; // var imgCanvas = ysp.customHelper.convertImageToCanvas(divs[i].querySelector('img'));
             // var scrC = ysp.customHelper.convertCanvasToImage(imgCanvas);
             // src.push(scrC);
-            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
+            var scrTitle = divs[i].querySelector('img').getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm" + srcUrl;
+            src.push(scrC);var s;title.push(divs[i].querySelector('img').getAttribute('title') || divs[i].querySelector('.info').getAttribute('title'));content.push(divs[i].querySelector('.info').textContent);var images = { title: title, content: content, src: src };data.file.push(images);
           }
         } /*
            	Dialog 数据   所选分公司树结构数据
@@ -159,7 +167,8 @@
             perso.push(personnel[j].querySelector('label').textContent.replace(/^(\s*)|(\s*)$/g, ''));checked.push(perso.length > 0 && personnel[j].querySelector('input').checked);
           }var item = { branch: bran, personnel: perso, checked: checked };data.Dialog.push(item);
         }
-      }data.modalDialog = elem.ownerDocument.defaultView.frameElement.parentNode.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector(".layui-layer-dialog");return data;
+      }data.modalDialog = elem.ownerDocument.defaultView.frameElement.parentNode.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector(".layui-layer-dialog");
+      return data;
     },
     doAction_uiControl52_AyvrZ0: function (data, elem) {
       //当移动端用户键入的文本框内容有变化时触发此事件
