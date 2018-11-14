@@ -25,25 +25,25 @@
           var text = textNodeArrs[i].textContent;text1.push(text);
         }
       }data.textSum = text1;var textAreas = elem.querySelector("#textareaDivs").querySelectorAll(".con-box");var huaweiFD = "";var huaweiPJ = "";var huaweiStore = "";var huaweiSB = "";var samsung = "";var distribution = "";var others = "";for (var i = 0; i < textAreas.length; i++) {
-        var val = textAreas[i].querySelector("div").getAttribute("val");if ("华为FD" == val) {
+        var val = textAreas[i].querySelector("div").getAttribute("val");debugger;if ("华为FD" == val) {
           huaweiFD = "华为FD";var textNodeArrs = [].slice.call(textAreas[i].querySelector("div") && textAreas[i].querySelector("div").childNodes),
-              text = [];for (var i = 0, len = textNodeArrs.length; i < len; i++) {
-            var eleName = textNodeArrs[i].nodeName;if (eleName == "#text") {
-              var textIn = textNodeArrs[i].textContent;text.push(textIn);
+              text = [];for (var i1 = 0, len = textNodeArrs.length; i1 < len; i1++) {
+            var eleName = textNodeArrs[i1].nodeName;if (eleName == "#text") {
+              var textIn = textNodeArrs[i1].textContent;text.push(textIn);
             }
           }data.huaweiFD.huaweiFDFlag.push(huaweiFD);data.huaweiFD.huaweiFDText = text;
         } else if ("华为配件与融合" == val) {
           huaweiPJ = "华为配件与融合";var textNodeArrs = [].slice.call(textAreas[i].querySelector("div") && textAreas[i].querySelector("div").childNodes),
-              text = [];for (var i = 0, len = textNodeArrs.length; i < len; i++) {
-            var eleName = textNodeArrs[i].nodeName;if (eleName == "#text") {
-              var textInfo = textNodeArrs[i].textContent;text.push(textInfo);
+              text = [];for (var i2 = 0, len = textNodeArrs.length; i2 < len; i2++) {
+            var eleName = textNodeArrs[i2].nodeName;if (eleName == "#text") {
+              var textInfo = textNodeArrs[i2].textContent;text.push(textInfo);
             }
           }data.huaweiPJ.huaweiPJFlag.push(huaweiPJ);data.huaweiPJ.huaweiPJText = text;
         } else if ("华为体验店" == val) {
           huaweiStore = "华为体验店";var textNodeArrs = [].slice.call(textAreas[i].querySelector("div") && textAreas[i].querySelector("div").childNodes),
-              text = [];for (var i = 0, len = textNodeArrs.length; i < len; i++) {
-            var eleName = textNodeArrs[i].nodeName;if (eleName == "#text") {
-              var textInfo = textNodeArrs[i].textContent;text.push(textInfo);
+              text = [];for (var i3 = 0, len = textNodeArrs.length; i3 < len; i3++) {
+            var eleName = textNodeArrs[i3].nodeName;if (eleName == "#text") {
+              var textInfo = textNodeArrs[i3].textContent;text.push(textInfo);
             }
           }data.huaweiStore.huaweiStoreFlag.push(huaweiStore);data.huaweiStore.huaweiStoreText = text;
         } else if ("华为省包" == val) {
@@ -90,8 +90,7 @@
         }
       } /*_____________________
                        	以下为@人员中展示数据
-                       _______________________*/data.user = { users: [], val: [], val1: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');
-      for (var i = 0; i < users.length; i++) {
+                       _______________________*/data.user = { users: [], val: [], val1: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
         data.user.users.push(users[i].querySelector('span').textContent);data.user.val.push(users[i].querySelector('span').getAttribute('val'));data.user.val1.push(users[i].querySelector('span').getAttribute('val1'));
       } /**Author:ZhangRui**/var reportSuperVisorObjArrs = elem.querySelectorAll('#ContactUsers1 .user'),
           leng = reportSuperVisorObjArrs && reportSuperVisorObjArrs.length; /**循环拿出所有的span标签**/for (var i = 0; i < leng; i++) {
@@ -101,7 +100,8 @@
         /**获取当前元素拥有的所有的classList的长度**/var len = v.classList.length;if (len == 1 && v.classList[0] === 'chat-one') {
           var oo = {},
               messageRelatedObj = v.querySelector("h6").childNodes,
-              messageReplyContentDiv = v.querySelector(".chat-reply");oo.messageRelated = { replyOwner: messageRelatedObj[0].textContent, replyKey: messageRelatedObj[1].textContent, replyGuest: messageRelatedObj[2].textContent };oo.messageText = v.querySelector("p").innerText;var tempReplyTime = messageReplyContentDiv.querySelector('span').innerText,
+              messageReplyContentDiv = v.querySelector(".chat-reply");oo.messageRelated = { replyOwner: messageRelatedObj[0].textContent, replyKey: messageRelatedObj[1].textContent, replyGuest: messageRelatedObj[2].textContent };
+          oo.messageText = v.querySelector("p").innerText;var tempReplyTime = messageReplyContentDiv.querySelector('span').innerText,
               tempReplyTimeArr = tempReplyTime.split(":");var replyTime = tempReplyTimeArr.map((v, i) => {
             if (i === 0) {
               if (+v.slice(-2) < 10 && v.slice(-2).search("0") === -1) {
@@ -130,8 +130,7 @@
       } //搜索人员列表/**以下的256——269行全部是从@我的报告里复制粘贴过来的，纯粹的ctrl+c 与ctrl+v操作**/
       if (elem.querySelector("#search-lists")) {
         if (elem.querySelector("#search-lists").querySelectorAll("a")[0]) {
-          data.searchList = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;
-          data.No = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
+          data.searchList = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val2");data.boxId = "box_" + data.searchList;data.No = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector(".area-name").textContent;var searchListVal = elem.querySelector("#search-lists").querySelectorAll("a")[0].getAttribute("val");var labelFor = "id" + searchListVal;if (elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor)) {
             var labelEl = elem.querySelector("#contentBody").querySelector("#" + data.boxId).querySelector("#" + labelFor).parentNode.parentNode;data.personIndex = $(elem.querySelector("#contentBody").querySelector("#" + data.boxId)).find(".lists-one").index(labelEl);
           }
         }
@@ -247,7 +246,8 @@
           var iconClose = users[i].querySelector("i").classList.contains("icon-close");if (iconClose) {
             a.push(users[i]);
           }
-        }if (a.length > 0) {
+        }
+        if (a.length > 0) {
           a[index].querySelector("i").click();
         }
       }if (data.eventType == 'cancel') {
@@ -258,7 +258,8 @@
           var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[oldNumber];btn1.click();
         }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
       }if (data.eventType == 'personnel') {
-        var data = data.customData;var index = data.Index;var parentIndex = data.parentIndex;var parent = elem.ownerDocument.querySelectorAll('.box')[parentIndex];var btn = parent.querySelectorAll(".iCheck-helper")[index];btn.click();
+        var data = data.customData;var index = data.Index;
+        var parentIndex = data.parentIndex;var parent = elem.ownerDocument.querySelectorAll('.box')[parentIndex];var btn = parent.querySelectorAll(".iCheck-helper")[index];btn.click();
       } //点击放大图片
       // if (data.eventType == "clickPic") {
       //   elem.ownerDocument.querySelector(".file-item").querySelectorAll("img")[data.dataCustom].click();
