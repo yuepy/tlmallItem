@@ -1,12 +1,12 @@
 {
   "version": "0.1",
-  "id": "visitIndex",
+  "id": "TestModel",
   "targetURL": "http://192.168.220.82:8080/pttlCrm/res/yspHome.html",
   "jsFile": "index.js",
-  "chineseName": "拜访总览",
-  "description": "",
+  "chineseName": "测试动静分离开发模板",
+  "description": "只做测试 ,随时干掉",
   "controls": {
-    "control6_rbFWmG": {
+    "control348_T5hC2F": {
       "location": {
         "data": {
           "tagName": "BODY"
@@ -35,10 +35,41 @@
       "frameXPath": "",
       "componentType": "header"
     },
-    "control7_QO7xwO": {
+    "control351_MUhpmo": {
       "location": {
         "data": {
           "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "",
+      "frameXPath": ""
+    },
+    "control352_uTbuwy": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
         },
         "locators": [
           {
@@ -55,7 +86,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control7_QO7xwO"
+        "onGetData": "getData_control352_uTbuwy"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -65,31 +96,33 @@
     }
   },
   "contexts": {
-    "context2_B8QcaG": {
+    "context92_TDKuvB": {
       "controls": [
-        "control6_rbFWmG",
-        "control7_QO7xwO"
+        "control348_T5hC2F",
+        "control352_uTbuwy"
       ],
-      "anchors": [],
+      "anchors": [
+        "control351_MUhpmo"
+      ],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow5_VvhDVw": {
+    "flow280_bvGhnb": {
       "toContexts": [
         {
-          "toContextId": "context2_B8QcaG"
+          "toContextId": "context92_TDKuvB"
         }
       ]
     }
   },
   "pages": {
-    "page2_7lIXs7": {
-      "contextId": "context2_B8QcaG",
+    "page92_SlKpat": {
+      "contextId": "context92_TDKuvB",
       "layout": [
         {
-          "id": "uiControl6_aPuX8c",
-          "controlId": "control6_rbFWmG",
+          "id": "uiControl338_TCCg4A",
+          "controlId": "control348_T5hC2F",
           "display": {
             "adapterId": "header",
             "type": "header",
@@ -101,7 +134,7 @@
           },
           "layout": [
             {
-              "id": "uiControl6_aPuX8cheaderLeft",
+              "id": "uiControl338_TCCg4AheaderLeft",
               "display": {
                 "type": "headerLeft",
                 "adapterId": "headerLeft",
@@ -112,7 +145,7 @@
               "layout": []
             },
             {
-              "id": "uiControl6_aPuX8cheaderRight",
+              "id": "uiControl338_TCCg4AheaderRight",
               "display": {
                 "type": "headerRight",
                 "adapterId": "headerRight",
@@ -125,16 +158,16 @@
           ]
         },
         {
-          "id": "uiControl7_5KeS1b",
-          "controlId": "control7_QO7xwO",
+          "id": "uiControl339_plKpbc",
+          "controlId": "control352_uTbuwy",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl7_5KeS1b",
-                "onGetTemplate": "getTemplate_uiControl7_5KeS1b"
+                "onDoAction": "doAction_uiControl339_plKpbc",
+                "onGetTemplate": "getTemplate_uiControl339_plKpbc"
               }
             }
           }
@@ -145,35 +178,35 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context2_B8QcaG": [
+        "context92_TDKuvB": [
           ""
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context2_B8QcaG": [
+        "context92_TDKuvB": [
           "192.168.220.82:8080/pttlCrm/res/yspHome.html"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context2_B8QcaG": [
+        "context92_TDKuvB": [
           []
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context2_B8QcaG": [
+        "context92_TDKuvB": [
           []
         ]
       }
     },
     "page/tagTriplets": {
       "contexts": {
-        "context2_B8QcaG": [
+        "context92_TDKuvB": [
           []
         ]
       }
