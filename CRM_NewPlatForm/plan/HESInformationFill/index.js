@@ -64,7 +64,7 @@
     doAction_uiControl181_hEXo78: function (data, elem) {
       if (data.eventType === 'click') {
         var operation = data.dataCustom.value;if (operation == '客户信息录入') {
-          var url = "http://192.168.1.227/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
+          var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
           ysp.customHelper.BackReload(url, 'customerInformationFIll');
         }
       }
