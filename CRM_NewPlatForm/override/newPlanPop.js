@@ -55,19 +55,19 @@
 
 	var iframeUtils = _interopRequireWildcard(_iframeUtils);
 
-	var _newPlan = __webpack_require__(85);
+	var _newPlan = __webpack_require__(87);
 
 	var newPlan = _interopRequireWildcard(_newPlan);
 
-	var _newStorePlan = __webpack_require__(87);
+	var _newStorePlan = __webpack_require__(89);
 
 	var newStorePlan = _interopRequireWildcard(_newStorePlan);
 
-	var _newTempVisit = __webpack_require__(86);
+	var _newTempVisit = __webpack_require__(88);
 
 	var newTempVisit = _interopRequireWildcard(_newTempVisit);
 
-	var _newTempStoreVisit = __webpack_require__(88);
+	var _newTempStoreVisit = __webpack_require__(90);
 
 	var newTempStoreVisit = _interopRequireWildcard(_newTempStoreVisit);
 
@@ -145,13 +145,13 @@
 
 		/** 加载制定拜访计划客户列表 #newPlanAddButton */
 		$('#visitCustomerListBtn').click(function (e) {
-      //后添加的
+			//lyh 11-20 添加
 		if ($("#planEaiId").val() == '') {
-				$("#chooseVisitInfo").val("");
-				$("#visitCustomerListBtn").attr("num", 0); //选中的数量 
-				$("#visitStoreListBtn").attr("num", 0); //选中的数量
-				$("#dayPlanContent").val("");
-			}
+			$("#chooseVisitInfo").val("");
+			$("#visitCustomerListBtn").attr("num", 0); //选中的数量 
+			$("#visitStoreListBtn").attr("num", 0); //选中的数量
+			$("#dayPlanContent").val("");
+		}
 			//清空搜索内容
 			$("#visitCustomerListBtn").attr("class", "active");
 			$("#visitStoreListBtn").attr("class", "");
@@ -162,7 +162,7 @@
 			$(this).attr("class", "active");
 
 			//清空列表
-			$('#newPlanList').html("");
+			//$('#newPlanList').html("");
 
 			newPlan.load();
 			$('#listType').val("customer");
@@ -176,7 +176,7 @@
 			//清空搜索内容
 			$("#newPlanListSearchText").val("");
 			//清空列表
-			$('#newPlanList').html("");
+			//$('#newPlanList').html("");
 			newStorePlan.load();
 			$('#listType').val("store");
 		});
@@ -184,9 +184,9 @@
 		//门店或客户搜索
 		function searchContentForCustomerOrStore() {
 			if ($('#listType').val() == 'store') {
-				newStorePlan.load();
+				newStorePlan.load('1');
 			} else {
-				newPlan.load();
+				newPlan.load('1');
 			}
 		}
 		//回车事件
@@ -215,7 +215,7 @@
 			$("#tempVisitStoreListBtn").attr("class", "");
 			$(this).attr("class", "active");
 			//清空列表
-			$('#newTempVisit').html("");
+			//$('#newTempCustomerVisit').html("");
 
 			newTempVisit.load();
 			$('#listType').val("customer");
@@ -234,7 +234,7 @@
 			//清空搜索内容
 			$("#newTempVisitSearchText").val("");
 			//清空列表
-			$('#newTempVisit').html("");
+			//$('#newTempStoreVisit').html("");
 
 			newTempStoreVisit.load();
 			$('#listType').val("store");
@@ -243,9 +243,9 @@
 		//门店或客户搜索
 		function searchTempContentForCustomerOrStore() {
 			if ($('#listType').val() == 'store') {
-				newTempStoreVisit.load();
+				newTempStoreVisit.load('1');
 			} else {
-				newTempVisit.load();
+				newTempVisit.load('1');
 			}
 		}
 		//回车事件
@@ -295,9 +295,10 @@
 					if (data.status == 'true') {
 						visitPlanList.referenceHtml(); //刷新页面
 						//inintWorkPlan(planDate);
-            window.show = "true"; //后添加的
+						window.show = 'true'
 						$("#addDayPlanCancleBtn").click();
-						$('#newPlanList').html("");
+						$('#newPlanCustomerList').html("");
+						$('#newPlanStoreList').html("");
 						$("#dayPlanContent").val("");
 						$("#chooseVisitInfo").val("");
 						$("#chooseCustomerCodes").val("");
@@ -319,9 +320,7 @@
 				}
 			});
 		});
-    
-    //工作计划提交 后添加的
-    window.Show = function () {
+		window.Show = function () {
 			if (editPlanTag == '1') {
 				return;
 			}
@@ -385,9 +384,16 @@
 				var actionDate = $("#currentSelectDay").val();
 				var listType = $("#listType").val();
 				var cusInfo = "";
-				$("#newTempVisit input[name='newTempPlanChk']:checked").each(function () {
-					cusInfo += $(this).val() + ",";
-				});
+				if (listType == 'customer') {
+					$("#newTempCustomerVisit input[name='newTempPlanChk']:checked").each(function () {
+						cusInfo += $(this).val() + ",";
+					});
+				} else {
+					$("#newTempStoreVisit input[name='newTempPlanChk']:checked").each(function () {
+						cusInfo += $(this).val() + ",";
+					});
+				}
+
 				var otherCustomer = $("#tempPlanOtherCustomer").val();
 				if (cusInfo == "" && otherCustomer == "") {
 					layerUtils.info("请选择！");
@@ -420,7 +426,8 @@
 						if (data.status == 'true') {
 							visitPlanList.referenceHtml(); //刷新页面
 							$("#addTempDayPlanCancleBtn").click();
-							$('#newTempVisit').html("");
+							$('#newTempCustomerVisit').html("");
+							$('#newTempStoreVisit').html("");
 							$("#tempPlanOtherCustomer").val("");
 							$("#chooseCustomerCodes").val("");
 							$("#chooseStoreCodes").val("");
@@ -437,62 +444,63 @@
 				});
 			}
 		});
-  //临时拜访提交 后添加的
-	window.tempShow = function (e) {
-			clickCountTemp++;
-			//e.preventDefault();
-			if (clickCountTemp > 1) {
-				return;
-			} else {
-				var actionDate = $("#currentSelectDay").val();
-				var listType = $("#listType").val();
-				var cusInfo = "";
-				$("#newTempVisit input[name='newTempPlanChk']:checked").each(function () {
-					cusInfo += $(this).val() + ",";
-				});
-				var otherCustomer = $("#tempPlanOtherCustomer").val();
-				if (cusInfo == "" && otherCustomer == "") {
-					layerUtils.info("请选择！");
-					clickCountTemp = 0;
-					return;
-				}
-				if (cusInfo != "" && otherCustomer != "") {
-					otherCustomer = "";
-					//$("#tempPlanOtherCustomer").val("");
-					layerUtils.info("已经选择，不支持手填！");
-					clickCountTemp = 0;
-					return;
-				}
-				layerUtils.waitingOpen(); //打开加载层
-				var obj_a = $(this);
-				$.ajax({
-					type: "POST",
-					url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addTempCustomerVisitPlan',
-					data: { cusInfo: cusInfo, actionDate: actionDate, listType: listType, otherCustomer: otherCustomer },
-					dataType: "json",
-					success: function success(data) {
-						clickCountTemp = 0;
-						layerUtils.waitingClose(); //关闭加载层
-						if (data.status == 'true') {
-							//visitPlanList.referenceHtml(); //刷新页面
-							$("#addTempDayPlanCancleBtn").click();
-							$('#newTempVisit').html("");
-							$("#tempPlanOtherCustomer").val("");
-							$("#chooseCustomerCodes").val("");
-							$("#chooseStoreCodes").val("");
-							zhuge.track('新增临时拜访计划');
-						} else {
-							layerUtils.error("添加失败!");
-						}
-					},
-					error: function error(e) {
-						clickCountTemp = 0;
-						layerUtils.waitingClose(); //关闭加载层
-					}
-				});
-			}
+//临时拜访提交 后添加的
+window.tempShow = function (e) {
+	clickCountTemp++;
+	//e.preventDefault();
+	if (clickCountTemp > 1) {
+		return;
+	} else {
+		var actionDate = $("#currentSelectDay").val();
+		var listType = $("#listType").val();
+		var cusInfo = "";
+		$("#newTempVisit input[name='newTempPlanChk']:checked").each(function () {
+			cusInfo += $(this).val() + ",";
+		});
+		var otherCustomer = $("#tempPlanOtherCustomer").val();
+		if (cusInfo == "" && otherCustomer == "") {
+			layerUtils.info("请选择！");
+			clickCountTemp = 0;
+			return;
 		}
-	});
+		if (cusInfo != "" && otherCustomer != "") {
+			otherCustomer = "";
+			//$("#tempPlanOtherCustomer").val("");
+			layerUtils.info("已经选择，不支持手填！");
+			clickCountTemp = 0;
+			return;
+		}
+		layerUtils.waitingOpen(); //打开加载层
+		var obj_a = $(this);
+		$.ajax({
+			type: "POST",
+			url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addTempCustomerVisitPlan',
+			data: { cusInfo: cusInfo, actionDate: actionDate, listType: listType, otherCustomer: otherCustomer },
+			dataType: "json",
+			success: function success(data) {
+				clickCountTemp = 0;
+				layerUtils.waitingClose(); //关闭加载层
+				if (data.status == 'true') {
+					//visitPlanList.referenceHtml(); //刷新页面
+					$("#addTempDayPlanCancleBtn").click();
+					$('#newTempVisit').html("");
+					$("#tempPlanOtherCustomer").val("");
+					$("#chooseCustomerCodes").val("");
+					$("#chooseStoreCodes").val("");
+					zhuge.track('新增临时拜访计划');
+				} else {
+					layerUtils.error("添加失败!");
+				}
+			},
+			error: function error(e) {
+				clickCountTemp = 0;
+				layerUtils.waitingClose(); //关闭加载层
+			}
+		});
+	}
+}
+});
+
 
 /***/ }),
 
@@ -760,14 +768,14 @@
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.224:8080/ptDataShow';
 
 	//生产 nginx
-	//export const SERVER_ROOT = 'http://192.168.220.82:8080'; //服务端根路径
-	//export const LOCAL_SERVER_ROOT = 'http://192.168.220.82:8080'; //本地服务端根路径
+	//export const SERVER_ROOT = 'http://192.168.1.227'; //服务端根路径
+	//export const LOCAL_SERVER_ROOT = 'http://192.168.1.227'; //本地服务端根路径
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.202/ptDataShow';
 
 	//生产 228
 	var SERVER_ROOT = exports.SERVER_ROOT = ''; //服务端根路径
 	var LOCAL_SERVER_ROOT = exports.LOCAL_SERVER_ROOT = ''; //本地服务端根路径
-	var PTDATASHOW_SERVER_ROOT = exports.PTDATASHOW_SERVER_ROOT = 'http://192.168.220.82:8080/ptDataShow'; //'http://192.168.220.60:8080/ptDataShow';
+	var PTDATASHOW_SERVER_ROOT = exports.PTDATASHOW_SERVER_ROOT = 'http://192.168.220.82:8080/ptDataShow'; //'https://vcrm-uat.pttl.com:8080/ptDataShow';
 
 
 	// var _dgt = _dgt || [];
@@ -930,6 +938,9 @@
 				} else if ((typeof body.pageNum == "undefined" || body.pageNum == null) && typeof body.pageSize != "undefined") {
 					alert("分页参数错误，请检查！");
 					return;
+				} else {
+					var pageSize = $('#' + pageDivId + " #page_selectPageNum option:selected").val();
+					body.pageSize = isNaN(pageSize) ? body.pageSize : pageSize;
 				}
 			}
 			param = getJsonString(objextUtil.clone(body)); //保留原来的  克隆一个提交参数
@@ -996,6 +1007,9 @@
 				} else if ((typeof body.pageNum == "undefined" || body.pageNum == null) && typeof body.pageSize != "undefined") {
 					alert("分页参数错误，请检查！");
 					return;
+				} else {
+					var pageSize = $('#' + pageDivId + " #page_selectPageNum option:selected").val();
+					body.pageSize = isNaN(pageSize) ? body.pageSize : pageSize;
 				}
 			}
 			param = getJsonString(objextUtil.clone(body)); //保留原来的  克隆一个提交参数
@@ -1187,13 +1201,14 @@
 	        $("#" + data.pageId).html("");
 	        return;
 	    }
-	    var pageSize = page.pageSize;
+	    var pageSize = page.pageSize; //显示多少条记录
 	    var fn = data.fn;
 	    if (!pageSize) {
 	        pageSize = 10;
 	    }
 	    var pageHtml = "<li class='skip skip_count'><span>共" + pageCount + "页</span><span>到第</span><input type='number' class='skip-num' min='1'/><span>页</span></li>";
 	    pageHtml += "<li class='skip_right_goto' val='" + pageCount + "' val1='" + pageSize + "'><a class='skip-right-icon'></a></li>";
+	    pageHtml += getSelectOptionHtml(pageSize);
 	    var options = {
 	        bootstrapMajorVersion: 2, //版本
 	        currentPage: currentPage, //当前页数
@@ -1225,8 +1240,13 @@
 	    $('#' + data.pageId).bootstrapPaginator(options);
 	    var liCount = $('#' + data.pageId + " li.skip_right_goto");
 	    if (typeof liCount != "undefined" && liCount.length > 0) {
+	        //跳页
 	        $('#' + data.pageId + " li.skip_right_goto").unbind("click").on("click", function (e) {
 	            gotoPageNum(this, data.pageId, fn);
+	        });
+	        //选择页码
+	        $('#' + data.pageId + " #page_selectPageNum").unbind("change").on("change", function (e) {
+	            fn(parseInt($(this).val()), 1);
 	        });
 	    }
 	}
@@ -1277,6 +1297,18 @@
 	    var result = str.match(/^[-\+]?\d+(\.\d+)?$/);
 	    if (result == null) return false;
 	    return true;
+	}
+
+	//获取分页的 select条目
+	function getSelectOptionHtml(pageSize) {
+	    var option = "<li>显示<select id='page_selectPageNum'>";
+	    if (pageSize == 10) option += "<option value='10' selected='selected'>10</option>";else option += "<option value='10'>10</option>";
+	    if (pageSize == 20) option += "<option value='20' selected='selected'>20</option>";else option += "<option value='20'>20</option>";
+	    if (pageSize == 50) option += "<option value='50' selected='selected'>50</option>";else option += "<option value='50'>50</option>";
+	    if (pageSize == 100) option += "<option value='100' selected='selected'>100</option>";else option += "<option value='100'>100</option>";
+	    if (pageSize == 200) option += "<option value='200' selected='selected'>200</option>";else option += "<option value='200'>200</option>";
+	    option += "</select>行</li>";
+	    return option;
 	}
 
 /***/ }),
@@ -1582,7 +1614,7 @@
 
 /***/ }),
 
-/***/ 85:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1609,8 +1641,14 @@
 	/**
 	 * @description 新建Plan模块
 	 */
-	var load = exports.load = function load() {
-	    doAction(10, 1);
+	var load = exports.load = function load(isSearch) {
+	    $('#newPlanCustomerList').attr("style", "");
+	    $('#planCustomerPage').attr("style", "margin: -20px; width: 100%;");
+	    $('#newPlanStoreList').attr("style", "display:none");
+	    $('#planStorePage').attr("style", "display:none");
+	    if ($('#newPlanCustomerList').html() == '' || isSearch == '1') {
+	        doAction(10, 1);
+	    }
 	};
 
 	function doAction(pageSize, pageNum) {
@@ -1619,7 +1657,7 @@
 	    body.planDate = $("#currentSelectDay").val();
 	    ajaxUtils.sendAjax("cust/myReport/getCustomerVisitList", body, "planCustomerPage", function (data) {
 	        //
-	        $('#newPlanList').html(render(data.data));
+	        $('#newPlanCustomerList').html(render(data.data));
 
 	        //客户选中的数量 
 	        var custNum = 0;
@@ -1682,10 +1720,10 @@
 
 /***/ }),
 
-/***/ 86:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -1699,16 +1737,22 @@
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	/** 临时Plan模块 */
-	var load = exports.load = function load() {
-	    doAction(10, 1);
+	var load = exports.load = function load(isSearch) {
+	    $('#newTempStoreVisit').attr("style", "display:none");
+	    $('#planTempStorePage').attr("style", "display:none");
+	    $('#newTempCustomerVisit').attr("style", "");
+	    $('#planTempCustomerPage').attr("style", "margin: -20px; width: 100%;");
+	    if ($('#newTempCustomerVisit').html() == '' || isSearch == '1') {
+	        doAction(10, 1);
+	    }
 	};
 
 	function doAction(pageSize, pageNum) {
 	    var body = { isTemp: 1, customerName: $("#newTempVisitSearchText").val(), planRowId: $("#planRowId").val(), "pageSize": pageSize, "pageNum": pageNum };
 	    $("#tempPlanOtherCustomer").prop("readonly", "");
 	    ajaxUtils.sendAjax("cust/myReport/getCustomerVisitList", body, "planTempCustomerPage", function (data) {
-	        $('#newTempVisit').html(render(data.data));
-	        $("#newTempVisit input[name='newTempPlanChk']").click(function () {
+	        $('#newTempCustomerVisit').html(render(data.data));
+	        $("#newTempCustomerVisit input[name='newTempPlanChk']").click(function () {
 	            $("#tempOtherCustomerCheckBox").prop("checked", "");
 	            $("#tempPlanOtherCustomer").val("");
 	            $("#tempPlanOtherCustomer").prop("readonly", "readonly");
@@ -1720,7 +1764,7 @@
 	        $("#tempPlanOtherCustomer").unbind().click(function () {
 	            $("#tempOtherCustomerCheckBox").prop("checked", "checked");
 	            $("#tempPlanOtherCustomer").prop("readonly", "");
-	            $("#newTempVisit input[name='newTempPlanChk']:checked").each(function () {
+	            $("#newTempCustomerVisit input[name='newTempPlanChk']:checked").each(function () {
 	                $(this).prop("checked", "");
 	            });
 	            $("#tempVisitCustomerListBtn").attr("num", "0");
@@ -1729,23 +1773,23 @@
 	}
 
 	function render(customerVisitList) {
-	    var temp = "\n        <table class=\"table\">\n            <thead>\n                <tr>\n                    <th>\u9009\u62E9</th>\n                    <th>\u5BA2\u6237\u540D\u79F0</th>\n                    <th>\u62DC\u8BBF\u4EBA\u5458</th>\n                    <th>\u62DC\u8BBF\u8981\u6C42(\u6B21/\u6708)</th>\n                    <th>\u5DF2\u62DC\u8BBF\u6B21\u6570</th>\n                </tr>\n            </thead>\n            <tbody id=\"newPlanTempListContent\">\n                " + (customerVisitList == null ? '' : customerVisitList.map(function (item) {
-	        return "\n                        <tr>\n                            <td>\n                                <label>\n                                    <input val=\"" + item.customerName + "\" id=\"tcList_" + item.customerCode + "\" name=\"newTempPlanChk\" type='radio' \n                                        value=\"" + item.userId + ":" + (item.frequency == null ? '0' : item.frequency) + ":" + (item.period == null ? '0' : item.period) + ":" + (item.visitCount == null ? '0' : item.visitCount) + ":" + item.customerCode + ":customer\"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            <td>" + item.customerName + "</td>\n                            <td>" + item.salesManName + "</td>\n                            " + getFrequencyAndPeriodForTempCustomer(item.frequency, item.period) + "\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>" + (item.visitCount == null ? '0' : item.visitCount) + "</b></td>\n                        </tr>\n                    ";
-	    }).join('')) + "\n            </tbody>\n        </table>\n    ";
+	    var temp = '\n        <table class="table">\n            <thead>\n                <tr>\n                    <th>\u9009\u62E9</th>\n                    <th>\u5BA2\u6237\u540D\u79F0</th>\n                    <th>\u62DC\u8BBF\u4EBA\u5458</th>\n                    <th>\u62DC\u8BBF\u8981\u6C42(\u6B21/\u6708)</th>\n                    <th>\u5DF2\u62DC\u8BBF\u6B21\u6570</th>\n                </tr>\n            </thead>\n            <tbody id="newPlanTempListContent">\n                ' + (customerVisitList == null ? '' : customerVisitList.map(function (item) {
+	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input val="' + item.customerName + '" id="tcList_' + item.customerCode + '" name="newTempPlanChk" type=\'radio\' \n                                        value="' + item.userId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.customerCode + ':customer"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            <td>' + item.customerName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForTempCustomer(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + (item.visitCount == null ? '0' : item.visitCount) + '</b></td>\n                        </tr>\n                    ';
+	    }).join('')) + '\n            </tbody>\n        </table>\n    ';
 	    return temp;
 	}
 
 	function getFrequencyAndPeriodForTempCustomer(frequency, period) {
 	    if (period == null || period == "0") {
-	        return "<td>\u62DC\u8BBF\u8981\u6C42\uFF1A</td>";
+	        return '<td>\u62DC\u8BBF\u8981\u6C42\uFF1A</td>';
 	    } else {
-	        return "<td>\u62DC\u8BBF\u8981\u6C42\uFF1A<b>" + frequency + "</b>\u6B21/" + period + "</td>";
+	        return '<td>\u62DC\u8BBF\u8981\u6C42\uFF1A<b>' + frequency + '</b>\u6B21/' + period + '</td>';
 	    }
 	}
 
 /***/ }),
 
-/***/ 87:
+/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1772,16 +1816,22 @@
 	/**
 	 * @description 新建Plan模块
 	 */
-	var load = exports.load = function load() {
-	    doAction(10, 1);
+	var load = exports.load = function load(isSearch) {
+	    $('#newPlanCustomerList').attr("style", "display:none");
+	    $('#planCustomerPage').attr("style", "display:none");
+	    $('#newPlanStoreList').attr("style", "");
+	    $('#planStorePage').attr("style", "margin: -20px; width: 100%;");
+	    if ($('#newPlanStoreList').html() == '' || isSearch == '1') {
+	        doAction(10, 1);
+	    }
 	};
 
 	function doAction(pageSize, pageNum) {
 	    var body = { isTemp: "0", "pageSize": pageSize, "pageNum": pageNum, storeName: $("#newPlanListSearchText").val() };
 	    body.planRowId = $("#planRowId").val();
 	    body.planDate = $("#currentSelectDay").val();
-	    ajaxUtils.sendAjax("visit/storeVisit/getStoreVisitList", body, "planCustomerPage", function (data) {
-	        $('#newPlanList').html(render(data.data));
+	    ajaxUtils.sendAjax("visit/storeVisit/getStoreVisitList", body, "planStorePage", function (data) {
+	        $('#newPlanStoreList').html(render(data.data));
 
 	        //客户选中的数量 
 	        var custNum = 0;
@@ -1843,10 +1893,10 @@
 
 /***/ }),
 
-/***/ 88:
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -1862,8 +1912,14 @@
 	/**
 	 * @description 临时Plan模块
 	 */
-	var load = exports.load = function load() {
-	    doAction(10, 1);
+	var load = exports.load = function load(isSearch) {
+	    $('#newTempStoreVisit').attr("style", "");
+	    $('#planTempStorePage').attr("style", "margin: -20px; width: 100%;");
+	    $('#newTempCustomerVisit').attr("style", "display:none");
+	    $('#planTempCustomerPage').attr("style", "display:none");
+	    if ($('#newTempStoreVisit').html() == '' || isSearch == '1') {
+	        doAction(10, 1);
+	    }
 	};
 
 	function doAction(pageSize, pageNum) {
@@ -1871,9 +1927,9 @@
 	    body.planRowId = $("#planRowId").val();
 	    body.planDate = $("#currentSelectDay").val();
 	    $("#tempPlanOtherCustomer").prop("readonly", "");
-	    ajaxUtils.sendAjax("visit/storeVisit/getStoreVisitList", body, "planTempCustomerPage", function (data) {
-	        $('#newTempVisit').html(render(data.data));
-	        $("#newTempVisit input[name='newTempPlanChk']").click(function () {
+	    ajaxUtils.sendAjax("visit/storeVisit/getStoreVisitList", body, "planTempStorePage", function (data) {
+	        $('#newTempStoreVisit').html(render(data.data));
+	        $("#newTempStoreVisit input[name='newTempPlanChk']").click(function () {
 	            $("#tempOtherCustomerCheckBox").prop("checked", "");
 	            $("#tempPlanOtherCustomer").val("");
 	            $("#tempPlanOtherCustomer").prop("readonly", "readonly");
@@ -1885,7 +1941,7 @@
 	        $("#tempPlanOtherCustomer").unbind().click(function () {
 	            $("#tempOtherCustomerCheckBox").prop("checked", "checked");
 	            $("#tempPlanOtherCustomer").prop("readonly", "");
-	            $("#newTempVisit input[name='newTempPlanChk']:checked").each(function () {
+	            $("#newTempStoreVisit input[name='newTempPlanChk']:checked").each(function () {
 	                $(this).prop("checked", "");
 	            });
 	            $("#tempVisitStoreListBtn").attr("num", "0"); //选中的数量 
@@ -1894,17 +1950,17 @@
 	}
 
 	function render(storeVisitList) {
-	    var temp = "\n        <table class=\"table\">\n            <thead>\n                <tr>\n                    <th>\u9009\u62E9</th>\n                    <th>\u95E8\u5E97\u540D\u79F0</th>\n                    <th>\u62DC\u8BBF\u4EBA\u5458</th>\n                    <th>\u62DC\u8BBF\u8981\u6C42(\u6B21/\u6708)</th>\n                    <th>\u5DF2\u62DC\u8BBF\u6B21\u6570</th>\n                </tr>\n            </thead>\n            <tbody id=\"newStorePlanTempListContent\">\n                " + (storeVisitList == null ? '' : storeVisitList.map(function (item) {
-	        return "\n                        <tr>\n                            <td>\n                                <label>\n                                    <input val=\"" + item.storeName + "\" id=\"tcList_" + item.storeCode + "\" name=\"newTempPlanChk\" type='radio' \n                                        value=\"" + item.storeId + ":" + (item.frequency == null ? '0' : item.frequency) + ":" + (item.period == null ? '0' : item.period) + ":" + (item.visitCount == null ? '0' : item.visitCount) + ":" + item.storeCode + ":store\"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            </td>\n                            <td>" + item.storeName + "</td>\n                            <td>" + item.salesManName + "</td>\n                            " + getFrequencyAndPeriodForTempStore(item.frequency, item.period) + "\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>" + (item.visitCount == null ? '0' : item.visitCount) + "</b></td>\n                        </tr>\n                    ";
-	    }).join('')) + "\n            </tbody>\n        </table>\n    ";
+	    var temp = '\n        <table class="table">\n            <thead>\n                <tr>\n                    <th>\u9009\u62E9</th>\n                    <th>\u95E8\u5E97\u540D\u79F0</th>\n                    <th>\u62DC\u8BBF\u4EBA\u5458</th>\n                    <th>\u62DC\u8BBF\u8981\u6C42(\u6B21/\u6708)</th>\n                    <th>\u5DF2\u62DC\u8BBF\u6B21\u6570</th>\n                </tr>\n            </thead>\n            <tbody id="newStorePlanTempListContent">\n                ' + (storeVisitList == null ? '' : storeVisitList.map(function (item) {
+	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input val="' + item.storeName + '" id="tcList_' + item.storeCode + '" name="newTempPlanChk" type=\'radio\' \n                                        value="' + item.storeId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.storeCode + ':store"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            </td>\n                            <td>' + item.storeName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForTempStore(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + (item.visitCount == null ? '0' : item.visitCount) + '</b></td>\n                        </tr>\n                    ';
+	    }).join('')) + '\n            </tbody>\n        </table>\n    ';
 	    return temp;
 	}
 
 	function getFrequencyAndPeriodForTempStore(frequency, period) {
 	    if (period == null || period == "0") {
-	        return "<td>\u62DC\u8BBF\u8981\u6C42\uFF1A</td>";
+	        return '<td>\u62DC\u8BBF\u8981\u6C42\uFF1A</td>';
 	    } else {
-	        return "<td>\u62DC\u8BBF\u8981\u6C42\uFF1A<b>" + frequency + "</b>\u6B21/" + period + "</td>";
+	        return '<td>\u62DC\u8BBF\u8981\u6C42\uFF1A<b>' + frequency + '</b>\u6B21/' + period + '</td>';
 	    }
 	}
 

@@ -144,7 +144,8 @@
         }
       } //点击确认按钮方法
       if ('ascertain' == data.eventType) {
-        var textArea = data.dataCustom.textArea;var tempAreaText = data.dataCustom.tempAreaText;var selectedCount = data.dataCustom.selectedCount;var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn') || elem.querySelector('#addDayPlanOkBtn');var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn');var addDayPlanOkBtn = elem.querySelector('#addDayPlanOkBtn');var cwin = elem.ownerDocument.defaultView;if (addTempDayPlanOkBtn) {
+        var textArea = data.dataCustom.textArea;var tempAreaText = data.dataCustom.tempAreaText;var selectedCount = data.dataCustom.selectedCount;var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn') || elem.querySelector('#addDayPlanOkBtn');
+        var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn');var addDayPlanOkBtn = elem.querySelector('#addDayPlanOkBtn');var cwin = elem.ownerDocument.defaultView;if (addTempDayPlanOkBtn) {
           cwin.tempShow();
         }if (addDayPlanOkBtn) {
           cwin.Show();
