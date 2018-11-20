@@ -3,6 +3,9 @@
   "id": "TestModel",
   "targetURL": "http://192.168.220.82:8080/pttlCrm/res/yspHome.html",
   "jsFile": "index.js",
+  "requires": {
+    "TestModel": "../TestModel/index.json"
+  },
   "chineseName": "测试动静分离开发模板",
   "description": "只做测试 ,随时干掉",
   "controls": {
@@ -90,6 +93,67 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control353_GlypKM": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "text",
+            "prob": 3,
+            "value": {
+              "text": [
+                "拜访总览"
+              ],
+              "visText": [
+                "拜访总览"
+              ]
+            }
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "roles": "element",
+      "text": "拜访总览",
+      "frameXPath": ""
+    },
+    "control354_9MmhwH": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control354_9MmhwH"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
@@ -99,17 +163,22 @@
     "context92_TDKuvB": {
       "controls": [
         "control348_T5hC2F",
-        "control352_uTbuwy"
+        "control352_uTbuwy",
+        "control354_9MmhwH"
       ],
       "anchors": [
-        "control351_MUhpmo"
+        "control353_GlypKM"
       ],
       "urlAnchor": []
     }
   },
   "flows": {
-    "flow280_bvGhnb": {
+    "flow280_H0ZL3o": {
       "toContexts": [
+        {
+          "toContextId": "context92_TDKuvB",
+          "toModelId": "TestModel"
+        },
         {
           "toContextId": "context92_TDKuvB"
         }
@@ -142,7 +211,23 @@
                   "templateType": ""
                 }
               },
-              "layout": []
+              "layout": [
+                {
+                  "id": "uiControl340_dUGX9R",
+                  "controlId": "control354_9MmhwH",
+                  "display": {
+                    "adapterId": "custom",
+                    "type": "custom",
+                    "adapter": {
+                      "templateType": "react",
+                      "events": {
+                        "onDoAction": "doAction_uiControl340_dUGX9R",
+                        "onGetTemplate": "getTemplate_uiControl340_dUGX9R"
+                      }
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "uiControl338_TCCg4AheaderRight",
@@ -207,7 +292,10 @@
     "page/tagTriplets": {
       "contexts": {
         "context92_TDKuvB": [
-          []
+          [],
+          [
+            "-/-/DIV"
+          ]
         ]
       }
     }

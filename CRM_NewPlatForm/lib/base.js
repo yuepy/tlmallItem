@@ -318,27 +318,29 @@
           //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
           //AllMobileMenu(AllMenu);
           //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
-          // if(ALLMENU != '' && AllMenu){
-          //   //正式环境暂时没有效验
-          //    var SessionXhr = new XMLHttpRequest();
-          //    SessionXhr.onreadystatechange = function(){
-          //     if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
-          //       var encoder = JSON.parse(SessionXhr.response).encoder;
-          //       var userId = JSON.parse(SessionXhr.response).userId;
-          //       if(encoder && userId){
-          //         var encoderXHR = new XMLHttpRequest();
-          //         //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-          //       encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-          //         //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
-          //         encoderXHR.send();
-          //       }else{
-          //         console.error('AndEncoder接口请求失败!')
-          //       }
-          //     }
-          //   }
-          //    SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
-          //    SessionXhr.send();
-          // }
+          if(ALLMENU != '' && AllMenu){
+            //正式环境暂时没有效验
+             var SessionXhr = new XMLHttpRequest();
+             SessionXhr.onreadystatechange = function(){
+              if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
+                var encoder = JSON.parse(SessionXhr.response).encoder;
+                var userId = JSON.parse(SessionXhr.response).userId;
+                ysp.customHelper.position = JSON.parse(SessionXhr.response).position;
+                ysp.customHelper.branchName = JSON.parse(SessionXhr.response).branch;
+                if(encoder && userId){
+                  var encoderXHR = new XMLHttpRequest();
+                  //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+                encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+                  //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+                  encoderXHR.send();
+                }else{
+                  console.error('AndEncoder接口请求失败!')
+                }
+              }
+            }
+             SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+             SessionXhr.send();
+          }
       }
     }
     if(aWin.localStorage.listMenuForMobile && menuList && loginFlag){
@@ -1078,7 +1080,9 @@
     
   }
   utils.extend(ysp.customHelper, {
-    AndroidBidFlag:'',
+    position:'',//大数据接口 (拜访总览) 请求数据 position 参数名称
+    branchName:'',//大数据接口 (拜访总览) 请求数据 branchName 参数名称
+    AndroidBidFlag:'',
     AndroidBackFn:topWin.AndroidBack,
     AndroidDocument:'',//安卓物理返回键客户门店返回元素
     AndroidName:'',//安卓物理返回键客户门店返回名称
