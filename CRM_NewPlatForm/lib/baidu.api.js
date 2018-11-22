@@ -2,35 +2,35 @@ window.TILE_VERSION = {
     "ditu": {
         "normal": {
             "version": "088",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         },
         "satellite": {
             "version": "009",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         },
         "normalTraffic": {
             "version": "081",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         },
         "satelliteTraffic": {
             "version": "083",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         },
         "mapJS": {
             "version": "104",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         },
         "satelliteStreet": {
             "version": "083",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         },
         "panoClick": {
             "version": "1033",
-            "updateDate": "20181024"
+            "updateDate": "20181116"
         },
         "panoUdt": {
-            "version": "20181024",
-            "updateDate": "20181024"
+            "version": "20181116",
+            "updateDate": "20181116"
         },
         "panoSwfAPI": {
             "version": "20150123",
@@ -42,31 +42,31 @@ window.TILE_VERSION = {
         },
         "earthVector": {
             "version": "001",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         }
     },
     "webapp": {
         "high_normal": {
             "version": "001",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         },
         "lower_normal": {
             "version": "002",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         }
     },
     "api_for_mobile": {
         "vector": {
             "version": "002",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         },
         "vectorIcon": {
             "version": "002",
-            "updateDate": "20181025"
+            "updateDate": "20181120"
         }
     }
 };
-window.BMAP_AUTHENTIC_KEY = "E4805d16520de693a3fe707cdc962045";
+window.BMAP_AUTHENTIC_KEY = "CaeX7cx0luIdHTlafNmlbAiezITuOGkT";
 (function() {
     function ba(a) {
         throw a;
