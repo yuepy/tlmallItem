@@ -3,39 +3,25 @@
     getData_control19_s257i7: function (elem) {
       if (!elem) {
         return [];
-      }
-      if (elem) {
-        var data = {
-          tabs: [],
-          tabsNum: [],
-          key: {}
-        };
-        var _tabs = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');
-        [].map.call(_tabs, function (item, i) {
-          var key = item.parentElement.classList.contains('mini-tab-active');
-          var num = item.parentElement.getAttribute("index");
-          if (item.innerHTML != '流程监控') {
+      }if (elem) {
+        var data = { tabs: [], tabsNum: [],
+          key: {} };var _tabs = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');[].map.call(_tabs, function (item, i) {
+          var key = item.parentElement.classList.contains('mini-tab-active');var num = item.parentElement.getAttribute("index");if (item.innerHTML != '流程监控') {
             if (key == true) {
-              data.tabs.push(item.innerHTML);
-              data.tabsNum.push(num);
-              data.key = i;
+              data.tabs.push(item.innerHTML);data.tabsNum.push(num);data.key = i;
             } else {
-              data.tabs.push(item.innerHTML);
-              data.tabsNum.push(num);
+              data.tabs.push(item.innerHTML);data.tabsNum.push(num);
             }
           }
-        });
-        return data;
+        });return data;
       }
     },
     doAction_uiControl20_HR4ggS: function (data, elem) {
       if (data.eventType == 'click') {
         var d = data.dataCustom;
         if (d[0] == 'ysp-tabs') {
-          var _tab = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');
-          _tab[d[1]].click();
-        }
-        ysp.appMain.showLoading();
+          var _tab = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');_tab[d[1]].click();
+        }ysp.appMain.showLoading();
       }
     },
     getTemplate_uiControl20_HR4ggS: function () {
@@ -1574,73 +1560,53 @@
       }
     },
     getTemplate_uiControl37_FOWagD: function () {
-      var selfTemplate = "import {\n  Header,\n  HeaderLeft,\n  HeaderRight\n} from 'ysp-interior-components';\n\nexport default class extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  componentDidMount(){\n    var _this = this;\n    ysp.customHelper.AndroidBackFlag = 'PageClose';\n    ysp.customHelper.AndroidBackModel='PendingTask';\n    const {customHandler} = _this.props;\n    customHandler({eventType:'AndroidBack'});\n  }\n  onClick=(e)=>{\n    var handler=this.props.customHandler;\n     if(handler) {                                    \n       handler({\n         // data:e.target.className,\n         data:this.props.customData,\n         eventType:'click'                         \n       })\n     }\n  }\n  render() {\n    var  _this = this;\n    var data=this.props.customData\t||\t[];\n    if(data){\n      return (\n      <Header amStyle=\"primary\" title=\"\u5DE5\u4F5C\u9879\u6267\u884C\"\tclassName=\"ysp-flex-top\">\n        <HeaderLeft>\n          <AMUI.Button amStyle=\"primary\" style={{ margin: 0 }} onClick={()=>{\n              const handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  data:data,\n                  eventType: 'back'\n                });\n              }\n            }}>\n            <span className='icon icon-left-nav'></span>\n          </AMUI.Button>\n        </HeaderLeft>\n        <HeaderRight>\n          {\tdata ? <AMUI.Button amStyle=\"primary\" style={{ margin: 0 }}\tclassName='ysp-Receive' onClick={_this.onClick} >{data}</AMUI.Button>\t: <div style={{display:'none'}}></div>\t}\n          \n        </HeaderRight>\n      </Header>\n    \t);\n    }else{\n      return(<div style={{display:'none'}}></div>)\n    }\n  }\n}";
+      var selfTemplate = 'import {\n  Header,\n  HeaderLeft,\n  HeaderRight\n} from \'ysp-interior-components\';\n\nexport default class extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  componentDidMount(){\n    var _this = this;\n    ysp.customHelper.AndroidBackFlag = \'PageClose\';\n    ysp.customHelper.AndroidBackModel=\'PendingTask\';\n    const {customHandler} = _this.props;\n    customHandler({eventType:\'AndroidBack\'});\n  }\n  onClick=(e)=>{\n    var handler=this.props.customHandler;\n     if(handler) {                                    \n       handler({\n         // data:e.target.className,\n         data:this.props.customData,\n         eventType:\'click\'                         \n       })\n     }\n  }\n  render() {\n    var  _this = this;\n    var data=this.props.customData\t||\t[];\n    if(data){\n      return (\n      <Header amStyle="primary" title="\u5DE5\u4F5C\u9879\u6267\u884C"\tclassName="ysp-flex-top">\n        <HeaderLeft>\n          <AMUI.Button amStyle="primary" style={{ margin: 0 }} onClick={()=>{\n              const handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  data:data,\n                  eventType: \'back\'\n                });\n              }\n            }}>\n            <span className=\'icon icon-left-nav\'></span>\n          </AMUI.Button>\n        </HeaderLeft>\n        <HeaderRight>\n          {\tdata ? <AMUI.Button amStyle="primary" style={{ margin: 0 }}\tclassName=\'ysp-Receive\' onClick={_this.onClick} >{data}</AMUI.Button>\t: <div style={{display:\'none\'}}></div>\t}\n          \n        </HeaderRight>\n      </Header>\n    \t);\n    }else{\n      return(<div style={{display:\'none\'}}></div>)\n    }\n  }\n}';
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _yspInteriorComponents = require(\'ysp-interior-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.onClick = function (e) {\n      var handler = _this2.props.customHandler;\n      if (handler) {\n        handler({\n          // data:e.target.className,\n          data: _this2.props.customData,\n          eventType: \'click\'\n        });\n      }\n    };\n\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'componentDidMount\',\n    value: function componentDidMount() {\n      var _this = this;\n      ysp.customHelper.AndroidBackFlag = \'PageClose\';\n      ysp.customHelper.AndroidBackModel = \'PendingTask\';\n      var customHandler = _this.props.customHandler;\n\n      customHandler({ eventType: \'AndroidBack\' });\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData || [];\n      if (data) {\n        return React.createElement(\n          _yspInteriorComponents.Header,\n          { amStyle: \'primary\', title: \'\\u5DE5\\u4F5C\\u9879\\u6267\\u884C\', className: \'ysp-flex-top\' },\n          React.createElement(\n            _yspInteriorComponents.HeaderLeft,\n            null,\n            React.createElement(\n              AMUI.Button,\n              { amStyle: \'primary\', style: { margin: 0 }, onClick: function onClick() {\n                  var handler = _this.props.customHandler;\n                  if (handler) {\n                    handler({\n                      data: data,\n                      eventType: \'back\'\n                    });\n                  }\n                } },\n              React.createElement(\'span\', { className: \'icon icon-left-nav\' })\n            )\n          ),\n          React.createElement(\n            _yspInteriorComponents.HeaderRight,\n            null,\n            data ? React.createElement(\n              AMUI.Button,\n              { amStyle: \'primary\', style: { margin: 0 }, className: \'ysp-Receive\', onClick: _this.onClick },\n              data\n            ) : React.createElement(\'div\', { style: { display: \'none\' } })\n          )\n        );\n      } else {\n        return React.createElement(\'div\', { style: { display: \'none\' } });\n      }\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;';
     },
     getData_control4_TiKwZC: function (elem) {
       if (!elem) {
         return;
-      }
-      if (elem && elem.contentWindow && elem.contentWindow.document) {
-        var data = [];
-        var btns = elem.contentWindow && elem.contentWindow.document.querySelectorAll('#btn')[0]; // data.push(btns.textContent)
-        var btnOne = elem.contentWindow && elem.contentWindow.document.querySelectorAll('#td_0_0');
-        var btnTwo = elem.contentWindow && elem.contentWindow.document.querySelectorAll('#td_0_1');
-        if (btns && btns.style.display != "none" && btnOne && btnOne.length > 0) {
+      }if (elem && elem.contentWindow && elem.contentWindow.document) {
+        var data = [];var btns = elem.contentWindow && elem.contentWindow.document.querySelectorAll('#btn')[0]; // data.push(btns.textContent)
+        var btnOne = elem.contentWindow && elem.contentWindow.document.querySelectorAll('#td_0_0');var btnTwo = elem.contentWindow && elem.contentWindow.document.querySelectorAll('#td_0_1');if (btns && btns.style.display != "none" && btnOne && btnOne.length > 0) {
           data.push(btnOne[0].textContent);
-        }
-        if (btns && btns.style.display != "none" && btnTwo && btnTwo.length > 0) {
+        }if (btns && btns.style.display != "none" && btnTwo && btnTwo.length > 0) {
           data.push(btnTwo[0].textContent);
-        }
-        return data;
+        }return data;
       }
     },
     doAction_uiControl5_yflben: function (data, elem) {
       if (data.eventType == 'click') {
-        var d = data.dataCustom.classNames;
-        if (d == 'btn ysp-btn-one') {
-          var _btnTwo = elem.contentWindow.document.querySelector('#td_0_1').querySelector(".mini-button");
-          setTimeout(function () {
+        var d = data.dataCustom.classNames;if (d == 'btn ysp-btn-one') {
+          var _btnTwo = elem.contentWindow.document.querySelector('#td_0_1').querySelector(".mini-button");setTimeout(function () {
             _btnTwo.click();
           }, 10);
         } else if (d == 'btn ysp-btn-two') {
-          var btnTwo = elem.contentWindow.document.querySelector('#td_0_0').querySelector("a");
-          if (data.dataCustom.text == "执行") {
+          var btnTwo = elem.contentWindow.document.querySelector('#td_0_0').querySelector("a");if (data.dataCustom.text == "执行") {
             btnTwo.click();
           } else {
             var formTable = elem.contentWindow.document.querySelector("iframe") && elem.contentWindow.document.querySelector("iframe").contentDocument && elem.contentWindow.document.querySelector("iframe").contentDocument.querySelectorAll('.nui-form-table')[0]; //盖章及归档
             if (formTable) {
-              var sealTr0 = $($(formTable).children("tbody").children("tr[id]").eq(0))[0];
-              if (sealTr0) {
+              var sealTr0 = $($(formTable).children("tbody").children("tr[id]").eq(0))[0];if (sealTr0) {
                 var seal = sealTr0.querySelectorAll("input")[0];
               } //合同盖章
-              var sealTr1 = $($(formTable).children("tbody").children("tr[id]").eq(1))[0];
-              if (sealTr1) {
+              var sealTr1 = $($(formTable).children("tbody").children("tr[id]").eq(1))[0];if (sealTr1) {
                 var contractSignStatus = sealTr1.querySelector("#contractSignStatus") && sealTr1.querySelector("#contractSignStatus").querySelectorAll("input")[0]; //合同盖章时间
                 var contractSealDate = sealTr1.querySelector("#contractSealDate") && sealTr1.querySelector("#contractSealDate").querySelectorAll("input")[0];
               } //合同归档时间
-              var sealTr2 = $($(formTable).children("tbody").children("tr[id]").eq(2))[0];
-              if (sealTr2) {
+              var sealTr2 = $($(formTable).children("tbody").children("tr[id]").eq(2))[0];if (sealTr2) {
                 var backDate = sealTr2.querySelector("#backDate") && sealTr2.querySelector("#backDate").querySelectorAll("input")[0];
               }
-            }
-            if (sealTr0 && sealTr0.style.display != "none" && seal && seal.value == "") {
-              console.log("盖章及归档未填写");
-              btnTwo.click();
+            }if (sealTr0 && sealTr0.style.display != "none" && seal && seal.value == "") {
+              console.log("盖章及归档未填写");btnTwo.click();
             } else if (sealTr1 && sealTr1.style.display != "none" && contractSignStatus && contractSignStatus.value == "") {
-              console.log("合同盖章未填写");
-              btnTwo.click();
+              console.log("合同盖章未填写");btnTwo.click();
             } else if (sealTr1 && sealTr1.style.display != "none" && contractSealDate && contractSealDate.value == "") {
-              console.log("合同盖章时间未填写");
-              btnTwo.click();
+              console.log("合同盖章时间未填写");btnTwo.click();
             } else if (sealTr2 && sealTr2.style.display != "none" && backDate && backDate.value == "") {
-              console.log("合同归档时间未填写");
-              btnTwo.click();
+              console.log("合同归档时间未填写");btnTwo.click();
             } else {
-              console.log("提交成功");
-              btnTwo.click();
-              var json = { time: new Date().getTime() };
-              setTimeout(function () {
+              console.log("提交成功");btnTwo.click();var json = { time: new Date().getTime() };setTimeout(function () {
                 ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
               }, 10);
             }
@@ -1704,8 +1670,7 @@
       //红色提示
       if (!elem) {
         return;
-      }
-      if (elem && elem.contentWindow && elem.contentWindow.document) {
+      }if (elem && elem.contentWindow && elem.contentWindow.document) {
         if (elem.contentWindow.document.querySelector(".mini-tips-danger")) {
           return elem.contentWindow.document.querySelector(".mini-tips-danger").innerHTML;
         }
@@ -1795,78 +1760,80 @@
       var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    return (\n      <div ref="qwer">\n      </div>\n    )\n  },\n  componentDidMount() {\n    setTimeout(() => {\n      var aa = this.refs.qwer.ownerDocument.querySelectorAll(\'[data-asdasdasd]\');\n      var clickFun = function(index) {\n        aa[index].click();\n        aa[index].dispatchEvent(new Event(\'blur\'));\n        if (index) {\n          setTimeout(() => {\n            clickFun(index-1);\n          }, 100);\n        }\n      }\n      clickFun(aa.length - 1);\n    }, 2000);\n  }\n});\n';
       return '\'use strict\';\n\nmodule.exports = React.createClass({\n  displayName: \'exports\',\n\n  render: function render() {\n    return React.createElement(\'div\', { ref: \'qwer\' });\n  },\n  componentDidMount: function componentDidMount() {\n    var _this = this;\n\n    setTimeout(function () {\n      var aa = _this.refs.qwer.ownerDocument.querySelectorAll(\'[data-asdasdasd]\');\n      var clickFun = function clickFun(index) {\n        aa[index].click();\n        aa[index].dispatchEvent(new Event(\'blur\'));\n        if (index) {\n          setTimeout(function () {\n            clickFun(index - 1);\n          }, 100);\n        }\n      };\n      clickFun(aa.length - 1);\n    }, 2000);\n  }\n});';
     },
-    getData_control63_Pt9BN8: function (elem) {
-      //loading 加载。
-      if (!elem) {
-        return;
-      }
-      if (elem && elem.contentWindow && elem.contentWindow.document) {
-        var loading = elem.contentWindow.document.querySelector('.mini-mask');
-        if (loading) {
-          var _loading = loading.querySelector('.mini-mask-loading');
-          if (_loading && _loading.style.display == 'block' && _loading.textContent.trim() == '加载中...') {
-            return [true];
-          } else {
-            return;
-          }
-        }
-      }
-    },
-    doAction_uiControl51_4TV3Hv: function (data, elem) {},
-    getTemplate_uiControl51_4TV3Hv: function () {
-      var selfTemplate = 'export default class extends React.Component{\n  render(){\n    var data = this.props.customData || [];\n    if(data\t&&\tdata[0]==true){\n    \treturn(\n        <div className="ysp-loadEffect-background">\n          <div className="ysp-loadEffect">\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n          </div>\n        </div>  \n    \t)  \n    }else{\n      return(\n \xA0 \xA0  \t<div></div> \n      )\n    }\n  }\n}';
-      return '"use strict";\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: "render",\n    value: function render() {\n      var data = this.props.customData || [];\n      if (data && data[0] == true) {\n        return React.createElement(\n          "div",\n          { className: "ysp-loadEffect-background" },\n          React.createElement(\n            "div",\n            { className: "ysp-loadEffect" },\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null)\n          )\n        );\n      } else {\n        return React.createElement("div", null);\n      }\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;';
-    },
+
     getData_control168_3Cu2Vn: function (elem) {
       if (!elem) {
         return;
-      }
-      var iframe = elem && elem.ownerDocument.defaultView.frameElement;
-      if (elem && elem.textContent.indexOf("回退方式") !== -1) {
-        var data = [];
-        var signOne = elem.querySelectorAll('.form-label')[0];
-        var signTwo = elem.querySelector('.mini-buttonedit-input');
-        var signThree = elem.querySelectorAll('.form-label')[2]; //var signFour = elem.querySelectorAll('.mini-textbox-input')[0];
-        signOne && data.push(signOne.textContent);
-        signTwo && data.push(signTwo.value);
-        signThree && data.push(signThree.textContent.trim()); //signFour && data.push(signFour.value);
+      }var iframe = elem && elem.ownerDocument.defaultView.frameElement;if (elem && elem.textContent.indexOf("回退方式") !== -1) {
+        var data = [];var signOne = elem.querySelectorAll('.form-label')[0];var signTwo = elem.querySelector('.mini-buttonedit-input');var signThree = elem.querySelectorAll('.form-label')[2]; //var signFour = elem.querySelectorAll('.mini-textbox-input')[0];
+        signOne && data.push(signOne.textContent);signTwo && data.push(signTwo.value);signThree && data.push(signThree.textContent.trim()); //signFour && data.push(signFour.value);
         return data;
       }
     },
     doAction_uiControl161_GJsvcQ: function (data, elem) {
       if (data.eventType == 'change') {
-        var d = data.dataCustom;
-        var signFour = elem.querySelectorAll('.mini-textbox-input')[0];
-        signFour.focus();
-        signFour.value = d;
-        signFour.dispatchEvent(new Event("change"));
+        var d = data.dataCustom;var signFour = elem.querySelectorAll('.mini-textbox-input')[0];signFour.focus();signFour.value = d;signFour.dispatchEvent(new Event("change"));
       } else if (data.eventType == 'click') {
-        var d = data.dataCustom;
-        if (d == 'btn ysp-sure') {
+        var d = data.dataCustom;if (d == 'btn ysp-sure') {
           // var signOne = elem.ownerDocument.querySelectorAll('#cancel')[0];
           //   signOne.click();
-          var signOne = elem.ownerDocument.querySelectorAll('#save')[0];
-          signOne.click();
-          var _fk = elem.ownerDocument.defaultView.parent.document.querySelector('.mini-window-drag').querySelector('iframe').contentWindow.document.querySelector('iframe').contentWindow.document.querySelector('.mini-tips-danger');
-          if (_fk) {
+          var signOne = elem.ownerDocument.querySelectorAll('#save')[0];signOne.click();var _fk = elem.ownerDocument.defaultView.parent.document.querySelector('.mini-window-drag').querySelector('iframe').contentWindow.document.querySelector('iframe').contentWindow.document.querySelector('.mini-tips-danger');if (_fk) {
             signOne.click();
           } else {
             var json = { time: new Date().getTime() }; // @可选的url：浏览器不会检查url是否存在，只改变url，url必须同域，不能跨域
-            var btn = elem.ownerDocument.querySelector('.mini-tools-close');
-            if (btn) {
+            var btn = elem.ownerDocument.querySelector('.mini-tools-close');if (btn) {
               ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             }
           }
         } else if (d == 'btn ysp-miss') {
-          var signOne = elem.ownerDocument.querySelectorAll('#cancel')[0];
-          signOne.click();
+          var signOne = elem.ownerDocument.querySelectorAll('#cancel')[0];signOne.click();
         }
       }
     },
     getTemplate_uiControl161_GJsvcQ: function () {
       var selfTemplate = 'export default class extends React.Component{\n  change(e){\n    var handler=this.props.customHandler;\n    var e=e.target;\n     if(handler) {                                    \n       handler({\n         data:e.value,\n         eventType:\'change\'                         \n       })\n     }\n  }\n  onClick(e){\n    var handler=this.props.customHandler\t;\n    var e=e.target;\n     if(handler) {                                    \n       handler({\n         data:e.className,\n         eventType:\'click\'                         \n       })\n     }\n  }\n  render(){\n    var\tdata=this.props.customData\t|| [];\n    if(data && data.length>0){\n   \treturn(\n      <div className=\'ysp-fallbackStrategy\'>\n      \t<div className="ysp-fallbackStrategy-cont">\n          <div style={{textAlign:\'center\',width:\'100%\'}}>\u56DE\u9000\u7B56\u7565</div>\n        \t<div>\n          \t<span>{data[0]}</span>\n            <label>{data[1]}</label>\n          </div>\n          <div>\n          \t<span className="yesOrno">{data[2]}</span>\n            {/*<textarea defaultValue={data[3]} onBlur={this.change.bind(this)}></textarea>*/}\n          </div>\n          <div>\n          \t<AMUI.Button className="ysp-sure" onClick={this.onClick.bind(this)}>\u786E\u5B9A</AMUI.Button>\n            <AMUI.Button className="ysp-miss" onClick={this.onClick.bind(this)}>\u53D6\u6D88</AMUI.Button>\n          </div>\n        </div>\n      </div>\n    ) }else {\n      return(<div style={{display:\'none\'}}></div>)\n    }\n  }\n}';
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: \'change\',\n    value: function change(e) {\n      var handler = this.props.customHandler;\n      var e = e.target;\n      if (handler) {\n        handler({\n          data: e.value,\n          eventType: \'change\'\n        });\n      }\n    }\n  }, {\n    key: \'onClick\',\n    value: function onClick(e) {\n      var handler = this.props.customHandler;\n      var e = e.target;\n      if (handler) {\n        handler({\n          data: e.className,\n          eventType: \'click\'\n        });\n      }\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var data = this.props.customData || [];\n      if (data && data.length > 0) {\n        return React.createElement(\n          \'div\',\n          { className: \'ysp-fallbackStrategy\' },\n          React.createElement(\n            \'div\',\n            { className: \'ysp-fallbackStrategy-cont\' },\n            React.createElement(\n              \'div\',\n              { style: { textAlign: \'center\', width: \'100%\' } },\n              \'\\u56DE\\u9000\\u7B56\\u7565\'\n            ),\n            React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'span\',\n                null,\n                data[0]\n              ),\n              React.createElement(\n                \'label\',\n                null,\n                data[1]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                \'span\',\n                { className: \'yesOrno\' },\n                data[2]\n              )\n            ),\n            React.createElement(\n              \'div\',\n              null,\n              React.createElement(\n                AMUI.Button,\n                { className: \'ysp-sure\', onClick: this.onClick.bind(this) },\n                \'\\u786E\\u5B9A\'\n              ),\n              React.createElement(\n                AMUI.Button,\n                { className: \'ysp-miss\', onClick: this.onClick.bind(this) },\n                \'\\u53D6\\u6D88\'\n              )\n            )\n          )\n        );\n      } else {\n        return React.createElement(\'div\', { style: { display: \'none\' } });\n      }\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;';
-    }
+    },
 
+    getData_control269_evf5a5: function (elem) {
+      //loading 加载。
+      if (!elem) {
+        return;
+      }if (elem) {
+        var loading = elem.contentDocument.querySelector("body").querySelector(".mini-mask");var _loading = elem.ownerDocument.querySelector(".mini-mask");if (loading) {
+          var show = loading.querySelector('.mini-mask-loading');if (show && show.style.display == 'block') {
+            return true;
+          }
+        } else if (_loading) {
+          var _show = _loading.querySelector('.mini-mask-loading');if (_show && _show.style.display == 'block') {
+            return true;
+          }
+        } else {
+          return false;
+        }
+      }
+    },
+    doAction_uiControl263_CCXCMS: function (data, elem) {
+      if (data.eventType == "show") {
+        ysp.appMain.showLoading();
+      } else if (data.eventType == "hide") {
+        ysp.appMain.hideLoading();
+      } // <div className="ysp-loadEffect-background">
+      //           <div className="ysp-loadEffect">
+      //             <span></span>
+      //             <span></span>
+      //             <span></span>
+      //             <span></span>
+      //             <span></span>
+      //             <span></span>
+      //             <span></span>
+      //             <span></span>
+      //           </div>
+      //         </div>
+    },
+    getTemplate_uiControl263_CCXCMS: function () {
+      var selfTemplate = "import {Component} from 'react';\nexport default class extends Component {\n// componentWillReceiveProps(props){\n//   // debugger;\n//   var show=props.customData;\n//   var handler=props.customHandler;\n//   if(show&&handler){\n//     handler({\n//       eventType:\"show\"\n//     })\n//   }else{\n//     handler({\n//       eventType:\"hide\"\n//     })\n//   }\n// }\n   render(){\n    var data = this.props.customData;\n    if(data){\n    \treturn(\n        <div className=\"ysp-loadEffect-background\">\n          <div className=\"ysp-loadEffect\">\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n          </div>\n        </div>\n    \t)  \n    }else{\n      return(\n \xA0 \xA0  \t<div></div> \n      )\n    }\n  }\n}";
+      return '"use strict";\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require("react");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: "render",\n\n    // componentWillReceiveProps(props){\n    //   // debugger;\n    //   var show=props.customData;\n    //   var handler=props.customHandler;\n    //   if(show&&handler){\n    //     handler({\n    //       eventType:"show"\n    //     })\n    //   }else{\n    //     handler({\n    //       eventType:"hide"\n    //     })\n    //   }\n    // }\n    value: function render() {\n      var data = this.props.customData;\n      if (data) {\n        return React.createElement(\n          "div",\n          { className: "ysp-loadEffect-background" },\n          React.createElement(\n            "div",\n            { className: "ysp-loadEffect" },\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null)\n          )\n        );\n      } else {\n        return React.createElement("div", null);\n      }\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
+    }
   }, "processForm");
 })(window, ysp);
