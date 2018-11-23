@@ -19,11 +19,19 @@
       //获取目标列表对应id的DOM
       var targetId = elem.getAttribute("id"),
           targetList;if (targetId == "customerOrStorePopList") {
-        targetList = elem.querySelector('#newPlanCustomerList').style.display == "none" ? elem.querySelector('#newPlanStoreList') : elem.querySelector('#newPlanCustomerList');
+        if (elem.querySelector('#newPlanCustomerList') != null) {
+          targetList = elem.querySelector('#newPlanCustomerList').style.display == "none" ? elem.querySelector('#newPlanStoreList') : elem.querySelector('#newPlanCustomerList');
+        } else {
+          targetList = "";
+        }
       } else {
-        targetList = elem.querySelector('#newTempCustomerVisit').style.display == "none" ? elem.querySelector('#newTempStoreVisit') : elem.querySelector('#newTempCustomerVisit');
+        if (elem.querySelector('#newTempCustomerVisit') != null) {
+          targetList = elem.querySelector('#newTempCustomerVisit').style.display == "none" ? elem.querySelector('#newTempStoreVisit') : elem.querySelector('#newTempCustomerVisit');
+        } else {
+          targetList = "";
+        }
       } // var trs = elem.querySelectorAll('table tbody tr');
-      var trs = targetList.querySelectorAll('table tbody tr');var content = [];[].forEach.call(trs, function (tr, index) {
+      var trs = targetList ? targetList.querySelectorAll('table tbody tr') : [];var content = [];trs.length && [].forEach.call(trs, function (tr, index) {
         var trData = [];var tds = tr.querySelectorAll('td');[].forEach.call(tds, function (td, subIndex) {
           var input = td.querySelector('input');if (input) {
             trData.push(input.checked);
@@ -34,12 +42,17 @@
       }); //其它客户和工作计划填写
       var tempPlanOtherCustomerInput = elem.querySelector("#tempPlanOtherCustomer");var tempPlanOtherCustomer = '';if (tempPlanOtherCustomerInput) {
         tempPlanOtherCustomer = tempPlanOtherCustomerInput.value;
-      }var dayPlanContentText = elem.querySelector("#dayPlanContent");var dayPlanContent = '';if (dayPlanContentText) {
+      }
+      var dayPlanContentText = elem.querySelector("#dayPlanContent");var dayPlanContent = '';if (dayPlanContentText) {
         dayPlanContent = dayPlanContentText.value;
       } //选择临时拜访多少个客户和门店
-      var selectedCount = 0;var tempAreaText = "";if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
-        var targetList1 = elem.querySelector('#newTempCustomerVisit').style.display == "none" ? elem.querySelector('#newTempStoreVisit') : elem.querySelector('#newTempCustomerVisit'); // var inputs = tempCustomerOrStoreEl.querySelectorAll('table  tr td input');
-        var inputs = targetList1.querySelectorAll('table  tr td input');[].forEach.call(inputs, function (item) {
+      var selectedCount = 0;var tempAreaText = "";var targetList1;if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
+        if (elem.querySelector('#newTempCustomerVisit') != null) {
+          targetList1 = elem.querySelector('#newTempCustomerVisit').style.display == "none" ? elem.querySelector('#newTempStoreVisit') : elem.querySelector('#newTempCustomerVisit');
+        } else {
+          targetList1 = "";
+        } // var inputs = tempCustomerOrStoreEl.querySelectorAll('table  tr td input');
+        var inputs = targetList1 ? targetList1.querySelectorAll('table  tr td input') : [];inputs && [].forEach.call(inputs, function (item) {
           if (item.checked) {
             selectedCount++;
           }
@@ -69,29 +82,39 @@
         }
       } //日工作计划
       var textArea = "";if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
-        var text = elem.querySelector("#dayPlanContent").value;
-        textArea = text;
+        var text = elem.querySelector("#dayPlanContent").value;textArea = text;
       } //分页
       var pageData = {};var item = [];pageData.prev = false;pageData.next = false; //获取对应的客户列表或者门店列表的下面公共底部的页面信息
       var targetPageInfo;if (targetId == "customerOrStorePopList") {
-        targetPageInfo = elem.querySelector('#newPlanCustomerList').style.display == "none" ? elem.querySelectorAll('.commpnPage')[1] : elem.querySelectorAll('.commpnPage')[0];
+        if (elem.querySelector('#newPlanCustomerList') != null) {
+          targetPageInfo = elem.querySelector('#newPlanCustomerList').style.display == "none" ? elem.querySelectorAll('.commpnPage')[1] : elem.querySelectorAll('.commpnPage')[0];
+        } else {
+          targetPageInfo = "";
+        }
       } else {
-        targetPageInfo = elem.querySelector('#newTempCustomerVisit').style.display == "none" ? elem.querySelectorAll('.commpnPage')[1] : elem.querySelectorAll('.commpnPage')[0];
-      }if (targetPageInfo.querySelector('.skip')) {
+        if (elem.querySelector('#newTempCustomerVisit') != null) {
+          targetPageInfo = elem.querySelector('#newTempCustomerVisit').style.display == "none" ? elem.querySelectorAll('.commpnPage')[1] : elem.querySelectorAll('.commpnPage')[0];
+        } else {
+          targetPageInfo = "";
+        }
+      }if (targetPageInfo && targetPageInfo.querySelector('.skip')) {
         pageData.numberTaotal = targetPageInfo.querySelector('.skip').querySelectorAll('span')[0].textContent.replace(/[^0-9]/g, '');
+      } else {
+        pageData.numberTaotal = '';
       } // var lis = elem.querySelectorAll('li');
-      var lis = targetPageInfo.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
+      var lis = targetPageInfo && targetPageInfo.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
         var as = lis[i].querySelectorAll('a');for (var j = 0; j < as.length; j++) {
           switch (as[j].getAttribute('title')) {case 'Go to previous page':
-              pageData.prev = true;break;case 'Go to next page':
+              pageData.prev = true;
+              break;case 'Go to next page':
               pageData.next = true;break;}
         }
-      }var tarId = targetList.getAttribute("id"),
-          targetJump;if (tarId == 'newPlanCustomerList' || tarId == 'newTempCustomerVisit') {
+      }var tarId = targetList && targetList.getAttribute("id"),
+          targetJump1;if (tarId == 'newPlanCustomerList' || tarId == 'newTempCustomerVisit') {
         targetJump1 = elem.querySelectorAll('.commpnPage')[0];
       } else if (tarId == 'newPlanStoreList' || tarId == 'newTempStoreVisit') {
         targetJump1 = elem.querySelectorAll('.commpnPage')[1];
-      } else {}var liss = targetJump1.querySelectorAll('li');for (var k = 0; k < liss.length; k++) {
+      } else {}var liss = targetJump1 ? targetJump1.querySelectorAll('li') : [];for (var k = 0; k < liss.length; k++) {
         var active = liss[k].className;if (active == 'active') {
           pageData.currentPage = liss[k].querySelector('a').textContent;
         }
@@ -121,9 +144,8 @@
       } else {
         ysp.appMain.showLoading();
       } //var loading = ysp.customHelper.tipMsg.getLoading();
-      return { loadingFlag: load, isShow: isShow, content: content,
-        tempPlanOtherCustomer: tempPlanOtherCustomer, dayPlanContent: dayPlanContent, selectedCount: selectedCount, tempAreaText: tempAreaText, customer: customer || 0, store: store || 0, textArea: textArea, pageData: { "prev": pageData.prev, "next": pageData.next, "numberTaotal": pageData.numberTaotal, "page": pageData.page, "currentPage": pageData.currentPage,
-          "flag": flag //pageLoading: pageLoading
+      return { loadingFlag: load, isShow: isShow, content: content, tempPlanOtherCustomer: tempPlanOtherCustomer, dayPlanContent: dayPlanContent, selectedCount: selectedCount,
+        tempAreaText: tempAreaText, customer: customer || 0, store: store || 0, textArea: textArea, pageData: { "prev": pageData.prev, "next": pageData.next, "numberTaotal": pageData.numberTaotal, "page": pageData.page, "currentPage": pageData.currentPage, "flag": flag //pageLoading: pageLoading
         }, buttonNum: buttonNum };
     }, doAction_uiControl44_fBiQg5: function (data, elem) {
       //返回按钮方法，返回工作台页面
@@ -131,14 +153,22 @@
         var targetId = elem.getAttribute("id"),
             targetList;if (targetId == "customerOrStorePopList") {
           //工作计划
-          targetList = elem.querySelector('#newPlanCustomerList').style.display == "none" ? elem.querySelector('#newPlanStoreList') : elem.querySelector('#newPlanCustomerList');
+          if (elem.querySelector('#newPlanCustomerList') != null) {
+            targetList = elem.querySelector('#newPlanCustomerList').style.display == "none" ? elem.querySelector('#newPlanStoreList') : elem.querySelector('#newPlanCustomerList');
+          } else {
+            targetList = "";
+          }
         } else {
           //临时签到
-          targetList = elem.querySelector('#newTempCustomerVisit').style.display == "none" ? elem.querySelector('#newTempStoreVisit') : elem.querySelector('#newTempCustomerVisit');
+          if (elem.querySelector('#newTempCustomerVisit') != null) {
+            targetList = elem.querySelector('#newTempCustomerVisit').style.display == "none" ? elem.querySelector('#newTempStoreVisit') : elem.querySelector('#newTempCustomerVisit');
+          } else {
+            targetList = "";
+          }
         }return targetList;
-      }
-      if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
+      }if (data.eventType == 'AndroidBack') {
+        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';
+        ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
         if (!top.EAPI.isAndroid()) {
           ysp.appMain.back();ysp.customHelper.BackReload();
@@ -148,8 +178,10 @@
       }var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = '';var queryBtn;var queryInput;var customerOrStoreEl = doc.getElementById('customerOrStorePopList'); //工作计划
       var tempCustomerOrStoreEl = doc.getElementById('tempCustomerOrStorePopList'); //临时签到计划
       if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
-        elem = customerOrStoreEl;isShow = "work";queryBtn = doc.getElementById('newPlanListSearch');queryInput = doc.getElementById('newPlanListSearchText');
-      }if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
+        elem = customerOrStoreEl;isShow = "work";
+        queryBtn = doc.getElementById('newPlanListSearch');queryInput = doc.getElementById('newPlanListSearchText');
+      }
+      if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
         elem = tempCustomerOrStoreEl;isShow = "temp";queryBtn = doc.getElementById('newTempVisitSearch');queryInput = doc.getElementById('newTempVisitSearchText');
       } //工作计划
       var customer = elem.querySelector(".menu");var customerLis = customer.querySelectorAll("li"); //临时工作计划
@@ -182,7 +214,8 @@
           addTempDayPlanOkBtn.click();cwin.tempShow();
         }if (addDayPlanOkBtn) {
           addDayPlanOkBtn.click();cwin.Show();
-        }if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
+        }
+        if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
           var tempTextAreaValue = tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer") && tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer").value;if (tempTextAreaValue != "" || selectedCount != "") {
             ysp.appMain.showLoading();setTimeout(function () {
               ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.back();ysp.customHelper.BackReload();
@@ -208,7 +241,7 @@
                                              } else {
                                                targetList = elem.querySelector('#newTempCustomerVisit').style.display == "none" ? elem.querySelector('#newTempStoreVisit') : elem.querySelector('#newTempCustomerVisit');
                                              }
-                                             ***/var inputs = targetList.querySelectorAll('table  tr input');[].forEach.call(inputs, function (item, index) {
+                                             ***/var inputs = targetList ? targetList.querySelectorAll('table  tr input') : [];inputs.length && [].forEach.call(inputs, function (item, index) {
           if (parseInt(index) == clickIndex) {
             item.click();
           }
@@ -218,7 +251,7 @@
           prevtitle(data.dataCustom);break;case 'GO':
           clickGO(data.dataCustom);break;}function clickGO(data) {
         var targetList = commonTargetlist(),
-            tarId = targetList.getAttribute("id"),
+            tarId = targetList && targetList.getAttribute("id"),
             input,
             targetJump; //获取临时签到或者是工作计划签到的客户或者是门店的列表
         // var input = elem.ownerDocument.querySelector('.skip-num');
@@ -226,7 +259,7 @@
           targetJump = elem.querySelectorAll('.commpnPage')[0];input = elem.querySelectorAll('.commpnPage')[0].querySelector("input");
         } else if (tarId == 'newPlanStoreList' || tarId == 'newTempStoreVisit') {
           targetJump = elem.querySelectorAll('.commpnPage')[1];input = elem.querySelectorAll('.commpnPage')[1].querySelector("input");
-        } else {}input.value = data;input.blur();targetJump.querySelector('.skip_right_goto .skip-right-icon') && targetJump.querySelector('.skip_right_goto .skip-right-icon').click();
+        } else {}input.value = data;input.blur();targetJump && targetJump.querySelector('.skip_right_goto .skip-right-icon') && targetJump.querySelector('.skip_right_goto .skip-right-icon').click();
       }function prevtitle(data) {
         var lis = elem.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
           var as = lis[i].querySelectorAll('a');for (var j = 0; j < as.length; j++) {
