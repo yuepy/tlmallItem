@@ -276,8 +276,7 @@
             item.click();
           }
         });
-      }
-      switch (data.eventType) {case 'prev':
+      }switch (data.eventType) {case 'prev':
           prevtitle(data.dataCustom);break;case 'next':
           prevtitle(data.dataCustom);break;case 'GO':
           clickGO(data.dataCustom);break;}function clickGO(data) {
@@ -289,7 +288,8 @@
         if (tarId == 'newPlanCustomerList' || tarId == 'newTempCustomerVisit') {
           targetJump = elem.querySelectorAll('.commpnPage')[0];input = elem.querySelectorAll('.commpnPage')[0].querySelector("input");
         } else if (tarId == 'newPlanStoreList' || tarId == 'newTempStoreVisit') {
-          targetJump = elem.querySelectorAll('.commpnPage')[1];input = elem.querySelectorAll('.commpnPage')[1].querySelector("input");
+          targetJump = elem.querySelectorAll('.commpnPage')[1];
+          input = elem.querySelectorAll('.commpnPage')[1].querySelector("input");
         } else {}input.value = data;input.blur();targetJump && targetJump.querySelector('.skip_right_goto .skip-right-icon') && targetJump.querySelector('.skip_right_goto .skip-right-icon').click();
       }function prevtitle(data) {
         var lis = elem.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
